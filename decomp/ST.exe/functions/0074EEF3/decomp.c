@@ -6,6 +6,7 @@ FUN_0074eef3(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int p
 
 {
   FUN_0074e7b1(this,param_1,param_2,param_3,param_4);
+  /* ST_CALLSITE[0074EF0F]: CALL dword ptr [0x0085bb88] */
   InitializeCriticalSection((LPCRITICAL_SECTION)((int)this + 0x1c));
   STField<undefined4>(this,0x48) = 1;
   STField<undefined4>(this,0x38) = 0;

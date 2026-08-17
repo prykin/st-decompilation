@@ -77,8 +77,10 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   }
   FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
   this_00 = local_20;
+  /* ST_CALLSITE[005BE617]: CALL 0x00402298; direct=00402298 PutDDXClip */
   PutDDXClip(0,0,0,0,800,(byte *)0x3c,'\x01',(BITMAPINFO *)local_20->field_005D);
   if ((this_00->field_0457 == nullptr) && (param_1 == '\0')) {
+    /* ST_CALLSITE[005BE645]: CALL 0x00401217; direct=00401217 MReportTy::OutTGlProc */
     OutTGlProc((MReportTy *)g_dDXContext_0080759C,g_dDXContext_0080759C,0,0,0x1a,10,0x2e9,0x32,
                (int)this_00);
   }
@@ -90,6 +92,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     g_currentExceptionFrame = local_64.previous;
     return;
   }
+  /* ST_CALLSITE[005BE67C]: CALL 0x00402298; direct=00402298 PutDDXClip */
   PutDDXClip(0x1a,0x46,0x1a,0x46,this_00->field_0073->field_0004,
              (byte *)this_00->field_0073->field_0008,'\x01',(BITMAPINFO *)this_00->field_005D);
   FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0,0x2e,1,0x2ba,0x15c,0x4c);
@@ -133,6 +136,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
                 FUN_006b4170(local_18,0,0,0,local_18->field_0004,local_18->field_0008,0x4c);
                 ccFntTy::WrStr(this_00->field_0083,&CHAR_00h_00808ab0 + (UVar23 & 0xff) * 0x9c,0,-1,
                                0);
+                /* ST_CALLSITE[005BF0CC]: CALL 0x00403229; direct=00403229 DibPut */
                 DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0x38,
                        (uVar12 & 0xff) * 0x26 + 0x2c,'\x01',(byte *)local_18);
                 break;
@@ -161,6 +165,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
             iVar15 = (&DAT_0080c943)[iVar6];
             iVar26 = iVar6;
           }
+          /* ST_CALLSITE[005BF1A5]: CALL 0x004016fe; direct=004016FE MReportTy::PaintMainScore */
           PaintMainScore(this_00,iVar15,uVar12,iVar26);
           iVar6 = iVar6 + 1;
         } while (iVar6 < (int)(DAT_0080c83e + 1));
@@ -182,6 +187,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
             uVar12 = this_00->field_02A3;
             iVar6 = iVar15;
 LAB_005bf156:
+            /* ST_CALLSITE[005BF15A]: CALL 0x004016fe; direct=004016FE MReportTy::PaintMainScore */
             PaintMainScore(this_00,0,uVar12,iVar6);
           }
           iVar15 = iVar15 + 1;
@@ -204,6 +210,7 @@ LAB_005bf156:
       iVar6 = bVar3 - 1;
     }
     pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_007F,iVar6);
+    /* ST_CALLSITE[005BE716]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0x2e,1,'\x06',(byte *)pBVar7);
     local_c = (RecoveredRecord_MReportTy_005BD4B0 *)
               ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0x2f,2,0x2b7,0x1e,0
@@ -217,10 +224,12 @@ LAB_005bf156:
           iVar6 = ((uint)local_18 & 0xff) * 0x9c;
           if ((&DAT_00808af4)[iVar6] == (char)local_1c) {
             if (local_11 == '\0') {
+              /* ST_CALLSITE[005BE7BB]: CALL ESI */
               wsprintfA((LPSTR)&DAT_0080f33a,"%s, %s",&DAT_0080f33a,
                         &CHAR_00h_00808ab0 + iVar6);
             }
             else {
+              /* ST_CALLSITE[005BE79A]: CALL ESI */
               wsprintfA((LPSTR)&DAT_0080f33a,"%s",&CHAR_00h_00808ab0 + iVar6);
               local_11 = '\0';
             }
@@ -302,6 +311,7 @@ LAB_005bf156:
         }
       }
       ccFntTy::WrStr(this_00->field_0083,(char *)&DAT_0080f33a,-1,-1,0);
+      /* ST_CALLSITE[005BE92E]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0x2f,2,'\x01',(byte *)local_c);
       ccFntTy::EraseSufr(this_00->field_0083);
       pcVar19 = wsprintfA_exref;
@@ -312,6 +322,7 @@ LAB_005bf156:
     else {
       uVar12 = (uint)*(ushort *)(&DAT_0080c8a7 + (uint)(byte)this_00->field_0069 * 0x10);
     }
+    /* ST_CALLSITE[005BE975]: CALL 0x0040250e; direct=0040250E MReportTy::PaintObjScore */
     PaintObjScore(this_00,uVar12,(uint)DAT_0080c937,0x69,0x6a);
     if (this_00->field_0069 == 1) {
       uVar12 = 0xffffffff;
@@ -319,6 +330,7 @@ LAB_005bf156:
     else {
       uVar12 = (uint)*(ushort *)(&DAT_0080c8a9 + (uint)(byte)this_00->field_0069 * 0x10);
     }
+    /* ST_CALLSITE[005BE9AA]: CALL 0x0040250e; direct=0040250E MReportTy::PaintObjScore */
     PaintObjScore(this_00,uVar12,(uint)DAT_0080c939,0xfb,0x6a);
     if (this_00->field_0069 == 1) {
       uVar12 = 0xffffffff;
@@ -326,6 +338,7 @@ LAB_005bf156:
     else {
       uVar12 = (uint)*(ushort *)(&DAT_0080c8ab + (uint)(byte)this_00->field_0069 * 0x10);
     }
+    /* ST_CALLSITE[005BE9E0]: CALL 0x0040250e; direct=0040250E MReportTy::PaintObjScore */
     PaintObjScore(this_00,uVar12,(uint)DAT_0080c93b,0x18d,0x6a);
     if (this_00->field_0069 == 1) {
       uVar12 = 0xffffffff;
@@ -333,6 +346,7 @@ LAB_005bf156:
     else {
       uVar12 = (uint)*(ushort *)(&DAT_0080c8ad + (uint)(byte)this_00->field_0069 * 0x10);
     }
+    /* ST_CALLSITE[005BEA15]: CALL 0x0040250e; direct=0040250E MReportTy::PaintObjScore */
     PaintObjScore(this_00,uVar12,(uint)DAT_0080c93d,0x225,0x6a);
     if (this_00->field_0069 == 1) {
       uVar12 = 0xffffffff;
@@ -340,6 +354,7 @@ LAB_005bf156:
     else {
       uVar12 = (uint)*(ushort *)(&DAT_0080c8af + (uint)(byte)this_00->field_0069 * 0x10);
     }
+    /* ST_CALLSITE[005BEA4B]: CALL 0x0040250e; direct=0040250E MReportTy::PaintObjScore */
     PaintObjScore(this_00,uVar12,(uint)DAT_0080c93f,0x69,0xcb);
     if (this_00->field_0069 == 1) {
       uVar12 = 0xffffffff;
@@ -347,6 +362,7 @@ LAB_005bf156:
     else {
       uVar12 = (uint)*(ushort *)(&DAT_0080c8b1 + (uint)(byte)this_00->field_0069 * 0x10);
     }
+    /* ST_CALLSITE[005BEA83]: CALL 0x0040250e; direct=0040250E MReportTy::PaintObjScore */
     PaintObjScore(this_00,uVar12,(uint)DAT_0080c941,0xfb,0xcb);
     if (this_00->field_0069 == 1) {
       uVar12 = 0xffffffff;
@@ -354,6 +370,7 @@ LAB_005bf156:
     else {
       uVar12 = (uint)*(ushort *)(&DAT_0080c8b3 + (uint)(byte)this_00->field_0069 * 0x10);
     }
+    /* ST_CALLSITE[005BEABC]: CALL 0x0040250e; direct=0040250E MReportTy::PaintObjScore */
     PaintObjScore(this_00,uVar12,(uint)(ushort)DAT_0080c943,0x18d,0xcb);
     if (this_00->field_0069 == 1) {
       uVar12 = 0xffffffff;
@@ -361,6 +378,7 @@ LAB_005bf156:
     else {
       uVar12 = (uint)*(ushort *)(&DAT_0080c8b5 + (uint)(byte)this_00->field_0069 * 0x10);
     }
+    /* ST_CALLSITE[005BEAF4]: CALL 0x0040250e; direct=0040250E MReportTy::PaintObjScore */
     PaintObjScore(this_00,uVar12,(uint)STPiece<2,2>(DAT_0080c943),0x225,0xcb);
     bVar3 = this_00->field_0069;
     if ((char)local_10 == '\x03') {
@@ -368,6 +386,7 @@ LAB_005bf156:
       if (bVar3 != 1) {
         uVar8 = *(undefined4 *)(&DAT_0080c82b + (uint)bVar3 * 0x10);
       }
+      /* ST_CALLSITE[005BEB2B]: CALL ESI */
       (*pcVar19)(&DAT_0080f33a,"%11d",uVar8);
       ccFntTy::SetSurf(this_00->field_008B,(int)this_00->field_0073,0,0x8c,0x11f,0x62,0x14);
       ccFntTy::WrStr(this_00->field_008B,(char *)&DAT_0080f33a,-1,-1,8);
@@ -375,6 +394,7 @@ LAB_005bf156:
       if (this_00->field_0069 != 1) {
         uVar8 = *(undefined4 *)(&DAT_0080c82f + (uint)(byte)this_00->field_0069 * 0x10);
       }
+      /* ST_CALLSITE[005BEB8C]: CALL ESI */
       (*pcVar19)(&DAT_0080f33a,"%11d",uVar8);
       iVar6 = 0x12a;
     }
@@ -383,6 +403,7 @@ LAB_005bf156:
       if (bVar3 != 1) {
         uVar8 = *(undefined4 *)(&DAT_0080c827 + (uint)bVar3 * 0x10);
       }
+      /* ST_CALLSITE[005BEBC8]: CALL ESI */
       (*pcVar19)(&DAT_0080f33a,"%7d",uVar8);
       ccFntTy::SetSurf(this_00->field_008B,(int)this_00->field_0073,0,0x75,0x11f,0x3e,0x14);
       ccFntTy::WrStr(this_00->field_008B,(char *)&DAT_0080f33a,-1,-1,8);
@@ -390,6 +411,7 @@ LAB_005bf156:
       if (this_00->field_0069 != 1) {
         uVar8 = *(undefined4 *)(&DAT_0080c82b + (uint)(byte)this_00->field_0069 * 0x10);
       }
+      /* ST_CALLSITE[005BEC26]: CALL ESI */
       (*pcVar19)(&DAT_0080f33a,"%11d",uVar8);
       ccFntTy::SetSurf(this_00->field_008B,(int)this_00->field_0073,0,0xcc,0x11f,0x62,0x14);
       ccFntTy::WrStr(this_00->field_008B,(char *)&DAT_0080f33a,-1,-1,8);
@@ -397,6 +419,7 @@ LAB_005bf156:
       if (this_00->field_0069 != 1) {
         uVar8 = *(undefined4 *)(&DAT_0080c82f + (uint)(byte)this_00->field_0069 * 0x10);
       }
+      /* ST_CALLSITE[005BEC87]: CALL ESI */
       (*pcVar19)(&DAT_0080f33a,"%11d",uVar8);
       iVar6 = 0x146;
     }
@@ -415,6 +438,7 @@ LAB_005bf156:
     if (((-1 < iVar6) && (0 < iVar15)) && (iVar15 = (iVar6 * 0x26) / iVar15, 0 < iVar15)) {
       iVar6 = 0x1c7;
       do {
+        /* ST_CALLSITE[005BED20]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0073,iVar6,0x121,'\x06',
                (byte *)this_00->field_006F);
         iVar6 = iVar6 + 6;
@@ -550,7 +574,9 @@ LAB_005bef6c:
     puVar16 = (undefined *)(DAT_0080c83a / 0xe10 & 0xff);
     pcVar25 = "%2d:";
   }
+  /* ST_CALLSITE[005BF305]: CALL dword ptr [0x0085bde8] */
   wsprintfA((LPSTR)&DAT_0080f33a,pcVar25,puVar16);
+  /* ST_CALLSITE[005BF344]: CALL dword ptr [0x0085bde8] */
   wsprintfA((LPSTR)&DAT_0080f33a,"%s%02d:%02d",&DAT_0080f33a,
             (int)(((ulonglong)DAT_0080c83a % 0xe10) / 0x3c),
             (int)(((ulonglong)DAT_0080c83a % 0xe10) % 0x3c));

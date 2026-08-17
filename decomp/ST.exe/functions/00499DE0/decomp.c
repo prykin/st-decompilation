@@ -98,6 +98,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
       }
       else {
         pSVar3 = (STBoatC *)
+                 /* ST_CALLSITE[00499EA3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
         if (pSVar3 == nullptr) {
@@ -105,6 +106,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x564);
         }
+        /* ST_CALLSITE[00499ECC]: CALL dword ptr [EDX + 0x2c] */
         dVar4 = pSVar3->slot_2C();
         switch(dVar4) {
         case 7:
@@ -121,16 +123,19 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
           DArrayRemoveAt(local_10,uVar11);
           uVar11 = uVar11 - 1;
           local_14 = local_14 - 1;
+          /* ST_CALLSITE[00499F00]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
           STBoatC::CmdToObj(pSVar3,CASE_3,&local_20);
           break;
         default:
           if ((this_00->field_020A == 1) &&
+             /* ST_CALLSITE[00499F14]: CALL dword ptr [EDX + 0x2c] */
              (dVar4 = pSVar3->slot_2C(), dVar4 != 0x17)) {
             DArrayRemoveAt(local_10,uVar11);
             uVar11 = uVar11 - 1;
             local_14 = local_14 - 1;
             iVar6 = thunk_FUN_00490d90((STGameObjC *)pSVar3);
             if (iVar6 == 0) {
+              /* ST_CALLSITE[00499F41]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
               STBoatC::CmdToObj(pSVar3,CASE_3,&local_20);
             }
           }
@@ -168,10 +173,13 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         DArrayGetElement(local_10,uVar11,&local_c);
         if ((ushort)local_c != 0xffff) {
           pSVar3 = (STBoatC *)
+                   /* ST_CALLSITE[0049A005]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
+          /* ST_CALLSITE[0049A010]: CALL dword ptr [EDX + 0x2c] */
           dVar4 = pSVar3->slot_2C();
           if (dVar4 == 9) {
+            /* ST_CALLSITE[0049A032]: CALL 0x004019ba; direct=004019BA STGroupBoatC::GetDepotForAttack */
             GetDepotForAttack(this_00,local_c,&local_5,&local_16,&local_2a,&local_28,&local_26);
             if (local_16 == -1) {
               puVar16 = &local_20;
@@ -226,11 +234,13 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
             local_3f = (int)(char)((uint)_local_1c >> 8);
             local_39 = sVar13;
             pSVar3 = (STBoatC *)
+                     /* ST_CALLSITE[0049A15D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                      STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
             puVar16 = &local_48;
             SVar14 = CASE_2;
           }
+          /* ST_CALLSITE[0049A16A]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
           STBoatC::CmdToObj(pSVar3,SVar14,puVar16);
         }
         local_24 = local_24 + 1;
@@ -247,6 +257,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         do {
           DArrayGetElement((DArrayTy *)this_00->field_0029,uVar11,&local_c);
           if ((ushort)local_c != 0xffff) {
+            /* ST_CALLSITE[0049A1D3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             this_01 = STAllPlayersC::GetObjPtr
                                 (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
             if (this_01 == nullptr) {
@@ -254,6 +265,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x5c4);
             }
+            /* ST_CALLSITE[0049A1FD]: CALL dword ptr [EAX + 0x2c] */
             uVar7 = this_01->vfunc_2C();
             switch(uVar7) {
             case 7:
@@ -269,6 +281,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
             case 0x25:
               break;
             default:
+              /* ST_CALLSITE[0049A21B]: CALL dword ptr [EDX + 0x2c] */
               iVar6 = this_01->vfunc_2C();
               if (iVar6 == 0x17) {
                 pDVar15 = pDVar8;
@@ -295,6 +308,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         } while ((int)uVar11 < (int)local_14);
       }
       pDVar15 = local_30;
+      /* ST_CALLSITE[0049A295]: CALL 0x00403d9b; direct=00403D9B STAllPlayersC::RegisterPGPair */
       STAllPlayersC::RegisterPGPair
                 (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_14), (uint8_t)(this_00->field_0024)),
                  &pDVar8->flags,&local_30->flags);

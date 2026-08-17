@@ -14,6 +14,7 @@ void __fastcall FUN_0074ae16(int param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     dwMilliseconds = *(int *)(param_1 + 0xd8) / 10000;
   }
+  /* ST_CALLSITE[0074AE2D]: CALL dword ptr [0x0085bc6c] */
   Sleep(dwMilliseconds);
   return;
 }

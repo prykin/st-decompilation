@@ -45,14 +45,17 @@ void FUN_006c0800(short *param_1,byte param_2,undefined4 param_3,undefined4 para
   if (iVar2 != 0) {
     piVar1 = (&PTR_00855004)[param_11 * 0x31];
     if (piVar1 != nullptr) {
+      /* ST_CALLSITE[006C0899]: CALL dword ptr [ECX + 0x48] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar1 + 0x48))(piVar1);
       piVar1 = (&PTR_00855008)[param_11 * 0x31];
       if (piVar1 != nullptr) {
+        /* ST_CALLSITE[006C08A9]: CALL dword ptr [EDX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar1 + 8))(piVar1);
         (&PTR_00855008)[param_11 * 0x31] = nullptr;
       }
+      /* ST_CALLSITE[006C08BF]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)(&PTR_00855004)[param_11 * 0x31] + 8))((&PTR_00855004)[param_11 * 0x31]);
     }

@@ -29,6 +29,7 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
     }
     local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
     if (local_8 == nullptr) {
+      /* ST_CALLSITE[00648EF4]: CALL 0x004023dd; direct=004023DD CreateDefaultBossData */
       local_8 = (ushort *)CreateDefaultBossData();
     }
     Library::Ourlib::SAPP::FUN_006e6200

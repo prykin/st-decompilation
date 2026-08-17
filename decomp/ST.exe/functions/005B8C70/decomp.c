@@ -52,10 +52,12 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
         local_2c[3] = 2;
         local_2c[4] = 0x6940;
         local_2c[2] = iVar8;
+        /* ST_CALLSITE[005B8D3A]: CALL dword ptr [EDX + 0x18] */
         (*this_00->field_000C->vtable->vfunc_18)((short)local_2c);
       }
       if (param_1 == 0) {
         this_00->field_0065 = 2;
+        /* ST_CALLSITE[005B8E45]: CALL 0x0040462e; direct=0040462E MMsgTy::HideSprites */
         HideSprites(this_00);
         g_currentExceptionFrame = local_70.previous;
         return;

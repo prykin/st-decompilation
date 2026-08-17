@@ -17,6 +17,7 @@ void __thiscall CPanelTy::sub_004F8020(CPanelTy *this,char param_1,int param_2)
   }
   if ((((*pcVar1 != '\0') && (DAT_00808784 == 0)) && (DAT_00808788 == 0)) &&
      ((DAT_0080878c == 0 && (DAT_00808790 == 0)))) {
+    /* ST_CALLSITE[004F8073]: CALL 0x00401875; direct=00401875 STAllPlayersC::SetActivePanel */
     STAllPlayersC::SetActivePanel(g_allPlayers_007FA174,(uint *)(uint)(param_1 == '\0'),0,param_2);
   }
   return;

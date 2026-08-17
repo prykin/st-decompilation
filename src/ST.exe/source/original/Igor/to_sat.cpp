@@ -123,11 +123,14 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[0058C7C2]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
   st::fn_00404F07((STSprGameObjC *)local_1c,message);
   SVar1 = message->id;
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
+      /* ST_CALLSITE[0058CB79]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
       local_18 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
+      /* ST_CALLSITE[0058CB87]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
       local_14 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
       local_c = st::pointer_boundary_cast<AnonShape_0058C760_5C56630E *>(st::fn_006AAC70(local_10 + 0x7c + local_8));
       if (((local_18 != nullptr) && (local_14 != nullptr)) &&
@@ -178,8 +181,9 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
         }
         *(uint *)(&local_c[1].field_0x0 + local_8) = local_10;
         pbVar12 = local_14;
-        pbVar15 = st::pointer_boundary_cast<byte *>(&local_c[1].field_0x4 + local_8);
+        pbVar15 = &local_c[1].field_0x4 + local_8;
         memmove(pbVar15, pbVar12, local_10); /* compiler REP MOVS byte copy */
+        /* ST_CALLSITE[0058CCF7]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
         st::fn_004025F9
                   (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                    local_10 + 0x7c + local_8);
@@ -206,6 +210,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
           puVar13 = (byte *)&this_00->field_0x275;
           memmove(puVar13, puVar11, 0x26); /* compiler REP MOVS byte copy */
           puVar11 = (byte *)(&this_00->field_01D5);
+          /* ST_CALLSITE[0058C9CD]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
           iVar7 = st::fn_00404183
                             ((STT3DSprC *)puVar11,0xe,PTR_00806774,st::pointer_boundary_cast<char *>(&DAT_007cbaa8),CASE_1D);
           if (iVar7 != 0) {
@@ -213,7 +218,9 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
                       (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_sat.cpp"),0x158);
           }
           st::fn_00405AA6(puVar11,'\x0e');
+          /* ST_CALLSITE[0058CA08]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
           st::fn_00405240((STT3DSprC *)puVar11,0xe,g_playSystem_00802A38->field_00E4);
+          /* ST_CALLSITE[0058CA27]: CALL 0x00403107; direct=00403107 sub_00416240 */
           st::fn_00403107(this_00,(ushort)this_00->field_0289,*(short *)&this_00->field_028D,
                        this_00->field_0291);
           sVar9 = this_00->field_0041;
@@ -224,6 +231,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
           sVar9 = this_00->field_0043;
           iVar7 = STBiasedDiv16(sVar9, 0xc9); /* exact signed 16-bit grid-index division */
           this_00->field_0255 = iVar7;
+          /* ST_CALLSITE[0058CAB8]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
           st::fn_00401064((STT3DSprC *)puVar11,'\x0e',0);
         }
         else if (uVar8 == 2) {
@@ -232,6 +240,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
           puVar11 = (byte *)&this_00->field_0x275;
           memmove(puVar11, pAVar10, 0x26); /* compiler REP MOVS byte copy */
           local_8 = *(uint *)&local_20[1].field_0x4;
+          /* ST_CALLSITE[0058C850]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
           st::fn_0040551F
                     ((STAllPlayersC *)this_00,(undefined4 *)(&local_20[1].field_0xc + local_8));
           pAVar10 = local_20;
@@ -275,6 +284,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
             local_2c = 0;
             local_28 = 0;
             local_24 = 0;
+            /* ST_CALLSITE[0058C987]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
             st::fn_00404CA5
                       ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
                        (AnonShape_004AD790_77673787 *)&pAVar10[1].field_0x8);
@@ -311,6 +321,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
     st::fn_00402A90((STT3DSprC *)&this_00->field_01D5);
   }
   else if (SVar1 == MESS_STSPRGAMEOBJC_0113) {
+    /* ST_CALLSITE[0058CD40]: CALL dword ptr [EDX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)this_00->field_01D5)();
     g_currentExceptionFrame = local_80.previous;

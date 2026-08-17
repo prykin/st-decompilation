@@ -83,7 +83,7 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                       else {
                         *(undefined4 *)(iVar12 + 8) = 1;
                       }
-                      *(undefined1 *)(iVar12 + 0xc) = 1;
+                      ((undefined1 *)iVar12)[0xc] = 1;
                       bVar1 = true;
                     }
                     else {
@@ -101,7 +101,7 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                 if (((uVar9 < *(uint *)(iVar12 + 0xc)) &&
                     (iVar12 = *(int *)(iVar12 + 8) * uVar9 + *(int *)(iVar12 + 0x1c), iVar12 != 0))
                    && (*(int *)(iVar12 + 8) == 1)) {
-                  *(undefined1 *)(iVar12 + 0xc) = 0;
+                  ((undefined1 *)iVar12)[0xc] = 0;
                   iVar6 = *(int *)(iVar12 + 0x1e) + 1;
                   *(int *)(iVar12 + 0x1e) = iVar6;
                   if (iVar6 < *(int *)(iVar12 + 0x22)) {
@@ -193,7 +193,7 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                   else {
                     *(undefined4 *)(iVar12 + 8) = 1;
                   }
-                  *(undefined1 *)(iVar12 + 0xc) = 1;
+                  ((undefined1 *)iVar12)[0xc] = 1;
                   bVar1 = true;
                 }
                 else {
@@ -213,7 +213,7 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
               if (((uVar9 < *(uint *)(iVar12 + 0xc)) &&
                   (iVar12 = *(int *)(iVar12 + 8) * uVar9 + *(int *)(iVar12 + 0x1c), iVar12 != 0)) &&
                  (*(int *)(iVar12 + 8) == 1)) {
-                *(undefined1 *)(iVar12 + 0xc) = 0;
+                ((undefined1 *)iVar12)[0xc] = 0;
                 iVar10 = *(int *)(iVar12 + 0x1e) + 1;
                 *(int *)(iVar12 + 0x1e) = iVar10;
                 if (iVar10 < *(int *)(iVar12 + 0x22)) {

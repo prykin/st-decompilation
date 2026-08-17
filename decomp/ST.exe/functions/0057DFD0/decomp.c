@@ -35,6 +35,7 @@ cf_common_exit_0057E045:
   this->field_0259 = param_1;
   if (param_1 < 1) {
     if (param_2 != 0) {
+      /* ST_CALLSITE[0057E05A]: CALL 0x00403a30; direct=00403A30 STResourceC::sub_00580D30 */
       sub_00580D30(this,1);
     }
     thunk_FUN_00580fa0();

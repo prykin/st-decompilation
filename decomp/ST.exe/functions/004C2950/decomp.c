@@ -36,6 +36,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
     if (param_2 == 0x49) {
       return;
     }
+    /* ST_CALLSITE[004C2B2D]: CALL dword ptr [0x0085bde8] */
     wsprintfA(param_5,"%s_cover%1i",*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc + 4),0);
     *param_4 = PTR_0080678c;
     *param_6 = 0x1d;
@@ -44,6 +45,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
     if (*(int *)(&DAT_00791948 + param_2 * 4) != 0) {
       iVar1 = param_1 + -0x97 + param_2 * 3;
       if (*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc) != 0) {
+        /* ST_CALLSITE[004C2AC9]: CALL dword ptr [0x0085bde8] */
         wsprintfA(param_5,"%s_cover",*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc));
         *param_4 = PTR_0080678c;
         *param_6 = 0x1d;
@@ -79,6 +81,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
     if (*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc + 4) == 0) {
       return;
     }
+    /* ST_CALLSITE[004C2A05]: CALL dword ptr [0x0085bde8] */
     wsprintfA(param_5,"%s%1i",*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc + 4),0);
     *param_4 = PTR_0080678c;
     *param_6 = 0x1d;

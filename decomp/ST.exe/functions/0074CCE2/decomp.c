@@ -9,17 +9,20 @@ int __thiscall FUN_0074cce2(void *this,int *param_1)
   if (*(int *)(STField<int>(this,0x8c) + 200) == 0) {
     if ((*(int *)(STField<int>(this,0x8c) + 0x9c) == (STField<int *>(this,0x90))[0x26]) ||
        (param_1 = FUN_0074cb34(this,param_1), param_1 != nullptr)) {
+      /* ST_CALLSITE[0074CD3D]: CALL dword ptr [EAX + 0x68] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar1 = (**(code **)(*(int *)this + 0x68))(param_1);
       if (iVar1 < 0) {
         if (*(int *)(STField<int>(this,0x8c) + 0x9c) !=
             *(int *)(STField<int>(this,0x90) + 0x98)) {
+          /* ST_CALLSITE[0074CD63]: CALL dword ptr [EAX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*param_1 + 8))(param_1);
         }
       }
       else {
         if (iVar1 == 0) {
+          /* ST_CALLSITE[0074CD73]: CALL dword ptr [EAX + 0x44] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar1 = (**(code **)(*STField<int *>(this,0x90) + 0x44))(param_1);
         }
@@ -33,6 +36,7 @@ int __thiscall FUN_0074cce2(void *this,int *param_1)
         }
         if (*(int *)(STField<int>(this,0x8c) + 0x9c) !=
             *(int *)(STField<int>(this,0x90) + 0x98)) {
+          /* ST_CALLSITE[0074CDB9]: CALL dword ptr [ECX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*param_1 + 8))(param_1);
         }
@@ -43,6 +47,7 @@ int __thiscall FUN_0074cce2(void *this,int *param_1)
     }
   }
   else {
+    /* ST_CALLSITE[0074CD04]: CALL dword ptr [EAX + 0x44] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*STField<int *>(this,0x90) + 0x44))(param_1);
   }

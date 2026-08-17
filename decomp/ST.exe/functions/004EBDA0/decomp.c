@@ -31,6 +31,7 @@ FUN_004ebda0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,u
       STField<undefined4>(this,0x510) = 0;
       STField<uint>(this,0x514) = g_playSystem_00802A38->field_00E4;
       thunk_FUN_004ec0f0(this);
+      /* ST_CALLSITE[004EBEAA]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
       TLOBaseTy::RotateSpr(this,0);
     }
   }

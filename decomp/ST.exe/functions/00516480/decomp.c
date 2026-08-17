@@ -74,6 +74,7 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
       local_14->field_0030 = (undefined2)iVar13;
       local_14->field_0032 = STPiece<2,2>(iVar13);
       if (g_cursorClass_00802A30 != nullptr) {
+        /* ST_CALLSITE[0051654A]: CALL dword ptr [EDX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_14->field_0x18);
       }
@@ -138,6 +139,7 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0224,
                         (uint)local_8 & 0xff);
   local_8 = pBVar8;
+  /* ST_CALLSITE[005166E0]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0,0,'\x06',(byte *)pBVar8);
   if ((param_1 == DAT_0080874e) && ((short)local_c != 0)) {
     pbVar11 = (byte *)(local_10 + 1);
@@ -158,6 +160,7 @@ LAB_00516776:
       }
       uVar6 = thunk_FUN_005276e0(pbVar11[-4],*pbVar11);
       pBVar8 = FUN_0070b3a0(pAVar10,uVar6);
+      /* ST_CALLSITE[005167A1]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,*(int *)(pbVar11 + 1),
              *(int *)(pbVar11 + 5),'\x01',(byte *)pBVar8);
       local_EAX_828 = thunk_FUN_004e5910((uint)DAT_0080874d,*(uint *)(pbVar11 + -4));
@@ -166,6 +169,7 @@ LAB_00516776:
              thunk_FUN_004e5cc0((uint)DAT_0080874d,*(uint *)(pbVar11 + -4),(uint)*pbVar11);
         if (local_EAX_861 != 0) {
           pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0248,0);
+          /* ST_CALLSITE[00516806]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,*(int *)(pbVar11 + 1),
                  *(int *)(pbVar11 + 5),'\x06',(byte *)pBVar8);
         }
@@ -184,6 +188,7 @@ LAB_00516776:
     iVar13 = (uint)(iVar13 % (int)(uint)(ushort)this_00->field_01B1 != 0) +
              iVar13 / (int)(uint)(ushort)this_00->field_01B1;
   }
+  /* ST_CALLSITE[0051685C]: CALL 0x00402eeb; direct=00402EEB HelpPanelTy::CreateSlider */
   CreateSlider(this_00,iVar13);
   Library::DKW::WGR::FUN_006b5110
             ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,

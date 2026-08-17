@@ -13,6 +13,7 @@ LRESULT FUN_006c3480(HWND hWnd,uint param_2,uint param_3,LPARAM lParam)
   if (param_2 < 0x86) {
     if ((param_2 == 0x85) || (param_2 == 0xf)) {
 LAB_006c34e5:
+      /* ST_CALLSITE[006C34EF]: CALL dword ptr [0x0085be28] */
       LVar1 = DefWindowProcA(hWnd,param_2,param_3,lParam);
       return LVar1;
     }

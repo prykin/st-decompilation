@@ -187,7 +187,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             FUN_0072ac20(param_1,DAT_00857004,DAT_00857028,(uint *)(uVar5 + 0x25),
                          *(int *)(uVar5 + 4),(int *)&local_50,*(int *)(uVar5 + 0x14),
-                         *(byte *)(uVar5 + 0x18),0,0,0xffffffff);
+                         ((byte *)uVar5)[0x18],0,0,0xffffffff);
             iVar7 = param_1[0xcc];
             if (*(int *)(iVar7 + 0x18 + iVar4) <= local_7c + 1) break;
             local_28 = (uint *)((local_7c + 3) * 0x10 + iVar7 + iVar4);
@@ -218,7 +218,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
           uVar5 = puVar3[0x28];
           FUN_007297e0(param_1,DAT_00857004,DAT_00857028,(uint *)(uVar5 + 0x29),
                        (uint *)(uVar5 + 0x39),(int *)&local_50,*(int *)(uVar5 + 0x18),
-                       *(byte *)(uVar5 + 0x1c),*(int *)(uVar5 + 0x1d),*(int *)(uVar5 + 0x21),
+                       ((byte *)uVar5)[0x1c],*(int *)(uVar5 + 0x1d),*(int *)(uVar5 + 0x21),
                        *(uint *)(uVar5 + 0x25));
           iVar7 = param_1[0xcc];
           if (*(int *)(iVar7 + 0x18 + iVar4) <= local_7c + 1) break;
@@ -247,6 +247,7 @@ LAB_007088a4:
       }
     }
     local_8 = 0xffffffff;
+    /* ST_CALLSITE[00708C7B]: CALL dword ptr [ECX + 0x80] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(**(int **)(param_1[1] + 0x40) + 0x80))(*(int **)(param_1[1] + 0x40),0);
   }

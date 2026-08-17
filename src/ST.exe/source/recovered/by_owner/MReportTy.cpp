@@ -31,6 +31,7 @@ void __thiscall st::fn_005C00D0(MReportTy *this)
         this->field_0031 = 1;
         this->field_0033 = 0;
       }
+      /* ST_CALLSITE[005C0124]: CALL dword ptr [EDX + 0x18] */
       (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
     }
     bVar2 = bVar2 + 1;
@@ -40,6 +41,7 @@ void __thiscall st::fn_005C00D0(MReportTy *this)
     this->field_0025 = this->field_009F;
     this->field_0031 = 1;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005C0155]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   return;
@@ -67,6 +69,7 @@ void __thiscall st::fn_005C0190(MReportTy *this)
       this->field_0025 = *piVar1;
       this->field_0031 = 0;
       this->field_0033 = 0;
+      /* ST_CALLSITE[005C01CC]: CALL dword ptr [EAX + 0x18] */
       (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
     }
     piVar1 = piVar1 + 1;
@@ -76,6 +79,7 @@ void __thiscall st::fn_005C0190(MReportTy *this)
     this->field_0025 = this->field_009F;
     this->field_0031 = 0;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005C01F8]: CALL dword ptr [EAX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   return;
@@ -107,7 +111,7 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
   int local_8;
 
   local_8 = 4;
-  puVar3 = st::pointer_boundary_cast<uint *>(&this->field_008F);
+  puVar3 = &this->field_008F;
   do {
     if (*puVar3 != 0) {
       st::fn_006E56B0(this->field_000C,*puVar3);
@@ -130,11 +134,13 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
   }
   st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
   if (this->field_0453 != nullptr) {
+    /* ST_CALLSITE[005C0694]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     st::fn_0040128A(this->field_0453);
     st::fn_0072E2B0(this->field_0453);
     this->field_0453 = nullptr;
   }
   if (this->field_0457 != nullptr) {
+    /* ST_CALLSITE[005C06B8]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     st::fn_0040128A(this->field_0457);
     st::fn_0072E2B0(this->field_0457);
     this->field_0457 = nullptr;
@@ -166,6 +172,7 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
     bVar5 = 0x10;
     iVar4 = 1;
     iVar2 = st::fn_006BF9F0((int *)g_ddxContext_008075A8,0x47,0x46,0x2bd,0x15e);
+    /* ST_CALLSITE[005C0757]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
     uVar7 = st::fn_0040459D(this->field_0453,CASE_2,0x47,0x46,iVar2,iVar4,bVar5,cVar6,uVar8);
     if (uVar7 != 0) {
       pHVar1 = this->field_0453;
@@ -175,8 +182,10 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
       if (-1 < (int)uVar8) {
         st::fn_006B3430((int *)g_ddxContext_008075A8,uVar8);
       }
+      /* ST_CALLSITE[005C0790]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       st::fn_004055F1(this->field_0453);
     }
+    /* ST_CALLSITE[005C079B]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
     st::fn_004055F1(this->field_0453);
   }
   pHVar1 = (HoloTy *)st::fn_0072E530(0x33);
@@ -206,6 +215,7 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
     bVar5 = 0x10;
     iVar4 = 1;
     iVar2 = st::fn_006BF9F0((int *)g_ddxContext_008075A8,0x1a,10,0x2e9,0x32);
+    /* ST_CALLSITE[005C0812]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
     local_EAX_546 = st::fn_0040459D(this->field_0457,CASE_3,0x1a,10,iVar2,iVar4,bVar5,cVar6,uVar8);
     if (local_EAX_546 != 0) {
       pHVar1 = this->field_0457;
@@ -215,10 +225,13 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
       if (-1 < (int)uVar8) {
         st::fn_006B3430((int *)g_ddxContext_008075A8,uVar8);
       }
+      /* ST_CALLSITE[005C084B]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       st::fn_004055F1(this->field_0457);
     }
+    /* ST_CALLSITE[005C0856]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
     st::fn_004055F1(this->field_0457);
   }
+  /* ST_CALLSITE[005C0862]: CALL 0x00403738; direct=00403738 PutDDX */
   st::fn_00403738(0,0,'\x01',(BITMAPINFO *)this->field_005D);
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {

@@ -110,21 +110,25 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
   this_00 = local_14;
   local_14->field_0065 = param_1;
   if (local_14->field_1F23 != nullptr) {
+    /* ST_CALLSITE[00597F0F]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     HoloTy::Done(local_14->field_1F23);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1F23);
     this_00->field_1F23 = nullptr;
   }
   if (this_00->field_1F27 != nullptr) {
+    /* ST_CALLSITE[00597F33]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     HoloTy::Done(this_00->field_1F27);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1F27);
     this_00->field_1F27 = nullptr;
   }
   if (this_00->field_1F2B != nullptr) {
+    /* ST_CALLSITE[00597F57]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     HoloTy::Done(this_00->field_1F2B);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1F2B);
     this_00->field_1F2B = nullptr;
   }
   if (this_00->field_1F2F != nullptr) {
+    /* ST_CALLSITE[00597F7B]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     HoloTy::Done(this_00->field_1F2F);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1F2F);
     this_00->field_1F2F = nullptr;
@@ -132,6 +136,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
   switch(this_00->field_0065) {
   case CASE_6:
     if (this_00->field_1ABB != '\0') {
+      /* ST_CALLSITE[00597FBB]: CALL 0x0040165e; direct=0040165E FSGSTy::PrepBkgMess */
       PrepBkgMess(this_00,'\0');
     }
     puVar1 = this_00->field_1AC0;
@@ -190,6 +195,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
       bVar10 = 0x10;
       iVar9 = 1;
       iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0xb4,0xaa,0x1b8,0x106);
+      /* ST_CALLSITE[0059813E]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_718 =
            HoloTy::Init(this_00->field_1F23,CASE_2,0xb4,0xaa,iVar6,iVar9,bVar10,cVar11,uVar16);
       if (local_EAX_718 != 0) {
@@ -200,6 +206,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
         if (-1 < (int)uVar16) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar16);
         }
+        /* ST_CALLSITE[00598175]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         HoloTy::NextFas(this_00->field_1F23);
         FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
       }
@@ -278,6 +285,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
         bVar10 = 0x10;
         iVar9 = 1;
         iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x22,0x72,0x2e1,0x14c);
+        /* ST_CALLSITE[005985BA]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
         local_EAX_1866 =
              HoloTy::Init(this_00->field_1F23,CASE_2,0x22,0x72,iVar6,iVar9,bVar10,cVar11,uVar16);
         if (local_EAX_1866 != 0) {
@@ -288,6 +296,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
           if (-1 < (int)uVar16) {
             Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar16);
           }
+          /* ST_CALLSITE[005985F2]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
           HoloTy::NextFas(this_00->field_1F23);
         }
       }
@@ -338,6 +347,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
           iVar9 = 1;
           iVar6 = Library::DKW::DDX::FUN_006bf9f0
                             ((int *)g_ddxContext_008075A8,0x22,0x5e,0x2e1,0x175);
+          /* ST_CALLSITE[0059872A]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
           local_EAX_2234 =
                HoloTy::Init(this_00->field_1F23,CASE_2,0x22,0x5e,iVar6,iVar9,bVar10,cVar11,uVar16);
           if (local_EAX_2234 != 0) {
@@ -348,6 +358,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
             if (-1 < (int)uVar16) {
               Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar16);
             }
+            /* ST_CALLSITE[00598761]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
             HoloTy::NextFas(this_00->field_1F23);
             FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
           }
@@ -362,6 +373,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
           if (this_00->field_1ABB != '\0') {
             cVar11 = '\0';
 LAB_00598221:
+            /* ST_CALLSITE[00598223]: CALL 0x0040165e; direct=0040165E FSGSTy::PrepBkgMess */
             PrepBkgMess(this_00,cVar11);
           }
           break;
@@ -373,23 +385,28 @@ LAB_00598221:
         }
         switch(this_00->array_00BC[0xc].field_01DF) {
         case 2:
+          /* ST_CALLSITE[00598241]: CALL 0x0040334b; direct=0040334B FSGSTy::PaintLogLogin */
           PaintLogLogin(this_00);
           local_c = (ushort *)0x2553;
           break;
         case 4:
+          /* ST_CALLSITE[00598251]: CALL 0x00401c49; direct=00401C49 FSGSTy::PaintLogNew */
           PaintLogNew(this_00);
           DAT_0080735f = 0;
           local_c = (ushort *)0x2552;
           break;
         case 5:
+          /* ST_CALLSITE[00598268]: CALL 0x004034a4; direct=004034A4 FSGSTy::PaintLogPsw */
           PaintLogPsw(this_00);
           local_c = (ushort *)0x2562;
           break;
         case 7:
+          /* ST_CALLSITE[00598278]: CALL 0x004022c0; direct=004022C0 FSGSTy::PaintGameNew */
           PaintGameNew(this_00);
           local_c = (ushort *)0x255b;
           break;
         case 10:
+          /* ST_CALLSITE[00598288]: CALL 0x004024be; direct=004024BE FSGSTy::PaintInfo */
           PaintInfo(this_00);
           local_c = (ushort *)0x259c;
         }
@@ -425,6 +442,7 @@ LAB_00598221:
           iVar9 = 1;
           iVar6 = Library::DKW::DDX::FUN_006bf9f0
                             ((int *)g_ddxContext_008075A8,0xb4,uVar16,0x1b8,local_10);
+          /* ST_CALLSITE[00598370]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
           local_EAX_1280 =
                HoloTy::Init(this_00->field_1F23,CASE_2,0xb4,uVar16,iVar6,iVar9,bVar10,cVar11,uVar15);
           if (local_EAX_1280 != 0) {
@@ -435,6 +453,7 @@ LAB_00598221:
             if (-1 < (int)uVar16) {
               Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar16);
             }
+            /* ST_CALLSITE[005983A7]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
             HoloTy::NextFas(this_00->field_1F23);
             FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
           }
@@ -563,6 +582,7 @@ LAB_00598221:
       bVar10 = 0x10;
       iVar9 = 1;
       iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x13,0x5e,0x1bf,0x175);
+      /* ST_CALLSITE[00598B2F]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_3263 =
            HoloTy::Init(this_00->field_1F27,CASE_4,0x13,0x5e,iVar6,iVar9,bVar10,cVar11,uVar16);
       if (local_EAX_3263 != 0) {
@@ -573,6 +593,7 @@ LAB_00598221:
         if (-1 < (int)uVar16) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar16);
         }
+        /* ST_CALLSITE[00598B66]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         HoloTy::NextFas(this_00->field_1F27);
         if (this_00->field_1B2C != 0xffffffff) {
           FUN_006b3af0((int *)this_00->field_1B70,this_00->field_1B2C);
@@ -651,6 +672,7 @@ LAB_00598221:
       bVar10 = 0x10;
       iVar9 = 1;
       iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x1e9,0x5e,0x124,0x175);
+      /* ST_CALLSITE[00598DB1]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_3905 =
            HoloTy::Init(this_00->field_1F2B,CASE_2,0x1e9,0x5e,iVar6,iVar9,bVar10,cVar11,uVar16);
       if (local_EAX_3905 != 0) {
@@ -661,6 +683,7 @@ LAB_00598221:
         if (-1 < (int)uVar16) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar16);
         }
+        /* ST_CALLSITE[00598DE8]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         HoloTy::NextFas(this_00->field_1F2B);
         if (this_00->field_1CDF != 0xffffffff) {
           FUN_006b3af0((int *)this_00->field_1D23,this_00->field_1CDF);
@@ -722,6 +745,7 @@ LAB_00598221:
       bVar10 = 0x10;
       iVar9 = 1;
       iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x199,0x5e,0x174,0x175);
+      /* ST_CALLSITE[00598F87]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       uVar14 = HoloTy::Init(this_00->field_1F2F,CASE_2,0x199,0x5e,iVar6,iVar9,bVar10,cVar11,uVar16);
       if (uVar14 != 0) {
         pHVar5 = this_00->field_1F2F;
@@ -731,6 +755,7 @@ LAB_00598221:
         if (-1 < (int)uVar16) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar16);
         }
+        /* ST_CALLSITE[00598FBE]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         HoloTy::NextFas(this_00->field_1F2F);
       }
     }
@@ -800,6 +825,7 @@ LAB_00598221:
       bVar10 = 0x10;
       iVar9 = 1;
       iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x13,0x5e,0x174,0x175);
+      /* ST_CALLSITE[005991B8]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_4936 =
            HoloTy::Init(this_00->field_1F2B,CASE_4,0x13,0x5e,iVar6,iVar9,bVar10,cVar11,uVar16);
       if (local_EAX_4936 != 0) {
@@ -810,6 +836,7 @@ LAB_00598221:
         if (-1 < (int)uVar16) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar16);
         }
+        /* ST_CALLSITE[005991EF]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         HoloTy::NextFas(this_00->field_1F2B);
         if (this_00->field_1CDF != 0xffffffff) {
           FUN_006b3af0((int *)this_00->field_1D23,this_00->field_1CDF);
@@ -851,7 +878,9 @@ switchD_00597fa6_caseD_9:
       puVar4 = puVar4 + 1;
     }
     *(undefined2 *)puVar4 = 0xffff;
+    /* ST_CALLSITE[005992F5]: CALL 0x00401717; direct=00401717 MMsgTy::SetPanel */
     MMsgTy::SetPanel(pSVar2->field_02E6,0,(int)&local_210,0,0);
+    /* ST_CALLSITE[0059930D]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
     MMsgTy::StatePanel((this_00->array_00BC[0xc].field_01DB)->field_02E6,(int)local_270);
   }
   if (g_cursorClass_00802A30 != nullptr) {

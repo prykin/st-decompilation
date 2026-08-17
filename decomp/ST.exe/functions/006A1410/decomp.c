@@ -22,6 +22,7 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
   local_c = 0;
   local_8 = 0;
   if (param_6 != nullptr) {
+    /* ST_CALLSITE[006A1439]: CALL EAX */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)param_6)(param_2,param_3,param_4,param_7);
   }
@@ -32,6 +33,7 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
     if ((int)(iVar4 - (local_10 >> 8 & 0xf)) < iVar4) {
       do {
         if (param_6 != nullptr) {
+          /* ST_CALLSITE[006A1490]: CALL EAX */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)param_6)(param_2,param_3,iVar3,param_7);
         }

@@ -39,6 +39,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
     piVar4 = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (piVar4 == nullptr) {
       iVar9 = 1;
+      /* ST_CALLSITE[0053FD51]: CALL dword ptr [EBP + 0xc] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar5 = (*(code *)param_2)(param_1);
       iVar8 = 2;
@@ -47,6 +48,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
       local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar6,piVar4,iVar9);
       iVar8 = local_c;
       pPVar3 = local_14;
+      /* ST_CALLSITE[0053FD94]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,'\x01',
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
@@ -55,6 +57,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
         piVar4 = nullptr;
         pCVar6 = thunk_FUN_00571240("BUT_BLDFRAME",0);
         local_8 = cMf32::RecGet(g_cMf32_00806790,6,pCVar6,piVar4,iVar9);
+        /* ST_CALLSITE[0053FDE4]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_10,iVar8,'\x06',
                (byte *)local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);

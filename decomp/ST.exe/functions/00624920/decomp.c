@@ -182,6 +182,7 @@ STMineSetC::sub_00624920
                ((sVar4 < 0 ||
                 (((g_worldGrid.sizeY <= sVar4 || (sVar14 < 0)) || (g_worldGrid.sizeZ <= sVar14))))))
               || (STGridAt3D(g_worldGrid, sVar3, sVar4, sVar14).objects[(byte)this->field_008E] == nullptr)) &&
+             /* ST_CALLSITE[00624F03]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
              (iVar7 = DumpClassC::WritePtr
                                 (sVar3,sVar4,sVar14,this->field_008E,
                                  (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar7 == 0)) {
@@ -189,10 +190,12 @@ STMineSetC::sub_00624920
             this->field_0314 = this->field_0314 + '\x01';
             if (SVar1 < 3) {
               if (g_visibleClass_00802A88 != nullptr) {
+                /* ST_CALLSITE[0062502B]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */
                 VisibleClassTy::sub_00559110
                           (g_visibleClass_00802A88,(int)this->field_0047,
                            (undefined *)(int)this->field_0049,(int)this->field_004B,this->field_0024
                            ,*(int *)(&DAT_007d02b4 + (uint)SVar1 * 4),this->field_0018,0xffffffff);
+                /* ST_CALLSITE[0062505B]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
                 VisibleClassTy::sub_00558DC0
                           (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                            puVar13,(int *)this->field_0024,
@@ -201,19 +204,23 @@ STMineSetC::sub_00624920
               }
             }
             else if ((SVar1 == 3) && (g_visibleClass_00802A88 != nullptr)) {
+              /* ST_CALLSITE[00624F62]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */
               VisibleClassTy::sub_00559110
                         (g_visibleClass_00802A88,(int)this->field_0047,
                          (undefined *)(int)this->field_0049,(int)this->field_004B,this->field_0024,
                          DAT_007d02c0,this->field_0018,0xffffffff);
+              /* ST_CALLSITE[00624F94]: CALL 0x00404291; direct=00404291 VisibleClassTy::sub_00559D60 */
               VisibleClassTy::sub_00559D60
                         (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                          (char)this->field_004B,this->field_0024,
                          *(int *)(&DAT_007d02b4 + (uint)this->field_02AD * 4),this->field_0018);
+              /* ST_CALLSITE[00624FC4]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
               VisibleClassTy::sub_00558DC0
                         (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,puVar13
                          ,(int *)this->field_0024,
                          *(uint *)(&DAT_007d02b4 + (uint)this->field_02AD * 4),
                          (int *)this->field_0018,0xffffffff);
+              /* ST_CALLSITE[00624FF4]: CALL 0x0040141f; direct=0040141F VisibleClassTy::SetZoneAst */
               VisibleClassTy::SetZoneAst
                         (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                          (char)puVar13,this->field_0024,

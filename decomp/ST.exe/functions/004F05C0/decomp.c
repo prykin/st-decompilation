@@ -83,6 +83,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   puVar5 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar13,iVar8);
   this_00->field_0184 = puVar5;
   pCVar4 = thunk_FUN_00571240("BKG_BLDOBJBUT",0);
+  /* ST_CALLSITE[004F0696]: CALL dword ptr [0x0085bde8] */
   wsprintfA(&this_00->field_006C,"%s0",pCVar4);
   puVar5 = cMf32::RecGet(g_cMf32_00806790,1,&this_00->field_006C,nullptr,1);
   this_00->field_027A = puVar5;
@@ -93,6 +94,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
                      (PTR_00806794,CASE_B,"OBJSD",0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar5;
   pCVar4 = thunk_FUN_00571240("BKG_BLDOBJBUT",0);
+  /* ST_CALLSITE[004F0740]: CALL 0x00404241; direct=00404241 ProdPanelTy::InitProdPanel */
   ProdPanelTy::InitProdPanel
             ((ProdPanelTy *)this_00,0x2724,0x36,2,0xc1,0xc,0x79,99,0x5b,0xb7,99,0x1c,
              (DAT_0080874e == '\x03') + 0x13,0x31,pCVar4);
@@ -166,6 +168,7 @@ switchD_004f0850_default:
   local_24 = 1;
   local_20 = 1;
   local_44 = local_64;
+  /* ST_CALLSITE[004F0900]: CALL dword ptr [EDX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;

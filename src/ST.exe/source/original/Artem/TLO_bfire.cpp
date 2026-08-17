@@ -12,6 +12,9 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
 {
   alignas(4) byte st_stack_frame[100];
 
+  uint32_t _local_10;
+  uint32_t _local_14;
+
   AnonPointee_TLOBaseTy_0291 *pAVar1;
   TLOBaseTy *this_00;
   short sVar3;
@@ -62,13 +65,14 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
             bVar9 = uVar4 < puVar8[1] + *(int *)(&DAT_00792040 + this_00->field_0235 * 4) * 10;
             if (!bVar9) {
               puVar8[1] = uVar4;
+              /* ST_CALLSITE[004C363A]: CALL 0x0040239c; direct=0040239C TLOBaseTy::fireFindCheckTarget */
               st::fn_0040239C(this_00,(int)local_8,0);
             }
-            if ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != nullptr) {
+            if ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != 0) {
               puVar8[0xc] = g_playSystem_00802A38->field_00E4;
               puVar8[0xd] = 100;
               if ((bVar9) ||
-                 ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == nullptr)) {
+                 ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == 0)) {
                 puVar8[3] = 0;
                 st::fn_006E62D0
                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)puVar8[2],
@@ -87,6 +91,7 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
                 if ((st_stack_frame + 96) != &DAT_0000000c) {
                   local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(this_00->field_0045));
                 }
+                /* ST_CALLSITE[004C36E1]: CALL dword ptr [EDX + 0x10] */
                 sVar3 = (*this_00->vtable->vfunc_10)
                                   (pAVar1->field_0041,pAVar1->field_0043,
                                    STReplaceLowWord((uint32_t)(_local_14), (uint16_t)(pAVar1->field_0045)),
@@ -95,12 +100,13 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
                 if (puVar8[-2] == 8) {
                   iVar6 = (iVar6 / 0x2d) * 0x2d;
                 }
+                /* ST_CALLSITE[004C3726]: CALL 0x004035a3; direct=004035A3 TLOBaseTy::sub_004C34A0 */
                 st::fn_004035A3(this_00,iVar6);
               }
             }
           }
           if (((this_00->field_0255 != 0) && (puVar8[-4] != 0)) &&
-             ((AnonShape_005EFAE0_B406B78B *)puVar8[2] == nullptr)) {
+             ((AnonShape_005EFAE0_B406B78B *)puVar8[2] == 0)) {
             if (puVar8[0xb] == 0) {
               if (puVar8[0xd] + puVar8[0xc] <= g_playSystem_00802A38->field_00E4) {
                 puVar8[0xc] = g_playSystem_00802A38->field_00E4;
@@ -112,11 +118,13 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
                   puVar8[0xe] = uVar4;
                 } while (uVar4 == this_00->field_0259);
                 if (*(int *)(&DAT_00795afc + this_00->field_0235 * 4) != 0) {
+                  /* ST_CALLSITE[004C380C]: CALL dword ptr [EDX + 0x90] */
                   this_00->vfunc_90(3,(short)*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
                 }
               }
             }
             else {
+              /* ST_CALLSITE[004C375C]: CALL 0x004035a3; direct=004035A3 TLOBaseTy::sub_004C34A0 */
               uVar4 = st::fn_004035A3(this_00,puVar8[0xe]);
               puVar8[0xb] = uVar4;
               if (uVar4 == 0) {
@@ -137,15 +145,17 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
           if (((*(int *)(&DAT_00793e28 + iVar6 * 4) == 0) ||
               (*(int *)(&DAT_007932d0 + iVar6 * 0x16) <= (int)puVar8[0x10])) ||
              ((puVar8[0x10] != 0 && (0 < (int)local_8)))) {
+            /* ST_CALLSITE[004C3882]: CALL 0x0040239c; direct=0040239C TLOBaseTy::fireFindCheckTarget */
             st::fn_0040239C(this_00,(int)local_8,1);
             if (((*(int *)(&DAT_00792a90 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 2) ||
                 ((*(int *)(&DAT_00792a90 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 3 &&
+                 /* ST_CALLSITE[004C38A4]: CALL 0x00401087; direct=00401087 TLOBaseTy::sub_004C56B0 */
                  (iVar6 = st::fn_00401087(this_00,piVar7), iVar6 != 0)))) ||
-               ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != nullptr)) {
+               ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != 0)) {
               puVar8[0xc] = g_playSystem_00802A38->field_00E4;
               puVar8[0xd] = 100;
-              if ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != nullptr) {
-                if ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == nullptr) {
+              if ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != 0) {
+                if ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == 0) {
                   st::fn_006E62D0
                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)puVar8[2],
                              (int *)(puVar8 + 3));
@@ -156,9 +166,11 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
               }
               puVar8[6] = 0;
               if (*(int *)(&DAT_007915f0 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 0) {
+                /* ST_CALLSITE[004C3934]: CALL 0x00403efe; direct=00403EFE TLOBaseTy::sub_004C4550 */
                 st::fn_00403EFE(this_00,piVar7);
               }
               else {
+                /* ST_CALLSITE[004C392A]: CALL 0x004010aa; direct=004010AA TLOBaseTy::SetState */
                 st::fn_004010AA(this_00,5,1);
               }
             }
@@ -213,6 +225,9 @@ int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
 
 {
   alignas(4) byte st_stack_frame[200];
+
+  uint32_t _local_2c;
+  uint32_t _local_34;
 
   byte bVar1;
   byte bVar2;
@@ -344,11 +359,14 @@ int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
                       }
                       if (((((TLOBaseTy *)local_8 != nullptr) &&
                            ((TLOBaseTy *)local_8 != this_00)) &&
+                          /* ST_CALLSITE[004C3DF8]: CALL dword ptr [EDX + 0xf8] */
                           (dVar7 = (*((TLOBaseTy *)local_8)->vtable->slot_F8)((TLOBaseTy *)local_8),
                           iVar15 = local_18, iVar17 = local_28, dVar7 != 0)) &&
                          ((local_8->field_0024 != 0xff &&
+                          /* ST_CALLSITE[004C3E1C]: CALL dword ptr [EAX + 0xf4] */
                           (iVar9 = (*local_8->vtable->vfunc_F4)(st::machine_word_boundary_cast<undefined4>(this_00->field_0024)),
                           iVar15 = local_18, iVar17 = local_28, iVar9 != 0)))) {
+                        /* ST_CALLSITE[004C3E39]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                         st::fn_004018C5(local_8,&local_12,&local_14,&local_a);
                         st::fn_004031E3(local_8,(uint *)local_40,(int *)local_38,local_1c);
                         iVar15 = (int)(short)local_30;
@@ -362,6 +380,7 @@ int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
                             STField<int>(local_10,0x281)) {
                           STField<uint>(local_10,0x295) = g_playSystem_00802A38->field_00E4;
                           if ((param_2 == 0) || (this_00->field_0255 == 0)) goto LAB_004c4080;
+                          /* ST_CALLSITE[004C3EE9]: CALL dword ptr [EDX + 0x10] */
                           sVar6 = (*this_00->vtable->vfunc_10)
                                             (*(short *)&local_8->field_0x41,
                                              *(short *)&local_8->field_0x43,
@@ -441,6 +460,7 @@ LAB_004c4192:
                                   }
                                   else {
 LAB_004c41a5:
+                                    /* ST_CALLSITE[004C41A9]: CALL dword ptr [EAX + 0xf0] */
                                     iVar9 = local_8->vfunc_F0();
                                     iVar15 = local_18;
                                     iVar17 = local_28;
@@ -454,6 +474,7 @@ LAB_004c41a5:
                                         iVar9 = *(int *)&local_8->field_0x215;
                                       }
                                       else {
+                                        /* ST_CALLSITE[004C41F1]: CALL dword ptr [EDX + 0x7c] */
                                         iVar9 = local_8->vfunc_7C();
                                       }
                                       iVar15 = local_18;
@@ -490,6 +511,7 @@ LAB_004c41a5:
                                   local_68 = (short)*puVar12;
                                   sStack_66 = (short)((uint)*puVar12 >> 0x10);
                                   local_64 = *(short *)(puVar12 + 1);
+                                  /* ST_CALLSITE[004C401E]: CALL 0x00405907; direct=00405907 STSprGameObjC::CheckRay */
                                   iVar17 = st::fn_00405907
                                                      ((STSprGameObjC *)this_00,
                                                       local_68 + (short)_local_2c,

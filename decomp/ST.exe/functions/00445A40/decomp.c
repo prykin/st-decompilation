@@ -87,8 +87,10 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     do {
       DArrayGetElement(local_18,uVar7,local_8);
       this_01 = local_34;
+      /* ST_CALLSITE[00445B03]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar2 = GetObjPtr(local_34,objPtr,local_8[0],CASE_1);
       if ((pSVar2 == nullptr) ||
+         /* ST_CALLSITE[00445B10]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
          (iVar4 = (*pSVar2->vtable[1].vfunc_24)(pSVar2), iVar4 == 0)) {
         DArrayRemoveAt(local_18,uVar7);
         uVar6 = uVar6 - 1;
@@ -107,8 +109,10 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   if (0 < (int)local_c) {
     do {
       DArrayGetElement(local_14,uVar6,local_8);
+      /* ST_CALLSITE[00445B75]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar2 = GetObjPtr(this_01,objPtr,local_8[0],CASE_1);
       if (((pSVar2 == nullptr) || (iVar4 = thunk_FUN_00490d90(pSVar2), iVar4 == 0)) ||
+         /* ST_CALLSITE[00445B8F]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
          ((iVar4 = (*pSVar2->vtable[1].vfunc_24)(pSVar2), iVar4 == 0 || (pSVar2->field_0030 == -1)))
          ) {
         DArrayRemoveAt(local_14,uVar6);
@@ -163,18 +167,24 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       local_24 = &g_packedRecords_A62x8[objPtr].field1976_0x9f6;
       do {
         DArrayGetElement(pDVar5,local_20,local_8);
+        /* ST_CALLSITE[00445CF7]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_00 = (STBoatC *)GetObjPtr(this_01,objPtr,local_8[0],CASE_1);
         local_2c = g_playSystem_00802A38->field_00E4;
+        /* ST_CALLSITE[00445D13]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
         STBoatC::CmdToObj(this_00,CASE_21,&local_2c);
+        /* ST_CALLSITE[00445D29]: CALL 0x004027c5; direct=004027C5 STAllPlayersC::_DeleteGuardBoat */
         if ((*local_24 != 0) && (iVar4 = _DeleteGuardBoat(this_01,objPtr,local_8[0],1), iVar4 == -1)
            ) {
+          /* ST_CALLSITE[00445D3C]: CALL 0x004027c5; direct=004027C5 STAllPlayersC::_DeleteGuardBoat */
           _DeleteGuardBoat(this_01,objPtr,local_8[0],0);
         }
         local_20 = local_20 + 1;
       } while ((int)local_20 < (int)local_30);
     }
     if (g_packedRecords_A62x8[objPtr].field1976_0x9f6 != 0) {
+      /* ST_CALLSITE[00445D6E]: CALL 0x004017fd; direct=004017FD STAllPlayersC::OptimizeGuardBoats */
       OptimizeGuardBoats(this_01,objPtr);
+      /* ST_CALLSITE[00445D76]: CALL 0x0040100a; direct=0040100A STAllPlayersC::DistributeGuardBoats */
       DistributeGuardBoats(this_01,objPtr);
     }
     RaiseInternalException
@@ -223,8 +233,10 @@ LAB_00445e36:
     do {
       if (*local_24 == 0) break;
       DArrayGetElement(local_14,uVar6,local_8);
+      /* ST_CALLSITE[00445E79]: CALL 0x004027c5; direct=004027C5 STAllPlayersC::_DeleteGuardBoat */
       iVar4 = _DeleteGuardBoat(this_01,objPtr,local_8[0],1);
       if (iVar4 == -1) {
+        /* ST_CALLSITE[00445E8C]: CALL 0x004027c5; direct=004027C5 STAllPlayersC::_DeleteGuardBoat */
         _DeleteGuardBoat(this_01,objPtr,local_8[0],0);
       }
       uVar6 = uVar6 + 1;
@@ -236,6 +248,7 @@ LAB_00445e36:
     do {
       if (*local_24 == 0) break;
       DArrayGetElement(local_18,uVar6,local_8);
+      /* ST_CALLSITE[00445EDC]: CALL 0x004027c5; direct=004027C5 STAllPlayersC::_DeleteGuardBoat */
       _DeleteGuardBoat(this_01,objPtr,local_8[0],1);
       uVar6 = uVar6 + 1;
     } while ((int)uVar6 < (int)local_10);
@@ -251,7 +264,9 @@ LAB_00445e36:
   }
   Library::DKW::TBL::DArrayAppend
             ((DArrayTy *)g_packedRecords_A62x8[objPtr].field1976_0x9f6,&local_44);
+  /* ST_CALLSITE[00445F74]: CALL 0x004017fd; direct=004017FD STAllPlayersC::OptimizeGuardBoats */
   OptimizeGuardBoats(this_01,objPtr);
+  /* ST_CALLSITE[00445F7C]: CALL 0x0040100a; direct=0040100A STAllPlayersC::DistributeGuardBoats */
   DistributeGuardBoats(this_01,objPtr);
   if (local_18 != nullptr) {
     DArrayDestroy(local_18);

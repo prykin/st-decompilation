@@ -267,6 +267,7 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
     puVar11 = puVar11 + 1;
     iVar10 = iVar10 + -1;
   } while (iVar10 != 0);
+  /* ST_CALLSITE[0052FB83]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)this_00->field_0184
         );
   ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x31,2,0xc6,0xc);
@@ -296,6 +297,7 @@ LAB_00530592:
 LAB_005305a9:
     pRVar26 = (RecoveredSourceFamily_dibcopy *)this_00->field_0068;
 LAB_005305b4:
+    /* ST_CALLSITE[005305B4]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(pRVar26,0x1d,0x13,'\x01',(byte *)puVar9);
     goto cf_common_join_005305BC;
   case CASE_5:
@@ -428,6 +430,7 @@ LAB_0052fd4a:
       }
       pcVar28 = local_984;
       pcVar7_mg26 = LoadResourceString(UVar25,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0052FD92]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&this_00->field_006C,pcVar7_mg26,pcVar28);
       break;
     default:
@@ -582,11 +585,13 @@ LAB_0052ff02:
       }
       pcVar28 = local_880;
       pcVar7_mg1C = LoadResourceString(UVar25,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0052FF3E]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&this_00->field_006C,pcVar7_mg1C,pcVar28);
       break;
     case CASE_A:
       uVar31 = (uint)(byte)this_00->field_01AC;
       pcVar7_mg11 = LoadResourceString(this_00->field_01A5,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0052FF6A]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&this_00->field_006C,pcVar7_mg11,uVar31);
     }
     if (DAT_0080874e == '\x03') {
@@ -709,15 +714,19 @@ LAB_00530554:
     iVar10 = -2;
     pcVar7_mg3 = LoadResourceString(0x3efa,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,pcVar7_mg3,iVar10,iVar29,uVar31);
+    /* ST_CALLSITE[0053013D]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0xaa,0x6f,'\x01',
            (byte *)this_00->field_018C);
     resourceString = &this_00->field_006C;
+    /* ST_CALLSITE[00530159]: CALL EDI */
     wsprintfA(resourceString,"%d",(uint)DAT_00807346);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x6f,
                      *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
     ccFntTy::WrStr(this_00->field_017C,resourceString,-2,-1,0);
+    /* ST_CALLSITE[005301AD]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0xaa,0x81,'\x01',
            (byte *)this_00->field_018C);
+    /* ST_CALLSITE[005301C1]: CALL EDI */
     wsprintfA(resourceString,"%d",DAT_00807347 + 1);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x81,
                      *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
@@ -757,6 +766,7 @@ cf_common_join_005305BC:
       sVar23 = 0;
       iVar21 = uVar8 + 0xc09f;
       pCVar7 = thunk_FUN_00571240("BUT_BUTOPT",0);
+      /* ST_CALLSITE[00530650]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
       uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,1,iVar10,0x1d,uVar8 * 0x12 + 0x13,1,pCVar7,
                                    iVar21,iVar29,sVar23,uVar24,uVar6,pcVar28,uVar22,uVar27);
       this_00->field_01B5[uVar8] = uVar31;
@@ -780,6 +790,7 @@ cf_common_join_005305BC:
       sVar23 = 0;
       iVar20 = iVar10;
       pCVar7 = thunk_FUN_00571240("BUT_BUTOPT",0);
+      /* ST_CALLSITE[0053077F]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
       uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,1,1,0x1d,iVar29,1,pCVar7,iVar20,iVar21,sVar23
                                    ,uVar24,uVar6,pcVar28,uVar22,uVar27);
       iVar10 = iVar10 + 1;
@@ -795,6 +806,7 @@ cf_common_join_005305BC:
   case CASE_E:
     if (this_00->field_01A4 != CASE_E) {
       if (this_00->field_01DD != (HANDLE)0x0) {
+        /* ST_CALLSITE[00531402]: CALL dword ptr [0x0085bcac] */
         FindCloseChangeNotification(this_00->field_01DD);
         this_00->field_01DD = (HANDLE)0x0;
       }
@@ -863,6 +875,7 @@ cf_common_join_005305BC:
       pcVar14 = pcVar13 + -1;
       memmove(pcVar14, pcVar28, uVar31); /* compiler REP MOVS byte copy */
       FUN_006b78c0(&this_00->field_006C,&this_00->field_006C);
+      /* ST_CALLSITE[005314A1]: CALL dword ptr [0x0085bcfc] */
       pvVar5 = FindFirstChangeNotificationA(&this_00->field_006C,0,1);
       this_00->field_01DD = pvVar5;
       if (pvVar5 == (HANDLE)0xffffffff) {
@@ -943,6 +956,7 @@ cf_common_join_005305BC:
     local_3b8 = 0x32;
     local_468 = 2;
     local_464 = 0x8165;
+    /* ST_CALLSITE[00531727]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,7,this_00->field_01B5,nullptr,local_77c,0);
     if ((this_00->field_005C == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {
@@ -983,6 +997,7 @@ cf_common_join_005305BC:
       local_19f4 = 0xc0a0;
       local_1a88[2] = pcVar2;
       local_19fc = local_1a3c;
+      /* ST_CALLSITE[0053183E]: CALL dword ptr [EAX + 0x8] */
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,6,this_00->field_01B5 + 1,nullptr,
                  local_1a88,1);
@@ -997,13 +1012,16 @@ cf_common_join_005305BC:
     uVar6 = 0xc0a1;
     if (this_00->field_01A4 == CASE_E) {
       pCVar7 = thunk_FUN_00571240("BUT_MEDIUM",0);
+      /* ST_CALLSITE[005318F0]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
       uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x78,0x7d,1,pCVar7,uVar6,uVar22,sVar23,
                                    uVar24,uVar27,pcVar28,uVar30,uVar32);
       this_00->field_01B5[2] = uVar31;
+      /* ST_CALLSITE[005318FD]: CALL 0x004017a8; direct=004017A8 OptPanelTy::PrepAsses */
       PrepAsses(this_00);
     }
     else {
       pCVar7 = thunk_FUN_00571240("BUT_MEDIUM",0);
+      /* ST_CALLSITE[0053187D]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
       uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x5d,0x7c,1,pCVar7,uVar6,uVar22,sVar23,
                                    uVar24,uVar27,pcVar28,uVar30,uVar32);
       uVar32 = 0;
@@ -1016,11 +1034,13 @@ cf_common_join_005305BC:
       uVar6 = 0xc0a2;
       this_00->field_01B5[2] = uVar31;
       pCVar7 = thunk_FUN_00571240("BUT_MEDIUM",0);
+      /* ST_CALLSITE[005318BD]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
       uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x94,0x7c,1,pCVar7,uVar6,uVar22,sVar23,
                                    uVar24,uVar27,pcVar28,uVar30,uVar32);
       this_00->field_01B5[3] = uVar31;
       STPiece<0,2>(uVar31) = this_00->field_01E1;
       STPiece<2,2>(uVar31) = this_00->field_01E3;
+      /* ST_CALLSITE[005318D1]: CALL 0x00403fbc; direct=00403FBC OptPanelTy::PrepFiles */
       PrepFiles(this_00,uVar31);
     }
     break;
@@ -1034,6 +1054,7 @@ cf_common_join_005305BC:
     uVar22 = 0xc0af;
     uVar6 = 0xc09f;
     pCVar7 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[005306A3]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
     uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x5e,0x7d,1,pCVar7,uVar6,uVar22,sVar23,
                                  uVar24,uVar27,pcVar28,uVar30,uVar32);
     uVar32 = 0;
@@ -1046,6 +1067,7 @@ cf_common_join_005305BC:
     uVar6 = 0xc0a0;
     this_00->field_01B5[0] = uVar31;
     pCVar7 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[005306E3]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
     uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x97,0x7d,1,pCVar7,uVar6,uVar22,sVar23,
                                  uVar24,uVar27,pcVar28,uVar30,uVar32);
     this_00->field_01B5[1] = uVar31;
@@ -1066,6 +1088,7 @@ cf_common_join_005305BC:
       sVar23 = 0;
       iVar21 = iVar10;
       pCVar7 = thunk_FUN_00571240("BUT_BUTOPT",0);
+      /* ST_CALLSITE[00530C60]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
       uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,3,(-(uint)(bVar4 != 0) & 2) + 1,0x1d,
                                    (int)local_c,1,pCVar7,iVar21,iVar29,sVar23,uVar24,uVar6,pcVar28,
                                    uVar22,uVar27);
@@ -1187,8 +1210,10 @@ LAB_00530da0:
       }
       uVar16 = local_2c & 0xff;
       iVar10 = local_24 + uVar16 * 0xd + 0x29;
+      /* ST_CALLSITE[00530EE7]: CALL 0x00403ee0; direct=00403EE0 OptPanelTy::CreateSlider */
       uVar8 = CreateSlider(this_00,0x6d,iVar10,0xf9,iVar10,uVar16 + 0xc09f,0x1f,uVar31,local_14);
       this_00->field_01B5[uVar16] = uVar8;
+      /* ST_CALLSITE[00530EFC]: CALL 0x00405df3; direct=00405DF3 OptPanelTy::PaintVolume */
       PaintVolume(this_00,(char)local_2c - 4,(byte)uVar31);
       bVar4 = (byte)local_8 + 1;
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
@@ -1204,6 +1229,7 @@ LAB_00530da0:
     else {
       local_2c = STReplaceLowByte((uint32_t)(local_2c), (uint8_t)(1));
     }
+    /* ST_CALLSITE[00530F57]: CALL 0x00402680; direct=00402680 UPanelTy::CreateTab */
     uVar31 = UPanelTy::CreateTab((UPanelTy *)this_00,3,(byte)local_2c,0x1d,0x16,0xe9,0x11,0,0x12,
                                  0xc09f,0xc0af);
     this_00->field_01B5[0] = uVar31;
@@ -1421,8 +1447,10 @@ LAB_0053108f:
 cf_common_join_0053138B:
       uVar16 = local_24 & 0xff;
       iVar10 = local_38 + uVar16 * 0xd + 0x29;
+      /* ST_CALLSITE[005313B9]: CALL 0x00403ee0; direct=00403EE0 OptPanelTy::CreateSlider */
       uVar8 = CreateSlider(this_00,0x6d,iVar10,0xf9,iVar10,uVar16 + 0xc09f,0x1f,uVar31,local_20);
       this_00->field_01B5[uVar16] = uVar8;
+      /* ST_CALLSITE[005313CE]: CALL 0x00405df3; direct=00405DF3 OptPanelTy::PaintVolume */
       PaintVolume(this_00,(char)local_24 - 4,(byte)uVar31);
       pSVar17 = g_sndContext_0080765C;
       bVar4 = (byte)local_8;
@@ -1432,12 +1460,15 @@ switchD_005311ec_caseD_3:
     } while (bVar4 < 8);
     break;
   case CASE_8:
+    /* ST_CALLSITE[00530B86]: CALL 0x00402680; direct=00402680 UPanelTy::CreateTab */
     uVar31 = UPanelTy::CreateTab((UPanelTy *)this_00,3,3 - DAT_0080733b,0x1d,0x20,0x72,0x11,0,0x12,
                                  0xc09f,0xc0af);
     this_00->field_01B5[0] = uVar31;
+    /* ST_CALLSITE[00530BB8]: CALL 0x00402680; direct=00402680 UPanelTy::CreateTab */
     uVar31 = UPanelTy::CreateTab((UPanelTy *)this_00,3,2 - DAT_0080733a,0x99,0x20,0x72,0x11,0,0x12,
                                  0xc0a0,0xc0b0);
     this_00->field_01B5[1] = uVar31;
+    /* ST_CALLSITE[00530BE4]: CALL 0x00402680; direct=00402680 UPanelTy::CreateTab */
     uVar31 = UPanelTy::CreateTab((UPanelTy *)this_00,2,DAT_00807349,0x5d,0x68,0x72,0x11,0,0x12,
                                  0xc0a2,0xc0b2);
     this_00->field_01B5[3] = uVar31;
@@ -1465,6 +1496,7 @@ switchD_005311ec_caseD_3:
       sVar23 = 0;
       iVar29 = (int)local_c + 0xc0af;
       pCVar7 = thunk_FUN_00571240("BUT_BUTOPT",0);
+      /* ST_CALLSITE[00530B35]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
       uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,3,1,0x1d,iVar10,1,pCVar7,iVar21,iVar29,sVar23
                                    ,uVar24,uVar6,pcVar28,uVar22,uVar27);
       iVar10 = iVar10 + 0x12;
@@ -1485,6 +1517,7 @@ switchD_005311ec_caseD_3:
     uVar22 = 0xc0b0;
     uVar6 = 0xc0a0;
     pCVar7 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[00530725]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
     uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x7d,0x7d,1,pCVar7,uVar6,uVar22,sVar23,
                                  uVar24,uVar27,pcVar28,uVar30,uVar32);
     this_00->field_01B5[0] = uVar31;
@@ -1563,6 +1596,7 @@ switchD_005311ec_caseD_3:
     local_e98 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLUP",1);
     local_990 = 1;
     local_994 = 1;
+    /* ST_CALLSITE[00531B6D]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,8,this_00->field_01B5,nullptr,local_11fc,0);
     uVar31 = this_00->field_01B5[0];
@@ -1640,6 +1674,7 @@ switchD_005311ec_caseD_3:
     local_7c = 1;
     local_78 = 1;
     local_9c = local_bc;
+    /* ST_CALLSITE[0053095A]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,5,this_00->field_01B5,nullptr,local_cc,0);
     uVar32 = 0;
@@ -1651,6 +1686,7 @@ switchD_005311ec_caseD_3:
     uVar22 = 0xc0b0;
     uVar6 = 0xc0a0;
     pCVar7 = thunk_FUN_00571240("BUT_BUTOPT",0);
+    /* ST_CALLSITE[0053098D]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
     uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,1,0,0x1d,0x49,1,pCVar7,uVar6,uVar22,sVar23,
                                  uVar24,uVar27,pcVar28,uVar30,uVar32);
     uVar32 = 0;
@@ -1663,15 +1699,18 @@ switchD_005311ec_caseD_3:
     uVar6 = 0xc0a1;
     this_00->field_01B5[1] = uVar31;
     pCVar7 = thunk_FUN_00571240("BUT_BUTOPT",0);
+    /* ST_CALLSITE[005309D5]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
     uVar31 = UPanelTy::CreateBut((UPanelTy *)this_00,3,(-(uint)(DAT_00807342 != 0) & 2) + 1,0x1d,
                                  0x5b,1,pCVar7,uVar6,uVar22,sVar23,uVar24,uVar27,pcVar28,uVar30,
                                  uVar32);
     this_00->field_01B5[2] = uVar31;
+    /* ST_CALLSITE[00530A1D]: CALL 0x00403ee0; direct=00403EE0 OptPanelTy::CreateSlider */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar31 = CreateSlider(this_00,0x94,0x70,*(int *)(this_00->field_018C + 2) + 0xaf,0x70,0xc0a2,3,
                           DAT_00807346 / 5 - 1,1);
     puVar9 = this_00->field_018C;
     this_00->field_01B5[3] = uVar31;
+    /* ST_CALLSITE[00530A59]: CALL 0x00403ee0; direct=00403EE0 OptPanelTy::CreateSlider */
     uVar31 = CreateSlider(this_00,0x94,0x82,*(int *)(puVar9 + 2) + 0xaf,0x82,0xc0a3,3,
                           (uint)DAT_00807347,1);
     this_00->field_01B5[4] = uVar31;

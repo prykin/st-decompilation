@@ -18,6 +18,7 @@ void FUN_007574c0(AnonShape_00753C80_4C8E695D *param_1,int param_2,uint *param_3
 
   sVar2 = param_1->field_000C->field_0034;
   if (sVar2 == 0) {
+    /* ST_CALLSITE[007574DE]: CALL dword ptr [EAX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)&param_1->field_000C->field_0x8)(param_3 + 2);
   }

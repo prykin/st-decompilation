@@ -10,11 +10,13 @@ void __thiscall FUN_0041ce40(void *this,int param_1)
 
   STField<int>(this,0x105) = param_1;
   if (g_visibleClass_00802A88 != nullptr) {
+    /* ST_CALLSITE[0041CE73]: CALL 0x00402c2a; direct=00402C2A VisibleClassTy::sub_005594A0 */
     VisibleClassTy::sub_005594A0
               (g_visibleClass_00802A88,(int)STField<short>(this,0x5b),
                (int)STField<short>(this,0x5d),(char)STField<undefined2>(this,0x5f),
                STField<undefined *>(this,0x24),param_1,STField<uint>(this,0x18),0xffffffff);
   }
+  /* ST_CALLSITE[0041CE7C]: CALL dword ptr [EAX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(*(int *)this + 8))();
   if ((iVar1 == 1) && (STField<uint>(this,0x24) == (uint)DAT_0080874d)) {

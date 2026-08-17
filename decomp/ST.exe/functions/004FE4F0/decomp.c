@@ -72,6 +72,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
         UVar8 = 0x36b1;
         uVar7 = (uint)(byte)(100 - bVar3);
       }
+      /* ST_CALLSITE[004FE606]: CALL 0x00404c7d; direct=00404C7D CPanelTy::PaintDamageXY */
       PaintDamageXY(this_00,(int)pRVar2,5,0x27,(byte)uVar7,UVar8);
       g_currentExceptionFrame = local_5c.previous;
       return;

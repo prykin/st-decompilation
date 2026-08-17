@@ -20,6 +20,7 @@ void __thiscall ChooseMapTy::CloseButtons(ChooseMapTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[005ADF44]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
     MMObjTy::CloseButtons((MMObjTy *)local_8);
     if (this_00->field_20B5 != '\0') {
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
@@ -31,6 +32,7 @@ void __thiscall ChooseMapTy::CloseButtons(ChooseMapTy *this)
     }
     this_00->field_0065 = 4;
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
+    /* ST_CALLSITE[005ADFAB]: CALL 0x0040149c; direct=0040149C ChooseMapTy::DeleteCtrls */
     DeleteCtrls(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return;

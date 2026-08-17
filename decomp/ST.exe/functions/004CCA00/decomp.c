@@ -17,6 +17,7 @@ int __thiscall FUN_004cca00(void *this,int param_1)
                 ) != 0)) {
       return 3;
     }
+    /* ST_CALLSITE[004CCA55]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar1 = LookupRecordByte((char)param_1);
     return ((&DAT_007e1987)
             [(STField<int>(this,0x235) * 3 + STField<int>(this,0x239)) * 3 + (uint)bVar1] !=

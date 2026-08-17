@@ -7,6 +7,7 @@ void FUN_00757280(undefined4 *param_1,undefined4 param_2)
   undefined4 uVar1;
 
   if (param_1[4] == 0) {
+    /* ST_CALLSITE[00757295]: CALL dword ptr [EAX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar1 = (**(code **)*param_1)(param_1,1,0x1c);
     param_1[4] = uVar1;

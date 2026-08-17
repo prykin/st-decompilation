@@ -18,6 +18,7 @@ FUN_0074b5e6(void *this,uint param_1,LPCRITICAL_SECTION lpCriticalSection,uint p
     uVar1 = 0x80004003;
   }
   else {
+    /* ST_CALLSITE[0074B605]: CALL dword ptr [0x0085bb8c] */
     EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 0x7c));
     if ((STField<int>(this,0x18) == 0) || ((int)param_1 < 2)) {
       lpCriticalSection->DebugInfo = (PRTL_CRITICAL_SECTION_DEBUG)0x0;
@@ -31,6 +32,7 @@ FUN_0074b5e6(void *this,uint param_1,LPCRITICAL_SECTION lpCriticalSection,uint p
       p_Var2 = (PRTL_CRITICAL_SECTION_DEBUG)FUN_0074b584((int)uVar4);
       lpCriticalSection->DebugInfo = p_Var2;
     }
+    /* ST_CALLSITE[0074B659]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection((LPCRITICAL_SECTION)((int)this + 0x7c));
     uVar1 = 0;
   }

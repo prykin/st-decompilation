@@ -12,6 +12,7 @@ void FUN_006b3bb0(int *param_1,uint param_2)
       puVar3 = *(uint **)(param_1[0x6c] + param_2 * 4);
       if ((*puVar3 & 0x8000) != 0) {
         if ((*puVar3 & 0x80000) != 0) {
+          /* ST_CALLSITE[006B3BFA]: CALL dword ptr [0x0085bb8c] */
           EnterCriticalSection((LPCRITICAL_SECTION)(*param_1 + 0x4f0));
           FreeAndNull(puVar3 + 0x30);
         }
@@ -37,6 +38,7 @@ void FUN_006b3bb0(int *param_1,uint param_2)
           }
         }
         if ((*puVar3 & 0x80000) != 0) {
+          /* ST_CALLSITE[006B3C8F]: CALL dword ptr [0x0085bb90] */
           LeaveCriticalSection((LPCRITICAL_SECTION)(*param_1 + 0x4f0));
         }
       }

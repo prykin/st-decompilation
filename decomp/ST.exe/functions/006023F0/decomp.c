@@ -13,8 +13,10 @@ STDestC * __thiscall STDestC::STDestC(STDestC *this)
 
 {
 
+  /* ST_CALLSITE[006023F4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)this);
-  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[00602401]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  STT3DSprC::STT3DSprC((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = &VTable_0079CB10;
   this->vtable = &STDestCVTable;
   memset(&this->field_0x231, 0, 0x17e); /* compiler bulk-zero initialization */

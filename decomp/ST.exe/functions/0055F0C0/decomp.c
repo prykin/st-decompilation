@@ -151,6 +151,7 @@ int * FUN_0055f0c0(int *param_1,uint param_2,uint param_3,int param_4,uint param
           auStack_8c[param_2 * -2 + (2 - param_3)] = local_50;
           auStack_8c[param_2 * -2 + (1 - param_3)] = (uint)local_30;
           auStack_8c[param_2 * -2 - param_3] = 0x55f2ac;
+          /* ST_CALLSITE[0055F2A9]: CALL dword ptr [EBP + 0x20] */
           (*param_7)(auStack_8c[param_2 * -2 + (1 - param_3)],
                      auStack_8c[param_2 * -2 + (2 - param_3)],
                      auStack_8c[param_2 * -2 + (3 - param_3)],
@@ -163,6 +164,7 @@ int * FUN_0055f0c0(int *param_1,uint param_2,uint param_3,int param_4,uint param
         auStack_8c[param_2 * -2 + (4 - param_3)] = param_3;
         auStack_8c[param_2 * -2 + (3 - param_3)] = (uint)local_30;
         auStack_8c[param_2 * -2 + (2 - param_3)] = 0x55f2d2;
+        /* ST_CALLSITE[0055F2CF]: CALL dword ptr [EBP + 0x1c] */
         iVar3 = (*param_6)(auStack_8c[param_2 * -2 + (3 - param_3)],
                            auStack_8c[param_2 * -2 + (4 - param_3)]);
         if (local_2c < iVar3) {

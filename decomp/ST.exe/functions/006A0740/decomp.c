@@ -79,6 +79,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
     local_8 = 0;
   }
   if (local_8 != 0) {
+    /* ST_CALLSITE[006A0858]: CALL 0x00405277; direct=00405277 CGenerate::_saveObj */
     iVar3 = _saveObj(this_00);
     if (iVar3 == 0) {
       local_8 = 0;

@@ -9,8 +9,10 @@
 AnonShape_0063BFA0_2C9DA96E * __fastcall FUN_0063bfa0(AnonShape_0063BFA0_2C9DA96E *param_1)
 
 {
+  /* ST_CALLSITE[0063BFA4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)param_1);
-  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&param_1->field_01D5);
+  /* ST_CALLSITE[0063BFB1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  STT3DSprC::STT3DSprC((STT3DSprC *)&param_1->field_01D5);
   param_1->field_01D5 = &VTable_0079D49C;
   param_1->field_0292 = 0;
   param_1->field_029A = 0;

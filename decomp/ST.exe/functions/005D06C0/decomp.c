@@ -62,6 +62,7 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
             bVar7 = uVar6 < pSVar5->count;
           } while ((int)uVar6 < (int)pSVar5->count);
         }
+        /* ST_CALLSITE[005D079B]: CALL dword ptr [EDX + 0x2c] */
         local_8->SetListCtrls();
         pSVar2->field_2121 = pSVar2->field_2121 + 1;
       }

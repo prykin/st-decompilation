@@ -141,6 +141,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       local_4b0 = 0x6335;
       local_688[3] = uVar2;
       local_4b8 = local_88c;
+      /* ST_CALLSITE[0059D514]: CALL dword ptr [EDX + 0x8] */
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,8,&this_00->field_1B14,nullptr,local_8c4,0);
       this_00->field_002D = 5;

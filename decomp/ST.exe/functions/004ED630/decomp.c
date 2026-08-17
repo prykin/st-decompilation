@@ -88,6 +88,7 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   iVar8 = 0x36;
   g_behPanel_00801678 = local_18;
   pCVar3 = thunk_FUN_00571240("BKG_BEHAVIOURW",0);
+  /* ST_CALLSITE[004ED6BB]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
   SpecPanelTy::InitPanel
             ((SpecPanelTy *)this_00,pCVar3,iVar8,uVar12,iVar14,iVar17,UVar18,uVar19,uVar22);
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
@@ -191,7 +192,7 @@ switchD_004ed72f_default:
     local_994[uVar9 * 0x5f + 4] = *(int *)(puVar4 + 2);
     local_994[uVar9 * 0x5f + 5] = iVar8;
     local_14 = (int)&this_00->vtable + uVar9 * 0x27;
-    *(undefined1 *)(local_14 + 0x1ce) = 1;
+    ((undefined1 *)local_14)[0x1ce] = 1;
     local_EAX_721 = thunk_FUN_00525390((&this_00->field_01AF)[uVar9],0);
     *(int *)(local_14 + 0x1cf) = local_EAX_721;
     uVar12 = thunk_FUN_005272b0((&this_00->field_01AF)[uVar9]);
@@ -206,7 +207,7 @@ switchD_004ed72f_default:
     aiStack_908[uVar9 * 0x5f + 3] = 0;
     aiStack_8e4[uVar9 * 0x5f + 3] = 1;
     aiStack_908[uVar9 * 0x5f + 6] = 0x101;
-    *(undefined1 *)(iVar14 + 0x1db) = 3;
+    ((undefined1 *)iVar14)[0x1db] = 3;
     iVar8 = *(int *)(iVar14 + 0x1d7);
     aiStack_908[uVar9 * 0x5f + 7] = 3;
     aiStack_908[uVar9 * 0x5f + 8] = 0x4202;
@@ -249,6 +250,7 @@ LAB_004eda47:
       local_50 = 0xb1ff;
       local_34 = 2;
       local_38 = local_58;
+      /* ST_CALLSITE[004EDAB4]: CALL dword ptr [EAX + 0x8] */
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,9,&this_00->field_01BE,nullptr,local_68,0);
       uVar24 = 1;
@@ -260,6 +262,7 @@ LAB_004eda47:
       uVar19 = 0xc0af;
       uVar12 = 0xc09f;
       pCVar3 = thunk_FUN_00571240("BUT_BHOLD",0);
+      /* ST_CALLSITE[004EDB0C]: CALL dword ptr [EBX + 0x4] */
       uVar12 = (*pBVar1->CreateBut)
                          ((PanelTy *)this_00,0,0,(-(uint)(DAT_0080874e != '\x03') & 2) + 0x1f,
                           (-(uint)(DAT_0080874e != '\x03') & 7) + 0x5a,0,1,1,pCVar3,uVar12,uVar19,
@@ -274,6 +277,7 @@ LAB_004eda47:
       uVar19 = 0xc0a0;
       this_00->field_01C2 = uVar12;
       pCVar3 = thunk_FUN_00571240("BUT_BHOLD",0);
+      /* ST_CALLSITE[004EDB6B]: CALL dword ptr [EBX + 0x4] */
       uVar12 = (*pBVar1->CreateBut)
                          ((PanelTy *)this_00,0,0,(-(uint)(DAT_0080874e != '\x03') & 6) + 0x45,
                           (-(uint)(DAT_0080874e != '\x03') & 7) + 0x5a,0,1,1,pCVar3,uVar19,uVar22,
@@ -288,6 +292,7 @@ LAB_004eda47:
       uVar19 = 0xc0a1;
       this_00->field_01C6 = uVar12;
       pCVar3 = thunk_FUN_00571240("BUT_BAGR",0);
+      /* ST_CALLSITE[004EDBCB]: CALL dword ptr [EBX + 0x4] */
       uVar12 = (*pBVar1->CreateBut)
                          ((PanelTy *)this_00,0,0,
                           (-(uint)(DAT_0080874e != '\x03') & 0xfffffffd) + 0xb3,

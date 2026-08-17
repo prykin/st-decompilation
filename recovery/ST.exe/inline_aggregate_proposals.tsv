@@ -1,6 +1,7 @@
 apply	kind	owner	owner_type_path	offset	offset_hex	size	proposed_type	proposed_name	evidence_function	evidence_sites	confidence	reason
 0	zero_span	AiBossClassTy	/AiBossClassTy	1491	0x5D3	132			00647AD0	00647B00 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	AiBossClassTy	/AiBossClassTy	1623	0x657	1			00647AD0	00647B02 STOSB ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
+0	zero_span	AiEventClassTy	/AiEventClassTy	1327	0x52F	132			0064CC90	0064CCE3 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 1	nested_struct	CGenerate	/CGenerate	28	0x1C	560	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006952B0_7A982E30	aggregate_001C	006952B0	006952DB	high	exact REP MOVS source span=560, source_length=560
 0	zero_span	CPanelTy	/CPanelTy	24	0x18	32			004FA570	004FA5C0 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	CPanelTy	/CPanelTy	1076	0x434	280			00501A10	00501A24 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields

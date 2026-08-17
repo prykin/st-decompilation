@@ -20,6 +20,7 @@ void __fastcall FUN_0048df40(STBoatC *param_1,undefined4 param_2)
   int iVar2;
 
   sVar1 = param_1->field_04E1 + 1;
+  /* ST_CALLSITE[0048DF7B]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   iVar2 = STBoatC::sub_0048DFD0
                     (param_1,param_1->field_04DD,param_1->field_04DF,sVar1,param_1->field_04DD,

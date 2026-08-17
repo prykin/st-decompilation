@@ -40,7 +40,7 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
   *(undefined2 *)puVar5 = *(undefined2 *)puVar3;
   STField<undefined1>(puVar5,2) = STField<undefined1>(puVar3,2);
   if (local_18->field_0234 != nullptr) {
-    local_14 = (undefined4 *)FUN_006b0020(local_18->field_0234,(int *)&local_c);
+    local_14 = FUN_006b0020(local_18->field_0234,(int *)&local_c);
     uVar2 = local_c + 0x87;
     local_8 = uVar2;
     allocation = Library::DKW::LIB::MemRealloc(allocation,uVar2);

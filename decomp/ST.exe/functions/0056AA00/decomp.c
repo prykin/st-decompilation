@@ -22,6 +22,7 @@ void __thiscall FUN_0056aa00(void *this,byte param_1,char param_2)
           pcVar3 = (char *)((int)this + 0x11ca);
           do {
             if (((pcVar3[-1] != -1) && (bVar2 != param_1)) && (*pcVar1 == *pcVar3)) {
+              /* ST_CALLSITE[0056AA88]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
               VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,local_8);
             }
             bVar2 = bVar2 + 1;
@@ -31,6 +32,7 @@ void __thiscall FUN_0056aa00(void *this,byte param_1,char param_2)
         }
         else if (*pcVar1 ==
                  *(char *)((uint)STField<byte>(this,0x112d) * 0x51 + 0x11ca + (int)this)) {
+          /* ST_CALLSITE[0056AAC0]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
           VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar4);
         }
       }
@@ -44,6 +46,7 @@ void __thiscall FUN_0056aa00(void *this,byte param_1,char param_2)
           this_00 = g_visibleClass_00802A88;
           do {
             if (((pcVar3[-1] != -1) && (bVar2 != param_1)) && (*pcVar1 == *pcVar3)) {
+              /* ST_CALLSITE[0056AB16]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
               VisibleClassTy::sub_0055B7F0(this_00,1,puVar4);
               this_00 = g_visibleClass_00802A88;
             }
@@ -54,6 +57,7 @@ void __thiscall FUN_0056aa00(void *this,byte param_1,char param_2)
           return;
         }
         if (param_2 == *(char *)((uint)STField<byte>(this,0x112d) * 0x51 + 0x11ca + (int)this)) {
+          /* ST_CALLSITE[0056AB51]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
           VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,1,puVar4);
         }
       }

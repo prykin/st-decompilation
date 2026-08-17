@@ -132,7 +132,7 @@ undefined4 __thiscall st::fn_0056E9E0(STAppC *this,int param_1)
   pSVar2->field_4EA7 = puVar4;
   if (puVar4 == nullptr) {
     pDVar5 = st::fn_006B54F0(nullptr,10,10);
-    pSVar2->field_4EA7 = st::pointer_boundary_cast<uint *>(&pDVar5->flags);
+    pSVar2->field_4EA7 = &pDVar5->flags;
   }
   if ((DArrayTy *)pSVar2->field_4EAB != nullptr) {
     st::fn_006B5570((DArrayTy *)pSVar2->field_4EAB);
@@ -141,9 +141,9 @@ undefined4 __thiscall st::fn_0056E9E0(STAppC *this,int param_1)
   pSVar2->field_4EAB = puVar4;
   if (puVar4 == nullptr) {
     pDVar5 = st::fn_006B54F0(nullptr,10,10);
-    pSVar2->field_4EAB = st::pointer_boundary_cast<uint *>(&pDVar5->flags);
+    pSVar2->field_4EAB = &pDVar5->flags;
   }
-  pbVar13 = st::pointer_boundary_cast<byte *>(&pSVar2->field_4DA3);
+  pbVar13 = &pSVar2->field_4DA3;
   memset((void *)pbVar13, 0, 0x104); /* compiler bulk-zero initialization */
   local_14 = (char *)pbVar13;
   puVar6 = st::fn_006F1CE0(local_8,0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&local_14,0);
@@ -226,14 +226,17 @@ void __thiscall st::fn_0056EBE0(STAppC *this)
   this->field_4EA7 = puVar2;
   if (puVar2 == nullptr) {
     pDVar3 = st::fn_006B54F0(nullptr,10,10);
-    this->field_4EA7 = st::pointer_boundary_cast<uint *>(&pDVar3->flags);
+    this->field_4EA7 = &pDVar3->flags;
   }
   if (this->field_4EAB == nullptr) {
     pDVar3 = st::fn_006B54F0(nullptr,10,10);
-    this->field_4EAB = st::pointer_boundary_cast<uint *>(&pDVar3->flags);
+    this->field_4EAB = &pDVar3->flags;
   }
+  /* ST_CALLSITE[0056ECE7]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
   pDVar3 = (DArrayTy *)st::fn_00403F44(g_cMf32_0080675C,1,this->field_233C);
+  /* ST_CALLSITE[0056ECFF]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
   array = (DArrayTy *)st::fn_00403F44(g_cMf32_0080675C,2,this->field_233C);
+  /* ST_CALLSITE[0056ED16]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
   array_00 = (DArrayTy *)st::fn_00403F44(g_cMf32_0080675C,3,this->field_233C);
   pcVar9 = st::pointer_boundary_cast<char *>(&this->field_11A7);
   local_8 = 8;
@@ -370,6 +373,7 @@ void __thiscall st::fn_0056EF50(STAppC *this)
     pcVar1 = pcVar1 + 0x51;
     iVar3 = iVar3 + -1;
   } while (iVar3 != 0);
+  /* ST_CALLSITE[0056EFE3]: CALL 0x0040591b; direct=0040591B STAppC::sub_0056EE90 */
   st::fn_0040591B(this);
   return;
 }

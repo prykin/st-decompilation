@@ -196,7 +196,7 @@ LAB_00632f7e:
           else {
             puVar6 = nullptr;
           }
-          *(undefined1 *)(puVar6 + 3) = 0;
+          ((undefined1 *)puVar6)[3] = 0;
           STField<undefined4>(puVar6,0x21) = 0;
           if ((int)uVar12 < param_1->field_001D * 2) {
             uVar9 = param_1->field_0025;

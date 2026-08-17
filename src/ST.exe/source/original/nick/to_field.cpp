@@ -109,6 +109,7 @@ undefined4 __thiscall st::fn_00609B90(STFieldC *this,int param_1)
             element_0234->field_0004 = 0;
           }
           if ((int)element_0234->field_003C < 0) {
+            /* ST_CALLSITE[00609C14]: CALL 0x004021df; direct=004021DF STFieldC::LoadImagSpr */
             st::fn_004021DF(this_00,uVar7);
           }
         }

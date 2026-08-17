@@ -22,12 +22,14 @@ void __thiscall st::fn_005E9970(WaitTy *this)
     this->field_0025 = g_startSystem_0081176C->field_0389;
     this->field_0031 = 1;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005E99AD]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_0550 != 0) {
     this->field_0025 = g_startSystem_0081176C->field_0550;
     this->field_0031 = 1;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005E99D3]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_054C != 0) {
@@ -35,6 +37,7 @@ void __thiscall st::fn_005E9970(WaitTy *this)
     this->field_002D = 0x29;
     this->field_0031 = 9;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005E9A00]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   return;
@@ -58,6 +61,7 @@ void __thiscall st::fn_005E9A40(WaitTy *this)
     this->field_002D = 0x20;
     this->field_0031 = 0;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005E9A7D]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_054C != 0) {

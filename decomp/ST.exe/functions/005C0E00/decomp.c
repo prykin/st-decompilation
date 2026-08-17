@@ -38,19 +38,23 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_008F);
       this_00->field_008F = 0;
       FUN_006b5f80((int *)g_ddxContext_008075A8,0x262,0x226,0x91,0x28);
+      /* ST_CALLSITE[005C0E92]: CALL 0x00402298; direct=00402298 PutDDXClip */
       PutDDXClip(0x262,0x226,0x262,0x226,0x91,(byte *)0x28,'\x01',(BITMAPINFO *)this_00->field_005D);
     }
     if (this_00->field_009B != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_009B);
       this_00->field_009B = 0;
       FUN_006b5f80((int *)g_ddxContext_008075A8,0x1e,0x1ea,300,0x1e);
+      /* ST_CALLSITE[005C0EE8]: CALL 0x00402298; direct=00402298 PutDDXClip */
       PutDDXClip(0x1e,0x1ea,0x1e,0x1ea,300,(byte *)0x1e,'\x01',(BITMAPINFO *)this_00->field_005D);
     }
     FUN_006b5f80((int *)g_ddxContext_008075A8,0x174,0x1a9,400,0x32);
+    /* ST_CALLSITE[005C0F2E]: CALL 0x00402298; direct=00402298 PutDDXClip */
     PutDDXClip(0x174,0x1a9,0x174,0x1a9,400,(byte *)0x32,'\x01',(BITMAPINFO *)this_00->field_005D);
     if ((this_00->field_0066 == '\x01') &&
        (this_00->field_0067 = 0, (&this_00->field_0347)[(byte)this_00->field_006A]->count != 0)) {
       local_8 = nullptr;
+      /* ST_CALLSITE[005C0F7E]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\%s",&CHAR_00h_00807680,
                 PTR_s_SAVEGAME__0079c0d4,&CHAR_00h_00807ddd,PTR_s_PL_LOG_0079c0d8);
       local_98.previous = g_currentExceptionFrame;
@@ -71,6 +75,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
         else {
           puVar5 = nullptr;
         }
+        /* ST_CALLSITE[005C1030]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%01d%02d",PTR_DAT_0079c0dc,
                   (byte)local_c->field_006A + 1,*puVar5);
         puVar6 = cMf32::RecGet(this_01,0xc,(char *)&DAT_0080f33a,(int *)&local_10,0);
@@ -126,14 +131,17 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       if (this_00->field_02A3 < DAT_0080c963) {
         this_00->field_02A3 = DAT_0080c963;
       }
+      /* ST_CALLSITE[005C115E]: CALL 0x00405ecf; direct=00405ECF MReportTy::CreateBut */
       uVar7 = CreateBut(this_00,1,1,0x262,0x226,0x91,0x28,0x6200,0x6212);
       this_00->field_008F = uVar7;
       if (this_00->field_0066 == '\x01') {
+        /* ST_CALLSITE[005C118E]: CALL 0x00405ecf; direct=00405ECF MReportTy::CreateBut */
         uVar7 = CreateBut(this_00,1,1,0x1e,0x1ea,300,0x1e,0x6203,0x6215);
         this_00->field_009B = uVar7;
       }
     }
     this_00->field_0068 = 1;
+    /* ST_CALLSITE[005C11C2]: CALL 0x0040126c; direct=0040126C MReportTy::SetCtrl */
     SetCtrl(this_00,1);
     this_00->field_002D = 5;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);

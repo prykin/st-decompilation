@@ -29,6 +29,7 @@ int __thiscall FUN_006028a0(void *this,int param_1,int param_2,int param_3)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return iVar2;
     }
+    /* ST_CALLSITE[0060291F]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_1,iVar3,&param_2,
                (int *)&local_8);

@@ -142,6 +142,7 @@ joined_r0x0054f526:
             thunk_FUN_00550830((int)local_8);
             goto joined_r0x0054f3c5;
           case 0x36:
+            /* ST_CALLSITE[0054F2E6]: CALL 0x00401456; direct=00401456 STPlaySystemC::sub_005505D0 */
             sub_005505D0(local_c,local_30,(int *)local_8);
 joined_r0x0054f3c5:
             if (local_8 != nullptr) {
@@ -204,6 +205,7 @@ LAB_0054f52c:
                 pcVar14 = &DAT_00808af6;
                 do {
                   if ((*(int *)(pcVar14 + -6) == local_30) && (*pcVar14 != '\0')) {
+                    /* ST_CALLSITE[0054F500]: CALL dword ptr [0x0085bde8] */
                     wsprintfA(local_17c,"%s (%s)",local_17c,pcVar14 + -0x46);
                     break;
                   }
@@ -301,6 +303,7 @@ LAB_0054f531:
       if (DAT_00808783 == '\x03') {
         pAVar15->field_0004 = bVar7;
         local_c->field_003D->field_0005 = 0;
+        /* ST_CALLSITE[0054F6B9]: CALL 0x00405443; direct=00405443 STPlaySystemC::sub_0054EBB0 */
         local_EAX_1257 = sub_0054EBB0(local_c,(char *)local_c->field_003D,7);
         puVar20 = nullptr;
         if (local_EAX_1257 != 0) {
@@ -317,6 +320,7 @@ LAB_0054f6c6:
         pAVar15->field_0004 = cVar3;
       }
       if (DAT_00808783 == '\x03') {
+        /* ST_CALLSITE[0054F70B]: CALL 0x00405443; direct=00405443 STPlaySystemC::sub_0054EBB0 */
         iVar8 = sub_0054EBB0(local_c,(char *)local_c->field_003D,local_28);
         puVar20 = nullptr;
         if (iVar8 != 0) {
@@ -330,6 +334,7 @@ LAB_0054f6c6:
     return puVar20;
   }
   local_10 = 0;
+  /* ST_CALLSITE[0054F71F]: CALL dword ptr [0x0085bedc] */
   local_2c = (AnonPointee_STPlaySystemC_0039 **)timeGetTime();
   Library::DKW::DDX::FUN_006b7510(g_int_00811764,-1,&local_20,-1,0);
   pSVar23 = local_c;
@@ -485,6 +490,7 @@ LAB_0054f98b:
       DAT_0080c50a = 0;
       DAT_0080c512 = 1;
       if (g_optPanel_008016DC != nullptr) {
+        /* ST_CALLSITE[0054FCA4]: CALL 0x00405ef7; direct=00405EF7 OptPanelTy::Notification */
         OptPanelTy::Notification(g_optPanel_008016DC,'\v',0);
       }
       break;
@@ -510,6 +516,7 @@ LAB_0054fbb7:
       }
       else if (uVar11 < *(uint *)pAVar15) {
         if (pSVar23->field_006D == 0) {
+          /* ST_CALLSITE[0054FBE9]: CALL 0x004045fc; direct=004045FC STPlaySystemC::AddToRep */
           AddToRep(pSVar23,(undefined4 *)pAVar15,local_28);
           pSVar23->field_003D->field_0005 = 0;
           pSVar23->field_006D = 1;

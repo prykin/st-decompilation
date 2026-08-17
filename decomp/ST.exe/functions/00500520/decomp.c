@@ -102,6 +102,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
 LAB_00500689:
           pRVar8 = (RecoveredSourceFamily_dibcopy *)pCVar2->field_0148[(local_8 & 0xff) + 0xe];
         }
+        /* ST_CALLSITE[00500699]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut(pRVar8,iVar10,iVar11,cVar3,(byte *)pBVar4);
         local_10 = local_10 + -0xb;
         iVar6 = iVar6 + 0xb;

@@ -78,6 +78,7 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   FUN_006e6080(this_01,2,this_01->field_1AF5,(undefined4 *)&this_01->field_0x1d);
   FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1CB8,0,3,0x15,0x142,0x62,0xff);
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1CB4);
+  /* ST_CALLSITE[005D8CDA]: CALL dword ptr [0x0085bde8] */
   wsprintfA(&this_01->field_1CD4,"%s%s",&CHAR_00h_00807680,PTR_s_SAVEGAME__0079c19c);
   uVar8 = 0xffffffff;
   pcVar14 = &CHAR___007cc8bc;
@@ -104,6 +105,7 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   pcVar6 = pcVar16 + -1;
   memmove(pcVar6, pcVar14, uVar8); /* compiler REP MOVS byte copy */
   uVar11 = 0;
+  /* ST_CALLSITE[005D8D1F]: CALL dword ptr [0x0085bcec] */
   hFindFile = FindFirstFileA(&this_01->field_1CD4,&local_21c);
   local_14 = hFindFile;
   if (hFindFile != (HANDLE)0xffffffff) {
@@ -158,6 +160,7 @@ LAB_005d8dbf:
               pCVar15 = pCVar15 + 1;
             } while (cVar1 != '\0');
             if (~uVar8 - 1 < 0x40) {
+              /* ST_CALLSITE[005D8E05]: CALL dword ptr [0x0085bde8] */
               wsprintfA(&this_01->field_1CD4,"%s%s%s\\%s",&CHAR_00h_00807680,
                         PTR_s_SAVEGAME__0079c19c,local_21c.cFileName,PTR_s_PL_LOG_0079c1a0);
               local_9c.previous = g_currentExceptionFrame;
@@ -184,10 +187,12 @@ LAB_005d8dbf:
         }
       }
       hFindFile = local_14;
+      /* ST_CALLSITE[005D8EAF]: CALL dword ptr [0x0085bcf0] */
       BVar4 = FindNextFileA(local_14,&local_21c);
     } while (BVar4 != 0);
   }
   if (hFindFile != (HANDLE)0xffffffff) {
+    /* ST_CALLSITE[005D8EC3]: CALL dword ptr [0x0085bcf4] */
     FindClose(hFindFile);
   }
   uVar8 = 0xffffffff;

@@ -30,12 +30,15 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
                  STGridAt3D(g_worldGrid, sVar3, sVar2, sVar1).objects[0], uVar6 = local_18, this != nullptr)))))) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((param_1->field_02E9 != '\0') &&
+         /* ST_CALLSITE[005EDAF9]: CALL dword ptr [EDX + 0x128] */
          (iVar4 = (**(code **)(param_1->field_0000 + 0x128))(), this->field_0018 == iVar4)) {
         return 0;
       }
+      /* ST_CALLSITE[005EDB11]: CALL dword ptr [EAX + 0x2c] */
       dVar5 = this->slot_2C();
       if ((((dVar5 == 0x52) || (dVar5 == 0x5f)) && (iVar4 = thunk_FUN_004e1490(this), iVar4 != 0))
          && (this->field_0508 == CASE_0)) {
+        /* ST_CALLSITE[005EDB3B]: CALL dword ptr [EDX + 0xc] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (**(code **)(param_1->field_0000 + 0xc))();
         thunk_FUN_004ebcb0(this,*(int *)&param_1->field_0x18,iVar4);

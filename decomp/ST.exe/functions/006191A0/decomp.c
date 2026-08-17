@@ -29,6 +29,7 @@ byte __thiscall STJumpMineC::sub_006191A0(STJumpMineC *this,uint param_1,int par
     if (((param_1 == 0) || (g_visibleClass_00802A88 == nullptr)) ||
        ((iVar2 = (int)this->field_00CD, DAT_0080874d == -1 ||
         (g_visibleClass_00802A88->field_00F8 == 0)))) goto cf_common_exit_00619287;
+    /* ST_CALLSITE[00619238]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,(int)this->field_00C9,
                (int)this->field_00CB,&param_2,(int *)&local_8);

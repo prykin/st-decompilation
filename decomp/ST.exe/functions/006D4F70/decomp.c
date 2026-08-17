@@ -19,6 +19,7 @@ int FUN_006d4f70(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
   }
   *param_1 = puVar1;
   if (local_8 == 0) {
+    /* ST_CALLSITE[006D4FBB]: CALL dword ptr [EDX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (**(code **)*puVar1)(puVar1,&DAT_007a1368,param_2);
     return iVar2;

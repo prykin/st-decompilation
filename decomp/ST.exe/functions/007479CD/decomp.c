@@ -39,11 +39,12 @@ uint FUN_007479cd(AnonShape_00747AA5_87CB4B56 *param_1,uint param_2,LPVOID *para
       else {
         *param_4 = 0;
       }
-      auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+      AnonShape_00747AA5_87CB4B56 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
       while (param_2 != 0) {
         FUN_0074b91d(local_4c);
         iVar4 = pAVar1->field_0004;
         pAVar1->field_0004 = iVar4 + 1;
+        /* ST_CALLSITE[00747A30]: CALL dword ptr [EDX + 0x34] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (**(code **)(*pAVar1->field_0008 + 0x34))(iVar4,local_4c);
         if (iVar4 != 0) {
@@ -51,6 +52,7 @@ LAB_00747a71:
           FUN_0074b916((int)local_4c);
           break;
         }
+        /* ST_CALLSITE[00747A39]: CALL dword ptr [0x0085c0d8] */
         puVar5 = (byte *)(CoTaskMemAlloc(0x48));
         *param_3 = puVar5;
         if (puVar5 == nullptr) goto LAB_00747a71;

@@ -36,6 +36,7 @@ FUN_0061d0c0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_48[2] = 0;
   local_48[3] = 1;
   local_10 = param_8;
+  /* ST_CALLSITE[0061D14D]: CALL dword ptr [EAX + 0x8] */
   g_playSystem_00802A38->vfunc_08(0x136,0,(short)&param_9,(short)local_48,0);
   return param_9;
 }

@@ -23,6 +23,7 @@ FUN_0062e240(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
         ((this_00 = STGridAt3D(g_worldGrid, sVar4, sVar5, sVar2).objects[0], this_00 != nullptr &&
          (*(int *)&this_00->field_0x18 == param_5)))))) &&
       ((this_00->value_20 == 1000 &&
+       /* ST_CALLSITE[0062E2BE]: CALL dword ptr [EDX + 0x2c] */
        (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x6e)))) ||
      ((param_5 != 0 &&
       (iVar3 = STPlaySystemC::sub_006E62D0

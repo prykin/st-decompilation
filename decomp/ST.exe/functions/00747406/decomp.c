@@ -15,6 +15,7 @@ undefined4 __thiscall FUN_00747406(void *this,undefined4 param_1,int *param_2,un
     uVar2 = 0x80004001;
   }
   else {
+    /* ST_CALLSITE[0074741C]: CALL dword ptr [ECX + 0xc] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*piVar1 + 0xc))(piVar1,param_1,param_2,param_3);
   }

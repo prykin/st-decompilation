@@ -113,6 +113,7 @@ OpticClassC * __cdecl st::fn_004A88F0(void)
 
   this = (OpticClassC *)st::fn_006B04D0(0x20);
   if (this != nullptr) {
+    /* ST_CALLSITE[004A88FD]: CALL 0x00401da7; direct=00401DA7 OpticClassC::OpticClassC */
     g_opticClass_007FB2A0 = st::fn_00401DA7(this);
     return g_opticClass_007FB2A0;
   }
@@ -214,7 +215,7 @@ void st::fn_004A9990(void)
 
   _DAT_00807428 = _DAT_00807438 * DAT_00807420;
   _DAT_0080742c = DAT_00807424 * _DAT_00807438;
-  _DAT_0080744d = ram0x0080743d * _DAT_00807438;
+  _DAT_0080744d = st_image_0080743D * _DAT_00807438;
   _DAT_00807451 = _DAT_00807441 * _DAT_00807438;
   _DAT_00807455 = _DAT_00807445 * _DAT_00807438;
   _DAT_00807459 = _DAT_00807449 * _DAT_00807438;
@@ -320,6 +321,7 @@ LAB_004a9cfb:
   local_18 = 0xf;
   local_14 = 0x109;
   local_10 = 0;
+  /* ST_CALLSITE[004A9D26]: CALL dword ptr [EAX + 0x18] */
   (*g_playSystem_00802A38->vtable->SendMessage)
             ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_24);
   return;
@@ -913,6 +915,7 @@ void st::fn_004AB300(int param_1)
   if (*(int *)(&DAT_0080747a + param_1 * 0x19) == 0) {
     return;
   }
+  /* ST_CALLSITE[004AB333]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
   st::fn_00403058(g_cursorClass_00802A30);
   DAT_008073d0 = *(undefined4 *)(&DAT_00807465 + param_1 * 0x19);
   _DAT_008073d4 = *(undefined4 *)(&DAT_00807469 + param_1 * 0x19);
@@ -1044,42 +1047,6 @@ void st::fn_004AB650(void)
   return;
 }
 
-// 004AB810 FUN_004ab810
-#line 4 "decomp/ST.exe/functions/004AB810/decomp.c"
-/* [STReturnSemanticsApplier] machine_eax_return.
-   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
-   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
-   used=36, ignored=5, unknown=0
-
-   [STReturnSemanticsApplier] typed_pointer_return.
-   Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
-   structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_004AB810_8E5693D5 (current recovered
-   extent=20) */
-
-AnonShape_004AB810_8E5693D5 * __fastcall st::fn_004AB810(AnonShape_004AB810_8E5693D5 *param_1)
-
-{
-  *(VTable_00790790 **)param_1 = &st_global_00790790;
-  *(undefined4 *)(param_1 + 1) = 0;
-  *(undefined4 *)&param_1[1].field_0004 = 0xffffffff;
-  *(undefined4 *)&param_1[1].field_0xc = 0;
-  *(undefined4 *)&param_1->field_0x8 = 0;
-  *(undefined4 *)&param_1->field_0004 = 0;
-  *(undefined4 *)&param_1[2].field_0xc = 0;
-  param_1->field_0011 = 0;
-  param_1->field_0x10 = 0;
-  param_1->field_0012 = 0;
-  *(undefined4 *)&param_1[2].field_0004 = 0;
-  *(undefined4 *)(param_1 + 2) = 0;
-  *(undefined4 *)&param_1[1].field_0x10 = 0;
-  *(ST3DSMAPContext **)(param_1 + 3) = g_sT3DSMAPContext_00807598;
-  param_1->field_0013 = 0;
-  *(undefined4 *)&param_1[2].field_0x8 = 0;
-  *(undefined4 *)&param_1[2].field_0x10 = 0;
-  *(undefined4 *)&param_1[1].field_0x8 = 0;
-  return param_1;
-}
-
 // 004ABCE0 FUN_004abce0
 #line 4 "decomp/ST.exe/functions/004ABCE0/decomp.c"
 undefined4 __thiscall st::fn_004ABCE0(void *this,byte param_1,int param_2,int param_3,char param_4)
@@ -1109,6 +1076,7 @@ undefined4 __thiscall st::fn_004ABCE0(void *this,byte param_1,int param_2,int pa
             pbVar2 = (byte *)(iVar6 + 0xf);
             *pbVar2 = *pbVar2 | 2;
           }
+          /* ST_CALLSITE[004ABD62]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
           st::fn_00404264(st::pointer_boundary_cast<STT3DSprC *>(this),param_1);
           iVar6 = iVar7 + STField<int>(this,0x20);
           if ((*(byte *)(iVar7 + 0xe + STField<int>(this,0x20)) & 2) == 0) {
@@ -1328,7 +1296,7 @@ int __thiscall st::fn_004AC950(void *this,int param_1)
     if (iVar5 == iVar4) {
       return iVar3;
     }
-    if ((*(byte *)(iVar1 + 0xf) & 2) == 0) {
+    if ((((byte *)iVar1)[0xf] & 2) == 0) {
       if (iVar3 < iVar4) {
         return iVar5 + 1;
       }
@@ -1371,8 +1339,8 @@ undefined4 __thiscall st::fn_004AC9E0(void *this,int param_1)
   undefined *puStack_c;
   undefined4 local_8;
 
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790798);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_00790798;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   if (STField<int>(this,0x18) == -1) {
@@ -1390,7 +1358,7 @@ cf_continue_loop_004ACA23:
     if ((STField<uint>(this,0x1c) & local_20) != 0) {
       iVar6 = local_28 * 0x24;
       iVar4 = STField<int>(this,0x20) + iVar6;
-      if ((*(byte *)(iVar4 + 0xe) & 1) == 0) {
+      if ((((byte *)iVar4)[0xe] & 1) == 0) {
         uVar7 = param_1 - *(int *)(iVar4 + 0x1c);
         *(int *)(iVar4 + 0x1c) = param_1;
         bVar2 = false;
@@ -1422,16 +1390,17 @@ cf_continue_loop_004ACA23:
         *(undefined4 *)(piVar5[1] + piVar5[6] * 4) = *(undefined4 *)(piVar5[6] * 4 + 0x31 + *piVar5);
         iVar4 = STField<int>(this,0x20) + iVar6;
         if (*(int *)(iVar4 + 0x18) == *(int *)(iVar4 + 0x14)) {
-          if (*(char *)(iVar4 + 0xd) == '\x02') {
+          if (((char *)iVar4)[0xd] == '\x02') {
+            /* ST_CALLSITE[004ACB1D]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
             st::fn_00404264(st::pointer_boundary_cast<STT3DSprC *>(this),(byte)local_28);
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
             goto cf_continue_loop_004ACA23;
           }
-          if (*(char *)(iVar4 + 0xd) == '\x01') goto LAB_004acbdc;
+          if (((char *)iVar4)[0xd] == '\x01') goto LAB_004acbdc;
         }
         iVar8 = uVar7 - iVar8;
-        if ((iVar8 == 0) || ((*(byte *)(iVar4 + 0xe) & 4) == 0)) {
+        if ((iVar8 == 0) || ((((byte *)iVar4)[0xe] & 4) == 0)) {
           iVar3 = st::fn_00404B65(this,local_28);
           *(int *)(STField<int>(this,0x20) + 0x18 + iVar6) = iVar3;
           if (local_28 == (int)STField<char>(this,0x13)) {
@@ -1610,6 +1579,7 @@ void __fastcall st::fn_004AD310(STT3DSprC *param_1)
   iVar1 = 0;
   if (0 < param_1->field_0014) {
     do {
+      /* ST_CALLSITE[004AD320]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
       st::fn_0040498A(param_1,(byte)iVar1);
       iVar1 = iVar1 + 1;
     } while (iVar1 < param_1->field_0014);
@@ -1709,7 +1679,7 @@ void __fastcall st::fn_004AD4F0(int param_1)
 {
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x38) != 0) {
-    *(undefined1 *)(param_1 + 0x10) = 1;
+    ((undefined1 *)param_1)[0x10] = 1;
   }
   return;
 }
@@ -1722,7 +1692,7 @@ void __fastcall st::fn_004AD4F0(int param_1)
 void __fastcall st::fn_004AD510(int param_1)
 
 {
-  *(undefined1 *)(param_1 + 0x10) = 0;
+  ((undefined1 *)param_1)[0x10] = 0;
   return;
 }
 
@@ -1733,10 +1703,10 @@ void __fastcall st::fn_004AD550(uint param_1)
 {
   int iVar1;
 
-  *(undefined1 *)(param_1 + 0x11) = 0;
+  ((undefined1 *)param_1)[0x11] = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((*(char *)(param_1 + 0x10) == '\0') &&
-      (iVar1 = *(int *)(*(int *)(param_1 + 0x20) + *(char *)(param_1 + 0x13) * 0x24), iVar1 != 0))
+  if (((((char *)param_1)[0x10] == '\0') &&
+      (iVar1 = *(int *)(*(int *)(param_1 + 0x20) + ((char *)param_1)[0x13] * 0x24), iVar1 != 0))
      && (*(int *)(iVar1 + 0x29) != 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006E9520
@@ -1744,7 +1714,7 @@ void __fastcall st::fn_004AD550(uint param_1)
                0x404999,param_1);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(char *)(param_1 + 0x10) == '\x01') && (*(int *)(param_1 + 0x38) != 0)) {
+  if ((((char *)param_1)[0x10] == '\x01') && (*(int *)(param_1 + 0x38) != 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006E9520
               (*(void **)(param_1 + 0x3c),*(uint *)(param_1 + 0x18),*(uint *)(param_1 + 0x34),
@@ -1771,8 +1741,7 @@ void __fastcall st::fn_004AD5E0(STT3DSprC *param_1)
 undefined1 __fastcall st::fn_004AD610(int param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(undefined1 *)(param_1 + 0x11);
+  return ((undefined1 *)param_1)[0x11];
 }
 
 // 004AD630 FUN_004ad630
@@ -1843,7 +1812,7 @@ int st::fn_004AD6C0(AnonReceiver_004248D0 *param_1,undefined4 param_2,int *param
   int iVar1;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)(*(int *)(*(int *)(param_4 + 0x20) + *(char *)(param_4 + 0x13) * 0x24) + 0x29);
+  iVar2 = *(int *)(*(int *)(*(int *)(param_4 + 0x20) + ((char *)param_4)[0x13] * 0x24) + 0x29);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((iVar2 != 0) && (iVar2 = *(int *)(iVar2 + *(int *)(param_4 + 0x30) * 4), iVar2 != 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -2009,6 +1978,7 @@ cf_break_loop_004AE25B:
   }
 LAB_004ae37e:
   if (((param_9 == 0) ||
+      /* ST_CALLSITE[004AE38F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       (bVar3 = st::fn_004049B7((char)param_5), sVar15 = g_worldGrid.sizeX, bVar3 == 3)) &&
      ((sVar15 = g_worldGrid.sizeX, local_18 != 0 && (local_18 = 0, param_3 < 4)))) {
     local_18 = 1;
@@ -2030,12 +2000,12 @@ LAB_004ae37e:
 LAB_004ae41c:
   if (param_4 - CASE_38 < 0x2a) {
                     /* WARNING: Switch is manually overridden */
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    switch(*(undefined1 *)(param_4 + 0x4aecb0)) {
+    switch(((undefined1 *)param_4)[0x4aecb0]) {
     case 0:
       local_c = 0;
       local_10 = (STFishC *)st::fn_00405E48(_param_1,param_2,param_3);
       if (local_10 != nullptr) {
+        /* ST_CALLSITE[004AE467]: CALL dword ptr [EDX + 0x2c] */
         dVar8 = local_10->slot_2C();
                     /* WARNING: Switch is manually overridden */
         switch((&BYTE_004aecec)[param_4]) {
@@ -2093,6 +2063,7 @@ LAB_004ae41c:
       if ((pDVar12 != nullptr) && (uVar19 = 0, 0 < (int)pDVar12->count)) {
         do {
           st::fn_006ACC70(pDVar12,uVar19,&local_10);
+          /* ST_CALLSITE[004AE92E]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
           if ((((STPiece<2,2>(param_9) != _param_1) || ((local_6 != param_2 || (local_8 != param_3)))) &&
               (uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
@@ -2114,6 +2085,7 @@ LAB_004ae41c:
         if (0 < (int)pDVar12->count) {
           do {
             st::fn_006ACC70(pDVar12,uVar19,&local_10);
+            /* ST_CALLSITE[004AE9F4]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
             if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
                ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
@@ -2136,6 +2108,7 @@ LAB_004ae41c:
         if (0 < (int)pDVar12->count) {
           do {
             st::fn_006ACC70(pDVar12,uVar19,&local_10);
+            /* ST_CALLSITE[004AEABB]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
             if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
                ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
@@ -2158,6 +2131,7 @@ LAB_004ae41c:
         if (0 < (int)pDVar12->count) {
           do {
             st::fn_006ACC70(pDVar12,uVar19,&local_10);
+            /* ST_CALLSITE[004AEB82]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
             if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
                ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
@@ -2180,6 +2154,7 @@ LAB_004ae41c:
         if (0 < (int)pDVar12->count) {
           do {
             st::fn_006ACC70(pDVar12,uVar19,&local_10);
+            /* ST_CALLSITE[004AEC45]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             st::fn_004018C5(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
             if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
                ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
@@ -2203,10 +2178,13 @@ LAB_004ae41c:
            (pSVar1 = g_worldGrid.cells
                      [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)sVar4 +
                       (int)param_1].objects[0], pSVar1 == nullptr)))))))) ||
+       /* ST_CALLSITE[004AE631]: CALL dword ptr [EDX + 0x2c] */
        (((iVar11 = pSVar1->GetObjectTypeId(), iVar11 != 0x53 ||
          ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
+        /* ST_CALLSITE[004AE649]: CALL dword ptr [EDX + 0x2c] */
         (((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
           iVar11 < 0x54 ||
+          /* ST_CALLSITE[004AE655]: CALL dword ptr [EAX + 0x2c] */
           (iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
           0x5a < iVar11)) ||
          ((param_10 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != param_10)))))))) {
@@ -2218,10 +2196,13 @@ LAB_004ae41c:
              (pSVar1 = g_worldGrid.cells
                        [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)sVar15 +
                         (int)sVar5].objects[0], pSVar1 == nullptr)))))))) ||
+         /* ST_CALLSITE[004AE6F9]: CALL dword ptr [EDX + 0x2c] */
          (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10, iVar11 != 0x53
            || ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
+          /* ST_CALLSITE[004AE711]: CALL dword ptr [EAX + 0x2c] */
           (((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
             iVar11 < 0x54 ||
+            /* ST_CALLSITE[004AE71D]: CALL dword ptr [EDX + 0x2c] */
             (iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
             0x5a < iVar11)) ||
            ((piVar2 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != piVar2)))))))) {
@@ -2231,10 +2212,13 @@ LAB_004ae41c:
              (pSVar1 = g_worldGrid.cells
                        [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)sVar15 +
                         (int)sVar5].objects[0], pSVar1 != nullptr)))) &&
+           /* ST_CALLSITE[004AE7B6]: CALL dword ptr [EDX + 0x2c] */
            (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10, iVar11 == 0x53
              && ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
+            /* ST_CALLSITE[004AE7CE]: CALL dword ptr [EAX + 0x2c] */
             ((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
              0x53 < iVar11 &&
+             /* ST_CALLSITE[004AE7DA]: CALL dword ptr [EDX + 0x2c] */
              ((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
               iVar11 < 0x5b &&
               ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
@@ -2248,10 +2232,13 @@ LAB_004ae41c:
                    (pSVar1 = g_worldGrid.cells
                              [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)sVar4
                               + (int)param_1].objects[0], pSVar1 != nullptr)))) &&
+                 /* ST_CALLSITE[004AE88A]: CALL dword ptr [EDX + 0x2c] */
                  (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10,
                    iVar11 == 0x53 &&
                    ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
+                  /* ST_CALLSITE[004AE8A2]: CALL dword ptr [EAX + 0x2c] */
                   (((iVar11 = pSVar1->GetObjectTypeId(), 0x53 < iVar11 &&
+                    /* ST_CALLSITE[004AE8B2]: CALL dword ptr [EDX + 0x2c] */
                     (iVar11 = pSVar1->GetObjectTypeId(), iVar11 < 0x5b)) &&
                    ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
           local_c = 1;
@@ -2438,6 +2425,7 @@ LAB_004af325:
     iVar9 = st::fn_006B1190(g_array_007FA150,(byte *)&local_10);
     while (-1 < iVar9) {
       if (local_10 != nullptr) {
+        /* ST_CALLSITE[004AF38D]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
         *(undefined1 *)
          ((int)psVar8 +
@@ -2527,6 +2515,7 @@ LAB_004af325:
                   if (0 < (int)pDVar15->count) {
                     do {
                       st::fn_006ACC70(pDVar15,uVar21,&local_10);
+                      /* ST_CALLSITE[004AF6E9]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
                       uVar18 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
@@ -2548,6 +2537,7 @@ LAB_004af325:
                   if (0 < (int)pDVar15->count) {
                     do {
                       st::fn_006ACC70(pDVar15,uVar21,&local_10);
+                      /* ST_CALLSITE[004AF78E]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
                       uVar18 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
@@ -2569,6 +2559,7 @@ LAB_004af325:
                   if (0 < (int)pDVar15->count) {
                     do {
                       st::fn_006ACC70(pDVar15,uVar21,&local_10);
+                      /* ST_CALLSITE[004AF833]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
                       uVar18 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
@@ -2590,6 +2581,7 @@ LAB_004af325:
                   if (0 < (int)pDVar15->count) {
                     do {
                       st::fn_006ACC70(pDVar15,uVar21,&local_10);
+                      /* ST_CALLSITE[004AF8D8]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
                       uVar18 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
@@ -2608,6 +2600,7 @@ LAB_004af325:
                    (uVar21 = 0, 0 < (int)g_array_007FA16C->count)) {
                   do {
                     st::fn_006ACC70(g_array_007FA16C,uVar21,&local_10);
+                    /* ST_CALLSITE[004AFB68]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                     st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
                     uVar18 = local_6 - local_18 >> 0x1f;
                     if (((int)((local_6 - local_18 ^ uVar18) - uVar18) < 0xe) &&
@@ -2645,15 +2638,19 @@ LAB_004af325:
                                 (local_10 = *(STFishC **)
                                              ((int)(g_worldGrid.cells)->objects + iVar19),
                                 local_10 != nullptr)) &&
+                               /* ST_CALLSITE[004AFA05]: CALL dword ptr [EDX + 0x2c] */
                                (((dVar13 = local_10->slot_2C(), dVar13 == 0x53 &&
                                  (local_10->field_0018 == *(int *)(param_9 + 0x18))) ||
+                                /* ST_CALLSITE[004AFA1D]: CALL dword ptr [EAX + 0x2c] */
+                                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                 ((dVar13 = local_10->slot_2C(),
-                                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                  0x53 < (int)dVar13 &&
+                                 /* ST_CALLSITE[004AFA2A]: CALL dword ptr [EDX + 0x2c] */
                                  ((dVar13 = local_10->slot_2C(),
                                   (int)dVar13 < 0x5b &&
                                   (*(int *)&local_10[2].field_0xfd == *(int *)(param_9 + 0x18)))))))
                                )))) {
+                          /* ST_CALLSITE[004AFA73]: CALL dword ptr [EDX + 0x2c] */
                           dVar13 = local_10->slot_2C();
                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                           if ((dVar13 == 0x53) && (local_10->field_0018 == *(int *)(param_9 + 0x18))
@@ -2677,6 +2674,7 @@ LAB_004af325:
             if ((pDVar15 != nullptr) && (uVar21 = 0, 0 < (int)pDVar15->count)) {
               do {
                 st::fn_006ACC70(pDVar15,uVar21,&local_10);
+                /* ST_CALLSITE[004AF645]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
                 uVar18 = local_6 - local_18 >> 0x1f;
                 if (((int)((local_6 - local_18 ^ uVar18) - uVar18) < 0x10) &&
@@ -2780,22 +2778,27 @@ st::fn_004AFFA0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *
         if (local_10 == nullptr) goto switchD_004afffd_caseD_3a;
         switch(param_2) {
         case CASE_38:
+          /* ST_CALLSITE[004B0006]: CALL dword ptr [EAX + 0x2c] */
           dVar1 = local_10->slot_2C();
           if (dVar1 != 0xdc) break;
           goto LAB_004b004a;
         case CASE_39:
         case CASE_5E:
+          /* ST_CALLSITE[004B0018]: CALL dword ptr [EDX + 0x2c] */
           dVar1 = local_10->slot_2C();
           if (dVar1 == 0xdd) goto LAB_004b004a;
           break;
         case CASE_4F:
+          /* ST_CALLSITE[004B002A]: CALL dword ptr [EAX + 0x2c] */
           dVar1 = local_10->slot_2C();
           goto joined_r0x004b0044;
         case CASE_61:
+          /* ST_CALLSITE[004B003C]: CALL dword ptr [EDX + 0x2c] */
           dVar1 = local_10->slot_2C();
 joined_r0x004b0044:
           if (dVar1 == 0xde) {
 LAB_004b004a:
+            /* ST_CALLSITE[004B0059]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
             iVar2 = (int)local_8;
             iVar3 = (int)local_6;

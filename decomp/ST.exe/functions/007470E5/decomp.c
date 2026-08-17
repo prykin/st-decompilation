@@ -11,17 +11,22 @@ int FUN_007470e5(AnonShape_007470E5_0A8F5E67 *param_1)
   int iVar4;
 
   lpCriticalSection = param_1->field_002C;
+  /* ST_CALLSITE[007470F6]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(lpCriticalSection);
   iVar4 = 0;
   if (param_1->field_0008 == 0) {
+    /* ST_CALLSITE[0074710B]: CALL dword ptr [EAX + 0x18] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*(int *)&param_1[-1].field_0x24 + 0x18))();
     if (0 < iVar1) {
       do {
+        /* ST_CALLSITE[00747119]: CALL dword ptr [EAX + 0x1c] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         piVar2 = (int *)(**(code **)(*(int *)&param_1[-1].field_0x24 + 0x1c))(iVar4);
+        /* ST_CALLSITE[00747126]: CALL dword ptr [EDX + 0x14] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((piVar2[6] != 0) && (iVar3 = (**(code **)(*piVar2 + 0x14))(), iVar3 < 0)) {
+          /* ST_CALLSITE[00747155]: CALL dword ptr [0x0085bb90] */
           LeaveCriticalSection(lpCriticalSection);
           return iVar3;
         }
@@ -30,6 +35,7 @@ int FUN_007470e5(AnonShape_007470E5_0A8F5E67 *param_1)
     }
   }
   param_1->field_0008 = 1;
+  /* ST_CALLSITE[00747141]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(lpCriticalSection);
   return 0;
 }

@@ -16,6 +16,7 @@ undefined4 __thiscall FUN_004dbb60(void *this,int *param_1,int param_2)
   do {
     if (*piVar3 == 0) {
       *(int *)((int)this + iVar5 * 4 + 0x4d0) = param_1[6];
+      /* ST_CALLSITE[004DBB98]: CALL dword ptr [EDX + 0x2c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (**(code **)(*param_1 + 0x2c))();
       *(undefined4 *)((int)this + iVar5 * 4 + 0x4d8) = uVar4;

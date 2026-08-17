@@ -14,9 +14,11 @@ void __fastcall FUN_005fb170(STColl3C *param_1)
 
 {
   switch(param_1->field_02DD) {
+  /* ST_CALLSITE[005FB190]: CALL 0x00401b04; direct=00401B04 STColl3C::sub_005F66B0 */
   case CASE_1:
     STColl3C::sub_005F66B0(param_1);
     return;
+  /* ST_CALLSITE[005FB19B]: CALL 0x00401d8e; direct=00401D8E STColl3C::LoadImagSpr */
   case CASE_2:
   case CASE_3:
   case CASE_4:
@@ -28,6 +30,7 @@ void __fastcall FUN_005fb170(STColl3C *param_1)
   case CASE_B:
   case CASE_C:
     STColl3C::LoadImagSpr(param_1,0);
+    /* ST_CALLSITE[005FB1A2]: CALL 0x00403c1a; direct=00403C1A STColl3C::sub_005FA070 */
     STColl3C::sub_005FA070(param_1);
     param_1->field_02DD = CASE_D;
   }

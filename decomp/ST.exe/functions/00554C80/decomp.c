@@ -18,12 +18,14 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
   cLoadingTy *local_8;
 
   local_8 = this;
+  /* ST_CALLSITE[00554C8C]: CALL 0x0040249b; direct=0040249B cLoadingTy::sub_00555570 */
   sub_00555570(this);
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pcVar2 = local_8;
   if (iVar3 == 0) {
+    /* ST_CALLSITE[00554CC3]: CALL 0x00404638; direct=00404638 cLoadingTy::sub_00555680 */
     sub_00555680(local_8,resourceString);
     FUN_006b4170((RecoveredSourceFamily_dibcopy *)pcVar2->field_0004,0,
                  pcVar2->field_0014 + pcVar2->field_000C,pcVar2->field_0010 + pcVar2->field_0018,
@@ -65,6 +67,7 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
     }
     Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
     if ((code *)pcVar2->field_0058 != nullptr) {
+      /* ST_CALLSITE[00554E31]: CALL EAX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pcVar2->field_0058)(pcVar2->field_0054);
     }

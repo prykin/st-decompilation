@@ -72,6 +72,7 @@ LAB_0054b7e0:
     iVar3 = pCVar1->field_04DF * -0x13 + 0x136;
     iVar4 = g_nWidth_00806730 + -0x15;
   }
+  /* ST_CALLSITE[0054B813]: CALL 0x00403738; direct=00403738 PutDDX */
   PutDDX(iVar4,iVar3,'\x06',pBVar2);
 LAB_0054b81b:
   pCVar1->field_04DF = param_1;
@@ -95,6 +96,7 @@ LAB_0054b81b:
       iVar4 = pCVar1->field_04DF * -0x13 + 0x136;
       iVar3 = g_nWidth_00806730 + -0x15;
     }
+    /* ST_CALLSITE[0054B8DC]: CALL 0x00403738; direct=00403738 PutDDX */
     PutDDX(iVar3,iVar4,'\x06',pBVar2);
   }
   g_currentExceptionFrame = local_4c.previous;

@@ -16,7 +16,9 @@
 void __thiscall CursorClassTy::sub_0054B630(CursorClassTy *this,uint param_1,undefined4 param_2)
 
 {
+  /* ST_CALLSITE[0054B636]: CALL 0x004040fc; direct=004040FC CursorClassTy::sub_0054A8D0 */
   sub_0054A8D0(this);
+  /* ST_CALLSITE[0054B63D]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
   sub_0054B540(this);
   this->field_04A2 = param_1;
   this->field_04AA = param_2;

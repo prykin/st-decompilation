@@ -37,7 +37,9 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
     local_33 = param_1;
     local_31 = 0;
     local_2b = Library::DKW::TBL::DArrayCreate(nullptr,10,2,10);
+    /* ST_CALLSITE[0068FBA8]: CALL 0x00403cdd; direct=00403CDD AiTactClassTy::sub_006902B0 */
     sub_006902B0(this_00,-0x8000,local_3c);
+    /* ST_CALLSITE[0068FBB0]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
     this_01 = (void *)sub_0068E290(this_00,param_1);
     if (this_01 != nullptr) {
       thunk_FUN_0065d940(this_01,local_2b,0);

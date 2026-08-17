@@ -46,11 +46,13 @@ UPanelTy::PaintTxtBut
       uVar4 = local_c;
       pUVar2 = local_10;
       iVar3 = local_14;
+      /* ST_CALLSITE[0053D9C3]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_10->field_0068,local_14,local_c,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       ccFntTy::SetSurf(param_4,pUVar2->field_0068,0,iVar3,uVar4,local_18->field_0008,
                        local_18->field_000C);
+      /* ST_CALLSITE[0053D9FB]: CALL dword ptr [EBP + 0x1c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_1);
       iVar5 = -1;

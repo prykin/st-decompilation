@@ -26,6 +26,7 @@ FUN_00679f00(void *this,uint param_1,AnonShape_0068FD00_A5257008 *param_2,int pa
     if (((puVar2[1] != 0) && (this_00 = (AiTactClassTy *)*puVar2, this_00 != nullptr))
        && (param_2 != nullptr)) {
       if (param_3 < 0) {
+        /* ST_CALLSITE[00679F46]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
         local_EAX_70 = AiTactClassTy::GetAiMess(this_00,param_2);
         return local_EAX_70;
       }

@@ -16,15 +16,19 @@ void FUN_0075da80(AnonShape_0075DA80_57A0CDEF *param_1)
   int local_8;
 
   pAVar1 = param_1->field_01B6;
+  /* ST_CALLSITE[0075DA9A]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0008 = uVar2;
+  /* ST_CALLSITE[0075DAA9]: CALL dword ptr [ECX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_000C = uVar2;
+  /* ST_CALLSITE[0075DAB8]: CALL dword ptr [EDX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0010 = uVar2;
+  /* ST_CALLSITE[0075DAC7]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0014 = uVar2;

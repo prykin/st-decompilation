@@ -16,6 +16,7 @@ int __thiscall STBoatC::BackTeleport(STBoatC *this,int *param_1)
 
   this->field_00B7 = 0;
   switch(*(undefined4 *)&this->field_0x663) {
+  /* ST_CALLSITE[0047BF98]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
   case 0:
   case 1:
   case 7:
@@ -23,8 +24,10 @@ int __thiscall STBoatC::BackTeleport(STBoatC *this,int *param_1)
     return local_EAX_40;
   case 2:
     thunk_FUN_00493bc0(this);
+    /* ST_CALLSITE[0047BFAF]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
     local_EAX_63 = sub_00460360(this);
     return local_EAX_63;
+  /* ST_CALLSITE[0047BFBD]: CALL 0x00405880; direct=00405880 STBoatC::Teleport */
   case 3:
   case 4:
   case 5:

@@ -29,6 +29,7 @@ void __thiscall FUN_00600110(void *this,int param_1,int param_2,int soundId)
                              (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
   }
   local_10.unknown = STField<int>(this,0x18);
+  /* ST_CALLSITE[00600196]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
   SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,soundId,&local_10,0);
   return;
 }

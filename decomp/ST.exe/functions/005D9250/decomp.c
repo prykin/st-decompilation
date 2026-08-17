@@ -65,6 +65,7 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
       pcVar11 = &CHAR_00h_00807ddd;
       resourceString = &pSVar3->field_1CD4;
       pcVar6 = LoadResourceString(0x2520,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[005D9339]: CALL dword ptr [0x0085bde8] */
       wsprintfA(resourceString,"&0%s\n&5%s&0?",pcVar6,pcVar11);
       this_00 = g_startSystem_0081176C->field_0034;
       iVar12 = -1;

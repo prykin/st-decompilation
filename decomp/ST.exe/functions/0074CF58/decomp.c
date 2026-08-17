@@ -9,6 +9,7 @@ int __thiscall FUN_0074cf58(void *this,undefined4 param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_retaddr;
 
+  /* ST_CALLSITE[0074CF67]: CALL dword ptr [EAX + 0x28] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar2 = (**(code **)(*STField<int *>(this,0xe0) + 0x28))(param_1);
   if (iVar2 == 0) {
@@ -17,6 +18,7 @@ int __thiscall FUN_0074cf58(void *this,undefined4 param_1)
       iVar2 = 0;
     }
     else {
+      /* ST_CALLSITE[0074CF88]: CALL dword ptr [ECX + 0x2c] */
       /* ST_PSEUDO[unresolved_register_input,raw_indirect_call]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*piVar1 + 0x2c))(piVar1,unaff_retaddr);
     }

@@ -12,8 +12,7 @@ void __fastcall FUN_0067b260(int param_1)
   DArrayTy *array;
   char *pcVar1;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(char *)(param_1 + 0x662) == '\x01') {
+  if (((char *)param_1)[0x662] == '\x01') {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     index = *(uint *)(*(int *)(param_1 + 0x6a1) + 0xc);
     while (index = index - 1, -1 < (int)index) {
@@ -26,7 +25,7 @@ void __fastcall FUN_0067b260(int param_1)
         DArrayRemoveAt(array,index);
       }
     }
-    *(undefined1 *)(param_1 + 0x662) = 0;
+    ((undefined1 *)param_1)[0x662] = 0;
   }
   return;
 }

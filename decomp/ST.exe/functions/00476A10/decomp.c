@@ -23,6 +23,7 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
           thunk_FUN_005fd750(this->field_0024,this->field_05EC * 0xc9 + 100,
                              this->field_05EE * 0xc9 + 100,100,(uint)(ushort)this->field_0032,0xf);
           this->field_07BE = this->field_07BE + -0xf;
+          /* ST_CALLSITE[00476B26]: CALL dword ptr [EAX + 0xd8] */
           iVar6 = this->vfunc_D8();
           return -(uint)(iVar6 != 0);
         }
@@ -31,9 +32,11 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
                            this->field_07BE);
         this->field_07BE = 0;
       }
+      /* ST_CALLSITE[00476B7F]: CALL dword ptr [EAX + 0xd8] */
       iVar6 = this->vfunc_D8();
       return -(uint)(iVar6 != 0);
     }
+    /* ST_CALLSITE[00476A3A]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
     iVar6 = sub_0045FF50(this,2);
     if (iVar6 == -1) {
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3184,0,0,"%s",
@@ -47,6 +50,7 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
       this->field_05F8 = 1;
     }
     else if (iVar6 == 3) {
+      /* ST_CALLSITE[00476A4F]: CALL 0x004019f1; direct=004019F1 STBoatC::sub_004926C0 */
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       iVar6 = sub_004926C0(this,unaff_ESI);
       if (iVar6 != 1) {
@@ -65,6 +69,7 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
     this->field_05EC = this->field_03E2;
     this->field_05EE = this->field_03E4;
     this->field_05F0 = this->field_03E6;
+    /* ST_CALLSITE[00476BDB]: CALL 0x004019f1; direct=004019F1 STBoatC::sub_004926C0 */
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar6 = sub_004926C0(this,unaff_ESI);
     if (iVar6 == 1) {
@@ -73,7 +78,9 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
       sVar3 = this->field_05F2;
       this->field_05F8 = 0;
 LAB_00476c07:
+      /* ST_CALLSITE[00476C09]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
       sub_00481520(this,(int)sVar3,(int)sVar2,(int)sVar1);
+      /* ST_CALLSITE[00476C12]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
       iVar6 = sub_0045FF50(this,0);
       return (-(uint)(iVar6 != -1) & 3) - 1;
     }

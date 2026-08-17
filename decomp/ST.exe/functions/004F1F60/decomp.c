@@ -41,6 +41,7 @@ CPanelTy::PaintDamageXY
     iVar3 = 0;
     pcVar4 = LoadResourceString(param_5,g_hINSTANCE_00807618);
     ccFntTy::WrTxt(pCVar2->field_01B8,pcVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
+    /* ST_CALLSITE[004F1FF0]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&pCVar2->field_01E1,"%3d",param_4);
     ccFntTy::SetSurf(pCVar2->field_01BC,param_1,0,param_2 + 0xc,param_3 + 10,0x14,0xf);
     ccFntTy::WrTxt(pCVar2->field_01BC,&pCVar2->field_01E1,-3,-1,1,-1,-1);

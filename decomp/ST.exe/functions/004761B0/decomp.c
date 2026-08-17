@@ -40,7 +40,6 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
     this->field_05DE = sVar2;
     this->field_05E6 = sVar3;
     this->field_05E0 = sVar3;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
          (((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)) ||
           ((g_worldGrid.sizeZ <= sVar3 ||
@@ -51,6 +50,8 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
             (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1] != nullptr)) &&
            ((iVar7 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
             iVar7 == 0x5a || (iVar7 == 0x1ae)))))))))) &&
+       /* ST_CALLSITE[004767D0]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
+       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
        (iVar7 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                              (int *)CONCAT22((short)((uint)&this->field_05E2 >> 0x10),
                                              this->field_004B),1,&this->field_05E2,&this->field_05E4
@@ -58,11 +59,14 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
       return 0;
     }
     this->field_05E8 = 0;
+    /* ST_CALLSITE[00476804]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
     sub_00481520(this,(int)this->field_05E2,(int)this->field_05E4,(int)this->field_05E6);
+    /* ST_CALLSITE[0047680D]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
     iVar5 = sub_00460260(this,0);
     return (-(uint)(iVar5 != -1) & 3) - 1;
   }
   if (this->field_05E8 == 0) {
+    /* ST_CALLSITE[004761DC]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
     local_EAX_44 = sub_00460260(this,2);
     switch(local_EAX_44) {
     case 0:
@@ -75,7 +79,6 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
       this->field_05DC = sVar1;
       this->field_05DE = sVar2;
       this->field_05E0 = sVar3;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
              ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) || (g_worldGrid.sizeZ <= sVar3)) ||
            (STGridAt3D(g_pathingGrid, sVar1, sVar2, sVar3) != 0)) ||
@@ -85,12 +88,15 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
            ((STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1] != nullptr &&
             ((iVar7 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
              iVar7 == 0x5a || (iVar7 == 0x1ae)))))))) &&
+         /* ST_CALLSITE[00476553]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
+         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
          (iVar7 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                                (int *)CONCAT22((short)((uint)&this->field_05E2 >> 0x10),
                                                this->field_004B),1,&this->field_05E2,
                                &this->field_05E4,&this->field_05E6), iVar7 == 0)) {
         return 0;
       }
+      /* ST_CALLSITE[00476565]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
       sub_004602B0(this);
       break;
     default:
@@ -106,7 +112,6 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
              ((-1 < sVar2 &&
               (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)))))) &&
             (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[0] != nullptr)) ||
-           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            ((sVar1 < 0 || (g_worldGrid.sizeX <= sVar1)))) ||
           ((((sVar2 < 0 || ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) ||
             ((g_worldGrid.sizeZ <= sVar3 ||
@@ -117,6 +122,8 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
                (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1] != nullptr)))))) &&
             ((iVar7 = STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[1]->value_20,
              iVar7 == 0x5a || (iVar7 == 0x1ae)))))))) &&
+         /* ST_CALLSITE[004763F4]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
+         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
          (iVar7 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                                (int *)CONCAT22((short)((uint)&this->field_05E2 >> 0x10),
                                                this->field_004B),1,&this->field_05E2,
@@ -132,7 +139,9 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
       }
       return 0xffff;
     }
+    /* ST_CALLSITE[00476584]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
     sub_00481520(this,(int)this->field_05E2,(int)this->field_05E4,(int)this->field_05E6);
+    /* ST_CALLSITE[0047658D]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
     sub_00460260(this,0);
 switchD_004761eb_caseD_3:
     return 2;
@@ -143,9 +152,11 @@ switchD_004761eb_caseD_3:
     pSVar6 = this->vtable;
     arg_2 = 0xe6;
 LAB_004765df:
+    /* ST_CALLSITE[004765E3]: CALL dword ptr [EAX + 0x90] */
     (*pSVar6->vfunc_90)(this,3,arg_2);
   }
   else if (SVar4 == CASE_11) {
+    /* ST_CALLSITE[004765D0]: CALL dword ptr [EDX + 0x90] */
     this->vfunc_90(3,0x14a);
   }
   else if (SVar4 == CASE_21) {
@@ -158,6 +169,7 @@ LAB_004765df:
                      this->field_0045 + -10,this->field_06F3,nullptr,0xffffffff);
   this->field_07BE = this->field_07BE + -1;
 LAB_00476633:
+  /* ST_CALLSITE[00476637]: CALL dword ptr [EAX + 0xd8] */
   iVar7 = this->vfunc_D8();
   return -(uint)(iVar7 != 0);
 }

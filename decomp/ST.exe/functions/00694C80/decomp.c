@@ -10,6 +10,7 @@ void __thiscall CGenerate::sub_00694C80(CGenerate *this)
 
 {
   if ((this->field_0010 != 0) && (this->field_0014 != 0)) {
+    /* ST_CALLSITE[00694C91]: CALL 0x00402004; direct=00402004 CGenerate::sub_00694B90 */
     sub_00694B90(this);
     this->field_0008 = (int *)this->field_0010;
     this->field_000C = (byte *)this->field_0014;

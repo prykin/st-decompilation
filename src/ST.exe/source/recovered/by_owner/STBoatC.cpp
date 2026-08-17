@@ -108,8 +108,10 @@ STBoatC * __thiscall st::fn_0044E690(STBoatC *this)
   short *psVar3;
   STBoatC_field_06F3State *pSVar4;
 
+  /* ST_CALLSITE[0044E694]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
-  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[0044E6A1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  st::fn_00401316((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_00790700);
   this->vtable = &st_global_007905A0;
   puVar2 = (undefined4 *)&this->field_0x231;
@@ -144,7 +146,7 @@ STBoatC * __thiscall st::fn_0044E690(STBoatC *this)
     psVar3 = psVar3 + 2;
   }
   *psVar3 = 0;
-  *(undefined1 *)(psVar3 + 1) = 0;
+  ((undefined1 *)psVar3)[1] = 0;
   memset(&this->field_0510, 0, 0x1c); /* compiler bulk-zero initialization */
   iVar1 = 0;
   psVar3 = &this->field_052C;
@@ -312,6 +314,7 @@ undefined4 __thiscall st::fn_0045F6C0(STBoatC *this)
   int iVar13;
 
   iVar12 = 0;
+  /* ST_CALLSITE[0045F6D7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar6 = st::fn_004049B7(*(char *)&this->field_0024);
   uVar6 = (int)(byte)uVar6;
   if (uVar6 == 1) {
@@ -362,6 +365,7 @@ LAB_0045f710:
   {
     bVar4 = bVar4 >> 1;
   }
+  /* ST_CALLSITE[0045F827]: CALL 0x00402455; direct=00402455 sub_00415B30 */
   iVar10 = st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,arg_4,arg_5,sVar5,
                         bVar4);
   if (iVar10 != 0) {
@@ -377,9 +381,11 @@ LAB_0045f710:
       bVar3 = true;
     }
     if ((!bVar2) || (!bVar3)) {
+      /* ST_CALLSITE[0045F8C9]: CALL dword ptr [EDX + 0x10] */
       sVar5 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar13), (uint16_t)(this->field_0045)),arg_4,arg_5,arg_6);
+      /* ST_CALLSITE[0045F8CF]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
       uVar7 = st::fn_004030B2(this,sVar5);
       if ((short)uVar7 != this->field_006C) {
         st::fn_004021E9(this,this->field_006C,(short)uVar7);
@@ -420,6 +426,7 @@ undefined4 __thiscall st::fn_0045FF50(STBoatC *this,int param_1)
         break;
       case 1:
         this->field_00FA = 0;
+        /* ST_CALLSITE[0045FFBB]: CALL 0x00403927; direct=00403927 STBoatC::sub_0045F6C0 */
         st::fn_00403927(this);
         return 2;
       case -6:
@@ -434,7 +441,9 @@ switchD_00460024_caseD_1:
     }
   }
   else {
+    /* ST_CALLSITE[00460001]: CALL dword ptr [EDX + 0x1c] */
     uVar1 = this->vfunc_1C();
+    /* ST_CALLSITE[0046000A]: CALL dword ptr [EAX + 0xd8] */
     iVar2 = this->vfunc_D8();
     if (iVar2 == 0) {
       switch(uVar1) {
@@ -465,6 +474,7 @@ switchD_00460024_caseD_1:
         goto switchD_00460024_caseD_1;
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       case 2:
+        /* ST_CALLSITE[00460106]: CALL dword ptr [EDX + 0x20] */
         this->StopMove(unaff_EDI);
         return 3;
       }
@@ -487,6 +497,7 @@ int __thiscall st::fn_00460260(STBoatC *this,int param_1)
   if (param_1 == 0) {
     this->field_00F4 = 0;
   }
+  /* ST_CALLSITE[00460276]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
   iVar1 = st::fn_00403B34(this,param_1);
   if ((iVar1 == 2) && (this->field_00F4 == 1)) {
     iVar1 = 1;
@@ -506,6 +517,7 @@ void __thiscall st::fn_004602B0(STBoatC *this)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_ESI;
 
+  /* ST_CALLSITE[004602B5]: CALL dword ptr [EAX + 0x20] */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   this->StopMove(unaff_ESI);
   this->field_00F4 = 0;
@@ -526,8 +538,10 @@ int __thiscall st::fn_00460360(STBoatC *this)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
 
+  /* ST_CALLSITE[00460366]: CALL dword ptr [EAX + 0x20] */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   iVar1 = this->StopMove(unaff_EDI);
+  /* ST_CALLSITE[0046036F]: CALL dword ptr [EDX + 0xd8] */
   iVar2 = this->vfunc_D8();
   if ((iVar2 == 0) && (iVar1 != -1)) {
     if (iVar1 != 0) {
@@ -564,6 +578,7 @@ int __thiscall st::fn_004803D0(STBoatC *this,AnonShape_004803D0_350EB461 *param_
   }
   iVar2 = this->field_06EF;
   if (iVar2 == 0) {
+    /* ST_CALLSITE[0048045D]: CALL 0x00404e1c; direct=00404E1C STBoatC::LoadObj */
     local_EAX_141 = st::fn_00404E1C(this,(AnonShape_005EFAE0_B406B78B *)param_1);
     if (local_EAX_141 == -1) {
       return -1;
@@ -578,6 +593,7 @@ int __thiscall st::fn_004803D0(STBoatC *this,AnonShape_004803D0_350EB461 *param_
     this->field_07CE = 1;
   }
   else if (iVar2 == 1) {
+    /* ST_CALLSITE[004804A6]: CALL dword ptr [EDX + 0xd8] */
     iVar2 = this->vfunc_D8();
     if (iVar2 != 0) {
       return -1;
@@ -592,12 +608,14 @@ int __thiscall st::fn_004803D0(STBoatC *this,AnonShape_004803D0_350EB461 *param_
         this->field_03D0 = 0xffff;
         this->field_03CE = 0xffff;
         this->field_06EF = 2;
+        /* ST_CALLSITE[00480528]: CALL 0x004011ae; direct=004011AE STBoatC::UnLoadObj */
         local_EAX_344 = st::fn_004011AE(this,1);
         return local_EAX_344;
       }
     }
   }
   else if (iVar2 == 2) {
+    /* ST_CALLSITE[0048053F]: CALL 0x004011ae; direct=004011AE STBoatC::UnLoadObj */
     iVar1 = st::fn_004011AE(this,2);
     return iVar1;
   }
@@ -1030,7 +1048,6 @@ st::fn_0048DFD0
 
 {
   int _param_3 = static_cast<int>(param_3);
-  int _param_5 = static_cast<int>(param_5);
 
   short sVar1;
   short sVar2;
@@ -1527,6 +1544,7 @@ st::fn_0048DFD0
     _param_3 = uVar6 >> 0x10 & 7;
   }
   else {
+    /* ST_CALLSITE[0048EC3E]: CALL dword ptr [EAX + 0x10] */
     sVar3 = (*local_2c->vtable->vfunc_10)
                       (param_1 * 0xc9 + 100,param_2 * 0xc9 + 100,_param_3 * 200 + 100,
                        param_4 * 0xc9 + 100,param_5 * 0xc9 + 100,(int)param_6 * 200 + 100);
@@ -1945,6 +1963,7 @@ void __thiscall st::fn_00492420(STBoatC *this)
                       (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
                        (int *)&local_8);
     if (iVar1 != -4) {
+      /* ST_CALLSITE[00492468]: CALL dword ptr [EDX + 0xa0] */
       local_8->ReleaseLoad(this->field_0018);
     }
   }

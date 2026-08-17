@@ -133,6 +133,7 @@ ProdPanelTy::CreateSlider
     local_23c = 0xc006;
     local_1f0 = 0x272f;
     local_214 = 0x272f;
+    /* ST_CALLSITE[0053FB76]: CALL dword ptr [EAX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,4,&local_8,nullptr,local_42c,0);
     if ((this_00->field_005C == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {

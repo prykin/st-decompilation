@@ -35,9 +35,11 @@ void __thiscall SettMapMTy::RunGame(SettMapMTy *this)
     this_01->field_21E7 = 1;
     this_01->field_21E2 = 1;
     this_01->field_21E1 = 1;
+    /* ST_CALLSITE[005D48D4]: CALL dword ptr [EDX + 0x8] */
     (*this_01->vtable->CloseButtons)((SettMapTy *)this_01);
     this_00 = (this_01->array_00BC[0xc].field_01DB)->field_02E6;
     if (this_00 != nullptr) {
+      /* ST_CALLSITE[005D48EB]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       MMsgTy::HidePanel(this_00,1,0,1);
     }
     g_currentExceptionFrame = local_4c.previous;

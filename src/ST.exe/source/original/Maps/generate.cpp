@@ -71,6 +71,7 @@ undefined4 __thiscall st::fn_006A01D0(CGenerate *this)
   pcVar3 = (cMf32 *)st::fn_006F0EC0
                               (0x345,&(this_00->aggregate_001C).field_0x4,1,0,0);
   this_00->field_0018 = pcVar3;
+  /* ST_CALLSITE[006A02A2]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
   pbVar4 = (byte *)st::fn_006EFC50
                              ((this_00->aggregate_001C).field_020C,
@@ -78,31 +79,39 @@ undefined4 __thiscall st::fn_006A01D0(CGenerate *this)
                               *(cMf32 **)&(this_00->aggregate_001C).field_0x218,
                               *(int *)&(this_00->aggregate_001C).field_0x21d,0x20);
   this_00->field_000C = pbVar4;
+  /* ST_CALLSITE[006A02D2]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
   piVar5 = st::fn_006F0620((short *)this_00->field_000C);
   this_00->field_0008 = piVar5;
+  /* ST_CALLSITE[006A02E8]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
   st::fn_00401CB2(1,st::pointer_boundary_cast<int *>(this_00->field_0008));
+  /* ST_CALLSITE[006A02FD]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
   local_EAX_314 =
        st::fn_006F0C00((short *)this_00->field_000C,st::pointer_boundary_cast<int *>(this_00->field_0008));
   if (local_EAX_314 != 0) {
     local_c = 0;
   }
+  /* ST_CALLSITE[006A031B]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
   iVar6 = st::fn_00404C1E(&this_00->field_0x24e,(undefined2 *)&this_00->field_53EB);
   if (iVar6 == 0) {
     local_c = 0;
   }
+  /* ST_CALLSITE[006A033B]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
   local_20 = (this_00->aggregate_001C).field_020C;
   local_1c = (this_00->aggregate_001C).field_0210;
   local_18 = 6;
+  /* ST_CALLSITE[006A035B]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
   st::fn_0040400C(&this_00->field_0x1bef,&local_20);
+  /* ST_CALLSITE[006A0371]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
   st::fn_00404E71(&this_00->field_0x1c03,*(cMf32 **)&(this_00->aggregate_001C).field_0x21d,
                      nullptr,0,*(undefined **)&(this_00->aggregate_001C).field_0x22e);
+  /* ST_CALLSITE[006A0393]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
   g_currentExceptionFrame = local_64.previous;
   return local_c;
@@ -171,9 +180,9 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   pcVar6 = pcVar6 + -uVar4;
   pcVar7 = st::pointer_boundary_cast<char *>(&this_00->field_0x55fb);
   memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
-  st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this_00->field_0018),0,PTR_s_TITLE_MISSION_0079d838,st::pointer_boundary_cast<byte *>(&this_00->field_0x55fb),0x104,
+  st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this_00->field_0018),0,PTR_s_TITLE_MISSION_0079d838,(byte *)&this_00->field_0x55fb,0x104,
                 nullptr,'\0',nullptr);
-  st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this_00->field_0018),0,PTR_s_TEXTURE_0079d83c,st::pointer_boundary_cast<byte *>(&this_00->field_0x53f3),0x104,
+  st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this_00->field_0018),0,PTR_s_TEXTURE_0079d83c,(byte *)&this_00->field_0x53f3,0x104,
                 nullptr,'\0',nullptr);
   local_EAX_218 =
        st::fn_006F0C00((short *)this_00->field_000C,st::pointer_boundary_cast<int *>(this_00->field_0008));
@@ -188,6 +197,7 @@ int __thiscall st::fn_006A0740(CGenerate *this)
     local_8 = 0;
   }
   if (local_8 != 0) {
+    /* ST_CALLSITE[006A0858]: CALL 0x00405277; direct=00405277 CGenerate::_saveObj */
     iVar3 = st::fn_00405277(this_00);
     if (iVar3 == 0) {
       local_8 = 0;

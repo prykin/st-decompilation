@@ -26,6 +26,7 @@ void __thiscall STBoatC::GetInfo16(STBoatC *this,AnonShape_00488F30_727896DE *pa
     *(undefined4 *)pAVar8 = 0xffffffff;
     pAVar8 = (AnonShape_00488F30_727896DE *)&pAVar8->field_0x4;
   }
+  /* ST_CALLSITE[00488F51]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar2 = LookupRecordByte(*(char *)&this->field_0024);
   uVar2 = (int)(byte)uVar2;
   if (uVar2 == 1) {

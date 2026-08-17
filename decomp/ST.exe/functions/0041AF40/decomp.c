@@ -113,6 +113,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
     uVar13 = iVar15 * 0x41c64e6d + 0x3039;
     this_00->field_001C = uVar13;
     this_00->field_00F8 = (short)((ulonglong)(uVar13 >> 0x10) % 0x1f) + 0x1e;
+    /* ST_CALLSITE[0041B004]: CALL dword ptr [EDX + 0xcc] */
     this_00->vfunc_CC();
     g_currentExceptionFrame = local_58.previous;
     return 0;
@@ -120,6 +121,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
   if (-1 < this_00->field_008F) {
     this_00->field_008F = this_00->field_008F + 1;
   }
+  /* ST_CALLSITE[0041B033]: CALL dword ptr [EAX + 0xd0] */
   this_00->vfunc_D0();
   if (this_00->field_01CD != 1) {
     g_currentExceptionFrame = local_58.previous;
@@ -132,8 +134,10 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
+      /* ST_CALLSITE[0041B533]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
       local_EAX_1523 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_1);
       if (local_EAX_1523 != 0) {
+        /* ST_CALLSITE[0041B547]: CALL dword ptr [EAX + 0x30] */
         (*this_00->vtable->vfunc_30)((short)this_00->field_0121);
         iVar15 = 0x1b;
         bVar34 = true;
@@ -157,8 +161,10 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
+      /* ST_CALLSITE[0041B593]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
       local_EAX_1619 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_2);
       if (local_EAX_1619 != 0) {
+        /* ST_CALLSITE[0041B5A7]: CALL dword ptr [EAX + 0x34] */
         (*this_00->vtable->vfunc_34)((short)this_00->field_0129);
         iVar15 = 0x17;
         bVar34 = true;
@@ -182,8 +188,10 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
+      /* ST_CALLSITE[0041B5F0]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
       local_EAX_1712 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_E);
       if (local_EAX_1712 != 0) {
+        /* ST_CALLSITE[0041B604]: CALL dword ptr [EAX + 0x58] */
         (*this_00->vtable->vfunc_58)((short)this_00->field_01B1);
         pAVar6 = this_00->field_01AD;
         local_8 = (AnonShape_0041AF40_EF4C5356 *)this_00->field_01B1;
@@ -210,11 +218,13 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
+      /* ST_CALLSITE[0041B65D]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
       local_EAX_1821 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_12);
       if (local_EAX_1821 == 0) {
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
+      /* ST_CALLSITE[0041B675]: CALL dword ptr [EAX + 0x64] */
       (*this_00->vtable->vfunc_64)((short)this_00->field_01C9);
       puVar7 = this_00->field_01C5;
       puVar8 = this_00->field_01C9;
@@ -242,8 +252,10 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       if (uVar13 != 0x172) {
         if (uVar13 == 0x14) {
           if ((g_cPanel_00801688 != nullptr) &&
+             /* ST_CALLSITE[0041B08E]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
              (local_EAX_334 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_1), local_EAX_334 != 0))
           {
+            /* ST_CALLSITE[0041B0A6]: CALL dword ptr [EDX + 0x30] */
             (*this_00->vtable->vfunc_30)((short)this_00->field_0121);
             iVar15 = 0x1b;
             bVar34 = true;
@@ -257,6 +269,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
               pbVar16 = pbVar16 + 2;
             } while (bVar34);
             if (!bVar34) {
+              /* ST_CALLSITE[0041B0C9]: CALL 0x00402b7b; direct=00402B7B STAllPlayersC::GetNInTmp */
               uVar13 = STAllPlayersC::GetNInTmp(0,0);
               if ((short)uVar13 == 1) {
                 pbVar21 = this_00->field_0121;
@@ -285,8 +298,10 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
           }
 LAB_0041b128:
           if ((g_cPanel_00801688 != nullptr) &&
+             /* ST_CALLSITE[0041B134]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
              (local_EAX_500 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_2), local_EAX_500 != 0))
           {
+            /* ST_CALLSITE[0041B148]: CALL dword ptr [EAX + 0x34] */
             (*this_00->vtable->vfunc_34)((short)this_00->field_0129);
             iVar15 = 0x17;
             bVar34 = true;
@@ -307,6 +322,7 @@ LAB_0041b128:
             }
           }
           if ((g_cPanel_00801688 != nullptr) &&
+             /* ST_CALLSITE[0041B191]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
              (local_EAX_593 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_8), local_EAX_593 != 0))
           {
             ppDVar1 = &this_00->field_0171;
@@ -330,6 +346,7 @@ LAB_0041b128:
             this_00->field_0179 = nullptr;
             this_00->field_017D = nullptr;
             this_00->field_0181 = nullptr;
+            /* ST_CALLSITE[0041B20B]: CALL dword ptr [EDX + 0x40] */
             (*this_00->vtable->vfunc_40)((short)ppDVar1);
             local_c = this_00->field_015D;
             bVar34 = false;
@@ -469,8 +486,10 @@ LAB_0041b308:
             }
           }
           if ((g_cPanel_00801688 != nullptr) &&
+             /* ST_CALLSITE[0041B3E4]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
              (local_EAX_1188 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_B), local_EAX_1188 != 0
              )) {
+            /* ST_CALLSITE[0041B3F8]: CALL dword ptr [EAX + 0x4c] */
             (*this_00->vtable->vfunc_4C)((short)this_00->field_0199);
             pAVar5 = this_00->field_0195;
             local_c = (DArrayTy *)this_00->field_0199;
@@ -496,8 +515,10 @@ LAB_0041b308:
             }
           }
           if ((g_cPanel_00801688 != nullptr) &&
+             /* ST_CALLSITE[0041B459]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
              (local_EAX_1305 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_E), local_EAX_1305 != 0
              )) {
+            /* ST_CALLSITE[0041B46D]: CALL dword ptr [EAX + 0x58] */
             (*this_00->vtable->vfunc_58)((short)this_00->field_01B1);
             pAVar6 = this_00->field_01AD;
             local_8 = (AnonShape_0041AF40_EF4C5356 *)this_00->field_01B1;
@@ -524,11 +545,13 @@ LAB_0041b308:
             g_currentExceptionFrame = local_58.previous;
             return 0;
           }
+          /* ST_CALLSITE[0041B4C6]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
           local_EAX_1414 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_10);
           if (local_EAX_1414 == 0) {
             g_currentExceptionFrame = local_58.previous;
             return 0;
           }
+          /* ST_CALLSITE[0041B4DE]: CALL dword ptr [EAX + 0x60] */
           (*this_00->vtable->vfunc_60)((short)this_00->field_01C1);
           iVar15 = 0x90;
           bVar34 = true;
@@ -570,8 +593,10 @@ LAB_0041bdb3:
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
+    /* ST_CALLSITE[0041BDC3]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
     local_EAX_3715 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_5);
     if (local_EAX_3715 != 0) {
+      /* ST_CALLSITE[0041BDD7]: CALL dword ptr [EAX + 0x30] */
       (*this_00->vtable->vfunc_30)((short)this_00->field_0121);
       iVar15 = 0x1b;
       bVar34 = true;
@@ -595,11 +620,13 @@ LAB_0041bdb3:
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
+    /* ST_CALLSITE[0041BE1F]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
     local_EAX_3807 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_4);
     if (local_EAX_3807 == 0) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
+    /* ST_CALLSITE[0041BE33]: CALL dword ptr [EAX + 0x34] */
     (*this_00->vtable->vfunc_34)((short)this_00->field_0129);
     iVar15 = 0x17;
     bVar34 = true;
@@ -629,8 +656,10 @@ LAB_0041bdb3:
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
+    /* ST_CALLSITE[0041B712]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
     iVar13 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_4);
     if (iVar13 != 0) {
+      /* ST_CALLSITE[0041B726]: CALL dword ptr [EAX + 0x34] */
       (*this_00->vtable->vfunc_34)((short)this_00->field_0129);
       iVar15 = 0x17;
       bVar34 = true;
@@ -654,11 +683,13 @@ LAB_0041bdb3:
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
+    /* ST_CALLSITE[0041B76F]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
     local_EAX_2095 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_5);
     if (local_EAX_2095 == 0) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
+    /* ST_CALLSITE[0041B787]: CALL dword ptr [EAX + 0x30] */
     (*this_00->vtable->vfunc_30)((short)this_00->field_0121);
     iVar15 = 0x1b;
     bVar34 = true;
@@ -685,8 +716,10 @@ LAB_0041bdb3:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
+  /* ST_CALLSITE[0041B7CF]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_2191 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_4);
   if (local_EAX_2191 != 0) {
+    /* ST_CALLSITE[0041B7E3]: CALL dword ptr [EAX + 0x34] */
     (*this_00->vtable->vfunc_34)((short)this_00->field_0129);
     iVar15 = 0x17;
     bVar34 = true;
@@ -710,8 +743,10 @@ LAB_0041bdb3:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
+  /* ST_CALLSITE[0041B82C]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_2284 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_5);
   if (local_EAX_2284 != 0) {
+    /* ST_CALLSITE[0041B840]: CALL dword ptr [EAX + 0x30] */
     (*this_00->vtable->vfunc_30)((short)this_00->field_0121);
     iVar15 = 0x1b;
     bVar34 = true;
@@ -735,6 +770,7 @@ LAB_0041bdb3:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
+  /* ST_CALLSITE[0041B88C]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_2380 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_6);
   if (local_EAX_2380 != 0) {
     puVar2 = &this_00->field_0135;
@@ -746,6 +782,7 @@ LAB_0041bdb3:
     }
     *puVar2 = 0;
     this_00->field_0139 = 0;
+    /* ST_CALLSITE[0041B8CD]: CALL dword ptr [EDX + 0x38] */
     (*this_00->vtable->vfunc_38)((short)puVar2);
     bVar34 = false;
     iVar15 = *(int *)(*puVar2 + 0xc);
@@ -811,6 +848,7 @@ LAB_0041b92c:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
+  /* ST_CALLSITE[0041B997]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_2647 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_7);
   if (local_EAX_2647 != 0) {
     puVar2 = &this_00->field_014D;
@@ -830,6 +868,7 @@ LAB_0041b92c:
     this_00->field_0151 = 0;
     this_00->field_0155 = 0;
     this_00->field_0159 = 0;
+    /* ST_CALLSITE[0041B9FE]: CALL dword ptr [EAX + 0x3c] */
     (*this_00->vtable->vfunc_3C)((short)puVar2);
     local_c = (DArrayTy *)this_00->field_013D;
     bVar34 = false;
@@ -954,8 +993,10 @@ LAB_0041bac6:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
+  /* ST_CALLSITE[0041BB7C]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_3132 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_9);
   if (local_EAX_3132 != 0) {
+    /* ST_CALLSITE[0041BB90]: CALL dword ptr [EDX + 0x44] */
     (*this_00->vtable->vfunc_44)((short)this_00->field_0189);
     iVar15 = 0x129;
     bVar34 = true;
@@ -979,8 +1020,10 @@ LAB_0041bac6:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
+  /* ST_CALLSITE[0041BBDA]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_3226 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_A);
   if (local_EAX_3226 != 0) {
+    /* ST_CALLSITE[0041BBEE]: CALL dword ptr [EAX + 0x48] */
     (*this_00->vtable->vfunc_48)((short)this_00->field_0191);
     pdVar9 = this_00->field_018D;
     local_c = this_00->field_0191;
@@ -1007,6 +1050,7 @@ LAB_0041bac6:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
+  /* ST_CALLSITE[0041BC45]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_3333 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_C);
   if (local_EAX_3333 != 0) {
     puVar2 = &this_00->field_01A1;
@@ -1015,6 +1059,7 @@ LAB_0041bac6:
       DArrayDestroy((DArrayTy *)this_00->field_01A1);
       *puVar2 = 0;
     }
+    /* ST_CALLSITE[0041BC76]: CALL dword ptr [EDX + 0x50] */
     (*this_00->vtable->vfunc_50)((short)puVar2);
     pDVar22 = (DArrayTy *)this_00->field_019D;
     local_c = (DArrayTy *)&this_00->field_019D;
@@ -1052,8 +1097,10 @@ LAB_0041bcad:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
+  /* ST_CALLSITE[0041BCF3]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_3507 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_D);
   if (local_EAX_3507 != 0) {
+    /* ST_CALLSITE[0041BD07]: CALL dword ptr [EAX + 0x54] */
     (*this_00->vtable->vfunc_54)((short)this_00->field_01A9);
     piVar19 = this_00->field_01A5;
     local_14 = this_00->field_01A9;
@@ -1079,11 +1126,13 @@ LAB_0041bcad:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
+  /* ST_CALLSITE[0041BD58]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_3608 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_F);
   if (local_EAX_3608 == 0) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
+  /* ST_CALLSITE[0041BD70]: CALL dword ptr [EDX + 0x5c] */
   (*this_00->vtable->vfunc_5C)((short)this_00->field_01B9);
   pAVar10 = this_00->field_01B5;
   pAVar11 = this_00->field_01B9;

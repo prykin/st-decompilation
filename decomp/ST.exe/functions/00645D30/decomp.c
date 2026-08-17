@@ -12,6 +12,7 @@ undefined4 __cdecl FUN_00645d30(int param_1,Global_sub_00645D30_param_2Enum para
   int uVar1;
   undefined4 uVar2;
 
+  /* ST_CALLSITE[00645D41]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar1 = LookupRecordByte((char)param_1);
   uVar1 = (int)(byte)uVar1;
   switch(param_2) {

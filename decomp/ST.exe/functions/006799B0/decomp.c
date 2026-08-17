@@ -77,6 +77,7 @@ void __thiscall FUN_006799b0(void *this,uint param_1)
     }
     STPiece<4,4>(local_3c[0]) = STField<undefined4>(this,0x6fe);
     STPiece<0,4>(local_3c[0]) = 0x6a;
+    /* ST_CALLSITE[00679BB0]: CALL 0x00405dc6; direct=00405DC6 AiPlrClassTy::sub_0067A020 */
     AiPlrClassTy::sub_0067A020(this,local_3c,-1);
   }
   return;

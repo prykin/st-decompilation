@@ -66,6 +66,7 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   if ((iVar5 != 0) &&
      ((((this_00->field_00DE == CASE_2 || (this_00->field_00DE == CASE_4)) &&
        (iVar6 = FUN_00405687((int)this_00), iVar6 == 0)) || (this_00->field_0496 == 0)))) {
+    /* ST_CALLSITE[0054AF54]: CALL 0x00403175; direct=00403175 CursorClassTy::sub_0054B700 */
     sub_0054B700(this_00,-1);
     if ((g_helpPanel_00801690 == nullptr) || (g_helpPanel_00801690->field_0172 == CASE_2)
        ) goto LAB_0054b372;
@@ -121,16 +122,19 @@ LAB_0054b366:
       local_c = (undefined4)lVar16;
     }
     else {
+      /* ST_CALLSITE[0054B079]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0(pSVar7,&local_14,&local_12,(short *)&local_c);
     }
     if (4 < (short)local_c) {
       local_c = 4;
     }
+    /* ST_CALLSITE[0054B0F4]: CALL 0x00403175; direct=00403175 CursorClassTy::sub_0054B700 */
     sub_0054B700(this_00,(int)(short)local_c);
     pSVar7 = this_00->field_049A;
     if (pSVar7 == nullptr) {
       if ((this_00->field_049E != 0) &&
          (this_00->field_049E = 0, g_helpString_00801694 != nullptr)) {
+        /* ST_CALLSITE[0054B28B]: CALL 0x00402045; direct=00402045 HelpStringTy::sub_0051FAC0 */
         HelpStringTy::sub_0051FAC0(g_helpString_00801694,nullptr,0,'\x01',0xfffffc18);
       }
       if (this_00->field_04DE == '\0') goto LAB_0054b2a9;
@@ -139,6 +143,7 @@ LAB_0054b366:
       CVar4 = CASE_47;
     }
     else {
+      /* ST_CALLSITE[0054B10D]: CALL dword ptr [EAX + 0x68] */
       pSVar7->vfunc_68((short)&local_30);
       if (this_00->field_049E != local_30) {
         this_00->field_049E = local_30;
@@ -164,24 +169,30 @@ LAB_0054b366:
           puVar9_mg1 = Library::MSVCRT::FUN_0072e560(puVar9_mg1,'\n');
         }
         if (STPiece<1,1>(local_28) == '\0') {
+          /* ST_CALLSITE[0054B1CD]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)local_d8,"%s",local_d8);
         }
         else {
+          /* ST_CALLSITE[0054B1AF]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)local_d8,"%s - \"%s\"",local_d8,(int)&local_28 + 1);
         }
         if (g_helpString_00801694 != nullptr) {
+          /* ST_CALLSITE[0054B1F0]: CALL 0x00402045; direct=00402045 HelpStringTy::sub_0051FAC0 */
           HelpStringTy::sub_0051FAC0(g_helpString_00801694,(char *)local_d8,0,'\x01',0xfffffc18);
         }
       }
       if (this_00->field_04DE == '\0') {
 LAB_0054b2a9:
+        /* ST_CALLSITE[0054B2DB]: CALL 0x00404c00; direct=00404C00 STAllPlayersC::GetCursorType */
         CVar4 = STAllPlayersC::GetCursorType
                           (g_allPlayers_007FA174,this_00->field_04A2,
                            (AnonShape_00435930_AC276C8C *)this_00->field_049A,
                            this_00->field_00C5 - this_00->field_04B2,
                            (int *)(this_00->field_00C9 - this_00->field_04B6));
         while (CVar4 == CASE_58) {
+          /* ST_CALLSITE[0054B2E8]: CALL 0x004040fc; direct=004040FC CursorClassTy::sub_0054A8D0 */
           sub_0054A8D0(this_00);
+          /* ST_CALLSITE[0054B31F]: CALL 0x00404c00; direct=00404C00 STAllPlayersC::GetCursorType */
           CVar4 = STAllPlayersC::GetCursorType
                             (g_allPlayers_007FA174,this_00->field_04A2,
                              (AnonShape_00435930_AC276C8C *)this_00->field_049A,
@@ -193,11 +204,13 @@ LAB_0054b2a9:
       }
       else {
         pSVar7 = this_00->field_049A;
+        /* ST_CALLSITE[0054B20D]: CALL dword ptr [EAX + 0x2c] */
         GVar9 = pSVar7->slot_2C();
         if (GVar9 == 0x78) {
           GVar9 = *(Global_sub_005121F0_param_1Enum *)&this_00->field_049A->field_0x259;
         }
         if (g_helpPanel_00801690 != nullptr) {
+          /* ST_CALLSITE[0054B230]: CALL dword ptr [EDX + 0xc] */
           iVar6 = pSVar7->vfunc_0C();
           iVar6 = thunk_FUN_005121f0(g_helpPanel_00801690,GVar9,iVar6);
           if (iVar6 != 0) {
@@ -214,9 +227,11 @@ LAB_0054b2a9:
     }
   }
 cf_common_exit_0054B368:
+  /* ST_CALLSITE[0054B36A]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
   local_8 = SetGCType(this_00,CVar4,iVar17,iVar6);
 LAB_0054b372:
   if ((param_1 != 0) && (local_8 != 0)) {
+    /* ST_CALLSITE[0054B390]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
   }
   g_currentExceptionFrame = local_74.previous;

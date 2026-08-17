@@ -16,11 +16,13 @@ void __fastcall FUN_007496a1(AnonShape_007496A1_B3436AED *param_1)
     param_1->field_002C = param_1->field_002C + -1;
     param_1->field_0028 = iVar2;
     if (piVar1 == nullptr) break;
+    /* ST_CALLSITE[007496BC]: CALL dword ptr [EAX + 0x54] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 0x54))(1);
   }
   param_1->field_003C = 0;
   if ((LPVOID)param_1->field_0058 != (LPVOID)0x0) {
+    /* ST_CALLSITE[007496D4]: CALL dword ptr [0x0085bbe0] */
     VirtualFree((LPVOID)param_1->field_0058,0,0x8000);
     param_1->field_0058 = 0;
   }

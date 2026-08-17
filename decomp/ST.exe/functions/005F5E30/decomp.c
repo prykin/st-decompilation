@@ -23,8 +23,10 @@ void __thiscall STBHEShellC::sub_005F5E30(STBHEShellC *this,int param_1,int para
   this->field_00C0 = 0;
   this->field_00AB = 0;
   if (this->field_0103 != '\0') {
+    /* ST_CALLSITE[005F5EBF]: CALL 0x004055ba; direct=004055BA STBHEShellC::sub_005F35F0 */
     sub_005F35F0(this,3);
   }
+  /* ST_CALLSITE[005F5ED9]: CALL 0x0040264e; direct=0040264E STBHEShellC::sub_005F5C40 */
   sub_005F5C40(this,this->field_0093,this->field_0097,0x48a);
   return;
 }

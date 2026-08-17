@@ -15,6 +15,7 @@ void __fastcall FUN_0074c6ba(undefined4 *param_1)
   param_1[3] = &VTable_007A1820;
   param_1[4] = &VTable_007A1808;
   if (piVar1 != nullptr) {
+    /* ST_CALLSITE[0074C6DE]: CALL dword ptr [ECX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 8))(piVar1);
   }

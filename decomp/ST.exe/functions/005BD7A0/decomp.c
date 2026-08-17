@@ -76,9 +76,12 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
       FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
+    /* ST_CALLSITE[005BD811]: CALL 0x00401055; direct=00401055 CursorClassTy::sub_00544940 */
     CursorClassTy::sub_00544940(g_cursorClass_00802A30);
   }
+  /* ST_CALLSITE[005BD824]: CALL 0x00401d43; direct=00401D43 DarkScreen */
   DarkScreen(g_dDXContext_0080759C,1,0);
+  /* ST_CALLSITE[005BD832]: CALL 0x0040590c; direct=0040590C StartSystemTy::sub_005DAF20 */
   StartSystemTy::sub_005DAF20(g_startSystem_0081176C);
   this_01 = local_18;
   DAT_0080877e = 1;
@@ -93,6 +96,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
       pcVar5 = &CHAR_S_007ca24c;
     }
   }
+  /* ST_CALLSITE[005BD88A]: CALL dword ptr [0x0085bde8] */
   wsprintfA((LPSTR)&DAT_0080f33a,"REPORT_%s_%c",pcVar5,
             (int)(char)((-(DAT_0080c522 != 0) & 0xfbU) + 0x46));
   local_EAX_253 = FUN_0070a9f0(g_cMf32_00806780,(char *)&DAT_0080f33a,0,1);
@@ -113,6 +117,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   pcVar6 = (ccFntTy *)thunk_FUN_005df290((int)this_01->field_005D,nullptr,DAT_00807dd9);
   this_01->field_0087 = pcVar6;
   g_startSystem_0081176C->field_0038 = (HDC__ *)pcVar6;
+  /* ST_CALLSITE[005BD968]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
   pcVar6 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806780,"RPT_FNTN",0);
   this_01->field_008B = pcVar6;
   pcVar6->field_0058 = 1;
@@ -169,6 +174,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
       ppDVar15 = ppDVar15 + 1;
       iVar23 = iVar23 + -1;
     } while (iVar23 != 0);
+    /* ST_CALLSITE[005BDB31]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\%s",&CHAR_00h_00807680,PTR_s_SAVEGAME__0079c0d4,
               &CHAR_00h_00807ddd,PTR_s_PL_LOG_0079c0d8);
     local_a0.previous = g_currentExceptionFrame;
@@ -204,6 +210,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
       while (pcVar5 != nullptr) {
         local_10 = 0;
         local_c = nullptr;
+        /* ST_CALLSITE[005BDC2D]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",PTR_DAT_0079c0dc,"%01d%02d");
         local_EAX_1185 = Library::MSVCRT::FUN_0072ee80(pcVar5,(byte *)&DAT_0080f33a);
         if (((local_EAX_1185 == 2) && (local_10 != 0)) && (local_10 < 4)) {
@@ -260,14 +267,18 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   }
   else {
     if (DAT_008067a0 != '\0') {
+      /* ST_CALLSITE[005BDD49]: CALL dword ptr [0x0085c060] */
       CFsgsConnection::GameResult((CFsgsConnection *)&DAT_00802a90,2 - (DAT_0080c522 != 0));
     }
     this_01->field_0067 = 1;
   }
   if (g_startSystem_0081176C->field_02E6 != nullptr) {
+    /* ST_CALLSITE[005BDD6D]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
     MMsgTy::HidePanel(g_startSystem_0081176C->field_02E6,0,0,1);
   }
+  /* ST_CALLSITE[005BDD76]: CALL 0x0040126c; direct=0040126C MReportTy::SetCtrl */
   SetCtrl(this_01,0);
+  /* ST_CALLSITE[005BDD84]: CALL 0x00403738; direct=00403738 PutDDX */
   PutDDX(0,0,'\x01',(BITMAPINFO *)this_01->field_005D);
   local_8 = 0xffffffff;
   FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403099,0x2bd,0x15e,
@@ -300,6 +311,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     bVar20 = 0x10;
     iVar19 = 1;
     iVar23 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x47,0x46,0x2bd,0x15e);
+    /* ST_CALLSITE[005BDE48]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
     uVar13 = HoloTy::Init(this_01->field_0453,CASE_2,0x47,0x46,iVar23,iVar19,bVar20,cVar21,uVar11);
     if (uVar13 != 0) {
       pHVar10 = this_01->field_0453;
@@ -344,6 +356,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     bVar20 = 0x10;
     iVar19 = 1;
     iVar23 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x1a,10,0x2e9,0x32);
+    /* ST_CALLSITE[005BDF37]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
     local_EAX_1943 =
          HoloTy::Init(this_01->field_0457,CASE_3,0x1a,10,iVar23,iVar19,bVar20,cVar21,uVar11);
     if (local_EAX_1943 != 0) {
@@ -378,7 +391,9 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     iVar19 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = CASE_3;
     this_00->field_0494 = 0xffff;
+    /* ST_CALLSITE[005BE015]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
     CursorClassTy::SetGCType(this_00,CASE_0,iVar19,iVar23);
+    /* ST_CALLSITE[005BE02A]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;

@@ -44,6 +44,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
   STMineSetC *local_8;
 
   local_8 = this;
+  /* ST_CALLSITE[00621B60]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
   local_EAX_16 = STSprGameObjC::GetMessage((STSprGameObjC *)this,message);
   if (local_EAX_16 == 0xffff) {
     return 0xffff;
@@ -70,6 +71,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
     }
     if (SVar5 == MESS_HITKILL) {
       thunk_FUN_004ad430((STT3DSprC *)&local_8->field_01D5);
+      /* ST_CALLSITE[0062233F]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
       sub_00622670(this_00);
       g_currentExceptionFrame = local_60.previous;
       return 0;
@@ -87,6 +89,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
+      /* ST_CALLSITE[006222E6]: CALL dword ptr [EDX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)local_8->field_01D5)();
       g_currentExceptionFrame = local_60.previous;
@@ -112,6 +115,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
   if (MESS_SHARED_0003 < SVar5) {
     if (SVar5 == MESS_SHARED_0108) {
       SVar11 = thunk_FUN_004ab050();
+      /* ST_CALLSITE[00622276]: CALL 0x00402414; direct=00402414 STMineSetC::sub_00626B50 */
       sub_00626B50(local_8,SVar11);
       g_currentExceptionFrame = local_60.previous;
       return 0;
@@ -121,12 +125,14 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
       return 0;
     }
     local_10 = STAllPlayersC::thunk_FUN_00622990((STAllPlayersC *)local_8,&local_c);
+    /* ST_CALLSITE[00622246]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,(int *)this_00->field_0018,local_10,local_c);
     FreeAndNull(&local_10);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   if (SVar5 == MESS_SHARED_0003) {
+    /* ST_CALLSITE[006221D2]: CALL 0x00402374; direct=00402374 STMineSetC::sub_00622880 */
     sub_00622880(local_8);
     if (this_00->field_0363 == nullptr) {
       g_currentExceptionFrame = local_60.previous;
@@ -143,12 +149,15 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
        (0x1194 < g_playSystem_00802A38->field_00E4 - local_8->field_035F)) {
       thunk_FUN_00627390(local_8);
     }
+    /* ST_CALLSITE[00621F07]: CALL 0x00405bfa; direct=00405BFA STMineSetC::sub_006239A0 */
     iVar13 = sub_006239A0(this_00);
     if (iVar13 == 0) {
       if ((this_00->field_02AE == CASE_2) && (this_00->field_0353 == '\0')) {
+        /* ST_CALLSITE[00622101]: CALL 0x00405637; direct=00405637 STMineSetC::sub_006226C0 */
         bVar9 = sub_006226C0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
         this_00->field_0353 = bVar9;
         if (bVar9 != 0) {
+          /* ST_CALLSITE[00622114]: CALL 0x004012c6; direct=004012C6 STMineSetC::LoadImagMineSet */
           LoadImagMineSet(this_00,0);
           thunk_FUN_004ad460(&this_00->field_01D5,1);
         }
@@ -157,6 +166,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
     else {
       if ((((this_00->field_0314 == '\0') && (SVar10 = this_00->field_02AE, SVar10 != CASE_2)) &&
           (SVar10 != CASE_3)) && ((SVar10 != CASE_4 && (SVar10 != CASE_5)))) {
+        /* ST_CALLSITE[00621F3A]: CALL 0x00404093; direct=00404093 STMineSetC::sub_00627400 */
         SVar10 = sub_00627400(this_00,SVar10);
         this_00->field_02AE = SVar10;
       }
@@ -164,14 +174,17 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
       if (((SVar10 != CASE_2) && (SVar10 != CASE_3)) && ((SVar10 != CASE_4 && (SVar10 != CASE_5))))
       {
         if (this_00->field_0353 == '\0') {
+          /* ST_CALLSITE[00621F89]: CALL 0x00405637; direct=00405637 STMineSetC::sub_006226C0 */
           bVar9 = sub_006226C0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
           this_00->field_0353 = bVar9;
           if ((bVar9 != 0) && (this_00->field_02BA < 0)) {
+            /* ST_CALLSITE[00621FA6]: CALL 0x004012c6; direct=004012C6 STMineSetC::LoadImagMineSet */
             LoadImagMineSet(this_00,0);
             thunk_FUN_004ad460(&this_00->field_01D5,1);
           }
         }
         else if ((g_playSystem_00802A38->field_00E4 & 3) == 0) {
+          /* ST_CALLSITE[00621FD8]: CALL 0x00405637; direct=00405637 STMineSetC::sub_006226C0 */
           bVar9 = sub_006226C0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
           this_00->field_0353 = bVar9;
           if ((bVar9 == 0) && (this_00->field_02E9 != '\0')) {
@@ -190,6 +203,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
            ((((g_playSystem_00802A38->field_00E4 % 5 == 0 &&
               (0x19 < g_playSystem_00802A38->field_00E4 - this_00->field_0346)) &&
              ((this_00->field_02AE == CASE_0 || (this_00->field_02AE == CASE_1)))) &&
+            /* ST_CALLSITE[006220A5]: CALL 0x00405c5e; direct=00405C5E STMineSetC::sub_00625730 */
             (iVar13 = sub_00625730(this_00), iVar13 != 0)))) {
           this_00->field_02AE = CASE_2;
           this_00->field_030F =
@@ -242,6 +256,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
         pSVar15 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[local_14];
       }
       if ((pSVar15 == nullptr) &&
+         /* ST_CALLSITE[00621E46]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
          (iVar13 = DumpClassC::WritePtr
                              (sVar2,sVar4,sVar3,this_00->field_008E,
                               (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar13 == 0)) {
@@ -252,6 +267,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
         iVar13 = 0;
       }
       if (iVar13 == 0) {
+        /* ST_CALLSITE[00621E6A]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
         sub_00622670(this_00);
       }
     }
@@ -261,11 +277,13 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
       this_00->field_02BA = local_EAX_831;
     }
     this_00->field_0363 = nullptr;
+    /* ST_CALLSITE[00621EB0]: CALL 0x004030b7; direct=004030B7 STAllPlayersC::RegisterMine */
     iVar13 = STAllPlayersC::RegisterMine(g_allPlayers_007FA174,this_00->field_0032,this_00);
     if (iVar13 == 0) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
+    /* ST_CALLSITE[00621EBF]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
     sub_00622670(this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -281,8 +299,10 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
     local_8->field_0286 = local_8->field_027A;
     local_8->field_028A = local_8->field_027E;
   }
+  /* ST_CALLSITE[00621C81]: CALL 0x00404b74; direct=00404B74 STMineSetC::sub_00622BA0 */
   iVar13 = sub_00622BA0(local_8);
   if (iVar13 == 0) {
+    /* ST_CALLSITE[00621C8C]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
     sub_00622670(this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -309,15 +329,19 @@ cf_common_exit_00621D24:
   if (bVar8) {
     this_00->field_02AE = CASE_1;
     this_00->field_0353 = 1;
+    /* ST_CALLSITE[00621D53]: CALL 0x004012c6; direct=004012C6 STMineSetC::LoadImagMineSet */
     LoadImagMineSet(this_00,0);
+    /* ST_CALLSITE[00621D64]: CALL 0x004030b7; direct=004030B7 STAllPlayersC::RegisterMine */
     iVar13 = STAllPlayersC::RegisterMine(g_allPlayers_007FA174,0xffff,this_00);
     if (iVar13 != 0) {
+      /* ST_CALLSITE[00621D6F]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
       sub_00622670(this_00);
     }
     thunk_FUN_00627700((AnonShape_00627700_6F319351 *)this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
+  /* ST_CALLSITE[00621D2A]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
   sub_00622670(this_00);
   g_currentExceptionFrame = local_60.previous;
   return 0;

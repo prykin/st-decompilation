@@ -53,6 +53,7 @@ LAB_006615ff:
           puVar5 = nullptr;
         }
         if (((puVar5[10] == 0) && (puVar5[9] == 0)) &&
+           /* ST_CALLSITE[0066164F]: CALL 0x00402dc9; direct=00402DC9 AiFltClassTy::sub_00660F70 */
            (sub_00660F70(this,puVar5,(short)uVar4), puVar5[9] != 0)) {
           return;
         }

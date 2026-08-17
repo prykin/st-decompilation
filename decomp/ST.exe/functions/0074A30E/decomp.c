@@ -16,10 +16,13 @@ undefined4 __thiscall FUN_0074a30e(int *param_1,int param_2)
     uVar1 = 1;
   }
   else {
+    /* ST_CALLSITE[0074A32A]: CALL dword ptr [EAX + 0x38] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 0x38))(param_2);
+    /* ST_CALLSITE[0074A332]: CALL dword ptr [EAX + 0xac] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 0xac))(param_2);
+    /* ST_CALLSITE[0074A33D]: CALL dword ptr [EAX + 0x3c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 0x3c))(param_2);
     uVar1 = 0;

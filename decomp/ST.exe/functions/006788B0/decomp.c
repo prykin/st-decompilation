@@ -12,7 +12,8 @@ AiPlrClassTy * __thiscall AiPlrClassTy::AiPlrClassTy(AiPlrClassTy *this)
   undefined4 *puVar2;
 
   sub_006E60E0(this);
-  thunk_FUN_0064cc90(&this->vtable_at_1c);
+  /* ST_CALLSITE[006788BE]: CALL 0x00402c2f; direct=00402C2F AiEventClassTy::AiEventClassTy */
+  AiEventClassTy::AiEventClassTy((AiEventClassTy *)&this->vtable_at_1c);
   this->vtable = &AiPlrClassTyVTable;
   this->vtable_at_1c = &AiPlrClassTyVTable_at_1C;
   if (this == nullptr) {

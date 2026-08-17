@@ -82,12 +82,14 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
       local_48 = 0x6326;
       local_28 = 0x6327;
       local_30 = local_50;
+      /* ST_CALLSITE[005CC542]: CALL dword ptr [EDX + 0x8] */
       (*local_8->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)local_8->field_000C,5,&local_8->field_21FC,nullptr,local_60,0);
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_2200);
     }
     else {
       if (local_8->field_21E6 != '\0') {
+        /* ST_CALLSITE[005CC577]: CALL 0x004028b5; direct=004028B5 StartSystemTy::CreateChatView */
         StartSystemTy::CreateChatView(g_startSystem_0081176C);
         ppcVar8 = local_a80;
         for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -111,6 +113,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
         local_9f4 = this_00->field_0014;
         local_9f0 = 0;
         local_9ec = 0xc0a2;
+        /* ST_CALLSITE[005CC64A]: CALL dword ptr [EDI + 0x8] */
         (*this_00->vtable->CreateObject)
                   ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,nullptr,
                    local_a80,0);
@@ -130,8 +133,10 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
     }
+    /* ST_CALLSITE[005CC6DA]: CALL 0x004055b5; direct=004055B5 SettMapTy::CreateCtrls */
     SettMapTy::CreateCtrls((SettMapTy *)this_01,param_1);
     if (param_1 == '\0') {
+      /* ST_CALLSITE[005CC700]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
       SetAccelerator(1,this_01->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
     }
     g_currentExceptionFrame = local_a4.previous;

@@ -259,10 +259,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
                 *psVar19 = *psVar19 +
                            ((((short)iVar6 - (short)iVar7) + (short)local_54) -
                            *(short *)&this->field_0x378);
-                if ((*(byte *)(psVar19 + 2) & 2) != 0) {
+                if ((((byte *)psVar19)[2] & 2) != 0) {
                   psVar19[-1] = psVar19[-1] + -1;
                 }
-                if ((*(byte *)(psVar19 + 2) & 1) != 0) {
+                if ((((byte *)psVar19)[2] & 1) != 0) {
                   *psVar19 = *psVar19 + -1;
                 }
                 if (*(char *)((int)*psVar19 * *(int *)&this->field_0x37c + (int)psVar19[-1] +
@@ -277,8 +277,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
               if (0 < iVar18) {
                 psVar19 = psVar5 + 1;
                 do {
+                  /* ST_CALLSITE[004253AB]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   sub_004248D0(this,(int)local_a0,iVar24,(int)psVar19[-1],(int)*psVar19,
-                               *(byte *)(psVar19 + 2) & CASE_3,~CASE_0);
+                               ((byte *)psVar19)[2] & CASE_3,~CASE_0);
                   iVar24 = iVar24 + 1;
                   psVar19 = psVar19 + 4;
                 } while (iVar24 < iVar18);
@@ -595,6 +596,7 @@ LAB_00426205:
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                   *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426014;
+                  /* ST_CALLSITE[0042600F]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
@@ -619,6 +621,7 @@ LAB_004265cd:
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                 *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4265ee;
+                /* ST_CALLSITE[004265E9]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
@@ -646,6 +649,7 @@ LAB_0042605b:
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                 *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x42607c;
+                /* ST_CALLSITE[00426077]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
@@ -681,6 +685,7 @@ LAB_0042605b:
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                   *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426130;
+                  /* ST_CALLSITE[0042612B]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
@@ -705,6 +710,7 @@ LAB_004260a9:
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                 *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4260ca;
+                /* ST_CALLSITE[004260C5]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
@@ -733,6 +739,7 @@ LAB_004260cc:
                     *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                     *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                     *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4263c2;
+                    /* ST_CALLSITE[004263BD]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                     uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                           *(int *)(&stack0xfffffe8c + iVar23),
                                           *(int *)(&stack0xfffffe90 + iVar23),
@@ -771,6 +778,7 @@ LAB_004260cc:
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                   *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x42631a;
+                  /* ST_CALLSITE[00426315]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
@@ -795,6 +803,7 @@ LAB_0042627f:
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                 *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4262a0;
+                /* ST_CALLSITE[0042629B]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
@@ -838,6 +847,7 @@ LAB_004262a2:
                       *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                       *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                       *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4265a9;
+                      /* ST_CALLSITE[004265A4]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                       uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                             *(int *)(&stack0xfffffe8c + iVar23),
                                             *(int *)(&stack0xfffffe90 + iVar23),
@@ -867,6 +877,7 @@ LAB_00426527:
                     *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                     *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                     *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426548;
+                    /* ST_CALLSITE[00426543]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                     uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                           *(int *)(&stack0xfffffe8c + iVar23),
                                           *(int *)(&stack0xfffffe90 + iVar23),
@@ -893,6 +904,7 @@ LAB_0042654a:
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                   *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4264dd;
+                  /* ST_CALLSITE[004264D8]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
@@ -917,6 +929,7 @@ LAB_00426163:
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                 *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426184;
+                /* ST_CALLSITE[0042617F]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
@@ -983,6 +996,7 @@ LAB_00425bf9:
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                   *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425b6b;
+                  /* ST_CALLSITE[00425B66]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
@@ -1006,6 +1020,7 @@ LAB_00426339:
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                 *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426366;
+                /* ST_CALLSITE[00426361]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
@@ -1047,6 +1062,7 @@ LAB_00426339:
                     *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                     *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                     *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425c89;
+                    /* ST_CALLSITE[00425C84]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                     uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                           *(int *)(&stack0xfffffe8c + iVar23),
                                           *(int *)(&stack0xfffffe90 + iVar23),
@@ -1076,6 +1092,7 @@ LAB_00426215:
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                 *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426236;
+                /* ST_CALLSITE[00426231]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
@@ -1099,6 +1116,7 @@ LAB_004261b5:
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                 *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4261d6;
+                /* ST_CALLSITE[004261D1]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
@@ -1131,6 +1149,7 @@ LAB_00425dd3:
                         *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                         *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                         *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425e00;
+                        /* ST_CALLSITE[00425DFB]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                         uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                               *(int *)(&stack0xfffffe8c + iVar23),
                                               *(int *)(&stack0xfffffe90 + iVar23),
@@ -1154,6 +1173,7 @@ LAB_00425d75:
                       *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                       *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                       *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425da2;
+                      /* ST_CALLSITE[00425D9D]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                       uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                             *(int *)(&stack0xfffffe8c + iVar23),
                                             *(int *)(&stack0xfffffe90 + iVar23),
@@ -1179,6 +1199,7 @@ LAB_00425eeb:
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                   *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425f1c;
+                  /* ST_CALLSITE[00425F17]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
@@ -1202,6 +1223,7 @@ LAB_00425eeb:
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                   *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425d46;
+                  /* ST_CALLSITE[00425D41]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
@@ -1225,6 +1247,7 @@ LAB_004263eb:
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                 *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x42640c;
+                /* ST_CALLSITE[00426407]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
@@ -1254,6 +1277,7 @@ LAB_00425b8a:
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                 *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425bab;
+                /* ST_CALLSITE[00425BA6]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
@@ -1281,6 +1305,7 @@ LAB_00425bad:
                     *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                     *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                     *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425f7a;
+                    /* ST_CALLSITE[00425F75]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                     uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                           *(int *)(&stack0xfffffe8c + iVar23),
                                           *(int *)(&stack0xfffffe90 + iVar23),
@@ -1306,6 +1331,7 @@ LAB_00425bad:
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                   *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425ec8;
+                  /* ST_CALLSITE[00425EC3]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
@@ -1330,6 +1356,7 @@ LAB_00425e40:
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
                 *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425e61;
+                /* ST_CALLSITE[00425E5C]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),

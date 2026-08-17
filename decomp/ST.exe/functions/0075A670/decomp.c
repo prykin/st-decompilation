@@ -16,6 +16,7 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
   int *piVar7;
 
   piVar7 = param_1;
+  /* ST_CALLSITE[0075A681]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   puVar3 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x74);
   STField<undefined4 *>(param_1,0x19a) = puVar3;
@@ -24,6 +25,7 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
   puVar3[0x1c] = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == nullptr) {
+    /* ST_CALLSITE[0075A73F]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar6 = (**(code **)(*param_1 + 4))(param_1,1,0xa00);
     piVar8 = puVar3 + 8;
@@ -41,7 +43,7 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
   }
   piVar8 = param_1 + 7;
   piVar1 = param_1 + 0x34;
-  auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+  int * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   if (0 < *piVar8) {
     auto param_2_after_write = puVar3 + 0x12; /* compiler stack-slot lifetime split */
     piVar8 = (int *)(*piVar1 + 0xc);
@@ -54,6 +56,7 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
       iVar2 = *piVar7;
       iVar4 = FUN_00759e90(piVar8[5],iVar6);
       iVar5 = FUN_00759e90(piVar8[4],piVar8[-1]);
+      /* ST_CALLSITE[0075A6F6]: CALL dword ptr [EBX + 0x14] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (**(code **)(iVar2 + 0x14))(piVar7,1,1,iVar5,iVar4,iVar9);
       piVar8 = piVar8 + 0x15;

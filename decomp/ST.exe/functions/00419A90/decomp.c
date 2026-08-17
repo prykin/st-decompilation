@@ -13,9 +13,11 @@ undefined4 __fastcall FUN_00419a90(STFishC *param_1)
 
   if (param_1->field_00E8 == 1) {
     param_1->field_00E8 = 0;
+    /* ST_CALLSITE[00419AAC]: CALL 0x00405952; direct=00405952 sub_004167A0 */
     sub_004167A0(param_1);
     return 1;
   }
+  /* ST_CALLSITE[00419AC9]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   STFishC::sub_004162B0(param_1,&local_6,&local_8,&local_a);
   cVar1 = thunk_FUN_00416330((int)param_1);
   if (cVar1 == '\0') {
@@ -31,6 +33,7 @@ undefined4 __fastcall FUN_00419a90(STFishC *param_1)
                  [(byte)param_1->field_008E];
       }
       if (pSVar2 == param_1) {
+        /* ST_CALLSITE[00419B64]: CALL 0x00405952; direct=00405952 sub_004167A0 */
         sub_004167A0(param_1);
         return 1;
       }

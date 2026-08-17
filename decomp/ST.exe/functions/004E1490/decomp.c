@@ -14,8 +14,10 @@ undefined4 __fastcall FUN_004e1490(STBoatC *param_1)
 
   uVar4 = 0;
   if (param_1->field_0024 != param_1->field_023D) {
+    /* ST_CALLSITE[004E14AB]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar2 = LookupRecordByte((char)param_1->field_023D);
     iVar1 = *(int *)&param_1->field_0x235;
+    /* ST_CALLSITE[004E14D0]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar3 = LookupRecordByte(*(char *)&param_1->field_0024);
     if ((&DAT_007e1984)[(uint)bVar3 + (iVar1 * 3 + (uint)bVar2) * 3] == '\0') {
       return 0;

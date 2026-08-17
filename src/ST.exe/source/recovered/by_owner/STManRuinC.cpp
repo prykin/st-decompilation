@@ -358,8 +358,10 @@ void __thiscall st::fn_00631010(STManRuinC *this)
           psVar7 = psVar7 + 2;
         }
         st::fn_006E91D0(g_sT3DSMAPContext_00807598,piVar2);
+        /* ST_CALLSITE[00631084]: CALL 0x0040461a; direct=0040461A STManRuinC::sub_00630AC0 */
         iVar6 = st::fn_0040461A(this,local_8);
         if (iVar6 != 0) {
+          /* ST_CALLSITE[006310B0]: CALL 0x00401d57; direct=00401D57 STManRuinC::sub_00630BB0 */
           st::fn_00401D57(this,local_20,local_1e,local_1c,local_18,(int)local_1a,local_c);
           this->field_0044 = 1;
           iVar6 = st::fn_004050A6();
@@ -368,11 +370,13 @@ void __thiscall st::fn_00631010(STManRuinC *this)
             this->field_0044 = 1;
           }
           else {
+            /* ST_CALLSITE[006310E7]: CALL 0x00405c9f; direct=00405C9F STManRuinC::sub_00630C50 */
             puVar4 = st::fn_00405C9F(this,this->field_0040,this->field_004C,1,1,this->field_0050);
             if (puVar4 != nullptr) {
               this->field_0044 = 2;
             }
           }
+          /* ST_CALLSITE[00631106]: CALL 0x00405eca; direct=00405ECA STManRuinC::sub_00631880 */
           uVar5 = st::fn_00405ECA(this,&this->field_0040,this->field_0061);
           if (((uVar5 == 0) && (this->field_0048 != 0)) && (this->field_0061 != 0)) {
             st::fn_006E8BA0(g_sT3DSMAPContext_00807598,this->field_0061);
@@ -404,7 +408,9 @@ st::fn_00631190
   else {
     element_0038 = nullptr;
   }
+  /* ST_CALLSITE[006311CA]: CALL 0x00401d57; direct=00401D57 STManRuinC::sub_00630BB0 */
   st::fn_00401D57(this,param_2,param_3,param_4,param_6,param_5,param_7);
+  /* ST_CALLSITE[006311DE]: CALL 0x00405c9f; direct=00405C9F STManRuinC::sub_00630C50 */
   puVar2 = st::fn_00405C9F(this,param_6,param_5,0,1,param_7);
   element_0038->field_0010 = st::machine_word_boundary_cast<undefined4>(puVar2);
   if (puVar2 != nullptr) {
@@ -470,7 +476,7 @@ void __thiscall st::fn_00631220(STManRuinC *this,int *param_1)
   *(undefined1 *)puVar8 = *(undefined1 *)puVar6;
   this->field_0061 = 0xffffffff;
   if (this->field_0038 != nullptr) {
-    local_14 = (undefined4 *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&this->field_0038->flags),(int *)&local_8);
+    local_14 = st::pointer_boundary_cast<undefined4 *>(st::fn_006B0020(&this->field_0038->flags,(int *)&local_8));
     STField<uint>(puVar3,0x55) = local_8;
     local_c = (byte *)((int)puVar3 + 0x59);
     puVar6 = (byte *)(local_14);
@@ -565,8 +571,10 @@ undefined4 __thiscall st::fn_00631450(STManRuinC *this)
       else {
         element_0038 = nullptr;
       }
+      /* ST_CALLSITE[00631496]: CALL 0x00401d57; direct=00401D57 STManRuinC::sub_00630BB0 */
       st::fn_00401D57(this,element_0038->field_0000,element_0038->field_0002,element_0038->field_0004,element_0038->field_0008,(int)element_0038->field_0006,
                    element_0038->field_0014);
+      /* ST_CALLSITE[006314AD]: CALL 0x00405c9f; direct=00405C9F STManRuinC::sub_00630C50 */
       puVar2 = st::fn_00405C9F(this,this->field_0040,this->field_004C,0,1,element_0038->field_0014);
       element_0038->field_0010 = st::machine_word_boundary_cast<undefined4>(puVar2);
       if (puVar2 == nullptr) {
@@ -599,6 +607,7 @@ st::fn_00631510
 
   uVar1 = st::machine_word_boundary_cast<uint>(this->field_0071 * 0x41c64e6d + 0x3039);
   this->field_0071 = uVar1;
+  /* ST_CALLSITE[00631546]: CALL 0x00403a26; direct=00403A26 STManRuinC::sub_006308F0 */
   uVar1 = st::fn_00403A26(this,param_3,param_4,param_5,param_2,(uVar1 >> 0x10) % 3,param_6);
   return uVar1;
 }

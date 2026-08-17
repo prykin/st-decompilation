@@ -79,6 +79,7 @@ STAllPlayersC::DestroyObjectMsg
     local_c = 1;
     local_8 = param_4;
     local_30 = 0x128;
+    /* ST_CALLSITE[00449C30]: CALL dword ptr [EDX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*_param_1)(local_40);
     return 1;

@@ -21,6 +21,7 @@ void FUN_006d0390(HDC hdc,int xDest,int yDest,BITMAPINFO *param_4,void *param_5)
   uVar1 = (param_4->bmiHeader).biHeight;
   uVar2 = (int)uVar1 >> 0x1f;
   h = (uVar1 ^ uVar2) - uVar2;
+  /* ST_CALLSITE[006D03CA]: CALL dword ptr [0x0085babc] */
   SetDIBitsToDevice(hdc,xDest,yDest,(param_4->bmiHeader).biWidth,h,0,0,0,h,param_5,param_4,0);
   return;
 }

@@ -129,6 +129,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
         do {
           DArrayGetElement(local_18,uVar14,&local_8);
           if (local_8 != nullptr) {
+            /* ST_CALLSITE[00441E48]: CALL dword ptr [EDX + 0x2c] */
             dVar4 = local_8->slot_2C();
             pDVar16 = local_10;
             if ((dVar4 == 0x3b) || (dVar4 == 0x60)) {
@@ -141,6 +142,7 @@ LAB_00441e92:
                 pdVar6 = local_80;
                 do {
                   if (dVar4 == *pdVar6) {
+                    /* ST_CALLSITE[00441E75]: CALL dword ptr [EAX + 0x88] */
                     iVar5 = (*local_8->vtable->vfunc_88)(local_4c);
                     if (0 < iVar5) {
                       pDVar16 = (DArrayTy *)local_60[iVar10];
@@ -176,6 +178,7 @@ LAB_00441e92:
       if (0 < (int)local_64) {
         do {
           DArrayGetElement(local_10,(uint)local_c,&local_8);
+          /* ST_CALLSITE[00441EE9]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0(local_8,&local_40,&local_3e,&local_3c);
           local_3a = *(undefined2 *)&local_8->field_0x32;
           uVar14 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
@@ -213,6 +216,7 @@ LAB_00441e92:
                 if (0 < (int)local_80[4]) {
                   do {
                     DArrayGetElement(pDVar8,uVar14,&local_8);
+                    /* ST_CALLSITE[00441FCC]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                     STFishC::sub_004162B0(local_8,&local_48,&local_46,&local_44);
                     local_42 = *(undefined2 *)&local_8->field_0x32;
                     local_38 = (int)g_pathingScratchGrid.cells

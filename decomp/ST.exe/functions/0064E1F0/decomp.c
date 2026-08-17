@@ -7,6 +7,7 @@
 uint __cdecl FUN_0064e1f0(undefined4 *param_1,uint param_2,undefined4 param_3,undefined4 *param_4)
 
 {
+  /* ST_CALLSITE[0064E209]: CALL 0x0040387d; direct=0040387D STAllPlayersC::DestroyObjectMsg */
   STAllPlayersC::DestroyObjectMsg(g_allPlayers_007FA174,(char)param_1,param_2,CASE_3,*param_4);
   DAT_008118fc = DAT_008118fc + 1;
   return 0;

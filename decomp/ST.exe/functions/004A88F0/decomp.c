@@ -15,6 +15,7 @@ OpticClassC * __cdecl CreateOpticClass(void)
 
   this = (OpticClassC *)FUN_006b04d0(0x20);
   if (this != nullptr) {
+    /* ST_CALLSITE[004A88FD]: CALL 0x00401da7; direct=00401DA7 OpticClassC::OpticClassC */
     g_opticClass_007FB2A0 = OpticClassC::OpticClassC(this);
     return g_opticClass_007FB2A0;
   }

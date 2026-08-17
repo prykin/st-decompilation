@@ -28,15 +28,18 @@ undefined4 __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
     local_8->field_0194 = param_1;
     if (param_1 == '\0') {
       if ((g_cPanel_00801688 != nullptr) && (g_cPanel_00801688->field_023F == CASE_1)) {
+        /* ST_CALLSITE[0053F6CE]: CALL 0x00405dbc; direct=00405DBC CPanelTy::ShiftControls */
         CPanelTy::ShiftControls(g_cPanel_00801688,local_8->field_0195,1);
       }
       iVar4 = 0;
     }
     else {
+      /* ST_CALLSITE[0053F6AA]: CALL dword ptr [EDX + 0x1c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)local_8->field_0000->field_001C)();
       iVar4 = 1;
     }
+    /* ST_CALLSITE[0053F6D7]: CALL 0x00403b48; direct=00403B48 ProdPanelTy::SwitchPanel */
     SwitchPanel(this_00,iVar4);
     g_currentExceptionFrame = local_4c.previous;
     return 1;

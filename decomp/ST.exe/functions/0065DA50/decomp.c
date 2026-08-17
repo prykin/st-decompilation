@@ -39,6 +39,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
        (param_2 = cVar7, uVar6 = STReplaceLowByte((uint32_t)(extraout_EDX), (uint8_t)(param_2)), param_2 < '\0'))
     {
       if (param_1 != 0) {
+        /* ST_CALLSITE[0065DAF1]: CALL 0x00403828; direct=00403828 STGroupC::GetTOBJQty */
         uVar2 = STGroupC::GetTOBJQty((STGroupC *)this_00,param_1);
         return uVar2 & 0xffff;
       }
@@ -46,9 +47,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
       return (uint)uVar1;
     }
     if (param_1 == 0) {
+      /* ST_CALLSITE[0065DB0D]: CALL 0x004018cf; direct=004018CF AiFltClassTy::sub_0065DA10 */
       array = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)this,uVar6);
     }
     else {
+      /* ST_CALLSITE[0065DB17]: CALL 0x004059b6; direct=004059B6 AiFltClassTy::sub_0065E360 */
       array = (DArrayTy *)AiFltClassTy::sub_0065E360((AiFltClassTy *)this,uVar6,param_1);
     }
     if (array != nullptr) {
@@ -62,9 +65,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
           else {
             puVar4 = nullptr;
           }
+          /* ST_CALLSITE[0065DB53]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_01 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0x24,*puVar4,CASE_1);
           if (((this_01 != nullptr) &&
+              /* ST_CALLSITE[0065DB62]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
               (iVar5 = (*this_01->vtable[1].vfunc_24)(this_01), iVar5 != 0)) &&
+             /* ST_CALLSITE[0065DB70]: CALL dword ptr [EDX + 0x6c] */
              (iVar5 = this_01->vfunc_6C(), param_2 == iVar5)) {
             local_8 = local_8 + 1;
           }

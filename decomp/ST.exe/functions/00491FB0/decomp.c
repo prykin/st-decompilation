@@ -35,6 +35,7 @@ void __thiscall STBoatC::ReadyForLoading(STBoatC *this,STFishC *param_1)
     STPlaySystemC::sub_006E62D0
               (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*(STFishC **)&this->field_0x58e,
                (int *)&param_1);
+    /* ST_CALLSITE[00492004]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
     STFishC::sub_004162F0(param_1,&this->field_0588,&this->field_058A,&this->field_058C);
     this->field_0596 = CASE_3;
     this->field_059A = CASE_0;

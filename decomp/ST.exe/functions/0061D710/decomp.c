@@ -109,7 +109,7 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
     pbVar12 = pbVar12 + 1;
     pbVar10 = pbVar10 + 1;
   }
-  local_14 = (byte *)FUN_006b0020(&this->field_00A3->flags,(int *)&local_10);
+  local_14 = FUN_006b0020(&this->field_00A3->flags,(int *)&local_10);
   *(uint *)local_c = local_10 + 4;
   pbVar10 = local_14;
   pbVar12 = local_c;

@@ -35,15 +35,18 @@ int __thiscall TLOBldMark::GetMessage(TLOBldMark *this,STMessage *message)
   }
   SVar1 = message->id;
   if (SVar1 == MESS_ID_NONE) {
+    /* ST_CALLSITE[004C6A7C]: CALL 0x004032a1; direct=004032A1 TLOBldMark::sub_004C61E0 */
     sub_004C61E0(local_8);
   }
   else {
     if (SVar1 == MESS_ID_CREATE) {
+      /* ST_CALLSITE[004C6A62]: CALL 0x004051d7; direct=004051D7 TLOBldMark::Create */
       Create(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
     if (SVar1 == MESS_SHARED_0003) {
+      /* ST_CALLSITE[004C6A44]: CALL 0x00401767; direct=00401767 TLOBldMark::sub_004C61A0 */
       sub_004C61A0(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;

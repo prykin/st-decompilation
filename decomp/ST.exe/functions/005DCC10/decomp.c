@@ -44,6 +44,7 @@ undefined4 __thiscall StartSystemTy::InitSystem(StartSystemTy *this)
       }
     }
     thunk_FUN_005da7a0();
+    /* ST_CALLSITE[005DCCDB]: CALL 0x00402806; direct=00402806 StartSystemTy::LoadGraph */
     LoadGraph(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return 0;

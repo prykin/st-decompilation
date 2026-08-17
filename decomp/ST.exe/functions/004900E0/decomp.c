@@ -84,7 +84,7 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
     psVar12 = psVar12 + 2;
   }
   *psVar12 = *psVar8;
-  *(char *)(psVar12 + 1) = (char)psVar8[1];
+  ((char *)psVar12)[1] = (char)psVar8[1];
   puVar9 = (byte *)&local_10->field_0x413;
   puVar11 = (byte *)&local_8->field_0510;
   memmove(puVar11, puVar9, 0x1c); /* compiler REP MOVS byte copy */

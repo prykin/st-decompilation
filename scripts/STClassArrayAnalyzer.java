@@ -1081,6 +1081,25 @@ public class STClassArrayAnalyzer extends GhidraScript {
             int stride) {
         if (structure == null || offset < 0 || offset + bytes > structure.getLength())
             return false;
+        // Once the proposal has been applied, the exact range is represented by one
+        // Array component rather than by count separate scalar components.  Accept that
+        // canonical form as the same evidence; otherwise the analyzer drops its own row,
+        // ClassLayout expands the scalars again, and the two passes oscillate forever.
+        // Only an exact full-range array of generic scalar elements is retained here.
+        if (offset <= Integer.MAX_VALUE) {
+            ghidra.program.model.data.DataTypeComponent component =
+                structure.getComponentAt((int)offset);
+            DataType componentType = component == null ? null :
+                untypedef(component.getDataType());
+            if (component != null && component.getOffset() == offset &&
+                    component.getLength() == bytes && componentType instanceof Array array &&
+                    array.getElementLength() == stride &&
+                    (long)array.getNumElements() * stride == bytes) {
+                DataType element = untypedef(array.getDataType());
+                return element instanceof ghidra.program.model.data.Undefined ||
+                    element instanceof ghidra.program.model.data.AbstractIntegerDataType;
+            }
+        }
         for (ghidra.program.model.data.DataTypeComponent component :
                 structure.getDefinedComponents()) {
             if (component.getOffset() >= offset + bytes ||

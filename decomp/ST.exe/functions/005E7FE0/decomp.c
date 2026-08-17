@@ -48,6 +48,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
+  /* ST_CALLSITE[005E8046]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
          (byte *)puVar5);
   pRVar2 = (RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_0544;
@@ -61,12 +62,14 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   if (local_8->field_1A8F == -1) {
     pcVar7 = LoadResourceString(0x252c,g_hINSTANCE_00807618);
     pcVar8 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005E80D6]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar8,pcVar7);
     iVar11 = 0;
     puVar9 = &DAT_0080f33a;
   }
   else {
     if (((byte)local_8->field_1A93 < 2) || (3 < (byte)local_8->field_1A93)) goto LAB_005e829d;
+    /* ST_CALLSITE[005E811D]: CALL EBX */
     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,PTR_s_CUSTOM__0079c244);
     local_1c = this_00->field_1A93;
     local_1b = this_00->field_1A8F;
@@ -83,6 +86,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
       pcVar4 = local_10;
       g_currentExceptionFrame = local_a4.previous;
       if (local_10 != nullptr) {
+        /* ST_CALLSITE[005E81DB]: CALL 0x00402716; direct=00402716 StartSystemTy::LoadMapData */
         StartSystemTy::LoadMapData
                   (g_startSystem_0081176C,local_10,(local_8->field_1A93 != '\x02') + '\x04');
         local_c = 1;
@@ -90,7 +94,9 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
                   ((byte *)&CHAR_00h_0080ed16,nullptr,nullptr,local_1a8,nullptr);
         pbVar12 = local_1a8;
         pcVar7 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[005E8224]: CALL EBX */
         wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar7,pbVar12);
+        /* ST_CALLSITE[005E8232]: CALL 0x0040245a; direct=0040245A WaitTy::AddStr */
         AddStr(this_00,&DAT_0080f33a,0);
         cMf32::delete(pcVar4);
       }
@@ -98,11 +104,14 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     }
     pcVar7 = LoadResourceString(0x252b,g_hINSTANCE_00807618);
     pcVar8 = LoadResourceString(0x252a,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005E826F]: CALL EBX */
     wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar8,pcVar7);
+    /* ST_CALLSITE[005E827D]: CALL 0x0040245a; direct=0040245A WaitTy::AddStr */
     AddStr(this_00,&DAT_0080f33a,0);
     iVar11 = 0;
     puVar9 = (uint *)LoadResourceString(0x252d,g_hINSTANCE_00807618);
   }
+  /* ST_CALLSITE[005E8298]: CALL 0x0040245a; direct=0040245A WaitTy::AddStr */
   AddStr(this_00,puVar9,iVar11);
 LAB_005e829d:
   DAT_008087be = this_00->field_1A8F;

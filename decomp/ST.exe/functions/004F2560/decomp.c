@@ -96,9 +96,11 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
     iVar7 = local_30;
     local_1c = -(uint)(pAVar12->field_0x7 != '\x03') & 5;
     local_34 = local_1c + local_14;
+    /* ST_CALLSITE[004F2673]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(local_20,local_30,local_34,'\x06',(byte *)local_10);
     uVar2 = *(ushort *)(pAVar12 + 1);
     if (uVar2 != 0xffff) {
+      /* ST_CALLSITE[004F269B]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&pCVar5->field_01E1,"%d",(uint)uVar2);
       ccFntTy::SetSurf(pCVar5->field_01B8,(int)local_20,0,iVar7 + 0x2f,
                        (local_10->field_0008 + -0xc) / 2 + local_1c + local_14,0x11,0xc);
@@ -163,6 +165,7 @@ LAB_004f27ff:
     iVar9 = local_1c + local_14;
     iVar15 = iVar7;
   }
+  /* ST_CALLSITE[004F2870]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut(local_20,iVar15,iVar9,'\x06',(byte *)local_10);
   if (pAVar12->field_001E == 0xff) {
     ccFntTy::SetSurf(pCVar5->field_01B8,(int)local_20,0,iVar7 + 1,local_14 + 2,local_10->field_0004,
@@ -213,6 +216,7 @@ LAB_004f27ff:
     }
   }
   else {
+    /* ST_CALLSITE[004F28ED]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&pCVar5->field_01E1,"%d",*(short *)&pAVar12->field_0x26);
   }
   if (local_5 != '\0') {

@@ -12,7 +12,7 @@
 EditorClassTy * __thiscall st::fn_007209B0(EditorClassTy *this)
 
 {
-  st::fn_0072B700(st::pointer_boundary_cast<undefined4 *>(&this->vtable));
+  st::fn_0072B700((undefined4 *)&this->vtable);
   this->vtable = &st_global_0079E2B4;
   this->field_0200 = 0;
   this->field_01FC = 0;

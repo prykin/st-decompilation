@@ -12,6 +12,8 @@
 void __cdecl st::fn_00428E50(short *param_1)
 
 {
+  int scalar_local_28;
+
   double dVar1;
   short sVar2;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar3;
@@ -207,6 +209,7 @@ LAB_00428e95:
               bVar20 = (uVar12 - 1 | 0xfffffff0) == 0xffffffff;
             }
             if (bVar20) {
+              /* ST_CALLSITE[004292AA]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
               st::fn_00403472
                         (g_cLoading_00802A58,CASE_1,
                          (int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,nullptr);
@@ -311,6 +314,7 @@ LAB_00429475:
               bVar20 = (uVar12 - 1 | 0xfffffff0) == 0xffffffff;
             }
             if (bVar20) {
+              /* ST_CALLSITE[004294E3]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
               st::fn_00403472
                         (g_cLoading_00802A58,CASE_1,
                          (int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,nullptr);
@@ -331,7 +335,7 @@ LAB_00429475:
              (local_ac = 0, (*(ushort *)&pAVar4[1].field_0xe & 0xf) != 0)) {
             local_ac = uVar12;
           }
-          int scalar_local_28 = iVar14 * local_38; /* split integer lifetime from pointer-typed SSA storage */
+          scalar_local_28 = iVar14 * local_38; /* split integer lifetime from pointer-typed SSA storage */
           local_b8 = local_80 * 5;
           local_3c = 1;
           local_8 = (int *)((int)param_1 + (scalar_local_28 + local_64 + local_b8) * 4 + 0x459);
@@ -342,7 +346,7 @@ LAB_00429475:
 LAB_0042958f:
             iVar14 = *local_8;
             if ((iVar14 == 0) ||
-               (iVar18 = (int)*(short *)(iVar14 + 8) - (uint)*(byte *)(iVar14 + 0x48),
+               (iVar18 = (int)*(short *)(iVar14 + 8) - (uint)((byte *)iVar14)[0x48],
                iVar9 + 3 < iVar18)) goto cf_continue_loop_004296CF;
             if (*(uint *)(iVar14 + 0x18) < local_44->count) {
               /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -395,7 +399,7 @@ LAB_0042958f:
             *(byte *)local_10->field_003C = *(byte *)local_10->field_003C | local_50;
             iVar14 = local_10->field_003C;
 LAB_00429d7a:
-            *(byte *)(iVar14 + 1) = *(byte *)(iVar14 + 1) | local_50;
+            ((byte *)iVar14)[1] = ((byte *)iVar14)[1] | local_50;
             iVar9 = local_64;
             goto LAB_00429d7d;
           }
@@ -434,7 +438,7 @@ LAB_00429715:
                   local_60 = STField<int>(pvVar16,0xc) - local_c8;
                   local_5c = STField<int>(pvVar16,0x10) +
                              *(int *)(PTR_DAT_007a5250 +
-                                     (((int)*(short *)(iVar14 + 8) - (uint)*(byte *)(iVar14 + 0x48))
+                                     (((int)*(short *)(iVar14 + 8) - (uint)((byte *)iVar14)[0x48])
                                      - local_24) * 4) + local_70[-1];
                   local_58 = STField<int>(pvVar16,0x14);
                   local_54 = STField<undefined4>(pvVar16,0x18);
@@ -507,7 +511,7 @@ LAB_00429715:
                     local_5c = STField<int>(pvVar16,0x10) +
                                *(int *)(PTR_DAT_007a5250 +
                                        (((int)*(short *)(iVar14 + 8) -
-                                        (uint)*(byte *)(iVar14 + 0x48)) - local_24) * 4) + *local_70
+                                        (uint)((byte *)iVar14)[0x48]) - local_24) * 4) + *local_70
                     ;
                     local_58 = STField<int>(pvVar16,0x14);
                     local_54 = STField<undefined4>(pvVar16,0x18);
@@ -584,7 +588,7 @@ LAB_00429715:
                     local_5c = STField<int>(pvVar16,0x10) +
                                *(int *)(PTR_DAT_007a5250 +
                                        (((int)*(short *)(iVar14 + 8) -
-                                        (uint)*(byte *)(iVar14 + 0x48)) - local_24) * 4) +
+                                        (uint)((byte *)iVar14)[0x48]) - local_24) * 4) +
                                local_70[1];
                     local_58 = STField<int>(pvVar16,0x14);
                     local_54 = STField<undefined4>(pvVar16,0x18);
@@ -746,21 +750,25 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
   if (iVar3 == 0) {
     pAVar3 = (AnonShape_005751F0_0FFC949A *)
              st::fn_006EF640
-                       ((int)param_1,text,g_cMf32_00806760,g_cMf32_00806760,st::pointer_boundary_cast<undefined *>(st::fn_00403DFF));
+                       ((int)param_1,text,g_cMf32_00806760,g_cMf32_00806760,(undefined *)st::fn_00428A10);
     local_1c = pAVar3;
     if (g_cLoading_00802A58 != nullptr) {
       iVar6 = DAT_007f4e00;
       pcVar4 = st::fn_006B0140(0x2685,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0042A30E]: CALL dword ptr [0x0085bde8] */
       st::external_00000080(local_f4,pcVar4,iVar6);
+      /* ST_CALLSITE[0042A327]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
       st::fn_00403472(g_cLoading_00802A58,CASE_2,0,local_f4);
       if (g_cLoading_00802A58 != nullptr) {
         iVar6 = DAT_007f4e00 / 2;
         pcVar4 = st::fn_006B0140(0x268c,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[0042A358]: CALL 0x00404d8b; direct=00404D8B cLoadingTy::SetProcess */
         st::fn_00404D8B(g_cLoading_00802A58,0,pcVar4,iVar6);
+        /* ST_CALLSITE[0042A366]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
         st::fn_00403472(g_cLoading_00802A58,CASE_0,0,nullptr);
       }
     }
-    puVar11 = st::pointer_boundary_cast<undefined1 *>(&pAVar3->field_0xe);
+    puVar11 = &pAVar3->field_0xe;
     iVar6 = 0x100;
     puVar7 = (undefined1 *)((int)PTR_0080679c + 0x29);
     do {
@@ -858,8 +866,10 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
     }
     st::fn_006AE110(local_c);
     st::fn_004045ED(&pAVar3->field_0000);
+    /* ST_CALLSITE[0042A605]: CALL 0x004010d7; direct=004010D7 LandInit */
     st::fn_004010D7(pAVar3);
     if (g_cLoading_00802A58 != nullptr) {
+      /* ST_CALLSITE[0042A61D]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
       st::fn_00403472(g_cLoading_00802A58,CASE_2,0,nullptr);
     }
     g_currentExceptionFrame = local_74.previous;

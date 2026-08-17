@@ -17,6 +17,7 @@ void __thiscall st::fn_004EEFB0(BldBoatPanelTy *this,int param_1)
   short sVar1;
 
   if (param_1 != this->field_005C) {
+    /* ST_CALLSITE[004EEFC0]: CALL 0x00402b3a; direct=00402B3A ProdPanelTy::ShiftControls */
     st::fn_00402B3A((ProdPanelTy *)this,param_1);
     sVar1 = (short)this->field_0174;
     this->field_0028 = 0x24;
@@ -58,7 +59,7 @@ void __thiscall st::fn_004EF140(BldBoatPanelTy *this)
   int local_8;
 
   if ((&this->field_027A)[(byte)this->field_0278] != 0) {
-    local_c = st::pointer_boundary_cast<UINT *>(&this->field_01B6);
+    local_c = &this->field_01B6;
     puVar6 = &this->field_01A1;
     local_8 = 0;
     local_14 = 5;

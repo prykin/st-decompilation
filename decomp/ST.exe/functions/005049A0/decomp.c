@@ -30,8 +30,10 @@ uint __thiscall CPanelTy::PaintPerResSI(CPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pCVar2 = local_c;
   if (iVar3 == 0) {
+    /* ST_CALLSITE[005049F1]: CALL 0x00404f1b; direct=00404F1B CPanelTy::PaintDamageXY */
     PaintDamageXY(local_c,local_c->field_0194,0x5c,0x50,local_c->field_0C33,0x2714);
     pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,1);
+    /* ST_CALLSITE[00504A12]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0x33,0x7b,'\x01',(byte *)pBVar3);
     bVar5 = 0;
     local_8 = local_8 & 0xffffff00;
@@ -41,6 +43,7 @@ uint __thiscall CPanelTy::PaintPerResSI(CPanelTy *this)
       uVar7 = 0;
       do {
         pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+        /* ST_CALLSITE[00504A68]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,uVar7 * 4 + 0x35,0x7d,'\x01',
                (byte *)pBVar3);
         bVar5 = bVar5 + 1;
@@ -54,6 +57,7 @@ uint __thiscall CPanelTy::PaintPerResSI(CPanelTy *this)
       iVar8 = (local_8 & 0xff) * 4 + 0x35;
       do {
         pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+        /* ST_CALLSITE[00504ABB]: CALL 0x00403229; direct=00403229 DibPut */
         uVar4 = DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,iVar8,0x7d,'\x01',
                        (byte *)pBVar3);
         iVar8 = iVar8 + 4;

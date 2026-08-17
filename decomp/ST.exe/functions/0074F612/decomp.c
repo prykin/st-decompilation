@@ -14,10 +14,13 @@ void FUN_0074f612(AnonShape_0074F612_D7AF983D *param_1,double param_2)
 {
   longlong lVar1;
 
+  /* ST_CALLSITE[0074F61A]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(param_1->field_0038);
   lVar1 = Library::MSVCRT::__ftol();
   param_1->field_0020 = lVar1;
+  /* ST_CALLSITE[0074F638]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(param_1->field_0038);
+  /* ST_CALLSITE[0074F642]: CALL dword ptr [EAX + 0x48] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)param_1 + 0x48))();
   return;

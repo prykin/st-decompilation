@@ -55,7 +55,9 @@ STAppC::MainWindowProc
   }
   if (param_2 < 0x21) {
     if (param_2 == 0x20) {
+      /* ST_CALLSITE[0056CE2E]: CALL dword ptr [0x0085be30] */
       pHVar4 = LoadCursorA(g_hInstance_00856D70,&DAT_00000066);
+      /* ST_CALLSITE[0056CE35]: CALL dword ptr [0x0085be2c] */
       SetCursor(pHVar4);
       g_currentExceptionFrame = local_4c.previous;
       return 1;
@@ -68,6 +70,7 @@ STAppC::MainWindowProc
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     case CASE_F:
+      /* ST_CALLSITE[0056CC82]: CALL dword ptr [0x0085be38] */
       BeginPaint(hWnd,&local_ac);
       if (g_ddxContext_008075A8 != nullptr) {
         FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
@@ -78,8 +81,10 @@ STAppC::MainWindowProc
         DAT_0080745d = 0;
       }
       if (g_cLoading_00802A58 != nullptr) {
+        /* ST_CALLSITE[0056CCD9]: CALL 0x00402185; direct=00402185 cLoadingTy::sub_00554A50 */
         cLoadingTy::sub_00554A50(g_cLoading_00802A58);
       }
+      /* ST_CALLSITE[0056CCE6]: CALL dword ptr [0x0085be34] */
       EndPaint(hWnd,&local_ac);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
@@ -99,9 +104,12 @@ STAppC::MainWindowProc
           thunk_FUN_005713b0(0x807620);
         }
         if (g_cursorClass_00802A30 != nullptr) {
+          /* ST_CALLSITE[0056CDD8]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         }
+        /* ST_CALLSITE[0056CDE9]: CALL dword ptr [0x0085be30] */
         pHVar4 = LoadCursorA(g_hInstance_00856D70,&DAT_00007f00);
+        /* ST_CALLSITE[0056CDF0]: CALL dword ptr [0x0085be2c] */
         SetCursor(pHVar4);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
@@ -114,7 +122,9 @@ STAppC::MainWindowProc
       }
       thunk_FUN_00573240();
       thunk_FUN_00571320(&DAT_00807620,hWnd);
+      /* ST_CALLSITE[0056CD7C]: CALL dword ptr [0x0085be30] */
       pHVar4 = LoadCursorA(g_hInstance_00856D70,&DAT_00000066);
+      /* ST_CALLSITE[0056CD83]: CALL dword ptr [0x0085be2c] */
       SetCursor(pHVar4);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
@@ -142,6 +152,7 @@ STAppC::MainWindowProc
           return local_8;
         }
         local_bc = 0xa100;
+        /* ST_CALLSITE[0056CEC0]: CALL dword ptr [EAX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(local_cc);
         g_currentExceptionFrame = local_4c.previous;
@@ -180,6 +191,7 @@ STAppC::MainWindowProc
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }
+  /* ST_CALLSITE[0056CF3D]: CALL dword ptr [0x0085be28] */
   LVar2 = DefWindowProcA(hWnd,param_2,param_3,param_4);
   g_currentExceptionFrame = local_4c.previous;
   return LVar2;

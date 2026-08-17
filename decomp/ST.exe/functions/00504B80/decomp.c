@@ -29,6 +29,7 @@ void __thiscall CPanelTy::PaintNameRes(CPanelTy *this,int param_1)
   if (iVar3 == 0) {
     uVar4 = thunk_FUN_005276e0(local_8->field_0C31,local_8->field_0C32);
     pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_029A,uVar4);
+    /* ST_CALLSITE[00504BEA]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,param_1 + 5,0x65,'\x01',
            (byte *)pBVar5);
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,param_1 + 2,0x52,0xb2,10);

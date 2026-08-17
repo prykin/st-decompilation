@@ -34,7 +34,7 @@ int FUN_007516f0(int param_1,byte *param_2)
   }
   else {
     local_24 = param_2;
-    local_44 = *(byte *)(param_1 + 1);
+    local_44 = ((byte *)param_1)[1];
     local_48 = 0;
     uVar3 = 0;
     uVar6 = 0;

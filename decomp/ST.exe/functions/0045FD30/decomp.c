@@ -33,6 +33,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this)
       }
     }
     this->field_00E8 = 0;
+    /* ST_CALLSITE[0045FDA6]: CALL 0x00405952; direct=00405952 sub_004167A0 */
     sub_004167A0(this);
     this->field_00FD = 1;
     thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);
@@ -52,6 +53,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this)
                STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[(byte)this->field_008E];
     }
     if (pSVar7 == this) {
+      /* ST_CALLSITE[0045FE54]: CALL 0x00405952; direct=00405952 sub_004167A0 */
       sub_004167A0(this);
       this->field_00FD = 1;
       thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);

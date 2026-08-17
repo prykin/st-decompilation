@@ -111,8 +111,8 @@ st::fn_00424E10
   iVar17 = param_6;
   iVar24 = param_5;
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790540);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_00790540;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 40);
   local_4c = 0;
@@ -263,10 +263,10 @@ st::fn_00424E10
                 *psVar19 = *psVar19 +
                            ((((short)iVar6 - (short)iVar7) + (short)local_54) -
                            *(short *)&this->field_0x378);
-                if ((*(byte *)(psVar19 + 2) & 2) != 0) {
+                if ((((byte *)psVar19)[2] & 2) != 0) {
                   psVar19[-1] = psVar19[-1] + -1;
                 }
-                if ((*(byte *)(psVar19 + 2) & 1) != 0) {
+                if ((((byte *)psVar19)[2] & 1) != 0) {
                   *psVar19 = *psVar19 + -1;
                 }
                 if (*(char *)((int)*psVar19 * *(int *)&this->field_0x37c + (int)psVar19[-1] +
@@ -281,8 +281,9 @@ st::fn_00424E10
               if (0 < iVar18) {
                 psVar19 = psVar5 + 1;
                 do {
+                  /* ST_CALLSITE[004253AB]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   st::fn_00405010(this,(int)local_a0,iVar24,(int)psVar19[-1],(int)*psVar19,
-                               *(byte *)(psVar19 + 2) & CASE_3,~CASE_0);
+                               ((byte *)psVar19)[2] & CASE_3,~CASE_0);
                   iVar24 = iVar24 + 1;
                   psVar19 = psVar19 + 4;
                 } while (iVar24 < iVar18);
@@ -599,6 +600,7 @@ LAB_00426205:
                   *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                   *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                   *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x426014;
+                  /* ST_CALLSITE[0042600F]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                         *(int *)((st_stack_frame + 20) + iVar23),
                                         *(int *)((st_stack_frame + 24) + iVar23),
@@ -623,6 +625,7 @@ LAB_004265cd:
                 *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                 *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                 *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x4265ee;
+                /* ST_CALLSITE[004265E9]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                       *(int *)((st_stack_frame + 20) + iVar23),
                                       *(int *)((st_stack_frame + 24) + iVar23),
@@ -650,6 +653,7 @@ LAB_0042605b:
                 *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                 *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                 *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x42607c;
+                /* ST_CALLSITE[00426077]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                       *(int *)((st_stack_frame + 20) + iVar23),
                                       *(int *)((st_stack_frame + 24) + iVar23),
@@ -685,6 +689,7 @@ LAB_0042605b:
                   *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                   *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                   *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x426130;
+                  /* ST_CALLSITE[0042612B]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                         *(int *)((st_stack_frame + 20) + iVar23),
                                         *(int *)((st_stack_frame + 24) + iVar23),
@@ -709,6 +714,7 @@ LAB_004260a9:
                 *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                 *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                 *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x4260ca;
+                /* ST_CALLSITE[004260C5]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                       *(int *)((st_stack_frame + 20) + iVar23),
                                       *(int *)((st_stack_frame + 24) + iVar23),
@@ -737,6 +743,7 @@ LAB_004260cc:
                     *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                     *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                     *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x4263c2;
+                    /* ST_CALLSITE[004263BD]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                     uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                           *(int *)((st_stack_frame + 20) + iVar23),
                                           *(int *)((st_stack_frame + 24) + iVar23),
@@ -775,6 +782,7 @@ LAB_004260cc:
                   *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                   *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                   *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x42631a;
+                  /* ST_CALLSITE[00426315]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                         *(int *)((st_stack_frame + 20) + iVar23),
                                         *(int *)((st_stack_frame + 24) + iVar23),
@@ -799,6 +807,7 @@ LAB_0042627f:
                 *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                 *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                 *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x4262a0;
+                /* ST_CALLSITE[0042629B]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                       *(int *)((st_stack_frame + 20) + iVar23),
                                       *(int *)((st_stack_frame + 24) + iVar23),
@@ -842,6 +851,7 @@ LAB_004262a2:
                       *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                       *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                       *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x4265a9;
+                      /* ST_CALLSITE[004265A4]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                       uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                             *(int *)((st_stack_frame + 20) + iVar23),
                                             *(int *)((st_stack_frame + 24) + iVar23),
@@ -871,6 +881,7 @@ LAB_00426527:
                     *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                     *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                     *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x426548;
+                    /* ST_CALLSITE[00426543]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                     uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                           *(int *)((st_stack_frame + 20) + iVar23),
                                           *(int *)((st_stack_frame + 24) + iVar23),
@@ -897,6 +908,7 @@ LAB_0042654a:
                   *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                   *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                   *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x4264dd;
+                  /* ST_CALLSITE[004264D8]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                         *(int *)((st_stack_frame + 20) + iVar23),
                                         *(int *)((st_stack_frame + 24) + iVar23),
@@ -921,6 +933,7 @@ LAB_00426163:
                 *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                 *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                 *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x426184;
+                /* ST_CALLSITE[0042617F]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                       *(int *)((st_stack_frame + 20) + iVar23),
                                       *(int *)((st_stack_frame + 24) + iVar23),
@@ -987,6 +1000,7 @@ LAB_00425bf9:
                   *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                   *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                   *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x425b6b;
+                  /* ST_CALLSITE[00425B66]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                         *(int *)((st_stack_frame + 20) + iVar23),
                                         *(int *)((st_stack_frame + 24) + iVar23),
@@ -1010,6 +1024,7 @@ LAB_00426339:
                 *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                 *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                 *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x426366;
+                /* ST_CALLSITE[00426361]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                       *(int *)((st_stack_frame + 20) + iVar23),
                                       *(int *)((st_stack_frame + 24) + iVar23),
@@ -1051,6 +1066,7 @@ LAB_00426339:
                     *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                     *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                     *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x425c89;
+                    /* ST_CALLSITE[00425C84]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                     uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                           *(int *)((st_stack_frame + 20) + iVar23),
                                           *(int *)((st_stack_frame + 24) + iVar23),
@@ -1080,6 +1096,7 @@ LAB_00426215:
                 *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                 *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                 *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x426236;
+                /* ST_CALLSITE[00426231]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                       *(int *)((st_stack_frame + 20) + iVar23),
                                       *(int *)((st_stack_frame + 24) + iVar23),
@@ -1103,6 +1120,7 @@ LAB_004261b5:
                 *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                 *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                 *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x4261d6;
+                /* ST_CALLSITE[004261D1]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                       *(int *)((st_stack_frame + 20) + iVar23),
                                       *(int *)((st_stack_frame + 24) + iVar23),
@@ -1135,6 +1153,7 @@ LAB_00425dd3:
                         *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                         *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                         *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x425e00;
+                        /* ST_CALLSITE[00425DFB]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                         uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                               *(int *)((st_stack_frame + 20) + iVar23),
                                               *(int *)((st_stack_frame + 24) + iVar23),
@@ -1158,6 +1177,7 @@ LAB_00425d75:
                       *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                       *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                       *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x425da2;
+                      /* ST_CALLSITE[00425D9D]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                       uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                             *(int *)((st_stack_frame + 20) + iVar23),
                                             *(int *)((st_stack_frame + 24) + iVar23),
@@ -1183,6 +1203,7 @@ LAB_00425eeb:
                   *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                   *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                   *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x425f1c;
+                  /* ST_CALLSITE[00425F17]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                         *(int *)((st_stack_frame + 20) + iVar23),
                                         *(int *)((st_stack_frame + 24) + iVar23),
@@ -1206,6 +1227,7 @@ LAB_00425eeb:
                   *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                   *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                   *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x425d46;
+                  /* ST_CALLSITE[00425D41]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                         *(int *)((st_stack_frame + 20) + iVar23),
                                         *(int *)((st_stack_frame + 24) + iVar23),
@@ -1229,6 +1251,7 @@ LAB_004263eb:
                 *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                 *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                 *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x42640c;
+                /* ST_CALLSITE[00426407]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                       *(int *)((st_stack_frame + 20) + iVar23),
                                       *(int *)((st_stack_frame + 24) + iVar23),
@@ -1258,6 +1281,7 @@ LAB_00425b8a:
                 *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                 *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                 *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x425bab;
+                /* ST_CALLSITE[00425BA6]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                       *(int *)((st_stack_frame + 20) + iVar23),
                                       *(int *)((st_stack_frame + 24) + iVar23),
@@ -1285,6 +1309,7 @@ LAB_00425bad:
                     *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                     *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                     *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x425f7a;
+                    /* ST_CALLSITE[00425F75]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                     uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                           *(int *)((st_stack_frame + 20) + iVar23),
                                           *(int *)((st_stack_frame + 24) + iVar23),
@@ -1310,6 +1335,7 @@ LAB_00425bad:
                   *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                   *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                   *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x425ec8;
+                  /* ST_CALLSITE[00425EC3]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                   uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                         *(int *)((st_stack_frame + 20) + iVar23),
                                         *(int *)((st_stack_frame + 24) + iVar23),
@@ -1334,6 +1360,7 @@ LAB_00425e40:
                 *(int *)((st_stack_frame + 20) + iVar23) = uVar15;
                 *(short **)((st_stack_frame + 16) + iVar23) = local_a0;
                 *(undefined4 *)((st_stack_frame + 12) + iVar23) = 0x425e61;
+                /* ST_CALLSITE[00425E5C]: CALL 0x00405010; direct=00405010 sub_004248D0 */
                 uVar15 = st::fn_00405010(this,*(int *)((st_stack_frame + 16) + iVar23),
                                       *(int *)((st_stack_frame + 20) + iVar23),
                                       *(int *)((st_stack_frame + 24) + iVar23),
@@ -1493,8 +1520,8 @@ st::fn_00427F20(void *this,float param_1,float param_2,float param_3,int param_4
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790550);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_00790550;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 36);
   local_30 = 0;

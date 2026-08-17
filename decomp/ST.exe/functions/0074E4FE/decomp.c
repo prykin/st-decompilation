@@ -22,12 +22,15 @@ int FUN_0074e4fe(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4
     piVar3 = (int *)((int)piVar3 + 1);
   } while (bVar4);
   if (bVar4) {
+    /* ST_CALLSITE[0074E52A]: CALL dword ptr [EAX + 0x10] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*param_1 + 0x10))(param_1,0,param_4,&param_3);
     if (-1 < iVar1) {
+      /* ST_CALLSITE[0074E54A]: CALL dword ptr [ECX + 0x2c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar1 = (**(code **)(*param_3 + 0x2c))
                         (param_3,param_1,param_2,param_5,param_6,param_7,param_8,param_9);
+      /* ST_CALLSITE[0074E555]: CALL dword ptr [ECX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*param_3 + 8))(param_3);
     }

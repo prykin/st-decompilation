@@ -13,6 +13,7 @@ void __thiscall FUN_004602e0(void *this,int param_1)
     STField<uint>(this,0x1c) = uVar1;
     STField<short>(this,0xf8) = (short)((ulonglong)(uVar1 >> 0x10) % 0x1f) + 0x1e;
   }
+  /* ST_CALLSITE[00460334]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
   STBoatC::sub_0045FF50(this,param_1);
   return;
 }

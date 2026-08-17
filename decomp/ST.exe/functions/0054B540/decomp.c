@@ -30,6 +30,7 @@ void __thiscall CursorClassTy::sub_0054B540(CursorClassTy *this)
                   ((uint *)this->field_0060,this->field_001C,0xfffffffe,this->field_0034,
                    this->field_0038);
       }
+      /* ST_CALLSITE[0054B5C5]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
       DrawSprite(this,this->field_00C5,this->field_00C9);
     }
     else {

@@ -59,8 +59,10 @@ uint FUN_0064e300(int param_1,char *param_2,ushort param_3,char param_4,ushort p
   local_8 = thunk_FUN_00668180(param_2,param_3,(short)param_4,param_5,(byte)iVar1);
   *(int *)&local_8->field_0x4 = param_1;
   *(uint *)&local_8->field_0x77 = uVar2;
+  /* ST_CALLSITE[0064E3B2]: CALL 0x004014c4; direct=004014C4 FltDataPack */
   local_c = FltDataPack(local_8,local_20);
   thunk_FUN_006686c0((int *)&local_8);
+  /* ST_CALLSITE[0064E3DE]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
   STPlaySystemC::CreateGameObject(g_playSystem_00802A38,900,local_20 + 1,&local_14,local_c,0);
   thunk_FUN_006686c0((int *)&local_c);
   if (local_14 == nullptr) {
@@ -71,6 +73,7 @@ uint FUN_0064e300(int param_1,char *param_2,ushort param_3,char param_4,ushort p
   else {
     uVar2 = (uint)STField<ushort>(local_14,0x7d);
     local_20[2] = uVar2;
+    /* ST_CALLSITE[0064E400]: CALL 0x00404da9; direct=00404DA9 _GetStaffGrpExch */
     array = (DArrayTy *)_GetStaffGrpExch(param_1);
     if (array != nullptr) {
       thunk_FUN_0065d940(local_14,array,0);

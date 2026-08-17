@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -306,8 +307,10 @@ public class STConstructorAnalyzer extends GhidraScript {
                 Origin origin = destination == null ? null : aliases.get(destination.register);
                 if (origin != null) {
                     Origin location = origin.add(destination.displacement);
-                    if (location.offset > 0) result.writes.add(new ObjectWrite(
-                        instruction.getAddress(), location.id, location.offset));
+                    int width = memoryOperandWidth(operands[0]);
+                    if (location.offset > 0 && width > 0)
+                        result.writes.add(new ObjectWrite(instruction.getAddress(),
+                            location.id, location.offset, width));
                 }
             }
 
@@ -392,6 +395,16 @@ public class STConstructorAnalyzer extends GhidraScript {
         return !Set.of("CMP", "TEST", "PUSH", "CALL", "JMP", "LEA").contains(mnemonic);
     }
 
+    private int memoryOperandWidth(String operand) {
+        String value = operand == null ? "" : operand.toUpperCase(Locale.ROOT);
+        if (value.contains("BYTE PTR")) return 1;
+        if (value.contains("WORD PTR") && !value.contains("DWORD PTR") &&
+                !value.contains("QWORD PTR")) return 2;
+        if (value.contains("DWORD PTR")) return 4;
+        if (value.contains("QWORD PTR")) return 8;
+        return 0;
+    }
+
     private List<ConstructorProposal> constructorProposals(Function function, FlowResult flow,
             FactoryConstructorEvidence factoryEvidence) {
         List<ConstructorProposal> result = new ArrayList<>();
@@ -404,10 +417,14 @@ public class STConstructorAnalyzer extends GhidraScript {
             (owner.isBlank() || owner.equals(factoryEvidence.owner) ||
              !finalStore.raw.table.apply && !"high".equals(finalStore.raw.table.confidence));
         if (factoryAnchored) owner = factoryEvidence.owner;
+        ExtentOwnerEvidence extentEvidence = owner.isBlank() ?
+            uniqueExactExtentOwner(flow, Origin.THIS_ID, finalStore.raw.address) : null;
+        boolean extentAnchored = extentEvidence != null;
+        if (extentAnchored) owner = extentEvidence.owner;
         if (owner.isBlank()) return result;
 
         boolean returnsThis = flow.returnedOrigins.contains(Origin.THIS_ID);
-        boolean strongTable = factoryAnchored || finalStore.raw.table.apply ||
+        boolean strongTable = factoryAnchored || extentAnchored || finalStore.raw.table.apply ||
             "high".equals(finalStore.raw.table.confidence);
         boolean constructorShape = finalStore.callsBefore > 0 || finalStore.postFieldWrites > 0;
         boolean high = strongTable && returnsThis && constructorShape;
@@ -440,7 +457,10 @@ public class STConstructorAnalyzer extends GhidraScript {
             (factoryAnchored ? "; exact_factory_tail=" + addr(factoryEvidence.factory) +
                 "->" + addr(factoryEvidence.rawTarget) + "->" +
                 addr(factoryEvidence.constructor) + "; allocation_size=" +
-                factoryEvidence.allocationSize : "");
+                factoryEvidence.allocationSize : "") +
+            (extentAnchored ? "; unique_exact_object_extent=" +
+                extentEvidence.extent + "; extent_write_count=" +
+                extentEvidence.writeCount : "");
         result.add(new ConstructorProposal(function.getEntryPoint(), expectedName,
             function.getSymbol().getSource().toString(),
             function.getSignature().getPrototypeString(true),
@@ -451,6 +471,62 @@ public class STConstructorAnalyzer extends GhidraScript {
             alreadyApplied ? "high" : high ? "high" : "medium",
             alreadyApplied ? reason + "; previously_applied" : reason));
         return result;
+    }
+
+    /**
+     * Break an anonymous-vtable/unnamed-constructor cycle from exact storage extent.
+     *
+     * The maximum end of an exact object-relative machine write is an object extent only
+     * when it occurs after the final vptr store, several independent writes support the same
+     * unadjusted receiver, and exactly one ordinary top-level class has that complete length.
+     * Generated anonymous records, vtables, demangler artifacts, and nested categories are
+     * deliberately excluded.  This recovers a class identity from current database geometry;
+     * no image address or symbol spelling participates in the proof.
+     */
+    private ExtentOwnerEvidence uniqueExactExtentOwner(FlowResult flow, int originId,
+            Address finalVptrStore) {
+        long extent = -1;
+        int writes = 0;
+        boolean terminalWriteAfterVptr = false;
+        for (ObjectWrite write : flow.writes) {
+            if (write.originId != originId || write.offset < 0 || write.width <= 0)
+                continue;
+            long end;
+            try { end = Math.addExact(write.offset, write.width); }
+            catch (ArithmeticException exception) { return null; }
+            if (end > extent) {
+                extent = end;
+                terminalWriteAfterVptr = write.address.compareTo(finalVptrStore) > 0;
+            }
+            else if (end == extent && write.address.compareTo(finalVptrStore) > 0)
+                terminalWriteAfterVptr = true;
+            writes++;
+        }
+        if (extent < 4 || extent > 0x1000000L || writes < 3 ||
+                !terminalWriteAfterVptr) return null;
+
+        List<Structure> matches = new ArrayList<>();
+        Iterator<DataType> iterator =
+            currentProgram.getDataTypeManager().getAllDataTypes();
+        while (iterator.hasNext()) {
+            DataType type = iterator.next();
+            if (!(type instanceof Structure structure) ||
+                    structure.getLength() != extent ||
+                    !ordinaryTopLevelClass(structure)) continue;
+            matches.add(structure);
+        }
+        if (matches.size() != 1) return null;
+        return new ExtentOwnerEvidence(matches.get(0).getName(), extent, writes);
+    }
+
+    private boolean ordinaryTopLevelClass(Structure structure) {
+        String path = structure.getPathName();
+        String name = structure.getName();
+        return path.lastIndexOf('/') == 0 &&
+            name.matches("[A-Za-z_][A-Za-z0-9_]*") &&
+            !name.endsWith("VTable") && !name.contains("VTable_at_") &&
+            !name.startsWith("Anon") && !name.startsWith("Recovered") &&
+            !name.startsWith("Global_") && !name.startsWith("RuntimeRecord_");
     }
 
     private boolean ownerPointerReturn(Function function, String owner) {
@@ -897,8 +973,18 @@ public class STConstructorAnalyzer extends GhidraScript {
         final Address address;
         final int originId;
         final long offset;
-        ObjectWrite(Address address, int originId, long offset) {
+        final int width;
+        ObjectWrite(Address address, int originId, long offset, int width) {
             this.address = address; this.originId = originId; this.offset = offset;
+            this.width = width;
+        }
+    }
+    private static class ExtentOwnerEvidence {
+        final String owner;
+        final long extent;
+        final int writeCount;
+        ExtentOwnerEvidence(String owner, long extent, int writeCount) {
+            this.owner = owner; this.extent = extent; this.writeCount = writeCount;
         }
     }
     private static class FlowResult {

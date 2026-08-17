@@ -22,6 +22,7 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
     return 0;
   }
   if (*(int *)(iVar7 + 0x70) == 0) {
+    /* ST_CALLSITE[0075AEA5]: CALL dword ptr [ECX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar3 = (**(code **)*param_1)(param_1,1,param_1[7] * 0x18);
     *(undefined4 *)(iVar7 + 0x70) = uVar3;
@@ -30,7 +31,7 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
   local_c = 0;
   if (0 < (int)param_1[7]) {
     local_8 = (undefined4 *)(param_1[0x34] + 0x4c);
-    auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+    undefined4 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
     do {
       psVar1 = (short *)*local_8;
       if (psVar1 == nullptr) {

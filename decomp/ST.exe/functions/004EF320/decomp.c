@@ -74,6 +74,7 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   }
   FUN_006b4170((RecoveredSourceFamily_dibcopy *)local_18->field_0068,0,local_1c,local_c,local_14[2],
                local_14[3],0);
+  /* ST_CALLSITE[004EF438]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)pBVar3->field_0068,iVar1 + 1,uVar4 + 1,'\x01',
          (byte *)local_10);
   if (param_1->field_0014 == 3) {
@@ -84,9 +85,11 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
     iVar7 = 4;
   }
   pBVar5 = FUN_0070b3a0(pBVar3->field_0190,iVar7);
+  /* ST_CALLSITE[004EF47C]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)pBVar3->field_0068,iVar1,uVar4,'\x06',(byte *)pBVar5);
   if ((((local_8 != nullptr) && (local_8[1] != 0)) &&
       ((char)local_8[2] != 0)) && (param_1->field_0014 != 0)) {
+    /* ST_CALLSITE[004EF4AD]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&pBVar3->field_006C,"%d",local_8[1]);
     ccFntTy::SetSurf(pBVar3->field_028A,pBVar3->field_0068,0,iVar1,uVar4,local_14[2],local_14[3]);
     ccFntTy::WrStr(pBVar3->field_028A,&pBVar3->field_006C,-2,-1,0);

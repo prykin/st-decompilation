@@ -54,9 +54,11 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
             if (local_18 != nullptr) {
               switch(param_2) {
               case CASE_38:
+                /* ST_CALLSITE[004B11E2]: CALL dword ptr [EAX + 0x2c] */
                 dVar2 = local_18->slot_2C();
                 if (dVar2 == 0xdc) {
 LAB_004b1226:
+                  /* ST_CALLSITE[004B1235]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                   STFishC::sub_004162B0(local_18,&local_6,&local_8,&local_a);
                   if (((STGridAt3D(g_worldGrid, local_6, local_8, local_a).objects[0] ==
                         nullptr) && (local_a < 4)) &&
@@ -72,14 +74,17 @@ LAB_004b1226:
                 break;
               case CASE_39:
               case CASE_5E:
+                /* ST_CALLSITE[004B11F4]: CALL dword ptr [EDX + 0x2c] */
                 dVar2 = local_18->slot_2C();
                 if (dVar2 == 0xdd) goto LAB_004b1226;
                 break;
               case CASE_4F:
+                /* ST_CALLSITE[004B1206]: CALL dword ptr [EAX + 0x2c] */
                 dVar2 = local_18->slot_2C();
                 if (dVar2 == 0xde) goto LAB_004b1226;
                 break;
               case CASE_61:
+                /* ST_CALLSITE[004B1218]: CALL dword ptr [EDX + 0x2c] */
                 dVar2 = local_18->slot_2C();
                 if (dVar2 == 0xe0) goto LAB_004b1226;
               }

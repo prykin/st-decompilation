@@ -34,11 +34,10 @@ ST3DSMAPContext::sub_006E3310
                         (this->field_0288 * 5 + iVar3 + iVar1 * (int)piVar4) * 4);
         do {
           piVar4 = (int *)*piVar5;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (((piVar4 != nullptr) &&
               (*(char *)(piVar4[0x10] + this->field_0380 * ((int)param_2 % iVar2) * 2 +
                         param_1 % iVar2) != '\0')) &&
-             (piVar4 = (int *)(iVar6 - (uint)*(byte *)(piVar4 + 0x12)), (int)piVar4 <= param_3)) {
+             (piVar4 = (int *)(iVar6 - (uint)((byte *)piVar4)[0x12]), (int)piVar4 <= param_3)) {
             if (iVar6 < 1) {
               return piVar4;
             }

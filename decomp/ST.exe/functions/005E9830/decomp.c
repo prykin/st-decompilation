@@ -20,6 +20,7 @@ void __thiscall WaitTy::CloseButtons(WaitTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[005E9864]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
     MMObjTy::CloseButtons((MMObjTy *)local_8);
     if (this_00->array_00BC[0xc].field_01E4 == 0) {
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
@@ -31,6 +32,7 @@ void __thiscall WaitTy::CloseButtons(WaitTy *this)
     }
     this_00->field_0065 = 4;
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
+    /* ST_CALLSITE[005E98CB]: CALL 0x004014ce; direct=004014CE WaitTy::DeleteCtrls */
     DeleteCtrls(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return;

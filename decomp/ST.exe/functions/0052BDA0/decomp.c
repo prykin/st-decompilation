@@ -27,6 +27,7 @@ void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
       param_2 = DAT_00808a97 - param_2;
     }
     this->field_009E = param_2;
+    /* ST_CALLSITE[0052BDDC]: CALL dword ptr [0x0085bde8] */
     wsprintfA(local_c,"%5d",param_2);
     if (DAT_00808a97 == -1) {
       bVar3 = 0;
@@ -55,6 +56,7 @@ void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
     }
     ccFntTy::SetSurf(this->field_006E,(int)this->field_007E,0,0,0,this->field_0060,this->field_0064);
     ccFntTy::WrStr(this->field_006E,local_c,-1,-1,(uint)bVar3);
+    /* ST_CALLSITE[0052BE9D]: CALL 0x004033cd; direct=004033CD MoneyTy::sub_0052BBE0 */
     sub_0052BBE0(this);
   }
   return;

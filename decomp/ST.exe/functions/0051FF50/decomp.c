@@ -65,6 +65,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     iVar7 = 0x40;
     g_infocPanel_00801698 = local_10;
     pCVar3 = thunk_FUN_00571240("BKG_INFOCENTERW",0);
+    /* ST_CALLSITE[0051FFDE]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar3,iVar7,uVar9,iVar10,iVar13,UVar14,uVar15,uVar16);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
@@ -83,6 +84,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806794,CASE_B,pCVar3,uVar11,bVar12,iVar7,iVar10,puVar17);
     this_00->field_03CC = puVar4;
+    /* ST_CALLSITE[0052006D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
     pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
     this_00->field_03D5 = pcVar5;
     pcVar5->field_0058 = 1;
@@ -122,6 +124,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     local_1c = 1;
     local_18 = 1;
     local_3c = local_5c;
+    /* ST_CALLSITE[00520136]: CALL dword ptr [EAX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,5,&this_00->field_03D0,nullptr,local_6c,0);
     this_00->field_02D4 = 0x56;

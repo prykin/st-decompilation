@@ -42,6 +42,7 @@ BehPanelTy::PaintBBut
     text = FUN_006f2c00(param_2,1,(uint)param_3);
     local_8 = cMf32::RecGet(g_cMf32_00806790,1,text,errorCode,iVar4);
     pBVar3 = local_14;
+    /* ST_CALLSITE[004EE3F5]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,'\x01',
            (byte *)local_8);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);

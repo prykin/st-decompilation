@@ -45,7 +45,7 @@ byte * __thiscall st::fn_00646D40(STVolcanoC *this,undefined4 *param_1)
     pbVar3 = nullptr;
   }
   else {
-    pbVar3 = st::pointer_boundary_cast<byte *>(&this->field_0x1c);
+    pbVar3 = &this->field_0x1c;
   }
   pbVar4 = pbVar1;
   memmove(pbVar4, pbVar3, 0x95); /* compiler REP MOVS byte copy */

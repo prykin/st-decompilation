@@ -60,9 +60,10 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
           pBVar5 = FUN_0070b3a0(pAVar2,(int)(short)pAVar2->field_0029);
           FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar1,piVar1[1],(int)*(short *)(pAVar2 + 1),
                        (int)*(short *)&pAVar2[1].field_0x2);
+          /* ST_CALLSITE[005B49F2]: CALL 0x00403738; direct=00403738 PutDDX */
           PutDDX(*piVar1,piVar1[1],'\x01',pBVar5);
           if ((char)piVar1[5] != '\0') {
-            *(undefined1 *)(piVar1 + 5) = 0;
+            ((undefined1 *)piVar1)[5] = 0;
           }
           piVar1[4] = local_8->field_0061;
           switch(STField<undefined2>(piVar1,0x15)) {
@@ -70,21 +71,21 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
             pAVar2->field_0029 = pAVar2->field_0029 + 1;
             if (pAVar2->field_0023 <= (short)pAVar2->field_0029) {
               pAVar2->field_0029 = 0;
-              *(undefined1 *)(piVar1 + 5) = 1;
+              ((undefined1 *)piVar1)[5] = 1;
             }
             break;
           case 1:
             pAVar2->field_0029 = pAVar2->field_0029 + -1;
             if ((short)pAVar2->field_0029 < 0) {
               pAVar2->field_0029 = pAVar2->field_0023 + -1;
-              *(undefined1 *)(piVar1 + 5) = 1;
+              ((undefined1 *)piVar1)[5] = 1;
             }
             break;
           case 2:
             pAVar2->field_0029 = pAVar2->field_0029 + 1;
             if (pAVar2->field_0023 <= (short)pAVar2->field_0029) {
               pAVar2->field_0029 = pAVar2->field_0023 + -1;
-              *(undefined1 *)(piVar1 + 5) = 1;
+              ((undefined1 *)piVar1)[5] = 1;
               STField<undefined2>(piVar1,0x15) = 3;
             }
             break;
@@ -92,7 +93,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
             pAVar2->field_0029 = pAVar2->field_0029 + -1;
             if ((short)pAVar2->field_0029 < 0) {
               pAVar2->field_0029 = 0;
-              *(undefined1 *)(piVar1 + 5) = 1;
+              ((undefined1 *)piVar1)[5] = 1;
               STField<undefined2>(piVar1,0x15) = 2;
             }
           }

@@ -7,6 +7,7 @@ void FUN_004ea6e0(uint param_1,int param_2,int param_3,undefined4 param_4)
   int uVar1;
   int iVar1;
 
+  /* ST_CALLSITE[004EA6EC]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar1 = LookupRecordByte(DAT_0080874d);
   uVar1 = (int)(byte)uVar1;
   if (uVar1 == 1) {
@@ -22,6 +23,7 @@ void FUN_004ea6e0(uint param_1,int param_2,int param_3,undefined4 param_4)
     iVar1 = thunk_FUN_004e60d0((uint)DAT_0080874d,0x4d);
   }
   if ((iVar1 != 0) && (g_sndUnderAttMeneg_00811798 != nullptr)) {
+    /* ST_CALLSITE[004EA765]: CALL 0x00403e2c; direct=00403E2C SndUnderAttMenegC::sub_006202B0 */
     SndUnderAttMenegC::sub_006202B0(g_sndUnderAttMeneg_00811798,param_2,param_3,param_4,param_1);
   }
   return;

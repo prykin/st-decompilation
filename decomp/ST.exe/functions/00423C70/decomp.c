@@ -29,6 +29,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
         return 0xffffffff;
       }
     }
+    /* ST_CALLSITE[00423CD3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,STField<char>(this,0x24),(ushort)local_8,CASE_1);
     thunk_FUN_00419c30(this_00,0xffff);
@@ -40,6 +41,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
       local_14 = 1;
       local_12 = param_1;
       local_10 = this_00->field_0018;
+      /* ST_CALLSITE[00423D2F]: CALL dword ptr [EDX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*STField<undefined4 *>(this,0x1c))(local_28);
     }

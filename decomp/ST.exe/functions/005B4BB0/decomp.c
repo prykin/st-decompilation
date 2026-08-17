@@ -90,13 +90,16 @@ LAB_005b4c5f:
   default:
     goto switchD_005b4c27_default;
   }
+  /* ST_CALLSITE[005B4C6D]: CALL 0x0040499e; direct=0040499E MMObjTy::PaintSprBut */
   MMObjTy::PaintSprBut((MMObjTy *)this_00,(int)message,uVar5,1,iVar11,iVar7);
 switchD_005b4c27_default:
   SVar1 = message->id;
   if (SVar1 < 0x6903) {
     if (SVar1 == 0x6902) {
       if (this_00->field_1EE3 == '\0') {
+        /* ST_CALLSITE[005B4D8A]: CALL 0x0040560f; direct=0040560F MainMenuTy::sub_005B4860 */
         sub_005B4860(this_00);
+        /* ST_CALLSITE[005B4D9B]: CALL dword ptr [EDX + 0x10] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)this_00->field_000C + 0x10))(0x309,0);
         goto cf_common_exit_005B4EEC;
@@ -107,15 +110,19 @@ switchD_005b4c27_default:
     else {
       if (SVar1 < 6) {
         if (SVar1 == 5) {
+          /* ST_CALLSITE[005B4CC8]: CALL 0x004059b1; direct=004059B1 MainMenuTy::PaintMainMenu */
           PaintMainMenu(this_00);
         }
         else if (SVar1 == 0) {
+          /* ST_CALLSITE[005B4CBC]: CALL 0x00405317; direct=00405317 MainMenuTy::NoneMainMenu */
           NoneMainMenu(this_00);
         }
         else if (SVar1 == 2) {
+          /* ST_CALLSITE[005B4CB0]: CALL 0x0040254f; direct=0040254F MainMenuTy::InitMainMenu */
           InitMainMenu(this_00,*(char *)&message->arg0);
         }
         else if (SVar1 == 3) {
+          /* ST_CALLSITE[005B4CA0]: CALL 0x0040189d; direct=0040189D MainMenuTy::DoneMainMenu */
           DoneMainMenu(this_00);
         }
         goto cf_common_exit_005B4EEC;
@@ -145,11 +152,13 @@ switchD_005b4c27_default:
       }
     }
 LAB_005b4de5:
+    /* ST_CALLSITE[005B4DE9]: CALL dword ptr [EDX + 0x8] */
     this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_01 = *(MMsgTy **)(this_00->field_00BB[0xc].field_01DC + 0x2e6);
 LAB_005b4df8:
     if (this_01 != nullptr) {
+      /* ST_CALLSITE[005B4E06]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       MMsgTy::HidePanel(this_01,1,0,1);
     }
     goto cf_common_exit_005B4EEC;
@@ -173,20 +182,25 @@ LAB_005b4df8:
     local_48[4] = 0x6941;
     local_28[4] = 0x693f;
     local_28[2] = local_48[2];
+    /* ST_CALLSITE[005B4E77]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
     iVar7 = MMsgTy::SetMessage(*(MMsgTy **)(pSVar1 + 0x2e6),0x251d,'\x01',local_48,local_28,
                                nullptr,0,0);
     if (iVar7 == 0) break;
   case 0x6940:
+    /* ST_CALLSITE[005B4E82]: CALL 0x0040560f; direct=0040560F MainMenuTy::sub_005B4860 */
     sub_005B4860(this_00);
     break;
   case 0x693f:
+    /* ST_CALLSITE[005B4E8B]: CALL 0x004040de; direct=004040DE MainMenuTy::sub_005B47E0 */
     sub_005B47E0(this_00);
     break;
   case 0x6941:
     if (this_00->field_1EE3 == '\0') {
+      /* ST_CALLSITE[005B4E9E]: CALL 0x004040de; direct=004040DE MainMenuTy::sub_005B47E0 */
       sub_005B47E0(this_00);
       pMVar2 = this_00->vtable;
       this_00->field_00BB[0xc].field_01DB = 4;
+      /* ST_CALLSITE[005B4EAE]: CALL dword ptr [EDX + 0x8] */
       (*pMVar2->CloseButtons)(this_00);
     }
     break;
@@ -195,6 +209,7 @@ LAB_005b4df8:
     goto LAB_005b4ee5;
   case 0x6943:
     thunk_FUN_005b6350(this_00,0x6942,0,0);
+    /* ST_CALLSITE[005B4EC7]: CALL dword ptr [EAX + 0x8] */
     this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_01 = *(MMsgTy **)(this_00->field_00BB[0xc].field_01DC + 0x2e6);
@@ -202,10 +217,12 @@ LAB_005b4df8:
   case 0x6944:
     cVar10 = '\x01';
 LAB_005b4ee5:
+    /* ST_CALLSITE[005B4EE7]: CALL 0x00401f00; direct=00401F00 MainMenuTy::SetMode */
     SetMode(this_00,cVar10,0);
   }
 cf_common_exit_005B4EEC:
   g_currentExceptionFrame = local_8c.previous;
+  /* ST_CALLSITE[005B4EFB]: CALL 0x00401280; direct=00401280 MMObjTy::GetMessage */
   iVar4 = MMObjTy::GetMessage((MMObjTy *)this_00,message);
   return iVar4;
 }

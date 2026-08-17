@@ -31,6 +31,7 @@ void __thiscall STRubbishC::sub_00630260(STRubbishC *this,int param_1,int param_
       local_10 = param_1;
       local_c = puVar1[2];
       if (param_2 != 0) {
+        /* ST_CALLSITE[006302E0]: CALL 0x00404af2; direct=00404AF2 STManRub3C::AddNewRub3 */
         STManRub3C::AddNewRub3(g_manRub3_008117A4,local_24);
         return;
       }

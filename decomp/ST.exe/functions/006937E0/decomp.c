@@ -19,6 +19,7 @@ uint __cdecl FUN_006937e0(byte *param_1,int param_2)
   iVar7 = uVar2 * 0x218;
   if (*(int *)(iVar7 + 0x20c + DAT_00853d80) != 0) {
     do {
+      /* ST_CALLSITE[00693828]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)local_108,"%s%u",iVar7 + DAT_00853d80,uVar5);
       pbVar6 = local_108;
       pbVar3 = param_1;

@@ -310,6 +310,7 @@ st::fn_00558DC0
      ((g_playSystem_00802A38 == nullptr ||
       (g_bulkInitializedRecords_008087C7[(int)param_4].field_0022 < 8)))) {
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[00558E28]: CALL 0x00403b02; direct=00403B02 VisibleClassTy::sub_0055BB00 */
       st::fn_00403B02(this,0,(short)param_1,(short)param_2,(char)param_3,(uint)param_4,(byte)param_5,
                    (uint)param_6);
     }
@@ -346,6 +347,7 @@ st::fn_00558DC0
           ppvVar9 = this->field_003C;
           do {
             if (*ppvVar9 != nullptr) {
+              /* ST_CALLSITE[00558F0B]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
               st::fn_00403F53(this,VVar7,param_1,param_2,(int *)&param_6_after_write,(int *)&param_4_after_write);
               param_4_after_write = (int *)((int)param_4_after_write + g_centeredOffsets5[(int)param_3]);
               st::fn_004059CA((int)param_6_after_write,(int)param_4_after_write,st::pointer_boundary_cast<byte *>(*ppvVar9),this->field_0028,
@@ -358,6 +360,7 @@ st::fn_00558DC0
         }
         if (((pbVar5 != nullptr) && (this->field_004C != nullptr)) &&
            ((this->field_0050 != nullptr && ((param_7 & 0x4000) != 0)))) {
+          /* ST_CALLSITE[00558F93]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           st::fn_00403F53(this,this->field_010C,param_1,param_2,(int *)&param_6_after_write,(int *)&param_4_after_write);
           param_6_after_write = (int *)((int)param_6_after_write - uVar10);
           auto param_5_after_write = 0; /* compiler stack-slot lifetime split */
@@ -431,6 +434,7 @@ st::fn_00559110
      ((g_playSystem_00802A38 == nullptr ||
       (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)))) {
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[0055917F]: CALL 0x00401be5; direct=00401BE5 VisibleClassTy::sub_0055BBC0 */
       st::fn_00401BE5(this,0,(short)param_1,(short)param_2,(char)param_3,param_4,(byte)param_5,param_6);
     }
     if (this->field_00FC[uVar5] != 0) {
@@ -464,6 +468,7 @@ st::fn_00559110
         }
         if (((this->field_004C != nullptr) && (this->field_0050 != nullptr)) &&
            ((param_7 & 0x4000) != 0)) {
+          /* ST_CALLSITE[0055926D]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           st::fn_00403F53(this,this->field_010C,param_1,(int)param_2,(int *)&param_4_after_write,st::pointer_boundary_cast<int *>(&param_6_after_write));
           auto param_5_after_write = 0; /* compiler stack-slot lifetime split */
           param_4_after_write = param_4_after_write - iVar10;
@@ -574,6 +579,7 @@ st::fn_005594A0
       ((g_playSystem_00802A38 == nullptr ||
        (g_bulkInitializedRecords_008087C7[(int)param_4].field_0022 < 8)))))) {
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[00559511]: CALL 0x00403b02; direct=00403B02 VisibleClassTy::sub_0055BB00 */
       st::fn_00403B02(this,1,(short)param_1,(short)param_2,param_3,(uint)param_4,(byte)param_5,param_6);
     }
     if (((param_4 + 0xfc)[(int)this] != '\0') && ((param_7 & 2) != 0)) {
@@ -581,7 +587,7 @@ st::fn_005594A0
       iVar5 = param_1 - param_5;
       iVar8 = param_2 - param_5;
       pbVar3 = st::fn_004028BF(param_5);
-      param_4 = st::pointer_boundary_cast<undefined *>(pbVar3);
+      param_4 = pbVar3;
       auto param_5_after_write = iVar1; /* compiler stack-slot lifetime split */
       if (0 < iVar1) {
         do {
@@ -653,6 +659,7 @@ st::fn_00559620
       ((g_playSystem_00802A38 == nullptr ||
        (g_bulkInitializedRecords_008087C7[(int)param_4].field_0022 < 8)))))) {
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[00559691]: CALL 0x00401be5; direct=00401BE5 VisibleClassTy::sub_0055BBC0 */
       st::fn_00401BE5(this,1,(short)param_1,(short)param_2,param_3,(uint)param_4,(byte)param_5,param_6);
     }
     if (((param_4 + 0xfc)[(int)this] != '\0') && ((param_7 & 2) != 0)) {
@@ -660,7 +667,7 @@ st::fn_00559620
       iVar5 = param_1 - param_5;
       iVar8 = param_2 - param_5;
       pbVar3 = st::fn_004028BF(param_5);
-      param_4 = st::pointer_boundary_cast<undefined *>(pbVar3);
+      param_4 = pbVar3;
       auto param_5_after_write = iVar1; /* compiler stack-slot lifetime split */
       if (0 < iVar1) {
         do {
@@ -716,8 +723,6 @@ st::fn_005599D0
           int param_6)
 
 {
-  int _param_3 = static_cast<int>(param_3);
-
   int iVar1;
   char cVar2;
   byte *pbVar3;
@@ -731,6 +736,7 @@ st::fn_005599D0
      (((g_playSystem_00802A38 == nullptr ||
        (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)) &&
       (this->field_003C[param_4 + 6] != nullptr)))) {
+    /* ST_CALLSITE[00559A3A]: CALL 0x00401be5; direct=00401BE5 VisibleClassTy::sub_0055BBC0 */
     st::fn_00401BE5(this,2,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     iVar1 = param_5 * 2 + 1;
     iVar5 = param_1 - param_5;
@@ -801,8 +807,6 @@ st::fn_00559D60
           uint param_6)
 
 {
-  int _param_3 = static_cast<int>(param_3);
-
   int iVar1;
   byte bVar2;
   byte *pbVar3;
@@ -816,6 +820,7 @@ st::fn_00559D60
      (((g_playSystem_00802A38 == nullptr ||
        (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)) &&
       (this->field_0074[param_4] != nullptr)))) {
+    /* ST_CALLSITE[00559DCA]: CALL 0x00401be5; direct=00401BE5 VisibleClassTy::sub_0055BBC0 */
     st::fn_00401BE5(this,3,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     iVar1 = param_5 * 2 + 1;
     iVar5 = param_1 - param_5;
@@ -878,8 +883,6 @@ st::fn_0055A110
           int param_6)
 
 {
-  int _param_3 = static_cast<int>(param_3);
-
   int iVar1;
   byte bVar2;
   byte *pbVar3;
@@ -893,6 +896,7 @@ st::fn_0055A110
      (((g_playSystem_00802A38 == nullptr ||
        (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)) &&
       (this->field_0094[param_4] != nullptr)))) {
+    /* ST_CALLSITE[0055A17D]: CALL 0x00401be5; direct=00401BE5 VisibleClassTy::sub_0055BBC0 */
     st::fn_00401BE5(this,4,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     iVar1 = param_5 * 2 + 1;
     iVar5 = param_1 - param_5;
@@ -955,8 +959,6 @@ st::fn_0055A4C0
           int param_6)
 
 {
-  int _param_3 = static_cast<int>(param_3);
-
   int iVar1;
   byte bVar2;
   byte *pbVar3;
@@ -970,6 +972,7 @@ st::fn_0055A4C0
      (((g_playSystem_00802A38 == nullptr ||
        (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)) &&
       (this->field_00B4[param_4] != nullptr)))) {
+    /* ST_CALLSITE[0055A52D]: CALL 0x00401be5; direct=00401BE5 VisibleClassTy::sub_0055BBC0 */
     st::fn_00401BE5(this,5,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     iVar1 = param_5 * 2 + 1;
     iVar5 = param_1 - param_5;
@@ -1032,8 +1035,6 @@ st::fn_0055A870
           int param_6)
 
 {
-  int _param_3 = static_cast<int>(param_3);
-
   int iVar1;
   byte bVar2;
   byte *pbVar3;
@@ -1047,6 +1048,7 @@ st::fn_0055A870
      (((g_playSystem_00802A38 == nullptr ||
        (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)) &&
       (this->field_00D4[param_4] != nullptr)))) {
+    /* ST_CALLSITE[0055A8DD]: CALL 0x00401be5; direct=00401BE5 VisibleClassTy::sub_0055BBC0 */
     st::fn_00401BE5(this,6,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     iVar1 = param_5 * 2 + 1;
     iVar5 = param_1 - param_5;
@@ -1306,11 +1308,13 @@ void __thiscall st::fn_0055B7F0(VisibleClassTy *this,int param_1,undefined *para
         if (piVar3 == (int *)param_2) {
           if (element_0110->field_0000 == '\0') {
             if (param_1 == 0) {
+              /* ST_CALLSITE[0055B949]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */
               st::fn_004018F2(this,(int)element_0110->field_0002,(undefined *)(int)element_0110->field_0004
                            ,(int)element_0110->field_0006,(uint)piVar3,(uint)(byte)element_0110->field_0007,element_0110->field_0008,
                            0x4001);
             }
             else {
+              /* ST_CALLSITE[0055B921]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
               st::fn_0040388C(this,(int)element_0110->field_0002,(int)element_0110->field_0004,
                            (undefined *)(int)element_0110->field_0006,piVar3,(uint)(byte)element_0110->field_0007,
                            st::pointer_boundary_cast<int *>(element_0110->field_0008),0x6009);
@@ -1318,10 +1322,12 @@ void __thiscall st::fn_0055B7F0(VisibleClassTy *this,int param_1,undefined *para
           }
           else if (element_0110->field_0000 == '\x01') {
             if (param_1 == 0) {
+              /* ST_CALLSITE[0055B8F2]: CALL 0x00402018; direct=00402018 VisibleClassTy::sub_00559620 */
               st::fn_00402018(this,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                            (undefined *)piVar3,(uint)(byte)element_0110->field_0007,element_0110->field_0008,2);
             }
             else {
+              /* ST_CALLSITE[0055B8D3]: CALL 0x00402c2a; direct=00402C2A VisibleClassTy::sub_005594A0 */
               st::fn_00402C2A(this,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                            (undefined *)piVar3,(uint)(byte)element_0110->field_0007,element_0110->field_0008,2);
             }
@@ -1517,6 +1523,7 @@ st::fn_005F1D80(VisibleClassTy *this,int param_1,int param_2,int param_3)
   int iVar1;
 
   if ((DAT_0080874d != -1) && (this->field_00F8 != 0)) {
+    /* ST_CALLSITE[005F1DB3]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     st::fn_00403F53(this,this->field_010C,param_1,param_2,&param_2,&param_1);
     if ((((-1 < param_3) && (((param_3 < 5 && (-1 < param_2)) && (param_2 < (int)this->field_0030)))
          ) && (((iVar1 = g_centeredOffsets5[param_3] + param_1, -1 < iVar1 &&

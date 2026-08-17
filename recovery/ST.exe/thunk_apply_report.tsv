@@ -140,7 +140,7 @@ thunk_address	status	proposed_qualified_name	details
 00401307	disabled	FUN_0055c0e0	apply=0
 0040130C	disabled	FUN_0065d630	apply=0
 00401311	disabled	TLOBaseTy::sub_004B7F90	apply=0
-00401316	disabled	FUN_004ab810	apply=0
+00401316	disabled	STT3DSprC::STT3DSprC	apply=0
 0040131B	disabled	FUN_0062f150	apply=0
 00401320	disabled	FUN_004dce00	apply=0
 00401325	disabled	DumpClassC::WritePtr	apply=0
@@ -1342,7 +1342,7 @@ thunk_address	status	proposed_qualified_name	details
 00402C20	disabled	CursorClassTy::TakeCmdToRun	apply=0
 00402C25	disabled	BldBoatPanelTy::GetMessage	apply=0
 00402C2A	disabled	VisibleClassTy::sub_005594A0	apply=0
-00402C2F	disabled	FUN_0064cc90	apply=0
+00402C2F	disabled	AiEventClassTy::AiEventClassTy	apply=0
 00402C34	disabled	FUN_00580570	apply=0
 00402C39	disabled	AiFltClassTy::PrepareToSave	apply=0
 00402C3E	disabled	FUN_00604fc0	apply=0

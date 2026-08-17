@@ -41,6 +41,7 @@ undefined4 __fastcall FUN_004dccf0(AnonShape_004DCCF0_FF75E3FE *param_1)
   local_18 = 0xf;
   local_10 = uVar2;
   local_c = uVar1;
+  /* ST_CALLSITE[004DCD9B]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
   STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x186,0,&local_8,local_48,0);
   if (local_8 != 0) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

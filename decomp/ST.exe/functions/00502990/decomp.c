@@ -54,10 +54,13 @@ void __thiscall CPanelTy::PaintCtrlBoatSI(CPanelTy *this)
   }
   switch(local_c->field_0B9E) {
   case CASE_0:
+    /* ST_CALLSITE[005029F2]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974[0]);
+    /* ST_CALLSITE[00502A0B]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(pCVar2->field_018C,0x31,0,'\x06',(byte *)pCVar2->field_0974[2]);
     break;
   case CASE_1:
+    /* ST_CALLSITE[00502A2C]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974[5]);
     if (pCVar2->field_0B99 == CASE_BD) {
       pbVar4 = (byte *)pCVar2->field_0974[2];
@@ -70,10 +73,13 @@ LAB_00502b2d:
     }
     goto LAB_00502b3b;
   case CASE_2:
+    /* ST_CALLSITE[00502A79]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974[5]);
+    /* ST_CALLSITE[00502A92]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(pCVar2->field_018C,0x31,0,'\x06',(byte *)pCVar2->field_0974[6]);
     break;
   case CASE_3:
+    /* ST_CALLSITE[00502AEA]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974[0]);
     switch(pCVar2->field_0B99) {
     case CASE_9:
@@ -90,22 +96,27 @@ LAB_00502b2d:
       goto LAB_00502b2d;
     }
 LAB_00502b3b:
+    /* ST_CALLSITE[00502B3B]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(pRVar8,0x31,0,'\x06',pbVar4);
     break;
   case CASE_4:
+    /* ST_CALLSITE[00502AB3]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974[0]);
+    /* ST_CALLSITE[00502ACC]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(pCVar2->field_018C,0x31,0,'\x06',(byte *)pCVar2->field_0974[2]);
   }
   if (pCVar2->field_0B9E == CASE_1) {
     switch(pCVar2->field_0B99) {
     case CASE_1A:
       pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,3);
+      /* ST_CALLSITE[00502B92]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut(pCVar2->field_018C,0x3c,0x84,'\x01',(byte *)pBVar3);
       bVar5 = 0;
       local_8 = local_8 & 0xffffff00;
       if ((pCVar2->field_0BB6 & 0xfe) != 0) {
         do {
           pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,3);
+          /* ST_CALLSITE[00502BD7]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut(pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',(byte *)pBVar3);
           bVar5 = bVar5 + 1;
           local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
@@ -116,6 +127,7 @@ LAB_00502b3b:
         iVar7 = (local_8 & 0xff) * 4 + 0x3f;
         do {
           pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+          /* ST_CALLSITE[00502C2D]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut(pCVar2->field_018C,iVar7,0x87,'\x01',(byte *)pBVar3);
           iVar7 = iVar7 + 4;
           iVar6 = iVar6 + -1;
@@ -128,12 +140,14 @@ LAB_00502b3b:
     case CASE_24:
       if (pCVar2->field_0BCD != -1) {
         pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,3);
+        /* ST_CALLSITE[00502C6C]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut(pCVar2->field_018C,0x3c,0x84,'\x01',(byte *)pBVar3);
         bVar5 = 0;
         local_8 = local_8 & 0xffffff00;
         if (pCVar2->field_0BCD != '\0') {
           do {
             pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+            /* ST_CALLSITE[00502CB1]: CALL 0x00403229; direct=00403229 DibPut */
             DibPut(pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',(byte *)pBVar3);
             bVar5 = bVar5 + 1;
             local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
@@ -144,6 +158,7 @@ LAB_00502b3b:
           iVar7 = (local_8 & 0xff) * 4 + 0x3f;
           do {
             pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+            /* ST_CALLSITE[00502D01]: CALL 0x00403229; direct=00403229 DibPut */
             DibPut(pCVar2->field_018C,iVar7,0x87,'\x01',(byte *)pBVar3);
             iVar7 = iVar7 + 4;
             iVar6 = iVar6 + -1;

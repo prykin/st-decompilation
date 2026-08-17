@@ -63,9 +63,11 @@ void FUN_005c7800(void)
     local_38.unknown_0c = 2;
     local_38.unknown_08 = local_c->field_0008;
     local_38.id = (-(uint)(local_c->field_1E26 != CASE_E) & 0xfffffffa) + MESS_WAITTY_694D;
+    /* ST_CALLSITE[005C7FF5]: CALL dword ptr [EDX] */
     (*local_c->vtable->GetMessage)((SettMapSTy *)local_c,&local_38);
     return;
   }
+  /* ST_CALLSITE[005C784A]: CALL dword ptr [EAX + 0x24] */
   local_c->vfunc_24();
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
@@ -75,6 +77,7 @@ void FUN_005c7800(void)
       FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
   }
+  /* ST_CALLSITE[005C7884]: CALL 0x004049d5; direct=004049D5 SettMapTy::PaintSettMap */
   SettMapTy::PaintSettMap(local_c,'\0');
   Library::DKW::DDX::FUN_006bd740((int *)g_ddxContext_008075A8);
   Library::DKW::DDX::FUN_006c4630(g_dDXContext_0080759C,g_dDXContext_0080759C->field_0044,local_48);
@@ -93,6 +96,7 @@ void FUN_005c7800(void)
     puVar1 = &local_c->array_00BC[0xc].field_0x1df;
     FUN_006b6160(puVar1,(int)(g_int_00811764 + 6));
     local_c->field_1A7F = 0;
+    /* ST_CALLSITE[005C7977]: CALL dword ptr [0x0085c070] */
     CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,puVar1);
   }
   memset(&DAT_00853de0, 0, 0x232); /* compiler bulk-zero initialization */
@@ -156,6 +160,7 @@ LAB_005c7a2c:
   DAT_0085400d = local_c->field_1F5F;
   DAT_00853ffc = STReplaceLowByte((uint32_t)(DAT_00853ffc), (uint8_t)((char)local_c->field_1F58));
 LAB_005c7ae0:
+  /* ST_CALLSITE[005C7AFD]: CALL dword ptr [0x0085bde8] */
   wsprintfA(&CHAR_00h_00853de4,"%s%s%s",&CHAR_00h_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
   pDVar5 = local_c->field_1F7C;
@@ -180,6 +185,7 @@ LAB_005c7ae0:
   memmove(pcVar16, pcVar15, uVar9); /* compiler REP MOVS byte copy */
   uVar10 = 0;
   _DAT_0085400e = thunk_FUN_005c2760;
+  /* ST_CALLSITE[005C7B6D]: CALL dword ptr [0x0085bde8] */
   wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079c0ec,
             &DAT_00853ee8);
   PTR_00853ff8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
@@ -187,6 +193,7 @@ LAB_005c7ae0:
   uRam00854000 = (undefined1)((uint)PTR_00853ff8 >> 0x18);
   if (PTR_00853ff8 != nullptr) {
     thunk_FUN_0069ffb0(&local_5a80);
+    /* ST_CALLSITE[005C7BA8]: CALL dword ptr [0x0085bedc] */
     DAT_00811754 = timeGetTime();
     SVar4 = local_c->field_1E26;
     if ((((SVar4 != CASE_6) && (SVar4 != CASE_1)) && (SVar4 != CASE_2)) && (DAT_0080877e != '\0')) {
@@ -289,18 +296,22 @@ LAB_005c7ae0:
       local_c->field_1A7F = 1;
       local_c->field_1A80 = DAT_008087c6;
       local_c->field_1A81 = (char)(DAT_008087c2 >> 1);
+      /* ST_CALLSITE[005C7EE9]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)&local_18,"%08x",DAT_0080995c);
       local_c->field_1A82 = local_18;
       local_c->field_1A86 = local_14;
       Library::MSVCRT::_strncpy(&local_c->field_1A8A,&CHAR_00h_0080c3c3,0x1d5);
       local_c->field_1C5E = 0;
+      /* ST_CALLSITE[005C7F28]: CALL dword ptr [0x0085c070] */
       CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,puVar1);
     }
   }
+  /* ST_CALLSITE[005C7F32]: CALL dword ptr [EDX + 0x28] */
   (*local_c->vtable->PrepPlList)((SettMapSTy *)local_c);
   if (g_tagBITMAPINFO_00811758 != nullptr) {
     FreeAndNull(&g_tagBITMAPINFO_00811758);
   }
+  /* ST_CALLSITE[005C7F4C]: CALL 0x004049d5; direct=004049D5 SettMapTy::PaintSettMap */
   SettMapTy::PaintSettMap(local_c,'\0');
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {

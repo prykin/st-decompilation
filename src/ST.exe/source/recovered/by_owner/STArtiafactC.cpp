@@ -115,6 +115,7 @@ void __thiscall st::fn_005F0D00(STArtiafactC *this)
       local_24.arg1.words.low = (word)(byte)this->field_030E;
     }
     local_24.id = 0x5ddc;
+    /* ST_CALLSITE[005F0D68]: CALL dword ptr [EAX] */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;

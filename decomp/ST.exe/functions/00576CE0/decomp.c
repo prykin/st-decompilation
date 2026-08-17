@@ -21,6 +21,7 @@ void DestroyBaseSystem(void)
       if (g_baseSystem_00811638->field_0020 == 1) {
         FUN_006e4b80(&DAT_00807620,(int)g_baseSystem_00811638);
       }
+      /* ST_CALLSITE[00576D2F]: CALL dword ptr [EAX + 0x4] */
       g_baseSystem_00811638->vfunc_04();
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)g_baseSystem_00811638);
       g_baseSystem_00811638 = nullptr;

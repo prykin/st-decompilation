@@ -41,11 +41,13 @@ int __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[0054012D]: CALL 0x004017f8; direct=004017F8 PanelTy::GetMessage */
   PanelTy::GetMessage((PanelTy *)local_8,message);
   SVar1 = message->id;
   if (SVar1 < MESS_OPTPANELTY_C001) {
     if (SVar1 == MESS_SHARED_C000) {
       pCVar6 = thunk_FUN_00571240("BUT_MEDIUM",0);
+      /* ST_CALLSITE[00540281]: CALL 0x00402121; direct=00402121 PanelTy::PaintIBut */
       PanelTy::PaintIBut((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar6,0x274e,0,1
                         );
       g_currentExceptionFrame = local_4c.previous;
@@ -60,6 +62,7 @@ int __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,STMessage *message)
         if (this_00->field_0044 <= iVar5) {
           this_00->field_0044 = iVar5;
           this_00->field_0172 = CASE_1;
+          /* ST_CALLSITE[00540236]: CALL dword ptr [EDX + 0x18] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)this_00->field_0000->field_0018)(1);
         }
@@ -87,11 +90,13 @@ int __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,STMessage *message)
     }
     else {
       if (SVar1 == MESS_SHARED_0003) {
+        /* ST_CALLSITE[00540185]: CALL 0x00403ecc; direct=00403ECC ProdPanelTy::DoneProdPanel */
         DoneProdPanel(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
       if (SVar1 == MESS_SHARED_BFFF) {
+        /* ST_CALLSITE[0054015E]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
         SetPanel(this_00,'\0');
         thunk_FUN_005252c0(0xae);
         g_currentExceptionFrame = local_4c.previous;
@@ -111,6 +116,7 @@ int __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,STMessage *message)
       text = "BUT_SLLT";
     }
     pCVar6 = thunk_FUN_00571240(text,0);
+    /* ST_CALLSITE[005402CA]: CALL 0x00403373; direct=00403373 PanelTy::PaintBut */
     PanelTy::PaintBut((PanelTy *)this_00,(AnonShape_005389E0_C98BD548 *)message,1,pCVar6,
                       thunk_FUN_00529fe0,0,1);
   }

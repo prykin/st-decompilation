@@ -34,6 +34,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
 
   local_8 = 1;
   local_10 = this;
+  /* ST_CALLSITE[005B3445]: CALL dword ptr [0x0085bedc] */
   DVar5 = timeGetTime();
   this->field_0061 = DVar5;
   local_54.previous = g_currentExceptionFrame;
@@ -50,7 +51,9 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\main_obj.cpp",0xd2);
     return;
   }
+  /* ST_CALLSITE[005B347C]: CALL 0x00403eef; direct=00403EEF MainMenuTy::LightPalette */
   LightPalette(local_10);
+  /* ST_CALLSITE[005B3483]: CALL 0x00403922; direct=00403922 MainMenuTy::AnimationMainMenu */
   AnimationMainMenu(this_00);
   cVar1 = this_00->field_0065;
   if (cVar1 == '\x01') {
@@ -170,6 +173,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
         iVar8 = 0x68ff;
         do {
           if (*local_c == 0) {
+            /* ST_CALLSITE[005B3861]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
             uVar6 = MMObjTy::CreateSprBut
                               ((MMObjTy *)this_00,1,(uint)(this_00->field_1EDF != 0),
                                puVar10[0x17] + puVar10[-2],puVar10[0x18] + puVar10[-1],*puVar10,

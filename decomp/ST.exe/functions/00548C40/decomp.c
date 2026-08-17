@@ -201,11 +201,14 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     if (((this_00->field_0494 == CASE_48) &&
         (pSVar2 = this_00->field_049A, pSVar2 != nullptr)) &&
        (g_helpPanel_00801690 != nullptr)) {
+      /* ST_CALLSITE[00548D67]: CALL dword ptr [EDX + 0x2c] */
       HVar5 = pSVar2->slot_2C();
       if (HVar5 == 0x78) {
         HVar5 = *(HelpPanelTy_sub_00514BC0_param_1Enum *)&this_00->field_049A->field_0x259;
       }
+      /* ST_CALLSITE[00548D81]: CALL dword ptr [EDX + 0xc] */
       iVar7 = pSVar2->vfunc_0C();
+      /* ST_CALLSITE[00548D8C]: CALL 0x00404d1d; direct=00404D1D HelpPanelTy::sub_00514BC0 */
       HelpPanelTy::sub_00514BC0(g_helpPanel_00801690,HVar5,iVar7);
       this_00->field_04DE = 0;
     }
@@ -221,6 +224,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       if (param_1 != 0) {
         local_4c = nullptr;
         if (g_allPlayers_007FA174 != nullptr) {
+          /* ST_CALLSITE[00549E84]: CALL 0x004010ff; direct=004010FF STAllPlayersC::GetScrObjList */
           local_4c = STAllPlayersC::GetScrObjList
                                (g_allPlayers_007FA174,(this_00->field_04A2 == CASE_A) + 1,
                                 this_00->field_00DF,this_00->field_00E3,this_00->field_00E7,
@@ -254,6 +258,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       if (param_1 != 0) {
         local_1c = nullptr;
         if (g_allPlayers_007FA174 != nullptr) {
+          /* ST_CALLSITE[00549FF7]: CALL 0x004010ff; direct=004010FF STAllPlayersC::GetScrObjList */
           local_1c = (uint *)STAllPlayersC::GetScrObjList
                                        (g_allPlayers_007FA174,3,this_00->field_00DF,
                                         this_00->field_00E3,this_00->field_00E7,this_00->field_00EB,
@@ -278,6 +283,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       pSVar2 = this_00->field_049A;
       if (pSVar2 == nullptr) break;
       memset((void *)local_1e4, 0, 0x21); /* compiler bulk-zero initialization */
+      /* ST_CALLSITE[0054A095]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0(pSVar2,&local_56,&local_68,&local_2e);
       STPiece<1,4>(local_1e4) = SEXT24(local_56);
       local_1db = (int)local_2e;
@@ -376,6 +382,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     if (param_1 != 0) {
       local_3c = nullptr;
       if (g_allPlayers_007FA174 != nullptr) {
+        /* ST_CALLSITE[00548EF8]: CALL 0x004010ff; direct=004010FF STAllPlayersC::GetScrObjList */
         local_3c = STAllPlayersC::GetScrObjList
                              (g_allPlayers_007FA174,(CVar1 == CASE_C) + 1,this_00->field_00DF,
                               this_00->field_00E3,this_00->field_00E7,this_00->field_00EB,
@@ -425,6 +432,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       puVar14 = (byte *)0x16;
     }
     else {
+      /* ST_CALLSITE[00548F9C]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0
                 (this_00->field_049A,(short *)local_5e,(short *)local_30,(short *)local_32);
       local_11b = local_5e[0];
@@ -501,6 +509,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     pSVar2 = this_00->field_049A;
     if (pSVar2 == nullptr) break;
     memset((void *)local_160, 0, 0x18); /* compiler bulk-zero initialization */
+    /* ST_CALLSITE[005498F2]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0(pSVar2,(short *)local_3e,(short *)local_6c,(short *)local_46);
     local_15b = local_3e[0];
     local_159 = local_46[0];
@@ -525,6 +534,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       if (CVar1 == 0xd) {
         local_44 = nullptr;
         if (g_allPlayers_007FA174 != nullptr) {
+          /* ST_CALLSITE[005491EC]: CALL 0x004010ff; direct=004010FF STAllPlayersC::GetScrObjList */
           local_44 = STAllPlayersC::GetScrObjList
                                (g_allPlayers_007FA174,3,this_00->field_00DF,this_00->field_00E3,
                                 this_00->field_00E7,this_00->field_00EB,(int *)&local_a0);
@@ -557,6 +567,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     pSVar2 = this_00->field_049A;
     if (pSVar2 == nullptr) break;
     memset((void *)local_1c0, 0, 0x21); /* compiler bulk-zero initialization */
+    /* ST_CALLSITE[0054928A]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0(pSVar2,&local_36,&local_58,&local_62);
     STPiece<1,4>(local_1c0) = SEXT24(local_36);
     local_1b7 = (int)local_62;
@@ -632,6 +643,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 0x13:
     if (this_00->field_049A == nullptr) break;
     local_d0 = (CVar1 != 0x12) + '\x01';
+    /* ST_CALLSITE[00549415]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0(this_00->field_049A,&local_cf,&local_cd,&local_cb);
     puVar10 = (uint *)&local_d0;
     puVar14 = (byte *)0x1f;
@@ -678,6 +690,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     pSVar2 = this_00->field_049A;
     if (pSVar2 == nullptr) break;
     memset((void *)local_260, 0, 0x21); /* compiler bulk-zero initialization */
+    /* ST_CALLSITE[00549335]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0(pSVar2,&local_6e,&local_66,&local_6a);
     STPiece<1,4>(local_260) = SEXT24(local_6e);
     local_25b = (int)local_66;
@@ -739,6 +752,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     pSVar2 = this_00->field_049A;
     if (pSVar2 == nullptr) break;
     memset((void *)local_23c, 0, 0x21); /* compiler bulk-zero initialization */
+    /* ST_CALLSITE[0054945E]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0(pSVar2,&local_70,&local_38,&local_60);
     STPiece<1,4>(local_23c) = SEXT24(local_70);
     local_237 = (int)local_38;
@@ -813,6 +827,7 @@ LAB_0054a196:
     local_d8 = 0;
     local_e0 = 2;
     local_d4 = 0;
+    /* ST_CALLSITE[00549A9C]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0(this_00->field_049A,&local_64,&local_4e,&local_7a);
     STPiece<1,3>(local_e0) = (int3)local_64;
     STPiece<0,1>(local_dc) = (char)(local_64 >> 0xf);
@@ -843,6 +858,7 @@ LAB_00549b36:
     uStack_28 = 0;
     uStack_27 = 0;
     local_26 = 0;
+    /* ST_CALLSITE[005493AE]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0(this_00->field_049A,&local_5c,&local_5a,&local_34);
     sStack_2b = local_5c;
     puVar10 = (uint *)&local_2c;
@@ -879,6 +895,7 @@ LAB_00549c33:
 switchD_00548db5_caseD_3:
   if (((this_00->field_04A2 != 0) && (this_00->field_0xd3 == '\0')) &&
      (this_00->field_04A6 = 1, g_cPanel_00801688 != nullptr)) {
+    /* ST_CALLSITE[0054A1C7]: CALL 0x00402798; direct=00402798 CPanelTy::sub_004FAD20 */
     CPanelTy::sub_004FAD20(g_cPanel_00801688);
   }
   g_currentExceptionFrame = local_2c8.previous;

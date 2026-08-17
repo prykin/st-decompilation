@@ -23,6 +23,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (iVar3 == 0) {
+    /* ST_CALLSITE[005B2FCA]: CALL 0x0040458e; direct=0040458E MMObjTy::DoneMMObj */
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
@@ -32,6 +33,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
         FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
+    /* ST_CALLSITE[005B300D]: CALL 0x00401d43; direct=00401D43 DarkScreen */
     DarkScreen(g_dDXContext_0080759C,10,2);
     if (g_startSystem_0081176C->field_002C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
@@ -39,6 +41,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00 = *(MMsgTy **)(pMVar2->field_00BB[0xc].field_01DC + 0x2e6);
     if (this_00 != nullptr) {
+      /* ST_CALLSITE[005B303E]: CALL 0x0040462e; direct=0040462E MMsgTy::HideSprites */
       MMsgTy::HideSprites(this_00);
       *(undefined4 *)(*(int *)(pMVar2->field_00BB[0xc].field_01DC + 0x2e6) + 0x1cab) = 0;
     }

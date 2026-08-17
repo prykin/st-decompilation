@@ -119,6 +119,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
             aGStackY_f8[dVar8 * -3 + 8] = (Global_sub_006C8EC0_param_3Enum)local_24;
             this_00 = local_90;
             aGStackY_f8[dVar8 * -3 + 7] = 0x40c188;
+            /* ST_CALLSITE[0040C183]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
             STFishC::sub_004162F0
                       (this_00,(short *)aGStackY_f8[dVar8 * -3 + 8],
                        (short *)aGStackY_f8[dVar8 * -3 + 9],*(short **)(&stack0xffffff30 + iVar3));

@@ -55,6 +55,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     return 0xffff;
   }
   thunk_FUN_005b6450(local_c,message);
+  /* ST_CALLSITE[005EA6DB]: CALL 0x00402937; direct=00402937 StartSystemTy::ChatMessage */
   StartSystemTy::ChatMessage(g_startSystem_0081176C,message);
   SVar2 = message->id;
   if (SVar2 < (MESS_SHARED_6334|MESS_ID_CREATE)) {
@@ -78,18 +79,22 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       }
       else if (SVar2 < 4) {
         if (SVar2 == MESS_SHARED_0003) {
+          /* ST_CALLSITE[005EA73E]: CALL 0x00405e89; direct=00405E89 WaitTy::DoneWait */
           DoneWait(this_02);
         }
         else if (SVar2 == MESS_ID_NONE) {
+          /* ST_CALLSITE[005EA732]: CALL 0x004044d0; direct=004044D0 WaitTy::NoneWait */
           NoneWait(this_02);
         }
         else if (SVar2 == MESS_ID_CREATE) {
+          /* ST_CALLSITE[005EA726]: CALL 0x00404188; direct=00404188 WaitTy::InitWait */
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           InitWait(this_02,*(undefined4 *)((message->arg0).u32 + 0x14),
                    *(undefined4 *)((message->arg0).u32 + 0x18));
         }
       }
       else if (SVar2 == MESS_SHARED_0005) {
+        /* ST_CALLSITE[005EA780]: CALL 0x004043f4; direct=004043F4 WaitTy::PaintWait */
         PaintWait(this_02,'\0');
       }
       else if (SVar2 == MESS_SHARED_6105) {
@@ -103,6 +108,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     }
     else if (SVar2 < MESS_SHARED_6334) {
       if (SVar2 == MESS_WAITTY_6333) {
+        /* ST_CALLSITE[005EA810]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_02,
                    (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_038D,
@@ -117,10 +123,12 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         thunk_FUN_005b66e0((MTaskTy *)this_02);
       }
       else if (SVar2 == MESS_SHARED_6332) {
+        /* ST_CALLSITE[005EA7CF]: CALL 0x00404d72; direct=00404D72 StartSystemTy::PaintBinDesc */
         StartSystemTy::PaintBinDesc(g_startSystem_0081176C,(AnonShape_005DE050_5BD86458 *)message);
       }
     }
     else if (SVar2 == MESS_SHARED_6334) {
+      /* ST_CALLSITE[005EA836]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
       MMMObjTy::PaintSlBut
                 ((MMMObjTy *)this_02,
                  (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_041E,
@@ -138,15 +146,18 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     }
     else if (SVar2 < MESS_SHARED_6940) {
       if (SVar2 == MESS_PRIVIDERTY_693F) {
+        /* ST_CALLSITE[005EA8F1]: CALL 0x004036b1; direct=004036B1 WaitTy::sub_005E9970 */
         sub_005E9970(this_02);
       }
       else if (SVar2 == MESS_SETTMAPMTY_6340) {
+        /* ST_CALLSITE[005EA8E5]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_02,
                    (RecoveredRecord_MMMObjTy_005B6560 *)
                    (this_02->array_00BC[0xc].field_01DB + 0x55c),(int)message,0);
       }
       else if (SVar2 == MESS_SHARED_6341) {
+        /* ST_CALLSITE[005EA8CA]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_02,
                    (RecoveredRecord_MMMObjTy_005B6560 *)
@@ -154,6 +165,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       }
     }
     else if (SVar2 == MESS_SHARED_6940) {
+      /* ST_CALLSITE[005EA908]: CALL 0x00401b45; direct=00401B45 WaitTy::sub_005E9A40 */
       sub_005E9A40(this_02);
     }
     goto cf_common_exit_005EAB6A;
@@ -178,10 +190,12 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         DAT_00811768 = '\x02';
       }
     }
+    /* ST_CALLSITE[005EA9BA]: CALL dword ptr [EDX + 0x8] */
     this_02->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00 = *(MMsgTy **)(this_02->array_00BC[0xc].field_01DB + 0x2e6);
     if (this_00 != nullptr) {
+      /* ST_CALLSITE[005EA9D6]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       MMsgTy::HidePanel(this_00,1,0,1);
     }
     goto cf_common_exit_005EAB6A;
@@ -204,9 +218,11 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar9 = *(int *)(this_02->array_00BC[0xc].field_01DB + 0x686);
         if (*(int *)(iVar9 + 8) < 1) {
+          /* ST_CALLSITE[005EAA5F]: CALL dword ptr [0x0085c064] */
           CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,nullptr);
         }
         else {
+          /* ST_CALLSITE[005EAA4C]: CALL dword ptr [0x0085c064] */
           CFsgsConnection::SendChatMessage
                     ((CFsgsConnection *)&DAT_00802a90,(char *)**(undefined4 **)(iVar9 + 0x14));
         }
@@ -262,6 +278,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     pcVar13 = local_464;
     memmove(pcVar13, pcVar12, uVar10); /* compiler REP MOVS byte copy */
     local_8 = local_464;
+    /* ST_CALLSITE[005EAAFC]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
     StartSystemTy::AddToChat(this_01,(int)local_4a4);
     FUN_00715360(g_int_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);
   }
@@ -277,6 +294,7 @@ LAB_005eab28:
   FUN_006e6080(this_02,2,*(undefined4 *)(iVar9 + 0x54c),(undefined4 *)&this_02->field_0x1d);
 cf_common_exit_005EAB6A:
   g_currentExceptionFrame = local_50.previous;
+  /* ST_CALLSITE[005EAB76]: CALL 0x00401280; direct=00401280 MMObjTy::GetMessage */
   iVar7 = MMObjTy::GetMessage((MMObjTy *)this_02,message);
   return iVar7;
 }

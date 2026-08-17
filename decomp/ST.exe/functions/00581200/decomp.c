@@ -93,6 +93,7 @@ void __fastcall FUN_00581200(int param_1)
           ((pSVar4 = STGridAt3D(g_worldGrid, sVar13, local_10, sVar16).objects[0],
            pSVar4 != nullptr &&
            (((((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
+              /* ST_CALLSITE[00581381]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
               (iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(pSVar4), pAVar8 = local_c, iVar12 != 0))
              && (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)) &&
             ((g_playSystem_00802A38 == nullptr ||
@@ -110,6 +111,7 @@ void __fastcall FUN_00581200(int param_1)
         }
         iVar10 = local_18;
         if ((bVar17) &&
+           /* ST_CALLSITE[00581430]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
            (iVar12 = (*pSVar4->vtable[5].slots_00_28[2])(pSVar4), iVar10 = local_18, iVar12 != 0)) {
           *(STWorldObject **)(pAVar8->field_020B + local_1c * 4) = pSVar4;
           local_1c = local_1c + 1;
@@ -173,6 +175,7 @@ LAB_00581545:
             (pSVar4 = STGridAt3D(g_worldGrid, sVar13, sVar16, sVar9).objects[0],
             pSVar4 == nullptr)))))) ||
          ((((pSVar4->value_20 != 1000 && (pSVar4->value_20 != 0x14)) ||
+           /* ST_CALLSITE[005815F6]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
            ((iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(pSVar4), iVar12 == 0 ||
             ((STWorldObjectVTable *)0x7 < pSVar4[1].vtable)))) ||
           ((g_playSystem_00802A38 != nullptr &&
@@ -181,7 +184,7 @@ LAB_00581545:
       bVar1 = *(byte *)&pSVar4[1].vtable;
       bVar2 = local_c->field_0024;
       iVar12 = local_c->field_0010;
-      if (*(char *)(iVar12 + 0x146f) != '\0') {
+      if (((char *)iVar12)[0x146f] != '\0') {
         local_5 = *(char *)((uint)bVar2 * 0x51 + 0x11ca + iVar12);
         local_14 = 0;
         bVar17 = local_5 != *(char *)((uint)bVar1 * 0x51 + 0x11ca + iVar12);
@@ -215,6 +218,7 @@ LAB_0058171d:
       }
       bVar17 = iVar12 < 0;
 LAB_00581728:
+      /* ST_CALLSITE[00581734]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
       if ((bVar17) && (iVar12 = (*pSVar4->vtable[5].slots_00_28[2])(pSVar4), iVar12 != 0)) {
         local_1c = local_1c + 1;
         *(STWorldObject **)(local_c->field_020B + -4 + local_1c * 4) = pSVar4;

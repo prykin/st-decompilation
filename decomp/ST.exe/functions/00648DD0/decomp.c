@@ -29,6 +29,7 @@ void __cdecl FUN_00648dd0(uint param_1)
         pSVar2 = (STMessage *)&pSVar2->unknown_04;
       }
       local_24.id = MESS_AIPLRCLASSTY_5D97;
+      /* ST_CALLSITE[00648E2B]: CALL dword ptr [EAX] */
       this->GetMessage(&local_24);
       thunk_FUN_0054cf70(g_playSystem_00802A38,this->field_0008);
     }

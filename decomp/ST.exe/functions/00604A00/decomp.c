@@ -21,6 +21,7 @@ undefined4 __thiscall FUN_00604a00(void *this,int param_1)
       pSVar3 = (STMessage *)&pSVar3->unknown_04;
     }
     local_24.id = MESS_SHARED_0003;
+    /* ST_CALLSITE[00604A3E]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
     STParticleC::GetMessage(this_00,&local_24);
     Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00);
     uVar1 = 1;

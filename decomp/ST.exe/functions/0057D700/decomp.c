@@ -38,6 +38,7 @@ STFishC::sub_0057D700(STFishC *this,uint *param_1,uint *param_2,int *param_3,int
   uVar3 = uVar2 - 1;
   uVar4 = (uint)g_worldGrid.sizeY;
   uVar5 = uVar4 - 1;
+  /* ST_CALLSITE[0057D733]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   sub_004162B0(this,&local_a,&local_8,&local_6);
   local_18 = (int)this->field_004B - (g_playSystem_00802A38->field_00E4 & 1);
   if (local_18 < 0) {

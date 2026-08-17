@@ -13,8 +13,10 @@ int __thiscall STBoatC::sub_00460360(STBoatC *this)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
 
+  /* ST_CALLSITE[00460366]: CALL dword ptr [EAX + 0x20] */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   iVar1 = this->StopMove(unaff_EDI);
+  /* ST_CALLSITE[0046036F]: CALL dword ptr [EDX + 0xd8] */
   iVar2 = this->vfunc_D8();
   if ((iVar2 == 0) && (iVar1 != -1)) {
     if (iVar1 != 0) {

@@ -59,7 +59,9 @@ STAllPlayersC::SelectObjects
         piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
+           /* ST_CALLSITE[0044B673]: CALL dword ptr [EDX + 0xf8] */
            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
+            /* ST_CALLSITE[0044B682]: CALL dword ptr [EAX + 0xec] */
             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))) {
           Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
@@ -68,6 +70,7 @@ STAllPlayersC::SelectObjects
     }
     break;
   case CASE_1:
+    /* ST_CALLSITE[0044B6CF]: CALL 0x00405227; direct=00405227 STAllPlayersC::GetGObjFromZone */
     GetGObjFromZone(this,objPtr,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,(int *)&local_8,
                     nullptr);
     param_3 = 0;
@@ -75,9 +78,12 @@ STAllPlayersC::SelectObjects
     param_2 = local_8->count;
     if (0 < (int)param_2) {
       do {
+        /* ST_CALLSITE[0044B6FB]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar7 = GetObjPtr(this,objPtr,*(ushort *)((int)local_8->data + param_3 * 2),CASE_1);
         if ((((pSVar7 == nullptr) || (pSVar7->field_0020 != 0x14)) ||
+            /* ST_CALLSITE[0044B710]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
             (iVar9 = (*pSVar7->vtable[1].vfunc_24)(pSVar7), iVar9 == 0)) ||
+           /* ST_CALLSITE[0044B71E]: CALL dword ptr [EDX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; signature=__thiscall;/undefined4;pointer:/STGameObjC */
            (iVar9 = (*pSVar7->vtable[1].vfunc_18)(pSVar7), iVar9 == 0)) {
           DArrayRemoveAt(local_8,param_3);
           param_2 = param_2 - 1;
@@ -96,12 +102,16 @@ STAllPlayersC::SelectObjects
         piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
+           /* ST_CALLSITE[0044B79D]: CALL dword ptr [EDX + 0x2c] */
            (((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
              (*(uint *)(&DAT_00800f10 + (iVar4 + 0x41U >> 5) * 4) &
              1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 ||
+             /* ST_CALLSITE[0044B7C9]: CALL dword ptr [EAX + 0x2c] */
              (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
              ((&DAT_00800f00)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0)) &&
+            /* ST_CALLSITE[0044B7F5]: CALL dword ptr [EAX + 0xf8] */
             ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
+             /* ST_CALLSITE[0044B804]: CALL dword ptr [EDX + 0xec] */
              (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
           Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
@@ -118,9 +128,12 @@ STAllPlayersC::SelectObjects
         piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
+           /* ST_CALLSITE[0044B876]: CALL dword ptr [EDX + 0x2c] */
            ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
             ((&DAT_00801000)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
+            /* ST_CALLSITE[0044B8A2]: CALL dword ptr [EAX + 0xf8] */
             ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
+             /* ST_CALLSITE[0044B8B1]: CALL dword ptr [EDX + 0xec] */
              (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
           Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
@@ -137,9 +150,12 @@ STAllPlayersC::SelectObjects
         piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
+            /* ST_CALLSITE[0044B91F]: CALL dword ptr [EDX + 0x2c] */
             (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
             ((&DAT_00800fa0)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0)) &&
+           /* ST_CALLSITE[0044B94B]: CALL dword ptr [EAX + 0xf8] */
            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
+            /* ST_CALLSITE[0044B95A]: CALL dword ptr [EDX + 0xec] */
             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))) {
           Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
@@ -156,9 +172,12 @@ STAllPlayersC::SelectObjects
         piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
+           /* ST_CALLSITE[0044B9C8]: CALL dword ptr [EDX + 0x2c] */
            ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
             ((&DAT_00801010)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
+            /* ST_CALLSITE[0044B9F4]: CALL dword ptr [EAX + 0xf8] */
             ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
+             /* ST_CALLSITE[0044BA03]: CALL dword ptr [EDX + 0xec] */
              (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
           Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
@@ -170,13 +189,16 @@ STAllPlayersC::SelectObjects
     piVar5 = (int *)ST3DSMAPContext::sub_006EB350(g_sT3DSMAPContext_00807598,param_2,param_3,0xe,1);
     if (((piVar5 != nullptr) && (piVar5[9] == uVar3)) && (piVar5[8] == 0x14)) {
       DArrayDestroy(local_8);
+      /* ST_CALLSITE[0044BA8F]: CALL 0x00405227; direct=00405227 STAllPlayersC::GetGObjFromZone */
       GetGObjFromZone(this,objPtr,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,
                       (int *)&local_c,nullptr);
       cVar10 = -1;
       iVar9 = 0;
+      /* ST_CALLSITE[0044BA9C]: CALL dword ptr [EAX + 0x2c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       SVar6 = (**(code **)(*piVar5 + 0x2c))();
       local_8 = (DArrayTy *)
+                /* ST_CALLSITE[0044BAA7]: CALL 0x004050b0; direct=004050B0 STAllPlayersC::GetTOBJListFromDArr */
                 GetTOBJListFromDArr(this,uVar3,(AnonShape_0043EED0_93C25F9A *)local_c,SVar6,iVar9,
                                     cVar10);
       DArrayDestroy(local_c);
@@ -184,9 +206,12 @@ STAllPlayersC::SelectObjects
       param_2 = local_8->count;
       if (0 < (int)param_2) {
         do {
+          /* ST_CALLSITE[0044BAE3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar7 = GetObjPtr(this,objPtr,*(ushort *)((int)local_8->data + param_3 * 2),CASE_1);
           if ((((pSVar7 == nullptr) || (pSVar7->field_0020 != 0x14)) ||
+              /* ST_CALLSITE[0044BAF8]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
               (iVar9 = (*pSVar7->vtable[1].vfunc_24)(pSVar7), iVar9 == 0)) ||
+             /* ST_CALLSITE[0044BB06]: CALL dword ptr [EAX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; signature=__thiscall;/undefined4;pointer:/STGameObjC */
              (iVar9 = (*pSVar7->vtable[1].vfunc_18)(pSVar7), iVar9 == 0)) {
             DArrayRemoveAt(local_8,param_3);
             param_2 = param_2 - 1;
@@ -204,13 +229,16 @@ STAllPlayersC::SelectObjects
            (this_00 = thunk_FUN_0042b760(objPtr,*(ushort *)(iVar8 + 0x30)),
            this_00 != nullptr)))) {
       DArrayDestroy(local_8);
+      /* ST_CALLSITE[0044BB98]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
       local_8 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this_00);
       param_2 = local_8->count;
       index = 0;
       if (0 < (int)param_2) {
         do {
           DArrayGetElement(local_8,index,local_14);
+          /* ST_CALLSITE[0044BBC3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar7 = GetObjPtr(this,objPtr,STPiece<0,2>(local_14),CASE_1);
+          /* ST_CALLSITE[0044BBCC]: CALL dword ptr [EDX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; signature=__thiscall;/undefined4;pointer:/STGameObjC */
           iVar9 = (*pSVar7->vtable[1].vfunc_18)(pSVar7);
           if (iVar9 == 0) {
             DArrayRemoveAt(local_8,index);
@@ -238,19 +266,25 @@ STAllPlayersC::SelectObjects
     iVar9 = g_packedRecords_A62x8[uVar3].field96_0x163;
     if (iVar9 != 0) {
       if (iVar9 == 0x3c) {
+        /* ST_CALLSITE[0044BE24]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_2100 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
         if (0 < local_EAX_2100) {
+          /* ST_CALLSITE[0044BE33]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,objPtr,0,local_EAX_2100);
           goto cf_common_exit_0044BD53;
         }
         if (-1 < local_EAX_2100) goto cf_common_exit_0044BD53;
+        /* ST_CALLSITE[0044BE48]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
         PushTV(objPtr,0);
         if (g_packedRecords_A62x8[uVar3].field105_0x177 == uVar3) {
+          /* ST_CALLSITE[0044BE6A]: CALL 0x004020d6; direct=004020D6 STAllPlayersC::CalibrateTmp */
           CalibrateTmp(this,objPtr,0,1,&local_8->flags,(int *)&local_10,nullptr,nullptr);
+          /* ST_CALLSITE[0044BE7C]: CALL 0x004027c0; direct=004027C0 STAllPlayersC::ResetActivityFromObjs */
           ResetActivityFromObjs(this,uVar3,0x3c,local_10,0,0);
           DArrayDestroy(local_10);
         }
         else {
+          /* ST_CALLSITE[0044BE9A]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
           ResetActivityFromTmp(this,objPtr,0,1,0);
         }
       }
@@ -264,18 +298,24 @@ STAllPlayersC::SelectObjects
           }
           goto cf_common_exit_0044BD53;
         }
+        /* ST_CALLSITE[0044BDE3]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_2035 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
         if (0 < local_EAX_2035) {
+          /* ST_CALLSITE[0044BDF2]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,objPtr,0,local_EAX_2035);
           goto cf_common_exit_0044BD53;
         }
+        /* ST_CALLSITE[0044BE01]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
         PushTV(objPtr,0);
+        /* ST_CALLSITE[0044BE0F]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
         ResetActivityFromTmp(this,objPtr,0,1,0);
       }
       goto cf_common_exit_0044BD3D;
     }
+    /* ST_CALLSITE[0044BEB3]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
     local_EAX_2243 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
     if (local_EAX_2243 < 1) goto cf_common_exit_0044BD3D;
+    /* ST_CALLSITE[0044BEC6]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
     ActivateTV(this,objPtr,0,local_EAX_2243);
   }
   else {
@@ -289,21 +329,27 @@ STAllPlayersC::SelectObjects
       goto cf_common_exit_0044BD53;
     }
     g_packedRecords_A62x8[uVar3].field200_0x203 = 0;
+    /* ST_CALLSITE[0044BC91]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
     ResetActivityFromTmp(this,objPtr,1,0,0);
     iVar9 = g_packedRecords_A62x8[uVar3].field96_0x163;
     if (iVar9 == 0) {
+      /* ST_CALLSITE[0044BD7A]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
       local_EAX_1930 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
       if (0 < local_EAX_1930) {
+        /* ST_CALLSITE[0044BD8D]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,objPtr,0,local_EAX_1930);
         goto LAB_0044bd49;
       }
     }
     else if (iVar9 == 0x3c) {
+      /* ST_CALLSITE[0044BD19]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
       local_EAX_1833 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
       if (-1 < local_EAX_1833) {
+        /* ST_CALLSITE[0044BD28]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,objPtr,0,local_EAX_1833);
         goto cf_common_exit_0044BD53;
       }
+      /* ST_CALLSITE[0044BD34]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
       PushTV(objPtr,0);
     }
     else {
@@ -316,20 +362,25 @@ STAllPlayersC::SelectObjects
         }
         goto cf_common_exit_0044BD53;
       }
+      /* ST_CALLSITE[0044BCE5]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
       local_EAX_1781 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
       if (0 < local_EAX_1781) {
+        /* ST_CALLSITE[0044BCF4]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,objPtr,0,local_EAX_1781);
         goto cf_common_exit_0044BD53;
       }
+      /* ST_CALLSITE[0044BD00]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
       PushTV(objPtr,0);
     }
 cf_common_exit_0044BD3D:
+    /* ST_CALLSITE[0044BD44]: CALL 0x00405bbe; direct=00405BBE STAllPlayersC::AddObjsToTmp */
     AddObjsToTmp(this,uVar3,0,0,local_8);
   }
 LAB_0044bd49:
   g_packedRecords_A62x8[uVar3].field96_0x163 = 0x3c;
 cf_common_exit_0044BD53:
   DArrayDestroy(local_8);
+  /* ST_CALLSITE[0044BD5E]: CALL 0x004027de; direct=004027DE STAllPlayersC::SelfCheckObjControl */
   SelfCheckObjControl(this);
   return;
 }

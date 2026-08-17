@@ -24,7 +24,8 @@ LAB_006b004f:
 006B004F  57                        PUSH EDI
 006B0050  50                        PUSH EAX
 006B0051  56                        PUSH ESI
-006B0052  E8 69 FF FF FF            CALL 0x006affc0
+FUN_006b0020::override::prt_6b0052_ed5d1114:
+006B0052  E8 69 FF FF FF            CALL 0x006affc0  ; [STReturnSemanticsApplier] pointer_producer_argument_roundtrip_call; return_parameter_ordinal=1; signature=__stdcall;pointer:/void;pointer:/uint;pointer:/uint;pointer:/int
 006B0057  5F                        POP EDI
 006B0058  5E                        POP ESI
 006B0059  5D                        POP EBP

@@ -8,6 +8,7 @@
 char * FUN_00691650(undefined4 param_1,undefined4 param_2)
 
 {
+  /* ST_CALLSITE[00691665]: CALL dword ptr [0x0085bde8] */
   wsprintfA(&DAT_00853a68,"%s%u",param_1,param_2);
   return &DAT_00853a68;
 }

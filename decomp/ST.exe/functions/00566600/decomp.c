@@ -42,6 +42,7 @@ int FUN_00566600(int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_60.previous;
+    /* ST_CALLSITE[0056684D]: CALL 0x00403c01; direct=00403C01 SoundManagerTy::sub_00566900 */
     SoundManagerTy::sub_00566900(local_10);
     return iVar2;
   }

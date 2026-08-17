@@ -20,6 +20,7 @@ void __thiscall MMsgTy::DoneMMsg(MMsgTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[005B6F44]: CALL 0x0040458e; direct=0040458E MMObjTy::DoneMMObj */
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     g_startSystem_0081176C->field_02E6 = nullptr;
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pMVar2->field_0x1cf7);

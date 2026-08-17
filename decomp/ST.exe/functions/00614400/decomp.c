@@ -59,6 +59,7 @@ void __thiscall FUN_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
        ((sVar8 < g_worldGrid.sizeZ &&
         ((this_00 = STGridAt3D(g_worldGrid, sVar7, local_8, sVar8).objects[0],
          this_00 != nullptr && (*(int *)&this_00->field_0x18 == iVar6)))))) &&
+      /* ST_CALLSITE[006146A1]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
       (iVar6 = (*this_00->vtable[5].slots_00_28[0])(this_00), iVar6 != 0)) &&
      ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
       ((g_playSystem_00802A38 == nullptr ||
@@ -95,6 +96,7 @@ LAB_0061478b:
       bVar9 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
               g_bulkInitializedRecords_008087C7[bVar1].field_0023;
     }
+    /* ST_CALLSITE[0061479E]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
     if ((bVar9) && (iVar6 = (*this_00->vtable[5].slots_00_28[2])(this_00), iVar6 != 0)) {
       STField<undefined4>(this,0x2d1) = *(undefined4 *)&this_00->field_0x18;
       goto LAB_006147e6;

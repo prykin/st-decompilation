@@ -157,6 +157,7 @@ LAB_005b7ad9:
             else {
               uVar6 = 1;
             }
+            /* ST_CALLSITE[005B7B78]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
             uVar6 = MMObjTy::CreateSprBut
                               ((MMObjTy *)this_01,1,uVar6,puVar16[0x16] + puVar16[-3],
                                puVar16[0x17] + puVar16[-2],puVar16[-1],*puVar16,iVar10,iVar10 + 0x80
@@ -175,6 +176,7 @@ LAB_005b7ad9:
         memset(local_58, 0, 0x20); /* compiler bulk-zero initialization */
         local_58[3] = 2;
         local_58[4] = 0x693f;
+        /* ST_CALLSITE[005B7BF5]: CALL dword ptr [EDX + 0x18] */
         (*pSVar4->vtable->vfunc_18)((short)local_58);
         g_currentExceptionFrame = local_bc.previous;
         return;
@@ -245,6 +247,7 @@ LAB_005b7655:
           local_78[3] = 2;
           local_78[4] = 0x693f;
           local_78[2] = iVar10;
+          /* ST_CALLSITE[005B775C]: CALL dword ptr [EDX + 0x18] */
           (*this_01->field_000C->vtable->vfunc_18)((short)local_78);
         }
         if (this_01->array_00BC[0xc].field_01DF != '\0') {
@@ -282,6 +285,7 @@ LAB_005b7655:
                 psVar7 = (short *)ccFntTy::CreateTypeSSpr
                                             (g_startSystem_0081176C->field_0030,puVar12,iVar10,iVar8
                                              ,cVar17,uVar6,iVar18,iVar19,iVar20);
+                /* ST_CALLSITE[005B77FF]: CALL dword ptr [EDI + 0x8] */
                 (*pSVar3->SetImagesPtr)(this_00,psVar7,uVar21,uVar22);
                 (local_8->field_00B8).field_0008 = 0;
               }
@@ -310,6 +314,7 @@ LAB_005b7655:
         local_38[3] = 2;
         local_38[4] = 0x693f;
         local_38[2] = iVar10;
+        /* ST_CALLSITE[005B78B2]: CALL dword ptr [EDX + 0x18] */
         (*this_01->field_000C->vtable->vfunc_18)((short)local_38);
       }
       bVar2 = this_01->array_00BC[0xc].field_01DA;

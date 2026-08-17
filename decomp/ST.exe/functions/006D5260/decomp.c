@@ -30,6 +30,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
 
   local_14 = (_RTL_CRITICAL_SECTION *)((int)this + 0x7c);
   local_c = this;
+  /* ST_CALLSITE[006D5278]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(local_14);
   pAVar1 = STField<AnonShape_00749A79_05F12707 *>(this,0x284);
   pAVar2 = (AnonShape_00749A79_05F12707 *)param_1[0x11];
@@ -109,12 +110,14 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
         piVar9 = piVar9 + -1;
       } while (0xf6 < (int)iStart);
     }
+    /* ST_CALLSITE[006D53FF]: CALL dword ptr [0x0085be4c] */
     hdc = GetDC((HWND)0x0);
     if (0 < (int)iStart_00) {
       UVar10 = iStart_00;
       if (10 < (int)iStart_00) {
         UVar10 = 10;
       }
+      /* ST_CALLSITE[006D5422]: CALL dword ptr [0x0085ba80] */
       GetSystemPaletteEntries(hdc,0,UVar10,(LPPALETTEENTRY)&local_414);
     }
     if ((int)iStart < 0x100) {
@@ -124,8 +127,10 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
       else {
         UVar10 = 0x100 - (int)iStart;
       }
+      /* ST_CALLSITE[006D5459]: CALL dword ptr [0x0085ba80] */
       GetSystemPaletteEntries(hdc,(UINT)iStart,UVar10,(LPPALETTEENTRY)&local_3c);
     }
+    /* ST_CALLSITE[006D5462]: CALL dword ptr [0x0085be48] */
     ReleaseDC((HWND)0x0,hdc);
     this = local_c;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -134,6 +139,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
     FUN_00747406(this,9,nullptr,0);
   }
   FUN_006d6110((void *)((int)this + 0x294),(int)this + 0x240);
+  /* ST_CALLSITE[006D54AD]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(local_14);
   return 0;
 }

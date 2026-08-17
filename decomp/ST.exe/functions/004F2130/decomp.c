@@ -44,11 +44,13 @@ CPanelTy::PaintCostsXY
       ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar4,uVar5,iVar6,iVar7);
     }
     if (param_4 != 0xffff) {
+      /* ST_CALLSITE[004F21D9]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&pCVar2->field_01E1,"%d",param_4);
       ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x30,param_3,0x11,10);
       ccFntTy::WrTxt(pCVar2->field_01B8,&pCVar2->field_01E1,-3,-1,(uint)param_6,-1,-1);
     }
     if (param_5 != 0xffff) {
+      /* ST_CALLSITE[004F223D]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&pCVar2->field_01E1,"%d",param_5);
       ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x30,param_3 + 0xb,0x11,10);
       ccFntTy::WrTxt(pCVar2->field_01B8,&pCVar2->field_01E1,-3,-1,(uint)param_7,-1,-1);

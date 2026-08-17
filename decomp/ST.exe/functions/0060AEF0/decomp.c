@@ -168,11 +168,13 @@ int __fastcall FUN_0060aef0(void *param_1)
             if (pSVar29 != nullptr) {
               piVar6 = pSVar29->vtable->vfunc_F0;
               *(undefined4 *)(puVar26 + -4) = 0x60b15a;
+              /* ST_CALLSITE[0060B154]: CALL dword ptr [EDX + 0xf0] */
               iVar17 = (*piVar6)(pSVar29);
               if (iVar17 != 0) {
                 if (*(int *)&pSVar29->field_0x20 == 1000) {
                   pvVar7 = pSVar29->vtable->slot_2C;
                   *(undefined4 *)(puVar26 + -4) = 0x60b172;
+                  /* ST_CALLSITE[0060B16F]: CALL dword ptr [EAX + 0x2c] */
                   dVar19 = (*pvVar7)(pSVar29);
                   if (*(int *)(&DAT_00791d68 + dVar19 * 4) == 1) {
                     bVar30 = false;
@@ -233,12 +235,14 @@ LAB_0060b2ce:
                     if (bVar30) {
                       piVar8 = pSVar29->vtable->vfunc_F8;
                       *(undefined4 *)(puVar26 + -4) = 0x60b2eb;
+                      /* ST_CALLSITE[0060B2E5]: CALL dword ptr [EDX + 0xf8] */
                       iVar17 = (*piVar8)(pSVar29);
                       if (iVar17 != 0) {
                         puVar1 = (undefined4 *)(local_74 + local_88 * 0xc);
                         *puVar1 = pSVar29;
                         piVar9 = pSVar29->vtable->vfunc_78;
                         *(undefined4 *)(puVar26 + -4) = 0x60b30b;
+                        /* ST_CALLSITE[0060B308]: CALL dword ptr [EDX + 0x78] */
                         uVar20 = (*piVar9)(pSVar29);
                         puVar1[1] = uVar20;
                         iVar17 = STField<int>(param_1,0x1ed);
@@ -256,6 +260,7 @@ LAB_0060b2ce:
                         puVar1[2] = local_EAX_1165;
                         pvVar7 = pSVar29->vtable->slot_2C;
                         *(undefined4 *)(puVar26 + -4) = 0x60b38c;
+                        /* ST_CALLSITE[0060B389]: CALL dword ptr [EAX + 0x2c] */
                         dVar19 = (*pvVar7)(pSVar29);
                         if (dVar19 == 0x23) {
                           local_4c = local_4c + 1;
@@ -306,6 +311,7 @@ LAB_0060b48b:
                     if (bVar30) {
                       piVar8 = pSVar29->vtable->vfunc_F8;
                       *(undefined4 *)(puVar26 + -4) = 0x60b4a4;
+                      /* ST_CALLSITE[0060B49E]: CALL dword ptr [EDX + 0xf8] */
                       iVar17 = (*piVar8)(pSVar29);
                       if ((iVar17 != 0) && (STField<int>(param_1,0x1f5) != 0x4c)) {
                         *(STFishC **)(puVar26 + -4) = pSVar29;
@@ -333,6 +339,7 @@ LAB_0060b48b:
                     *(short **)(puVar26 + -8) = local_a0;
                     *(short **)(puVar26 + -0xc) = local_70;
                     *(undefined4 *)(puVar26 + -0x10) = 0x60b52f;
+                    /* ST_CALLSITE[0060B52A]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                     STFishC::sub_004162B0
                               (pSVar29,*(short **)(puVar26 + -0xc),*(short **)(puVar26 + -8),
                                *(short **)(puVar26 + -4));
@@ -352,6 +359,7 @@ LAB_0060b60e:
                         *(int *)(puVar26 + -0x10) = iVar25;
                         *(int *)(puVar26 + -0x14) = g_visibleClass_00802A88->field_010C;
                         *(undefined4 *)(puVar26 + -0x18) = 0x60b58b;
+                        /* ST_CALLSITE[0060B586]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                         VisibleClassTy::sub_00558C00
                                   (g_visibleClass_00802A88,
                                    *(VisibleClassTy_sub_00558C00_param_1Enum *)(puVar26 + -0x14),
@@ -379,6 +387,7 @@ LAB_0060b60e:
                       if (bVar30) {
                         pvVar7 = pSVar29->vtable->slot_2C;
                         *(undefined4 *)(puVar26 + -4) = 0x60b61e;
+                        /* ST_CALLSITE[0060B61B]: CALL dword ptr [EDX + 0x2c] */
                         dVar19 = (*pvVar7)(pSVar29);
                         iVar17 = *(int *)(&DAT_00791d68 + dVar19 * 4);
                         *(uint *)(puVar26 + -4) = iVar12 + (uVar21 >> 0x10) % (iVar12 * 3 + 1U);
@@ -436,6 +445,7 @@ cf_continue_loop_0060B649:
           pcVar11 = *(code **)(*piVar10 + 0x2c);
           puVar28 = puVar27 + -4;
           *(undefined4 *)(puVar27 + -4) = 0x60b6ed;
+          /* ST_CALLSITE[0060B6EA]: CALL dword ptr [EAX + 0x2c] */
           iVar17 = (*pcVar11)();
           if (iVar17 == 0x23) {
             puVar1[2] = 0;
@@ -490,6 +500,7 @@ cf_continue_loop_0060B649:
         local_48 = 1;
         pvVar7 = pSVar29->vtable->slot_2C;
         *(undefined4 *)(puVar28 + -4) = 0x60b7c4;
+        /* ST_CALLSITE[0060B7C1]: CALL dword ptr [EDX + 0x2c] */
         dVar19 = (*pvVar7)(pSVar29);
         if (((dVar19 != 0x23) && (local_4c != 0)) && (iVar17 = 0, 0 < local_4c)) {
           do {
@@ -531,6 +542,7 @@ cf_continue_loop_0060B649:
           *(short **)(puVar28 + -8) = local_94;
           *(short **)(puVar28 + -0xc) = local_50;
           *(undefined4 *)(puVar28 + -0x10) = 0x60b8c7;
+          /* ST_CALLSITE[0060B8C2]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0
                     (pSVar29,*(short **)(puVar28 + -0xc),*(short **)(puVar28 + -8),
                      *(short **)(puVar28 + -4));
@@ -556,12 +568,14 @@ cf_continue_loop_0060B649:
           if (g_sndUnderAttMeneg_00811798 != nullptr) {
             pvVar7 = pSVar29->vtable->slot_2C;
             *(undefined4 *)(puVar28 + -4) = 0x60b937;
+            /* ST_CALLSITE[0060B934]: CALL dword ptr [EDX + 0x2c] */
             dVar19 = (*pvVar7)(pSVar29);
             *(dword *)(puVar28 + -4) = dVar19;
             *(undefined4 *)(puVar28 + -8) = pSVar29->field_0024;
             *(int *)(puVar28 + -0xc) = local_8c;
             *(int *)(puVar28 + -0x10) = local_7c;
             *(undefined4 *)(puVar28 + -0x14) = 0x60b952;
+            /* ST_CALLSITE[0060B94D]: CALL 0x00401bbd; direct=00401BBD SndUnderAttMenegC::sub_006211E0 */
             SndUnderAttMenegC::sub_006211E0
                       (g_sndUnderAttMeneg_00811798,*(int *)(puVar28 + -0x10),
                        *(int *)(puVar28 + -0xc),*(uint *)(puVar28 + -8));

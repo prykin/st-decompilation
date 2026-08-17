@@ -73,6 +73,7 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
     }
   }
   else if (SVar1 == MESS_SHARED_0003) {
+    /* ST_CALLSITE[0061F6AD]: CALL 0x00404b47; direct=00404B47 SndUnderAttMenegC::sub_0061FCC0 */
     sub_0061FCC0(local_8);
     g_currentExceptionFrame = local_50.previous;
     return 0;

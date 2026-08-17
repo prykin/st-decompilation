@@ -45,6 +45,7 @@ cf_common_exit_005F26AF:
   else {
     if ((char)param_4 == '\x01') {
       if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+            /* ST_CALLSITE[005F248A]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             ((VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar4,
                          &param_6,&param_3), pVVar2 = g_visibleClass_00802A88, -1 < param_6 &&
@@ -55,6 +56,7 @@ cf_common_exit_005F26AF:
             (pVVar1->field_004C[param_6 + iVar4 * pVVar1->field_0030] == 0)))) &&
           (DAT_0080874d != -1)) &&
          ((((g_visibleClass_00802A88->field_00F8 != 0 &&
+            /* ST_CALLSITE[005F251A]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             (VisibleClassTy::sub_00558C00
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6 + 1,
                         param_2,&param_5,&local_10), pVVar1 = g_visibleClass_00802A88, -1 < param_5)
@@ -64,6 +66,7 @@ cf_common_exit_005F26AF:
           (((pVVar2->field_004C[param_5 + local_10 * pVVar2->field_0030] == 0 &&
             (DAT_0080874d != -1)) && (g_visibleClass_00802A88->field_00F8 != 0)))))) {
         iVar4 = param_2 + 1;
+        /* ST_CALLSITE[005F25AA]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
         VisibleClassTy::sub_00558C00
                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar4,&local_14
                    ,&local_18);
@@ -74,6 +77,7 @@ cf_common_exit_005F26AF:
               ((((local_18 < pVVar1->field_0034 && (pVVar1->field_004C != nullptr)) &&
                 (pVVar1->field_004C[local_14 + local_18 * pVVar1->field_0030] == 0)) &&
                ((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)))))))) &&
+            /* ST_CALLSITE[005F2632]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             ((VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_1 + 1,
                          iVar4,&param_1,&local_1c), -1 < param_1 &&
@@ -86,9 +90,11 @@ cf_common_exit_005F26AF:
       }
     }
     else {
+      /* ST_CALLSITE[005F2675]: CALL 0x00404e5d; direct=00404E5D VisibleClassTy::sub_005F1D80 */
       iVar4 = VisibleClassTy::sub_005F1D80(g_visibleClass_00802A88,iVar6,iVar4,0);
       if (iVar4 == 0) goto cf_common_exit_005F26AF;
     }
+    /* ST_CALLSITE[005F2693]: CALL 0x00401465; direct=00401465 STManBasisC::sub_005F14B0 */
     local_EAX_707 = STManBasisC::sub_005F14B0(local_c,(short)iVar6,(short)param_2,0,(byte)param_4,0);
     if (-1 < local_EAX_707) {
       return 1;

@@ -9,6 +9,7 @@ FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5
             int param_7)
 
 {
+  STWorldObject *this;
   short sVar1;
   int iVar2;
   int iVar3;
@@ -53,9 +54,10 @@ FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5
              (((((sVar8 < 0 || (g_worldGrid.sizeX <= sVar8)) || (sVar9 < 0)) ||
                ((g_worldGrid.sizeY <= sVar9 || (sVar6 < 0)))) ||
               ((g_worldGrid.sizeZ <= sVar6 ||
-               ((STGridAt3D(g_worldGrid, sVar8, sVar9, sVar6).objects[0] == nullptr ||
-                (iVar3 = (*STGridAt3D(g_worldGrid, sVar8, sVar9, sVar6).objects[0]->vtable[5].
-                           slots_00_28[9])(param_7), iVar3 != 0)))))))) {
+               ((this = STGridAt3D(g_worldGrid, sVar8, sVar9, sVar6).objects[0],
+                this == nullptr ||
+                /* ST_CALLSITE[00675C12]: [STIndirectCallsiteApplier] exact slot 0x114; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
+                (iVar3 = (*this->vtable[5].slots_00_28[9])(this,param_7), iVar3 != 0)))))))) {
             *param_4 = sVar8;
             *param_5 = sVar9;
             *param_6 = sVar6;

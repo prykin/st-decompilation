@@ -45,6 +45,7 @@ VisibleClassTy::sub_00558DC0
      ((g_playSystem_00802A38 == nullptr ||
       (g_bulkInitializedRecords_008087C7[(int)param_4].field_0022 < 8)))) {
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[00558E28]: CALL 0x00403b02; direct=00403B02 VisibleClassTy::sub_0055BB00 */
       sub_0055BB00(this,0,(short)param_1,(short)param_2,(char)param_3,(uint)param_4,(byte)param_5,
                    (uint)param_6);
     }
@@ -81,6 +82,7 @@ VisibleClassTy::sub_00558DC0
           ppvVar9 = this->field_003C;
           do {
             if (*ppvVar9 != nullptr) {
+              /* ST_CALLSITE[00558F0B]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
               sub_00558C00(this,VVar7,param_1,param_2,(int *)&param_6_after_write,(int *)&param_4_after_write);
               param_4_after_write = (int *)((int)param_4_after_write + g_centeredOffsets5[(int)param_3]);
               thunk_FUN_00553b00((int)param_6_after_write,(int)param_4_after_write,*ppvVar9,this->field_0028,
@@ -93,6 +95,7 @@ VisibleClassTy::sub_00558DC0
         }
         if (((pbVar5 != nullptr) && (this->field_004C != nullptr)) &&
            ((this->field_0050 != nullptr && ((param_7 & 0x4000) != 0)))) {
+          /* ST_CALLSITE[00558F93]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           sub_00558C00(this,this->field_010C,param_1,param_2,(int *)&param_6_after_write,(int *)&param_4_after_write);
           param_6_after_write = (int *)((int)param_6_after_write - uVar10);
           auto param_5_after_write = 0; /* compiler stack-slot lifetime split */

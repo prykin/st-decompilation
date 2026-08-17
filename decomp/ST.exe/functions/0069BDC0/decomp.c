@@ -100,6 +100,7 @@ CGenerate::sub_0069BDC0
         if (this->field_5833 + -1 <= *(int *)(puVar1 + 0x38)) {
           local_24 = 0;
         }
+        /* ST_CALLSITE[0069BF23]: CALL 0x00401163; direct=00401163 CGenerate::sub_0069B400 */
         iVar2 = sub_0069B400(this,iVar5,local_64,*(int *)(puVar1 + 0x38),*(int *)(puVar1 + 0x3c),
                              (int)puVar1);
         *(int *)(iVar7 + 0x2c + (int)local_78) = iVar2;

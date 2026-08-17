@@ -36,6 +36,7 @@ void __cdecl _AddAllGrpExch(uint param_1)
   }
   if (g_allPlayers_007FA174 != nullptr) {
     objPtr = (char)param_1;
+    /* ST_CALLSITE[00676024]: CALL 0x00404abb; direct=00404ABB STAllPlayersC::GetObjsList */
     groupContent = (DArrayTy *)STAllPlayersC::GetObjsList(objPtr);
     if (groupContent != nullptr) {
       dVar1 = groupContent->count;
@@ -50,10 +51,13 @@ void __cdecl _AddAllGrpExch(uint param_1)
           do {
             puVar3 = DArrayAt<ushort>(groupContent, uVar5);
 LAB_00676053:
+            /* ST_CALLSITE[00676063]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,objPtr,*puVar3,CASE_1);
             if (this != nullptr) {
+              /* ST_CALLSITE[00676072]: CALL dword ptr [EAX + 0x2c] */
               iVar4 = this->vfunc_2C();
               if (iVar4 == 0x78) {
+                /* ST_CALLSITE[0067607E]: CALL dword ptr [EDX + 0x2c] */
                 iVar4 = this->vfunc_2C();
                 if (iVar4 == 0x78) {
                   this->field_0269 = 0xffffffff;
@@ -64,6 +68,7 @@ LAB_00676053:
             uVar5 = uVar6 & 0xffff;
           } while (uVar5 < groupContent->count);
         }
+        /* ST_CALLSITE[006760AF]: CALL 0x0040178f; direct=0040178F STAllPlayersC::AddObjsToGroup */
         STAllPlayersC::AddObjsToGroup(g_allPlayers_007FA174,objPtr,0,groupContent,nullptr);
       }
       if (groupContent != nullptr) {

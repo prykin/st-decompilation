@@ -36,12 +36,14 @@ int FUN_006cecb0(AnonShape_006CECB0_97249119 *param_1,int param_2)
     local_48 = 0x60;
     local_40 = 8;
   }
+  /* ST_CALLSITE[006CED5A]: CALL dword ptr [EDX + 0x18] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(*param_1->field_0030 + 0x18))(param_1->field_0030,local_94,&local_8,0);
   if (iVar3 == 0) {
     if (param_2 == 0) {
       piVar1 = (int *)param_1->field_0044;
       if (piVar1 != nullptr) {
+        /* ST_CALLSITE[006CEDF6]: CALL dword ptr [ECX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar1 + 8))(piVar1);
         param_1->field_0044 = 0;
@@ -51,15 +53,18 @@ int FUN_006cecb0(AnonShape_006CECB0_97249119 *param_1,int param_2)
     else {
       piVar1 = (int *)param_1->field_0040;
       if (piVar1 != nullptr) {
+        /* ST_CALLSITE[006CED78]: CALL dword ptr [EDX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar1 + 8))(piVar1);
         param_1->field_0040 = 0;
       }
       param_1->field_0040 = local_8;
+      /* ST_CALLSITE[006CED8B]: CALL dword ptr [ECX + 0x38] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*local_8 + 0x38))(local_8,local_18);
       local_210 = 0x17c;
       local_38c[0] = 0x17c;
+      /* ST_CALLSITE[006CEDB3]: CALL dword ptr [ECX + 0x2c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*param_1->field_0030 + 0x2c))(param_1->field_0030,&local_210,local_38c);
       uVar2 = param_1->field_000C & 0xfffffffd;

@@ -165,6 +165,7 @@ LAB_004b1a39:
       iVar8 = DArrayGetNext(g_array_007FA150,(byte *)&local_10);
       while (-1 < iVar8) {
         if (local_10 != nullptr) {
+          /* ST_CALLSITE[004B1B35]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0
                     (local_10,(short *)((int)&param_4 + 2),(short *)((int)&param_5 + 2),
                      (short *)((int)&local_8 + 2));

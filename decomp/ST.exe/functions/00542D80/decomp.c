@@ -25,15 +25,19 @@ void CreateInterSystem(void)
       g_interSystem_00802A28 = nullptr;
     }
     else {
+      /* ST_CALLSITE[00542DC7]: CALL 0x0040475a; direct=0040475A InterSystemC::InterSystemC */
       g_interSystem_00802A28 = InterSystemC::InterSystemC(this,g_app_00806728);
     }
     g_interSystem_00802A28->field_0020 = 0;
+    /* ST_CALLSITE[00542DE4]: CALL dword ptr [EDX] */
     (*g_interSystem_00802A28->vtable->InitSystem)((SystemClassTy *)g_interSystem_00802A28);
     AppClassTy::AddChildSystem
               ((AppClassTy *)&DAT_00807620,(SystemClassTy *)g_parentSystem_0081163C,
                (SystemClassTy *)g_interSystem_00802A28,0);
+    /* ST_CALLSITE[00542E05]: CALL 0x00401d02; direct=00401D02 InterSystemC::CreateInterfObjects */
     InterSystemC::CreateInterfObjects(g_interSystem_00802A28);
     local_14 = 5;
+    /* ST_CALLSITE[00542E1D]: CALL dword ptr [EDX + 0x20] */
     g_interSystem_00802A28->GetMessage((int)local_24);
     g_interSystem_00802A28->field_0020 = 1;
     g_currentExceptionFrame = local_68.previous;

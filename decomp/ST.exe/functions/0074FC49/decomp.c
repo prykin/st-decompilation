@@ -34,14 +34,17 @@ FUN_0074fc49(void *this,int *param_1,int *param_2,uint *param_3,int param_4,doub
   STField<VTable_007A1D68 *>(this,0xc) = &VTable_007A1D68;
   lVar2 = Library::MSVCRT::__ftol();
   STField<longlong>(this,0x18) = lVar2;
+  /* ST_CALLSITE[0074FCD2]: CALL dword ptr [ECX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar1 = (**(code **)*STField<undefined4 *>(this,0x14))
                     (STField<undefined4 *>(this,0x14),STField<undefined4>(this,0x20),&param_2);
   if (-1 < (int)uVar1) {
+    /* ST_CALLSITE[0074FCDE]: CALL dword ptr [ECX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_2 + 8))(param_2);
     uVar1 = FUN_0074e337((int *)((int)this + 0x48),param_6,nullptr,0,(int *)&local_8);
     if (-1 < (int)uVar1) {
+      /* ST_CALLSITE[0074FCFC]: CALL dword ptr [ECX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*local_8 + 8))(local_8);
       if (param_8 == 4) {
@@ -49,6 +52,7 @@ FUN_0074fc49(void *this,int *param_1,int *param_2,uint *param_3,int param_4,doub
         STField<undefined4 *>(this,0x38) = (undefined4 *)((int)this + 0x44);
         STField<undefined4>(this,0x44) = 0xfffffffd;
       }
+      /* ST_CALLSITE[0074FD1E]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar1 = (**(code **)(*param_1 + 8))(this);
       if (-1 < (int)uVar1) {

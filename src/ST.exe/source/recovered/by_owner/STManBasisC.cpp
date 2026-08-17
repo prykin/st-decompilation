@@ -154,6 +154,7 @@ joined_r0x005f19be:
   local_8 = psVar6;
   if ((char)psVar6[3] != '\x01') goto LAB_005f1c99;
   if (((((DAT_0080874d != -1) && (pVVar2->field_00F8 != 0)) &&
+       /* ST_CALLSITE[005F1A43]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
        (st::fn_00403F53
                   (pVVar2,pVVar2->field_010C,local_1c,local_18,&local_20,&local_24),
        pVVar4 = g_visibleClass_00802A88, -1 < iVar8)) &&
@@ -165,6 +166,7 @@ joined_r0x005f19be:
       (((pVVar2->field_004C[local_20 + iVar8 * pVVar2->field_0030] == 0 && (DAT_0080874d != -1)) &&
        (g_visibleClass_00802A88->field_00F8 != 0)))))) {
     local_38 = local_1c + 1;
+    /* ST_CALLSITE[005F1AEB]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     st::fn_00403F53
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,local_18,
                &local_28,&local_2c);
@@ -175,6 +177,7 @@ joined_r0x005f19be:
          (pVVar4->field_004C[local_28 + iVar8 * pVVar4->field_0030] == 0)))) &&
        ((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)))) {
       iVar8 = local_18 + 1;
+      /* ST_CALLSITE[005F1B82]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
       st::fn_00403F53
                 (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_1c,iVar8,
                  &local_30,&local_34);
@@ -187,6 +190,7 @@ joined_r0x005f19be:
             (pVVar2->field_004C[local_30 + iVar5 * pVVar2->field_0030] != 0)))))) ||
          ((DAT_0080874d == -1 ||
           ((((g_visibleClass_00802A88->field_00F8 == 0 ||
+             /* ST_CALLSITE[005F1C07]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
              (st::fn_00403F53
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,iVar8,
                          &local_3c,&local_40), psVar6 = local_8, local_3c < 0)) ||
@@ -199,7 +203,8 @@ joined_r0x005f19be:
     }
   }
 LAB_005f1c4c:
-  iVar7 = st::fn_00401465(local_14,*psVar6,psVar6[1],psVar6[2],*(byte *)(psVar6 + 3),
+  /* ST_CALLSITE[005F1C66]: CALL 0x00401465; direct=00401465 STManBasisC::sub_005F14B0 */
+  iVar7 = st::fn_00401465(local_14,*psVar6,psVar6[1],psVar6[2],((byte *)psVar6)[3],
                        STField<short>(psVar6,7));
   pVVar4 = g_visibleClass_00802A88;
   if (-1 < iVar7) {
@@ -208,6 +213,7 @@ LAB_005f1c4c:
   }
   goto joined_r0x005f19be;
 LAB_005f1c99:
+  /* ST_CALLSITE[005F1C9C]: CALL 0x00404e5d; direct=00404E5D VisibleClassTy::sub_005F1D80 */
   iVar8 = st::fn_00404E5D(pVVar2,local_1c,local_18,iVar8);
   pVVar4 = g_visibleClass_00802A88;
   if (iVar8 == 0) goto joined_r0x005f19be;
@@ -246,14 +252,14 @@ byte * __thiscall st::fn_005F1FA0(STManBasisC *this,int *param_1)
   local_8 = 0;
   local_c = 0;
   if (this->field_0038 != nullptr) {
-    local_10 = (byte *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&this->field_0038->flags),(int *)&local_8);
+    local_10 = st::pointer_boundary_cast<byte *>(st::fn_006B0020(&this->field_0038->flags,(int *)&local_8));
     if (local_8 == 0) {
       st::fn_006AE110((DArrayTy *)this->field_0038);
       this->field_0038 = nullptr;
     }
   }
   if (this->field_003C != nullptr) {
-    local_14 = (uint *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&this->field_003C->flags),(int *)&local_c);
+    local_14 = st::pointer_boundary_cast<uint *>(st::fn_006B0020(&this->field_003C->flags,(int *)&local_c));
     if (local_c == 0) {
       st::fn_006AE110(this->field_003C);
       this->field_003C = nullptr;
@@ -327,7 +333,7 @@ undefined4 __thiscall st::fn_005F2110(STManBasisC *this,undefined4 *param_1)
   DAT_00811788 = this->field_0034;
   piVar7 = st::pointer_boundary_cast<int *>(param_1 + 10);
   if (this->field_0038 != nullptr) {
-    pSVar2 = (STManBasisC_field_0038DArray *)st::fn_006B0060(nullptr,st::pointer_boundary_cast<uint *>(param_1 + 0xb));
+    pSVar2 = (STManBasisC_field_0038DArray *)st::fn_006B0060(nullptr,param_1 + 0xb);
     this->field_0038 = pSVar2;
     piVar7 = (int *)((int)(param_1 + 0xb) + *piVar7);
   }
@@ -377,7 +383,7 @@ int __thiscall st::fn_005F21D0(STManBasisC *this)
         if ((uVar6 < pSVar2->count) &&
            (psVar5 = (short *)((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar6),
            psVar5 != nullptr)) {
-          puVar4 = st::fn_0040335F((uint)*(byte *)(psVar5 + 3),(int)STField<short>(psVar5,7),
+          puVar4 = st::fn_0040335F((uint)((byte *)psVar5)[3],(int)STField<short>(psVar5,7),
                                       (int)(short)(*psVar5 * 0xc9 + 100),
                                       (int)(short)(psVar5[1] * 0xc9 + 100),
                                       (int)(short)(psVar5[2] * 200 + 100));
@@ -396,7 +402,7 @@ int __thiscall st::fn_005F21D0(STManBasisC *this)
         if (((uVar6 < pDVar3->count) &&
             (psVar5 = DArrayAt<short>(pDVar3, uVar6),
             psVar5 != nullptr)) && (*(int *)(psVar5 + 0xc) != -1)) {
-          st::fn_0040169F((uint)*(byte *)(psVar5 + 3),(int)STField<short>(psVar5,7),0,
+          st::fn_0040169F((uint)((byte *)psVar5)[3],(int)STField<short>(psVar5,7),0,
                              (int)(short)(*psVar5 * 0xc9 + 100),(int)(short)(psVar5[1] * 0xc9 + 100)
                              ,(int)(short)(psVar5[2] * 200 + 100),uVar6);
         }

@@ -23,6 +23,7 @@ void FUN_006cee60(int param_1)
           if (0 < (int)uVar2) {
             do {
               piVar1 = *(int **)(puVar4[0x33] + iVar3 * 4);
+              /* ST_CALLSITE[006CEEB9]: CALL dword ptr [ECX + 0x6c] */
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(*piVar1 + 0x6c))(piVar1);
               iVar3 = iVar3 + 1;
@@ -30,6 +31,7 @@ void FUN_006cee60(int param_1)
           }
         }
         else {
+          /* ST_CALLSITE[006CEE9C]: CALL dword ptr [EDX + 0x6c] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*(int *)puVar4[0x33] + 0x6c))((int *)puVar4[0x33]);
         }

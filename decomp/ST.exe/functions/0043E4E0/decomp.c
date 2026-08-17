@@ -40,6 +40,7 @@ uint * STAllPlayersC::GetObjsList(char param_1)
     if ((uVar5 != 0) && (local_8 = 0, 0 < local_10)) {
       do {
         piVar1 = *(int **)(*(int *)(iVar3 + 0x1c) + local_8 * 4);
+        /* ST_CALLSITE[0043E570]: CALL dword ptr [EDX + 0xf8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((piVar1 != nullptr) && (iVar8 = (**(code **)(*piVar1 + 0xf8))(), iVar8 == 1)) {
           Library::DKW::TBL::DArrayAppend(array,&local_8);

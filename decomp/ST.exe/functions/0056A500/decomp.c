@@ -11,6 +11,7 @@ undefined4 FUN_0056a500(void)
   undefined4 local_1e;
 
   if (DAT_00808783 == '\x03') {
+    /* ST_CALLSITE[0056A50F]: CALL dword ptr [0x0085bedc] */
     DVar1 = timeGetTime();
     if (499 < DVar1 - DAT_00806720) {
       local_2a = 5;

@@ -44,6 +44,7 @@ int __cdecl FUN_0058d480(int param_1,int param_2,int param_3,int param_4,int par
     if (param_5 == 1) break;
     if (param_5 != 0) goto LAB_0058d54d;
     if ((*(int *)(iVar1 + 0x20) == 0x32) || (*(int *)(iVar1 + 0x20) == 0x8c)) {
+      /* ST_CALLSITE[0058D583]: CALL dword ptr [EAX + 0x18] */
       (*g_playSystem_00802A38->vtable->SendMessage)
                 ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,param_4);
 LAB_0058d559:
@@ -51,11 +52,13 @@ LAB_0058d559:
     }
   }
   if ((*(int *)(iVar1 + 0x20) == 0x10e) || (*(int *)(iVar1 + 0x20) == 0x118)) {
+    /* ST_CALLSITE[0058D547]: CALL dword ptr [EDX + 0x18] */
     (*g_playSystem_00802A38->vtable->SendMessage)
               ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,param_4);
     local_8 = local_8 + 1;
   }
 LAB_0058d54d:
+  /* ST_CALLSITE[0058D556]: CALL dword ptr [EDX + 0x18] */
   (*g_playSystem_00802A38->vtable->SendMessage)
             ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,param_4);
   goto LAB_0058d559;

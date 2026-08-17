@@ -69,16 +69,20 @@ LAB_0062f450:
   iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_14;
   if (iVar2 == 0) {
+    /* ST_CALLSITE[0062F4D9]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
     iVar4 = STT3DSprC::Init(local_14,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar4 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_Rubb.cpp",0x17b);
       return 0xffff;
     }
+    /* ST_CALLSITE[0062F51F]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar4 = STT3DSprC::LoadSequence(this_00,0xe,PTR_00806774,local_8[*param_2],CASE_1D);
     if (iVar4 == 0) {
+      /* ST_CALLSITE[0062F534]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase(this_00,'\x0e',param_2[6]);
       thunk_FUN_004ad380(this_00,local_10 / 2,local_c / 2 - 0xe);
+      /* ST_CALLSITE[0062F596]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       STT3DSprC::sub_004AD3C0
                 (this_00,(float)param_2[3] * _DAT_007904f8 * _DAT_007904f0,
                  (float)param_2[4] * _DAT_007904f8 * _DAT_007904f0,

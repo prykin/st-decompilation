@@ -29,7 +29,7 @@ byte * __thiscall STBHEShellC::sub_005F5A90(STBHEShellC *this,int *param_1)
   pbVar1[0xe] = 0;
   pbVar1[0xf] = 0;
   if (this->field_0169 != nullptr) {
-    local_c = (byte *)FUN_006b0020(&this->field_0169->flags,(int *)&local_8);
+    local_c = FUN_006b0020(&this->field_0169->flags,(int *)&local_8);
     pbVar2 = Library::DKW::LIB::MemRealloc(pbVar1,local_8 + 300);
     *(uint *)(pbVar2 + 0x128) = local_8;
     pbVar6 = local_c;

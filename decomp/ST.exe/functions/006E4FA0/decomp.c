@@ -5,6 +5,7 @@
 void FUN_006e4fa0(DWORD dwMilliseconds)
 
 {
+  /* ST_CALLSITE[006E4FA7]: CALL dword ptr [0x0085bc6c] */
   Sleep(dwMilliseconds);
   return;
 }

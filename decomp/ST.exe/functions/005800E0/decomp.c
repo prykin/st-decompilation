@@ -9,6 +9,7 @@ void __thiscall FUN_005800e0(void *this,int param_1)
   short sVar3;
   AnonShape_004E0250_5A3B9236 *pAVar4;
 
+  /* ST_CALLSITE[005800F4]: CALL 0x00402973; direct=00402973 STResourceC::SetResource */
   STResourceC::SetResource(this,STField<int>(this,0x259) + param_1,1);
   if (STField<int>(this,0x25d) == 1) {
     sVar1 = STField<short>(this,0x245);

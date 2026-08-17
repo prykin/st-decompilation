@@ -23,6 +23,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pWVar2 = local_8;
   if (iVar3 == 0) {
+    /* ST_CALLSITE[005E75AA]: CALL 0x0040458e; direct=0040458E MMObjTy::DoneMMObj */
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
@@ -35,11 +36,13 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     if (pWVar2->field_004D == 0x6105) {
       if (DAT_00811768 == '\x02') {
         pWVar2->field_004D = 0x6102;
+        /* ST_CALLSITE[005E7606]: CALL 0x00401d43; direct=00401D43 DarkScreen */
         DarkScreen(g_dDXContext_0080759C,10,2);
       }
       thunk_FUN_005dac60();
     }
     if (pWVar2->field_004D == 0x610a) {
+      /* ST_CALLSITE[005E762C]: CALL 0x00401d43; direct=00401D43 DarkScreen */
       DarkScreen(g_dDXContext_0080759C,10,2);
       thunk_FUN_005dac60();
     }
@@ -47,6 +50,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
     if (pWVar2->field_1AF8 != nullptr) {
+      /* ST_CALLSITE[005E7665]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pWVar2->field_1AF8);
       Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1AF8);
       pWVar2->field_1AF8 = nullptr;
@@ -62,6 +66,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);
     if (pWVar2->field_1B00 != nullptr) {
+      /* ST_CALLSITE[005E76B9]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pWVar2->field_1B00);
       Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1B00);
       pWVar2->field_1B00 = nullptr;
@@ -81,6 +86,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       }
     }
     if (pWVar2->field_1AFC != nullptr) {
+      /* ST_CALLSITE[005E775B]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pWVar2->field_1AFC);
       Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1AFC);
       pWVar2->field_1AFC = nullptr;
@@ -113,6 +119,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     if ((pWVar2->field_004D == 0x6102) &&
        (this_00 = *(MMsgTy **)(pWVar2->array_00BC[0xc].field_01DB + 0x2e6), this_00 != nullptr
        )) {
+      /* ST_CALLSITE[005E784D]: CALL 0x0040462e; direct=0040462E MMsgTy::HideSprites */
       MMsgTy::HideSprites(this_00);
       *(undefined4 *)(*(int *)(pWVar2->array_00BC[0xc].field_01DB + 0x2e6) + 0x1cab) = 0;
     }

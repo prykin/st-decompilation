@@ -23,6 +23,7 @@ int __thiscall FUN_0068fc70(void *this,AnonShape_0068FD00_A5257008 *aiMess,short
       if ((((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0))
           && (this_00 = *(AiFltClassTy **)(iVar1 + 4), this_00 != nullptr)) &&
          ((uint)(ushort)this_00->field_007D == (int)param_2)) {
+        /* ST_CALLSITE[0068FCB8]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
         AiFltClassTy::GetAiMess(this_00,(uint *)aiMess);
       }
       iVar1 = STField<int>(this,0xa5);

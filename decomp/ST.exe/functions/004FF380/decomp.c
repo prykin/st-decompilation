@@ -81,48 +81,62 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   Library::DKW::TBL::FUN_006afe40((int *)&local_16,&local_4c->field_0B95->flags);
   this_00->field_0B95->count = 0;
   this_00->field_0B4B = local_16;
+  /* ST_CALLSITE[004FF41F]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
   STAllPlayersC::GetPanelInfo
             (g_allPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
   if (local_48 != this_00->field_0B63) {
     if (g_bldObjPanel_00801684 != nullptr) {
+      /* ST_CALLSITE[004FF439]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
       ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
     }
     if (g_behPanel_00801678 != nullptr) {
+      /* ST_CALLSITE[004FF44C]: CALL dword ptr [EDX + 0x1c] */
       (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
     }
     if (g_sAMPanel_008016EC != nullptr) {
+      /* ST_CALLSITE[004FF45D]: CALL dword ptr [EAX + 0x1c] */
       (*g_sAMPanel_008016EC->vtable->SetPanel)((SpecPanelTy *)g_sAMPanel_008016EC,'\0');
     }
     if (g_upgPanel_00802A48 != nullptr) {
+      /* ST_CALLSITE[004FF46E]: CALL dword ptr [EDX + 0x1c] */
       (*g_upgPanel_00802A48->vtable->SetPanel)((SpecPanelTy *)g_upgPanel_00802A48,'\0');
     }
     if (g_frmPanel_0080168C != nullptr) {
+      /* ST_CALLSITE[004FF47F]: CALL dword ptr [EAX + 0x1c] */
       (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
     }
+    /* ST_CALLSITE[004FF486]: CALL 0x00401c44; direct=00401C44 CPanelTy::SwitchTV */
     SwitchTV(this_00,1);
+    /* ST_CALLSITE[004FF48D]: CALL 0x00403648; direct=00403648 CPanelTy::PaintInfoBoat */
     PaintInfoBoat(this_00);
     g_currentExceptionFrame = local_90.previous;
     return;
   }
   if (this_00->field_0B80 != local_2b) {
     if (g_bldObjPanel_00801684 != nullptr) {
+      /* ST_CALLSITE[004FF4BE]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
       ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
     }
     if (g_behPanel_00801678 != nullptr) {
+      /* ST_CALLSITE[004FF4D1]: CALL dword ptr [EDX + 0x1c] */
       (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
     }
     if (g_sAMPanel_008016EC != nullptr) {
+      /* ST_CALLSITE[004FF4E2]: CALL dword ptr [EAX + 0x1c] */
       (*g_sAMPanel_008016EC->vtable->SetPanel)((SpecPanelTy *)g_sAMPanel_008016EC,'\0');
     }
     if (g_upgPanel_00802A48 != nullptr) {
+      /* ST_CALLSITE[004FF4F3]: CALL dword ptr [EDX + 0x1c] */
       (*g_upgPanel_00802A48->vtable->SetPanel)((SpecPanelTy *)g_upgPanel_00802A48,'\0');
     }
     if (g_frmPanel_0080168C != nullptr) {
+      /* ST_CALLSITE[004FF504]: CALL dword ptr [EAX + 0x1c] */
       (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
     }
   }
   if (this_00->field_0B63 == '\x02') {
     if ((this_00->field_0B95->count != local_16->count) || (local_47 != this_00->field_0B64)) {
+      /* ST_CALLSITE[004FF538]: CALL 0x00401c44; direct=00401C44 CPanelTy::SwitchTV */
       SwitchTV(this_00,1);
     }
     iVar11 = 5;
@@ -137,6 +151,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       pcVar18 = pcVar18 + 1;
     } while (bVar19);
     if (!bVar19) {
+      /* ST_CALLSITE[004FF555]: CALL 0x00403977; direct=00403977 CPanelTy::PaintDeep */
       PaintDeep(this_00,1);
       bVar5 = (DAT_0080874e == '\x03') + 2;
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
@@ -155,6 +170,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
                  (byte *)this_00->field_0958,0,0,0,*(int *)(this_00->field_0958 + 2),0x3c);
       dVar20 = this_00->field_0B95->count;
       pcVar6_mg2 = LoadResourceString(0x36b9,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[004FF5FF]: CALL dword ptr [0x0085bde8] */
       wsprintfA(*(LPSTR *)&this_00->field_0x213,"&1%s&0%d",pcVar6_mg2,dVar20);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                        *(int *)(this_00->field_0958 + 2) + -4,0x2d);
@@ -165,6 +181,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
                    this_00->field_0040,this_00->field_0098);
       }
       if ((DAT_0080874e == '\x03') && (local_2c != this_00->field_0B7F)) {
+        /* ST_CALLSITE[004FF688]: CALL 0x00402667; direct=00402667 CPanelTy::PaintEnergy */
         PaintEnergy(this_00,1);
       }
       local_10 = 1;
@@ -201,6 +218,7 @@ LAB_004ff6e4:
         } while (local_c < local_8);
       }
       if ((local_10 != 0) && (g_behPanel_00801678 != nullptr)) {
+        /* ST_CALLSITE[004FF720]: CALL dword ptr [EAX + 0x1c] */
         (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
       }
     }
@@ -214,31 +232,39 @@ LAB_004ff723:
   if (((local_40 != this_00->field_0B6B) || (local_47 != this_00->field_0B64)) ||
      (local_46 != this_00->field_0B65)) {
     if (g_bldObjPanel_00801684 != nullptr) {
+      /* ST_CALLSITE[004FF76C]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
       ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
     }
     if (g_behPanel_00801678 != nullptr) {
+      /* ST_CALLSITE[004FF77F]: CALL dword ptr [EDX + 0x1c] */
       (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
     }
     if (g_sAMPanel_008016EC != nullptr) {
+      /* ST_CALLSITE[004FF790]: CALL dword ptr [EAX + 0x1c] */
       (*g_sAMPanel_008016EC->vtable->SetPanel)((SpecPanelTy *)g_sAMPanel_008016EC,'\0');
     }
     if (g_upgPanel_00802A48 != nullptr) {
+      /* ST_CALLSITE[004FF7A1]: CALL dword ptr [EDX + 0x1c] */
       (*g_upgPanel_00802A48->vtable->SetPanel)((SpecPanelTy *)g_upgPanel_00802A48,'\0');
     }
     if (g_frmPanel_0080168C != nullptr) {
+      /* ST_CALLSITE[004FF7B2]: CALL dword ptr [EAX + 0x1c] */
       (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
     }
+    /* ST_CALLSITE[004FF7B9]: CALL 0x00401c44; direct=00401C44 CPanelTy::SwitchTV */
     SwitchTV(this_00,1);
   }
   iVar11 = this_00->field_0B66;
   if ((local_45 != iVar11) || (local_41 != this_00->field_0B6A)) {
     if ((local_45 == 7) || (((local_45 == 0x13 || (iVar11 == 7)) || (iVar11 == 0x13)))) {
+      /* ST_CALLSITE[004FF83F]: CALL 0x00403648; direct=00403648 CPanelTy::PaintInfoBoat */
       PaintInfoBoat(this_00);
     }
     else {
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0,
                  (byte *)this_00->field_0958,0,1,0,0x4e,0x20);
+      /* ST_CALLSITE[004FF813]: CALL 0x004048c7; direct=004048C7 CPanelTy::PaintName */
       PaintName(this_00,1);
       if (-1 < (int)this_00->field_0148[1]) {
         Library::DKW::DDX::FUN_006b3640
@@ -270,6 +296,7 @@ LAB_004ff87a:
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0,
                (byte *)this_00->field_0958,0,1,0,0x4e,0x20);
+    /* ST_CALLSITE[004FF8A5]: CALL 0x004048c7; direct=004048C7 CPanelTy::PaintName */
     PaintName(this_00,1);
     if (-1 < (int)this_00->field_0148[1]) {
       Library::DKW::DDX::FUN_006b3640
@@ -281,6 +308,7 @@ LAB_004ff87a:
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0x1f,
                (byte *)this_00->field_0958,0,1,0x1f,0x4e,0x11);
+    /* ST_CALLSITE[004FF902]: CALL 0x004019c4; direct=004019C4 CPanelTy::PaintLife */
     PaintLife(this_00,1);
     if (-1 < (int)this_00->field_0148[1]) {
       Library::DKW::DDX::FUN_006b3640
@@ -290,6 +318,7 @@ LAB_004ff87a:
   }
   if (((DAT_0080874e == '\x03') && (this_00->field_0B6A == '\x03')) &&
      (local_2c != this_00->field_0B7F)) {
+    /* ST_CALLSITE[004FF94D]: CALL 0x00402667; direct=00402667 CPanelTy::PaintEnergy */
     PaintEnergy(this_00,1);
   }
   iVar11 = this_00->field_0B66;
@@ -309,8 +338,10 @@ LAB_004ff87a:
     if (GVar3 != local_2a) {
       uVar7 = thunk_FUN_00526ba0(GVar3,this_00->field_0xb85);
       pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BE,uVar7);
+      /* ST_CALLSITE[004FFA92]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0xb,0x31,'\x01',(byte *)pBVar8);
       pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
+      /* ST_CALLSITE[004FFAB3]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,10,0x30,'\x06',(byte *)pBVar8);
       if (-1 < (int)this_00->field_0148[1]) {
         Library::DKW::DDX::FUN_006b3640
@@ -346,6 +377,7 @@ LAB_004ff87a:
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0x2f,
                (byte *)this_00->field_0958,0,1,0x2f,0x4e,0x24);
+    /* ST_CALLSITE[004FF9EC]: CALL 0x00402694; direct=00402694 CPanelTy::PaintWeap */
     PaintWeap(this_00,1);
     puVar2 = this_00->field_0148[1];
   }
@@ -367,6 +399,7 @@ cf_common_exit_004FFB91:
     pcVar18 = pcVar18 + 1;
   } while (bVar19);
   if (!bVar19) {
+    /* ST_CALLSITE[004FFBA9]: CALL 0x00403977; direct=00403977 CPanelTy::PaintDeep */
     PaintDeep(this_00,1);
     bVar5 = (DAT_0080874e == '\x03') + 2;
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));

@@ -30,6 +30,7 @@ int __thiscall AiBossClassTy::InitData(AiBossClassTy *this,undefined4 *param_1)
     puVar5 = (byte *)(param_1);
     memmove(puVar6, puVar5, 0x85); /* compiler REP MOVS byte copy */
     local_8->field_05D8 = 1;
+    /* ST_CALLSITE[00647E26]: CALL 0x004054b1; direct=004054B1 AiEventClassTy::InitData */
     AiEventClassTy::InitData
               ((AiEventClassTy *)&local_8->vtable_at_1c,
                (int *)(local_8->field_0619 + 0x84 + (int)param_1));

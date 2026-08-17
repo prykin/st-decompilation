@@ -27,6 +27,7 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
   if (iVar3 == 0) {
     if (local_8->field_00B3 == CASE_1) {
       if (g_holo_00811778 != nullptr) {
+        /* ST_CALLSITE[005E5EAD]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         iVar5 = HoloTy::NextFas(g_holo_00811778);
         if (iVar5 == 0) {
           pMVar2->field_00B3 = CASE_4;
@@ -34,6 +35,7 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
       }
     }
     else if ((local_8->field_00B3 == CASE_5) && (g_holo_00811778 != nullptr)) {
+      /* ST_CALLSITE[005E5E7A]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar5 = HoloTy::NextFas(g_holo_00811778);
       if (iVar5 == 0) {
         pMVar2->field_00B3 = 0;

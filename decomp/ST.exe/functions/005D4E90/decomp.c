@@ -73,9 +73,11 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
               DArrayDestroy(*(DArrayTy **)(pcVar11 + 0x50));
             }
             if (pSVar5->field_1E26 == '\x02') {
+              /* ST_CALLSITE[005D4F81]: CALL 0x0040466a; direct=0040466A CreateStrategList */
               puVar6 = CreateStrategList((int)local_8,(uint)(byte)pcVar11[2],0xffffffff);
             }
             else {
+              /* ST_CALLSITE[005D4F99]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
               puVar6 = CreateOpponentList(local_8,(uint)(byte)pcVar11[3],DAT_0080995c);
             }
             *(uint **)(pcVar11 + 0x50) = puVar6;
@@ -111,6 +113,7 @@ LAB_005d5030:
             }
           }
         }
+        /* ST_CALLSITE[005D5040]: CALL dword ptr [EDX + 0x18] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)pSVar5->field_000C + 0x18))(&pSVar5->field_0x1d);
         iVar8 = local_10;

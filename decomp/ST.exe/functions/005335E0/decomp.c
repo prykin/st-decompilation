@@ -45,6 +45,7 @@ void FUN_005335e0(void)
       *(undefined1 *)puVar2 = 2;
       STField<uint>(puVar2,1) = ~uVar4;
       STField<undefined4>(puVar2,5) = DAT_008087be;
+      /* ST_CALLSITE[00533668]: CALL dword ptr [0x0085bedc] */
       DVar3 = timeGetTime();
       STField<DWORD>(puVar2,9) = DVar3;
       uVar4 = 0xffffffff;
@@ -185,6 +186,7 @@ void FUN_005335e0(void)
   }
   local_8[10] = 0xc001;
   local_8[0xd] = 0;
+  /* ST_CALLSITE[005336CB]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)*local_8)(local_8 + 6);
   g_currentExceptionFrame = local_54.previous;

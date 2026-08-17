@@ -17,6 +17,7 @@ void __thiscall FUN_004d6930(void *this,AnonShape_004D6930_FDF7B020 *param_1)
   param_1->field_0005 =
        ((STField<uint>(this,0x24) != (uint)*(byte *)(STField<int>(this,0x10) + 0x112d)) - 1U &
        0xfe) + 3;
+  /* ST_CALLSITE[004D696D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar4 = LookupRecordByte(STField<char>(this,0x24));
   param_1->field_0x4 = bVar4;
   puVar1 = &param_1->field_0x9;
@@ -42,6 +43,7 @@ void __thiscall FUN_004d6930(void *this,AnonShape_004D6930_FDF7B020 *param_1)
     *puVar2 = 1;
   }
   param_1->field_001D = STField<undefined4>(this,0x259);
+  /* ST_CALLSITE[004D69F2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar4 = LookupRecordByte(STField<char>(this,0x24));
   if (bVar4 == 3) {
     sVar5 = (short)*(undefined4 *)
@@ -61,6 +63,7 @@ void __thiscall FUN_004d6930(void *this,AnonShape_004D6930_FDF7B020 *param_1)
                  (STField<int>(this,0x368) * 3 + STField<int>(this,0x36c)) * 4) -
        STField<short>(this,0x2d0);
   param_1->field_002F = STField<undefined1>(this,0x2a8);
+  /* ST_CALLSITE[004D6A70]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar4 = LookupRecordByte(STField<char>(this,0x24));
   param_1->field_0025 = bVar4;
   if (STField<int>(this,0x2a4) != 0) {

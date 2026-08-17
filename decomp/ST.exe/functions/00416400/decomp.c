@@ -38,6 +38,7 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
   if (param_1->field_00F4 == 1) {
     param_1->field_00F4 = 0;
   }
+  /* ST_CALLSITE[00416460]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
   iVar4 = STJellyGunC::sub_00415ED0(param_1,&local_28,&local_2c);
   if (iVar4 == -1) {
     param_1->field_00E3 = -1;
@@ -82,6 +83,7 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
       }
     }
     _local_10 = STReplaceLowByte((uint32_t)(iVar4), (uint8_t)(bVar2));
+    /* ST_CALLSITE[004165AD]: CALL 0x00402455; direct=00402455 sub_00415B30 */
     iVar4 = sub_00415B30(param_1,local_24[0],local_20[0],local_1c[0],sVar6,sVar8,(short)local_c,
                          bVar2);
     if (iVar4 != 0) {

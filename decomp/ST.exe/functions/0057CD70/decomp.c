@@ -64,6 +64,7 @@ void __thiscall STFishC::LifeFish(STFishC *this)
   FUN_006e6870((void *)this->field_0211,iVar4,iVar3);
   SVar1 = this->field_023B;
   if (SVar1 == CASE_4) {
+    /* ST_CALLSITE[0057CDF2]: CALL dword ptr [EAX + 0x20] */
     iVar3 = this->vfunc_20();
     if (iVar3 == -1) {
       local_EAX_271 =
@@ -89,6 +90,7 @@ void __thiscall STFishC::LifeFish(STFishC *this)
     }
   }
   else if (SVar1 == CASE_1) {
+    /* ST_CALLSITE[0057CE9E]: CALL dword ptr [EDX + 0x1c] */
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar3 = (*this->vtable->MoveStep)((STGameObjC *)this,unaff_EDI);
     if (iVar3 != 0) {
@@ -108,6 +110,7 @@ void __thiscall STFishC::LifeFish(STFishC *this)
         if (this->field_023F < 0xf) goto LAB_0057cfe0;
         uVar4 = 1;
       }
+      /* ST_CALLSITE[0057CEF0]: CALL 0x00402612; direct=00402612 STFishC::sub_0057D5F0 */
       SVar5_mg2 = sub_0057D5F0(this,uVar4);
       this->field_023B = SVar5_mg2;
       this->field_023F = 0;
@@ -130,23 +133,29 @@ void __thiscall STFishC::LifeFish(STFishC *this)
     }
   }
   else if (SVar1 == CASE_5) {
+    /* ST_CALLSITE[0057CF7E]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,'\b');
     iVar5 = thunk_FUN_004ac910(this_00,'\b');
     if (iVar5 == iVar3 + -1) {
+      /* ST_CALLSITE[0057CF97]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,8);
+      /* ST_CALLSITE[0057CF9E]: CALL 0x004032ba; direct=004032BA STFishC::sub_0057BF20 */
       sub_0057BF20(this);
       this->field_023B = CASE_3;
       return;
     }
   }
+  /* ST_CALLSITE[0057CFC0]: CALL dword ptr [EAX + 0x20] */
   else if ((0xf < this->field_023F) && (iVar3 = this->vfunc_20(), iVar3 == 1)) {
     this->field_023F = 0;
+    /* ST_CALLSITE[0057CFD5]: CALL 0x00402612; direct=00402612 STFishC::sub_0057D5F0 */
     SVar5_mg1 = sub_0057D5F0(this,1);
     this->field_023B = SVar5_mg1;
   }
 LAB_0057cfe0:
   switch(this->field_0267) {
   case CASE_E7:
+    /* ST_CALLSITE[0057D280]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',g_playSystem_00802A38->field_00E4 % 0x78 >> 1);
     break;
   case CASE_E8:
@@ -161,31 +170,39 @@ LAB_0057cfe0:
     local_8 = uVar4 + (iVar3 / 3) * 6;
     uVar4 = uVar4 + (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 6;
 LAB_0057d24b:
+    /* ST_CALLSITE[0057D250]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',uVar4);
+    /* ST_CALLSITE[0057D25D]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
     STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',local_8);
     break;
   case CASE_EA:
     iVar3 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
+    /* ST_CALLSITE[0057D07F]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_00,'\x0e',
                (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0xf +
                g_playSystem_00802A38->field_00E4 % 0xf);
+    /* ST_CALLSITE[0057D08C]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
     STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',iVar3 / 3);
     break;
   case CASE_EB:
     iVar3 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
     uVar4 = g_playSystem_00802A38->field_00E4 % 0x14;
+    /* ST_CALLSITE[0057D120]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_00,'\x0e',
                uVar4 + (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0x14);
+    /* ST_CALLSITE[0057D12D]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
     STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',uVar4 + (iVar3 / 3) * 0x14);
     break;
   default:
     goto switchD_0057cff4_default;
   }
+  /* ST_CALLSITE[0057D289]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
   STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
 switchD_0057cff4_default:
   this->field_023F = this->field_023F + 1;
+  /* ST_CALLSITE[0057D29F]: CALL dword ptr [EDX + 0xd8] */
   this->vfunc_D8();
   return;
 }

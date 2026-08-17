@@ -16,6 +16,7 @@ undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
       (7 < g_bulkInitializedRecords_008087C7[param_1].field_0022)))) {
     return 0;
   }
+  /* ST_CALLSITE[004E8B44]: CALL dword ptr [EAX + 0x2c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(*(int *)this + 0x2c))();
   if (iVar3 == 0x37) {
@@ -24,6 +25,7 @@ undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
     }
     return 0;
   }
+  /* ST_CALLSITE[004E8B63]: CALL dword ptr [EDX + 0x2c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(*(int *)this + 0x2c))();
   if (iVar3 != 0x6c) {

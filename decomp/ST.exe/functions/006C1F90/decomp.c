@@ -15,6 +15,7 @@ undefined4 FUN_006c1f90(int param_1)
   if ((param_1 < 0) || (0x1f < param_1)) {
     return 0xfffffffc;
   }
+  /* ST_CALLSITE[006C1FC3]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
   piVar1 = DAT_00854ff4;
   if (DAT_00854ff4 != nullptr) {
@@ -33,11 +34,13 @@ undefined4 FUN_006c1f90(int param_1)
       }
       piVar1 = piVar2;
       if (piVar2 == nullptr) {
+        /* ST_CALLSITE[006C2005]: CALL dword ptr [0x0085bb90] */
         LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
         return 0;
       }
     } while( true );
   }
+  /* ST_CALLSITE[006C2023]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
   return local_8;
 }

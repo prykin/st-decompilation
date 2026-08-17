@@ -28,6 +28,7 @@ void CreatePlaySystem(void)
       g_playSystem_00802A38 = nullptr;
     }
     else {
+      /* ST_CALLSITE[0054C78B]: CALL 0x00401ffa; direct=00401FFA STPlaySystemC::STPlaySystemC */
       g_playSystem_00802A38 = STPlaySystemC::STPlaySystemC(this,g_app_00806728);
     }
     if (g_playSystem_00802A38 == nullptr) {
@@ -35,14 +36,22 @@ void CreatePlaySystem(void)
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0x7d);
     }
     g_playSystem_00802A38->field_00E0 = 0;
+    /* ST_CALLSITE[0054C7C9]: CALL dword ptr [EAX] */
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     g_playSystem_00802A38->InitSystem(unaff_ESI);
+    /* ST_CALLSITE[0054C7E3]: CALL dword ptr [EDX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x1100,0,0xa174,0,0);
+    /* ST_CALLSITE[0054C7FB]: CALL dword ptr [EAX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x109,0,0,0,0);
+    /* ST_CALLSITE[0054C813]: CALL dword ptr [EDX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x121,0,0,0,0);
+    /* ST_CALLSITE[0054C82E]: CALL dword ptr [EAX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x143,0x1794,0,0,0);
+    /* ST_CALLSITE[0054C849]: CALL dword ptr [EDX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x145,0x17a0,0,0,0);
+    /* ST_CALLSITE[0054C864]: CALL dword ptr [EAX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x146,0x17ac,0,0,0);
+    /* ST_CALLSITE[0054C87F]: CALL dword ptr [EDX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x15b,0x1780,0,0,0);
     thunk_FUN_0058d6f0();
     if (DAT_0080879c == 0) {
@@ -54,6 +63,7 @@ void CreatePlaySystem(void)
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
       } while (bVar3 < 8);
     }
+    /* ST_CALLSITE[0054C8B2]: CALL 0x004051c8; direct=004051C8 CreateAi */
     CreateAi();
     if (g_cMf32_00806754 != nullptr) {
       local_c = &local_8;

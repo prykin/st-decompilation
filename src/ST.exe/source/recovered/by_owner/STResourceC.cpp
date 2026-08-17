@@ -15,6 +15,7 @@ void __thiscall st::fn_005802A0(STResourceC *this,int param_1,int param_2)
   short sVar3;
   AnonShape_004E0250_5A3B9236 *pAVar4;
 
+  /* ST_CALLSITE[005802B0]: CALL 0x00402973; direct=00402973 STResourceC::SetResource */
   st::fn_00402973(this,param_1,param_2);
   if (this->field_025D == 1) {
     sVar1 = this->field_0245;
@@ -53,10 +54,12 @@ void __thiscall st::fn_00580D30(STResourceC *this,int param_1)
   }
   uVar1 = 0;
   if (this->field_0259 != 0) {
+    /* ST_CALLSITE[00580D58]: CALL 0x0040492b; direct=0040492B STResourceC::sub_005802A0 */
     st::fn_0040492B(this,0,0);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar1 = extraout_var;
   }
+  /* ST_CALLSITE[00580D69]: CALL 0x00401541; direct=00401541 STAllPlayersC::UnRegisterDeposit */
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   st::fn_00401541(g_allPlayers_007FA174,CONCAT22(uVar1,this->field_0032),this);
   st::fn_00404D04(this);

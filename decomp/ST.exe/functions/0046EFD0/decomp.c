@@ -49,6 +49,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
       return local_EAX_90;
     }
   case CASE_7:
+    /* ST_CALLSITE[0046F008]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
     local_EAX_56 = sub_00460360(this);
     break;
   case CASE_2:
@@ -57,12 +58,15 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
   case CASE_4:
     SVar1 = this->field_0550;
     if (((SVar1 == CASE_0) || (SVar1 == CASE_1)) || (SVar1 == CASE_2)) {
+      /* ST_CALLSITE[0046F251]: CALL 0x00403c0b; direct=00403C0B STBoatC::sub_0048D930 */
       sub_0048D930(this);
+      /* ST_CALLSITE[0046F25A]: CALL dword ptr [EDX + 0xd8] */
       iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }
     if (SVar1 == CASE_3) {
       iVar5 = STReplaceLowWord((uint32_t)(this), (uint16_t)(this->field_053E * 0xc9)) + 100;
+      /* ST_CALLSITE[0046F0AC]: CALL dword ptr [EDX + 0x10] */
       uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
@@ -73,6 +77,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
     }
     if (this->field_0550 != CASE_4) {
       if (this->field_0550 == CASE_5) {
+        /* ST_CALLSITE[0046F1B0]: CALL 0x00402455; direct=00402455 sub_00415B30 */
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_053C * 0xc9 + 100,this->field_053E * 0xc9 + 100,
                      this->field_0540 * 200 + 100,this->field_0061);
@@ -81,6 +86,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
       if (this->field_0550 != CASE_6) {
         return 2;
       }
+      /* ST_CALLSITE[0046F1CD]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
       iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if (iVar5 == -1) {
         local_EAX_603 =
@@ -93,13 +99,17 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
         goto cf_error_exit_0046F13E;
       }
       if (iVar5 != 0) {
+        /* ST_CALLSITE[0046F1DF]: CALL dword ptr [EDX + 0xd8] */
         iVar5 = this->vfunc_D8();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
+      /* ST_CALLSITE[0046F1F8]: CALL 0x00403c0b; direct=00403C0B STBoatC::sub_0048D930 */
       sub_0048D930(this);
       goto LAB_0046f1fd;
     }
+    /* ST_CALLSITE[0046F0D9]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
     uVar4 = sub_004176C0(this,this->field_0542);
+    /* ST_CALLSITE[0046F0E1]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
     uVar4 = sub_00417910(this,(short)uVar4);
     if (uVar4 != 0xffffffff) {
       if (uVar4 == 0) {
@@ -116,6 +126,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
     iVar5 = 0x282a;
     goto cf_error_exit_0046F13E;
   case CASE_5:
+    /* ST_CALLSITE[0046F26E]: CALL 0x00403c0b; direct=00403C0B STBoatC::sub_0048D930 */
     sub_0048D930(this);
     pSVar6 = (STBoatC *)(this->field_0548 + 1);
     this->field_0548 = (int)pSVar6;
@@ -125,6 +136,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
   case CASE_6:
     if (this->field_0550 == CASE_0) {
       iVar5 = STReplaceLowWord((uint32_t)(pSVar6), (uint16_t)(this->field_053E * 0xc9)) + 100;
+      /* ST_CALLSITE[0046F2EC]: CALL dword ptr [EDX + 0x10] */
       uVar3 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(this->field_0045)),
@@ -134,13 +146,16 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
       this->field_0550 = CASE_1;
     }
     if (this->field_0550 == CASE_1) {
+      /* ST_CALLSITE[0046F315]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
       uVar4 = sub_004176C0(this,this->field_0542);
+      /* ST_CALLSITE[0046F31D]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 != 0xffffffff) {
         if (uVar4 == 0) {
           this->field_0550 = CASE_2;
         }
 cf_common_exit_0046F0F9:
+        /* ST_CALLSITE[0046F0FD]: CALL dword ptr [EAX + 0xd8] */
         iVar5 = this->vfunc_D8();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
@@ -154,6 +169,7 @@ cf_common_exit_0046F0F9:
     }
     else {
       if (this->field_0550 == CASE_2) {
+        /* ST_CALLSITE[0046F3BC]: CALL 0x00402455; direct=00402455 sub_00415B30 */
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_053C * 0xc9 + 100,this->field_053E * 0xc9 + 100,
                      this->field_0540 * 200 + 100,this->field_0061);
@@ -169,13 +185,16 @@ switchD_0046eff1_default:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
+      /* ST_CALLSITE[0046F3D9]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
       iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if (iVar5 != -1) {
         if (iVar5 != 0) {
+          /* ST_CALLSITE[0046F3EF]: CALL dword ptr [EDX + 0xd8] */
           iVar5 = this->vfunc_D8();
           return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
         }
 LAB_0046f1fd:
+        /* ST_CALLSITE[0046F201]: CALL dword ptr [EAX + 0xd8] */
         iVar5 = this->vfunc_D8();
         return -(uint)(iVar5 != 0);
       }
@@ -194,6 +213,7 @@ cf_error_exit_0046F13E:
     goto switchD_0046eff1_default;
   }
   if (local_EAX_56 == 0) {
+    /* ST_CALLSITE[0046F015]: CALL 0x00403c0b; direct=00403C0B STBoatC::sub_0048D930 */
     sub_0048D930(this);
   }
   return local_EAX_56;

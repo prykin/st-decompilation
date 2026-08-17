@@ -14,6 +14,7 @@ void __thiscall st::fn_005711D0(void *this,int *param_1)
     st::fn_006E4C30(this,*param_1);
     st::fn_006E4B80(this,*param_1);
     st::fn_006E4D20(this,(DebugSystemC *)*param_1);
+    /* ST_CALLSITE[005711FE]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)*param_1 + 4))();
     st::fn_0072E2B0((HoloTy *)*param_1);
@@ -60,6 +61,7 @@ LPSTR __cdecl st::fn_00571240(char *text,int param_2)
     text_00 = "%s%d";
   }
   pCVar2 = st::pointer_boundary_cast<LPSTR>(&DAT_00803520 + (uint)DAT_008067a1 * 0x200);
+  /* ST_CALLSITE[005712BC]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(pCVar2,text_00,text,pcVar1);
   if (DAT_008067a1 == 0x18) {
     DAT_008067a1 = 0;
@@ -153,7 +155,7 @@ bool st::fn_00571810(char *param_1)
   st::fn_0072E340((char *)&param_1,param_1,4);
   param_1 = (char *)((uint)param_1 & 0xffffff);
   st::fn_006B77E0((char *)&param_1,(byte *)&param_1);
-  pbVar3 = st::pointer_boundary_cast<byte *>(&DAT_007ca2e4);
+  pbVar3 = &DAT_007ca2e4;
   ppcVar2 = &param_1;
   while( true ) {
     bVar1 = *(byte *)ppcVar2;
@@ -203,6 +205,7 @@ void __fastcall st::fn_005718D0(int param_1)
       st::fn_006C44E0(g_dDXContext_0080759C,local_1c);
       iVar2 = local_c;
       if (local_8 != (LPBITMAPINFO)0x0) {
+        /* ST_CALLSITE[00571992]: CALL dword ptr [0x0085bde8] */
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         st::external_00000080(local_164,st::mutable_c_string("%sscr%03d.bmp"),local_c + 0x60,
                   (uint)*(ushort *)(local_c + 0x1138));
@@ -318,6 +321,7 @@ uint st::fn_00571C90(int param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STSprGameObjC *in_ECX;
 
+  /* ST_CALLSITE[00571C98]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   iVar1 = st::fn_00404F07(in_ECX,(STMessage *)param_1);
   if (iVar1 == 0xffff) {
@@ -387,6 +391,7 @@ uint st::fn_00571DC0(void)
   undefined2 local_c;
   uint local_8;
 
+  /* ST_CALLSITE[00571DC8]: CALL dword ptr [0x0085bc48] */
   UVar1 = st::external_00000047();
   local_10 = 0;
   local_14 = DAT_007ca690;
@@ -396,6 +401,7 @@ uint st::fn_00571DC0(void)
     local_8 = UVar1;
     if ((UVar1 & 1) != 0) {
       local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)((char)iVar2 + 'A'));
+      /* ST_CALLSITE[00571DFA]: CALL ESI */
       UVar1 = st::external_0000004E((LPCSTR)&local_14);
       if (UVar1 == 5) break;
     }
@@ -438,74 +444,94 @@ undefined4 __thiscall st::fn_00571E40(void *this,LPDWORD lpcbData)
   DWORD local_10 [2];
   HKEY local_8;
 
+  /* ST_CALLSITE[00571E5C]: CALL dword ptr [0x0085b958] */
   LVar4 = st::external_000000C5((HKEY)&DAT_80000001,st::pointer_boundary_cast<LPCSTR>("SOFTWARE\\Ellipse Studios\\Submarine Titans\\Directories"),st::pointer_boundary_cast<PHKEY>(&local_8));
   pcVar9 = st::pointer_boundary_cast<code *>(PTR_RegQueryValueExA_0085b954);
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   pBVar1 = (LPBYTE)((int)this + 0x28);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571E8D]: CALL ESI */
   LVar4 = st::external_000000C4(local_8,st::pointer_boundary_cast<LPCSTR>("MainPath"),(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
+    /* ST_CALLSITE[00571E97]: CALL dword ptr [0x0085b968] */
     st::external_000000C9(local_8);
     return 0;
   }
   st::fn_006B8280((char *)pBVar1,(char *)pBVar1);
   local_11 = STField<undefined1>(this,0x2b);
   STField<undefined1>(this,0x2b) = 0;
+  /* ST_CALLSITE[00571EBA]: CALL dword ptr [0x0085bc64] */
   UVar5 = st::external_0000004E((LPCSTR)pBVar1);
   STField<undefined1>(this,0x2b) = local_11;
   if (UVar5 != 3) {
+    /* ST_CALLSITE[00571ECF]: CALL dword ptr [0x0085b968] */
     st::external_000000C9(local_8);
     return 0;
   }
   pBVar1 = (LPBYTE)((int)this + 300);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571F01]: CALL ESI */
   LVar4 = st::external_000000C4(local_8,st::pointer_boundary_cast<LPCSTR>("VideoPath"),(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   st::fn_006B8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x438);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571F33]: CALL ESI */
   LVar4 = st::external_000000C4(local_8,st::pointer_boundary_cast<LPCSTR>("DataPath"),(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
+    /* ST_CALLSITE[00571F3D]: CALL dword ptr [0x0085b968] */
     st::external_000000C9(local_8);
     return 0;
   }
   st::fn_006B8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x230);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571F76]: CALL ESI */
   LVar4 = st::external_000000C4(local_8,st::pointer_boundary_cast<LPCSTR>("SoundPath"),(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
+    /* ST_CALLSITE[00571F80]: CALL dword ptr [0x0085b968] */
     st::external_000000C9(local_8);
     return 0;
   }
   st::fn_006B8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x334);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571FB9]: CALL ESI */
   LVar4 = st::external_000000C4(local_8,st::pointer_boundary_cast<LPCSTR>("MusicPath"),(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   st::fn_006B8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x53c);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571FEB]: CALL ESI */
   LVar4 = st::external_000000C4(local_8,st::pointer_boundary_cast<LPCSTR>("InstPath"),(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
+    /* ST_CALLSITE[00571FF5]: CALL dword ptr [0x0085b968] */
     st::external_000000C9(local_8);
     return 0;
   }
   st::fn_006B8280((char *)pBVar1,(char *)pBVar1);
+  /* ST_CALLSITE[00572017]: CALL EDI */
   st::external_000000C9(local_8);
+  /* ST_CALLSITE[0057202F]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(local_124,st::mutable_c_string("%s%s"),(int)this + 0x28,st_global_0079B0CC);
+  /* ST_CALLSITE[00572041]: CALL dword ptr [0x0085bc7c] */
   st::external_00000054(local_124,(LPSECURITY_ATTRIBUTES)0x0);
+  /* ST_CALLSITE[00572055]: CALL dword ptr [0x0085b958] */
   LVar4 = st::external_000000C5((HKEY)&DAT_80000001,st::pointer_boundary_cast<LPCSTR>("SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version"),st::pointer_boundary_cast<PHKEY>(&local_8));
   if (LVar4 != 0) {
 LAB_00572086:
+    /* ST_CALLSITE[0057208A]: CALL EDI */
     st::external_000000C9(local_8);
     return 0;
   }
   local_10[1] = 4;
+  /* ST_CALLSITE[00572080]: CALL ESI */
   LVar4 = st::external_000000C4(local_8,st::pointer_boundary_cast<LPCSTR>("Version"),(LPDWORD)0x0,local_10,
                            (LPBYTE)((int)this + 0x77d),local_10 + 1);
   if (LVar4 != 0) goto LAB_00572086;
   lpData = (uint *)((int)this + 0x779);
   local_10[1] = 4;
+  /* ST_CALLSITE[005720B8]: CALL ESI */
   LVar4 = st::external_000000C4(local_8,st::pointer_boundary_cast<LPCSTR>(&DAT_007ca4f8),(LPDWORD)0x0,local_10,(LPBYTE)lpData,local_10 + 1);
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   uVar6 = *lpData >> 0x10;
@@ -517,13 +543,16 @@ LAB_005720f0:
   }
   else if (uVar6 != 0xffff) goto LAB_005720f0;
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00572119]: CALL ESI */
   LVar4 = st::external_000000C4(local_8,st::pointer_boundary_cast<LPCSTR>("Folder"),(LPDWORD)0x0,local_10,
                            (LPBYTE)((int)this + 0x645),local_10 + 1);
   if (LVar4 != 0) {
+    /* ST_CALLSITE[00572123]: CALL dword ptr [0x0085b968] */
     st::external_000000C9(local_8);
     return 0;
   }
   local_10[1] = 0x30;
+  /* ST_CALLSITE[00572155]: CALL ESI */
   LVar4 = st::external_000000C4(local_8,st::pointer_boundary_cast<LPCSTR>(&DAT_007ca508),(LPDWORD)0x0,local_10,(LPBYTE)((int)this + 0x749),
                            local_10 + 1);
   if (LVar4 != 0) {
@@ -553,32 +582,40 @@ LAB_005720f0:
   }
   memset((void *)((int)this + 0x785), 0, 0x40); /* compiler bulk-zero initialization */
   local_10[1] = 0x40;
+  /* ST_CALLSITE[005721B3]: CALL ESI */
   iVar8 = (*pcVar9)(local_8,"LastPlayer",0,local_10,(undefined4 *)((int)this + 0x785),
                     local_10 + 1);
   if (iVar8 == 0) {
     local_10[1] = 4;
+    /* ST_CALLSITE[005721DE]: CALL ESI */
     iVar8 = (*pcVar9)(local_8,"CharSet",0,local_10,(int)this + 0x781,local_10 + 1);
     if (iVar8 != 0) {
+      /* ST_CALLSITE[005721E8]: CALL dword ptr [0x0085b968] */
       st::external_000000C9(local_8);
       return 0;
     }
     memset((void *)((int)this + 0xdae), 0, 0x40); /* compiler bulk-zero initialization */
     local_10[1] = 0x40;
+    /* ST_CALLSITE[00572225]: CALL ESI */
     iVar8 = (*pcVar9)(local_8,"Server",0,local_10,(undefined4 *)((int)this + 0xdae),
                       local_10 + 1);
     if (iVar8 == 0) {
       if (((uint)lpcbData & 2) != 0) {
         local_20 = 0x100;
+        /* ST_CALLSITE[00572254]: CALL ESI */
         iVar8 = (*pcVar9)(local_8,"Editor",0,local_10,&DAT_008071f8,&local_20);
         if (iVar8 != 0) {
+          /* ST_CALLSITE[0057225E]: CALL dword ptr [0x0085b968] */
           st::external_000000C9(local_8);
           return 0;
         }
       }
       if (((uint)lpcbData & 1) != 0) {
         lpcbData = (LPDWORD)0x5;
+        /* ST_CALLSITE[0057229A]: CALL ESI */
         iVar8 = (*pcVar9)(local_8,"CDAudioDrive",0,local_10,(int)this + 0x640,&lpcbData);
         if (iVar8 != 0) {
+          /* ST_CALLSITE[005722A4]: CALL dword ptr [0x0085b968] */
           st::external_000000C9(local_8);
           return 0;
         }
@@ -605,6 +642,7 @@ LAB_005722ed:
           local_18 = 0;
           local_14 = 0;
           auto _local_1c = STReplaceLowByte((uint32_t)(DAT_007ca690), (uint8_t)(STField<undefined1>(this,0x640)));
+          /* ST_CALLSITE[0057230F]: CALL dword ptr [0x0085bc64] */
           UVar5 = st::external_0000004E(st::pointer_boundary_cast<LPCSTR>(&local_1c));
           if (UVar5 == 5) {
             uVar6 = 0xffffffff;
@@ -655,11 +693,13 @@ LAB_005722ed:
         }
         st::fn_004026A8(st::pointer_boundary_cast<AnonReceiver_00573260 *>(this));
       }
+      /* ST_CALLSITE[00572379]: CALL dword ptr [0x0085b968] */
       st::external_000000C9(local_8);
       return 1;
     }
   }
 cf_common_exit_0057238D:
+  /* ST_CALLSITE[00572391]: CALL dword ptr [0x0085b968] */
   st::external_000000C9(local_8);
   return 0;
 }
@@ -704,8 +744,10 @@ void __fastcall st::fn_00572510(AnonShape_00572510_F06DC155 *param_1)
   param_1->field_0DEE = 0;
   if (param_1->field_0785 != '\0') {
     local_10 = param_1;
+    /* ST_CALLSITE[0057255D]: CALL dword ptr [0x0085bde8] */
     st::external_00000080((LPSTR)local_15c,st::mutable_c_string("%s%s%s"),&param_1->field_0x28,st_global_0079B0CC,
               local_8);
+    /* ST_CALLSITE[00572574]: CALL dword ptr [0x0085bcec] */
     hFindFile = st::external_00000070((LPCSTR)local_15c,st::pointer_boundary_cast<LPWIN32_FIND_DATAA>(&local_29c));
     if (hFindFile != (HANDLE)0xffffffff) {
       do {
@@ -713,13 +755,16 @@ void __fastcall st::fn_00572510(AnonShape_00572510_F06DC155 *param_1)
           local_c = 1;
           break;
         }
+        /* ST_CALLSITE[00572599]: CALL dword ptr [0x0085bcf0] */
         BVar3 = st::external_00000071(hFindFile,st::pointer_boundary_cast<LPWIN32_FIND_DATAA>(&local_29c));
       } while (BVar3 != 0);
     }
     if (hFindFile != (HANDLE)0xffffffff) {
+      /* ST_CALLSITE[005725B2]: CALL dword ptr [0x0085bcf4] */
       st::external_00000072(hFindFile);
     }
     if (local_c != 0) {
+      /* ST_CALLSITE[005725E2]: CALL dword ptr [0x0085bde8] */
       st::external_00000080((LPSTR)local_15c,st::mutable_c_string("%s%s%s\\%s"),&param_1->field_0x28,st_global_0079B0CC,
                 local_8,PTR_s_PL_LOG_0079b0d0);
       local_58.previous = g_currentExceptionFrame;
@@ -789,7 +834,7 @@ void __fastcall st::fn_00572510(AnonShape_00572510_F06DC155 *param_1)
             st::fn_00404769(this,(LPDWORD)0x0,(PHKEY)0x1);
           }
           pcVar5 = &CHAR_N_007ca694;
-          pbVar12 = st::pointer_boundary_cast<byte *>(&this->field_0x640);
+          pbVar12 = &this->field_0x640;
           do {
             bVar2 = *pbVar12;
             bVar13 = bVar2 < (byte)*pcVar5;
@@ -852,10 +897,13 @@ undefined4 __thiscall st::fn_00572920(void *this,byte param_1)
   local_c = 1;
   local_10 = this;
   if ((param_1 & 1) != 0) {
+    /* ST_CALLSITE[00572958]: CALL EBX */
     LVar3 = st::external_000000C5((HKEY)&DAT_80000001,st::pointer_boundary_cast<LPCSTR>("SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version"),st::pointer_boundary_cast<PHKEY>(&local_8));
     if (LVar3 == 0) {
+      /* ST_CALLSITE[00572972]: CALL dword ptr [0x0085b95c] */
       st::external_000000C6(local_8,st::pointer_boundary_cast<LPCSTR>("LastPlayer"),0,1,(BYTE *)((int)this + 0x785),0x40);
     }
+    /* ST_CALLSITE[0057297C]: CALL dword ptr [0x0085b968] */
     st::external_000000C9(local_8);
     _DAT_008072f8 = 0;
     _DAT_008072fc = 0x82;
@@ -864,9 +912,12 @@ undefined4 __thiscall st::fn_00572920(void *this,byte param_1)
       _DAT_008072f8 = _DAT_008072f8 + (uint)(byte)(&DAT_008072f8)[uVar4];
       uVar4 = uVar4 + 1;
     } while (uVar4 < 0x82);
+    /* ST_CALLSITE[005729D6]: CALL ESI */
     st::external_00000080((LPSTR)local_158,st::mutable_c_string("%s%s%s"),(int)this + 0x28,st_global_0079B0CC,
               (int)this + 0x785);
+    /* ST_CALLSITE[005729E4]: CALL dword ptr [0x0085bc7c] */
     st::external_00000054((LPCSTR)local_158,(LPSECURITY_ATTRIBUTES)0x0);
+    /* ST_CALLSITE[00572A04]: CALL ESI */
     st::external_00000080((LPSTR)local_158,st::mutable_c_string("%s\\%s"),local_158,PTR_s_PL_LOG_0079b0d0);
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
@@ -874,7 +925,7 @@ undefined4 __thiscall st::fn_00572920(void *this,byte param_1)
     if (iVar5 == 0) {
       this_00 = (cMf32 *)st::fn_006F0EC0(0x345,local_158,2,0,0);
       if (this_00 != nullptr) {
-        st::fn_006F13F0(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079b0d4,st::pointer_boundary_cast<byte *>(&DAT_008072f8),0x82,nullptr
+        st::fn_006F13F0(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079b0d4,&DAT_008072f8,0x82,nullptr
                       ,'\0',nullptr);
         pvVar1 = local_10;
         st::fn_006F13F0(this_00,0xc,PTR_s_LASTLOG_0079b0e8,(byte *)((int)local_10 + 0x7c5),0x40,
@@ -892,10 +943,13 @@ undefined4 __thiscall st::fn_00572920(void *this,byte param_1)
   }
   uVar2 = local_c;
   if ((param_1 & 2) != 0) {
+    /* ST_CALLSITE[00572AE5]: CALL EBX */
     LVar3 = st::external_000000C5((HKEY)&DAT_80000001,st::pointer_boundary_cast<LPCSTR>("SOFTWARE\\Ellipse Studios\\Submarine Titans"),st::pointer_boundary_cast<PHKEY>(&local_8));
     if (LVar3 == 0) {
+      /* ST_CALLSITE[00572B01]: CALL dword ptr [0x0085b95c] */
       st::external_000000C6(local_8,st::pointer_boundary_cast<LPCSTR>("Editor"),0,3,(BYTE *)&DAT_008071f8,0x100);
     }
+    /* ST_CALLSITE[00572B0B]: CALL dword ptr [0x0085b968] */
     st::external_000000C9(local_8);
   }
   return uVar2;
@@ -916,6 +970,7 @@ undefined4 __fastcall st::fn_00572BA0(int param_1)
 
   local_8 = 1;
   local_c = param_1;
+  /* ST_CALLSITE[00572BD8]: CALL dword ptr [0x0085bde8] */
   st::external_00000080((LPSTR)local_154,st::mutable_c_string("%s%s%s\\%s"),param_1 + 0x28,st_global_0079B0CC,
             param_1 + 0x785,PTR_s_PL_LOG_0079b0d0);
   local_50.previous = g_currentExceptionFrame;
@@ -971,17 +1026,23 @@ undefined4 __thiscall st::fn_00572D30(void *this,BYTE *param_1,BYTE *param_2)
   char *local_c;
   HKEY local_8;
 
+  /* ST_CALLSITE[00572D49]: CALL dword ptr [0x0085b960] */
   LVar3 = st::external_000000C7((HKEY)&DAT_80000002,st::pointer_boundary_cast<LPCSTR>("SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version"),st::pointer_boundary_cast<PHKEY>(&local_8));
   pcVar10 = st::pointer_boundary_cast<code *>(PTR_RegSetValueExA_0085b95c);
   if (LVar3 == 0) {
+    /* ST_CALLSITE[00572D72]: CALL ESI */
     LVar3 = st::external_000000C6(local_8,st::pointer_boundary_cast<LPCSTR>(&DAT_007ca4f8),0,4,(BYTE *)((int)this + 0x779),4);
     if ((((LVar3 == 0) &&
+         /* ST_CALLSITE[00572D91]: CALL ESI */
          (LVar3 = st::external_000000C6(local_8,st::pointer_boundary_cast<LPCSTR>("Version"),0,4,(BYTE *)((int)this + 0x77d),4),
          LVar3 == 0)) &&
+        /* ST_CALLSITE[00572DB3]: CALL ESI */
         (LVar3 = st::external_000000C6(local_8,st::pointer_boundary_cast<LPCSTR>("Folder"),0,1,(BYTE *)((int)this + 0x645),0x104),
         LVar3 == 0)) &&
+       /* ST_CALLSITE[00572DD2]: CALL ESI */
        ((LVar3 = st::external_000000C6(local_8,st::pointer_boundary_cast<LPCSTR>(&DAT_007ca508),0,1,(BYTE *)((int)this + 0x749),0x30),
         LVar3 == 0 &&
+        /* ST_CALLSITE[00572DF1]: CALL ESI */
         (LVar3 = st::external_000000C6(local_8,st::pointer_boundary_cast<LPCSTR>("LastPlayer"),0,1,(BYTE *)((int)this + 0x785),0x40),
         LVar3 == 0)))) {
       if (param_1 != nullptr) {
@@ -990,6 +1051,7 @@ undefined4 __thiscall st::fn_00572D30(void *this,BYTE *param_1,BYTE *param_2)
         local_14 = 0;
         uVar4 = st::fn_00401D84();
         local_1c[0] = STReplaceLowByte((uint32_t)(local_1c[0]), (uint8_t)((char)uVar4));
+        /* ST_CALLSITE[00572E26]: CALL dword ptr [0x0085bc64] */
         UVar4 = st::external_0000004E((LPCSTR)local_1c);
         if (UVar4 != 5) {
           uVar6 = 0xffffffff;
@@ -1033,22 +1095,30 @@ undefined4 __thiscall st::fn_00572D30(void *this,BYTE *param_1,BYTE *param_2)
           pcVar11 = pcVar11 + 1;
         }
       }
+      /* ST_CALLSITE[00572EA5]: CALL ESI */
       (*pcVar10)(local_8,"CDAudioDrive",0,1,(int)this + 0x640,5);
+      /* ST_CALLSITE[00572EBD]: CALL ESI */
       iVar5 = (*pcVar10)(local_8,"CharSet",0,4,(int)this + 0x781,4);
       if (iVar5 != 0) {
+        /* ST_CALLSITE[00572EC7]: CALL dword ptr [0x0085b968] */
         st::external_000000C9(local_8);
         return 0;
       }
+      /* ST_CALLSITE[00572EEE]: CALL ESI */
       iVar5 = (*pcVar10)(local_8,"Server",0,1,(int)this + 0xdae,0x40);
       if (iVar5 != 0) {
+        /* ST_CALLSITE[00572EF8]: CALL dword ptr [0x0085b968] */
         st::external_000000C9(local_8);
         return 0;
       }
       if ((((uint)param_2 & 2) != 0) &&
+         /* ST_CALLSITE[00572F26]: CALL ESI */
          (iVar5 = (*pcVar10)(local_8,"Editor",0,3,&DAT_008071f8,0x100), iVar5 != 0)) {
+        /* ST_CALLSITE[00572F30]: CALL dword ptr [0x0085b968] */
         st::external_000000C9(local_8);
         return 0;
       }
+      /* ST_CALLSITE[00572F45]: CALL dword ptr [0x0085b968] */
       st::external_000000C9(local_8);
       pcVar9 = (char *)((int)this + 0x28);
       st::fn_006B8280(pcVar9,pcVar9);
@@ -1062,44 +1132,59 @@ undefined4 __thiscall st::fn_00572D30(void *this,BYTE *param_1,BYTE *param_2)
       st::fn_006B8280(pcVar1,pcVar1);
       pcVar8 = (char *)((int)this + 0x53c);
       st::fn_006B8280(pcVar8,pcVar8);
+      /* ST_CALLSITE[00572FB0]: CALL dword ptr [0x0085b960] */
       LVar3 = st::external_000000C7((HKEY)&DAT_80000002,st::pointer_boundary_cast<LPCSTR>("SOFTWARE\\Ellipse Studios\\Submarine Titans\\Directories"),st::pointer_boundary_cast<PHKEY>(&local_8)
                            );
       if (LVar3 == 0) {
+        /* ST_CALLSITE[00572FD0]: CALL ESI */
         iVar5 = (*pcVar10)(local_8,"MainPath",0,1,pcVar9,0x104);
         if (iVar5 != 0) {
+          /* ST_CALLSITE[00572FDA]: CALL dword ptr [0x0085b968] */
           st::external_000000C9(local_8);
           return 0;
         }
+        /* ST_CALLSITE[00573001]: CALL ESI */
         iVar5 = (*pcVar10)(local_8,"SoundPath",0,1,pcVar11,0x104);
         if (iVar5 != 0) {
+          /* ST_CALLSITE[0057300B]: CALL dword ptr [0x0085b968] */
           st::external_000000C9(local_8);
           return 0;
         }
+        /* ST_CALLSITE[00573032]: CALL ESI */
         iVar5 = (*pcVar10)(local_8,"MusicPath",0,1,pcVar1,0x104);
         if (iVar5 != 0) {
+          /* ST_CALLSITE[0057303C]: CALL dword ptr [0x0085b968] */
           st::external_000000C9(local_8);
           return 0;
         }
+        /* ST_CALLSITE[00573063]: CALL ESI */
         iVar5 = (*pcVar10)(local_8,"VideoPath",0,1,local_c,0x104);
         if (iVar5 == 0) {
+          /* ST_CALLSITE[00573094]: CALL ESI */
           iVar5 = (*pcVar10)(local_8,"DataPath",0,1,local_10,0x104);
           if (iVar5 != 0) {
+            /* ST_CALLSITE[0057309E]: CALL dword ptr [0x0085b968] */
             st::external_000000C9(local_8);
             return 0;
           }
+          /* ST_CALLSITE[005730C2]: CALL ESI */
           iVar5 = (*pcVar10)(local_8,"InstPath",0,1,pcVar8,0x104);
           if (iVar5 == 0) {
+            /* ST_CALLSITE[005730E1]: CALL dword ptr [0x0085b968] */
             st::external_000000C9(local_8);
             return 1;
           }
+          /* ST_CALLSITE[005730CC]: CALL dword ptr [0x0085b968] */
           st::external_000000C9(local_8);
           return 0;
         }
+        /* ST_CALLSITE[0057306D]: CALL dword ptr [0x0085b968] */
         st::external_000000C9(local_8);
         return 0;
       }
     }
     else {
+      /* ST_CALLSITE[005730F9]: CALL dword ptr [0x0085b968] */
       st::external_000000C9(local_8);
     }
   }
@@ -1192,12 +1277,15 @@ void __thiscall st::fn_005734C0(void *this,LPDWORD lpcbData,PHKEY phkResult)
     memset(&DAT_008071f8, 0, 0x100); /* compiler bulk-zero initialization */
   }
   if (lpcbData == (LPDWORD)0x0) goto LAB_005737e5;
+  /* ST_CALLSITE[00573628]: CALL dword ptr [0x0085b958] */
   LVar3 = st::external_000000C5((HKEY)&DAT_80000001,st::pointer_boundary_cast<LPCSTR>("SOFTWARE\\Microsoft\\Windows\\CurrentVersion"),
                       (PHKEY)&phkResult);
   if (LVar3 == 0) {
     lpcbData = (LPDWORD)0x40;
+    /* ST_CALLSITE[00573652]: CALL dword ptr [0x0085b954] */
     LVar3 = st::external_000000C4((HKEY)phkResult,st::pointer_boundary_cast<LPCSTR>("RegisteredOwner"),(LPDWORD)0x0,
                              (LPDWORD)&local_8,(LPBYTE)((int)this + 0x785),(LPDWORD)&lpcbData);
+    /* ST_CALLSITE[00573662]: CALL dword ptr [0x0085b968] */
     st::external_000000C9((HKEY)phkResult);
     if (LVar3 != 0) goto LAB_0057366c;
   }
@@ -1356,8 +1444,10 @@ undefined4 __fastcall st::fn_005738D0(AnonShape_005738D0_F693E267 *param_1)
   st::fn_00404769(param_1,(LPDWORD)0x0,(PHKEY)0x1);
   st::fn_004026A8
             ((AnonReceiver_00573260 *)param_1);
+  /* ST_CALLSITE[0057390A]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(local_108,st::mutable_c_string("%s%s%s"),&param_1->field_0x28,st_global_0079B0CC,
             &param_1->field_0x785);
+  /* ST_CALLSITE[0057391C]: CALL dword ptr [0x0085bc7c] */
   st::external_00000054(local_108,(LPSECURITY_ATTRIBUTES)0x0);
   iVar1 = st::fn_004042B9(param_1,1);
   if (iVar1 != 0) {
@@ -1753,7 +1843,7 @@ cf_break_loop_00574651:
                       if ((int)uVar9 < 0) {
                         uVar9 = (uVar9 - 1 | 0xfffffffc) + 1;
                       }
-                      bVar5 = *(byte *)(uVar9 + 0x7ca6a8);
+                      bVar5 = ((byte *)uVar9)[0x7ca6a8];
                     }
                     pbVar12 = (byte *)((int)local_24 +
                                       (STSignedDiv4(uVar10)) +
@@ -1834,8 +1924,8 @@ st::fn_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,und
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079b0f8);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_0079b0f8;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 8);
   local_4c = nullptr;
@@ -1896,7 +1986,7 @@ st::fn_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,und
           local_8 = 0;
           iVar8 = (uint)(byte)param_1->field_0x4 << 1;
           st::fn_006B03D0(*(char **)(iVar3 + 0xc),*(char **)(iVar3 + 0x14),iVar8,iVar8,
-                       *(char *)(iVar3 + 10));
+                       ((char *)iVar3)[10]);
           local_8 = 0xffffffff;
         }
         else {
@@ -1922,7 +2012,7 @@ LAB_00574b14:
           *(int *)(iVar3 + 0xc) = piVar12[2];
         }
       }
-      if ((local_34 == 0) || ((*(byte *)(iVar3 + 0x4f) & 0x10) != 0)) {
+      if ((local_34 == 0) || ((((byte *)iVar3)[0x4f] & 0x10) != 0)) {
         if (local_40 == 0) goto LAB_00574b4a;
       }
       else {
@@ -1990,7 +2080,7 @@ LAB_00574bcc:
               *(undefined4 **)(iVar3 + 0xc) = puVar7;
             }
             local_28 = 0;
-            if ((local_34 == 0) || ((*(byte *)(iVar3 + 0x4f) & 0x10) != 0)) {
+            if ((local_34 == 0) || ((((byte *)iVar3)[0x4f] & 0x10) != 0)) {
               for (local_50 = 0; local_50 < (int)((uint)(byte)param_1->field_0x4 * 2);
                   local_50 = local_50 + 1) {
                 iVar8 = (uint)(byte)param_1->field_0x4 * local_50;
@@ -2241,6 +2331,8 @@ LAB_0057554f:
 void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
 
 {
+  int scalar_psVar6;
+
   uint uVar1;
   short *psVar2;
   short sVar3;
@@ -2270,7 +2362,7 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
     do {
       iVar14 = *local_18;
       if (((iVar14 != 0) && (*(short *)(iVar14 + 8) != 0)) &&
-         ((*(byte *)(iVar14 + 0x4f) & 0x40) == 0)) {
+         ((((byte *)iVar14)[0x4f] & 0x40) == 0)) {
         uVar8 = 0x8000;
         local_8 = 8;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -2280,7 +2372,7 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
                            ((int)*(short *)(iVar14 + 6) * (int)*psVar2 +
                             (*(short *)(iVar14 + 8) + -1) * iVar4 + (int)*(short *)(iVar14 + 4)) * 2
                            );
-        if (*(char *)(iVar14 + 0x48) != '\0') {
+        if (((char *)iVar14)[0x48] != '\0') {
           do {
             uVar1 = *(uint *)(iVar14 + 0x2c);
             if ((local_8 & uVar1) != 0) {
@@ -2327,7 +2419,7 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
             param_1 = (short *)((int)param_1 >> 1);
             local_8 = (int)local_8 >> 1;
             uVar8 = (int)uVar8 >> 1;
-          } while (local_14 < (int)(uint)*(byte *)(iVar14 + 0x48));
+          } while (local_14 < (int)(uint)((byte *)iVar14)[0x48]);
         }
       }
       local_1c = local_1c + 1;
@@ -2374,7 +2466,7 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
       iVar14 = 0;
       if (0 < psVar2[1]) {
         do {
-          int scalar_psVar6 = *psVar2 * iVar14 + (int)param_3; /* split integer lifetime from pointer-typed SSA storage */
+          scalar_psVar6 = *psVar2 * iVar14 + (int)param_3; /* split integer lifetime from pointer-typed SSA storage */
           psVar10 = param_1 + scalar_psVar6;
           puVar7 = (undefined2 *)(scalar_psVar6 * 2 + (int)param_2);
           iVar5 = 0;
@@ -2414,6 +2506,7 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
 void st::fn_005759F0(void)
 
 {
+  /* ST_CALLSITE[005759FA]: CALL 0x0040121c; direct=0040121C STAppC::STAppC */
   st::fn_0040121C((STAppC *)&DAT_00807620,st::machine_word_boundary_cast<undefined4>(g_objectFactoryRegistry));
   return;
 }
@@ -2436,11 +2529,12 @@ undefined4 st::fn_00575A10(HINSTANCE param_1,undefined4 param_2,undefined4 param
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079b118);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_0079b118;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 8);
   ExceptionList = &local_14;
+  /* ST_CALLSITE[00575A3B]: CALL dword ptr [0x0085bc4c] */
   g_hINSTANCE_00807618 = st::external_00000048(st::pointer_boundary_cast<LPCSTR>("st_string.dll"));
   if (g_hINSTANCE_00807618 == (HMODULE)0x0) {
     ExceptionList = local_14;
@@ -2457,6 +2551,7 @@ undefined4 st::fn_00575A10(HINSTANCE param_1,undefined4 param_2,undefined4 param
                     (local_60.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0);
   if (iVar1 == 0) {
     local_1c = (st_stack_frame + 8);
+    /* ST_CALLSITE[00575AD0]: CALL 0x004045f2; direct=004045F2 STAppC::InitApp */
     iVar2 = st::fn_004045F2((STAppC *)&DAT_00807620,param_1,param_2,param_3,param_4);
     if (iVar2 != 1) {
       ExceptionList = local_14;
@@ -2471,6 +2566,7 @@ undefined4 st::fn_00575A10(HINSTANCE param_1,undefined4 param_2,undefined4 param
     if ((iVar1 != -0x5001fff6) &&
        ((iVar1 < -0x5001fff4 || (local_1c = (st_stack_frame + 8), -0x5001fff3 < iVar1)))) {
       local_1c = (st_stack_frame + 8);
+      /* ST_CALLSITE[00575B35]: CALL dword ptr [0x0085bdec] */
       st::external_00000081(g_hWnd_00806748,st::pointer_boundary_cast<LPCSTR>("Internal error"),st::pointer_boundary_cast<LPCSTR>("Internal error"),0);
     }
   }
@@ -2480,12 +2576,15 @@ undefined4 st::fn_00575A10(HINSTANCE param_1,undefined4 param_2,undefined4 param
       ExceptionList = local_14;
       return 0;
     }
+    /* ST_CALLSITE[00575BCD]: CALL dword ptr [0x0085bde8] */
     st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%ssteditor.exe"),&CHAR_00h_00807680);
   }
   else {
+    /* ST_CALLSITE[00575BAA]: CALL dword ptr [0x0085bde8] */
     st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s%s%s"),&CHAR_00h_00807680,st_global_0079B114,
               &DAT_0080f126);
   }
+  /* ST_CALLSITE[00575BDD]: CALL dword ptr [0x0085bbc4] */
   st::external_00000026((LPCSTR)&DAT_0080f33a,1);
   ExceptionList = local_14;
   return 0;
@@ -2542,8 +2641,7 @@ void __fastcall st::fn_00577440(int param_1)
 
   uVar2 = st::fn_006E4D40(&DAT_00807620,param_1);
   if ((uVar2 == 1) && (DAT_00808784 == 0)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)(param_1 + 0x430) == '\x01') {
+    if (((char *)param_1)[0x430] == '\x01') {
       puVar9 = (uint *)(param_1 + 0x20);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       DVar4 = st::fn_006E51B0(*(STAppC **)(param_1 + 0x18));
@@ -2553,11 +2651,11 @@ void __fastcall st::fn_00577440(int param_1)
       if (iVar5 == -4) {
         st::fn_006B0A20((AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,param_1 + 0x28,0,
                      0x100,0);
-        *(undefined1 *)(param_1 + 0x430) = 2;
+        ((undefined1 *)param_1)[0x430] = 2;
       }
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    else if ((*(char *)(param_1 + 0x430) == '\x02') && (*(int *)(param_1 + 0x431) != 0)) {
+    else if ((((char *)param_1)[0x430] == '\x02') && (*(int *)(param_1 + 0x431) != 0)) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       DVar3 = st::fn_006E51B0(*(STAppC **)(param_1 + 0x18));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -2592,7 +2690,7 @@ void __fastcall st::fn_00577440(int param_1)
               }
               STField<short>(piVar6,0xf) = sVar7;
             }
-            uVar8 = (uint)*(byte *)(piVar6 + 1);
+            uVar8 = (uint)((byte *)piVar6)[1];
             if (uVar8 < local_8) {
               local_8 = uVar8;
             }
@@ -2601,9 +2699,9 @@ void __fastcall st::fn_00577440(int param_1)
             }
             *(undefined1 *)(param_1 + 0x28 + uVar8 * 4) =
                  *(undefined1 *)(STField<short>(piVar6,0xf) * 3 + 0x13 + (int)piVar6);
-            *(undefined1 *)(param_1 + 0x29 + (uint)*(byte *)(piVar6 + 1) * 4) =
+            *(undefined1 *)(param_1 + 0x29 + (uint)((byte *)piVar6)[1] * 4) =
                  *(undefined1 *)(STField<short>(piVar6,0xf) * 3 + 0x14 + (int)piVar6);
-            *(undefined1 *)(param_1 + 0x2a + (uint)*(byte *)(piVar6 + 1) * 4) =
+            *(undefined1 *)(param_1 + 0x2a + (uint)((byte *)piVar6)[1] * 4) =
                  *(undefined1 *)((int)piVar6 + (STField<short>(piVar6,0xf) + 7) * 3);
             bVar1 = true;
           }
@@ -2637,13 +2735,16 @@ void st::fn_005782D0(void)
     g_debugSystem_00811644 = nullptr;
   }
   else {
+    /* ST_CALLSITE[005782E7]: CALL 0x00405dd0; direct=00405DD0 DebugSystemC::DebugSystemC */
     g_debugSystem_00811644 = st::fn_00405DD0(this,g_app_00806728);
   }
   g_debugSystem_00811644->field_0020 = 0;
+  /* ST_CALLSITE[00578304]: CALL dword ptr [EDX] */
   iVar2 = (*g_debugSystem_00811644->vtable->InitSystem)((SystemClassTy *)g_debugSystem_00811644);
   if (iVar2 != 0) {
     st::fn_0040151E();
   }
+  /* ST_CALLSITE[0057831D]: CALL 0x006e4650; direct=006E4650 AppClassTy::AddSystem */
   iVar1 = st::fn_006E4650(g_app_00806728,(int *)g_debugSystem_00811644,0);
   if (iVar1 != 0) {
     st::fn_0040151E();
@@ -2665,6 +2766,7 @@ void st::fn_00578370(void)
       st::fn_006E4B80(g_app_00806728,(int)g_debugSystem_00811644);
       st::fn_006E4D20(g_app_00806728,g_debugSystem_00811644);
     }
+    /* ST_CALLSITE[005783A5]: CALL dword ptr [EDX + 0x4] */
     g_debugSystem_00811644->vfunc_04();
     st::fn_0072E2B0((HoloTy *)g_debugSystem_00811644);
     g_debugSystem_00811644 = nullptr;
@@ -2800,7 +2902,7 @@ void __fastcall st::fn_00579350(AnonShape_00579350_2E014C47 *param_1)
   param_1->field_004B = sVar6;
   param_1->field_005F = sVar6;
   iVar2 = st::fn_00401A3C((AnonShape_0041C710_C4D46939 *)param_1);
-  this = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0x1d5);
+  this = &param_1->field_0x1d5;
   if (iVar2 == 0) {
     iVar2 = 0;
     uVar3 = st::fn_004052CC((STT3DSprC *)this);
@@ -2893,11 +2995,16 @@ LAB_005795a9:
     uVar3 = (uVar3 - 1 | 0xfffffff8) + 1;
   }
   uVar3 = (((0x18 - (int)(uVar3 * 0x2d) / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18) / 3;
+  /* ST_CALLSITE[00579685]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064((STT3DSprC *)this,'\r',uVar3);
+  /* ST_CALLSITE[0057968E]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
   st::fn_004030BC((STT3DSprC *)this,'\r');
+  /* ST_CALLSITE[005796A4]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064((STT3DSprC *)this,'\x0e',st::machine_word_boundary_cast<uint>(param_1->field_0231 + uVar3 * 6));
+  /* ST_CALLSITE[005796AD]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
   st::fn_004030BC((STT3DSprC *)this,'\x0e');
   param_1->field_023D = st::machine_word_boundary_cast<undefined4>(param_1->field_023D + 1);
+  /* ST_CALLSITE[005796C3]: CALL dword ptr [EDX + 0xd8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(param_1->field_0000 + 0xd8))();
   return;
@@ -3162,6 +3269,7 @@ switchD_0057988b_default:
                 STField<int>(this,0x255) = (int)sVar5;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 uVar7 = CONCAT22(sVar5 >> 0xf,STField<undefined2>(this,0x45));
+                /* ST_CALLSITE[00579E50]: CALL dword ptr [EBX + 0x10] */
                 /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
                 sVar4 = (**(code **)(*(int *)this + 0x10))
                                   (STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(sVar4)),
@@ -3228,6 +3336,7 @@ st::fn_0057A0B0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefin
   local_2c[2] = 0;
   local_2c[3] = 1;
   local_14 = param_3;
+  /* ST_CALLSITE[0057A10F]: CALL dword ptr [EDX + 0x8] */
   g_playSystem_00802A38->vfunc_08(0x13f,0,(short)&param_5,(short)local_2c,0);
   return param_5;
 }
@@ -3435,6 +3544,7 @@ LAB_0057b6ff:
         }
         local_38 = param_1;
         local_3a = *(undefined2 *)(local_8 + 6 + uVar5 * 8);
+        /* ST_CALLSITE[0057B8C0]: CALL dword ptr [EDX + 0x8] */
         g_playSystem_00802A38->vfunc_08(0x106,0,0,(short)local_60,0);
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < (int)(uVar2 + 1));
@@ -3477,6 +3587,7 @@ st::fn_0057B990(undefined4 param_1,undefined4 param_2,int param_3,ushort param_4
     local_2c = local_20;
     local_40[3] = 2;
     local_40[4] = param_7;
+    /* ST_CALLSITE[0057B9FB]: CALL dword ptr [EDX + 0x18] */
     (*g_playSystem_00802A38->vtable->SendMessage)
               ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_40);
   }
@@ -3855,6 +3966,7 @@ st::fn_0057DF20(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefin
   local_2c[2] = 0;
   local_2c[3] = 1;
   local_14 = param_2;
+  /* ST_CALLSITE[0057DF85]: CALL dword ptr [EAX + 0x8] */
   g_playSystem_00802A38->vfunc_08(0x107,0,(short)&param_6,(short)local_2c,0);
   return param_6;
 }

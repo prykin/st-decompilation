@@ -51,6 +51,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
       if (param_1 < param_2) {
         iVar5 = (param_1 * 100) / param_2;
         pcVar7_mg2 = LoadResourceString(0x2571,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[005A0EB7]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%d%%",pcVar7_mg2,iVar5);
       }
       else {

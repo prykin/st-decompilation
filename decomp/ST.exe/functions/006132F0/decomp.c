@@ -13,8 +13,7 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
   VisibleClassTy *pVVar3;
   STGenBombC *pSVar4;
   int iVar5;
-  AnonShape_004AB810_8E5693D5 *pAVar5;
-  STT3DSprC *this_00;
+  STT3DSprC *pSVar5;
   int iVar6;
   uint uVar7;
   int iVar9;
@@ -48,18 +47,20 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_10->field_0252 == nullptr) {
-    pAVar5 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-    if (pAVar5 == nullptr) {
-      this_00 = nullptr;
+    pSVar5 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+    if (pSVar5 == nullptr) {
+      pSVar5 = nullptr;
     }
     else {
-      this_00 = (STT3DSprC *)thunk_FUN_004ab810(pAVar5);
+      /* ST_CALLSITE[00613344]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+      pSVar5 = STT3DSprC::STT3DSprC(pSVar5);
     }
-    pSVar4->field_0252 = this_00;
-    if (this_00 == nullptr) {
+    pSVar4->field_0252 = pSVar5;
+    if (pSVar5 == nullptr) {
       return 0xffffffff;
     }
-    iVar6 = STT3DSprC::Init(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    /* ST_CALLSITE[0061337D]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
+    iVar6 = STT3DSprC::Init(pSVar5,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar6 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_GnBom.cpp",0x509);
@@ -68,18 +69,22 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
   }
   if (param_1 == 0) {
     if (param_2 != 0) goto LAB_0061364b;
+    /* ST_CALLSITE[006134CF]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar6 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xd,PTR_00806774,"exptem",CASE_1D);
     if (iVar6 != 0) {
       return 0xffff;
     }
+    /* ST_CALLSITE[006134F2]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar6 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xf,PTR_00806764,"bulb_n5",CASE_1D);
     if (iVar6 != 0) {
       return 0xffff;
     }
+    /* ST_CALLSITE[00613515]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar6 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xe,PTR_00806774,"expmask2",CASE_1D);
     if (iVar6 != 0) {
       return 0xffff;
     }
+    /* ST_CALLSITE[00613536]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow(pSVar4->field_0252,0xe,g_playSystem_00802A38->field_00E4);
     uVar13 = 0x53;
     uVar11 = 0x5a;
@@ -89,17 +94,23 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
               (g_sT3DSMAPContext_00807598,uVar7,iVar6,uVar11,uVar13);
     thunk_FUN_004ac700(pSVar4->field_0252,'\x0f');
+    /* ST_CALLSITE[00613581]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow(pSVar4->field_0252,0xd,g_playSystem_00802A38->field_00E4);
     iVar6 = (int)PTR_00806724->field_002C;
     uVar12 = 0;
     uVar7 = thunk_FUN_004ad650(pSVar4->field_0252);
     Library::Ourlib::ST3DSMAP::SprSetMask(g_sT3DSMAPContext_00807598,uVar7,uVar12,iVar6);
     pSVar4->field_0250 = 1;
+    /* ST_CALLSITE[006135BE]: CALL 0x004044ee; direct=004044EE STT3DSprC::sub_004ACF20 */
     STT3DSprC::sub_004ACF20(pSVar4->field_0252,PTR_008032b8,0x10);
     pSVar4->field_0237 = 0;
+    /* ST_CALLSITE[006135D2]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase(pSVar4->field_0252,'\r',0);
+    /* ST_CALLSITE[006135DF]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
     STT3DSprC::ShowCurFase(pSVar4->field_0252,'\r');
+    /* ST_CALLSITE[006135EC]: CALL 0x00403233; direct=00403233 STT3DSprC::sub_004ACFE0 */
     STT3DSprC::sub_004ACFE0(pSVar4->field_0252,'\x0e');
+    /* ST_CALLSITE[0061363F]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     STT3DSprC::sub_004AD3C0
               (pSVar4->field_0252,(float)pSVar4->field_022B * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_022F * _DAT_007904f8 * _DAT_007904f0,
@@ -108,6 +119,7 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
   else {
     iVar6 = pSVar4->field_01F7;
     if (iVar6 == 0) {
+      /* ST_CALLSITE[00613417]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar6 = STT3DSprC::LoadSequence
                         (pSVar4->field_0252,0xd,PTR_00806774,"den_bmb",CASE_1D);
       if (iVar6 != 0) {
@@ -122,17 +134,21 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
         if (iVar6 != 2) goto LAB_00613424;
         text = "den_bmb";
       }
+      /* ST_CALLSITE[006133EA]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar6 = STT3DSprC::LoadSequence(pSVar4->field_0252,0xd,PTR_00806774,text,CASE_1D);
       if (iVar6 != 0) {
         return 0xffff;
       }
     }
 LAB_00613424:
+    /* ST_CALLSITE[00613433]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase(pSVar4->field_0252,'\r',pSVar4->field_0237);
+    /* ST_CALLSITE[00613486]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     STT3DSprC::sub_004AD3C0
               (pSVar4->field_0252,(float)pSVar4->field_022B * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_022F * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_0233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    /* ST_CALLSITE[006134A0]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow(pSVar4->field_0252,0xd,g_playSystem_00802A38->field_00E4);
     pSVar4->field_0250 = 1;
   }
@@ -150,6 +166,7 @@ LAB_0061364b:
   iVar9 = pSVar4->field_022B;
   iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
   if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+      /* ST_CALLSITE[00613719]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
       (VisibleClassTy::sub_00558C00
                  (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar6,&local_14,
                   &local_18), local_c < 0)) || (4 < local_c)) {

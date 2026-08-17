@@ -17,9 +17,21 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.FunctionDefinition;
+import ghidra.program.model.data.FunctionDefinitionDataType;
+import ghidra.program.model.data.ParameterDefinition;
+import ghidra.program.model.data.ParameterDefinitionImpl;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
+import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.Instruction;
+import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.pcode.DataTypeSymbol;
+import ghidra.program.model.pcode.HighFunction;
+import ghidra.program.model.pcode.HighFunctionDBUtil;
+import ghidra.program.model.symbol.Namespace;
+import ghidra.program.model.symbol.Symbol;
 import ghidra.program.model.symbol.SourceType;
 
 public class STReturnSemanticsApplier extends GhidraScript {
@@ -37,7 +49,9 @@ public class STReturnSemanticsApplier extends GhidraScript {
         Tsv input = read(file.toPath());
         require(input, "apply", "function_address", "expected_function", "expected_signature",
             "expected_return_type", "expected_return_source", "expected_noreturn",
-            "proposed_return_type", "proposed_noreturn", "semantic_id", "evidence");
+            "proposed_return_type", "proposed_noreturn", "semantic_id",
+            "roundtrip_call_sites", "expected_call_overrides",
+            "roundtrip_return_ordinals", "evidence");
         dataTypes = currentProgram.getDataTypeManager();
         int tx = currentProgram.startTransaction("Apply return semantics"); boolean commit = false;
         try {
@@ -70,11 +84,6 @@ public class STReturnSemanticsApplier extends GhidraScript {
             DataType proposed = resolve(row.get("proposed_return_type"));
             if (proposed == null) { conflict(row, "proposed return type missing"); return; }
             boolean proposedNoReturn = Boolean.parseBoolean(row.get("proposed_noreturn"));
-            if (function.getReturnType().isEquivalent(proposed) &&
-                    function.hasNoReturn() == proposedNoReturn) {
-                report.add(new Report(addressText, row.get("semantic_id"), "unchanged",
-                    "desired return semantics already present")); return;
-            }
             boolean baseline = function.getName(true).equals(row.get("expected_function")) &&
                 function.getPrototypeString(true, true).equals(row.get("expected_signature")) &&
                 typeSpec(function.getReturnType()).equals(row.get("expected_return_type")) &&
@@ -85,16 +94,206 @@ public class STReturnSemanticsApplier extends GhidraScript {
                 report.add(new Report(addressText, row.get("semantic_id"), "preserved",
                     "stale baseline or manual return type")); return;
             }
-            function.setReturnType(proposed, SourceType.ANALYSIS);
-            function.setNoReturn(proposedNoReturn);
-            function.addTag(TAG);
+            List<CallOverridePlan> overrides = planRoundTripOverrides(function, row,
+                proposed);
+            boolean functionChange = !function.getReturnType().isEquivalent(proposed) ||
+                function.hasNoReturn() != proposedNoReturn;
+            if (functionChange) {
+                function.setReturnType(proposed, SourceType.ANALYSIS);
+                function.setNoReturn(proposedNoReturn);
+                function.addTag(TAG);
+            }
+            int overrideChanges = applyRoundTripOverrides(function, row, overrides);
             if ("repair_unsafe_eax_rollback".equals(row.get("semantic_id")))
                 removeCommentBlock(function, "revert_unsafe_ignored_eax_void");
-            addComment(function, row);
-            report.add(new Report(addressText, row.get("semantic_id"), "applied",
-                row.get("proposed_return_type") + ", noreturn=" + proposedNoReturn));
+            if (functionChange || overrideChanges > 0) addComment(function, row);
+            report.add(new Report(addressText, row.get("semantic_id"),
+                functionChange || overrideChanges > 0 ? "applied" : "unchanged",
+                row.get("proposed_return_type") + ", noreturn=" + proposedNoReturn +
+                    ", direct_call_overrides=" + overrideChanges));
+        }
+        catch (PreserveException exception) {
+            report.add(new Report(addressText, row.get("semantic_id"), "preserved",
+                exception.getMessage()));
         }
         catch (Exception exception) { conflict(row, message(exception)); }
+    }
+
+    private List<CallOverridePlan> planRoundTripOverrides(Function function,
+            Map<String, String> row, DataType returned) throws Exception {
+        String sitesText = row.get("roundtrip_call_sites");
+        if (sitesText == null || sitesText.isBlank()) return List.of();
+        if (!"pointer_producer_argument_roundtrip".equals(row.get("semantic_id")))
+            throw new PreserveException("call-site override attached to unrelated semantic");
+        // A signature fingerprint itself contains semicolons, so row collections use
+        // a pipe delimiter.  The former semicolon delimiter made every non-empty
+        // fingerprint look like several callsites and silently preserved the repair.
+        String[] sites = sitesText.split("\\|", -1);
+        String[] expected = row.get("expected_call_overrides").split("\\|", -1);
+        String[] ordinals = row.get("roundtrip_return_ordinals").split("\\|", -1);
+        if (sites.length != expected.length || sites.length != ordinals.length)
+            throw new PreserveException("call-site override baseline count changed");
+        List<CallOverridePlan> result = new ArrayList<>();
+        for (int index = 0; index < sites.length; index++) {
+            Address callAddress = currentProgram.getAddressFactory().getAddress(sites[index]);
+            Instruction call = callAddress == null ? null :
+                currentProgram.getListing().getInstructionAt(callAddress);
+            if (call == null || !function.getBody().contains(callAddress) ||
+                    !"CALL".equalsIgnoreCase(call.getMnemonicString()))
+                throw new PreserveException("roundtrip call is stale: " + sites[index]);
+            Function called = resolveThunk(directCalledFunction(call));
+            if (called == null || called.hasVarArgs())
+                throw new PreserveException("roundtrip callee is unresolved or variadic: " +
+                    sites[index]);
+            FunctionDefinition existing = existingOverride(function, callAddress);
+            String current = existing == null ? "none" : fingerprint(existing);
+            if (!current.equals(expected[index]))
+                throw new PreserveException("stale/foreign call override at " + sites[index] +
+                    ": expected " + expected[index] + ", found " + current);
+            FunctionDefinitionDataType desired = directCallOverride(called, callAddress,
+                returned);
+            if (existing != null && !fingerprint(desired).equals(current) &&
+                    !hasCallMarker(callAddress))
+                throw new PreserveException("foreign call override preserved at " +
+                    sites[index]);
+            int returnedOrdinal;
+            try { returnedOrdinal = Integer.parseInt(ordinals[index]); }
+            catch (NumberFormatException exception) {
+                throw new PreserveException("invalid returned parameter ordinal at " +
+                    sites[index]);
+            }
+            if (returnedOrdinal < 0 || returnedOrdinal >= called.getParameterCount())
+                throw new PreserveException("returned parameter ordinal out of range at " +
+                    sites[index]);
+            result.add(new CallOverridePlan(callAddress, desired, existing,
+                returnedOrdinal));
+        }
+        return result;
+    }
+
+    private int applyRoundTripOverrides(Function function, Map<String, String> row,
+            List<CallOverridePlan> plans) throws Exception {
+        int changed = 0;
+        for (CallOverridePlan plan : plans) {
+            String desired = fingerprint(plan.desired);
+            boolean overrideChange = plan.existing == null ||
+                !desired.equals(fingerprint(plan.existing));
+            if (overrideChange) {
+                if (hasCallMarker(plan.address)) deleteOverrides(function, plan.address);
+                HighFunctionDBUtil.writeOverride(function, plan.address, plan.desired);
+            }
+            boolean markerChange = setCallMarker(plan.address, desired,
+                plan.returnedOrdinal);
+            if (overrideChange || markerChange) changed++;
+        }
+        return changed;
+    }
+
+    private FunctionDefinitionDataType directCallOverride(Function called, Address call,
+            DataType returned) throws Exception {
+        FunctionDefinitionDataType desired = new FunctionDefinitionDataType(
+            "roundtrip_" + call, dataTypes);
+        desired.setCallingConvention(called.getCallingConventionName());
+        desired.setReturnType(returned);
+        Parameter[] parameters = called.getParameters();
+        ParameterDefinition[] arguments = new ParameterDefinition[parameters.length];
+        for (int index = 0; index < parameters.length; index++)
+            arguments[index] = new ParameterDefinitionImpl(parameters[index].getName(),
+                parameters[index].getFormalDataType(),
+                "exact direct-call parameter; return overridden by machine roundtrip proof");
+        desired.setArguments(arguments);
+        return desired;
+    }
+
+    private Function directCalledFunction(Instruction instruction) {
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(flow);
+            if (function != null) return function;
+        }
+        return null;
+    }
+
+    private Function resolveThunk(Function function) {
+        java.util.Set<Address> seen = new java.util.HashSet<>();
+        while (function != null && function.isThunk() &&
+                seen.add(function.getEntryPoint())) {
+            Function target = function.getThunkedFunction(false);
+            if (target == null || target.equals(function)) break;
+            function = target;
+        }
+        return function;
+    }
+
+    private FunctionDefinition existingOverride(Function function, Address call) {
+        Namespace root = HighFunction.findOverrideSpace(function);
+        if (root == null) return null;
+        FunctionDefinition agreed = null;
+        for (Symbol symbol : currentProgram.getSymbolTable().getSymbols(call)) {
+            if (!root.equals(symbol.getParentNamespace())) continue;
+            DataTypeSymbol value = HighFunctionDBUtil.readOverride(symbol);
+            if (value == null ||
+                    !(value.getDataType() instanceof FunctionDefinition definition)) continue;
+            if (agreed != null && !fingerprint(agreed).equals(fingerprint(definition)))
+                return null;
+            agreed = definition;
+        }
+        return agreed;
+    }
+
+    private void deleteOverrides(Function function, Address call) {
+        Namespace root = HighFunction.findOverrideSpace(function);
+        if (root == null) return;
+        List<Symbol> remove = new ArrayList<>();
+        for (Symbol symbol : currentProgram.getSymbolTable().getSymbols(call))
+            if (root.equals(symbol.getParentNamespace()) &&
+                    HighFunctionDBUtil.readOverride(symbol) != null) remove.add(symbol);
+        for (Symbol symbol : remove) symbol.delete();
+    }
+
+    private String fingerprint(FunctionDefinition definition) {
+        List<String> parts = new ArrayList<>();
+        parts.add(definition.getCallingConventionName());
+        parts.add(typeSpec(definition.getReturnType()));
+        for (ParameterDefinition argument : definition.getArguments())
+            parts.add(typeSpec(argument.getDataType()));
+        return String.join(";", parts);
+    }
+
+    private boolean hasCallMarker(Address address) {
+        String comment = currentProgram.getListing().getComment(CommentType.EOL, address);
+        return comment != null && comment.contains(
+            MARKER + " pointer_producer_argument_roundtrip_call");
+    }
+
+    private boolean setCallMarker(Address address, String signature,
+            int returnedOrdinal) {
+        String prefix = MARKER + " pointer_producer_argument_roundtrip_call";
+        String marker = prefix + "; return_parameter_ordinal=" + returnedOrdinal +
+            "; signature=" + signature;
+        String old = currentProgram.getListing().getComment(CommentType.EOL, address);
+        if (marker.equals(old)) return false;
+        if (old == null || old.isBlank()) {
+            currentProgram.getListing().setComment(address, CommentType.EOL, marker);
+            return true;
+        }
+        if (!old.contains(prefix)) {
+            currentProgram.getListing().setComment(address, CommentType.EOL,
+                old + "\n" + marker);
+            return true;
+        }
+        List<String> lines = new ArrayList<>();
+        boolean replaced = false;
+        for (String line : old.split("\\R", -1)) {
+            if (line.contains(prefix)) {
+                if (!replaced) lines.add(marker);
+                replaced = true;
+            }
+            else lines.add(line);
+        }
+        String updated = String.join("\n", lines);
+        if (updated.equals(old)) return false;
+        currentProgram.getListing().setComment(address, CommentType.EOL, updated);
+        return true;
     }
     private void addComment(Function function, Map<String, String> row) {
         String block = MARKER + " " + row.get("semantic_id") + ".\nEvidence: " + row.get("evidence");
@@ -172,4 +371,9 @@ public class STReturnSemanticsApplier extends GhidraScript {
     private static String message(Exception e) { return e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage(); }
     private record Tsv(List<String> header, List<Map<String, String>> rows) {}
     private record Report(String address, String semantic, String status, String detail) {}
+    private record CallOverridePlan(Address address, FunctionDefinitionDataType desired,
+        FunctionDefinition existing, int returnedOrdinal) {}
+    private static class PreserveException extends Exception {
+        PreserveException(String message) { super(message); }
+    }
 }

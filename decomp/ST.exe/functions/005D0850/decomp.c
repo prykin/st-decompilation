@@ -65,7 +65,9 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
             bVar6 = uVar5 < pSVar4->count;
           } while ((int)uVar5 < (int)pSVar4->count);
         }
+        /* ST_CALLSITE[005D0949]: CALL dword ptr [EDX + 0x2c] */
         this_00->SetListCtrls();
+        /* ST_CALLSITE[005D094E]: CALL 0x00402a9a; direct=00402A9A SettMapTy::PaintSC */
         SettMapTy::PaintSC((SettMapTy *)this_00);
         this_00->field_2121 = this_00->field_2121 + 1;
       }

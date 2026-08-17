@@ -49,6 +49,7 @@ int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *messag
     }
     else if (SVar2 == MESS_SHARED_0003) {
       g_soundManager_008033F0 = nullptr;
+      /* ST_CALLSITE[00566C87]: CALL 0x00403c01; direct=00403C01 SoundManagerTy::sub_00566900 */
       sub_00566900(local_8);
     }
     goto LAB_00566d75;
@@ -101,7 +102,9 @@ LAB_00566d35:
       }
     }
   }
+  /* ST_CALLSITE[00566D66]: CALL 0x00401609; direct=00401609 SoundManagerTy::sub_00566AA0 */
   sub_00566AA0(local_8);
+  /* ST_CALLSITE[00566D70]: CALL 0x00401253; direct=00401253 SoundClassTy::CheckFader */
   SoundClassTy::CheckFader((SoundClassTy *)&g_sound);
 LAB_00566d75:
   g_currentExceptionFrame = local_4c.previous;

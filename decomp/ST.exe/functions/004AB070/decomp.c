@@ -24,6 +24,7 @@ OpticClassC::sub_004AB070
   DWORD DVar1;
   int iVar2;
 
+  /* ST_CALLSITE[004AB076]: CALL dword ptr [0x0085bedc] */
   DVar1 = timeGetTime();
   if (DVar1 - this->field_0018 < 0x32) {
     if (this->field_001C == -2) {

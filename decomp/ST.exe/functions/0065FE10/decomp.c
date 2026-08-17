@@ -29,6 +29,7 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
   local_c = nullptr;
   local_8 = 0;
   param_1->field_00A7 = 0;
+  /* ST_CALLSITE[0065FE37]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
   uVar2 = AiFltClassTy::sub_0065D9C0(param_1);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (CONCAT22(extraout_var,uVar2) == 0) {
@@ -47,6 +48,7 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
   else {
     uVar3 = 0;
   }
+  /* ST_CALLSITE[0065FE9A]: CALL 0x004038e1; direct=004038E1 AiFltClassTy::sub_0065FA60 */
   array = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,uVar3,1,param_4);
   if (array != nullptr) {
     sVar1 = param_1->field_0039;
@@ -61,6 +63,7 @@ LAB_0065fec9:
       if (sVar1 != 3) goto LAB_0065fec9;
       iVar4 = 0x60;
     }
+    /* ST_CALLSITE[0065FED2]: CALL 0x004038e1; direct=004038E1 AiFltClassTy::sub_0065FA60 */
     local_c = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,iVar4,1,nullptr);
     if (local_c != nullptr) {
       sVar1 = param_1->field_0039;
@@ -83,6 +86,7 @@ LAB_0065fec9:
       if (((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) &&
          (this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D),
          this != nullptr)) {
+        /* ST_CALLSITE[0065FF66]: CALL dword ptr [EDX + 0x8] */
         this->sub_00498D20(8,(short)local_38);
         goto LAB_0065ff72;
       }

@@ -139,6 +139,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
             }
           }
           else if (local_18[6] != *(int *)&this_00->field_0x18) {
+            /* ST_CALLSITE[00626798]: CALL dword ptr [EDX + 0xf0] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar4 = (**(code **)(*param_1 + 0xf0))();
             if (iVar4 == 0) {
@@ -148,7 +149,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
                ((g_playSystem_00802A38 == nullptr ||
                 (g_bulkInitializedRecords_008087C7[param_1[9]].field_0022 < 8)))) {
               bVar3 = *(byte *)&this_00[1].vtable;
-              bVar1 = *(byte *)(piVar9 + 9);
+              bVar1 = ((byte *)piVar9)[9];
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               _local_50 = CONCAT31(uStack_4f,bVar3);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -185,6 +186,7 @@ LAB_0062687f:
                 return 0;
               }
             }
+            /* ST_CALLSITE[00626896]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
             iVar4 = (*this_00->vtable[5].slots_00_28[2])(this_00);
             iVar14 = local_c;
             if (iVar4 == 0) {
@@ -216,10 +218,12 @@ LAB_0062687f:
   local_bc[0] = 0x28;
   local_a0 = (undefined2)local_54;
   local_94 = 0x9b;
+  /* ST_CALLSITE[0062697A]: CALL dword ptr [EDI + 0x10] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   local_96 = (**(code **)(*piVar9 + 0x10))(local_20,local_54,local_40,local_28,local_24,local_38);
   local_8f = piVar9[6];
   local_8b = 0xffff;
+  /* ST_CALLSITE[006269AB]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
   STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x28,0,0,local_bc,0);
   return 1;
 }

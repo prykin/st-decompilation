@@ -30,7 +30,9 @@ FUN_004934b0(void *this,short *param_1,short *param_2,short *param_3,int *param_
       do {
         DArrayGetElement(array,local_14,&local_10);
         if ((local_10 != nullptr) &&
+           /* ST_CALLSITE[00493528]: CALL dword ptr [EDX + 0xf8] */
            (iVar3 = local_10->vfunc_F8(), iVar3 == 1)) {
+          /* ST_CALLSITE[00493542]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
           iVar2 = FUN_006aadd0((int)STField<short>(this,0x47),(int)STField<short>(this,0x49),
                                (int)STField<short>(this,0x4b),(int)local_6,(int)local_8,

@@ -13,6 +13,7 @@ from st_source_tree import (
     ADDRESS_CODED_FUNCTION_RE,
     BoundaryValue,
     GenerationError,
+    OPAQUE_IMAGE_TOKEN_RE,
     QUALIFIED_ADDRESS_SYMBOL_RE,
     SourceTreeGenerator,
     TypeEmitter,
@@ -28,6 +29,63 @@ from st_source_tree import (
 
 
 class SourceTreeCallParsingTests(unittest.TestCase):
+    def test_malformed_referenced_string_name_uses_exact_address_literal(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.string_by_address = {
+            "007ABA78": {"value": '"STBoatC::ReleaseLoad data.lload<=0"'}
+        }
+        body = "check(s_STBoatC__ReleaseLoad_data_lload<_007aba78);"
+        actual = generator._rewrite_referenced_string_literals(
+            {"referenced_strings": ["007ABA78 broken = literal"]}, body
+        )
+        self.assertEqual(
+            actual, 'check("STBoatC::ReleaseLoad data.lload<=0");'
+        )
+
+    def test_invalid_referenced_global_name_uses_exact_address_alias(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        record = {
+            "address": "007C94CC", "name": "CHAR_>_007c94cc", "type": "char"
+        }
+        generator.global_by_address = {"007C94CC": record}
+        actual = generator._rewrite_referenced_invalid_globals(
+            {"referenced_globals": ["007C94CC CHAR_>_007c94cc = '>'"]},
+            "char *value = &CHAR_>_007c94cc;",
+        )
+        self.assertEqual(actual, "char *value = &st_global_007C94CC;")
+        self.assertIs(generator.global_alias_records["st_global_007C94CC"], record)
+
+    def test_only_image_range_opaque_tokens_are_candidates(self) -> None:
+        self.assertEqual(
+            OPAQUE_IMAGE_TOKEN_RE.search("uRam00807440").group("address"),
+            "00807440",
+        )
+        self.assertEqual(
+            OPAQUE_IMAGE_TOKEN_RE.search("uRam00000004").group("address"),
+            "00000004",
+        )
+
+    def test_address_coded_callee_accepts_linebreak_before_scope_operator(self) -> None:
+        match = ADDRESS_CODED_FUNCTION_RE.search(
+            "Owner::Nested\n    ::sub_00402020(receiver)"
+        )
+        self.assertIsNotNone(match)
+        self.assertEqual(
+            re.sub(r"\s+", "", match.group(0)),
+            "Owner::Nested::sub_00402020",
+        )
+
+    def test_address_coded_member_wrapper_is_not_a_direct_call(self) -> None:
+        self.assertIsNone(
+            ADDRESS_CODED_FUNCTION_RE.search(
+                "receiver->sub_00402020(argument)"
+            )
+        )
+
     def test_unique_exref_uses_exact_referenced_pointer_global(self) -> None:
         replacements = exact_exref_global_rewrites([
             "0085C118 PTR_sizeHelp_0085c118 = 0045d28c",
@@ -115,6 +173,33 @@ class SourceTreeCallParsingTests(unittest.TestCase):
         self.assertEqual(
             pattern.search("if ((destination = source) != 0)").group("lhs"),
             "destination",
+        )
+
+    def test_split_qualified_address_prefix_keeps_callsite_comment(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        body = (
+            "Owner::Nested::\n"
+            "/* ST_CALLSITE[00401010]: exact direct call */\n"
+            "st::fn_00402020(receiver);"
+        )
+        self.assertEqual(
+            generator._readability_metrics(body).get(
+                "dangling_qualified_address_prefix"
+            ),
+            1,
+        )
+        actual = generator._repair_split_qualified_address_symbols(
+            "00403030", body
+        )
+        self.assertNotIn("Owner", actual)
+        self.assertNotIn("Nested", actual)
+        self.assertIn("ST_CALLSITE[00401010]", actual)
+        self.assertIn("st::fn_00402020(receiver)", actual)
+        self.assertNotIn(
+            "dangling_qualified_address_prefix",
+            generator._readability_metrics(actual),
         )
 
     def test_library_declaration_marks_excluded_implementation(self) -> None:
@@ -253,6 +338,129 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertNotIn("undefined1 field_0x0;", header)
         self.assertEqual(emitter.materialized_gap_fields, 2)
 
+    def test_source_walker_materializes_nested_inline_array_gap_view(self) -> None:
+        records = self.records() + [{
+            "path": "/Child[2]",
+            "name": "Child[2]",
+            "display_name": "Child[2]",
+            "class": "ArrayDB",
+            "length": 8,
+            "detail": {
+                "element_type": "/Child",
+                "element_count": 2,
+                "element_length": 4,
+            },
+        }]
+        owner = next(item for item in records if item["path"] == "/Owner")
+        owner["length"] = 16
+        owner["detail"]["components"].append(
+            component(2, 8, 8, "children", "/Child[2]")
+        )
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        generator._observe_exact_nested_gap_fields(
+            {"parameters": [{"name": "owner", "type": "Owner *"}]},
+            "owner->children[index].field_0x3 = 1;",
+        )
+        header = generator.type_emitter.emit()
+        self.assertIn("undefined1 field_0x3;", header)
+        self.assertEqual(generator.stats["nested_gap_field_observations"], 1)
+
+    def test_source_walker_materializes_parenthesized_subobject_gap_view(self) -> None:
+        records = self.records()
+        owner = next(item for item in records if item["path"] == "/Owner")
+        owner["detail"]["components"][1] = component(
+            1, 4, 4, "child", "/Child"
+        )
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        generator._observe_exact_nested_gap_fields(
+            {"parameters": [{"name": "owner", "type": "Owner *"}]},
+            "*(uint *)&(owner->child).field_0x3 = 1;",
+        )
+        header = generator.type_emitter.emit()
+        self.assertIn("undefined1 field_0x3;", header)
+
+    def test_exact_name_rewrite_accepts_zero_padded_offset_spelling(self) -> None:
+        records = self.records()
+        child = next(item for item in records if item["path"] == "/Child")
+        child["detail"]["components"][0]["field_name"] = "element"
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        actual = generator._repair_exact_field_names(
+            "00102030",
+            {"parameters": [{"name": "child", "type": "Child *"}]},
+            "value = child->field_0000;",
+        )
+        self.assertEqual(actual, "value = child->element;")
+
+    def test_auto_pointer_cast_is_an_exact_declared_type(self) -> None:
+        actual = SourceTreeGenerator._declared_types(
+            {"parameters": []},
+            "auto cursor = (Child *)0x5;\nuse(cursor);",
+        )
+        self.assertEqual(actual["cursor"], "Child *")
+
+    def test_member_walk_falls_back_to_unique_record_without_pointer_db(self) -> None:
+        records = [
+            primitive("/int", "int", 4),
+            {
+                "path": "/Detached",
+                "name": "Detached",
+                "class": "StructureDB",
+                "length": 4,
+                "detail": {
+                    "components": [component(0, 0, 4, "value", "/int")]
+                },
+            },
+        ]
+        emitter = TypeEmitter(records, [])
+        self.assertEqual(
+            emitter.display_member_type(
+                "Detached *", "value", True, allow_name_fallback=True
+            ),
+            "int",
+        )
+        self.assertIsNone(
+            emitter.display_member_type("Detached *", "value", True)
+        )
+
+    def test_source_walker_materializes_explicit_cast_receiver_gap(self) -> None:
+        records = [
+            primitive("/undefined", "undefined", 1),
+            {
+                "path": "/Detached",
+                "name": "Detached",
+                "class": "StructureDB",
+                "length": 12,
+                "detail": {
+                    "components": [
+                        component(index, index, 1, "", "/undefined")
+                        for index in range(12)
+                    ]
+                },
+            },
+        ]
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        generator._observe_exact_nested_gap_fields(
+            {"parameters": []},
+            "value = *(uint *)&((Detached *)((int)raw + 4))->field_0x8;",
+        )
+        header = generator.type_emitter.emit()
+        self.assertIn("undefined1 field_0x8;", header)
+        self.assertEqual(
+            generator.stats["cast_receiver_gap_field_observations"], 1
+        )
+
     def test_commuted_byte_subscript_restores_pointer_index_order(self) -> None:
         generator = SourceTreeGenerator(
             Path("."), Path("."), Path("out"), Path("receipt")
@@ -332,6 +540,181 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertEqual(generator.stats["exact_indirect_call_declarations"], 1)
         self.assertEqual(generator.stats["exact_indirect_member_calls"], 1)
 
+    def test_exact_callsite_uses_independent_receiver_wrapper_at_boundary(self) -> None:
+        records = self.records()
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("."), Path("receipt.json")
+        )
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        self.assertEqual(
+            generator.type_emitter.register_exact_indirect_member_wrapper(
+                receiver_display="Child *",
+                slot=8,
+                return_type="int",
+                function_pointer_type="int (__thiscall *)(Child *)",
+                parameter_types=("Child *",),
+                callee_expression="vtable_slot_8",
+            ),
+            "vfunc_8",
+        )
+        function = {
+            "address": "00400000",
+            "parameters": [{"name": "owner", "type": "Owner *"}],
+            "comments": [
+                "00400010 [eol] [STIndirectCallsiteApplier] exact slot 0x8; "
+                "mode=dispatch; signature=__thiscall;/int;pointer:/Child"
+            ],
+        }
+        body = (
+            "int f(Owner *owner) {\n"
+            "  /* ST_CALLSITE[00400010]: exact machine call */\n"
+            "  return (*owner->vtable[1].method)(owner);\n}"
+        )
+        rewritten = generator._repair_exact_indirect_calls(
+            "00400000", function, body
+        )
+        self.assertIn(
+            "st::pointer_boundary_cast<Child *>(owner)->vfunc_8()",
+            rewritten,
+        )
+        self.assertNotIn("exact_indirect_callee", rewritten)
+
+    def test_machine_callsite_slot_overrides_stale_rendered_vtable_geometry(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("."), Path("receipt.json")
+        )
+        generator.type_emitter = TypeEmitter(self.records(), generator.issues)
+        self.assertEqual(
+            generator.type_emitter.register_exact_indirect_member_wrapper(
+                receiver_display="Owner *",
+                slot=8,
+                return_type="int",
+                function_pointer_type="int (__thiscall *)(Owner *)",
+                parameter_types=("Owner *",),
+                callee_expression="vtable_slot_8",
+            ),
+            "vfunc_8",
+        )
+        generator.machine_callsite_slots["00400000"] = {"00400010": 8}
+        function = {
+            "address": "00400000",
+            "parameters": [{"name": "owner", "type": "Owner *"}],
+            "comments": [],
+        }
+        body = (
+            "int f(Owner *owner) {\n"
+            "  /* ST_CALLSITE[00400010]: CALL dword ptr [EAX + 0x8] */\n"
+            "  return (*owner->vtable[1].method)(owner);\n}"
+        )
+        rewritten = generator._repair_exact_indirect_calls(
+            "00400000", function, body
+        )
+        self.assertIn("return owner->vfunc_8();", rewritten)
+
+    def test_machine_callsite_registers_bounded_generic_member_fallback(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("."), Path("receipt.json")
+        )
+        generator.type_emitter = TypeEmitter(self.records(), generator.issues)
+        generator.machine_callsite_slots["00400000"] = {"00400010": 8}
+        function = {
+            "address": "00400000",
+            "parameters": [{"name": "owner", "type": "Owner *"}],
+            "comments": [],
+        }
+        body = (
+            "int f(Owner *owner) {\n"
+            "  /* ST_CALLSITE[00400010]: CALL dword ptr [EAX + 0x8] */\n"
+            "  return (*owner->vtable[1].method)(owner, 7);\n}"
+        )
+        generator._repair_exact_indirect_calls(
+            "00400000", function, body, register_only=True,
+            register_machine_fallback=True,
+        )
+        rewritten = generator._repair_exact_indirect_calls(
+            "00400000", function, body
+        )
+        self.assertIn("return owner->vfunc_8(7);", rewritten)
+        header = generator.type_emitter.emit()
+        self.assertIn("undefined4 vfunc_8(undefined4 arg_1);", header)
+        self.assertIn(
+            "reinterpret_cast<undefined4 (__thiscall *)(Owner *, undefined4)>",
+            header,
+        )
+
+    def test_exact_machine_word_member_call_transports_pointer_argument(self) -> None:
+        records = self.records() + [{
+            "path": "/undefined4",
+            "name": "undefined4",
+            "class": "Undefined4DataType",
+            "length": 4,
+            "detail": {},
+        }]
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("."), Path("receipt.json")
+        )
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        function = {
+            "address": "00400000",
+            "parameters": [
+                {"name": "owner", "type": "Owner *"},
+                {"name": "child", "type": "Child *"},
+            ],
+            "comments": [
+                "00400010 [eol] [STIndirectCallsiteApplier] exact slot 0x8; "
+                "mode=machine-word; signature=__thiscall;/undefined4;"
+                "pointer:/Owner;/undefined4"
+            ],
+        }
+        body = (
+            "undefined4 f(Owner *owner, Child *child) {\n"
+            "  /* ST_CALLSITE[00400010]: CALL dword ptr [EAX + 8] */\n"
+            "  return owner->slot_08(child);\n}"
+        )
+        rewritten = generator._repair_exact_indirect_calls(
+            "00400000", function, body
+        )
+        self.assertIn(
+            "owner->vfunc_8("
+            "st::machine_word_boundary_cast<undefined4>(child))",
+            rewritten,
+        )
+        self.assertEqual(
+            generator.stats["exact_indirect_argument_boundaries"], 1
+        )
+        self.assertTrue(any(
+            issue.kind == "exact_indirect_argument_boundary"
+            for issue in generator.issues
+        ))
+
+    def test_machine_callsite_reuses_stronger_physical_member_wrapper(self) -> None:
+        records = self.records()
+        vtable = next(item for item in records if item["path"] == "/OwnerVTable")
+        vtable["detail"]["components"][0]["field_name"] = "vfunc_0"
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("."), Path("receipt.json")
+        )
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        generator.machine_callsite_slots["00400000"] = {"00400010": 0}
+        function = {
+            "address": "00400000",
+            "parameters": [{"name": "owner", "type": "Owner *"}],
+            "comments": [],
+        }
+        body = (
+            "int f(Owner *owner) {\n"
+            "  /* ST_CALLSITE[00400010]: CALL dword ptr [EAX] */\n"
+            "  return (*owner->vtable->vfunc_0)(owner, 7);\n}"
+        )
+        rewritten = generator._repair_exact_indirect_calls(
+            "00400000", function, body
+        )
+        self.assertIn("return owner->vfunc_0(7);", rewritten)
+        self.assertNotIn("(*owner->vtable", rewritten)
+        header = generator.type_emitter.emit()
+        self.assertIn("int vfunc_0(int value);", header)
+        self.assertNotIn("undefined4 vfunc_0", header)
+
     def test_duplicated_receiver_exact_cast_is_a_hard_regression(self) -> None:
         degraded = (
             "int f(STGameObjC *object) { return "
@@ -347,6 +730,166 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         SourceTreeGenerator._reject_degraded_duplicated_receiver_calls(
             "0065DA50", adjusted
         )
+
+    def test_readability_regression_is_address_exact_and_blocking(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.previous_readability_by_address = {
+            "00102030": {"generic_undefined_declaration": 1},
+            "00102040": {"generic_undefined_declaration": 4},
+        }
+        generator.readability_by_address = {
+            "00102030": {"generic_undefined_declaration": 2},
+            "00102040": {"generic_undefined_declaration": 0},
+        }
+        with self.assertRaisesRegex(
+            GenerationError,
+            r"00102030:generic_undefined_declaration 1->2",
+        ):
+            generator._require_nonincreasing_source_readability()
+
+    def test_readability_allows_one_receiver_cast_per_removed_stale_call(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.previous_readability_by_address = {
+            "00102030": {"stale_address_member_call": 1}
+        }
+        generator.readability_by_address = {
+            "00102030": {"pointer_boundary_cast": 1}
+        }
+        generator._require_nonincreasing_source_readability()
+        generator.readability_by_address["00102030"]["pointer_boundary_cast"] = 2
+        with self.assertRaises(GenerationError):
+            generator._require_nonincreasing_source_readability()
+
+    def test_readability_allows_receiver_cast_for_removed_raw_vtable_call(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.previous_readability_by_address = {
+            "00102030": {"raw_duplicated_vtable_call": 1}
+        }
+        generator.readability_by_address = {
+            "00102030": {"pointer_boundary_cast": 1}
+        }
+        generator._require_nonincreasing_source_readability()
+        generator.readability_by_address["00102030"]["pointer_boundary_cast"] = 2
+        with self.assertRaises(GenerationError):
+            generator._require_nonincreasing_source_readability()
+
+    def test_readability_allows_exact_callable_boundary_exchange(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.previous_readability_by_address = {
+            "00102030": {"generic_undefined_declaration": 1},
+            "00102040": {"pointer_boundary_cast": 2},
+        }
+        generator.readability_by_address = {
+            "00102030": {},
+            "00102040": {"pointer_boundary_cast": 3},
+        }
+        generator.neutral_callable_boundary_casts["00102040"] = 1
+        generator._require_nonincreasing_source_readability()
+
+        # An exact callable boundary cannot subsidize an unrelated second cast.
+        generator.readability_by_address["00102040"]["pointer_boundary_cast"] = 4
+        with self.assertRaises(GenerationError):
+            generator._require_nonincreasing_source_readability()
+
+        # Nor may the boundary move without a corresponding declaration gain.
+        generator.readability_by_address["00102030"] = {
+            "generic_undefined_declaration": 1
+        }
+        generator.readability_by_address["00102040"] = {
+            "pointer_boundary_cast": 3
+        }
+        with self.assertRaises(GenerationError):
+            generator._require_nonincreasing_source_readability()
+
+    def test_readability_metrics_ignore_comments_but_count_failures(self) -> None:
+        metrics = SourceTreeGenerator._readability_metrics(
+            "/* undefined4 ******ignored; */\n"
+            "undefined4 ******ppppppuVar1;\n"
+            "/* ST_PSEUDO[roundtrip_call_presentation_failure]: exact */\n"
+        )
+        self.assertEqual(metrics["generic_pointer_tower"], 1)
+        self.assertEqual(metrics["presentation_failure"], 1)
+        self.assertEqual(
+            SourceTreeGenerator._readability_metrics(
+                "int f(Owner *x) { return (*x->vtable[1].slot)(x); }"
+            )["raw_duplicated_vtable_call"],
+            1,
+        )
+        self.assertNotIn(
+            "raw_duplicated_vtable_call",
+            SourceTreeGenerator._readability_metrics(
+                "int f(Base *x) { return (*x->vtable->slot)((Child *)x); }"
+            ),
+        )
+
+    def test_readability_does_not_join_code_across_callsite_comment(self) -> None:
+        body = (
+            "int f(Owner *x) {\n"
+            "  int value = (*x->vtable->first)(other);\n"
+            "  /* ST_CALLSITE[00102030]: CALL dword ptr [EAX + 8] */\n"
+            "  return (*x->vtable->second)(x);\n"
+            "}\n"
+        )
+        metrics = SourceTreeGenerator._readability_metrics(body)
+        self.assertEqual(metrics["raw_duplicated_vtable_call"], 1)
+
+        false_join = body.replace(
+            "return (*x->vtable->second)(x);",
+            "return second_value;",
+        )
+        self.assertNotIn(
+            "raw_duplicated_vtable_call",
+            SourceTreeGenerator._readability_metrics(false_join),
+        )
+
+    def test_direct_leaf_rewrite_does_not_capture_member_dispatch(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("."), Path("receipt.json")
+        )
+        generator.type_emitter = TypeEmitter(self.records(), generator.issues)
+        target = {
+            "address": "00401000",
+            "name": "method",
+            "qualified_name": "Owner::method",
+            "calling_convention": "__thiscall",
+            "parameters": [
+                {"name": "this", "type": "Owner *"},
+                {"name": "value", "type": "int"},
+            ],
+            "return_type": "int",
+        }
+        function = {
+            "address": "00402000",
+            "name": "caller",
+            "qualified_name": "caller",
+            "calling_convention": "__cdecl",
+            "parameters": [{"name": "owner", "type": "Owner *"}],
+            "return_type": "int",
+            "callees": ["00401000 Owner::method"],
+            "referenced_globals": [],
+        }
+        generator.functions = [function, target]
+        generator.function_by_address = {
+            item["address"]: item for item in generator.functions
+        }
+        body = (
+            "int caller(Owner *owner) {\n"
+            "  int direct = Owner::method(owner, 1);\n"
+            "  return owner->method(2) + direct;\n"
+            "}\n"
+        )
+        rewritten = generator._transform_body(function, body)
+        self.assertIn("st::fn_00401000(owner, 1)", rewritten)
+        self.assertIn("owner->method(2)", rewritten)
+        self.assertNotIn("owner->st::fn_00401000", rewritten)
 
     def test_semantic_anchor_wins_same_leaf_name_collision(self) -> None:
         records = self.records() + [
@@ -586,6 +1129,244 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
             ("0", "nullptr -> zero word"),
         )
 
+    def test_runtime_scalar_alias_pointers_need_no_boundary_cast(self) -> None:
+        generator = SourceTreeGenerator.__new__(SourceTreeGenerator)
+        generator.type_emitter = TypeEmitter([], [])
+        self.assertTrue(
+            generator.type_emitter.display_cpp_equivalent("uint *", "dword *")
+        )
+        self.assertTrue(
+            generator.type_emitter.display_cpp_equivalent(
+                "undefined4 *", "uint *"
+            )
+        )
+        self.assertIsNone(
+            generator._boundary_replacement(
+                "uint *", BoundaryValue("dword *", "concrete_pointer"),
+                "&descriptor.flags",
+            )
+        )
+        self.assertFalse(
+            generator.type_emitter.display_cpp_equivalent("uint *", "short *")
+        )
+
+    def test_existing_pointer_cast_is_retargeted_without_helper(self) -> None:
+        generator = SourceTreeGenerator.__new__(SourceTreeGenerator)
+        generator.type_emitter = TypeEmitter([], [])
+        self.assertEqual(
+            generator._boundary_replacement(
+                "byte *", BoundaryValue("uint *", "concrete_pointer"),
+                "(uint *)cursor",
+            ),
+            (
+                "(byte *)cursor",
+                "retarget explicit pointer cast uint * -> byte *",
+            ),
+        )
+
+    def test_exact_storage_address_uses_ordinary_generic_pointer_cast(self) -> None:
+        generator = SourceTreeGenerator.__new__(SourceTreeGenerator)
+        generator.type_emitter = TypeEmitter([], [])
+        self.assertEqual(
+            generator._boundary_replacement(
+                "undefined4 *",
+                BoundaryValue("OwnerVTable **", "concrete_pointer", True),
+                "&owner->vtable",
+            ),
+            (
+                "(undefined4 *)&owner->vtable",
+                "exact storage address OwnerVTable ** -> undefined4 *",
+            ),
+        )
+
+    def test_generated_callback_aliases_compare_by_exact_function_abi(self) -> None:
+        records = self.records() + [
+            pointer("/callback_a *", "/callback_a"),
+            pointer("/callback_b *", "/callback_b"),
+        ]
+        for name in ("callback_a", "callback_b"):
+            records.append({
+                "path": "/" + name,
+                "name": name,
+                "class": "FunctionDefinitionDB",
+                "length": 1,
+                "detail": {
+                    "return_type": "/int",
+                    "calling_convention": "__cdecl",
+                    "varargs": False,
+                    "arguments": [{"name": "value", "type": "/int"}],
+                },
+            })
+        emitter = TypeEmitter(records, [])
+        self.assertTrue(
+            emitter.display_cpp_equivalent("callback_a *", "callback_b *")
+        )
+
+    def test_unanimous_callback_uses_type_one_neutral_local_once(self) -> None:
+        records = self.records() + [
+            pointer("/callback_a *", "/callback_a"),
+            pointer("/callback_b *", "/callback_b"),
+        ]
+        for name in ("callback_a", "callback_b"):
+            records.append({
+                "path": "/" + name,
+                "name": name,
+                "class": "FunctionDefinitionDB",
+                "length": 1,
+                "detail": {
+                    "return_type": "/int",
+                    "calling_convention": "__cdecl",
+                    "varargs": False,
+                    "arguments": [{"name": "value", "type": "/int"}],
+                },
+            })
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        generator.function_by_address = {
+            "00401000": {
+                "address": "00401000",
+                "parameters": [{"name": "callback", "type": "callback_a *"}],
+                "varargs": False,
+            },
+            "00402000": {
+                "address": "00402000",
+                "parameters": [{"name": "callback", "type": "callback_b *"}],
+                "varargs": False,
+            },
+        }
+        function = {"address": "00403000", "parameters": []}
+        body = (
+            "void fn_00403000() {\n"
+            "  code *callback;\n"
+            "  st::fn_00401000(callback);\n"
+            "  st::fn_00402000(callback);\n"
+            "}\n"
+        )
+        actual = generator._materialize_callable_local_families(
+            "00403000", function, body
+        )
+        declaration = re.search(
+            r"(?m)^\s*(STFnType_callback_a_[0-9a-f]+ \*)\s*callback;", actual
+        )
+        self.assertIsNotNone(declaration)
+        self.assertNotIn("code *callback;", actual)
+        self.assertTrue(generator.type_emitter.display_cpp_equivalent(
+            declaration.group(1), "callback_b *"
+        ))
+        self.assertEqual(
+            generator.stats["callable_local_family_materializations"], 1
+        )
+
+    def test_mixed_callback_local_splits_only_closed_case_lifetimes(self) -> None:
+        records = self.records() + [
+            pointer("/callback_a *", "/callback_a"),
+            pointer("/callback_b *", "/callback_b"),
+        ]
+        for name, argument in (("callback_a", "/int"), ("callback_b", "/Child *")):
+            records.append({
+                "path": "/" + name,
+                "name": name,
+                "class": "FunctionDefinitionDB",
+                "length": 1,
+                "detail": {
+                    "return_type": "/int",
+                    "calling_convention": "__cdecl",
+                    "varargs": False,
+                    "arguments": [{"name": "value", "type": argument}],
+                },
+            })
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        generator.function_by_address = {
+            "00401000": {
+                "address": "00401000",
+                "signature": "void use_a(callback_a * callback)",
+                "calling_convention": "__cdecl",
+                "parameters": [{"name": "callback", "type": "callback_a *"}],
+                "varargs": False,
+            },
+            "00402000": {
+                "address": "00402000",
+                "signature": "void use_b(callback_b * callback)",
+                "calling_convention": "__cdecl",
+                "parameters": [{"name": "callback", "type": "callback_b *"}],
+                "varargs": False,
+            },
+            "00403000": {
+                "address": "00403000",
+                "signature": "int __cdecl target_a(int value)",
+                "calling_convention": "__cdecl",
+                "parameters": [{"name": "value", "type": "int"}],
+                "varargs": False,
+            },
+            "00404000": {
+                "address": "00404000",
+                "signature": "int __cdecl target_b(Child * value)",
+                "calling_convention": "__cdecl",
+                "parameters": [{"name": "value", "type": "Child *"}],
+                "varargs": False,
+            },
+        }
+        function = {"address": "00405000", "parameters": []}
+        body = (
+            "void fn_00405000(int selector) {\n"
+            "  code *callback;\n"
+            "  switch (selector) {\n"
+            "  case 1:\n"
+            "    callback = st::fn_00403000;\n"
+            "    st::fn_00401000(callback);\n"
+            "    break;\n"
+            "  case 2:\n"
+            "    callback = st::fn_00404000;\n"
+            "    st::fn_00402000(callback);\n"
+            "    break;\n"
+            "  }\n"
+            "}\n"
+        )
+        actual = generator._materialize_callable_local_families(
+            "00405000", function, body
+        )
+        self.assertIn("code *callback;", actual)
+        self.assertEqual(len(re.findall(
+            r"\bcallback_callback_[0-9a-f]{8}\b", actual
+        )), 6)
+        self.assertNotIn("fn_00401000(callback)", actual)
+        self.assertNotIn("fn_00402000(callback)", actual)
+        self.assertNotIn("callback = st::fn_", actual)
+
+    def test_machine_proven_neutral_callable_role_rewrites_only_parameter(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        function = {
+            "address": "00102030",
+            "parameters": [
+                {"name": "this", "type": "Owner *"},
+                {"name": "callback", "type": "undefined *"},
+                {"name": "payload", "type": "undefined *"},
+            ],
+            "varargs": False,
+        }
+        generator.neutral_callable_parameters["00102030"].add(1)
+        body = (
+            "void __thiscall Owner::run(Owner *this, undefined *callback, "
+            "undefined *payload) {\n"
+            "  (*(code *)callback)(payload);\n}\n"
+        )
+        actual = generator._rewrite_neutral_callable_parameter_declarations(
+            "00102030", function, body
+        )
+        self.assertIn("code *callback", actual)
+        self.assertIn("undefined *payload", actual)
+        self.assertEqual(
+            generator._function_parameter_spec(function),
+            (("Owner *", "code *", "undefined *"), False),
+        )
+
     def test_raw_offset_resolves_to_existing_exact_member(self) -> None:
         emitter = TypeEmitter(self.records(), [])
         self.assertEqual(
@@ -664,6 +1445,79 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertEqual(count, 1)
         self.assertEqual(actual, "st::fn_00660180(param_1)")
 
+    def test_stale_line_wrapped_qualifier_allows_space_before_scope(self) -> None:
+        spelling = (
+            "SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970\n"
+            "    ::st::fn_004016B8(receiver)"
+        )
+        actual, count = QUALIFIED_ADDRESS_SYMBOL_RE.subn(
+            lambda match: match.group(1), spelling
+        )
+        self.assertEqual(count, 1)
+        self.assertEqual(actual, "st::fn_004016B8(receiver)")
+
+    def test_stale_address_member_call_restores_explicit_this_argument(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter(self.records(), [])
+        generator.function_by_address = {
+            "00102030": {
+                "address": "00102030",
+                "calling_convention": "__thiscall",
+                "parameters": [
+                    {"name": "this", "type": "Owner *"},
+                    {"name": "value", "type": "int"},
+                ],
+                "varargs": False,
+            }
+        }
+        actual = generator._repair_stale_address_member_calls(
+            "00400000",
+            {"parameters": [{"name": "owner", "type": "Owner *"}]},
+            "result = owner->st::fn_00102030(value);",
+        )
+        self.assertEqual(actual, "result = st::fn_00102030(owner,value);")
+        self.assertEqual(generator.stats["stale_address_member_call_repairs"], 1)
+
+    def test_exact_thiscall_receiver_transport_does_not_assert_inheritance(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter(self.records(), [])
+        actual = generator._exact_receiver_transport_replacement(
+            "Owner *", BoundaryValue("Child *", "concrete_pointer"), "child"
+        )
+        self.assertEqual(
+            actual,
+            (
+                "st::pointer_boundary_cast<Owner *>(child)",
+                "exact direct __thiscall ECX transport Child * -> Owner *",
+            ),
+        )
+
+    def test_machine_word_nullptr_becomes_zero_but_pointer_null_stays(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter(self.records(), [])
+        body = (
+            "void fn(undefined4 word, Owner *owner) {\n"
+            "  if (word != nullptr) word = nullptr;\n"
+            "  if (owner != nullptr) use(owner);\n"
+            "}\n"
+        )
+        actual = generator._repair_machine_word_null_literals(
+            "00102030",
+            {"parameters": [
+                {"name": "word", "type": "undefined4"},
+                {"name": "owner", "type": "Owner *"},
+            ]},
+            body,
+        )
+        self.assertIn("if (word != 0) word = 0;", actual)
+        self.assertIn("if (owner != nullptr)", actual)
+
     def test_invalid_ghidra_global_spelling_gets_stable_address_alias(self) -> None:
         source = "pcVar = &CHAR___007c3b5c;"
         match = ADDRESS_CODED_GLOBAL_RE.search(source)
@@ -725,6 +1579,44 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         actual = generator._materialize_tagged_lifetimes("00102030", body)
         self.assertNotIn("auto _local_8", actual)
 
+    def test_unscoped_concat_piece_gets_exact_function_storage(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        body = (
+            "void fn() {\n"
+            "  if (condition) {\n"
+            "    _local_2c = CONCAT22(high, low);\n"
+            "  }\n"
+            "  use(_local_2c);\n"
+            "}\n"
+        )
+        actual = generator._materialize_unscoped_synthetic_words(
+            "00102030", {"parameters": []}, body
+        )
+        self.assertIn("uint32_t _local_2c;", actual)
+        self.assertIn("_local_2c = CONCAT22(high, low);", actual)
+
+    def test_exporter_scalar_split_is_hoisted_without_retyping(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        body = (
+            "void fn() {\n"
+            "  if (condition) {\n"
+            "    int scalar_pointer = value * 4; "
+            "/* split integer lifetime from pointer-typed SSA storage */\n"
+            "  }\n"
+            "  use(scalar_pointer);\n"
+            "}\n"
+        )
+        actual = generator._materialize_unscoped_synthetic_words(
+            "00102030", {"parameters": []}, body
+        )
+        self.assertIn("int scalar_pointer;", actual)
+        self.assertIn("scalar_pointer = value * 4;", actual)
+        self.assertNotIn("int scalar_pointer = value", actual)
+
     def test_read_first_narrow_parameter_gets_machine_word_slot(self) -> None:
         generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
         function = {
@@ -758,6 +1650,22 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
             }],
         }
         body = "int fn(int param_1) { return _param_1; }\n"
+        self.assertEqual(
+            generator._materialize_promoted_parameter_slots(
+                "00102030", function, body
+            ),
+            body,
+        )
+
+    def test_split_lifetime_owns_synthetic_parameter_before_promotion(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        function = {
+            "parameters": [{
+                "name": "param_1", "type": "short", "length": 2,
+                "storage": "Stack[0x4]:2",
+            }],
+        }
+        body = "int fn(short param_1) {\n  auto _param_1 = 5;\n  return _param_1;\n}\n"
         self.assertEqual(
             generator._materialize_promoted_parameter_slots(
                 "00102030", function, body
@@ -899,6 +1807,29 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
             "st::fn_00102030(player, 0); "
             "st::fn_00102040(player, 0, 0, player, value);",
         )
+
+    def test_equal_arity_overload_is_resolved_by_exact_direct_callsite(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.function_by_address = {
+            "00102030": {"parameters": [{}, {}]},
+            "00102040": {"parameters": [{}, {}]},
+        }
+        generator.relations_by_caller["00102020"] = [{
+            "call_site": "00102024",
+            "direct": "00102040 Owner::PushTV",
+        }]
+        body = (
+            "/* ST_CALLSITE[00102024]: CALL 00102040; direct=00102040 Owner::PushTV */\n"
+            "Owner::PushTV(player, value);"
+        )
+        actual, count, unresolved = generator._rewrite_ambiguous_calls(
+            body,
+            {"Owner::PushTV": {"00102030", "00102040"}},
+            address="00102020",
+        )
+        self.assertEqual(count, 1)
+        self.assertFalse(unresolved)
+        self.assertIn("st::fn_00102040(player, value)", actual)
 
     def test_call_arity_ignores_nested_and_template_commas(self) -> None:
         masked = "call(STPiece<3, 1>(value), nested(a, b), last)"

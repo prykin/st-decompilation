@@ -50,8 +50,10 @@ STGroupBoatC::GetDepotForAttack
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1708);
     }
+    /* ST_CALLSITE[004A83C7]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar3 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,pSVar6->field_0024,(ushort)param_1,CASE_1);
+    /* ST_CALLSITE[004A83DA]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0((STFishC *)pSVar3,&local_10,&local_e,&local_c);
     index = 0;
     local_1c = pSVar6->field_020E->count;
@@ -60,10 +62,14 @@ STGroupBoatC::GetDepotForAttack
       do {
         DArrayGetElement(pSVar6->field_020E,index,&local_24);
         if (uStack_22 != 0xffff) {
+          /* ST_CALLSITE[004A8426]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_24,uStack_22,(int)cStack_23);
+          /* ST_CALLSITE[004A8431]: CALL dword ptr [EAX + 0x2c] */
           iVar5 = pSVar3->vfunc_2C();
           if ((iVar5 == 0x3b) ||
+             /* ST_CALLSITE[004A843D]: CALL dword ptr [EDX + 0x2c] */
              (iVar5 = pSVar3->vfunc_2C(), pSVar6 = local_14, iVar5 == 0x60)) {
+            /* ST_CALLSITE[004A8453]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0((STFishC *)pSVar3,&local_8,&local_6,&local_a);
             local_EAX_310 =
                  FUN_006aadd0((int)local_10,(int)local_e,(int)local_c,(int)local_8,(int)local_6,

@@ -14,11 +14,13 @@ int FUN_006b75c0(int *param_1,int param_2,int *param_3)
   iVar2 = Library::DKW::DDX::FUN_006b7510(param_1,(int)param_3,(int *)&param_3,-1,0);
   if (iVar2 == 0) {
     if ((0 < param_2) && ((int)param_3 < 1)) {
+      /* ST_CALLSITE[006B75F3]: CALL EBX */
       DVar3 = timeGetTime();
       iVar2 = Library::DKW::DDX::FUN_006b7510(param_1,(int)piVar1,(int *)&param_3,-1,0);
       if (iVar2 != 0) {
         return iVar2;
       }
+      /* ST_CALLSITE[006B7612]: CALL EBX */
       while (((int)param_3 < 1 && (DVar4 = timeGetTime(), (int)(DVar4 - DVar3) < param_2))) {
         iVar2 = Library::DKW::DDX::FUN_006b7510(param_1,(int)piVar1,(int *)&param_3,-1,0);
         if (iVar2 != 0) {

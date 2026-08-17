@@ -85,9 +85,9 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
   if (param_1[5] == -1) {
     param_1[5] = param_1[1];
   }
-  local_8 = (STGroupC *)thunk_FUN_0042b760(*(char *)(param_1 + 1),*(ushort *)(param_1 + 9));
+  local_8 = (STGroupC *)thunk_FUN_0042b760(((char *)param_1)[1],*(ushort *)(param_1 + 9));
   if ((STGroupBoatC *)local_8 == nullptr) {
-    uVar2 = thunk_FUN_00435850(*(char *)(param_1 + 1),0,(int *)&local_8);
+    uVar2 = thunk_FUN_00435850(((char *)param_1)[1],0,(int *)&local_8);
     *(ushort *)(param_1 + 9) = uVar2;
     if (local_8 == nullptr) {
       RaiseInternalException
@@ -95,6 +95,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
                  0x27d8);
     }
   }
+  /* ST_CALLSITE[0044578E]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
   STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x14,0,&local_c,param_1,0);
   iVar5 = local_c;
   if (local_c == 0) {
@@ -104,6 +105,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     iVar5 = extraout_EAX;
   }
+  /* ST_CALLSITE[004457C2]: CALL 0x0040340e; direct=0040340E STGroupC::AddObj */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar4 = STGroupC::AddObj(local_8,STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(*(undefined2 *)(local_c + 0x32))),0);
   g_currentExceptionFrame = local_58.previous;

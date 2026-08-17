@@ -62,7 +62,7 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
   pbVar3[0xe] = 0;
   pbVar3[0xf] = 0;
   if (this->field_005E != nullptr) {
-    local_c = (uint *)FUN_006b0020(&this->field_005E->flags,(int *)&local_8);
+    local_c = FUN_006b0020(&this->field_005E->flags,(int *)&local_8);
     *puVar7 = local_8;
     puVar7 = local_c;
     puVar9 = (uint *)(pbVar3 + 0x56);
@@ -72,7 +72,7 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
     FreeAndNull(&local_c);
   }
   if (this->field_0062 != nullptr) {
-    local_c = (uint *)FUN_006b0020(&this->field_0062->flags,(int *)&local_8);
+    local_c = FUN_006b0020(&this->field_0062->flags,(int *)&local_8);
     *puVar7 = local_8;
     puVar9 = local_c;
     puVar11 = puVar7 + 1;
@@ -82,7 +82,7 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
     FreeAndNull(&local_c);
   }
   if (this->field_0066 != nullptr) {
-    local_c = (uint *)FUN_006b0020(&this->field_0066->flags,(int *)&local_8);
+    local_c = FUN_006b0020(&this->field_0066->flags,(int *)&local_8);
     *puVar7 = local_8;
     puVar9 = local_c;
     for (uVar5 = local_8 >> 2; puVar7 = puVar7 + 1, uVar5 != 0; uVar5 = uVar5 - 1) {

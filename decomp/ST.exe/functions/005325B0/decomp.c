@@ -83,6 +83,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   case 0xd:
   case 0xe:
   case 0x13:
+    /* ST_CALLSITE[00532688]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079acf0,
               PTR_s_STRATEGS_0079acfc);
     break;
@@ -91,6 +92,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   case 5:
   case 8:
   case 0xf:
+    /* ST_CALLSITE[005326A7]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,&CHAR_00h_0080ef1e);
   }
   pcVar6 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
@@ -104,6 +106,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   case 0xe:
   case 0x13:
     pOVar7 = (OptPanelTy_field_02FDDArray *)
+             /* ST_CALLSITE[005326FD]: CALL 0x00404255; direct=00404255 CreateAssistantList */
              CreateAssistantList((int)pcVar6,(uint)DAT_0080874e,DAT_0080995c);
     break;
   case 2:
@@ -112,6 +115,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   case 8:
   case 0xf:
     pOVar7 = (OptPanelTy_field_02FDDArray *)
+             /* ST_CALLSITE[00532710]: CALL 0x0040466a; direct=0040466A CreateStrategList */
              CreateStrategList((int)pcVar6,(uint)DAT_0080874d,0xffffffff);
     break;
   default:

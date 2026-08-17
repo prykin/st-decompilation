@@ -16,8 +16,10 @@ undefined4 __fastcall FUN_004e4b60(STMineSetC *param_1)
   case CASE_0:
     if ((param_1->field_05AC == 0x36) || (param_1->field_05AC == 0x5d)) {
       if (param_1->field_0024 != param_1->field_023D) {
+        /* ST_CALLSITE[004E4BA2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar1 = LookupRecordByte((char)param_1->field_023D);
         iVar3 = param_1->field_0235;
+        /* ST_CALLSITE[004E4BC7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar2 = LookupRecordByte(*(char *)&param_1->field_0024);
         if ((&DAT_007e1984)[(uint)bVar2 + (iVar3 * 3 + (uint)bVar1) * 3] == '\0') {
           return 0;
@@ -48,6 +50,7 @@ undefined4 __fastcall FUN_004e4b60(STMineSetC *param_1)
         param_1->field_04E0 = 0;
       }
       if (param_1->field_04E4 != 0) {
+        /* ST_CALLSITE[004E4CB5]: CALL 0x0040216c; direct=0040216C STMineSetC::sub_0041D2B0 */
         STMineSetC::sub_0041D2B0(param_1);
         param_1->field_04E4 = 0;
       }

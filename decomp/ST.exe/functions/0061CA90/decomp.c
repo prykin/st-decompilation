@@ -99,6 +99,7 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
                               [(int)sVar11 * (int)sVar15 +
                                (int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar9].objects[0],
                    this_00 != nullptr &&
+                   /* ST_CALLSITE[0061CC76]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                    (iVar16 = (*this_00->vtable[5].slots_00_28[0])(this_00), iVar16 != 0)) &&
                   ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
                    ((g_playSystem_00802A38 == nullptr ||
@@ -139,6 +140,7 @@ LAB_0061cd61:
                            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                 }
                 if ((bVar20) &&
+                   /* ST_CALLSITE[0061CD78]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                    (iVar16 = (*this_00->vtable[5].slots_00_28[2])(this_00), iVar16 != 0)) {
                   thunk_FUN_00416270(this_00,(uint *)&local_6,(int *)((int)&param_3 + 2),&local_22);
                   uVar4 = *(undefined2 *)&this_00[1].field_0xe;
@@ -160,6 +162,7 @@ LAB_0061cd61:
                   pSVar6 = this_00->vtable;
                   piVar17[3] = (int)STPiece<2,2>(param_3);
                   piVar17[4] = iVar13;
+                  /* ST_CALLSITE[0061CDEB]: CALL dword ptr [EAX + 0x2c] */
                   iVar16 = (*pSVar6->GetObjectTypeId)(this_00);
                   iVar13 = (int)local_6;
                   piVar17[1] = iVar16;

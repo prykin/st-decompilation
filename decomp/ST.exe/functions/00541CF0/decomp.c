@@ -138,6 +138,7 @@ void __cdecl FUN_00541cf0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_54[0x38] = 0x7c;
   local_54[0x39] = 0x7e;
   local_54[0x3a] = 0x2a;
+  /* ST_CALLSITE[00541EC9]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   ccFntTy::operator_new
             (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,param_2);
   return;

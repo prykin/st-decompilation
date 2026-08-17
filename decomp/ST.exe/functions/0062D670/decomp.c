@@ -39,10 +39,10 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
   pbVar7 = local_10;
   memmove(pbVar7, puVar5, 0x98); /* compiler REP MOVS byte copy */
   *param_1 = 0x98;
-  auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+  uint * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   do {
     switch(param_1_after_write) {
-    case nullptr:
+    case 0:
       ppDVar2 = (DArrayTy **)local_8->field_0030;
       break;
     case (uint *)0x1:

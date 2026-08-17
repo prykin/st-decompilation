@@ -36,9 +36,12 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[005E04B0]: CALL 0x00401d43; direct=00401D43 DarkScreen */
   DarkScreen(g_dDXContext_0080759C,10,2);
   this_00 = local_8;
+  /* ST_CALLSITE[005E04CB]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
   SetAccelerator(0,local_8->field_0008,2,100,2,1,0,0,0,0,0,0);
+  /* ST_CALLSITE[005E04E3]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
   SetAccelerator(0,this_00->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
   if (this_00->field_0488 != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0488);
@@ -133,6 +136,7 @@ LAB_005e0672:
       do {
         pAVar3 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar2, uVar5);
 LAB_005e06d9:
+        /* ST_CALLSITE[005E06DC]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
         TTaskItemClose(this_00,pAVar3);
         pDVar2 = this_00->field_0647;
         uVar5 = uVar5 + 1;
@@ -152,6 +156,7 @@ LAB_005e06d9:
       do {
         pAVar3 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar2, uVar5);
 LAB_005e072b:
+        /* ST_CALLSITE[005E072E]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
         TTaskItemClose(this_00,pAVar3);
         pDVar2 = this_00->field_064F;
         uVar5 = uVar5 + 1;

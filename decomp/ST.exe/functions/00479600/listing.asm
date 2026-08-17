@@ -83,7 +83,8 @@ LAB_00479700:
 00479714  3B D0                     CMP EDX,EAX
 00479716  0F 85 52 02 00 00         JNZ 0x0047996e
 0047971C  8B 01                     MOV EAX,dword ptr [ECX]
-0047971E  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STBoatC::Teleport::override::prt_47971e_e5e2351e:
+0047971E  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00479724  85 C0                     TEST EAX,EAX
 00479726  0F 84 42 02 00 00         JZ 0x0047996e
 LAB_0047972c:
@@ -126,7 +127,8 @@ LAB_00479797:
 004797AB  3B D0                     CMP EDX,EAX
 004797AD  0F 85 BB 01 00 00         JNZ 0x0047996e
 004797B3  8B 01                     MOV EAX,dword ptr [ECX]
-004797B5  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STBoatC::Teleport::override::prt_4797b5_e5e2351e:
+004797B5  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 004797BB  85 C0                     TEST EAX,EAX
 004797BD  0F 84 AB 01 00 00         JZ 0x0047996e
 004797C3  8D BE 55 06 00 00         LEA EDI,[ESI + 0x655]
@@ -195,7 +197,8 @@ LAB_00479896:
 004798AA  3B D0                     CMP EDX,EAX
 004798AC  0F 85 AB 00 00 00         JNZ 0x0047995d
 004798B2  8B 01                     MOV EAX,dword ptr [ECX]
-004798B4  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STBoatC::Teleport::override::prt_4798b4_e5e2351e:
+004798B4  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 004798BA  85 C0                     TEST EAX,EAX
 004798BC  0F 84 9B 00 00 00         JZ 0x0047995d
 004798C2  39 9E 35 06 00 00         CMP dword ptr [ESI + 0x635],EBX
@@ -239,7 +242,8 @@ LAB_00479939:
 00479949  3B D0                     CMP EDX,EAX
 0047994B  75 10                     JNZ 0x0047995d
 0047994D  8B 01                     MOV EAX,dword ptr [ECX]
-0047994F  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STBoatC::Teleport::override::prt_47994f_e5e2351e:
+0047994F  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00479955  85 C0                     TEST EAX,EAX
 00479957  0F 85 9F 19 00 00         JNZ 0x0047b2fc
 LAB_0047995d:
@@ -324,7 +328,8 @@ LAB_00479a50:
 00479A64  3B D0                     CMP EDX,EAX
 00479A66  0F 85 02 FF FF FF         JNZ 0x0047996e
 00479A6C  8B 01                     MOV EAX,dword ptr [ECX]
-00479A6E  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STBoatC::Teleport::override::prt_479a6e_e5e2351e:
+00479A6E  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00479A74  85 C0                     TEST EAX,EAX
 00479A76  0F 84 F2 FE FF FF         JZ 0x0047996e
 LAB_00479a7c:
@@ -367,7 +372,8 @@ LAB_00479ae8:
 00479AFC  3B C2                     CMP EAX,EDX
 00479AFE  0F 85 6A FE FF FF         JNZ 0x0047996e
 00479B04  8B 11                     MOV EDX,dword ptr [ECX]
-00479B06  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Teleport::override::prt_479b06_e5e2351e:
+00479B06  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00479B0C  85 C0                     TEST EAX,EAX
 00479B0E  0F 84 5A FE FF FF         JZ 0x0047996e
 00479B14  8D BE 55 06 00 00         LEA EDI,[ESI + 0x655]
@@ -467,7 +473,8 @@ LAB_00479c41:
 00479C55  3B C2                     CMP EAX,EDX
 00479C57  0F 85 11 FD FF FF         JNZ 0x0047996e
 00479C5D  8B 11                     MOV EDX,dword ptr [ECX]
-00479C5F  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Teleport::override::prt_479c5f_e5e2351e:
+00479C5F  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00479C65  85 C0                     TEST EAX,EAX
 00479C67  0F 84 01 FD FF FF         JZ 0x0047996e
 LAB_00479c6d:
@@ -510,7 +517,8 @@ LAB_00479cd9:
 00479CED  3B C2                     CMP EAX,EDX
 00479CEF  0F 85 79 FC FF FF         JNZ 0x0047996e
 00479CF5  8B 11                     MOV EDX,dword ptr [ECX]
-00479CF7  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Teleport::override::prt_479cf7_e5e2351e:
+00479CF7  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00479CFD  85 C0                     TEST EAX,EAX
 00479CFF  0F 84 69 FC FF FF         JZ 0x0047996e
 00479D05  66 8B 46 47               MOV AX,word ptr [ESI + 0x47]
@@ -601,7 +609,8 @@ LAB_00479e04:
 00479E18  3B C2                     CMP EAX,EDX
 00479E1A  0F 85 4E FB FF FF         JNZ 0x0047996e
 00479E20  8B 11                     MOV EDX,dword ptr [ECX]
-00479E22  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Teleport::override::prt_479e22_e5e2351e:
+00479E22  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00479E28  85 C0                     TEST EAX,EAX
 00479E2A  0F 84 3E FB FF FF         JZ 0x0047996e
 00479E30  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -664,7 +673,8 @@ LAB_00479edc:
 00479EF0  3B C2                     CMP EAX,EDX
 00479EF2  0F 85 AC 00 00 00         JNZ 0x00479fa4
 00479EF8  8B 11                     MOV EDX,dword ptr [ECX]
-00479EFA  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Teleport::override::prt_479efa_e5e2351e:
+00479EFA  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00479F00  85 C0                     TEST EAX,EAX
 00479F02  0F 84 9C 00 00 00         JZ 0x00479fa4
 00479F08  39 9E 35 06 00 00         CMP dword ptr [ESI + 0x635],EBX
@@ -708,7 +718,8 @@ LAB_00479f80:
 00479F90  3B C2                     CMP EAX,EDX
 00479F92  75 10                     JNZ 0x00479fa4
 00479F94  8B 11                     MOV EDX,dword ptr [ECX]
-00479F96  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Teleport::override::prt_479f96_e5e2351e:
+00479F96  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00479F9C  85 C0                     TEST EAX,EAX
 00479F9E  0F 85 58 13 00 00         JNZ 0x0047b2fc
 LAB_00479fa4:
@@ -1005,7 +1016,8 @@ LAB_0047a318:
 0047A328  3B C2                     CMP EAX,EDX
 0047A32A  75 22                     JNZ 0x0047a34e
 0047A32C  8B 11                     MOV EDX,dword ptr [ECX]
-0047A32E  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Teleport::override::prt_47a32e_e5e2351e:
+0047A32E  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0047A334  85 C0                     TEST EAX,EAX
 0047A336  74 16                     JZ 0x0047a34e
 0047A338  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
@@ -1078,7 +1090,8 @@ LAB_0047a3f1:
 0047A405  3B C2                     CMP EAX,EDX
 0047A407  0F 85 97 00 00 00         JNZ 0x0047a4a4
 0047A40D  8B 11                     MOV EDX,dword ptr [ECX]
-0047A40F  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Teleport::override::prt_47a40f_e5e2351e:
+0047A40F  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0047A415  85 C0                     TEST EAX,EAX
 0047A417  0F 84 87 00 00 00         JZ 0x0047a4a4
 0047A41D  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -1725,7 +1738,8 @@ LAB_0047ac99:
 0047ACA9  3B C2                     CMP EAX,EDX
 0047ACAB  75 15                     JNZ 0x0047acc2
 0047ACAD  8B 11                     MOV EDX,dword ptr [ECX]
-0047ACAF  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Teleport::override::prt_47acaf_e5e2351e:
+0047ACAF  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0047ACB5  85 C0                     TEST EAX,EAX
 0047ACB7  74 09                     JZ 0x0047acc2
 0047ACB9  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -2058,7 +2072,8 @@ LAB_0047b07e:
 0047B08E  3B C2                     CMP EAX,EDX
 0047B090  75 1C                     JNZ 0x0047b0ae
 0047B092  8B 11                     MOV EDX,dword ptr [ECX]
-0047B094  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Teleport::override::prt_47b094_e5e2351e:
+0047B094  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0047B09A  85 C0                     TEST EAX,EAX
 0047B09C  74 09                     JZ 0x0047b0a7
 0047B09E  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -2105,7 +2120,8 @@ LAB_0047b113:
 0047B127  3B C2                     CMP EAX,EDX
 0047B129  0F 85 96 00 00 00         JNZ 0x0047b1c5
 0047B12F  8B 11                     MOV EDX,dword ptr [ECX]
-0047B131  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STBoatC::Teleport::override::prt_47b131_e5e2351e:
+0047B131  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0047B137  85 C0                     TEST EAX,EAX
 0047B139  0F 84 86 00 00 00         JZ 0x0047b1c5
 0047B13F  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]

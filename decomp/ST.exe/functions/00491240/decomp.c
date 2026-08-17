@@ -93,7 +93,9 @@ STBoatC::PrepareForLoading
     if (this->field_05B2 != -1) {
       this->field_05C4 = CASE_0;
       this->field_05BC = 0;
+      /* ST_CALLSITE[0049146E]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
       sub_00481520(this,(int)param_2,(int)param_3,(int)this->field_05B2);
+      /* ST_CALLSITE[00491476]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
       sub_00460260(this,0);
       return;
     }

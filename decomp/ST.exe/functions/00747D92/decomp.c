@@ -12,11 +12,13 @@ int __thiscall FUN_00747d92(void *this,int *param_1,char *param_2,int *param_3)
 
   piVar1 = param_3;
   local_8 = this;
+  /* ST_CALLSITE[00747DA3]: CALL dword ptr [EAX + 0x14] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar2 = (**(code **)(*param_3 + 0x14))(param_3);
   if (-1 < iVar2) {
-    auto param_3_after_write = nullptr; /* compiler stack-slot lifetime split */
+    int * param_3_after_write = nullptr; /* compiler stack-slot lifetime split */
     local_8 = nullptr;
+    /* ST_CALLSITE[00747DC3]: CALL dword ptr [EAX + 0xc] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)(*piVar1 + 0xc))(piVar1,1,&param_3_after_write,&local_8);
     iVar2 = 0;
@@ -36,6 +38,7 @@ int __thiscall FUN_00747d92(void *this,int *param_1,char *param_2,int *param_3)
       if (iVar3 == 0) {
         return 0;
       }
+      /* ST_CALLSITE[00747E31]: CALL dword ptr [EAX + 0xc] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar4 = (**(code **)(*piVar1 + 0xc))(piVar1,1,&param_3_after_write,&local_8);
     }

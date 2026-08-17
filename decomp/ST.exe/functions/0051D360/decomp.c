@@ -49,16 +49,21 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
         local_c->field_0030 = (undefined2)iVar2;
         local_c->field_0032 = STPiece<2,2>(iVar2);
         if (g_cursorClass_00802A30 != nullptr) {
+          /* ST_CALLSITE[0051D42F]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_c->field_0x18);
         }
       }
     }
     UVar4 = thunk_FUN_00523410(param_1,'\0',0);
+    /* ST_CALLSITE[0051D445]: CALL 0x00403ef9; direct=00403EF9 HelpPanelTy::DrawTitle */
     DrawTitle(this_00,0x55f9,0,UVar4);
+    /* ST_CALLSITE[0051D453]: CALL 0x00403d78; direct=00403D78 HelpPanelTy::DrawObj */
     DrawObj(this_00,&local_8,(STAllPlayersC_GetTOBJImage_param_2Enum *)param_1,0,0);
     UVar4 = thunk_FUN_00523410(param_1,'\0',2);
+    /* ST_CALLSITE[0051D46B]: CALL 0x00402dab; direct=00402DAB HelpPanelTy::DrawDescription */
     DrawDescription(this_00,&local_8,UVar4);
+    /* ST_CALLSITE[0051D47A]: CALL 0x0040506f; direct=0040506F HelpPanelTy::AddLinks */
     AddLinks(this_00,&local_8,'\f',param_1,0);
     g_currentExceptionFrame = local_50.previous;
     return;

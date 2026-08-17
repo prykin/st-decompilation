@@ -39,9 +39,11 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar2 = local_c;
   if (iVar3 == 0) {
+    /* ST_CALLSITE[005DB52B]: CALL 0x00402f86; direct=00402F86 StartSystemTy::sub_005DB2A0 */
     sub_005DB2A0(local_c);
     iVar13 = 0;
     do {
+      /* ST_CALLSITE[005DB53C]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&pSVar2->field_003C,"MM_ACC%02d",iVar13);
       pcVar3 = Library::Ourlib::MFIMG::mfImtLoad
                          (g_cMf32_00806780,&pSVar2->field_003C,0,0,nullptr,1);
@@ -95,6 +97,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
       }
       iVar13 = iVar13 + 1;
     } while (iVar13 < 6);
+    /* ST_CALLSITE[005DB6E8]: CALL 0x00401a4b; direct=00401A4B LoadStartPlt */
     LoadStartPlt(g_cMf32_00806780,0);
     puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",2,1);
     pSVar2->field_02F0 = puVar5;
@@ -113,6 +116,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&pSVar2->field_02F8,(int *)g_ddxContext_008075A8,0x32,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005DB7BA]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(pSVar2->field_02F8 + 4))(PTR_00806784,7,0,"MM_MAP",0xffffffff);
     pSVar2->field_0314 = 1;
@@ -121,6 +125,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&pSVar2->field_038D,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005DB803]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(pSVar2->field_038D + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
     pSVar2->field_03A9 = 0xe5;
@@ -132,6 +137,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&pSVar2->field_041E,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005DB860]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(pSVar2->field_041E + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
     pSVar2->field_043A = 0xe5;
@@ -143,6 +149,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&pSVar2->field_04AF,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005DB8BF]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(pSVar2->field_04AF + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
     pSVar2->field_04CB = 0xeb;
@@ -210,6 +217,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&pSVar2->field_055C,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005DBAC2]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(pSVar2->field_055C + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
     pSVar2->field_0578 = 0x23a;
@@ -218,6 +226,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&pSVar2->field_05ED,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005DBB0F]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(pSVar2->field_05ED + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
     iVar13 = 1;
@@ -253,6 +262,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
+  /* ST_CALLSITE[005DBC07]: CALL 0x00402f86; direct=00402F86 StartSystemTy::sub_005DB2A0 */
   sub_005DB2A0(local_c);
   iVar12 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x1ac,0,iVar3,"%s",
                               "StartSystemTy::LoadGraph");

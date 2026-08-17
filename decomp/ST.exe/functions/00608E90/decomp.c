@@ -19,6 +19,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   byte *local_c;
   uint local_8;
 
+  /* ST_CALLSITE[00608E9F]: CALL 0x00403ebd; direct=00403EBD STGameObjC::GetMessage */
   local_EAX_15 = STGameObjC::GetMessage(this,(STMessage *)param_1);
   if (local_EAX_15 == 0xffff) {
     return 0xffff;
@@ -30,6 +31,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
       if (local_c == nullptr) {
         return 0;
       }
+      /* ST_CALLSITE[00609630]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,STField<int *>(this,0x18),local_c,local_8);
       FreeAndNull(&local_c);
       return 0;
@@ -262,6 +264,7 @@ joined_r0x0060929e:
 LAB_006092a0:
     thunk_FUN_006099a0(this);
   }
+  /* ST_CALLSITE[006092B0]: CALL 0x004017b7; direct=004017B7 STFieldC::CreateField */
   uVar3 = STFieldC::CreateField(this,STField<uint>(this,0x219));
   if ((int)uVar3 < 1) {
     return 0xffff;
@@ -297,6 +300,7 @@ switchD_006092d2_default:
   if (STField<char>(this,0x225) == '\0') {
     return 0;
   }
+  /* ST_CALLSITE[00609336]: CALL 0x004010f5; direct=004010F5 STFieldC::sub_00609CD0 */
   STFieldC::sub_00609CD0(this);
   return 0;
 }

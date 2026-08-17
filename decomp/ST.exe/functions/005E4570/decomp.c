@@ -70,6 +70,7 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
   SVar2 = message->id;
   if (SVar2 < MESS_MREPORTTY_6214) {
     if (SVar2 == MESS_MTASKTY_6213) {
+      /* ST_CALLSITE[005E4B67]: CALL 0x00401a5a; direct=00401A5A MTaskTy::PaintBut */
       PaintBut(local_18,(int *)&local_18->field_0x65f,0x24bc,4,1,(message->arg0).words.low);
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02A5[1]);
       goto cf_common_exit_005E525B;
@@ -92,17 +93,21 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
       }
       switch(SVar2) {
       case MESS_ID_NONE:
+        /* ST_CALLSITE[005E462F]: CALL 0x0040100f; direct=0040100F MTaskTy::NoneMTask */
         NoneMTask(local_18);
         break;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case MESS_ID_CREATE:
+        /* ST_CALLSITE[005E460B]: CALL 0x00402f5e; direct=00402F5E MTaskTy::InitMTask */
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         InitMTask(local_18,*(char *)((message->arg0).u32 + 0x14),
                   *(undefined1 *)((message->arg0).u32 + 0x18));
         break;
       case MESS_SHARED_0003:
+        /* ST_CALLSITE[005E4617]: CALL 0x00402329; direct=00402329 MTaskTy::DoneMTask */
         DoneMTask(local_18);
         break;
       case MESS_SHARED_0005:
+        /* ST_CALLSITE[005E4623]: CALL 0x00403670; direct=00403670 MTaskTy::PaintMTask */
         PaintMTask(local_18);
         break;
       case MESS_TRACKBARCLASSTY_0062:
@@ -138,6 +143,7 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
         iVar20 = 1;
         if (local_18->field_006D != CASE_1) {
           local_18->field_006D = CASE_5;
+          /* ST_CALLSITE[005E4721]: CALL 0x00405c18; direct=00405C18 MTaskTy::PlayScript */
           PlayScript(local_18);
           iVar23 = 0x1f;
           do {
@@ -224,6 +230,7 @@ LAB_005e470e:
         thunk_FUN_005b6730(local_18,4,'\x01',-1);
         this_00->field_007C = 0;
         this_00->field_0061 = this_00->field_0069;
+        /* ST_CALLSITE[005E48C5]: CALL 0x00401d43; direct=00401D43 DarkScreen */
         DarkScreen(g_dDXContext_0080759C,1,0);
         pDVar9 = this_00->field_064F;
         if (pDVar9 != nullptr) {
@@ -236,6 +243,7 @@ LAB_005e470e:
             do {
               pAVar14 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar9, uVar16);
 LAB_005e48f3:
+              /* ST_CALLSITE[005E48F6]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
               TTaskItemClose(this_00,pAVar14);
               pDVar9 = this_00->field_064F;
               uVar16 = uVar16 + 1;
@@ -253,6 +261,7 @@ LAB_005e48f3:
             do {
               pAVar14 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar9, uVar16);
 LAB_005e492f:
+              /* ST_CALLSITE[005E4932]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
               TTaskItemClose(this_00,pAVar14);
               pDVar9 = this_00->field_0647;
               uVar16 = uVar16 + 1;
@@ -315,9 +324,11 @@ LAB_005e496b:
           puVar17 = puVar17 + 1;
           iVar20 = iVar20 + -1;
         } while (iVar20 != 0);
+        /* ST_CALLSITE[005E4A82]: CALL 0x00403670; direct=00403670 MTaskTy::PaintMTask */
         PaintMTask(this_00);
         this_00->field_006D = CASE_3;
         Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_0074,&this_00->field_0078->flags);
+        /* ST_CALLSITE[005E4A98]: CALL 0x00405c18; direct=00405C18 MTaskTy::PlayScript */
         PlayScript(this_00);
         thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                            this_00->field_005D,10,2);
@@ -325,6 +336,7 @@ LAB_005e496b:
       case 0x6204:
         if (local_18->field_006D != CASE_1) {
           local_18->field_006D = CASE_5;
+          /* ST_CALLSITE[005E4AD1]: CALL 0x00405c18; direct=00405C18 MTaskTy::PlayScript */
           PlayScript(local_18);
           iVar20 = 1;
           iVar23 = 0x1f;
@@ -342,6 +354,7 @@ LAB_005e496b:
         DAT_00807341 = DAT_00807340 == '\x03';
         break;
       case MESS_MTASKTY_6212:
+        /* ST_CALLSITE[005E4B34]: CALL 0x00401a5a; direct=00401A5A MTaskTy::PaintBut */
         PaintBut(local_18,&local_18->field_0653,0x26ac,4,1,(message->arg0).words.low);
         FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02A5[0]);
       }
@@ -350,6 +363,7 @@ LAB_005e496b:
   }
   if (SVar2 < MESS_WAITTY_6335) {
     if (SVar2 == MESS_SHARED_6334) {
+      /* ST_CALLSITE[005E4FEE]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
       MMMObjTy::PaintSlBut
                 ((MMMObjTy *)local_18,(RecoveredRecord_MMMObjTy_005B6560 *)&local_18->field_0362,
                  (int)message,local_18->field_06CA == '\x01');
@@ -387,6 +401,7 @@ LAB_005e496b:
         if ((local_c[1] == 1) || ((local_c[1] == 3 && (local_c[2] != 0)))) {
           pBVar11 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0081,
                                  (uint)(local_1c->field_000B == '\x01'));
+          /* ST_CALLSITE[005E4D68]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut(pRVar3,2,(int)&local_8[-1].field_0x1d4 / 2,'\x06',(byte *)pBVar11);
         }
         FUN_006c7570(pRVar3,0,0,0,(undefined4 *)0x16,(int)local_8,2,(byte)local_20);
@@ -419,14 +434,17 @@ LAB_005e496b:
         else {
           UVar15 = (-(uint)(DAT_0080c632 != '\0') & 0x2b) + 0x232c;
         }
+        /* ST_CALLSITE[005E4C55]: CALL 0x00401a5a; direct=00401A5A MTaskTy::PaintBut */
         PaintBut(local_18,(int *)&local_18->field_0x66b,UVar15,4,1,(message->arg0).words.low);
         FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02A5[2]);
       }
       else if (SVar2 == MESS_MREPORTTY_6215) {
+        /* ST_CALLSITE[005E4C05]: CALL 0x00401a5a; direct=00401A5A MTaskTy::PaintBut */
         PaintBut(local_18,(int *)&local_18->field_0x677,0x2358,4,1,(message->arg0).words.low);
         FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02A5[3]);
       }
       else if (SVar2 == MESS_MTASKTY_6216) {
+        /* ST_CALLSITE[005E4BD1]: CALL 0x00401a5a; direct=00401A5A MTaskTy::PaintBut */
         PaintBut(local_18,(int *)&local_18->field_0x683,0x235e,4,1,(message->arg0).words.low);
         FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02A5[4]);
       }
@@ -486,6 +504,7 @@ LAB_005e496b:
       }
     }
     else if (SVar2 == MESS_WAITTY_6333) {
+      /* ST_CALLSITE[005E4E38]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
       MMMObjTy::PaintSlBut
                 ((MMMObjTy *)local_18,(RecoveredRecord_MMMObjTy_005B6560 *)&local_18->field_02D1,
                  (int)message,local_18->field_06CA == '\x01');
@@ -556,11 +575,13 @@ LAB_005e496b:
     }
     break;
   case MESS_SHARED_6334|MESS_SHARED_0003:
+    /* ST_CALLSITE[005E51F5]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
     MMMObjTy::PaintSlBut
               ((MMMObjTy *)local_18,(RecoveredRecord_MMMObjTy_005B6560 *)&local_18->field_048C,
                (int)message,local_18->field_06D6 == '\x01');
     break;
   case 0x6338:
+    /* ST_CALLSITE[005E5213]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
     MMMObjTy::PaintSlBut
               ((MMMObjTy *)local_18,(RecoveredRecord_MMMObjTy_005B6560 *)&local_18->field_051D,
                (int)message,local_18->field_06D6 == '\x01');

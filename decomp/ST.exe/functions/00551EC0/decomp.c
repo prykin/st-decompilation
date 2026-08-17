@@ -32,6 +32,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   pTVar3 = local_10;
   if (iVar4 == 0) {
     resourceString = &local_10->field_018D;
+    /* ST_CALLSITE[00551F15]: CALL dword ptr [0x0085bde8] */
     wsprintfA(resourceString,"%6d",
               (uint)(ushort)(&local_10->field_01BC)[(byte)local_10->field_01D0]);
     ccFntTy::SetSurf(pTVar3->field_01DD,pTVar3->field_0068,0,0x67,0x36,0x23,0xc);
@@ -49,6 +50,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
         text = thunk_FUN_00571240("BKG_AMOUNTRC",0);
         puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                            (PTR_00806794,CASE_1,text,uVar6,bVar7,iVar9,iVar10,puVar11);
+        /* ST_CALLSITE[00551FAB]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pTVar3->field_0068,iVar4 + -3,0x45,'\x01',
                (byte *)puVar5);
         bVar7 = pTVar3->field_01D0;
@@ -63,6 +65,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
           iVar9 = (int)((ulonglong)(ushort)(&pTVar3->field_01BC)[bVar7] /
                        (ulonglong)(longlong)(int)(uint)uVar1);
         }
+        /* ST_CALLSITE[00552017]: CALL dword ptr [0x0085bde8] */
         wsprintfA(resourceString,"%6d",iVar9);
         ccFntTy::SetSurf(pTVar3->field_01DD,pTVar3->field_0068,0,iVar4,0x48,0x23,0xc);
         ccFntTy::WrStr(pTVar3->field_01DD,resourceString,-1,-1,

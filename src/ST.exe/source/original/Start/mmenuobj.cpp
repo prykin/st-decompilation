@@ -58,6 +58,7 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
     st::fn_007158A0
               ((SpriteClassTy *)&param_1->field_0x48,(int *)g_ddxContext_008075A8,param_11,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005B52CB]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)&param_1->field_0x48 + 4))(PTR_00806784,7,0,text,0xffffffff);
     *(int *)&param_1->field_0x64 = param_3;
@@ -82,6 +83,7 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
       st::fn_007158A0
                 ((SpriteClassTy *)&param_1->field_0x16a,(int *)g_ddxContext_008075A8,param_11 - 1,
                  '\a',nullptr,0,0);
+      /* ST_CALLSITE[005B5363]: CALL dword ptr [EDX + 0x4] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)&param_1->field_0x16a + 4))(PTR_00806784,7,0,param_12,0xffffffff);
       param_1->field_0186 = param_3 + param_13;
@@ -102,6 +104,7 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
       puVar2 = (uint *)st::fn_006B0140(param_18,g_hINSTANCE_00807618);
       puVar3 = st::fn_00713480
                          (param_19,puVar2,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
+      /* ST_CALLSITE[005B5412]: CALL dword ptr [EBX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(iVar5 + 8))(puVar3,uVar8,uVar9);
     }
@@ -166,6 +169,7 @@ st::fn_005B5510
     local_168 = 2;
     local_164 = param_8;
     local_16c = local_1ac;
+    /* ST_CALLSITE[005B55DB]: CALL dword ptr [EAX + 0x8] */
     (*local_c->field_000C->vtable->CreateObject)
               ((SystemClassTy *)local_c->field_000C,2,&local_8,nullptr,st::machine_word_boundary_cast<undefined4>(local_1cc),0);
     g_currentExceptionFrame = local_50.previous;
@@ -376,7 +380,7 @@ st::fn_005B5A30(MMObjTy *this,int param_1,int *param_2,int param_3,byte param_4,
   errorCode = st::fn_0072D7F0(local_94.jumpBuffer,0);
   if (errorCode == 0) {
     if (-1 < (int)param_5) {
-      st::fn_006C7EA0((AnonPointee_MReportTy_0073 *)param_1,0,st::pointer_boundary_cast<undefined4 *>(&local_50),8,(byte)param_5);
+      st::fn_006C7EA0((AnonPointee_MReportTy_0073 *)param_1,0,(undefined4 *)&local_50,8,(byte)param_5);
     }
     st::fn_006C7F10((RecoveredSourceFamily_dibcopy *)param_1,0,&local_50,8,param_4);
     g_currentExceptionFrame = local_94.previous;
@@ -685,6 +689,7 @@ st::fn_005B68B0
     g_currentExceptionFrame = &local_50;
     errorCode = st::fn_0072D7F0(local_50.jumpBuffer,0);
     if (errorCode == 0) {
+      /* ST_CALLSITE[005B690C]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
       st::fn_00403099(param_2,(int)param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8);
       local_c = param_4 + -0x15 + param_6;
       st::fn_006C6660(param_1,local_c,param_5 + 0x26,7,param_7 - 0x4cU,3,0);

@@ -23,6 +23,7 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
     memset(&local_8->field_0xc0, 0, 0x20); /* compiler bulk-zero initialization */
     local_8->field_00CC = 0xf;
     local_8->field_00D0 = 0x7106;
+    /* ST_CALLSITE[0054D1E3]: CALL dword ptr [EAX + 0x18] */
     (*local_8->vtable->SendMessage)((SystemWithNamedObjClassTy *)local_8,(int)&local_8->field_0xc0);
     if (pSVar2->field_0039 != nullptr) {
       FUN_006b9890((int *)&pSVar2->field_0039);

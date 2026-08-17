@@ -104,14 +104,17 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
             switch(pSVar5->field_1E26) {
             case CASE_5:
             case CASE_F:
+              /* ST_CALLSITE[005CCFAA]: CALL 0x0040466a; direct=0040466A CreateStrategList */
               pDVar6 = (DArrayTy *)CreateStrategList((int)local_c,(uint)(byte)pcVar11[2],0xffffffff);
               break;
             default:
+              /* ST_CALLSITE[005CCFD4]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
               pDVar6 = (DArrayTy *)CreateOpponentList(local_c,(uint)(byte)pcVar11[3],DAT_0080995c);
               break;
             case CASE_C:
             case CASE_10:
               pDVar6 = (DArrayTy *)
+                       /* ST_CALLSITE[005CCFBD]: CALL 0x00401dbb; direct=00401DBB CreateSaveStrategList */
                        CreateSaveStrategList((int)local_c,(uint)(byte)pcVar11[2],0xffffffff);
             }
             *(DArrayTy **)(pcVar11 + 0x50) = pDVar6;
@@ -183,6 +186,7 @@ joined_r0x005cd0bb:
             }
           }
         }
+        /* ST_CALLSITE[005CD152]: CALL dword ptr [EDX + 0x18] */
         (*pSVar5->field_000C->vtable->vfunc_18)((short)&pSVar5->field_0x1d);
         uVar10 = local_8;
       }

@@ -21,6 +21,7 @@ void __fastcall FUN_0074fbf6(int *param_1)
         }
       }
       else if ((sVar1 == 9) || (sVar1 == 0xd)) {
+        /* ST_CALLSITE[0074FC1E]: CALL dword ptr [ECX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(**(int **)(psVar2 + 4) + 8))(*(int **)(psVar2 + 4));
       }

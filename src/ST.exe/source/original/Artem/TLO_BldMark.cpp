@@ -50,8 +50,7 @@ int __thiscall st::fn_004C60E0(TLOBldMark *this)
 undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
 
 {
-  AnonShape_004AB810_8E5693D5 *pAVar1;
-  STT3DSprC *this_00;
+  STT3DSprC *pSVar1;
   int iVar2;
   uint uVar3;
   DWORD DVar4;
@@ -59,23 +58,26 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
   this->field_0018 = 0;
   this->field_001C = param_1;
   this->field_0020 = st::pointer_boundary_cast<int *>(param_2);
-  pAVar1 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
-  if (pAVar1 == nullptr) {
-    this_00 = nullptr;
+  pSVar1 = (STT3DSprC *)st::fn_0072E530(0x40);
+  if (pSVar1 == nullptr) {
+    pSVar1 = nullptr;
   }
   else {
-    this_00 = (STT3DSprC *)st::fn_00401316(pAVar1);
+    /* ST_CALLSITE[004C6239]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+    pSVar1 = st::fn_00401316(pSVar1);
   }
-  this->field_002C = this_00;
+  this->field_002C = pSVar1;
   if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 0) {
-    iVar2 = st::fn_0040537B(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    /* ST_CALLSITE[004C62CC]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
+    iVar2 = st::fn_0040537B(pSVar1,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x48);
     }
   }
   else if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 1) {
-    iVar2 = st::fn_0040537B(this_00,PTR_008073cc,0x78,0x56,nullptr,0xf0,0xbe,0x11);
+    /* ST_CALLSITE[004C6275]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
+    iVar2 = st::fn_0040537B(pSVar1,PTR_008073cc,0x78,0x56,nullptr,0xf0,0xbe,0x11);
     if (iVar2 != 0) {
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x49);
@@ -84,6 +86,7 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
     st::fn_006E9210(g_sT3DSMAPContext_00807598,uVar3);
   }
   st::fn_00402A90(this->field_002C);
+  /* ST_CALLSITE[004C6312]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar2 = st::fn_00404183
                     (this->field_002C,0,PTR_0080678c,
                      *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),
@@ -94,8 +97,10 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
   }
   st::fn_00401EBA(this->field_002C,0,*(int *)(&DAT_00790f84 + this->field_001C * 4),
                      *(int *)(&DAT_00790f84 + this->field_001C * 4),'\0');
+  /* ST_CALLSITE[004C6357]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
   DVar4 = st::fn_006E51B0(this->field_0010);
+  /* ST_CALLSITE[004C636A]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   st::fn_00405240(this->field_002C,0,DVar4);
   st::fn_00403D0F(this->field_002C);
   this->field_0024 = 0;
@@ -175,6 +180,7 @@ st::fn_004C6440
         (local_8 < g_worldGrid.sizeY)) &&
        ((((((g_visibleClass_00802A88 == nullptr || (DAT_0080874d == 0xff)) ||
            ((g_visibleClass_00802A88->field_00F8 == 0 ||
+            /* ST_CALLSITE[004C6550]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             ((st::fn_00403F53
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10,
                          local_8,&local_30,&local_34), (int)piVar8 < 0x79aed0 ||
@@ -211,6 +217,7 @@ cf_common_exit_004C6899:
         local_28 = 0;
         goto cf_common_exit_004C6899;
       }
+      /* ST_CALLSITE[004C66FA]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar9 = st::fn_00404183
                         (this->field_002C,0,PTR_0080678c,
                          (&PTR_s_tlo_bldmark_si_007ad25c)[(byte)this->field_0010->field_112E],
@@ -238,13 +245,16 @@ cf_common_exit_004C6899:
         uVar10 = *(uint *)(&DAT_00790f84 + this->field_001C * 4);
       }
       st::fn_00401EBA(this->field_002C,0,uVar10,uVar10,'\0');
+      /* ST_CALLSITE[004C676F]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       st::fn_00401064(this->field_002C,'\0',uVar10);
       DVar6 = st::fn_006E51B0(this->field_0010);
+      /* ST_CALLSITE[004C6781]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       st::fn_00405240(this->field_002C,0,DVar6);
       iVar9 = local_10;
     }
   }
   else if (this->field_0024 == 0) {
+    /* ST_CALLSITE[004C6636]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar5 = st::fn_00404183
                       (this->field_002C,0,PTR_0080678c,
                        *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),
@@ -255,8 +265,10 @@ cf_common_exit_004C6899:
     }
     st::fn_00401EBA(this->field_002C,0,*(int *)(&DAT_00790f84 + this->field_001C * 4),
                        *(int *)(&DAT_00790f84 + this->field_001C * 4),'\0');
+    /* ST_CALLSITE[004C6678]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
     DVar6 = st::fn_006E51B0(this->field_0010);
+    /* ST_CALLSITE[004C668A]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240(this->field_002C,0,DVar6);
   }
   st::fn_00402982(this->field_002C,0);
@@ -264,6 +276,7 @@ cf_common_exit_004C6899:
     fVar12 = (float)local_8 * _DAT_007904f8 + _DAT_007904f4;
     fVar3 = (float)local_10 * _DAT_007904f8 + _DAT_007904f4;
 LAB_004c6848:
+    /* ST_CALLSITE[004C684F]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     st::fn_004045D9
               (this->field_002C,fVar3,fVar12,
                (float)local_c * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
@@ -339,15 +352,18 @@ int __thiscall st::fn_004C6A00(TLOBldMark *this,STMessage *message)
   }
   SVar1 = message->id;
   if (SVar1 == MESS_ID_NONE) {
+    /* ST_CALLSITE[004C6A7C]: CALL 0x004032a1; direct=004032A1 TLOBldMark::sub_004C61E0 */
     st::fn_004032A1(local_8);
   }
   else {
     if (SVar1 == MESS_ID_CREATE) {
+      /* ST_CALLSITE[004C6A62]: CALL 0x004051d7; direct=004051D7 TLOBldMark::Create */
       st::fn_004051D7(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
     if (SVar1 == MESS_SHARED_0003) {
+      /* ST_CALLSITE[004C6A44]: CALL 0x00401767; direct=00401767 TLOBldMark::sub_004C61A0 */
       st::fn_00401767(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;

@@ -8,6 +8,7 @@ void __thiscall FUN_005808a0(void *this,undefined1 *param_1)
 
   *param_1 = 4;
   param_1[1] = 0;
+  /* ST_CALLSITE[005808B3]: CALL dword ptr [EAX + 0x2c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar1 = (**(code **)(*(int *)this + 0x2c))();
   *(undefined4 *)(param_1 + 2) = uVar1;

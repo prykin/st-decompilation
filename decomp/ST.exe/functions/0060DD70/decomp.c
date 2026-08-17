@@ -61,6 +61,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return local_14;
     }
+    /* ST_CALLSITE[0060DEE8]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6,&local_20,
                &local_24);
@@ -98,6 +99,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return local_14;
     }
+    /* ST_CALLSITE[0060DF8D]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,local_18,
                &local_24,&local_20);
@@ -127,6 +129,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return local_14;
     }
+    /* ST_CALLSITE[0060E01B]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10,iVar5,&local_24,
                &local_20);
@@ -158,6 +161,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return local_14;
     }
+    /* ST_CALLSITE[0060E0AB]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,local_1c,
                &local_24,&local_20);
@@ -180,6 +184,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (pVVar3->field_004C[local_24 + local_20 * pVVar3->field_0030] != 0) {
       return local_14;
     }
+    /* ST_CALLSITE[0060E0F9]: CALL 0x00404e5d; direct=00404E5D VisibleClassTy::sub_005F1D80 */
     iVar5 = VisibleClassTy::sub_005F1D80(g_visibleClass_00802A88,local_10,iVar5,local_8);
     if (iVar5 == 1) {
       return local_14;

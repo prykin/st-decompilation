@@ -52,6 +52,7 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this)
       thunk_FUN_0042a780((int *)&PTR_00806750);
     }
     FUN_006e52d0((AnonShape_006E52D0_AF06BCD2 *)pGVar3);
+    /* ST_CALLSITE[005771BB]: CALL dword ptr [0x0085be40] */
     ShowCursor(1);
     g_currentExceptionFrame = local_4c.previous;
     return;

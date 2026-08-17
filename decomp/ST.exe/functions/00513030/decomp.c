@@ -157,7 +157,7 @@ LAB_00513233:
         iVar11 = 0;
       }
       if (iVar11 != 0) {
-        *(undefined1 *)(iVar11 + 0x13) = 1;
+        ((undefined1 *)iVar11)[0x13] = 1;
       }
     }
   }

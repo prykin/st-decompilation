@@ -20,6 +20,7 @@ byte * __thiscall FUN_0055c050(void *this,int param_1)
   }
   iVar4 = 0xe;
   iVar3 = 0x1c;
+  /* ST_CALLSITE[0055C07E]: CALL dword ptr [0x0085c040] */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = CFsgsConnection::GetUserIconIndex
                     (this,(char *)(param_1 + 0x10),*(ulong *)(param_1 + 0x25));

@@ -21,6 +21,7 @@ uint FUN_0074b84e(int param_1)
   uint uVar1;
   uint uVar2;
 
+  /* ST_CALLSITE[0074B857]: CALL dword ptr [0x0085bc78] */
   InterlockedIncrement((LONG *)(param_1 + 8));
   uVar1 = *(uint *)(param_1 + 8);
   uVar2 = 1;

@@ -17,6 +17,7 @@ void __thiscall STTmMineC::FUN_0063ddb0(STTmMineC *this,int param_1)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if ((uVar3 < pSVar2->count) &&
            (&pSVar2->data->field_0000 + pSVar2->elementSize * uVar3 != nullptr)) {
+          /* ST_CALLSITE[0063DDEC]: CALL 0x00403274; direct=00403274 STTmMineC::LoadImagSpr */
           LoadImagSpr(this,uVar3,param_1);
         }
         uVar3 = uVar3 + 1;

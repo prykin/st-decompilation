@@ -21,6 +21,7 @@ void __thiscall MReportTy::sub_005C0190(MReportTy *this)
       this->field_0025 = *piVar1;
       this->field_0031 = 0;
       this->field_0033 = 0;
+      /* ST_CALLSITE[005C01CC]: CALL dword ptr [EAX + 0x18] */
       (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
     }
     piVar1 = piVar1 + 1;
@@ -30,6 +31,7 @@ void __thiscall MReportTy::sub_005C0190(MReportTy *this)
     this->field_0025 = this->field_009F;
     this->field_0031 = 0;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005C01F8]: CALL dword ptr [EAX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   return;

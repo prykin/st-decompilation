@@ -11,10 +11,12 @@ undefined4 __thiscall FUN_00749cec(int param_1,int param_2)
 
 {
   if (param_2 == 1) {
+    /* ST_CALLSITE[00749CF6]: CALL dword ptr [0x0085bc98] */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     ResetEvent(*(HANDLE *)(param_1 + 0x58));
   }
   else {
+    /* ST_CALLSITE[00749CFE]: CALL dword ptr [0x0085bb80] */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     SetEvent(*(HANDLE *)(param_1 + 0x58));
   }

@@ -56,10 +56,12 @@ void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
   local_3c = (short)((int)puVar5 / 200);
 LAB_0058bcd7:
   if (g_visibleClass_00802A88 != nullptr) {
+    /* ST_CALLSITE[0058BCF3]: CALL 0x00401fd2; direct=00401FD2 VisibleClassTy::VisHoleCreate */
     VisibleClassTy::VisHoleCreate
               (g_visibleClass_00802A88,local_8,iVar3,puVar5,param_1->field_0024,(undefined *)0x2,
                0x19);
   }
+  /* ST_CALLSITE[0058BD0A]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
   STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x28,0,0,local_60,0);
   return;
 }

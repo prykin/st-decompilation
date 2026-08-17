@@ -10,15 +10,14 @@ void FUN_00550830(int param_1)
   int soundId;
 
   if (param_1 != 0) {
+    /* ST_CALLSITE[0055084A]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,s__s>__s_007c40dc,param_1,param_1 + 0x40);
     if (g_popUp_008016D8 != nullptr) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(byte *)(param_1 + 0x450) == 0xff) {
+      if (((byte *)param_1)[0x450] == 0xff) {
         uVar1 = 8;
       }
       else {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        uVar1 = (uint)*(byte *)(param_1 + 0x450);
+        uVar1 = (uint)((byte *)param_1)[0x450];
       }
       thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,uVar1);
     }
@@ -34,6 +33,7 @@ void FUN_00550830(int param_1)
       }
       soundId = 0x3a;
     }
+    /* ST_CALLSITE[005508AF]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
     SoundClassTy::PlaySound
               ((SoundClassTy *)&g_sound,SOUND_MODE_5,nullptr,soundId,nullptr,0);
   }

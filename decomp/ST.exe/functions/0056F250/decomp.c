@@ -40,6 +40,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   local_10 = this;
   if (param_2 == 0) {
     if (STField<int>(this,0x1178) != 0) {
+      /* ST_CALLSITE[0056F2E1]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)local_1a8,"%s%s%s\\%s",(int)this + 0x60,PTR_s_SAVEGAME__0079b02c,
                 &CHAR_00h_00807ddd,PTR_s_SAVE_QUICKSAVE_0079b044);
       STField<undefined4>(this,0x1178) = 0;
@@ -49,6 +50,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
     param_3 = (char *)((int)this + 0x7a02);
   }
   else if (param_3 == nullptr) {
+    /* ST_CALLSITE[0056F2AA]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)local_1a8,"%s%s%s\\%sDEBUG%u",(int)this + 0x60,PTR_s_SAVEGAME__0079b02c
               ,&CHAR_00h_00807ddd,PTR_DAT_0079b050,param_2);
     goto LAB_0056f325;
@@ -93,6 +95,7 @@ LAB_0056f325:
         Library::Ourlib::MFANY::mfAnySave
                   (STField<byte *>(local_10,0x7d12),STField<uint>(local_10,0x7d16),(int)pcVar7,
                    PTR_s_TEXTURE_0079b07c,'\x01');
+        /* ST_CALLSITE[0056F40F]: CALL 0x00405849; direct=00405849 STPlaySystemC::Save */
         STPlaySystemC::Save(g_playSystem_00802A38,pcVar7);
         cMf32::RecPut(pcVar7,0xc,PTR_s_RND_INIT_0079b05c,(byte *)((int)pvVar2 + 0x1134),4,
                       nullptr,'\0',nullptr);
@@ -206,6 +209,7 @@ LAB_0056f325:
     pbVar11 = pbVar11 + -1;
     memmove(pbVar11, pbVar8, uVar3); /* compiler REP MOVS byte copy */
     uVar5 = 0;
+    /* ST_CALLSITE[0056F74F]: CALL dword ptr [0x0085bce8] */
     DeleteFileA((LPCSTR)pbVar6);
     uVar3 = 0xffffffff;
     pbVar8 = local_1a8;
@@ -246,8 +250,10 @@ LAB_0056f325:
     pbVar8 = (byte *)(pcVar10 + -uVar3);
     pbVar11 = pbVar11 + -1;
     memmove(pbVar11, pbVar8, uVar3); /* compiler REP MOVS byte copy */
+    /* ST_CALLSITE[0056F7A4]: CALL dword ptr [0x0085bce8] */
     DeleteFileA((LPCSTR)pbVar6);
     if (g_optPanel_008016DC != nullptr) {
+      /* ST_CALLSITE[0056F7B8]: CALL 0x00405ef7; direct=00405EF7 OptPanelTy::Notification */
       OptPanelTy::Notification(g_optPanel_008016DC,'\f',0);
     }
   }

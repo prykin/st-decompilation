@@ -67,6 +67,7 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
                 iVar3 = (int)(short)lVar6;
               }
               if ((((((DAT_0080874d == -1) || (this_00->field_00F8 == 0)) ||
+                    /* ST_CALLSITE[0061F401]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                     (VisibleClassTy::sub_00558C00
                                (this_00,this_00->field_010C,iVar3,local_8,&local_18,&local_1c),
                     iVar4 < 0)) || ((4 < iVar4 || (local_18 < 0)))) ||

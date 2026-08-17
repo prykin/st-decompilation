@@ -45,11 +45,13 @@ void __thiscall VisibleClassTy::sub_0055B7F0(VisibleClassTy *this,int param_1,un
         if (piVar3 == (int *)param_2) {
           if (element_0110->field_0000 == '\0') {
             if (param_1 == 0) {
+              /* ST_CALLSITE[0055B949]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */
               sub_00559110(this,(int)element_0110->field_0002,(undefined *)(int)element_0110->field_0004
                            ,(int)element_0110->field_0006,(uint)piVar3,(uint)(byte)element_0110->field_0007,element_0110->field_0008,
                            0x4001);
             }
             else {
+              /* ST_CALLSITE[0055B921]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
               sub_00558DC0(this,(int)element_0110->field_0002,(int)element_0110->field_0004,
                            (undefined *)(int)element_0110->field_0006,piVar3,(uint)(byte)element_0110->field_0007,
                            element_0110->field_0008,0x6009);
@@ -57,10 +59,12 @@ void __thiscall VisibleClassTy::sub_0055B7F0(VisibleClassTy *this,int param_1,un
           }
           else if (element_0110->field_0000 == '\x01') {
             if (param_1 == 0) {
+              /* ST_CALLSITE[0055B8F2]: CALL 0x00402018; direct=00402018 VisibleClassTy::sub_00559620 */
               sub_00559620(this,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                            (undefined *)piVar3,(uint)(byte)element_0110->field_0007,element_0110->field_0008,2);
             }
             else {
+              /* ST_CALLSITE[0055B8D3]: CALL 0x00402c2a; direct=00402C2A VisibleClassTy::sub_005594A0 */
               sub_005594A0(this,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                            (undefined *)piVar3,(uint)(byte)element_0110->field_0007,element_0110->field_0008,2);
             }

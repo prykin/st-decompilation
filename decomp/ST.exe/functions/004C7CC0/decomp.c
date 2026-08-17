@@ -87,11 +87,13 @@ LAB_004c7d8c:
       *(int *)&this->field_0x36d = iVar7;
       if (iVar7 == 0) {
         *(int *)&this->field_0x365 = *(int *)&this->field_0x361;
+        /* ST_CALLSITE[004C7E0B]: CALL 0x00404b6a; direct=00404B6A TLOBaseTy::sub_004C90C0 */
         local_EAX_331 = sub_004C90C0(this);
         if (local_EAX_331 == 0) {
           *(undefined4 *)&this->field_0x36d = 1;
         }
         else {
+          /* ST_CALLSITE[004C7E2D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           bVar5 = LookupRecordByte(*(char *)&this->field_0024);
           if ((bVar5 != 3) && (this->field_03A8 != 0)) {
             thunk_FUN_004d87b0(*(char *)&this->field_0024,this->field_03A8);
@@ -111,11 +113,14 @@ LAB_004c7d8c:
     }
   }
   else {
+    /* ST_CALLSITE[004C7EC1]: CALL 0x00405ace; direct=00405ACE TLOBaseTy::sub_004C7860 */
     iVar6 = sub_004C7860(this,param_1,param_2,param_3,0,0);
     if (iVar6 != 0) {
+      /* ST_CALLSITE[004C7EDA]: CALL 0x00405ace; direct=00405ACE TLOBaseTy::sub_004C7860 */
       local_EAX_538 = sub_004C7860(this,param_1,param_2,param_3,1,0);
       if ((local_EAX_538 == 0) || (local_EAX_559 = thunk_FUN_004c7c20(this), local_EAX_559 == 0)) {
         if (param_4 != 0) {
+          /* ST_CALLSITE[004C8126]: CALL 0x00401b59; direct=00401B59 TLOBaseTy::sub_004C9370 */
           local_EAX_1126 = sub_004C9370(this,param_1,param_2,-1);
           if ((*(int *)&this->field_0x361 == param_1) && (*(uint *)&this->field_0x369 == param_2)) {
             local_EAX_1126 = local_EAX_1126 + *(int *)&this->field_0x36d;
@@ -145,6 +150,7 @@ LAB_004c7d8c:
                          0xf);
             }
             this->field_03D4 = this->field_03D4 + 1;
+            /* ST_CALLSITE[004C8282]: CALL 0x00405a2e; direct=00405A2E TLOBaseTy::sub_004C7460 */
             sub_004C7460(this);
           }
         }
@@ -182,6 +188,7 @@ LAB_004c7d8c:
           case CASE_40:
           case CASE_49:
           case CASE_5C:
+            /* ST_CALLSITE[004C7FFC]: CALL 0x004058da; direct=004058DA TLOBaseTy::sub_004CE860 */
             sub_004CE860(this);
           }
         }
@@ -201,20 +208,27 @@ LAB_004c7d8c:
         case CASE_58:
         case CASE_59:
         case CASE_5A:
+          /* ST_CALLSITE[004C8040]: CALL 0x00405eb6; direct=00405EB6 TLOBaseTy::sub_004E2AD0 */
           sub_004E2AD0(this,param_1,param_2);
         }
+        /* ST_CALLSITE[004C8047]: CALL 0x00405a2e; direct=00405A2E TLOBaseTy::sub_004C7460 */
         sub_004C7460(this);
+        /* ST_CALLSITE[004C8050]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
         RotateSpr(this,1);
         if (*(int *)(&DAT_00792778 + this->field_0235 * 4) != 0) {
           this->field_0261 = 0;
           *(undefined4 *)&this->field_0x2e1 = 0;
         }
         if (*(int *)&this->field_0x361 == 5) {
+          /* ST_CALLSITE[004C8081]: CALL 0x004028f1; direct=004028F1 TLOBaseTy::sub_004CC880 */
           sub_004CC880(this,3);
+          /* ST_CALLSITE[004C8093]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           uVar9 = LookupRecordByte(*(char *)&this->field_023D);
           if (*(int *)(&DAT_00796230 + ((uint)(byte)uVar9 + this->field_0235 * 3) * 4) != 0) {
             pTVar3 = this->vtable;
+            /* ST_CALLSITE[004C80C7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
             local_EAX_1031 = LookupRecordByte(*(char *)&this->field_023D);
+            /* ST_CALLSITE[004C80EB]: CALL dword ptr [ESI + 0x90] */
             (*pTVar3->vfunc_90)(this,3,(short)*(undefined4 *)
                                                (&DAT_00796230 +
                                                ((uint)(byte)local_EAX_1031 + this->field_0235 * 3) *
@@ -222,6 +236,7 @@ LAB_004c7d8c:
           }
         }
         else if (*(int *)&this->field_0x361 == 6) {
+          /* ST_CALLSITE[004C810A]: CALL dword ptr [EDX + 0x90] */
           this->vfunc_90(3,0x272);
         }
       }

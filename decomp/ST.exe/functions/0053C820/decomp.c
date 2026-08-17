@@ -64,10 +64,12 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
     pBVar8 = FUN_0070b3a0(pAVar9,local_c);
     iVar6 = local_14;
     iVar3 = local_18;
+    /* ST_CALLSITE[0053C941]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)pRVar7->field_0068,local_18,local_14,'\x01',
            (byte *)pBVar8);
     if ((param_1->field_0014 == 3) && (local_8 != nullptr)) {
       pBVar8 = FUN_0070b3a0(pRVar7->field_0190,7 - (uint)(local_8[8] != CASE_0));
+      /* ST_CALLSITE[0053C97A]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)pRVar7->field_0068,iVar3,iVar6,'\x06',(byte *)pBVar8);
     }
     Library::DKW::DDX::FUN_006b3640

@@ -13,6 +13,7 @@ undefined4 __thiscall FUN_004cd3e0(void *this,uint param_1,undefined4 param_2)
     STField<uint>(this,0x460) = param_1;
     STField<undefined4>(this,0x464) = param_2;
     STField<uint>(this,0x468) = g_playSystem_00802A38->field_00E4;
+    /* ST_CALLSITE[004CD41C]: CALL 0x004028f1; direct=004028F1 TLOBaseTy::sub_004CC880 */
     TLOBaseTy::sub_004CC880(this,2);
   }
   return 0;

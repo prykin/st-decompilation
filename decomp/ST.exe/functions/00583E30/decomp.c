@@ -33,6 +33,7 @@ STJellyGunC_field_0235State __thiscall STJellyGunC::sub_00583E30(STJellyGunC *th
 
   SVar1 = CASE_2;
   if (this->field_0235 != CASE_2) {
+    /* ST_CALLSITE[00583E5A]: CALL 0x004020fe; direct=004020FE STJellyGunC::sub_00584060 */
     local_14 = sub_00584060(this,&local_10,&local_c,&local_8);
     if (local_14 == 1) {
       if (this->field_023D != 0) {
@@ -51,6 +52,7 @@ STJellyGunC_field_0235State __thiscall STJellyGunC::sub_00583E30(STJellyGunC *th
               iVar2 = -iVar2;
             }
             if (iVar2 < 2) {
+              /* ST_CALLSITE[00583EE4]: CALL 0x00402455; direct=00402455 sub_00415B30 */
               iVar2 = sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                                    (short)local_10 * 0xc9 + 100,(short)local_c * 0xc9 + 100,
                                    (short)local_8 * 200 + 100,6);

@@ -11,8 +11,10 @@ TLOEmbryoTy * __thiscall TLOEmbryoTy::TLOEmbryoTy(TLOEmbryoTy *this)
 
 {
 
+  /* ST_CALLSITE[004D0FC4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)this);
-  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->vtable_at_1d5);
+  /* ST_CALLSITE[004D0FD1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  STT3DSprC::STT3DSprC((STT3DSprC *)&this->vtable_at_1d5);
   this->vtable = &TLOEmbryoTyVTable;
   this->vtable_at_1d5 = &TLOEmbryoTyVTable_at_1D5;
   this->field_02A8 = 0;

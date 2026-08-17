@@ -75,6 +75,7 @@ void __thiscall WaitTy::NoneWait(WaitTy *this)
 
   local_c = 1;
   local_50 = this;
+  /* ST_CALLSITE[005E84E8]: CALL dword ptr [0x0085bedc] */
   DVar7 = timeGetTime();
   this->field_0061 = DVar7;
   local_ec.previous = g_currentExceptionFrame;
@@ -92,6 +93,7 @@ void __thiscall WaitTy::NoneWait(WaitTy *this)
     return;
   }
   if ((local_50->field_1A87 != 0) && (0xf9 < local_50->field_0061 - local_50->field_1A8B)) {
+    /* ST_CALLSITE[005E8543]: CALL 0x004059fc; direct=004059FC WaitTy::ShowDescription */
     ShowDescription(local_50);
     this_01->field_1A87 = 0;
   }
@@ -124,6 +126,7 @@ void __thiscall WaitTy::NoneWait(WaitTy *this)
         this_01->array_00BC[0xc].field_01F0 = 0;
       }
       if (DAT_008067a0 != '\0') {
+        /* ST_CALLSITE[005E8AD1]: CALL dword ptr [0x0085c05c] */
         CFsgsConnection::PumpMessages((CFsgsConnection *)&DAT_00802a90);
       }
       Library::DKW::DDX::FUN_006b7510(g_int_00811764,-1,&local_24,-1,0);
@@ -140,11 +143,13 @@ LAB_005e9233:
             iVar10 = this_01->array_00BC[0xc].field_01DB;
             local_4c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
             if (*(int *)(iVar10 + 0x2e6) == 0) {
+              /* ST_CALLSITE[005E9293]: CALL dword ptr [EAX] */
               this_01->GetMessage(&local_4c);
             }
             else {
               local_4c.unknown_08 = this_01->field_0008;
               local_4c.unknown_0c = 2;
+              /* ST_CALLSITE[005E9284]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
               MMsgTy::SetMessage(*(MMsgTy **)(iVar10 + 0x2e6),0x2525,'\0',&local_4c.unknown_00,
                                  nullptr,nullptr,0,0);
             }
@@ -162,6 +167,7 @@ LAB_005e9233:
                 if (*(int *)(iVar10 + 0x2e6) == 0) goto LAB_005e91f7;
                 local_4c.unknown_08 = this_01->field_0008;
                 local_4c.unknown_0c = 2;
+                /* ST_CALLSITE[005E9192]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
                 MMsgTy::SetMessage(*(MMsgTy **)(iVar10 + 0x2e6),0x2524,'\0',&local_4c.unknown_00,
                                    nullptr,nullptr,0,0);
               }
@@ -197,6 +203,7 @@ LAB_005e9233:
                       }
                       if (this_01->array_00BC[0xc].field_01F6 != '\0') break;
                     }
+                    /* ST_CALLSITE[005E8CF9]: CALL dword ptr [0x0085bde8] */
                     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,
                               PTR_s_CUSTOM__0079c244);
                     local_5c = *puVar1;
@@ -211,6 +218,7 @@ LAB_005e9233:
                     this_01->array_00BC[0xc].field_01DF = ((*puVar1 == '\x03') - 1U & 0xfe) + 0xf;
                     break;
                   case 5:
+                    /* ST_CALLSITE[005E8D68]: CALL dword ptr [0x0085bde8] */
                     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\",&CHAR_00h_00807680,
                               PTR_s_SAVEGAME__0079c240,&CHAR_00h_00807ddd);
                     local_68 = *puVar1;
@@ -259,10 +267,12 @@ LAB_005e9233:
                     }
                     pWVar4 = this_01->vtable;
                     this_01->array_00BC[0xc].field_01E4 = 1;
+                    /* ST_CALLSITE[005E8DF1]: CALL dword ptr [EDX + 0x8] */
                     (*pWVar4->CloseButtons)(this_01);
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     this_00 = *(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6);
                     if (this_00 != nullptr) {
+                      /* ST_CALLSITE[005E8E0E]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
                       MMsgTy::HidePanel(this_00,1,0,1);
                     }
                   }
@@ -273,6 +283,7 @@ LAB_005e9233:
                       this_01->field_1A8F = local_14->field_0003;
                       this_01->field_1A93 = local_14->field_000B;
                       this_01->field_1A87 = 1;
+                      /* ST_CALLSITE[005E8C41]: CALL dword ptr [0x0085bedc] */
                       DVar7 = timeGetTime();
                       this_01->field_1A8B = DVar7;
                     }
@@ -291,13 +302,15 @@ LAB_005e9233:
                 local_8c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
                 local_8c[3] = 2;
                 UVar24 = 0x2526;
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_005e8ee0:
+                /* ST_CALLSITE[005E8EEC]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 MMsgTy::SetMessage(*(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6),UVar24,
                                    '\0',piVar11,nullptr,nullptr,0,0);
               }
               break;
             case 0x1b:
+              /* ST_CALLSITE[005E91A3]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
               StartSystemTy::AddToChat
                         ((StartSystemTy *)this_01->array_00BC[0xc].field_01DB,(int)local_14);
               break;
@@ -333,7 +346,9 @@ LAB_005e8ee0:
                   *slotStorage = pbVar13;
                   uVar25 = 0;
                   pcVar14_mg1 = LoadResourceString(0x252f,g_hINSTANCE_00807618);
+                  /* ST_CALLSITE[005E8FFD]: CALL dword ptr [0x0085bde8] */
                   wsprintfA((LPSTR)&DAT_0080f33a,pcVar14_mg1,uVar25);
+                  /* ST_CALLSITE[005E900F]: CALL 0x0040245a; direct=0040245A WaitTy::AddStr */
                   AddStr(this_01,&DAT_0080f33a,0);
                 }
                 iVar10 = *(int *)((int)&pAVar6->field_0003 + 1);
@@ -362,7 +377,9 @@ LAB_005e8ee0:
                     uVar16 = *(uint *)(iVar10 + 0x6a6);
                     uVar16 = (uVar16 * 100 + this_01->field_1A7F * -100) / uVar16;
                     pcVar14_mg2 = LoadResourceString(0x252f,g_hINSTANCE_00807618);
+                    /* ST_CALLSITE[005E90C7]: CALL dword ptr [0x0085bde8] */
                     wsprintfA((LPSTR)&DAT_0080f33a,pcVar14_mg2,uVar16);
+                    /* ST_CALLSITE[005E90D9]: CALL 0x0040245a; direct=0040245A WaitTy::AddStr */
                     AddStr(this_01,&DAT_0080f33a,1);
                   }
                   if (this_01->field_1A7F == 0) {
@@ -373,6 +390,7 @@ LAB_005e8ee0:
                       thunk_FUN_005dac60();
                       iVar10 = this_01->array_00BC[0xc].field_01DB;
                       this_01->array_00BC[0xc].field_01F5 = 1;
+                      /* ST_CALLSITE[005E9130]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
                       MMsgTy::SetMessage(*(MMsgTy **)(iVar10 + 0x2e6),0x252e,'\0',nullptr,
                                          nullptr,nullptr,0,0);
                     }
@@ -389,11 +407,13 @@ LAB_005e8ee0:
               iVar10 = this_01->array_00BC[0xc].field_01DB;
               if (*(int *)(iVar10 + 0x2e6) == 0) {
 LAB_005e91f7:
+                /* ST_CALLSITE[005E91FF]: CALL dword ptr [EAX] */
                 this_01->GetMessage(&local_4c);
               }
               else {
                 local_4c.unknown_08 = this_01->field_0008;
                 local_4c.unknown_0c = 2;
+                /* ST_CALLSITE[005E91F0]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
                 MMsgTy::SetMessage(*(MMsgTy **)(iVar10 + 0x2e6),0x2522,'\0',&local_4c.unknown_00,
                                    nullptr,nullptr,0,0);
               }
@@ -450,15 +470,18 @@ LAB_005e91f7:
       local_c = 0;
     }
     if ((this_01->field_1AF8 != nullptr) &&
+       /* ST_CALLSITE[005E8751]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar10 = HoloTy::NextFas(this_01->field_1AF8), iVar10 != 0)) {
       local_c = 0;
     }
     if ((((this_01->array_00BC[0xc].field_01E4 == 0) || (this_01->array_00BC[0xc].field_01E8 != 0))
         && (this_01->field_1B00 != nullptr)) &&
+       /* ST_CALLSITE[005E8777]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar10 = HoloTy::NextFas(this_01->field_1B00), iVar10 != 0)) {
       local_c = 0;
     }
     if (((this_01->array_00BC[0xc].field_01E4 == 0) && (this_01->field_1AFC != nullptr)) &&
+       /* ST_CALLSITE[005E8795]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar10 = HoloTy::NextFas(this_01->field_1AFC), iVar10 != 0)) {
       local_c = 0;
     }
@@ -468,16 +491,19 @@ LAB_005e91f7:
     }
     if (local_c != 0) {
       if (this_01->field_1AF8 != nullptr) {
+        /* ST_CALLSITE[005E87CD]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_01->field_1AF8);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1AF8);
         this_01->field_1AF8 = nullptr;
       }
       if (this_01->field_1B00 != nullptr) {
+        /* ST_CALLSITE[005E87F1]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_01->field_1B00);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1B00);
         this_01->field_1B00 = nullptr;
       }
       if (this_01->field_1AFC != nullptr) {
+        /* ST_CALLSITE[005E8815]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_01->field_1AFC);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1AFC);
         this_01->field_1AFC = nullptr;
@@ -492,14 +518,17 @@ LAB_005e91f7:
           FUN_006b3af0((int *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC);
         }
       }
+      /* ST_CALLSITE[005E8897]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
       SetAccelerator(1,this_01->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
       iVar10 = this_01->array_00BC[0xc].field_01DB;
       if (*(int *)(iVar10 + 0x2e6) != 0) {
         memset(local_a8, 0, 0x1a); /* compiler bulk-zero initialization */
         local_9c = 1;
         local_9e = 1;
+        /* ST_CALLSITE[005E88DB]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
         MMsgTy::StatePanel(*(MMsgTy **)(iVar10 + 0x2e6),(int)local_a8);
       }
+      /* ST_CALLSITE[005E88E2]: CALL 0x004036b1; direct=004036B1 WaitTy::sub_005E9970 */
       sub_005E9970(this_01);
       puVar17 = this_01->field_1A94;
       iVar10 = 0x16;
@@ -539,6 +568,7 @@ LAB_005e91f7:
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
+      /* ST_CALLSITE[005E8A34]: CALL 0x004043f4; direct=004043F4 WaitTy::PaintWait */
       PaintWait(this_01,'\0');
       g_currentExceptionFrame = local_ec.previous;
       return;
@@ -556,6 +586,7 @@ LAB_005e91f7:
       local_c = 0;
     }
     if (this_01->field_1AF8 != nullptr) {
+      /* ST_CALLSITE[005E85C9]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar10 = HoloTy::NextFas(this_01->field_1AF8);
       if (iVar10 == 0) {
         uVar16 = *(uint *)&this_01->field_1AF8->field_0x3;
@@ -570,6 +601,7 @@ LAB_005e91f7:
     if (((this_01->array_00BC[0xc].field_01E4 == 0) ||
         (this_01->array_00BC[0xc].field_01DF == '\x0e')) && (this_01->field_1B00 != nullptr))
     {
+      /* ST_CALLSITE[005E860C]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar10 = HoloTy::NextFas(this_01->field_1B00);
       if (iVar10 == 0) {
         uVar16 = *(uint *)&this_01->field_1B00->field_0x3;
@@ -582,6 +614,7 @@ LAB_005e91f7:
       }
     }
     if ((this_01->array_00BC[0xc].field_01E4 == 0) && (this_01->field_1AFC != nullptr)) {
+      /* ST_CALLSITE[005E8646]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar10 = HoloTy::NextFas(this_01->field_1AFC);
       if (iVar10 == 0) {
         uVar16 = *(uint *)&this_01->field_1AFC->field_0x3;

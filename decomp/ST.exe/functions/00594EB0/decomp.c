@@ -41,6 +41,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
     g_currentExceptionFrame = &local_4c;
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (errorCode == 0) {
+      /* ST_CALLSITE[00594F17]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
       MMMObjTy::OutRGlProc
                 (param_3,(int)param_1,param_2,param_3,(int)param_4,param_5,param_6,param_7 + -0x5f,
                  &g_startSystem_0081176C->field_0140);
@@ -55,6 +56,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       uVar5 = 0xffffffff;
       uVar4 = 0xffffffff;
       pcVar2 = LoadResourceString(0x2616,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[00594F9E]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
                 (this_01,0,(int)(param_4 + 10),param_5 + 0xf8,0xe6,0x19,pcVar2,uVar4,uVar5,pcVar6,
                  uVar7);
@@ -64,6 +66,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       Library::DKW::DDX::FUN_006c6470
                 ((int)param_1,(int)(param_4 + 0xc),param_5 + 0xfa,(undefined4 *)0xe2,0x15,4,
                  g_startSystem_0081176C->field_0140);
+      /* ST_CALLSITE[0059501F]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
       MMMObjTy::OutRGlProc
                 (param_2,(int)param_1,param_2,param_3,(int)param_4,param_5 + -0x5c + param_7,param_6
                  ,0x5c,&g_startSystem_0081176C->field_0140);
@@ -74,6 +77,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       uVar4 = 0;
       pcVar2 = LoadResourceString(0x2569,g_hINSTANCE_00807618);
       this_00 = (StartServTy *)(param_5 + -0x57 + param_7);
+      /* ST_CALLSITE[00595062]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
                 (this_00,0,(int)(param_4 + 10),(int)this_00,(int)local_8,0xf,pcVar2,uVar4,uVar5,
                  pcVar6,uVar7);
@@ -84,6 +88,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       uVar5 = 0xffffffff;
       uVar4 = 0;
       pcVar2 = LoadResourceString(0x2550,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[005950C4]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
                 (param_4,0,(int)(param_4 + 10),param_5 + -0x2f + param_7,(int)local_8,0xf,pcVar2,
                  uVar4,uVar5,pcVar6,uVar7);
@@ -94,6 +99,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       uVar5 = 0xffffffff;
       uVar4 = 0xffffffff;
       pcVar2 = LoadResourceString(0x2566,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[00595127]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
                 (this_02,0,(int)(param_4 + 0x78),param_5 + 0x155,0xa0,0x19,pcVar2,uVar4,uVar5,pcVar6
                  ,uVar7);

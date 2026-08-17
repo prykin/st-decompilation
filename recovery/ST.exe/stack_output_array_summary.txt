@@ -1,0 +1,7 @@
+program=ST.exe
+functions_scanned=5555
+scalar_output_calls=712
+stack_output_candidates=440
+stack_output_apply=1
+note=Application requires two exact calls and two count-driven walks over one stable stack extent.
+note=The output parameter supplies element type; runtime return count does not invent semantic field names.

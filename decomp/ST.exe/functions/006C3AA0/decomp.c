@@ -5,13 +5,16 @@ void FUN_006c3aa0(int *param_1)
   int iVar1;
 
   FUN_006c3570((AnonShape_006C3570_37024033 *)param_1);
+  /* ST_CALLSITE[006C3AB4]: CALL dword ptr [0x0085bb84] */
   DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x142));
   FUN_006b98c0((int *)&DAT_008568d0,param_1);
   iVar1 = Library::DKW::DV::FUN_006c38d0(DAT_008568d0,param_1[0x1e]);
   if (iVar1 == 0) {
+    /* ST_CALLSITE[006C3AE6]: CALL dword ptr [0x0085be60] */
     SetWindowLongA((HWND)param_1[0x1e],-4,param_1[0x22]);
   }
   FUN_006a5e90((short *)param_1);
+  /* ST_CALLSITE[006C3AF2]: CALL dword ptr [0x0085c0e0] */
   CoUninitialize();
   return;
 }

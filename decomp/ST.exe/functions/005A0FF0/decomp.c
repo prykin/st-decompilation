@@ -33,12 +33,15 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
       iVar2 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       this_00->field_0494 = 0xffff;
+      /* ST_CALLSITE[005A104F]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
       CursorClassTy::SetGCType(this_00,CASE_0,iVar2,iVar1);
+      /* ST_CALLSITE[005A1064]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
       this_00->field_00D2 = 0;
       this_00->field_04DF = -1;
     }
     pFVar5 = local_8;
+    /* ST_CALLSITE[005A1081]: CALL dword ptr [EDX + 0x8] */
     local_8->CloseButtons();
     pFVar5->array_00BC[0xc].field_01E1 = 2;
     pSVar3 = pFVar5->array_00BC[0xc].field_01DB;

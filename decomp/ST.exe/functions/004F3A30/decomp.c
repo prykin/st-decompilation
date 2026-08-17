@@ -79,6 +79,7 @@ cf_common_join_004F3AC3:
       pCVar3 = local_10;
       uVar4 = local_14;
       uVar2 = (uint)param_1;
+      /* ST_CALLSITE[004F3B32]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_10->field_0148[uVar2 + 0xe],local_c,local_14,
              param_3,(byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
@@ -86,6 +87,7 @@ cf_common_join_004F3AC3:
                        local_18[2],local_18[3]);
       iVar9 = -1;
       iVar8 = -1;
+      /* ST_CALLSITE[004F3B76]: CALL dword ptr [EBP + 0x1c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_2);
       iVar7 = -1;

@@ -49,10 +49,10 @@ undefined4 FUN_005f4a30(int param_1,byte param_2,int param_3)
                (float)*(int *)(iVar3 + 6) * _DAT_007904f8 * _DAT_007904f0,
                (float)*(int *)(iVar3 + 10) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*puVar1,0);
-    *(undefined1 *)(iVar3 + 0x1e) = 1;
+    ((undefined1 *)iVar3)[0x1e] = 1;
     if (param_3 != 0) {
       Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,*puVar1);
-      *(undefined1 *)(iVar3 + 0x1e) = 0;
+      ((undefined1 *)iVar3)[0x1e] = 0;
     }
     g_currentExceptionFrame = local_58.previous;
     return 1;

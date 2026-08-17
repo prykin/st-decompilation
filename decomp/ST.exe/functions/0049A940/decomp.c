@@ -40,6 +40,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
           DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             this_00 = (STBoatC *)
+                      /* ST_CALLSITE[0049A9DF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                       STAllPlayersC::GetObjPtr
                                 (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_c),CASE_1);
             if (this_00 == nullptr) {
@@ -47,6 +48,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x65e);
             }
+            /* ST_CALLSITE[0049AA0C]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
             STBoatC::CmdToObj(this_00,CASE_3,&local_8);
           }
           uVar7 = uVar7 + 1;

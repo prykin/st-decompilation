@@ -81,7 +81,8 @@ LAB_00675b8c:
 00675C0C  8B 45 20                  MOV EAX,dword ptr [EBP + 0x20]
 00675C0F  8B 11                     MOV EDX,dword ptr [ECX]
 00675C11  50                        PUSH EAX
-00675C12  FF 92 14 01 00 00         CALL dword ptr [EDX + 0x114]
+FUN_00675b10::override::prt_675c12_e9a929de:
+00675C12  FF 92 14 01 00 00         CALL dword ptr [EDX + 0x114]  ; [STIndirectCallsiteApplier] exact slot 0x114; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4
 00675C18  85 C0                     TEST EAX,EAX
 00675C1A  75 55                     JNZ 0x00675c71
 LAB_00675c1c:

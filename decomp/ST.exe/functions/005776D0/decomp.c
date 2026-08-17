@@ -103,6 +103,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
                     (g_sT3DSMAPContext_00807598,DAT_00808784,
                      -(uint)(DAT_00808784 != 0) & (uint)PTR_008032b4);
           if (g_pausePanel_008016E0 != nullptr) {
+            /* ST_CALLSITE[00577A59]: CALL 0x0040504c; direct=0040504C PausePanelTy::SwitchPausePanel */
             PausePanelTy::SwitchPausePanel(g_pausePanel_008016E0,DAT_00808784);
             g_currentExceptionFrame = local_8c.previous;
             return 0;
@@ -129,6 +130,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         iVar9 = piVar13[1];
         pGVar4->field_042C = iVar9;
         if (g_pausePanel_008016E0 != nullptr) {
+          /* ST_CALLSITE[00577AC6]: CALL 0x0040504c; direct=0040504C PausePanelTy::SwitchPausePanel */
           PausePanelTy::SwitchPausePanel(g_pausePanel_008016E0,iVar9);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -162,11 +164,11 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
       local_c = &CHAR_00h_008016a0;
       local_10 = &CHAR_00h_008016a0;
       if (*piVar13 == 6) {
-        thunk_FUN_0056a8d0(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),*(byte *)(piVar13 + 1),
+        thunk_FUN_0056a8d0(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),((byte *)piVar13)[1],
                            (char)piVar13[2]);
       }
       else {
-        thunk_FUN_0056a960(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),*(byte *)(piVar13 + 1));
+        thunk_FUN_0056a960(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),((byte *)piVar13)[1]);
       }
       this_00 = g_playPanel_008016E4;
       if (g_playPanel_008016E4 != nullptr) {
@@ -208,6 +210,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         }
         pcVar8 = local_c;
         local_EAX_1519 = LoadResourceString(0x42c2,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[00577CCA]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,local_EAX_1519,pcVar8,pcVar15);
         if (g_popUp_008016D8 != nullptr) {
           thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -221,10 +224,12 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
       g_currentExceptionFrame = &local_1b0;
       iVar5 = Library::MSVCRT::__setjmp3(local_1b0.jumpBuffer,0);
       if (iVar5 == 0) {
+        /* ST_CALLSITE[00577D50]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079b190,
                   PTR_s_STRATEGS_0079b198);
         pcVar6 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
         local_1c = pcVar6;
+        /* ST_CALLSITE[00577D7F]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
         array = (DArrayTy *)CreateOpponentList(pcVar6,local_8[1],DAT_0080995c);
         uVar10 = array->count;
         local_18 = array;
@@ -238,6 +243,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           }
           if ((pcVar15 + 0x4c != nullptr) &&
              (local_24 = (AnonShape_00648C10_30A1BBFD *)
+                         /* ST_CALLSITE[00577DBF]: CALL 0x004012ad; direct=004012AD LoadStrategData */
                          LoadStrategData((int)pcVar6,pcVar15 + 0x4c,nullptr), piVar13 = local_8,
              local_24 != nullptr)) {
             uVar10 = 0xffffffff;
@@ -257,7 +263,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
               pcVar15 = pcVar15 + 4;
               pcVar8 = pcVar8 + 4;
             }
-            bVar2 = *(byte *)(piVar13 + 2);
+            bVar2 = ((byte *)piVar13)[2];
             for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
               *pcVar8 = *pcVar15;
               pcVar15 = pcVar15 + 1;
@@ -268,6 +274,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
             local_125 = 1;
             local_126 = 0;
             local_128 = bVar2;
+            /* ST_CALLSITE[00577E22]: CALL dword ptr [0x0085bedc] */
             local_124 = timeGetTime();
             if (bVar2 < 8) {
               pcVar15 = local_16c;
@@ -275,10 +282,12 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
               memmove(pcVar8, pcVar15, 0x9c); /* compiler REP MOVS byte copy */
               DAT_00808aaf = DAT_00808aaf + 1;
               if (g_playPanel_008016E4 != nullptr) {
+                /* ST_CALLSITE[00577E6E]: CALL 0x00405e07; direct=00405E07 PlayPanelTy::sub_0053A540 */
                 PlayPanelTy::sub_0053A540(g_playPanel_008016E4);
               }
             }
             piVar13 = local_8;
+            /* ST_CALLSITE[00577E7E]: CALL 0x004018a7; direct=004018A7 StartStrateg */
             StartStrateg(local_24,local_8[2]);
             *(undefined1 *)(g_bulkInitializedRecords_008087C7 + piVar13[2]) = 1;
             FreeAndNull(&local_24);
@@ -303,6 +312,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         }
         local_48.id = MESS_AIBOSSCLASSTY_5DC5;
         local_48.arg0 = *(STMessageArg *)(piVar13 + 1);
+        /* ST_CALLSITE[00577EF8]: CALL dword ptr [EAX] */
         g_aiBossClass_008117BC->GetMessage(&local_48);
       }
     }
@@ -337,16 +347,19 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         do {
           pcVar15 = local_c;
           if ((int)local_c < 0) {
+            /* ST_CALLSITE[005777DE]: CALL EBX */
             wsprintfA(&CHAR_00h_0080f022,"%s%s%s\\%s%s%s",&CHAR_00h_00807680,
                       PTR_s_SAVEGAME__0079b18c,&CHAR_00h_00807ddd,PTR_DAT_0079b19c,local_2b4,
                       PTR_CHAR___0079b194);
           }
           else {
+            /* ST_CALLSITE[00577816]: CALL EBX */
             wsprintfA(&CHAR_00h_0080f022,"%s%s%s\\%s%s%d%s",&CHAR_00h_00807680,
                       PTR_s_SAVEGAME__0079b18c,&CHAR_00h_00807ddd,PTR_DAT_0079b19c,local_2b4,local_c
                       ,PTR_CHAR___0079b194);
           }
           local_c = (char *)((int)pcVar15 + 1);
+          /* ST_CALLSITE[0057782B]: CALL dword ptr [0x0085bcec] */
           pvVar5 = FindFirstFileA(&CHAR_00h_0080f022,&local_3f4);
           local_8 = (int *)(uint)(pvVar5 != (HANDLE)0xffffffff);
           if (local_8 == nullptr) {
@@ -399,9 +412,11 @@ LAB_00577956:
         return 0;
       }
       thunk_FUN_00648dd0((uint)bVar2);
+      /* ST_CALLSITE[0057799C]: CALL 0x004018a7; direct=004018A7 StartStrateg */
       StartStrateg((AnonShape_00648C10_30A1BBFD *)(pcVar15 + 2),(uint)bVar2);
     }
     if (g_optPanel_008016DC != nullptr) {
+      /* ST_CALLSITE[005779B2]: CALL 0x00401cbc; direct=00401CBC OptPanelTy::sub_00532CE0 */
       OptPanelTy::sub_00532CE0(g_optPanel_008016DC);
       g_currentExceptionFrame = local_8c.previous;
       return 0;

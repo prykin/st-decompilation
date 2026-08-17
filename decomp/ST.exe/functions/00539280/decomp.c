@@ -35,6 +35,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
     iVar4 = g_nWidth_00806730 + -0x1c;
     local_8->field_003C = iVar4;
     local_8->field_0174 = (local_8->field_0040 - iVar4) + g_nWidth_00806730;
+    /* ST_CALLSITE[005392E9]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
     pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
     this_00->field_017C = pcVar5;
     pcVar5->field_0058 = 0;
@@ -44,6 +45,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
     pCVar6 = thunk_FUN_00571240("BKG_PAUSE",0);
     puVar7 = cMf32::RecGet(g_cMf32_00806790,1,pCVar6,piVar11,iVar4);
     this_00->field_0180 = puVar7;
+    /* ST_CALLSITE[00539337]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)puVar7);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0x52,2,0xd1,0xc);
     iVar13 = -1;
@@ -54,6 +56,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
     resourceString = LoadResourceString(0x2716,g_hINSTANCE_00807618);
     ccFntTy::WrTxt(this_00->field_017C,resourceString,iVar4,iVar9,uVar10,iVar12,iVar13);
     pCVar6 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[005393BB]: CALL 0x0040300d; direct=0040300D PanelTy::CreateBut */
     uVar8 = PanelTy::CreateBut((PanelTy *)this_00,0,1,0x115,0x8b,1,0,1,pCVar6,0xbfff,0xc000,0,0,0,
                                nullptr,1);
     this_00->field_0184 = uVar8;

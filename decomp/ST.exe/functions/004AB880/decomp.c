@@ -101,6 +101,7 @@ STT3DSprC::LoadSequence
   iVar14 = local_14 * 0x24;
   local_8 = iVar14;
   if (*(int *)(&this_00->field_0020->field_0x0 + iVar14) != 0) {
+    /* ST_CALLSITE[004AB914]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
     iVar5 = UnLoadSequence(this_00,param_1);
     if (iVar5 != 0) {
       RaiseInternalException

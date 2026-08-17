@@ -81,6 +81,7 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
       g_currentExceptionFrame = local_5c.previous;
       return;
     }
+    /* ST_CALLSITE[005A205E]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)local_c,"%s%1d%s",&DAT_007c6ff0,param_1,param_3);
   }
   else {
@@ -125,10 +126,12 @@ LAB_005a1fbe:
     iVar9 = 0;
 LAB_005a1fc3:
     if (iVar9 == 0) {
+      /* ST_CALLSITE[005A1FE6]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)local_c,s__s2_s>__s_1d_s_007cc4a0,&DAT_007c6ff0,param_2,&DAT_007c6ff0,param_1
                 ,param_3);
     }
     else {
+      /* ST_CALLSITE[005A2019]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)local_c,s__s_1d_s>__s_1d_s_007cc48c,&DAT_007c6ff0,param_4,param_2,
                 &DAT_007c6ff0,param_1,param_3);
     }

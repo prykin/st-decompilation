@@ -12,6 +12,7 @@
 undefined4 __thiscall StartSystemTy::CreateSystemObjects(StartSystemTy *this)
 
 {
+  /* ST_CALLSITE[005DCD99]: CALL dword ptr [EAX + 0x10] */
   this->vfunc_10(0x303,0);
   return 0;
 }

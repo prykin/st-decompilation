@@ -4,6 +4,7 @@
 void FUN_0055bcb0(void)
 
 {
+  /* ST_CALLSITE[0055BCB5]: CALL dword ptr [0x0085c050] */
   CFsgsConnection::CFsgsConnection((CFsgsConnection *)&DAT_00802a90);
   _DAT_00802a90 = &CFsgsConnectionVTable;
   DAT_00802a98 = 0;

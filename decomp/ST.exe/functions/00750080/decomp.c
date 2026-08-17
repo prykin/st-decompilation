@@ -19,6 +19,7 @@ FUN_00750080(void *this,undefined4 *param_1,int param_2,double param_3,int param
   int *local_8;
 
   local_8 = this;
+  /* ST_CALLSITE[00750090]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
   local_8 = nullptr;
   *param_1 = 0;
@@ -37,6 +38,7 @@ FUN_00750080(void *this,undefined4 *param_1,int param_2,double param_3,int param
     *param_1 = piVar1_mg0;
   }
   piVar1 = local_8;
+  /* ST_CALLSITE[007500F6]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
   return piVar1;
 }

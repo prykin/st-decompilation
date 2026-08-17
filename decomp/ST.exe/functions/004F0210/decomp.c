@@ -39,13 +39,16 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (message->id == MESS_ID_CREATE) {
+    /* ST_CALLSITE[004F0254]: CALL 0x004032a6; direct=004032A6 ProdPanelTy::PreInitProdPanel */
     ProdPanelTy::PreInitProdPanel((ProdPanelTy *)local_8);
   }
+  /* ST_CALLSITE[004F025C]: CALL 0x004059d4; direct=004059D4 ProdPanelTy::GetMessage */
   ProdPanelTy::GetMessage((ProdPanelTy *)this_00,message);
   SVar1 = message->id;
   if (SVar1 < MESS_BLDLABPANELTY_C0A4) {
     if (SVar1 < MESS_SHARED_C09F) {
       if (SVar1 == MESS_ID_CREATE) {
+        /* ST_CALLSITE[004F02BB]: CALL 0x00405ccc; direct=00405CCC BldLabPanelTy::InitBldLabPanel */
         InitBldLabPanel(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
@@ -74,11 +77,13 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    if (*(char *)(element_027a + 2) == '\0') {
+    if (((char *)element_027a)[2] == '\0') {
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
+    /* ST_CALLSITE[004F031A]: CALL 0x004035ad; direct=004035AD CursorClassTy::sub_0054B630 */
     CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0xe,element_027a->field_0000);
+    /* ST_CALLSITE[004F0323]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
     ProdPanelTy::SetPanel((ProdPanelTy *)this_00,'\0');
   }
   else {
@@ -91,11 +96,13 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
+      /* ST_CALLSITE[004F0342]: CALL 0x0040587b; direct=0040587B BldLabPanelTy::PaintUpdBut */
       PaintUpdBut(this_00,(AnonShape_004EF320_444F9AB1 *)message);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
     this_00->field_0199 = message->arg0;
+    /* ST_CALLSITE[004F0365]: CALL 0x004038eb; direct=004038EB BldLabPanelTy::sub_004EFE20 */
     sub_004EFE20(this_00);
   }
   thunk_FUN_005252c0(0xae);

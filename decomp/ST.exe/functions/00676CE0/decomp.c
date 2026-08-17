@@ -37,6 +37,7 @@ void __cdecl FUN_00676ce0(DArrayTy *param_1,undefined *param_2)
         else {
           pvVar4 = nullptr;
         }
+        /* ST_CALLSITE[00676D28]: CALL dword ptr [EBP + 0xc] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (*(code *)param_2)(pvVar4,pvVar6);
         if (iVar5 < 0) {

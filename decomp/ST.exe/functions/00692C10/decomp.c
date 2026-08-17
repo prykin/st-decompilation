@@ -82,6 +82,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         _DAT_00853d76 = *(undefined4 *)(pcVar9 + 0x214);
         if (*(int *)(pcVar9 + 0x210) != 0) {
           _DAT_00853d72 = 0xffffffff;
+          /* ST_CALLSITE[00692DE7]: CALL dword ptr [0x0085bde8] */
           wsprintfA(local_108,"%s%u",pcVar9,param_5);
           iVar3 = DAT_00853d80;
           uVar5 = 0xffffffff;
@@ -109,6 +110,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
             pcVar10 = pcVar10 + 1;
           } while (cVar1 != '\0');
           if (iVar8 != -2) {
+            /* ST_CALLSITE[00692E41]: CALL dword ptr [0x0085bde8] */
             wsprintfA(local_108,"%s%u",pcVar9,param_5);
             uVar5 = 0xffffffff;
             pcVar9 = local_108;

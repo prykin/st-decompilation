@@ -10,10 +10,12 @@ void __thiscall CPanelTy::sub_004FA3B0(CPanelTy *this)
 
 {
   if ((this->field_0B63 != '\0') && (this->field_0B64 != '\0')) {
+    /* ST_CALLSITE[004FA3C8]: CALL 0x00401e15; direct=00401E15 CPanelTy::sub_004F8020 */
     sub_004F8020(this,'\0',1);
     return;
   }
   if ((this->field_0C51 != '\0') && (this->field_0C52 != '\0')) {
+    /* ST_CALLSITE[004FA3E6]: CALL 0x00401e15; direct=00401E15 CPanelTy::sub_004F8020 */
     sub_004F8020(this,'\x01',1);
   }
   return;

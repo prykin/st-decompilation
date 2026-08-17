@@ -14,6 +14,7 @@ void FUN_004e6680(int param_1)
   int iVar8;
   int local_8;
 
+  /* ST_CALLSITE[004E6696]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar2 = LookupRecordByte((char)param_1);
   local_8 = 0x42;
   pbVar7 = &DAT_007c0dd4;

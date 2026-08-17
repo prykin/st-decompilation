@@ -6,9 +6,11 @@ int __fastcall FUN_00419bf0(int *param_1)
 {
   int iVar1;
 
+  /* ST_CALLSITE[00419BF5]: CALL dword ptr [EAX + 0x1c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(*param_1 + 0x1c))();
   if ((iVar1 == 0) && (param_1[0x3d] == 1)) {
+    /* ST_CALLSITE[00419C09]: CALL dword ptr [EDX + 0x20] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 0x20))();
     param_1[0x3d] = 0;

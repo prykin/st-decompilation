@@ -70,6 +70,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
                 element_0110 = nullptr;
               }
               if (element_0110->field_0000 == '\0') {
+                /* ST_CALLSITE[00558A11]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
                 sub_00558DC0(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,
                              (undefined *)(int)element_0110->field_0006,(int *)(uint)(byte)element_0110->field_0001,
                              (uint)(byte)element_0110->field_0007,element_0110->field_0008,0x4000);
@@ -83,6 +84,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
       }
       else if (SVar1 == MESS_ID_NONE) {
         if (local_14->field_0114 != 0) {
+          /* ST_CALLSITE[00558961]: CALL 0x00404034; direct=00404034 VisibleClassTy::VisHoleExec */
           VisHoleExec(local_14);
         }
       }
@@ -93,17 +95,21 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
                               (g_cMf32_00806754,PTR_s_VISIBILITY_0079aec4,0,0);
         }
         if ((local_8 == nullptr) || (*(int *)(local_8 + 10) == 0)) {
+          /* ST_CALLSITE[0055891E]: CALL 0x00404a5c; direct=00404A5C VisibleClassTy::InitData */
           InitData(this_00);
         }
         else {
+          /* ST_CALLSITE[00558915]: CALL 0x004051f0; direct=004051F0 Visible::PrepareAfterSave */
           Visible::PrepareAfterSave((Visible *)this_00,local_8);
         }
+        /* ST_CALLSITE[00558925]: CALL 0x00405bff; direct=00405BFF VisibleClassTy::Init */
         Init(this_00);
         if ((g_cMf32_00806754 != nullptr) && (local_8 != nullptr)) {
           cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
         }
       }
       else if (SVar1 == MESS_SHARED_0003) {
+        /* ST_CALLSITE[005588B6]: CALL 0x0040218f; direct=0040218F VisibleClassTy::sub_00558140 */
         sub_00558140(local_14);
         if (this_00->field_0114 != 0) {
           ST3DSMAPContext::sub_00717870(g_sT3DSMAPContext_00807598);
@@ -114,7 +120,9 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
     }
     else if (SVar1 == MESS_SHARED_010F) {
       local_c = 0;
+      /* ST_CALLSITE[00558A4B]: CALL 0x00403224; direct=00403224 VisibleClassTy::PrepareToSave */
       local_10 = PrepareToSave(local_14,&local_c);
+      /* ST_CALLSITE[00558A67]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData
                 (g_playSystem_00802A38,PTR_s_VISIBILITY_0079aec4,local_10,local_c,0xc);
       if (local_10 != nullptr) {

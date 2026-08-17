@@ -19,11 +19,13 @@ undefined4 __thiscall TLOBaseTy::sub_004B9A40(TLOBaseTy *this)
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
 
+  /* ST_CALLSITE[004B9A43]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
   sub_0041C5A0(this);
   TVar1 = this->field_05AC;
   if ((((TVar1 != CASE_4D) || (this->field_04D0 == CASE_2)) &&
       ((TVar1 != CASE_4C || (this->field_04D0 == CASE_2)))) &&
      ((TVar1 != CASE_43 || (this->field_04D0 == CASE_2)))) {
+    /* ST_CALLSITE[004B9A7E]: CALL dword ptr [EAX + 0x2c] */
     dVar2 = this->slot_2C();
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&this->field_0024)),
@@ -35,6 +37,7 @@ undefined4 __thiscall TLOBaseTy::sub_004B9A40(TLOBaseTy *this)
   }
   else {
     if (TVar1 == CASE_48) {
+      /* ST_CALLSITE[004B9AB0]: CALL 0x00404e12; direct=00404E12 TLOBaseTy::sub_004DF9F0 */
       sub_004DF9F0(this);
       return 0;
     }

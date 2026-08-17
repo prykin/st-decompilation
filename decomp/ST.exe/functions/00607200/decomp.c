@@ -47,6 +47,7 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   int local_c;
   int local_8;
 
+  /* ST_CALLSITE[00607217]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   local_EAX_23 = LookupRecordByte(in_stack_00000020);
   local_10 = (int)(byte)local_EAX_23;
@@ -55,6 +56,7 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   STField<uint>(this,0x1c) = uVar1;
   iVar7 = (uVar1 >> 0x10) % (local_6c + 1U) + 9;
   local_c = iVar7;
+  /* ST_CALLSITE[00607269]: CALL 0x00403d8c; direct=00403D8C STExplosionC::CreateGroupPart */
   iVar2 = STExplosionC::CreateGroupPart(this,iVar7);
   STField<int>(this,0x269) = iVar2;
   if (iVar2 != iVar7) {
@@ -303,6 +305,7 @@ LAB_006074c8:
         }
       }
       local_bc.arg0.ptr = local_68;
+      /* ST_CALLSITE[00607854]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
       STParticleC::GetMessage((STParticleC *)*local_20,&local_bc);
       local_8 = local_8 + 1;
       local_18 = local_18 + 1;

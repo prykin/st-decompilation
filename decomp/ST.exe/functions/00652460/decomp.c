@@ -46,7 +46,7 @@ int __cdecl FUN_00652460(RecoveredRecord_AiEventClassTy_00652460 *param_1)
   if (sVar1 < 0xb) {
     *(undefined4 *)&param_1->field_0x30 = 0;
   }
-  else if (*(char *)(param_1 + 1) != '\b') {
+  else if (((char *)param_1)[1] != '\b') {
     return 0;
   }
   return (uint)(-1 < *(int *)&param_1->field_0x10);

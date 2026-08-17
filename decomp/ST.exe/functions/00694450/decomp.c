@@ -32,10 +32,10 @@ LAB_00694491:
 LAB_00694496:
     if (iVar4 == 0) {
       STField<char>(this,0x2f9) = STField<char>(this,0x2f9) + -1;
-      memset((void *)((int)this + (uint)*(byte *)(iVar2 + 0x39) * 0x9c + 0x2fa), 0, 0x9c); /* compiler bulk-zero initialization */
+      memset((void *)((int)this + (uint)((byte *)iVar2)[0x39] * 0x9c + 0x2fa), 0, 0x9c); /* compiler bulk-zero initialization */
       iVar4 = 0;
       memset((void *)(iVar2 + 1), 0, 0x20); /* compiler bulk-zero initialization */
-      *(undefined1 *)(iVar2 + 0x39) = 0xff;
+      ((undefined1 *)iVar2)[0x39] = 0xff;
     }
   }
   return;

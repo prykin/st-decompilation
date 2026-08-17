@@ -19,6 +19,7 @@ void __cdecl FUN_006807d0(undefined4 *param_1)
   uVar2 = DAT_00848a10;
   uVar3 = DAT_00848a0c;
   pcVar1 = LoadResourceString(0x1b5b,g_hINSTANCE_00807618);
+  /* ST_CALLSITE[0068081E]: CALL dword ptr [0x0085bde8] */
   wsprintfA(local_404,pcVar1,uVar2,uVar3);
   thunk_FUN_00674ef0(local_404);
   thunk_FUN_00674eb0();

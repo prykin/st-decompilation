@@ -98,8 +98,7 @@ cf_break_loop_00411005:
           local_10 = STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar3).field_0008;
           if ((((local_8 < 0) || (DAT_007f4d2c <= local_8)) || (local_c < 0)) ||
              ((DAT_007f4d30 <= local_c ||
-              (*(short *)((int)PTR_007f4cf0 +
-                         (local_10 * iVar1 + local_8 + DAT_007f4d2c * local_c) * 2) != 0)))) {
+              (PTR_007f4cf0[local_10 * iVar1 + local_8 + DAT_007f4d2c * local_c] != 0)))) {
             iVar6 = FUN_0040f270(&local_8,&local_c,&local_10,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                  DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
             if (iVar6 != 0) {

@@ -20,6 +20,7 @@ void __thiscall st::fn_005BB9F0(PrividerTy *this)
   if (iVar1 != 0) {
     this->field_0025 = iVar1;
     this->field_0031 = 1;
+    /* ST_CALLSITE[005BBA24]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   return;

@@ -15,6 +15,7 @@ void __thiscall FUN_0041c380(void *this,SoundPlayMode mode,int soundId)
   local_10.x = (int)STField<short>(this,0x47);
   local_10.y = (int)STField<short>(this,0x49);
   local_10.unknown = STField<int>(this,8);
+  /* ST_CALLSITE[0041C3BA]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
   SoundClassTy::PlaySound((SoundClassTy *)&g_sound,mode,nullptr,soundId,&local_10,0);
   return;
 }

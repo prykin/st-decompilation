@@ -91,6 +91,7 @@ switchD_004ceb68_caseD_32:
       if (g_sndUnderAttMeneg_00811798 == nullptr) {
         return local_10;
       }
+      /* ST_CALLSITE[004CEDDB]: CALL 0x00402af4; direct=00402AF4 SndUnderAttMenegC::sub_00621580 */
       SndUnderAttMenegC::sub_00621580(g_sndUnderAttMeneg_00811798,this->field_0024,8);
       return local_10;
     }
@@ -122,23 +123,29 @@ switchD_004ceb68_caseD_32:
             if (g_tLOFake_00800BCC == nullptr) {
               thunk_FUN_004cf430();
             }
+            /* ST_CALLSITE[004CECE4]: CALL 0x00401582; direct=00401582 TLOFakeTy::sub_004D0970 */
             TLOFakeTy::sub_004D0970
                       (g_tLOFake_00800BCC,this->field_04E0[0],this->field_04E0[1],
                        this->field_04E0[2]);
             this->field_04D0 = CASE_3;
             this->field_03D0 = 1;
+            /* ST_CALLSITE[004CECFD]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
             RotateSpr(this,0);
             TVar2 = this->field_05AC;
             if (TVar2 == CASE_5C) {
+              /* ST_CALLSITE[004CED18]: CALL dword ptr [EDX + 0x90] */
               this->vfunc_90(3,0x39b);
               return local_10;
             }
             if (TVar2 == CASE_32) {
+              /* ST_CALLSITE[004CED3C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
               bVar3 = LookupRecordByte(*(char *)&this->field_023D);
               if (bVar3 != 2) {
+                /* ST_CALLSITE[004CED6D]: CALL dword ptr [EAX + 0x90] */
                 this->vfunc_90(3,0x1f9);
                 return local_10;
               }
+              /* ST_CALLSITE[004CED50]: CALL dword ptr [EDX + 0x90] */
               this->vfunc_90(3,0x2c1);
               return local_10;
             }
@@ -146,9 +153,11 @@ switchD_004ceb68_caseD_32:
               if (TVar2 != CASE_49) {
                 return local_10;
               }
+              /* ST_CALLSITE[004CEDB5]: CALL dword ptr [EAX + 0x90] */
               this->vfunc_90(3,800);
               return local_10;
             }
+            /* ST_CALLSITE[004CED8F]: CALL dword ptr [EDX + 0x90] */
             this->vfunc_90(3,0x254);
             return local_10;
           }
@@ -173,6 +182,7 @@ switchD_004ceb68_caseD_32:
     if (iVar6 != this->field_01F5->field_020C) {
       return local_10;
     }
+    /* ST_CALLSITE[004CEE72]: CALL 0x00401dd4; direct=00401DD4 TLOFakeTy::sub_004D0A80 */
     TLOFakeTy::sub_004D0A80
               (g_tLOFake_00800BCC,this->field_04E0[0],this->field_04E0[1],this->field_04E0[2]);
     iVar6 = 0x11;
@@ -231,6 +241,7 @@ switchD_004ceb68_caseD_32:
     pcVar14 = local_3a;
     memmove(pcVar14, pcVar12, uVar8); /* compiler REP MOVS byte copy */
     local_2b = this->field_0375;
+    /* ST_CALLSITE[004CEFA3]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
     STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x14,0,&local_24,local_6c,0);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this->field_04D4 = *(int *)(local_24 + 0x18);
@@ -238,6 +249,7 @@ switchD_004ceb68_caseD_32:
     if (this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D)
     goto cf_common_exit_004CF029;
     thunk_FUN_0052af50(0,(float)this->field_01F9,(float)this->field_01FD);
+    /* ST_CALLSITE[004CEFF2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     uVar7 = LookupRecordByte(*(char *)&this->field_0024);
     uVar7 = (int)(byte)uVar7;
     if (uVar7 == 1) {
@@ -246,6 +258,7 @@ switchD_004ceb68_caseD_32:
     }
     else {
       if (uVar7 == 2) {
+        /* ST_CALLSITE[004CF013]: CALL dword ptr [EAX + 0x90] */
         this->vfunc_90(6,0x66);
         goto cf_common_exit_004CF029;
       }
@@ -253,10 +266,12 @@ switchD_004ceb68_caseD_32:
       pTVar11 = this->vtable;
       arg_2 = 0x67;
     }
+    /* ST_CALLSITE[004CF023]: CALL dword ptr [EDX + 0x90] */
     (*pTVar11->vfunc_90)(this,6,arg_2);
 cf_common_exit_004CF029:
     this->field_04D0 = CASE_4;
     this->field_03D0 = 5;
+    /* ST_CALLSITE[004CF041]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     RotateSpr(this,1);
     thunk_FUN_004cbf70(this);
     return local_10;
@@ -271,21 +286,27 @@ cf_common_exit_004CF029:
       this->field_04D0 = CASE_5;
       this->field_03D0 = 1;
       if (TVar2 == CASE_5C) {
+        /* ST_CALLSITE[004CF0AA]: CALL dword ptr [EDX + 0x90] */
         this->vfunc_90(3,0x39c);
       }
       else if (TVar2 == CASE_32) {
+        /* ST_CALLSITE[004CF0C7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar3 = LookupRecordByte(*(char *)&this->field_023D);
         if (bVar3 == 2) {
+          /* ST_CALLSITE[004CF0DB]: CALL dword ptr [EDX + 0x90] */
           this->vfunc_90(3,0x2c2);
         }
         else {
+          /* ST_CALLSITE[004CF0F1]: CALL dword ptr [EAX + 0x90] */
           this->vfunc_90(3,0x1fa);
         }
       }
       else if (TVar2 == CASE_40) {
+        /* ST_CALLSITE[004CF109]: CALL dword ptr [EDX + 0x90] */
         this->vfunc_90(3,0x255);
       }
       else if (TVar2 == CASE_49) {
+        /* ST_CALLSITE[004CF121]: CALL dword ptr [EAX + 0x90] */
         this->vfunc_90(3,0x321);
       }
       break;
@@ -308,6 +329,7 @@ switchD_004cf07f_caseD_40:
   default:
     goto switchD_004ceb47_default;
   }
+  /* ST_CALLSITE[004CF16F]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
   RotateSpr(this,1);
 switchD_004ceb47_default:
   return local_10;

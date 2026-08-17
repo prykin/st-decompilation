@@ -63,6 +63,7 @@ st::fn_00679120
         *(short *)(*slotStorage + 100) = (short)local_c + 2;
         *(short *)(*slotStorage + 0x66) = (short)param_4;
         *(undefined1 *)(*slotStorage + 0x68) = pAVar2->field_064F;
+        /* ST_CALLSITE[0067925A]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
         st::fn_00401BC2
                   (g_playSystem_00802A38,0x38e,st::machine_word_boundary_cast<undefined4>(local_24),st::machine_word_boundary_cast<undefined4>(&local_10),*slotStorage,0);
         st::fn_006AB060(slotStorage);

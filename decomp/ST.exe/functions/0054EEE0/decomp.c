@@ -124,6 +124,7 @@ STPlaySystemC::SetCtrlCmd
       }
       if (bVar3) {
         FUN_006b9910(&local_8->field_0039,(int)pvVar4);
+        /* ST_CALLSITE[0054F058]: CALL 0x00405420; direct=00405420 PlaySystemTy::SendClientMail */
         PlaySystemTy::SendClientMail((PlaySystemTy *)local_8);
         g_currentExceptionFrame = local_54.previous;
         return;

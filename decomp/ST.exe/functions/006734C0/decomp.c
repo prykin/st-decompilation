@@ -15,6 +15,7 @@ int FUN_006734c0(void)
   uint *puVar9;
   int *local_8;
 
+  /* ST_CALLSITE[006734DE]: CALL dword ptr [EDX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar2 = (*(code *)PTR_0081194c->field_0008)(DAT_00857560,PTR_0085755c,0x400);
   if ((-1 < iVar2) || (iVar2 == -1)) {

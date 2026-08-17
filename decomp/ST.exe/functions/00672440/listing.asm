@@ -82,8 +82,7 @@ LAB_0067252f:
 00672533  8B CB                     MOV ECX,EBX
 00672535  C6 84 30 D0 00 00 00 08   MOV byte ptr [EAX + ESI*0x1 + 0xd0],0x8
 0067253D  8B 13                     MOV EDX,dword ptr [EBX]
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440::override::prt_67253f_fe31059c:
-0067253F  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4
+0067253F  FF 12                     CALL dword ptr [EDX]
 00672541  0F BF 0E                  MOVSX ECX,word ptr [ESI]
 00672544  89 44 8E 08               MOV dword ptr [ESI + ECX*0x4 + 0x8],EAX
 00672548  66 FF 06                  INC word ptr [ESI]
@@ -135,8 +134,7 @@ LAB_006725d2:
 006725D6  8B CB                     MOV ECX,EBX
 006725D8  C6 84 32 D0 00 00 00 0A   MOV byte ptr [EDX + ESI*0x1 + 0xd0],0xa
 006725E0  8B 03                     MOV EAX,dword ptr [EBX]
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440::override::prt_6725e2_fe31059c:
-006725E2  FF 50 08                  CALL dword ptr [EAX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4
+006725E2  FF 50 08                  CALL dword ptr [EAX + 0x8]
 006725E5  0F BF 0E                  MOVSX ECX,word ptr [ESI]
 006725E8  89 44 8E 08               MOV dword ptr [ESI + ECX*0x4 + 0x8],EAX
 006725EC  0F BF 16                  MOVSX EDX,word ptr [ESI]

@@ -50,7 +50,7 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
     if (iVar11 == 0) {
       if (local_8 != nullptr) {
         st::fn_006F20E0(g_cMf32_00806780,local_8);
-        if ((uint *)local_8[2] != nullptr) {
+        if ((uint *)local_8[2] != 0) {
           st::fn_00710560((uint *)local_8[2]);
           local_8[2] = 0;
         }
@@ -204,7 +204,7 @@ void __cdecl st::fn_005544E0(uint *param_1)
   if (errorCode == 0) {
     if (param_1 != nullptr) {
       st::fn_006F20E0(g_cMf32_00806780,param_1);
-      if ((uint *)param_1[2] != nullptr) {
+      if ((uint *)param_1[2] != 0) {
         st::fn_00710560((uint *)param_1[2]);
       }
       st::fn_00402487((int)param_1);
@@ -385,6 +385,7 @@ void __thiscall st::fn_00554AD0(cLoadingTy *this,uint *param_1)
   cLoadingTy *local_8;
 
   local_8 = this;
+  /* ST_CALLSITE[00554ADA]: CALL 0x0040249b; direct=0040249B cLoadingTy::sub_00555570 */
   st::fn_0040249B(this);
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -407,7 +408,8 @@ void __thiscall st::fn_00554AD0(cLoadingTy *this,uint *param_1)
               ((int *)g_dDXContext_0080759C,iVar4,iVar3,(BITMAPINFO *)pcVar2->field_0004,nullptr
                ,iVar4,iVar3,pcVar2->field_001C,pcVar2->field_0034,0);
     st::fn_006BB370(g_dDXContext_0080759C,0,0);
-    if ((code *)pcVar2->field_0058 != nullptr) {
+    if ((code *)pcVar2->field_0058 != 0) {
+      /* ST_CALLSITE[00554BC0]: CALL EAX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pcVar2->field_0058)(pcVar2->field_0054);
     }
@@ -443,12 +445,14 @@ void __thiscall st::fn_00554C80(cLoadingTy *this,char *resourceString)
   cLoadingTy *local_8;
 
   local_8 = this;
+  /* ST_CALLSITE[00554C8C]: CALL 0x0040249b; direct=0040249B cLoadingTy::sub_00555570 */
   st::fn_0040249B(this);
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pcVar2 = local_8;
   if (iVar3 == 0) {
+    /* ST_CALLSITE[00554CC3]: CALL 0x00404638; direct=00404638 cLoadingTy::sub_00555680 */
     st::fn_00404638(local_8,resourceString);
     st::fn_006B4170((RecoveredSourceFamily_dibcopy *)pcVar2->field_0004,0,
                  pcVar2->field_0014 + pcVar2->field_000C,pcVar2->field_0010 + pcVar2->field_0018,
@@ -489,7 +493,8 @@ void __thiscall st::fn_00554C80(cLoadingTy *this,char *resourceString)
                  pcVar2->field_001C,pcVar2->field_0020,0);
     }
     st::fn_006BB370(g_dDXContext_0080759C,0,0);
-    if ((code *)pcVar2->field_0058 != nullptr) {
+    if ((code *)pcVar2->field_0058 != 0) {
+      /* ST_CALLSITE[00554E31]: CALL EAX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pcVar2->field_0058)(pcVar2->field_0054);
     }
@@ -530,6 +535,7 @@ void __thiscall st::fn_00554F20(cLoadingTy *this,int param_1,char *text,int para
   cLoadingTy *local_8;
 
   local_8 = this;
+  /* ST_CALLSITE[00554F2A]: CALL 0x0040249b; direct=0040249B cLoadingTy::sub_00555570 */
   st::fn_0040249B(this);
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -537,9 +543,11 @@ void __thiscall st::fn_00554F20(cLoadingTy *this,int param_1,char *text,int para
   this_00 = local_8;
   if (errorCode == 0) {
     if (-1 < local_8->field_003C) {
+      /* ST_CALLSITE[00554F66]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
       st::fn_00403472(local_8,CASE_2,0,nullptr);
     }
     this_00->field_003C = param_1;
+    /* ST_CALLSITE[00554F71]: CALL dword ptr [0x0085bedc] */
     DVar2 = st::external_000000DA();
     this_00->field_0044 = DVar2;
     this_00->field_0040 = param_3;
@@ -547,6 +555,7 @@ void __thiscall st::fn_00554F20(cLoadingTy *this,int param_1,char *text,int para
       this_00->field_0040 = 1;
     }
     this_00->field_0050 = 0xffffffff;
+    /* ST_CALLSITE[00554F98]: CALL 0x00401230; direct=00401230 cLoadingTy::DrawLineCR */
     st::fn_00401230(this_00,text);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -604,6 +613,7 @@ st::fn_00555040
   char *pcVar4_mg6;
 
   local_8 = this;
+  /* ST_CALLSITE[00555051]: CALL 0x0040249b; direct=0040249B cLoadingTy::sub_00555570 */
   st::fn_0040249B(this);
   if (this->field_003C < -1) {
     return;
@@ -662,6 +672,7 @@ st::fn_00555040
     pcVar8 = pcVar8 + -uVar5;
     pcVar12 = (char *)((int)puVar11 + -1);
     memmove(pcVar12, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    /* ST_CALLSITE[00555119]: CALL 0x00404381; direct=00404381 cLoadingTy::DrawLine */
     st::fn_00404381(local_8,local_450);
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -720,6 +731,7 @@ st::fn_00555040
       }
     }
     else {
+      /* ST_CALLSITE[005551C3]: CALL dword ptr [0x0085bedc] */
       DVar3 = st::external_000000DA();
       uVar5 = pcVar9->field_0040;
       param_2 = DVar3 - pcVar9->field_0044;
@@ -773,12 +785,14 @@ st::fn_00555040
           pcVar9 = local_8;
         } while (uVar4 != 0);
       }
+      /* ST_CALLSITE[00555242]: CALL 0x00404381; direct=00404381 cLoadingTy::DrawLine */
       st::fn_00404381(pcVar9,local_450);
       pcVar9->field_0050 = uVar5;
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    if ((code *)pcVar9->field_0058 != nullptr) {
+    if ((code *)pcVar9->field_0058 != 0) {
+      /* ST_CALLSITE[0055526B]: CALL EAX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pcVar9->field_0058)(pcVar9->field_0054);
       g_currentExceptionFrame = local_50.previous;
@@ -893,11 +907,13 @@ joined_r0x00555393:
       pcVar12 = (char *)((int)puVar11 + -1);
       memmove(pcVar12, pcVar8, uVar5); /* compiler REP MOVS byte copy */
     }
+    /* ST_CALLSITE[005553C9]: CALL 0x00401230; direct=00401230 cLoadingTy::DrawLineCR */
     st::fn_00401230(pcVar9,(char *)local_450);
     g_currentExceptionFrame = local_50.previous;
     return;
   default:
-    if ((code *)local_8->field_0058 != nullptr) {
+    if ((code *)local_8->field_0058 != 0) {
+      /* ST_CALLSITE[005553EE]: CALL EAX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)local_8->field_0058)(local_8->field_0054);
     }

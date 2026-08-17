@@ -36,7 +36,9 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar2);
         if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x1a4) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
+          /* ST_CALLSITE[0042C8FF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_5);
+          /* ST_CALLSITE[0042C90A]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
           (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
@@ -68,7 +70,9 @@ STAllPlayersC::DelObjFromTmps
             do {
               DArrayGetElement(pDVar3,uVar9,&local_8);
               if ((ushort)local_8 == (ushort)param_4) {
+                /* ST_CALLSITE[0042C821]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_1);
+                /* ST_CALLSITE[0042C82C]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
                 (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
                 local_8 = 0xffff;
                 Library::DKW::TBL::DArrayPut(pDVar3,uVar9,&local_8);
@@ -106,7 +110,9 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar2);
         if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x5a) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
+          /* ST_CALLSITE[0042C736]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_4);
+          /* ST_CALLSITE[0042C741]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
           (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
@@ -132,7 +138,9 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar2);
         if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x172) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
+          /* ST_CALLSITE[0042C686]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_2);
+          /* ST_CALLSITE[0042C691]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
           (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
@@ -160,7 +168,9 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar2);
         if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x1b8) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
+          /* ST_CALLSITE[0042CA7F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_6);
+          /* ST_CALLSITE[0042CA8A]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
           (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
@@ -186,7 +196,9 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar2);
         if (((*(int *)(iVar8 * 0x10 + iVar2) == 0x1ae) && (puVar1[1] == (int)param_3)) &&
            (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
+          /* ST_CALLSITE[0042C9CD]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_3);
+          /* ST_CALLSITE[0042C9D8]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
           (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
@@ -219,7 +231,9 @@ STAllPlayersC::DelObjFromTmps
           do {
             DArrayGetElement(pDVar3,uVar9,&local_8);
             if ((ushort)local_8 == (ushort)param_4) {
+              /* ST_CALLSITE[0042CB82]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar6 = GetObjPtr(this,param_3,(ushort)param_4,CASE_1);
+              /* ST_CALLSITE[0042CB8D]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
               (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
               local_8 = 0xffff;
               Library::DKW::TBL::DArrayPut(pDVar3,uVar9,&local_8);

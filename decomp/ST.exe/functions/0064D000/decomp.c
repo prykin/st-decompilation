@@ -29,6 +29,7 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
     else {
       pAVar3 = (AllocationRecord_0065CD10 *)&local_8->field_008C;
     }
+    /* ST_CALLSITE[0064D045]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
     pAVar3_mg1 = EventDataPack(pAVar3,param_1);
     *(undefined1 *)pAVar3_mg1 = 1;
     *(uint *)&pAVar3_mg1->field_0x4e = pAVar2->field_0088;

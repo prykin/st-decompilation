@@ -249,6 +249,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
               do {
                 psVar14 = psVar14 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
+                /* ST_CALLSITE[00448D10]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
                   local_EAX_3288 =
@@ -274,9 +275,11 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 local_c = CONCAT22(psVar14[1],sVar4);
                 iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
                 if (iVar9 == 5) {
+                  /* ST_CALLSITE[00448D89]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                   STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                 }
                 else {
+                  /* ST_CALLSITE[00448D98]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                   STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
                 param_6 = param_6 + 1;
@@ -308,6 +311,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 uVar15 = local_8;
                 do {
                   DArrayGetElement(param_8,uVar15,&param_5);
+                  /* ST_CALLSITE[004487BC]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                   pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar8 == nullptr) {
                     local_EAX_1893 =
@@ -325,9 +329,11 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_c = CONCAT22(*puVar13,puVar13[-1] + sVar2);
                   iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
                   if (iVar6 == 5) {
+                    /* ST_CALLSITE[00448816]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                     STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                   }
                   else {
+                    /* ST_CALLSITE[00448825]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                     STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
                   param_6 = param_6 + 1;
@@ -359,6 +365,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 do {
                   psVar14 = psVar14 + 3;
                   DArrayGetElement(param_8,local_8,&param_5);
+                  /* ST_CALLSITE[00448643]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                   pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar8 == nullptr) {
                     local_EAX_1553 =
@@ -385,9 +392,11 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_c = CONCAT22(psVar14[1],sVar4);
                   iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
                   if (iVar9 == 5) {
+                    /* ST_CALLSITE[004486C2]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                     STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                   }
                   else {
+                    /* ST_CALLSITE[004486D1]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                     STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
                   param_6 = param_6 + 1;
@@ -418,6 +427,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 uVar15 = local_1c;
                 do {
                   DArrayGetElement(param_8,uVar15,&param_5);
+                  /* ST_CALLSITE[004484F2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                   pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar8 == nullptr) {
                     local_EAX_1180 =
@@ -435,9 +445,11 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_c = CONCAT22(*puVar13,(sVar2 - (short)local_24) + -3);
                   iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
                   if (iVar6 == 5) {
+                    /* ST_CALLSITE[0044854D]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                     STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                   }
                   else {
+                    /* ST_CALLSITE[0044855C]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                     STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
                   param_6 = param_6 + 1;
@@ -474,6 +486,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
               if (0 < (int)_param_4) {
                 do {
                   DArrayGetElement(param_8,uVar15,&param_5);
+                  /* ST_CALLSITE[00448922]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                   local_24 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (local_24 == nullptr) {
                     local_EAX_2921 =
@@ -602,11 +615,14 @@ LAB_00448bc0:
                   }
                   pSVar8 = local_24;
                   iVar9 = thunk_FUN_0045ff10((STGameObjC *)local_24);
+                  /* ST_CALLSITE[00448BE0]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
                   if (((iVar9 == 5) && (uVar7 = STBoatC::CheckPBoxCmd(pSVar8,CASE_3), uVar7 == 1))
                      || (iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8), iVar9 != 5)) {
+                    /* ST_CALLSITE[00448C29]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                     STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
                   else {
+                    /* ST_CALLSITE[00448C1A]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                     STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                   }
                   param_6 = param_6 + 1;
@@ -642,6 +658,7 @@ LAB_00448bc0:
               uVar15 = local_8;
               do {
                 DArrayGetElement(param_8,uVar15,&param_5);
+                /* ST_CALLSITE[00448EA2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
                   local_EAX_3660 =
@@ -658,9 +675,11 @@ LAB_00448bc0:
                 local_c = CONCAT22(*puVar13,puVar13[-1] + sVar2);
                 iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
                 if (iVar6 == 5) {
+                  /* ST_CALLSITE[00448EFD]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                   STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                 }
                 else {
+                  /* ST_CALLSITE[00448F0C]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                   STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
                 param_6 = param_6 + 1;
@@ -692,6 +711,7 @@ LAB_00448bc0:
               do {
                 psVar14 = psVar14 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
+                /* ST_CALLSITE[00449166]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
                   local_EAX_4414 =
@@ -719,9 +739,11 @@ LAB_00448bc0:
                 local_10 = CONCAT22(sVar11,(undefined2)local_10);
                 iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
                 if (iVar9 == 5) {
+                  /* ST_CALLSITE[004491EF]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                   STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                 }
                 else {
+                  /* ST_CALLSITE[004491FE]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                   STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
                 param_6 = param_6 + 1;
@@ -751,6 +773,7 @@ LAB_00448bc0:
               uVar15 = local_8;
               do {
                 DArrayGetElement(param_8,uVar15,&param_5);
+                /* ST_CALLSITE[004492E9]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
                   local_EAX_4754 =
@@ -767,9 +790,11 @@ LAB_00448bc0:
                 local_c = CONCAT22(*puVar13,(short)local_24 + 3 + sVar2);
                 iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
                 if (iVar6 == 5) {
+                  /* ST_CALLSITE[00449343]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                   STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                 }
                 else {
+                  /* ST_CALLSITE[00449352]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                   STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
                 param_6 = param_6 + 1;
@@ -801,6 +826,7 @@ LAB_00448bc0:
               do {
                 psVar14 = psVar14 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
+                /* ST_CALLSITE[00448FF3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
                   local_EAX_4031 =
@@ -826,9 +852,11 @@ LAB_00448bc0:
                 local_c = CONCAT22(psVar14[1],sVar4);
                 iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
                 if (iVar9 == 5) {
+                  /* ST_CALLSITE[00449070]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                   STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
                 }
                 else {
+                  /* ST_CALLSITE[0044907F]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                   STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                 }
                 param_6 = param_6 + 1;

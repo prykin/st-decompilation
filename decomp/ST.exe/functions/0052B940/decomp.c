@@ -15,6 +15,7 @@ void __thiscall MoneyTy::sub_0052B940(MoneyTy *this)
 {
   FUN_006b5f80((int *)g_ddxContext_008075A8,this->field_0028,this->field_002C,this->field_0050,
                this->field_0054);
+  /* ST_CALLSITE[0052B96D]: CALL 0x00403738; direct=00403738 PutDDX */
   PutDDX(this->field_0028,this->field_002C,'\x01',(BITMAPINFO *)this->field_007A);
   return;
 }

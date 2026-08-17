@@ -55,6 +55,7 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
       local_f = 0;
       Library::DKW::TBL::DArrayAppend((DArrayTy *)array,local_3c);
       FUN_006b5f80((int *)g_ddxContext_008075A8,0x1e9,0x5e,0x124,0xf3);
+      /* ST_CALLSITE[005A2485]: CALL 0x00402298; direct=00402298 PutDDXClip */
       PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',this_00->field_1E9A);
       this_00->field_002D = 0x28;
       *(dword *)&this_00->field_0x31 = this_00->field_1EA6->count;

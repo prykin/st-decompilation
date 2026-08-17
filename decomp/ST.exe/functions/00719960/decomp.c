@@ -17,6 +17,7 @@ undefined4 __cdecl FUN_00719960(MCIDEVICEID *param_1)
   local_10 = 0;
   local_8 = 0;
   local_c = 3;
+  /* ST_CALLSITE[0071999E]: CALL dword ptr [0x0085bec0] */
   mcierr = mciSendCommandA(*param_1,0x814,0x100,(DWORD_PTR)&local_14);
   if (mcierr != 0) {
     FUN_00719c90(mcierr,param_1);

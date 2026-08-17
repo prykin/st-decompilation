@@ -271,11 +271,13 @@ LAB_0058b6f6:
     *param_1 = sVar8;
     *param_2 = sVar9;
     *param_3 = (short)local_c;
+    /* ST_CALLSITE[0058B758]: CALL dword ptr [EDX + 0x10] */
     sVar2 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
                        STReplaceLowWord((uint32_t)(local_c), (uint16_t)(this->field_0045)),sVar8,sVar9,local_c
                       );
     *param_4 = sVar2 / 0x2d - (short)((int)sVar2 / -0x4c000000);
+    /* ST_CALLSITE[0058B77F]: CALL 0x004024f5; direct=004024F5 STOctopusC::sub_0058AF70 */
     sub_0058AF70(this,sVar8,sVar9,(short)local_c);
     return 1;
   }

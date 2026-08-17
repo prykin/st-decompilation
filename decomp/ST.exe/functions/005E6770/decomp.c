@@ -58,6 +58,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     pDVar3 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this_01->field_1AF0 = pDVar3;
     if ((DAT_00811768 == '\x01') || (DAT_008067a0 != '\0')) {
+      /* ST_CALLSITE[005E67F0]: CALL 0x00401d43; direct=00401D43 DarkScreen */
       DarkScreen(g_dDXContext_0080759C,1,0);
     }
     if (g_cursorClass_00802A30 != nullptr) {
@@ -78,6 +79,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
               ((int)local_668,0,0x100,0x8b,0x15,
                (undefined4 *)(this_01->array_00BC[0xc].field_01DB + 0x144));
     puVar6 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
+    /* ST_CALLSITE[005E68BF]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
            (byte *)puVar6);
     pRVar1 = (RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_0544;
@@ -97,6 +99,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       this_01->field_0031 = 0;
       FUN_006e6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_01->field_0x1d);
     }
+    /* ST_CALLSITE[005E6985]: CALL 0x004043f4; direct=004043F4 WaitTy::PaintWait */
     PaintWait(this_01,'\x01');
     iVar14 = 1;
     puVar4 = this_01->field_005D + 0x14;
@@ -128,6 +131,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       uVar8 = uVar8 + 0x13;
       puVar10 = puVar10 + 1;
     } while ((int)uVar8 < 0x1e1);
+    /* ST_CALLSITE[005E6A59]: CALL 0x00402941; direct=00402941 WaitTy::CreateCtrls */
     CreateCtrls(this_01);
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403099,0x204,0x19d,
                  (ushort *)(this_01->array_00BC[0xc].field_01DB + 0x140));
@@ -159,6 +163,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       bVar12 = 0x10;
       iVar11 = 1;
       iVar14 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x38,0x204,0x19d);
+      /* ST_CALLSITE[005E6B2B]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       uVar10 = HoloTy::Init(this_01->field_1AF8,CASE_2,0x112,0x38,iVar14,iVar11,bVar12,cVar13,uVar9);
       if (uVar10 != 0) {
         pHVar6 = this_01->field_1AF8;
@@ -205,6 +210,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
         bVar12 = 0x10;
         iVar11 = 1;
         iVar14 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+        /* ST_CALLSITE[005E6CFC]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
         local_EAX_1420 =
              HoloTy::Init(this_01->field_1B00,CASE_4,10,0xb4,iVar14,iVar11,bVar12,cVar13,uVar9);
         if (local_EAX_1420 != 0) {
@@ -295,6 +301,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
         bVar12 = 0x10;
         iVar11 = 1;
         iVar14 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
+        /* ST_CALLSITE[005E6EED]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
         local_EAX_1917 =
              HoloTy::Init(this_01->field_1AFC,CASE_1,200,0x1f1,iVar14,iVar11,bVar12,cVar13,uVar9);
         if (local_EAX_1917 != 0) {
@@ -357,6 +364,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
        (-1 < (int)*(uint *)&pHVar6->field_0x3)) {
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*(uint *)&pHVar6->field_0x3);
     }
+    /* ST_CALLSITE[005E70D8]: CALL 0x00401b45; direct=00401B45 WaitTy::sub_005E9A40 */
     sub_005E9A40(this_01);
     this_00 = g_cursorClass_00802A30;
     if (g_cursorClass_00802A30 != nullptr) {
@@ -364,7 +372,9 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       iVar11 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       this_00->field_0494 = 0xffff;
+      /* ST_CALLSITE[005E7108]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
       CursorClassTy::SetGCType(this_00,CASE_0,iVar11,iVar14);
+      /* ST_CALLSITE[005E711D]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
       this_00->field_00D2 = 0;
       this_00->field_04DF = -1;
@@ -389,12 +399,15 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
         puVar5 = puVar5 + 1;
       }
       *(undefined2 *)puVar5 = 0xffff;
+      /* ST_CALLSITE[005E71C5]: CALL 0x00405191; direct=00405191 MMsgTy::ShowSprites */
       MMsgTy::ShowSprites(*(MMsgTy **)(iVar14 + 0x2e6));
       *(undefined4 *)(*(int *)(this_01->array_00BC[0xc].field_01DB + 0x2e6) + 0x1cab) =
            this_01->field_0008;
+      /* ST_CALLSITE[005E71F5]: CALL 0x00401717; direct=00401717 MMsgTy::SetPanel */
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       MMsgTy::SetPanel(*(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6),0,(int)&local_268,0
                        ,0);
+      /* ST_CALLSITE[005E720A]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       MMsgTy::StatePanel(*(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6),(int)local_6c);
     }

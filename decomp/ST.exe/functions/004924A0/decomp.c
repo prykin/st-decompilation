@@ -19,6 +19,7 @@ void __fastcall FUN_004924a0(void *param_1)
                       (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(param_1,0x5a2)
                        ,(int *)&local_8);
     if (iVar1 != -4) {
+      /* ST_CALLSITE[004924DF]: CALL 0x00403864; direct=00403864 STBoatC::CancelLoading */
       STBoatC::CancelLoading(local_8,STField<int>(param_1,0x18));
     }
   }

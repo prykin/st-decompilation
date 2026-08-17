@@ -26,9 +26,11 @@ undefined4 FUN_006bbe40(int *param_1,uint *param_2,int *param_3,uint param_4)
   local_70 = 0;
   local_80[0] = 0x7c;
   while( true ) {
+    /* ST_CALLSITE[006BBE6D]: CALL dword ptr [EAX + 0x64] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (**(code **)(*param_1 + 100))(param_1,0,local_80,param_4 | 1,0);
     if (((iVar2 != -0x7789ff60) && (iVar2 != -0x7789fe52)) || (bVar1)) break;
+    /* ST_CALLSITE[006BBE84]: CALL dword ptr [0x0085bc6c] */
     Sleep(2);
     bVar1 = true;
   }

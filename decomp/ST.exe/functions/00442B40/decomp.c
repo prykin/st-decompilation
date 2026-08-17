@@ -39,9 +39,11 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   local_2c[2] = 0x4f;
   local_2c[3] = 0x5e;
   objPtr = (char)param_1;
+  /* ST_CALLSITE[00442B6F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   this = GetObjPtr(in_ECX,objPtr,(ushort)param_2,CASE_1);
   local_14 = this;
+  /* ST_CALLSITE[00442B7D]: CALL dword ptr [EDX + 0x2c] */
   uVar4 = this->vfunc_2C();
   local_c = 0;
   local_18 = uVar4;
@@ -62,6 +64,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
         pDVar2 = *(DArrayTy **)(local_10 + STRecordByteAddress(g_packedRecords_A62x8, objPtr, 0xF));
         uVar1 = (ushort)pDVar2->count;
         if (uVar1 != 0) {
+          /* ST_CALLSITE[00442C29]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)this,(short *)((int)&param_2 + 2),&local_6,&local_8);
           uVar4 = 0;
           local_1c = this->field_0032;
@@ -87,6 +90,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
     } while (local_10 < 0x10);
     return local_c;
   }
+  /* ST_CALLSITE[00442CD3]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   STFishC::sub_004162B0((STFishC *)this,(short *)((int)&param_2 + 2),&local_6,&local_8);
   local_1c = this->field_0032;
   local_14 = (STGameObjC *)0x4;

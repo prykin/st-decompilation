@@ -16,6 +16,7 @@ undefined4 __thiscall FUN_004e95c0(void *this,STBoatC *param_1)
   if (STField<int>(this,0x4d8) == param_1->field_0018) {
     STField<undefined4>(this,0x4d8) = 0xffff;
     if (STField<int>(this,0x4e0) != 0) {
+      /* ST_CALLSITE[004E9608]: CALL 0x00401dd4; direct=00401DD4 TLOFakeTy::sub_004D0A80 */
       TLOFakeTy::sub_004D0A80
                 (g_tLOFake_00800BCC,STField<int>(this,0x4e4),STField<int>(this,0x4e8),
                  STField<int>(this,0x4ec));

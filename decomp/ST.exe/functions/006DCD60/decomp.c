@@ -20,8 +20,7 @@ void __fastcall FUN_006dcd60(int param_1)
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar3 = *(int *)(param_1 + 0x358);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((iVar3 != 0) && ((*(byte *)(param_1 + 0xa8) & 8) == 0)) {
+  if ((iVar3 != 0) && ((((byte *)param_1)[0xa8] & 8) == 0)) {
     lVar10 = Library::MSVCRT::__ftol();
     iVar7 = (int)lVar10;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

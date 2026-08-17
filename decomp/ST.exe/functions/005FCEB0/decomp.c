@@ -25,6 +25,7 @@ void __fastcall FUN_005fceb0(AnonShape_005FCEB0_FA1F7938 *param_1)
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_28.arg1.words.high = *(word *)(local_8 + 0x32);
     }
+    /* ST_CALLSITE[005FCF1B]: CALL dword ptr [EDX] */
     g_aiBossClass_008117BC->GetMessage(&local_28);
   }
   return;

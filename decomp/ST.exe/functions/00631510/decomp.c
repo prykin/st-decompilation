@@ -19,6 +19,7 @@ STManRuinC::sub_00631510
 
   uVar1 = this->field_0071 * 0x41c64e6d + 0x3039;
   this->field_0071 = uVar1;
+  /* ST_CALLSITE[00631546]: CALL 0x00403a26; direct=00403A26 STManRuinC::sub_006308F0 */
   uVar1 = sub_006308F0(this,param_3,param_4,param_5,param_2,(uVar1 >> 0x10) % 3,param_6);
   return uVar1;
 }

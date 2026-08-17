@@ -10,29 +10,32 @@
 undefined4 __fastcall FUN_004d01f0(void *param_1)
 
 {
-  AnonShape_004AB810_8E5693D5 *pAVar1;
-  STT3DSprC *this;
+  STT3DSprC *pSVar1;
   int exceptionCode;
   int local_10;
   int local_c;
   int local_8;
 
   if (STField<int>(param_1,0x5ff) == 0) {
-    pAVar1 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-    if (pAVar1 == nullptr) {
-      this = nullptr;
+    pSVar1 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+    if (pSVar1 == nullptr) {
+      pSVar1 = nullptr;
     }
     else {
-      this = (STT3DSprC *)thunk_FUN_004ab810(pAVar1);
+      /* ST_CALLSITE[004D0217]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+      pSVar1 = STT3DSprC::STT3DSprC(pSVar1);
     }
-    STField<STT3DSprC *>(param_1,0x5ff) = this;
-    exceptionCode = STT3DSprC::Init(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    STField<STT3DSprC *>(param_1,0x5ff) = pSVar1;
+    /* ST_CALLSITE[004D0241]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
+    exceptionCode =
+         STT3DSprC::Init(pSVar1,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (exceptionCode != 0) {
       RaiseInternalException
                 (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp"
                  ,0x28b);
     }
     thunk_FUN_004ce9e0(param_1,&local_10,&local_c,&local_8);
+    /* ST_CALLSITE[004D02B9]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     STT3DSprC::sub_004AD3C0
               (STField<STT3DSprC *>(param_1,0x5ff),(float)local_10 * _DAT_007904f8 * _DAT_007904f0
                ,(float)local_c * _DAT_007904f8 * _DAT_007904f0,

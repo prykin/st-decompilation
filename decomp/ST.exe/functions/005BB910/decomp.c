@@ -24,7 +24,9 @@ void __thiscall PrividerTy::CloseButtons(PrividerTy *this,char param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[005BB944]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
     MMObjTy::CloseButtons((MMObjTy *)local_8);
+    /* ST_CALLSITE[005BB94F]: CALL 0x004031f7; direct=004031F7 PrividerTy::DeleteCtrls */
     DeleteCtrls(this_00,param_1);
     this_00->field_0065 = CASE_4;
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);

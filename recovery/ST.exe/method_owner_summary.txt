@@ -1,5 +1,5 @@
 program=ST.exe
-named_caller_methods=1462
+named_caller_methods=1464
 typed_global_singleton_calls=2146
 proposals=915
 owner_auto_repair=0

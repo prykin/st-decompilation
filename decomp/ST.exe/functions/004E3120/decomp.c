@@ -35,9 +35,11 @@ undefined4 __thiscall TLOBaseTy::sub_004E3120(TLOBaseTy *this)
       local_24.arg0.words.low = wVar1;
       uVar2 = thunk_FUN_004e60d0((int)this->field_0024,*(int *)&this->field_0x369);
       local_24.arg1.words.high = (short)uVar2 + 1;
+      /* ST_CALLSITE[004E31AB]: CALL dword ptr [EDX] */
       g_aiBossClass_008117BC->GetMessage(&local_24);
     }
     this->field_04D0 = CASE_0;
+    /* ST_CALLSITE[004E31BC]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     RotateSpr(this,1);
   }
   return 1;

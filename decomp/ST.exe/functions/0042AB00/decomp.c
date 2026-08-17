@@ -25,6 +25,7 @@ STAllPlayersC::GetGObjFromZone
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
+    /* ST_CALLSITE[0042AB58]: CALL 0x004028fb; direct=004028FB STAllPlayersC::GetGObjFromZone2 */
     GetGObjFromZone2(local_8,param_1,param_2,param_3,param_4,param_5,param_6,nullptr,nullptr,
                      param_7,nullptr,nullptr,nullptr,nullptr,nullptr,nullptr,
                      nullptr,nullptr);

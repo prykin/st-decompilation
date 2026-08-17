@@ -19,6 +19,7 @@ void FUN_004407a0(char param_1,undefined4 param_2,undefined4 param_3)
     do {
       DArrayGetElement(array,index,&param_1);
       if (_param_1 != nullptr) {
+        /* ST_CALLSITE[004407EC]: CALL 0x0040348b; direct=0040348B STGroupBoatC::ReMakePVecAndTgtListExt */
         STGroupBoatC::ReMakePVecAndTgtListExt(_param_1,(char)param_2,(short)param_3);
       }
       index = index + 1;

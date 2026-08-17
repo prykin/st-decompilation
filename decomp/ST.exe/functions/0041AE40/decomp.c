@@ -7,7 +7,7 @@ void __thiscall FUN_0041ae40(void *this,undefined4 *param_1)
 
   memset(param_1, 0, 0x18); /* compiler bulk-zero initialization */
   *param_1 = STField<undefined4>(this,0x18);
-  *(undefined1 *)(param_1 + 2) = 0;
+  ((undefined1 *)param_1)[2] = 0;
   return;
 }
 

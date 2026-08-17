@@ -11,6 +11,7 @@ int FUN_006b7140(int *param_1)
 
   piVar1 = param_1 + 0x10;
   *piVar1 = 0;
+  /* ST_CALLSITE[006B7161]: CALL dword ptr [EDX + 0x30] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)*param_1 + 0x30))
             ((int *)*param_1,param_1 + 6,Library::DKW::DDX::FUN_006b7170,piVar1,0x10);

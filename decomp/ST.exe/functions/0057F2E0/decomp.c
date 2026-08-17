@@ -27,6 +27,7 @@ undefined4 * __thiscall STDcResourcC::sub_0057F2E0(STDcResourcC *this,int param_
     param_1 = CONCAT31(extraout_var,uVar2);
     pcVar6_mg0 = PTR_s_rc276_c_d_007cb08c;
   }
+  /* ST_CALLSITE[0057F313]: CALL dword ptr [0x0085bde8] */
   wsprintfA(&CHAR_00h_00811670,pcVar6_mg0,param_1);
   if (param_2 == 0) {
     return (undefined4 *)&CHAR_00h_00811670;

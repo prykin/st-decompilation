@@ -126,22 +126,25 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
         }
         STPiece<2,1>(local_74) = bVar3;
         switch(pSVar11->field_1E26) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         case CASE_5:
         case CASE_F:
+          /* ST_CALLSITE[005CD5B5]: CALL 0x0040466a; direct=0040466A CreateStrategList */
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_24 = CreateStrategList((int)local_8,
                                        CONCAT12(uStack_70,CONCAT11(STPiece<3,1>(local_74),bVar3)) & 0xff,
                                        0xffffffff);
           break;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         default:
+          /* ST_CALLSITE[005CD5E7]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_24 = CreateOpponentList(local_8,CONCAT12(uStack_6f,
                                                          CONCAT11(uStack_70,STPiece<3,1>(local_74))) & 0xff,
                                         DAT_0080995c);
           break;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         case CASE_C:
         case CASE_10:
+          /* ST_CALLSITE[005CD5CC]: CALL 0x00401dbb; direct=00401DBB CreateSaveStrategList */
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_24 = CreateSaveStrategList
                                ((int)local_8,
                                 CONCAT12(uStack_70,CONCAT11(STPiece<3,1>(local_74),bVar3)) & 0xff,0xffffffff
@@ -230,6 +233,7 @@ LAB_005cd675:
             if (DAT_008067a0 == '\0') {
               pcVar6 = &CHAR_00h_00807ddd;
             }
+            /* ST_CALLSITE[005CD765]: CALL 0x004013a7; direct=004013A7 SettMapMTy::AddPlayerList */
             AddPlayerList(pSVar11,DAT_0080877f,uVar10,(DAT_0080874f != '\0') + 2,pcVar6);
             break;
           }
@@ -269,7 +273,9 @@ LAB_005cd675:
     }
   }
 LAB_005cd7f2:
+  /* ST_CALLSITE[005CD7F4]: CALL 0x00402a9a; direct=00402A9A SettMapTy::PaintSC */
   SettMapTy::PaintSC((SettMapTy *)pSVar11);
+  /* ST_CALLSITE[005CD7FD]: CALL dword ptr [EDX + 0x20] */
   pSVar11->vfunc_20();
   g_currentExceptionFrame = local_b8.previous;
   return;

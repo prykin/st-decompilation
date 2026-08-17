@@ -46,6 +46,7 @@ uint FUN_0042d770(char param_1,int *param_2)
     do {
       DArrayGetElement(array,local_14,&local_c);
       if ((ushort)local_c != 0xffff) {
+        /* ST_CALLSITE[0042D806]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         objPtr = STAllPlayersC::GetObjPtr(local_24,param_1,(ushort)local_c,CASE_1);
         iVar5 = thunk_FUN_00493cd0(objPtr);
         pDVar4 = local_10;

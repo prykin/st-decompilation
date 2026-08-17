@@ -52,6 +52,7 @@ ProdPanelTy::InitProdPanel
   local_14 = this;
   local_EAX_36 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (local_EAX_36 == 0) {
+    /* ST_CALLSITE[0053EF64]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
     pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
     this_00 = local_14;
     puVar13 = nullptr;
@@ -81,6 +82,7 @@ ProdPanelTy::InitProdPanel
       *(undefined1 *)puVar13 = 0xff;
       puVar13 = (undefined4 *)((int)puVar13 + 1);
     }
+    /* ST_CALLSITE[0053EFF8]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',
            (byte *)this_00->field_0184);
     ccFntTy::SetSurf(this_00->field_017C,(int)this_00->field_0068,0,param_2,param_3,param_4,param_5);
@@ -90,9 +92,11 @@ ProdPanelTy::InitProdPanel
     resourceString = LoadResourceString(param_1,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_017C,resourceString,iVar11,iVar12,uVar8);
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[0053F07B]: CALL 0x0040300d; direct=0040300D PanelTy::CreateBut */
     uVar5 = PanelTy::CreateBut((PanelTy *)this_00,0,1,param_6,param_7,0,1,1,pCVar4,0xbfff,0xc000,0,0
                                ,0,nullptr,0);
     this_00->field_0180 = uVar5;
+    /* ST_CALLSITE[0053F0A0]: CALL 0x00405d3f; direct=00405D3F ProdPanelTy::CreateSlider */
     iVar2 = CreateSlider(this_00,param_8,param_10,param_9,param_10,0xc0a4,0,0,0);
     local_c = &this_00->field_01A1;
     this_00->field_019D = iVar2;
@@ -101,6 +105,7 @@ ProdPanelTy::InitProdPanel
     puVar7 = &this_00[1].field_0x10;
     local_10 = 5;
     do {
+      /* ST_CALLSITE[0053F0F2]: CALL 0x0040300d; direct=0040300D PanelTy::CreateBut */
       uVar5 = PanelTy::CreateBut((PanelTy *)this_00,1,0,local_8,param_12,0,1,1,text,iVar11,
                                  iVar11 + 0x10,1,0,puVar7,nullptr,0);
       puVar7 = puVar7 + 0x27;

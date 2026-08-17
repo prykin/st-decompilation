@@ -265,6 +265,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
             local_8->field_0657 =
                  &this_01->field_0x91 + (uint)(pAVar15->field_000A == '\x01') * 0x100;
             local_8->field_065B = *(undefined4 *)&pAVar15->field_0x9;
+            /* ST_CALLSITE[005E1DF9]: CALL 0x00405d1c; direct=00405D1C MTaskTy::CreateBut */
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             uVar14 = CreateBut(this_01,1,1,*(uint *)&pAVar15->field_0xf,
                                *(undefined4 *)((int)&pAVar15->field_0012 + 1),local_18,local_84,
@@ -364,7 +365,7 @@ LAB_005e200a:
                 }
                 else {
                   switch(local_c) {
-                  case nullptr:
+                  case 0:
                     local_1c = 0x1f47;
                     *piVar24 = (int)((int)&local_c->vtable + 1);
                     break;
@@ -420,6 +421,7 @@ LAB_005e200a:
             local_21c = 0x6205;
             local_1fc = 0x6217;
             local_204 = local_224;
+            /* ST_CALLSITE[005E217E]: CALL dword ptr [EDX + 0x8] */
             (*this_01->field_000C->vtable->CreateObject)
                       ((SystemClassTy *)this_01->field_000C,5,&this_01->field_02B9,nullptr,
                        local_234,0);
@@ -495,15 +497,18 @@ LAB_005e22f4:
               local_ec = STReplaceLowByte((uint32_t)(local_ec), (uint8_t)(bVar6)) & 0xffffff02;
               uVar26 = bVar6 & 2;
               pcVar9_mg27 = LoadResourceString(0x2347,g_hINSTANCE_00807618);
+              /* ST_CALLSITE[005E23C4]: CALL dword ptr [0x0085bde8] */
               wsprintfA(local_c38,"&%1d %s:",uVar26,pcVar9_mg27);
               Library::DKW::TBL::FUN_006b5aa0
                         ((DArrayTy *)g_startSystem_0081176C->field_0548,local_c38);
+              /* ST_CALLSITE[005E23FE]: CALL dword ptr [0x0085bde8] */
               wsprintfA(local_c38,"&%1d %s",2 - uVar26,&CHAR_00h_0080c3c3);
               Library::DKW::TBL::FUN_006b5aa0
                         ((DArrayTy *)g_startSystem_0081176C->field_0548,local_c38);
               Library::DKW::TBL::FUN_006b5aa0
                         ((DArrayTy *)g_startSystem_0081176C->field_0548,&CHAR___007c3b5c);
               pcVar9_mg28 = LoadResourceString(0x2346,g_hINSTANCE_00807618);
+              /* ST_CALLSITE[005E2455]: CALL dword ptr [0x0085bde8] */
               wsprintfA(local_c38,"&%1d %s:",uVar26,pcVar9_mg28);
               Library::DKW::TBL::FUN_006b5aa0
                         ((DArrayTy *)g_startSystem_0081176C->field_0548,local_c38);
@@ -605,6 +610,7 @@ LAB_005e24c5:
               local_75c = 0xe;
               local_724 = 2;
               local_720 = 0x6335;
+              /* ST_CALLSITE[005E27CB]: CALL dword ptr [EAX + 0x8] */
               (*this_01->field_000C->vtable->CreateObject)
                         ((SystemClassTy *)this_01->field_000C,8,&this_01->field_02CD,nullptr,
                          local_b34,0);
@@ -701,6 +707,7 @@ LAB_005e24c5:
         if (pAVar15->field_0xd == '\x01') {
           if (((pAVar11 == nullptr) || ((int)*(uint *)pAVar11 < 0)) ||
              (*(int *)&pAVar11->field_0x20 != *(int *)((int)&pAVar15->field_0012 + 2))) {
+            /* ST_CALLSITE[005E2A34]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
             TTaskItemClose(this_01,pAVar11);
             iVar18 = *(int *)((int)&pAVar15->field_0012 + 2);
             if (iVar18 < (int)g_dArray_0080C4C7->elementSize) {
@@ -740,6 +747,7 @@ LAB_005e24c5:
                     *(undefined1 *)puVar16 = 0xff;
                     puVar16 = (byte *)((int)puVar16 + 1);
                   }
+                  /* ST_CALLSITE[005E2D4E]: CALL 0x00405a51; direct=00405A51 MTaskTy::PrepareTSurf */
                   PrepareTSurf(this_01,(AnonShape_005E11D0_D0F8BE03 *)*local_18,pAVar15->field_0x19,
                                pAVar15->field_0xb);
                   if (pAVar15->field_0x19 != '\0') {
@@ -877,6 +885,7 @@ LAB_005e24c5:
         }
         else if ((pAVar11 != nullptr) && (-1 < *(int *)pAVar11)) {
           if (this_01->field_006D == CASE_5) {
+            /* ST_CALLSITE[005E2EB3]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
             TTaskItemClose(this_01,pAVar11);
           }
           else {
@@ -1782,7 +1791,9 @@ LAB_005e195d:
         Library::Ourlib::PALETTE::FUN_00718780
                   ((int)local_1268,0,0x100,0x2e,0x10,(undefined4 *)&this_01->field_0x191);
         if (this_01->field_007C != 0) {
+          /* ST_CALLSITE[005E1B9A]: CALL 0x00401d43; direct=00401D43 DarkScreen */
           DarkScreen(g_dDXContext_0080759C,1,0);
+          /* ST_CALLSITE[005E1BA4]: CALL 0x00403670; direct=00403670 MTaskTy::PaintMTask */
           PaintMTask(this_01);
           thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                              this_01->field_005D,10,2);

@@ -24,6 +24,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar3 = local_8;
   if (iVar4 == 0) {
+    /* ST_CALLSITE[005ACB6B]: CALL 0x0040458e; direct=0040458E MMObjTy::DoneMMObj */
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (((pCVar3->field_004D != 0x6121) && (g_int_00811764 != nullptr)) && (DAT_0080877e != '\0')
        ) {
@@ -31,6 +32,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       thunk_FUN_005dac60();
     }
     if (pCVar3->field_1C8F != (HANDLE)0x0) {
+      /* ST_CALLSITE[005ACBB3]: CALL dword ptr [0x0085bcac] */
       FindCloseChangeNotification(pCVar3->field_1C8F);
       pCVar3->field_1C8F = (HANDLE)0x0;
     }
@@ -44,12 +46,14 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     }
     iVar6 = pCVar3->field_004D;
     if (((iVar6 != 0x6120) && (iVar6 != 0x6121)) && (iVar6 != 0x6105)) {
+      /* ST_CALLSITE[005ACC13]: CALL 0x00401d43; direct=00401D43 DarkScreen */
       DarkScreen(g_dDXContext_0080759C,10,2);
     }
     if (g_startSystem_0081176C->field_002C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
     if (pCVar3->field_20B8 != nullptr) {
+      /* ST_CALLSITE[005ACC3D]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pCVar3->field_20B8);
       Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20B8);
       pCVar3->field_20B8 = nullptr;
@@ -72,6 +76,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     }
     pCVar3->field_1C87 = 0xffffffff;
     if (pCVar3->field_20BC != nullptr) {
+      /* ST_CALLSITE[005ACCD0]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pCVar3->field_20BC);
       Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20BC);
       pCVar3->field_20BC = nullptr;
@@ -91,6 +96,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       }
     }
     if (pCVar3->field_20C0 != nullptr) {
+      /* ST_CALLSITE[005ACD76]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pCVar3->field_20C0);
       Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20C0);
       pCVar3->field_20C0 = nullptr;
@@ -122,6 +128,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     if ((pCVar3->field_20B6 != '\0') &&
        (this_00 = *(MMsgTy **)(pCVar3->array_00BC[0xc].field_01DB + 0x2e6), this_00 != nullptr
        )) {
+      /* ST_CALLSITE[005ACE75]: CALL 0x0040462e; direct=0040462E MMsgTy::HideSprites */
       MMsgTy::HideSprites(this_00);
       *(undefined4 *)(*(int *)(pCVar3->array_00BC[0xc].field_01DB + 0x2e6) + 0x1cab) = 0;
     }

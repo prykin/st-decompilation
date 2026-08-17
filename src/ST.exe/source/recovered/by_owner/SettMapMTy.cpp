@@ -90,7 +90,7 @@ st::fn_005D00B0(SettMapMTy *this,AnonShape_005D00B0_9E7CC102 *param_1,uint param
   local_8 = param_1->field_005C;
   local_19 = 0;
   local_15 = 0;
-  st::fn_006B11D0(st::pointer_boundary_cast<uint *>(&this->field_1F84->flags),param_2,&local_64);
+  st::fn_006B11D0(&this->field_1F84->flags,param_2,&local_64);
   return;
 }
 

@@ -56,6 +56,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[0060377F]: CALL 0x00403ebd; direct=00403EBD STGameObjC::GetMessage */
   iVar7 = st::fn_00403EBD((STGameObjC *)local_10,message);
   this_01 = local_10;
   if (iVar7 == 0xffff) {
@@ -88,6 +89,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
           }
         }
         if (this_00->field_026D == '\0') {
+          /* ST_CALLSITE[00603D18]: CALL 0x00401e9c; direct=00401E9C STExplosion::sub_00604350 */
           local_EAX_1496 = st::fn_00401E9C(this_00);
           if (local_EAX_1496 != 0) {
             st::fn_00404250((int)this_00);
@@ -116,8 +118,10 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
           pAVar7 = pAVar3;
           puVar8 = (byte *)&this_00->field_0x1d5;
           memmove(puVar8, pAVar7, 0x40); /* compiler REP MOVS byte copy */
+          /* ST_CALLSITE[00603852]: CALL 0x004047a0; direct=004047A0 STExplosion::sub_00605130 */
           st::fn_004047A0(local_10);
           puVar8 = (byte *)(&this_01->field_0272);
+          /* ST_CALLSITE[00603860]: CALL 0x00401e9c; direct=00401E9C STExplosion::sub_00604350 */
           local_EAX_288 = st::fn_00401E9C(this_01);
           if (local_EAX_288 != 0) {
             this_01->field_026D = 1;
@@ -132,6 +136,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
             iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar6 + -2;
             this_01->field_027E = 5;
+            /* ST_CALLSITE[00603921]: CALL 0x00404ca0; direct=00404CA0 STExplosion::sub_00606050 */
             local_EAX_481 =
                  st::fn_00404CA0(this_01,*(int *)&pAVar3->field_0x1c,*(int *)&pAVar3->field_0x20,
                               *(int *)&pAVar3->field_0x24,*(int *)&pAVar3->field_0x28,
@@ -219,8 +224,10 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
+      /* ST_CALLSITE[006037B9]: CALL 0x00401118; direct=00401118 STExplosion::sub_00604970 */
       st::fn_00401118(this_00);
       if (this_00->field_026D != '\0') {
+        /* ST_CALLSITE[006037CA]: CALL 0x0040514b; direct=0040514B STExplosion::sub_00605780 */
         st::fn_0040514B(this_00);
       }
       if (this_00->field_02BB != nullptr) {
@@ -228,17 +235,20 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
         st::fn_0072E2B0(this_00->field_02BB);
         this_00->field_02BB = nullptr;
       }
+      /* ST_CALLSITE[006037F5]: CALL 0x00403f3a; direct=00403F3A STExplosion::sub_00604120 */
       st::fn_00403F3A(this_00);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
+    /* ST_CALLSITE[00603D70]: CALL 0x0040565f; direct=0040565F STExplosionC::SaveObj */
     local_c = (byte *)st::fn_0040565F((STExplosionC *)this_00,&local_8);
     if (local_c == nullptr) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
+    /* ST_CALLSITE[00603D8F]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     st::fn_004025F9(g_playSystem_00802A38,(int *)this_00->field_0018,local_c,local_8);
-    slotStorage = st::pointer_boundary_cast<void **>(&local_c);
+    slotStorage = (void **)&local_c;
   }
   else {
     if (SVar2 != MESS_ID_ALLCREATE) {
@@ -373,8 +383,8 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079cc18);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_0079cc18;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 12);
   local_48 = nullptr;
@@ -405,9 +415,9 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
     local_48->field_00A1 = this->field_0276;
     local_48->field_00A5 = this->field_027A;
     local_48->field_00A9 = this->field_027E;
-    if ((uint *)this->field_0215 != nullptr) {
+    if ((uint *)this->field_0215 != 0) {
       local_3c[0] = nullptr;
-      local_3c[0] = (uint *)st::fn_006B0020((uint *)this->field_0215,(int *)&local_20);
+      local_3c[0] = st::pointer_boundary_cast<uint *>(st::fn_006B0020((uint *)this->field_0215,(int *)&local_20));
       uVar11 = *param_1 + local_20 + 4;
       *param_1 = uVar11;
       local_48 = st::pointer_boundary_cast<AnonShape_00604A90_035626E6 *>(st::fn_006ACF50(local_48,uVar11));
@@ -513,8 +523,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
   STExplosionC *pSVar4;
   int iVar5;
   int iVar6;
-  AnonShape_004AB810_8E5693D5 *pAVar7;
-  STT3DSprC *pSVar8;
+  STT3DSprC *pSVar7;
   int iVar9;
   int iVar8;
   undefined4 uVar10;
@@ -550,29 +559,35 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
   }
   if ((param_3 != '\0') && (local_18->field_02AF != nullptr)) {
     local_8 = (&PTR_s_expl_bbt0_007cedc0)[local_c];
+    /* ST_CALLSITE[00605243]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar6 = st::fn_00404183(local_18->field_02AF,0xf,PTR_00806774,local_8,CASE_1D);
     if (iVar6 != 0) {
       return 0xffff;
     }
+    /* ST_CALLSITE[0060525F]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064(pSVar4->field_02AF,'\x0f',pSVar4->field_029F);
     st::fn_00405AA6(pSVar4->field_02AF,'\x0f');
+    /* ST_CALLSITE[00605286]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240(pSVar4->field_02AF,0xf,g_playSystem_00802A38->field_00E4);
+    /* ST_CALLSITE[00605293]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar6 = st::fn_004022AC(pSVar4->field_02AF,'\x0f');
     pSVar4->field_02A3 = iVar6;
     g_currentExceptionFrame = local_68.previous;
     return local_24;
   }
   if (local_18->field_02AF == nullptr) {
-    pAVar7 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
-    if (pAVar7 == nullptr) {
-      pSVar8 = nullptr;
+    pSVar7 = (STT3DSprC *)st::fn_0072E530(0x40);
+    if (pSVar7 == nullptr) {
+      pSVar7 = nullptr;
     }
     else {
-      pSVar8 = (STT3DSprC *)st::fn_00401316(pAVar7);
+      /* ST_CALLSITE[006052CC]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+      pSVar7 = st::fn_00401316(pSVar7);
     }
-    pSVar4->field_02AF = pSVar8;
+    pSVar4->field_02AF = pSVar7;
   }
   if ((&DAT_007cede8)[local_c] == '\0') {
+    /* ST_CALLSITE[00605307]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
     iVar6 = st::fn_0040537B(pSVar4->field_02AF,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,
                             0x11);
     if (iVar6 != 0) {
@@ -582,6 +597,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
     }
   }
   else {
+    /* ST_CALLSITE[00605356]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
     iVar6 = st::fn_0040537B(pSVar4->field_02AF,PTR_008073cc,0x78,0x56,nullptr,0xf0,0xbe,
                             0x11);
     if (iVar6 != 0) {
@@ -592,18 +608,23 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
     st::fn_006E9210
               (g_sT3DSMAPContext_00807598,pSVar4->field_02AF->field_0018);
   }
+  /* ST_CALLSITE[006053BA]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar6 = st::fn_00404183(pSVar4->field_02AF,0xd,PTR_00806774,local_8,CASE_1D);
   if (iVar6 == 0) {
+    /* ST_CALLSITE[006053DC]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar6 = st::fn_00404183(pSVar4->field_02AF,0xe,PTR_00806774,local_10,CASE_1D);
     if (iVar6 != 0) {
       return 0xffff;
     }
+    /* ST_CALLSITE[006053F8]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064(pSVar4->field_02AF,'\r',pSVar4->field_0296);
+    /* ST_CALLSITE[0060544B]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     st::fn_004045D9
               (pSVar4->field_02AF,(float)pSVar4->field_028A * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_028E * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_0292 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     st::fn_00405AA6(pSVar4->field_02AF,'\r');
+    /* ST_CALLSITE[00605471]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240(pSVar4->field_02AF,0xd,g_playSystem_00802A38->field_00E4);
     pSVar4->field_0286 = 1;
     pVVar3 = g_visibleClass_00802A88;
@@ -615,6 +636,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
       iVar9 = pSVar4->field_028A;
       iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+          /* ST_CALLSITE[0060554E]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (st::fn_00403F53
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar6,
                       &local_1c,&local_20), local_14 < 0)) || (4 < local_14)) {

@@ -33,8 +33,15 @@ import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
+import ghidra.program.model.lang.Register;
+import ghidra.program.model.scalar.Scalar;
+import ghidra.program.model.listing.AutoParameterType;
 import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.Instruction;
+import ghidra.program.model.listing.InstructionIterator;
+import ghidra.program.model.listing.Listing;
+import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.pcode.DataTypeSymbol;
 import ghidra.program.model.pcode.HighFunction;
 import ghidra.program.model.pcode.HighFunctionDBUtil;
@@ -50,10 +57,15 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
 
     private int machineCandidates, functionsDecompiled, exactVtableMatches;
     private int exactReceiverMatches, machineCallableMatches, machineWordReturnMatches,
-        retainedMachineOverrides, suppressedMachineOverrides;
+        machineFloatReturnMatches, machineWideUseSiteMatches,
+        retainedMachineOverrides, suppressedMachineOverrides, densePhysicalSlots;
     private int conflicts, failures;
     private Map<String, Set<String>> ownersByVtable;
     private final Set<String> suppressedMachineFunctions = new TreeSet<>();
+    private final Map<String, Integer> exactMachineReceiverSites = new TreeMap<>();
+    private final Map<String, DenseSlotEvidence> denseSlotEvidence = new TreeMap<>();
+    private final Set<String> stagedSingleArgumentSites = new TreeSet<>();
+    private final Map<String, Integer> machineSitePushCounts = new HashMap<>();
 
     @Override
     protected void run() throws Exception {
@@ -90,10 +102,12 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
                 text(row.get("function")), text(row.get("call_address")), slot, pushes,
                 ecx, receiverRegister);
             sites.put(site.callAddress, site);
+            machineSitePushCounts.put(site.callAddress, site.pushes);
             byFunction.computeIfAbsent(site.functionAddress, ignored -> new ArrayList<>())
                 .add(site);
         }
         machineCandidates = sites.size();
+        recoverStagedSingleArgumentSites(byFunction);
 
         Map<String, Row> rows = new TreeMap<>();
         DecompInterface decompiler = new DecompInterface();
@@ -123,6 +137,7 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         }
         finally { decompiler.dispose(); }
 
+        addDensePhysicalSlotRows(rows);
         suppressDenseMachineFallbacks(rows);
         addCleanupRows(rows, sites);
         List<Row> ordered = new ArrayList<>(rows.values());
@@ -172,9 +187,102 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         return result;
     }
 
+    /**
+     * Separate one real CALLIND argument from words staged for the following
+     * direct call.  MSVC commonly interleaves parser calls with PUSHes for one
+     * later cdecl/fastcall invocation.  The raw "pushes since previous CALL"
+     * count then overstates the indirect arity.  A block is closed only when the
+     * exact direct-call cleanup plus one word per intervening computed call
+     * accounts for every PUSH; no arbitrary ESP write or control-flow boundary
+     * may occur.  This proves geometry only, never a semantic parameter type.
+     */
+    private void recoverStagedSingleArgumentSites(
+            Map<String, List<Site>> byFunction) {
+        Listing listing = currentProgram.getListing();
+        for (Map.Entry<String, List<Site>> entry : byFunction.entrySet()) {
+            Address functionAddress = address(entry.getKey());
+            Function function = functionAddress == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(functionAddress);
+            if (function == null) continue;
+            Map<String, Site> candidates = new HashMap<>();
+            for (Site site : entry.getValue()) candidates.put(site.callAddress, site);
+            InstructionIterator iterator = listing.getInstructions(function.getBody(), true);
+            while (iterator.hasNext()) {
+                Instruction outerCall = iterator.next();
+                if (!outerCall.getFlowType().isCall() ||
+                        outerCall.getFlowType().isComputed()) continue;
+                int outerWords = directStackArgumentWords(outerCall);
+                if (outerWords < 0) continue;
+                int pushes = 0;
+                List<Site> inner = new ArrayList<>();
+                boolean closed = true;
+                Instruction instruction = listing.getInstructionBefore(
+                    outerCall.getAddress());
+                for (int count = 0; instruction != null && count < 256; count++) {
+                    if (!function.getBody().contains(instruction.getAddress())) {
+                        closed = false;
+                        break;
+                    }
+                    if (instruction.getFlowType().isJump() ||
+                            instruction.getFlowType().isTerminal()) break;
+                    if (instruction.getFlowType().isCall()) {
+                        Site site = candidates.get(addr(instruction.getAddress()));
+                        if (site == null) break;
+                        inner.add(site);
+                        instruction = listing.getInstructionBefore(
+                            instruction.getAddress());
+                        continue;
+                    }
+                    if ("PUSH".equalsIgnoreCase(instruction.getMnemonicString()))
+                        pushes++;
+                    else if (writesRegister(instruction, Set.of("ESP"))) {
+                        closed = false;
+                        break;
+                    }
+                    instruction = listing.getInstructionBefore(
+                        instruction.getAddress());
+                }
+                if (!closed || inner.isEmpty() || pushes != outerWords + inner.size() ||
+                        inner.stream().anyMatch(site -> site.pushes < 1)) continue;
+                for (Site site : inner) stagedSingleArgumentSites.add(site.callAddress);
+            }
+        }
+    }
+
+    private int directStackArgumentWords(Instruction call) {
+        Instruction next = currentProgram.getListing().getInstructionAfter(
+            call.getAddress());
+        if (next != null && "ADD".equalsIgnoreCase(next.getMnemonicString()) &&
+                next.getNumOperands() >= 2 &&
+                "ESP".equals(register(next.getDefaultOperandRepresentation(0)))) {
+            Scalar scalar = next.getScalar(1);
+            long bytes = scalar == null ? -1 : scalar.getUnsignedValue();
+            if (bytes >= 0 && bytes % currentProgram.getDefaultPointerSize() == 0)
+                return (int)(bytes / currentProgram.getDefaultPointerSize());
+        }
+        Address[] flows = call.getFlows();
+        Function target = flows.length == 1 ? currentProgram.getFunctionManager()
+            .getFunctionAt(flows[0]) : null;
+        if (target == null) return -1;
+        Function resolved = target.getThunkedFunction(true);
+        if (resolved != null) target = resolved;
+        int bytes = target.getStackPurgeSize();
+        return bytes >= 0 && bytes % currentProgram.getDefaultPointerSize() == 0 ?
+            bytes / currentProgram.getDefaultPointerSize() : -1;
+    }
+
+    private int effectiveStackParameters(Site site) {
+        return stagedSingleArgumentSites.contains(site.callAddress) ? 1 : site.pushes;
+    }
+
+    private int sitePushCount(String callAddress) {
+        return machineSitePushCounts.getOrDefault(callAddress, -1);
+    }
+
     private void analyzeFunction(Function function, List<Site> candidateSites,
             Map<Integer, List<DispatchAbi>> bySlot, Map<String, Row> rows,
             DecompInterface decompiler) {
+        observeMachineDenseSlots(function, candidateSites);
         try {
             DecompileResults result = decompiler.decompileFunction(function,
                 DECOMPILE_TIMEOUT, monitor);
@@ -197,6 +305,9 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
                 if (site == null || inputCount(operation) < 1) continue;
                 Set<String> vtables = vtablePaths(input(operation, 0), 0, new HashSet<>());
                 Set<String> receivers = receiverPaths(operation);
+                observeDensePhysicalSlot(operation, site, vtables);
+                DispatchAbi wideUseSite = machineWideUseSite(site, vtables);
+                DispatchAbi stagedUseSite = machineStagedUseSite(site, vtables);
                 List<DispatchAbi> matches = new ArrayList<>();
                 for (DispatchAbi abi : bySlot.getOrDefault(site.slot, List.of())) {
                     if (abi.stackParameters != site.pushes) continue;
@@ -207,8 +318,10 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
                     else exactReceiverMatches++;
                     matches.add(abi);
                 }
-                DispatchAbi agreed = matches.isEmpty() ?
-                    machineCallable(operation, site, vtables) : matches.get(0);
+                DispatchAbi agreed = wideUseSite != null ? wideUseSite :
+                    stagedUseSite != null ? stagedUseSite :
+                    matches.isEmpty() ? machineCallable(operation, site, vtables, rows) :
+                    matches.get(0);
                 if (agreed == null) continue;
                 if (!matches.isEmpty() && matches.stream().anyMatch(value ->
                         !value.signatureKey().equals(agreed.signatureKey()))) {
@@ -255,7 +368,7 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
     }
 
     private DispatchAbi machineCallable(Object operation, Site site,
-            Set<String> vtables) throws Exception {
+            Set<String> vtables, Map<String, Row> rows) throws Exception {
         if (vtables.size() != 1 || site.receiverRegister.isBlank() ||
                 !register(site.ecx).equals(register(site.receiverRegister))) return null;
         String vtable = vtables.iterator().next();
@@ -270,18 +383,101 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         int pcodeArguments = inputCount(operation) - 1;
         Set<String> renderedReceivers = receiverPaths(operation);
         boolean explicitReceiver = renderedReceivers.equals(Set.of(owner));
-        if (pcodeArguments != site.pushes &&
-                !(explicitReceiver && pcodeArguments == site.pushes + 1)) return null;
+        boolean pcodeAgrees = pcodeArguments == site.pushes ||
+            explicitReceiver && pcodeArguments == site.pushes + 1;
+        long zeroArgumentSiblings = rows.values().stream().filter(row ->
+            row.apply && row.functionAddress.equals(site.functionAddress) &&
+            row.slot == site.slot && row.stackParameters == 0 &&
+            "__thiscall".equals(row.convention) &&
+            ("pointer:" + owner).equals(row.receiverType)).count();
+        // High p-code can inherit ghost stack arguments from an earlier lifetime at
+        // one branch-local CALLIND.  Do not trust that rendering over the machine:
+        // admit the zero-argument ABI only after two earlier calls in the same
+        // function independently prove the identical receiver/slot ABI with no
+        // pushes.  This is address-independent and cannot widen a one-off call.
+        boolean siblingZeroArgumentConsensus = site.pushes == 0 &&
+            pcodeArguments > 1 && zeroArgumentSiblings >= 2;
+        if (!pcodeAgrees && !siblingZeroArgumentConsensus) return null;
         String parameters = repeated("/undefined4", site.pushes);
-        String returned = machineReturn(operation);
+        String returned = machineReturn(operation, site.callAddress);
         if (returned.isBlank()) return null;
         machineCallableMatches++;
         return new DispatchAbi(owner, vtable, site.slot, "__thiscall",
             "pointer:" + owner, site.pushes, parameters, returned, "", "",
             "machine callable fallback: exact MOV tableReg,[receiverReg] and " +
-                "MOV ECX,receiverReg agree; unique offset-zero owner for " + vtable +
+                "live ECX=receiverReg agree; unique offset-zero owner for " + vtable +
                 "; p-code arguments=" + pcodeArguments +
+                (siblingZeroArgumentConsensus ?
+                    "; ghost p-code arguments rejected by " + zeroArgumentSiblings +
+                    " exact zero-push sibling calls" : "") +
                 "; conservative machine-word stack parameters");
+    }
+
+    /**
+     * Keep a rare EDX:EAX result at the exact use site instead of widening the
+     * shared physical slot.  A global eight-byte return makes Ghidra pull words
+     * already staged for an enclosing call into unrelated variadic CALLINDs.
+     * This proof is closed: the previous indirect EAX is staged first, exactly
+     * one different word is passed to this call, and the following direct
+     * fastcall consumes EDX while EAX becomes its next stack argument.
+     */
+    private DispatchAbi machineWideUseSite(Site site, Set<String> vtables) {
+        if (!machineWideSingleStackArgument(site) || vtables.size() != 1) return null;
+        String vtable = vtables.iterator().next();
+        Set<String> owners = ownersByVtable.getOrDefault(vtable, Set.of());
+        if (owners.size() != 1) return null;
+        String owner = owners.iterator().next();
+        machineWideUseSiteMatches++;
+        return new DispatchAbi(owner, vtable, site.slot, "__thiscall",
+            "pointer:" + owner, 1, "/undefined4", "/ulonglong", "", "",
+            "exact use-site EDX:EAX transport; previous indirect EAX is staged " +
+                "for the enclosing call, one distinct stack word belongs to this " +
+                "CALLIND, and the next direct __fastcall consumes EDX plus pushed EAX");
+    }
+
+    private DispatchAbi machineStagedUseSite(Site site, Set<String> vtables) {
+        if (!stagedSingleArgumentSites.contains(site.callAddress) ||
+                vtables.size() != 1) return null;
+        String vtable = vtables.iterator().next();
+        Set<String> owners = ownersByVtable.getOrDefault(vtable, Set.of());
+        FunctionDefinition physical = callableDefinition(vtable, site.slot);
+        if (owners.size() != 1 || physical == null || !physical.hasVarArgs() ||
+                !text(physical.getComment()).contains(MARKER)) return null;
+        String owner = owners.iterator().next();
+        return new DispatchAbi(owner, vtable, site.slot, "__thiscall",
+            "pointer:" + owner, 1, "/undefined4",
+            typeSpec(physical.getReturnType()), "", "",
+            "closed staged-argument bundle: exact following direct-call stack " +
+                "cleanup accounts for every other PUSH, leaving one neutral " +
+                "machine word for this CALLIND");
+    }
+
+    private boolean machineWideSingleStackArgument(Site site) {
+        if (site.pushes != 2 || !machineWideReturn(site)) return false;
+        Address call = address(site.callAddress);
+        if (call == null) return false;
+        List<String> pushes = new ArrayList<>();
+        Instruction instruction = currentProgram.getListing().getInstructionBefore(call);
+        Instruction previousCall = null;
+        for (int count = 0; instruction != null && count < 16; count++) {
+            if (instruction.getFlowType().isCall()) {
+                previousCall = instruction;
+                break;
+            }
+            if (instruction.getFlowType().isJump() ||
+                    instruction.getFlowType().isTerminal()) return false;
+            if ("PUSH".equalsIgnoreCase(instruction.getMnemonicString()) &&
+                    instruction.getNumOperands() == 1) {
+                pushes.add(0, instruction.getDefaultOperandRepresentation(0)
+                    .trim().toUpperCase(Locale.ROOT));
+            }
+            else if (writesRegister(instruction, Set.of("ESP"))) return false;
+            instruction = currentProgram.getListing().getInstructionBefore(
+                instruction.getAddress());
+        }
+        return previousCall != null && previousCall.getFlowType().isComputed() &&
+            pushes.size() == 2 && "EAX".equals(register(pushes.get(0))) &&
+            !"EAX".equals(register(pushes.get(1)));
     }
 
     private boolean callableVtableSlot(String path, int offset) {
@@ -304,12 +500,29 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         return type;
     }
 
-    private String machineReturn(Object operation) {
+    private String machineReturn(Object operation, String callAddress) {
         try {
             Object output = operation.getClass().getMethod("getOutput").invoke(operation);
-            if (output == null) return "/void";
+            if (output == null) {
+                // Once a correct scalar x87 override is installed, Ghidra can model
+                // the ST0/FSTP chain without attaching a High output varnode to the
+                // CALLIND itself.  The immutable machine consumer still proves the
+                // return and must outrank that presentation detail.
+                String stored = x87StoredType(callAddress);
+                if (hasMarkerMode(address(callAddress), "machine-float") &&
+                        !stored.isBlank()) {
+                    machineFloatReturnMatches++;
+                    return stored;
+                }
+                return "/void";
+            }
             int size = ((Number)output.getClass().getMethod("getSize")
                 .invoke(output)).intValue();
+            String concrete = typeSpec(dataType(output));
+            if (Set.of("/float", "/double").contains(concrete)) {
+                machineFloatReturnMatches++;
+                return concrete;
+            }
             // A CALLIND output which remains in the HighFunction is an exact
             // use of the call-defined return register, not a guess from the
             // rendered C type.  On this 32-bit x86 image a complete four-byte
@@ -319,9 +532,424 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
                 machineWordReturnMatches++;
                 return "/undefined4";
             }
+            // Ghidra represents the live x87 register as a ten-byte High value, but
+            // that is not the source return type.  The first bounded FST/FSTP consumer
+            // supplies the actual storage width (float or double).  Without that
+            // consumer the source width is unresolved and no override is emitted.
+            if (size == 10) {
+                String stored = x87StoredType(callAddress);
+                if (!stored.isBlank()) {
+                    machineFloatReturnMatches++;
+                    return stored;
+                }
+            }
             return "";
         }
         catch (Exception ignored) { return ""; }
+    }
+
+    private String x87StoredType(String callAddress) {
+        Address call = address(callAddress);
+        if (call == null) return "";
+        Instruction instruction = currentProgram.getListing().getInstructionAfter(call);
+        for (int count = 0; instruction != null && count < 6; count++) {
+            String mnemonic = text(instruction.getMnemonicString())
+                .toUpperCase(Locale.ROOT);
+            String rendered = instruction.toString().toLowerCase(Locale.ROOT);
+            if (mnemonic.equals("FST") || mnemonic.equals("FSTP")) {
+                if (rendered.contains("float ptr")) return "/float";
+                if (rendered.contains("double ptr")) return "/double";
+                return "";
+            }
+            if (mnemonic.startsWith("CALL") || mnemonic.startsWith("J") ||
+                    mnemonic.startsWith("RET") || mnemonic.startsWith("F")) return "";
+            instruction = currentProgram.getListing().getInstructionAfter(
+                instruction.getAddress());
+        }
+        return "";
+    }
+
+    /**
+     * Record use evidence for a raw physical slot before considering per-call overrides.
+     * A dense family is promoted at the field itself only when the same uniquely owned
+     * vtable path and unadjusted ECX receiver are repeated.  This is deliberately more
+     * restrictive than the use-site fallback: the resulting datatype affects every call.
+     */
+    private void observeDensePhysicalSlot(Object operation, Site site,
+            Set<String> vtables) {
+        try {
+            if (vtables.size() != 1 || site.receiverRegister.isBlank() ||
+                    !register(site.ecx).equals(register(site.receiverRegister))) return;
+            String vtable = vtables.iterator().next();
+            if (callableVtableSlot(vtable, site.slot)) return;
+            Set<String> owners = ownersByVtable.getOrDefault(vtable, Set.of());
+            if (owners.size() != 1) return;
+            DenseSlotEvidence evidence = denseSlotEvidence.computeIfAbsent(
+                vtable + "@" + site.slot,
+                ignored -> new DenseSlotEvidence(vtable, owners.iterator().next(), site.slot));
+            Object output = operation.getClass().getMethod("getOutput").invoke(operation);
+            String returned;
+            if (output == null) {
+                String stored = x87StoredType(site.callAddress);
+                returned = stored.isBlank() ? "/void" : stored;
+            }
+            else {
+                int size = ((Number)output.getClass().getMethod("getSize")
+                    .invoke(output)).intValue();
+                String concrete = typeSpec(dataType(output));
+                if (Set.of("/float", "/double").contains(concrete)) returned = concrete;
+                else if (size == currentProgram.getDefaultPointerSize()) returned = "/undefined4";
+                else if (size == 10) {
+                    String stored = x87StoredType(site.callAddress);
+                    returned = stored;
+                }
+                else returned = "";
+            }
+            recordDenseEvidence(evidence, site, returned);
+        }
+        catch (Exception ignored) { }
+    }
+
+    /**
+     * A decompile timeout must not hide a large, otherwise exact physical-slot
+     * family. Recover only an unadjusted method receiver which was spilled from
+     * incoming ECX and reloaded into one callee-saved register without any other
+     * full-register definition before the call. The site inventory independently
+     * proves the table load, live ECX receiver, slot and push count.
+     */
+    private void observeMachineDenseSlots(Function function, List<Site> sites) {
+        String owner = autoThisOwner(function);
+        if (owner.isBlank()) return;
+        List<String> vtables = new ArrayList<>();
+        for (Map.Entry<String, Set<String>> entry : ownersByVtable.entrySet())
+            if (entry.getValue().equals(Set.of(owner))) vtables.add(entry.getKey());
+        if (vtables.size() != 1) return;
+        String vtable = vtables.get(0);
+        String spill = incomingThisSpill(function);
+        if (spill.isBlank()) return;
+        for (Site site : sites) {
+            if (!register(site.ecx).equals(register(site.receiverRegister)) ||
+                    !machineReceiverIsSavedThis(function, site, spill)) continue;
+            // Count the complete machine family before consulting the mutable
+            // physical datatype.  Otherwise promoting its busiest slots on pass
+            // one can make the residual fallback family fall below the density
+            // limit on pass two and install dozens of SSA-perturbing overrides.
+            // Density is a property of the function's dispatch pattern, not of
+            // which slots happen to have been typed by an earlier fixpoint pass.
+            exactMachineReceiverSites.merge(site.functionAddress, 1, Integer::sum);
+            boolean callable = callableVtableSlot(vtable, site.slot);
+            if (callable) {
+                FunctionDefinition definition = callableDefinition(vtable, site.slot);
+                boolean generatedWide = definition != null &&
+                    "/ulonglong".equals(typeSpec(definition.getReturnType())) &&
+                    text(definition.getComment()).contains(MARKER) &&
+                    machineWideSingleStackArgument(site);
+                boolean generatedVariadic = definition != null &&
+                    definition.hasVarArgs() &&
+                    text(definition.getComment()).contains(MARKER);
+                if (!generatedWide && !generatedVariadic) continue;
+            }
+            DenseSlotEvidence evidence = denseSlotEvidence.computeIfAbsent(
+                vtable + "@" + site.slot,
+                ignored -> new DenseSlotEvidence(vtable, owner, site.slot));
+            FunctionDefinition definition = callable ?
+                callableDefinition(vtable, site.slot) : null;
+            recordDenseEvidence(evidence, site, callable && definition != null ?
+                typeSpec(definition.getReturnType()) : machineCallReturn(site));
+        }
+    }
+
+    private FunctionDefinition callableDefinition(String path, int offset) {
+        DataType type = currentProgram.getDataTypeManager().getDataType(path);
+        type = base(type);
+        if (!(type instanceof Structure structure) || offset < 0 ||
+                offset >= structure.getLength()) return null;
+        DataTypeComponent component = structure.getComponentAt(offset);
+        if (component == null || component.getOffset() != offset) return null;
+        DataType value = base(component.getDataType());
+        return value instanceof FunctionDefinition definition ? definition : null;
+    }
+
+    private String autoThisOwner(Function function) {
+        if (!"__thiscall".equals(function.getCallingConventionName())) return "";
+        for (Parameter parameter : function.getParameters())
+            if (parameter.isAutoParameter() &&
+                    parameter.getAutoParameterType() == AutoParameterType.THIS)
+                return structurePath(parameter.getDataType());
+        return "";
+    }
+
+    private String incomingThisSpill(Function function) {
+        Set<String> spills = new TreeSet<>();
+        InstructionIterator iterator = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            if (instruction.getFlowType().isCall()) break;
+            if (!"MOV".equalsIgnoreCase(instruction.getMnemonicString()) ||
+                    instruction.getNumOperands() < 2 ||
+                    !"ECX".equals(register(
+                        instruction.getDefaultOperandRepresentation(1)))) continue;
+            String destination = stackOperand(
+                instruction.getDefaultOperandRepresentation(0));
+            if (!destination.isBlank()) spills.add(destination);
+        }
+        return spills.size() == 1 ? spills.iterator().next() : "";
+    }
+
+    private boolean machineReceiverIsSavedThis(Function function, Site site, String spill) {
+        String receiver = register(site.receiverRegister);
+        if (!Set.of("EBX", "ESI", "EDI").contains(receiver)) return false;
+        Address call = address(site.callAddress);
+        if (call == null) return false;
+        boolean loaded = false;
+        InstructionIterator iterator = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            if (instruction.getAddress().compareTo(call) >= 0) break;
+            if (!definesStandaloneRegister(instruction, receiver)) continue;
+            if ("POP".equalsIgnoreCase(instruction.getMnemonicString())) continue;
+            boolean exactLoad = "MOV".equalsIgnoreCase(instruction.getMnemonicString()) &&
+                instruction.getNumOperands() >= 2 && spill.equals(stackOperand(
+                    instruction.getDefaultOperandRepresentation(1)));
+            if (!exactLoad) return false;
+            loaded = true;
+        }
+        return loaded;
+    }
+
+    private boolean definesStandaloneRegister(Instruction instruction,
+            String receiverRegister) {
+        if (instruction.getNumOperands() < 1 || !receiverRegister.equals(register(
+                instruction.getDefaultOperandRepresentation(0)))) return false;
+        for (Object output : instruction.getResultObjects())
+            if (output instanceof Register value && receiverRegister.equals(
+                    value.getName().toUpperCase(Locale.ROOT))) return true;
+        return false;
+    }
+
+    private String stackOperand(String operand) {
+        String value = text(operand).toUpperCase(Locale.ROOT)
+            .replace("DWORD PTR", "").replace(" ", "");
+        return value.matches("\\[EBP\\+[+-]?(?:0X)?[0-9A-F]+\\]") ? value : "";
+    }
+
+    private String machineCallReturn(Site site) {
+        if (machineWideReturn(site)) return "/ulonglong";
+        String stored = x87StoredType(site.callAddress);
+        if (!stored.isBlank()) return stored;
+        Address call = address(site.callAddress);
+        Instruction instruction = call == null ? null :
+            currentProgram.getListing().getInstructionAfter(call);
+        for (int count = 0; instruction != null && count < 12; count++) {
+            if (readsAccumulator(instruction)) return "/undefined4";
+            if (writesAccumulator(instruction) || instruction.getFlowType().isCall())
+                return "/void";
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (mnemonic.startsWith("RET")) return "/undefined4";
+            if (instruction.getFlowType().isJump() || instruction.getFlowType().isTerminal())
+                return "";
+            instruction = currentProgram.getListing().getInstructionAfter(
+                instruction.getAddress());
+        }
+        return "/void";
+    }
+
+    /**
+     * MSVC returns an eight-byte integer-like scalar in EDX:EAX.  Recover that
+     * neutral ABI only from a closed bridge into a direct fastcall: the low word
+     * is consumed before it can be redefined, EDX is not redefined after the
+     * indirect call, and the next direct callee has an exact EDX parameter.
+     */
+    private boolean machineWideReturn(Site site) {
+        Address call = address(site.callAddress);
+        if (call == null) return false;
+        boolean lowConsumed = false;
+        Instruction instruction = currentProgram.getListing().getInstructionAfter(call);
+        for (int count = 0; instruction != null && count < 8; count++) {
+            if (instruction.getFlowType().isCall()) {
+                Address[] flows = instruction.getFlows();
+                Function target = flows.length == 1 ? currentProgram.getFunctionManager()
+                    .getFunctionAt(flows[0]) : null;
+                return lowConsumed && target != null &&
+                    "__fastcall".equals(target.getCallingConventionName()) &&
+                    hasExactRegisterParameter(target, "EDX:4");
+            }
+            if (writesRegister(instruction, Set.of("EDX", "DX", "DL", "DH")))
+                return false;
+            if (readsFullAccumulator(instruction)) lowConsumed = true;
+            if (!lowConsumed && writesRegister(instruction,
+                    Set.of("EAX", "AX", "AL", "AH"))) return false;
+            if (instruction.getFlowType().isJump() ||
+                    instruction.getFlowType().isTerminal()) return false;
+            instruction = currentProgram.getListing().getInstructionAfter(
+                instruction.getAddress());
+        }
+        return false;
+    }
+
+    private boolean hasExactRegisterParameter(Function function, String storage) {
+        for (Parameter parameter : function.getParameters())
+            if (!parameter.isAutoParameter() && storage.equalsIgnoreCase(
+                    parameter.getVariableStorage().toString())) return true;
+        return false;
+    }
+
+    private boolean readsFullAccumulator(Instruction instruction) {
+        for (Object input : instruction.getInputObjects())
+            if (input instanceof Register register && "EAX".equalsIgnoreCase(
+                    register.getName())) return true;
+        return false;
+    }
+
+    private boolean writesRegister(Instruction instruction, Set<String> names) {
+        for (Object output : instruction.getResultObjects())
+            if (output instanceof Register register && names.contains(
+                    register.getName().toUpperCase(Locale.ROOT))) return true;
+        return false;
+    }
+
+    private boolean readsAccumulator(Instruction instruction) {
+        for (Object input : instruction.getInputObjects())
+            if (input instanceof Register register && accumulator(register)) return true;
+        return false;
+    }
+
+    private boolean writesAccumulator(Instruction instruction) {
+        for (Object output : instruction.getResultObjects())
+            if (output instanceof Register register && accumulator(register)) return true;
+        return false;
+    }
+
+    private boolean accumulator(Register register) {
+        return Set.of("EAX", "AX", "AL", "AH").contains(
+            register.getName().toUpperCase(Locale.ROOT));
+    }
+
+    private void recordDenseEvidence(DenseSlotEvidence evidence, Site site,
+            String returned) {
+        if (returned.isBlank() || !evidence.calls.add(site.callAddress)) return;
+        evidence.functions.add(site.functionAddress);
+        evidence.arities.add(effectiveStackParameters(site));
+        if (returned.equals("/undefined4")) evidence.wordReturns++;
+        else if (returned.equals("/ulonglong")) evidence.wideReturns++;
+        else if (Set.of("/float", "/double").contains(returned)) {
+            evidence.floatReturns++;
+            evidence.floatReturnTypes.add(returned);
+        }
+        else if (returned.equals("/void")) evidence.unusedReturns++;
+        else evidence.otherReturns++;
+    }
+
+    private void addDensePhysicalSlotRows(Map<String, Row> rows) {
+        for (DenseSlotEvidence evidence : denseSlotEvidence.values()) {
+            boolean varyingArity = evidence.arities.size() >= 2;
+            boolean variadicProof = varyingArity && evidence.calls.size() >= 8 &&
+                evidence.functions.size() >= 2;
+            boolean concreteX87Family = evidence.floatReturns == evidence.calls.size() &&
+                evidence.floatReturnTypes.size() == 1;
+            boolean fixedProof = evidence.arities.size() == 1 &&
+                (evidence.functions.size() >= 2 &&
+                    (evidence.calls.size() >= 3 ||
+                        concreteX87Family && evidence.calls.size() >= 2) ||
+                 // One dense interpreter can be the complete observed use family
+                 // for a raw physical slot.  Eight exact unadjusted calls are
+                 // stronger than duplicating the same evidence across two
+                 // wrappers and avoid installing many address-local overrides.
+                 evidence.calls.size() >= 8);
+            boolean wideReturnRepair = evidence.wideReturns >= 3;
+            Structure vtable = structure(evidence.vtable);
+            if (vtable == null) continue;
+            DataTypeComponent component = vtable.getComponentAt(evidence.slot);
+            if (component == null || component.getOffset() != evidence.slot) continue;
+            DataType raw = component.getDataType();
+            DataType callableBase = base(raw);
+            boolean rawVoid = raw instanceof Pointer && "/void".equals(typeSpec(callableBase));
+            FunctionDefinition existing = callableBase instanceof FunctionDefinition value ?
+                value : null;
+            boolean generatedCallable = existing != null &&
+                text(existing.getComment()).contains(MARKER) &&
+                text(component.getComment()).contains(MARKER);
+            boolean generatedArityRepair = generatedCallable &&
+                existing.hasVarArgs() && evidence.calls.size() >= 8 &&
+                evidence.arities.equals(Set.of(1)) &&
+                evidence.calls.stream().allMatch(call ->
+                    stagedSingleArgumentSites.contains(call) ||
+                    sitePushCount(call) == 1);
+            boolean generatedReturnRepair = existing != null && wideReturnRepair &&
+                "/ulonglong".equals(typeSpec(existing.getReturnType())) &&
+                generatedCallable;
+            if (!variadicProof && !fixedProof && !wideReturnRepair &&
+                    !generatedArityRepair) continue;
+            if (evidence.otherReturns != 0 || evidence.floatReturnTypes.size() > 1 ||
+                    evidence.floatReturns != 0 &&
+                        (evidence.wordReturns != 0 || evidence.wideReturns != 0) ||
+                    evidence.wideReturns > 0 && !wideReturnRepair) continue;
+            String returned = generatedArityRepair ?
+                typeSpec(existing.getReturnType()) :
+                evidence.wideReturns != 0 ? "/undefined4" :
+                evidence.wordReturns != 0 ? "/undefined4" :
+                evidence.floatReturns != 0 ? evidence.floatReturnTypes.iterator().next() :
+                    "/void";
+            if (!rawVoid && !generatedReturnRepair && !generatedArityRepair) continue;
+            boolean variadic = generatedArityRepair ? false :
+                generatedReturnRepair ? existing.hasVarArgs() : variadicProof;
+            int count = generatedArityRepair ? 1 :
+                generatedReturnRepair ? existing.getArguments().length - 1 :
+                variadic ? 0 : evidence.arities.iterator().next();
+            if (count < 0) continue;
+            String parameters = generatedArityRepair ? "/undefined4" :
+                generatedReturnRepair ? parameterTypes(existing, 1) :
+                repeated("/undefined4", count);
+            String receiver = generatedCallable ?
+                typeSpec(existing.getArguments()[0].getDataType()) :
+                "pointer:" + evidence.owner;
+            String action = variadic ? "vtable_slot_variadic" : "vtable_slot_fixed";
+            String reason = "physical raw slot recovered from exact CALLIND family; calls=" +
+                evidence.calls.size() + "; functions=" + evidence.functions.size() +
+                "; observed_push_counts=" + evidence.arities +
+                "; full_word_returns=" + evidence.wordReturns +
+                "; wide_EDX_EAX_returns=" + evidence.wideReturns +
+                "; x87_returns=" + evidence.floatReturns +
+                "; unused_returns=" + evidence.unusedReturns +
+                (generatedReturnRepair ?
+                    "; shared script-owned return narrowed back to one machine word; " +
+                    "exact EDX:EAX bridges remain address-local call overrides" : "") +
+                (generatedArityRepair ?
+                    "; closed outer-call stack balance proves one real CALLIND word " +
+                    "at every inflated site; shared variadic fallback narrowed to fixed arity" : "") +
+                (variadicProof ?
+                    "; differing exact machine push families require a variadic ABI view" :
+                    "; unanimous machine push count proves the fixed stack arity");
+            Row row = new Row(true, action, evidence.vtable, evidence.owner, "",
+                evidence.slot, typeSpec(raw), "__thiscall",
+                receiver, count, parameters,
+                returned, "", "", "high", reason);
+            rows.put("physical:" + evidence.vtable + "@" + evidence.slot, row);
+            // The physical field now carries this exact consensus.  Per-call
+            // fallbacks for the same evidence would be redundant and can perturb
+            // High SSA even though every individual override is correct.
+            for (String call : evidence.calls) {
+                Row useSite = rows.get(call);
+                if (useSite != null && machineFallback(useSite)) rows.remove(call);
+            }
+            densePhysicalSlots++;
+        }
+    }
+
+    private String parameterTypes(FunctionDefinition definition, int first) {
+        List<String> result = new ArrayList<>();
+        ghidra.program.model.data.ParameterDefinition[] arguments =
+            definition.getArguments();
+        for (int index = first; index < arguments.length; index++)
+            result.add(typeSpec(arguments[index].getDataType()));
+        return String.join(";", result);
+    }
+
+    private Structure structure(String path) {
+        DataType type = currentProgram.getDataTypeManager().getDataType(path);
+        return type instanceof Structure structure ? structure : null;
     }
 
     private Map<String, Set<String>> vtableOwners() {
@@ -411,11 +1039,17 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
                 existing.getCallingConventionName()) || site.receiverRegister.isBlank() ||
                 !register(site.ecx).equals(register(site.receiverRegister)) ||
                 !(hasMarkerMode(call, "machine-void") ||
-                  hasMarkerMode(call, "machine-word"))) return null;
+                  hasMarkerMode(call, "machine-word") ||
+                  hasMarkerMode(call, "machine-float"))) return null;
         String returned = typeSpec(existing.getReturnType());
         if (hasMarkerMode(call, "machine-void") && !"/void".equals(returned)) return null;
         if (hasMarkerMode(call, "machine-word") && !"/undefined4".equals(returned))
             return null;
+        String retainedReturn = returned;
+        if (hasMarkerMode(call, "machine-float")) {
+            retainedReturn = x87StoredType(site.callAddress);
+            if (!Set.of("/float", "/double").contains(retainedReturn)) return null;
+        }
         ghidra.program.model.data.ParameterDefinition[] arguments = existing.getArguments();
         if (arguments.length != site.pushes + 1) return null;
         String owner = structurePath(arguments[0].getDataType());
@@ -433,14 +1067,22 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         return new Row(true, "apply", site.functionAddress, site.function,
             site.callAddress, site.slot, current, "__thiscall",
             typeSpec(arguments[0].getDataType()), site.pushes, String.join(";", stack),
-            typeSpec(existing.getReturnType()), "", "", "high",
+            retainedReturn, "", "", "high",
             "retained script-owned machine callable: exact listing MOV " +
-                "tableReg,[receiverReg] and MOV ECX,receiverReg remain; unique " +
+                "tableReg,[receiverReg] and live ECX=receiverReg remain; unique " +
                 "offset-zero owner " + owner + " for raw slot 0x" +
-                Integer.toHexString(site.slot).toUpperCase(Locale.ROOT) + " in " + vtable);
+                Integer.toHexString(site.slot).toUpperCase(Locale.ROOT) + " in " + vtable +
+                (retainedReturn.equals(returned) ? "" :
+                    "; x87 source width repaired from the bounded FST/FSTP consumer"));
     }
 
     private void suppressDenseMachineFallbacks(Map<String, Row> rows) {
+        // Count the overrides which would actually remain after physical-slot
+        // promotion, not every dispatch in the containing function.  The latter
+        // used to suppress a small residual family merely because the same
+        // interpreter also contained many already recovered physical slots.
+        // addDensePhysicalSlotRows() runs before this method, so one analysis pass
+        // sees the stable post-promotion set and does not depend on a prior apply.
         Map<String, Integer> counts = new TreeMap<>();
         for (Row row : rows.values()) {
             if (machineFallback(row))
@@ -581,24 +1223,38 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
             "exact_receiver_matches=" + exactReceiverMatches,
             "machine_callable_matches=" + machineCallableMatches,
             "machine_word_return_matches=" + machineWordReturnMatches,
+            "machine_float_return_matches=" + machineFloatReturnMatches,
+            "machine_wide_use_site_matches=" + machineWideUseSiteMatches,
+            "dense_physical_slots=" + densePhysicalSlots,
             "retained_machine_overrides=" + retainedMachineOverrides,
             "suppressed_dense_machine_functions=" + suppressedMachineFunctions.size(),
             "suppressed_dense_machine_overrides=" + suppressedMachineOverrides,
+            "exact_machine_receiver_sites=" + exactMachineReceiverSites.values().stream()
+                .mapToInt(Integer::intValue).sum(),
+            "staged_single_argument_sites=" + stagedSingleArgumentSites.size(),
             "proposals=" + rows.size(),
             "auto_apply=" + rows.stream().filter(row -> row.apply).count(),
             "cleanup=" + rows.stream().filter(row -> row.action.equals("cleanup")).count(),
             "conflicts=" + conflicts,
             "decompile_failures=" + failures,
             "policy=An override requires either exact physical dispatch consensus or an " +
-                "exact machine MOV tableReg,[receiverReg] plus MOV ECX,receiverReg chain, " +
+                "exact machine MOV tableReg,[receiverReg] plus live ECX=receiverReg chain, " +
                 "one unique offset-zero vtable owner, and matching p-code/machine arity. " +
                 "Without target-family evidence the return is void only when unused, or " +
-                "neutral undefined4 when the CALLIND owns one complete 32-bit output.",
+                "neutral undefined4 when the CALLIND owns one complete 32-bit output. " +
+                "An EDX:EAX bridge is address-local when one staged argument word and " +
+                "the following direct __fastcall close the machine chain.",
             "policy_density=Machine-only fallback is disabled when one function would " +
                 "receive more than " + MAX_MACHINE_OVERRIDES_PER_FUNCTION + " overrides. " +
                 "A dense set of use-only prototypes is not independent ABI evidence and " +
                 "can perturb whole-function SSA/register liveness; previously installed " +
                 "script-owned overrides in that function are removed.",
+            "policy_dense_slot=A raw physical slot may replace void* only when its vtable " +
+                "has one unique offset-zero owner, every retained site has the exact live " +
+                "ECX receiver, and either at least three calls in two functions or eight " +
+                "calls in one complete dense family agree on one fixed arity. At least " +
+                "eight calls in two functions may instead prove multiple arities; that " +
+                "case becomes a conservative receiver-aware variadic slot.",
             "policy_layout=The override types one call instruction only; it never widens a " +
                 "physical class vptr or mutates a synthetic dispatch table."
         ), StandardCharsets.UTF_8);
@@ -661,4 +1317,25 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         String callAddress, int slot, String expectedOverride, String convention,
         String receiverType, int stackParameters, String parameterTypes, String returnType,
         String signatureAddress, String signatureFunction, String confidence, String evidence) { }
+
+    private static final class DenseSlotEvidence {
+        final String vtable;
+        final String owner;
+        final int slot;
+        final Set<String> calls = new TreeSet<>();
+        final Set<String> functions = new TreeSet<>();
+        final Set<Integer> arities = new TreeSet<>();
+        final Set<String> floatReturnTypes = new TreeSet<>();
+        int wordReturns;
+        int wideReturns;
+        int floatReturns;
+        int otherReturns;
+        int unusedReturns;
+
+        DenseSlotEvidence(String vtable, String owner, int slot) {
+            this.vtable = vtable;
+            this.owner = owner;
+            this.slot = slot;
+        }
+    }
 }

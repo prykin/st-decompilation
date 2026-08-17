@@ -39,12 +39,14 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,uint param_1)
       if ((this->field_045D == CASE_14) && (iVar3 == 0x17)) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = g_playSystem_00802A38->field_00E4;
+        /* ST_CALLSITE[004910F7]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
         CmdToObj(this,CASE_3,&param_1);
       }
       this->field_0314 = 0;
       this->field_0076 = 1;
       return;
     }
+    /* ST_CALLSITE[0049111A]: CALL dword ptr [EAX + 0xac] */
     iVar3 = this->vfunc_AC((short)param_1);
     if (iVar3 == 1) {
       this->field_05C0 = 2;

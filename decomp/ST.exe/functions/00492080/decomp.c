@@ -40,8 +40,11 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
                     (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
                      (int *)&local_14);
   if (iVar3 != -4) {
+    /* ST_CALLSITE[0049211B]: CALL dword ptr [EDX + 0xac] */
     (*local_14->vtable->vfunc_AC)(this->field_0018);
+    /* ST_CALLSITE[00492139]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
     STFishC::sub_004162F0(local_14,&this->field_0588,&this->field_058A,&this->field_058C);
+    /* ST_CALLSITE[00492177]: CALL 0x00402cfc; direct=00402CFC STBoatC::GetCellForLoading */
     iVar3 = GetCellForLoading(this,this->field_005B,this->field_005D,this->field_005F,
                               this->field_0588,this->field_058A,this->field_058C,&local_6,
                               (undefined2 *)((int)&param_1 + 2),&local_8,&local_e,&local_c,&local_a);
@@ -52,7 +55,9 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
         local_c = STPiece<2,2>(param_1);
         local_a = local_8;
       }
+      /* ST_CALLSITE[004921CE]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
       sub_00481520(this,(int)local_e,(int)local_c,(int)local_a);
+      /* ST_CALLSITE[004921D7]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
       sub_00460260(this,0);
       return;
     }

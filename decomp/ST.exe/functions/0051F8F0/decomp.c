@@ -43,6 +43,7 @@ void __thiscall HelpStringTy::OutStr(HelpStringTy *this)
       ccFntTy::SetSurf(pHVar3->field_011E,(int)pHVar3->field_012A,0,0,0,0,0);
       ccFntTy::WrStr(pHVar3->field_011E,&pHVar3->field_0018,0,-1,(uint)(byte)pHVar3->field_011D);
     }
+    /* ST_CALLSITE[0051FA03]: CALL 0x00403738; direct=00403738 PutDDX */
     PutDDX((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e,DAT_00806734 + -0x1a,'\x01',
            (BITMAPINFO *)pHVar3->field_012A);
     g_currentExceptionFrame = local_4c.previous;

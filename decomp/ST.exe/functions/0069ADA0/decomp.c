@@ -58,8 +58,8 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
             uVar12 = 0x80 >> (bVar7 & 0x1f);
             uVar10 = 0x8000 >> (bVar7 & 0x1f);
           }
-          if (local_14 < (int)(uint)*(byte *)(iVar8 + 0x48)) {
-            local_14 = (uint)*(byte *)(iVar8 + 0x48) - local_14;
+          if (local_14 < (int)(uint)((byte *)iVar8)[0x48]) {
+            local_14 = (uint)((byte *)iVar8)[0x48] - local_14;
             do {
               uVar13 = *(uint *)(iVar8 + 0x2c);
               if ((uVar11 & uVar13) != 0) {
@@ -108,7 +108,7 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
               local_14 = local_14 + -1;
             } while (local_14 != 0);
           }
-          if ((*(byte *)(iVar8 + 0x4f) & 0x10) != 0) {
+          if ((((byte *)iVar8)[0x4f] & 0x10) != 0) {
             if (uVar12 == 0) {
               uVar13 = 1;
             }

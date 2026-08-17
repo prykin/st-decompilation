@@ -65,6 +65,7 @@ void __thiscall FUN_005508f0(void *this,int param_1)
           pcVar9 = pcVar5 + -0x46;
           *pcVar5 = '\0';
           pcVar2 = LoadResourceString(0x4273,module);
+          /* ST_CALLSITE[005509EE]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar2,pcVar9);
           if (g_popUp_008016D8 != nullptr) {
             thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -113,6 +114,7 @@ void __thiscall FUN_005508f0(void *this,int param_1)
       }
       DAT_00808aaf = DAT_00808aaf - 1;
       if (g_playPanel_008016E4 != nullptr) {
+        /* ST_CALLSITE[00550B06]: CALL 0x00405e07; direct=00405E07 PlayPanelTy::sub_0053A540 */
         PlayPanelTy::sub_0053A540(g_playPanel_008016E4);
       }
     }

@@ -167,7 +167,7 @@ int __thiscall st::fn_0068E610(AiTactClassTy *this,int param_1)
       else {
         element_00a5 = nullptr;
       }
-      if ((AnonReceiver_0065DA50 *)element_00a5->field_0004 != nullptr) {
+      if ((AnonReceiver_0065DA50 *)element_00a5->field_0004 != 0) {
         uVar2 = st::fn_00404A20
                           ((AnonReceiver_0065DA50 *)element_00a5->field_0004,param_1,-1);
         iVar4 = iVar4 + uVar2;
@@ -206,6 +206,7 @@ undefined4 __thiscall st::fn_0068E730(AiTactClassTy *this,int param_1)
   }
   element_00a5->field_0004 = 0;
   element_00a5->field_0000 = 0;
+  /* ST_CALLSITE[0068E78F]: CALL 0x00405957; direct=00405957 AiTactClassTy::BackFromRepair */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_00405957(this,*(short *)(param_1 + 0x7d));
   st::fn_00404F2A(param_1);
@@ -242,6 +243,7 @@ void __thiscall st::fn_00690230(AiTactClassTy *this,uint *param_1)
           (puVar1 = (undefined1 *)((int)&pAVar2->data->field_0000 + pAVar2->elementSize * uVar3),
           (undefined4 *)puVar1 != nullptr)) &&
          (this_00 = *(AiFltClassTy **)(puVar1 + 4), this_00 != nullptr)) {
+        /* ST_CALLSITE[00690267]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
         st::fn_00401555(this_00,param_1);
       }
       pAVar2 = this->field_00A5;
@@ -283,6 +285,7 @@ void __thiscall st::fn_006902B0(AiTactClassTy *this,short param_1,uint *param_2)
            (undefined4 *)puVar1 != nullptr)) &&
           (this_00 = *(AiFltClassTy **)(puVar1 + 4), this_00 != nullptr)) &&
          (this_00->field_007B == param_1)) {
+        /* ST_CALLSITE[006902F1]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
         st::fn_00401555(this_00,param_2);
       }
       pAVar2 = this->field_00A5;

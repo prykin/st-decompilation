@@ -76,6 +76,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
     if (param_1 == nullptr) {
       return 0;
     }
+    /* ST_CALLSITE[0047CB8C]: CALL dword ptr [EDX + 0x2c] */
     dVar10 = param_1->slot_2C();
     this->field_0675 = dVar10;
     if ((((dVar10 != 0x52) && (dVar10 != 0x5f)) || (this->field_066B != 0x1a4)) && (dVar10 != 99)) {
@@ -91,6 +92,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
   }
   SVar4 = this->field_0687;
   if (SVar4 == CASE_0) {
+    /* ST_CALLSITE[0047C081]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
     local_EAX_49 = sub_00460260(this,2);
     switch(local_EAX_49) {
     case 0:
@@ -109,16 +111,20 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                   STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
       }
       if (((param_1 != nullptr) && (param_1->field_0018 == this->field_0679)) &&
+         /* ST_CALLSITE[0047C2AE]: CALL dword ptr [EAX + 0xf8] */
          (iVar8 = param_1->vfunc_F8(), iVar8 != 0)) {
         return 2;
       }
+      /* ST_CALLSITE[0047C2BE]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
       sub_004602B0(this);
       this->field_00B7 = 0;
       return 0;
     default:
       return 2;
     case 3:
+      /* ST_CALLSITE[0047C211]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
       sub_00481520(this,(int)this->field_066F,(int)this->field_0671,this->field_0673 + 1);
+      /* ST_CALLSITE[0047C219]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
       sub_00460260(this,0);
       return 2;
     case -1:
@@ -135,6 +141,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
   }
   if (SVar4 != CASE_1) {
     if (SVar4 == CASE_2) {
+      /* ST_CALLSITE[0047C469]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
       local_EAX_1049 = sub_00460260(this,2);
       switch(local_EAX_1049) {
       case 0:
@@ -151,6 +158,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
         }
         if (((param_1 != nullptr) && (param_1->field_0018 == this->field_0679)) &&
+           /* ST_CALLSITE[0047C555]: CALL dword ptr [EDX + 0xf8] */
            ((iVar8 = param_1->vfunc_F8(), iVar8 != 0 &&
             ((param_1->field_0020 != 1000 ||
              ((*(int *)((int)&param_1->field_04B3 + 1) == 0 && (*(int *)&param_1->field_0x245 != 6))
@@ -174,6 +182,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
         }
         if (((param_1 != nullptr) && (param_1->field_0018 == this->field_0679)) &&
+           /* ST_CALLSITE[0047C73F]: CALL dword ptr [EDX + 0xf8] */
            (iVar8 = param_1->vfunc_F8(), iVar8 != 0)) {
           return 2;
         }
@@ -202,6 +211,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
         }
         if (((param_1 != nullptr) && (param_1->field_0018 == this->field_0679)) &&
+           /* ST_CALLSITE[0047C66C]: CALL dword ptr [EDX + 0xf8] */
            (iVar8 = param_1->vfunc_F8(), iVar8 != 0)) {
           if (this->field_0675 == 99) {
             thunk_FUN_004b7d50(param_1,this);
@@ -224,6 +234,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
       goto cf_common_exit_0047C74D;
     }
     if (SVar4 == CASE_3) {
+      /* ST_CALLSITE[0047C76C]: CALL 0x004011ae; direct=004011AE STBoatC::UnLoadObj */
       local_EAX_1820 = UnLoadObj(this,2);
       if (((this->field_07CA != nullptr) && (this->field_07C6 != 0)) &&
          (local_EAX_1820 == 0)) {
@@ -244,6 +255,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
         }
         if (((param_1 != nullptr) && (param_1->field_0018 == this->field_0679)) &&
+           /* ST_CALLSITE[0047C832]: CALL dword ptr [EDX + 0xf8] */
            (iVar8 = param_1->vfunc_F8(), iVar8 != 0)) {
           if (this->field_0675 == 99) {
             thunk_FUN_004b7d50(param_1,this);
@@ -276,6 +288,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                 }
                 local_14 = g_playSystem_00802A38->field_00E4;
                 local_8 = param_1;
+                /* ST_CALLSITE[0047C966]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                 CmdToObj(param_1,CASE_B,&local_14);
                 thunk_FUN_004b7d00(this_00,param_1);
                 return 2;
@@ -310,6 +323,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
+      /* ST_CALLSITE[0047CA25]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
       local_EAX_2517 = sub_00460260(this,2);
       if (local_EAX_2517 == -1) {
         return 0xffffffff;
@@ -322,6 +336,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
       }
     }
     uVar7 = this->field_0673 + 1;
+    /* ST_CALLSITE[0047C9E9]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
     sub_0048DFD0(this,this->field_066F,this->field_0671,uVar7,this->field_066F,this->field_0671,
                  (int *)(uint)uVar7,2,&this->field_067D,&this->field_067F,&this->field_0681);
     iVar12 = (int)this->field_0681;
@@ -330,6 +345,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
     goto cf_common_exit_0047C9FE;
   }
   this->field_0683 = this->field_0683 + 1;
+  /* ST_CALLSITE[0047C2F2]: CALL 0x00403a2b; direct=00403A2B STBoatC::Defence */
   local_EAX_674 = Defence(this,2);
   if (local_EAX_674 == -1) {
     return 0xffffffff;
@@ -356,8 +372,10 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
               STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
   }
   if (((param_1 == nullptr) || (param_1->field_0018 != this->field_0679)) ||
+     /* ST_CALLSITE[0047C3C3]: CALL dword ptr [EAX + 0xf8] */
      (iVar8 = param_1->vfunc_F8(), iVar8 == 0)) {
 cf_common_exit_0047C74D:
+    /* ST_CALLSITE[0047C74F]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
     sub_004602B0(this);
     return 0;
   }
@@ -396,6 +414,7 @@ switchD_0047c090_caseD_0:
               STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
   }
   if (((param_1 == nullptr) || (param_1->field_0018 != this->field_0679)) ||
+     /* ST_CALLSITE[0047C172]: CALL dword ptr [EAX + 0xf8] */
      (iVar8 = param_1->vfunc_F8(), iVar8 == 0)) goto cf_common_exit_0047C74D;
   local_EAX_327 = thunk_FUN_004950b0(this,&this->field_067D,&this->field_067F,&this->field_0681);
   if (local_EAX_327 != 1) goto cf_common_exit_0047C68C;
@@ -410,6 +429,7 @@ switchD_0047c090_caseD_0:
 cf_common_exit_0047C68C:
     this->field_0687 = CASE_1;
     this->field_0683 = 0;
+    /* ST_CALLSITE[0047C6A4]: CALL 0x00403a2b; direct=00403A2B STBoatC::Defence */
     local_EAX_1620 = Defence(this,0);
     if (local_EAX_1620 != -1) {
       return 2;
@@ -422,7 +442,9 @@ cf_common_exit_0047C43E:
   iVar11 = (int)this->field_067D;
   this->field_0687 = CASE_2;
 cf_common_exit_0047C9FE:
+  /* ST_CALLSITE[0047CA00]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
   sub_00481520(this,iVar11,iVar8,iVar12);
+  /* ST_CALLSITE[0047CA09]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
   sub_00460260(this,0);
   return 2;
 }

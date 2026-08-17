@@ -39,7 +39,9 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
     iVar2 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = CASE_1;
     this_00->field_0494 = 0xffff;
+    /* ST_CALLSITE[005A334F]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
     CursorClassTy::SetGCType(this_00,CASE_0,iVar2,iVar1);
+    /* ST_CALLSITE[005A3364]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;
@@ -51,6 +53,7 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
+    /* ST_CALLSITE[005A3461]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
     MMsgTy::SetMessage(pMVar4,0x2594,'\0',nullptr,nullptr,nullptr,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -81,12 +84,14 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   DAT_00803400 = 4;
 cf_common_exit_005A33FB:
   thunk_FUN_005b6350(local_8,0x611f,0x13,0);
+  /* ST_CALLSITE[005A340F]: CALL dword ptr [EAX + 0x8] */
   this_01->CloseButtons();
   pMVar4 = (this_01->array_00BC[0xc].field_01DB)->field_02E6;
   if (pMVar4 == nullptr) {
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
+  /* ST_CALLSITE[005A3428]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
   MMsgTy::HidePanel(pMVar4,1,0,1);
   g_currentExceptionFrame = local_4c.previous;
   return;

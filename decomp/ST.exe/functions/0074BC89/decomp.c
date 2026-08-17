@@ -26,6 +26,7 @@ void FUN_0074bc89(AnonShape_0074BC89_92881050 *param_1,undefined4 *param_2)
     pAVar7 = (AnonShape_0074BC89_92881050 *)&pAVar7->field_0x4;
   }
   if (param_2[0x10] != 0) {
+    /* ST_CALLSITE[0074BCA5]: CALL dword ptr [0x0085c0d8] */
     puVar2 = (byte *)(CoTaskMemAlloc(param_2[0x10]));
     param_1->field_0044 = puVar2;
     if (puVar2 == nullptr) {
@@ -39,6 +40,7 @@ void FUN_0074bc89(AnonShape_0074BC89_92881050 *param_1,undefined4 *param_2)
   }
   piVar1 = param_1->field_003C;
   if (piVar1 != nullptr) {
+    /* ST_CALLSITE[0074BCDB]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 4))(piVar1);
   }

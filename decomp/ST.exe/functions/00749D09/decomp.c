@@ -11,11 +11,14 @@ undefined4 __fastcall FUN_00749d09(int *param_1)
 
   local_c = (HANDLE)param_1[0x16];
   local_8 = param_1[0x15];
+  /* ST_CALLSITE[00749D20]: CALL dword ptr [EAX + 0x48] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*param_1 + 0x48))();
   do {
+    /* ST_CALLSITE[00749D30]: CALL dword ptr [0x0085bcdc] */
     DVar1 = WaitForMultipleObjects(2,&local_c,0,10000);
   } while (DVar1 == 0x102);
+  /* ST_CALLSITE[00749D44]: CALL dword ptr [EAX + 0x4c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*param_1 + 0x4c))();
   if (DVar1 == 0) {

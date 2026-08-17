@@ -47,6 +47,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   iVar6 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar6 == 0) {
     if (g_cLoading_00802A58 != nullptr) {
+      /* ST_CALLSITE[0052ABA6]: CALL 0x00404d8b; direct=00404D8B cLoadingTy::SetProcess */
       cLoadingTy::SetProcess(g_cLoading_00802A58,0,"Preparing mini-map...",900);
     }
     pAVar7 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
@@ -103,6 +104,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     do {
       uVar9 = local_1c;
       if (g_cLoading_00802A58 != nullptr) {
+        /* ST_CALLSITE[0052AD04]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
         cLoadingTy::SetState(g_cLoading_00802A58,CASE_1,local_14,nullptr);
       }
       local_14 = local_14 + 1;
@@ -170,6 +172,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
               (iVar6,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x42);
   }
   if (g_cLoading_00802A58 != nullptr) {
+    /* ST_CALLSITE[0052AE69]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
     cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,nullptr);
   }
   return;

@@ -29,8 +29,10 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     local_8->field_0031 = local_8->field_0008;
     local_8->field_0033 = uVar2;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x1d);
+    /* ST_CALLSITE[005BE378]: CALL 0x00401d43; direct=00401D43 DarkScreen */
     DarkScreen(g_dDXContext_0080759C,10,2);
     if (g_cursorClass_00802A30 != nullptr) {
+      /* ST_CALLSITE[005BE38A]: CALL 0x00401055; direct=00401055 CursorClassTy::sub_00544940 */
       CursorClassTy::sub_00544940(g_cursorClass_00802A30);
     }
     ppDVar7 = &pMVar3->field_0347;
@@ -44,11 +46,13 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);
     if (pMVar3->field_0453 != nullptr) {
+      /* ST_CALLSITE[005BE3BC]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pMVar3->field_0453);
       Library::MSVCRT::FUN_0072e2b0(pMVar3->field_0453);
       pMVar3->field_0453 = nullptr;
     }
     if (pMVar3->field_0457 != nullptr) {
+      /* ST_CALLSITE[005BE3E4]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pMVar3->field_0457);
       Library::MSVCRT::FUN_0072e2b0(pMVar3->field_0457);
       pMVar3->field_0457 = nullptr;

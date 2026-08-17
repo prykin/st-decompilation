@@ -16,10 +16,12 @@ int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9
   int iVar5;
   undefined4 *puVar6;
 
+  /* ST_CALLSITE[0062FCA7]: CALL 0x004017f3; direct=004017F3 STRubbishC::RubbishCreatePart */
   iVar3 = RubbishCreatePart(this);
   iVar4 = this->field_01E1;
   if (iVar3 < 0) {
     if (iVar4 == 0) {
+      /* ST_CALLSITE[0062FD9A]: CALL 0x00405885; direct=00405885 STRubbishC::sub_0062F900 */
       sub_0062F900(this);
       return 0xffff;
     }
@@ -43,6 +45,7 @@ int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9
       return this->field_01E1;
     }
     this->field_01E1 = iVar4 + 1;
+    /* ST_CALLSITE[0062FCCF]: CALL 0x004036ca; direct=004036CA STRubbishC::sub_0062EF00 */
     sub_0062EF00(this,iVar3,param_1);
     if (this->field_01F9 != '\0') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -53,6 +56,7 @@ int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9
         return iVar3;
       }
       if (this->field_01E1 == 0) {
+        /* ST_CALLSITE[0062FD05]: CALL 0x00405885; direct=00405885 STRubbishC::sub_0062F900 */
         sub_0062F900(this);
         return 0xffff;
       }

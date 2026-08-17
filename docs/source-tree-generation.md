@@ -28,6 +28,17 @@ body count, writes a sibling staging tree, and promotes it only after every
 file and the source manifest have been completed. It refuses to replace an
 output directory without its generator marker.
 
+Before promotion it also compares an address-stable readability profile with
+the currently published generated tree. One function cannot compensate for a
+degradation in another. The blocking profile includes reintroduced raw
+`code *` calls, duplicated-receiver vtable calls, generic pointer towers,
+generic `undefinedN` declarations, stale address-coded member calls, dangling
+qualified address prefixes, invalid `static_cast<undefinedN>`, presentation
+failures, and newly required pointer-boundary casts. A removed stale member or
+raw-vtable spelling may pay for only its corresponding exact boundary cast.
+Failure leaves the old `src/ST.exe` intact and reports the exact address and
+metric delta; it never updates a baseline merely because generation changed.
+
 No wall-clock time is written. Repeating the command for the same accepted
 corpus and generator produces byte-identical tracked files. The source manifest
 pins the generator plus every consumed central corpus index by SHA-256.
@@ -81,8 +92,10 @@ and in the input metadata. Direct calls are rewritten only when the caller's
 address-authoritative callee set resolves one target. Address-coded
 `FUN_ADDRESS`, `sub_ADDRESS`, and `thunk_FUN_ADDRESS` spellings also resolve by
 their encoded exported entry address. This remains valid when a recovered owner
-is stale or the qualifier is line-wrapped; the generated spelling is always the
-unqualified address identity `st::fn_ADDRESS`. External call identities from
+is stale or the qualifier is line-wrapped, but an existing `object->sub_ADDRESS`
+or `object.sub_ADDRESS` forwarding-member call is never reclassified as a free
+direct call. Qualified free calls become the unqualified address identity
+`st::fn_ADDRESS`. External call identities from
 `call_relations.jsonl` receive `st::external_ID` declarations with their
 resolved signatures. An ambiguous direct spelling is selected only when exactly
 one address-authoritative candidate has the observed argument count; the call
@@ -202,7 +215,7 @@ before layout assertions or a real link are meaningful.
 It intentionally does not link. A full object build is expected to fail today
 and is now useful evidence rather than a missing-infrastructure failure. The
 current Apple Clang C++17 probe, with a limit of 64 diagnostics per translation
-unit, passes 203 of 322 units and records 1,109 errors, 1,092 of them mapped to
+unit, passes 243 of 322 units and records 505 errors, 488 of them mapped to
 a function address. No syntax diagnostic remains. The cap makes this a
 monotonic comparison baseline, not the
 uncapped total of all errors. Remaining diagnostics principally identify:

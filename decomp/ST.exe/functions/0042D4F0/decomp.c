@@ -67,6 +67,7 @@ LAB_0042d5e8:
     uVar6 = STReplaceLowWord((uint32_t)(param_4), (uint16_t)((short)piVar4[2]));
     pDVar5 = nullptr;
   }
+  /* ST_CALLSITE[0042D5FA]: CALL 0x004027c0; direct=004027C0 STAllPlayersC::ResetActivityFromObjs */
   ResetActivityFromObjs
             (this,STReplaceLowByte((uint32_t)(iVar3), (uint8_t)((char)piVar4[1])),iVar3,pDVar5,uVar6,param_4);
 LAB_0042d5ff:

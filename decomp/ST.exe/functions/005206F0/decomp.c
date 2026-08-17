@@ -53,6 +53,7 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
   puVar9 = (byte *)puVar1;
   puVar10 = (byte *)(local_188);
   memmove(puVar10, puVar9, 0x129); /* compiler REP MOVS byte copy */
+  /* ST_CALLSITE[0052074A]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,9,(AnonShape_0043BEB0_1C00EC12 *)puVar1);
   if (this_00->field_01AB == 0) {
     this_00->field_03D4 = 0xff;
@@ -156,12 +157,14 @@ LAB_00520987:
         if (-1 < iVar7 + -1) {
           pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03C8,iVar7 + -1
                                );
+          /* ST_CALLSITE[005209CC]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x41,local_10,'\x06',
                  (byte *)pBVar6);
           uVar8 = local_10;
         }
       }
       else {
+        /* ST_CALLSITE[005208D0]: CALL dword ptr [0x0085bde8] */
         wsprintfA(&this_00->field_018D,"%c",
                   g_bulkInitializedRecords_008087C7[*local_c].field_0023 + 0x41);
         ccFntTy::SetSurf(this_00->field_0189,this_00->field_0068,0,0x41,uVar8,0x12,0xc);
@@ -173,6 +176,7 @@ LAB_00520987:
     local_10 = uVar8 + 0xd;
     if (6 < local_5) {
       local_c = pbVar11;
+      /* ST_CALLSITE[005209F6]: CALL 0x00404c69; direct=00404C69 InfocPanelTy::PaintInfoc */
       PaintInfoc(this_00);
       g_currentExceptionFrame = local_5c.previous;
       return;

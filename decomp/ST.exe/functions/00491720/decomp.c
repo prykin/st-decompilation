@@ -36,11 +36,13 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
     }
     local_2c.arg1.words.low = (*ppuVar1)[0x12];
     local_2c.arg1.words.high = (*ppuVar1)[0x19];
+    /* ST_CALLSITE[004917AA]: CALL dword ptr [EDX] */
     g_aiBossClass_008117BC->GetMessage(&local_2c);
   }
   param_1->field_05C0 = 0;
   param_1->field_07C2 = 0;
   param_1->field_05A6 = nullptr;
+  /* ST_CALLSITE[004917E1]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
   DumpClassC::WritePtr
             (param_1->field_005B,param_1->field_005D,param_1->field_005F,param_1->field_008E,
              (RecoveredRecord_DumpClassC_00495EC0 *)param_1);
@@ -89,12 +91,15 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
     uVar6 = uVar6 | 0x10;
   }
   if (arg_1 != 0) {
+    /* ST_CALLSITE[00491880]: CALL dword ptr [EDX + 0x100] */
     param_1->vfunc_100(arg_1);
   }
   if (uVar6 != 0) {
+    /* ST_CALLSITE[0049188F]: CALL dword ptr [EAX + 0x104] */
     param_1->vfunc_104((char)uVar6);
   }
   local_c = g_playSystem_00802A38->field_00E4;
+  /* ST_CALLSITE[004918AC]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
   STBoatC::CmdToObj(param_1,CASE_3,&local_c);
   return;
 }

@@ -58,6 +58,7 @@ st::fn_00418030
   short *psVar14_mg3;
 
   local_58 = (STBoatC *)this;
+  /* ST_CALLSITE[00418041]: CALL 0x00405952; direct=00405952 sub_004167A0 */
   st::fn_00405952(this);
   if (((param_1 == *(short *)&this->field_0x47) && (param_2 == *(short *)&this->field_0x49)) &&
      (param_3 == *(short *)&this->field_0x4b)) {
@@ -320,6 +321,7 @@ LAB_0041862b:
       local_14 = (short *)STReplaceLowByte((uint32_t)(local_14), (uint8_t)(this_00->field_0061));
     }
   }
+  /* ST_CALLSITE[00418731]: CALL 0x00402455; direct=00402455 sub_00415B30 */
   iVar15 = st::fn_00402455(this_00,this_00->field_0041,this_00->field_0043,this_00->field_0045,sVar3,
                         sVar10,(short)local_c,(byte)local_14);
   if (iVar15 != 0) {
@@ -327,9 +329,11 @@ LAB_0041862b:
   }
   if ((this_00->field_008C != 1) &&
      ((this_00->field_0041 != sVar3 || (this_00->field_0043 != sVar10)))) {
+    /* ST_CALLSITE[00418768]: CALL dword ptr [EDX + 0x10] */
     sVar3 = (*this_00->vtable->vfunc_10)
                       (this_00->field_0041,this_00->field_0043,(int)this_00->field_0045,sVar3,sVar10
                        ,st::machine_word_boundary_cast<undefined4>(local_c));
+    /* ST_CALLSITE[0041876E]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
     uVar5 = st::fn_004030B2(this_00,sVar3);
     if ((short)uVar5 != this_00->field_006C) {
       st::fn_004021E9(this_00,this_00->field_006C,(short)uVar5);

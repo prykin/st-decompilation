@@ -32,6 +32,7 @@ void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
     iVar5 = (pCVar2->field_018C->field_0004 - (pBVar3->bmiHeader).biWidth) / 2;
     pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,
                           -(uint)(DAT_0080874e != '\x01') & 6);
+    /* ST_CALLSITE[00501084]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(pCVar2->field_018C,iVar5,0x50,'\x01',(byte *)pBVar3);
     if (pCVar2->field_0BCD != 0xff) {
       if (0x28 < (byte)pCVar2->field_0BCD) {
@@ -42,6 +43,7 @@ void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
       if (pCVar2->field_0BCD != '\0') {
         do {
           pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,3);
+          /* ST_CALLSITE[005010D8]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut(pCVar2->field_018C,iVar5 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',(byte *)pBVar3);
           bVar4 = bVar4 + 1;
           local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));

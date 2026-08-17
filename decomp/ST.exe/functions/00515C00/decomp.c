@@ -65,6 +65,7 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
               (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a," ,.;:!?/\\()[]{}",
                (uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);
     iVar3 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
+    /* ST_CALLSITE[00515D08]: CALL 0x00401870; direct=00401870 HelpPanelTy::CheckBkView */
     CheckBkView(this_00,*param_1,(ushort)iVar3);
     ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,*param_1,0x19c,iVar3 + 2);
     ccFntTy::WrTxt(this_00->field_01E0,(char *)&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5,

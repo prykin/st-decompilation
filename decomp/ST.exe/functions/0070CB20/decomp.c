@@ -112,6 +112,7 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
       return (uint)bVar1;
     }
   }
+  /* ST_CALLSITE[0070CD54]: CALL dword ptr [0x0085baa8] */
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   UVar5 = GetNearestPaletteIndex(h,(uint)CONCAT11((char)uVar4,(char)uVar3) << 8 | uVar2 & 0xff);
   if (UVar5 != 0xffffffff) {

@@ -12,7 +12,7 @@
 ViewerClassTy * __thiscall st::fn_0071E6F0(ViewerClassTy *this)
 
 {
-  st::fn_0072B700(st::pointer_boundary_cast<undefined4 *>(&this->vtable));
+  st::fn_0072B700((undefined4 *)&this->vtable);
   this->vtable = &st_global_0079E298;
   this->field_01F0 = 0;
   this->field_01EC = 0;

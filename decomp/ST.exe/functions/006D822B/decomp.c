@@ -8,6 +8,7 @@ int FUN_006d822b(void)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EBP;
 
+  /* ST_CALLSITE[006D8238]: CALL dword ptr [EBP + -0x4] */
   /* ST_PSEUDO[unresolved_register_input,raw_indirect_call]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(unaff_EBP + -4))
                     (*(undefined4 *)(unaff_EBP + 8),*(undefined4 *)(unaff_EBP + -0xc),0x200);

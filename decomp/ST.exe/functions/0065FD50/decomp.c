@@ -23,6 +23,7 @@ FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4
       uStack_a = param_4;
       this_00 = thunk_FUN_0042b760(STField<char>(this,0x24),STField<ushort>(this,0x7d));
       if (this_00 != nullptr) {
+        /* ST_CALLSITE[0065FDC2]: CALL dword ptr [EDX + 0x8] */
         this_00->sub_00498D20(1,(short)local_10);
         return 0;
       }

@@ -7,6 +7,7 @@ int __thiscall FUN_004e3800(void *this,int param_1,int param_2)
   int iVar1;
   int iVar2;
 
+  /* ST_CALLSITE[004E3810]: CALL 0x00401b59; direct=00401B59 TLOBaseTy::sub_004C9370 */
   iVar1 = TLOBaseTy::sub_004C9370(this,2,param_1,-1);
   if (iVar1 == 0) {
     if (STField<int>(this,0x361) != 2) {

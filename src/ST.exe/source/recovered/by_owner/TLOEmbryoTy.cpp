@@ -15,13 +15,16 @@ undefined4 __fastcall st::fn_00419C70(int *param_1,undefined4 param_2,int param_
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
 
+  /* ST_CALLSITE[00419C92]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject */
   uVar1 = st::fn_004052C2
                     (g_allPlayers_007FA174,(char)param_1[9],
                      STReplaceLowWord((uint32_t)(param_1), (uint16_t)((short)param_1[0xc])),0xffff,param_1,
                      param_3,0);
+  /* ST_CALLSITE[00419CAA]: CALL 0x0040494e; direct=0040494E STAllPlayersC::_ChangeMD */
   st::fn_0040494E
             (g_allPlayers_007FA174,1,(int *)param_1[9],
              STReplaceLowWord((uint32_t)(uVar1), (uint16_t)(STField<undefined2>(param_1,0x32))));
+  /* ST_CALLSITE[00419CC0]: CALL 0x004019a6; direct=004019A6 STAllPlayersC::_ChangeDock */
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   st::fn_004019A6
             (1,(int *)param_1[9],CONCAT22(extraout_var,STField<undefined2>(param_1,0x32)));
@@ -42,6 +45,7 @@ undefined4 __fastcall st::fn_00419C70(int *param_1,undefined4 param_2,int param_
 void __fastcall st::fn_00419CF0(int *param_1,undefined4 param_2,uint param_3)
 
 {
+  /* ST_CALLSITE[00419D0B]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject */
   st::fn_004052C2
             (g_allPlayers_007FA174,(char)param_1[9],
              STReplaceLowWord((uint32_t)(param_2), (uint16_t)((short)param_1[0xc])),param_3,param_1,1,0);
@@ -64,6 +68,7 @@ void __thiscall st::fn_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
   if (((-1 < (int)param_1) &&
       (this->field_0101 = param_1, g_visibleClass_00802A88 != nullptr)) &&
      ((this->field_01D1 & 1) == 0)) {
+    /* ST_CALLSITE[0041C43C]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
     st::fn_0040388C
               (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,
                (undefined *)(int)this->field_005F,(int *)this->field_0024,(uint)param_1,
@@ -76,21 +81,25 @@ void __thiscall st::fn_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
       else {
         this->field_0105 = (int)this->field_0101 << 1;
       }
+      /* ST_CALLSITE[0041C49E]: CALL 0x00402c2a; direct=00402C2A VisibleClassTy::sub_005594A0 */
       st::fn_00402C2A
                 (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,
                  (char)this->field_005F,(undefined *)this->field_0024,this->field_0105,
                  this->field_0018,0xffffffff);
     }
+    /* ST_CALLSITE[0041C4A7]: CALL dword ptr [EAX + 0x2c] */
     uVar2 = this->vfunc_2C();
     switch(uVar2) {
     case 5:
     case 0x11:
     case 0x21:
+      /* ST_CALLSITE[0041C4FB]: CALL dword ptr [EDX + 0x94] */
       this->vfunc_94();
       break;
     case 0xb:
     case 0x23:
       this->field_010D = st::machine_word_boundary_cast<undefined4>(this->field_0101);
+      /* ST_CALLSITE[0041C4ED]: CALL 0x0040141f; direct=0040141F VisibleClassTy::SetZoneAst */
       st::fn_0040141F
                 (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,
                  (char)this->field_005F,this->field_0024,(int)this->field_0101,this->field_0018,
@@ -113,8 +122,10 @@ TLOEmbryoTy * __thiscall st::fn_004D0FC0(TLOEmbryoTy *this)
 
 {
 
+  /* ST_CALLSITE[004D0FC4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
-  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->vtable_at_1d5);
+  /* ST_CALLSITE[004D0FD1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  st::fn_00401316((STT3DSprC *)&this->vtable_at_1d5);
   this->vtable = &st_global_00798C70;
   this->vtable_at_1d5 = &st_global_00798C6C;
   this->field_02A8 = 0;
@@ -160,8 +171,10 @@ undefined4 __thiscall st::fn_004D10A0(TLOEmbryoTy *this,int param_1)
             *(int *)(this->field_01F5 + this->field_02F0 * 0x24 + 0x10)) + uVar1;
   }
   st::fn_00401EBA(&this->vtable_at_1d5,*(byte *)&this->field_02F0,uVar1,uVar1 + 8,'\0');
+  /* ST_CALLSITE[004D1149]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064((STT3DSprC *)&this->vtable_at_1d5,*(char *)&this->field_02F0,uVar2);
   st::fn_00401EBA(&this->vtable_at_1d5,*(char *)&this->field_02F0 - 1,uVar1,uVar1 + 8,'\0');
+  /* ST_CALLSITE[004D1177]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064((STT3DSprC *)&this->vtable_at_1d5,*(char *)&this->field_02F0 + -1,uVar2);
   return 0;
 }

@@ -103,6 +103,7 @@ st::fn_004AB880
   iVar14 = local_14 * 0x24;
   local_8 = iVar14;
   if (*(int *)(&this_00->field_0020->field_0x0 + iVar14) != 0) {
+    /* ST_CALLSITE[004AB914]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
     iVar5 = st::fn_0040498A(this_00,param_1);
     if (iVar5 != 0) {
       st::fn_006A5E40
@@ -159,7 +160,7 @@ st::fn_004AB880
             );
   puVar1 = (ushort *)(&this_00->field_0020->field_0xe + local_8);
   *puVar1 = *puVar1 & 0xfe37;
-  pbVar2 = st::pointer_boundary_cast<byte *>(&this_00->field_0020->field_0xe + local_8);
+  pbVar2 = &this_00->field_0020->field_0xe + local_8;
   *pbVar2 = *pbVar2 | 0x20;
   this_00->field_001C = this_00->field_001C & ~(1 << ((byte)uVar10 & 0x1f));
   g_currentExceptionFrame = local_58.previous;
@@ -320,12 +321,12 @@ undefined4 __thiscall st::fn_004ABF00(STT3DSprC *this,char param_1,uint param_2)
       if (pSVar1->field_0010 == '\0') {
         puVar5 = pSVar1->field_0034;
         uVar4 = pSVar1->field_0018;
-        pcVar6 = st::pointer_boundary_cast<code *>(st::fn_00404999);
+        pcVar6 = (code *)st::fn_004AD6C0;
       }
       else {
         puVar5 = pSVar1->field_0034;
         uVar4 = pSVar1->field_0018;
-        pcVar6 = st::pointer_boundary_cast<code *>(st::fn_00405B64);
+        pcVar6 = (code *)st::fn_004AD740;
       }
       st::fn_006E9520
                 (pSVar1->field_003C,uVar4,(uint)puVar5,(uint)pcVar6,(uint)pSVar1);
@@ -550,7 +551,7 @@ undefined4 __thiscall st::fn_004AC1A0(STT3DSprC *this,byte param_1,uint param_2)
       goto cf_common_exit_004AC330;
       pSVar1->field_0013 = param_1;
       pSVar1->field_0030 = *(undefined4 *)(&pSVar1->field_0020->field_0x18 + iVar4);
-      pcVar6 = st::pointer_boundary_cast<code *>(st::fn_00404999);
+      pcVar6 = (code *)st::fn_004AD6C0;
     }
     else {
       if ((pSVar1->field_0038 == 0) ||
@@ -558,7 +559,7 @@ undefined4 __thiscall st::fn_004AC1A0(STT3DSprC *this,byte param_1,uint param_2)
       goto cf_common_exit_004AC330;
       pSVar1->field_0013 = param_1;
       pSVar1->field_0030 = piVar2[6];
-      pcVar6 = st::pointer_boundary_cast<code *>(st::fn_00405B64);
+      pcVar6 = (code *)st::fn_004AD740;
     }
     st::fn_006E9520
               (pSVar1->field_003C,pSVar1->field_0018,(uint)pSVar1->field_0034,(uint)pcVar6,
@@ -751,6 +752,7 @@ undefined4 * __thiscall st::fn_004AD790(STT3DSprC *this,uint *param_1)
   if (0 < local_18->field_0014) {
     local_c = nullptr;
     do {
+      /* ST_CALLSITE[004AD7E4]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar4 = st::fn_004022AC(this_00,(char)iVar10);
       uVar9 = *param_1 + iVar4 * 4;
       *param_1 = uVar9;
@@ -802,6 +804,7 @@ undefined4 * __thiscall st::fn_004AD790(STT3DSprC *this,uint *param_1)
     pcVar12 = pcVar11;
     local_c = pcVar11;
     do {
+      /* ST_CALLSITE[004AD8B3]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       uVar5 = st::fn_004022AC(this_00,(char)local_8);
       *(undefined4 *)pcVar12 = uVar5;
       pcVar11 = pcVar12 + 0x24;
@@ -873,6 +876,7 @@ undefined4 * __thiscall st::fn_004AD790(STT3DSprC *this,uint *param_1)
     local_10 = 0;
     do {
       pcVar11 = local_c;
+      /* ST_CALLSITE[004ADA3C]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       uVar9 = st::fn_004022AC(this_00,(char)local_8);
       pcVar12 = *(char **)(&this_00->field_0020->field_0x4 + local_10);
       for (uVar7 = uVar9 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -958,17 +962,21 @@ st::fn_004ADBA0(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_
   local_24->field_0013 = param_2->field_001F;
   local_24->field_0030 = *(undefined4 *)(param_2 + 1);
   local_24->field_0038 = param_1[6];
+  /* ST_CALLSITE[004ADC37]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   st::fn_004045D9(local_24,(float)local_24->field_0024,(float)local_24->field_0028,
                (float)local_24->field_002C);
   st::fn_006E9830
             (this_00->field_003C,this_00->field_0018,this_00->field_0004,this_00->field_0008);
   if (param_1[1] != 0) {
+    /* ST_CALLSITE[004ADC5E]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
     st::fn_0040116D(this_00,param_1[1],param_1[2]);
   }
-  if ((ushort *)param_1[3] != nullptr) {
+  if ((ushort *)param_1[3] != 0) {
+    /* ST_CALLSITE[004ADC6D]: CALL 0x00405ca9; direct=00405CA9 STT3DSprC::sub_004ACEF0 */
     st::fn_00405CA9(this_00,(ushort *)param_1[3]);
   }
-  if ((ushort *)param_1[4] != nullptr) {
+  if ((ushort *)param_1[4] != 0) {
+    /* ST_CALLSITE[004ADC80]: CALL 0x004044ee; direct=004044EE STT3DSprC::sub_004ACF20 */
     st::fn_004044EE(this_00,(ushort *)param_1[4],param_1[5]);
   }
   local_10 = (AnonShape_004ADBA0_0D812343 *)&param_2[1].field_0x4;
@@ -1007,6 +1015,7 @@ st::fn_004ADBA0(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_
       } while (cVar3 != '\0');
       if (iVar7 != -2) {
         (&this_00->field_0020->field_0xc)[local_18] = local_10->field_0x4;
+        /* ST_CALLSITE[004ADD18]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         st::fn_00404183(this_00,(byte)local_8,*(int **)(*param_1 + local_8 * 4),local_1c,
                      (&this_00->field_0020->field_0xc)[local_18]);
         pAVar5 = local_10;
@@ -1027,8 +1036,10 @@ st::fn_004ADBA0(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_
         *(undefined4 *)(&this_00->field_0020->field_0x14 + local_18) = local_10->field_000F;
         *(undefined4 *)(&this_00->field_0020->field_0x18 + local_18) = local_10->field_0013;
         *(undefined4 *)(&this_00->field_0020->field_0x20 + local_18) = local_10->field_001B;
+        /* ST_CALLSITE[004ADD78]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         st::fn_00405240(this_00,(byte)local_8,local_10->field_0017);
         if (pAVar5->field_0x5 == '\0') {
+          /* ST_CALLSITE[004ADD8A]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
           st::fn_00404264(this_00,(byte)local_8);
         }
       }
@@ -1038,7 +1049,7 @@ st::fn_004ADBA0(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_
         *puVar2 = *puVar2 & 0xfffe;
       }
       else {
-        pbVar1 = st::pointer_boundary_cast<byte *>(&this_00->field_0020->field_0xe + local_18);
+        pbVar1 = &this_00->field_0020->field_0xe + local_18;
         *pbVar1 = *pbVar1 | 1;
       }
       (&this_00->field_0020->field_0xd)[local_18] = local_10->field_0007;
@@ -1047,7 +1058,7 @@ st::fn_004ADBA0(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_
         *puVar2 = *puVar2 & 0xfffd;
       }
       else {
-        pbVar1 = st::pointer_boundary_cast<byte *>(&this_00->field_0020->field_0xe + local_18);
+        pbVar1 = &this_00->field_0020->field_0xe + local_18;
         *pbVar1 = *pbVar1 | 2;
       }
       if (local_10->field_0009 == '\0') {
@@ -1055,7 +1066,7 @@ st::fn_004ADBA0(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_
         *puVar2 = *puVar2 & 0xfdff;
       }
       else {
-        pbVar1 = st::pointer_boundary_cast<byte *>(&this_00->field_0020->field_0xf + local_18);
+        pbVar1 = &this_00->field_0020->field_0xf + local_18;
         *pbVar1 = *pbVar1 | 2;
       }
       if (local_10->field_000A == '\0') {
@@ -1063,31 +1074,37 @@ st::fn_004ADBA0(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_
         *puVar2 = *puVar2 & 0xfffb;
       }
       else {
-        pbVar1 = st::pointer_boundary_cast<byte *>(&this_00->field_0020->field_0xe + local_18);
+        pbVar1 = &this_00->field_0020->field_0xe + local_18;
         *pbVar1 = *pbVar1 | 4;
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       auto _local_c = CONCAT31(uStack_b,(char)local_8);
       if (local_10->field_001F == '\0') {
+        /* ST_CALLSITE[004ADE3B]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         st::fn_00401BAE(this_00,(char)local_8);
       }
       else {
         st::fn_00403FDA(this_00,(char)local_8);
       }
       pAVar5 = local_10;
-      if (*(char *)(local_10 + 1) == '\x01') {
+      if (((char *)local_10)[1] == '\x01') {
+        /* ST_CALLSITE[004ADE56]: CALL 0x00403afd; direct=00403AFD STT3DSprC::sub_004ACF50 */
         st::fn_00403AFD(this_00,(char)_local_c);
       }
       else {
+        /* ST_CALLSITE[004ADE63]: CALL 0x0040461f; direct=0040461F STT3DSprC::sub_004ACF90 */
         st::fn_0040461F(this_00,(char)_local_c);
       }
       if (pAVar5[1].field_0001 == '\x01') {
+        /* ST_CALLSITE[004ADE74]: CALL 0x00403233; direct=00403233 STT3DSprC::sub_004ACFE0 */
         st::fn_00403233(this_00,(char)_local_c);
       }
       else {
+        /* ST_CALLSITE[004ADE81]: CALL 0x00401951; direct=00401951 STT3DSprC::sub_004AD020 */
         st::fn_00401951(this_00,(char)_local_c);
       }
       if (pAVar5[1].field_0x2 == '\x01') {
+        /* ST_CALLSITE[004ADE92]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
         st::fn_00402761(this_00,(byte)_local_c);
       }
       if (pAVar5[1].field_0x3 == '\0') {
@@ -1095,7 +1112,7 @@ st::fn_004ADBA0(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_
         *puVar2 = *puVar2 & 0xfeff;
       }
       else {
-        pbVar1 = st::pointer_boundary_cast<byte *>(&this_00->field_0020->field_0xf + iVar7);
+        pbVar1 = &this_00->field_0020->field_0xf + iVar7;
         *pbVar1 = *pbVar1 | 1;
       }
       local_10 = (AnonShape_004ADBA0_0D812343 *)&pAVar5[1].field_0x4;

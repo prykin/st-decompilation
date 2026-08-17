@@ -1,5 +1,4 @@
 owner	type_path	status	typed_fields	named_fields	detail
-AiEventClassTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiEventClassTy_0000	disabled	0	0	apply=0
 AiFltClassTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0223	disabled	0	0	apply=0
 AiFltClassTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_022F	disabled	0	0	apply=0
 AiFltClassTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	disabled	0	0	apply=0
@@ -166,7 +165,7 @@ TLOBaseTy::pointee	/SubmarineTitans/Recovered/InlineRecordArrays/TLOBaseTy_Recor
 UpgPanelTy::pointee	/SubmarineTitans/Recovered/InlineRecordArrays/UpgPanelTy_Record_01AB_0030	disabled	0	0	apply=0
 WaitTy::pointee	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	unchanged	0	0	15 fields; length=507
 AiBossClassTy	/AiBossClassTy	unchanged	0	0	7 fields; length=1628
-AiEventClassTy	/AiEventClassTy	unchanged	0	0	39 fields; length=1463
+AiEventClassTy	/AiEventClassTy	unchanged	0	0	19 fields; length=1463
 AiFltClassTy	/AiFltClassTy	unchanged	0	0	128 fields; length=648
 AiPlrClassTy	/AiPlrClassTy	unchanged	0	0	34 fields; length=1794
 AiTactClassTy	/AiTactClassTy	unchanged	0	0	29 fields; length=324
@@ -255,7 +254,7 @@ STRubbishC	/STRubbishC	unchanged	0	0	15 fields; length=510
 STSatC	/STSatC	unchanged	0	0	29 fields; length=659
 STSharkC	/STSharkC	unchanged	0	0	34 fields; length=655
 STSprGameObjC	/STSprGameObjC	unchanged	0	0	53 fields; length=783
-STT3DSprC	/STT3DSprC	unchanged	0	0	18 fields; length=64
+STT3DSprC	/STT3DSprC	unchanged	0	0	19 fields; length=64
 STTeamLissagC	/STTeamLissagC	unchanged	0	0	8 fields; length=45
 STTmMineC	/STTmMineC	unchanged	0	0	16 fields; length=879
 STTorpC	/STTorpC	unchanged	0	0	57 fields; length=649

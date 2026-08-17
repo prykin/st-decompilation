@@ -32,10 +32,13 @@ DWORD FUN_006d4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytesR
     if (param_3 == nullptr) {
       return 0;
     }
+    /* ST_CALLSITE[006D4955]: CALL dword ptr [0x0085bc74] */
     DVar1 = SetFilePointer(param_1->field_000C,(LONG)lpNumberOfBytesRead,(PLONG)0x0,0);
     if ((DVar1 == 0xffffffff) ||
+       /* ST_CALLSITE[006D496E]: CALL dword ptr [0x0085bc68] */
        (BVar2 = ReadFile(param_1->field_000C,puVar4,nNumberOfBytesToRead,
                          (LPDWORD)&lpNumberOfBytesRead,(LPOVERLAPPED)0x0), BVar2 == 0)) {
+      /* ST_CALLSITE[006D4978]: CALL dword ptr [0x0085bbcc] */
       DVar1 = GetLastError();
       if (DVar1 != 0) {
         return DVar1;

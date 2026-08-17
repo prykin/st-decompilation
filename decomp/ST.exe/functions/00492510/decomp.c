@@ -13,6 +13,7 @@ void __thiscall FUN_00492510(void *this,int param_1)
     STField<undefined4>(this,0x7c6) = 0;
     return;
   }
+  /* ST_CALLSITE[00492532]: CALL 0x004027ca; direct=004027CA STBoatC::sub_00492420 */
   STBoatC::sub_00492420(this);
   return;
 }

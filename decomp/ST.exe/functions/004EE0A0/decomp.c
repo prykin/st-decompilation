@@ -55,6 +55,7 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   STPiece<0,1>(local_18) = local_10->field_01BB;
   STPiece<1,1>(local_18) = local_10->field_01BC;
   local_16 = local_10->field_01BD;
+  /* ST_CALLSITE[004EE10E]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
   STAllPlayersC::GetPanelInfo
             (g_allPlayers_007FA174,0xb,(AnonShape_0043BEB0_1C00EC12 *)&local_10->field_01AB);
   local_8 = (Global_sub_005272B0_param_1Enum *)&local_24;
@@ -73,7 +74,7 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
       *piVar5 = iVar2;
       iVar4 = thunk_FUN_005272b0(*pGVar7);
       piVar5[2] = iVar4;
-      *(undefined1 *)(piVar5 + 3) = 3;
+      ((undefined1 *)piVar5)[3] = 3;
     }
     piVar5 = (int *)((int)piVar5 + 0x27);
     pGVar7 = pGVar7 + 1;

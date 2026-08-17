@@ -45,6 +45,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
     return;
   }
   FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+  /* ST_CALLSITE[0059199D]: CALL 0x00403738; direct=00403738 PutDDX */
   PutDDX(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
   pCVar2 = local_8;
   pcVar11 = g_startSystem_0081176C->field_0030;
@@ -53,6 +54,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   resourceString =
        LoadResourceString((-(uint)(local_8->field_1FFC != 0) & 0xfffffca8) + 0x26b1,
                           g_hINSTANCE_00807618);
+  /* ST_CALLSITE[005919EB]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
   StartServTy::WrTextDDX
             (this_00,0,0xe9,0x14,0x14c,0x18,resourceString,uVar8,uVar9,pcVar11,errorCode);
   if (g_startSystem_0081176C->field_0028 == 0) {
@@ -60,6 +62,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
     bVar10 = 0;
     text = FUN_006f2c00("CMPG_BKG",1,(uint)DAT_0080874e);
     pBVar3 = (BITMAPINFO *)FUN_0070a9f0(g_cMf32_00806780,text,bVar10,iVar4);
+    /* ST_CALLSITE[00591AFD]: CALL 0x00403738; direct=00403738 PutDDX */
     PutDDX(0xa5,0x37,'\x01',pBVar3);
   }
   else {

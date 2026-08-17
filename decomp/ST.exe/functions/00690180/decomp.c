@@ -17,6 +17,7 @@ int __thiscall FUN_00690180(void *this,uint param_1,uint *param_2)
       iVar2 = 0;
     }
     if (*(AiFltClassTy **)(iVar2 + 4) != nullptr) {
+      /* ST_CALLSITE[006901B7]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
       iVar1 = AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar2 + 4),param_2);
       return iVar1;
     }

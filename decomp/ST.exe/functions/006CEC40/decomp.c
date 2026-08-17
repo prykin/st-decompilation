@@ -19,11 +19,13 @@ void FUN_006cec40(AnonShape_006CEC40_BB23E716 *param_1)
   if (param_1 != nullptr) {
     piVar1 = param_1->field_0034;
     if (piVar1 != nullptr) {
+      /* ST_CALLSITE[006CEC55]: CALL dword ptr [ECX + 0x6c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar1 + 0x6c))(piVar1);
     }
     piVar1 = param_1->field_0040;
     if (piVar1 != nullptr) {
+      /* ST_CALLSITE[006CEC62]: CALL dword ptr [EDX + 0x6c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*piVar1 + 0x6c))(piVar1);
       if (iVar2 == -0x7789fdb5) {
@@ -32,6 +34,7 @@ void FUN_006cec40(AnonShape_006CEC40_BB23E716 *param_1)
     }
     piVar1 = param_1->field_0044;
     if (piVar1 != nullptr) {
+      /* ST_CALLSITE[006CEC7E]: CALL dword ptr [ECX + 0x6c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*piVar1 + 0x6c))(piVar1);
       if (iVar2 == -0x7789fdb5) {
@@ -40,6 +43,7 @@ void FUN_006cec40(AnonShape_006CEC40_BB23E716 *param_1)
     }
     piVar1 = param_1->field_0048;
     if (piVar1 != nullptr) {
+      /* ST_CALLSITE[006CEC9A]: CALL dword ptr [EDX + 0x6c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar1 + 0x6c))(piVar1);
     }

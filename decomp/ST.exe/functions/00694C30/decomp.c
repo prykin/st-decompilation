@@ -10,12 +10,14 @@ void __thiscall CGenerate::sub_00694C30(CGenerate *this)
 
 {
   if ((this->field_0010 != 0) || (this->field_0014 != 0)) {
+    /* ST_CALLSITE[00694C43]: CALL 0x00403c88; direct=00403C88 CGenerate::sub_00694BE0 */
     sub_00694BE0(this);
   }
   this->field_0014 = this->field_000C;
   this->field_0010 = this->field_0008;
   this->field_0008 = nullptr;
   this->field_000C = nullptr;
+  /* ST_CALLSITE[00694C64]: CALL 0x004012a8; direct=004012A8 CGenerate::sub_006A0150 */
   sub_006A0150(this);
   return;
 }

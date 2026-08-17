@@ -64,6 +64,7 @@ LAB_00679378:
     }
     STPiece<0,4>(local_3c[0]) = 0x71;
     if (&stack0x00000000 != (undefined1 *)0x3c) {
+      /* ST_CALLSITE[0067939C]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
       AiTactClassTy::GetAiMess(this_00,local_3c);
     }
     thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)&this_00->field_0x8);

@@ -14,6 +14,7 @@ int __fastcall FUN_00747e4e(AnonShape_00747822_A1E67AF6 *param_1)
 {
   int iVar1;
 
+  /* ST_CALLSITE[00747E56]: CALL dword ptr [EAX + 0x14] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(*param_1->field_000C + 0x14))();
   return (uint)(iVar1 != param_1->field_0010);

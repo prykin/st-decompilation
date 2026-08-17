@@ -29,12 +29,14 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
       local_10 = param_3 * 0x26 + 0x38;
       local_8 = uVar3;
       do {
+        /* ST_CALLSITE[005BFDA7]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pMVar2->field_0073,iVar5,local_10,'\x06',
                (byte *)pMVar2->field_006F);
         iVar5 = iVar5 + 6;
         local_8 = local_8 - 1;
       } while (local_8 != 0);
     }
+    /* ST_CALLSITE[005BFDC9]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"%8d",param_1);
     uVar3 = param_3 * 0x26 + 0x30;
     FUN_006b4170((RecoveredSourceFamily_dibcopy *)pMVar2->field_0073,0,0x280,uVar3,0x50,0x1c,0);

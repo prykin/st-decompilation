@@ -51,9 +51,13 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
     uVar8 = *(int *)(param_1 + 2) * (uint)param_1[7] + 0x1f >> 3 & 0x1ffffffc;
     local_c = puVar10;
     iVar5 = FUN_006b4fe0((int)param_1);
+    /* ST_CALLSITE[006C800D]: CALL dword ptr [0x0085be4c] */
     hdc = GetDC((HWND)0x0);
+    /* ST_CALLSITE[006C8024]: CALL dword ptr [0x0085ba80] */
     GetSystemPaletteEntries(hdc,0,0x100,(LPPALETTEENTRY)&local_914);
+    /* ST_CALLSITE[006C802D]: CALL dword ptr [0x0085be48] */
     ReleaseDC((HWND)0x0,hdc);
+    /* ST_CALLSITE[006C8045]: CALL dword ptr [0x0085baa0] */
     GetPaletteEntries(param_3,0,0x100,local_514[0].palPalEntry);
     iVar7 = 0;
     pPVar2 = local_514[0].palPalEntry;
@@ -71,12 +75,14 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
     if (iVar7 != 0) {
       local_514[0].palVersion = 0x300;
       local_514[0].palNumEntries = 0x100;
+      /* ST_CALLSITE[006C8099]: CALL dword ptr [0x0085ba7c] */
       param_3 = CreatePalette(local_514);
     }
     iVar6 = 0;
     if (0 < iVar5) {
       do {
         if (iVar6 != param_4) {
+          /* ST_CALLSITE[006C80C6]: CALL dword ptr [0x0085baa8] */
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           UVar3 = GetNearestPaletteIndex
                             (param_3,(uint)CONCAT21(CONCAT11((char)*puVar10,
@@ -113,6 +119,7 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
       iVar6 = iVar6 + -1;
     } while (iVar6 != 0);
     if (local_8 != 0) {
+      /* ST_CALLSITE[006C815A]: CALL dword ptr [0x0085ba78] */
       DeleteObject(param_3);
     }
   }

@@ -147,6 +147,7 @@ HDC __cdecl FUN_005df290(int param_1,undefined *param_2,BYTE param_3)
   local_5c[0x46] = 0x78;
   local_5c[0x47] = 0x79;
   local_5c[0x48] = 0x7a;
+  /* ST_CALLSITE[005DF492]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   pHVar2 = ccFntTy::operator_new
                      (0x19d,&local_98,nullptr,local_5c,param_1,local_10,5,2,1,0,0x40011c,param_2
                      );

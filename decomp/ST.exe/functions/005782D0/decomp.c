@@ -11,13 +11,16 @@ void FUN_005782d0(void)
     g_debugSystem_00811644 = nullptr;
   }
   else {
+    /* ST_CALLSITE[005782E7]: CALL 0x00405dd0; direct=00405DD0 DebugSystemC::DebugSystemC */
     g_debugSystem_00811644 = DebugSystemC::DebugSystemC(this,g_app_00806728);
   }
   g_debugSystem_00811644->field_0020 = 0;
+  /* ST_CALLSITE[00578304]: CALL dword ptr [EDX] */
   iVar2 = (*g_debugSystem_00811644->vtable->InitSystem)((SystemClassTy *)g_debugSystem_00811644);
   if (iVar2 != 0) {
     thunk_FUN_00578370();
   }
+  /* ST_CALLSITE[0057831D]: CALL 0x006e4650; direct=006E4650 AppClassTy::AddSystem */
   iVar1 = AppClassTy::AddSystem(g_app_00806728,(int *)g_debugSystem_00811644,0);
   if (iVar1 != 0) {
     thunk_FUN_00578370();

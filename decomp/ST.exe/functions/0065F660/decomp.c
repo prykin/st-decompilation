@@ -74,6 +74,7 @@ int __thiscall AiFltClassTy::AppendPoint(AiFltClassTy *this,short *param_1,int p
       iVar9 = thunk_FUN_00675950((uVar7 >> 0x10) % (uint)(int)sVar3 + (int)sVar4,
                                  (uVar6 >> 0x10) % (uint)(int)sVar2 + (int)sVar1,2,local_20,
                                  local_20 + 1,local_20 + 2,0);
+      /* ST_CALLSITE[0065F75F]: CALL 0x00404eb2; direct=00404EB2 AiFltClassTy::sub_0065F5C0 */
       if ((iVar9 != 0) && (iVar9 = sub_0065F5C0(this_00,local_20), iVar9 != 0)) {
         g_currentExceptionFrame = local_64.previous;
         return 0;

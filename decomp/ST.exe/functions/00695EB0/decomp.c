@@ -21,6 +21,7 @@ void __thiscall CGenerate::sub_00695EB0(CGenerate *this)
     FreeAndNull(&this->field_584F);
   }
   this->field_584F = nullptr;
+  /* ST_CALLSITE[00695EEE]: CALL 0x004041a1; direct=004041A1 CGenerate::sub_00695F20 */
   sub_00695F20(this);
   return;
 }

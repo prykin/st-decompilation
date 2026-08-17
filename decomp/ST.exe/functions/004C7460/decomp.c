@@ -74,6 +74,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C7460(TLOBaseTy *this)
       iVar4 = this->field_0607->field_0000;
     }
     if (*(int *)(&DAT_00794d70 + iVar4 * 4) != -1) {
+      /* ST_CALLSITE[004C7655]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar1 = LookupRecordByte(*(char *)&this->field_0024);
       iVar3 = local_8;
       if (bVar1 == 3) {

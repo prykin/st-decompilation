@@ -41,9 +41,7 @@ cf_continue_loop_006ACD0D:
     pRVar4 = local_8;
     iVar3 = ((int)local_8 - (int)arg_2) / param_3;
     if (7 < iVar3) {
-      FUN_006ce700((AnonShape_006CE700_6E2936C3 *)arg_2,
-                   (AnonShape_006CE700_F21E5976 *)((int)&arg_2->field_0000 + (iVar3 / 2) * param_3),
-                   param_3);
+      FUN_006ce700((byte *)arg_2,(byte *)((int)&arg_2->field_0000 + (iVar3 / 2) * param_3),param_3);
       arg_1 = arg_2;
 cf_continue_loop_006ACD37:
       arg_1 = (RuntimeRecord_007F4D3C_0014 *)((int)&arg_1->field_0000 + param_3);
@@ -55,13 +53,13 @@ cf_continue_loop_006ACD37:
         pRVar5 = (RuntimeRecord_007F4D3C_0014 *)((int)pRVar5 - param_3)) {
       while (pRVar4 = (RuntimeRecord_007F4D3C_0014 *)((int)&pRVar4->field_0000 + param_3),
             pRVar4 <= pRVar5) {
+        /* ST_CALLSITE[006ACE0C]: CALL dword ptr [EBP + 0x14] */
         iVar3 = (*param_4)(pRVar4,local_8);
         if (0 < iVar3) {
           local_8 = pRVar4;
         }
       }
-      FUN_006ce700((AnonShape_006CE700_6E2936C3 *)local_8,(AnonShape_006CE700_F21E5976 *)pRVar5,
-                   param_3);
+      FUN_006ce700((byte *)local_8,(byte *)pRVar5,param_3);
     }
     if (0 < (int)param_1) {
       param_1 = (RuntimeRecord_007F4D3C_0014 *)((int)&param_1[-1].field_0010 + 3);
@@ -75,19 +73,21 @@ cf_continue_loop_006ACD37:
   }
   return;
 code_r0x006acd43:
+  /* ST_CALLSITE[006ACD45]: CALL dword ptr [EBP + 0x14] */
   iVar3 = (*param_4)(arg_1,arg_2);
   if (iVar3 < 1) goto cf_continue_loop_006ACD37;
 LAB_006acd4f:
   do {
     pRVar4 = (RuntimeRecord_007F4D3C_0014 *)((int)pRVar4 - param_3);
     if (pRVar4 <= arg_2) break;
+    /* ST_CALLSITE[006ACD58]: CALL dword ptr [EBP + 0x14] */
     iVar3 = (*param_4)(pRVar4,arg_2);
   } while (-1 < iVar3);
   if (arg_1 <= pRVar4) {
-    FUN_006ce700((AnonShape_006CE700_6E2936C3 *)arg_1,(AnonShape_006CE700_F21E5976 *)pRVar4,param_3);
+    FUN_006ce700((byte *)arg_1,(byte *)pRVar4,param_3);
     goto cf_continue_loop_006ACD37;
   }
-  FUN_006ce700((AnonShape_006CE700_6E2936C3 *)arg_2,(AnonShape_006CE700_F21E5976 *)pRVar4,param_3);
+  FUN_006ce700((byte *)arg_2,(byte *)pRVar4,param_3);
   pRVar5_mg0 = arg_2;
   pRVar5 = pRVar4;
   if (((RuntimeRecord_007F4D3C_0014 *)((int)&arg_1->field_0000 + param_3) < local_8) &&

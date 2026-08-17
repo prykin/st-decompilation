@@ -22,7 +22,7 @@ int __thiscall FUN_00604ee0(void *this,int *param_1)
   iVar2 = 0;
   local_8 = 0;
   local_2c.id = MESS_ID_CREATE;
-  auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+  int * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   if (0 < STField<int>(this,0x269)) {
     piVar3 = (int *)((int)this + 0x219);
     local_c = this;
@@ -35,6 +35,7 @@ int __thiscall FUN_00604ee0(void *this,int *param_1)
         iVar2 = *piVar5;
         local_8 = local_8 + 4 + iVar2;
         local_2c.arg0.ptr = piVar5 + 1;
+        /* ST_CALLSITE[00604F52]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
         STParticleC::GetMessage((STParticleC *)*piVar3,&local_2c);
         piVar5 = (int *)((int)(piVar5 + 1) + iVar2);
         iVar2 = local_8;

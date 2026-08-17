@@ -30,11 +30,13 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,unde
     SVar3 = thunk_FUN_00601db0(*(Global_sub_00601DB0_param_1Enum *)
                                 (STField<int>(this,0x23b) + 4 +
                                 *(int *)(STField<int>(this,0x23f) + param_2 * 4) * 0x18));
+    /* ST_CALLSITE[005FF48F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)puVar1[4],*puVar1,SVar3);
     if (this_00 == nullptr) {
       return 0;
     }
     thunk_FUN_00416270(this_00,&param_3,(int *)&param_4,(short *)((int)&param_5 + 2));
+    /* ST_CALLSITE[005FF4B5]: CALL dword ptr [EDX + 0x78] */
     iVar4 = this_00->vfunc_78();
     if (iVar4 < 1) {
       return 0;

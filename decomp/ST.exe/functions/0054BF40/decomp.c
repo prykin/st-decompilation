@@ -325,7 +325,9 @@ switchD_0054bfbc_caseD_20:
     pBVar4 = (BITMAPINFO *)0x24;
     pcVar3 = "CUR_SLD";
 cf_common_exit_0054C06F:
+    /* ST_CALLSITE[0054C073]: CALL 0x0040376f; direct=0040376F CursorClassTy::SetImages */
     SetImages(local_14,1,pcVar3,0x32,pBVar4,uVar5,iVar6,iVar7);
+    /* ST_CALLSITE[0054C088]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = local_58.previous;
     return 0;
@@ -337,7 +339,9 @@ cf_common_exit_0054C06F:
     uVar2 = 0x32;
     pcVar3 = "CUR_SRD";
 cf_common_exit_0054C01C:
+    /* ST_CALLSITE[0054C020]: CALL 0x0040376f; direct=0040376F CursorClassTy::SetImages */
     SetImages(local_14,1,pcVar3,uVar2,pBVar4,uVar5,iVar6,iVar7);
+    /* ST_CALLSITE[0054C035]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = local_58.previous;
     return 0;
@@ -391,12 +395,16 @@ switchD_0054c0ac_default:
     uVar5 = local_8;
     break;
   case 0x46:
+    /* ST_CALLSITE[0054C358]: CALL 0x0040376f; direct=0040376F CursorClassTy::SetImages */
     SetImages(local_14,1,"CUR_HYPER",0x32,(BITMAPINFO *)0xd,0,0x1b,0xf);
+    /* ST_CALLSITE[0054C36D]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   case 0x47:
+    /* ST_CALLSITE[0054C397]: CALL 0x0040376f; direct=0040376F CursorClassTy::SetImages */
     SetImages(local_14,1,"CUR_HELPNO",0x32,(BITMAPINFO *)0x1,1,0x1d,0x30);
+    /* ST_CALLSITE[0054C3AC]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = local_58.previous;
     return 0;
@@ -407,7 +415,9 @@ switchD_0054c0ac_default:
     pBVar4 = (BITMAPINFO *)0x20;
     uVar5 = 0x12;
   }
+  /* ST_CALLSITE[0054C3D6]: CALL 0x0040376f; direct=0040376F CursorClassTy::SetImages */
   SetImages(local_14,1,pcVar3,0x32,pBVar4,uVar5,iVar6,iVar7);
+  /* ST_CALLSITE[0054C3EB]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
   DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
   g_currentExceptionFrame = local_58.previous;
   return 0;

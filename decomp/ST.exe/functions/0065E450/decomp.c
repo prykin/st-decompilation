@@ -46,6 +46,7 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
   case CASE_BE:
     iVar3 = 0x72;
   }
+  /* ST_CALLSITE[0065E4A3]: CALL 0x004059b6; direct=004059B6 AiFltClassTy::sub_0065E360 */
   array = (DArrayTy *)AiFltClassTy::sub_0065E360((AiFltClassTy *)param_1,param_2,iVar3);
   if (array == nullptr) {
     return 0;
@@ -60,6 +61,7 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
       else {
         puVar5 = nullptr;
       }
+      /* ST_CALLSITE[0065E4EA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,param_1->field_0024,*puVar5,CASE_1);
       switch(GVar2) {
       case 0:
@@ -77,8 +79,10 @@ LAB_0065e58d:
           bVar1 = 1;
         }
         else {
+          /* ST_CALLSITE[0065E54E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           uVar6 = LookupRecordByte((char)this->field_023D);
           iVar3 = this->field_0235;
+          /* ST_CALLSITE[0065E575]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           uVar7 = LookupRecordByte(*(char *)&this->field_0024);
           uVar7 = (int)(byte)uVar7;
           if ((&DAT_007e1984)[uVar7 + ((uint)(byte)uVar6 + iVar3 * 3) * 3] != '\0')

@@ -7,6 +7,7 @@
 uint __fastcall FUN_004ea6c0(int param_1)
 
 {
+  /* ST_CALLSITE[004EA6C0]: CALL 0x00404e9e; direct=00404E9E TLOBaseTy::sub_004EA620 */
   TLOBaseTy::sub_004EA620((TLOBaseTy *)param_1);
   return 0;
 }

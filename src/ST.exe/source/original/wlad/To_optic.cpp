@@ -48,6 +48,7 @@ int __thiscall st::fn_004A8920(OpticClassC *this,STMessage *message)
     if (SVar1 != MESS_OPTICCLASSC_0104) {
       if (SVar1 < 4) {
         if (SVar1 == MESS_SHARED_0003) {
+          /* ST_CALLSITE[004A8A99]: CALL 0x00404011; direct=00404011 CursorClassTy::DelOpticAcc */
           st::fn_00404011(g_cursorClass_00802A30);
           g_currentExceptionFrame = local_6c.previous;
           return 0;
@@ -87,7 +88,9 @@ int __thiscall st::fn_004A8920(OpticClassC *this,STMessage *message)
           g_currentExceptionFrame = local_6c.previous;
           return 0;
         }
+        /* ST_CALLSITE[004A899C]: CALL 0x0040255e; direct=0040255E OpticClassC::InitOptic */
         st::fn_0040255E(g_opticClass_007FB2A0);
+        /* ST_CALLSITE[004A89A7]: CALL 0x004039bd; direct=004039BD CursorClassTy::AddOpticAcc */
         st::fn_004039BD(g_cursorClass_00802A30);
         goto LAB_004a8b47;
       }
@@ -114,6 +117,7 @@ int __thiscall st::fn_004A8920(OpticClassC *this,STMessage *message)
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = 0;
+    /* ST_CALLSITE[004A8B44]: CALL dword ptr [EAX + 0x18] */
     (*g_playSystem_00802A38->vtable->SendMessage)
               ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_28);
 LAB_004a8b47:
@@ -149,6 +153,7 @@ LAB_004a8b47:
     default:
       goto switchD_004a8b81_caseD_108;
     case MESS_SHARED_010F:
+      /* ST_CALLSITE[004A8B9F]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       st::fn_00401078
                 (g_playSystem_00802A38,st::mutable_c_string("opticsave"),(byte *)&DAT_008073d0,399,0xc);
       g_currentExceptionFrame = local_6c.previous;
@@ -161,6 +166,7 @@ LAB_004a8c23:
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = uVar5;
+    /* ST_CALLSITE[004A8C46]: CALL dword ptr [EDX + 0x18] */
     (*g_playSystem_00802A38->vtable->SendMessage)
               ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_28);
 LAB_004a8c49:
@@ -239,7 +245,7 @@ void __thiscall st::fn_004A8FC0(OpticClassC *this)
     dVar1 = (double)(_DAT_007904f8 / (_DAT_007ac580 / (float)DAT_00807570) + (float)_DAT_007901c0);
     fVar8 = st::fn_0072E150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
     _DAT_00807428 = DAT_00807420;
-    ram0x0080743d = 0;
+    st_image_0080743D = 0;
     _DAT_00807441 = 0;
     _DAT_00807445 = 0;
     _DAT_00807449 = 0;
@@ -289,7 +295,7 @@ void __thiscall st::fn_004A8FC0(OpticClassC *this)
     puVar7 = puVar7 + 2;
   }
   *puVar7 = *puVar6;
-  *(char *)(puVar7 + 1) = (char)puVar6[1];
+  ((char *)puVar7)[1] = (char)puVar6[1];
   st::fn_0072E150(0xc0000000,0x403ccccc);
   lVar10 = st::fn_0072E288();
   st::fn_006DC050
@@ -363,7 +369,7 @@ void __thiscall st::fn_004A9540(OpticClassC *this,int param_1)
   local_14 = (&DAT_00807574)[param_1 * 4];
   _DAT_00807428 = DAT_00807420;
   DAT_0080743c = DAT_0080743c & 0xff;
-  uRam00807440 = 0;
+  st_image_00807440 = 0;
   _DAT_00807441 = 0;
   _DAT_00807445 = 0;
   _DAT_00807449 = 0;

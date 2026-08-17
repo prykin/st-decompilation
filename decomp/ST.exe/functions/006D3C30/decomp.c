@@ -39,6 +39,7 @@ void FUN_006d3c30(AnonShape_006D3C30_0FAA5DE6 *param_1,int param_2,int param_3,i
       lprcDst = &param_1->field_0484;
       local_14.top = 0;
       local_14.left = 0;
+      /* ST_CALLSITE[006D3CD7]: CALL dword ptr [0x0085be50] */
       BVar1 = IntersectRect((LPRECT)lprcDst,&local_24,&local_14);
       if (BVar1 == 0) {
         param_1->field_0490 = 0;
@@ -47,8 +48,10 @@ void FUN_006d3c30(AnonShape_006D3C30_0FAA5DE6 *param_1,int param_2,int param_3,i
         *lprcDst = 0;
       }
       if ((HGDIOBJ)param_1->field_0494 != (HGDIOBJ)0x0) {
+        /* ST_CALLSITE[006D3D00]: CALL dword ptr [0x0085ba78] */
         DeleteObject((HGDIOBJ)param_1->field_0494);
       }
+      /* ST_CALLSITE[006D3D1E]: CALL dword ptr [0x0085bac0] */
       pHVar2 = CreateRectRgn(*lprcDst,param_1->field_0488,param_1->field_048C,param_1->field_0490);
       param_1->field_0494 = pHVar2;
       return;
@@ -59,6 +62,7 @@ void FUN_006d3c30(AnonShape_006D3C30_0FAA5DE6 *param_1,int param_2,int param_3,i
   param_1->field_0484 = 0;
   param_1->field_048C = param_1->field_0018;
   if ((HGDIOBJ)param_1->field_0494 != (HGDIOBJ)0x0) {
+    /* ST_CALLSITE[006D3D5C]: CALL dword ptr [0x0085ba78] */
     DeleteObject((HGDIOBJ)param_1->field_0494);
   }
   param_1->field_0494 = 0;

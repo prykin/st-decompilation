@@ -120,11 +120,16 @@ LAB_005795a9:
     uVar3 = (uVar3 - 1 | 0xfffffff8) + 1;
   }
   uVar3 = (((0x18 - (int)(uVar3 * 0x2d) / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18) / 3;
+  /* ST_CALLSITE[00579685]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase((STT3DSprC *)this,'\r',uVar3);
+  /* ST_CALLSITE[0057968E]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
   STT3DSprC::ShowCurFase((STT3DSprC *)this,'\r');
+  /* ST_CALLSITE[005796A4]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase((STT3DSprC *)this,'\x0e',param_1->field_0231 + uVar3 * 6);
+  /* ST_CALLSITE[005796AD]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
   STT3DSprC::ShowCurFase((STT3DSprC *)this,'\x0e');
   param_1->field_023D = param_1->field_023D + 1;
+  /* ST_CALLSITE[005796C3]: CALL dword ptr [EDX + 0xd8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(param_1->field_0000 + 0xd8))();
   return;

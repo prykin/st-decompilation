@@ -17,6 +17,7 @@ void __thiscall st::fn_004F0AF0(BldObjPanelTy *this,int param_1)
   short sVar1;
 
   if (param_1 != this->field_005C) {
+    /* ST_CALLSITE[004F0B00]: CALL 0x00402b3a; direct=00402B3A ProdPanelTy::ShiftControls */
     st::fn_00402B3A((ProdPanelTy *)this,param_1);
     sVar1 = (short)this->field_0174;
     this->field_0028 = 0x24;

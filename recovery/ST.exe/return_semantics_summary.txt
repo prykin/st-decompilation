@@ -11,6 +11,7 @@ void_eax_read_review: 0
 typed_pointer_return: 0
 forwarded_call_return: 0
 returned_pointer_parameter: 0
+pointer_producer_argument_roundtrip: 0
 machine_eax_return: 0
 shared_tail_return: 0
 boolean_return_domain: 0

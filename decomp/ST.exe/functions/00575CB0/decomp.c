@@ -116,6 +116,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_20 = *(AnonShape_0060EA30_DCEB68AD **)((message->arg0).u32 + 0x14);
     local_10 = (AnonShape_00575CB0_065D0A66 *)((message->arg0).u32 + 0x18);
+    /* ST_CALLSITE[005760B5]: CALL dword ptr [0x0085bbb8] */
     BVar8 = IsBadReadPtr(local_10,(int)local_20 * 0x92);
     if (BVar8 != 0) {
       RaiseInternalException
@@ -521,6 +522,7 @@ LAB_00576308:
         local_10 = (AnonShape_00575CB0_065D0A66 *)&pAVar5->field_0002;
       } while (local_18 < pSVar18->field_003C);
     }
+    /* ST_CALLSITE[00575F96]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,pSVar18->field_0018,local_1c,(uint)local_20);
     FreeAndNull(&local_1c);
     g_currentExceptionFrame = local_a4.previous;

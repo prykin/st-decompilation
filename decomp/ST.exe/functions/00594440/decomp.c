@@ -50,9 +50,11 @@ int __thiscall ComboTy::GetMessage(ComboTy *this,STMessage *message)
     }
     switch(SVar2) {
     case MESS_ID_CREATE:
+      /* ST_CALLSITE[005944B5]: CALL 0x004036cf; direct=004036CF ComboTy::InitCombo */
       InitCombo(local_c,(message->arg0).ptr);
       break;
     case MESS_SHARED_0003:
+      /* ST_CALLSITE[005944C1]: CALL 0x00403134; direct=00403134 ComboTy::DoneCombo */
       DoneCombo(local_c);
       break;
     case MESS_SHARED_0005:
@@ -65,12 +67,14 @@ int __thiscall ComboTy::GetMessage(ComboTy *this,STMessage *message)
           ((int)uVar9 < local_c->field_00F4 + local_c->field_00EC)) &&
          (local_c->field_00F0 <= (int)uVar8)) {
         if (local_c->field_00F8 + local_c->field_00F0 <= (int)uVar8) {
+          /* ST_CALLSITE[00594521]: CALL 0x00403968; direct=00403968 ComboTy::sub_005943F0 */
           sub_005943F0(local_c);
         }
         break;
       }
     case MESS_SHARED_0064:
 switchD_005944a8_caseD_64:
+      /* ST_CALLSITE[00594567]: CALL 0x00403968; direct=00403968 ComboTy::sub_005943F0 */
       sub_005943F0(local_c);
     }
 cf_common_exit_00594615:

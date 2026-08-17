@@ -4,6 +4,7 @@
 
 extern AiBossClassTyVTable st_global_0079D658; // image symbol: AiBossClassTyVTable
 extern AiBossClassTyVTable_at_1C st_global_0079D618; // image symbol: AiBossClassTyVTable_at_1C
+extern AiEventClassTyVTable st_global_0079D67C; // image symbol: AiEventClassTyVTable
 extern AiFltClassTyVTable st_global_0079D6BC; // image symbol: AiFltClassTyVTable
 extern AiPlrClassTyVTable st_global_0079D714; // image symbol: AiPlrClassTyVTable
 extern AiPlrClassTyVTable_at_1C st_global_0079D6D4; // image symbol: AiPlrClassTyVTable_at_1C
@@ -1661,7 +1662,6 @@ extern undefined4 DAT_008571cc;
 extern undefined4 DAT_00857504;
 extern undefined4 DAT_00857508;
 extern undefined4 DAT_0085751c;
-extern undefined4 DAT_0085753c;
 extern undefined4 DAT_00857540;
 extern undefined4 DAT_00857544;
 extern undefined4 DAT_0085754c;
@@ -1702,7 +1702,7 @@ extern MainMenuTyVTable st_global_0079C098; // image symbol: MainMenuTyVTable
 extern MoneyTyVTable st_global_0079ACE4; // image symbol: MoneyTyVTable
 extern OptPanelTyVTable st_global_0079AD10; // image symbol: OptPanelTyVTable
 extern OpticClassCVTable st_global_00790758; // image symbol: OpticClassCVTable
-extern void *PTR_007f4cf0;
+extern undefined2 *PTR_007f4cf0;
 extern undefined4 *PTR_007f4d00;
 extern undefined4 *PTR_007f4d04;
 extern int *PTR_007f4d50;
@@ -1743,7 +1743,7 @@ extern ushort *PTR_008073c8;
 extern ushort *PTR_008073cc;
 extern ushort *PTR_00807560;
 extern DArrayTy *PTR_0080c502;
-extern void *PTR_0080c506;
+extern undefined4 *PTR_0080c506;
 extern AnonPointee_TLOBaseTy_0607 *PTR_00811718;
 extern AnonPointee_TLOBaseTy_0607 *PTR_0081171c;
 extern AnonShape_GLOBAL_0081175C_57F682DD *PTR_0081175c;
@@ -1778,6 +1778,7 @@ extern uint *PTR_00857118;
 extern undefined4 *PTR_00857134;
 extern AnonShape_GLOBAL_00857168_D75747E9 *PTR_00857168;
 extern char *PTR_00857528;
+extern byte *PTR_0085753c;
 extern char *PTR_00857548;
 extern char *PTR_0085755c;
 extern undefined *PTR_CHAR_e_007d0364;
@@ -2034,6 +2035,7 @@ extern STRubbishCVTable st_global_0079D098; // image symbol: STRubbishCVTable
 extern STSatCVTable st_global_0079BD1C; // image symbol: STSatCVTable
 extern STSharkCVTable st_global_0079BE80; // image symbol: STSharkCVTable
 extern STSprGameObjCVTable st_global_0079C3EC; // image symbol: STSprGameObjCVTable
+extern STT3DSprCVTable st_global_00790790; // image symbol: STT3DSprCVTable
 extern STTorpCVTable st_global_0079D4AC; // image symbol: STTorpCVTable
 extern STVolcanoCVTable st_global_0079D610; // image symbol: STVolcanoCVTable
 extern SettMapMTyVTable st_global_0079C124; // image symbol: SettMapMTyVTable
@@ -2055,7 +2057,6 @@ extern UpgPanelTyVTable st_global_0079AE90; // image symbol: UpgPanelTyVTable
 extern VTable_00790508 st_global_00790508; // image symbol: VTable_00790508
 extern VTable_00790700 st_global_00790700; // image symbol: VTable_00790700
 extern VTable_00790708 st_global_00790708; // image symbol: VTable_00790708
-extern VTable_00790790 st_global_00790790; // image symbol: VTable_00790790
 extern VTable_00790C00 st_global_00790C00; // image symbol: VTable_00790C00
 extern VTable_007976C0 st_global_007976C0; // image symbol: VTable_007976C0
 extern VTable_0079AC18 st_global_0079AC18; // image symbol: VTable_0079AC18
@@ -2086,7 +2087,6 @@ extern VTable_0079D338 st_global_0079D338; // image symbol: VTable_0079D338
 extern VTable_0079D33C st_global_0079D33C; // image symbol: VTable_0079D33C
 extern VTable_0079D49C st_global_0079D49C; // image symbol: VTable_0079D49C
 extern VTable_0079D60C st_global_0079D60C; // image symbol: VTable_0079D60C
-extern VTable_0079D67C st_global_0079D67C; // image symbol: VTable_0079D67C
 extern VTable_0079D75C st_global_0079D75C; // image symbol: VTable_0079D75C
 extern VTable_0079DAF0 st_global_0079DAF0; // image symbol: VTable_0079DAF0
 extern VTable_0079DB04 st_global_0079DB04; // image symbol: VTable_0079DB04
@@ -2671,7 +2671,7 @@ extern VTable_00790708 st_global_00790708; // image symbol: VTable_00790708
 extern DumpClassCVTable st_global_00790710; // image symbol: DumpClassCVTable
 extern STGroupBoatCVTable st_global_00790728; // image symbol: STGroupBoatCVTable
 extern OpticClassCVTable st_global_00790758; // image symbol: OpticClassCVTable
-extern VTable_00790790 st_global_00790790; // image symbol: VTable_00790790
+extern STT3DSprCVTable st_global_00790790; // image symbol: STT3DSprCVTable
 extern TLOBaseTyVTable st_global_00790AA0; // image symbol: TLOBaseTyVTable
 extern VTable_00790C00 st_global_00790C00; // image symbol: VTable_00790C00
 extern TLOBldMarkVTable st_global_00790C04; // image symbol: TLOBldMarkVTable
@@ -2820,7 +2820,7 @@ extern VTable_0079D60C st_global_0079D60C; // image symbol: VTable_0079D60C
 extern STVolcanoCVTable st_global_0079D610; // image symbol: STVolcanoCVTable
 extern AiBossClassTyVTable_at_1C st_global_0079D618; // image symbol: AiBossClassTyVTable_at_1C
 extern AiBossClassTyVTable st_global_0079D658; // image symbol: AiBossClassTyVTable
-extern VTable_0079D67C st_global_0079D67C; // image symbol: VTable_0079D67C
+extern AiEventClassTyVTable st_global_0079D67C; // image symbol: AiEventClassTyVTable
 extern AiFltClassTyVTable st_global_0079D6BC; // image symbol: AiFltClassTyVTable
 extern char *st_global_0079D6C0; // image symbol: PTR_s_SAVEGAME\_0079d6c0
 extern AiPlrClassTyVTable_at_1C st_global_0079D6D4; // image symbol: AiPlrClassTyVTable_at_1C
@@ -2918,6 +2918,7 @@ extern char st_global_007C7274; // image symbol: CHAR_._007c7274
 extern char st_global_007C7278; // image symbol: CHAR_?_007c7278
 extern char st_global_007C72D8; // image symbol: CHAR_*_007c72d8
 extern char st_global_007C8FEC; // image symbol: CHAR_|_007c8fec
+extern char st_global_007C94CC; // image symbol: CHAR_>_007c94cc
 extern char st_global_007CA0B8; // image symbol: CHAR_._007ca0b8
 extern char *st_global_007CB08C; // image symbol: PTR_s_rc276_c%d_007cb08c
 extern char *st_global_007CB090; // image symbol: PTR_s_rc276_%d_007cb090
@@ -2935,11 +2936,28 @@ extern byte st_image_00750541; // exact image address, semantic type unresolved
 extern byte st_image_0075054A; // exact image address, semantic type unresolved
 extern byte st_image_00750553; // exact image address, semantic type unresolved
 extern byte st_image_0075055C; // exact image address, semantic type unresolved
-extern const char st_string_007C2AE0[]; // exact image string address
-extern const char st_string_007C40DC[]; // exact image string address
-extern const char st_string_007CC48C[]; // exact image string address
-extern const char st_string_007CC4A0[]; // exact image string address
-extern const char st_string_007D5688[]; // exact image string address
-extern const char st_string_007D56B4[]; // exact image string address
-extern const char st_string_007ECA74[]; // exact image string address
-extern const char st_string_007EE83C[]; // exact image string address
+extern byte st_image_00798E48; // exact image address, semantic type unresolved
+extern byte st_image_00798E4C; // exact image address, semantic type unresolved
+extern byte st_image_00798E50; // exact image address, semantic type unresolved
+extern byte st_image_00798E54; // exact image address, semantic type unresolved
+extern byte st_image_00798E58; // exact image address, semantic type unresolved
+extern byte st_image_00798E5C; // exact image address, semantic type unresolved
+extern byte st_image_00798F18; // exact image address, semantic type unresolved
+extern byte st_image_00798F1C; // exact image address, semantic type unresolved
+extern byte st_image_00798F20; // exact image address, semantic type unresolved
+extern byte st_image_00798F24; // exact image address, semantic type unresolved
+extern byte st_image_00798F28; // exact image address, semantic type unresolved
+extern byte st_image_00798F2C; // exact image address, semantic type unresolved
+extern byte st_image_0079AB20; // exact image address, semantic type unresolved
+extern byte st_image_0079AB24; // exact image address, semantic type unresolved
+extern byte st_image_0079AB28; // exact image address, semantic type unresolved
+extern byte st_image_0079AB2C; // exact image address, semantic type unresolved
+extern byte st_image_0079AB30; // exact image address, semantic type unresolved
+extern byte st_image_0079AB34; // exact image address, semantic type unresolved
+extern byte st_image_007A1278; // exact image address, semantic type unresolved
+extern byte st_image_0080350F; // exact image address, semantic type unresolved
+extern byte st_image_00807304; // exact image address, semantic type unresolved
+extern byte st_image_0080743D; // exact image address, semantic type unresolved
+extern byte st_image_00807440; // exact image address, semantic type unresolved
+extern byte st_image_008087A1; // exact image address, semantic type unresolved
+extern byte st_image_00854000; // exact image address, semantic type unresolved

@@ -29,6 +29,7 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
   pIVar2 = local_8;
   if (iVar3 == 0) {
     g_intercomPanel_0080169C = local_8;
+    /* ST_CALLSITE[00521A2A]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
     puVar3 = ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
     pIVar2->field_0180 = puVar3;
     puVar3[0x16] = 0;
@@ -45,6 +46,7 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
              FUN_006b50c0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
                           (uint)pIVar2->field_0184[7],uVar5,(undefined4 *)puVar6,iVar10);
     pIVar2->field_019C = puVar6;
+    /* ST_CALLSITE[00521ABC]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)pIVar2->field_0068,0,0,'\x01',(byte *)pIVar2->field_0184
           );
     pDVar7 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);

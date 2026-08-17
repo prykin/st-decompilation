@@ -50,11 +50,13 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[0041E56F]: CALL 0x00403ebd; direct=00403EBD STGameObjC::GetMessage */
   STGameObjC::GetMessage((STGameObjC *)local_10,message);
   SVar2 = message->id;
   if (MESS_STSPRGAMEOBJC_0113 < SVar2) {
     if (MESS_STSPRGAMEOBJC_4403 < SVar2) {
       if (SVar2 == MESS_STSPRGAMEOBJC_4404) {
+        /* ST_CALLSITE[0041EFCE]: CALL 0x00403404; direct=00403404 STSprGameObjC::sub_0041F970 */
         sub_0041F970(this_00);
         g_currentExceptionFrame = local_54.previous;
         return 0;
@@ -69,13 +71,17 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
           return 0;
         }
         puVar8 = &this_00->field_01D5;
+        /* ST_CALLSITE[0041EF37]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)puVar8,0xf);
+        /* ST_CALLSITE[0041EF3F]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)puVar8,0);
         thunk_FUN_004abce0(puVar8,0,0,0x13,'\0');
         thunk_FUN_004abce0(puVar8,0xf,0x14,0x27,'\0');
         thunk_FUN_004acd60(puVar8,'\0',g_playSystem_00802A38->field_00E4 & 1);
         thunk_FUN_004acd60(puVar8,'\x0f',g_playSystem_00802A38->field_00E4 & 1);
+        /* ST_CALLSITE[0041EF9E]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         STT3DSprC::StartShow((STT3DSprC *)puVar8,0,g_playSystem_00802A38->field_00E4);
+        /* ST_CALLSITE[0041EFB3]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         STT3DSprC::StartShow((STT3DSprC *)puVar8,0xf,g_playSystem_00802A38->field_00E4);
         g_currentExceptionFrame = local_54.previous;
         return 0;
@@ -85,11 +91,15 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
         return 0;
       }
       puVar8 = &this_00->field_01D5;
+      /* ST_CALLSITE[0041EEBF]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)puVar8,0xf);
+      /* ST_CALLSITE[0041EEC7]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)puVar8,0);
       thunk_FUN_004abce0(puVar8,0,0,0,'\0');
       thunk_FUN_004abce0(puVar8,0xf,0x14,0x14,'\0');
+      /* ST_CALLSITE[0041EEF5]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)puVar8,0,g_playSystem_00802A38->field_00E4);
+      /* ST_CALLSITE[0041EF0B]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)puVar8,0xf,g_playSystem_00802A38->field_00E4);
       g_currentExceptionFrame = local_54.previous;
       return 0;
@@ -126,6 +136,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
+    /* ST_CALLSITE[0041EDC0]: CALL dword ptr [EAX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)this_00->field_01D5)();
     g_currentExceptionFrame = local_54.previous;
@@ -137,6 +148,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
+      /* ST_CALLSITE[0041ED88]: CALL 0x004059cf; direct=004059CF SoundManagerTy::sub_00566BD0 */
       SoundManagerTy::sub_00566BD0(g_soundManager_008033F0,(int)this_00);
       g_currentExceptionFrame = local_54.previous;
       return 0;
@@ -155,8 +167,10 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
   }
   if (SVar2 == MESS_STSPRGAMEOBJC_0109) {
     if (this_00->field_021D == 1) {
+      /* ST_CALLSITE[0041ED17]: CALL 0x0040381e; direct=0040381E STSprGameObjC::LoadActFrame */
       LoadActFrame(this_00);
     }
+    /* ST_CALLSITE[0041ED1E]: CALL 0x004036f7; direct=004036F7 STSprGameObjC::LoadLifeFrame */
     LoadLifeFrame(this_00);
     g_currentExceptionFrame = local_54.previous;
     return 0;
@@ -175,6 +189,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       this_00->field_022D = 0;
       if (this_00->field_002C != 0) {
         if (this_00->field_002C == 1) {
+          /* ST_CALLSITE[0041E9D5]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
           iVar6 = STT3DSprC::Init((STT3DSprC *)&this_00->field_01D5,PTR_008073cc,0x78,0x56,
                                   (STDcResourcC *)this_00,0xf0,0xbe,0x11);
           if (iVar6 != 0) {
@@ -190,6 +205,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
+      /* ST_CALLSITE[0041EA40]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
       iVar6 = STT3DSprC::Init((STT3DSprC *)&this_00->field_01D5,PTR_008073cc,0x5a,0x45,
                               (STDcResourcC *)this_00,0xb4,0x8c,0x11);
       if (iVar6 == 0) {
@@ -205,6 +221,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
+    /* ST_CALLSITE[0041E5B3]: CALL 0x00403404; direct=00403404 STSprGameObjC::sub_0041F970 */
     sub_0041F970(this_00);
     FreeAndNull(&this_00->field_0x11d);
     FreeAndNull(&this_00->field_0x121);

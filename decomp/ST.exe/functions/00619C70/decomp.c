@@ -48,6 +48,7 @@ int __thiscall STJumpMineC::sub_00619C70(STJumpMineC *this)
     iVar13 = (this->field_0117 * iVar13 * iVar13) / 10000 + this->field_0113 * iVar13 +
              this->field_00D7;
     iVar14 = STBiasedDiv16(iVar13, 200); /* exact signed 16-bit grid-index division */
+    /* ST_CALLSITE[00619D2C]: CALL 0x004046ab; direct=004046AB STJumpMineC::sub_0061B340 */
     uVar2 = sub_0061B340(this,this->field_00C9,this->field_00CB,iVar14,this->field_009F,
                          this->field_00A3,iVar13,&local_c);
     switch(uVar2) {
@@ -115,6 +116,7 @@ int __thiscall STJumpMineC::sub_00619C70(STJumpMineC *this)
       return 1;
     case 3:
       this->field_00A7 = local_c;
+      /* ST_CALLSITE[00619FEB]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
       iVar13 = LoadImagJMine(this,2);
       if (iVar13 != 0) {
         this->field_0093 = CASE_5;
@@ -145,6 +147,7 @@ LAB_00619e5f:
     iVar13 = (this->field_0107 * iVar13) / 10000 + this->field_00D3;
     local_28 = STBiasedDiv16(iVar14, 0xc9); /* exact signed 16-bit grid-index division */
     local_24 = STBiasedDiv16(iVar13, 0xc9); /* exact signed 16-bit grid-index division */
+    /* ST_CALLSITE[0061A1A9]: CALL 0x004046ab; direct=004046AB STJumpMineC::sub_0061B340 */
     iVar3 = sub_0061B340(this,(short)local_28,(short)local_24,local_20,iVar14,iVar13,local_1c,
                          &local_c);
     switch(iVar3) {
@@ -174,6 +177,7 @@ LAB_00619e5f:
                                      );
           if (iVar13 == 0) {
 LAB_0061a4f4:
+            /* ST_CALLSITE[0061A4F6]: CALL 0x004023ec; direct=004023EC STJumpMineC::sub_006192E0 */
             sub_006192E0(this);
           }
           else {
@@ -326,6 +330,7 @@ LAB_0061a4fd:
       }
       this->field_00CD = sVar8;
       if (this->field_0093 == CASE_3) {
+        /* ST_CALLSITE[0061A904]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
         TraksClassTy::TraksCreate
                   (g_traksClass_00802A7C,1,1,0,iVar14,local_8,uVar12,0,0,0,0,0,0,-1,0,0);
       }
@@ -410,6 +415,7 @@ LAB_0061a4fd:
       sVar10 = sVar9;
     }
     local_10 = (int)sVar10;
+    /* ST_CALLSITE[0061AA4B]: CALL 0x004046ab; direct=004046AB STJumpMineC::sub_0061B340 */
     local_28 = sub_0061B340(this,sVar9,sVar8,local_30,iVar13,local_8,local_1c,&local_c);
     switch(local_28) {
     case 0:
@@ -448,6 +454,7 @@ LAB_0061a4fd:
       this->field_00A7 = local_c;
       this->field_009F = iVar13;
       this->field_00A3 = local_8;
+      /* ST_CALLSITE[0061AB87]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
       iVar13 = LoadImagJMine(this,2);
       this->field_0093 = CASE_6 - (iVar13 != 0);
       break;
@@ -524,6 +531,7 @@ LAB_0061acc2:
     if (g_visibleClass_00802A88 != nullptr) {
       iVar13 = (int)this->field_00CD;
       if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+            /* ST_CALLSITE[0061AD9B]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             (VisibleClassTy::sub_00558C00
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                         (int)this->field_00C9,(int)this->field_00CB,&local_28,&local_24), iVar13 < 0
@@ -550,6 +558,7 @@ LAB_0061acc2:
   default:
     goto switchD_00619c92_default;
   }
+  /* ST_CALLSITE[0061AE41]: CALL 0x004023ec; direct=004023EC STJumpMineC::sub_006192E0 */
   sub_006192E0(this);
 switchD_00619c92_default:
   return local_2c;

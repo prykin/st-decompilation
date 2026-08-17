@@ -112,6 +112,7 @@ FUN_006034e0(short param_1,ushort param_2,ushort param_3,int param_4,int param_5
     Library::MSVCRT::_strncpy(local_10b,param_7,0x103);
     local_8 = 0;
   }
+  /* ST_CALLSITE[00603631]: CALL dword ptr [EDX + 0x8] */
   g_playSystem_00802A38->vfunc_08(0x15a,0,0,(short)local_144,0);
   return;
 }

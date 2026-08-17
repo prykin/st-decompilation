@@ -76,6 +76,7 @@ int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
           this_00->field_009C = (char)puVar15[2];
         }
         if ((int)(uint)DAT_00807346 <= (int)puVar15[2]) {
+          /* ST_CALLSITE[0052E0B7]: CALL 0x004041b5; direct=004041B5 PopUpTy::OutStr */
           OutStr(this_00,DAT_00807346 - 1);
         }
         local_5 = 0;

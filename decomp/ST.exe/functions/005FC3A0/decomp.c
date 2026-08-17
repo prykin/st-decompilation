@@ -16,6 +16,7 @@ STContainerC * __cdecl CreateSTContainer(void)
 
   this = (STContainerC *)FUN_006b04d0(0x47b);
   if (this != nullptr) {
+    /* ST_CALLSITE[005FC3B3]: CALL 0x00401807; direct=00401807 STSprGameObjC::STSprGameObjC */
     STSprGameObjC::STSprGameObjC((STSprGameObjC *)this);
     this->vtable = &STContainerCVTable;
     this->vtable_at_1d5 = &STContainerCVTable_at_1D5;

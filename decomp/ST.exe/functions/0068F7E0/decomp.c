@@ -23,9 +23,12 @@ void __thiscall AiTactClassTy::InitDistrObj(AiTactClassTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
+    /* ST_CALLSITE[0068F81E]: CALL 0x00404da9; direct=00404DA9 _GetStaffGrpExch */
     array = (DArrayTy *)_GetStaffGrpExch(local_c->field_0024);
     local_8 = array;
+    /* ST_CALLSITE[0068F82E]: CALL 0x00403e04; direct=00403E04 AiTactClassTy::GiveObjByClaim */
     GiveObjByClaim(this_00,(uint *)array);
+    /* ST_CALLSITE[0068F836]: CALL 0x004040f2; direct=004040F2 AiTactClassTy::GiveObjByFltType */
     GiveObjByFltType(this_00,(uint *)array);
     if (array != nullptr) {
       DArrayDestroy(array);

@@ -15,6 +15,7 @@ STManRuinC * __cdecl CreateSTManRuin(void)
 
   this = (STManRuinC *)FUN_006b04d0(0x75);
   if (this != nullptr) {
+    /* ST_CALLSITE[0063084D]: CALL 0x00403d0a; direct=00403D0A STManRuinC::STManRuinC */
     g_manRuin_008117B0 = STManRuinC::STManRuinC(this);
     return g_manRuin_008117B0;
   }

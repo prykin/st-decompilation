@@ -36,10 +36,12 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\pause.cpp",0x9f);
     return 0xffff;
   }
+  /* ST_CALLSITE[0053982D]: CALL 0x004017f8; direct=004017F8 PanelTy::GetMessage */
   PanelTy::GetMessage((PanelTy *)local_8,message);
   SVar1 = message->id;
   if (SVar1 < 4) {
     if (SVar1 == MESS_SHARED_0003) {
+      /* ST_CALLSITE[00539937]: CALL 0x0040466f; direct=0040466F PausePanelTy::DonePausePanel */
       DonePausePanel(this_00);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
@@ -53,6 +55,7 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
         if (this_00->field_003C <= iVar5) {
           this_00->field_003C = iVar5;
           this_00->field_0172 = CASE_1;
+          /* ST_CALLSITE[00539903]: CALL 0x00404ea3; direct=00404EA3 PausePanelTy::ShiftControls */
           ShiftControls(this_00,1);
         }
         Library::DKW::DDX::FUN_006b3640
@@ -78,6 +81,7 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_ID_CREATE) {
+      /* ST_CALLSITE[00539854]: CALL 0x0040434f; direct=0040434F PausePanelTy::InitPausePanel */
       InitPausePanel(this_00);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
@@ -85,11 +89,13 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
   }
   else if (SVar1 == MESS_SHARED_BFFF) {
     this_00->field_0028 = 0xa100;
+    /* ST_CALLSITE[005399A0]: CALL dword ptr [EAX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
   }
   else if (SVar1 == MESS_SHARED_C000) {
     pCVar6 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[00539975]: CALL 0x00402121; direct=00402121 PanelTy::PaintIBut */
     PanelTy::PaintIBut((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar6,0x274d,1,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;

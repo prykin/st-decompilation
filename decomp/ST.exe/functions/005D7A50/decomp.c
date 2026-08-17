@@ -34,6 +34,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     puVar4 = &local_8->array_00BC[0xc].field_01E0;
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)puVar4,(int *)g_ddxContext_008075A8,0x2f,'\a',nullptr,0,0);
+    /* ST_CALLSITE[005D7AB7]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*puVar4 + 4))
               ((SpriteClassTy *)puVar4,PTR_00806784,7,0,(byte *)"MM_SID",0xffffffff);
@@ -109,6 +110,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       *(undefined1 *)puVar4 = 0xff;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
+    /* ST_CALLSITE[005D7C4E]: CALL 0x00402d3d; direct=00402D3D SIDTy::PaintExplanation */
     PaintExplanation(this_00);
     puVar3 = this_00->field_1CB8;
     puVar1 = &this_00->field_1CB4;
@@ -119,6 +121,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1B01,(int *)g_ddxContext_008075A8,0x2d,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005D7CD7]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(this_00->field_1B01 + 4))(PTR_00806784,7,0,"SID_SLDUP",0xffffffff);
     this_00->field_1B1D = 0x22b;
@@ -130,6 +133,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1B92,(int *)g_ddxContext_008075A8,0x2d,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005D7D34]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(this_00->field_1B92 + 4))(PTR_00806784,7,0,"SID_SLDDN",0xffffffff);
     this_00->field_1BAE = 0x22b;
@@ -141,6 +145,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1C23,(int *)g_ddxContext_008075A8,0x2d,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005D7D93]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(this_00->field_1C23 + 4))(PTR_00806784,7,0,"SID_SLDT",0xffffffff);
     this_00->field_1C3F = 0x22f;

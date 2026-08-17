@@ -30,6 +30,7 @@ byte * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pAVar2 = local_14;
   if (errorCode == 0) {
+    /* ST_CALLSITE[00678C27]: CALL 0x00401d11; direct=00401D11 AiEventClassTy::PrepareToSave */
     local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->vtable_at_1c,&local_10);
     if (pAVar2 == nullptr) {
       pAVar5 = nullptr;
@@ -37,6 +38,7 @@ byte * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *param_1)
     else {
       pAVar5 = (AllocationRecord_0067D3B0 *)&pAVar2->field_05D3;
     }
+    /* ST_CALLSITE[00678C47]: CALL 0x00405204; direct=00405204 PlrDataPack */
     local_c = PlrDataPack(pAVar5,local_8,local_10,param_1);
     *(undefined4 *)&local_c->field_0xc = 1;
     if (local_8 != nullptr) {

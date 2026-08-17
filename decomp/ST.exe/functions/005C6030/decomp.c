@@ -121,6 +121,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     local_5a8 = 0x654d;
     local_5bc = local_5d0[4];
     local_4a8 = local_5d0[4];
+    /* ST_CALLSITE[005C6144]: CALL dword ptr [EDX + 0x8] */
     (*local_1c->field_000C->vtable->CreateObject)
               ((SystemClassTy *)local_1c->field_000C,2,&local_1c->field_215D,nullptr,local_5d0,0);
     goto LAB_005c69ed;
@@ -216,6 +217,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
         uVar14 = local_c;
         local_8 = uVar17;
       }
+      /* ST_CALLSITE[005C62F8]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
       uVar7 = MMObjTy::CreateSprBut
                         ((MMObjTy *)this_00,1,0,uVar14,local_10,uVar17,0x14,local_18 + local_14,
                          local_18 + 0x80 + local_14);
@@ -267,6 +269,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   local_26c = local_3ec;
   local_fc = local_3ec;
   local_ac = local_3ec;
+  /* ST_CALLSITE[005C64BA]: CALL dword ptr [EDX + 0x8] */
   (*this_00->field_000C->vtable->CreateObject)
             ((SystemClassTy *)this_00->field_000C,4,&this_00->field_211D,nullptr,local_454,0);
   SVar3 = this_00->field_1E26;
@@ -275,6 +278,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     puVar16 = this_00->field_1F60;
     iVar13 = 0x68ff;
     do {
+      /* ST_CALLSITE[005C65D0]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
       uVar10 = MMObjTy::CreateSprBut
                          ((MMObjTy *)this_00,1,1,0x1a,local_10,0xe0,0x14,iVar13,iVar13 + 0x80);
       *puVar16 = uVar10;
@@ -284,6 +288,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
       iVar13 = iVar13 + 1;
     } while (iVar2 < 6);
     if (DAT_0080877e != '\0') {
+      /* ST_CALLSITE[005C6616]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
       uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x24,0x1b4,0xcc,0x1e,0x6905,0x6985);
       this_00->field_1F60[6] = uVar10;
       if (DAT_0080877e != '\0') goto LAB_005c665d;
@@ -318,12 +323,14 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
       puVar18 = (byte *)(local_61c);
       memmove(puVar18, puVar15, 0x20); /* compiler REP MOVS byte copy */
       iVar13 = 0;
+      /* ST_CALLSITE[005C6574]: CALL 0x00402716; direct=00402716 StartSystemTy::LoadMapData */
       StartSystemTy::LoadMapData(g_startSystem_0081176C,this_00->field_1F3F,SVar3);
       DAT_0080995c = local_5d8;
       puVar15 = (byte *)(local_61c);
       puVar18 = (byte *)&DAT_00809960;
       memmove(puVar18, puVar15, 0x20); /* compiler REP MOVS byte copy */
     }
+    /* ST_CALLSITE[005C659B]: CALL dword ptr [EAX + 0x28] */
     (*this_00->vtable->PrepPlList)((SettMapSTy *)this_00);
   }
 LAB_005c665d:
@@ -359,31 +366,43 @@ LAB_005c665d:
   if ((((((SVar3 == CASE_6) || (SVar3 == CASE_1)) || (SVar3 == CASE_4)) ||
        ((SVar3 == CASE_7 || (SVar3 == CASE_D)))) || (SVar3 == CASE_E)) &&
      ((this_00->field_1E27 != 0x13 || ((DAT_00803400 != '\x14' && (DAT_00803400 != '\x15')))))) {
+    /* ST_CALLSITE[005C6764]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1c4,0x14e,0x14a,0x14,0x653f,0x657f);
     this_00->field_2125[0] = uVar10;
   }
+  /* ST_CALLSITE[005C678D]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
   uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1c4,0x164,0x50,0x14,0x6542,0x6582);
   this_00->field_2125[3] = uVar10;
+  /* ST_CALLSITE[005C67B6]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
   uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2be,0x164,0x50,0x14,0x6543,0x6583);
   this_00->field_2125[4] = uVar10;
+  /* ST_CALLSITE[005C67DF]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
   uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1c4,0x17a,0x50,0x14,0x6544,0x6584);
   this_00->field_2125[5] = uVar10;
+  /* ST_CALLSITE[005C6808]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
   uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2be,0x17a,0x50,0x14,0x6545,0x6585);
   this_00->field_2125[6] = uVar10;
+  /* ST_CALLSITE[005C6831]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
   uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1c4,400,0x50,0x14,0x6546,0x6586);
   this_00->field_2125[7] = uVar10;
+  /* ST_CALLSITE[005C685A]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
   uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2be,400,0x50,0x14,0x6547,0x6587);
   this_00->field_2125[8] = uVar10;
+  /* ST_CALLSITE[005C6883]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
   uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x18a,0x1a6,0x16,0x14,0x6548,0x6588);
   this_00->field_2125[9] = uVar10;
+  /* ST_CALLSITE[005C68AC]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
   uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x234,0x1a6,0x16,0x14,0x6549,0x6589);
   this_00->field_2125[10] = uVar10;
+  /* ST_CALLSITE[005C68D5]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
   uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2f8,0x1a6,0x16,0x14,0x654a,0x658a);
   this_00->field_2125[0xb] = uVar10;
   SVar3 = this_00->field_1E26;
   if (((SVar3 != CASE_6) && (SVar3 != CASE_1)) && (SVar3 != CASE_2)) {
+    /* ST_CALLSITE[005C6910]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1fe,0x1bc,0x16,0x14,0x654b,0x658b);
     this_00->field_2125[0xc] = uVar10;
+    /* ST_CALLSITE[005C6939]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar10 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2f8,0x1bc,0x16,0x14,0x654c,0x658c);
     this_00->field_2125[0xd] = uVar10;
   }
@@ -408,6 +427,7 @@ LAB_005c665d:
     FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_00->field_0x1d);
   }
   if (this_00->field_21E2 != '\0') {
+    /* ST_CALLSITE[005C69E8]: CALL 0x00402a4a; direct=00402A4A StartSystemTy::CreateBinDesc */
     StartSystemTy::CreateBinDesc(g_startSystem_0081176C);
   }
 LAB_005c69ed:
@@ -417,6 +437,7 @@ LAB_005c69ed:
     local_2c = 1;
     local_2e = 1;
     STPiece<2,2>(local_38) = 1;
+    /* ST_CALLSITE[005C6A21]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
     MMsgTy::StatePanel(*(MMsgTy **)(pMVar4 + 0x2e6),(int)&local_38);
   }
   g_currentExceptionFrame = local_7c.previous;

@@ -201,6 +201,7 @@ LAB_00629242:
     iVar10 = pSVar8->field_0046;
     iVar10 = STBiasedDiv16(iVar10, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+        /* ST_CALLSITE[006294B9]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
         (VisibleClassTy::sub_00558C00
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar10,iVar12,
                     &local_28,&local_2c), (int)local_14 < 0)) || (4 < (int)local_14)) {

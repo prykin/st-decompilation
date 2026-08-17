@@ -66,8 +66,10 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (message->id == MESS_ID_CREATE) {
+    /* ST_CALLSITE[00522EC8]: CALL 0x004031ca; direct=004031CA IntercomPanelTy::PreInitIntercomPanel */
     PreInitIntercomPanel(local_c);
   }
+  /* ST_CALLSITE[00522ED0]: CALL 0x004017f8; direct=004017F8 PanelTy::GetMessage */
   PanelTy::GetMessage((PanelTy *)this_00,message);
   SVar2 = message->id;
   if (SVar2 < MESS_BEHPANELTY_C0A0) {
@@ -110,6 +112,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
             local_848 = 0xc09f;
             local_890 = local_8b0;
             local_850 = local_8b0;
+            /* ST_CALLSITE[005230E3]: CALL dword ptr [EDX + 0x8] */
             (*this_00->field_000C->vtable->CreateObject)
                       ((SystemClassTy *)this_00->field_000C,6,&this_00->field_01A0,nullptr,
                        local_8dc,1);
@@ -140,6 +143,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
         return 0;
       }
       if (SVar2 == MESS_ID_CREATE) {
+        /* ST_CALLSITE[00522F16]: CALL 0x00405583; direct=00405583 IntercomPanelTy::InitIntercomPanel */
         InitIntercomPanel(this_00);
         g_currentExceptionFrame = local_50.previous;
         return 0;
@@ -148,6 +152,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
+      /* ST_CALLSITE[00522EFC]: CALL 0x004021ee; direct=004021EE IntercomPanelTy::DoneIntercomPanel */
       DoneIntercomPanel(this_00);
       g_currentExceptionFrame = local_50.previous;
       return 0;
@@ -193,6 +198,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
     return 0;
   }
   if (this_00->field_0172 == CASE_1) {
+    /* ST_CALLSITE[0052315F]: CALL 0x00401dcf; direct=00401DCF IntercomPanelTy::SwitchIntercomPanel */
     SwitchIntercomPanel(this_00,0);
   }
   g_currentExceptionFrame = local_50.previous;

@@ -20,6 +20,7 @@ FUN_004e8e50(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,u
   int uVar2;
   int iVar4;
 
+  /* ST_CALLSITE[004E8E65]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar2 = LookupRecordByte(STField<char>(this,0x23d));
   uVar2 = (int)(byte)uVar2;
   iVar1 = STField<int>(this,0x245);

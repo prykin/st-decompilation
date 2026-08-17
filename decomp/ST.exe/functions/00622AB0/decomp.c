@@ -35,12 +35,14 @@ int __thiscall STAllPlayersC::FUN_00622ab0(STAllPlayersC *this,undefined4 *param
   local_10 = 0;
   local_c = 0x10;
   local_8 = 0;
+  /* ST_CALLSITE[00622B3B]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
   STT3DSprC::RestoreSpr
             ((STT3DSprC *)&this->field_0x1d5,(int *)&local_20,
              (AnonShape_004AD790_77673787 *)((int)param_1 + 0x10d));
   FreeAndNull(&local_20);
   piVar4 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0x10d))->field_0x0 + iVar2);
   iVar1 = *piVar4;
+  /* ST_CALLSITE[00622B53]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
   RestoreGObjData(this,piVar4 + 1);
   return iVar1 + iVar2 + 0x109;
 }

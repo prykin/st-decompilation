@@ -98,6 +98,7 @@ STAllPlayersC::GetPanelInfo
         param_2->field_0001 = 0;
       }
       param_2->field_0002 = 1;
+      /* ST_CALLSITE[0043BFD8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar3 = LookupRecordByte(DAT_0080874d);
       pAVar18->field_0007 = bVar3;
       local_1c = (DArrayTy *)g_packedRecords_A62x8[uVar17].field102_0x16d;
@@ -116,10 +117,13 @@ STAllPlayersC::GetPanelInfo
         uVar15 = local_24;
         DArrayGetElement(local_1c,local_24,local_c);
         if (STPiece<0,2>(local_c) != 0xffff) {
+          /* ST_CALLSITE[0043C02A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar11 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar17].field97_0x167,STPiece<0,2>(local_c),
                               CASE_1);
+          /* ST_CALLSITE[0043C03F]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)pSVar11,&local_6,&local_8,(short *)((int)&param_1 + 2));
           *(undefined1 *)((int)pAVar18 + (0x2e - STPiece<2,2>(param_1))) = 1;
+          /* ST_CALLSITE[0043C058]: CALL dword ptr [EDX + 0x30] */
           (*pSVar11->vtable->vfunc_30)((short)local_6c);
           local_34 = local_64;
           local_30 = local_69;
@@ -194,6 +198,7 @@ STAllPlayersC::GetPanelInfo
         return;
       }
       param_2->field_0005 = 2;
+      /* ST_CALLSITE[0043C187]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar3 = LookupRecordByte(DAT_0080874d);
       pAVar18->field_0004 = bVar3;
       local_1c = (DArrayTy *)g_packedRecords_A62x8[uVar17].field102_0x16d;
@@ -203,6 +208,7 @@ STAllPlayersC::GetPanelInfo
         do {
           DArrayGetElement(local_1c,uVar17,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
+            /* ST_CALLSITE[0043C1C4]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(this,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             iVar6 = thunk_FUN_00493cd0(pSVar11);
             if (iVar6 == 0) break;
@@ -228,6 +234,7 @@ LAB_0043c293:
           do {
             DArrayGetElement(local_1c,uVar17,local_c);
             if (STPiece<0,2>(local_c) != 0xffff) {
+              /* ST_CALLSITE[0043C24B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar11 = GetObjPtr(this,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
               pSVar7 = thunk_FUN_0042b760(DAT_0080874d,pSVar11->field_0030);
               if ((pSVar7 != nullptr) &&
@@ -259,13 +266,14 @@ LAB_0043c293:
       FreeAndNull(&local_18);
       uVar17 = 0;
       pAVar18[2].field_0001 = 1;
-      *(undefined1 *)(pAVar18 + 2) = 1;
+      ((undefined1 *)pAVar18)[2] = 1;
       *(undefined1 *)((int)&pAVar18[1].field_0018 + 3) = 1;
       *(undefined1 *)((int)&pAVar18[1].field_0018 + 2) = 1;
       if (0 < (int)local_14) {
         do {
           DArrayGetElement(local_1c,uVar17,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
+            /* ST_CALLSITE[0043C31A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             *(undefined1 *)((int)&pAVar18[1].field_0018 + pSVar11->field_07EE + 2) = 3;
           }
@@ -328,6 +336,7 @@ LAB_0043c293:
           DArrayGetElement(local_1c,local_24,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             local_28 = local_28 + 1;
+            /* ST_CALLSITE[0043C464]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             if (local_28 == 1) {
               uVar17 = (uint)(ushort)pSVar11->field_0030;
@@ -347,6 +356,7 @@ LAB_0043c293:
         if (GVar8 < 0x100001) {
           if (GVar8 == 0x100000) {
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+            /* ST_CALLSITE[0043C7F1]: CALL dword ptr [EDX + 0xc] */
             dVar10 = pSVar7->slot_0C();
             switch(dVar10) {
             case 1:
@@ -365,6 +375,7 @@ LAB_0043c293:
           if (GVar8 < 0x20001) {
             if (GVar8 == 0x20000) {
               pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+              /* ST_CALLSITE[0043C750]: CALL dword ptr [EDX + 0xc] */
               dVar10 = pSVar7->slot_0C();
               switch(dVar10) {
               case 1:
@@ -384,6 +395,7 @@ LAB_0043c293:
             }
             if (GVar8 == 0x2000) {
               pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+              /* ST_CALLSITE[0043C719]: CALL dword ptr [EDX + 0xc] */
               dVar10 = pSVar7->slot_0C();
               switch(dVar10) {
               case 1:
@@ -405,6 +417,7 @@ LAB_0043c293:
               return;
             }
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+            /* ST_CALLSITE[0043C6EA]: CALL dword ptr [EDX + 0xc] */
             dVar10 = pSVar7->slot_0C();
             switch(dVar10) {
             case 1:
@@ -424,6 +437,7 @@ LAB_0043c293:
           }
           if (GVar8 == 0x40000) {
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+            /* ST_CALLSITE[0043C7C2]: CALL dword ptr [EDX + 0xc] */
             dVar10 = pSVar7->slot_0C();
             switch(dVar10) {
             case 1:
@@ -443,6 +457,7 @@ LAB_0043c293:
             return;
           }
           pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+          /* ST_CALLSITE[0043C793]: CALL dword ptr [EDX + 0xc] */
           dVar10 = pSVar7->slot_0C();
           switch(dVar10) {
           case 1:
@@ -461,6 +476,7 @@ LAB_0043c293:
         if (GVar8 < 0x800001) {
           if (GVar8 == 0x800000) {
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+            /* ST_CALLSITE[0043C8BE]: CALL dword ptr [EDX + 0xc] */
             dVar10 = pSVar7->slot_0C();
             switch(dVar10) {
             case 1:
@@ -478,6 +494,7 @@ LAB_0043c293:
           }
           if (GVar8 == 0x200000) {
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+            /* ST_CALLSITE[0043C88F]: CALL dword ptr [EDX + 0xc] */
             dVar10 = pSVar7->slot_0C();
             switch(dVar10) {
             case 1:
@@ -498,6 +515,7 @@ LAB_0043c293:
             return;
           }
           pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+          /* ST_CALLSITE[0043C846]: CALL dword ptr [EDX + 0xc] */
           dVar10 = pSVar7->slot_0C();
           switch(dVar10) {
           case 1:
@@ -517,6 +535,7 @@ LAB_0043c293:
         }
         if (GVar8 == 0x1000000) {
           pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+          /* ST_CALLSITE[0043C930]: CALL dword ptr [EDX + 0xc] */
           dVar10 = pSVar7->slot_0C();
           switch(dVar10) {
           case 1:
@@ -534,6 +553,7 @@ LAB_0043c293:
           return;
         }
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+        /* ST_CALLSITE[0043C901]: CALL dword ptr [EDX + 0xc] */
         dVar10 = pSVar7->slot_0C();
         switch(dVar10) {
         case 1:
@@ -554,6 +574,7 @@ LAB_0043c293:
         if (0x200 < GVar8) {
           if (GVar8 == 0x400) {
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+            /* ST_CALLSITE[0043C65F]: CALL dword ptr [EDX + 0xc] */
             dVar10 = pSVar7->slot_0C();
             switch(dVar10) {
             case 1:
@@ -576,6 +597,7 @@ LAB_0043c293:
             return;
           }
           pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+          /* ST_CALLSITE[0043C630]: CALL dword ptr [EDX + 0xc] */
           dVar10 = pSVar7->slot_0C();
           switch(dVar10) {
           case 1:
@@ -595,6 +617,7 @@ LAB_0043c293:
         }
         if (GVar8 == 0x200) {
           pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+          /* ST_CALLSITE[0043C5F4]: CALL dword ptr [EDX + 0xc] */
           dVar10 = pSVar7->slot_0C();
           switch(dVar10) {
           case 1:
@@ -616,6 +639,7 @@ LAB_0043c293:
           return;
         }
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+        /* ST_CALLSITE[0043C5CC]: CALL dword ptr [EDX + 0xc] */
         dVar10 = pSVar7->slot_0C();
         switch(dVar10) {
         case 1:
@@ -631,6 +655,7 @@ LAB_0043c293:
       }
       if (GVar8 == 0x40) {
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+        /* ST_CALLSITE[0043C57F]: CALL dword ptr [EDX + 0xc] */
         dVar10 = pSVar7->slot_0C();
         switch(dVar10) {
         case 1:
@@ -651,6 +676,7 @@ LAB_0043c293:
       switch(GVar8) {
       case CASE_1:
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+        /* ST_CALLSITE[0043C4EC]: CALL dword ptr [EDX + 0xc] */
         dVar10 = pSVar7->slot_0C();
         switch(dVar10) {
         case 1:
@@ -672,6 +698,7 @@ cf_common_exit_0043C508:
       case CASE_4:
       case CASE_8:
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+        /* ST_CALLSITE[0043C528]: CALL dword ptr [EDX + 0xc] */
         dVar10 = pSVar7->slot_0C();
         switch(dVar10) {
         case 1:
@@ -689,6 +716,7 @@ cf_common_exit_0043C508:
         break;
       case CASE_10:
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+        /* ST_CALLSITE[0043C557]: CALL dword ptr [EDX + 0xc] */
         dVar10 = pSVar7->slot_0C();
         switch(dVar10) {
         case 1:
@@ -705,6 +733,7 @@ cf_common_exit_0043C508:
       case CASE_28:
 switchD_0043c4d2_caseD_28:
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
+        /* ST_CALLSITE[0043C68E]: CALL dword ptr [EDX + 0xc] */
         dVar10 = pSVar7->slot_0C();
         switch(dVar10) {
         case 1:
@@ -792,7 +821,9 @@ LAB_0043ca5a:
 LAB_0043ca31:
       SVar20 = CASE_1;
 cf_common_exit_0043CA35:
+      /* ST_CALLSITE[0043CA35]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar11 = GetObjPtr(local_10,cVar19,uVar4,SVar20);
+      /* ST_CALLSITE[0043CA42]: CALL dword ptr [EDX + 0x34] */
       (*pSVar11->vtable->vfunc_34)((short)param_2);
       return;
     }
@@ -826,8 +857,10 @@ cf_common_exit_0043CA35:
         do {
           DArrayGetElement(pDVar1,uVar15,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
+            /* ST_CALLSITE[0043CC92]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar17].field150_0x1b7,STPiece<0,2>(local_c),
                                 CASE_1);
+            /* ST_CALLSITE[0043CC9F]: CALL dword ptr [EDX + 0x38] */
             (*pSVar11->vtable->vfunc_38)((short)param_2);
             return;
           }
@@ -865,8 +898,10 @@ cf_common_exit_0043CA35:
         do {
           DArrayGetElement(pDVar1,uVar15,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
+            /* ST_CALLSITE[0043CD7E]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar17].field150_0x1b7,STPiece<0,2>(local_c),
                                 CASE_1);
+            /* ST_CALLSITE[0043CD8B]: CALL dword ptr [EDX + 0x3c] */
             (*pSVar11->vtable->vfunc_3C)((short)param_2);
             return;
           }
@@ -905,8 +940,10 @@ cf_common_exit_0043CA35:
         do {
           DArrayGetElement(local_1c,uVar15,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
+            /* ST_CALLSITE[0043CE6E]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar17].field97_0x167,STPiece<0,2>(local_c),
                                 CASE_1);
+            /* ST_CALLSITE[0043CE78]: CALL dword ptr [EDX + 0x40] */
             (*pSVar11->vtable->vfunc_40)((short)pAVar18);
             return;
           }
@@ -940,8 +977,10 @@ cf_common_exit_0043CA35:
         do {
           DArrayGetElement(pDVar1,uVar15,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
+            /* ST_CALLSITE[0043CF3F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar17].field150_0x1b7,STPiece<0,2>(local_c),
                                 CASE_1);
+            /* ST_CALLSITE[0043CF4C]: CALL dword ptr [EDX + 0x44] */
             (*pSVar11->vtable->vfunc_44)((short)param_2);
             return;
           }
@@ -967,7 +1006,9 @@ cf_common_exit_0043CA35:
         do {
           DArrayGetElement(pDVar1,uVar17,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
-            pSVar11 = GetObjPtr(local_10,*(char *)(local_28 + 4),STPiece<0,2>(local_c),CASE_1);
+            /* ST_CALLSITE[0043CFDE]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+            pSVar11 = GetObjPtr(local_10,((char *)local_28)[4],STPiece<0,2>(local_c),CASE_1);
+            /* ST_CALLSITE[0043CFEB]: CALL dword ptr [EDX + 0x48] */
             (*pSVar11->vtable->vfunc_48)((short)param_2);
             return;
           }
@@ -1005,8 +1046,10 @@ cf_common_exit_0043CA35:
           do {
             DArrayGetElement(pDVar1,uVar15,local_c);
             if (STPiece<0,2>(local_c) != 0xffff) {
+              /* ST_CALLSITE[0043D396]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar11 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar17].field150_0x1b7,
                                   STPiece<0,2>(local_c),CASE_1);
+              /* ST_CALLSITE[0043D3A3]: CALL dword ptr [EDX + 0x50] */
               (*pSVar11->vtable->vfunc_50)((short)param_2);
               return;
             }
@@ -1066,7 +1109,9 @@ LAB_0043d41d:
               SVar20 = CASE_3;
               cVar19 = -1;
 LAB_0043d447:
+              /* ST_CALLSITE[0043D44A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar11 = GetObjPtr(local_10,cVar19,uVar4,SVar20);
+              /* ST_CALLSITE[0043D454]: CALL dword ptr [EDX + 0x58] */
               (*pSVar11->vtable->vfunc_58)((short)pAVar18);
             }
             pAVar13 = (AnonShape_0043BEB0_1C00EC12 *)&param_2->field_0x10;
@@ -1137,7 +1182,9 @@ LAB_0043d5b1:
               uVar4 = *puVar16;
               cVar19 = -1;
 LAB_0043d5b7:
+              /* ST_CALLSITE[0043D5B7]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar11 = GetObjPtr(local_10,cVar19,uVar4,SVar20);
+              /* ST_CALLSITE[0043D5C1]: CALL dword ptr [EDX + 0x5c] */
               (*pSVar11->vtable->vfunc_5C)((short)pAVar18);
             }
 LAB_0043d5c4:
@@ -1176,6 +1223,7 @@ LAB_0043d5c4:
                 DArrayGetElement(pDVar1,uVar17,local_c);
                 if (STPiece<0,2>(local_c) != 0xffff) {
                   iVar6 = iVar6 + 1;
+                  /* ST_CALLSITE[0043D77D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                   pSVar11 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
                   if (iVar6 == 1) {
                     local_20 = (uint)(ushort)pSVar11->field_0030;
@@ -1191,6 +1239,7 @@ LAB_0043d5c4:
               }
             }
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,(ushort)local_20);
+            /* ST_CALLSITE[0043D7D1]: CALL dword ptr [EDX + 0x1c] */
             dVar10 = pSVar7->slot_1C();
             switch(dVar10) {
             case 0:
@@ -1228,7 +1277,9 @@ LAB_0043d5c4:
             return;
           }
           if (g_packedRecords_A62x8[DAT_0080874d].field96_0x163 == 0x1ae) {
+            /* ST_CALLSITE[0043D8D0]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(this,-1,g_packedRecords_A62x8[DAT_0080874d].field101_0x16b,CASE_3);
+            /* ST_CALLSITE[0043D8DD]: CALL dword ptr [EDX + 0x64] */
             (*pSVar11->vtable->vfunc_64)((short)param_2);
             return;
           }
@@ -1267,8 +1318,10 @@ LAB_0043d5c4:
           do {
             DArrayGetElement(pDVar1,uVar15,local_c);
             if (STPiece<0,2>(local_c) != 0xffff) {
+              /* ST_CALLSITE[0043D699]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar11 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar17].field97_0x167,STPiece<0,2>(local_c)
                                   ,CASE_1);
+              /* ST_CALLSITE[0043D6A6]: CALL dword ptr [EDX + 0x60] */
               (*pSVar11->vtable->vfunc_60)((short)param_2);
               break;
             }
@@ -1309,8 +1362,10 @@ LAB_0043d5c4:
         do {
           DArrayGetElement(pDVar1,uVar15,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
+            /* ST_CALLSITE[0043D0AD]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar17].field97_0x167,STPiece<0,2>(local_c),
                                 CASE_1);
+            /* ST_CALLSITE[0043D0BA]: CALL dword ptr [EDX + 0x4c] */
             (*pSVar11->vtable->vfunc_4C)((short)param_2);
             return;
           }
@@ -1345,6 +1400,7 @@ LAB_0043d5c4:
         do {
           DArrayGetElement(pDVar1,uVar17,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
+            /* ST_CALLSITE[0043D145]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             if (pSVar11->field_07E6 == 0) {
               pAVar18->field_0011 = 3;
@@ -1364,7 +1420,9 @@ LAB_0043d5c4:
         do {
           DArrayGetElement(pDVar1,dVar10,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
+            /* ST_CALLSITE[0043D1A3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
+            /* ST_CALLSITE[0043D1AC]: CALL dword ptr [EDX + 0x2c] */
             uVar12 = pSVar11->vfunc_2C();
             switch(uVar12) {
             case 7:
@@ -1400,6 +1458,7 @@ switchD_0043d1bf_caseD_a:
           DArrayGetElement(local_1c,uVar17,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             iVar6 = iVar6 + 1;
+            /* ST_CALLSITE[0043D222]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             if (iVar6 == 1) {
               local_20 = (uint)(ushort)pSVar11->field_0030;
@@ -1418,6 +1477,7 @@ switchD_0043d1bf_caseD_a:
         return;
       }
       pSVar7 = thunk_FUN_0042b760(DAT_0080874d,(ushort)local_20);
+      /* ST_CALLSITE[0043D27D]: CALL dword ptr [EDX + 0xc] */
       dVar10 = pSVar7->slot_0C();
       switch(dVar10) {
       case 5:
@@ -1500,7 +1560,9 @@ LAB_0043cb81:
   }
   SVar20 = CASE_1;
 cf_common_exit_0043CB5C:
+  /* ST_CALLSITE[0043CB5C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   pSVar11 = GetObjPtr(local_10,cVar19,uVar4,SVar20);
+  /* ST_CALLSITE[0043CB69]: CALL dword ptr [EDX + 0x30] */
   (*pSVar11->vtable->vfunc_30)((short)param_2);
   return;
 cf_common_exit_0043C94C:

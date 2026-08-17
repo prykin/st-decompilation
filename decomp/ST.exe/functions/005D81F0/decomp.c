@@ -28,6 +28,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this)
 
   local_8 = 1;
   local_c = this;
+  /* ST_CALLSITE[005D8205]: CALL dword ptr [0x0085bedc] */
   DVar3 = timeGetTime();
   this->field_0061 = DVar3;
   local_50.previous = g_currentExceptionFrame;
@@ -45,8 +46,11 @@ void __thiscall SIDTy::NoneSID(SIDTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (((local_c->field_0065 == '\x01') && (local_c->field_1CC4 != (HANDLE)0x0)) &&
+     /* ST_CALLSITE[005D824D]: CALL dword ptr [0x0085bce0] */
      (DVar3 = WaitForSingleObject(local_c->field_1CC4,0), DVar3 == 0)) {
+    /* ST_CALLSITE[005D825E]: CALL dword ptr [0x0085bce4] */
     FindNextChangeNotification(this_00->field_1CC4);
+    /* ST_CALLSITE[005D8266]: CALL 0x0040392c; direct=0040392C SIDTy::PrepFiles */
     PrepFiles(this_00);
     this_00->field_002D = 5;
     piVar6 = &this_00->field_1AF1;
@@ -73,6 +77,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this)
     }
     if (local_8 != 0) {
       this_00->field_0065 = 1;
+      /* ST_CALLSITE[005D8373]: CALL 0x004030f8; direct=004030F8 SIDTy::CreateCtrls */
       CreateCtrls(this_00);
     }
   }

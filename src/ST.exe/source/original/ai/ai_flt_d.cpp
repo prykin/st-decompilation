@@ -125,17 +125,17 @@ AllocationRecord_00668330 * __cdecl st::fn_00668330(AllocationRecord_00668330 *p
     } while (iVar3 < 0x54);
     if (pAVar1->field_01EB == 0) {
       pDVar2 = st::fn_006AE290(nullptr,10,0x2c,10);
-      local_8->field_01EB = st::pointer_boundary_cast<uint *>(&pDVar2->flags);
+      local_8->field_01EB = &pDVar2->flags;
       pAVar1 = (AllocationRecord_00668330 *)local_8;
     }
     if (pAVar1->field_0203 == 0) {
       pDVar2 = st::fn_006AE290(nullptr,10,0x14,10);
-      local_8->field_0203 = st::pointer_boundary_cast<uint *>(&pDVar2->flags);
+      local_8->field_0203 = &pDVar2->flags;
       pAVar1 = (AllocationRecord_00668330 *)local_8;
     }
     if (pAVar1->field_020F == 0) {
       pDVar2 = st::fn_006AE290(nullptr,10,0xc,10);
-      local_8->field_020F = st::pointer_boundary_cast<uint *>(&pDVar2->flags);
+      local_8->field_020F = &pDVar2->flags;
       pAVar1 = (AllocationRecord_00668330 *)local_8;
     }
     g_currentExceptionFrame = local_4c.previous;

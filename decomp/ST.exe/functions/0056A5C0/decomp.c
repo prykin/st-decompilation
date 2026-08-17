@@ -6,6 +6,7 @@
 int FUN_0056a5c0(void)
 
 {
+  /* ST_CALLSITE[0056A5C5]: CALL dword ptr [0x0085bc78] */
   InterlockedIncrement(&DAT_0085e000);
   return (uint)(0 < DAT_0085e000);
 }

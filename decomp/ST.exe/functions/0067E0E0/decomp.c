@@ -27,6 +27,7 @@ uint * __cdecl CreateStrategList(int param_1,int param_2,uint param_3)
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x197);
     }
     pCVar2 = FUN_006f2c00(PTR_s_STRATEG_0079d72c,1,param_2);
+    /* ST_CALLSITE[0067E158]: CALL 0x004015eb; direct=004015EB _CreateStgListByRoot */
     puVar3 = _CreateStgListByRoot((cMf32 *)param_1,0,pCVar2,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar3;

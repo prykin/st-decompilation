@@ -57,6 +57,7 @@ VisibleClassTy::SetZoneMin1
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[0055A336]: CALL 0x00403b02; direct=00403B02 VisibleClassTy::sub_0055BB00 */
       sub_0055BB00(this,5,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     }
     if ((param_7 & 0x20) != 0) {

@@ -40,15 +40,19 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
   if (local_EAX_59 == 0) {
     switch(message->id) {
     case MESS_ID_NONE:
+      /* ST_CALLSITE[005E6044]: CALL 0x00403710; direct=00403710 MTestTy::NoneMTest */
       NoneMTest(local_c);
       break;
     case MESS_ID_CREATE:
+      /* ST_CALLSITE[005E6020]: CALL 0x00405312; direct=00405312 MTestTy::InitMTest */
       InitMTest(local_c);
       break;
     case MESS_SHARED_0003:
+      /* ST_CALLSITE[005E602C]: CALL 0x00401145; direct=00401145 MTestTy::DoneMTest */
       DoneMTest(local_c);
       break;
     case MESS_SHARED_0005:
+      /* ST_CALLSITE[005E6038]: CALL 0x00403e7c; direct=00403E7C MTestTy::PaintMTest */
       PaintMTest(local_c);
       break;
     case MESS_TRACKBARCLASSTY_0062:
@@ -56,6 +60,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
         _DAT_00811774 = STAppC::sub_006E51B0(local_c->field_0010);
         this_00->field_00B3 = CASE_1;
         if (g_holo_00811778 != nullptr) {
+          /* ST_CALLSITE[005E6203]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
           HoloTy::Done(g_holo_00811778);
           Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);
           g_holo_00811778 = nullptr;
@@ -89,6 +94,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           bVar9 = 0x10;
           iVar8 = 1;
           iVar7 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
+          /* ST_CALLSITE[005E62EC]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
           HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar7,iVar8,bVar9,cVar10,uVar11);
           pHVar3 = g_holo_00811778;
           piVar1 = &g_holo_00811778->field_0013;
@@ -108,6 +114,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
         _DAT_00811774 = STAppC::sub_006E51B0(local_c->field_0010);
         this_00->field_00B3 = CASE_5;
         if (g_holo_00811778 != nullptr) {
+          /* ST_CALLSITE[005E6082]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
           HoloTy::Done(g_holo_00811778);
           Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);
           g_holo_00811778 = nullptr;
@@ -134,6 +141,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
         }
         if (g_holo_00811778 != nullptr) {
           FUN_006b5f80((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+          /* ST_CALLSITE[005E613B]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
           MMMObjTy::OutRGlProc
                     ((MMMObjTy *)&g_startSystem_0081176C->field_0140,(int)g_dDXContext_0080759C,
                      nullptr,nullptr,10,0xb4,0xf9,0x123,
@@ -143,6 +151,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           bVar9 = 0x10;
           iVar8 = 1;
           iVar7 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
+          /* ST_CALLSITE[005E6171]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
           HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar7,iVar8,bVar9,cVar10,uVar11);
           pHVar3 = g_holo_00811778;
           g_holo_00811778->field_0002 = 0;
@@ -152,11 +161,13 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
                       ((int *)g_ddxContext_008075A8,*(uint *)&g_holo_00811778->field_0x3);
           }
           FUN_006b5f80((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+          /* ST_CALLSITE[005E61D8]: CALL 0x00402298; direct=00402298 PutDDXClip */
           PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x123,'\x01',(BITMAPINFO *)this_00->field_005D);
         }
       }
       break;
     case MESS_SHARED_0064:
+      /* ST_CALLSITE[005E6333]: CALL 0x00401a19; direct=00401A19 MTestTy::sub_005E5F60 */
       sub_005E5F60(local_c);
       this_00->field_008D = 1;
       this_00->field_0091 = 0x7102;

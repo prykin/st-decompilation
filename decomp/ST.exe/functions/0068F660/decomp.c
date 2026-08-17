@@ -35,10 +35,12 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
           this_00 = nullptr;
         }
         else {
+          /* ST_CALLSITE[0068F6E1]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,*(char *)&local_8->field_0024,*puVar4,CASE_1);
         }
         if (this_00 != nullptr) {
+          /* ST_CALLSITE[0068F6F4]: CALL dword ptr [EAX + 0x2c] */
           iVar3 = this_00->vfunc_2C();
           if ((iVar3 < 1) || (0x28 < iVar3)) {
             bVar2 = false;
@@ -47,8 +49,10 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
             bVar2 = true;
           }
           if ((bVar2) &&
+             /* ST_CALLSITE[0068F719]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
              (this_01 = (AiFltClassTy *)sub_0068E290(local_8,this_00->field_081C),
              this_01 != nullptr)) {
+            /* ST_CALLSITE[0068F727]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
             AiFltClassTy::_AddObjFlt(this_01,(uint)this_00,0);
             DArrayRemoveAt(param_1,index);
           }

@@ -15,6 +15,7 @@ STManRub3C * __cdecl CreateSTManRub3(void)
 
   this = (STManRub3C *)FUN_006b04d0(0xb8);
   if (this != nullptr) {
+    /* ST_CALLSITE[0062CED0]: CALL 0x004053ee; direct=004053EE STManRub3C::STManRub3C */
     g_manRub3_008117A4 = STManRub3C::STManRub3C(this);
     return g_manRub3_008117A4;
   }

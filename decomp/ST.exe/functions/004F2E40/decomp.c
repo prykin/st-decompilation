@@ -87,6 +87,7 @@ CPanelTy::SetButStruct
     *(int *)&param_1->field_0xc = iVar6 + param_5;
     param_1->field_0108 = 1;
     param_1->field_010C = 1;
+    /* ST_CALLSITE[004F2F21]: CALL dword ptr [0x0085bde8] */
     wsprintfA(text,"%s0",param_7);
     local_8 = cMf32::RecGet(g_cMf32_00806790,param_6,text,nullptr,1);
     uVar3 = local_8[3];

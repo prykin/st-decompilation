@@ -142,6 +142,7 @@ LAB_006259bf:
                   bVar17 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                 }
+                /* ST_CALLSITE[006259D6]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                 if ((bVar17) && (iVar6 = (*this_00->vtable[5].slots_00_28[2])(this_00), iVar6 != 0))
                 goto LAB_00625ad5;
               }
@@ -168,8 +169,11 @@ LAB_006259bf:
                   this->field_0241 = *(undefined4 *)&this_00->field_0x18;
                 }
                 if (g_sndUnderAttMeneg_00811798 != nullptr) {
+                  /* ST_CALLSITE[00625AB5]: CALL dword ptr [EDX + 0x2c] */
                   iVar6 = this->vfunc_2C();
+                  /* ST_CALLSITE[00625ABD]: CALL dword ptr [EAX + 0x2c] */
                   iVar7 = this_00->GetObjectTypeId();
+                  /* ST_CALLSITE[00625AD0]: CALL 0x004058a8; direct=004058A8 SndUnderAttMenegC::sub_0061FE80 */
                   SndUnderAttMenegC::sub_0061FE80
                             (g_sndUnderAttMeneg_00811798,iVar14,iVar15,(uint)this_00[1].vtable,iVar7
                              ,iVar6);
@@ -178,6 +182,7 @@ LAB_006259bf:
 LAB_00625ad5:
               if (this->field_02AD == CASE_2) {
                 if (this->field_0342 != 0) {
+                  /* ST_CALLSITE[00625AEC]: CALL dword ptr [EAX + 0x2c] */
                   GVar8 = this_00->GetObjectTypeId();
                   uVar9 = thunk_FUN_006263b0(GVar8);
                   if ((this->field_0342 & uVar9) != 0) goto LAB_00625aff;
@@ -195,6 +200,7 @@ LAB_00625b06:
                    ))) && (pSVar16 = (STMineSetC *)
                                      STGridAt3D(g_worldGrid, sVar19, sVar20, sVar12).objects[1]
                           , pSVar16 != nullptr)) {
+                /* ST_CALLSITE[00625B8A]: CALL dword ptr [EDX + 0x2c] */
                 uVar10 = pSVar16->vfunc_2C();
                 switch(uVar10) {
                 case 0xa6:
@@ -254,6 +260,7 @@ LAB_00625d60:
               }
             }
             if (pSVar16 != nullptr) {
+              /* ST_CALLSITE[0062605C]: CALL dword ptr [EAX + 0x2c] */
               uVar10 = pSVar16->vfunc_2C();
               switch(uVar10) {
               case 0xa6:
@@ -269,6 +276,7 @@ LAB_00625d60:
           pSVar16 = (STMineSetC *)
                     STGridAt3D(g_worldGrid, sVar12, sVar20, sVar19).objects[0];
           if (pSVar16 == nullptr) goto LAB_00625d60;
+          /* ST_CALLSITE[00625CE3]: CALL dword ptr [EAX + 0xf0] */
           iVar6 = pSVar16->vfunc_F0();
           if (iVar6 != 0) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -293,8 +301,11 @@ LAB_00625d60:
                   this->field_0241 = pSVar16->field_0018;
                 }
                 if (g_sndUnderAttMeneg_00811798 != nullptr) {
+                  /* ST_CALLSITE[00625DFB]: CALL dword ptr [EDX + 0x2c] */
                   iVar6 = this->vfunc_2C();
+                  /* ST_CALLSITE[00625E03]: CALL dword ptr [EAX + 0x2c] */
                   uVar10 = pSVar16->vfunc_2C();
+                  /* ST_CALLSITE[00625E16]: CALL 0x004058a8; direct=004058A8 SndUnderAttMenegC::sub_0061FE80 */
                   SndUnderAttMenegC::sub_0061FE80
                             (g_sndUnderAttMeneg_00811798,iVar14,iVar15,pSVar16->field_0024,uVar10,
                              iVar6);
@@ -335,11 +346,15 @@ LAB_00625efc:
                 bVar18 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                          g_bulkInitializedRecords_008087C7[bVar1].field_0023;
               }
+              /* ST_CALLSITE[00625F13]: CALL dword ptr [EDX + 0xf8] */
               if (((bVar18) && (iVar11 = pSVar16->vfunc_F8(), iVar11 != 0)) &&
                  (iVar11 = thunk_FUN_006264d0(this,(int *)pSVar16,local_20), iVar11 != 0)) {
                 if (g_sndUnderAttMeneg_00811798 != nullptr) {
+                  /* ST_CALLSITE[00625F42]: CALL dword ptr [EDX + 0x2c] */
                   iVar11 = this->vfunc_2C();
+                  /* ST_CALLSITE[00625F4A]: CALL dword ptr [EAX + 0x2c] */
                   uVar10 = pSVar16->vfunc_2C();
+                  /* ST_CALLSITE[00625F5D]: CALL 0x004058a8; direct=004058A8 SndUnderAttMenegC::sub_0061FE80 */
                   SndUnderAttMenegC::sub_0061FE80
                             (g_sndUnderAttMeneg_00811798,iVar14,iVar15,pSVar16->field_0024,uVar10,
                              iVar11);

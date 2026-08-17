@@ -31,21 +31,26 @@ int __thiscall MAdvTy::GetMessage(MAdvTy *this,STMessage *message)
   if (local_EAX_47 == 0) {
     switch(message->id) {
     case MESS_ID_NONE:
+      /* ST_CALLSITE[00590934]: CALL 0x004058d5; direct=004058D5 MAdvTy::NoneMAdv */
       NoneMAdv(local_8);
       break;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case MESS_ID_CREATE:
       local_8->field_005D = *(undefined1 *)((message->arg0).u32 + 0x14);
+      /* ST_CALLSITE[00590919]: CALL 0x00405e25; direct=00405E25 MAdvTy::InitMAdv */
       InitMAdv(local_8);
       break;
     case MESS_SHARED_0003:
+      /* ST_CALLSITE[00590922]: CALL 0x00402cc0; direct=00402CC0 MAdvTy::DoneMAdv */
       DoneMAdv(local_8);
       break;
     case MESS_SHARED_0005:
+      /* ST_CALLSITE[0059092B]: CALL 0x00403ab2; direct=00403AB2 MAdvTy::PaintMAdv */
       PaintMAdv(local_8);
       break;
     case MESS_TRACKBARCLASSTY_0062:
     case MESS_SHARED_0064:
+      /* ST_CALLSITE[0059093D]: CALL 0x00403378; direct=00403378 MAdvTy::sub_00590860 */
       sub_00590860(local_8);
       if (this_00->field_005D == '\0') {
         this_00->field_0040 = 0x200;

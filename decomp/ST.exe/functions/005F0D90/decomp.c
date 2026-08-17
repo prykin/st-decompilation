@@ -32,6 +32,7 @@ void __thiscall STContainerC::sub_005F0D90(STContainerC *this)
       local_24.arg1.words.low = (word)(byte)this->field_030E;
     }
     local_24.id = 0x5dd7;
+    /* ST_CALLSITE[005F0DF8]: CALL dword ptr [EAX] */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;

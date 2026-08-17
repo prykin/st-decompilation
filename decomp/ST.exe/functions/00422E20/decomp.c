@@ -19,6 +19,7 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
   undefined4 extraout_ECX_03;
   Global_sub_0043FC50_param_1Enum GVar3;
 
+  /* ST_CALLSITE[00422E29]: CALL dword ptr [EAX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   objPtr = (STGameObjC *)(**(code **)(*(int *)this + 4))();
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -28,6 +29,7 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
       (iVar1 = thunk_FUN_0045ff10(objPtr), uVar2 = extraout_ECX_00, iVar1 != 0x14)) ||
      (objPtr->field_05C0 != 3)) {
     if (((param_1 & 1) != 0) && ((STField<byte>(this,0x1d1) & 1) == 0)) {
+      /* ST_CALLSITE[00422E66]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
       sub_0041C5A0(this);
       STField<uint>(this,0x1d1) = STField<uint>(this,0x1d1) | 1;
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -55,6 +57,7 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
           uVar2 = extraout_ECX_03;
         } while (iVar1 < 5);
       }
+      /* ST_CALLSITE[00422EEF]: CALL 0x00403643; direct=00403643 STAllPlayersC::DelObjFromSaveTmps */
       STAllPlayersC::DelObjFromSaveTmps
                 (g_allPlayers_007FA174,STField<int>(this,0x20),STField<char>(this,0x24),
                  STField<short>(this,0x32));

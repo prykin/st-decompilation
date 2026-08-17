@@ -26,7 +26,7 @@ void __thiscall FUN_00486e20(void *this,undefined4 *param_1)
   *param_1 = STField<undefined4>(this,0x6f7);
   local_8 = this;
   iVar6 = thunk_FUN_004e8030(STField<int>(this,0x6f7));
-  *(char *)(puVar1 + 1) = (char)iVar6;
+  ((char *)puVar1)[1] = (char)iVar6;
   STField<undefined1>(puVar1,6) = 1;
   iVar7 = thunk_FUN_00493cd0(this);
   if (iVar7 == 0) {
@@ -35,24 +35,28 @@ void __thiscall FUN_00486e20(void *this,undefined4 *param_1)
   else {
     STField<undefined1>(puVar1,7) = 0;
   }
+  /* ST_CALLSITE[00486E71]: CALL dword ptr [EDX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar7 = (**(code **)(*(int *)this + 8))();
   if (iVar7 == 1) {
-    *(undefined1 *)(puVar1 + 2) = 1;
+    ((undefined1 *)puVar1)[2] = 1;
   }
   else {
-    *(undefined1 *)(puVar1 + 2) = 0;
+    ((undefined1 *)puVar1)[2] = 0;
   }
   if (STField<uint>(this,0x24) != (uint)*(byte *)(STField<int>(this,0x10) + 0x112d))
   goto cf_common_exit_00486ED3;
-  bVar2 = *(byte *)(puVar1 + 1);
+  bVar2 = ((byte *)puVar1)[1];
   if (bVar2 != 0) {
     if (bVar2 < 3) {
+      /* ST_CALLSITE[00486EEA]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar2 = LookupRecordByte(STField<char>(this,0x24));
       if (bVar2 == 3) goto cf_common_exit_00486ED3;
     }
     else if ((bVar2 == 3) &&
+            /* ST_CALLSITE[00486EB7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
             ((bVar2 = LookupRecordByte(STField<char>(this,0x24)), bVar2 == 1 ||
+             /* ST_CALLSITE[00486ECA]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
              (bVar2 = LookupRecordByte(STField<char>(this,0x24)), bVar2 == 2)))) {
 cf_common_exit_00486ED3:
       STField<undefined1>(puVar1,5) = 3;
@@ -61,7 +65,7 @@ cf_common_exit_00486ED3:
   }
   STField<undefined1>(puVar1,5) = 1;
   STField<undefined1>(puVar1,0x39) = 1;
-  *(undefined1 *)(puVar1 + 0xe) = 1;
+  ((undefined1 *)puVar1)[0xe] = 1;
   STField<undefined1>(puVar1,0x37) = 1;
   STField<undefined1>(puVar1,0x36) = 1;
   *(undefined1 *)(STField<int>(this,0x7ee) + 0x36 + (int)puVar1) = 3;
@@ -79,7 +83,7 @@ cf_common_exit_00486ED3:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 3;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 4;
+    ((undefined1 *)puVar1)[3] = 4;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 6;
     if ((STField<int>(this,0x45d) == 1) || (STField<int>(this,0x459) == 0x65)) {
@@ -89,10 +93,10 @@ cf_common_exit_00486ED3:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 2) || (STField<int>(this,0x459) == 0x66)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -112,7 +116,7 @@ cf_common_exit_00486ED3:
     }
     STField<undefined1>(puVar1,0x13) = 1;
     if ((STField<int>(this,0x45d) != 6) && (STField<int>(this,0x459) != 0x6a)) {
-      *(undefined1 *)(puVar1 + 5) = 1;
+      ((undefined1 *)puVar1)[5] = 1;
       goto switchD_00486f27_default;
     }
     break;
@@ -120,7 +124,7 @@ cf_common_exit_00486ED3:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 3;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 4;
+    ((undefined1 *)puVar1)[3] = 4;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 9;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -131,10 +135,10 @@ cf_common_exit_00486ED3:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 2) || (STField<int>(this,0x459) == 0x66)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -155,7 +159,7 @@ cf_common_exit_00486ED3:
     STField<undefined1>(puVar1,0x13) = 1;
     if ((STField<int>(this,0x45d) != 10) && (STField<int>(this,0x459) != 0x6e)) {
       if (0 < STField<int>(this,0x7be)) {
-        *(undefined1 *)(puVar1 + 5) = 1;
+        ((undefined1 *)puVar1)[5] = 1;
         goto switchD_00486f27_default;
       }
       goto cf_common_join_004881B5;
@@ -167,7 +171,7 @@ cf_common_exit_00486ED3:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 3;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 4;
+    ((undefined1 *)puVar1)[3] = 4;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 8;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -178,10 +182,10 @@ cf_common_exit_00486ED3:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 2) || (STField<int>(this,0x459) == 0x66)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -208,7 +212,7 @@ cf_common_exit_00486ED3:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 3;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 4;
+    ((undefined1 *)puVar1)[3] = 4;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 7;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -219,10 +223,10 @@ cf_common_exit_00486ED3:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 2) || (STField<int>(this,0x459) == 0x66)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -248,7 +252,7 @@ LAB_00487aa3:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 0xd;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 4;
+    ((undefined1 *)puVar1)[3] = 4;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     if (STField<int>(this,0x7ca) == 0) {
       STField<undefined1>(puVar1,0xe) = 0x13;
@@ -264,10 +268,10 @@ LAB_00487aa3:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 0xe) || (STField<int>(this,0x459) == 0x72)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -289,10 +293,10 @@ LAB_00487aa3:
     if (STField<int>(this,0x7ca) == 0) {
       if ((STField<int>(this,0x45d) == 0xf) || (STField<int>(this,0x459) == 0x73)) {
 LAB_00487782:
-        *(undefined1 *)(puVar1 + 5) = 3;
+        ((undefined1 *)puVar1)[5] = 3;
       }
       else {
-        *(undefined1 *)(puVar1 + 5) = 1;
+        ((undefined1 *)puVar1)[5] = 1;
       }
     }
     else {
@@ -300,16 +304,16 @@ LAB_00487782:
                                  STField<short>(this,0x5f),(undefined2 *)&local_8,
                                  (undefined2 *)((int)&local_8 + 2),(short *)((int)&param_1 + 2));
       if (iVar7 == 0) {
-        *(undefined1 *)(puVar1 + 5) = 0;
+        ((undefined1 *)puVar1)[5] = 0;
       }
       else {
         if ((STField<int>(this,0x45d) == 0x10) || (STField<int>(this,0x459) == 0x74))
         goto LAB_00487782;
-        *(undefined1 *)(puVar1 + 5) = 1;
+        ((undefined1 *)puVar1)[5] = 1;
       }
     }
     if (STField<int>(this,0x7ca) != 0) {
-      *(undefined1 *)(puVar1 + 4) = 0;
+      ((undefined1 *)puVar1)[4] = 0;
     }
     goto switchD_00486f27_default;
   case 8:
@@ -317,7 +321,7 @@ LAB_00487782:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 0x11;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 4;
+    ((undefined1 *)puVar1)[3] = 4;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 0x12;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -328,10 +332,10 @@ LAB_00487782:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 0xc) || (STField<int>(this,0x459) == 0x70)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -366,10 +370,10 @@ LAB_00487ba5:
         STField<undefined1>(puVar1,0xf) = 1;
       }
       if ((STField<int>(this,0x45d) == 2) || (STField<int>(this,0x459) == 0x66)) {
-        *(undefined1 *)(puVar1 + 4) = 3;
+        ((undefined1 *)puVar1)[4] = 3;
       }
       else {
-        *(undefined1 *)(puVar1 + 4) = 1;
+        ((undefined1 *)puVar1)[4] = 1;
       }
       if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
         STField<undefined1>(puVar1,0x11) = 3;
@@ -386,7 +390,7 @@ LAB_00487ba5:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 0xe;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 4;
+    ((undefined1 *)puVar1)[3] = 4;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 0x10;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -397,10 +401,10 @@ LAB_00487ba5:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 0x11) || (STField<int>(this,0x459) == 0x75)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -420,7 +424,7 @@ LAB_00487ba5:
     }
     STField<undefined1>(puVar1,0x13) = 1;
     if ((STField<int>(this,0x45d) != 0x12) && (STField<int>(this,0x459) != 0x76)) {
-      *(undefined1 *)(puVar1 + 5) = 1;
+      ((undefined1 *)puVar1)[5] = 1;
       goto switchD_00486f27_default;
     }
     break;
@@ -428,7 +432,7 @@ LAB_00487ba5:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 3;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 4;
+    ((undefined1 *)puVar1)[3] = 4;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     if (STField<int>(this,0x732) == 1) {
       STField<undefined1>(puVar1,0xe) = 0xc;
@@ -444,10 +448,10 @@ LAB_00487ba5:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 2) || (STField<int>(this,0x459) == 0x66)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -467,7 +471,7 @@ LAB_00487ba5:
     }
     STField<undefined1>(puVar1,0x13) = 1;
     if (STField<int>(this,0x732) == 1) {
-      *(undefined1 *)(puVar1 + 5) = 1;
+      ((undefined1 *)puVar1)[5] = 1;
       goto switchD_00486f27_default;
     }
     goto LAB_00487975;
@@ -475,7 +479,7 @@ LAB_00487ba5:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 3;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 4;
+    ((undefined1 *)puVar1)[3] = 4;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 10;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -487,10 +491,10 @@ LAB_00487ba5:
     }
     if (((STField<int>(this,0x45d) == 2) || (STField<int>(this,0x459) == 0x66)) &&
        (STField<int>(this,0x7de) == 0)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -511,7 +515,7 @@ LAB_00487ba5:
     STField<undefined1>(puVar1,0x13) = 1;
     if (((STField<int>(this,0x45d) == 2) || (STField<int>(this,0x459) == 0x66)) &&
        (STField<int>(this,0x7de) == 1)) {
-      *(undefined1 *)(puVar1 + 5) = 3;
+      ((undefined1 *)puVar1)[5] = 3;
       goto switchD_00486f27_default;
     }
     goto LAB_00487bcf;
@@ -519,7 +523,7 @@ LAB_00487ba5:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 0xe;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 0x48;
+    ((undefined1 *)puVar1)[3] = 0x48;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
     if ((STField<int>(this,0x45d) == 1) || (STField<int>(this,0x459) == 0x65)) {
@@ -530,13 +534,13 @@ LAB_00487ba5:
     }
     if ((STField<int>(this,0x45d) == 0x11) || (STField<int>(this,0x459) == 0x75))
     goto LAB_0048802a;
-    *(undefined1 *)(puVar1 + 4) = 1;
+    ((undefined1 *)puVar1)[4] = 1;
     goto LAB_0048802e;
   case 0x1a:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 0x11;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 0x48;
+    ((undefined1 *)puVar1)[3] = 0x48;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 0x12;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -547,10 +551,10 @@ LAB_00487ba5:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 0xc) || (STField<int>(this,0x459) == 0x70)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -561,6 +565,7 @@ LAB_00487ba5:
     if ((STField<int>(this,0x45d) != 0x16) && (STField<int>(this,0x459) != 0x7a)) {
       if (((short)g_packedRecords_A62x8[STField<char>(this,0x24)].field95_0x15f != 0) &&
          (uVar3 = thunk_FUN_004e41c0(STField<int>(this,0x24)), uVar3 != 0)) {
+        /* ST_CALLSITE[00487B96]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
         local_EAX_3446 = TLOBaseTy::sub_004D6DF0(this);
         bVar9 = local_EAX_3446 == 0;
         goto LAB_00487b9d;
@@ -573,7 +578,7 @@ LAB_00487baf:
     STField<undefined1>(puVar1,0x13) = 1;
     if ((STField<int>(this,0x45d) != 0xd) && (STField<int>(this,0x459) != 0x71)) {
 LAB_00487bcf:
-      *(undefined1 *)(puVar1 + 5) = 1;
+      ((undefined1 *)puVar1)[5] = 1;
       goto switchD_00486f27_default;
     }
     break;
@@ -586,7 +591,7 @@ LAB_00487bcf:
       STField<undefined1>(puVar1,10) = 0x14;
     }
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 0x48;
+    ((undefined1 *)puVar1)[3] = 0x48;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 0x18;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -599,10 +604,10 @@ LAB_00487bcf:
     if (STField<int>(this,0x7ca) == 0) {
       if ((STField<int>(this,0x45d) == 0xf) || (STField<int>(this,0x459) == 0x73)) {
 LAB_00487e0b:
-        *(undefined1 *)(puVar1 + 4) = 3;
+        ((undefined1 *)puVar1)[4] = 3;
       }
       else {
-        *(undefined1 *)(puVar1 + 4) = 1;
+        ((undefined1 *)puVar1)[4] = 1;
       }
     }
     else {
@@ -610,12 +615,12 @@ LAB_00487e0b:
                                  STField<short>(this,0x5f),(undefined2 *)((int)&local_8 + 2),
                                  (undefined2 *)&local_8,(short *)((int)&param_1 + 2));
       if (iVar7 == 0) {
-        *(undefined1 *)(puVar1 + 4) = 0;
+        ((undefined1 *)puVar1)[4] = 0;
       }
       else {
         if ((STField<int>(this,0x45d) == 0x10) || (STField<int>(this,0x459) == 0x74))
         goto LAB_00487e0b;
-        *(undefined1 *)(puVar1 + 4) = 1;
+        ((undefined1 *)puVar1)[4] = 1;
       }
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
@@ -629,6 +634,7 @@ LAB_00487e0b:
     }
     else if ((((short)g_packedRecords_A62x8[STField<char>(this,0x24)].field95_0x15f == 0) ||
              (uVar3 = thunk_FUN_004e41c0(STField<int>(this,0x24)), uVar3 == 0)) ||
+            /* ST_CALLSITE[00487E6F]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
             (local_EAX_4175 = TLOBaseTy::sub_004D6DF0(this), local_EAX_4175 == 0)) {
       STField<undefined1>(puVar1,0x12) = 0;
     }
@@ -648,7 +654,7 @@ LAB_00487e0b:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 3;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 0x48;
+    ((undefined1 *)puVar1)[3] = 0x48;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 0;
     goto LAB_004879a0;
@@ -656,7 +662,7 @@ LAB_00487e0b:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 0x10;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 0x48;
+    ((undefined1 *)puVar1)[3] = 0x48;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 0x18;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -667,10 +673,10 @@ LAB_00487e0b:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 0x12) || (STField<int>(this,0x459) == 0x76)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -683,6 +689,7 @@ LAB_00487e0b:
     }
     else if ((((short)g_packedRecords_A62x8[STField<char>(this,0x24)].field95_0x15f == 0) ||
              (uVar3 = thunk_FUN_004e41c0(STField<int>(this,0x24)), uVar3 == 0)) ||
+            /* ST_CALLSITE[00487CFD]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
             (local_EAX_3805 = TLOBaseTy::sub_004D6DF0(this), local_EAX_3805 == 0)) {
       STField<undefined1>(puVar1,0x12) = 0;
     }
@@ -696,7 +703,7 @@ LAB_00487e0b:
     goto LAB_00487eb7;
 LAB_00487ecd:
     if (9 < STField<int>(this,0x71e)) {
-      *(undefined1 *)(puVar1 + 5) = 1;
+      ((undefined1 *)puVar1)[5] = 1;
       goto switchD_00486f27_default;
     }
     goto cf_common_join_004881B5;
@@ -707,7 +714,7 @@ LAB_00487ecd:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 3;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 0x48;
+    ((undefined1 *)puVar1)[3] = 0x48;
     STField<undefined1>(puVar1,0xd) = 0x2f;
 LAB_004879a0:
     if (STField<uint>(this,0x24) == (uint)DAT_0080874d) {
@@ -719,10 +726,10 @@ LAB_004879a0:
       }
       if ((STField<int>(this,0x45d) == 2) || (STField<int>(this,0x459) == 0x66)) {
 LAB_0048802a:
-        *(undefined1 *)(puVar1 + 4) = 3;
+        ((undefined1 *)puVar1)[4] = 3;
       }
       else {
-        *(undefined1 *)(puVar1 + 4) = 1;
+        ((undefined1 *)puVar1)[4] = 1;
       }
 LAB_0048802e:
       if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
@@ -737,6 +744,7 @@ LAB_0048802e:
       }
       else if ((((short)g_packedRecords_A62x8[STField<char>(this,0x24)].field95_0x15f == 0) ||
                (uVar3 = thunk_FUN_004e41c0(STField<int>(this,0x24)), uVar3 == 0)) ||
+              /* ST_CALLSITE[0048808E]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
               (local_EAX_4718 = TLOBaseTy::sub_004D6DF0(this), local_EAX_4718 == 0)) {
         STField<undefined1>(puVar1,0x12) = 0;
         STField<undefined1>(puVar1,0x13) = 1;
@@ -751,7 +759,7 @@ LAB_0048802e:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 3;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 0x48;
+    ((undefined1 *)puVar1)[3] = 0x48;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 8;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -762,10 +770,10 @@ LAB_0048802e:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 2) || (STField<int>(this,0x459) == 0x66)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -778,6 +786,7 @@ LAB_0048802e:
     }
     else if ((((short)g_packedRecords_A62x8[STField<char>(this,0x24)].field95_0x15f == 0) ||
              (uVar3 = thunk_FUN_004e41c0(STField<int>(this,0x24)), uVar3 == 0)) ||
+            /* ST_CALLSITE[00487FA2]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
             (local_EAX_4482 = TLOBaseTy::sub_004D6DF0(this), local_EAX_4482 == 0)) {
       STField<undefined1>(puVar1,0x12) = 0;
     }
@@ -787,7 +796,7 @@ LAB_0048802e:
     STField<undefined1>(puVar1,0x13) = 1;
     if ((STField<int>(this,0x45d) != 7) && (STField<int>(this,0x459) != 0x6b)) {
       if (0 < STField<int>(this,0x7be)) {
-        *(undefined1 *)(puVar1 + 5) = 1;
+        ((undefined1 *)puVar1)[5] = 1;
         goto switchD_00486f27_default;
       }
       goto cf_common_join_004881B5;
@@ -797,7 +806,7 @@ LAB_0048802e:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 3;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 0x48;
+    ((undefined1 *)puVar1)[3] = 0x48;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 7;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -808,10 +817,10 @@ LAB_0048802e:
       STField<undefined1>(puVar1,0xf) = 1;
     }
     if ((STField<int>(this,0x45d) == 2) || (STField<int>(this,0x459) == 0x66)) {
-      *(undefined1 *)(puVar1 + 4) = 3;
+      ((undefined1 *)puVar1)[4] = 3;
     }
     else {
-      *(undefined1 *)(puVar1 + 4) = 1;
+      ((undefined1 *)puVar1)[4] = 1;
     }
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
@@ -822,6 +831,7 @@ LAB_0048802e:
     if ((STField<int>(this,0x45d) != 0x16) && (STField<int>(this,0x459) != 0x7a)) {
       if (((short)g_packedRecords_A62x8[STField<char>(this,0x24)].field95_0x15f != 0) &&
          (uVar3 = thunk_FUN_004e41c0(STField<int>(this,0x24)), uVar3 != 0)) {
+        /* ST_CALLSITE[00487A94]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
         local_EAX_3188 = TLOBaseTy::sub_004D6DF0(this);
         bVar9 = local_EAX_3188 == 0;
         goto LAB_00487a9b;
@@ -833,7 +843,7 @@ LAB_00487aa9:
 LAB_00487aad:
     STField<undefined1>(puVar1,0x13) = 1;
     if ((STField<int>(this,0x45d) != 9) && (STField<int>(this,0x459) != 0x6d)) {
-      *(undefined1 *)(puVar1 + 5) = 1;
+      ((undefined1 *)puVar1)[5] = 1;
       goto switchD_00486f27_default;
     }
     break;
@@ -841,7 +851,7 @@ LAB_00487aad:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 0;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 0x48;
+    ((undefined1 *)puVar1)[3] = 0x48;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     STField<undefined1>(puVar1,0xe) = 0x18;
     if (STField<uint>(this,0x24) != (uint)DAT_0080874d) goto switchD_00486f27_default;
@@ -851,7 +861,7 @@ LAB_00487aad:
     else {
       STField<undefined1>(puVar1,0xf) = 1;
     }
-    *(undefined1 *)(puVar1 + 4) = 0;
+    ((undefined1 *)puVar1)[4] = 0;
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
     }
@@ -863,6 +873,7 @@ LAB_00487aad:
     }
     else if ((((short)g_packedRecords_A62x8[STField<char>(this,0x24)].field95_0x15f == 0) ||
              (uVar3 = thunk_FUN_004e41c0(STField<int>(this,0x24)), uVar3 == 0)) ||
+            /* ST_CALLSITE[00488168]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
             (local_EAX_4936 = TLOBaseTy::sub_004D6DF0(this), local_EAX_4936 == 0)) {
       STField<undefined1>(puVar1,0x12) = 0;
     }
@@ -872,7 +883,7 @@ LAB_00487aad:
     STField<undefined1>(puVar1,0x13) = 1;
     if ((STField<int>(this,0x45d) != 0x15) || (STField<int>(this,0x635) != 2)) {
       if (9 < STField<int>(this,0x71e)) {
-        *(undefined1 *)(puVar1 + 5) = 1;
+        ((undefined1 *)puVar1)[5] = 1;
         goto switchD_00486f27_default;
       }
       goto cf_common_join_004881B5;
@@ -884,7 +895,7 @@ LAB_00487eb7:
     STField<undefined1>(puVar1,9) = 2;
     STField<undefined1>(puVar1,10) = 3;
     STField<undefined1>(puVar1,0xb) = 1;
-    *(undefined1 *)(puVar1 + 3) = 4;
+    ((undefined1 *)puVar1)[3] = 4;
     STField<undefined1>(puVar1,0xd) = 0x2f;
     if (STField<int>(this,0x732) == 1) {
       STField<undefined1>(puVar1,0xe) = 0xc;
@@ -899,7 +910,7 @@ LAB_00487eb7:
     else {
       STField<undefined1>(puVar1,0xf) = 1;
     }
-    *(undefined1 *)(puVar1 + 4) = 0;
+    ((undefined1 *)puVar1)[4] = 0;
     if ((STField<int>(this,0x45d) == 3) || (STField<int>(this,0x459) == 0x67)) {
       STField<undefined1>(puVar1,0x11) = 3;
     }
@@ -918,22 +929,22 @@ LAB_00487eb7:
     }
     STField<undefined1>(puVar1,0x13) = 1;
     if (STField<int>(this,0x732) == 1) {
-      *(undefined1 *)(puVar1 + 5) = 1;
+      ((undefined1 *)puVar1)[5] = 1;
       goto switchD_00486f27_default;
     }
 LAB_00487975:
     iVar7 = STField<int>(this,0x726);
 LAB_0048797b:
     if (0 < iVar7) {
-      *(undefined1 *)(puVar1 + 5) = 1;
+      ((undefined1 *)puVar1)[5] = 1;
       goto switchD_00486f27_default;
     }
 cf_common_join_004881B5:
-    *(undefined1 *)(puVar1 + 5) = 0;
+    ((undefined1 *)puVar1)[5] = 0;
   default:
     goto switchD_00486f27_default;
   }
-  *(undefined1 *)(puVar1 + 5) = 3;
+  ((undefined1 *)puVar1)[5] = 3;
 switchD_00486f27_default:
   pAVar4 = thunk_FUN_004357f0(STField<char>(this,0x24));
   if (pAVar4 == nullptr) {
@@ -954,23 +965,23 @@ switchD_00486f27_default:
   switch(STField<undefined4>(this,0x6f7)) {
   case 0x16:
   case 0x25:
-    *(undefined1 *)(puVar1 + 0xd) = STField<undefined1>(this,0x726);
+    ((undefined1 *)puVar1)[0xd] = STField<undefined1>(this,0x726);
     break;
   case 0x17:
-    *(undefined1 *)(puVar1 + 0xd) = STField<undefined1>(this,0x72a);
+    ((undefined1 *)puVar1)[0xd] = STField<undefined1>(this,0x72a);
     break;
   default:
-    *(undefined1 *)(puVar1 + 0xd) = 0;
+    ((undefined1 *)puVar1)[0xd] = 0;
     break;
   case 0x1b:
   case 0x1d:
   case 0x24:
-    *(undefined1 *)(puVar1 + 0xd) = STField<undefined1>(this,0x71e);
+    ((undefined1 *)puVar1)[0xd] = STField<undefined1>(this,0x71e);
     break;
   case 0x23:
-    *(undefined1 *)(puVar1 + 0xd) = STField<undefined1>(this,0x722);
+    ((undefined1 *)puVar1)[0xd] = STField<undefined1>(this,0x722);
   }
-  *(undefined1 *)(puVar1 + 7) = STField<undefined1>(this,0x7d2);
+  ((undefined1 *)puVar1)[7] = STField<undefined1>(this,0x7d2);
   STField<undefined1>(puVar1,0x1d) = STField<undefined1>(this,0x7d6);
   STField<undefined1>(puVar1,0x1e) = STField<undefined1>(this,0x7da);
   return;

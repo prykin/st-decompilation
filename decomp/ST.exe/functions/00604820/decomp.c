@@ -13,6 +13,7 @@ void __fastcall FUN_00604820(int param_1)
     puVar1 = (undefined4 *)(param_1 + 0x219);
     do {
       if ((STParticleC *)*puVar1 != nullptr) {
+        /* ST_CALLSITE[0060483F]: CALL 0x004058d0; direct=004058D0 STParticleC::sub_00629E60 */
         STParticleC::sub_00629E60((STParticleC *)*puVar1,1);
       }
       iVar2 = iVar2 + 1;

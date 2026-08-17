@@ -108,7 +108,7 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
           local_8 = 0;
           iVar8 = (uint)(byte)param_1->field_0x4 << 1;
           FUN_006b03d0(*(char **)(iVar3 + 0xc),*(char **)(iVar3 + 0x14),iVar8,iVar8,
-                       *(char *)(iVar3 + 10));
+                       ((char *)iVar3)[10]);
           local_8 = 0xffffffff;
         }
         else {
@@ -134,7 +134,7 @@ LAB_00574b14:
           *(int *)(iVar3 + 0xc) = piVar12[2];
         }
       }
-      if ((local_34 == 0) || ((*(byte *)(iVar3 + 0x4f) & 0x10) != 0)) {
+      if ((local_34 == 0) || ((((byte *)iVar3)[0x4f] & 0x10) != 0)) {
         if (local_40 == 0) goto LAB_00574b4a;
       }
       else {
@@ -202,7 +202,7 @@ LAB_00574bcc:
               *(undefined4 **)(iVar3 + 0xc) = puVar7;
             }
             local_28 = 0;
-            if ((local_34 == 0) || ((*(byte *)(iVar3 + 0x4f) & 0x10) != 0)) {
+            if ((local_34 == 0) || ((((byte *)iVar3)[0x4f] & 0x10) != 0)) {
               for (local_50 = 0; local_50 < (int)((uint)(byte)param_1->field_0x4 * 2);
                   local_50 = local_50 + 1) {
                 iVar8 = (uint)(byte)param_1->field_0x4 * local_50;

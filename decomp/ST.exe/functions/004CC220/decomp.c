@@ -10,8 +10,7 @@ undefined4 __fastcall FUN_004cc220(AnonShape_004CC220_7DEF08C7 *param_1)
 
 {
   uint uVar1;
-  AnonShape_004AB810_8E5693D5 *pAVar2;
-  STT3DSprC *this;
+  STT3DSprC *pSVar2;
   int exceptionCode;
 
   param_1->field_0444 = 0;
@@ -20,17 +19,19 @@ undefined4 __fastcall FUN_004cc220(AnonShape_004CC220_7DEF08C7 *param_1)
   uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
   param_1->field_001C = uVar1;
   param_1->field_0450 = (uVar1 >> 0x10) % 0x33 + g_playSystem_00802A38->field_00E4;
-  pAVar2 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-  if (pAVar2 == nullptr) {
-    this = nullptr;
+  pSVar2 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+  if (pSVar2 == nullptr) {
+    pSVar2 = nullptr;
   }
   else {
-    this = (STT3DSprC *)thunk_FUN_004ab810(pAVar2);
+    /* ST_CALLSITE[004CC27A]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+    pSVar2 = STT3DSprC::STT3DSprC(pSVar2);
   }
-  param_1->field_0603 = this;
+  param_1->field_0603 = pSVar2;
+  /* ST_CALLSITE[004CC2B1]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
   exceptionCode =
-       STT3DSprC::Init(this,PTR_008073cc,param_1->field_0613,param_1->field_0617,nullptr
-                       ,param_1->field_060B,param_1->field_060F,0x11);
+       STT3DSprC::Init(pSVar2,PTR_008073cc,param_1->field_0613,param_1->field_0617,
+                       nullptr,param_1->field_060B,param_1->field_060F,0x11);
   if (exceptionCode != 0) {
     RaiseInternalException
               (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",

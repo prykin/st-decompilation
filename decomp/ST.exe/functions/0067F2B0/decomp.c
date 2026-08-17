@@ -24,6 +24,7 @@ void FUN_0067f2b0(LPCSTR lpFileName,int param_2)
     }
   }
   else {
+    /* ST_CALLSITE[0067F2CE]: CALL dword ptr [0x0085bba8] */
     GetFullPathNameA(lpFileName,0x104,&DAT_0084868c,nullptr);
     Library::MSVCRT::FUN_0072e730
               (&DAT_0084868c,&DAT_008478a8,&DAT_00848790,&DAT_0084858c,&DAT_00811990);

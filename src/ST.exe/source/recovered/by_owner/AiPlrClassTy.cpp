@@ -14,7 +14,8 @@ AiPlrClassTy * __thiscall st::fn_006788B0(AiPlrClassTy *this)
   undefined4 *puVar2;
 
   st::fn_006E60E0(this);
-  st::fn_00402C2F(st::pointer_boundary_cast<undefined4 *>(&this->vtable_at_1c));
+  /* ST_CALLSITE[006788BE]: CALL 0x00402c2f; direct=00402C2F AiEventClassTy::AiEventClassTy */
+  st::fn_00402C2F((AiEventClassTy *)&this->vtable_at_1c);
   this->vtable = &st_global_0079D714;
   this->vtable_at_1c = &st_global_0079D6D4;
   if (this == nullptr) {
@@ -180,6 +181,7 @@ st::fn_0067A020(AiPlrClassTy *this,AnonShape_0068FD00_A5257008 *param_1,int para
               (this_00 = (AiTactClassTy *)*puVar2, this_00 != nullptr)) &&
              (param_1 != nullptr)) {
             if (param_2 < 0) {
+              /* ST_CALLSITE[0067A076]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
               st::fn_004010E1(this_00,param_1);
             }
             else {
@@ -344,13 +346,16 @@ void __thiscall st::fn_0067BFD0(AiPlrClassTy *this,DArrayTy *param_1,DArrayTy *p
         local_40 = (AnonShape_0068FD00_A5257008 *)0x67;
         local_38 = 0;
         local_3c = local_c->field_06FE;
+        /* ST_CALLSITE[0067C068]: CALL 0x00402a09; direct=00402A09 AiPlrClassTy::sub_0067BF30 */
         local_37 = st::fn_00402A09(local_c);
         local_33 = *(undefined4 *)(puVar4 + 6);
+        /* ST_CALLSITE[0067C078]: CALL 0x00404228; direct=00404228 AiPlrClassTy::sub_0067BEF0 */
         iVar2 = st::fn_00404228(this_00);
         local_2f = (undefined2)iVar2;
         local_2d = *(undefined4 *)(puVar1 + 2);
         local_29 = *(undefined4 *)(puVar1 + 4);
         local_25 = *(undefined4 *)(puVar1 + 6);
+        /* ST_CALLSITE[0067C0A1]: CALL 0x00405dc6; direct=00405DC6 AiPlrClassTy::sub_0067A020 */
         st::fn_00405DC6(this_00,(AnonShape_0068FD00_A5257008 *)&local_40,(uint)*puVar4);
         uVar6 = local_8;
       }
@@ -386,6 +391,7 @@ void __thiscall st::fn_0067C110(AiPlrClassTy *this)
   this->field_0689 = 0;
   local_38 = (AnonShape_0068FD00_A5257008 *)0x67;
   local_30 = 1;
+  /* ST_CALLSITE[0067C14B]: CALL 0x00405dc6; direct=00405DC6 AiPlrClassTy::sub_0067A020 */
   st::fn_00405DC6(this,(AnonShape_0068FD00_A5257008 *)&local_38,-1);
   return;
 }

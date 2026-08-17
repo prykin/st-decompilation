@@ -380,10 +380,14 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
          ((*(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0x2000000) != 0)) {
         *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 =
              *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0xfdfffffe;
+        /* ST_CALLSITE[006ADAD6]: CALL dword ptr [EDX + 0x50] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x50))
+                  /* ST_CALLSITE[006ADAD6]: CALL dword ptr [EDX + 0x50] */
                   (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030,
+                   /* ST_CALLSITE[006ADAD6]: CALL dword ptr [EDX + 0x50] */
                    *(undefined4 *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x4,8);
+        /* ST_CALLSITE[006ADAE5]: CALL dword ptr [ECX + 0x4c] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x4c))
                   (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030);
@@ -396,9 +400,12 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
            ((*(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 1) != 0)) {
           *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 =
                *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0xfdfffffe;
+          /* ST_CALLSITE[006ADB37]: CALL dword ptr [EDX + 0x50] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x50))
+                    /* ST_CALLSITE[006ADB37]: CALL dword ptr [EDX + 0x50] */
                     (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030,
+                     /* ST_CALLSITE[006ADB37]: CALL dword ptr [EDX + 0x50] */
                      *(undefined4 *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x4,8);
           FUN_006b08f0(g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,0x854aa4,0,0x100);
         }

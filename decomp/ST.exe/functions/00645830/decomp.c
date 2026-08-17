@@ -16,8 +16,10 @@ STTorpC * __cdecl CreateSTTorp(void)
 
   this = (STGameObjC *)FUN_006b04d0(0x289);
   if (this != nullptr) {
+    /* ST_CALLSITE[00645844]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
     STGameObjC::STGameObjC(this);
-    thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_0x1d5);
+    /* ST_CALLSITE[00645851]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+    STT3DSprC::STT3DSprC((STT3DSprC *)&this->field_0x1d5);
     *(VTable_0079D60C **)&this->field_0x1d5 = &VTable_0079D60C;
     this->vtable = (STGameObjCVTable *)&STTorpCVTable;
     return (STTorpC *)this;

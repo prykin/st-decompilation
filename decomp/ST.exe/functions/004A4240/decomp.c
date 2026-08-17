@@ -60,11 +60,14 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     }
     return;
   }
+  /* ST_CALLSITE[004A42AB]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   this_01 = STAllPlayersC::GetObjPtr
                       (g_allPlayers_007FA174,local_24->field_0024,(ushort)param_2,CASE_1);
   local_18 = this_01;
   if (param_1 == 1) {
+    /* ST_CALLSITE[004A42C5]: CALL dword ptr [EDX + 0x2c] */
     iVar5 = this_01->vfunc_2C();
+    /* ST_CALLSITE[004A42D5]: CALL dword ptr [EAX + 0x2c] */
     if ((iVar5 == 0x3b) || (iVar5 = this_01->vfunc_2C(), iVar5 == 0x60)) {
       if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
         if (this_00->field_0266 == nullptr) {
@@ -82,6 +85,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
           } while ((int)uVar10 < (int)dVar1);
         }
         Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar10,&param_2);
+        /* ST_CALLSITE[004A4508]: CALL 0x0040143d; direct=0040143D STGroupBoatC::DistributeMD */
         DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,
                      (DArrayTy *)this_00->field_0029);
         this_01 = local_18;
@@ -90,6 +94,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
+      /* ST_CALLSITE[004A452B]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0((STFishC *)this_01,&local_a,&local_8,&local_6);
       if (local_a < this_00->field_026A) {
         g_currentExceptionFrame = local_78.previous;
@@ -136,6 +141,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       if (0 < local_1c) {
         piVar9 = local_34;
         do {
+          /* ST_CALLSITE[004A42F2]: CALL dword ptr [EDX + 0x2c] */
           iVar6 = local_18->vfunc_2C();
           this_01 = local_18;
           if (iVar6 == *piVar9) break;
@@ -158,16 +164,19 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
+      /* ST_CALLSITE[004A435C]: CALL dword ptr [EDX + 0x2c] */
       iVar5 = this_01->vfunc_2C();
       if (iVar5 != this_00->field_025E) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
+      /* ST_CALLSITE[004A4373]: CALL dword ptr [EAX + 0x88] */
       iVar5 = (*this_01->vtable->vfunc_88)(local_14);
       if (iVar5 < 1) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
+      /* ST_CALLSITE[004A438F]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0((STFishC *)this_01,&local_a,&local_8,&local_6);
       if (local_a < this_00->field_0252) {
         g_currentExceptionFrame = local_78.previous;
@@ -215,8 +224,10 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     pDVar12 = this_00->field_024E;
     goto LAB_004a4aab;
   }
+  /* ST_CALLSITE[004A4635]: CALL dword ptr [EAX + 0x2c] */
   iVar5 = this_01->vfunc_2C();
   if ((iVar5 == 0x3b) ||
+     /* ST_CALLSITE[004A4645]: CALL dword ptr [EDX + 0x2c] */
      (iVar6 = this_01->vfunc_2C(), iVar5 = local_1c, iVar6 == 0x60)) {
     if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
       if (this_00->field_0266 == nullptr) {
@@ -237,6 +248,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
           uVar10 = uVar10 + 1;
         } while ((int)uVar10 < (int)dVar1);
       }
+      /* ST_CALLSITE[004A4938]: CALL 0x0040143d; direct=0040143D STGroupBoatC::DistributeMD */
       DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,(DArrayTy *)this_00->field_0029
                   );
       this_01 = local_18;
@@ -245,6 +257,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
+    /* ST_CALLSITE[004A495B]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0((STFishC *)this_01,&local_a,&local_8,&local_6);
     if (local_a < this_00->field_026A) {
       g_currentExceptionFrame = local_78.previous;
@@ -303,6 +316,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     if (0 < local_1c) {
       local_20 = local_34;
       do {
+        /* ST_CALLSITE[004A4665]: CALL dword ptr [EDX + 0x2c] */
         iVar7 = local_18->vfunc_2C();
         if (iVar7 == *local_20) break;
         iVar6 = iVar6 + 1;
@@ -339,6 +353,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
           uVar10 = uVar10 + 1;
         } while ((int)uVar10 < (int)dVar1);
       }
+      /* ST_CALLSITE[004A474F]: CALL 0x0040143d; direct=0040143D STGroupBoatC::DistributeMD */
       DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,(DArrayTy *)this_00->field_0029
                   );
     }
@@ -346,6 +361,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
+    /* ST_CALLSITE[004A4770]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0((STFishC *)local_18,&local_a,&local_8,&local_6);
     if (local_a < this_00->field_0252) {
       g_currentExceptionFrame = local_78.previous;
@@ -407,6 +423,7 @@ LAB_004a4a83:
   pDVar13 = this_00->field_0266;
   pDVar12 = this_00->field_024E;
 LAB_004a4aab:
+  /* ST_CALLSITE[004A4AAF]: CALL 0x0040143d; direct=0040143D STGroupBoatC::DistributeMD */
   DistributeMD(this_00,0,pDVar12,pDVar13,pDVar8);
   g_currentExceptionFrame = local_78.previous;
   return;

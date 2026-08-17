@@ -58,7 +58,9 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
     iVar4 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
     while (-1 < iVar4) {
       if (((local_18 != nullptr) &&
+          /* ST_CALLSITE[004B209D]: CALL dword ptr [EDX + 0x2c] */
           (GVar2 = local_18->slot_2C(), GVar2 == param_1)) &&
+         /* ST_CALLSITE[004B20B8]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
          (((STFishC::sub_004162B0(local_18,&local_8,&local_6,&local_a), param_4 < 0 ||
            (((param_5 < 0 || (param_6 < 0)) || (param_7 < 0)))) ||
           ((((param_4 <= local_8 && ((int)local_8 < param_6 + param_4)) && (param_5 <= local_6)) &&
@@ -88,10 +90,12 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
           local_10 = 0x4f;
         }
         if (((this == nullptr) || (this->value_20 != 1000)) ||
+           /* ST_CALLSITE[004B21BF]: CALL dword ptr [EDX + 0x2c] */
            (iVar5 = this->GetObjectTypeId(), iVar5 != local_10)) {
           local_14 = local_14 + *(int *)&local_18->field_0x259;
         }
         else {
+          /* ST_CALLSITE[004B21CD]: CALL dword ptr [EAX + 0x88]; [STIndirectCallsiteApplier] exact slot 0x88; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
           iVar5 = (*this->vtable[2].slots_00_28[10])(this,0);
           local_14 = local_14 + iVar5;
         }

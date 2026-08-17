@@ -41,6 +41,7 @@ undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
         ((sVar2 < 0 || ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))))) ||
        (g_worldGrid.sizeZ <= sVar3)) ||
       (STGridAt3D(g_worldGrid, sVar8, sVar2, sVar3).objects[0] == nullptr)) &&
+     /* ST_CALLSITE[005FC67A]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
      (iVar6 = DumpClassC::WritePtr
                         (sVar8,sVar2,sVar3,0,(RecoveredRecord_DumpClassC_00495EC0 *)param_1),
      iVar6 == 0)) {
@@ -73,14 +74,17 @@ undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
     if (this == nullptr) {
       return 0;
     }
+    /* ST_CALLSITE[005FC72E]: CALL dword ptr [EDX + 0x2c] */
     iVar6 = this->GetObjectTypeId();
     if (((iVar6 != 0x1b) && (iVar6 != 7)) && (iVar6 != 0x13)) {
       return 0;
     }
+    /* ST_CALLSITE[005FC74D]: CALL dword ptr [EAX + 0x114]; [STIndirectCallsiteApplier] exact slot 0x114; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
     iVar6 = (*this->vtable[5].slots_00_28[9])(this,0xfe);
     if (iVar6 == 0) {
       return 0;
     }
+    /* ST_CALLSITE[005FC763]: CALL dword ptr [EDX + 0x118]; [STIndirectCallsiteApplier] exact slot 0x118; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
     (*this->vtable[5].slots_00_28[10])(this,param_1->field_0018);
     param_1->field_02A3 = this[1].vtable;
     param_1->field_02AB = *(undefined2 *)&this[1].field_0xe;

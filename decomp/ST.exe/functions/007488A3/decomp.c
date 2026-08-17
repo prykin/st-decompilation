@@ -15,32 +15,40 @@ uint FUN_007488a3(int param_1)
   int *local_8;
 
   iVar2 = param_1;
+  /* ST_CALLSITE[007488B4]: CALL dword ptr [EAX + 0x18] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(**(int **)(param_1 + -0x28) + 0x18))();
   iVar6 = 0;
   auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < iVar3) {
     do {
+      /* ST_CALLSITE[007488C9]: CALL dword ptr [EAX + 0x1c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar4 = (**(code **)(**(int **)(iVar2 + -0x28) + 0x1c))(iVar6);
       piVar1 = (int *)(iVar4 + 0xc);
+      /* ST_CALLSITE[007488D6]: CALL dword ptr [EAX + 0x24] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar5 = (**(code **)(*piVar1 + 0x24))(piVar1,&local_10);
       if ((int)uVar5 < 0) {
         return uVar5;
       }
+      /* ST_CALLSITE[007488EA]: CALL dword ptr [EAX + 0x18] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((local_10 == 1) && (iVar4 = (**(code **)(*piVar1 + 0x18))(piVar1,&local_8), -1 < iVar4)) {
         param_1_after_write = param_1_after_write + 1;
+        /* ST_CALLSITE[00748903]: CALL dword ptr [ECX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (**(code **)*local_8)(local_8,&DAT_007a1b60,&local_c);
+        /* ST_CALLSITE[0074890D]: CALL dword ptr [ECX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*local_8 + 8))(local_8);
         if (iVar4 < 0) {
           return 0;
         }
+        /* ST_CALLSITE[0074891A]: CALL dword ptr [ECX + 0x20] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (**(code **)(*local_c + 0x20))(local_c);
+        /* ST_CALLSITE[00748925]: CALL dword ptr [ECX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*local_c + 8))(local_c);
         if (iVar4 != 1) {

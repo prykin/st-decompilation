@@ -16,6 +16,7 @@ void __fastcall FUN_004e0250(AnonShape_004E0250_5A3B9236 *param_1)
   if (this == nullptr) {
     return;
   }
+  /* ST_CALLSITE[004E0291]: CALL dword ptr [EAX + 0x2c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(*this + 0x2c))();
   param_1->field_04DC = iVar1;
@@ -48,6 +49,7 @@ cf_common_exit_004E02E4:
       }
     }
     else {
+      /* ST_CALLSITE[004E0347]: CALL 0x0040494e; direct=0040494E STAllPlayersC::_ChangeMD */
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       STAllPlayersC::_ChangeMD
                 (g_allPlayers_007FA174,1,(int *)param_1->field_0024,

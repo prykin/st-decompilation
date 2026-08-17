@@ -71,8 +71,10 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
             DArrayGetElement(local_20,uVar7,local_8);
             if (local_8[0] == param_2) {
               DArrayRemoveAt(local_20,uVar7);
+              /* ST_CALLSITE[00446602]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8[0],CASE_1);
               local_10 = g_playSystem_00802A38->field_00E4;
+              /* ST_CALLSITE[0044661E]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
               STBoatC::CmdToObj(pSVar4,CASE_21,&local_10);
               break;
             }
@@ -94,6 +96,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
       } while ((int)uVar6 < (int)local_c);
     }
     if (local_c == 0) {
+      /* ST_CALLSITE[00446670]: CALL 0x00402095; direct=00402095 STAllPlayersC::DeletePGPairs */
       DeletePGPairs(local_14,param_1);
       g_currentExceptionFrame = local_68.previous;
       return;
@@ -122,6 +125,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
           if (0 < (int)dVar1) {
             do {
               DArrayGetElement(local_20,uVar8,local_8);
+              /* ST_CALLSITE[00446710]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8[0],CASE_1);
               if (pSVar4 == nullptr) {
                 iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2955,0,0,
@@ -133,6 +137,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
               }
               else {
                 local_10 = g_playSystem_00802A38->field_00E4;
+                /* ST_CALLSITE[00446755]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                 STBoatC::CmdToObj(pSVar4,CASE_21,&local_10);
               }
               uVar8 = uVar8 + 1;
@@ -150,13 +155,16 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
       } while ((int)uVar6 < (int)local_c);
     }
     if (local_c == 0) {
+      /* ST_CALLSITE[004467A3]: CALL 0x00402095; direct=00402095 STAllPlayersC::DeletePGPairs */
       DeletePGPairs(local_14,param_1);
       g_currentExceptionFrame = local_68.previous;
       return;
     }
   }
   this_00 = local_14;
+  /* ST_CALLSITE[004467C3]: CALL 0x004017fd; direct=004017FD STAllPlayersC::OptimizeGuardBoats */
   OptimizeGuardBoats(local_14,param_1);
+  /* ST_CALLSITE[004467CB]: CALL 0x0040100a; direct=0040100A STAllPlayersC::DistributeGuardBoats */
   DistributeGuardBoats(this_00,param_1);
   g_currentExceptionFrame = local_68.previous;
   return;

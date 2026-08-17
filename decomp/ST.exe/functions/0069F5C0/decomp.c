@@ -28,6 +28,7 @@ void __thiscall FUN_0069f5c0(void *this,uint param_1,uint param_2,uint param_3)
                               *(int *)(&DAT_007d7f94 + uVar3 * 8),&param_3_after_write,uVar1,0);
   puVar4[5] = param_1;
   puVar4[6] = param_2;
+  /* ST_CALLSITE[0069F629]: CALL 0x00404822; direct=00404822 CGenerate::sub_006A09F0 */
   CGenerate::sub_006A09F0(this,(byte *)puVar4,param_3_after_write);
   return;
 }

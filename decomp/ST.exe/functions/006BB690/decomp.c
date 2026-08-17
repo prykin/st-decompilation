@@ -9,6 +9,7 @@ undefined4 FUN_006bb690(AnonShape_006BB690_EB7315D1 *param_1)
   if ((param_1->field_000C & 0x100) != 0) {
     return 0;
   }
+  /* ST_CALLSITE[006BB6AA]: CALL dword ptr [ECX + 0x28] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar1 = (**(code **)(*param_1->field_0030 + 0x28))(param_1->field_0030);
   return uVar1;

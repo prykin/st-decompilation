@@ -44,8 +44,10 @@ void __thiscall STManRuinC::sub_00631010(STManRuinC *this)
           psVar7 = psVar7 + 2;
         }
         ST3DSMAPContext::sub_006E91D0(g_sT3DSMAPContext_00807598,piVar2);
+        /* ST_CALLSITE[00631084]: CALL 0x0040461a; direct=0040461A STManRuinC::sub_00630AC0 */
         iVar6 = sub_00630AC0(this,local_8);
         if (iVar6 != 0) {
+          /* ST_CALLSITE[006310B0]: CALL 0x00401d57; direct=00401D57 STManRuinC::sub_00630BB0 */
           sub_00630BB0(this,local_20,local_1e,local_1c,local_18,(int)local_1a,local_c);
           this->field_0044 = 1;
           iVar6 = thunk_FUN_00630ff0();
@@ -54,11 +56,13 @@ void __thiscall STManRuinC::sub_00631010(STManRuinC *this)
             this->field_0044 = 1;
           }
           else {
+            /* ST_CALLSITE[006310E7]: CALL 0x00405c9f; direct=00405C9F STManRuinC::sub_00630C50 */
             puVar4 = sub_00630C50(this,this->field_0040,this->field_004C,1,1,this->field_0050);
             if (puVar4 != nullptr) {
               this->field_0044 = 2;
             }
           }
+          /* ST_CALLSITE[00631106]: CALL 0x00405eca; direct=00405ECA STManRuinC::sub_00631880 */
           uVar5 = sub_00631880(this,&this->field_0040,this->field_0061);
           if (((uVar5 == 0) && (this->field_0048 != 0)) && (this->field_0061 != 0)) {
             Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this->field_0061);

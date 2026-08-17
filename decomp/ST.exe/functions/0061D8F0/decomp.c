@@ -29,6 +29,7 @@ int __thiscall STLightC::sub_0061D8F0(STLightC *this,undefined4 *param_1)
   puVar5 = (byte *)(param_1);
   memmove(puVar7, puVar5, 0x90); /* compiler REP MOVS byte copy */
   iVar4 = 0;
+  /* ST_CALLSITE[0061D921]: CALL 0x004050d3; direct=004050D3 STLightC::sub_0061D9C0 */
   local_c = sub_0061D9C0(this,(ushort *)(param_1 + 0x24),&local_10,1);
   piVar1 = (int *)(local_c + (int)(param_1 + 0x24));
   piVar6 = piVar1 + 1;

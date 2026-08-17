@@ -75,6 +75,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
   uVar13 = 1;
   local_8 = 1;
   local_28 = this;
+  /* ST_CALLSITE[00597139]: CALL dword ptr [0x0085bedc] */
   DVar6 = timeGetTime();
   this->field_0061 = DVar6;
   local_a8.previous = g_currentExceptionFrame;
@@ -93,6 +94,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
   }
   switch(local_28->field_0065) {
   case CASE_1:
+    /* ST_CALLSITE[0059791C]: CALL dword ptr [0x0085c05c] */
     CFsgsConnection::PumpMessages((CFsgsConnection *)&DAT_00802a90);
     cVar1 = this_02->array_00BC[0xc].field_01DF;
     if (cVar1 == '\x06') {
@@ -103,6 +105,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
             do {
               element_1ea6 = DArrayAt<FSGSTy_field_1EA6Element>(pFVar12, uVar13);
               if (element_1ea6 != nullptr) {
+                /* ST_CALLSITE[00597A29]: CALL EBX */
                 CFsgsConnection::PingPlayer
                           ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EAE,
                            *(ulong *)(element_1ea6 + 0x21));
@@ -118,6 +121,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
     }
     else if ((cVar1 == '\b') && (60000 < this_02->field_0061 - this_02->array_00BC[0xc].field_01E3))
     {
+      /* ST_CALLSITE[0059795F]: CALL dword ptr [0x0085c01c] */
       CFsgsConnection::RequestGameList
                 ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EC2,nullptr);
       this_02->array_00BC[0xc].field_01E3 = this_02->field_0061;
@@ -127,7 +131,9 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
         iVar2 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_5;
         pCVar5->field_0494 = 0xffff;
+        /* ST_CALLSITE[0059799E]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
         CursorClassTy::SetGCType(pCVar5,CASE_0,iVar2,iVar16);
+        /* ST_CALLSITE[005979B3]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
         CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
         pCVar5->field_00D2 = 0;
         pCVar5->field_04DF = -1;
@@ -162,6 +168,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
   case CASE_A:
     if ((0 < local_28->field_1A93) && (-1 < (int)local_28->field_1A8F)) {
       if (local_28->field_1A93 == 9) {
+        /* ST_CALLSITE[005974EB]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
         uVar7 = MMObjTy::CreateSprBut((MMObjTy *)local_28,0,1,0x121,9,0x1d6,0x3c,0x694c,0);
         this_02->field_1AB3 = uVar7;
       }
@@ -185,23 +192,28 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
       }
       pCVar9 = FUN_006f2c00("MM_BAN_",2,this_02->field_1A93);
       puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar14,iVar16);
+      /* ST_CALLSITE[0059757A]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_02->field_1A97,0,0,'\x06',(byte *)puVar10);
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1A8F);
       local_8 = 0;
     }
     if ((this_02->field_1F23 != nullptr) &&
+       /* ST_CALLSITE[005975A8]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar16 = HoloTy::NextFas(this_02->field_1F23), iVar16 != 0)) {
       local_8 = 0;
     }
     if ((this_02->field_1F27 != nullptr) &&
+       /* ST_CALLSITE[005975BE]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar16 = HoloTy::NextFas(this_02->field_1F27), iVar16 != 0)) {
       local_8 = 0;
     }
     if ((this_02->field_1F2B != nullptr) &&
+       /* ST_CALLSITE[005975D4]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar16 = HoloTy::NextFas(this_02->field_1F2B), iVar16 != 0)) {
       local_8 = 0;
     }
     if ((this_02->field_1F2F != nullptr) &&
+       /* ST_CALLSITE[005975EA]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar16 = HoloTy::NextFas(this_02->field_1F2F), iVar16 != 0)) {
       local_8 = 0;
     }
@@ -218,21 +230,25 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
     puVar8 = (undefined4 *)((byte *)puVar8 + 0x18);
     this_00 = this_02->field_1F2B;
     if (this_00 != nullptr) {
+      /* ST_CALLSITE[00597632]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(this_00);
       Library::MSVCRT::FUN_0072e2b0(this_02->field_1F2B);
       this_02->field_1F2B = nullptr;
     }
     if (this_02->field_1F23 != nullptr) {
+      /* ST_CALLSITE[00597656]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(this_02->field_1F23);
       Library::MSVCRT::FUN_0072e2b0(this_02->field_1F23);
       this_02->field_1F23 = nullptr;
     }
     if (this_02->field_1F27 != nullptr) {
+      /* ST_CALLSITE[0059767A]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(this_02->field_1F27);
       Library::MSVCRT::FUN_0072e2b0(this_02->field_1F27);
       this_02->field_1F27 = nullptr;
     }
     if (this_02->field_1F2F != nullptr) {
+      /* ST_CALLSITE[0059769E]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(this_02->field_1F2F);
       Library::MSVCRT::FUN_0072e2b0(this_02->field_1F2F);
       this_02->field_1F2F = nullptr;
@@ -258,7 +274,9 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
       STPiece<0,2>(local_24) = 1;
     }
     this_02->field_0065 = CASE_1;
+    /* ST_CALLSITE[00597739]: CALL 0x00403b4d; direct=00403B4D FSGSTy::PaintFSGS */
     PaintFSGS(this_02,'\0');
+    /* ST_CALLSITE[00597740]: CALL 0x0040279d; direct=0040279D FSGSTy::CreateCtrls */
     CreateCtrls(this_02);
     switch(this_02->array_00BC[0xc].field_01DF) {
     case 6:
@@ -276,13 +294,16 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
       }
       break;
     case 8:
+      /* ST_CALLSITE[005977BC]: CALL dword ptr [0x0085c01c] */
       CFsgsConnection::RequestGameList
                 ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EC2,nullptr);
+      /* ST_CALLSITE[005977C2]: CALL dword ptr [0x0085bedc] */
       DVar6 = timeGetTime();
       this_02->array_00BC[0xc].field_01E3 = DVar6;
       pCVar5 = g_cursorClass_00802A30;
       goto joined_r0x00597872;
     case 9:
+      /* ST_CALLSITE[0059788B]: CALL dword ptr [0x0085c024] */
       CFsgsConnection::RequestLadderList
                 ((CFsgsConnection *)&DAT_00802a90,DAT_00803140,0,DAT_00803148,0xf);
       pCVar5 = g_cursorClass_00802A30;
@@ -291,7 +312,9 @@ joined_r0x00597872:
       if (pCVar5 != nullptr) {
         pCVar5->field_0493 = CASE_5;
         pCVar5->field_0494 = 0xffff;
+        /* ST_CALLSITE[005978BC]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
         CursorClassTy::SetGCType(pCVar5,CASE_0,pCVar5->field_00C5,pCVar5->field_00C9);
+        /* ST_CALLSITE[005978D1]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
         CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
         pCVar5->field_00D2 = 0;
         pCVar5->field_04DF = -1;
@@ -314,6 +337,7 @@ joined_r0x00597872:
         local_34 = "1\\Rank";
         local_30 = "1\\Rating";
         local_2c = "1\\Last Game";
+        /* ST_CALLSITE[00597864]: CALL dword ptr [0x0085c020] */
         CFsgsConnection::RequestInfo
                   ((CFsgsConnection *)&DAT_00802a90,(char *)this_02->field_1B0C,0xf,&local_64);
         pCVar5 = g_cursorClass_00802A30;
@@ -322,6 +346,7 @@ joined_r0x00597872:
     }
     this_01 = (this_02->array_00BC[0xc].field_01DB)->field_02E6;
     if (this_01 != nullptr) {
+      /* ST_CALLSITE[005978FF]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
       MMsgTy::StatePanel(this_01,(int)&local_24);
       g_currentExceptionFrame = local_a8.previous;
       return;
@@ -329,6 +354,7 @@ joined_r0x00597872:
     break;
   case CASE_4:
     if (local_28->field_1F23 != nullptr) {
+      /* ST_CALLSITE[00597198]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar16 = HoloTy::NextFas(local_28->field_1F23);
       if (iVar16 == 0) {
         uVar13 = *(uint *)&this_02->field_1F23->field_0x3;
@@ -341,6 +367,7 @@ joined_r0x00597872:
       }
     }
     if (this_02->field_1F27 != nullptr) {
+      /* ST_CALLSITE[005971C9]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar16 = HoloTy::NextFas(this_02->field_1F27);
       if (iVar16 == 0) {
         uVar13 = *(uint *)&this_02->field_1F27->field_0x3;
@@ -353,6 +380,7 @@ joined_r0x00597872:
       }
     }
     if (this_02->field_1F2B != nullptr) {
+      /* ST_CALLSITE[005971FB]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar16 = HoloTy::NextFas(this_02->field_1F2B);
       if (iVar16 == 0) {
         uVar13 = *(uint *)&this_02->field_1F2B->field_0x3;
@@ -365,6 +393,7 @@ joined_r0x00597872:
       }
     }
     if (this_02->field_1F2F != nullptr) {
+      /* ST_CALLSITE[0059722D]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar16 = HoloTy::NextFas(this_02->field_1F2F);
       if (iVar16 == 0) {
         uVar13 = *(uint *)&this_02->field_1F2F->field_0x3;
@@ -402,6 +431,7 @@ joined_r0x00597872:
       }
       pCVar9 = FUN_006f2c00("MM_BAN_",2,this_02->field_1A93);
       puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar14,iVar16);
+      /* ST_CALLSITE[0059731E]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_02->field_1A97,0,0,'\x06',(byte *)puVar10);
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1A8F);
       local_8 = 0;
@@ -417,7 +447,9 @@ joined_r0x00597872:
         iVar2 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
         pCVar5->field_0494 = 0xffff;
+        /* ST_CALLSITE[00597390]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
         CursorClassTy::SetGCType(pCVar5,CASE_0,iVar2,iVar16);
+        /* ST_CALLSITE[005973A5]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
         CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
         pCVar5->field_00D2 = 0;
         pCVar5->field_04DF = -1;
@@ -433,18 +465,21 @@ joined_r0x00597872:
         case '\t':
         case '\n':
           this_02->array_00BC[0xc].field_01DF = cVar1;
+          /* ST_CALLSITE[00597444]: CALL 0x00401b2c; direct=00401B2C FSGSTy::SetState */
           SetState(this_02,7);
           this_02->array_00BC[0xc].field_01E1 = 0;
           g_currentExceptionFrame = local_a8.previous;
           return;
         case '\x06':
           this_02->array_00BC[0xc].field_01DF = cVar1;
+          /* ST_CALLSITE[0059746D]: CALL 0x00401b2c; direct=00401B2C FSGSTy::SetState */
           SetState(this_02,8);
           this_02->array_00BC[0xc].field_01E1 = 0;
           g_currentExceptionFrame = local_a8.previous;
           return;
         case '\b':
           this_02->array_00BC[0xc].field_01DF = cVar1;
+          /* ST_CALLSITE[00597496]: CALL 0x00401b2c; direct=00401B2C FSGSTy::SetState */
           SetState(this_02,10);
         }
         this_02->array_00BC[0xc].field_01E1 = 0;

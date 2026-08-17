@@ -69,16 +69,19 @@ HelpPanelTy::DrawWeapon
         pHVar10 = g_hINSTANCE_00807618;
         UVar6 = thunk_FUN_00524fe0(GVar9);
         pcVar7 = LoadResourceString(UVar6,pHVar10);
+        /* ST_CALLSITE[00515A0C]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%s",pcVar7);
       }
       else {
         pHVar10 = g_hINSTANCE_00807618;
         UVar6 = thunk_FUN_00524fe0(GVar9);
         pcVar7 = LoadResourceString(UVar6,pHVar10);
+        /* ST_CALLSITE[005159DD]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%s (%d)",pcVar7,param_4);
       }
       ccFntTy::WrStr(local_8->field_01E0,(char *)&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5
                     );
+      /* ST_CALLSITE[00515A6B]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0218,
              (param_1 - (pBVar5->bmiHeader).biWidth) + -5,
              (0xf - (pBVar5->bmiHeader).biHeight) / 2 + *param_2,'\x06',(byte *)pBVar5);

@@ -36,6 +36,7 @@ void __thiscall st::fn_0054A8D0(CursorClassTy *this)
 
 {
   if ((g_tLOBldMark_007FB2AC != nullptr) && (g_tLOBldMark_007FB2AC->field_0018 == 0)) {
+    /* ST_CALLSITE[0054A8E5]: CALL 0x0040153c; direct=0040153C TLOBldMark::sub_004C63F0 */
     st::fn_0040153C(g_tLOBldMark_007FB2AC);
   }
   if ((this->field_00DE == CASE_5) && (-1 < this->field_010B)) {
@@ -51,6 +52,7 @@ void __thiscall st::fn_0054A8D0(CursorClassTy *this)
                 ((uint *)this->field_0060,this->field_001C,0xfffffffe,this->field_0034,
                  this->field_0038);
     }
+    /* ST_CALLSITE[0054A95B]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     st::fn_0040241E(this,this->field_00C5,this->field_00C9);
     this->field_00DE = CASE_0;
   }
@@ -91,6 +93,7 @@ void __thiscall st::fn_0054B540(CursorClassTy *this)
                   ((uint *)this->field_0060,this->field_001C,0xfffffffe,this->field_0034,
                    this->field_0038);
       }
+      /* ST_CALLSITE[0054B5C5]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
       st::fn_0040241E(this,this->field_00C5,this->field_00C9);
     }
     else {
@@ -122,7 +125,9 @@ void __thiscall st::fn_0054B540(CursorClassTy *this)
 void __thiscall st::fn_0054B630(CursorClassTy *this,uint param_1,undefined4 param_2)
 
 {
+  /* ST_CALLSITE[0054B636]: CALL 0x004040fc; direct=004040FC CursorClassTy::sub_0054A8D0 */
   st::fn_004040FC(this);
+  /* ST_CALLSITE[0054B63D]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
   st::fn_00403058(this);
   this->field_04A2 = param_1;
   this->field_04AA = param_2;
@@ -235,6 +240,7 @@ LAB_0054b7e0:
     iVar3 = st::machine_word_boundary_cast<int>(pCVar1->field_04DF * -0x13 + 0x136);
     iVar4 = g_nWidth_00806730 + -0x15;
   }
+  /* ST_CALLSITE[0054B813]: CALL 0x00403738; direct=00403738 PutDDX */
   st::fn_00403738(iVar4,iVar3,'\x06',pBVar2);
 LAB_0054b81b:
   pCVar1->field_04DF = param_1;
@@ -258,6 +264,7 @@ LAB_0054b81b:
       iVar4 = st::machine_word_boundary_cast<int>(pCVar1->field_04DF * -0x13 + 0x136);
       iVar3 = g_nWidth_00806730 + -0x15;
     }
+    /* ST_CALLSITE[0054B8DC]: CALL 0x00403738; direct=00403738 PutDDX */
     st::fn_00403738(iVar3,iVar4,'\x06',pBVar2);
   }
   g_currentExceptionFrame = local_4c.previous;

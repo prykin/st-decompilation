@@ -33,6 +33,7 @@ void __thiscall SoundManagerTy::sub_00566AA0(SoundManagerTy *this)
     }
     if (0 < (int)uVar2) {
       if (this->field_0039 < 0) {
+        /* ST_CALLSITE[00566B72]: CALL 0x00401ac3; direct=00401AC3 SoundManagerTy::sub_00566970 */
         sub_00566970(this,0,2000);
       }
       else {
@@ -55,10 +56,12 @@ void __thiscall SoundManagerTy::sub_00566AA0(SoundManagerTy *this)
               uVar1 = this->field_0039 + 1;
             }
             if ((int)uVar2 <= (int)uVar1) {
+              /* ST_CALLSITE[00566B35]: CALL 0x00401ac3; direct=00401AC3 SoundManagerTy::sub_00566970 */
               sub_00566970(this,1,0);
               return;
             }
           }
+          /* ST_CALLSITE[00566B61]: CALL 0x00401ac3; direct=00401AC3 SoundManagerTy::sub_00566970 */
           sub_00566970(this,uVar1,0);
           return;
         }

@@ -128,6 +128,7 @@ int FUN_007535f0(char *_Drive)
     pcVar8 = pcVar7 + -1;
     memmove(pcVar8, pcVar6, uVar3); /* compiler REP MOVS byte copy */
   }
+  /* ST_CALLSITE[00753793]: CALL dword ptr [0x0085bcd0] */
   DVar2 = GetFileAttributesA(local_108);
   return (uint)(DVar2 != 0xffffffff);
 }

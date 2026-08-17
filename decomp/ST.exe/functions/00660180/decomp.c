@@ -66,6 +66,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
       if (pSVar4 == nullptr) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[00660377]: CALL dword ptr [EDX + 0x8] */
       pSVar4->sub_00498D20(2,(short)local_34);
       return 0;
     }
@@ -105,6 +106,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x467);
   }
   else {
+    /* ST_CALLSITE[006602A8]: CALL dword ptr [EDX + 0x8] */
     pSVar4->sub_00498D20(6,(short)&local_1c);
   }
   if (array != nullptr) {

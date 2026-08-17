@@ -16,8 +16,10 @@ char * LoadResourceString(UINT resourceId,HINSTANCE module)
     g_resourceStringBufferOffset = 0;
   }
   if (module == (HINSTANCE)0x0) {
+    /* ST_CALLSITE[006B0166]: CALL dword ptr [0x0085bc4c] */
     module = GetModuleHandleA((LPCSTR)0x0);
   }
+  /* ST_CALLSITE[006B0183]: CALL dword ptr [0x0085be44] */
   uVar1 = LoadStringA(module,resourceId,g_resourceStringBuffer + g_resourceStringBufferOffset,0x800);
   pcVar2 = g_resourceStringBuffer + g_resourceStringBufferOffset;
   if ((uVar1 != 0) && (uVar1 < 0x800)) {

@@ -803,6 +803,12 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                 if (written.find()) {
                     String destination = written.group(1);
                     vtableBases.remove(destination);
+                    // A table value loaded from [receiverReg] is usable only while that
+                    // exact receiver register remains live.  Invalidate dependent table
+                    // roots before recording a new load; otherwise MOV ECX,... after
+                    // MOV EAX,[ECX] could falsely bind the call to the new ECX value.
+                    vtableBases.entrySet().removeIf(entry ->
+                        entry.getValue().equals(destination));
                     if ("ECX".equals(destination)) ecx = "";
                     Matcher load = VTABLE_LOAD.matcher(text);
                     if (load.matches())
@@ -813,10 +819,16 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                     Matcher matcher = SLOT.matcher(text);
                     if (matcher.find()) {
                         String table = matcher.group(1).toUpperCase(Locale.ROOT);
+                        String receiver = safeText(vtableBases.get(table));
+                        // `MOV tableReg,[ECX] ... CALL [tableReg+slot]` needs no
+                        // separate MOV ECX,receiver: ECX already is the receiver.
+                        // Dependency invalidation above proves it was not redefined.
+                        String liveEcx = ecx.isBlank() && "ECX".equals(receiver) ?
+                            "ECX" : ecx;
                         sites.add(new Site(addr(function.getEntryPoint()),
                             function.getName(true), addr(instruction.getAddress()), table,
-                            slotValue(matcher.group(2)), pushes, ecx,
-                            safeText(vtableBases.get(table)), instruction.toString()));
+                            slotValue(matcher.group(2)), pushes, liveEcx,
+                            receiver, instruction.toString()));
                     }
                     pushes = 0; ecx = "";
                     vtableBases.remove("EAX");

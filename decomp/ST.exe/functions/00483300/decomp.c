@@ -41,6 +41,7 @@ int __fastcall FUN_00483300(int *param_1,undefined4 param_2)
   }
   else if ((STField<int>(param_1,0x7a2) != 0) || (0x27 < STField<int>(param_1,0x72a))) {
 LAB_00483342:
+    /* ST_CALLSITE[0048335E]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this = STAllPlayersC::GetObjPtr
                      (g_allPlayers_007FA174,STField<char>(param_1,0x487),
                       STField<ushort>(param_1,0x48b),
@@ -52,8 +53,11 @@ LAB_00483342:
     if ((short)param_1[0x205] < iVar2) {
       return (-(uint)(STField<int>(param_1,0x7e6) != 0) & 4) + 5;
     }
+    /* ST_CALLSITE[004833C6]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
     iVar3 = (*this->vtable[1].vfunc_24)(this);
+    /* ST_CALLSITE[004833D8]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; signature=__thiscall;/undefined4;pointer:/STGameObjC */
     if (((iVar3 == 0) || (iVar3 = (*this->vtable[1].MoveStep)(this), iVar3 == 0)) ||
+       /* ST_CALLSITE[004833EE]: CALL dword ptr [EDX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
        (iVar3 = (*this->vtable[1].vfunc_20)(this,param_1[9]), iVar3 == 0)) {
       return 3;
     }
@@ -63,6 +67,7 @@ LAB_00483342:
     if (3 < (int)(((uVar4 ^ uVar6) - uVar6) * 10) / iVar2) {
       return ((short)local_8 <= sVar1) + 6;
     }
+    /* ST_CALLSITE[00483447]: CALL dword ptr [EAX + 0x10] */
     /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable or function-table callback call with the machine-proven calling convention */
     sVar1 = (**(code **)(*param_1 + 0x10))
                       (STField<undefined2>(param_1,0x41),
@@ -88,6 +93,7 @@ LAB_00483342:
         sVar8 = (short)local_10 + local_28;
         sVar9 = (short)local_14 - sStack_26;
         if (STField<int>(param_1,0x736) == 0) {
+          /* ST_CALLSITE[00483522]: CALL 0x00405907; direct=00405907 STSprGameObjC::CheckRay */
           iVar3 = STSprGameObjC::CheckRay
                             ((STSprGameObjC *)param_1,sVar7,sVar1,(short)local_1c,sVar8,sVar9,
                              (short)local_8,
@@ -95,6 +101,7 @@ LAB_00483342:
                              nullptr,0);
         }
         else {
+          /* ST_CALLSITE[00483546]: CALL 0x00405907; direct=00405907 STSprGameObjC::CheckRay */
           iVar3 = STSprGameObjC::CheckRay
                             ((STSprGameObjC *)param_1,sVar7,sVar1,(short)local_1c,sVar8,sVar9,
                              (short)local_8,

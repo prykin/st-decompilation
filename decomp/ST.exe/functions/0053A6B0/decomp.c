@@ -40,6 +40,7 @@ void __thiscall PlayPanelTy::SwitchOptPanel(PlayPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
+    /* ST_CALLSITE[0053A74F]: CALL 0x004038be; direct=004038BE PlayPanelTy::ShiftControls */
     ShiftControls(local_8,0);
   }
   else {
@@ -54,6 +55,7 @@ void __thiscall PlayPanelTy::SwitchOptPanel(PlayPanelTy *this,int param_1)
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
+      /* ST_CALLSITE[0053A733]: CALL 0x00402ed2; direct=00402ED2 CPanelTy::ShiftControls */
       CPanelTy::ShiftControls(g_cPanel_00801688,0);
       g_currentExceptionFrame = local_4c.previous;
       return;

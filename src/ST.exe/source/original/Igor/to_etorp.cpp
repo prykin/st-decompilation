@@ -103,8 +103,8 @@ st::fn_0057A2C0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,s
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079b3a8);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_0079b3a8;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 32);
   local_f0 = nullptr;
@@ -192,6 +192,7 @@ LAB_0057ac02:
             uVar18 = (undefined2)((uint)iVar21 >> 0x10);
             uVar9 = (undefined2)((uint)puVar1 >> 0x10);
             local_d0 = iVar12;
+            /* ST_CALLSITE[0057AF75]: CALL dword ptr [EDX + 0x10] */
             /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
             uVar9 = (**(code **)(param_1->field_0000 + 0x10))
                               (CONCAT22(uVar18,param_1->field_0041),
@@ -368,6 +369,7 @@ LAB_0057ac02:
                   }
                   local_74 = iVar23;
                   if (((this != nullptr) &&
+                      /* ST_CALLSITE[0057A86C]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                       (iVar16 = this->vfunc_F0(), iVar16 != 0)) &&
                      ((this[1].vtable < (STWorldObjectVTable *)0x8 &&
                       ((g_playSystem_00802A38 == nullptr ||
@@ -403,6 +405,7 @@ LAB_0057a96b:
                       bVar26 = g_bulkInitializedRecords_008087C7[bVar3].field_0023 !=
                                g_bulkInitializedRecords_008087C7[bVar2].field_0023;
                     }
+                    /* ST_CALLSITE[0057A982]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                     if ((bVar26) && (iVar16 = this->vfunc_F8(), iVar16 != 0))
                     {
                       st::fn_004031E3(this,(uint *)local_b4,(int *)local_e8,local_20);
@@ -466,6 +469,7 @@ LAB_0057a96b:
                 puVar1 = (undefined2 *)(*param_3 + iVar20 * 8);
                 uVar18 = (undefined2)((uint)iVar16 >> 0x10);
                 uVar9 = (undefined2)((uint)puVar1 >> 0x10);
+                /* ST_CALLSITE[0057ABDE]: CALL dword ptr [EDX + 0x10] */
                 /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
                 uVar9 = (**(code **)(param_1->field_0000 + 0x10))
                                   (CONCAT22(uVar18,param_1->field_0041),
@@ -548,6 +552,7 @@ undefined4 __cdecl st::fn_0057B350(int *param_1,int param_2,int *param_3)
               *(short *)(*piVar11 + 4) = (short)iVar10 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
+              /* ST_CALLSITE[0057B445]: CALL dword ptr [EDX + 0x10] */
               /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
               uVar6 = (**(code **)(*piVar5 + 0x10))
                                 (CONCAT22(uVar9,STField<undefined2>(piVar5,0x41)),
@@ -591,6 +596,7 @@ undefined4 __cdecl st::fn_0057B350(int *param_1,int param_2,int *param_3)
               *(short *)(*piVar11 + 4) = (short)iVar10 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
+              /* ST_CALLSITE[0057B539]: CALL dword ptr [EDX + 0x10] */
               /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
               uVar6 = (**(code **)(*piVar5 + 0x10))
                                 (CONCAT22(uVar9,STField<undefined2>(piVar5,0x41)),

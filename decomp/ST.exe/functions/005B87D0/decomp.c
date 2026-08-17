@@ -50,7 +50,9 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
     iVar4 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
     this_00 = local_14;
     if (iVar4 == 0) {
+      /* ST_CALLSITE[005B882A]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
       MMObjTy::CloseButtons((MMObjTy *)local_14);
+      /* ST_CALLSITE[005B8835]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       HidePanel(this_00,0,0,1);
       if (param_1 == 0) {
         this_00->field_1CD0 = 0;
@@ -72,6 +74,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           puVar7 = ccFntTy::CreateTypeSSpr
                              (g_startSystem_0081176C->field_0030,puVar8,iVar14,iVar15,cVar16,uVar10,
                               iVar18,iVar19,iVar20);
+          /* ST_CALLSITE[005B8913]: CALL dword ptr [EDX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(local_8 + 8))(puVar7,uVar22,uVar23);
           this_00->field_1D90 = 0;
@@ -79,6 +82,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
         else {
           pcVar5 = LoadResourceString(param_4,g_hINSTANCE_00807618);
           pcVar6 = LoadResourceString(param_1,g_hINSTANCE_00807618);
+          /* ST_CALLSITE[005B887D]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar6,pcVar5,param_3);
           iVar14 = this_00->field_1D88;
           uVar23 = 0xffffffff;
@@ -86,6 +90,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           puVar7 = ccFntTy::CreateTypeSSpr
                              (g_startSystem_0081176C->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
                               0xffffffff,1,-1,-1);
+          /* ST_CALLSITE[005B88BF]: CALL dword ptr [EDI + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(iVar14 + 8))(puVar7,uVar22,uVar23);
           this_00->field_1D90 = 0;
@@ -120,6 +125,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
             psVar9 = (short *)ccFntTy::CreateTypeSSpr
                                         (g_startSystem_0081176C->field_0030,puVar8,iVar14,iVar15,
                                          cVar16,uVar17,iVar18,iVar19,iVar20);
+            /* ST_CALLSITE[005B89B1]: CALL dword ptr [ESI + 0x8] */
             (*pSVar1->SetImagesPtr)(&this_00->array_00BC[uVar10].field_00B8,psVar9,uVar21,uVar24);
             if ((*local_10 == this_00->array_00BC[uVar10].field_0000) && ((char)local_10[1] == '\0')
                ) {
@@ -180,6 +186,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
         local_34[3] = 2;
         local_34[4] = 0x6940;
         local_34[2] = iVar14;
+        /* ST_CALLSITE[005B8B12]: CALL dword ptr [EAX + 0x18] */
         (*pSVar2->vtable->vfunc_18)((short)local_34);
       }
       g_currentExceptionFrame = local_78.previous;

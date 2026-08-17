@@ -68,7 +68,8 @@ public class STRecoveryPipeline extends GhidraScript {
             "pointer_role_repair_summary.txt")),
         Map.entry("STPrototypeAnalyzer.java", List.of(
             "prototype_proposals.tsv", "prototype_callsite_audit.tsv",
-            "prototype_undefined_boundary_audit.tsv", "prototype_summary.txt")),
+            "prototype_undefined_boundary_audit.tsv",
+            "prototype_byte_buffer_audit.tsv", "prototype_summary.txt")),
         Map.entry("STLocalLifetimeAnalyzer.java", List.of(
             "local_lifetime_proposals.tsv", "local_lifetime_failures.tsv",
             "local_lifetime_summary.txt")),
@@ -105,6 +106,9 @@ public class STRecoveryPipeline extends GhidraScript {
             "inline_aggregate_proposals.tsv", "inline_aggregate_summary.txt")),
         Map.entry("STStackObjectAnalyzer.java", List.of(
             "stack_object_proposals.tsv", "stack_object_summary.txt")),
+        Map.entry("STStackOutputArrayAnalyzer.java", List.of(
+            "stack_output_array_proposals.tsv",
+            "stack_output_array_summary.txt")),
         Map.entry("STObjectFactoryAnalyzer.java", List.of(
             "object_factory_registry.tsv", "object_factory_proposals.tsv",
             "object_type_consumer_proposals.tsv", "object_factory_summary.txt")),
@@ -151,6 +155,7 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STClassArrayAnalyzer.java", List.of()),
         Map.entry("STInlineAggregateAnalyzer.java", List.of()),
         Map.entry("STStackObjectAnalyzer.java", List.of()),
+        Map.entry("STStackOutputArrayAnalyzer.java", List.of()),
         Map.entry("STObjectFactoryAnalyzer.java", List.of()),
         Map.entry("STVTableAnalyzer.java", List.of()),
         Map.entry("STMethodOwnerAnalyzer.java", List.of()),
@@ -235,7 +240,12 @@ public class STRecoveryPipeline extends GhidraScript {
             preflightScripts();
             section("startup ABI validation");
             runAbiRegressionGate("startup");
-            if (!options.mode.equals("export")) initializeAnalyzerCache();
+            // Export now performs the same ABI-finalization analyzers as the
+            // mutating modes.  Their artifacts are keyed by Program semantic
+            // hash, analyzer source and exact dependency digests, so an
+            // unchanged database must reuse them instead of rescanning every
+            // indirect callsite on each textual export.
+            initializeAnalyzerCache();
             if (!options.mode.equals("export")) {
                 // Freeze only machine-proven finite jump tables before any broad analyzer opens
                 // a decompiler.  Without this boundary, packed selector bytes immediately after
@@ -335,6 +345,9 @@ public class STRecoveryPipeline extends GhidraScript {
             "utility_function_proposals.tsv", "utility_function_apply_report.tsv");
         pair("STStackObjectAnalyzer.java", "STStackObjectApplier.java",
             "stack_object_proposals.tsv", "stack_object_apply_report.tsv");
+        pair("STStackOutputArrayAnalyzer.java", "STStackOutputArrayApplier.java",
+            "stack_output_array_proposals.tsv",
+            "stack_output_array_apply_report.tsv");
 
         boolean converged = false;
         Map<String, Integer> seenDeepStates = new LinkedHashMap<>();
@@ -1002,9 +1015,9 @@ public class STRecoveryPipeline extends GhidraScript {
     }
 
     private void writeAnalyzerCache() throws Exception {
-        // Export-only mode does not initialize or execute the expensive analyzers.  Keep
-        // their previous semantic-keyed cache: if ABI finalization changed the Program,
-        // its recorded semantic will simply fail validation on the next recovery run.
+        // A mode which reached no cacheable analyzer must not erase a valid
+        // semantic-keyed cache. If the Program changed, the recorded semantic
+        // simply fails validation on the next run.
         if (runMode.equals("export") && analyzerStamps.isEmpty()) {
             logLine("analyzer_cache_preserved export_only=true");
             return;
@@ -1869,7 +1882,8 @@ public class STRecoveryPipeline extends GhidraScript {
         if (Files.exists(baseline)) deleteTree(baseline);
         Files.createDirectories(baseline);
         for (String name : List.of("manifest.json", "functions.json", "types.jsonl",
-                "decomp_quality_summary.json", "pseudocode_idioms.jsonl")) {
+                "decomp_quality_summary.json", "decomp_quality_issues.jsonl",
+                "pseudocode_idioms.jsonl")) {
             Path source = regressionArtifact(sourceDirectory, name);
             if (Files.isRegularFile(source))
                 Files.copy(source, baseline.resolve(snapshotName(name)),
@@ -1888,6 +1902,7 @@ public class STRecoveryPipeline extends GhidraScript {
     private String snapshotName(String name) {
         return switch (name) {
             case "types.jsonl" -> "types.snapshot";
+            case "decomp_quality_issues.jsonl" -> "decomp_quality_issues.snapshot";
             case "pseudocode_idioms.jsonl" -> "pseudocode_idioms.snapshot";
             default -> name;
         };

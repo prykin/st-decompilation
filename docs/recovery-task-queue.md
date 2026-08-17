@@ -647,16 +647,93 @@ Accepted state:
 
 ### Q-053 Recover mutable byte-buffer parameters and pointer-to-byte bit writes
 
-Status: next major cluster. Generic pointer prototypes still retain word-shaped
-pointees even when every machine consumer is byte-addressed. `0040F4D0` is the
-representative case: it copies `param_2` bytes from its first parameter, reads
-and writes individual bytes, and is called by four related bodies, yet its
-formal remains `undefined4 *`. Recover `byte *`/`char *` only from complete
-machine def-use and unanimous direct-call boundaries; a decompiler cast or one
-consumer is insufficient. The same proof should cover `*byteCursor |= mask`
-and clear forms after the cursor's base/index identity is established. Do not
-specialize heterogeneous loader buffers or infer an array extent from a byte
-pointee.
+Status: implemented, runtime-confirmed, and accepted. `STPrototypeAnalyzer`
+now refines a generic pointer parameter to `byte *` only after complete local
+machine def-use proves byte-only reads and writes, permits exact `REP MOVS`
+transport, rejects every wide dereference/escape, and observes at least two
+exact direct callsites. The proof does not specialize heterogeneous loader
+buffers or infer an array extent from the pointee.
+
+The current scan audits 694 candidate parameter boundaries and is at a fixed
+point with no new automatic rows. The representative `0040F4D0` boundary is now
+`byte *`: four exact callers, three byte reads, six byte writes, one bulk-copy
+transport, no wide dereference, and no escape. Packed bit set/clear spelling
+remains an exporter presentation rule after pointer identity is independently
+established.
+
+### Q-054 Recover count-driven scalar stack output arrays
+
+Status: implemented, runtime-confirmed, and accepted. The new
+`STStackOutputArrayAnalyzer/Applier` identifies the final scalar-pointer
+parameter of an ordinary non-varargs callee, reconstructs the exact
+EBP-relative caller root, requires at least two exact output calls, and then
+requires at least two consumers which test the returned count, walk the root by
+the scalar width, and decrement the saved count. Capacity is bounded by
+contiguous generic Listing storage up to the next distinct stack local; manual,
+imported, stale, and overlapping semantic locals are preserved.
+
+The broad scan found 712 scalar-output calls and 440 candidate stack roots.
+Only one met the complete automatic proof: `AiEventClassTy::GetMessage` now has
+`uint output_values_neg_34[8]` instead of a false local `DArrayTy` assembled by
+High SSA. It is supported by 101 exact output callsites and 69 independent
+count-driven consumer loops. The confirming pass reports `unchanged=1`; the
+other 439 rows remain review-only (381 lack two exact calls and 58 lack two
+complete consumers).
+
+The exporter and source generator now enforce complementary readability gates.
+Corpus casted-call results are canonicalized across line wrapping and
+`ST_CALLSITE` comments before address-stable comparison. Generated source is
+built in staging and compared per address for raw indirect calls, duplicated
+receivers, generic pointer towers/declarations, stale member calls, malformed
+qualified address symbols, and pointer-boundary casts before atomic promotion.
+The export gate additionally requires zero standalone hard-text blockers, so a
+runtime helper without its local compatibility include cannot be accepted.
+
+Accepted state:
+
+- run `0f7cf44df4071e1b63ca594a65fd321b4a018f97fc18d659ec156682961f1ba3`;
+- semantic hash `5b9cb0ca21c5a22ae7bdc6449926c6635a71c962d8cba660e88412e981f25f6b`;
+- corpus manifest `d2fdb70aff3d23363b3bbe1c3c03a0bcbdff5b075b356d0e00b3fb7d1b853006`;
+- 10,407 function records, 5,555 bodies, zero failed bodies, 3,192 typed
+  physical-vtable slots, zero export warnings/errors, and zero ABI warnings/errors;
+- 1,452 canonical casted-call-result expressions form the new address-stable
+  baseline; the old line-sensitive count remains diagnostic only;
+- the fixed 64-error Apple Clang audit passes 243/322 translation units and
+  retains 505 errors, 488 mapped to stable function addresses.
+
+### Q-055 Close residual raw-vtable callable and pointer/word clusters
+
+Status: implemented, runtime-confirmed, and accepted. The indirect-callsite
+analyzer now applies its 32-override density guard to the fallback rows which
+remain after same-pass physical-slot promotion. A uniquely owned raw physical
+slot can use one dense-function consensus only after at least eight exact
+unadjusted calls agree on one arity and return role; the corresponding per-call
+fallbacks are removed from the same proposal.
+
+For `AnonReceiver_0064A970VTable`, twenty exact two-word calls therefore recover
+one physical `slot_20`, while seven sparse calls retain address-stable ABI views
+for slots `10`, `14`, `1C`, `24`, `28`, and `2C`. The first apply changed eight
+targets; the confirming pass reports `applied=0`, `unchanged=288`, with no
+preserved rows or conflicts. No ST address, class name, or slot allow-list is
+embedded in the heuristic.
+
+The source generator also makes pointer-to-neutral-word transport explicit at
+an exact recovered member-call boundary through `machine_word_boundary_cast`.
+This is ABI presentation only and is recorded as
+`exact_indirect_argument_boundary`; it does not specialize the recovered
+parameter type.
+
+Accepted state:
+
+- run `b5d378b5465f4c62fc65ef612e22ea35ff7ce3bf21ebbb840586444d2bc9a587`;
+- semantic hash `bfd44643f2e5256a9d5836adcbb3b547e17dbf6a8d41f24358ff514c2e258237`;
+- corpus manifest `79df375cf2f9f1a65879b306993696c6d6ec1334af4404cf1b98a684145283cc`;
+- export and ABI regression gates both pass with zero errors and warnings;
+- all 82 focused generator tests pass;
+- the fixed 64-error Apple Clang audit passes 244/322 TUs with 450 errors,
+  436 address-mapped;
+- calls through `void`, dereferences of `void *`, and compiler diagnostics in
+  the `006D8A60` pointer/scalar family are each zero.
 
 ## Definition of done for one queue item
 

@@ -74,6 +74,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10
     *(uint *)&this->field_0x1c = uVar1;
     local_3c = (short)((ulonglong)(uVar1 >> 0x10) % 0x3d) + *(short *)&this->field_0x24f + -0x1e;
     local_38 = *(undefined4 *)&this->field_0x259;
+    /* ST_CALLSITE[00646048]: CALL dword ptr [EAX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x106,0,0,(short)local_60,0);
   }
   return;

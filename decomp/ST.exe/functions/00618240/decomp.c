@@ -122,6 +122,7 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
                   pcVar4 = this_00->vtable[5].slots_00_28[0];
                   local_80 = iVar16;
                   auStack_bc[iVar14 * -0x78 + 4] = 0x61846b;
+                  /* ST_CALLSITE[00618465]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                   iVar7 = (*pcVar4)(this_00);
                   iVar6 = local_38;
                   iVar13 = local_34;
@@ -163,6 +164,7 @@ LAB_0061856a:
                     if (bVar19) {
                       pcVar4 = this_00->vtable[5].slots_00_28[2];
                       auStack_bc[iVar14 * -0x78 + 4] = 0x618587;
+                      /* ST_CALLSITE[00618581]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                       iVar7 = (*pcVar4)(this_00);
                       iVar6 = local_38;
                       iVar13 = local_34;
@@ -178,6 +180,7 @@ LAB_0061856a:
                         *puVar17 = this_00[1].vtable;
                         pSVar5 = this_00->vtable->GetObjectTypeId;
                         auStack_bc[iVar14 * -0x78 + 4] = 0x6185ba;
+                        /* ST_CALLSITE[006185B7]: CALL dword ptr [EDX + 0x2c] */
                         iVar6 = (*pSVar5)(this_00);
                         puVar17[1] = iVar6;
                         STField<undefined4>(puVar17,0x26) = *(undefined4 *)&this_00->field_0x18;

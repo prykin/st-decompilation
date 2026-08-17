@@ -48,9 +48,11 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
     return;
   }
   FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+  /* ST_CALLSITE[005AD0AC]: CALL 0x00403738; direct=00403738 PutDDX */
   PutDDX(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
   pCVar3 = local_8;
   if ((local_8->field_20B8 == nullptr) && (param_1 == '\0')) {
+    /* ST_CALLSITE[005AD0F0]: CALL 0x004042d2; direct=004042D2 MMMObjTy::OutBSlProc */
     MMMObjTy::OutBSlProc
               (this_00,g_dDXContext_0080759C,nullptr,nullptr,0x112,0x38,0x204,0x19d,
                (undefined4 *)(local_8->array_00BC[0xc].field_01DB + 0x140));
@@ -58,6 +60,7 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   if (((pCVar3->field_20BC == nullptr) && (param_1 == '\0')) ||
      ((param_1 != '\0' && (pCVar3->field_20B4 == '\0')))) {
     this_01 = (MMMObjTy *)(pCVar3->array_00BC[0xc].field_01DB + 0x140);
+    /* ST_CALLSITE[005AD13A]: CALL 0x004042d2; direct=004042D2 MMMObjTy::OutBSlProc */
     MMMObjTy::OutBSlProc
               (this_01,g_dDXContext_0080759C,nullptr,nullptr,10,0xb4,0xf9,0x121,
                (undefined4 *)this_01);
@@ -66,6 +69,7 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   if (((((cVar1 == '\f') || (cVar1 == '\x04')) || (cVar1 == '\x05')) || (cVar1 == '\x13')) &&
      (((pCVar3->field_20C0 == nullptr && (param_1 == '\0')) ||
       ((param_1 != '\0' && (pCVar3->field_20B7 == '\0')))))) {
+    /* ST_CALLSITE[005AD199]: CALL 0x00403b61; direct=00403B61 ChatGlassTy::OutChGlProc */
     ChatGlassTy::OutChGlProc
               ((ChatGlassTy *)g_dDXContext_0080759C,
                (AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,200,0x1f1,400,0x62,
@@ -100,6 +104,7 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
   resourceString = LoadResourceString(resourceId,g_hINSTANCE_00807618);
+  /* ST_CALLSITE[005AD256]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
   StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,resourceString,uVar5,uVar6,pcVar7,uVar8);
 switchD_005ad1b8_caseD_6:
   g_currentExceptionFrame = local_4c.previous;

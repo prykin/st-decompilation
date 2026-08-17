@@ -78,7 +78,7 @@ undefined4 __cdecl FUN_0064f950(RecoveredRecord_AiEventClassTy_0064F950 *param_1
   if (sVar1 < 0xd) {
     *(undefined4 *)&param_1->field_0x38 = 1;
   }
-  else if (*(char *)(param_1 + 1) != '\b') {
+  else if (((char *)param_1)[1] != '\b') {
     return 0;
   }
   return 1;

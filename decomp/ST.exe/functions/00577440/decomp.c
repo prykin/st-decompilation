@@ -18,8 +18,7 @@ void __fastcall FUN_00577440(int param_1)
 
   uVar2 = FUN_006e4d40(&DAT_00807620,param_1);
   if ((uVar2 == 1) && (DAT_00808784 == 0)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)(param_1 + 0x430) == '\x01') {
+    if (((char *)param_1)[0x430] == '\x01') {
       puVar9 = (uint *)(param_1 + 0x20);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       DVar4 = STAppC::sub_006E51B0(*(STAppC **)(param_1 + 0x18));
@@ -29,11 +28,11 @@ void __fastcall FUN_00577440(int param_1)
       if (iVar5 == -4) {
         FUN_006b0a20((AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,param_1 + 0x28,0,
                      0x100,0);
-        *(undefined1 *)(param_1 + 0x430) = 2;
+        ((undefined1 *)param_1)[0x430] = 2;
       }
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    else if ((*(char *)(param_1 + 0x430) == '\x02') && (*(int *)(param_1 + 0x431) != 0)) {
+    else if ((((char *)param_1)[0x430] == '\x02') && (*(int *)(param_1 + 0x431) != 0)) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       DVar3 = STAppC::sub_006E51B0(*(STAppC **)(param_1 + 0x18));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -68,7 +67,7 @@ void __fastcall FUN_00577440(int param_1)
               }
               STField<short>(piVar6,0xf) = sVar7;
             }
-            uVar8 = (uint)*(byte *)(piVar6 + 1);
+            uVar8 = (uint)((byte *)piVar6)[1];
             if (uVar8 < local_8) {
               local_8 = uVar8;
             }
@@ -77,9 +76,9 @@ void __fastcall FUN_00577440(int param_1)
             }
             *(undefined1 *)(param_1 + 0x28 + uVar8 * 4) =
                  *(undefined1 *)(STField<short>(piVar6,0xf) * 3 + 0x13 + (int)piVar6);
-            *(undefined1 *)(param_1 + 0x29 + (uint)*(byte *)(piVar6 + 1) * 4) =
+            *(undefined1 *)(param_1 + 0x29 + (uint)((byte *)piVar6)[1] * 4) =
                  *(undefined1 *)(STField<short>(piVar6,0xf) * 3 + 0x14 + (int)piVar6);
-            *(undefined1 *)(param_1 + 0x2a + (uint)*(byte *)(piVar6 + 1) * 4) =
+            *(undefined1 *)(param_1 + 0x2a + (uint)((byte *)piVar6)[1] * 4) =
                  *(undefined1 *)((int)piVar6 + (STField<short>(piVar6,0xf) + 7) * 3);
             bVar1 = true;
           }

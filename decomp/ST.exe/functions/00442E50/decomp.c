@@ -275,7 +275,9 @@ LAB_00442f1f:
       DArrayGetElement(pDVar8,local_24,&local_1c);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((local_1c != nullptr) &&
+         /* ST_CALLSITE[0044322C]: CALL dword ptr [EDX + 0xc] */
          (iVar11 = (**(code **)(local_1c->vtable + 0xc))(), iVar11 == 8)) {
+        /* ST_CALLSITE[0044323B]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
         local_48 = (DArrayTy *)STGroupC::GetGroupContent(local_1c);
         local_b8 = local_48->count;
         if ((local_b8 != 0) && (local_44 = nullptr, 0 < (int)local_b8)) {
@@ -283,6 +285,7 @@ LAB_0044326c:
           uVar16 = local_38;
           DArrayGetElement(local_48,(uint)local_44,&local_8);
           if ((ushort)local_8 != 0xffff) {
+            /* ST_CALLSITE[00443291]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             this_00 = GetObjPtr(local_8c,param_1,(ushort)local_8,CASE_1);
             local_40 = (STFishC *)this_00;
             if (this_00 == nullptr) {
@@ -296,8 +299,11 @@ LAB_0044326c:
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_allpl.cpp",0x253a);
             }
+            /* ST_CALLSITE[004432E0]: CALL dword ptr [EDX + 0x2c] */
             iVar11 = this_00->vfunc_2C();
+            /* ST_CALLSITE[004432EC]: CALL dword ptr [EAX + 0x2c] */
             if ((((iVar11 != 8) && (iVar11 = this_00->vfunc_2C(), iVar11 != 0x14))
+                /* ST_CALLSITE[004432F8]: CALL dword ptr [EDX + 0x2c] */
                 && (iVar11 = this_00->vfunc_2C(), iVar11 != 0x1a)) ||
                (iVar11 = thunk_FUN_0045ff10(this_00), iVar11 != 0xc)) goto cf_common_join_004435CD;
             uVar15 = 0;
@@ -585,7 +591,9 @@ LAB_004436f7:
         do {
           DArrayGetElement(pDVar9,uVar16,&local_8);
           if ((ushort)local_8 != 0xffff) {
+            /* ST_CALLSITE[00443A8E]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             local_40 = (STFishC *)GetObjPtr(local_8c,param_1,(ushort)local_8,CASE_1);
+            /* ST_CALLSITE[00443AA4]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0(local_40,&local_18,&local_14,&local_16);
             iVar10 = FUN_006aadd0((int)local_18,(int)local_14,(int)local_16,(int)local_70,
                                   (int)local_6e,(int)local_6c);

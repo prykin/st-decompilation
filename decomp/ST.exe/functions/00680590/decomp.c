@@ -14,6 +14,7 @@ undefined4 * __cdecl FUN_00680590(byte *param_1)
   _Drive = (byte *)((int)puVar1 + 0x231);
   pbVar2 = _Drive;
   text = LoadResourceString(7000,g_hINSTANCE_00807618);
+  /* ST_CALLSITE[006805D4]: CALL dword ptr [0x0085bde8] */
   wsprintfA(local_404,text,pbVar2);
   thunk_FUN_00674c40(_Drive);
   thunk_FUN_00674d20(local_404);

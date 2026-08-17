@@ -36,35 +36,44 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       local_10 = pAVar2->field_01E4;
       local_14 = pAVar2->field_01E8;
       local_c = pAVar2->field_01EC;
+      /* ST_CALLSITE[004CA434]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
       if (iVar7 != 0) {
+        /* ST_CALLSITE[004CA441]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
         local_8 = Library::DKW::LIB::MemAllocClear(iVar7 << 2);
         iVar9 = 0;
+        /* ST_CALLSITE[004CA458]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
         if (0 < iVar7) {
           do {
             uVar8 = thunk_FUN_004acdd0(puVar1,'\r',iVar9);
             *(undefined4 *)((int)local_8 + iVar9 * 4) = uVar8;
             iVar9 = iVar9 + 1;
+            /* ST_CALLSITE[004CA476]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
             iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
           } while (iVar9 < iVar7);
         }
       }
+      /* ST_CALLSITE[004CA499]: CALL dword ptr [0x0085bde8] */
       wsprintfA(local_15c,"%s%1i",pTVar4->field_05F3,pTVar4->field_05C0);
+      /* ST_CALLSITE[004CA4B5]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,PTR_0080678c,local_15c,CASE_1D);
       if (iVar7 != 0) {
         RaiseInternalException
                   (iVar7,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xd3);
       }
       thunk_FUN_004abce0(puVar1,0xd,local_10,local_14,'\0');
+      /* ST_CALLSITE[004CA4F0]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\r',local_c);
       iVar9 = 0;
+      /* ST_CALLSITE[004CA4FB]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
       if (0 < iVar7) {
         do {
           thunk_FUN_004ace00(puVar1,'\r',iVar9,*(undefined4 *)((int)local_8 + iVar9 * 4));
           iVar9 = iVar9 + 1;
+          /* ST_CALLSITE[004CA51A]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
           iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
         } while (iVar9 < iVar7);
       }
@@ -77,35 +86,44 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       local_10 = pAVar2->field_0130;
       local_14 = pAVar2->field_0134;
       local_c = pAVar2->field_0138;
+      /* ST_CALLSITE[004CA584]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
       if (iVar7 != 0) {
+        /* ST_CALLSITE[004CA591]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
         local_8 = Library::DKW::LIB::MemAllocClear(iVar7 << 2);
         iVar9 = 0;
+        /* ST_CALLSITE[004CA5A8]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
         if (0 < iVar7) {
           do {
             uVar8 = thunk_FUN_004acdd0(puVar1,'\b',iVar9);
             *(undefined4 *)((int)local_8 + iVar9 * 4) = uVar8;
             iVar9 = iVar9 + 1;
+            /* ST_CALLSITE[004CA5C6]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
             iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
           } while (iVar9 < iVar7);
         }
       }
+      /* ST_CALLSITE[004CA5E9]: CALL dword ptr [0x0085bde8] */
       wsprintfA(local_15c,"%s_cover%1i",pTVar4->field_05F3,pTVar4->field_05C0);
+      /* ST_CALLSITE[004CA605]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,PTR_0080678c,local_15c,CASE_1D);
       if (iVar7 != 0) {
         RaiseInternalException
                   (iVar7,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xea);
       }
       thunk_FUN_004abce0(puVar1,8,local_10,local_14,'\0');
+      /* ST_CALLSITE[004CA640]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\b',local_c);
       iVar9 = 0;
+      /* ST_CALLSITE[004CA64B]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
       if (0 < iVar7) {
         do {
           thunk_FUN_004ace00(puVar1,'\b',iVar9,*(undefined4 *)((int)local_8 + iVar9 * 4));
           iVar9 = iVar9 + 1;
+          /* ST_CALLSITE[004CA66A]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
           iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
         } while (iVar9 < iVar7);
       }

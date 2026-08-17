@@ -100,6 +100,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   local_30 = local_EAX_47;
   if (local_EAX_47 != 0) {
     g_currentExceptionFrame = local_b0.previous;
+    /* ST_CALLSITE[0056C06A]: CALL dword ptr [EAX + 0x4] */
     local_c->DoneApp();
     switch(local_EAX_47) {
     case -0x5001fff7:
@@ -109,6 +110,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
       UVar23 = 0;
       local_EAX_4860 = LoadResourceString(0x2648,g_hINSTANCE_00807618);
       local_EAX_4878 = LoadResourceString(0x264b,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0056C0D6]: CALL dword ptr [0x0085bdec] */
       MessageBoxA((HWND)0x0,local_EAX_4878,local_EAX_4860,UVar23);
       break;
     default:
@@ -122,6 +124,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
       UVar23 = 0;
       local_EAX_4813 = LoadResourceString(0x2648,g_hINSTANCE_00807618);
       local_EAX_4831 = LoadResourceString(0x264c,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0056C0A7]: CALL dword ptr [0x0085bdec] */
       MessageBoxA((HWND)0x0,local_EAX_4831,local_EAX_4813,UVar23);
     }
     RaiseInternalException(local_EAX_47,0,"E:\\__titans\\tapp.cpp",0x2cc);
@@ -129,10 +132,14 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   }
   iVar7 = thunk_FUN_0056a5c0();
   if (iVar7 != 0) {
+    /* ST_CALLSITE[0056AE12]: CALL dword ptr [0x0085bc70] */
     InterlockedDecrement(&DAT_0085e000);
+    /* ST_CALLSITE[0056AE1E]: CALL dword ptr [0x0085be18] */
     hWnd = FindWindowA("STWindowClass",(LPCSTR)0x0);
     if (hWnd != (HWND)0x0) {
+      /* ST_CALLSITE[0056AE2B]: CALL dword ptr [0x0085be14] */
       SetForegroundWindow(hWnd);
+      /* ST_CALLSITE[0056AE34]: CALL dword ptr [0x0085be10] */
       ShowWindow(hWnd,9);
     }
     RaiseInternalException
@@ -150,13 +157,17 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   DAT_00806738 = 8;
   local_6c.lpfnWndProc = MainWindowProc;
   local_6c.hInstance = hInstance;
+  /* ST_CALLSITE[0056AEA7]: CALL dword ptr [0x0085ba74] */
   local_6c.hbrBackground = CreateSolidBrush(0);
+  /* ST_CALLSITE[0056AEB3]: CALL dword ptr [0x0085be0c] */
   local_6c.hIcon = LoadIconA(hInstance,&DAT_00000065);
   local_6c.lpszClassName = "STWindowClass";
+  /* ST_CALLSITE[0056AEC7]: CALL dword ptr [0x0085be08] */
   AVar6 = RegisterClassA(&local_6c);
   if (AVar6 == 0) {
     RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x14e);
   }
+  /* ST_CALLSITE[0056AF13]: CALL dword ptr [0x0085be04] */
   g_hWnd_00806748 =
        CreateWindowExA(0,"STWindowClass","Submarine Titans",0x80000000,0,0,
                        g_nWidth_00806730,DAT_00806734,(HWND)0x0,(HMENU)0x0,hInstance,(LPVOID)0x0);
@@ -164,7 +175,9 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
     RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x152);
   }
   HWND_00856d78 = g_hWnd_00806748;
+  /* ST_CALLSITE[0056AF46]: CALL dword ptr [0x0085be10] */
   ShowWindow(g_hWnd_00806748,param_4);
+  /* ST_CALLSITE[0056AF53]: CALL dword ptr [0x0085be00] */
   UpdateWindow(g_hWnd_00806748);
   local_34 = &local_c->field_0038;
   local_40 = g_hWnd_00806748;
@@ -196,15 +209,20 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   if (local_EAX_613 == 0) {
     puVar1 = &local_c->field_0x60;
     puVar2 = (byte *)&local_c->field_7D1A;
+    /* ST_CALLSITE[0056B053]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,"INTER");
     g_cMf32_00806780 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
     PTR_00806784 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806780);
+    /* ST_CALLSITE[0056B08E]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)puVar2,"%s%s",&pSVar16->field_0x470,PTR_s_TASKS_0079b048);
     g_cMf32_00806798 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
+    /* ST_CALLSITE[0056B0C1]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,PTR_s_STRATEGS_0079b04c);
     g_cMf32_0080675C = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
+    /* ST_CALLSITE[0056B0E0]: CALL 0x00403387; direct=00403387 CreateArbList */
     puVar7 = CreateArbList(g_cMf32_0080675C,0);
     pSVar16->field_4EE2 = puVar7;
+    /* ST_CALLSITE[0056B0F4]: CALL 0x00403387; direct=00403387 CreateArbList */
     puVar7 = CreateArbList(g_cMf32_0080675C,1);
     pSVar16->field_4EE6 = puVar7;
     if ((pSVar16->field_4EE2[3] == 0) || (puVar7[3] == 0)) {
@@ -252,6 +270,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
               );
   FUN_006b1cc0(g_ddxContext_008075A8,3,0,0,nullptr);
   FUN_006ad270(g_dDXContext_0080759C);
+  /* ST_CALLSITE[0056B33E]: CALL dword ptr [0x0085bedc] */
   DVar8 = timeGetTime();
   Library::MSVCRT::FUN_0072e6b0(DVar8);
   thunk_FUN_005672a0(&local_c->field_0038,HWND_00856d78);
@@ -307,6 +326,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
     DAT_00811768 = '\0';
   }
   FUN_006c18b0((uint)DAT_00807363);
+  /* ST_CALLSITE[0056B46D]: CALL 0x004043c7; direct=004043C7 CreateBaseSystem */
   CreateBaseSystem();
   pDVar10 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
   pSVar16->field_4EDA = pDVar10;
@@ -326,6 +346,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
         *ppAVar22 = nullptr;
         ppAVar22 = ppAVar22 + 1;
       }
+      /* ST_CALLSITE[0056BFEE]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&pSVar16->field_7D1A,"%s%s",&pSVar16->field_0x164,PTR_s_STARTUP_VPS_0079b040);
       pDVar11 = (DArrayTy *)
                 thunk_FUN_00683c70(&pSVar16->field_7D1A,(AnonShape_00683C70_22193481 *)&local_560,
@@ -541,6 +562,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
         memmove(pcVar18, pcVar17, uVar14); /* compiler REP MOVS byte copy */
         uVar15 = 0;
         pSVar16->field_1185 = 1;
+        /* ST_CALLSITE[0056B80A]: CALL 0x00404aa2; direct=00404AA2 STAppC::ReadCmdPlay */
         ReadCmdPlay(pSVar16,1);
         if (pSVar16->field_1185 != 0) {
           if (*(char *)(PTR_00857168->field_0004 + 1) != 'd') {
@@ -641,9 +663,12 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
           uVar15 = 0;
           pSVar10 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
           if (pSVar10 != nullptr) {
+            /* ST_CALLSITE[0056B905]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
             StartSystemTy::StartSystemTy(pSVar10,pSVar16);
           }
+          /* ST_CALLSITE[0056B912]: CALL dword ptr [EAX] */
           g_startSystem_0081176C->InitSystem();
+          /* ST_CALLSITE[0056B91F]: CALL 0x006e4650; direct=006E4650 AppClassTy::AddSystem */
           AppClassTy::AddSystem((AppClassTy *)pSVar16,(int *)g_startSystem_0081176C,0);
           local_1c = 0x60ff;
           pSVar16->field_7D0E = 1;
@@ -686,7 +711,9 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
       local_EAX_4449 = FUN_006b8240((char *)PTR_00857168->field_0004,3);
       pSVar16->field_8552 = *local_EAX_4449 + -0x30;
       local_EAX_4483 = FUN_006b8240((char *)PTR_00857168->field_0004,4);
+      /* ST_CALLSITE[0056BF55]: CALL EDI */
       wsprintfA(&pSVar16->field_4F0E,"%s",local_EAX_4483);
+      /* ST_CALLSITE[0056BF68]: CALL EDI */
       wsprintfA(&pSVar16->field_76F6,"%s%s",&pSVar16->field_0x60,&pSVar16->field_4F0E);
       uVar14 = 0xffffffff;
       pcVar17 = (char *)PTR_00857168->field_0008;
@@ -722,7 +749,9 @@ switchD_0056b4ce_caseD_47:
     } while (cVar2 != '\0');
     if (6 < ~uVar14 - 1) {
       local_EAX_3567 = FUN_006b8240((char *)PTR_00857168->field_0004,6);
+      /* ST_CALLSITE[0056BBC1]: CALL EDI */
       wsprintfA(&pSVar16->field_78FE,"%s",local_EAX_3567);
+      /* ST_CALLSITE[0056BBD4]: CALL EDI */
       wsprintfA(&pSVar16->field_76F6,"%s%s",&pSVar16->field_0x60,&pSVar16->field_78FE);
       pSVar16->field_1195 = 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -735,6 +764,7 @@ switchD_0056b4ce_caseD_47:
       cVar2 = *(char *)(PTR_00857168->field_0004 + 4);
       pSVar16->field_1180 = CASE_8;
       pSVar16->field_112D = cVar2 + -0x30;
+      /* ST_CALLSITE[0056BC2E]: CALL 0x00404b4c; direct=00404B4C STAppC::sub_0056E9E0 */
       iVar13 = sub_0056E9E0(pSVar16,1);
       if (iVar13 == 0) {
         RaiseInternalException
@@ -767,8 +797,11 @@ switchD_0056b4ce_caseD_47:
             g_currentExceptionFrame = local_204.previous;
             RaiseInternalException(local_EAX_3793,0,"E:\\__titans\\tapp.cpp",0x23e);
           }
+          /* ST_CALLSITE[0056BD11]: CALL 0x004025b3; direct=004025B3 STAppC::sub_0056EF50 */
           sub_0056EF50(pSVar16);
+          /* ST_CALLSITE[0056BD18]: CALL 0x004039ae; direct=004039AE STAppC::sub_0056F040 */
           sub_0056F040(pSVar16);
+          /* ST_CALLSITE[0056BD1F]: CALL 0x004025b8; direct=004025B8 STAppC::sub_0056EBE0 */
           sub_0056EBE0(pSVar16);
           pSVar16->field_7D0E = 0;
           break;
@@ -791,9 +824,12 @@ switchD_0056b4ce_caseD_47:
         if (((cVar2 == 'G') || (cVar2 == 'D')) || (cVar2 == 'W')) {
           pSVar10 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
           if (pSVar10 != nullptr) {
+            /* ST_CALLSITE[0056BDC8]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
             StartSystemTy::StartSystemTy(pSVar10,pSVar16);
           }
+          /* ST_CALLSITE[0056BDD5]: CALL dword ptr [EAX] */
           g_startSystem_0081176C->InitSystem();
+          /* ST_CALLSITE[0056BDE2]: CALL 0x006e4650; direct=006E4650 AppClassTy::AddSystem */
           AppClassTy::AddSystem((AppClassTy *)pSVar16,(int *)g_startSystem_0081176C,0);
           local_1c = 0x60ff;
         }
@@ -837,6 +873,7 @@ switchD_0056b4ce_caseD_47:
       local_EAX_4270 = FUN_006b8240((char *)PTR_00857168->field_0004,3);
       pSVar16->field_8552 = *local_EAX_4270 + -0x30;
       local_EAX_4298 = FUN_006b8240((char *)PTR_00857168->field_0004,4);
+      /* ST_CALLSITE[0056BEA0]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&pSVar16->field_76F6,"%s%s",&pSVar16->field_0x60,local_EAX_4298);
     }
     break;
@@ -1041,11 +1078,15 @@ switchD_0056b4ce_caseD_57:
         pcVar17 = pcVar18 + -uVar14;
         pcVar18 = pcVar20 + -1;
         memmove(pcVar18, pcVar17, uVar14); /* compiler REP MOVS byte copy */
+        /* ST_CALLSITE[0056BB3A]: CALL dword ptr [0x0085bc80] */
         hFile = CreateFileA(&pSVar16->field_7B06,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,
                             (HANDLE)0x0);
         if ((hFile != (HANDLE)0xffffffff) &&
+           /* ST_CALLSITE[0056BB52]: CALL dword ptr [0x0085bc74] */
            (DVar8 = SetFilePointer(hFile,0,(PLONG)0x0,2), DVar8 != 0xffffffff)) {
+          /* ST_CALLSITE[0056BB71]: CALL dword ptr [0x0085bc90] */
           WriteFile(hFile,&pSVar16->field_1134,4,&local_44,(LPOVERLAPPED)0x0);
+          /* ST_CALLSITE[0056BB78]: CALL dword ptr [0x0085bbc8] */
           CloseHandle(hFile);
           pSVar16->field_1181 = 1;
           goto switchD_0056b4ce_caseD_47;
@@ -1055,6 +1096,7 @@ switchD_0056b4ce_caseD_57:
     break;
   case '~':
     if (PTR_00857168->field_0008 != 0) {
+      /* ST_CALLSITE[0056B595]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&pSVar16->field_76F6,"%s%s",&pSVar16->field_0x60,PTR_00857168->field_0008);
       local_17c.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_17c;
@@ -1080,6 +1122,7 @@ switchD_0056b4ce_caseD_57:
   }
 cf_common_exit_0056C034:
   local_560 = (AnonShape_00683C70_22193481 *)0x56c03f;
+  /* ST_CALLSITE[0056C03C]: CALL dword ptr [EDX + 0x18] */
   pSVar16->GetMessage((int)local_2c);
   g_currentExceptionFrame = local_b0.previous;
   return 1;

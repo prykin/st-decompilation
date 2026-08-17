@@ -29,6 +29,7 @@ int __thiscall STExplosion::sub_00604970(STExplosion *this)
     ppSVar4 = &this->field_0219;
     do {
       if (*ppSVar4 != nullptr) {
+        /* ST_CALLSITE[006049AD]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
         STParticleC::GetMessage(*ppSVar4,&local_28);
         iVar1 = thunk_FUN_00604a00(this,iVar2);
         if (iVar1 != 0) {

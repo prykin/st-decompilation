@@ -34,11 +34,9 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
   memset(local_4c, 0, 0x20); /* compiler bulk-zero initialization */
   iVar9 = 0;
   local_14 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  thunk_FUN_0044e260(STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(*(undefined1 *)(param_1 + 0x24))),
+  thunk_FUN_0044e260(STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(((undefined1 *)param_1)[0x24])),
                      STReplaceLowWord((uint32_t)(param_2), (uint16_t)(uVar2)),param_3,local_4c);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  cVar3 = *(char *)(param_1 + 0x81);
+  cVar3 = ((char *)param_1)[0x81];
   if ((cVar3 < '\0') || ('\a' < cVar3)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     cVar3 = (char)*(undefined4 *)(param_1 + 0x24);
@@ -64,16 +62,21 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
           else {
             puVar4 = nullptr;
           }
+          /* ST_CALLSITE[0065E120]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)local_c,*puVar4,CASE_1);
+          /* ST_CALLSITE[0065E133]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
           if ((this == nullptr) || (iVar9 = (*this->vtable[1].vfunc_24)(this), iVar9 == 0)
              ) goto cf_continue_loop_0065E27E;
+          /* ST_CALLSITE[0065E145]: CALL dword ptr [EAX + 0x2c] */
           uVar5 = this->vfunc_2C();
+          /* ST_CALLSITE[0065E158]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,(short *)((int)&param_3 + 2));
           if (param_5 != 0) {
             if (uVar5 == 0x78) {
               if ((param_5 & 0x80000000) == 0) {
                 uVar10 = param_5 & 0x3fffffff;
                 if (uVar10 != 0) {
+                  /* ST_CALLSITE[0065E182]: CALL dword ptr [EDX + 0x2c] */
                   iVar9 = this->vfunc_2C();
                   if (iVar9 == 0x78) {
                     uVar6 = this->field_0259;
@@ -97,6 +100,7 @@ LAB_0065e1b6:
 LAB_0065e218:
             pbVar8 = param_7;
             if ((param_7 != nullptr) && (*param_7 != 0)) {
+              /* ST_CALLSITE[0065E22C]: CALL dword ptr [EDX + 0x74] */
               (*this->vtable->vfunc_74)((short)local_2c);
               pbVar11 = local_2c;
               do {
@@ -119,12 +123,14 @@ LAB_0065e261:
               if (iVar9 != 0) goto cf_continue_loop_0065E27E;
             }
             cVar3 = param_6;
+            /* ST_CALLSITE[0065E271]: CALL dword ptr [EAX + 0x6c] */
             if ((param_6 == -1) || (iVar9 = this->vfunc_6C(), cVar3 == iVar9)) {
               local_14 = local_14 + 1;
             }
           }
           else if (uVar5 == 0x78) {
             if ((param_4 & 0x80000000) == 0) {
+              /* ST_CALLSITE[0065E1D6]: CALL dword ptr [EAX + 0x2c] */
               iVar9 = this->vfunc_2C();
               if (iVar9 == 0x78) {
                 iVar9 = this->field_0259;

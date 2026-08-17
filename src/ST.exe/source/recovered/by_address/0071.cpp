@@ -1587,7 +1587,7 @@ void __fastcall st::fn_00717380(AnonShape_00717380_FEFD061B *param_1)
           iVar6 = iVar6 + 4;
         } while (iVar9 < iVar10);
       }
-      pbVar8 = st::pointer_boundary_cast<byte *>(&DAT_007f0554);
+      pbVar8 = &DAT_007f0554;
       iVar10 = 0xc0;
       do {
         iVar9 = param_1->field_04DE * param_1->field_04D2;
@@ -2182,6 +2182,7 @@ st::fn_00719410(undefined4 param_1,Global_sub_00719410_param_2Enum param_2,undef
   else if (param_2 == CASE_3) {
     dwParam1 = 0x2300;
   }
+  /* ST_CALLSITE[0071948F]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(0,0x803,dwParam1,(DWORD_PTR)&local_18);
   if (mcierr == 0) {
     return local_14;
@@ -2203,6 +2204,7 @@ undefined4 __cdecl st::fn_007194D0(undefined4 param_1,MCIDEVICEID *param_2)
   if (*param_2 == 0) {
     return 1;
   }
+  /* ST_CALLSITE[007194FF]: CALL EDI */
   MVar1 = st::external_000000D3(*param_2,0x807,0x102,0);
   if (MVar1 != 0) {
     st::fn_00719C90(MVar1,param_2);
@@ -2211,6 +2213,7 @@ undefined4 __cdecl st::fn_007194D0(undefined4 param_1,MCIDEVICEID *param_2)
   local_c = 0;
   local_8 = 0;
   local_10 = param_1;
+  /* ST_CALLSITE[00719539]: CALL EDI */
   MVar1 = st::external_000000D3(*param_2,0x806,1,(DWORD_PTR)&local_10);
   if (MVar1 != 0) {
     st::fn_00719C90(MVar1,param_2);
@@ -2237,6 +2240,7 @@ undefined4 __cdecl st::fn_00719560(DWORD_PTR dwParam2)
     return 1;
   }
   dwParam2 = 0;
+  /* ST_CALLSITE[00719588]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(mciId,0x808,2,(DWORD_PTR)&dwParam2);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,(MCIDEVICEID *)DVar1);
@@ -2263,6 +2267,7 @@ undefined4 __cdecl st::fn_007195B0(DWORD_PTR dwParam2)
     return 1;
   }
   dwParam2 = 0;
+  /* ST_CALLSITE[007195D8]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(mciId,0x855,2,(DWORD_PTR)&dwParam2);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,(MCIDEVICEID *)DVar1);
@@ -2289,6 +2294,7 @@ undefined4 __cdecl st::fn_00719600(DWORD_PTR dwParam2)
     return 1;
   }
   dwParam2 = 0;
+  /* ST_CALLSITE[00719628]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(mciId,0x809,2,(DWORD_PTR)&dwParam2);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,(MCIDEVICEID *)DVar1);
@@ -2314,6 +2320,7 @@ bool __cdecl st::fn_00719650(MCIDEVICEID *param_1)
   local_10 = 0;
   local_8 = 0;
   local_c = 4;
+  /* ST_CALLSITE[00719687]: CALL dword ptr [0x0085bec0] */
   st::external_000000D3(*param_1,0x814,0x102,(DWORD_PTR)&local_14);
   return local_10 == 0x20e;
 }
@@ -2336,6 +2343,7 @@ undefined4 __cdecl st::fn_007196A0(undefined4 param_1,MCIDEVICEID *param_2)
   local_10 = param_1;
   local_c = 0;
   local_8 = 0;
+  /* ST_CALLSITE[007196DD]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(*param_2,0x841,0x10000,(DWORD_PTR)&local_14);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,param_2);
@@ -2364,6 +2372,7 @@ undefined4 __cdecl st::fn_00719710(undefined4 *param_1,MCIDEVICEID *param_2)
   local_10 = 0;
   local_c = 0;
   local_8 = 0;
+  /* ST_CALLSITE[0071974A]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(*param_2,0x843,0x20002,(DWORD_PTR)&local_18);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,param_2);
@@ -2396,6 +2405,7 @@ undefined4 __cdecl st::fn_00719790(undefined4 *param_1,MCIDEVICEID *param_2)
   local_10 = param_1[1];
   local_c = param_1[2];
   local_8 = param_1[3];
+  /* ST_CALLSITE[007197E4]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(*param_2,0x842,0x50002,(DWORD_PTR)&local_18);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,param_2);
@@ -2427,6 +2437,7 @@ undefined4 __cdecl st::fn_00719810(MCIDEVICEID *param_1,int param_2)
     dwParam1 = 0x3002;
     mciId = *param_1;
   }
+  /* ST_CALLSITE[00719853]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(mciId,0x80d,dwParam1,(DWORD_PTR)&local_10);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,param_1);
@@ -2458,6 +2469,7 @@ undefined4 __cdecl st::fn_00719880(MCIDEVICEID *param_1,int param_2)
     dwParam1 = 0x2802;
     mciId = *param_1;
   }
+  /* ST_CALLSITE[007198C3]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(mciId,0x80d,dwParam1,(DWORD_PTR)&local_10);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,param_1);
@@ -2482,6 +2494,7 @@ undefined4 __cdecl st::fn_00719900(MCIDEVICEID *param_1)
   local_10 = 0;
   local_8 = 0;
   local_c = 10;
+  /* ST_CALLSITE[0071993B]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(*param_1,0x80d,0x400,(DWORD_PTR)&local_10);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,param_1);
@@ -2508,6 +2521,7 @@ undefined4 __cdecl st::fn_00719960(MCIDEVICEID *param_1)
   local_10 = 0;
   local_8 = 0;
   local_c = 3;
+  /* ST_CALLSITE[0071999E]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(*param_1,0x814,0x100,(DWORD_PTR)&local_14);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,param_1);
@@ -2543,6 +2557,7 @@ undefined4 __cdecl st::fn_007199F0(DWORD_PTR dwParam2,byte param_2,MCIDEVICEID *
   local_10 = dwParam2;
   local_8 = 0;
   local_c = (uint)param_2;
+  /* ST_CALLSITE[00719A33]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(*param_3,0x806,5,(DWORD_PTR)&local_10);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,param_3);
@@ -2570,6 +2585,7 @@ undefined4 __cdecl st::fn_00719A60(DWORD_PTR dwParam2,byte param_2,MCIDEVICEID *
   local_10 = dwParam2;
   local_c = (uint)param_2;
   local_8 = (uint)(byte)(param_2 + 1);
+  /* ST_CALLSITE[00719AAF]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(*param_3,0x806,0xd,(DWORD_PTR)&local_10);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,param_3);
@@ -2591,6 +2607,7 @@ undefined4 __cdecl st::fn_00719AE0(uint param_1,MCIDEVICEID *param_2)
     local_c = 0;
     if ((param_1 != 0) && (param_1 <= DAT_00857038)) {
       local_8 = param_1;
+      /* ST_CALLSITE[00719B17]: CALL dword ptr [0x0085bec0] */
       mcierr = st::external_000000D3(*param_2,0x807,8,(DWORD_PTR)&local_c);
       if (mcierr == 0) {
         return 0;
@@ -2619,6 +2636,7 @@ bool __cdecl st::fn_00719B40(MCIDEVICEID *param_1,undefined4 param_2)
   local_10 = 0;
   local_c = 0x4001;
   local_8 = param_2;
+  /* ST_CALLSITE[00719B7F]: CALL dword ptr [0x0085bec0] */
   mcierr = st::external_000000D3(*param_1,0x814,0x112,(DWORD_PTR)&local_14);
   if (mcierr != 0) {
     st::fn_00719C90(mcierr,param_1);
@@ -2643,12 +2661,14 @@ undefined4 __cdecl st::fn_00719BB0(MCIDEVICEID *param_1)
     local_10 = 0;
     local_8 = 0;
     local_c = 4;
+    /* ST_CALLSITE[00719BEF]: CALL EDI */
     st::external_000000D3(*param_1,0x814,0x102,(DWORD_PTR)&local_14);
     if ((local_10 == 0x20c) || (local_10 == 0x212)) {
       MVar1 = *param_1;
     }
     else {
       local_c = 5;
+      /* ST_CALLSITE[00719C1A]: CALL EDI */
       st::external_000000D3(*param_1,0x814,0x102,(DWORD_PTR)&local_14);
       if (local_10 != 0) {
         return 1;
@@ -2679,6 +2699,7 @@ void __cdecl st::fn_00719C60(DWORD_PTR dwParam2)
   mciId = *(MCIDEVICEID *)dwParam2;
   if (mciId != 0) {
     dwParam2 = 0;
+    /* ST_CALLSITE[00719C80]: CALL dword ptr [0x0085bec0] */
     st::external_000000D3(mciId,0x804,2,(DWORD_PTR)&dwParam2);
     *(undefined4 *)DVar1 = 0;
   }
@@ -2708,9 +2729,11 @@ int __cdecl st::fn_00719C90(MCIERROR mcierr,MCIDEVICEID *param_2)
   *param_2 = 0;
   iVar2 = 0;
   if (DAT_007f07c4 != 0) {
+    /* ST_CALLSITE[00719CCB]: CALL dword ptr [0x0085bebc] */
     BVar1 = st::external_000000D2(mcierr,local_104,0x100);
     iVar2 = 0;
     if (BVar1 != 0) {
+      /* ST_CALLSITE[00719CE8]: CALL dword ptr [0x0085bdec] */
       iVar2 = st::external_00000081((HWND)0x0,local_104,st::pointer_boundary_cast<LPCSTR>("MCI error"),0x2030);
     }
   }
@@ -2809,7 +2832,7 @@ void __cdecl st::fn_0071A8D0(int *param_1)
       }
       st::fn_006AB060(puVar1 + 3);
     }
-    if ((DArrayTy *)puVar1[1] != nullptr) {
+    if ((DArrayTy *)puVar1[1] != 0) {
       st::fn_006B5570((DArrayTy *)puVar1[1]);
     }
     st::fn_006AB060(param_1);
@@ -2881,10 +2904,12 @@ int __cdecl st::fn_0071B100(HKEY hKey,PHKEY phkResult)
 
   lpSubKey = phkResult;
   if ((phkResult != (PHKEY)0x0) && (*(char *)phkResult != '\0')) {
+    /* ST_CALLSITE[0071B120]: CALL dword ptr [0x0085b958] */
     LVar1 = st::external_000000C5(hKey,(LPCSTR)phkResult,(PHKEY)&phkResult);
     if (LVar1 == 0) {
       while( true ) {
         local_108[0] = '\0';
+        /* ST_CALLSITE[0071B149]: CALL ESI */
         LVar1 = st::external_000000C8((HKEY)phkResult,0,st::pointer_boundary_cast<LPSTR>(local_108),0x104);
         if (LVar1 != 0) break;
         iVar2 = st::fn_0071B100((HKEY)phkResult,(PHKEY)local_108);
@@ -2892,8 +2917,10 @@ int __cdecl st::fn_0071B100(HKEY hKey,PHKEY phkResult)
           return iVar2;
         }
       }
+      /* ST_CALLSITE[0071B170]: CALL dword ptr [0x0085b968] */
       st::external_000000C9((HKEY)phkResult);
     }
+    /* ST_CALLSITE[0071B17B]: CALL dword ptr [0x0085b950] */
     LVar1 = st::external_000000C3(hKey,(LPCSTR)lpSubKey);
     return LVar1;
   }
@@ -2940,6 +2967,7 @@ undefined4 * __fastcall st::fn_0071B1B0(undefined4 *param_1)
   param_1[0x17] = 0;
   param_1[0x1d] = 0;
   param_1[0x11] = 0xffffffff;
+  /* ST_CALLSITE[0071B1F5]: CALL dword ptr [0x0085bb88] */
   st::external_00000017((LPCRITICAL_SECTION)(param_1 + 0x1e));
   return param_1;
 }
@@ -3087,11 +3115,13 @@ int __fastcall st::fn_0071F230(int *param_1)
   if (iVar4 < param_1[0x81]) {
     do {
       iVar2 = param_1[0x4e];
+      /* ST_CALLSITE[0071F268]: CALL dword ptr [EDX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar1 = (**(code **)(*param_1 + 8))(iVar4,iVar4 == iVar2);
       if (param_1[0xc] < iVar1 + iVar3) {
         return 0;
       }
+      /* ST_CALLSITE[0071F283]: CALL dword ptr [EAX + 0xc] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*param_1 + 0xc))(iVar4,iVar4 == iVar2,0,iVar3);
       if (iVar2 != 0) {
@@ -3175,6 +3205,7 @@ int __fastcall st::fn_0071F340(int *param_1)
   iVar3 = param_1[0x4f];
   if (iVar3 < param_1[0x81]) {
     do {
+      /* ST_CALLSITE[0071F36A]: CALL dword ptr [EDX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar1 = (**(code **)(*param_1 + 8))(iVar3,iVar3 == param_1[0x4e]);
       if (param_1[0xc] < iVar1 + iVar2) break;

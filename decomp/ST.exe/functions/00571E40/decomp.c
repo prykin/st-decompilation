@@ -32,74 +32,94 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
   DWORD local_10 [2];
   HKEY local_8;
 
+  /* ST_CALLSITE[00571E5C]: CALL dword ptr [0x0085b958] */
   LVar4 = RegOpenKeyA((HKEY)&DAT_80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Directories",&local_8);
   pcVar9 = RegQueryValueExA_exref;
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   pBVar1 = (LPBYTE)((int)this + 0x28);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571E8D]: CALL ESI */
   LVar4 = RegQueryValueExA(local_8,"MainPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
+    /* ST_CALLSITE[00571E97]: CALL dword ptr [0x0085b968] */
     RegCloseKey(local_8);
     return 0;
   }
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   local_11 = STField<undefined1>(this,0x2b);
   STField<undefined1>(this,0x2b) = 0;
+  /* ST_CALLSITE[00571EBA]: CALL dword ptr [0x0085bc64] */
   UVar5 = GetDriveTypeA((LPCSTR)pBVar1);
   STField<undefined1>(this,0x2b) = local_11;
   if (UVar5 != 3) {
+    /* ST_CALLSITE[00571ECF]: CALL dword ptr [0x0085b968] */
     RegCloseKey(local_8);
     return 0;
   }
   pBVar1 = (LPBYTE)((int)this + 300);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571F01]: CALL ESI */
   LVar4 = RegQueryValueExA(local_8,"VideoPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x438);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571F33]: CALL ESI */
   LVar4 = RegQueryValueExA(local_8,"DataPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
+    /* ST_CALLSITE[00571F3D]: CALL dword ptr [0x0085b968] */
     RegCloseKey(local_8);
     return 0;
   }
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x230);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571F76]: CALL ESI */
   LVar4 = RegQueryValueExA(local_8,"SoundPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
+    /* ST_CALLSITE[00571F80]: CALL dword ptr [0x0085b968] */
     RegCloseKey(local_8);
     return 0;
   }
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x334);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571FB9]: CALL ESI */
   LVar4 = RegQueryValueExA(local_8,"MusicPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x53c);
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00571FEB]: CALL ESI */
   LVar4 = RegQueryValueExA(local_8,"InstPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
+    /* ST_CALLSITE[00571FF5]: CALL dword ptr [0x0085b968] */
     RegCloseKey(local_8);
     return 0;
   }
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
+  /* ST_CALLSITE[00572017]: CALL EDI */
   RegCloseKey(local_8);
+  /* ST_CALLSITE[0057202F]: CALL dword ptr [0x0085bde8] */
   wsprintfA(local_124,"%s%s",(int)this + 0x28,PTR_s_SAVEGAME__0079b0cc);
+  /* ST_CALLSITE[00572041]: CALL dword ptr [0x0085bc7c] */
   CreateDirectoryA(local_124,(LPSECURITY_ATTRIBUTES)0x0);
+  /* ST_CALLSITE[00572055]: CALL dword ptr [0x0085b958] */
   LVar4 = RegOpenKeyA((HKEY)&DAT_80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version",&local_8);
   if (LVar4 != 0) {
 LAB_00572086:
+    /* ST_CALLSITE[0057208A]: CALL EDI */
     RegCloseKey(local_8);
     return 0;
   }
   local_10[1] = 4;
+  /* ST_CALLSITE[00572080]: CALL ESI */
   LVar4 = RegQueryValueExA(local_8,"Version",(LPDWORD)0x0,local_10,
                            (LPBYTE)((int)this + 0x77d),local_10 + 1);
   if (LVar4 != 0) goto LAB_00572086;
   lpData = (uint *)((int)this + 0x779);
   local_10[1] = 4;
+  /* ST_CALLSITE[005720B8]: CALL ESI */
   LVar4 = RegQueryValueExA(local_8,&DAT_007ca4f8,(LPDWORD)0x0,local_10,(LPBYTE)lpData,local_10 + 1);
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   uVar6 = *lpData >> 0x10;
@@ -111,13 +131,16 @@ LAB_005720f0:
   }
   else if (uVar6 != 0xffff) goto LAB_005720f0;
   local_10[1] = 0x104;
+  /* ST_CALLSITE[00572119]: CALL ESI */
   LVar4 = RegQueryValueExA(local_8,"Folder",(LPDWORD)0x0,local_10,
                            (LPBYTE)((int)this + 0x645),local_10 + 1);
   if (LVar4 != 0) {
+    /* ST_CALLSITE[00572123]: CALL dword ptr [0x0085b968] */
     RegCloseKey(local_8);
     return 0;
   }
   local_10[1] = 0x30;
+  /* ST_CALLSITE[00572155]: CALL ESI */
   LVar4 = RegQueryValueExA(local_8,&DAT_007ca508,(LPDWORD)0x0,local_10,(LPBYTE)((int)this + 0x749),
                            local_10 + 1);
   if (LVar4 != 0) {
@@ -147,32 +170,40 @@ LAB_005720f0:
   }
   memset((void *)((int)this + 0x785), 0, 0x40); /* compiler bulk-zero initialization */
   local_10[1] = 0x40;
+  /* ST_CALLSITE[005721B3]: CALL ESI */
   iVar8 = (*pcVar9)(local_8,"LastPlayer",0,local_10,(undefined4 *)((int)this + 0x785),
                     local_10 + 1);
   if (iVar8 == 0) {
     local_10[1] = 4;
+    /* ST_CALLSITE[005721DE]: CALL ESI */
     iVar8 = (*pcVar9)(local_8,"CharSet",0,local_10,(int)this + 0x781,local_10 + 1);
     if (iVar8 != 0) {
+      /* ST_CALLSITE[005721E8]: CALL dword ptr [0x0085b968] */
       RegCloseKey(local_8);
       return 0;
     }
     memset((void *)((int)this + 0xdae), 0, 0x40); /* compiler bulk-zero initialization */
     local_10[1] = 0x40;
+    /* ST_CALLSITE[00572225]: CALL ESI */
     iVar8 = (*pcVar9)(local_8,"Server",0,local_10,(undefined4 *)((int)this + 0xdae),
                       local_10 + 1);
     if (iVar8 == 0) {
       if (((uint)lpcbData & 2) != 0) {
         local_20 = 0x100;
+        /* ST_CALLSITE[00572254]: CALL ESI */
         iVar8 = (*pcVar9)(local_8,"Editor",0,local_10,&DAT_008071f8,&local_20);
         if (iVar8 != 0) {
+          /* ST_CALLSITE[0057225E]: CALL dword ptr [0x0085b968] */
           RegCloseKey(local_8);
           return 0;
         }
       }
       if (((uint)lpcbData & 1) != 0) {
         lpcbData = (LPDWORD)0x5;
+        /* ST_CALLSITE[0057229A]: CALL ESI */
         iVar8 = (*pcVar9)(local_8,"CDAudioDrive",0,local_10,(int)this + 0x640,&lpcbData);
         if (iVar8 != 0) {
+          /* ST_CALLSITE[005722A4]: CALL dword ptr [0x0085b968] */
           RegCloseKey(local_8);
           return 0;
         }
@@ -199,6 +230,7 @@ LAB_005722ed:
           local_18 = 0;
           local_14 = 0;
           _local_1c = STReplaceLowByte((uint32_t)(DAT_007ca690), (uint8_t)(STField<undefined1>(this,0x640)));
+          /* ST_CALLSITE[0057230F]: CALL dword ptr [0x0085bc64] */
           UVar5 = GetDriveTypeA(&local_1c);
           if (UVar5 == 5) {
             uVar6 = 0xffffffff;
@@ -249,11 +281,13 @@ LAB_005722ed:
         }
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260::thunk_FUN_00573260(this);
       }
+      /* ST_CALLSITE[00572379]: CALL dword ptr [0x0085b968] */
       RegCloseKey(local_8);
       return 1;
     }
   }
 cf_common_exit_0057238D:
+  /* ST_CALLSITE[00572391]: CALL dword ptr [0x0085b968] */
   RegCloseKey(local_8);
   return 0;
 }

@@ -62,10 +62,12 @@ void __thiscall CGenerate::sub_006988C0(CGenerate *this)
             iVar10 = (byte)pAVar9->field_0x4 - 1;
             local_24 = local_1c + 1;
             local_20 = local_10 + 1;
+            /* ST_CALLSITE[0069897A]: CALL 0x00405d85; direct=00405D85 CGenerate::sub_00697C50 */
             iVar3 = sub_00697C50(this,iVar10,local_14 - 1,local_18 + -1);
             if (iVar3 != 0) {
               local_c = 1;
             }
+            /* ST_CALLSITE[00698995]: CALL 0x00405d85; direct=00405D85 CGenerate::sub_00697C50 */
             iVar3 = sub_00697C50(this,iVar10,local_24,local_20);
             if (iVar3 != 0) {
               local_c = local_c + 1;
@@ -73,10 +75,12 @@ void __thiscall CGenerate::sub_006988C0(CGenerate *this)
             local_28 = 0;
             local_24 = local_1c + 1;
             local_20 = local_18 - 1;
+            /* ST_CALLSITE[006989C5]: CALL 0x00405d85; direct=00405D85 CGenerate::sub_00697C50 */
             iVar3 = sub_00697C50(this,iVar10,local_14 - 1,local_10 + 1);
             if (iVar3 != 0) {
               local_28 = 1;
             }
+            /* ST_CALLSITE[006989E0]: CALL 0x00405d85; direct=00405D85 CGenerate::sub_00697C50 */
             iVar3 = sub_00697C50(this,iVar10,local_24,local_20);
             uVar4 = local_28;
             if (iVar3 != 0) {
@@ -84,14 +88,17 @@ void __thiscall CGenerate::sub_006988C0(CGenerate *this)
             }
             if ((int)uVar4 < local_c) {
               if (0 < local_c) {
+                /* ST_CALLSITE[00698A07]: CALL 0x00405731; direct=00405731 CGenerate::sub_006A0E30 */
                 sub_006A0E30(this,local_14,local_18,*(int *)&pAVar9->field_0x0,-1);
                 iVar3 = *(int *)&pAVar9->field_0x0;
                 iVar10 = local_10;
 LAB_00698a36:
+                /* ST_CALLSITE[00698A3D]: CALL 0x00405731; direct=00405731 CGenerate::sub_006A0E30 */
                 sub_006A0E30(this,local_1c,iVar10,iVar3,-1);
               }
             }
             else if (0 < (int)uVar4) {
+              /* ST_CALLSITE[00698A29]: CALL 0x00405731; direct=00405731 CGenerate::sub_006A0E30 */
               sub_006A0E30(this,local_14,local_10,*(int *)&pAVar9->field_0x0,-1);
               iVar3 = *(int *)&pAVar9->field_0x0;
               iVar10 = local_18;

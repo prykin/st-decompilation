@@ -8,6 +8,7 @@ void __fastcall FUN_0074ac6e(AnonShape_0074AC6E_15F8B431 *param_1)
 
   param_1->field_0120 = 0xfffffc18;
   param_1->field_0124 = 0xffffffff;
+  /* ST_CALLSITE[0074AC82]: CALL dword ptr [0x0085bedc] */
   DVar1 = timeGetTime();
   param_1->field_00F4 = 0xffffffff;
   param_1->field_0140 = DVar1;

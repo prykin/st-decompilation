@@ -46,10 +46,12 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
       local_8->field_002E = 2;
       local_8->field_0030 = local_8->field_0178;
       if (g_cursorClass_00802A30 != nullptr) {
+        /* ST_CALLSITE[0053E839]: CALL dword ptr [EDX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_8->field_0x18);
       }
     }
+    /* ST_CALLSITE[0053E841]: CALL dword ptr [EDX + 0x18] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)pSVar3->field_0000->field_0018)(0);
   }
@@ -65,6 +67,7 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
+      /* ST_CALLSITE[0053E7F2]: CALL 0x00405dbc; direct=00405DBC CPanelTy::ShiftControls */
       CPanelTy::ShiftControls(g_cPanel_00801688,pSVar3->field_0180,0);
       g_currentExceptionFrame = local_4c.previous;
       return;

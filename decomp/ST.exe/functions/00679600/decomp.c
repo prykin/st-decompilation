@@ -144,7 +144,9 @@ cf_common_exit_0067989B:
     STPiece<4,4>(local_48[0]) = param_1->field_06FE;
     STPiece<0,4>(local_48[0]) = 0x6a;
     STPiece<8,4>(local_48[0]) = uVar4;
+    /* ST_CALLSITE[006798D0]: CALL 0x00405dc6; direct=00405DC6 AiPlrClassTy::sub_0067A020 */
     AiPlrClassTy::sub_0067A020((AiPlrClassTy *)param_1,local_48,-1);
+    /* ST_CALLSITE[006798D7]: CALL 0x0040394f; direct=0040394F AiPlrClassTy::sub_0067C110 */
     AiPlrClassTy::sub_0067C110((AiPlrClassTy *)param_1);
   }
   return;

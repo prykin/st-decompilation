@@ -36,7 +36,7 @@ int FUN_006942a0(void)
     puVar4 = (byte *)(local_c + 0x11);
     puVar5 = (byte *)(local_10 + 0x11);
     memmove(puVar5, puVar4, 0x288); /* compiler REP MOVS byte copy */
-    *(undefined1 *)(local_10 + 0x10) = *(undefined1 *)(local_c + 0x10);
+    ((undefined1 *)local_10)[0x10] = ((undefined1 *)local_c)[0x10];
   }
   if (local_c != 0) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

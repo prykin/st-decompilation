@@ -90,6 +90,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
             }
             local_8 = iVar8;
             pcVar11 = LoadResourceString(19000,g_hINSTANCE_00807618);
+            /* ST_CALLSITE[0054E6CA]: CALL 0x00404d8b; direct=00404D8B cLoadingTy::SetProcess */
             cLoadingTy::SetProcess(g_cLoading_00802A58,0,pcVar11,iVar8);
           }
           pSVar10 = local_c;
@@ -97,8 +98,10 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
           Library::Ourlib::MFAOBJ::mfAObjEnum
                     (g_cMf32_00806754,PTR_DAT_007c83b0,thunk_FUN_0054ca10,local_c,0);
           local_EAX_530 = LoadResourceString(0x4a39,g_hINSTANCE_00807618);
+          /* ST_CALLSITE[0054E719]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)&DAT_0080f33a,"%d %s",DAT_00802a3c,local_EAX_530);
           if (g_cLoading_00802A58 != nullptr) {
+            /* ST_CALLSITE[0054E734]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
             cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,(char *)&DAT_0080f33a);
           }
           g_currentExceptionFrame = local_b4.previous;
@@ -113,6 +116,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
         memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
         local_2c[3] = 0xf;
         local_2c[4] = 0x111;
+        /* ST_CALLSITE[0054E789]: CALL dword ptr [EDX + 0x18] */
         (*pSVar2->SendMessage)((SystemWithNamedObjClassTy *)pSVar10,(int)local_2c);
         if (DAT_00808783 == '\x03') {
           pSVar10->field_0038 = 1;
@@ -132,6 +136,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
             } while (uVar9 < DAT_00808aaf);
           }
         }
+        /* ST_CALLSITE[0054E7FF]: CALL dword ptr [0x0085bedc] */
         DVar6 = timeGetTime();
         pSVar10->field_00BC = DVar6;
         pSVar10->field_007F = DVar6;

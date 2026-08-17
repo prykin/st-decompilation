@@ -58,6 +58,7 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[005052A7]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)local_2c->field_0194,param_1,0x36,'\x01',
          (byte *)local_2c->field_09D9[8]);
   pCVar9 = &pCVar2->field_0C11;
@@ -260,6 +261,7 @@ LAB_00505581:
     }
 switchD_00505324_default:
     if (pBVar4 != nullptr) {
+      /* ST_CALLSITE[005055B0]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,local_10 + 0xf + param_1,
              local_c + 0x36,'\x06',(byte *)pBVar4);
     }
@@ -276,6 +278,7 @@ switchD_00505324_default:
       local_20 = (local_14 & 0xff) * 0xb + 0x3b;
       do {
         pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,3);
+        /* ST_CALLSITE[00505623]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,param_1 + 0x4d + uVar6 * 4,
                local_20,'\x01',(byte *)pBVar4);
         bVar5 = (byte)local_18 + 1;
@@ -289,12 +292,14 @@ switchD_00505324_default:
       local_1c = param_1 + 0x4d + (local_18 & 0xff) * 4;
       do {
         pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+        /* ST_CALLSITE[00505693]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,local_1c,local_20,'\x01',
                (byte *)pBVar4);
         local_1c = local_1c + 4;
         iVar8 = iVar8 + -1;
       } while (iVar8 != 0);
     }
+    /* ST_CALLSITE[005056BD]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&pCVar2->field_01E1,"%d",(uint)*(ushort *)(local_24 + 2));
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,param_1 + 0x8f,
                      (uVar3 & 0xff) * 0xb + 0x39,0x23,0xc);

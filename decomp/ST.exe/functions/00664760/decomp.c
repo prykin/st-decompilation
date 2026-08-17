@@ -74,6 +74,7 @@ void __thiscall AiFltClassTy::sub_00664760(AiFltClassTy *this)
     local_e[1] = 0;
     local_e[4] = 5;
     thunk_FUN_006756d0(&local_10,local_e,local_e + 2,local_e + 3);
+    /* ST_CALLSITE[00664889]: CALL 0x00402a27; direct=00402A27 AiFltClassTy::AppendZone */
     AppendZone(this,&local_10);
   }
   if ((this->field_0122 == '\x01') && (*(int *)&this->field_0223->field_0xc == 0)) {
@@ -88,6 +89,7 @@ void __thiscall AiFltClassTy::sub_00664760(AiFltClassTy *this)
         else {
           psVar3 = nullptr;
         }
+        /* ST_CALLSITE[006648CB]: CALL 0x00403f7b; direct=00403F7B AiFltClassTy::AppendPoint */
         AppendPoint(this,psVar3,5);
         pAVar5 = this->field_022F;
         uVar6 = uVar6 + 1;

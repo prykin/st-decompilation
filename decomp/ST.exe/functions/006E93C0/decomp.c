@@ -27,7 +27,7 @@ void __thiscall FUN_006e93c0(void *this,uint param_1,int param_2,uint param_3)
       if (0 < (int)uVar4) {
         iVar6 = puVar1[0x29] + 2;
         do {
-          if ((*(byte *)(iVar6 + 1) & 0x20) != 0) break;
+          if ((((byte *)iVar6)[1] & 0x20) != 0) break;
           iVar5 = iVar5 + 1;
           iVar6 = iVar6 + 4;
         } while (iVar5 < (int)uVar4);

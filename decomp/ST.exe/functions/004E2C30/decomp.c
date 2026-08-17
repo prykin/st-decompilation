@@ -73,6 +73,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
     local_60.arg1.words.low = (word)param_1;
     uVar6 = thunk_FUN_004e60d0((int)pbVar1,param_1);
     local_60.arg1.words.high = (word)uVar6;
+    /* ST_CALLSITE[004E2D46]: CALL dword ptr [EAX] */
     g_aiBossClass_008117BC->GetMessage(&local_60);
     pSVar11 = &local_60;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -100,6 +101,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
           local_60.arg1.words.low = (word)uVar2;
           uVar6 = thunk_FUN_004e60d0((int)this->field_0024,uVar2);
           local_60.arg1.words.high = (short)uVar6 + 1;
+          /* ST_CALLSITE[004E2E4D]: CALL dword ptr [EAX] */
           g_aiBossClass_008117BC->GetMessage(&local_60);
         }
       }
@@ -113,19 +115,23 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   piVar12 = &local_8;
   local_8 = 0;
   local_c = 0;
+  /* ST_CALLSITE[004E2EAA]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   local_EAX_634 = LookupRecordByte(*(char *)&this->field_0024);
   local_EAX_634 = (int)(byte)local_EAX_634;
   thunk_FUN_004e6e10(local_EAX_634,param_1,piVar12,piVar14);
   if (local_8 != 0) {
+    /* ST_CALLSITE[004E2ECF]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     uVar5 = LookupRecordByte(*(char *)&this->field_0024);
     uVar5 = (int)(byte)uVar5;
     if (uVar5 == 1) {
       pTVar7 = this->vtable;
       uVar13 = 0x5f;
 LAB_004e2efc:
+      /* ST_CALLSITE[004E2F00]: CALL dword ptr [EDX + 0x90] */
       (*pTVar7->vfunc_90)(this,6,uVar13);
     }
     else if (uVar5 == 2) {
+      /* ST_CALLSITE[004E2EF0]: CALL dword ptr [EAX + 0x90] */
       this->vfunc_90(6,0x60);
     }
     else if (uVar5 == 3) {
@@ -135,15 +141,18 @@ LAB_004e2efc:
     }
   }
   if (local_c != 0) {
+    /* ST_CALLSITE[004E2F15]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_741 = LookupRecordByte(*(char *)&this->field_0024);
     local_EAX_741 = (int)(byte)local_EAX_741;
     if (local_EAX_741 == 1) {
       pTVar7 = this->vtable;
       uVar13 = 0x5c;
 LAB_004e2f42:
+      /* ST_CALLSITE[004E2F46]: CALL dword ptr [EDX + 0x90] */
       (*pTVar7->vfunc_90)(this,6,uVar13);
     }
     else if (local_EAX_741 == 2) {
+      /* ST_CALLSITE[004E2F36]: CALL dword ptr [EAX + 0x90] */
       this->vfunc_90(6,0x5d);
     }
     else if (local_EAX_741 == 3) {
@@ -153,15 +162,18 @@ LAB_004e2f42:
     }
   }
   if ((local_8 == 0) && (local_c == 0)) {
+    /* ST_CALLSITE[004E2F60]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_816 = LookupRecordByte(*(char *)&this->field_0024);
     local_EAX_816 = (int)(byte)local_EAX_816;
     if (local_EAX_816 == 1) {
       pTVar7 = this->vtable;
       uVar13 = 0x59;
 LAB_004e2f8d:
+      /* ST_CALLSITE[004E2F91]: CALL dword ptr [EDX + 0x90] */
       (*pTVar7->vfunc_90)(this,6,uVar13);
     }
     else if (local_EAX_816 == 2) {
+      /* ST_CALLSITE[004E2F81]: CALL dword ptr [EAX + 0x90] */
       this->vfunc_90(6,0x5a);
     }
     else if (local_EAX_816 == 3) {
@@ -170,6 +182,7 @@ LAB_004e2f8d:
       goto LAB_004e2f8d;
     }
   }
+  /* ST_CALLSITE[004E2FA4]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   local_EAX_884 = LookupRecordByte(*(char *)&this->field_023D);
   local_EAX_884 = (int)(byte)local_EAX_884;
   if (local_EAX_884 == 1) {
@@ -178,6 +191,7 @@ LAB_004e2f8d:
   }
   else {
     if (local_EAX_884 == 2) {
+      /* ST_CALLSITE[004E2FCB]: CALL dword ptr [EAX + 0x90] */
       this->vfunc_90(4,0x2d5);
       goto cf_common_exit_004E2FE4;
     }
@@ -185,9 +199,11 @@ LAB_004e2f8d:
     pTVar7 = this->vtable;
     uVar13 = 0x390;
   }
+  /* ST_CALLSITE[004E2FDE]: CALL dword ptr [EDX + 0x90] */
   (*pTVar7->vfunc_90)(this,4,uVar13);
 cf_common_exit_004E2FE4:
   this->field_04D0 = CASE_0;
+  /* ST_CALLSITE[004E2FF6]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
   RotateSpr(this,1);
   return 1;
 }

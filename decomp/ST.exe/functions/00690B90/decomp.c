@@ -40,7 +40,9 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
     if (SVar1 < MESS_TORPHIT) {
       if (SVar1 == MESS_SHARED_010F) {
         local_c = nullptr;
+        /* ST_CALLSITE[00690C9C]: CALL 0x00404511; direct=00404511 AiTactClassTy::PrepareToSave */
         local_10 = PrepareToSave(local_14,(uint *)&local_c);
+        /* ST_CALLSITE[00690CB3]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
         STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,(uint)local_c);
         if (local_10 != nullptr) {
           FreeAndNull(&local_10);
@@ -49,10 +51,13 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
       else if (SVar1 == MESS_ID_NONE) {
         if (local_14->field_0099 == 0) {
           local_14->field_0099 = 1;
+          /* ST_CALLSITE[00690C76]: CALL 0x00402c7f; direct=00402C7F AiTactClassTy::sub_00690A40 */
           sub_00690A40(local_14);
         }
         else {
+          /* ST_CALLSITE[00690C82]: CALL 0x00402b49; direct=00402B49 AiTactClassTy::sub_00690AB0 */
           sub_00690AB0(local_14);
+          /* ST_CALLSITE[00690C89]: CALL 0x00404598; direct=00404598 AiTactClassTy::ExecClaim */
           ExecClaim(this_00);
         }
       }
@@ -62,6 +67,7 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
           RaiseInternalException
                     (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_tact.cpp",0x45e);
         }
+        /* ST_CALLSITE[00690C2F]: CALL 0x004037c9; direct=004037C9 AiTactClassTy::InitData */
         InitData(this_00,puVar7);
         if (puVar7[3] == 0) {
           this_00->field_001C = DAT_00808754;
@@ -70,10 +76,12 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
           this_00->field_001C = this_00->field_007E;
         }
         if (puVar7[3] == 0) {
+          /* ST_CALLSITE[00690C58]: CALL 0x00404741; direct=00404741 AiTactClassTy::InitDistrObj */
           InitDistrObj(this_00);
         }
       }
       else if (SVar1 == MESS_SHARED_0003) {
+        /* ST_CALLSITE[00690C03]: CALL 0x0040284c; direct=0040284C AiTactClassTy::sub_0068E010 */
         sub_0068E010(local_14);
       }
     }
@@ -107,6 +115,7 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_SHARED_5DD5) {
+      /* ST_CALLSITE[00690CE0]: CALL 0x004046e2; direct=004046E2 AiTactClassTy::HelpOrganize */
       HelpOrganize(local_14,(AnonShape_00690650_F810CDF4 *)message);
     }
     FUN_006e5fd0(this_00,message);

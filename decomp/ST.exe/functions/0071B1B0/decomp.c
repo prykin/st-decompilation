@@ -21,6 +21,7 @@ undefined4 * __fastcall FUN_0071b1b0(undefined4 *param_1)
   param_1[0x17] = 0;
   param_1[0x1d] = 0;
   param_1[0x11] = 0xffffffff;
+  /* ST_CALLSITE[0071B1F5]: CALL dword ptr [0x0085bb88] */
   InitializeCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x1e));
   return param_1;
 }

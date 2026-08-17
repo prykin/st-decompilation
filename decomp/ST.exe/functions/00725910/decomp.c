@@ -29,6 +29,7 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
   char local_108 [260];
   char *pcVar8_mg2;
 
+  /* ST_CALLSITE[0072592A]: CALL dword ptr [EBP + 0x14] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (*(code *)param_4)(hFindFile,param_3,1,param_5);
   if (iVar3 == 0) {
@@ -73,6 +74,7 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
     pcVar12 = pcVar10 + -1;
     memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
     uVar7 = 0;
+    /* ST_CALLSITE[007259AA]: CALL dword ptr [0x0085bcec] */
     pvVar4 = FindFirstFileA(local_108,&local_248);
     if (pvVar4 != (HANDLE)0xffffffff) {
       do {
@@ -118,16 +120,20 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
           pcVar8 = pcVar12 + -1;
           memmove(pcVar8, pCVar9, uVar6); /* compiler REP MOVS byte copy */
           uVar7 = 0;
+          /* ST_CALLSITE[00725A48]: CALL dword ptr [EBP + 0x14] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar3 = (*(code *)param_4)(local_108,&local_248,0,param_5);
           if (iVar3 != 0) {
+            /* ST_CALLSITE[00725B18]: CALL dword ptr [0x0085bcf4] */
             FindClose(pvVar4);
             return iVar3;
           }
         }
+        /* ST_CALLSITE[00725A63]: CALL dword ptr [0x0085bcf0] */
         BVar5 = FindNextFileA(pvVar4,&local_248);
       } while (BVar5 != 0);
     }
+    /* ST_CALLSITE[00725A72]: CALL dword ptr [0x0085bcf4] */
     FindClose(pvVar4);
     if ((param_6 & 1) == 0) {
       uVar6 = 0xffffffff;
@@ -171,6 +177,7 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
       pcVar12 = pcVar10 + -1;
       memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
       uVar7 = 0;
+      /* ST_CALLSITE[00725AF8]: CALL dword ptr [0x0085bcec] */
       pvVar4 = FindFirstFileA(local_108,&local_248);
       if (pvVar4 == (HANDLE)0xffffffff) {
         return -0x6f;
@@ -219,14 +226,18 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
           memmove(pcVar8, pCVar9, uVar6); /* compiler REP MOVS byte copy */
           iVar2 = FUN_00725910(local_108,text,&local_248,param_4,param_5,0);
           if (iVar2 != 0) {
+            /* ST_CALLSITE[00725C0F]: CALL dword ptr [0x0085bcf4] */
             FindClose(pvVar4);
             return iVar2;
           }
         }
+        /* ST_CALLSITE[00725BDE]: CALL dword ptr [0x0085bcf0] */
         BVar5 = FindNextFileA(pvVar4,&local_248);
       } while (BVar5 != 0);
+      /* ST_CALLSITE[00725BED]: CALL dword ptr [0x0085bcf4] */
       FindClose(pvVar4);
     }
+    /* ST_CALLSITE[00725BFE]: CALL dword ptr [EBP + 0x14] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (*(code *)param_4)(hFindFile,param_3,2,param_5);
   }

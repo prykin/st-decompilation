@@ -157,6 +157,7 @@ void __cdecl st::fn_005411A0(DArrayTy *param_1,char *param_2,char *text)
     } while (cVar1 != '\0');
     local_8 = st::pointer_boundary_cast<uint *>(st::fn_006AAC70(~uVar4 + ~uVar5 + 2));
     if (local_8 != nullptr) {
+      /* ST_CALLSITE[00541211]: CALL dword ptr [0x0085bde8] */
       st::external_00000080((LPSTR)local_8,text,param_2);
       for (puVar3 = st::fn_0072E560(local_8,'\n'); puVar3 != nullptr;
           puVar3 = st::fn_0072E560(puVar3,'\n')) {
@@ -368,6 +369,7 @@ void __cdecl st::fn_005412B0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_90[0x54] = 0x7a;
   local_90[0x55] = 0x7c;
   local_90[0x56] = 0x7e;
+  /* ST_CALLSITE[005415B7]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   st::fn_0070D1F0
             (0x19d,&local_cc,nullptr,local_90,(int)param_1,local_38,7,7,1,0,0x20021c,param_2);
   return;
@@ -539,6 +541,7 @@ void __cdecl st::fn_005416A0(int param_1,undefined *param_2,BYTE param_3)
   local_74[0x54] = 0x7a;
   local_74[0x55] = 0x7c;
   local_74[0x56] = 0x7e;
+  /* ST_CALLSITE[0054191B]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   st::fn_0070D1F0
             (0x19d,&local_b0,nullptr,local_74,param_1,local_1c,10,2,1,1,0x40001c,param_2);
   return;
@@ -700,6 +703,7 @@ void __cdecl st::fn_005419E0(int param_1,undefined *param_2,BYTE param_3)
   local_68[0x54] = 0x7a;
   local_68[0x55] = 0x7c;
   local_68[0x56] = 0x7e;
+  /* ST_CALLSITE[00541C32]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   st::fn_0070D1F0
             (0x19d,&local_a4,nullptr,local_68,param_1,local_10,2,5,1,0,0x100021c,param_2);
   return;
@@ -844,6 +848,7 @@ void __cdecl st::fn_00541CF0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_54[0x38] = 0x7c;
   local_54[0x39] = 0x7e;
   local_54[0x3a] = 0x2a;
+  /* ST_CALLSITE[00541EC9]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   st::fn_0070D1F0
             (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,param_2);
   return;
@@ -988,6 +993,7 @@ void __cdecl st::fn_00541F60(ushort *param_1,undefined *param_2,BYTE param_3)
   local_54[0x38] = 0x7c;
   local_54[0x39] = 0x7e;
   local_54[0x3a] = 0x2a;
+  /* ST_CALLSITE[00542138]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   st::fn_0070D1F0
             (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,param_2);
   return;
@@ -1132,6 +1138,7 @@ void __cdecl st::fn_005421D0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_54[0x38] = 0x7c;
   local_54[0x39] = 0x7e;
   local_54[0x3a] = 0x2a;
+  /* ST_CALLSITE[005423AA]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   st::fn_0070D1F0
             (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,param_2);
   return;
@@ -1144,6 +1151,7 @@ void st::fn_00543410(undefined4 param_1,undefined4 param_2,int param_3,undefined
 {
   if (-1 < param_3 + -1) {
     do {
+      /* ST_CALLSITE[00543427]: CALL EBX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)param_4)();
       param_3 = param_3 + -1;
@@ -1359,10 +1367,12 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
        ) {
       if (param_5 <= iVar4) {
         if (param_6 <= iVar1) {
+          /* ST_CALLSITE[0054BA61]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
           iVar4 = st::fn_004017E4
                             (g_opticClass_007FB2A0,CASE_5,1.4013e-45,
                              (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
+            /* ST_CALLSITE[0054BA84]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             st::fn_0040507E
                       (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_40,STField<int>(this,0x34),
                        STField<int>(this,0x38));
@@ -1371,10 +1381,12 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
           return 1;
         }
         if (iVar3 <= param_6) {
+          /* ST_CALLSITE[0054BAB5]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
           iVar4 = st::fn_004017E4
                             (g_opticClass_007FB2A0,CASE_6,1.4013e-45,
                              (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
+            /* ST_CALLSITE[0054BAD8]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             st::fn_0040507E
                       (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_42,STField<int>(this,0x34),
                        STField<int>(this,0x38));
@@ -1385,10 +1397,12 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
       }
       if (iVar2 <= param_5) {
         if (param_6 <= iVar1) {
+          /* ST_CALLSITE[0054BB12]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
           iVar4 = st::fn_004017E4
                             (g_opticClass_007FB2A0,CASE_7,1.4013e-45,
                              (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
+            /* ST_CALLSITE[0054BB35]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             st::fn_0040507E
                       (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_41,STField<int>(this,0x34),
                        STField<int>(this,0x38));
@@ -1397,10 +1411,12 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
           return 1;
         }
         if (iVar3 <= param_6) {
+          /* ST_CALLSITE[0054BB66]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
           iVar4 = st::fn_004017E4
                             (g_opticClass_007FB2A0,CASE_8,1.4013e-45,
                              (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
+            /* ST_CALLSITE[0054BB89]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             st::fn_0040507E
                       (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_43,STField<int>(this,0x34),
                        STField<int>(this,0x38));
@@ -1410,10 +1426,12 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
         }
       }
       if (param_5 <= iVar4) {
+        /* ST_CALLSITE[0054BBBA]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
         iVar4 = st::fn_004017E4
                           (g_opticClass_007FB2A0,CASE_1,1.4013e-45,(uint)STField<byte>(this,0xd1)
                            ,0);
         if (param_7 != 0) {
+          /* ST_CALLSITE[0054BBDD]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           st::fn_0040507E
                     (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3F,STField<int>(this,0x34),
                      STField<int>(this,0x38));
@@ -1422,10 +1440,12 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
         return 1;
       }
       if (iVar2 <= param_5) {
+        /* ST_CALLSITE[0054BC0F]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
         iVar4 = st::fn_004017E4
                           (g_opticClass_007FB2A0,CASE_2,1.4013e-45,(uint)STField<byte>(this,0xd1)
                            ,0);
         if (param_7 != 0) {
+          /* ST_CALLSITE[0054BC32]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           st::fn_0040507E
                     (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3E,STField<int>(this,0x34),
                      STField<int>(this,0x38));
@@ -1434,10 +1454,12 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
         return 1;
       }
       if (param_6 <= iVar1) {
+        /* ST_CALLSITE[0054BC63]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
         iVar4 = st::fn_004017E4
                           (g_opticClass_007FB2A0,CASE_3,1.4013e-45,(uint)STField<byte>(this,0xd1)
                            ,0);
         if (param_7 != 0) {
+          /* ST_CALLSITE[0054BC86]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           st::fn_0040507E
                     (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3C,STField<int>(this,0x34),
                      STField<int>(this,0x38));
@@ -1446,10 +1468,12 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
         return 1;
       }
       if (iVar3 <= param_6) {
+        /* ST_CALLSITE[0054BCB7]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
         iVar4 = st::fn_004017E4
                           (g_opticClass_007FB2A0,CASE_4,1.4013e-45,(uint)STField<byte>(this,0xd1)
                            ,0);
         if (param_7 != 0) {
+          /* ST_CALLSITE[0054BCDA]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           st::fn_0040507E
                     (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3D,STField<int>(this,0x34),
                      STField<int>(this,0x38));
@@ -1467,6 +1491,7 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
     iVar4 = st::fn_00405687((int)this);
     if (iVar4 != 0) goto cf_common_exit_0054BA0C;
   }
+  /* ST_CALLSITE[0054BA07]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
   st::fn_0040507E(st::pointer_boundary_cast<CursorClassTy *>(this),CASE_0,STField<int>(this,0x34),STField<int>(this,0x38));
 cf_common_exit_0054BA0C:
   STField<undefined1>(this,0xd1) = 1;
@@ -1551,6 +1576,7 @@ int __cdecl st::fn_0054CA10(int *param_1,undefined4 param_2,cMf32 *param_3,int p
            st::fn_006B9770((byte *)((~uVar5 - 1) + param_4),nullptr,10);
   DAT_00802a3c = DAT_00802a3c + 1;
   if (g_cLoading_00802A58 != nullptr) {
+    /* ST_CALLSITE[0054CA9C]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
     st::fn_00403472(g_cLoading_00802A58,CASE_1,DAT_00802a3c,nullptr);
   }
   iVar4 = st::fn_00404DDB(puVar3,*piVar2,nullptr,nullptr,param_1,0);
@@ -1717,13 +1743,16 @@ void st::fn_0054EDF0(undefined4 *param_1,uint *param_2,uint param_3,uint param_4
   if ((((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
        (DAT_0080874f == '\0')) || (cVar2 == '\x05')) && (DAT_008087a5 == 0)) {
     if (param_3 != 0) {
+      /* ST_CALLSITE[0054EE42]: CALL 0x0040422d; direct=0040422D STPlaySystemC::SetCtrlCmd */
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       st::fn_0040422D(in_ECX,DAT_0080874d,0,cVar2,param_2,param_4,nullptr,0);
       return;
     }
-    auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
-    uVar1 = st::fn_00401FFF(g_allPlayers_007FA174,st::pointer_boundary_cast<undefined4 *>(&param_1_after_write),&param_3);
+    undefined4 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+    /* ST_CALLSITE[0054EE62]: CALL 0x00401fff; direct=00401FFF STAllPlayersC::PrepareToCmd */
+    uVar1 = st::fn_00401FFF(g_allPlayers_007FA174,(undefined4 *)&param_1_after_write,&param_3);
     if (uVar1 != 0xffffffff) {
+      /* ST_CALLSITE[0054EE87]: CALL 0x0040422d; direct=0040422D STPlaySystemC::SetCtrlCmd */
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       st::fn_0040422D(in_ECX,DAT_0080874d,uVar1,cVar2,param_2,param_4,param_1_after_write,param_3);
     }

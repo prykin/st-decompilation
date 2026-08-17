@@ -13,8 +13,11 @@ undefined4 __thiscall TradePanelTy::sub_00552160(TradePanelTy *this,char param_1
 
   uVar1 = 0;
   if ((this->field_0184 != param_1) &&
+     /* ST_CALLSITE[00552178]: CALL 0x00401e4c; direct=00401E4C SpecPanelTy::SetPanel */
      (uVar1 = SpecPanelTy::SetPanel((SpecPanelTy *)this,param_1), param_1 != '\0')) {
+    /* ST_CALLSITE[00552189]: CALL 0x00403d4b; direct=00403D4B TradePanelTy::SetModeControls */
     SetModeControls(this,param_2);
+    /* ST_CALLSITE[00552190]: CALL 0x0040391d; direct=0040391D TradePanelTy::PaintPanel */
     PaintPanel(this);
   }
   return uVar1;

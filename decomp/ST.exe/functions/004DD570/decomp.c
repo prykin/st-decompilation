@@ -15,6 +15,7 @@ undefined4 __fastcall FUN_004dd570(TLOBaseTy *param_1)
       if (param_1->field_04D0 != CASE_3) goto LAB_004dd5bb;
       param_1->field_04D0 = CASE_0;
     }
+    /* ST_CALLSITE[004DD5B6]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     TLOBaseTy::RotateSpr(param_1,0);
   }
 LAB_004dd5bb:

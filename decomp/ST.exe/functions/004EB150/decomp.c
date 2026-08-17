@@ -19,6 +19,7 @@ undefined4 __thiscall FUN_004eb150(void *this,int param_1)
   if ((uVar5 >> 0x10) % 0x385 + 0x834 + g_packedRecords_A62x8[param_1].field1963_0x9c2 <=
       g_playSystem_00802A38->field_00E4) {
     g_packedRecords_A62x8[param_1].field1963_0x9c2 = g_playSystem_00802A38->field_00E4;
+    /* ST_CALLSITE[004EB1B0]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar4 = LookupRecordByte((char)param_1);
     if (bVar4 != 3) {
       if ((g_playSystem_00802A38->field_00E4 < 30000) ||

@@ -27,6 +27,7 @@ void __fastcall FUN_005ec6a0(AnonShape_005EC6A0_C8559927 *param_1)
         local_28.arg1.words.high = *(word *)(local_8 + 0x32);
       }
     }
+    /* ST_CALLSITE[005EC70F]: CALL dword ptr [EAX] */
     g_aiBossClass_008117BC->GetMessage(&local_28);
   }
   return;

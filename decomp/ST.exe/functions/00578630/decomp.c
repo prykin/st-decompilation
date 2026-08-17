@@ -70,6 +70,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     RaiseInternalException(local_EAX_70,0,"E:\\__titans\\Igor\\to_crab.cpp",0x1b8);
     return 0xffff;
   }
+  /* ST_CALLSITE[00578691]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
   STSprGameObjC::GetMessage((STSprGameObjC *)local_1c,message);
   SVar1 = message->id;
   if (MESS_SHARED_010F < SVar1) {
@@ -85,7 +86,9 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
+      /* ST_CALLSITE[00578E69]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
       STT3DSprC::sub_004AD070((STT3DSprC *)puVar11,0xe);
+      /* ST_CALLSITE[00578E72]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
       STT3DSprC::sub_004AD070((STT3DSprC *)puVar11,0xd);
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -95,7 +98,9 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     goto LAB_00578ea2;
   }
   if (SVar1 == MESS_SHARED_010F) {
+    /* ST_CALLSITE[00578CA8]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
     local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
+    /* ST_CALLSITE[00578CB6]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
     local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x68 + local_8);
     if (local_14 == nullptr) {
@@ -150,6 +155,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     pbVar12 = local_18;
     pbVar15 = &local_c[1].field_0x4 + local_8;
     memmove(pbVar15, pbVar12, local_10); /* compiler REP MOVS byte copy */
+    /* ST_CALLSITE[00578DF2]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                local_10 + 0x68 + local_8);
@@ -189,6 +195,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     puVar13 = (byte *)&this_00->field_0x259;
     memmove(puVar13, puVar11, 0x28); /* compiler REP MOVS byte copy */
     iVar9 = 0;
+    /* ST_CALLSITE[00578852]: CALL 0x00405a01; direct=00405A01 STCrabC::Bad */
     Bad(this_00);
     if (((((this_00->field_026D < 0) || ((int)g_worldGrid.sizeX <= this_00->field_026D)) ||
          (this_00->field_0271 < 0)) ||
@@ -202,6 +209,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     else {
       switch(this_00->field_0279) {
       case CASE_F2:
+        /* ST_CALLSITE[00578904]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1l",
                            CASE_1D);
@@ -209,6 +217,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xd2);
         }
+        /* ST_CALLSITE[00578937]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab1l_m",
                            CASE_1D);
@@ -220,6 +229,7 @@ cf_error_exit_00578B5D:
         }
         break;
       case CASE_F3:
+        /* ST_CALLSITE[00578971]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2l",
                            CASE_1D);
@@ -227,6 +237,7 @@ cf_error_exit_00578B5D:
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xda);
         }
+        /* ST_CALLSITE[005789A3]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab2l_m",
                            CASE_1D);
@@ -236,6 +247,7 @@ cf_error_exit_00578B5D:
         }
         break;
       case CASE_F4:
+        /* ST_CALLSITE[005789DE]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab1b",
                            CASE_1D);
@@ -243,6 +255,7 @@ cf_error_exit_00578B5D:
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xe2);
         }
+        /* ST_CALLSITE[00578A10]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab1b_m",
                            CASE_1D);
@@ -252,6 +265,7 @@ cf_error_exit_00578B5D:
         }
         break;
       case CASE_F5:
+        /* ST_CALLSITE[00578A3E]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"crab2b",
                            CASE_1D);
@@ -259,6 +273,7 @@ cf_error_exit_00578B5D:
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xea);
         }
+        /* ST_CALLSITE[00578A71]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"crab2b_m",
                            CASE_1D);
@@ -268,6 +283,7 @@ cf_error_exit_00578B5D:
         }
         break;
       case CASE_F6:
+        /* ST_CALLSITE[00578B11]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"langus2",
                            CASE_1D);
@@ -275,6 +291,7 @@ cf_error_exit_00578B5D:
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xfa);
         }
+        /* ST_CALLSITE[00578B43]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"langus2m",
                            CASE_1D);
@@ -284,6 +301,7 @@ cf_error_exit_00578B5D:
         }
         break;
       case CASE_F7:
+        /* ST_CALLSITE[00578AAB]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"langus1",
                            CASE_1D);
@@ -291,6 +309,7 @@ cf_error_exit_00578B5D:
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_crab.cpp",0xf2);
         }
+        /* ST_CALLSITE[00578ADD]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar9 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,PTR_0080676c,"langus1m",
                            CASE_1D);
@@ -300,10 +319,13 @@ cf_error_exit_00578B5D:
         }
       }
       puVar11 = (byte *)(&this_00->field_01D5);
+      /* ST_CALLSITE[00578B6E]: CALL 0x00403afd; direct=00403AFD STT3DSprC::sub_004ACF50 */
       STT3DSprC::sub_004ACF50((STT3DSprC *)puVar11,'\r');
       thunk_FUN_004ac610(puVar11,'\x0e');
       thunk_FUN_004ac610(puVar11,'\r');
+      /* ST_CALLSITE[00578B95]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)puVar11,0xe,g_playSystem_00802A38->field_00E4);
+      /* ST_CALLSITE[00578BAB]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)puVar11,0xd,g_playSystem_00802A38->field_00E4);
       sVar6 = (short)this_00->field_0275 * 200;
       this_00->field_0041 = (short)this_00->field_026D * 0xc9 + 100;
@@ -328,6 +350,7 @@ cf_error_exit_00578B5D:
     puVar13 = (byte *)&this_00->field_0x259;
     memmove(puVar13, puVar11, 0x28); /* compiler REP MOVS byte copy */
     local_8 = local_20[0x18];
+    /* ST_CALLSITE[00578720]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x68 + (int)local_20));
     puVar11 = (byte *)(local_20);
@@ -363,6 +386,7 @@ cf_error_exit_00578B5D:
       local_2c = 0;
       local_28 = 0;
       local_24 = 0;
+      /* ST_CALLSITE[00578803]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
                  (AnonShape_004AD790_77673787 *)(puVar11 + 0x19));

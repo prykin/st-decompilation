@@ -94,7 +94,7 @@ LAB_0044c950:
                 if (((uint)piVar4[9] < 8) &&
                    ((g_playSystem_00802A38 == nullptr ||
                     (g_bulkInitializedRecords_008087C7[piVar4[9]].field_0022 < 8)))) {
-                  bVar1 = *(byte *)(piVar4 + 9);
+                  bVar1 = ((byte *)piVar4)[9];
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_24 = CONCAT31(uStack_23,bVar1);
                   if (DAT_00808a8f == '\0') {
@@ -125,8 +125,10 @@ LAB_0044ca10:
                     bVar15 = g_bulkInitializedRecords_008087C7[uVar9].field_0023 !=
                              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
+                  /* ST_CALLSITE[0044CA23]: CALL dword ptr [EDX + 0xf8] */
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   if (((bVar15) && (iVar13 = (**(code **)(*piVar4 + 0xf8))(), iVar13 != 0)) &&
+                     /* ST_CALLSITE[0044CA3A]: CALL dword ptr [EAX + 0xf4] */
                      (iVar13 = (**(code **)(*piVar4 + 0xf4))(DAT_0080874d), iVar13 != 0)) {
                     local_10 = (undefined1)piVar4[9];
                     local_e = STField<undefined2>(piVar4,0x32);
@@ -157,7 +159,7 @@ LAB_0044c94c:
       *param_6 = uVar9;
       local_14 = Library::DKW::LIB::MemAlloc(uVar9);
       *local_14 = (ushort)pDVar7->count;
-      *(undefined1 *)(local_14 + 1) = (undefined1)param_1;
+      ((undefined1 *)local_14)[1] = (undefined1)param_1;
       puVar11 = (byte *)(pDVar7->data);
       uVar9 = (uint)*local_14 << 2;
     }
@@ -197,7 +199,7 @@ LAB_0044c94c:
       *param_6 = uVar9;
       local_14 = Library::DKW::LIB::MemAlloc(uVar9);
       *local_14 = (ushort)pDVar7->count;
-      *(undefined1 *)(local_14 + 1) = 3;
+      ((undefined1 *)local_14)[1] = 3;
       puVar11 = (byte *)(pDVar7->data);
       uVar9 = (uint)*local_14 << 1;
     }

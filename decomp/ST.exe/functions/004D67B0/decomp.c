@@ -15,6 +15,7 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
   TLOBaseTy *local_8;
 
   local_8 = this;
+  /* ST_CALLSITE[004D67BC]: CALL dword ptr [EAX + 0xf8] */
   dVar2 = this->slot_F8();
   if (dVar2 != 0) {
     local_4c.previous = g_currentExceptionFrame;

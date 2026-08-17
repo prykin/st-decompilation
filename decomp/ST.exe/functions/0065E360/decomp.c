@@ -18,6 +18,7 @@ uint * __fastcall AiFltClassTy::sub_0065E360(AiFltClassTy *param_1,undefined4 pa
   if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
     this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D);
     if (this != nullptr) {
+      /* ST_CALLSITE[0065E38E]: CALL 0x00403d46; direct=00403D46 STGroupC::GetTOBJList */
       puVar1 = STGroupC::GetTOBJList((STGroupC *)this,param_3);
       return puVar1;
     }

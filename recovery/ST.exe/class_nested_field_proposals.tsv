@@ -1,7 +1,4 @@
 apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiEventClassTy_0000	20	4	field_0014	/undefined4	1	nested reads=1, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiEventClassTy_0000	24	4	field_0018	/undefined4	2	nested reads=99, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiEventClassTy_0000	48	4	field_0030	/undefined4	1	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0223	8	4	field_0008	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0223	28	4	field_001C	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_022F	8	4	field_0008	/undefined4	2	nested reads=3, writes=0

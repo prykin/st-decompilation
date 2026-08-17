@@ -30,6 +30,7 @@ FUN_0061c910(void *this,int param_1,STJumpMineC_field_0093State param_2,undefine
   SVar1 = param_2;
   local_8 = 0;
   if (param_1 == 1) {
+    /* ST_CALLSITE[0061C9DA]: CALL 0x004046ab; direct=004046AB STJumpMineC::sub_0061B340 */
     iVar3 = STJumpMineC::sub_0061B340
                       (this,(short)param_3,(short)param_4,param_5,param_6,param_7,param_8,&param_7);
     if (iVar3 != 0) {
@@ -46,6 +47,7 @@ FUN_0061c910(void *this,int param_1,STJumpMineC_field_0093State param_2,undefine
   }
   else if ((1 < param_1) && (param_1 < 4)) {
     if (STField<int *>(this,0x34) != nullptr) {
+      /* ST_CALLSITE[0061C95B]: CALL dword ptr [EAX + 0xe0] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*STField<int *>(this,0x34) + 0xe0))
                         (STField<undefined4>(this,0x38),(byte *)((int)&param_2 + 2),
@@ -58,6 +60,7 @@ FUN_0061c910(void *this,int param_1,STJumpMineC_field_0093State param_2,undefine
         STField<undefined4>(this,0x3c) = local_8;
         STField<int>(this,0x9f) = (int)(short)STPiece<2,2>(param_2);
         STField<int>(this,0xa7) = STPiece<2,2>(param_8) + 0x28;
+        /* ST_CALLSITE[0061C999]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
         iVar2 = STJumpMineC::LoadImagJMine(this,2);
         return CASE_6 - (iVar2 != 0);
       }

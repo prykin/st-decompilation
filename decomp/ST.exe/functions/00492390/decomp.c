@@ -27,6 +27,7 @@ void __thiscall STBoatC::sub_00492390(STBoatC *this)
                 (-0x5001fffd,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                  0x5100);
     }
+    /* ST_CALLSITE[004923F3]: CALL dword ptr [EAX + 0x9c] */
     local_8->vfunc_9C();
   }
   return;

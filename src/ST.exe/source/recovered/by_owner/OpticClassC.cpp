@@ -15,6 +15,7 @@ OpticClassC * __thiscall st::fn_004A88C0(OpticClassC *this)
 
   st::fn_006E5FB0(this);
   this->vtable = &st_global_00790758;
+  /* ST_CALLSITE[004A88CE]: CALL dword ptr [0x0085bedc] */
   DVar1 = st::external_000000DA();
   this->field_0018 = DVar1;
   return this;
@@ -45,6 +46,7 @@ st::fn_004AB070
   DWORD DVar1;
   int iVar2;
 
+  /* ST_CALLSITE[004AB076]: CALL dword ptr [0x0085bedc] */
   DVar1 = st::external_000000DA();
   if (DVar1 - this->field_0018 < 0x32) {
     if (this->field_001C == -2) {

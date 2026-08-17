@@ -111,6 +111,7 @@ void CreateAi(void)
   }
   pcVar6 = local_c;
   if (local_c != nullptr) {
+    /* ST_CALLSITE[006491C4]: CALL 0x00403f2b; direct=00403F2B CreateArbiter */
     CreateArbiter((int)local_c,&DAT_00809960);
     local_1c = 0;
     local_18 = g_bulkInitializedRecords_008087C7;
@@ -150,6 +151,7 @@ LAB_00649255:
         }
         if ((local_10 != nullptr) &&
            (local_8 = (AnonShape_00648C10_30A1BBFD *)
+                      /* ST_CALLSITE[00649271]: CALL 0x004012ad; direct=004012AD LoadStrategData */
                       LoadStrategData((int)pcVar6,local_10,nullptr),
            local_8 != nullptr)) {
           local_14 = 0;
@@ -179,6 +181,7 @@ LAB_00649255:
               pBVar10 = local_18;
             } while (local_14 < (int)(uint)DAT_00808aaf);
           }
+          /* ST_CALLSITE[006492F0]: CALL 0x004018a7; direct=004018A7 StartStrateg */
           StartStrateg(local_8,uVar3);
           FreeAndNull(&local_8);
         }

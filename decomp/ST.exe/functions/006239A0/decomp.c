@@ -42,6 +42,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
   case CASE_0:
     return 1;
   case CASE_1:
+    /* ST_CALLSITE[006239DD]: CALL 0x004014b5; direct=004014B5 STMineSetC::sub_00624920 */
     iVar3 = sub_00624920(this,this->field_02EE,&local_c,&local_10,&local_14);
     if (0 < iVar3) {
       this->field_0054 = (short)this->field_02C2;
@@ -58,13 +59,16 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
       return 0;
     }
     if (this->field_0353 == '\0') {
+      /* ST_CALLSITE[00623A6C]: CALL 0x00405637; direct=00405637 STMineSetC::sub_006226C0 */
       bVar2 = sub_006226C0(this,(int)this->field_0047,(int)this->field_0049);
       this->field_0353 = bVar2;
     }
     thunk_FUN_00624000(this);
     if (this->field_0353 != '\0') {
+      /* ST_CALLSITE[00623A8C]: CALL 0x004012c6; direct=004012C6 STMineSetC::LoadImagMineSet */
       iVar3 = LoadImagMineSet(this,1);
       if (iVar3 == 0) {
+        /* ST_CALLSITE[00623A97]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
         sub_00622670(this);
       }
       if (this->field_0363 == nullptr) {
@@ -82,15 +86,18 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
     return local_8;
   case CASE_3:
     if (g_playSystem_00802A38->field_00E4 < this->field_030F) goto switchD_006239c1_caseD_4;
+    /* ST_CALLSITE[00623B3B]: CALL 0x00405c5e; direct=00405C5E STMineSetC::sub_00625730 */
     sub_00625730(this);
     thunk_FUN_00627790(this);
     this->field_02AE = CASE_4;
     iVar3 = thunk_FUN_00627d90(1);
     uVar4 = thunk_FUN_00627db0(this,this->field_02C2,this->field_02C6,iVar3);
+    /* ST_CALLSITE[00623B83]: CALL 0x00403a4e; direct=00403A4E STAllPlayersC::UnRegisterMine */
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::UnRegisterMine
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar4), (uint8_t)((char)this->field_0262)),
                CONCAT22(extraout_var,this->field_0032),this);
+    /* ST_CALLSITE[00623B91]: CALL 0x0040216c; direct=0040216C STMineSetC::sub_0041D2B0 */
     sub_0041D2B0(this);
     iVar3 = thunk_FUN_00495ff0(this->field_0047,this->field_0049,this->field_004B,this->field_008E,
                                (AnonShape_00495FF0_59081BDD *)this);
@@ -98,6 +105,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
       this->field_0314 = this->field_0314 + -1;
     }
     if (this->field_02BA < 0) {
+      /* ST_CALLSITE[00623BD4]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
       sub_00622670(this);
       return local_8;
     }
@@ -108,6 +116,7 @@ switchD_006239c1_caseD_4:
       if (this->field_02AE != CASE_4) {
         return 0;
       }
+      /* ST_CALLSITE[00623BFC]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
       sub_00622670(this);
       return local_8;
     }
@@ -120,7 +129,9 @@ switchD_006239c1_caseD_4:
       if (this->field_02CE == *(int *)(&DAT_007d04c0 + (uint)this->field_02AD * 4)) {
         thunk_FUN_004ad0e0(&this->field_01D5,9);
       }
+      /* ST_CALLSITE[00623C50]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase((STT3DSprC *)&this->field_01D5,'\t',this->field_02DB);
+      /* ST_CALLSITE[00623C59]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       STT3DSprC::ShowCurFase((STT3DSprC *)&this->field_01D5,'\t');
     }
     if (this->field_02DB < this->field_02D7) {
@@ -130,33 +141,41 @@ switchD_006239c1_caseD_4:
   if (this->field_02E0 != '\0') {
     if (this->field_02E1 == this->field_02E5) {
       this->field_02E0 = 0;
+      /* ST_CALLSITE[00623C9E]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
       STT3DSprC::sub_004AD070((STT3DSprC *)&this->field_01D5,10);
     }
     else {
+      /* ST_CALLSITE[00623CB0]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase((STT3DSprC *)&this->field_01D5,'\n',this->field_02E1);
+      /* ST_CALLSITE[00623CB9]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       STT3DSprC::ShowCurFase((STT3DSprC *)&this->field_01D5,'\n');
       this->field_02E1 = this->field_02E1 + 1;
     }
   }
   uVar1 = this->field_02CE;
   if ((int)uVar1 < this->field_02D2) {
+    /* ST_CALLSITE[00623CDF]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase((STT3DSprC *)&this->field_01D5,'\x0e',uVar1);
+    /* ST_CALLSITE[00623CE8]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
     STT3DSprC::ShowCurFase((STT3DSprC *)&this->field_01D5,'\x0e');
 LAB_00623d08:
     this->field_02CE = this->field_02CE + 1;
   }
   else if (uVar1 == this->field_02D2) {
     if (-1 < this->field_02BA) {
+      /* ST_CALLSITE[00623D03]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
       STT3DSprC::sub_004AD070((STT3DSprC *)&this->field_01D5,0xe);
     }
     goto LAB_00623d08;
   }
+  /* ST_CALLSITE[00623D5C]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   STT3DSprC::sub_004AD3C0
             ((STT3DSprC *)&this->field_01D5,(float)this->field_02C2 * _DAT_007904f8 * _DAT_007904f0,
              (float)this->field_02C6 * _DAT_007904f8 * _DAT_007904f0,
              (float)this->field_02CA * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
   this_00 = g_visibleClass_00802A88;
   if (this->field_02DB == this->field_02D7) {
+    /* ST_CALLSITE[00623D73]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
     sub_00622670(this);
     return local_8;
   }
@@ -169,6 +188,7 @@ LAB_00623d08:
       lVar6 = Library::MSVCRT::__ftol();
       iVar5 = (int)lVar6;
       lVar6 = Library::MSVCRT::__ftol();
+      /* ST_CALLSITE[00623E05]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
       VisibleClassTy::sub_00558C00(this_00,this_00->field_010C,(int)lVar6,iVar5,piVar7,piVar8);
       if ((((-1 < iVar3) &&
            (((iVar3 < 5 && (-1 < local_18)) && (local_18 < (int)this_00->field_0030)))) &&

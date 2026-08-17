@@ -146,6 +146,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                           ((this_00 = g_worldGrid.cells
                                       [(int)sVar13 * (int)g_worldGrid.planeStride + sVar3 * iVar7 +
                                        (int)sVar11].objects[1], this_00 != nullptr &&
+                           /* ST_CALLSITE[006446F4]: CALL dword ptr [EDX + 0x2c] */
                            (((iVar7 = this_00->GetObjectTypeId(), iVar7 != 0xa6 &&
                              (iVar7 != 0xa7)) && ((iVar7 != 0xbd && (iVar7 != 0xaf)))))))))) {
                         this_00 = nullptr;
@@ -285,6 +286,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                       if ((this_00 != nullptr) &&
                          (*(int *)&this_00->field_0x18 != local_10->field_025E)) {
                         uVar9 = (undefined2)((uint)local_10 >> 0x10);
+                        /* ST_CALLSITE[006447C2]: CALL dword ptr [EDX + 0xdc]; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         iVar14 = (*this_00->vtable[4].slots_00_28[7])
                                            (this_00,local_20,local_14,local_18,
@@ -298,14 +300,17 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                           if (((((iVar6 == 0x9c) || (iVar6 == 0x9d)) || (iVar6 == 0x9e)) ||
                               (iVar6 == 0x9b)) &&
                              (((local_10->field_0285 == '\0' &&
+                               /* ST_CALLSITE[00644D02]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                                (bVar2 = LookupRecordByte(*(char *)&this_00[1].vtable), bVar2 != 3))
                               && (iVar6 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x1b),
                                  iVar6 != 0)))) {
+                            /* ST_CALLSITE[00644D35]: CALL dword ptr [EAX + 0xe0]; [STIndirectCallsiteApplier] exact slot 0xE0; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
                             (*this_00->vtable[4].slots_00_28[8])
                                       (this_00,iVar14,&local_6,&local_8,&local_a,local_48);
                             *param_2 = (int)local_6;
                             *param_3 = (int)local_8;
                             *param_4 = (int)local_a;
+                            /* ST_CALLSITE[00644D63]: CALL 0x00401159; direct=00401159 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10 */
                             sub_00645F10((AnonReceiver_00644410 *)pAVar1,this_00,(ushort)*param_2,
                                          (ushort)*param_3,local_a);
                             pAVar1->field_0285 = '\x02';

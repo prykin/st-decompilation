@@ -12,6 +12,7 @@ undefined4 __fastcall FUN_006372e0(int *param_1)
     return 1;
   }
   if (param_1[10] == 0) {
+    /* ST_CALLSITE[00637300]: CALL 0x00402162; direct=00402162 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0 */
     iVar1 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
                       ((AnonReceiver_00636260 *)param_1);
     param_1[10] = iVar1;

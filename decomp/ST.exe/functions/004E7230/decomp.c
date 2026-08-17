@@ -19,6 +19,7 @@ void FUN_004e7230(int param_1,int param_2,undefined4 *param_3,undefined4 *param_
   iVar6 = 0;
   memset(param_4, 0, 0x1c); /* compiler bulk-zero initialization */
   if ((((-1 < param_1) && (param_1 < 8)) && (-1 < param_2)) && (param_2 < 3)) {
+    /* ST_CALLSITE[004E727F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar3 = LookupRecordByte((char)param_1);
     auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
     auto param_2_after_write = 0; /* compiler stack-slot lifetime split */

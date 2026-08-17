@@ -76,6 +76,7 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
     local_10->field_0030 = (undefined2)iVar6;
     local_10->field_0032 = STPiece<2,2>(iVar6);
     if (g_cursorClass_00802A30 != nullptr) {
+      /* ST_CALLSITE[0051D632]: CALL dword ptr [EAX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x18);
     }
@@ -94,6 +95,7 @@ LAB_0051d665:
   }
   DAT_0080734e = DAT_0080734e | 1 << (bVar5 & 0x1f);
 LAB_0051d689:
+  /* ST_CALLSITE[0051D694]: CALL 0x00403ef9; direct=00403EF9 HelpPanelTy::DrawTitle */
   DrawTitle(this_00,0x55f2,0,0);
   uVar10 = local_c;
   if (local_14 != 10000) {
@@ -116,11 +118,13 @@ LAB_0051d689:
                (uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);
     uVar10 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
     local_c = uVar10;
+    /* ST_CALLSITE[0051D71B]: CALL 0x00401870; direct=00401870 HelpPanelTy::CheckBkView */
     CheckBkView(this_00,0,(ushort)uVar10);
     ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,0,0x19c,uVar10 + 2);
     ccFntTy::WrTxt(this_00->field_01E0,(char *)&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5,
                    -1,-1);
   }
+  /* ST_CALLSITE[0051D774]: CALL 0x00401870; direct=00401870 HelpPanelTy::CheckBkView */
   CheckBkView(this_00,uVar10,0x1e);
   iVar13 = 1;
   piVar12 = nullptr;
@@ -130,6 +134,7 @@ LAB_0051d689:
   pCVar4 = FUN_006f2c00(pCVar4,iVar6,uVar7);
   local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar12,iVar13);
   uVar7 = uVar10 + 10;
+  /* ST_CALLSITE[0051D7C6]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x50,uVar7,'\x01',(byte *)local_8);
   local_18 = *(int *)(local_8 + 2);
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,uVar7,
@@ -145,6 +150,7 @@ LAB_0051d689:
   local_34[1] = uVar7;
   Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,local_34);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
+  /* ST_CALLSITE[0051D86E]: CALL 0x00401870; direct=00401870 HelpPanelTy::CheckBkView */
   CheckBkView(this_00,uVar10 + 0x1e,10);
   local_c = ((uint)uVar10 / 10 + 1) * 10;
   iVar6 = ((ushort)this_00->field_01AF - 0x118) + local_c;
@@ -154,6 +160,7 @@ LAB_0051d689:
   else {
     iVar6 = iVar6 / (int)(uint)(ushort)this_00->field_01B1 + 1;
   }
+  /* ST_CALLSITE[0051D8AE]: CALL 0x00402eeb; direct=00402EEB HelpPanelTy::CreateSlider */
   CreateSlider(this_00,iVar6);
   Library::DKW::WGR::FUN_006b5110
             ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,

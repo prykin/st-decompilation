@@ -149,6 +149,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
                 g_currentExceptionFrame = local_e0.previous;
               }
               else {
+                /* ST_CALLSITE[005A1B14]: CALL dword ptr [0x0085bedc] */
                 DVar8 = timeGetTime();
                 pFVar14->field_1AA7 = DVar8;
                 g_currentExceptionFrame = local_e0.previous;

@@ -50,11 +50,13 @@ int __thiscall st::fn_00629E60(STParticleC *this,int param_1)
   iVar2 = -1;
   if (param_1 != 0) {
     this->field_0040 = 1;
+    /* ST_CALLSITE[00629E75]: CALL 0x004013d4; direct=004013D4 STParticleC::sub_0062B4A0 */
     bVar1 = st::fn_004013D4(this);
     this->field_00D6 = bVar1;
   }
   if (this->field_00D6 != '\0') {
     switch(this->field_00C2) {
+    /* ST_CALLSITE[00629EA1]: CALL 0x00405727; direct=00405727 STParticleC::InitVisibelFlight */
     case CASE_1:
     case CASE_2:
       iVar2 = st::fn_00405727(this,1);
@@ -62,8 +64,10 @@ int __thiscall st::fn_00629E60(STParticleC *this,int param_1)
     case CASE_3:
     case CASE_4:
       if (this->field_00EB != nullptr) {
+        /* ST_CALLSITE[00629EB4]: CALL 0x00404a7a; direct=00404A7A STParticleC::sub_00629F20 */
         st::fn_00404A7A(this);
       }
+      /* ST_CALLSITE[00629EBD]: CALL 0x00405d53; direct=00405D53 STParticleC::InitVisibelDeton */
       iVar2 = st::fn_00405D53(this,1);
       break;
     default:
@@ -139,6 +143,7 @@ st::fn_00629F90(STParticleC *this,STParticleC *param_1,undefined4 param_2)
   this->field_0056 = param_1->field_0024;
   this->field_005A = param_1->field_0028;
   if (this->field_0040 != '\0') {
+    /* ST_CALLSITE[00629FE5]: CALL 0x004013d4; direct=004013D4 STParticleC::sub_0062B4A0 */
     bVar4 = st::fn_004013D4(this);
     this->field_00D6 = bVar4;
   }
@@ -289,6 +294,7 @@ int __thiscall st::fn_0062A370(STParticleC *this,int param_1)
   if (uVar2 == 2) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((this->field_00EB != nullptr) &&
+       /* ST_CALLSITE[0062A58F]: CALL dword ptr [EAX + 0xe0] */
        (iVar3 = (**(code **)(this->field_00EB->field_0000 + 0xe0))
                           (this->field_00EF,(int)&param_1 + 2,&local_6,&local_8,&local_24),
        iVar3 == 0)) {
@@ -314,7 +320,7 @@ int __thiscall st::fn_0062A370(STParticleC *this,int param_1)
     if (this->field_00C0 == '\0') {
       return -1;
     }
-    local_2c = st::fn_004054ED(st::pointer_boundary_cast<undefined4 *>(&local_20),st::pointer_boundary_cast<undefined4 *>(&local_1c),st::pointer_boundary_cast<undefined4 *>(&local_18),local_10,iVar3,
+    local_2c = st::fn_004054ED((undefined4 *)&local_20,(undefined4 *)&local_1c,(undefined4 *)&local_18,local_10,iVar3,
                                   iVar4 - (uint)(byte)this->field_00BE);
     if ((local_2c < 1) && (local_14 < 1)) {
       if (-1 < local_2c) {
@@ -471,6 +477,7 @@ byte __thiscall st::fn_0062B4A0(STParticleC *this)
     if (((iVar5 == 0) || (g_visibleClass_00802A88 == nullptr)) ||
        ((DAT_0080874d == -1 || (g_visibleClass_00802A88->field_00F8 == 0))))
     goto cf_common_exit_0062B616;
+    /* ST_CALLSITE[0062B5C9]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     st::fn_00403F53
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,local_8,&local_14
                ,&local_c);

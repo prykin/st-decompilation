@@ -42,6 +42,7 @@ int __cdecl FUN_0054ca10(int *param_1,undefined4 param_2,cMf32 *param_3,int para
            Library::DKW::STR::FUN_006b9770((byte *)((~uVar5 - 1) + param_4),nullptr,10);
   DAT_00802a3c = DAT_00802a3c + 1;
   if (g_cLoading_00802A58 != nullptr) {
+    /* ST_CALLSITE[0054CA9C]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
     cLoadingTy::SetState(g_cLoading_00802A58,CASE_1,DAT_00802a3c,nullptr);
   }
   iVar4 = thunk_FUN_0054cdd0(puVar3,*piVar2,nullptr,nullptr,param_1,0);

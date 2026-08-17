@@ -35,6 +35,7 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
   case CASE_3:
     this->field_06C3 = CASE_5;
     this->field_06C7 = 0;
+    /* ST_CALLSITE[0047FBF7]: CALL dword ptr [EDX + 0xd8] */
     iVar6 = this->vfunc_D8();
     return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
   case CASE_4:
@@ -67,9 +68,11 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
     else {
       this->field_06C3 = CASE_6;
     }
+    /* ST_CALLSITE[0047FCEE]: CALL dword ptr [EAX + 0xd8] */
     iVar6 = this->vfunc_D8();
     return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
   case CASE_5:
+    /* ST_CALLSITE[0047FD08]: CALL 0x00403c1f; direct=00403C1F STBoatC::Dismant */
     iVar5 = Dismant(this,(int *)0x2);
     return iVar5;
   default:
@@ -81,6 +84,7 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[0047FAFC]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
   local_EAX_44 = sub_00460360(this);
   if (local_EAX_44 == 0) {
     sVar1 = this->field_06A9;

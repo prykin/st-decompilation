@@ -21,6 +21,7 @@ void __fastcall FUN_00621a70(AnonShape_00621A70_2531BB4B *param_1)
          pcVar2 != nullptr)) {
         if (((param_1->field_0105 != '\0') && (*pcVar2 == '\0')) &&
            (9 < g_playSystem_00802A38->field_00E4 - param_1->field_0106)) {
+          /* ST_CALLSITE[00621ADC]: CALL 0x00401073; direct=00401073 SndUnderAttMenegC::sub_00621780 */
           SndUnderAttMenegC::sub_00621780((SndUnderAttMenegC *)param_1,index);
         }
         if (*(uint *)(pcVar2 + 1) < 0x5dd) {

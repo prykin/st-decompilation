@@ -43,6 +43,7 @@ SettMapMTy::ChangePlayerList
       }
       if (element_1f84 != nullptr) {
         if ((param_3 == 2) || (param_3 == 3)) {
+          /* ST_CALLSITE[005D0F4E]: CALL 0x0040495d; direct=0040495D SettMapMTy::DeletePlayer */
           DeletePlayer(local_8,param_1);
         }
         pSVar2 = pSVar4->field_1F84;
@@ -90,11 +91,15 @@ SettMapMTy::ChangePlayerList
         if ((element_1f84->field_0000 != '\0') && (element_1f84->field_0004 != '\x02')) {
           element_1f84->field_0001 = '\x01';
         }
+        /* ST_CALLSITE[005D0FFB]: CALL 0x004035c6; direct=004035C6 SettMapMTy::CheckPlList */
         CheckPlList(local_8);
         if ((pSVar4->field_1E26 != CASE_C) && (pSVar4->field_1E26 != CASE_10)) {
+          /* ST_CALLSITE[005D1010]: CALL 0x00405b7d; direct=00405B7D SettMapMTy::sub_005D1380 */
           sub_005D1380(pSVar4);
         }
+        /* ST_CALLSITE[005D1019]: CALL dword ptr [EDX + 0x2c] */
         pSVar4->SetListCtrls();
+        /* ST_CALLSITE[005D101E]: CALL 0x00402a9a; direct=00402A9A SettMapTy::PaintSC */
         SettMapTy::PaintSC((SettMapTy *)pSVar4);
         pSVar4->field_2121 = pSVar4->field_2121 + 1;
       }

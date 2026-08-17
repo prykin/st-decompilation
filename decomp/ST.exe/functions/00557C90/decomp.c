@@ -105,32 +105,39 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
         }
         switch(element_0110->field_0000) {
         case '\0':
+          /* ST_CALLSITE[00557E59]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
           sub_00558DC0(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,
                        (undefined *)(int)element_0110->field_0006,(int *)(uint)(byte)element_0110->field_0001,
                        (uint)(byte)element_0110->field_0007,element_0110->field_0008,0x4001);
           break;
         case '\x01':
+          /* ST_CALLSITE[00557E86]: CALL 0x00402c2a; direct=00402C2A VisibleClassTy::sub_005594A0 */
           sub_005594A0(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                        (undefined *)(uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,
                        element_0110->field_0008,2);
           break;
         case '\x02':
+          /* ST_CALLSITE[00557EB3]: CALL 0x004020e0; direct=004020E0 VisibleClassTy::SetZoneDes */
           SetZoneDes(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                      (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,element_0110->field_0008,4);
           break;
         case '\x03':
+          /* ST_CALLSITE[00557EE0]: CALL 0x0040141f; direct=0040141F VisibleClassTy::SetZoneAst */
           SetZoneAst(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                      (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,element_0110->field_0008,8);
           break;
         case '\x04':
+          /* ST_CALLSITE[00557F0A]: CALL 0x00401cb7; direct=00401CB7 VisibleClassTy::SetZoneTsh */
           SetZoneTsh(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                      (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,element_0110->field_0008,0x10);
           break;
         case '\x05':
+          /* ST_CALLSITE[00557F34]: CALL 0x0040205e; direct=0040205E VisibleClassTy::SetZoneMin1 */
           SetZoneMin1(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                       (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,element_0110->field_0008,0x20);
           break;
         case '\x06':
+          /* ST_CALLSITE[00557F5E]: CALL 0x00401848; direct=00401848 VisibleClassTy::SetZoneMin2 */
           SetZoneMin2(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                       (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,element_0110->field_0008,0x40);
         }

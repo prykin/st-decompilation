@@ -55,6 +55,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       }
     }
     Library::DKW::TBL::DArrayPut((DArrayTy *)pSVar2->field_0029,index,&param_1);
+    /* ST_CALLSITE[00423907]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)param_1,CASE_1);
     thunk_FUN_00419c30(this_00,pSVar2->field_0025);
@@ -66,6 +67,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       }
       Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar2->field_002D,&param_1);
       local_5 = 0xff;
+      /* ST_CALLSITE[00423958]: CALL dword ptr [EDX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(pSVar2->vtable + 8))(0x65,&local_5);
     }
@@ -112,9 +114,11 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       local_c = local_c | 0x10;
     }
     if (local_c != 0) {
+      /* ST_CALLSITE[004239E6]: CALL dword ptr [EDX + 0x100]; [STIndirectCallsiteApplier] exact slot 0x100; signature=__thiscall;/undefined1;pointer:/STGameObjC;/undefined1 */
       (*this_00->vtable[1].vfunc_2C)(this_00,(char)local_c);
     }
     if (local_10 != 0) {
+      /* ST_CALLSITE[004239F8]: CALL dword ptr [EDX + 0x104]; [STIndirectCallsiteApplier] exact slot 0x104; signature=__thiscall;/undefined1;pointer:/STGameObjC;/undefined1 */
       (*this_00->vtable[1].vfunc_30)(this_00,(char)local_10);
     }
     if (this_00->field_0020 == 0x14) {
@@ -125,6 +129,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       local_28 = 0;
       local_26 = (short)param_1;
       local_24 = this_00->field_0018;
+      /* ST_CALLSITE[00423A37]: CALL dword ptr [EDX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)**(undefined4 **)pSVar2->field_001C)(local_3c);
     }

@@ -108,6 +108,7 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
           }
         }
       }
+      /* ST_CALLSITE[0041CCEE]: CALL 0x004022c5; direct=004022C5 VisibleClassTy::sub_0041CDA0 */
       iVar5 = VisibleClassTy::sub_0041CDA0
                         (g_visibleClass_00802A88,iVar2,iVar5,(int)param_1->field_005F,
                          param_1->field_0024);

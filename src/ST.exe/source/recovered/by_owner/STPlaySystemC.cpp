@@ -46,7 +46,9 @@ int __thiscall st::fn_0054EBB0(STPlaySystemC *this,char *param_1,uint param_2)
 
   *(uint *)param_1 = this->field_0041;
   this->field_0041 = st::machine_word_boundary_cast<uint>(this->field_0041 + 1);
+  /* ST_CALLSITE[0054EBCC]: CALL 0x004045fc; direct=004045FC STPlaySystemC::AddToRep */
   st::fn_004045FC(this,(undefined4 *)param_1,param_2);
+  /* ST_CALLSITE[0054EBD1]: CALL dword ptr [0x0085bedc] */
   DVar1 = st::external_000000DA();
   this->field_007F = DVar1;
   iVar2 = st::fn_00715360(g_int_00811764,0,'1',param_1,param_2,1,*(undefined4 *)param_1);
@@ -102,7 +104,7 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
   uint local_8;
 
   if (param_2 != nullptr) {
-    pcVar2 = (char *)st::fn_00404863(this,*param_2,st::pointer_boundary_cast<undefined4 *>(&local_8));
+    pcVar2 = (char *)st::fn_00404863(this,*param_2,&local_8);
     if (pcVar2 == nullptr) {
       st::fn_00715360(g_int_00811764,param_1,'7',nullptr,0,0,0xffffffff);
       st::fn_00401370(this,param_1);
@@ -142,6 +144,7 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
             if (((&DAT_00808af0)[(int)param_2 * 0x27] == param_1) &&
                ((&DAT_00808af6)[(int)param_2 * 0x9c] != '\0')) {
               pcVar1 = st::fn_006B0140(0x426d,g_hINSTANCE_00807618);
+              /* ST_CALLSITE[0055074C]: CALL ESI */
               st::external_00000080(local_10c,st::mutable_c_string("%s %s"),pcVar1,pcVar2);
               if (g_popUp_008016D8 != nullptr) {
                 st::fn_004014D8(g_popUp_008016D8,local_10c,8);
@@ -189,6 +192,7 @@ void __thiscall st::fn_006E57B0(STPlaySystemC *this,int param_1)
           pvVar2 = pDVar1->data;
         }
         if ((STField<undefined4 *>(pvVar2,4))[1] == param_1) {
+          /* ST_CALLSITE[006E57EE]: CALL dword ptr [EAX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)*STField<undefined4 *>(pvVar2,4))(local_24);
           st::fn_006B0C70(this->field_0010,index);

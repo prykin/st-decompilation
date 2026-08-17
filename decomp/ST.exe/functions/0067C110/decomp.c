@@ -24,6 +24,7 @@ void __thiscall AiPlrClassTy::sub_0067C110(AiPlrClassTy *this)
   this->field_0689 = 0;
   local_38 = (AnonShape_0068FD00_A5257008 *)0x67;
   local_30 = 1;
+  /* ST_CALLSITE[0067C14B]: CALL 0x00405dc6; direct=00405DC6 AiPlrClassTy::sub_0067A020 */
   sub_0067A020(this,(AnonShape_0068FD00_A5257008 *)&local_38,-1);
   return;
 }

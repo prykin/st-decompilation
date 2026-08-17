@@ -92,6 +92,7 @@ LAB_005a27bf:
         } while (index < uVar7);
       }
       FUN_006b5f80((int *)g_ddxContext_008075A8,0x1e9,0x5e,0x124,0xf3);
+      /* ST_CALLSITE[005A2814]: CALL 0x00402298; direct=00402298 PutDDXClip */
       PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',this_00->field_1E9A);
       this_00->field_002D = 0x28;
       *(dword *)&this_00->field_0x31 = this_00->field_1EA6->count;

@@ -575,6 +575,7 @@ LAB_005695ae:
       pSVar14->field_0E03 = pSVar14->field_0E07;
       iVar4 = FUN_006c1390(puVar4,0,1,DAT_0080730a,0,0,1);
       pSVar14->field_0E07 = iVar4;
+      /* ST_CALLSITE[00568E75]: CALL dword ptr [0x0085bedc] */
       DVar5 = timeGetTime();
       pSVar14->field_0DFF = DVar5;
       g_currentExceptionFrame = local_64.previous;

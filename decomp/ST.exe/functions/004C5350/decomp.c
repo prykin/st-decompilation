@@ -49,6 +49,7 @@ FUN_004c5350(void *this,int param_1,int *param_2,int param_3,int param_4,undefin
     local_1c = param_5;
   }
   else {
+    /* ST_CALLSITE[004C53B1]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0
               ((STFishC *)param_2,(short *)&local_18,(short *)&local_14,(short *)&local_1c);
   }
@@ -73,13 +74,14 @@ FUN_004c5350(void *this,int param_1,int *param_2,int param_3,int param_4,undefin
      (7 < g_bulkInitializedRecords_008087C7[this_00[9]].field_0022)) {
     return local_c;
   }
+  /* ST_CALLSITE[004C5437]: CALL dword ptr [EDX + 0xf4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar5 = (**(code **)(*this_00 + 0xf4))(STField<undefined4>(this,0x24));
   if (iVar5 == 0) {
     return local_c;
   }
   if (param_7 == 0) goto LAB_004c5515;
-  bVar1 = *(byte *)(this_00 + 9);
+  bVar1 = ((byte *)this_00)[9];
   bVar2 = STField<byte>(this,0x24);
   param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(bVar1));
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

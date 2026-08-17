@@ -97,6 +97,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
     return 0xffff;
   }
   thunk_FUN_005b6450(local_40,message);
+  /* ST_CALLSITE[005B0BFB]: CALL 0x00402937; direct=00402937 StartSystemTy::ChatMessage */
   StartSystemTy::ChatMessage(g_startSystem_0081176C,message);
   SVar3 = message->id;
   if (SVar3 < MESS_WAITTY_6943) {
@@ -111,6 +112,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
     if (MESS_CHOOSEMAPTY_6327 < SVar3) {
       if (SVar3 < MESS_SHARED_6341) {
         if (SVar3 == MESS_SETTMAPMTY_6340) {
+          /* ST_CALLSITE[005B0F8A]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
           MMMObjTy::PaintSlBut
                     ((MMMObjTy *)this_01,
                      (RecoveredRecord_MMMObjTy_005B6560 *)
@@ -119,16 +121,19 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
         else {
           switch(SVar3) {
           case MESS_SHARED_6332:
+            /* ST_CALLSITE[005B0EE5]: CALL 0x00404d72; direct=00404D72 StartSystemTy::PaintBinDesc */
             StartSystemTy::PaintBinDesc
                       (g_startSystem_0081176C,(AnonShape_005DE050_5BD86458 *)message);
             break;
           case MESS_WAITTY_6333:
+            /* ST_CALLSITE[005B0F00]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
             MMMObjTy::PaintSlBut
                       ((MMMObjTy *)this_01,
                        (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_038D,
                        (int)message,0);
             break;
           case MESS_SHARED_6334:
+            /* ST_CALLSITE[005B0F1B]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
             MMMObjTy::PaintSlBut
                       ((MMMObjTy *)this_01,
                        (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_041E,
@@ -147,15 +152,18 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
         }
       }
       else if (SVar3 == MESS_SHARED_6341) {
+        /* ST_CALLSITE[005B0FD2]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_01,
                    (RecoveredRecord_MMMObjTy_005B6560 *)
                    (this_01->array_00BC[0xc].field_01DB + 0x5ed),(int)message,0);
       }
       else if (SVar3 == MESS_PRIVIDERTY_693F) {
+        /* ST_CALLSITE[005B0FB7]: CALL 0x00404d45; direct=00404D45 ChooseMapTy::sub_005AE840 */
         sub_005AE840(this_01);
       }
       else if (SVar3 == MESS_SHARED_6940) {
+        /* ST_CALLSITE[005B0FAB]: CALL 0x00404084; direct=00404084 ChooseMapTy::sub_005AE950 */
         sub_005AE950(this_01);
       }
       goto cf_common_exit_005B2053;
@@ -163,6 +171,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
     if (SVar3 == MESS_CHOOSEMAPTY_6327) {
       piVar4 = (message->arg0).ptr;
       resourceId = 0x2342;
+      /* ST_CALLSITE[005B0DF2]: CALL 0x00404c0f; direct=00404C0F ChooseMapTy::sub_005B5BE0 */
       sub_005B5BE0(this_01,(RecoveredSourceFamily_dibcopy *)this_01->field_1C8B,piVar4);
       switch(this_01->array_00BC[0xc].field_01DF) {
       case 1:
@@ -211,17 +220,21 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
       else {
         switch(SVar3) {
         case MESS_ID_NONE:
+          /* ST_CALLSITE[005B0C70]: CALL 0x004029a5; direct=004029A5 ChooseMapTy::NoneChooseMap */
           NoneChooseMap(this_01);
           break;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         case MESS_ID_CREATE:
+          /* ST_CALLSITE[005B0C4B]: CALL 0x00402cd4; direct=00402CD4 ChooseMapTy::InitChooseMap */
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           InitChooseMap(this_01,*(undefined1 *)((message->arg0).u32 + 0x14),
                         *(ChooseMapTy_InitChooseMap_param_2Enum *)((message->arg0).u32 + 0x18));
           break;
         case MESS_SHARED_0003:
+          /* ST_CALLSITE[005B0C57]: CALL 0x0040417e; direct=0040417E ChooseMapTy::DoneChooseMap */
           DoneChooseMap(this_01);
           break;
         case MESS_SHARED_0005:
+          /* ST_CALLSITE[005B0C64]: CALL 0x00402725; direct=00402725 ChooseMapTy::PaintChooseMap */
           PaintChooseMap(this_01,'\0');
         }
       }
@@ -291,6 +304,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
     }
     if (iVar24 != 0) {
 LAB_005b0dc0:
+      /* ST_CALLSITE[005B0DC9]: CALL 0x00403b0c; direct=00403B0C ChooseMapTy::PrepFiles */
       PrepFiles(this_01,this_01->field_1C93);
     }
 cf_common_exit_005B0DCE:
@@ -351,6 +365,7 @@ LAB_005b1da4:
         if (-1 < (int)uVar27) {
           pBVar11 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_01->field_1C7F,uVar27);
           pcVar15 = (char *)(pBVar11->bmiHeader).biWidth;
+          /* ST_CALLSITE[005B1DDE]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_01->field_1C7B,2,
                  (0x13 - (pBVar11->bmiHeader).biHeight) / 2 + (uint)(message->arg1).words.high,
                  '\x06',(byte *)pBVar11);
@@ -370,6 +385,7 @@ LAB_005b1da4:
         if ((message->arg0).u32 < uVar27) {
           if (this_01->array_00BC[0xc].field_01DF == '\x03') {
             this_01->field_002D = 0x6956;
+            /* ST_CALLSITE[005B1C4E]: CALL dword ptr [EAX] */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
           }
           else {
@@ -444,14 +460,17 @@ LAB_005b1b6c:
             pcVar15 = &this_01->field_1DA7;
             FUN_006b78c0(pcVar15,pcVar15);
             if (this_01->field_1C8F != (HANDLE)0x0) {
+              /* ST_CALLSITE[005B1BFF]: CALL dword ptr [0x0085bcac] */
               FindCloseChangeNotification(this_01->field_1C8F);
             }
+            /* ST_CALLSITE[005B1C0A]: CALL dword ptr [0x0085bcfc] */
             pvVar10 = FindFirstChangeNotificationA(pcVar15,0,1);
             this_01->field_1C8F = pvVar10;
             if (pvVar10 == (HANDLE)0xffffffff) {
               this_01->field_1C8F = (HANDLE)0x0;
             }
             FUN_006b8280(pcVar15,pcVar15);
+            /* ST_CALLSITE[005B1C35]: CALL 0x00403b0c; direct=00403B0C ChooseMapTy::PrepFiles */
             PrepFiles(this_01,this_01->field_1C93);
           }
         }
@@ -460,6 +479,7 @@ LAB_005b1b6c:
           case 1:
           case 2:
             this_01->field_002D = 0x694a;
+            /* ST_CALLSITE[005B1C9B]: CALL dword ptr [EDX] */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
             break;
           case 4:
@@ -467,12 +487,14 @@ LAB_005b1b6c:
           case 0xc:
           case 0x13:
             this_01->field_002D = 0x694e;
+            /* ST_CALLSITE[005B1CB1]: CALL dword ptr [EDX] */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
             break;
           case 9:
           case 10:
           case 0xb:
             this_01->field_002D = 0x6949;
+            /* ST_CALLSITE[005B1C85]: CALL dword ptr [EAX] */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
           }
         }
@@ -484,12 +506,14 @@ LAB_005b1b6c:
         this_01->array_00BC[0xc].field_01E8 = DVar5;
         break;
       case MESS_OPTPANELTY_8164:
+        /* ST_CALLSITE[005B1E80]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_01,
                    (RecoveredRecord_MMMObjTy_005B6560 *)&this_01->array_00BC[0xc].field_01F0,
                    (int)message,0);
         break;
       case MESS_OPTPANELTY_8165:
+        /* ST_CALLSITE[005B1E95]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_01,(RecoveredRecord_MMMObjTy_005B6560 *)&this_01->field_1B01,
                    (int)message,0);
@@ -522,9 +546,11 @@ LAB_005b1b6c:
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar24 = *(int *)(this_01->array_00BC[0xc].field_01DB + 0x686);
           if (*(int *)(iVar24 + 8) < 1) {
+            /* ST_CALLSITE[005B1F59]: CALL dword ptr [0x0085c064] */
             CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,nullptr);
           }
           else {
+            /* ST_CALLSITE[005B1F46]: CALL dword ptr [0x0085c064] */
             CFsgsConnection::SendChatMessage
                       ((CFsgsConnection *)&DAT_00802a90,(char *)**(undefined4 **)(iVar24 + 0x14));
           }
@@ -579,6 +605,7 @@ LAB_005b1b6c:
       uVar13 = 0;
       uVar27 = 0;
       local_c = local_6a0;
+      /* ST_CALLSITE[005B1FE8]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
       StartSystemTy::AddToChat(this_00,(int)local_6e0);
       FUN_00715360(g_int_00811764,0,'\x1b',local_6e0,0x451,1,0xffffffff);
     }
@@ -605,6 +632,7 @@ LAB_005b2011:
     STPiece<2,2>(uVar27) = this_01->field_0033;
     if (this_01->field_1C9F->elementSize <= uVar27) goto cf_common_exit_005B2053;
     if (this_01->array_00BC[0xc].field_01E4 != 0) {
+      /* ST_CALLSITE[005B1915]: CALL 0x004042b4; direct=004042B4 ChooseMapTy::ShowDescription */
       ShowDescription(this_01,this_01->field_1C93);
       this_01->array_00BC[0xc].field_01E4 = 0;
     }
@@ -630,6 +658,7 @@ LAB_005b2011:
     else {
       uVar14 = 0;
     }
+    /* ST_CALLSITE[005B1985]: CALL ESI */
     wsprintfA(&CHAR_00h_0080ef1e,"%s%s\\%s",PTR_s_MISSIONS__0079c054,uVar14,
               &CHAR_00h_0080ed16);
     if (*(int *)&this_01->field_0031 < (int)this_01->field_1C9F->elementSize) {
@@ -638,8 +667,10 @@ LAB_005b2011:
     else {
       uVar14 = 0;
     }
+    /* ST_CALLSITE[005B19B9]: CALL ESI */
     wsprintfA(&CHAR_00h_0080ed16,"%s%s\\%s",&this_01->field_1DA7,uVar14,&DAT_0080f33a);
     STPiece<0,1>(DAT_008087a0) = 3;
+    /* ST_CALLSITE[005B19CC]: CALL 0x00404b4c; direct=00404B4C STAppC::sub_0056E9E0 */
     iVar24 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
     if (iVar24 == 0) goto cf_common_exit_005B2053;
     uVar27 = 0xffffffff;
@@ -721,11 +752,13 @@ LAB_005b2011:
     this_01->field_20B3 = 1;
     this_01->field_20B4 = 1;
     this_01->field_20B7 = 0;
+    /* ST_CALLSITE[005B1ACD]: CALL dword ptr [EAX + 0x8] */
     this_01->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pMVar12 = *(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6);
 LAB_005b1644:
     if (pMVar12 != nullptr) {
+      /* ST_CALLSITE[005B1652]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       MMsgTy::HidePanel(pMVar12,1,0,1);
     }
     goto cf_common_exit_005B2053;
@@ -748,10 +781,12 @@ LAB_005b1644:
       uVar9 = 0;
     }
     this_01->field_20B7 = uVar9;
+    /* ST_CALLSITE[005B1093]: CALL dword ptr [EAX + 0x8] */
     this_01->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pMVar12 = *(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6);
     if (pMVar12 != nullptr) {
+      /* ST_CALLSITE[005B10AF]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       MMsgTy::HidePanel(pMVar12,1,0,1);
     }
     break;
@@ -914,16 +949,20 @@ LAB_005b1644:
     memmove(pcVar18, pcVar15, uVar13); /* compiler REP MOVS byte copy */
     uVar13 = 0;
     if (this_01->array_00BC[0xc].field_01E4 != 0) {
+      /* ST_CALLSITE[005B158E]: CALL 0x004042b4; direct=004042B4 ChooseMapTy::ShowDescription */
       ShowDescription(this_01,this_01->field_1C93);
       this_01->array_00BC[0xc].field_01E4 = 0;
     }
     STPiece<0,1>(DAT_008087a0) = this_01->array_00BC[0xc].field_01DF;
     bVar1 = this_01->array_00BC[0xc].field_01DF;
     if ((bVar1 != 0) && (bVar1 < 3)) {
+      /* ST_CALLSITE[005B15BC]: CALL 0x004025b3; direct=004025B3 STAppC::sub_0056EF50 */
       STAppC::sub_0056EF50((STAppC *)&DAT_00807620);
+      /* ST_CALLSITE[005B15C6]: CALL 0x004039ae; direct=004039AE STAppC::sub_0056F040 */
       STAppC::sub_0056F040((STAppC *)&DAT_00807620);
     }
     if (this_01->array_00BC[0xc].field_01DF == '\x01') {
+      /* ST_CALLSITE[005B15DB]: CALL 0x004025b8; direct=004025B8 STAppC::sub_0056EBE0 */
       STAppC::sub_0056EBE0((STAppC *)&DAT_00807620);
     }
     thunk_FUN_005b6350(this_01,0x6948,0,0);
@@ -939,6 +978,7 @@ LAB_005b1644:
       uVar9 = 0;
     }
     this_01->field_20B7 = uVar9;
+    /* ST_CALLSITE[005B1635]: CALL dword ptr [EDX + 0x8] */
     this_01->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pMVar12 = *(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6);
@@ -1013,6 +1053,7 @@ LAB_005b1644:
         pcVar18 = (char *)&DAT_0080ee1a;
         memmove(pcVar18, pcVar15, uVar27); /* compiler REP MOVS byte copy */
         if (this_01->array_00BC[0xc].field_01E4 != 0) {
+          /* ST_CALLSITE[005B1765]: CALL 0x004042b4; direct=004042B4 ChooseMapTy::ShowDescription */
           ShowDescription(this_01,this_01->field_1C93);
           this_01->array_00BC[0xc].field_01E4 = 0;
         }
@@ -1024,6 +1065,7 @@ LAB_005b1644:
           this_01->field_20B6 = 0;
           this_01->field_20B5 = 0;
           this_01->field_20B4 = 0;
+          /* ST_CALLSITE[005B17C4]: CALL dword ptr [EDX + 0x8] */
           this_01->CloseButtons();
           iVar24 = this_01->array_00BC[0xc].field_01DB;
           if (*(int *)(iVar24 + 0x2e6) != 0) {
@@ -1057,6 +1099,7 @@ LAB_005b1644:
     this_01->field_20B7 = 0;
     this_01->field_20B6 = 0;
     this_01->field_20B5 = 0;
+    /* ST_CALLSITE[005B1864]: CALL dword ptr [EDX + 0x8] */
     this_01->CloseButtons();
     iVar24 = this_01->array_00BC[0xc].field_01DB;
     if (*(int *)(iVar24 + 0x2e6) != 0) {
@@ -1179,6 +1222,7 @@ LAB_005b1644:
     pcVar18 = (char *)&DAT_0080ee1a;
     memmove(pcVar18, pcVar15, uVar27); /* compiler REP MOVS byte copy */
     if (this_01->array_00BC[0xc].field_01E4 != 0) {
+      /* ST_CALLSITE[005B1329]: CALL 0x004042b4; direct=004042B4 ChooseMapTy::ShowDescription */
       ShowDescription(this_01,this_01->field_1C93);
       this_01->array_00BC[0xc].field_01E4 = 0;
     }
@@ -1216,6 +1260,7 @@ switchD_005b1362_caseD_6:
     this_01->field_20B6 = 0;
     this_01->field_20B5 = 0;
     this_01->field_20B7 = 0;
+    /* ST_CALLSITE[005B13B2]: CALL dword ptr [EAX + 0x8] */
     this_01->CloseButtons();
     iVar24 = this_01->array_00BC[0xc].field_01DB;
     if (*(int *)(iVar24 + 0x2e6) != 0) {
@@ -1228,6 +1273,7 @@ switchD_005b1362_caseD_6:
     break;
   case MESS_SHARED_6951:
     thunk_FUN_005b6350(this_01,0x610a,0,0);
+    /* ST_CALLSITE[005B1145]: CALL dword ptr [0x0085c074] */
     CFsgsConnection::CloseGame((CFsgsConnection *)&DAT_00802a90);
     this_01->field_20B7 = 1;
     this_01->field_20B6 = 1;
@@ -1235,15 +1281,18 @@ switchD_005b1362_caseD_6:
     this_01->field_20B3 = 1;
     this_01->field_20B4 = 1;
 LAB_005b1108:
+    /* ST_CALLSITE[005B110C]: CALL dword ptr [EDX + 0x8] */
     this_01->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pMVar12 = *(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6);
     if (pMVar12 != nullptr) {
+      /* ST_CALLSITE[005B1128]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       MMsgTy::HidePanel(pMVar12,1,0,1);
     }
   }
 cf_common_exit_005B2053:
   g_currentExceptionFrame = local_84.previous;
+  /* ST_CALLSITE[005B2062]: CALL 0x00401280; direct=00401280 MMObjTy::GetMessage */
   iVar13 = MMObjTy::GetMessage((MMObjTy *)this_01,message);
   return iVar13;
 }

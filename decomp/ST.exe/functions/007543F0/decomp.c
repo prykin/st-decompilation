@@ -60,12 +60,14 @@ FUN_007543f0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefined4
     iVar3 = *(int *)(&pAVar2[2].field_0x4 + (int)pAVar2->field_001C * 8) + 0x10 + iVar3;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   } while (((code *)pAVar2->field_000C != nullptr) &&
+          /* ST_CALLSITE[007544C7]: CALL ECX */
           (iVar5 = (*(code *)pAVar2->field_000C)(iVar3 + 8,*(undefined4 *)&pAVar2->field_0x10),
           iVar5 != 0));
   *param_3 = *(undefined4 *)(iVar3 + 4);
   if (param_2 != nullptr) {
     sVar1 = *(short *)&param_1->field_000C[1].field_0x14;
     if (sVar1 == 0) {
+      /* ST_CALLSITE[0075450F]: CALL dword ptr [ESI + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar6 = (**(code **)&param_1->field_000C->field_0x8)(iVar3 + 8);
     }

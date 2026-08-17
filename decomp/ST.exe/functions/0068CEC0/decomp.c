@@ -140,6 +140,7 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa5b);
       }
+      /* ST_CALLSITE[0068D116]: CALL dword ptr [0x0085bba8] */
       GetFullPathNameA(lpFileName,0x104,&DAT_0084868c,nullptr);
       Library::MSVCRT::FUN_0072e730
                 (&DAT_0084868c,&DAT_008478a8,&DAT_00848790,&DAT_0084858c,(byte *)&DAT_00811990);
@@ -177,10 +178,10 @@ cf_continue_loop_0068D1EB:
         }
         local_2c = DAT_00857554;
         Library::MSVCRT::FUN_0072e730
-                  (DAT_0085753c,nullptr,nullptr,nullptr,(byte *)&DAT_00811990);
+                  (PTR_0085753c,nullptr,nullptr,nullptr,(byte *)&DAT_00811990);
         pbVar5_mg2 = (byte *)lpFileName;
         if (DAT_00811990 != '\0') {
-          pbVar5_mg2 = DAT_0085753c;
+          pbVar5_mg2 = PTR_0085753c;
         }
         if (pbVar5_mg2 != nullptr) {
           uVar6 = 0xffffffff;
@@ -200,6 +201,7 @@ cf_continue_loop_0068D1EB:
         local_30 = &DAT_0084790c;
         Library::MSVCRT::_strncpy(&CHAR_00h_00847d0c,PTR_0085755c,0x3fe);
         local_28 = &CHAR_00h_00847d0c;
+        /* ST_CALLSITE[0068D2B8]: CALL dword ptr [EBP + 0x14] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar9 = (*(code *)param_4)(&local_30);
         if (iVar9 != 0) {
@@ -468,9 +470,9 @@ cf_continue_loop_0068D1EB:
       *param_3 = iVar3;
       param_3[2] = DAT_00857554;
       Library::MSVCRT::FUN_0072e730
-                (DAT_0085753c,nullptr,nullptr,nullptr,(byte *)&DAT_00811990);
+                (PTR_0085753c,nullptr,nullptr,nullptr,(byte *)&DAT_00811990);
       if (DAT_00811990 != '\0') {
-        lpFileName = (LPCSTR)DAT_0085753c;
+        lpFileName = (LPCSTR)PTR_0085753c;
       }
       if ((byte *)lpFileName != nullptr) {
         uVar6 = 0xffffffff;

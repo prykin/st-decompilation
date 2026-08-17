@@ -50,8 +50,11 @@ STAllPlayersC::sub_004DB160
       ((sVar7 < g_worldGrid.sizeZ &&
        ((this_00 = STGridAt3D(g_worldGrid, sVar2, sVar9, sVar7).objects[0], this_00 != nullptr &&
         (this_00[1].vtable != (STWorldObjectVTable *)param_1)))))) &&
+     /* ST_CALLSITE[004DB201]: CALL dword ptr [EAX + 0x2c] */
      ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+      /* ST_CALLSITE[004DB20D]: CALL dword ptr [EDX + 0x2c] */
       (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))) {
+    /* ST_CALLSITE[004DB21F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_191 = LookupRecordByte(*(char *)&this_00[1].vtable);
     local_EAX_191 = (int)(byte)local_EAX_191;
     if (local_EAX_191 == 1) {
@@ -171,8 +174,11 @@ LAB_004db257:
                    (this_00 = STGridAt3D(g_worldGrid, sVar2, sVar9, sVar7).objects[0],
                    this_00 != nullptr)) &&
                   ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
+                   /* ST_CALLSITE[004DB343]: CALL dword ptr [EDX + 0x2c] */
                    ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                    /* ST_CALLSITE[004DB34F]: CALL dword ptr [EAX + 0x2c] */
                     (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))))))) {
+                /* ST_CALLSITE[004DB365]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                 uVar4 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 uVar4 = (int)(byte)uVar4;
                 if (uVar4 == 1) {
@@ -202,8 +208,11 @@ LAB_004db3e4:
                              thunk_FUN_004db980(sVar2,(short)iVar12,(short)local_8,0),
                   this_00 != nullptr)) &&
                  ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
+                  /* ST_CALLSITE[004DB42A]: CALL dword ptr [EAX + 0x2c] */
                   ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                   /* ST_CALLSITE[004DB436]: CALL dword ptr [EDX + 0x2c] */
                    (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))))) {
+                /* ST_CALLSITE[004DB448]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                 local_EAX_744 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 local_EAX_744 = (int)(byte)local_EAX_744;
                 if (local_EAX_744 == 1) {
@@ -242,8 +251,11 @@ LAB_004db497:
                                thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0),
                     this_00 != nullptr)) &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)) &&
+                  /* ST_CALLSITE[004DB520]: CALL dword ptr [EDX + 0x2c] */
                   ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                   /* ST_CALLSITE[004DB52C]: CALL dword ptr [EAX + 0x2c] */
                    (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))))) {
+                /* ST_CALLSITE[004DB53E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                 local_EAX_990 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 local_EAX_990 = (int)(byte)local_EAX_990;
                 if (local_EAX_990 == 1) {
@@ -273,8 +285,11 @@ LAB_004db58d:
                               thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0),
                    this_00 != nullptr &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)))) &&
+                 /* ST_CALLSITE[004DB5D3]: CALL dword ptr [EAX + 0x2c] */
                  ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                  /* ST_CALLSITE[004DB5DF]: CALL dword ptr [EDX + 0x2c] */
                   (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))) {
+                /* ST_CALLSITE[004DB5F1]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                 local_EAX_1169 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 local_EAX_1169 = (int)(byte)local_EAX_1169;
                 if (local_EAX_1169 == 1) {

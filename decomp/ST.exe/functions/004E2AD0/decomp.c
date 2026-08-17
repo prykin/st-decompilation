@@ -27,10 +27,12 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
     return 0;
   }
   this->field_04D0 = CASE_1;
+  /* ST_CALLSITE[004E2AF2]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
   RotateSpr(this,1);
   thunk_FUN_004e5eb0(this->field_0024,param_2);
   if (this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D)
   goto cf_common_exit_004E2B69;
+  /* ST_CALLSITE[004E2B29]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar2 = LookupRecordByte(*(char *)&this->field_023D);
   uVar2 = (int)(byte)uVar2;
   if (uVar2 == 1) {
@@ -39,6 +41,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   }
   else {
     if (uVar2 == 2) {
+      /* ST_CALLSITE[004E2B50]: CALL dword ptr [EAX + 0x90] */
       this->vfunc_90(4,0x2d4);
       goto cf_common_exit_004E2B69;
     }
@@ -46,6 +49,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
     pTVar5 = this->vtable;
     arg_2 = 0x38f;
   }
+  /* ST_CALLSITE[004E2B63]: CALL dword ptr [EDX + 0x90] */
   (*pTVar5->vfunc_90)(this,4,arg_2);
 cf_common_exit_004E2B69:
   if (g_aiBossClass_008117BC == nullptr) {
@@ -63,6 +67,7 @@ cf_common_exit_004E2B69:
   local_24.arg1.words.low = (word)param_2;
   uVar3 = thunk_FUN_004e60d0((int)pbVar1,param_2);
   local_24.arg1.words.high = (short)uVar3 + 1;
+  /* ST_CALLSITE[004E2BBB]: CALL dword ptr [EAX] */
   g_aiBossClass_008117BC->GetMessage(&local_24);
   return 0;
 }

@@ -35,6 +35,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
     puVar7 = puVar8;
     puVar9 = local_298;
     memmove(puVar9, puVar7, 0x240); /* compiler REP MOVS byte copy */
+    /* ST_CALLSITE[00552C19]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,0x10,(AnonShape_0043BEB0_1C00EC12 *)puVar8);
     iVar6 = 0x19;
     puVar8 = &pUVar2->field_01AB;
@@ -48,6 +49,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
       }
       pBVar4 = FUN_0070b3a0(pAVar10,uVar3);
+      /* ST_CALLSITE[00552C6B]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0x24,iVar6,'\x01',(byte *)pBVar4);
       puVar8 = puVar8 + 0xc;
       iVar6 = iVar6 + 0x1b;
@@ -68,6 +70,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
           pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
         }
         pBVar4 = FUN_0070b3a0(pAVar10,uVar3);
+        /* ST_CALLSITE[00552CDF]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_8,iVar6,'\x01',
                (byte *)pBVar4);
         puVar8 = puVar8 + 0xc;
@@ -90,6 +93,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
       }
       pBVar4 = FUN_0070b3a0(pAVar10,uVar3);
+      /* ST_CALLSITE[00552D58]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0xd3,iVar6,'\x01',(byte *)pBVar4);
       puVar8 = puVar8 + 0xc;
       iVar6 = iVar6 + 0x1b;

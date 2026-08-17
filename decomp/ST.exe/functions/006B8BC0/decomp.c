@@ -18,6 +18,7 @@ void FUN_006b8bc0(int *param_1,int param_2,int param_3,int param_4)
       iVar1 = param_4 % param_1[0xb];
     }
     if ((*(uint *)(*param_1 + 8) & 0x4000000) != 0) {
+      /* ST_CALLSITE[006B8C00]: CALL dword ptr [0x0085bb8c] */
       EnterCriticalSection((LPCRITICAL_SECTION)(*param_1 + 0x4f0));
     }
     if (((param_1[2] != param_2) || (param_1[3] != param_3)) || (param_1[10] != iVar1)) {
@@ -29,6 +30,7 @@ void FUN_006b8bc0(int *param_1,int param_2,int param_3,int param_4)
       }
     }
     if ((*(uint *)(*param_1 + 8) & 0x4000000) != 0) {
+      /* ST_CALLSITE[006B8C52]: CALL dword ptr [0x0085bb90] */
       LeaveCriticalSection((LPCRITICAL_SECTION)(*param_1 + 0x4f0));
     }
   }

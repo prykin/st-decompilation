@@ -47,9 +47,13 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
         DArrayGetElement(array,index,&param_1);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((param_1 != nullptr) &&
+            /* ST_CALLSITE[004B32C7]: CALL dword ptr [EDX + 0x2c] */
             ((((iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x32 ||
+               /* ST_CALLSITE[004B32D4]: CALL dword ptr [EAX + 0x2c] */
                (iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x40)) ||
+              /* ST_CALLSITE[004B32E1]: CALL dword ptr [EDX + 0x2c] */
               ((iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x49 ||
+               /* ST_CALLSITE[004B32EE]: CALL dword ptr [EAX + 0x2c] */
                (iVar4 = (**(code **)(*param_1 + 0x2c))(), iVar4 == 0x5c)))) &&
              (((STField<int>(param_1,0x361) == 1 && (iVar4 = param_1[0x134], iVar4 != 0)) &&
               (iVar4 != 1)))))) && (iVar4 != 2)) {

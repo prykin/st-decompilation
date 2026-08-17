@@ -73,15 +73,19 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
     if (SVar5 != MESS_SHARED_697F) {
       if (SVar5 < 6) {
         if (SVar5 == MESS_SHARED_0005) {
+          /* ST_CALLSITE[005D9516]: CALL 0x004029cd; direct=004029CD SIDTy::PaintSID */
           PaintSID(this_00);
         }
         else if (SVar5 == MESS_ID_NONE) {
+          /* ST_CALLSITE[005D950A]: CALL 0x00403d64; direct=00403D64 SIDTy::NoneSID */
           NoneSID(this_00);
         }
         else if (SVar5 == MESS_ID_CREATE) {
+          /* ST_CALLSITE[005D94FE]: CALL 0x004029af; direct=004029AF SIDTy::InitSID */
           InitSID(this_00);
         }
         else if (SVar5 == MESS_SHARED_0003) {
+          /* ST_CALLSITE[005D94F2]: CALL 0x00405b78; direct=00405B78 SIDTy::DoneSID */
           DoneSID(this_00);
         }
       }
@@ -89,6 +93,7 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
         pSVar6 = this_00->vtable;
         this_00->array_00BC[0xc].field_01DF = 0;
         this_00->field_002D = message->id + 1;
+        /* ST_CALLSITE[005D9847]: CALL dword ptr [EDX] */
         (*pSVar6->GetMessage)(this_00,(STMessage *)&this_00->field_0x1d);
       }
       else if (SVar5 == MESS_SHARED_6900) {
@@ -169,6 +174,7 @@ LAB_005d97ca:
               thunk_FUN_00572510((AnonShape_00572510_F06DC155 *)&g_sound);
             }
             if (DAT_00808446 != '\0') {
+              /* ST_CALLSITE[005D9809]: CALL 0x00403a8f; direct=00403A8F SIDTy::DeleteCtrls */
               DeleteCtrls(this_00);
               this_00->field_0065 = 4;
               thunk_FUN_005b6730(this_00,2,'\x01',-1);
@@ -182,11 +188,14 @@ LAB_005d97ca:
             else {
               uVar12 = *(undefined4 *)this_00->field_1CD0->growCapacity;
             }
+            /* ST_CALLSITE[005D96E4]: CALL dword ptr [0x0085bde8] */
             wsprintfA(&this_00->field_1CD4,"%s%s%s",&CHAR_00h_00807680,
                       PTR_s_SAVEGAME__0079c19c,uVar12);
             FUN_00725910(&this_00->field_1CD4,&CHAR___007cc8bc,0,FUN_00725c20,0,0);
+            /* ST_CALLSITE[005D9705]: CALL 0x0040392c; direct=0040392C SIDTy::PrepFiles */
             PrepFiles(this_00);
             this_00->array_00BC[0xc].field_01DF = 0;
+            /* ST_CALLSITE[005D9713]: CALL 0x00402d3d; direct=00402D3D SIDTy::PaintExplanation */
             PaintExplanation(this_00);
             this_00->field_002D = 5;
             puVar17 = this_00->field_1AF9;
@@ -224,11 +233,13 @@ LAB_005d97ca:
               puVar17 = puVar17 + 1;
               local_8 = local_8 + -1;
             } while (local_8 != nullptr);
+            /* ST_CALLSITE[005D9627]: CALL 0x00402d3d; direct=00402D3D SIDTy::PaintExplanation */
             PaintExplanation(this_00);
           }
         }
         else {
           this_00->array_00BC[0xc].field_01DF = 0;
+          /* ST_CALLSITE[005D9559]: CALL 0x00402d3d; direct=00402D3D SIDTy::PaintExplanation */
           PaintExplanation(this_00);
           this_00->field_002D = 5;
           puVar17 = this_00->field_1AF9;
@@ -240,6 +251,7 @@ LAB_005d97ca:
             puVar17 = puVar17 + 1;
             iVar20 = iVar20 + -1;
           } while (iVar20 != 0);
+          /* ST_CALLSITE[005D9588]: CALL 0x0040392c; direct=0040392C SIDTy::PrepFiles */
           PrepFiles(this_00);
         }
       }
@@ -293,6 +305,7 @@ LAB_005d97ca:
         }
         pRVar25 = (RecoveredRecord_MMMObjTy_005B6560 *)&this_00->field_1B92;
       }
+      /* ST_CALLSITE[005D9CC6]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
       MMMObjTy::PaintSlBut((MMMObjTy *)this_00,pRVar25,(int)message,0);
       goto cf_common_exit_005D9CCB;
     }
@@ -377,6 +390,7 @@ LAB_005d97ca:
     local_14 = piVar8[3];
     FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_1CB8,0,local_20,local_1c,local_18,
                  local_14,0xff);
+    /* ST_CALLSITE[005D99C1]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     MMObjTy::PaintButDib((MMObjTy *)this_00,(int)this_00->field_1CB8,&local_20,2,0x87,0xffffffff);
     if ((local_c & 0xff) == 1) {
       resourceId = (this_00->array_00BC[0xc].field_01DF != '\0') + 0x24b8;
@@ -395,6 +409,7 @@ LAB_005d97ca:
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1CB4);
 cf_common_exit_005D9CCB:
   g_currentExceptionFrame = local_64.previous;
+  /* ST_CALLSITE[005D9CD9]: CALL 0x00401280; direct=00401280 MMObjTy::GetMessage */
   iVar11 = MMObjTy::GetMessage((MMObjTy *)this_00,message);
   return iVar11;
 }

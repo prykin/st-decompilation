@@ -25,6 +25,7 @@ FUN_0058f680(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *para
 
   uVar9 = 0;
   uVar7 = 0;
+  /* ST_CALLSITE[0058F68F]: CALL 0x0040259a; direct=0040259A STSharkC::sub_0058F430 */
   local_1c = STSharkC::sub_0058F430(this);
   if (STField<int>(this,0x23d) != 0) {
     return local_1c;

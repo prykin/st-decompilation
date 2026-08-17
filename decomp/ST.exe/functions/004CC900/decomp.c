@@ -14,10 +14,12 @@ undefined4 __thiscall TLOBaseTy::sub_004CC900(TLOBaseTy *this)
   if (((this->field_0603 != nullptr) && (this->field_0444 != 0)) && (this->field_0448 != 0)
      ) {
     this->field_0448 = 0;
+    /* ST_CALLSITE[004CC92D]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
     STT3DSprC::StopShow(this->field_0603,0xe);
     thunk_FUN_004ad430(this->field_0603);
     uVar1 = thunk_FUN_004ad650(this->field_0603);
     Library::Ourlib::ST3DSMAP::SprRstLev((void *)this->field_0211,uVar1);
+    /* ST_CALLSITE[004CC95C]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
     STT3DSprC::UnLoadSequence(this->field_0603,0xe);
     this->field_044C = -1;
     uVar1 = g_playSystem_00802A38->field_00E4;

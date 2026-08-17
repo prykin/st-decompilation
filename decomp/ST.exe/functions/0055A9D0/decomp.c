@@ -45,6 +45,7 @@ VisibleClassTy::VisHoleCreate
         local_1c = param_5;
         local_14 = this_00->field_0108;
         local_8 = Library::DKW::TBL::DArrayAppend((DArrayTy *)array,local_28);
+        /* ST_CALLSITE[0055AA8F]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
         sub_00558DC0(this_00,local_28[0],local_28[1],local_20,local_18,(uint)local_1c,
                      (int *)0xfffffffa,0xffffffff);
       }

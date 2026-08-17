@@ -24,9 +24,9 @@ void __thiscall CPanelTy::sub_004F4570(CPanelTy *this,char param_1,int param_2,i
   do {
     if ((pbVar3[-6] != 0) &&
        ((sVar2 = sVar2 + 1, *pbVar3 != pbVar3[param_3 - param_2] ||
-        (*(char *)(param_2 + 7) != *(char *)(param_3 + 7))))) {
+        (((char *)param_2)[7] != ((char *)param_3)[7])))) {
       this->field_0028 = 0x54;
-      if (*(char *)(param_2 + 7) == '\0') {
+      if (((char *)param_2)[7] == '\0') {
         uVar1 = 0;
       }
       else {

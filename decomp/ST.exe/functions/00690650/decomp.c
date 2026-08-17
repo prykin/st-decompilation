@@ -102,11 +102,13 @@ LAB_00690763:
         pSVar7 = nullptr;
       }
       else {
+        /* ST_CALLSITE[006907BF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar7 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,*(char *)&local_c->field_0024,(ushort)local_10,
                             CASE_1);
       }
       if ((pSVar7 != nullptr) &&
+         /* ST_CALLSITE[006907DA]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
          (iVar6 = sub_0068E290(this_01,pSVar7->field_0030), iVar6 != 0)) {
         if (*(short *)(iVar6 + 0x7b) == 1) {
           sVar5 = (short)local_10;
@@ -138,6 +140,7 @@ LAB_00690763:
                 local_46 = *(undefined2 *)(iVar6 + 0x7b);
                 local_44 = (undefined2)local_20;
                 local_42 = local_14;
+                /* ST_CALLSITE[00690897]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
                 AiFltClassTy::GetAiMess(this_00,local_54);
                 if ('\0' < local_4c) {
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

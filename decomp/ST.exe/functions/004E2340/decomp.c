@@ -21,6 +21,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
     iVar5 = param_1 * 5 + 0x9b;
     piVar1 = (int *)((int)this + iVar5 * 8);
     iVar5 = *(int *)(&DAT_007e091c + *(int *)((int)this + iVar5 * 8) * 4) / 100;
+    /* ST_CALLSITE[004E23A5]: CALL dword ptr [EDX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar6 = (**(code **)(*(int *)this + 0x2c))();
     iVar6 = thunk_FUN_004b72e0(STField<char>(this,0x24),iVar6);
@@ -28,6 +29,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
        ((iVar6 = thunk_FUN_004b79c0(STField<char>(this,0x24),STField<int>(this,0x18)),
         iVar6 == 0 && (iVar5 = iVar5 * 4, g_sndUnderAttMeneg_00811798 != nullptr)))
        ) {
+      /* ST_CALLSITE[004E23E6]: CALL 0x00402af4; direct=00402AF4 SndUnderAttMenegC::sub_00621580 */
       SndUnderAttMenegC::sub_00621580(g_sndUnderAttMeneg_00811798,STField<byte *>(this,0x24),5);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -37,6 +39,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
       param_1 = ((g_playSystem_00802A38->field_00E4 - iVar6) *
                 *(int *)((int)this + param_1 * 0x28 + 0x4e4)) /
                 *(uint *)(&DAT_007e091c + *piVar1 * 4);
+      /* ST_CALLSITE[004E2428]: CALL dword ptr [EDX + 0x2c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(*(int *)this + 0x2c))();
       iVar5 = thunk_FUN_004b72e0(STField<char>(this,0x24),iVar5);
@@ -48,6 +51,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
           param_1 = 1;
         }
         if (g_sndUnderAttMeneg_00811798 != nullptr) {
+          /* ST_CALLSITE[004E247D]: CALL 0x00402af4; direct=00402AF4 SndUnderAttMenegC::sub_00621580 */
           SndUnderAttMenegC::sub_00621580
                     (g_sndUnderAttMeneg_00811798,STField<byte *>(this,0x24),5);
         }
@@ -116,12 +120,15 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
       *(uint *)((int)this + uVar3 * 0x28 + 0x4e8) = g_playSystem_00802A38->field_00E4;
       if (STField<int>(this,0x524) + 0x19U < g_playSystem_00802A38->field_00E4) {
         STField<uint>(this,0x524) = g_playSystem_00802A38->field_00E4;
+        /* ST_CALLSITE[004E26A2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar4 = LookupRecordByte(STField<char>(this,0x23d));
         if (bVar4 == 2) {
+          /* ST_CALLSITE[004E26B6]: CALL dword ptr [EAX + 0x90] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*(int *)this + 0x90))(3,0x2c8);
           return *(int *)((int)this + uVar3 * 0x28 + 0x4e0);
         }
+        /* ST_CALLSITE[004E26D6]: CALL dword ptr [EDX + 0x90] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)this + 0x90))(3,0x200);
       }

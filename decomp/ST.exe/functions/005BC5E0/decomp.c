@@ -79,17 +79,21 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
       if (SVar3 != MESS_SHARED_611F) {
         if (SVar3 < 6) {
           if (SVar3 == MESS_SHARED_0005) {
+            /* ST_CALLSITE[005BC6AB]: CALL 0x00405e52; direct=00405E52 PrividerTy::PaintPrivider */
             PaintPrivider(this_00,'\0');
           }
           else if (SVar3 == MESS_ID_NONE) {
+            /* ST_CALLSITE[005BC69E]: CALL 0x0040429b; direct=0040429B PrividerTy::NonePrivider */
             NonePrivider(this_00);
           }
           else if (SVar3 == MESS_ID_CREATE) {
+            /* ST_CALLSITE[005BC692]: CALL 0x00403b8e; direct=00403B8E PrividerTy::InitPrivider */
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             InitPrivider(this_00,*(char *)((message->arg0).u32 + 0x14),
                          *(char *)((message->arg0).u32 + 0x18));
           }
           else if (SVar3 == MESS_SHARED_0003) {
+            /* ST_CALLSITE[005BC67B]: CALL 0x004022f7; direct=004022F7 PrividerTy::DonePrivider */
             DonePrivider(this_00);
           }
           goto cf_common_exit_005BCF7F;
@@ -109,10 +113,12 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
       if (MESS_SHARED_6501 < SVar3) {
         if (SVar3 != MESS_PRIVIDERTY_6502) {
           if (SVar3 == MESS_PRIVIDERTY_693F) {
+            /* ST_CALLSITE[005BC8F8]: CALL 0x0040585d; direct=0040585D PrividerTy::sub_005BB9F0 */
             sub_005BB9F0(this_00);
           }
           goto cf_common_exit_005BCF7F;
         }
+        /* ST_CALLSITE[005BC90F]: CALL 0x00404fca; direct=00404FCA StartSystemTy::sub_005DA940 */
         uVar9 = StartSystemTy::sub_005DA940
                           (g_startSystem_0081176C,this_00->array_00BC[0xc].field_01E1);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -122,6 +128,7 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
           iVar11 = thunk_FUN_005da980(iVar11);
           if ((iVar11 == 0) && (iVar11 = thunk_FUN_005daa90(), iVar11 == 0)) {
             DAT_0080877e = 0;
+            /* ST_CALLSITE[005BC957]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
             CloseButtons(this_00,'\0');
             pSVar4 = this_00->array_00BC[0xc].field_01DB;
             if (pSVar4->field_02E6 != nullptr) {
@@ -138,6 +145,7 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
         }
 LAB_005bccb9:
         this_00->field_004D = 0x6951;
+        /* ST_CALLSITE[005BCCC8]: CALL dword ptr [EDX] */
         this_00->GetMessage((STMessage *)&this_00->field_0x3d);
         goto cf_common_exit_005BCF7F;
       }
@@ -182,6 +190,7 @@ LAB_005bccb9:
             if (pSVar4->field_02E6 != nullptr) {
               memset(&local_48, 0, 0x1a); /* compiler bulk-zero initialization */
               STPiece<2,2>(local_48) = ((*(int *)(g_startSystem_0081176C->field_068E + 4) < 1) - 1 & 2) - 1;
+              /* ST_CALLSITE[005BC7FD]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
               MMsgTy::StatePanel(pSVar4->field_02E6,(int)&local_48);
             }
           }
@@ -189,6 +198,7 @@ LAB_005bccb9:
         goto cf_common_exit_005BCF7F;
       }
     }
+    /* ST_CALLSITE[005BC8B7]: CALL 0x00405510; direct=00405510 StartSystemTy::InitChat */
     StartSystemTy::InitChat(this_00->array_00BC[0xc].field_01DB);
     this_00->field_0045 = 0x200;
     this_00->field_0049 = 0;
@@ -228,12 +238,14 @@ LAB_005bccb9:
       this_00->array_00BC[0xc].field_01E1 = SVar6;
       break;
     case MESS_OPTPANELTY_8164:
+      /* ST_CALLSITE[005BCF29]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
       MMMObjTy::PaintSlBut
                 ((MMMObjTy *)this_00,
                  (RecoveredRecord_MMMObjTy_005B6560 *)&this_00->array_00BC[0xc].field_01F7,
                  (int)message,0);
       break;
     case MESS_OPTPANELTY_8165:
+      /* ST_CALLSITE[005BCF3B]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
       MMMObjTy::PaintSlBut
                 ((MMMObjTy *)this_00,(RecoveredRecord_MMMObjTy_005B6560 *)&this_00->field_1B08,
                  (int)message,0);
@@ -264,11 +276,13 @@ LAB_005bccb9:
   case MESS_WAITTY_6943:
     DAT_0080877e = 1;
     thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
+    /* ST_CALLSITE[005BC9FD]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
     CloseButtons(this_00,'\x01');
     pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
     goto cf_common_exit_005BCD75;
   case MESS_FSGSTY_6949:
 switchD_005bc9da_caseD_6949:
+    /* ST_CALLSITE[005BCCB0]: CALL 0x00404fca; direct=00404FCA StartSystemTy::sub_005DA940 */
     uVar9 = StartSystemTy::sub_005DA940(g_startSystem_0081176C,this_00->array_00BC[0xc].field_01E1);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if (CONCAT31(extraout_var_00,uVar9) != 0) goto LAB_005bccb9;
@@ -284,6 +298,7 @@ switchD_005bc9da_caseD_6949:
     if (iVar11 != 0) {
       pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
       if (pMVar14 != nullptr) {
+        /* ST_CALLSITE[005BCD2D]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
         MMsgTy::SetMessage(pMVar14,0x2134,'\0',nullptr,nullptr,nullptr
                            ,0,0);
       }
@@ -291,6 +306,7 @@ switchD_005bc9da_caseD_6949:
     }
     DAT_0080877e = 1;
     thunk_FUN_005b6350(this_00,0x611f,(-(uint)(message->id != MESS_SHARED_6501) & 8) + 4,0x11);
+    /* ST_CALLSITE[005BCD64]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
     CloseButtons(this_00,'\x01');
     pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
     goto cf_common_exit_005BCD75;
@@ -307,7 +323,9 @@ switchD_005bc9da_caseD_6949:
         iVar16 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_5;
         pCVar8->field_0494 = 0xffff;
+        /* ST_CALLSITE[005BCDF2]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
         CursorClassTy::SetGCType(pCVar8,CASE_0,iVar16,iVar11);
+        /* ST_CALLSITE[005BCE07]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
         CursorClassTy::DrawSprite(pCVar8,pCVar8->field_00C5,pCVar8->field_00C9);
         pCVar8->field_00D2 = 0;
         pCVar8->field_04DF = -1;
@@ -317,10 +335,12 @@ switchD_005bc9da_caseD_6949:
   case MESS_SHARED_6951:
     DAT_0080877e = 1;
     thunk_FUN_005b6350(this_00,0x610a,0,0);
+    /* ST_CALLSITE[005BCA4F]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
     CloseButtons(this_00,'\x01');
     pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
 cf_common_exit_005BCD75:
     if (pMVar14 != nullptr) {
+      /* ST_CALLSITE[005BCD82]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       MMsgTy::HidePanel(pMVar14,1,0,1);
     }
     break;
@@ -333,20 +353,25 @@ cf_common_exit_005BCD75:
       iVar16 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       pCVar8->field_0494 = 0xffff;
+      /* ST_CALLSITE[005BCAA5]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
       CursorClassTy::SetGCType(pCVar8,CASE_0,iVar16,iVar11);
+      /* ST_CALLSITE[005BCABA]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
       CursorClassTy::DrawSprite(pCVar8,pCVar8->field_00C5,pCVar8->field_00C9);
       pCVar8->field_00D2 = 0;
       pCVar8->field_04DF = -1;
     }
     if (this_00->array_00BC[0xc].field_01DF == '\0') {
       thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
+      /* ST_CALLSITE[005BCAF4]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
       CloseButtons(this_00,'\x01');
       pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
       if (pMVar14 != nullptr) {
+        /* ST_CALLSITE[005BCB11]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
         MMsgTy::HidePanel(pMVar14,1,0,1);
       }
     }
     else {
+      /* ST_CALLSITE[005BCB1D]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
       CloseButtons(this_00,'\0');
       pSVar4 = this_00->array_00BC[0xc].field_01DB;
       if (pSVar4->field_02E6 != nullptr) {
@@ -391,6 +416,7 @@ cf_common_exit_005BCD75:
         bVar17 = 0x10;
         iVar16 = 1;
         iVar11 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
+        /* ST_CALLSITE[005BCC41]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
         uVar18 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar11,iVar16,bVar17,cVar18,
                               uVar19);
         if (uVar18 != 0) {
@@ -411,6 +437,7 @@ cf_common_exit_005BCD75:
   }
 cf_common_exit_005BCF7F:
   g_currentExceptionFrame = local_8c.previous;
+  /* ST_CALLSITE[005BCF8E]: CALL 0x00401280; direct=00401280 MMObjTy::GetMessage */
   iVar10 = MMObjTy::GetMessage((MMObjTy *)this_00,message);
   return iVar10;
 }

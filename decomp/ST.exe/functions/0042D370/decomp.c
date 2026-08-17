@@ -19,10 +19,12 @@ STAllPlayersC::SetActivityToObjs
   objPtr = (char)param_1;
   if (0x19a < param_2) {
     if (param_2 == 0x1a4) {
+      /* ST_CALLSITE[0042D47D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar2 = GetObjPtr(this,objPtr,(ushort)param_4,CASE_5);
       if (pSVar2 == nullptr) {
         return;
       }
+      /* ST_CALLSITE[0042D48C]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
       (*pSVar2->vtable[1].vfunc_14)(pSVar2,1);
       return;
     }
@@ -45,7 +47,9 @@ LAB_0042d3b2:
     do {
       DArrayGetElement(param_3,index,&param_1);
       if (((ushort)param_1 != 0xffff) &&
+         /* ST_CALLSITE[0042D3E6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
          (pSVar2 = GetObjPtr(this,objPtr,(ushort)param_1,CASE_1), pSVar2 != nullptr)) {
+        /* ST_CALLSITE[0042D3F5]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
         (*pSVar2->vtable[1].vfunc_14)(pSVar2,1);
       }
       index = index + 1;
@@ -56,10 +60,12 @@ LAB_0042d3b2:
     if (param_2 == 0x5a) {
       SVar4 = CASE_4;
 cf_common_exit_0042D44C:
+      /* ST_CALLSITE[0042D456]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar2 = GetObjPtr(this,objPtr,(ushort)param_4,SVar4);
       if (pSVar2 == nullptr) {
         return;
       }
+      /* ST_CALLSITE[0042D465]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
       (*pSVar2->vtable[1].vfunc_14)(pSVar2,1);
       return;
     }

@@ -58,6 +58,7 @@ cf_common_exit_004B8058:
   if (param_1 != 3) {
     return uVar3;
   }
+  /* ST_CALLSITE[004B8066]: CALL 0x004015a5; direct=004015A5 TLOBaseTy::sub_004C7070 */
   uVar3 = sub_004C7070(this,1);
   return uVar3;
 }

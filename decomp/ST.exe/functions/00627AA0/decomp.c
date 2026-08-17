@@ -99,6 +99,7 @@ LAB_00627c8a:
   switch(STField<undefined1>(this,0x2ad)) {
   case 0:
   case 2:
+    /* ST_CALLSITE[00627CA1]: CALL 0x00402865; direct=00402865 STMineSetC::sub_0041D6C0 */
     local_EAX_513 = STMineSetC::sub_0041D6C0(this,param_1);
     return SUB41(local_EAX_513,0);
   case 1:

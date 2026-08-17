@@ -95,6 +95,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
       pAVar9 = nullptr;
     }
     else {
+      /* ST_CALLSITE[0044B120]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,param_1,param_2,0,0);
       uVar1 = (&pAVar10->field_0000)[objPtr * 4];
       uVar2 = (&pAVar10->field_0004)[objPtr * 4];
@@ -109,8 +110,10 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
     }
   }
   uVar8 = STReplaceLowWord((uint32_t)(pAVar9), (uint16_t)(*(undefined2 *)&pAVar10->field_0008));
+  /* ST_CALLSITE[0044B17E]: CALL 0x00405d12; direct=00405D12 STAllPlayersC::SetActivityToObjs */
   SetActivityToObjs(this,STReplaceLowByte((uint32_t)(uVar8), (uint8_t)(*(undefined1 *)&pAVar10->field_0004)),
                     pAVar10->field_0000,*(DArrayTy **)((int)&pAVar10->field_0008 + 2),uVar8);
+  /* ST_CALLSITE[0044B185]: CALL 0x004027de; direct=004027DE STAllPlayersC::SelfCheckObjControl */
   SelfCheckObjControl(this);
   if (param_2 == 0) {
     thunk_FUN_0043fc50(CASE_1,0);

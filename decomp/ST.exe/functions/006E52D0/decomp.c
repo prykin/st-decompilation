@@ -22,6 +22,7 @@ void __fastcall FUN_006e52d0(AnonShape_006E52D0_AF06BCD2 *param_1)
         iVar3 = *(int *)(iVar3 + 0x1c);
       }
       puVar2 = *(undefined4 **)(iVar3 + 4);
+      /* ST_CALLSITE[006E5309]: CALL dword ptr [EAX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*puVar2)(local_24);
       DArrayRemoveAt((DArrayTy *)param_1->field_0010,0);

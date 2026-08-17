@@ -19,7 +19,9 @@ int __thiscall STPlaySystemC::sub_0054EBB0(STPlaySystemC *this,char *param_1,uin
 
   *(uint *)param_1 = this->field_0041;
   this->field_0041 = this->field_0041 + 1;
+  /* ST_CALLSITE[0054EBCC]: CALL 0x004045fc; direct=004045FC STPlaySystemC::AddToRep */
   AddToRep(this,(undefined4 *)param_1,param_2);
+  /* ST_CALLSITE[0054EBD1]: CALL dword ptr [0x0085bedc] */
   DVar1 = timeGetTime();
   this->field_007F = DVar1;
   iVar2 = FUN_00715360(g_int_00811764,0,'1',param_1,param_2,1,*(undefined4 *)param_1);

@@ -58,6 +58,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,local_14);
         if (STPiece<0,2>(local_14) != 0xffff) {
           this_00 = (STBoatC *)
+                    /* ST_CALLSITE[0049B564]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                     STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_14),CASE_1);
           if (this_00 == nullptr) {
@@ -65,12 +66,15 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x720);
           }
+          /* ST_CALLSITE[0049B597]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)this_00,&local_8,&local_6,&local_a);
+          /* ST_CALLSITE[0049B5AF]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
           STBoatC::sub_00481520(this_00,(int)local_8,(int)local_6,*(int *)&pSVar2->field_0x222);
           local_28 = g_playSystem_00802A38->field_00E4;
           local_24 = 0xffff;
           local_22 = 0xffff;
           local_20 = 0xffff;
+          /* ST_CALLSITE[0049B5DA]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
           STBoatC::CmdToObj(this_00,CASE_1,&local_28);
         }
         uVar8 = uVar8 + 1;
@@ -90,6 +94,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
         do {
           DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,local_14);
           if (STPiece<0,2>(local_14) != 0xffff) {
+            /* ST_CALLSITE[0049B655]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             objPtr = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_14),CASE_1);
             if (objPtr == nullptr) {

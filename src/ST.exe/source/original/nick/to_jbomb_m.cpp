@@ -50,10 +50,13 @@ int __thiscall st::fn_00617640(JumpManagC *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
+    /* ST_CALLSITE[0061774E]: CALL 0x00405119; direct=00405119 JumpManagC::sub_00618170 */
     st::fn_00405119(local_8,st::pointer_boundary_cast<undefined4 *>(puVar6));
+    /* ST_CALLSITE[00617755]: CALL 0x00404d09; direct=00404D09 JumpManagC::sub_006179D0 */
     st::fn_00404D09(this_00);
   }
   else if (SVar1 == MESS_SHARED_0003) {
+    /* ST_CALLSITE[006176D7]: CALL 0x00401a46; direct=00401A46 JumpManagC::sub_00618AD0 */
     st::fn_00401A46(local_8);
     if (this_00->field_005E != nullptr) {
       st::fn_006AE110(this_00->field_005E);
@@ -71,7 +74,9 @@ int __thiscall st::fn_00617640(JumpManagC *this,STMessage *message)
     }
   }
   else if (SVar1 == MESS_SHARED_010F) {
+    /* ST_CALLSITE[0061769B]: CALL 0x004015f5; direct=004015F5 JumpManagC::sub_00617FB0 */
     local_10 = st::fn_004015F5(local_8,(int *)&local_c);
+    /* ST_CALLSITE[006176B2]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
     st::fn_006AB060(&local_10);
     g_currentExceptionFrame = local_54.previous;

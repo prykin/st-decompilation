@@ -23,6 +23,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return 1;
     }
+    /* ST_CALLSITE[0041C76E]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,(int)param_1->field_005B,
                (int)param_1->field_005D,&local_8,&local_c);
@@ -56,6 +57,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
     }
     iVar4 = (int)param_1->field_005F;
     if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+          /* ST_CALLSITE[0041C815]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                       (int)param_1->field_005B,(int)param_1->field_005D,&local_c,&local_8),
@@ -68,6 +70,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
     }
     iVar4 = (int)param_1->field_005F;
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+        /* ST_CALLSITE[0041C8A2]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
         (VisibleClassTy::sub_00558C00
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                     param_1->field_005B + 1,(int)param_1->field_005D,&local_c,&local_8),
@@ -81,6 +84,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
     }
     iVar4 = (int)param_1->field_005F;
     if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+         /* ST_CALLSITE[0041C92F]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
          (VisibleClassTy::sub_00558C00
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                      (int)param_1->field_005B,param_1->field_005D + 1,&local_c,&local_8),
@@ -100,6 +104,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return 1;
     }
+    /* ST_CALLSITE[0041C9BD]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_1->field_005B + 1,
                param_1->field_005D + 1,&local_c,&local_8);

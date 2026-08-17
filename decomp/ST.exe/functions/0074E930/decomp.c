@@ -8,8 +8,10 @@ int FUN_0074e930(int *param_1,undefined4 param_2)
 
   iVar1 = FUN_0074e8df(param_1,(int *)&param_1);
   if (-1 < iVar1) {
+    /* ST_CALLSITE[0074E94D]: CALL dword ptr [ECX + 0xc] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*param_1 + 0xc))(param_1,param_2);
+    /* ST_CALLSITE[0074E958]: CALL dword ptr [ECX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 8))(param_1);
   }

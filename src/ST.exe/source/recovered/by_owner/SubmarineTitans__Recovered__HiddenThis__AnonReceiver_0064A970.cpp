@@ -32,7 +32,8 @@ st::fn_00668F50
   if (param_2 == 0) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == (char *)0x9) {
-      uVar2 = (*this->vtable->slot_18)();
+      /* ST_CALLSITE[00668F71]: CALL dword ptr [EAX + 0x18] */
+      uVar2 = this->slot_18();
       if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
          (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
         *param_3 = uVar2;
@@ -71,7 +72,8 @@ st::fn_00668F50
     bVar5 = (byte)param_1;
     if (param_2 == 0xffffffff) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[0066905E]: CALL dword ptr [EAX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           uVar7 = 0;
@@ -151,7 +153,8 @@ st::fn_00668F50
     }
     else if (param_2 == 1) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[00669281]: CALL dword ptr [EDX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           uVar7 = 0;
@@ -231,7 +234,8 @@ st::fn_00668F50
     }
     else if (param_2 == 2) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[00669493]: CALL dword ptr [EDX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           uVar7 = 0;
@@ -333,7 +337,8 @@ st::fn_00668F50
     }
     else if (param_2 == 3) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[00669726]: CALL dword ptr [EDX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           param_2 = 0;
@@ -539,7 +544,8 @@ LAB_00669a2a:
     }
     else if (param_2 == 4) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[00669BF5]: CALL dword ptr [EAX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           param_2 = 0;
@@ -743,7 +749,8 @@ LAB_00669f03:
     }
     else if (param_2 == 0xfffffffe) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[0066A0E2]: CALL dword ptr [EDX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           param_2 = 0;
@@ -969,7 +976,6 @@ st::fn_00672440
   undefined4 uVar1;
   int iVar3;
   short *psVar4;
-  float10 fVar5;
   InternalExceptionFrame local_64;
   int local_20;
   AnonReceiver_0064A970 *local_1c;
@@ -1024,6 +1030,7 @@ st::fn_00672440
           st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 8;
+        /* ST_CALLSITE[0067253F]: CALL dword ptr [EDX] */
         uVar1 = this_00->slot_00(arg_1);
         *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar1;
         *param_3 = *param_3 + 1;
@@ -1038,8 +1045,8 @@ st::fn_00672440
           st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 9;
-        fVar5 = (float10)(*this_00->vtable->slot_04)(arg_1);
-        *(float *)(param_3 + *param_3 * 2 + 4) = (float)fVar5;
+        /* ST_CALLSITE[00672590]: CALL dword ptr [EDX + 0x4] */
+        *(float *)(param_3 + *param_3 * 2 + 4) = this_00->slot_04(arg_1);
         *param_3 = *param_3 + 1;
         param_3[3] = param_3[3] + 1;
       }
@@ -1052,6 +1059,7 @@ st::fn_00672440
           st::fn_006A5E40(-0x66,g_overwriteContext_007ED77C,st::mutable_c_string(".\\ai\\ai_erc.h"),0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 10;
+        /* ST_CALLSITE[006725E2]: CALL dword ptr [EAX + 0x8] */
         uVar1 = this_00->slot_08(arg_1);
         *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar1;
         if (*(int *)(param_3 + *param_3 * 2 + 4) == 0) {

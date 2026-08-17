@@ -30,6 +30,7 @@ undefined4 __fastcall FUN_004e27e0(TLOBaseTy *param_1)
        iVar2 == param_1->field_01F5->field_01C4)) && (param_1->field_04D0 == CASE_0)) &&
      (param_1->field_04E0[6] == 0)) {
     param_1->field_04E0[0x10] = 0;
+    /* ST_CALLSITE[004E2888]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     TLOBaseTy::RotateSpr(param_1,0);
   }
   return 0;

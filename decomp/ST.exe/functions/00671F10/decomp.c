@@ -18,8 +18,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
   float fVar4;
   int iVar5;
   short *psVar6;
-  float10 fVar7;
-  int *piVar8;
+  int *piVar7;
   InternalExceptionFrame local_70;
   undefined1 local_2c;
   float local_2b;
@@ -77,6 +76,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
         switch(*arg_1) {
         case 1:
         case 4:
+          /* ST_CALLSITE[00672201]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
           fVar4 = (float)local_24->slot_00(arg_1);
           local_18 = Library::DKW::LIB::MemAllocClear(4);
           *local_18 = fVar4;
@@ -86,8 +86,8 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
           break;
         case 2:
         case 5:
-          fVar7 = (float10)(*local_24->vtable->slot_04)(arg_1);
-          local_20 = (float)fVar7;
+          /* ST_CALLSITE[0067222C]: CALL dword ptr [EDX + 0x4] */
+          local_20 = local_24->slot_04(arg_1);
           local_18 = Library::DKW::LIB::MemAllocClear(4);
           *local_18 = local_20;
           if (param_2 != nullptr) {
@@ -96,6 +96,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
           break;
         case 3:
         case 6:
+          /* ST_CALLSITE[00672255]: CALL dword ptr [EDX + 0x8] */
           fVar4 = (float)local_24->slot_08(arg_1);
           if (fVar4 == 0.0) {
             RaiseInternalException
@@ -132,16 +133,16 @@ cf_continue_loop_006721A4:
       iVar2 = thunk_FUN_006686f0((int)*psVar6);
       if ((iVar2 < 0) || (iVar2 = thunk_FUN_00668a70((int)*psVar6), iVar2 != 0)) {
         iVar2 = (int)psVar6[1];
-        piVar8 = &local_1c;
+        piVar7 = &local_1c;
         pcVar3 = thunk_FUN_0064a910(local_c,iVar5);
-        local_8 = thunk_FUN_0064a970(pcVar3,iVar2,piVar8);
+        local_8 = thunk_FUN_0064a970(pcVar3,iVar2,piVar7);
       }
       else {
         iVar2 = (int)psVar6[1];
-        piVar8 = &local_1c;
+        piVar7 = &local_1c;
         pcVar3 = thunk_FUN_0064a910(local_c,iVar5);
         local_8 = (float *)SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
-                           thunk_FUN_0066acc0(local_24,pcVar3,iVar2,piVar8);
+                           thunk_FUN_0066acc0(local_24,pcVar3,iVar2,piVar7);
       }
     }
     else {
@@ -168,6 +169,7 @@ cf_continue_loop_006721A4:
       local_2b = *local_8;
     }
     else if (local_1c == 3) {
+      /* ST_CALLSITE[006720CA]: CALL dword ptr [EDX + 0xc]; [STIndirectCallsiteApplier] exact slot 0xC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       iVar5 = local_24->slot_0C(local_8);
       if (iVar5 < 0) {
         RaiseInternalException

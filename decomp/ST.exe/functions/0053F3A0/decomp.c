@@ -40,6 +40,7 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
+    /* ST_CALLSITE[0053F448]: CALL dword ptr [EDX + 0x18] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)local_8->field_0000->field_0018)(0);
   }
@@ -55,6 +56,7 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
+      /* ST_CALLSITE[0053F42A]: CALL 0x00405dbc; direct=00405DBC CPanelTy::ShiftControls */
       CPanelTy::ShiftControls(g_cPanel_00801688,pPVar3->field_0195,0);
       g_currentExceptionFrame = local_4c.previous;
       return;

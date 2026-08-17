@@ -29,6 +29,7 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,byte param_3)
   if (((int)param_1 < 0) || (7 < (int)param_1)) {
     return 0;
   }
+  /* ST_CALLSITE[004E79A1]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar5 = LookupRecordByte((char)param_1);
   iVar6 = bVar5 - 1;
   ppuVar13 = &PTR_00801020;
@@ -111,7 +112,7 @@ LAB_004e7bd3:
               if (3 < iVar9) break;
               if ((*puVar8 == *param_1_after_write) && ((char)puVar8[1] == (char)param_1_after_write[1])) {
                 *local_1c = *(undefined4 *)((int)piVar12 + _param_3);
-                *(undefined1 *)(local_1c + 1) = *(undefined1 *)((int)piVar12 + _param_3 + 4);
+                ((undefined1 *)local_1c)[1] = *(undefined1 *)((int)piVar12 + _param_3 + 4);
                 local_c = local_c + 1;
                 local_1c = (undefined4 *)((int)local_1c + 5);
                 break;

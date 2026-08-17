@@ -83,19 +83,23 @@ LAB_00631713:
               }
               ST3DSMAPContext::sub_006E91D0(g_sT3DSMAPContext_00807598,(int *)puVar4[4]);
               this_00 = local_c;
+              /* ST_CALLSITE[00631753]: CALL 0x0040461a; direct=0040461A STManRuinC::sub_00630AC0 */
               iVar7 = STManRuinC::sub_00630AC0(local_c,uVar9);
               if (iVar7 == 0) {
                 return;
               }
+              /* ST_CALLSITE[0063177E]: CALL 0x00401d57; direct=00401D57 STManRuinC::sub_00630BB0 */
               STManRuinC::sub_00630BB0
                         (this_00,local_24,local_22,local_20,local_1c,(int)local_1e,local_10);
               this_00->field_0044 = 1;
               if ((this_00->field_0048 == 0) ||
+                 /* ST_CALLSITE[006317A1]: CALL 0x00405c9f; direct=00405C9F STManRuinC::sub_00630C50 */
                  (puVar5 = STManRuinC::sub_00630C50
                                      (this_00,this_00->field_0040,this_00->field_004C,1,1,0),
                  puVar5 != nullptr)) {
                 this_00->field_0044 = 2;
               }
+              /* ST_CALLSITE[006317BB]: CALL 0x00405eca; direct=00405ECA STManRuinC::sub_00631880 */
               uVar6 = STManRuinC::sub_00631880(this_00,&this_00->field_0040,this_00->field_0061);
               if (((uVar6 == 0) && (this_00->field_0048 != 0)) && (this_00->field_0061 != 0)) {
                 Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this_00->field_0061);

@@ -293,8 +293,7 @@ int st::fn_00561DC0(int param_1,int param_2,int param_3)
 }
 
 // 00562170 FUN_00562170
-#line 1 "decomp/ST.exe/functions/00562170/decomp.c"
-
+#line 4 "decomp/ST.exe/functions/00562170/decomp.c"
 int st::fn_00562170(int *param_1,int param_2)
 
 {
@@ -389,6 +388,8 @@ int st::fn_00562170(int *param_1,int param_2)
 int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5)
 
 {
+  int scalar_param_4;
+
   RuntimeRecord_008032F4_0014 *pRVar1;
   byte bVar2;
   short sVar3;
@@ -443,7 +444,7 @@ int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5
   iVar19 = 0;
   uVar12 = 0;
   local_8 = 0;
-  int scalar_param_4 = st::machine_word_boundary_cast<int>(PTR_00803380 + local_20 * DAT_008033a4 * 2); /* split integer lifetime from pointer-typed SSA storage */
+  scalar_param_4 = st::machine_word_boundary_cast<int>(PTR_00803380 + local_20 * DAT_008033a4 * 2); /* split integer lifetime from pointer-typed SSA storage */
   local_18 = 0;
   local_14 = 0;
   if (0 < *(int *)(iVar11 + 0x10)) {
@@ -507,7 +508,7 @@ int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5
         if ((-1 < iVar11) && (iVar11 < DAT_008033a8)) {
           iVar9 = iVar8 + *piVar15;
           if (iVar9 <= piVar15[1] + iVar8) {
-            local_28 = st::pointer_boundary_cast<byte *>(puVar13 + iVar9 * 2 + 1);
+            local_28 = puVar13 + iVar9 * 2 + 1;
             do {
               if (((-1 < iVar9) && (iVar9 < DAT_008033a4)) && (local_10 < (uint)*local_28)) {
                 local_18 = iVar9;
@@ -670,7 +671,7 @@ int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5
       }
       if (iVar10 < iVar19) {
         st::fn_0072DA70
-                  (st::pointer_boundary_cast<undefined4 *>(&local_24_mg1[iVar10 + 1].field_0000),
+                  ((undefined4 *)&local_24_mg1[iVar10 + 1].field_0000,
                    (AnonPointee_TLOBaseTy_0607 *)(local_24_mg1 + iVar10),
                    iVar19 * 0x14 + iVar10 * -0x14);
         iVar19 = DAT_00803398;
@@ -857,6 +858,8 @@ void st::fn_00564DD0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,u
 int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5,int param_6)
 
 {
+  int scalar_param_4;
+
   RuntimeRecord_008032F4_0014 *pRVar1;
   short sVar2;
   int iVar4;
@@ -908,7 +911,7 @@ int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5
   uVar11 = 0;
   local_2c = 0;
   local_18 = 0;
-  int scalar_param_4 = st::machine_word_boundary_cast<int>(PTR_00803380 + local_8 * DAT_008033a4 * 2); /* split integer lifetime from pointer-typed SSA storage */
+  scalar_param_4 = st::machine_word_boundary_cast<int>(PTR_00803380 + local_8 * DAT_008033a4 * 2); /* split integer lifetime from pointer-typed SSA storage */
   iVar16 = 0;
   local_14 = 0;
   if (0 < *(int *)(iVar9 + 0x10)) {
@@ -1136,7 +1139,7 @@ int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5
       }
       if (iVar8 < iVar16) {
         st::fn_0072DA70
-                  (st::pointer_boundary_cast<undefined4 *>(&local_1c_mg1[iVar8 + 1].field_0000),
+                  ((undefined4 *)&local_1c_mg1[iVar8 + 1].field_0000,
                    (AnonPointee_TLOBaseTy_0607 *)(local_1c_mg1 + iVar8),
                    iVar16 * 0x14 + iVar8 * -0x14);
         iVar16 = DAT_00803398;
@@ -1383,7 +1386,7 @@ void __fastcall st::fn_00567220(AnonShape_00567220_C9DD1C7D *param_1)
     st::fn_006C1E20();
     memset(&param_1->field_0xe0b, 0, 0x180); /* compiler bulk-zero initialization */
   }
-  if ((AnonShape_006C2390_A203A467 *)param_1->field_0DF7 != nullptr) {
+  if ((AnonShape_006C2390_A203A467 *)param_1->field_0DF7 != 0) {
     st::fn_006C2390((AnonShape_006C2390_A203A467 *)param_1->field_0DF7);
     param_1->field_0DF7 = 0;
   }
@@ -1415,7 +1418,7 @@ void __fastcall st::fn_005672E0(AnonShape_005672E0_9A0A2ED1 *param_1)
 
 {
   st::fn_00401393((int)param_1);
-  if ((AnonShape_006C2390_A203A467 *)param_1->field_0DF7 != nullptr) {
+  if ((AnonShape_006C2390_A203A467 *)param_1->field_0DF7 != 0) {
     st::fn_006C2390((AnonShape_006C2390_A203A467 *)param_1->field_0DF7);
     param_1->field_0DF7 = 0;
   }
@@ -2003,6 +2006,7 @@ void __thiscall st::fn_00568010(void *this,Global_sub_00568010_param_1Enum param
             *(undefined4 *)(&this_00->field_0xe13 + iVar1 * 0xc) = 0;
             st::fn_006C1BA0(iVar1);
             if (iVar1 == 2) {
+              /* ST_CALLSITE[0056818E]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
               st::fn_00404BD8(this_00,SOUND_MODE_1,nullptr,0x4b7,nullptr,0);
             }
           }
@@ -2558,6 +2562,7 @@ st::fn_0056A2A0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *
                               (param_1->field_0000,(DWORD)puVar4,0,0,DAT_0080730a,0,0,1);
           }
           STField<int>(pvVar2,0xe07) = iVar3;
+          /* ST_CALLSITE[0056A38C]: CALL dword ptr [0x0085bedc] */
           DVar5 = st::external_000000DA();
           STField<DWORD>(pvVar2,0xdff) = DVar5;
         }
@@ -2605,6 +2610,7 @@ undefined4 st::fn_0056A500(void)
   undefined4 local_1e;
 
   if (DAT_00808783 == '\x03') {
+    /* ST_CALLSITE[0056A50F]: CALL dword ptr [0x0085bedc] */
     DVar1 = st::external_000000DA();
     if (499 < DVar1 - DAT_00806720) {
       local_2a = 5;
@@ -2631,6 +2637,7 @@ undefined4 st::fn_0056A500(void)
 int st::fn_0056A5C0(void)
 
 {
+  /* ST_CALLSITE[0056A5C5]: CALL dword ptr [0x0085bc78] */
   st::external_00000053(st::pointer_boundary_cast<LONG *>(&DAT_0085e000));
   return (uint)(0 < DAT_0085e000);
 }
@@ -2666,6 +2673,7 @@ void __thiscall st::fn_0056A840(void *this,byte param_1)
     *puVar3 = 0;
     if ((g_visibleClass_00802A88 != nullptr) &&
        (param_1 == STField<byte>(this,0x112d))) {
+      /* ST_CALLSITE[0056A88A]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
       st::fn_00405F15(g_visibleClass_00802A88,0,puVar1);
     }
     puVar1 = puVar1 + 1;
@@ -2692,10 +2700,12 @@ void __thiscall st::fn_0056A8D0(void *this,byte param_1,byte param_2,char param_
   if ((g_visibleClass_00802A88 != nullptr) &&
      (param_2 == STField<byte>(this,0x112d))) {
     if (param_3 == '\0') {
+      /* ST_CALLSITE[0056A913]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
       st::fn_00405F15(g_visibleClass_00802A88,0,puVar1);
       return;
     }
     if (STField<char>(this,0x1474) != '\0') {
+      /* ST_CALLSITE[0056A92D]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
       st::fn_00405F15(g_visibleClass_00802A88,1,puVar1);
     }
   }
@@ -2730,10 +2740,12 @@ void __thiscall st::fn_0056A960(void *this,byte param_1,byte param_2)
   if ((g_visibleClass_00802A88 != nullptr) &&
      (param_2 == STField<byte>(this,0x112d))) {
     if (cVar2 == '\0') {
+      /* ST_CALLSITE[0056A9AE]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
       st::fn_00405F15(g_visibleClass_00802A88,0,puVar1);
       return;
     }
     if (STField<char>(this,0x1474) != '\0') {
+      /* ST_CALLSITE[0056A9C9]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
       st::fn_00405F15(g_visibleClass_00802A88,1,puVar1);
     }
   }
@@ -2763,6 +2775,7 @@ void __thiscall st::fn_0056AA00(void *this,byte param_1,char param_2)
           pcVar3 = (char *)((int)this + 0x11ca);
           do {
             if (((pcVar3[-1] != -1) && (bVar2 != param_1)) && (*pcVar1 == *pcVar3)) {
+              /* ST_CALLSITE[0056AA88]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
               st::fn_00405F15(g_visibleClass_00802A88,0,local_8);
             }
             bVar2 = bVar2 + 1;
@@ -2772,6 +2785,7 @@ void __thiscall st::fn_0056AA00(void *this,byte param_1,char param_2)
         }
         else if (*pcVar1 ==
                  *(char *)((uint)STField<byte>(this,0x112d) * 0x51 + 0x11ca + (int)this)) {
+          /* ST_CALLSITE[0056AAC0]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
           st::fn_00405F15(g_visibleClass_00802A88,0,puVar4);
         }
       }
@@ -2785,6 +2799,7 @@ void __thiscall st::fn_0056AA00(void *this,byte param_1,char param_2)
           this_00 = g_visibleClass_00802A88;
           do {
             if (((pcVar3[-1] != -1) && (bVar2 != param_1)) && (*pcVar1 == *pcVar3)) {
+              /* ST_CALLSITE[0056AB16]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
               st::fn_00405F15(this_00,1,puVar4);
               this_00 = g_visibleClass_00802A88;
             }
@@ -2795,6 +2810,7 @@ void __thiscall st::fn_0056AA00(void *this,byte param_1,char param_2)
           return;
         }
         if (param_2 == *(char *)((uint)STField<byte>(this,0x112d) * 0x51 + 0x11ca + (int)this)) {
+          /* ST_CALLSITE[0056AB51]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
           st::fn_00405F15(g_visibleClass_00802A88,1,puVar4);
         }
       }
@@ -2825,6 +2841,7 @@ void __thiscall st::fn_0056ABC0(void *this,char *param_1)
         pcVar7 = (char *)((int)this + 0x11c9);
         do {
           if ((*pcVar7 != -1) && (bVar4 != STField<byte>(this,0x112d))) {
+            /* ST_CALLSITE[0056AD25]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
             st::fn_00405F15(g_visibleClass_00802A88,0,puVar5);
           }
           bVar4 = bVar4 + 1;
@@ -2874,6 +2891,7 @@ LAB_0056acb1:
           bVar4 = DAT_0080874d;
         }
         if (!bVar8) {
+          /* ST_CALLSITE[0056ACC9]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
           st::fn_00405F15(g_visibleClass_00802A88,1,puVar5);
           bVar4 = DAT_0080874d;
         }
@@ -2931,6 +2949,7 @@ void __thiscall st::fn_0056F250(void *this,char param_1,byte param_2,char *param
   local_10 = this;
   if (param_2 == 0) {
     if (STField<int>(this,0x1178) != 0) {
+      /* ST_CALLSITE[0056F2E1]: CALL dword ptr [0x0085bde8] */
       st::external_00000080((LPSTR)local_1a8,st::mutable_c_string("%s%s%s\\%s"),(int)this + 0x60,st_global_0079B02C,
                 &CHAR_00h_00807ddd,PTR_s_SAVE_QUICKSAVE_0079b044);
       STField<undefined4>(this,0x1178) = 0;
@@ -2940,6 +2959,7 @@ void __thiscall st::fn_0056F250(void *this,char param_1,byte param_2,char *param
     param_3 = (char *)((int)this + 0x7a02);
   }
   else if (param_3 == nullptr) {
+    /* ST_CALLSITE[0056F2AA]: CALL dword ptr [0x0085bde8] */
     st::external_00000080((LPSTR)local_1a8,st::mutable_c_string("%s%s%s\\%sDEBUG%u"),(int)this + 0x60,st_global_0079B02C
               ,&CHAR_00h_00807ddd,PTR_DAT_0079b050,param_2);
     goto LAB_0056f325;
@@ -2984,6 +3004,7 @@ LAB_0056f325:
         st::fn_0071ADB0
                   (STField<byte *>(local_10,0x7d12),STField<uint>(local_10,0x7d16),(int)pcVar7,
                    PTR_s_TEXTURE_0079b07c,'\x01');
+        /* ST_CALLSITE[0056F40F]: CALL 0x00405849; direct=00405849 STPlaySystemC::Save */
         st::fn_00405849(g_playSystem_00802A38,pcVar7);
         st::fn_006F13F0(pcVar7,0xc,PTR_s_RND_INIT_0079b05c,(byte *)((int)pvVar2 + 0x1134),4,
                       nullptr,'\0',nullptr);
@@ -3097,6 +3118,7 @@ LAB_0056f325:
     pbVar11 = pbVar11 + -1;
     memmove(pbVar11, pbVar8, uVar3); /* compiler REP MOVS byte copy */
     uVar5 = 0;
+    /* ST_CALLSITE[0056F74F]: CALL dword ptr [0x0085bce8] */
     st::external_0000006F((LPCSTR)pbVar6);
     uVar3 = 0xffffffff;
     pbVar8 = local_1a8;
@@ -3137,8 +3159,10 @@ LAB_0056f325:
     pbVar8 = (byte *)(pcVar10 + -uVar3);
     pbVar11 = pbVar11 + -1;
     memmove(pbVar11, pbVar8, uVar3); /* compiler REP MOVS byte copy */
+    /* ST_CALLSITE[0056F7A4]: CALL dword ptr [0x0085bce8] */
     st::external_0000006F((LPCSTR)pbVar6);
     if (g_optPanel_008016DC != nullptr) {
+      /* ST_CALLSITE[0056F7B8]: CALL 0x00405ef7; direct=00405EF7 OptPanelTy::Notification */
       st::fn_00405EF7(g_optPanel_008016DC,'\f',0);
     }
   }
@@ -3173,6 +3197,7 @@ undefined4 __fastcall st::fn_0056F930(AnonShape_0056F930_C6277D80 *param_1)
     iVar5 = *(int *)&param_1[4].field_0x8fa + 1;
     pcVar3 = st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
     pcVar4 = st::fn_006B0140(0x2687,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[0056FA06]: CALL dword ptr [0x0085bde8] */
     st::external_00000080(st::pointer_boundary_cast<LPSTR>(&param_1[6].field_0x10ea),st::mutable_c_string("%s%s%s\\%s%s%s%02d%s%s"),&param_1->field_0x60,
               st_global_0079B02C,&param_1->field_0x7bd,PTR_DAT_0079b050,pcVar4,pcVar3,iVar5,
               pcVar2,puVar6);

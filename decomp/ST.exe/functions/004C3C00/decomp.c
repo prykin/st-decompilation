@@ -138,11 +138,14 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                       }
                       if (((((TLOBaseTy *)local_8 != nullptr) &&
                            ((TLOBaseTy *)local_8 != this_00)) &&
+                          /* ST_CALLSITE[004C3DF8]: CALL dword ptr [EDX + 0xf8] */
                           (dVar7 = (*((TLOBaseTy *)local_8)->vtable->slot_F8)((TLOBaseTy *)local_8),
                           iVar15 = local_18, iVar17 = local_28, dVar7 != 0)) &&
                          ((local_8->field_0024 != 0xff &&
+                          /* ST_CALLSITE[004C3E1C]: CALL dword ptr [EAX + 0xf4] */
                           (iVar9 = (*local_8->vtable->vfunc_F4)(this_00->field_0024),
                           iVar15 = local_18, iVar17 = local_28, iVar9 != 0)))) {
+                        /* ST_CALLSITE[004C3E39]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                         STFishC::sub_004162B0(local_8,&local_12,&local_14,&local_a);
                         thunk_FUN_00416270(local_8,(uint *)local_40,(int *)local_38,local_1c);
                         iVar15 = (int)(short)local_30;
@@ -156,6 +159,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                             STField<int>(local_10,0x281)) {
                           STField<uint>(local_10,0x295) = g_playSystem_00802A38->field_00E4;
                           if ((param_2 == 0) || (this_00->field_0255 == 0)) goto LAB_004c4080;
+                          /* ST_CALLSITE[004C3EE9]: CALL dword ptr [EDX + 0x10] */
                           sVar6 = (*this_00->vtable->vfunc_10)
                                             (*(short *)&local_8->field_0x41,
                                              *(short *)&local_8->field_0x43,
@@ -235,6 +239,7 @@ LAB_004c4192:
                                   }
                                   else {
 LAB_004c41a5:
+                                    /* ST_CALLSITE[004C41A9]: CALL dword ptr [EAX + 0xf0] */
                                     iVar9 = local_8->vfunc_F0();
                                     iVar15 = local_18;
                                     iVar17 = local_28;
@@ -248,6 +253,7 @@ LAB_004c41a5:
                                         iVar9 = *(int *)&local_8->field_0x215;
                                       }
                                       else {
+                                        /* ST_CALLSITE[004C41F1]: CALL dword ptr [EDX + 0x7c] */
                                         iVar9 = local_8->vfunc_7C();
                                       }
                                       iVar15 = local_18;
@@ -284,6 +290,7 @@ LAB_004c41a5:
                                   local_68 = (short)*puVar12;
                                   sStack_66 = (short)((uint)*puVar12 >> 0x10);
                                   local_64 = *(short *)(puVar12 + 1);
+                                  /* ST_CALLSITE[004C401E]: CALL 0x00405907; direct=00405907 STSprGameObjC::CheckRay */
                                   iVar17 = STSprGameObjC::CheckRay
                                                      ((STSprGameObjC *)this_00,
                                                       local_68 + (short)_local_2c,

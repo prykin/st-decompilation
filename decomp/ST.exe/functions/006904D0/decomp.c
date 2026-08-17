@@ -16,6 +16,7 @@ int __thiscall FUN_006904d0(void *this,undefined *param_1,undefined4 param_2)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0))
           && (iVar1 = *(int *)(iVar1 + 4), iVar1 != 0)) &&
+         /* ST_CALLSITE[00690506]: CALL dword ptr [EBP + 0x8] */
          (iVar1 = (*(code *)param_1)(iVar1,param_2), iVar1 != 0)) {
         return iVar1;
       }

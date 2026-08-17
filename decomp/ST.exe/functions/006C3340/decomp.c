@@ -14,6 +14,7 @@ void FUN_006c3340(int param_1)
   tagRECT local_18;
 
   iVar2 = param_1;
+  /* ST_CALLSITE[006C3357]: CALL dword ptr [0x0085be58] */
   GetClientRect(*(HWND *)(*(int *)(param_1 + 4) + 4),&local_18);
   piVar1 = (int *)(param_1 + 4);
   iVar6 = *(int *)(*piVar1 + 0x18);
@@ -72,7 +73,7 @@ LAB_006c33bb:
     *(int *)(iVar2 + 0x28) = iVar6;
     *(int *)(iVar2 + 0x20) = (iVar4 - iVar6) / 2;
   }
-  if ((*(byte *)(iVar2 + 8) & 4) == 0) {
+  if ((((byte *)iVar2)[8] & 4) == 0) {
     iVar6 = *(int *)(iVar2 + 0x24);
     if (iVar7 < iVar6) {
       *(int *)(iVar2 + 0x24) = iVar7;

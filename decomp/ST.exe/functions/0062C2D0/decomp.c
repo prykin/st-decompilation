@@ -58,6 +58,7 @@ bool __cdecl FUN_0062c2d0(AnonShape_0062C2D0_06591E1F *param_1,int param_2,int p
       *(int *)&param_1->field_0x2c = (int)lVar12;
       *(int *)&param_1->field_0x24 = (int)lVar10;
       *(int *)&param_1->field_0x28 = (int)lVar11;
+      /* ST_CALLSITE[0062C49B]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       TraksClassTy::TraksCreate
                 (g_traksClass_00802A7C,3,1,0,*(int *)param_1 + (int)lVar7,
                  *(int *)&param_1->field_0x4 + (int)lVar8,*(int *)&param_1->field_0x8 + (int)lVar9,
@@ -87,6 +88,7 @@ bool __cdecl FUN_0062c2d0(AnonShape_0062C2D0_06591E1F *param_1,int param_2,int p
       lVar7 = Library::MSVCRT::__ftol();
       iVar3 = (int)lVar7 + *(int *)&param_1->field_0x4;
       lVar7 = Library::MSVCRT::__ftol();
+      /* ST_CALLSITE[0062C60E]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       TraksClassTy::TraksCreate
                 (g_traksClass_00802A7C,3,1,3,(int)lVar7 + *(int *)param_1,iVar3,iVar2,sVar13,sVar14,
                  sVar15,sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
@@ -111,6 +113,7 @@ bool __cdecl FUN_0062c2d0(AnonShape_0062C2D0_06591E1F *param_1,int param_2,int p
       lVar7 = Library::MSVCRT::__ftol();
       iVar3 = (int)lVar7 + *(int *)&param_1->field_0x4;
       lVar7 = Library::MSVCRT::__ftol();
+      /* ST_CALLSITE[0062C749]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       TraksClassTy::TraksCreate
                 (g_traksClass_00802A7C,3,1,2,(int)lVar7 + *(int *)param_1,iVar3,iVar2,sVar13,sVar14,
                  sVar15,sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
@@ -135,6 +138,7 @@ bool __cdecl FUN_0062c2d0(AnonShape_0062C2D0_06591E1F *param_1,int param_2,int p
       lVar7 = Library::MSVCRT::__ftol();
       iVar4 = (int)lVar7 + *(int *)&param_1->field_0x4;
       lVar7 = Library::MSVCRT::__ftol();
+      /* ST_CALLSITE[0062C880]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       TraksClassTy::TraksCreate
                 (g_traksClass_00802A7C,3,1,1,(int)lVar7 + *(int *)param_1,iVar4,iVar2,sVar13,sVar14,
                  sVar15,sVar16,sVar17,sVar18,iVar3,sVar20,bVar21);

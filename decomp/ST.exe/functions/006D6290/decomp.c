@@ -26,15 +26,18 @@ int FUN_006d6290(AnonShape_006D6290_6C97E0B2 *param_1,int *param_2)
     iVar3 = *(int *)(iVar2 + 0x28);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (*(code **)(iVar3 + 0x4e4) != nullptr) {
+      /* ST_CALLSITE[006D6318]: CALL ECX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(iVar3 + 0x4e4))
+                /* ST_CALLSITE[006D6318]: CALL ECX */
                 (*(undefined4 *)(iVar3 + 0x4ec),*(int *)(iVar3 + 0x10) + *(int *)(iVar2 + 0x18),
+                 /* ST_CALLSITE[006D6318]: CALL ECX */
                  *(int *)(iVar3 + 0x14) + *(int *)(iVar2 + 0x1c),*(undefined4 *)(iVar2 + 0x20),
                  *(undefined4 *)(iVar2 + 0x24));
     }
   }
   local_8 = &param_1->field_000C;
-  auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+  AnonShape_006D6290_6C97E0B2 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   do {
     iVar3 = FUN_006bbe40(pAVar1->field_0064,(uint *)local_8,&local_10,0);
     if (iVar3 == 0) {
@@ -53,6 +56,7 @@ LAB_006d6394:
       if (iVar3 == 0) goto LAB_006d6394;
       goto LAB_006d6363;
     }
+    /* ST_CALLSITE[006D634E]: CALL dword ptr [ECX + 0x6c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*pAVar1->field_0064 + 0x6c))(pAVar1->field_0064);
     param_1_after_write = (AnonShape_006D6290_6C97E0B2 *)&param_1_after_write->field_0x1;

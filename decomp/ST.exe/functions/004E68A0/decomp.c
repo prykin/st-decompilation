@@ -27,6 +27,7 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
   int *piVar10;
 
   memset(param_4, 0, 0x1e); /* compiler bulk-zero initialization */
+  /* ST_CALLSITE[004E68C2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar3 = LookupRecordByte((char)param_1);
   iVar8 = bVar3 - 1;
   bVar4 = thunk_FUN_004e5c40(param_1,(uint)param_2);
@@ -37,7 +38,7 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
     if (puVar9 != nullptr) {
       iVar6 = 0;
       piVar10 = piVar1;
-      while ((puVar9 != param_2 || (*(byte *)(piVar10 + 1) != param_3))) {
+      while ((puVar9 != param_2 || (((byte *)piVar10)[1] != param_3))) {
         puVar9 = STField<undefined1 *>(piVar10,0x19);
         piVar10 = (int *)((int)piVar10 + 0x19);
         iVar6 = iVar6 + 1;
@@ -58,6 +59,7 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
           iVar7 = thunk_FUN_004e60d0((int)param_1,*(int *)(puVar2 + iVar6));
           if (iVar7 < (int)(uint)bVar3) {
             *(uint *)(param_2_after_write + -5) = (uint)CONCAT12(bVar3,*(undefined2 *)(puVar2 + iVar6));
+            /* ST_CALLSITE[004E6993]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
             bVar3 = LookupRecordByte((char)param_1);
             param_2_after_write[-1] = bVar3;
             bVar4 = thunk_FUN_004e5c40(param_1,*(uint *)((&PTR_DAT_007c0dc8)[iVar8] + iVar6));

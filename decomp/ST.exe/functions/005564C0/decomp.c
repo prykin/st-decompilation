@@ -50,6 +50,7 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_ID_NONE) {
+      /* ST_CALLSITE[005565CC]: CALL 0x004040ca; direct=004040CA TraksClassTy::TraksExec */
       TraksExec(this_00);
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -66,8 +67,10 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
         this_00->field_001C = DAT_00808754 * 0x7d;
       }
       else {
+        /* ST_CALLSITE[00556566]: CALL 0x0040359e; direct=0040359E TraksClassTy::PrepareAfterSave */
         PrepareAfterSave(this_00,local_8);
       }
+      /* ST_CALLSITE[00556590]: CALL 0x00403701; direct=00403701 TraksClassTy::CreateDate */
       CreateDate(this_00);
       if ((g_cMf32_00806754 != nullptr) && (local_8 != nullptr)) {
         cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
@@ -78,7 +81,9 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
   }
   else if (SVar1 == MESS_SHARED_010F) {
     local_c = 0;
+    /* ST_CALLSITE[0055661C]: CALL 0x00404845; direct=00404845 TraksClassTy::PrepareToSave */
     local_10 = PrepareToSave(this_00,&local_c);
+    /* ST_CALLSITE[00556638]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
     if (local_10 != nullptr) {
       FreeAndNull(&local_10);

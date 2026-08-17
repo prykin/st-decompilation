@@ -21,10 +21,13 @@ undefined4 __thiscall FUN_00572920(void *this,byte param_1)
   local_c = 1;
   local_10 = this;
   if ((param_1 & 1) != 0) {
+    /* ST_CALLSITE[00572958]: CALL EBX */
     LVar3 = RegOpenKeyA((HKEY)&DAT_80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version",&local_8);
     if (LVar3 == 0) {
+      /* ST_CALLSITE[00572972]: CALL dword ptr [0x0085b95c] */
       RegSetValueExA(local_8,"LastPlayer",0,1,(BYTE *)((int)this + 0x785),0x40);
     }
+    /* ST_CALLSITE[0057297C]: CALL dword ptr [0x0085b968] */
     RegCloseKey(local_8);
     _DAT_008072f8 = 0;
     _DAT_008072fc = 0x82;
@@ -33,9 +36,12 @@ undefined4 __thiscall FUN_00572920(void *this,byte param_1)
       _DAT_008072f8 = _DAT_008072f8 + (uint)(byte)(&DAT_008072f8)[uVar4];
       uVar4 = uVar4 + 1;
     } while (uVar4 < 0x82);
+    /* ST_CALLSITE[005729D6]: CALL ESI */
     wsprintfA((LPSTR)local_158,"%s%s%s",(int)this + 0x28,PTR_s_SAVEGAME__0079b0cc,
               (int)this + 0x785);
+    /* ST_CALLSITE[005729E4]: CALL dword ptr [0x0085bc7c] */
     CreateDirectoryA((LPCSTR)local_158,(LPSECURITY_ATTRIBUTES)0x0);
+    /* ST_CALLSITE[00572A04]: CALL ESI */
     wsprintfA((LPSTR)local_158,"%s\\%s",local_158,PTR_s_PL_LOG_0079b0d0);
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
@@ -61,10 +67,13 @@ undefined4 __thiscall FUN_00572920(void *this,byte param_1)
   }
   uVar2 = local_c;
   if ((param_1 & 2) != 0) {
+    /* ST_CALLSITE[00572AE5]: CALL EBX */
     LVar3 = RegOpenKeyA((HKEY)&DAT_80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans",&local_8);
     if (LVar3 == 0) {
+      /* ST_CALLSITE[00572B01]: CALL dword ptr [0x0085b95c] */
       RegSetValueExA(local_8,"Editor",0,3,(BYTE *)&DAT_008071f8,0x100);
     }
+    /* ST_CALLSITE[00572B0B]: CALL dword ptr [0x0085b968] */
     RegCloseKey(local_8);
   }
   return uVar2;

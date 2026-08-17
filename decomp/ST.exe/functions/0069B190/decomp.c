@@ -43,6 +43,7 @@ int __thiscall CGenerate::sub_0069B190(CGenerate *this,int param_1,int param_2,i
     *(undefined1 *)puVar2 = 0;
     puVar2 = (ushort *)((int)puVar2 + 1);
   }
+  /* ST_CALLSITE[0069B20C]: CALL 0x00405d0d; direct=00405D0D CGenerate::sub_0069ADA0 */
   sub_0069ADA0(this,(int)this->field_584F,param_3 + 1);
   if (0 < param_3) {
     do {

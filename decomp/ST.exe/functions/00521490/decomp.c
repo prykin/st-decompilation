@@ -47,6 +47,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
     RaiseInternalException(iVar8,0,"E:\\__titans\\Andrey\\infocen.cpp",0x11e);
     return 0xffff;
   }
+  /* ST_CALLSITE[005214CE]: CALL 0x00401401; direct=00401401 SpecPanelTy::GetMessage */
   SpecPanelTy::GetMessage((SpecPanelTy *)local_10,message);
   SVar1 = message->id;
   if (SVar1 < MESS_SHARED_0061) {
@@ -86,6 +87,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
           this_00->field_002E = 2;
           this_00->field_0030 = iVar2;
           if (g_cursorClass_00802A30 != nullptr) {
+            /* ST_CALLSITE[005215EA]: CALL dword ptr [EDX] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
           }
@@ -96,6 +98,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
           this_00->field_002C = 0;
           this_00->field_002E = 2;
           this_00->field_0030 = iVar12;
+          /* ST_CALLSITE[0052161A]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
           g_currentExceptionFrame = local_58.previous;
@@ -105,11 +108,13 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
     }
     else {
       if (SVar1 == MESS_ID_CREATE) {
+        /* ST_CALLSITE[0052150A]: CALL 0x004040b1; direct=004040B1 InfocPanelTy::InitInfocPanel */
         InitInfocPanel(this_00);
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
       if (SVar1 == MESS_SHARED_0003) {
+        /* ST_CALLSITE[005214EF]: CALL 0x004015c3; direct=004015C3 InfocPanelTy::DoneInfocPanel */
         DoneInfocPanel(this_00);
         g_currentExceptionFrame = local_58.previous;
         return 0;
@@ -118,6 +123,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
   }
   else if (SVar1 == MESS_MREPORTTY_B208) {
     this_00->field_03D4 = *(char *)(message->arg0).ptr + -1;
+    /* ST_CALLSITE[0052170C]: CALL 0x00404c69; direct=00404C69 InfocPanelTy::PaintInfoc */
     PaintInfoc(this_00);
   }
   else if (SVar1 == MESS_PLAYPANELTY_B209) {
@@ -141,6 +147,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
       uVar11 = bVar8 + 9;
     }
     pBVar10 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03C4,uVar11);
+    /* ST_CALLSITE[005216C7]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar12 - iVar2,iVar4 - iVar7,'\x01',
            (byte *)pBVar10);
     Library::DKW::DDX::FUN_006b3640

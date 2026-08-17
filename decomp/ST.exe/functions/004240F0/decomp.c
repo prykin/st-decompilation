@@ -31,12 +31,12 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
   if (iVar2 == 0) {
     *param_1 = 0x40;
     if (local_10->field_0029 != nullptr) {
-      local_c = (undefined4 *)FUN_006b0020(local_10->field_0029,(int *)&local_8);
+      local_c = FUN_006b0020(local_10->field_0029,(int *)&local_8);
       FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
     }
     if (pSVar6->field_002D != nullptr) {
-      local_c = (undefined4 *)FUN_006b0020(pSVar6->field_002D,(int *)&local_8);
+      local_c = FUN_006b0020(pSVar6->field_002D,(int *)&local_8);
       FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
     }
@@ -57,7 +57,7 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
       STField<undefined4>(pvVar2,0x20) = 0;
     }
     else {
-      local_c = (undefined4 *)FUN_006b0020(pSVar6->field_0029,(int *)&local_8);
+      local_c = FUN_006b0020(pSVar6->field_0029,(int *)&local_8);
       puVar7 = (byte *)(local_c);
       puVar8 = (byte *)((int)pvVar2 + 0x40);
       memmove(puVar8, puVar7, local_8); /* compiler REP MOVS byte copy */
@@ -74,7 +74,7 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
     }
     else {
       local_14 = iVar4;
-      local_c = (undefined4 *)FUN_006b0020(pSVar6->field_002D,(int *)&local_8);
+      local_c = FUN_006b0020(pSVar6->field_002D,(int *)&local_8);
       puVar7 = (byte *)(local_c);
       puVar8 = (byte *)(iVar4 + (int)pvVar2);
       memmove(puVar8, puVar7, local_8); /* compiler REP MOVS byte copy */

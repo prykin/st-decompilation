@@ -44,6 +44,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
     RaiseInternalException(iVar5,0,"E:\\__titans\\Artem\\TLO_dock.cpp",0x342);
     return iVar5;
   }
+  /* ST_CALLSITE[004D0BCF]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
   STSprGameObjC::GetMessage((STSprGameObjC *)local_c,message);
   SVar2 = message->id;
   if (SVar2 == MESS_ID_CREATE) {
@@ -80,6 +81,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
           iVar10 = 0;
           do {
             psVar1 = (short *)((int)pTVar4->field_024D + iVar10);
+            /* ST_CALLSITE[004D0D89]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
             exceptionCode =
                  DumpClassC::WritePtr
                            (*psVar1,*(short *)((int)pTVar4->field_024D + iVar10 + 4),psVar1[4],0,
@@ -134,6 +136,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
         pbVar8 = pbVar8 + 1;
       }
     }
+    /* ST_CALLSITE[004D0C75]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,pTVar4->field_0018,local_8,pTVar4->field_0245 * 0xc + 0x1c);
     FreeAndNull(&local_8);

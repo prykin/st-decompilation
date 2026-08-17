@@ -12,6 +12,7 @@ undefined4 __thiscall FUN_005fada0(void *this,int param_1,uint param_2,int param
 
   uVar3 = 0;
   if (STField<int>(this,0x2e6) == 0) {
+    /* ST_CALLSITE[005FADB7]: CALL 0x00401168; direct=00401168 STColl3C::CreateAddSpr */
     STColl3C::CreateAddSpr(this);
   }
   else {

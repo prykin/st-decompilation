@@ -124,8 +124,8 @@ void st::fn_0055F410
   RuntimeRecord_008032F4_0014 *temp_203fd2ac8a80;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079afd0);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_0079afd0;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 44);
   local_6c[0] = nullptr;
@@ -1415,8 +1415,8 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
   RuntimeRecord_008032F8_0014 *temp_3f50488dac;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079aff0);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_0079aff0;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 44);
   local_6c[0] = nullptr;
@@ -2338,6 +2338,8 @@ uint * st::fn_00565820(uint param_1,int param_2,int param_3,int param_4,int para
                          uint param_7)
 
 {
+  int scalar_local_18;
+
   byte bVar1;
   byte bVar2;
   dword dVar3;
@@ -2644,7 +2646,7 @@ LAB_00565c6c:
       local_94[local_8 + 5] = pDVar6_mg1->count;
       local_20 = local_1c;
       if (0 < local_28) {
-        int scalar_local_18 = (int)local_2c * 8; /* split integer lifetime from pointer-typed SSA storage */
+        scalar_local_18 = (int)local_2c * 8; /* split integer lifetime from pointer-typed SSA storage */
         do {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar15 = *(int *)(scalar_local_18 + 0x10 + (int)local_14) + local_38;
@@ -2788,7 +2790,7 @@ cf_common_exit_0056623F:
   st::fn_006AB060(&local_48);
   st::fn_006AB060(&local_14);
   if (iVar15 == 0) {
-    return st::pointer_boundary_cast<uint *>(&local_24->flags);
+    return &local_24->flags;
   }
   st::fn_006AB060(&local_24);
   st::fn_006A5E40

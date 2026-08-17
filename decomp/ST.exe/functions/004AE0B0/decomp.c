@@ -115,6 +115,7 @@ cf_break_loop_004AE25B:
   }
 LAB_004ae37e:
   if (((param_9 == 0) ||
+      /* ST_CALLSITE[004AE38F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       (bVar3 = LookupRecordByte((char)param_5), sVar15 = g_worldGrid.sizeX, bVar3 == 3)) &&
      ((sVar15 = g_worldGrid.sizeX, local_18 != 0 && (local_18 = 0, param_3 < 4)))) {
     local_18 = 1;
@@ -136,12 +137,12 @@ LAB_004ae37e:
 LAB_004ae41c:
   if (param_4 - CASE_38 < 0x2a) {
                     /* WARNING: Switch is manually overridden */
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    switch(*(undefined1 *)(param_4 + 0x4aecb0)) {
+    switch(((undefined1 *)param_4)[0x4aecb0]) {
     case 0:
       local_c = 0;
       local_10 = (STFishC *)thunk_FUN_004d85e0(_param_1,param_2,param_3);
       if (local_10 != nullptr) {
+        /* ST_CALLSITE[004AE467]: CALL dword ptr [EDX + 0x2c] */
         dVar8 = local_10->slot_2C();
                     /* WARNING: Switch is manually overridden */
         switch((&BYTE_004aecec)[param_4]) {
@@ -199,6 +200,7 @@ LAB_004ae41c:
       if ((pDVar12 != nullptr) && (uVar19 = 0, 0 < (int)pDVar12->count)) {
         do {
           DArrayGetElement(pDVar12,uVar19,&local_10);
+          /* ST_CALLSITE[004AE92E]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
           if ((((STPiece<2,2>(param_9) != _param_1) || ((local_6 != param_2 || (local_8 != param_3)))) &&
               (uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
@@ -220,6 +222,7 @@ LAB_004ae41c:
         if (0 < (int)pDVar12->count) {
           do {
             DArrayGetElement(pDVar12,uVar19,&local_10);
+            /* ST_CALLSITE[004AE9F4]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
             if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
                ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
@@ -242,6 +245,7 @@ LAB_004ae41c:
         if (0 < (int)pDVar12->count) {
           do {
             DArrayGetElement(pDVar12,uVar19,&local_10);
+            /* ST_CALLSITE[004AEABB]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
             if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
                ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
@@ -264,6 +268,7 @@ LAB_004ae41c:
         if (0 < (int)pDVar12->count) {
           do {
             DArrayGetElement(pDVar12,uVar19,&local_10);
+            /* ST_CALLSITE[004AEB82]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
             if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
                ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
@@ -286,6 +291,7 @@ LAB_004ae41c:
         if (0 < (int)pDVar12->count) {
           do {
             DArrayGetElement(pDVar12,uVar19,&local_10);
+            /* ST_CALLSITE[004AEC45]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
             if ((((STPiece<2,2>(param_9) != _param_1) || (local_6 != param_2)) || (local_8 != param_3)) &&
                ((uVar10 = STPiece<2,2>(param_9) - _param_1, uVar13 = (int)uVar10 >> 0x1f,
@@ -309,10 +315,13 @@ LAB_004ae41c:
            (pSVar1 = g_worldGrid.cells
                      [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)sVar4 +
                       (int)param_1].objects[0], pSVar1 == nullptr)))))))) ||
+       /* ST_CALLSITE[004AE631]: CALL dword ptr [EDX + 0x2c] */
        (((iVar11 = pSVar1->GetObjectTypeId(), iVar11 != 0x53 ||
          ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
+        /* ST_CALLSITE[004AE649]: CALL dword ptr [EDX + 0x2c] */
         (((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
           iVar11 < 0x54 ||
+          /* ST_CALLSITE[004AE655]: CALL dword ptr [EAX + 0x2c] */
           (iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
           0x5a < iVar11)) ||
          ((param_10 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != param_10)))))))) {
@@ -324,10 +333,13 @@ LAB_004ae41c:
              (pSVar1 = g_worldGrid.cells
                        [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)sVar15 +
                         (int)sVar5].objects[0], pSVar1 == nullptr)))))))) ||
+         /* ST_CALLSITE[004AE6F9]: CALL dword ptr [EDX + 0x2c] */
          (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10, iVar11 != 0x53
            || ((param_10 != nullptr && (*(int **)&pSVar1->field_0x18 != param_10)))) &&
+          /* ST_CALLSITE[004AE711]: CALL dword ptr [EAX + 0x2c] */
           (((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
             iVar11 < 0x54 ||
+            /* ST_CALLSITE[004AE71D]: CALL dword ptr [EDX + 0x2c] */
             (iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
             0x5a < iVar11)) ||
            ((piVar2 != nullptr && (*(int **)&pSVar1[0x29].field_0xf != piVar2)))))))) {
@@ -337,10 +349,13 @@ LAB_004ae41c:
              (pSVar1 = g_worldGrid.cells
                        [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar4 * (int)sVar15 +
                         (int)sVar5].objects[0], pSVar1 != nullptr)))) &&
+           /* ST_CALLSITE[004AE7B6]: CALL dword ptr [EDX + 0x2c] */
            (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10, iVar11 == 0x53
              && ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
+            /* ST_CALLSITE[004AE7CE]: CALL dword ptr [EAX + 0x2c] */
             ((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
              0x53 < iVar11 &&
+             /* ST_CALLSITE[004AE7DA]: CALL dword ptr [EDX + 0x2c] */
              ((iVar11 = pSVar1->GetObjectTypeId(), sVar15 = g_worldGrid.sizeX,
               iVar11 < 0x5b &&
               ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
@@ -354,10 +369,13 @@ LAB_004ae41c:
                    (pSVar1 = g_worldGrid.cells
                              [(int)sVar14 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)sVar4
                               + (int)param_1].objects[0], pSVar1 != nullptr)))) &&
+                 /* ST_CALLSITE[004AE88A]: CALL dword ptr [EDX + 0x2c] */
                  (((iVar11 = pSVar1->GetObjectTypeId(), piVar2 = param_10,
                    iVar11 == 0x53 &&
                    ((param_10 == nullptr || (*(int **)&pSVar1->field_0x18 == param_10)))) ||
+                  /* ST_CALLSITE[004AE8A2]: CALL dword ptr [EAX + 0x2c] */
                   (((iVar11 = pSVar1->GetObjectTypeId(), 0x53 < iVar11 &&
+                    /* ST_CALLSITE[004AE8B2]: CALL dword ptr [EDX + 0x2c] */
                     (iVar11 = pSVar1->GetObjectTypeId(), iVar11 < 0x5b)) &&
                    ((piVar2 == nullptr || (*(int **)&pSVar1[0x29].field_0xf == piVar2)))))))))) {
           local_c = 1;

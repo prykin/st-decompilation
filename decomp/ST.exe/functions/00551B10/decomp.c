@@ -17,6 +17,7 @@ void __thiscall TradePanelTy::sub_00551B10(TradePanelTy *this)
       *(uint *)&this->field_0x2c = (uint)(ushort)(&this->field_01BC)[(byte)this->field_01D0];
       FUN_006e6080(this,2,this->field_01C0,(undefined4 *)&this->field_0x18);
     }
+    /* ST_CALLSITE[00551B73]: CALL 0x0040578b; direct=0040578B TradePanelTy::sub_00551800 */
     sub_00551800(this);
   }
   return;

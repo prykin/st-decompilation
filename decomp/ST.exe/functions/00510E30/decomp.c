@@ -221,14 +221,17 @@ LAB_00510fa9:
   pCVar6 = thunk_FUN_00571240("BUT_HLPLINK",0);
   local_EAX_739 = cMf32::RecGet(g_cMf32_00806790,1,pCVar6,piVar23,iVar27);
   this_00->field_024C = local_EAX_739;
+  /* ST_CALLSITE[0051112C]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
   pcVar7 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
   this_00->field_01E0 = pcVar7;
   pcVar7->field_0058 = 0;
   pcVar7->field_005C = 0;
+  /* ST_CALLSITE[0051114C]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
   pcVar7 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_002C);
   this_00->field_01E4 = pcVar7;
   pcVar7->field_0058 = 1;
   pcVar7->field_005C = 0;
+  /* ST_CALLSITE[0051116F]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
   pcVar7 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
   this_00->field_01E8 = pcVar7;
   pcVar7->field_0058 = 1;
@@ -317,6 +320,7 @@ LAB_00510fa9:
     *(undefined1 *)puVar28 = 0xff;
     puVar28 = (undefined4 *)((int)puVar28 + 1);
   }
+  /* ST_CALLSITE[005113C2]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)this_00->field_01DC
         );
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0068,0,0x6c,2,0x117,0xc);
@@ -334,6 +338,7 @@ LAB_00510fa9:
   uVar16 = 0xc000;
   uVar14 = 0xbfff;
   pCVar6 = thunk_FUN_00571240("BUT_MEDIUM",0);
+  /* ST_CALLSITE[00511440]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
   uVar14 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x195,0x17b,1,pCVar6,uVar14,uVar16,sVar18,
                                uVar19,uVar21,pcVar22,uVar26,uVar29);
   local_c = this_00->field_0180;
@@ -358,6 +363,7 @@ LAB_00510fa9:
     iVar17 = iVar27 + 0xc0af;
     sVar18 = 2;
     pCVar6 = thunk_FUN_00571240("BUT_HLPHOME",0);
+    /* ST_CALLSITE[005114D9]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
     uVar12 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,iVar24,0x151,1,pCVar6,iVar15,iVar17,sVar18,
                                  uVar19,uVar14,pcVar22,uVar16,uVar21);
     iVar27 = iVar27 + 1;
@@ -366,7 +372,9 @@ LAB_00510fa9:
     local_c = local_c + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
+  /* ST_CALLSITE[005114FC]: CALL 0x004027ac; direct=004027AC HelpPanelTy::PrepMissObj */
   PrepMissObj(this_00);
+  /* ST_CALLSITE[00511503]: CALL 0x004029c8; direct=004029C8 HelpPanelTy::HomeBut */
   HomeBut(this_00);
   g_currentExceptionFrame = local_6c.previous;
   return;

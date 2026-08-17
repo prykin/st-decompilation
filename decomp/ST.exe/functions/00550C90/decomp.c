@@ -33,13 +33,13 @@ void * __cdecl FUN_00550c90(void)
     this[0x10] = 0x13d;
     this[0x12] = 0x8c;
     this[0x60] = 0;
-    *(undefined1 *)(this + 0x61) = 0;
+    ((undefined1 *)this)[0x61] = 0;
     STField<undefined1>(this,0x1bb) = 2;
     this[0x73] = 0;
     this[0x72] = 0;
     this[0x71] = 0;
     this[0x70] = 0;
-    *(undefined1 *)(this + 0x74) = 0;
+    ((undefined1 *)this)[0x74] = 0;
     STField<undefined4>(this,0x1d9) = 0;
     STField<undefined4>(this,0x1d5) = 0;
     STField<undefined4>(this,0x1d1) = 0;

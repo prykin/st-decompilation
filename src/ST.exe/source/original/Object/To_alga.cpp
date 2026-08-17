@@ -118,6 +118,7 @@ int __thiscall st::fn_00575CB0(STAlgaC *this,STMessage *message)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_20 = *(AnonShape_0060EA30_DCEB68AD **)((message->arg0).u32 + 0x14);
     local_10 = (AnonShape_00575CB0_065D0A66 *)((message->arg0).u32 + 0x18);
+    /* ST_CALLSITE[005760B5]: CALL dword ptr [0x0085bbb8] */
     BVar8 = st::external_00000023(local_10,(int)local_20 * 0x92);
     if (BVar8 != 0) {
       st::fn_006A5E40
@@ -144,7 +145,7 @@ int __thiscall st::fn_00575CB0(STAlgaC *this,STMessage *message)
             if (piVar22 == nullptr) goto LAB_005761b9;
             pbVar26 = *(byte **)((int)pSVar18->field_0038 + *piVar22 * 8);
             local_8 = (AnonShape_00575CB0_0408A0C4 *)((int)pSVar18->field_0038 + *piVar22 * 8);
-            pbVar9 = st::pointer_boundary_cast<byte *>(&local_10->field_0x6);
+            pbVar9 = &local_10->field_0x6;
             do {
               bVar2 = *pbVar26;
               bVar29 = bVar2 < *pbVar9;
@@ -164,7 +165,7 @@ LAB_00576168:
 LAB_0057616d:
           } while (iVar14 != 0);
           pAVar27 = local_8->field_0004;
-          pbVar9 = st::pointer_boundary_cast<byte *>(&local_10->field_0x46);
+          pbVar9 = &local_10->field_0x46;
           do {
             bVar2 = pAVar27->field_0000;
             bVar29 = bVar2 < *pbVar9;
@@ -202,7 +203,7 @@ LAB_005761b9:
                          0x9a);
             }
             local_5c = *(undefined4 *)local_EAX_1365;
-            puVar28 = st::pointer_boundary_cast<undefined1 *>(&pAVar5->field_0x46);
+            puVar28 = &pAVar5->field_0x46;
             local_58 = STField<undefined4>(local_EAX_1365,0x21);
             local_4c = 0x5a;
             local_48 = 0x4b;
@@ -352,7 +353,7 @@ LAB_00576308:
       } while (local_18 < (int)local_20);
     }
     if (0 < pSVar18->field_003C) {
-      st::fn_006ACCD0(pSVar18->field_0040,(undefined4 *)pSVar18->field_003C,0x2c,st::pointer_boundary_cast<STFnType_callback_006ACCD0_p3_a4a7f328 *>(st::fn_00403AC6));
+      st::fn_006ACCD0(pSVar18->field_0040,(undefined4 *)pSVar18->field_003C,0x2c,st::pointer_boundary_cast<STFnType_callback_006ACCD0_p3_a4a7f328 *>(st::fn_00575C80));
       pSVar6 = g_sT3DSMAPContext_00807598;
       iVar14 = pSVar18->field_003C;
       g_sT3DSMAPContext_00807598->field_0290 = st::machine_word_boundary_cast<undefined4>(pSVar18->field_0040);
@@ -437,7 +438,7 @@ LAB_00576308:
         pcVar23 = st::pointer_boundary_cast<char *>(&pAVar5->field_0x6);
         memmove(pcVar23, pcVar21, uVar15); /* compiler REP MOVS byte copy */
         uVar16 = 0;
-        puVar28 = st::pointer_boundary_cast<undefined1 *>(&local_10->field_0x46);
+        puVar28 = &local_10->field_0x46;
         pAVar5 = local_10 + 1;
         uVar15 = 0xffffffff;
         pcVar21 = *(char **)((int)pSVar18->field_0038 + *(int *)local_8 * 8 + 4);
@@ -523,6 +524,7 @@ LAB_00576308:
         local_10 = (AnonShape_00575CB0_065D0A66 *)&pAVar5->field_0002;
       } while (local_18 < pSVar18->field_003C);
     }
+    /* ST_CALLSITE[00575F96]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     st::fn_004025F9(g_playSystem_00802A38,pSVar18->field_0018,local_1c,(uint)local_20);
     st::fn_006AB060(&local_1c);
     g_currentExceptionFrame = local_a4.previous;

@@ -90,6 +90,7 @@ int __thiscall MMsgTy::GetMessage(MMsgTy *this,STMessage *message)
     default:
       goto switchD_005b939a_default;
     }
+    /* ST_CALLSITE[005B93F2]: CALL 0x0040499e; direct=0040499E MMObjTy::PaintSprBut */
     MMObjTy::PaintSprBut((MMObjTy *)this_00,(int)message,uVar7,iVar6,iVar8,-1);
   }
 switchD_005b939a_default:
@@ -104,23 +105,29 @@ switchD_005b939a_default:
       }
     }
     else {
+      /* ST_CALLSITE[005B9437]: CALL dword ptr [EAX + 0x8] */
       this_00->CloseSprBut();
     }
   }
   switch(message->id) {
   case MESS_ID_NONE:
+    /* ST_CALLSITE[005B9482]: CALL 0x00403693; direct=00403693 MMsgTy::NoneMMsg */
     NoneMMsg(this_00);
     break;
   case MESS_ID_CREATE:
+    /* ST_CALLSITE[005B9467]: CALL 0x004020d1; direct=004020D1 MMsgTy::InitMMsg */
     InitMMsg(this_00);
     break;
   case MESS_SHARED_0003:
+    /* ST_CALLSITE[005B9470]: CALL 0x0040501f; direct=0040501F MMsgTy::DoneMMsg */
     DoneMMsg(this_00);
     break;
   case MESS_SHARED_0005:
+    /* ST_CALLSITE[005B9479]: CALL 0x00401bb8; direct=00401BB8 MMsgTy::PaintMMsg */
     PaintMMsg(this_00);
   }
   g_currentExceptionFrame = local_4c.previous;
+  /* ST_CALLSITE[005B9493]: CALL 0x00401280; direct=00401280 MMObjTy::GetMessage */
   iVar4 = MMObjTy::GetMessage((MMObjTy *)this_00,message);
   return iVar4;
 }

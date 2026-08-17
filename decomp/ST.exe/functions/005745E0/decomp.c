@@ -94,7 +94,7 @@ cf_break_loop_00574651:
                       if ((int)uVar9 < 0) {
                         uVar9 = (uVar9 - 1 | 0xfffffffc) + 1;
                       }
-                      bVar5 = *(byte *)(uVar9 + 0x7ca6a8);
+                      bVar5 = ((byte *)uVar9)[0x7ca6a8];
                     }
                     pbVar12 = (byte *)((int)local_24 +
                                       (STSignedDiv4(uVar10)) +

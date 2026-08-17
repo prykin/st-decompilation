@@ -53,13 +53,16 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
       local_8 = 0;
+      /* ST_CALLSITE[00648102]: CALL 0x00403341; direct=00403341 AiBossClassTy::PrepareToSave */
       local_c = PrepareToSave(local_10,&local_8);
+      /* ST_CALLSITE[0064811E]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
       if (local_c != nullptr) {
         FreeAndNull(&local_c);
       }
     }
     else if (SVar1 == MESS_ID_NONE) {
+      /* ST_CALLSITE[006480EB]: CALL 0x00401be0; direct=00401BE0 AiEventClassTy::GetMessage */
       AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->vtable_at_1c,message);
     }
     else if (SVar1 == MESS_ID_CREATE) {
@@ -68,6 +71,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
         RaiseInternalException
                   (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss.cpp",0x61);
       }
+      /* ST_CALLSITE[006480D2]: CALL 0x00403774; direct=00403774 AiBossClassTy::InitData */
       InitData(this_00,puVar9);
       g_aiBossClass_008117BC = this_00;
       thunk_FUN_0064a450();
@@ -84,6 +88,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
         if (uVar6 < local_10->field_0629 + 5) goto LAB_00648291;
         local_10->field_0629 = uVar6;
       }
+      /* ST_CALLSITE[00648186]: CALL 0x00401be0; direct=00401BE0 AiEventClassTy::GetMessage */
       AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->vtable_at_1c,message);
       if (g_allPlayers_007FA174 != nullptr) {
         cVar11 = '\0';
@@ -91,6 +96,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
         do {
           if ((*pbVar8 != 0xff) &&
              (this_01 = thunk_FUN_004357f0(cVar11), this_01 != nullptr)) {
+            /* ST_CALLSITE[006481BC]: CALL dword ptr [EDX] */
             this_01->GetMessage(message);
           }
           pbVar8 = pbVar8 + 0x51;

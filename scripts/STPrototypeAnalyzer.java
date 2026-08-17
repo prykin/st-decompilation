@@ -47,6 +47,7 @@ import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.Reference;
+import ghidra.program.model.symbol.ReferenceIterator;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.StackReference;
 
@@ -69,6 +70,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
     private final Set<TargetKey> localPointerOutputTargets = new TreeSet<>();
     private final Map<TargetKey, String> definiteOutputTypes = new HashMap<>();
     private final List<CallSiteAudit> callSiteAudits = new ArrayList<>();
+    private final List<ByteBufferAudit> byteBufferAudits = new ArrayList<>();
+    private final Map<TargetKey, ByteBufferProof> byteBufferProofs = new TreeMap<>();
     private Map<TargetKey, String> inferredSeeds = Map.of();
     private DataTypeManager dataTypes;
     private int reverseReturnEvidence;
@@ -84,6 +87,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         dataTypes = currentProgram.getDataTypeManager();
         definiteOutputTypes.clear();
+        byteBufferProofs.clear();
         int functionsSeen = 0, callSites = 0, propagationPasses = 0;
         List<Map<TargetKey, String>> seedHistory = new ArrayList<>();
         Map<String, Integer> seedStateIndex = new LinkedHashMap<>();
@@ -96,6 +100,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
             boundaryEdges.clear();
             localPointerOutputTargets.clear();
             callSiteAudits.clear();
+            byteBufferAudits.clear();
             reverseReturnEvidence = 0;
             sccComponents = 0;
             sccTargets = 0;
@@ -126,6 +131,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 boundaryEdges.clear();
                 localPointerOutputTargets.clear();
                 callSiteAudits.clear();
+                byteBufferAudits.clear();
                 reverseReturnEvidence = 0;
                 sccComponents = 0;
                 sccTargets = 0;
@@ -145,6 +151,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
         List<Proposal> proposals = makeProposals();
         writeTsv(directory.resolve("prototype_proposals.tsv"), proposals);
         writeCallSiteAudit(directory.resolve("prototype_callsite_audit.tsv"));
+        writeByteBufferAudit(directory.resolve("prototype_byte_buffer_audit.tsv"));
         writeUndefinedBoundaryAudit(
             directory.resolve("prototype_undefined_boundary_audit.tsv"));
         writeSummary(directory.resolve("prototype_summary.txt"), proposals,
@@ -194,6 +201,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
             if (function.isThunk() || function.isExternal() || isLibrary(function)) continue;
             functions++;
             addLocalParameterEvidence(function);
+            addLocalByteBufferEvidence(function);
             calls += analyze(function);
         }
         return new ScanCounts(functions, calls);
@@ -256,6 +264,334 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 }
             }
         }
+    }
+
+    /**
+     * Recover a mutable byte-buffer role from the callee's complete x86 dataflow.
+     *
+     * A pointer to Ghidra's generic undefined word often means only that the
+     * decompiler guessed the pointee from the transport used to copy it.  The
+     * pointee may be refined to byte only when complete alias dataflow observes
+     * byte reads and writes at two exact callsites. Wider accesses normally cancel
+     * the proof; the sole exception is an automation-owned packed shape made only
+     * of adjacent generic bytes, where those accesses are optimized transports.
+     * This establishes storage role, not a string, array extent, or payload type.
+     */
+    private void addLocalByteBufferEvidence(Function function) throws Exception {
+        int directCallSites = exactDirectCallSites(function);
+        for (Parameter parameter : explicitParameters(function)) {
+            DataType formal = unwrap(parameter.getFormalDataType());
+            if (!parameter.hasStackStorage() || protectedSource(parameter.getSource()) ||
+                    !(formal instanceof Pointer pointer)) continue;
+            DataType pointed = unwrap(pointer.getDataType());
+            boolean generatedByteTransport = generatedByteTransportView(pointed);
+            if (pointed != null && !Undefined.isUndefined(pointed) &&
+                    !"/void".equals(pointed.getPathName()) &&
+                    !generatedByteTransport) continue;
+
+            TargetKey key = new TargetKey(function.getEntryPoint(), "parameter",
+                parameter.getOrdinal());
+            ByteBufferProof proof = byteBufferProofs.get(key);
+            if (proof == null) {
+                proof = proveMutableByteBuffer(function, parameter, directCallSites);
+                byteBufferProofs.put(key, proof);
+            }
+            byteBufferAudits.add(new ByteBufferAudit(function.getEntryPoint(),
+                function.getName(true), parameter.getOrdinal(), parameter.getName(),
+                typeSpecification(parameter.getFormalDataType()), proof.directCallSites,
+                proof.byteReads.size(), proof.byteWrites.size(),
+                proof.bulkTransports.size(), proof.wideDereferences.size(),
+                proof.escapes.size(), proof.complete, proof.qualifies,
+                proof.status(), proof.evidence()));
+            if (proof.qualifies)
+                addParameterEvidence(function, parameter, "pointer:/byte", "", true,
+                    proof.evidence());
+        }
+    }
+
+    private ByteBufferProof proveMutableByteBuffer(Function function,
+            Parameter parameter, int directCallSites) throws Exception {
+        ByteBufferProof proof = new ByteBufferProof(directCallSites);
+        if (function.getBody().getNumAddresses() > 0x10000) {
+            proof.complete = false;
+            proof.failure = "function_too_large";
+            return proof;
+        }
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null) {
+            proof.complete = false;
+            proof.failure = "missing_entry_instruction";
+            return proof;
+        }
+
+        Deque<ByteAliasState> pending = new ArrayDeque<>();
+        Set<ByteAliasState> visited = new HashSet<>();
+        pending.add(new ByteAliasState(entry.getAddress(), 0, Set.of()));
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            monitor.checkCancelled();
+            ByteAliasState state = pending.removeFirst();
+            if (!visited.add(state)) continue;
+            if (++nodes > 200000) {
+                proof.complete = false;
+                proof.failure = "dataflow_state_limit";
+                break;
+            }
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (instruction == null ||
+                    !function.getBody().contains(instruction.getAddress())) {
+                proof.complete = false;
+                proof.failure = "incomplete_cfg";
+                break;
+            }
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(
+                instruction.toString().toUpperCase(Locale.ROOT));
+            int aliases = state.registerAliases;
+            Set<Long> stackAliases = new TreeSet<>(state.stackAliases);
+            String site = addr(instruction.getAddress()) + " " + instruction;
+
+            boolean stringOperation = observeByteBufferStringOperation(
+                mnemonic, aliases, proof, site);
+            if (!stringOperation && !"LEA".equals(mnemonic)) {
+                for (int operandIndex = 0; operandIndex < operands.length;
+                        operandIndex++) {
+                    String operand = operands[operandIndex];
+                    if (!operand.contains("[") ||
+                            (memoryRegisterMask(operand) & aliases) == 0) continue;
+                    int width = memoryOperandWidth(operand);
+                    if (width != 1) {
+                        proof.wideDereferences.add(site + " operand=" + operand +
+                            " width=" + width);
+                        continue;
+                    }
+                    boolean write = operandIndex == 0 &&
+                        writesFirstOperand(mnemonic);
+                    boolean read = !write || readsWrittenMemory(mnemonic);
+                    if (read) proof.byteReads.add(site);
+                    if (write) proof.byteWrites.add(site);
+                }
+            }
+
+            // A bare alias passed to another function or stored outside an EBP
+            // spill escapes this complete local proof.  The callee/owner may be
+            // heterogeneous, so do not specialize it transitively here.
+            if ("PUSH".equals(mnemonic) && operands.length > 0 &&
+                    operandIsAliasRegister(operands[0], aliases))
+                proof.escapes.add(site + " alias passed on stack");
+            if ("CALL".equals(mnemonic) && operands.length > 0 &&
+                    operandIsAliasRegister(operands[0], aliases))
+                proof.escapes.add(site + " alias used as indirect callee");
+
+            if ("MOV".equals(mnemonic) && operands.length >= 2) {
+                MemoryExpr destination = memoryExpr(operands[0]);
+                boolean sourceAlias = operandIsAliasRegister(operands[1], aliases);
+                if (destination != null && "EBP".equals(destination.register)) {
+                    if (sourceAlias) stackAliases.add(destination.displacement);
+                    else stackAliases.remove(destination.displacement);
+                }
+                else if (operands[0].contains("[") && sourceAlias)
+                    proof.escapes.add(site + " alias stored outside a local spill");
+            }
+
+            String destination = operands.length == 0 ? null :
+                cleanRegister(operands[0]);
+            int destinationBit = destination == null ? 0 : registerBit(destination);
+            if (destinationBit != 0 && !isFullRegister(operands[0]) &&
+                    writesRegister(mnemonic)) {
+                // A partial-register write destroys exact equality with the incoming
+                // pointer even though the upper bits survive.  Retaining the alias
+                // through MOV AL,... made a later scalar SHL look like pointer escape.
+                aliases &= ~destinationBit;
+            }
+            else if (destinationBit != 0 && isFullRegister(operands[0]) &&
+                    writesRegister(mnemonic)) {
+                boolean priorAlias = (aliases & destinationBit) != 0;
+                boolean becomesAlias = false;
+                if ("MOV".equals(mnemonic) && operands.length >= 2) {
+                    String source = cleanRegister(operands[1]);
+                    MemoryExpr sourceMemory = memoryExpr(operands[1]);
+                    becomesAlias = source != null &&
+                        (aliases & registerBit(source)) != 0;
+                    if (!becomesAlias && sourceMemory != null &&
+                            "EBP".equals(sourceMemory.register))
+                        becomesAlias = stackAliases.contains(sourceMemory.displacement) ||
+                            operandReferencesParameter(instruction, 1, parameter);
+                }
+                else if ("LEA".equals(mnemonic) && operands.length >= 2)
+                    becomesAlias = (memoryRegisterMask(operands[1]) & aliases) != 0;
+                else if (Set.of("ADD", "SUB", "INC", "DEC").contains(mnemonic))
+                    becomesAlias = priorAlias || operands.length >= 2 &&
+                        operandIsAliasRegister(operands[1], aliases);
+                else if (priorAlias && alignmentDownMask(mnemonic, operands))
+                    becomesAlias = true;
+                else if (priorAlias && !definiteRegisterReplacement(mnemonic, operands))
+                    proof.escapes.add(site + " unsupported affine alias transform");
+                aliases &= ~destinationBit;
+                if (becomesAlias) aliases |= destinationBit;
+            }
+            if ("CALL".equals(mnemonic))
+                aliases &= ~(registerBit("EAX") | registerBit("ECX") |
+                    registerBit("EDX"));
+
+            if (mnemonic.startsWith("RET")) continue;
+            List<Address> successors = instructionSuccessors(function, instruction);
+            if (successors.isEmpty()) {
+                proof.complete = false;
+                proof.failure = "incomplete_cfg_at_" + addr(instruction.getAddress());
+                break;
+            }
+            Set<Long> frozenStackAliases = Set.copyOf(stackAliases);
+            for (Address successor : successors)
+                pending.addLast(new ByteAliasState(successor, aliases,
+                    frozenStackAliases));
+        }
+        proof.qualifies = proof.complete && directCallSites >= 2 &&
+            !proof.byteReads.isEmpty() && !proof.byteWrites.isEmpty() &&
+            (proof.wideDereferences.isEmpty() || generatedByteTransportView(
+                unwrap(((Pointer)unwrap(parameter.getFormalDataType())).getDataType()))) &&
+            proof.escapes.isEmpty();
+        return proof;
+    }
+
+    /**
+     * A script-owned four-byte "record" made exclusively from adjacent generic byte fields
+     * is often the decompiler's view of an optimized byte stream, not a semantic structure.
+     * When complete callee dataflow also proves byte reads and writes, wider loads/stores are
+     * transport operations and the stable source type is byte *.  Named/semantic fields,
+     * non-byte components, manual types, and all non-generated categories remain ineligible.
+     */
+    private boolean generatedByteTransportView(DataType type) {
+        type = unwrap(type);
+        if (!(type instanceof Structure structure) || structure.getLength() < 2 ||
+                structure.getLength() > currentProgram.getDefaultPointerSize() ||
+                !structure.getPathName().contains("/Recovered/PointerShapes/"))
+            return false;
+        String description = structure.getDescription();
+        boolean scriptOwned = description != null &&
+            description.contains("[STPointerShapeApplier]");
+        for (ghidra.program.model.data.DataTypeComponent component :
+                structure.getDefinedComponents()) {
+            if (component.getLength() != 1 || component.getOffset() < 0 ||
+                    component.getOffset() >= structure.getLength() ||
+                    !genericByteComponent(component)) return false;
+            String comment = component.getComment();
+            if (comment != null && comment.contains("[STPointerShapeApplier]"))
+                scriptOwned = true;
+        }
+        // Undefined holes are Ghidra's canonical representation for unclaimed bytes;
+        // they are just as generic as an explicit undefined1 component.  Requiring
+        // every byte to be a defined component made a generated {gap, byte, byte,
+        // gap} transport shape impossible to retire even though the only authored
+        // members were PointerShape-owned byte views.
+        return scriptOwned;
+    }
+
+    private boolean genericByteComponent(
+            ghidra.program.model.data.DataTypeComponent component) {
+        DataType type = unwrap(component.getDataType());
+        if (type == null || type.getLength() != 1 ||
+                !(Undefined.isUndefined(type) || type instanceof AbstractIntegerDataType))
+            return false;
+        String name = component.getFieldName();
+        return name == null || name.isBlank() ||
+            name.matches("field_(?:0x)?[0-9A-Fa-f]+|value_[0-9A-Fa-f]+");
+    }
+
+    private boolean observeByteBufferStringOperation(String mnemonic, int aliases,
+            ByteBufferProof proof, String site) {
+        String base = mnemonic.replace(".REP", "").replace("REP.", "");
+        boolean repeated = mnemonic.contains("REP");
+        int width;
+        if (base.endsWith("B")) width = 1;
+        else if (base.endsWith("W")) width = 2;
+        else if (base.endsWith("D")) width = 4;
+        else return false;
+        boolean moves = base.startsWith("MOVS");
+        boolean loads = base.startsWith("LODS");
+        boolean stores = base.startsWith("STOS");
+        boolean scans = base.startsWith("SCAS");
+        boolean compares = base.startsWith("CMPS");
+        if (!moves && !loads && !stores && !scans && !compares) return false;
+        boolean sourceAlias = (aliases & registerBit("ESI")) != 0;
+        boolean destinationAlias = (aliases & registerBit("EDI")) != 0;
+        boolean reads = sourceAlias && (moves || loads || compares) ||
+            destinationAlias && (scans || compares);
+        boolean writes = destinationAlias && (moves || stores);
+        if (!reads && !writes) return true;
+        if (width == 1) {
+            if (reads) proof.byteReads.add(site);
+            if (writes) proof.byteWrites.add(site);
+        }
+        else if (repeated && moves)
+            proof.bulkTransports.add(site);
+        else proof.wideDereferences.add(site + " string_width=" + width);
+        return true;
+    }
+
+    private int memoryRegisterMask(String operand) {
+        int open = operand.indexOf('['), close = operand.lastIndexOf(']');
+        if (open < 0 || close <= open) return 0;
+        int result = 0;
+        Matcher matcher = Pattern.compile("[A-Z][A-Z0-9]{1,3}")
+            .matcher(operand.substring(open + 1, close).toUpperCase(Locale.ROOT));
+        while (matcher.find()) result |= registerBit(matcher.group());
+        return result;
+    }
+
+    private boolean operandIsAliasRegister(String operand, int aliases) {
+        String register = cleanRegister(operand);
+        return register != null && isFullRegister(operand) &&
+            (aliases & registerBit(register)) != 0;
+    }
+
+    private boolean readsWrittenMemory(String mnemonic) {
+        return !Set.of("MOV", "MOVSX", "MOVZX", "LEA", "POP").contains(mnemonic);
+    }
+
+    private boolean definiteRegisterReplacement(String mnemonic, String[] operands) {
+        if (Set.of("POP", "MOVSX", "MOVZX", "LEA").contains(mnemonic)) return true;
+        if (("XOR".equals(mnemonic) || "SUB".equals(mnemonic)) &&
+                operands.length >= 2 &&
+                cleanRegister(operands[0]) != null &&
+                cleanRegister(operands[0]).equals(cleanRegister(operands[1])))
+            return true;
+        if (!"MOV".equals(mnemonic) || operands.length < 2) return false;
+        return cleanRegister(operands[1]) == null || !isFullRegister(operands[1]);
+    }
+
+    private boolean alignmentDownMask(String mnemonic, String[] operands) {
+        if (!"AND".equals(mnemonic) || operands.length < 2) return false;
+        Long literal = immediate(operands[1]);
+        if (literal == null) return false;
+        long mask = literal & 0xffffffffL;
+        long clearedLowBits = ~mask & 0xffffffffL;
+        // 0xfffffffc, 0xfffffff8, ... retain the same buffer family while
+        // selecting an aligned transport word.  Arbitrary bit masks still kill
+        // pointer identity and remain escapes.
+        return clearedLowBits != 0 && clearedLowBits <= 0xff &&
+            (clearedLowBits & (clearedLowBits + 1)) == 0;
+    }
+
+    private int exactDirectCallSites(Function function) {
+        Set<Address> sites = new TreeSet<>();
+        ReferenceIterator references = currentProgram.getReferenceManager()
+            .getReferencesTo(function.getEntryPoint());
+        while (references.hasNext()) {
+            Reference reference = references.next();
+            if (!reference.getReferenceType().isCall()) continue;
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(reference.getFromAddress());
+            if (instruction == null ||
+                    !"CALL".equalsIgnoreCase(instruction.getMnemonicString())) continue;
+            Function direct = directCalledFunction(instruction);
+            if (direct != null &&
+                    direct.getEntryPoint().equals(function.getEntryPoint()))
+                sites.add(instruction.getAddress());
+        }
+        return sites.size();
     }
 
     private void addDwordUseEvidence(Function function, Parameter parameter,
@@ -1084,10 +1420,15 @@ public class STPrototypeAnalyzer extends GhidraScript {
                  machineForwardedReturn);
             boolean scalarRoleRepair = strongScalarRoleRepair(currentType, proposedType,
                 ev, strongTypeCount);
+            ByteBufferProof byteProof = byteBufferProofs.get(key);
+            boolean byteBufferRepair = "pointer:/byte".equals(proposedType) &&
+                byteProof != null && byteProof.qualifies &&
+                unwrap(target.getFormalDataType()) instanceof Pointer currentPointer &&
+                generatedByteTransportView(currentPointer.getDataType());
             boolean safeScriptRepair = !scriptOwned ||
                 scriptRepairImproves(currentType, proposedType) ||
                 strongPrimitiveRoleRepair(currentType, proposedType, ev,
-                    strongTypeCount) || scalarRoleRepair;
+                    strongTypeCount) || scalarRoleRepair || byteBufferRepair;
             boolean typeChange = compatible && !sameType(currentType, proposedType) &&
                 (safeToRefine(target, proposedType) || scriptOwned) && safeScriptRepair;
             boolean enoughTypeEvidence = "return".equals(key.kind) ?
@@ -1125,6 +1466,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
             if (scriptOwned) reasons.add("script_target_repair");
             if (scalarRoleRepair)
                 reasons.add("post_overwrite_scalar_role_replaces_generated_pointer_view");
+            if (byteBufferRepair)
+                reasons.add("mixed_width_transport_replaces_generated_byte_shape");
             if (scriptOwned && !safeScriptRepair)
                 reasons.add("script_repair_would_lose_semantic_type");
             if (invalidThisName) reasons.add("explicit_parameter_named_this");
@@ -2538,6 +2881,28 @@ public class STPrototypeAnalyzer extends GhidraScript {
         }
     }
 
+    private void writeByteBufferAudit(Path path) throws Exception {
+        byteBufferAudits.sort(Comparator
+            .comparing((ByteBufferAudit row) -> row.address)
+            .thenComparingInt(row -> row.ordinal));
+        try (BufferedWriter out = Files.newBufferedWriter(path,
+                StandardCharsets.UTF_8)) {
+            out.write("function_address\tfunction\tparameter_ordinal\tparameter_name\t" +
+                "current_type\tdirect_call_sites\tbyte_reads\tbyte_writes\t" +
+                "bulk_transports\twide_dereferences\tescapes\tcomplete\tapply\t" +
+                "status\tevidence\n");
+            for (ByteBufferAudit row : byteBufferAudits)
+                out.write(addr(row.address) + "\t" + tsv(row.function) + "\t" +
+                    row.ordinal + "\t" + tsv(row.parameterName) + "\t" +
+                    tsv(row.currentType) + "\t" + row.directCallSites + "\t" +
+                    row.byteReads + "\t" + row.byteWrites + "\t" +
+                    row.bulkTransports + "\t" + row.wideDereferences + "\t" +
+                    row.escapes + "\t" + bit(row.complete) + "\t" +
+                    bit(row.apply) + "\t" + row.status + "\t" +
+                    tsv(row.evidence) + "\n");
+        }
+    }
+
     /**
      * Inventory every undefined function-boundary type, including targets for which no
      * safe proposal exists.  The proposal file necessarily contains only changes; this
@@ -2635,7 +3000,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
             "protected_debug_overrides=" + rows.stream()
                 .filter(r -> r.protectedOverride).count(),
             "conflicts=" + rows.stream().filter(r -> r.confidence.equals("conflict")).count(),
+            "mutable_byte_buffer_candidates=" + byteBufferAudits.size(),
+            "mutable_byte_buffer_auto_apply=" + byteBufferAudits.stream()
+                .filter(ByteBufferAudit::apply).count(),
             "undefined_boundary_audit=prototype_undefined_boundary_audit.tsv",
+            "byte_buffer_audit=prototype_byte_buffer_audit.tsv",
             "note=Only exact explicit argument counts propagate types. The audit preserves " +
                 "deferred caller-cleanup words across calls, consumes actual callee purge bytes, " +
                 "and separates incomplete CFG stack state from proven underflow.",
@@ -2650,6 +3019,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 "unanchored generic cycles cannot validate themselves.",
             "note_narrow_raw=Unobservable signedness on retained 1/2-byte parameters " +
                 "falls back to byte/ushort; undefined4 never receives a raw fallback.",
+            "note_byte_buffers=Mutable byte-pointer refinement requires complete local " +
+                "machine def-use, byte-only dereferences apart from REP MOVS transport, " +
+                "both reads and writes, and at least two exact direct callsites.",
             "note_returns=Unknown EAX producers are traced into trusted arguments, this receivers, typed stores, and return-forwarding wrappers.",
             "note_manual=USER_DEFINED targets are preserved except generic pointer returns " +
                 "created by the legacy debug-symbol convention conversion and independently " +
@@ -2738,6 +3110,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
     }
     private record AccumulatorState(Address address, boolean fullPointer) { }
     private record OutputState(Address address, int aliases, boolean wrote) { }
+    private record ByteAliasState(Address address, int registerAliases,
+        Set<Long> stackAliases) { }
     private enum Extension { NONE, SIGNED, UNSIGNED }
     private static class StoreType {
         final String type, evidence; final boolean strong;
@@ -2750,6 +3124,59 @@ public class STPrototypeAnalyzer extends GhidraScript {
         final Set<String> nullSites = new TreeSet<>();
         final Set<String> nonAddressSites = new TreeSet<>();
     }
+    private static class ByteBufferProof {
+        final int directCallSites;
+        final Set<String> byteReads = new TreeSet<>();
+        final Set<String> byteWrites = new TreeSet<>();
+        final Set<String> bulkTransports = new TreeSet<>();
+        final Set<String> wideDereferences = new TreeSet<>();
+        final Set<String> escapes = new TreeSet<>();
+        boolean complete = true;
+        boolean qualifies;
+        String failure = "";
+        ByteBufferProof(int directCallSites) {
+            this.directCallSites = directCallSites;
+        }
+        String status() {
+            if (!complete) return failure.isBlank() ? "incomplete_cfg" : failure;
+            if (qualifies) return "automatic_mutable_byte_buffer";
+            if (!wideDereferences.isEmpty()) return "mixed_or_wide_pointee";
+            if (!escapes.isEmpty()) return "escaped_local_proof";
+            if (byteReads.isEmpty()) return "no_byte_read";
+            if (byteWrites.isEmpty()) return "read_only_byte_view";
+            if (directCallSites < 2) return "insufficient_direct_calls";
+            return "review";
+        }
+        String evidence() {
+            return "complete mutable byte-buffer machine proof: direct_calls=" +
+                directCallSites + ", byte_reads=" + byteReads.size() +
+                ", byte_writes=" + byteWrites.size() + ", rep_movs_transports=" +
+                bulkTransports.size() + ", wide_dereferences=" +
+                wideDereferences.size() + ", escapes=" + escapes.size() +
+                (failure.isBlank() ? "" : ", failure=" + failure) +
+                "; byte_read_sites=" + sampleEvidence(byteReads) +
+                "; byte_write_sites=" + sampleEvidence(byteWrites) +
+                (wideDereferences.isEmpty() ? "" : "; wide_sites=" +
+                    sampleEvidence(wideDereferences)) +
+                (escapes.isEmpty() ? "" : "; escape_sites=" +
+                    sampleEvidence(escapes));
+        }
+        private static String sampleEvidence(Set<String> values) {
+            if (values.isEmpty()) return "-";
+            List<String> result = new ArrayList<>();
+            for (String value : values) {
+                result.add(value);
+                if (result.size() == 8) break;
+            }
+            if (values.size() > result.size())
+                result.add("... +" + (values.size() - result.size()));
+            return String.join(" | ", result);
+        }
+    }
+    private record ByteBufferAudit(Address address, String function, int ordinal,
+        String parameterName, String currentType, int directCallSites, int byteReads,
+        int byteWrites, int bulkTransports, int wideDereferences, int escapes,
+        boolean complete, boolean apply, String status, String evidence) { }
     private static class CallSiteAudit {
         final Address callerAddress, site, directAddress, resolvedAddress;
         final String caller, directFunction, resolvedFunction, thunkChain, status;

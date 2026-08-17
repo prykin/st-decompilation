@@ -40,6 +40,7 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
+    /* ST_CALLSITE[00557BA7]: CALL 0x0040218f; direct=0040218F VisibleClassTy::sub_00558140 */
     sub_00558140(local_c);
     RaiseInternalException(iVar4,0,"E:\\__titans\\grig\\visible.cpp",0x79);
     return;

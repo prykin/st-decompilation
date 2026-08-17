@@ -90,6 +90,7 @@ void __thiscall st::fn_004ED630(BehPanelTy *this)
   iVar8 = 0x36;
   g_behPanel_00801678 = local_18;
   pCVar3 = st::fn_0040577C(st::mutable_c_string("BKG_BEHAVIOURW"),0);
+  /* ST_CALLSITE[004ED6BB]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
   st::fn_00403800
             ((SpecPanelTy *)this_00,pCVar3,iVar8,uVar12,iVar14,iVar17,UVar18,uVar19,uVar22);
   puVar4 = st::fn_00709AF0
@@ -193,7 +194,7 @@ switchD_004ed72f_default:
     local_994[uVar9 * 0x5f + 4] = *(int *)(puVar4 + 2);
     local_994[uVar9 * 0x5f + 5] = iVar8;
     local_14 = (int)&this_00->vtable + uVar9 * 0x27;
-    *(undefined1 *)(local_14 + 0x1ce) = 1;
+    ((undefined1 *)local_14)[0x1ce] = 1;
     local_EAX_721 = st::fn_00401A78((&this_00->field_01AF)[uVar9],0);
     *(int *)(local_14 + 0x1cf) = local_EAX_721;
     uVar12 = st::fn_0040371F((&this_00->field_01AF)[uVar9]);
@@ -208,7 +209,7 @@ switchD_004ed72f_default:
     aiStack_908[uVar9 * 0x5f + 3] = 0;
     aiStack_8e4[uVar9 * 0x5f + 3] = 1;
     aiStack_908[uVar9 * 0x5f + 6] = 0x101;
-    *(undefined1 *)(iVar14 + 0x1db) = 3;
+    ((undefined1 *)iVar14)[0x1db] = 3;
     iVar8 = *(int *)(iVar14 + 0x1d7);
     aiStack_908[uVar9 * 0x5f + 7] = 3;
     aiStack_908[uVar9 * 0x5f + 8] = 0x4202;
@@ -251,6 +252,7 @@ LAB_004eda47:
       local_50 = 0xb1ff;
       local_34 = 2;
       local_38 = local_58;
+      /* ST_CALLSITE[004EDAB4]: CALL dword ptr [EAX + 0x8] */
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,9,&this_00->field_01BE,nullptr,st::machine_word_boundary_cast<undefined4>(local_68),0);
       uVar24 = 1;
@@ -262,6 +264,7 @@ LAB_004eda47:
       uVar19 = 0xc0af;
       uVar12 = 0xc09f;
       pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_BHOLD"),0);
+      /* ST_CALLSITE[004EDB0C]: CALL dword ptr [EBX + 0x4] */
       uVar12 = (*pBVar1->CreateBut)
                          ((PanelTy *)this_00,0,0,(-(uint)(DAT_0080874e != '\x03') & 2) + 0x1f,
                           (-(uint)(DAT_0080874e != '\x03') & 7) + 0x5a,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar12,uVar19,
@@ -276,6 +279,7 @@ LAB_004eda47:
       uVar19 = 0xc0a0;
       this_00->field_01C2 = uVar12;
       pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_BHOLD"),0);
+      /* ST_CALLSITE[004EDB6B]: CALL dword ptr [EBX + 0x4] */
       uVar12 = (*pBVar1->CreateBut)
                          ((PanelTy *)this_00,0,0,(-(uint)(DAT_0080874e != '\x03') & 6) + 0x45,
                           (-(uint)(DAT_0080874e != '\x03') & 7) + 0x5a,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar19,uVar22,
@@ -290,6 +294,7 @@ LAB_004eda47:
       uVar19 = 0xc0a1;
       this_00->field_01C6 = uVar12;
       pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_BAGR"),0);
+      /* ST_CALLSITE[004EDBCB]: CALL dword ptr [EBX + 0x4] */
       uVar12 = (*pBVar1->CreateBut)
                          ((PanelTy *)this_00,0,0,
                           (-(uint)(DAT_0080874e != '\x03') & 0xfffffffd) + 0xb3,
@@ -372,6 +377,7 @@ void __thiscall st::fn_004EDF30(BehPanelTy *this,int param_1)
 
   if (param_1 != this->field_005C) {
     local_8 = this;
+    /* ST_CALLSITE[004EDF4C]: CALL 0x00404d36; direct=00404D36 SpecPanelTy::ShiftControls */
     st::fn_00404D36((SpecPanelTy *)this,param_1);
     sVar2 = (short)this->field_0174;
     this->field_0028 = 0x24;
@@ -466,6 +472,7 @@ void __thiscall st::fn_004EE0A0(BehPanelTy *this)
   STPiece<0,1>(local_18) = local_10->field_01BB;
   STPiece<1,1>(local_18) = local_10->field_01BC;
   local_16 = local_10->field_01BD;
+  /* ST_CALLSITE[004EE10E]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
   st::fn_004035BC
             (g_allPlayers_007FA174,0xb,(AnonShape_0043BEB0_1C00EC12 *)&local_10->field_01AB);
   local_8 = (Global_sub_005272B0_param_1Enum *)&local_24;
@@ -484,7 +491,7 @@ void __thiscall st::fn_004EE0A0(BehPanelTy *this)
       *piVar5 = iVar2;
       iVar4 = st::fn_0040371F(*pGVar7);
       piVar5[2] = iVar4;
-      *(undefined1 *)(piVar5 + 3) = 3;
+      ((undefined1 *)piVar5)[3] = 3;
     }
     piVar5 = (int *)((int)piVar5 + 0x27);
     pGVar7 = pGVar7 + 1;
@@ -568,6 +575,7 @@ st::fn_004EE350
     text = st::fn_006F2C00(param_2,1,(uint)param_3);
     local_8 = st::fn_006F1CE0(g_cMf32_00806790,1,text,errorCode,iVar4);
     pBVar3 = local_14;
+    /* ST_CALLSITE[004EE3F5]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,'\x01',
            (byte *)local_8);
     st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_8);
@@ -634,6 +642,7 @@ int __thiscall st::fn_004EE4D0(BehPanelTy *this,STMessage *message)
     st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\behpanel.cpp"),0xf3);
     return 0xffff;
   }
+  /* ST_CALLSITE[004EE50E]: CALL 0x00401401; direct=00401401 SpecPanelTy::GetMessage */
   st::fn_00401401((SpecPanelTy *)local_8,message);
   SVar1 = message->id;
   if (SVar1 < 0xb20f) {
@@ -641,11 +650,12 @@ int __thiscall st::fn_004EE4D0(BehPanelTy *this,STMessage *message)
       pBVar1 = this_00->vtable;
       iVar12 = 1;
       iVar11 = 0;
-      pcVar9 = st::pointer_boundary_cast<code *>(st::fn_0040420F);
+      pcVar9 = (code *)st::fn_0052A320;
       iVar8 = 0;
       pcVar4 = st::fn_00405493((&this_00->field_01AF)[(message->arg0).words.high],
                                   this_00->field_01AB);
       pCVar5 = st::fn_0040577C(pcVar4,iVar8);
+      /* ST_CALLSITE[004EE660]: CALL dword ptr [EDI + 0x8] */
       (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar5,st::pointer_boundary_cast<undefined *>(pcVar9),iVar11,iVar12);
       g_currentExceptionFrame = local_70.previous;
       return 0;
@@ -658,11 +668,12 @@ int __thiscall st::fn_004EE4D0(BehPanelTy *this,STMessage *message)
       pBVar1 = this_00->vtable;
       iVar12 = 1;
       iVar11 = 0;
-      pcVar9 = st::pointer_boundary_cast<code *>(st::fn_0040420F);
+      pcVar9 = (code *)st::fn_0052A320;
       iVar8 = 0;
       pcVar4 = st::fn_00405493((&this_00->field_01AF)[(message->arg0).words.high],
                                   this_00->field_01AB);
       pCVar5 = st::fn_0040577C(pcVar4,iVar8);
+      /* ST_CALLSITE[004EE611]: CALL dword ptr [EDI + 0x8] */
       (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,1,pCVar5,st::pointer_boundary_cast<undefined *>(pcVar9),iVar11,iVar12);
       g_currentExceptionFrame = local_70.previous;
       return 0;
@@ -673,10 +684,12 @@ int __thiscall st::fn_004EE4D0(BehPanelTy *this,STMessage *message)
         return 0;
       }
       st::fn_00405E2F(0xae);
+      /* ST_CALLSITE[004EE5A4]: CALL 0x004035ad; direct=004035AD CursorClassTy::sub_0054B630 */
       st::fn_004035AD
                 (g_cursorClass_00802A30,(uint)(byte)(&this_00->field_01AF)[(message->arg0).u32],0);
       this_00->field_0028 = 0xbfff;
-      this_00->st::fn_00401401((STMessage *)&this_00->field_0x18);
+      /* ST_CALLSITE[004EE5B8]: CALL dword ptr [EDX] */
+      this_00->GetMessage((STMessage *)&this_00->field_0x18);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -685,10 +698,12 @@ int __thiscall st::fn_004EE4D0(BehPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_70.previous;
         return 0;
       }
+      /* ST_CALLSITE[004EE542]: CALL 0x00401d4d; direct=00401D4D BehPanelTy::DoneBehPanel */
       st::fn_00401D4D(this_00);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
+    /* ST_CALLSITE[004EE55C]: CALL 0x00401960; direct=00401960 BehPanelTy::InitBehPanel */
     st::fn_00401960(this_00);
     g_currentExceptionFrame = local_70.previous;
     return 0;
@@ -736,6 +751,7 @@ int __thiscall st::fn_004EE4D0(BehPanelTy *this,STMessage *message)
     pcVar4 = "BUT_BAGR";
   }
   pCVar5 = st::fn_0040577C(pcVar4,0);
+  /* ST_CALLSITE[004EE779]: CALL 0x004042be; direct=004042BE BehPanelTy::PaintBBut */
   st::fn_004042BE(this_00,(AnonShape_004EE350_18D491EA *)message,pCVar5,bVar7);
 switchD_004ee68c_caseD_c0a2:
   g_currentExceptionFrame = local_70.previous;

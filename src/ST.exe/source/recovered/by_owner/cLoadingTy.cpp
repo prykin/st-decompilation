@@ -40,10 +40,14 @@ void __thiscall st::fn_00555570(cLoadingTy *this)
   tagMSG local_20;
 
   if (this->field_0048 != 0) {
+    /* ST_CALLSITE[00555594]: CALL ESI */
     iVar1 = st::external_00000085(st::pointer_boundary_cast<LPMSG>(&local_20),g_hWnd_00806748,0,0,1);
     while (iVar1 != 0) {
+      /* ST_CALLSITE[005555AC]: CALL EDI */
       st::external_00000083(st::pointer_boundary_cast<MSG *>(&local_20));
+      /* ST_CALLSITE[005555B2]: CALL EBX */
       st::external_00000084(st::pointer_boundary_cast<MSG *>(&local_20));
+      /* ST_CALLSITE[005555C5]: CALL ESI */
       iVar1 = st::external_00000085(st::pointer_boundary_cast<LPMSG>(&local_20),g_hWnd_00806748,0,0,1);
     }
   }
@@ -60,7 +64,7 @@ void __thiscall st::fn_00555570(cLoadingTy *this)
 void __thiscall st::fn_00555680(cLoadingTy *this,char *param_1)
 
 {
-  if (((int *)this->field_004C != nullptr) && (param_1 != nullptr)) {
+  if (((int *)this->field_004C != 0) && (param_1 != nullptr)) {
     st::fn_0072EB70(param_1,(int *)this->field_004C);
     st::fn_0072EB70(&CHAR_0Ah_007c8ff4,(int *)this->field_004C);
   }

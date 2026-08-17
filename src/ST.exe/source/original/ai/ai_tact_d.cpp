@@ -96,7 +96,7 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
     } while (iVar4 < 0x60);
     if (pAVar1->field_0085 == 0) {
       pDVar2 = st::fn_006AE290(nullptr,10,8,10);
-      local_8->field_0085 = st::pointer_boundary_cast<uint *>(&pDVar2->flags);
+      local_8->field_0085 = &pDVar2->flags;
       pAVar1 = (AllocationRecord_00690FC0 *)local_8;
     }
     if (0 < (short)pAVar1->field_0105) {
@@ -113,7 +113,7 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
             local_c = nullptr;
           }
           else {
-            local_c = st::pointer_boundary_cast<undefined1 *>(&pAVar3[-1].field_0x240);
+            local_c = &pAVar3[-1].field_0x240;
           }
           st::fn_006AE1C0((DArrayTy *)local_8->field_0085,&local_10);
           pAVar6 = (AllocationRecord_00668330 *)(&pAVar6->field_0x0 + pAVar6->field_0014);
@@ -213,7 +213,7 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
       }
       iVar10 = iVar10 + 0xc;
     } while (iVar10 < 0x60);
-    if (*(char *)(param_1 + 6) == '\x02') {
+    if (((char *)param_1)[6] == '\x02') {
       *(int *)&pAVar2->field_0x107 = iVar7;
       local_20 = 0;
       local_8->field_0105 = 0;
@@ -236,6 +236,7 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
             pAVar3 = (AllocationRecord_006684E0 *)(*(int *)(iVar10 + 4) + 0x20);
           }
           if (pAVar3 != nullptr) {
+            /* ST_CALLSITE[006912DC]: CALL 0x004014c4; direct=004014C4 FltDataPack */
             local_1c = st::fn_004014C4(pAVar3,&local_10);
             local_8 = st::pointer_boundary_cast<AnonShape_00691190_783A1B6D *>(st::fn_006ACF50(local_8,st::machine_word_boundary_cast<uint>(local_8->field_0014 + local_10)));
             pAVar3 = local_1c;

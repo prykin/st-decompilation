@@ -28,6 +28,7 @@ FUN_006775e0(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char par
       pcVar2 = thunk_FUN_00677220;
     }
     local_8 = pDVar1;
+    /* ST_CALLSITE[00677665]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */
     _EnumPlObj(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9,param_10,
                param_11,pcVar2,&pDVar1->flags,nullptr);
     g_currentExceptionFrame = local_4c.previous;

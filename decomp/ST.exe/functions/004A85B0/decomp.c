@@ -30,6 +30,7 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this)
     do {
       DArrayGetElement((DArrayTy *)this->field_0029,index,local_8);
       if (STPiece<0,2>(local_8) != 0xffff) {
+        /* ST_CALLSITE[004A85F2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar3 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_8),CASE_1);
         if (pSVar3 == nullptr) {

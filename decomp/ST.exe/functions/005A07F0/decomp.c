@@ -13,8 +13,11 @@
 void __thiscall FSGSTy::sub_005A07F0(FSGSTy *this)
 
 {
+  /* ST_CALLSITE[005A080F]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
   SetAccelerator(0,this->field_0008,2,0xc0a5,2,0x4000002f,0,0,0,0,0,0);
+  /* ST_CALLSITE[005A082D]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
   SetAccelerator(0,this->field_0008,2,0xc0a4,2,0x8000031,0,0,0,0,0,0);
+  /* ST_CALLSITE[005A084B]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
   SetAccelerator(0,this->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
   if (this->field_1B10 != 0) {
     StartSystemTy::sub_006E56B0(this->field_000C,this->field_1B10);

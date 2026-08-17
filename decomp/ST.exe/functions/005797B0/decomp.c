@@ -258,6 +258,7 @@ switchD_0057988b_default:
                 STField<int>(this,0x255) = (int)sVar5;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 uVar7 = CONCAT22(sVar5 >> 0xf,STField<undefined2>(this,0x45));
+                /* ST_CALLSITE[00579E50]: CALL dword ptr [EBX + 0x10] */
                 /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
                 sVar4 = (**(code **)(*(int *)this + 0x10))
                                   (STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(sVar4)),

@@ -18,8 +18,10 @@ undefined4 __fastcall FUN_004e4d60(AnonShape_004E4D60_C16F78E8 *param_1)
       param_1->field_04DC = 0;
     }
     if (*(int *)&param_1->field_0x24 != param_1->field_023D) {
+      /* ST_CALLSITE[004E4DBE]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar1 = LookupRecordByte((char)param_1->field_023D);
       iVar3 = param_1->field_0235;
+      /* ST_CALLSITE[004E4DE5]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar2 = LookupRecordByte(param_1->field_0x24);
       if ((&DAT_007e1984)[(uint)bVar2 + ((uint)bVar1 + iVar3 * 3) * 3] == '\0') {
         return 0;

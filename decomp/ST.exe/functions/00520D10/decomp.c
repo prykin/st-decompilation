@@ -47,6 +47,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
   else {
     uVar5 = *(ushort *)(&local_c->field_0x234 + (uint)(byte)local_c->field_03D4 * 0x10);
   }
+  /* ST_CALLSITE[00520D77]: CALL 0x00403dd7; direct=00403DD7 InfocPanelTy::PaintInfocObj */
   PaintInfocObj(local_c,uVar5,local_c->field_02A4,0x58,0x29);
   if (this_00->field_03D4 == 0xff) {
     uVar5 = 0;
@@ -54,6 +55,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
   else {
     uVar5 = *(ushort *)(&this_00->field_0x238 + (uint)(byte)this_00->field_03D4 * 0x10);
   }
+  /* ST_CALLSITE[00520DAE]: CALL 0x00403dd7; direct=00403DD7 InfocPanelTy::PaintInfocObj */
   PaintInfocObj(this_00,uVar5,this_00->field_02A8,0x8a,0x29);
   if (this_00->field_03D4 == 0xff) {
     uVar5 = 0;
@@ -61,6 +63,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
   else {
     uVar5 = *(ushort *)(&this_00->field_0x236 + (uint)(byte)this_00->field_03D4 * 0x10);
   }
+  /* ST_CALLSITE[00520DE5]: CALL 0x00403dd7; direct=00403DD7 InfocPanelTy::PaintInfocObj */
   PaintInfocObj(this_00,uVar5,this_00->field_02A6,0xbc,0x29);
   if (this_00->field_03D4 == 0xff) {
     uVar5 = 0;
@@ -68,6 +71,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
   else {
     uVar5 = *(ushort *)(&this_00->field_0x23a + (uint)(byte)this_00->field_03D4 * 0x10);
   }
+  /* ST_CALLSITE[00520E1C]: CALL 0x00403dd7; direct=00403DD7 InfocPanelTy::PaintInfocObj */
   PaintInfocObj(this_00,uVar5,this_00->field_02AA,0xf0,0x29);
   if (this_00->field_03D4 == 0xff) {
     uVar5 = 0;
@@ -75,6 +79,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
   else {
     uVar5 = *(ushort *)(&this_00->field_0x23c + (uint)(byte)this_00->field_03D4 * 0x10);
   }
+  /* ST_CALLSITE[00520E50]: CALL 0x00403dd7; direct=00403DD7 InfocPanelTy::PaintInfocObj */
   PaintInfocObj(this_00,uVar5,this_00->field_02AC,0x58,0x50);
   if (this_00->field_03D4 == 0xff) {
     uVar5 = 0;
@@ -82,6 +87,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
   else {
     uVar5 = *(ushort *)(&this_00->field_0x240 + (uint)(byte)this_00->field_03D4 * 0x10);
   }
+  /* ST_CALLSITE[00520E86]: CALL 0x00403dd7; direct=00403DD7 InfocPanelTy::PaintInfocObj */
   PaintInfocObj(this_00,uVar5,this_00->field_02B0,0x8a,0x50);
   if (this_00->field_03D4 == 0xff) {
     uVar5 = 0;
@@ -89,6 +95,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
   else {
     uVar5 = *(ushort *)(&this_00->field_0x23e + (uint)(byte)this_00->field_03D4 * 0x10);
   }
+  /* ST_CALLSITE[00520EBD]: CALL 0x00403dd7; direct=00403DD7 InfocPanelTy::PaintInfocObj */
   PaintInfocObj(this_00,uVar5,this_00->field_02AE,0xbc,0x50);
   if (this_00->field_03D4 == 0xff) {
     uVar5 = 0;
@@ -96,6 +103,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
   else {
     uVar5 = *(ushort *)(&this_00->field_0x242 + (uint)(byte)this_00->field_03D4 * 0x10);
   }
+  /* ST_CALLSITE[00520EF4]: CALL 0x00403dd7; direct=00403DD7 InfocPanelTy::PaintInfocObj */
   PaintInfocObj(this_00,uVar5,this_00->field_02B2,0xf0,0x50);
   if ((this_00->field_03D4 == 0xff) ||
      (9999 < *(int *)(&this_00->field_0x1b4 + (uint)(byte)this_00->field_03D4 * 0x10))) {
@@ -116,6 +124,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     uVar6 = 0;
   }
   else {
+    /* ST_CALLSITE[00520F26]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&this_00->field_018D,"%4d",
               *(int *)(&this_00->field_0x1b4 + (uint)(byte)this_00->field_03D4 * 0x10));
   }
@@ -141,6 +150,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     uVar6 = 0;
   }
   else {
+    /* ST_CALLSITE[00520FC3]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&this_00->field_018D,"%6d",
               *(int *)(&this_00->field_0x1b8 + (uint)(byte)this_00->field_03D4 * 0x10));
   }
@@ -165,6 +175,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     memmove(pcVar10, pcVar7, uVar8); /* compiler REP MOVS byte copy */
   }
   else {
+    /* ST_CALLSITE[0052105E]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&this_00->field_018D,"%6d",
               *(int *)(&this_00->field_0x1bc + (uint)(byte)this_00->field_03D4 * 0x10));
   }
@@ -176,6 +187,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     iVar12 = 0x14;
     do {
       pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0);
+      /* ST_CALLSITE[005212AD]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar9,0x71,'\x01',(byte *)pBVar4);
       iVar9 = iVar9 + 4;
       iVar12 = iVar12 + -1;
@@ -189,6 +201,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         uVar8 = 1;
         do {
           pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0);
+          /* ST_CALLSITE[005211F5]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,uVar8 * 4 + 0xca,0x71,'\x01',
                  (byte *)pBVar4);
           local_8 = local_8 + 1;
@@ -205,6 +218,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         iVar9 = (uint)bVar3 * 4 + 0xca;
         do {
           pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,4);
+          /* ST_CALLSITE[0052126E]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar9,0x71,'\x01',
                  (byte *)pBVar4);
           iVar9 = iVar9 + 4;
@@ -220,6 +234,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         do {
           pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,
                                 (-(uint)(DAT_0080874e != '\x03') & 2) + 1);
+          /* ST_CALLSITE[00521134]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,uVar8 * 4 + 0xca,0x71,'\x01',
                  (byte *)pBVar4);
           local_8 = local_8 + 1;
@@ -235,6 +250,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         iVar9 = (uint)bVar3 * 4 + 0xca;
         do {
           pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0);
+          /* ST_CALLSITE[005211AC]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar9,0x71,'\x01',
                  (byte *)pBVar4);
           iVar9 = iVar9 + 4;

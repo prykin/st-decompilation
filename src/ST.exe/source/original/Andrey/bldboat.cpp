@@ -81,6 +81,7 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
     iVar9 = iVar9 + -1;
   } while (iVar9 != 0);
   this_00->field_003C = st::machine_word_boundary_cast<undefined4>(this_00->field_003C + (g_nWidth_00806730 + -800) / 2);
+  /* ST_CALLSITE[004EEAEE]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
   pcVar4 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,st::mutable_c_string("HOLD_FONT"),0);
   this_00->field_028A = pcVar4;
   pcVar4->field_0058 = 1;
@@ -92,6 +93,7 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
   this_00->field_0184 = puVar6;
   text = &this_00->field_006C;
   pCVar5 = st::fn_0040577C(st::mutable_c_string("BKG_BLDBOATBUT"),0);
+  /* ST_CALLSITE[004EEB40]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(text,st::mutable_c_string("%s0"),pCVar5);
   puVar6 = st::fn_006F1CE0(g_cMf32_00806790,1,text,nullptr,1);
   this_00->field_028E = puVar6;
@@ -101,6 +103,7 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
   else {
     iVar9 = DAT_0080874d + 1;
   }
+  /* ST_CALLSITE[004EEB79]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(text,st::mutable_c_string("BOATS_%d"),iVar9);
   puVar6 = st::fn_00709AF0
                      (PTR_00806794,CASE_B,text,0xffffffff,0,1,0,nullptr);
@@ -109,6 +112,7 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
                      (PTR_00806794,CASE_B,st::mutable_c_string("BOATS_D"),0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar6;
   pCVar5 = st::fn_0040577C(st::mutable_c_string("BKG_BLDBOATBUT"),0);
+  /* ST_CALLSITE[004EEBFB]: CALL 0x00404241; direct=00404241 ProdPanelTy::InitProdPanel */
   st::fn_00404241
             ((ProdPanelTy *)this_00,0x2723,0x3f,2,0xc1,0xc,0x85,99,0x68,0xc4,99,0x20,0x13,0x33,
              pCVar5);
@@ -179,6 +183,7 @@ switchD_004eed0b_default:
   local_24 = 1;
   local_20 = 1;
   local_44 = local_64;
+  /* ST_CALLSITE[004EEDB2]: CALL dword ptr [EDX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
@@ -208,6 +213,7 @@ void __thiscall st::fn_004EF020(BldBoatPanelTy *this)
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[004EF061]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     st::fn_004035BC
               (g_allPlayers_007FA174,7,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_027A);
     if ((&this_00->field_027A)[(byte)this_00->field_0279] == 0) {
@@ -225,6 +231,7 @@ void __thiscall st::fn_004EF020(BldBoatPanelTy *this)
       uVar2 = *(uint *)((&this_00->field_027A)[(byte)this_00->field_0278] + 0xc);
     }
     st::fn_00402A13(this_00,uVar2,uVar4);
+    /* ST_CALLSITE[004EF0A5]: CALL 0x00403c6a; direct=00403C6A BldBoatPanelTy::sub_004EF140 */
     st::fn_00403C6A(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -314,6 +321,7 @@ st::fn_004EF320(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
   }
   st::fn_006B4170((RecoveredSourceFamily_dibcopy *)local_18->field_0068,0,local_1c,local_c,local_14[2],
                local_14[3],0);
+  /* ST_CALLSITE[004EF438]: CALL 0x00403229; direct=00403229 DibPut */
   st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar3->field_0068,iVar1 + 1,uVar4 + 1,'\x01',
          (byte *)local_10);
   if (param_1->field_0014 == 3) {
@@ -324,9 +332,11 @@ st::fn_004EF320(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
     iVar7 = 4;
   }
   pBVar5 = st::fn_0070B3A0(pBVar3->field_0190,iVar7);
+  /* ST_CALLSITE[004EF47C]: CALL 0x00403229; direct=00403229 DibPut */
   st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar3->field_0068,iVar1,uVar4,'\x06',(byte *)pBVar5);
   if ((((local_8 != nullptr) && (local_8[1] != 0)) &&
       ((char)local_8[2] != 0)) && (param_1->field_0014 != 0)) {
+    /* ST_CALLSITE[004EF4AD]: CALL dword ptr [0x0085bde8] */
     st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pBVar3->field_006C),st::mutable_c_string("%d"),local_8[1]);
     st::fn_00710A90(pBVar3->field_028A,pBVar3->field_0068,0,iVar1,uVar4,local_14[2],local_14[3]);
     st::fn_007119C0(pBVar3->field_028A,&pBVar3->field_006C,-2,-1,0);
@@ -386,18 +396,22 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
     return 0xffff;
   }
   if (message->id == MESS_ID_CREATE) {
+    /* ST_CALLSITE[004EF714]: CALL 0x004032a6; direct=004032A6 ProdPanelTy::PreInitProdPanel */
     st::fn_004032A6((ProdPanelTy *)local_8);
   }
+  /* ST_CALLSITE[004EF71C]: CALL 0x004059d4; direct=004059D4 ProdPanelTy::GetMessage */
   st::fn_004059D4((ProdPanelTy *)this_00,message);
   SVar1 = message->id;
   if (SVar1 < 0xb203) {
     if (SVar1 == MESS_SHARED_B202) {
+      /* ST_CALLSITE[004EF7C4]: CALL 0x00401ce4; direct=00401CE4 ProdPanelTy::PaintTab */
       st::fn_00401CE4
-                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,st::pointer_boundary_cast<undefined *>(st::fn_00402E7D));
+                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,(code *)st::fn_004EF5F0);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (SVar1 == MESS_ID_CREATE) {
+      /* ST_CALLSITE[004EF7A4]: CALL 0x004054a7; direct=004054A7 BldBoatPanelTy::InitBldBoatPanel */
       st::fn_004054A7(this_00);
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -411,6 +425,7 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
       this_00->field_0279 = this_00->field_0278;
       this_00->field_0278 = *(char *)(message->arg0).ptr + -1;
       st::fn_00405E2F(0xae);
+      /* ST_CALLSITE[004EF772]: CALL dword ptr [EAX + 0x1c] */
       this_00->Update();
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -431,7 +446,7 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
       else {
         puVar6 = (undefined4 *)((iVar5 + -0xc09f) * *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0x1c));
       }
-      if ((puVar6 != nullptr) && (*(char *)(puVar6 + 2) != '\0')) {
+      if ((puVar6 != nullptr) && (((char *)puVar6)[2] != '\0')) {
         sStack_f = 0;
         uStack_d = 0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -440,10 +455,12 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
         local_c = 0;
         local_a = 0;
         if ((message->arg1).u32 == 0) {
+          /* ST_CALLSITE[004EF87C]: CALL dword ptr [0x0085bdf0] */
           uVar3 = st::external_00000082(0x10);
           sStack_f = (-(ushort)((uVar3 & 0x8000) != 0) & 9) + 1;
         }
         else {
+          /* ST_CALLSITE[004EF868]: CALL dword ptr [0x0085bdf0] */
           uVar3 = st::external_00000082(0x10);
           sStack_f = (-(ushort)((uVar3 & 0x8000) != 0) & 0xfff7) - 1;
         }
@@ -458,6 +475,7 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
       break;
     case MESS_BLDLABPANELTY_C0A4:
       this_00->field_0199 = static_cast<undefined4>((message->arg0).u32);
+      /* ST_CALLSITE[004EF8DA]: CALL 0x00403c6a; direct=00403C6A BldBoatPanelTy::sub_004EF140 */
       st::fn_00403C6A(this_00);
       st::fn_00405E2F(0xae);
       g_currentExceptionFrame = local_58.previous;
@@ -467,6 +485,7 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
     case MESS_BEHPANELTY_C0B1:
     case 0xc0b2:
     case MESS_BLDLABPANELTY_C0B3:
+      /* ST_CALLSITE[004EF902]: CALL 0x004011ea; direct=004011EA BldBoatPanelTy::PaintBldBut */
       st::fn_004011EA(this_00,(AnonShape_004EF320_444F9AB1 *)message);
     }
   }

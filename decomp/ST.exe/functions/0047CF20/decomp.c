@@ -37,9 +37,11 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
   case CASE_1:
   case CASE_2:
   case CASE_4:
+    /* ST_CALLSITE[0047CFD3]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
     local_EAX_179 = sub_00460360(this);
     return local_EAX_179;
   case CASE_3:
+    /* ST_CALLSITE[0047CFE2]: CALL 0x004011ae; direct=004011AE STBoatC::UnLoadObj */
     iVar5 = UnLoadObj(this,2);
     return iVar5;
   }

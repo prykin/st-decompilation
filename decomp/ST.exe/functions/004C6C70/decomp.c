@@ -16,6 +16,7 @@ TLOBaseTy::sub_004C6C70(TLOBaseTy *this,undefined4 param_1,undefined4 param_2,un
     thunk_FUN_004c6bb0(this,param_1,param_2,param_3);
   }
   else {
+    /* ST_CALLSITE[004C6C80]: CALL 0x00404e9e; direct=00404E9E TLOBaseTy::sub_004EA620 */
     iVar1 = sub_004EA620(this);
     if (iVar1 != 0) {
       this->field_0400 = 0;

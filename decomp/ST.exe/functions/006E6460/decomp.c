@@ -20,7 +20,7 @@ FUN_006e6460(void *this,undefined4 param_1,int param_2,undefined2 param_3,undefi
     return nullptr;
   }
   puVar1[6] = param_1;
-  *(byte *)(puVar1 + 3) = param_5;
+  ((byte *)puVar1)[3] = param_5;
   STField<undefined2>(puVar1,0xe) = param_3;
   STField<bool>(puVar1,0xd) = param_6 != 0;
   STField<char>(puVar1,0x17) = (char)param_2;

@@ -37,15 +37,18 @@ int FUN_006bb9d0(AnonShape_006BB9D0_BD42D958 *param_1,int param_2,int param_3,in
   local_14.left = 0;
   local_30 = 0;
   local_34 = 0;
+  /* ST_CALLSITE[006BBA5C]: CALL dword ptr [0x0085be50] */
   BVar3 = IntersectRect(&local_44,&local_24,&local_14);
   if (BVar3 != 0) {
-    auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+    AnonShape_006BB9D0_BD42D958 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     while (piVar1 = (int *)pAVar2->field_0040,
+          /* ST_CALLSITE[006BBA93]: CALL dword ptr [EDX + 0x14] */
           iVar4 = (**(code **)(*piVar1 + 0x14))
                             (piVar1,&local_44,param_6,&local_34,param_9 | 0x1000000,0), iVar4 != 0)
     {
       if (iVar4 == -0x7789fe3e) {
+        /* ST_CALLSITE[006BBAA7]: CALL dword ptr [EDX + 0x6c] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*param_6 + 0x6c))(param_6);
         FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar2);
@@ -53,6 +56,7 @@ int FUN_006bb9d0(AnonShape_006BB9D0_BD42D958 *param_1,int param_2,int param_3,in
       else {
         if (((iVar4 != -0x7789ff60) && (iVar4 != -0x7789fe52)) ||
            (param_1_after_write != nullptr)) break;
+        /* ST_CALLSITE[006BBACB]: CALL dword ptr [0x0085bc6c] */
         Sleep(2);
       }
       param_1_after_write = (AnonShape_006BB9D0_BD42D958 *)&param_1_after_write->field_0x1;

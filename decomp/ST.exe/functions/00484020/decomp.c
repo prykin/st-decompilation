@@ -113,6 +113,7 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
                    ((iVar5 < 1 ||
                     (uVar6 = (int)param_1 - (int)(short)iVar11, uVar10 = (int)uVar6 >> 0x1f,
                     (int)(((uVar6 ^ uVar10) - uVar10) * 10) / iVar5 < 4)))) {
+                  /* ST_CALLSITE[00484336]: CALL dword ptr [EAX + 0x10] */
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   local_20 = (**(code **)(*(int *)this + 0x10))
                                        (iVar9,local_c,iVar11,local_14,local_18,_param_1);
@@ -134,6 +135,7 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
                     sVar4 = (short)local_14 + (short)*puVar8;
                     sStack_56 = (short)local_18 - sStack_56;
                     if (STField<int>(this,0x736) == 0) {
+                      /* ST_CALLSITE[0048440F]: CALL 0x00405907; direct=00405907 STSprGameObjC::CheckRay */
                       iVar9 = STSprGameObjC::CheckRay
                                         (this,(short)local_28,sVar3,(short)local_24,sVar4,sStack_56,
                                          (short)_param_1,
@@ -142,6 +144,7 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
                       if ((iVar9 == 0) && (local_1c != local_10)) break;
                     }
                     else {
+                      /* ST_CALLSITE[00484442]: CALL 0x00405907; direct=00405907 STSprGameObjC::CheckRay */
                       iVar9 = STSprGameObjC::CheckRay
                                         (this,(short)local_28,sVar3,(short)local_24,sVar4,sStack_56,
                                          (short)_param_1,

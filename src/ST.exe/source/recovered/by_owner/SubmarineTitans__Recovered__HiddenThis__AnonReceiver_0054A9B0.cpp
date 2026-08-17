@@ -76,6 +76,7 @@ st::fn_0054A9B0
     uVar5 = 0;
   }
   else {
+    /* ST_CALLSITE[0054AABB]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     st::fn_00403F53
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_8,iVar7,&local_10,
                &local_14);
@@ -127,7 +128,7 @@ st::fn_0054A9B0
   }
   pAVar4 = local_c;
   if (0 < (int)uVar5) {
-    if ((SpriteClassTy *)local_c->field_04EB != nullptr) {
+    if ((SpriteClassTy *)local_c->field_04EB != 0) {
       st::fn_00715AB0((SpriteClassTy *)local_c->field_04EB);
       st::fn_0072E2B0((HoloTy *)pAVar4->field_04EB);
       pAVar4->field_04EB = 0;
@@ -145,6 +146,7 @@ st::fn_0054A9B0
       return;
     }
     st::fn_007158A0(pSVar6,(int *)g_ddxContext_008075A8,1,'\a',nullptr,0,0);
+    /* ST_CALLSITE[0054AC30]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)pAVar4->field_04EB + 4))
               (PTR_00806784,7,0,"CUR_CONFIRM2D",0xffffffff);

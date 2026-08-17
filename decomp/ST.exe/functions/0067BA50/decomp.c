@@ -21,6 +21,7 @@ undefined4 __cdecl FUN_0067ba50(AiFltClassTy *param_1,uint *param_2)
   memset(local_48, 0, 0x34); /* compiler bulk-zero initialization */
   local_48[0] = 0x66;
   local_48[1] = 0xffffffff;
+  /* ST_CALLSITE[0067BA7A]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
   AiFltClassTy::GetAiMess(param_1,local_48);
   if (('\0' < local_40) && (param_2 != nullptr)) {
     local_10 = local_3d;

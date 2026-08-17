@@ -75,6 +75,7 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
     local_88c = local_8ac;
     local_84c = local_8ac;
     local_68 = local_8ac;
+    /* ST_CALLSITE[0059E94D]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,nullptr,local_8d8,0);
     local_8b8 = this_00->field_1AEC;
@@ -82,11 +83,13 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
     local_8d8[5] = (ccFntTy *)0xaa;
     local_8d8[6] = (ccFntTy *)0x14;
     local_8d8[7] = (ccFntTy *)0x10;
+    /* ST_CALLSITE[0059E99D]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,nullptr,local_8d8,0);
     this_00->field_1EC2 = 0x100;
     this_00->field_1EC6 = 0xffffffff;
     this_00->field_1ECA = 0;
+    /* ST_CALLSITE[0059E9DF]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar3 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0xcd,0x16f,0x186,0x19,0x6904,0x698b);
     this_00->field_1EB6 = uVar3;
     this_00->field_002D = 0x61;

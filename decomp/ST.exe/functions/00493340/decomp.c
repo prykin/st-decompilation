@@ -44,6 +44,7 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this)
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\To_boat.cpp",0x5222);
           }
+          /* ST_CALLSITE[0049340A]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0(local_10,&local_a,&local_8,&local_6);
           iVar3 = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,
                                (int)local_a,(int)local_8,(int)local_6);

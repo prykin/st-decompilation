@@ -41,6 +41,7 @@ STRubbishC::sub_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE3
     *(undefined4 *)((&this->field_01E5)[param_1] + 8) = *(undefined4 *)(param_2 + 1);
     iVar5 = *(int *)((&this->field_01E5)[param_1] + 4);
     if ((iVar5 == 3) || (iVar5 == 6)) {
+      /* ST_CALLSITE[0062F014]: CALL 0x004050c9; direct=004050C9 STRubbishC::sub_00630260 */
       sub_00630260(this,param_1,1);
     }
     uVar2 = 1;

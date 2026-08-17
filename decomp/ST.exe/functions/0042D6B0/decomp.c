@@ -31,6 +31,7 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
     }
     puVar4 = &g_packedRecords_A62x8[iVar3].field149_0x1b3;
   }
+  /* ST_CALLSITE[0042D71A]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   ResetActivityFromTmp(in_ECX,param_1,iVar1,0,1);
   if (STField<DArrayTy *>(puVar4,10) != nullptr) {

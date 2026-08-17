@@ -23,6 +23,7 @@ void __thiscall STFieldC::sub_00609CD0(STFieldC *this)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if (((uVar4 < pSVar2->count) &&
             (puVar3 = (uint *)((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar4),
+            /* ST_CALLSITE[00609D0C]: CALL 0x004021df; direct=004021DF STFieldC::LoadImagSpr */
             puVar3 != nullptr)) && (LoadImagSpr(this,uVar4), this->field_020D == 6)) {
           Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,puVar3[0xf]);
         }

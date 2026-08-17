@@ -20,6 +20,7 @@ STFishC_field_023BState __thiscall STFishC::sub_0057D5F0(STFishC *this,uint para
   local_8 = 0;
   if ((((this->field_0047 == this->field_0235) && (this->field_0049 == this->field_0237)) &&
       (this->field_004B == this->field_0239)) || (param_1 != 0)) {
+    /* ST_CALLSITE[0057D641]: CALL 0x00402ecd; direct=00402ECD STFishC::sub_0057D700 */
     iVar1 = sub_0057D700(this,&param_1,(uint *)local_c,(int *)local_10,&local_8);
     if (iVar1 != 1) {
       if (iVar1 != 2) {

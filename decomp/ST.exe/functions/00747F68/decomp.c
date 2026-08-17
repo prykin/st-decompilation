@@ -6,6 +6,7 @@ undefined4 __thiscall FUN_00747f68(void *this,int *param_1)
 {
   undefined4 uVar1;
 
+  /* ST_CALLSITE[00747F78]: CALL dword ptr [ECX + 0x24] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*param_1 + 0x24))(param_1,&param_1);
   if (param_1 == STField<int *>(this,100)) {

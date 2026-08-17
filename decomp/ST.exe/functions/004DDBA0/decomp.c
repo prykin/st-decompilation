@@ -7,6 +7,7 @@ undefined4 __thiscall FUN_004ddba0(void *this,int param_1)
   int uVar1;
   int iVar1;
 
+  /* ST_CALLSITE[004DDBB0]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar1 = LookupRecordByte(STField<char>(this,0x24));
   uVar1 = (int)(byte)uVar1;
   if (uVar1 == 1) {

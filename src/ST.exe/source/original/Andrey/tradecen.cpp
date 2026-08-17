@@ -95,8 +95,10 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     uVar15 = 3;
     iVar14 = 0x40;
     pCVar4 = st::fn_0040577C(st::mutable_c_string("BKG_TRADECENTERW"),0);
+    /* ST_CALLSITE[00550E56]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     st::fn_00403800
               ((SpecPanelTy *)this_00,pCVar4,iVar14,uVar15,iVar16,iVar18,UVar19,iVar9,uVar22);
+    /* ST_CALLSITE[00550E6D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
     pcVar5 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,st::mutable_c_string("MONEY_FONT"),0);
     uVar11 = 1;
     this_00->field_01DD = pcVar5;
@@ -153,6 +155,7 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     local_24 = 1;
     local_20 = 1;
     local_44 = local_64;
+    /* ST_CALLSITE[00550FCC]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C4,nullptr,st::machine_word_boundary_cast<undefined4>(local_74),0);
     local_e8 = this_00->field_0008;
@@ -200,9 +203,10 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     local_c4 = 1;
     local_c0 = 0x14;
     local_bc = 10;
+    /* ST_CALLSITE[0055111A]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,4,puVar3,nullptr,st::machine_word_boundary_cast<undefined4>(local_490),0);
-    puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x18);
+    puVar1 = &this_00->field_0x18;
     this_00->field_0028 = 0x28;
     *(undefined4 *)&this_00->field_0x2c = 0x186a1;
     st::fn_006E6080(this_00,2,*puVar3,(undefined4 *)puVar1);
@@ -337,6 +341,7 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
       this_00->field_01CC = 0;
       if (this_00->field_01BB == '\0') {
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
+        /* ST_CALLSITE[00551577]: CALL dword ptr [EDI + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)
                           (0,1,0xac,0x57,0,1,1,pCVar3,uVar6,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12);
@@ -350,6 +355,7 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
         uVar7 = 0xb201;
         this_00->field_01C8 = uVar6;
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
+        /* ST_CALLSITE[005515B9]: CALL dword ptr [EDI + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)
                           (0,1,0xe5,0x57,0,1,1,pCVar3,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12,uVar5);
@@ -357,10 +363,12 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
       }
       else {
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
+        /* ST_CALLSITE[00551550]: CALL dword ptr [EDI + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)(0,1,0xca,0x57,0,1,1,pCVar3);
         this_00->field_01C8 = uVar6;
       }
+      /* ST_CALLSITE[005515C4]: CALL 0x00404f9d; direct=00404F9D TradePanelTy::sub_00551B10 */
       st::fn_00404F9D(this_00);
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -394,6 +402,7 @@ void __thiscall st::fn_00551690(TradePanelTy *this,int param_1)
 
   if (param_1 != this->field_005C) {
     local_8 = this;
+    /* ST_CALLSITE[005516AC]: CALL 0x00404d36; direct=00404D36 SpecPanelTy::ShiftControls */
     st::fn_00404D36((SpecPanelTy *)this,param_1);
     sVar2 = (short)this->field_0174;
     this->field_0028 = 0x24;
@@ -492,9 +501,11 @@ void __thiscall st::fn_00551BA0(TradePanelTy *this)
                                   *(ushort *)
                                    (&this_00->field_0x1ab +
                                    (iVar4 + (uint)(byte)this_00->field_01D0 * 2) * 4) - 1);
+            /* ST_CALLSITE[00551D40]: CALL 0x00403229; direct=00403229 DibPut */
             st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,0x39,'\x01',
                    (byte *)pBVar2);
           }
+          /* ST_CALLSITE[00551D6A]: CALL dword ptr [0x0085bde8] */
           st::external_00000080(st::pointer_boundary_cast<LPSTR>(&this_00->field_018D),st::mutable_c_string("%d:1"),
                     (uint)*(ushort *)
                            (&this_00->field_0x1ad +
@@ -518,6 +529,7 @@ void __thiscall st::fn_00551BA0(TradePanelTy *this)
       resourceString = st::fn_006B0140(0x4e5b,g_hINSTANCE_00807618);
       st::fn_00711B70(this_00->field_0189,resourceString,iVar6,iVar4,uVar3,iVar7,iVar9);
     }
+    /* ST_CALLSITE[00551DBF]: CALL 0x004048f4; direct=004048F4 TradePanelTy::PaintIndicators */
     st::fn_004048F4(this_00);
     g_currentExceptionFrame = local_54.previous;
     return;
@@ -565,6 +577,7 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
   pTVar3 = local_10;
   if (iVar4 == 0) {
     resourceString = &local_10->field_018D;
+    /* ST_CALLSITE[00551F15]: CALL dword ptr [0x0085bde8] */
     st::external_00000080(resourceString,st::mutable_c_string("%6d"),
               (uint)(ushort)(&local_10->field_01BC)[(byte)local_10->field_01D0]);
     st::fn_00710A90(pTVar3->field_01DD,pTVar3->field_0068,0,0x67,0x36,0x23,0xc);
@@ -582,6 +595,7 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
         text = st::fn_0040577C(st::mutable_c_string("BKG_AMOUNTRC"),0);
         puVar5 = st::fn_00709AF0
                            (PTR_00806794,CASE_1,text,uVar6,bVar7,iVar9,iVar10,puVar11);
+        /* ST_CALLSITE[00551FAB]: CALL 0x00403229; direct=00403229 DibPut */
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)pTVar3->field_0068,iVar4 + -3,0x45,'\x01',
                (byte *)puVar5);
         bVar7 = pTVar3->field_01D0;
@@ -596,6 +610,7 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
           iVar9 = (int)((ulonglong)(ushort)(&pTVar3->field_01BC)[bVar7] /
                        (ulonglong)(longlong)(int)(uint)uVar1);
         }
+        /* ST_CALLSITE[00552017]: CALL dword ptr [0x0085bde8] */
         st::external_00000080(resourceString,st::mutable_c_string("%6d"),iVar9);
         st::fn_00710A90(pTVar3->field_01DD,pTVar3->field_0068,0,iVar4,0x48,0x23,0xc);
         st::fn_007119C0(pTVar3->field_01DD,resourceString,-1,-1,
@@ -647,9 +662,12 @@ void __thiscall st::fn_005521B0(TradePanelTy *this)
     local_14 = local_8->field_01AF;
     local_10 = local_8->field_01B3;
     local_c = local_8->field_01B7;
+    /* ST_CALLSITE[0055220A]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     st::fn_004035BC
               (g_allPlayers_007FA174,10,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_0x1ab);
+    /* ST_CALLSITE[00552211]: CALL 0x00404f9d; direct=00404F9D TradePanelTy::sub_00551B10 */
     st::fn_00404F9D(this_00);
+    /* ST_CALLSITE[00552218]: CALL 0x0040391d; direct=0040391D TradePanelTy::PaintPanel */
     st::fn_0040391D(this_00);
     g_currentExceptionFrame = local_5c.previous;
     return;
@@ -726,6 +744,7 @@ int __thiscall st::fn_005522A0(TradePanelTy *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[005522DE]: CALL 0x00401401; direct=00401401 SpecPanelTy::GetMessage */
   st::fn_00401401((SpecPanelTy *)local_c,message);
   SVar2 = message->id;
   if (SVar2 < 0xb203) {
@@ -736,6 +755,7 @@ LAB_00552481:
       uVar17 = 1;
       uVar15 = 0;
       pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
+      /* ST_CALLSITE[00552494]: CALL dword ptr [EBX + 0x10] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pAVar8->field_0010)(message,pCVar3,iVar7,uVar15,uVar17);
       g_currentExceptionFrame = local_68.previous;
@@ -757,6 +777,7 @@ LAB_00552481:
         st::fn_00403C33((undefined4 *)0x20,(uint *)&local_18,0,0xffffffff);
         if (this_00->field_01BB != '\0') {
           this_00->field_0028 = 0xbfff;
+          /* ST_CALLSITE[005523CB]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)this_00->field_0000->field_0000)(&this_00->field_0x18);
           g_currentExceptionFrame = local_68.previous;
@@ -765,11 +786,13 @@ LAB_00552481:
       }
       else {
         if (SVar2 == MESS_ID_CREATE) {
+          /* ST_CALLSITE[0055232D]: CALL 0x00405678; direct=00405678 TradePanelTy::InitTradePanel */
           st::fn_00405678(this_00);
           g_currentExceptionFrame = local_68.previous;
           return 0;
         }
         if (SVar2 == MESS_SHARED_0003) {
+          /* ST_CALLSITE[00552312]: CALL 0x00405538; direct=00405538 TradePanelTy::DoneTradePanel */
           st::fn_00405538(this_00);
           g_currentExceptionFrame = local_68.previous;
           return 0;
@@ -799,14 +822,18 @@ LAB_00552481:
   else if (SVar2 < 0xb20d) {
     if (SVar2 == MESS_TRADEPANELTY_B20C) {
       (&this_00->field_01BC)[(byte)this_00->field_01D0] = (message->arg0).words.low;
+      /* ST_CALLSITE[005525F7]: CALL 0x004048f4; direct=004048F4 TradePanelTy::PaintIndicators */
       st::fn_004048F4(this_00);
+      /* ST_CALLSITE[005525FE]: CALL 0x0040578b; direct=0040578B TradePanelTy::sub_00551800 */
       st::fn_0040578B(this_00);
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
     if (SVar2 == MESS_TRADEPANELTY_B20A) {
       this_00->field_01D0 = *(char *)(message->arg0).ptr + -1;
+      /* ST_CALLSITE[005525C1]: CALL 0x00404f9d; direct=00404F9D TradePanelTy::sub_00551B10 */
       st::fn_00404F9D(this_00);
+      /* ST_CALLSITE[005525C8]: CALL 0x0040391d; direct=0040391D TradePanelTy::PaintPanel */
       st::fn_0040391D(this_00);
       g_currentExceptionFrame = local_68.previous;
       return 0;
@@ -831,6 +858,7 @@ LAB_00552481:
       pCVar3 = st::fn_006F2C00(pCVar3,iVar9,iVar4);
       puVar5 = st::fn_00709AF0
                          (PTR_00806794,CASE_1,pCVar3,uVar10,bVar11,iVar12,iVar14,puVar16);
+      /* ST_CALLSITE[00552539]: CALL 0x00403229; direct=00403229 DibPut */
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x01',
              (byte *)puVar5);
       if (*(int *)((message->arg0).u32 + 4) == 3) {
@@ -842,6 +870,7 @@ LAB_00552481:
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_RCTFTYPE"),0);
         puVar5 = st::fn_00709AF0
                            (PTR_00806794,CASE_6,pCVar3,uVar10,bVar11,iVar4,iVar9,puVar16);
+        /* ST_CALLSITE[0055257D]: CALL 0x00403229; direct=00403229 DibPut */
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x06',
                (byte *)puVar5);
       }
@@ -867,8 +896,9 @@ LAB_00552481:
     }
     uVar17 = 1;
     uVar15 = 0;
-    pcVar13 = st::pointer_boundary_cast<code *>(st::fn_00401E88);
+    pcVar13 = (code *)st::fn_00529FE0;
     pCVar3 = st::fn_0040577C(text,0);
+    /* ST_CALLSITE[00552655]: CALL dword ptr [EBX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)pAVar8->field_0008)(message,1,pCVar3,pcVar13,uVar15,uVar17);
   }

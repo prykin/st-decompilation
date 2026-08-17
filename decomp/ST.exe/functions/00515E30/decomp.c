@@ -70,6 +70,7 @@ HelpPanelTy::AddLinks(HelpPanelTy *this,int *param_1,char param_2,int param_3,in
 LAB_00515ee1:
         if ((*(char *)((int)local_c + -1) != '\0') && (uVar8 = 0, *local_c != 0)) {
           if (local_14 != 0) {
+            /* ST_CALLSITE[00515F07]: CALL 0x00401870; direct=00401870 HelpPanelTy::CheckBkView */
             CheckBkView(this_00,*param_1,0xf);
             ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,*param_1,0x19c,0xf);
             uVar12 = 3;
@@ -80,6 +81,7 @@ LAB_00515ee1:
             local_14 = 0;
             *param_1 = *param_1 + 0xf;
           }
+          /* ST_CALLSITE[00515F72]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x50,*param_1 + 1,'\x01',
                  (byte *)this_00->field_024C);
           local_24 = *(uint *)sizeHelp_exref;
@@ -110,6 +112,7 @@ LAB_005160da:
       local_10 = piVar5;
     } while (*pcVar9 != '\0');
   }
+  /* ST_CALLSITE[005160F8]: CALL 0x00401870; direct=00401870 HelpPanelTy::CheckBkView */
   CheckBkView(this_00,*param_1,10);
   iVar10 = (*param_1 / 10 + 1) * 10;
   *param_1 = iVar10;
@@ -120,6 +123,7 @@ LAB_005160da:
   else {
     iVar10 = iVar10 / (int)(uint)(ushort)this_00->field_01B1 + 1;
   }
+  /* ST_CALLSITE[00516141]: CALL 0x00402eeb; direct=00402EEB HelpPanelTy::CreateSlider */
   CreateSlider(this_00,iVar10);
   Library::DKW::WGR::FUN_006b5110
             ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,

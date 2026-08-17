@@ -21,6 +21,7 @@ FUN_004e20d0(void *this,int param_1,int param_2,STBoatC_field_06F7State param_3,
     thunk_FUN_004e2200(this,param_1,param_2,param_4);
     if (STField<int>(this,0x520) == 0) {
       STField<undefined4>(this,0x520) = 1;
+      /* ST_CALLSITE[004E2145]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
       TLOBaseTy::RotateSpr(this,0);
     }
     uVar1 = 1;

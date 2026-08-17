@@ -60,6 +60,7 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
                               (param_1->field_0000,(DWORD)puVar4,0,0,DAT_0080730a,0,0,1);
           }
           STField<int>(pvVar2,0xe07) = iVar3;
+          /* ST_CALLSITE[0056A38C]: CALL dword ptr [0x0085bedc] */
           DVar5 = timeGetTime();
           STField<DWORD>(pvVar2,0xdff) = DVar5;
         }

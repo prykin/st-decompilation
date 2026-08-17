@@ -19,6 +19,7 @@ int __fastcall AiFltClassTy::sub_00661800(AnonShape_0065DA10_8B0AA883 *param_1,u
   int local_8;
 
   local_8 = 0;
+  /* ST_CALLSITE[00661810]: CALL 0x004018cf; direct=004018CF AiFltClassTy::sub_0065DA10 */
   array = (DArrayTy *)sub_0065DA10((AiFltClassTy *)param_1,param_2);
   if (array != nullptr) {
     uVar4 = 0;
@@ -32,7 +33,9 @@ int __fastcall AiFltClassTy::sub_00661800(AnonShape_0065DA10_8B0AA883 *param_1,u
         else {
           puVar1 = nullptr;
         }
+        /* ST_CALLSITE[0066184F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,param_1->field_0024,*puVar1,CASE_1);
+        /* ST_CALLSITE[0066185E]: CALL dword ptr [EAX + 0x2c] */
         if ((((this != nullptr) && (iVar3 = this->vfunc_2C(), 0x31 < iVar3)
              ) && (iVar3 < 0x74)) &&
            ((*(short *)&param_1->field_0x39 != 3 &&

@@ -15,8 +15,7 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this)
   HoloTy_field_0001State HVar2;
   undefined1 uVar3;
   undefined1 uVar4;
-  AnonShape_004AB810_8E5693D5 *pAVar5;
-  STT3DSprC *this_00;
+  STT3DSprC *pSVar5;
   HoloTy *pHVar6;
   int iVar8;
   undefined4 *puVar7;
@@ -24,13 +23,14 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this)
   HoloTy *pHVar10;
   HoloTy *pHVar11;
 
-  pAVar5 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-  if (pAVar5 != nullptr) {
-    this_00 = (STT3DSprC *)thunk_FUN_004ab810(pAVar5);
-    if (this_00 != nullptr) {
+  pSVar5 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+  if (pSVar5 != nullptr) {
+    /* ST_CALLSITE[0057F59A]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+    pSVar5 = STT3DSprC::STT3DSprC(pSVar5);
+    if (pSVar5 != nullptr) {
       pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(this->field_0265 * 4 + 4);
       if (pHVar6 == nullptr) {
-        Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00);
+        Library::MSVCRT::FUN_0072e2b0((HoloTy *)pSVar5);
         return nullptr;
       }
       iVar9 = this->field_0265;
@@ -51,9 +51,10 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this)
         Library::MSVCRT::FUN_0072e2b0(this->field_026D);
       }
       this->field_026D = pHVar6;
-      *(STT3DSprC **)((int)&pHVar6->field_0000 + this->field_0265 * 4) = this_00;
+      *(STT3DSprC **)((int)&pHVar6->field_0000 + this->field_0265 * 4) = pSVar5;
       this->field_0265 = this->field_0265 + 1;
-      iVar9 = STT3DSprC::Init(this_00,PTR_008073cc,0x5a,0x45,this,0xb4,0x8c,0x11);
+      /* ST_CALLSITE[0057F632]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
+      iVar9 = STT3DSprC::Init(pSVar5,PTR_008073cc,0x5a,0x45,this,0xb4,0x8c,0x11);
       if (iVar9 != 0) {
         iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x203,0,0,"%s",
                                    "STDcResourcC::Init Sprite Error");
@@ -62,7 +63,7 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this)
         }
         return nullptr;
       }
-      return (undefined4 *)this_00;
+      return &pSVar5->vtable;
     }
   }
   return nullptr;

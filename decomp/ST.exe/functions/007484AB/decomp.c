@@ -17,6 +17,7 @@ undefined4 __thiscall FUN_007484ab(int param_1,undefined4 param_2)
     uVar2 = 0x80040209;
   }
   else {
+    /* ST_CALLSITE[007484C3]: CALL dword ptr [ECX + 0x18] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*piVar1 + 0x18))(piVar1,param_2);
   }

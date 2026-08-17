@@ -54,6 +54,7 @@ STAllPlayersC::GetTOBJListFromDArr
       uVar1 = *(ushort *)(param_2->field_001C + iVar4 * 2);
       local_8 = STReplaceLowWord((uint32_t)(param_2->field_001C), (uint16_t)(uVar1));
       if (uVar1 != 0xffff) {
+        /* ST_CALLSITE[0043EF4C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_01 = GetObjPtr(this_00,(char)param_1,uVar1,CASE_1);
         if (this_01 == nullptr) {
           RaiseInternalException
@@ -63,7 +64,9 @@ switchD_0043efb1_caseD_3a:
           bVar3 = false;
         }
         else {
+          /* ST_CALLSITE[0043EF7A]: CALL dword ptr [EAX + 0x2c] */
           SVar5 = this_01->vfunc_2C();
+          /* ST_CALLSITE[0043EF86]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
           if ((SVar5 != param_3) || (iVar7 = (*this_01->vtable[1].vfunc_24)(this_01), iVar7 == 0))
           goto switchD_0043efb1_caseD_3a;
           if (param_4 != 0) {
@@ -72,6 +75,7 @@ switchD_0043efb1_caseD_3a:
             case CASE_39:
             case CASE_4F:
             case CASE_5E:
+              /* ST_CALLSITE[0043EFC5]: CALL dword ptr [EAX + 0x88] */
               if ((param_4 == 1) && (iVar7 = (*this_01->vtable->vfunc_88)(local_18), 0 < iVar7)) {
                 bVar3 = true;
                 goto LAB_0043efd8;
@@ -83,6 +87,7 @@ switchD_0043efb1_caseD_3a:
         }
 LAB_0043efd8:
         if ((bVar3) &&
+           /* ST_CALLSITE[0043EFE7]: CALL dword ptr [EDX + 0x6c] */
            ((param_5 == -1 || (iVar7 = this_01->vfunc_6C(), iVar7 == param_5)))) {
           Library::DKW::TBL::DArrayAppend(local_c,&local_8);
         }

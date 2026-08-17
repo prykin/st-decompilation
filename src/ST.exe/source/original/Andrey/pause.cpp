@@ -37,6 +37,7 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
     iVar4 = g_nWidth_00806730 + -0x1c;
     local_8->field_003C = iVar4;
     local_8->field_0174 = (local_8->field_0040 - iVar4) + g_nWidth_00806730;
+    /* ST_CALLSITE[005392E9]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
     pcVar5 = (ccFntTy *)st::fn_0070DF00(0x19d,g_interSystem_00802A28->field_0028);
     this_00->field_017C = pcVar5;
     pcVar5->field_0058 = 0;
@@ -46,6 +47,7 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
     pCVar6 = st::fn_0040577C(st::mutable_c_string("BKG_PAUSE"),0);
     puVar7 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar6,piVar11,iVar4);
     this_00->field_0180 = puVar7;
+    /* ST_CALLSITE[00539337]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)puVar7);
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x52,2,0xd1,0xc);
     iVar13 = -1;
@@ -56,6 +58,7 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
     resourceString = st::fn_006B0140(0x2716,g_hINSTANCE_00807618);
     st::fn_00711B70(this_00->field_017C,resourceString,iVar4,iVar9,uVar10,iVar12,iVar13);
     pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
+    /* ST_CALLSITE[005393BB]: CALL 0x0040300d; direct=0040300D PanelTy::CreateBut */
     uVar8 = st::fn_0040300D((PanelTy *)this_00,0,1,0x115,0x8b,1,0,1,pCVar6,0xbfff,0xc000,0,0,0,
                                nullptr,1);
     this_00->field_0184 = uVar8;
@@ -159,6 +162,7 @@ void __thiscall st::fn_005395B0(PausePanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
+    /* ST_CALLSITE[00539601]: CALL 0x00404ea3; direct=00404EA3 PausePanelTy::ShiftControls */
     st::fn_00404EA3(local_8,0);
 switchD_005395f3_caseD_3:
     if (param_1 == 0) {
@@ -273,10 +277,12 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
     st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x9f);
     return 0xffff;
   }
+  /* ST_CALLSITE[0053982D]: CALL 0x004017f8; direct=004017F8 PanelTy::GetMessage */
   st::fn_004017F8((PanelTy *)local_8,message);
   SVar1 = message->id;
   if (SVar1 < 4) {
     if (SVar1 == MESS_SHARED_0003) {
+      /* ST_CALLSITE[00539937]: CALL 0x0040466f; direct=0040466F PausePanelTy::DonePausePanel */
       st::fn_0040466F(this_00);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
@@ -290,6 +296,7 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
         if (this_00->field_003C <= iVar5) {
           this_00->field_003C = iVar5;
           this_00->field_0172 = CASE_1;
+          /* ST_CALLSITE[00539903]: CALL 0x00404ea3; direct=00404EA3 PausePanelTy::ShiftControls */
           st::fn_00404EA3(this_00,1);
         }
         st::fn_006B3640
@@ -315,6 +322,7 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_ID_CREATE) {
+      /* ST_CALLSITE[00539854]: CALL 0x0040434f; direct=0040434F PausePanelTy::InitPausePanel */
       st::fn_0040434F(this_00);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
@@ -322,11 +330,13 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
   }
   else if (SVar1 == MESS_SHARED_BFFF) {
     this_00->field_0028 = 0xa100;
+    /* ST_CALLSITE[005399A0]: CALL dword ptr [EAX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
   }
   else if (SVar1 == MESS_SHARED_C000) {
     pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
+    /* ST_CALLSITE[00539975]: CALL 0x00402121; direct=00402121 PanelTy::PaintIBut */
     st::fn_00402121((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar6,0x274d,1,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;

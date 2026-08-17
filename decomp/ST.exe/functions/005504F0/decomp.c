@@ -21,6 +21,7 @@ void __thiscall FUN_005504f0(void *this,int param_1,UINT param_2,int param_3)
     do {
       if (((*(int *)(pcVar3 + -6) == param_1) && (*pcVar3 != '\0')) && (param_2 != 0)) {
         pcVar1 = LoadResourceString(param_2,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[00550543]: CALL dword ptr [0x0085bde8] */
         wsprintfA(local_10c,"%s %s",pcVar3 + -0x46,pcVar1);
         if (g_popUp_008016D8 != nullptr) {
           thunk_FUN_0052d320(g_popUp_008016D8,local_10c,8);

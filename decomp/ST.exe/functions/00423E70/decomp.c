@@ -12,6 +12,7 @@ STGameObjC * __thiscall FUN_00423e70(void *this,ushort param_1)
 {
   STGameObjC *pSVar1;
 
+  /* ST_CALLSITE[00423E83]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   pSVar1 = STAllPlayersC::GetObjPtr
                      (g_allPlayers_007FA174,STField<char>(this,0x24),param_1,CASE_1);
   return pSVar1;

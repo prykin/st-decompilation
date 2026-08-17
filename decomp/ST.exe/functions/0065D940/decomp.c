@@ -27,9 +27,11 @@ void __thiscall FUN_0065d940(void *this,DArrayTy *param_1,int param_2)
         else {
           puVar1 = nullptr;
         }
+        /* ST_CALLSITE[0065D97B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         objPtr = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,STField<char>(this,0x24),*puVar1,CASE_1);
         if (objPtr != nullptr) {
+          /* ST_CALLSITE[0065D98B]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
           AiFltClassTy::_AddObjFlt(this,(uint)objPtr,param_2);
         }
         uVar2 = uVar2 + 1;

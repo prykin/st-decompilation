@@ -27,6 +27,7 @@ undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_
   local_10 = 0;
   while( true ) {
     do {
+      /* ST_CALLSITE[004EB052]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar2 = LookupRecordByte((char)param_1);
       if (bVar2 == 3) {
         iVar5 = local_10 + iVar6 * 2;

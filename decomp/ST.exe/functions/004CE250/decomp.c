@@ -32,8 +32,10 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
             ((sVar1 < g_worldGrid.sizeZ &&
              (pSVar2 = STGridAt3D(g_worldGrid, sVar6, sVar3, sVar1).objects[0],
              pSVar2 != nullptr)))))) {
+          /* ST_CALLSITE[004CE336]: CALL dword ptr [EAX + 0x2c] */
           iVar4 = pSVar2->GetObjectTypeId();
           if (0x53 < iVar4) {
+            /* ST_CALLSITE[004CE342]: CALL dword ptr [EDX + 0x2c] */
             iVar4 = pSVar2->GetObjectTypeId();
             if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
               *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);
@@ -49,8 +51,10 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
              ((sVar1 < g_worldGrid.sizeZ &&
               (pSVar2 = STGridAt3D(g_worldGrid, sVar6, sVar3, sVar1).objects[0],
               pSVar2 != nullptr)))))))) {
+          /* ST_CALLSITE[004CE3E4]: CALL dword ptr [EAX + 0x2c] */
           iVar4 = pSVar2->GetObjectTypeId();
           if (0x53 < iVar4) {
+            /* ST_CALLSITE[004CE3F0]: CALL dword ptr [EDX + 0x2c] */
             iVar4 = pSVar2->GetObjectTypeId();
             if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
               *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);
@@ -68,8 +72,10 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
               ((sVar1 < g_worldGrid.sizeZ &&
                (pSVar2 = STGridAt3D(g_worldGrid, sVar3, sVar6, sVar1).objects[0],
                pSVar2 != nullptr)))))) {
+            /* ST_CALLSITE[004CE48F]: CALL dword ptr [EDX + 0x2c] */
             iVar4 = pSVar2->GetObjectTypeId();
             if (0x53 < iVar4) {
+              /* ST_CALLSITE[004CE49B]: CALL dword ptr [EAX + 0x2c] */
               iVar4 = pSVar2->GetObjectTypeId();
               if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
                 *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);
@@ -87,8 +93,10 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
              ((sVar1 < g_worldGrid.sizeZ &&
               (pSVar2 = STGridAt3D(g_worldGrid, sVar3, sVar6, sVar1).objects[0],
               pSVar2 != nullptr)))) {
+            /* ST_CALLSITE[004CE532]: CALL dword ptr [EDX + 0x2c] */
             iVar4 = pSVar2->GetObjectTypeId();
             if (0x53 < iVar4) {
+              /* ST_CALLSITE[004CE53E]: CALL dword ptr [EAX + 0x2c] */
               iVar4 = pSVar2->GetObjectTypeId();
               if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
                 *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);

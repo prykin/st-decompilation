@@ -14,6 +14,7 @@ void __cdecl FUN_0067bda0(short *param_1,STFishC *objPtr)
   short local_c [2];
   short local_8 [2];
 
+  /* ST_CALLSITE[0067BDB6]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   STFishC::sub_004162B0(objPtr,local_8,local_c,(short *)((int)&objPtr + 2));
   *param_1 = local_8[0] + -1;
   param_1[2] = 0;

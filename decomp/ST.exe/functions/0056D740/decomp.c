@@ -81,6 +81,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
                               (g_dDXContext_0080759C,0x10000001,g_nWidth_00806730,DAT_00806734,
                                DAT_00806738,g_nWidth_00806730,DAT_00806734,(int)local_4bc,0,0x100);
             local_c = (uint)(DVar3 == 0);
+            /* ST_CALLSITE[0056D921]: CALL dword ptr [0x0085be3c] */
             MoveWindow(HWND_00856d78,0,0,g_nWidth_00806730,DAT_00806734,1);
             local_68 = 0x66;
             AppClassTy::SendMessage((AppClassTy *)local_14,3,1,(int)local_78);

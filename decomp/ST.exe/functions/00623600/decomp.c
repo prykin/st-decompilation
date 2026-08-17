@@ -20,6 +20,7 @@ void __fastcall FUN_00623600(AnonShape_00623600_61226D23 *param_1)
   else {
     iVar6 = (int)param_1->field_004B;
     if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+         /* ST_CALLSITE[0062364B]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
          (VisibleClassTy::sub_00558C00
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                      (int)param_1->field_0047,(int)param_1->field_0049,&local_8,&local_c), iVar6 < 0
@@ -57,10 +58,14 @@ LAB_0062371f:
             param_1->field_02CE = 0;
           }
           puVar1 = &param_1->field_0x1d5;
+          /* ST_CALLSITE[00623783]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
           STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x0e',param_1->field_02CE);
+          /* ST_CALLSITE[0062378C]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
           STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x0e');
           if (param_1->field_0352 != '\0') {
+            /* ST_CALLSITE[006237A6]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
             STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\f',param_1->field_02CE);
+            /* ST_CALLSITE[006237AF]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
             STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\f');
           }
           if (DAT_00807326 != '\0') {
@@ -78,21 +83,27 @@ LAB_0062371f:
           param_1->field_02CE = 0;
         }
         puVar1 = &param_1->field_0x1d5;
+        /* ST_CALLSITE[00623820]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
         STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x0e',param_1->field_02CE);
+        /* ST_CALLSITE[00623829]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
         STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x0e');
         if (param_1->field_0352 != '\0') {
+          /* ST_CALLSITE[00623843]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
           STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\f',param_1->field_02CE);
+          /* ST_CALLSITE[0062384C]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
           STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\f');
         }
         if (DAT_00807326 != '\0') {
           bVar3 = param_1->field_02D6;
 LAB_00623863:
+          /* ST_CALLSITE[00623867]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
           STT3DSprC::SetCurShad((STT3DSprC *)&param_1->field_0x1d5,'\x0e',(uint)bVar3);
         }
       }
       if (param_1->field_02E9 == '\0') {
         thunk_FUN_004ad460(&param_1->field_0x1d5,0);
         param_1->field_02E9 = 1;
+        /* ST_CALLSITE[0062388D]: CALL dword ptr [EDX + 0xd8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(param_1->field_0000 + 0xd8))();
         return;
@@ -107,6 +118,7 @@ LAB_00623863:
   }
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_006238c2:
+  /* ST_CALLSITE[006238C6]: CALL dword ptr [EDX + 0xd8] */
   (**(code **)(param_1->field_0000 + 0xd8))();
   return;
 }

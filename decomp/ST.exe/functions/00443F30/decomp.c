@@ -58,7 +58,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
         puVar4 = (byte *)&local_14[-1].field_0x68f;
         do {
           if ((uint *)*puVar4 != nullptr) {
-            local_c = (byte *)FUN_006b0020((uint *)*puVar4,(int *)&local_8);
+            local_c = FUN_006b0020((uint *)*puVar4,(int *)&local_8);
             FreeAndNull(&local_c);
             iVar8 = (int)&(local_8->field_0000).flags + iVar8;
             local_28 = iVar8;
@@ -71,13 +71,13 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       pAVar11 = local_14;
       do {
         if (*(uint **)&pAVar11[-1].field_0x7ed != nullptr) {
-          local_c = (byte *)FUN_006b0020(*(uint **)&pAVar11[-1].field_0x7ed,(int *)&local_8);
+          local_c = FUN_006b0020(*(uint **)&pAVar11[-1].field_0x7ed,(int *)&local_8);
           FreeAndNull(&local_c);
           iVar8 = (int)&(local_8->field_0000).flags + iVar8;
           local_28 = iVar8;
         }
         if (*(uint **)pAVar11 != nullptr) {
-          local_c = (byte *)FUN_006b0020(*(uint **)pAVar11,(int *)&local_8);
+          local_c = FUN_006b0020(*(uint **)pAVar11,(int *)&local_8);
           FreeAndNull(&local_c);
           iVar8 = (int)&(local_8->field_0000).flags + iVar8;
           local_28 = iVar8;
@@ -89,7 +89,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       puVar4 = (byte *)&local_14->field_0x54;
       do {
         if ((uint *)*puVar4 != nullptr) {
-          local_c = (byte *)FUN_006b0020((uint *)*puVar4,(int *)&local_8);
+          local_c = FUN_006b0020((uint *)*puVar4,(int *)&local_8);
           FreeAndNull(&local_c);
           iVar8 = (int)&(local_8->field_0000).flags + iVar8;
           local_28 = iVar8;
@@ -100,7 +100,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       local_10 = (AnonShape_00443F30_9F0248D4 *)0x6;
       puVar12 = (uint *)&local_14->field_0x631;
       do {
-        local_c = (byte *)FUN_006b0020(puVar12,(int *)&local_8);
+        local_c = FUN_006b0020(puVar12,(int *)&local_8);
         FreeAndNull(&local_c);
         iVar8 = (int)&(local_8->field_0000).flags + iVar8;
         puVar12 = puVar12 + 0x11;
@@ -120,19 +120,19 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
           do {
             DArrayGetElement(local_20,uVar13,&local_40);
             if (local_40 != nullptr) {
-              local_c = (byte *)FUN_006b0020(local_40,(int *)&local_8);
+              local_c = FUN_006b0020(local_40,(int *)&local_8);
               FreeAndNull(&local_c);
               iVar8 = (int)&(local_8->field_0000).flags + iVar8;
               local_28 = iVar8;
             }
             if (local_3c != nullptr) {
-              local_c = (byte *)FUN_006b0020(local_3c,(int *)&local_8);
+              local_c = FUN_006b0020(local_3c,(int *)&local_8);
               FreeAndNull(&local_c);
               iVar8 = (int)&(local_8->field_0000).flags + iVar8;
               local_28 = iVar8;
             }
             if (local_38 != nullptr) {
-              local_c = (byte *)FUN_006b0020(local_38,(int *)&local_8);
+              local_c = FUN_006b0020(local_38,(int *)&local_8);
               FreeAndNull(&local_c);
               iVar8 = (int)&(local_8->field_0000).flags + iVar8;
               local_28 = iVar8;
@@ -395,7 +395,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
             pbVar9[3] = 0;
           }
           else {
-            local_c = (byte *)FUN_006b0020(*(uint **)local_14,(int *)&local_8);
+            local_c = FUN_006b0020(*(uint **)local_14,(int *)&local_8);
             pbVar2 = local_c;
             pbVar9 = pbVar3;
             for (uVar13 = (uint)local_8 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
@@ -438,9 +438,8 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
           *(undefined4 *)((int)&local_20[0xb].data + 2) = 0;
         }
         else {
-          local_c = (byte *)FUN_006b0020((uint *)((AnonShape_00443F30_9F0248D4 *)
-                                                 ((int)local_18 + -0x54))->field_0004,
-                                         (int *)&local_8);
+          local_c = FUN_006b0020((uint *)((AnonShape_00443F30_9F0248D4 *)((int)local_18 + -0x54))->
+                                         field_0004,(int *)&local_8);
           pbVar2 = local_c;
           pbVar9 = pbVar3;
           for (uVar13 = (uint)local_8 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
@@ -470,7 +469,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
           pbVar9[3] = 0;
         }
         else {
-          local_c = (byte *)FUN_006b0020(*(uint **)local_18,(int *)&local_8);
+          local_c = FUN_006b0020(*(uint **)local_18,(int *)&local_8);
           pbVar2 = local_c;
           pbVar9 = pbVar3;
           for (uVar13 = (uint)local_8 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
@@ -515,7 +514,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
           pbVar9[3] = 0;
         }
         else {
-          local_c = (byte *)FUN_006b0020((uint *)local_20->flags,(int *)&local_8);
+          local_c = FUN_006b0020((uint *)local_20->flags,(int *)&local_8);
           pbVar2 = local_c;
           pbVar9 = pbVar3;
           for (uVar13 = (uint)local_8 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
@@ -549,7 +548,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       local_30 = (int *)0x6;
       local_20 = local_18;
       do {
-        local_c = (byte *)FUN_006b0020(&local_20->flags,(int *)&local_8);
+        local_c = FUN_006b0020(&local_20->flags,(int *)&local_8);
         pbVar2 = local_c;
         pbVar9 = pbVar3;
         for (uVar13 = (uint)local_8 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
@@ -604,7 +603,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
               pAVar11[-1].field_0839 = nullptr;
             }
             else {
-              local_c = (byte *)FUN_006b0020(local_40,(int *)&local_8);
+              local_c = FUN_006b0020(local_40,(int *)&local_8);
               pbVar3 = local_c;
               pbVar9 = pbVar2;
               for (uVar13 = (uint)local_8 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
@@ -629,7 +628,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
               *(undefined4 *)&pAVar11->field_0x4 = 0;
             }
             else {
-              local_c = (byte *)FUN_006b0020(local_3c,(int *)&local_8);
+              local_c = FUN_006b0020(local_3c,(int *)&local_8);
               pbVar3 = local_c;
               pbVar9 = pbVar2;
               for (uVar13 = (uint)local_8 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
@@ -654,7 +653,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
               *(undefined4 *)&pAVar11->field_0xc = 0;
             }
             else {
-              local_c = (byte *)FUN_006b0020(local_38,(int *)&local_8);
+              local_c = FUN_006b0020(local_38,(int *)&local_8);
               pbVar3 = local_c;
               pbVar9 = pbVar2;
               for (uVar13 = (uint)local_8 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {

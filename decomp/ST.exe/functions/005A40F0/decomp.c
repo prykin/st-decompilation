@@ -28,7 +28,9 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
   if (g_cursorClass_00802A30 != nullptr) {
     g_cursorClass_00802A30->field_0493 = CASE_1;
     this_00->field_0494 = 0xffff;
+    /* ST_CALLSITE[005A412A]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
     CursorClassTy::SetGCType(this_00,CASE_0,this_00->field_00C5,this_00->field_00C9);
+    /* ST_CALLSITE[005A413F]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;
@@ -58,6 +60,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
         param_4 = (undefined4 *)((int)param_4 + 1);
         puVar2 = (undefined4 *)((int)puVar2 + 1);
       }
+      /* ST_CALLSITE[005A41E6]: CALL 0x00402031; direct=00402031 FSGSTy::PaintLadder */
       PaintLadder(this_01);
       memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
       local_18 = 0x20;

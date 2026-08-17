@@ -106,22 +106,27 @@ LAB_005dc828:
     this_00->field_0548 = &pDVar4_mg2->flags;
     puVar5 = &this_00->field_003C;
     pcVar7_mg1 = LoadResourceString(0x2347,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005DC8DA]: CALL EBX */
     wsprintfA(puVar5,"&2 %s:",pcVar7_mg1);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,puVar5);
+    /* ST_CALLSITE[005DC8F7]: CALL EBX */
     wsprintfA(puVar5,"&0 %s",&CHAR_00h_0080c3c3);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,puVar5);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,&CHAR___007c3b5c);
     uVar7 = _DAT_008087c4 & 0xffff;
     uVar10 = (uint)DAT_008087c2;
     pcVar7_mg2 = LoadResourceString(0x2344,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005DC947]: CALL EBX */
     wsprintfA(puVar5,"&2 %s: &0%d&2x&0%d",pcVar7_mg2,uVar10,uVar7);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,puVar5);
     uVar7 = _DAT_008087c4 >> 0x10 & 0xff;
     pcVar7_mg3 = LoadResourceString(0x2345,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005DC97A]: CALL EBX */
     wsprintfA(puVar5,"&2 %s: &0%d",pcVar7_mg3,uVar7);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,puVar5);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,&CHAR___007c3b5c);
     pcVar7_mg4 = LoadResourceString(0x2346,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005DC9B5]: CALL EBX */
     wsprintfA(puVar5,"&2 %s:",pcVar7_mg4);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,puVar5);
     Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0548,&CHAR___007c3b5c);

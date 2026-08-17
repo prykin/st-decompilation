@@ -71,6 +71,7 @@ TLOBldMark::sub_004C6440
         (local_8 < g_worldGrid.sizeY)) &&
        ((((((g_visibleClass_00802A88 == nullptr || (DAT_0080874d == 0xff)) ||
            ((g_visibleClass_00802A88->field_00F8 == 0 ||
+            /* ST_CALLSITE[004C6550]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             ((VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10,
                          local_8,&local_30,&local_34), (int)piVar8 < 0x79aed0 ||
@@ -107,6 +108,7 @@ cf_common_exit_004C6899:
         local_28 = 0;
         goto cf_common_exit_004C6899;
       }
+      /* ST_CALLSITE[004C66FA]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar9 = STT3DSprC::LoadSequence
                         (this->field_002C,0,PTR_0080678c,
                          (&PTR_s_tlo_bldmark_si_007ad25c)[(byte)this->field_0010->field_112E],
@@ -134,13 +136,16 @@ cf_common_exit_004C6899:
         uVar10 = *(uint *)(&DAT_00790f84 + this->field_001C * 4);
       }
       thunk_FUN_004abce0(this->field_002C,0,uVar10,uVar10,'\0');
+      /* ST_CALLSITE[004C676F]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase(this->field_002C,'\0',uVar10);
       DVar6 = STAppC::sub_006E51B0(this->field_0010);
+      /* ST_CALLSITE[004C6781]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow(this->field_002C,0,DVar6);
       iVar9 = local_10;
     }
   }
   else if (this->field_0024 == 0) {
+    /* ST_CALLSITE[004C6636]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar5 = STT3DSprC::LoadSequence
                       (this->field_002C,0,PTR_0080678c,
                        *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),
@@ -151,8 +156,10 @@ cf_common_exit_004C6899:
     }
     thunk_FUN_004abce0(this->field_002C,0,*(int *)(&DAT_00790f84 + this->field_001C * 4),
                        *(int *)(&DAT_00790f84 + this->field_001C * 4),'\0');
+    /* ST_CALLSITE[004C6678]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
     DVar6 = STAppC::sub_006E51B0(this->field_0010);
+    /* ST_CALLSITE[004C668A]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow(this->field_002C,0,DVar6);
   }
   thunk_FUN_004ad460(this->field_002C,0);
@@ -160,6 +167,7 @@ cf_common_exit_004C6899:
     fVar12 = (float)local_8 * _DAT_007904f8 + _DAT_007904f4;
     fVar3 = (float)local_10 * _DAT_007904f8 + _DAT_007904f4;
 LAB_004c6848:
+    /* ST_CALLSITE[004C684F]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     STT3DSprC::sub_004AD3C0
               (this->field_002C,fVar3,fVar12,
                (float)local_c * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);

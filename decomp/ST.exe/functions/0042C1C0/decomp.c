@@ -35,6 +35,7 @@ STAllPlayersC::AddObjsToTmp
       do {
         DArrayGetElement(param_4,index,&local_8);
         if ((short)local_8 != -1) {
+          /* ST_CALLSITE[0042C245]: CALL 0x00404098; direct=00404098 STAllPlayersC::AddObjToTmp */
           AddObjToTmp(local_c,(char)param_1,param_2,param_3,(char)param_1,local_8);
         }
         index = index + 1;

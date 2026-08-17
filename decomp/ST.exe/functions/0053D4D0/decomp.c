@@ -47,6 +47,7 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
     RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\setamine.cpp",0x94);
     return 0xffff;
   }
+  /* ST_CALLSITE[0053D50E]: CALL 0x00401401; direct=00401401 SpecPanelTy::GetMessage */
   SpecPanelTy::GetMessage((SpecPanelTy *)local_c,message);
   SVar1 = message->id;
   if (SVar1 < 0xb509) {
@@ -58,11 +59,13 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
     }
     if (SVar1 < 4) {
       if (SVar1 == MESS_SHARED_0003) {
+        /* ST_CALLSITE[0053D553]: CALL 0x00403d96; direct=00403D96 SAMPanelTy::DoneSAMPanel */
         DoneSAMPanel(this_00);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       if (SVar1 == MESS_ID_CREATE) {
+        /* ST_CALLSITE[0053D539]: CALL 0x0040132f; direct=0040132F SAMPanelTy::InitSAMPanel */
         InitSAMPanel(this_00);
         g_currentExceptionFrame = local_54.previous;
         return 0;
@@ -89,6 +92,7 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
       }
       pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01B1,
                             (uint)(*(char *)((int)&this_00->field_01AB + (uint)bVar5) == '\0'));
+      /* ST_CALLSITE[0053D681]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar12 - iVar10,iVar3 - iVar7,
              '\x01',(byte *)pBVar8);
       Library::DKW::DDX::FUN_006b3640
@@ -101,6 +105,7 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
       iVar10 = 0;
       UVar9 = 0x2755;
       pCVar6 = thunk_FUN_00571240("BUT_BIG",0);
+      /* ST_CALLSITE[0053D618]: CALL dword ptr [EBX + 0x10] */
       (*pSVar2->PaintIBut)((PanelTy *)this_00,(int)message,pCVar6,UVar9,iVar10,iVar12);
       g_currentExceptionFrame = local_54.previous;
       return 0;

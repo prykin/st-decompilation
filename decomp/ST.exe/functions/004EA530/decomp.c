@@ -13,8 +13,10 @@ undefined4 __thiscall FUN_004ea530(void *this,short param_1,short param_2,short 
       (this_00 = (AnonShape_004EA460_7CF77153 *)
                  STGridAt3D(g_worldGrid, param_1, param_2, param_3).objects[0],
       this_00 != nullptr)))) {
+    /* ST_CALLSITE[004EA5A9]: CALL dword ptr [EDX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*(int *)this_00 + 0x2c))();
+    /* ST_CALLSITE[004EA5B5]: CALL dword ptr [EAX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((iVar1 != 0x37) && (iVar1 = (**(code **)(*(int *)this_00 + 0x2c))(), iVar1 != 0x6c)) {
       return 0;

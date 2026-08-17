@@ -80,13 +80,16 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
         puVar3 = DArrayAt<undefined4>(local_1c, uVar10);
 LAB_00676e12:
         this = (STFishC *)*puVar3;
+        /* ST_CALLSITE[00676E20]: CALL dword ptr [EDX + 0xf8] */
         if ((this != nullptr) && (iVar5 = this->vfunc_F8(), iVar5 != 0)) {
           local_10 = 1;
+          /* ST_CALLSITE[00676E39]: CALL dword ptr [EAX + 0x2c] */
           dVar6 = this->slot_2C();
           if (param_2 != 0) {
             if (dVar6 == 0x78) {
               if ((param_2 & 0x80000000) == 0) {
                 if ((param_2 & 0x3fffffff) != 0) {
+                  /* ST_CALLSITE[00676E5F]: CALL dword ptr [EDX + 0x2c] */
                   dVar7 = this->slot_2C();
                   if (dVar7 == 0x78) {
                     uVar10 = *(uint *)&this->field_0x259;
@@ -109,6 +112,7 @@ LAB_00676e88:
           if (local_10 == 0) {
 LAB_00677024:
             if (param_14 == nullptr) goto LAB_00677041;
+            /* ST_CALLSITE[00677038]: CALL EAX */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar5 = (*(code *)param_14)(param_1,local_14,this,param_13);
           }
@@ -116,6 +120,7 @@ LAB_00677024:
             if (param_3 != 0x3fffffff) {
               if (dVar6 == 0x78) {
                 if ((param_3 & 0x80000000) == 0) {
+                  /* ST_CALLSITE[00676EB6]: CALL dword ptr [EAX + 0x2c] */
                   dVar6 = this->slot_2C();
                   if (dVar6 == 0x78) {
                     iVar5 = *(int *)&this->field_0x259;
@@ -137,6 +142,7 @@ joined_r0x00676ef3:
 LAB_00676efc:
             if (local_10 == 0) goto LAB_00677024;
             if ((param_4 != nullptr) && (*param_4 != 0)) {
+              /* ST_CALLSITE[00676F1B]: CALL dword ptr [EDX + 0x74] */
               (*this->vtable->vfunc_74)((short)local_2c);
               pbVar11 = local_2c;
               pbVar9 = param_4;
@@ -162,10 +168,12 @@ LAB_00676f4c:
               }
             }
             if ((local_10 == 0) ||
+               /* ST_CALLSITE[00676F6C]: CALL dword ptr [EAX + 0x6c] */
                ((local_5 != -1 && (iVar5 = this->vfunc_6C(), local_5 != iVar5))))
             goto LAB_00677024;
             if ((0 < param_9) &&
                (((0 < param_10 && (0 < param_11)) &&
+                /* ST_CALLSITE[00676FA0]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 ((STFishC::sub_004162B0(this,&local_8,&local_a,&local_c), local_8 < param_6 ||
                  ((((local_a < param_7 || (local_c < param_8)) ||
                    ((int)param_6 + (int)param_9 <= (int)local_8)) ||
@@ -174,6 +182,7 @@ LAB_00676f4c:
               local_10 = 0;
             }
             if ((local_10 == 0) || (param_12 == nullptr)) goto LAB_00677024;
+            /* ST_CALLSITE[00677019]: CALL EAX */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar5 = (*(code *)param_12)(param_1,local_14,this,param_13);
           }

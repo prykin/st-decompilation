@@ -37,12 +37,14 @@ undefined4 * __cdecl FUN_0052a970(uint param_1,int param_2)
            (pcVar2 = &CHAR_00h_008016a0, uVar3 != 0)) {
           pcVar2 = &DAT_007c6eec;
         }
+        /* ST_CALLSITE[0052A9F0]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_008016a4,"%s%s","Shift",pcVar2);
       }
       if ((param_1 & 0x8000000) != 0) {
         if ((uVar5 != 0) || (pcVar2 = &CHAR_00h_008016a0, uVar3 != 0)) {
           pcVar2 = &DAT_007c6eec;
         }
+        /* ST_CALLSITE[0052AA2B]: CALL EDI */
         wsprintfA((LPSTR)&DAT_008016a4,"%s%s%s",&DAT_008016a4,&DAT_007c5454,pcVar2);
       }
       if (uVar3 != 0) {
@@ -50,6 +52,7 @@ undefined4 * __cdecl FUN_0052a970(uint param_1,int param_2)
         if (uVar5 == 0) {
           pcVar2 = &CHAR_00h_008016a0;
         }
+        /* ST_CALLSITE[0052AA61]: CALL EDI */
         wsprintfA((LPSTR)&DAT_008016a4,"%s%s%s",&DAT_008016a4,&DAT_007c5670,pcVar2);
       }
       if (uVar5 < 0x100) {
@@ -58,6 +61,7 @@ undefined4 * __cdecl FUN_0052a970(uint param_1,int param_2)
       else {
         pcVar2 = &CHAR_00h_008016a0;
       }
+      /* ST_CALLSITE[0052AA94]: CALL EDI */
       wsprintfA((LPSTR)&DAT_008016a4,"%s%s",&DAT_008016a4,pcVar2);
       return &DAT_008016a4;
     }

@@ -28,6 +28,7 @@ undefined4 __thiscall STBoatC::sub_0045F6C0(STBoatC *this)
   int iVar13;
 
   iVar12 = 0;
+  /* ST_CALLSITE[0045F6D7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar6 = LookupRecordByte(*(char *)&this->field_0024);
   uVar6 = (int)(byte)uVar6;
   if (uVar6 == 1) {
@@ -78,6 +79,7 @@ LAB_0045f710:
   {
     bVar4 = bVar4 >> 1;
   }
+  /* ST_CALLSITE[0045F827]: CALL 0x00402455; direct=00402455 sub_00415B30 */
   iVar10 = sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,arg_4,arg_5,sVar5,
                         bVar4);
   if (iVar10 != 0) {
@@ -93,9 +95,11 @@ LAB_0045f710:
       bVar3 = true;
     }
     if ((!bVar2) || (!bVar3)) {
+      /* ST_CALLSITE[0045F8C9]: CALL dword ptr [EDX + 0x10] */
       sVar5 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar13), (uint16_t)(this->field_0045)),arg_4,arg_5,arg_6);
+      /* ST_CALLSITE[0045F8CF]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
       uVar7 = sub_004176C0(this,sVar5);
       if ((short)uVar7 != this->field_006C) {
         thunk_FUN_00417740(this,this->field_006C,(short)uVar7);

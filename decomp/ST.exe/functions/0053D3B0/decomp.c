@@ -26,6 +26,7 @@ void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
   if (iVar2 == 0) {
     local_10 = local_8->field_01AB;
     local_c = local_8->field_01AF;
+    /* ST_CALLSITE[0053D402]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     STAllPlayersC::GetPanelInfo
               (g_allPlayers_007FA174,0x12,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_01AB);
     this_00->field_0028 = 5;

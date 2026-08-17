@@ -23,6 +23,7 @@ undefined4 __thiscall FUN_00423d80(void *this,DArrayTy *groupContent)
     index = 0;
     do {
       DArrayGetElement(groupContent,index,&local_c);
+      /* ST_CALLSITE[00423DB6]: CALL dword ptr [EDX + 0x4] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*(int *)this + 4))(local_c);
       if (iVar2 == 0) {

@@ -74,6 +74,7 @@ LAB_00538de2:
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
   uVar5 = local_c;
+  /* ST_CALLSITE[00538E84]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)pPVar2->field_0068,local_8,local_c,'\x01',(byte *)puVar4);
   ccFntTy::SetSurf(g_interSystem_00802A28->field_0024,pPVar2->field_0068,0,local_8,uVar5,
                    local_14->field_0008,local_14->field_000C);

@@ -16,6 +16,7 @@ STArtiafactC * __cdecl CreateSTArtiafact(void)
 
   this = (STArtiafactC *)FUN_006b04d0(0x477);
   if (this != nullptr) {
+    /* ST_CALLSITE[005EBC83]: CALL 0x00401807; direct=00401807 STSprGameObjC::STSprGameObjC */
     STSprGameObjC::STSprGameObjC((STSprGameObjC *)this);
     this->vtable = &STArtiafactCVTable;
     this->vtable_at_1d5 = &STArtiafactCVTable_at_1D5;

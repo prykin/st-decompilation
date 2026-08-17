@@ -73,6 +73,7 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
               piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar3);
               pSVar5 = g_worldGrid.cells;
               if ((piVar2 != nullptr) && (piVar2[9] == (int)param_1)) {
+                /* ST_CALLSITE[0043F49B]: CALL dword ptr [EAX + 0x74] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 (**(code **)(*piVar2 + 0x74))(local_20);
                 pbVar9 = local_20;

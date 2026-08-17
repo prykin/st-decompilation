@@ -113,6 +113,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
         if (SVar5 == MESS_SHARED_6900) {
           if ((message->arg0).u32 != 0xffffffff) {
             local_10->field_006B = (message->arg0).u32;
+            /* ST_CALLSITE[005C204E]: CALL 0x00403b07; direct=00403B07 MReportTy::SetCtrl */
             SetCtrl(local_10);
             this_00->field_002D = 5;
             FUN_006e6080(this_00,2,this_00->field_009B,(undefined4 *)&this_00->field_0x1d);
@@ -137,7 +138,9 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
               }
               iVar13 = *piVar21 + 1;
               pcVar14_mg2 = LoadResourceString(0x2445,g_hINSTANCE_00807618);
+              /* ST_CALLSITE[005C201C]: CALL dword ptr [0x0085bde8] */
               wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar14_mg2,iVar13);
+              /* ST_CALLSITE[005C2033]: CALL 0x00404881; direct=00404881 MReportTy::PaintBut */
               PaintBut(this_00,message,0,2,'\x01',&DAT_0080f33a);
             }
           }
@@ -148,21 +151,25 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
           if (uVar16 <= local_10->field_006B) {
             local_10->field_006B = uVar16 - 1;
           }
+          /* ST_CALLSITE[005C1F94]: CALL 0x00403b07; direct=00403B07 MReportTy::SetCtrl */
           SetCtrl(local_10);
           this_00->field_002D = 5;
           FUN_006e6080(this_00,2,this_00->field_0097,(undefined4 *)&this_00->field_0x1d);
         }
       }
       else if (SVar5 == MESS_PRIVIDERTY_693F) {
+        /* ST_CALLSITE[005C208F]: CALL 0x00402fef; direct=00402FEF MReportTy::sub_005C00D0 */
         sub_005C00D0(local_10);
       }
       else if (SVar5 == MESS_SHARED_6940) {
+        /* ST_CALLSITE[005C2083]: CALL 0x00405614; direct=00405614 MReportTy::sub_005C0190 */
         sub_005C0190(local_10);
       }
       goto cf_common_exit_005C22B1;
     }
     if (MESS_MREPORTTY_B208 < SVar5) {
       if (SVar5 == MESS_PLAYPANELTY_B209) {
+        /* ST_CALLSITE[005C22AC]: CALL 0x0040596b; direct=0040596B MReportTy::PaintTab */
         PaintTab(local_10,(AnonShape_005C1610_B64592CA *)message);
       }
       goto cf_common_exit_005C22B1;
@@ -171,6 +178,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
       cVar1 = *(char *)(message->arg0).ptr;
       local_10->field_0068 = 0;
       local_10->field_0069 = cVar1 + -1;
+      /* ST_CALLSITE[005C229B]: CALL 0x00401ec9; direct=00401EC9 MReportTy::PaintMReport */
       PaintMReport(local_10,'\0');
       goto cf_common_exit_005C22B1;
     }
@@ -184,6 +192,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
         ccFntTy::SetSurf(local_10->field_0087,(message->arg1).i32,0,0,0,0,0);
         iVar13 = *piVar21 + 1;
         pcVar14_mg3 = LoadResourceString(0x2445,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[005C223B]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar14_mg3,iVar13);
         ccFntTy::WrStr(this_00->field_0087,(char *)&DAT_0080f33a,-1,-1,
                        (uint)((message->arg0).words.high == 1));
@@ -198,6 +207,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
     thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                        local_10->field_005D,0,0);
 switchD_005c1b14_caseD_5:
+    /* ST_CALLSITE[005C21CA]: CALL 0x00401ec9; direct=00401EC9 MReportTy::PaintMReport */
     PaintMReport(this_00,'\0');
     goto cf_common_exit_005C22B1;
   }
@@ -230,6 +240,7 @@ switchD_005c1b14_caseD_5:
         puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
       *(undefined1 *)puVar14 = 0x20;
     }
+    /* ST_CALLSITE[005C1F2B]: CALL 0x00404881; direct=00404881 MReportTy::PaintBut */
     PaintBut(this_00,message,0,2,'\x01',&DAT_0080f33a);
     goto cf_common_exit_005C22B1;
   }
@@ -237,13 +248,16 @@ switchD_005c1b14_caseD_5:
     if (SVar5 != MESS_SHARED_6200) {
       switch(SVar5) {
       case MESS_ID_NONE:
+        /* ST_CALLSITE[005C1B3C]: CALL 0x00403706; direct=00403706 MReportTy::NoneMReport */
         NoneMReport(local_10);
         break;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case MESS_ID_CREATE:
+        /* ST_CALLSITE[005C1B24]: CALL 0x00404ff7; direct=00404FF7 MReportTy::InitMReport */
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         InitMReport(local_10,*(undefined1 *)((message->arg0).u32 + 0x14));
         break;
       case MESS_SHARED_0003:
+        /* ST_CALLSITE[005C1B30]: CALL 0x004023bf; direct=004023BF MReportTy::DoneMReport */
         DoneMReport(local_10);
         break;
       case MESS_SHARED_0005:
@@ -284,6 +298,7 @@ switchD_005c1b14_caseD_5:
             local_10->field_0031 = 0;
             local_10->field_0033 = 3;
             local_10->field_0035 = piVar19;
+            /* ST_CALLSITE[005C1C06]: CALL dword ptr [EAX] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x1d);
           }
@@ -293,6 +308,7 @@ switchD_005c1b14_caseD_5:
             this_00->field_0031 = 0;
             this_00->field_0033 = 3;
             this_00->field_0035 = piVar21;
+            /* ST_CALLSITE[005C1C36]: CALL dword ptr [EAX] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x1d);
           }
@@ -303,9 +319,11 @@ switchD_005c1b14_caseD_5:
     local_10->field_0049 = 1;
     if (local_10->field_0066 == '\0') {
       local_10->field_004D = 0x6108;
+      /* ST_CALLSITE[005C1C54]: CALL 0x00403c38; direct=00403C38 MReportTy::sub_005C05F0 */
       sub_005C05F0(local_10);
       goto cf_common_exit_005C22B1;
     }
+    /* ST_CALLSITE[005C1C72]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&CHAR_00h_0080ed16,"%s%s",&CHAR_00h_00807680,&CHAR_00h_0080c52e);
     uVar16 = 0xffffffff;
     pcVar20 = &CHAR_00h_0080c52e;
@@ -337,16 +355,19 @@ switchD_005c1b14_caseD_5:
     pcVar22 = (char *)&DAT_0080ee1a;
     memmove(pcVar22, pcVar20, uVar16); /* compiler REP MOVS byte copy */
     STPiece<0,1>(DAT_008087a0) = 8;
+    /* ST_CALLSITE[005C1CD3]: CALL 0x00404b4c; direct=00404B4C STAppC::sub_0056E9E0 */
     iVar13 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
     if (iVar13 != 0) {
       this_00->field_004D = 0x6104;
       this_00->field_0051 = 0;
       this_00->field_0055 = 2;
+      /* ST_CALLSITE[005C1CF3]: CALL 0x00403c38; direct=00403C38 MReportTy::sub_005C05F0 */
       sub_005C05F0(this_00);
       goto cf_common_exit_005C22B1;
     }
 LAB_005c1d24:
     this_00->field_004D = 0x6102;
+    /* ST_CALLSITE[005C1D2D]: CALL 0x00403c38; direct=00403C38 MReportTy::sub_005C05F0 */
     sub_005C05F0(this_00);
   }
   else {
@@ -363,6 +384,7 @@ LAB_005c1d24:
       local_10->field_032B = 0x50;
       local_10->field_0333 = 200;
       local_10->field_032F = 0x1b3;
+      /* ST_CALLSITE[005C1D92]: CALL dword ptr [EAX + 0x8] */
       (*local_10->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)local_10->field_000C,0x100ef,nullptr,nullptr,
                  &local_10->field_0x2c7,0);
@@ -383,6 +405,7 @@ LAB_005c1d24:
         if (600 < iVar13 + iVar18) {
           local_10->field_032F = 600 - iVar18;
         }
+        /* ST_CALLSITE[005C1E3E]: CALL dword ptr [EDX + 0x8] */
         (*local_10->field_000C->vtable->CreateObject)
                   ((SystemClassTy *)local_10->field_000C,0x100ef,nullptr,nullptr,
                    &local_10->field_0x2c7,0);
@@ -390,14 +413,17 @@ LAB_005c1d24:
       break;
     case MESS_MTASKTY_6212:
       if (local_10->field_0066 == '\0') {
+        /* ST_CALLSITE[005C1E66]: CALL 0x00404881; direct=00404881 MReportTy::PaintBut */
         PaintBut(local_10,message,(-(uint)(DAT_0080c632 != '\0') & 0x2b) + 0x232c,4,'\0',nullptr
                 );
       }
       else {
+        /* ST_CALLSITE[005C1E7D]: CALL 0x00404881; direct=00404881 MReportTy::PaintBut */
         PaintBut(local_10,message,0x2358,4,'\0',nullptr);
       }
       break;
     case MESS_MTASKTY_6213:
+      /* ST_CALLSITE[005C1E93]: CALL 0x00404881; direct=00404881 MReportTy::PaintBut */
       PaintBut(local_10,message,0x24bc,4,'\0',nullptr);
     }
   }

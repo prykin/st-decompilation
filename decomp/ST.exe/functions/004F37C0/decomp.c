@@ -85,6 +85,7 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
 LAB_004f38ad:
     iVar6 = iVar6 - local_8->field_00C0;
   }
+  /* ST_CALLSITE[004F38D2]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0148[uVar2 + 0xe],
          *local_10 - (&local_8->field_003C)[uVar2],iVar6 - iVar4,param_3,(byte *)local_c);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);

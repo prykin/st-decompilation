@@ -14,7 +14,8 @@ owner_vptr	STGroupBoatC+0x0	already_present	STGroupBoatC	owner already points to
 table	00790728	already_present	STGroupBoatCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STGroupBoatCVTable; 10 slots; vptr references materialized=0
 owner_vptr	OpticClassC+0x0	already_present	OpticClassC	owner already points to /SubmarineTitans/Recovered/VTables/OpticClassCVTable
 table	00790758	already_present	OpticClassCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/OpticClassCVTable; 1 slots; vptr references materialized=0
-table	00790790	already_present	VTable_00790790	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_00790790; 1 slots; vptr references materialized=0
+owner_vptr	STT3DSprC+0x0	already_present	STT3DSprC	owner already points to /SubmarineTitans/Recovered/VTables/STT3DSprCVTable
+table	00790790	already_present	STT3DSprCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STT3DSprCVTable; 1 slots; vptr references materialized=0
 owner_vptr	TLOBaseTy+0x0	already_present	TLOBaseTy	owner already points to /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable
 table	00790AA0	already_present	TLOBaseTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable; 73 slots; vptr references materialized=0
 table	00790C00	already_present	VTable_00790C00	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_00790C00; 1 slots; vptr references materialized=0
@@ -205,7 +206,8 @@ owner_vptr	AiBossClassTy+0x1C	already_present	AiBossClassTy	owner already points
 table	0079D618	already_present	AiBossClassTyVTable_at_1C	used unchanged generated type /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable_at_1C; 13 slots; vptr references materialized=0
 owner_vptr	AiBossClassTy+0x0	already_present	AiBossClassTy	owner already points to /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable
 table	0079D658	already_present	AiBossClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable; 1 slots; vptr references materialized=0
-table	0079D67C	already_present	VTable_0079D67C	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079D67C; 13 slots; vptr references materialized=0
+owner_vptr	AiEventClassTy+0x0	already_present	AiEventClassTy	owner already points to /SubmarineTitans/Recovered/VTables/AiEventClassTyVTable
+table	0079D67C	already_present	AiEventClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/AiEventClassTyVTable; 13 slots; vptr references materialized=0
 owner_vptr	AiFltClassTy+0x0	already_present	AiFltClassTy	owner already points to /SubmarineTitans/Recovered/VTables/AiFltClassTyVTable
 table	0079D6BC	already_present	AiFltClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/AiFltClassTyVTable; 1 slots; vptr references materialized=0
 owner_vptr	AiPlrClassTy+0x1C	already_present	AiPlrClassTy	owner already points to /SubmarineTitans/Recovered/VTables/AiPlrClassTyVTable_at_1C

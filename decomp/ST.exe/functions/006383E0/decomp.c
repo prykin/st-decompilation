@@ -117,6 +117,7 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
           if (this != nullptr) {
             pcVar1 = this->vtable[5].slots_00_28[0];
             *(undefined4 *)(puVar12 + -4) = 0x6385f4;
+            /* ST_CALLSITE[006385EE]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
             iVar6 = (*pcVar1)(this);
             iVar14 = local_50;
             if (iVar6 != 0) {
@@ -124,6 +125,7 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
               if (this->value_20 == 1000) {
                 pSVar2 = this->vtable->GetObjectTypeId;
                 *(undefined4 *)(puVar12 + -4) = 0x63860e;
+                /* ST_CALLSITE[0063860B]: CALL dword ptr [EAX + 0x2c] */
                 iVar14 = (*pSVar2)(this);
                 if (*(int *)(&DAT_00791d68 + iVar14 * 4) == 1) {
                   iVar14 = 0;
@@ -166,6 +168,7 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
               puVar13 = (undefined4 *)(puVar12 + -8);
               puVar12 = puVar12 + -8;
               *puVar13 = 0x6386c2;
+              /* ST_CALLSITE[006386C0]: CALL dword ptr [EAX] */
               (*pcVar1)();
               local_80 = local_80 + 1;
               iVar14 = local_50;

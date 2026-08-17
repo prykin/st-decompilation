@@ -21,6 +21,7 @@ void __thiscall CampaignTy::sub_005925A0(CampaignTy *this)
       this->field_0029 = 2;
       this->field_002D = 0x20;
       this->field_0031 = 1;
+      /* ST_CALLSITE[005925E3]: CALL dword ptr [EAX + 0x18] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this->field_000C + 0x18))(&this->field_0x1d);
     }

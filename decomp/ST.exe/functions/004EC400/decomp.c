@@ -16,6 +16,7 @@ undefined4 __fastcall FUN_004ec400(AnonShape_004EC400_367D4575 *param_1)
       param_1->field_0514 = g_playSystem_00802A38->field_00E4;
       param_1->field_0510 = param_1->field_0510 + 1;
       param_1->field_0504 = iVar3;
+      /* ST_CALLSITE[004EC49E]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       STT3DSprC::sub_004AD3C0
                 (param_1->field_05FF,(float)param_1->field_04FC * _DAT_007904f8 * _DAT_007904f0,
                  (float)param_1->field_0500 * _DAT_007904f8 * _DAT_007904f0,
@@ -56,6 +57,7 @@ undefined4 __fastcall FUN_004ec400(AnonShape_004EC400_367D4575 *param_1)
       }
       param_1->field_0504 = iVar1 + iVar2;
     }
+    /* ST_CALLSITE[004EC614]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     STT3DSprC::sub_004AD3C0
               (param_1->field_05FF,(float)param_1->field_04FC * _DAT_007904f8 * _DAT_007904f0,
                (float)param_1->field_0500 * _DAT_007904f8 * _DAT_007904f0,

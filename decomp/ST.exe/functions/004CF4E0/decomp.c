@@ -11,6 +11,7 @@ TLOBaseTy::FUN_004cf4e0
   AnonPointee_TLOBaseTy_0607 *pAVar2;
 
   if (*(int *)&this->field_0x361 != 0) {
+    /* ST_CALLSITE[004CF4F0]: CALL 0x00404b6a; direct=00404B6A TLOBaseTy::sub_004C90C0 */
     sub_004C90C0(this);
   }
   if (this->field_03D8 <= this->field_03D4 + 1) {
@@ -38,6 +39,7 @@ TLOBaseTy::FUN_004cf4e0
     Library::MSVCRT::_strncpy((char *)(this->field_0607 + 1),param_6,0xf);
   }
   this->field_03D4 = this->field_03D4 + 1;
+  /* ST_CALLSITE[004CF5D9]: CALL 0x00405a2e; direct=00405A2E TLOBaseTy::sub_004C7460 */
   sub_004C7460(this);
   return 0;
 }

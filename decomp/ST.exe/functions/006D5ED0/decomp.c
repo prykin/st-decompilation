@@ -32,10 +32,12 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
   local_10 = iVar6;
   local_c = param_1;
   local_8 = lpCriticalSection;
+  /* ST_CALLSITE[006D5EF9]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(lpCriticalSection);
   uVar3 = FUN_00749415((AnonShape_00749415_513CA2B2 *)param_1);
   local_18 = uVar3;
   if ((int)uVar3 < 0) {
+    /* ST_CALLSITE[006D5F10]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(lpCriticalSection);
     return uVar3;
   }
@@ -54,6 +56,7 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
         pAVar7 = local_14;
         if (uVar2 != 0) {
           g_currentExceptionFrame = local_5c.previous;
+          /* ST_CALLSITE[006D603E]: CALL dword ptr [0x0085bb90] */
           LeaveCriticalSection(local_8);
           return uVar2;
         }
@@ -82,10 +85,12 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((*(int *)(param_1->field_005C + 0x310) == 0) &&
            (piVar1 = (int *)param_1->field_0064, piVar1 != nullptr)) {
+          /* ST_CALLSITE[006D6062]: CALL dword ptr [ECX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar1 + 8))(piVar1);
           param_1->field_0064 = 0;
         }
+        /* ST_CALLSITE[006D6070]: CALL dword ptr [0x0085bb90] */
         LeaveCriticalSection(local_8);
         return 0x8007000e;
       }
@@ -98,6 +103,7 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
       param_1->field_003C = iVar5;
     } while (iVar5 < param_1->field_0038);
   }
+  /* ST_CALLSITE[006D6022]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(local_8);
   return 0;
 }

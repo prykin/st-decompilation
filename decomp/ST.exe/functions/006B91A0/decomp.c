@@ -42,18 +42,21 @@ int FUN_006b91a0(int *param_1,int *param_2)
     local_18 = local_28 + local_20;
     iVar1 = 0;
     while( true ) {
+      /* ST_CALLSITE[006B9230]: CALL dword ptr [ECX + 0x14] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*(int *)param_1[0xf] + 0x14))
                         ((int *)param_1[0xf],&local_34,*(undefined4 *)(*param_1 + 0x40),&local_24,
                          0x1000000,0);
       if (iVar2 == 0) break;
       if (iVar2 == -0x7789fe3e) {
+        /* ST_CALLSITE[006B9247]: CALL dword ptr [ECX + 0x6c] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)param_1[0xf] + 0x6c))((int *)param_1[0xf]);
         FUN_006cec40((AnonShape_006CEC40_BB23E716 *)*param_1);
       }
       else {
         if (((iVar2 != -0x7789ff60) && (iVar2 != -0x7789fe52)) || (iVar1 != 0)) break;
+        /* ST_CALLSITE[006B926A]: CALL dword ptr [0x0085bc6c] */
         Sleep(2);
       }
       iVar1 = iVar1 + 1;

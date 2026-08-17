@@ -26,10 +26,13 @@ undefined4 __fastcall FUN_00492b20(STBoatC *param_1)
   short local_8;
   short local_6;
 
+  /* ST_CALLSITE[00492B45]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   this = STAllPlayersC::GetObjPtr
                    (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
   if ((((((this != nullptr) && (this->field_0018 == *(int *)&param_1->field_0x5ff)) &&
+        /* ST_CALLSITE[00492B70]: CALL dword ptr [EAX + 0x108]; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
         (iVar1 = (*this->vtable[1].vfunc_34)(this,param_1->field_0024), iVar1 != 0)) &&
+       /* ST_CALLSITE[00492B8C]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
        ((STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,local_c), -1 < local_8 &&
         (local_8 < g_pathingGrid.sizeX)))) && (-1 < local_6)) &&
      (((local_6 < g_pathingGrid.sizeY && (-1 < local_c[0])) &&

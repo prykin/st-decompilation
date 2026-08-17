@@ -60,12 +60,16 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
           _local_20 = CONCAT22(uStack_1e,0xffff);
         }
         else {
+          /* ST_CALLSITE[0048CF4F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_24[0],local_20,CASE_1);
           if (this_00 != nullptr) {
+            /* ST_CALLSITE[0048CF62]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
             iVar4 = (*this_00->vtable[1].vfunc_24)(this_00);
             if (iVar4 == 1) {
+              /* ST_CALLSITE[0048CF75]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; signature=__thiscall;/undefined4;pointer:/STGameObjC */
               iVar4 = (*this_00->vtable[1].MoveStep)(this_00);
               if (iVar4 == 1) {
+                /* ST_CALLSITE[0048CF88]: CALL dword ptr [EAX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
                 iVar4 = (*this_00->vtable[1].vfunc_20)(this_00,pSVar2->field_0024);
                 if (iVar4 == 1) {
                   thunk_FUN_00416270(this_00,(uint *)&local_a,(int *)&local_8,&local_6);

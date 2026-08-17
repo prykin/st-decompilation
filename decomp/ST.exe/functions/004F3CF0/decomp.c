@@ -15,7 +15,7 @@
 void __thiscall
 CPanelTy::PaintTxtBut
           (CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char *param_4,UINT param_5,
-          undefined *param_6)
+          callback_004F3CF0_p6 *param_6)
 
 {
   uint uVar2;
@@ -82,12 +82,13 @@ cf_common_join_004F3D83:
     errorCode = (int *)Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
     if (errorCode == nullptr) {
       iVar9 = 1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      uVar4 = (*(code *)param_6)(param_2);
+      /* ST_CALLSITE[004F3DC2]: CALL dword ptr [EBP + 0x1c] */
+      uVar4 = (*param_6)(param_2);
       text = FUN_006f2c00(param_4,1,uVar4);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text,errorCode,iVar9);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
+      /* ST_CALLSITE[004F3E08]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0148[uVar2 + 0xe],local_10,local_c,
              param_3,(byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
@@ -95,8 +96,8 @@ cf_common_join_004F3D83:
                        local_10,local_c,local_18[2],local_18[3]);
       iVar10 = -1;
       iVar7 = -1;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      uVar5 = (*(code *)param_6)(param_2);
+      /* ST_CALLSITE[004F3E4F]: CALL dword ptr [EBP + 0x1c] */
+      uVar5 = (*param_6)(param_2);
       iVar6 = -1;
       iVar9 = -2;
       resourceString = LoadResourceString(param_5,g_hINSTANCE_00807618);

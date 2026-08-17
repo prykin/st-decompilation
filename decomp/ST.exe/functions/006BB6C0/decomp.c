@@ -21,16 +21,19 @@ int FUN_006bb6c0(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
   }
   local_88[2] = param_4;
   local_88[3] = param_3;
+  /* ST_CALLSITE[006BB728]: CALL dword ptr [ECX + 0x18] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(**(int **)(param_1 + 0x30) + 0x18))
                     (*(int **)(param_1 + 0x30),local_88,param_2,0);
   if ((iVar1 == 0) && (param_5 != -1)) {
     local_8 = param_5;
     local_c = param_5;
+    /* ST_CALLSITE[006BB756]: CALL dword ptr [ECX + 0x74] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*(int *)*param_2 + 0x74))
                       ((int *)*param_2,(-((param_6 & 0x80) != 0) & 8U) + 8,&local_c);
     if (iVar1 != 0) {
+      /* ST_CALLSITE[006BB764]: CALL dword ptr [ECX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)*param_2 + 8))((int *)*param_2);
       *param_2 = 0;

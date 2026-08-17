@@ -10,6 +10,7 @@ FUN_0062e440(int param_1,ushort param_2,ushort param_3,ushort param_4,int param_
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STManRub3C *in_ECX;
 
+  /* ST_CALLSITE[0062E463]: CALL 0x00403279; direct=00403279 STManRub3C::AddNewDock */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   uVar1 = STManRub3C::AddNewDock
                     (in_ECX,param_1,param_2,param_3,param_4,param_5,(ushort)param_6,&param_6);

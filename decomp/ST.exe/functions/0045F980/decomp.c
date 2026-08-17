@@ -23,6 +23,7 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
   }
   if (local_EAX_34 == 2) {
     thunk_FUN_00416840(param_1,local_8,local_c,local_10);
+    /* ST_CALLSITE[0045F9E1]: CALL dword ptr [EAX + 0x18] */
     iVar3 = param_1->vfunc_18(local_8[0],local_c[0],local_10[0]);
     if (iVar3 != 1) {
       if (param_1->field_008F == -1) {
@@ -35,19 +36,23 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
       param_1->field_00D7 = (int)local_8[0];
       param_1->field_00DB = (int)local_c[0];
       param_1->field_00DF = (int)local_10[0];
+      /* ST_CALLSITE[0045FAC8]: CALL 0x00405952; direct=00405952 sub_004167A0 */
       sub_004167A0(param_1);
       param_1->field_00FC = param_1->field_00FC + '\x01';
       return 2;
     }
+    /* ST_CALLSITE[0045F9EF]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
     sub_0041C5A0(param_1);
     param_1->field_00FA = 0;
     param_1->field_00FC = 0;
     iVar3 = thunk_FUN_00495ff0(param_1->field_005B,param_1->field_005D,param_1->field_005F,
                                param_1->field_008E,(AnonShape_00495FF0_59081BDD *)param_1);
     if ((iVar3 == 0) &&
+       /* ST_CALLSITE[0045FA4F]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
        (iVar3 = DumpClassC::WritePtr
                           (local_8[0],local_c[0],local_10[0],param_1->field_008E,
                            (RecoveredRecord_DumpClassC_00495EC0 *)param_1), iVar3 == 0)) {
+      /* ST_CALLSITE[0045FA65]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
       TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)param_1,(undefined *)param_1->field_070A);
       thunk_FUN_004168b0((int)param_1);
       return 0;
@@ -66,6 +71,7 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
       return 0;
     }
     if (local_EAX_34 == 0) {
+      /* ST_CALLSITE[0045FB4D]: CALL 0x00405952; direct=00405952 sub_004167A0 */
       sub_004167A0(param_1);
       this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_0030);
       if (this != nullptr) {
@@ -81,6 +87,7 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
           return 1;
         case 1:
           param_1->field_00FA = 0;
+          /* ST_CALLSITE[0045FB99]: CALL 0x00403927; direct=00403927 STBoatC::sub_0045F6C0 */
           STBoatC::sub_0045F6C0(param_1);
           break;
         case -6:

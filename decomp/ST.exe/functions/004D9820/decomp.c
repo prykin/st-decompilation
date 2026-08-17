@@ -40,6 +40,7 @@ undefined4 __fastcall FUN_004d9820(int *param_1)
                                 [(int)sVar6 * (int)sVar4 + (int)sVar1 * (int)g_worldGrid.planeStride
                                  + (int)sVar8].objects[0], this != nullptr &&
                         (this != (STWorldObject *)param_1)))))) &&
+                     /* ST_CALLSITE[004D9925]: CALL dword ptr [EDX + 0x2c] */
                      (iVar3 = this->GetObjectTypeId(), iVar3 == 0x3a)))) &&
                    (iVar2 = FUN_006aced8(iVar9,iVar7,param_1[0x16c],param_1[0x16d]), iVar2 < 0xe)) {
                   param_1[0x137] = param_1[0x137] + 1;

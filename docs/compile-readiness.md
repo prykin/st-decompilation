@@ -36,27 +36,30 @@ sites, not unique source objects.
 
 | Class | Functions | Body share | Occurrences | State | What remains |
 | --- | ---: | ---: | ---: | --- | --- |
-| Translation-unit/declaration assembly | 5,555 | 100.00% | 5,555 | assembled and audited | `tools/st_source_tree.py` emits 322 deterministic TUs; the current 64-diagnostic compiler audit passes 203 and maps 1,092 of 1,109 capped errors to function addresses. |
-| Default `FUN_ADDRESS` names | 3,996 | 71.94% | 3,996 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
-| Undefined function signatures | 3,745 | 67.42% | 3,745 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
-| Undefined scalar spelling | 3,522 | 63.40% | 17,775 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
-| Typed byte-offset field view | 1,114 | 20.05% | 9,824 | compatibility implemented | `STField<T>(base, offset)` preserves the exact access until owner/layout proof supplies a named member. |
+| Translation-unit/declaration assembly | 5,555 | 100.00% | 5,555 | assembled and audited | `tools/st_source_tree.py` emits 322 deterministic TUs; the current 64-diagnostic compiler audit passes 244 and maps 436 of 450 capped errors to function addresses. |
+| Default `FUN_ADDRESS` names | 3,967 | 71.41% | 3,967 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
+| Undefined function signatures | 3,741 | 67.34% | 3,741 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
+| Undefined scalar spelling | 3,501 | 63.02% | 17,584 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
+| Typed byte-offset field view | 1,084 | 19.51% | 9,725 | compatibility implemented | `STField<T>(base, offset)` preserves the exact access until owner/layout proof supplies a named member. |
 | Typed object byte-offset view | 16 | 0.29% | 112 | compatibility implemented | `STObjectAtByteOffset(base, offset).member` preserves an exact byte induction variable while restoring an already proven member. |
-| Ownerless `__thiscall` | 979 | 17.62% | 979 | source ABI emitted | `st::fn_ADDRESS` retains the explicit ECX receiver until a class is proven. |
-| Opaque `code *` callback type | 744 | 13.39% | 1,813 | compatibility implemented | Install the exact callback/vtable-slot `FunctionDefinition`. |
-| Raw indirect call | 719 | 12.94% | 1,760 | semantic debt | Recover receiver, calling convention, argument count, and return type. One previously malformed exporter-owned callback expression is now honestly included. |
-| Unresolved register/high value | 225 | 4.05% | 1,363 | semantic debt | Repair boundary ABI, return width, x87 result, SEH/setjmp live-in, or SSA lifetime. |
-| Partial lvalue piece helper | 243 | 4.37% | 1,169 | compatibility implemented | Replace `STPiece<O,W>` only when a field/union facet is proven. |
+| Record byte-address view | 38 | 0.68% | 56 | compatibility implemented | `STRecordByteAddress` retains an exact affine record address until index divisibility is proven. |
+| Packed low-piece update | 241 | 4.34% | 722 | compatibility implemented | `STReplaceLowByte*`/`STReplaceLowWord`/`STPackTagged24` preserve the untouched storage bits. |
+| Biased signed grid division | 95 | 1.71% | 375 | compatibility implemented | `STBiasedDiv16` retains the complete VC6 signed quotient idiom, including its negative-source adjustment. |
+| Ownerless `__thiscall` | 950 | 17.10% | 950 | source ABI emitted | `st::fn_ADDRESS` retains the explicit ECX receiver until a class is proven. |
+| Opaque `code *` callback type | 718 | 12.93% | 1,773 | compatibility implemented | Install the exact callback/vtable-slot `FunctionDefinition`. |
+| Raw indirect call | 693 | 12.48% | 1,719 | semantic debt | Recover receiver, calling convention, argument count, and return type. |
+| Unresolved register/high value | 225 | 4.05% | 1,361 | semantic debt | Repair boundary ABI, return width, x87 result, SEH/setjmp live-in, or SSA lifetime. |
+| Partial lvalue piece helper | 238 | 4.28% | 1,144 | compatibility implemented | Replace `STPiece<O,W>` only when a field/union facet is proven. |
 | `CONCAT*` intrinsic | 228 | 4.10% | 804 | compatibility implemented | Recover a packed value or retain exact byte composition. |
 | Nonstandard integer/x87 width | 241 | 4.34% | 1,352 | compatibility implemented | Includes `int3`/`uint3`, `longlong` aliases, `float10`, and unresolved x87 `unkbyte10`. |
-| `SUB*` intrinsic | 35 | 0.63% | 163 | compatibility implemented | Recover a named subfield or retain exact extraction. |
+| `SUB*` intrinsic | 34 | 0.61% | 162 | compatibility implemented | Recover a named subfield or retain exact extraction. |
 | Carry/borrow intrinsic | 26 | 0.47% | 132 | compatibility implemented | Prefer a source comparison only when its arithmetic proof is exact. |
 | x87 math intrinsic | 19 | 0.34% | 125 | compatibility implemented | `fsin`/`fcos`/`fpatan` retain long-double semantics pending complete x87-stack recovery. |
 | 24-bit sign extension | 1 | 0.02% | 4 | compatibility implemented | `SEXT24` preserves exact signed extension pending a named scalar type. |
 | Literal-storage piece | 1 | 0.02% | 3 | compatibility implemented | `STLiteralPiece<O,W>` keeps the little-endian bytes; later recover the intended initializer. |
 | Residual Ghidra `._offset_width_` syntax | 0 | 0.00% | 0 | closed | No remaining syntactic occurrence in exported bodies. |
 
-The compatibility surface covers 33,276 occurrences. It does not claim that
+The compatibility surface covers 34,150 occurrences. It does not claim that
 `undefined4`, `code *`, or a byte-offset access is the original source type; it
 only makes the exact recovered operation expressible in C++ while preserving
 the semantic debt for later analyzers.
@@ -65,17 +68,17 @@ the semantic debt for later analyzers.
 
 | Residual class | Functions | Body share | Occurrences | Priority |
 | --- | ---: | ---: | ---: | --- |
-| Generic `field_XXXX` name | 2,377 | 42.79% | 61,636 | naming after layout; high volume but weak evidence by itself |
-| Generic `DAT/PTR/UNK` symbol | 1,494 | 26.89% | 14,543 | classify scalar/string/table/singleton/array first |
-| Anonymous recovered type | 1,162 | 20.92% | 3,947 | merge only by identity/flow, never geometry alone |
-| Raw pointer offset | 952 | 17.14% | 2,075 | recover complete pointer families or retain byte-buffer arithmetic |
+| Generic `field_XXXX` name | 2,397 | 43.15% | 62,169 | naming after layout; high volume but weak evidence by itself |
+| Generic `DAT/PTR/UNK` symbol | 1,465 | 26.37% | 14,429 | classify scalar/string/table/singleton/array first |
+| Anonymous recovered type | 1,163 | 20.94% | 3,973 | merge only by identity/flow, never geometry alone |
+| Raw pointer offset | 937 | 16.87% | 2,027 | recover complete pointer families or retain byte-buffer arithmetic |
 | `goto`/label presentation | 886 | 15.95% | 11,601 | restructure only with CFG/post-dominator proof |
-| Cast over generic field | 712 | 12.82% | 3,838 | receiver/field width or overlapping-union refinement |
-| Stack-slot lifetime reuse | 100 | 1.80% | 726 | split address-stable HighFunction merge groups |
-| Return-width/high-register artifact | 103 | 1.85% | 292 | whole-CFG EAX/x87 and caller-use evidence |
+| Cast over generic field | 705 | 12.69% | 3,794 | receiver/field width or overlapping-union refinement |
+| Stack-slot lifetime reuse | 271 | 4.88% | 476 | split address-stable HighFunction merge groups |
+| Return-width/high-register artifact | 103 | 1.85% | 291 | whole-CFG EAX/x87 and caller-use evidence |
 | Unresolved incoming register | 126 | 2.27% | 407 | boundary, calling convention, SEH, or true live-in |
-| Dynamic `DArrayTy` indexing | 41 | 0.74% | 77 | per-owner descriptor/element view; runtime stride remains runtime |
-| Generic global aggregate | 32 | 0.58% | 101 | singleton/table structure and semantic fields |
+| Dynamic `DArrayTy` indexing | 49 | 0.88% | 85 | per-owner descriptor/element view; runtime stride remains runtime |
+| Generic global aggregate | 33 | 0.59% | 113 | singleton/table structure and semantic fields |
 | Flattened global record array | 17 | 0.31% | 36 | exact base/stride/count/member proof |
 | String-based aggregate address | 5 | 0.09% | 7 | recover adjacent table and index bias |
 
@@ -169,25 +172,26 @@ current errors expose residual overlapping `field_0x...` views, pointer/word
 role conflicts, untyped vtable slots, and weak prototypes. See
 `docs/source-tree-generation.md` and `src/ST.exe/audit/`.
 
-The source-compilation layer now materializes 2,233 exact unnamed-byte views
+The source-compilation layer now materializes 2,288 exact unnamed-byte views
 actually referenced by statically typed bodies, emits 1,130 non-virtual member
-wrappers over receiver-aware physical-vtable slots, adds 26 exact use-site
-dispatch wrappers, and exposes 1,312 uniquely
+wrappers over receiver-aware physical-vtable slots, adds 32 exact use-site
+dispatch wrappers, and exposes 1,314 uniquely
 owned non-virtual `__thiscall` functions as forwarding class methods over their
 address-stable `st::fn_ADDRESS` implementations. It does not alter packed layout
 or synthesize inheritance. It also renames 247 exact address-taken global-object
 uses whose image symbol collides with a C++ type name to `st_global_ADDRESS`,
 without changing the Ghidra symbol. With a fixed 64-error-per-TU Apple Clang
-probe, 203 of 322 units pass; 1,109 errors remain, 1,092 mapped to stable
-function addresses. The largest typed categories are undeclared identifiers
-(135), invalid casts (123), missing record members (100), assignment types (94),
-pointer indirection (92), non-callable values (70), invalid operands (62), call
-arity (12), and call argument types (9); 411 diagnostics remain in the general
-`other` bucket. Exact unnamed component spelling accounts for part
-of the remaining missing-record-member queue. Address-
-generated aliases now repair 167 invalid address-coded global spellings and 68
-address-taken external labels; exact arity resolves 17 otherwise ambiguous
-direct calls, 94 exporter-tagged stack-slot lifetimes receive safe lexical
-declarations, and 72 promoted narrow parameter slots receive an exact full-word
-view. Nine direct-call ambiguities remain. These capped counts are a comparison baseline,
+probe, 244 of 322 units pass; 450 errors remain, 436 mapped to stable
+function addresses. The typed categories are assignment types (74), pointer
+indirection (22), undeclared identifiers (31), invalid casts (28), call
+argument types (4), call arity (76), invalid operands (3), and return type (1);
+211 diagnostics remain in the general `other` bucket. Calls through values
+declared `void`, dereferences of neutral `void *`, and the pointer/scalar
+conflict family rooted at `006D8A60` are all zero. Exact
+unnamed component spelling accounts for part of the remaining missing-record-
+member queue. Address-generated aliases repair 146 invalid address-coded global
+spellings and 68 address-taken external labels; exact arity resolves 34
+otherwise ambiguous direct calls, and two exact output lifetimes are
+materialized without changing the Ghidra ABI. One direct-call ambiguity remains.
+These capped counts are a comparison baseline,
 not an assertion that later diagnostics in a failed TU do not exist.

@@ -96,6 +96,7 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
           }
           local_30 = local_30 - 1;
         } while (local_30 != 0);
+        /* ST_CALLSITE[006D81F9]: CALL dword ptr [EBP + -0x8] */
         uVar6 = (*pcVar3)(param_1,pbVar9,local_1c);
         if (uVar6 != 0) {
           if (uVar6 != 0xffffffff) goto cf_common_exit_006D8217;

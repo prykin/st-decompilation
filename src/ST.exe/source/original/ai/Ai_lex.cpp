@@ -21,23 +21,22 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   char *pcVar3_mg1;
   char *pcVar3_mg2;
   uint uVar3;
-  uint uVar4;
-  char *pcVar5;
-  short *psVar6;
+  byte *pbVar5;
+  byte *pbVar6;
   InternalExceptionFrame local_60;
   int *local_1c;
   int local_18;
   short *local_14;
   short *local_10;
   short *local_c;
-  short *local_8;
+  byte *local_8;
   char *pcVar3_mg3;
 
   local_c = nullptr;
   local_10 = nullptr;
   local_14 = nullptr;
   local_8 = nullptr;
-  if (DAT_00811958 == nullptr) {
+  if (DAT_00811958 == 0) {
     DAT_00857540 = 0;
     DAT_00811908 = 0;
     DAT_007d2d24 = 0x600;
@@ -54,8 +53,8 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     st::fn_006A5E90(local_c);
     st::fn_006A5E90(local_10);
     st::fn_006A5E90(local_14);
-    if (DAT_0085753c == nullptr) {
-      st::fn_006A5E90(local_8);
+    if (PTR_0085753c == nullptr) {
+      st::fn_006A5E90((short *)local_8);
     }
     piVar2 = local_1c;
     st::fn_006A5E90((short *)local_1c[6]);
@@ -77,12 +76,12 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     local_14 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(0x401));
     *(char *)local_14 = '\0';
   }
-  if (DAT_0085753c == nullptr) {
-    local_8 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(0x105));
-    *(char *)local_8 = '\0';
+  if (PTR_0085753c == nullptr) {
+    local_8 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0x105));
+    *local_8 = 0;
   }
   else {
-    local_8 = (short *)DAT_0085753c;
+    local_8 = PTR_0085753c;
   }
   piVar2 = local_1c;
   local_1c[1] = DAT_00857560;
@@ -91,11 +90,12 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   piVar2[6] = (int)pcVar3_mg0;
   pcVar3_mg1 = st::fn_006C49B0(PTR_00811948);
   piVar2[0xb] = (int)pcVar3_mg1;
-  pcVar3_mg2 = st::fn_006C49B0(st::pointer_boundary_cast<char *>(DAT_0085753c));
+  pcVar3_mg2 = st::fn_006C49B0((char *)PTR_0085753c);
   piVar2[7] = (int)pcVar3_mg2;
   PTR_0081194c = param_2;
   local_18 = 0;
   if (param_1 != nullptr) {
+    /* ST_CALLSITE[00672C93]: CALL dword ptr [EAX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     local_18 = (**(code **)param_2)(param_1);
     if (local_18 == 0) {
@@ -113,18 +113,9 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
         param_1 = pcVar3_mg3;
       } while (cVar1 != '\0');
       uVar3 = ~uVar3;
-      pcVar5 = pcVar3_mg3 + -uVar3;
-      psVar6 = local_8;
-      for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(undefined4 *)psVar6 = *(undefined4 *)pcVar5;
-        pcVar5 = pcVar5 + 4;
-        psVar6 = (short *)((int)psVar6 + 4);
-      }
-      for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *(char *)psVar6 = *pcVar5;
-        pcVar5 = pcVar5 + 1;
-        psVar6 = (short *)((int)psVar6 + 1);
-      }
+      pbVar5 = (byte *)(pcVar3_mg3 + -uVar3);
+      pbVar6 = local_8;
+      memmove(pbVar6, pbVar5, uVar3); /* compiler REP MOVS byte copy */
     }
   }
   if (PTR_0085755c == nullptr) {
@@ -136,8 +127,8 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   if (PTR_00811948 == nullptr) {
     PTR_00811948 = (char *)local_14;
   }
-  if (DAT_0085753c == nullptr) {
-    DAT_0085753c = st::machine_word_boundary_cast<undefined4>((char *)local_8);
+  if (PTR_0085753c == nullptr) {
+    PTR_0085753c = local_8;
   }
   DAT_00857560 = local_18;
   g_currentExceptionFrame = local_60.previous;

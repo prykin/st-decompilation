@@ -11,6 +11,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CBA30(TLOBaseTy *this)
 {
   byte bVar1;
 
+  /* ST_CALLSITE[004CBA40]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar1 = LookupRecordByte(*(char *)&this->field_023D);
   if (*(int *)(&DAT_00790d30 + ((uint)bVar1 + this->field_0235 * 3) * 4) != 0) {
     if (DAT_0080732c != 0) {
@@ -18,7 +19,9 @@ undefined4 __thiscall TLOBaseTy::sub_004CBA30(TLOBaseTy *this)
       thunk_FUN_004ad0e0(&this->field_01D5,7);
       return 0;
     }
+    /* ST_CALLSITE[004CBA92]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
     STT3DSprC::sub_004AD070((STT3DSprC *)&this->field_01D5,0xc);
+    /* ST_CALLSITE[004CBA9B]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
     STT3DSprC::sub_004AD070((STT3DSprC *)&this->field_01D5,7);
   }
   return 0;

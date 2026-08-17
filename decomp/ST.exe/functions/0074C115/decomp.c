@@ -12,16 +12,19 @@ int __thiscall FUN_0074c115(void *this,int *param_1)
   if (*(int *)(STField<int>(this,0x8c) + 200) == 0) {
     iVar2 = FUN_0074bfbf(this,param_1,&local_8);
     if (-1 < iVar2) {
+      /* ST_CALLSITE[0074C160]: CALL dword ptr [EAX + 0x24] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*(int *)this + 0x24))(param_1,local_8);
       if (-1 < iVar2) {
         if (iVar2 == 0) {
           piVar1 = *(int **)(STField<int>(this,0x90) + 0x9c);
+          /* ST_CALLSITE[0074C17D]: CALL dword ptr [ECX + 0x18] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar2 = (**(code **)(*piVar1 + 0x18))(piVar1,local_8);
           STField<undefined4>(this,0x54) = 0;
         }
         else if (iVar2 == 1) {
+          /* ST_CALLSITE[0074C1A5]: CALL dword ptr [ECX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*local_8 + 8))(local_8);
           STField<undefined4>(this,0x54) = 1;
@@ -32,12 +35,14 @@ int __thiscall FUN_0074c115(void *this,int *param_1)
           return 0;
         }
       }
+      /* ST_CALLSITE[0074C18C]: CALL dword ptr [ECX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*local_8 + 8))(local_8);
     }
   }
   else {
     piVar1 = *(int **)(STField<int>(this,0x90) + 0x9c);
+    /* ST_CALLSITE[0074C13F]: CALL dword ptr [ECX + 0x18] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (**(code **)(*piVar1 + 0x18))(piVar1,param_1);
   }

@@ -28,6 +28,7 @@ undefined4 FUN_006ad190(undefined4 param_1,char *text,int param_3)
     if (piVar1 == nullptr) {
       return DAT_00857148;
     }
+    /* ST_CALLSITE[006AD214]: CALL dword ptr [0x0085bbac] */
     GetLocalTime((LPSYSTEMTIME)&DAT_00854a88);
     g_int_00854EB4 = piVar1;
     DAT_007ed79c = 1;

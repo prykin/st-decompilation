@@ -12,29 +12,32 @@
 undefined4 __fastcall st::fn_004D01F0(void *param_1)
 
 {
-  AnonShape_004AB810_8E5693D5 *pAVar1;
-  STT3DSprC *this;
+  STT3DSprC *pSVar1;
   int exceptionCode;
   int local_10;
   int local_c;
   int local_8;
 
   if (STField<int>(param_1,0x5ff) == 0) {
-    pAVar1 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
-    if (pAVar1 == nullptr) {
-      this = nullptr;
+    pSVar1 = (STT3DSprC *)st::fn_0072E530(0x40);
+    if (pSVar1 == nullptr) {
+      pSVar1 = nullptr;
     }
     else {
-      this = (STT3DSprC *)st::fn_00401316(pAVar1);
+      /* ST_CALLSITE[004D0217]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+      pSVar1 = st::fn_00401316(pSVar1);
     }
-    STField<STT3DSprC *>(param_1,0x5ff) = this;
-    exceptionCode = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    STField<STT3DSprC *>(param_1,0x5ff) = pSVar1;
+    /* ST_CALLSITE[004D0241]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
+    exceptionCode =
+         st::fn_0040537B(pSVar1,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (exceptionCode != 0) {
       st::fn_006A5E40
                 (exceptionCode,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_dock.cpp")
                  ,0x28b);
     }
     st::fn_00405795(param_1,&local_10,&local_c,&local_8);
+    /* ST_CALLSITE[004D02B9]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     st::fn_004045D9
               (STField<STT3DSprC *>(param_1,0x5ff),(float)local_10 * _DAT_007904f8 * _DAT_007904f0
                ,(float)local_c * _DAT_007904f8 * _DAT_007904f0,
@@ -81,6 +84,7 @@ undefined4 __fastcall st::fn_004D0310(TLOBaseTy *param_1)
   }
   uVar6 = 0;
   local_8 = 0;
+  /* ST_CALLSITE[004D034E]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar5 = st::fn_00404183
                     ((STT3DSprC *)param_1->field_05FF,0xe,PTR_0080677c,
                      st::pointer_boundary_cast<char *>(&DAT_007a9342 + *(int *)&param_1->field_0x369 * 6),CASE_1D);
@@ -92,7 +96,9 @@ undefined4 __fastcall st::fn_004D0310(TLOBaseTy *param_1)
   if (pbVar2 == (byte *)0xff) {
     pbVar2 = param_1->field_0024;
   }
+  /* ST_CALLSITE[004D0399]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(local_48,st::mutable_c_string("%s%1i"),&DAT_007a9342 + *(int *)&param_1->field_0x369 * 6,pbVar2);
+  /* ST_CALLSITE[004D03B6]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar5 = st::fn_00404183
                     ((STT3DSprC *)param_1->field_05FF,0xc,PTR_0080677c,local_48,CASE_1D);
   if (iVar5 != 0) {
@@ -109,9 +115,11 @@ undefined4 __fastcall st::fn_004D0310(TLOBaseTy *param_1)
     pcVar8 = pcVar8 + 1;
   } while (cVar1 != '\0');
   if (iVar5 == -2) {
+    /* ST_CALLSITE[004D0423]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
     st::fn_00404264((STT3DSprC *)param_1->field_05FF,0xd);
   }
   else {
+    /* ST_CALLSITE[004D0406]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar5 = st::fn_00404183
                       ((STT3DSprC *)param_1->field_05FF,0xd,PTR_0080677c,pcVar9,CASE_1D);
     if (iVar5 != 0) {
@@ -143,9 +151,13 @@ undefined4 __fastcall st::fn_004D0310(TLOBaseTy *param_1)
   st::fn_00402982(param_1->field_05FF,0);
   st::fn_00401EBA(param_1->field_05FF,0xe,uVar6,uVar6,'\0');
   st::fn_00401EBA(param_1->field_05FF,0xc,uVar6,uVar6,'\0');
+  /* ST_CALLSITE[004D04FE]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064((STT3DSprC *)param_1->field_05FF,'\x0e',uVar6);
+  /* ST_CALLSITE[004D050C]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064((STT3DSprC *)param_1->field_05FF,'\f',uVar6);
+  /* ST_CALLSITE[004D0526]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   st::fn_00405240((STT3DSprC *)param_1->field_05FF,0xe,g_playSystem_00802A38->field_00E4);
+  /* ST_CALLSITE[004D0540]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   st::fn_00405240((STT3DSprC *)param_1->field_05FF,0xc,g_playSystem_00802A38->field_00E4);
   uVar6 = local_8;
   iVar5 = -1;
@@ -158,7 +170,9 @@ undefined4 __fastcall st::fn_004D0310(TLOBaseTy *param_1)
   } while (cVar1 != '\0');
   if (iVar5 != -2) {
     st::fn_00401EBA(param_1->field_05FF,0xd,local_8,local_8,'\0');
+    /* ST_CALLSITE[004D057D]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064((STT3DSprC *)param_1->field_05FF,'\r',uVar6);
+    /* ST_CALLSITE[004D0597]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240((STT3DSprC *)param_1->field_05FF,0xd,g_playSystem_00802A38->field_00E4);
   }
   return 0;
@@ -203,6 +217,7 @@ undefined4 __thiscall st::fn_004D0970(TLOFakeTy *this,int param_1,int param_2,in
   *(int *)(this->field_024D + this->field_0245 * 6) = param_1;
   *(int *)(this->field_024D + this->field_0245 * 6 + 2) = param_2;
   *(int *)(this->field_024D + this->field_0245 * 6 + 4) = param_3;
+  /* ST_CALLSITE[004D09FC]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
   iVar1 = st::fn_00401325
                     ((short)param_1,(short)param_2,(short)param_3,0,
                      (RecoveredRecord_DumpClassC_00495EC0 *)this);
@@ -320,6 +335,7 @@ int __thiscall st::fn_004D0B90(TLOFakeTy *this,STMessage *message)
     st::fn_006A5E40(iVar5,0,st::mutable_c_string("E:\\__titans\\Artem\\TLO_dock.cpp"),0x342);
     return iVar5;
   }
+  /* ST_CALLSITE[004D0BCF]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
   st::fn_00404F07((STSprGameObjC *)local_c,message);
   SVar2 = message->id;
   if (SVar2 == MESS_ID_CREATE) {
@@ -356,6 +372,7 @@ int __thiscall st::fn_004D0B90(TLOFakeTy *this,STMessage *message)
           iVar10 = 0;
           do {
             psVar1 = (short *)((int)pTVar4->field_024D + iVar10);
+            /* ST_CALLSITE[004D0D89]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
             exceptionCode =
                  st::fn_00401325
                            (*psVar1,*(short *)((int)pTVar4->field_024D + iVar10 + 4),psVar1[4],0,
@@ -410,6 +427,7 @@ int __thiscall st::fn_004D0B90(TLOFakeTy *this,STMessage *message)
         pbVar8 = pbVar8 + 1;
       }
     }
+    /* ST_CALLSITE[004D0C75]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     st::fn_004025F9
               (g_playSystem_00802A38,pTVar4->field_0018,local_8,st::machine_word_boundary_cast<uint>(pTVar4->field_0245 * 0xc + 0x1c));
     st::fn_006AB060(&local_8);

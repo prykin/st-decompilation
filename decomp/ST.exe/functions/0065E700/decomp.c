@@ -18,6 +18,7 @@ FUN_0065e700(AnonReceiver_0065ED90 *param_1,undefined4 param_2,int *param_3,int 
   short local_8;
   short local_6;
 
+  /* ST_CALLSITE[0065E70F]: CALL 0x004018cf; direct=004018CF AiFltClassTy::sub_0065DA10 */
   array = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)param_1,param_2);
   if ((array == nullptr) || (array->count == 0)) {
     return 0xffffffff;
@@ -35,8 +36,10 @@ FUN_0065e700(AnonReceiver_0065ED90 *param_1,undefined4 param_2,int *param_3,int 
       else {
         puVar1 = nullptr;
       }
+      /* ST_CALLSITE[0065E773]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,param_1[1].field_0x4,*puVar1,CASE_1);
       if (this != nullptr) {
+        /* ST_CALLSITE[0065E78A]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0((STFishC *)this,&local_6,&local_8,&local_a);
         *param_3 = *param_3 + (int)local_6;
         *param_4 = *param_4 + (int)local_8;

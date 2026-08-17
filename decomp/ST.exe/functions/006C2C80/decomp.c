@@ -10,9 +10,11 @@ void FUN_006c2c80(int *param_1)
 {
   if (param_1 != nullptr) {
     if (*param_1 != 0) {
+      /* ST_CALLSITE[006C2C92]: CALL dword ptr [0x0085bf94] */
       _BinkClose_4(*param_1);
     }
     *param_1 = 0;
+    /* ST_CALLSITE[006C2CA4]: CALL dword ptr [ECX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)param_1[0xd] + 8))((int *)param_1[0xd]);
     param_1[0xd] = 0;

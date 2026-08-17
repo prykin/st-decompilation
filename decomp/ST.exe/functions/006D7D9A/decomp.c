@@ -48,6 +48,7 @@ uint __cdecl FUN_006d7d9a(AnonShape_006D7D9A_A5401417 *param_1)
   }
   local_8 = thunk_FUN_006a3be0(iVar5 + 0x4101);
   uVar8 = 0xfffffffe;
+  /* ST_CALLSITE[006D7E13]: CALL dword ptr [EBP + -0x46] */
   if ((local_8 != nullptr) && (uVar8 = (*pcVar3)(param_1,local_11,1), uVar8 == 1)) {
     if ((local_11[0] < 2) || (9 < local_11[0])) {
 LAB_006d7faf:
@@ -121,6 +122,7 @@ LAB_006d7faf:
             local_3e = iVar1;
             if (iVar1 == 0 || bVar7) {
               local_c = local_8 + 0x1040;
+              /* ST_CALLSITE[006D7F63]: CALL dword ptr [EBP + -0x4a] */
               uVar8 = (*pcVar4)(param_1,local_c,local_36);
               if (uVar8 != 0) goto LAB_006d7fb4;
               local_36 = local_36 + local_3a;

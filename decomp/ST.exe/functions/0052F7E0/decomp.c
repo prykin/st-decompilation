@@ -33,8 +33,10 @@ void __thiscall OptPanelTy::SwitchOptPanelOff(OptPanelTy *this)
       local_8->field_01AA = 0;
       local_8->field_01A9 = 0;
       local_8->field_01A4 = CASE_1;
+      /* ST_CALLSITE[0052F838]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(local_8);
       if (this_00->field_0172 == CASE_1) {
+        /* ST_CALLSITE[0052F84B]: CALL 0x00405a1a; direct=00405A1A OptPanelTy::ShiftControls */
         ShiftControls(this_00,0);
       }
       this_00->field_0172 = CASE_4;

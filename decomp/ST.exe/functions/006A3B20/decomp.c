@@ -16,6 +16,7 @@ undefined * FUN_006a3b20(int param_1)
   lp_00 = (undefined4 *)&stack0xfffffffc;
   if (0 < param_1) {
     do {
+      /* ST_CALLSITE[006A3B40]: CALL dword ptr [0x0085bbb8] */
       BVar1 = IsBadReadPtr(lp,4);
       if (BVar1 != 0) {
         return &DAT_00854970;
@@ -28,6 +29,7 @@ undefined * FUN_006a3b20(int param_1)
   DAT_008549f0 = &DAT_00854970;
   iVar3 = 0;
   do {
+    /* ST_CALLSITE[006A3B60]: CALL dword ptr [0x0085bbb8] */
     BVar1 = IsBadReadPtr(lp_00,8);
     if (BVar1 != 0) {
       return &DAT_00854970;

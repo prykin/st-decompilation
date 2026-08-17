@@ -12,6 +12,7 @@ int FUN_004e6c20(int param_1,int param_2)
     return 0;
   }
   iVar4 = 1;
+  /* ST_CALLSITE[004E6C51]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar3 = LookupRecordByte((char)param_1);
   iVar5 = 0;
   iVar1 = param_2 + -0x32 + (bVar3 - 1) * 0x42;

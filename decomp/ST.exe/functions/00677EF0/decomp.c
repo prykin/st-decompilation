@@ -6,6 +6,7 @@ undefined4 __cdecl FUN_00677ef0(undefined4 param_1,undefined4 param_2,int *param
 {
   int iVar1;
 
+  /* ST_CALLSITE[00677EF8]: CALL dword ptr [EAX + 0x138] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(*param_3 + 0x138))();
   DAT_00811980 = DAT_00811980 + iVar1;

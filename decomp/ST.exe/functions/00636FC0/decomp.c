@@ -47,6 +47,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return local_8;
     }
+    /* ST_CALLSITE[006370C0]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,&local_10,
                &local_14);

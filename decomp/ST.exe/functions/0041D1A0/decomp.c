@@ -14,10 +14,12 @@ void __thiscall STMineSetC::sub_0041D1A0(STMineSetC *this,int param_1)
 
   this->field_010D = param_1;
   if (g_visibleClass_00802A88 != nullptr) {
+    /* ST_CALLSITE[0041D1D3]: CALL 0x0040141f; direct=0040141F VisibleClassTy::SetZoneAst */
     VisibleClassTy::SetZoneAst
               (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,
                (char)this->field_005F,this->field_0024,param_1,this->field_0018,0xffffffff);
   }
+  /* ST_CALLSITE[0041D1DC]: CALL dword ptr [EAX + 0x8] */
   iVar1 = this->vfunc_08();
   if ((iVar1 == 1) && (this->field_0024 == (uint)DAT_0080874d)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected STPackTagged24(2, this->field_0018) == (((uint32_t)(this->field_0018) & 0x00ffffffu) | ((uint32_t)(2) << 24)) */

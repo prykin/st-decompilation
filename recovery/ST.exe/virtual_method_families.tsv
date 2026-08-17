@@ -167,6 +167,7 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 00790728:8	00790728	8	0x20	00790728	STGroupBoatC	1			-
 00790728:9	00790728	9	0x24	00790728	STGroupBoatC	1			-
 00790758:0	00790758	0	0x0	00790758	OpticClassC	1	GetMessage	OpticClassC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
+00790790:0	00790790	0	0x0	00790790	STT3DSprC	1			-
 00790C04:0	00790C04	0	0x0	00790C04	TLOBldMark	1	GetMessage	TLOBldMark	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 00798C6C:0	00798C6C	0	0x0	00798C6C	TLOEmbryoTy	1			-
 0079AB74:0	0079AB74	0	0x0	0079AB74 | 0079ABA0 | 0079ABC8 | 0079ABF0 | 0079AC1C | 0079AC48 | 0079AC70 | 0079AC9C | 0079AD10 | 0079AD2C | 0079AD48 | 0079AD64 | 0079AD8C | 0079AE90	BehPanelTy | BldBoatPanelTy | BldLabPanelTy | BldObjPanelTy | FrmPanelTy | HelpPanelTy | InfocPanelTy | IntercomPanelTy | OptPanelTy | PausePanelTy | PlayPanelTy | ResearchPanelTy | SAMPanelTy | UpgPanelTy	14	GetMessage	BehPanelTy | BldBoatPanelTy | BldLabPanelTy | BldObjPanelTy | FrmPanelTy | HelpPanelTy | InfocPanelTy | IntercomPanelTy | OptPanelTy | PausePanelTy | PlayPanelTy | ResearchPanelTy | SAMPanelTy | UpgPanelTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
@@ -292,19 +293,19 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079D084:0	0079D084	0	0x0	0079D084	STManRub3C	1	GetMessage	STManRub3C	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079D19C:0	0079D19C	0	0x0	0079D19C	STManRuinC	1	GetMessage	STManRuinC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079D610:0	0079D610	0	0x0	0079D610	STVolcanoC	1	GetMessage	STVolcanoC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
-0079D618:0	0079D618	0	0x0	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	1			-
-0079D618:1	0079D618	1	0x4	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	1			-
-0079D618:10	0079D618	10	0x28	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	1			-
-0079D618:11	0079D618	11	0x2C	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	1			-
-0079D618:12	0079D618	12	0x30	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	2			-
-0079D618:2	0079D618	2	0x8	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	1			-
-0079D618:3	0079D618	3	0xC	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	1			-
-0079D618:4	0079D618	4	0x10	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	1			-
-0079D618:5	0079D618	5	0x14	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	1			-
-0079D618:6	0079D618	6	0x18	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	2			-
-0079D618:7	0079D618	7	0x1C	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	1			-
-0079D618:8	0079D618	8	0x20	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	1			-
-0079D618:9	0079D618	9	0x24	0079D618 | 0079D6D4	AiBossClassTy | AiPlrClassTy	1			-
+0079D618:0	0079D618	0	0x0	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	1			-
+0079D618:1	0079D618	1	0x4	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	1			-
+0079D618:10	0079D618	10	0x28	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	1			-
+0079D618:11	0079D618	11	0x2C	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	1			-
+0079D618:12	0079D618	12	0x30	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	3			-
+0079D618:2	0079D618	2	0x8	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	1			-
+0079D618:3	0079D618	3	0xC	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	1			-
+0079D618:4	0079D618	4	0x10	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	1			-
+0079D618:5	0079D618	5	0x14	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	1			-
+0079D618:6	0079D618	6	0x18	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	2			-
+0079D618:7	0079D618	7	0x1C	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	1			-
+0079D618:8	0079D618	8	0x20	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	1			-
+0079D618:9	0079D618	9	0x24	0079D618 | 0079D67C | 0079D6D4	AiBossClassTy | AiEventClassTy | AiPlrClassTy	1			-
 0079D658:0	0079D658	0	0x0	0079D658	AiBossClassTy	1	GetMessage	AiBossClassTy	/int(/SubmarineTitans/Recovered/STMessage *) varargs=false noreturn=false
 0079D6BC:0	0079D6BC	0	0x0	0079D6BC	AiFltClassTy	1	GetMessage	AiFltClassTy	/int(/SubmarineTitans/Recovered/STMessage *) varargs=false noreturn=false
 0079D714:0	0079D714	0	0x0	0079D714	AiPlrClassTy	1	GetMessage	AiPlrClassTy	/int(/SubmarineTitans/Recovered/STMessage *) varargs=false noreturn=false

@@ -16,6 +16,7 @@ undefined4 FUN_0074dca1(short *param_1,undefined4 *param_2)
   else {
     iVar2 = FUN_0074d664(param_1);
     uVar5 = iVar2 * 2 + 2;
+    /* ST_CALLSITE[0074DCC0]: CALL dword ptr [0x0085c0d8] */
     puVar3 = CoTaskMemAlloc(uVar5);
     *param_2 = puVar3;
     if (puVar3 == nullptr) {

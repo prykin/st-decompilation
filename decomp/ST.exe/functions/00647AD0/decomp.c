@@ -11,7 +11,8 @@ AiBossClassTy * __thiscall AiBossClassTy::AiBossClassTy(AiBossClassTy *this)
 {
 
   sub_006E60E0(this);
-  thunk_FUN_0064cc90(&this->vtable_at_1c);
+  /* ST_CALLSITE[00647ADE]: CALL 0x00402c2f; direct=00402C2F AiEventClassTy::AiEventClassTy */
+  AiEventClassTy::AiEventClassTy((AiEventClassTy *)&this->vtable_at_1c);
   this->vtable = &AiBossClassTyVTable;
   this->vtable_at_1c = &AiBossClassTyVTable_at_1C;
   if (this != nullptr) {

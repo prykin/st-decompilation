@@ -108,6 +108,7 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this)
   if ((((iVar8 != 0x1ae) && (iVar8 != 0x172)) && (iVar8 != 0x5a)) &&
      ((iVar8 != 0x1a4 && (iVar8 != 0x1b8)))) {
     if ((iVar8 == 0x14) || (iVar8 == 1000)) {
+      /* ST_CALLSITE[00420421]: CALL dword ptr [EDX + 0x2c] */
       SVar4 = this->slot_2C();
     }
     else {
@@ -413,12 +414,14 @@ LAB_00420678:
     pcVar13 = pcVar12 + -1;
     memmove(pcVar13, pcVar11, uVar6); /* compiler REP MOVS byte copy */
     this_00 = &this->field_01D5;
+    /* ST_CALLSITE[004206B4]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar8 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xf,PTR_00806774,local_24,CASE_1D);
     if (iVar8 != 0) {
       RaiseInternalException
                 (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",
                  0xc4a);
     }
+    /* ST_CALLSITE[004206E9]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar8 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0,PTR_00806774,local_24,CASE_1D);
     if (iVar8 != 0) {
       RaiseInternalException
@@ -428,11 +431,15 @@ LAB_00420678:
     ST3DSMAPContext::sub_006EA5E0(this->field_0211,this->field_01ED,0xf,0);
     ST3DSMAPContext::sub_006EA5E0(this->field_0211,this->field_01ED,0,0);
     if (DAT_0080732c != 1) {
+      /* ST_CALLSITE[004207CC]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,0xf);
+      /* ST_CALLSITE[004207D5]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,0);
       thunk_FUN_004abce0(this_00,0,0,0,'\0');
       thunk_FUN_004abce0(this_00,0xf,0x14,0x14,'\0');
+      /* ST_CALLSITE[00420809]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)this_00,0,g_playSystem_00802A38->field_00E4);
+      /* ST_CALLSITE[0042081E]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,g_playSystem_00802A38->field_00E4);
       return;
     }
@@ -440,10 +447,13 @@ LAB_00420678:
     thunk_FUN_004abce0(this_00,0xf,0x14,0x27,'\0');
     thunk_FUN_004acd60(this_00,'\0',g_playSystem_00802A38->field_00E4 & 1);
     thunk_FUN_004acd60(this_00,'\x0f',g_playSystem_00802A38->field_00E4 & 1);
+    /* ST_CALLSITE[004207A6]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow((STT3DSprC *)this_00,0,g_playSystem_00802A38->field_00E4);
+    /* ST_CALLSITE[004207BC]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,g_playSystem_00802A38->field_00E4);
     return;
   }
+  /* ST_CALLSITE[00420537]: CALL dword ptr [EAX + 0x2c] */
   dVar5 = this->slot_2C();
   switch(dVar5) {
   case 0xa6:

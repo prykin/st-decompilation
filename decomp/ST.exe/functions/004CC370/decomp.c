@@ -27,8 +27,10 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
   if (-1 < *(int *)&param_1->field_0x44c) {
     pAVar1 = ((STT3DSprC *)param_1->field_0603)->field_0020;
     if ((int)pAVar1->field_020C <= (int)pAVar1->field_0210) {
+      /* ST_CALLSITE[004CC3BA]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)param_1->field_0603,0xe);
       thunk_FUN_004ad430((STT3DSprC *)param_1->field_0603);
+      /* ST_CALLSITE[004CC3D2]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
       STT3DSprC::UnLoadSequence((STT3DSprC *)param_1->field_0603,0xe);
       uVar3 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_0603);
       Library::Ourlib::ST3DSMAP::SprRstLev(param_1->field_0211,uVar3);
@@ -37,12 +39,15 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
     }
     goto cf_common_exit_004CC6D2;
   }
+  /* ST_CALLSITE[004CC412]: CALL dword ptr [EDX + 0x7c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar5 = (*(code *)param_1->field_0000->field_007C)();
   if ((3 < iVar5 / 0x14) && (*(int *)&param_1->field_0x43c == 1)) {
+    /* ST_CALLSITE[004CC438]: CALL 0x00405768; direct=00405768 TLOBaseTy::sub_004CC900 */
     TLOBaseTy::sub_004CC900((TLOBaseTy *)param_1);
     goto cf_common_exit_004CC6D2;
   }
+  /* ST_CALLSITE[004CC44C]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
   STT3DSprC::UnLoadSequence((STT3DSprC *)&param_1->field_0x1d5,6);
   iVar5 = *(int *)&param_1->field_0x440;
   *(int *)&param_1->field_0x43c = iVar5;
@@ -50,6 +55,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
       *(int *)&param_1->field_0x450 + (~-(uint)(iVar5 != 1) & DAT_00790c14))
   goto cf_common_exit_004CC6D2;
   if (iVar5 == 2) {
+    /* ST_CALLSITE[004CC4A4]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar5 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)param_1->field_0603,0xe,PTR_0080678c,PTR_s_tlo_capture_00790c28,
                        CASE_1D);
@@ -59,6 +65,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
     }
   }
   else if ((iVar5 == 3) || (iVar5 == 4)) {
+    /* ST_CALLSITE[004CC4FC]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar5 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)param_1->field_0603,0xe,PTR_0080678c,PTR_s_tlo_emb6_00790c20,
                        CASE_1D);
@@ -68,6 +75,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
     }
   }
   else {
+    /* ST_CALLSITE[004CC4D5]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar5 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)param_1->field_0603,0xe,PTR_00806764,PTR_s_tlo_bubbles_00790c1c,
                        CASE_1D);
@@ -82,6 +90,7 @@ cf_error_exit_004CC50A:
   iVar4 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
   uVar2 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_0603);
   FUN_006ea340(param_1->field_0211,uVar2,iVar4,uVar3);
+  /* ST_CALLSITE[004CC558]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   STT3DSprC::sub_004AD3C0
             ((STT3DSprC *)param_1->field_0603,param_1->field_01F9,param_1->field_01FD,
              param_1->field_0201);
@@ -106,18 +115,24 @@ cf_error_exit_004CC50A:
     uVar3 = (param_1->field_0617 - *(int *)(&DAT_00797750 + uVar3 * 8 + iVar8)) + iVar7;
   }
   thunk_FUN_004ad380((void *)param_1->field_0603,uVar6,uVar3);
+  /* ST_CALLSITE[004CC614]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_0603,'\x0e',0);
+  /* ST_CALLSITE[004CC62D]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   STT3DSprC::StartShow((STT3DSprC *)param_1->field_0603,0xe,g_playSystem_00802A38->field_00E4);
   thunk_FUN_004ad460((void *)param_1->field_0603,1);
   if ((*(int *)&param_1->field_0x43c == 3) || (*(int *)&param_1->field_0x43c == 4)) {
+    /* ST_CALLSITE[004CC65A]: CALL dword ptr [EDX + 0x90] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)param_1->field_0000->field_0090)(3,0x363);
   }
   if (*(int *)&param_1->field_0x43c == 2) {
+    /* ST_CALLSITE[004CC676]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_774 = LookupRecordByte(param_1->field_023D);
     if (*(int *)(&DAT_00795f18 + ((uint)(byte)local_EAX_774 + param_1->field_0235 * 3) * 4) != 0) {
       pAVar2 = param_1->field_0000;
+      /* ST_CALLSITE[004CC6A8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_824 = LookupRecordByte(param_1->field_023D);
+      /* ST_CALLSITE[004CC6CC]: CALL dword ptr [EDI + 0x90] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pAVar2->field_0090)
                 (3,*(undefined4 *)

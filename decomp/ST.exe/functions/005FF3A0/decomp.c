@@ -8,10 +8,12 @@ FUN_005ff3a0(void *this,undefined2 *param_1,undefined2 *param_2,short *param_3)
   STGameObjC *this_00;
   int iVar1;
 
+  /* ST_CALLSITE[005FF3BE]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   this_00 = STAllPlayersC::GetObjPtr
                       (g_allPlayers_007FA174,STField<char>(this,0x20a),
                        STField<ushort>(this,0x224),CASE_1);
   if (this_00 != nullptr) {
+    /* ST_CALLSITE[005FF3CD]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
     iVar1 = (*this_00->vtable[1].vfunc_24)(this_00);
     if (iVar1 != 0) {
       thunk_FUN_00416270(this_00,(uint *)param_1,(int *)param_2,param_3);

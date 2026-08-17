@@ -173,6 +173,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     local_4b8 = local_4f8;
     local_498 = local_4f8;
     local_a0 = local_4f8;
+    /* ST_CALLSITE[0059EE2E]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1B20,nullptr,local_520,0);
     if (this_00->field_1CDF != 0xffffffff) {
@@ -216,21 +217,26 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     local_d60 = local_d80;
     local_d20 = local_d80;
     local_53c = local_d80;
+    /* ST_CALLSITE[0059EF8D]: CALL dword ptr [EAX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,nullptr,local_dac,0);
     local_d8c = this_00->field_1AEC;
     local_dac[1] = (ccFntTy *)0x89;
     local_dac[4] = (ccFntTy *)0x154;
     local_dac[7] = (ccFntTy *)0x10;
+    /* ST_CALLSITE[0059EFD1]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,nullptr,local_dac,0);
     this_00->field_1EC2 = 0;
     this_00->field_1EC6 = 0xffffffff;
     this_00->field_1ECA = 0;
+    /* ST_CALLSITE[0059F00B]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x230,0x17a,0xd3,0x19,0x6904,0x6989);
     this_00->field_1EB6 = uVar6;
+    /* ST_CALLSITE[0059F036]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,0,0x1a3,0x196,0x160,0x19,0x6905,0x698a);
     this_00->field_1EBA = uVar6;
+    /* ST_CALLSITE[0059F062]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1fd,0x1b5,0xab,0x19,0x6903,0x698d);
     this_00->field_1B24 = uVar6;
     this_00->field_002D = 0x61;

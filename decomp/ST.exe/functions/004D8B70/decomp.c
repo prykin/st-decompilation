@@ -33,12 +33,14 @@ undefined4 FUN_004d8b70(char param_1)
       bVar9 = 1;
       uVar8 = g_packedRecords_A62x8[uVar6].field1951_0x99e;
       uVar5 = thunk_FUN_004e41c0(uVar6);
+      /* ST_CALLSITE[004D8C18]: CALL 0x00401e83; direct=00401E83 MoneyTy::sub_0052BC30 */
       MoneyTy::sub_0052BC30(g_money_008016D4,uVar5,uVar7,uVar8,bVar1,bVar9,iVar2);
       return 0;
     }
     iVar2 = g_packedRecords_A62x8[uVar6].field1940_0x972;
     iVar4 = iVar2 - g_packedRecords_A62x8[uVar6].field1941_0x976;
     if (iVar4 < 0) {
+      /* ST_CALLSITE[004D8C55]: CALL 0x00401e83; direct=00401E83 MoneyTy::sub_0052BC30 */
       MoneyTy::sub_0052BC30
                 (g_money_008016D4,g_packedRecords_A62x8[uVar6].field15_0x1f,
                  g_packedRecords_A62x8[uVar6].field16_0x23,g_packedRecords_A62x8[uVar6].field17_0x27
@@ -48,6 +50,7 @@ undefined4 FUN_004d8b70(char param_1)
     if (((iVar2 != 0) && (iVar4 != 0)) && (iVar4 = (iVar4 * 0xd) / iVar2, 0xd < iVar4)) {
       iVar4 = 0xd;
     }
+    /* ST_CALLSITE[004D8C9A]: CALL 0x00401e83; direct=00401E83 MoneyTy::sub_0052BC30 */
     MoneyTy::sub_0052BC30
               (g_money_008016D4,g_packedRecords_A62x8[uVar6].field15_0x1f,
                g_packedRecords_A62x8[uVar6].field16_0x23,g_packedRecords_A62x8[uVar6].field17_0x27,

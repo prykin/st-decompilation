@@ -51,7 +51,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
       if (iVar6 != 0x3c) {
         if (iVar6 == 0x1ae) {
           if (param_3 == 1) {
+            /* ST_CALLSITE[0043B99C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),CASE_3);
+            /* ST_CALLSITE[0043B9B1]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0
                       ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
             iVar8 = Library::Ourlib::ST3DSPR::SprInRect
@@ -62,11 +64,13 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
               thunk_FUN_004a8f20(1);
               thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff
                                 );
+              /* ST_CALLSITE[0043BA39]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
               CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
               DAT_0080674c = 2;
               DAT_0080745d = 0;
             }
           }
+          /* ST_CALLSITE[0043BA61]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,DAT_0080874d,0,param_2);
           return;
         }
@@ -77,8 +81,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if (((param_3 == 1) &&
+          /* ST_CALLSITE[0043BAA0]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           (iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(piVar1), (uint8_t)((char)piVar1[1])),
                                STField<DArrayTy *>(piVar1,10),
                                CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),&local_10,
@@ -89,6 +94,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);
         thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+        /* ST_CALLSITE[0043BB2D]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         DAT_0080674c = 2;
         DAT_0080745d = 0;
@@ -114,7 +120,8 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (((param_3 == 1) &&
             (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),*(undefined2 *)(iVar6 + 8)),
-            iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)(*(undefined1 *)(iVar6 + 4))),
+            /* ST_CALLSITE[0043B82D]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
+            iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)(((undefined1 *)iVar6)[4])),
                                 *(DArrayTy **)(iVar6 + 10),uVar9,&local_10,&local_c,&local_8,
                                 (uint *)&param_1), iVar6 == 0)) &&
            (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
@@ -123,13 +130,16 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
           thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          /* ST_CALLSITE[0043B8BB]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
           DAT_0080674c = 2;
           DAT_0080745d = 0;
         }
         bVar4 = DAT_0080874d;
         g_packedRecords_A62x8[DAT_0080874d].field200_0x203 = 0;
+        /* ST_CALLSITE[0043B8FF]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
         ResetActivityFromTmp(this,bVar4,1,0,0);
+        /* ST_CALLSITE[0043B90F]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,DAT_0080874d,0,iVar8);
         return;
       }
@@ -143,7 +153,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if (param_3 == 1) {
-        pSVar7 = GetObjPtr(this,*(char *)(iVar6 + 4),*(ushort *)(iVar6 + 8),CASE_3);
+        /* ST_CALLSITE[0043B70C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+        pSVar7 = GetObjPtr(this,((char *)iVar6)[4],*(ushort *)(iVar6 + 8),CASE_3);
+        /* ST_CALLSITE[0043B721]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0
                   ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
         iVar8 = Library::Ourlib::ST3DSPR::SprInRect
@@ -153,6 +165,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
           thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          /* ST_CALLSITE[0043B7AA]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
           DAT_0080674c = 2;
           DAT_0080745d = 0;
@@ -160,6 +173,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
       }
       bVar4 = DAT_0080874d;
       g_packedRecords_A62x8[DAT_0080874d].field200_0x203 = 0;
+      /* ST_CALLSITE[0043B7EE]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,bVar4,1,0,0);
       iVar8 = param_2;
     }
@@ -198,6 +212,7 @@ LAB_0043aee4:
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (((param_3 == 1) &&
             (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
+            /* ST_CALLSITE[0043AFDF]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
             iVar6 = GetCamPoint(0x19a,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)((char)piVar1[1])),
                                 STField<DArrayTy *>(piVar1,10),uVar9,&local_10,&local_c,&local_8,
                                 (uint *)&param_1), iVar6 == 0)) &&
@@ -207,10 +222,12 @@ LAB_0043aee4:
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
           thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          /* ST_CALLSITE[0043B06D]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
           DAT_0080674c = 2;
           DAT_0080745d = 0;
         }
+        /* ST_CALLSITE[0043B090]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,DAT_0080874d,1,iVar8);
         return;
       }
@@ -221,7 +238,9 @@ LAB_0043aee4:
         if (param_3 == 1) {
           SVar10 = CASE_4;
 LAB_0043b0f1:
+          /* ST_CALLSITE[0043B0FC]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar10);
+          /* ST_CALLSITE[0043B111]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0
                     ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
           iVar8 = Library::Ourlib::ST3DSPR::SprInRect
@@ -231,6 +250,7 @@ LAB_0043b0f1:
             thunk_FUN_004a8e00(local_10,local_c,local_8);
             thunk_FUN_004a8f20(1);
             thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+            /* ST_CALLSITE[0043B19E]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
             CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
             DAT_0080674c = 2;
             DAT_0080745d = 0;
@@ -266,7 +286,9 @@ LAB_0043b0af:
       if (param_3 != 1) goto cf_common_exit_0043B294;
       SVar10 = CASE_5;
     }
+    /* ST_CALLSITE[0043B1DE]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar10);
+    /* ST_CALLSITE[0043B1F3]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
     iVar8 = Library::Ourlib::ST3DSPR::SprInRect
                       (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
@@ -275,11 +297,13 @@ LAB_0043b0af:
       thunk_FUN_004a8e00(local_10,local_c,local_8);
       thunk_FUN_004a8f20(1);
       thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+      /* ST_CALLSITE[0043B27B]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
       CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
       DAT_0080674c = 2;
       DAT_0080745d = 0;
     }
 cf_common_exit_0043B294:
+    /* ST_CALLSITE[0043B2A2]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
     ActivateTV(this,DAT_0080874d,1,param_2);
     return;
   }
@@ -290,6 +314,7 @@ cf_common_exit_0043B294:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if (((param_3 == 1) &&
           (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
+          /* ST_CALLSITE[0043B3A5]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
           iVar6 = GetCamPoint(0x19a,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)((char)piVar1[1])),
                               STField<DArrayTy *>(piVar1,10),uVar9,&local_10,&local_c,&local_8,
                               (uint *)&param_1), iVar6 == 0)) &&
@@ -299,13 +324,16 @@ cf_common_exit_0043B294:
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);
         thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+        /* ST_CALLSITE[0043B433]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         DAT_0080674c = 2;
         DAT_0080745d = 0;
       }
       bVar4 = DAT_0080874d;
       g_packedRecords_A62x8[DAT_0080874d].field200_0x203 = 1;
+      /* ST_CALLSITE[0043B474]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,bVar4,0,0,0);
+      /* ST_CALLSITE[0043B483]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
       ActivateTV(this,DAT_0080874d,1,iVar8);
       return;
     }
@@ -316,7 +344,9 @@ cf_common_exit_0043B294:
       if (param_3 == 1) {
         SVar10 = CASE_4;
 LAB_0043b2fe:
+        /* ST_CALLSITE[0043B309]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar10);
+        /* ST_CALLSITE[0043B31E]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0
                   ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
         iVar8 = Library::Ourlib::ST3DSPR::SprInRect
@@ -328,6 +358,7 @@ joined_r0x0043b5ec:
           thunk_FUN_004a8f20(1);
 LAB_0043b630:
           thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          /* ST_CALLSITE[0043B640]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
           DAT_0080674c = 2;
           DAT_0080745d = 0;
@@ -353,7 +384,9 @@ LAB_0043b4a2:
   }
   else if (iVar6 == 0x1a4) {
     if (param_3 == 1) {
+      /* ST_CALLSITE[0043B5A3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),CASE_5);
+      /* ST_CALLSITE[0043B5B8]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0
                 ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
       iVar8 = Library::Ourlib::ST3DSPR::SprInRect
@@ -365,7 +398,9 @@ LAB_0043b4a2:
   else {
     if (iVar6 != 0x1b8) goto LAB_0043b4a2;
     if (param_3 == 1) {
+      /* ST_CALLSITE[0043B4EF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),CASE_6);
+      /* ST_CALLSITE[0043B504]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0
                 ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
       iVar8 = Library::Ourlib::ST3DSPR::SprInRect
@@ -380,11 +415,13 @@ LAB_0043b4a2:
   }
   bVar4 = DAT_0080874d;
   g_packedRecords_A62x8[DAT_0080874d].field200_0x203 = 1;
+  /* ST_CALLSITE[0043B681]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
   ResetActivityFromTmp(this,bVar4,0,0,0);
 cf_common_exit_0043B686:
   iVar6 = 1;
   iVar8 = param_2;
 cf_common_exit_0043BB49:
+  /* ST_CALLSITE[0043BB52]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
   ActivateTV(this,DAT_0080874d,iVar6,iVar8);
   return;
 }

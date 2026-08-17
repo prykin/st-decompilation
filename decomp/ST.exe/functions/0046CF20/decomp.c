@@ -42,6 +42,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
   if (this->field_0528 == 0) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar7 = STReplaceLowWord((uint32_t)(in_EDX), (uint16_t)(this->field_0512 * 0xc9)) + 100;
+    /* ST_CALLSITE[0046CF7C]: CALL dword ptr [EAX + 0x10] */
     uVar5 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
                        STReplaceLowWord((uint32_t)(iVar7), (uint16_t)(this->field_0045)),
@@ -52,12 +53,14 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
   }
   if (this->field_0528 != CASE_1) {
     if (this->field_0528 == 2) {
+      /* ST_CALLSITE[0046D054]: CALL 0x00402455; direct=00402455 sub_00415B30 */
       sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_0510 * 0xc9 + 100,this->field_0512 * 0xc9 + 100,
                    this->field_0514 * 200 + 100,this->field_0062);
       this->field_0528 = CASE_3;
     }
     if (this->field_0528 == CASE_3) {
+      /* ST_CALLSITE[0046D07A]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
       iVar7 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_10,&local_c);
       if (iVar7 == -1) {
         local_EAX_688 =
@@ -84,6 +87,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
           if ((((this->field_051C < 0) || (this->field_051E < 0)) ||
               (sVar2 = this->field_051C, sVar3 = this->field_051E, sVar4 = this->field_0520,
               this->field_0520 < 0)) &&
+             /* ST_CALLSITE[0046D13B]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
              (iVar7 = sub_0048DFD0(this,this->field_0510,this->field_0512,this->field_0514,
                                    this->field_0510,this->field_0512,
                                    (int *)(uint)(ushort)this->field_0514,2,&local_18,&local_16,
@@ -96,18 +100,22 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
           local_14[0] = sVar4;
           local_16 = sVar3;
           local_18 = sVar2;
+          /* ST_CALLSITE[0046D176]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
           sub_00481520(this,(int)local_18,(int)local_16,(int)local_14[0]);
+          /* ST_CALLSITE[0046D17F]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
           iVar7 = sub_0045FF50(this,0);
           if (iVar7 == -1) {
             return 0xffffffff;
           }
           this->field_0528 = CASE_4;
+          /* ST_CALLSITE[0046D1A1]: CALL dword ptr [EDX + 0xd8] */
           iVar7 = this->vfunc_D8();
           return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
         }
       }
     }
     if (this->field_0528 == CASE_4) {
+      /* ST_CALLSITE[0046D215]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
       uVar10 = sub_0045FF50(this,2);
       if (uVar10 == 0xffffffff) {
         return 0xffffffff;
@@ -120,6 +128,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
             (int)((uVar10 ^ uVar9) - uVar9) < 2 &&
             ((uVar10 = this->field_00C3 - (int)this->field_005F, uVar9 = (int)uVar10 >> 0x1f,
              (int)((uVar10 ^ uVar9) - uVar9) < 2 &&
+             /* ST_CALLSITE[0046D296]: CALL dword ptr [EDX + 0x18] */
              (iVar7 = this->vfunc_18(*(short *)&this->field_00BB,*(short *)&this->field_00BF,
                                  *(short *)&this->field_00C3), iVar7 == 0)))))) {
           uVar10 = 0;
@@ -131,18 +140,22 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
         }
       }
     }
+    /* ST_CALLSITE[0046D2D5]: CALL dword ptr [EDX + 0xd8] */
     iVar7 = this->vfunc_D8();
     if (iVar7 != 0) {
       return 0xffffffff;
     }
     return uVar10;
   }
+  /* ST_CALLSITE[0046CFA5]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
   uVar8 = sub_004176C0(this,this->field_0522);
+  /* ST_CALLSITE[0046CFAD]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
   local_EAX_141 = sub_00417910(this,(short)uVar8);
   if (local_EAX_141 != 0xffffffff) {
     if (local_EAX_141 == 0) {
       this->field_0528 = 2;
     }
+    /* ST_CALLSITE[0046CFC5]: CALL dword ptr [EDX + 0xd8] */
     iVar7 = this->vfunc_D8();
     return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
   }

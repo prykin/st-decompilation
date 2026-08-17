@@ -148,6 +148,7 @@ st::fn_00644410
                           ((this_00 = g_worldGrid.cells
                                       [(int)sVar13 * (int)g_worldGrid.planeStride + sVar3 * iVar7 +
                                        (int)sVar11].objects[1], this_00 != nullptr &&
+                           /* ST_CALLSITE[006446F4]: CALL dword ptr [EDX + 0x2c] */
                            (((iVar7 = this_00->GetObjectTypeId(), iVar7 != 0xa6 &&
                              (iVar7 != 0xa7)) && ((iVar7 != 0xbd && (iVar7 != 0xaf)))))))))) {
                         this_00 = nullptr;
@@ -287,8 +288,9 @@ st::fn_00644410
                       if ((this_00 != nullptr) &&
                          (*(int *)&this_00->field_0x18 != local_10->field_025E)) {
                         uVar9 = (undefined2)((uint)local_10 >> 0x10);
+                        /* ST_CALLSITE[006447C2]: CALL dword ptr [EDX + 0xdc]; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        iVar14 = this_00->vfunc_DC(local_20, local_14, local_18, CONCAT22(uVar9,local_10->field_024B), CONCAT22(uVar9,local_10->field_024D), CONCAT22(uVar9,local_10->field_024F));
+                        iVar14 = this_00->vfunc_DC(local_20, local_14, st::machine_word_boundary_cast<undefined4>(local_18), CONCAT22(uVar9,local_10->field_024B), CONCAT22(uVar9,local_10->field_024D), CONCAT22(uVar9,local_10->field_024F));
                         pAVar1 = local_10;
                         if (-1 < iVar14) {
                           *param_1 = 1;
@@ -296,13 +298,16 @@ st::fn_00644410
                           if (((((iVar6 == 0x9c) || (iVar6 == 0x9d)) || (iVar6 == 0x9e)) ||
                               (iVar6 == 0x9b)) &&
                              (((local_10->field_0285 == '\0' &&
+                               /* ST_CALLSITE[00644D02]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                                (bVar2 = st::fn_004049B7(*(char *)&this_00[1].vtable), bVar2 != 3))
                               && (iVar6 = st::fn_0040186B((int)this_00[1].vtable,0x1b),
                                  iVar6 != 0)))) {
-                            this_00->vfunc_E0(iVar14, &local_6, &local_8, &local_a, local_48);
+                            /* ST_CALLSITE[00644D35]: CALL dword ptr [EAX + 0xe0]; [STIndirectCallsiteApplier] exact slot 0xE0; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+                            this_00->vfunc_E0(iVar14, st::machine_word_boundary_cast<undefined4>(&local_6), st::machine_word_boundary_cast<undefined4>(&local_8), st::machine_word_boundary_cast<undefined4>(&local_a), st::machine_word_boundary_cast<undefined4>(local_48));
                             *param_2 = (int)local_6;
                             *param_3 = (int)local_8;
                             *param_4 = (int)local_a;
+                            /* ST_CALLSITE[00644D63]: CALL 0x00401159; direct=00401159 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10 */
                             st::fn_00401159((AnonReceiver_00644410 *)pAVar1,this_00,(ushort)*param_2,
                                          (ushort)*param_3,local_a);
                             pAVar1->field_0285 = '\x02';
@@ -415,6 +420,7 @@ st::fn_00645F10
     *(uint *)&this->field_0x1c = uVar1;
     local_3c = (short)((ulonglong)(uVar1 >> 0x10) % 0x3d) + *(short *)&this->field_0x24f + -0x1e;
     local_38 = *(undefined4 *)&this->field_0x259;
+    /* ST_CALLSITE[00646048]: CALL dword ptr [EAX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x106,0,0,(short)local_60,0);
   }
   return;

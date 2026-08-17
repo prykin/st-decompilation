@@ -20,13 +20,16 @@ void __thiscall MAdvTy::DoneMAdv(MAdvTy *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
+    /* ST_CALLSITE[0059045B]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     SetAccelerator(0,local_8->field_0008,2,100,2,1,0,0,0,0,0,0);
+    /* ST_CALLSITE[0059047A]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     SetAccelerator(0,this_00->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
     memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     this_00->field_0028 = 0x14;
     this_00->field_002C = this_00->field_0008;
     FUN_006e6000(this_00,3,1,(undefined4 *)&this_00->field_0x18);
     cMf32::RecMemFree(g_cMf32_00806780,(uint *)&this_00->field_005E);
+    /* ST_CALLSITE[005904C3]: CALL 0x00401d43; direct=00401D43 DarkScreen */
     DarkScreen(g_dDXContext_0080759C,10,2);
     if (this_00->field_0048 != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_0x38);

@@ -45,6 +45,7 @@ void __thiscall st::fn_0053CEF0(SAMPanelTy *this)
   this_00 = local_14;
   if (iVar3 == 0) {
     g_sAMPanel_008016EC = local_14;
+    /* ST_CALLSITE[0053CF4C]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     st::fn_00403800
               ((SpecPanelTy *)local_14,st::mutable_c_string("BKG_SETANYW"),0x2f,2,0xc6,0xc,0x2735,0xc9,0x77);
     puVar18 = nullptr;
@@ -74,6 +75,7 @@ void __thiscall st::fn_0053CEF0(SAMPanelTy *this)
       pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_PRODWEAP"),0);
       pCVar3 = st::fn_006F2C00(pCVar3,iVar6,uVar7);
       iVar6 = local_8;
+      /* ST_CALLSITE[0053CFE2]: CALL dword ptr [EDX + 0x4] */
       uVar7 = (*pSVar1->CreateBut)
                         ((PanelTy *)this_00,0,1,0x24,local_8 + 1,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),iVar8,iVar16,sVar9,
                          uVar12,uVar14,pcVar17,uVar19);
@@ -86,6 +88,7 @@ void __thiscall st::fn_0053CEF0(SAMPanelTy *this)
         iVar16 = 0;
         pcVar17_mg1 = st::fn_006B0140(iVar13 - 0x842b,g_hINSTANCE_00807618);
         st::fn_007119C0(this_00->field_0189,pcVar17_mg1,iVar16,iVar6,uVar10);
+        /* ST_CALLSITE[0053D041]: CALL 0x00403229; direct=00403229 DibPut */
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x37,local_8,'\x01',pbVar5);
         st::fn_00710F00(this_00->field_0189);
       }
@@ -103,6 +106,7 @@ void __thiscall st::fn_0053CEF0(SAMPanelTy *this)
     uVar14 = 0xb518;
     uVar7 = 0xb508;
     pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_BIG"),0);
+    /* ST_CALLSITE[0053D0AD]: CALL dword ptr [EDI + 0x4] */
     uVar7 = (*pSVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0xa0,0x5c,0,1,1,st::machine_word_boundary_cast<undefined4>(pCVar3),uVar7,uVar14,sVar9,uVar12,
                        uVar19,pcVar17,uVar20);
@@ -145,7 +149,7 @@ void __thiscall st::fn_0053D1A0(SAMPanelTy *this)
   if (iVar3 == 0) {
     iVar5 = 7;
     local_8->field_01B1 = nullptr;
-    puVar6 = st::pointer_boundary_cast<uint *>(&local_8->field_01B5);
+    puVar6 = &local_8->field_01B5;
     do {
       if (*puVar6 != 0) {
         st::fn_006E56B0(pSVar2->field_000C,*puVar6);
@@ -188,6 +192,7 @@ void __thiscall st::fn_0053D290(SAMPanelTy *this,int param_1)
 
   if (param_1 != this->field_005C) {
     local_8 = this;
+    /* ST_CALLSITE[0053D2AB]: CALL 0x00404d36; direct=00404D36 SpecPanelTy::ShiftControls */
     st::fn_00404D36((SpecPanelTy *)this,param_1);
     sVar2 = (short)this->field_0174;
     this->field_0028 = 0x24;
@@ -250,6 +255,7 @@ void __thiscall st::fn_0053D3B0(SAMPanelTy *this)
   if (iVar2 == 0) {
     local_10 = local_8->field_01AB;
     local_c = local_8->field_01AF;
+    /* ST_CALLSITE[0053D402]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     st::fn_004035BC
               (g_allPlayers_007FA174,0x12,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_01AB);
     this_00->field_0028 = 5;
@@ -323,6 +329,7 @@ int __thiscall st::fn_0053D4D0(SAMPanelTy *this,STMessage *message)
     st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\Andrey\\setamine.cpp"),0x94);
     return 0xffff;
   }
+  /* ST_CALLSITE[0053D50E]: CALL 0x00401401; direct=00401401 SpecPanelTy::GetMessage */
   st::fn_00401401((SpecPanelTy *)local_c,message);
   SVar1 = message->id;
   if (SVar1 < 0xb509) {
@@ -334,11 +341,13 @@ int __thiscall st::fn_0053D4D0(SAMPanelTy *this,STMessage *message)
     }
     if (SVar1 < 4) {
       if (SVar1 == MESS_SHARED_0003) {
+        /* ST_CALLSITE[0053D553]: CALL 0x00403d96; direct=00403D96 SAMPanelTy::DoneSAMPanel */
         st::fn_00403D96(this_00);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       if (SVar1 == MESS_ID_CREATE) {
+        /* ST_CALLSITE[0053D539]: CALL 0x0040132f; direct=0040132F SAMPanelTy::InitSAMPanel */
         st::fn_0040132F(this_00);
         g_currentExceptionFrame = local_54.previous;
         return 0;
@@ -365,6 +374,7 @@ int __thiscall st::fn_0053D4D0(SAMPanelTy *this,STMessage *message)
       }
       pBVar8 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01B1,
                             (uint)(*(char *)((int)&this_00->field_01AB + (uint)bVar5) == '\0'));
+      /* ST_CALLSITE[0053D681]: CALL 0x00403229; direct=00403229 DibPut */
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar12 - iVar10,iVar3 - iVar7,
              '\x01',(byte *)pBVar8);
       st::fn_006B3640
@@ -377,6 +387,7 @@ int __thiscall st::fn_0053D4D0(SAMPanelTy *this,STMessage *message)
       iVar10 = 0;
       UVar9 = 0x2755;
       pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_BIG"),0);
+      /* ST_CALLSITE[0053D618]: CALL dword ptr [EBX + 0x10] */
       (*pSVar2->PaintIBut)((PanelTy *)this_00,(int)message,pCVar6,UVar9,iVar10,iVar12);
       g_currentExceptionFrame = local_54.previous;
       return 0;

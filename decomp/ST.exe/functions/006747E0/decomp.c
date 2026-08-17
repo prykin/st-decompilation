@@ -24,6 +24,7 @@ void FUN_006747e0(int param_1,int param_2)
   }
   do {
     iVar4 = iVar5 + iVar3 >> 1;
+    /* ST_CALLSITE[00674822]: CALL dword ptr [0x007d2d1c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (*(code *)PTR_thunk_FUN_00673160_007d2d1c)
                       (PTR_0085755c + DAT_0081190c,*(undefined4 *)(param_1 + iVar4 * 8));

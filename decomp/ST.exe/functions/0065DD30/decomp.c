@@ -30,6 +30,7 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
   iVar9 = 0;
   local_10 = 0;
   local_18 = param_1;
+  /* ST_CALLSITE[0065DD42]: CALL 0x004018cf; direct=004018CF AiFltClassTy::sub_0065DA10 */
   local_1c = (DArrayTy *)AiFltClassTy::sub_0065DA10(param_1,param_2);
   if (local_1c != nullptr) {
     cVar2 = param_1->field_0081;
@@ -52,15 +53,19 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
         else {
           puVar3 = nullptr;
         }
+        /* ST_CALLSITE[0065DDB9]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
+        /* ST_CALLSITE[0065DDCC]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
         if ((this == nullptr) || (iVar9 = (*this->vtable[1].vfunc_24)(this), iVar9 == 0))
         goto cf_common_join_0065DF91;
+        /* ST_CALLSITE[0065DDDE]: CALL dword ptr [EAX + 0x2c] */
         uVar4 = this->vfunc_2C();
         if (param_4 != 0) {
           if (uVar4 == 0x78) {
             if ((param_4 & 0x80000000) == 0) {
               if ((param_4 & 0x3fffffff) != 0) {
+                /* ST_CALLSITE[0065DE08]: CALL dword ptr [EDX + 0x2c] */
                 iVar9 = this->vfunc_2C();
                 if (iVar9 == 0x78) {
                   uVar5 = this->field_0259;
@@ -82,6 +87,7 @@ LAB_0065de3c:
         if (param_3 == 0x3fffffff) {
 LAB_0065dea6:
           if ((param_6 != nullptr) && (*param_6 != 0)) {
+            /* ST_CALLSITE[0065DEBA]: CALL dword ptr [EDX + 0x74] */
             (*this->vtable->vfunc_74)((short)local_2c);
             pbVar8 = local_2c;
             pbVar7 = param_6;
@@ -104,8 +110,10 @@ LAB_0065deea:
 LAB_0065deef:
             if (iVar9 != 0) goto cf_common_join_0065DF91;
           }
+          /* ST_CALLSITE[0065DF03]: CALL dword ptr [EAX + 0x6c] */
           if (((param_5 == -1) || (iVar9 = this->vfunc_6C(), param_5 == iVar9)) &&
              (((param_10 < 1 || ((param_11 < 1 || (param_12 < 1)))) ||
+              /* ST_CALLSITE[0065DF34]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
               ((STFishC::sub_004162B0((STFishC *)this,&local_6,&local_8,&local_a),
                param_7 <= local_6 &&
                ((((param_8 <= local_8 && (param_9 <= local_a)) &&
@@ -117,6 +125,7 @@ LAB_0065deef:
         }
         else if (uVar4 == 0x78) {
           if ((param_3 & 0x80000000) == 0) {
+            /* ST_CALLSITE[0065DE5C]: CALL dword ptr [EAX + 0x2c] */
             iVar9 = this->vfunc_2C();
             if (iVar9 == 0x78) {
               iVar9 = this->field_0259;

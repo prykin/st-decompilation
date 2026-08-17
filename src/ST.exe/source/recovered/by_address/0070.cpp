@@ -9061,8 +9061,8 @@ int __fastcall st::fn_00708650(undefined4 *param_1)
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079e200);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_0079e200;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 0);
   iVar7 = 0;
@@ -9152,8 +9152,8 @@ int __fastcall st::fn_00708650(undefined4 *param_1)
                              (int)DAT_00857028,
                              (ushort *)(param_1[5] + (param_1[10] * local_6c + local_70) * 2),
                              st::machine_word_boundary_cast<int>(param_1[10] * 2),local_60,
-                             st::pointer_boundary_cast<byte *>(&DAT_007efd90 +
-                             local_38 + (((local_40 * 7 - local_6c) + local_34) * 6 - local_70)),6,0,
+                             (byte *)&DAT_007efd90 +
+                             local_38 + (((local_40 * 7 - local_6c) + local_34) * 6 - local_70),6,0,
                              local_68,local_64);
                 uVar8 = local_54;
               }
@@ -9207,7 +9207,7 @@ int __fastcall st::fn_00708650(undefined4 *param_1)
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             st::fn_0072AC20(param_1,st::pointer_boundary_cast<byte *>(DAT_00857004),st::pointer_boundary_cast<byte *>(DAT_00857028),(uint *)(uVar5 + 0x25),
                          *(int *)(uVar5 + 4),(int *)&local_50,*(int *)(uVar5 + 0x14),
-                         *(byte *)(uVar5 + 0x18),0,0,0xffffffff);
+                         ((byte *)uVar5)[0x18],0,0,0xffffffff);
             iVar7 = param_1[0xcc];
             if (*(int *)(iVar7 + 0x18 + iVar4) <= local_7c + 1) break;
             local_28 = (uint *)((local_7c + 3) * 0x10 + iVar7 + iVar4);
@@ -9238,7 +9238,7 @@ int __fastcall st::fn_00708650(undefined4 *param_1)
           uVar5 = puVar3[0x28];
           st::fn_007297E0(param_1,st::pointer_boundary_cast<byte *>(DAT_00857004),st::pointer_boundary_cast<byte *>(DAT_00857028),(uint *)(uVar5 + 0x29),
                        (uint *)(uVar5 + 0x39),(int *)&local_50,*(int *)(uVar5 + 0x18),
-                       *(byte *)(uVar5 + 0x1c),*(int *)(uVar5 + 0x1d),*(int *)(uVar5 + 0x21),
+                       ((byte *)uVar5)[0x1c],*(int *)(uVar5 + 0x1d),*(int *)(uVar5 + 0x21),
                        *(uint *)(uVar5 + 0x25));
           iVar7 = param_1[0xcc];
           if (*(int *)(iVar7 + 0x18 + iVar4) <= local_7c + 1) break;
@@ -9267,6 +9267,7 @@ LAB_007088a4:
       }
     }
     local_8 = 0xffffffff;
+    /* ST_CALLSITE[00708C7B]: CALL dword ptr [ECX + 0x80] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(**(int **)(param_1[1] + 0x40) + 0x80))(*(int **)(param_1[1] + 0x40),0);
   }
@@ -9340,8 +9341,8 @@ void __thiscall st::fn_00709670(void *this,uint param_1,int param_2,int param_3,
   undefined *puStack_c;
   undefined4 local_8;
 
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079e210);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_0079e210;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   if (((param_1 < STField<uint>(this,0x310)) &&
       (puVar1 = (uint *)(STField<int>(this,0x31c) + param_1 * 0x114), (*puVar1 & 0x8000) != 0))
@@ -10048,8 +10049,6 @@ st::fn_0070CB20(uint param_1,int param_2,int *param_3,int param_4,int param_5,by
             ,int param_8,HPALETTE h,uint param_10,int param_11)
 
 {
-  int _param_7 = static_cast<int>(param_7);
-
   byte bVar1;
   int iVar2;
   uint uVar2;
@@ -10153,6 +10152,7 @@ st::fn_0070CB20(uint param_1,int param_2,int *param_3,int param_4,int param_5,by
       return (uint)bVar1;
     }
   }
+  /* ST_CALLSITE[0070CD54]: CALL dword ptr [0x0085baa8] */
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   UVar5 = st::external_000000B2(h,(uint)CONCAT11((char)uVar4,(char)uVar3) << 8 | uVar2 & 0xff);
   if (UVar5 != 0xffffffff) {
@@ -10191,7 +10191,7 @@ undefined4 __cdecl st::fn_0070CDC0(byte *param_1)
   if (*param_1 != 0) {
     bVar1 = param_1[1];
     param_1[1] = 0;
-    uVar3 = st::fn_00734570(param_1,st::pointer_boundary_cast<undefined4 *>(&param_1),0x10);
+    uVar3 = st::fn_00734570(param_1,(undefined4 *)&param_1,0x10);
     pbVar2[1] = bVar1;
     if (param_1 != pbVar2) {
       return uVar3;

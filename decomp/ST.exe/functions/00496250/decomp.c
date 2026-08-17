@@ -67,7 +67,7 @@ switchD_0049655f_caseD_0:
         }
         sVar1 = *(short *)(iVar3 + 8);
         iVar11 = (int)sVar1;
-        iVar8 = iVar11 - (uint)*(byte *)(iVar3 + 0x48);
+        iVar8 = iVar11 - (uint)((byte *)iVar3)[0x48];
         if (iVar12 < iVar8) {
           return 0xffffffff;
         }

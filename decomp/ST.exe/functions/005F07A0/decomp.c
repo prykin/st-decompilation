@@ -28,6 +28,7 @@ undefined4 __fastcall FUN_005f07a0(STBoatC *param_1)
           ((sVar3 < g_worldGrid.sizeZ &&
            (this = (STFishC *)
                    STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[0], this != nullptr)))))) {
+        /* ST_CALLSITE[005F0883]: CALL dword ptr [EDX + 0x2c] */
         dVar4 = this->slot_2C();
         if (dVar4 == 99) {
           iVar5 = thunk_FUN_004b7d00(this,param_1);
@@ -36,6 +37,7 @@ undefined4 __fastcall FUN_005f07a0(STBoatC *param_1)
             if (iVar5 != 0) {
               iVar4 = thunk_FUN_004b7d90((int *)this);
               if (iVar4 != 0) {
+                /* ST_CALLSITE[005F08C4]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 STFishC::sub_004162B0(this,&local_6,&local_8,&local_a);
                 iVar5 = thunk_FUN_005ecd70(param_1,(local_6 + 1) * 0xc9,(local_8 + 1) * 0xc9,
                                            local_a * 0xc9 + 0x96,param_1->field_02BA,'\x01',0x3c);

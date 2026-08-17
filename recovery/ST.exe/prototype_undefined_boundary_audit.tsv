@@ -6151,7 +6151,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006ADC30	FUN_006adc30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006AE230	FUN_006ae230	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006AFFC0	FUN_006affc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006B0020	FUN_006b0020	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B01D0	FUN_006b01d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B0290	FUN_006b0290	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B0330	FUN_006b0330	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-

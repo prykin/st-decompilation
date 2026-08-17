@@ -49,6 +49,7 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
       local_8->field_0030 = (undefined2)iVar2;
       local_8->field_0032 = STPiece<2,2>(iVar2);
       if (g_cursorClass_00802A30 != nullptr) {
+        /* ST_CALLSITE[005163B9]: CALL dword ptr [EDX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_8->field_0x18);
       }
@@ -56,6 +57,7 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
     if (this_00->field_019C != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_019C);
     }
+    /* ST_CALLSITE[005163D7]: CALL 0x00402194; direct=00402194 HelpPanelTy::sub_00512BE0 */
     sub_00512BE0(this_00,(int)this_00->field_01D3);
     g_currentExceptionFrame = local_4c.previous;
     return;

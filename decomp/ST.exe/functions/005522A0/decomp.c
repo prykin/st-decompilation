@@ -61,6 +61,7 @@ int __thiscall TradePanelTy::GetMessage(TradePanelTy *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[005522DE]: CALL 0x00401401; direct=00401401 SpecPanelTy::GetMessage */
   SpecPanelTy::GetMessage((SpecPanelTy *)local_c,message);
   SVar2 = message->id;
   if (SVar2 < 0xb203) {
@@ -71,6 +72,7 @@ LAB_00552481:
       uVar17 = 1;
       uVar15 = 0;
       pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
+      /* ST_CALLSITE[00552494]: CALL dword ptr [EBX + 0x10] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pAVar8->field_0010)(message,pCVar3,iVar7,uVar15,uVar17);
       g_currentExceptionFrame = local_68.previous;
@@ -92,6 +94,7 @@ LAB_00552481:
         thunk_FUN_0054edf0((undefined4 *)0x20,(uint *)&local_18,0,0xffffffff);
         if (this_00->field_01BB != '\0') {
           this_00->field_0028 = 0xbfff;
+          /* ST_CALLSITE[005523CB]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)this_00->field_0000->field_0000)(&this_00->field_0x18);
           g_currentExceptionFrame = local_68.previous;
@@ -100,11 +103,13 @@ LAB_00552481:
       }
       else {
         if (SVar2 == MESS_ID_CREATE) {
+          /* ST_CALLSITE[0055232D]: CALL 0x00405678; direct=00405678 TradePanelTy::InitTradePanel */
           InitTradePanel(this_00);
           g_currentExceptionFrame = local_68.previous;
           return 0;
         }
         if (SVar2 == MESS_SHARED_0003) {
+          /* ST_CALLSITE[00552312]: CALL 0x00405538; direct=00405538 TradePanelTy::DoneTradePanel */
           DoneTradePanel(this_00);
           g_currentExceptionFrame = local_68.previous;
           return 0;
@@ -134,14 +139,18 @@ LAB_00552481:
   else if (SVar2 < 0xb20d) {
     if (SVar2 == MESS_TRADEPANELTY_B20C) {
       (&this_00->field_01BC)[(byte)this_00->field_01D0] = (message->arg0).words.low;
+      /* ST_CALLSITE[005525F7]: CALL 0x004048f4; direct=004048F4 TradePanelTy::PaintIndicators */
       PaintIndicators(this_00);
+      /* ST_CALLSITE[005525FE]: CALL 0x0040578b; direct=0040578B TradePanelTy::sub_00551800 */
       sub_00551800(this_00);
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
     if (SVar2 == MESS_TRADEPANELTY_B20A) {
       this_00->field_01D0 = *(char *)(message->arg0).ptr + -1;
+      /* ST_CALLSITE[005525C1]: CALL 0x00404f9d; direct=00404F9D TradePanelTy::sub_00551B10 */
       sub_00551B10(this_00);
+      /* ST_CALLSITE[005525C8]: CALL 0x0040391d; direct=0040391D TradePanelTy::PaintPanel */
       PaintPanel(this_00);
       g_currentExceptionFrame = local_68.previous;
       return 0;
@@ -166,6 +175,7 @@ LAB_00552481:
       pCVar3 = FUN_006f2c00(pCVar3,iVar9,iVar4);
       puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                          (PTR_00806794,CASE_1,pCVar3,uVar10,bVar11,iVar12,iVar14,puVar16);
+      /* ST_CALLSITE[00552539]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x01',
              (byte *)puVar5);
       if (*(int *)((message->arg0).u32 + 4) == 3) {
@@ -177,6 +187,7 @@ LAB_00552481:
         pCVar3 = thunk_FUN_00571240("BUT_RCTFTYPE",0);
         puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                            (PTR_00806794,CASE_6,pCVar3,uVar10,bVar11,iVar4,iVar9,puVar16);
+        /* ST_CALLSITE[0055257D]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x06',
                (byte *)puVar5);
       }
@@ -204,6 +215,7 @@ LAB_00552481:
     uVar15 = 0;
     pcVar13 = thunk_FUN_00529fe0;
     pCVar3 = thunk_FUN_00571240(text,0);
+    /* ST_CALLSITE[00552655]: CALL dword ptr [EBX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)pAVar8->field_0008)(message,1,pCVar3,pcVar13,uVar15,uVar17);
   }

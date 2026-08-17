@@ -71,8 +71,8 @@ st::fn_0060EF40
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079ce98);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_0079ce98;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 20);
   sVar10 = *(short *)&this->field_0x215;
@@ -82,7 +82,7 @@ st::fn_0060EF40
   ExceptionList = &local_14;
   local_2c = (int)sVar9;
   local_20 = (int)sVar10;
-  st::fn_0040156E((int)*(short *)&this->field_0x1f5,st::pointer_boundary_cast<undefined4 *>(local_b8),st::pointer_boundary_cast<undefined4 *>(&local_74),0,nullptr);
+  st::fn_0040156E((int)*(short *)&this->field_0x1f5,st::pointer_boundary_cast<undefined4 *>(local_b8),(undefined4 *)&local_74,0,nullptr);
   local_3c = sVar10 + local_b8[0];
   local_48 = sVar9 + local_74;
   sVar10 = *(short *)&this->field_0x1ef;
@@ -160,6 +160,7 @@ LAB_0060f230:
             else {
               pcVar2 = st::pointer_boundary_cast<code *>(this_00->vtable[5].slots_00_28[2]);
               *(undefined4 *)((st_stack_frame + 16) + iVar11) = 0x60f1e8;
+              /* ST_CALLSITE[0060F1E2]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
               iVar3 = (*pcVar2)(this_00);
               if (((iVar3 == 0) || ((STWorldObjectVTable *)0x7 < this_00[1].vtable)) ||
                  ((g_playSystem_00802A38 != nullptr &&
@@ -242,7 +243,7 @@ LAB_0060f230:
     local_68[0] = 0;
   }
   else {
-    puVar1 = st::pointer_boundary_cast<undefined1 *>(&this->field_0x2dd);
+    puVar1 = &this->field_0x2dd;
     if (*(int *)puVar1 == 0) {
       *(int *)((st_stack_frame + 16) + iVar11) = (local_68[0] + 1) * 0x1c;
       *(undefined4 *)((st_stack_frame + 12) + iVar11) = 0x60f3ca;

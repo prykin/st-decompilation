@@ -17,6 +17,7 @@ void __thiscall STJumpMineC::sub_00619A20(STJumpMineC *this)
   int local_8;
 
   if ((int)this->field_0097 < 0) {
+    /* ST_CALLSITE[00619A3C]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
     LoadImagJMine(this,this->field_008F);
   }
   pVVar1 = g_visibleClass_00802A88;
@@ -29,6 +30,7 @@ void __thiscall STJumpMineC::sub_00619A20(STJumpMineC *this)
   else {
     iVar2 = (int)this->field_00CD;
     if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+          /* ST_CALLSITE[00619A8A]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                       (int)this->field_00C9,(int)this->field_00CB,&local_8,&local_c), iVar2 < 0)) ||

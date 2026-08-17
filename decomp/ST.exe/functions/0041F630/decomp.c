@@ -63,6 +63,7 @@ LAB_0041f738:
     goto LAB_0041f793;
   }
   if (iVar7 != 0x14) {
+    /* ST_CALLSITE[0041F770]: CALL dword ptr [EDX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar4 = (**(code **)(param_1->field_0000 + 0x2c))();
     switch(uVar4) {
@@ -95,6 +96,7 @@ switchD_0041f763_caseD_7:
       goto LAB_0041f793;
     }
   }
+  /* ST_CALLSITE[0041F750]: CALL dword ptr [EDX + 0x2c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar4 = (**(code **)(param_1->field_0000 + 0x2c))();
   switch(uVar4) {
@@ -116,6 +118,7 @@ switchD_0041f763_caseD_9:
   local_c = 4;
 LAB_0041f793:
   if (param_1->field_0211 != 0) {
+    /* ST_CALLSITE[0041F7A5]: CALL dword ptr [EDX + 0x6c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar4 = (**(code **)(param_1->field_0000 + 0x6c))();
     switch(uVar4) {

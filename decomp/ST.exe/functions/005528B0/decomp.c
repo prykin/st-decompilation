@@ -41,6 +41,7 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     iVar4 = 0x31;
     g_upgPanel_00802A48 = local_8;
     pCVar2 = thunk_FUN_00571240("BKG_UPDATESW",0);
+    /* ST_CALLSITE[00552914]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar2,iVar4,uVar5,iVar7,iVar10,UVar11,uVar12,uVar13);
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad

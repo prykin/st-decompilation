@@ -17,14 +17,17 @@ int __thiscall STBoatC::BackUnLoadObj(STBoatC *this,int *param_1)
 
   SVar1 = this->field_05D6;
   if ((SVar1 == 0) || (SVar1 == CASE_1)) {
+    /* ST_CALLSITE[00476179]: CALL dword ptr [EDX + 0xd8] */
     iVar3 = this->vfunc_D8();
     return -(uint)(iVar3 != 0);
   }
   if (SVar1 == CASE_2) {
+    /* ST_CALLSITE[00476135]: CALL 0x004011ae; direct=004011AE STBoatC::UnLoadObj */
     local_EAX_21 = UnLoadObj(this,2);
     return local_EAX_21;
   }
   if (SVar1 == CASE_5) {
+    /* ST_CALLSITE[00476144]: CALL dword ptr [EAX + 0x20] */
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar3 = this->StopMove(unaff_retaddr);
     return iVar3;

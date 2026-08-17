@@ -166,6 +166,7 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
       STField<undefined4>(this,0x15) = *(undefined4 *)(param_5 + 0x48);
     }
     thunk_FUN_00632e30(this);
+    /* ST_CALLSITE[006328BE]: CALL 0x004035c1; direct=004035C1 STTeamLissagC::InitVisibelSystem */
     STTeamLissagC::InitVisibelSystem(this);
     uVar2 = 1;
     if (STField<char>(this,4) == '\0') {

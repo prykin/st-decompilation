@@ -26,8 +26,10 @@ TLOBaseTy::sub_004CFA00
   int iVar4;
   int iVar5;
 
+  /* ST_CALLSITE[004CFA15]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar3 = LookupRecordByte(*(char *)&this->field_023D);
   iVar4 = (-(uint)(bVar3 != 1) & 0xfffffffd) + 0x13;
+  /* ST_CALLSITE[004CFA34]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar3 = LookupRecordByte(*(char *)&this->field_023D);
   TVar1 = this->field_0245;
   iVar5 = bVar3 - 1;

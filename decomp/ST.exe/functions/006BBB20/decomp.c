@@ -41,11 +41,13 @@ int FUN_006bbb20(DDXContext *param_1,int param_2)
      (piVar1 = (int *)param_1->field_0040, piVar1 == nullptr)) {
     return 0;
   }
+  /* ST_CALLSITE[006BBB5D]: CALL dword ptr [ECX + 0x38] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*piVar1 + 0x38))(piVar1,local_28);
   piVar1 = param_1->field_0044;
   local_38[0] = 0;
   if (piVar1 != nullptr) {
+    /* ST_CALLSITE[006BBB73]: CALL dword ptr [ECX + 0x38] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 0x38))(piVar1,local_38);
   }
@@ -72,22 +74,26 @@ LAB_006bbc85:
         local_68 = 0x60;
         local_60 = 8;
       }
+      /* ST_CALLSITE[006BBD0F]: CALL dword ptr [EDX + 0x18] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       local_18 = (**(code **)(*param_1->field_0030 + 0x18))
                            (param_1->field_0030,local_b4,&local_14,0);
       if (local_18 != 0) goto LAB_006bbdfd;
+      /* ST_CALLSITE[006BBD27]: CALL dword ptr [EDX + 0x38] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)param_1->field_0040 + 0x38))((int *)param_1->field_0040,local_28);
     }
     if (local_10 != 0) {
       piVar1 = param_1->field_0044;
       if (piVar1 != nullptr) {
+        /* ST_CALLSITE[006BBD3B]: CALL dword ptr [EDX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar1 + 8))(piVar1);
         param_1->field_0044 = nullptr;
       }
       param_1->field_0044 = local_c;
       if (param_1->field_0020 == 8) {
+        /* ST_CALLSITE[006BBD56]: CALL dword ptr [ECX + 0x7c] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*local_c + 0x7c))(local_c,param_1->field_003C);
       }
@@ -95,18 +101,21 @@ LAB_006bbc85:
     if (local_8 != 0) {
       piVar1 = (int *)param_1->field_0040;
       if (piVar1 != nullptr) {
+        /* ST_CALLSITE[006BBD68]: CALL dword ptr [ECX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar1 + 8))(piVar1);
         param_1->field_0040 = 0;
       }
       param_1->field_0040 = local_14;
       if (param_1->field_0020 == 8) {
+        /* ST_CALLSITE[006BBD83]: CALL dword ptr [EDX + 0x7c] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*local_14 + 0x7c))(local_14,param_1->field_003C);
       }
     }
     local_2ac = 0x17c;
     local_428[0] = 0x17c;
+    /* ST_CALLSITE[006BBDAB]: CALL dword ptr [EDX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1->field_0030 + 0x2c))(param_1->field_0030,&local_2ac,local_428);
     uVar2 = param_1->field_000C & 0xfffffffd;
@@ -144,20 +153,24 @@ LAB_006bbbce:
       local_e4 = 0x60;
       local_dc = 8;
     }
+    /* ST_CALLSITE[006BBC65]: CALL dword ptr [EDX + 0x18] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     local_18 = (**(code **)(*param_1->field_0030 + 0x18))(param_1->field_0030,local_130,&local_c,0);
     if (local_18 == 0) {
+      /* ST_CALLSITE[006BBC7D]: CALL dword ptr [EDX + 0x38] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*param_1->field_0044 + 0x38))(param_1->field_0044,local_38);
       goto LAB_006bbc85;
     }
 LAB_006bbdfd:
     if (local_c != nullptr) {
+      /* ST_CALLSITE[006BBE07]: CALL dword ptr [EDX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*local_c + 8))(local_c);
       local_c = nullptr;
     }
     if (local_14 != nullptr) {
+      /* ST_CALLSITE[006BBE1B]: CALL dword ptr [ECX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*local_14 + 8))(local_14);
     }

@@ -12,6 +12,7 @@ undefined4 FUN_004d0f00(void)
   local_20[2] = 2;
   local_20[1] = 0xff;
   local_20[0] = 0x3ea;
+  /* ST_CALLSITE[004D0F46]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
   STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x3ea,0,0,local_20,0);
   return 0;
 }

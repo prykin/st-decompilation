@@ -60,6 +60,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
           }
           switch(*puVar12) {
           case 1:
+            /* ST_CALLSITE[004F9763]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
             SoundClassTy::PlaySound
                       ((SoundClassTy *)&g_sound,SOUND_MODE_12,puVar12 + 9,*(int *)(puVar12 + 5),
                        nullptr,0);
@@ -107,6 +108,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
                                                    100,5,0x226,0x55,0);
               if (pbVar6 != nullptr) {
                 ccFntTy::WrSarr(this_00->field_01D4,(int)local_8,0,-1,0,0,0);
+                /* ST_CALLSITE[004F9942]: CALL 0x00403229; direct=00403229 DibPut */
                 DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_01B4,100,5,'\x01',pbVar6);
                 ccFntTy::EraseSufr(this_00->field_01D4);
                 if (puVar12[0xe] != '\0') {
@@ -174,6 +176,7 @@ LAB_004f9a8a:
                 *ppsVar1 = psVar15;
               }
               this_00->field_025F = 0;
+              /* ST_CALLSITE[004F9AC9]: CALL 0x00405dee; direct=00405DEE CPanelTy::sub_004F1950 */
               sub_004F1950(this_00);
             }
             else {
@@ -204,6 +207,7 @@ LAB_004f9a8a:
             this_00->field_0028 = 0x5dc6;
             *(undefined **)&this_00->field_0x2c = &DAT_0080c4d7;
             if (g_aiBossClass_008117BC != nullptr) {
+              /* ST_CALLSITE[004F9AEE]: CALL dword ptr [EDX] */
               g_aiBossClass_008117BC->GetMessage((STMessage *)&this_00->field_0x18);
             }
             this_00->field_0260 = CASE_4;

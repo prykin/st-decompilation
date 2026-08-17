@@ -58,6 +58,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     if (0 < (int)local_c) {
       do {
         DArrayGetElement(pSVar3->field_020E,uVar9,&local_14);
+        /* ST_CALLSITE[00499C60]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_14,uStack_12,(int)cStack_13);
         if (pSVar5 == nullptr) {
           uStack_12 = 0xffff;

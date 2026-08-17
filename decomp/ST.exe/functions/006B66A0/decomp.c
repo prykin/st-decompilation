@@ -28,6 +28,7 @@ int FUN_006b66a0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undef
   piStack_1c = (int *)*param_1;
   uStack_18 = 0;
   iStack_20 = 0x6b66b7;
+  /* ST_CALLSITE[006B66B4]: CALL dword ptr [ECX + 0x58] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar5 = (**(code **)(*piStack_1c + 0x58))();
   if (iVar5 == -0x7788ffe2) {
@@ -45,6 +46,7 @@ int FUN_006b66a0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undef
     pcVar2 = *(code **)(iVar5 + 0x58);
     puVar8 = (undefined1 *)((int)auStack_2c + iVar3);
     *(undefined4 *)((int)auStack_2c + iVar3) = 0x6b6700;
+    /* ST_CALLSITE[006B66FD]: CALL dword ptr [ECX + 0x58] */
     iVar5 = (*pcVar2)();
     if (iVar5 == 0) {
       puVar4[0xf] = *(undefined4 *)((int)&param_3 + iVar3);

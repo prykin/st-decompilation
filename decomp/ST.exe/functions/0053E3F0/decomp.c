@@ -52,6 +52,7 @@ SpecPanelTy::InitPanel
     local_8->field_003C = local_8->field_003C + (g_nWidth_00806730 + -800) / 2;
     puVar5 = cMf32::RecGet(g_cMf32_00806790,1,text,nullptr,1);
     pSVar4->field_0185 = puVar5;
+    /* ST_CALLSITE[0053E469]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
     pcVar6 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
     pSVar4->field_0189 = pcVar6;
     pcVar6->field_0058 = 0;
@@ -71,6 +72,7 @@ SpecPanelTy::InitPanel
       *(undefined1 *)puVar7 = 0xff;
       puVar7 = (undefined4 *)((int)puVar7 + 1);
     }
+    /* ST_CALLSITE[0053E4CD]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)pSVar4->field_0068,0,0,'\x01',(byte *)pSVar4->field_0185
           );
     ccFntTy::SetSurf(pSVar4->field_0189,(int)pSVar4->field_0068,0,param_2,param_3,param_4,param_5);
@@ -88,6 +90,7 @@ SpecPanelTy::InitPanel
     uVar12 = 0xc000;
     uVar11 = 0xbfff;
     pCVar8 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[0053E552]: CALL dword ptr [EDI + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar11 = (*(code *)pAVar2->field_0004)
                        (0,1,param_7,param_8,0,1,1,pCVar8,uVar11,uVar12,uVar13,uVar14,uVar15,uVar17,

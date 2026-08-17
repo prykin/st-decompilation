@@ -80,8 +80,11 @@ st::fn_004DB160
       ((sVar7 < g_worldGrid.sizeZ &&
        ((this_00 = STGridAt3D(g_worldGrid, sVar2, sVar9, sVar7).objects[0], this_00 != nullptr &&
         (this_00[1].vtable != (STWorldObjectVTable *)param_1)))))) &&
+     /* ST_CALLSITE[004DB201]: CALL dword ptr [EAX + 0x2c] */
      ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+      /* ST_CALLSITE[004DB20D]: CALL dword ptr [EDX + 0x2c] */
       (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))) {
+    /* ST_CALLSITE[004DB21F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_191 = st::fn_004049B7(*(char *)&this_00[1].vtable);
     local_EAX_191 = (int)(byte)local_EAX_191;
     if (local_EAX_191 == 1) {
@@ -201,8 +204,11 @@ LAB_004db257:
                    (this_00 = STGridAt3D(g_worldGrid, sVar2, sVar9, sVar7).objects[0],
                    this_00 != nullptr)) &&
                   ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
+                   /* ST_CALLSITE[004DB343]: CALL dword ptr [EDX + 0x2c] */
                    ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                    /* ST_CALLSITE[004DB34F]: CALL dword ptr [EAX + 0x2c] */
                     (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))))))) {
+                /* ST_CALLSITE[004DB365]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                 uVar4 = st::fn_004049B7(*(char *)&this_00[1].vtable);
                 uVar4 = (int)(byte)uVar4;
                 if (uVar4 == 1) {
@@ -232,8 +238,11 @@ LAB_004db3e4:
                              st::fn_00401442(sVar2,(short)iVar12,(short)local_8,0),
                   this_00 != nullptr)) &&
                  ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
+                  /* ST_CALLSITE[004DB42A]: CALL dword ptr [EAX + 0x2c] */
                   ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                   /* ST_CALLSITE[004DB436]: CALL dword ptr [EDX + 0x2c] */
                    (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))))) {
+                /* ST_CALLSITE[004DB448]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                 local_EAX_744 = st::fn_004049B7(*(char *)&this_00[1].vtable);
                 local_EAX_744 = (int)(byte)local_EAX_744;
                 if (local_EAX_744 == 1) {
@@ -272,8 +281,11 @@ LAB_004db497:
                                st::fn_00401442((short)iVar11,(short)iVar12,(short)local_8,0),
                     this_00 != nullptr)) &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)) &&
+                  /* ST_CALLSITE[004DB520]: CALL dword ptr [EDX + 0x2c] */
                   ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                   /* ST_CALLSITE[004DB52C]: CALL dword ptr [EAX + 0x2c] */
                    (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))))) {
+                /* ST_CALLSITE[004DB53E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                 local_EAX_990 = st::fn_004049B7(*(char *)&this_00[1].vtable);
                 local_EAX_990 = (int)(byte)local_EAX_990;
                 if (local_EAX_990 == 1) {
@@ -303,8 +315,11 @@ LAB_004db58d:
                               st::fn_00401442((short)iVar11,(short)iVar12,(short)local_8,0),
                    this_00 != nullptr &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)))) &&
+                 /* ST_CALLSITE[004DB5D3]: CALL dword ptr [EAX + 0x2c] */
                  ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
+                  /* ST_CALLSITE[004DB5DF]: CALL dword ptr [EDX + 0x2c] */
                   (iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x53)))) {
+                /* ST_CALLSITE[004DB5F1]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                 local_EAX_1169 = st::fn_004049B7(*(char *)&this_00[1].vtable);
                 local_EAX_1169 = (int)(byte)local_EAX_1169;
                 if (local_EAX_1169 == 1) {
@@ -371,6 +386,7 @@ undefined4 __thiscall st::fn_004EB010(STAllPlayersC *this,int param_1)
   local_10 = 0;
   while( true ) {
     do {
+      /* ST_CALLSITE[004EB052]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar2 = st::fn_004049B7((char)param_1);
       if (bVar2 == 3) {
         iVar5 = local_10 + iVar6 * 2;
@@ -439,8 +455,10 @@ byte * __thiscall st::fn_005EC370(STAllPlayersC *this,uint *param_1)
   puVar6 = (byte *)&local_10->field_0x151;
   memmove(puVar6, puVar4, 0xf5); /* compiler REP MOVS byte copy */
   local_10->field_000C = 2;
+  /* ST_CALLSITE[005EC3BD]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
   local_14 = st::fn_004018D4((STT3DSprC *)&this->field_0x1d5,&local_8);
-  local_18 = st::pointer_boundary_cast<uint *>(st::fn_0040119A(this,(int *)&local_c));
+  /* ST_CALLSITE[005EC3CB]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
+  local_18 = st::fn_0040119A(this,(int *)&local_c);
   newSize = local_c + 0x24e + local_8;
   local_10 = st::pointer_boundary_cast<AnonShape_005EC370_C8356E04 *>(st::fn_006ACF50(local_10,newSize));
   local_10->field_0246 = local_8;
@@ -516,6 +534,7 @@ int __thiscall st::fn_005EC850(STAllPlayersC *this,int *param_1)
   local_14 = 0;
   local_10 = 0x10;
   local_c = 0;
+  /* ST_CALLSITE[005EC8CE]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
   st::fn_00404CA5
             ((STT3DSprC *)&this->field_0x1d5,(int *)&local_24,
              (AnonShape_004AD790_77673787 *)(param_1 + 1));
@@ -534,6 +553,7 @@ int __thiscall st::fn_005EC850(STAllPlayersC *this,int *param_1)
   }
   piVar6 = (int *)(&((AnonShape_004AD790_77673787 *)(param_1 + 1))->field_0x0 + iVar1);
   iVar1 = *piVar6;
+  /* ST_CALLSITE[005EC957]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
   st::fn_0040551F(this,st::pointer_boundary_cast<undefined4 *>(piVar6 + 1));
   return iVar1 + local_8;
 }
@@ -574,8 +594,10 @@ byte * __thiscall st::fn_005FCAD0(STAllPlayersC *this,uint *param_1)
   puVar6 = (byte *)&local_10->field_0x155;
   memmove(puVar6, puVar4, 0xf5); /* compiler REP MOVS byte copy */
   local_10->field_000C = 2;
+  /* ST_CALLSITE[005FCB1D]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
   local_14 = st::fn_004018D4((STT3DSprC *)&this->field_0x1d5,&local_8);
-  local_18 = st::pointer_boundary_cast<uint *>(st::fn_0040119A(this,(int *)&local_c));
+  /* ST_CALLSITE[005FCB2B]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
+  local_18 = st::fn_0040119A(this,(int *)&local_c);
   newSize = local_c + 0x252 + local_8;
   local_10 = st::pointer_boundary_cast<AnonShape_005FCAD0_CB9D1D1A *>(st::fn_006ACF50(local_10,newSize));
   local_10->field_0246 = local_8;
@@ -642,8 +664,10 @@ byte * __thiscall st::fn_00622990(STAllPlayersC *this,uint *param_1)
   }
   *(undefined1 *)&pAVar6->field_0000 = *(undefined1 *)puVar4;
   local_10->field_000C = 2;
+  /* ST_CALLSITE[006229C9]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
   local_14 = st::fn_004018D4((STT3DSprC *)&this->field_0x1d5,&local_8);
-  local_18 = st::pointer_boundary_cast<uint *>(st::fn_0040119A(this,(int *)&local_c));
+  /* ST_CALLSITE[006229D7]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
+  local_18 = st::fn_0040119A(this,(int *)&local_c);
   newSize = local_c + 0x111 + local_8;
   local_10 = st::pointer_boundary_cast<AnonShape_00622990_E4CFDE96 *>(st::fn_006ACF50(local_10,newSize));
   local_10->field_0109 = local_8;
@@ -714,12 +738,14 @@ int __thiscall st::fn_00622AB0(STAllPlayersC *this,undefined4 *param_1)
   local_10 = 0;
   local_c = 0x10;
   local_8 = 0;
+  /* ST_CALLSITE[00622B3B]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
   st::fn_00404CA5
             ((STT3DSprC *)&this->field_0x1d5,(int *)&local_20,
              (AnonShape_004AD790_77673787 *)((int)param_1 + 0x10d));
   st::fn_006AB060(&local_20);
   piVar4 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0x10d))->field_0x0 + iVar2);
   iVar1 = *piVar4;
+  /* ST_CALLSITE[00622B53]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
   st::fn_0040551F(this,st::pointer_boundary_cast<undefined4 *>(piVar4 + 1));
   return iVar1 + iVar2 + 0x109;
 }

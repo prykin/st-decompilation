@@ -64,14 +64,19 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     this_00->field_1E8E = local_EAX_198;
     ptVar4 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x22,0x5e,0x2e1,0x175,8);
     this_00->field_1E92 = ptVar4;
+    /* ST_CALLSITE[0059F369]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2c,0x90,0x96,0x19,0x6906,0x698e);
     this_00->field_1EB6 = uVar5;
+    /* ST_CALLSITE[0059F395]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,199,0x90,0x96,0x19,0x6907,0x698f);
     this_00->field_1EBA = uVar5;
+    /* ST_CALLSITE[0059F3BE]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,0,0x16c,0x90,0x19,0x19,0x6908,0x6990);
     this_00->field_1ED3 = uVar5;
+    /* ST_CALLSITE[0059F3E7]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,499,0x90,0x19,0x19,0x6909,0x6991);
     this_00->field_1ED7 = uVar5;
+    /* ST_CALLSITE[0059F410]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2b6,0x90,0x41,0x19,0x690a,0x6992);
     this_00->field_1B24 = uVar5;
     iVar9 = 0x6913;
@@ -79,6 +84,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     local_8 = &this_00->field_1EE7;
     local_c = 0xf;
     do {
+      /* ST_CALLSITE[0059F448]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
       uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x50,iVar8,0xe9,0x10,iVar9,0);
       iVar9 = iVar9 + 1;
       iVar8 = iVar8 + 0x10;
@@ -107,6 +113,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     local_84c = 0x690a;
     local_88c = 0x6988;
     local_854 = local_894;
+    /* ST_CALLSITE[0059F51F]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,nullptr,local_8e0,0);
     this_00->field_002D = 0x61;

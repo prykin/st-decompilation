@@ -39,6 +39,7 @@ AiPlrClassTy::sub_0067A020(AiPlrClassTy *this,AnonShape_0068FD00_A5257008 *param
               (this_00 = (AiTactClassTy *)*puVar2, this_00 != nullptr)) &&
              (param_1 != nullptr)) {
             if (param_2 < 0) {
+              /* ST_CALLSITE[0067A076]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
               AiTactClassTy::GetAiMess(this_00,param_1);
             }
             else {

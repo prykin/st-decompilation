@@ -30,6 +30,7 @@ void __thiscall AiTactClassTy::sub_006902B0(AiTactClassTy *this,short param_1,ui
            (undefined4 *)puVar1 != nullptr)) &&
           (this_00 = *(AiFltClassTy **)(puVar1 + 4), this_00 != nullptr)) &&
          (this_00->field_007B == param_1)) {
+        /* ST_CALLSITE[006902F1]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
         AiFltClassTy::GetAiMess(this_00,param_2);
       }
       pAVar2 = this->field_00A5;

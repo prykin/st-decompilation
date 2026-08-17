@@ -302,6 +302,7 @@ LAB_005ab4e5:
   memmove(pcVar15, pcVar18, uVar11); /* compiler REP MOVS byte copy */
   uVar12 = 0;
   FUN_006b78c0(pcVar13,pcVar13);
+  /* ST_CALLSITE[005AB525]: CALL dword ptr [0x0085bcfc] */
   pvVar4 = FindFirstChangeNotificationA(&this_01->field_1DA7,0,1);
   this_01->field_1C8F = pvVar4;
   if (pvVar4 == (HANDLE)0xffffffff) {
@@ -321,6 +322,7 @@ LAB_005ab4e5:
                      (PTR_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,nullptr);
   this_01->field_1C7F = puVar7;
   local_EAX_770 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
+  /* ST_CALLSITE[005AB61C]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
          (byte *)local_EAX_770);
   this_01->field_20B3 = 1;
@@ -393,20 +395,24 @@ switchD_005ab66b_caseD_6:
         case 0x13:
           break;
         default:
+          /* ST_CALLSITE[005AB77F]: CALL 0x00401d43; direct=00401D43 DarkScreen */
           DarkScreen(g_dDXContext_0080759C,1,0);
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         this_00 = *(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6);
         if (this_00 != nullptr) {
+          /* ST_CALLSITE[005AB797]: CALL 0x00405191; direct=00405191 MMsgTy::ShowSprites */
           MMsgTy::ShowSprites(this_00);
           *(undefined4 *)(*(int *)(this_01->array_00BC[0xc].field_01DB + 0x2e6) + 0x1cab) =
                this_01->field_0008;
         }
+        /* ST_CALLSITE[005AB7B5]: CALL 0x00402725; direct=00402725 ChooseMapTy::PaintChooseMap */
         PaintChooseMap(this_01,'\x01');
         puVar8 = &this_01->array_00BC[0xc].field_01F0;
         SpriteClassTy::InitSprite
                   ((SpriteClassTy *)puVar8,(int *)g_ddxContext_008075A8,0x31,'\a',nullptr,
                    0,0);
+        /* ST_CALLSITE[005AB7E9]: CALL dword ptr [EDX + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*puVar8 + 4))
                   ((SpriteClassTy *)puVar8,PTR_00806784,7,0,(byte *)"MM_SLDUP",0xffffffff);
@@ -416,6 +422,7 @@ switchD_005ab66b_caseD_6:
         SpriteClassTy::InitSprite
                   ((SpriteClassTy *)&this_01->field_1B01,(int *)g_ddxContext_008075A8,0x31,'\a',
                    nullptr,0,0);
+        /* ST_CALLSITE[005AB835]: CALL dword ptr [EDX + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(this_01->field_1B01 + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
         this_01->field_1B1D = 0x2f8;
@@ -424,6 +431,7 @@ switchD_005ab66b_caseD_6:
         SpriteClassTy::InitSprite
                   ((SpriteClassTy *)&this_01->field_1B92,(int *)g_ddxContext_008075A8,0x31,'\a',
                    nullptr,0,0);
+        /* ST_CALLSITE[005AB881]: CALL dword ptr [EDX + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(this_01->field_1B92 + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
         iVar23 = 1;
@@ -460,7 +468,9 @@ switchD_005ab66b_caseD_6:
           uVar11 = uVar11 + 0x13;
           puVar14 = puVar14 + 1;
         } while ((int)uVar11 < 0x1e1);
+        /* ST_CALLSITE[005AB95E]: CALL 0x0040175d; direct=0040175D ChooseMapTy::CreateCtrls */
         CreateCtrls(this_01,'\0');
+        /* ST_CALLSITE[005AB96C]: CALL 0x00403b0c; direct=00403B0C ChooseMapTy::PrepFiles */
         PrepFiles(this_01,this_01->field_1C93);
         FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4042d2,0x204,0x19d,
                      (ushort *)(this_01->array_00BC[0xc].field_01DB + 0x140));
@@ -493,6 +503,7 @@ switchD_005ab66b_caseD_6:
           iVar19 = 1;
           iVar23 = Library::DKW::DDX::FUN_006bf9f0
                              ((int *)g_ddxContext_008075A8,0x112,0x38,0x204,0x19d);
+          /* ST_CALLSITE[005ABA3E]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
           uVar13 = HoloTy::Init(this_01->field_20B8,CASE_2,0x112,0x38,iVar23,iVar19,bVar20,cVar21,
                                 uVar11);
           if (uVar13 != 0) {
@@ -580,6 +591,7 @@ switchD_005ab66b_caseD_6:
             iVar19 = 1;
             iVar23 = Library::DKW::DDX::FUN_006bf9f0
                                ((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+            /* ST_CALLSITE[005ABBCE]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
             local_EAX_2254 =
                  HoloTy::Init(this_01->field_20BC,CASE_4,10,0xb4,iVar23,iVar19,bVar20,cVar21,uVar11);
             if (local_EAX_2254 != 0) {
@@ -688,6 +700,7 @@ switchD_005ab66b_caseD_6:
             iVar19 = 1;
             iVar23 = Library::DKW::DDX::FUN_006bf9f0
                                ((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
+            /* ST_CALLSITE[005ABE60]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
             local_EAX_2912 =
                  HoloTy::Init(this_01->field_20C0,CASE_1,200,0x1f1,iVar23,iVar19,bVar20,cVar21,
                               uVar11);
@@ -784,7 +797,9 @@ switchD_005ab66b_caseD_6:
           iVar19 = g_cursorClass_00802A30->field_00C5;
           g_cursorClass_00802A30->field_0493 = CASE_1;
           this_02->field_0494 = 0xffff;
+          /* ST_CALLSITE[005AC1D5]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           CursorClassTy::SetGCType(this_02,CASE_0,iVar19,iVar23);
+          /* ST_CALLSITE[005AC1EA]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
           CursorClassTy::DrawSprite(this_02,this_02->field_00C5,this_02->field_00C9);
           this_02->field_00D2 = 0;
           this_02->field_04DF = -1;
@@ -885,13 +900,16 @@ switchD_005ab66b_caseD_6:
           puVar8 = puVar8 + 1;
         }
         *(undefined2 *)puVar8 = 0xffff;
+        /* ST_CALLSITE[005AC45E]: CALL 0x00401717; direct=00401717 MMsgTy::SetPanel */
         MMsgTy::SetPanel(*(MMsgTy **)(iVar23 + 0x2e6),0,(int)&local_20c,0,0);
+        /* ST_CALLSITE[005AC476]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         MMsgTy::StatePanel(*(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6),(int)local_26c);
       }
       if ((DAT_008067a0 != '\0') && (g_int_00811764 != nullptr)) {
         FUN_006b6160(local_46c,(int)(g_int_00811764 + 6));
         local_44c = 0;
+        /* ST_CALLSITE[005AC4B2]: CALL dword ptr [0x0085c070] */
         CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,local_46c);
       }
       thunk_FUN_00568bc0(&g_sound,0);

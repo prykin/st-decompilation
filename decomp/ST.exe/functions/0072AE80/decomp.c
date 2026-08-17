@@ -10,18 +10,22 @@ void FUN_0072ae80(void)
 
   do {
     do {
+      /* ST_CALLSITE[0072AEA5]: CALL EDI */
       WaitForSingleObject(*(HANDLE *)(*PTR_00857134 + 0x508),0xffffffff);
       DAT_0085712c = DAT_00857130;
       iVar3 = 0;
       DAT_00857138 = DAT_0085711c;
     } while (DAT_0085711c < 1);
     do {
+      /* ST_CALLSITE[0072AED7]: CALL EDI */
       DVar1 = WaitForSingleObject(*(HANDLE *)(*PTR_00857134 + 0x508),DAT_0085712c);
       if (DVar1 == 0x102) {
+        /* ST_CALLSITE[0072AEF5]: CALL dword ptr [0x0085bb8c] */
         EnterCriticalSection((LPCRITICAL_SECTION)(*PTR_00857134 + 0x4f0));
         if (((uint)PTR_00857134[0x68] <= DAT_007f1080) ||
            (PTR_00857118 = *(uint **)(PTR_00857134[0x6c] + DAT_007f1080 * 4),
            (*PTR_00857118 & 0x8000) == 0)) {
+          /* ST_CALLSITE[0072AFB6]: CALL EBX */
           LeaveCriticalSection((LPCRITICAL_SECTION)(*PTR_00857134 + 0x4f0));
           break;
         }
@@ -33,6 +37,7 @@ void FUN_0072ae80(void)
                         local_8 - DAT_00857124), (*PTR_00857118 & 4) != 0)))) {
           FUN_0072b0b0();
         }
+        /* ST_CALLSITE[0072AF99]: CALL EBX */
         LeaveCriticalSection((LPCRITICAL_SECTION)(*PTR_00857134 + 0x4f0));
         iVar3 = iVar3 + 1;
       }

@@ -25,7 +25,9 @@ undefined4 __thiscall st::fn_00576AD0(BaseSystemC *this)
   errorCode = st::fn_0072D7F0(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
+    /* ST_CALLSITE[00576B17]: CALL dword ptr [EAX + 0xc] */
     local_c->vfunc_0C(1,(short)&local_8,0,0);
+    /* ST_CALLSITE[00576B2C]: CALL dword ptr [EDX + 0xc] */
     this_00->vfunc_0C(0x101,0x2a2c,0,0);
     g_currentExceptionFrame = local_50.previous;
     return 0;
@@ -64,13 +66,16 @@ void st::fn_00576BB0(void)
       g_baseSystem_00811638 = nullptr;
     }
     else {
+      /* ST_CALLSITE[00576BF7]: CALL 0x00401348; direct=00401348 BaseSystemC::BaseSystemC */
       g_baseSystem_00811638 = st::fn_00401348(this,g_app_00806728);
     }
     if (g_baseSystem_00811638 == nullptr) {
       st::fn_006A5E40(-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x38);
     }
     g_baseSystem_00811638->field_0020 = 0;
+    /* ST_CALLSITE[00576C32]: CALL dword ptr [EAX] */
     (*g_baseSystem_00811638->vtable->InitSystem)((SystemClassTy *)g_baseSystem_00811638);
+    /* ST_CALLSITE[00576C42]: CALL 0x006e4650; direct=006E4650 AppClassTy::AddSystem */
     st::fn_006E4650((AppClassTy *)&DAT_00807620,(int *)g_baseSystem_00811638,0);
     g_baseSystem_00811638->field_0020 = 1;
     g_currentExceptionFrame = local_48.previous;
@@ -108,6 +113,7 @@ void st::fn_00576CE0(void)
       if (g_baseSystem_00811638->field_0020 == 1) {
         st::fn_006E4B80(&DAT_00807620,(int)g_baseSystem_00811638);
       }
+      /* ST_CALLSITE[00576D2F]: CALL dword ptr [EAX + 0x4] */
       g_baseSystem_00811638->vfunc_04();
       st::fn_0072E2B0((HoloTy *)g_baseSystem_00811638);
       g_baseSystem_00811638 = nullptr;
@@ -147,7 +153,9 @@ undefined4 __thiscall st::fn_00576E10(GameSystemC *this)
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[00576E54]: CALL dword ptr [EAX + 0xc] */
     local_8->vfunc_0C(0x100,0xb2a4,0,0);
+    /* ST_CALLSITE[00576E69]: CALL dword ptr [EDX + 0xc] */
     this_00->vfunc_0C(0x102,0xb288,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
@@ -188,6 +196,7 @@ undefined4 __thiscall st::fn_00576EF0(GameSystemC *this)
   local_8 = this;
   iVar4 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
+    /* ST_CALLSITE[00576F31]: CALL 0x00402112; direct=00402112 LoadLand */
     PTR_00806750 = st::fn_00402112(g_cMf32_00806754,st::mutable_c_string("3D_MAP"));
     pAVar5 = (AnonShape_006DBCA0_EF06575F *)st::fn_006B04D0(0x4f2);
     if (pAVar5 == nullptr) {
@@ -282,6 +291,7 @@ void __thiscall st::fn_005770D0(GameSystemC *this)
       st::fn_00401A50((int *)&PTR_00806750);
     }
     st::fn_006E52D0((AnonShape_006E52D0_AF06BCD2 *)pGVar3);
+    /* ST_CALLSITE[005771BB]: CALL dword ptr [0x0085be40] */
     st::external_00000096(1);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -323,13 +333,16 @@ void st::fn_00577280(void)
       g_parentSystem_0081163C = nullptr;
     }
     else {
+      /* ST_CALLSITE[005772CA]: CALL 0x004014ec; direct=004014EC GameSystemC::GameSystemC */
       g_parentSystem_0081163C = st::fn_004014EC(this_00,g_app_00806728);
     }
     if (g_parentSystem_0081163C == nullptr) {
       st::fn_006A5E40(-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0xb1);
     }
     g_parentSystem_0081163C->field_0428 = 0;
+    /* ST_CALLSITE[0057730B]: CALL dword ptr [EAX] */
     g_parentSystem_0081163C->InitSystem();
+    /* ST_CALLSITE[0057731B]: CALL 0x006e4650; direct=006E4650 AppClassTy::AddSystem */
     st::fn_006E4650((AppClassTy *)&DAT_00807620,(int *)g_parentSystem_0081163C,0);
     g_parentSystem_0081163C->field_0428 = 1;
     this = g_cursorClass_00802A30;
@@ -337,7 +350,9 @@ void st::fn_00577280(void)
     iVar4 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = 2;
     this->field_0494 = 0xffff;
+    /* ST_CALLSITE[00577358]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
     st::fn_0040507E(this,CASE_0,iVar4,iVar1);
+    /* ST_CALLSITE[0057736D]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     st::fn_0040241E(this,this->field_00C5,this->field_00C9);
     this->field_00D2 = 0;
     this->field_04DF = -1;
@@ -458,6 +473,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
                     (g_sT3DSMAPContext_00807598,DAT_00808784,
                      -(uint)(DAT_00808784 != 0) & (uint)PTR_008032b4);
           if (g_pausePanel_008016E0 != nullptr) {
+            /* ST_CALLSITE[00577A59]: CALL 0x0040504c; direct=0040504C PausePanelTy::SwitchPausePanel */
             st::fn_0040504C(g_pausePanel_008016E0,DAT_00808784);
             g_currentExceptionFrame = local_8c.previous;
             return 0;
@@ -484,6 +500,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         iVar9 = piVar13[1];
         pGVar4->field_042C = iVar9;
         if (g_pausePanel_008016E0 != nullptr) {
+          /* ST_CALLSITE[00577AC6]: CALL 0x0040504c; direct=0040504C PausePanelTy::SwitchPausePanel */
           st::fn_0040504C(g_pausePanel_008016E0,iVar9);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -496,17 +513,17 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         DAT_0080733b = (byte)uVar10;
         if (DAT_0080877e == '\0') {
           iVar9 = (uVar10 & 0xff) * 0x18;
-          DAT_00807654 = *(undefined4 *)(st_string_007C2AE0 + iVar9 + 0x14);
+          DAT_00807654 = *(undefined4 *)("FrmPanelTy::GetMessage" + iVar9 + 0x14);
         }
         else {
           iVar9 = (uVar10 & 0xff) * 0x18;
-          DAT_00807654 = *(undefined4 *)(st_string_007C2AE0 + iVar9 + 8);
+          DAT_00807654 = *(undefined4 *)("FrmPanelTy::GetMessage" + iVar9 + 8);
         }
         if (g_sT3DSMAPContext_00807598 != nullptr) {
           st::fn_006E8640
                     (g_sT3DSMAPContext_00807598,
-                     *(char **)(st_string_007C2AE0 + iVar9 + 0x10),
-                     *(char **)(st_string_007C2AE0 + iVar9 + 4));
+                     *(char **)("FrmPanelTy::GetMessage" + iVar9 + 0x10),
+                     *(char **)("FrmPanelTy::GetMessage" + iVar9 + 4));
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -517,11 +534,11 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       local_c = &CHAR_00h_008016a0;
       local_10 = &CHAR_00h_008016a0;
       if (*piVar13 == 6) {
-        st::fn_00401212(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),*(byte *)(piVar13 + 1),
+        st::fn_00401212(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),((byte *)piVar13)[1],
                            (char)piVar13[2]);
       }
       else {
-        st::fn_004033A0(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),*(byte *)(piVar13 + 1));
+        st::fn_004033A0(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),((byte *)piVar13)[1]);
       }
       this_00 = g_playPanel_008016E4;
       if (g_playPanel_008016E4 != nullptr) {
@@ -563,6 +580,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         }
         pcVar8 = local_c;
         local_EAX_1519 = st::fn_006B0140(0x42c2,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[00577CCA]: CALL dword ptr [0x0085bde8] */
         st::external_00000080((LPSTR)&DAT_0080f33a,local_EAX_1519,pcVar8,pcVar15);
         if (g_popUp_008016D8 != nullptr) {
           st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -576,10 +594,12 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       g_currentExceptionFrame = &local_1b0;
       iVar5 = st::fn_0072D7F0(local_1b0.jumpBuffer,0);
       if (iVar5 == 0) {
+        /* ST_CALLSITE[00577D50]: CALL dword ptr [0x0085bde8] */
         st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s%s%s"),&CHAR_00h_00807680,st_global_0079B190,
                   PTR_s_STRATEGS_0079b198);
         pcVar6 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)&DAT_0080f33a,0,0,0);
         local_1c = pcVar6;
+        /* ST_CALLSITE[00577D7F]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
         array = (DArrayTy *)st::fn_00403F44(pcVar6,local_8[1],DAT_0080995c);
         uVar10 = array->count;
         local_18 = array;
@@ -593,6 +613,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
           }
           if ((pcVar15 + 0x4c != nullptr) &&
              (local_24 = (AnonShape_00648C10_30A1BBFD *)
+                         /* ST_CALLSITE[00577DBF]: CALL 0x004012ad; direct=004012AD LoadStrategData */
                          st::fn_004012AD((int)pcVar6,pcVar15 + 0x4c,nullptr), piVar13 = local_8,
              local_24 != nullptr)) {
             uVar10 = 0xffffffff;
@@ -612,7 +633,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
               pcVar15 = pcVar15 + 4;
               pcVar8 = pcVar8 + 4;
             }
-            bVar2 = *(byte *)(piVar13 + 2);
+            bVar2 = ((byte *)piVar13)[2];
             for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
               *pcVar8 = *pcVar15;
               pcVar15 = pcVar15 + 1;
@@ -623,6 +644,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
             local_125 = 1;
             local_126 = 0;
             local_128 = bVar2;
+            /* ST_CALLSITE[00577E22]: CALL dword ptr [0x0085bedc] */
             local_124 = st::external_000000DA();
             if (bVar2 < 8) {
               pcVar15 = local_16c;
@@ -630,10 +652,12 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
               memmove(pcVar8, pcVar15, 0x9c); /* compiler REP MOVS byte copy */
               DAT_00808aaf = DAT_00808aaf + 1;
               if (g_playPanel_008016E4 != nullptr) {
+                /* ST_CALLSITE[00577E6E]: CALL 0x00405e07; direct=00405E07 PlayPanelTy::sub_0053A540 */
                 st::fn_00405E07(g_playPanel_008016E4);
               }
             }
             piVar13 = local_8;
+            /* ST_CALLSITE[00577E7E]: CALL 0x004018a7; direct=004018A7 StartStrateg */
             st::fn_004018A7(local_24,local_8[2]);
             *(undefined1 *)(g_bulkInitializedRecords_008087C7 + piVar13[2]) = 1;
             st::fn_006AB060(&local_24);
@@ -658,7 +682,8 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         }
         local_48.id = MESS_AIBOSSCLASSTY_5DC5;
         local_48.arg0 = *(STMessageArg *)(piVar13 + 1);
-        g_aiBossClass_008117BC->st::fn_006E5F00(&local_48);
+        /* ST_CALLSITE[00577EF8]: CALL dword ptr [EAX] */
+        g_aiBossClass_008117BC->GetMessage(&local_48);
       }
     }
   }
@@ -692,16 +717,19 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         do {
           pcVar15 = local_c;
           if ((int)local_c < 0) {
+            /* ST_CALLSITE[005777DE]: CALL EBX */
             st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_0080f022),st::mutable_c_string("%s%s%s\\%s%s%s"),&CHAR_00h_00807680,
                       st_global_0079B18C,&CHAR_00h_00807ddd,PTR_DAT_0079b19c,local_2b4,
                       st_global_0079B194);
           }
           else {
+            /* ST_CALLSITE[00577816]: CALL EBX */
             st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_0080f022),st::mutable_c_string("%s%s%s\\%s%s%d%s"),&CHAR_00h_00807680,
                       st_global_0079B18C,&CHAR_00h_00807ddd,PTR_DAT_0079b19c,local_2b4,local_c
                       ,st_global_0079B194);
           }
           local_c = (char *)((int)pcVar15 + 1);
+          /* ST_CALLSITE[0057782B]: CALL dword ptr [0x0085bcec] */
           pvVar5 = st::external_00000070(st::pointer_boundary_cast<LPCSTR>(&CHAR_00h_0080f022),st::pointer_boundary_cast<LPWIN32_FIND_DATAA>(&local_3f4));
           local_8 = (int *)(uint)(pvVar5 != (HANDLE)0xffffffff);
           if (local_8 == nullptr) {
@@ -754,9 +782,11 @@ LAB_00577956:
         return 0;
       }
       st::fn_004015D2((uint)bVar2);
+      /* ST_CALLSITE[0057799C]: CALL 0x004018a7; direct=004018A7 StartStrateg */
       st::fn_004018A7((AnonShape_00648C10_30A1BBFD *)(pcVar15 + 2),(uint)bVar2);
     }
     if (g_optPanel_008016DC != nullptr) {
+      /* ST_CALLSITE[005779B2]: CALL 0x00401cbc; direct=00401CBC OptPanelTy::sub_00532CE0 */
       st::fn_00401CBC(g_optPanel_008016DC);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -786,6 +816,7 @@ undefined4 __thiscall st::fn_00578200(DebugSystemC *this)
   local_8 = this;
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
+    /* ST_CALLSITE[00578240]: CALL dword ptr [EAX + 0xc] */
     local_8->vfunc_0C(0x8100,0xb228,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;

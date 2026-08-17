@@ -66,6 +66,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
     this_00->field_0044 = this_00->field_0050 - this_00->field_0048;
     this_00->field_0174 = this_00->field_0048 + this_00->field_0050;
   }
+  /* ST_CALLSITE[0053B023]: CALL 0x004017f8; direct=004017F8 PanelTy::GetMessage */
   PanelTy::GetMessage((PanelTy *)this_00,message);
   SVar5 = message->id;
   if (SVar5 < MESS_TRADEPANELTY_B20A) {
@@ -87,6 +88,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
       pCVar10 = thunk_FUN_00571240("BUT_SWITCH",0);
       pCVar10 = FUN_006f2c00(pCVar10,iVar16,uVar11);
       local_c = cMf32::RecGet(g_cMf32_00806790,1,pCVar10,piVar17,iVar19);
+      /* ST_CALLSITE[0053B5AA]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_10,iVar8 + iVar13,'\x01',
              (byte *)local_c);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
@@ -249,6 +251,7 @@ LAB_0053b2ea:
       }
       pcVar18 = thunk_FUN_00529fe0;
       pCVar10 = thunk_FUN_00571240(text,0);
+      /* ST_CALLSITE[0053B51E]: CALL 0x00403495; direct=00403495 UPanelTy::PaintBut */
       UPanelTy::PaintBut((UPanelTy *)this_00,(AnonShape_0053D7A0_044B6141 *)message,6,pCVar10,
                          pcVar18);
       g_currentExceptionFrame = local_64.previous;
@@ -256,6 +259,7 @@ LAB_0053b2ea:
     }
     if (SVar5 == MESS_SHARED_6200) {
       this_00->field_01C9 = message->arg0;
+      /* ST_CALLSITE[0053B15F]: CALL 0x00403242; direct=00403242 PlayPanelTy::PaintPlayPanel */
       PaintPlayPanel(this_00);
       this_00->field_0028 = 5;
       piVar17 = &this_00->field_01A1;
@@ -289,6 +293,7 @@ LAB_0053b2ea:
         if (iVar8 <= this_00->field_0044) {
           this_00->field_0044 = iVar8;
           this_00->field_0172 = CASE_1;
+          /* ST_CALLSITE[0053B121]: CALL 0x004038be; direct=004038BE PlayPanelTy::ShiftControls */
           ShiftControls(this_00,1);
         }
         Library::DKW::DDX::FUN_006b3640
@@ -315,11 +320,13 @@ LAB_0053b2ea:
     }
     else {
       if (SVar5 == MESS_ID_CREATE) {
+        /* ST_CALLSITE[0053B07B]: CALL 0x00404962; direct=00404962 PlayPanelTy::InitPlayPanel */
         InitPlayPanel(this_00);
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
       if (SVar5 == MESS_SHARED_0003) {
+        /* ST_CALLSITE[0053B060]: CALL 0x00404296; direct=00404296 PlayPanelTy::DonePlayPanel */
         DonePlayPanel(this_00);
         g_currentExceptionFrame = local_64.previous;
         return 0;
@@ -345,6 +352,7 @@ LAB_0053b2ea:
         uVar9 = (uint)((&DAT_00808af7)[(this_00->field_01C9 + (uint)bVar14) * 0x9c] == '\0');
       }
       pBVar12 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D9,uVar9);
+      /* ST_CALLSITE[0053BB63]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_10,iVar8 + iVar13,'\x01',
              (byte *)pBVar12);
       Library::DKW::DDX::FUN_006b3640
@@ -492,6 +500,7 @@ LAB_0053b2ea:
           }
           if ((-1 < iVar13) && ((&DAT_00808af5)[iVar8] != '\0')) {
             pBVar12 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D5,iVar13);
+            /* ST_CALLSITE[0053B9E2]: CALL 0x00403229; direct=00403229 DibPut */
             DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,(int)local_c,local_8,'\x06',
                    (byte *)pBVar12);
           }
@@ -505,6 +514,7 @@ LAB_0053b2ea:
       if ((DAT_00808a8f != '\0') &&
          (iVar8 = (this_00->field_01C9 + (local_10 & 0xff)) * 0x9c, (&DAT_00808af5)[iVar8] != '\0'))
       {
+        /* ST_CALLSITE[0053BA72]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%c",
                   g_bulkInitializedRecords_008087C7[(byte)(&DAT_00808af4)[iVar8]].field_0023 + 0x41);
         ccFntTy::SetSurf(this_00->field_01DD,(int)this_00->field_0068,0,(int)local_c,local_8,
@@ -549,12 +559,14 @@ LAB_0053b2ea:
     }
   }
   else if (SVar5 == MESS_SHARED_BFFF) {
+    /* ST_CALLSITE[0053BBD7]: CALL 0x0040425f; direct=0040425F PlayPanelTy::SetPanel */
     SetPanel(this_00,'\0');
     thunk_FUN_005252c0(0xae);
   }
   else if (SVar5 == MESS_SHARED_C000) {
     UVar20 = 0x274e;
     pCVar10 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[0053BBBA]: CALL 0x00403508; direct=00403508 UPanelTy::PaintIBut */
     UPanelTy::PaintIBut((UPanelTy *)this_00,(AnonShape_0053DAF0_3BDC2979 *)message,pCVar10,UVar20);
     g_currentExceptionFrame = local_64.previous;
     return 0;

@@ -26,6 +26,7 @@ undefined4 FUN_00635bf0(int param_1,int param_2,int param_3)
   if (((char)uVar3 != '\0') && (g_visibleClass_00802A88 != nullptr)) {
     if ((((DAT_0080874d != -1) &&
          ((uVar3 = 0, g_visibleClass_00802A88->field_00F8 != 0 &&
+          /* ST_CALLSITE[00635CDE]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
                       &param_2,&param_3), uVar3 = param_1, -1 < param_1)))) &&

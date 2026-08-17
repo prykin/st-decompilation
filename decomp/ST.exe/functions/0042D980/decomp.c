@@ -63,9 +63,11 @@ STAllPlayersC::GetActiveCenter
           DArrayGetElement(pDVar1,local_18,local_14);
           if (STPiece<0,2>(local_14) != 0xffff) {
             local_1c = local_1c + 1;
+            /* ST_CALLSITE[0042DDAC]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar5 = GetObjPtr(g_allPlayers_007FA174,
                                g_packedRecords_A62x8[DAT_0080874d].field97_0x167,STPiece<0,2>(local_14),
                                CASE_1);
+            /* ST_CALLSITE[0042DDBF]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0
                       ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
             iVar8 = iVar8 + local_8;
@@ -102,8 +104,10 @@ joined_r0x0042de37:
       return 0;
     }
     if (iVar7 == 0x1ae) {
+      /* ST_CALLSITE[0042DCF7]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar5 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar6].field97_0x167,
                          g_packedRecords_A62x8[uVar6].field101_0x16b,CASE_3);
+      /* ST_CALLSITE[0042DD0A]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0
                 ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
       if (param_1 != nullptr) {
@@ -133,8 +137,10 @@ joined_r0x0042de37:
       if (iVar7 == 0x1a4) {
         SVar10 = CASE_5;
 LAB_0042da27:
+        /* ST_CALLSITE[0042DA3C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar5 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar6].field150_0x1b7,
                            g_packedRecords_A62x8[uVar6].field154_0x1bb,SVar10);
+        /* ST_CALLSITE[0042DA4F]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0
                   ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
       }
@@ -149,8 +155,10 @@ LAB_0042dbdf:
           }
           goto joined_r0x0042dc09;
         }
+        /* ST_CALLSITE[0042DC2B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar5 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar6].field150_0x1b7,
                            g_packedRecords_A62x8[uVar6].field154_0x1bb,CASE_6);
+        /* ST_CALLSITE[0042DC3E]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0
                   ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
       }
@@ -180,9 +188,11 @@ joined_r0x0042dc56:
           DArrayGetElement(pDVar1,local_18,local_14);
           if (STPiece<0,2>(local_14) != 0xffff) {
             local_1c = local_1c + 1;
+            /* ST_CALLSITE[0042DB34]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar5 = GetObjPtr(g_allPlayers_007FA174,
                                g_packedRecords_A62x8[DAT_0080874d].field150_0x1b7,STPiece<0,2>(local_14),
                                CASE_1);
+            /* ST_CALLSITE[0042DB47]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0
                       ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
             iVar8 = iVar8 + local_8;
@@ -212,8 +222,10 @@ joined_r0x0042dc56:
     }
     if (iVar7 != 0) {
       if (iVar7 == 0x5a) {
+        /* ST_CALLSITE[0042DA7B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar5 = GetObjPtr(g_allPlayers_007FA174,g_packedRecords_A62x8[uVar6].field150_0x1b7,
                            g_packedRecords_A62x8[uVar6].field154_0x1bb,CASE_4);
+        /* ST_CALLSITE[0042DA8E]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0
                   ((STFishC *)pSVar5,(short *)&local_8,(short *)&local_c,(short *)&local_10);
         if (param_1 != nullptr) {

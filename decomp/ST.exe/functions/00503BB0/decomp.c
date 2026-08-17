@@ -59,39 +59,51 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
   this_00 = local_10;
   local_10->field_012C = 0;
   if (local_10->field_0B64 == '\0') {
+    /* ST_CALLSITE[00503C45]: CALL 0x00401e15; direct=00401E15 CPanelTy::sub_004F8020 */
     sub_004F8020(local_10,'\x01',0);
   }
   this_00->field_012C = 1;
   if (g_researchPanel_008016E8 != nullptr) {
+    /* ST_CALLSITE[00503C60]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
     ProdPanelTy::SetPanel(g_researchPanel_008016E8,'\0');
   }
   if (g_bldBoatPanel_0080167C != nullptr) {
+    /* ST_CALLSITE[00503C71]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
     ProdPanelTy::SetPanel(g_bldBoatPanel_0080167C,'\0');
   }
   if (g_bldLabPanel_00801680 != nullptr) {
+    /* ST_CALLSITE[00503C82]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
     ProdPanelTy::SetPanel(g_bldLabPanel_00801680,'\0');
   }
   if (g_infocPanel_00801698 != nullptr) {
+    /* ST_CALLSITE[00503C95]: CALL dword ptr [EAX + 0x1c] */
     (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
   }
   if (g_tradePanel_00802A44 != nullptr) {
+    /* ST_CALLSITE[00503CA6]: CALL 0x00404af7; direct=00404AF7 TradePanelTy::sub_00552160 */
     TradePanelTy::sub_00552160(g_tradePanel_00802A44,'\0','\0');
   }
   if (g_bldObjPanel_00801684 != nullptr) {
+    /* ST_CALLSITE[00503CB7]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
     ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\0');
   }
   if (g_behPanel_00801678 != nullptr) {
+    /* ST_CALLSITE[00503CCA]: CALL dword ptr [EDX + 0x1c] */
     (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
   }
   if (g_sAMPanel_008016EC != nullptr) {
+    /* ST_CALLSITE[00503CDB]: CALL dword ptr [EAX + 0x1c] */
     (*g_sAMPanel_008016EC->vtable->SetPanel)((SpecPanelTy *)g_sAMPanel_008016EC,'\0');
   }
   if (g_upgPanel_00802A48 != nullptr) {
+    /* ST_CALLSITE[00503CEC]: CALL dword ptr [EDX + 0x1c] */
     (*g_upgPanel_00802A48->vtable->SetPanel)((SpecPanelTy *)g_upgPanel_00802A48,'\0');
   }
   if (g_frmPanel_0080168C != nullptr) {
+    /* ST_CALLSITE[00503CFD]: CALL dword ptr [EAX + 0x1c] */
     (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
   }
+  /* ST_CALLSITE[00503D06]: CALL 0x004040fc; direct=004040FC CursorClassTy::sub_0054A8D0 */
   CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   bVar1 = *(byte *)((int)this_00->field_0B1F + param_1 + 0x83);
@@ -116,6 +128,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
   case 0x12:
   case 0x13:
   case 0x18:
+    /* ST_CALLSITE[00503D70]: CALL 0x004035ad; direct=004035AD CursorClassTy::sub_0054B630 */
     CursorClassTy::sub_0054B630(g_cursorClass_00802A30,(uint)bVar1,0);
     g_currentExceptionFrame = local_54.previous;
     return;
@@ -134,6 +147,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
   case 0xe:
     if ((g_bldObjPanel_00801684 != nullptr) &&
        (g_bldObjPanel_00801684->field_0172 == CASE_2)) {
+      /* ST_CALLSITE[00503DA4]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
       ProdPanelTy::SetPanel(g_bldObjPanel_00801684,'\x01');
     }
     break;
@@ -147,6 +161,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
     goto switchD_00503d36_caseD_15;
   case 0x2f:
     if ((g_behPanel_00801678 != nullptr) && (g_behPanel_00801678->field_0172 == 2)) {
+      /* ST_CALLSITE[00503DCE]: CALL dword ptr [EDX + 0x1c] */
       (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\x01');
     }
     break;
@@ -158,9 +173,11 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
     return;
   case 0x4c:
     if ((g_sAMPanel_008016EC != nullptr) && (g_sAMPanel_008016EC->field_0172 == 2)) {
+      /* ST_CALLSITE[00503EC5]: CALL dword ptr [EAX + 0x1c] */
       (*g_sAMPanel_008016EC->vtable->SetPanel)((SpecPanelTy *)g_sAMPanel_008016EC,'\x01');
     }
   }
+  /* ST_CALLSITE[00503ECA]: CALL 0x00402798; direct=00402798 CPanelTy::sub_004FAD20 */
   sub_004FAD20(this_00);
 switchD_00503d36_caseD_15:
   g_currentExceptionFrame = local_54.previous;

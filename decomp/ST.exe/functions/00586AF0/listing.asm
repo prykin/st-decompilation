@@ -1690,7 +1690,8 @@ LAB_00587dde:
 00587E6B  8B F8                     MOV EDI,EAX
 00587E6D  8B CF                     MOV ECX,EDI
 00587E6F  8B 17                     MOV EDX,dword ptr [EDI]
-00587E71  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+FUN_00586af0::override::prt_587e71_e5e2351e:
+00587E71  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00587E77  85 C0                     TEST EAX,EAX
 00587E79  0F 84 19 01 00 00         JZ 0x00587f98
 00587E7F  8B 47 20                  MOV EAX,dword ptr [EDI + 0x20]

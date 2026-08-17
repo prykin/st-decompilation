@@ -20,6 +20,7 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[005D7FB8]: CALL 0x0040458e; direct=0040458E MMObjTy::DoneMMObj */
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (pSVar2->field_1CD0 != nullptr) {
       FUN_006b5570(pSVar2->field_1CD0);

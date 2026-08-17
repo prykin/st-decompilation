@@ -19,6 +19,8 @@
 int __thiscall st::fn_0040AE40(void *this,uint param_1,char param_2)
 
 {
+  int scalar_psVar13;
+
   short sVar1;
   short sVar2;
   short sVar3;
@@ -390,7 +392,7 @@ LAB_0040b56a:
                         psVar6,local_24);
     pSVar5->field_009F = psVar7;
     if (psVar7 == nullptr) {
-      int scalar_psVar13 = (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX; /* split integer lifetime from pointer-typed SSA storage */
+      scalar_psVar13 = (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX; /* split integer lifetime from pointer-typed SSA storage */
       int scalar_local_40 = scalar_psVar13;
       local_2c = st::pointer_boundary_cast<short *>(st::fn_006AAC70((int)g_pathingGrid.sizeZ * scalar_psVar13 * 2));
       iVar8 = (int)g_pathingGrid.sizeZ;
@@ -678,8 +680,8 @@ undefined4 * __thiscall st::fn_0040C080(void *this,uint param_1,DArrayTy *param_
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790020);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_00790020;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 12);
   dVar8 = param_2->count;
@@ -728,6 +730,7 @@ undefined4 * __thiscall st::fn_0040C080(void *this,uint param_1,DArrayTy *param_
             aGStackY_f8[dVar8 * -3 + 8] = (Global_sub_006C8EC0_param_3Enum)local_24;
             this_00 = local_90;
             aGStackY_f8[dVar8 * -3 + 7] = 0x40c188;
+            /* ST_CALLSITE[0040C183]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
             st::fn_00405F0B
                       (this_00,(short *)aGStackY_f8[dVar8 * -3 + 8],
                        (short *)aGStackY_f8[dVar8 * -3 + 9],*(short **)((st_stack_frame + 8) + iVar3));
@@ -1090,8 +1093,8 @@ int st::fn_0040E0F0(int param_1,int param_2,int param_3,int param_4,int param_5)
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790030);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_00790030;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 24);
   local_38 = 0;
@@ -1204,7 +1207,7 @@ int st::fn_0040E0F0(int param_1,int param_2,int param_3,int param_4,int param_5)
             }
           }
           else {
-            st::fn_0040F4D0((undefined4 *)local_24,uVar6,local_40,0);
+            st::fn_0040F4D0(local_24,uVar6,local_40,0);
             if (0 < local_28) {
               iVar9 = local_2c * 0x14;
               local_b8 = local_28;
@@ -1313,9 +1316,7 @@ int st::fn_0040E0F0(int param_1,int param_2,int param_3,int param_4,int param_5)
         if ((((local_48[0] < 0) || (DAT_007f4d2c <= local_48[0])) || (local_4c < 0)) ||
            ((DAT_007f4d30 <= local_4c ||
             (iVar3 = local_34,
-            *(short *)((int)PTR_007f4cf0 +
-                      (local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c) * 2) != 0))))
-        {
+            PTR_007f4cf0[local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c] != 0)))) {
           iVar9 = st::fn_0040F270(local_48,&local_4c,local_54,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
           if (iVar9 != 0) {
@@ -1417,8 +1418,8 @@ int st::fn_0040FC40(int param_1,int param_2,int param_3,int param_4,int param_5,
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790060);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_00790060;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 28);
   local_50 = 0;
@@ -1667,7 +1668,7 @@ int st::fn_0040FC40(int param_1,int param_2,int param_3,int param_4,int param_5,
           if (0 < local_20) {
             do {
               if (local_44[local_78 + iVar2] < (int)uVar14) {
-                st::fn_0040F4D0((undefined4 *)(local_78 * uVar14 + (int)local_24),uVar14,local_5c,0);
+                st::fn_0040F4D0((byte *)(local_78 * uVar14 + (int)local_24),uVar14,local_5c,0);
                 iVar3 = DAT_007f4d2c;
               }
               local_78 = local_78 + 1;
@@ -1794,8 +1795,7 @@ LAB_00410872:
     local_78 = STObjectAtByteOffset(pRVar15, iVar19).field_0008;
     if ((((local_68 < 0) || (iVar3 <= local_68)) || (local_6c < 0)) ||
        ((DAT_007f4d30 <= local_6c ||
-        (*(short *)((int)PTR_007f4cf0 + (local_78 * local_48 + local_68 + iVar3 * local_6c) * 2) !=
-         0)))) {
+        (PTR_007f4cf0[local_78 * local_48 + local_68 + iVar3 * local_6c] != 0)))) {
       iVar2 = st::fn_0040F270(&local_68,&local_6c,(int *)&local_78,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                            DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
       if (iVar2 != 0) goto LAB_004109fd;
@@ -1927,8 +1927,7 @@ cf_break_loop_00411005:
           local_10 = STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar3).field_0008;
           if ((((local_8 < 0) || (DAT_007f4d2c <= local_8)) || (local_c < 0)) ||
              ((DAT_007f4d30 <= local_c ||
-              (*(short *)((int)PTR_007f4cf0 +
-                         (local_10 * iVar1 + local_8 + DAT_007f4d2c * local_c) * 2) != 0)))) {
+              (PTR_007f4cf0[local_10 * iVar1 + local_8 + DAT_007f4d2c * local_c] != 0)))) {
             iVar6 = st::fn_0040F270(&local_8,&local_c,&local_10,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                  DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
             if (iVar6 != 0) {
@@ -2006,8 +2005,8 @@ int st::fn_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790070);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_00790070;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 28);
   local_44 = 0;
@@ -2119,7 +2118,7 @@ int st::fn_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,
             }
           }
           else {
-            st::fn_0040F4D0((undefined4 *)local_24,uVar2,local_4c,1);
+            st::fn_0040F4D0(local_24,uVar2,local_4c,1);
             iVar3 = local_60;
             if (0 < local_28) {
               iVar7 = local_2c * 0x14;
@@ -2248,8 +2247,7 @@ int st::fn_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,
         local_60 = STObjectAtByteOffset(pRVar10, iVar7).field_0008;
         if ((((local_50 < 0) || (DAT_007f4d2c <= local_50)) || (local_58 < 0)) ||
            ((DAT_007f4d30 <= local_58 ||
-            (*(short *)((int)PTR_007f4cf0 +
-                       (local_60 * local_38 + local_50 + DAT_007f4d2c * local_58) * 2) != 0)))) {
+            (PTR_007f4cf0[local_60 * local_38 + local_50 + DAT_007f4d2c * local_58] != 0)))) {
           iVar3 = st::fn_0040F270(&local_50,&local_58,&local_60,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
           if (iVar3 != 0) {
@@ -2338,8 +2336,8 @@ int st::fn_00411E50(int param_1,int param_2,int param_3,int param_4,int param_5,
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790080);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_00790080;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 32);
   local_48 = 0;
@@ -2454,7 +2452,7 @@ int st::fn_00411E50(int param_1,int param_2,int param_3,int param_4,int param_5,
             }
           }
           else {
-            st::fn_0040F4D0((undefined4 *)local_28,local_24,local_50,0);
+            st::fn_0040F4D0(local_28,local_24,local_50,0);
             psVar1 = local_58;
             iVar3 = DAT_007f4d2c;
             iVar7 = local_64;
@@ -2585,9 +2583,8 @@ int st::fn_00411E50(int param_1,int param_2,int param_3,int param_4,int param_5,
         local_64 = STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar6).field_0008;
         if ((((local_54 < 0) || (iVar3 <= local_54)) || (local_5c < 0)) ||
            ((DAT_007f4d30 <= local_5c ||
-            (iVar7 = local_3c,
-            *(short *)((int)PTR_007f4cf0 + (local_64 * local_3c + local_54 + iVar3 * local_5c) * 2)
-            != 0)))) {
+            (iVar7 = local_3c, PTR_007f4cf0[local_64 * local_3c + local_54 + iVar3 * local_5c] != 0)
+            ))) {
           iVar3 = st::fn_0040F270(&local_54,&local_5c,&local_64,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
           if (iVar3 != 0) {
@@ -2740,7 +2737,7 @@ int st::fn_00413050(int param_1,int param_2,int param_3,int param_4,int param_5)
     if (((byte)DAT_007f4d08 & 1) == 0) {
       param_1 = (int)PTR_007f4d50;
     }
-    iVar2 = st::fn_00413170(iVar2,param_2,param_3,param_4,st::pointer_boundary_cast<undefined4 *>(&param_1),iVar1);
+    iVar2 = st::fn_00413170(iVar2,param_2,param_3,param_4,(undefined4 *)&param_1,iVar1);
     if (iVar2 == 0) {
       st::fn_0040EB90();
       return 0;
@@ -3073,6 +3070,6 @@ LAB_004157f0:
                0xeb8);
     return nullptr;
   }
-  return st::pointer_boundary_cast<uint *>(&array->flags);
+  return &array->flags;
 }
 

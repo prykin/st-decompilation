@@ -28,6 +28,7 @@ undefined4 __thiscall FUN_004abce0(void *this,byte param_1,int param_2,int param
             pbVar2 = (byte *)(iVar6 + 0xf);
             *pbVar2 = *pbVar2 | 2;
           }
+          /* ST_CALLSITE[004ABD62]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
           STT3DSprC::StopShow(this,param_1);
           iVar6 = iVar7 + STField<int>(this,0x20);
           if ((*(byte *)(iVar7 + 0xe + STField<int>(this,0x20)) & 2) == 0) {

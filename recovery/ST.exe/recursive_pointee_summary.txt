@@ -1,5 +1,5 @@
-owner_functions=1960
-machine_loop_functions=830
+owner_functions=1962
+machine_loop_functions=831
 machine_root_offset_functions=348
 candidate_functions=293
 decompiled_functions=293

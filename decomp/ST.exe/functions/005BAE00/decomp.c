@@ -59,6 +59,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
 
   local_8 = 1;
   local_20 = this;
+  /* ST_CALLSITE[005BAE18]: CALL dword ptr [0x0085bedc] */
   DVar8 = timeGetTime();
   this->field_0061 = DVar8;
   local_a0.previous = g_currentExceptionFrame;
@@ -126,6 +127,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 break;
               case '\x02':
               case '\x03':
+                /* ST_CALLSITE[005BB336]: CALL dword ptr [0x0085bde8] */
                 wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,
                           PTR_s_CUSTOM__0079c0bc);
                 local_2c = *pcVar12;
@@ -137,6 +139,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 local_14 = (-(uint)(*pcVar12 != '\x02') & 2) + 0xd;
                 break;
               case '\x05':
+                /* ST_CALLSITE[005BB3A6]: CALL dword ptr [0x0085bde8] */
                 wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\",&CHAR_00h_00807680,
                           PTR_s_SAVEGAME__0079c0b8,&CHAR_00h_00807ddd);
                 local_38 = *pcVar12;
@@ -158,6 +161,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 thunk_FUN_005b6350(this_01,0x6109,0,1);
                 DAT_0080877e = 0;
                 DAT_008087be = 0;
+                /* ST_CALLSITE[005BB4CD]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
                 CloseButtons(this_01,'\x01');
                 this_00 = (this_01->array_00BC[0xc].field_01DB)->field_02E6;
                 goto joined_r0x005bb4e0;
@@ -169,7 +173,9 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                   iVar3 = g_cursorClass_00802A30->field_00C5;
                   g_cursorClass_00802A30->field_0493 = CASE_1;
                   pCVar6->field_0494 = 0xffff;
+                  /* ST_CALLSITE[005BB455]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
                   CursorClassTy::SetGCType(pCVar6,CASE_0,iVar3,iVar10);
+                  /* ST_CALLSITE[005BB46A]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
                   CursorClassTy::DrawSprite(pCVar6,pCVar6->field_00C5,pCVar6->field_00C9);
                   pCVar6->field_00D2 = 0;
                   pCVar6->field_04DF = -1;
@@ -186,10 +192,12 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
             if (STField<char>(psVar7,0xb) == '\x01') {
               DAT_008087be = 0;
             }
+            /* ST_CALLSITE[005BB512]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
             CloseButtons(this_01,'\x01');
             this_00 = (this_01->array_00BC[0xc].field_01DB)->field_02E6;
 joined_r0x005bb4e0:
             if (this_00 != nullptr) {
+              /* ST_CALLSITE[005BB52D]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
               MMsgTy::HidePanel(this_00,1,0,1);
             }
           }
@@ -199,7 +207,9 @@ joined_r0x005bb4e0:
               iVar3 = g_cursorClass_00802A30->field_00C5;
               g_cursorClass_00802A30->field_0493 = CASE_1;
               pCVar6->field_0494 = 0xffff;
+              /* ST_CALLSITE[005BB278]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
               CursorClassTy::SetGCType(pCVar6,CASE_0,iVar3,iVar10);
+              /* ST_CALLSITE[005BB28D]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
               CursorClassTy::DrawSprite(pCVar6,pCVar6->field_00C5,pCVar6->field_00C9);
               pCVar6->field_00D2 = 0;
               pCVar6->field_04DF = -1;
@@ -208,6 +218,7 @@ joined_r0x005bb4e0:
             thunk_FUN_005dac60();
             UVar14 = 0x2526;
 LAB_005bb2c6:
+            /* ST_CALLSITE[005BB2D2]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
             MMsgTy::SetMessage((this_01->array_00BC[0xc].field_01DB)->field_02E6,UVar14,'\0',
                                nullptr,nullptr,nullptr,0,0);
           }
@@ -243,26 +254,32 @@ LAB_005bb532:
         iVar3 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
         pCVar6->field_0494 = 0xffff;
+        /* ST_CALLSITE[005BB5D8]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
         CursorClassTy::SetGCType(pCVar6,CASE_0,iVar3,iVar10);
+        /* ST_CALLSITE[005BB5ED]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
         CursorClassTy::DrawSprite(pCVar6,pCVar6->field_00C5,pCVar6->field_00C9);
         pCVar6->field_00D2 = 0;
         pCVar6->field_04DF = -1;
       }
       local_5c.unknown_08 = this_01->field_0008;
       local_5c.unknown_0c = 2;
+      /* ST_CALLSITE[005BB62A]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
       MMsgTy::SetMessage((this_01->array_00BC[0xc].field_01DB)->field_02E6,0x2525,'\0',
                          &local_5c.unknown_00,nullptr,nullptr,0,0);
       g_currentExceptionFrame = local_a0.previous;
       return;
     }
+    /* ST_CALLSITE[005BB64A]: CALL dword ptr [EDX] */
     this_01->GetMessage(&local_5c);
     break;
   case CASE_3:
     if ((local_20->field_1C96 != nullptr) &&
+       /* ST_CALLSITE[005BAF58]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar10 = HoloTy::NextFas(local_20->field_1C96), iVar10 != 0)) {
       local_8 = 0;
     }
     if ((this_01->field_1C9A != nullptr) &&
+       /* ST_CALLSITE[005BAF6E]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar10 = HoloTy::NextFas(this_01->field_1C9A), iVar10 != 0)) {
       local_8 = 0;
     }
@@ -272,11 +289,13 @@ LAB_005bb532:
     }
     if (local_8 != 0) {
       if (this_01->field_1C96 != nullptr) {
+        /* ST_CALLSITE[005BAFA6]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_01->field_1C96);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1C96);
         this_01->field_1C96 = nullptr;
       }
       if (this_01->field_1C9A != nullptr) {
+        /* ST_CALLSITE[005BAFCA]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_01->field_1C9A);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1C9A);
         this_01->field_1C9A = nullptr;
@@ -307,7 +326,9 @@ LAB_005bb532:
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_1C8A);
       }
       this_01->field_0065 = CASE_1;
+      /* ST_CALLSITE[005BB0A1]: CALL 0x0040362f; direct=0040362F PrividerTy::CreateCtrls */
       CreateCtrls(this_01,'\0');
+      /* ST_CALLSITE[005BB0AA]: CALL 0x00405e52; direct=00405E52 PrividerTy::PaintPrivider */
       PaintPrivider(this_01,'\0');
       g_currentExceptionFrame = local_a0.previous;
       return;
@@ -315,6 +336,7 @@ LAB_005bb532:
     break;
   case CASE_4:
     if (local_20->field_1C96 != nullptr) {
+      /* ST_CALLSITE[005BAE77]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar10 = HoloTy::NextFas(local_20->field_1C96);
       if (iVar10 == 0) {
         uVar2 = *(uint *)&this_01->field_1C96->field_0x3;
@@ -327,6 +349,7 @@ LAB_005bb532:
       }
     }
     if (this_01->field_1C9A != nullptr) {
+      /* ST_CALLSITE[005BAEA8]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar10 = HoloTy::NextFas(this_01->field_1C9A);
       if (iVar10 == 0) {
         uVar2 = *(uint *)&this_01->field_1C9A->field_0x3;
@@ -355,6 +378,7 @@ LAB_005bb532:
     break;
   case CASE_5:
     if (local_20->field_1C9A != nullptr) {
+      /* ST_CALLSITE[005BB0CC]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar10 = HoloTy::NextFas(local_20->field_1C9A);
       if (iVar10 == 0) {
         if ((this_01->array_00BC[0xc].field_01E0 == '\x01') &&
@@ -372,6 +396,7 @@ LAB_005bb532:
     }
     if (local_8 != 0) {
       if (this_01->field_1C9A != nullptr) {
+        /* ST_CALLSITE[005BB128]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_01->field_1C9A);
         Library::MSVCRT::FUN_0072e2b0(this_01->field_1C9A);
         this_01->field_1C9A = nullptr;
@@ -379,6 +404,7 @@ LAB_005bb532:
       if (this_01->array_00BC[0xc].field_01E0 == '\0') {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_1C8A);
       }
+      /* ST_CALLSITE[005BB168]: CALL 0x00403bc5; direct=00403BC5 PrividerTy::SetMode */
       SetMode(this_01,this_01->array_00BC[0xc].field_01E0,'\0');
       g_currentExceptionFrame = local_a0.previous;
       return;

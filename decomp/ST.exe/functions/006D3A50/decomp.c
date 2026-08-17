@@ -24,7 +24,7 @@ void FUN_006d3a50(undefined2 *param_1,int param_2,byte *param_3,int param_4,int 
           param_1 = (undefined2 *)((int)puVar2 + 3);
           param_3 = param_3 + 1;
           *puVar2 = *puVar1;
-          *(undefined1 *)(puVar2 + 1) = *(undefined1 *)(puVar1 + 1);
+          ((undefined1 *)puVar2)[1] = ((undefined1 *)puVar1)[1];
           param_6_after_write = param_6_after_write + -1;
           puVar2 = param_1;
         } while (param_6_after_write != 0);

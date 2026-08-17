@@ -20,6 +20,7 @@ undefined4 __fastcall FUN_00483f10(STBoatC *param_1)
   longlong lVar9;
   longlong lVar10;
 
+  /* ST_CALLSITE[00483F2F]: CALL 0x0040219e; direct=0040219E STAllPlayersC::IsTorpLive */
   iVar3 = STAllPlayersC::IsTorpLive
                     (g_allPlayers_007FA174,param_1->field_046F,(int)param_1->field_0471);
   if (iVar3 != 0) {

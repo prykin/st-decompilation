@@ -18,33 +18,42 @@ int __thiscall FUN_007483c3(void *this,int *param_1,int *param_2)
   *param_2 = 0;
   local_c = 0;
   uStack_8 = 0;
+  /* ST_CALLSITE[007483E7]: CALL dword ptr [EAX + 0x14] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*param_1 + 0x14))(param_1,&local_14);
   if (local_c == 0) {
     local_c = 1;
   }
+  /* ST_CALLSITE[007483FB]: CALL dword ptr [EAX + 0xc] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar2 = (**(code **)(*param_1 + 0xc))(param_1,param_2);
+  /* ST_CALLSITE[0074840C]: CALL dword ptr [EAX + 0x3c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   if (((iVar2 < 0) || (iVar2 = (**(code **)(*(int *)this + 0x3c))(*param_2,&local_14), iVar2 < 0))
+     /* ST_CALLSITE[0074841A]: CALL dword ptr [EAX + 0x10] */
      || (iVar2 = (**(code **)(*param_1 + 0x10))(param_1,*param_2,0), iVar2 < 0)) {
     piVar3 = (int *)*param_2;
     if (piVar3 != nullptr) {
+      /* ST_CALLSITE[0074842A]: CALL dword ptr [ECX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar3 + 8))(piVar3);
       *param_2 = 0;
     }
+    /* ST_CALLSITE[00748435]: CALL dword ptr [EAX + 0x48] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     piVar3 = (int *)(**(code **)(*(int *)this + 0x48))(param_2);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((((int)piVar3 < 0) ||
+        /* ST_CALLSITE[00748449]: CALL dword ptr [EAX + 0x3c] */
         (piVar3 = (int *)(**(code **)(*(int *)this + 0x3c))(*param_2,&local_14), (int)piVar3 < 0))
+       /* ST_CALLSITE[0074845A]: CALL dword ptr [EAX + 0x10] */
        || (piVar3 = (int *)(**(code **)(*param_1 + 0x10))(param_1,*param_2,0), (int)piVar3 < 0)) {
       param_2 = piVar3;
       piVar3 = (int *)*piVar1;
       if (piVar3 == nullptr) {
         return (int)param_2;
       }
+      /* ST_CALLSITE[00748471]: CALL dword ptr [ECX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar3 + 8))(piVar3);
       *piVar1 = 0;

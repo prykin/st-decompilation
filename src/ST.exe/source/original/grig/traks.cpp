@@ -202,6 +202,7 @@ void __thiscall st::fn_00555E80(TraksClassTy *this)
       do {
         if (-1 < (int)pRVar7->field_0032) {
           if (pRVar7->field_0038 == 0) {
+            /* ST_CALLSITE[00555F25]: CALL 0x00401127; direct=00401127 TraksClassTy::DrawTrakSprite */
             st::fn_00401127(this_00,pRVar7);
           }
           else {
@@ -489,6 +490,7 @@ int __thiscall st::fn_005564C0(TraksClassTy *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_ID_NONE) {
+      /* ST_CALLSITE[005565CC]: CALL 0x004040ca; direct=004040CA TraksClassTy::TraksExec */
       st::fn_004040CA(this_00);
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -505,8 +507,10 @@ int __thiscall st::fn_005564C0(TraksClassTy *this,STMessage *message)
         this_00->field_001C = DAT_00808754 * 0x7d;
       }
       else {
+        /* ST_CALLSITE[00556566]: CALL 0x0040359e; direct=0040359E TraksClassTy::PrepareAfterSave */
         st::fn_0040359E(this_00,local_8);
       }
+      /* ST_CALLSITE[00556590]: CALL 0x00403701; direct=00403701 TraksClassTy::CreateDate */
       st::fn_00403701(this_00);
       if ((g_cMf32_00806754 != nullptr) && (local_8 != nullptr)) {
         st::fn_006F20E0(g_cMf32_00806754,(uint *)&local_8);
@@ -517,7 +521,9 @@ int __thiscall st::fn_005564C0(TraksClassTy *this,STMessage *message)
   }
   else if (SVar1 == MESS_SHARED_010F) {
     local_c = 0;
+    /* ST_CALLSITE[0055661C]: CALL 0x00404845; direct=00404845 TraksClassTy::PrepareToSave */
     local_10 = st::fn_00404845(this_00,&local_c);
+    /* ST_CALLSITE[00556638]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
     st::fn_00401078(g_playSystem_00802A38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
     if (local_10 != nullptr) {
       st::fn_006AB060(&local_10);
@@ -629,6 +635,7 @@ LAB_00556926:
     bVar10 = true;
   }
   else {
+    /* ST_CALLSITE[005568B6]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     st::fn_00403F53
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,(int)(short)local_10,
                (int)sVar6,&local_5c,&local_8);
@@ -744,6 +751,7 @@ LAB_0055693a:
   local_36 = (undefined2)param_3;
   local_34 = local_60->field_0020;
   if (iVar8 != 0) {
+    /* ST_CALLSITE[00556BFE]: CALL 0x00402d79; direct=00402D79 TraksClassTy::sub_00555D90 */
     uVar10 = st::fn_00402D79(local_60,(undefined4 *)&local_58);
     g_currentExceptionFrame = local_a8.previous;
     return uVar10;
@@ -791,8 +799,7 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
   int local_c;
   int local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((((*(byte *)(param_1 + 0x1b) & 1) == 0) && (DAT_0080731e == 0)) ||
+  if (((((((byte *)param_1)[0x1b] & 1) == 0) && (DAT_0080731e == 0)) ||
       (this->field_0024 == nullptr)) ||
      ((param_1 == nullptr || (PTR_00806770 == nullptr)))) {
     return 0;
@@ -902,6 +909,7 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
         local_34->field_001C = uVar6;
         sVar10 = (short)((uVar6 >> 0x10) % (((iVar5 + iVar14) - local_c) + 1U)) + (short)local_c;
       }
+      /* ST_CALLSITE[00557082]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       st::fn_00401433(local_34,(short)*param_1,(short)param_1[1],0,param_1[4],param_1[5],param_1[6],
                   sVar10,sVar11,(short)local_18,(short)local_14,(short)local_8,(short)local_10,
                   param_1[0x19],(short)param_1[0x1a],(byte)param_1[0x1b]);
@@ -1084,6 +1092,7 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
           this_00->field_001C = uVar6;
           iVar14 = (uVar6 >> 0x10) % (((iVar8 + iVar14) - local_10) + 1U) + local_10;
         }
+        /* ST_CALLSITE[00557557]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
         st::fn_00401433(this_00,(short)*param_1,(short)param_1[1],
                     (param_1[2] * local_c * local_38) / (local_8 * 100),iVar14,iVar5,local_2c,
                     (short)local_28,(short)local_24,(short)local_20,(short)local_1c,(short)local_14,

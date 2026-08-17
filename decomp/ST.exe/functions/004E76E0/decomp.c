@@ -23,6 +23,7 @@ undefined4 FUN_004e76e0(int param_1,uint *param_2,byte param_3)
   if ((param_1 < 0) || (7 < param_1)) {
     return 0;
   }
+  /* ST_CALLSITE[004E7701]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar4 = LookupRecordByte((char)param_1);
   ppuVar11 = &PTR_00801020;
   for (iVar7 = 0xc3; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -88,7 +89,7 @@ LAB_004e7823:
             puVar3 = (uint *)((int)puVar3 + 5);
           }
           *local_c = *puVar8;
-          *(char *)(local_c + 1) = (char)puVar8[1];
+          ((char *)local_c)[1] = (char)puVar8[1];
           _param_3 = _param_3 + 1;
           local_c = (uint *)((int)local_c + 5);
 LAB_004e789c:

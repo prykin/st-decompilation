@@ -9,9 +9,11 @@ void __thiscall FUN_00626d70(void *this,AnonShape_00626D70_1F4C15C4 *param_1)
   undefined4 uVar3;
   int iVar4;
 
+  /* ST_CALLSITE[00626D79]: CALL dword ptr [EAX + 0x2c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar3 = (**(code **)(*(int *)this + 0x2c))();
   *(undefined4 *)param_1 = uVar3;
+  /* ST_CALLSITE[00626D8B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar2 = LookupRecordByte(STField<char>(this,0x24));
   param_1->field_0x4 = bVar2;
   if (STField<char>(this,0x2ad) == '\x02') {

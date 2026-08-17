@@ -105,6 +105,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
               pRVar12 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0194;
               iVar7 = uVar10 * 0xb + 0x87;
             }
+            /* ST_CALLSITE[00500939]: CALL 0x00403229; direct=00403229 DibPut */
             DibPut(pRVar12,iVar7,uVar10 * 0xb + 0xb,'\x06',(byte *)pBVar8);
             bVar11 = (-(param_1 != 0) & 2U) + 3;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -131,6 +132,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
             }
             pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02A2,
                                   (-(uint)(cVar1 != '\0') & 0xfffffffe) + 2);
+            /* ST_CALLSITE[00500A47]: CALL 0x00403229; direct=00403229 DibPut */
             DibPut(local_c,7,
                    (uint)*(byte *)((int)&pRVar12[0x2a].field_0008 + (int)pCVar4) * 0x1d + 6,'\x01',
                    (byte *)pBVar8);

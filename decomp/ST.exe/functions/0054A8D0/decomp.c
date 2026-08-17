@@ -14,6 +14,7 @@ void __thiscall CursorClassTy::sub_0054A8D0(CursorClassTy *this)
 
 {
   if ((g_tLOBldMark_007FB2AC != nullptr) && (g_tLOBldMark_007FB2AC->field_0018 == 0)) {
+    /* ST_CALLSITE[0054A8E5]: CALL 0x0040153c; direct=0040153C TLOBldMark::sub_004C63F0 */
     TLOBldMark::sub_004C63F0(g_tLOBldMark_007FB2AC);
   }
   if ((this->field_00DE == CASE_5) && (-1 < this->field_010B)) {
@@ -29,6 +30,7 @@ void __thiscall CursorClassTy::sub_0054A8D0(CursorClassTy *this)
                 ((uint *)this->field_0060,this->field_001C,0xfffffffe,this->field_0034,
                  this->field_0038);
     }
+    /* ST_CALLSITE[0054A95B]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     DrawSprite(this,this->field_00C5,this->field_00C9);
     this->field_00DE = CASE_0;
   }

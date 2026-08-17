@@ -14,6 +14,7 @@ int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 para
 
   uVar3 = 0;
   local_8 = 0;
+  /* ST_CALLSITE[0065E3BE]: CALL 0x004018cf; direct=004018CF AiFltClassTy::sub_0065DA10 */
   array = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)param_1,param_2);
   if (array != nullptr) {
     if (0 < (int)array->count) {
@@ -25,8 +26,10 @@ int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 para
         else {
           puVar1 = nullptr;
         }
+        /* ST_CALLSITE[0065E3F3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,param_1->field_0024,*puVar1,CASE_1);
         if (this != nullptr) {
+          /* ST_CALLSITE[0065E400]: CALL dword ptr [EDX + 0xd4]; [STIndirectCallsiteApplier] exact slot 0xD4; signature=__thiscall;/undefined4;pointer:/STGameObjC */
           iVar2 = (*this->vtable[1].GetMessage)(this);
           local_8 = local_8 + iVar2;
         }

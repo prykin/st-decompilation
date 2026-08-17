@@ -17,6 +17,7 @@ void __thiscall BehPanelTy::ShiftControls(BehPanelTy *this,int param_1)
 
   if (param_1 != this->field_005C) {
     local_8 = this;
+    /* ST_CALLSITE[004EDF4C]: CALL 0x00404d36; direct=00404D36 SpecPanelTy::ShiftControls */
     SpecPanelTy::ShiftControls((SpecPanelTy *)this,param_1);
     sVar2 = (short)this->field_0174;
     this->field_0028 = 0x24;

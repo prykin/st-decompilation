@@ -45,6 +45,7 @@ uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3
       *puVar12 = uVar3;
       sVar2 = param_1->field_000C->field_0034;
       if (sVar2 == 0) {
+        /* ST_CALLSITE[007558EB]: CALL dword ptr [EAX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (**(code **)&param_1->field_000C->field_0x8)(param_2 + 2);
       }

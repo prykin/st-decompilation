@@ -34,11 +34,14 @@ int __thiscall UpgPanelTy::GetMessage(UpgPanelTy *this,STMessage *message)
     RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x68);
     return 0xffff;
   }
+  /* ST_CALLSITE[00552E79]: CALL 0x00401401; direct=00401401 SpecPanelTy::GetMessage */
   SpecPanelTy::GetMessage((SpecPanelTy *)local_8,message);
   if (message->id == MESS_ID_CREATE) {
+    /* ST_CALLSITE[00552EA4]: CALL 0x00401d20; direct=00401D20 UpgPanelTy::InitUpgPanel */
     InitUpgPanel(this_00);
   }
   else if (message->id == MESS_SHARED_0003) {
+    /* ST_CALLSITE[00552E8B]: CALL 0x00401ab4; direct=00401AB4 UpgPanelTy::DoneUpgPanel */
     DoneUpgPanel(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return 0;

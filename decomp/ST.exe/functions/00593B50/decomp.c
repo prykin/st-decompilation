@@ -202,6 +202,7 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     local_4e0 = local_500;
     local_4c0 = local_500;
     local_4a0 = local_500;
+    /* ST_CALLSITE[00593FD3]: CALL dword ptr [EAX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,7,&this_00->field_010C,nullptr,local_528,0);
     this_00->field_0028 = 0x22;
@@ -212,6 +213,7 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     g_currentExceptionFrame = local_54.previous;
     return;
   }
+  /* ST_CALLSITE[00594023]: CALL 0x00403968; direct=00403968 ComboTy::sub_005943F0 */
   sub_005943F0(local_10);
   g_currentExceptionFrame = local_54.previous;
   return;

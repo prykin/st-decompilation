@@ -14,6 +14,7 @@ void __cdecl FUN_00719c60(DWORD_PTR dwParam2)
   mciId = *(MCIDEVICEID *)dwParam2;
   if (mciId != 0) {
     dwParam2 = 0;
+    /* ST_CALLSITE[00719C80]: CALL dword ptr [0x0085bec0] */
     mciSendCommandA(mciId,0x804,2,(DWORD_PTR)&dwParam2);
     *(undefined4 *)DVar1 = 0;
   }

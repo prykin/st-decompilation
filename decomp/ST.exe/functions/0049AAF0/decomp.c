@@ -99,10 +99,13 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
           if ((local_2c < 8) &&
              ((((g_playSystem_00802A38 == nullptr ||
                 (g_bulkInitializedRecords_008087C7[(char)local_2c].field_0022 < 8)) &&
+               /* ST_CALLSITE[0049AC3E]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                (pSVar7 = STAllPlayersC::GetObjPtr
                                    (g_allPlayers_007FA174,local_2c,uStack_2a,(int)cStack_2b),
                pSVar13 = local_8, pSVar7 != nullptr)) &&
+              /* ST_CALLSITE[0049AC4D]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
               ((iVar11 = (*pSVar7->vtable[1].vfunc_24)(pSVar7), pSVar13 = local_8, iVar11 == 1 &&
+               /* ST_CALLSITE[0049AC64]: CALL dword ptr [EAX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
                (iVar11 = (*pSVar7->vtable[1].vfunc_20)(pSVar7,(int)local_8->field_0024),
                pSVar13 = local_8, iVar11 == 1)))))) {
             Library::DKW::TBL::DArrayPut(local_8->field_020E,uVar15,&local_2c);
@@ -209,8 +212,10 @@ LAB_0049b073:
                       if (bVar17) {
                         uStack_2a = *(ushort *)&pSVar12[1].field_0xe;
                         cStack_2b = '\x03';
+                        /* ST_CALLSITE[0049B092]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                         iVar11 = (*pSVar12->vtable[5].slots_00_28[2])(pSVar12);
                         if ((iVar11 == 1) &&
+                           /* ST_CALLSITE[0049B0A6]: CALL dword ptr [EDX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
                            (dVar9 = (*pSVar12->vtable[5].slots_00_28[1])
                                               (pSVar12,(int)pSVar13->field_0024), dVar9 == 1)) {
                           local_18 = dVar9;
@@ -262,9 +267,11 @@ LAB_0049aec9:
                       if (bVar17) {
                         uStack_2a = *(ushort *)&pSVar12[1].field_0xe;
                         cStack_2b = '\x01';
+                        /* ST_CALLSITE[0049AEEC]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                         iVar8 = (*pSVar12->vtable[5].slots_00_28[2])(pSVar12);
                         pSVar13 = local_8;
                         if ((iVar8 == 1) &&
+                           /* ST_CALLSITE[0049AF03]: CALL dword ptr [EDX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
                            (dVar9 = (*pSVar12->vtable[5].slots_00_28[1])
                                               (pSVar12,(int)local_8->field_0024), dVar9 == 1)) {
                           local_18 = dVar9;
@@ -305,6 +312,7 @@ LAB_0049aec9:
         do {
           DArrayGetElement(local_8->field_020E,(int)sVar5,&local_2c);
           if ((cStack_2b != '\x01') ||
+             /* ST_CALLSITE[0049B1B9]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
              (pSVar7 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_2c,uStack_2a,CASE_1),
              pSVar7->field_0020 != 0x14)) {
             DArrayRemoveAt(local_8->field_020E,(int)sVar5);
@@ -321,7 +329,9 @@ LAB_0049aec9:
                    0x6e3);
       }
     }
+    /* ST_CALLSITE[0049B20B]: CALL 0x00402603; direct=00402603 STGroupBoatC::MakePVec */
     MakePVec(pSVar16);
+    /* ST_CALLSITE[0049B216]: CALL 0x00405146; direct=00405146 STGroupBoatC::DistributeTargets */
     DistributeTargets(pSVar16,(uint *)pSVar16->field_0029);
     pSVar13 = local_8;
   }

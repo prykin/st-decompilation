@@ -101,6 +101,7 @@ LAB_00556926:
     bVar10 = true;
   }
   else {
+    /* ST_CALLSITE[005568B6]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,(int)(short)local_10,
                (int)sVar6,&local_5c,&local_8);
@@ -216,6 +217,7 @@ LAB_0055693a:
   local_36 = (undefined2)param_3;
   local_34 = local_60->field_0020;
   if (iVar8 != 0) {
+    /* ST_CALLSITE[00556BFE]: CALL 0x00402d79; direct=00402D79 TraksClassTy::sub_00555D90 */
     uVar10 = sub_00555D90(local_60,(undefined4 *)&local_58);
     g_currentExceptionFrame = local_a8.previous;
     return uVar10;

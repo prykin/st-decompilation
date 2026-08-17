@@ -17,8 +17,10 @@
 STCrabC * __thiscall st::fn_005785E0(STCrabC *this)
 
 {
+  /* ST_CALLSITE[005785E4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
-  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[005785F1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  st::fn_00401316((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079B398);
   this->vtable = &st_global_0079B238;
   this->field_0239 = CASE_0;

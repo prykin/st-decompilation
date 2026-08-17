@@ -38,8 +38,7 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
   int local_c;
   int local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((((*(byte *)(param_1 + 0x1b) & 1) == 0) && (DAT_0080731e == 0)) ||
+  if (((((((byte *)param_1)[0x1b] & 1) == 0) && (DAT_0080731e == 0)) ||
       (this->field_0024 == nullptr)) ||
      ((param_1 == nullptr || (PTR_00806770 == nullptr)))) {
     return 0;
@@ -149,6 +148,7 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
         local_34->field_001C = uVar6;
         sVar10 = (short)((uVar6 >> 0x10) % (((iVar5 + iVar14) - local_c) + 1U)) + (short)local_c;
       }
+      /* ST_CALLSITE[00557082]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       TraksCreate(local_34,(short)*param_1,(short)param_1[1],0,param_1[4],param_1[5],param_1[6],
                   sVar10,sVar11,(short)local_18,(short)local_14,(short)local_8,(short)local_10,
                   param_1[0x19],(short)param_1[0x1a],(byte)param_1[0x1b]);
@@ -331,6 +331,7 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
           this_00->field_001C = uVar6;
           iVar14 = (uVar6 >> 0x10) % (((iVar8 + iVar14) - local_10) + 1U) + local_10;
         }
+        /* ST_CALLSITE[00557557]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
         TraksCreate(this_00,(short)*param_1,(short)param_1[1],
                     (param_1[2] * local_c * local_38) / (local_8 * 100),iVar14,iVar5,local_2c,
                     (short)local_28,(short)local_24,(short)local_20,(short)local_1c,(short)local_14,

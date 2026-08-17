@@ -31,9 +31,11 @@ InfocPanelTy::PaintInfocObj
   pIVar2 = local_8;
   if (errorCode == 0) {
     if ((local_8->field_03D4 == -1) && (param_1 == 0xffff)) {
+      /* ST_CALLSITE[00520BB0]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&local_8->field_018D,"----/%d",param_2);
     }
     else {
+      /* ST_CALLSITE[00520BD7]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&local_8->field_018D,"%d/%d",param_1,param_2);
     }
     if (DAT_0080874e == '\x03') {

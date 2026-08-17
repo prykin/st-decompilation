@@ -76,7 +76,7 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
                  (float)param_5 * _DAT_007904f8 * _DAT_007904f0,
                  (float)param_6 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_8,0);
-      *(undefined1 *)(iVar3 + 6) = 1;
+      ((undefined1 *)iVar3)[6] = 1;
       g_currentExceptionFrame = local_5c.previous;
       return puVar2;
     }

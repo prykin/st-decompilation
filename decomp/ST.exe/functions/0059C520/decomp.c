@@ -26,38 +26,47 @@ void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
   if (errorCode == 0) {
     switch(local_8->array_00BC[0xc].field_01DF) {
     case 2:
+      /* ST_CALLSITE[0059C571]: CALL 0x00402392; direct=00402392 FSGSTy::LoginCtrls */
       LoginCtrls(local_8);
       pFVar2->array_00BC[0xc].field_01E2 = 1;
       g_currentExceptionFrame = local_4c.previous;
       return;
     case 3:
+      /* ST_CALLSITE[0059C5B4]: CALL 0x00401d75; direct=00401D75 FSGSTy::LicCtrls */
       LicCtrls(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return;
     case 4:
+      /* ST_CALLSITE[0059C58C]: CALL 0x00402022; direct=00402022 FSGSTy::NewIDCtrls */
       NewIDCtrls(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return;
     case 5:
+      /* ST_CALLSITE[0059C5A0]: CALL 0x004032d3; direct=004032D3 FSGSTy::PswCtrls */
       PswCtrls(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return;
     case 6:
+      /* ST_CALLSITE[0059C5C8]: CALL 0x00404570; direct=00404570 FSGSTy::ChatCtrls */
       ChatCtrls(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return;
     case 7:
+      /* ST_CALLSITE[0059C5DC]: CALL 0x00403fad; direct=00403FAD FSGSTy::NewGameCtrls */
       NewGameCtrls(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return;
     case 8:
+      /* ST_CALLSITE[0059C5F0]: CALL 0x0040196a; direct=0040196A FSGSTy::JoinGameCtrls */
       JoinGameCtrls(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return;
     case 9:
+      /* ST_CALLSITE[0059C618]: CALL 0x00404421; direct=00404421 FSGSTy::LadderCtrls */
       LadderCtrls(local_8);
       break;
     case 10:
+      /* ST_CALLSITE[0059C604]: CALL 0x00402626; direct=00402626 FSGSTy::InfoCtrls */
       InfoCtrls(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return;

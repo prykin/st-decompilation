@@ -30,6 +30,7 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
                            (int *)&local_10);
         pSVar1 = local_10;
         if (iVar3 != -4) {
+          /* ST_CALLSITE[00617F3C]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0(local_10,&local_a,&local_8,&local_6);
           local_18 = pSVar1->field_0018;
           local_14 = (uint)*(ushort *)&pSVar1->field_0x32;

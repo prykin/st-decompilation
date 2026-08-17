@@ -30,7 +30,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
   if (param_2 == 0) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == (char *)0x9) {
-      uVar2 = (*this->vtable->slot_18)();
+      /* ST_CALLSITE[00668F71]: CALL dword ptr [EAX + 0x18] */
+      uVar2 = this->slot_18();
       if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
          (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
         *param_3 = uVar2;
@@ -69,7 +70,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
     bVar5 = (byte)param_1;
     if (param_2 == 0xffffffff) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[0066905E]: CALL dword ptr [EAX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           uVar7 = 0;
@@ -149,7 +151,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
     }
     else if (param_2 == 1) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[00669281]: CALL dword ptr [EDX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           uVar7 = 0;
@@ -229,7 +232,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
     }
     else if (param_2 == 2) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[00669493]: CALL dword ptr [EDX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           uVar7 = 0;
@@ -331,7 +335,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
     }
     else if (param_2 == 3) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[00669726]: CALL dword ptr [EDX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           param_2 = 0;
@@ -537,7 +542,8 @@ LAB_00669a2a:
     }
     else if (param_2 == 4) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[00669BF5]: CALL dword ptr [EAX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           param_2 = 0;
@@ -741,7 +747,8 @@ LAB_00669f03:
     }
     else if (param_2 == 0xfffffffe) {
       if (param_1 == (char *)0x9) {
-        uVar2 = (*this->vtable->slot_18)();
+        /* ST_CALLSITE[0066A0E2]: CALL dword ptr [EDX + 0x18] */
+        uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
           param_2 = 0;

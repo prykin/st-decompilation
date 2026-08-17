@@ -52,17 +52,20 @@ LAB_00538ff6:
     local_14 = this;
     local_EAX_145 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (local_EAX_145 == 0) {
+      /* ST_CALLSITE[00539067]: CALL dword ptr [EBP + 0x18] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar7 = (*(code *)param_5)(param_1);
       text = FUN_006f2c00(param_3,1,uVar7);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,text,nullptr,1);
       iVar6 = local_10;
       pPVar3 = local_14;
+      /* ST_CALLSITE[005390A0]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_c,local_10,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_1->field_0014 == 3) {
         local_8 = cMf32::RecGet(g_cMf32_00806790,6,param_4,nullptr,1);
+        /* ST_CALLSITE[005390E1]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_c,iVar6,'\x06',
                (byte *)local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);

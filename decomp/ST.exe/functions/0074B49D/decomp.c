@@ -10,8 +10,10 @@ undefined4 FUN_0074b49d(int param_1,undefined4 *param_2)
     uVar1 = 0x80004003;
   }
   else {
+    /* ST_CALLSITE[0074B4B7]: CALL dword ptr [0x0085bb8c] */
     EnterCriticalSection((LPCRITICAL_SECTION)(param_1 + -0x4c));
     *param_2 = *(undefined4 *)(param_1 + 0x44);
+    /* ST_CALLSITE[0074B4C3]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection((LPCRITICAL_SECTION)(param_1 + -0x4c));
     uVar1 = 0;
   }

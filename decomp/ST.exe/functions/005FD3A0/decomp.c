@@ -17,6 +17,7 @@ undefined4 __thiscall FUN_005fd3a0(void *this,int param_1)
   short local_6;
 
   iVar4 = param_1;
+  /* ST_CALLSITE[005FD3AE]: CALL 0x00403ebd; direct=00403EBD STGameObjC::GetMessage */
   iVar2 = STGameObjC::GetMessage(this,(STMessage *)param_1);
   if (iVar2 == 0xffff) {
     return 0xffff;
@@ -70,6 +71,7 @@ LAB_005fd4eb:
   }
   else if ((uVar1 == 0x10f) &&
           (local_10 = (byte *)thunk_FUN_006012d0(this,(int *)&local_c), local_10 != nullptr)) {
+    /* ST_CALLSITE[005FD535]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,STField<int *>(this,0x18),local_10,local_c);
     FreeAndNull(&local_10);
   }

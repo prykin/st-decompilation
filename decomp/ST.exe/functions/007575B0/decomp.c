@@ -24,6 +24,7 @@ uint FUN_007575b0(AnonShape_007575B0_A94973CA *param_1,ushort *param_2,ushort *p
     break;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   default:
+    /* ST_CALLSITE[00757646]: CALL dword ptr [ECX + 0x4] */
     uVar2 = (*(code *)param_1->field_000C->field_0004)(param_2,param_3);
     return uVar2;
   }

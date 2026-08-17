@@ -45,6 +45,7 @@ undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,DArrayTy *param_1,int par
     index = 0;
     do {
       DArrayGetElement(param_1,index,&local_8);
+      /* ST_CALLSITE[00423BBB]: CALL 0x0040340e; direct=0040340E STGroupC::AddObj */
       AddObj(this_00,local_8,param_2);
       uVar5 = uVar5 + 1;
       index = uVar5 & 0xffff;

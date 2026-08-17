@@ -12,6 +12,7 @@ undefined4 __thiscall FUN_0074a05b(void *this,int param_1)
 
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x7c);
   local_8 = this;
+  /* ST_CALLSITE[0074A067]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(lpCriticalSection);
   local_8 = nullptr;
   if (param_1 == 0) {
@@ -26,9 +27,11 @@ undefined4 __thiscall FUN_0074a05b(void *this,int param_1)
       STField<undefined4 *>(this,0x78) = puVar2;
     }
     uVar1 = STField<undefined4>(this,0x78);
+    /* ST_CALLSITE[0074A0B3]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(lpCriticalSection);
   }
   else {
+    /* ST_CALLSITE[0074A078]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(lpCriticalSection);
     uVar1 = 0;
   }

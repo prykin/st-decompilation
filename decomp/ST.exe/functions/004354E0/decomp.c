@@ -115,6 +115,7 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
        (piVar7 = *(int **)(iVar3 + 0x1c), 0 < iVar8)) {
       do {
         if ((int *)*piVar7 != nullptr) {
+          /* ST_CALLSITE[0043569B]: CALL dword ptr [EAX + 0x8c] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*(int *)*piVar7 + 0x8c))(_param_1,param_2,param_3);
         }

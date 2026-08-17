@@ -37,6 +37,7 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
       do {
         if (-1 < (int)pRVar7->field_0032) {
           if (pRVar7->field_0038 == 0) {
+            /* ST_CALLSITE[00555F25]: CALL 0x00401127; direct=00401127 TraksClassTy::DrawTrakSprite */
             DrawTrakSprite(this_00,pRVar7);
           }
           else {

@@ -165,7 +165,7 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
             }
           }
           else {
-            FUN_0040f4d0((undefined4 *)local_28,local_24,local_50,0);
+            FUN_0040f4d0(local_28,local_24,local_50,0);
             psVar1 = local_58;
             iVar3 = DAT_007f4d2c;
             iVar7 = local_64;
@@ -296,9 +296,8 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
         local_64 = STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar6).field_0008;
         if ((((local_54 < 0) || (iVar3 <= local_54)) || (local_5c < 0)) ||
            ((DAT_007f4d30 <= local_5c ||
-            (iVar7 = local_3c,
-            *(short *)((int)PTR_007f4cf0 + (local_64 * local_3c + local_54 + iVar3 * local_5c) * 2)
-            != 0)))) {
+            (iVar7 = local_3c, PTR_007f4cf0[local_64 * local_3c + local_54 + iVar3 * local_5c] != 0)
+            ))) {
           iVar3 = FUN_0040f270(&local_54,&local_5c,&local_64,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
           if (iVar3 != 0) {

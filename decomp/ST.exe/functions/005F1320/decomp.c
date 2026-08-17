@@ -15,6 +15,7 @@ STManBasisC * __cdecl CreateSTManBasis(void)
 
   this = (STManBasisC *)FUN_006b04d0(0x48);
   if (this != nullptr) {
+    /* ST_CALLSITE[005F132D]: CALL 0x00405ae2; direct=00405AE2 STManBasisC::STManBasisC */
     g_manBasis_00811784 = STManBasisC::STManBasisC(this);
     return g_manBasis_00811784;
   }

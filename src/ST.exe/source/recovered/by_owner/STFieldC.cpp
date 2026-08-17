@@ -25,6 +25,7 @@ void __thiscall st::fn_00609CD0(STFieldC *this)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if (((uVar4 < pSVar2->count) &&
             (puVar3 = (uint *)((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar4),
+            /* ST_CALLSITE[00609D0C]: CALL 0x004021df; direct=004021DF STFieldC::LoadImagSpr */
             puVar3 != nullptr)) && (st::fn_004021DF(this,uVar4), this->field_020D == 6)) {
           st::fn_006EAB60(g_sT3DSMAPContext_00807598,puVar3[0xf]);
         }
@@ -85,6 +86,7 @@ int __thiscall st::fn_0060C1A0(STFieldC *this,undefined4 *param_1)
           } while ((int)uVar6 < (int)pSVar2->count);
         }
         if (this->field_0225 != '\0') {
+          /* ST_CALLSITE[0060C246]: CALL 0x004010f5; direct=004010F5 STFieldC::sub_00609CD0 */
           st::fn_004010F5(this);
         }
       }
@@ -92,6 +94,7 @@ int __thiscall st::fn_0060C1A0(STFieldC *this,undefined4 *param_1)
       piVar4 = (int *)((int)param_1 + STField<int>(param_1,0x83) + 0x8b);
     }
     if ((this->field_023C != 0) && (this->field_0244 != nullptr)) {
+      /* ST_CALLSITE[0060C27B]: CALL 0x0040234c; direct=0040234C STFieldC::sub_0060D660 */
       iVar5 = st::fn_0040234C(this,piVar4);
       iVar1 = iVar1 + iVar5;
     }

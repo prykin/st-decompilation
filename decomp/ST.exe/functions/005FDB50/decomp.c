@@ -56,6 +56,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
           this_00 != nullptr)) && (-1 < param_2 || iVar5 != 2)) {
         local_8 = iVar8;
         if ((iVar5 == 1) || (iVar5 == 2)) {
+          /* ST_CALLSITE[005FDEC3]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
           iVar5 = STT3DSprC::Init(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
           if (iVar5 != 0) {
             RaiseInternalException
@@ -63,6 +64,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
                       );
             return 0xffff;
           }
+          /* ST_CALLSITE[005FDEE1]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
           iVar5 = STT3DSprC::LoadSequence(this_00,0xd,PTR_00806774,"adcbo",CASE_1D);
           if (iVar5 != 0) {
             return 0xffff;
@@ -70,11 +72,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
           thunk_FUN_004ad380(this_00,0x5a,0x45);
           iVar5 = iVar8 + *(int *)&this->field_0x233;
           local_18 = (int)*(short *)(iVar5 + 6);
+          /* ST_CALLSITE[005FDF59]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
           STT3DSprC::sub_004AD3C0
                     (this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
                      (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
                      (float)(int)*(short *)(iVar8 + 10 + *(int *)&this->field_0x233) * _DAT_007904f8
                      * _DAT_007904f0 + _DAT_007904fc);
+          /* ST_CALLSITE[005FDF6E]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
           STT3DSprC::StartShow(this_00,0xd,g_playSystem_00802A38->field_00E4);
           *(undefined1 *)(iVar8 + 0x41 + *(int *)&this->field_0x233) = 1;
           pVVar3 = g_visibleClass_00802A88;
@@ -89,6 +93,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
             iVar8 = local_8;
             this = local_c;
             if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+                /* ST_CALLSITE[005FE055]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                 ((VisibleClassTy::sub_00558C00
                             (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6
                              ,&local_24,&local_28), iVar8 = local_8, this = local_c, -1 < iVar7 &&
@@ -112,6 +117,7 @@ joined_r0x005fe09b:
           if (this_00 == nullptr) {
             return 0;
           }
+          /* ST_CALLSITE[005FDBFA]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
           STT3DSprC::StopShow(this_00,0xd);
           thunk_FUN_004ad5e0(this_00);
           if (param_1 == 0) {
@@ -120,28 +126,36 @@ joined_r0x005fe09b:
           else {
             uVar4 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
             *(uint *)&this->field_0x1c = uVar4;
+            /* ST_CALLSITE[005FDC3D]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
             iVar5 = STT3DSprC::LoadSequence
                               (this_00,0xd,PTR_00806774,(&PTR_s_Expb24_007ce934)[uVar4 >> 0x10 & 1],
                                CASE_1D);
             if (iVar5 != 0) {
               return 0xffff;
             }
+            /* ST_CALLSITE[005FDC5B]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
             iVar5 = STT3DSprC::LoadSequence(this_00,0xf,PTR_00806764,"bulb_n3",CASE_1D);
             if (iVar5 != 0) {
               return 0xffff;
             }
+            /* ST_CALLSITE[005FDC7A]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
             iVar5 = STT3DSprC::LoadSequence(this_00,0xe,PTR_00806774,"expmask2",CASE_1D);
             if (iVar5 != 0) {
               return 0xffff;
             }
+            /* ST_CALLSITE[005FDC98]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
             STT3DSprC::StartShow(this_00,0xe,g_playSystem_00802A38->field_00E4);
             *(undefined1 *)(iVar8 + 0x28 + *(int *)&this->field_0x233) = 1;
             thunk_FUN_004ac700(this_00,'\x0f');
+            /* ST_CALLSITE[005FDCC2]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
             STT3DSprC::StartShow(this_00,0xd,g_playSystem_00802A38->field_00E4);
+            /* ST_CALLSITE[005FDCD2]: CALL 0x004044ee; direct=004044EE STT3DSprC::sub_004ACF20 */
             STT3DSprC::sub_004ACF20(this_00,PTR_008032b8,0x10);
+            /* ST_CALLSITE[005FDCDB]: CALL 0x00403233; direct=00403233 STT3DSprC::sub_004ACFE0 */
             STT3DSprC::sub_004ACFE0(this_00,'\x0e');
             iVar5 = iVar8 + *(int *)&this->field_0x233;
             local_18 = (int)*(short *)(iVar5 + 6);
+            /* ST_CALLSITE[005FDD40]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
             STT3DSprC::sub_004AD3C0
                       (this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
                        (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
@@ -160,6 +174,7 @@ joined_r0x005fe09b:
               iVar8 = local_8;
               this = local_c;
               if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+                  /* ST_CALLSITE[005FDE2F]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                   ((VisibleClassTy::sub_00558C00
                               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,
                                iVar7,&local_1c,&local_20), iVar8 = local_8, this = local_c,

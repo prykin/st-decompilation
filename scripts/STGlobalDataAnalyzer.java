@@ -124,6 +124,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             collectCStringScanEvidence(function, instruction, mnemonic, operands);
             collectPointerDereferenceEvidence(function, instruction, mnemonic,
                 operands, registers);
+            collectAddressCrossObjectEvidence(function, instruction, mnemonic,
+                operands, registers);
             collectBitStringEvidence(function, instruction, mnemonic, operands,
                 registers);
             if ("PUSH".equals(mnemonic)) {
@@ -230,15 +232,22 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 PointerOrigin source = pointerOrigin(instruction, 1, operands[1],
                     registers, stack);
                 GlobalValue global = referencedGlobal(instruction, 0, operands[0], false);
-                if (global != null && !global.addressOf && source != null) {
+                if (global != null && !global.addressOf &&
+                        memoryOperandWidth(operands[0], mnemonic) ==
+                            currentProgram.getDefaultPointerSize()) {
                     Evidence ev = evidence.computeIfAbsent(global.address,
                         ignored -> new Evidence());
-                    ev.pointerProducerStores++;
-                    if (!source.type.isBlank())
-                        ev.pointerProducerTypes.merge(source.type, 1, Integer::sum);
-                    ev.pointerProducerSites.add(addr(function.getEntryPoint()) +
-                        " publishes " + source.reason + " @ " +
-                        addr(instruction.getAddress()));
+                    ev.directWordStores++;
+                    if (source != null) {
+                        ev.pointerProducerStores++;
+                        if (!source.type.isBlank())
+                            ev.pointerProducerTypes.merge(source.type, 1, Integer::sum);
+                        ev.pointerProducerSites.add(addr(function.getEntryPoint()) +
+                            " publishes " + source.reason + " @ " +
+                            addr(instruction.getAddress()));
+                    }
+                    else if (isZeroImmediate(operands[1])) ev.nullWordStores++;
+                    else ev.unknownWordStores++;
                 }
                 if (destination != null) {
                     if (isFullRegister(operands[0]) && source != null)
@@ -600,6 +609,44 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         }
     }
 
+    /**
+     * An address-of global which is subsequently used with a non-zero displacement
+     * or an index is an anchor into adjacent storage, not evidence that the one
+     * labelled word has the observed pointee width.  This distinction matters for
+     * old C-style global arrays whose first few cells each acquired their own DAT_/PTR_
+     * symbol: treating the anchor cell as undefinedN * makes Ghidra render artificial
+     * undefinedN ** locals and pointer arithmetic across unrelated data labels.
+     */
+    private void collectAddressCrossObjectEvidence(Function function,
+            Instruction instruction, String mnemonic, String[] operands,
+            Map<String, GlobalValue> registers) {
+        if ("LEA".equals(mnemonic)) return;
+        for (String operand : operands) {
+            String upper = operand.toUpperCase(Locale.ROOT);
+            int open = upper.indexOf('['), close = upper.lastIndexOf(']');
+            if (open < 0 || close <= open) continue;
+            String address = upper.substring(open + 1, close);
+            for (Map.Entry<String, GlobalValue> entry : registers.entrySet()) {
+                GlobalValue value = entry.getValue();
+                if (value == null || !value.addressOf ||
+                        !soleUnscaledBase(address, entry.getKey()) ||
+                        exactZeroOffset(address, entry.getKey())) continue;
+                Evidence ev = evidence.computeIfAbsent(value.address,
+                    ignored -> new Evidence());
+                ev.addressCrossObjectSites.add(addr(function.getEntryPoint()) + " " +
+                    instruction.toString() + " @ " + addr(instruction.getAddress()));
+                ev.addressCrossObjectFunctions.add(addr(function.getEntryPoint()));
+            }
+        }
+    }
+
+    private boolean exactZeroOffset(String address, String baseRegister) {
+        String remainder = address.replaceAll(
+            "(?i)\\b" + Pattern.quote(baseRegister) + "\\b", "")
+            .replaceAll("\\s+", "");
+        return remainder.isEmpty() || remainder.matches("[+-]?(?:0|0X0+)");
+    }
+
     private int memoryOperandWidth(String operand, String mnemonic) {
         if (operand.contains("BYTE PTR")) return 1;
         if (operand.contains("QWORD PTR")) return 8;
@@ -938,6 +985,21 @@ public class STGlobalDataAnalyzer extends GhidraScript {
 
     private void propagateCall(Function containing, Function called, GlobalValue receiver,
             List<GlobalValue> pushes, Address site) {
+        // Address-taking is a possible write/escape even when the current callee
+        // prototype is too weak to contribute a type vote.  Record it before the
+        // arity/trust filters so a closed-store proof cannot silently ignore one
+        // untyped T ** consumer.
+        for (GlobalValue value : pushes) {
+            if (value == null || !value.addressOf) continue;
+            Evidence ev = evidence.computeIfAbsent(value.address,
+                ignored -> new Evidence());
+            ev.rawAddressCallSites.add(addr(containing.getEntryPoint()) + " -> " +
+                addr(called.getEntryPoint()) + " address-of global @ " + addr(site));
+            if ("FreeAndNull".equals(called.getName()) &&
+                    hasTag(called, "RECOVERED_UTILITY_SEMANTICS"))
+                ev.safeNullingAddressSites.add(addr(containing.getEntryPoint()) + " -> " +
+                    addr(called.getEntryPoint()) + " FreeAndNull @ " + addr(site));
+        }
         String ownerType = ownerTypePath(called);
         if ("__thiscall".equals(called.getCallingConventionName()) && receiver != null) {
             recordLibraryContext(receiver, called);
@@ -985,7 +1047,20 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 addr(called.getEntryPoint()) + " parameter " + parameter.getOrdinal() +
                 " as " + type + " @ " + addr(site) +
                 (addressEvidence ? " (address-of global)" : " (global value)"));
+            if (!addressEvidence) {
+                ev.callBoundaryValueTypes.merge(type, 1, Integer::sum);
+                ev.callBoundaryValueFunctions.add(addr(containing.getEntryPoint()));
+                ev.callBoundaryValueSites.add(addr(containing.getEntryPoint()) + " -> " +
+                    addr(called.getEntryPoint()) + " parameter " +
+                    parameter.getOrdinal() + " as " + type + " @ " + addr(site));
+            }
         }
+    }
+
+    private boolean hasTag(Function function, String name) {
+        for (FunctionTag tag : function.getTags())
+            if (name.equals(tag.getName())) return true;
+        return false;
     }
 
     private void recordLibraryContext(GlobalValue value, Function called) {
@@ -1248,14 +1323,39 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             boolean typedStoreDominates = constructorType.isBlank() &&
                 !typedStoreType.isBlank() && !typedStoreConflict;
             boolean anchoredStoreDominates = constructorDominates || typedStoreDominates;
+            String boundaryBytePointerType = inferredBoundaryBytePointerType(ev);
+            boolean boundaryBytePointerDominates = constructorType.isBlank() &&
+                typedStoreType.isBlank() && !boundaryBytePointerType.isBlank();
+            if (boundaryBytePointerDominates) proposedType = boundaryBytePointerType;
             String publishedPointerType = inferredPublishedPointerType(ev);
             boolean publishedPointerDominates = constructorType.isBlank() &&
-                typedStoreType.isBlank() && !publishedPointerType.isBlank();
+                typedStoreType.isBlank() && !boundaryBytePointerDominates &&
+                !publishedPointerType.isBlank();
             if (publishedPointerDominates) proposedType = publishedPointerType;
+            String genericWidthRepairType = inferredGenericPointerWidth(ev);
+            boolean genericWidthRepairDominates =
+                "pointer:/void".equals(currentType) && scriptOwned &&
+                constructorType.isBlank() && typedStoreType.isBlank() &&
+                !boundaryBytePointerDominates && !publishedPointerDominates &&
+                ev.addressCrossObjectSites.isEmpty() &&
+                !genericWidthRepairType.isBlank();
+            if (genericWidthRepairDominates) proposedType = genericWidthRepairType;
+            boolean crossObjectWidthRepairRollback = scriptOwned &&
+                genericUndefinedPointer(data.getDataType()) &&
+                constructorType.isBlank() && typedStoreType.isBlank() &&
+                !boundaryBytePointerDominates && !publishedPointerDominates &&
+                !ev.addressCrossObjectSites.isEmpty();
+            if (crossObjectWidthRepairRollback) proposedType = "pointer:/void";
+            boolean neutralPointerErasesKnownWidth = "pointer:/void".equals(proposedType) &&
+                pointerHasKnownPointeeWidth(data.getDataType()) &&
+                !crossObjectWidthRepairRollback;
+            if (neutralPointerErasesKnownWidth) proposedType = currentType;
             boolean typeConflict = !contextualAnonymous &&
                 (constructorConflict || typedStoreConflict ||
                  narrowCharType.isBlank() && !anchoredStoreDominates &&
-                 !publishedPointerDominates && ev.types.size() > 1);
+                 !boundaryBytePointerDominates && !publishedPointerDominates &&
+                 !genericWidthRepairDominates && !crossObjectWidthRepairRollback &&
+                 ev.types.size() > 1);
             int count = proposedType.isBlank() ? 0 : ev.types.getOrDefault(proposedType, 0);
             int currentTypeCount = ev.types.getOrDefault(currentType, 0);
             boolean currentTypeDominates = currentTypeCount >= 3;
@@ -1308,11 +1408,19 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 context.count >= ev.addressEvidence * 16;
             boolean addressEvidenceCompatible =
                 ev.addressEvidence == 0 || !narrowCharType.isBlank() || contextualAddressSafe ||
+                boundaryBytePointerDominates &&
+                    ev.rawAddressCallSites.size() == ev.safeNullingAddressSites.size() ||
+                genericWidthRepairDominates &&
+                    ev.rawAddressCallSites.size() == ev.safeNullingAddressSites.size() ||
+                crossObjectWidthRepairRollback ||
                 anchoredStoreDominates && proposedType.startsWith("pointer:");
             boolean typeApply = !typeConflict && typeChange && smallSafeType &&
                 currentReplaceable && extentCompatible && addressEvidenceCompatible &&
                 (contextualAnonymous || initializedStringPointer ||
                     !narrowCharType.isBlank() ||
+                    boundaryBytePointerDominates ||
+                    genericWidthRepairDominates ||
+                    crossObjectWidthRepairRollback ||
                     anchoredStoreDominates || publishedPointerDominates ||
                     ev.typedStores >= 1 ||
                     ev.strongCount >= 2 || count >= 3);
@@ -1367,15 +1475,26 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             reasons.add("closed_named_pointer_stores=" + ev.typedStores);
             reasons.add("typed_pointer_return_store_types=" + ev.typedStoreTypes);
             reasons.add("call_boundary_types=" + ev.callBoundaryTypes);
+            reasons.add("value_call_boundary_types=" + ev.callBoundaryValueTypes +
+                "; functions=" + ev.callBoundaryValueFunctions.size());
             reasons.add("constructor_store_types=" + ev.constructorStores);
             reasons.add("library_context_votes=" + ev.libraryContexts);
             reasons.add("pointer_dereferences=" + ev.pointerDereferences +
                 "; functions=" + ev.pointerDerefFunctions.size() +
                 "; widths=" + ev.pointerDerefWidths +
                 "; aligned_dword_geometry=" + ev.pointerDerefWordCompatible);
+            reasons.add("address_cross_object_sites=" +
+                ev.addressCrossObjectSites.size() + "; functions=" +
+                ev.addressCrossObjectFunctions.size());
             reasons.add("pointer_producer_stores=" + ev.pointerProducerStores +
                 "; producer_types=" + ev.pointerProducerTypes +
                 "; producer_sites=" + ev.pointerProducerSites);
+            reasons.add("direct_word_stores=" + ev.directWordStores +
+                "; null_stores=" + ev.nullWordStores +
+                "; unknown_stores=" + ev.unknownWordStores +
+                "; address_call_escapes=" + ev.rawAddressCallSites.size() +
+                "; safe_nulling_address_escapes=" +
+                    ev.safeNullingAddressSites.size());
             if (!ev.untypedReceiverSites.isEmpty())
                 reasons.add("untyped_thiscall_receiver_sites=" +
                     ev.untypedReceiverSites.size() + "; functions=" +
@@ -1393,6 +1512,17 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 reasons.add("exact_typed_pointer_store_dominates_weaker_use_types");
             if (publishedPointerDominates)
                 reasons.add("published_pointer_role_from_exact_store_and_dereference_width");
+            if (boundaryBytePointerDominates)
+                reasons.add("closed_pointer_or_null_stores_and_cross_function_primitive_" +
+                    "pointer_consumers_prove_neutral_byte_buffer");
+            if (genericWidthRepairDominates)
+                reasons.add("script_owned_void_pointer_recovered_to_unanimous_exact_" +
+                    "machine_dereference_width");
+            if (crossObjectWidthRepairRollback)
+                reasons.add("script_owned_generic_pointer_rolled_back_because_address_" +
+                    "arithmetic_crosses_neighboring_global_storage");
+            if (neutralPointerErasesKnownWidth)
+                reasons.add("neutral_pointer_role_preserves_existing_pointee_width");
             if (typeConflict) reasons.add("type_conflict");
             if (!narrowCharType.isBlank())
                 reasons.add("dominant_char_pointer_role_over_neutral_byte_consumers");
@@ -1437,6 +1567,80 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             .filter(entry -> !"/char".equals(entry.getKey()))
             .mapToInt(Map.Entry::getValue).sum();
         return chars >= Math.max(3, alternatives * 4) ? "/char" : "";
+    }
+
+    /**
+     * Recover only the storage role of an allocation-backed global byte buffer.
+     * Every direct machine-word write must be an exact pointer producer or zero;
+     * any address escape must be the independently recovered FreeAndNull contract.
+     * Consumer evidence must span functions and consist solely of primitive pointer
+     * views, with at least one byte-wide view.  Mixed primitive widths select byte *:
+     * they prove byte-addressable storage, not one semantic element type.
+     */
+    private String inferredBoundaryBytePointerType(Evidence evidence) {
+        if (evidence.directWordStores < 1 || evidence.pointerProducerStores < 1 ||
+                evidence.unknownWordStores != 0 ||
+                evidence.directWordStores != evidence.pointerProducerStores +
+                    evidence.nullWordStores ||
+                evidence.rawAddressCallSites.size() !=
+                    evidence.safeNullingAddressSites.size() ||
+                evidence.callBoundaryValueSites.size() < 3 ||
+                evidence.callBoundaryValueFunctions.size() < 2 ||
+                evidence.callBoundaryValueTypes.isEmpty()) return "";
+        Set<Integer> widths = new TreeSet<>();
+        boolean allChar = true;
+        for (String type : evidence.callBoundaryValueTypes.keySet()) {
+            if (!type.startsWith("pointer:")) return "";
+            String pointee = type.substring("pointer:".length());
+            if ("/void".equals(pointee)) {
+                allChar = false;
+                continue;
+            }
+            DataType base = dataTypes.getDataType(pointee);
+            while (base instanceof TypeDef typedef) base = typedef.getBaseDataType();
+            if (base == null || base instanceof Structure || base instanceof Pointer ||
+                    base.getLength() < 1) return "";
+            widths.add(base.getLength());
+            if (!"/char".equals(pointee)) allChar = false;
+        }
+        if (!widths.contains(1)) return "";
+        return allChar && widths.equals(Set.of(1)) ?
+            "pointer:/char" : "pointer:/byte";
+    }
+
+    /**
+     * A neutral void pointer records only indirection and destroys useful C indexing.
+     * Repair only our own previously generated void pointer when every exact machine
+     * dereference agrees on one primitive width across several functions.  undefinedN
+     * is deliberately a storage-width view, not a semantic element assertion.
+     */
+    private String inferredGenericPointerWidth(Evidence evidence) {
+        if (evidence.pointerDereferences < 3 ||
+                evidence.pointerDerefFunctions.size() < 2 ||
+                evidence.pointerDerefWidths.size() != 1) return "";
+        int width = evidence.pointerDerefWidths.keySet().iterator().next();
+        return switch (width) {
+            case 1 -> "pointer:/undefined1";
+            case 2 -> "pointer:/undefined2";
+            case 4 -> "pointer:/undefined4";
+            case 8 -> "pointer:/undefined8";
+            default -> "";
+        };
+    }
+
+    private boolean pointerHasKnownPointeeWidth(DataType type) {
+        if (!(type instanceof Pointer pointer)) return false;
+        DataType pointee = pointer.getDataType();
+        while (pointee instanceof TypeDef typedef) pointee = typedef.getBaseDataType();
+        return pointee != null && !"/void".equals(pointee.getPathName()) &&
+            pointee.getLength() > 0;
+    }
+
+    private boolean genericUndefinedPointer(DataType type) {
+        if (!(type instanceof Pointer pointer)) return false;
+        DataType pointee = pointer.getDataType();
+        while (pointee instanceof TypeDef typedef) pointee = typedef.getBaseDataType();
+        return pointee != null && Undefined.isUndefined(pointee);
     }
 
     private String inferredPublishedPointerType(Evidence evidence) {
@@ -2017,18 +2221,24 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         final Map<String, Integer> types = new TreeMap<>(), names = new TreeMap<>(),
             constructorStores = new TreeMap<>(), typedStoreTypes = new TreeMap<>(),
             callBoundaryTypes = new TreeMap<>(), libraryContexts = new TreeMap<>(),
-            pointerProducerTypes = new TreeMap<>();
+            callBoundaryValueTypes = new TreeMap<>(), pointerProducerTypes = new TreeMap<>();
         final Map<Integer, Integer> pointerDerefWidths = new TreeMap<>();
         final Set<String> sites = new TreeSet<>(), strongNames = new TreeSet<>(),
             typedStoreSites = new TreeSet<>(), callBoundarySites = new TreeSet<>(),
+            callBoundaryValueSites = new TreeSet<>(),
+            callBoundaryValueFunctions = new TreeSet<>(),
             initializedStringNames = new TreeSet<>(), pointerDerefSites = new TreeSet<>(),
             pointerDerefFunctions = new TreeSet<>(), bitStringSites = new TreeSet<>(),
             bitStringFunctions = new TreeSet<>(), untypedReceiverSites = new TreeSet<>(),
             untypedReceiverFunctions = new TreeSet<>(),
-            untypedReceiverCallees = new TreeSet<>(), pointerProducerSites = new TreeSet<>();
+            untypedReceiverCallees = new TreeSet<>(), pointerProducerSites = new TreeSet<>(),
+            rawAddressCallSites = new TreeSet<>(), safeNullingAddressSites = new TreeSet<>();
+        final Set<String> addressCrossObjectSites = new TreeSet<>(),
+            addressCrossObjectFunctions = new TreeSet<>();
         int strongCount, addressEvidence, typedStores, libraryContextCalls,
             initializedStringPointers, cstringScans, pointerDereferences,
-            pointerProducerStores;
+            pointerProducerStores, directWordStores, nullWordStores,
+            unknownWordStores;
         boolean pointerDerefWordCompatible = true;
     }
     private record PointerOrigin(String type, String reason) {}

@@ -24,6 +24,7 @@ void __fastcall FUN_00627700(AnonShape_00627700_6F319351 *param_1)
       local_24.arg1.words.high = param_1->field_02A5;
     }
     local_24.id = 0x5de3;
+    /* ST_CALLSITE[00627768]: CALL dword ptr [EDX] */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;

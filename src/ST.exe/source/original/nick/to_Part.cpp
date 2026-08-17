@@ -95,7 +95,9 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
     if (puVar11[3] != 2) {
       pSVar12 = local_10;
       memmove(pSVar12, puVar11, 0x46); /* compiler REP MOVS byte copy */
+      /* ST_CALLSITE[00627F75]: CALL 0x004012e4; direct=004012E4 STParticleC::sub_00629F90 */
       st::fn_004012E4(local_10,local_10,g_playSystem_00802A38->field_00E4);
+      /* ST_CALLSITE[00627F85]: CALL 0x00405727; direct=00405727 STParticleC::InitVisibelFlight */
       st::fn_00405727(this_00,(uint)(byte)this_00->field_00D6);
       if (this_00->field_003C != 0) {
         this_00->field_00C2 = CASE_1;
@@ -118,9 +120,11 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
+    /* ST_CALLSITE[00628014]: CALL 0x0040396d; direct=0040396D STParticleC::sub_0062AEF0 */
     st::fn_0040396D(local_10,st::pointer_boundary_cast<undefined4 *>(puVar11));
     memset(&this_00->field_0xd7, 0, 0x2d); /* compiler bulk-zero initialization */
     if (this_00->field_00C2 == CASE_3) {
+      /* ST_CALLSITE[00628036]: CALL 0x004030cb; direct=004030CB STParticleC::sub_0062A860 */
       st::fn_004030CB(this_00);
       this_00->field_00C2 = CASE_0;
       g_currentExceptionFrame = local_7c.previous;
@@ -134,14 +138,17 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
+    /* ST_CALLSITE[0062806F]: CALL 0x00405727; direct=00405727 STParticleC::InitVisibelFlight */
     st::fn_00405727(this_00,1);
     g_currentExceptionFrame = local_7c.previous;
     return 0;
   }
   if ((local_10->field_00D6 == '\0') && (local_10->field_0040 != '\0')) {
+    /* ST_CALLSITE[0062809D]: CALL 0x004013d4; direct=004013D4 STParticleC::sub_0062B4A0 */
     bVar6 = st::fn_004013D4(local_10);
     this_00->field_00D6 = bVar6;
     if (bVar6 != 0) {
+      /* ST_CALLSITE[006280AF]: CALL 0x004058d0; direct=004058D0 STParticleC::sub_00629E60 */
       st::fn_004058D0(this_00,0);
     }
   }
@@ -197,6 +204,7 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
     iVar9 = this_00->field_0046;
     iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
     if (((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+       /* ST_CALLSITE[0062826B]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
        ((st::fn_00403F53
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
                     &local_1c,&local_20), (int)local_c < 0 ||
@@ -220,12 +228,16 @@ LAB_00628286:
     }
     break;
   case CASE_2:
+    /* ST_CALLSITE[00628308]: CALL 0x00404aca; direct=00404ACA STParticleC::sub_0062A370 */
     iVar7 = st::fn_00404ACA(this_00,g_playSystem_00802A38->field_00E4);
     if (iVar7 < 1) {
+      /* ST_CALLSITE[00628550]: CALL 0x004046b5; direct=004046B5 STParticleC::sub_00629830 */
       st::fn_004046B5(this_00);
+      /* ST_CALLSITE[00628557]: CALL 0x004013d4; direct=004013D4 STParticleC::sub_0062B4A0 */
       bVar6 = st::fn_004013D4(this_00);
       this_00->field_00D6 = bVar6;
       if (bVar6 == 0) {
+        /* ST_CALLSITE[00628574]: CALL 0x00405d53; direct=00405D53 STParticleC::InitVisibelDeton */
         st::fn_00405D53(this_00,0);
         if (-1 < (int)this_00->field_00C6) {
           st::fn_006E8BA0(g_sT3DSMAPContext_00807598,this_00->field_00C6);
@@ -233,6 +245,7 @@ LAB_00628286:
         }
       }
       else {
+        /* ST_CALLSITE[0062856A]: CALL 0x00405d53; direct=00405D53 STParticleC::InitVisibelDeton */
         st::fn_00405D53(this_00,1);
       }
       this_00->field_00C2 = CASE_3;
@@ -253,6 +266,7 @@ LAB_00628286:
       else {
         iVar10 = this_00->field_004E;
       }
+      /* ST_CALLSITE[00628385]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       st::fn_00401433
                 (g_traksClass_00802A7C,1,0,0,this_00->field_0046,this_00->field_004A,iVar10,0,0,0,0,
                  0,0,-1,0,0);
@@ -303,6 +317,7 @@ LAB_006283bd:
     iVar9 = this_00->field_0046;
     iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+        /* ST_CALLSITE[00628526]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
         (st::fn_00403F53
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
                     &local_24,&local_28), -1 < (int)local_c)) && ((int)local_c < 5))
@@ -327,6 +342,7 @@ LAB_006282e0:
     }
     uVar14 = this_00->field_00B2;
     if (this_00->field_00BA <= (int)uVar14) {
+      /* ST_CALLSITE[00628676]: CALL 0x004030cb; direct=004030CB STParticleC::sub_0062A860 */
       st::fn_004030CB(this_00);
       this_00->field_00C2 = CASE_0;
       g_currentExceptionFrame = local_7c.previous;
@@ -364,6 +380,7 @@ LAB_006282e0:
         iVar9 = this_00->field_0046;
         iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
         if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+            /* ST_CALLSITE[006287E8]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             (st::fn_00403F53
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
                         &local_2c,&local_30), (int)local_c < 0)) || (4 < (int)local_c)) {
@@ -452,6 +469,7 @@ LAB_006282e0:
     iVar9 = this_00->field_0046;
     iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+        /* ST_CALLSITE[00628A6E]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
         (st::fn_00403F53
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
                     &local_34,&local_38), (int)local_c < 0)) || (4 < (int)local_c)) {
@@ -712,6 +730,7 @@ LAB_00629242:
     iVar10 = pSVar8->field_0046;
     iVar10 = STBiasedDiv16(iVar10, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+        /* ST_CALLSITE[006294B9]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
         (st::fn_00403F53
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar10,iVar12,
                     &local_28,&local_2c), (int)local_14 < 0)) || (4 < (int)local_14)) {
@@ -851,6 +870,7 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
       iVar9 = pSVar7->field_0046;
       iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+          /* ST_CALLSITE[00629AE8]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (st::fn_00403F53
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar11,
                       &local_14,&local_10), (int)local_c < 0)) || (4 < (int)local_c)) {

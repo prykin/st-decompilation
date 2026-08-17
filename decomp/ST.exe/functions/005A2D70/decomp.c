@@ -41,13 +41,16 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
         iVar4 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
         this_00->field_0494 = 0xffff;
+        /* ST_CALLSITE[005A2DE5]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
         CursorClassTy::SetGCType(this_00,CASE_0,iVar4,iVar2);
+        /* ST_CALLSITE[005A2DFA]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
         this_00->field_00D2 = 0;
         this_00->field_04DF = -1;
       }
       FUN_006b5f80((int *)g_ddxContext_008075A8,0x1e9,0x5e,0x124,0xf3);
       this_01 = local_8;
+      /* ST_CALLSITE[005A2E4B]: CALL 0x00402298; direct=00402298 PutDDXClip */
       PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',local_8->field_1E9A);
       this_01->field_1EA6->count = 0;
       local_b = 1;

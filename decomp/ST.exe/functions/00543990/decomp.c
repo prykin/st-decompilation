@@ -43,6 +43,7 @@ void __thiscall CursorClassTy::ReInitCursorSpr(CursorClassTy *this,int param_1)
               ((SpriteClassTy *)this_00,(int *)g_ddxContext_008075A8,0,cVar4,puVar5,iVar2,
                (uint)(param_1 != 7));
     this_01->field_0494 = CASE_58;
+    /* ST_CALLSITE[00543A1E]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
     SetGCType(this_01,CASE_0,this_01->field_0034,this_01->field_0038);
     if (this_01->field_001C != 0xffffffff) {
       FUN_006b3af0((int *)this_01->field_0060,this_01->field_001C);

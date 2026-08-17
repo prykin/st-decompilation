@@ -4,7 +4,7 @@
 void __fastcall FUN_0062fe00(STJellyGunC *param_1)
 
 {
-  AnonShape_004AB810_8E5693D5 *pAVar1;
+  STT3DSprC *pSVar1;
   int iVar2;
   int iVar3;
   int *piVar4;
@@ -14,19 +14,21 @@ void __fastcall FUN_0062fe00(STJellyGunC *param_1)
   do {
     if (*piVar4 != 0) {
       if (*(int *)(*piVar4 + 0x10) == 0) {
-        pAVar1 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-        if (pAVar1 == nullptr) {
-          pAVar1 = nullptr;
+        pSVar1 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+        if (pSVar1 == nullptr) {
+          pSVar1 = nullptr;
         }
         else {
-          pAVar1 = thunk_FUN_004ab810(pAVar1);
+          /* ST_CALLSITE[0062FE2A]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+          pSVar1 = STT3DSprC::STT3DSprC(pSVar1);
         }
-        *(AnonShape_004AB810_8E5693D5 **)(*piVar4 + 0x10) = pAVar1;
+        *(STT3DSprC **)(*piVar4 + 0x10) = pSVar1;
       }
       iVar2 = thunk_FUN_0062f080(param_1,iVar3,*(undefined4 *)(*piVar4 + 0xc),
                                  *(undefined4 *)(*piVar4 + 4));
       if (iVar2 == 0) {
         if (param_1->field_01E1 == 1) {
+          /* ST_CALLSITE[0062FE59]: CALL 0x00405885; direct=00405885 STRubbishC::sub_0062F900 */
           STRubbishC::sub_0062F900((STRubbishC *)param_1);
         }
         else {

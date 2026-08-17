@@ -46,6 +46,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
     switch(*(uint *)param_1) {
     case 0x6a:
       local_8->field_009D = *(undefined4 *)&param_1->field_0x8;
+      /* ST_CALLSITE[0068FD63]: CALL 0x00403e68; direct=00403E68 AiTactClassTy::sub_00690230 */
       sub_00690230(local_8,(uint *)param_1);
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -58,6 +59,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
         uStack_2f = param_1->field_0009;
         uStack_2e = (undefined2)param_1->field_000A;
         uStack_2c = (undefined2)((uint)param_1->field_000A >> 0x10);
+        /* ST_CALLSITE[0068FDBC]: CALL 0x00403e68; direct=00403E68 AiTactClassTy::sub_00690230 */
         sub_00690230(local_8,local_3c);
         g_currentExceptionFrame = local_80.previous;
         return 0;
@@ -65,6 +67,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
       break;
     case 0x6e:
     case 0x74:
+      /* ST_CALLSITE[0068FDD8]: CALL 0x00403e68; direct=00403E68 AiTactClassTy::sub_00690230 */
       sub_00690230(local_8,(uint *)param_1);
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -72,6 +75,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
       iVar4 = thunk_FUN_0068e850(local_8,*(int *)((int)&param_1->field_000A + 2));
       iVar8 = *(int *)((int)&param_1->field_000A + 2);
       *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar4;
+      /* ST_CALLSITE[0068FE0C]: CALL 0x00401d0c; direct=00401D0C AiTactClassTy::sub_0068E610 */
       iVar3 = sub_0068E610(this_00,iVar8);
       *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar3;
       g_currentExceptionFrame = local_80.previous;
@@ -96,6 +100,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
             local_30 = (undefined1)uVar1;
             uStack_2f = (undefined1)((uint)uVar1 >> 8);
             uStack_2e = (undefined2)((uint)uVar1 >> 0x10);
+            /* ST_CALLSITE[0068FE8C]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
             AiFltClassTy::GetAiMess(element_00a5->field_0004,local_3c);
             if (0 < (int)local_3c[2]) {
               *(uint *)&param_1->field_0x8 = local_3c[2];
@@ -126,6 +131,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
           }
           if (((undefined4 *)element_00a5 != nullptr) &&
              (element_00a5->field_0004 != nullptr)) {
+            /* ST_CALLSITE[0068FF0E]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
             AiFltClassTy::GetAiMess(element_00a5->field_0004,(uint *)param_1);
             thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(element_00a5->field_0004 + 8));
             DArrayRemoveAt((DArrayTy *)this_00->field_00A5,uVar9);
@@ -139,16 +145,19 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
     case 0x72:
       iVar8 = *(int *)&param_1->field_0x8;
       if (iVar8 == 0) {
+        /* ST_CALLSITE[0068FF9F]: CALL 0x00403e04; direct=00403E04 AiTactClassTy::GiveObjByClaim */
         GiveObjByClaim(local_8,*(uint **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       if (iVar8 == 1) {
+        /* ST_CALLSITE[0068FF80]: CALL 0x004040f2; direct=004040F2 AiTactClassTy::GiveObjByFltType */
         GiveObjByFltType(local_8,*(uint **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       if (iVar8 == 2) {
+        /* ST_CALLSITE[0068FF61]: CALL 0x004057ae; direct=004057AE AiTactClassTy::GiveObjByGrpNum */
         GiveObjByGrpNum(local_8,*(DArrayTy **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
@@ -168,6 +177,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
           }
           if ((((undefined4 *)element_00a5 != nullptr) &&
               (element_00a5->field_0004 != nullptr)) &&
+             /* ST_CALLSITE[0068FFEA]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
              (AiFltClassTy::GetAiMess(element_00a5->field_0004,(uint *)param_1),
              '\0' < (char)param_1->field_0x8)) {
             g_currentExceptionFrame = local_80.previous;

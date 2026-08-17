@@ -120,6 +120,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_ec = 0;
     local_c8 = 1;
     local_124 = local_164;
+    /* ST_CALLSITE[005426E6]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
     if ((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
@@ -137,6 +138,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_11c = 0xb906;
     local_d0 = 0x271a;
     local_f4 = 0x271a;
+    /* ST_CALLSITE[00542771]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
     local_d0 = 0x2718;
@@ -145,6 +147,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_184[0] = 1;
     local_15c = 0xb901;
     local_11c = 0xb902;
+    /* ST_CALLSITE[005427CB]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
     if ((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
@@ -160,6 +163,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 2) + 0x128;
     local_15c = 0xb903;
     local_11c = 0xb904;
+    /* ST_CALLSITE[0054284D]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
     local_184[3] = DAT_00806734 + -0x1a;
@@ -176,71 +180,94 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_f4 = 0x2739;
     local_15c = 0xb907;
     local_11c = 0xb908;
+    /* ST_CALLSITE[005428F5]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[0054290E]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x11f,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542927]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x120,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542940]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x122,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542959]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x123,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542972]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x125,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[0054298B]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x127,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[005429A4]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x128,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[005429BD]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x12a,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
     if (DAT_0080874e == '\x03') {
+      /* ST_CALLSITE[005429DF]: CALL dword ptr [EDX + 0x8] */
       (*this_00->vtable->CreateObject)
                 ((SystemClassTy *)this_00,0x151,nullptr,nullptr,0,1);
+      /* ST_CALLSITE[005429EF]: CALL dword ptr [EAX + 0x8] */
       (*this_00->vtable->CreateObject)
                 ((SystemClassTy *)this_00,0x159,nullptr,nullptr,0,1);
     }
+    /* ST_CALLSITE[005429FF]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x149,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542A18]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x148,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542A31]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x14a,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542A4A]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x153,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542A63]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x155,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542A7C]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x154,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542A95]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x156,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542AAE]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,299,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542AC7]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x12e,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542AE0]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x14b,nullptr,nullptr,0,1);
     thunk_FUN_0056a500();
+    /* ST_CALLSITE[00542AF6]: CALL dword ptr [EDX + 0x10] */
     this_00->vfunc_10(0x201,0);
     thunk_FUN_0056a500();
     if (g_helpPanel_00801690 != nullptr) {
+      /* ST_CALLSITE[00542B0C]: CALL 0x00404322; direct=00404322 HelpPanelTy::sub_0051DA70 */
       HelpPanelTy::sub_0051DA70(g_helpPanel_00801690);
     }
     thunk_FUN_0056a500();

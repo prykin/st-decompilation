@@ -12,6 +12,7 @@ void __fastcall FUN_0074e310(int *param_1)
 
   piVar1 = (int *)*param_1;
   if (piVar1 != nullptr) {
+    /* ST_CALLSITE[0074E319]: CALL dword ptr [ECX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 8))(piVar1);
   }

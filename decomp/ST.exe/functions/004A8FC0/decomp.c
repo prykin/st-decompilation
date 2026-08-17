@@ -115,7 +115,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     puVar7 = puVar7 + 2;
   }
   *puVar7 = *puVar6;
-  *(char *)(puVar7 + 1) = (char)puVar6[1];
+  ((char *)puVar7)[1] = (char)puVar6[1];
   Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
   lVar10 = Library::MSVCRT::__ftol();
   ST3DSMAPContext::sub_006DC050

@@ -28,6 +28,7 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
     do {
       DArrayGetElement((DArrayTy *)this->field_0029,index,local_8);
       if (STPiece<0,2>(local_8) != 0xffff) {
+        /* ST_CALLSITE[004A86D2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_00 = STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_8),CASE_1);
         if (this_00 == nullptr) {
@@ -40,7 +41,9 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x1743);
         }
+        /* ST_CALLSITE[004A871E]: CALL dword ptr [EDX + 0x2c] */
         iVar4 = this_00->vfunc_2C();
+        /* ST_CALLSITE[004A872A]: CALL dword ptr [EAX + 0x2c] */
         if ((iVar4 == 0x16) || (iVar4 = this_00->vfunc_2C(), iVar4 == 0x25)) {
           thunk_FUN_00494160(this_00,param_1);
         }

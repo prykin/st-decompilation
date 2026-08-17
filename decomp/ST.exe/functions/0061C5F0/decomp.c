@@ -22,11 +22,13 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
   *param_1 = 0;
   if ((STField<char>(this,0x14b) != '\0') && (STField<short>(this,0x149) != -1)) {
     SVar2 = thunk_FUN_00601db0(STField<Global_sub_00601DB0_param_1Enum>(this,0x123));
+    /* ST_CALLSITE[0061C644]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,STField<char>(this,0x11f),
                          STField<ushort>(this,0x149),SVar2);
     if (this_00 != nullptr) {
       STField<STGameObjC *>(this,0x139) = this_00;
+      /* ST_CALLSITE[0061C667]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0((STFishC *)this_00,&local_a,&local_e,&local_10);
       iVar5 = STField<int>(this,0x127);
       iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
@@ -51,6 +53,7 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
         STField<short>(this,0x137) = local_18;
         STField<undefined4>(this,0x145) = this_00->field_0018;
         STField<undefined2>(this,0x149) = this_00->field_0032;
+        /* ST_CALLSITE[0061C7EB]: CALL dword ptr [EDX + 0x2c] */
         uVar4 = this_00->vfunc_2C();
         STField<undefined4>(this,0x123) = uVar4;
         iVar5 = FUN_006acf0d(STField<int>(this,0x9f),STField<int>(this,0xa3),

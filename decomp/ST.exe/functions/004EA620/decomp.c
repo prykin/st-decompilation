@@ -24,6 +24,7 @@ undefined4 __thiscall TLOBaseTy::sub_004EA620(TLOBaseTy *this)
     this->field_046C = 0;
     this->field_0470 = 0;
     if (this->field_0494 != 0) {
+      /* ST_CALLSITE[004EA67E]: CALL 0x00401dd4; direct=00401DD4 TLOFakeTy::sub_004D0A80 */
       TLOFakeTy::sub_004D0A80(g_tLOFake_00800BCC,this->field_0480,this->field_0484,this->field_0488);
       this->field_0494 = 0;
     }

@@ -48,6 +48,7 @@ undefined4 __fastcall FUN_004d9350(TLOBaseTy *param_1)
     param_1->field_04E0[1] = uVar1;
     uVar6 = iVar5 + sVar2;
     param_1->field_04E0[2] = uVar6;
+    /* ST_CALLSITE[004D94A6]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     STT3DSprC::sub_004AD3C0
               ((STT3DSprC *)param_1->field_05FF,
                (float)(int)param_1->field_04E0[0] * _DAT_007904f8 * _DAT_007904f0,
@@ -57,11 +58,14 @@ undefined4 __fastcall FUN_004d9350(TLOBaseTy *param_1)
       return 0;
     }
     if (param_1->field_04D0 == CASE_4) {
+      /* ST_CALLSITE[004D94C9]: CALL 0x00403efe; direct=00403EFE TLOBaseTy::sub_004C4550 */
       TLOBaseTy::sub_004C4550(param_1,nullptr);
+      /* ST_CALLSITE[004D94D2]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
       TLOBaseTy::RotateSpr(param_1,0);
       return 0;
     }
   }
+  /* ST_CALLSITE[004D9506]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
   TLOBaseTy::RotateSpr(param_1,0);
   return 0;
 }

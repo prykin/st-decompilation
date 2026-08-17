@@ -42,6 +42,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 004A4240	STGroupBoatC::ChangeMDNotify	STGroupBoatC	0x10	0	0	0	0	0	47
 004A4D60	STGroupBoatC::ChangeMDNotify	STGroupBoatC	0x14	0	0	0	0	0	7
 004A8920	OpticClassC::GetMessage	OpticClassC	0x0	0	0	0	0	0	22
+004AD550	FUN_004ad550	STT3DSprC	0x0	0	1	1	0	0	2
 004B9FA0	TLOBaseTy::GetMessage	TLOBaseTy	0x0	0	0	0	0	0	285
 004BE110	FUN_004be110	TLOBaseTy	0xC	0	0	0	0	0	1
 004BE1A0	FUN_004be1a0	TLOBaseTy	0xEC	0	0	0	0	0	1

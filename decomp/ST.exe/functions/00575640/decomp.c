@@ -33,7 +33,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
     do {
       iVar14 = *local_18;
       if (((iVar14 != 0) && (*(short *)(iVar14 + 8) != 0)) &&
-         ((*(byte *)(iVar14 + 0x4f) & 0x40) == 0)) {
+         ((((byte *)iVar14)[0x4f] & 0x40) == 0)) {
         uVar8 = 0x8000;
         local_8 = 8;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -43,7 +43,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
                            ((int)*(short *)(iVar14 + 6) * (int)*psVar2 +
                             (*(short *)(iVar14 + 8) + -1) * iVar4 + (int)*(short *)(iVar14 + 4)) * 2
                            );
-        if (*(char *)(iVar14 + 0x48) != '\0') {
+        if (((char *)iVar14)[0x48] != '\0') {
           do {
             uVar1 = *(uint *)(iVar14 + 0x2c);
             if ((local_8 & uVar1) != 0) {
@@ -90,7 +90,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
             param_1 = (short *)((int)param_1 >> 1);
             local_8 = (int)local_8 >> 1;
             uVar8 = (int)uVar8 >> 1;
-          } while (local_14 < (int)(uint)*(byte *)(iVar14 + 0x48));
+          } while (local_14 < (int)(uint)((byte *)iVar14)[0x48]);
         }
       }
       local_1c = local_1c + 1;

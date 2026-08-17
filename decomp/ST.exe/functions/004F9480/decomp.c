@@ -35,6 +35,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int param_1,int param_2,undefin
       }
       thunk_FUN_005411a0(local_8,pcVar2,"@ %s@ ");
     }
+    /* ST_CALLSITE[004F9510]: CALL 0x0040311b; direct=0040311B CPanelTy::OutText */
     OutText(local_c,(int *)&local_8,param_3);
     g_currentExceptionFrame = local_50.previous;
     return;

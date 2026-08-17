@@ -49,6 +49,7 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
           local_c = 0xffff;
           local_a = (undefined2)index;
           Library::DKW::TBL::DArrayAppend(array,&local_c);
+          /* ST_CALLSITE[00499AA8]: CALL 0x00404985; direct=00404985 STGroupBoatC::ReMakePVecAndTgtList */
           ReMakePVecAndTgtList(this_00,array);
           DArrayDestroy(array);
           break;

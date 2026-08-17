@@ -6,6 +6,7 @@ undefined4 * __fastcall FUN_00609950(STGroupBoatC *param_1)
 {
   undefined4 *puVar2;
 
+  /* ST_CALLSITE[00609954]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)param_1);
   param_1->vtable = (STGroupBoatCVTable *)&VTable_0079CC28;
   if (param_1 == nullptr) {

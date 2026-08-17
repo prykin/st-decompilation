@@ -18,7 +18,7 @@ void __thiscall st::fn_0053A540(PlayPanelTy *this)
   int *piVar6;
   bool bVar7;
 
-  puVar1 = st::pointer_boundary_cast<undefined1 *>(&this->field_0x18);
+  puVar1 = &this->field_0x18;
   memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
   this->field_0028 = 0x28;
   if (DAT_00808aaf < 9) {
@@ -66,6 +66,7 @@ void __thiscall st::fn_0053A540(PlayPanelTy *this)
     bVar2 = bVar2 + 1;
     piVar6 = piVar6 + 1;
   } while (bVar2 < 8);
+  /* ST_CALLSITE[0053A64E]: CALL 0x00403242; direct=00403242 PlayPanelTy::PaintPlayPanel */
   st::fn_00403242(this);
   return;
 }

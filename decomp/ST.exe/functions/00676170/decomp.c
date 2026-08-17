@@ -38,6 +38,7 @@ uint * __cdecl _GetStaffGrpExch(undefined4 param_1)
     this = thunk_FUN_0042b760((char)param_1,0);
   }
   if (this != nullptr) {
+    /* ST_CALLSITE[006761C1]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
     puVar2 = STGroupC::GetGroupContent((STGroupC *)this);
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;

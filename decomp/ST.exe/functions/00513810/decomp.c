@@ -40,6 +40,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
         local_c->field_0030 = (undefined2)iVar5;
         local_c->field_0032 = STPiece<2,2>(iVar5);
         if (g_cursorClass_00802A30 != nullptr) {
+          /* ST_CALLSITE[0051388D]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_c->field_0x18);
         }
@@ -47,7 +48,9 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
       HVar1 = this_00->field_01A2;
       if (HVar1 != 0) {
         if (HVar1 == CASE_6) {
+          /* ST_CALLSITE[005138BB]: CALL 0x00405e61; direct=00405E61 HelpPanelTy::TTreeProc */
           TTreeProc(this_00,this_00->field_01AB,'\0');
+          /* ST_CALLSITE[005138C2]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
           PutToSHlp(this_00);
           g_currentExceptionFrame = local_50.previous;
           return;
@@ -62,6 +65,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
                  (byte *)this_00->field_01DC,0,0x21,0x16,0x1b8,0x118);
+      /* ST_CALLSITE[0051390D]: CALL 0x00401acd; direct=00401ACD HelpPanelTy::CreateList */
       CreateList(this_00);
       if (this_00->field_01A2 == '\0') {
         local_8 = (void *)this_00->field_01B7;

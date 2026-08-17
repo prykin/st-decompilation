@@ -101,6 +101,7 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
     }
     else {
       DAT_008087b5 = 0;
+      /* ST_CALLSITE[005DC1E1]: CALL 0x004025b3; direct=004025B3 STAppC::sub_0056EF50 */
       STAppC::sub_0056EF50((STAppC *)&DAT_00807620);
       pcVar8 = &CHAR_00h_0080c3c3;
       for (iVar9 = 0x41; iVar9 != 0; iVar9 = iVar9 + -1) {
@@ -142,18 +143,22 @@ LAB_005dc22d:
       this_01->field_0548 = &pDVar5_mg0->flags;
       puVar5 = &this_01->field_003C;
       pcVar6_mg1 = LoadResourceString(0x2347,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[005DC2DF]: CALL EBX */
       wsprintfA(puVar5,"&2 %s:",pcVar6_mg1);
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,puVar5);
+      /* ST_CALLSITE[005DC2FC]: CALL EBX */
       wsprintfA(puVar5,"&0 %s",&CHAR_00h_0080c3c3);
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,puVar5);
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,&CHAR___007c3b5c);
       uVar7 = _DAT_008087c4 & 0xffff;
       uVar10 = (uint)DAT_008087c2;
       pcVar6_mg2 = LoadResourceString(0x2344,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[005DC34C]: CALL EBX */
       wsprintfA(puVar5,"&2 %s: &0%d&2x&0%d",pcVar6_mg2,uVar10,uVar7);
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,puVar5);
       uVar7 = _DAT_008087c4 >> 0x10 & 0xff;
       pcVar6_mg3 = LoadResourceString(0x2345,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[005DC37F]: CALL EBX */
       wsprintfA(puVar5,"&2 %s: &0%d",pcVar6_mg3,uVar7);
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,puVar5);
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,&CHAR___007c3b5c);
@@ -172,6 +177,7 @@ LAB_005dc22d:
       case '\x10':
       case '\x13':
         pcVar6_mg4 = LoadResourceString(0x2346,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[005DC3DB]: CALL EBX */
         wsprintfA(puVar5,"&2 %s:",pcVar6_mg4);
         Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,puVar5);
         Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,&CHAR___007c3b5c);
@@ -225,6 +231,7 @@ LAB_005dc430:
       memset(&local_58, 0, 0x1a); /* compiler bulk-zero initialization */
       STPiece<0,2>(local_58) = 1;
       STPiece<2,2>(local_58) = 1;
+      /* ST_CALLSITE[005DC541]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
       MMsgTy::StatePanel(this_00,(int)&local_58);
     }
   }

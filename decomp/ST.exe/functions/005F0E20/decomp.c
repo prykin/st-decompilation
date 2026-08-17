@@ -12,6 +12,7 @@ undefined4 __thiscall FUN_005f0e20(void *this,undefined4 param_1,int *param_2)
   if ((param_2 != nullptr) && (this = (void *)(uint)DAT_0080874d, (void *)param_2[9] == this)) {
     this = (void *)param_2[8];
     if (this == (void *)0x14) {
+      /* ST_CALLSITE[005F0E55]: CALL dword ptr [EDX + 0xec] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar1 = (**(code **)(*param_2 + 0xec))();
       this = nullptr;
@@ -20,6 +21,7 @@ undefined4 __thiscall FUN_005f0e20(void *this,undefined4 param_1,int *param_2)
       }
     }
     else if ((this == (void *)0x3e8) || (this == (void *)0x3e9)) {
+      /* ST_CALLSITE[005F0E79]: CALL dword ptr [EAX + 0xec] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar1 = (**(code **)(*param_2 + 0xec))();
       this = nullptr;

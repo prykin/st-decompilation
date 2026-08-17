@@ -34,10 +34,12 @@ undefined4 __fastcall st::fn_00660010(AiFltClassTy *param_1)
   }
   iVar4 = 0;
 LAB_00660050:
+  /* ST_CALLSITE[00660063]: CALL 0x004038e1; direct=004038E1 AiFltClassTy::sub_0065FA60 */
   array = (DArrayTy *)st::fn_004038E1(param_1,iVar4,(sVar1 != 3) - 1 & 2,nullptr);
   if (array == nullptr) {
     return 0xfffffffe;
   }
+  /* ST_CALLSITE[0066007B]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
   uVar3 = st::fn_0040343B(param_1);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (CONCAT22(extraout_var,uVar3) == 0) {
@@ -51,6 +53,7 @@ LAB_00660050:
         local_14 = 1;
         local_10 = nullptr;
         local_c = 0;
+        /* ST_CALLSITE[006600EE]: CALL dword ptr [EAX + 0x8] */
         this->sub_00498D20(0x11,(short)&local_14);
         uVar2 = local_8;
         st::fn_006AE110(array);
@@ -58,6 +61,7 @@ LAB_00660050:
       }
       local_14 = 0;
       local_10 = array;
+      /* ST_CALLSITE[00660118]: CALL dword ptr [EDX + 0x8] */
       this->sub_00498D20(4,(short)&local_14);
       uVar2 = local_8;
       st::fn_006AE110(array);
@@ -84,6 +88,7 @@ undefined4 __thiscall st::fn_00660420(void *this,undefined4 param_1)
   {
     this_00 = st::fn_00405CF9(STField<char>(this,0x24),STField<ushort>(this,0x7d));
     if (this_00 != nullptr) {
+      /* ST_CALLSITE[00660471]: CALL dword ptr [EDX + 0x8] */
       this_00->sub_00498D20(2,(short)local_1c);
       return 0;
     }
@@ -106,6 +111,7 @@ undefined4 __fastcall st::fn_006604B0(AiFltClassTy *param_1,undefined4 param_2,u
   local_c = 0;
   local_8 = 0;
   param_1->field_00A7 = 0;
+  /* ST_CALLSITE[006604CA]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
   uVar1 = st::fn_0040343B(param_1);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (CONCAT22(extraout_var,uVar1) != 0) {
@@ -113,6 +119,7 @@ undefined4 __fastcall st::fn_006604B0(AiFltClassTy *param_1,undefined4 param_2,u
     if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
       this = st::fn_00405CF9(*(char *)&param_1->field_0024,param_1->field_007D);
       if (this != nullptr) {
+        /* ST_CALLSITE[00660505]: CALL dword ptr [EDX + 0x8] */
         this->sub_00498D20(6,(short)&local_c);
         return 0;
       }
@@ -155,7 +162,7 @@ st::fn_00660540(void *this,undefined4 param_1,short param_2,short param_3,short 
     psVar2 = psVar2 + 2;
   }
   *psVar2 = 0;
-  *(undefined1 *)(psVar2 + 1) = 0;
+  ((undefined1 *)psVar2)[1] = 0;
   local_22 = param_3;
   local_1a = (int)param_6;
   local_1e = param_1;
@@ -170,6 +177,7 @@ st::fn_00660540(void *this,undefined4 param_1,short param_2,short param_3,short 
   {
     this_00 = st::fn_00405CF9(STField<char>(this,0x24),STField<ushort>(this,0x7d));
     if (this_00 != nullptr) {
+      /* ST_CALLSITE[006605D2]: CALL dword ptr [EDX + 0x8] */
       this_00->sub_00498D20(9,(short)&local_24);
       return 0;
     }
@@ -201,6 +209,7 @@ st::fn_00660620(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,uint par
   local_8 = 0;
   pSVar1 = st::fn_00405CF9(param_1->field_0024,(ushort)param_3);
   if (pSVar1 != nullptr) {
+    /* ST_CALLSITE[0066065A]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
     array = (DArrayTy *)st::fn_00402DB5((STGroupC *)pSVar1);
     if ((array != nullptr) || (_DAT_0000000c != 0)) {
       local_18 = 0;
@@ -208,6 +217,7 @@ st::fn_00660620(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,uint par
       if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
         pSVar1 = st::fn_00405CF9(param_1->field_0024,param_1->field_007D);
         if (pSVar1 != nullptr) {
+          /* ST_CALLSITE[006606A4]: CALL dword ptr [EDX + 0x8] */
           pSVar1->sub_00498D20(5,(short)&local_18);
           if (array != nullptr) {
             st::fn_006AE110(array);
@@ -280,6 +290,7 @@ st::fn_00660700(void *this,short param_1,short param_2,short param_3,int param_4
     if (this_00 == nullptr) {
       return 0xffffffff;
     }
+    /* ST_CALLSITE[006607DB]: CALL dword ptr [EDX + 0x2c] */
     iVar2 = this_00->GetObjectTypeId();
     if (iVar2 == 0x37) {
       local_14 = 0;
@@ -289,6 +300,7 @@ st::fn_00660700(void *this,short param_1,short param_2,short param_3,int param_4
       *(undefined4 *)&this_00[0x1d].field_0x18 = 1;
     }
     else {
+      /* ST_CALLSITE[00660818]: CALL dword ptr [EAX + 0x2c] */
       iVar2 = this_00->GetObjectTypeId();
       if (iVar2 != 0x6c) {
         return 0xffffffff;
@@ -304,6 +316,7 @@ st::fn_00660700(void *this,short param_1,short param_2,short param_3,int param_4
   if (((STField<ushort>(this,0x7d) != 0xfffe) && (g_allPlayers_007FA174 != nullptr))
      && (this_01 = st::fn_00405CF9(STField<char>(this,0x24),STField<ushort>(this,0x7d)),
         this_01 != nullptr)) {
+    /* ST_CALLSITE[00660887]: CALL dword ptr [EDX + 0x8] */
     this_01->sub_00498D20(0x10,(short)&local_14);
     return 0;
   }
@@ -339,6 +352,7 @@ undefined4 __thiscall st::fn_00660910(void *this,short param_1,short param_2,sho
          (g_allPlayers_007FA174 != nullptr)) {
         this_00 = st::fn_00405CF9(STField<char>(this,0x24),STField<ushort>(this,0x7d));
         if (this_00 != nullptr) {
+          /* ST_CALLSITE[006609E2]: CALL dword ptr [EDX + 0x8] */
           this_00->sub_00498D20(0xf,(short)&local_c);
           return 0;
         }
@@ -366,6 +380,7 @@ undefined4 __thiscall st::fn_00660A40(void *this,short param_1,short param_2,sho
          (g_allPlayers_007FA174 != nullptr)) {
         this_00 = st::fn_00405CF9(STField<char>(this,0x24),STField<ushort>(this,0x7d));
         if (this_00 != nullptr) {
+          /* ST_CALLSITE[00660AF2]: CALL dword ptr [EDX + 0x8] */
           this_00->sub_00498D20(0xb,(short)&local_8);
           return 0;
         }
@@ -405,6 +420,7 @@ st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,s
     if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
       pSVar1 = st::fn_00405CF9(param_1->field_0024,param_1->field_007D);
       if (pSVar1 != nullptr) {
+        /* ST_CALLSITE[00660BC7]: CALL dword ptr [EDX + 0x8] */
         pSVar1->sub_00498D20(0xc,(short)&local_c);
         return 0;
       }
@@ -422,6 +438,7 @@ st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,s
           local_c = st::machine_word_boundary_cast<undefined4>(param_1);
           pSVar1 = st::fn_00405CF9(param_1->field_0024,param_1->field_007D);
           if (pSVar1 != nullptr) {
+            /* ST_CALLSITE[00660C8B]: CALL dword ptr [EDX + 0x8] */
             pSVar1->sub_00498D20(0x12,(short)&local_14);
             return 0;
           }
@@ -508,7 +525,7 @@ void __fastcall st::fn_00660D40(AnonShape_00660D40_E58DF1E6 *param_1)
               STPiece<22,2>(local_5c) = *(undefined2 *)(iVar7 + 0xe);
               STPiece<24,2>(local_5c) = *(undefined2 *)(iVar7 + 0x10);
               STPiece<26,2>(local_5c) = *(undefined2 *)(iVar7 + 0x12);
-              STPiece<28,1>(local_5c) = *(char *)(iVar7 + 0x14);
+              STPiece<28,1>(local_5c) = ((char *)iVar7)[0x14];
               if ((((char)STPiece<28,1>(local_5c) < '\0') || ('\a' < (char)STPiece<28,1>(local_5c))) &&
                  ((STPiece<28,1>(local_5c) = local_8->field_0081, (char)STPiece<28,1>(local_5c) < '\0' ||
                   ('\a' < (char)STPiece<28,1>(local_5c))))) {
@@ -521,6 +538,7 @@ void __fastcall st::fn_00660D40(AnonShape_00660D40_E58DF1E6 *param_1)
               else {
                 sVar3 = 0;
               }
+              /* ST_CALLSITE[00660EB8]: CALL 0x004056be; direct=004056BE AiTactClassTy::PrepareToSave */
               st::fn_004056BE(*(AiTactClassTy **)&pAVar2[4].field_0x74,&local_5c,sVar3);
               uVar5 = local_c;
               param_1 = (AnonShape_00660D40_E58DF1E6 *)local_8;
@@ -748,8 +766,7 @@ void __cdecl st::fn_00668670(int param_1)
   undefined4 *puVar1;
   int iVar2;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(char *)(param_1 + 0x18) != '\0') {
+  if (((char *)param_1)[0x18] != '\0') {
     puVar1 = (undefined4 *)(param_1 + 0x1eb);
     iVar2 = 7;
     do {

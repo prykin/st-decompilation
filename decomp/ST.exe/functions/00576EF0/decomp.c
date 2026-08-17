@@ -25,6 +25,7 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
   local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
+    /* ST_CALLSITE[00576F31]: CALL 0x00402112; direct=00402112 LoadLand */
     PTR_00806750 = LoadLand(g_cMf32_00806754,"3D_MAP");
     pAVar5 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar5 == nullptr) {

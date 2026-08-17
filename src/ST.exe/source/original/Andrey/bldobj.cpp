@@ -85,6 +85,7 @@ void __thiscall st::fn_004F05C0(BldObjPanelTy *this)
   puVar5 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar4,piVar13,iVar8);
   this_00->field_0184 = puVar5;
   pCVar4 = st::fn_0040577C(st::mutable_c_string("BKG_BLDOBJBUT"),0);
+  /* ST_CALLSITE[004F0696]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(st::pointer_boundary_cast<LPSTR>(&this_00->field_006C),st::mutable_c_string("%s0"),pCVar4);
   puVar5 = st::fn_006F1CE0(g_cMf32_00806790,1,&this_00->field_006C,nullptr,1);
   this_00->field_027A = puVar5;
@@ -95,6 +96,7 @@ void __thiscall st::fn_004F05C0(BldObjPanelTy *this)
                      (PTR_00806794,CASE_B,st::mutable_c_string("OBJSD"),0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar5;
   pCVar4 = st::fn_0040577C(st::mutable_c_string("BKG_BLDOBJBUT"),0);
+  /* ST_CALLSITE[004F0740]: CALL 0x00404241; direct=00404241 ProdPanelTy::InitProdPanel */
   st::fn_00404241
             ((ProdPanelTy *)this_00,0x2724,0x36,2,0xc1,0xc,0x79,99,0x5b,0xb7,99,0x1c,
              (DAT_0080874e == '\x03') + 0x13,0x31,pCVar4);
@@ -168,6 +170,7 @@ switchD_004f0850_default:
   local_24 = 1;
   local_20 = 1;
   local_44 = local_64;
+  /* ST_CALLSITE[004F0900]: CALL dword ptr [EDX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
@@ -197,6 +200,7 @@ void __thiscall st::fn_004F0B60(BldObjPanelTy *this)
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[004F0BA1]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     st::fn_004035BC
               (g_allPlayers_007FA174,8,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_027E);
     if ((&this_00->field_027E)[(byte)this_00->field_0279] == 0) {
@@ -214,6 +218,7 @@ void __thiscall st::fn_004F0B60(BldObjPanelTy *this)
       uVar2 = *(uint *)((&this_00->field_027E)[(byte)this_00->field_0278] + 0xc);
     }
     st::fn_00402A13(this_00,uVar2,uVar4);
+    /* ST_CALLSITE[004F0BE5]: CALL 0x00402c7a; direct=00402C7A BldObjPanelTy::sub_004F0C80 */
     st::fn_00402C7A(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -291,10 +296,12 @@ void __thiscall st::fn_004F0E60(BldObjPanelTy *this,AnonShape_004EF320_444F9AB1 
   pBVar4 = local_14;
   iVar2 = local_18;
   if (errorCode == 0) {
+    /* ST_CALLSITE[004F0F56]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_18,local_10,'\x01',
            (byte *)local_c);
     if ((param_1->field_0014 == 3) && (local_8 != nullptr)) {
       pBVar7 = st::fn_0070B3A0(pBVar4->field_0190,9 - (uint)((char)local_8[2] != 0));
+      /* ST_CALLSITE[004F0F8F]: CALL 0x00403229; direct=00403229 DibPut */
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar4->field_0068,iVar2,iVar5,'\x06',(byte *)pBVar7);
     }
     st::fn_006B3640
@@ -352,18 +359,22 @@ int __thiscall st::fn_004F1080(BldObjPanelTy *this,STMessage *message)
     return 0xffff;
   }
   if (message->id == MESS_ID_CREATE) {
+    /* ST_CALLSITE[004F10C4]: CALL 0x004032a6; direct=004032A6 ProdPanelTy::PreInitProdPanel */
     st::fn_004032A6((ProdPanelTy *)local_8);
   }
+  /* ST_CALLSITE[004F10CC]: CALL 0x004059d4; direct=004059D4 ProdPanelTy::GetMessage */
   st::fn_004059D4((ProdPanelTy *)this_00,message);
   SVar1 = message->id;
   if (SVar1 < MESS_RESEARCHPANELTY_B207) {
     if (SVar1 == MESS_BLDOBJPANELTY_B206) {
+      /* ST_CALLSITE[004F1174]: CALL 0x00401ce4; direct=00401CE4 ProdPanelTy::PaintTab */
       st::fn_00401CE4
-                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,st::pointer_boundary_cast<undefined *>(st::fn_00401BA4));
+                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,(code *)st::fn_0052A7B0);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
     if (SVar1 == MESS_ID_CREATE) {
+      /* ST_CALLSITE[004F1154]: CALL 0x00401bea; direct=00401BEA BldObjPanelTy::InitBldObjPanel */
       st::fn_00401BEA(this_00);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
@@ -377,6 +388,7 @@ int __thiscall st::fn_004F1080(BldObjPanelTy *this,STMessage *message)
       this_00->field_0279 = this_00->field_0278;
       this_00->field_0278 = *(char *)(message->arg0).ptr + -1;
       st::fn_00405E2F(0xae);
+      /* ST_CALLSITE[004F1122]: CALL dword ptr [EAX + 0x1c] */
       this_00->Update();
       g_currentExceptionFrame = local_4c.previous;
       return 0;
@@ -397,8 +409,10 @@ int __thiscall st::fn_004F1080(BldObjPanelTy *this,STMessage *message)
       else {
         puVar5 = (undefined4 *)((iVar4 + -0xc09f) * *(int *)(iVar6 + 8) + *(int *)(iVar6 + 0x1c));
       }
-      if ((puVar5 != nullptr) && (*(char *)(puVar5 + 2) != '\0')) {
+      if ((puVar5 != nullptr) && (((char *)puVar5)[2] != '\0')) {
+        /* ST_CALLSITE[004F11FA]: CALL 0x004035ad; direct=004035AD CursorClassTy::sub_0054B630 */
         st::fn_004035AD(g_cursorClass_00802A30,0xe,*puVar5);
+        /* ST_CALLSITE[004F1203]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
         st::fn_00401A73((ProdPanelTy *)this_00,'\0');
         st::fn_00405E2F(0xae);
         g_currentExceptionFrame = local_4c.previous;
@@ -407,6 +421,7 @@ int __thiscall st::fn_004F1080(BldObjPanelTy *this,STMessage *message)
       break;
     case MESS_BLDLABPANELTY_C0A4:
       this_00->field_0199 = static_cast<undefined4>((message->arg0).u32);
+      /* ST_CALLSITE[004F1233]: CALL 0x00402c7a; direct=00402C7A BldObjPanelTy::sub_004F0C80 */
       st::fn_00402C7A(this_00);
       st::fn_00405E2F(0xae);
       g_currentExceptionFrame = local_4c.previous;
@@ -416,6 +431,7 @@ int __thiscall st::fn_004F1080(BldObjPanelTy *this,STMessage *message)
     case MESS_BEHPANELTY_C0B1:
     case 0xc0b2:
     case MESS_BLDLABPANELTY_C0B3:
+      /* ST_CALLSITE[004F125B]: CALL 0x0040431d; direct=0040431D BldObjPanelTy::PaintBldBut */
       st::fn_0040431D(this_00,(AnonShape_004EF320_444F9AB1 *)message);
     }
   }

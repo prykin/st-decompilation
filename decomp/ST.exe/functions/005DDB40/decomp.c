@@ -92,6 +92,7 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
         pcVar8 = pcVar8 + 1;
         pcVar9 = pcVar9 + 1;
       }
+      /* ST_CALLSITE[005DDC03]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
       StartSystemTy::AddToChat(local_8,(int)local_460);
       pDVar7 = pSVar2->field_0696;
       iVar4 = iVar4 + 1;

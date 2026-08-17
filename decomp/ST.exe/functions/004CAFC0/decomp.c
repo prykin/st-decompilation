@@ -32,11 +32,13 @@ TLOBaseTy::sub_004CAFC0
   TLOBaseTy_field_05ACState TVar5;
   TLOBaseTy_field_0245State TVar6;
 
+  /* ST_CALLSITE[004CAFD5]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar1 = LookupRecordByte(*(char *)&this->field_023D);
   uVar1 = (int)(byte)uVar1;
   iVar4 = uVar1 + -1;
   TVar5 = this->field_05AC;
   if (TVar5 == CASE_32) {
+    /* ST_CALLSITE[004CAFFF]: CALL 0x00404895; direct=00404895 TLOBaseTy::sub_004CFA00 */
     sub_004CFA00(this,param_1,param_2,(int *)param_3,(int *)param_4);
     return;
   }
@@ -251,6 +253,7 @@ switchD_004cb5c6_caseD_5:
   case CASE_E:
     goto switchD_004cb1d7_caseD_e;
   }
+  /* ST_CALLSITE[004CB1F0]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   if ((TVar5 == CASE_4F) && (bVar3 = LookupRecordByte(*(char *)&this->field_023D), bVar3 == 2)) {
     *param_4 = 0;
     *param_3 = 0;
@@ -258,6 +261,7 @@ switchD_004cb5c6_caseD_5:
   }
 switchD_004cb1d7_caseD_e:
   if ((this->field_05AC == CASE_4F) &&
+     /* ST_CALLSITE[004CB22C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
      (bVar3 = LookupRecordByte(*(char *)&this->field_023D), bVar3 == 2)) {
     if (this->field_04D0 != CASE_1) {
       uVar2 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +

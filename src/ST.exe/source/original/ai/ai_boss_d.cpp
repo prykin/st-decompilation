@@ -230,7 +230,9 @@ int __cdecl st::fn_006488C0(int param_1,char *param_2,AllocationRecord_00648620 
       st::fn_006A5E40
                 (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0x9c);
     }
+    /* ST_CALLSITE[0064892F]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
     local_c = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)&param_3->field_0x4e,&local_14);
+    /* ST_CALLSITE[00648941]: CALL 0x00405a24; direct=00405A24 BossDataPack */
     local_8 = st::fn_00405A24(param_3,(undefined4 *)local_c,local_14,&local_10);
     st::fn_00401537((int *)&local_c);
     st::fn_006F3110(param_1,param_2,(byte *)local_8,local_10,param_4);

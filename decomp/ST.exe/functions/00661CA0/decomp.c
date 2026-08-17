@@ -44,19 +44,22 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
   uint local_c;
   short local_6;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((g_allPlayers_007FA174 != nullptr) &&
      (local_14 = param_1,
+     /* ST_CALLSITE[00661CCA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
      this = STAllPlayersC::GetObjPtr
                       (g_allPlayers_007FA174,param_1->field_0024,*(ushort *)(param_3 + 0x16),CASE_1)
      , this != nullptr)) {
     local_10 = this;
     local_20 = thunk_FUN_004357f0(param_1->field_0024);
+    /* ST_CALLSITE[00661CF2]: CALL dword ptr [EDX + 0x2c] */
     uVar5 = this->vfunc_2C();
     pSVar4 = local_10;
     local_c = uVar5;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(short *)(param_3 + 0x14) == 0) {
+      /* ST_CALLSITE[00661D11]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0((STFishC *)this,local_18,local_1c,&local_6);
       if ((0x31 < (int)local_c) && ((int)local_c < 0x74)) {
         uVar5 = 0;
@@ -170,10 +173,12 @@ LAB_00661e5f:
         local_60 = param_1->field_0280;
         local_64 = (AnonShape_0068FD00_A5257008 *)0x6c;
         local_5c = 0;
+        /* ST_CALLSITE[00661EEC]: CALL dword ptr [EDX + 0x2c] */
         GVar7 = local_10->vfunc_2C();
         iVar10 = thunk_FUN_006753a0(GVar7);
         local_5b = (undefined1)iVar10;
         psStack_5a = &local_30;
+        /* ST_CALLSITE[00661F0B]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
         AiTactClassTy::GetAiMess(param_1->field_0284,(AnonShape_0068FD00_A5257008 *)&local_64);
       }
       if (((0 < (int)local_c) && ((int)local_c < 0x29)) && (param_1->field_007B == -0x8000)) {
@@ -185,6 +190,7 @@ LAB_00661e5f:
         }
         uVar5 = 0;
         if (param_1->field_0284 != nullptr) {
+          /* ST_CALLSITE[00661F75]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
           pvVar8 = (void *)AiTactClassTy::sub_0068E290(param_1->field_0284,local_10->field_081C);
           if (local_20 != nullptr) {
             uVar5 = local_20->field_065C;
@@ -221,6 +227,7 @@ LAB_00661e5f:
       }
       if ((((0 < (int)uVar5) && ((int)uVar5 < 0x29)) && (param_1->field_007B == -0x8000)) &&
          ((param_1->field_0284 != nullptr &&
+          /* ST_CALLSITE[0066200E]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
           (pvVar8 = (void *)AiTactClassTy::sub_0068E290(param_1->field_0284,local_10->field_081C),
           pvVar8 != nullptr)))) {
         thunk_FUN_00661790(pvVar8,uVar5,pSVar4->field_081E);
@@ -235,8 +242,7 @@ LAB_00661e5f:
         ppAVar15 = ppAVar15 + 1;
       }
       local_60 = param_1->field_0280;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_5c = *(undefined1 *)(param_3 + 0x14);
+      local_5c = ((undefined1 *)param_3)[0x14];
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_5b = (undefined1)*(undefined2 *)(param_3 + 0x16);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -244,6 +250,7 @@ LAB_00661e5f:
       STPiece<1,3>(psStack_5a) = (undefined3)local_c;
       uStack_56 = (undefined1)(local_c >> 0x18);
       local_64 = (AnonShape_0068FD00_A5257008 *)0x6e;
+      /* ST_CALLSITE[00662079]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
       AiTactClassTy::GetAiMess(pAVar3,(AnonShape_0068FD00_A5257008 *)&local_64);
     }
     pIVar9 = thunk_FUN_00674fb0(local_c);
@@ -255,8 +262,7 @@ LAB_00661e5f:
         ppAVar15 = ppAVar15 + 1;
       }
       local_60 = param_1->field_0280;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_5c = *(undefined1 *)(param_3 + 0x14);
+      local_5c = ((undefined1 *)param_3)[0x14];
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_5b = (undefined1)*(undefined2 *)(param_3 + 0x16);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -264,6 +270,7 @@ LAB_00661e5f:
       STPiece<1,3>(psStack_5a) = (undefined3)local_c;
       uStack_56 = (undefined1)(local_c >> 0x18);
       local_64 = (AnonShape_0068FD00_A5257008 *)0x74;
+      /* ST_CALLSITE[006620D1]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
       AiTactClassTy::GetAiMess(pAVar3,(AnonShape_0068FD00_A5257008 *)&local_64);
     }
     if ((((0 < (int)local_c) && ((int)local_c < 0x29)) && (param_1->field_007B != 1)) &&

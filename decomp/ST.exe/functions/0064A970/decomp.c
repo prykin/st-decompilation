@@ -137,8 +137,10 @@ switchD_0064aa67_caseD_1:
       sVar4 = *(short *)(local_10 + 1);
       if ((sVar4 == 1) && ((*param_1 == '\x06' || (*param_1 == '\x03')))) {
         if ((param_1[5] == '\x06') || (param_1[5] == '\x03')) {
+          /* ST_CALLSITE[0064B09B]: CALL dword ptr [EDX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pcVar8 = (char *)(**(code **)(*local_38 + 8))(param_1);
+          /* ST_CALLSITE[0064B0A5]: CALL dword ptr [EAX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
           local_18 = pbVar9;
@@ -225,8 +227,10 @@ cf_common_exit_0064BBB1:
       case '\x04':
         cVar3 = param_1[5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
+          /* ST_CALLSITE[0064B2BE]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
+          /* ST_CALLSITE[0064B2C7]: CALL dword ptr [EAX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar10 = (**(code **)*local_38)(param_1 + 5);
           local_8 = Library::DKW::LIB::MemAllocClear(4);
@@ -271,9 +275,11 @@ cf_common_exit_0064BBB1:
           }
           goto cf_error_exit_0064B714;
         }
+        /* ST_CALLSITE[0064B1C4]: CALL dword ptr [EAX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         local_18 = (byte *)(**(code **)*local_38)(param_1);
         local_c = (int *)(float)(int)local_18;
+        /* ST_CALLSITE[0064B1D4]: CALL dword ptr [EDX + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
         local_14 = (float)fVar19;
@@ -313,9 +319,11 @@ cf_common_exit_0064BBB1:
             }
             goto cf_error_exit_0064B714;
           }
+          /* ST_CALLSITE[0064B3F9]: CALL dword ptr [EAX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
           local_c = (int *)(float)fVar19;
+          /* ST_CALLSITE[0064B404]: CALL dword ptr [EDX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
           local_14 = (float)fVar19;
@@ -343,9 +351,11 @@ cf_common_exit_0064BBB1:
           }
           break;
         }
+        /* ST_CALLSITE[0064B4AA]: CALL dword ptr [EDX + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
         local_c = (int *)(float)fVar19;
+        /* ST_CALLSITE[0064B4B5]: CALL dword ptr [EAX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         local_18 = (byte *)(**(code **)*local_38)(param_1 + 5);
         local_14 = (float)(int)local_18;
@@ -415,8 +425,10 @@ switchD_0064aa67_caseD_3:
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
+          /* ST_CALLSITE[0064B738]: CALL dword ptr [EAX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
+          /* ST_CALLSITE[0064B741]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar10 = (**(code **)*local_38)(param_1 + 5);
           local_8 = Library::DKW::LIB::MemAllocClear(4);
@@ -473,8 +485,10 @@ LAB_0064ae25:
         goto cf_error_exit_0064C2A4;
       }
       if ((param_1[5] != '\x04') && (param_1[5] != '\x01')) goto LAB_0064ae25;
+      /* ST_CALLSITE[0064AE69]: CALL dword ptr [EAX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar14 = (**(code **)*local_38)(param_1);
+      /* ST_CALLSITE[0064AE72]: CALL dword ptr [EDX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar15 = (**(code **)*local_38)(param_1 + 5);
       local_8 = Library::DKW::LIB::MemAllocClear(4);
@@ -503,6 +517,7 @@ cf_error_exit_0064B368:
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         local_8 = Library::DKW::LIB::MemAllocClear(4);
+        /* ST_CALLSITE[0064AEFE]: CALL dword ptr [EDX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar14 = (**(code **)*local_38)(param_1);
         *local_8 = (float)~uVar14;
@@ -515,6 +530,7 @@ cf_error_exit_0064B368:
                   (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x171);
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
+        /* ST_CALLSITE[0064AF38]: CALL dword ptr [EAX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar6 = (**(code **)*local_38)(param_1);
         iVar6 = 2 - (uint)(iVar6 != 0);
@@ -522,6 +538,7 @@ cf_error_exit_0064B368:
         cVar3 = param_1[iVar6 * 5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           local_8 = Library::DKW::LIB::MemAllocClear(4);
+          /* ST_CALLSITE[0064B03C]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar11 = (float)(**(code **)*local_38)(pcVar8);
           *local_8 = fVar11;
@@ -529,12 +546,14 @@ cf_error_exit_0064B368:
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           local_8 = Library::DKW::LIB::MemAllocClear(4);
+          /* ST_CALLSITE[0064B020]: CALL dword ptr [EDX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(pcVar8);
           *local_8 = (float)fVar19;
           goto cf_common_exit_0064B291;
         }
         if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
+          /* ST_CALLSITE[0064AFB6]: CALL dword ptr [EDX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pcVar8 = (char *)(**(code **)(*local_38 + 8))(pcVar8);
           if (pcVar8 == nullptr) {
@@ -586,8 +605,10 @@ cf_error_exit_0064B368:
       cVar3 = *param_1;
       if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
+          /* ST_CALLSITE[0064ACD7]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
+          /* ST_CALLSITE[0064ACE0]: CALL dword ptr [EAX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar10 = (**(code **)*local_38)(param_1 + 5);
           local_8 = Library::DKW::LIB::MemAllocClear(4);
@@ -618,9 +639,11 @@ cf_error_exit_0064B368:
       }
       if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
         if ((param_1[5] == '\x05') || (param_1[5] == '\x02')) {
+          /* ST_CALLSITE[0064ABE6]: CALL dword ptr [EDX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
           local_20 = (float)fVar19;
+          /* ST_CALLSITE[0064ABF1]: CALL dword ptr [EAX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
           local_24 = (float)fVar19;
@@ -671,8 +694,10 @@ cf_error_exit_0064B368:
       }
       if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
         if ((param_1[5] == '\x06') || (param_1[5] == '\x03')) {
+          /* ST_CALLSITE[0064AAEF]: CALL dword ptr [EDX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
+          /* ST_CALLSITE[0064AAF9]: CALL dword ptr [EAX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
           if ((pbVar9 == nullptr) || (pbVar7 == nullptr)) {
@@ -738,6 +763,7 @@ LAB_0064ab59:
         goto cf_error_exit_0064C2A4;
       }
       local_8 = Library::DKW::LIB::MemAllocClear(4);
+      /* ST_CALLSITE[0064ADDF]: CALL dword ptr [EDX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar6 = (**(code **)*local_38)(param_1);
       *local_8 = (float)(uint)(iVar6 == 0);
@@ -762,6 +788,7 @@ LAB_0064b80a:
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",399);
           }
           if ((*param_1 == '\x06') || (*param_1 == '\x03')) {
+            /* ST_CALLSITE[0064BAF0]: CALL dword ptr [EDX + 0x8] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
             if (pbVar9 == nullptr) {
@@ -791,6 +818,7 @@ LAB_0064b80a:
               iVar6 = -0x78;
               goto cf_error_exit_0064C2A4;
             }
+            /* ST_CALLSITE[0064BA79]: CALL dword ptr [EDX + 0x8] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
             if (pbVar9 == nullptr) {
@@ -811,8 +839,10 @@ LAB_0064b80a:
           }
           if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
             if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
+              /* ST_CALLSITE[0064B9D3]: CALL dword ptr [EDX] */
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar6 = (**(code **)*local_38)(param_1);
+              /* ST_CALLSITE[0064B9DC]: CALL dword ptr [EAX] */
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar10 = (**(code **)*local_38)(param_1 + 5);
               if (iVar10 < 2) {
@@ -849,10 +879,12 @@ LAB_0064b80a:
             if (cVar3 == '\x04') {
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0064b8f1:
+              /* ST_CALLSITE[0064B8F6]: CALL dword ptr [EAX] */
               local_18 = (byte *)(**(code **)*local_38)(param_1);
               local_c = (int *)(float)(int)local_18;
 LAB_0064b901:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
+                /* ST_CALLSITE[0064B910]: CALL dword ptr [EDX + 0x4] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
                 local_c = (int *)(float)fVar19;
@@ -888,6 +920,7 @@ LAB_0064b901:
         cVar3 = *param_1;
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           local_8 = Library::DKW::LIB::MemAllocClear(4);
+          /* ST_CALLSITE[0064B855]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
           *local_8 = (float)-iVar6;
@@ -895,6 +928,7 @@ LAB_0064b901:
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           local_8 = Library::DKW::LIB::MemAllocClear(4);
+          /* ST_CALLSITE[0064B837]: CALL dword ptr [EDX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
           *local_8 = (float)-fVar19;
@@ -917,9 +951,11 @@ LAB_0064b901:
             if (cVar3 == '\x04') {
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0064b659:
+              /* ST_CALLSITE[0064B65E]: CALL dword ptr [EDX] */
               local_c = (int *)(**(code **)*local_38)(param_1);
 LAB_0064b663:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
+                /* ST_CALLSITE[0064B672]: CALL dword ptr [EAX + 0x4] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
                 Library::MSVCRT::FUN_00730450
@@ -958,9 +994,11 @@ LAB_0064b663:
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
+        /* ST_CALLSITE[0064BB6F]: CALL dword ptr [EAX + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
         local_18 = (byte *)(float)fVar19;
+        /* ST_CALLSITE[0064BB7A]: CALL dword ptr [EDX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar6 = (**(code **)*local_38)(param_1 + 5);
         if (iVar6 < 2) {
@@ -992,6 +1030,7 @@ LAB_0064bd33:
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1ca);
     }
     if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
+      /* ST_CALLSITE[0064BC5A]: CALL dword ptr [EDX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       local_18 = (byte *)(**(code **)*local_38)(param_1);
       local_8 = Library::DKW::LIB::MemAllocClear(4);
@@ -1011,6 +1050,7 @@ LAB_0064bd33:
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1d8);
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
+      /* ST_CALLSITE[0064BCDC]: CALL dword ptr [EDX + 0x4] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
       local_18 = (byte *)(float)fVar19;
@@ -1035,6 +1075,7 @@ LAB_0064bd33:
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1e6);
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
+      /* ST_CALLSITE[0064BD77]: CALL dword ptr [EAX + 0x4] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
       local_18 = (byte *)(float)fVar19;
@@ -1060,6 +1101,7 @@ LAB_0064bd33:
       local_38[0x21] = -1;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
+    /* ST_CALLSITE[0064BE12]: CALL dword ptr [EAX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     local_18 = (byte *)(**(code **)(*local_38 + 8))(param_1);
     if (local_18 == nullptr) {
@@ -1087,6 +1129,7 @@ LAB_0064bd33:
       do {
         cVar3 = (char)*local_c;
         if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
+          /* ST_CALLSITE[0064BFBF]: CALL dword ptr [EAX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           pcVar13 = (char *)(**(code **)(*local_38 + 8))(local_c);
           local_78 = pcVar13;
@@ -1114,6 +1157,7 @@ LAB_0064bd33:
           pcVar8 = local_28;
         }
         else if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
+          /* ST_CALLSITE[0064BF60]: CALL dword ptr [EAX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar12 = (**(code **)*local_38)(local_c);
           local_7c = uVar12;
@@ -1130,6 +1174,7 @@ LAB_0064bd33:
           local_20 = (float)((int)local_20 + 0xc);
         }
         else if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
+          /* ST_CALLSITE[0064BF06]: CALL dword ptr [EAX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(local_c);
           local_34 = (float)fVar19;
@@ -1178,6 +1223,7 @@ LAB_0064bd33:
       local_c = &local_74;
       do {
         if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
+          /* ST_CALLSITE[0064C1F4]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
           *local_c = iVar6;
@@ -1213,6 +1259,7 @@ LAB_0064bd33:
       local_c = &local_50;
       do {
         if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
+          /* ST_CALLSITE[0064C11C]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)*local_38)(param_1);
           *local_c = iVar6;

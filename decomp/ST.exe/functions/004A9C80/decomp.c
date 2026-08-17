@@ -47,6 +47,7 @@ LAB_004a9cfb:
   local_18 = 0xf;
   local_14 = 0x109;
   local_10 = 0;
+  /* ST_CALLSITE[004A9D26]: CALL dword ptr [EAX + 0x18] */
   (*g_playSystem_00802A38->vtable->SendMessage)
             ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_24);
   return;

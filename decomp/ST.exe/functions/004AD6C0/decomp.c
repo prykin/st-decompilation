@@ -13,7 +13,7 @@ int FUN_004ad6c0(AnonReceiver_004248D0 *param_1,undefined4 param_2,int *param_3,
   int iVar1;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)(*(int *)(*(int *)(param_4 + 0x20) + *(char *)(param_4 + 0x13) * 0x24) + 0x29);
+  iVar2 = *(int *)(*(int *)(*(int *)(param_4 + 0x20) + ((char *)param_4)[0x13] * 0x24) + 0x29);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((iVar2 != 0) && (iVar2 = *(int *)(iVar2 + *(int *)(param_4 + 0x30) * 4), iVar2 != 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

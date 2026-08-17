@@ -125,6 +125,7 @@ int __fastcall FUN_0060c320(void *param_1)
               if (this_00 != nullptr) {
                 pcVar6 = this_00->vtable[5].slots_00_28[0];
                 aiStack_ac[iVar11 * 0xfffffff1U + 2] = 0x60c4f6;
+                /* ST_CALLSITE[0060C4F0]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                 iVar12 = (*pcVar6)(this_00);
                 iVar18 = local_40;
                 if (((iVar12 != 0) && (this_00[1].vtable < (STWorldObjectVTable *)0x8)) &&
@@ -163,6 +164,7 @@ LAB_0060c5f5:
                   if (bVar20) {
                     pcVar6 = this_00->vtable[5].slots_00_28[2];
                     aiStack_ac[iVar11 * 0xfffffff1U + 2] = 0x60c612;
+                    /* ST_CALLSITE[0060C60C]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                     iVar14 = (*pcVar6)(this_00);
                     iVar12 = local_74;
                     iVar18 = local_40;
@@ -171,6 +173,7 @@ LAB_0060c5f5:
                       *puVar1 = this_00;
                       pcVar6 = this_00->vtable[2].slots_00_28[6];
                       aiStack_ac[iVar11 * 0xfffffff1U + 2] = 0x60c62f;
+                      /* ST_CALLSITE[0060C62C]: [STIndirectCallsiteApplier] exact slot 0x78; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                       iVar14 = (*pcVar6)(this_00);
                       iVar14 = iVar14 + 1;
                       iVar18 = local_40;

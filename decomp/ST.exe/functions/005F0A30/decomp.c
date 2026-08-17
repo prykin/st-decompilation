@@ -32,12 +32,17 @@ bool __fastcall FUN_005f0a30(STSprGameObjC *param_1)
         uVar5 = (uint)sVar1;
         this = STGridAt3D(g_worldGrid, uVar5, sVar2, uVar4).objects[0];
         if (this != nullptr) {
+          /* ST_CALLSITE[005F0AFF]: CALL dword ptr [EDX + 0x2c] */
           uVar5 = this->GetObjectTypeId();
           if (uVar5 == 99) {
+            /* ST_CALLSITE[005F0B0B]: CALL dword ptr [EAX + 0x138] */
             iVar6 = param_1->vfunc_138();
+            /* ST_CALLSITE[005F0B16]: CALL dword ptr [EDX + 0x130] */
             iVar7 = param_1->vfunc_130();
+            /* ST_CALLSITE[005F0B21]: CALL dword ptr [EAX + 0x2c] */
             SVar8 = param_1->slot_2C();
             thunk_FUN_004b7e30(this,SVar8,iVar7,iVar6);
+            /* ST_CALLSITE[005F0B34]: CALL dword ptr [EDX + 0xac] */
             iVar6 = param_1->vfunc_AC((short)*(undefined4 *)&this->field_0x18);
             uVar5 = 0;
             if (iVar6 != 0) {

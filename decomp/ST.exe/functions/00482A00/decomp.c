@@ -155,6 +155,7 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
         }
         iVar4 = thunk_FUN_00493cd0((STGameObjC *)local_8);
         if (iVar4 == 0) {
+          /* ST_CALLSITE[00482BE8]: CALL dword ptr [EDX + 0x90] */
           this_00->vfunc_90(4,arg_2);
         }
       }

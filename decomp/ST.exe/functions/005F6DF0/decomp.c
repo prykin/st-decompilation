@@ -9,10 +9,12 @@ void __fastcall FUN_005f6df0(STAllPlayersC *param_1)
   undefined1 *this;
 
   this = &param_1->field_0x1d5;
+  /* ST_CALLSITE[005F6E44]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   STT3DSprC::sub_004AD3C0
             ((STT3DSprC *)this,(float)*(int *)&param_1->field_0x2c1 * _DAT_007904f8 * _DAT_007904f0,
              (float)*(int *)&param_1->field_0x2c5 * _DAT_007904f8 * _DAT_007904f0,
              (float)*(int *)&param_1->field_0x2c9 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+  /* ST_CALLSITE[005F6E63]: CALL 0x00403107; direct=00403107 sub_00416240 */
   sub_00416240(param_1,*(ushort *)&param_1->field_0x2c1,*(short *)&param_1->field_0x2c5,
                *(ushort *)&param_1->field_0x2c9);
   thunk_FUN_004ac610(this,'\x0e');

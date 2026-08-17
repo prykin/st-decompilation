@@ -12,6 +12,7 @@ void __thiscall FUN_005711d0(void *this,int *param_1)
     FUN_006e4c30(this,*param_1);
     FUN_006e4b80(this,*param_1);
     FUN_006e4d20(this,(DebugSystemC *)*param_1);
+    /* ST_CALLSITE[005711FE]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)*param_1 + 4))();
     Library::MSVCRT::FUN_0072e2b0((HoloTy *)*param_1);

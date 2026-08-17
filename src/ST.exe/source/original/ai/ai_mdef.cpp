@@ -35,6 +35,7 @@ void __cdecl st::fn_00675EA0(uint param_1,int *param_2)
     g_currentExceptionFrame = local_48.previous;
     return;
   }
+  /* ST_CALLSITE[00675EDC]: CALL dword ptr [EAX + 0x2c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar4 = (**(code **)(*param_2 + 0x2c))();
   if ((iVar4 < 1) || (0x28 < iVar4)) {
@@ -102,6 +103,7 @@ void __cdecl st::fn_00675FE0(uint param_1)
   }
   if (g_allPlayers_007FA174 != nullptr) {
     objPtr = (char)param_1;
+    /* ST_CALLSITE[00676024]: CALL 0x00404abb; direct=00404ABB STAllPlayersC::GetObjsList */
     groupContent = (DArrayTy *)st::fn_00404ABB(objPtr);
     if (groupContent != nullptr) {
       dVar1 = groupContent->count;
@@ -116,10 +118,13 @@ void __cdecl st::fn_00675FE0(uint param_1)
           do {
             puVar3 = DArrayAt<ushort>(groupContent, uVar5);
 LAB_00676053:
+            /* ST_CALLSITE[00676063]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             this = st::fn_004028BA(g_allPlayers_007FA174,objPtr,*puVar3,CASE_1);
             if (this != nullptr) {
+              /* ST_CALLSITE[00676072]: CALL dword ptr [EAX + 0x2c] */
               iVar4 = this->vfunc_2C();
               if (iVar4 == 0x78) {
+                /* ST_CALLSITE[0067607E]: CALL dword ptr [EDX + 0x2c] */
                 iVar4 = this->vfunc_2C();
                 if (iVar4 == 0x78) {
                   this->field_0269 = 0xffffffff;
@@ -130,6 +135,7 @@ LAB_00676053:
             uVar5 = uVar6 & 0xffff;
           } while (uVar5 < groupContent->count);
         }
+        /* ST_CALLSITE[006760AF]: CALL 0x0040178f; direct=0040178F STAllPlayersC::AddObjsToGroup */
         st::fn_0040178F(g_allPlayers_007FA174,objPtr,0,groupContent,nullptr);
       }
       if (groupContent != nullptr) {
@@ -180,6 +186,7 @@ uint * __cdecl st::fn_00676170(undefined4 param_1)
     this = st::fn_00405CF9((char)param_1,0);
   }
   if (this != nullptr) {
+    /* ST_CALLSITE[006761C1]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
     puVar2 = st::fn_00402DB5((STGroupC *)this);
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;
@@ -225,6 +232,7 @@ int __cdecl st::fn_00676260(uint param_1,int param_2)
       this = st::fn_00405CF9((char)param_1,0);
     }
     if (this != nullptr) {
+      /* ST_CALLSITE[006762B7]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
       local_c = (DArrayTy *)st::fn_00402DB5((STGroupC *)this);
     }
     array = local_c;
@@ -237,8 +245,10 @@ int __cdecl st::fn_00676260(uint param_1,int param_2)
       do {
         puVar2 = DArrayAt<ushort>(array, uVar4);
 LAB_006762e0:
+        /* ST_CALLSITE[006762F0]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_00 = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
         if (this_00 != nullptr) {
+          /* ST_CALLSITE[006762FF]: CALL dword ptr [EAX + 0x2c] */
           iVar3 = this_00->vfunc_2C();
           if (iVar3 == 0x78) {
             iVar3 = this_00->field_0259;
@@ -310,6 +320,7 @@ int __cdecl st::fn_006763F0(uint param_1,int param_2,int param_3)
       this = st::fn_00405CF9((char)param_1,0);
     }
     if (this != nullptr) {
+      /* ST_CALLSITE[00676447]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
       local_c = (DArrayTy *)st::fn_00402DB5((STGroupC *)this);
     }
     array = local_c;
@@ -322,8 +333,10 @@ int __cdecl st::fn_006763F0(uint param_1,int param_2,int param_3)
       do {
         puVar2 = DArrayAt<ushort>(array, uVar4);
 LAB_00676470:
+        /* ST_CALLSITE[00676480]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_00 = st::fn_004028BA(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
         if (this_00 != nullptr) {
+          /* ST_CALLSITE[0067648F]: CALL dword ptr [EAX + 0x2c] */
           iVar3 = this_00->vfunc_2C();
           if (iVar3 == 0x78) {
             iVar3 = this_00->field_0259;
@@ -332,6 +345,7 @@ LAB_00676470:
             iVar3 = 0;
           }
           if (param_2 == iVar3) {
+            /* ST_CALLSITE[006764AA]: CALL dword ptr [EDX + 0x2c] */
             iVar3 = this_00->vfunc_2C();
             if (iVar3 == 0x78) {
               iVar3 = this_00->field_0269;
@@ -384,7 +398,7 @@ LAB_00676470:
 int __cdecl
 st::fn_00676D80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param_5,short param_6,
           short param_7,short param_8,short param_9,short param_10,short param_11,
-          undefined *param_12,uint *param_13,undefined *param_14)
+          code *param_12,uint *param_13,undefined *param_14)
 
 {
   byte bVar1;
@@ -448,13 +462,16 @@ st::fn_00676D80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
         puVar3 = DArrayAt<undefined4>(local_1c, uVar10);
 LAB_00676e12:
         this = (STFishC *)*puVar3;
+        /* ST_CALLSITE[00676E20]: CALL dword ptr [EDX + 0xf8] */
         if ((this != nullptr) && (iVar5 = this->vfunc_F8(), iVar5 != 0)) {
           local_10 = 1;
+          /* ST_CALLSITE[00676E39]: CALL dword ptr [EAX + 0x2c] */
           dVar6 = this->slot_2C();
           if (param_2 != 0) {
             if (dVar6 == 0x78) {
               if ((param_2 & 0x80000000) == 0) {
                 if ((param_2 & 0x3fffffff) != 0) {
+                  /* ST_CALLSITE[00676E5F]: CALL dword ptr [EDX + 0x2c] */
                   dVar7 = this->slot_2C();
                   if (dVar7 == 0x78) {
                     uVar10 = *(uint *)&this->field_0x259;
@@ -477,6 +494,7 @@ LAB_00676e88:
           if (local_10 == 0) {
 LAB_00677024:
             if (param_14 == nullptr) goto LAB_00677041;
+            /* ST_CALLSITE[00677038]: CALL EAX */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar5 = (*(code *)param_14)(param_1,local_14,this,param_13);
           }
@@ -484,6 +502,7 @@ LAB_00677024:
             if (param_3 != 0x3fffffff) {
               if (dVar6 == 0x78) {
                 if ((param_3 & 0x80000000) == 0) {
+                  /* ST_CALLSITE[00676EB6]: CALL dword ptr [EAX + 0x2c] */
                   dVar6 = this->slot_2C();
                   if (dVar6 == 0x78) {
                     iVar5 = *(int *)&this->field_0x259;
@@ -505,6 +524,7 @@ joined_r0x00676ef3:
 LAB_00676efc:
             if (local_10 == 0) goto LAB_00677024;
             if ((param_4 != nullptr) && (*param_4 != 0)) {
+              /* ST_CALLSITE[00676F1B]: CALL dword ptr [EDX + 0x74] */
               (*this->vtable->vfunc_74)((short)local_2c);
               pbVar11 = local_2c;
               pbVar9 = param_4;
@@ -530,10 +550,12 @@ LAB_00676f4c:
               }
             }
             if ((local_10 == 0) ||
+               /* ST_CALLSITE[00676F6C]: CALL dword ptr [EAX + 0x6c] */
                ((local_5 != -1 && (iVar5 = this->vfunc_6C(), local_5 != iVar5))))
             goto LAB_00677024;
             if ((0 < param_9) &&
                (((0 < param_10 && (0 < param_11)) &&
+                /* ST_CALLSITE[00676FA0]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 ((st::fn_004018C5(this,&local_8,&local_a,&local_c), local_8 < param_6 ||
                  ((((local_a < param_7 || (local_c < param_8)) ||
                    ((int)param_6 + (int)param_9 <= (int)local_8)) ||
@@ -542,6 +564,7 @@ LAB_00676f4c:
               local_10 = 0;
             }
             if ((local_10 == 0) || (param_12 == nullptr)) goto LAB_00677024;
+            /* ST_CALLSITE[00677019]: CALL EAX */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar5 = (*(code *)param_12)(param_1,local_14,this,param_13);
           }
@@ -588,15 +611,16 @@ st::fn_00677290(undefined4 param_1,uint param_2,char param_3,short param_4,short
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00401852);
+    pcVar2 = (code *)st::fn_00677250;
     if (param_10 == 0) {
-      pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00403490);
+      pcVar2 = (code *)st::fn_00677220;
     }
     local_8 = pDVar1;
+    /* ST_CALLSITE[00677314]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */
     st::fn_004012F8(param_1,param_2,0x3fffffff,nullptr,param_3,param_4,param_5,param_6,param_7,
-               param_8,param_9,st::pointer_boundary_cast<undefined *>(pcVar2),st::pointer_boundary_cast<uint *>(&pDVar1->flags),nullptr);
+               param_8,param_9,pcVar2,&pDVar1->flags,nullptr);
     g_currentExceptionFrame = local_4c.previous;
-    return st::pointer_boundary_cast<uint *>(&pDVar1->flags);
+    return &pDVar1->flags;
   }
   g_currentExceptionFrame = local_4c.previous;
   if (local_8 != nullptr) {
@@ -631,15 +655,16 @@ st::fn_006773B0(undefined4 param_1,uint param_2,char param_3,short param_4,short
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00401852);
+    pcVar2 = (code *)st::fn_00677250;
     if (param_10 == 0) {
-      pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00403490);
+      pcVar2 = (code *)st::fn_00677220;
     }
     local_8 = pDVar1;
+    /* ST_CALLSITE[00677431]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */
     st::fn_004012F8(param_1,0,param_2,nullptr,param_3,param_4,param_5,param_6,param_7,param_8,param_9
-               ,st::pointer_boundary_cast<undefined *>(pcVar2),st::pointer_boundary_cast<uint *>(&pDVar1->flags),nullptr);
+               ,pcVar2,&pDVar1->flags,nullptr);
     g_currentExceptionFrame = local_4c.previous;
-    return st::pointer_boundary_cast<uint *>(&pDVar1->flags);
+    return &pDVar1->flags;
   }
   g_currentExceptionFrame = local_4c.previous;
   if (local_8 != nullptr) {
@@ -674,15 +699,16 @@ st::fn_006774C0(undefined4 param_1,byte *param_2,char param_3,short param_4,shor
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00401852);
+    pcVar2 = (code *)st::fn_00677250;
     if (param_10 == 0) {
-      pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00403490);
+      pcVar2 = (code *)st::fn_00677220;
     }
     local_8 = pDVar1;
+    /* ST_CALLSITE[00677544]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */
     st::fn_004012F8(param_1,0,0x3fffffff,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9,
-               st::pointer_boundary_cast<undefined *>(pcVar2),st::pointer_boundary_cast<uint *>(&pDVar1->flags),nullptr);
+               pcVar2,&pDVar1->flags,nullptr);
     g_currentExceptionFrame = local_4c.previous;
-    return st::pointer_boundary_cast<uint *>(&pDVar1->flags);
+    return &pDVar1->flags;
   }
   g_currentExceptionFrame = local_4c.previous;
   if (local_8 != nullptr) {
@@ -717,15 +743,16 @@ st::fn_006775E0(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00401852);
+    pcVar2 = (code *)st::fn_00677250;
     if (param_12 == 0) {
-      pcVar2 = st::pointer_boundary_cast<code *>(st::fn_00403490);
+      pcVar2 = (code *)st::fn_00677220;
     }
     local_8 = pDVar1;
+    /* ST_CALLSITE[00677665]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */
     st::fn_004012F8(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9,param_10,
-               param_11,st::pointer_boundary_cast<undefined *>(pcVar2),st::pointer_boundary_cast<uint *>(&pDVar1->flags),nullptr);
+               param_11,pcVar2,&pDVar1->flags,nullptr);
     g_currentExceptionFrame = local_4c.previous;
-    return st::pointer_boundary_cast<uint *>(&pDVar1->flags);
+    return &pDVar1->flags;
   }
   g_currentExceptionFrame = local_4c.previous;
   if (local_8 != nullptr) {
@@ -745,7 +772,7 @@ st::fn_006775E0(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
 
 int __cdecl
 st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short param_5,short param_6,
-            short param_7,undefined *param_8,undefined4 param_9)
+            short param_7,code *param_8,undefined4 param_9)
 
 {
   STFishC *this;
@@ -793,11 +820,13 @@ st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short pa
       this = (STFishC *)*puVar2;
       if ((this != nullptr) &&
          ((local_10 = uVar6, param_1 == 0 ||
+          /* ST_CALLSITE[00677A01]: CALL dword ptr [EDX + 0x2c] */
           (dVar3 = this->slot_2C(), (int)param_1 == dVar3)))) {
         iVar5 = 1;
         local_18 = 1;
         if ((0 < param_5) &&
            (((0 < param_6 && (0 < param_7)) &&
+            /* ST_CALLSITE[00677A3C]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             ((st::fn_004018C5(this,&local_6,&local_8,&local_a), local_6 < param_2 ||
              ((((local_8 < param_3 || (local_a < param_4)) ||
                ((int)param_2 + (int)param_5 <= (int)local_6)) ||
@@ -808,6 +837,7 @@ st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short pa
         uVar6 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar5 != 0) && (param_8 != nullptr)) &&
+           /* ST_CALLSITE[00677AB0]: CALL EAX */
            (iVar5 = (*(code *)param_8)(0,local_10,this,param_9), iVar5 != 0)) {
           g_currentExceptionFrame = local_5c.previous;
           return -1;
@@ -833,7 +863,7 @@ st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short pa
 
 int __cdecl
 st::fn_00677BE0(short param_1,short param_2,byte *param_3,short param_4,short param_5,short param_6,
-           short param_7,short param_8,short param_9,undefined *param_10,undefined4 param_11)
+           short param_7,short param_8,short param_9,code *param_10,undefined4 param_11)
 
 {
   byte bVar1;
@@ -891,14 +921,17 @@ st::fn_00677BE0(short param_1,short param_2,byte *param_3,short param_4,short pa
     }
     this = (STFishC *)*puVar3;
     if (((this != nullptr) &&
+        /* ST_CALLSITE[00677C6F]: CALL dword ptr [EDX + 0x12c]; [STIndirectCallsiteApplier] exact slot 0x12C; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STFishC */
         (local_10 = uVar9, local_1c = this->vfunc_12C(), pDVar8 = g_array_007FA160,
         (short)local_1c == param_1)) &&
        ((param_2 == 0 ||
+        /* ST_CALLSITE[00677C8F]: CALL dword ptr [EAX + 0x130]; [STIndirectCallsiteApplier] exact slot 0x130; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STFishC */
         (iVar4 = this->vfunc_130(), pDVar8 = g_array_007FA160, iVar4 == param_2))))
     {
       iVar4 = 1;
       local_14 = 1;
       if ((param_3 != nullptr) && (*param_3 != 0)) {
+        /* ST_CALLSITE[00677CBC]: CALL dword ptr [EDX + 0x74] */
         (*this->vtable->vfunc_74)((short)local_2c);
         pbVar10 = local_2c;
         pbVar5 = param_3;
@@ -928,6 +961,7 @@ LAB_00677cee:
       uVar9 = local_10;
       if (iVar4 != 0) {
         if ((((0 < param_7) && (0 < param_8)) && (0 < param_9)) &&
+           /* ST_CALLSITE[00677D24]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
            ((((st::fn_00405F0B(this,&local_6,&local_8,&local_a), local_6 < param_4 ||
               (local_8 < param_5)) ||
              ((local_a < param_6 ||
@@ -940,6 +974,7 @@ LAB_00677cee:
         uVar9 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar4 != 0) && (param_10 != nullptr)) &&
+           /* ST_CALLSITE[00677D9A]: CALL EAX */
            (iVar4 = (*(code *)param_10)(local_1c,local_10,this,param_11), pDVar8 = g_array_007FA160,
            uVar9 = local_10, iVar4 != 0)) {
           g_currentExceptionFrame = local_70.previous;
@@ -964,7 +999,7 @@ LAB_00677cee:
 
 int __cdecl
 st::fn_00677F40(short param_1,byte *param_2,short param_3,short param_4,short param_5,short param_6,
-        short param_7,short param_8,undefined *param_9,undefined4 param_10)
+        short param_7,short param_8,code *param_9,undefined4 param_10)
 
 {
   byte bVar1;
@@ -1022,6 +1057,7 @@ st::fn_00677F40(short param_1,byte *param_2,short param_3,short param_4,short pa
       iVar7 = 1;
       local_14 = 1;
       if ((param_2 != nullptr) && (*param_2 != 0)) {
+        /* ST_CALLSITE[00678004]: CALL dword ptr [EDX + 0x74] */
         (*this->vtable->vfunc_74)((short)local_28);
         pbVar8 = local_28;
         pbVar4 = param_2;
@@ -1049,6 +1085,7 @@ LAB_00678036:
       }
       if (iVar7 != 0) {
         if ((((0 < param_6) && (0 < param_7)) && (0 < param_8)) &&
+           /* ST_CALLSITE[0067806C]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
            ((((st::fn_00405F0B(this,&local_6,&local_8,&local_a), local_6 < param_3 ||
               (local_8 < param_4)) ||
              ((local_a < param_5 ||
@@ -1059,6 +1096,7 @@ LAB_00678036:
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar7 != 0) && (param_9 != nullptr)) &&
+           /* ST_CALLSITE[006780E0]: CALL EAX */
            (iVar7 = (*(code *)param_9)(0,local_10,this,param_10), iVar7 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
           return -1;
@@ -1082,7 +1120,7 @@ LAB_00678036:
 
 int __cdecl
 st::fn_00678240(int param_1,short param_2,char param_3,byte *param_4,short param_5,short param_6,
-          short param_7,short param_8,short param_9,short param_10,undefined *param_11,
+          short param_7,short param_8,short param_9,short param_10,code *param_11,
           undefined4 param_12)
 
 {
@@ -1148,11 +1186,13 @@ st::fn_00678240(int param_1,short param_2,char param_3,byte *param_4,short param
     }
     this = (STFishC *)*puVar3;
     if (((this != nullptr) && (this->field_0024 == param_1)) &&
+       /* ST_CALLSITE[006782FD]: CALL dword ptr [EAX + 0x2c] */
        ((local_10 = uVar9, dVar4 = this->slot_2C(), param_2 == 0 ||
         (pDVar7 = g_array_007FA158, (int)param_2 == dVar4)))) {
       iVar8 = 1;
       local_14 = 1;
       if ((param_4 != nullptr) && (*param_4 != 0)) {
+        /* ST_CALLSITE[00678330]: CALL dword ptr [EDX + 0x74] */
         (*this->vtable->vfunc_74)((short)local_28);
         pbVar10 = local_28;
         pbVar5 = param_4;
@@ -1182,10 +1222,12 @@ LAB_00678362:
       uVar9 = local_10;
       if ((iVar8 != 0) &&
          ((local_5 == -1 ||
+          /* ST_CALLSITE[0067837D]: CALL dword ptr [EAX + 0x6c] */
           (iVar6 = this->vfunc_6C(), pDVar7 = g_array_007FA158, uVar9 = local_10,
           local_5 == iVar6)))) {
         if ((0 < param_8) &&
            (((0 < param_9 && (0 < param_10)) &&
+            /* ST_CALLSITE[006783B1]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             ((st::fn_004018C5(this,&local_8,&local_a,&local_c), local_8 < param_5 ||
              ((((local_a < param_6 || (local_c < param_7)) ||
                ((int)param_5 + (int)param_8 <= (int)local_8)) ||
@@ -1197,6 +1239,7 @@ LAB_00678362:
         uVar9 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar8 != 0) && (param_11 != nullptr)) &&
+           /* ST_CALLSITE[00678427]: CALL EAX */
            (iVar8 = (*(code *)param_11)(param_1,local_10,this,param_12), pDVar7 = g_array_007FA158,
            uVar9 = local_10, iVar8 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
@@ -1221,7 +1264,7 @@ LAB_00678362:
 
 int __cdecl
 st::fn_006785A0(byte *param_1,char param_2,short param_3,short param_4,short param_5,short param_6,
-         short param_7,short param_8,undefined *param_9,undefined4 param_10)
+         short param_7,short param_8,code *param_9,undefined4 param_10)
 
 {
   byte bVar1;
@@ -1282,6 +1325,7 @@ st::fn_006785A0(byte *param_1,char param_2,short param_3,short param_4,short par
       iVar7 = 1;
       local_14 = 1;
       if ((param_1 != nullptr) && (*param_1 != 0)) {
+        /* ST_CALLSITE[00678660]: CALL dword ptr [EDX + 0x74] */
         (*this->vtable->vfunc_74)((short)local_28);
         pbVar8 = local_28;
         pbVar4 = param_1;
@@ -1308,9 +1352,11 @@ LAB_00678692:
         }
       }
       if ((iVar7 != 0) &&
+         /* ST_CALLSITE[006786AD]: CALL dword ptr [EAX + 0x6c] */
          ((local_5 == -1 || (iVar5 = this->vfunc_6C(), local_5 == iVar5)))) {
         if ((0 < param_6) &&
            (((0 < param_7 && (0 < param_8)) &&
+            /* ST_CALLSITE[006786E1]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             ((st::fn_004018C5(this,&local_8,&local_a,&local_c), local_8 < param_3 ||
              ((((local_a < param_4 || (local_c < param_5)) ||
                ((int)param_3 + (int)param_6 <= (int)local_8)) ||
@@ -1320,6 +1366,7 @@ LAB_00678692:
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar7 != 0) && (param_9 != nullptr)) &&
+           /* ST_CALLSITE[00678755]: CALL EAX */
            (iVar7 = (*(code *)param_9)(0,local_10,this,param_10), iVar7 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
           return -1;

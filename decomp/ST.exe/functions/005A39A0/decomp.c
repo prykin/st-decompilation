@@ -49,6 +49,7 @@ FSGSTy::sub_005A39A0
     } while (bVar1 != 0);
     if (iVar5 != -2) {
       uVar4 = Library::MSVCRT::FUN_0072ff00(pbVar3);
+      /* ST_CALLSITE[005A39E5]: CALL dword ptr [0x0085bde8] */
       wsprintfA(local_10,"%6d",uVar4);
       goto LAB_005a3a15;
     }

@@ -21,6 +21,7 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
   DArrayTy **ppDVar2;
   short *psVar4;
 
+  /* ST_CALLSITE[00497AF4]: CALL 0x004053b7; direct=004053B7 STGroupBoatC::sub_004232A0 */
   sub_004232A0(this);
   this->vtable = &STGroupBoatCVTable;
   this->field_0045 = 0;
@@ -52,7 +53,7 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
     psVar4 = psVar4 + 2;
   }
   *psVar4 = 0;
-  *(undefined1 *)(psVar4 + 1) = 0;
+  ((undefined1 *)psVar4)[1] = 0;
   this->field_0295 = 0;
   this->field_0297 = 0;
   this->field_0299 = 0;

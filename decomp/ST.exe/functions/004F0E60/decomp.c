@@ -62,10 +62,12 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
   pBVar4 = local_14;
   iVar2 = local_18;
   if (errorCode == 0) {
+    /* ST_CALLSITE[004F0F56]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_18,local_10,'\x01',
            (byte *)local_c);
     if ((param_1->field_0014 == 3) && (local_8 != nullptr)) {
       pBVar7 = FUN_0070b3a0(pBVar4->field_0190,9 - (uint)((char)local_8[2] != 0));
+      /* ST_CALLSITE[004F0F8F]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)pBVar4->field_0068,iVar2,iVar5,'\x06',(byte *)pBVar7);
     }
     Library::DKW::DDX::FUN_006b3640

@@ -81,6 +81,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     RaiseInternalException(iVar9,0,"E:\\__titans\\Artem\\TLO_base.cpp",0xe2);
     return iVar9;
   }
+  /* ST_CALLSITE[004B8119]: CALL 0x00401311; direct=00401311 TLOBaseTy::sub_004B7F90 */
   if ((param_2 == 0) || (iVar11 = sub_004B7F90(local_c,param_1), iVar11 != 0)) {
     this_01->field_0249 = 0xffffffff;
     this_01->field_024D = this_01->field_0245;
@@ -91,18 +92,23 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     else {
       thunk_FUN_004cc810((AnonShape_004CC900_31EE9CAA *)this_01);
     }
+    /* ST_CALLSITE[004B8241]: CALL 0x004022a7; direct=004022A7 TLOBaseTy::LoadImages */
     LoadImages(this_01);
     if (*(int *)(&DAT_00791a10 + this_01->field_0235 * 4) != 0) {
+      /* ST_CALLSITE[004B8259]: CALL 0x00401a0f; direct=00401A0F TLOBaseTy::AddSprInit */
       AddSprInit(this_01);
     }
     if (param_2 != 0) {
       TVar3 = this_01->field_0245;
       if (TVar3 == CASE_1) {
+        /* ST_CALLSITE[004B82C1]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_497 = LookupRecordByte(*(char *)&this_01->field_023D);
         if (*(int *)(&DAT_007955d0 + ((uint)(byte)local_EAX_497 + this_01->field_0235 * 3) * 4) != 0
            ) {
           pTVar4 = this_01->vtable;
+          /* ST_CALLSITE[004B82F3]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           uVar10 = LookupRecordByte(*(char *)&this_01->field_023D);
+          /* ST_CALLSITE[004B8317]: CALL dword ptr [EDI + 0x90] */
           (*pTVar4->vfunc_90)(this_01,3,
                               (short)*(undefined4 *)
                                       (&DAT_007955d0 +
@@ -110,9 +116,11 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         }
       }
       else if (TVar3 == CASE_2) {
+        /* ST_CALLSITE[004B82AC]: CALL dword ptr [EDX + 0x90] */
         this_01->vfunc_90(3,(short)*(undefined4 *)(&DAT_007958ec + this_01->field_0235 * 4));
       }
       else if (TVar3 == CASE_3) {
+        /* ST_CALLSITE[004B828D]: CALL dword ptr [EDX + 0x90] */
         this_01->vfunc_90(3,(short)*(undefined4 *)(&DAT_007959f4 + this_01->field_0235 * 4));
       }
     }
@@ -159,8 +167,10 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       }
       break;
     case CASE_1:
+      /* ST_CALLSITE[004B8561]: CALL dword ptr [EDX + 0x8] */
       iVar11 = this_01->vfunc_08();
       if (iVar11 != 0) {
+        /* ST_CALLSITE[004B856E]: CALL dword ptr [EAX + 0xe8] */
         this_01->SetActivity(0);
       }
       sVar8 = (short)this_01->field_05B0;
@@ -284,10 +294,14 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         thunk_FUN_004c3000((int)this_01);
       }
       thunk_FUN_004e9c20((AnonShape_004E9C20_50FC91C6 *)this_01);
+      /* ST_CALLSITE[004B877E]: CALL 0x00405425; direct=00405425 TLOBaseTy::sub_004DC150 */
       sub_004DC150(this_01);
       this_00 = &this_01->field_01D5;
+      /* ST_CALLSITE[004B878D]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,0xf);
+      /* ST_CALLSITE[004B8796]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,0);
+      /* ST_CALLSITE[004B879F]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,1);
     default:
       if (*(int *)(&DAT_00792778 + this_01->field_0235 * 4) != 0) {
@@ -351,6 +365,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       thunk_FUN_004c2e60((int)this_01);
     }
     thunk_FUN_004ea6c0((int)this_01);
+    /* ST_CALLSITE[004B883E]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     RotateSpr(this_01,1);
   }
   else {
@@ -363,7 +378,9 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     }
     if (bVar7) {
       if (((this_01->field_0245 == CASE_5) && (param_1 == 2)) &&
+         /* ST_CALLSITE[004B815E]: CALL 0x00401311; direct=00401311 TLOBaseTy::sub_004B7F90 */
          (iVar11 = sub_004B7F90(this_01,0), iVar11 != 0)) {
+        /* ST_CALLSITE[004B816C]: CALL 0x004010aa; direct=004010AA TLOBaseTy::SetState */
         SetState(this_01,0,1);
       }
       TVar3 = this_01->field_0245;
@@ -378,6 +395,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         this_01->field_0275 = 0;
       }
       if (((TVar3 == CASE_4) && (this_01->field_03DC != 0)) &&
+         /* ST_CALLSITE[004B81D4]: CALL 0x00404e9e; direct=00404E9E TLOBaseTy::sub_004EA620 */
          (iVar11 = sub_004EA620(this_01), iVar11 != 0)) {
         this_01->field_03FC = 1;
         this_01->field_0400 = 0;

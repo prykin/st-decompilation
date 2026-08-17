@@ -71,10 +71,10 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
       ppDVar23 = local_14->field_0171;
       local_20 = (uint *)0x5;
       do {
-        local_c = (AnonShape_004210E0_306A4C8B *)FUN_006b0020(&ppDVar23[-5]->flags,(int *)&local_8);
+        local_c = FUN_006b0020(&ppDVar23[-5]->flags,(int *)&local_8);
         FreeAndNull(&local_c);
         *param_1 = *param_1 + local_8;
-        local_c = (AnonShape_004210E0_306A4C8B *)FUN_006b0020(&(*ppDVar23)->flags,(int *)&local_8);
+        local_c = FUN_006b0020(&(*ppDVar23)->flags,(int *)&local_8);
         FreeAndNull(&local_c);
         iVar17 = *param_1;
         ppDVar23 = ppDVar23 + 1;
@@ -92,10 +92,10 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
       ppDVar23 = local_14->field_0135;
       local_20 = (uint *)0x2;
       do {
-        local_c = (AnonShape_004210E0_306A4C8B *)FUN_006b0020(&ppDVar23[-2]->flags,(int *)&local_8);
+        local_c = FUN_006b0020(&ppDVar23[-2]->flags,(int *)&local_8);
         FreeAndNull(&local_c);
         *param_1 = *param_1 + local_8;
-        local_c = (AnonShape_004210E0_306A4C8B *)FUN_006b0020(&(*ppDVar23)->flags,(int *)&local_8);
+        local_c = FUN_006b0020(&(*ppDVar23)->flags,(int *)&local_8);
         FreeAndNull(&local_c);
         ppDVar23 = ppDVar23 + 1;
         local_20 = (uint *)((int)local_20 + -1);
@@ -104,10 +104,10 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
       ppDVar23 = pSVar15->field_014D;
       local_20 = (uint *)0x4;
       do {
-        local_c = (AnonShape_004210E0_306A4C8B *)FUN_006b0020(&ppDVar23[-4]->flags,(int *)&local_8);
+        local_c = FUN_006b0020(&ppDVar23[-4]->flags,(int *)&local_8);
         FreeAndNull(&local_c);
         *param_1 = *param_1 + local_8;
-        local_c = (AnonShape_004210E0_306A4C8B *)FUN_006b0020(&(*ppDVar23)->flags,(int *)&local_8);
+        local_c = FUN_006b0020(&(*ppDVar23)->flags,(int *)&local_8);
         FreeAndNull(&local_c);
         iVar17 = *param_1;
         ppDVar23 = ppDVar23 + 1;
@@ -115,12 +115,10 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
         local_20 = (uint *)((int)local_20 + -1);
       } while (local_20 != nullptr);
       *param_1 = iVar17 + local_8 + 0x272;
-      local_c = (AnonShape_004210E0_306A4C8B *)
-                FUN_006b0020(&pSVar15->field_019D->flags,(int *)&local_8);
+      local_c = FUN_006b0020(&pSVar15->field_019D->flags,(int *)&local_8);
       FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
-      local_c = (AnonShape_004210E0_306A4C8B *)
-                FUN_006b0020(&pSVar15->field_01A1->flags,(int *)&local_8);
+      local_c = FUN_006b0020(&pSVar15->field_01A1->flags,(int *)&local_8);
       FreeAndNull(&local_c);
       iVar17 = *param_1 + local_8 + 0x2e;
     }
@@ -319,7 +317,7 @@ LAB_004212f3:
       local_20 = (uint *)local_28;
       do {
         uVar22 = uVar22 + local_8;
-        local_10 = (undefined4 *)FUN_006b0020(&local_1c[-5]->flags,(int *)&local_8);
+        local_10 = FUN_006b0020(&local_1c[-5]->flags,(int *)&local_8);
         puVar18 = (byte *)(local_10);
         puVar24 = (byte *)((int)&local_c->field_0x0 + uVar22);
         memmove(puVar24, puVar18, local_8); /* compiler REP MOVS byte copy */
@@ -328,7 +326,7 @@ LAB_004212f3:
         *local_20 = local_8;
         FreeAndNull(&local_10);
         uVar22 = uVar22 + local_8;
-        local_10 = (undefined4 *)FUN_006b0020(&(*local_1c)->flags,(int *)&local_8);
+        local_10 = FUN_006b0020(&(*local_1c)->flags,(int *)&local_8);
         puVar13 = local_20;
         puVar18 = (byte *)(local_10);
         puVar24 = (byte *)((int)&local_c->field_0x0 + uVar22);
@@ -432,7 +430,7 @@ LAB_004212f3:
         local_24 = 2;
         do {
           uVar22 = uVar22 + local_8;
-          local_10 = (undefined4 *)FUN_006b0020(&local_1c[-2]->flags,(int *)&local_8);
+          local_10 = FUN_006b0020(&local_1c[-2]->flags,(int *)&local_8);
           puVar18 = (byte *)(local_10);
           puVar24 = (byte *)((int)&local_c->field_0x0 + uVar22);
           memmove(puVar24, puVar18, local_8); /* compiler REP MOVS byte copy */
@@ -441,7 +439,7 @@ LAB_004212f3:
           *local_20 = local_8;
           FreeAndNull(&local_10);
           uVar22 = uVar22 + local_8;
-          local_10 = (undefined4 *)FUN_006b0020(&(*local_1c)->flags,(int *)&local_8);
+          local_10 = FUN_006b0020(&(*local_1c)->flags,(int *)&local_8);
           puVar13 = local_20;
           puVar18 = (byte *)(local_10);
           puVar24 = (byte *)((int)&local_c->field_0x0 + uVar22);
@@ -459,7 +457,7 @@ LAB_004212f3:
         local_24 = 4;
         do {
           uVar22 = uVar22 + local_8;
-          local_10 = (undefined4 *)FUN_006b0020(&local_1c[-4]->flags,(int *)&local_8);
+          local_10 = FUN_006b0020(&local_1c[-4]->flags,(int *)&local_8);
           puVar18 = (byte *)(local_10);
           puVar24 = (byte *)((int)&local_c->field_0x0 + uVar22);
           memmove(puVar24, puVar18, local_8); /* compiler REP MOVS byte copy */
@@ -468,7 +466,7 @@ LAB_004212f3:
           *local_20 = local_8;
           FreeAndNull(&local_10);
           uVar22 = uVar22 + local_8;
-          local_10 = (undefined4 *)FUN_006b0020(&(*local_1c)->flags,(int *)&local_8);
+          local_10 = FUN_006b0020(&(*local_1c)->flags,(int *)&local_8);
           puVar13 = local_20;
           puVar18 = (byte *)(local_10);
           puVar24 = (byte *)((int)&local_c->field_0x0 + uVar22);
@@ -518,7 +516,7 @@ LAB_004212f3:
         puVar18[3] = pAVar2->field_000C;
         local_18->field_01F9 = iVar19 + 0x262;
         local_18->field_01FD = 0x10;
-        local_10 = (undefined4 *)FUN_006b0020(&local_14->field_019D->flags,(int *)&local_8);
+        local_10 = FUN_006b0020(&local_14->field_019D->flags,(int *)&local_8);
         puVar18 = (byte *)(local_10);
         puVar24 = (byte *)((int)&local_c->field_0271 + iVar19 + 1);
         memmove(puVar24, puVar18, local_8); /* compiler REP MOVS byte copy */
@@ -527,7 +525,7 @@ LAB_004212f3:
         local_18->field_0215 = local_8;
         FreeAndNull(&local_10);
         iVar17 = iVar19 + 0x272 + local_8;
-        local_10 = (undefined4 *)FUN_006b0020(&local_14->field_01A1->flags,(int *)&local_8);
+        local_10 = FUN_006b0020(&local_14->field_01A1->flags,(int *)&local_8);
         pAVar14 = local_18;
         puVar18 = (byte *)(local_10);
         puVar24 = (byte *)((int)&local_c->field_0271 + iVar17 + -0x271);

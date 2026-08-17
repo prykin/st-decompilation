@@ -51,12 +51,14 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
   if (SVar1 < MESS_INTERSYSTEMC_B904) {
     if (SVar1 == MESS_INTERSYSTEMC_B903) {
       if (g_cursorClass_00802A30 != nullptr) {
+        /* ST_CALLSITE[005430CB]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
       }
       if (g_helpPanel_00801690 == nullptr) {
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
+      /* ST_CALLSITE[005430E2]: CALL dword ptr [EDX + 0x18] */
       g_helpPanel_00801690->SetPanel('\x01');
       g_currentExceptionFrame = local_50.previous;
       return 0;
@@ -75,6 +77,7 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
           pCVar4 = thunk_FUN_00571240("PANEL_BKGND",0);
           pCVar4 = FUN_006f2c00(pCVar4,iVar9,uVar3);
           local_c = (tagBITMAPINFO *)cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar10,iVar13);
+          /* ST_CALLSITE[0054303C]: CALL 0x00403738; direct=00403738 PutDDX */
           PutDDX(0,0,'\x01',local_c);
           cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
           g_currentExceptionFrame = local_50.previous;
@@ -85,12 +88,14 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
           return 0;
         }
         if (g_cursorClass_00802A30 != nullptr) {
+          /* ST_CALLSITE[00542FC0]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         }
         if (g_optPanel_008016DC == nullptr) {
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
+        /* ST_CALLSITE[00542FD5]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
         OptPanelTy::SwitchOptPanel(g_optPanel_008016DC,'\x01');
         g_currentExceptionFrame = local_50.previous;
         return 0;
@@ -99,12 +104,14 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
     else {
       if (SVar1 == MESS_INTERSYSTEMC_B901) {
         if (g_cursorClass_00802A30 != nullptr) {
+          /* ST_CALLSITE[00543093]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         }
         if (g_playPanel_008016E4 == nullptr) {
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
+        /* ST_CALLSITE[005430A8]: CALL 0x0040425f; direct=0040425F PlayPanelTy::SetPanel */
         PlayPanelTy::SetPanel(g_playPanel_008016E4,'\x01');
         g_currentExceptionFrame = local_50.previous;
         return 0;
@@ -150,6 +157,7 @@ switchD_00543107_caseD_b904:
     iVar13 = *piVar10;
     cVar7 = '\x01';
 LAB_00543291:
+    /* ST_CALLSITE[00543291]: CALL 0x00403738; direct=00403738 PutDDX */
     PutDDX(iVar13,iVar9,cVar7,pBVar6);
   }
   else {
@@ -159,9 +167,11 @@ LAB_00543291:
       goto switchD_00543107_caseD_b904;
     case 0xb905:
       if (g_cursorClass_00802A30 != nullptr) {
+        /* ST_CALLSITE[00543118]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
       }
       if (g_optPanel_008016DC != nullptr) {
+        /* ST_CALLSITE[0054312D]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
         OptPanelTy::SwitchOptPanel(g_optPanel_008016DC,'\x0e');
         g_currentExceptionFrame = local_50.previous;
         return 0;
@@ -169,6 +179,7 @@ LAB_00543291:
       break;
     case MESS_INTERSYSTEMC_B904|MESS_SHARED_0003:
       if (g_cursorClass_00802A30 != nullptr) {
+        /* ST_CALLSITE[00543154]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         g_cursorClass_00802A30->field_04DE = 1;
         thunk_FUN_005252c0(0xae);

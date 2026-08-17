@@ -19,7 +19,7 @@ void FUN_00753ff7(void)
 
   bVar6 = false;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  if ((*(byte *)(unaff_EBP + 0x3f) & 0x80) == 0) {
+  if ((((byte *)unaff_EBP)[0x3f] & 0x80) == 0) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar2 = *(int *)(unaff_EBP + 0x24);
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

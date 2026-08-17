@@ -138,9 +138,11 @@ LAB_004b04c9:
                 }
                 if (bVar18) {
                   *(undefined1 *)((int)psVar11 + iVar16 + (int)local_10) = 4;
+                  /* ST_CALLSITE[004B04E7]: CALL dword ptr [EDX + 0x2c] */
                   dVar5 = local_c->slot_2C();
                   if (((&STGroupBoatCVTable.vfunc_04)[dVar5] ==
                        (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) ||
+                     /* ST_CALLSITE[004B04F9]: CALL dword ptr [EAX + 0x2c] */
                      ((dVar5 = local_c->slot_2C(), dVar5 == 0x78 &&
                       ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
                        (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
@@ -149,9 +151,11 @@ LAB_004b04c9:
                   goto LAB_004b057d;
                 }
               }
+              /* ST_CALLSITE[004B0528]: CALL dword ptr [EDX + 0x2c] */
               dVar5 = local_c->slot_2C();
               if (((&STGroupBoatCVTable.vfunc_04)[dVar5] ==
                    (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) ||
+                 /* ST_CALLSITE[004B0540]: CALL dword ptr [EAX + 0x2c] */
                  ((dVar5 = local_c->slot_2C(), dVar5 == 0x78 &&
                   ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
                    (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
@@ -178,6 +182,7 @@ LAB_004b057d:
     iVar16 = DArrayGetNext(g_array_007FA150,(byte *)&local_c);
     while (-1 < iVar16) {
       if (local_c != nullptr) {
+        /* ST_CALLSITE[004B05F1]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0(local_c,&local_22,(short *)((int)&param_2 + 2),&local_2e);
         *(undefined1 *)
          ((int)local_10 +
@@ -318,6 +323,7 @@ LAB_004b057d:
                 if (-1 < iVar6) {
                   iVar6 = local_40 / 2;
                   do {
+                    /* ST_CALLSITE[004B099B]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                     STFishC::sub_004162B0(local_c,&local_22,(short *)((int)&param_2 + 2),&local_2e);
                     iVar12 = FUN_006aced8((int)local_22,(int)STPiece<2,2>(param_2),iVar16,local_14);
                     if ((iVar12 <= iVar6) && ((iVar9 < 0 || (iVar12 < iVar9)))) {

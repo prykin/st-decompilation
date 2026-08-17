@@ -73,6 +73,7 @@ LAB_0065f095:
             if (bVar8) {
               local_10 = 0;
               local_14 = 0;
+              /* ST_CALLSITE[0065F0DA]: CALL 0x00403869; direct=00403869 STAllPlayersC::GetGObjFromBox */
               STAllPlayersC::GetGObjFromBox
                         (g_allPlayers_007FA174,bVar5,*psVar6,psVar6[1],psVar6[2],psVar6[3],psVar6[4]
                          ,psVar6[5],nullptr,nullptr,&local_10,&local_14);

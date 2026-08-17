@@ -73,6 +73,7 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[005023C3]: CALL 0x004040fc; direct=004040FC CursorClassTy::sub_0054A8D0 */
   CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
   this_00 = local_1c;
   if (local_1c->field_02FE != 0) {
@@ -112,7 +113,7 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
       iVar12 = 2;
       iVar9 = 5;
       switch(local_14 + iVar7) {
-      case nullptr:
+      case 0:
         iVar12 = 0x3f;
         break;
       case (Global_sub_00529590_param_1Enum *)0x1:
@@ -128,6 +129,7 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
 switchD_0050248c_caseD_2:
         iVar9 = 0x29;
       }
+      /* ST_CALLSITE[005024BA]: CALL 0x0040313e; direct=0040313E CPanelTy::sub_004F17D0 */
       sub_004F17D0(this_00,1,(byte)local_c);
       if (this_00->field_0BA0 == '\0') {
         local_10 = 0;
@@ -142,6 +144,7 @@ switchD_0050248c_caseD_2:
       puVar19 = local_8;
       pcVar4_mg0 = thunk_FUN_00529590(*local_14,this_00->field_0B99);
       pCVar4 = thunk_FUN_00571240(pcVar4_mg0,iVar7);
+      /* ST_CALLSITE[00502527]: CALL 0x004041ba; direct=004041BA CPanelTy::SetButStruct */
       SetButStruct(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)local_bb0 + local_24 * 0x17c),3,
                    local_10,iVar12,iVar9,1,pCVar4,uVar16,uVar17,puVar19,pcVar21);
       iVar7 = local_24 * 0x17c;
@@ -163,8 +166,10 @@ LAB_0050254c:
     local_38 = 2;
     local_34 = 0xb200;
     local_3c = local_5c;
+    /* ST_CALLSITE[005025B9]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,9,&this_00->field_02FE,nullptr,local_6c,0);
+    /* ST_CALLSITE[005025C0]: CALL 0x00404ba1; direct=00404BA1 CPanelTy::sub_004F1610 */
     sub_004F1610(this_00,'\x01');
     uVar6 = this_00->field_09C0[0];
     if (uVar6 == 0) goto LAB_00502622;
@@ -191,6 +196,7 @@ LAB_00502622:
     uVar14 = 0xb118;
     uVar13 = 0xb117;
     pCVar4 = thunk_FUN_00571240("BUT_SHOWUPD",0);
+    /* ST_CALLSITE[005026A1]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
     uVar13 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,pCVar4,uVar13,
                        uVar14,sVar15,uVar16,iVar7,pcVar21,iVar9,uVar20,uVar22);
     this_00->field_0970 = uVar13;
@@ -206,6 +212,7 @@ LAB_00502622:
     uVar14 = 0xb11a;
     uVar13 = 0xb119;
     pCVar4 = thunk_FUN_00571240("BUT_SHOWFRM",0);
+    /* ST_CALLSITE[005026FA]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
     uVar13 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,pCVar4,uVar13,
                        uVar14,sVar15,uVar16,iVar7,pcVar21,iVar9,uVar20,uVar22);
     this_00->field_0970 = uVar13;
@@ -235,6 +242,7 @@ LAB_00502622:
       iVar9 = iVar7 + -0x10;
       iVar12 = iVar7;
       pCVar4 = thunk_FUN_00571240("BUT_BEHREPAIR0",0);
+      /* ST_CALLSITE[005027B9]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
       uVar6 = CreateBut(this_00,3,0,local_10,(int)local_8,0x80,1,pCVar4,iVar9,iVar12,sVar15,uVar16,
                         iVar5,pcVar21,iVar18,uVar13,uVar14);
       bVar8 = bVar8 + 1;

@@ -21,12 +21,14 @@ void __thiscall STBHEShellC::sub_005F5D10(STBHEShellC *this,int param_1)
       this->field_009B = this->field_0048;
       this->field_0034 = 0;
 LAB_005f5d4b:
+      /* ST_CALLSITE[005F5D59]: CALL 0x00404e0d; direct=00404E0D STBHEShellC::sub_005F5E30 */
       sub_005F5E30(this,this->field_0040,this->field_0044,this->field_0048);
       this->field_0104 = CASE_3;
       return;
     }
     if (param_1 == 2) {
       if ((int *)this->field_0034 != nullptr) {
+        /* ST_CALLSITE[005F5D91]: CALL dword ptr [EAX + 0xe0] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar1 = (**(code **)(*(int *)this->field_0034 + 0xe0))
                           (this->field_0038,(int)&param_1 + 2,&local_6,&local_8,&local_c);

@@ -69,6 +69,7 @@ _EnumDest(byte *param_1,char param_2,short param_3,short param_4,short param_5,s
       iVar7 = 1;
       local_14 = 1;
       if ((param_1 != nullptr) && (*param_1 != 0)) {
+        /* ST_CALLSITE[00678660]: CALL dword ptr [EDX + 0x74] */
         (*this->vtable->vfunc_74)((short)local_28);
         pbVar8 = local_28;
         pbVar4 = param_1;
@@ -95,9 +96,11 @@ LAB_00678692:
         }
       }
       if ((iVar7 != 0) &&
+         /* ST_CALLSITE[006786AD]: CALL dword ptr [EAX + 0x6c] */
          ((local_5 == -1 || (iVar5 = this->vfunc_6C(), local_5 == iVar5)))) {
         if ((0 < param_6) &&
            (((0 < param_7 && (0 < param_8)) &&
+            /* ST_CALLSITE[006786E1]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             ((STFishC::sub_004162B0(this,&local_8,&local_a,&local_c), local_8 < param_3 ||
              ((((local_a < param_4 || (local_c < param_5)) ||
                ((int)param_3 + (int)param_6 <= (int)local_8)) ||
@@ -107,6 +110,7 @@ LAB_00678692:
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar7 != 0) && (param_9 != nullptr)) &&
+           /* ST_CALLSITE[00678755]: CALL EAX */
            (iVar7 = (*(code *)param_9)(0,local_10,this,param_10), iVar7 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
           return -1;

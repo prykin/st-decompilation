@@ -143,6 +143,7 @@ void __thiscall SndUnderAttMenegC::sub_00621780(SndUnderAttMenegC *this,uint par
     local_10.unknown = 0;
     local_10.x = -1;
     local_10.y = -1;
+    /* ST_CALLSITE[00621972]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
     SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
     *puVar2 = 1;
     *(uint *)(puVar2 + 1) = g_playSystem_00802A38->field_00E4;

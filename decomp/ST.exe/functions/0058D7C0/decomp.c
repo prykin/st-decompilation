@@ -68,6 +68,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[0058D81F]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
   STSprGameObjC::GetMessage((STSprGameObjC *)local_20,message);
   SVar2 = message->id;
   if (SVar2 < MESS_ID_ALLCREATE) {
@@ -78,9 +79,12 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       }
       puVar7 = (byte *)(&this_00->field_01D5);
       this_00->field_023D = 0;
+      /* ST_CALLSITE[0058DEE0]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)puVar7,0xe);
       thunk_FUN_004ad5e0((STT3DSprC *)puVar7);
+      /* ST_CALLSITE[0058DEFE]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       STT3DSprC::LoadSequence((STT3DSprC *)puVar7,8,PTR_00806764,"expshark",CASE_1D);
+      /* ST_CALLSITE[0058DF13]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)puVar7,8,g_playSystem_00802A38->field_00E4);
       this_00->field_0257 = CASE_4;
       g_currentExceptionFrame = local_80.previous;
@@ -91,7 +95,9 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
+      /* ST_CALLSITE[0058DD51]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
       local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
+      /* ST_CALLSITE[0058DD5F]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
       local_14 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
       local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x66 + local_8);
       if (local_18 == nullptr) {
@@ -132,6 +138,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       pbVar8 = local_14;
       pbVar11 = &local_c[1].field_0x2 + local_8;
       memmove(pbVar11, pbVar8, local_10); /* compiler REP MOVS byte copy */
+      /* ST_CALLSITE[0058DE90]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData
                 (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                  local_10 + 0x66 + local_8);
@@ -142,6 +149,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       return 0;
     }
     if (SVar2 == MESS_SHARED_0003) {
+      /* ST_CALLSITE[0058DCE7]: CALL 0x00405952; direct=00405952 sub_004167A0 */
       sub_004167A0(this_00);
       thunk_FUN_00495ff0(this_00->field_005B,this_00->field_005D,this_00->field_005F,
                          this_00->field_008E,(AnonShape_00495FF0_59081BDD *)this_00);
@@ -151,6 +159,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       return 0;
     }
     if (SVar2 == MESS_ID_NONE) {
+      /* ST_CALLSITE[0058DCCD]: CALL 0x00401efb; direct=00401EFB STSharkC::LifeShark */
       LifeShark(this_00);
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -167,6 +176,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       this_00->field_024F = 0;
       this_00->field_0253 = 0;
       this_00->field_0249 = 0xff;
+      /* ST_CALLSITE[0058D9E8]: CALL 0x004056fa; direct=004056FA STSharkC::sub_0058FF70 */
       iVar8 = sub_0058FF70(this_00);
       this_00->field_024F = iVar8;
       puVar7 = (byte *)((message->arg0).ptr);
@@ -183,6 +193,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
         iVar4 = thunk_FUN_00417e70(this_00,8);
         if (iVar4 == 0) {
           puVar7 = (byte *)(&this_00->field_01D5);
+          /* ST_CALLSITE[0058DAA9]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
           iVar4 = STT3DSprC::LoadSequence
                             ((STT3DSprC *)puVar7,0xe,PTR_0080676c,"shark1",CASE_1D);
           if (iVar4 != 0) {
@@ -190,8 +201,10 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_shark.cpp",0x9f);
           }
           thunk_FUN_004ac610(puVar7,'\x0e');
+          /* ST_CALLSITE[0058DAE2]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
           STT3DSprC::StartShow((STT3DSprC *)puVar7,0xe,g_playSystem_00802A38->field_00E4);
           if (local_1c[3] == 0) {
+            /* ST_CALLSITE[0058DB39]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
             STT3DSprC::sub_004AD3C0
                       ((STT3DSprC *)puVar7,
                        (float)this_00->field_026F * _DAT_007904f8 + _DAT_007904f4,
@@ -213,6 +226,7 @@ LAB_0058dc72:
               if (local_EAX_939 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
+              /* ST_CALLSITE[0058DB7A]: CALL 0x0040227a; direct=0040227A STSharkC::sub_0058EFE0 */
               sub_0058EFE0(this_00);
             }
           }
@@ -231,6 +245,7 @@ LAB_0058dc72:
             else if (this_00->field_0273 == g_worldGrid.sizeY + -1) {
               this_00->field_027B = 0x5a;
             }
+            /* ST_CALLSITE[0058DC2E]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
             STT3DSprC::sub_004AD3C0
                       ((STT3DSprC *)puVar7,(float)(int)local_1c * _DAT_007904f8 + _DAT_007904f4,
                        (float)this_00->field_0273 * _DAT_007904f8 + _DAT_007904f4,
@@ -243,6 +258,7 @@ LAB_0058dc72:
             if (local_EAX_1180 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
+            /* ST_CALLSITE[0058DC6B]: CALL 0x0040227a; direct=0040227A STSharkC::sub_0058EFE0 */
             sub_0058EFE0(this_00);
           }
         }
@@ -253,10 +269,12 @@ LAB_0058dc72:
           if (local_EAX_696 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
+          /* ST_CALLSITE[0058DA87]: CALL 0x0040227a; direct=0040227A STSharkC::sub_0058EFE0 */
           sub_0058EFE0(this_00);
         }
       }
       else {
+        /* ST_CALLSITE[0058DA49]: CALL 0x0040227a; direct=0040227A STSharkC::sub_0058EFE0 */
         sub_0058EFE0(this_00);
       }
     }
@@ -265,6 +283,7 @@ LAB_0058dc72:
       puVar9 = (byte *)&this_00->field_0x25b;
       memmove(puVar9, puVar7, 0x34); /* compiler REP MOVS byte copy */
       local_8 = STField<uint>(local_1c,0x5e);
+      /* ST_CALLSITE[0058D8A5]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
       STAllPlayersC::RestoreGObjData
                 ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x66 + (int)local_1c));
       puVar7 = (byte *)(local_1c);
@@ -303,10 +322,12 @@ LAB_0058dc72:
         local_28 = 0;
         local_24 = 0;
         local_30 = PTR_008073cc;
+        /* ST_CALLSITE[0058D99C]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
         STT3DSprC::RestoreSpr
                   ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
                    (AnonShape_004AD790_77673787 *)((int)puVar7 + 0x62));
         FreeAndNull(&local_3c);
+        /* ST_CALLSITE[0058D9C6]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
         DumpClassC::WritePtr
                   (this_00->field_005B,this_00->field_005D,this_00->field_005F,1,
                    (RecoveredRecord_DumpClassC_00495EC0 *)this_00);
@@ -322,6 +343,7 @@ LAB_0058dc72:
       return 0;
     }
 LAB_0058e0f9:
+    /* ST_CALLSITE[0058E0FB]: CALL 0x0040227a; direct=0040227A STSharkC::sub_0058EFE0 */
     sub_0058EFE0(this_00);
   }
   else {
@@ -332,6 +354,7 @@ LAB_0058e0f9:
       return 0;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     case MESS_STSPRGAMEOBJC_0113:
+      /* ST_CALLSITE[0058E0CD]: CALL dword ptr [EDX] */
       (**(code **)this_00->field_01D5)();
       g_currentExceptionFrame = local_80.previous;
       return 0;

@@ -46,6 +46,7 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\behpanel.cpp",0xf3);
     return 0xffff;
   }
+  /* ST_CALLSITE[004EE50E]: CALL 0x00401401; direct=00401401 SpecPanelTy::GetMessage */
   SpecPanelTy::GetMessage((SpecPanelTy *)local_8,message);
   SVar1 = message->id;
   if (SVar1 < 0xb20f) {
@@ -58,6 +59,7 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
       pcVar4 = thunk_FUN_00529590((&this_00->field_01AF)[(message->arg0).words.high],
                                   this_00->field_01AB);
       pCVar5 = thunk_FUN_00571240(pcVar4,iVar8);
+      /* ST_CALLSITE[004EE660]: CALL dword ptr [EDI + 0x8] */
       (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar5,pcVar9,iVar11,iVar12);
       g_currentExceptionFrame = local_70.previous;
       return 0;
@@ -75,6 +77,7 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
       pcVar4 = thunk_FUN_00529590((&this_00->field_01AF)[(message->arg0).words.high],
                                   this_00->field_01AB);
       pCVar5 = thunk_FUN_00571240(pcVar4,iVar8);
+      /* ST_CALLSITE[004EE611]: CALL dword ptr [EDI + 0x8] */
       (*pBVar1->PaintBut)((PanelTy *)this_00,(int)message,1,pCVar5,pcVar9,iVar11,iVar12);
       g_currentExceptionFrame = local_70.previous;
       return 0;
@@ -85,9 +88,11 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
         return 0;
       }
       thunk_FUN_005252c0(0xae);
+      /* ST_CALLSITE[004EE5A4]: CALL 0x004035ad; direct=004035AD CursorClassTy::sub_0054B630 */
       CursorClassTy::sub_0054B630
                 (g_cursorClass_00802A30,(uint)(byte)(&this_00->field_01AF)[(message->arg0).u32],0);
       this_00->field_0028 = 0xbfff;
+      /* ST_CALLSITE[004EE5B8]: CALL dword ptr [EDX] */
       this_00->GetMessage((STMessage *)&this_00->field_0x18);
       g_currentExceptionFrame = local_70.previous;
       return 0;
@@ -97,10 +102,12 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_70.previous;
         return 0;
       }
+      /* ST_CALLSITE[004EE542]: CALL 0x00401d4d; direct=00401D4D BehPanelTy::DoneBehPanel */
       DoneBehPanel(this_00);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
+    /* ST_CALLSITE[004EE55C]: CALL 0x00401960; direct=00401960 BehPanelTy::InitBehPanel */
     InitBehPanel(this_00);
     g_currentExceptionFrame = local_70.previous;
     return 0;
@@ -148,6 +155,7 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
     pcVar4 = "BUT_BAGR";
   }
   pCVar5 = thunk_FUN_00571240(pcVar4,0);
+  /* ST_CALLSITE[004EE779]: CALL 0x004042be; direct=004042BE BehPanelTy::PaintBBut */
   PaintBBut(this_00,(AnonShape_004EE350_18D491EA *)message,pCVar5,bVar7);
 switchD_004ee68c_caseD_c0a2:
   g_currentExceptionFrame = local_70.previous;

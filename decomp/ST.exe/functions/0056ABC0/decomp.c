@@ -21,6 +21,7 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
         pcVar7 = (char *)((int)this + 0x11c9);
         do {
           if ((*pcVar7 != -1) && (bVar4 != STField<byte>(this,0x112d))) {
+            /* ST_CALLSITE[0056AD25]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
             VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar5);
           }
           bVar4 = bVar4 + 1;
@@ -70,6 +71,7 @@ LAB_0056acb1:
           bVar4 = DAT_0080874d;
         }
         if (!bVar8) {
+          /* ST_CALLSITE[0056ACC9]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
           VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,1,puVar5);
           bVar4 = DAT_0080874d;
         }

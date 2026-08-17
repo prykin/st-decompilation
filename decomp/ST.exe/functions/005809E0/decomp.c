@@ -32,6 +32,7 @@ undefined4 __cdecl FUN_005809e0(short param_1,short param_2,int param_3,int para
       (this = STGridAt3D(g_worldGrid, param_1, param_2, sVar4).objects[0], this == nullptr)))) {
     return 1;
   }
+  /* ST_CALLSITE[00580AD0]: CALL dword ptr [EAX + 0x2c] */
   iVar3 = this->GetObjectTypeId();
   if (iVar3 != 0x39) {
     if (iVar3 == 0x4f) {

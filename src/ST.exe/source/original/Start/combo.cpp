@@ -208,7 +208,7 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
     st::fn_006B3640
               ((int *)g_ddxContext_008075A8,*puVar2,0xffffffff,st::machine_word_boundary_cast<uint>(this_00->field_00EC - 3),
                this_00->field_00F0);
-    puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x18);
+    puVar1 = &this_00->field_0x18;
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     iVar8 = 0;
     this_00->field_0028 = 0x1a;
@@ -261,6 +261,7 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
     local_4e0 = local_500;
     local_4c0 = local_500;
     local_4a0 = local_500;
+    /* ST_CALLSITE[00593FD3]: CALL dword ptr [EAX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,7,&this_00->field_010C,nullptr,st::machine_word_boundary_cast<undefined4>(local_528),0);
     this_00->field_0028 = 0x22;
@@ -271,6 +272,7 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
     g_currentExceptionFrame = local_54.previous;
     return;
   }
+  /* ST_CALLSITE[00594023]: CALL 0x00403968; direct=00403968 ComboTy::sub_005943F0 */
   st::fn_00403968(local_10);
   g_currentExceptionFrame = local_54.previous;
   return;
@@ -302,7 +304,7 @@ void __thiscall st::fn_005941D0(ComboTy *this)
     if (local_8->field_010C != 0) {
       st::fn_006E56B0(local_8->field_000C,local_8->field_010C);
     }
-    puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x18);
+    puVar1 = &this_00->field_0x18;
     this_00->field_010C = 0;
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     iVar5 = 0;
@@ -401,9 +403,11 @@ int __thiscall st::fn_00594440(ComboTy *this,STMessage *message)
     }
     switch(SVar2) {
     case MESS_ID_CREATE:
+      /* ST_CALLSITE[005944B5]: CALL 0x004036cf; direct=004036CF ComboTy::InitCombo */
       st::fn_004036CF(local_c,st::pointer_boundary_cast<undefined4 *>((message->arg0).ptr));
       break;
     case MESS_SHARED_0003:
+      /* ST_CALLSITE[005944C1]: CALL 0x00403134; direct=00403134 ComboTy::DoneCombo */
       st::fn_00403134(local_c);
       break;
     case MESS_SHARED_0005:
@@ -416,12 +420,14 @@ int __thiscall st::fn_00594440(ComboTy *this,STMessage *message)
           ((int)uVar9 < local_c->field_00F4 + local_c->field_00EC)) &&
          (local_c->field_00F0 <= (int)uVar8)) {
         if (local_c->field_00F8 + local_c->field_00F0 <= (int)uVar8) {
+          /* ST_CALLSITE[00594521]: CALL 0x00403968; direct=00403968 ComboTy::sub_005943F0 */
           st::fn_00403968(local_c);
         }
         break;
       }
     case MESS_SHARED_0064:
 switchD_005944a8_caseD_64:
+      /* ST_CALLSITE[00594567]: CALL 0x00403968; direct=00403968 ComboTy::sub_005943F0 */
       st::fn_00403968(local_c);
     }
 cf_common_exit_00594615:

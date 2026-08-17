@@ -18,6 +18,7 @@ void __cdecl FUN_00553410(int param_1,int param_2,int param_3,int param_4,int pa
   }
   *(byte *)(iVar1 + param_3) = param_6;
   if (DAT_00802a50 != nullptr) {
+    /* ST_CALLSITE[00553450]: CALL EAX */
     (*DAT_00802a50)(param_1,param_2,param_3);
   }
   return;

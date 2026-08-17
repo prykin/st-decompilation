@@ -136,6 +136,7 @@ cf_common_exit_00601B38:
         this = local_10;
         goto cf_common_exit_00601B38;
       }
+      /* ST_CALLSITE[00601853]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
       iVar8 = (*this_00->vtable[5].slots_00_28[2])(this_00);
       if (iVar8 == 0) {
         return local_c;
@@ -143,6 +144,7 @@ cf_common_exit_00601B38:
       if (*(int *)&this_00->field_0x18 == param_9) {
         return local_c;
       }
+      /* ST_CALLSITE[0060188B]: CALL dword ptr [EDX + 0xdc]; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
       iVar4 = (*this_00->vtable[4].slots_00_28[7])
                         (this_00,param_1,param_2,param_3,param_4,param_5,param_6);
       iVar8 = local_8;
@@ -250,6 +252,7 @@ LAB_006018c7:
           (((sVar9 < g_worldGrid.sizeZ &&
             ((this_00 = STGridAt3D(g_worldGrid, local_8, sVar6, sVar9).objects[0]
              , this_00 != nullptr && (param_9 != *(int *)&this_00->field_0x18)))) &&
+           /* ST_CALLSITE[00601A82]: CALL dword ptr [EDX + 0xdc]; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
            (iVar4 = (*this_00->vtable[4].slots_00_28[7])
                               (this_00,param_1,param_2,param_3,param_4,param_5,param_6),
            iVar8 = local_1c, 0 < iVar4)))) &&

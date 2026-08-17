@@ -48,11 +48,15 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
   pRVar8 = &local_64;
   memmove(pRVar8, pCVar7, 0x5c); /* compiler REP MOVS byte copy */
   memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
+  /* ST_CALLSITE[00502058]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
   if (STPiece<5,1>(local_64) != this_00->field_0B9E) {
 cf_common_exit_00502155:
+    /* ST_CALLSITE[00502157]: CALL 0x004022cf; direct=004022CF CPanelTy::PaintCtrlBoat */
     PaintCtrlBoat(this_00);
+    /* ST_CALLSITE[0050215E]: CALL 0x0040556f; direct=0040556F CPanelTy::SetControlBoat */
     SetControlBoat(this_00);
+    /* ST_CALLSITE[00502165]: CALL 0x0040135c; direct=0040135C CPanelTy::sub_00501A10 */
     sub_00501A10(this_00);
     g_currentExceptionFrame = local_a8.previous;
     return;
@@ -70,6 +74,7 @@ cf_common_exit_00502155:
         g_currentExceptionFrame = local_a8.previous;
         return;
       }
+      /* ST_CALLSITE[0050212D]: CALL 0x004017df; direct=004017DF CPanelTy::PaintBCapacity */
       PaintBCapacity(this_00);
       puVar2 = this_00->field_0148[3];
       break;
@@ -82,6 +87,7 @@ cf_common_exit_00502155:
         g_currentExceptionFrame = local_a8.previous;
         return;
       }
+      /* ST_CALLSITE[005020E8]: CALL 0x004056af; direct=004056AF CPanelTy::PaintBEnergy */
       PaintBEnergy(this_00);
       puVar2 = this_00->field_0148[3];
     }
@@ -100,6 +106,7 @@ cf_common_exit_00502155:
       g_currentExceptionFrame = local_a8.previous;
       return;
     }
+    /* ST_CALLSITE[005021B2]: CALL 0x004056af; direct=004056AF CPanelTy::PaintBEnergy */
     PaintBEnergy(this_00);
     puVar2 = this_00->field_0148[3];
     break;

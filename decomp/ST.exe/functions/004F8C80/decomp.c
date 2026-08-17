@@ -60,6 +60,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
     }
   }
   local_8->field_0998 = local_8->field_0038;
+  /* ST_CALLSITE[004F8D09]: CALL 0x00401942; direct=00401942 CPanelTy::sub_0052B330 */
   sub_0052B330(local_8);
   ST3DSMAPContext::sub_006E6FB0
             (g_sT3DSMAPContext_00807598,(RecoveredSourceFamily_dibcopy *)pCVar3->field_0190,5,7,
@@ -91,8 +92,10 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
         puVar8 = (undefined *)(uVar4 & 0xff);
         pcVar11 = "%2d:";
       }
+      /* ST_CALLSITE[004F8F40]: CALL dword ptr [0x0085bde8] */
       wsprintfA(pcVar10,pcVar11,puVar8);
       uVar1 = (ulonglong)uVar7 % 0xe10;
+      /* ST_CALLSITE[004F8F74]: CALL dword ptr [0x0085bde8] */
       wsprintfA(pcVar10,"%s%02d:%02d",pcVar10,(int)(uVar1 / 0x3c),(int)(uVar1 % 0x3c));
       puVar5 = (ushort *)
                ccFntTy::WrTxt(pCVar3->field_01BC,pcVar10,0,0,(uint)(DAT_0080874e == '\x03'),-1,-1);
@@ -113,8 +116,10 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
           puVar8 = (undefined *)(uVar4 & 0xff);
           pcVar10 = "%2d:";
         }
+        /* ST_CALLSITE[004F8E47]: CALL EDI */
         wsprintfA(&pCVar3->field_01E1,pcVar10,puVar8);
         uVar1 = (ulonglong)uVar7 % 0xe10;
+        /* ST_CALLSITE[004F8E7D]: CALL EDI */
         wsprintfA(&pCVar3->field_01E1,"%s%02d:%02d",&pCVar3->field_01E1,(int)(uVar1 / 0x3c)
                   ,(int)(uVar1 % 0x3c));
       }

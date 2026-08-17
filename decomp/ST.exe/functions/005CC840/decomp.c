@@ -35,6 +35,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
       }
     }
     this_00 = local_8;
+    /* ST_CALLSITE[005CC8BF]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     SetAccelerator(0,local_8->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
     if (this_00->field_21FC != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_21FC);
@@ -53,6 +54,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
         g_startSystem_0081176C->field_0550 = 0;
       }
       if (this_00->field_21F8 != nullptr) {
+        /* ST_CALLSITE[005CC955]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_00->field_21F8);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_21F8);
         this_00->field_21F8 = nullptr;
@@ -84,6 +86,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
         bVar6 = 0x10;
         iVar5 = 1;
         iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
+        /* ST_CALLSITE[005CCA08]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
         uVar7 = HoloTy::Init(this_00->field_21F8,CASE_1,200,0x1f1,iVar3,iVar5,bVar6,cVar7,uVar8);
         if (uVar7 != 0) {
           pHVar2 = this_00->field_21F8;
@@ -93,9 +96,11 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
           if (-1 < (int)uVar8) {
             Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar8);
           }
+          /* ST_CALLSITE[005CCA41]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
           HoloTy::NextFas(this_00->field_21F8);
         }
         FUN_006b5f80((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
+        /* ST_CALLSITE[005CCA89]: CALL 0x00402298; direct=00402298 PutDDXClip */
         PutDDXClip(200,0x1f1,200,0x1f1,400,(byte *)0x62,'\x01',
                    (BITMAPINFO *)g_startSystem_0081176C->field_002C);
       }
@@ -108,6 +113,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
         FUN_006b3af0((int *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1);
       }
     }
+    /* ST_CALLSITE[005CCAFF]: CALL 0x00404e94; direct=00404E94 SettMapTy::DeleteCtrls */
     SettMapTy::DeleteCtrls((SettMapTy *)this_00);
     g_currentExceptionFrame = local_4c.previous;
     return;

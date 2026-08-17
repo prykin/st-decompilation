@@ -19,8 +19,10 @@ STSharkC * __thiscall st::fn_0058D750(STSharkC *this)
 
 {
 
+  /* ST_CALLSITE[0058D754]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
-  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[0058D761]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  st::fn_00401316((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079BFE0);
   this->vtable = &st_global_0079BE80;
   this->field_0257 = CASE_0;
@@ -101,6 +103,7 @@ int __thiscall st::fn_0058F430(STSharkC *this)
                                 [(int)sVar8 * (int)sVar7 + (int)sVar1 * (int)g_worldGrid.planeStride
                                  + (int)sVar5].objects[0], this_00 != nullptr &&
                      (this_00->value_20 == 0x14)))))))) &&
+                 /* ST_CALLSITE[0058F530]: CALL dword ptr [EAX + 0x2c] */
                  (iVar2 = this_00->GetObjectTypeId(), iVar2 == 0x15)) {
                 iVar2 = st::machine_word_boundary_cast<int>(this->field_0047 - iVar6);
                 if (iVar2 < 0) {

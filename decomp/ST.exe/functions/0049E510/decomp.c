@@ -75,6 +75,7 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
       DArrayGetElement((DArrayTy *)pSVar2->field_0029,local_20,local_8);
       if (STPiece<0,2>(local_8) != 0xffff) {
         pSVar3 = (STBoatC *)
+                 /* ST_CALLSITE[0049E602]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
         if (pSVar3 == nullptr) {
@@ -82,11 +83,14 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0xabe);
         }
+        /* ST_CALLSITE[0049E62C]: CALL dword ptr [EAX + 0xf8] */
         iVar9 = pSVar3->vfunc_F8();
         if (iVar9 != 0) {
+          /* ST_CALLSITE[0049E63E]: CALL dword ptr [EDX + 0x2c] */
           dVar4 = pSVar3->slot_2C();
           if ((((dVar4 == 7) || (dVar4 == 0x13)) || (dVar4 == 0x1b)) &&
              (iVar9 = thunk_FUN_00492370((STGameObjC *)pSVar3), iVar9 != 0)) {
+            /* ST_CALLSITE[0049E663]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
             STBoatC::CmdToObj(pSVar3,CASE_10,&local_34);
             if (((pSVar2->field_02AD != -1) || (pSVar2->field_02AF != -1)) ||
                (pSVar2->field_02B1 != -1)) {
@@ -102,6 +106,7 @@ LAB_0049e6f6:
           else {
             iVar9 = thunk_FUN_00490d90((STGameObjC *)pSVar3);
             if (iVar9 == 0) {
+              /* ST_CALLSITE[0049E6B6]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
               STBoatC::CmdToObj(pSVar3,CASE_3,&local_18);
             }
             else if (((pSVar2->field_02AD != -1) || (pSVar2->field_02AF != -1)) ||
@@ -131,8 +136,10 @@ LAB_0049e6f6:
           do {
             DArrayGetElement(local_c,uVar10,local_8);
             pSVar3 = (STBoatC *)
+                     /* ST_CALLSITE[0049E761]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                      STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
+            /* ST_CALLSITE[0049E76E]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
             STBoatC::CmdToObj(pSVar3,CASE_3,&local_18);
             uVar10 = uVar10 + 1;
           } while ((int)uVar10 < (int)dVar4);
@@ -152,6 +159,7 @@ LAB_0049e794:
     DArrayDestroy(pDVar5);
   }
   else {
+    /* ST_CALLSITE[0049E728]: CALL 0x00403d9b; direct=00403D9B STAllPlayersC::RegisterPGPair */
     STAllPlayersC::RegisterPGPair
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_14), (uint8_t)(pSVar2->field_0024)),
                &local_10->flags,&local_c->flags);
@@ -171,6 +179,7 @@ LAB_0049e7c1:
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar10,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
           pSVar3 = (STBoatC *)
+                   /* ST_CALLSITE[0049E80C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
           if (pSVar3 == nullptr) {
@@ -178,11 +187,14 @@ LAB_0049e7c1:
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xaf1);
           }
+          /* ST_CALLSITE[0049E836]: CALL dword ptr [EDX + 0xf8] */
           iVar9 = pSVar3->vfunc_F8();
           if ((iVar9 != 0) &&
+             /* ST_CALLSITE[0049E844]: CALL dword ptr [EAX + 0x2c] */
              ((((dVar4 = pSVar3->slot_2C(), dVar4 == 7 || (dVar4 == 0x13)) ||
                (dVar4 == 0x1b)) &&
               ((iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar3), iVar9 == 0x10 ||
+               /* ST_CALLSITE[0049E866]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
                (uVar6 = STBoatC::CheckPBoxCmd(pSVar3,CASE_10), uVar6 == 1)))))) {
             local_24 = 1;
             break;

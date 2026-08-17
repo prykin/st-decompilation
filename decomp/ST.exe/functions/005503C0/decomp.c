@@ -8,10 +8,12 @@ void __thiscall FUN_005503c0(void *this,int param_1)
     STField<int>(this,0xf4) = param_1;
     DAT_00808788 = 1;
     if (g_optPanel_008016DC != nullptr) {
+      /* ST_CALLSITE[005503EC]: CALL 0x00404f16; direct=00404F16 OptPanelTy::Question */
       OptPanelTy::Question(g_optPanel_008016DC,'\a');
       return;
     }
     STField<undefined4>(this,0xd0) = 0x44ff;
+    /* ST_CALLSITE[00550408]: CALL dword ptr [EDX + 0x20] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0x20))((int)this + 0xc0);
   }

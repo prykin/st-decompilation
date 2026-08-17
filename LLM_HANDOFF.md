@@ -1378,3 +1378,102 @@ Current accepted state:
   audit rows. The fixed 64-error Apple Clang audit passes 193 units and retains
   1,435 errors, 1,418 mapped to stable function addresses. All 37 generator
   tests pass.
+
+## Count-driven stack outputs and readability regression gates
+
+The latest accepted work used the direct local checkout; no SMB path or copied
+project was involved. `STStackOutputArrayAnalyzer/Applier` is now a normal
+pipeline pair immediately after fixed stack-object recovery. It has no ST
+address/type allow-list. Its automatic proof requires the same exact
+EBP-relative root to reach a callee's final scalar-pointer parameter at least
+twice, a tested machine-word return count, and at least two width-stepped,
+count-decrementing consumer loops. Capacity is bounded by contiguous generic
+Listing locals and every manual/imported/stale overlap is protected.
+
+The scan found 712 scalar-output calls and 440 candidate roots. One complete
+proof replaced the false `DArrayTy local_34` in `00652810
+AiEventClassTy::GetMessage` with `uint output_values_neg_34[8]`: 101 exact
+callsites and 69 independent consumer loops. A confirming pipeline pass reports
+it unchanged. The remaining 439 candidates are explicit review rows, not
+silently widened heuristics.
+
+Readability now has two independent transactional barriers:
+
+- `STExportRegressionGate` compares critical quality kinds per function
+  address. Casted call results use a canonical comment-free logical expression,
+  so Ghidra wrapping and inserted `ST_CALLSITE` comments cannot fabricate a
+  delta. The accepted baseline contains 1,452 expressions in 582 functions.
+- `tools/st_source_tree.py` computes a per-address source profile before atomic
+  promotion. Raw `code *` calls, duplicated-receiver dispatch, generic pointer
+  towers/declarations, stale address-member calls, dangling qualified-address
+  prefixes, invalid undefined casts, presentation failures, and boundary casts
+  cannot increase at one address merely because another address improved.
+
+The source gate caught a real attempted regression while this layer was being
+built: readable `this_00->sub_005C29B0(...)` had been reclassified as a free
+`st::fn_005C29B0(pointer_boundary_cast<...>(this_00), ...)`. Address-coded direct
+rewriting now excludes existing `->sub_ADDRESS`/`.sub_ADDRESS` member wrappers;
+all 78 focused generator tests pass.
+
+The corpus hard gate also consumes `compile_readiness_summary.json` and requires
+zero hard text blockers. This exposed runtime helpers whose standalone
+`decomp.c` lacked `pseudocode_runtime.h`; runtime detection and readiness
+inventory now cover `STObjectAtByteOffset`, `STRecordByteAddress`,
+`STReplaceLowByte*`, `STReplaceLowWord`, `STPackTagged24`, and
+`STBiasedDiv16`. The accepted corpus has zero helper files without the include.
+
+Current accepted state:
+
+- run `0f7cf44df4071e1b63ca594a65fd321b4a018f97fc18d659ec156682961f1ba3`;
+- semantic hash `5b9cb0ca21c5a22ae7bdc6449926c6635a71c962d8cba660e88412e981f25f6b`;
+- manifest `d2fdb70aff3d23363b3bbe1c3c03a0bcbdff5b075b356d0e00b3fb7d1b853006`;
+- 10,407 functions, 5,555 bodies, zero failed bodies, and 3,192 typed physical
+  vtable slots;
+- export and ABI gates both have zero errors and zero warnings; Program semantic
+  state did not change during the final export-only confirmation;
+- source generation contains 5,555 bodies in 322 TUs and 12,984 audit rows;
+  the fixed 64-error Apple Clang audit passes 243 TUs with 505 errors, 488
+  address-mapped.
+
+The next high-yield compiler clusters are 34 calls through values currently
+declared `void`, 34 dereferences of neutral `void *`, and 34 conversions of one
+`AnonShape_006D8A60_D503343B` value to `uint`. Address hot spots are `0066ACC0`
+(64 capped diagnostics), `006D8A60` (36), `0064A970` (29), and `00652810`
+(22, down from 26). Repair these through callback/value-role propagation and
+local pointer/scalar lifetime separation in Ghidra; do not hide them with new
+source-only casts.
+
+## Raw-vtable callable and pointer/word clusters closed
+
+The three compiler clusters named above are now closed. The final fixed audit
+contains zero calls through values declared `void`, zero dereferences of
+neutral `void *`, and zero diagnostics in the `006D8A60` pointer/scalar family.
+This was not implemented with address/class allow-lists.
+
+`STIndirectCallsiteAnalyzer` had been suppressing a small residual family in
+`0066ACC0` because its density guard counted every dispatch in the function,
+including calls already covered by physical slots. It now counts only fallback
+rows which remain after same-pass physical promotion. Twenty exact, unadjusted,
+two-word calls recover one physical `AnonReceiver_0064A970VTable::slot_20` ABI;
+seven sparse uses remain address-local overrides for slots `10`, `14`, `1C`,
+`24`, `28`, and `2C`. The initial apply changed eight targets and the confirming
+pass is stable at `applied=0`, `unchanged=288`, conflicts zero.
+
+When one exact callsite ABI deliberately retains a neutral `undefined4`
+parameter but the source argument is a pointer, `tools/st_source_tree.py` now
+emits `machine_word_boundary_cast` at that boundary and records an
+`exact_indirect_argument_boundary` audit row. The recovered prototype remains
+neutral; the cast expresses only the original 32-bit x86 transport.
+
+Current accepted state:
+
+- run `b5d378b5465f4c62fc65ef612e22ea35ff7ce3bf21ebbb840586444d2bc9a587`;
+- semantic hash `bfd44643f2e5256a9d5836adcbb3b547e17dbf6a8d41f24358ff514c2e258237`;
+- manifest `79df375cf2f9f1a65879b306993696c6d6ec1334af4404cf1b98a684145283cc`;
+- 10,407 function records, 5,555 bodies, zero failed bodies, and 3,192 typed
+  physical-vtable slots;
+- export/ABI gates: zero errors and zero warnings;
+- generated source: 5,555 bodies, 322 TUs, 13,039 audit rows; 82/82 focused
+  generator tests pass;
+- fixed Apple Clang audit: 244/322 TUs pass, 450 errors remain, 436 mapped to
+  stable function addresses.

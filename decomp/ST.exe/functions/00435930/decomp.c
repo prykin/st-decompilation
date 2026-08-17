@@ -79,7 +79,9 @@ STAllPlayersC::GetCursorType
       do {
         DArrayGetElement(array,index,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
+          /* ST_CALLSITE[00435A3B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar6 = GetObjPtr(this,g_packedRecords_A62x8[uVar5].field150_0x1b7,STPiece<0,2>(local_8),CASE_1);
+          /* ST_CALLSITE[00435A54]: CALL dword ptr [EDX + 0x28] */
           uVar7 = (*pSVar6->vtable->vfunc_28)(param_1,param_2,param_3,param_4);
           return (short)uVar7;
         }
@@ -99,11 +101,13 @@ STAllPlayersC::GetCursorType
      ) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((param_2->field_0020 == 0x14) &&
+       /* ST_CALLSITE[00435A87]: CALL dword ptr [EAX + 0xec] */
        (iVar8 = (**(code **)(*(int *)param_2 + 0xec))(), iVar8 == 1)) {
       return 3;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (((param_2->field_0020 == 1000) || (param_2->field_0020 == 0x3e9)) &&
+       /* ST_CALLSITE[00435AB8]: CALL dword ptr [EDX + 0xec] */
        (iVar8 = (**(code **)(*(int *)param_2 + 0xec))(), iVar8 == 1)) {
       return 4;
     }

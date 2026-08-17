@@ -47,8 +47,10 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
       if ((int)(g_dArray_0080C4FA->elementSize - 5) <= (int)local_14) {
         local_5 = '\x01';
       }
+      /* ST_CALLSITE[005DD905]: CALL ESI */
       wsprintfA((LPSTR)&DAT_0080f33a,"&0%s:",param_1);
       Library::DKW::TBL::FUN_006b5aa0(pDVar2,(char *)&DAT_0080f33a);
+      /* ST_CALLSITE[005DD926]: CALL ESI */
       wsprintfA((LPSTR)&DAT_0080f33a,"&2%s",param_1 + 0x40);
       Library::DKW::TBL::FUN_006b5aa0(pDVar2,(char *)&DAT_0080f33a);
       pDVar3 = (DArrayTy *)

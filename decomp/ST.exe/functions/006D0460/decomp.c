@@ -19,6 +19,7 @@ void FUN_006d0460(HDC param_1,int param_2,int param_3,BITMAPINFO *param_4,void *
   if (((iVar1 == 0) || (0x100 < iVar1)) || ((param_4->bmiHeader).biCompression != 0)) {
     ColorUse = 0;
     if (-1 < (int)cLines) {
+      /* ST_CALLSITE[006D0558]: CALL dword ptr [0x0085babc] */
       SetDIBitsToDevice(param_1,param_2,param_3,param_8,param_9,param_6,(cLines - param_7) - param_9
                         ,0,cLines,param_5,param_4,0);
       return;
@@ -51,6 +52,7 @@ void FUN_006d0460(HDC param_1,int param_2,int param_3,BITMAPINFO *param_4,void *
   }
   cLines = -cLines;
 LAB_006d050e:
+  /* ST_CALLSITE[006D051E]: CALL dword ptr [0x0085babc] */
   SetDIBitsToDevice(param_1,param_2,param_3,param_8,param_9,param_6,param_7,0,cLines,param_5,param_4
                     ,ColorUse);
   return;

@@ -27,6 +27,7 @@ undefined4 __thiscall FUN_004ebab0(void *this,int param_1,int param_2)
       if (param_1 != 0xde) {
         return 0;
       }
+      /* ST_CALLSITE[004EBAFF]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar1 = LookupRecordByte(STField<char>(this,0x24));
       if (bVar1 == 3) {
         iVar2 = thunk_FUN_004e4410(STField<byte *>(this,0x24));
@@ -51,8 +52,10 @@ undefined4 __thiscall FUN_004ebab0(void *this,int param_1,int param_2)
     STField<int>(this,0x4dc) = param_1;
     STField<int>(this,0x4e0) = param_2;
     STField<undefined4>(this,0x4ec) = 0;
+    /* ST_CALLSITE[004EBC10]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar1 = LookupRecordByte(STField<char>(this,0x24));
     STField<uint>(this,0x50c) = (uint)bVar1;
+    /* ST_CALLSITE[004EBC24]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     TLOBaseTy::RotateSpr(this,0);
   }
   return 0;

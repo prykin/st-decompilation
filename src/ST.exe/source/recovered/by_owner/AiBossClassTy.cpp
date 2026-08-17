@@ -13,7 +13,8 @@ AiBossClassTy * __thiscall st::fn_00647AD0(AiBossClassTy *this)
 {
 
   st::fn_006E60E0(this);
-  st::fn_00402C2F(st::pointer_boundary_cast<undefined4 *>(&this->vtable_at_1c));
+  /* ST_CALLSITE[00647ADE]: CALL 0x00402c2f; direct=00402C2F AiEventClassTy::AiEventClassTy */
+  st::fn_00402C2F((AiEventClassTy *)&this->vtable_at_1c);
   this->vtable = &st_global_0079D658;
   this->vtable_at_1c = &st_global_0079D618;
   if (this != nullptr) {

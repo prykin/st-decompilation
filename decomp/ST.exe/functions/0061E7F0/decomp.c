@@ -229,6 +229,7 @@ LAB_0061eefe:
                 iVar15 = (int)(short)lVar19;
               }
               if (((((DAT_0080874d != -1) && (this->field_00F8 != 0)) &&
+                   /* ST_CALLSITE[0061EEA3]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                    ((VisibleClassTy::sub_00558C00
                                (this,this->field_010C,iVar15,local_34,&local_38,&local_48),
                     -1 < (int)local_20 &&

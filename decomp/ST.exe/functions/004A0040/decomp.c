@@ -111,6 +111,7 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
         DArrayGetElement((DArrayTy *)pSVar6->field_0029,uVar12,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
           pSVar7 = (STBoatC *)
+                   /* ST_CALLSITE[004A0228]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar6->field_0024,STPiece<0,2>(local_8),CASE_1);
           if (pSVar7 == nullptr) {
@@ -118,8 +119,11 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xcd4);
           }
+          /* ST_CALLSITE[004A0251]: CALL dword ptr [EDX + 0x2c] */
           dVar8 = pSVar7->slot_2C();
+          /* ST_CALLSITE[004A025D]: CALL dword ptr [EAX + 0x2c] */
           if (((dVar8 == 0xc) || (dVar8 = pSVar7->slot_2C(), dVar8 == 0x18)) ||
+             /* ST_CALLSITE[004A0269]: CALL dword ptr [EDX + 0x2c] */
              (dVar8 = pSVar7->slot_2C(), dVar8 == 0x1d)) {
             if (array_00 == nullptr) {
               array_00 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
@@ -141,6 +145,7 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
             puVar17 = &local_18;
             SVar16 = CASE_3;
           }
+          /* ST_CALLSITE[004A02D1]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
           STBoatC::CmdToObj(pSVar7,SVar16,puVar17);
         }
 LAB_004a02d6:
@@ -149,6 +154,7 @@ LAB_004a02d6:
       } while (uVar12 < local_10);
     }
     array = local_c;
+    /* ST_CALLSITE[004A0302]: CALL 0x00403d9b; direct=00403D9B STAllPlayersC::RegisterPGPair */
     STAllPlayersC::RegisterPGPair
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar12), (uint8_t)(pSVar6->field_0024)),
                &array_00->flags,&local_c->flags);
@@ -169,6 +175,7 @@ LAB_004a02d6:
         DArrayGetElement((DArrayTy *)pSVar6->field_0029,uVar13,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
           pSVar7 = (STBoatC *)
+                   /* ST_CALLSITE[004A0373]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar6->field_0024,STPiece<0,2>(local_8),CASE_1);
           if (pSVar7 == nullptr) {
@@ -176,10 +183,14 @@ LAB_004a02d6:
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xcf6);
           }
+          /* ST_CALLSITE[004A039D]: CALL dword ptr [EAX + 0x2c] */
           dVar8 = pSVar7->slot_2C();
+          /* ST_CALLSITE[004A03A9]: CALL dword ptr [EDX + 0x2c] */
           if (((((dVar8 == 0xc) || (dVar8 = pSVar7->slot_2C(), dVar8 == 0x18)) ||
+               /* ST_CALLSITE[004A03B5]: CALL dword ptr [EAX + 0x2c] */
                (dVar8 = pSVar7->slot_2C(), dVar8 == 0x1d)) &&
               (iVar11 = thunk_FUN_0045ff10((STGameObjC *)pSVar7), iVar11 == 0x12)) ||
+             /* ST_CALLSITE[004A03CD]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
              (uVar13 = STBoatC::CheckPBoxCmd(pSVar7,CASE_12), uVar13 == 1)) {
             local_20 = 1;
             break;

@@ -57,8 +57,10 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
         }
         else if (pSVar1->count < 0x18) {
           element_1f84_2->field_0x1 = 0;
+          /* ST_CALLSITE[005D0A9F]: CALL 0x004017d0; direct=004017D0 SettMapMTy::sub_005D00B0 */
           sub_005D00B0(local_8,element_1f84_2,param_1 + 1);
         }
+        /* ST_CALLSITE[005D0AF0]: CALL dword ptr [EDX + 0x2c] */
         this_00->SetListCtrls();
         this_00->field_2121 = this_00->field_2121 + 1;
       }

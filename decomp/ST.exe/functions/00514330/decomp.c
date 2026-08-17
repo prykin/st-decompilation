@@ -40,49 +40,61 @@ void __thiscall HelpPanelTy::BwdBut(HelpPanelTy *this)
         pvVar2 = element_01cb->variant_0001;
         switch(element_01cb->field_0000) {
         case 0:
+          /* ST_CALLSITE[005143D1]: CALL 0x004029c8; direct=004029C8 HelpPanelTy::HomeBut */
           HomeBut(local_8);
           g_currentExceptionFrame = local_4c.previous;
           return;
         case 1:
+          /* ST_CALLSITE[0051440E]: CALL 0x00404e85; direct=00404E85 HelpPanelTy::RCProc */
           RCProc(local_8,(int)pvVar2,uVar4,'\0');
           g_currentExceptionFrame = local_4c.previous;
           return;
         case 2:
+          /* ST_CALLSITE[00514468]: CALL 0x00403747; direct=00403747 HelpPanelTy::ObjProc */
           ObjProc(local_8,(int)pvVar2,uVar4,'\0');
           g_currentExceptionFrame = local_4c.previous;
           return;
         case 3:
+          /* ST_CALLSITE[00514451]: CALL 0x00403878; direct=00403878 HelpPanelTy::SubProc */
           SubProc(local_8,(int)pvVar2,'\0');
           g_currentExceptionFrame = local_4c.previous;
           return;
         case 4:
+          /* ST_CALLSITE[0051447F]: CALL 0x004057e0; direct=004057E0 HelpPanelTy::ArmProc */
           ArmProc(local_8,(int)pvVar2,uVar4,'\0');
           g_currentExceptionFrame = local_4c.previous;
           return;
         case 5:
+          /* ST_CALLSITE[0051443B]: CALL 0x00402833; direct=00402833 HelpPanelTy::TechProc */
           TechProc(local_8,(uint)pvVar2,(byte)uVar4,'\0');
           g_currentExceptionFrame = local_4c.previous;
           return;
         case 6:
+          /* ST_CALLSITE[00514424]: CALL 0x00405e61; direct=00405E61 HelpPanelTy::TTreeProc */
           TTreeProc(local_8,(uint)pvVar2,'\0');
           g_currentExceptionFrame = local_4c.previous;
           return;
         case 7:
+          /* ST_CALLSITE[005143F7]: CALL 0x004011fe; direct=004011FE HelpPanelTy::MObjProc */
           MObjProc(local_8);
           g_currentExceptionFrame = local_4c.previous;
           return;
         case 8:
+          /* ST_CALLSITE[005144C3]: CALL 0x004020b8; direct=004020B8 HelpPanelTy::TipProc */
           TipProc(local_8,pvVar2,uVar4,'\0');
           break;
         case 10:
+          /* ST_CALLSITE[005143E4]: CALL 0x00405803; direct=00405803 HelpPanelTy::IndexBut */
           IndexBut(local_8);
           g_currentExceptionFrame = local_4c.previous;
           return;
         case 0xb:
+          /* ST_CALLSITE[00514496]: CALL 0x00402cac; direct=00402CAC HelpPanelTy::SpecProc */
           SpecProc(local_8,(int)pvVar2,uVar4,'\0');
           g_currentExceptionFrame = local_4c.previous;
           return;
         case 0xc:
+          /* ST_CALLSITE[005144AC]: CALL 0x00403bc0; direct=00403BC0 HelpPanelTy::NatProc */
           NatProc(local_8,(int)pvVar2,'\0');
           g_currentExceptionFrame = local_4c.previous;
           return;

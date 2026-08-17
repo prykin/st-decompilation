@@ -240,7 +240,9 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       do {
         cVar14 = (char)iVar12;
         if (0x18 < g_playSystem_00802A38->field_00E4 - *piVar13) {
+          /* ST_CALLSITE[00430D78]: CALL 0x004017fd; direct=004017FD STAllPlayersC::OptimizeGuardBoats */
           OptimizeGuardBoats(this_00,cVar14);
+          /* ST_CALLSITE[00430D80]: CALL 0x0040100a; direct=0040100A STAllPlayersC::DistributeGuardBoats */
           DistributeGuardBoats(this_00,cVar14);
         }
         if ((*local_14 != 0xff) &&
@@ -287,6 +289,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
           *puVar10 = puVar6;
           if (*pbVar5 != 0xff) {
             thunk_FUN_004e5140((int)piVar13);
+            /* ST_CALLSITE[00430C8E]: CALL 0x00401fc8; direct=00401FC8 STAllPlayersC::sub_004EB010 */
             sub_004EB010(local_10,(int)piVar13);
             cVar14 = (char)piVar13;
             thunk_FUN_004d73b0(cVar14);
@@ -336,7 +339,9 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
     }
   }
   else if (SVar2 == MESS_SHARED_010F) {
+    /* ST_CALLSITE[00431247]: CALL 0x004058ad; direct=004058AD STAllPlayersC::SaveAllPlData */
     local_c = (ushort *)SaveAllPlData(this_00,(int *)&local_1c);
+    /* ST_CALLSITE[00431261]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,"allplsave",(byte *)local_c,local_1c,0xc);
     FreeAndNull(&local_c);
@@ -345,6 +350,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
     if (g_cMf32_00806754 == nullptr) {
       iVar12 = 0;
       do {
+        /* ST_CALLSITE[00431201]: CALL 0x00405cc2; direct=00405CC2 STAllPlayersC::_MakeMDPairs */
         _MakeMDPairs(this_00,(char)iVar12);
         iVar12 = iVar12 + 1;
       } while (iVar12 < 8);
@@ -354,6 +360,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       if (local_c == nullptr) {
         iVar12 = 0;
         do {
+          /* ST_CALLSITE[004311EF]: CALL 0x00405cc2; direct=00405CC2 STAllPlayersC::_MakeMDPairs */
           _MakeMDPairs(this_00,(char)iVar12);
           iVar12 = iVar12 + 1;
         } while (iVar12 < 8);

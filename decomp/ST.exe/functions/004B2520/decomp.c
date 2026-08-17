@@ -76,6 +76,7 @@ FUN_004b2520(uint param_1,STBoatC_field_06F7State param_2,int param_3,int param_
     this = local_30;
   }
   else {
+    /* ST_CALLSITE[004B2634]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     uVar7 = LookupRecordByte((byte)param_1);
     uVar7 = (int)(byte)uVar7;
     local_2c = *(int *)(&DAT_007e3f20 + (uVar7 + param_2 * 3) * 4);
@@ -102,6 +103,7 @@ LAB_004b266b:
               if (((this != nullptr) && (this[1].vtable < (STWorldObjectVTable *)0x8))
                  && (((g_playSystem_00802A38 == nullptr ||
                       (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)) &&
+                     /* ST_CALLSITE[004B2769]: CALL dword ptr [EAX + 0x2c] */
                      (iVar7 = this->GetObjectTypeId(), uVar11 = STPiece<0,4>(g_worldGrid),
                      iVar7 == 0x6f)))) {
                 bVar2 = *(byte *)&this[1].vtable;

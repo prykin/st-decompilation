@@ -50,8 +50,10 @@ STAllPlayersC::GetTOBJList
     do {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       piVar1 = *(int **)(*(int *)(local_10 + 0x1c) + iVar4 * 4);
+      /* ST_CALLSITE[0043E803]: CALL dword ptr [EDX + 0x2c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((piVar1 == nullptr) || (SVar5 = (**(code **)(*piVar1 + 0x2c))(), SVar5 != param_2)) ||
+         /* ST_CALLSITE[0043E80E]: CALL dword ptr [EAX + 0xf8] */
          (iVar7 = (**(code **)(*piVar1 + 0xf8))(), iVar7 == 0)) {
 switchD_0043e836_caseD_3a:
         bVar3 = false;
@@ -64,6 +66,7 @@ switchD_0043e836_caseD_3a:
           case CASE_39:
           case CASE_4F:
           case CASE_5E:
+            /* ST_CALLSITE[0043E84A]: CALL dword ptr [EAX + 0x88] */
             if ((param_3 == 1) && (iVar7 = (**(code **)(*piVar1 + 0x88))(local_14), 0 < iVar7)) {
               bVar3 = true;
               goto LAB_0043e85d;
@@ -76,6 +79,7 @@ switchD_0043e836_caseD_3a:
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0043e85d:
       if ((bVar3) &&
+         /* ST_CALLSITE[0043E86C]: CALL dword ptr [EDX + 0x6c] */
          ((param_4 == -1 || (iVar7 = (**(code **)(*piVar1 + 0x6c))(), iVar7 == param_4)))) {
         Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar1 + 0x32));
       }

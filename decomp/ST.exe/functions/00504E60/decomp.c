@@ -35,6 +35,7 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
     return;
   }
   if (DAT_0080874e == '\x03') {
+    /* ST_CALLSITE[00504EB6]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0194,0xf,0x8d,'\x01',
            (byte *)local_8->field_09D9[6]);
     if (pCVar2->field_0C4D == 0) goto cf_common_exit_00504F81;
@@ -43,6 +44,7 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
     resourceId = pCVar2->field_0C4D;
   }
   else {
+    /* ST_CALLSITE[00504F24]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0194,4,0x89,'\x01',
            (byte *)local_8->field_09D9[6]);
     if (pCVar2->field_0C4D == 0) goto cf_common_exit_00504F81;

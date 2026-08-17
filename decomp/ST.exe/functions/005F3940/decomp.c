@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_005f3940(int param_1,int param_2,int param_3)
 
@@ -30,6 +32,7 @@ int FUN_005f3940(int param_1,int param_2,int param_3)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return iVar3;
     }
+    /* ST_CALLSITE[005F3A3E]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,&param_3,
                &local_8);

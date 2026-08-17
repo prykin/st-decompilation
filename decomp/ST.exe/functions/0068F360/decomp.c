@@ -52,9 +52,13 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
+  /* ST_CALLSITE[0068F3B2]: CALL 0x00404688; direct=00404688 AiTactClassTy::sub_0068E480 */
   local_c = sub_0068E480(local_8,1);
+  /* ST_CALLSITE[0068F3BE]: CALL 0x00404688; direct=00404688 AiTactClassTy::sub_0068E480 */
   local_10 = sub_0068E480(pAVar5,2);
+  /* ST_CALLSITE[0068F3CA]: CALL 0x00404688; direct=00404688 AiTactClassTy::sub_0068E480 */
   local_14 = sub_0068E480(pAVar5,4);
+  /* ST_CALLSITE[0068F3D6]: CALL 0x00404688; direct=00404688 AiTactClassTy::sub_0068E480 */
   local_18 = sub_0068E480(pAVar5,0x10);
   index = param_1[3];
 joined_r0x0068f3e2:
@@ -76,11 +80,13 @@ joined_r0x0068f3e2:
           this_00 = nullptr;
         }
         else {
+          /* ST_CALLSITE[0068F415]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar6,CASE_1);
         }
         pAVar5 = local_8;
       } while (this_00 == nullptr);
+      /* ST_CALLSITE[0068F42C]: CALL dword ptr [EDX + 0x2c] */
       iVar7 = this_00->vfunc_2C();
       if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
       pAVar11 = local_8->field_00A5;
@@ -97,6 +103,7 @@ joined_r0x0068f3e2:
         }
       }
       uVar1 = pAVar8->field_007D;
+      /* ST_CALLSITE[0068F472]: CALL dword ptr [EDX + 0x2c] */
       iVar7 = this_00->vfunc_2C();
       if (iVar7 == 0x78) {
         this_00->field_0269 = (uint)uVar1;
@@ -163,6 +170,7 @@ LAB_0068f516:
         pAVar8 = *(AiFltClassTy **)((int)&pAVar11->data->field_0004 + pAVar11->elementSize * uVar12);
       }
     }
+    /* ST_CALLSITE[0068F551]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
     AiFltClassTy::_AddObjFlt(pAVar8,(uint)this_00,0);
     DArrayRemoveAt((DArrayTy *)param_1,index);
     pAVar5 = local_8;

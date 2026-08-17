@@ -2493,6 +2493,14 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private TargetDecision decide(TargetEvidence target) {
+        if (prototypeByteTransportBoundary(target))
+            return new TargetDecision(false, false, "", "existing",
+                "machine-proven mutable byte transport retained; fixed offsets are " +
+                "optimized word/byte accesses, not record-field identity");
+        if (overwrittenScalarParameter(target))
+            return new TargetDecision(false, false, "", "review",
+                "incoming scalar ABI slot is fully overwritten before its pointer-shaped " +
+                "lifetime; split the post-write local instead of changing the parameter");
         if (target.discriminatedPayload &&
                 (replaceable(target.expectedType) || target.scriptOwned))
             return new TargetDecision(false, false, "", "review",
@@ -3198,6 +3206,62 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         if (comment == null || comment.isBlank()) return false;
         for (String marker : POINTER_OWNER_MARKERS)
             if (comment.contains(marker)) return true;
+        return false;
+    }
+
+    private boolean prototypeByteTransportBoundary(TargetEvidence target) {
+        if (!"parameter".equals(target.kind) || target.functionAddress == null ||
+                !"pointer:/byte".equals(target.expectedType)) return false;
+        Function function = currentProgram.getFunctionManager().getFunctionAt(
+            target.functionAddress);
+        if (function == null) return false;
+        Parameter matched = null;
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter() || parameter.getVariableStorage() == null ||
+                    !parameter.getVariableStorage().toString().equals(target.locator)) continue;
+            if (matched != null) return false;
+            matched = parameter;
+        }
+        if (matched == null) return false;
+        String comment = function.getComment();
+        String ordinary = "[STPrototypeApplier] Propagated parameter " +
+            matched.getOrdinal() + ".";
+        String repair = "[STPrototypeRepairApplier] Propagated parameter " +
+            matched.getOrdinal() + ".";
+        return comment != null &&
+            (comment.contains(ordinary) || comment.contains(repair)) &&
+            comment.contains("complete mutable byte-buffer machine proof");
+    }
+
+    private boolean overwrittenScalarParameter(TargetEvidence target) {
+        if (!"parameter".equals(target.kind) || target.functionAddress == null ||
+                target.expectedType.startsWith("pointer:")) return false;
+        Function function = currentProgram.getFunctionManager().getFunctionAt(
+            target.functionAddress);
+        if (function == null) return false;
+        Parameter matched = null;
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter() || !parameter.hasStackStorage() ||
+                    parameter.getVariableStorage() == null ||
+                    !parameter.getVariableStorage().toString().equals(target.locator)) continue;
+            if (matched != null) return false;
+            matched = parameter;
+        }
+        if (matched == null) return false;
+        long frameDisplacement = (long)matched.getStackOffset() +
+            currentProgram.getDefaultPointerSize();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            MachineMemory destination = machineMemory(instruction, 0);
+            if (destination == null || !destination.fixed ||
+                    !"EBP".equals(destination.baseRegister) ||
+                    destination.displacement != frameDisplacement ||
+                    destination.width != currentProgram.getDefaultPointerSize()) continue;
+            if (machineWritesFirstOperand(
+                    instruction.getMnemonicString().toUpperCase(Locale.ROOT))) return true;
+        }
         return false;
     }
 

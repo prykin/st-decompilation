@@ -13,8 +13,7 @@ undefined4 __fastcall st::fn_004DCE00(int *param_1)
 
 {
   float fVar1;
-  AnonShape_004AB810_8E5693D5 *pAVar2;
-  STT3DSprC *this;
+  STT3DSprC *pSVar2;
   int iVar3;
   int uVar4;
   uint uVar5;
@@ -22,15 +21,17 @@ undefined4 __fastcall st::fn_004DCE00(int *param_1)
   int local_8;
 
   if (STField<int>(param_1,0x5ff) == 0) {
-    pAVar2 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
-    if (pAVar2 == nullptr) {
-      this = nullptr;
+    pSVar2 = (STT3DSprC *)st::fn_0072E530(0x40);
+    if (pSVar2 == nullptr) {
+      pSVar2 = nullptr;
     }
     else {
-      this = (STT3DSprC *)st::fn_00401316(pAVar2);
+      /* ST_CALLSITE[004DCE26]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+      pSVar2 = st::fn_00401316(pSVar2);
     }
-    STField<STT3DSprC *>(param_1,0x5ff) = this;
-    iVar3 = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    STField<STT3DSprC *>(param_1,0x5ff) = pSVar2;
+    /* ST_CALLSITE[004DCE50]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
+    iVar3 = st::fn_0040537B(pSVar2,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       st::fn_006A5E40
                 (iVar3,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_jump.cpp"),0x58);
@@ -43,7 +44,9 @@ undefined4 __fastcall st::fn_004DCE00(int *param_1)
     param_1[0x134] = 0;
   }
   if (param_1[0x134] == 1) {
+    /* ST_CALLSITE[004DCEAA]: CALL dword ptr [0x0085bde8] */
     st::external_00000080(local_108,st::mutable_c_string("%s"),"jmpmine");
+    /* ST_CALLSITE[004DCECB]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar3 = st::fn_00404183
                       (STField<STT3DSprC *>(param_1,0x5ff),0xe,PTR_00806774,local_108,CASE_1D);
     if (iVar3 != 0) {
@@ -55,6 +58,7 @@ undefined4 __fastcall st::fn_004DCE00(int *param_1)
     iVar3 = st::fn_004052CC((STT3DSprC *)((int)param_1 + 0x1d5));
     uVar4 = st::fn_004052CC(STField<STT3DSprC *>(param_1,0x5ff));
     st::fn_006EA340(STField<void *>(param_1,0x211),uVar4,iVar3,uVar5);
+    /* ST_CALLSITE[004DCF2D]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240
               (STField<STT3DSprC *>(param_1,0x5ff),0xe,g_playSystem_00802A38->field_00E4);
     param_1[0x135] = 0;
@@ -64,11 +68,13 @@ undefined4 __fastcall st::fn_004DCE00(int *param_1)
     fVar1 = fVar1 * _DAT_007904f0;
     param_1[0x136] = uVar5;
     local_8 = (int)STField<short>(param_1,0x41);
+    /* ST_CALLSITE[004DCFB2]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     st::fn_004045D9
               (STField<STT3DSprC *>(param_1,0x5ff),(float)local_8 * _DAT_007904f8 * _DAT_007904f0,
                (float)(int)STField<short>(param_1,0x43) * _DAT_007904f8 * _DAT_007904f0,
                fVar1 + _DAT_007904fc);
     st::fn_00402982(STField<void *>(param_1,0x5ff),1);
+    /* ST_CALLSITE[004DCFCF]: CALL dword ptr [EAX + 0x90] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 0x90))(3,0x3f4);
     return 0;

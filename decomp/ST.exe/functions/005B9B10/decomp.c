@@ -45,7 +45,9 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar2 == 0) {
     if (DAT_008067a0 != '\0') {
+      /* ST_CALLSITE[005B9B56]: CALL dword ptr [0x0085c074] */
       CFsgsConnection::CloseGame((CFsgsConnection *)&DAT_00802a90);
+      /* ST_CALLSITE[005B9B61]: CALL dword ptr [0x0085bffc] */
       CFsgsConnection::CancelConnection((CFsgsConnection *)&DAT_00802a90);
       DAT_00802a99 = 0;
       DAT_008067a0 = '\0';
@@ -72,6 +74,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
               ((int)local_454,0,0x100,0x8b,0x15,
                (undefined4 *)&(this_02->array_00BC[0xc].field_01DB)->field_0x144);
     if (param_2 != '\0') {
+      /* ST_CALLSITE[005B9C4E]: CALL 0x00401d43; direct=00401D43 DarkScreen */
       DarkScreen(g_dDXContext_0080759C,1,0);
     }
     this_02->array_00BC[0xc].field_01F1 = 0;
@@ -79,17 +82,20 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     if ((param_1 == '\x01') && (iVar4 = thunk_FUN_005daa90(), iVar4 != 0)) {
       param_1 = '\0';
     }
+    /* ST_CALLSITE[005B9C8A]: CALL 0x00403bc5; direct=00403BC5 PrividerTy::SetMode */
     SetMode(this_02,param_1,'\x01');
     pSVar1 = this_02->array_00BC[0xc].field_01DB;
     this_02->array_00BC[0xc].field_01E0 = this_02->array_00BC[0xc].field_01DF;
     this_00 = pSVar1->field_02E6;
     if (this_00 != nullptr) {
+      /* ST_CALLSITE[005B9CAB]: CALL 0x00405191; direct=00405191 MMsgTy::ShowSprites */
       MMsgTy::ShowSprites(this_00);
       (this_02->array_00BC[0xc].field_01DB)->field_02E6->field_1CAB = this_02->field_0008;
     }
     puVar6 = &this_02->array_00BC[0xc].field_01F7;
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)puVar6,(int *)g_ddxContext_008075A8,0x31,'\a',nullptr,0,0);
+    /* ST_CALLSITE[005B9CF9]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*puVar6 + 4))
               ((SpriteClassTy *)puVar6,PTR_00806784,7,0,(byte *)"MM_SLDUP",0xffffffff);
@@ -99,6 +105,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_02->field_1B08,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005B9D4F]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(this_02->field_1B08 + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
     this_02->field_1B24 = 0x289;
@@ -107,6 +114,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_02->field_1B99,(int *)g_ddxContext_008075A8,0x31,'\a',
                nullptr,0,0);
+    /* ST_CALLSITE[005B9D9A]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(this_02->field_1B99 + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
     iVar4 = 1;
@@ -173,6 +181,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     FUN_006b2330(g_ddxContext_008075A8,puVar12,0x31,0x4023f6,pAVar7->field_0004,pAVar7->field_0008,
                  (ushort *)pAVar7);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar12,0xffffffff,0x79,0x197);
+    /* ST_CALLSITE[005B9F65]: CALL 0x0040362f; direct=0040362F PrividerTy::CreateCtrls */
     CreateCtrls(this_02,'\x01');
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403c74,0x22e,0x145,(ushort *)this_02);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x79,0x51);
@@ -203,6 +212,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       bVar14 = 0x10;
       iVar16 = 1;
       iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x51,0x22e,0x145);
+      /* ST_CALLSITE[005BA026]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       uVar10 = HoloTy::Init(this_02->field_1C96,CASE_2,0x79,0x51,iVar4,iVar16,bVar14,cVar15,uVar11);
       if (uVar10 != 0) {
         pHVar8 = this_02->field_1C96;
@@ -266,6 +276,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
         bVar14 = 0x10;
         iVar16 = 1;
         iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
+        /* ST_CALLSITE[005BA1BD]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
         local_EAX_1709 =
              HoloTy::Init(this_02->field_1C9A,CASE_1,0x79,0x197,iVar4,iVar16,bVar14,cVar15,uVar11);
         if (local_EAX_1709 != 0) {
@@ -293,7 +304,9 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       iVar16 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       this_01->field_0494 = 0xffff;
+      /* ST_CALLSITE[005BA259]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
       CursorClassTy::SetGCType(this_01,CASE_0,iVar16,iVar4);
+      /* ST_CALLSITE[005BA26E]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
       CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);
       this_01->field_00D2 = 0;
       this_01->field_04DF = -1;

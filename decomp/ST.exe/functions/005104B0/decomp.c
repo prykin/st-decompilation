@@ -40,6 +40,7 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
   local_10[1] = local_8->field_01AF;
   *piVar5 = 0;
   local_8->field_01AF = 0;
+  /* ST_CALLSITE[00510509]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,0x11,(AnonShape_0043BEB0_1C00EC12 *)piVar5);
   iVar4 = 2;
   bVar8 = true;

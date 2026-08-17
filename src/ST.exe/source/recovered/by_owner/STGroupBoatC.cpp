@@ -19,7 +19,7 @@
    /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_0020State. Cases:
    CASE_0=0;CASE_14=20;CASE_1AE=430 */
 
-STGroupBoatC * __thiscall st::fn_004232A0(STGroupBoatC *this)
+STGroupC * __thiscall st::fn_004232A0(STGroupBoatC *this)
 
 {
   st::fn_006E60E0(this);
@@ -31,7 +31,7 @@ STGroupBoatC * __thiscall st::fn_004232A0(STGroupBoatC *this)
   this->field_0027 = 0;
   this->field_0035 = 0;
   this->field_0039 = 0;
-  return this;
+  return (STGroupC *)this;
 }
 
 // 00497AF0 STGroupBoatC::STGroupBoatC
@@ -56,6 +56,7 @@ STGroupBoatC * __thiscall st::fn_00497AF0(STGroupBoatC *this)
   DArrayTy **ppDVar2;
   short *psVar4;
 
+  /* ST_CALLSITE[00497AF4]: CALL 0x004053b7; direct=004053B7 STGroupBoatC::sub_004232A0 */
   st::fn_004053B7(this);
   this->vtable = &st_global_00790728;
   this->field_0045 = 0;
@@ -87,7 +88,7 @@ STGroupBoatC * __thiscall st::fn_00497AF0(STGroupBoatC *this)
     psVar4 = psVar4 + 2;
   }
   *psVar4 = 0;
-  *(undefined1 *)(psVar4 + 1) = 0;
+  ((undefined1 *)psVar4)[1] = 0;
   this->field_0295 = 0;
   this->field_0297 = 0;
   this->field_0299 = 0;
@@ -234,8 +235,10 @@ st::fn_0049A500
       do {
         st::fn_006ACC70((DArrayTy *)this->field_0029,index,local_10);
         if (STPiece<0,2>(local_10) != 0xffff) {
+          /* ST_CALLSITE[0049A550]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = st::fn_004028BA
                               (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_10),CASE_1);
+          /* ST_CALLSITE[0049A563]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           st::fn_004018C5
                     ((STFishC *)this_00,(short *)&local_14,(short *)&local_18,(short *)&local_1c);
           iVar5 = iVar5 + local_14;
@@ -360,6 +363,7 @@ undefined4 __thiscall st::fn_004A7E30(STGroupBoatC *this,int param_1)
     local_e = local_a * 0xc9;
   }
   this->field_023A = (local_e / (int)uVar4) / 3;
+  /* ST_CALLSITE[004A7FFA]: CALL 0x00404b1a; direct=00404B1A STGroupBoatC::SetPatrolCmdToBoat */
   st::fn_00404B1A(this);
   return 0;
 }

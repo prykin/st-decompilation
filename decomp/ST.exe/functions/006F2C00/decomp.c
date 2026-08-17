@@ -47,8 +47,10 @@ LPSTR __cdecl FUN_006f2c00(char *text,int param_2,undefined4 param_3)
   }
   else {
     Library::MSVCRT::__itoa(param_2,local_24,10);
+    /* ST_CALLSITE[006F2C3F]: CALL EDI */
     wsprintfA(local_44,"%s%s%s","%s%0",local_24,&DAT_007d5630);
     pCVar5 = &DAT_00856e40 + iVar2 * 0x20;
+    /* ST_CALLSITE[006F2C57]: CALL EDI */
     wsprintfA(pCVar5,local_44,text,param_3);
   }
   DAT_00856fc4 = DAT_00856fc4 + 1;

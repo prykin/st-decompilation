@@ -166,6 +166,7 @@ void __thiscall st::fn_0052D370(PopUpTy *this,char *param_1,byte param_2)
       this_00 = local_14;
       pDVar4 = local_c;
       if (local_8 != nullptr) {
+        /* ST_CALLSITE[0052D3F1]: CALL dword ptr [0x0085bde8] */
         st::external_00000080((LPSTR)local_8,st::mutable_c_string("%s%1d%s"),&DAT_007c6ff0,param_2,param_1);
         pDVar4 = (DArrayTy *)st::fn_00712F80(this_00->field_0094,local_8);
         local_c = pDVar4;
@@ -174,7 +175,7 @@ void __thiscall st::fn_0052D370(PopUpTy *this,char *param_1,byte param_2)
       pDVar5 = local_10;
       if (pDVar4 != nullptr) {
         pDVar5 = (DArrayTy *)
-                 st::fn_007121F0(this_00->field_0094,st::pointer_boundary_cast<uint *>(&pDVar4->flags),st::mutable_c_string(" ,.;:!?/\\()[]{}"),
+                 st::fn_007121F0(this_00->field_0094,&pDVar4->flags,st::mutable_c_string(" ,.;:!?/\\()[]{}"),
                                    (&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0,0xffffffff,1);
         local_10 = pDVar5;
         st::fn_007129D0(this_00->field_0094,(uint *)pDVar5,(uint *)pDVar5);
@@ -195,6 +196,7 @@ LAB_0052d48d:
               this_00->field_009C = this_00->field_009C + 1;
             }
             if (((byte)this_00->field_009C <= DAT_00807346) &&
+               /* ST_CALLSITE[0052D4CB]: CALL 0x004041b5; direct=004041B5 PopUpTy::OutStr */
                (st::fn_004041B5(this_00,this_00->field_009C - 1), DAT_00807342 != 0)) {
               if ((int)((byte)this_00->field_009C - 1) < (int)this_00->field_0098[2]) {
                 pcVar6 = *(char **)((this_00->field_0098[5] - 4) +
@@ -355,6 +357,7 @@ LAB_0052d7d4:
             iVar6 = 0;
           }
           if (iVar6 != 0) {
+            /* ST_CALLSITE[0052D870]: CALL 0x004041b5; direct=004041B5 PopUpTy::OutStr */
             st::fn_004041B5(this_00,(byte)local_8);
           }
           bVar4 = (byte)local_8 + 1;
@@ -488,7 +491,7 @@ void __thiscall st::fn_0052DB90(PopUpTy *this)
         st::fn_006B5570((DArrayTy *)local_8->field_0098);
       }
       pDVar4 = st::fn_006B54F0(nullptr,10,10);
-      pPVar3->field_0098 = st::pointer_boundary_cast<uint *>(&pDVar4->flags);
+      pPVar3->field_0098 = &pDVar4->flags;
       puVar1 = pPVar3->field_0090;
       uVar7 = *(uint *)(puVar1 + 10);
       if (uVar7 == 0) {
@@ -605,6 +608,7 @@ int __thiscall st::fn_0052DD20(PopUpTy *this,STMessage *message)
           this_00->field_009C = (char)puVar15[2];
         }
         if ((int)(uint)DAT_00807346 <= (int)puVar15[2]) {
+          /* ST_CALLSITE[0052E0B7]: CALL 0x004041b5; direct=004041B5 PopUpTy::OutStr */
           st::fn_004041B5(this_00,DAT_00807346 - 1);
         }
         local_5 = 0;
@@ -693,7 +697,7 @@ LAB_0052e184:
       local_10 = local_10 - 1;
     } while (local_10 != 0);
     pDVar7 = st::fn_006B54F0(nullptr,10,10);
-    this_00->field_0098 = st::pointer_boundary_cast<uint *>(&pDVar7->flags);
+    this_00->field_0098 = &pDVar7->flags;
     DVar8 = st::fn_006E51B0((STAppC *)&DAT_00807620);
     this_00->field_009D = DVar8;
     g_popUp_008016D8 = this_00;

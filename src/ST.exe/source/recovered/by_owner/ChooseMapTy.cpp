@@ -21,24 +21,28 @@ void __thiscall st::fn_005AE840(ChooseMapTy *this)
     this->field_0025 = iVar1;
     this->field_0031 = 1;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005AE876]: CALL dword ptr [EAX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (this->field_1C83 != 0) {
     this->field_0025 = this->field_1C83;
     this->field_0031 = 1;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005AE892]: CALL dword ptr [EAX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_0389 != 0) {
     this->field_0025 = g_startSystem_0081176C->field_0389;
     this->field_0031 = 1;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005AE8B3]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_0550 != 0) {
     this->field_0025 = g_startSystem_0081176C->field_0550;
     this->field_0031 = 1;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005AE8D5]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_054C != 0) {
@@ -46,6 +50,7 @@ void __thiscall st::fn_005AE840(ChooseMapTy *this)
     this->field_002D = 0x29;
     this->field_0031 = 9;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005AE902]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   return;
@@ -71,6 +76,7 @@ void __thiscall st::fn_005AE950(ChooseMapTy *this)
     this->field_0025 = iVar1;
     this->field_0031 = 0;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005AE985]: CALL dword ptr [EAX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   iVar1 = this->array_00BC[0xc].field_01EC;
@@ -78,6 +84,7 @@ void __thiscall st::fn_005AE950(ChooseMapTy *this)
     this->field_0025 = iVar1;
     this->field_0031 = 0;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005AE9A1]: CALL dword ptr [EAX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_0389 != 0) {
@@ -85,6 +92,7 @@ void __thiscall st::fn_005AE950(ChooseMapTy *this)
     this->field_002D = 0x20;
     this->field_0031 = 0;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005AE9C5]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_054C != 0) {

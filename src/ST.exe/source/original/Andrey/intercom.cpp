@@ -70,6 +70,7 @@ void __thiscall st::fn_005219E0(IntercomPanelTy *this)
   pIVar2 = local_8;
   if (iVar3 == 0) {
     g_intercomPanel_0080169C = local_8;
+    /* ST_CALLSITE[00521A2A]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
     puVar3 = st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
     pIVar2->field_0180 = puVar3;
     puVar3[0x16] = 0;
@@ -86,6 +87,7 @@ void __thiscall st::fn_005219E0(IntercomPanelTy *this)
              st::fn_006B50C0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
                           (uint)pIVar2->field_0184[7],uVar5,(undefined4 *)puVar6,iVar10);
     pIVar2->field_019C = puVar6;
+    /* ST_CALLSITE[00521ABC]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)pIVar2->field_0068,0,0,'\x01',(byte *)pIVar2->field_0184
           );
     pDVar7 = st::fn_006B54F0(nullptr,1,1);
@@ -294,8 +296,10 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (message->id == MESS_ID_CREATE) {
+    /* ST_CALLSITE[00522EC8]: CALL 0x004031ca; direct=004031CA IntercomPanelTy::PreInitIntercomPanel */
     st::fn_004031CA(local_c);
   }
+  /* ST_CALLSITE[00522ED0]: CALL 0x004017f8; direct=004017F8 PanelTy::GetMessage */
   st::fn_004017F8((PanelTy *)this_00,message);
   SVar2 = message->id;
   if (SVar2 < MESS_BEHPANELTY_C0A0) {
@@ -338,6 +342,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
             local_848 = 0xc09f;
             local_890 = local_8b0;
             local_850 = local_8b0;
+            /* ST_CALLSITE[005230E3]: CALL dword ptr [EDX + 0x8] */
             (*this_00->field_000C->vtable->CreateObject)
                       ((SystemClassTy *)this_00->field_000C,6,&this_00->field_01A0,nullptr,
                        st::machine_word_boundary_cast<undefined4>(local_8dc),1);
@@ -368,6 +373,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
         return 0;
       }
       if (SVar2 == MESS_ID_CREATE) {
+        /* ST_CALLSITE[00522F16]: CALL 0x00405583; direct=00405583 IntercomPanelTy::InitIntercomPanel */
         st::fn_00405583(this_00);
         g_currentExceptionFrame = local_50.previous;
         return 0;
@@ -376,6 +382,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
+      /* ST_CALLSITE[00522EFC]: CALL 0x004021ee; direct=004021EE IntercomPanelTy::DoneIntercomPanel */
       st::fn_004021EE(this_00);
       g_currentExceptionFrame = local_50.previous;
       return 0;
@@ -421,6 +428,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
     return 0;
   }
   if (this_00->field_0172 == CASE_1) {
+    /* ST_CALLSITE[0052315F]: CALL 0x00401dcf; direct=00401DCF IntercomPanelTy::SwitchIntercomPanel */
     st::fn_00401DCF(this_00,0);
   }
   g_currentExceptionFrame = local_50.previous;

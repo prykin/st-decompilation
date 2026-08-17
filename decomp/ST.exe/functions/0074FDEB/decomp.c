@@ -10,6 +10,7 @@ int FUN_0074fdeb(int param_1)
     iVar1 = -0x7ffbfdcc;
   }
   else {
+    /* ST_CALLSITE[0074FE04]: CALL dword ptr [EAX + 0xc] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(**(int **)(param_1 + 4) + 0xc))(param_1 + -0xc);
     if (-1 < iVar1) {

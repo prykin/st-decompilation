@@ -39,14 +39,17 @@ LAB_004b77c4:
         DArrayGetElement(pDVar7,local_10,local_c);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((local_c[0] != nullptr) &&
+           /* ST_CALLSITE[004B77DD]: CALL dword ptr [EAX + 0x2c] */
            ((iVar4 = (**(code **)(*local_c[0] + 0x2c))(), iVar4 != 0x78 ||
             (iVar4 = thunk_FUN_004b7520(param_1,*(Global_sub_004B7520_param_2Enum *)
                                                  ((int)local_c[0] + 0x259)), iVar4 != 0)))) {
+          /* ST_CALLSITE[004B7807]: CALL dword ptr [EAX + 0x2c] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar4 = (**(code **)(*local_c[0] + 0x2c))();
           local_14 = thunk_FUN_004b72e0(cVar6,iVar4);
           if (0 < local_14) {
             local_1c = local_c[0][6];
+            /* ST_CALLSITE[004B782C]: CALL dword ptr [EAX + 0x2c] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             GVar5 = (**(code **)(*local_c[0] + 0x2c))();
             local_18 = thunk_FUN_004b7350(param_1,GVar5);

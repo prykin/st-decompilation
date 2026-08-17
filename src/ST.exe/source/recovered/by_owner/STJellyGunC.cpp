@@ -27,8 +27,8 @@ undefined4 __thiscall st::fn_00415ED0(STJellyGunC *this,undefined4 *param_1,int 
   undefined *puStack_c;
   undefined4 local_8;
 
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_007901b0);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_007901b0;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   if ((this->field_0068 == this->field_0064) && (0 < this->field_0068)) {
@@ -125,8 +125,10 @@ STJellyGunC * __thiscall st::fn_005823D0(STJellyGunC *this)
 
 {
 
+  /* ST_CALLSITE[005823D4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
-  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[005823E1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  st::fn_00401316((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079B8EC);
   this->vtable = &st_global_0079B78C;
   memset(&this->field_0x256, 0, 0x3e); /* compiler bulk-zero initialization */
@@ -224,6 +226,7 @@ STJellyGunC_field_0235State __thiscall st::fn_00583E30(STJellyGunC *this)
 
   SVar1 = CASE_2;
   if (this->field_0235 != CASE_2) {
+    /* ST_CALLSITE[00583E5A]: CALL 0x004020fe; direct=004020FE STJellyGunC::sub_00584060 */
     local_14 = st::fn_004020FE(this,&local_10,&local_c,&local_8);
     if (local_14 == 1) {
       if (this->field_023D != 0) {
@@ -242,6 +245,7 @@ STJellyGunC_field_0235State __thiscall st::fn_00583E30(STJellyGunC *this)
               iVar2 = -iVar2;
             }
             if (iVar2 < 2) {
+              /* ST_CALLSITE[00583EE4]: CALL 0x00402455; direct=00402455 sub_00415B30 */
               iVar2 = st::fn_00402455(this,this->field_0041,this->field_0043,this->field_0045,
                                    (short)local_10 * 0xc9 + 100,(short)local_c * 0xc9 + 100,
                                    (short)local_8 * 200 + 100,6);
@@ -316,11 +320,14 @@ st::fn_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
   short local_6;
 
   if (this->field_023D != 0) {
+    /* ST_CALLSITE[0058408C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_00 = st::fn_004028BA
                         (g_allPlayers_007FA174,*(char *)&this->field_0241,
                          *(ushort *)&this->field_0x245,CASE_1);
     if ((this_00 != nullptr) &&
+       /* ST_CALLSITE[0058409B]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
        (iVar1 = this_00->vfunc_F8(), iVar1 != 0)) {
+      /* ST_CALLSITE[005840B3]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
       st::fn_00405F0B((STFishC *)this_00,&local_6,&local_8,&local_a);
       *param_1 = (int)local_6;
       *param_2 = (int)local_8;
@@ -329,6 +336,7 @@ st::fn_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
     }
     this->field_023D = 0;
   }
+  /* ST_CALLSITE[005840F9]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   st::fn_004018C5((STFishC *)this,&local_10,&local_e,&local_c);
   iVar1 = st::machine_word_boundary_cast<int>(this->field_001C * 0x41c64e6d + 0x3039);
   this->field_001C = iVar1;
@@ -434,17 +442,27 @@ undefined4 __thiscall st::fn_00584380(STJellyGunC *this)
   undefined4 uVar2;
 
   this_00 = &this->field_01D5;
+  /* ST_CALLSITE[0058439F]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar1 = st::fn_00404183((STT3DSprC *)this_00,8,PTR_00806774,st::mutable_c_string("Expb11"),CASE_1D);
   if (iVar1 == 0) {
+    /* ST_CALLSITE[005843BD]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240((STT3DSprC *)this_00,8,g_playSystem_00802A38->field_00E4);
+    /* ST_CALLSITE[005843D3]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     st::fn_00404183((STT3DSprC *)this_00,10,PTR_00806774,st::mutable_c_string("expmask3"),CASE_1D);
+    /* ST_CALLSITE[005843DC]: CALL 0x00403233; direct=00403233 STT3DSprC::sub_004ACFE0 */
     st::fn_00403233((STT3DSprC *)this_00,'\n');
+    /* ST_CALLSITE[005843EC]: CALL 0x004044ee; direct=004044EE STT3DSprC::sub_004ACF20 */
     st::fn_004044EE((STT3DSprC *)this_00,PTR_008032b8,0x10);
+    /* ST_CALLSITE[00584402]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
+    /* ST_CALLSITE[0058440B]: CALL dword ptr [EDX + 0xd8] */
     this->vfunc_D8();
+    /* ST_CALLSITE[00584422]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar1 = st::fn_00404183((STT3DSprC *)this_00,9,PTR_00806764,st::mutable_c_string("bulb_n5"),CASE_1D);
     if (iVar1 == 0) {
+      /* ST_CALLSITE[0058442F]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
       st::fn_00402761((STT3DSprC *)this_00,9);
+      /* ST_CALLSITE[00584438]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       uVar2 = st::fn_004022AC((STT3DSprC *)this_00,'\t');
       this->field_0x24f = (char)uVar2;
       this->field_0x250 = DAT_007cb414;
@@ -494,6 +512,7 @@ void __thiscall st::fn_005844E0(STJellyGunC *this,int param_1,int param_2,int so
                              (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
   }
   local_10.unknown = this->field_0018;
+  /* ST_CALLSITE[00584566]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
   st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,soundId,&local_10,0);
   return;
 }

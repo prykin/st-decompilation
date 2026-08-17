@@ -82,6 +82,7 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
     local_e = local_a * 0xc9;
   }
   this->field_023A = (local_e / (int)uVar4) / 3;
+  /* ST_CALLSITE[004A7FFA]: CALL 0x00404b1a; direct=00404B1A STGroupBoatC::SetPatrolCmdToBoat */
   SetPatrolCmdToBoat(this);
   return 0;
 }

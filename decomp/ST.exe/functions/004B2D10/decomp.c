@@ -35,6 +35,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
     local_24 = *(int *)(&DAT_007dfbac + param_2 * 4);
   }
   else {
+    /* ST_CALLSITE[004B2D32]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     uVar4 = LookupRecordByte(param_1);
     uVar4 = (int)(byte)uVar4;
     local_24 = *(int *)(&DAT_007e3f20 + (uVar4 + param_2 * 3) * 4);
@@ -83,6 +84,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
             if ((((this != nullptr) && (this[1].vtable < (STWorldObjectVTable *)0x8))
                 && ((g_playSystem_00802A38 == nullptr ||
                     (g_bulkInitializedRecords_008087C7[(int)this[1].vtable].field_0022 < 8)))) &&
+               /* ST_CALLSITE[004B2EE8]: CALL dword ptr [EAX + 0x2c] */
                (iVar7 = this->GetObjectTypeId(), iVar7 == 0x73)) {
               bVar1 = *(byte *)&this[1].vtable;
               if (g_app_00806728->field_146F == '\0') {

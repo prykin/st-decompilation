@@ -100,6 +100,7 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
     local_bc = 1;
     local_a4 = 5;
     local_a0 = 0x32;
+    /* ST_CALLSITE[00645AA8]: CALL dword ptr [EDX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x10a,0,0,(short)&local_c4,0);
     return;
   case 0xb0:
@@ -120,6 +121,7 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
     local_5c[0] = 0x15e;
     local_5c[3] = 1;
     local_5c[2] = 1;
+    /* ST_CALLSITE[00645B4A]: CALL dword ptr [EAX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x147,0,0,(short)local_5c,0);
     return;
   case 0xb5:
@@ -142,9 +144,11 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
     local_6c = 4;
     local_64 = uVar6;
     local_60 = uVar1;
+    /* ST_CALLSITE[00645BE8]: CALL dword ptr [EAX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x150,0,0,(short)local_98,0);
     return;
   }
+  /* ST_CALLSITE[006458C5]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   local_EAX_69 = LookupRecordByte((char)param_1->field_0000);
   local_EAX_69 = (int)(byte)local_EAX_69;
   if (local_EAX_69 == 1) {
@@ -189,6 +193,7 @@ cf_common_exit_00645953:
   local_5c[0] = 0x28;
   local_5c[3] = 1;
   local_5c[2] = 1;
+  /* ST_CALLSITE[006459B4]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar2 = LookupRecordByte((char)local_5c[1]);
   uVar2 = (int)(byte)uVar2;
   if (uVar2 == 1) {
@@ -208,6 +213,7 @@ LAB_006459df:
   local_29 = param_1->field_0022;
   local_34 = param_1->field_0004;
   local_36 = param_1->field_001A;
+  /* ST_CALLSITE[00645A18]: CALL dword ptr [EDX + 0x8] */
   g_playSystem_00802A38->vfunc_08(0x106,0,0,(short)local_5c,0);
   return;
 }

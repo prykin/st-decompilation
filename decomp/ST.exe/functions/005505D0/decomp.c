@@ -62,6 +62,7 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
             if (((&DAT_00808af0)[(int)param_2 * 0x27] == param_1) &&
                ((&DAT_00808af6)[(int)param_2 * 0x9c] != '\0')) {
               pcVar1 = LoadResourceString(0x426d,g_hINSTANCE_00807618);
+              /* ST_CALLSITE[0055074C]: CALL ESI */
               wsprintfA(local_10c,"%s %s",pcVar1,pcVar2);
               if (g_popUp_008016D8 != nullptr) {
                 thunk_FUN_0052d320(g_popUp_008016D8,local_10c,8);

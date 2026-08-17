@@ -63,6 +63,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   puVar7 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
+  /* ST_CALLSITE[005AE0AF]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
          (byte *)puVar7);
   pRVar3 = (RecoveredSourceFamily_dibcopy *)g_startSystem_0081176C->field_0544;
@@ -161,6 +162,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     pcVar10 = local_14;
     g_currentExceptionFrame = local_bc.previous;
     if (local_14 != nullptr) {
+      /* ST_CALLSITE[005AE271]: CALL 0x00402716; direct=00402716 StartSystemTy::LoadMapData */
       StartSystemTy::LoadMapData
                 (g_startSystem_0081176C,local_14,pCVar18->array_00BC[0xc].field_01DF);
       cMf32::delete(pcVar10);
@@ -346,6 +348,7 @@ LAB_005ae53a:
     *psVar22 = 0;
     local_34[0] = (-(ushort)(iVar15 != 0) & 2) - 1;
     local_34[1] = local_34[0];
+    /* ST_CALLSITE[005AE5FD]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
     MMsgTy::StatePanel(*(MMsgTy **)(iVar5 + 0x2e6),(int)local_34);
   }
 LAB_005ae602:

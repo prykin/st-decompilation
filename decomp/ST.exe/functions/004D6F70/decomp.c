@@ -14,6 +14,7 @@ int __fastcall FUN_004d6f70(int *param_1)
   uint uVar2;
   int iVar3;
 
+  /* ST_CALLSITE[004D6F74]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
   uVar1 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)param_1);
   uVar2 = thunk_FUN_004e41c0(param_1[9]);
   if ((int)uVar2 < (int)uVar1) {
@@ -25,6 +26,7 @@ int __fastcall FUN_004d6f70(int *param_1)
   if (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d)) {
     thunk_FUN_004d8b70((char)param_1[9]);
   }
+  /* ST_CALLSITE[004D6FDB]: CALL dword ptr [EAX + 0xc4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(*param_1 + 0xc4))();
   return (uint)(99 < iVar3);

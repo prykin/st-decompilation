@@ -25,6 +25,7 @@ undefined4 __thiscall FUN_00495750(void *this,float param_1)
     case 2:
       uVar2 = FUN_006e4d40(STField<void *>(this,0x10),STField<int>(this,0xc));
       if (uVar2 == 1) {
+        /* ST_CALLSITE[00495792]: CALL dword ptr [0x0085bedc] */
         DVar3 = timeGetTime();
         STField<DWORD>(this,0x24) = DVar3;
         return 0;
@@ -42,8 +43,10 @@ undefined4 __thiscall FUN_00495750(void *this,float param_1)
     lVar5 = Library::MSVCRT::__ftol();
     uVar4 = (undefined4)lVar5;
     lVar5 = Library::MSVCRT::__ftol();
+    /* ST_CALLSITE[0049582F]: CALL dword ptr [0x0085bde8] */
     wsprintfA(local_6c,"\n X = %d\n Y = %d\n Xc = %d\n Yc = %d",STField<undefined4>(this,0x1c),
               STField<undefined4>(this,0x20),(int)lVar5,uVar4);
+    /* ST_CALLSITE[00495849]: CALL dword ptr [0x0085bdec] */
     MessageBoxA(g_hWnd_00806748,local_6c,"Coordinates of Mouse",0x40);
   }
   return 0;

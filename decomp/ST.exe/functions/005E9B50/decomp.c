@@ -40,7 +40,9 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   pWVar2 = local_8;
   if (iVar4 == 0) {
     if (local_8->array_00BC[0xc].field_01E4 == 0) {
+      /* ST_CALLSITE[005E9BAD]: CALL 0x00402a4a; direct=00402A4A StartSystemTy::CreateBinDesc */
       StartSystemTy::CreateBinDesc(g_startSystem_0081176C);
+      /* ST_CALLSITE[005E9BB8]: CALL 0x004028b5; direct=004028B5 StartSystemTy::CreateChatView */
       StartSystemTy::CreateChatView(g_startSystem_0081176C);
       ppcVar6 = local_8d8;
       for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -64,6 +66,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
       local_84c = this_00->field_0014;
       local_848 = 0;
       local_844 = 0xc0a2;
+      /* ST_CALLSITE[005E9C8F]: CALL dword ptr [EDX + 0x8] */
       (*this_00->vtable->CreateObject)
                 ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,nullptr,local_8d8
                  ,0);

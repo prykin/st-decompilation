@@ -56,7 +56,7 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
   *(undefined1 *)puVar8 = *(undefined1 *)puVar6;
   this->field_0061 = 0xffffffff;
   if (this->field_0038 != nullptr) {
-    local_14 = (undefined4 *)FUN_006b0020(&this->field_0038->flags,(int *)&local_8);
+    local_14 = FUN_006b0020(&this->field_0038->flags,(int *)&local_8);
     STField<uint>(puVar3,0x55) = local_8;
     local_c = (byte *)((int)puVar3 + 0x59);
     puVar6 = (byte *)(local_14);

@@ -38,6 +38,7 @@ undefined4 __thiscall TLOFakeTy::sub_004D0970(TLOFakeTy *this,int param_1,int pa
   *(int *)(this->field_024D + this->field_0245 * 6) = param_1;
   *(int *)(this->field_024D + this->field_0245 * 6 + 2) = param_2;
   *(int *)(this->field_024D + this->field_0245 * 6 + 4) = param_3;
+  /* ST_CALLSITE[004D09FC]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
   iVar1 = DumpClassC::WritePtr
                     ((short)param_1,(short)param_2,(short)param_3,0,
                      (RecoveredRecord_DumpClassC_00495EC0 *)this);

@@ -24,8 +24,8 @@ void __fastcall FUN_00694100(void *param_1)
         }
         iVar1 = thunk_FUN_00693e60(param_1,STField<int>(param_1,0x199d));
         if (iVar1 == 0) break;
-        if ((int)uVar2 < (int)(uint)*(byte *)(iVar1 + 0x23)) {
-          *(byte *)(iVar1 + 0x23) = *(byte *)(iVar1 + 0x23) - 1;
+        if ((int)uVar2 < (int)(uint)((byte *)iVar1)[0x23]) {
+          ((byte *)iVar1)[0x23] = ((byte *)iVar1)[0x23] - 1;
         }
       }
     }

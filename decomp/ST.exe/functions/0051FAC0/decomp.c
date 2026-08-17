@@ -45,11 +45,13 @@ HelpStringTy::sub_0051FAC0(HelpStringTy *this,char *param_1,byte param_2,char pa
       DVar2 = STAppC::sub_006E51B0(this->field_0010);
       this->field_0122 = DVar2;
       this->field_012E = 1;
+      /* ST_CALLSITE[0051FB42]: CALL 0x004015fa; direct=004015FA HelpStringTy::OutStr */
       OutStr(this);
       return;
     }
     memset(&this->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
     this->field_012E = 0;
+    /* ST_CALLSITE[0051FB61]: CALL 0x004015fa; direct=004015FA HelpStringTy::OutStr */
     OutStr(this);
   }
   return;

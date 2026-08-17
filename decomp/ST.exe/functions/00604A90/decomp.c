@@ -75,7 +75,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
     local_48->field_00A9 = this->field_027E;
     if ((uint *)this->field_0215 != nullptr) {
       local_3c[0] = nullptr;
-      local_3c[0] = (uint *)FUN_006b0020((uint *)this->field_0215,(int *)&local_20);
+      local_3c[0] = FUN_006b0020((uint *)this->field_0215,(int *)&local_20);
       uVar11 = *param_1 + local_20 + 4;
       *param_1 = uVar11;
       local_48 = Library::DKW::LIB::MemRealloc(local_48,uVar11);

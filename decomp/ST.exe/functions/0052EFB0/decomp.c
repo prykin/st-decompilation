@@ -68,11 +68,13 @@ OptPanelTy::PaintDblBut
       uVar5 = local_14;
       iVar6 = local_18;
       pOVar2 = local_1c;
+      /* ST_CALLSITE[0052F080]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_1c->field_0068,local_18,local_14,'\x01',
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       iVar10 = 1;
       piVar9 = nullptr;
+      /* ST_CALLSITE[0052F09F]: CALL dword ptr [EBP + 0x14] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar3 = (*(code *)param_4)(param_1);
       iVar8 = 1;
@@ -85,6 +87,7 @@ OptPanelTy::PaintDblBut
       else {
         iVar8 = local_c->field_0018;
       }
+      /* ST_CALLSITE[0052F102]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)pOVar2->field_0068,iVar6 + 5,
              (iVar8 - *(int *)(local_8 + 4)) / 2 + 1 + uVar5,'\x01',(byte *)local_8);
       iVar6 = *(int *)(local_8 + 2);
@@ -101,6 +104,7 @@ OptPanelTy::PaintDblBut
                        (iVar10 - iVar6) + -10,iVar8);
       iVar11 = -1;
       iVar10 = -1;
+      /* ST_CALLSITE[0052F16F]: CALL dword ptr [EBP + 0x18] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar5 = (*(code *)param_5)(param_1);
       iVar8 = -1;

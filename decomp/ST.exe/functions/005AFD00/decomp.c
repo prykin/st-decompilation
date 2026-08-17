@@ -160,6 +160,7 @@ switchD_005afd30_caseD_c:
     memset(&local_60, 0, 0x1a); /* compiler bulk-zero initialization */
     STPiece<2,2>(local_60) = 0xffff;
     STPiece<0,2>(local_60) = 0xffff;
+    /* ST_CALLSITE[005AFE87]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
     MMsgTy::StatePanel(*(MMsgTy **)(iVar15 + 0x2e6),(int)&local_60);
   }
   pRVar2 = (RecoveredSourceFamily_dibcopy *)this_00->field_1C7B;
@@ -235,6 +236,7 @@ LAB_005aff82:
   local_34 = 0;
 LAB_005aff87:
   if (local_2c != 0) {
+    /* ST_CALLSITE[005AFFA3]: CALL dword ptr [0x0085bcec] */
     local_18 = FindFirstFileA(&this_00->field_1FAF,&local_26c);
     if (local_18 != (HANDLE)0xffffffff) {
       do {
@@ -391,10 +393,12 @@ LAB_005b0041:
           }
         }
 LAB_005b01f3:
+        /* ST_CALLSITE[005B01FE]: CALL dword ptr [0x0085bcf0] */
         BVar7 = FindNextFileA(local_18,&local_26c);
       } while (BVar7 != 0);
     }
     if (local_18 != (HANDLE)0xffffffff) {
+      /* ST_CALLSITE[005B0218]: CALL dword ptr [0x0085bcf4] */
       FindClose(local_18);
     }
   }
@@ -495,6 +499,7 @@ LAB_005b01f3:
     bVar25 = false;
   }
   else {
+    /* ST_CALLSITE[005B02F6]: CALL dword ptr [0x0085bcec] */
     local_18 = FindFirstFileA(&this_00->field_1FAF,&local_26c);
     bVar25 = local_18 != (HANDLE)0xffffffff;
   }
@@ -622,10 +627,12 @@ LAB_005b0523:
           g_currentExceptionFrame = local_12c.previous;
         }
       }
+      /* ST_CALLSITE[005B0558]: CALL dword ptr [0x0085bcf0] */
       BVar7 = FindNextFileA(local_18,&local_26c);
     } while (BVar7 != 0);
   }
   if (local_18 != (HANDLE)0xffffffff) {
+    /* ST_CALLSITE[005B056F]: CALL dword ptr [0x0085bcf4] */
     FindClose(local_18);
   }
   uVar20 = this_00->field_1C9F->elementSize;
@@ -713,6 +720,7 @@ LAB_005b0639:
           else {
             DArrayGetElement(this_00->field_1C9B,uVar20,&local_3c);
             DArrayGetElement(this_00->field_1C9B,uVar20 + 1,&local_44);
+            /* ST_CALLSITE[005B0685]: CALL dword ptr [0x0085bcd8] */
             LVar9 = CompareFileTime(&local_3c,&local_44);
             if (LVar9 < 0) {
               FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)this_00->field_1C9B,uVar20,uVar20 + 1);

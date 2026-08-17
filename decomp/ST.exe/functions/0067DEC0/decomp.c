@@ -25,6 +25,7 @@ uint * __cdecl CreateAssistantList(int param_1,int param_2,uint param_3)
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x16b);
     }
+    /* ST_CALLSITE[0067DF21]: CALL 0x004015eb; direct=004015EB _CreateStgListByRoot */
     puVar2 = _CreateStgListByRoot((cMf32 *)param_1,param_2,PTR_s_ASSISTANT_0079d724,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;

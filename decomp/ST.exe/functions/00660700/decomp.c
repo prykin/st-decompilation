@@ -56,6 +56,7 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
     if (this_00 == nullptr) {
       return 0xffffffff;
     }
+    /* ST_CALLSITE[006607DB]: CALL dword ptr [EDX + 0x2c] */
     iVar2 = this_00->GetObjectTypeId();
     if (iVar2 == 0x37) {
       local_14 = 0;
@@ -65,6 +66,7 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
       *(undefined4 *)&this_00[0x1d].field_0x18 = 1;
     }
     else {
+      /* ST_CALLSITE[00660818]: CALL dword ptr [EAX + 0x2c] */
       iVar2 = this_00->GetObjectTypeId();
       if (iVar2 != 0x6c) {
         return 0xffffffff;
@@ -80,6 +82,7 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
   if (((STField<ushort>(this,0x7d) != 0xfffe) && (g_allPlayers_007FA174 != nullptr))
      && (this_01 = thunk_FUN_0042b760(STField<char>(this,0x24),STField<ushort>(this,0x7d)),
         this_01 != nullptr)) {
+    /* ST_CALLSITE[00660887]: CALL dword ptr [EDX + 0x8] */
     this_01->sub_00498D20(0x10,(short)&local_14);
     return 0;
   }

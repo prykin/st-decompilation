@@ -38,6 +38,7 @@ undefined4 __thiscall FUN_0068f8f0(void *this,short param_1)
           memset(local_38, 0, 0x34); /* compiler bulk-zero initialization */
           local_38[1] = STField<undefined4>(this,300);
           local_38[0] = 0x75;
+          /* ST_CALLSITE[0068F990]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
           AiFltClassTy::GetAiMess(this_00,local_38);
           if ('\0' < local_30) {
             return 1;

@@ -17,6 +17,7 @@
 STRubbishC * __thiscall st::fn_0062ED10(STRubbishC *this)
 
 {
+  /* ST_CALLSITE[0062ED13]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
   this->field_01D5 = -1;
   this->field_01D9 = -1;
@@ -75,6 +76,7 @@ st::fn_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE35 *param_
     *(undefined4 *)((&this->field_01E5)[param_1] + 8) = *(undefined4 *)(param_2 + 1);
     iVar5 = *(int *)((&this->field_01E5)[param_1] + 4);
     if ((iVar5 == 3) || (iVar5 == 6)) {
+      /* ST_CALLSITE[0062F014]: CALL 0x004050c9; direct=004050C9 STRubbishC::sub_00630260 */
       st::fn_004050C9(this,param_1,1);
     }
     uVar2 = 1;
@@ -125,10 +127,12 @@ int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *par
   int iVar5;
   undefined4 *puVar6;
 
+  /* ST_CALLSITE[0062FCA7]: CALL 0x004017f3; direct=004017F3 STRubbishC::RubbishCreatePart */
   iVar3 = st::fn_004017F3(this);
   iVar4 = this->field_01E1;
   if (iVar3 < 0) {
     if (iVar4 == 0) {
+      /* ST_CALLSITE[0062FD9A]: CALL 0x00405885; direct=00405885 STRubbishC::sub_0062F900 */
       st::fn_00405885(this);
       return 0xffff;
     }
@@ -152,6 +156,7 @@ int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *par
       return this->field_01E1;
     }
     this->field_01E1 = iVar4 + 1;
+    /* ST_CALLSITE[0062FCCF]: CALL 0x004036ca; direct=004036CA STRubbishC::sub_0062EF00 */
     st::fn_004036CA(this,iVar3,param_1);
     if (this->field_01F9 != '\0') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -162,6 +167,7 @@ int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *par
         return iVar3;
       }
       if (this->field_01E1 == 0) {
+        /* ST_CALLSITE[0062FD05]: CALL 0x00405885; direct=00405885 STRubbishC::sub_0062F900 */
         st::fn_00405885(this);
         return 0xffff;
       }
@@ -207,6 +213,7 @@ int __thiscall st::fn_0062FEA0(STRubbishC *this,int param_1,int param_2)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return iVar2;
     }
+    /* ST_CALLSITE[0062FF35]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     st::fn_00403F53
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,this->field_01D5,
                this->field_01D9,&param_2,(int *)&local_8);
@@ -271,6 +278,7 @@ void __thiscall st::fn_00630260(STRubbishC *this,int param_1,int param_2)
       local_10 = param_1;
       local_c = puVar1[2];
       if (param_2 != 0) {
+        /* ST_CALLSITE[006302E0]: CALL 0x00404af2; direct=00404AF2 STManRub3C::AddNewRub3 */
         st::fn_00404AF2(g_manRub3_008117A4,local_24);
         return;
       }

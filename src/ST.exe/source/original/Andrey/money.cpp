@@ -105,6 +105,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
             uVar14 = this_00->field_0086;
             text_00 = "%5d";
           }
+          /* ST_CALLSITE[0052C666]: CALL EDI */
           st::external_00000080(local_18,text_00,uVar14);
           puVar8 = this_00->field_0072;
           local_c = *(uint *)(puVar8 + 10);
@@ -127,6 +128,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
                            *(int *)(puVar8 + 4));
           st::fn_007119C0(this_00->field_006A,local_18,-1,-1,
                          (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5);
+          /* ST_CALLSITE[0052C6F7]: CALL 0x00403666; direct=00403666 MoneyTy::sub_0052B8A0 */
           st::fn_00403666(this_00);
         }
         uVar14 = this_00->field_008E;
@@ -157,6 +159,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
             iVar10 = uVar14 - 100;
           }
           this_00->field_008E = iVar10;
+          /* ST_CALLSITE[0052C75C]: CALL EDI */
           st::external_00000080(local_40,st::mutable_c_string("%6d"),iVar10);
           puVar8 = this_00->field_0076;
           local_c = *(uint *)(puVar8 + 10);
@@ -179,6 +182,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
                            *(int *)(puVar8 + 4));
           st::fn_007119C0(this_00->field_006A,local_40,-1,-1,
                          (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 4);
+          /* ST_CALLSITE[0052C7ED]: CALL 0x00404949; direct=00404949 MoneyTy::sub_0052B8F0 */
           st::fn_00404949(this_00);
         }
         uVar14 = this_00->field_0096;
@@ -209,6 +213,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
             iVar10 = uVar14 - 100;
           }
           this_00->field_0096 = iVar10;
+          /* ST_CALLSITE[0052C852]: CALL EDI */
           st::external_00000080(local_48,st::mutable_c_string("%6d"),iVar10);
           puVar8 = this_00->field_007A;
           local_c = *(uint *)(puVar8 + 10);
@@ -231,12 +236,14 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
                            *(int *)(puVar8 + 4));
           st::fn_007119C0(this_00->field_006A,local_48,-1,-1,
                          (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 7);
+          /* ST_CALLSITE[0052C8E4]: CALL 0x0040146f; direct=0040146F MoneyTy::sub_0052B940 */
           st::fn_0040146F(this_00);
         }
         if ((this_00->field_00A2 != this_00->field_00A3) ||
            (this_00->field_00A4 != this_00->field_00A5)) {
           this_00->field_00A2 = this_00->field_00A3;
           this_00->field_00A4 = this_00->field_00A5;
+          /* ST_CALLSITE[0052C91D]: CALL 0x00403a62; direct=00403A62 MoneyTy::sub_0052B990 */
           st::fn_00403A62(this_00);
         }
       }
@@ -279,10 +286,12 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       local_10->field_0038 = g_nWidth_00806730 + -99;
       local_10->field_003C = DAT_00806734 + -0x16;
       local_10->field_0069 = ((DAT_0080874e == '\x03') - 1U & 0xc3) + 0x3d;
+      /* ST_CALLSITE[0052C06D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
       pcVar7 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,st::mutable_c_string("MONEY_FONT"),0);
       this_00->field_006A = pcVar7;
       pcVar7->field_0058 = 1;
       pcVar7->field_005C = 0;
+      /* ST_CALLSITE[0052C092]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
       pcVar7 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,st::mutable_c_string("TIME_FONT"),0);
       this_00->field_006E = pcVar7;
       pcVar7->field_0058 = 1;
@@ -397,6 +406,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
          ((g_playSystem_00802A38 == nullptr ||
           (g_bulkInitializedRecords_008087C7[DAT_0080874d].field_0022 < 8)))) {
         uVar6 = st::fn_004041CE((uint)DAT_0080874d);
+        /* ST_CALLSITE[0052C344]: CALL 0x0040161d; direct=0040161D MoneyTy::sub_0052BDA0 */
         st::fn_0040161D(this_00,DAT_0080874d,(uint)uVar6);
       }
       g_money_008016D4 = this_00;
@@ -436,10 +446,15 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       }
       break;
     case MESS_SHARED_0005:
+      /* ST_CALLSITE[0052C5A8]: CALL 0x00403666; direct=00403666 MoneyTy::sub_0052B8A0 */
       st::fn_00403666(local_10);
+      /* ST_CALLSITE[0052C5AF]: CALL 0x00404949; direct=00404949 MoneyTy::sub_0052B8F0 */
       st::fn_00404949(this_00);
+      /* ST_CALLSITE[0052C5B6]: CALL 0x0040146f; direct=0040146F MoneyTy::sub_0052B940 */
       st::fn_0040146F(this_00);
+      /* ST_CALLSITE[0052C5BD]: CALL 0x00403a62; direct=00403A62 MoneyTy::sub_0052B990 */
       st::fn_00403A62(this_00);
+      /* ST_CALLSITE[0052C5C4]: CALL 0x004033cd; direct=004033CD MoneyTy::sub_0052BBE0 */
       st::fn_004033CD(this_00);
       break;
     case MESS_SHARED_0060:
@@ -514,14 +529,18 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       if (local_10->field_0068 != MVar11) {
         if (local_10->field_0068 != 0) {
           local_78.field_0010 = 0x4202;
+          /* ST_CALLSITE[0052C563]: CALL 0x00403af3; direct=00403AF3 MoneyTy::sub_0052B760 */
           st::fn_00403AF3(local_10,&local_78);
+          /* ST_CALLSITE[0052C574]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_78);
         }
         this_00->field_0068 = MVar11;
         if (MVar11 != 0) {
           local_78.field_0010 = 0x4201;
+          /* ST_CALLSITE[0052C58E]: CALL 0x00403af3; direct=00403AF3 MoneyTy::sub_0052B760 */
           st::fn_00403AF3(this_00,&local_78);
+          /* ST_CALLSITE[0052C59F]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_78);
         }

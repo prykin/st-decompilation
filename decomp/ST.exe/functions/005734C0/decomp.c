@@ -73,12 +73,15 @@ void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
     memset(&DAT_008071f8, 0, 0x100); /* compiler bulk-zero initialization */
   }
   if (lpcbData == (LPDWORD)0x0) goto LAB_005737e5;
+  /* ST_CALLSITE[00573628]: CALL dword ptr [0x0085b958] */
   LVar3 = RegOpenKeyA((HKEY)&DAT_80000001,"SOFTWARE\\Microsoft\\Windows\\CurrentVersion",
                       (PHKEY)&phkResult);
   if (LVar3 == 0) {
     lpcbData = (LPDWORD)0x40;
+    /* ST_CALLSITE[00573652]: CALL dword ptr [0x0085b954] */
     LVar3 = RegQueryValueExA((HKEY)phkResult,"RegisteredOwner",(LPDWORD)0x0,
                              (LPDWORD)&local_8,(LPBYTE)((int)this + 0x785),(LPDWORD)&lpcbData);
+    /* ST_CALLSITE[00573662]: CALL dword ptr [0x0085b968] */
     RegCloseKey((HKEY)phkResult);
     if (LVar3 != 0) goto LAB_0057366c;
   }

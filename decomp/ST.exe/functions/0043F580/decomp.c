@@ -68,6 +68,7 @@ uint * FUN_0043f580(char param_1,byte *param_2,short param_3,short param_4,short
             do {
               piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar7);
               if ((piVar2 != nullptr) && (piVar2[9] == (int)param_1)) {
+                /* ST_CALLSITE[0043F6B6]: CALL dword ptr [EAX + 0x74] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 (**(code **)(*piVar2 + 0x74))(local_24);
                 pbVar8 = local_24;

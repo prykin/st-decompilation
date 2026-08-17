@@ -103,6 +103,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
     return;
   }
   if (local_8->field_1CC4 != (HANDLE)0x0) {
+    /* ST_CALLSITE[005D8496]: CALL dword ptr [0x0085bcac] */
     FindCloseChangeNotification(local_8->field_1CC4);
     this_00->field_1CC4 = (HANDLE)0x0;
   }
@@ -147,6 +148,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   memmove(pcVar10, pcVar8, uVar4); /* compiler REP MOVS byte copy */
   pcVar8 = &this_00->field_1CD4;
   FUN_006b78c0(pcVar8,pcVar8);
+  /* ST_CALLSITE[005D850F]: CALL dword ptr [0x0085bcfc] */
   pvVar3 = FindFirstChangeNotificationA(pcVar8,0,2);
   this_00->field_1CC4 = pvVar3;
   if (pvVar3 == (HANDLE)0xffffffff) {
@@ -215,6 +217,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_394 = local_4fc;
   local_214 = local_4fc;
   local_a4 = local_4fc;
+  /* ST_CALLSITE[005D874C]: CALL dword ptr [EAX + 0x8] */
   (*this_00->field_000C->vtable->CreateObject)
             ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1AF1,nullptr,local_524,0);
   ppcVar12 = local_db0;
@@ -239,12 +242,16 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_d20 = 2;
   local_d1c = 0x68ff;
   local_d24 = local_d64;
+  /* ST_CALLSITE[005D8812]: CALL dword ptr [EAX + 0x8] */
   (*this_00->field_000C->vtable->CreateObject)
             ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AF5,nullptr,local_db0,1);
+  /* ST_CALLSITE[005D8831]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
   uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
   this_00->field_1AF9[0] = uVar4;
+  /* ST_CALLSITE[005D8858]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
   uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
   this_00->field_1AF9[1] = uVar4;
+  /* ST_CALLSITE[005D8865]: CALL 0x0040392c; direct=0040392C SIDTy::PrepFiles */
   PrepFiles(this_00);
   Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1CB4);
   if (this_00->field_1B05 != 0xffffffff) {

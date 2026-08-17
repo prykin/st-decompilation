@@ -151,7 +151,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
         }
         Library::DKW::JPG::FUN_007568d0((int)pAVar6,param_4,1);
         piVar11 = (int *)*param_4;
-        auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+        AnonShape_00754B80_75BFDB7A * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
         if (0 < pAVar6->field_0068) {
           local_10 = param_2;
           do {

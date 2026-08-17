@@ -64,10 +64,12 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
     pBVar9 = FUN_0070b3a0(pAVar10,local_c);
     iVar7 = local_14;
     iVar5 = local_18;
+    /* ST_CALLSITE[004F00E4]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)pBVar8->field_0068,local_18,local_14,'\x01',
            (byte *)pBVar9);
     if ((param_1->field_0014 == 3) && (element_027a != nullptr)) {
       pBVar9 = FUN_0070b3a0(pBVar8->field_0190,9 - (uint)((char)element_027a->field_0008 != 0));
+      /* ST_CALLSITE[004F011D]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)pBVar8->field_0068,iVar5,iVar7,'\x06',(byte *)pBVar9);
     }
     Library::DKW::DDX::FUN_006b3640

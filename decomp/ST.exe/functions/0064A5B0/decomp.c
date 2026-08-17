@@ -22,6 +22,7 @@ void __cdecl FUN_0064a5b0(LPDWORD lpNumberOfBytesWritten)
       DVar2 = *pDVar4;
       pDVar4 = (LPDWORD)((int)pDVar4 + 1);
     } while ((char)DVar2 != '\0');
+    /* ST_CALLSITE[0064A5E6]: CALL ESI */
     WriteFile(HANDLE_008118f8,lpNumberOfBytesWritten,~uVar3 - 1,(LPDWORD)&lpNumberOfBytesWritten,
               (LPOVERLAPPED)0x0);
     uVar3 = 0xffffffff;
@@ -32,6 +33,7 @@ void __cdecl FUN_0064a5b0(LPDWORD lpNumberOfBytesWritten)
       cVar1 = *pcVar5;
       pcVar5 = pcVar5 + 1;
     } while (cVar1 != '\0');
+    /* ST_CALLSITE[0064A60A]: CALL ESI */
     WriteFile(HANDLE_008118f8,&CHAR_0Dh_007d2a00,~uVar3 - 1,(LPDWORD)&lpNumberOfBytesWritten,
               (LPOVERLAPPED)0x0);
   }

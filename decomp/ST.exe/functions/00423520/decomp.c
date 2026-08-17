@@ -35,6 +35,7 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
       do {
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,local_c);
         if (STPiece<0,2>(local_c) != 0xffff) {
+          /* ST_CALLSITE[0042358D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_c),CASE_1);
           if (this_00 == nullptr) {
@@ -42,6 +43,7 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\tc_grp.cpp",0x66);
           }
+          /* ST_CALLSITE[004235B3]: CALL dword ptr [EDX + 0x2c] */
           iVar5 = this_00->vfunc_2C();
           if (iVar5 == param_1) {
             local_8 = local_8 + 1;

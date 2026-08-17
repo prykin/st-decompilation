@@ -15,6 +15,7 @@ uint __thiscall FUN_0062e550(void *this,int param_1,int param_2,int param_3)
     uVar2 = 0xffffffff;
   }
   else {
+    /* ST_CALLSITE[0062E577]: CALL 0x0040543e; direct=0040543E STManRub3C::AddNewColl3 */
     uVar2 = STManRub3C::AddNewColl3(this,param_1,param_2,param_3,uVar1);
     if (-1 < (int)uVar2) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

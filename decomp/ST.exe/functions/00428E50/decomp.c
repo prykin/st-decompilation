@@ -205,6 +205,7 @@ LAB_00428e95:
               bVar20 = (uVar12 - 1 | 0xfffffff0) == 0xffffffff;
             }
             if (bVar20) {
+              /* ST_CALLSITE[004292AA]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
               cLoadingTy::SetState
                         (g_cLoading_00802A58,CASE_1,
                          (int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,nullptr);
@@ -309,6 +310,7 @@ LAB_00429475:
               bVar20 = (uVar12 - 1 | 0xfffffff0) == 0xffffffff;
             }
             if (bVar20) {
+              /* ST_CALLSITE[004294E3]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
               cLoadingTy::SetState
                         (g_cLoading_00802A58,CASE_1,
                          (int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,nullptr);
@@ -340,7 +342,7 @@ LAB_00429475:
 LAB_0042958f:
             iVar14 = *local_8;
             if ((iVar14 == 0) ||
-               (iVar18 = (int)*(short *)(iVar14 + 8) - (uint)*(byte *)(iVar14 + 0x48),
+               (iVar18 = (int)*(short *)(iVar14 + 8) - (uint)((byte *)iVar14)[0x48],
                iVar9 + 3 < iVar18)) goto cf_continue_loop_004296CF;
             if (*(uint *)(iVar14 + 0x18) < local_44->count) {
               /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -393,7 +395,7 @@ LAB_0042958f:
             *(byte *)local_10->field_003C = *(byte *)local_10->field_003C | local_50;
             iVar14 = local_10->field_003C;
 LAB_00429d7a:
-            *(byte *)(iVar14 + 1) = *(byte *)(iVar14 + 1) | local_50;
+            ((byte *)iVar14)[1] = ((byte *)iVar14)[1] | local_50;
             iVar9 = local_64;
             goto LAB_00429d7d;
           }
@@ -432,7 +434,7 @@ LAB_00429715:
                   local_60 = STField<int>(pvVar16,0xc) - local_c8;
                   local_5c = STField<int>(pvVar16,0x10) +
                              *(int *)(PTR_DAT_007a5250 +
-                                     (((int)*(short *)(iVar14 + 8) - (uint)*(byte *)(iVar14 + 0x48))
+                                     (((int)*(short *)(iVar14 + 8) - (uint)((byte *)iVar14)[0x48])
                                      - local_24) * 4) + local_70[-1];
                   local_58 = STField<int>(pvVar16,0x14);
                   local_54 = STField<undefined4>(pvVar16,0x18);
@@ -505,7 +507,7 @@ LAB_00429715:
                     local_5c = STField<int>(pvVar16,0x10) +
                                *(int *)(PTR_DAT_007a5250 +
                                        (((int)*(short *)(iVar14 + 8) -
-                                        (uint)*(byte *)(iVar14 + 0x48)) - local_24) * 4) + *local_70
+                                        (uint)((byte *)iVar14)[0x48]) - local_24) * 4) + *local_70
                     ;
                     local_58 = STField<int>(pvVar16,0x14);
                     local_54 = STField<undefined4>(pvVar16,0x18);
@@ -582,7 +584,7 @@ LAB_00429715:
                     local_5c = STField<int>(pvVar16,0x10) +
                                *(int *)(PTR_DAT_007a5250 +
                                        (((int)*(short *)(iVar14 + 8) -
-                                        (uint)*(byte *)(iVar14 + 0x48)) - local_24) * 4) +
+                                        (uint)((byte *)iVar14)[0x48]) - local_24) * 4) +
                                local_70[1];
                     local_58 = STField<int>(pvVar16,0x14);
                     local_54 = STField<undefined4>(pvVar16,0x18);

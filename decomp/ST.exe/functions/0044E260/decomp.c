@@ -33,6 +33,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
   piVar4 = param_4;
   local_14 = (STGameObjC *)thunk_FUN_0042b760((char)param_1,(ushort)param_2);
   if (local_14 != nullptr) {
+    /* ST_CALLSITE[0044E287]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
     pDVar5 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)local_14);
     auto param_2_after_write = pDVar5->count; /* compiler stack-slot lifetime split */
     if (param_2_after_write != 0) {
@@ -41,9 +42,11 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
       if (0 < (int)param_2_after_write) {
         do {
           DArrayGetElement(pDVar5,uVar12,local_2c);
+          /* ST_CALLSITE[0044E2CD]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           local_14 = STAllPlayersC::GetObjPtr(in_ECX,(char)param_1,STPiece<0,2>(local_2c),CASE_1);
           if ((local_14 == nullptr) ||
+             /* ST_CALLSITE[0044E2DD]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
              (iVar6 = (*local_14->vtable[1].vfunc_24)(local_14), iVar6 == 0)) {
             DArrayRemoveAt(pDVar5,uVar12);
             param_2_after_write = param_2_after_write - 1;
@@ -123,6 +126,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
                   if (((piVar2 != nullptr) &&
                       (((iVar9 = piVar2[8], iVar9 == 0x14 || (iVar9 == 1000)) || (iVar9 == 0x3e9))))
                      && ((((param_3 & 1 << ((byte)piVar2[9] & 0x1f)) != 0 &&
+                          /* ST_CALLSITE[0044E488]: CALL dword ptr [EDX + 0xf8] */
                           (iVar9 = (**(code **)(*piVar2 + 0xf8))(), iVar9 != 0)) &&
                          (local_1c = 0, 0 < (int)param_2_after_write)))) {
                     auto param_4_after_write = (int *)local_14; /* compiler stack-slot lifetime split */

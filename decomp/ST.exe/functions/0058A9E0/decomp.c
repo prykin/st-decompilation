@@ -79,6 +79,7 @@ void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
           iVar3 = -iVar3;
         }
         if (iVar3 < 0x15) {
+          /* ST_CALLSITE[0058ABCE]: CALL 0x00401a05; direct=00401A05 STOctopusC::sub_0058B190 */
           uVar6 = STOctopusC::sub_0058B190
                             ((STOctopusC *)param_1,&param_1->field_004E,
                              (short *)&param_1->field_0x50,&param_1->field_0052,
@@ -127,6 +128,7 @@ void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
     }
   }
   else if (0xc < (uint)param_1->field_024D) {
+    /* ST_CALLSITE[0058AD40]: CALL 0x00401a05; direct=00401A05 STOctopusC::sub_0058B190 */
     uVar6 = STOctopusC::sub_0058B190
                       ((STOctopusC *)param_1,&param_1->field_004E,(short *)&param_1->field_0x50,
                        &param_1->field_0052,(short *)&param_1->field_0x6c);
@@ -146,10 +148,14 @@ void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
   }
   puVar1 = &param_1->field_0x1d5;
   *(short *)&param_1->field_0x6c = sVar7 / 0x2d - (short)((int)sVar7 / -0x4c000000);
+  /* ST_CALLSITE[0058AE17]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x0e',uVar4);
+  /* ST_CALLSITE[0058AE21]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
   STT3DSprC::SetCurShad((STT3DSprC *)puVar1,'\x0e',uVar9);
+  /* ST_CALLSITE[0058AE2A]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
   STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x0e');
   param_1->field_024D = param_1->field_024D + 1;
+  /* ST_CALLSITE[0058AE40]: CALL dword ptr [EDX + 0xd8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(param_1->field_0000 + 0xd8))();
   return;

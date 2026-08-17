@@ -61,7 +61,7 @@ LAB_00631d60:
           }
           if (bVar9) {
             STField<undefined4>(puVar7,0x25) = param_5;
-            *(byte *)(puVar7 + 8) = 1;
+            ((byte *)puVar7)[8] = 1;
             STField<undefined4>(puVar7,0x21) = param_6;
           }
         }

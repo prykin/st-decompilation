@@ -21,6 +21,7 @@ st::fn_00750080(void *this,undefined4 *param_1,int param_2,double param_3,int pa
   int *local_8;
 
   local_8 = st::pointer_boundary_cast<int *>(this);
+  /* ST_CALLSITE[00750090]: CALL dword ptr [0x0085bb8c] */
   st::external_00000018((LPCRITICAL_SECTION)((int)this + 8));
   local_8 = nullptr;
   *param_1 = 0;
@@ -39,6 +40,7 @@ st::fn_00750080(void *this,undefined4 *param_1,int param_2,double param_3,int pa
     *param_1 = st::machine_word_boundary_cast<undefined4>(piVar1_mg0);
   }
   piVar1 = local_8;
+  /* ST_CALLSITE[007500F6]: CALL dword ptr [0x0085bb90] */
   st::external_00000019((LPCRITICAL_SECTION)((int)this + 8));
   return piVar1;
 }
@@ -53,7 +55,9 @@ undefined4 __thiscall st::fn_00750104(void *this,AnonShape_00750104_599B328B *pa
   int *local_8;
 
   local_8 = st::pointer_boundary_cast<int *>(this);
+  /* ST_CALLSITE[00750115]: CALL dword ptr [0x0085bb8c] */
   st::external_00000018((LPCRITICAL_SECTION)((int)this + 8));
+  /* ST_CALLSITE[00750125]: CALL dword ptr [ECX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(param_1->field_000C + 4))(&param_1->field_000C);
   this_00 = (int *)((int)this + 0x38);
@@ -76,6 +80,7 @@ undefined4 __thiscall st::fn_00750104(void *this,AnonShape_00750104_599B328B *pa
     st::fn_0074E122(this_00,local_8,(int)param_1);
   }
   st::fn_00750287(st::pointer_boundary_cast<AnonShape_00750287_BC8A1854 *>(this));
+  /* ST_CALLSITE[00750190]: CALL dword ptr [0x0085bb90] */
   st::external_00000019((LPCRITICAL_SECTION)((int)this + 8));
   return 0;
 }
@@ -90,6 +95,7 @@ undefined4 __thiscall st::fn_0075019F(void *this,AnonShape_0075019F_4BD22E12 *pa
   undefined4 local_c;
   int *local_8;
 
+  /* ST_CALLSITE[007501B1]: CALL dword ptr [0x0085bb8c] */
   st::external_00000018((LPCRITICAL_SECTION)((int)this + 8));
   local_c = 0;
   this_00 = (int *)((int)this + 0x38);
@@ -106,10 +112,12 @@ undefined4 __thiscall st::fn_0075019F(void *this,AnonShape_0075019F_4BD22E12 *pa
   }
   else {
     st::fn_0074DF2B(this_00,local_8);
+    /* ST_CALLSITE[00750212]: CALL dword ptr [ECX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(param_1->field_000C + 8))(&param_1->field_000C);
     st::fn_00750287(st::pointer_boundary_cast<AnonShape_00750287_BC8A1854 *>(this));
   }
+  /* ST_CALLSITE[0075021F]: CALL dword ptr [0x0085bb90] */
   st::external_00000019((LPCRITICAL_SECTION)((int)this + 8));
   return local_c;
 }
@@ -121,23 +129,28 @@ undefined4 __thiscall st::fn_0075022F(void *this,int *param_1)
 {
   int *piVar1;
 
+  /* ST_CALLSITE[00750238]: CALL dword ptr [0x0085bb8c] */
   st::external_00000018((LPCRITICAL_SECTION)((int)this + 8));
   if (param_1 != nullptr) {
+    /* ST_CALLSITE[00750249]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 4))(param_1);
   }
   piVar1 = STField<int *>(this,0x60);
   if (piVar1 != nullptr) {
     if (STField<int>(this,0x54) != 0) {
+      /* ST_CALLSITE[0075025E]: CALL dword ptr [EDX + 0x18] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar1 + 0x18))(piVar1,STField<int>(this,0x54));
       STField<undefined4>(this,0x54) = 0;
     }
+    /* ST_CALLSITE[0075026B]: CALL dword ptr [ECX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*STField<int *>(this,0x60) + 8))(STField<int *>(this,0x60));
   }
   STField<int *>(this,0x60) = param_1;
   st::fn_00750287(st::pointer_boundary_cast<AnonShape_00750287_BC8A1854 *>(this));
+  /* ST_CALLSITE[00750279]: CALL dword ptr [0x0085bb90] */
   st::external_00000019((LPCRITICAL_SECTION)((int)this + 8));
   return 0;
 }
@@ -180,13 +193,17 @@ void __fastcall st::fn_00750287(AnonShape_00750287_BC8A1854 *param_1)
     if (((-1 < local_8) && ((0 < local_8 || (uVar3 != 0)))) &&
        ((uVar3 != param_1->field_0058 || (local_8 != param_1->field_005C)))) {
       if (param_1->field_0054 != 0) {
+        /* ST_CALLSITE[00750320]: CALL dword ptr [EDX + 0x18] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)param_1->field_0060 + 0x18))
+                  /* ST_CALLSITE[00750320]: CALL dword ptr [EDX + 0x18] */
                   ((int *)param_1->field_0060,param_1->field_0054);
         st::external_0000005B((HANDLE)param_1->field_0050);
       }
+      /* ST_CALLSITE[0075033F]: CALL dword ptr [EDX + 0x10] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)param_1->field_0060 + 0x10))
+                /* ST_CALLSITE[0075033F]: CALL dword ptr [EDX + 0x10] */
                 ((int *)param_1->field_0060,uVar3,local_8,0,0,param_1->field_0050,
                  &param_1->field_0054);
       param_1->field_0058 = uVar3;
@@ -201,11 +218,13 @@ void __fastcall st::fn_00750287(AnonShape_00750287_BC8A1854 *param_1)
 undefined4 __thiscall st::fn_0075034D(void *this,undefined4 param_1,undefined4 param_2)
 
 {
+  /* ST_CALLSITE[00750355]: CALL dword ptr [0x0085bb8c] */
   st::external_00000018((LPCRITICAL_SECTION)((int)this + 8));
   STField<undefined4>(this,0x68) = param_1;
   STField<undefined4>(this,0x6c) = param_2;
   STField<undefined4>(this,100) = 1;
   st::fn_00750287(st::pointer_boundary_cast<AnonShape_00750287_BC8A1854 *>(this));
+  /* ST_CALLSITE[00750378]: CALL dword ptr [0x0085bb90] */
   st::external_00000019((LPCRITICAL_SECTION)((int)this + 8));
   return 0;
 }
@@ -215,9 +234,11 @@ undefined4 __thiscall st::fn_0075034D(void *this,undefined4 param_1,undefined4 p
 undefined4 __fastcall st::fn_00750385(AnonShape_00750287_BC8A1854 *param_1)
 
 {
+  /* ST_CALLSITE[0075038D]: CALL dword ptr [0x0085bb8c] */
   st::external_00000018((LPCRITICAL_SECTION)&param_1->field_0x8);
   param_1->field_0064 = 0;
   st::fn_00750287(param_1);
+  /* ST_CALLSITE[0075039F]: CALL dword ptr [0x0085bb90] */
   st::external_00000019((LPCRITICAL_SECTION)&param_1->field_0x8);
   return 0;
 }
@@ -238,6 +259,7 @@ undefined4 __thiscall st::fn_007503AA(void *this,int *param_1,DWORD dwMillisecon
 
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 8);
   while( true ) {
+    /* ST_CALLSITE[007503C2]: CALL dword ptr [0x0085bb8c] */
     st::external_00000018(lpCriticalSection);
     iVar4 = 0;
     if (0 < STField<int>(this,0x28)) {
@@ -257,15 +279,19 @@ undefined4 __thiscall st::fn_007503AA(void *this,int *param_1,DWORD dwMillisecon
     if ((iVar4 != 0) &&
        (iVar1 = st::fn_0074FEA4(this,*(uint *)(iVar4 + 0x18),*(int *)(iVar4 + 0x1c),
                              *(int *)(iVar4 + 0x30)), iVar1 != 0)) break;
+    /* ST_CALLSITE[0075042E]: CALL EBX */
     st::external_00000019(lpCriticalSection);
+    /* ST_CALLSITE[00750436]: CALL dword ptr [0x0085bce0] */
     DVar2 = st::external_0000006D(STField<HANDLE>(this,0x50),dwMilliseconds);
     if (DVar2 != 0) {
       return 0x80004004;
     }
   }
+  /* ST_CALLSITE[0075044C]: CALL dword ptr [ECX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)(iVar4 + 0xc) + 4))(iVar4 + 0xc);
   *param_1 = iVar4;
+  /* ST_CALLSITE[00750457]: CALL EBX */
   st::external_00000019(lpCriticalSection);
   return 0;
 }
@@ -281,6 +307,7 @@ undefined4 __thiscall st::fn_00750469(void *this,uint param_1,int param_2,int *p
   int iVar3;
 
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 8);
+  /* ST_CALLSITE[00750479]: CALL dword ptr [0x0085bb8c] */
   st::external_00000018(lpCriticalSection);
   iVar3 = 0;
   iVar2 = 0;
@@ -295,6 +322,7 @@ undefined4 __thiscall st::fn_00750469(void *this,uint param_1,int param_2,int *p
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (((iVar2 != 0) && (*(int *)(iVar2 + 0x1c) <= param_2)) &&
        ((*(int *)(iVar2 + 0x1c) < param_2 || (*(uint *)(iVar2 + 0x18) <= param_1)))) {
+      /* ST_CALLSITE[007504EA]: CALL dword ptr [ECX + 0x4] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)(iVar3 + 0xc) + 4))(iVar3 + 0xc);
       *param_3 = iVar2;
@@ -302,6 +330,7 @@ undefined4 __thiscall st::fn_00750469(void *this,uint param_1,int param_2,int *p
     }
     if ((STField<int>(this,100) == 0) || (iVar3 == 0)) {
 LAB_0075052c:
+      /* ST_CALLSITE[0075052F]: CALL dword ptr [0x0085bb90] */
       st::external_00000019(lpCriticalSection);
       return 0x80040216;
     }
@@ -312,11 +341,13 @@ LAB_0075052c:
         (STField<uint>(this,0x68) + param_1 < *(uint *)(iVar3 + 0x18))))) goto LAB_0075052c;
   }
   else {
+    /* ST_CALLSITE[007504C8]: CALL dword ptr [ECX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)(iVar3 + 0xc) + 4))(iVar3 + 0xc);
   }
   *param_3 = iVar3;
 LAB_0075051f:
+  /* ST_CALLSITE[00750522]: CALL dword ptr [0x0085bb90] */
   st::external_00000019(lpCriticalSection);
   return 0;
 }
@@ -613,7 +644,7 @@ int st::fn_00751100(uint *param_1,ushort *param_2)
 {
   int iVar1;
 
-  iVar1 = st::fn_00753EA0(*param_1,param_2,st::pointer_boundary_cast<undefined4 *>(&param_2));
+  iVar1 = st::fn_00753EA0(*param_1,param_2,(undefined4 *)&param_2);
   if ((iVar1 == 0) && (param_2 != nullptr)) {
     st::fn_00753CE0((AnonShape_00753CE0_1943F9C2 *)param_1[1],(uint)param_2);
   }
@@ -672,7 +703,7 @@ int st::fn_007516F0(int param_1,byte *param_2)
   }
   else {
     local_24 = param_2;
-    local_44 = *(byte *)(param_1 + 1);
+    local_44 = ((byte *)param_1)[1];
     local_48 = 0;
     uVar3 = 0;
     uVar6 = 0;
@@ -794,7 +825,7 @@ DWORD st::fn_00751980(int *param_1,ushort *param_2,undefined4 *param_3,uint para
   int iVar1;
   DWORD DVar2;
 
-  iVar1 = st::fn_00751B60(*param_1,param_2,st::pointer_boundary_cast<undefined4 *>(&param_2));
+  iVar1 = st::fn_00751B60(*param_1,param_2,(undefined4 *)&param_2);
   if (iVar1 == 0) {
     DVar2 = st::fn_00754360(param_1[1],(DWORD)param_2,param_3,param_4);
     return DVar2;
@@ -923,7 +954,7 @@ DWORD st::fn_00751BA0(int *param_1,ushort *param_2,undefined4 *param_3,uint para
   int iVar1;
   DWORD DVar2;
 
-  iVar1 = st::fn_00753BC0(*param_1,(undefined4 *)param_2,st::pointer_boundary_cast<undefined4 *>(&param_2));
+  iVar1 = st::fn_00753BC0(*param_1,(undefined4 *)param_2,(undefined4 *)&param_2);
   if (iVar1 == 0) {
     DVar2 = st::fn_00754360(param_1[1],(DWORD)param_2,param_3,param_4);
     return DVar2;
@@ -942,7 +973,7 @@ DWORD st::fn_00751BF0(int *param_1,ushort *param_2,undefined4 *param_3,uint para
   int iVar1;
   DWORD DVar2;
 
-  iVar1 = st::fn_007543F0((AnonShape_007543F0_E9DD5DAA *)*param_1,(undefined4 *)param_2,st::pointer_boundary_cast<undefined4 *>(&param_2));
+  iVar1 = st::fn_007543F0((AnonShape_007543F0_E9DD5DAA *)*param_1,(undefined4 *)param_2,(undefined4 *)&param_2);
   if (iVar1 == 0) {
     DVar2 = st::fn_00754360(param_1[1],(DWORD)param_2,param_3,param_4);
     return DVar2;
@@ -995,6 +1026,7 @@ UINT st::fn_00752030(int param_1,LPVOID lpBuffer,UINT uBytes)
 {
   UINT UVar1;
 
+  /* ST_CALLSITE[00752042]: CALL dword ptr [0x0085bd00] */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   UVar1 = st::external_00000075(*(HFILE *)(param_1 + 0x32),lpBuffer,uBytes);
   if (UVar1 == 0xffffffff) {
@@ -1014,6 +1046,7 @@ LONG st::fn_00752060(int param_1)
 {
   LONG LVar1;
 
+  /* ST_CALLSITE[0075206E]: CALL dword ptr [0x0085bb64] */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   LVar1 = st::external_0000000E(*(HFILE *)(param_1 + 0x32),0,1);
   return LVar1;
@@ -1033,6 +1066,7 @@ LONG st::fn_00752080(int param_1,LONG lOffset)
 {
   LONG LVar1;
 
+  /* ST_CALLSITE[00752090]: CALL dword ptr [0x0085bb64] */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   LVar1 = st::external_0000000E(*(HFILE *)(param_1 + 0x32),lOffset,0);
   return LVar1;
@@ -1095,7 +1129,7 @@ st::fn_007521B0(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,uint param_3,i
   pbVar12 = (byte *)((int)puVar5 + 0x16);
   local_1c = -1;
   pbVar6 = (byte *)((uVar3 - 1) * uVar13 + param_3);
-  auto param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
+  AnonShape_006B4B20_3D4F4412 * param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
   local_30 = 0;
   local_14 = 0;
   pAVar14_mg0 = nullptr;
@@ -1157,7 +1191,7 @@ LAB_007522a2:
     pbVar12 = (byte *)(local_40 + local_24);
     pbVar12[-0xffffffff00000002] = 0;
     pbVar12[-0xffffffff00000001] = 0;
-    pbVar6 = st::pointer_boundary_cast<byte *>(&local_28->field_0x0 + param_3 + ((uVar3 - local_1c) + -1) * uVar13);
+    pbVar6 = &local_28->field_0x0 + param_3 + ((uVar3 - local_1c) + -1) * uVar13;
     if (0 < iVar10) {
       do {
         iVar16 = 0;
@@ -1375,7 +1409,7 @@ cf_continue_loop_007525E9:
   STField<byte>(puVar5,0xd) = (param_5 == 1) + 1U | (char)local_24 << 2;
   STField<undefined2>(puVar5,0x12) = (undefined2)local_c;
   *puVar5 = (int)pbVar12 - (int)puVar5;
-  *(undefined1 *)(puVar5 + 3) = 0x80;
+  ((undefined1 *)puVar5)[3] = 0x80;
   STField<undefined2>(puVar5,0xe) = STPiece<0,2>(local_28);
   *(short *)(puVar5 + 4) = (short)local_1c;
   *(short *)(puVar5 + 5) = (short)local_30 - (short)local_1c;
@@ -2055,6 +2089,7 @@ int st::fn_007535F0(char *_Drive)
     pcVar8 = pcVar7 + -1;
     memmove(pcVar8, pcVar6, uVar3); /* compiler REP MOVS byte copy */
   }
+  /* ST_CALLSITE[00753793]: CALL dword ptr [0x0085bcd0] */
   DVar2 = st::external_00000069(local_108);
   return (uint)(DVar2 != 0xffffffff);
 }
@@ -2110,7 +2145,7 @@ int st::fn_00753B40(AnonShape_00753C80_4C8E695D *param_1)
     iVar4 = *(int *)&pAVar1->field_0x18;
   }
   else {
-    iVar4 = st::fn_006D4A40((int)pAVar1,iVar2,st::pointer_boundary_cast<undefined4 *>(&param_1));
+    iVar4 = st::fn_006D4A40((int)pAVar1,iVar2,(undefined4 *)&param_1);
     if (iVar4 == 0) {
       pAVar3->field_0008->field_001C = st::machine_word_boundary_cast<undefined4>(param_1);
       return iVar2;
@@ -2163,6 +2198,7 @@ int st::fn_00753C80(AnonShape_00753C80_4C8E695D *param_1,int param_2)
       iVar5 = iVar4;
       sVar1 = param_1->field_000C->field_0034;
       if (sVar1 == 0) {
+        /* ST_CALLSITE[00753CBB]: CALL dword ptr [EAX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (**(code **)&param_1->field_000C->field_0x8)(iVar5 + 0x18 + iVar3 + iVar2);
       }
@@ -2286,6 +2322,7 @@ void st::fn_00753FA7(void)
   *(undefined4 *)(unaff_EBP + 0x24) = *(undefined4 *)(unaff_EBP + 0x14);
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   if (*(int *)(unaff_EBP + 0xc) != 0) {
+    /* ST_CALLSITE[00753FC5]: CALL dword ptr [EBP + 0xc] */
     /* ST_PSEUDO[unresolved_register_input,raw_indirect_call]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(unaff_EBP + 0xc))(iVar1);
   }
@@ -2309,6 +2346,7 @@ int st::fn_00753FD0(AnonShape_00753FD0_4E1BB8DD *context)
   context->field_0018 = context->field_0004;
   iVar1 = 0;
   if (((context->field_003F & 0x80) == 0) && (*(int *)context != 0)) {
+    /* ST_CALLSITE[00753FE9]: CALL dword ptr [EBP] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)context)();
   }
@@ -2336,7 +2374,7 @@ void st::fn_00753FF7(void)
 
   bVar6 = false;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  if ((*(byte *)(unaff_EBP + 0x3f) & 0x80) == 0) {
+  if ((((byte *)unaff_EBP)[0x3f] & 0x80) == 0) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar2 = *(int *)(unaff_EBP + 0x24);
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -2599,7 +2637,7 @@ void st::fn_00754185(AnonShape_00754185_34BF31BE *context)
   iVar7 = 0xfd;
   do {
     while( true ) {
-      puVar3 = st::pointer_boundary_cast<undefined1 *>(&context->field_0x20);
+      puVar3 = &context->field_0x20;
       *(int *)puVar3 = *(int *)puVar3 + -1;
       if (*(int *)puVar3 != 0) break;
       iVar4 = st::fn_00753FD0((AnonShape_00753FD0_4E1BB8DD *)context);
@@ -2662,7 +2700,7 @@ LAB_00754208:
   do {
     st::fn_0075415C();
     do {
-      puVar12 = st::pointer_boundary_cast<undefined1 *>(&context->field_0x20);
+      puVar12 = &context->field_0x20;
       *(int *)puVar12 = *(int *)puVar12 + -1;
       if (*(int *)puVar12 != 0) {
         puVar12 = (undefined1 *)context->field_0018;
@@ -2800,13 +2838,15 @@ st::fn_007543F0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefin
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar3 = *(int *)(&pAVar2[2].field_0x4 + (int)pAVar2->field_001C * 8) + 0x10 + iVar3;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  } while (((code *)pAVar2->field_000C != nullptr) &&
+  } while (((code *)pAVar2->field_000C != 0) &&
+          /* ST_CALLSITE[007544C7]: CALL ECX */
           (iVar5 = (*(code *)pAVar2->field_000C)(iVar3 + 8,*(undefined4 *)&pAVar2->field_0x10),
           iVar5 != 0));
   *param_3 = *(undefined4 *)(iVar3 + 4);
   if (param_2 != nullptr) {
     sVar1 = *(short *)&param_1->field_000C[1].field_0x14;
     if (sVar1 == 0) {
+      /* ST_CALLSITE[0075450F]: CALL dword ptr [ESI + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar6 = (**(code **)&param_1->field_000C->field_0x8)(iVar3 + 8);
     }
@@ -3025,7 +3065,7 @@ void st::fn_00754B80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int pa
         }
         st::fn_007568D0((int)pAVar6,st::machine_word_boundary_cast<undefined4>(param_4),1);
         piVar11 = (int *)*param_4;
-        auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+        AnonShape_00754B80_75BFDB7A * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
         if (0 < pAVar6->field_0068) {
           local_10 = param_2;
           do {
@@ -3060,16 +3100,19 @@ undefined4 st::fn_00754F40(LPCSTR param_1)
   int local_24;
   uint local_20;
 
+  /* ST_CALLSITE[00754F5D]: CALL dword ptr [0x0085bc80] */
   hFile = st::external_00000055(param_1,0x80000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   if (hFile == (HANDLE)0xffffffff) {
     return 0;
   }
   uVar2 = 0;
-  BVar1 = st::external_0000004F(hFile,st::pointer_boundary_cast<LPVOID>(&local_24),0x20,(LPDWORD)&param_1,(LPOVERLAPPED)0x0);
+  /* ST_CALLSITE[00754F82]: CALL dword ptr [0x0085bc68] */
+  BVar1 = st::external_0000004F(hFile,(LPVOID)&local_24,0x20,(LPDWORD)&param_1,(LPOVERLAPPED)0x0);
   if ((((BVar1 != 0) && (param_1 == (LPCSTR)0x20)) && (local_24 == DAT_007f2c38)) &&
      ((local_20 & 0xff00) == 0x100)) {
     uVar2 = 1;
   }
+  /* ST_CALLSITE[00754FB7]: CALL dword ptr [0x0085bbc8] */
   st::external_00000027(hFile);
   return uVar2;
 }
@@ -3101,7 +3144,7 @@ uint st::fn_00754FD0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ush
   param_1->field_000C->field_001C = 0;
   param_1->field_000C->field_0040 = 0;
   param_1->field_000C->field_0044 = 0xffffffff;
-  st::fn_00730C40(st::pointer_boundary_cast<undefined1 *>(&param_1->field_000C->field_0x36),0x7f2ce8);
+  st::fn_00730C40(&param_1->field_000C->field_0x36,0x7f2ce8);
   iVar2 = st::fn_00753B40((AnonShape_00753C80_4C8E695D *)param_1);
   param_1->field_000C->field_0024 = iVar2;
   uVar4 = param_1->field_000C->field_0024;
@@ -3154,12 +3197,12 @@ void st::fn_007550C0(AnonShape_007550C0_25940DF4 *param_1,undefined4 *param_2)
       param_1->field_0034 = 4;
       return;
     case 7:
-      param_1->field_0004 = st::machine_word_boundary_cast<undefined4>(st::fn_00402928);
+      param_1->field_0004 = st::machine_word_boundary_cast<undefined4>(st::fn_00673110);
       param_1->field_0008 = st::machine_word_boundary_cast<undefined4>(st::fn_00757430);
       param_1->field_0034 = 0;
       return;
     case 8:
-      param_1->field_0004 = st::machine_word_boundary_cast<undefined4>(st::fn_00402F2C);
+      param_1->field_0004 = st::machine_word_boundary_cast<undefined4>(st::fn_00673160);
       param_1->field_0008 = st::machine_word_boundary_cast<undefined4>(st::fn_00757430);
       param_1->field_0034 = 0;
     }
@@ -3301,6 +3344,7 @@ LAB_00755464:
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar1 = *(short *)(param_1->field_000C + 0x34);
   if (sVar1 == 0) {
+    /* ST_CALLSITE[00755514]: CALL dword ptr [ESI + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar7 = (**(code **)(param_1->field_000C + 8))(puVar8 + 2);
   }
@@ -3355,6 +3399,7 @@ uint st::fn_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,int pa
   iVar5 = *(int *)(param_1->field_0008 + 0x50);
   param_1->field_000C = iVar5;
   if (*(short *)(iVar5 + 0x34) == 0) {
+    /* ST_CALLSITE[0075558E]: CALL dword ptr [EAX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar13 = (**(code **)(iVar5 + 8))(param_2);
   }
@@ -3397,6 +3442,7 @@ uint st::fn_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,int pa
     }
     else {
       if (*(short *)(iVar5 + 0x34) == 0) {
+        /* ST_CALLSITE[00755623]: CALL dword ptr [EAX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (**(code **)(iVar5 + 8))(iVar6 + 0x18 + iVar15);
       }
@@ -3552,6 +3598,7 @@ uint st::fn_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int para
       *puVar12 = uVar3;
       sVar2 = param_1->field_000C->field_0034;
       if (sVar2 == 0) {
+        /* ST_CALLSITE[007558EB]: CALL dword ptr [EAX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (**(code **)&param_1->field_000C->field_0x8)(param_2 + 2);
       }
@@ -3565,7 +3612,7 @@ uint st::fn_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int para
       puVar7[1] = uVar3;
       param_1->field_000C->field_001C = nullptr;
       *(undefined4 *)&param_1->field_000C[1].field_0xe = 0;
-      puVar1 = st::pointer_boundary_cast<undefined1 *>(&param_1->field_000C->field_0x2a);
+      puVar1 = &param_1->field_000C->field_0x2a;
       *(short *)puVar1 = *(short *)puVar1 + 1;
       *(undefined4 *)&param_1->field_000C->field_0x14 = 1;
       return 0;
@@ -3615,6 +3662,7 @@ int st::fn_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int par
       do {
         pAVar8 = pAVar3;
         if (pAVar2->field_000C->field_0030 == 0xff) {
+          /* ST_CALLSITE[007559C7]: CALL dword ptr [EAX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar4 = (**(code **)&pAVar2->field_000C->field_0x4)(param_2);
         }
@@ -3631,6 +3679,7 @@ int st::fn_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int par
         }
         sVar1 = pAVar2->field_000C->field_0034;
         if (sVar1 == 0) {
+          /* ST_CALLSITE[007559F8]: CALL dword ptr [EAX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar5 = (**(code **)&pAVar2->field_000C->field_0x8)((int)&pAVar8[1].field_0008 + iVar7);
         }
@@ -3772,6 +3821,7 @@ void st::fn_00755D40(AnonShape_00755D40_9BC6D2DA *param_1,int param_2,int param_
 
   sVar1 = param_1->field_000C->field_0034;
   if (sVar1 == 0) {
+    /* ST_CALLSITE[00755D65]: CALL dword ptr [EAX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (*(code *)param_1->field_000C->field_0008)(param_2 + 0x18 + param_3);
   }
@@ -3851,6 +3901,7 @@ int st::fn_00755E10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 
   iVar5 = param_1->field_000C;
   if (iVar2 < *(short *)(iVar4 + 8)) {
     if (*(short *)(iVar5 + 0x34) == 0) {
+      /* ST_CALLSITE[00755E92]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(iVar5 + 8))(iVar2 + 0x18 + iVar4);
     }
@@ -3911,6 +3962,7 @@ int st::fn_00755E10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 
   }
   else {
     if (*(short *)(iVar5 + 0x34) == 0) {
+      /* ST_CALLSITE[00756022]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(iVar5 + 8))
                         (*(int *)(iVar5 + 0x44 + *(int *)(iVar5 + 0x1c) * 8) + 0x18 + iVar4);
@@ -4016,15 +4068,16 @@ void st::fn_00757280(undefined4 *param_1,undefined4 param_2)
   undefined4 uVar1;
 
   if (param_1[4] == 0) {
+    /* ST_CALLSITE[00757295]: CALL dword ptr [EAX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar1 = (**(code **)*param_1)(param_1,1,0x1c);
     param_1[4] = uVar1;
   }
-  *(code **)(param_1[4] + 8) = st::pointer_boundary_cast<code *>(st::fn_007572F0);
-  *(code **)(param_1[4] + 0xc) = st::pointer_boundary_cast<code *>(st::fn_00757300);
-  *(code **)(param_1[4] + 0x10) = st::pointer_boundary_cast<code *>(st::fn_00757330);
-  *(code **)(param_1[4] + 0x14) = st::pointer_boundary_cast<code *>(st::fn_00757CD0);
-  *(code **)(param_1[4] + 0x18) = st::pointer_boundary_cast<code *>(st::fn_00757350);
+  *(code **)(param_1[4] + 8) = (code *)st::fn_007572F0;
+  *(code **)(param_1[4] + 0xc) = (code *)st::fn_00757300;
+  *(code **)(param_1[4] + 0x10) = (code *)st::fn_00757330;
+  *(code **)(param_1[4] + 0x14) = (code *)st::fn_00757CD0;
+  *(code **)(param_1[4] + 0x18) = (code *)st::fn_00757350;
   *(undefined4 *)(param_1[4] + 4) = 0x7fffffff;
   *(undefined4 *)param_1[4] = param_2;
   return;
@@ -4041,7 +4094,7 @@ int st::fn_00757360(AnonShape_00757360_9C23D284 *param_1,AnonShape_00757360_9B46
 
   local_8 = 0;
   if (param_2->field_0036 == '\0') {
-    st::fn_00730C40(st::pointer_boundary_cast<undefined1 *>(&param_2->field_0036),0x7f2ce8);
+    st::fn_00730C40((undefined1 *)&param_2->field_0036,0x7f2ce8);
     param_2->field_0014 = 1;
   }
   local_4c.previous = g_currentExceptionFrame;
@@ -4106,6 +4159,7 @@ int st::fn_00757450(AnonShape_00755E10_BD685653 *param_1,int param_2)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     sVar1 = *(short *)(param_1->field_000C + 0x34);
     if (sVar1 == 0) {
+      /* ST_CALLSITE[0075749D]: CALL dword ptr [ECX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(param_1->field_000C + 8))(iVar2 + 0x18 + param_2);
     }
@@ -4137,6 +4191,7 @@ void st::fn_007574C0(AnonShape_00753C80_4C8E695D *param_1,int param_2,uint *para
 
   sVar2 = param_1->field_000C->field_0034;
   if (sVar2 == 0) {
+    /* ST_CALLSITE[007574DE]: CALL dword ptr [EAX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)&param_1->field_000C->field_0x8)(param_3 + 2);
   }
@@ -4184,6 +4239,7 @@ uint st::fn_00757530(AnonShape_00757530_EEED7D69 *param_1,int param_2,undefined4
   }
   sVar2 = param_1->field_000C->field_0034;
   if (sVar2 == 0) {
+    /* ST_CALLSITE[00757566]: CALL dword ptr [EAX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (*(code *)param_1->field_000C->field_0008)(param_3 + 2);
   }
@@ -4231,6 +4287,7 @@ uint st::fn_007575B0(AnonShape_007575B0_A94973CA *param_1,ushort *param_2,ushort
     break;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   default:
+    /* ST_CALLSITE[00757646]: CALL dword ptr [ECX + 0x4] */
     uVar2 = (*(code *)param_1->field_000C->field_0004)(param_2,param_3);
     return uVar2;
   }
@@ -4266,7 +4323,7 @@ DWORD st::fn_00757670(AnonShape_00757670_86D3B9A7 *param_1,int param_2)
     *piVar3 = param_1->field_0008->field_001C;
     param_1->field_0008->field_001C = iVar4;
     piVar3[1] = -2;
-    puVar1 = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0008->field_0x8);
+    puVar1 = &param_1->field_0008->field_0x8;
     *(uint *)puVar1 = *(uint *)puVar1 | 0x10;
   }
   return DVar2;
@@ -4279,6 +4336,7 @@ void st::fn_007576C0(undefined4 *param_1)
 {
   undefined4 *puVar1;
 
+  /* ST_CALLSITE[007576CE]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,0,0x1c);
   STField<undefined4 *>(param_1,0x1a2) = puVar1;
@@ -4309,6 +4367,7 @@ undefined4 st::fn_00757D90(AnonShape_00757D90_5427B306 *param_1)
   iVar4 = pAVar3->field_0004;
   while( true ) {
     if (iVar4 == 0) {
+      /* ST_CALLSITE[00757DAB]: CALL dword ptr [ESI + 0xc] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar4 = (*(code *)pAVar3[1].field_0004)(param_1);
       if (iVar4 == 0) {
@@ -4327,6 +4386,7 @@ undefined4 st::fn_00757D90(AnonShape_00757D90_5427B306 *param_1)
       pAVar3->field_0000 = st::machine_word_boundary_cast<undefined4>(pbVar5);
       pAVar3->field_0004 = iVar4;
       if (iVar4 == 0) {
+        /* ST_CALLSITE[00757DD8]: CALL dword ptr [ESI + 0xc] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (*(code *)pAVar3[1].field_0004)(param_1);
         if (iVar4 == 0) {
@@ -4339,6 +4399,7 @@ undefined4 st::fn_00757D90(AnonShape_00757D90_5427B306 *param_1)
     }
     do {
       if (iVar4 == 0) {
+        /* ST_CALLSITE[00757DF7]: CALL dword ptr [ESI + 0xc] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (*(code *)pAVar3[1].field_0004)(param_1);
         if (iVar4 == 0) {
@@ -4378,6 +4439,7 @@ void st::fn_00757E60(AnonShape_00759190_45B6ED67 *param_1)
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   pAVar1 = (AnonNested_AnonShape_00759190_45B6ED67_01A6_2E084C16 *)
+           /* ST_CALLSITE[00757E6E]: CALL dword ptr [EAX] */
            (**(code **)param_1->field_0000)(param_1,0,0x60);
   param_1->field_01A6 = pAVar1;
   pAVar1->field_0000 = st::machine_word_boundary_cast<undefined4>(st::fn_00759190);
@@ -4387,7 +4449,7 @@ void st::fn_00757E60(AnonShape_00759190_45B6ED67 *param_1)
   iVar2 = 0x10;
   do {
     iVar3 = iVar2 + 4;
-    *(code **)((int)&param_1->field_01A6->field_0000 + iVar2) = st::pointer_boundary_cast<code *>(st::fn_00758100);
+    *(code **)((int)&param_1->field_01A6->field_0000 + iVar2) = (code *)st::fn_00758100;
     iVar2 = iVar3;
   } while (iVar3 < 0x50);
   param_1->field_01A6->field_0010 = st::machine_word_boundary_cast<undefined4>(st::fn_00757EF0);
@@ -4401,6 +4463,7 @@ void st::fn_00757E60(AnonShape_00759190_45B6ED67 *param_1)
 void st::fn_00759DD0(int *param_1)
 
 {
+  /* ST_CALLSITE[00759DDC]: CALL dword ptr [EAX + 0x24] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*param_1 + 0x24))(param_1,1);
   param_1[3] = (-(uint)(param_1[2] != 0) & 100) + 100;
@@ -4413,6 +4476,7 @@ void st::fn_00759E00(int *param_1)
 
 {
   if (*param_1 != 0) {
+    /* ST_CALLSITE[00759E0E]: CALL dword ptr [EAX + 0x28] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 0x28))(param_1);
   }
@@ -4428,6 +4492,7 @@ void st::fn_00759E30(undefined4 *param_1)
 {
   int iVar1;
 
+  /* ST_CALLSITE[00759E40]: CALL dword ptr [ECX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)*param_1)(param_1,0,0x84);
   *(undefined4 *)(iVar1 + 0x80) = 0;
@@ -4441,6 +4506,7 @@ void st::fn_00759E50(undefined4 *param_1)
 {
   int iVar1;
 
+  /* ST_CALLSITE[00759E60]: CALL dword ptr [ECX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)*param_1)(param_1,0,0x115);
   *(undefined4 *)(iVar1 + 0x111) = 0;
@@ -4743,6 +4809,7 @@ void st::fn_0075A670(int *param_1,undefined4 *param_2)
   int *piVar7;
 
   piVar7 = param_1;
+  /* ST_CALLSITE[0075A681]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   puVar3 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x74);
   STField<undefined4 *>(param_1,0x19a) = puVar3;
@@ -4751,6 +4818,7 @@ void st::fn_0075A670(int *param_1,undefined4 *param_2)
   puVar3[0x1c] = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == nullptr) {
+    /* ST_CALLSITE[0075A73F]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar6 = (**(code **)(*param_1 + 4))(param_1,1,0xa00);
     piVar8 = st::pointer_boundary_cast<int *>(puVar3 + 8);
@@ -4768,7 +4836,7 @@ void st::fn_0075A670(int *param_1,undefined4 *param_2)
   }
   piVar8 = param_1 + 7;
   piVar1 = param_1 + 0x34;
-  auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+  int * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   if (0 < *piVar8) {
     auto param_2_after_write = puVar3 + 0x12; /* compiler stack-slot lifetime split */
     piVar8 = (int *)(*piVar1 + 0xc);
@@ -4781,6 +4849,7 @@ void st::fn_0075A670(int *param_1,undefined4 *param_2)
       iVar2 = *piVar7;
       iVar4 = st::fn_00759E90(piVar8[5],iVar6);
       iVar5 = st::fn_00759E90(piVar8[4],piVar8[-1]);
+      /* ST_CALLSITE[0075A6F6]: CALL dword ptr [EBX + 0x14] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (**(code **)(iVar2 + 0x14))(piVar7,1,1,iVar5,iVar4,iVar9);
       piVar8 = piVar8 + 0x15;
@@ -4844,6 +4913,7 @@ undefined4 st::fn_0075AE60(undefined4 *param_1)
     return 0;
   }
   if (*(int *)(iVar7 + 0x70) == 0) {
+    /* ST_CALLSITE[0075AEA5]: CALL dword ptr [ECX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar3 = (**(code **)*param_1)(param_1,1,param_1[7] * 0x18);
     *(undefined4 *)(iVar7 + 0x70) = uVar3;
@@ -4852,7 +4922,7 @@ undefined4 st::fn_0075AE60(undefined4 *param_1)
   local_c = 0;
   if (0 < (int)param_1[7]) {
     local_8 = (undefined4 *)(param_1[0x34] + 0x4c);
-    auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+    undefined4 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
     do {
       psVar1 = (short *)*local_8;
       if (psVar1 == nullptr) {
@@ -4929,6 +4999,7 @@ void st::fn_0075B540(undefined4 *param_1,int param_2,int *param_3)
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (*param_3 == 0) {
+    /* ST_CALLSITE[0075B561]: CALL dword ptr [ECX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)*param_1)(param_1,1,0x5d4);
     *param_3 = iVar4;
@@ -4936,7 +5007,7 @@ void st::fn_0075B540(undefined4 *param_1,int param_2,int *param_3)
   iVar4 = *param_3;
   piVar7 = nullptr;
   *(int *)(iVar4 + 0xd0) = param_2;
-  auto param_3_after_write = nullptr; /* compiler stack-slot lifetime split */
+  int * param_3_after_write = nullptr; /* compiler stack-slot lifetime split */
   local_8 = 1;
   do {
     bVar1 = *(byte *)(local_8 + param_2);
@@ -5052,6 +5123,7 @@ st::fn_0075B720(undefined4 *param_1,AnonShape_0075C180_8EED234B *param_2,int par
   for (; param_3 < 0x19; param_3 = param_3 + 8) {
     if (param_1[2] == 0) {
       if (iVar1 == 0) {
+        /* ST_CALLSITE[0075B74F]: CALL dword ptr [ECX + 0xc] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar1 = (**(code **)(*(int *)(param_1[5] + 0x10) + 0xc))(param_1[5]);
         if (iVar1 == 0) {
@@ -5068,6 +5140,7 @@ st::fn_0075B720(undefined4 *param_1,AnonShape_0075C180_8EED234B *param_2,int par
       if (uVar3 == 0xff) {
         do {
           if (iVar1 == 0) {
+            /* ST_CALLSITE[0075B77E]: CALL dword ptr [ECX + 0xc] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar1 = (**(code **)(*(int *)(param_1[5] + 0x10) + 0xc))(param_1[5]);
             if (iVar1 == 0) {
@@ -5165,6 +5238,7 @@ void st::fn_0075B8E0(undefined4 *param_1)
   undefined4 *puVar1;
   int iVar2;
 
+  /* ST_CALLSITE[0075B8EE]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x48);
   STField<undefined4 *>(param_1,0x1aa) = puVar1;
@@ -5196,6 +5270,7 @@ undefined4 st::fn_0075BE40(AnonShape_0075BE40_B9FD5FDF *param_1)
        param_1->field_01A6->field_005C +
        ((int)(*(int *)(iVar1 + 0xc) + (*(int *)(iVar1 + 0xc) >> 0x1f & 7U)) >> 3));
   *(undefined4 *)(iVar1 + 0xc) = 0;
+  /* ST_CALLSITE[0075BE76]: CALL dword ptr [EAX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (*(code *)param_1->field_01A6->field_0008)(param_1);
   if (iVar3 == 0) {
@@ -5226,6 +5301,7 @@ void st::fn_0075BED0(undefined4 *param_1)
   int iVar3;
   undefined4 *puVar4;
 
+  /* ST_CALLSITE[0075BEDF]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x40);
   STField<undefined4 *>(param_1,0x1aa) = puVar1;
@@ -5234,6 +5310,7 @@ void st::fn_0075BED0(undefined4 *param_1)
   puVar1[0xc] = 0;
   puVar1[0xd] = 0;
   puVar1[0xe] = 0;
+  /* ST_CALLSITE[0075BF09]: CALL dword ptr [EDX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,param_1[7] << 8);
   param_1[0x26] = st::machine_word_boundary_cast<undefined4>(puVar1);
@@ -5269,6 +5346,7 @@ undefined4 st::fn_0075C3B0(AnonShape_0075BE40_B9FD5FDF *param_1)
        param_1->field_01A6->field_005C +
        ((int)(*(int *)(iVar1 + 0xc) + (*(int *)(iVar1 + 0xc) >> 0x1f & 7U)) >> 3));
   *(undefined4 *)(iVar1 + 0xc) = 0;
+  /* ST_CALLSITE[0075C3E6]: CALL dword ptr [EAX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar2 = (*(code *)param_1->field_01A6->field_0008)(param_1);
   if (iVar2 == 0) {
@@ -5301,6 +5379,7 @@ void st::fn_0075CB40(undefined4 *param_1)
   undefined4 *local_8;
 
   puVar1 = param_1;
+  /* ST_CALLSITE[0075CB50]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   puVar2 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x54);
   STField<undefined4 *>(param_1,0x1ae) = puVar2;
@@ -5310,6 +5389,7 @@ void st::fn_0075CB40(undefined4 *param_1)
     local_8 = (undefined4 *)(param_1[0x34] + 0x50);
     auto param_1_after_write = puVar2 + 0xb; /* compiler stack-slot lifetime split */
     do {
+      /* ST_CALLSITE[0075CB84]: CALL dword ptr [ECX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       puVar2 = (undefined4 *)(**(code **)*puVar1)(puVar1,1,0x100);
       *local_8 = st::machine_word_boundary_cast<undefined4>(puVar2);
@@ -5337,6 +5417,7 @@ void st::fn_0075CDF0(int *param_1,int param_2)
   undefined4 uVar4;
   int iVar5;
 
+  /* ST_CALLSITE[0075CDFF]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   puVar2 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x1c);
   STField<undefined4 *>(param_1,0x19e) = puVar2;
@@ -5349,11 +5430,13 @@ void st::fn_0075CDF0(int *param_1,int param_2)
     if (param_2 != 0) {
       iVar1 = *param_1;
       iVar3 = st::fn_00759E90(param_1[0x1b],iVar5);
+      /* ST_CALLSITE[0075CE4A]: CALL dword ptr [EBX + 0x10] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (**(code **)(iVar1 + 0x10))(param_1,1,0,param_1[0x1c] * param_1[0x1a],iVar3,iVar5);
       puVar2[2] = uVar4;
       return;
     }
+    /* ST_CALLSITE[0075CE65]: CALL dword ptr [ECX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar4 = (**(code **)(*param_1 + 8))(param_1,1,param_1[0x1c] * param_1[0x1a],iVar5);
     puVar2[3] = uVar4;
@@ -5378,15 +5461,19 @@ void st::fn_0075DA80(AnonShape_0075DA80_57A0CDEF *param_1)
   int local_8;
 
   pAVar1 = param_1->field_01B6;
+  /* ST_CALLSITE[0075DA9A]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0008 = uVar2;
+  /* ST_CALLSITE[0075DAA9]: CALL dword ptr [ECX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_000C = uVar2;
+  /* ST_CALLSITE[0075DAB8]: CALL dword ptr [EDX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0010 = uVar2;
+  /* ST_CALLSITE[0075DAC7]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)param_1->field_0000)(param_1,1,0x400);
   pAVar1->field_0014 = uVar2;
@@ -5419,23 +5506,25 @@ void st::fn_0075DE90(AnonShape_0075DF10_BA4C6604 *param_1)
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   pAVar1 = (AnonNested_0075DF10_01B2_1F0F9C79 *)
+           /* ST_CALLSITE[0075DE9F]: CALL dword ptr [EAX] */
            (*(code *)param_1->field_0000->field_0000)(param_1,1,0x30);
   param_1->field_01B2 = pAVar1;
-  *(code **)pAVar1 = st::pointer_boundary_cast<code *>(st::fn_0075DFE0);
+  *(code **)pAVar1 = (code *)st::fn_0075DFE0;
   *(undefined4 *)&pAVar1->field_0x8 = 0;
   *(int *)&pAVar1[1].field_0x8 = *(int *)&param_1->field_0x70 * *(int *)&param_1->field_0x68;
   if (*(int *)&param_1->field_0x126 == 2) {
     uVar2 = *(undefined4 *)&pAVar1[1].field_0x8;
-    *(code **)&pAVar1->field_0x4 = st::pointer_boundary_cast<code *>(st::fn_0075E000);
-    *(code **)&pAVar1->field_0xc = st::pointer_boundary_cast<code *>(st::fn_0075E260);
+    *(code **)&pAVar1->field_0x4 = (code *)st::fn_0075E000;
+    *(code **)&pAVar1->field_0xc = (code *)st::fn_0075E260;
+    /* ST_CALLSITE[0075DEE0]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (*(code *)param_1->field_0000->field_0004)(param_1,1,uVar2);
     *(undefined4 *)(pAVar1 + 1) = uVar2;
     st::fn_0075DF10(param_1);
     return;
   }
-  *(code **)&pAVar1->field_0x4 = st::pointer_boundary_cast<code *>(st::fn_0075E0C0);
-  *(code **)&pAVar1->field_0xc = st::pointer_boundary_cast<code *>(st::fn_0075E100);
+  *(code **)&pAVar1->field_0x4 = (code *)st::fn_0075E0C0;
+  *(code **)&pAVar1->field_0xc = (code *)st::fn_0075E100;
   *(undefined4 *)(pAVar1 + 1) = 0;
   st::fn_0075DF10(param_1);
   return;
@@ -5454,15 +5543,19 @@ void st::fn_0075DF10(AnonShape_0075DF10_BA4C6604 *param_1)
   int local_8;
 
   pAVar1 = param_1->field_01B2;
+  /* ST_CALLSITE[0075DF2A]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (*(code *)param_1->field_0000->field_0000)(param_1,1,0x400);
   pAVar1->field_0010 = uVar2;
+  /* ST_CALLSITE[0075DF39]: CALL dword ptr [ECX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (*(code *)param_1->field_0000->field_0000)(param_1,1,0x400);
   pAVar1->field_0014 = uVar2;
+  /* ST_CALLSITE[0075DF48]: CALL dword ptr [EDX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (*(code *)param_1->field_0000->field_0000)(param_1,1,0x400);
   pAVar1->field_0018 = uVar2;
+  /* ST_CALLSITE[0075DF57]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (*(code *)param_1->field_0000->field_0000)(param_1,1,0x400);
   pAVar1->field_001C = uVar2;
@@ -5749,6 +5842,7 @@ void st::fn_0075EF60(int *param_1,int param_2)
   int iVar2;
   int iVar3;
 
+  /* ST_CALLSITE[0075EF77]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   piVar1 = (int *)(**(code **)*param_1)(param_1,1,param_2 << 5);
   *piVar1 = 0;

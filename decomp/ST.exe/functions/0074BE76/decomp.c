@@ -31,6 +31,7 @@ undefined4 __thiscall FUN_0074be76(void *this,int param_1)
     STField<undefined4 *>(this,0x90) = puVar2;
     if (puVar2 == nullptr) {
       if (STField<int *>(this,0x8c) != nullptr) {
+        /* ST_CALLSITE[0074BEF7]: CALL dword ptr [EAX + 0xc] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*STField<int *>(this,0x8c) + 0xc))(1);
       }

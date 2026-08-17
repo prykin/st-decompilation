@@ -12,6 +12,7 @@ int __thiscall FUN_006301b0(void *this,AnonShape_0062FCA0_22A9EE35 *param_1)
 {
   int iVar1;
 
+  /* ST_CALLSITE[006301B7]: CALL 0x00403edb; direct=00403EDB STRubbishC::sub_0062FCA0 */
   iVar1 = STRubbishC::sub_0062FCA0(this,param_1);
   return iVar1;
 }

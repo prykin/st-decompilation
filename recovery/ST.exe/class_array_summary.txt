@@ -1,9 +1,9 @@
 program=ST.exe
-functions_scanned=1568
-candidate_arrays=85
-auto_apply=73
+functions_scanned=1570
+candidate_arrays=86
+auto_apply=74
 bounded_index_arrays=6
-exact_pointer_walk_arrays=83
+exact_pointer_walk_arrays=84
 record_arrays=12
 record_array_auto_apply=10
 note=Only bounded this+index*stride accesses and exact decrementing pointer walks contribute an extent.

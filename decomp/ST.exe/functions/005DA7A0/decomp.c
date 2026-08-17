@@ -55,6 +55,7 @@ undefined4 FUN_005da7a0(void)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
+  /* ST_CALLSITE[005DA8AA]: CALL 0x004055f6; direct=004055F6 StartSystemTy::sub_005DA910 */
   StartSystemTy::sub_005DA910(local_8);
   return 0xfffffffa;
 }

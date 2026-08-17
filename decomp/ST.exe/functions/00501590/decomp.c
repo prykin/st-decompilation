@@ -64,20 +64,26 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
       iVar2 = 0;
       goto LAB_00501758;
     }
+    /* ST_CALLSITE[00501659]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[2]);
+    /* ST_CALLSITE[0050167E]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(this_00->field_018C,
            (this_00->field_018C->field_0004 - *(int *)((byte *)this_00->field_0974[4] + 4)) / 2,0x61
            ,'\x01',(byte *)this_00->field_0974[4]);
+    /* ST_CALLSITE[005016A3]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(this_00->field_018C,
            (this_00->field_018C->field_0004 - *(int *)((byte *)this_00->field_0974[5] + 4)) / 2,0x7c
            ,'\x01',(byte *)this_00->field_0974[5]);
     break;
   case CASE_2:
     if ((local_8->field_0B99 == CASE_9) || (local_8->field_0B99 == CASE_15)) {
+      /* ST_CALLSITE[00501730]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[1]);
     }
     else {
+      /* ST_CALLSITE[005016ED]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[2]);
+      /* ST_CALLSITE[00501712]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut(this_00->field_018C,
              (this_00->field_018C->field_0004 - *(int *)((byte *)this_00->field_0974[5] + 4)) / 2,
              0x7c,'\x01',(byte *)this_00->field_0974[5]);
@@ -88,9 +94,11 @@ switchD_0050162e_caseD_a:
     iVar4 = 0x61;
     iVar2 = (pRVar3->field_0004 - *(int *)(pbVar5 + 4)) / 2;
 LAB_00501758:
+    /* ST_CALLSITE[00501758]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(pRVar3,iVar2,iVar4,'\x01',pbVar5);
     break;
   case CASE_3:
+    /* ST_CALLSITE[0050160A]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[0]);
     switch(this_00->field_0B99) {
     case CASE_9:
@@ -108,6 +116,7 @@ LAB_00501758:
     switch(this_00->field_0B99) {
     case CASE_8:
     case CASE_14:
+      /* ST_CALLSITE[005017A4]: CALL 0x004017df; direct=004017DF CPanelTy::PaintBCapacity */
       PaintBCapacity(this_00);
       break;
     case CASE_16:
@@ -120,6 +129,7 @@ LAB_00501758:
     if ((this_00->field_0B9E != CASE_4) || (this_00->field_0B99 != CASE_AF))
     goto switchD_0050179b_caseD_9;
 switchD_0050179b_caseD_16:
+    /* ST_CALLSITE[0050177E]: CALL 0x004056af; direct=004056AF CPanelTy::PaintBEnergy */
     PaintBEnergy(this_00);
   }
 switchD_0050179b_caseD_9:

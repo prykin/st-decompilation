@@ -30,6 +30,7 @@ int FUN_006b08f0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT pa
     }
     if ((param_2 != 0) && (0 < param_4)) {
       if ((*(uint *)&param_1->field_0x8 & 0x4000000) != 0) {
+        /* ST_CALLSITE[006B097F]: CALL dword ptr [0x0085bb8c] */
         EnterCriticalSection((LPCRITICAL_SECTION)&param_1[1].field_0x38);
       }
       bVar2 = FUN_006b06a0(param_1,local_40c,param_2 + iVar3 * 4,param_3,param_4);
@@ -41,12 +42,14 @@ int FUN_006b08f0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT pa
         piVar1 = (int *)param_1->field_003C;
         iVar3 = local_8;
         if (piVar1 != nullptr) {
+          /* ST_CALLSITE[006B09C9]: CALL dword ptr [EDX + 0x18] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar3 = (**(code **)(*piVar1 + 0x18))(piVar1,0,0,0x100,local_40c[0].palPalEntry);
           local_8 = iVar3;
         }
       }
       if ((*(uint *)&param_1->field_0x8 & 0x4000000) != 0) {
+        /* ST_CALLSITE[006B09E2]: CALL dword ptr [0x0085bb90] */
         LeaveCriticalSection((LPCRITICAL_SECTION)&param_1[1].field_0x38);
       }
       if (((iVar3 != -0x7789fdc4) && (iVar3 != -0x7789fdb3)) && (iVar3 != -0x7fffbfff)) {

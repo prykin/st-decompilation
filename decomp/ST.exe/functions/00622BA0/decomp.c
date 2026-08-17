@@ -27,6 +27,7 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   this->field_0043 = (short)this->field_02C6;
   this->field_0045 = (short)this->field_02CA;
   SVar2 = thunk_FUN_004ab050();
+  /* ST_CALLSITE[00622C05]: CALL 0x00402414; direct=00402414 STMineSetC::sub_00626B50 */
   sub_00626B50(this,SVar2);
   this->field_0056 = (short)this->field_02C6;
   iVar5 = this->field_02C2;
@@ -70,6 +71,7 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   }
   if (SVar1 < CASE_3) {
     if (g_visibleClass_00802A88 != nullptr) {
+      /* ST_CALLSITE[00622E15]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
       VisibleClassTy::sub_00558DC0
                 (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                  (undefined *)(int)this->field_004B,(int *)this->field_0024,
@@ -77,10 +79,12 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
     }
   }
   else if ((SVar1 == CASE_3) && (g_visibleClass_00802A88 != nullptr)) {
+    /* ST_CALLSITE[00622DC7]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
     VisibleClassTy::sub_00558DC0
               (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                (undefined *)(int)this->field_004B,(int *)this->field_0024,DAT_007d02c0,
                (int *)this->field_0018,0xffffffff);
+    /* ST_CALLSITE[00622DDE]: CALL 0x00402b3f; direct=00402B3F STMineSetC::sub_0041D1A0 */
     sub_0041D1A0(this,*(int *)(&DAT_007d02b4 + (uint)this->field_02AD * 4));
   }
   sVar6 = this->field_0047;
@@ -97,6 +101,7 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
           (STGridAt3D(g_worldGrid, sVar6, sVar7, sVar8).objects[(byte)this->field_008E] != nullptr)))) {
         return 0;
       }
+      /* ST_CALLSITE[00622F24]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
       iVar5 = DumpClassC::WritePtr
                         (sVar6,sVar7,sVar8,this->field_008E,
                          (RecoveredRecord_DumpClassC_00495EC0 *)this);

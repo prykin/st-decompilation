@@ -77,6 +77,7 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,STBoatC *param_1)
     if (this->field_05C0 != 1) {
 LAB_00475068:
       if (this->field_05C0 == 2) {
+        /* ST_CALLSITE[00475076]: CALL 0x00402658; direct=00402658 STBoatC::BackWaitLoad */
         local_EAX_1718 = BackWaitLoad(this,(int *)0x2);
         if (local_EAX_1718 == 0) {
           this->field_05C0 = 0;
@@ -105,6 +106,7 @@ LAB_00475068:
         if ((int)uVar4 == 0) {
           iVar12 = this->field_06F7 - CASE_1;
           if ((int)((uVar4 << 0x20 | (ulonglong)g_playSystem_00802A38->field_00E4) % 100) == 0) {
+            /* ST_CALLSITE[0047513F]: CALL dword ptr [EDX + 0x90] */
             this->vfunc_90(3,0x363);
             thunk_FUN_00637930(this->field_01ED,1,-100,-100,-100,0,0);
           }
@@ -138,17 +140,21 @@ switchD_00474a47_caseD_2:
       return 2;
     }
     if (this->field_05C4 == CASE_0) {
+      /* ST_CALLSITE[00474A38]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
       iVar10 = sub_00460260(this,2);
       switch(iVar10) {
       case 0:
       case 1:
+        /* ST_CALLSITE[00474AF1]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
         sub_004602B0(this);
         iVar12 = this->field_05BC;
         this->field_05BC = iVar12 + 1;
         if ((&this->field_05B4)[iVar12] != -1) {
           param_1 = (STBoatC *)thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
+          /* ST_CALLSITE[00474B42]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
           sub_00481520(this,(int)this->field_005B,(int)this->field_005D,
                        (int)(&this->field_05B2)[this->field_05BC]);
+          /* ST_CALLSITE[00474B4A]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
           sub_00460260(this,0);
           return 2;
         }
@@ -169,6 +175,7 @@ switchD_00474a47_caseD_2:
         this->field_05C0 = 0;
         iVar12 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
         if (iVar12 != -4) {
+          /* ST_CALLSITE[00474ADC]: CALL 0x004054e3; direct=004054E3 STBoatC::NotReadyForLoading */
           NotReadyForLoading(param_1,this->field_0018);
           return 2;
         }
@@ -193,6 +200,7 @@ switchD_00474a47_caseD_2:
     }
     if (this->field_05C4 == CASE_1) {
       iVar12 = STReplaceLowWord((uint32_t)(pSVar13), (uint16_t)(*(short *)&this->field_0x5ac * 0xc9)) + 100;
+      /* ST_CALLSITE[00474C3B]: CALL dword ptr [EDX + 0x10] */
       uVar6 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar12), (uint16_t)(this->field_0045)),
@@ -202,12 +210,15 @@ switchD_00474a47_caseD_2:
       this->field_05C4 = CASE_2;
     }
     if (this->field_05C4 == CASE_2) {
+      /* ST_CALLSITE[00474C64]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
       uVar7 = sub_004176C0(this,this->field_05C8);
+      /* ST_CALLSITE[00474C6C]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar7 = sub_00417910(this,(short)uVar7);
       if (uVar7 != 0xffffffff) {
         if (uVar7 == 0) {
           this->field_05C4 = CASE_3;
         }
+        /* ST_CALLSITE[00474C88]: CALL dword ptr [EAX + 0xd8] */
         iVar12 = this->vfunc_D8();
         return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
       }
@@ -220,6 +231,7 @@ switchD_00474a47_caseD_2:
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (this->field_05C4 == CASE_3) {
+      /* ST_CALLSITE[00474D1D]: CALL 0x00402455; direct=00402455 sub_00415B30 */
       sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_05AA * 0xc9 + 100,*(short *)&this->field_0x5ac * 0xc9 + 100,
                    *(short *)&this->field_0x5ae * 200 + 100,this->field_0061);
@@ -227,6 +239,7 @@ switchD_00474a47_caseD_2:
     }
     SVar2 = this->field_05C4;
     if (SVar2 == CASE_4) {
+      /* ST_CALLSITE[00474D45]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
       local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
       uVar7 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar7;
@@ -275,6 +288,7 @@ switchD_00474a47_caseD_2:
             STPiece<0,2>(local_24) = (short)uVar3;
             iVar11 = (int)(short)local_24 + iVar12 + this->field_0041;
           }
+          /* ST_CALLSITE[00474EAE]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
           TraksClassTy::TraksCreate
                     (g_traksClass_00802A7C,1,2,7,iVar11,iVar9 + ((uVar7 >> 0x10) % 7 - 3),iVar14,
                      sVar16,sVar17,sVar18,sVar19,sVar20,sVar21,iVar22,sVar23,bVar24);
@@ -294,11 +308,14 @@ switchD_00474a47_caseD_2:
       if (local_1c == 0) {
         this->field_05C4 = CASE_6 - (this->field_006C != this->field_05B0);
       }
+      /* ST_CALLSITE[00474EFC]: CALL dword ptr [EAX + 0xd8] */
       iVar12 = this->vfunc_D8();
       return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
     }
     if (SVar2 == CASE_5) {
+      /* ST_CALLSITE[00474F58]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
       uVar7 = sub_004176C0(this,this->field_05B0);
+      /* ST_CALLSITE[00474F60]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar7 = sub_00417910(this,(short)uVar7);
       if (uVar7 == 0xffffffff) {
         local_EAX_1495 =
@@ -328,15 +345,18 @@ switchD_00474a47_caseD_2:
             }
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
+          /* ST_CALLSITE[0047501C]: CALL 0x0040164a; direct=0040164A STBoatC::ReadyForLoading */
           ReadyForLoading(param_1,(STFishC *)this->field_0018);
           this->field_05C4 = CASE_7;
         }
+        /* ST_CALLSITE[0047502F]: CALL dword ptr [EAX + 0xd8] */
         iVar12 = this->vfunc_D8();
         return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
       }
       if (SVar2 != CASE_7) goto LAB_00475068;
     }
   }
+  /* ST_CALLSITE[00475050]: CALL dword ptr [EDX + 0xd8] */
   iVar12 = this->vfunc_D8();
   return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
 }

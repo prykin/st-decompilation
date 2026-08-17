@@ -105,6 +105,7 @@ void FUN_006b4170(RecoveredSourceFamily_dibcopy *param_1,int param_2,int lprcSrc
       uVar6 = -uVar6;
     }
     local_44 = uVar6;
+    /* ST_CALLSITE[006B420C]: CALL dword ptr [0x0085be50] */
     BVar2 = IntersectRect(&local_54,&local_3c,&local_2c);
     if (BVar2 != 0) {
       iVar3 = local_54.bottom - local_54.top;

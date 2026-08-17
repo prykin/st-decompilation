@@ -21,6 +21,7 @@ int __thiscall FUN_004908a0(void *this,STFishC *param_1,int param_2)
   short local_8 [2];
 
   local_10 = 1000000;
+  /* ST_CALLSITE[004908C1]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   STFishC::sub_004162B0(param_1,(short *)&param_1,local_8,local_c);
   iVar6 = 0;
   iVar5 = param_2;

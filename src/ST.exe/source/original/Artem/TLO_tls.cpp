@@ -26,8 +26,7 @@
 undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
 
 {
-  AnonShape_004AB810_8E5693D5 *pAVar1;
-  STT3DSprC *this;
+  STT3DSprC *pSVar1;
   int iVar3;
   int iVar2;
   int uVar3;
@@ -36,15 +35,17 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
   int local_8;
 
   if (param_1->field_05FF == 0) {
-    pAVar1 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
-    if (pAVar1 == nullptr) {
-      this = nullptr;
+    pSVar1 = (STT3DSprC *)st::fn_0072E530(0x40);
+    if (pSVar1 == nullptr) {
+      pSVar1 = nullptr;
     }
     else {
-      this = (STT3DSprC *)st::fn_00401316(pAVar1);
+      /* ST_CALLSITE[004EAA47]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+      pSVar1 = st::fn_00401316(pSVar1);
     }
-    param_1->field_05FF = st::machine_word_boundary_cast<undefined4>(this);
-    iVar3 = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    param_1->field_05FF = st::machine_word_boundary_cast<undefined4>(pSVar1);
+    /* ST_CALLSITE[004EAA70]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
+    iVar3 = st::fn_0040537B(pSVar1,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       st::fn_006A5E40
                 (iVar3,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_tls.cpp"),0x56);
@@ -68,6 +69,7 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
     param_1->field_0261 = 0;
     param_1->field_0265 = st::machine_word_boundary_cast<uint>(param_1->field_0265 & 0xfffffffd);
     param_1->field_026D = 0;
+    /* ST_CALLSITE[004EAAFC]: CALL dword ptr [EAX + 0x90] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(param_1->field_0000 + 0x90))(3,0x279);
   }
@@ -75,7 +77,9 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
     st::fn_00403D0F((STT3DSprC *)param_1->field_05FF);
     return 0;
   }
+  /* ST_CALLSITE[004EAB36]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(local_108,st::mutable_c_string("%s"),"trmmine");
+  /* ST_CALLSITE[004EAB56]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar3 = st::fn_00404183
                     ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,local_108,CASE_1D);
   if (iVar3 != 0) {
@@ -88,7 +92,9 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
   st::fn_006EA340(param_1->field_0211,uVar3,iVar2,uVar4);
   st::fn_00401EBA((void *)param_1->field_05FF,0xe,0x28,
                      (-(uint)(*(int *)&param_1->field_0x4d0 != 3) & 0xffffffed) + 0x3b,'\0');
+  /* ST_CALLSITE[004EABC6]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064((STT3DSprC *)param_1->field_05FF,'\x0e',0x28);
+  /* ST_CALLSITE[004EABDF]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   st::fn_00405240((STT3DSprC *)param_1->field_05FF,0xe,g_playSystem_00802A38->field_00E4);
   *(undefined4 *)&param_1->field_0x4d4 = 0;
   uVar4 = g_playSystem_00802A38->field_00E4;
@@ -96,6 +102,7 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
   *(uint *)&param_1->field_0x4d8 = uVar4;
   iVar3 = *(int *)&param_1->field_0x4d0 * 0x18;
   local_8 = *(int *)(&DAT_0079aa18 + iVar3) + (int)param_1->field_0041;
+  /* ST_CALLSITE[004EAC84]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   st::fn_004045D9
             ((STT3DSprC *)param_1->field_05FF,(float)local_8 * _DAT_007904f8 * _DAT_007904f0,
              (float)(*(int *)(&DAT_0079aa1c + iVar3) + (int)param_1->field_0043) * _DAT_007904f8 *
@@ -104,6 +111,7 @@ undefined4 __fastcall st::fn_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
              _DAT_007904f0 + _DAT_007904fc);
   st::fn_00402982((void *)param_1->field_05FF,1);
   if (*(int *)&param_1->field_0x4d0 == 3) {
+    /* ST_CALLSITE[004EACAA]: CALL dword ptr [EAX + 0x90] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(param_1->field_0000 + 0x90))(3,0x279);
   }

@@ -37,6 +37,7 @@ void __thiscall STJellyGunC::sub_005844E0(STJellyGunC *this,int param_1,int para
                              (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
   }
   local_10.unknown = this->field_0018;
+  /* ST_CALLSITE[00584566]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
   SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,soundId,&local_10,0);
   return;
 }

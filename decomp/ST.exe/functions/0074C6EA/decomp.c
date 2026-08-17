@@ -61,6 +61,7 @@ HRESULT FUN_0074c6ea(int *param_1,char *param_2,undefined4 *param_3)
       }
     }
     puVar1 = (undefined4 *)param_1[0x29];
+    /* ST_CALLSITE[0074C774]: CALL dword ptr [ECX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     HVar3 = (**(code **)*puVar1)(puVar1,param_2,param_3);
   }

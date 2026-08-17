@@ -9,6 +9,7 @@ LPVOID FUN_0074bc6a(undefined4 *param_1)
 {
   AnonShape_0074BC89_92881050 *pAVar1;
 
+  /* ST_CALLSITE[0074BC6D]: CALL dword ptr [0x0085c0d8] */
   pAVar1 = CoTaskMemAlloc(0x48);
   if (pAVar1 != nullptr) {
     FUN_0074bc89(pAVar1,param_1);

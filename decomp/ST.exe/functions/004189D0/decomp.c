@@ -35,6 +35,7 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
   }
   if (local_EAX_30 == 2) {
     thunk_FUN_00416840(this,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
+    /* ST_CALLSITE[00418A2B]: CALL dword ptr [EAX + 0x18] */
     iVar6 = this->vfunc_18((short)local_10,(short)local_c,(short)local_8);
     if (iVar6 != 1) {
       this->field_00FA = this->field_00FA + 1;
@@ -45,17 +46,21 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
       this->field_00DB = (int)(short)local_c;
       this->field_00DF = (int)(short)local_8;
       this->field_00FA = 0;
+      /* ST_CALLSITE[00418B00]: CALL 0x00405952; direct=00405952 sub_004167A0 */
       sub_004167A0(this);
       return 2;
     }
+    /* ST_CALLSITE[00418A39]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
     sub_0041C5A0(this);
     this->field_00FA = 0;
     iVar6 = thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,this->field_008E,
                                (AnonShape_00495FF0_59081BDD *)this);
     if ((iVar6 == 0) &&
+       /* ST_CALLSITE[00418A93]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
        (iVar6 = DumpClassC::WritePtr
                           ((short)local_10,(short)local_c,(short)local_8,this->field_008E,
                            (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar6 == 0)) {
+      /* ST_CALLSITE[00418AA9]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
       TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)this->field_0101);
       thunk_FUN_004168b0((int)this);
       return 0;
@@ -75,6 +80,7 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
         local_8 = STReplaceLowWord((uint32_t)(puVar1), (uint16_t)(puVar1[-2]));
         this->field_00E4 = 0;
         this->field_00E3 = 0;
+        /* ST_CALLSITE[00418BBC]: CALL 0x00405952; direct=00405952 sub_004167A0 */
         sub_004167A0(this);
         iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
                           ((AnonReceiver_004167A0 *)this,(short)local_10,(short)local_c,
@@ -103,6 +109,7 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
     }
   }
   else if (local_EAX_30 == 0) {
+    /* ST_CALLSITE[00418C31]: CALL 0x00405952; direct=00405952 sub_004167A0 */
     sub_004167A0(this);
     return 1;
   }

@@ -50,7 +50,7 @@ undefined4 FUN_006b4b20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int pa
   pbVar6 = (byte *)((uVar4 - 1) * uVar15 + param_3);
   pbVar14 = (byte *)((int)puVar5 + 0x16);
   local_1c = -1;
-  auto param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
+  AnonShape_006B4B20_3D4F4412 * param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
   local_20 = 0;
   local_14 = 0;
   iVar12 = 0;
@@ -253,7 +253,7 @@ LAB_006b4ef4:
   puVar5[2] = uVar4;
   STField<undefined2>(puVar5,0xe) = STPiece<0,2>(local_2c);
   *puVar5 = (int)pbVar14 - (int)puVar5;
-  *(undefined1 *)(puVar5 + 3) = 0x80;
+  ((undefined1 *)puVar5)[3] = 0x80;
   *(short *)(puVar5 + 4) = (short)local_1c;
   STField<undefined2>(puVar5,0x12) = (undefined2)local_c;
   *(short *)(puVar5 + 5) = (short)iVar12 - (short)local_1c;

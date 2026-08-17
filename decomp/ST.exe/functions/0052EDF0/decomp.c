@@ -39,6 +39,7 @@ void __thiscall OptPanelTy::PaintVolume(OptPanelTy *this,byte param_1,byte param
       local_8 = CONCAT31(uVar3,param_2);
       do {
         pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pOVar2->field_0198,6);
+        /* ST_CALLSITE[0052EE87]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pOVar2->field_0068,iVar5,local_c,'\x01',
                (byte *)pBVar4);
         iVar5 = iVar5 + 4;
@@ -51,6 +52,7 @@ void __thiscall OptPanelTy::PaintVolume(OptPanelTy *this,byte param_1,byte param
       iVar5 = (local_8 & 0xff) * 4 + 0x80;
       do {
         pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pOVar2->field_0198,0);
+        /* ST_CALLSITE[0052EEE8]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pOVar2->field_0068,iVar5,local_c,'\x01',
                (byte *)pBVar4);
         iVar5 = iVar5 + 4;

@@ -35,6 +35,7 @@ void __fastcall FUN_00627790(STMineSetC *param_1)
       local_28.arg1.words.high = *(word *)(local_8 + 0x32);
     }
     local_28.id = 0x5de4;
+    /* ST_CALLSITE[00627816]: CALL dword ptr [EAX] */
     g_aiBossClass_008117BC->GetMessage(&local_28);
     return;
   }

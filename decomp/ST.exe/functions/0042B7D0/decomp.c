@@ -69,6 +69,7 @@ STAllPlayersC::AddObjsToGroup
         iVar5 = thunk_FUN_00423d80(local_c,groupContent);
         if (iVar5 == 1) {
           local_5 = 0;
+          /* ST_CALLSITE[0042B877]: CALL dword ptr [EAX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(local_c->vtable + 8))(0x65,&local_5);
         }
@@ -99,10 +100,13 @@ STAllPlayersC::AddObjsToGroup
       local_2c = 0;
       local_40 = 1;
       local_38 = uVar8 & 0xffff;
+      /* ST_CALLSITE[0042B980]: CALL dword ptr [EDX + 0x8] */
       g_playSystem_00802A38->vfunc_08(0x10ff,(short)local_1c,(short)&local_10,(short)local_4c,0);
       Library::DKW::TBL::DArrayPut(array,uVar8 & 0xffff,&local_10);
+      /* ST_CALLSITE[0042B997]: CALL 0x00403a80; direct=00403A80 STGroupC::AddObjs */
       STGroupC::AddObjs(local_10,groupContent,0);
       local_5 = 2;
+      /* ST_CALLSITE[0042B9AB]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(local_10->vtable + 8))(0x65,&local_5);
       if (param_4 != nullptr) {
@@ -111,8 +115,10 @@ STAllPlayersC::AddObjsToGroup
     }
     else {
       DArrayGetElement(local_14,(uint)param_2,&local_c);
+      /* ST_CALLSITE[0042B8F2]: CALL 0x00403a80; direct=00403A80 STGroupC::AddObjs */
       STGroupC::AddObjs(local_c,groupContent,1);
       local_5 = 1;
+      /* ST_CALLSITE[0042B906]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(local_c->vtable + 8))(0x65,&local_5);
     }

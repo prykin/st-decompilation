@@ -30,6 +30,7 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
   char *local_8;
 
   if ((-1 < (int)param_1) && ((int)param_1 < 8)) {
+    /* ST_CALLSITE[004E73B1]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar3 = LookupRecordByte((char)param_1);
     ppuVar13 = &PTR_00801020;
     for (iVar5 = 0xc3; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -87,7 +88,7 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
                 if (3 < local_c) break;
                 iVar10 = iVar10 + 1;
                 *piVar4 = *piVar7;
-                *(char *)(piVar4 + 1) = (char)piVar7[1];
+                ((char *)piVar4)[1] = (char)piVar7[1];
                 bVar2 = true;
                 if (0x800ed6 < (int)piVar4 + 5) {
                   return;

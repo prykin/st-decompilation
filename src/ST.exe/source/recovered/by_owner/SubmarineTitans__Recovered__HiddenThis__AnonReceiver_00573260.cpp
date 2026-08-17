@@ -48,7 +48,7 @@ st::fn_00573260
       uVar2 = *(uint *)(*(int *)&local_8->field_0x4 + 0x80) & 1;
     }
     if (uVar2 != 0) {
-      st::fn_006B7E00(*(int *)&local_8->field_0x4,3,st::pointer_boundary_cast<undefined4 *>(&local_14),st::pointer_boundary_cast<undefined4 *>(&local_24));
+      st::fn_006B7E00(*(int *)&local_8->field_0x4,3,(undefined4 *)&local_14,(undefined4 *)&local_24);
     }
     register0x00000000 = (uint)(local_14 + local_24) >> 1;
   }
@@ -67,7 +67,7 @@ st::fn_00573260
       uVar2 = *(uint *)(*(int *)&local_8->field_0x4 + 0x50) & 1;
     }
     if (uVar2 != 0) {
-      st::fn_006B7E00(*(int *)&local_8->field_0x4,1,st::pointer_boundary_cast<undefined4 *>(&local_1c),st::pointer_boundary_cast<undefined4 *>(&local_20));
+      st::fn_006B7E00(*(int *)&local_8->field_0x4,1,(undefined4 *)&local_1c,(undefined4 *)&local_20);
     }
     _DAT_00807312 = (uint)(local_1c + local_20) >> 1;
   }
@@ -86,7 +86,7 @@ st::fn_00573260
       uVar2 = *(uint *)(*(int *)&local_8->field_0x4 + 0x68) & 1;
     }
     if (uVar2 != 0) {
-      st::fn_006B7E00(*(int *)&local_8->field_0x4,2,st::pointer_boundary_cast<undefined4 *>(&local_c),st::pointer_boundary_cast<undefined4 *>(&local_28));
+      st::fn_006B7E00(*(int *)&local_8->field_0x4,2,(undefined4 *)&local_c,(undefined4 *)&local_28);
     }
     _DAT_00807306 = (uint)(local_c + local_28) >> 1;
   }
@@ -105,7 +105,7 @@ st::fn_00573260
       uVar2 = *(uint *)(*(int *)&local_8->field_0x4 + 0x38) & 1;
     }
     if (uVar2 != 0) {
-      st::fn_006B7E00(*(int *)&local_8->field_0x4,0,st::pointer_boundary_cast<undefined4 *>(&local_18),st::pointer_boundary_cast<undefined4 *>(&local_10));
+      st::fn_006B7E00(*(int *)&local_8->field_0x4,0,(undefined4 *)&local_18,(undefined4 *)&local_10);
     }
     g_currentExceptionFrame = local_6c.previous;
     _DAT_00807316 = (uint)(local_18 + local_10) >> 1;

@@ -40,6 +40,7 @@ void __thiscall PausePanelTy::SwitchPausePanel(PausePanelTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
+    /* ST_CALLSITE[00539601]: CALL 0x00404ea3; direct=00404EA3 PausePanelTy::ShiftControls */
     ShiftControls(local_8,0);
 switchD_005395f3_caseD_3:
     if (param_1 == 0) {

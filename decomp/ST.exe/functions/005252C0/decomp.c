@@ -27,6 +27,7 @@ void __cdecl FUN_005252c0(Global_sub_005252C0_param_1Enum param_1)
       case CASE_B9:
         local_8 = 1;
       }
+      /* ST_CALLSITE[0052532C]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
       SoundClassTy::PlaySound
                 ((SoundClassTy *)&g_sound,SOUND_MODE_5,nullptr,param_1,nullptr,
                  local_8);

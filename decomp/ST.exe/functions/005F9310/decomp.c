@@ -24,6 +24,7 @@ undefined1 __thiscall FUN_005f9310(void *this,int param_1)
     }
   }
   if (STField<char>(this,0x29e) != '\0') {
+    /* ST_CALLSITE[005F93EE]: CALL 0x00404ae3; direct=00404AE3 STColl3C::sub_005F9450 */
     STColl3C::sub_005F9450(this);
   }
   return STField<undefined1>(this,0x29e);

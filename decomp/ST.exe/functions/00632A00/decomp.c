@@ -138,7 +138,7 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
                        (float)STField<int>(piVar7,0x15) * _DAT_007904f8 * _DAT_007904f0 +
                        _DAT_007904fc);
             piVar7[1] = local_c;
-            *(undefined1 *)(piVar7 + 3) = 0;
+            ((undefined1 *)piVar7)[3] = 0;
             pSVar6 = local_18;
             if (local_18->field_0015 != 0) {
               STField<int>(piVar7,0x1d) = *(int *)puVar4;

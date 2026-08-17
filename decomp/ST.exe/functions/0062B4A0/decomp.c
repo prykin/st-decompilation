@@ -67,6 +67,7 @@ byte __thiscall STParticleC::sub_0062B4A0(STParticleC *this)
     if (((iVar5 == 0) || (g_visibleClass_00802A88 == nullptr)) ||
        ((DAT_0080874d == -1 || (g_visibleClass_00802A88->field_00F8 == 0))))
     goto cf_common_exit_0062B616;
+    /* ST_CALLSITE[0062B5C9]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,local_8,&local_14
                ,&local_c);

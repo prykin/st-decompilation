@@ -34,26 +34,26 @@ void __thiscall FUN_00635a40(void *this,int param_1)
             *(undefined4 *)(iVar3 + 0x19) = 0;
           }
           if (*(int *)(iVar3 + 8) == 1) {
-            if (*(char *)(iVar3 + 0xc) == '\0') {
+            if (((char *)iVar3)[0xc] == '\0') {
               Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*(uint *)(iVar3 + 4),0);
-              *(undefined1 *)(iVar3 + 0xc) = 1;
+              ((undefined1 *)iVar3)[0xc] = 1;
             }
             if (param_1 == 0) {
-              if (*(char *)(iVar3 + 0xc) != '\0') {
+              if (((char *)iVar3)[0xc] != '\0') {
                 uVar5 = *(uint *)(iVar3 + 4);
                 goto LAB_00635b61;
               }
             }
-            else if (*(char *)(iVar3 + 0xc) == '\0') {
+            else if (((char *)iVar3)[0xc] == '\0') {
               Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*(uint *)(iVar3 + 4),0);
-              *(undefined1 *)(iVar3 + 0xc) = 1;
+              ((undefined1 *)iVar3)[0xc] = 1;
             }
           }
-          else if (*(char *)(iVar3 + 0xc) != '\0') {
+          else if (((char *)iVar3)[0xc] != '\0') {
             uVar5 = *(uint *)(iVar3 + 4);
 LAB_00635b61:
             Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,uVar5);
-            *(undefined1 *)(iVar3 + 0xc) = 0;
+            ((undefined1 *)iVar3)[0xc] = 0;
           }
         }
         uVar4 = uVar4 + 1;

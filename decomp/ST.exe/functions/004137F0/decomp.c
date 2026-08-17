@@ -41,7 +41,7 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
   if ((param_2 == -2) || (param_2 == -3)) {
     iVar8 = param_1->field_0029->field_000C;
     param_1->field_0049 = param_1->field_0049 & 0xfffffffe;
-    auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+    AnonShape_004137F0_350C8AE0 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
     auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
     auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
     pAVar5 = Library::DKW::LIB::MemAlloc(iVar8 * 0x10 + 0xc);

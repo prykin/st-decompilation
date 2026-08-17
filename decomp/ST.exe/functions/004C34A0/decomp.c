@@ -18,12 +18,14 @@ undefined4 __thiscall TLOBaseTy::sub_004C34A0(TLOBaseTy *this,int param_1)
   iVar1 = (((*(int *)(&DAT_007be8c8 + (param_1 / 0xf + iVar1 * 0x18) * 4) < 1) - 1 & 2) - 1) + iVar1
   ;
   if (0x17 < iVar1) {
+    /* ST_CALLSITE[004C350B]: CALL 0x00403ad0; direct=00403AD0 TLOBaseTy::sub_004B98E0 */
     sub_004B98E0(this,0);
     return 1;
   }
   if (iVar1 < 0) {
     iVar1 = 0x17;
   }
+  /* ST_CALLSITE[004C3529]: CALL 0x00403ad0; direct=00403AD0 TLOBaseTy::sub_004B98E0 */
   sub_004B98E0(this,iVar1 * 0xf);
   return 1;
 }

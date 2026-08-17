@@ -257,6 +257,7 @@ st::fn_00540890
     }
     st::fn_00711B70(param_9,resourceString,param_7,param_8,param_10,-1,-1);
     st::fn_006B5F80((int *)g_ddxContext_008075A8,param_2,param_3,local_8,param_5);
+    /* ST_CALLSITE[005409A1]: CALL 0x00405ed4; direct=00405ED4 TransPutDDX */
     st::fn_00405ED4(param_2,param_3,'\x01',local_c,-(uint)(param_1 != 0));
     st::fn_00710F00(param_9);
     g_currentExceptionFrame = local_50.previous;
@@ -317,6 +318,7 @@ st::fn_00540A60
     }
     st::fn_00711F70(param_9,param_6,0,-1,param_7,param_8,param_10);
     st::fn_006B5F80((int *)g_ddxContext_008075A8,param_2,param_3,local_8,param_5);
+    /* ST_CALLSITE[00540B79]: CALL 0x00405ed4; direct=00405ED4 TransPutDDX */
     st::fn_00405ED4(param_2,param_3,'\x01',local_c,-(uint)(param_1 != 0));
     st::fn_00710F00(param_9);
     g_currentExceptionFrame = local_50.previous;

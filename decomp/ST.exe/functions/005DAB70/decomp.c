@@ -24,6 +24,7 @@ undefined4 FUN_005dab70(int param_1,undefined4 param_2)
         Library::DKW::DDX::FUN_006b6750(g_int_00811764,0,param_2,0x20);
       }
       DAT_0080877f = g_int_00811764[0xe];
+      /* ST_CALLSITE[005DABFF]: CALL 0x0040330a; direct=0040330A StartSystemTy::GetIP */
       StartSystemTy::GetIP(local_8);
     }
     g_currentExceptionFrame = local_4c.previous;

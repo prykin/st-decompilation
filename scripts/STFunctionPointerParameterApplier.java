@@ -330,6 +330,14 @@ public class STFunctionPointerParameterApplier extends GhidraScript {
         while (instructions.hasNext() && count++ < 256 && live) {
             Instruction instruction = instructions.next();
             String rendered = instruction.toString().toUpperCase(Locale.ROOT);
+            if (rendered.equals("XOR ECX,ECX") ||
+                    rendered.equals("SUB ECX,ECX")) {
+                // Match the analyzer's x86 zero-idiom rule: Ghidra exposes
+                // ECX as an input to XOR/SUB self even though the incoming
+                // register value is killed before use.
+                live = false;
+                break;
+            }
             boolean scratch = "PUSH ECX".equals(rendered) &&
                 "MOV EBP,ESP".equals(previous) && "PUSH EBP".equals(beforePrevious);
             for (Object input : instruction.getInputObjects())

@@ -35,7 +35,9 @@ byte * __thiscall STAllPlayersC::FUN_005ec370(STAllPlayersC *this,uint *param_1)
   puVar6 = (byte *)&local_10->field_0x151;
   memmove(puVar6, puVar4, 0xf5); /* compiler REP MOVS byte copy */
   local_10->field_000C = 2;
+  /* ST_CALLSITE[005EC3BD]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
   local_14 = STT3DSprC::SaveSpr((STT3DSprC *)&this->field_0x1d5,&local_8);
+  /* ST_CALLSITE[005EC3CB]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
   local_18 = SaveGObjData(this,(int *)&local_c);
   newSize = local_c + 0x24e + local_8;
   local_10 = Library::DKW::LIB::MemRealloc(local_10,newSize);

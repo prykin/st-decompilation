@@ -28,12 +28,16 @@ void __fastcall FUN_004ccad0(AnonShape_004CCAD0_262475FB *param_1)
       param_1->field_04E0 = 0;
     }
     if (param_1->field_04E4 != 0) {
+      /* ST_CALLSITE[004CCB98]: CALL 0x0040216c; direct=0040216C STMineSetC::sub_0041D2B0 */
       STMineSetC::sub_0041D2B0((STMineSetC *)param_1);
       param_1->field_04E4 = 0;
     }
   }
+  /* ST_CALLSITE[004CCBA9]: CALL 0x00402d92; direct=00402D92 TLOBaseTy::sub_004B9A40 */
   TLOBaseTy::sub_004B9A40((TLOBaseTy *)param_1);
+  /* ST_CALLSITE[004CCBB0]: CALL 0x00403404; direct=00403404 STSprGameObjC::sub_0041F970 */
   STSprGameObjC::sub_0041F970((STSprGameObjC *)param_1);
+  /* ST_CALLSITE[004CCBBC]: CALL 0x0040207c; direct=0040207C TLOBaseTy::sub_00419D30 */
   TLOBaseTy::sub_00419D30((TLOBaseTy *)param_1,0xfe);
   return;
 }

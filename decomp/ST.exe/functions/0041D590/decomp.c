@@ -14,6 +14,7 @@ void __thiscall TLOBaseTy::sub_0041D590(TLOBaseTy *this)
 
 {
   if ((g_visibleClass_00802A88 != nullptr) && ((this->field_01D1 & 1) == 0)) {
+    /* ST_CALLSITE[0041D5C1]: CALL 0x00401fd2; direct=00401FD2 VisibleClassTy::VisHoleCreate */
     VisibleClassTy::VisHoleCreate
               (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,
                (undefined *)(int)this->field_005F,(uint)this->field_0024,

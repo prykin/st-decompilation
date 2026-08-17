@@ -35,6 +35,7 @@ int __thiscall FUN_00607a60(void *this,int param_1,int param_2,int param_3)
   int local_c;
   int local_8;
 
+  /* ST_CALLSITE[00607A77]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   local_EAX_23 = LookupRecordByte(in_stack_00000020);
   local_14 = (int)(byte)local_EAX_23;
@@ -42,6 +43,7 @@ int __thiscall FUN_00607a60(void *this,int param_1,int param_2,int param_3)
   STField<uint>(this,0x1c) = uVar2;
   iVar4 = (uVar2 >> 0x10) % 0xb + 9;
   local_c = iVar4;
+  /* ST_CALLSITE[00607AAD]: CALL 0x00403d8c; direct=00403D8C STExplosionC::CreateGroupPart */
   iVar2 = STExplosionC::CreateGroupPart(this,iVar4);
   STField<int>(this,0x269) = iVar2;
   if (iVar2 != iVar4) {
@@ -162,6 +164,7 @@ int __thiscall FUN_00607a60(void *this,int param_1,int param_2,int param_3)
         local_2c = (uVar2 >> 0x10 & 3) + 5;
       }
       local_80.arg0.ptr = local_60;
+      /* ST_CALLSITE[00607D90]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
       STParticleC::GetMessage((STParticleC *)*local_18,&local_80);
       local_10 = local_10 + 1;
       local_8 = local_8 + 1;

@@ -171,6 +171,7 @@ AiEventClassTy::__CreateObjPl
         local_76 = 0;
       }
       local_5b = 1;
+      /* ST_CALLSITE[0064D5A0]: CALL 0x00404b97; direct=00404B97 STAllPlayersC::CreateBoat */
       STAllPlayersC::CreateBoat(g_allPlayers_007FA174,local_a4);
       local_14 = 0;
     }

@@ -11,7 +11,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   int iVar2;
   int *piVar2;
   undefined4 *puVar3;
-  AnonShape_004AB810_8E5693D5 *pAVar4;
+  STT3DSprC *pSVar4;
   int iVar7;
   int iVar5;
   int iVar6;
@@ -50,14 +50,15 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
         *(undefined2 *)puVar3 = 0;
         iVar5 = iVar6;
         if (local_c->field_01F9 != '\0') {
-          pAVar4 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-          if (pAVar4 == nullptr) {
-            pAVar4 = nullptr;
+          pSVar4 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+          if (pSVar4 == nullptr) {
+            pSVar4 = nullptr;
           }
           else {
-            pAVar4 = thunk_FUN_004ab810(pAVar4);
+            /* ST_CALLSITE[0062EE3C]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+            pSVar4 = STT3DSprC::STT3DSprC(pSVar4);
           }
-          *(AnonShape_004AB810_8E5693D5 **)((&local_c->field_01E5)[iVar6] + 0x10) = pAVar4;
+          *(STT3DSprC **)((&local_c->field_01E5)[iVar6] + 0x10) = pSVar4;
         }
       }
       g_currentExceptionFrame = local_50.previous;

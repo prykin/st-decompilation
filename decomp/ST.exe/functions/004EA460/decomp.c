@@ -23,6 +23,7 @@ undefined4 __thiscall FUN_004ea460(void *this,int param_1,AnonShape_004EA460_7CF
     STField<undefined4>(this,0x478) = uVar2;
     iVar3 = param_2->field_05B8;
     STField<int>(this,0x47c) = iVar3;
+    /* ST_CALLSITE[004EA4F0]: CALL 0x0040542a; direct=0040542A TLOBaseTy::sub_004C6C70 */
     TLOBaseTy::sub_004C6C70(this,uVar1,uVar2,iVar3 + 1);
   }
   return 0;

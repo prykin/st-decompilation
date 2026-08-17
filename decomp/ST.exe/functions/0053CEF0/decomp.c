@@ -43,6 +43,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
   this_00 = local_14;
   if (iVar3 == 0) {
     g_sAMPanel_008016EC = local_14;
+    /* ST_CALLSITE[0053CF4C]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)local_14,"BKG_SETANYW",0x2f,2,0xc6,0xc,0x2735,0xc9,0x77);
     puVar18 = nullptr;
@@ -72,6 +73,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
       pCVar3 = thunk_FUN_00571240("BUT_PRODWEAP",0);
       pCVar3 = FUN_006f2c00(pCVar3,iVar6,uVar7);
       iVar6 = local_8;
+      /* ST_CALLSITE[0053CFE2]: CALL dword ptr [EDX + 0x4] */
       uVar7 = (*pSVar1->CreateBut)
                         ((PanelTy *)this_00,0,1,0x24,local_8 + 1,0,1,1,pCVar3,iVar8,iVar16,sVar9,
                          uVar12,uVar14,pcVar17,uVar19);
@@ -84,6 +86,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
         iVar16 = 0;
         pcVar17_mg1 = LoadResourceString(iVar13 - 0x842b,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_0189,pcVar17_mg1,iVar16,iVar6,uVar10);
+        /* ST_CALLSITE[0053D041]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x37,local_8,'\x01',pbVar5);
         ccFntTy::EraseSufr(this_00->field_0189);
       }
@@ -101,6 +104,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
     uVar14 = 0xb518;
     uVar7 = 0xb508;
     pCVar3 = thunk_FUN_00571240("BUT_BIG",0);
+    /* ST_CALLSITE[0053D0AD]: CALL dword ptr [EDI + 0x4] */
     uVar7 = (*pSVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0xa0,0x5c,0,1,1,pCVar3,uVar7,uVar14,sVar9,uVar12,
                        uVar19,pcVar17,uVar20);

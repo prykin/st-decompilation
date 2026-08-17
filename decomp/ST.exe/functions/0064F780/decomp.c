@@ -70,7 +70,7 @@ undefined4 __cdecl FUN_0064f780(RecoveredRecord_AiEventClassTy_0064F780 *param_1
     return 0;
   }
   if (0xc < sVar1) {
-    if (*(char *)(param_1 + 1) != '\b') {
+    if (((char *)param_1)[1] != '\b') {
       return 0;
     }
     return 1;

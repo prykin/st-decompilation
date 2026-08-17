@@ -45,10 +45,12 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   this_00 = local_8;
   if (iVar2 == 0) {
     g_optPanel_008016DC = local_8;
+    /* ST_CALLSITE[0052E62C]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
     pcVar2 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
     this_00->field_017C = pcVar2;
     pcVar2->field_0058 = 0;
     pcVar2->field_005C = 0;
+    /* ST_CALLSITE[0052E64C]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
     pcVar2 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_002C);
     this_00->field_0180 = pcVar2;
     pcVar2->field_0058 = 1;
@@ -93,7 +95,9 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_01F1 = pDVar5;
     Library::DKW::TBL::FUN_006b6020(pDVar5,0,&CHAR_00h_008016a0);
+    /* ST_CALLSITE[0052E77B]: CALL 0x0040443a; direct=0040443A OptPanelTy::PrepMissObj */
     PrepMissObj(this_00);
+    /* ST_CALLSITE[0052E782]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
     SetOptControls(this_00);
     uVar20 = 0;
     uVar16 = 0;
@@ -104,6 +108,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     uVar7 = 0xc002;
     uVar6 = 0xc001;
     pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[0052E7B7]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
     uVar10 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,pCVar3,uVar6,uVar7,sVar8,uVar9,
                                  uVar12,pcVar13,uVar16,uVar20);
     uVar20 = 0;
@@ -116,6 +121,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     uVar6 = 0xc003;
     this_00->field_01AD[0] = uVar10;
     pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[0052E7F1]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
     uVar10 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,pCVar3,uVar6,uVar7,sVar8,uVar9,
                                  uVar12,pcVar13,uVar16,uVar20);
     uVar6 = this_00->field_0038;

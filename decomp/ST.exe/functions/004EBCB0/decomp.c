@@ -15,15 +15,19 @@ void __thiscall FUN_004ebcb0(void *this,int param_1,int param_2)
     STField<undefined4>(this,0x4dc) = 0;
     STField<undefined4>(this,0x4e0) = 0;
     STField<undefined4>(this,0x4ec) = 0;
+    /* ST_CALLSITE[004EBD0C]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     TLOBaseTy::RotateSpr(this,0);
     if (STField<int>(this,0x5ac) == 0x52) {
       iVar2 = *(int *)this;
+      /* ST_CALLSITE[004EBD2C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar1 = LookupRecordByte(STField<char>(this,0x23d));
+      /* ST_CALLSITE[004EBD43]: CALL dword ptr [EDI + 0x90] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(iVar2 + 0x90))(3,(-(uint)(bVar1 != 2) & 0xffffff3b) + 0x35e);
       return;
     }
     if (STField<int>(this,0x5ac) == 0x5f) {
+      /* ST_CALLSITE[004EBD5F]: CALL dword ptr [EDX + 0x90] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0x90))(3,0x3b1);
     }

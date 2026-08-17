@@ -66,6 +66,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     RaiseInternalException(local_EAX_45,0,"E:\\__titans\\Igor\\to_oct.cpp",0x1d0);
     return 0xffff;
   }
+  /* ST_CALLSITE[00589C58]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
   STSprGameObjC::GetMessage((STSprGameObjC *)local_28,message);
   SVar1 = message->id;
   if (MESS_STOCTOPUSC_0112 < SVar1) {
@@ -76,7 +77,9 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
       }
       puVar7 = (byte *)(&this_00->field_01D5);
       if (DAT_0080732c == 0) {
+        /* ST_CALLSITE[0058A5BB]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
         STT3DSprC::sub_004AD070((STT3DSprC *)puVar7,0xe);
+        /* ST_CALLSITE[0058A5C4]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
         STT3DSprC::sub_004AD070((STT3DSprC *)puVar7,8);
         g_currentExceptionFrame = local_88.previous;
         return 0;
@@ -113,7 +116,9 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
+      /* ST_CALLSITE[0058A443]: CALL 0x004024f5; direct=004024F5 STOctopusC::sub_0058AF70 */
       sub_0058AF70(this_00,(short)local_1c,local_24[0],(short)local_20);
+      /* ST_CALLSITE[0058A467]: CALL dword ptr [EDX + 0x10] */
       sVar3 = (*this_00->vtable->vfunc_10)
                         (this_00->field_0041,this_00->field_0043,(int)this_00->field_0045,
                          (short)local_1c,local_24[0],local_20);
@@ -127,6 +132,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
       g_currentExceptionFrame = local_88.previous;
       return 0;
     }
+    /* ST_CALLSITE[0058A518]: CALL dword ptr [EDX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)this_00->field_01D5)();
     g_currentExceptionFrame = local_88.previous;
@@ -142,7 +148,9 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
       g_currentExceptionFrame = local_88.previous;
       return 0;
     }
+    /* ST_CALLSITE[0058A163]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
     local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
+    /* ST_CALLSITE[0058A171]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
     local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x96 + local_8);
     if (local_14 == nullptr) {
@@ -199,6 +207,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     pbVar8 = local_18;
     pbVar11 = &local_c[1].field_0x2 + local_8;
     memmove(pbVar11, pbVar8, local_10); /* compiler REP MOVS byte copy */
+    /* ST_CALLSITE[0058A342]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                local_10 + 0x96 + local_8);
@@ -244,6 +253,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     puVar9 = (byte *)&this_00->field_0x285;
     memmove(puVar9, puVar7, 0x28); /* compiler REP MOVS byte copy */
     iVar5 = 0;
+    /* ST_CALLSITE[00589EAC]: CALL 0x00404d0e; direct=00404D0E STOctopusC::Bad */
     Bad(this_00);
     if (((((this_00->field_0299 < 0) || ((int)g_worldGrid.sizeX <= this_00->field_0299)) ||
          (this_00->field_029D < 0)) ||
@@ -253,6 +263,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
                                            (short)iVar5), iVar7 == 0)))) goto LAB_0058a0d0;
     switch(this_00->field_02A5) {
     case CASE_F8:
+      /* ST_CALLSITE[00589F89]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar5 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"octopus2",
                          CASE_1D);
@@ -264,6 +275,7 @@ cf_error_exit_0058A005:
       }
       break;
     case CASE_F9:
+      /* ST_CALLSITE[00589F5C]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar5 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"octopus1",
                          CASE_1D);
@@ -273,6 +285,7 @@ cf_error_exit_0058A005:
       }
       break;
     case CASE_FA:
+      /* ST_CALLSITE[00589FEB]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar5 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"medusa2",
                          CASE_1D);
@@ -282,6 +295,7 @@ cf_error_exit_0058A005:
       }
       break;
     case CASE_FB:
+      /* ST_CALLSITE[00589FBA]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar5 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,"medusa1",
                          CASE_1D);
@@ -291,6 +305,7 @@ cf_error_exit_0058A005:
       }
     }
     thunk_FUN_004ac610(&this_00->field_01D5,'\x0e');
+    /* ST_CALLSITE[0058A02C]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
     this_00->field_0041 = (short)this_00->field_0299 * 0xc9 + 100;
     this_00->field_0043 = (short)this_00->field_029D * 0xc9 + 100;
@@ -299,6 +314,7 @@ cf_error_exit_0058A005:
     this_00->field_0251 = 1;
     this_00->field_0255 = 1;
     this_00->field_0259 = 1;
+    /* ST_CALLSITE[0058A09D]: CALL 0x00401a05; direct=00401A05 STOctopusC::sub_0058B190 */
     SVar4 = sub_0058B190(this_00,&this_00->field_004E,&this_00->field_0050,&this_00->field_0052,
                          &this_00->field_006C);
     this_00->field_0249 = SVar4;
@@ -309,6 +325,7 @@ cf_error_exit_0058A005:
     puVar9 = (byte *)&this_00->field_0x285;
     memmove(puVar9, puVar7, 0x28); /* compiler REP MOVS byte copy */
     local_8 = STField<uint>(local_1c,0x8e);
+    /* ST_CALLSITE[00589CD8]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x96 + (int)local_1c));
     puVar7 = (byte *)(local_1c);
@@ -362,6 +379,7 @@ cf_error_exit_0058A005:
       local_34 = 0;
       local_30 = 0;
       local_2c = 0;
+      /* ST_CALLSITE[00589E43]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_44,
                  (AnonShape_004AD790_77673787 *)((int)puVar7 + 0x92));

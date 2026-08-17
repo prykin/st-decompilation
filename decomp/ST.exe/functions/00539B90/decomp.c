@@ -91,6 +91,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
   this_00 = local_14;
   if (iVar8 == 0) {
     g_playPanel_008016E4 = local_14;
+    /* ST_CALLSITE[00539BF8]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
     pcVar4 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
     this_00->field_01DD = pcVar4;
     pcVar4->field_0058 = 0;
@@ -139,6 +140,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     local_EAX_336 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar21,iVar7);
     ppuVar1 = &this_00->field_01CD;
     *ppuVar1 = local_EAX_336;
+    /* ST_CALLSITE[00539CF6]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)local_EAX_336);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar1);
     if (DAT_00808783 != '\x03') {
@@ -147,6 +149,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       pCVar5 = thunk_FUN_00571240("BKG_DIPLOMACYC",0);
       local_EAX_413 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar21,iVar7);
       *ppuVar1 = local_EAX_413;
+      /* ST_CALLSITE[00539D42]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x20,0xa4,'\x01',
              (byte *)local_EAX_413);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar1);
@@ -162,6 +165,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     iVar7 = -2;
     pcVar6_mg0 = LoadResourceString(0x2733,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01DD,pcVar6_mg0,iVar7,iVar20,uVar16);
+    /* ST_CALLSITE[00539DCC]: CALL 0x00403242; direct=00403242 PlayPanelTy::PaintPlayPanel */
     PaintPlayPanel(this_00);
     uVar24 = 0;
     uVar22 = 0;
@@ -172,6 +176,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     uVar13 = 0xc000;
     uVar12 = 0xbfff;
     pCVar5 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[00539E01]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
     uVar12 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x171,199,1,pCVar5,uVar12,uVar13,sVar14,
                                  uVar15,uVar18,pcVar19,uVar22,uVar24);
     this_00->field_017C = uVar12;
@@ -219,6 +224,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     }
     local_300[3] = local_300[3] + 0x1a;
     local_298 = 0x6201;
+    /* ST_CALLSITE[00539F32]: CALL dword ptr [EAX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,4,&this_00->field_01C5,nullptr,local_488,0);
     if (8 < DAT_00808aaf) {
@@ -239,6 +245,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       else {
         iVar6 = 0;
       }
+      /* ST_CALLSITE[00539FB1]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
       uVar12 = UPanelTy::CreateBut((UPanelTy *)this_00,0,iVar6,0x4d,iVar7 + -2,0,(LPSTR)0x0,iVar20,
                                    iVar20 + 0x10,0,0,0,nullptr,0x16,0xe);
       local_10[-8] = uVar12;
@@ -257,6 +264,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       iVar11 = 1;
       pCVar5 = thunk_FUN_00571240("BUT_PRODWEAP",0);
       pCVar5 = FUN_006f2c00(pCVar5,iVar11,uVar12);
+      /* ST_CALLSITE[0053A020]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
       uVar12 = UPanelTy::CreateBut((UPanelTy *)this_00,0,local_c,0x183,iVar7,1,pCVar5,iVar9,iVar6,
                                    sVar14,uVar15,uVar13,pcVar19,uVar18,uVar22);
       iVar7 = iVar7 + 0xf;
@@ -303,6 +311,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       local_38 = 2;
       local_34 = 0xb209;
       local_3c = local_5c;
+      /* ST_CALLSITE[0053A110]: CALL dword ptr [EDX + 0x8] */
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C1,nullptr,local_6c,0);
       resourceId = 0x42b8;

@@ -52,12 +52,12 @@ st::fn_00727DA0
   DAT_008570ac = puVar8[1];
   DAT_008570b0 = puVar8[2];
   _DAT_008570b4 = puVar8[3];
-  puVar8 = (undefined4 *)((uint)*(byte *)(iVar5 + 2) * 0x10 + param_3);
+  puVar8 = (undefined4 *)((uint)((byte *)iVar5)[2] * 0x10 + param_3);
   DAT_008570b8 = *puVar8;
   DAT_008570bc = puVar8[1];
   DAT_008570c0 = puVar8[2];
   _DAT_008570c4 = puVar8[3];
-  puVar8 = (undefined4 *)((uint)*(byte *)(iVar5 + 3) * 0x10 + param_3);
+  puVar8 = (undefined4 *)((uint)((byte *)iVar5)[3] * 0x10 + param_3);
   DAT_008570c8 = *puVar8;
   DAT_008570cc = puVar8[1];
   DAT_008570d0 = puVar8[2];

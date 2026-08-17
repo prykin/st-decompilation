@@ -38,11 +38,13 @@ UPanelTy::PaintBut(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte para
     errorCode = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (errorCode == nullptr) {
       iVar5 = 1;
+      /* ST_CALLSITE[0053D817]: CALL dword ptr [EBP + 0x14] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_4)(param_1);
       text = FUN_006f2c00(param_3,1,uVar4);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,text,errorCode,iVar5);
       pUVar3 = local_14;
+      /* ST_CALLSITE[0053D84D]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);

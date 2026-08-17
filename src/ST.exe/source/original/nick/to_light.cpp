@@ -49,7 +49,9 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
   SVar3 = message->id;
   if (SVar3 < 4) {
     if (SVar3 == MESS_SHARED_0003) {
+      /* ST_CALLSITE[0061D452]: CALL 0x00402c9d; direct=00402C9D STLightC::sub_0061F530 */
       st::fn_00402C9D(local_8);
+      /* ST_CALLSITE[0061D459]: CALL 0x004058c6; direct=004058C6 STLightC::sub_0061D650 */
       st::fn_004058C6(this_00);
       g_currentExceptionFrame = local_60.previous;
       return 0;
@@ -100,24 +102,29 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
         local_1c.unknown = (int)this_00->field_0018;
         iVar7 = 0x475;
       }
+      /* ST_CALLSITE[0061D3D5]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
       st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,iVar7,&local_1c,0);
       iVar7 = st::machine_word_boundary_cast<int>(this_00->field_004F + 1);
       this_00->field_004F = iVar7;
       if (this_00->field_005F * 4 <= iVar7) {
+        /* ST_CALLSITE[0061D3EF]: CALL 0x00401046; direct=00401046 STLightC::sub_0061D6D0 */
         st::fn_00401046(this_00);
       }
       this_00->field_005B = st::machine_word_boundary_cast<int>(this_00->field_005B + 0x8fc);
+      /* ST_CALLSITE[0061D402]: CALL 0x004033e1; direct=004033E1 STLightC::sub_0061E4F0 */
       st::fn_004033E1(this_00);
       if (this_00->field_00A7 == '\0') {
         uVar5 = st::fn_00403CF1(this_00);
         this_00->field_00A7 = (char)uVar5;
       }
+      /* ST_CALLSITE[0061D429]: CALL 0x00401ce9; direct=00401CE9 STLightC::sub_0061F290 */
       iVar7 = st::fn_00401CE9(this_00,(uint)(byte)this_00->field_00A7);
       if (iVar7 == 0) goto LAB_0061d434;
     }
     else if (SVar3 == MESS_ID_CREATE) {
       puVar8 = (byte *)((message->arg0).ptr);
       if (puVar8[3] == 2) {
+        /* ST_CALLSITE[0061D26C]: CALL 0x00403305; direct=00403305 STLightC::sub_0061D8F0 */
         st::fn_00403305(local_8,st::pointer_boundary_cast<undefined4 *>(puVar8));
         pSVar10 = this_00 + 1;
         for (iVar7 = 0xb; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -139,6 +146,7 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
       local_8->field_003C = uVar1 >> 0x10 & 3;
       uVar5 = st::fn_00403CF1(local_8);
       this_00->field_00A7 = (char)uVar5;
+      /* ST_CALLSITE[0061D23E]: CALL 0x00405d6c; direct=00405D6C STLightC::LoadNextLight */
       iVar7 = st::fn_00405D6C(this_00);
       if (iVar7 != 0) {
         st::fn_00402BAD((RecoveredRecord_STLightC_0061DD40 *)this_00);
@@ -146,13 +154,16 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
         return 0;
       }
 LAB_0061d434:
+      /* ST_CALLSITE[0061D434]: CALL 0x00401046; direct=00401046 STLightC::sub_0061D6D0 */
       st::fn_00401046(this_00);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
   }
   else if (SVar3 == MESS_SHARED_010F) {
+    /* ST_CALLSITE[0061D482]: CALL 0x0040187a; direct=0040187A STLightC::sub_0061D710 */
     local_10 = st::fn_0040187A(local_8,(int *)&local_c);
+    /* ST_CALLSITE[0061D499]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
     st::fn_006AB060(&local_10);
   }
@@ -191,6 +202,7 @@ undefined4 __thiscall st::fn_0061DB80(STLightC *this)
     puVar3 = st::fn_00709AF0
                        (PTR_00806774,CASE_0,(&PTR_s_light01_007d0164)[local_c->field_003C],
                         0xffffffff,0,1,0,nullptr);
+    /* ST_CALLSITE[0061DBE3]: CALL 0x004050d3; direct=004050D3 STLightC::sub_0061D9C0 */
     st::fn_004050D3(this_00,puVar3,(int *)&local_8,0);
     puVar4 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this_00->field_0093 << 4)));
     this_00->field_0057 = puVar4;

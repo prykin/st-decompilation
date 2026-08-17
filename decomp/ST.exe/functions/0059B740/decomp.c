@@ -20,8 +20,10 @@ void __thiscall FSGSTy::CloseButtons(FSGSTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[0059B774]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
     MMObjTy::CloseButtons((MMObjTy *)local_8);
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
+    /* ST_CALLSITE[0059B788]: CALL 0x0040427d; direct=0040427D FSGSTy::DeleteCtrls */
     DeleteCtrls(this_00);
     this_00->field_0065 = CASE_4;
     this_00->array_00BC[0xc].field_01DF = 0;

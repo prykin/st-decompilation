@@ -72,7 +72,7 @@ uint * FUN_0043f7b0(byte param_1,int *param_2,uint *param_3,int param_4,int para
                  ((((iVar7 = piVar3[8], param_6 = piVar3, iVar7 == 0x14 || (iVar7 == 1000)) ||
                    (iVar7 == 0x3e9)) && (param_2 != piVar3)))) {
                 if (param_9 == 0) {
-                  bVar1 = *(byte *)(piVar3 + 9);
+                  bVar1 = ((byte *)piVar3)[9];
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == bVar5) {
 LAB_0043f9bd:
@@ -103,10 +103,12 @@ LAB_0043f9bd:
                              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
                   if (!bVar11) goto LAB_0043f9fa;
+                  /* ST_CALLSITE[0043F9D1]: CALL dword ptr [EAX + 0xf8] */
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 else {
+                  /* ST_CALLSITE[0043F9E2]: CALL dword ptr [EAX + 0xf8] */
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
@@ -119,7 +121,7 @@ LAB_0043f9fa:
               if (((piVar3 != nullptr) && (param_6 = piVar3, piVar3[8] == 0x1ae)) &&
                  (param_2 != piVar3)) {
                 if (param_9 == 0) {
-                  bVar1 = *(byte *)(piVar3 + 9);
+                  bVar1 = ((byte *)piVar3)[9];
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_8 = STReplaceLowByte((uint32_t)(param_8), (uint8_t)(bVar1));
                   if (DAT_00808a8f == '\0') {
@@ -152,10 +154,12 @@ LAB_0043fad9:
                              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
                   if (!bVar11) goto LAB_0043fb16;
+                  /* ST_CALLSITE[0043FAED]: CALL dword ptr [EAX + 0xf8] */
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 else {
+                  /* ST_CALLSITE[0043FAFE]: CALL dword ptr [EAX + 0xf8] */
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }

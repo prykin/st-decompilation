@@ -139,6 +139,7 @@ void __thiscall st::fn_00551B10(TradePanelTy *this)
       *(uint *)&this->field_0x2c = (uint)(ushort)(&this->field_01BC)[(byte)this->field_01D0];
       st::fn_006E6080(this,2,this->field_01C0,(undefined4 *)&this->field_0x18);
     }
+    /* ST_CALLSITE[00551B73]: CALL 0x0040578b; direct=0040578B TradePanelTy::sub_00551800 */
     st::fn_0040578B(this);
   }
   return;
@@ -158,8 +159,11 @@ undefined4 __thiscall st::fn_00552160(TradePanelTy *this,char param_1,char param
 
   uVar1 = 0;
   if ((this->field_0184 != param_1) &&
+     /* ST_CALLSITE[00552178]: CALL 0x00401e4c; direct=00401E4C SpecPanelTy::SetPanel */
      (uVar1 = st::fn_00401E4C((SpecPanelTy *)this,param_1), param_1 != '\0')) {
+    /* ST_CALLSITE[00552189]: CALL 0x00403d4b; direct=00403D4B TradePanelTy::SetModeControls */
     st::fn_00403D4B(this,param_2);
+    /* ST_CALLSITE[00552190]: CALL 0x0040391d; direct=0040391D TradePanelTy::PaintPanel */
     st::fn_0040391D(this);
   }
   return uVar1;

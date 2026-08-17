@@ -52,6 +52,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
     local_8 = local_8 + -1;
   } while (local_8 != 0);
   if ((STField<int>(this,0x5ac) == 0x32) || (STField<int>(this,0x5ac) == 0x5c)) {
+    /* ST_CALLSITE[004CF6A7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     uVar3 = LookupRecordByte(STField<char>(this,0x24));
     uVar3 = (int)(byte)uVar3;
     local_10 = (undefined *)(uVar3 + -1);
@@ -103,6 +104,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
              (iVar6 = thunk_FUN_004e6010(STField<int>(this,0x24),iVar7 + 0x41), iVar6 != 0)) {
             memset(local_5c, 0, 0x30); /* compiler bulk-zero initialization */
             local_5c[0] = iVar7;
+            /* ST_CALLSITE[004CF80A]: CALL 0x00401b59; direct=00401B59 TLOBaseTy::sub_004C9370 */
             local_5c[1] = TLOBaseTy::sub_004C9370(this,1,iVar7,-1);
             if ((STField<int>(this,0x361) == 1) && (STField<int>(this,0x369) == iVar7)) {
               local_5c[1] = local_5c[1] + STField<int>(this,0x36d);
@@ -115,6 +117,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
             thunk_FUN_004c7260(this,CASE_1,iVar7,&local_20,&local_18,&local_1c,&local_24);
             local_4e = (undefined2)local_20;
             local_52 = (undefined2)local_18;
+            /* ST_CALLSITE[004CF890]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
             bVar2 = LookupRecordByte(STField<char>(this,0x24));
             if (bVar2 == 3) {
               local_50 = (undefined2)local_24;
@@ -126,6 +129,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
             if (*local_14 != 0) {
               local_4c = (undefined2)*local_14;
             }
+            /* ST_CALLSITE[004CF8C8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
             local_53 = LookupRecordByte(STField<char>(this,0x24));
             if (local_54 == '\0') {
               thunk_FUN_004e6b40(STField<byte *>(this,0x24),iVar7,local_4a);

@@ -22,6 +22,7 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
     do {
       DArrayGetElement((DArrayTy *)this->field_0029,index,&param_1);
       if ((ushort)param_1 != 0xffff) {
+        /* ST_CALLSITE[004247F6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_00 = STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,this->field_0024,(ushort)param_1,CASE_1);
         if (this_00 == nullptr) {

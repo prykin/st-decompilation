@@ -17,6 +17,7 @@ void __thiscall FUN_00690450(void *this,short param_1,undefined4 param_2)
       if ((((bVar4) && (iVar2 = *(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c), iVar2 != 0))
           && (puVar1 = *(undefined4 **)(iVar2 + 4), puVar1 != nullptr)) &&
          ((STField<short>(puVar1,0x7b) == param_1 && (puVar1 != nullptr)))) {
+        /* ST_CALLSITE[00690497]: CALL dword ptr [EDX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)*puVar1)(param_2);
       }

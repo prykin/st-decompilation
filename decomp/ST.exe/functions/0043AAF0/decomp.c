@@ -55,7 +55,9 @@ STAllPlayersC::GetCamPoint
           DArrayGetElement(param_3,local_c,local_10);
           if (STPiece<0,2>(local_10) != 0xffff) {
             uVar6 = uVar6 + 1;
+            /* ST_CALLSITE[0043ABBD]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,STPiece<0,2>(local_10),CASE_1);
+            /* ST_CALLSITE[0043ABD0]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0
                       ((STFishC *)pSVar5,&param_1,(short *)&local_8,(short *)((int)&param_4 + 2));
             iVar8 = iVar8 + _param_1;
@@ -68,7 +70,9 @@ STAllPlayersC::GetCamPoint
           do {
             DArrayGetElement(param_3,local_c,local_10);
             if (STPiece<0,2>(local_10) != 0xffff) {
+              /* ST_CALLSITE[0043AC3D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,STPiece<0,2>(local_10),CASE_1);
+              /* ST_CALLSITE[0043AC52]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
               STFishC::sub_004162B0
                         ((STFishC *)pSVar5,&param_1,(short *)&local_8,(short *)((int)&param_4 + 2));
               iVar3 = FUN_006acf90((int)param_1,(int)(short)local_8,
@@ -124,7 +128,9 @@ LAB_0043acdb:
     if (_param_1 != 0x1b8) goto LAB_0043acdb;
     SVar11 = CASE_6;
   }
+  /* ST_CALLSITE[0043AD34]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,(ushort)param_4,SVar11);
+  /* ST_CALLSITE[0043AD49]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   STFishC::sub_004162B0((STFishC *)pSVar5,&param_1,(short *)&local_8,(short *)((int)&param_4 + 2));
   if (param_5 != nullptr) {
     *param_5 = (int)param_1;

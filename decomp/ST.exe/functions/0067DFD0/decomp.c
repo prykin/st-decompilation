@@ -29,6 +29,7 @@ uint * __cdecl CreateOpponentList(cMf32 *param_1,int param_2,uint param_3)
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x181);
     }
+    /* ST_CALLSITE[0067E031]: CALL 0x004015eb; direct=004015EB _CreateStgListByRoot */
     puVar2 = _CreateStgListByRoot(param_1,param_2,PTR_s_OPPONENT_0079d728,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;

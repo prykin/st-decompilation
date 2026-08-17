@@ -34,6 +34,7 @@ void __thiscall FUN_0068fa00(void *this,uint *param_1)
         local_2e = param_1;
         local_38[0] = 0x75;
         local_2f = 1;
+        /* ST_CALLSITE[0068FA68]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
         AiFltClassTy::GetAiMess(this_00,local_38);
         if ('\0' < local_30) {
           return;

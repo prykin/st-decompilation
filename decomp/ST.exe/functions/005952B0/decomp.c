@@ -39,6 +39,7 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
     g_currentExceptionFrame = &local_50;
     iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (iVar2 == 0) {
+      /* ST_CALLSITE[00595314]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
       MMMObjTy::OutRGlProc
                 (param_2,(int)param_1,param_2,param_3,param_4,param_5,param_6,param_7,
                  &g_startSystem_0081176C->field_0140);
@@ -48,6 +49,7 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
       uVar6 = 0xffffffff;
       uVar5 = 0;
       pcVar2 = LoadResourceString(0x256f,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0059534E]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
                 (this_00,0,iVar4,param_5 + 10,param_6 + -0x14,0x14,pcVar2,uVar5,uVar6,pcVar7,uVar8);
       FUN_006c6850((int)param_1,iVar4,param_5 + 0x1e,param_6 + -0x14,0x8e,
@@ -57,6 +59,7 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
       uVar6 = 0xffffffff;
       uVar5 = 0;
       pcVar2 = LoadResourceString(0x256b,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[005953AF]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
                 (this_01,0,iVar4,param_5 + 0xb4,param_6 + -0x14,0x14,pcVar2,uVar5,uVar6,pcVar7,uVar8
                 );
@@ -67,6 +70,7 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
       uVar6 = 0xffffffff;
       uVar5 = 0;
       pcVar2 = LoadResourceString(0x256c,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[00595410]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
                 (this_02,0,iVar4,param_5 + 0xe1,param_6 + -0x14,0x14,pcVar2,uVar5,uVar6,pcVar7,uVar8
                 );
@@ -79,6 +83,7 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
       uVar6 = 0xffffffff;
       uVar5 = 0;
       pcVar2 = LoadResourceString(0x256d,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[00595481]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
                 ((StartServTy *)(param_5 + 0x11a),0,iVar4,param_5 + 0x11a,(int)(local_8 + -10),0x14,
                  pcVar2,uVar5,uVar6,pcVar7,uVar8);

@@ -67,6 +67,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
         do {
           DArrayGetElement(array,uVar5,&param_2);
           if (((ushort)param_2 != 0xffff) &&
+             /* ST_CALLSITE[0042E0C6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
              (pSVar6 = GetObjPtr(this,DAT_0080874d,(ushort)param_2,CASE_1),
              (*(byte *)&pSVar6->field_01D1 & 4) == 0)) {
             local_c = 1;

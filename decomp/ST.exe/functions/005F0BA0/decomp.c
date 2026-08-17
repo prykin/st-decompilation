@@ -12,6 +12,7 @@ undefined4 __fastcall FUN_005f0ba0(AnonShape_005F0BA0_C8D654C5 *param_1)
   if (g_playSystem_00802A38->field_00E4 % 5 == 0) {
     this = &param_1->field_0x1d5;
     if (param_1->field_02B5 == 1) {
+      /* ST_CALLSITE[005F0BEB]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
       STT3DSprC::sub_004ACE30
                 ((STT3DSprC *)this,PTR_00806724->entries[param_1->field_02D2],
                  (int)PTR_00806724->field_002C);
@@ -21,17 +22,20 @@ undefined4 __fastcall FUN_005f0ba0(AnonShape_005F0BA0_C8D654C5 *param_1)
         cVar1 = thunk_FUN_004ad610((int)this);
         if (cVar1 != '\0') {
           thunk_FUN_005ef5f0((int)param_1);
+          /* ST_CALLSITE[005F0C27]: CALL dword ptr [EDX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)**(undefined4 **)this)();
         }
       }
       if ((int)param_1->field_02D2 < 0) {
         param_1->field_02D2 = 0;
+        /* ST_CALLSITE[005F0C4B]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
         STT3DSprC::sub_004ACE30((STT3DSprC *)this,0,(int)PTR_00806724->field_002C);
         return 1;
       }
     }
     else {
+      /* ST_CALLSITE[005F0C59]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
       STT3DSprC::sub_004ACE30
                 ((STT3DSprC *)this,PTR_00806724->entries[param_1->field_02D2],
                  (int)PTR_00806724->field_002C);

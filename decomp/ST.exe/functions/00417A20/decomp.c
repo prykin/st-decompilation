@@ -19,6 +19,7 @@ undefined4 __thiscall FUN_00417a20(void *this,short param_1,short param_2,short 
     STField<short>(this,0x43) = param_2 * 0xc9 + 100;
     STField<short>(this,0x45) = param_3 * 200 + 100;
     if (param_4 == 1) {
+      /* ST_CALLSITE[00417AC1]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
       uVar1 = DumpClassC::WritePtr(param_1,param_2,param_3,STField<byte>(this,0x8e),this);
       return uVar1;
     }
@@ -41,22 +42,26 @@ undefined4 __thiscall FUN_00417a20(void *this,short param_1,short param_2,short 
     STField<short>(this,0x43) = param_2 * 0xc9 + 100;
     STField<short>(this,0x45) = param_3 * 200 + 100;
     if (param_4 == 1) {
+      /* ST_CALLSITE[00417BD6]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
       iVar2 = DumpClassC::WritePtr(param_1,param_2,param_3,STField<byte>(this,0x8e),this);
       if (iVar2 != 0) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[00417C0C]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
       iVar2 = DumpClassC::WritePtr
                         (STField<short>(this,0x47) + 1,STField<short>(this,0x49),
                          STField<short>(this,0x4b),STField<byte>(this,0x8e),this);
       if (iVar2 != 0) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[00417C42]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
       iVar2 = DumpClassC::WritePtr
                         (STField<short>(this,0x47),STField<short>(this,0x49) + 1,
                          STField<short>(this,0x4b),STField<byte>(this,0x8e),this);
       if (iVar2 != 0) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[00417C7A]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
       uVar1 = DumpClassC::WritePtr
                         (STField<short>(this,0x47) + 1,STField<short>(this,0x49) + 1,
                          STField<short>(this,0x4b),STField<byte>(this,0x8e),this);

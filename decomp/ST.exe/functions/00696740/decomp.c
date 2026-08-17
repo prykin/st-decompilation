@@ -21,6 +21,7 @@ void __thiscall CGenerate::sub_00696740(CGenerate *this,int param_1)
     uVar2 = 0;
     if (0 < (int)dVar1) {
       do {
+        /* ST_CALLSITE[00696762]: CALL 0x00404007; direct=00404007 CGenerate::sub_006964F0 */
         sub_006964F0(this,uVar2,param_1);
         uVar2 = uVar2 + 1;
       } while ((int)uVar2 < (int)dVar1);

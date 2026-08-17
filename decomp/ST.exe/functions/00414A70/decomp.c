@@ -194,7 +194,7 @@ cf_break_loop_00414E8A:
       iVar1 = iVar1 + 0x18;
     } while (iVar10 < DAT_007f4d44);
   }
-  *(undefined1 *)(local_1c + 1) = 0x7f;
+  ((undefined1 *)local_1c)[1] = 0x7f;
   STField<undefined1>(local_1c,5) = 0x7f;
   STField<undefined1>(local_1c,6) = 0x7f;
   STField<undefined1>(local_1c,7) = 0xff;

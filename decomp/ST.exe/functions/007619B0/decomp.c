@@ -14,8 +14,10 @@ int __cdecl FID_conflict__remove(char *_Filename)
   int iVar2;
   undefined4 local_8;
 
+  /* ST_CALLSITE[007619B8]: CALL dword ptr [0x0085bce8] */
   BVar1 = DeleteFileA(_Filename);
   if (BVar1 == 0) {
+    /* ST_CALLSITE[007619C2]: CALL dword ptr [0x0085bbcc] */
     local_8 = GetLastError();
   }
   else {

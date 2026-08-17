@@ -98,6 +98,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       iVar9 = pSVar7->field_0046;
       iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+          /* ST_CALLSITE[00629AE8]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar11,
                       &local_14,&local_10), (int)local_c < 0)) || (4 < (int)local_c)) {

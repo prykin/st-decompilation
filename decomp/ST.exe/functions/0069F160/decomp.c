@@ -81,6 +81,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
   *(int *)((int)auStack_c8 + iVar2 + iVar1 + 4) = param_3 + 1;
   *(undefined1 **)((int)auStack_c8 + iVar2 + iVar1 + -0xc0 + 0xc0) = &stack0xffffff40 + iVar1;
   *(undefined4 *)((int)auStack_d0 + iVar2 + iVar1 + 4) = 0x69f21d;
+  /* ST_CALLSITE[0069F218]: CALL 0x00405d0d; direct=00405D0D CGenerate::sub_0069ADA0 */
   CGenerate::sub_0069ADA0
             (this,*(int *)((int)auStack_c8 + iVar2 + iVar1 + -0xc0 + 0xc0),
              *(int *)((int)auStack_c8 + iVar2 + iVar1 + 4));
@@ -95,6 +96,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
   }
   *(int *)((int)auStack_c8 + iVar2 + iVar1 + -0xc0 + 0xc4) = param_1;
   *(undefined4 *)((int)auStack_c8 + iVar2 + iVar1) = 0x69f241;
+  /* ST_CALLSITE[0069F23C]: CALL 0x0040564b; direct=0040564B CGenerate::sub_006948E0 */
   CGenerate::sub_006948E0(this,*(int *)((int)auStack_c8 + iVar2 + iVar1 + -0xc0 + 0xc4));
   *(undefined4 *)((int)auStack_c8 + iVar2 + iVar1 + 4) = 0x69f246;
   _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
@@ -117,6 +119,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
                 *(int **)((int)auStack_c8 + iVar2 + iVar1 + 4) = local_54;
                 *(int *)((int)auStack_c8 + iVar2 + iVar1 + -0xc0 + 0xc0) = iVar15;
                 *(undefined4 *)((int)auStack_d0 + iVar2 + iVar1 + 4) = 0x69f2b9;
+                /* ST_CALLSITE[0069F2B4]: CALL 0x0040208b; direct=0040208B CGenerate::sub_00696400 */
                 iVar5_mg0 = CGenerate::sub_00696400
                                       (this,*(int *)((int)auStack_c8 + iVar2 + iVar1 + -0xc0 + 0xc0)
                                        ,*(int *)((int)auStack_c8 + iVar2 + iVar1 + 4));

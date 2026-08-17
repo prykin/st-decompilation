@@ -14,6 +14,7 @@ uint __thiscall TLOBaseTy::sub_004B98E0(TLOBaseTy *this,int param_1)
 {
   if (this->field_0255 != 0) {
     this->field_0259 = param_1;
+    /* ST_CALLSITE[004B98F8]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     RotateSpr(this,1);
   }
   return 0;

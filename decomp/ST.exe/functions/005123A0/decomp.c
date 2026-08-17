@@ -170,6 +170,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_98 = 0x8166;
     local_60 = 1;
     local_5c = 1;
+    /* ST_CALLSITE[005126BE]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,7,&this_00->field_019C,nullptr,local_520,0);
     iVar5 = this_00->field_019C;

@@ -85,6 +85,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
                  (ushort *)pAVar4);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar5,0xffffffff,200,0x1dc);
     FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar5);
+    /* ST_CALLSITE[005CBE8B]: CALL 0x004023a6; direct=004023A6 SettMapMTy::sub_005C29B0 */
     sub_005C29B0(this_00,param_1);
     if (((((param_1 == '\r') || (param_1 == '\x0e')) || (param_1 == '\x0f')) || (param_1 == '\x10'))
        && (this_00->field_1E27 == 0x11)) {
@@ -128,6 +129,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
         bVar10 = 0x10;
         iVar9 = 1;
         iVar13 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
+        /* ST_CALLSITE[005CBFE9]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
         uVar9 = HoloTy::Init(this_00->field_21F8,CASE_1,200,0x1f1,iVar13,iVar9,bVar10,cVar11,uVar8);
         if (uVar9 != 0) {
           pHVar6 = this_00->field_21F8;

@@ -51,9 +51,11 @@ int __thiscall FUN_004de4f0(void *this,int param_1)
             puVar8 = &local_24;
             piVar6 = &local_c;
             piVar7 = &param_1;
+            /* ST_CALLSITE[004DE57B]: CALL dword ptr [EAX + 0x2c] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             SVar1 = (**(code **)(*local_8 + 0x2c))();
             uStackY_1ac = 0x4de587;
+            /* ST_CALLSITE[004DE582]: CALL 0x00403995; direct=00403995 STAllPlayersC::GetBoatWeaponInfo */
             iVar2 = STAllPlayersC::GetBoatWeaponInfo(SVar1,piVar7,piVar6,puVar8);
             if (iVar2 == 1) {
 LAB_004de602:
@@ -67,19 +69,24 @@ LAB_004de602:
             }
           }
           else if (local_8[8] == 1000) {
+            /* ST_CALLSITE[004DE5A1]: CALL dword ptr [EDX + 0x2c] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar2 = (**(code **)(*local_8 + 0x2c))();
             if (*(int *)(&DAT_007926b0 + iVar2 * 4) != 0) {
+              /* ST_CALLSITE[004DE5B2]: CALL dword ptr [EAX + 0x2c] */
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar2 = (**(code **)(*local_8 + 0x2c))();
               if (*(int *)(&DAT_00793c98 + iVar2 * 8) == 1) {
+                /* ST_CALLSITE[004DE5C4]: CALL dword ptr [EDX + 0x2c] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar2 = (**(code **)(*local_8 + 0x2c))();
                 iVar9 = 0;
                 param_1 = (&DAT_00792ca0)[(iVar2 + -0x32) * 6];
+                /* ST_CALLSITE[004DE5DD]: CALL dword ptr [EDX + 0x2c] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar2 = (**(code **)(*local_8 + 0x2c))();
                 local_c = thunk_FUN_004e8230(iVar3,iVar2 + -0x32,iVar9);
+                /* ST_CALLSITE[004DE5F5]: CALL dword ptr [EAX + 0x2c] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar2 = (**(code **)(*local_8 + 0x2c))();
                 local_24 = *(undefined4 *)(&DAT_00793ea8 + iVar2 * 8);

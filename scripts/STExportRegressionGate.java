@@ -119,6 +119,10 @@ public class STExportRegressionGate extends GhidraScript {
         add(now.failedBodies == 0 ? "info" : "error", "decompile_failures", 0,
             now.failedBodies, now.failedBodies == 0 ? "ok" : "regressed",
             "Every body_exported function must have decompile_status=ok");
+        long hardTextBlockers = now.number("hard_text_blocker_occurrences");
+        add(hardTextBlockers == 0 ? "info" : "error", "hard_text_blockers", 0,
+            hardTextBlockers, hardTextBlockers == 0 ? "ok" : "compile_regression",
+            "Every exported body must be independently representable with its declared runtime include");
         long enumCompositions = now.quality.getOrDefault(
             "generated_enum_bitwise_composition", 0L);
         add(enumCompositions == 0 ? "info" : "error",
@@ -126,6 +130,15 @@ public class STExportRegressionGate extends GhidraScript {
             enumCompositions == 0 ? "ok" : "quality_debt",
             "Strict internal invariant, not a baseline delta: generated enum " +
                 "CASE_*|CASE_* compositions must be repaired before export");
+        for (String kind : List.of("degraded_exact_indirect_call",
+                "excessive_pointer_depth", "nullptr_deduced_local",
+                "nullptr_switch_case", "roundtrip_call_presentation_failure")) {
+            long occurrences = now.quality.getOrDefault(kind, 0L);
+            add(occurrences == 0 ? "info" : "error", kind, 0, occurrences,
+                occurrences == 0 ? "ok" : "readability_regression",
+                "Strict readability invariant: " + kind +
+                    " must remain absent from every accepted body");
+        }
         add(now.untypedTaggedMessageSlots.isEmpty() ? "info" : "error",
             "tagged_message_vtable_slot_untyped", 0,
             now.untypedTaggedMessageSlots.size(),
@@ -267,6 +280,66 @@ public class STExportRegressionGate extends GhidraScript {
                     qualityDeltaSample(before, now, kind));
             }
         }
+        comparePerFunctionReadability(before, now);
+    }
+
+    /**
+     * Aggregate counts can hide churn: one badly degraded function may be offset by an
+     * unrelated improvement elsewhere.  For machine/structure spellings whose increase is
+     * never a readability improvement, reject every positive delta in an already exported
+     * function.  New detector kinds establish their baseline once; newly claimed functions
+     * are handled by the existing coverage-transition policy.
+     */
+    private void comparePerFunctionReadability(CorpusMetrics before, CorpusMetrics now) {
+        // The historical snapshot contains only pseudocode_idioms.jsonl.  Its
+        // suppression rules are intentionally narrower than the recursive
+        // decomp_quality_issues.jsonl inventory, so comparing the two sources
+        // address-by-address would manufacture a regression.  Establish the
+        // broad address-stable baseline once; every following accepted export
+        // has the same detector/source on both sides.
+        if (!before.hasBroadQualityDetails) {
+            add("info", "readability_by_function", 0,
+                now.qualityByFunction.values().stream()
+                    .flatMap(values -> values.values().stream())
+                    .mapToLong(Long::longValue).sum(),
+                "baseline_created", "Previous corpus predates the recursive " +
+                    "per-function quality snapshot; subsequent exports use the " +
+                    "address-exact nonincreasing policy");
+            return;
+        }
+        for (String kind : List.of("raw_indirect_call", "unresolved_register_input",
+                "return_width_artifact", "raw_pointer_offset",
+                "generic_undefined_declaration", "canonical_casted_call_result",
+                "explicit_typed_vtable_dispatch", "degraded_exact_indirect_call",
+                "excessive_pointer_depth", "nullptr_deduced_local",
+                "nullptr_switch_case")) {
+            Map<String, Long> left = before.qualityByFunction.get(kind);
+            Map<String, Long> right = now.qualityByFunction.get(kind);
+            if (right == null || right.isEmpty()) continue;
+            if (left == null && !before.quality.containsKey(kind)) {
+                add("info", "readability_by_function:" + kind, 0,
+                    right.values().stream().mapToLong(Long::longValue).sum(),
+                    "baseline_created", "New readability detector; subsequent exports " +
+                        "use an address-exact nonincreasing policy");
+                continue;
+            }
+            Set<String> increases = new TreeSet<>();
+            long beforeTotal = left == null ? 0 :
+                left.values().stream().mapToLong(Long::longValue).sum();
+            long afterTotal = right.values().stream().mapToLong(Long::longValue).sum();
+            for (Map.Entry<String, Long> entry : right.entrySet()) {
+                if (!before.names.containsKey(entry.getKey())) continue;
+                long oldValue = left == null ? 0 : left.getOrDefault(entry.getKey(), 0L);
+                if (entry.getValue() > oldValue)
+                    increases.add(entry.getKey() + " " + oldValue + "->" + entry.getValue());
+            }
+            add(increases.isEmpty() ? "info" : "error",
+                "readability_by_function:" + kind, beforeTotal, afterTotal,
+                increases.isEmpty() ? afterTotal < beforeTotal ? "improved" : "ok" :
+                    "regressed", increases.isEmpty() ?
+                    "policy=per-address nonincreasing; cross-function compensation forbidden" :
+                    "Existing functions degraded: " + sample(increases));
+        }
     }
 
     private void compareNondecreasing(String name, long before, long after) {
@@ -305,9 +378,23 @@ public class STExportRegressionGate extends GhidraScript {
             while (matcher.find())
                 result.quality.put(matcher.group(1), Long.parseLong(matcher.group(2)));
         }
-        Path idioms = regressionArtifact(root, "pseudocode_idioms.jsonl",
-            "pseudocode_idioms.snapshot");
-        if (Files.isRegularFile(idioms)) readQualityByFunction(idioms, result);
+        Path compileReadiness = root.resolve("compile_readiness_summary.json");
+        if (Files.isRegularFile(compileReadiness)) {
+            String text = Files.readString(compileReadiness, StandardCharsets.UTF_8);
+            result.numbers.put("hard_text_blocker_occurrences",
+                jsonLongOrDefault(text, "hard_text_blocker_occurrences", 0));
+        }
+        Path broadQuality = regressionArtifact(root, "decomp_quality_issues.jsonl",
+            "decomp_quality_issues.snapshot");
+        if (Files.isRegularFile(broadQuality)) {
+            result.hasBroadQualityDetails = true;
+            readQualityByFunction(broadQuality, result);
+        }
+        else {
+            Path idioms = regressionArtifact(root, "pseudocode_idioms.jsonl",
+                "pseudocode_idioms.snapshot");
+            if (Files.isRegularFile(idioms)) readQualityByFunction(idioms, result);
+        }
         return result;
     }
 
@@ -532,7 +619,10 @@ public class STExportRegressionGate extends GhidraScript {
 
     private String qualityPolicy(String kind) {
         return switch (kind) {
-            case "generated_enum_bitwise_composition" -> "strict_zero";
+            case "generated_enum_bitwise_composition", "degraded_exact_indirect_call",
+                 "excessive_pointer_depth", "nullptr_deduced_local",
+                 "nullptr_switch_case", "roundtrip_call_presentation_failure" ->
+                "strict_zero";
             case "generic_field_name", "casted_generic_field", "anonymous_shape_type",
                  "generic_data_symbol" -> "stage_transition";
             case "control_flow_label" -> "informational";
@@ -687,6 +777,7 @@ public class STExportRegressionGate extends GhidraScript {
         long typedVtableSlots;
         long voidVtableSlots;
         long dispatchVtables;
+        boolean hasBroadQualityDetails;
         long number(String name) { return numbers.getOrDefault(name, 0L); }
     }
 

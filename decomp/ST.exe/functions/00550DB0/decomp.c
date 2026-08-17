@@ -93,8 +93,10 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     uVar15 = 3;
     iVar14 = 0x40;
     pCVar4 = thunk_FUN_00571240("BKG_TRADECENTERW",0);
+    /* ST_CALLSITE[00550E56]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar4,iVar14,uVar15,iVar16,iVar18,UVar19,iVar9,uVar22);
+    /* ST_CALLSITE[00550E6D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
     pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
     uVar11 = 1;
     this_00->field_01DD = pcVar5;
@@ -151,6 +153,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_24 = 1;
     local_20 = 1;
     local_44 = local_64;
+    /* ST_CALLSITE[00550FCC]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C4,nullptr,local_74,0);
     local_e8 = this_00->field_0008;
@@ -198,6 +201,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_c4 = 1;
     local_c0 = 0x14;
     local_bc = 10;
+    /* ST_CALLSITE[0055111A]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,4,puVar3,nullptr,local_490,0);
     puVar1 = &this_00->field_0x18;

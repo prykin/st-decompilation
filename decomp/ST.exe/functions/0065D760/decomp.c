@@ -51,6 +51,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
     return;
   }
   if (g_allPlayers_007FA174 != nullptr) {
+    /* ST_CALLSITE[0065D7C0]: CALL dword ptr [EAX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar7 = (**(code **)(*(int *)objPtr + 0x2c))();
     if ((iVar7 < 0x32) || (0x73 < iVar7)) {
@@ -61,12 +62,14 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (((bVar2) && (pAVar3->field_007B != 1)) ||
+       /* ST_CALLSITE[0065D7E5]: CALL dword ptr [EDX + 0x2c] */
        (iVar7 = (**(code **)(*(int *)objPtr + 0x2c))(), iVar7 == 0x78)) {
       RaiseInternalException
                 (-100,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x9b);
     }
     array = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
     Library::DKW::TBL::DArrayAppend(array,(void *)(objPtr + 0x32));
+    /* ST_CALLSITE[0065D821]: CALL dword ptr [EDX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar7 = (**(code **)(*(int *)objPtr + 0x2c))();
     if ((iVar7 < 1) || (0x28 < iVar7)) {
@@ -84,6 +87,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
       }
       *(undefined2 *)(objPtr + 0x81c) = uVar4;
     }
+    /* ST_CALLSITE[0065D868]: CALL 0x0040178f; direct=0040178F STAllPlayersC::AddObjsToGroup */
     STAllPlayersC::AddObjsToGroup
               (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,pAVar3->field_007D,array,
                nullptr);

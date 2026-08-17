@@ -1,4 +1,4 @@
-FUN_0064cc90:
+AiEventClassTy::AiEventClassTy:
 0064CC90  56                        PUSH ESI
 0064CC91  8B F1                     MOV ESI,ECX
 0064CC93  85 F6                     TEST ESI,ESI

@@ -58,6 +58,7 @@ void FUN_006cfbe0(uint *param_1)
             do {
               if (*piVar2 != 0) {
                 local_88 = 6;
+                /* ST_CALLSITE[006CFCD9]: CALL dword ptr [ECX + 0x58] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar1 = (**(code **)(*(int *)*piVar2 + 0x58))((int *)*piVar2,&local_8c);
                 if (iVar1 != 0) {

@@ -31,6 +31,7 @@ STPlaySystemC::CreateGameObject
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xef);
     }
+    /* ST_CALLSITE[0054CC95]: CALL dword ptr [EAX + 0x8] */
     iVar4 = this_00->vfunc_08(local_8[0],(undefined2)param_2,(undefined2)param_3,
                        (undefined2)param_4,(undefined2)param_5);
     if (iVar4 != 0) {

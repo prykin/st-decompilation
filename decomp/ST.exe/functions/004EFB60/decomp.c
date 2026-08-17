@@ -35,6 +35,7 @@ void __thiscall BldLabPanelTy::InitBldLabPanel(BldLabPanelTy *this)
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806794,CASE_B,"OBJSD",0xffffffff,0,1,0,nullptr);
     this_00->field_018C = puVar3;
+    /* ST_CALLSITE[004EFC57]: CALL 0x00404241; direct=00404241 ProdPanelTy::InitProdPanel */
     ProdPanelTy::InitProdPanel
               ((ProdPanelTy *)this_00,0x2726,0x3f,2,0xc1,0xc,0x81,99,100,0xc0,99,0x25,0x14,0x31,
                "OBJS_0");

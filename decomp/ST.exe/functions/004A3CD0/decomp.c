@@ -61,6 +61,7 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
       do {
         DArrayGetElement(param_3,uVar9,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
+          /* ST_CALLSITE[004A3D99]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar4 = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar3->field_0024,STPiece<0,2>(local_8),CASE_1);
           if (pSVar4 == nullptr) {
@@ -73,9 +74,11 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x1192);
           }
+          /* ST_CALLSITE[004A3DE5]: CALL dword ptr [EDX + 0x2c] */
           iVar6 = pSVar4->vfunc_2C();
           pDVar8 = local_c;
           if (((iVar6 != 9) &&
+              /* ST_CALLSITE[004A3DF1]: CALL dword ptr [EAX + 0x2c] */
               (iVar6 = pSVar4->vfunc_2C(), pDVar8 = local_c, iVar6 != 0x15)) &&
              (local_EAX_299 = thunk_FUN_00486b40(pSVar4), pDVar8 = local_c, local_EAX_299 != 0)) {
             pDVar8 = local_20;
@@ -92,8 +95,10 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
         do {
           DArrayGetElement(local_c,uVar9,local_8);
           pSVar7 = (STBoatC *)
+                   /* ST_CALLSITE[004A3E62]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar3->field_0024,STPiece<0,2>(local_8),CASE_1);
+          /* ST_CALLSITE[004A3E6F]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
           STBoatC::CmdToObj(pSVar7,CASE_3,&local_10);
           uVar9 = uVar9 + 1;
         } while ((int)uVar9 < (int)dVar1);
@@ -108,6 +113,7 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
                  0x11a6);
     }
     pDVar8 = (DArrayTy *)
+             /* ST_CALLSITE[004A3ECB]: CALL 0x004024fa; direct=004024FA STAllPlayersC::_AssignDocks */
              STAllPlayersC::_AssignDocks(g_allPlayers_007FA174,pSVar3->field_0024,param_2,local_20);
     local_28 = pDVar8;
     if (pDVar8 == nullptr) {
@@ -124,26 +130,35 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
         DArrayGetElement(pDVar8,uVar9,&local_38);
         if (uStack_36 == 0xffff) {
           pSVar7 = (STBoatC *)
+                   /* ST_CALLSITE[004A3F3B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar3->field_0024,local_38,CASE_1);
+          /* ST_CALLSITE[004A3F48]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
           STBoatC::CmdToObj(pSVar7,CASE_3,&local_10);
         }
         else if (param_1 == 1) {
+          /* ST_CALLSITE[004A3F67]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar4 = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar3->field_0024,uStack_36,CASE_1);
+          /* ST_CALLSITE[004A3F7A]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)pSVar4,local_1c,local_18,local_14);
           local_40 = local_1c[0];
           local_3e = local_18[0];
           local_3c = local_14[0];
           pSVar7 = (STBoatC *)
+                   /* ST_CALLSITE[004A3FA7]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar3->field_0024,local_38,CASE_1);
+          /* ST_CALLSITE[004A3FB4]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
           STBoatC::CmdToObj(pSVar7,CASE_4,&local_44);
         }
         else {
+          /* ST_CALLSITE[004A3FC5]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar4 = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar3->field_0024,uStack_36,CASE_1);
+          /* ST_CALLSITE[004A3FD8]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)pSVar4,local_1c,local_18,local_14);
+          /* ST_CALLSITE[004A3FED]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar4 = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar3->field_0024,local_38,CASE_1);
           thunk_FUN_00490a00(pSVar4,local_1c[0],local_18[0],local_14[0]);
@@ -157,8 +172,10 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
       do {
         DArrayGetElement(local_c,uVar9,local_8);
         pSVar7 = (STBoatC *)
+                 /* ST_CALLSITE[004A4042]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,pSVar3->field_0024,STPiece<0,2>(local_8),CASE_1);
+        /* ST_CALLSITE[004A404F]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
         STBoatC::CmdToObj(pSVar7,CASE_3,&local_10);
         uVar9 = uVar9 + 1;
         pDVar8 = local_28;

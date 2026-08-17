@@ -64,7 +64,9 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   local_6c[2] = 0x4f;
   local_6c[3] = 0x5e;
   local_5c = this;
+  /* ST_CALLSITE[0044233C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   local_44 = GetObjPtr(this,param_1,(ushort)param_2,CASE_1);
+  /* ST_CALLSITE[00442348]: CALL dword ptr [EDX + 0x2c] */
   local_58 = local_44->vfunc_2C();
   local_10 = 0;
   local_d4.previous = g_currentExceptionFrame;
@@ -99,6 +101,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   pSVar3 = local_44;
   pSVar2 = local_5c;
   if ((local_58 == 0x3b) || (local_58 == 0x60)) {
+    /* ST_CALLSITE[004426A4]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0((STFishC *)local_44,&local_38,&local_36,&local_34);
     local_32 = pSVar3->field_0032;
     uVar7 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
@@ -121,6 +124,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
     if (0 < iVar5) {
       do {
         iVar5 = local_14 * 4;
+        /* ST_CALLSITE[00442747]: CALL 0x00401415; direct=00401415 STAllPlayersC::GetTOBJList */
         local_c = (DArrayTy *)GetTOBJList(pSVar2,param_1,local_6c[local_14],0,-1);
         local_48 = local_c->count;
         if (local_48 != 0) {
@@ -129,10 +133,13 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
           if (0 < (int)local_48) {
             do {
               DArrayGetElement(local_c,local_18,local_1c);
+              /* ST_CALLSITE[0044279F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar4_mg1 = GetObjPtr(pSVar2,param_1,STPiece<0,2>(local_1c),CASE_1);
               local_44 = pSVar4_mg1;
+              /* ST_CALLSITE[004427B1]: CALL dword ptr [EDX + 0x88] */
               iVar5 = (*pSVar4_mg1->vtable->vfunc_88)(local_54);
               if (0 < iVar5) {
+                /* ST_CALLSITE[004427CD]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 STFishC::sub_004162B0((STFishC *)pSVar4_mg1,&local_40,&local_3e,&local_3c);
                 local_3a = pSVar4_mg1->field_0032;
                 local_30 = (int)g_pathingScratchGrid.cells
@@ -183,6 +190,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
       do {
         iVar5 = local_14;
         if (SVar13 == local_6c[local_14]) {
+          /* ST_CALLSITE[00442404]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           bVar4 = LookupRecordByte(param_1);
           if (bVar4 == 3) {
             SVar14 = 0x60;
@@ -190,10 +198,12 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
           else {
             SVar14 = 0x3b;
           }
+          /* ST_CALLSITE[00442421]: CALL 0x00401415; direct=00401415 STAllPlayersC::GetTOBJList */
           local_c = (DArrayTy *)GetTOBJList(pSVar2,param_1,SVar14,0,-1);
           pSVar3 = local_44;
           local_48 = local_c->count;
           if (local_48 != 0) {
+            /* ST_CALLSITE[00442448]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0((STFishC *)local_44,&local_40,&local_3e,&local_3c);
             local_3a = pSVar3->field_0032;
             uVar7 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
@@ -219,8 +229,10 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
             if (0 < (int)local_48) {
               do {
                 DArrayGetElement(local_c,local_18,local_1c);
+                /* ST_CALLSITE[00442517]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 pSVar4_mg3 = GetObjPtr(pSVar2,param_1,STPiece<0,2>(local_1c),CASE_1);
                 local_44 = pSVar4_mg3;
+                /* ST_CALLSITE[0044252F]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 STFishC::sub_004162B0((STFishC *)pSVar4_mg3,&local_38,&local_36,&local_34);
                 local_32 = pSVar4_mg3->field_0032;
                 local_30 = (int)g_pathingScratchGrid.cells

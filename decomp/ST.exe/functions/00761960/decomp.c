@@ -8,8 +8,10 @@ undefined4 __cdecl FUN_00761960(LPCSTR param_1,LPCSTR param_2)
   undefined4 uVar2;
   undefined4 local_8;
 
+  /* ST_CALLSITE[0076196C]: CALL dword ptr [0x0085bc8c] */
   BVar1 = MoveFileA(param_1,param_2);
   if (BVar1 == 0) {
+    /* ST_CALLSITE[00761976]: CALL dword ptr [0x0085bbcc] */
     local_8 = GetLastError();
   }
   else {

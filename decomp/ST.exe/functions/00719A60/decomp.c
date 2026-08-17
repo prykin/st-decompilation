@@ -18,6 +18,7 @@ undefined4 __cdecl FUN_00719a60(DWORD_PTR dwParam2,byte param_2,MCIDEVICEID *par
   local_10 = dwParam2;
   local_c = (uint)param_2;
   local_8 = (uint)(byte)(param_2 + 1);
+  /* ST_CALLSITE[00719AAF]: CALL dword ptr [0x0085bec0] */
   mcierr = mciSendCommandA(*param_3,0x806,0xd,(DWORD_PTR)&local_10);
   if (mcierr != 0) {
     FUN_00719c90(mcierr,param_3);

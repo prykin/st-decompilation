@@ -23,11 +23,13 @@ void __thiscall CGenerate::sub_00696810(CGenerate *this)
   int local_8;
 
   uVar4 = 0xffffffff;
+  /* ST_CALLSITE[00696825]: CALL 0x0040564b; direct=0040564B CGenerate::sub_006948E0 */
   sub_006948E0(this,this->field_5833);
   local_c = 0;
   if (0 < (int)this->field_582F) {
     do {
       iVar3 = local_c;
+      /* ST_CALLSITE[00696844]: CALL 0x0040208b; direct=0040208B CGenerate::sub_00696400 */
       local_14 = sub_00696400(this,local_c,(int)local_38);
       pbVar1 = this->field_584B + iVar3;
       local_10 = (uint)*pbVar1;
@@ -50,11 +52,13 @@ void __thiscall CGenerate::sub_00696810(CGenerate *this)
         uVar6 = 0;
         iVar5 = 0;
         uVar4 = Library::MSVCRT::FUN_0072e6c0();
+        /* ST_CALLSITE[006968C4]: CALL 0x00401a7d; direct=00401A7D CGenerate::sub_00695C10 */
         uVar4 = sub_00695C10(this,local_10,(int)uVar4 % this->field_5847 + 1,iVar5,uVar6,uVar7);
         if (-1 < (int)uVar4) goto LAB_006968cf;
       }
       else {
 LAB_006968cf:
+        /* ST_CALLSITE[006968D5]: CALL 0x00404156; direct=00404156 CGenerate::sub_00695F70 */
         sub_00695F70(this,uVar4,iVar3,0);
       }
       local_c = iVar3 + 1;

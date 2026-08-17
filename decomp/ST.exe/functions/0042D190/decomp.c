@@ -36,8 +36,11 @@ LAB_0042d1f8:
       do {
         DArrayGetElement(param_3,index,&param_4);
         if ((((ushort)param_4 != 0xffff) &&
+            /* ST_CALLSITE[0042D22B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             (pSVar3 = GetObjPtr(this,objPtr,(ushort)param_4,CASE_1), pSVar3 != nullptr))
+           /* ST_CALLSITE[0042D23C]: CALL dword ptr [EAX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
            && ((*pSVar3->vtable[1].vfunc_14)(pSVar3,0), param_5 != 0)) {
+          /* ST_CALLSITE[0042D24B]: CALL 0x0040321f; direct=0040321F STGameObjC::ResetSelfCheckFlag */
           STGameObjC::ResetSelfCheckFlag(pSVar3);
         }
         index = index + 1;
@@ -48,10 +51,12 @@ LAB_0042d1f8:
       if (param_2 == 0x5a) {
         SVar6 = CASE_4;
 LAB_0042d1c3:
+        /* ST_CALLSITE[0042D1CD]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar3 = GetObjPtr(this,objPtr,uVar5,SVar6);
         if (pSVar3 == nullptr) {
           return;
         }
+        /* ST_CALLSITE[0042D1E2]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
         (*pSVar3->vtable[1].vfunc_14)(pSVar3,0);
         goto LAB_0042d2c3;
       }
@@ -73,14 +78,17 @@ LAB_0042d270:
   }
   else {
     if (param_2 == 0x1a4) {
+      /* ST_CALLSITE[0042D2E4]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar3 = GetObjPtr(this,objPtr,uVar5,CASE_5);
       if (pSVar3 == nullptr) {
         return;
       }
+      /* ST_CALLSITE[0042D2F5]: CALL dword ptr [EAX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
       (*pSVar3->vtable[1].vfunc_14)(pSVar3,0);
       if (param_5 == 0) {
         return;
       }
+      /* ST_CALLSITE[0042D304]: CALL 0x0040321f; direct=0040321F STGameObjC::ResetSelfCheckFlag */
       STGameObjC::ResetSelfCheckFlag(pSVar3);
       return;
     }
@@ -91,13 +99,16 @@ LAB_0042d270:
       if (param_2 != 0x1b8) goto LAB_0042d270;
       SVar6 = CASE_6;
     }
+    /* ST_CALLSITE[0042D2AC]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar3 = GetObjPtr(this,objPtr,uVar5,SVar6);
     if (pSVar3 == nullptr) {
       return;
     }
+    /* ST_CALLSITE[0042D2BD]: CALL dword ptr [EAX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
     (*pSVar3->vtable[1].vfunc_14)(pSVar3,0);
 LAB_0042d2c3:
     if (param_5 != 0) {
+      /* ST_CALLSITE[0042D2CC]: CALL 0x0040321f; direct=0040321F STGameObjC::ResetSelfCheckFlag */
       STGameObjC::ResetSelfCheckFlag(pSVar3);
       return;
     }

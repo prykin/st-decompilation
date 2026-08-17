@@ -34,7 +34,9 @@ st::fn_0061F8B0(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
           (param_2 + 1 < g_sT3DSMAPContext_00807598->field_0044)) ||
          (g_sT3DSMAPContext_00807598->field_0054 < param_2 + -1)))) ||
        (iVar1 = st::fn_006DDBD0(), iVar1 == 0)))) &&
+     /* ST_CALLSITE[0061F933]: CALL 0x00402b8f; direct=00402B8F SndUnderAttMenegC::sub_0061FA40 */
      (((uVar2 = st::fn_00402B8F(this,local_8,param_1,param_2), (int)uVar2 < 0 &&
+       /* ST_CALLSITE[0061F948]: CALL 0x00405cfe; direct=00405CFE SndUnderAttMenegC::sub_0061FB70 */
        (uVar2 = st::fn_00405CFE(this,local_8,param_1,param_2,param_3), -1 < (int)uVar2)) ||
       (uVar2 == 2)))) {
     if (DAT_0080874e == '\x01') {
@@ -52,6 +54,7 @@ st::fn_0061F8B0(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     local_14.unknown = 0;
     local_14.x = -1;
     local_14.y = -1;
+    /* ST_CALLSITE[0061F9A1]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
     st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar1,&local_14,0);
     st::fn_00402D5B(1,(float)param_1 * _DAT_007904f8 + _DAT_007904f4,
                        (float)param_2 * _DAT_007904f8 + _DAT_007904f4);
@@ -224,8 +227,10 @@ st::fn_0061FE80
     return;
   }
   if (this->field_00C1 <= uVar1) {
+    /* ST_CALLSITE[0061FEC1]: CALL 0x0040119f; direct=0040119F SndUnderAttMenegC::sub_00620030 */
     uVar2 = st::fn_0040119F(this,uVar1,param_1,param_2);
     if (((-1 < (int)uVar2) ||
+        /* ST_CALLSITE[0061FED6]: CALL 0x0040599d; direct=0040599D SndUnderAttMenegC::sub_00620160 */
         (uVar2 = st::fn_0040599D(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) && (uVar2 != 2))
     {
       return;
@@ -278,7 +283,9 @@ st::fn_0061FE80
     local_10.unknown = 0;
     local_10.x = -1;
     local_10.y = -1;
+    /* ST_CALLSITE[0061FF9B]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
     st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
+    /* ST_CALLSITE[0061FFAF]: CALL 0x00405d62; direct=00405D62 SndUnderAttMenegC::sub_00620DA0 */
     st::fn_00405D62(this,param_1,param_2,0x8e);
     this->field_00C1 = uVar1 + 0xfa;
     return;
@@ -417,8 +424,10 @@ st::fn_006202B0
   }
   st::fn_0040186B((uint)DAT_0080874d,iVar3);
 LAB_0062030e:
+  /* ST_CALLSITE[0062031A]: CALL 0x00404e8f; direct=00404E8F SndUnderAttMenegC::sub_006203F0 */
   uVar2 = st::fn_00404E8F(this,uVar1,param_1,param_2);
   if (((-1 < (int)uVar2) ||
+      /* ST_CALLSITE[0062032F]: CALL 0x0040152d; direct=0040152D SndUnderAttMenegC::sub_00620520 */
       (uVar2 = st::fn_0040152D(this,uVar1,param_1,param_2,param_4), (int)uVar2 < 0)) && (uVar2 != 2)) {
     return;
   }
@@ -437,7 +446,9 @@ LAB_0062030e:
   local_10.unknown = 0;
   local_10.x = -1;
   local_10.y = -1;
+  /* ST_CALLSITE[00620384]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
   st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar3,&local_10,0);
+  /* ST_CALLSITE[00620392]: CALL 0x00405d62; direct=00405D62 SndUnderAttMenegC::sub_00620DA0 */
   st::fn_00405D62(this,param_1,param_2,0x28);
   this->field_00C1 = uVar1 + 0xfa;
   return;
@@ -563,8 +574,10 @@ st::fn_00620670(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     return;
   }
   if (this->field_00D9 <= uVar1) {
+    /* ST_CALLSITE[006206B1]: CALL 0x00403af8; direct=00403AF8 SndUnderAttMenegC::sub_00620780 */
     uVar2 = st::fn_00403AF8(this,uVar1,param_1,param_2);
     if (((-1 < (int)uVar2) ||
+        /* ST_CALLSITE[006206C6]: CALL 0x004052d1; direct=004052D1 SndUnderAttMenegC::sub_006208B0 */
         (uVar2 = st::fn_004052D1(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) && (uVar2 != 2))
     {
       return;
@@ -584,6 +597,7 @@ st::fn_00620670(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     local_10.unknown = 0;
     local_10.x = -1;
     local_10.y = -1;
+    /* ST_CALLSITE[0062071B]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
     st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
     this->field_00C1 = uVar1 + 0xfa;
     return;
@@ -704,8 +718,10 @@ st::fn_00620A00(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     return;
   }
   if (this->field_00E5 <= uVar1) {
+    /* ST_CALLSITE[00620A41]: CALL 0x00404fa7; direct=00404FA7 SndUnderAttMenegC::sub_00620B20 */
     uVar2 = st::fn_00404FA7(this,uVar1,param_1,param_2);
     if (((-1 < (int)uVar2) ||
+        /* ST_CALLSITE[00620A56]: CALL 0x00404c19; direct=00404C19 SndUnderAttMenegC::sub_00620C50 */
         (uVar2 = st::fn_00404C19(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) && (uVar2 != 2))
     {
       return;
@@ -725,7 +741,9 @@ st::fn_00620A00(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     local_10.x = -1;
     local_10.y = -1;
     local_10.unknown = 0;
+    /* ST_CALLSITE[00620AA9]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
     st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
+    /* ST_CALLSITE[00620ABA]: CALL 0x00405d62; direct=00405D62 SndUnderAttMenegC::sub_00620DA0 */
     st::fn_00405D62(this,param_1,param_2,0x8e);
     this->field_00E5 = uVar1 + 0xfa;
     return;
@@ -890,8 +908,10 @@ st::fn_00620E40(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     return;
   }
   if (this->field_00F1 <= uVar1) {
+    /* ST_CALLSITE[00620E80]: CALL 0x00403b7a; direct=00403B7A SndUnderAttMenegC::sub_00620F60 */
     uVar2 = st::fn_00403B7A(this,uVar1,param_1,param_2);
     if (((-1 < (int)uVar2) ||
+        /* ST_CALLSITE[00620E95]: CALL 0x00404b10; direct=00404B10 SndUnderAttMenegC::sub_00621090 */
         (uVar2 = st::fn_00404B10(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) && (uVar2 != 2))
     {
       return;
@@ -911,7 +931,9 @@ st::fn_00620E40(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     local_10.unknown = 0;
     local_10.x = -1;
     local_10.y = -1;
+    /* ST_CALLSITE[00620EEA]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
     st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
+    /* ST_CALLSITE[00620EF8]: CALL 0x00405d62; direct=00405D62 SndUnderAttMenegC::sub_00620DA0 */
     st::fn_00405D62(this,param_1,param_2,0x28);
     this->field_00F1 = uVar1 + 0xfa;
     return;
@@ -1035,8 +1057,10 @@ st::fn_006211E0(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     return;
   }
   if (this->field_00FD <= uVar1) {
+    /* ST_CALLSITE[00621221]: CALL 0x004047d7; direct=004047D7 SndUnderAttMenegC::sub_00621300 */
     uVar2 = st::fn_004047D7(this,uVar1,param_1,param_2);
     if (((-1 < (int)uVar2) ||
+        /* ST_CALLSITE[00621236]: CALL 0x004030d0; direct=004030D0 SndUnderAttMenegC::sub_00621430 */
         (uVar2 = st::fn_004030D0(this,uVar1,param_1,param_2,param_3), (int)uVar2 < 0)) && (uVar2 != 2))
     {
       return;
@@ -1056,7 +1080,9 @@ st::fn_006211E0(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     local_10.x = -1;
     local_10.y = -1;
     local_10.unknown = 0;
+    /* ST_CALLSITE[00621289]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
     st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
+    /* ST_CALLSITE[0062129A]: CALL 0x00405d62; direct=00405D62 SndUnderAttMenegC::sub_00620DA0 */
     st::fn_00405D62(this,param_1,param_2,0x8e);
     this->field_00FD = uVar1 + 0xfa;
     return;
@@ -1180,11 +1206,13 @@ void __thiscall st::fn_00621580(SndUnderAttMenegC *this,byte *param_1,int param_
     return;
   }
   if ((this->field_010A == nullptr) ||
-     (uVar1 = st::fn_00405E1B(this,param_2,st::pointer_boundary_cast<undefined4 *>(&local_8)), (int)uVar1 < 0)) {
+     (uVar1 = st::fn_00405E1B(this,param_2,(undefined4 *)&local_8), (int)uVar1 < 0)) {
+    /* ST_CALLSITE[006215BD]: CALL 0x00405b37; direct=00405B37 SndUnderAttMenegC::sub_006216E0 */
     uVar1 = st::fn_00405B37(this,param_2);
   }
   if ((local_8 != 0) && (-1 < (int)uVar1)) {
     if (10 < g_playSystem_00802A38->field_00E4 - this->field_0106) {
+      /* ST_CALLSITE[006215E9]: CALL 0x00401073; direct=00401073 SndUnderAttMenegC::sub_00621780 */
       st::fn_00401073(this,uVar1);
       return;
     }
@@ -1372,6 +1400,7 @@ void __thiscall st::fn_00621780(SndUnderAttMenegC *this,uint param_1)
     local_10.unknown = 0;
     local_10.x = -1;
     local_10.y = -1;
+    /* ST_CALLSITE[00621972]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
     st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
     *puVar2 = 1;
     *(uint *)(puVar2 + 1) = g_playSystem_00802A38->field_00E4;

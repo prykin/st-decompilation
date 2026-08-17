@@ -15,6 +15,7 @@ undefined4 __thiscall FUN_0074a220(int *param_1,int *param_2,uint *param_3,uint 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_ESI;
 
+  /* ST_CALLSITE[0074A236]: CALL dword ptr [ECX + 0x14] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(*param_2 + 0x14))(param_2,param_3,param_4);
   if (-1 < iVar1) {
@@ -23,6 +24,7 @@ undefined4 __thiscall FUN_0074a220(int *param_1,int *param_2,uint *param_3,uint 
       return 0x80040228;
     }
     if (param_1[6] != 0) {
+      /* ST_CALLSITE[0074A264]: CALL dword ptr [EAX + 0x5c] */
       /* ST_PSEUDO[unresolved_register_input,raw_indirect_call]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar2 = (**(code **)(*param_1 + 0x5c))(unaff_ESI,param_3,param_4);
       return uVar2;

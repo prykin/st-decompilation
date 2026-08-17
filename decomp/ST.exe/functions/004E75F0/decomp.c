@@ -14,6 +14,7 @@ void FUN_004e75f0(int param_1)
 
   iVar2 = param_1;
   if ((-1 < param_1) && (param_1 < 8)) {
+    /* ST_CALLSITE[004E760D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar3 = LookupRecordByte((char)param_1);
     auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
     if (0 < *(int *)(&DAT_007995bc + (bVar3 - 1) * 0x4bf)) {

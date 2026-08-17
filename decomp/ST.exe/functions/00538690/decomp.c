@@ -71,6 +71,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     memset(local_18c, 0, 0x17c); /* compiler bulk-zero initialization */
     local_18c[1] = param_1;
     local_18c[0] = param_2;
+    /* ST_CALLSITE[00538709]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&pPVar2->field_006C,"%s0",param_8);
     local_c = cMf32::RecGet(g_cMf32_00806790,param_7,&pPVar2->field_006C,nullptr,1);
     local_17c = *(undefined4 *)(local_c + 2);
@@ -117,6 +118,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
       local_68 = FUN_0070aa70(g_cMf32_00806790,param_14,0,1);
       local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_14,1);
     }
+    /* ST_CALLSITE[005388C5]: CALL dword ptr [EDX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)pPVar2->field_000C + 8))(2,&local_8,0,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;

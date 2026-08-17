@@ -53,6 +53,7 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
       this_00->field_01CC = 0;
       if (this_00->field_01BB == '\0') {
         pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
+        /* ST_CALLSITE[00551577]: CALL dword ptr [EDI + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)
                           (0,1,0xac,0x57,0,1,1,pCVar3,uVar6,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12);
@@ -66,6 +67,7 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
         uVar7 = 0xb201;
         this_00->field_01C8 = uVar6;
         pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
+        /* ST_CALLSITE[005515B9]: CALL dword ptr [EDI + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)
                           (0,1,0xe5,0x57,0,1,1,pCVar3,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12,uVar5);
@@ -73,10 +75,12 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
       }
       else {
         pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
+        /* ST_CALLSITE[00551550]: CALL dword ptr [EDI + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (*(code *)pAVar1->field_0004)(0,1,0xca,0x57,0,1,1,pCVar3);
         this_00->field_01C8 = uVar6;
       }
+      /* ST_CALLSITE[005515C4]: CALL 0x00404f9d; direct=00404F9D TradePanelTy::sub_00551B10 */
       sub_00551B10(this_00);
       g_currentExceptionFrame = local_4c.previous;
       return;

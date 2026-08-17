@@ -94,6 +94,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     psVar5 = (short *)ccFntTy::CreateTypeSSpr
                                 (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
                                  uVar15,iVar16,iVar17,iVar18);
+    /* ST_CALLSITE[005B4138]: CALL dword ptr [EBX + 0x8] */
     (*pSVar1->SetImagesPtr)(&pMVar3->field_00B9,psVar5,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -110,6 +111,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     psVar5 = (short *)ccFntTy::CreateTypeSSpr
                                 (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
                                  uVar15,iVar16,iVar17,iVar18);
+    /* ST_CALLSITE[005B4188]: CALL dword ptr [EBX + 0x8] */
     (*pSVar1->SetImagesPtr)(&this_01->field_00BB[1].field_00B9,psVar5,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -126,6 +128,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     psVar5 = (short *)ccFntTy::CreateTypeSSpr
                                 (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
                                  uVar15,iVar16,iVar17,iVar18);
+    /* ST_CALLSITE[005B41D8]: CALL dword ptr [EBX + 0x8] */
     (*pSVar1->SetImagesPtr)(&this_01->field_00BB[2].field_00B9,psVar5,uVar19,uVar21);
     pSVar1 = this_01->field_00BB[3].field_00B9.vtable;
     uVar21 = 0xffffffff;
@@ -142,6 +145,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     psVar5 = (short *)ccFntTy::CreateTypeSSpr
                                 (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
                                  uVar15,iVar16,iVar17,iVar18);
+    /* ST_CALLSITE[005B4229]: CALL dword ptr [EBX + 0x8] */
     (*pSVar1->SetImagesPtr)(&this_01->field_00BB[3].field_00B9,psVar5,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -158,6 +162,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     psVar5 = (short *)ccFntTy::CreateTypeSSpr
                                 (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
                                  uVar15,iVar16,iVar17,iVar18);
+    /* ST_CALLSITE[005B4279]: CALL dword ptr [EBX + 0x8] */
     (*pSVar1->SetImagesPtr)(&this_01->field_00BB[4].field_00B9,psVar5,uVar19,uVar21);
     this_01->field_00BB[0].field_000E = this_01->field_0008;
     this_01->field_00BB[0].field_0012 = 2;
@@ -180,13 +185,16 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     uVar21 = 0xffffffff;
     uVar15 = 0xfffffffe;
     pcVar6 = LoadResourceString(0x26ac,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005B4342]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
     StartServTy::WrTextDDX(this_03,0,0xe9,0x14,0x14c,0x18,pcVar6,uVar15,uVar21,pcVar20,uVar22);
     uVar22 = DAT_00807dd5 >> 0x10 & 0xff;
     uVar21 = DAT_00807dd5 & 0xffff;
     uVar15 = DAT_00807dd5 >> 0x18;
     pcVar6 = LoadResourceString(0x2329,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005B4380]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)(this_01->field_00BB[0xc].field_01DC + 0x3c),pcVar6,uVar15,uVar22,uVar21);
     pSVar9 = this_01->field_00BB[0xc].field_01DC + 0x3c;
+    /* ST_CALLSITE[005B43AD]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
     StartServTy::WrTextDDX
               (pSVar9,0,0,0x240,800,0x18,(char *)pSVar9,0xfffffffe,0xffffffff,
                g_startSystem_0081176C->field_0034,0);
@@ -209,6 +217,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     psVar5 = (short *)ccFntTy::CreateTypeSSpr
                                 (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
                                  uVar15,iVar16,iVar17,iVar18);
+    /* ST_CALLSITE[005B3E40]: CALL dword ptr [EBX + 0x8] */
     (*pSVar1->SetImagesPtr)(&pMVar3->field_00B9,psVar5,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -225,6 +234,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     psVar5 = (short *)ccFntTy::CreateTypeSSpr
                                 (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
                                  uVar15,iVar16,iVar17,iVar18);
+    /* ST_CALLSITE[005B3E90]: CALL dword ptr [EBX + 0x8] */
     (*pSVar1->SetImagesPtr)(&this_01->field_00BB[1].field_00B9,psVar5,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -241,6 +251,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     psVar5 = (short *)ccFntTy::CreateTypeSSpr
                                 (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
                                  uVar15,iVar16,iVar17,iVar18);
+    /* ST_CALLSITE[005B3EE1]: CALL dword ptr [EBX + 0x8] */
     (*pSVar1->SetImagesPtr)(&this_01->field_00BB[2].field_00B9,psVar5,uVar19,uVar21);
     pSVar1 = this_01->field_00BB[3].field_00B9.vtable;
     uVar21 = 0xffffffff;
@@ -257,6 +268,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     psVar5 = (short *)ccFntTy::CreateTypeSSpr
                                 (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
                                  uVar15,iVar16,iVar17,iVar18);
+    /* ST_CALLSITE[005B3F31]: CALL dword ptr [EBX + 0x8] */
     (*pSVar1->SetImagesPtr)(&this_01->field_00BB[3].field_00B9,psVar5,uVar19,uVar21);
     uVar21 = 0xffffffff;
     uVar19 = 7;
@@ -273,6 +285,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     psVar5 = (short *)ccFntTy::CreateTypeSSpr
                                 (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
                                  uVar15,iVar16,iVar17,iVar18);
+    /* ST_CALLSITE[005B3F81]: CALL dword ptr [EBX + 0x8] */
     (*pSVar1->SetImagesPtr)(&this_01->field_00BB[4].field_00B9,psVar5,uVar19,uVar21);
     bVar10 = 0;
     local_8 = local_8 & 0xffffff00;
@@ -306,6 +319,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     local_14d = 0x6943;
     this_00 = *(MMsgTy **)(pSVar9 + 0x2e6);
     if (this_00 != nullptr) {
+      /* ST_CALLSITE[005B4085]: CALL 0x00401717; direct=00401717 MMsgTy::SetPanel */
       MMsgTy::SetPanel(this_00,0,(int)&local_24c,0,0);
     }
     Library::DKW::DDX::FUN_006ba9e0(g_dDXContext_0080759C,0xe9,0x14,0x14c,0x18,0);
@@ -314,9 +328,11 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     uVar21 = 0xffffffff;
     uVar15 = 0xfffffffe;
     pcVar6 = LoadResourceString(0x26b0,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005B40D6]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
     StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,pcVar6,uVar15,uVar21,pcVar20,uVar22);
   }
   if (param_2 != 0) {
+    /* ST_CALLSITE[005B43BE]: CALL 0x004059b1; direct=004059B1 MainMenuTy::PaintMainMenu */
     PaintMainMenu(this_01);
     this_01->field_1AD3 = 1;
     this_01->field_1ADB = 0;
@@ -333,6 +349,7 @@ LAB_005b4465:
     uVar21 = 0xffffffff;
     uVar15 = 0xfffffffe;
     pcVar6 = LoadResourceString(resourceId,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005B447B]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
     StartServTy::WrTextDDX(this_04,0,0xe9,0x14,0x14c,0x18,pcVar6,uVar15,uVar21,pcVar20,uVar22);
   }
   else if (this_01->field_1EE3 == '\x01') {
@@ -344,8 +361,10 @@ LAB_005b4465:
   uVar21 = DAT_00807dd5 & 0xffff;
   uVar15 = DAT_00807dd5 >> 0x18;
   pcVar6 = LoadResourceString(0x2329,g_hINSTANCE_00807618);
+  /* ST_CALLSITE[005B44B9]: CALL dword ptr [0x0085bde8] */
   wsprintfA((LPSTR)(this_01->field_00BB[0xc].field_01DC + 0x3c),pcVar6,uVar15,uVar22,uVar21);
   pSVar9 = this_01->field_00BB[0xc].field_01DC + 0x3c;
+  /* ST_CALLSITE[005B44E9]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
   StartServTy::WrTextDDX
             (pSVar9,0,0,0x240,800,0x18,(char *)pSVar9,0xfffffffe,0xffffffff,
              g_startSystem_0081176C->field_0034,0);
@@ -354,6 +373,7 @@ LAB_005b44f1:
   if (this_01->field_009A != 0) {
     do {
       uVar15 = local_8 & 0xff;
+      /* ST_CALLSITE[005B451C]: CALL dword ptr [0x0085bedc] */
       DVar7 = timeGetTime();
       this_01->field_00BB[uVar15].field_0028.field_0044 = DVar7;
       this_01->field_00BB[uVar15].field_0028.field_0040 = uVar15 * 0x96;

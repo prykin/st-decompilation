@@ -58,11 +58,11 @@ void __thiscall st::fn_00542EC0(InterSystemC *this)
     st::fn_00710560((uint *)this->field_0028);
     this->field_0028 = nullptr;
   }
-  if ((uint *)this->field_002C != nullptr) {
+  if ((uint *)this->field_002C != 0) {
     st::fn_00710560((uint *)this->field_002C);
     this->field_002C = 0;
   }
-  if ((uint *)this->field_0030 != nullptr) {
+  if ((uint *)this->field_0030 != 0) {
     st::fn_00710560((uint *)this->field_0030);
     this->field_0030 = 0;
   }

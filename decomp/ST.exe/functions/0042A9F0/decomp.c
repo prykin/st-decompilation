@@ -9,8 +9,10 @@ void FUN_0042a9f0(char param_1)
   STAllPlayersC *in_ECX;
   undefined4 *puVar2;
 
+  /* ST_CALLSITE[0042AA02]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC::ResetActivityFromTmp(in_ECX,param_1,0,0,0);
+  /* ST_CALLSITE[0042AA10]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC::ResetActivityFromTmp(in_ECX,param_1,1,0,0);
   iVar1 = (int)param_1;

@@ -170,8 +170,11 @@ cf_common_exit_005EEDDF:
       this = &param_1->field_0x1d5;
       iVar4 = thunk_FUN_004ac910(this,'\b');
       if (iVar4 == 1) {
+        /* ST_CALLSITE[005EEBF1]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)this,0xf);
+        /* ST_CALLSITE[005EEBFA]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)this,0);
+        /* ST_CALLSITE[005EEC02]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)this,1);
       }
       if (iVar4 == *(int *)(&DAT_007cdf52 + (uint)param_1->field_02DF * 0x32)) {
@@ -180,6 +183,7 @@ cf_common_exit_005EEDDF:
         if (iVar5 == 0) {
           param_1->field_0252 = param_1->field_0252 + -1;
         }
+        /* ST_CALLSITE[005EEC5A]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)this,0xe);
         if ((param_1->field_0315 == '\x04') || (param_1->field_0315 == '\x02')) {
           uVar6 = 0xffffffff;
@@ -190,7 +194,9 @@ cf_common_exit_005EEDDF:
         }
         if (param_1->field_0231 == 0xfd) {
           if (g_allPlayers_007FA174 != nullptr) {
+            /* ST_CALLSITE[005EECE9]: CALL 0x004026da; direct=004026DA STArtiafactC::sub_005F0D00 */
             STArtiafactC::sub_005F0D00((STArtiafactC *)param_1);
+            /* ST_CALLSITE[005EED04]: CALL 0x00403a5d; direct=00403A5D STAllPlayersC::UnRegisterArtefact */
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             iVar5 = STAllPlayersC::UnRegisterArtefact
                               (g_allPlayers_007FA174,CONCAT22(extraout_var_00,param_1->field_0032),
@@ -199,7 +205,9 @@ cf_common_exit_005EEDDF:
           }
         }
         else if ((param_1->field_0231 == 0xfe) && (g_allPlayers_007FA174 != nullptr)) {
+          /* ST_CALLSITE[005EECB8]: CALL 0x00401afa; direct=00401AFA STContainerC::sub_005F0D90 */
           STContainerC::sub_005F0D90((STContainerC *)param_1);
+          /* ST_CALLSITE[005EECD3]: CALL 0x00401f64; direct=00401F64 STAllPlayersC::UnRegisterContainer */
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar5 = STAllPlayersC::UnRegisterContainer
                             (g_allPlayers_007FA174,CONCAT22(extraout_var,param_1->field_0032),
@@ -217,11 +225,13 @@ joined_r0x005eed0b:
         thunk_FUN_004ad5e0((STT3DSprC *)this);
       }
       if (iVar4 == *(int *)(&DAT_007cdf5a + (uint)param_1->field_02DF * 0x32)) {
+        /* ST_CALLSITE[005EED6D]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         STT3DSprC::StartShow((STT3DSprC *)this,9,g_playSystem_00802A38->field_00E4);
       }
       iVar5 = (uint)param_1->field_02DF * 0x32;
       if ((*(int *)(&DAT_007cdf5a + iVar5) < iVar4) &&
          (iVar4 == *(int *)(&DAT_007cdf4e + iVar5) + -1)) {
+        /* ST_CALLSITE[005EED99]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)this,8);
       }
       iVar4 = thunk_FUN_004ac910(this,'\t');

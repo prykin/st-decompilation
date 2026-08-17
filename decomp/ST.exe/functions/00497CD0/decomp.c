@@ -29,12 +29,14 @@ STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param
     if (param_1->count != 0) {
       do {
         DArrayGetElement(param_1,index,local_8);
+        /* ST_CALLSITE[00497D2B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar3 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
         pSVar3->field_00FD = 0;
         index = index + 1;
       } while (index < param_1->count);
     }
+    /* ST_CALLSITE[00497D54]: CALL 0x00402a31; direct=00402A31 STGroupBoatC::Way3DGrpDistribTgt */
     Way3DGrpDistribTgt(pSVar2,param_1,param_2,param_3,param_4);
     g_currentExceptionFrame = local_50.previous;
     return 0;

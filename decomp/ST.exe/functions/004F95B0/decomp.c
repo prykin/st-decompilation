@@ -21,6 +21,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,char *param_1,undefined4 param_
   if (errorCode == 0) {
     local_8 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     thunk_FUN_005411a0(local_8,param_1,"@ %s@ ");
+    /* ST_CALLSITE[004F9609]: CALL 0x0040311b; direct=0040311B CPanelTy::OutText */
     OutText(local_c,(int *)&local_8,param_2);
     g_currentExceptionFrame = local_50.previous;
     return;

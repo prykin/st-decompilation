@@ -20,7 +20,9 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
 
   local_8 = nullptr;
   if (*(int *)&param_1->field_0x2a0 != 0) {
+    /* ST_CALLSITE[004D277E]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
     sub_0041C5A0(param_1);
+    /* ST_CALLSITE[004D279D]: CALL 0x00403297; direct=00403297 TLOBaseTy::sub_00417D30 */
     TLOBaseTy::sub_00417D30(param_1);
     if (param_1->field_002C == 0) {
       local_8 = (TLOBaseTy *)0x1;
@@ -46,15 +48,18 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
     }
     iVar4 = thunk_FUN_004b7520(STReplaceLowByte((uint32_t)(pTVar3), (uint8_t)(*(undefined1 *)&param_1->field_0024)),param_1->field_0259);
     if (iVar4 != 0) {
+      /* ST_CALLSITE[004D2835]: CALL dword ptr [EAX + 0x2c] */
       dVar1 = param_1->slot_2C();
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar1);
     }
+    /* ST_CALLSITE[004D284A]: CALL 0x00404629; direct=00404629 TLOBaseTy::sub_0041D590 */
     TLOBaseTy::sub_0041D590(param_1);
   }
   if (99 < *(int *)&param_1->field_0x2a8) {
     param_1->field_034C = 0xfe;
   }
+  /* ST_CALLSITE[004D286B]: CALL 0x0040207c; direct=0040207C TLOBaseTy::sub_00419D30 */
   TLOBaseTy::sub_00419D30(param_1,param_1->field_034C);
   if (g_array_007FA170 != nullptr) {
     dVar1 = g_array_007FA170->count;

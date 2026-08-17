@@ -354,11 +354,13 @@ LAB_0044d710:
     do {
       DArrayGetElement(local_14,param_1_after_write,&local_18);
       if (((ushort)local_18 != 0xffff) &&
+         /* ST_CALLSITE[0044D74B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
          (this = STAllPlayersC::GetObjPtr(local_c,DAT_0080874d,(ushort)local_18,CASE_1),
          this != nullptr)) {
         if (GVar2 < 0x1001) {
           if (GVar2 == 0x1000) {
 switchD_0044d78f_caseD_28:
+            /* ST_CALLSITE[0044DA6F]: CALL dword ptr [EDX + 0x2c] */
             iVar5 = this->vfunc_2C();
             if ((iVar5 == 0x16) || (iVar5 == 0x25)) {
               local_8 = 1;
@@ -376,6 +378,7 @@ switchD_0044d78f_caseD_28:
           }
           else if (GVar2 < 0x41) {
             if (GVar2 == 0x40) {
+              /* ST_CALLSITE[0044D89E]: CALL dword ptr [EDX + 0x2c] */
               iVar5 = this->vfunc_2C();
               if (iVar5 == 4) {
                 local_8 = 1;
@@ -394,6 +397,7 @@ switchD_0044d78f_caseD_28:
             else {
               switch(GVar2) {
               case CASE_1:
+                /* ST_CALLSITE[0044D79A]: CALL dword ptr [EAX + 0x2c] */
                 iVar5 = this->vfunc_2C();
                 if ((iVar5 == 6) || (iVar5 == 0x12)) {
                   local_8 = 1;
@@ -412,6 +416,7 @@ joined_r0x0044d9f5:
               case CASE_2:
               case CASE_4:
               case CASE_8:
+                /* ST_CALLSITE[0044D7EB]: CALL dword ptr [EDX + 0x2c] */
                 iVar5 = this->vfunc_2C();
                 if (((iVar5 == 5) || (iVar5 == 0xb)) || (iVar5 == 0x11)) {
                   local_8 = 1;
@@ -430,6 +435,7 @@ LAB_0044dc25:
                 }
                 break;
               case CASE_10:
+                /* ST_CALLSITE[0044D852]: CALL dword ptr [EDX + 0x2c] */
                 iVar5 = this->vfunc_2C();
                 if (iVar5 == 0x17) {
                   local_8 = 1;
@@ -447,6 +453,7 @@ LAB_0044dc25:
           }
           else if (GVar2 < 0x201) {
             if (GVar2 == 0x200) {
+              /* ST_CALLSITE[0044D94E]: CALL dword ptr [EAX + 0x2c] */
               iVar5 = this->vfunc_2C();
               if ((iVar5 == 8) || (iVar5 == 0x14)) {
                 local_8 = 1;
@@ -458,6 +465,7 @@ LAB_0044dc25:
               }
             }
             else if ((GVar2 == 0x80) || (GVar2 == 0x100)) {
+              /* ST_CALLSITE[0044D930]: CALL dword ptr [EDX + 0x2c] */
               iVar5 = this->vfunc_2C();
               if (iVar5 == 9) {
                 return pbVar3;
@@ -468,6 +476,7 @@ LAB_0044dc25:
             }
           }
           else if (GVar2 == 0x400) {
+            /* ST_CALLSITE[0044DA04]: CALL dword ptr [EDX + 0x2c] */
             iVar5 = this->vfunc_2C();
             if ((iVar5 == 7) || (iVar5 == 0x13)) {
               local_8 = 1;
@@ -485,6 +494,7 @@ LAB_0044dc25:
             }
           }
           else if ((GVar2 == 0x800) &&
+                  /* ST_CALLSITE[0044D9B3]: CALL dword ptr [EDX + 0x2c] */
                   ((iVar5 = this->vfunc_2C(), iVar5 == 0xc || (iVar5 == 0x18)))) {
 LAB_0044d9c4:
             local_8 = 1;
@@ -497,9 +507,11 @@ LAB_0044d9c4:
         }
         else if (GVar2 < 0x100001) {
           if (GVar2 == 0x100000) {
+            /* ST_CALLSITE[0044DB3C]: CALL dword ptr [EDX + 0x2c] */
             iVar5 = this->vfunc_2C();
             if (iVar5 == 0x1d) {
               local_8 = 1;
+              /* ST_CALLSITE[0044DB51]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
               local_EAX_2097 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
               if (((0 < local_EAX_2097) &&
                   (uVar6 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar6)) &&
@@ -528,6 +540,7 @@ joined_r0x0044ddc7:
             }
             else if ((GVar2 != 0x40000) && (GVar2 != 0x80000)) goto cf_continue_loop_0044DDCF;
 LAB_0044dce3:
+            /* ST_CALLSITE[0044DCE7]: CALL dword ptr [EDX + 0x2c] */
             uVar7 = this->vfunc_2C();
             switch(uVar7) {
             case 0x19:
@@ -537,6 +550,7 @@ LAB_0044dce3:
             case 0x23:
 switchD_0044dcfe_caseD_19:
               local_8 = 1;
+              /* ST_CALLSITE[0044DD22]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
               local_EAX_2562 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
               if (((0 < local_EAX_2562) &&
                   (uVar6 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar6)) &&
@@ -551,9 +565,11 @@ switchD_0044dcfe_caseD_19:
         else if (GVar2 < 0x800001) {
           if (GVar2 == 0x800000) goto LAB_0044dce3;
           if (GVar2 == 0x200000) {
+            /* ST_CALLSITE[0044DC4D]: CALL dword ptr [EAX + 0x2c] */
             iVar5 = this->vfunc_2C();
             if (iVar5 == 0x1b) {
               local_8 = 1;
+              /* ST_CALLSITE[0044DC62]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
               local_EAX_2370 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
               if (((0 < local_EAX_2370) &&
                   (uVar6 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar6)) &&
@@ -569,9 +585,11 @@ switchD_0044dcfe_caseD_19:
               goto LAB_0044dcbe;
             }
           }
+          /* ST_CALLSITE[0044DBCF]: CALL dword ptr [EAX + 0x2c] */
           else if ((GVar2 == 0x400000) && (iVar5 = this->vfunc_2C(), iVar5 == 0x21))
           {
             local_8 = 1;
+            /* ST_CALLSITE[0044DBE4]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
             local_EAX_2244 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
             if ((0 < local_EAX_2244) &&
                ((uVar6 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar6 &&
@@ -583,9 +601,11 @@ switchD_0044dcfe_caseD_19:
           }
         }
         else if (GVar2 == 0x1000000) {
+          /* ST_CALLSITE[0044DD6F]: CALL dword ptr [EDX + 0x2c] */
           iVar5 = this->vfunc_2C();
           if (iVar5 == 0x24) {
             local_8 = 1;
+            /* ST_CALLSITE[0044DD80]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
             iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
             if (((0 < iVar4) && (uVar6 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar6)) &&
                ((short)g_packedRecords_A62x8[*(char *)&this->field_0024].field95_0x15f != 0)) {

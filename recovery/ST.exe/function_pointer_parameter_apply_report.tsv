@@ -1,7 +1,7 @@
 target	status	detail
-004F3540:p5	disabled	apply=0
+004F3540:p5	unchanged	recovered function-pointer parameter already present
 004F3A30:p6	disabled	apply=0
-004F3CF0:p6	disabled	apply=0
+004F3CF0:p6	unchanged	recovered function-pointer parameter already present
 004F3FE0:p6	disabled	apply=0
 004F42A0:p6	unchanged	recovered function-pointer parameter already present
 0052EFB0:p4	disabled	apply=0

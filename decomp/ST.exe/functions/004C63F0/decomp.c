@@ -10,6 +10,7 @@ undefined4 __thiscall TLOBldMark::sub_004C63F0(TLOBldMark *this)
 
 {
   this->field_0018 = 1;
+  /* ST_CALLSITE[004C63FF]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
   STT3DSprC::StopShow(this->field_002C,0);
   thunk_FUN_004ad310(this->field_002C);
   Library::MSVCRT::FUN_0072e2b0((HoloTy *)this->field_002C);

@@ -31,6 +31,7 @@ int FUN_006da080(int *param_1,uint *param_2,int param_3,int param_4,int param_5,
     iVar1 = FUN_006bbe40((int *)param_1[0x73],local_2c,&local_20,0x10);
     if (iVar1 == 0) goto LAB_006da0f3;
     if (iVar1 != -0x7789fe3e) break;
+    /* ST_CALLSITE[006DA0DE]: CALL dword ptr [ECX + 0x6c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)param_1[0x73] + 0x6c))((int *)param_1[0x73]);
     FUN_006cec40((AnonShape_006CEC40_BB23E716 *)*param_1);
@@ -43,6 +44,7 @@ LAB_006da0f3:
     FUN_006da1a0((int)param_2,param_3,local_2c[0],local_20,param_6,param_7,param_8,param_9,param_10,
                  param_11);
     local_8 = 0xffffffff;
+    /* ST_CALLSITE[006DA15F]: CALL dword ptr [EDX + 0x80] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)param_1[0x73] + 0x80))((int *)param_1[0x73],0);
   }

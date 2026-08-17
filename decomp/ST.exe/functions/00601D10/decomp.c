@@ -60,6 +60,7 @@ void FUN_00601d10(int param_1,int param_2,int param_3,short param_4,ushort param
     local_2c = local_20;
     local_40[3] = 2;
     local_40[4] = param_7;
+    /* ST_CALLSITE[00601D7B]: CALL dword ptr [EDX + 0x18] */
     (*g_playSystem_00802A38->vtable->SendMessage)
               ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_40);
   }

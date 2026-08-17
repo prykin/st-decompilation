@@ -122,6 +122,7 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     local_ec = 0;
     local_c8 = 1;
     local_124 = local_164;
+    /* ST_CALLSITE[005426E6]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_184),1);
     if ((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
@@ -139,6 +140,7 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     local_11c = 0xb906;
     local_d0 = 0x271a;
     local_f4 = 0x271a;
+    /* ST_CALLSITE[00542771]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_184),1);
     local_d0 = 0x2718;
@@ -147,6 +149,7 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     local_184[0] = 1;
     local_15c = 0xb901;
     local_11c = 0xb902;
+    /* ST_CALLSITE[005427CB]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_184),1);
     if ((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
@@ -162,6 +165,7 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 2) + 0x128;
     local_15c = 0xb903;
     local_11c = 0xb904;
+    /* ST_CALLSITE[0054284D]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_184),1);
     local_184[3] = DAT_00806734 + -0x1a;
@@ -178,71 +182,94 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     local_f4 = 0x2739;
     local_15c = 0xb907;
     local_11c = 0xb908;
+    /* ST_CALLSITE[005428F5]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_184),1);
     st::fn_004021C6();
+    /* ST_CALLSITE[0054290E]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x11f,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542927]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x120,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542940]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x122,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542959]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x123,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542972]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x125,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[0054298B]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x127,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[005429A4]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x128,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[005429BD]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x12a,nullptr,nullptr,0,1);
     st::fn_004021C6();
     if (DAT_0080874e == '\x03') {
+      /* ST_CALLSITE[005429DF]: CALL dword ptr [EDX + 0x8] */
       (*this_00->vtable->CreateObject)
                 ((SystemClassTy *)this_00,0x151,nullptr,nullptr,0,1);
+      /* ST_CALLSITE[005429EF]: CALL dword ptr [EAX + 0x8] */
       (*this_00->vtable->CreateObject)
                 ((SystemClassTy *)this_00,0x159,nullptr,nullptr,0,1);
     }
+    /* ST_CALLSITE[005429FF]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x149,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542A18]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x148,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542A31]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x14a,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542A4A]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x153,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542A63]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x155,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542A7C]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x154,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542A95]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x156,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542AAE]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,299,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542AC7]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x12e,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542AE0]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x14b,nullptr,nullptr,0,1);
     st::fn_004021C6();
+    /* ST_CALLSITE[00542AF6]: CALL dword ptr [EDX + 0x10] */
     this_00->vfunc_10(0x201,0);
     st::fn_004021C6();
     if (g_helpPanel_00801690 != nullptr) {
+      /* ST_CALLSITE[00542B0C]: CALL 0x00404322; direct=00404322 HelpPanelTy::sub_0051DA70 */
       st::fn_00404322(g_helpPanel_00801690);
     }
     st::fn_004021C6();
@@ -290,15 +317,19 @@ void st::fn_00542D80(void)
       g_interSystem_00802A28 = nullptr;
     }
     else {
+      /* ST_CALLSITE[00542DC7]: CALL 0x0040475a; direct=0040475A InterSystemC::InterSystemC */
       g_interSystem_00802A28 = st::fn_0040475A(this,g_app_00806728);
     }
     g_interSystem_00802A28->field_0020 = 0;
+    /* ST_CALLSITE[00542DE4]: CALL dword ptr [EDX] */
     (*g_interSystem_00802A28->vtable->InitSystem)((SystemClassTy *)g_interSystem_00802A28);
     st::fn_006E4960
               ((AppClassTy *)&DAT_00807620,(SystemClassTy *)g_parentSystem_0081163C,
                (SystemClassTy *)g_interSystem_00802A28,0);
+    /* ST_CALLSITE[00542E05]: CALL 0x00401d02; direct=00401D02 InterSystemC::CreateInterfObjects */
     st::fn_00401D02(g_interSystem_00802A28);
     local_14 = 5;
+    /* ST_CALLSITE[00542E1D]: CALL dword ptr [EDX + 0x20] */
     g_interSystem_00802A28->GetMessage((int)local_24);
     g_interSystem_00802A28->field_0020 = 1;
     g_currentExceptionFrame = local_68.previous;
@@ -366,13 +397,15 @@ int __thiscall st::fn_00542F40(InterSystemC *this,STMessage *message)
   if (SVar1 < MESS_INTERSYSTEMC_B904) {
     if (SVar1 == MESS_INTERSYSTEMC_B903) {
       if (g_cursorClass_00802A30 != nullptr) {
+        /* ST_CALLSITE[005430CB]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         st::fn_00403058(g_cursorClass_00802A30);
       }
       if (g_helpPanel_00801690 == nullptr) {
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
-      g_helpPanel_00801690->st::fn_0040425F('\x01');
+      /* ST_CALLSITE[005430E2]: CALL dword ptr [EDX + 0x18] */
+      g_helpPanel_00801690->SetPanel('\x01');
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
@@ -390,6 +423,7 @@ int __thiscall st::fn_00542F40(InterSystemC *this,STMessage *message)
           pCVar4 = st::fn_0040577C(st::mutable_c_string("PANEL_BKGND"),0);
           pCVar4 = st::fn_006F2C00(pCVar4,iVar9,uVar3);
           local_c = (tagBITMAPINFO *)st::fn_006F1CE0(g_cMf32_00806790,1,pCVar4,piVar10,iVar13);
+          /* ST_CALLSITE[0054303C]: CALL 0x00403738; direct=00403738 PutDDX */
           st::fn_00403738(0,0,'\x01',local_c);
           st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_c);
           g_currentExceptionFrame = local_50.previous;
@@ -400,12 +434,14 @@ int __thiscall st::fn_00542F40(InterSystemC *this,STMessage *message)
           return 0;
         }
         if (g_cursorClass_00802A30 != nullptr) {
+          /* ST_CALLSITE[00542FC0]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           st::fn_00403058(g_cursorClass_00802A30);
         }
         if (g_optPanel_008016DC == nullptr) {
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
+        /* ST_CALLSITE[00542FD5]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
         st::fn_00405A42(g_optPanel_008016DC,'\x01');
         g_currentExceptionFrame = local_50.previous;
         return 0;
@@ -414,12 +450,14 @@ int __thiscall st::fn_00542F40(InterSystemC *this,STMessage *message)
     else {
       if (SVar1 == MESS_INTERSYSTEMC_B901) {
         if (g_cursorClass_00802A30 != nullptr) {
+          /* ST_CALLSITE[00543093]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           st::fn_00403058(g_cursorClass_00802A30);
         }
         if (g_playPanel_008016E4 == nullptr) {
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
+        /* ST_CALLSITE[005430A8]: CALL 0x0040425f; direct=0040425F PlayPanelTy::SetPanel */
         st::fn_0040425F(g_playPanel_008016E4,'\x01');
         g_currentExceptionFrame = local_50.previous;
         return 0;
@@ -465,6 +503,7 @@ switchD_00543107_caseD_b904:
     iVar13 = *piVar10;
     cVar7 = '\x01';
 LAB_00543291:
+    /* ST_CALLSITE[00543291]: CALL 0x00403738; direct=00403738 PutDDX */
     st::fn_00403738(iVar13,iVar9,cVar7,pBVar6);
   }
   else {
@@ -474,9 +513,11 @@ LAB_00543291:
       goto switchD_00543107_caseD_b904;
     case 0xb905:
       if (g_cursorClass_00802A30 != nullptr) {
+        /* ST_CALLSITE[00543118]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         st::fn_00403058(g_cursorClass_00802A30);
       }
       if (g_optPanel_008016DC != nullptr) {
+        /* ST_CALLSITE[0054312D]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
         st::fn_00405A42(g_optPanel_008016DC,'\x0e');
         g_currentExceptionFrame = local_50.previous;
         return 0;
@@ -484,6 +525,7 @@ LAB_00543291:
       break;
     case MESS_INTERSYSTEMC_B904|MESS_SHARED_0003:
       if (g_cursorClass_00802A30 != nullptr) {
+        /* ST_CALLSITE[00543154]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         st::fn_00403058(g_cursorClass_00802A30);
         g_cursorClass_00802A30->field_04DE = 1;
         st::fn_00405E2F(0xae);

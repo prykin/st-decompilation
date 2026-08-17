@@ -44,13 +44,16 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   local_10 = 0;
   local_c = 0x10;
   local_8 = 0;
+  /* ST_CALLSITE[0063D19B]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
   STT3DSprC::RestoreSpr((STT3DSprC *)((int)this + 0x1d5),(int *)&local_20,pAVar4);
+  /* ST_CALLSITE[0063D1BA]: CALL 0x00403107; direct=00403107 sub_00416240 */
   sub_00416240(this,STField<ushort>(this,0x266),STField<short>(this,0x26a),
                STField<ushort>(this,0x26e));
   FreeAndNull(&local_20);
   if (-1 < STField<int>(this,0x33a)) {
     STField<undefined4>(this,0x33a) = 0xffffffff;
     STField<undefined4>(this,0x353) = 0xffffffff;
+    /* ST_CALLSITE[0063D1EF]: CALL 0x00402e78; direct=00402E78 STTmMineC::LoadImagNuclear */
     iVar2 = STTmMineC::LoadImagNuclear(this,(uint)(STField<int>(this,0x34b) != 0));
     if (iVar2 == 0) {
       thunk_FUN_0063d410(this);

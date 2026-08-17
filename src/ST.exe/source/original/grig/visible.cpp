@@ -42,6 +42,7 @@ void __thiscall st::fn_005578D0(VisibleClassTy *this)
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
+    /* ST_CALLSITE[00557BA7]: CALL 0x0040218f; direct=0040218F VisibleClassTy::sub_00558140 */
     st::fn_0040218F(local_c);
     st::fn_006A5E40(iVar4,0,st::mutable_c_string("E:\\__titans\\grig\\visible.cpp"),0x79);
     return;
@@ -239,32 +240,39 @@ void __thiscall st::fn_00557C90(VisibleClassTy *this)
         }
         switch(element_0110->field_0000) {
         case '\0':
+          /* ST_CALLSITE[00557E59]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
           st::fn_0040388C(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,
                        (undefined *)(int)element_0110->field_0006,(int *)(uint)(byte)element_0110->field_0001,
                        (uint)(byte)element_0110->field_0007,st::pointer_boundary_cast<int *>(element_0110->field_0008),0x4001);
           break;
         case '\x01':
+          /* ST_CALLSITE[00557E86]: CALL 0x00402c2a; direct=00402C2A VisibleClassTy::sub_005594A0 */
           st::fn_00402C2A(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                        (undefined *)(uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,
                        element_0110->field_0008,2);
           break;
         case '\x02':
+          /* ST_CALLSITE[00557EB3]: CALL 0x004020e0; direct=004020E0 VisibleClassTy::SetZoneDes */
           st::fn_004020E0(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                      (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,element_0110->field_0008,4);
           break;
         case '\x03':
+          /* ST_CALLSITE[00557EE0]: CALL 0x0040141f; direct=0040141F VisibleClassTy::SetZoneAst */
           st::fn_0040141F(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                      (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,element_0110->field_0008,8);
           break;
         case '\x04':
+          /* ST_CALLSITE[00557F0A]: CALL 0x00401cb7; direct=00401CB7 VisibleClassTy::SetZoneTsh */
           st::fn_00401CB7(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                      (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,element_0110->field_0008,0x10);
           break;
         case '\x05':
+          /* ST_CALLSITE[00557F34]: CALL 0x0040205e; direct=0040205E VisibleClassTy::SetZoneMin1 */
           st::fn_0040205E(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                       (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,element_0110->field_0008,0x20);
           break;
         case '\x06':
+          /* ST_CALLSITE[00557F5E]: CALL 0x00401848; direct=00401848 VisibleClassTy::SetZoneMin2 */
           st::fn_00401848(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
                       (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,element_0110->field_0008,0x40);
         }
@@ -355,8 +363,8 @@ byte * __thiscall st::fn_005582A0(VisibleClassTy *this,uint *param_1)
     return nullptr;
   }
   if (local_24->field_0114 != 0) {
-    local_c = (undefined4 *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&local_24->field_00F4->flags),(int *)&local_10);
-    local_14 = (undefined4 *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pVVar2->field_0110->flags),(int *)&local_18);
+    local_c = st::pointer_boundary_cast<undefined4 *>(st::fn_006B0020(&local_24->field_00F4->flags,(int *)&local_10));
+    local_14 = st::pointer_boundary_cast<undefined4 *>(st::fn_006B0020(&pVVar2->field_0110->flags,(int *)&local_18));
     if (pVVar2->field_0114 != 0) {
       iVar5 = st::machine_word_boundary_cast<int>(pVVar2->field_002C * pVVar2->field_0028 * 4);
       goto LAB_0055832e;
@@ -600,6 +608,7 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
                 element_0110 = nullptr;
               }
               if (element_0110->field_0000 == '\0') {
+                /* ST_CALLSITE[00558A11]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
                 st::fn_0040388C(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,
                              (undefined *)(int)element_0110->field_0006,(int *)(uint)(byte)element_0110->field_0001,
                              (uint)(byte)element_0110->field_0007,st::pointer_boundary_cast<int *>(element_0110->field_0008),0x4000);
@@ -613,6 +622,7 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
       }
       else if (SVar1 == MESS_ID_NONE) {
         if (local_14->field_0114 != 0) {
+          /* ST_CALLSITE[00558961]: CALL 0x00404034; direct=00404034 VisibleClassTy::VisHoleExec */
           st::fn_00404034(local_14);
         }
       }
@@ -623,17 +633,21 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
                               (g_cMf32_00806754,PTR_s_VISIBILITY_0079aec4,0,0);
         }
         if ((local_8 == nullptr) || (*(int *)(local_8 + 10) == 0)) {
+          /* ST_CALLSITE[0055891E]: CALL 0x00404a5c; direct=00404A5C VisibleClassTy::InitData */
           st::fn_00404A5C(this_00);
         }
         else {
+          /* ST_CALLSITE[00558915]: CALL 0x004051f0; direct=004051F0 Visible::PrepareAfterSave */
           st::fn_004051F0((Visible *)this_00,local_8);
         }
+        /* ST_CALLSITE[00558925]: CALL 0x00405bff; direct=00405BFF VisibleClassTy::Init */
         st::fn_00405BFF(this_00);
         if ((g_cMf32_00806754 != nullptr) && (local_8 != nullptr)) {
           st::fn_006F20E0(g_cMf32_00806754,(uint *)&local_8);
         }
       }
       else if (SVar1 == MESS_SHARED_0003) {
+        /* ST_CALLSITE[005588B6]: CALL 0x0040218f; direct=0040218F VisibleClassTy::sub_00558140 */
         st::fn_0040218F(local_14);
         if (this_00->field_0114 != 0) {
           st::fn_00717870(g_sT3DSMAPContext_00807598);
@@ -644,7 +658,9 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
     }
     else if (SVar1 == MESS_SHARED_010F) {
       local_c = 0;
+      /* ST_CALLSITE[00558A4B]: CALL 0x00403224; direct=00403224 VisibleClassTy::PrepareToSave */
       local_10 = st::fn_00403224(local_14,&local_c);
+      /* ST_CALLSITE[00558A67]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       st::fn_00401078
                 (g_playSystem_00802A38,PTR_s_VISIBILITY_0079aec4,local_10,local_c,0xc);
       if (local_10 != nullptr) {
@@ -729,6 +745,7 @@ st::fn_005597A0
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[00559860]: CALL 0x00403b02; direct=00403B02 VisibleClassTy::sub_0055BB00 */
       st::fn_00403B02(this,2,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     }
     if ((param_7 & 4) != 0) {
@@ -835,6 +852,7 @@ st::fn_00559B30
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[00559BF0]: CALL 0x00403b02; direct=00403B02 VisibleClassTy::sub_0055BB00 */
       st::fn_00403B02(this,3,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     }
     if ((param_7 & 8) != 0) {
@@ -942,6 +960,7 @@ st::fn_00559EC0
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[00559F86]: CALL 0x00403b02; direct=00403B02 VisibleClassTy::sub_0055BB00 */
       st::fn_00403B02(this,4,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     }
     if ((param_7 & 0x10) != 0) {
@@ -1046,6 +1065,7 @@ st::fn_0055A270
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[0055A336]: CALL 0x00403b02; direct=00403B02 VisibleClassTy::sub_0055BB00 */
       st::fn_00403B02(this,5,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     }
     if ((param_7 & 0x20) != 0) {
@@ -1150,6 +1170,7 @@ st::fn_0055A620
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[0055A6E6]: CALL 0x00403b02; direct=00403B02 VisibleClassTy::sub_0055BB00 */
       st::fn_00403B02(this,6,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     }
     if ((param_7 & 0x40) != 0) {
@@ -1242,6 +1263,7 @@ st::fn_0055A9D0
         local_1c = param_5;
         local_14 = this_00->field_0108;
         local_8 = st::fn_006AE1C0((DArrayTy *)array,local_28);
+        /* ST_CALLSITE[0055AA8F]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
         st::fn_0040388C(this_00,local_28[0],local_28[1],local_20,local_18,(uint)local_1c,
                      (int *)0xfffffffa,0xffffffff);
       }
@@ -1304,6 +1326,7 @@ void __thiscall st::fn_0055AB50(VisibleClassTy *this)
         }
         if (((uint)(element_00f4->field_0014 + element_00f4->field_0018) <= this_00->field_0108) &&
            (((this_00->field_0108 - element_00f4->field_0014) - element_00f4->field_0018) % 7 == 0)) {
+          /* ST_CALLSITE[0055AC00]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */
           st::fn_004018F2(this_00,element_00f4->field_0000,(undefined *)element_00f4->field_0004,element_00f4->index,element_00f4->index_0010,element_00f4->field_000C,-6,
                        0xffffffff);
           uVar3 = local_8;
@@ -1314,6 +1337,7 @@ void __thiscall st::fn_0055AB50(VisibleClassTy *this)
             local_8 = uVar3;
           }
           else {
+            /* ST_CALLSITE[0055AC24]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
             st::fn_0040388C(this_00,element_00f4->field_0000,element_00f4->field_0004,(undefined *)element_00f4->index,(int *)element_00f4->index_0010,uVar4,
                          (int *)0xfffffffa,0xffffffff);
           }

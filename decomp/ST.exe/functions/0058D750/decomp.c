@@ -17,8 +17,10 @@ STSharkC * __thiscall STSharkC::STSharkC(STSharkC *this)
 
 {
 
+  /* ST_CALLSITE[0058D754]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)this);
-  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[0058D761]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  STT3DSprC::STT3DSprC((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = &VTable_0079BFE0;
   this->vtable = &STSharkCVTable;
   this->field_0257 = CASE_0;

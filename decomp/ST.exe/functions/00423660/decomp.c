@@ -34,6 +34,7 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
       do {
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
+          /* ST_CALLSITE[004236D9]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
           if (this_00 == nullptr) {
@@ -41,6 +42,7 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\tc_grp.cpp",0x81);
           }
+          /* ST_CALLSITE[00423702]: CALL dword ptr [EDX + 0x2c] */
           iVar5 = this_00->vfunc_2C();
           if (iVar5 == param_1) {
             Library::DKW::TBL::DArrayAppend(local_c,local_8);

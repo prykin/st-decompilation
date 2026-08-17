@@ -41,11 +41,13 @@ byte * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
   this_00 = local_20;
   if (iVar5 == 0) {
     *param_1 = 0x80;
-    local_14 = (byte *)FUN_006b0020(&local_20->field_0241->flags,(int *)&local_8);
+    local_14 = FUN_006b0020(&local_20->field_0241->flags,(int *)&local_8);
     FreeAndNull(&local_14);
     *param_1 = *param_1 + local_8;
+    /* ST_CALLSITE[00645490]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
     local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_c);
     *param_1 = *param_1 + local_c;
+    /* ST_CALLSITE[006454A7]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
     local_1c = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
     iVar8 = *param_1;
     *param_1 = iVar8 + local_10;
@@ -78,7 +80,7 @@ byte * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
     pbVar5[99] = uVar4;
     *(undefined4 *)(pbVar5 + 100) = local_20->field_023D;
     local_28 = pbVar5;
-    local_14 = (byte *)FUN_006b0020(&local_20->field_0241->flags,(int *)&local_8);
+    local_14 = FUN_006b0020(&local_20->field_0241->flags,(int *)&local_8);
     pbVar6 = local_14;
     pbVar11 = pbVar5 + 0x80;
     memmove(pbVar11, pbVar6, local_8); /* compiler REP MOVS byte copy */

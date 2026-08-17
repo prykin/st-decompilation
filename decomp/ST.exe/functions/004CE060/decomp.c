@@ -21,6 +21,7 @@ int __thiscall FUN_004ce060(void *this,int param_1)
                          (int *)&local_c);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((iVar1 == 0) && (local_c != nullptr)) &&
+         /* ST_CALLSITE[004CE0A1]: CALL dword ptr [EDX + 0x2c] */
          (iVar1 = (**(code **)(*local_c + 0x2c))(), iVar1 == param_1)) {
         local_8 = local_8 + 1;
       }

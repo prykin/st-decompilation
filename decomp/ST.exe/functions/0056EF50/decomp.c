@@ -40,6 +40,7 @@ void __thiscall STAppC::sub_0056EF50(STAppC *this)
     pcVar1 = pcVar1 + 0x51;
     iVar3 = iVar3 + -1;
   } while (iVar3 != 0);
+  /* ST_CALLSITE[0056EFE3]: CALL 0x0040591b; direct=0040591B STAppC::sub_0056EE90 */
   sub_0056EE90(this);
   return;
 }

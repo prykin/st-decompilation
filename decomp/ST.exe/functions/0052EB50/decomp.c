@@ -105,6 +105,7 @@ OptPanelTy::CreateSlider
     }
     local_2a4[3] = iVar4 + param_2;
     local_23c = 0xc006;
+    /* ST_CALLSITE[0052ECF6]: CALL dword ptr [EAX + 0x8] */
     (*pOVar2->field_000C->vtable->CreateObject)
               ((SystemClassTy *)pOVar2->field_000C,4,&local_8,nullptr,local_42c,0);
     g_currentExceptionFrame = local_54.previous;

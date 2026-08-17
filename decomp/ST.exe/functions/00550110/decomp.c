@@ -15,6 +15,7 @@ int __fastcall FUN_00550110(STPlaySystemC *param_1)
   if ((byte)param_1->field_004E < (byte)param_1->field_004D) {
     param_1->field_003D->field_0005 = 0;
     param_1->field_004E = param_1->field_004E + '\x01';
+    /* ST_CALLSITE[00550130]: CALL 0x00404b15; direct=00404B15 STPlaySystemC::sub_00550190 */
     STPlaySystemC::sub_00550190(param_1);
     return 1;
   }
@@ -22,6 +23,7 @@ int __fastcall FUN_00550110(STPlaySystemC *param_1)
     param_1->field_003D->field_0005 = param_1->field_0057;
     bVar2 = param_1->field_0057 != 0;
     if (bVar2) {
+      /* ST_CALLSITE[00550154]: CALL 0x00404b15; direct=00404B15 STPlaySystemC::sub_00550190 */
       STPlaySystemC::sub_00550190(param_1);
     }
     uVar1 = (uint)bVar2;

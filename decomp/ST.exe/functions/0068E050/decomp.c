@@ -32,6 +32,7 @@ byte * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *param_1
     else {
       puVar3 = &local_8->field_0020;
     }
+    /* ST_CALLSITE[0068E092]: CALL 0x0040518c; direct=0040518C TactDataPack */
     pbVar4 = TactDataPack(puVar3,param_1);
     pbVar4[0] = 0x8e;
     pbVar4[1] = 3;

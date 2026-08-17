@@ -12,8 +12,7 @@ uint __fastcall FUN_007489cf(int param_1)
   if (*(int *)(*(int *)(param_1 + 0x70) + 0x14) == 0) {
     return 0x80040227;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(char *)(param_1 + 0xa1) != '\0') {
+  if (((char *)param_1)[0xa1] != '\0') {
     return 1;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

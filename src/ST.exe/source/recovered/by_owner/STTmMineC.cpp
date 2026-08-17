@@ -18,7 +18,8 @@ void __thiscall st::fn_0063DDB0(STTmMineC *this,int param_1)
         pSVar2 = st::pointer_boundary_cast<STTmMineC_field_0336DArray *>(this->field_0336);
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         if ((uVar3 < pSVar2->count) &&
-           (&pSVar2->data->field_0000 + pSVar2->elementSize * uVar3 != nullptr)) {
+           (&pSVar2->data->field_0000 + pSVar2->elementSize * uVar3 != 0)) {
+          /* ST_CALLSITE[0063DDEC]: CALL 0x00403274; direct=00403274 STTmMineC::LoadImagSpr */
           st::fn_00403274(this,uVar3,param_1);
         }
         uVar3 = uVar3 + 1;

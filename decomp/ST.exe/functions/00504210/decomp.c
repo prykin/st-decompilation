@@ -62,6 +62,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
       local_18 = pAVar12;
       pcVar6[0] = pAVar11->field_0x0;
       pcVar6[1] = uVar2;
+      /* ST_CALLSITE[00504295]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
       STAllPlayersC::GetPanelInfo
                 (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(param_1), (uint8_t)((char)param_1 + '\x0e')),pAVar12
                 );

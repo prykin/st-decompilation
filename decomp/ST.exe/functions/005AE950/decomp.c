@@ -19,6 +19,7 @@ void __thiscall ChooseMapTy::sub_005AE950(ChooseMapTy *this)
     this->field_0025 = iVar1;
     this->field_0031 = 0;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005AE985]: CALL dword ptr [EAX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   iVar1 = this->array_00BC[0xc].field_01EC;
@@ -26,6 +27,7 @@ void __thiscall ChooseMapTy::sub_005AE950(ChooseMapTy *this)
     this->field_0025 = iVar1;
     this->field_0031 = 0;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005AE9A1]: CALL dword ptr [EAX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_0389 != 0) {
@@ -33,6 +35,7 @@ void __thiscall ChooseMapTy::sub_005AE950(ChooseMapTy *this)
     this->field_002D = 0x20;
     this->field_0031 = 0;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005AE9C5]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_054C != 0) {

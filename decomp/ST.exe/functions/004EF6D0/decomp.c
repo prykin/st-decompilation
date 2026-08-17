@@ -46,18 +46,22 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
     return 0xffff;
   }
   if (message->id == MESS_ID_CREATE) {
+    /* ST_CALLSITE[004EF714]: CALL 0x004032a6; direct=004032A6 ProdPanelTy::PreInitProdPanel */
     ProdPanelTy::PreInitProdPanel((ProdPanelTy *)local_8);
   }
+  /* ST_CALLSITE[004EF71C]: CALL 0x004059d4; direct=004059D4 ProdPanelTy::GetMessage */
   ProdPanelTy::GetMessage((ProdPanelTy *)this_00,message);
   SVar1 = message->id;
   if (SVar1 < 0xb203) {
     if (SVar1 == MESS_SHARED_B202) {
+      /* ST_CALLSITE[004EF7C4]: CALL 0x00401ce4; direct=00401CE4 ProdPanelTy::PaintTab */
       ProdPanelTy::PaintTab
                 ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,thunk_FUN_004ef5f0);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (SVar1 == MESS_ID_CREATE) {
+      /* ST_CALLSITE[004EF7A4]: CALL 0x004054a7; direct=004054A7 BldBoatPanelTy::InitBldBoatPanel */
       InitBldBoatPanel(this_00);
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -71,6 +75,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
       this_00->field_0279 = this_00->field_0278;
       this_00->field_0278 = *(char *)(message->arg0).ptr + -1;
       thunk_FUN_005252c0(0xae);
+      /* ST_CALLSITE[004EF772]: CALL dword ptr [EAX + 0x1c] */
       this_00->Update();
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -91,7 +96,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
       else {
         puVar6 = (undefined4 *)((iVar5 + -0xc09f) * *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0x1c));
       }
-      if ((puVar6 != nullptr) && (*(char *)(puVar6 + 2) != '\0')) {
+      if ((puVar6 != nullptr) && (((char *)puVar6)[2] != '\0')) {
         sStack_f = 0;
         uStack_d = 0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -100,10 +105,12 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
         local_c = 0;
         local_a = 0;
         if ((message->arg1).u32 == 0) {
+          /* ST_CALLSITE[004EF87C]: CALL dword ptr [0x0085bdf0] */
           uVar3 = GetAsyncKeyState(0x10);
           sStack_f = (-(ushort)((uVar3 & 0x8000) != 0) & 9) + 1;
         }
         else {
+          /* ST_CALLSITE[004EF868]: CALL dword ptr [0x0085bdf0] */
           uVar3 = GetAsyncKeyState(0x10);
           sStack_f = (-(ushort)((uVar3 & 0x8000) != 0) & 0xfff7) - 1;
         }
@@ -118,6 +125,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
       break;
     case MESS_BLDLABPANELTY_C0A4:
       this_00->field_0199 = message->arg0;
+      /* ST_CALLSITE[004EF8DA]: CALL 0x00403c6a; direct=00403C6A BldBoatPanelTy::sub_004EF140 */
       sub_004EF140(this_00);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_58.previous;
@@ -127,6 +135,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
     case MESS_BEHPANELTY_C0B1:
     case 0xc0b2:
     case MESS_BLDLABPANELTY_C0B3:
+      /* ST_CALLSITE[004EF902]: CALL 0x004011ea; direct=004011EA BldBoatPanelTy::PaintBldBut */
       PaintBldBut(this_00,(AnonShape_004EF320_444F9AB1 *)message);
     }
   }

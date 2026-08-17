@@ -48,6 +48,7 @@ undefined4 __fastcall FUN_0061e110(STLightC *param_1)
       (((((pVVar2 = g_visibleClass_00802A88, local_c = 1,
           g_visibleClass_00802A88 != nullptr && (DAT_0080874d != -1)) &&
          (g_visibleClass_00802A88->field_00F8 != 0)) &&
+        /* ST_CALLSITE[0061E324]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
         (((VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_8,iVar5,
                       &local_8,&local_1c), pVVar3 = g_visibleClass_00802A88, -1 < local_10 &&
@@ -59,6 +60,7 @@ undefined4 __fastcall FUN_0061e110(STLightC *param_1)
      (((((((pVVar2->field_004C != nullptr &&
            (pVVar2->field_004C[local_8 + iVar5 * pVVar2->field_0030] == 0)) && (DAT_0080874d != -1))
          && ((g_visibleClass_00802A88->field_00F8 != 0 &&
+             /* ST_CALLSITE[0061E3BA]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
              (VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_14,iVar7,
                          &local_1c,&local_14), -1 < local_18)))) &&

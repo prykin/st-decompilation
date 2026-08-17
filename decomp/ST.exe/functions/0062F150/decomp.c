@@ -17,6 +17,7 @@ void __fastcall FUN_0062f150(RecoveredRecord_STRubbishC_0062F150 *param_1)
   if ((param_1->field_01F9 != '\0') && (g_visibleClass_00802A88 != nullptr)) {
     iVar1 = param_1->field_01DD;
     if ((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) {
+      /* ST_CALLSITE[0062F1B9]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
       VisibleClassTy::sub_00558C00
                 (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_1->field_01D5,
                  param_1->field_01D9,&local_8,&local_10);
@@ -39,8 +40,9 @@ LAB_0062f208:
       if (*(int *)(iVar1 + 0x18) == 2) {
         if (g_playSystem_00802A38->field_00E4 % 5 == 0) {
           if (this != nullptr) {
+            /* ST_CALLSITE[0062F261]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
             STT3DSprC::sub_004ACE30
-                      (this,PTR_00806724->entries[*(byte *)(iVar1 + 0x34)],
+                      (this,PTR_00806724->entries[((byte *)iVar1)[0x34]],
                        (int)PTR_00806724->field_002C);
           }
           *(char *)(*piVar3 + 0x34) = *(char *)(*piVar3 + 0x34) + '\x01';
@@ -59,12 +61,12 @@ LAB_0062f208:
       }
       iVar1 = *piVar3;
       if (local_c == 0) {
-        if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) != '\0')) && (this != nullptr)) {
+        if (((iVar1 != 0) && (((char *)iVar1)[0x3d] != '\0')) && (this != nullptr)) {
           thunk_FUN_004ad430(this);
           *(undefined1 *)(*piVar3 + 0x3d) = 0;
         }
       }
-      else if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) == '\0')) && (this != nullptr)) {
+      else if (((iVar1 != 0) && (((char *)iVar1)[0x3d] == '\0')) && (this != nullptr)) {
         thunk_FUN_004ad460(this,0);
         *(undefined1 *)(*piVar3 + 0x3d) = 1;
       }

@@ -126,6 +126,7 @@ void __thiscall st::fn_00566AA0(SoundManagerTy *this)
     }
     if (0 < (int)uVar2) {
       if (this->field_0039 < 0) {
+        /* ST_CALLSITE[00566B72]: CALL 0x00401ac3; direct=00401AC3 SoundManagerTy::sub_00566970 */
         st::fn_00401AC3(this,0,2000);
       }
       else {
@@ -148,10 +149,12 @@ void __thiscall st::fn_00566AA0(SoundManagerTy *this)
               uVar1 = st::machine_word_boundary_cast<uint>(this->field_0039 + 1);
             }
             if ((int)uVar2 <= (int)uVar1) {
+              /* ST_CALLSITE[00566B35]: CALL 0x00401ac3; direct=00401AC3 SoundManagerTy::sub_00566970 */
               st::fn_00401AC3(this,1,0);
               return;
             }
           }
+          /* ST_CALLSITE[00566B61]: CALL 0x00401ac3; direct=00401AC3 SoundManagerTy::sub_00566970 */
           st::fn_00401AC3(this,uVar1,0);
           return;
         }

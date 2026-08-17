@@ -40,6 +40,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
          ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar2 ||
          (STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[1] == nullptr)))) &&
+       /* ST_CALLSITE[0062FB6D]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
        (iVar8 = DumpClassC::WritePtr
                           ((short)STField<undefined4>(this,0x1d5),
                            (short)STField<undefined4>(this,0x1d9),
@@ -49,6 +50,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
       STField<undefined1>(this,0x1f9) = param_1->field_0038;
       auto param_1_after_write = (AnonShape_0062FA80_0B91B2B9 *)0x5; /* compiler stack-slot lifetime split */
       do {
+        /* ST_CALLSITE[0062FB9D]: CALL 0x004017f3; direct=004017F3 STRubbishC::RubbishCreatePart */
         if ((*piVar9 != 0) && (iVar7 = STRubbishC::RubbishCreatePart(this), -1 < iVar7)) {
           local_c = local_c + 1;
         }
@@ -79,6 +81,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
       return local_8;
     }
   }
+  /* ST_CALLSITE[0062FC1B]: CALL 0x00405885; direct=00405885 STRubbishC::sub_0062F900 */
   STRubbishC::sub_0062F900(this);
   return 0;
 }

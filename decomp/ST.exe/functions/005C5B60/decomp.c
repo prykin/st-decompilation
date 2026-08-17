@@ -20,7 +20,9 @@ void __thiscall SettMapTy::CloseButtons(SettMapTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[005C5B94]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
     MMObjTy::CloseButtons((MMObjTy *)local_8);
+    /* ST_CALLSITE[005C5B9D]: CALL dword ptr [EAX + 0x1c] */
     this_00->DeleteCtrls();
     if (this_00->field_21E4 != '\0') {
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {

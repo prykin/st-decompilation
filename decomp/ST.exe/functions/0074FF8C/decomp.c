@@ -4,6 +4,7 @@
 int __fastcall FUN_0074ff8c(AnonShape_0074FF8C_0691EA28 *param_1)
 
 {
+  /* ST_CALLSITE[0074FF94]: CALL dword ptr [0x0085bb88] */
   InitializeCriticalSection((LPCRITICAL_SECTION)&param_1->field_0x8);
   FUN_0074de63((undefined4 *)&param_1->field_0x20);
   FUN_0074de63((undefined4 *)&param_1->field_0x38);

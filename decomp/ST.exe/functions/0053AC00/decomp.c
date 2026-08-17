@@ -45,6 +45,7 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[0053AC49]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,0x1d,0x13,'\x01',
          (byte *)local_14->field_01CD);
   local_c = 0x1b;
@@ -57,6 +58,7 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
       local_8 = iVar10;
       pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pPVar4->field_01D1,
                             (byte)(&DAT_00808af4)[uVar6 * 0x9c] + 9);
+      /* ST_CALLSITE[0053ACA7]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)pPVar4->field_0068,0x22,uVar7,'\x01',(byte *)pBVar5);
       ccFntTy::SetSurf(pPVar4->field_01DD,(int)pPVar4->field_0068,0,0x37,uVar7,0x10,0xc);
       bVar2 = g_bulkInitializedRecords_008087C7

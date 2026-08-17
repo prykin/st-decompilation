@@ -28,7 +28,9 @@ int __cdecl SavePlrEdit(int param_1,char *param_2,AnonShape_0067D9C0_2E8A2257 *p
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x10b);
     }
+    /* ST_CALLSITE[0067DA32]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
     local_c = EventDataPack((AllocationRecord_0065CD10 *)param_3->field_0106,&local_14);
+    /* ST_CALLSITE[0067DA44]: CALL 0x00405204; direct=00405204 PlrDataPack */
     local_8 = PlrDataPack((AllocationRecord_0067D3B0 *)param_3,(undefined4 *)local_c,local_14,
                           &local_10);
     thunk_FUN_0065d0f0((int *)&local_c);

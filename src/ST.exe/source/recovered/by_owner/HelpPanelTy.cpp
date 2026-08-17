@@ -126,12 +126,14 @@ LAB_0051490d:
             if (STField<char>(piVar3,0x12) != '\0') {
               return;
             }
+            /* ST_CALLSITE[00514956]: CALL 0x00405362; direct=00405362 HelpPanelTy::ChangeTree */
             st::fn_00405362(this,piVar3,uVar4);
             return;
           }
           uVar4 = uVar4 + 1;
         } while (uVar4 < uVar2);
       }
+      /* ST_CALLSITE[0051492B]: CALL 0x00401a37; direct=00401A37 HelpPanelTy::sub_005148A0 */
       st::fn_00401A37(this,iVar6);
       iVar6 = param_1;
     }
@@ -246,42 +248,56 @@ LAB_00514d04:
     pvVar5 = *(void **)(pbVar2 + iVar6 + 9);
     switch(bVar1) {
     case 1:
+      /* ST_CALLSITE[00514D32]: CALL 0x00404e85; direct=00404E85 HelpPanelTy::RCProc */
       st::fn_00404E85(this,(int)pvVar5,uVar4,'\0');
       break;
     case 2:
+      /* ST_CALLSITE[00514D64]: CALL 0x00403747; direct=00403747 HelpPanelTy::ObjProc */
       st::fn_00403747(this,(int)pvVar5,uVar4,'\0');
       break;
     case 3:
+      /* ST_CALLSITE[00514D57]: CALL 0x00403878; direct=00403878 HelpPanelTy::SubProc */
       st::fn_00403878(this,(int)pvVar5,'\0');
       break;
     case 4:
+      /* ST_CALLSITE[00514D71]: CALL 0x004057e0; direct=004057E0 HelpPanelTy::ArmProc */
       st::fn_004057E0(this,(int)pvVar5,uVar4,'\0');
       break;
     case 5:
+      /* ST_CALLSITE[00514D4B]: CALL 0x00402833; direct=00402833 HelpPanelTy::TechProc */
       st::fn_00402833(this,(uint)pvVar5,(byte)uVar4,'\0');
       break;
     case 6:
+      /* ST_CALLSITE[00514D3E]: CALL 0x00405e61; direct=00405E61 HelpPanelTy::TTreeProc */
       st::fn_00405E61(this,(uint)pvVar5,'\0');
       break;
     case 7:
+      /* ST_CALLSITE[00514D25]: CALL 0x004011fe; direct=004011FE HelpPanelTy::MObjProc */
       st::fn_004011FE(this);
       break;
     case 8:
+      /* ST_CALLSITE[00514D97]: CALL 0x004020b8; direct=004020B8 HelpPanelTy::TipProc */
       st::fn_004020B8(this,pvVar5,uVar4,'\0');
       break;
     case 10:
+      /* ST_CALLSITE[00514D1C]: CALL 0x00405803; direct=00405803 HelpPanelTy::IndexBut */
       st::fn_00405803(this);
       break;
     case 0xb:
+      /* ST_CALLSITE[00514D7E]: CALL 0x00402cac; direct=00402CAC HelpPanelTy::SpecProc */
       st::fn_00402CAC(this,(int)pvVar5,uVar4,'\0');
       break;
     case 0xc:
+      /* ST_CALLSITE[00514D8A]: CALL 0x00403bc0; direct=00403BC0 HelpPanelTy::NatProc */
       st::fn_00403BC0(this,(int)pvVar5,'\0');
     }
+    /* ST_CALLSITE[00514DB1]: CALL 0x004054c5; direct=004054C5 HelpPanelTy::LinkAct */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_004054C5(this,*(int *)(this->field_01C7 + iVar6 + 9),*(int *)(this->field_01C7 + iVar6 + 0xd));
+    /* ST_CALLSITE[00514DB8]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
     st::fn_00405100(this);
     local_c = *(uint *)PTR_sizeHelp_0085c118;
+    /* ST_CALLSITE[00514DCE]: CALL dword ptr [EAX + 0x18] */
     this->SetPanel('\x01');
   }
   local_c = local_c + 1;
@@ -304,33 +320,43 @@ void __thiscall st::fn_00515180(HelpPanelTy *this,char param_1)
   if ((this->field_01A1 == param_1) || (param_1 == '\a')) {
     switch(param_1) {
     case '\x01':
+      /* ST_CALLSITE[005151E9]: CALL 0x00404e85; direct=00404E85 HelpPanelTy::RCProc */
       st::fn_00404E85(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\x02':
+      /* ST_CALLSITE[0051521D]: CALL 0x00403747; direct=00403747 HelpPanelTy::ObjProc */
       st::fn_00403747(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\x03':
+      /* ST_CALLSITE[00515204]: CALL 0x00403878; direct=00403878 HelpPanelTy::SubProc */
       st::fn_00403878(this,(int)this->field_01A3,'\x01');
       return;
     case '\x04':
+      /* ST_CALLSITE[00515236]: CALL 0x004057e0; direct=004057E0 HelpPanelTy::ArmProc */
       st::fn_004057E0(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\x05':
+      /* ST_CALLSITE[005151D0]: CALL 0x00402833; direct=00402833 HelpPanelTy::TechProc */
       st::fn_00402833(this,(uint)this->field_01A3,*(byte *)&this->field_01A7,'\x01');
       return;
     case '\x06':
+      /* ST_CALLSITE[005151B7]: CALL 0x00405e61; direct=00405E61 HelpPanelTy::TTreeProc */
       st::fn_00405E61(this,(uint)this->field_01A3,'\x01');
       return;
+    /* ST_CALLSITE[005151F2]: CALL 0x004027ac; direct=004027AC HelpPanelTy::PrepMissObj */
     case '\a':
       st::fn_004027AC(this);
       return;
     case '\b':
+      /* ST_CALLSITE[0051527A]: CALL 0x004020b8; direct=004020B8 HelpPanelTy::TipProc */
       st::fn_004020B8(this,this->field_01A3,this->field_01A7,'\x01');
       break;
     case '\v':
+      /* ST_CALLSITE[0051524F]: CALL 0x00402cac; direct=00402CAC HelpPanelTy::SpecProc */
       st::fn_00402CAC(this,(int)this->field_01A3,this->field_01A7,'\x01');
       return;
     case '\f':
+      /* ST_CALLSITE[00515261]: CALL 0x00403bc0; direct=00403BC0 HelpPanelTy::NatProc */
       st::fn_00403BC0(this,(int)this->field_01A3,'\x01');
       return;
     }
@@ -438,23 +464,23 @@ void __thiscall st::fn_0051DA70(HelpPanelTy *this)
       uVar5 = (uint)(byte)this->field_0250;
       local_8 = uVar11 & 0xff;
       if ((int)(uVar11 & 0xff) < (int)(uVar5 - bVar4)) {
-        puVar12 = st::pointer_boundary_cast<uint *>(&DAT_0080734e);
+        puVar12 = &DAT_0080734e;
         local_c = 0;
       }
       else {
         local_8 = (uint)(byte)((char)uVar11 + (bVar4 - this->field_0250));
         if (DAT_0080874e == '\x01') {
-          puVar12 = st::pointer_boundary_cast<uint *>(&DAT_00807352);
+          puVar12 = &DAT_00807352;
           uVar5 = (uint)(byte)this->field_0251;
           local_c = 1;
         }
         else if (DAT_0080874e == '\x02') {
-          puVar12 = st::pointer_boundary_cast<uint *>(&DAT_00807356);
+          puVar12 = &DAT_00807356;
           uVar5 = (uint)(byte)this->field_0252;
           local_c = 2;
         }
         else {
-          puVar12 = st::pointer_boundary_cast<uint *>(&DAT_0080735a);
+          puVar12 = &DAT_0080735a;
           uVar5 = (uint)(byte)this->field_0253;
           local_c = 3;
         }
@@ -465,7 +491,9 @@ void __thiscall st::fn_0051DA70(HelpPanelTy *this)
         do {
           if ((*puVar12 & 1 << ((byte)uVar11 & 0x1f)) == 0) {
             if ((char)local_8 == '\0') {
+              /* ST_CALLSITE[0051DD04]: CALL 0x004020b8; direct=004020B8 HelpPanelTy::TipProc */
               st::fn_004020B8(this,(void *)(uint)bVar1,local_c,'\0');
+              /* ST_CALLSITE[0051DD0F]: CALL dword ptr [EDX + 0x18] */
               this->SetPanel('\x01');
               return;
             }

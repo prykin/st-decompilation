@@ -387,6 +387,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       memmove(puVar28, puVar27, 0x34); /* compiler REP MOVS byte copy */
       iVar19 = 0;
       if (param_1->field_00B3 != 0) {
+        /* ST_CALLSITE[00664E5E]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
         sub_0065F980(param_1);
       }
       AVar21 = 500;
@@ -397,6 +398,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       memmove(puVar28, puVar27, 0x34); /* compiler REP MOVS byte copy */
       iVar19 = 0;
       if (param_1->field_00B3 != 0) {
+        /* ST_CALLSITE[00664E8B]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
         sub_0065F980(param_1);
       }
       AVar21 = 0x1fe;
@@ -407,6 +409,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       memmove(puVar28, puVar27, 0x34); /* compiler REP MOVS byte copy */
       iVar19 = 0;
       if (param_1->field_00B3 != 0) {
+        /* ST_CALLSITE[00664EB8]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
         sub_0065F980(param_1);
       }
       AVar21 = 0x208;
@@ -417,6 +420,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       memmove(puVar28, puVar27, 0x34); /* compiler REP MOVS byte copy */
       iVar19 = 0;
       if (param_1->field_00B3 != 0) {
+        /* ST_CALLSITE[00664EE5]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
         sub_0065F980(param_1);
       }
       AVar21 = 0x212;
@@ -427,6 +431,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       memmove(puVar28, puVar27, 0x34); /* compiler REP MOVS byte copy */
       iVar19 = 0;
       if (param_1->field_00B3 != 0) {
+        /* ST_CALLSITE[00664F12]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
         sub_0065F980(param_1);
       }
       AVar21 = 0x21c;
@@ -437,6 +442,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       memmove(puVar28, puVar27, 0x34); /* compiler REP MOVS byte copy */
       iVar19 = 0;
       if (param_1->field_00B3 != 0) {
+        /* ST_CALLSITE[00664F3F]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
         sub_0065F980(param_1);
       }
       AVar21 = 0x226;
@@ -447,6 +453,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       memmove(puVar28, puVar27, 0x34); /* compiler REP MOVS byte copy */
       iVar19 = 0;
       if (param_1->field_00B3 != 0) {
+        /* ST_CALLSITE[00664F6C]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
         sub_0065F980(param_1);
       }
       AVar21 = 0x230;
@@ -457,6 +464,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       memmove(puVar28, puVar27, 0x34); /* compiler REP MOVS byte copy */
       iVar19 = 0;
       if (param_1->field_00B3 != 0) {
+        /* ST_CALLSITE[00664F96]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
         sub_0065F980(param_1);
       }
       AVar21 = 0x23a;
@@ -467,6 +475,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       memmove(puVar28, puVar27, 0x34); /* compiler REP MOVS byte copy */
       iVar19 = 0;
       if (param_1->field_00B3 != 0) {
+        /* ST_CALLSITE[00664FC0]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
         sub_0065F980(param_1);
       }
       AVar21 = 0x244;
@@ -476,6 +485,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       puVar28 = (uint *)&param_1->field_0xb7;
       memmove(puVar28, puVar27, 0x34); /* compiler REP MOVS byte copy */
       if (param_1->field_00B3 != 0) {
+        /* ST_CALLSITE[00664FEA]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
         sub_0065F980(param_1);
       }
       AVar21 = CASE_24E;
@@ -521,6 +531,7 @@ LAB_00665067:
             param_1->field_00A7 = 0;
           }
 LAB_00666934:
+          /* ST_CALLSITE[00666936]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
           uVar14 = sub_0065D9C0(param_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if ((int)*(short *)&param_1->field_0xd3 < CONCAT22(extraout_var_12,uVar14))
@@ -575,6 +586,7 @@ LAB_00666901:
                   param_1->field_00A3 = 0;
                   param_1->field_00A7 = 0;
                 }
+                /* ST_CALLSITE[00665FD1]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
                 uVar14 = sub_0065D9C0(param_1);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if (((int)param_1->field_018E < CONCAT22(extraout_var_06,uVar14)) &&
@@ -604,6 +616,7 @@ LAB_00665eba:
                 param_1->field_00A3 = 0;
                 param_1->field_00A7 = 0;
               }
+              /* ST_CALLSITE[00665EEB]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
               uVar14 = sub_0065D9C0(param_1);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if (((int)param_1->field_018E < CONCAT22(extraout_var_05,uVar14)) &&
@@ -646,6 +659,7 @@ LAB_00665eba:
                 param_1->field_00A3 = 0;
                 param_1->field_00A7 = 0;
               }
+              /* ST_CALLSITE[00665E32]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
               uVar14 = sub_0065D9C0(param_1);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if (((int)param_1->field_018E < CONCAT22(extraout_var_04,uVar14)) &&
@@ -742,8 +756,9 @@ LAB_00665eba:
               }
             }
             else {
-              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if (((param_1->field_00A7 == 0) &&
+                  /* ST_CALLSITE[00666250]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
+                  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                   (uVar14 = sub_0065D9C0(param_1),
                   (int)param_1->field_0159 < CONCAT22(extraout_var_07,uVar14))) &&
                  ((*(int *)&param_1->field_00AB == 0 ||
@@ -790,6 +805,7 @@ LAB_0066641b:
             param_1->field_00A3 = 0;
             param_1->field_00A7 = 0;
           }
+          /* ST_CALLSITE[00666458]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
           uVar14 = sub_0065D9C0(param_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if (CONCAT22(extraout_var_08,uVar14) <= (int)param_1->field_00E4)
@@ -822,6 +838,7 @@ LAB_00666423:
         param_1->field_00EB = 0x40;
         if (param_1->field_00A3 != 0) {
           if (param_1->field_00A7 != 0) {
+            /* ST_CALLSITE[006664BB]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
             sub_0065F980(param_1);
             param_1->field_009B = CASE_0;
             param_1->field_009F = 0;
@@ -829,6 +846,7 @@ LAB_00666423:
             param_1->field_00A7 = 0;
           }
 LAB_006664d8:
+          /* ST_CALLSITE[006664DA]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
           uVar14 = sub_0065D9C0(param_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar19 = CONCAT22(extraout_var_09,uVar14);
@@ -844,12 +862,14 @@ LAB_006664d8:
         param_1->field_00EB = 0x40;
         if (param_1->field_00A3 != 0) {
           if (param_1->field_00A7 != 0) {
+            /* ST_CALLSITE[006665ED]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
             sub_0065F980(param_1);
             param_1->field_009B = CASE_0;
             param_1->field_009F = 0;
             param_1->field_00A3 = 0;
             param_1->field_00A7 = 0;
           }
+          /* ST_CALLSITE[0066660C]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
           uVar14 = sub_0065D9C0(param_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if ((int)param_1->field_00E4 < CONCAT22(extraout_var_11,uVar14))
@@ -860,6 +880,7 @@ LAB_006664d8:
         param_1->field_023B->count = 0;
         uVar20 = param_1->field_001C * 0x41c64e6d + 0x3039;
         param_1->field_001C = uVar20;
+        /* ST_CALLSITE[00666561]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
         uVar14 = sub_0065D9C0(param_1);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar20 = CONCAT22(extraout_var_10,uVar14) / ((uVar20 >> 0x10) % 3 + 5);
@@ -876,6 +897,7 @@ LAB_006664d8:
              thunk_FUN_0065eb70(param_1,uVar10,uVar20,&param_1->field_023B->flags,uVar9,uVar8,
                                 &param_1->field_0xd5,(uint)(byte)param_1->field_0xd3);
         if (local_EAX_7232 < 1) {
+          /* ST_CALLSITE[006665AB]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
           sub_0065F980(param_1);
           param_1->field_009B = CASE_0;
           param_1->field_009F = 0;
@@ -959,7 +981,7 @@ LAB_006668f9:
       goto cf_common_join_00667054;
     }
     if (0x4d < AVar21 - CASE_201) goto cf_common_exit_00667066;
-    bVar2 = *(byte *)(AVar21 + 0x667073);
+    bVar2 = ((byte *)AVar21)[0x667073];
     switch(AVar21) {
     case CASE_201:
       param_1->field_00EB = 0x40;
@@ -976,6 +998,7 @@ LAB_006668f9:
         param_1->field_00A3 = 0;
         param_1->field_00A7 = 0;
       }
+      /* ST_CALLSITE[006669CE]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
       uVar14 = sub_0065D9C0(param_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if ((int)*(short *)&param_1->field_0xd3 < CONCAT22(extraout_var_13,uVar14))
@@ -1021,6 +1044,7 @@ LAB_00666ddf:
         goto joined_r0x00666ceb;
       }
       if (param_1->field_00A7 == 0) {
+        /* ST_CALLSITE[00666B09]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
         uVar14 = sub_0065D9C0(param_1);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         iVar19 = CONCAT22(extraout_var_14,uVar14);
@@ -1079,8 +1103,9 @@ cf_common_join_00666DC1:
                                     *(short *)&param_1->field_0xc5,param_1->field_00C7);
         goto joined_r0x00666ceb;
       }
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((param_1->field_00A7 == 0) &&
+          /* ST_CALLSITE[00666C56]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           (uVar14 = sub_0065D9C0(param_1),
           (int)param_1->field_00C9 < CONCAT22(extraout_var_15,uVar14))) &&
          ((*(int *)&param_1->field_00AB == 0 ||
@@ -1159,6 +1184,7 @@ joined_r0x00666ceb:
         case 0xbe:
           iVar19 = 0x72;
         }
+        /* ST_CALLSITE[00666EB1]: CALL 0x004059b6; direct=004059B6 AiFltClassTy::sub_0065E360 */
         local_10 = (DArrayTy *)sub_0065E360(param_1,(uint)bVar2,iVar19);
         if (local_10 != nullptr) {
           uVar20 = local_10->count;
@@ -1171,6 +1197,7 @@ joined_r0x00666ceb:
               else {
                 puVar23 = nullptr;
               }
+              /* ST_CALLSITE[00666EFA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               this_00 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar23,
                                    CASE_1);
@@ -1194,8 +1221,10 @@ joined_r0x00666ceb:
                 break;
               case 0xb2:
                 if (this_00->field_0024 != this_00->field_023D) {
+                  /* ST_CALLSITE[00666FAA]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                   uVar12 = LookupRecordByte((char)this_00->field_023D);
                   local_4c = ((uint)(byte)uVar12 + this_00->field_0235 * 3) * 3;
+                  /* ST_CALLSITE[00666FD4]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
                   local_EAX_9844 = LookupRecordByte(*(char *)&this_00->field_0024);
                   local_EAX_9844 = (int)(byte)local_EAX_9844;
                   if ((&DAT_007e1984)[local_EAX_9844 + local_4c] == '\0') break;
@@ -1216,6 +1245,7 @@ cf_break_loop_0066703E:
       }
     }
 cf_common_join_00667047:
+    /* ST_CALLSITE[00667049]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
     sub_0065F980(param_1);
     goto cf_common_join_0066704E;
   }
@@ -1311,6 +1341,7 @@ LAB_006651f3:
     goto cf_common_exit_00667066;
     memset(&param_1->field_01AD, 0, 0x4a); /* compiler bulk-zero initialization */
     if (param_1->field_00B3 != 0) {
+      /* ST_CALLSITE[00665232]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
       sub_0065F980(param_1);
     }
 LAB_00665237:
@@ -1379,6 +1410,7 @@ LAB_00665315:
     memset(&param_1->field_01AD, 0, 0x4a); /* compiler bulk-zero initialization */
     iVar19 = 0;
     if (param_1->field_00B3 != 0) {
+      /* ST_CALLSITE[00665457]: CALL 0x004014bf; direct=004014BF AiFltClassTy::sub_0065F980 */
       sub_0065F980(param_1);
     }
     param_1->field_01F7 = 0x19;
@@ -1406,9 +1438,10 @@ LAB_00665327:
       uVar20 = param_1->field_014E + param_1->field_014A;
       bVar30 = param_1->field_0280 < uVar20;
       bVar31 = param_1->field_0280 == uVar20;
-/* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
 LAB_0066534b:
       if ((!bVar30 && !bVar31) &&
+         /* ST_CALLSITE[00665353]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
+         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
          (uVar14 = sub_0065D9C0(param_1), (int)param_1->field_013E <= CONCAT22(extraout_var,uVar14))
          ) {
 LAB_0066586a:
@@ -1486,6 +1519,7 @@ LAB_006655ba:
     }
     else {
       if (param_1->field_00A7 == 0) goto cf_common_exit_00667066;
+      /* ST_CALLSITE[00665686]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
       uVar14 = sub_0065D9C0(param_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (CONCAT22(extraout_var_00,uVar14) != 0 && -1 < extraout_var_00) {
@@ -1494,8 +1528,10 @@ LAB_006655ba:
         local_9c = 0x72;
         local_94 = 2;
         local_98 = uVar20;
+        /* ST_CALLSITE[006656C0]: CALL 0x004018cf; direct=004018CF AiFltClassTy::sub_0065DA10 */
         local_90 = (DArrayTy *)sub_0065DA10(param_1,uVar20);
         if ((AiTactClassTy *)param_1->field_0284 != nullptr) {
+          /* ST_CALLSITE[006656DC]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
           AiTactClassTy::GetAiMess
                     ((AiTactClassTy *)param_1->field_0284,
                      (AnonShape_0068FD00_A5257008 *)stack_bytes_neg_9C);
@@ -1549,9 +1585,10 @@ LAB_006655ba:
       param_1->field_00A3 = 0;
       param_1->field_00A7 = 0;
     }
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if (((param_1->field_0139 == '\0') ||
         (param_1->field_0280 <= param_1->field_014E + param_1->field_014A)) ||
+       /* ST_CALLSITE[0066585A]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
+       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
        (uVar14 = sub_0065D9C0(param_1), CONCAT22(extraout_var_01,uVar14) < (int)param_1->field_013E)
        ) goto LAB_00665886;
     goto LAB_0066586a;
@@ -1619,6 +1656,7 @@ LAB_006655ba:
         param_1->field_00A7 = 0;
       }
 LAB_00665a76:
+      /* ST_CALLSITE[00665A78]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
       uVar14 = sub_0065D9C0(param_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((int)param_1->field_0140 < CONCAT22(extraout_var_02,uVar14)) &&
@@ -1646,6 +1684,7 @@ LAB_00665b57:
         param_1->field_00A3 = 0;
         param_1->field_00A7 = 0;
       }
+      /* ST_CALLSITE[00665B8C]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
       uVar14 = sub_0065D9C0(param_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if ((int)param_1->field_0140 < CONCAT22(extraout_var_03,uVar14)) {
@@ -1706,6 +1745,7 @@ LAB_0066705a:
 cf_common_exit_00667066:
   if (((param_1->field_0284 != nullptr) && (param_1->field_0176 != '\0')) &&
      ((param_1->field_00EB & param_1->field_017B) != 0)) {
+    /* ST_CALLSITE[0066708D]: CALL 0x00401b09; direct=00401B09 AiFltClassTy::GoToRepair */
     GoToRepair(param_1);
   }
   return;

@@ -454,6 +454,7 @@ void __cdecl st::fn_005DA130(ushort *param_1,undefined *param_2,BYTE param_3)
   local_3c[0x1d] = 0x58;
   local_3c[0x1e] = 0x59;
   local_3c[0x1f] = 0x5a;
+  /* ST_CALLSITE[005DA2A0]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   st::fn_0070D1F0
             (0x19d,&local_78,nullptr,local_3c,(int)param_1,local_3c + 0x20,7,3,1,1,0x100011c,
              param_2);
@@ -614,6 +615,7 @@ void __cdecl st::fn_005DA310(int param_1,undefined *param_2,BYTE param_3)
   local_68[0x54] = 0x7a;
   local_68[0x55] = 0x7c;
   local_68[0x56] = 0x7e;
+  /* ST_CALLSITE[005DA55C]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   st::fn_0070D1F0
             (0x19d,&local_a4,nullptr,local_68,param_1,local_10,4,2,1,0,0x20011c,param_2);
   return;
@@ -675,6 +677,7 @@ undefined4 st::fn_005DA7A0(void)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
+  /* ST_CALLSITE[005DA8AA]: CALL 0x004055f6; direct=004055F6 StartSystemTy::sub_005DA910 */
   st::fn_004055F6(local_8);
   return 0xfffffffa;
 }
@@ -734,12 +737,14 @@ undefined4 st::fn_005DAA90(void)
     g_currentExceptionFrame = &local_4c;
     iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
     if (iVar1 == 0) {
+      /* ST_CALLSITE[005DAACB]: CALL 0x00402b30; direct=00402B30 StartSystemTy::sub_005DAB30 */
       st::fn_00402B30(local_8);
       st::fn_006B65F0(g_int_00811764,&local_8->field_068E);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
     g_currentExceptionFrame = local_4c.previous;
+    /* ST_CALLSITE[005DAAFE]: CALL 0x00402b30; direct=00402B30 StartSystemTy::sub_005DAB30 */
     st::fn_00402B30(local_8);
   }
   return 0xfffffffa;
@@ -770,6 +775,7 @@ undefined4 st::fn_005DAB70(int param_1,undefined4 param_2)
         st::fn_006B6750(g_int_00811764,0,param_2,0x20);
       }
       DAT_0080877f = g_int_00811764[0xe];
+      /* ST_CALLSITE[005DABFF]: CALL 0x0040330a; direct=0040330A StartSystemTy::GetIP */
       st::fn_0040330A(local_8);
     }
     g_currentExceptionFrame = local_4c.previous;
@@ -1007,6 +1013,7 @@ undefined4 __fastcall st::fn_005DDB40(int param_1)
         pcVar8 = pcVar8 + 1;
         pcVar9 = pcVar9 + 1;
       }
+      /* ST_CALLSITE[005DDC03]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
       st::fn_00402BBC(local_8,(int)local_460);
       pDVar7 = pSVar2->field_0696;
       iVar4 = iVar4 + 1;
@@ -1026,14 +1033,17 @@ void __cdecl st::fn_005DE5B0(UINT param_1,int param_2)
 
   if (param_2 < 0) {
     pcVar1 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005DE604]: CALL dword ptr [0x0085bde8] */
     st::external_00000080(local_108,st::mutable_c_string("%s"),pcVar1);
   }
   else {
     pcVar1 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005DE5DD]: CALL dword ptr [0x0085bde8] */
     st::external_00000080(local_108,st::mutable_c_string("%s\n%d"),pcVar1,param_2);
   }
   uType = 0x10;
   pcVar1 = st::fn_006B0140(0x2648,g_hINSTANCE_00807618);
+  /* ST_CALLSITE[005DE62E]: CALL dword ptr [0x0085bdec] */
   st::external_00000081(HWND_00856d78,local_108,pcVar1,uType);
   return;
 }
@@ -1186,6 +1196,7 @@ HDC __cdecl st::fn_005DEFE0(int param_1,undefined *param_2,BYTE param_3)
   local_5c[0x46] = 0x78;
   local_5c[0x47] = 0x79;
   local_5c[0x48] = 0x7a;
+  /* ST_CALLSITE[005DF1E3]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   pHVar2 = st::fn_0070D1F0
                      (0x19d,&local_98,nullptr,local_5c,param_1,local_10,5,2,1,1,0x40011c,param_2
                      );
@@ -1340,6 +1351,7 @@ HDC __cdecl st::fn_005DF290(int param_1,undefined *param_2,BYTE param_3)
   local_5c[0x46] = 0x78;
   local_5c[0x47] = 0x79;
   local_5c[0x48] = 0x7a;
+  /* ST_CALLSITE[005DF492]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   pHVar2 = st::fn_0070D1F0
                      (0x19d,&local_98,nullptr,local_5c,param_1,local_10,5,2,1,0,0x40011c,param_2
                      );

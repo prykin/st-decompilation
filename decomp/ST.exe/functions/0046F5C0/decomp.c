@@ -106,6 +106,7 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
     if (pSVar16 == nullptr) {
       return 0;
     }
+    /* ST_CALLSITE[00470DA4]: CALL dword ptr [EAX + 0x2c] */
     iVar12 = pSVar16->GetObjectTypeId();
     if (iVar12 != 0x33) {
       return 0;
@@ -125,15 +126,19 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
     sVar19 = this->field_0554;
     this->field_00B7 = 3;
 LAB_00470e23:
+    /* ST_CALLSITE[00470E25]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
     sub_00481520(this,(int)sVar19,(int)sVar21,sVar14 + 1);
 cf_common_exit_00470E2B:
+    /* ST_CALLSITE[00470E2D]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
     sub_00460260(this,0);
 cf_common_exit_00470E32:
+    /* ST_CALLSITE[00470E36]: CALL dword ptr [EDX + 0xd8] */
     iVar12 = this->vfunc_D8();
     return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
   }
   SVar2 = this->field_0580;
   if (SVar2 == CASE_0) {
+    /* ST_CALLSITE[0046F5F5]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
     local_EAX_53 = sub_00460260(this,2);
     switch(local_EAX_53) {
     case 0:
@@ -154,20 +159,25 @@ cf_common_exit_00470E32:
       else {
         pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0];
       }
+      /* ST_CALLSITE[0046F6DD]: CALL 0x004049cb; direct=004049CB STBoatC::sub_00490570 */
       iVar12 = sub_00490570(this);
       if (iVar12 != 1) {
 LAB_0046f794:
         if (((pSVar16 != nullptr) &&
+            /* ST_CALLSITE[0046F7A0]: CALL dword ptr [EDX + 0x2c] */
             (iVar12 = pSVar16->GetObjectTypeId(), iVar12 == 0x33)) &&
            (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024)) {
           this->field_0580 = CASE_2;
 LAB_0046f98f:
+          /* ST_CALLSITE[0046F991]: CALL 0x00403a2b; direct=00403A2B STBoatC::Defence */
           local_EAX_977 = Defence(this,0);
           return (-(uint)(local_EAX_977 != -1) & 3) - 1;
         }
 LAB_0046f888:
+        /* ST_CALLSITE[0046F88A]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
         sub_004602B0(this);
         this->field_00B7 = 0;
+        /* ST_CALLSITE[0046F89D]: CALL dword ptr [EDX + 0xd8] */
         iVar12 = this->vfunc_D8();
         return -(uint)(iVar12 != 0);
       }
@@ -175,6 +185,7 @@ LAB_0046f888:
       uVar5 = extraout_var_00;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((pSVar16 != nullptr) &&
+          /* ST_CALLSITE[0046F6F2]: CALL dword ptr [EAX + 0x2c] */
           (iVar12 = pSVar16->GetObjectTypeId(), uVar5 = extraout_var_01,
           iVar12 == 0x33)) && (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024)) {
         iVar6 = thunk_FUN_004e1eb0(pSVar16,(int)this->field_0041,(int)this->field_0043,
@@ -184,6 +195,7 @@ LAB_0046f888:
         uVar5 = extraout_var_02;
         if (iVar6 != -1) goto LAB_0046f794;
       }
+      /* ST_CALLSITE[0046F767]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0554,
                    this->field_0556,(int *)CONCAT22(uVar5,this->field_0558 + 1),1,&this->field_055E,
@@ -204,12 +216,14 @@ LAB_0046f888:
             ((sVar19 < g_worldGrid.sizeZ &&
              ((pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
               pSVar16 != nullptr &&
+              /* ST_CALLSITE[0046F872]: CALL dword ptr [EAX + 0x2c] */
               (iVar12 = pSVar16->GetObjectTypeId(), iVar12 == 0x33)))))) &&
            (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024))
         goto cf_common_exit_004707B7;
         goto LAB_0046f888;
       }
       this->field_0564 = 0;
+      /* ST_CALLSITE[0046F7DF]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
       sub_004602B0(this);
     case 3:
       iVar7 = (int)this->field_0556;
@@ -235,6 +249,7 @@ cf_error_exit_00470C46:
   if (SVar2 != CASE_1) {
     if (SVar2 == CASE_2) {
       this->field_0574 = this->field_0574 + 1;
+      /* ST_CALLSITE[0046FBC7]: CALL 0x00403a2b; direct=00403A2B STBoatC::Defence */
       local_EAX_1543 = Defence(this,2);
       if (local_EAX_1543 == -1) {
         return -1;
@@ -257,6 +272,7 @@ cf_error_exit_00470C46:
           (((pSVar17 = (STFishC *)
                        STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
             pSVar17 != nullptr &&
+            /* ST_CALLSITE[0046FC9A]: CALL dword ptr [EAX + 0x2c] */
             (dVar6 = pSVar17->slot_2C(), dVar6 == 0x33)) &&
            (pSVar17->field_0024 == this->field_0024)))))) {
         local_EAX_1797 =
@@ -278,17 +294,22 @@ cf_error_exit_00470C46:
         this->field_0580 = CASE_3;
         this->field_00B7 = 0;
 LAB_00470bfe:
+        /* ST_CALLSITE[00470C00]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
         sub_00481520(this,(int)sVar14,(int)sVar19,(int)sVar21);
+        /* ST_CALLSITE[00470C09]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
         sub_00460260(this,0);
         return 2;
       }
 LAB_0046fd37:
+      /* ST_CALLSITE[0046FD39]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
       sub_004602B0(this);
 LAB_0046fd3e:
+      /* ST_CALLSITE[0046FD42]: CALL dword ptr [EDX + 0xd8] */
       iVar12 = this->vfunc_D8();
       return -(uint)(iVar12 != 0);
     }
     if (SVar2 == CASE_3) {
+      /* ST_CALLSITE[0046FD66]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
       local_EAX_1958 = sub_00460260(this,2);
       switch(local_EAX_1958) {
       case 0:
@@ -301,6 +322,7 @@ LAB_0046fd3e:
              ((sVar19 < g_worldGrid.sizeZ &&
               ((((pSVar16 = STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
                  pSVar16 != nullptr &&
+                 /* ST_CALLSITE[0046FE43]: CALL dword ptr [EAX + 0x2c] */
                  (iVar12 = pSVar16->GetObjectTypeId(), iVar12 == 0x33)) &&
                 (*(int *)&pSVar16[0x21].field_0x10 == 0)) &&
                ((*(int *)&pSVar16[0x10].field_0x5 != 6 &&
@@ -309,6 +331,7 @@ LAB_0046fd3e:
                ((this->field_0049 == this->field_056E && (this->field_004B == this->field_0570)))) {
               this->field_0580 = CASE_4;
               *(undefined4 *)&this->field_0x584 = 0;
+              /* ST_CALLSITE[0046FEB7]: CALL dword ptr [EDX + 0xd8] */
               iVar12 = this->vfunc_D8();
               return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
             }
@@ -320,6 +343,7 @@ LAB_0046fd3e:
         break;
       case 1:
         if (this->field_0564 != 1) {
+          /* ST_CALLSITE[0046FFDA]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
           sub_004602B0(this);
           sVar14 = this->field_0554;
           sVar19 = this->field_0558;
@@ -330,10 +354,12 @@ LAB_0046fd3e:
                (((pSVar17 = (STFishC *)
                             STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
                  pSVar17 == nullptr ||
+                 /* ST_CALLSITE[0047005F]: CALL dword ptr [EAX + 0x2c] */
                  (dVar6 = pSVar17->slot_2C(), dVar6 != 0x33)) ||
                 (pSVar17->field_0024 != this->field_0024)))))))) goto LAB_004700a6;
           goto LAB_00470071;
         }
+        /* ST_CALLSITE[0046FFA3]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
         sub_004602B0(this);
         break;
       default:
@@ -348,14 +374,17 @@ LAB_0046fd3e:
            (((pSVar17 = (STFishC *)
                         STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
              pSVar17 == nullptr ||
+             /* ST_CALLSITE[0046FF78]: CALL dword ptr [EAX + 0x2c] */
              (dVar6 = pSVar17->slot_2C(), dVar6 != 0x33)) ||
             (pSVar17->field_0024 != this->field_0024)))) {
 LAB_004700a6:
+          /* ST_CALLSITE[004700AA]: CALL dword ptr [EAX + 0xd8] */
           iVar12 = this->vfunc_D8();
           return -(uint)(iVar12 != 0);
         }
 LAB_00470071:
         thunk_FUN_004908a0(this,pSVar17,this->field_0568);
+        /* ST_CALLSITE[0047009A]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
         sub_00481520(this,(int)this->field_056C,(int)this->field_056E,(int)this->field_0570);
         goto cf_common_exit_00470E2B;
       case -1:
@@ -381,6 +410,7 @@ LAB_00470071:
         iVar7 = (ushort)(this->field_0558 * 200) + 300;
         iVar12 = STReplaceLowWord((uint32_t)(iVar7), (uint16_t)(this->field_0556 + 1)) * 0xc9;
         iVar10 = STReplaceLowWord((uint32_t)(iVar12), (uint16_t)((short)this->field_0568 + this->field_0554));
+        /* ST_CALLSITE[00470121]: CALL dword ptr [EDX + 0x10] */
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar5 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
@@ -390,7 +420,9 @@ LAB_00470071:
         *(undefined4 *)&this->field_0x584 = 1;
       }
       if (*(int *)&this->field_0x584 == 1) {
+        /* ST_CALLSITE[00470143]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
         uVar8 = sub_004176C0(this,this->field_0572);
+        /* ST_CALLSITE[0047014B]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
         uVar8 = sub_00417910(this,(short)uVar8);
         if (uVar8 == 0xffffffff) {
           local_EAX_2998 =
@@ -411,12 +443,14 @@ LAB_004707ad:
         }
       }
       if (*(int *)&this->field_0x584 == 2) {
+        /* ST_CALLSITE[00470208]: CALL 0x00402455; direct=00402455 sub_00415B30 */
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                      ((short)this->field_0568 + this->field_0554) * 0xc9 + 100,
                      (this->field_0556 + 1) * 0xc9,this->field_0558 * 200 + 300,this->field_0061);
         *(undefined4 *)&this->field_0x584 = 3;
       }
       if (*(int *)&this->field_0x584 == 3) {
+        /* ST_CALLSITE[00470229]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
         local_c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
         uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar8;
@@ -465,6 +499,7 @@ LAB_004707ad:
               STPiece<0,2>(local_20) = (short)uVar3;
               iVar11 = (int)(short)local_20 + iVar12 + this->field_0041;
             }
+            /* ST_CALLSITE[00470392]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,iVar11,iVar10 + ((uVar8 >> 0x10) % 7 - 3),iVar15,
                        sVar14,sVar19,sVar21,sVar22,sVar23,sVar24,iVar7,sVar25,bVar26);
@@ -506,6 +541,7 @@ LAB_004707ad:
             pSVar16 != nullptr && (*(int *)&pSVar16->field_0x18 == this->field_055A))))
           )))) {
         if (g_playSystem_00802A38->field_00E4 == this->field_0574 + this->field_0578) {
+          /* ST_CALLSITE[00470534]: CALL dword ptr [EAX + 0x90] */
           this->vfunc_90(3,0x363);
           iVar12 = (*(short *)&this->field_0x237 * -7) / 10;
           uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
@@ -542,13 +578,16 @@ LAB_004707ad:
         this->field_0716 = local_EAX_4347;
         if (local_EAX_4347 != this->field_0712) goto cf_common_exit_00470E32;
       }
+      /* ST_CALLSITE[004706D6]: CALL 0x004023ce; direct=004023CE STBoatC::sub_0048DBA0 */
       sub_0048DBA0(this);
       this->field_0580 = CASE_6;
+      /* ST_CALLSITE[004706E9]: CALL dword ptr [EDX + 0xd8] */
       iVar12 = this->vfunc_D8();
       return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
     }
     if (SVar2 != CASE_6) {
       if (SVar2 == CASE_7) {
+        /* ST_CALLSITE[00470BA8]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
         local_EAX_5608 = sub_00460260(this,2);
         if (local_EAX_5608 == -1) {
           local_EAX_5748 =
@@ -584,6 +623,7 @@ LAB_004707ad:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
+        /* ST_CALLSITE[00470C72]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
         local_EAX_5810 = sub_00460260(this,2);
         if (local_EAX_5810 == -1) {
           return -1;
@@ -603,6 +643,7 @@ LAB_004707ad:
         sVar14 = *(short *)&this->field_0x560;
         sVar19 = this->field_055E;
       }
+      /* ST_CALLSITE[00470BE9]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
       sub_0048DFD0(this,sVar19,sVar14,uVar20,sVar22,sVar21,piVar13,iVar12,&this->field_055E,
                    (short *)&this->field_0x560,(short *)&this->field_0x562);
       sVar21 = *(short *)&this->field_0x562;
@@ -615,6 +656,7 @@ LAB_004707ad:
     if (iVar12 < 0x1e) goto cf_common_exit_004707B7;
     if (*(int *)&this->field_0x584 == 0) {
       iVar12 = STReplaceLowWord((uint32_t)(iVar12), (uint16_t)(this->field_056E * 0xc9)) + 100;
+      /* ST_CALLSITE[0047076F]: CALL dword ptr [EDX + 0x10] */
       uVar5 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar12), (uint16_t)(this->field_0045)),
@@ -624,7 +666,9 @@ LAB_004707ad:
       *(undefined4 *)&this->field_0x584 = 1;
     }
     if (*(int *)&this->field_0x584 == 1) {
+      /* ST_CALLSITE[00470797]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
       uVar8 = sub_004176C0(this,this->field_0572);
+      /* ST_CALLSITE[0047079F]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar8 = sub_00417910(this,(short)uVar8);
       if (uVar8 == 0xffffffff) {
         local_EAX_4651 =
@@ -642,12 +686,14 @@ LAB_004707ad:
       goto LAB_004707ad;
     }
     if (*(int *)&this->field_0x584 == 2) {
+      /* ST_CALLSITE[0047086B]: CALL 0x00402455; direct=00402455 sub_00415B30 */
       sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                    this->field_056C * 0xc9 + 100,this->field_056E * 0xc9 + 100,
                    this->field_0570 * 200 + 100,this->field_0061);
       *(undefined4 *)&this->field_0x584 = 3;
     }
     if (*(int *)&this->field_0x584 != 3) goto cf_common_exit_00470E32;
+    /* ST_CALLSITE[0047088C]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
     local_c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_10,&local_14);
     uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar8;
@@ -696,6 +742,7 @@ LAB_004707ad:
           STPiece<0,2>(local_20) = (short)uVar3;
           iVar11 = (int)(short)local_20 + iVar12 + this->field_0041;
         }
+        /* ST_CALLSITE[004709F5]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
         TraksClassTy::TraksCreate
                   (g_traksClass_00802A7C,1,2,7,iVar11,iVar10 + ((uVar8 >> 0x10) % 7 - 3),iVar15,
                    sVar14,sVar19,sVar21,sVar22,sVar23,sVar24,iVar7,sVar25,bVar26);
@@ -726,6 +773,7 @@ LAB_004707ad:
        )) {
 cf_common_exit_00470B14:
       this->field_0580 = CASE_7;
+      /* ST_CALLSITE[00470B49]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
       sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0047,
                    this->field_0049,(int *)STReplaceLowWord((uint32_t)(pSVar16), (uint16_t)(this->field_004B))
                    ,3,&this->field_055E,(short *)&this->field_0x560,(short *)&this->field_0x562);
@@ -747,18 +795,22 @@ cf_common_exit_00470B14:
       if (*(int *)&pSVar16[0x1d].field_0x18 != 1) goto cf_common_exit_00470B14;
       this->field_0580 = CASE_8;
     }
+    /* ST_CALLSITE[00470B60]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
     sub_00481520(this,(int)this->field_055E,(int)*(short *)&this->field_0x560,
                  (int)*(short *)&this->field_0x562);
     goto cf_common_exit_00470E2B;
   }
+  /* ST_CALLSITE[0046F8BC]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
   local_EAX_764 = sub_00460260(this,2);
   switch(local_EAX_764) {
   case 0:
+    /* ST_CALLSITE[0046F920]: CALL 0x004049cb; direct=004049CB STBoatC::sub_00490570 */
     iVar12 = sub_00490570(this);
     if (iVar12 != 1) {
       this->field_0580 = CASE_2;
       goto LAB_0046f98f;
     }
+    /* ST_CALLSITE[0046F96B]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0554,
                  this->field_0556,(int *)CONCAT22(extraout_var_03,this->field_0558 + 1),1,
@@ -770,10 +822,13 @@ cf_common_exit_00470B14:
   case 1:
     if (this->field_0564 == 1) {
       this->field_0564 = 0;
+      /* ST_CALLSITE[0046FA35]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
       sub_004602B0(this);
       this->field_0580 = CASE_0;
       this->field_00B7 = 3;
+      /* ST_CALLSITE[0046FA65]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
       sub_00481520(this,(int)this->field_0554,(int)this->field_0556,this->field_0558 + 1);
+      /* ST_CALLSITE[0046FA6D]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
       sub_00460260(this,0);
       goto cf_common_exit_004707B7;
     }
@@ -784,6 +839,7 @@ cf_common_exit_00470B14:
           ((g_worldGrid.sizeY <= sVar21 || (sVar19 < 0)))) || (g_worldGrid.sizeZ <= sVar19)) ||
         ((pSVar17 = (STFishC *)
                     STGridAt3D(g_worldGrid, sVar14, sVar21, sVar19).objects[0],
+         /* ST_CALLSITE[0046FB03]: CALL dword ptr [EAX + 0x2c] */
          pSVar17 == nullptr || (dVar6 = pSVar17->slot_2C(), dVar6 != 0x33))
         )) || (pSVar17->field_0024 != this->field_0024)) goto LAB_0046fd37;
     local_EAX_1390 =
@@ -793,6 +849,7 @@ cf_common_exit_00470B14:
     if ((local_EAX_1390 == -1) ||
        (local_EAX_1414 = thunk_FUN_004908a0(this,pSVar17,local_EAX_1390), local_EAX_1414 != 1))
     goto cf_common_exit_004707B7;
+    /* ST_CALLSITE[0046FB56]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
     sub_004602B0(this);
     this->field_055A = pSVar17->field_0018;
     thunk_FUN_004e1fb0(pSVar17,this->field_0568,this->field_0018);
@@ -804,16 +861,20 @@ cf_common_exit_00470B14:
   default:
     goto cf_common_exit_004707B7;
   case 3:
+    /* ST_CALLSITE[0046F9AA]: CALL 0x004049cb; direct=004049CB STBoatC::sub_00490570 */
     iVar12 = sub_00490570(this);
     if (iVar12 == 1) {
+      /* ST_CALLSITE[0046F9F4]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0554,
                    this->field_0556,
                    (int *)CONCAT22((short)((uint)&this->field_0x562 >> 0x10),this->field_0558 + 1),1
                    ,&this->field_055E,(short *)&this->field_0x560,(short *)&this->field_0x562);
     }
+    /* ST_CALLSITE[0046FA13]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
     sub_00481520(this,(int)this->field_055E,(int)*(short *)&this->field_0x560,
                  (int)*(short *)&this->field_0x562);
+    /* ST_CALLSITE[0046FA1B]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
     sub_00460260(this,0);
     goto cf_common_exit_004707B7;
   case -1:
@@ -828,9 +889,12 @@ cf_common_exit_00470B14:
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
 LAB_0046fb98:
+  /* ST_CALLSITE[0046FB9A]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
   sub_00481520(this,iVar12,iVar7,iVar10);
+  /* ST_CALLSITE[0046FBA3]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
   sub_00460260(this,0);
 cf_common_exit_004707B7:
+  /* ST_CALLSITE[004707BB]: CALL dword ptr [EAX + 0xd8] */
   iVar12 = this->vfunc_D8();
   return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
 }

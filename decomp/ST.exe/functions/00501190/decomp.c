@@ -35,11 +35,13 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
     iVar6 = (pCVar2->field_018C->field_0004 - (pBVar4->bmiHeader).biWidth) / 2;
     pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,
                           -(uint)(DAT_0080874e != '\x01') & 6);
+    /* ST_CALLSITE[00501214]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(pCVar2->field_018C,iVar6,0x50,'\x01',(byte *)pBVar4);
     local_8 = local_8 & 0xffffff00;
     if (pCVar2->field_0BB6 != '\0') {
       do {
         pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+        /* ST_CALLSITE[00501252]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut(pCVar2->field_018C,iVar6 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',(byte *)pBVar4);
         bVar3 = (byte)local_8 + 1;
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
@@ -51,6 +53,7 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
     if (uVar7 < (byte)pCVar2->field_0BB7 + uVar7) {
       do {
         pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,5);
+        /* ST_CALLSITE[005012AB]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut(pCVar2->field_018C,iVar6 + 3 + uVar7 * 4,0x53,'\x01',(byte *)pBVar4);
         bVar3 = (byte)local_c + 1;
         local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar3));
@@ -63,6 +66,7 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
     if (uVar7 < (byte)pCVar2->field_0BB5 + uVar7) {
       do {
         pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,2);
+        /* ST_CALLSITE[00501314]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut(pCVar2->field_018C,iVar6 + 3 + uVar7 * 4,0x53,'\x01',(byte *)pBVar4);
         STPiece<0,1>(local_8) = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;

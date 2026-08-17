@@ -37,6 +37,7 @@ LPSTR __cdecl FUN_00571240(char *text,int param_2)
     text_00 = "%s%d";
   }
   pCVar2 = &DAT_00803520 + (uint)DAT_008067a1 * 0x200;
+  /* ST_CALLSITE[005712BC]: CALL dword ptr [0x0085bde8] */
   wsprintfA(pCVar2,text_00,text,pcVar1);
   if (DAT_008067a1 == 0x18) {
     DAT_008067a1 = 0;

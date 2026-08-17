@@ -81,7 +81,7 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
       }
       iVar10 = iVar10 + 0xc;
     } while (iVar10 < 0x60);
-    if (*(char *)(param_1 + 6) == '\x02') {
+    if (((char *)param_1)[6] == '\x02') {
       *(int *)&pAVar2->field_0x107 = iVar7;
       local_20 = 0;
       local_8->field_0105 = 0;
@@ -104,6 +104,7 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
             pAVar3 = (AllocationRecord_006684E0 *)(*(int *)(iVar10 + 4) + 0x20);
           }
           if (pAVar3 != nullptr) {
+            /* ST_CALLSITE[006912DC]: CALL 0x004014c4; direct=004014C4 FltDataPack */
             local_1c = FltDataPack(pAVar3,&local_10);
             local_8 = Library::DKW::LIB::MemRealloc(local_8,local_8->field_0014 + local_10);
             pAVar3 = local_1c;

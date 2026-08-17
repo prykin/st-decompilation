@@ -198,6 +198,7 @@ LAB_005aecc2:
     local_4c = 2;
     local_48 = 0x6327;
     local_50 = local_70;
+    /* ST_CALLSITE[005AECAA]: CALL dword ptr [EAX + 0x8] */
     (*this_01->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_01->field_000C,5,&this_01->field_1C83,nullptr,local_80,0);
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_1C87);
@@ -260,6 +261,7 @@ LAB_005aecc2:
   local_408 = local_570;
   local_288 = local_570;
   local_118 = local_570;
+  /* ST_CALLSITE[005AEEC9]: CALL dword ptr [EAX + 0x8] */
   (*this_01->field_000C->vtable->CreateObject)
             ((SystemClassTy *)this_01->field_000C,7,&this_01->array_00BC[0xc].field_01EC,nullptr,
              local_598,0);
@@ -288,9 +290,11 @@ LAB_005aef44:
     }
   }
   else {
+    /* ST_CALLSITE[005AEF5B]: CALL 0x00402a4a; direct=00402A4A StartSystemTy::CreateBinDesc */
     StartSystemTy::CreateBinDesc(g_startSystem_0081176C);
   }
   if ((this_01->field_20B7 != '\0') && (param_1 == '\0')) {
+    /* ST_CALLSITE[005AEFB1]: CALL 0x004028b5; direct=004028B5 StartSystemTy::CreateChatView */
     StartSystemTy::CreateChatView(g_startSystem_0081176C);
     ppcVar9 = local_fe4;
     for (iVar2 = 0x223; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -314,6 +318,7 @@ LAB_005aef44:
     local_f58 = this_00->field_0014;
     local_f54 = 0;
     local_f50 = 0xc0a2;
+    /* ST_CALLSITE[005AF083]: CALL dword ptr [EDI + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,nullptr,local_fe4,0
               );
@@ -325,9 +330,11 @@ LAB_005aef44:
     local_1c = 1;
     local_1e = 1;
     local_24 = 1;
+    /* ST_CALLSITE[005AF0DC]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
     MMsgTy::StatePanel(*(MMsgTy **)(iVar2 + 0x2e6),(int)&local_28);
   }
   if (param_1 != '\0') {
+    /* ST_CALLSITE[005AF104]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     SetAccelerator(1,this_01->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
   }
   g_currentExceptionFrame = local_c4.previous;

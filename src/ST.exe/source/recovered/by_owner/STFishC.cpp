@@ -77,8 +77,10 @@ void __thiscall st::fn_004162F0(STFishC *this,short *param_1,short *param_2,shor
 STFishC * __thiscall st::fn_0057BD20(STFishC *this)
 
 {
+  /* ST_CALLSITE[0057BD24]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
-  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[0057BD31]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  st::fn_00401316((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079B524);
   this->vtable = &st_global_0079B3C4;
   this->field_023B = CASE_0;
@@ -132,6 +134,7 @@ STFishC_field_023BState __thiscall st::fn_0057D5F0(STFishC *this,uint param_1)
   local_8 = 0;
   if ((((this->field_0047 == this->field_0235) && (this->field_0049 == this->field_0237)) &&
       (this->field_004B == this->field_0239)) || (param_1 != 0)) {
+    /* ST_CALLSITE[0057D641]: CALL 0x00402ecd; direct=00402ECD STFishC::sub_0057D700 */
     iVar1 = st::fn_00402ECD(this,&param_1,(uint *)local_c,(int *)local_10,&local_8);
     if (iVar1 != 1) {
       if (iVar1 != 2) {
@@ -193,6 +196,7 @@ st::fn_0057D700(STFishC *this,uint *param_1,uint *param_2,int *param_3,int *para
   uVar3 = uVar2 - 1;
   uVar4 = (uint)g_worldGrid.sizeY;
   uVar5 = uVar4 - 1;
+  /* ST_CALLSITE[0057D733]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   st::fn_004018C5(this,&local_a,&local_8,&local_6);
   local_18 = (int)this->field_004B - (g_playSystem_00802A38->field_00E4 & 1);
   if (local_18 < 0) {

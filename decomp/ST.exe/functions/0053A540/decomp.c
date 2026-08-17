@@ -64,6 +64,7 @@ void __thiscall PlayPanelTy::sub_0053A540(PlayPanelTy *this)
     bVar2 = bVar2 + 1;
     piVar6 = piVar6 + 1;
   } while (bVar2 < 8);
+  /* ST_CALLSITE[0053A64E]: CALL 0x00403242; direct=00403242 PlayPanelTy::PaintPlayPanel */
   PaintPlayPanel(this);
   return;
 }

@@ -13,6 +13,7 @@ int __thiscall STBoatC::sub_00460260(STBoatC *this,int param_1)
   if (param_1 == 0) {
     this->field_00F4 = 0;
   }
+  /* ST_CALLSITE[00460276]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
   iVar1 = sub_0045FF50(this,param_1);
   if ((iVar1 == 2) && (this->field_00F4 == 1)) {
     iVar1 = 1;

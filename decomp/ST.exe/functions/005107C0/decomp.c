@@ -43,6 +43,7 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[005107FE]: CALL 0x00401401; direct=00401401 SpecPanelTy::GetMessage */
   SpecPanelTy::GetMessage((SpecPanelTy *)local_8,message);
   SVar1 = message->id;
   if (SVar1 < (MESS_BLDLABPANELTY_C0A4|MESS_ID_CREATE)) {
@@ -52,6 +53,7 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
           if (SVar1 < MESS_FRMPANELTY_B109) {
             if (SVar1 != MESS_FRMPANELTY_B108) {
               if (SVar1 == MESS_ID_CREATE) {
+                /* ST_CALLSITE[00510862]: CALL 0x00404584; direct=00404584 FrmPanelTy::InitFrmPanel */
                 InitFrmPanel(this_00);
                 g_currentExceptionFrame = local_60.previous;
                 return 0;
@@ -60,6 +62,7 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
                 g_currentExceptionFrame = local_60.previous;
                 return 0;
               }
+              /* ST_CALLSITE[00510848]: CALL 0x00402b53; direct=00402B53 FrmPanelTy::DoneFrmPanel */
               DoneFrmPanel(this_00);
               g_currentExceptionFrame = local_60.previous;
               return 0;
@@ -127,6 +130,7 @@ LAB_00510902:
       iVar3 = 0;
       pcVar6 = thunk_FUN_0052a080;
       pCVar2 = thunk_FUN_00571240(pcVar5,0);
+      /* ST_CALLSITE[00510910]: CALL dword ptr [EBX + 0x8] */
       (*pFVar4->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar2,pcVar6,iVar3,iVar7);
       g_currentExceptionFrame = local_60.previous;
       return 0;
@@ -156,8 +160,10 @@ LAB_00510902:
     default:
       goto switchD_00510930_default;
     }
+    /* ST_CALLSITE[00510959]: CALL 0x004035ad; direct=004035AD CursorClassTy::sub_0054B630 */
     CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0x4e,uVar8);
 switchD_00510930_default:
+    /* ST_CALLSITE[00510964]: CALL dword ptr [EAX + 0x1c] */
     (*this_00->vtable->SetPanel)((SpecPanelTy *)this_00,'\0');
     thunk_FUN_005252c0(0xae);
     g_currentExceptionFrame = local_60.previous;
@@ -193,6 +199,7 @@ switchD_00510930_default:
     pcVar5 = "BUT_FBREAK";
   }
   pCVar2 = thunk_FUN_00571240(pcVar5,0);
+  /* ST_CALLSITE[00510A6B]: CALL 0x00405d9e; direct=00405D9E FrmPanelTy::PaintBut */
   PaintBut(this_00,(AnonShape_005105E0_BBFE3E3B *)message,pCVar2);
 switchD_005108d5_default:
   g_currentExceptionFrame = local_60.previous;

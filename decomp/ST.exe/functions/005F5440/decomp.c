@@ -42,6 +42,7 @@ void __fastcall FUN_005f5440(AnonShape_005F5440_D27C3BDE *param_1)
             iVar5 = *(int *)(pcVar7 + 2);
             iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
             if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+                /* ST_CALLSITE[005F5567]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                 ((VisibleClassTy::sub_00558C00
                             (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6
                              ,&local_10,&local_14), local_8 < 0 || ((4 < local_8 || (local_10 < 0)))

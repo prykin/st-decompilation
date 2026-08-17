@@ -76,6 +76,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     local_c = local_c + -1;
   } while (local_c != 0);
   if (this_00->field_21E8 != nullptr) {
+    /* ST_CALLSITE[005C6E20]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     HoloTy::Done(this_00->field_21E8);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_21E8);
     this_00->field_21E8 = nullptr;
@@ -107,6 +108,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     bVar10 = 0x10;
     iVar9 = 1;
     iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x38,0x205,0x104);
+    /* ST_CALLSITE[005C6EBE]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
     uVar11 = HoloTy::Init(this_00->field_21E8,CASE_2,0x112,0x38,iVar5,iVar9,bVar10,cVar11,uVar12);
     if (uVar11 != 0) {
       pHVar4 = this_00->field_21E8;
@@ -116,9 +118,11 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       if (-1 < (int)uVar12) {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar12);
       }
+      /* ST_CALLSITE[005C6EF7]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       HoloTy::NextFas(this_00->field_21E8);
     }
     FUN_006b5f80((int *)g_ddxContext_008075A8,0x112,0x38,0x205,0x104);
+    /* ST_CALLSITE[005C6F3B]: CALL 0x00402298; direct=00402298 PutDDXClip */
     PutDDXClip(0x112,0x38,0x112,0x38,0x205,(byte *)0x104,'\x01',
                (BITMAPINFO *)g_startSystem_0081176C->field_002C);
   }
@@ -149,6 +153,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     local_c = local_c + -1;
   } while (local_c != 0);
   if (this_00->field_21F4 != nullptr) {
+    /* ST_CALLSITE[005C6FE6]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     HoloTy::Done(this_00->field_21F4);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_21F4);
     this_00->field_21F4 = nullptr;
@@ -180,6 +185,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     bVar10 = 0x10;
     iVar9 = 1;
     iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x149,0x205,0x8c);
+    /* ST_CALLSITE[005C7090]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
     local_EAX_848 =
          HoloTy::Init(this_00->field_21F4,CASE_2,0x112,0x149,iVar5,iVar9,bVar10,cVar11,uVar12);
     if (local_EAX_848 != 0) {
@@ -190,9 +196,11 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       if (-1 < (int)uVar12) {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar12);
       }
+      /* ST_CALLSITE[005C70C8]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       HoloTy::NextFas(this_00->field_21F4);
     }
     FUN_006b5f80((int *)g_ddxContext_008075A8,0x112,0x149,0x205,0x8c);
+    /* ST_CALLSITE[005C7116]: CALL 0x00402298; direct=00402298 PutDDXClip */
     PutDDXClip(0x112,0x149,0x112,0x149,0x205,(byte *)0x8c,'\x01',
                (BITMAPINFO *)g_startSystem_0081176C->field_002C);
   }
@@ -216,6 +224,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     pDVar6 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     g_startSystem_0081176C->field_0548 = &pDVar6->flags;
     if (this_00->field_21EC != nullptr) {
+      /* ST_CALLSITE[005C71D6]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(this_00->field_21EC);
       Library::MSVCRT::FUN_0072e2b0(this_00->field_21EC);
       this_00->field_21EC = nullptr;
@@ -247,6 +256,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       bVar10 = 0x10;
       iVar9 = 1;
       iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+      /* ST_CALLSITE[005C726F]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_1327 =
            HoloTy::Init(this_00->field_21EC,CASE_4,10,0xb4,iVar5,iVar9,bVar10,cVar11,uVar12);
       if (local_EAX_1327 != 0) {
@@ -257,9 +267,11 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
         if (-1 < (int)uVar12) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar12);
         }
+        /* ST_CALLSITE[005C72A8]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         HoloTy::NextFas(this_00->field_21EC);
       }
       FUN_006b5f80((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+      /* ST_CALLSITE[005C72EC]: CALL 0x00402298; direct=00402298 PutDDXClip */
       PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x121,'\x01',
                  (BITMAPINFO *)g_startSystem_0081176C->field_002C);
     }
@@ -287,6 +299,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       local_c = local_c + -1;
     } while (local_c != 0);
     if (this_00->field_21F0 != nullptr) {
+      /* ST_CALLSITE[005C73DE]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(this_00->field_21F0);
       Library::MSVCRT::FUN_0072e2b0(this_00->field_21F0);
       this_00->field_21F0 = nullptr;
@@ -318,6 +331,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       bVar10 = 0x10;
       iVar9 = 1;
       iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
+      /* ST_CALLSITE[005C7482]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_1858 =
            HoloTy::Init(this_00->field_21F0,CASE_4,10,0xb4,iVar5,iVar9,bVar10,cVar11,uVar12);
       if (local_EAX_1858 != 0) {
@@ -328,9 +342,11 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
         if (-1 < (int)uVar12) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar12);
         }
+        /* ST_CALLSITE[005C74BA]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         HoloTy::NextFas(this_00->field_21F0);
       }
       FUN_006b5f80((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+      /* ST_CALLSITE[005C74FF]: CALL 0x00402298; direct=00402298 PutDDXClip */
       PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x123,'\x01',
                  (BITMAPINFO *)g_startSystem_0081176C->field_002C);
     }

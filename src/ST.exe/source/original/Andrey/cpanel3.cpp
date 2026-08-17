@@ -26,6 +26,7 @@ void __thiscall st::fn_005040A0(CPanelTy *this)
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (iVar3 == 0) {
+    /* ST_CALLSITE[005040EA]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_8->field_0190,0,0,'\x01',
            (byte *)local_8->field_0994);
     st::fn_00710A90(pCVar2->field_01B8,pCVar2->field_0190,0,5,6,0x2a,10);
@@ -117,6 +118,7 @@ void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
       local_18 = pAVar12;
       pcVar6[0] = pAVar11->field_0x0;
       pcVar6[1] = uVar2;
+      /* ST_CALLSITE[00504295]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
       st::fn_004035BC
                 (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(param_1), (uint8_t)((char)param_1 + '\x0e')),pAVar12
                 );

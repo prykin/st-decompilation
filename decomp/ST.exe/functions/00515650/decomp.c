@@ -39,6 +39,7 @@ HelpPanelTy::DrawObj
     if (g_allPlayers_007FA174 != nullptr) {
       *param_1 = *param_1 + 2;
       local_8 = (AnonShape_00515650_BBDC7053 *)
+                /* ST_CALLSITE[005156B3]: CALL 0x00404499; direct=00404499 STAllPlayersC::GetTOBJImage */
                 STAllPlayersC::GetTOBJImage
                           (g_allPlayers_007FA174,(uint)param_3,
                            (STAllPlayersC_GetTOBJImage_param_2Enum)param_2);
@@ -63,9 +64,11 @@ HelpPanelTy::DrawObj
                 FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_4,uVar3);
       if ((BITMAPINFO *)local_8 != nullptr) {
         iVar6 = (0x19c - (((BITMAPINFO *)local_8)->bmiHeader).biWidth) / 2;
+        /* ST_CALLSITE[005157C5]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pHVar2->field_0218,iVar6,*param_1,'\x01',
                (byte *)local_8);
         pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pHVar2->field_0248,4);
+        /* ST_CALLSITE[005157EC]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pHVar2->field_0218,iVar6 + -2,*param_1 + -2,'\x06',
                (byte *)pBVar4);
         pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pHVar2->field_0248,4);

@@ -51,7 +51,7 @@ void __thiscall st::fn_005381B0(PanelTy *this)
     }
     st::fn_006B1A50(g_ddxContext_008075A8,3,nullptr,(undefined4 *)&this_00->field_0x4c);
     puVar3 = &this_00->field_0060;
-    st::fn_006B2330(g_ddxContext_008075A8,st::pointer_boundary_cast<uint *>(puVar3),this_00->field_0064,0x4057ea,this_00->field_0040,
+    st::fn_006B2330(g_ddxContext_008075A8,puVar3,this_00->field_0064,0x4057ea,this_00->field_0040,
                  this_00->field_0048,(ushort *)this_00->field_0068);
     st::fn_006B1B10((AnonShape_006B1B10_121F236C *)g_ddxContext_008075A8,*puVar3,3);
     st::fn_006B3640
@@ -152,9 +152,11 @@ int __thiscall st::fn_005384A0(PanelTy *this,STMessage *message)
   if (local_EAX_47 == 0) {
     SVar1 = message->id;
     if (SVar1 == MESS_ID_CREATE) {
+      /* ST_CALLSITE[00538519]: CALL 0x00401e01; direct=00401E01 PanelTy::InitPanel */
       st::fn_00401E01(local_8);
     }
     else if (SVar1 == MESS_SHARED_0003) {
+      /* ST_CALLSITE[00538510]: CALL 0x00404ad9; direct=00404AD9 PanelTy::DonePanel */
       st::fn_00404AD9(local_8);
     }
     else if (SVar1 == MESS_SHARED_0005) {
@@ -281,6 +283,7 @@ st::fn_00538690(PanelTy *this,undefined4 param_1,int param_2,int param_3,int par
     memset(local_18c, 0, 0x17c); /* compiler bulk-zero initialization */
     local_18c[1] = param_1;
     local_18c[0] = param_2;
+    /* ST_CALLSITE[00538709]: CALL dword ptr [0x0085bde8] */
     st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pPVar2->field_006C),st::mutable_c_string("%s0"),param_8);
     local_c = st::fn_006F1CE0(g_cMf32_00806790,param_7,&pPVar2->field_006C,nullptr,1);
     local_17c = *(undefined4 *)(local_c + 2);
@@ -327,6 +330,7 @@ st::fn_00538690(PanelTy *this,undefined4 param_1,int param_2,int param_3,int par
       local_68 = st::fn_0070AA70(g_cMf32_00806790,param_14,0,1);
       local_64 = st::fn_0070A6F0(g_cMf32_00806790,0x12,param_14,1);
     }
+    /* ST_CALLSITE[005388C5]: CALL dword ptr [EDX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)pPVar2->field_000C + 8))(2,&local_8,0,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;
@@ -350,7 +354,7 @@ st::fn_00538690(PanelTy *this,undefined4 param_1,int param_2,int param_3,int par
 
 void __thiscall
 st::fn_005389E0(PanelTy *this,AnonShape_005389E0_C98BD548 *param_1,byte param_2,char *param_3,
-                 undefined *param_4,int param_5,int param_6)
+                 code *param_4,int param_5,int param_6)
 
 {
   AnonNested_005389E0_0018_A8EBF066 *pAVar1;
@@ -394,11 +398,13 @@ LAB_00538a14:
     errorCode = (int *)st::fn_0072D7F0(local_58.jumpBuffer,0);
     if (errorCode == nullptr) {
       iVar5 = 1;
+      /* ST_CALLSITE[00538A84]: CALL dword ptr [EBP + 0x14] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_4)(param_1);
       text = st::fn_006F2C00(param_3,1,uVar4);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_2,text,errorCode,iVar5);
       pPVar3 = local_14;
+      /* ST_CALLSITE[00538ABA]: CALL 0x00403229; direct=00403229 DibPut */
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,param_2,
              (byte *)local_8);
       st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_8);
@@ -479,11 +485,13 @@ LAB_00538bd9:
       uVar4 = local_c;
       iVar3 = local_10;
       pPVar2 = local_14;
+      /* ST_CALLSITE[00538C70]: CALL 0x00403229; direct=00403229 DibPut */
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,param_2,
              (byte *)local_8);
       st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_8);
       st::fn_00710A90(param_4,pPVar2->field_0068,0,iVar3,uVar4,local_18->field_0008,
                        local_18->field_000C);
+      /* ST_CALLSITE[00538CA8]: CALL dword ptr [EBP + 0x1c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_1);
       iVar5 = -1;
@@ -582,6 +590,7 @@ LAB_00538de2:
   puVar4 = st::fn_00709AF0
                      (PTR_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
   uVar5 = local_c;
+  /* ST_CALLSITE[00538E84]: CALL 0x00403229; direct=00403229 DibPut */
   st::fn_00403229((RecoveredSourceFamily_dibcopy *)pPVar2->field_0068,local_8,local_c,'\x01',(byte *)puVar4);
   st::fn_00710A90(g_interSystem_00802A28->field_0024,pPVar2->field_0068,0,local_8,uVar5,
                    local_14->field_0008,local_14->field_000C);
@@ -650,17 +659,20 @@ LAB_00538ff6:
     local_14 = this;
     local_EAX_145 = st::fn_0072D7F0(local_58.jumpBuffer,0);
     if (local_EAX_145 == 0) {
+      /* ST_CALLSITE[00539067]: CALL dword ptr [EBP + 0x18] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar7 = (*(code *)param_5)(param_1);
       text = st::fn_006F2C00(param_3,1,uVar7);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_2,text,nullptr,1);
       iVar6 = local_10;
       pPVar3 = local_14;
+      /* ST_CALLSITE[005390A0]: CALL 0x00403229; direct=00403229 DibPut */
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_c,local_10,param_2,
              (byte *)local_8);
       st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_8);
       if (param_1->field_0014 == 3) {
         local_8 = st::fn_006F1CE0(g_cMf32_00806790,6,param_4,nullptr,1);
+        /* ST_CALLSITE[005390E1]: CALL 0x00403229; direct=00403229 DibPut */
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_c,iVar6,'\x06',
                (byte *)local_8);
         st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_8);

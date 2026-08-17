@@ -38,6 +38,7 @@ st::fn_00636260
   *(int *)&this->field_0x1c = param_4;
   *(uint *)&this->field_0x30 = g_playSystem_00802A38->field_00E4;
   local_8 = this;
+  /* ST_CALLSITE[00636299]: CALL 0x00402162; direct=00402162 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0 */
   iVar1 = st::fn_00402162(this);
   *(int *)&this->field_0x28 = iVar1;
   *(int *)&this->field_0x4 = param_7;
@@ -161,6 +162,7 @@ st::fn_00636FC0
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return local_8;
     }
+    /* ST_CALLSITE[006370C0]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     st::fn_00403F53
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,&local_10,
                &local_14);

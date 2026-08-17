@@ -18,8 +18,10 @@ STOctopusC * __thiscall st::fn_00589990(STOctopusC *this)
 
 {
 
+  /* ST_CALLSITE[00589994]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
-  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[005899A1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  st::fn_00401316((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079BD18);
   this->vtable = &st_global_0079BBB8;
   this->field_0249 = CASE_0;
@@ -369,11 +371,13 @@ LAB_0058b6f6:
     *param_1 = sVar8;
     *param_2 = sVar9;
     *param_3 = (short)local_c;
+    /* ST_CALLSITE[0058B758]: CALL dword ptr [EDX + 0x10] */
     sVar2 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
                        STReplaceLowWord((uint32_t)(local_c), (uint16_t)(this->field_0045)),sVar8,sVar9,local_c
                       );
     *param_4 = sVar2 / 0x2d - (short)((int)sVar2 / -0x4c000000);
+    /* ST_CALLSITE[0058B77F]: CALL 0x004024f5; direct=004024F5 STOctopusC::sub_0058AF70 */
     st::fn_004024F5(this,sVar8,sVar9,(short)local_c);
     return 1;
   }

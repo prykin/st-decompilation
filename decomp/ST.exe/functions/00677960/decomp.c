@@ -56,11 +56,13 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
       this = (STFishC *)*puVar2;
       if ((this != nullptr) &&
          ((local_10 = uVar6, param_1 == 0 ||
+          /* ST_CALLSITE[00677A01]: CALL dword ptr [EDX + 0x2c] */
           (dVar3 = this->slot_2C(), (int)param_1 == dVar3)))) {
         iVar5 = 1;
         local_18 = 1;
         if ((0 < param_5) &&
            (((0 < param_6 && (0 < param_7)) &&
+            /* ST_CALLSITE[00677A3C]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             ((STFishC::sub_004162B0(this,&local_6,&local_8,&local_a), local_6 < param_2 ||
              ((((local_8 < param_3 || (local_a < param_4)) ||
                ((int)param_2 + (int)param_5 <= (int)local_6)) ||
@@ -71,6 +73,7 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
         uVar6 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar5 != 0) && (param_8 != nullptr)) &&
+           /* ST_CALLSITE[00677AB0]: CALL EAX */
            (iVar5 = (*(code *)param_8)(0,local_10,this,param_9), iVar5 != 0)) {
           g_currentExceptionFrame = local_5c.previous;
           return -1;

@@ -56,12 +56,16 @@ undefined4 __fastcall FUN_004d0670(int param_1)
     thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xe,uVar5,uVar5,'\0');
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xc,uVar5,uVar5,'\0');
+    /* ST_CALLSITE[004D0781]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\x0e',uVar5);
+    /* ST_CALLSITE[004D078F]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\f',uVar5);
+    /* ST_CALLSITE[004D07A8]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xe,g_playSystem_00802A38->field_00E4);
+    /* ST_CALLSITE[004D07C2]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xc,g_playSystem_00802A38->field_00E4);
     iVar3 = -1;
@@ -76,8 +80,10 @@ undefined4 __fastcall FUN_004d0670(int param_1)
     if (iVar3 != -2) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xd,uVar4,uVar4,'\0');
+      /* ST_CALLSITE[004D07FC]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\r',uVar4);
+      /* ST_CALLSITE[004D0816]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xd,g_playSystem_00802A38->field_00E4);
     }

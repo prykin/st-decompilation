@@ -204,6 +204,12 @@ Original binaries are local under ignored `bin/` and must not be committed.
   an explicit read; an unresolved path is `unknown`, not ignored. A bare caller
   `RET` proves forwarding only when that caller already has a protected non-void
   return ABI—generic return types must not recursively validate each other.
+- A generic wrapper may recover a pointer return across a void-looking helper
+  only from a closed machine chain: a trusted pointer producer defines full EAX,
+  the exact live EAX is pushed into one pointer parameter, the helper returns
+  that same parameter in full EAX on every RET, and every wrapper RET retains the
+  producer's pointer ABI while at least two external callers consume it.  This
+  proves the wrapper return; it does not change the helper's source-level return.
 - ABI-mutating work must pass `STAbiRegressionGate` before broad structural
   consumers run. Keep durable sentinels in `config/abi-regression-rules.tsv`,
   never in Java. A deliberate ABI change may use only an exact reviewed
@@ -246,6 +252,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   would need more than 32 machine-fallback overrides, suppress that whole dense
   fallback family and remove earlier script-owned members of it; per-call
   overrides at that density perturb High SSA/liveness more than they recover.
+- Apply that density limit to the fallback overrides which remain after
+  same-pass physical-slot promotion, not to every already typed dispatch in the
+  containing function. A raw uniquely owned physical slot may use one-function
+  fixed-arity consensus only when at least eight exact unadjusted calls agree;
+  remove the now-redundant per-call fallbacks for that slot in the same proposal.
 - Generated vtable types which name the same exact physical table address are
   aliases, not independent ABI evidence. A unanimous independently recovered
   slot ABI on one such alias must be retained by every generated alias at that
@@ -267,6 +278,13 @@ Original binaries are local under ignored `bin/` and must not be committed.
   inline array only when independent indexed-stride evidence agrees; install a
   nested by-value member only for an exact complete typed copy into an
   automation-owned range.
+- A fixed stack output array requires more than one pointer-shaped local. The
+  last explicit scalar-pointer parameter of one non-varargs callee must receive
+  the same exact EBP-relative root at least twice, the returned count must be
+  tested, and at least two consumers must walk that root by the scalar width
+  while decrementing the saved count. Derive capacity only from contiguous
+  generic Listing locals up to the next distinct stack object; preserve every
+  manual/imported overlap.
 - A writable global word may publish a runtime-sized record array without being
   an image-backed array itself. Recover its pointee only from one unique affine
   stride, non-overlapping exact-width members, repeated read/write use across
@@ -285,6 +303,28 @@ Original binaries are local under ignored `bin/` and must not be committed.
   stored into that global, or a trusted concrete-pointer function whose every
   return path yields that same global or null. Calls kill volatile receiver
   provenance, CFG joins intersect it, and manual/imported data remains protected.
+- Exact dereference width may refine a script-owned neutral `void *` global to
+  `undefinedN *` only while the loaded global value itself is the dereference
+  base.  If the address of that labelled word is used with a nonzero displacement
+  or index to cross neighboring global storage, retain the neutral anchor until
+  the enclosing aggregate is recovered; the adjacent accesses do not prove that
+  word's pointee width.
+- Readability regression is address-stable for generic `undefinedN` declarations,
+  not for every explicit boundary cast.  A newly declared generic local,
+  parameter, return, or pointer tower is a hard regression; one cast introduced
+  at a typed producer/consumer boundary may be accepted when declarations and
+  the whole-corpus undefined count do not worsen.
+- A new pointer cast wrapped directly around a function call is an address-stable
+  readability regression. Compare its canonical logical expression rather
+  than one rendered line: Ghidra may move the cast and callee across line breaks
+  or insert `ST_CALLSITE` comments without changing the code. Repair the return
+  ABI or install an exact use-site call override from machine evidence; do not
+  make a once-readable call depend on a source-generator boundary cast.
+- Neutral pointer-role evidence must never replace an existing pointer whose
+  pointee has a known storage width.  For migration of a script-owned `void *`,
+  unanimous exact-width machine dereferences across at least three sites and two
+  functions may restore only the generic `undefinedN *` storage view; that is a
+  readability repair, not a semantic element-type claim.
 - When Ghidra retains a byte induction variable over an already proven
   structure pointer, export `*(T *)((int)&base->member + byteOffset)` as the
   exact `STObjectAtByteOffset(base, byteOffset).member` view only when the cast
@@ -366,6 +406,10 @@ Original binaries are local under ignored `bin/` and must not be committed.
   duplicated-receiver call must never degrade from readable member syntax to an
   `exact_indirect_callee<...>(...)(receiver, ...)` expression; generation fails
   instead.
+- A neutral machine-word parameter in such an exact wrapper may receive a
+  pointer only through `machine_word_boundary_cast` emitted at that exact
+  callsite. This records the 32-bit x86 transport without weakening the wrapper
+  prototype or treating the cast as semantic pointer-type evidence.
 - Compiler audits are local evidence. Normalize them by function address, keep
   machine/compiler output under ignored `.st-local/` by default, and compare
   runs with the same per-TU error limit. A compiler diagnostic is a recovery

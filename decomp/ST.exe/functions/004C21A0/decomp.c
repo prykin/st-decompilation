@@ -55,6 +55,7 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
       iVar5 = *param_2;
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_004c2260:
+      /* ST_CALLSITE[004C2260]: CALL dword ptr [EDX + 0xec] */
       iVar5 = (**(code **)(iVar5 + 0xec))();
       if (iVar5 != 0) {
         sVar4 = 3;
@@ -62,6 +63,7 @@ LAB_004c2260:
       goto cf_common_exit_004C261B;
     }
     if ((iVar5 != 1000) && (iVar5 != 0x3e9)) goto cf_common_exit_004C261B;
+    /* ST_CALLSITE[004C228C]: CALL dword ptr [EAX + 0xec] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar5 = (**(code **)(*param_2 + 0xec))();
 joined_r0x004c2294:
@@ -84,7 +86,9 @@ LAB_004c2616:
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       else if (((local_8->field_0245 == 4) &&
+               /* ST_CALLSITE[004C253A]: CALL dword ptr [EDX + 0x2c] */
                ((iVar3 = (**(code **)(*param_2 + 0x2c))(), iVar3 == 0x37 ||
+                /* ST_CALLSITE[004C2546]: CALL dword ptr [EAX + 0x2c] */
                 (iVar3 = (**(code **)(*param_2 + 0x2c))(), iVar3 == 0x6c)))) &&
               (iVar3 = thunk_FUN_004e8b10(param_2,*(uint *)&local_8->field_0x24), iVar3 != 0)) {
         sVar4 = 0x1d;
@@ -107,6 +111,7 @@ LAB_004c2616:
         goto LAB_004c2260;
       }
       if ((iVar5 != 1000) && (iVar5 != 0x3e9)) break;
+      /* ST_CALLSITE[004C260C]: CALL dword ptr [EAX + 0xec] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar5 = (**(code **)(*param_2 + 0xec))();
       goto joined_r0x004c2294;
@@ -136,7 +141,9 @@ LAB_004c2616:
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case CASE_17:
     if (((param_2 != nullptr) && (local_8->field_0245 == 4)) &&
+       /* ST_CALLSITE[004C245E]: CALL dword ptr [EDX + 0x2c] */
        (((iVar5 = (**(code **)(*param_2 + 0x2c))(), iVar5 == 0x37 ||
+         /* ST_CALLSITE[004C246A]: CALL dword ptr [EAX + 0x2c] */
          (iVar5 = (**(code **)(*param_2 + 0x2c))(), iVar5 == 0x6c)) &&
         (iVar5 = thunk_FUN_004e8b10(param_2,*(uint *)&pAVar1->field_0x24), iVar5 != 0)))) {
       sVar4 = 0x1d;
@@ -159,6 +166,7 @@ joined_r0x004c231f:
          ((-1 < param_4 &&
           ((param_4 < g_worldGrid.sizeY && (g_visibleClass_00802A88 != nullptr))))))
         && (0x27 < *(int *)&local_8[2].field_0x3c)) &&
+       /* ST_CALLSITE[004C23C4]: CALL 0x004040a7; direct=004040A7 VisibleClassTy::sub_0055AD00 */
        (iVar5 = VisibleClassTy::sub_0055AD00
                           (g_visibleClass_00802A88,iVar5,param_4,2,*(uint *)&local_8->field_0x24,7),
        iVar5 == 0)) {

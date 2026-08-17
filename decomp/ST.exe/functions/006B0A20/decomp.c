@@ -53,15 +53,19 @@ int FUN_006b0a20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT iS
         UVar4 = UVar4 - 1;
       } while (UVar4 != 0);
       if (param_5 != 0) {
+        /* ST_CALLSITE[006B0ACC]: CALL dword ptr [ECX + 0x58] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*param_1->field_0030 + 0x58))(param_1->field_0030,1,0);
       }
       piVar1 = (int *)param_1->field_003C;
       if (piVar1 != nullptr) {
+        /* ST_CALLSITE[006B0AEA]: CALL dword ptr [ECX + 0x18] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar1 + 0x18))(piVar1,0,iStart,param_4,local_404);
       }
+      /* ST_CALLSITE[006B0B05]: CALL EDI */
       SetPaletteEntries(*(HPALETTE *)param_1,iStart,param_4,local_404);
+      /* ST_CALLSITE[006B0B1D]: CALL EDI */
       SetPaletteEntries(param_1->field_04B4,iStart,param_4,local_404);
       iVar2 = FUN_006b0520(param_1,(int)local_404,iStart,param_4);
       if (*(undefined4 **)&param_1[1].field_0x24 != nullptr) {
@@ -71,6 +75,7 @@ int FUN_006b0a20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT iS
           puVar8 = puVar8 + 1;
         }
         memset((void *)(*(int *)&param_1[1].field_0x24 + 0x8000), 0, 0x8000); /* compiler bulk-zero initialization */
+        /* ST_CALLSITE[006B0B70]: CALL dword ptr [0x0085ba84] */
         SetPaletteEntries(*(HPALETTE *)&param_1[1].field_0x28,iStart,param_4,local_404);
       }
       if (((iVar2 != -0x7789fdc4) && (iVar2 != -0x7789fdb3)) && (iVar2 != -0x7fffbfff)) {

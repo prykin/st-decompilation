@@ -83,6 +83,7 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
     local_60 = 0x6955;
     local_88c = local_8ac;
     local_68 = local_8ac;
+    /* ST_CALLSITE[0059CBC4]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,nullptr,local_8d8,0);
     local_8b8 = this_00->field_1AEC;
@@ -91,10 +92,12 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
     local_8d8[5] = (ccFntTy *)0xaa;
     local_8d8[6] = (ccFntTy *)0x14;
     local_8d8[7] = (ccFntTy *)0x10;
+    /* ST_CALLSITE[0059CC1E]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,nullptr,local_8d8,0);
     local_8b8 = this_00->field_1AF0;
     local_8d8[3] = (ccFntTy *)0x1a4;
+    /* ST_CALLSITE[0059CC50]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1ACC,nullptr,local_8d8,0);
     local_8b8 = this_00->field_1AF8;
@@ -103,14 +106,17 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
     local_8d8[4] = (ccFntTy *)0x12e;
     local_8d8[5] = (ccFntTy *)0x64;
     local_8d8[7] = (ccFntTy *)0x1ff;
+    /* ST_CALLSITE[0059CCA6]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AD8,nullptr,local_8d8,0);
     local_8b8 = this_00->field_1AFC;
     local_8d8[3] = (ccFntTy *)0x15e;
+    /* ST_CALLSITE[0059CCD8]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1ADC,nullptr,local_8d8,0);
     local_8b8 = this_00->field_1B00;
     local_8d8[3] = (ccFntTy *)0x1ea;
+    /* ST_CALLSITE[0059CD0A]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE0,nullptr,local_8d8,0);
     local_8b8 = (DArrayTy *)this_00->field_1B04;
@@ -120,6 +126,7 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
     local_8d8[5] = (ccFntTy *)0x17c;
     local_8d8[6] = (ccFntTy *)0x4b;
     local_884 = 0x6981;
+    /* ST_CALLSITE[0059CD6A]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE4,nullptr,local_8d8,0);
     this_00->field_002D = 0x61;

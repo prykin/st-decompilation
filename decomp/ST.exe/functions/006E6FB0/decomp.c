@@ -510,9 +510,9 @@ switchD_006e74ad_default:
               dVar1 = (double)((float)puVar15[0x1d] / (float)this->field_00C8);
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
               lVar19 = Library::MSVCRT::__ftol();
-              *(byte *)(puVar15 + 0x44) = (byte)lVar19;
+              ((byte *)puVar15)[0x44] = (byte)lVar19;
               if (*(short *)this->field_0280 <= (short)(ushort)(byte)lVar19) {
-                *(char *)(puVar15 + 0x44) = *(char *)this->field_0280 + -1;
+                ((char *)puVar15)[0x44] = *(char *)this->field_0280 + -1;
               }
               dVar1 = (double)((float)puVar15[0x1e] / (float)this->field_00C8);
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));

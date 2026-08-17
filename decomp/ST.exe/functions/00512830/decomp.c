@@ -129,6 +129,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
     local_c4 = 0x8166;
     local_8c = 1;
     local_88 = 1;
+    /* ST_CALLSITE[00512A98]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,4,&this_00->field_019C,nullptr,local_424,0);
     iVar4 = this_00->field_019C;

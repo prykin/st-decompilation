@@ -24,6 +24,7 @@ void __thiscall AiFltClassTy::sub_0065F980(AiFltClassTy *this)
     local_24.arg2.words.low = *(undefined2 *)&this->field_00B3;
     local_24.id = 0x5de5;
     local_24.arg1 = (STMessageArg)this;
+    /* ST_CALLSITE[0065F9CD]: CALL dword ptr [EAX] */
     g_aiBossClass_008117BC->GetMessage(&local_24);
     this->field_00B3 = 0;
     return;

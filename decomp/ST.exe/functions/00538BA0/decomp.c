@@ -59,11 +59,13 @@ LAB_00538bd9:
       uVar4 = local_c;
       iVar3 = local_10;
       pPVar2 = local_14;
+      /* ST_CALLSITE[00538C70]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       ccFntTy::SetSurf(param_4,pPVar2->field_0068,0,iVar3,uVar4,local_18->field_0008,
                        local_18->field_000C);
+      /* ST_CALLSITE[00538CA8]: CALL dword ptr [EBP + 0x1c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_1);
       iVar5 = -1;

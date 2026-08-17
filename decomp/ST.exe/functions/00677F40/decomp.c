@@ -66,6 +66,7 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
       iVar7 = 1;
       local_14 = 1;
       if ((param_2 != nullptr) && (*param_2 != 0)) {
+        /* ST_CALLSITE[00678004]: CALL dword ptr [EDX + 0x74] */
         (*this->vtable->vfunc_74)((short)local_28);
         pbVar8 = local_28;
         pbVar4 = param_2;
@@ -93,6 +94,7 @@ LAB_00678036:
       }
       if (iVar7 != 0) {
         if ((((0 < param_6) && (0 < param_7)) && (0 < param_8)) &&
+           /* ST_CALLSITE[0067806C]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
            ((((STFishC::sub_004162F0(this,&local_6,&local_8,&local_a), local_6 < param_3 ||
               (local_8 < param_4)) ||
              ((local_a < param_5 ||
@@ -103,6 +105,7 @@ LAB_00678036:
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar7 != 0) && (param_9 != nullptr)) &&
+           /* ST_CALLSITE[006780E0]: CALL EAX */
            (iVar7 = (*(code *)param_9)(0,local_10,this,param_10), iVar7 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
           return -1;

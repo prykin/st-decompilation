@@ -43,6 +43,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     iVar5 = 0x31;
     g_frmPanel_0080168C = local_8;
     pCVar3 = thunk_FUN_00571240("BKG_FORMATIONW",0);
+    /* ST_CALLSITE[0050FDC5]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar3,iVar5,uVar6,iVar9,iVar11,UVar12,uVar13,uVar15);
     uVar16 = 1;
@@ -54,6 +55,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 0xc0af;
     uVar6 = 0xc09f;
     pCVar3 = thunk_FUN_00571240("BUT_FLINE",0);
+    /* ST_CALLSITE[0050FE03]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0x2b,0x19,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
@@ -67,6 +69,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = 0xc0a0;
     this_00->field_01B3[0] = uVar4;
     pCVar3 = thunk_FUN_00571240("BUT_FBENDUP",0);
+    /* ST_CALLSITE[0050FE45]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0x60,0x19,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
@@ -80,6 +83,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = 0xc0a1;
     this_00->field_01B3[1] = uVar4;
     pCVar3 = thunk_FUN_00571240("BUT_FHOLD",0);
+    /* ST_CALLSITE[0050FE8A]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0x95,0x19,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
@@ -93,6 +97,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = 0xc0a2;
     this_00->field_01B3[2] = uVar4;
     pCVar3 = thunk_FUN_00571240("BUT_FLOCK",0);
+    /* ST_CALLSITE[0050FECF]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0xca,0x19,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
@@ -106,6 +111,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = 0xc0a3;
     this_00->field_01B3[3] = uVar4;
     pCVar3 = thunk_FUN_00571240("BUT_FWALL",0);
+    /* ST_CALLSITE[0050FF11]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0x2b,0x31,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
@@ -119,6 +125,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = 0xc0a4;
     this_00->field_01B3[4] = uVar4;
     pCVar3 = thunk_FUN_00571240("BUT_FBENDDN",0);
+    /* ST_CALLSITE[0050FF53]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0x60,0x31,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
@@ -132,6 +139,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     this_00->field_01B3[5] = uVar4;
     uVar6 = 0xc0a5;
     pCVar3 = thunk_FUN_00571240("BUT_FSQUARE",0);
+    /* ST_CALLSITE[0050FF98]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0x95,0x31,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
@@ -145,6 +153,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = 0xc0a6;
     this_00->field_01B3[6] = uVar4;
     pCVar3 = thunk_FUN_00571240("BUT_FBREAK",0);
+    /* ST_CALLSITE[0050FFDD]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0xca,0x31,0,1,1,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
@@ -158,6 +167,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = 0xb108;
     this_00->field_01B3[7] = uVar4;
     pCVar3 = thunk_FUN_00571240("BUT_FINC",0);
+    /* ST_CALLSITE[00510022]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0x2b,0x52,0,1,6,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
@@ -171,6 +181,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = 0xb10a;
     this_00->field_01D3[0] = uVar4;
     pCVar3 = thunk_FUN_00571240("BUT_FDEC",0);
+    /* ST_CALLSITE[00510067]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0x4d,0x52,0,1,6,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
@@ -184,6 +195,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = 0xb10c;
     this_00->field_01D3[1] = uVar4;
     pCVar3 = thunk_FUN_00571240("BUT_FRLFT",0);
+    /* ST_CALLSITE[005100AF]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0xaa,0x52,0,1,6,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);
@@ -197,6 +209,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = 0xb10e;
     this_00->field_01D3[2] = uVar4;
     pCVar3 = thunk_FUN_00571240("BUT_FRRT",0);
+    /* ST_CALLSITE[005100F7]: CALL dword ptr [EDI + 0x4] */
     uVar4 = (*pFVar1->CreateBut)
                       ((PanelTy *)this_00,0,1,0xcc,0x52,0,1,6,pCVar3,uVar6,uVar13,sVar7,uVar10,
                        uVar15,pcVar14,uVar16);

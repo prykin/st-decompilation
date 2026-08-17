@@ -80,6 +80,7 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar4;
+  /* ST_CALLSITE[0053C257]: CALL 0x00404241; direct=00404241 ProdPanelTy::InitProdPanel */
   ProdPanelTy::InitProdPanel
             ((ProdPanelTy *)this_00,0x2722,0x3f,2,0xc1,0xc,0x85,0x4f,0x68,0xc4,0x4f,0x20,0x13,0x33,
              "UPG_00");
@@ -139,6 +140,7 @@ LAB_0053c30d:
     local_34 = 2;
     local_30 = 0xc0b4;
     local_38 = local_58;
+    /* ST_CALLSITE[0053C386]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,5,&this_00->field_0282,nullptr,local_68,0);
   }

@@ -33,7 +33,7 @@ FUN_00660540(void *this,undefined4 param_1,short param_2,short param_3,short par
     psVar2 = psVar2 + 2;
   }
   *psVar2 = 0;
-  *(undefined1 *)(psVar2 + 1) = 0;
+  ((undefined1 *)psVar2)[1] = 0;
   local_22 = param_3;
   local_1a = (int)param_6;
   local_1e = param_1;
@@ -48,6 +48,7 @@ FUN_00660540(void *this,undefined4 param_1,short param_2,short param_3,short par
   {
     this_00 = thunk_FUN_0042b760(STField<char>(this,0x24),STField<ushort>(this,0x7d));
     if (this_00 != nullptr) {
+      /* ST_CALLSITE[006605D2]: CALL dword ptr [EDX + 0x8] */
       this_00->sub_00498D20(9,(short)&local_24);
       return 0;
     }

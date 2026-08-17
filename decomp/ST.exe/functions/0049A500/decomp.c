@@ -43,8 +43,10 @@ STGroupBoatC::sub_0049A500
       do {
         DArrayGetElement((DArrayTy *)this->field_0029,index,local_10);
         if (STPiece<0,2>(local_10) != 0xffff) {
+          /* ST_CALLSITE[0049A550]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_10),CASE_1);
+          /* ST_CALLSITE[0049A563]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0
                     ((STFishC *)this_00,(short *)&local_14,(short *)&local_18,(short *)&local_1c);
           iVar5 = iVar5 + local_14;

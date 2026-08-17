@@ -49,14 +49,17 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
   local_18 = 0;
   local_10 = 0;
   local_14 = 0x10;
+  /* ST_CALLSITE[005F692F]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
   STT3DSprC::RestoreSpr
             ((STT3DSprC *)&this->vtable_at_1d5,(int *)&local_28,
              (AnonShape_004AD790_77673787 *)((int)param_1 + 0xc6));
+  /* ST_CALLSITE[005F694E]: CALL 0x00403107; direct=00403107 sub_00416240 */
   sub_00416240(this,*(ushort *)&this->field_02C1,*(short *)&this->field_02C5,
                *(ushort *)&this->field_02C9);
   FreeAndNull(&local_28);
   iVar3 = STField<int>(param_1,0xc2);
   piVar7 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0xc6))->field_0x0 + iVar3);
+  /* ST_CALLSITE[005F696F]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
   STAllPlayersC::RestoreGObjData((STAllPlayersC *)this,piVar7 + 1);
   puVar8 = (byte *)((int)(piVar7 + 1) + *piVar7);
   iVar3 = iVar3 + 0xca + *piVar7;

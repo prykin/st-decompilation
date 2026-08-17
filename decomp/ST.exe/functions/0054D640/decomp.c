@@ -43,6 +43,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
   int *local_8;
 
   local_24 = this;
+  /* ST_CALLSITE[0054D64F]: CALL dword ptr [0x0085bedc] */
   local_1c = timeGetTime();
   if (DAT_0080c512 != 0) {
     return 0;
@@ -69,11 +70,14 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
     FUN_006b6500(g_int_00811764,DAT_0080733c);
   }
   if (DAT_008067a0 != '\0') {
+    /* ST_CALLSITE[0054D711]: CALL dword ptr [0x0085c05c] */
     CFsgsConnection::PumpMessages((CFsgsConnection *)&DAT_00802a90);
   }
   if (DAT_00808784 == 0) {
     if (DAT_0080877e == '\0') {
+      /* ST_CALLSITE[0054DFD4]: CALL 0x00401e51; direct=00401E51 STPlaySystemC::PrepareMail */
       PrepareMail(this_00);
+      /* ST_CALLSITE[0054DFDB]: CALL 0x0040174e; direct=0040174E STPlaySystemC::SendMail */
       SendMail(this_00);
       if (((this_00->field_0038 != '\0') && (g_popUp_008016D8 != nullptr)) &&
          (g_popUp_008016D8->field_009C == '\0')) {
@@ -83,6 +87,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
       }
       if (this_00->field_0028 != 0) {
         SystemClassTy::Life((SystemClassTy *)this_00);
+        /* ST_CALLSITE[0054E027]: CALL 0x00405420; direct=00405420 PlaySystemTy::SendClientMail */
         PlaySystemTy::SendClientMail((PlaySystemTy *)this_00);
       }
       goto LAB_0054e02c;
@@ -102,8 +107,11 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
           if (iVar7 < 1) {
             this_00->field_002C =
                  *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4);
+            /* ST_CALLSITE[0054DB8B]: CALL 0x00404b15; direct=00404B15 STPlaySystemC::sub_00550190 */
             sub_00550190(this_00);
+            /* ST_CALLSITE[0054DB92]: CALL 0x00401e51; direct=00401E51 STPlaySystemC::PrepareMail */
             PrepareMail(this_00);
+            /* ST_CALLSITE[0054DB99]: CALL 0x0040174e; direct=0040174E STPlaySystemC::SendMail */
             SendMail(this_00);
             SystemClassTy::Life((SystemClassTy *)this_00);
             this_00->field_0028 = 0;
@@ -122,6 +130,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
           if (this_00->field_003D != nullptr) {
             this_00->field_003D->field_0004 = this_00->field_004D;
             this_00->field_003D->field_0005 = 0;
+            /* ST_CALLSITE[0054DA94]: CALL 0x00405443; direct=00405443 STPlaySystemC::sub_0054EBB0 */
             local_EAX_1108 = sub_0054EBB0(this_00,(char *)this_00->field_003D,7);
             if (local_EAX_1108 != 0) {
               thunk_FUN_00550380(1);
@@ -202,6 +211,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
           do {
             iVar4 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,0x36,&local_14,&local_10,&local_8,nullptr,-1,0);
+            /* ST_CALLSITE[0054DDA8]: CALL 0x00401456; direct=00401456 STPlaySystemC::sub_005505D0 */
             if ((iVar4 == 1) && (sub_005505D0(this_00,local_10,local_8), local_8 != nullptr)) {
               FreeAndNull(&local_8);
             }
@@ -272,6 +282,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 do {
                   if ((*(int *)(pcVar3 + -6) == local_18) && (*pcVar3 != '\0')) {
                     pcVar2 = LoadResourceString(0x426f,g_hINSTANCE_00807618);
+                    /* ST_CALLSITE[0054D904]: CALL dword ptr [0x0085bde8] */
                     wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar3 + -0x46,pcVar2);
                     if (g_popUp_008016D8 != nullptr) {
                       thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -326,6 +337,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                       do {
                         if ((*(int *)(pcVar3 + -6) == local_18) && (*pcVar3 != '\0')) {
                           pcVar2 = LoadResourceString(0x426e,g_hINSTANCE_00807618);
+                          /* ST_CALLSITE[0054D847]: CALL dword ptr [0x0085bde8] */
                           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar3 + -0x46,pcVar2);
                           if (g_popUp_008016D8 != nullptr) {
                             thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -393,7 +405,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         if (((piVar9 != (int *)0x40) && (*piVar9 != 0)) &&
            ((*piVar9 != DAT_0080877f &&
             (((STField<char>(piVar9,6) != '\0' &&
-              ((&DAT_00809950)[*(byte *)(piVar9 + 1)] == '\0')) &&
+              ((&DAT_00809950)[((byte *)piVar9)[1]] == '\0')) &&
              (DVar5_mg1 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620),
              30000 < (int)(DVar5_mg1 - piVar9[2]))))))) {
           if (*piVar9 != this_00->field_00F4) {
@@ -407,7 +419,9 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
     }
   }
   else {
+    /* ST_CALLSITE[0054D721]: CALL 0x00401e51; direct=00401E51 STPlaySystemC::PrepareMail */
     PrepareMail(this_00);
+    /* ST_CALLSITE[0054D728]: CALL 0x0040174e; direct=0040174E STPlaySystemC::SendMail */
     SendMail(this_00);
     if (this_00->field_0028 != 0) {
       SystemClassTy::Life((SystemClassTy *)this_00);

@@ -1,10 +1,12 @@
 address	status	proposed_name	detail
 004158E0	disabled	STGameObjC::STGameObjC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
+004232A0	disabled	STGroupC::STGroupC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 0042A940	disabled	STAllPlayersC::STAllPlayersC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 0044E690	disabled	STBoatC::STBoatC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00495920	disabled	DumpClassC::DumpClassC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00497AF0	disabled	STGroupBoatC::STGroupBoatC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 004A88C0	disabled	OpticClassC::OpticClassC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
+004AB810	disabled	STT3DSprC::STT3DSprC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 004B7EF0	disabled	TLOBaseTy::TLOBaseTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 004C60A0	disabled	TLOBldMark::TLOBldMark	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 004D0920	disabled	TLOFakeTy::TLOFakeTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
@@ -51,6 +53,7 @@ address	status	proposed_name	detail
 0063BFA0	disabled	STGameObjC::STGameObjC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00646C90	disabled	STVolcanoC::STVolcanoC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00647AD0	disabled	AiBossClassTy::AiBossClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
+0064CC90	disabled	AiEventClassTy::AiEventClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 0065D230	disabled	AiFltClassTy::AiFltClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 006788B0	disabled	AiPlrClassTy::AiPlrClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 0068DC00	disabled	AiTactClassTy::AiTactClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0

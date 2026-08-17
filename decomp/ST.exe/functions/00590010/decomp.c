@@ -47,6 +47,7 @@ STSharkC::CreateShark
   local_24 = param_1;
   local_20 = param_2;
   local_1c = param_3;
+  /* ST_CALLSITE[005900DA]: CALL dword ptr [EAX + 0x8] */
   g_playSystem_00802A38->vfunc_08(0x129,0,(short)&param_9,(short)local_38,0);
   return param_9;
 }

@@ -18,6 +18,7 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
        ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) ||
       ((g_worldGrid.sizeZ <= sVar3 ||
        (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[0] == nullptr)))) &&
+     /* ST_CALLSITE[005EFD5D]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
      (iVar5 = DumpClassC::WritePtr
                         (sVar1,sVar2,sVar3,0,(RecoveredRecord_DumpClassC_00495EC0 *)param_1),
      iVar5 == 0)) {

@@ -18,11 +18,15 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
   }
   STField<int>(this,0x21d) = param_1;
   if (param_1 != 1) {
+    /* ST_CALLSITE[0041E115]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
     STT3DSprC::UnLoadSequence((STT3DSprC *)((int)this + 0x1d5),0);
+    /* ST_CALLSITE[0041E11E]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
     STT3DSprC::UnLoadSequence((STT3DSprC *)((int)this + 0x1d5),0xf);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (((0 < STField<int>(this,0x105)) && (STField<uint>(this,0x24) == (uint)DAT_0080874d))
+       /* ST_CALLSITE[0041E141]: CALL dword ptr [EDX + 0x2c] */
        && ((iVar3 = (**(code **)(*(int *)this + 0x2c))(), iVar3 == 0xb ||
+           /* ST_CALLSITE[0041E14D]: CALL dword ptr [EAX + 0x2c] */
            ((iVar3 = (**(code **)(*(int *)this + 0x2c))(), iVar3 == 0x23 ||
             (STField<int>(this,0x20) != 0x14)))))) {
       ST3DSMAPContext::sub_006E6780
@@ -51,6 +55,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
                  CONCAT22(CONCAT11(3,(char)((uint)STField<undefined4>(this,0x18) >> 0x10)),
                           STField<undefined2>(this,0x18)));
     }
+    /* ST_CALLSITE[0041E23C]: CALL dword ptr [EAX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*(int *)this + 0x2c))();
     switch(uVar2) {
@@ -80,6 +85,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
       return;
     }
   }
+  /* ST_CALLSITE[0041DD26]: CALL 0x0040381e; direct=0040381E STSprGameObjC::LoadActFrame */
   STSprGameObjC::LoadActFrame(this);
   if (((0 < STField<int>(this,0x105)) && (STField<uint>(this,0x24) == (uint)DAT_0080874d)) &&
      (STField<int>(this,0x20) != 0x14)) {
@@ -121,6 +127,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
                CONCAT22(CONCAT11(3,(char)((uint)STField<undefined4>(this,0x18) >> 0x10)),
                         STField<undefined2>(this,0x18)));
   }
+  /* ST_CALLSITE[0041DF5F]: CALL dword ptr [EDX + 0x2c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*(int *)this + 0x2c))();
   switch(uVar2) {

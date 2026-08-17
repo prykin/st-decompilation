@@ -63,6 +63,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
     pSVar6 = (STMessage *)&pSVar6->unknown_04;
   }
   local_7c.id = MESS_ID_CREATE;
+  /* ST_CALLSITE[00608C0E]: CALL 0x00403d8c; direct=00403D8C STExplosionC::CreateGroupPart */
   iVar2 = STExplosionC::CreateGroupPart(this,iVar5);
   if (iVar2 == iVar5) {
     if (0 < local_8) {
@@ -121,6 +122,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
         local_28 = (uVar1 >> 0x10 & 3) + 9;
         local_7c.arg0.ptr = local_5c;
         local_1a = iVar3;
+        /* ST_CALLSITE[00608DAB]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
         STParticleC::GetMessage(*(STParticleC **)param_3_after_write,&local_7c);
         iVar3 = iVar3 + 1;
         param_2_after_write = param_2_after_write + 1;

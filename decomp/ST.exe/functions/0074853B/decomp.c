@@ -16,6 +16,7 @@ undefined4 __fastcall FUN_0074853b(int param_1)
   if (piVar1 == nullptr) {
     return 0x80040209;
   }
+  /* ST_CALLSITE[0074854B]: CALL dword ptr [ECX + 0x40] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*piVar1 + 0x40))(piVar1);
   return uVar2;

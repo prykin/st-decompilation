@@ -110,14 +110,17 @@ LAB_0059d780:
       local_64 = 0x6955;
       local_890 = local_8b0;
       local_6c = local_8b0;
+      /* ST_CALLSITE[0059D8F6]: CALL dword ptr [EDX + 0x8] */
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AD8,nullptr,local_8dc,0);
       local_8bc = this_00->field_1AFC;
       local_8dc[3] = (ccFntTy *)0x15e;
+      /* ST_CALLSITE[0059D928]: CALL dword ptr [EDX + 0x8] */
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1ADC,nullptr,local_8dc,0);
       local_8bc = this_00->field_1B00;
       local_8dc[3] = (ccFntTy *)0x1ea;
+      /* ST_CALLSITE[0059D95A]: CALL dword ptr [EDX + 0x8] */
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE0,nullptr,local_8dc,0);
       local_8dc[1] = (ccFntTy *)0xc8;
@@ -130,6 +133,7 @@ LAB_0059d780:
       local_8dc[5] = (ccFntTy *)0x17c;
       local_8dc[6] = (ccFntTy *)0x4b;
       local_888 = 0x6981;
+      /* ST_CALLSITE[0059D9CC]: CALL dword ptr [EDX + 0x8] */
       (*this_00->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE4,nullptr,local_8dc,0);
       this_00->field_002D = 0x61;

@@ -34,7 +34,9 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     PTR_00806740 = nullptr;
     thunk_FUN_005711d0(pSVar3,(int *)&g_parentSystem_0081163C);
     thunk_FUN_005711d0(pSVar3,(int *)&g_startSystem_0081176C);
+    /* ST_CALLSITE[0056C7D6]: CALL 0x00403562; direct=00403562 STAppC::CloseGameDBs */
     CloseGameDBs(pSVar3);
+    /* ST_CALLSITE[0056C7DB]: CALL 0x0040444e; direct=0040444E DestroyBaseSystem */
     DestroyBaseSystem();
     if ((DArrayTy *)pSVar3->field_4EE2 != nullptr) {
       DArrayDestroy((DArrayTy *)pSVar3->field_4EE2);
@@ -124,8 +126,10 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       piVar2[1] = 0;
     }
     g_currentExceptionFrame = local_94.previous;
+    /* ST_CALLSITE[0056CA20]: CALL dword ptr [0x0085be20] */
     DestroyWindow(g_hWnd_00806748);
     g_hWnd_00806748 = (HWND)0x0;
+    /* ST_CALLSITE[0056CA38]: CALL dword ptr [0x0085be1c] */
     UnregisterClassA("STWindowClass",g_hInstance_00856D70);
     pSVar3 = local_8;
     if (local_8->field_115A != nullptr) {
@@ -138,6 +142,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     if (DAT_00802ad0 != 0) {
       FreeAndNull(&DAT_00802ad0);
     }
+    /* ST_CALLSITE[0056CA87]: CALL dword ptr [0x0085bc70] */
     InterlockedDecrement(&DAT_0085e000);
     g_currentExceptionFrame = local_50.previous;
     return;

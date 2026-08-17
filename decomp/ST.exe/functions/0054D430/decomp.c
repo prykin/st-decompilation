@@ -32,6 +32,7 @@ STPlaySystemC::SaveObjData(STPlaySystemC *this,int *param_1,byte *param_2,uint p
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar2 == 0) {
+    /* ST_CALLSITE[0054D486]: CALL dword ptr [0x0085bde8] */
     wsprintfA(local_28,"%s%08ld",PTR_DAT_007c83b0,param_1);
     cMf32::RecPut(local_8->field_0024,0xc,local_28,param_2,param_3,nullptr,'\x02',
                   nullptr);

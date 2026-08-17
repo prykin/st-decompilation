@@ -7,6 +7,7 @@ uint FUN_006c7e30(int param_1,undefined4 *param_2,uint param_3)
   BOOL BVar1;
   byte *puVar3;
 
+  /* ST_CALLSITE[006C7E40]: CALL dword ptr [0x0085bb60] */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   BVar1 = IsBadHugeReadPtr(*(void **)(param_1 + 0x36),param_3);
   if (BVar1 != 0) {

@@ -11,21 +11,23 @@
 undefined4 __fastcall st::fn_004EC050(int param_1)
 
 {
-  AnonShape_004AB810_8E5693D5 *pAVar1;
-  STT3DSprC *this;
+  STT3DSprC *pSVar1;
   int exceptionCode;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x5ff) == 0) {
-    pAVar1 = (AnonShape_004AB810_8E5693D5 *)st::fn_0072E530(0x40);
-    if (pAVar1 == nullptr) {
-      this = nullptr;
+    pSVar1 = (STT3DSprC *)st::fn_0072E530(0x40);
+    if (pSVar1 == nullptr) {
+      pSVar1 = nullptr;
     }
     else {
-      this = (STT3DSprC *)st::fn_00401316(pAVar1);
+      /* ST_CALLSITE[004EC06D]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+      pSVar1 = st::fn_00401316(pSVar1);
     }
-    *(STT3DSprC **)(param_1 + 0x5ff) = this;
-    exceptionCode = st::fn_0040537B(this,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    *(STT3DSprC **)(param_1 + 0x5ff) = pSVar1;
+    /* ST_CALLSITE[004EC097]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
+    exceptionCode =
+         st::fn_0040537B(pSVar1,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (exceptionCode != 0) {
       st::fn_006A5E40
                 (exceptionCode,g_overwriteContext_007ED77C,
@@ -52,6 +54,7 @@ undefined4 __fastcall st::fn_004EC0F0(AnonShape_004EC0F0_C371FA68 *param_1)
   int uVar2;
   uint uVar3;
 
+  /* ST_CALLSITE[004EC115]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar1 = st::fn_00404183
                     ((STT3DSprC *)param_1->field_05FF,0xe,PTR_00806774,
                      *(char **)(&DAT_007cde6c + param_1->field_050C * 4),CASE_1D);
@@ -63,6 +66,7 @@ undefined4 __fastcall st::fn_004EC0F0(AnonShape_004EC0F0_C371FA68 *param_1)
   iVar1 = st::fn_004052CC((STT3DSprC *)&param_1->field_0x1d5);
   uVar2 = st::fn_004052CC((STT3DSprC *)param_1->field_05FF);
   st::fn_006EA340(param_1->field_0211,uVar2,iVar1,uVar3);
+  /* ST_CALLSITE[004EC1A8]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   st::fn_004045D9
             ((STT3DSprC *)param_1->field_05FF,
              (float)param_1->field_04FC * _DAT_007904f8 * _DAT_007904f0,
@@ -85,7 +89,9 @@ undefined4 __fastcall st::fn_004EC0F0(AnonShape_004EC0F0_C371FA68 *param_1)
   }
   st::fn_00402982((void *)param_1->field_05FF,1);
   st::fn_00401EBA((void *)param_1->field_05FF,0xe,uVar3,uVar3,'\0');
+  /* ST_CALLSITE[004EC209]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064((STT3DSprC *)param_1->field_05FF,'\x0e',uVar3);
+  /* ST_CALLSITE[004EC223]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   st::fn_00405240((STT3DSprC *)param_1->field_05FF,0xe,g_playSystem_00802A38->field_00E4);
   return 0;
 }

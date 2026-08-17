@@ -126,7 +126,9 @@ void __thiscall HelpPanelTy::sub_0051DA70(HelpPanelTy *this)
         do {
           if ((*puVar12 & 1 << ((byte)uVar11 & 0x1f)) == 0) {
             if ((char)local_8 == '\0') {
+              /* ST_CALLSITE[0051DD04]: CALL 0x004020b8; direct=004020B8 HelpPanelTy::TipProc */
               TipProc(this,(void *)(uint)bVar1,local_c,'\0');
+              /* ST_CALLSITE[0051DD0F]: CALL dword ptr [EDX + 0x18] */
               this->SetPanel('\x01');
               return;
             }

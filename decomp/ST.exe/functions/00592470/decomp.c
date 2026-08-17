@@ -23,12 +23,14 @@ void __thiscall CampaignTy::CloseButtons(CampaignTy *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
+    /* ST_CALLSITE[005924A6]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
     MMObjTy::CloseButtons((MMObjTy *)local_8);
     iVar2 = 0;
     if (this_00->field_009A != '\0') {
       iVar5 = 0x96;
       piVar4 = &this_00->field_00BB[0].field_0028.field_0040;
       do {
+        /* ST_CALLSITE[005924C2]: CALL dword ptr [0x0085bedc] */
         DVar3 = timeGetTime();
         piVar4[1] = DVar3;
         *piVar4 = iVar5;

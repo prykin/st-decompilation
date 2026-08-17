@@ -47,6 +47,7 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if ((local_c->field_006D == CASE_3) || (local_c->field_006D == CASE_5)) {
+    /* ST_CALLSITE[005E0B05]: CALL 0x00405c18; direct=00405C18 MTaskTy::PlayScript */
     PlayScript(local_c);
   }
   pDVar6 = this_00->field_0647;
@@ -65,6 +66,7 @@ LAB_005e0b38:
              (*(uint *)&pAVar11->field_0x28 <
               (uint)(this_00->field_0069 - *(int *)&pAVar11->field_0x24))) {
             if (*(uint *)&pAVar11->field_0x10 < *(uint *)&pAVar11->field_0x1c) {
+              /* ST_CALLSITE[005E0B85]: CALL 0x00405a51; direct=00405A51 MTaskTy::PrepareTSurf */
               PrepareTSurf(this_00,*(AnonShape_005E11D0_D0F8BE03 **)&pAVar11->field_0x4,
                            pAVar11->field_0x35,pAVar11->field_0x38);
               FUN_00714b30((void *)pAVar11->field_0031,*(int *)&pAVar11->field_0x10 + -1);
@@ -78,10 +80,12 @@ LAB_005e0b38:
               *(undefined4 *)&pAVar11->field_0x24 = this_00->field_0069;
             }
             else {
+              /* ST_CALLSITE[005E0BE3]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
               TTaskItemClose(this_00,pAVar11);
             }
           }
           if (*(uint *)&pAVar11->field_0x10 < *(int *)&pAVar11->field_0x1c - 3U) {
+            /* ST_CALLSITE[005E0C03]: CALL 0x00405a51; direct=00405A51 MTaskTy::PrepareTSurf */
             PrepareTSurf(this_00,*(AnonShape_005E11D0_D0F8BE03 **)&pAVar11->field_0x4,
                          pAVar11->field_0x35,pAVar11->field_0x38);
             ptVar5 = (tagBITMAPINFO *)FUN_007140e0((void *)pAVar11->field_0031,1,'\0');
@@ -123,6 +127,7 @@ LAB_005e0ca3:
             FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar11);
           }
           else {
+            /* ST_CALLSITE[005E0CDC]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
             TTaskItemClose(this_00,pAVar11);
           }
         }

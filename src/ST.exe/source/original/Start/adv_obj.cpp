@@ -46,10 +46,14 @@ void __thiscall st::fn_00590170(MAdvTy *this)
     this_01->field_0028 = 0x13;
     st::fn_006E6000(this_01,3,1,(undefined4 *)&this_01->field_0x18);
     if (g_startSystem_0081176C->field_02E6 != nullptr) {
+      /* ST_CALLSITE[00590248]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       st::fn_00401FA5(g_startSystem_0081176C->field_02E6,0,0,1);
+      /* ST_CALLSITE[00590258]: CALL 0x0040462e; direct=0040462E MMsgTy::HideSprites */
       st::fn_0040462E(g_startSystem_0081176C->field_02E6);
     }
+    /* ST_CALLSITE[00590268]: CALL 0x00401d43; direct=00401D43 DarkScreen */
     st::fn_00401D43(g_dDXContext_0080759C,1,0);
+    /* ST_CALLSITE[00590272]: CALL 0x00403ab2; direct=00403AB2 MAdvTy::PaintMAdv */
     st::fn_00403AB2(this_01);
     st::fn_0040448A((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                        this_01->field_005E,10,2);
@@ -59,12 +63,16 @@ void __thiscall st::fn_00590170(MAdvTy *this)
       iVar1 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       this_00->field_0494 = 0xffff;
+      /* ST_CALLSITE[005902C2]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
       st::fn_0040507E(this_00,CASE_0,iVar1,iVar6);
+      /* ST_CALLSITE[005902D7]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
       st::fn_0040241E(this_00,this_00->field_00C5,this_00->field_00C9);
       this_00->field_00D2 = 0;
       this_00->field_04DF = -1;
     }
+    /* ST_CALLSITE[00590307]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     st::fn_00402DBF(1,this_01->field_0008,2,100,2,1,0,0,0,0,0,0);
+    /* ST_CALLSITE[00590326]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     st::fn_00402DBF(1,this_01->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -100,13 +108,16 @@ void __thiscall st::fn_00590410(MAdvTy *this)
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
+    /* ST_CALLSITE[0059045B]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     st::fn_00402DBF(0,local_8->field_0008,2,100,2,1,0,0,0,0,0,0);
+    /* ST_CALLSITE[0059047A]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     st::fn_00402DBF(0,this_00->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
     memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     this_00->field_0028 = 0x14;
     this_00->field_002C = this_00->field_0008;
     st::fn_006E6000(this_00,3,1,(undefined4 *)&this_00->field_0x18);
     st::fn_006F20E0(g_cMf32_00806780,(uint *)&this_00->field_005E);
+    /* ST_CALLSITE[005904C3]: CALL 0x00401d43; direct=00401D43 DarkScreen */
     st::fn_00401D43(g_dDXContext_0080759C,10,2);
     if (this_00->field_0048 != 0) {
       st::fn_006E3B50((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_0x38);
@@ -167,6 +178,7 @@ void __thiscall st::fn_00590580(MAdvTy *this)
   if (iVar3 == 0) {
     st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
     pMVar2 = local_8;
+    /* ST_CALLSITE[005905DB]: CALL 0x00403738; direct=00403738 PutDDX */
     st::fn_00403738(0,0,'\x01',(BITMAPINFO *)local_8->field_005E);
     pcVar11 = g_startSystem_0081176C->field_0030;
     uVar12 = 1;
@@ -174,6 +186,7 @@ void __thiscall st::fn_00590580(MAdvTy *this)
     if (pMVar2->field_005D == '\0') {
       uVar9 = 0xfffffffe;
       pcVar3 = st::fn_006B0140(0x25e4,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[005906B7]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       st::fn_00404C2D(this_02,0,0,0x1b8,800,0x14,pcVar3,uVar9,uVar10,pcVar11,uVar12);
       pcVar11 = g_startSystem_0081176C->field_0030;
       uVar9 = 1;
@@ -190,12 +203,14 @@ void __thiscall st::fn_00590580(MAdvTy *this)
     else {
       uVar9 = 0xffffffff;
       pcVar3 = st::fn_006B0140(0x25e5,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0059061C]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       st::fn_00404C2D(this_00,0,10,10,0x30c,0x32,pcVar3,uVar9,uVar10,pcVar11,uVar12);
       pcVar11 = g_startSystem_0081176C->field_0030;
       uVar9 = 1;
       uVar12 = 0xffffffff;
       uVar10 = 0;
       pcVar3 = st::fn_006B0140(0x25e6,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[00590658]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       st::fn_00404C2D(this_01,0,0x10e,0x3c,0x20d,0xfa,pcVar3,uVar10,uVar12,pcVar11,uVar9);
       pcVar11 = g_startSystem_0081176C->field_0030;
       uVar9 = 1;
@@ -209,6 +224,7 @@ void __thiscall st::fn_00590580(MAdvTy *this)
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       this_03 = extraout_ECX;
     }
+    /* ST_CALLSITE[005906F3]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
     st::fn_00404C2D(this_03,0,iVar4,iVar6,iVar7,iVar8,pcVar3,uVar10,uVar12,pcVar11,uVar9);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -285,21 +301,26 @@ int __thiscall st::fn_005908B0(MAdvTy *this,STMessage *message)
   if (local_EAX_47 == 0) {
     switch(message->id) {
     case MESS_ID_NONE:
+      /* ST_CALLSITE[00590934]: CALL 0x004058d5; direct=004058D5 MAdvTy::NoneMAdv */
       st::fn_004058D5(local_8);
       break;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case MESS_ID_CREATE:
       local_8->field_005D = *(undefined1 *)((message->arg0).u32 + 0x14);
+      /* ST_CALLSITE[00590919]: CALL 0x00405e25; direct=00405E25 MAdvTy::InitMAdv */
       st::fn_00405E25(local_8);
       break;
     case MESS_SHARED_0003:
+      /* ST_CALLSITE[00590922]: CALL 0x00402cc0; direct=00402CC0 MAdvTy::DoneMAdv */
       st::fn_00402CC0(local_8);
       break;
     case MESS_SHARED_0005:
+      /* ST_CALLSITE[0059092B]: CALL 0x00403ab2; direct=00403AB2 MAdvTy::PaintMAdv */
       st::fn_00403AB2(local_8);
       break;
     case MESS_TRACKBARCLASSTY_0062:
     case MESS_SHARED_0064:
+      /* ST_CALLSITE[0059093D]: CALL 0x00403378; direct=00403378 MAdvTy::sub_00590860 */
       st::fn_00403378(local_8);
       if (this_00->field_005D == '\0') {
         this_00->field_0040 = 0x200;

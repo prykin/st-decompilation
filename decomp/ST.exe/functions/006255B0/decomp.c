@@ -30,6 +30,7 @@ FUN_006255b0(void *this,int param_1,undefined4 param_2,int param_3,int param_4,
     STField<int>(this,0x2ca) = param_6;
   }
   else if (((1 < param_1) && (param_1 < 4)) && (STField<int *>(this,0x245) != nullptr)) {
+    /* ST_CALLSITE[00625602]: CALL dword ptr [EAX + 0xe0] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (**(code **)(*STField<int *>(this,0x245) + 0xe0))
                       (STField<undefined4>(this,0x249),(int)&param_1 + 2,(int)&param_8 + 2,
@@ -43,6 +44,7 @@ FUN_006255b0(void *this,int param_1,undefined4 param_2,int param_3,int param_4,
       STField<int>(this,0x2c2) = (int)STPiece<2,2>(param_1);
       STField<int>(this,0x2ca) = (int)STPiece<2,2>(param_7);
       thunk_FUN_00624000(this);
+      /* ST_CALLSITE[00625654]: CALL 0x004012c6; direct=004012C6 STMineSetC::LoadImagMineSet */
       STMineSetC::LoadImagMineSet(this,1);
       return param_2;
     }

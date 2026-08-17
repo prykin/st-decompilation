@@ -14,6 +14,7 @@ undefined4 __fastcall FUN_004e8dc0(AnonShape_004E8DC0_1D60A929 *param_1)
                       (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_05D3,
                        (int *)&local_8);
     if (iVar1 == 0) {
+      /* ST_CALLSITE[004E8DF4]: CALL dword ptr [EDX + 0x2c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar1 = (**(code **)(*(int *)local_8 + 0x2c))();
       if (iVar1 == 0x6c) {

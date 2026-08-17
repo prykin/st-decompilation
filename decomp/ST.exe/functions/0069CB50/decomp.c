@@ -140,6 +140,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   STField<int>(param_1,0x5833) = iVar9;
   STField<int>(param_1,0x5837) = ((int *)param_1[2])[1] << 1;
   uStackY_1a0 = 0x69cbb3;
+  /* ST_CALLSITE[0069CBAE]: CALL 0x0040564b; direct=0040564B CGenerate::sub_006948E0 */
   sub_006948E0((CGenerate *)param_1,iVar9);
   iVar19 = ((int *)param_1[2])[1] * *(int *)param_1[2];
   uStackY_1a0 = 0x69cbd6;

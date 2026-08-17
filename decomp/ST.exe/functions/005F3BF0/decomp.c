@@ -45,6 +45,7 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
       this->field_00C9 = 0;
       return 1;
     }
+    /* ST_CALLSITE[005F41C4]: CALL 0x0040473c; direct=0040473C STBHEShellC::sub_005F3BF0 */
     iVar6 = sub_005F3BF0(this,param_1,param_2,param_3,'\x01');
     if (iVar6 != 0) {
       this->field_00C9 = 1;

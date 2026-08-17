@@ -264,22 +264,27 @@ switchD_00590d73_default:
         } while (iVar9 < 0xf);
         local_8 = local_8 + 1;
         if (2 < local_8) {
+          /* ST_CALLSITE[00590EA0]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
           MMObjTy::InitSprBut((MMObjTy *)this_02,
                               (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_0x9b,
                               "MM_MBUT00",0xf2,0x13a,7,8,0,0,0x9d,0x38,10,
                               "MM_MABUT00",6,8,9,6,0x28,0,nullptr,0,0,0,-1,-1);
+          /* ST_CALLSITE[00590EEB]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
           MMObjTy::InitSprBut((MMObjTy *)this_02,
                               (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[0].field_01DB
                               ,"MM_MBUT01",0x191,0x13a,9,8,0,0,0x9d,0x38,10,
                               "MM_MABUT01",8,8,8,6,0x32,0,nullptr,0,0,0,-1,-1);
+          /* ST_CALLSITE[00590F36]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
           MMObjTy::InitSprBut((MMObjTy *)this_02,
                               (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[1].field_01DB
                               ,"MM_MBUT02",0xf2,0x173,8,6,0,0,0x9d,0x38,10,
                               "MM_MABUT02",8,7,10,5,0x28,0,nullptr,0,0,0,-1,-1);
+          /* ST_CALLSITE[00590F81]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
           MMObjTy::InitSprBut((MMObjTy *)this_02,
                               (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[2].field_01DB
                               ,"MM_MBUT03",0x191,0x173,8,6,0,0,0x9d,0x38,10,
                               "MM_MABUT03",8,7,8,5,0x32,0,nullptr,0,0,0,-1,-1);
+          /* ST_CALLSITE[00590FCC]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
           MMObjTy::InitSprBut((MMObjTy *)this_02,
                               (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[3].field_01DB
                               ,"MM_MBUT04",0x143,0x1ac,7,8,0,0,0x9d,0x38,10,
@@ -290,11 +295,14 @@ switchD_00590d73_default:
           this_02->field_1BE8 = (uint)DAT_0080874e * 3 - CASE_3;
           puVar4 = FUN_0070a9f0(g_cMf32_00806780,"CMPGN_BKG",0,1);
           g_startSystem_0081176C->field_002C = puVar4;
+          /* ST_CALLSITE[00591019]: CALL 0x00401d43; direct=00401D43 DarkScreen */
           DarkScreen(g_dDXContext_0080759C,1,0);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           this_00 = *(MMsgTy **)(this_02->field_00BB[0xc].field_01DC + 0x2e6);
           if (this_00 != nullptr) {
+            /* ST_CALLSITE[00591037]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
             MMsgTy::HidePanel(this_00,0,0,1);
+            /* ST_CALLSITE[00591048]: CALL 0x00405191; direct=00405191 MMsgTy::ShowSprites */
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             MMsgTy::ShowSprites(*(MMsgTy **)(this_02->field_00BB[0xc].field_01DC + 0x2e6));
             *(undefined4 *)(*(int *)(this_02->field_00BB[0xc].field_01DC + 0x2e6) + 0x1cab) =
@@ -308,7 +316,9 @@ switchD_00590d73_default:
             iVar19 = g_cursorClass_00802A30->field_00C5;
             g_cursorClass_00802A30->field_0493 = CASE_1;
             this_01->field_0494 = 0xffff;
+            /* ST_CALLSITE[005910A5]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             CursorClassTy::SetGCType(this_01,CASE_0,iVar19,iVar9);
+            /* ST_CALLSITE[005910BA]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
             CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);
             this_01->field_00D2 = 0;
             this_01->field_04DF = -1;
@@ -329,6 +339,7 @@ switchD_00590d73_default:
           psVar7 = (short *)ccFntTy::CreateTypeSSpr
                                       (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
                                        ,uVar12,iVar13,iVar14,iVar15);
+          /* ST_CALLSITE[00591124]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[2].field_00B9,psVar7,uVar17,uVar21);
           uVar21 = 0xffffffff;
           uVar17 = 7;
@@ -345,6 +356,7 @@ switchD_00590d73_default:
           psVar7 = (short *)ccFntTy::CreateTypeSSpr
                                       (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
                                        ,uVar12,iVar13,iVar14,iVar15);
+          /* ST_CALLSITE[00591174]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[3].field_00B9,psVar7,uVar17,uVar21);
           uVar21 = 0xffffffff;
           uVar17 = 7;
@@ -361,13 +373,16 @@ switchD_00590d73_default:
           psVar7 = (short *)ccFntTy::CreateTypeSSpr
                                       (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
                                        ,uVar12,iVar13,iVar14,iVar15);
+          /* ST_CALLSITE[005911C5]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[4].field_00B9,psVar7,uVar17,uVar21);
+          /* ST_CALLSITE[005911CA]: CALL 0x00401a5f; direct=00401A5F CampaignTy::PaintCampaign */
           PaintCampaign(this_02);
           iVar9 = 0;
           if (this_02->field_009A != '\0') {
             local_c = 0;
             piVar10 = &this_02->field_00BB[0].field_0028.field_0040;
             do {
+              /* ST_CALLSITE[005911E4]: CALL dword ptr [0x0085bedc] */
               DVar8 = timeGetTime();
               piVar10[1] = DVar8;
               *piVar10 = local_c;
@@ -406,7 +421,9 @@ switchD_00590d73_default:
               puVar5 = puVar5 + 1;
             }
             *(undefined2 *)puVar5 = 0xffff;
+            /* ST_CALLSITE[005912EE]: CALL 0x00401717; direct=00401717 MMsgTy::SetPanel */
             MMsgTy::SetPanel(*(MMsgTy **)(iVar9 + 0x2e6),0,(int)&local_26c,0,0);
+            /* ST_CALLSITE[00591303]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             MMsgTy::StatePanel(*(MMsgTy **)(this_02->field_00BB[0xc].field_01DC + 0x2e6),
                                (int)local_70);

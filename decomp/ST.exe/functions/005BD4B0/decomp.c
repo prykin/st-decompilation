@@ -65,18 +65,19 @@ MReportTy::OutTGlProc
       FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)local_8,0,2,2,local_8->field_0004 + -4,
                    local_8->field_0008 + -4,0x18,0xd);
       ccFntTy::SetSurf(*(ccFntTy **)(iVar3 + 0x83),(int)local_8,0,5,5,local_8->field_0004 + -10,0xf);
-      if (*(char *)(iVar3 + 0x67) == '\0') {
+      if (((char *)iVar3)[0x67] == '\0') {
         pcVar5 = LoadResourceString(0x2711,g_hINSTANCE_00807618);
       }
       else {
         pcVar5 = (char *)&DAT_0080c736;
       }
       pcVar6 = LoadResourceString(0x2445,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[005BD5D9]: CALL EDI */
       wsprintfA((LPSTR)&DAT_0080f33a,"&0%s: &2%s",pcVar6,pcVar5);
       ccFntTy::WrStr(*(ccFntTy **)(iVar3 + 0x83),(char *)&DAT_0080f33a,10,-1,0);
       ccFntTy::SetSurf(*(ccFntTy **)(iVar3 + 0x83),(int)local_8,0,5,0x19,local_8->field_0004 + -10,
                        0xf);
-      if (*(char *)(iVar3 + 0x67) == '\0') {
+      if (((char *)iVar3)[0x67] == '\0') {
         resourceId = 0x2711;
       }
       else {
@@ -84,6 +85,7 @@ MReportTy::OutTGlProc
       }
       pcVar5 = LoadResourceString(resourceId,g_hINSTANCE_00807618);
       pcVar6 = LoadResourceString(0x2337,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[005BD657]: CALL EDI */
       wsprintfA((LPSTR)&DAT_0080f33a,"&0%s &2%s",pcVar6,pcVar5);
       ccFntTy::WrStr(*(ccFntTy **)(iVar3 + 0x83),(char *)&DAT_0080f33a,10,-1,0);
       Library::DKW::DDX::FUN_006c5000

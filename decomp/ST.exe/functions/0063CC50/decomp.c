@@ -40,6 +40,7 @@ undefined4 __thiscall FUN_0063cc50(void *this,int param_1)
   local_2c = local_32;
   if (param_1 == 0) {
     local_2a = 0;
+    /* ST_CALLSITE[0063CCDD]: CALL dword ptr [EDX + 0x8] */
     g_playSystem_00802A38->vfunc_08(0x10c,0,0,(short)local_48,0);
     return 1;
   }
@@ -61,6 +62,7 @@ undefined4 __thiscall FUN_0063cc50(void *this,int param_1)
     local_14 = g_worldGrid.sizeY + -1;
   }
   local_2a = 0;
+  /* ST_CALLSITE[0063CD7A]: CALL dword ptr [EDX + 0x8] */
   g_playSystem_00802A38->vfunc_08(0x10c,0,0,(short)local_48,0);
   iVar7 = iVar5;
   if (iVar5 < local_8) {
@@ -109,6 +111,7 @@ undefined4 __thiscall FUN_0063cc50(void *this,int param_1)
               }
             }
             local_2a = 0;
+            /* ST_CALLSITE[0063CF06]: CALL dword ptr [EDX + 0x8] */
             g_playSystem_00802A38->vfunc_08(0x10c,0,0,(short)local_48,0);
           }
 LAB_0063cf09:

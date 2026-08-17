@@ -9,9 +9,11 @@ undefined4 __cdecl FUN_006a55d0(void *param_1,UINT_PTR ucb,int param_3)
 {
   BOOL BVar1;
 
+  /* ST_CALLSITE[006A55E1]: CALL dword ptr [0x0085bbb8] */
   if ((param_1 == nullptr) || (BVar1 = IsBadReadPtr(param_1,ucb), BVar1 != 0)) {
     return 0;
   }
+  /* ST_CALLSITE[006A55F4]: CALL dword ptr [0x0085bba0] */
   if ((param_3 != 0) && (BVar1 = IsBadWritePtr(param_1,ucb), BVar1 != 0)) {
     return 0;
   }

@@ -61,9 +61,11 @@ void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,byte para
   local_8->field_01A0 = 0;
   local_8->field_01A9 = 0;
   local_8->field_01A4 = CASE_B;
+  /* ST_CALLSITE[00533AAC]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
   SetOptControls(local_8);
   OVar1 = this_00->field_0172;
   if ((OVar1 == CASE_2) || (OVar1 == CASE_4)) {
+    /* ST_CALLSITE[00533ACB]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
     SwitchOptPanel(this_00,-1);
   }
   g_currentExceptionFrame = local_4c.previous;

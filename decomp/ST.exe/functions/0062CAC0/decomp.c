@@ -39,6 +39,7 @@ FUN_0062cac0(AnonShape_0062CAC0_4BF74422 *param_1,int param_2,int param_3,int pa
       *param_8 = (short)lVar5 + *(short *)param_1;
       param_8[1] = *(short *)&param_1->field_0x4 + (short)lVar6;
       param_8[2] = (short)lVar7 + *(short *)&param_1->field_0x8;
+      /* ST_CALLSITE[0062CC18]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       TraksClassTy::TraksCreate
                 (g_traksClass_00802A7C,3,0,0,(int)lVar5 + *(int *)param_1,
                  *(int *)&param_1->field_0x4 + (int)lVar6,(int)lVar7 + *(int *)&param_1->field_0x8,0

@@ -15,8 +15,10 @@ STDcResourcC * __thiscall st::fn_0057F1D0(STDcResourcC *this)
 
 {
 
+  /* ST_CALLSITE[0057F1D4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
-  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[0057F1E1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  st::fn_00401316((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079B688);
   this->vtable = &st_global_0079B528;
   memset(&this->field_0231, 0, 0x28); /* compiler bulk-zero initialization */
@@ -53,6 +55,7 @@ undefined4 * __thiscall st::fn_0057F2E0(STDcResourcC *this,int param_1,int param
     param_1 = CONCAT31(extraout_var,uVar2);
     pcVar6_mg0 = st_global_007CB08C;
   }
+  /* ST_CALLSITE[0057F313]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_00811670),pcVar6_mg0,param_1);
   if (param_2 == 0) {
     return (undefined4 *)&CHAR_00h_00811670;
@@ -111,6 +114,7 @@ undefined4 * __thiscall st::fn_0057F3A0(STDcResourcC *this,int param_1,int param
     param_1 = -iVar4;
     pcVar5_mg0 = PTR_s_rgold_c0_007cb094;
   }
+  /* ST_CALLSITE[0057F3E2]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_00811650),pcVar5_mg0,param_1);
   if (param_2 == 0) {
     return (undefined4 *)&CHAR_00h_00811650;
@@ -170,6 +174,7 @@ undefined4 * __thiscall st::fn_0057F470(STDcResourcC *this,int param_1,int param
     param_1 = CONCAT31(extraout_var,uVar2);
     pcVar6_mg0 = st_global_007CB09C;
   }
+  /* ST_CALLSITE[0057F4A3]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_00811690),pcVar6_mg0,param_1);
   if (param_2 == 0) {
     return (undefined4 *)&CHAR_00h_00811690;
@@ -220,18 +225,24 @@ undefined4 __thiscall st::fn_005805C0(STDcResourcC *this)
   GVar2 = CASE_1D;
   this_00 = &this->field_01D5;
   text = st::fn_004035D5(this,this->field_025D);
+  /* ST_CALLSITE[005805E6]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar1 = st::fn_00404183((STT3DSprC *)this_00,0xe,PTR_00806764,text,GVar2);
   if (iVar1 == 0) {
+    /* ST_CALLSITE[00580606]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar1 = st::fn_00404183
                       ((STT3DSprC *)this_00,0xd,PTR_00806764,PTR_s_termsd_007cb0b4,CASE_1D);
     if (iVar1 == 0) {
+      /* ST_CALLSITE[00580624]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       st::fn_00405240((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
+      /* ST_CALLSITE[00580673]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       st::fn_004045D9
                 ((STT3DSprC *)this_00,(float)this->field_0245 * _DAT_007904f8 + _DAT_007904f4,
                  (float)this->field_0249 * _DAT_007904f8 + _DAT_007904f4,
                  (float)this->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
       st::fn_006EA3E0((void *)this->field_0211,this->field_01ED,-1);
+      /* ST_CALLSITE[00580690]: CALL 0x00403afd; direct=00403AFD STT3DSprC::sub_004ACF50 */
       st::fn_00403AFD((STT3DSprC *)this_00,'\r');
+      /* ST_CALLSITE[005806A6]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       st::fn_00405240((STT3DSprC *)this_00,0xd,g_playSystem_00802A38->field_00E4);
       return 1;
     }

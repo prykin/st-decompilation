@@ -54,6 +54,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
   SVar2 = message->id;
   if (SVar2 < 4) {
     if (SVar2 == MESS_SHARED_0003) {
+      /* ST_CALLSITE[00646971]: CALL 0x00401bb3; direct=00401BB3 STVolcanoC::sub_006479E0 */
       sub_006479E0(local_8);
       g_currentExceptionFrame = local_54.previous;
       return 0;
@@ -74,6 +75,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
           this_00->field_008A = 10;
           this_00->field_008E = 0xf;
           if (this_00->field_00A8 != '\0') {
+            /* ST_CALLSITE[006463B6]: CALL 0x0040176c; direct=0040176C STVolcanoC::LoadImagVolcano */
             LoadImagVolcano(this_00,0);
           }
           this_00->field_00A9 = CASE_4;
@@ -104,6 +106,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
                          (float)local_8->field_006D * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc,
                          0);
               this_00->field_005C = 1;
+              /* ST_CALLSITE[00646600]: CALL 0x00401bb3; direct=00401BB3 STVolcanoC::sub_006479E0 */
               sub_006479E0(this_00);
               g_currentExceptionFrame = local_54.previous;
               return 0;
@@ -124,6 +127,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
               this_00->field_0061 = nullptr;
             }
           }
+          /* ST_CALLSITE[006466A2]: CALL 0x00401bb3; direct=00401BB3 STVolcanoC::sub_006479E0 */
           sub_006479E0(this_00);
           g_currentExceptionFrame = local_54.previous;
           return 0;
@@ -153,6 +157,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
                thunk_FUN_00646e00(this_00->field_0065,this_00->field_0069,this_00->field_006D);
           if (local_EAX_1518 != 0) {
             this_00->field_00A8 = 1;
+            /* ST_CALLSITE[006467E5]: CALL 0x0040176c; direct=0040176C STVolcanoC::LoadImagVolcano */
             LoadImagVolcano(this_00,2);
             g_currentExceptionFrame = local_54.previous;
             return 0;
@@ -174,6 +179,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
             local_8->field_00A9 = CASE_2;
             thunk_FUN_00647a60(local_8,0x4b6);
             if (this_00->field_00A8 != '\0') {
+              /* ST_CALLSITE[00646875]: CALL 0x0040176c; direct=0040176C STVolcanoC::LoadImagVolcano */
               LoadImagVolcano(this_00,1);
             }
             this_00->field_0071 = 10;
@@ -202,6 +208,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
              thunk_FUN_00646e00(this_00->field_0065,this_00->field_0069,this_00->field_006D);
         if (local_EAX_1859 != 0) {
           this_00->field_00A8 = 1;
+          /* ST_CALLSITE[0064693A]: CALL 0x0040176c; direct=0040176C STVolcanoC::LoadImagVolcano */
           LoadImagVolcano(this_00,0);
           g_currentExceptionFrame = local_54.previous;
           return 0;
@@ -236,6 +243,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
           iVar5 = thunk_FUN_00646e00(local_8->field_0065,local_8->field_0069,local_8->field_006D);
           if (iVar5 != 0) {
             this_00->field_00A8 = 1;
+            /* ST_CALLSITE[006464E6]: CALL 0x0040176c; direct=0040176C STVolcanoC::LoadImagVolcano */
             LoadImagVolcano(this_00,0);
             g_currentExceptionFrame = local_54.previous;
             return 0;
@@ -255,6 +263,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
     else if (SVar2 == MESS_ID_CREATE) {
       puVar8 = (byte *)((message->arg0).ptr);
       if (puVar8[3] == 2) {
+        /* ST_CALLSITE[006462DE]: CALL 0x0040236f; direct=0040236F STVolcanoC::sub_00646DB0 */
         sub_00646DB0(local_8,puVar8);
         this_00->field_00B1 = this_00->field_00AD;
         this_00->field_00A8 = 0;
@@ -264,6 +273,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
       puVar9 = (byte *)&local_8->field_0x1c;
       memmove(puVar9, puVar8, 0x38); /* compiler REP MOVS byte copy */
       local_8->field_00B1 = DAT_00808754;
+      /* ST_CALLSITE[00646266]: CALL 0x00402c57; direct=00402C57 STVolcanoC::sub_006472B0 */
       iVar7 = sub_006472B0(local_8);
       if (iVar7 != 0) {
         uVar1 = this_00->field_00B1 * 0x41c64e6d + 0x3039;
@@ -279,7 +289,9 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
     }
   }
   else if (SVar2 == MESS_SHARED_010F) {
+    /* ST_CALLSITE[0064699A]: CALL 0x00403f35; direct=00403F35 STVolcanoC::sub_00646D40 */
     local_10 = sub_00646D40(local_8,&local_c);
+    /* ST_CALLSITE[006469B1]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
     FreeAndNull(&local_10);
   }

@@ -33,6 +33,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pCVar2 = local_10;
   if (iVar3 == 0) {
+    /* ST_CALLSITE[005044FE]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)local_10->field_0194,param_1,0x50,'\x01',
            (byte *)local_10->field_09D9[5]);
     if (pCVar2->field_0BF5 == CASE_38) {
@@ -43,6 +44,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     }
     pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02D2,
                           (uint)local_c & 0xff);
+    /* ST_CALLSITE[00504545]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,param_1 + 3,0x53,'\x01',
            (byte *)pBVar4);
     if (pCVar2->field_0BF5 == CASE_38) {
@@ -67,6 +69,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
       *(undefined1 *)puVar6 = 0x20;
     }
     pcVar5 = LoadResourceString(local_8,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[005045F3]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"&%s%s\n&1%s",local_c,pcVar5,_Dest);
     iVar3 = param_1 + 0x40;
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,iVar3,0x57,0x75,0x16);
@@ -74,6 +77,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     pbVar7 = (byte *)ccFntTy::CreateSurf(pCVar2->field_01C4,pCVar2->field_0194,0,iVar3,0x6d,0x75,0xe
                                          ,0);
     if (pbVar7 != nullptr) {
+      /* ST_CALLSITE[0050466B]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)&DAT_0080f33a,"%06d",(uint)(ushort)pCVar2->field_0C34);
       if (pCVar2->field_0BF5 == CASE_38) {
         uVar8 = 1;
@@ -82,6 +86,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
         uVar8 = (-(uint)(pCVar2->field_0BF5 != CASE_4F) & 0xfffffffe) + 2;
       }
       ccFntTy::WrStr(pCVar2->field_01C4,(char *)&DAT_0080f33a,-1,-1,uVar8);
+      /* ST_CALLSITE[005046B4]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,iVar3,0x6f,'\x01',pbVar7);
       ccFntTy::EraseSufr(pCVar2->field_01C4);
     }

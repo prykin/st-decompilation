@@ -51,17 +51,20 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_7c.previous;
     if (DAT_0080877e != '\0') {
+      /* ST_CALLSITE[005C8658]: CALL dword ptr [0x0085bedc] */
       DVar5 = timeGetTime();
       local_c->field_1F53 = DVar5;
       thunk_FUN_005c7800();
       return;
     }
+    /* ST_CALLSITE[005C8678]: CALL dword ptr [EDX + 0x28] */
     (*local_c->vtable->PrepPlList)((SettMapSTy *)local_c);
     return;
   }
   if (local_c->field_1F3F != nullptr) {
     cMf32::delete(local_c->field_1F3F);
   }
+  /* ST_CALLSITE[005C8268]: CALL dword ptr [0x0085bde8] */
   wsprintfA(&CHAR_00h_00853de4,"%s%s%s",&CHAR_00h_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
   pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&CHAR_00h_00853de4,0,0,0);
@@ -158,6 +161,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\sett_obj.cpp",0x477);
   }
+  /* ST_CALLSITE[005C8537]: CALL EDI */
   wsprintfA(&CHAR_00h_00853de4,"%s%s%s",&CHAR_00h_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
   this_00->field_1F47 = 1;
@@ -167,14 +171,18 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200
     this_00->field_1A7F = 1;
     this_00->field_1A80 = DAT_008087c6;
     this_00->field_1A81 = (char)(DAT_008087c2 >> 1);
+    /* ST_CALLSITE[005C85AE]: CALL EDI */
     wsprintfA((LPSTR)&local_18,"%08x",DAT_0080995c);
     this_00->field_1A82 = local_18;
     this_00->field_1A86 = local_14;
     Library::MSVCRT::_strncpy(&this_00->field_1A8A,&CHAR_00h_0080c3c3,0x1d5);
     this_00->field_1C5E = 0;
+    /* ST_CALLSITE[005C85E9]: CALL dword ptr [0x0085c070] */
     CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,puVar1);
   }
+  /* ST_CALLSITE[005C85F3]: CALL dword ptr [EDX + 0x28] */
   (*this_00->vtable->PrepPlList)((SettMapSTy *)this_00);
+  /* ST_CALLSITE[005C85FA]: CALL 0x004049d5; direct=004049D5 SettMapTy::PaintSettMap */
   SettMapTy::PaintSettMap(this_00,'\0');
   puVar11 = this_00->field_1F60;
   memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */

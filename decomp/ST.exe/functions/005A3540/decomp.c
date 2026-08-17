@@ -45,7 +45,9 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
         iVar2 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
         this_00->field_0494 = 0xffff;
+        /* ST_CALLSITE[005A35C0]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
         CursorClassTy::SetGCType(this_00,CASE_0,iVar2,iVar7);
+        /* ST_CALLSITE[005A35D5]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
         this_00->field_00D2 = 0;
         this_00->field_04DF = -1;
@@ -69,6 +71,7 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
       do {
         if (param_1 == 0) {
           FUN_006b5f80((int *)g_ddxContext_008075A8,0x13,0x5e,0x174,0x175);
+          /* ST_CALLSITE[005A3730]: CALL 0x00402298; direct=00402298 PutDDXClip */
           PutDDXClip(0x13,0x5e,0,0,0x174,(byte *)0x175,'\x01',this_01->field_1E9A);
           this_01->field_002D = 0x28;
           *(dword *)&this_01->field_0x31 = this_01->field_1EBE->count;

@@ -36,6 +36,7 @@ FUN_00490b30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,uint 
                             STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&param_1),
         iVar4 != -4)) && ((param_1->field_0032 == param_2 && (param_1->field_0024 == (int)objPtr))))
     {
+      /* ST_CALLSITE[00490C2B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,objPtr,(ushort)param_3,CASE_1);
       STField<undefined4>(this,0x7f4) = pSVar5->field_0018;
     }

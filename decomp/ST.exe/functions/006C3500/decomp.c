@@ -20,6 +20,7 @@ void FUN_006c3500(AnonShape_006C3500_19C01617 *param_1)
     local_80[1] = 7;
     local_80[3] = *(undefined4 *)(iVar1 + 0x18);
     local_80[2] = *(undefined4 *)(iVar1 + 0x1c);
+    /* ST_CALLSITE[006C355E]: CALL dword ptr [ECX + 0x18] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(**(int **)(iVar1 + 0x30) + 0x18))(*(int **)(iVar1 + 0x30),local_80,iVar1 + 0x40,0);
   }

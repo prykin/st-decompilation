@@ -50,6 +50,7 @@ void __thiscall st::fn_00422E20(void *this,byte param_1)
   undefined4 extraout_ECX_03;
   Global_sub_0043FC50_param_1Enum GVar3;
 
+  /* ST_CALLSITE[00422E29]: CALL dword ptr [EAX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   objPtr = (STGameObjC *)(**(code **)(*(int *)this + 4))();
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -59,6 +60,7 @@ void __thiscall st::fn_00422E20(void *this,byte param_1)
       (iVar1 = st::fn_00402EDC(objPtr), uVar2 = extraout_ECX_00, iVar1 != 0x14)) ||
      (objPtr->field_05C0 != 3)) {
     if (((param_1 & 1) != 0) && ((STField<byte>(this,0x1d1) & 1) == 0)) {
+      /* ST_CALLSITE[00422E66]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
       st::fn_0040464C(this);
       STField<uint>(this,0x1d1) = STField<uint>(this,0x1d1) | 1;
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -86,6 +88,7 @@ void __thiscall st::fn_00422E20(void *this,byte param_1)
           uVar2 = extraout_ECX_03;
         } while (iVar1 < 5);
       }
+      /* ST_CALLSITE[00422EEF]: CALL 0x00403643; direct=00403643 STAllPlayersC::DelObjFromSaveTmps */
       st::fn_00403643
                 (g_allPlayers_007FA174,STField<int>(this,0x20),STField<char>(this,0x24),
                  STField<short>(this,0x32));
@@ -121,6 +124,7 @@ void __thiscall st::fn_00422FF0(void *this,byte param_1)
   STGameObjC *objPtr;
   int iVar1;
 
+  /* ST_CALLSITE[00422FF9]: CALL dword ptr [EAX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   objPtr = (STGameObjC *)(**(code **)(*(int *)this + 4))();
   if (((STField<int>(this,0x20) == 0x14) && (iVar1 = st::fn_00402EDC(objPtr), iVar1 == 0x14))
@@ -129,6 +133,7 @@ void __thiscall st::fn_00422FF0(void *this,byte param_1)
   }
   if (((param_1 & 1) != 0) && ((STField<uint>(this,0x1d1) & 1) != 0)) {
     STField<uint>(this,0x1d1) = STField<uint>(this,0x1d1) & 0xfffffffe;
+    /* ST_CALLSITE[00423043]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
     st::fn_004023A1(st::pointer_boundary_cast<TLOEmbryoTy *>(this),STField<undefined *>(this,0x101));
   }
   if (((param_1 & 2) != 0) && ((STField<uint>(this,0x1d1) & 2) != 0)) {
@@ -305,6 +310,7 @@ void __thiscall st::fn_00423320(void *this,undefined4 param_1)
 
   if (STField<undefined4 *>(this,0x1c) != nullptr) {
     local_14 = param_1;
+    /* ST_CALLSITE[00423339]: CALL dword ptr [EDX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*STField<undefined4 *>(this,0x1c))(local_24);
   }
@@ -413,6 +419,7 @@ undefined4 __thiscall st::fn_00423C70(void *this,short param_1)
         return 0xffffffff;
       }
     }
+    /* ST_CALLSITE[00423CD3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_00 = st::fn_004028BA
                         (g_allPlayers_007FA174,STField<char>(this,0x24),(ushort)local_8,CASE_1);
     st::fn_004033BE(this_00,0xffff);
@@ -424,6 +431,7 @@ undefined4 __thiscall st::fn_00423C70(void *this,short param_1)
       local_14 = 1;
       local_12 = param_1;
       local_10 = this_00->field_0018;
+      /* ST_CALLSITE[00423D2F]: CALL dword ptr [EDX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*STField<undefined4 *>(this,0x1c))(local_28);
     }
@@ -456,6 +464,7 @@ undefined4 __thiscall st::fn_00423D80(void *this,DArrayTy *groupContent)
     index = 0;
     do {
       st::fn_006ACC70(groupContent,index,&local_c);
+      /* ST_CALLSITE[00423DB6]: CALL dword ptr [EDX + 0x4] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*(int *)this + 4))(local_c);
       if (iVar2 == 0) {
@@ -476,6 +485,7 @@ void __fastcall st::fn_00423E00(void *param_1)
 {
   DArrayTy *groupContent;
 
+  /* ST_CALLSITE[00423E04]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
   groupContent = (DArrayTy *)st::fn_00402DB5(st::pointer_boundary_cast<STGroupC *>(param_1));
   st::fn_004031E8(param_1,groupContent);
   st::fn_006AE110(groupContent);
@@ -519,6 +529,7 @@ STGameObjC * __thiscall st::fn_00423E70(void *this,ushort param_1)
 {
   STGameObjC *pSVar1;
 
+  /* ST_CALLSITE[00423E83]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   pSVar1 = st::fn_004028BA
                      (g_allPlayers_007FA174,STField<char>(this,0x24),param_1,CASE_1);
   return pSVar1;
@@ -566,9 +577,11 @@ void __thiscall st::fn_00424530(void *this,uint param_1)
     do {
       st::fn_006ACC70(STField<DArrayTy *>(this,0x29),index,&param_1);
       if ((ushort)param_1 != 0xffff) {
+        /* ST_CALLSITE[004245C4]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_00 = st::fn_004028BA
                             (g_allPlayers_007FA174,STField<char>(this,0x24),(ushort)param_1,
                              CASE_1);
+        /* ST_CALLSITE[004245CE]: CALL dword ptr [EDX + 0x100]; [STIndirectCallsiteApplier] exact slot 0x100; signature=__thiscall;/undefined1;pointer:/STGameObjC;/undefined1 */
         this_00->vfunc_100((char)uVar2);
       }
       uVar3 = uVar3 + 1;
@@ -612,9 +625,11 @@ void __thiscall st::fn_00424620(void *this,uint param_1)
     do {
       st::fn_006ACC70(STField<DArrayTy *>(this,0x29),index,&param_1);
       if ((ushort)param_1 != 0xffff) {
+        /* ST_CALLSITE[004246B4]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_00 = st::fn_004028BA
                             (g_allPlayers_007FA174,STField<char>(this,0x24),(ushort)param_1,
                              CASE_1);
+        /* ST_CALLSITE[004246BE]: CALL dword ptr [EDX + 0x104]; [STIndirectCallsiteApplier] exact slot 0x104; signature=__thiscall;/undefined1;pointer:/STGameObjC;/undefined1 */
         this_00->vfunc_104((char)uVar2);
       }
       uVar3 = uVar3 + 1;
@@ -925,10 +940,13 @@ undefined4 __cdecl st::fn_00428A10(uint param_1)
     DAT_007f4e00 = -param_1;
     iVar1 = DAT_007f4e00;
     text = st::fn_006B0140(0x2684,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[00428A4A]: CALL 0x00404d8b; direct=00404D8B cLoadingTy::SetProcess */
     st::fn_00404D8B(g_cLoading_00802A58,0,text,iVar1);
+    /* ST_CALLSITE[00428A5B]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
     st::fn_00403472(g_cLoading_00802A58,CASE_0,0,nullptr);
     return 0;
   }
+  /* ST_CALLSITE[00428A69]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
   st::fn_00403472(g_cLoading_00802A58,CASE_1,param_1,nullptr);
   return 0;
 }
@@ -947,10 +965,13 @@ undefined4 __cdecl st::fn_00428AA0(uint param_1)
   if ((int)param_1 < 0) {
     iVar1 = -param_1;
     text = st::fn_006B0140(0x2681,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[00428AD5]: CALL 0x00404d8b; direct=00404D8B cLoadingTy::SetProcess */
     st::fn_00404D8B(g_cLoading_00802A58,0,text,iVar1);
+    /* ST_CALLSITE[00428AE6]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
     st::fn_00403472(g_cLoading_00802A58,CASE_0,0,nullptr);
     return 0;
   }
+  /* ST_CALLSITE[00428AF4]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
   st::fn_00403472(g_cLoading_00802A58,CASE_1,param_1,nullptr);
   return 0;
 }
@@ -1262,15 +1283,15 @@ undefined4 st::fn_0042A9C0(char param_1)
 void st::fn_0042A9F0(char param_1)
 
 {
-  int _param_1 = static_cast<int>(param_1);
-
   int iVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
   undefined4 *puVar2;
 
+  /* ST_CALLSITE[0042AA02]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   st::fn_004032E7(in_ECX,param_1,0,0,0);
+  /* ST_CALLSITE[0042AA10]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   st::fn_004032E7(in_ECX,param_1,1,0,0);
   iVar1 = (int)param_1;
@@ -1283,7 +1304,7 @@ void st::fn_0042A9F0(char param_1)
       *puVar2 = 0;
     }
     *(undefined4 *)((int)puVar2 + -10) = 0;
-    if ((DArrayTy *)puVar2[0x14] != nullptr) {
+    if ((DArrayTy *)puVar2[0x14] != 0) {
       st::fn_006AE110((DArrayTy *)puVar2[0x14]);
       puVar2[0x14] = 0;
     }
@@ -1479,6 +1500,7 @@ uint st::fn_0042D770(char param_1,int *param_2)
     do {
       st::fn_006ACC70(array,local_14,&local_c);
       if ((ushort)local_c != 0xffff) {
+        /* ST_CALLSITE[0042D806]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         objPtr = st::fn_004028BA(local_24,param_1,(ushort)local_c,CASE_1);
         iVar5 = st::fn_0040226B(objPtr);
         pDVar4 = local_10;

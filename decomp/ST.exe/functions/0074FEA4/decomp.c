@@ -21,6 +21,7 @@ undefined4 __thiscall FUN_0074fea4(void *this,uint param_1,int param_2,int param
     }
     local_c = 0;
     local_8 = 0;
+    /* ST_CALLSITE[0074FED7]: CALL dword ptr [ECX + 0xc] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 0xc))(piVar1,&local_c);
     if ((param_2 <= local_8) && ((param_2 < local_8 || (param_1 <= local_c)))) {

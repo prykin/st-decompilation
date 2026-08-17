@@ -87,6 +87,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     local_1d0[0] = param_2;
     if (param_6 != (LPSTR)0x0) {
       text = &local_10->field_006C;
+      /* ST_CALLSITE[0053DF17]: CALL dword ptr [0x0085bde8] */
       wsprintfA(text,"%s0",param_6);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_5,text,nullptr,1);
     }
@@ -137,6 +138,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
       local_ac = FUN_0070aa70(g_cMf32_00806790,param_12,0,1);
       local_a8 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_12,1);
     }
+    /* ST_CALLSITE[0053E0B9]: CALL dword ptr [EAX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)pUVar2->field_000C + 8))(2,&local_c,0,local_1d0,0);
     g_currentExceptionFrame = local_54.previous;

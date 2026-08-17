@@ -44,10 +44,14 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
     this_01->field_0075 = this_01->field_0008;
     FUN_006e6000(this_01,3,1,(undefined4 *)&this_01->field_0x61);
     if (g_startSystem_0081176C->field_02E6 != nullptr) {
+      /* ST_CALLSITE[005E59DC]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       MMsgTy::HidePanel(g_startSystem_0081176C->field_02E6,0,0,1);
+      /* ST_CALLSITE[005E59ED]: CALL 0x0040462e; direct=0040462E MMsgTy::HideSprites */
       MMsgTy::HideSprites(g_startSystem_0081176C->field_02E6);
     }
+    /* ST_CALLSITE[005E59FC]: CALL 0x00401d43; direct=00401D43 DarkScreen */
     DarkScreen(g_dDXContext_0080759C,1,0);
+    /* ST_CALLSITE[005E5A06]: CALL 0x00403e7c; direct=00403E7C MTestTy::PaintMTest */
     PaintMTest(this_01);
     thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                        this_01->field_005D,10,2);
@@ -57,12 +61,16 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
       iVar1 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       this_00->field_0494 = 0xffff;
+      /* ST_CALLSITE[005E5A56]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
       CursorClassTy::SetGCType(this_00,CASE_0,iVar1,iVar5);
+      /* ST_CALLSITE[005E5A6B]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
       this_00->field_00D2 = 0;
       this_00->field_04DF = -1;
     }
+    /* ST_CALLSITE[005E5A9B]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     SetAccelerator(1,this_01->field_0008,2,100,2,1,0,0,0,0,0,0);
+    /* ST_CALLSITE[005E5ABA]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     SetAccelerator(1,this_01->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;

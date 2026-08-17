@@ -258,6 +258,8 @@ void st::fn_00760970(int param_1,AnonShape_00760970_DF0E462C *param_2,int *param
                  int param_5)
 
 {
+  int scalar_local_18;
+
   undefined1 uVar1;
   int *piVar2;
   undefined1 *puVar3;
@@ -334,7 +336,7 @@ void st::fn_00760970(int param_1,AnonShape_00760970_DF0E462C *param_2,int *param
       local_c = (local_8 + iVar7) * 0x1d9 >> 8;
       iVar7 = ((iVar7 * -0x29d >> 8) - iVar10) + local_c;
       iVar9 = ((iVar9 - local_14) * 0x16a >> 8) - iVar7;
-      int scalar_local_18 = ((local_8 * 0x115 >> 8) - local_c) + iVar9; /* split integer lifetime from pointer-typed SSA storage */
+      scalar_local_18 = ((local_8 * 0x115 >> 8) - local_c) + iVar9; /* split integer lifetime from pointer-typed SSA storage */
       *piVar2 = iVar10 + iVar11;
       piVar2[0x38] = iVar11 - iVar10;
       piVar2[0x30] = local_24 - iVar7;
@@ -739,8 +741,10 @@ undefined4 __cdecl st::fn_00761960(LPCSTR param_1,LPCSTR param_2)
   undefined4 uVar2;
   undefined4 local_8;
 
+  /* ST_CALLSITE[0076196C]: CALL dword ptr [0x0085bc8c] */
   BVar1 = st::external_00000058(param_1,param_2);
   if (BVar1 == 0) {
+    /* ST_CALLSITE[00761976]: CALL dword ptr [0x0085bbcc] */
     local_8 = st::external_00000028();
   }
   else {
@@ -771,8 +775,10 @@ int __cdecl st::fn_007619B0(char *_Filename)
   int iVar2;
   undefined4 local_8;
 
+  /* ST_CALLSITE[007619B8]: CALL dword ptr [0x0085bce8] */
   BVar1 = st::external_0000006F(_Filename);
   if (BVar1 == 0) {
+    /* ST_CALLSITE[007619C2]: CALL dword ptr [0x0085bbcc] */
     local_8 = st::external_00000028();
   }
   else {

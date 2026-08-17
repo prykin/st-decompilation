@@ -7,7 +7,7 @@ int FUN_00748dae(int param_1,undefined4 *param_2)
   LPVOID pvVar1;
   int iVar2;
 
-  if ((*(byte *)(param_1 + 4) & 8) == 0) {
+  if ((((byte *)param_1)[4] & 8) == 0) {
     *param_2 = 0;
     iVar2 = 1;
   }

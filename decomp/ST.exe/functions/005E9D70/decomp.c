@@ -51,13 +51,16 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     }
   }
   this_00 = local_c;
+  /* ST_CALLSITE[005E9DF0]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
   SetAccelerator(0,local_c->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
   FUN_006b5f80((int *)g_ddxContext_008075A8,0x112,0x38,0x204,0x19d);
   this_01 = (MMMObjTy *)(this_00->array_00BC[0xc].field_01DB + 0x140);
+  /* ST_CALLSITE[005E9E3B]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
   MMMObjTy::OutRGlProc
             (this_01,(int)g_dDXContext_0080759C,nullptr,nullptr,0x112,0x38,0x204,
              0x19d,(undefined4 *)this_01);
   if (this_00->field_1AF8 != nullptr) {
+    /* ST_CALLSITE[005E9E4A]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     HoloTy::Done(this_00->field_1AF8);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1AF8);
     this_00->field_1AF8 = nullptr;
@@ -89,6 +92,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     bVar9 = 0x10;
     iVar8 = 1;
     iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x38,0x204,0x19d);
+    /* ST_CALLSITE[005E9EF3]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
     uVar10 = HoloTy::Init(this_00->field_1AF8,CASE_2,0x112,0x38,iVar4,iVar8,bVar9,cVar10,uVar11);
     if (uVar10 != 0) {
       pHVar3 = this_00->field_1AF8;
@@ -98,8 +102,10 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
       if (-1 < (int)uVar11) {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
       }
+      /* ST_CALLSITE[005E9F2C]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       HoloTy::NextFas(this_00->field_1AF8);
     }
+    /* ST_CALLSITE[005E9F53]: CALL 0x00402298; direct=00402298 PutDDXClip */
     PutDDXClip(0x112,0x38,0x112,0x38,0x204,(byte *)0x19d,'\x01',
                (BITMAPINFO *)g_startSystem_0081176C->field_002C);
   }
@@ -124,6 +130,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     g_startSystem_0081176C->field_0548 = &pDVar5->flags;
     if (this_00->field_1B00 != nullptr) {
+      /* ST_CALLSITE[005EA03C]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(this_00->field_1B00);
       Library::MSVCRT::FUN_0072e2b0(this_00->field_1B00);
       this_00->field_1B00 = nullptr;
@@ -155,6 +162,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
       bVar9 = 0x10;
       iVar8 = 1;
       iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+      /* ST_CALLSITE[005EA0DF]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_879 =
            HoloTy::Init(this_00->field_1B00,CASE_4,10,0xb4,iVar4,iVar8,bVar9,cVar10,uVar11);
       if (local_EAX_879 != 0) {
@@ -165,9 +173,11 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
         if (-1 < (int)uVar11) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
         }
+        /* ST_CALLSITE[005EA118]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         HoloTy::NextFas(this_00->field_1B00);
       }
       FUN_006b5f80((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+      /* ST_CALLSITE[005EA15C]: CALL 0x00402298; direct=00402298 PutDDXClip */
       PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x121,'\x01',
                  (BITMAPINFO *)g_startSystem_0081176C->field_002C);
     }
@@ -198,6 +208,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
       g_startSystem_0081176C->field_0550 = 0;
     }
     if (this_00->field_1AFC != nullptr) {
+      /* ST_CALLSITE[005EA231]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(this_00->field_1AFC);
       Library::MSVCRT::FUN_0072e2b0(this_00->field_1AFC);
       this_00->field_1AFC = nullptr;
@@ -229,6 +240,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
       bVar9 = 0x10;
       iVar8 = 1;
       iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
+      /* ST_CALLSITE[005EA2CC]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_1372 =
            HoloTy::Init(this_00->field_1AFC,CASE_1,200,0x1f1,iVar4,iVar8,bVar9,cVar10,uVar11);
       if (local_EAX_1372 != 0) {
@@ -239,9 +251,11 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
         if (-1 < (int)uVar11) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
         }
+        /* ST_CALLSITE[005EA305]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         HoloTy::NextFas(this_00->field_1AFC);
       }
       FUN_006b5f80((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
+      /* ST_CALLSITE[005EA34C]: CALL 0x00402298; direct=00402298 PutDDXClip */
       PutDDXClip(200,0x1f1,200,0x1f1,400,(byte *)0x62,'\x01',
                  (BITMAPINFO *)g_startSystem_0081176C->field_002C);
     }

@@ -19,6 +19,7 @@ undefined4 __fastcall FUN_006d54c0(AnonShape_006D54C0_FBA73A61 *param_1)
 
   local_14 = 0;
   local_18 = (_RTL_CRITICAL_SECTION *)&param_1->field_0x7c;
+  /* ST_CALLSITE[006D54D9]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(local_18);
   FUN_0074a193(param_1);
   pAVar1 = param_1->field_0284;
@@ -56,6 +57,7 @@ undefined4 __fastcall FUN_006d54c0(AnonShape_006D54C0_FBA73A61 *param_1)
       if (local_10 == 0) {
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_006d5620:
+        /* ST_CALLSITE[006D5628]: CALL dword ptr [ECX + 0x80] */
         (**(code **)(*local_8 + 0x80))(local_8,0);
         break;
       }
@@ -63,12 +65,14 @@ LAB_006d5620:
         if (local_10 == 0) goto LAB_006d5620;
         break;
       }
+      /* ST_CALLSITE[006D560B]: CALL dword ptr [EDX + 0x6c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*local_8 + 0x6c))(local_8);
       local_c = local_c + 1;
     } while (local_c < 2);
   }
   if (local_8 != nullptr) {
+    /* ST_CALLSITE[006D5638]: CALL dword ptr [EDX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*local_8 + 8))(local_8);
     local_8 = nullptr;
@@ -91,6 +95,7 @@ LAB_006d5620:
   }
   param_1->field_028C = iVar4;
   param_1->field_0290 = iVar6;
+  /* ST_CALLSITE[006D5701]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(local_18);
   return 0;
 }

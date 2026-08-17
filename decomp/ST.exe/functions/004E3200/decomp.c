@@ -93,6 +93,7 @@ LAB_004e3526:
           thunk_FUN_004c7260(this,CASE_2,(int)puVar8,&local_8,&local_c,&local_10,&local_14);
           local_3a = (undefined2)local_8;
           local_3e = (undefined2)local_c;
+          /* ST_CALLSITE[004E355E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           bVar3 = LookupRecordByte(STField<char>(this,0x24));
           if (bVar3 == 3) {
             local_3c = (undefined2)local_14;
@@ -100,6 +101,7 @@ LAB_004e3526:
           else {
             local_3c = (undefined2)local_10;
           }
+          /* ST_CALLSITE[004E3583]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           local_3f = LookupRecordByte(STField<char>(this,0x24));
           puVar12 = local_36;
           iVar6 = thunk_FUN_004e60d0(STField<int>(this,0x24),(int)puVar8);
@@ -147,6 +149,7 @@ LAB_004e336e:
           thunk_FUN_004c7260(this,CASE_2,*puVar9,&local_8,&local_c,&local_10,&local_14);
           local_3e = (undefined2)local_c;
           local_3a = (undefined2)local_8;
+          /* ST_CALLSITE[004E33A8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           bVar3 = LookupRecordByte(STField<char>(this,0x24));
           if (bVar3 == 3) {
             local_3c = (undefined2)local_14;
@@ -154,6 +157,7 @@ LAB_004e336e:
           else {
             local_3c = (undefined2)local_10;
           }
+          /* ST_CALLSITE[004E33CD]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           local_3f = LookupRecordByte(STField<char>(this,0x24));
           puVar12 = local_36;
           iVar6 = thunk_FUN_004e60d0(STField<int>(this,0x24),*puVar9);

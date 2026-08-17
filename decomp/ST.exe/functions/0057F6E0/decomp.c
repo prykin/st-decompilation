@@ -70,22 +70,32 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         else {
           pSVar7 = (STT3DSprC *)&this_00->field_01D5;
         }
+        /* ST_CALLSITE[0057F977]: CALL 0x00405911; direct=00405911 STDcResourcC::Init */
         if ((3 < local_14) && (pSVar7 = (STT3DSprC *)Init(this_00), pSVar7 == nullptr))
         goto cf_break_loop_0057FAA5;
         GVar15 = CASE_1D;
+        /* ST_CALLSITE[0057F990]: CALL 0x00401744; direct=00401744 STDcResourcC::sub_0057F3A0 */
         pcVar8 = (char *)sub_0057F3A0(this_00,local_c,0);
+        /* ST_CALLSITE[0057F9A1]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,pcVar8,GVar15);
         if (iVar6 != 0) goto cf_break_loop_0057FAA5;
         GVar15 = CASE_1D;
+        /* ST_CALLSITE[0057F9B8]: CALL 0x00401744; direct=00401744 STDcResourcC::sub_0057F3A0 */
         pcVar8 = (char *)sub_0057F3A0(this_00,local_c,1);
+        /* ST_CALLSITE[0057F9C8]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,pcVar8,GVar15);
         if (iVar6 != 0) goto cf_break_loop_0057FAA5;
+        /* ST_CALLSITE[0057F9E6]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         STT3DSprC::StartShow(pSVar7,0xe,g_playSystem_00802A38->field_00E4);
+        /* ST_CALLSITE[0057F9F3]: CALL 0x00405ca9; direct=00405CA9 STT3DSprC::sub_004ACEF0 */
         STT3DSprC::sub_004ACEF0(pSVar7,PTR_008073cc);
+        /* ST_CALLSITE[0057F9FC]: CALL 0x00403afd; direct=00403AFD STT3DSprC::sub_004ACF50 */
         STT3DSprC::sub_004ACF50(pSVar7,'\r');
+        /* ST_CALLSITE[0057FA12]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         STT3DSprC::StartShow(pSVar7,0xd,g_playSystem_00802A38->field_00E4);
         iVar6 = this_00->field_0249 + local_10;
         local_10 = this_00->field_0245 + iVar12;
+        /* ST_CALLSITE[0057FA74]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
         STT3DSprC::sub_004AD3C0
                   (pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)iVar6 * _DAT_007904f8 + _DAT_007904f4,
@@ -112,22 +122,32 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         else {
           pSVar7 = (STT3DSprC *)&this_00->field_01D5;
         }
+        /* ST_CALLSITE[0057F7C1]: CALL 0x00405911; direct=00405911 STDcResourcC::Init */
         if ((3 < local_14) && (pSVar7 = (STT3DSprC *)Init(this_00), pSVar7 == nullptr))
         goto cf_break_loop_0057FAA5;
         GVar15 = CASE_1D;
+        /* ST_CALLSITE[0057F7DA]: CALL 0x00404fd4; direct=00404FD4 STDcResourcC::sub_0057F2E0 */
         pcVar8 = (char *)sub_0057F2E0(this_00,local_c,0);
+        /* ST_CALLSITE[0057F7EB]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,pcVar8,GVar15);
         if (iVar6 != 0) goto cf_break_loop_0057FAA5;
         GVar15 = CASE_1D;
+        /* ST_CALLSITE[0057F802]: CALL 0x00404fd4; direct=00404FD4 STDcResourcC::sub_0057F2E0 */
         pcVar8 = (char *)sub_0057F2E0(this_00,local_c,1);
+        /* ST_CALLSITE[0057F812]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,pcVar8,GVar15);
         if (iVar6 != 0) goto cf_break_loop_0057FAA5;
+        /* ST_CALLSITE[0057F830]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         STT3DSprC::StartShow(pSVar7,0xe,g_playSystem_00802A38->field_00E4);
+        /* ST_CALLSITE[0057F83D]: CALL 0x00405ca9; direct=00405CA9 STT3DSprC::sub_004ACEF0 */
         STT3DSprC::sub_004ACEF0(pSVar7,PTR_008073cc);
+        /* ST_CALLSITE[0057F846]: CALL 0x00403afd; direct=00403AFD STT3DSprC::sub_004ACF50 */
         STT3DSprC::sub_004ACF50(pSVar7,'\r');
+        /* ST_CALLSITE[0057F85C]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         STT3DSprC::StartShow(pSVar7,0xd,g_playSystem_00802A38->field_00E4);
         iVar6 = this_00->field_0249 + local_10;
         local_10 = this_00->field_0245 + iVar12;
+        /* ST_CALLSITE[0057F8BE]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
         STT3DSprC::sub_004AD3C0
                   (pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)iVar6 * _DAT_007904f8 + _DAT_007904f4,
@@ -156,20 +176,30 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         else {
           pSVar7 = (STT3DSprC *)&this_00->field_01D5;
         }
+        /* ST_CALLSITE[0057FB49]: CALL 0x00405911; direct=00405911 STDcResourcC::Init */
         if ((iVar12 < 0) || (pSVar7 = (STT3DSprC *)Init(this_00), pSVar7 != nullptr)) {
           GVar15 = CASE_1D;
+          /* ST_CALLSITE[0057FB5F]: CALL 0x0040185c; direct=0040185C STDcResourcC::sub_0057F470 */
           pcVar8 = (char *)sub_0057F470(this_00,iVar12,0);
+          /* ST_CALLSITE[0057FB70]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
           iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,pcVar8,GVar15);
           if (iVar6 == 0) {
             GVar15 = CASE_1D;
+            /* ST_CALLSITE[0057FB84]: CALL 0x0040185c; direct=0040185C STDcResourcC::sub_0057F470 */
             pcVar8 = (char *)sub_0057F470(this_00,iVar12,1);
+            /* ST_CALLSITE[0057FB94]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
             iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,pcVar8,GVar15);
             if (iVar6 == 0) {
+              /* ST_CALLSITE[0057FBB2]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
               STT3DSprC::StartShow(pSVar7,0xe,g_playSystem_00802A38->field_00E4);
+              /* ST_CALLSITE[0057FBBF]: CALL 0x00405ca9; direct=00405CA9 STT3DSprC::sub_004ACEF0 */
               STT3DSprC::sub_004ACEF0(pSVar7,PTR_008073cc);
+              /* ST_CALLSITE[0057FBC8]: CALL 0x00403afd; direct=00403AFD STT3DSprC::sub_004ACF50 */
               STT3DSprC::sub_004ACF50(pSVar7,'\r');
+              /* ST_CALLSITE[0057FBDE]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
               STT3DSprC::StartShow(pSVar7,0xd,g_playSystem_00802A38->field_00E4);
               local_14 = this_00->field_0245 + local_c;
+              /* ST_CALLSITE[0057FC43]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
               STT3DSprC::sub_004AD3C0
                         (pSVar7,(float)local_14 * _DAT_007904f8 + _DAT_007904f4,
                          (float)(this_00->field_0249 + local_10) * _DAT_007904f8 + _DAT_007904f4,
@@ -210,6 +240,7 @@ LAB_0057fc59:
         pSVar9 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
       }
       if (pSVar9 == nullptr) {
+        /* ST_CALLSITE[0057FD68]: CALL 0x0040345e; direct=0040345E STDcResourcC::sub_005805C0 */
         sub_005805C0(this_00);
         goto LAB_0057fd72;
       }
@@ -234,6 +265,7 @@ LAB_0057fd72:
           iVar11 = local_10;
         }
         local_14 = *(int *)((int)&DAT_007cb0b8 + iVar11) + this_00->field_0245;
+        /* ST_CALLSITE[0057FE2D]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
         STT3DSprC::sub_004AD3C0
                   (*(STT3DSprC **)(&this_00->field_026D->field_0000 + local_c * 4),
                    (float)local_14 * _DAT_007904f8 + _DAT_007904f4,

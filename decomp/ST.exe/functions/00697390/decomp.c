@@ -49,6 +49,7 @@ void __thiscall CGenerate::sub_00697390(CGenerate *this)
   uVar5 = this->field_582F;
   pbVar7 = this->field_584B;
   memset(pbVar7, 0, uVar5); /* compiler bulk-zero initialization */
+  /* ST_CALLSITE[006973E0]: CALL 0x0040564b; direct=0040564B CGenerate::sub_006948E0 */
   sub_006948E0(this,this->field_5833);
   uVar5 = 0;
   do {
@@ -56,6 +57,7 @@ void __thiscall CGenerate::sub_00697390(CGenerate *this)
     if (0 < (int)this->field_582F) {
       do {
         iVar3 = local_10;
+        /* ST_CALLSITE[00697401]: CALL 0x0040208b; direct=0040208B CGenerate::sub_00696400 */
         local_18 = sub_00696400(this,local_10,(int)local_60);
         local_20 = iVar3 % this->field_5833;
         local_1c = iVar3 / this->field_5833;
@@ -63,9 +65,12 @@ void __thiscall CGenerate::sub_00697390(CGenerate *this)
         local_14 = 0;
         if (local_18 < 1) {
 LAB_00697505:
+          /* ST_CALLSITE[0069751C]: CALL 0x004046e7; direct=004046E7 CGenerate::sub_00698CA0 */
           iVar1 = sub_00698CA0(this,local_20,local_1c,uVar5,(int *)(local_3c + 3),
                                (int *)(local_3c + 2),&local_2c);
+          /* ST_CALLSITE[00697531]: CALL 0x00401a7d; direct=00401A7D CGenerate::sub_00695C10 */
           uVar3 = sub_00695C10(this,uVar5,local_3c[2],local_3c[3],iVar1,local_2c);
+          /* ST_CALLSITE[0069753B]: CALL 0x00404156; direct=00404156 CGenerate::sub_00695F70 */
           sub_00695F70(this,uVar3,iVar3,uVar5);
         }
         else {
@@ -100,6 +105,7 @@ LAB_00697505:
           if (local_8 == 0) goto LAB_00697505;
 LAB_006974d2:
           iVar3 = local_10;
+          /* ST_CALLSITE[006974DD]: CALL 0x00404156; direct=00404156 CGenerate::sub_00695F70 */
           sub_00695F70(this,local_3c[0],local_10,uVar5);
           if ((local_8 == 2) && (local_3c[0] != local_3c[1])) {
             uVar4 = local_3c[1];

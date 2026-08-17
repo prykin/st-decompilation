@@ -51,6 +51,7 @@ UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *pa
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
     uVar5 = local_8;
+    /* ST_CALLSITE[0053DB97]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_c,local_8,'\x01',(byte *)puVar4
           );
     ccFntTy::SetSurf(g_interSystem_00802A28->field_0024,pUVar2->field_0068,0,local_c,uVar5,

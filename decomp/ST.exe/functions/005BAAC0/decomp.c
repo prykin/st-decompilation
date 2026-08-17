@@ -107,9 +107,12 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
         puVar6 = puVar6 + 1;
       }
       *(undefined2 *)puVar6 = 0xffff;
+      /* ST_CALLSITE[005BAC99]: CALL 0x00401717; direct=00401717 MMsgTy::SetPanel */
       MMsgTy::SetPanel(pSVar1->field_02E6,0,(int)&local_264,0,0);
+      /* ST_CALLSITE[005BACAE]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
       MMsgTy::StatePanel((this_00->array_00BC[0xc].field_01DB)->field_02E6,(int)local_68);
     }
+    /* ST_CALLSITE[005BACB9]: CALL 0x00405e52; direct=00405E52 PrividerTy::PaintPrivider */
     PaintPrivider(this_00,param_2);
     this_00->field_0065 = CASE_3;
     thunk_FUN_00568bc0(&g_sound,0);

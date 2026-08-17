@@ -93,6 +93,7 @@ void __thiscall CGenerate::sub_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50F
                               ((uint)(byte)(this->aggregate_001C).field_0x22d +
                               (*(int *)(psVar8 + 5) + -0xdd) * 3) * 4)) / 0x5a;
         }
+        /* ST_CALLSITE[00694F31]: CALL 0x00404822; direct=00404822 CGenerate::sub_006A09F0 */
         sub_006A09F0(this,(byte *)puVar7,local_10);
       }
       local_8 = local_8 + 1;

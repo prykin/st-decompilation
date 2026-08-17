@@ -219,12 +219,14 @@ undefined4 * __cdecl st::fn_006803B0(byte param_1)
   }
   else if (-1 < DAT_00848a00) {
     st::fn_0072DE60(DAT_00848a04,local_28,10);
+    /* ST_CALLSITE[006803FB]: CALL ESI */
     st::external_00000080(local_a8,st::mutable_c_string("%s%s%s"),"%s%0",local_28,&DAT_007d5630);
+    /* ST_CALLSITE[00680414]: CALL ESI */
     st::external_00000080((LPSTR)&DAT_008478ac,local_a8,&CHAR_00h_008489e0,DAT_00848a00);
     DAT_00848a00 = DAT_00848a00 + DAT_007d3fa0;
     return &DAT_008478ac;
   }
-  if (DAT_008489d0 != nullptr) {
+  if (DAT_008489d0 != 0) {
     local_8 = st::pointer_boundary_cast<cMf32 *>(DAT_008489d0);
     iVar7 = 0;
     do {
@@ -322,6 +324,7 @@ undefined4 * __cdecl st::fn_00680590(byte *param_1)
   _Drive = (byte *)((int)puVar1 + 0x231);
   pbVar2 = _Drive;
   text = st::fn_006B0140(7000,g_hINSTANCE_00807618);
+  /* ST_CALLSITE[006805D4]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(local_404,text,pbVar2);
   st::fn_004043FE(_Drive);
   st::fn_0040408E(local_404);
@@ -347,6 +350,7 @@ undefined4 * __cdecl st::fn_00680650(byte *param_1,uint param_2)
   _Drive = (byte *)((int)puVar1 + 0x231);
   pbVar2 = _Drive;
   text = st::fn_006B0140(7000,g_hINSTANCE_00807618);
+  /* ST_CALLSITE[00680696]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(local_404,text,pbVar2);
   st::fn_004043FE(_Drive);
   st::fn_0040408E(local_404);
@@ -372,6 +376,7 @@ undefined4 * __cdecl st::fn_00680710(byte *param_1,uint param_2)
   _Drive = (byte *)((int)puVar1 + 0x231);
   pbVar2 = _Drive;
   text = st::fn_006B0140(7000,g_hINSTANCE_00807618);
+  /* ST_CALLSITE[00680756]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(local_404,text,pbVar2);
   st::fn_004043FE(_Drive);
   st::fn_0040408E(local_404);
@@ -402,6 +407,7 @@ void __cdecl st::fn_006807D0(undefined4 *param_1)
   uVar2 = DAT_00848a10;
   uVar3 = DAT_00848a0c;
   pcVar1 = st::fn_006B0140(0x1b5b,g_hINSTANCE_00807618);
+  /* ST_CALLSITE[0068081E]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(local_404,pcVar1,uVar2,uVar3);
   st::fn_00402F45(local_404);
   st::fn_00402CB6();
@@ -2540,9 +2546,10 @@ uint * __thiscall st::fn_0068E4F0(void *this,int param_1)
       else {
         iVar2 = 0;
       }
-      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       if ((*(AiFltClassTy **)(iVar2 + 4) != nullptr) &&
          (array_00 = (DArrayTy *)
+                     /* ST_CALLSITE[0068E543]: CALL 0x004059b6; direct=004059B6 AiFltClassTy::sub_0065E360 */
+                     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                      st::fn_004059B6(*(AiFltClassTy **)(iVar2 + 4),iVar4,param_1),
          iVar4 = extraout_EDX_00, array_00 != nullptr)) {
         dVar1 = array_00->count;
@@ -2576,7 +2583,7 @@ uint * __thiscall st::fn_0068E4F0(void *this,int param_1)
     } while ((int)local_8 < (int)*(uint *)(iVar2 + 0xc));
   }
   if (array->count != 0) {
-    return st::pointer_boundary_cast<uint *>(&array->flags);
+    return &array->flags;
   }
   st::fn_006AE110(array);
   return nullptr;
@@ -2749,6 +2756,7 @@ undefined4 __thiscall st::fn_0068F8F0(void *this,short param_1)
           memset(local_38, 0, 0x34); /* compiler bulk-zero initialization */
           local_38[1] = STField<undefined4>(this,300);
           local_38[0] = 0x75;
+          /* ST_CALLSITE[0068F990]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
           st::fn_00401555(this_00,local_38);
           if ('\0' < local_30) {
             return 1;
@@ -2798,6 +2806,7 @@ void __thiscall st::fn_0068FA00(void *this,uint *param_1)
         local_2e = param_1;
         local_38[0] = 0x75;
         local_2f = 1;
+        /* ST_CALLSITE[0068FA68]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
         st::fn_00401555(this_00,local_38);
         if ('\0' < local_30) {
           return;
@@ -2830,6 +2839,7 @@ int __thiscall st::fn_0068FAC0(void *this,ushort param_1,undefined4 param_2)
   local_2f = param_1;
   local_38[0] = 0x76;
   local_2d = param_2;
+  /* ST_CALLSITE[0068FAFE]: CALL 0x00403cdd; direct=00403CDD AiTactClassTy::sub_006902B0 */
   st::fn_00403CDD(st::pointer_boundary_cast<AiTactClassTy *>(this),-0x8000,local_38);
   return (int)local_29;
 }
@@ -2858,6 +2868,7 @@ int __thiscall st::fn_0068FC70(void *this,AnonShape_0068FD00_A5257008 *aiMess,sh
       if ((((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0))
           && (this_00 = *(AiFltClassTy **)(iVar1 + 4), this_00 != nullptr)) &&
          ((uint)(ushort)this_00->field_007D == (int)param_2)) {
+        /* ST_CALLSITE[0068FCB8]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
         st::fn_00401555(this_00,(uint *)aiMess);
       }
       iVar1 = STField<int>(this,0xa5);

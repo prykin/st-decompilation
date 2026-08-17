@@ -22,10 +22,12 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
   LOGPALETTE *pLVar8_mg0;
 
   if (*(HGDIOBJ *)param_1 != (HGDIOBJ)0x0) {
+    /* ST_CALLSITE[006B06B6]: CALL dword ptr [0x0085ba78] */
     DeleteObject(*(HGDIOBJ *)param_1);
     *(undefined4 *)param_1 = 0;
   }
   if (param_1->field_04B4 != (HPALETTE)0x0) {
+    /* ST_CALLSITE[006B06CD]: CALL dword ptr [0x0085ba78] */
     DeleteObject(param_1->field_04B4);
     param_1->field_04B4 = (HPALETTE)0x0;
   }
@@ -40,9 +42,13 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
   piVar1 = (int *)param_1->field_003C;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   if ((piVar1 == nullptr) ||
+     /* ST_CALLSITE[006B070D]: CALL dword ptr [ECX + 0x10] */
      (iVar7 = (**(code **)(*piVar1 + 0x10))(piVar1,0,0,0x100,param_2->palPalEntry), iVar7 != 0)) {
+    /* ST_CALLSITE[006B0716]: CALL dword ptr [0x0085be4c] */
     pHVar2 = GetDC((HWND)0x0);
+    /* ST_CALLSITE[006B072A]: CALL dword ptr [0x0085ba80] */
     GetSystemPaletteEntries(pHVar2,0,0x100,param_2->palPalEntry);
+    /* ST_CALLSITE[006B0733]: CALL dword ptr [0x0085be48] */
     ReleaseDC((HWND)0x0,pHVar2);
   }
   if (((param_1->field_0x8 & 1) == 0) && (param_1->field_0020 < 9)) {
@@ -86,12 +92,15 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
     *(undefined1 *)((int)&param_2[0x80].palVersion + 1) = 0xff;
     *(undefined1 *)&param_2[0x80].palNumEntries = 0xff;
   }
+  /* ST_CALLSITE[006B07ED]: CALL EDI */
   pHVar5 = CreatePalette(param_2);
   *(HPALETTE *)param_1 = pHVar5;
   if (pHVar5 != (HPALETTE)0x0) {
+    /* ST_CALLSITE[006B07FF]: CALL EDI */
     pHVar5 = CreatePalette(param_2);
     param_1->field_04B4 = pHVar5;
     if (pHVar5 == (HPALETTE)0x0) {
+      /* ST_CALLSITE[006B080E]: CALL dword ptr [0x0085ba78] */
       DeleteObject(*(HGDIOBJ *)param_1);
       *(undefined4 *)param_1 = 0;
       return false;
@@ -102,15 +111,19 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
       param_2 = (LOGPALETTE *)param_2->palPalEntry;
       pptVar10 = pptVar10 + 1;
     }
+    /* ST_CALLSITE[006B0834]: CALL dword ptr [0x0085be4c] */
     pHVar2 = GetDC((HWND)0x0);
     if (0 < (int)param_4) {
+      /* ST_CALLSITE[006B084E]: CALL dword ptr [0x0085ba80] */
       GetSystemPaletteEntries(pHVar2,0,param_4,(LPPALETTEENTRY)&local_404);
     }
     iStart = param_4 + param_5;
     if ((int)iStart < 0x100) {
+      /* ST_CALLSITE[006B0875]: CALL dword ptr [0x0085ba80] */
       GetSystemPaletteEntries
                 (pHVar2,iStart,(0x100 - param_4) - param_5,(LPPALETTEENTRY)(&local_404 + iStart));
     }
+    /* ST_CALLSITE[006B087E]: CALL dword ptr [0x0085be48] */
     ReleaseDC((HWND)0x0,pHVar2);
     if (*(undefined4 **)&param_1[1].field_0x24 != nullptr) {
       puVar11 = *(undefined4 **)&param_1[1].field_0x24;
@@ -119,6 +132,7 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
         puVar11 = puVar11 + 1;
       }
       memset((void *)(*(int *)&param_1[1].field_0x24 + 0x8000), 0, 0x8000); /* compiler bulk-zero initialization */
+      /* ST_CALLSITE[006B08B4]: CALL dword ptr [0x0085ba7c] */
       pHVar5 = CreatePalette((LOGPALETTE *)&local_408);
       *(HPALETTE *)&param_1[1].field_0x28 = pHVar5;
       if (pHVar5 == (HPALETTE)0x0) {

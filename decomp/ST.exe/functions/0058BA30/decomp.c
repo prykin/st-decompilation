@@ -13,8 +13,10 @@ STSatC * __thiscall STSatC::STSatC(STSatC *this)
 
 {
 
+  /* ST_CALLSITE[0058BA34]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)this);
-  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[0058BA41]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  STT3DSprC::STT3DSprC((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = &VTable_0079BE7C;
   this->vtable = &STSatCVTable;
   this->field_0231 = 1;

@@ -79,6 +79,7 @@ STAllPlayersC::GetTOBJImage
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
+    /* ST_CALLSITE[0044C194]: CALL 0x004024a5; direct=004024A5 STBoatC::GetVisualInfo */
     STBoatC::GetVisualInfo(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
@@ -90,6 +91,7 @@ STAllPlayersC::GetTOBJImage
     local_154[0] = '\0';
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     param_2 = 0;
+    /* ST_CALLSITE[0044C1F7]: CALL 0x004024a5; direct=004024A5 STBoatC::GetVisualInfo */
     STBoatC::GetVisualInfo(param_1,SVar2,0xd,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
@@ -101,6 +103,7 @@ STAllPlayersC::GetTOBJImage
     local_154[0] = '\0';
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(0x1d));
     param_2 = 0;
+    /* ST_CALLSITE[0044C25A]: CALL 0x004024a5; direct=004024A5 STBoatC::GetVisualInfo */
     STBoatC::GetVisualInfo(param_1,SVar2,0xc,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad

@@ -46,6 +46,7 @@ MMObjTy::CreateSprBut
     local_168 = 2;
     local_164 = param_8;
     local_16c = local_1ac;
+    /* ST_CALLSITE[005B55DB]: CALL dword ptr [EAX + 0x8] */
     (*local_c->field_000C->vtable->CreateObject)
               ((SystemClassTy *)local_c->field_000C,2,&local_8,nullptr,local_1cc,0);
     g_currentExceptionFrame = local_50.previous;

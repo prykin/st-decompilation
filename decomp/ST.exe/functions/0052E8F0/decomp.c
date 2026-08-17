@@ -47,6 +47,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     }
     pOVar2->field_02FD = nullptr;
     if (pOVar2->field_01DD != (HANDLE)0x0) {
+      /* ST_CALLSITE[0052E9B8]: CALL dword ptr [0x0085bcac] */
       FindCloseChangeNotification(pOVar2->field_01DD);
       pOVar2->field_01DD = (HANDLE)0x0;
     }

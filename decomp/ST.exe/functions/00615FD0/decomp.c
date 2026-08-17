@@ -21,6 +21,7 @@ undefined4 __thiscall FUN_00615fd0(void *this,int param_1,undefined4 param_2)
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((STField<int *>(this,0x2ff) != nullptr) &&
+       /* ST_CALLSITE[0061602F]: CALL dword ptr [EAX + 0xe0] */
        (iVar1 = (**(code **)(*STField<int *>(this,0x2ff) + 0xe0))
                           (STField<undefined4>(this,0x303),(int)&param_2 + 2,(int)&param_1 + 2,
                            &local_6,&local_c), iVar1 == 0)) {
@@ -44,6 +45,7 @@ undefined4 __thiscall FUN_00615fd0(void *this,int param_1,undefined4 param_2)
       STField<undefined4>(this,0x307) = local_c;
       STField<int>(this,0x22b) = (int)STPiece<2,2>(param_2);
       STField<int>(this,0x233) = (int)local_6;
+      /* ST_CALLSITE[00616113]: CALL 0x00405993; direct=00405993 STGenBombC::LoadImagSpr */
       iVar2 = STGenBombC::LoadImagSpr(this,0,iVar2);
       if (iVar2 != 0) {
         if (STField<int>(this,0x1f7) == 0) {
@@ -72,6 +74,7 @@ LAB_006161a8:
     iVar2 = 0x48c;
     goto LAB_006161a8;
   }
+  /* ST_CALLSITE[006161B5]: CALL 0x00405993; direct=00405993 STGenBombC::LoadImagSpr */
   iVar2 = STGenBombC::LoadImagSpr(this,0,0);
   if (iVar2 != 0) {
     STField<undefined4>(this,0x307) = local_c;

@@ -76,6 +76,7 @@ int __fastcall FUN_007295f0(AnonShape_007295F0_722683CC *param_1)
   }
   local_8 = 0xffffffff;
   if (local_2c != 0) {
+    /* ST_CALLSITE[007297C6]: CALL dword ptr [EDX + 0x80] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(param_1->entries_0004[0x10]->field_0000 + 0x80))(param_1->entries_0004[0x10],0);
   }

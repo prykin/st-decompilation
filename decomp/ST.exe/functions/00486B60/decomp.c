@@ -18,6 +18,7 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
 
   puVar1 = param_1;
   *param_1 = 1;
+  /* ST_CALLSITE[00486B73]: CALL dword ptr [EAX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar5 = (**(code **)(*(int *)this + 8))();
   if (iVar5 == 1) {
@@ -34,9 +35,11 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
   else {
     puVar1[0x1d] = 0;
   }
+  /* ST_CALLSITE[00486BA1]: CALL dword ptr [EDX + 0x7c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*(int *)this + 0x7c))();
   puVar1[0x1b] = uVar2;
+  /* ST_CALLSITE[00486BAB]: CALL dword ptr [EAX + 0xc4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*(int *)this + 0xc4))();
   puVar1[0x1c] = uVar2;
@@ -60,6 +63,7 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
                 (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x7ca),
                  (int *)&local_c);
       if (local_c != nullptr) {
+        /* ST_CALLSITE[00486C4A]: CALL dword ptr [EDX + 0x2c] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         uVar6 = (**(code **)(*local_c + 0x2c))();
         *(undefined4 *)(puVar1 + 0x1e) = uVar6;
@@ -67,20 +71,24 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
         if (iVar5 == 0x14) {
           local_EAX_316 = thunk_FUN_004e8030(STField<int>(this,0x6f7));
           puVar1[0x22] = (char)local_EAX_316;
+          /* ST_CALLSITE[00486CA9]: CALL dword ptr [EDX + 0x7c] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar2 = (**(code **)(*local_c + 0x7c))();
           puVar1[0x23] = uVar2;
         }
         else if ((iVar5 == 0x172) || (iVar5 == 0x1a4)) {
+          /* ST_CALLSITE[00486C79]: CALL dword ptr [EAX + 0xc] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar2 = (**(code **)(*local_c + 0xc))();
           puVar1[0x22] = uVar2;
+          /* ST_CALLSITE[00486C84]: CALL dword ptr [EDX + 0x7c] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar2 = (**(code **)(*local_c + 0x7c))();
           puVar1[0x23] = uVar2;
         }
         else {
           puVar1[0x22] = 0;
+          /* ST_CALLSITE[00486C6C]: CALL dword ptr [EDX + 0x7c] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar2 = (**(code **)(*local_c + 0x7c))();
           puVar1[0x23] = uVar2;
@@ -103,6 +111,7 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
     break;
   default:
     *(undefined2 *)(puVar1 + 0x1e) = STField<undefined2>(this,0x79a);
+    /* ST_CALLSITE[00486CD5]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar3 = LookupRecordByte(STField<char>(this,0x24));
     if (bVar3 == 1) {
       iVar5 = STField<int>(this,0x24);
@@ -126,6 +135,7 @@ LAB_00486cfc:
   }
   *(undefined4 *)(puVar1 + 0x2a) = 0;
   puVar1[0x2e] = 0;
+  /* ST_CALLSITE[00486D48]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   STFishC::sub_004162B0(this,&local_8,&local_6,(short *)((int)&param_1 + 2));
   puVar1[0x2e - STPiece<2,2>(param_1)] = 1;
   return;

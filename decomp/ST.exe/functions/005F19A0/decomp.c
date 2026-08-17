@@ -62,6 +62,7 @@ joined_r0x005f19be:
   local_8 = psVar6;
   if ((char)psVar6[3] != '\x01') goto LAB_005f1c99;
   if (((((DAT_0080874d != -1) && (pVVar2->field_00F8 != 0)) &&
+       /* ST_CALLSITE[005F1A43]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
        (VisibleClassTy::sub_00558C00
                   (pVVar2,pVVar2->field_010C,local_1c,local_18,&local_20,&local_24),
        pVVar4 = g_visibleClass_00802A88, -1 < iVar8)) &&
@@ -73,6 +74,7 @@ joined_r0x005f19be:
       (((pVVar2->field_004C[local_20 + iVar8 * pVVar2->field_0030] == 0 && (DAT_0080874d != -1)) &&
        (g_visibleClass_00802A88->field_00F8 != 0)))))) {
     local_38 = local_1c + 1;
+    /* ST_CALLSITE[005F1AEB]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,local_18,
                &local_28,&local_2c);
@@ -83,6 +85,7 @@ joined_r0x005f19be:
          (pVVar4->field_004C[local_28 + iVar8 * pVVar4->field_0030] == 0)))) &&
        ((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)))) {
       iVar8 = local_18 + 1;
+      /* ST_CALLSITE[005F1B82]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
       VisibleClassTy::sub_00558C00
                 (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_1c,iVar8,
                  &local_30,&local_34);
@@ -95,6 +98,7 @@ joined_r0x005f19be:
             (pVVar2->field_004C[local_30 + iVar5 * pVVar2->field_0030] != 0)))))) ||
          ((DAT_0080874d == -1 ||
           ((((g_visibleClass_00802A88->field_00F8 == 0 ||
+             /* ST_CALLSITE[005F1C07]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
              (VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,iVar8,
                          &local_3c,&local_40), psVar6 = local_8, local_3c < 0)) ||
@@ -107,7 +111,8 @@ joined_r0x005f19be:
     }
   }
 LAB_005f1c4c:
-  iVar7 = sub_005F14B0(local_14,*psVar6,psVar6[1],psVar6[2],*(byte *)(psVar6 + 3),
+  /* ST_CALLSITE[005F1C66]: CALL 0x00401465; direct=00401465 STManBasisC::sub_005F14B0 */
+  iVar7 = sub_005F14B0(local_14,*psVar6,psVar6[1],psVar6[2],((byte *)psVar6)[3],
                        STField<short>(psVar6,7));
   pVVar4 = g_visibleClass_00802A88;
   if (-1 < iVar7) {
@@ -116,6 +121,7 @@ LAB_005f1c4c:
   }
   goto joined_r0x005f19be;
 LAB_005f1c99:
+  /* ST_CALLSITE[005F1C9C]: CALL 0x00404e5d; direct=00404E5D VisibleClassTy::sub_005F1D80 */
   iVar8 = VisibleClassTy::sub_005F1D80(pVVar2,local_1c,local_18,iVar8);
   pVVar4 = g_visibleClass_00802A88;
   if (iVar8 == 0) goto joined_r0x005f19be;

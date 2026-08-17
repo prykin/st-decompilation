@@ -16,8 +16,10 @@ STOctopusC * __thiscall STOctopusC::STOctopusC(STOctopusC *this)
 
 {
 
+  /* ST_CALLSITE[00589994]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)this);
-  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[005899A1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  STT3DSprC::STT3DSprC((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = &VTable_0079BD18;
   this->vtable = &STOctopusCVTable;
   this->field_0249 = CASE_0;

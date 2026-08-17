@@ -59,6 +59,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (message->id != MESS_SHARED_0003) {
+    /* ST_CALLSITE[00497E48]: CALL 0x004034ea; direct=004034EA STGroupC::GetMessage */
     STGroupC::GetMessage((STGroupC *)local_20,message);
   }
   SVar1 = message->id;
@@ -67,11 +68,13 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       g_currentExceptionFrame = local_84.previous;
       return 0;
     }
+    /* ST_CALLSITE[004988AD]: CALL 0x00405439; direct=00405439 STGroupC::SaveGrpData */
     local_1c = (byte *)STGroupC::SaveGrpData((STGroupC *)this_00,(int *)&local_c);
     local_1c[0] = 0x3c;
     local_1c[1] = 0;
     local_1c[2] = 0;
     local_1c[3] = 0;
+    /* ST_CALLSITE[004988C1]: CALL 0x00401eec; direct=00401EEC STGroupBoatC::SaveGrpBData */
     local_18 = (byte *)SaveGrpBData(this_00,(int *)&local_10);
     local_8 = Library::DKW::LIB::MemAlloc(local_10 + local_c);
     pbVar6 = local_1c;
@@ -83,6 +86,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     memmove(pbVar7, pbVar6, local_10); /* compiler REP MOVS byte copy */
     *(uint *)(local_8 + 0x38) = local_c;
     *(uint *)(local_8 + 0x3c) = local_10;
+    /* ST_CALLSITE[00498936]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,(int *)this_00->field_0018,local_8,local_10 + local_c);
     FreeAndNull(&local_1c);
@@ -182,7 +186,9 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       DArrayDestroy((DArrayTy *)this_00->field_029F);
       this_00->field_029F = 0;
     }
+    /* ST_CALLSITE[0049887A]: CALL dword ptr [EAX + 0x18] */
     (*this_00->vtable->vfunc_18)((short)this_00,0,0,0);
+    /* ST_CALLSITE[00498883]: CALL 0x004034ea; direct=004034EA STGroupC::GetMessage */
     STGroupC::GetMessage((STGroupC *)this_00,message);
     g_currentExceptionFrame = local_84.previous;
     return 0;
@@ -198,6 +204,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
         g_currentExceptionFrame = local_84.previous;
         return 0;
       }
+      /* ST_CALLSITE[00497E88]: CALL 0x00401947; direct=00401947 STGroupBoatC::RestoreGrpBData */
       RestoreGrpBData(this_00,(undefined4 *)(STField<int>(pvVar2,0x38) + (int)pvVar2));
       g_currentExceptionFrame = local_84.previous;
       return 0;
@@ -224,13 +231,16 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       if (0 < (int)array->count) {
         do {
           DArrayGetElement(array,uVar5,&local_14);
+          /* ST_CALLSITE[00497F44]: CALL dword ptr [EDX + 0x4] */
           this_00->vfunc_04((short)local_14);
           array = this_00->field_01DA;
           uVar5 = uVar5 + 1;
         } while ((int)uVar5 < (int)array->count);
       }
       if (this_00->field_01E6 == CASE_6) {
+        /* ST_CALLSITE[00497F5E]: CALL 0x00403f80; direct=00403F80 STGroupBoatC::ReMakePatrolPoints */
         ReMakePatrolPoints(this_00);
+        /* ST_CALLSITE[00497F66]: CALL 0x0040331e; direct=0040331E STGroupBoatC::sub_004A7E30 */
         sub_004A7E30(this_00,1);
       }
       if ((this_00->field_0027 == 0) && (this_00->field_0020 == CASE_0)) {
@@ -241,6 +251,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     }
     if ((this_00->field_006D == 1) &&
        (this_00->field_006D = 0, this_00->field_002D != nullptr)) {
+      /* ST_CALLSITE[00497FA5]: CALL 0x00402da1; direct=00402DA1 STGroupBoatC::RechargeNewCmd */
       RechargeNewCmd(this_00);
       DArrayDestroy(this_00->field_002D);
       this_00->field_002D = nullptr;
@@ -252,7 +263,9 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     }
     if (this_00->field_0075 == 1) {
       this_00->field_0075 = 0;
+      /* ST_CALLSITE[00497FE1]: CALL 0x00404985; direct=00404985 STGroupBoatC::ReMakePVecAndTgtList */
       ReMakePVecAndTgtList(this_00,this_00->field_01CE);
+      /* ST_CALLSITE[00497FEF]: CALL 0x00405146; direct=00405146 STGroupBoatC::DistributeTargets */
       DistributeTargets(this_00,&this_00->field_01CE->flags);
       DArrayDestroy(this_00->field_01CE);
       this_00->field_01CE = nullptr;
@@ -274,31 +287,40 @@ LAB_004984d0:
     case CASE_1:
       iVar10 = 2;
 LAB_004984e9:
+      /* ST_CALLSITE[004984EB]: CALL 0x0040304e; direct=0040304E STGroupBoatC::GrpMove */
       puVar4 = (uint *)GrpMove(this_00,iVar10);
       break;
     case CASE_2:
+      /* ST_CALLSITE[0049854B]: CALL 0x004010be; direct=004010BE STGroupBoatC::GrpAttack */
       puVar4 = (uint *)GrpAttack(this_00,2);
       break;
     case CASE_3:
+      /* ST_CALLSITE[0049852E]: CALL 0x0040593e; direct=0040593E STGroupBoatC::GrpMove */
       GrpMove(this_00,2);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case CASE_4:
+      /* ST_CALLSITE[004985AA]: CALL 0x00404859; direct=00404859 STGroupBoatC::GrpRepare */
       puVar4 = (uint *)GrpRepare(this_00,2);
       break;
     case CASE_5:
+      /* ST_CALLSITE[004985B8]: CALL 0x00405da3; direct=00405DA3 STGroupBoatC::GrpGuard */
       puVar4 = (uint *)GrpGuard(this_00,2);
       break;
     case CASE_6:
+      /* ST_CALLSITE[00498561]: CALL 0x00405371; direct=00405371 STGroupBoatC::GrpPatrol */
       puVar4 = (uint *)GrpPatrol(this_00,2);
       break;
     case CASE_7:
+      /* ST_CALLSITE[00498556]: CALL 0x00401bef; direct=00401BEF STGroupBoatC::GrpGoToDeep */
       puVar4 = (uint *)GrpGoToDeep(this_00,2);
       break;
     case CASE_8:
+      /* ST_CALLSITE[0049856C]: CALL 0x00405673; direct=00405673 STGroupBoatC::GrpLoadRC */
       puVar4 = (uint *)GrpLoadRC(this_00,2);
       break;
     case CASE_9:
+      /* ST_CALLSITE[0049857A]: CALL 0x00402f81; direct=00402F81 STGroupBoatC::GrpBuild */
       iVar10 = GrpBuild(this_00,2);
       if (iVar10 != 0) {
         g_currentExceptionFrame = local_84.previous;
@@ -308,39 +330,51 @@ LAB_004984e9:
       iVar10 = 2;
       goto LAB_00498503;
     case CASE_A:
+      /* ST_CALLSITE[0049859C]: CALL 0x004053bc; direct=004053BC STGroupBoatC::GrpUnLoadRC */
       puVar4 = (uint *)GrpUnLoadRC(this_00,2);
       break;
     case CASE_B:
+      /* ST_CALLSITE[004985C6]: CALL 0x00402955; direct=00402955 STGroupBoatC::GrpLoadObj */
       puVar4 = (uint *)GrpLoadObj(this_00,2);
       break;
     case CASE_C:
+      /* ST_CALLSITE[004985D4]: CALL 0x00403125; direct=00403125 STGroupBoatC::GrpUnLoadObj */
       puVar4 = GrpUnLoadObj(this_00,2);
       break;
     case CASE_D:
+      /* ST_CALLSITE[004985E2]: CALL 0x00402b85; direct=00402B85 STGroupBoatC::SetMine */
       puVar4 = (uint *)SetMine(this_00,2);
       break;
     case CASE_E:
+      /* ST_CALLSITE[004985F0]: CALL 0x004036de; direct=004036DE STGroupBoatC::DCBomb */
       puVar4 = (uint *)DCBomb(this_00,2);
       break;
     case CASE_F:
+      /* ST_CALLSITE[004985FE]: CALL 0x004036c5; direct=004036C5 STGroupBoatC::Capture */
       puVar4 = (uint *)Capture(this_00,2);
       break;
     case CASE_10:
+      /* ST_CALLSITE[0049861A]: CALL 0x004027a2; direct=004027A2 STGroupBoatC::Teleport */
       puVar4 = (uint *)Teleport(this_00,2);
       break;
     case CASE_11:
+      /* ST_CALLSITE[0049860C]: CALL 0x004051af; direct=004051AF STGroupBoatC::Recharge */
       puVar4 = (uint *)Recharge(this_00,2);
       break;
     case CASE_12:
+      /* ST_CALLSITE[00498628]: CALL 0x0040546b; direct=0040546B STGroupBoatC::Bring */
       puVar4 = Bring(this_00,2);
       break;
     case CASE_13:
+      /* ST_CALLSITE[00498636]: CALL 0x004018c0; direct=004018C0 STGroupBoatC::GrpDismant */
       puVar4 = (uint *)GrpDismant(this_00,2);
       break;
     case CASE_14:
+      /* ST_CALLSITE[00498644]: CALL 0x00401a00; direct=00401A00 STGroupBoatC::Scout */
       puVar4 = Scout(this_00,2);
       break;
     case CASE_15:
+      /* ST_CALLSITE[00498652]: CALL 0x00405326; direct=00405326 STGroupBoatC::GrpRepSub */
       puVar4 = (uint *)GrpRepSub(this_00,2);
       break;
     default:
@@ -361,20 +395,24 @@ LAB_004984e9:
   if (this_00->field_0091 == 1) {
     if (this_00->field_01E6 != CASE_3) {
       this_00->field_01E6 = CASE_3;
+      /* ST_CALLSITE[0049808A]: CALL 0x0040593e; direct=0040593E STGroupBoatC::GrpMove */
       GrpMove(this_00,0);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     }
+    /* ST_CALLSITE[004980A6]: CALL 0x0040593e; direct=0040593E STGroupBoatC::GrpMove */
     GrpMove(this_00,1);
     g_currentExceptionFrame = local_84.previous;
     return 0;
   }
   if (this_00->field_008D == 1) {
     if (this_00->field_01E6 == CASE_2) {
+      /* ST_CALLSITE[004980EC]: CALL 0x004010be; direct=004010BE STGroupBoatC::GrpAttack */
       puVar4 = (uint *)GrpAttack(this_00,1);
     }
     else {
       this_00->field_01E6 = CASE_2;
+      /* ST_CALLSITE[004980DF]: CALL 0x004010be; direct=004010BE STGroupBoatC::GrpAttack */
       puVar4 = (uint *)GrpAttack(this_00,0);
     }
 cf_common_exit_004984F2:
@@ -388,10 +426,12 @@ switchD_004984e0_default:
   else {
     if (this_00->field_00A1 == 1) {
       if (this_00->field_01E6 == CASE_7) {
+        /* ST_CALLSITE[00498123]: CALL 0x00401bef; direct=00401BEF STGroupBoatC::GrpGoToDeep */
         puVar4 = (uint *)GrpGoToDeep(this_00,1);
       }
       else {
         this_00->field_01E6 = CASE_7;
+        /* ST_CALLSITE[00498116]: CALL 0x00401bef; direct=00401BEF STGroupBoatC::GrpGoToDeep */
         puVar4 = (uint *)GrpGoToDeep(this_00,0);
       }
       goto cf_common_exit_004984F2;
@@ -401,6 +441,7 @@ switchD_004984e0_default:
       if (!bVar8) {
         this_00->field_01E6 = CASE_6;
       }
+      /* ST_CALLSITE[00498150]: CALL 0x00405371; direct=00405371 STGroupBoatC::GrpPatrol */
       puVar4 = (uint *)GrpPatrol(this_00,(uint)bVar8);
       if (puVar4 == (uint *)0xffffffff) {
         return 0xffff;
@@ -412,52 +453,63 @@ switchD_004984e0_default:
       if (!bVar8) {
         this_00->field_01E6 = CASE_8;
       }
+      /* ST_CALLSITE[00498188]: CALL 0x00405673; direct=00405673 STGroupBoatC::GrpLoadRC */
       puVar4 = (uint *)GrpLoadRC(this_00,(uint)bVar8);
     }
     else {
       if (this_00->field_00A9 == 1) {
         if (this_00->field_01E6 == CASE_9) {
+          /* ST_CALLSITE[004981D0]: CALL 0x00402f81; direct=00402F81 STGroupBoatC::GrpBuild */
           puVar4 = (uint *)GrpBuild(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_9;
+          /* ST_CALLSITE[004981C3]: CALL 0x00402f81; direct=00402F81 STGroupBoatC::GrpBuild */
           puVar4 = (uint *)GrpBuild(this_00,0);
         }
         goto cf_common_exit_004984F2;
       }
       if (this_00->field_00AD == 1) {
         if (this_00->field_01E6 == CASE_A) {
+          /* ST_CALLSITE[00498204]: CALL 0x004053bc; direct=004053BC STGroupBoatC::GrpUnLoadRC */
           puVar4 = (uint *)GrpUnLoadRC(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_A;
+          /* ST_CALLSITE[004981FA]: CALL 0x004053bc; direct=004053BC STGroupBoatC::GrpUnLoadRC */
           puVar4 = (uint *)GrpUnLoadRC(this_00,0);
         }
       }
       else if (this_00->field_0095 == 1) {
         if (this_00->field_01E6 == CASE_4) {
+          /* ST_CALLSITE[00498238]: CALL 0x00404859; direct=00404859 STGroupBoatC::GrpRepare */
           puVar4 = (uint *)GrpRepare(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_4;
+          /* ST_CALLSITE[0049822B]: CALL 0x00404859; direct=00404859 STGroupBoatC::GrpRepare */
           puVar4 = (uint *)GrpRepare(this_00,0);
         }
       }
       else if (this_00->field_0099 == 1) {
         if (this_00->field_01E6 == CASE_5) {
+          /* ST_CALLSITE[0049826F]: CALL 0x00405da3; direct=00405DA3 STGroupBoatC::GrpGuard */
           puVar4 = (uint *)GrpGuard(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_5;
+          /* ST_CALLSITE[00498262]: CALL 0x00405da3; direct=00405DA3 STGroupBoatC::GrpGuard */
           puVar4 = (uint *)GrpGuard(this_00,0);
         }
       }
       else if (this_00->field_00B1 == 1) {
         if (this_00->field_01E6 == CASE_B) {
+          /* ST_CALLSITE[004982A6]: CALL 0x00402955; direct=00402955 STGroupBoatC::GrpLoadObj */
           puVar4 = (uint *)GrpLoadObj(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_B;
+          /* ST_CALLSITE[00498299]: CALL 0x00402955; direct=00402955 STGroupBoatC::GrpLoadObj */
           puVar4 = (uint *)GrpLoadObj(this_00,0);
         }
       }
@@ -465,64 +517,78 @@ switchD_004984e0_default:
         if (this_00->field_00B5 != 1) {
           if (this_00->field_00B9 == 1) {
             if (this_00->field_01E6 == CASE_D) {
+              /* ST_CALLSITE[00498314]: CALL 0x00402b85; direct=00402B85 STGroupBoatC::SetMine */
               puVar4 = (uint *)SetMine(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_D;
+              /* ST_CALLSITE[00498307]: CALL 0x00402b85; direct=00402B85 STGroupBoatC::SetMine */
               puVar4 = (uint *)SetMine(this_00,0);
             }
           }
           else if (this_00->field_00BD == 1) {
             if (this_00->field_01E6 == CASE_E) {
+              /* ST_CALLSITE[0049834B]: CALL 0x004036de; direct=004036DE STGroupBoatC::DCBomb */
               puVar4 = (uint *)DCBomb(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_E;
+              /* ST_CALLSITE[0049833E]: CALL 0x004036de; direct=004036DE STGroupBoatC::DCBomb */
               puVar4 = (uint *)DCBomb(this_00,0);
             }
           }
           else if (this_00->field_00C1 == 1) {
             if (this_00->field_01E6 == CASE_F) {
+              /* ST_CALLSITE[00498382]: CALL 0x004036c5; direct=004036C5 STGroupBoatC::Capture */
               puVar4 = (uint *)Capture(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_F;
+              /* ST_CALLSITE[00498375]: CALL 0x004036c5; direct=004036C5 STGroupBoatC::Capture */
               puVar4 = (uint *)Capture(this_00,0);
             }
           }
           else if (this_00->field_00C9 == 1) {
             if (this_00->field_01E6 == CASE_11) {
+              /* ST_CALLSITE[004983B9]: CALL 0x004051af; direct=004051AF STGroupBoatC::Recharge */
               puVar4 = (uint *)Recharge(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_11;
+              /* ST_CALLSITE[004983AC]: CALL 0x004051af; direct=004051AF STGroupBoatC::Recharge */
               puVar4 = (uint *)Recharge(this_00,0);
             }
           }
           else if (this_00->field_00C5 == 1) {
             if (this_00->field_01E6 == CASE_10) {
+              /* ST_CALLSITE[004983F0]: CALL 0x004027a2; direct=004027A2 STGroupBoatC::Teleport */
               puVar4 = (uint *)Teleport(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_10;
+              /* ST_CALLSITE[004983E3]: CALL 0x004027a2; direct=004027A2 STGroupBoatC::Teleport */
               puVar4 = (uint *)Teleport(this_00,0);
             }
           }
           else if (this_00->field_00CD == 1) {
             if (this_00->field_01E6 == CASE_12) {
+              /* ST_CALLSITE[00498427]: CALL 0x0040546b; direct=0040546B STGroupBoatC::Bring */
               puVar4 = Bring(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_12;
+              /* ST_CALLSITE[0049841A]: CALL 0x0040546b; direct=0040546B STGroupBoatC::Bring */
               puVar4 = Bring(this_00,0);
             }
           }
           else if (this_00->field_00D1 == 1) {
             if (this_00->field_01E6 == CASE_13) {
+              /* ST_CALLSITE[0049845E]: CALL 0x004018c0; direct=004018C0 STGroupBoatC::GrpDismant */
               puVar4 = (uint *)GrpDismant(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_13;
+              /* ST_CALLSITE[00498451]: CALL 0x004018c0; direct=004018C0 STGroupBoatC::GrpDismant */
               puVar4 = (uint *)GrpDismant(this_00,0);
             }
           }
@@ -530,29 +596,35 @@ switchD_004984e0_default:
             if (this_00->field_00D5 != 1) {
               if (this_00->field_00D9 != 1) goto LAB_004984d0;
               if (this_00->field_01E6 == CASE_15) {
+                /* ST_CALLSITE[004984C6]: CALL 0x00405326; direct=00405326 STGroupBoatC::GrpRepSub */
                 puVar4 = (uint *)GrpRepSub(this_00,1);
               }
               else {
                 this_00->field_01E6 = CASE_15;
+                /* ST_CALLSITE[004984B9]: CALL 0x00405326; direct=00405326 STGroupBoatC::GrpRepSub */
                 puVar4 = (uint *)GrpRepSub(this_00,0);
               }
               goto LAB_0049818d;
             }
             if (this_00->field_01E6 == CASE_14) {
+              /* ST_CALLSITE[00498492]: CALL 0x00401a00; direct=00401A00 STGroupBoatC::Scout */
               puVar4 = Scout(this_00,1);
             }
             else {
               this_00->field_01E6 = CASE_14;
+              /* ST_CALLSITE[00498488]: CALL 0x00401a00; direct=00401A00 STGroupBoatC::Scout */
               puVar4 = Scout(this_00,0);
             }
           }
           goto cf_common_exit_004984F2;
         }
         if (this_00->field_01E6 == CASE_C) {
+          /* ST_CALLSITE[004982DD]: CALL 0x00403125; direct=00403125 STGroupBoatC::GrpUnLoadObj */
           puVar4 = GrpUnLoadObj(this_00,1);
         }
         else {
           this_00->field_01E6 = CASE_C;
+          /* ST_CALLSITE[004982D0]: CALL 0x00403125; direct=00403125 STGroupBoatC::GrpUnLoadObj */
           puVar4 = GrpUnLoadObj(this_00,0);
         }
       }
@@ -568,6 +640,7 @@ LAB_0049818d:
   }
   iVar10 = 0;
 LAB_00498503:
+  /* ST_CALLSITE[00498505]: CALL 0x0040593e; direct=0040593E STGroupBoatC::GrpMove */
   GrpMove(this_00,iVar10);
   thunk_FUN_00423320(this_00,0x5d95);
   g_currentExceptionFrame = local_84.previous;

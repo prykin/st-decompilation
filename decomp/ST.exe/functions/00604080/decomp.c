@@ -15,6 +15,7 @@ STExplosion * __thiscall STExplosion::STExplosion(STExplosion *this)
   int iVar1;
   STParticleC **ppSVar2;
 
+  /* ST_CALLSITE[00604084]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)this);
   this->vtable = &STExplosionVTable;
   this->field_0215 = nullptr;

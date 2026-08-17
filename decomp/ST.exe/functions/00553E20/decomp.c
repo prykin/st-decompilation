@@ -135,6 +135,7 @@ void __cdecl FUN_00553e20(int param_1,undefined *param_2,byte param_3)
   local_5c[0x54] = 0x7a;
   local_5c[0x55] = 0x7c;
   local_5c[0x56] = 0x7e;
+  /* ST_CALLSITE[0055403F]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   ccFntTy::operator_new
             (0x19d,&local_98,nullptr,local_5c,param_1,&param_3,1,3,1,1,0x40021c,param_2);
   return;

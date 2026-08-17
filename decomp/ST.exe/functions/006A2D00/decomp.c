@@ -17,6 +17,7 @@ char * __cdecl FUN_006a2d00(int param_1,int param_2,uint param_3,int param_4,uin
 
   memset(&DAT_0085428c, 0, 0x104); /* compiler bulk-zero initialization */
   uVar1 = thunk_FUN_006a2bf0(param_1,param_2,param_3,param_4,param_5);
+  /* ST_CALLSITE[006A2D40]: CALL dword ptr [0x0085bde8] */
   wsprintfA((LPSTR)&DAT_0085428c,"%s%03u","MAPMESH",uVar1 & 0x7fff);
   return (char *)&DAT_0085428c;
 }

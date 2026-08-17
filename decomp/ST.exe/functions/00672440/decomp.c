@@ -22,7 +22,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
   undefined4 uVar1;
   int iVar3;
   short *psVar4;
-  float10 fVar5;
   InternalExceptionFrame local_64;
   int local_20;
   AnonReceiver_0064A970 *local_1c;
@@ -77,6 +76,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
           RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 8;
+        /* ST_CALLSITE[0067253F]: CALL dword ptr [EDX] */
         uVar1 = this_00->slot_00(arg_1);
         *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar1;
         *param_3 = *param_3 + 1;
@@ -91,8 +91,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
           RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 9;
-        fVar5 = (float10)(*this_00->vtable->slot_04)(arg_1);
-        *(float *)(param_3 + *param_3 * 2 + 4) = (float)fVar5;
+        /* ST_CALLSITE[00672590]: CALL dword ptr [EDX + 0x4] */
+        *(float *)(param_3 + *param_3 * 2 + 4) = this_00->slot_04(arg_1);
         *param_3 = *param_3 + 1;
         param_3[3] = param_3[3] + 1;
       }
@@ -105,6 +105,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
           RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 10;
+        /* ST_CALLSITE[006725E2]: CALL dword ptr [EAX + 0x8] */
         uVar1 = this_00->slot_08(arg_1);
         *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar1;
         if (*(int *)(param_3 + *param_3 * 2 + 4) == 0) {

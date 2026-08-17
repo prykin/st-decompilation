@@ -28,6 +28,7 @@ int __thiscall FUN_006042d0(void *this,STMessageId param_1)
     do {
       if ((STParticleC *)*puVar4 != nullptr) {
         iVar1 = iVar1 + 1;
+        /* ST_CALLSITE[0060430F]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
         STParticleC::GetMessage((STParticleC *)*puVar4,&local_24);
       }
       iVar2 = iVar2 + 1;

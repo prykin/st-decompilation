@@ -24,6 +24,7 @@ FUN_00749106(AnonShape_00749106_79800343 *param_1,LPCRITICAL_SECTION lpCriticalS
          (LPCRITICAL_SECTION)
          (-(uint)(param_1 != (AnonShape_00749106_79800343 *)&DAT_0000000c) &
          (uint)&param_1->field_0x4);
+    /* ST_CALLSITE[00749137]: CALL dword ptr [0x0085bb8c] */
     EnterCriticalSection(lpCriticalSection_00);
     *param_3 = 0;
     param_3[1] = 0;
@@ -45,20 +46,24 @@ FUN_00749106(AnonShape_00749106_79800343 *param_1,LPCRITICAL_SECTION lpCriticalS
           param_1->field_003C = pvVar3;
           param_3[3] = pvVar3;
           param_1->field_0040 = 1;
+          /* ST_CALLSITE[007491B4]: CALL dword ptr [0x0085bb90] */
           LeaveCriticalSection(lpCriticalSection_00);
           uVar4 = 0;
         }
         else {
+          /* ST_CALLSITE[0074917C]: CALL dword ptr [0x0085bb90] */
           LeaveCriticalSection(lpCriticalSection_00);
           uVar4 = 0x80040210;
         }
       }
       else {
+        /* ST_CALLSITE[00749164]: CALL dword ptr [0x0085bb90] */
         LeaveCriticalSection(lpCriticalSection_00);
         uVar4 = 0x8004020f;
       }
     }
     else {
+      /* ST_CALLSITE[0074914E]: CALL dword ptr [0x0085bb90] */
       LeaveCriticalSection(lpCriticalSection_00);
       uVar4 = 0x8004020e;
     }

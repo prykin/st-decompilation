@@ -219,6 +219,7 @@ STAllPlayersC::FramePick
       if (local_38 != nullptr) {
         DArrayDestroy(local_38);
       }
+      /* ST_CALLSITE[00433617]: CALL 0x004027de; direct=004027DE STAllPlayersC::SelfCheckObjControl */
       SelfCheckObjControl(this);
       return;
     }
@@ -231,6 +232,7 @@ STAllPlayersC::FramePick
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   playerId = (char)param_1;
+  /* ST_CALLSITE[0043159E]: CALL 0x004028fb; direct=004028FB STAllPlayersC::GetGObjFromZone2 */
   GetGObjFromZone2(this,playerId,param_2,param_3,param_4,param_5,(int *)&local_10,(int *)&local_18,
                    (int *)&local_3c,(int *)&local_14,(int *)&local_1c,(int *)&local_40,
                    (int *)&local_34,(int *)&local_2c,(int *)&local_20,(int *)&local_28,
@@ -241,8 +243,10 @@ STAllPlayersC::FramePick
       iVar1 = g_packedRecords_A62x8[iVar4].field96_0x163;
       if (iVar1 == 0) {
 LAB_00431886:
+        /* ST_CALLSITE[0043188F]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_943 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
         if (local_EAX_943 < 1) goto cf_error_exit_004318A9;
+        /* ST_CALLSITE[0043189E]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,0,local_EAX_943);
 LAB_004318b5:
         g_packedRecords_A62x8[iVar4].field96_0x163 = 0x3c;
@@ -250,45 +254,59 @@ LAB_004318b5:
       else if (iVar1 == 0x3c) {
         if (param_6 == 1) {
           if (*(int *)&g_packedRecords_A62x8[iVar4].field97_0x167 == iVar4) {
+            /* ST_CALLSITE[004317AA]: CALL 0x004020d6; direct=004020D6 STAllPlayersC::CalibrateTmp */
             CalibrateTmp(this,playerId,0,0,&local_10->flags,nullptr,(int *)&local_44,
                          (int *)&local_48);
+            /* ST_CALLSITE[004317BC]: CALL 0x004027c0; direct=004027C0 STAllPlayersC::ResetActivityFromObjs */
             ResetActivityFromObjs(this,param_1,0x3c,local_44,0,0);
+            /* ST_CALLSITE[004317CC]: CALL 0x00403f0d; direct=00403F0D STAllPlayersC::DelObjsFromTmp */
             DelObjsFromTmp(this,param_1,0,0,local_44);
+            /* ST_CALLSITE[004317DC]: CALL 0x00405bbe; direct=00405BBE STAllPlayersC::AddObjsToTmp */
             AddObjsToTmp(this,param_1,0,0,local_48);
             DArrayDestroy(local_44);
             DArrayDestroy(local_48);
           }
         }
         else {
+          /* ST_CALLSITE[00431803]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_803 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
           if (local_EAX_803 < 1) {
             if (local_EAX_803 < 0) {
+              /* ST_CALLSITE[00431827]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
               PushTV(playerId,0);
               if (g_packedRecords_A62x8[iVar4].field105_0x177 == (int)playerId) {
+                /* ST_CALLSITE[0043184C]: CALL 0x004020d6; direct=004020D6 STAllPlayersC::CalibrateTmp */
                 CalibrateTmp(this,playerId,0,1,&local_10->flags,(int *)&local_24,nullptr,
                              nullptr);
+                /* ST_CALLSITE[0043185E]: CALL 0x004027c0; direct=004027C0 STAllPlayersC::ResetActivityFromObjs */
                 ResetActivityFromObjs(this,param_1,0x3c,local_24,0,0);
                 DArrayDestroy(local_24);
               }
               else {
+                /* ST_CALLSITE[00431879]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
                 ResetActivityFromTmp(this,playerId,0,1,0);
               }
               goto cf_error_exit_004318A9;
             }
           }
           else {
+            /* ST_CALLSITE[00431812]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
             ActivateTV(this,playerId,0,local_EAX_803);
           }
         }
       }
       else if (iVar1 == 0x1ae) {
         if (param_6 != 1) {
+          /* ST_CALLSITE[0043174C]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_620 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
           if (local_EAX_620 < 1) {
+            /* ST_CALLSITE[0043176A]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
             PushTV(playerId,0);
+            /* ST_CALLSITE[00431778]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
             ResetActivityFromTmp(this,playerId,0,1,0);
             goto cf_error_exit_004318A9;
           }
+          /* ST_CALLSITE[0043175B]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,0,local_EAX_620);
         }
       }
@@ -303,25 +321,33 @@ LAB_004318b5:
     else if (g_packedRecords_A62x8[iVar4].field200_0x203 == 1) {
       if (param_6 != 1) {
         g_packedRecords_A62x8[iVar4].field200_0x203 = 0;
+        /* ST_CALLSITE[0043161F]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
         ResetActivityFromTmp(this,playerId,1,0,0);
         iVar1 = g_packedRecords_A62x8[iVar4].field96_0x163;
         if (iVar1 == 0) goto LAB_00431886;
         if (iVar1 == 0x3c) {
+          /* ST_CALLSITE[004316B4]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_468 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
           if (local_EAX_468 < 0) {
+            /* ST_CALLSITE[004316D2]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
             PushTV(playerId,0);
 cf_error_exit_004318A9:
+            /* ST_CALLSITE[004318B0]: CALL 0x00405bbe; direct=00405BBE STAllPlayersC::AddObjsToTmp */
             AddObjsToTmp(this,param_1,0,0,local_10);
             goto LAB_004318b5;
           }
+          /* ST_CALLSITE[004316C3]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,0,local_EAX_468);
         }
         else if (iVar1 == 0x1ae) {
+          /* ST_CALLSITE[0043167A]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_410 = CheckTmps(playerId,0,0x3c,playerId,local_10,0);
           if (local_EAX_410 < 1) {
+            /* ST_CALLSITE[00431698]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
             PushTV(playerId,0);
             goto cf_error_exit_004318A9;
           }
+          /* ST_CALLSITE[00431689]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,0,local_EAX_410);
         }
         else {
@@ -355,6 +381,7 @@ cf_error_exit_004318A9:
     DArrayGetElement(local_34,0,&local_8);
     local_34->count = 0;
     Library::DKW::TBL::DArrayAppend(local_34,&local_8);
+    /* ST_CALLSITE[00431937]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,'\0',(ushort)local_8,CASE_3);
     if (pSVar5 == nullptr) {
       RaiseInternalException
@@ -368,33 +395,41 @@ cf_error_exit_004318A9:
       iVar4 = g_packedRecords_A62x8[iVar4].field96_0x163;
       sVar9 = (short)local_8;
       if (iVar4 == 0) {
+        /* ST_CALLSITE[00431C94]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_1725 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_1725 < 1) {
 cf_error_exit_00431A49:
+          /* ST_CALLSITE[00431A5C]: CALL 0x00403e31; direct=00403E31 STAllPlayersC::AddObjToTmp2 */
           AddObjToTmp2(this,playerId,0,0,pSVar5->field_0020,
                        STReplaceLowByte((uint32_t)(local_EAX_1725), (uint8_t)(*(undefined1 *)&pSVar5->field_0024)),local_8);
         }
         else {
+          /* ST_CALLSITE[00431CA7]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,0,local_EAX_1725);
         }
       }
       else if (iVar4 == 0x3c) {
+        /* ST_CALLSITE[00431C68]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_1928 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_1928 < 1) {
 LAB_00431c38:
+          /* ST_CALLSITE[00431C3D]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,0);
+          /* ST_CALLSITE[00431C4B]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
           ResetActivityFromTmp(this,playerId,0,1,0);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           local_EAX_1725 = extraout_EAX_00;
           goto cf_error_exit_00431A49;
         }
+        /* ST_CALLSITE[00431C77]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,0,local_EAX_1928);
       }
       else if (iVar4 == 0x1ae) {
+        /* ST_CALLSITE[00431C19]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_1849 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
@@ -402,6 +437,7 @@ LAB_00431c38:
           if (local_EAX_1849 < 0) goto LAB_00431c38;
         }
         else {
+          /* ST_CALLSITE[00431C28]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,0,local_EAX_1849);
         }
       }
@@ -416,34 +452,42 @@ LAB_00431c38:
     }
     else if (g_packedRecords_A62x8[iVar4].field200_0x203 == 1) {
       g_packedRecords_A62x8[iVar4].field200_0x203 = 0;
+      /* ST_CALLSITE[004319C9]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,playerId,1,0,0);
       iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field96_0x163 + local_4c);
       sVar9 = (short)local_8;
       if (iVar4 == 0) {
+        /* ST_CALLSITE[00431B9D]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_1725 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_1725 < 1) goto cf_error_exit_00431A49;
+        /* ST_CALLSITE[00431BB0]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,0,local_EAX_1725);
       }
       else if (iVar4 == 0x3c) {
+        /* ST_CALLSITE[00431B6D]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_1677 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_1677 < 1) {
 LAB_00431a3f:
+          /* ST_CALLSITE[00431A44]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,0);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           local_EAX_1725 = extraout_EAX;
           goto cf_error_exit_00431A49;
         }
+        /* ST_CALLSITE[00431B80]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,0,local_EAX_1677);
       }
       else if (iVar4 == 0x1ae) {
+        /* ST_CALLSITE[00431A29]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_1353 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_1353 < 0) goto LAB_00431a3f;
+        /* ST_CALLSITE[00431A38]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,0,local_EAX_1353);
       }
       else {
@@ -476,6 +520,7 @@ LAB_00431a3f:
     DArrayGetElement(local_28,0,&local_8);
     local_28->count = 0;
     Library::DKW::TBL::DArrayAppend(local_28,&local_8);
+    /* ST_CALLSITE[00431ADA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_2);
     if (pSVar5 == nullptr) {
       RaiseInternalException
@@ -487,15 +532,18 @@ LAB_00431a3f:
     local_4c = iVar4 * 0xa62;
     if (g_packedRecords_A62x8[iVar4].field200_0x203 == 0) {
       g_packedRecords_A62x8[iVar4].field200_0x203 = 1;
+      /* ST_CALLSITE[00431DE1]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,playerId,0,0,0);
       iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
       sVar9 = (short)local_8;
       if (iVar4 < 0x19b) {
         if (iVar4 == 0x19a) {
+          /* ST_CALLSITE[00431E55]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_2421 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           if (local_EAX_2421 < 1) goto LAB_00431ec7;
+          /* ST_CALLSITE[00431E64]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_2421);
         }
         else {
@@ -503,22 +551,26 @@ LAB_00431a3f:
             if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00431e9e;
             goto LAB_00431e77;
           }
+          /* ST_CALLSITE[00431E25]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_2373 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX;
           if (local_EAX_2373 < 1) goto LAB_00431ed1;
+          /* ST_CALLSITE[00431E38]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_2373);
         }
       }
       else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00431e9e:
+        /* ST_CALLSITE[00431EB1]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_2513 =
              CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_2513 < 0) {
 LAB_00431ec7:
+          /* ST_CALLSITE[00431ECC]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,1);
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_00;
@@ -526,9 +578,11 @@ LAB_00431ed1:
           uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
           uVar8 = pSVar5->field_0020;
 LAB_00431edd:
+          /* ST_CALLSITE[00431EE4]: CALL 0x00403e31; direct=00403E31 STAllPlayersC::AddObjToTmp2 */
           AddObjToTmp2(this,playerId,1,0,uVar8,uVar6,local_8);
         }
         else {
+          /* ST_CALLSITE[00431EC0]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_2513);
         }
       }
@@ -547,12 +601,15 @@ LAB_00431e77:
       sVar9 = (short)local_8;
       if (iVar4 < 0x19b) {
         if (iVar4 == 0x19a) {
+          /* ST_CALLSITE[00431D1D]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_2109 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           if (local_EAX_2109 < 1) {
 LAB_00431da2:
+            /* ST_CALLSITE[00431DA7]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
             PushTV(playerId,1);
+            /* ST_CALLSITE[00431DB5]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_EDX_00;
@@ -561,6 +618,7 @@ LAB_00431dba:
             uVar8 = pSVar5->field_0020;
             goto LAB_00431edd;
           }
+          /* ST_CALLSITE[00431D2C]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_2109);
         }
         else {
@@ -568,17 +626,20 @@ LAB_00431dba:
             if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00431d70;
             goto LAB_00431d42;
           }
+          /* ST_CALLSITE[00431CED]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_2061 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_EDX;
           if (local_EAX_2061 < 1) goto LAB_00431dba;
+          /* ST_CALLSITE[00431D00]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_2061);
         }
       }
       else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00431d70:
+        /* ST_CALLSITE[00431D83]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_2211 =
              CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
@@ -586,6 +647,7 @@ LAB_00431d70:
           if (local_EAX_2211 < 0) goto LAB_00431da2;
         }
         else {
+          /* ST_CALLSITE[00431D92]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_2211);
         }
       }
@@ -620,6 +682,7 @@ LAB_00431d42:
     DArrayGetElement(local_30,0,&local_8);
     local_30->count = 0;
     Library::DKW::TBL::DArrayAppend(local_30,&local_8);
+    /* ST_CALLSITE[00431F61]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_5);
     if (pSVar5 == nullptr) {
       RaiseInternalException
@@ -631,15 +694,18 @@ LAB_00431d42:
     local_4c = iVar4 * 0xa62;
     if (g_packedRecords_A62x8[iVar4].field200_0x203 == 0) {
       g_packedRecords_A62x8[iVar4].field200_0x203 = 1;
+      /* ST_CALLSITE[0043210D]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,playerId,0,0,0);
       iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
       sVar9 = (short)local_8;
       if (iVar4 < 0x19b) {
         if (iVar4 == 0x19a) {
+          /* ST_CALLSITE[00432181]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_3233 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           if (local_EAX_3233 < 1) goto LAB_004321f3;
+          /* ST_CALLSITE[00432190]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_3233);
         }
         else {
@@ -647,20 +713,24 @@ LAB_00431d42:
             if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_004321ca;
             goto LAB_004321a3;
           }
+          /* ST_CALLSITE[00432151]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_3185 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           if (local_EAX_3185 < 1) goto LAB_004321fd;
+          /* ST_CALLSITE[00432164]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_3185);
         }
       }
       else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_004321ca:
+        /* ST_CALLSITE[004321DD]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_3325 =
              CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_3325 < 0) {
 LAB_004321f3:
+          /* ST_CALLSITE[004321F8]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           local_EAX_3185 = extraout_EAX_01;
@@ -668,9 +738,11 @@ LAB_004321fd:
           uVar6 = STReplaceLowByte((uint32_t)(local_EAX_3185), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
           uVar8 = pSVar5->field_0020;
 LAB_00432209:
+          /* ST_CALLSITE[00432210]: CALL 0x00403e31; direct=00403E31 STAllPlayersC::AddObjToTmp2 */
           AddObjToTmp2(this,playerId,1,0,uVar8,uVar6,local_8);
         }
         else {
+          /* ST_CALLSITE[004321EC]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_3325);
         }
       }
@@ -689,12 +761,15 @@ LAB_004321a3:
       sVar9 = (short)local_8;
       if (iVar4 < 0x19b) {
         if (iVar4 == 0x19a) {
+          /* ST_CALLSITE[00432049]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_2921 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           if (local_EAX_2921 < 1) {
 LAB_004320ce:
+            /* ST_CALLSITE[004320D3]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
             PushTV(playerId,1);
+            /* ST_CALLSITE[004320E1]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_ECX_02;
@@ -703,6 +778,7 @@ LAB_004320e6:
             uVar8 = pSVar5->field_0020;
             goto LAB_00432209;
           }
+          /* ST_CALLSITE[00432058]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_2921);
         }
         else {
@@ -710,17 +786,20 @@ LAB_004320e6:
             if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_0043209c;
             goto LAB_0043206e;
           }
+          /* ST_CALLSITE[00432019]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_2873 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_01;
           if (local_EAX_2873 < 1) goto LAB_004320e6;
+          /* ST_CALLSITE[0043202C]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_2873);
         }
       }
       else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_0043209c:
+        /* ST_CALLSITE[004320AF]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_3023 =
              CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
@@ -728,6 +807,7 @@ LAB_0043209c:
           if (local_EAX_3023 < 0) goto LAB_004320ce;
         }
         else {
+          /* ST_CALLSITE[004320BE]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_3023);
         }
       }
@@ -764,17 +844,22 @@ LAB_0043206e:
     Library::DKW::TBL::DArrayAppend(local_14,&local_8);
     if (g_packedRecords_A62x8[playerId].field200_0x203 == 0) {
       g_packedRecords_A62x8[playerId].field200_0x203 = 1;
+      /* ST_CALLSITE[00432464]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,playerId,0,0,0);
       iVar4 = g_packedRecords_A62x8[playerId].field149_0x1b3;
       if (iVar4 < 0x19b) {
         if (iVar4 == 0x19a) {
+          /* ST_CALLSITE[004324DA]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_4090 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
           if (-1 < local_EAX_4090) {
+            /* ST_CALLSITE[004324E9]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
             ActivateTV(this,playerId,1,local_EAX_4090);
             goto LAB_00432582;
           }
+          /* ST_CALLSITE[004324F8]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,1);
 cf_error_exit_0043256B:
+          /* ST_CALLSITE[00432573]: CALL 0x00404098; direct=00404098 STAllPlayersC::AddObjToTmp */
           AddObjToTmp(this,playerId,1,0,playerId,local_8);
         }
         else {
@@ -782,8 +867,10 @@ cf_error_exit_0043256B:
             if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00432536;
             goto LAB_0043250f;
           }
+          /* ST_CALLSITE[004324A7]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_4039 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
           if (local_EAX_4039 < 1) goto cf_error_exit_0043256B;
+          /* ST_CALLSITE[004324B6]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_4039);
         }
 LAB_00432578:
@@ -791,11 +878,14 @@ LAB_00432578:
       }
       else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00432536:
+        /* ST_CALLSITE[00432547]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_4199 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
         if (local_EAX_4199 < 1) {
+          /* ST_CALLSITE[00432562]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,1);
           goto cf_error_exit_0043256B;
         }
+        /* ST_CALLSITE[00432556]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,1,local_EAX_4199);
       }
       else {
@@ -812,30 +902,38 @@ LAB_0043250f:
       iVar4 = g_packedRecords_A62x8[playerId].field149_0x1b3;
       if (iVar4 < 0x19b) {
         if (iVar4 == 0x19a) {
+          /* ST_CALLSITE[00432346]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_3686 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
           if (local_EAX_3686 < 1) {
             if (local_EAX_3686 < 0) {
+              /* ST_CALLSITE[0043236A]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
               PushTV(playerId,1);
               if (g_packedRecords_A62x8[playerId].field158_0x1c7 == (int)playerId) {
+                /* ST_CALLSITE[0043238F]: CALL 0x004020d6; direct=004020D6 STAllPlayersC::CalibrateTmp */
                 CalibrateTmp(this,playerId,1,1,&local_14->flags,(int *)&local_24,nullptr,
                              nullptr);
+                /* ST_CALLSITE[004323A4]: CALL 0x004027c0; direct=004027C0 STAllPlayersC::ResetActivityFromObjs */
                 ResetActivityFromObjs(this,param_1,0x19a,local_24,0,0);
                 DArrayDestroy(local_24);
               }
               else {
+                /* ST_CALLSITE[004323C2]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
                 ResetActivityFromTmp(this,playerId,1,1,0);
               }
               goto cf_error_exit_0043256B;
             }
           }
           else {
+            /* ST_CALLSITE[00432355]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
             ActivateTV(this,playerId,1,local_EAX_3686);
           }
         }
         else {
           if (iVar4 == 0) {
+            /* ST_CALLSITE[00432318]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
             local_EAX_3640 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
             if (0 < local_EAX_3640) {
+              /* ST_CALLSITE[0043232B]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
               ActivateTV(this,playerId,1,local_EAX_3640);
               goto LAB_00432578;
             }
@@ -854,12 +952,16 @@ LAB_004323dc:
       else {
         if ((iVar4 != 0x1a4) && (iVar4 != 0x1b8)) goto LAB_004323dc;
 LAB_0043240a:
+        /* ST_CALLSITE[0043241B]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_3899 = CheckTmps(playerId,1,0x19a,playerId,local_14,0);
         if (local_EAX_3899 < 1) {
+          /* ST_CALLSITE[00432439]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,1);
+          /* ST_CALLSITE[00432447]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
           ResetActivityFromTmp(this,playerId,1,1,0);
           goto cf_error_exit_0043256B;
         }
+        /* ST_CALLSITE[0043242A]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,1,local_EAX_3899);
       }
     }
@@ -885,6 +987,7 @@ LAB_00432582:
     DArrayGetElement(local_20,0,&local_8);
     local_20->count = 0;
     Library::DKW::TBL::DArrayAppend(local_20,&local_8);
+    /* ST_CALLSITE[004325FA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_4);
     if (pSVar5 == nullptr) {
       RaiseInternalException
@@ -896,15 +999,18 @@ LAB_00432582:
     local_4c = iVar4 * 0xa62;
     if (g_packedRecords_A62x8[iVar4].field200_0x203 == 0) {
       g_packedRecords_A62x8[iVar4].field200_0x203 = 1;
+      /* ST_CALLSITE[004327A5]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,playerId,0,0,0);
       iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
       sVar9 = (short)local_8;
       if (iVar4 < 0x19b) {
         if (iVar4 == 0x19a) {
+          /* ST_CALLSITE[00432819]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_4921 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           if (local_EAX_4921 < 1) goto LAB_0043288b;
+          /* ST_CALLSITE[00432828]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_4921);
         }
         else {
@@ -912,22 +1018,26 @@ LAB_00432582:
             if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00432862;
             goto LAB_0043283b;
           }
+          /* ST_CALLSITE[004327E9]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_4873 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_03;
           if (local_EAX_4873 < 1) goto LAB_00432895;
+          /* ST_CALLSITE[004327FC]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_4873);
         }
       }
       else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00432862:
+        /* ST_CALLSITE[00432875]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_5013 =
              CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_5013 < 0) {
 LAB_0043288b:
+          /* ST_CALLSITE[00432890]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,1);
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_04;
@@ -935,9 +1045,11 @@ LAB_00432895:
           uVar6 = STReplaceLowByte((uint32_t)(uVar7), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
           uVar8 = pSVar5->field_0020;
 LAB_004328a1:
+          /* ST_CALLSITE[004328A8]: CALL 0x00403e31; direct=00403E31 STAllPlayersC::AddObjToTmp2 */
           AddObjToTmp2(this,playerId,1,0,uVar8,uVar6,local_8);
         }
         else {
+          /* ST_CALLSITE[00432884]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_5013);
         }
       }
@@ -956,12 +1068,15 @@ LAB_0043283b:
       sVar9 = (short)local_8;
       if (iVar4 < 0x19b) {
         if (iVar4 == 0x19a) {
+          /* ST_CALLSITE[004326E1]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_4609 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           if (local_EAX_4609 < 1) {
 LAB_00432766:
+            /* ST_CALLSITE[0043276B]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
             PushTV(playerId,1);
+            /* ST_CALLSITE[00432779]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_EDX_02;
@@ -970,6 +1085,7 @@ LAB_0043277e:
             uVar8 = pSVar5->field_0020;
             goto LAB_004328a1;
           }
+          /* ST_CALLSITE[004326F0]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_4609);
         }
         else {
@@ -977,17 +1093,20 @@ LAB_0043277e:
             if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00432734;
             goto LAB_00432706;
           }
+          /* ST_CALLSITE[004326B1]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_4561 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_EDX_01;
           if (local_EAX_4561 < 1) goto LAB_0043277e;
+          /* ST_CALLSITE[004326C4]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_4561);
         }
       }
       else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00432734:
+        /* ST_CALLSITE[00432747]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_4711 =
              CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
@@ -995,6 +1114,7 @@ LAB_00432734:
           if (local_EAX_4711 < 0) goto LAB_00432766;
         }
         else {
+          /* ST_CALLSITE[00432756]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_4711);
         }
       }
@@ -1029,6 +1149,7 @@ LAB_00432706:
     DArrayGetElement(local_38,0,&local_8);
     local_38->count = 0;
     Library::DKW::TBL::DArrayAppend(local_38,&local_8);
+    /* ST_CALLSITE[00432925]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_6);
     if (pSVar5 == nullptr) {
       RaiseInternalException
@@ -1040,15 +1161,18 @@ LAB_00432706:
     local_4c = iVar4 * 0xa62;
     if (g_packedRecords_A62x8[iVar4].field200_0x203 == 0) {
       g_packedRecords_A62x8[iVar4].field200_0x203 = 1;
+      /* ST_CALLSITE[00432AD1]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,playerId,0,0,0);
       iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field149_0x1b3 + local_4c);
       sVar9 = (short)local_8;
       if (iVar4 < 0x19b) {
         if (iVar4 == 0x19a) {
+          /* ST_CALLSITE[00432B45]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_5733 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           if (local_EAX_5733 < 1) goto LAB_00432bb7;
+          /* ST_CALLSITE[00432B54]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_5733);
         }
         else {
@@ -1056,20 +1180,24 @@ LAB_00432706:
             if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00432b8e;
             goto LAB_00432b67;
           }
+          /* ST_CALLSITE[00432B15]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_5685 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           if (local_EAX_5685 < 1) goto LAB_00432bc1;
+          /* ST_CALLSITE[00432B28]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_5685);
         }
       }
       else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00432b8e:
+        /* ST_CALLSITE[00432BA1]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_5825 =
              CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_5825 < 0) {
 LAB_00432bb7:
+          /* ST_CALLSITE[00432BBC]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           local_EAX_5685 = extraout_EAX_02;
@@ -1077,9 +1205,11 @@ LAB_00432bc1:
           uVar6 = STReplaceLowByte((uint32_t)(local_EAX_5685), (uint8_t)(*(undefined1 *)&pSVar5->field_0024));
           uVar8 = pSVar5->field_0020;
 LAB_00432bcd:
+          /* ST_CALLSITE[00432BD4]: CALL 0x00403e31; direct=00403E31 STAllPlayersC::AddObjToTmp2 */
           AddObjToTmp2(this,playerId,1,0,uVar8,uVar6,local_8);
         }
         else {
+          /* ST_CALLSITE[00432BB0]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_5825);
         }
       }
@@ -1098,12 +1228,15 @@ LAB_00432b67:
       sVar9 = (short)local_8;
       if (iVar4 < 0x19b) {
         if (iVar4 == 0x19a) {
+          /* ST_CALLSITE[00432A0D]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_5421 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           if (local_EAX_5421 < 1) {
 LAB_00432a92:
+            /* ST_CALLSITE[00432A97]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
             PushTV(playerId,1);
+            /* ST_CALLSITE[00432AA5]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
             ResetActivityFromTmp(this,playerId,1,1,0);
             /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             uVar7 = extraout_ECX_06;
@@ -1112,6 +1245,7 @@ LAB_00432aaa:
             uVar8 = pSVar5->field_0020;
             goto LAB_00432bcd;
           }
+          /* ST_CALLSITE[00432A1C]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_5421);
         }
         else {
@@ -1119,17 +1253,20 @@ LAB_00432aaa:
             if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_00432a60;
             goto LAB_00432a32;
           }
+          /* ST_CALLSITE[004329DD]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_5373 =
                CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                          sVar9);
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar7 = extraout_ECX_05;
           if (local_EAX_5373 < 1) goto LAB_00432aaa;
+          /* ST_CALLSITE[004329F0]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_5373);
         }
       }
       else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00432a60:
+        /* ST_CALLSITE[00432A73]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_5523 =
              CheckTmps(playerId,1,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
@@ -1137,6 +1274,7 @@ LAB_00432a60:
           if (local_EAX_5523 < 0) goto LAB_00432a92;
         }
         else {
+          /* ST_CALLSITE[00432A82]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_5523);
         }
       }
@@ -1178,36 +1316,47 @@ LAB_00432a32:
       iVar4 = g_packedRecords_A62x8[playerId].field96_0x163;
       if (iVar4 == 0) {
 LAB_00432e7f:
+        /* ST_CALLSITE[00432E90]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_6576 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
         if (local_EAX_6576 < 1) {
 cf_error_exit_00432EAE:
+          /* ST_CALLSITE[00432EB5]: CALL 0x00404098; direct=00404098 STAllPlayersC::AddObjToTmp */
           AddObjToTmp(this,playerId,0,0,local_c[0],local_8);
         }
         else {
+          /* ST_CALLSITE[00432E9F]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,0,local_EAX_6576);
         }
         g_packedRecords_A62x8[playerId].field96_0x163 = 0x3c;
       }
       else if (iVar4 == 0x3c) {
+        /* ST_CALLSITE[00432E45]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_6501 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
         if (local_EAX_6501 < 1) {
           if (local_EAX_6501 < 0) {
+            /* ST_CALLSITE[00432E62]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
             PushTV(playerId,0);
+            /* ST_CALLSITE[00432E70]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
             ResetActivityFromTmp(this,playerId,0,1,0);
             goto cf_error_exit_00432EAE;
           }
         }
         else {
+          /* ST_CALLSITE[00432E54]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,0,local_EAX_6501);
         }
       }
       else if (iVar4 == 0x1ae) {
+        /* ST_CALLSITE[00432DF9]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_6425 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
         if (local_EAX_6425 < 1) {
+          /* ST_CALLSITE[00432E17]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,0);
+          /* ST_CALLSITE[00432E25]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
           ResetActivityFromTmp(this,playerId,0,1,0);
           goto cf_error_exit_00432EAE;
         }
+        /* ST_CALLSITE[00432E08]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,0,local_EAX_6425);
       }
       else {
@@ -1221,23 +1370,30 @@ cf_error_exit_00432EAE:
     }
     else if (g_packedRecords_A62x8[playerId].field200_0x203 == 1) {
       g_packedRecords_A62x8[playerId].field200_0x203 = 0;
+      /* ST_CALLSITE[00432CCD]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,playerId,1,0,0);
       iVar4 = g_packedRecords_A62x8[playerId].field96_0x163;
       if (iVar4 == 0) goto LAB_00432e7f;
       if (iVar4 == 0x3c) {
+        /* ST_CALLSITE[00432D6C]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_6284 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
         if (local_EAX_6284 < 0) {
+          /* ST_CALLSITE[00432D8A]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,0);
           goto cf_error_exit_00432EAE;
         }
+        /* ST_CALLSITE[00432D7B]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,0,local_EAX_6284);
       }
       else if (iVar4 == 0x1ae) {
+        /* ST_CALLSITE[00432D2B]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_6219 = CheckTmps(playerId,0,0x3c,local_c[0],local_18,0);
         if (local_EAX_6219 < 1) {
+          /* ST_CALLSITE[00432D49]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,0);
           goto cf_error_exit_00432EAE;
         }
+        /* ST_CALLSITE[00432D3A]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,0,local_EAX_6219);
       }
       else {
@@ -1270,6 +1426,7 @@ cf_error_exit_00432EAE:
     DArrayGetElement(local_2c,0,&local_8);
     local_2c->count = 0;
     Library::DKW::TBL::DArrayAppend(local_2c,&local_8);
+    /* ST_CALLSITE[00432F3C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,'\0',(ushort)local_8,CASE_3);
     if (pSVar5 == nullptr) {
       RaiseInternalException
@@ -1283,33 +1440,41 @@ cf_error_exit_00432EAE:
       iVar4 = g_packedRecords_A62x8[iVar4].field96_0x163;
       sVar9 = (short)local_8;
       if (iVar4 == 0) {
+        /* ST_CALLSITE[00433287]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_7344 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_7344 < 1) {
 cf_error_exit_00433050:
+          /* ST_CALLSITE[00433063]: CALL 0x00403e31; direct=00403E31 STAllPlayersC::AddObjToTmp2 */
           AddObjToTmp2(this,playerId,0,0,pSVar5->field_0020,
                        STReplaceLowByte((uint32_t)(local_EAX_7344), (uint8_t)(*(undefined1 *)&pSVar5->field_0024)),local_8);
         }
         else {
+          /* ST_CALLSITE[0043329A]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,0,local_EAX_7344);
         }
       }
       else if (iVar4 == 0x3c) {
+        /* ST_CALLSITE[0043325B]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_7547 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_7547 < 1) {
 LAB_0043322b:
+          /* ST_CALLSITE[00433230]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,0);
+          /* ST_CALLSITE[0043323E]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
           ResetActivityFromTmp(this,playerId,0,1,0);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           local_EAX_7344 = extraout_EAX_04;
           goto cf_error_exit_00433050;
         }
+        /* ST_CALLSITE[0043326A]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,0,local_EAX_7547);
       }
       else if (iVar4 == 0x1ae) {
+        /* ST_CALLSITE[0043320C]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_7468 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
@@ -1317,6 +1482,7 @@ LAB_0043322b:
           if (local_EAX_7468 < 0) goto LAB_0043322b;
         }
         else {
+          /* ST_CALLSITE[0043321B]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,0,local_EAX_7468);
         }
       }
@@ -1331,30 +1497,37 @@ LAB_0043322b:
     }
     else if (g_packedRecords_A62x8[iVar4].field200_0x203 == 1) {
       g_packedRecords_A62x8[iVar4].field200_0x203 = 0;
+      /* ST_CALLSITE[00432FCE]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,playerId,1,0,0);
       iVar4 = *(int *)((int)&g_packedRecords_A62x8[0].field96_0x163 + local_4c);
       sVar9 = (short)local_8;
       if (iVar4 == 0) {
+        /* ST_CALLSITE[00433190]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_7344 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_7344 < 1) goto cf_error_exit_00433050;
+        /* ST_CALLSITE[004331A3]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,0,local_EAX_7344);
       }
       else if (iVar4 == 0x3c) {
+        /* ST_CALLSITE[00433160]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_7296 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
         if (local_EAX_7296 < 1) {
 LAB_00433046:
+          /* ST_CALLSITE[0043304B]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           PushTV(playerId,0);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           local_EAX_7344 = extraout_EAX_03;
           goto cf_error_exit_00433050;
         }
+        /* ST_CALLSITE[00433173]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,0,local_EAX_7296);
       }
       else if (iVar4 == 0x1ae) {
+        /* ST_CALLSITE[0043302E]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_6990 =
              CheckTmps(playerId,0,pSVar5->field_0020,*(char *)&pSVar5->field_0024,nullptr,
                        sVar9);
@@ -1362,6 +1535,7 @@ LAB_00433046:
           if (local_EAX_6990 < 0) goto LAB_00433046;
         }
         else {
+          /* ST_CALLSITE[0043303D]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,0,local_EAX_6990);
         }
       }
@@ -1411,13 +1585,17 @@ LAB_00433046:
     iVar4 = g_packedRecords_A62x8[playerId].field149_0x1b3;
     if (iVar4 < 0x19b) {
       if (iVar4 == 0x19a) {
+        /* ST_CALLSITE[004332E5]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_7685 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
         if (0 < local_EAX_7685) {
+          /* ST_CALLSITE[004332F4]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
           ActivateTV(this,playerId,1,local_EAX_7685);
           goto cf_error_exit_004334F5;
         }
         if (-1 < local_EAX_7685) goto cf_error_exit_004334F5;
+        /* ST_CALLSITE[00433309]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
         PushTV(playerId,1);
+        /* ST_CALLSITE[00433317]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
         ResetActivityFromTmp(this,playerId,1,1,0);
         goto cf_error_exit_004334DF;
       }
@@ -1426,12 +1604,16 @@ LAB_00433046:
     }
     else if ((iVar4 == 0x1a4) || (iVar4 == 0x1b8)) {
 LAB_00433363:
+      /* ST_CALLSITE[00433377]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
       local_EAX_7831 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
       if (0 < local_EAX_7831) {
+        /* ST_CALLSITE[00433386]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,1,local_EAX_7831);
         goto cf_error_exit_004334F5;
       }
+      /* ST_CALLSITE[00433395]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
       PushTV(playerId,1);
+      /* ST_CALLSITE[004333A3]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
       ResetActivityFromTmp(this,playerId,1,1,0);
       goto cf_error_exit_004334DF;
     }
@@ -1444,15 +1626,19 @@ LAB_00433363:
     goto cf_error_exit_004334F5;
   }
   g_packedRecords_A62x8[playerId].field200_0x203 = 1;
+  /* ST_CALLSITE[004333C0]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
   ResetActivityFromTmp(this,playerId,0,0,0);
   iVar4 = g_packedRecords_A62x8[playerId].field149_0x1b3;
   if (iVar4 < 0x19b) {
     if (iVar4 == 0x19a) {
+      /* ST_CALLSITE[00433443]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
       local_EAX_8035 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
       if (-1 < local_EAX_8035) {
+        /* ST_CALLSITE[00433452]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
         ActivateTV(this,playerId,1,local_EAX_8035);
         goto cf_error_exit_004334F5;
       }
+      /* ST_CALLSITE[00433461]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
       PushTV(playerId,1);
       goto cf_error_exit_004334DF;
     }
@@ -1461,8 +1647,10 @@ LAB_00433363:
       goto LAB_0043347c;
     }
 LAB_004333f5:
+    /* ST_CALLSITE[00433409]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
     local_EAX_7977 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
     if (local_EAX_7977 < 1) goto cf_error_exit_004334DF;
+    /* ST_CALLSITE[00433418]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
     ActivateTV(this,playerId,1,local_EAX_7977);
   }
   else {
@@ -1477,13 +1665,17 @@ LAB_0043347c:
       goto cf_error_exit_004334F5;
     }
 LAB_004334a3:
+    /* ST_CALLSITE[004334B7]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
     local_EAX_8151 = CheckTmps(playerId,1,0x19a,local_c[0],local_1c,0);
     if (0 < local_EAX_8151) {
+      /* ST_CALLSITE[004334C6]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
       ActivateTV(this,playerId,1,local_EAX_8151);
       goto cf_error_exit_004334F5;
     }
+    /* ST_CALLSITE[004334D2]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
     PushTV(playerId,1);
 cf_error_exit_004334DF:
+    /* ST_CALLSITE[004334E6]: CALL 0x00404098; direct=00404098 STAllPlayersC::AddObjToTmp */
     AddObjToTmp(this,playerId,1,0,local_c[0],local_8);
   }
   g_packedRecords_A62x8[playerId].field149_0x1b3 = 0x19a;

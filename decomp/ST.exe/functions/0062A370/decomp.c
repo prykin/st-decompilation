@@ -67,6 +67,7 @@ int __thiscall STParticleC::sub_0062A370(STParticleC *this,int param_1)
   if (uVar2 == 2) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((this->field_00EB != nullptr) &&
+       /* ST_CALLSITE[0062A58F]: CALL dword ptr [EAX + 0xe0] */
        (iVar3 = (**(code **)(this->field_00EB->field_0000 + 0xe0))
                           (this->field_00EF,(int)&param_1 + 2,&local_6,&local_8,&local_24),
        iVar3 == 0)) {

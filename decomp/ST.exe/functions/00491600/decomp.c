@@ -13,6 +13,7 @@ void __fastcall FUN_00491600(AnonShape_00491600_23458133 *param_1)
   int iVar2;
   STMessage local_24;
 
+  /* ST_CALLSITE[00491617]: CALL dword ptr [EAX + 0x100] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(param_1->field_0000 + 0x100))(param_1->field_01D1 | 0xd);
   thunk_FUN_00495ff0(param_1->field_005B,param_1->field_005D,param_1->field_005F,param_1->field_008E
@@ -33,6 +34,7 @@ void __fastcall FUN_00491600(AnonShape_00491600_23458133 *param_1)
     pAVar1 = param_1->field_05A6;
     local_24.arg1.words.low = pAVar1->field_0024;
     local_24.arg1.words.high = pAVar1->field_0032;
+    /* ST_CALLSITE[004916CB]: CALL dword ptr [EDX] */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;

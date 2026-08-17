@@ -43,11 +43,13 @@ undefined4 __thiscall STColl3C::sub_005FA8B0(STColl3C *this,int *param_1,int *pa
   else {
     uVar6 = local_10;
     if ((*(int *)&this_00->field_0x20 == 1000) &&
+       /* ST_CALLSITE[005FA937]: CALL dword ptr [EAX + 0x2c] */
        (dVar4 = this_00->slot_2C(), uVar6 = local_10, dVar4 == 0x6e)) {
       uVar6 = 1;
     }
   }
   if (this_00 != nullptr) {
+    /* ST_CALLSITE[005FA987]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0(this_00,&local_6,&local_8,&local_a);
     *param_1 = (int)local_6;
     *param_2 = (int)local_8;

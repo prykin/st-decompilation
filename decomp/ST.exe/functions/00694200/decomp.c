@@ -21,7 +21,7 @@ int __thiscall FUN_00694200(void *this,uint param_1)
     }
     iVar1 = thunk_FUN_00693e60(this,STField<int>(this,0x199d));
     if (iVar1 == 0) break;
-    if (*(byte *)(iVar1 + 0x23) == param_1) {
+    if (((byte *)iVar1)[0x23] == param_1) {
       return iVar1;
     }
   }

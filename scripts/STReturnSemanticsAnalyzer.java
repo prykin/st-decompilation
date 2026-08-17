@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,6 +28,7 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
@@ -37,7 +39,13 @@ import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
+import ghidra.program.model.listing.CommentType;
+import ghidra.program.model.pcode.DataTypeSymbol;
+import ghidra.program.model.pcode.HighFunction;
+import ghidra.program.model.pcode.HighFunctionDBUtil;
+import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.Reference;
+import ghidra.program.model.symbol.Symbol;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.StackReference;
 
@@ -48,6 +56,9 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
     private static final int RETURN_USE_NODE_LIMIT = 192;
     private final List<Failure> failures = new ArrayList<>();
     private final Map<Address, ReturnUse> returnUses = new HashMap<>();
+    private final Map<Address, ParameterReturn> returnedPointerParameterCache =
+        new HashMap<>();
+    private final Set<Address> returnedPointerParameterMisses = new HashSet<>();
     private boolean repairOnly;
 
     @Override
@@ -146,10 +157,28 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                     "integer transform of that value" +
                     observedEvidence(observed));
 
+        RoundTripReturn roundTrip = mutable &&
+            (genericUnknown(currentType) || currentType.equals("/void") ||
+                hasMarker(function, "pointer_producer_argument_roundtrip")) &&
+            observed != null && observed.used >= 2 && observed.unknown == 0 ?
+                exactPointerProducerRoundTripReturn(function) : null;
+        boolean roundTripOverrideRepair = roundTrip != null &&
+            needsRoundTripCallOverride(function, roundTrip);
+        if (roundTrip != null &&
+                (!roundTrip.type.equals(currentType) || roundTripOverrideRepair))
+            return roundTripRow(function, currentType, roundTrip,
+                function.hasNoReturn(), false, true,
+                "pointer_producer_argument_roundtrip", "high",
+                "every reachable RET carries the same trusted pointer-producer ABI " +
+                    roundTrip.type + "; at least one path passes that exact live EAX " +
+                    "value into a pointer parameter which the helper's complete machine " +
+                    "CFG returns unchanged in EAX (roundtrip_calls=" +
+                    roundTrip.roundTripCalls + ")" + observedEvidence(observed));
+
         ParameterReturn returnedParameter = mutable &&
             (genericUnknown(currentType) || currentType.equals("/void")) &&
             observed != null && observed.used >= 2 && observed.unknown == 0 ?
-                exactReturnedPointerParameter(function) : null;
+                cachedReturnedPointerParameter(function) : null;
         if (returnedParameter != null)
             return row(function, currentType, returnedParameter.type,
                 function.hasNoReturn(), false, true,
@@ -462,6 +491,219 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
         Parameter parameter = pointerParameters.get(ordinal);
         return new ParameterReturn(ordinal, parameter.getName(),
             typeSpec(parameter.getFormalDataType()));
+    }
+
+    private ParameterReturn cachedReturnedPointerParameter(Function function) {
+        Address address = function.getEntryPoint();
+        ParameterReturn cached = returnedPointerParameterCache.get(address);
+        if (cached != null) return cached;
+        if (returnedPointerParameterMisses.contains(address)) return null;
+        ParameterReturn result = exactReturnedPointerParameter(function);
+        if (result == null) returnedPointerParameterMisses.add(address);
+        else returnedPointerParameterCache.put(address, result);
+        return result;
+    }
+
+    /**
+     * Recover a source-level pointer return across a void-looking copy/initialization helper
+     * without changing that helper's C ABI.  The anchor is a trusted pointer producer (for
+     * example a verified allocator), not the generic signatures currently assigned to either
+     * function.  A helper call preserves the pointer state only when one of its exact stack
+     * arguments is the live EAX value and the helper's complete CFG returns that same pointer
+     * parameter in full EAX on every RET.
+     */
+    private RoundTripReturn exactPointerProducerRoundTripReturn(Function function) {
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null || function.getBody().getNumAddresses() > 0x4000)
+            return null;
+        int totalReturns = 0;
+        InstructionIterator count = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (count.hasNext())
+            if (count.next().getMnemonicString().toUpperCase(Locale.ROOT)
+                    .startsWith("RET")) totalReturns++;
+        if (totalReturns == 0) return null;
+
+        Deque<RoundTripState> pending = new ArrayDeque<>();
+        pending.add(new RoundTripState(entry.getAddress(), "", 0));
+        Set<RoundTripState> visited = new HashSet<>();
+        Set<Address> reachedReturns = new HashSet<>();
+        Set<String> returnedTypes = new HashSet<>();
+        Map<Address, Integer> roundTripSites = new TreeMap<>();
+        int maximumRoundTrips = 0;
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            RoundTripState state = pending.removeFirst();
+            if (!visited.add(state) || ++nodes > 65536) continue;
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (instruction == null ||
+                    !function.getBody().contains(instruction.getAddress())) return null;
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String type = state.type;
+            int roundTrips = state.roundTripCalls;
+            if ("CALL".equals(mnemonic)) {
+                String produced = trustedRoundTripPointerProducer(instruction);
+                if (!produced.isBlank()) type = produced;
+                else if (!type.isBlank()) {
+                    int returnedOrdinal = liveEaxArgumentReturnedByCall(instruction);
+                    if (returnedOrdinal < 0) {
+                        type = "";
+                    }
+                    else {
+                        roundTrips++;
+                        Integer previous = roundTripSites.put(instruction.getAddress(),
+                            returnedOrdinal);
+                        if (previous != null && previous.intValue() != returnedOrdinal)
+                            return null;
+                    }
+                }
+            }
+            else if (accumulatorWidth(instruction.getResultObjects()) > 0) {
+                // Even a partial AL/AX write destroys exact pointer identity.
+                type = "";
+            }
+            if (mnemonic.startsWith("RET")) {
+                if (type.isBlank()) return null;
+                reachedReturns.add(instruction.getAddress());
+                returnedTypes.add(type);
+                maximumRoundTrips = Math.max(maximumRoundTrips, roundTrips);
+                continue;
+            }
+            List<Address> successors = instructionSuccessors(function, instruction);
+            if (successors.isEmpty()) return null;
+            for (Address successor : successors)
+                pending.addLast(new RoundTripState(successor, type, roundTrips));
+        }
+        if (reachedReturns.size() != totalReturns || returnedTypes.size() != 1 ||
+                maximumRoundTrips == 0) return null;
+        return new RoundTripReturn(returnedTypes.iterator().next(), maximumRoundTrips,
+            roundTripSites);
+    }
+
+    private boolean needsRoundTripCallOverride(Function function,
+            RoundTripReturn proof) {
+        for (Address call : proof.callSites.keySet()) {
+            String desired = roundTripOverrideFingerprint(call, proof.type);
+            if (desired.isBlank() || !desired.equals(existingOverrideFingerprint(function, call)))
+                return true;
+            // Do not claim an independently installed equivalent override.  Once our own
+            // marker exists, however, the returned parameter ordinal is durable exporter
+            // input and stale/missing metadata must be repaired.
+            if (hasRoundTripCallMarker(call) &&
+                    roundTripMarkerOrdinal(call) != proof.callSites.get(call)) return true;
+        }
+        return false;
+    }
+
+    private boolean hasRoundTripCallMarker(Address address) {
+        String comment = currentProgram.getListing().getComment(CommentType.EOL, address);
+        return comment != null && comment.contains(
+            "[STReturnSemanticsApplier] pointer_producer_argument_roundtrip_call");
+    }
+
+    private int roundTripMarkerOrdinal(Address address) {
+        String comment = currentProgram.getListing().getComment(CommentType.EOL, address);
+        if (comment == null) return -1;
+        Matcher matcher = Pattern.compile(
+            "return_parameter_ordinal=([0-9]+)").matcher(comment);
+        return matcher.find() ? Integer.parseInt(matcher.group(1)) : -1;
+    }
+
+    private String roundTripOverrideFingerprint(Address callAddress, String returnType) {
+        Instruction call = currentProgram.getListing().getInstructionAt(callAddress);
+        Function called = call == null ? null : resolveThunk(directCalledFunction(call));
+        if (called == null) return "";
+        List<String> parts = new ArrayList<>();
+        parts.add(called.getCallingConventionName());
+        parts.add(returnType);
+        for (Parameter parameter : called.getParameters())
+            parts.add(typeSpec(parameter.getFormalDataType()));
+        return String.join(";", parts);
+    }
+
+    private String existingOverrideFingerprint(Function function, Address call) {
+        Namespace root = HighFunction.findOverrideSpace(function);
+        if (root == null) return "none";
+        String agreed = "";
+        for (Symbol symbol : currentProgram.getSymbolTable().getSymbols(call)) {
+            if (!root.equals(symbol.getParentNamespace())) continue;
+            DataTypeSymbol value = HighFunctionDBUtil.readOverride(symbol);
+            if (value == null ||
+                    !(value.getDataType() instanceof FunctionDefinition definition)) continue;
+            List<String> parts = new ArrayList<>();
+            parts.add(definition.getCallingConventionName());
+            parts.add(typeSpec(definition.getReturnType()));
+            for (ghidra.program.model.data.ParameterDefinition argument :
+                    definition.getArguments())
+                parts.add(typeSpec(argument.getDataType()));
+            String fingerprint = String.join(";", parts);
+            if (!agreed.isBlank() && !agreed.equals(fingerprint)) return "ambiguous";
+            agreed = fingerprint;
+        }
+        return agreed.isBlank() ? "none" : agreed;
+    }
+
+    private String trustedRoundTripPointerProducer(Instruction instruction) {
+        Function called = resolveThunk(directCalledFunction(instruction));
+        if (called == null) return "";
+        String type = typeSpec(called.getReturnType());
+        if (!type.startsWith("pointer:")) return "";
+        if (trustedReturnFunction(called) != null) return type;
+        if (!"pointer:/void".equals(type)) return "";
+        for (ghidra.program.model.listing.FunctionTag tag : called.getTags())
+            if ("RECOVERED_UTILITY_MEMORY_ALLOCATE".equals(tag.getName()) ||
+                    "RECOVERED_UTILITY_MEMORY_ALLOCATE_ZEROED".equals(tag.getName()))
+                return type;
+        return "";
+    }
+
+    private int liveEaxArgumentReturnedByCall(Instruction call) {
+        Function called = resolveThunk(directCalledFunction(call));
+        if (called == null || called.hasVarArgs()) return -1;
+        ParameterReturn returned = cachedReturnedPointerParameter(called);
+        if (returned == null) return -1;
+        Parameter parameter = called.getParameter(returned.ordinal);
+        if (parameter == null || !parameter.isStackVariable() ||
+                parameter.getLength() != currentProgram.getDefaultPointerSize()) return -1;
+        int offset = parameter.getStackOffset();
+        int pointerSize = currentProgram.getDefaultPointerSize();
+        if (offset < pointerSize || (offset - pointerSize) % pointerSize != 0)
+            return -1;
+        int pushOrdinal = (offset - pointerSize) / pointerSize;
+        Instruction cursor = currentProgram.getListing()
+            .getInstructionBefore(call.getAddress());
+        Address next = call.getAddress();
+        int pushes = 0, scanned = 0;
+        while (cursor != null && scanned++ < 24) {
+            if (!next.equals(cursor.getFallThrough())) return -1;
+            String mnemonic = cursor.getMnemonicString().toUpperCase(Locale.ROOT);
+            if ("PUSH".equals(mnemonic)) {
+                if (pushes == pushOrdinal)
+                    return standaloneEaxOperand(cursor, 0) ? returned.ordinal : -1;
+                pushes++;
+            }
+            else if ("CALL".equals(mnemonic) || mnemonic.startsWith("RET") ||
+                    cursor.getFlowType().isJump() || writesStackPointer(cursor)) return -1;
+            next = cursor.getAddress();
+            cursor = currentProgram.getListing().getInstructionBefore(cursor.getAddress());
+        }
+        return -1;
+    }
+
+    private boolean standaloneEaxOperand(Instruction instruction, int operandIndex) {
+        Object[] objects = instruction.getOpObjects(operandIndex);
+        return objects.length == 1 && objects[0] instanceof Register register &&
+            "EAX".equals(register.getName().toUpperCase(Locale.ROOT));
+    }
+
+    private boolean writesStackPointer(Instruction instruction) {
+        for (Object object : instruction.getResultObjects())
+            if (object instanceof Register register &&
+                    "ESP".equals(register.getName().toUpperCase(Locale.ROOT)))
+                return true;
+        return false;
     }
 
     private int pointerParameterMovedToEax(Function function,
@@ -962,18 +1204,44 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             boolean proposedNoReturn, boolean apply, String semantic, String confidence, String evidence) {
         return new Row(apply, addr(function.getEntryPoint()), function.getName(true),
             function.getPrototypeString(true, true), current, function.getReturn().getSource().toString(),
-            expectedNoReturn, proposed, proposedNoReturn, semantic, confidence, evidence);
+            expectedNoReturn, proposed, proposedNoReturn, semantic, confidence, evidence,
+            "", "", "");
+    }
+
+    private Row roundTripRow(Function function, String current, RoundTripReturn proof,
+            boolean expectedNoReturn, boolean proposedNoReturn, boolean apply,
+            String semantic, String confidence, String evidence) {
+        List<String> calls = new ArrayList<>(), expected = new ArrayList<>();
+        List<String> ordinals = new ArrayList<>();
+        for (Map.Entry<Address, Integer> item : proof.callSites.entrySet()) {
+            Address call = item.getKey();
+            calls.add(addr(call));
+            expected.add(existingOverrideFingerprint(function, call));
+            ordinals.add(Integer.toString(item.getValue()));
+        }
+        return new Row(apply, addr(function.getEntryPoint()), function.getName(true),
+            function.getPrototypeString(true, true), current,
+            function.getReturn().getSource().toString(), expectedNoReturn, proof.type,
+            proposedNoReturn, semantic, confidence, evidence,
+            String.join("|", calls), String.join("|", expected),
+            String.join("|", ordinals));
     }
 
     private void writeRows(Path path, List<Row> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\tfunction_address\texpected_function\texpected_signature\t" +
                 "expected_return_type\texpected_return_source\texpected_noreturn\t" +
-                "proposed_return_type\tproposed_noreturn\tsemantic_id\tconfidence\tevidence\n");
+                "proposed_return_type\tproposed_noreturn\tsemantic_id\tconfidence\t" +
+                "roundtrip_call_sites\texpected_call_overrides\t" +
+                "roundtrip_return_ordinals\tevidence\n");
+            // Call-site columns are populated only for a closed pointer-producer
+            // roundtrip.  Ordinary return proposals leave both fields empty.
             for (Row row : rows) out.write((row.apply ? "1" : "0") + "\t" + row.address +
                 "\t" + clean(row.function) + "\t" + clean(row.signature) + "\t" + row.expectedType +
                 "\t" + row.source + "\t" + row.expectedNoReturn + "\t" + row.proposedType +
                 "\t" + row.proposedNoReturn + "\t" + row.semantic + "\t" + row.confidence +
+                "\t" + row.roundTripCallSites + "\t" + row.expectedCallOverrides +
+                "\t" + row.roundTripReturnOrdinals +
                 "\t" + clean(row.evidence) + "\n");
         }
     }
@@ -993,7 +1261,7 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             for (String id : List.of("leaf_void", "ignored_eax_void",
                     "repair_unsafe_eax_rollback", "void_eax_read_review",
                     "typed_pointer_return", "forwarded_call_return",
-                    "returned_pointer_parameter",
+                    "returned_pointer_parameter", "pointer_producer_argument_roundtrip",
                     "machine_eax_return", "shared_tail_return",
                     "boolean_return_domain", "noreturn_terminal_call"))
                 out.write(id + ": " + rows.stream().filter(row -> row.semantic.equals(id)).count() + "\n");
@@ -1031,9 +1299,14 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
     private record MachineReturnState(Address address, boolean fullAccumulator) {}
     private record ParameterReturnState(Address address, int ordinal) {}
     private record ParameterReturn(int ordinal, String name, String type) {}
+    private record RoundTripState(Address address, String type, int roundTripCalls) {}
+    private record RoundTripReturn(String type, int roundTripCalls,
+        Map<Address, Integer> callSites) {}
     private enum ReturnDisposition { USED, IGNORED, UNKNOWN }
     private record Row(boolean apply, String address, String function, String signature,
         String expectedType, String source, boolean expectedNoReturn, String proposedType,
-        boolean proposedNoReturn, String semantic, String confidence, String evidence) {}
+        boolean proposedNoReturn, String semantic, String confidence, String evidence,
+        String roundTripCallSites, String expectedCallOverrides,
+        String roundTripReturnOrdinals) {}
     private record Failure(String address, String function, String error) {}
 }

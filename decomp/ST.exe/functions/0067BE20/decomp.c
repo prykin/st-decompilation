@@ -21,9 +21,9 @@ void __fastcall FUN_0067be20(int param_1,undefined4 param_2,DArrayTy *param_3)
     if ((index < param_3->count) &&
        (puVar1 = DArrayAt<ushort>(param_3, index),
        puVar1 != nullptr)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      /* ST_CALLSITE[0067BE5F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       objPtr = STAllPlayersC::GetObjPtr
-                         (g_allPlayers_007FA174,*(char *)(local_8 + 0x640),*puVar1,CASE_1);
+                         (g_allPlayers_007FA174,((char *)local_8)[0x640],*puVar1,CASE_1);
       if (objPtr == nullptr) {
         DArrayRemoveAt(param_3,index);
       }

@@ -20,7 +20,9 @@ void __thiscall CPanelTy::sub_004FAD20(CPanelTy *this)
     puVar1 = puVar1 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
+  /* ST_CALLSITE[004FAD3D]: CALL 0x00405d03; direct=00405D03 CPanelTy::sub_004FA870 */
   sub_004FA870(this,CASE_2);
+  /* ST_CALLSITE[004FAD46]: CALL 0x00405d03; direct=00405D03 CPanelTy::sub_004FA870 */
   sub_004FA870(this,CASE_4);
   return;
 }

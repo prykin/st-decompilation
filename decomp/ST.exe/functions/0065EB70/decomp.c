@@ -43,6 +43,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
         else if (((char)param_7 < '\0') || ('\b' < (char)param_7)) {
           param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(0xff));
         }
+        /* ST_CALLSITE[0065EC3A]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */
         _EnumPlObj(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,thunk_FUN_0065e860,
                    local_c,nullptr);
         if (DAT_00811900 == 0) {

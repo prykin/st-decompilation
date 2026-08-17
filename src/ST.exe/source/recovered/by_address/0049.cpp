@@ -53,6 +53,7 @@ int __thiscall st::fn_004908A0(void *this,STFishC *param_1,int param_2)
   short local_8 [2];
 
   local_10 = 1000000;
+  /* ST_CALLSITE[004908C1]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   st::fn_004018C5(param_1,(short *)&param_1,local_8,local_c);
   iVar6 = 0;
   iVar5 = param_2;
@@ -149,6 +150,7 @@ st::fn_00490B30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,ui
                             STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&param_1),
         iVar4 != -4)) && ((param_1->field_0032 == param_2 && (param_1->field_0024 == (int)objPtr))))
     {
+      /* ST_CALLSITE[00490C2B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar5 = st::fn_004028BA(g_allPlayers_007FA174,objPtr,(ushort)param_3,CASE_1);
       STField<undefined4>(this,0x7f4) = pSVar5->field_0018;
     }
@@ -161,6 +163,7 @@ st::fn_00490B30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,ui
 void __fastcall st::fn_00490CA0(STBoatC *param_1)
 
 {
+  /* ST_CALLSITE[00490CA3]: CALL 0x004023ce; direct=004023CE STBoatC::sub_0048DBA0 */
   st::fn_004023CE(param_1);
   param_1->field_0580 = CASE_6;
   return;
@@ -199,6 +202,7 @@ void __thiscall st::fn_00490E00(void *this,int param_1)
   if (STField<int>(this,0x73e) == 1) {
     STField<int>(this,0x73e) = param_1;
     if (STField<int>(this,0x45d) == 5) {
+      /* ST_CALLSITE[00490E46]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat */
       st::fn_00401028
                 (g_allPlayers_007FA174,STField<char>(this,0x24),STField<short>(this,0x32),1);
     }
@@ -292,10 +296,12 @@ void __fastcall st::fn_00490F60(STBoatC *param_1)
         local_c = g_playSystem_00802A38->field_00E4;
         array = st::fn_006AE290(nullptr,1,2,1);
         st::fn_006AE1C0(array,&param_1->field_0032);
+        /* ST_CALLSITE[00491001]: CALL 0x0040178f; direct=0040178F STAllPlayersC::AddObjsToGroup */
         st::fn_0040178F
                   (g_allPlayers_007FA174,*(char *)&param_1->field_0024,0xfffe,array,
                    nullptr);
         st::fn_006AE110(array);
+        /* ST_CALLSITE[00491014]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
         st::fn_00402126(param_1,CASE_14,&local_c);
       }
       iVar1 = param_1->field_07C2;
@@ -305,6 +311,7 @@ void __fastcall st::fn_00490F60(STBoatC *param_1)
   }
   local_8 = param_1->field_0030;
   local_c = g_playSystem_00802A38->field_00E4;
+  /* ST_CALLSITE[00490FA5]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
   st::fn_00402126(param_1,CASE_14,&local_c);
   return;
 }
@@ -380,6 +387,7 @@ undefined4 __fastcall st::fn_00491980(void *param_1)
 
   iVar1 = st::fn_00402EDC(st::pointer_boundary_cast<STGameObjC *>(param_1));
   if (iVar1 != 0x14) {
+    /* ST_CALLSITE[00491991]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
     uVar2 = st::fn_00404DF9(st::pointer_boundary_cast<STBoatC *>(param_1),CASE_14);
     if (uVar2 == 0) {
       return 1;
@@ -420,6 +428,7 @@ void __fastcall st::fn_004924A0(void *param_1)
                       (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(param_1,0x5a2)
                        ,(int *)&local_8);
     if (iVar1 != -4) {
+      /* ST_CALLSITE[004924DF]: CALL 0x00403864; direct=00403864 STBoatC::CancelLoading */
       st::fn_00403864(local_8,STField<int>(param_1,0x18));
     }
   }
@@ -440,6 +449,7 @@ void __thiscall st::fn_00492510(void *this,int param_1)
     STField<undefined4>(this,0x7c6) = 0;
     return;
   }
+  /* ST_CALLSITE[00492532]: CALL 0x004027ca; direct=004027CA STBoatC::sub_00492420 */
   st::fn_004027CA(st::pointer_boundary_cast<STBoatC *>(this));
   return;
 }
@@ -451,8 +461,6 @@ st::fn_00492550(void *this,short param_1,short param_2,short param_3,undefined2 
             undefined2 *param_5,short *param_6)
 
 {
-  int _param_1 = static_cast<int>(param_1);
-
   int iVar1;
   int iVar2;
   int iVar3;
@@ -531,10 +539,13 @@ undefined4 __fastcall st::fn_00492B20(STBoatC *param_1)
   short local_8;
   short local_6;
 
+  /* ST_CALLSITE[00492B45]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   this = st::fn_004028BA
                    (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
   if ((((((this != nullptr) && (this->field_0018 == *(int *)&param_1->field_0x5ff)) &&
+        /* ST_CALLSITE[00492B70]: CALL dword ptr [EAX + 0x108]; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
         (iVar1 = this->vfunc_108(param_1->field_0024), iVar1 != 0)) &&
+       /* ST_CALLSITE[00492B8C]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
        ((st::fn_004018C5((STFishC *)this,&local_8,&local_6,local_c), -1 < local_8 &&
         (local_8 < g_pathingGrid.sizeX)))) && (-1 < local_6)) &&
      (((local_6 < g_pathingGrid.sizeY && (-1 < local_c[0])) &&
@@ -631,6 +642,7 @@ void __fastcall st::fn_00492F30(STBoatC *param_1,undefined4 param_2)
   int iVar2;
 
   sVar1 = param_1->field_0607 + 1;
+  /* ST_CALLSITE[00492F6B]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   iVar2 = st::fn_00404908
                     (param_1,param_1->field_0603,param_1->field_0605,sVar1,param_1->field_0603,
@@ -657,9 +669,11 @@ void __fastcall st::fn_00492FC0(AnonShape_00492FC0_E6F586EF *param_1)
   int iVar1;
 
   if ((param_1->field_045D == 9) && (param_1->field_0611 == 3)) {
+    /* ST_CALLSITE[00492FED]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this = st::fn_004028BA
                      (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
     if ((this != nullptr) && (this->field_0018 == param_1->field_05FF)) {
+      /* ST_CALLSITE[0049300D]: CALL dword ptr [EAX + 0x108]; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
       iVar1 = this->vfunc_108(param_1->field_0024);
       if (iVar1 != 0) {
         st::fn_00405B1E((AnonShape_004CC900_31EE9CAA *)this);
@@ -712,6 +726,7 @@ void __thiscall st::fn_00493110(void *this,AnonShape_00493110_B173055C *param_1)
   iVar2 = st::fn_006E62D0
                     (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1,(int *)&param_1);
   if (iVar2 != -4) {
+    /* ST_CALLSITE[00493137]: CALL dword ptr [EDX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)(param_1->field_0000 + 0x2c))();
     iVar2 = STField<int>(this,0x6f7);
@@ -734,6 +749,7 @@ void __thiscall st::fn_00493110(void *this,AnonShape_00493110_B173055C *param_1)
       STField<undefined4>(this,0x76) = 0;
       STField<undefined4>(this,0x5a2) = uVar1;
       STField<undefined4>(this,0x5c4) = 7;
+      /* ST_CALLSITE[004931A6]: CALL dword ptr [EAX + 0xb4] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0xb4))();
       return;
@@ -834,7 +850,9 @@ st::fn_004934B0(void *this,short *param_1,short *param_2,short *param_3,int *par
       do {
         st::fn_006ACC70(array,local_14,&local_10);
         if ((local_10 != nullptr) &&
+           /* ST_CALLSITE[00493528]: CALL dword ptr [EDX + 0xf8] */
            (iVar3 = local_10->vfunc_F8(), iVar3 == 1)) {
+          /* ST_CALLSITE[00493542]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           st::fn_004018C5(local_10,&local_6,&local_8,&local_a);
           iVar2 = st::fn_006AADD0((int)STField<short>(this,0x47),(int)STField<short>(this,0x49),
                                (int)STField<short>(this,0x4b),(int)local_6,(int)local_8,
@@ -882,6 +900,7 @@ void __fastcall st::fn_00493BC0(STBoatC *param_1)
        ((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ)))) {
       this = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
       if ((this != nullptr) && (*(int *)&this->field_0x18 == param_1->field_063F)) {
+        /* ST_CALLSITE[00493C59]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
         iVar4 = this->vfunc_F8();
         if (iVar4 != 0) {
           st::fn_00404971(this,param_1);
@@ -935,166 +954,207 @@ void __fastcall st::fn_00493D10(int *param_1)
   switch(STField<undefined4>(param_1,0x6f7)) {
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 1:
+    /* ST_CALLSITE[00493D31]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0xca);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 2:
+    /* ST_CALLSITE[00493D42]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0xd0);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 3:
+    /* ST_CALLSITE[00493D53]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0xd6);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 4:
+    /* ST_CALLSITE[00493D64]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0xdc);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 5:
+    /* ST_CALLSITE[00493D75]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0xe2);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 6:
+    /* ST_CALLSITE[00493D86]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0xe9);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 7:
+    /* ST_CALLSITE[00493D97]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0xf0);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 8:
+    /* ST_CALLSITE[00493DA8]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0xf7);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 9:
+    /* ST_CALLSITE[00493DB9]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0xff);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 10:
+    /* ST_CALLSITE[00493DCA]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x104);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0xb:
+    /* ST_CALLSITE[00493DDB]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x10a);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0xc:
+    /* ST_CALLSITE[00493DEC]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x110);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0xd:
+    /* ST_CALLSITE[00493DFD]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x12e);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0xe:
+    /* ST_CALLSITE[00493E0E]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x134);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0xf:
+    /* ST_CALLSITE[00493E1F]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x13a);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x10:
+    /* ST_CALLSITE[00493E30]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x140);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x11:
+    /* ST_CALLSITE[00493E41]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x146);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x12:
+    /* ST_CALLSITE[00493E52]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x14d);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x13:
+    /* ST_CALLSITE[00493E63]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x154);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x14:
+    /* ST_CALLSITE[00493E74]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x15b);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x15:
+    /* ST_CALLSITE[00493E85]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x163);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x16:
+    /* ST_CALLSITE[00493E96]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x168);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x17:
+    /* ST_CALLSITE[00493EA7]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x170);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x18:
+    /* ST_CALLSITE[00493EB8]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x176);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x19:
+    /* ST_CALLSITE[00493EC9]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x192);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x1a:
+    /* ST_CALLSITE[00493EDA]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x19a);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x1b:
+    /* ST_CALLSITE[00493EEB]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x1a2);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x1c:
+    /* ST_CALLSITE[00493EFC]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x1a8);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x1d:
+    /* ST_CALLSITE[00493F0D]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x1ae);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x1e:
+    /* ST_CALLSITE[00493F1E]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x1b5);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x1f:
+    /* ST_CALLSITE[00493F2F]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x1bb);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x20:
+    /* ST_CALLSITE[00493F40]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x1c1);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x21:
+    /* ST_CALLSITE[00493F51]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x1c7);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x22:
+    /* ST_CALLSITE[00493F62]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x1ce);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x23:
+    /* ST_CALLSITE[00493F73]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x1d5);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x24:
+    /* ST_CALLSITE[00493F84]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x1db);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x25:
+    /* ST_CALLSITE[00493F95]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x17c);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x26:
+    /* ST_CALLSITE[00493FA6]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x116);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x27:
+    /* ST_CALLSITE[00493FB7]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x182);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   case 0x28:
+    /* ST_CALLSITE[00493FC8]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0x1e1);
     return;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   default:
+    /* ST_CALLSITE[00493FD6]: CALL dword ptr [EDX + 0x90] */
     (**(code **)(*param_1 + 0x90))(4,0);
     return;
   }
@@ -1124,11 +1184,13 @@ void __thiscall st::fn_00494160(void *this,int param_1)
           return;
         }
         STField<undefined4>(this,0x72e) = 1;
+        /* ST_CALLSITE[004941BC]: CALL dword ptr [EAX + 0x90] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)this + 0x90))(3,0x16c);
         return;
       }
       STField<undefined4>(this,0x72e) = 0;
+      /* ST_CALLSITE[004941DE]: CALL dword ptr [EDX + 0x90] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0x90))(3,0x16d);
       return;
@@ -1142,6 +1204,7 @@ void __thiscall st::fn_00494160(void *this,int param_1)
   }
   if (param_1 != 1) {
     STField<undefined4>(this,0x732) = 0;
+    /* ST_CALLSITE[004944C7]: CALL dword ptr [EAX + 0x90] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0x90))(3,0x16d);
     return;
@@ -1212,8 +1275,11 @@ LAB_004943a0:
     }
     if (!bVar7) {
       pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
+      /* ST_CALLSITE[004943BA]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
       st::fn_00401BAE(pSVar1,'\x0e');
+      /* ST_CALLSITE[004943C3]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
       st::fn_00401BAE(pSVar1,'\r');
+      /* ST_CALLSITE[004943CC]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
       st::fn_00401BAE(pSVar1,'\f');
       st::fn_00403FDA(pSVar1,'\x01');
       st::fn_00403FDA(pSVar1,'\x02');
@@ -1228,20 +1294,32 @@ LAB_004943a0:
     }
   }
   pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
+  /* ST_CALLSITE[0049442F]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   st::fn_00401BAE(pSVar1,'\x0e');
+  /* ST_CALLSITE[00494438]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   st::fn_00401BAE(pSVar1,'\r');
+  /* ST_CALLSITE[00494441]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   st::fn_00401BAE(pSVar1,'\f');
+  /* ST_CALLSITE[0049444A]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   st::fn_00401BAE(pSVar1,'\x01');
+  /* ST_CALLSITE[00494453]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   st::fn_00401BAE(pSVar1,'\x02');
+  /* ST_CALLSITE[0049445C]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   st::fn_00401BAE(pSVar1,'\0');
+  /* ST_CALLSITE[00494465]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   st::fn_00401BAE(pSVar1,'\x0f');
+  /* ST_CALLSITE[0049446E]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   st::fn_00401BAE(pSVar1,'\v');
+  /* ST_CALLSITE[00494477]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   st::fn_00401BAE(pSVar1,'\n');
+  /* ST_CALLSITE[00494480]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   st::fn_00401BAE(pSVar1,'\t');
+  /* ST_CALLSITE[00494489]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   st::fn_00401BAE(pSVar1,'\b');
   STField<undefined4>(this,0x746) = 1;
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_00494498:
+  /* ST_CALLSITE[004944A3]: CALL dword ptr [EDX + 0x90] */
   (**(code **)(*(int *)this + 0x90))(3,0x16c);
   return;
 }
@@ -1473,6 +1551,7 @@ void __fastcall st::fn_00494AE0(AnonShape_00494AE0_7F188308 *param_1)
         (((param_1->field_0792 = 0, param_1->field_045D != 0x14 ||
           (*(int *)&param_1->field_0x5c0 != 3)) && ((param_1->field_01D1 & 1) == 0)))) &&
        (param_1->field_078A = 0, g_visibleClass_00802A88 != nullptr)) {
+      /* ST_CALLSITE[00494BBB]: CALL 0x004012a3; direct=004012A3 VisibleClassTy::sub_0055A4C0 */
       st::fn_004012A3
                 (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                  (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
@@ -1483,6 +1562,7 @@ void __fastcall st::fn_00494AE0(AnonShape_00494AE0_7F188308 *param_1)
             ((param_1->field_0792 = 1, param_1->field_045D != 0x14 ||
              (*(int *)&param_1->field_0x5c0 != 3)))) && ((param_1->field_01D1 & 1) == 0)) &&
           (param_1->field_078A = 1, g_visibleClass_00802A88 != nullptr)) {
+    /* ST_CALLSITE[00494C1D]: CALL 0x0040205e; direct=0040205E VisibleClassTy::SetZoneMin1 */
     st::fn_0040205E
               (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
@@ -1495,6 +1575,7 @@ void __fastcall st::fn_00494AE0(AnonShape_00494AE0_7F188308 *param_1)
        ((((param_1->field_0796 = 1, param_1->field_045D != 0x14 ||
           (*(int *)&param_1->field_0x5c0 != 3)) && ((param_1->field_01D1 & 1) == 0)) &&
         (param_1->field_078E = 1, g_visibleClass_00802A88 != nullptr)))) {
+      /* ST_CALLSITE[00494D39]: CALL 0x00401848; direct=00401848 VisibleClassTy::SetZoneMin2 */
       st::fn_00401848
                 (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                  (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
@@ -1516,6 +1597,7 @@ void __fastcall st::fn_00494AE0(AnonShape_00494AE0_7F188308 *param_1)
   if (g_visibleClass_00802A88 == nullptr) {
     return;
   }
+  /* ST_CALLSITE[00494CD5]: CALL 0x00405c86; direct=00405C86 VisibleClassTy::sub_0055A870 */
   st::fn_00405C86
             (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
              (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
@@ -1536,6 +1618,7 @@ void __fastcall st::fn_00494DF0(AnonShape_00494DF0_56294F0B *param_1)
        ((param_1->field_01D1 & 1) == 0)) {
       param_1->field_078A = 1;
       if (g_visibleClass_00802A88 != nullptr) {
+        /* ST_CALLSITE[00494E5E]: CALL 0x0040205e; direct=0040205E VisibleClassTy::SetZoneMin1 */
         st::fn_0040205E
                   (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                    (char)param_1->field_005F,param_1->field_0024,param_1->field_0101,
@@ -1546,6 +1629,7 @@ void __fastcall st::fn_00494DF0(AnonShape_00494DF0_56294F0B *param_1)
        ((param_1->field_01D1 & 1) == 0)) {
       param_1->field_078E = 1;
       if (g_visibleClass_00802A88 != nullptr) {
+        /* ST_CALLSITE[00494EAD]: CALL 0x00401848; direct=00401848 VisibleClassTy::SetZoneMin2 */
         st::fn_00401848
                   (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                    (char)param_1->field_005F,param_1->field_0024,param_1->field_0101,
@@ -1569,6 +1653,7 @@ void __fastcall st::fn_00494F00(AnonShape_00494F00_45028F21 *param_1)
        ((param_1->field_01D1 & 1) == 0)) {
       param_1->field_078A = 0;
       if (g_visibleClass_00802A88 != nullptr) {
+        /* ST_CALLSITE[00494F6E]: CALL 0x004012a3; direct=004012A3 VisibleClassTy::sub_0055A4C0 */
         st::fn_004012A3
                   (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                    (char)param_1->field_005F,param_1->field_0024,(int)param_1->field_0101,
@@ -1579,6 +1664,7 @@ void __fastcall st::fn_00494F00(AnonShape_00494F00_45028F21 *param_1)
        ((param_1->field_01D1 & 1) == 0)) {
       param_1->field_078E = 0;
       if (g_visibleClass_00802A88 != nullptr) {
+        /* ST_CALLSITE[00494FBD]: CALL 0x00405c86; direct=00405C86 VisibleClassTy::sub_0055A870 */
         st::fn_00405C86
                   (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                    (char)param_1->field_005F,param_1->field_0024,(int)param_1->field_0101,
@@ -1606,6 +1692,7 @@ void __thiscall st::fn_00495010(void *this,undefined4 param_1)
     if (iVar1 != 0x14) {
       if (iVar1 == 0xb) goto LAB_00495071;
       local_8 = g_playSystem_00802A38->field_00E4;
+      /* ST_CALLSITE[0049504C]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
       st::fn_00402126(st::pointer_boundary_cast<STBoatC *>(this),CASE_3,&local_8);
     }
     STField<undefined4>(this,0x73a) = param_1;
@@ -1803,7 +1890,7 @@ void * __cdecl st::fn_00495720(void)
     _DAT_007fb224 = st::fn_00401AA0(puVar1);
     return _DAT_007fb224;
   }
-  _DAT_007fb224 = nullptr;
+  _DAT_007fb224 = 0;
   return nullptr;
 }
 
@@ -1833,6 +1920,7 @@ undefined4 __thiscall st::fn_00495750(void *this,float param_1)
     case 2:
       uVar2 = st::fn_006E4D40(STField<void *>(this,0x10),STField<int>(this,0xc));
       if (uVar2 == 1) {
+        /* ST_CALLSITE[00495792]: CALL dword ptr [0x0085bedc] */
         DVar3 = st::external_000000DA();
         STField<DWORD>(this,0x24) = DVar3;
         return 0;
@@ -1850,8 +1938,10 @@ undefined4 __thiscall st::fn_00495750(void *this,float param_1)
     lVar5 = st::fn_0072E288();
     uVar4 = (undefined4)lVar5;
     lVar5 = st::fn_0072E288();
+    /* ST_CALLSITE[0049582F]: CALL dword ptr [0x0085bde8] */
     st::external_00000080(local_6c,st::mutable_c_string("\n X = %d\n Y = %d\n Xc = %d\n Yc = %d"),STField<undefined4>(this,0x1c),
               STField<undefined4>(this,0x20),(int)lVar5,uVar4);
+    /* ST_CALLSITE[00495849]: CALL dword ptr [0x0085bdec] */
     st::external_00000081(g_hWnd_00806748,local_6c,st::pointer_boundary_cast<LPCSTR>("Coordinates of Mouse"),0x40);
   }
   return 0;
@@ -1873,6 +1963,7 @@ void * __cdecl st::fn_00495950(void)
 
   this = (DumpClassC *)st::fn_006B04D0(0x18);
   if (this != nullptr) {
+    /* ST_CALLSITE[0049595D]: CALL 0x00405baa; direct=00405BAA DumpClassC::DumpClassC */
     g_dumpClass_007FB284 = st::fn_00405BAA(this);
     return g_dumpClass_007FB284;
   }
@@ -2064,7 +2155,7 @@ switchD_0049655f_caseD_0:
         }
         sVar1 = *(short *)(iVar3 + 8);
         iVar11 = (int)sVar1;
-        iVar8 = iVar11 - (uint)*(byte *)(iVar3 + 0x48);
+        iVar8 = iVar11 - (uint)((byte *)iVar3)[0x48];
         if (iVar12 < iVar8) {
           return 0xffffffff;
         }
@@ -2431,7 +2522,7 @@ void st::fn_00496CC0(int param_1,int param_2,uint param_3,undefined4 param_4,uin
   int iVar6;
 
   uVar1 = param_3;
-  uVar2 = st::fn_00403E8B(param_1,param_2,param_3,param_4,param_5,st::pointer_boundary_cast<undefined4 *>(&param_3));
+  uVar2 = st::fn_00403E8B(param_1,param_2,param_3,param_4,param_5,&param_3);
   pvVar2 = param_6;
   if ((int)uVar2 < 0) {
     iVar3 = st::fn_004027FC(param_1,param_2,uVar1,param_5,param_6);
@@ -2484,7 +2575,7 @@ void st::fn_00496E40(int param_1,int param_2,undefined4 param_3,int param_4)
   int iVar2;
   void *pvVar3;
 
-  index = st::fn_00403E8B(param_1,param_2,0,param_3,param_4,st::pointer_boundary_cast<undefined4 *>(&param_4));
+  index = st::fn_00403E8B(param_1,param_2,0,param_3,param_4,(undefined4 *)&param_4);
   if (-1 < (int)index) {
     if (index < g_array_007FB270->count) {
       pvVar3 = DArrayAt<void>(g_array_007FB270, index);
@@ -2628,8 +2719,7 @@ uint st::fn_00497030(int param_1,int param_2,int param_3,int param_4,int param_5
 }
 
 // 00497110 FUN_00497110
-#line 1 "decomp/ST.exe/functions/00497110/decomp.c"
-
+#line 4 "decomp/ST.exe/functions/00497110/decomp.c"
 void st::fn_00497110(AnonShape_00497110_11FEE69C *param_1,AnonShape_00497110_465BC742 *param_2)
 
 {
@@ -2725,8 +2815,8 @@ undefined4 st::fn_00497370(int param_1,int param_2,uint param_3,uint param_4,voi
   undefined *puStack_c;
   undefined4 local_8;
 
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_00790718);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_00790718;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_28 = 0xffffffff;
   dVar2 = g_array_007FB270->count;

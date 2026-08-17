@@ -49,6 +49,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
 
   local_8 = 1;
   local_c = this;
+  /* ST_CALLSITE[00591C08]: CALL dword ptr [0x0085bedc] */
   DVar6 = timeGetTime();
   this->field_0061 = DVar6;
   local_c4.previous = g_currentExceptionFrame;
@@ -65,7 +66,9 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
     RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\camp_obj.cpp",0x117);
     return;
   }
+  /* ST_CALLSITE[00591C48]: CALL 0x0040261c; direct=0040261C CampaignTy::LightPalette */
   LightPalette(local_c);
+  /* ST_CALLSITE[00591C4F]: CALL 0x00404f4d; direct=00404F4D CampaignTy::AnimationCampaign */
   AnimationCampaign(this_00);
   cVar1 = this_00->field_0065;
   if (cVar1 == '\x01') {
@@ -209,6 +212,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
       local_68 = 0x68ff;
       local_48 = 0x697f;
       local_50 = local_70;
+      /* ST_CALLSITE[0059208E]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this_00->field_000C + 8))(5,this_00->field_0066,0,local_80,0);
       iVar14 = this_00->field_00BB[0xc].field_01DC;
@@ -217,6 +221,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
         local_1c = 1;
         local_1e = 1;
         STPiece<2,2>(local_28) = 1;
+        /* ST_CALLSITE[005920C5]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
         MMsgTy::StatePanel(*(MMsgTy **)(iVar14 + 0x2e6),(int)&local_28);
       }
       this_00->field_0065 = 1;

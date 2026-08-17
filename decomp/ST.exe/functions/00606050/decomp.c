@@ -56,6 +56,7 @@ STExplosion::sub_00606050
 
   iVar6 = 0;
   local_5 = '\0';
+  /* ST_CALLSITE[0060606D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   local_EAX_29 = LookupRecordByte((char)param_8);
   local_18 = (int)(byte)local_EAX_29;
   if (param_4 == 0x21) {
@@ -77,6 +78,7 @@ STExplosion::sub_00606050
   this->field_001C = uVar3;
   iVar7 = (uVar3 >> 0x10) % (local_78 + 1U) + 9;
   local_c = iVar7;
+  /* ST_CALLSITE[00606105]: CALL 0x00403d8c; direct=00403D8C STExplosionC::CreateGroupPart */
   iVar2 = STExplosionC::CreateGroupPart((STExplosionC *)this,iVar7);
   this->field_0269 = iVar2;
   if (iVar2 != iVar7) {
@@ -366,6 +368,7 @@ switchD_00606490_default:
         local_48 = param_3 + 0x5a;
       }
       local_b0.arg0.ptr = local_70;
+      /* ST_CALLSITE[006067E6]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
       STParticleC::GetMessage((&this->field_0219)[(int)param_5],&local_b0);
       param_5 = (uint *)((int)param_5 + 1);
     } while ((int)param_5 < local_c);

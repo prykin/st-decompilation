@@ -41,6 +41,7 @@ int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
         (&this->field_0149)[local_8] = iVar6;
         if ((local_8 == 0) && (iVar6 = iVar6 / 200, iVar6 != this->field_0129)) {
           this->field_0129 = iVar6;
+          /* ST_CALLSITE[005F505D]: CALL 0x00401285; direct=00401285 STBHEShellC::sub_005F5700 */
           sub_005F5700(this,iVar6,this->field_0139);
         }
         local_20 = 0;

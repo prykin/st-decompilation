@@ -34,6 +34,7 @@ FUN_0065fa10(AnonShape_0065FA10_37C5A4D3 *param_1,int param_2,int param_3,int pa
   if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
     pSVar1 = thunk_FUN_0042b760(param_1->field_0024,param_1->field_007D);
     if (pSVar1 != nullptr) {
+      /* ST_CALLSITE[0065FA47]: CALL dword ptr [ECX + 0x18] */
       (*pSVar1->vtable->vfunc_18)((short)pSVar1,(short)param_3,(short)param_4,(short)param_5);
     }
   }

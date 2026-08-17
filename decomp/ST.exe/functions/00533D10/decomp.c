@@ -116,8 +116,10 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
     return 0xffff;
   }
   if (message->id == MESS_ID_CREATE) {
+    /* ST_CALLSITE[00533D62]: CALL 0x00403a3a; direct=00403A3A OptPanelTy::PreInitOptPanel */
     PreInitOptPanel(local_10);
   }
+  /* ST_CALLSITE[00533D6A]: CALL 0x004017f8; direct=004017F8 PanelTy::GetMessage */
   PanelTy::GetMessage((PanelTy *)this_00,message);
   switch(message->id) {
   case MESS_OPTPANELTY_C001:
@@ -361,6 +363,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
             return 0;
           }
           if (SVar6 == MESS_SHARED_0003) {
+            /* ST_CALLSITE[00534071]: CALL 0x00403887; direct=00403887 OptPanelTy::DoneOptPanel */
             DoneOptPanel(this_00);
             g_currentExceptionFrame = local_8c.previous;
             return 0;
@@ -370,6 +373,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
               g_currentExceptionFrame = local_8c.previous;
               return 0;
             }
+            /* ST_CALLSITE[00533E07]: CALL 0x004058e9; direct=004058E9 OptPanelTy::InitOptPanel */
             InitOptPanel(this_00);
             g_currentExceptionFrame = local_8c.previous;
             return 0;
@@ -378,11 +382,14 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
           if ((2 < temp_5fc7a8e9f1) &&
              ((((temp_5fc7a8e9f1 < 5 || (temp_5fc7a8e9f1 == 7)) &&
                (this_00->field_01DD != (HANDLE)0x0)) &&
+              /* ST_CALLSITE[00533E41]: CALL dword ptr [0x0085bce0] */
               (DVar11 = WaitForSingleObject(this_00->field_01DD,0), DVar11 == 0)))) {
+            /* ST_CALLSITE[00533E52]: CALL dword ptr [0x0085bce4] */
             FindNextChangeNotification(this_00->field_01DD);
             if (this_00->field_01A4 != CASE_7) {
               STPiece<0,2>(uVar19) = this_00->field_01E1;
               STPiece<2,2>(uVar19) = this_00->field_01E3;
+              /* ST_CALLSITE[00533E6A]: CALL 0x00403fbc; direct=00403FBC OptPanelTy::PrepFiles */
               PrepFiles(this_00,uVar19);
             }
             this_00->field_0028 = 5;
@@ -404,6 +411,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
             if (iVar18 <= this_00->field_0044) {
               this_00->field_0044 = iVar18;
               this_00->field_0172 = CASE_1;
+              /* ST_CALLSITE[00533FF8]: CALL 0x00405a1a; direct=00405A1A OptPanelTy::ShiftControls */
               ShiftControls(this_00,1);
             }
             uVar19 = this_00->field_0044;
@@ -428,6 +436,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
               this_00->field_0172 = CASE_2;
               if (this_00->field_01A0 != 0) {
                 this_00->field_01A4 = CASE_1;
+                /* ST_CALLSITE[00533F35]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
                 SetOptControls(this_00);
                 this_00->field_01A0 = 0;
               }
@@ -488,6 +497,7 @@ LAB_00534016:
             this_00->field_01A4 = this_00->field_01A9;
             this_00->field_01A9 = this_00->field_01AA;
             this_00->field_01AA = 0;
+            /* ST_CALLSITE[0053478B]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
             SetOptControls(this_00);
             g_currentExceptionFrame = local_8c.previous;
             return 0;
@@ -519,6 +529,7 @@ LAB_00534016:
           }
           this_00->field_01A0 = 1;
           message->id = MESS_CURSORCLASSTY_A101;
+          /* ST_CALLSITE[005346F1]: CALL dword ptr [EAX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)g_cursorClass_00802A30->field_0000)(message);
           g_currentExceptionFrame = local_8c.previous;
@@ -531,6 +542,7 @@ LAB_00534016:
           }
           (message->arg2).u32 = 0;
           message->id = (SVar6 != MESS_OPTPANELTY_A105) + MESS_SHARED_C09F;
+          /* ST_CALLSITE[0053469B]: CALL dword ptr [EDX] */
           this_00->GetMessage(message);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -546,6 +558,7 @@ LAB_00534016:
       bVar28 = 6;
     }
 LAB_00534654:
+    /* ST_CALLSITE[00534657]: CALL 0x00403495; direct=00403495 UPanelTy::PaintBut */
     UPanelTy::PaintBut((UPanelTy *)this_00,(AnonShape_0053D7A0_044B6141 *)message,bVar28,pCVar14,
                        pcVar35);
     g_currentExceptionFrame = local_8c.previous;
@@ -558,6 +571,7 @@ LAB_00534654:
     case CASE_1:
       this_00->field_01A9 = OVar4;
       this_00->field_01A4 = CASE_3;
+      /* ST_CALLSITE[00534807]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -566,6 +580,7 @@ LAB_00534654:
       this_00->field_01A9 = OVar4;
       this_00->field_01AA = uVar10;
       this_00->field_01A4 = CASE_7;
+      /* ST_CALLSITE[00534EAF]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -689,13 +704,16 @@ LAB_00534654:
         pcVar26 = pcVar23 + -uVar19;
         pcVar23 = pcVar22 + -1;
         memmove(pcVar23, pcVar26, uVar19); /* compiler REP MOVS byte copy */
+        /* ST_CALLSITE[00534D00]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
         SwitchOptPanel(this_00,-1);
         this_00->field_019C = 0x6100;
         DAT_0080879c = 1;
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       case CASE_3:
+        /* ST_CALLSITE[005348F5]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080ee1a,"%s%s",&CHAR_00h_00807680,&CHAR_00h_0080ef1e);
+        /* ST_CALLSITE[00534905]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
         SwitchOptPanel(this_00,-1);
         uVar19 = 0xffffffff;
         this_00->field_019C = 0x6100;
@@ -712,6 +730,7 @@ LAB_00534654:
         pcVar26 = pcVar23 + -uVar19;
         pcVar23 = &CHAR_00h_0080ed16;
         memmove(pcVar23, pcVar26, uVar19); /* compiler REP MOVS byte copy */
+        /* ST_CALLSITE[00534940]: CALL 0x00404b4c; direct=00404B4C STAppC::sub_0056E9E0 */
         STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,0);
         puVar12 = (byte *)(&DAT_0080a14f);
         puVar21 = (byte *)(&DAT_008087b6);
@@ -732,6 +751,7 @@ LAB_00534654:
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       case CASE_4:
+        /* ST_CALLSITE[00534887]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
         SwitchOptPanel(this_00,-1);
         this_00->field_019C = 0x6102;
         if (DAT_00808783 == '\x03') {
@@ -748,6 +768,7 @@ LAB_00534654:
         }
         goto LAB_0053526f;
       case CASE_5:
+        /* ST_CALLSITE[00534843]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
         SwitchOptPanel(this_00,-1);
         this_00->field_019C = 0x7102;
         if (DAT_00808783 == '\x03') {
@@ -898,6 +919,7 @@ LAB_00534654:
         pcVar23 = pcVar22 + -1;
         memmove(pcVar23, pcVar26, uVar19); /* compiler REP MOVS byte copy */
         uVar17 = 0;
+        /* ST_CALLSITE[00534AC7]: CALL dword ptr [0x0085bce8] */
         DeleteFileA(&this_00->field_006C);
         uVar19 = 0xffffffff;
         pcVar26 = &CHAR_00h_00807680;
@@ -1039,18 +1061,22 @@ LAB_00534654:
         pcVar26 = pcVar23 + -uVar19;
         pcVar23 = pcVar22 + -1;
         memmove(pcVar23, pcVar26, uVar19); /* compiler REP MOVS byte copy */
+        /* ST_CALLSITE[00534BD8]: CALL dword ptr [0x0085bce8] */
         DeleteFileA(&this_00->field_006C);
         OVar4 = this_00->field_01A9;
         this_00->field_01A9 = this_00->field_01AA;
         this_00->field_01A4 = OVar4;
+        /* ST_CALLSITE[00534BF8]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
         SetOptControls(this_00);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       case CASE_7:
         this_00->field_0028 = 0x44ff;
+        /* ST_CALLSITE[00534D43]: CALL dword ptr [EAX + 0x20] */
         g_playSystem_00802A38->GetMessage((int)&this_00->field_0x18);
         this_00->field_0028 = 0xc001;
         this_00->field_0034 = 0;
+        /* ST_CALLSITE[00534D55]: CALL dword ptr [EDX] */
         this_00->GetMessage((STMessage *)&this_00->field_0x18);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -1149,6 +1175,7 @@ LAB_005350bc:
         local_c = (cMf32 *)(((DAT_0080730a + 4000) * 0x1f) / 0xfa1);
       }
       pcVar15 = local_c;
+      /* ST_CALLSITE[00535104]: CALL 0x00405df3; direct=00405DF3 OptPanelTy::PaintVolume */
       PaintVolume(this_00,0,(byte)local_c);
       uVar19 = this_00->field_01B5[4];
       this_00->field_0028 = 0x22;
@@ -1210,6 +1237,7 @@ LAB_005350bc:
     case CASE_1:
       this_00->field_01A9 = OVar4;
       this_00->field_01A4 = CASE_4;
+      /* ST_CALLSITE[005351A6]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1217,6 +1245,7 @@ LAB_005350bc:
       this_00->field_01AA = this_00->field_01A9;
       this_00->field_01A9 = OVar4;
       this_00->field_01A4 = CASE_6;
+      /* ST_CALLSITE[00535360]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1224,6 +1253,7 @@ LAB_005350bc:
 switchD_00535190_caseD_3:
       this_00->field_0028 = 0xc0a1;
       this_00->field_0034 = 0;
+      /* ST_CALLSITE[00534487]: CALL dword ptr [EAX] */
       this_00->GetMessage((STMessage *)&this_00->field_0x18);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1234,13 +1264,16 @@ switchD_00535190_caseD_3:
       if (this_00->field_01A9 != 0) {
         this_00->field_01A4 = this_00->field_01A9;
         this_00->field_01A9 = this_00->field_01AA;
+        /* ST_CALLSITE[005351E0]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
         SetOptControls(this_00);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
       if (OVar4 == CASE_5) {
         this_00->field_01A4 = CASE_1;
+        /* ST_CALLSITE[00535209]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
         SetOptControls(this_00);
+        /* ST_CALLSITE[00535215]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
         SwitchOptPanel(this_00,-1);
         if (this_00->field_01AB != CASE_7) {
           g_currentExceptionFrame = local_8c.previous;
@@ -1250,6 +1283,7 @@ switchD_00535190_caseD_3:
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
+      /* ST_CALLSITE[0053524B]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
       SwitchOptPanel(this_00,-1);
       if (this_00->field_01AB < CASE_A) {
         g_currentExceptionFrame = local_8c.previous;
@@ -1280,6 +1314,7 @@ switchD_00535190_caseD_3:
       return 0;
     case CASE_D:
       DAT_00807348 = this_00->field_0305;
+      /* ST_CALLSITE[0053531F]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
       SwitchOptPanel(this_00,-1);
       this_00->field_019C = 0x6107;
       g_currentExceptionFrame = local_8c.previous;
@@ -1288,6 +1323,7 @@ switchD_00535190_caseD_3:
 LAB_0053526f:
     uVar36 = 4;
 LAB_00535271:
+    /* ST_CALLSITE[00535276]: CALL dword ptr [0x0085c060] */
     CFsgsConnection::GameResult((CFsgsConnection *)&DAT_00802a90,uVar36);
     this_00->field_019C = 0x610a;
     g_currentExceptionFrame = local_8c.previous;
@@ -1300,6 +1336,7 @@ LAB_00535271:
       this_00->field_01A9 = OVar4;
       this_00->field_01AB = CASE_3;
       this_00->field_01A4 = CASE_5;
+      /* ST_CALLSITE[005353EF]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1308,6 +1345,7 @@ LAB_00535271:
       this_00->field_01A9 = OVar4;
       this_00->field_01AA = uVar10;
       this_00->field_01A4 = CASE_8;
+      /* ST_CALLSITE[00535426]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1359,10 +1397,12 @@ LAB_0053556f:
         this_00->field_01AA = this_00->field_01A9;
         this_00->field_01A9 = this_00->field_01A4;
         this_00->field_01A4 = CASE_B;
+        /* ST_CALLSITE[0053559E]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
         SetOptControls(this_00);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
+      /* ST_CALLSITE[005355BD]: CALL 0x00402874; direct=00402874 OptPanelTy::CheckFiles */
       iVar18 = CheckFiles(this_00,puVar1);
       if (iVar18 != 0) {
         this_00->field_01AA = this_00->field_01A9;
@@ -1370,6 +1410,7 @@ LAB_0053556f:
         this_00->field_01A9 = this_00->field_01A4;
         this_00->field_01A4 = CASE_5;
         this_00->field_01AB = CASE_1;
+        /* ST_CALLSITE[005355F8]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
         SetOptControls(this_00);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -1409,12 +1450,14 @@ switchD_00534835_caseD_1:
       this_00->field_01A9 = this_00->field_01A4;
       this_00->field_01AB = CASE_2;
       this_00->field_01A4 = CASE_5;
+      /* ST_CALLSITE[005356C5]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     case CASE_6:
       STPiece<1,1>(DAT_00807300) = STPiece<1,1>(DAT_00807300) ^ 4;
       thunk_FUN_00568010(&g_sound,CASE_4);
+      /* ST_CALLSITE[005354D1]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
       SoundClassTy::PlaySound
                 ((SoundClassTy *)&g_sound,SOUND_MODE_1,nullptr,0x4b7,nullptr,0);
       g_currentExceptionFrame = local_8c.previous;
@@ -1426,6 +1469,7 @@ switchD_00534835_caseD_1:
     case CASE_D:
       DAT_00807342 = (uint)(DAT_00807342 == 0);
       if (g_popUp_008016D8 != nullptr) {
+        /* ST_CALLSITE[0053548B]: CALL 0x00401fe6; direct=00401FE6 PopUpTy::ChangeState */
         PopUpTy::ChangeState(g_popUp_008016D8);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -1455,6 +1499,7 @@ switchD_00534835_caseD_1:
         case 0xd:
         case 0xe:
         case 0x13:
+          /* ST_CALLSITE[005357B6]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079acf0
                     ,PTR_s_STRATEGS_0079acfc);
           break;
@@ -1463,6 +1508,7 @@ switchD_00534835_caseD_1:
         case 5:
         case 8:
         case 0xf:
+          /* ST_CALLSITE[005357D5]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,&CHAR_00h_0080ef1e);
         }
         local_19c.previous = g_currentExceptionFrame;
@@ -1481,6 +1527,7 @@ switchD_00534835_caseD_1:
             element_02fd_2 = nullptr;
           }
           local_c = pcVar15;
+          /* ST_CALLSITE[00535852]: CALL 0x004012ad; direct=004012AD LoadStrategData */
           local_20 = LoadStrategData((int)pcVar15,(char *)(element_02fd_2 + 0x13),(int *)&local_18);
           uVar19 = local_8;
           if (local_20 != nullptr) {
@@ -1529,6 +1576,7 @@ switchD_00534835_caseD_1:
       if (local_1c != nullptr) {
         this_00->field_0028 = 0xc001;
         this_00->field_0034 = 0;
+        /* ST_CALLSITE[0053591F]: CALL dword ptr [EAX] */
         this_00->GetMessage((STMessage *)&this_00->field_0x18);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -1550,6 +1598,7 @@ switchD_00534835_caseD_1:
       this_00->field_01A5 = iVar18;
       this_00->field_01AB = CASE_4;
       this_00->field_01A4 = CASE_5;
+      /* ST_CALLSITE[005359A2]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1558,6 +1607,7 @@ switchD_00534835_caseD_1:
       this_00->field_01A9 = OVar4;
       this_00->field_01AA = uVar10;
       this_00->field_01A4 = CASE_9;
+      /* ST_CALLSITE[005359D9]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1593,6 +1643,7 @@ switchD_00534835_caseD_1:
       this_00->field_01A9 = this_00->field_01A4;
       this_00->field_01AB = CASE_6;
       this_00->field_01A4 = CASE_5;
+      /* ST_CALLSITE[00535BBB]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1612,13 +1663,16 @@ switchD_00534835_caseD_1:
       return 0;
     case CASE_D:
       DAT_00807346 = (*(char *)&message->arg0 + '\x01') * '\x05';
+      /* ST_CALLSITE[00535A4E]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0xaa,0x6f,'\x01',
              (byte *)this_00->field_018C);
+      /* ST_CALLSITE[00535A65]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&this_00->field_006C,"%d",(uint)(byte)DAT_00807346);
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x6f,
                        *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
       ccFntTy::WrTxt(this_00->field_017C,&this_00->field_006C,-2,-1,0,-1,-1);
       if (g_popUp_008016D8 != nullptr) {
+        /* ST_CALLSITE[00535AB6]: CALL 0x00401334; direct=00401334 PopUpTy::ChangeNumStr */
         PopUpTy::ChangeNumStr(g_popUp_008016D8);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -1633,6 +1687,7 @@ switchD_00534835_caseD_1:
       this_00->field_01A9 = OVar4;
       this_00->field_01AB = CASE_5;
       this_00->field_01A4 = CASE_5;
+      /* ST_CALLSITE[00535C20]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1641,12 +1696,14 @@ switchD_00534835_caseD_1:
       this_00->field_01A9 = OVar4;
       this_00->field_01AA = uVar10;
       this_00->field_01A4 = CASE_D;
+      /* ST_CALLSITE[00535C57]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     case CASE_6:
       DAT_0080730e = ((message->arg0).u32 * 4000) / 0x1e - 4000;
       thunk_FUN_005682c0(&g_sound,DAT_0080730e);
+      /* ST_CALLSITE[00535D96]: CALL 0x00405df3; direct=00405DF3 OptPanelTy::PaintVolume */
       PaintVolume(this_00,0,*(byte *)&message->arg0);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1693,6 +1750,7 @@ switchD_00534835_caseD_1:
           }
 LAB_00535ef1:
           g_currentExceptionFrame = pIVar9;
+          /* ST_CALLSITE[00535EFD]: CALL 0x00405df3; direct=00405DF3 OptPanelTy::PaintVolume */
           PaintVolume(local_10,0,*(byte *)&message->arg0);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -1743,6 +1801,7 @@ LAB_00535ef1:
       else if ((char)DAT_00807300 == '\b') {
         DAT_0080730a = ((message->arg0).u32 * 4000) / 0x1e - 4000;
         thunk_FUN_005686c0(&g_sound,DAT_0080730a);
+        /* ST_CALLSITE[00535E0B]: CALL 0x00405df3; direct=00405DF3 OptPanelTy::PaintVolume */
         PaintVolume(this_00,0,*(byte *)&message->arg0);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -1760,8 +1819,10 @@ LAB_00535ef1:
       return 0;
     case CASE_D:
       DAT_00807347 = *(byte *)&message->arg0;
+      /* ST_CALLSITE[00535C93]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0xaa,0x81,'\x01',
              (byte *)this_00->field_018C);
+      /* ST_CALLSITE[00535CAB]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&this_00->field_006C,"%d",DAT_00807347 + 1);
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x81,
                        *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
@@ -1774,6 +1835,7 @@ LAB_00535ef1:
     if (this_00->field_01A4 == CASE_1) {
       this_00->field_01A9 = 1;
       this_00->field_01A4 = CASE_C;
+      /* ST_CALLSITE[00536075]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1794,6 +1856,7 @@ LAB_00535ef1:
     if (temp_5fabcf5a4c == 1) {
       this_00->field_01A9 = 1;
       this_00->field_01A4 = CASE_2;
+      /* ST_CALLSITE[005361B0]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1835,6 +1898,7 @@ LAB_00535ef1:
           }
         }
         g_currentExceptionFrame = local_1e0.previous;
+        /* ST_CALLSITE[00536184]: CALL 0x00405df3; direct=00405DF3 OptPanelTy::PaintVolume */
         PaintVolume(local_10,2,*(byte *)&message->arg0);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -1879,6 +1943,7 @@ LAB_00535ef1:
           }
         }
         g_currentExceptionFrame = local_268.previous;
+        /* ST_CALLSITE[005362B8]: CALL 0x00405df3; direct=00405DF3 OptPanelTy::PaintVolume */
         PaintVolume(local_10,3,*(byte *)&message->arg0);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -2011,6 +2076,7 @@ LAB_00535ef1:
         pcVar31 = thunk_FUN_0052a4d0;
         UVar34 = 0x3ef1;
         pCVar14 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+        /* ST_CALLSITE[005364AC]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
         PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar14,UVar34,pcVar31,pcVar35,
                     iVar18);
         g_currentExceptionFrame = local_8c.previous;
@@ -2034,6 +2100,7 @@ LAB_00535ef1:
         pcVar31 = thunk_FUN_0052a4d0;
         UVar34 = 0x3ef2;
         pCVar14 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+        /* ST_CALLSITE[005363FA]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
         PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar14,UVar34,pcVar31,pcVar35,
                     iVar18);
         g_currentExceptionFrame = local_8c.previous;
@@ -2055,6 +2122,7 @@ cf_common_exit_00536441:
       iVar18 = 1;
       pcVar31 = thunk_FUN_0052a4d0;
       pCVar14 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+      /* ST_CALLSITE[00536453]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
       PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar14,UVar34,pcVar31,pcVar35,
                   iVar18);
       g_currentExceptionFrame = local_8c.previous;
@@ -2092,6 +2160,7 @@ cf_common_exit_00536441:
         pcVar31 = thunk_FUN_0052a4d0;
         UVar34 = 0x3e90;
         pCVar14 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+        /* ST_CALLSITE[005365CD]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
         PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar14,UVar34,pcVar31,pcVar35,
                     iVar18);
         g_currentExceptionFrame = local_8c.previous;
@@ -2111,6 +2180,7 @@ cf_common_exit_00536441:
         pcVar31 = thunk_FUN_0052a4d0;
         UVar34 = 0x3e91;
         pCVar14 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+        /* ST_CALLSITE[00536574]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
         PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar14,UVar34,pcVar31,pcVar35,
                     iVar18);
         g_currentExceptionFrame = local_8c.previous;
@@ -2130,6 +2200,7 @@ cf_common_exit_00536441:
         pcVar31 = thunk_FUN_0052a4d0;
         UVar34 = 0x3e92;
         pCVar14 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+        /* ST_CALLSITE[0053651B]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
         PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar14,UVar34,pcVar31,pcVar35,
                     iVar18);
         g_currentExceptionFrame = local_8c.previous;
@@ -2142,6 +2213,7 @@ cf_common_exit_00536EE8:
     iVar30 = 1;
     pCVar14 = thunk_FUN_00571240("BUT_BUTOPT",0);
     pCVar14 = FUN_006f2c00(pCVar14,iVar30,uVar27);
+    /* ST_CALLSITE[00536F06]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
     PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar14,UVar34,pcVar31,pcVar35,iVar18
                );
     g_currentExceptionFrame = local_8c.previous;
@@ -2286,6 +2358,7 @@ switchD_00536a2b_caseD_3:
       UVar34 = 0x2751;
 cf_common_exit_00536DB5:
       pCVar14 = thunk_FUN_00571240("BUT_MEDIUM",0);
+      /* ST_CALLSITE[00536DC7]: CALL 0x00403508; direct=00403508 UPanelTy::PaintIBut */
       UPanelTy::PaintIBut((UPanelTy *)this_00,(AnonShape_0053DAF0_3BDC2979 *)message,pCVar14,UVar34);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -2643,6 +2716,7 @@ cf_common_exit_00536F92:
     iVar18 = 1;
     pCVar14 = thunk_FUN_00571240("BUT_BUTOPT",0);
     pCVar14 = FUN_006f2c00(pCVar14,iVar18,uVar27);
+    /* ST_CALLSITE[00536FB2]: CALL 0x00401ea1; direct=00401EA1 UPanelTy::PaintTxtBut */
     UPanelTy::PaintTxtBut
               ((UPanelTy *)this_00,(AnonShape_0053D920_829E6B3B *)message,1,pCVar14,pcVar32,UVar34,
                pcVar35);

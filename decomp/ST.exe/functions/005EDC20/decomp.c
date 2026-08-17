@@ -26,6 +26,7 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
         ((sVar2 < g_worldGrid.sizeY && (-1 < sVar1)))) &&
        ((sVar1 < g_worldGrid.sizeZ &&
         (this = STGridAt3D(g_worldGrid, sVar3, sVar2, sVar1).objects[0], this != nullptr)))) {
+      /* ST_CALLSITE[005EDCBE]: CALL dword ptr [EDX + 0x2c] */
       iVar4 = this->GetObjectTypeId();
       if ((iVar4 == 0x52) || (iVar4 == 0x5f)) {
         if ((*(int *)&this[0x23].field_0x1c == *(int *)&param_1->field_0x18) &&
@@ -35,8 +36,10 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
           uVar12 = param_1->field_02C6;
           uVar10 = param_1->field_02C2;
           uVar8 = param_1->field_02BE;
+          /* ST_CALLSITE[005EDD5F]: CALL dword ptr [EAX + 0x138] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar4 = (**(code **)(*(int *)param_1 + 0x138))();
+          /* ST_CALLSITE[005EDD6A]: CALL dword ptr [EDX + 0x130] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)(*(int *)param_1 + 0x130))();
           thunk_FUN_004ebda0(this,*(int *)&param_1->field_0x18,iVar6,iVar4,uVar8,uVar10,uVar12);
@@ -45,6 +48,7 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
         }
         return 0;
       }
+      /* ST_CALLSITE[005EDCCF]: CALL dword ptr [EAX + 0x2c] */
       iVar4 = this->GetObjectTypeId();
       if ((iVar4 == 99) && (*(int *)&this[0x22].field_0x8 == 2)) {
         uVar11 = 0;

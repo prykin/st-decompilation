@@ -117,6 +117,7 @@ LAB_0052d7d4:
             iVar6 = 0;
           }
           if (iVar6 != 0) {
+            /* ST_CALLSITE[0052D870]: CALL 0x004041b5; direct=004041B5 PopUpTy::OutStr */
             OutStr(this_00,(byte)local_8);
           }
           bVar4 = (byte)local_8 + 1;

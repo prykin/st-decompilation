@@ -26,8 +26,10 @@ void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pCVar1 = local_c;
   if (iVar2 == 0) {
+    /* ST_CALLSITE[0055BF6A]: CALL EDI */
     pcVar3 = CFsgsConnection::GetIconFilename(local_c);
     if (pcVar3 != nullptr) {
+      /* ST_CALLSITE[0055BF72]: CALL EDI */
       pcVar3 = CFsgsConnection::GetIconFilename(pCVar1);
       local_8 = (tagBITMAPINFO *)Library::DKW::WGR::FUN_006bc260(pcVar3);
     }

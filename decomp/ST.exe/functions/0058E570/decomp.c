@@ -82,6 +82,7 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
     FUN_006e6870((void *)this->field_0211,local_EAX_51,iVar6);
   }
   if (0 < this->field_0241) {
+    /* ST_CALLSITE[0058E60D]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
     STT3DSprC::sub_004ACE30
               ((STT3DSprC *)this_00,PTR_00806724->entries[this->field_0241 + -1],
                (int)PTR_00806724->field_002C);
@@ -94,6 +95,7 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
   if (g_playSystem_00802A38->field_00E4 <= this->field_024F) goto cf_common_exit_0058E925;
   switch(this->field_0257) {
   case CASE_0:
+    /* ST_CALLSITE[0058EBC5]: CALL dword ptr [EDX + 0x20] */
     iVar6 = this->vfunc_20();
     if (iVar6 == -1) {
       local_EAX_1706 =
@@ -115,6 +117,7 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
   case CASE_1:
   case CASE_2:
   case CASE_3:
+    /* ST_CALLSITE[0058E745]: CALL dword ptr [EAX + 0x1c] */
     iVar6 = (*this->vtable->MoveStep)((STGameObjC *)this,unaff_EDI);
     if (iVar6 == 0) {
 LAB_0058ea68:
@@ -125,6 +128,7 @@ LAB_0058ea68:
           }
         }
         else {
+          /* ST_CALLSITE[0058EB87]: CALL dword ptr [EAX + 0x20] */
           iVar6 = this->vfunc_20();
           if (iVar6 == 1) {
             this->field_0253 = 0;
@@ -143,10 +147,12 @@ LAB_0058ea68:
            ((((this_01 = (STGameObjC *)
                          STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0],
               local_8 = this_01, this_01 != nullptr &&
+              /* ST_CALLSITE[0058EB17]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
               (STFishC::sub_004162B0
                          ((STFishC *)this_01,&this->field_0231,&this->field_0233,&this->field_0235),
               this->field_0047 == this->field_0231)) && (this->field_0049 == this->field_0233)) &&
             ((this->field_004B == this->field_0235 &&
+             /* ST_CALLSITE[0058EB66]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
              (pSVar9 = STAllPlayersC::GetObjPtr
                                  (g_allPlayers_007FA174,*(char *)&this->field_0249,this->field_024D,
                                   CASE_1), this_01 == pSVar9)))))) goto LAB_0058e87e;
@@ -166,8 +172,10 @@ LAB_0058ea68:
         goto LAB_0058ea68;
       }
       if (this->field_0257 == CASE_4) break;
+      /* ST_CALLSITE[0058E799]: CALL 0x0040259a; direct=0040259A STSharkC::sub_0058F430 */
       SVar9 = sub_0058F430(this);
       if (this->field_023D == 0) {
+        /* ST_CALLSITE[0058EA52]: CALL 0x004056fa; direct=004056FA STSharkC::sub_0058FF70 */
         local_EAX_1250 = sub_0058FF70(this);
         this->field_024F = local_EAX_1250;
         this->field_0257 = CASE_0;
@@ -192,6 +200,7 @@ LAB_0058ea68:
       }
       if (((this->field_0047 != sVar3) || (this->field_0049 != sVar2)) ||
          ((this->field_004B != sVar1 ||
+          /* ST_CALLSITE[0058E862]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           (pSVar8 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,*(char *)&this->field_0249,this->field_024D,
                                CASE_1), local_8 != pSVar8)))) {
@@ -201,6 +210,7 @@ LAB_0058ea68:
         thunk_FUN_00417ff0(this,8);
         thunk_FUN_00418010(this,6);
         if (iVar6 != 0) {
+          /* ST_CALLSITE[0058EA36]: CALL 0x004056fa; direct=004056FA STSharkC::sub_0058FF70 */
           local_EAX_1222 = sub_0058FF70(this);
           this->field_024F = local_EAX_1222;
           this->field_0257 = CASE_0;
@@ -222,29 +232,37 @@ LAB_0058e87e:
       local_30[3] = (undefined4 *)0x2;
       local_30[4] = (undefined4 *)0x110;
       local_30[5] = &DAT_00811728;
+      /* ST_CALLSITE[0058E8CB]: CALL dword ptr [EAX] */
       (*local_8->vtable->GetMessage)((STFishC *)local_8,(int)local_30);
       this->field_023D = 0;
+      /* ST_CALLSITE[0058E8E8]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar6 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)this_00,8,PTR_00806764,"expshark",CASE_1D);
       if (iVar6 != 0) {
         return;
       }
+      /* ST_CALLSITE[0058E906]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)this_00,8,g_playSystem_00802A38->field_00E4);
       this->field_0257 = CASE_4;
+      /* ST_CALLSITE[0058E919]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,0xe);
       thunk_FUN_004ad5e0((STT3DSprC *)this_00);
     }
     break;
   case CASE_4:
+    /* ST_CALLSITE[0058E688]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar6 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,'\b');
     iVar8 = thunk_FUN_004ac910(this_00,'\b');
     if (iVar8 == iVar6 + -1) {
       this->field_0257 = CASE_7;
+      /* ST_CALLSITE[0058E6AF]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,8);
+      /* ST_CALLSITE[0058E6B6]: CALL 0x0040227a; direct=0040227A STSharkC::sub_0058EFE0 */
       sub_0058EFE0(this);
     }
     break;
   case CASE_5:
+    /* ST_CALLSITE[0058E6C4]: CALL dword ptr [EDX + 0x20] */
     iVar6 = this->vfunc_20();
     if (iVar6 == -1) {
       local_EAX_443 =
@@ -265,6 +283,7 @@ LAB_0058e87e:
   case CASE_6:
     iVar6 = thunk_FUN_00417830((AnonShape_00417830_9254190A *)this);
     if (iVar6 == 0) {
+      /* ST_CALLSITE[0058EC8F]: CALL 0x004056fa; direct=004056FA STSharkC::sub_0058FF70 */
       uVar6 = sub_0058FF70(this);
       this->field_0257 = CASE_0;
       this->field_024F = uVar6;
@@ -285,12 +304,16 @@ cf_common_exit_0058E925:
     iVar6 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
     uVar7 = g_playSystem_00802A38->field_00E4 % 0x1e;
     local_10 = uVar7 + (iVar6 / 3) * 0x1e;
+    /* ST_CALLSITE[0058E9CD]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_00,'\x0e',
                uVar7 + (((iVar6 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0x1e);
+    /* ST_CALLSITE[0058E9DA]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
     STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',local_10);
+    /* ST_CALLSITE[0058E9E3]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
   }
+  /* ST_CALLSITE[0058E9EC]: CALL dword ptr [EDX + 0xd8] */
   this->vfunc_D8();
 switchD_0058e67d_default:
   return;

@@ -41,6 +41,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
   this_00 = local_8;
   if (iVar5 == 0) {
     if ((param_1 != nullptr) && (param_1[3] != 0)) {
+      /* ST_CALLSITE[0068F070]: CALL 0x00405af1; direct=00405AF1 AiTactClassTy::ClaimSave */
       ClaimSave(local_8);
       pAVar9 = this_00->field_00A5;
       if (0 < (int)pAVar9->count) {
@@ -76,12 +77,15 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
           this_01 = nullptr;
         }
         else {
+          /* ST_CALLSITE[0068F101]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_01 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar5,CASE_1);
         }
         if (this_01 != nullptr) {
+          /* ST_CALLSITE[0068F118]: CALL dword ptr [EAX + 0x2c] */
           iVar7 = this_01->vfunc_2C();
           if (iVar7 == 0x78) {
+            /* ST_CALLSITE[0068F128]: CALL dword ptr [EDX + 0x2c] */
             iVar7 = this_01->vfunc_2C();
             if (iVar7 == 0x78) {
               iVar7 = this_01->field_0259;
@@ -100,6 +104,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
               }
               if ((element_00bd_2 != nullptr) && (-1 < element_00bd_2->field_0030)) {
                 uVar1 = element_00bd_2->field_000C;
+                /* ST_CALLSITE[0068F17E]: CALL dword ptr [EDX + 0x2c] */
                 iVar7 = this_01->vfunc_2C();
                 if (iVar7 == 0x78) {
                   this_01->field_0269 = (uint)uVar1;
@@ -135,6 +140,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
                                ((int)&pAVar9->data->field_0004 + pAVar9->elementSize * uVar3);
                   }
                 }
+                /* ST_CALLSITE[0068F236]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
                 AiFltClassTy::_AddObjFlt(this_02,(uint)this_01,0);
                 DArrayRemoveAt((DArrayTy *)param_1,local_c);
               }
@@ -143,6 +149,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
           }
         }
       }
+      /* ST_CALLSITE[0068F1BB]: CALL 0x00403652; direct=00403652 AiTactClassTy::ClaimRestore */
       ClaimRestore(this_00);
     }
     g_currentExceptionFrame = local_50.previous;

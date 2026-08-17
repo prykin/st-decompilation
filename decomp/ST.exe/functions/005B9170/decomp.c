@@ -27,6 +27,7 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (errorCode == 0) {
+    /* ST_CALLSITE[005B91AD]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
     MMObjTy::CloseButtons((MMObjTy *)local_10);
     bVar4 = 0;
     local_8 = local_8 & 0xffffff00;
@@ -53,6 +54,7 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
       } while (bVar5 < this_00->field_009A);
     }
+    /* ST_CALLSITE[005B9275]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
     HidePanel(this_00,1,1,1);
     g_currentExceptionFrame = local_54.previous;
     return;

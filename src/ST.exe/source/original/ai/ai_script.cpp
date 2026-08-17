@@ -87,6 +87,7 @@ undefined4 __cdecl st::fn_00680890(byte param_1,byte *param_2,uint param_3,undef
   uVar4 = (uint)bVar2;
   pcVar5 = "M_ANY " + (uint)param_1 * 10;
   text = st::fn_006B0140(0x1b5a,g_hINSTANCE_00807618);
+  /* ST_CALLSITE[00680945]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(local_408,text,pcVar5,pcVar3,param_3,uVar4,uVar7);
   st::fn_00402F45(local_408);
   return 1;
@@ -118,7 +119,7 @@ undefined4 __cdecl st::fn_006809F0(uint *param_1)
     local_18 = param_1[2];
     local_10 = local_14;
     local_8 = (byte *)st::fn_006C8910(param_1,(int *)&local_c);
-    st::fn_00403346(0x17,local_8,local_c,st::pointer_boundary_cast<undefined4 *>(&local_18));
+    st::fn_00403346(0x17,local_8,local_c,&local_18);
     if (local_8 != nullptr) {
       st::fn_006AB060(&local_8);
     }
@@ -458,7 +459,7 @@ int __cdecl st::fn_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,in
       local_c = (char)uVar2;
       sStack_b = (short)((uint)uVar2 >> 8);
       uStack_9 = (undefined1)((uint)uVar2 >> 0x18);
-      uStack_8 = *(undefined1 *)(puVar3 + 1);
+      uStack_8 = ((undefined1 *)puVar3)[1];
       if ((local_c == '\x06') || (local_c == '\x03')) {
         pbVar4 = (byte *)st::fn_0040353A((int)sStack_b);
         if (pbVar4 == nullptr) {
@@ -594,7 +595,7 @@ int __cdecl st::fn_006839D0(int param_1,int *param_2,ushort param_3,int param_4)
         iVar5 = iVar5 + 1;
         break;
       case '\x03':
-        st::fn_00403EE5(param_2,cVar1,st::pointer_boundary_cast<byte *>(&DAT_00812c24 + (DAT_008488b0 * 0xac5 + local_8) * 4),iVar3);
+        st::fn_00403EE5(param_2,cVar1,(byte *)&DAT_00812c24 + (DAT_008488b0 * 0xac5 + local_8) * 4,iVar3);
         local_8 = local_8 + 1;
         break;
       case '\x04':
@@ -945,6 +946,7 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x46d);
       }
+      /* ST_CALLSITE[00683F3F]: CALL dword ptr [0x0085bba8] */
       st::external_0000001F(lpFileName,0x104,(LPSTR)local_4cc,nullptr);
       st::fn_0072E730(local_4cc,local_a4,local_7ec,local_8ec,local_3c8);
       st::fn_0072F110
@@ -978,7 +980,7 @@ switchD_006841b6_default:
           ppuVar18 = ppuVar18 + 1;
         }
         local_f8 = DAT_00857554;
-        st::fn_0072E730(st::pointer_boundary_cast<byte *>(DAT_0085753c),nullptr,nullptr,nullptr,local_3c8);
+        st::fn_0072E730(PTR_0085753c,nullptr,nullptr,nullptr,local_3c8);
         if (local_3c8[0] == 0) {
           if (lpFileName != (LPCSTR)0x0) {
             uVar6 = 0xffffffff;
@@ -1002,9 +1004,9 @@ switchD_006841b6_default:
             goto LAB_006840bc;
           }
         }
-        else if (DAT_0085753c != nullptr) {
+        else if (PTR_0085753c != nullptr) {
           uVar6 = 0xffffffff;
-          pbVar14 = st::pointer_boundary_cast<byte *>(DAT_0085753c);
+          pbVar14 = PTR_0085753c;
           do {
             pbVar15 = pbVar14;
             if (uVar6 == 0) break;
@@ -1031,7 +1033,7 @@ LAB_006840bc:
         local_fc = &DAT_0084790c;
         st::fn_0072E340(&CHAR_00h_00847d0c,PTR_0085755c,0x3fe);
         local_f4 = &CHAR_00h_00847d0c;
-        if (DAT_008489d0 != nullptr) {
+        if (DAT_008489d0 != 0) {
           local_e8 = DAT_00848a0c;
           local_ec = DAT_00848a10;
           if ((char *)((int)DAT_008489d0 + 0x231) != nullptr) {
@@ -1052,6 +1054,7 @@ LAB_006840bc:
           }
           local_f0 = &DAT_0084810c;
         }
+        /* ST_CALLSITE[00684152]: CALL dword ptr [EBP + 0x18] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar8 = (*(code *)param_5)(&local_fc);
         if (iVar8 != 0) {
@@ -1087,7 +1090,7 @@ cf_common_join_0068A687:
           g_dArray_008489DC = nullptr;
         }
         st::fn_00403DE6();
-        st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
+        st::fn_0040193D((undefined4 *)&g_anonShape_00683780_11EA4E23_00848A14);
         local_EAX_27312 = st::fn_00404D90();
         while (local_EAX_27312 != 0) {
           local_EAX_27312 = st::fn_00404D90();
@@ -1675,13 +1678,13 @@ switchD_00684bb9_caseD_3f2:
               st::fn_006A5E40
                         (-0x71,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x9d0);
-              st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
+              st::fn_0040193D((undefined4 *)&g_anonShape_00683780_11EA4E23_00848A14);
             }
             else {
               st::fn_006A5E40
                         (-0x72,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                          0x9d1);
-              st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
+              st::fn_0040193D((undefined4 *)&g_anonShape_00683780_11EA4E23_00848A14);
             }
             goto switchD_006841b6_default;
           }
@@ -1792,7 +1795,7 @@ switchD_00684bb9_caseD_3f2:
               }
               DAT_008488b0 = DAT_008488b0 + -2;
               g_anonShape_00683780_11EA4E23_00848A14 = nullptr;
-              st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
+              st::fn_0040193D((undefined4 *)&g_anonShape_00683780_11EA4E23_00848A14);
               goto switchD_006841b6_default;
             }
             switch(cVar2) {
@@ -1829,7 +1832,7 @@ switchD_00684bb9_caseD_3f2:
                 if (iVar8 != 3) {
                   st::fn_00405411(-0x74,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
                   DAT_008488b0 = DAT_008488b0 + -2;
-                  st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
+                  st::fn_0040193D((undefined4 *)&g_anonShape_00683780_11EA4E23_00848A14);
                   goto switchD_006841b6_default;
                 }
                 if (cVar2 == '\x02') {
@@ -1907,7 +1910,7 @@ cf_error_exit_0068A22B:
                          iVar8);
             }
             DAT_008488b0 = DAT_008488b0 + -2;
-            st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
+            st::fn_0040193D((undefined4 *)&g_anonShape_00683780_11EA4E23_00848A14);
             goto switchD_006841b6_default;
           case 5:
             iVar9 = (&DAT_00811a9c)[DAT_008488b0 * 0xac5];
@@ -1989,7 +1992,7 @@ cf_error_exit_0068A22B:
           }
           st::fn_006AE1C0(PTR_008489cc->field_000F,puVar5);
           DAT_008488b0 = DAT_008488b0 + -2;
-          st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
+          st::fn_0040193D((undefined4 *)&g_anonShape_00683780_11EA4E23_00848A14);
           goto switchD_006841b6_default;
         }
         if ((&DAT_00811a94)[DAT_008488b0 * 0xac5] != 2) {
@@ -2069,7 +2072,7 @@ cf_error_exit_0068A22B:
         }
         DAT_008488b0 = DAT_008488b0 + -1;
         local_30 = 0;
-        st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
+        st::fn_0040193D((undefined4 *)&g_anonShape_00683780_11EA4E23_00848A14);
         goto switchD_006841b6_default;
       case 4:
         if (DAT_007d2d18 == 6) {
@@ -2092,9 +2095,9 @@ cf_error_exit_0068A22B:
       memset(param_4, 0, 0x18); /* compiler bulk-zero initialization */
       *param_4 = iVar2;
       param_4[2] = DAT_00857554;
-      st::fn_0072E730(st::pointer_boundary_cast<byte *>(DAT_0085753c),nullptr,nullptr,nullptr,local_3c8);
+      st::fn_0072E730(PTR_0085753c,nullptr,nullptr,nullptr,local_3c8);
       if (local_3c8[0] != 0) {
-        lpFileName = (LPCSTR)DAT_0085753c;
+        lpFileName = (LPCSTR)PTR_0085753c;
       }
       if ((byte *)lpFileName != nullptr) {
         uVar6 = 0xffffffff;
@@ -2137,7 +2140,7 @@ cf_error_exit_0068A22B:
       g_dArray_008489DC = nullptr;
     }
     st::fn_00403DE6();
-    st::fn_0040193D(st::pointer_boundary_cast<undefined4 *>(&g_anonShape_00683780_11EA4E23_00848A14));
+    st::fn_0040193D((undefined4 *)&g_anonShape_00683780_11EA4E23_00848A14);
     local_EAX_27736 = st::fn_00404D90();
     while (local_EAX_27736 != 0) {
       local_EAX_27736 = st::fn_00404D90();
@@ -2253,7 +2256,7 @@ switchD_006841b6_caseD_2:
                     );
         }
         pAVar17 = (AllocationRecord_0065CD10 *)g_dArray_008489D8;
-        if (DAT_008489d0 == nullptr) {
+        if (DAT_008489d0 == 0) {
           g_dArray_008489D8 = nullptr;
           if (param_3 != nullptr) {
             *param_3 = 10;
@@ -2874,7 +2877,7 @@ cf_common_join_006895D5:
             if (iVar8 == 0) {
               st::fn_00405411(-0x7d,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
             }
-            if (DAT_008489d0 != nullptr) {
+            if (DAT_008489d0 != 0) {
               st::fn_0040597A(&DAT_008489d0);
             }
             DAT_008489d0 = st::machine_word_boundary_cast<undefined4>(st::fn_00402054((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5],
@@ -2918,7 +2921,7 @@ cf_common_join_006895D5:
               if (iVar8 == 0) {
                 st::fn_00405411(-0x7d,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
               }
-              if (DAT_008489d0 != nullptr) {
+              if (DAT_008489d0 != 0) {
                 st::fn_0040597A(&DAT_008489d0);
               }
               DAT_008489d0 = st::machine_word_boundary_cast<undefined4>(st::fn_00405754((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5]));
@@ -2998,7 +3001,7 @@ cf_common_join_006895D5:
             if (iVar8 == 0) {
               st::fn_00405411(-0x7d,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
             }
-            if (DAT_008489d0 != nullptr) {
+            if (DAT_008489d0 != 0) {
               st::fn_0040597A(&DAT_008489d0);
             }
             DAT_008489d0 = st::machine_word_boundary_cast<undefined4>(st::fn_0040102D((byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5],
@@ -3006,7 +3009,7 @@ cf_common_join_006895D5:
             DAT_008488b0 = DAT_008488b0 + -1;
             goto switchD_006841b6_default;
           case 0x3eb:
-            if (DAT_008489d0 != nullptr) {
+            if (DAT_008489d0 != 0) {
               st::fn_0040597A(&DAT_008489d0);
               DAT_008488b0 = DAT_008488b0 + -1;
               goto switchD_006841b6_default;
@@ -3043,14 +3046,14 @@ cf_common_join_006895D5:
                        0x860);
           }
           pAVar17 = (AllocationRecord_0065CD10 *)g_dArray_008489DC;
-          if (DAT_008489d0 == nullptr) {
+          if (DAT_008489d0 == 0) {
             g_dArray_008489DC = nullptr;
             if (param_3 != nullptr) {
               *param_3 = 9;
             }
             goto cf_common_join_0068A687;
           }
-          st::fn_004024B9(st::pointer_boundary_cast<uint *>(&g_dArray_008489DC->flags));
+          st::fn_004024B9(&g_dArray_008489DC->flags);
           if (g_dArray_008489DC != nullptr) {
             st::fn_006B5570(g_dArray_008489DC);
             g_dArray_008489DC = nullptr;
@@ -3066,7 +3069,7 @@ cf_common_join_006895D5:
           if ((((g_allocationRecord_0067D3B0_008489B8 != nullptr) ||
                (g_allocationRecord_00648620_008489B4 != nullptr)) ||
               (g_allocationRecord_006684E0_008489C4 != nullptr)) ||
-             ((DAT_008489c8 != nullptr ||
+             ((DAT_008489c8 != 0 ||
               (g_allocationRecord_0065CD10_008489BC != nullptr)))) {
             st::fn_006A5E40
                       (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
@@ -3085,15 +3088,17 @@ cf_common_join_006895D5:
                        0x751);
           }
           pAVar17 = (AllocationRecord_0065CD10 *)g_allocationRecord_00648620_008489B4;
-          if (DAT_008489d0 == nullptr) {
+          if (DAT_008489d0 == 0) {
             g_allocationRecord_00648620_008489B4 = nullptr;
             if (param_3 != nullptr) {
               *param_3 = 4;
             }
             goto cf_common_join_0068A687;
           }
+          /* ST_CALLSITE[00685C9B]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
           local_c = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)
                                    &g_allocationRecord_00648620_008489B4->field_0x4e,&local_18);
+          /* ST_CALLSITE[00685CB2]: CALL 0x00405a24; direct=00405A24 BossDataPack */
           local_20 = st::fn_00405A24(g_allocationRecord_00648620_008489B4,(undefined4 *)local_c,
                                   local_18,&local_10);
           st::fn_00401537((int *)&local_c);
@@ -3110,7 +3115,7 @@ cf_common_join_006895D5:
           if ((((g_allocationRecord_0067D3B0_008489B8 != nullptr) ||
                (g_allocationRecord_00648620_008489B4 != nullptr)) ||
               (g_allocationRecord_006684E0_008489C4 != nullptr)) ||
-             ((DAT_008489c8 != nullptr ||
+             ((DAT_008489c8 != 0 ||
               (g_allocationRecord_0065CD10_008489BC != nullptr)))) {
             st::fn_006A5E40
                       (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
@@ -3131,15 +3136,17 @@ cf_common_join_006895D5:
                        0x6ea);
           }
           pAVar17 = (AllocationRecord_0065CD10 *)g_allocationRecord_0067D3B0_008489B8;
-          if (DAT_008489d0 == nullptr) {
+          if (DAT_008489d0 == 0) {
             g_allocationRecord_0067D3B0_008489B8 = nullptr;
             if (param_3 != nullptr) {
               *param_3 = 3;
             }
             goto cf_common_join_0068A687;
           }
+          /* ST_CALLSITE[006857AD]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
           local_c = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)
                                    &g_allocationRecord_0067D3B0_008489B8->field_0x106,&local_18);
+          /* ST_CALLSITE[006857C4]: CALL 0x00405204; direct=00405204 PlrDataPack */
           local_28 = st::fn_00405204(g_allocationRecord_0067D3B0_008489B8,(undefined4 *)local_c,local_18
                                  ,&local_10);
           st::fn_00401537((int *)&local_c);
@@ -3191,7 +3198,7 @@ cf_common_join_006895D5:
           if (iVar8 == 0) {
             st::fn_00405411(-0x7d,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
           }
-          if (((DAT_008489c8 != nullptr) ||
+          if (((DAT_008489c8 != 0) ||
               (g_allocationRecord_0065CD10_008489BC != nullptr)) ||
              ((g_allocationRecord_00648620_008489B4 != nullptr ||
               (g_allocationRecord_006684E0_008489C4 != nullptr)))) {
@@ -3206,20 +3213,21 @@ cf_common_join_006895D5:
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
         case 0x41b:
-          if (DAT_008489c8 == nullptr) {
+          if (DAT_008489c8 == 0) {
             st::fn_006A5E40
                       (-0x8d,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x713);
           }
           pAVar17 = st::pointer_boundary_cast<AllocationRecord_0065CD10 *>(DAT_008489c8);
           if (g_allocationRecord_0067D3B0_008489B8 == nullptr) {
-            if (DAT_008489d0 == nullptr) {
+            if (DAT_008489d0 == 0) {
               DAT_008489c8 = 0;
               if (param_3 != nullptr) {
                 *param_3 = 2;
               }
               goto cf_common_join_0068A687;
             }
+            /* ST_CALLSITE[00685B5F]: CALL 0x0040518c; direct=0040518C TactDataPack */
             local_24 = st::fn_0040518C((undefined4 *)DAT_008489c8,&local_10);
             st::fn_00402E00((int *)&DAT_008489c8);
             st::fn_00401A41(local_24,local_10);
@@ -3249,14 +3257,15 @@ cf_common_join_006895D5:
                     );
         }
         pAVar17 = (AllocationRecord_0065CD10 *)g_allocationRecord_006684E0_008489C4;
-        if (DAT_008489c8 == nullptr) {
-          if (DAT_008489d0 == nullptr) {
+        if (DAT_008489c8 == 0) {
+          if (DAT_008489d0 == 0) {
             g_allocationRecord_006684E0_008489C4 = nullptr;
             if (param_3 != nullptr) {
               *param_3 = 1;
             }
             goto cf_common_join_0068A687;
           }
+          /* ST_CALLSITE[0068608A]: CALL 0x004014c4; direct=004014C4 FltDataPack */
           local_2c = st::fn_004014C4(g_allocationRecord_006684E0_008489C4,&local_10);
           st::fn_00405BCD((int *)&g_allocationRecord_006684E0_008489C4);
           st::fn_00401A41((byte *)local_2c,local_10);
@@ -3553,7 +3562,7 @@ cf_common_join_006895D5:
           st::fn_00405411(-0x7d,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
         }
         if ((g_allocationRecord_006684E0_008489C4 != nullptr) ||
-           (DAT_008489c8 != nullptr)) {
+           (DAT_008489c8 != 0)) {
           st::fn_006A5E40
                     (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x765
                     );
@@ -3604,13 +3613,14 @@ cf_common_join_006895D5:
                        0x77c);
           }
           pAVar17 = g_allocationRecord_0065CD10_008489BC;
-          if (DAT_008489d0 == nullptr) {
+          if (DAT_008489d0 == 0) {
             g_allocationRecord_0065CD10_008489BC = nullptr;
             if (param_3 != nullptr) {
               *param_3 = 5;
             }
             goto cf_common_join_0068A687;
           }
+          /* ST_CALLSITE[00686328]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
           local_c = st::fn_00401EBF(g_allocationRecord_0065CD10_008489BC,&local_18);
           st::fn_00401537((int *)&g_allocationRecord_0065CD10_008489BC);
           st::fn_00401A41((byte *)local_c,local_18);
@@ -3707,7 +3717,7 @@ cf_common_join_006895D5:
                     );
         }
         pAVar17 = (AllocationRecord_0065CD10 *)g_array_008489D4;
-        if (DAT_008489d0 == nullptr) {
+        if (DAT_008489d0 == 0) {
           g_array_008489D4 = nullptr;
           if (param_3 != nullptr) {
             *param_3 = 0x40;
@@ -4928,9 +4938,10 @@ st::fn_0068CEC0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *para
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa5b);
       }
+      /* ST_CALLSITE[0068D116]: CALL dword ptr [0x0085bba8] */
       st::external_0000001F(lpFileName,0x104,st::pointer_boundary_cast<LPSTR>(&DAT_0084868c),nullptr);
       st::fn_0072E730
-                (st::pointer_boundary_cast<byte *>(&DAT_0084868c),st::pointer_boundary_cast<byte *>(&DAT_008478a8),st::pointer_boundary_cast<byte *>(&DAT_00848790),st::pointer_boundary_cast<byte *>(&DAT_0084858c),(byte *)&DAT_00811990);
+                ((byte *)&DAT_0084868c,(byte *)&DAT_008478a8,(byte *)&DAT_00848790,(byte *)&DAT_0084858c,(byte *)&DAT_00811990);
       st::fn_0072F110(st::pointer_boundary_cast<char *>(&DAT_0084868c),st::pointer_boundary_cast<char *>(&DAT_008478a8),st::pointer_boundary_cast<char *>(&DAT_00848790),nullptr,nullptr);
       iVar4 = st::fn_00402F40(st::mutable_c_string("_curr_path"),st::pointer_boundary_cast<char *>(&DAT_0084868c),nullptr);
       if (iVar4 == 0) {
@@ -4947,8 +4958,8 @@ st::fn_0068CEC0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *para
       }
       pDVar5 = st::fn_006B54F0(nullptr,0x32,0x32);
       local_8 = pDVar5;
-      st::fn_006B5AA0(pDVar5,s_include<[_inc_path]st_string_007D56B4);
-      st::fn_006B5AA0(pDVar5,s_include<[_inc_path]st_string_007D5688);
+      st::fn_006B5AA0(pDVar5,st::mutable_c_string("include<[_inc_path]\\AiScript.dfn>;"));
+      st::fn_006B5AA0(pDVar5,st::mutable_c_string("include<[_inc_path]\\AiScript.mcr>;"));
       st::fn_006B5AA0(pDVar5,&CHAR_00h_008016a0);
       iVar4 = local_10;
 cf_continue_loop_0068D1EB:
@@ -4965,10 +4976,10 @@ cf_continue_loop_0068D1EB:
         }
         local_2c = DAT_00857554;
         st::fn_0072E730
-                  (st::pointer_boundary_cast<byte *>(DAT_0085753c),nullptr,nullptr,nullptr,(byte *)&DAT_00811990);
+                  (PTR_0085753c,nullptr,nullptr,nullptr,(byte *)&DAT_00811990);
         pbVar5_mg2 = (byte *)lpFileName;
         if (DAT_00811990 != '\0') {
-          pbVar5_mg2 = st::pointer_boundary_cast<byte *>(DAT_0085753c);
+          pbVar5_mg2 = PTR_0085753c;
         }
         if (pbVar5_mg2 != nullptr) {
           uVar6 = 0xffffffff;
@@ -4988,6 +4999,7 @@ cf_continue_loop_0068D1EB:
         local_30 = &DAT_0084790c;
         st::fn_0072E340(&CHAR_00h_00847d0c,PTR_0085755c,0x3fe);
         local_28 = &CHAR_00h_00847d0c;
+        /* ST_CALLSITE[0068D2B8]: CALL dword ptr [EBP + 0x14] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar9 = (*(code *)param_4)(&local_30);
         if (iVar9 != 0) {
@@ -5008,7 +5020,7 @@ cf_continue_loop_0068D1EB:
           iVar17 = st::fn_00404D90();
         }
         g_currentExceptionFrame = local_74.previous;
-        return st::pointer_boundary_cast<uint *>(&local_8->flags);
+        return &local_8->flags;
       }
       switch(DAT_007d2d18) {
       case 0x3b9:
@@ -5256,9 +5268,9 @@ cf_continue_loop_0068D1EB:
       *param_3 = iVar3;
       param_3[2] = DAT_00857554;
       st::fn_0072E730
-                (st::pointer_boundary_cast<byte *>(DAT_0085753c),nullptr,nullptr,nullptr,(byte *)&DAT_00811990);
+                (PTR_0085753c,nullptr,nullptr,nullptr,(byte *)&DAT_00811990);
       if (DAT_00811990 != '\0') {
-        lpFileName = (LPCSTR)DAT_0085753c;
+        lpFileName = (LPCSTR)PTR_0085753c;
       }
       if ((byte *)lpFileName != nullptr) {
         uVar6 = 0xffffffff;

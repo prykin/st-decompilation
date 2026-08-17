@@ -13,6 +13,7 @@ OpticClassC * __thiscall OpticClassC::OpticClassC(OpticClassC *this)
 
   sub_006E5FB0(this);
   this->vtable = &OpticClassCVTable;
+  /* ST_CALLSITE[004A88CE]: CALL dword ptr [0x0085bedc] */
   DVar1 = timeGetTime();
   this->field_0018 = DVar1;
   return this;

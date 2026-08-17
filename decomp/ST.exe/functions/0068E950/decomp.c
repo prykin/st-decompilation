@@ -28,7 +28,7 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
       FreeAndNull(slotStorage);
     }
     if (pAVar2->field_00BD != nullptr) {
-      pvVar3 = (void *)FUN_006b0020(&pAVar2->field_00BD->flags,&local_c);
+      pvVar3 = FUN_006b0020(&pAVar2->field_00BD->flags,&local_c);
       *slotStorage = pvVar3;
     }
     g_currentExceptionFrame = local_50.previous;

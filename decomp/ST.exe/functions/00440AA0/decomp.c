@@ -121,7 +121,9 @@ LAB_00440bab:
         local_20 = uVar15;
       }
       else {
+        /* ST_CALLSITE[00440B98]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar4 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
+        /* ST_CALLSITE[00440BA1]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
         iVar5 = (*pSVar4->vtable[1].vfunc_24)(pSVar4);
         if (iVar5 == 0) goto LAB_00440bab;
       }
@@ -144,7 +146,9 @@ LAB_00440c19:
         uVar14 = uVar14 - 1;
       }
       else {
+        /* ST_CALLSITE[00440C06]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar4 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
+        /* ST_CALLSITE[00440C0F]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
         iVar5 = (*pSVar4->vtable[1].vfunc_24)(pSVar4);
         if (iVar5 == 0) goto LAB_00440c19;
       }
@@ -175,6 +179,7 @@ LAB_00440c19:
       DArrayGetElement(local_80,local_1c,&local_7c);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((local_7c != nullptr) &&
+          /* ST_CALLSITE[00440CAB]: CALL dword ptr [EAX + 0xc] */
           (iVar5 = (**(code **)(*(int *)local_7c + 0xc))(), iVar5 == 4)) &&
          (local_7c->field_0027 != 0)) {
         local_6c = local_7c->field_0029;
@@ -184,6 +189,7 @@ LAB_00440c19:
           do {
             DArrayGetElement(local_6c,local_2c,local_28);
             if ((ushort)STPiece<0,4>(local_28) != 0xffff) {
+              /* ST_CALLSITE[00440D05]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar4 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
               if (pSVar4 == nullptr) {
                 iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2239,0,0,
@@ -225,7 +231,9 @@ LAB_00440c19:
                     }
                     if (((this_00 != nullptr) &&
                         (this_00[1].vtable == (STWorldObjectVTable *)(int)param_1)) &&
+                       /* ST_CALLSITE[00440E51]: CALL dword ptr [EAX + 0x2c] */
                        ((iVar5 = this_00->GetObjectTypeId(), iVar5 == 0x33 &&
+                        /* ST_CALLSITE[00440E61]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                         (iVar5 = (*this_00->vtable[5].slots_00_28[2])(this_00), uVar15 = local_20,
                         iVar5 == 1)))) {
                       uVar14 = 0;
@@ -275,7 +283,9 @@ LAB_00440c19:
     do {
       uVar15 = local_1c;
       DArrayGetElement(param_2,local_1c,local_28);
+      /* ST_CALLSITE[00440F6D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar4 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
+      /* ST_CALLSITE[00440F80]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0((STFishC *)pSVar4,&local_12,&local_14,&local_16);
       uVar14 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
       psVar15_mg1 = g_pathingGrid.cells;
@@ -297,8 +307,11 @@ LAB_00440c19:
          (uVar15 = 0, 0 < (int)local_64)) {
         do {
           DArrayGetElement(local_10,uVar15,&local_3c);
+          /* ST_CALLSITE[00441044]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar4 = GetObjPtr(local_40,param_1,local_3c,CASE_1);
+          /* ST_CALLSITE[00441059]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)pSVar4,&local_12,&local_14,&local_16);
+          /* ST_CALLSITE[00441062]: CALL dword ptr [EDX + 0x2c] */
           GVar9 = pSVar4->vfunc_2C();
           bVar3 = thunk_FUN_00430750(GVar9);
           uStack_3a = ((g_pathingScratchGrid.cells
@@ -313,7 +326,9 @@ LAB_00440c19:
       if (0 < (int)local_48) {
         do {
           DArrayGetElement(param_3,uVar15,local_28);
+          /* ST_CALLSITE[0044110A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar4 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
+          /* ST_CALLSITE[0044111F]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)pSVar4,&local_12,&local_14,&local_16);
           local_68 = (int)g_pathingScratchGrid.cells
                           [(int)local_16 * (int)g_pathingGrid.planeStride +
@@ -322,6 +337,7 @@ LAB_00440c19:
             local_68 = -1;
           }
           else {
+            /* ST_CALLSITE[0044115D]: CALL dword ptr [EAX + 0x2c] */
             GVar9 = pSVar4->vfunc_2C();
             bVar3 = thunk_FUN_00430750(GVar9);
             local_68 = ((local_68 * 0xc9 + -0xc9) / 3) / (int)(uint)bVar3;
@@ -345,12 +361,15 @@ LAB_00440c19:
         dVar1 = local_64;
         if (local_64 == 1) {
           DArrayGetElement(local_10,0,&local_3c);
+          /* ST_CALLSITE[0044122D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar4 = GetObjPtr(local_40,param_1,local_3c,CASE_1);
           local_60 = thunk_FUN_00486b40(pSVar4);
+          /* ST_CALLSITE[00441242]: CALL dword ptr [EDX + 0x78] */
           iVar5 = pSVar4->vfunc_78();
           if (iVar5 < 1) {
             iVar5 = 1;
           }
+          /* ST_CALLSITE[00441254]: CALL dword ptr [EAX + 0x2c] */
           iVar11 = pSVar4->vfunc_2C();
           local_c = (DArrayTy *)
                     ((int)(*(int *)(&DAT_007e049c + iVar11 * 4) * local_60) / iVar5 + uStack_3a);
@@ -376,12 +395,15 @@ LAB_00440c19:
             }
           }
           DArrayGetElement(array,0,&local_34);
+          /* ST_CALLSITE[00441302]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar4 = GetObjPtr(local_40,param_1,local_34,CASE_1);
           local_EAX_2155 = thunk_FUN_00486b40(pSVar4);
+          /* ST_CALLSITE[00441316]: CALL dword ptr [EAX + 0x78] */
           iVar5 = pSVar4->vfunc_78();
           if (iVar5 < 1) {
             iVar5 = 1;
           }
+          /* ST_CALLSITE[00441328]: CALL dword ptr [EDX + 0x2c] */
           iVar11 = pSVar4->vfunc_2C();
           local_74 = (*(int *)(&DAT_007e049c + iVar11 * 4) * local_EAX_2155) / iVar5;
           iVar5 = 0;
@@ -391,12 +413,15 @@ LAB_00440c19:
           if (1 < (int)local_64) {
             do {
               DArrayGetElement(local_10,local_2c,&local_5c);
+              /* ST_CALLSITE[00441374]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar4 = GetObjPtr(local_40,param_1,local_5c,CASE_1);
               local_60 = thunk_FUN_00486b40(pSVar4);
+              /* ST_CALLSITE[00441389]: CALL dword ptr [EDX + 0x78] */
               iVar11 = pSVar4->vfunc_78();
               if (iVar11 < 1) {
                 iVar11 = 1;
               }
+              /* ST_CALLSITE[0044139B]: CALL dword ptr [EAX + 0x2c] */
               iVar12 = pSVar4->vfunc_2C();
               iVar11 = (int)(*(int *)(&DAT_007e049c + iVar12 * 4) * local_60) / iVar11;
               local_50 = (DArrayTy *)((int)&local_50->flags + iVar11);
@@ -455,12 +480,15 @@ LAB_00440c19:
             dVar1 = local_64;
             if (local_64 == 1) {
               DArrayGetElement(local_10,0,&local_3c);
+              /* ST_CALLSITE[004414FB]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar4 = GetObjPtr(local_40,param_1,local_3c,CASE_1);
               local_EAX_2660 = thunk_FUN_00486b40(pSVar4);
+              /* ST_CALLSITE[0044150F]: CALL dword ptr [EDX + 0x78] */
               iVar5 = pSVar4->vfunc_78();
               if (iVar5 < 1) {
                 iVar5 = 1;
               }
+              /* ST_CALLSITE[00441521]: CALL dword ptr [EAX + 0x2c] */
               iVar11 = pSVar4->vfunc_2C();
               local_8 = (DArrayTy *)
                         ((*(int *)(&DAT_007e049c + iVar11 * 4) * local_EAX_2660) / iVar5 + uStack_3a
@@ -484,12 +512,15 @@ LAB_00440c19:
                 }
               }
               DArrayGetElement(local_10,0,&local_34);
+              /* ST_CALLSITE[004415BB]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar4 = GetObjPtr(local_40,param_1,local_34,CASE_1);
               local_EAX_2852 = thunk_FUN_00486b40(pSVar4);
+              /* ST_CALLSITE[004415CF]: CALL dword ptr [EDX + 0x78] */
               iVar5 = pSVar4->vfunc_78();
               if (iVar5 < 1) {
                 iVar5 = 1;
               }
+              /* ST_CALLSITE[004415E1]: CALL dword ptr [EAX + 0x2c] */
               iVar11 = pSVar4->vfunc_2C();
               local_74 = (*(int *)(&DAT_007e049c + iVar11 * 4) * local_EAX_2852) / iVar5;
               iVar5 = 0;
@@ -499,12 +530,15 @@ LAB_00440c19:
               if (1 < (int)local_64) {
                 do {
                   DArrayGetElement(local_10,(uint)local_6c,&local_5c);
+                  /* ST_CALLSITE[0044162D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                   pSVar4 = GetObjPtr(local_40,param_1,local_5c,CASE_1);
                   local_60 = thunk_FUN_00486b40(pSVar4);
+                  /* ST_CALLSITE[00441642]: CALL dword ptr [EDX + 0x78] */
                   iVar11 = pSVar4->vfunc_78();
                   if (iVar11 < 1) {
                     iVar11 = 1;
                   }
+                  /* ST_CALLSITE[00441654]: CALL dword ptr [EAX + 0x2c] */
                   iVar12 = pSVar4->vfunc_2C();
                   iVar11 = (int)(*(int *)(&DAT_007e049c + iVar12 * 4) * local_60) / iVar11;
                   local_50 = (DArrayTy *)((int)&local_50->flags + iVar11);

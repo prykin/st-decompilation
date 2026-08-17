@@ -24,11 +24,13 @@ int __thiscall STParticleC::sub_00629E60(STParticleC *this,int param_1)
   iVar2 = -1;
   if (param_1 != 0) {
     this->field_0040 = 1;
+    /* ST_CALLSITE[00629E75]: CALL 0x004013d4; direct=004013D4 STParticleC::sub_0062B4A0 */
     bVar1 = sub_0062B4A0(this);
     this->field_00D6 = bVar1;
   }
   if (this->field_00D6 != '\0') {
     switch(this->field_00C2) {
+    /* ST_CALLSITE[00629EA1]: CALL 0x00405727; direct=00405727 STParticleC::InitVisibelFlight */
     case CASE_1:
     case CASE_2:
       iVar2 = InitVisibelFlight(this,1);
@@ -36,8 +38,10 @@ int __thiscall STParticleC::sub_00629E60(STParticleC *this,int param_1)
     case CASE_3:
     case CASE_4:
       if (this->field_00EB != nullptr) {
+        /* ST_CALLSITE[00629EB4]: CALL 0x00404a7a; direct=00404A7A STParticleC::sub_00629F20 */
         sub_00629F20(this);
       }
+      /* ST_CALLSITE[00629EBD]: CALL 0x00405d53; direct=00405D53 STParticleC::InitVisibelDeton */
       iVar2 = InitVisibelDeton(this,1);
       break;
     default:

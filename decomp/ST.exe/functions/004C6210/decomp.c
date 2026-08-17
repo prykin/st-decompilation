@@ -14,8 +14,7 @@
 undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,int *param_2)
 
 {
-  AnonShape_004AB810_8E5693D5 *pAVar1;
-  STT3DSprC *this_00;
+  STT3DSprC *pSVar1;
   int iVar2;
   uint uVar3;
   DWORD DVar4;
@@ -23,23 +22,26 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,int 
   this->field_0018 = 0;
   this->field_001C = param_1;
   this->field_0020 = param_2;
-  pAVar1 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
-  if (pAVar1 == nullptr) {
-    this_00 = nullptr;
+  pSVar1 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+  if (pSVar1 == nullptr) {
+    pSVar1 = nullptr;
   }
   else {
-    this_00 = (STT3DSprC *)thunk_FUN_004ab810(pAVar1);
+    /* ST_CALLSITE[004C6239]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+    pSVar1 = STT3DSprC::STT3DSprC(pSVar1);
   }
-  this->field_002C = this_00;
+  this->field_002C = pSVar1;
   if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 0) {
-    iVar2 = STT3DSprC::Init(this_00,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
+    /* ST_CALLSITE[004C62CC]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
+    iVar2 = STT3DSprC::Init(pSVar1,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       RaiseInternalException
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x48);
     }
   }
   else if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 1) {
-    iVar2 = STT3DSprC::Init(this_00,PTR_008073cc,0x78,0x56,nullptr,0xf0,0xbe,0x11);
+    /* ST_CALLSITE[004C6275]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
+    iVar2 = STT3DSprC::Init(pSVar1,PTR_008073cc,0x78,0x56,nullptr,0xf0,0xbe,0x11);
     if (iVar2 != 0) {
       RaiseInternalException
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x49);
@@ -48,6 +50,7 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,int 
     Library::Ourlib::ST3DSMAP::SprSetSplit(g_sT3DSMAPContext_00807598,uVar3);
   }
   thunk_FUN_004ad5e0(this->field_002C);
+  /* ST_CALLSITE[004C6312]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar2 = STT3DSprC::LoadSequence
                     (this->field_002C,0,PTR_0080678c,
                      *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),
@@ -58,8 +61,10 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,int 
   }
   thunk_FUN_004abce0(this->field_002C,0,*(int *)(&DAT_00790f84 + this->field_001C * 4),
                      *(int *)(&DAT_00790f84 + this->field_001C * 4),'\0');
+  /* ST_CALLSITE[004C6357]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
   DVar4 = STAppC::sub_006E51B0(this->field_0010);
+  /* ST_CALLSITE[004C636A]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   STT3DSprC::StartShow(this->field_002C,0,DVar4);
   thunk_FUN_004ad430(this->field_002C);
   this->field_0024 = 0;

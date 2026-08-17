@@ -15,6 +15,7 @@ undefined4 __thiscall FUN_00660420(void *this,undefined4 param_1)
   {
     this_00 = thunk_FUN_0042b760(STField<char>(this,0x24),STField<ushort>(this,0x7d));
     if (this_00 != nullptr) {
+      /* ST_CALLSITE[00660471]: CALL dword ptr [EDX + 0x8] */
       this_00->sub_00498D20(2,(short)local_1c);
       return 0;
     }

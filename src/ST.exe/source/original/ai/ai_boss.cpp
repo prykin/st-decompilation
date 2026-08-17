@@ -32,6 +32,7 @@ int __thiscall st::fn_00647DC0(AiBossClassTy *this,undefined4 *param_1)
     puVar5 = (byte *)(param_1);
     memmove(puVar6, puVar5, 0x85); /* compiler REP MOVS byte copy */
     local_8->field_05D8 = 1;
+    /* ST_CALLSITE[00647E26]: CALL 0x004054b1; direct=004054B1 AiEventClassTy::InitData */
     st::fn_004054B1
               ((AiEventClassTy *)&local_8->vtable_at_1c,
                (int *)(local_8->field_0619 + 0x84 + (int)param_1));
@@ -80,6 +81,7 @@ byte * __thiscall st::fn_00647EF0(AiBossClassTy *this,uint *param_1)
   errorCode = st::fn_0072D7F0(local_58.jumpBuffer,0);
   pAVar2 = local_14;
   if (errorCode == 0) {
+    /* ST_CALLSITE[00647F37]: CALL 0x00401d11; direct=00401D11 AiEventClassTy::PrepareToSave */
     local_8 = st::fn_00401D11((AiEventClassTy *)&local_14->vtable_at_1c,&local_10);
     if (pAVar2 == nullptr) {
       pAVar5 = nullptr;
@@ -87,6 +89,7 @@ byte * __thiscall st::fn_00647EF0(AiBossClassTy *this,uint *param_1)
     else {
       pAVar5 = (AllocationRecord_00648620 *)&pAVar2->field_0x5d3;
     }
+    /* ST_CALLSITE[00647F57]: CALL 0x00405a24; direct=00405A24 BossDataPack */
     local_c = st::fn_00405A24(pAVar5,local_8,local_10,param_1);
     *(undefined1 *)local_c = 1;
     if (local_8 != nullptr) {
@@ -165,13 +168,16 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
       local_8 = 0;
+      /* ST_CALLSITE[00648102]: CALL 0x00403341; direct=00403341 AiBossClassTy::PrepareToSave */
       local_c = st::fn_00403341(local_10,&local_8);
+      /* ST_CALLSITE[0064811E]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       st::fn_00401078(g_playSystem_00802A38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
       if (local_c != nullptr) {
         st::fn_006AB060(&local_c);
       }
     }
     else if (SVar1 == MESS_ID_NONE) {
+      /* ST_CALLSITE[006480EB]: CALL 0x00401be0; direct=00401BE0 AiEventClassTy::GetMessage */
       st::fn_00401BE0((AiEventClassTy *)&local_10->vtable_at_1c,message);
     }
     else if (SVar1 == MESS_ID_CREATE) {
@@ -180,6 +186,7 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
         st::fn_006A5E40
                   (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0x61);
       }
+      /* ST_CALLSITE[006480D2]: CALL 0x00403774; direct=00403774 AiBossClassTy::InitData */
       st::fn_00403774(this_00,st::pointer_boundary_cast<undefined4 *>(puVar9));
       g_aiBossClass_008117BC = this_00;
       st::fn_00401F69();
@@ -196,6 +203,7 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
         if (uVar6 < local_10->field_0629 + 5) goto LAB_00648291;
         local_10->field_0629 = uVar6;
       }
+      /* ST_CALLSITE[00648186]: CALL 0x00401be0; direct=00401BE0 AiEventClassTy::GetMessage */
       st::fn_00401BE0((AiEventClassTy *)&local_10->vtable_at_1c,message);
       if (g_allPlayers_007FA174 != nullptr) {
         cVar11 = '\0';
@@ -203,7 +211,8 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
         do {
           if ((*pbVar8 != 0xff) &&
              (this_01 = st::fn_00401DC5(cVar11), this_01 != nullptr)) {
-            this_01->st::fn_00401BE0(message);
+            /* ST_CALLSITE[006481BC]: CALL dword ptr [EDX] */
+            this_01->GetMessage(message);
           }
           pbVar8 = pbVar8 + 0x51;
           cVar11 = cVar11 + '\x01';

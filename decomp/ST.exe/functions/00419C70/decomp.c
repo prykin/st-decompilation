@@ -13,13 +13,16 @@ undefined4 __fastcall TLOEmbryoTy::sub_00419C70(int *param_1,undefined4 param_2,
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
 
+  /* ST_CALLSITE[00419C92]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject */
   uVar1 = STAllPlayersC::RegisterObject
                     (g_allPlayers_007FA174,(char)param_1[9],
                      STReplaceLowWord((uint32_t)(param_1), (uint16_t)((short)param_1[0xc])),0xffff,param_1,
                      param_3,0);
+  /* ST_CALLSITE[00419CAA]: CALL 0x0040494e; direct=0040494E STAllPlayersC::_ChangeMD */
   STAllPlayersC::_ChangeMD
             (g_allPlayers_007FA174,1,(int *)param_1[9],
              STReplaceLowWord((uint32_t)(uVar1), (uint16_t)(STField<undefined2>(param_1,0x32))));
+  /* ST_CALLSITE[00419CC0]: CALL 0x004019a6; direct=004019A6 STAllPlayersC::_ChangeDock */
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   STAllPlayersC::_ChangeDock
             (1,(int *)param_1[9],CONCAT22(extraout_var,STField<undefined2>(param_1,0x32)));

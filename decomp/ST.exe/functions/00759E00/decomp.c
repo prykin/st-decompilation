@@ -5,6 +5,7 @@ void FUN_00759e00(int *param_1)
 
 {
   if (*param_1 != 0) {
+    /* ST_CALLSITE[00759E0E]: CALL dword ptr [EAX + 0x28] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1 + 0x28))(param_1);
   }

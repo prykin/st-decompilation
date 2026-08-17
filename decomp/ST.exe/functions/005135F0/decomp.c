@@ -52,6 +52,7 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
       local_c->field_0030 = (undefined2)iVar5;
       local_c->field_0032 = STPiece<2,2>(iVar5);
       if (g_cursorClass_00802A30 != nullptr) {
+        /* ST_CALLSITE[00513695]: CALL dword ptr [EDX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_c->field_0x18);
       }
@@ -83,6 +84,7 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
         iVar5 = iVar5 + 0x11;
       } while (local_8 < *(uint *)sizeHelp_exref);
     }
+    /* ST_CALLSITE[00513747]: CALL 0x00401acd; direct=00401ACD HelpPanelTy::CreateList */
     CreateList(this_00);
     g_currentExceptionFrame = local_64.previous;
     return;

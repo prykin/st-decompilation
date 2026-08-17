@@ -123,6 +123,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       uVar17 = 0x694d;
     }
     local_18->field_002D = uVar17;
+    /* ST_CALLSITE[005C42BF]: CALL dword ptr [EDX] */
     local_18->GetMessage((STMessage *)&local_18->field_0x1d);
     return;
   }
@@ -141,20 +142,21 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
   }
+  /* ST_CALLSITE[005C2A74]: CALL dword ptr [0x0085bde8] */
   wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079c0ec,
             PTR_s_STRATEGS_0079c100);
   pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   this_01->field_1F43 = pcVar5;
   SVar1 = this_01->field_1E26;
   if (((SVar1 == 6) || (SVar1 == 1)) || (pDVar18 = PTR_0080c502, SVar1 == 2)) {
-    pDVar18 = PTR_0080c506;
+    pDVar18 = (DArrayTy *)PTR_0080c506;
   }
   if (this_01->field_1C5F < pDVar18->count) {
     if (((SVar1 == 6) || (SVar1 == 1)) || (pDVar18 = PTR_0080c502, SVar1 == 2)) {
-      pDVar18 = PTR_0080c506;
+      pDVar18 = (DArrayTy *)PTR_0080c506;
     }
     if (((SVar1 == 6) || (SVar1 == 1)) || (pDVar6 = PTR_0080c502, SVar1 == 2)) {
-      pDVar6 = PTR_0080c506;
+      pDVar6 = (DArrayTy *)PTR_0080c506;
     }
     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
     pvVar23 = (void *)(pDVar6->elementSize * this_01->field_1C5F + (int)pDVar18->data);
@@ -198,6 +200,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     iVar33 = this_01->field_1C63;
     pcVar5 = this_01->field_1F43;
   }
+  /* ST_CALLSITE[005C2B69]: CALL 0x00402bf3; direct=00402BF3 StartSystemTy::SetObjectives */
   StartSystemTy::SetObjectives(g_startSystem_0081176C,(int)pcVar5,pcVar24,iVar33);
   pSVar7 = (SettMapMTy_field_1F84DArray *)Library::DKW::TBL::DArrayCreate(nullptr,8,0x60,8);
   this_01->field_1F84 = pSVar7;
@@ -214,6 +217,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     this_01->field_1A7F = 1;
     this_01->field_1A80 = DAT_008087c6;
     this_01->field_1A81 = (char)(DAT_008087c2 >> 1);
+    /* ST_CALLSITE[005C2C58]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&local_28,"%08x",DAT_0080995c);
     this_01->field_1A82 = local_28;
     this_01->field_1A86 = local_24;
@@ -321,8 +325,10 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     pSVar11 = (SettMapMTy_field_1F7CDArray *)
               Library::DKW::TBL::DArrayCreate(nullptr,5,0x20c,5);
     this_01->field_1F7C = pSVar11;
+    /* ST_CALLSITE[005C303D]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)local_3cc,"%s%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079c0ec,
               &CHAR___007c72d8,PTR_CHAR___0079c0f0);
+    /* ST_CALLSITE[005C3054]: CALL dword ptr [0x0085bcec] */
     hFindFile = FindFirstFileA((LPCSTR)local_3cc,&local_50c);
     local_14 = hFindFile;
     if (hFindFile != (HANDLE)0xffffffff) {
@@ -336,6 +342,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
           hFindFile = local_14;
           pIVar4 = local_cc.previous;
           if (iVar5 == 0) {
+            /* ST_CALLSITE[005C30CA]: CALL dword ptr [0x0085bde8] */
             wsprintfA((LPSTR)local_3cc,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079c0ec,
                       local_50c.cFileName);
             pcVar6 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)local_3cc,0,0,0);
@@ -406,10 +413,12 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
           }
         }
         g_currentExceptionFrame = pIVar4;
+        /* ST_CALLSITE[005C3216]: CALL dword ptr [0x0085bcf0] */
         BVar12 = FindNextFileA(hFindFile,&local_50c);
       } while (BVar12 != 0);
     }
     if (hFindFile != (HANDLE)0xffffffff) {
+      /* ST_CALLSITE[005C322A]: CALL dword ptr [0x0085bcf4] */
       FindClose(hFindFile);
     }
     dVar2 = this_01->field_1F7C->count;
@@ -467,6 +476,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1C6B,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
+  /* ST_CALLSITE[005C3362]: CALL dword ptr [EDX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(this_01->field_1C6B + 4))(PTR_00806784,7,0,"MM_SLDUP",0xffffffff);
   this_01->field_1C87 = 0x2fa;
@@ -475,6 +485,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1CFC,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
+  /* ST_CALLSITE[005C33B7]: CALL dword ptr [EDX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(this_01->field_1CFC + 4))(PTR_00806784,7,0,"MM_SLDDN",0xffffffff);
   this_01->field_1D18 = 0x2fa;
@@ -483,6 +494,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1D8D,(int *)g_ddxContext_008075A8,0x31,'\a',
              nullptr,0,0);
+  /* ST_CALLSITE[005C3401]: CALL dword ptr [EDX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(this_01->field_1D8D + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
   this_01->field_1DA9 = 0x2ff;
@@ -682,6 +694,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   FUN_006b2330(g_ddxContext_008075A8,puVar15,0x31,0x40407f,pAVar14->field_0004,pAVar14->field_0008,
                (ushort *)pAVar14);
   Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar15,0xffffffff,0x112,0x149);
+  /* ST_CALLSITE[005C3A99]: CALL dword ptr [EAX + 0x18] */
   this_01->CreateCtrls('\x01');
   if (this_01->field_21E2 != '\0') {
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4042d2,0xf9,0x121,
@@ -714,6 +727,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       bVar29 = 0x10;
       iVar32 = 1;
       iVar33 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+      /* ST_CALLSITE[005C3B77]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       uVar20 = HoloTy::Init(this_01->field_21EC,CASE_4,10,0xb4,iVar33,iVar32,bVar29,cVar30,uVar19);
       if (uVar20 != 0) {
         pHVar16 = this_01->field_21EC;
@@ -774,6 +788,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       bVar29 = 0x10;
       iVar32 = 1;
       iVar33 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x149,0x205,0x8c);
+      /* ST_CALLSITE[005C3D1A]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_4970 =
            HoloTy::Init(this_01->field_21F4,CASE_2,0x112,0x149,iVar33,iVar32,bVar29,cVar30,uVar19);
       if (local_EAX_4970 != 0) {
@@ -841,6 +856,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       bVar29 = 0x10;
       iVar32 = 1;
       iVar33 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x38,0x205,0x104);
+      /* ST_CALLSITE[005C3E64]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_5300 =
            HoloTy::Init(this_01->field_21E8,CASE_2,0x112,0x38,iVar33,iVar32,bVar29,cVar30,uVar19);
       if (local_EAX_5300 != 0) {
@@ -905,6 +921,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       bVar29 = 0x10;
       iVar32 = 1;
       iVar33 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
+      /* ST_CALLSITE[005C4063]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_5811 =
            HoloTy::Init(this_01->field_21F0,CASE_4,10,0xb4,iVar33,iVar32,bVar29,cVar30,uVar19);
       if (local_EAX_5811 != 0) {
@@ -956,11 +973,15 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       puVar10 = puVar10 + 1;
     }
     *(undefined2 *)puVar10 = 0xffff;
+    /* ST_CALLSITE[005C419D]: CALL 0x00405191; direct=00405191 MMsgTy::ShowSprites */
     MMsgTy::ShowSprites(pSVar3->field_02E6);
     (this_01->array_00BC[0xc].field_01DB)->field_02E6->field_1CAB = this_01->field_0008;
+    /* ST_CALLSITE[005C41CD]: CALL 0x00401717; direct=00401717 MMsgTy::SetPanel */
     MMsgTy::SetPanel((this_01->array_00BC[0xc].field_01DB)->field_02E6,0,(int)&local_2c8,0,0);
+    /* ST_CALLSITE[005C41E2]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
     MMsgTy::StatePanel((this_01->array_00BC[0xc].field_01DB)->field_02E6,(int)local_44);
   }
+  /* ST_CALLSITE[005C41EB]: CALL 0x004049d5; direct=004049D5 SettMapTy::PaintSettMap */
   SettMapTy::PaintSettMap((SettMapTy *)this_01,'\x01');
   this_00 = g_cursorClass_00802A30;
   if (g_cursorClass_00802A30 != nullptr) {
@@ -968,7 +989,9 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     iVar32 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = CASE_1;
     this_00->field_0494 = 0xffff;
+    /* ST_CALLSITE[005C421B]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
     CursorClassTy::SetGCType(this_00,CASE_0,iVar32,iVar33);
+    /* ST_CALLSITE[005C4230]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;
@@ -976,6 +999,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   this_01->field_0065 = 3;
   thunk_FUN_005b6730(this_01,0xb,'\0',-1);
   if (DAT_008067a0 != '\0') {
+    /* ST_CALLSITE[005C426D]: CALL dword ptr [0x0085c070] */
     CFsgsConnection::UpdateGame
               ((CFsgsConnection *)&DAT_00802a90,4,&this_01->array_00BC[0xc].field_0x1df);
   }

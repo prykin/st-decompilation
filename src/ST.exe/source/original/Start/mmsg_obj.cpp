@@ -24,41 +24,51 @@ void __thiscall st::fn_005B6B20(MMsgTy *this)
   if (errorCode == 0) {
     g_startSystem_0081176C->field_02E6 = local_8;
     local_8->field_009A = 8;
+    /* ST_CALLSITE[005B6BAB]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     st::fn_00401992((MMObjTy *)local_8,(RecoveredRecord_MMObjTy_005B5240 *)&local_8->field_0x9b,
                         st::mutable_c_string("MM_MBUT12"),0x194,0x213,0x24,0x12,0x12,7,0xa0,0x31,0x14,nullptr
                         ,0,0,0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6BF3]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     st::fn_00401992((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[0].field_01DA,
                         st::mutable_c_string("MM_MBUT08"),0x25c,0x213,0xf,0x14,2,8,0xa0,0x34,0x14,nullptr,0,0
                         ,0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6C3B]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     st::fn_00401992((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[1].field_01DA,
                         st::mutable_c_string("MM_MBUT09"),0x261,0x1da,0x10,0x12,1,7,0xa0,0x34,0xf,nullptr,0,0
                         ,0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6C83]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     st::fn_00401992((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[2].field_01DA,
                         st::mutable_c_string("MM_MBUT10"),0x264,0x1a3,0x10,0x10,2,6,0x9e,0x33,10,nullptr,0,0,
                         0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6CC8]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     st::fn_00401992((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[3].field_01DA,
                         st::mutable_c_string("MM_MBUT07"),0,0x1a3,0x2f,0x10,0x1c,6,0x9d,0x31,10,nullptr,0,0,0
                         ,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6D0D]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     st::fn_00401992((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[4].field_01DA,
                         st::mutable_c_string("MM_MBUT06"),0,0x1da,0x32,0x12,0x1d,7,0xa0,0x32,0xf,nullptr,0,0,
                         0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6D52]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     st::fn_00401992((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[5].field_01DA,
                         st::mutable_c_string("MM_MBUT05"),0,0x213,0x34,0x13,0x21,9,0xa0,0x33,0x14,nullptr,0,0
                         ,0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6D9A]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     st::fn_00401992((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[6].field_01DA,
                         st::mutable_c_string("MM_MBUT11"),0xb4,0x213,0x37,0x12,0x26,8,0xa0,0x30,0x14,nullptr,
                         0,0,0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6DDF]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     st::fn_00401992((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->field_0x1caf,
                         st::mutable_c_string("MM_TABLO"),0x30,0x203,0xb5,0x11,0,0,0,0,0x14,nullptr,0,0,0,0,
                         0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6DE6]: CALL 0x0040462e; direct=0040462E MMsgTy::HideSprites */
     st::fn_0040462E(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -94,6 +104,7 @@ void __thiscall st::fn_005B6F10(MMsgTy *this)
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[005B6F44]: CALL 0x0040458e; direct=0040458E MMObjTy::DoneMMObj */
     st::fn_0040458E((MMObjTy *)local_8);
     g_startSystem_0081176C->field_02E6 = nullptr;
     st::fn_00715AB0((SpriteClassTy *)&pMVar2->field_0x1cf7);
@@ -158,7 +169,7 @@ void __thiscall st::fn_005B6FF0(MMsgTy *this)
     }
     iVar5 = 0;
     if (pMVar2->field_009A != 0) {
-      puVar6 = st::pointer_boundary_cast<uint *>(&pMVar2->array_00BC[0].field_0027.field_0004);
+      puVar6 = &pMVar2->array_00BC[0].field_0027.field_0004;
       do {
         puVar6[1] = 0;
         if (*puVar6 != 0xffffffff) {
@@ -226,7 +237,7 @@ void __thiscall st::fn_005B7210(MMsgTy *this)
     }
     iVar3 = 0;
     if (pMVar2->field_009A != 0) {
-      puVar5 = st::pointer_boundary_cast<uint *>(&pMVar2->array_00BC[0].field_0027.field_0004);
+      puVar5 = &pMVar2->array_00BC[0].field_0027.field_0004;
       do {
         if (*puVar5 != 0xffffffff) {
           st::fn_006B34D0
@@ -283,7 +294,7 @@ void __thiscall st::fn_005B7340(MMsgTy *this)
     }
     iVar3 = 0;
     if (pMVar2->field_009A != 0) {
-      puVar5 = st::pointer_boundary_cast<uint *>(&pMVar2->array_00BC[0].field_0027.field_001C);
+      puVar5 = &pMVar2->array_00BC[0].field_0027.field_001C;
       do {
         if (puVar5[-6] != 0xffffffff) {
           st::fn_006B3730
@@ -422,7 +433,7 @@ void __thiscall st::fn_005B7540(MMsgTy *this)
     }
     iVar10 = 0;
     if (this_01->field_009A != 0) {
-      puVar12 = st::pointer_boundary_cast<uint *>(&this_01->array_00BC[0].field_0027.field_001C);
+      puVar12 = &this_01->array_00BC[0].field_0027.field_001C;
       do {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((*(char *)((int)&this_01->field_1C9C + iVar10) != '\0') &&
@@ -477,6 +488,7 @@ LAB_005b7ad9:
             else {
               uVar6 = 1;
             }
+            /* ST_CALLSITE[005B7B78]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
             uVar6 = st::fn_0040361B
                               ((MMObjTy *)this_01,1,uVar6,st::machine_word_boundary_cast<undefined4>(puVar16[0x16] + puVar16[-3]),
                                st::machine_word_boundary_cast<undefined4>(puVar16[0x17] + puVar16[-2]),puVar16[-1],*puVar16,iVar10,iVar10 + 0x80
@@ -495,6 +507,7 @@ LAB_005b7ad9:
         memset(local_58, 0, 0x20); /* compiler bulk-zero initialization */
         local_58[3] = 2;
         local_58[4] = 0x693f;
+        /* ST_CALLSITE[005B7BF5]: CALL dword ptr [EDX + 0x18] */
         (*pSVar4->vtable->vfunc_18)((short)local_58);
         g_currentExceptionFrame = local_bc.previous;
         return;
@@ -514,7 +527,7 @@ LAB_005b7ad9:
     if (this_01->field_009A != 0) {
       pcVar11 = (char *)&this_01->field_1C9C;
       local_14 = -0x1c9c - (int)this_01;
-      puVar12 = st::pointer_boundary_cast<uint *>(&this_01->array_00BC[0].field_0027.field_001C);
+      puVar12 = &this_01->array_00BC[0].field_0027.field_001C;
       do {
         if (*pcVar11 != '\0') {
           if (puVar12[9] <= this_01->field_0061 - puVar12[10]) {
@@ -565,6 +578,7 @@ LAB_005b7655:
           local_78[3] = 2;
           local_78[4] = 0x693f;
           local_78[2] = iVar10;
+          /* ST_CALLSITE[005B775C]: CALL dword ptr [EDX + 0x18] */
           (*this_01->field_000C->vtable->vfunc_18)((short)local_78);
         }
         if (this_01->array_00BC[0xc].field_01DF != '\0') {
@@ -602,6 +616,7 @@ LAB_005b7655:
                 psVar7 = (short *)st::fn_00713480
                                             (g_startSystem_0081176C->field_0030,puVar12,iVar10,iVar8
                                              ,cVar17,uVar6,iVar18,iVar19,iVar20);
+                /* ST_CALLSITE[005B77FF]: CALL dword ptr [EDI + 0x8] */
                 (*pSVar3->SetImagesPtr)(this_00,psVar7,uVar21,uVar22);
                 (local_8->field_00B8).field_0008 = 0;
               }
@@ -630,6 +645,7 @@ LAB_005b7655:
         local_38[3] = 2;
         local_38[4] = 0x693f;
         local_38[2] = iVar10;
+        /* ST_CALLSITE[005B78B2]: CALL dword ptr [EDX + 0x18] */
         (*this_01->field_000C->vtable->vfunc_18)((short)local_38);
       }
       bVar2 = this_01->array_00BC[0xc].field_01DA;
@@ -701,6 +717,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
         local_34[3] = 2;
         local_34[4] = 0x6940;
         local_34[2] = iVar10;
+        /* ST_CALLSITE[005B7F76]: CALL dword ptr [EAX + 0x18] */
         (*this_00->field_000C->vtable->vfunc_18)((short)local_34);
       }
       this_00->field_1CA9 = 1;
@@ -749,12 +766,14 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
         puVar6 = st::pointer_boundary_cast<byte *>(st::fn_00713480
                            (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,uVar14,
                             iVar16,iVar17,iVar18));
+        /* ST_CALLSITE[005B8102]: CALL dword ptr [EAX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(local_10 + 8))(puVar6,uVar21,uVar22);
       }
       else {
         pcVar4 = st::fn_006B0140(param_7,g_hINSTANCE_00807618);
         pcVar5 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[005B8076]: CALL dword ptr [0x0085bde8] */
         st::external_00000080((LPSTR)local_478,st::mutable_c_string("%s\n(%s=%li)"),pcVar5,pcVar4,param_6);
         iVar10 = this_00->field_1D88;
         uVar22 = 0xffffffff;
@@ -762,6 +781,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
         puVar6 = st::pointer_boundary_cast<byte *>(st::fn_00713480
                            (g_startSystem_0081176C->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
                             0xffffffff,1,-1,-1));
+        /* ST_CALLSITE[005B80B7]: CALL dword ptr [ESI + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar10 + 8))(puVar6,uVar21,uVar22);
       }
@@ -810,6 +830,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
         psVar8 = (short *)st::fn_00713480
                                     (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,
                                      uVar14,iVar16,iVar17,iVar18);
+        /* ST_CALLSITE[005B840A]: CALL dword ptr [ESI + 0x8] */
         (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
         this_00->array_00BC[2].field_00B8.field_0008 = 0;
       }
@@ -848,6 +869,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
           psVar8 = (short *)st::fn_00713480
                                       (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
                                        ,uVar14,iVar16,iVar17,iVar18);
+          /* ST_CALLSITE[005B836E]: CALL dword ptr [ESI + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
           this_00->array_00BC[2].field_00B8.field_0008 = 0;
           this_00->array_00BC[1].field_0000 = 0x24ba;
@@ -889,6 +911,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
           psVar8 = (short *)st::fn_00713480
                                       (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
                                        ,uVar14,iVar16,iVar17,iVar18);
+          /* ST_CALLSITE[005B81E6]: CALL dword ptr [ESI + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_00->array_00BC[3].field_00B8,psVar8,uVar19,uVar20);
           this_00->array_00BC[3].field_00B8.field_0008 = 0;
           this_00->array_00BC[2].field_0000 = 0x24ba;
@@ -924,6 +947,7 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
           psVar8 = (short *)st::fn_00713480
                                       (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
                                        ,uVar14,iVar16,iVar17,iVar18);
+          /* ST_CALLSITE[005B8267]: CALL dword ptr [ESI + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
           this_00->array_00BC[2].field_00B8.field_0008 = 0;
           this_00->array_00BC[1].field_0000 = 0x24bb;
@@ -959,10 +983,12 @@ st::fn_005B7EF0(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undef
         psVar8 = (short *)st::fn_00713480
                                     (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,
                                      uVar14,iVar16,iVar17,iVar18);
+        /* ST_CALLSITE[005B82E8]: CALL dword ptr [ESI + 0x8] */
         (*pSVar1->SetImagesPtr)(&this_00->array_00BC[1].field_00B8,psVar8,uVar19,uVar20);
         this_00->array_00BC[1].field_00B8.field_0008 = 0;
       }
 LAB_005b8415:
+      /* ST_CALLSITE[005B8417]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
       st::fn_00403459((MMObjTy *)this_00);
       bVar3 = 0;
       local_8 = local_8 & 0xffffff00;
@@ -1083,7 +1109,9 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
     iVar4 = st::fn_0072D7F0(local_78.jumpBuffer,0);
     this_00 = local_14;
     if (iVar4 == 0) {
+      /* ST_CALLSITE[005B882A]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
       st::fn_00403459((MMObjTy *)local_14);
+      /* ST_CALLSITE[005B8835]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       st::fn_00401FA5(this_00,0,0,1);
       if (param_1 == 0) {
         this_00->field_1CD0 = 0;
@@ -1105,6 +1133,7 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           puVar7 = st::fn_00713480
                              (g_startSystem_0081176C->field_0030,puVar8,iVar14,iVar15,cVar16,uVar10,
                               iVar18,iVar19,iVar20);
+          /* ST_CALLSITE[005B8913]: CALL dword ptr [EDX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(local_8 + 8))(puVar7,uVar22,uVar23);
           this_00->field_1D90 = 0;
@@ -1112,6 +1141,7 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
         else {
           pcVar5 = st::fn_006B0140(param_4,g_hINSTANCE_00807618);
           pcVar6 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
+          /* ST_CALLSITE[005B887D]: CALL dword ptr [0x0085bde8] */
           st::external_00000080((LPSTR)local_478,st::mutable_c_string("%s\n(%s=%li)"),pcVar6,pcVar5,param_3);
           iVar14 = this_00->field_1D88;
           uVar23 = 0xffffffff;
@@ -1119,6 +1149,7 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           puVar7 = st::fn_00713480
                              (g_startSystem_0081176C->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
                               0xffffffff,1,-1,-1);
+          /* ST_CALLSITE[005B88BF]: CALL dword ptr [EDI + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(iVar14 + 8))(puVar7,uVar22,uVar23);
           this_00->field_1D90 = 0;
@@ -1153,6 +1184,7 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
             psVar9 = (short *)st::fn_00713480
                                         (g_startSystem_0081176C->field_0030,puVar8,iVar14,iVar15,
                                          cVar16,uVar17,iVar18,iVar19,iVar20);
+            /* ST_CALLSITE[005B89B1]: CALL dword ptr [ESI + 0x8] */
             (*pSVar1->SetImagesPtr)(&this_00->array_00BC[uVar10].field_00B8,psVar9,uVar21,uVar24);
             if ((*local_10 == this_00->array_00BC[uVar10].field_0000) && ((char)local_10[1] == '\0')
                ) {
@@ -1213,6 +1245,7 @@ st::fn_005B87D0(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
         local_34[3] = 2;
         local_34[4] = 0x6940;
         local_34[2] = iVar14;
+        /* ST_CALLSITE[005B8B12]: CALL dword ptr [EAX + 0x18] */
         (*pSVar2->vtable->vfunc_18)((short)local_34);
       }
       g_currentExceptionFrame = local_78.previous;
@@ -1282,10 +1315,12 @@ void __thiscall st::fn_005B8C70(MMsgTy *this,int param_1,int param_2,int param_3
         local_2c[3] = 2;
         local_2c[4] = 0x6940;
         local_2c[2] = iVar8;
+        /* ST_CALLSITE[005B8D3A]: CALL dword ptr [EDX + 0x18] */
         (*this_00->field_000C->vtable->vfunc_18)((short)local_2c);
       }
       if (param_1 == 0) {
         this_00->field_0065 = 2;
+        /* ST_CALLSITE[005B8E45]: CALL 0x0040462e; direct=0040462E MMsgTy::HideSprites */
         st::fn_0040462E(this_00);
         g_currentExceptionFrame = local_70.previous;
         return;
@@ -1429,6 +1464,7 @@ void __thiscall st::fn_005B9170(MMsgTy *this)
   errorCode = st::fn_0072D7F0(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (errorCode == 0) {
+    /* ST_CALLSITE[005B91AD]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
     st::fn_00403459((MMObjTy *)local_10);
     bVar4 = 0;
     local_8 = local_8 & 0xffffff00;
@@ -1455,6 +1491,7 @@ void __thiscall st::fn_005B9170(MMsgTy *this)
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
       } while (bVar5 < this_00->field_009A);
     }
+    /* ST_CALLSITE[005B9275]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
     st::fn_00401FA5(this_00,1,1,1);
     g_currentExceptionFrame = local_54.previous;
     return;
@@ -1560,6 +1597,7 @@ int __thiscall st::fn_005B9330(MMsgTy *this,STMessage *message)
     default:
       goto switchD_005b939a_default;
     }
+    /* ST_CALLSITE[005B93F2]: CALL 0x0040499e; direct=0040499E MMObjTy::PaintSprBut */
     st::fn_0040499E((MMObjTy *)this_00,(int)message,uVar7,iVar6,iVar8,-1);
   }
 switchD_005b939a_default:
@@ -1574,23 +1612,29 @@ switchD_005b939a_default:
       }
     }
     else {
+      /* ST_CALLSITE[005B9437]: CALL dword ptr [EAX + 0x8] */
       this_00->CloseSprBut();
     }
   }
   switch(message->id) {
   case MESS_ID_NONE:
+    /* ST_CALLSITE[005B9482]: CALL 0x00403693; direct=00403693 MMsgTy::NoneMMsg */
     st::fn_00403693(this_00);
     break;
   case MESS_ID_CREATE:
+    /* ST_CALLSITE[005B9467]: CALL 0x004020d1; direct=004020D1 MMsgTy::InitMMsg */
     st::fn_004020D1(this_00);
     break;
   case MESS_SHARED_0003:
+    /* ST_CALLSITE[005B9470]: CALL 0x0040501f; direct=0040501F MMsgTy::DoneMMsg */
     st::fn_0040501F(this_00);
     break;
   case MESS_SHARED_0005:
+    /* ST_CALLSITE[005B9479]: CALL 0x00401bb8; direct=00401BB8 MMsgTy::PaintMMsg */
     st::fn_00401BB8(this_00);
   }
   g_currentExceptionFrame = local_4c.previous;
+  /* ST_CALLSITE[005B9493]: CALL 0x00401280; direct=00401280 MMObjTy::GetMessage */
   iVar4 = st::fn_00401280((MMObjTy *)this_00,message);
   return iVar4;
 }

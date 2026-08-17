@@ -283,7 +283,7 @@ switchD_006721f5::caseD_1:
 006721FE  50                        PUSH EAX
 006721FF  8B CB                     MOV ECX,EBX
 FUN_00671f10::override::prt_672201_fe31059c:
-00672201  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4
+00672201  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4
 00672203  6A 04                     PUSH 0x4
 00672205  8B F0                     MOV ESI,EAX
 00672207  E8 04 8A 03 00            CALL 0x006aac10
@@ -314,8 +314,7 @@ switchD_006721f5::caseD_3:
 00672250  8B 13                     MOV EDX,dword ptr [EBX]
 00672252  50                        PUSH EAX
 00672253  8B CB                     MOV ECX,EBX
-FUN_00671f10::override::prt_672255_fe31059c:
-00672255  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4
+00672255  FF 52 08                  CALL dword ptr [EDX + 0x8]
 00672258  8B F0                     MOV ESI,EAX
 0067225A  85 F6                     TEST ESI,ESI
 0067225C  75 17                     JNZ 0x00672275

@@ -20,6 +20,7 @@ FUN_0074854f(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
     uVar2 = 0x80040209;
   }
   else {
+    /* ST_CALLSITE[00748577]: CALL dword ptr [ECX + 0x44] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (**(code **)(*piVar1 + 0x44))(piVar1,param_1,param_2,param_3,param_4,param_5);
   }

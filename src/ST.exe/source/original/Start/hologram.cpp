@@ -333,11 +333,12 @@ st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int par
     }
     local_14->field_0013 = (uint)param_6;
     *(uint *)&local_14->field_0x1f = local_8;
+    /* ST_CALLSITE[005AAD8D]: CALL 0x00403422; direct=00403422 HoloTy::CalcHologram */
     puVar4 = st::fn_00403422(local_14,&local_14->field_000F,local_8,local_c,param_5,param_6,
                           (byte)param_8);
     this_00->field_000B = puVar4;
     if (puVar4 != nullptr) {
-      puVar1 = st::pointer_boundary_cast<undefined1 *>(&this_00->field_0x3);
+      puVar1 = &this_00->field_0x3;
       st::fn_006B2330(g_ddxContext_008075A8,(uint *)puVar1,10,0x402842,0,0,(ushort *)this_00);
       uVar5 = *(uint *)puVar1;
       if (-1 < (int)uVar5) {
@@ -374,6 +375,7 @@ switchD_005aadcd_default:
         return 1;
       }
     }
+    /* ST_CALLSITE[005AAE8B]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     st::fn_0040128A(this_00);
   }
   g_currentExceptionFrame = local_58.previous;

@@ -120,7 +120,9 @@ LAB_0042bf8b:
   RaiseInternalException
             (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0x24a);
 cf_common_exit_0042C072:
+  /* ST_CALLSITE[0042C07E]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   this_00 = GetObjPtr(local_c,objPtr,(ushort)param_6,local_8);
+  /* ST_CALLSITE[0042C089]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
   (*this_00->vtable[1].vfunc_14)(this_00,1);
   g_currentExceptionFrame = local_58.previous;
   return local_10;

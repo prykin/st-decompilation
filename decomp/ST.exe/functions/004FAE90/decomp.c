@@ -41,6 +41,7 @@ void __thiscall CPanelTy::sub_004FAE90(CPanelTy *this,uint *param_1,ushort param
       if (iVar4 != 0) {
         local_10 = local_8;
         local_14 = param_1;
+        /* ST_CALLSITE[004FAF5B]: CALL 0x0040512d; direct=0040512D STAllPlayersC::GetActiveCenter */
         iVar4 = STAllPlayersC::GetActiveCenter
                           (g_allPlayers_007FA174,nullptr,nullptr,&stack0x0000000a);
         if (-1 < iVar4) {

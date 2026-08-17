@@ -324,6 +324,7 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x46d);
       }
+      /* ST_CALLSITE[00683F3F]: CALL dword ptr [0x0085bba8] */
       GetFullPathNameA(lpFileName,0x104,(LPSTR)local_4cc,nullptr);
       Library::MSVCRT::FUN_0072e730(local_4cc,local_a4,local_7ec,local_8ec,local_3c8);
       Library::MSVCRT::__makepath
@@ -357,7 +358,7 @@ switchD_006841b6_default:
           ppuVar18 = ppuVar18 + 1;
         }
         local_f8 = DAT_00857554;
-        Library::MSVCRT::FUN_0072e730(DAT_0085753c,nullptr,nullptr,nullptr,local_3c8);
+        Library::MSVCRT::FUN_0072e730(PTR_0085753c,nullptr,nullptr,nullptr,local_3c8);
         if (local_3c8[0] == 0) {
           if (lpFileName != (LPCSTR)0x0) {
             uVar6 = 0xffffffff;
@@ -381,9 +382,9 @@ switchD_006841b6_default:
             goto LAB_006840bc;
           }
         }
-        else if (DAT_0085753c != nullptr) {
+        else if (PTR_0085753c != nullptr) {
           uVar6 = 0xffffffff;
-          pbVar14 = DAT_0085753c;
+          pbVar14 = PTR_0085753c;
           do {
             pbVar15 = pbVar14;
             if (uVar6 == 0) break;
@@ -431,6 +432,7 @@ LAB_006840bc:
           }
           local_f0 = &DAT_0084810c;
         }
+        /* ST_CALLSITE[00684152]: CALL dword ptr [EBP + 0x18] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar8 = (*(code *)param_5)(&local_fc);
         if (iVar8 != 0) {
@@ -1471,9 +1473,9 @@ cf_error_exit_0068A22B:
       memset(param_4, 0, 0x18); /* compiler bulk-zero initialization */
       *param_4 = iVar2;
       param_4[2] = DAT_00857554;
-      Library::MSVCRT::FUN_0072e730(DAT_0085753c,nullptr,nullptr,nullptr,local_3c8);
+      Library::MSVCRT::FUN_0072e730(PTR_0085753c,nullptr,nullptr,nullptr,local_3c8);
       if (local_3c8[0] != 0) {
-        lpFileName = (LPCSTR)DAT_0085753c;
+        lpFileName = (LPCSTR)PTR_0085753c;
       }
       if ((byte *)lpFileName != nullptr) {
         uVar6 = 0xffffffff;
@@ -2471,8 +2473,10 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
+          /* ST_CALLSITE[00685C9B]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
           local_c = EventDataPack(*(AllocationRecord_0065CD10 **)
                                    &g_allocationRecord_00648620_008489B4->field_0x4e,&local_18);
+          /* ST_CALLSITE[00685CB2]: CALL 0x00405a24; direct=00405A24 BossDataPack */
           local_20 = BossDataPack(g_allocationRecord_00648620_008489B4,(undefined4 *)local_c,
                                   local_18,&local_10);
           thunk_FUN_0065d0f0((int *)&local_c);
@@ -2517,8 +2521,10 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
+          /* ST_CALLSITE[006857AD]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
           local_c = EventDataPack(*(AllocationRecord_0065CD10 **)
                                    &g_allocationRecord_0067D3B0_008489B8->field_0x106,&local_18);
+          /* ST_CALLSITE[006857C4]: CALL 0x00405204; direct=00405204 PlrDataPack */
           local_28 = PlrDataPack(g_allocationRecord_0067D3B0_008489B8,(undefined4 *)local_c,local_18
                                  ,&local_10);
           thunk_FUN_0065d0f0((int *)&local_c);
@@ -2599,6 +2605,7 @@ cf_common_join_006895D5:
               }
               goto cf_common_join_0068A687;
             }
+            /* ST_CALLSITE[00685B5F]: CALL 0x0040518c; direct=0040518C TactDataPack */
             local_24 = TactDataPack((undefined4 *)DAT_008489c8,&local_10);
             thunk_FUN_00691540((int *)&DAT_008489c8);
             thunk_FUN_006809b0(local_24,local_10);
@@ -2636,6 +2643,7 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
+          /* ST_CALLSITE[0068608A]: CALL 0x004014c4; direct=004014C4 FltDataPack */
           local_2c = FltDataPack(g_allocationRecord_006684E0_008489C4,&local_10);
           thunk_FUN_006686c0((int *)&g_allocationRecord_006684E0_008489C4);
           thunk_FUN_006809b0((byte *)local_2c,local_10);
@@ -2990,6 +2998,7 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
+          /* ST_CALLSITE[00686328]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
           local_c = EventDataPack(g_allocationRecord_0065CD10_008489BC,&local_18);
           thunk_FUN_0065d0f0((int *)&g_allocationRecord_0065CD10_008489BC);
           thunk_FUN_006809b0((byte *)local_c,local_18);

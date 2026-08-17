@@ -10,6 +10,7 @@ undefined4 FUN_004e7e10(uint *param_1)
 
   if ((-1 < (int)param_1) && ((int)param_1 < 8)) {
     thunk_FUN_004e7d70((int)param_1);
+    /* ST_CALLSITE[004E7E31]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar1 = LookupRecordByte((char)param_1);
     piVar2 = (int *)(&PTR_DAT_007c0dc8)[bVar1 - 1];
     if (*piVar2 != 0) {

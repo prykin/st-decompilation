@@ -82,9 +82,11 @@ void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
                 (short)((longlong)(int)local_4a * 0x28c1979 >> 0x3f)) < g_worldGrid.sizeX &&
         ((short)((sStack_48 / 0xc9 + (sStack_48 >> 0xf)) -
                 (short)((longlong)(int)sStack_48 * 0x28c1979 >> 0x3f)) < g_worldGrid.sizeY)))) {
+      /* ST_CALLSITE[00584F0A]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
       STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x28,0,0,local_64,0);
       if (0xc9 < local_46) {
         local_40 = local_46 + -0xc9;
+        /* ST_CALLSITE[00584F32]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
         STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x28,0,0,local_64,0);
       }
       iVar6 = (iVar6 + 0x5a) % 0x168;

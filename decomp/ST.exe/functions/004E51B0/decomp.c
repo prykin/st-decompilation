@@ -139,7 +139,7 @@ LAB_004e5403:
       puVar9 = (uint *)*piVar6;
       piVar13 = piVar6;
       while (puVar9 != nullptr) {
-        if ((puVar9 == param_3) && ((uint)*(byte *)(piVar13 + 1) == iVar7 + 1U)) {
+        if ((puVar9 == param_3) && ((uint)((byte *)piVar13)[1] == iVar7 + 1U)) {
           iVar7 = 0;
           if (*(int *)(iVar8 * 0x19 + 5 + (int)piVar6) == 0) goto LAB_004e54d9;
           piVar6 = (int *)(iVar8 * 0x19 + 5 + (int)piVar6);
@@ -158,7 +158,7 @@ LAB_004e5403:
   }
   goto cf_continue_loop_004E5505;
   while( true ) {
-    if (*(int *)(iVar10 + 0x7f5147 + *piVar6 * 4) < (int)(uint)*(byte *)(piVar6 + 1)) {
+    if (*(int *)(iVar10 + 0x7f5147 + *piVar6 * 4) < (int)(uint)((byte *)piVar6)[1]) {
       pbVar4 = (byte *)(iVar10 + 0x7f511f + ((int)((uint)param_3 ^ 7) >> 3));
       *pbVar4 = *pbVar4 & ~('\x01' << (((uint)param_3 ^ 7) & 7));
       goto cf_continue_loop_004E5505;
@@ -248,15 +248,19 @@ LAB_004e5655:
                              (byte *)&param_1);
           while (-1 < local_EAX_1316) {
             if (param_1 != nullptr) {
+              /* ST_CALLSITE[004E56EA]: CALL dword ptr [EDX + 0x2c] */
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar10 = (**(code **)(*param_1 + 0x2c))();
+              /* ST_CALLSITE[004E56F7]: CALL dword ptr [EAX + 0x2c] */
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               if ((iVar10 == 0x36) || (iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 0x5d)) {
                 thunk_FUN_004e4d60((AnonShape_004E4D60_C16F78E8 *)param_1);
               }
               if (param_1 != nullptr) {
+                /* ST_CALLSITE[004E5710]: CALL dword ptr [EDX + 0x2c] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar10 = (**(code **)(*param_1 + 0x2c))();
+                /* ST_CALLSITE[004E571D]: CALL dword ptr [EAX + 0x2c] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 if ((iVar10 == 0x5d) || (iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 0x3d))
                 {
@@ -264,8 +268,11 @@ LAB_004e5655:
                 }
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 if ((param_1 != nullptr) &&
+                   /* ST_CALLSITE[004E5736]: CALL dword ptr [EDX + 0x2c] */
                    (((iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 5 ||
+                     /* ST_CALLSITE[004E5743]: CALL dword ptr [EAX + 0x2c] */
                      (iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 0x21)) ||
+                    /* ST_CALLSITE[004E5750]: CALL dword ptr [EDX + 0x2c] */
                     (iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 0x11)))) {
                   thunk_FUN_00494ae0((AnonShape_00494AE0_7F188308 *)param_1);
                 }

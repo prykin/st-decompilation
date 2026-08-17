@@ -62,6 +62,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
       Library::DKW::TBL::FUN_006afe40((int *)&local_8,&pSVar2->field_0168->flags);
     }
     if (pSVar2->field_0164 == 1) {
+      /* ST_CALLSITE[0049DC52]: CALL 0x00403869; direct=00403869 STAllPlayersC::GetGObjFromBox */
       STAllPlayersC::GetGObjFromBox
                 (g_allPlayers_007FA174,pSVar2->field_0024,pSVar2->field_016C,pSVar2->field_016E,
                  pSVar2->field_0170,pSVar2->field_0172,pSVar2->field_0174,pSVar2->field_0176,
@@ -92,6 +93,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,local_2c,local_c);
         if (STPiece<0,2>(local_c) != 0xffff) {
           pSVar3 = (STBoatC *)
+                   /* ST_CALLSITE[0049DCDE]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_c),CASE_1);
           if (pSVar3 == nullptr) {
@@ -102,6 +104,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
           iVar6 = thunk_FUN_00490d90((STGameObjC *)pSVar3);
           if (iVar6 == 0) {
             local_24 = g_playSystem_00802A38->field_00E4;
+            /* ST_CALLSITE[0049DD25]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
             STBoatC::CmdToObj(pSVar3,CASE_3,&local_24);
           }
           else {
@@ -115,6 +118,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
         local_2c = local_2c + 1;
       } while ((int)local_2c < (int)local_20);
     }
+    /* ST_CALLSITE[0049DD6C]: CALL 0x00403d9b; direct=00403D9B STAllPlayersC::RegisterPGPair */
     STAllPlayersC::RegisterPGPair
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(local_20), (uint8_t)(pSVar2->field_0024)),
                &local_8->flags,&array->flags);
@@ -137,6 +141,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
       DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,local_c);
       if (STPiece<0,2>(local_c) != 0xffff) {
         pSVar3 = (STBoatC *)
+                 /* ST_CALLSITE[0049DDCF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_c),CASE_1);
         if (pSVar3 == nullptr) {
@@ -150,6 +155,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
                      ,0xa35);
         }
         iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar3);
+        /* ST_CALLSITE[0049DE28]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
         if ((iVar6 == 5) || (uVar7 = STBoatC::CheckPBoxCmd(pSVar3,CASE_5), uVar7 == 1)) break;
       }
       uVar8 = uVar8 + 1;

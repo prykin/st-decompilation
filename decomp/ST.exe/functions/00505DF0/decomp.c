@@ -31,10 +31,12 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
   pCVar2 = local_c;
   if (iVar3 == 0) {
     pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_c->field_02B2,1);
+    /* ST_CALLSITE[00505E44]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0x33,0x7b,'\x01',(byte *)pBVar3);
     if (pCVar2->field_0C2F != 0) {
       ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0x24,0x4c,0xa4,0x2b);
       pcVar4 = LoadResourceString(0x38ae,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[00505E9A]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)&DAT_0080f33a,"%d\n%s",(uint)(ushort)pCVar2->field_0C2F,pcVar4);
       ccFntTy::WrTxt(pCVar2->field_01B8,(char *)&DAT_0080f33a,-2,-1,5,-1,-1);
     }
@@ -47,6 +49,7 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
       if (pCVar2->field_0C29 != 0) {
         do {
           pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+          /* ST_CALLSITE[00505F0F]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,(local_8 & 0xff) * 4 + 0x35,
                  0x7d,'\x01',(byte *)pBVar3);
           bVar5 = bVar5 + 1;
@@ -58,6 +61,7 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
         iVar8 = (local_8 & 0xff) * 4 + 0x35;
         do {
           pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+          /* ST_CALLSITE[00505F5C]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,iVar8,0x7d,'\x01',
                  (byte *)pBVar3);
           iVar8 = iVar8 + 4;

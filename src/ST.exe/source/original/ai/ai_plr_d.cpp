@@ -48,7 +48,7 @@ st::fn_0067CF30(char *source,undefined2 param_2,char *param_3,undefined4 param_4
   local_8->field_0019 = param_2;
   local_8->field_006D = 0xff;
   pDVar1 = st::fn_006AE290(nullptr,5,0x10,5);
-  local_8->field_00C2 = st::pointer_boundary_cast<uint *>(&pDVar1->flags);
+  local_8->field_00C2 = &pDVar1->flags;
   pAVar2 = st::fn_004015E1(source);
   local_8->field_0106 = (undefined4 *)pAVar2;
   local_8->field_010A = param_4;
@@ -226,8 +226,9 @@ st::fn_0067D3B0(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param
             piVar18 = nullptr;
           }
           iVar13 = *piVar18;
-          if ((iVar13 != 0) && (*(char *)(iVar13 + 0x18) == '\x02')) {
+          if ((iVar13 != 0) && (((char *)iVar13)[0x18] == '\x02')) {
             *(int *)((int)local_c + uVar17 * 4) = iVar13;
+            /* ST_CALLSITE[0067D45A]: CALL 0x0040518c; direct=0040518C TactDataPack */
             pbVar5 = st::fn_0040518C(*(undefined4 **)((int)local_c + uVar17 * 4),(uint *)(piVar18 + 3));
             *piVar18 = (int)pbVar5;
           }
@@ -285,7 +286,7 @@ st::fn_0067D3B0(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param
     pAVar6->field_0014 = *param_4;
     pAVar6->field_0102 = param_3;
     uVar17 = pAVar6->field_0102;
-    puVar9 = st::pointer_boundary_cast<undefined1 *>(&pAVar6->field_0x12a);
+    puVar9 = &pAVar6->field_0x12a;
     puVar11 = (byte *)puVar9;
     memmove(puVar11, param_2, uVar17); /* compiler REP MOVS byte copy */
     uVar8 = 0;
@@ -341,10 +342,9 @@ st::fn_0067D3B0(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param
           else {
             piVar18 = nullptr;
           }
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (((*piVar18 != 0) && (*(char *)(*piVar18 + 0x18) == '\0')) &&
              ((iVar13 = *(int *)((int)local_c + uVar17 * 4), iVar13 != 0 &&
-              (*(char *)(iVar13 + 0x18) == '\x02')))) {
+              (((char *)iVar13)[0x18] == '\x02')))) {
             st::fn_006AB060(piVar18);
             *piVar18 = *(int *)((int)local_c + uVar17 * 4);
           }
@@ -371,10 +371,9 @@ st::fn_0067D3B0(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param
         else {
           piVar18 = nullptr;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((((*piVar18 != 0) && (*(char *)(*piVar18 + 0x18) == '\0')) &&
             (iVar13 = *(int *)((int)local_c + uVar17 * 4), iVar13 != 0)) &&
-           (*(char *)(iVar13 + 0x18) == '\x02')) {
+           (((char *)iVar13)[0x18] == '\x02')) {
           st::fn_006AB060(piVar18);
           *piVar18 = *(int *)((int)local_c + uVar17 * 4);
         }
@@ -478,7 +477,9 @@ int __cdecl st::fn_0067D9C0(int param_1,char *param_2,AnonShape_0067D9C0_2E8A225
       st::fn_006A5E40
                 (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x10b);
     }
+    /* ST_CALLSITE[0067DA32]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
     local_c = st::fn_00401EBF((AllocationRecord_0065CD10 *)param_3->field_0106,&local_14);
+    /* ST_CALLSITE[0067DA44]: CALL 0x00405204; direct=00405204 PlrDataPack */
     local_8 = st::fn_00405204((AllocationRecord_0067D3B0 *)param_3,(undefined4 *)local_c,local_14,
                           &local_10);
     st::fn_00401537((int *)&local_c);
@@ -620,7 +621,7 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
     }
     if (local_8 != nullptr) {
       if (((param_2 == 0) || (param_2 == local_8->field_0019)) && ((param_4 & uVar8) != 0)) {
-        _Source = st::pointer_boundary_cast<undefined1 *>(&local_8->field_0x1b);
+        _Source = &local_8->field_0x1b;
         pcVar11 = local_e8;
         for (iVar7 = 0x26; iVar7 != 0; iVar7 = iVar7 + -1) {
           pcVar11[0] = '\0';
@@ -642,7 +643,7 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
     pcVar3 = (char *)st::fn_006F2790(param_1);
   }
   g_currentExceptionFrame = local_50.previous;
-  return st::pointer_boundary_cast<uint *>(&local_c->flags);
+  return &local_c->flags;
 }
 
 // 0067DEC0 CreateAssistantList
@@ -671,6 +672,7 @@ uint * __cdecl st::fn_0067DEC0(int param_1,int param_2,uint param_3)
       st::fn_006A5E40
                 (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x16b);
     }
+    /* ST_CALLSITE[0067DF21]: CALL 0x004015eb; direct=004015EB _CreateStgListByRoot */
     puVar2 = st::fn_004015EB((cMf32 *)param_1,param_2,PTR_s_ASSISTANT_0079d724,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;
@@ -716,6 +718,7 @@ uint * __cdecl st::fn_0067DFD0(cMf32 *param_1,int param_2,uint param_3)
       st::fn_006A5E40
                 (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x181);
     }
+    /* ST_CALLSITE[0067E031]: CALL 0x004015eb; direct=004015EB _CreateStgListByRoot */
     puVar2 = st::fn_004015EB(param_1,param_2,PTR_s_OPPONENT_0079d728,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;
@@ -759,6 +762,7 @@ uint * __cdecl st::fn_0067E0E0(int param_1,int param_2,uint param_3)
                 (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x197);
     }
     pCVar2 = st::fn_006F2C00(PTR_s_STRATEG_0079d72c,1,param_2);
+    /* ST_CALLSITE[0067E158]: CALL 0x004015eb; direct=004015EB _CreateStgListByRoot */
     puVar3 = st::fn_004015EB((cMf32 *)param_1,0,pCVar2,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar3;
@@ -802,6 +806,7 @@ uint * __cdecl st::fn_0067E200(int param_1,int param_2,uint param_3)
                 (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x1ad);
     }
     pCVar2 = st::fn_006F2C00(PTR_s_AIPLAYER_0079d71c,2,param_2);
+    /* ST_CALLSITE[0067E278]: CALL 0x004015eb; direct=004015EB _CreateStgListByRoot */
     puVar3 = st::fn_004015EB((cMf32 *)param_1,0,pCVar2,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar3;
@@ -1104,6 +1109,7 @@ uint * __cdecl st::fn_0067E7E0(cMf32 *param_1,int param_2)
   }
   local_8 = st::fn_006AE290(nullptr,5,0x98,5);
   if (param_2 != 0) {
+    /* ST_CALLSITE[0067E870]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
     local_10 = (DArrayTy *)st::fn_00403F44(param_1,0,0xffffffff);
   }
   uVar10 = 0xffffffff;
@@ -1130,7 +1136,7 @@ uint * __cdecl st::fn_0067E7E0(cMf32 *param_1,int param_2)
         st::fn_006AE110(local_10);
       }
       g_currentExceptionFrame = local_a0.previous;
-      return st::pointer_boundary_cast<uint *>(&local_8->flags);
+      return &local_8->flags;
     }
     local_c = st::fn_006F2D90(param_1,pcVar5,0,1);
     if (local_c != nullptr) {
@@ -1231,6 +1237,7 @@ uint * __cdecl st::fn_0067E7E0(cMf32 *param_1,int param_2)
         pbVar13 = (byte *)(pcVar16 + -uVar10);
         pbVar17 = pbVar17 + -1;
         memmove(pbVar17, pbVar13, uVar10); /* compiler REP MOVS byte copy */
+        /* ST_CALLSITE[0067EA01]: CALL dword ptr [0x0085bde8] */
         st::external_00000080(local_c8,(char *)local_5c,iVar9);
       }
       uVar10 = 0;

@@ -16,10 +16,12 @@ void __thiscall st::fn_0041D1A0(STMineSetC *this,int param_1)
 
   this->field_010D = param_1;
   if (g_visibleClass_00802A88 != nullptr) {
+    /* ST_CALLSITE[0041D1D3]: CALL 0x0040141f; direct=0040141F VisibleClassTy::SetZoneAst */
     st::fn_0040141F
               (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,
                (char)this->field_005F,this->field_0024,param_1,this->field_0018,0xffffffff);
   }
+  /* ST_CALLSITE[0041D1DC]: CALL dword ptr [EAX + 0x8] */
   iVar1 = this->vfunc_08();
   if ((iVar1 == 1) && (this->field_0024 == (uint)DAT_0080874d)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected STPackTagged24(2, this->field_0018) == (((uint32_t)(this->field_0018) & 0x00ffffffu) | ((uint32_t)(2) << 24)) */
@@ -46,10 +48,12 @@ void __thiscall st::fn_0041D2B0(STMineSetC *this)
   int iVar1;
 
   if (g_visibleClass_00802A88 != nullptr) {
+    /* ST_CALLSITE[0041D2DB]: CALL 0x00404291; direct=00404291 VisibleClassTy::sub_00559D60 */
     st::fn_00404291
               (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,
                (char)this->field_005F,this->field_0024,this->field_010D,this->field_0018);
   }
+  /* ST_CALLSITE[0041D2E4]: CALL dword ptr [EAX + 0x8] */
   iVar1 = this->vfunc_08();
   if ((iVar1 == 1) && (this->field_0024 == (uint)DAT_0080874d)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected STPackTagged24(2, this->field_0018) == (((uint32_t)(this->field_0018) & 0x00ffffffu) | ((uint32_t)(2) << 24)) */
@@ -106,8 +110,10 @@ STMineSetC * __thiscall st::fn_00622600(STMineSetC *this)
 
 {
 
+  /* ST_CALLSITE[00622604]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
-  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[00622611]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  st::fn_00401316((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079D05C);
   this->vtable = &st_global_0079CEFC;
   memset(&this->field_0x25e, 0, 0x109); /* compiler bulk-zero initialization */
@@ -178,6 +184,7 @@ byte __thiscall st::fn_006226C0(STMineSetC *this,uint param_1,int param_2)
     switch(this->field_02AD) {
     case CASE_0:
     case CASE_2:
+      /* ST_CALLSITE[006226FB]: CALL 0x00402865; direct=00402865 STMineSetC::sub_0041D6C0 */
       iVar4 = st::fn_00402865(this,uVar3);
       if (iVar4 == 0) {
         return 0;
@@ -201,6 +208,7 @@ byte __thiscall st::fn_006226C0(STMineSetC *this,uint param_1,int param_2)
        (g_visibleClass_00802A88 != nullptr)) &&
       ((iVar4 = (int)this->field_004B, DAT_0080874d != 0xff &&
        ((((((g_visibleClass_00802A88->field_00F8 != 0 &&
+            /* ST_CALLSITE[006227AA]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             (st::fn_00403F53
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                         (int)this->field_0047,(int)this->field_0049,&param_2,(int *)&local_8),
@@ -229,6 +237,7 @@ void __thiscall st::fn_00622880(STMineSetC *this)
   SVar1 = this->field_02AD;
   if (SVar1 < CASE_3) {
     if (g_visibleClass_00802A88 != nullptr) {
+      /* ST_CALLSITE[00622924]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */
       st::fn_004018F2
                 (g_visibleClass_00802A88,(int)this->field_0047,(undefined *)(int)this->field_0049,
                  (int)this->field_004B,this->field_0024,*(int *)(&DAT_007d02b4 + (uint)SVar1 * 4),
@@ -236,10 +245,12 @@ void __thiscall st::fn_00622880(STMineSetC *this)
     }
   }
   else if ((SVar1 == CASE_3) && (g_visibleClass_00802A88 != nullptr)) {
+    /* ST_CALLSITE[006228CA]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */
     st::fn_004018F2
               (g_visibleClass_00802A88,(int)this->field_0047,(undefined *)(int)this->field_0049,
                (int)this->field_004B,this->field_0024,DAT_007d02c0,this->field_0018,0xffffffff);
     if ((-1 < this->field_005B) && ((-1 < this->field_005D && (-1 < this->field_005F)))) {
+      /* ST_CALLSITE[006228ED]: CALL 0x0040216c; direct=0040216C STMineSetC::sub_0041D2B0 */
       st::fn_0040216C(this);
     }
   }
@@ -278,6 +289,7 @@ undefined4 __thiscall st::fn_00622BA0(STMineSetC *this)
   this->field_0043 = (short)this->field_02C6;
   this->field_0045 = (short)this->field_02CA;
   SVar2 = st::fn_0040581C();
+  /* ST_CALLSITE[00622C05]: CALL 0x00402414; direct=00402414 STMineSetC::sub_00626B50 */
   st::fn_00402414(this,SVar2);
   this->field_0056 = (short)this->field_02C6;
   iVar5 = this->field_02C2;
@@ -321,6 +333,7 @@ undefined4 __thiscall st::fn_00622BA0(STMineSetC *this)
   }
   if (SVar1 < CASE_3) {
     if (g_visibleClass_00802A88 != nullptr) {
+      /* ST_CALLSITE[00622E15]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
       st::fn_0040388C
                 (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                  (undefined *)(int)this->field_004B,(int *)this->field_0024,
@@ -328,10 +341,12 @@ undefined4 __thiscall st::fn_00622BA0(STMineSetC *this)
     }
   }
   else if ((SVar1 == CASE_3) && (g_visibleClass_00802A88 != nullptr)) {
+    /* ST_CALLSITE[00622DC7]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
     st::fn_0040388C
               (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                (undefined *)(int)this->field_004B,(int *)this->field_0024,DAT_007d02c0,
                (int *)this->field_0018,0xffffffff);
+    /* ST_CALLSITE[00622DDE]: CALL 0x00402b3f; direct=00402B3F STMineSetC::sub_0041D1A0 */
     st::fn_00402B3F(this,*(int *)(&DAT_007d02b4 + (uint)this->field_02AD * 4));
   }
   sVar6 = this->field_0047;
@@ -348,6 +363,7 @@ undefined4 __thiscall st::fn_00622BA0(STMineSetC *this)
           (STGridAt3D(g_worldGrid, sVar6, sVar7, sVar8).objects[(byte)this->field_008E] != nullptr)))) {
         return 0;
       }
+      /* ST_CALLSITE[00622F24]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
       iVar5 = st::fn_00401325
                         (sVar6,sVar7,sVar8,this->field_008E,
                          (RecoveredRecord_DumpClassC_00495EC0 *)this);
@@ -404,6 +420,7 @@ undefined4 __thiscall st::fn_006239A0(STMineSetC *this)
   case CASE_0:
     return 1;
   case CASE_1:
+    /* ST_CALLSITE[006239DD]: CALL 0x004014b5; direct=004014B5 STMineSetC::sub_00624920 */
     iVar3 = st::fn_004014B5(this,this->field_02EE,&local_c,&local_10,&local_14);
     if (0 < iVar3) {
       this->field_0054 = (short)this->field_02C2;
@@ -420,13 +437,16 @@ undefined4 __thiscall st::fn_006239A0(STMineSetC *this)
       return 0;
     }
     if (this->field_0353 == '\0') {
+      /* ST_CALLSITE[00623A6C]: CALL 0x00405637; direct=00405637 STMineSetC::sub_006226C0 */
       bVar2 = st::fn_00405637(this,(int)this->field_0047,(int)this->field_0049);
       this->field_0353 = bVar2;
     }
     st::fn_004042C3(this);
     if (this->field_0353 != '\0') {
+      /* ST_CALLSITE[00623A8C]: CALL 0x004012c6; direct=004012C6 STMineSetC::LoadImagMineSet */
       iVar3 = st::fn_004012C6(this,1);
       if (iVar3 == 0) {
+        /* ST_CALLSITE[00623A97]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
         st::fn_00404147(this);
       }
       if (this->field_0363 == nullptr) {
@@ -444,15 +464,18 @@ undefined4 __thiscall st::fn_006239A0(STMineSetC *this)
     return local_8;
   case CASE_3:
     if (g_playSystem_00802A38->field_00E4 < this->field_030F) goto switchD_006239c1_caseD_4;
+    /* ST_CALLSITE[00623B3B]: CALL 0x00405c5e; direct=00405C5E STMineSetC::sub_00625730 */
     st::fn_00405C5E(this);
     st::fn_004050F1(this);
     this->field_02AE = CASE_4;
     iVar3 = st::fn_004051E1(1);
     uVar4 = st::fn_004049FD(this,this->field_02C2,this->field_02C6,iVar3);
+    /* ST_CALLSITE[00623B83]: CALL 0x00403a4e; direct=00403A4E STAllPlayersC::UnRegisterMine */
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     st::fn_00403A4E
               (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(uVar4), (uint8_t)((char)this->field_0262)),
                CONCAT22(extraout_var,this->field_0032),this);
+    /* ST_CALLSITE[00623B91]: CALL 0x0040216c; direct=0040216C STMineSetC::sub_0041D2B0 */
     st::fn_0040216C(this);
     iVar3 = st::fn_00404EC1(this->field_0047,this->field_0049,this->field_004B,this->field_008E,
                                (AnonShape_00495FF0_59081BDD *)this);
@@ -460,6 +483,7 @@ undefined4 __thiscall st::fn_006239A0(STMineSetC *this)
       this->field_0314 = this->field_0314 + -1;
     }
     if (this->field_02BA < 0) {
+      /* ST_CALLSITE[00623BD4]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
       st::fn_00404147(this);
       return local_8;
     }
@@ -470,6 +494,7 @@ switchD_006239c1_caseD_4:
       if (this->field_02AE != CASE_4) {
         return 0;
       }
+      /* ST_CALLSITE[00623BFC]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
       st::fn_00404147(this);
       return local_8;
     }
@@ -482,7 +507,9 @@ switchD_006239c1_caseD_4:
       if (this->field_02CE == *(int *)(&DAT_007d04c0 + (uint)this->field_02AD * 4)) {
         st::fn_00404854(&this->field_01D5,9);
       }
+      /* ST_CALLSITE[00623C50]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       st::fn_00401064((STT3DSprC *)&this->field_01D5,'\t',this->field_02DB);
+      /* ST_CALLSITE[00623C59]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       st::fn_004030BC((STT3DSprC *)&this->field_01D5,'\t');
     }
     if (this->field_02DB < this->field_02D7) {
@@ -492,33 +519,41 @@ switchD_006239c1_caseD_4:
   if (this->field_02E0 != '\0') {
     if (this->field_02E1 == this->field_02E5) {
       this->field_02E0 = 0;
+      /* ST_CALLSITE[00623C9E]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
       st::fn_00402761((STT3DSprC *)&this->field_01D5,10);
     }
     else {
+      /* ST_CALLSITE[00623CB0]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       st::fn_00401064((STT3DSprC *)&this->field_01D5,'\n',this->field_02E1);
+      /* ST_CALLSITE[00623CB9]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       st::fn_004030BC((STT3DSprC *)&this->field_01D5,'\n');
       this->field_02E1 = st::machine_word_boundary_cast<undefined4>(this->field_02E1 + 1);
     }
   }
   uVar1 = this->field_02CE;
   if ((int)uVar1 < this->field_02D2) {
+    /* ST_CALLSITE[00623CDF]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064((STT3DSprC *)&this->field_01D5,'\x0e',uVar1);
+    /* ST_CALLSITE[00623CE8]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
     st::fn_004030BC((STT3DSprC *)&this->field_01D5,'\x0e');
 LAB_00623d08:
     this->field_02CE = st::machine_word_boundary_cast<int>(this->field_02CE + 1);
   }
   else if (uVar1 == this->field_02D2) {
     if (-1 < this->field_02BA) {
+      /* ST_CALLSITE[00623D03]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
       st::fn_00402761((STT3DSprC *)&this->field_01D5,0xe);
     }
     goto LAB_00623d08;
   }
+  /* ST_CALLSITE[00623D5C]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   st::fn_004045D9
             ((STT3DSprC *)&this->field_01D5,(float)this->field_02C2 * _DAT_007904f8 * _DAT_007904f0,
              (float)this->field_02C6 * _DAT_007904f8 * _DAT_007904f0,
              (float)this->field_02CA * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
   this_00 = g_visibleClass_00802A88;
   if (this->field_02DB == this->field_02D7) {
+    /* ST_CALLSITE[00623D73]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
     st::fn_00404147(this);
     return local_8;
   }
@@ -531,6 +566,7 @@ LAB_00623d08:
       lVar6 = st::fn_0072E288();
       iVar5 = (int)lVar6;
       lVar6 = st::fn_0072E288();
+      /* ST_CALLSITE[00623E05]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
       st::fn_00403F53(this_00,this_00->field_010C,(int)lVar6,iVar5,piVar7,piVar8);
       if ((((-1 < iVar3) &&
            (((iVar3 < 5 && (-1 < local_18)) && (local_18 < (int)this_00->field_0030)))) &&
@@ -738,6 +774,7 @@ st::fn_00624920
                ((sVar4 < 0 ||
                 (((g_worldGrid.sizeY <= sVar4 || (sVar14 < 0)) || (g_worldGrid.sizeZ <= sVar14))))))
               || (STGridAt3D(g_worldGrid, sVar3, sVar4, sVar14).objects[(byte)this->field_008E] == nullptr)) &&
+             /* ST_CALLSITE[00624F03]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
              (iVar7 = st::fn_00401325
                                 (sVar3,sVar4,sVar14,this->field_008E,
                                  (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar7 == 0)) {
@@ -745,10 +782,12 @@ st::fn_00624920
             this->field_0314 = this->field_0314 + '\x01';
             if (SVar1 < 3) {
               if (g_visibleClass_00802A88 != nullptr) {
+                /* ST_CALLSITE[0062502B]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */
                 st::fn_004018F2
                           (g_visibleClass_00802A88,(int)this->field_0047,
                            (undefined *)(int)this->field_0049,(int)this->field_004B,this->field_0024
                            ,*(int *)(&DAT_007d02b4 + (uint)SVar1 * 4),this->field_0018,0xffffffff);
+                /* ST_CALLSITE[0062505B]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
                 st::fn_0040388C
                           (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                            puVar13,(int *)this->field_0024,
@@ -757,19 +796,23 @@ st::fn_00624920
               }
             }
             else if ((SVar1 == 3) && (g_visibleClass_00802A88 != nullptr)) {
+              /* ST_CALLSITE[00624F62]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */
               st::fn_004018F2
                         (g_visibleClass_00802A88,(int)this->field_0047,
                          (undefined *)(int)this->field_0049,(int)this->field_004B,this->field_0024,
                          DAT_007d02c0,this->field_0018,0xffffffff);
+              /* ST_CALLSITE[00624F94]: CALL 0x00404291; direct=00404291 VisibleClassTy::sub_00559D60 */
               st::fn_00404291
                         (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                          (char)this->field_004B,this->field_0024,
                          *(int *)(&DAT_007d02b4 + (uint)this->field_02AD * 4),this->field_0018);
+              /* ST_CALLSITE[00624FC4]: CALL 0x0040388c; direct=0040388C VisibleClassTy::sub_00558DC0 */
               st::fn_0040388C
                         (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,puVar13
                          ,(int *)this->field_0024,
                          *(uint *)(&DAT_007d02b4 + (uint)this->field_02AD * 4),
                          (int *)this->field_0018,0xffffffff);
+              /* ST_CALLSITE[00624FF4]: CALL 0x0040141f; direct=0040141F VisibleClassTy::SetZoneAst */
               st::fn_0040141F
                         (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                          (char)puVar13,this->field_0024,
@@ -952,6 +995,7 @@ LAB_006259bf:
                   bVar17 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                 }
+                /* ST_CALLSITE[006259D6]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                 if ((bVar17) && (iVar6 = this_00->vfunc_F8(), iVar6 != 0))
                 goto LAB_00625ad5;
               }
@@ -978,8 +1022,11 @@ LAB_006259bf:
                   this->field_0241 = *(undefined4 *)&this_00->field_0x18;
                 }
                 if (g_sndUnderAttMeneg_00811798 != nullptr) {
+                  /* ST_CALLSITE[00625AB5]: CALL dword ptr [EDX + 0x2c] */
                   iVar6 = this->vfunc_2C();
+                  /* ST_CALLSITE[00625ABD]: CALL dword ptr [EAX + 0x2c] */
                   iVar7 = this_00->GetObjectTypeId();
+                  /* ST_CALLSITE[00625AD0]: CALL 0x004058a8; direct=004058A8 SndUnderAttMenegC::sub_0061FE80 */
                   st::fn_004058A8
                             (g_sndUnderAttMeneg_00811798,iVar14,iVar15,(uint)this_00[1].vtable,iVar7
                              ,iVar6);
@@ -988,6 +1035,7 @@ LAB_006259bf:
 LAB_00625ad5:
               if (this->field_02AD == CASE_2) {
                 if (this->field_0342 != 0) {
+                  /* ST_CALLSITE[00625AEC]: CALL dword ptr [EAX + 0x2c] */
                   GVar8 = this_00->GetObjectTypeId();
                   uVar9 = st::fn_0040354E(GVar8);
                   if ((this->field_0342 & uVar9) != 0) goto LAB_00625aff;
@@ -1005,6 +1053,7 @@ LAB_00625b06:
                    ))) && (pSVar16 = (STMineSetC *)
                                      STGridAt3D(g_worldGrid, sVar19, sVar20, sVar12).objects[1]
                           , pSVar16 != nullptr)) {
+                /* ST_CALLSITE[00625B8A]: CALL dword ptr [EDX + 0x2c] */
                 uVar10 = pSVar16->vfunc_2C();
                 switch(uVar10) {
                 case 0xa6:
@@ -1064,6 +1113,7 @@ LAB_00625d60:
               }
             }
             if (pSVar16 != nullptr) {
+              /* ST_CALLSITE[0062605C]: CALL dword ptr [EAX + 0x2c] */
               uVar10 = pSVar16->vfunc_2C();
               switch(uVar10) {
               case 0xa6:
@@ -1079,6 +1129,7 @@ LAB_00625d60:
           pSVar16 = (STMineSetC *)
                     STGridAt3D(g_worldGrid, sVar12, sVar20, sVar19).objects[0];
           if (pSVar16 == nullptr) goto LAB_00625d60;
+          /* ST_CALLSITE[00625CE3]: CALL dword ptr [EAX + 0xf0] */
           iVar6 = pSVar16->vfunc_F0();
           if (iVar6 != 0) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -1103,8 +1154,11 @@ LAB_00625d60:
                   this->field_0241 = pSVar16->field_0018;
                 }
                 if (g_sndUnderAttMeneg_00811798 != nullptr) {
+                  /* ST_CALLSITE[00625DFB]: CALL dword ptr [EDX + 0x2c] */
                   iVar6 = this->vfunc_2C();
+                  /* ST_CALLSITE[00625E03]: CALL dword ptr [EAX + 0x2c] */
                   uVar10 = pSVar16->vfunc_2C();
+                  /* ST_CALLSITE[00625E16]: CALL 0x004058a8; direct=004058A8 SndUnderAttMenegC::sub_0061FE80 */
                   st::fn_004058A8
                             (g_sndUnderAttMeneg_00811798,iVar14,iVar15,pSVar16->field_0024,uVar10,
                              iVar6);
@@ -1145,11 +1199,15 @@ LAB_00625efc:
                 bVar18 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                          g_bulkInitializedRecords_008087C7[bVar1].field_0023;
               }
+              /* ST_CALLSITE[00625F13]: CALL dword ptr [EDX + 0xf8] */
               if (((bVar18) && (iVar11 = pSVar16->vfunc_F8(), iVar11 != 0)) &&
                  (iVar11 = st::fn_00402CBB(this,(int *)pSVar16,local_20), iVar11 != 0)) {
                 if (g_sndUnderAttMeneg_00811798 != nullptr) {
+                  /* ST_CALLSITE[00625F42]: CALL dword ptr [EDX + 0x2c] */
                   iVar11 = this->vfunc_2C();
+                  /* ST_CALLSITE[00625F4A]: CALL dword ptr [EAX + 0x2c] */
                   uVar10 = pSVar16->vfunc_2C();
+                  /* ST_CALLSITE[00625F5D]: CALL 0x004058a8; direct=004058A8 SndUnderAttMenegC::sub_0061FE80 */
                   st::fn_004058A8
                             (g_sndUnderAttMeneg_00811798,iVar14,iVar15,pSVar16->field_0024,uVar10,
                              iVar11);
@@ -1273,6 +1331,7 @@ undefined4 __thiscall st::fn_00627400(STMineSetC *this,undefined4 param_1)
          ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar3 ||
          (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[(byte)this->field_008E] == nullptr)))) &&
+       /* ST_CALLSITE[0062751C]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
        (iVar4 = st::fn_00401325
                           (sVar1,sVar2,sVar3,this->field_008E,
                            (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar4 == 0)) {
@@ -1286,11 +1345,13 @@ undefined4 __thiscall st::fn_00627400(STMineSetC *this,undefined4 param_1)
       return this->field_02AE;
     }
     if ((int)(((ulonglong)(this->field_0315 - g_playSystem_00802A38->field_00E4) % 200) / 3) != 0) {
+      /* ST_CALLSITE[0062758D]: CALL dword ptr [EDX + 0x2c] */
       dVar5 = this_00->slot_2C();
       if (dVar5 == 0xe6) {
         st::fn_00404A4D(this_00,0);
       }
       else if ((0xe6 < (int)dVar5) && ((int)dVar5 < 0xec)) {
+        /* ST_CALLSITE[006275A4]: CALL 0x00402612; direct=00402612 STFishC::sub_0057D5F0 */
         st::fn_00402612(this_00,0);
         return param_1;
       }

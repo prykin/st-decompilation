@@ -40,9 +40,11 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
   } while (iVar7 != 0);
   if (cVar3 != local_5) {
     if (DAT_0080874e != '\x03') {
+      /* ST_CALLSITE[00501D6C]: CALL 0x0040556f; direct=0040556F CPanelTy::SetControlBoat */
       CPanelTy::SetControlBoat(this);
       return;
     }
+    /* ST_CALLSITE[00501D5E]: CALL 0x0040296e; direct=0040296E CPanelTy::SetControlBoatSI */
     CPanelTy::SetControlBoatSI(this);
     return;
   }
@@ -65,15 +67,19 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
       pcVar4 = &param_1->field_0x9;
       do {
         if (*pcVar4 != '\0') {
+          /* ST_CALLSITE[00501E1E]: CALL 0x0040313e; direct=0040313E CPanelTy::sub_004F17D0 */
           CPanelTy::sub_004F17D0(this,1,bVar1);
         }
         bVar1 = bVar1 + 1;
         pcVar4 = pcVar4 + 1;
       } while (bVar1 < 6);
+      /* ST_CALLSITE[00501E34]: CALL 0x00404ba1; direct=00404BA1 CPanelTy::sub_004F1610 */
       CPanelTy::sub_004F1610(this,'\x01');
+      /* ST_CALLSITE[00501E3F]: CALL 0x004040fc; direct=004040FC CursorClassTy::sub_0054A8D0 */
       CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
     }
     if (param_1->field_0x8 != param_2->field_0x8) {
+      /* ST_CALLSITE[00501E56]: CALL 0x00404ba1; direct=00404BA1 CPanelTy::sub_004F1610 */
       CPanelTy::sub_004F1610(this,'\x01');
     }
   }
@@ -84,12 +90,15 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
     pcVar4 = &param_1->field_0x9;
     do {
       if (*pcVar4 != '\0') {
+        /* ST_CALLSITE[00501DBB]: CALL 0x0040313e; direct=0040313E CPanelTy::sub_004F17D0 */
         CPanelTy::sub_004F17D0(this,1,bVar1);
       }
       bVar1 = bVar1 + 1;
       pcVar4 = pcVar4 + 1;
     } while (bVar1 < 6);
+    /* ST_CALLSITE[00501DD1]: CALL 0x00404ba1; direct=00404BA1 CPanelTy::sub_004F1610 */
     CPanelTy::sub_004F1610(this,'\x01');
+    /* ST_CALLSITE[00501DDC]: CALL 0x004040fc; direct=004040FC CursorClassTy::sub_0054A8D0 */
     CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
   }
   iVar7 = 3;
@@ -104,6 +113,7 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
     psVar8 = psVar8 + 1;
   } while (bVar10);
   if ((!bVar10) || (param_1->field_0007 != param_2->field_0007)) {
+    /* ST_CALLSITE[00501E89]: CALL 0x00404f89; direct=00404F89 CPanelTy::sub_004F4570 */
     CPanelTy::sub_004F4570(this,'\x01',(int)param_1,(int)param_2);
   }
   if (((param_1->field_0015 != param_2->field_0015) || (param_1->field_0007 != param_2->field_0007))

@@ -9,6 +9,7 @@ void __fastcall FUN_004ad310(STT3DSprC *param_1)
   iVar1 = 0;
   if (0 < param_1->field_0014) {
     do {
+      /* ST_CALLSITE[004AD320]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
       STT3DSprC::UnLoadSequence(param_1,(byte)iVar1);
       iVar1 = iVar1 + 1;
     } while (iVar1 < param_1->field_0014);

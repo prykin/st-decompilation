@@ -24,17 +24,20 @@ int __thiscall FUN_0074d07d(void *this,int *param_1,int *param_2)
   if (piVar1 == nullptr) {
     iVar4 = -0x7ffbfdf6;
     if (STField<int>(this,0x18) != 0) {
+      /* ST_CALLSITE[0074D0D7]: CALL dword ptr [ECX + 0xc] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar4 = (**(code **)(*STField<int *>(this,0x9c) + 0xc))(STField<int *>(this,0x9c),param_2);
       bVar2 = true;
     }
   }
   else {
+    /* ST_CALLSITE[0074D0BE]: CALL dword ptr [ECX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 4))(piVar1);
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (*param_2 == 0) {
+    /* ST_CALLSITE[0074D0EA]: CALL dword ptr [EAX + 0x48] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)(*(int *)this + 0x48))(param_2);
     bVar2 = true;
@@ -45,19 +48,23 @@ int __thiscall FUN_0074d07d(void *this,int *param_1,int *param_2)
       uStack_10 = 0;
       local_c = 0;
       uStack_8 = 0;
+      /* ST_CALLSITE[0074D114]: CALL dword ptr [EAX + 0x14] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*param_1 + 0x14))(param_1,&local_14);
       if (local_c == 0) {
         local_c = 1;
       }
+      /* ST_CALLSITE[0074D12E]: CALL dword ptr [EAX + 0x3c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar3 = (**(code **)(*(int *)this + 0x3c))(*param_2,&local_14);
       if (iVar3 < 0) {
+        /* ST_CALLSITE[0074D13A]: CALL dword ptr [ECX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)*param_2 + 8))((int *)*param_2);
         *param_2 = 0;
       }
     }
+    /* ST_CALLSITE[0074D14C]: CALL dword ptr [EAX + 0x10] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)(*param_1 + 0x10))(param_1,*param_2,0);
   }

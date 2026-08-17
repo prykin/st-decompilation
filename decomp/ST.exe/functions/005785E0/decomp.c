@@ -15,8 +15,10 @@
 STCrabC * __thiscall STCrabC::STCrabC(STCrabC *this)
 
 {
+  /* ST_CALLSITE[005785E4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)this);
-  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[005785F1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  STT3DSprC::STT3DSprC((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = &VTable_0079B398;
   this->vtable = &STCrabCVTable;
   this->field_0239 = CASE_0;

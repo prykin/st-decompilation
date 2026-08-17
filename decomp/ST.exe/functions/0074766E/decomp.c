@@ -16,6 +16,7 @@ void FUN_0074766e(void)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int in_stack_00000004;
 
+  /* ST_CALLSITE[00747676]: CALL dword ptr [0x0085bc78] */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   InterlockedIncrement((LONG *)(in_stack_00000004 + 0x14));
   return;

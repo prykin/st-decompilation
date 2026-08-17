@@ -64,6 +64,7 @@ switchD_004c787f_caseD_2:
     iVar6 = 0x31;
     goto LAB_004c795c;
   case 5:
+    /* ST_CALLSITE[004C7947]: CALL 0x00405821; direct=00405821 TLOBaseTy::sub_004DE7D0 */
     iVar6 = sub_004DE7D0(this,param_1,param_2,param_3);
     goto LAB_004c7967;
   case 7:
@@ -75,6 +76,7 @@ LAB_004c7967:
     if (iVar6 != 0) {
 LAB_004c796d:
       if (param_5 != 0) {
+        /* ST_CALLSITE[004C797D]: CALL 0x00401b59; direct=00401B59 TLOBaseTy::sub_004C9370 */
         local_EAX_285 = sub_004C9370(this,param_1,param_2,-1);
         if ((*(int *)&this->field_0x361 == param_1) && (*(uint *)&this->field_0x369 == param_2)) {
           local_EAX_285 = local_EAX_285 + *(int *)&this->field_0x36d;
@@ -92,6 +94,7 @@ LAB_004c796d:
     return 0;
   }
   iVar6 = 0;
+  /* ST_CALLSITE[004C79C5]: CALL dword ptr [EAX + 0xf8] */
   dVar5 = this->slot_F8();
   if (dVar5 == 0) {
     return 0;
@@ -126,6 +129,7 @@ LAB_004c796d:
     }
     break;
   case 4:
+    /* ST_CALLSITE[004C7A7A]: CALL dword ptr [EDX + 0x7c] */
     iVar4 = this->vfunc_7C();
     if (iVar4 == 100) {
       return 0;

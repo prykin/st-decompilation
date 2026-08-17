@@ -11,6 +11,7 @@ undefined4 __fastcall FUN_004e9050(TLOBaseTy *param_1)
   byte *pbVar4;
 
   if (param_1->field_05AC != CASE_37) goto LAB_004e914a;
+  /* ST_CALLSITE[004E906B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar2 = LookupRecordByte(*(char *)&param_1->field_0024);
   uVar2 = (int)(byte)uVar2;
   if (uVar2 == 1) {
@@ -36,6 +37,7 @@ LAB_004e9090:
     param_1->field_04D0 = TVar1;
     if ((99 < (int)TVar1) && (param_1->field_04E0[5] == 0)) {
       param_1->field_04E0[5] = 1;
+      /* ST_CALLSITE[004E9101]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
       TLOBaseTy::RotateSpr(param_1,1);
     }
   }
@@ -43,6 +45,7 @@ LAB_004e9090:
     iVar2 = thunk_FUN_004ac910(&param_1->field_01D5,'\f');
     if (iVar2 == param_1->field_01F5->field_01C4) {
       param_1->field_04E0[5] = 0;
+      /* ST_CALLSITE[004E9145]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
       TLOBaseTy::RotateSpr(param_1,1);
     }
   }

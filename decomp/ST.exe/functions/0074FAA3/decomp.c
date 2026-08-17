@@ -76,11 +76,12 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
         case 0xd:
           piVar2 = (int *)*piVar8;
           *(int **)(puVar7 + 4) = piVar2;
+          /* ST_CALLSITE[0074FB91]: CALL dword ptr [ECX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar2 + 4))(piVar2);
           break;
         case 0x11:
-          *(char *)(puVar7 + 4) = (char)*piVar8;
+          ((char *)puVar7)[4] = (char)*piVar8;
         }
         local_8 = local_8 + 1;
         piVar8 = piVar8 + 4;

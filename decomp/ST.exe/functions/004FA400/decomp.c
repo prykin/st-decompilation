@@ -27,7 +27,9 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
+    /* ST_CALLSITE[004FA45A]: CALL 0x00405dbc; direct=00405DBC CPanelTy::ShiftControls */
     ShiftControls(local_8,1,param_1);
+    /* ST_CALLSITE[004FA464]: CALL 0x00405dbc; direct=00405DBC CPanelTy::ShiftControls */
     ShiftControls(this_00,0,param_1);
     puVar5 = this_00->field_09A4;
     iVar4 = 7;

@@ -45,11 +45,13 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
   if ((this->field_0203 == 0) || (this->field_0207 + this->field_0203 <= this->field_0280)) {
     this->field_0207 = this->field_0280;
     local_1c = this;
+    /* ST_CALLSITE[0066191E]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
     uVar4 = sub_0065D9C0(this);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     iVar7 = CONCAT22(extraout_var,uVar4);
-    /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     if ((0 < iVar7) &&
+       /* ST_CALLSITE[00661932]: CALL 0x004057e5; direct=004057E5 AiFltClassTy::sub_00661800 */
+       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
        (local_20 = iVar7, local_c = sub_00661800((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
        (int)this->field_0179 < iVar7 - local_c)) {
       local_18 = thunk_FUN_0068f8f0(this->field_0284,this->field_007B);
@@ -60,6 +62,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
       local_EAX_154 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
       pAVar3 = local_1c;
       if (local_EAX_154 == 0) {
+        /* ST_CALLSITE[00661991]: CALL 0x004018cf; direct=004018CF AiFltClassTy::sub_0065DA10 */
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         local_8 = (DArrayTy *)sub_0065DA10(local_1c,extraout_EDX_00);
         if (local_8 != nullptr) {
@@ -74,21 +77,26 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
                 puVar5 = nullptr;
               }
               local_24 = STReplaceLowWord((uint32_t)(puVar5), (uint16_t)(*puVar5));
+              /* ST_CALLSITE[006619E0]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               this_00 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,*puVar5,CASE_1
                                   );
               if ((this_00 != nullptr) && ((int)pAVar3->field_0179 < local_20 - local_c))
               {
+                /* ST_CALLSITE[00661A0A]: CALL dword ptr [EAX + 0x2c] */
                 iVar7 = this_00->vfunc_2C();
                 pIVar8 = thunk_FUN_00674fb0(iVar7);
                 if ((pAVar3->field_017F & (uint)pIVar8) != 0) {
                   if (pAVar3->field_0039 == 3) {
+                    /* ST_CALLSITE[00661A2F]: CALL dword ptr [EDX + 0xc4] */
                     iVar7 = this_00->vfunc_C4();
                   }
                   else {
+                    /* ST_CALLSITE[00661A3B]: CALL dword ptr [EAX + 0x7c] */
                     iVar7 = this_00->vfunc_7C();
                   }
                   if (iVar7 < pAVar3->field_0177) {
+                    /* ST_CALLSITE[00661A51]: CALL dword ptr [EDX + 0x2c] */
                     iVar7 = this_00->vfunc_2C();
                     if ((iVar7 < 0x32) || (0x73 < iVar7)) {
                       bVar2 = false;
@@ -122,6 +130,7 @@ LAB_00661a96:
                         local_c = local_c + 1;
                       }
                     }
+                    /* ST_CALLSITE[00661ADB]: CALL dword ptr [EAX + 0x2c] */
                     iVar7 = this_00->vfunc_2C();
                     if ((iVar7 < 1) || (0x28 < iVar7)) {
                       bVar2 = false;

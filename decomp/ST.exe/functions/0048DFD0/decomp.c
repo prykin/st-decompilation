@@ -517,6 +517,7 @@ STBoatC::sub_0048DFD0
     _param_3 = uVar6 >> 0x10 & 7;
   }
   else {
+    /* ST_CALLSITE[0048EC3E]: CALL dword ptr [EAX + 0x10] */
     sVar3 = (*local_2c->vtable->vfunc_10)
                       (param_1 * 0xc9 + 100,param_2 * 0xc9 + 100,_param_3 * 200 + 100,
                        param_4 * 0xc9 + 100,param_5 * 0xc9 + 100,(int)param_6 * 200 + 100);

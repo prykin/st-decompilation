@@ -49,19 +49,24 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
+      /* ST_CALLSITE[00618EB2]: CALL 0x0040490d; direct=0040490D STJumpMineC::sub_00619350 */
       local_10 = sub_00619350(local_8,&local_c);
+      /* ST_CALLSITE[00618EC9]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
       FreeAndNull(&local_10);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (SVar1 == MESS_ID_NONE) {
+      /* ST_CALLSITE[00618E37]: CALL 0x00404f8e; direct=00404F8E STJumpMineC::sub_00619C70 */
       iVar4 = sub_00619C70(local_8);
       if (iVar4 != 0) {
         if (this_00->field_0150 == '\0') {
+          /* ST_CALLSITE[00618E68]: CALL 0x00401181; direct=00401181 STJumpMineC::sub_006191A0 */
           bVar3 = sub_006191A0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
           this_00->field_0150 = bVar3;
           if (bVar3 != 0) {
+            /* ST_CALLSITE[00618E7B]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
             LoadImagJMine(this_00,1);
           }
           if (this_00->field_0150 == '\0') {
@@ -69,6 +74,7 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
             return 0;
           }
         }
+        /* ST_CALLSITE[00618E90]: CALL 0x00402c48; direct=00402C48 STJumpMineC::sub_00619A20 */
         sub_00619A20(this_00);
         g_currentExceptionFrame = local_58.previous;
         return 0;
@@ -84,9 +90,11 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
         iVar6 = 0;
         this_00->field_001C = this_00->field_014C;
         if ((this_00->field_0150 != '\0') && (this_00->field_0093 != CASE_5)) {
+          /* ST_CALLSITE[00618DF5]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
           LoadImagJMine(this_00,1);
         }
         if ((this_00->field_0093 == CASE_5) || (this_00->field_0093 == CASE_0)) {
+          /* ST_CALLSITE[00618E0F]: CALL 0x004023ec; direct=004023EC STJumpMineC::sub_006192E0 */
           sub_006192E0(this_00);
           this_00->field_0093 = CASE_6;
           g_currentExceptionFrame = local_58.previous;
@@ -97,9 +105,11 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
         puVar8 = (byte *)&local_8->field_0x4d;
         memmove(puVar8, puVar7, 0x42); /* compiler REP MOVS byte copy */
         local_8->field_001C = DAT_00808754;
+        /* ST_CALLSITE[00618CD7]: CALL 0x00402f90; direct=00402F90 STJumpMineC::sub_006193E0 */
         iVar6 = sub_006193E0(local_8);
         if (iVar6 == 0) {
 LAB_00618ce0:
+          /* ST_CALLSITE[00618CE2]: CALL 0x004023ec; direct=004023EC STJumpMineC::sub_006192E0 */
           sub_006192E0(this_00);
           g_currentExceptionFrame = local_58.previous;
           return 0;
@@ -115,6 +125,7 @@ LAB_00618ce0:
         else {
           this_00->field_0093 = CASE_4;
         }
+        /* ST_CALLSITE[00618D6F]: CALL 0x00401181; direct=00401181 STJumpMineC::sub_006191A0 */
         bVar3 = sub_006191A0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
         this_00->field_0150 = bVar3;
         if ((void *)this_00->field_007D != nullptr) {
@@ -122,6 +133,7 @@ LAB_00618ce0:
                              this_00);
         }
         if (this_00->field_0150 != '\0') {
+          /* ST_CALLSITE[00618DA4]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
           LoadImagJMine(this_00,1);
           g_currentExceptionFrame = local_58.previous;
           return 0;

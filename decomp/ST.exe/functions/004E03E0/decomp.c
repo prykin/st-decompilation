@@ -10,6 +10,7 @@ undefined4 __fastcall FUN_004e03e0(AnonShape_004E03E0_57EF73A1 *param_1)
     this = (AnonShape_00580570_1EF0F1E6 *)
            thunk_FUN_004d85e0(param_1->field_05B0,param_1->field_05B4,param_1->field_05B8);
     if (this != nullptr) {
+      /* ST_CALLSITE[004E042F]: CALL 0x00402973; direct=00402973 STResourceC::SetResource */
       STResourceC::SetResource((STResourceC *)this,param_1->field_04E0,1);
       param_1->field_04E0 = 0;
       thunk_FUN_00580570(this);

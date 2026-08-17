@@ -29,11 +29,15 @@ void __thiscall StartSystemTy::DoneSystem(StartSystemTy *this)
   if (this->field_069A != nullptr) {
     FreeAndNull(&this->field_069A);
   }
+  /* ST_CALLSITE[005DCE24]: CALL 0x004039ea; direct=004039EA DelAllAccelerators */
   DelAllAccelerators();
+  /* ST_CALLSITE[005DCE2B]: CALL 0x00402f86; direct=00402F86 StartSystemTy::sub_005DB2A0 */
   sub_005DB2A0(this);
   DAT_0080c50a = 1;
+  /* ST_CALLSITE[005DCE3C]: CALL 0x0040590c; direct=0040590C StartSystemTy::sub_005DAF20 */
   sub_005DAF20(this);
   thunk_FUN_005db010();
+  /* ST_CALLSITE[005DCE4A]: CALL 0x004055f6; direct=004055F6 StartSystemTy::sub_005DA910 */
   sub_005DA910(this);
   FUN_006e52d0((AnonShape_006E52D0_AF06BCD2 *)this);
   return;

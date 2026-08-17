@@ -29,6 +29,7 @@ FUN_00613140(void *this,int param_1,int param_2,int param_3,int param_4,int para
   local_18 = (float)param_2 * _DAT_007904f8 * _DAT_007904f0;
   local_14 = (float)param_3 * _DAT_007904f8 * _DAT_007904f0;
   ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_2c,&local_1c,0.0,0.0,0.0,1);
+  /* ST_CALLSITE[00613225]: CALL dword ptr [EDX + 0x14] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   sVar1 = (**(code **)(*(int *)this + 0x14))
                     (local_3c >> 0x10,local_38 >> 0x10,local_34 >> 0x10,local_2c >> 0x10,

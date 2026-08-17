@@ -118,6 +118,7 @@ LAB_0069177d:
       do {
         if (((param_3 == 0) || (local_c != 0)) || (local_8 != 0)) {
           if (param_4 != nullptr) {
+            /* ST_CALLSITE[00691910]: CALL ECX */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (*(code *)param_4)(0);
           }
@@ -422,6 +423,7 @@ LAB_00691a65:
           uVar17 = 0;
           uVar14 = 0;
           pcVar5 = thunk_FUN_00691650("STONE",iVar10);
+          /* ST_CALLSITE[006918B4]: CALL dword ptr [0x0085bde8] */
           wsprintfA(local_190,"%s%u%u",pcVar5,uVar14,uVar17);
           iVar15 = cMf32::RecChk(param_2,7,local_190);
           if (iVar15 == 0) {

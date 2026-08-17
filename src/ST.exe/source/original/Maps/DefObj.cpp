@@ -84,6 +84,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         _DAT_00853d76 = *(undefined4 *)(pcVar9 + 0x214);
         if (*(int *)(pcVar9 + 0x210) != 0) {
           _DAT_00853d72 = 0xffffffff;
+          /* ST_CALLSITE[00692DE7]: CALL dword ptr [0x0085bde8] */
           st::external_00000080(local_108,st::mutable_c_string("%s%u"),pcVar9,param_5);
           iVar3 = DAT_00853d80;
           uVar5 = 0xffffffff;
@@ -111,6 +112,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
             pcVar10 = pcVar10 + 1;
           } while (cVar1 != '\0');
           if (iVar8 != -2) {
+            /* ST_CALLSITE[00692E41]: CALL dword ptr [0x0085bde8] */
             st::external_00000080(local_108,st::mutable_c_string("%s%u"),pcVar9,param_5);
             uVar5 = 0xffffffff;
             pcVar9 = local_108;
@@ -127,7 +129,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
             pcVar10 = (char *)&DAT_00853d32;
             memmove(pcVar10, pcVar9, uVar5); /* compiler REP MOVS byte copy */
           }
-          return st::pointer_boundary_cast<uint *>(&DAT_00853cd8);
+          return &DAT_00853cd8;
         }
         uVar5 = 0xffffffff;
         pcVar10 = pcVar9;
@@ -159,7 +161,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         pcVar10 = (char *)&DAT_00853d32;
         memmove(pcVar10, pcVar9, uVar5); /* compiler REP MOVS byte copy */
         _DAT_00853d72 = param_5;
-        return st::pointer_boundary_cast<uint *>(&DAT_00853cd8);
+        return &DAT_00853cd8;
       case CASE_14:
         _DAT_007d5c50 = param_2;
         _DAT_007d5c58 = (undefined2)param_4;

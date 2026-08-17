@@ -221,6 +221,7 @@ STArtiafactC * __cdecl st::fn_005EBC70(void)
 
   this = (STArtiafactC *)st::fn_006B04D0(0x477);
   if (this != nullptr) {
+    /* ST_CALLSITE[005EBC83]: CALL 0x00401807; direct=00401807 STSprGameObjC::STSprGameObjC */
     st::fn_00401807((STSprGameObjC *)this);
     this->vtable = &st_global_0079C260;
     this->vtable_at_1d5 = &st_global_0079C25C;
@@ -286,6 +287,7 @@ undefined4 __fastcall st::fn_005EBD80(AnonShape_005EBD80_1A4ED01F *param_1)
         ((sVar1 < 0 || ((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)))))) ||
        (g_worldGrid.sizeZ <= sVar2)) ||
       (STGridAt3D(g_worldGrid, sVar8, sVar1, sVar2).objects[0] == nullptr)) &&
+     /* ST_CALLSITE[005EBF5A]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
      (iVar5 = st::fn_00401325
                         (sVar8,sVar1,sVar2,0,(RecoveredRecord_DumpClassC_00495EC0 *)param_1),
      iVar5 == 0)) {
@@ -318,14 +320,17 @@ undefined4 __fastcall st::fn_005EBD80(AnonShape_005EBD80_1A4ED01F *param_1)
     if (this == nullptr) {
       return 0;
     }
+    /* ST_CALLSITE[005EC00E]: CALL dword ptr [EDX + 0x2c] */
     iVar5 = this->GetObjectTypeId();
     if (((iVar5 != 0x1b) && (iVar5 != 7)) && (iVar5 != 0x13)) {
       return 0;
     }
+    /* ST_CALLSITE[005EC02D]: CALL dword ptr [EAX + 0x114]; [STIndirectCallsiteApplier] exact slot 0x114; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
     iVar5 = this->vfunc_114(0xfe);
     if (iVar5 == 0) {
       return 0;
     }
+    /* ST_CALLSITE[005EC043]: CALL dword ptr [EDX + 0x118]; [STIndirectCallsiteApplier] exact slot 0x118; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
     this->vfunc_118(param_1->field_0018);
     param_1->field_02A3 = this[1].vtable;
     param_1->field_02AB = *(undefined2 *)&this[1].field_0xe;
@@ -516,7 +521,7 @@ void __fastcall st::fn_005EC6A0(AnonShape_005EC6A0_C8559927 *param_1)
     local_28.arg0.words.high = param_1->field_0032;
     local_28.arg1.words.low = param_1->field_032A;
     local_28.id = 0x5ddb;
-    if ((AnonShape_005EFAE0_B406B78B *)param_1->field_0354 != nullptr) {
+    if ((AnonShape_005EFAE0_B406B78B *)param_1->field_0354 != 0) {
       iVar1 = st::fn_006E62D0
                         (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_0354,
                          &local_8);
@@ -525,6 +530,7 @@ void __fastcall st::fn_005EC6A0(AnonShape_005EC6A0_C8559927 *param_1)
         local_28.arg1.words.high = *(word *)(local_8 + 0x32);
       }
     }
+    /* ST_CALLSITE[005EC70F]: CALL dword ptr [EAX] */
     g_aiBossClass_008117BC->GetMessage(&local_28);
   }
   return;
@@ -605,50 +611,64 @@ undefined4 st::fn_005EC9F0(int param_1)
     g_currentExceptionFrame = local_54.previous;
     return local_c;
   }
-  this = st::pointer_boundary_cast<undefined1 *>(&local_8->field_0x1d5);
+  this = &local_8->field_0x1d5;
   if (param_1 == 0) {
     st::fn_004023C4(this,DAT_007cde88,DAT_007cde8c);
+    /* ST_CALLSITE[005ECA72]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar2 = st::fn_00404183
                       ((STT3DSprC *)this,0xe,PTR_00806774,local_10[local_8->field_02B1],CASE_1D);
     if (iVar2 != 0) {
       return local_c;
     }
     st::fn_00405AA6(this,'\x0e');
+    /* ST_CALLSITE[005ECA93]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064((STT3DSprC *)this,'\x0e',local_8->field_02CA);
+    /* ST_CALLSITE[005ECAE2]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     st::fn_004045D9
               ((STT3DSprC *)this,(float)local_8->field_02BE * _DAT_007904f8 * _DAT_007904f0,
                (float)local_8->field_02C2 * _DAT_007904f8 * _DAT_007904f0,
                (float)local_8->field_02C6 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    /* ST_CALLSITE[005ECAF8]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240((STT3DSprC *)this,0xe,g_playSystem_00802A38->field_00E4);
+    /* ST_CALLSITE[005ECB1B]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
     st::fn_004052FE((STT3DSprC *)this,'\x0e',st::machine_word_boundary_cast<uint>(local_8->field_02BA / 0xf));
     st::fn_00401AAA(local_8,0x18);
     local_8->field_02B9 = 1;
     local_EAX_322 = st::fn_004052CC((STT3DSprC *)this);
     local_8->field_02D6 = local_EAX_322;
     if (local_8->field_0235 == '\x01') {
+      /* ST_CALLSITE[005ECB5D]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       st::fn_00404183((STT3DSprC *)this,0xb,PTR_00806774,st::mutable_c_string("forcef0"),CASE_1D);
       st::fn_004059F2(this,'\x0e');
       st::fn_00402BDF(this,'\v');
       st::fn_004022D4(this,'\v');
+      /* ST_CALLSITE[005ECB8E]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       st::fn_00405240((STT3DSprC *)this,0xb,g_playSystem_00802A38->field_00E4);
       g_currentExceptionFrame = local_54.previous;
       return local_c;
     }
   }
   else {
+    /* ST_CALLSITE[005ECBC8]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     st::fn_00404183
               ((STT3DSprC *)this,8,PTR_00806774,
                st::mutable_c_string("expl_bt0" + (uint)local_8->field_02DF * 0x32),CASE_1D);
+    /* ST_CALLSITE[005ECBEF]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     st::fn_00404183
               ((STT3DSprC *)this,9,PTR_00806764,
                st::mutable_c_string("expl_bbt0" + (uint)local_8->field_02DF * 0x32),CASE_1D);
+    /* ST_CALLSITE[005ECC16]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     st::fn_00404183
               ((STT3DSprC *)this,10,PTR_00806774,
                st::mutable_c_string("expmask3" + (uint)local_8->field_02DF * 0x32),CASE_1D);
     st::fn_004022D4(this,'\n');
+    /* ST_CALLSITE[005ECC35]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240((STT3DSprC *)this,10,g_playSystem_00802A38->field_00E4);
+    /* ST_CALLSITE[005ECC44]: CALL 0x004044ee; direct=004044EE STT3DSprC::sub_004ACF20 */
     st::fn_004044EE((STT3DSprC *)this,PTR_008032b8,0x10);
+    /* ST_CALLSITE[005ECC5A]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240((STT3DSprC *)this,8,g_playSystem_00802A38->field_00E4);
+    /* ST_CALLSITE[005ECC63]: CALL 0x00403233; direct=00403233 STT3DSprC::sub_004ACFE0 */
     st::fn_00403233((STT3DSprC *)this,'\n');
     iVar1 = st::fn_004052CC((STT3DSprC *)this);
     local_8->field_02D6 = iVar1;
@@ -965,6 +985,7 @@ joined_r0x005ed4b7:
       goto joined_r0x005ed4b7;
     }
   }
+  /* ST_CALLSITE[005ED564]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
   iVar8 = st::fn_00401325(sVar6,sVar10,sVar1 + sVar5,0,st::pointer_boundary_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
   if (iVar8 == 0) {
     STField<char>(this,0x252) = STField<char>(this,0x252) + '\x01';
@@ -1018,16 +1039,19 @@ undefined4 __fastcall st::fn_005EDA50(AnonShape_005EDA50_4BDBD797 *param_1)
                  STGridAt3D(g_worldGrid, sVar3, sVar2, sVar1).objects[0], uVar6 = local_18, this != nullptr)))))) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((param_1->field_02E9 != '\0') &&
+         /* ST_CALLSITE[005EDAF9]: CALL dword ptr [EDX + 0x128] */
          (iVar4 = (**(code **)(param_1->field_0000 + 0x128))(), this->field_0018 == iVar4)) {
         return 0;
       }
+      /* ST_CALLSITE[005EDB11]: CALL dword ptr [EAX + 0x2c] */
       dVar5 = this->slot_2C();
       if ((((dVar5 == 0x52) || (dVar5 == 0x5f)) && (iVar4 = st::fn_00405470(this), iVar4 != 0))
          && (this->field_0508 == CASE_0)) {
+        /* ST_CALLSITE[005EDB3B]: CALL dword ptr [EDX + 0xc] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (**(code **)(param_1->field_0000 + 0xc))();
         st::fn_004054D4(this,*(int *)&param_1->field_0x18,iVar4);
-        st::fn_00404FDE(this,&local_14,&local_10,&local_c,st::pointer_boundary_cast<undefined4 *>(&local_8));
+        st::fn_00404FDE(this,&local_14,&local_10,&local_c,(undefined4 *)&local_8);
         iVar4 = st::fn_00403FC6(param_1,local_14,local_10,local_c,local_8,'\x01',0x3c);
         if (iVar4 != 0) {
           uVar6 = 1;
@@ -1070,6 +1094,7 @@ undefined4 __fastcall st::fn_005EDC20(AnonShape_005EDC20_3D37DB9E *param_1)
         ((sVar2 < g_worldGrid.sizeY && (-1 < sVar1)))) &&
        ((sVar1 < g_worldGrid.sizeZ &&
         (this = STGridAt3D(g_worldGrid, sVar3, sVar2, sVar1).objects[0], this != nullptr)))) {
+      /* ST_CALLSITE[005EDCBE]: CALL dword ptr [EDX + 0x2c] */
       iVar4 = this->GetObjectTypeId();
       if ((iVar4 == 0x52) || (iVar4 == 0x5f)) {
         if ((*(int *)&this[0x23].field_0x1c == *(int *)&param_1->field_0x18) &&
@@ -1079,8 +1104,10 @@ undefined4 __fastcall st::fn_005EDC20(AnonShape_005EDC20_3D37DB9E *param_1)
           uVar12 = param_1->field_02C6;
           uVar10 = param_1->field_02C2;
           uVar8 = param_1->field_02BE;
+          /* ST_CALLSITE[005EDD5F]: CALL dword ptr [EAX + 0x138] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar4 = (**(code **)(*(int *)param_1 + 0x138))();
+          /* ST_CALLSITE[005EDD6A]: CALL dword ptr [EDX + 0x130] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)(*(int *)param_1 + 0x130))();
           st::fn_00405466(this,*(int *)&param_1->field_0x18,iVar6,iVar4,uVar8,uVar10,uVar12);
@@ -1089,6 +1116,7 @@ undefined4 __fastcall st::fn_005EDC20(AnonShape_005EDC20_3D37DB9E *param_1)
         }
         return 0;
       }
+      /* ST_CALLSITE[005EDCCF]: CALL dword ptr [EAX + 0x2c] */
       iVar4 = this->GetObjectTypeId();
       if ((iVar4 == 99) && (*(int *)&this[0x22].field_0x8 == 2)) {
         uVar11 = 0;
@@ -1178,12 +1206,6 @@ st::fn_005EE080(void *this,short param_1,short param_2,short param_3,short param
             short param_6)
 
 {
-  int _param_2 = static_cast<int>(param_2);
-  int _param_3 = static_cast<int>(param_3);
-  int _param_4 = static_cast<int>(param_4);
-  int _param_5 = static_cast<int>(param_5);
-  int _param_6 = static_cast<int>(param_6);
-
   int iVar1;
   int iVar2;
   int iVar3;
@@ -1366,6 +1388,7 @@ void __fastcall st::fn_005EE670(AnonShape_005EE670_EFEE702F *param_1)
 {
   int iVar1;
 
+  /* ST_CALLSITE[005EE67A]: CALL dword ptr [EAX + 0x124] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(param_1->field_0000 + 0x124))(2000);
   if (iVar1 != 0) {
@@ -1420,7 +1443,7 @@ undefined4 __fastcall st::fn_005EE6E0(AnonShape_005EE6E0_AB6798ED *param_1)
     }
     break;
   case 1:
-    iVar4 = st::fn_004055D3(param_1,st::pointer_boundary_cast<undefined4 *>(&local_c),st::pointer_boundary_cast<undefined4 *>(&local_10),&local_14);
+    iVar4 = st::fn_004055D3(param_1,(undefined4 *)&local_c,(undefined4 *)&local_10,&local_14);
     if (iVar4 != 0) {
       param_1->field_027F = local_14;
       param_1->field_0277 = local_c;
@@ -1546,11 +1569,14 @@ cf_common_exit_005EEDDF:
       if (param_1->field_02D2 < 0) goto cf_common_exit_005EEDDF;
     }
     else {
-      this = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0x1d5);
+      this = &param_1->field_0x1d5;
       iVar4 = st::fn_004042AF(this,'\b');
       if (iVar4 == 1) {
+        /* ST_CALLSITE[005EEBF1]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         st::fn_00404264((STT3DSprC *)this,0xf);
+        /* ST_CALLSITE[005EEBFA]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         st::fn_00404264((STT3DSprC *)this,0);
+        /* ST_CALLSITE[005EEC02]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         st::fn_00404264((STT3DSprC *)this,1);
       }
       if (iVar4 == *(int *)(&DAT_007cdf52 + (uint)param_1->field_02DF * 0x32)) {
@@ -1559,6 +1585,7 @@ cf_common_exit_005EEDDF:
         if (iVar5 == 0) {
           param_1->field_0252 = param_1->field_0252 + -1;
         }
+        /* ST_CALLSITE[005EEC5A]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         st::fn_00404264((STT3DSprC *)this,0xe);
         if ((param_1->field_0315 == '\x04') || (param_1->field_0315 == '\x02')) {
           uVar6 = 0xffffffff;
@@ -1569,7 +1596,9 @@ cf_common_exit_005EEDDF:
         }
         if (param_1->field_0231 == 0xfd) {
           if (g_allPlayers_007FA174 != nullptr) {
+            /* ST_CALLSITE[005EECE9]: CALL 0x004026da; direct=004026DA STArtiafactC::sub_005F0D00 */
             st::fn_004026DA((STArtiafactC *)param_1);
+            /* ST_CALLSITE[005EED04]: CALL 0x00403a5d; direct=00403A5D STAllPlayersC::UnRegisterArtefact */
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             iVar5 = st::fn_00403A5D
                               (g_allPlayers_007FA174,CONCAT22(extraout_var_00,param_1->field_0032),
@@ -1578,7 +1607,9 @@ cf_common_exit_005EEDDF:
           }
         }
         else if ((param_1->field_0231 == 0xfe) && (g_allPlayers_007FA174 != nullptr)) {
+          /* ST_CALLSITE[005EECB8]: CALL 0x00401afa; direct=00401AFA STContainerC::sub_005F0D90 */
           st::fn_00401AFA((STContainerC *)param_1);
+          /* ST_CALLSITE[005EECD3]: CALL 0x00401f64; direct=00401F64 STAllPlayersC::UnRegisterContainer */
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar5 = st::fn_00401F64
                             (g_allPlayers_007FA174,CONCAT22(extraout_var,param_1->field_0032),
@@ -1596,11 +1627,13 @@ joined_r0x005eed0b:
         st::fn_00402A90((STT3DSprC *)this);
       }
       if (iVar4 == *(int *)(&DAT_007cdf5a + (uint)param_1->field_02DF * 0x32)) {
+        /* ST_CALLSITE[005EED6D]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         st::fn_00405240((STT3DSprC *)this,9,g_playSystem_00802A38->field_00E4);
       }
       iVar5 = (uint)param_1->field_02DF * 0x32;
       if ((*(int *)(&DAT_007cdf5a + iVar5) < iVar4) &&
          (iVar4 == *(int *)(&DAT_007cdf4e + iVar5) + -1)) {
+        /* ST_CALLSITE[005EED99]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         st::fn_00404264((STT3DSprC *)this,8);
       }
       iVar4 = st::fn_004042AF(this,'\t');
@@ -1673,6 +1706,7 @@ void __thiscall st::fn_005EEFF0(void *this,int param_1)
     iVar4 = STField<int>(this,0x277);
     iVar4 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
     if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+         /* ST_CALLSITE[005EF0F6]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
          (st::fn_00403F53
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
                      &local_8,&local_c), param_1 < 0)) ||
@@ -1682,8 +1716,10 @@ void __thiscall st::fn_005EEFF0(void *this,int param_1)
            (pVVar3->field_0034 <= local_c)))))))) ||
        ((pVVar3->field_004C == nullptr ||
         (pVVar3->field_004C[local_8 + local_c * pVVar3->field_0030] != 0)))) {
+      /* ST_CALLSITE[005EF149]: CALL dword ptr [EDX + 0xd8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0xd8))();
+      /* ST_CALLSITE[005EF19F]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       st::fn_004045D9
                 ((STT3DSprC *)((int)this + 0x1d5),
                  (float)STField<int>(this,0x2be) * _DAT_007904f8 * _DAT_007904f0,
@@ -1715,6 +1751,7 @@ joined_r0x005ef316:
     iVar4 = STField<int>(this,0x277);
     iVar4 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
     if (((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+           /* ST_CALLSITE[005EF2B9]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
            (st::fn_00403F53
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
                        &local_c,&local_8), param_1 < 0)) || ((4 < param_1 || (local_c < 0)))) ||
@@ -1722,6 +1759,7 @@ joined_r0x005ef316:
           ((local_8 = g_centeredOffsets5[param_1] + local_8, local_8 < 0 ||
            (pVVar3->field_0034 <= local_8)))))) || (pVVar3->field_004C == nullptr)) ||
        (pVVar3->field_004C[local_c + local_8 * pVVar3->field_0030] != 0)) {
+      /* ST_CALLSITE[005EF308]: CALL dword ptr [EDX + 0xd8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0xd8))();
       cVar1 = STField<char>(this,0x2b9);
@@ -1813,13 +1851,16 @@ void __fastcall st::fn_005EF5F0(int param_1)
   STT3DSprC *this;
 
   this = (STT3DSprC *)(param_1 + 0x1d5);
+  /* ST_CALLSITE[005EF640]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_00401064
             (this,'\x0e',
              ((0x18 - (int)*(short *)(param_1 + 0x6c) / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18
             );
+  /* ST_CALLSITE[005EF670]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_004052FE(this,'\x0e',(0x18 - (int)*(short *)(param_1 + 0x6c) / 0xf) % 0x18);
+  /* ST_CALLSITE[005EF679]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
   st::fn_004030BC(this,'\x0e');
   return;
 }
@@ -1837,6 +1878,7 @@ void __thiscall st::fn_005EF6C0(void *this,int param_1)
   local_8 = st::pointer_boundary_cast<STBoatC *>(this);
   if (STField<ushort>(this,0x2ab) != 0) {
     this_00 = (STBoatC *)
+              /* ST_CALLSITE[005EF6E6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               st::fn_004028BA
                         (g_allPlayers_007FA174,STField<char>(this,0x2a3),
                          STField<ushort>(this,0x2ab),CASE_1);
@@ -1854,14 +1896,17 @@ void __thiscall st::fn_005EF6C0(void *this,int param_1)
 LAB_005ef720:
   if ((this_00 != nullptr) && (this_00->field_0020 == 0x14)) {
     if (param_1 == 1) {
+      /* ST_CALLSITE[005EF762]: CALL 0x0040164a; direct=0040164A STBoatC::ReadyForLoading */
       st::fn_0040164A(this_00,STField<STFishC *>(this,0x18));
     }
     else {
       if (param_1 == 2) {
+        /* ST_CALLSITE[005EF74F]: CALL 0x004054e3; direct=004054E3 STBoatC::NotReadyForLoading */
         st::fn_004054E3(this_00,STField<int>(this,0x18));
         return;
       }
       if (param_1 == 3) {
+        /* ST_CALLSITE[005EF73C]: CALL 0x00403864; direct=00403864 STBoatC::CancelLoading */
         st::fn_00403864(this_00,STField<int>(this,0x18));
         return;
       }
@@ -1879,8 +1924,6 @@ LAB_005ef720:
 bool __thiscall st::fn_005EF7A0(void *this,short param_1,short param_2,short param_3)
 
 {
-  int _param_1 = static_cast<int>(param_1);
-
   short sVar1;
   short sVar2;
   short sVar3;
@@ -1893,6 +1936,7 @@ bool __thiscall st::fn_005EF7A0(void *this,short param_1,short param_2,short par
         (((param_2 < g_worldGrid.sizeY && (-1 < param_3)) &&
          ((param_3 < g_worldGrid.sizeZ &&
           (STGridAt3D(g_worldGrid, sVar1, param_2, param_3).objects[0] != nullptr)))))) ||
+       /* ST_CALLSITE[005EF89E]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
        (_param_1 = (STWorldObject *)st::fn_00401325(sVar1,param_2,param_3,0,st::pointer_boundary_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this)),
        _param_1 != nullptr)) goto cf_common_exit_005EF8D0;
     STField<char>(this,0x252) = STField<char>(this,0x252) + '\x01';
@@ -1974,6 +2018,7 @@ void __thiscall st::fn_005EFA90(void *this,undefined4 param_1)
 
 {
   STField<int>(this,0x2e5) = STField<int>(this,0x2e5) + -1;
+  /* ST_CALLSITE[005EFAA6]: CALL dword ptr [EAX + 0xac] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)this + 0xac))(param_1);
   return;
@@ -2076,6 +2121,7 @@ void __fastcall st::fn_005EFCD0(AnonShape_005EFCD0_3603EDD8 *param_1)
        ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) ||
       ((g_worldGrid.sizeZ <= sVar3 ||
        (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[0] == nullptr)))) &&
+     /* ST_CALLSITE[005EFD5D]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
      (iVar5 = st::fn_00401325
                         (sVar1,sVar2,sVar3,0,(RecoveredRecord_DumpClassC_00495EC0 *)param_1),
      iVar5 == 0)) {

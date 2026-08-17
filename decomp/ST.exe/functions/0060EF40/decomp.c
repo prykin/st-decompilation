@@ -156,6 +156,7 @@ LAB_0060f230:
             else {
               pcVar2 = this_00->vtable[5].slots_00_28[2];
               *(undefined4 *)(&stack0xffffff34 + iVar11) = 0x60f1e8;
+              /* ST_CALLSITE[0060F1E2]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
               iVar3 = (*pcVar2)(this_00);
               if (((iVar3 == 0) || ((STWorldObjectVTable *)0x7 < this_00[1].vtable)) ||
                  ((g_playSystem_00802A38 != nullptr &&

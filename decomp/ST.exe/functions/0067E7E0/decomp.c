@@ -77,6 +77,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   }
   local_8 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x98,5);
   if (param_2 != 0) {
+    /* ST_CALLSITE[0067E870]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
     local_10 = (DArrayTy *)CreateOpponentList(param_1,0,0xffffffff);
   }
   uVar10 = 0xffffffff;
@@ -204,6 +205,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
         pbVar13 = (byte *)(pcVar16 + -uVar10);
         pbVar17 = pbVar17 + -1;
         memmove(pbVar17, pbVar13, uVar10); /* compiler REP MOVS byte copy */
+        /* ST_CALLSITE[0067EA01]: CALL dword ptr [0x0085bde8] */
         wsprintfA(local_c8,(char *)local_5c,iVar9);
       }
       uVar10 = 0;

@@ -37,6 +37,7 @@ VisibleClassTy::sub_00559110
      ((g_playSystem_00802A38 == nullptr ||
       (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)))) {
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[0055917F]: CALL 0x00401be5; direct=00401BE5 VisibleClassTy::sub_0055BBC0 */
       sub_0055BBC0(this,0,(short)param_1,(short)param_2,(char)param_3,param_4,(byte)param_5,param_6);
     }
     if (this->field_00FC[uVar5] != 0) {
@@ -70,6 +71,7 @@ VisibleClassTy::sub_00559110
         }
         if (((this->field_004C != nullptr) && (this->field_0050 != nullptr)) &&
            ((param_7 & 0x4000) != 0)) {
+          /* ST_CALLSITE[0055926D]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           sub_00558C00(this,this->field_010C,param_1,(int)param_2,(int *)&param_4_after_write,&param_6_after_write);
           auto param_5_after_write = 0; /* compiler stack-slot lifetime split */
           param_4_after_write = param_4_after_write - iVar10;

@@ -41,7 +41,9 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
         iVar10 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_1;
         this_01->field_0494 = 0xffff;
+        /* ST_CALLSITE[005A16BF]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
         CursorClassTy::SetGCType(this_01,CASE_0,iVar10,iVar8);
+        /* ST_CALLSITE[005A16D4]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
         CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);
         this_01->field_00D2 = 0;
         this_01->field_04DF = -1;
@@ -92,11 +94,13 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
       local_28.id = MESS_CHOOSEMAPTY_6956;
       this_00 = pSVar2->field_02E6;
       if (this_00 != nullptr) {
+        /* ST_CALLSITE[005A17FC]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
         MMsgTy::SetMessage(this_00,0x25bc,'\0',&local_28.unknown_00,nullptr,
                            nullptr,0,0);
         g_currentExceptionFrame = local_6c.previous;
         return;
       }
+      /* ST_CALLSITE[005A181B]: CALL dword ptr [EDX] */
       this_02->GetMessage(&local_28);
       g_currentExceptionFrame = local_6c.previous;
       return;

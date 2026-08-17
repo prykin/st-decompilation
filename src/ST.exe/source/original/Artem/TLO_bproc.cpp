@@ -65,6 +65,7 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
     if (pAVar14 == nullptr) {
       return 0;
     }
+    /* ST_CALLSITE[004C8D89]: CALL 0x00405ace; direct=00405ACE TLOBaseTy::sub_004C7860 */
     iVar6 = st::fn_00405ACE
                       (param_1,pAVar14->field_0000,pAVar14->field_0004,pAVar14->field_0008,1,0);
     if (iVar6 == 0) {
@@ -97,8 +98,10 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
     return 0;
   }
   if (((*(int *)&param_1->field_0x361 == 5) &&
+      /* ST_CALLSITE[004C84E2]: CALL dword ptr [EAX + 0x7c] */
       (iVar7 = param_1->vfunc_7C(), iVar7 == 100)) || (99 < param_1->field_0394))
   {
+    /* ST_CALLSITE[004C84F9]: CALL 0x0040367f; direct=0040367F TLOBaseTy::procResult */
     iVar7 = st::fn_0040367F(param_1);
     if (iVar7 == 0) {
       return 0;
@@ -107,6 +110,7 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
     *(int *)&param_1->field_0x36d = iVar7;
     if (iVar7 < 1) {
       *(undefined4 *)&param_1->field_0x365 = *(undefined4 *)&param_1->field_0x361;
+      /* ST_CALLSITE[004C85C7]: CALL 0x00404b6a; direct=00404B6A TLOBaseTy::sub_004C90C0 */
       local_EAX_263 = st::fn_00404B6A(param_1);
       if ((local_EAX_263 == 0) &&
          (local_EAX_294 =
@@ -115,14 +119,15 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       *(undefined4 *)&param_1->field_0x36d = 0;
+      /* ST_CALLSITE[004C85FB]: CALL 0x00405a2e; direct=00405A2E TLOBaseTy::sub_004C7460 */
       st::fn_00405A2E(param_1);
       return 0;
     }
     param_1->field_038C = g_playSystem_00802A38->field_00E4;
     param_1->field_0394 = 0;
     st::fn_004035DF(param_1,*(Global_sub_004C7260_param_1Enum *)&param_1->field_0x361,
-                       *(int *)&param_1->field_0x369,st::pointer_boundary_cast<undefined4 *>(&param_1->field_0398),st::pointer_boundary_cast<undefined4 *>(&param_1->field_039C),
-                       &param_1->field_03A0,st::pointer_boundary_cast<undefined4 *>(&param_1->field_03A4));
+                       *(int *)&param_1->field_0x369,(undefined4 *)&param_1->field_0398,(undefined4 *)&param_1->field_039C,
+                       &param_1->field_03A0,(undefined4 *)&param_1->field_03A4);
     param_1->field_03A8 = 0;
     param_1->field_03AC = 0;
     param_1->field_03B0 = 0;
@@ -133,8 +138,10 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
     case CASE_49:
     case CASE_5C:
       st::fn_00403AA8(param_1);
+      /* ST_CALLSITE[004C85A4]: CALL 0x004058da; direct=004058DA TLOBaseTy::sub_004CE860 */
       st::fn_004058DA(param_1);
     }
+    /* ST_CALLSITE[004C85AB]: CALL 0x00405a2e; direct=00405A2E TLOBaseTy::sub_004C7460 */
     st::fn_00405A2E(param_1);
     return 0;
   }
@@ -169,25 +176,30 @@ undefined4 __fastcall st::fn_004C84C0(TLOBaseTy *param_1)
     if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
       st::fn_00404B8D((char)param_1->field_0024);
     }
+    /* ST_CALLSITE[004C8720]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     uVar10 = st::fn_004049B7(*(char *)&param_1->field_023D);
     param_1->field_0241 =st::machine_word_boundary_cast<int>(
          param_1->field_0241 +
          *(int *)(&DAT_007e4178 + ((uint)(byte)uVar10 + param_1->field_0235 * 3) * 4) / 100);
+    /* ST_CALLSITE[004C876B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_683 = st::fn_004049B7(*(char *)&param_1->field_023D);
     param_1->field_05D7 =
          (param_1->field_0241 * 100) /
          *(int *)(&DAT_007e4178 + ((uint)(byte)local_EAX_683 + param_1->field_0235 * 3) * 4);
+    /* ST_CALLSITE[004C87AD]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_749 = st::fn_004049B7(*(char *)&param_1->field_023D);
     if (*(int *)(&DAT_007e4178 + ((uint)(byte)local_EAX_749 + param_1->field_0235 * 3) * 4) <=
         param_1->field_0241) {
+      /* ST_CALLSITE[004C87E1]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_801 = st::fn_004049B7(*(char *)&param_1->field_023D);
       param_1->field_0241 =
            *(int *)(&DAT_007e4178 + ((uint)(byte)local_EAX_801 + param_1->field_0235 * 3) * 4);
     }
 LAB_004c8806:
     st::fn_004035DF(param_1,*(Global_sub_004C7260_param_1Enum *)&param_1->field_0x361,
-                       *(int *)&param_1->field_0x369,st::pointer_boundary_cast<undefined4 *>(&param_1->field_0398),st::pointer_boundary_cast<undefined4 *>(&param_1->field_039C),
-                       &param_1->field_03A0,st::pointer_boundary_cast<undefined4 *>(&param_1->field_03A4));
+                       *(int *)&param_1->field_0x369,(undefined4 *)&param_1->field_0398,(undefined4 *)&param_1->field_039C,
+                       &param_1->field_03A0,(undefined4 *)&param_1->field_03A4);
+    /* ST_CALLSITE[004C8839]: CALL 0x00405a2e; direct=00405A2E TLOBaseTy::sub_004C7460 */
     st::fn_00405A2E(param_1);
     return 0;
   }
@@ -195,6 +207,7 @@ LAB_004c8806:
   if (uVar12 == 0) {
     uVar12 = 1;
   }
+  /* ST_CALLSITE[004C885D]: CALL dword ptr [EDX + 0x2c] */
   dVar10 = param_1->slot_2C();
   iVar7 = st::fn_00402897(*(char *)&param_1->field_0024,dVar10);
   if ((iVar7 == 0) ||
@@ -208,6 +221,7 @@ LAB_004c8806:
   param_1->field_03B8 = iVar7;
   if ((iVar7 != 0) &&
      (uVar12 = uVar12 << 2, g_sndUnderAttMeneg_00811798 != nullptr)) {
+    /* ST_CALLSITE[004C88B1]: CALL 0x00402af4; direct=00402AF4 SndUnderAttMenegC::sub_00621580 */
     st::fn_00402AF4(g_sndUnderAttMeneg_00811798,param_1->field_0024,5);
   }
   if (g_playSystem_00802A38->field_00E4 < param_1->field_038C + uVar12) {
@@ -232,6 +246,7 @@ LAB_004c8bf2:
       param_1->field_03B0 = st::machine_word_boundary_cast<undefined4>(param_1->field_03B0 + local_8);
       param_1->field_03AC = st::machine_word_boundary_cast<undefined4>(param_1->field_03AC + local_10);
       param_1->field_03B4 = st::machine_word_boundary_cast<undefined4>(param_1->field_03B4 + local_c);
+      /* ST_CALLSITE[004C8C60]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar5 = st::fn_004049B7(*(char *)&param_1->field_0024);
       if (bVar5 == 3) {
         if (iVar7 != 0) {
@@ -308,6 +323,7 @@ LAB_004c8bf2:
     if (iVar2 < local_c + param_1->field_03B4) {
       local_c = iVar2 - param_1->field_03B4;
     }
+    /* ST_CALLSITE[004C8A44]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar5 = st::fn_004049B7(*(char *)&param_1->field_0024);
     if (bVar5 == 3) {
       if ((local_14 != 0) &&
@@ -349,18 +365,23 @@ LAB_004c8bf2:
     }
     if (g_sndUnderAttMeneg_00811798 != nullptr) {
       if (param_1->field_03BC != 0) {
+        /* ST_CALLSITE[004C8B6E]: CALL 0x00402af4; direct=00402AF4 SndUnderAttMenegC::sub_00621580 */
         st::fn_00402AF4(g_sndUnderAttMeneg_00811798,param_1->field_0024,4);
       }
       if (param_1->field_03C4 != 0) {
+        /* ST_CALLSITE[004C8B89]: CALL 0x00402af4; direct=00402AF4 SndUnderAttMenegC::sub_00621580 */
         st::fn_00402AF4(g_sndUnderAttMeneg_00811798,param_1->field_0024,2);
       }
       if (param_1->field_03C8 != 0) {
+        /* ST_CALLSITE[004C8BA2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar5 = st::fn_004049B7(*(char *)&param_1->field_0024);
+        /* ST_CALLSITE[004C8BBD]: CALL 0x00402af4; direct=00402AF4 SndUnderAttMenegC::sub_00621580 */
         st::fn_00402AF4
                   (g_sndUnderAttMeneg_00811798,param_1->field_0024,
                    (-(uint)(bVar5 != 3) & 0xfffffffd) + 6);
       }
       if (param_1->field_03C0 != 0) {
+        /* ST_CALLSITE[004C8BDC]: CALL 0x00402af4; direct=00402AF4 SndUnderAttMenegC::sub_00621580 */
         st::fn_00402AF4(g_sndUnderAttMeneg_00811798,param_1->field_0024,7);
         return 0;
       }
@@ -401,6 +422,7 @@ undefined4 __thiscall st::fn_004C94B0(TLOBaseTy *this)
   if (errorCode == 0) {
     switch(*(undefined4 *)&local_c->field_0x361) {
     case 1:
+      /* ST_CALLSITE[004C950E]: CALL 0x00402a9f; direct=00402A9F TLOBaseTy::sub_004CEB00 */
       uVar5 = st::fn_00402A9F(local_c,*(int *)&local_c->field_0x369);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
@@ -418,9 +440,11 @@ undefined4 __thiscall st::fn_004C94B0(TLOBaseTy *this)
       return uVar5;
     case 5:
       local_8 = 1;
+      /* ST_CALLSITE[004C9570]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       uVar2 = st::fn_004049B7(*(char *)&local_c->field_023D);
       this_00->field_0241 =
            *(int *)(&DAT_007e4178 + ((uint)(byte)uVar2 + this_00->field_0235 * 3) * 4);
+      /* ST_CALLSITE[004C9597]: CALL 0x00405768; direct=00405768 TLOBaseTy::sub_004CC900 */
       st::fn_00405768(this_00);
       g_currentExceptionFrame = local_50.previous;
       return 1;

@@ -62,7 +62,7 @@ int __cdecl FUN_00651ed0(RecoveredRecord_AiEventClassTy_00651ED0 *param_1)
     return 0;
   }
   if (10 < sVar1) {
-    if (*(char *)(param_1 + 1) == '\b') {
+    if (((char *)param_1)[1] == '\b') {
       return (uint)(-1 < *(int *)&param_1->field_0x10);
     }
     return 0;

@@ -65,6 +65,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
           local_20->field_0685 = local_20->field_06FE;
           array = Library::DKW::TBL::DArrayCreate(nullptr,5,0x10,5);
           local_c = array;
+          /* ST_CALLSITE[0067C248]: CALL 0x004027e3; direct=004027E3 AiPlrClassTy::sub_0067A240 */
           sub_0067A240(this_00,thunk_FUN_0067ba50,array);
           uVar14 = array->count;
           uVar12 = 0;
@@ -107,13 +108,16 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
                   piVar5 = nullptr;
                 }
                 piVar5 = (int *)*piVar5;
+                /* ST_CALLSITE[0067C303]: CALL dword ptr [EAX + 0xf8] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 if ((piVar5 != nullptr) && (iVar6 = (**(code **)(*piVar5 + 0xf8))(), iVar6 != 0))
                 {
+                  /* ST_CALLSITE[0067C311]: CALL dword ptr [EDX + 0x2c] */
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   iVar6 = (**(code **)(*piVar5 + 0x2c))();
                   pIVar7 = thunk_FUN_00674fb0(iVar6);
                   if ((((uint)pIVar7 & 3) != 0) || (((uint)pIVar7 & 0x630000) != 0)) {
+                    /* ST_CALLSITE[0067C32C]: CALL dword ptr [EAX + 0xd4] */
                     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                     iVar6 = (**(code **)(*piVar5 + 0xd4))();
                     local_14 = local_14 + iVar6;
@@ -141,12 +145,15 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
                   }
                   pSVar1 = (STFishC *)*puVar8;
                   if ((pSVar1 != nullptr) &&
+                     /* ST_CALLSITE[0067C3AC]: CALL dword ptr [EDX + 0xf8] */
                      (iVar6 = pSVar1->vfunc_F8(), iVar6 != 0)) {
                     memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                     STPiece<0,2>(local_3c) = (undefined2)local_8;
+                    /* ST_CALLSITE[0067C3CE]: CALL dword ptr [EDX + 0x2c] */
                     dVar9 = pSVar1->slot_2C();
                     STPiece<2,2>(local_3c) = (short)dVar9;
                     thunk_FUN_0067bda0(local_38,pSVar1);
+                    /* ST_CALLSITE[0067C3E6]: CALL dword ptr [EDX + 0xd4] */
                     local_2c = pSVar1->vfunc_D4();
                     local_28 = thunk_FUN_00674fb0((int)STPiece<2,2>(local_3c));
                     local_24 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
@@ -160,6 +167,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
               }
               thunk_FUN_00676c40(this_00->field_06AD,thunk_FUN_0067baf0);
               thunk_FUN_00676c40(array,thunk_FUN_0067bb20);
+              /* ST_CALLSITE[0067C45A]: CALL 0x00401c80; direct=00401C80 AiPlrClassTy::sub_0067BFD0 */
               sub_0067BFD0(this_00,array,this_00->field_06AD);
               this_00->field_0689 = 1;
             }
@@ -182,9 +190,11 @@ LAB_0067c61b:
           iVar4 = thunk_FUN_0067bd50(this_00->field_06AD);
           pDVar10 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x10,5);
           local_c = pDVar10;
+          /* ST_CALLSITE[0067C4CC]: CALL 0x004027e3; direct=004027E3 AiPlrClassTy::sub_0067A240 */
           sub_0067A240(this_00,thunk_FUN_0067ba50,pDVar10);
           iVar13 = iVar4 + pDVar10->count;
           if (iVar13 == 0) {
+            /* ST_CALLSITE[0067C4DD]: CALL 0x0040394f; direct=0040394F AiPlrClassTy::sub_0067C110 */
             sub_0067C110(this_00);
             array = local_c;
           }
@@ -210,6 +220,7 @@ LAB_0067c61b:
                       }
                       pSVar1 = (STFishC *)*puVar8;
                       if (((pSVar1 != nullptr) &&
+                          /* ST_CALLSITE[0067C54E]: CALL dword ptr [EAX + 0xf8] */
                           (iVar6 = pSVar1->vfunc_F8(), iVar13 = local_18,
                           iVar6 != 0)) &&
                          (puVar11 = thunk_FUN_0067bd00(this_00->field_06AD,uVar14),
@@ -217,9 +228,11 @@ LAB_0067c61b:
                         uVar3 = (undefined2)local_8;
                         memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                         STPiece<0,2>(local_3c) = uVar3;
+                        /* ST_CALLSITE[0067C582]: CALL dword ptr [EAX + 0x2c] */
                         dVar9 = pSVar1->slot_2C();
                         STPiece<2,2>(local_3c) = (short)dVar9;
                         thunk_FUN_0067bda0(local_38,pSVar1);
+                        /* ST_CALLSITE[0067C59A]: CALL dword ptr [EDX + 0xd4] */
                         local_2c = pSVar1->vfunc_D4();
                         local_28 = thunk_FUN_00674fb0((int)STPiece<2,2>(local_3c));
                         local_24 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
@@ -235,10 +248,12 @@ LAB_0067c61b:
                 thunk_FUN_00676c40(this_00->field_06AD,thunk_FUN_0067baf0);
               }
               if (this_00->field_06AD->count == 0) {
+                /* ST_CALLSITE[0067C605]: CALL 0x0040394f; direct=0040394F AiPlrClassTy::sub_0067C110 */
                 sub_0067C110(this_00);
                 array = local_c;
               }
               else {
+                /* ST_CALLSITE[0067C613]: CALL 0x00401c80; direct=00401C80 AiPlrClassTy::sub_0067BFD0 */
                 sub_0067BFD0(this_00,local_c,this_00->field_06AD);
                 array = local_c;
               }

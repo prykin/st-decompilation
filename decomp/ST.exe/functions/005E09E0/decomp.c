@@ -23,6 +23,7 @@ void __thiscall MTaskTy::PaintMTask(MTaskTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+    /* ST_CALLSITE[005E0A35]: CALL 0x00403738; direct=00403738 PutDDX */
     PutDDX(0,0,'\x01',(BITMAPINFO *)local_8->field_005D);
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -14,6 +14,7 @@
 void FUN_005759f0(void)
 
 {
+  /* ST_CALLSITE[005759FA]: CALL 0x0040121c; direct=0040121C STAppC::STAppC */
   STAppC::STAppC((STAppC *)&DAT_00807620,g_objectFactoryRegistry);
   return;
 }

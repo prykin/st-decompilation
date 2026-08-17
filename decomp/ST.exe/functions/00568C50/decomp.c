@@ -39,6 +39,7 @@ void __thiscall SoundClassTy::CheckFader(SoundClassTy *this)
   if (-1 < pSVar2->field_0E03) {
     FUN_006c1f00(pSVar2->field_0E03,&local_c,nullptr);
     if (local_c == 1) {
+      /* ST_CALLSITE[00568CC4]: CALL dword ptr [0x0085bedc] */
       DVar4 = timeGetTime();
       uVar5 = DVar4 - pSVar2->field_0DFF;
       if ((uint)pSVar2->field_0DFB < uVar5) {

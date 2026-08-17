@@ -37,6 +37,7 @@ void __thiscall st::fn_004EFB60(BldLabPanelTy *this)
     puVar3 = st::fn_00709AF0
                        (PTR_00806794,CASE_B,st::mutable_c_string("OBJSD"),0xffffffff,0,1,0,nullptr);
     this_00->field_018C = puVar3;
+    /* ST_CALLSITE[004EFC57]: CALL 0x00404241; direct=00404241 ProdPanelTy::InitProdPanel */
     st::fn_00404241
               ((ProdPanelTy *)this_00,0x2726,0x3f,2,0xc1,0xc,0x81,99,100,0xc0,99,0x25,0x14,0x31,
                st::mutable_c_string("OBJS_0"));
@@ -86,8 +87,10 @@ void __thiscall st::fn_004EFD10(BldLabPanelTy *this)
     this_00 = local_8;
     if (errorCode == 0) {
       ppBVar1 = &local_8->field_027A;
+      /* ST_CALLSITE[004EFD67]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
       st::fn_004035BC(g_allPlayers_007FA174,0xc,(AnonShape_0043BEB0_1C00EC12 *)ppBVar1);
       st::fn_00402A13(this_00,(*ppBVar1)->count,local_c);
+      /* ST_CALLSITE[004EFD7F]: CALL 0x004038eb; direct=004038EB BldLabPanelTy::sub_004EFE20 */
       st::fn_004038EB(this_00);
       g_currentExceptionFrame = local_50.previous;
       return;
@@ -168,10 +171,12 @@ void __thiscall st::fn_004EFFE0(BldLabPanelTy *this,AnonShape_004EF320_444F9AB1 
     pBVar9 = st::fn_0070B3A0(pAVar10,local_c);
     iVar7 = local_14;
     iVar5 = local_18;
+    /* ST_CALLSITE[004F00E4]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar8->field_0068,local_18,local_14,'\x01',
            (byte *)pBVar9);
     if ((param_1->field_0014 == 3) && (element_027a != nullptr)) {
       pBVar9 = st::fn_0070B3A0(pBVar8->field_0190,9 - (uint)((char)element_027a->field_0008 != 0));
+      /* ST_CALLSITE[004F011D]: CALL 0x00403229; direct=00403229 DibPut */
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)pBVar8->field_0068,iVar5,iVar7,'\x06',(byte *)pBVar9);
     }
     st::fn_006B3640
@@ -230,13 +235,16 @@ int __thiscall st::fn_004F0210(BldLabPanelTy *this,STMessage *message)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (message->id == MESS_ID_CREATE) {
+    /* ST_CALLSITE[004F0254]: CALL 0x004032a6; direct=004032A6 ProdPanelTy::PreInitProdPanel */
     st::fn_004032A6((ProdPanelTy *)local_8);
   }
+  /* ST_CALLSITE[004F025C]: CALL 0x004059d4; direct=004059D4 ProdPanelTy::GetMessage */
   st::fn_004059D4((ProdPanelTy *)this_00,message);
   SVar1 = message->id;
   if (SVar1 < MESS_BLDLABPANELTY_C0A4) {
     if (SVar1 < MESS_SHARED_C09F) {
       if (SVar1 == MESS_ID_CREATE) {
+        /* ST_CALLSITE[004F02BB]: CALL 0x00405ccc; direct=00405CCC BldLabPanelTy::InitBldLabPanel */
         st::fn_00405CCC(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
@@ -265,11 +273,13 @@ int __thiscall st::fn_004F0210(BldLabPanelTy *this,STMessage *message)
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    if (*(char *)(element_027a + 2) == '\0') {
+    if (((char *)element_027a)[2] == '\0') {
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
+    /* ST_CALLSITE[004F031A]: CALL 0x004035ad; direct=004035AD CursorClassTy::sub_0054B630 */
     st::fn_004035AD(g_cursorClass_00802A30,0xe,element_027a->field_0000);
+    /* ST_CALLSITE[004F0323]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
     st::fn_00401A73((ProdPanelTy *)this_00,'\0');
   }
   else {
@@ -282,11 +292,13 @@ int __thiscall st::fn_004F0210(BldLabPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
+      /* ST_CALLSITE[004F0342]: CALL 0x0040587b; direct=0040587B BldLabPanelTy::PaintUpdBut */
       st::fn_0040587B(this_00,(AnonShape_004EF320_444F9AB1 *)message);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
     this_00->field_0199 = static_cast<undefined4>((message->arg0).u32);
+    /* ST_CALLSITE[004F0365]: CALL 0x004038eb; direct=004038EB BldLabPanelTy::sub_004EFE20 */
     st::fn_004038EB(this_00);
   }
   st::fn_00405E2F(0xae);

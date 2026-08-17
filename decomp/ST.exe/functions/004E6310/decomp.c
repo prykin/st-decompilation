@@ -74,8 +74,11 @@ LAB_004e645f:
           DArrayGetElement(pDVar7,uVar10,&local_8);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           if ((local_8 != nullptr) &&
+             /* ST_CALLSITE[004E64DF]: CALL dword ptr [EAX + 0x2c] */
              (((iVar12 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar12 == 0x36 ||
+               /* ST_CALLSITE[004E64EC]: CALL dword ptr [EDX + 0x2c] */
                (iVar12 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar12 == 0x5d)) ||
+              /* ST_CALLSITE[004E64F9]: CALL dword ptr [EAX + 0x2c] */
               (iVar12 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar12 == 0x3d)))) {
             thunk_FUN_004e4d60((AnonShape_004E4D60_C16F78E8 *)local_8);
             thunk_FUN_004e4f30((STMineSetC *)local_8);
@@ -92,8 +95,11 @@ LAB_004e645f:
           DArrayGetElement(pDVar7,uVar10,&local_8);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           if ((local_8 != nullptr) &&
+             /* ST_CALLSITE[004E656B]: CALL dword ptr [EAX + 0x2c] */
              (((iVar12 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar12 == 5 ||
+               /* ST_CALLSITE[004E6578]: CALL dword ptr [EDX + 0x2c] */
                (iVar12 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar12 == 0x21)) ||
+              /* ST_CALLSITE[004E6585]: CALL dword ptr [EAX + 0x2c] */
               (iVar12 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar12 == 0x11)))) {
             thunk_FUN_00494ae0(local_8);
           }

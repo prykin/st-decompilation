@@ -136,7 +136,9 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
     thunk_FUN_0048dcf0(this);
     this->field_0508 = CASE_0;
     this->field_050C = CASE_0;
+    /* ST_CALLSITE[0046B250]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
     sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
+    /* ST_CALLSITE[0046B258]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
     iVar14 = sub_0045FF50(this,0);
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     pSVar15 = extraout_ECX;
@@ -146,6 +148,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   }
   SVar4 = this->field_0508;
   if (SVar4 == CASE_0) {
+    /* ST_CALLSITE[0046B278]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
     uVar8 = sub_0045FF50(this,2);
     switch(uVar8) {
     case 0:
@@ -223,6 +226,7 @@ LAB_0046b5ac:
         }
         if (bVar17) {
           param_1 = local_14;
+          /* ST_CALLSITE[0046B5C6]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
           CmdToObj(this,CASE_3,&param_1);
           break;
         }
@@ -231,6 +235,7 @@ LAB_0046b5ac:
       break;
     case 3:
       thunk_FUN_0048dcf0(this);
+      /* ST_CALLSITE[0046B39C]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
       sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
       goto LAB_0046c3be;
     case 0xffffffff:
@@ -248,6 +253,7 @@ LAB_0046b5ac:
   }
   else {
     if (SVar4 == CASE_1) {
+      /* ST_CALLSITE[0046B5EC]: CALL dword ptr [EAX + 0x20] */
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       iVar14 = this->StopMove(unaff_EDI);
       if (iVar14 == -1) {
@@ -257,7 +263,9 @@ LAB_0046b5ac:
         this->field_0508 = CASE_7;
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         thunk_FUN_0048df40(this,extraout_EDX);
+        /* ST_CALLSITE[0046B62B]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
         sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
+        /* ST_CALLSITE[0046B633]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
         iVar14 = sub_0045FF50(this,0);
         if (iVar14 == -1) {
           return -1;
@@ -270,6 +278,7 @@ LAB_0046b5ac:
         iVar9 = (ushort)(this->field_0500 * 200) + 100;
         iVar14 = STReplaceLowWord((uint32_t)(iVar9), (uint16_t)(this->field_04DF + 1)) * 0xc9;
         iVar25 = STReplaceLowWord((uint32_t)(iVar14), (uint16_t)(this->field_04DD + 1));
+        /* ST_CALLSITE[0046B6A0]: CALL dword ptr [EDX + 0x10] */
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar7 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
@@ -279,7 +288,9 @@ LAB_0046b5ac:
         this->field_050C = CASE_1;
       }
       if (this->field_050C == CASE_1) {
+        /* ST_CALLSITE[0046B6C2]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
         uVar10 = sub_004176C0(this,this->field_0506);
+        /* ST_CALLSITE[0046B6CA]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
         uVar10 = sub_00417910(this,(short)uVar10);
         if (uVar10 == 0xffffffff) {
           iVar13 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x23f3,0,0,
@@ -296,12 +307,14 @@ LAB_0046b5ac:
         }
       }
       if (this->field_050C == CASE_2) {
+        /* ST_CALLSITE[0046B786]: CALL 0x00402455; direct=00402455 sub_00415B30 */
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                      (this->field_04DD + 1) * 0xc9,(this->field_04DF + 1) * 0xc9,
                      this->field_0500 * 200 + 100,this->field_0061);
         this->field_050C = CASE_3;
       }
       if (this->field_050C == CASE_3) {
+        /* ST_CALLSITE[0046B7A7]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
         local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,(int *)&local_14);
         local_20 = 0;
         if (this->field_02BF != '\0') {
@@ -353,6 +366,7 @@ LAB_0046b5ac:
               STPiece<2,2>(local_c) = (short)((uint)local_c >> 0x10);
               iVar9 = ((uVar16 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_c);
             }
+            /* ST_CALLSITE[0046B93E]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
                        (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
@@ -386,6 +400,7 @@ LAB_0046b5ac:
       if (0x2d < iVar14 % 0x5a) {
         iVar14 = iVar14 + 0x2d;
       }
+      /* ST_CALLSITE[0046BA42]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar10 = sub_00417910(this,(short)(((iVar14 / 0x5a) * 0x5a) % 0x168));
       if (uVar10 == 0xffffffff) {
         local_EAX_2460 =
@@ -400,6 +415,7 @@ LAB_0046b5ac:
       if (uVar10 == 0) {
         this->field_0508 = CASE_4;
         this->field_050C = CASE_2;
+        /* ST_CALLSITE[0046BA6C]: CALL dword ptr [EAX + 0xd8] */
         iVar14 = this->vfunc_D8();
         return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
       }
@@ -407,11 +423,13 @@ LAB_0046b5ac:
     }
     if (SVar4 == CASE_4) {
       if (this->field_050C == CASE_2) {
+        /* ST_CALLSITE[0046BAE3]: CALL 0x00402455; direct=00402455 sub_00415B30 */
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,this->field_0041,
                      this->field_0043,this->field_0045 + -200,this->field_0061);
         this->field_050C = CASE_3;
       }
       if (this->field_050C == CASE_3) {
+        /* ST_CALLSITE[0046BB04]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
         local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,(int *)&local_18);
         local_20 = 0;
         if (this->field_02BF != '\0') {
@@ -463,6 +481,7 @@ LAB_0046b5ac:
               STPiece<2,2>(local_c) = (short)((uint)local_c >> 0x10);
               iVar9 = ((uVar16 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_c);
             }
+            /* ST_CALLSITE[0046BCA3]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
                        (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
@@ -490,6 +509,7 @@ LAB_0046b5ac:
         }
       }
 LAB_0046b6e2:
+      /* ST_CALLSITE[0046B6E6]: CALL dword ptr [EAX + 0xd8] */
       iVar14 = this->vfunc_D8();
       return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
     }
@@ -527,8 +547,9 @@ LAB_0046b6e2:
                                     nullptr,0,nullptr);
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar8 = extraout_EDX_00;
-        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         if ((iVar14 != 0) &&
+           /* ST_CALLSITE[0046BE8D]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
+           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
            (STPlaySystemC::CreateGameObject(this->field_000C,0x3e9,0,0,&local_d8,0),
            uVar8 = extraout_EDX_01, this->field_06F7 == CASE_19)) {
           local_44.arg0.ptr = &local_68;
@@ -538,6 +559,7 @@ LAB_0046b6e2:
           local_54 = 1;
           local_50 = 1;
           local_44.id = MESS_HITKILL;
+          /* ST_CALLSITE[0046BECB]: CALL dword ptr [EAX] */
           this->GetMessage(&local_44);
           goto cf_common_exit_0046C3C5;
         }
@@ -548,8 +570,9 @@ LAB_0046b6e2:
                                     nullptr,0,nullptr);
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar8 = extraout_EDX_02;
-        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         if ((iVar14 != 0) &&
+           /* ST_CALLSITE[0046BF13]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
+           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
            (STPlaySystemC::CreateGameObject(this->field_000C,0x3e9,0,0,&local_d8,0),
            uVar8 = extraout_EDX_03, this->field_06F7 == CASE_19)) {
           local_44.arg0.ptr = &local_68;
@@ -559,6 +582,7 @@ LAB_0046b6e2:
           local_54 = 1;
           local_50 = 1;
           local_44.id = MESS_HITKILL;
+          /* ST_CALLSITE[0046BF4D]: CALL dword ptr [EDX] */
           this->GetMessage(&local_44);
           goto cf_common_exit_0046C3C5;
         }
@@ -569,19 +593,23 @@ LAB_0046b6e2:
       else {
         this->field_0508 = CASE_7;
         thunk_FUN_0048df40(this,uVar8);
+        /* ST_CALLSITE[0046BF96]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
         sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
+        /* ST_CALLSITE[0046BF9E]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
         iVar14 = sub_0045FF50(this,0);
         if (iVar14 == -1) {
           return -1;
         }
       }
 cf_common_exit_0046C04E:
+      /* ST_CALLSITE[0046C052]: CALL dword ptr [EAX + 0xd8] */
       iVar14 = this->vfunc_D8();
       return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
     }
     if (SVar4 == CASE_6) {
       if (this->field_050C == CASE_0) {
         iVar14 = STReplaceLowWord((uint32_t)(pSVar15), (uint16_t)(this->field_04FE * 0xc9)) + 100;
+        /* ST_CALLSITE[0046C007]: CALL dword ptr [EDX + 0x10] */
         uVar7 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
                            STReplaceLowWord((uint32_t)(iVar14), (uint16_t)(this->field_0045)),
@@ -591,7 +619,9 @@ cf_common_exit_0046C04E:
         this->field_050C = CASE_1;
       }
       if (this->field_050C == CASE_1) {
+        /* ST_CALLSITE[0046C02E]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
         uVar10 = sub_004176C0(this,this->field_0506);
+        /* ST_CALLSITE[0046C036]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
         uVar10 = sub_00417910(this,(short)uVar10);
         if (uVar10 == 0xffffffff) {
           local_EAX_3970 =
@@ -609,12 +639,14 @@ cf_common_exit_0046C04E:
         }
       }
       if (this->field_050C == CASE_2) {
+        /* ST_CALLSITE[0046C0E7]: CALL 0x00402455; direct=00402455 sub_00415B30 */
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                      this->field_04FC * 0xc9 + 100,this->field_04FE * 0xc9 + 100,
                      this->field_0500 * 200 + 100,this->field_0061);
         this->field_050C = CASE_3;
       }
       if (this->field_050C == CASE_3) {
+        /* ST_CALLSITE[0046C108]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
         local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,(int *)&local_18);
         local_20 = 0;
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -668,6 +700,7 @@ cf_common_exit_0046C04E:
               STPiece<2,2>(local_c) = (short)((uint)local_c >> 0x10);
               iVar9 = ((uVar16 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_c);
             }
+            /* ST_CALLSITE[0046C2A7]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
                        (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
@@ -694,7 +727,9 @@ cf_common_exit_0046C04E:
         if (local_1c == 0) {
           this->field_0508 = CASE_7;
           thunk_FUN_0048df40(this,uVar8);
+          /* ST_CALLSITE[0046C307]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
           sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
+          /* ST_CALLSITE[0046C310]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
           iVar14 = sub_0045FF50(this,0);
           if (iVar14 == -1) {
             return -1;
@@ -712,6 +747,7 @@ cf_common_exit_0046C04E:
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
+    /* ST_CALLSITE[0046C384]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
     iVar14 = sub_0045FF50(this,2);
     if (iVar14 == -1) {
       local_EAX_4880 =
@@ -727,17 +763,21 @@ cf_error_exit_0046C422:
       return 0xffff;
     }
     if (iVar14 == 0) {
+      /* ST_CALLSITE[0046C3E5]: CALL dword ptr [EAX + 0xd8] */
       iVar14 = this->vfunc_D8();
       return -(uint)(iVar14 != 0);
     }
     if (iVar14 != 3) goto cf_common_exit_0046C3C5;
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     thunk_FUN_0048df40(this,extraout_EDX_06);
+    /* ST_CALLSITE[0046C3B7]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
     sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
 LAB_0046c3be:
+    /* ST_CALLSITE[0046C3C0]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
     sub_0045FF50(this,0);
   }
 cf_common_exit_0046C3C5:
+  /* ST_CALLSITE[0046C3C9]: CALL dword ptr [EDX + 0xd8] */
   iVar14 = this->vfunc_D8();
   return (-(uint)(iVar14 != 0) & 0xfffffffd) + 2;
 }

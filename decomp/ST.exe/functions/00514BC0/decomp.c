@@ -103,42 +103,56 @@ LAB_00514d04:
     pvVar5 = *(void **)(pbVar2 + iVar6 + 9);
     switch(bVar1) {
     case 1:
+      /* ST_CALLSITE[00514D32]: CALL 0x00404e85; direct=00404E85 HelpPanelTy::RCProc */
       RCProc(this,(int)pvVar5,uVar4,'\0');
       break;
     case 2:
+      /* ST_CALLSITE[00514D64]: CALL 0x00403747; direct=00403747 HelpPanelTy::ObjProc */
       ObjProc(this,(int)pvVar5,uVar4,'\0');
       break;
     case 3:
+      /* ST_CALLSITE[00514D57]: CALL 0x00403878; direct=00403878 HelpPanelTy::SubProc */
       SubProc(this,(int)pvVar5,'\0');
       break;
     case 4:
+      /* ST_CALLSITE[00514D71]: CALL 0x004057e0; direct=004057E0 HelpPanelTy::ArmProc */
       ArmProc(this,(int)pvVar5,uVar4,'\0');
       break;
     case 5:
+      /* ST_CALLSITE[00514D4B]: CALL 0x00402833; direct=00402833 HelpPanelTy::TechProc */
       TechProc(this,(uint)pvVar5,(byte)uVar4,'\0');
       break;
     case 6:
+      /* ST_CALLSITE[00514D3E]: CALL 0x00405e61; direct=00405E61 HelpPanelTy::TTreeProc */
       TTreeProc(this,(uint)pvVar5,'\0');
       break;
     case 7:
+      /* ST_CALLSITE[00514D25]: CALL 0x004011fe; direct=004011FE HelpPanelTy::MObjProc */
       MObjProc(this);
       break;
     case 8:
+      /* ST_CALLSITE[00514D97]: CALL 0x004020b8; direct=004020B8 HelpPanelTy::TipProc */
       TipProc(this,pvVar5,uVar4,'\0');
       break;
     case 10:
+      /* ST_CALLSITE[00514D1C]: CALL 0x00405803; direct=00405803 HelpPanelTy::IndexBut */
       IndexBut(this);
       break;
     case 0xb:
+      /* ST_CALLSITE[00514D7E]: CALL 0x00402cac; direct=00402CAC HelpPanelTy::SpecProc */
       SpecProc(this,(int)pvVar5,uVar4,'\0');
       break;
     case 0xc:
+      /* ST_CALLSITE[00514D8A]: CALL 0x00403bc0; direct=00403BC0 HelpPanelTy::NatProc */
       NatProc(this,(int)pvVar5,'\0');
     }
+    /* ST_CALLSITE[00514DB1]: CALL 0x004054c5; direct=004054C5 HelpPanelTy::LinkAct */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     LinkAct(this,*(int *)(this->field_01C7 + iVar6 + 9),*(int *)(this->field_01C7 + iVar6 + 0xd));
+    /* ST_CALLSITE[00514DB8]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
     PutToSHlp(this);
     local_c = *(uint *)sizeHelp_exref;
+    /* ST_CALLSITE[00514DCE]: CALL dword ptr [EAX + 0x18] */
     this->SetPanel('\x01');
   }
   local_c = local_c + 1;

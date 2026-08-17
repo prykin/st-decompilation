@@ -152,6 +152,7 @@ int __cdecl st::fn_00648E70(int param_1,char *param_2)
     }
     local_8 = st::fn_006F2D90((cMf32 *)param_1,param_2,1,0);
     if (local_8 == nullptr) {
+      /* ST_CALLSITE[00648EF4]: CALL 0x004023dd; direct=004023DD CreateDefaultBossData */
       local_8 = (ushort *)st::fn_004023DD();
     }
     st::fn_006E6200
@@ -241,7 +242,7 @@ void st::fn_00648FE0(void)
       break;
     case 3:
     case 8:
-      if (DAT_0080ed12 == nullptr) {
+      if (DAT_0080ed12 == 0) {
         if (DAT_0080c52a != 0) {
           st::fn_00401794();
         }
@@ -267,7 +268,7 @@ void st::fn_00648FE0(void)
         piVar7 = st::pointer_boundary_cast<int *>(DAT_0080ed12 + 0x210);
         piVar9 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field1445_0x73b;
         memmove(piVar9, piVar7, 0x9b); /* compiler REP MOVS byte copy */
-        if (DAT_0080ed12 != nullptr) {
+        if (DAT_0080ed12 != 0) {
           st::fn_006AB060(&DAT_0080ed12);
           local_c = g_cMf32_00806754;
           break;
@@ -284,6 +285,7 @@ void st::fn_00648FE0(void)
   }
   pcVar6 = local_c;
   if (local_c != nullptr) {
+    /* ST_CALLSITE[006491C4]: CALL 0x00403f2b; direct=00403F2B CreateArbiter */
     st::fn_00403F2B((int)local_c,st::pointer_boundary_cast<char *>(&DAT_00809960));
     local_1c = 0;
     local_18 = g_bulkInitializedRecords_008087C7;
@@ -323,6 +325,7 @@ LAB_00649255:
         }
         if ((local_10 != nullptr) &&
            (local_8 = (AnonShape_00648C10_30A1BBFD *)
+                      /* ST_CALLSITE[00649271]: CALL 0x004012ad; direct=004012AD LoadStrategData */
                       st::fn_004012AD((int)pcVar6,local_10,nullptr),
            local_8 != nullptr)) {
           local_14 = 0;
@@ -352,6 +355,7 @@ LAB_00649255:
               pBVar10 = local_18;
             } while (local_14 < (int)(uint)DAT_00808aaf);
           }
+          /* ST_CALLSITE[006492F0]: CALL 0x004018a7; direct=004018A7 StartStrateg */
           st::fn_004018A7(local_8,uVar3);
           st::fn_006AB060(&local_8);
         }
@@ -527,7 +531,9 @@ undefined4 * st::fn_006494C0(void)
             st::fn_00404403(local_17c,(AnonShape_00683C70_22193481 *)stack_bytes_neg_494,&local_1c,
                                local_34,nullptr);
   if (local_8 != nullptr) {
+    /* ST_CALLSITE[00649623]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
     local_10 = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)&local_8->field_0x106,&local_14);
+    /* ST_CALLSITE[00649638]: CALL 0x00405204; direct=00405204 PlrDataPack */
     local_c = st::fn_00405204(local_8,(undefined4 *)local_10,local_14,&local_18);
     st::fn_00401537((int *)&local_10);
     st::fn_00402E05((int *)&local_8);
@@ -702,7 +708,9 @@ undefined4 * st::fn_00649790(void)
             st::fn_00404403(local_17c,(AnonShape_00683C70_22193481 *)stack_bytes_neg_494,&local_1c,
                                local_34,nullptr);
   if (local_8 != nullptr) {
+    /* ST_CALLSITE[006498F3]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
     local_10 = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)&local_8->field_0x106,&local_14);
+    /* ST_CALLSITE[00649908]: CALL 0x00405204; direct=00405204 PlrDataPack */
     local_c = st::fn_00405204(local_8,(undefined4 *)local_10,local_14,&local_18);
     st::fn_00401537((int *)&local_10);
     st::fn_00402E05((int *)&local_8);
@@ -752,10 +760,12 @@ undefined4 * __cdecl st::fn_00649A60(int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     }
+    /* ST_CALLSITE[00649AD7]: CALL 0x0040412e; direct=0040412E CreatePlrDataForBO */
     puVar2 = st::fn_0040412E();
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;
   }
+  /* ST_CALLSITE[00649AF2]: CALL 0x0040380f; direct=0040380F CreatePlrDataForWS */
   puVar2 = st::fn_0040380F();
   g_currentExceptionFrame = local_4c.previous;
   return puVar2;
@@ -939,7 +949,9 @@ undefined4 * st::fn_00649B90(void)
             st::fn_00404403(local_17c,(AnonShape_00683C70_22193481 *)stack_bytes_neg_494,&local_1c,
                                local_34,nullptr);
   if (local_8 != nullptr) {
+    /* ST_CALLSITE[00649D35]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
     local_10 = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)&local_8->field_0x4e,&local_14);
+    /* ST_CALLSITE[00649D4A]: CALL 0x00405a24; direct=00405A24 BossDataPack */
     local_c = st::fn_00405A24(local_8,(undefined4 *)local_10,local_14,&local_18);
     st::fn_00401537((int *)&local_10);
     st::fn_004020A4((int *)&local_8);
@@ -980,7 +992,9 @@ undefined4 * st::fn_00649EB0(void)
   errorCode = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   if (errorCode == 0) {
     local_8 = st::fn_0040117C(st::mutable_c_string("Default Arbiter"),1);
+    /* ST_CALLSITE[00649F08]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
     local_10 = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)&local_8->field_0x4e,&local_14);
+    /* ST_CALLSITE[00649F1D]: CALL 0x00405a24; direct=00405A24 BossDataPack */
     local_c = st::fn_00405A24(local_8,(undefined4 *)local_10,local_14,&local_18);
     st::fn_00401537((int *)&local_10);
     st::fn_004020A4((int *)&local_8);

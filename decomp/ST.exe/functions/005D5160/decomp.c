@@ -113,12 +113,14 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
       }
       local_72 = bVar2;
       if (this_00->field_1E26 == CASE_2) {
+        /* ST_CALLSITE[005D528B]: CALL 0x0040466a; direct=0040466A CreateStrategList */
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_24 = CreateStrategList((int)local_10,
                                      CONCAT12(uStack_70,CONCAT11(bStack_71,bVar2)) & 0xff,0xffffffff
                                     );
       }
       else {
+        /* ST_CALLSITE[005D52A6]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_24 = CreateOpponentList(local_10,CONCAT12(uStack_6f,CONCAT11(uStack_70,bStack_71)) &
                                                0xff,DAT_0080995c);
@@ -255,7 +257,9 @@ code_r0x005d540b:
     pcVar13 = pcVar13 + 1;
   }
 LAB_005d5426:
+  /* ST_CALLSITE[005D5428]: CALL 0x00402a9a; direct=00402A9A SettMapTy::PaintSC */
   SettMapTy::PaintSC(this_00);
+  /* ST_CALLSITE[005D5431]: CALL dword ptr [EDX + 0x20] */
   this_00->vfunc_20();
   g_currentExceptionFrame = local_b8.previous;
   return;

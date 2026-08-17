@@ -135,6 +135,7 @@ joined_r0x004f81d1:
             }
             if (cVar10 != '\0') {
               this_00->field_023F = CASE_1;
+              /* ST_CALLSITE[004F8283]: CALL 0x00402ed2; direct=00402ED2 CPanelTy::ShiftControls */
               ShiftControls(this_00,1);
             }
           }
@@ -367,6 +368,7 @@ joined_r0x004f861b:
       else {
         this_00->field_025F = this_00->field_025F + -1;
       }
+      /* ST_CALLSITE[004F87A0]: CALL 0x00405dee; direct=00405DEE CPanelTy::sub_004F1950 */
       sub_004F1950(this_00);
       if (this_00->field_025F == '\x05') {
         thunk_FUN_005252c0(0xb1);
@@ -421,6 +423,7 @@ LAB_004f8860:
   }
   this_00->field_025F = 0;
 LAB_004f88e6:
+  /* ST_CALLSITE[004F88E8]: CALL 0x00405dee; direct=00405DEE CPanelTy::sub_004F1950 */
   sub_004F1950(this_00);
 cf_common_join_004F88ED:
   if (((this_00->field_01D8 != nullptr) && ((g_playSystem_00802A38->field_00E4 & 1) != 0)) &&

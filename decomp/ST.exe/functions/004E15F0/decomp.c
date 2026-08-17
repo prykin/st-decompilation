@@ -15,8 +15,10 @@ undefined4 __thiscall FUN_004e15f0(void *this,uint param_1)
   byte bVar3;
 
   if (STField<int>(this,0x24) != STField<int>(this,0x23d)) {
+    /* ST_CALLSITE[004E160E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar2 = LookupRecordByte((char)STField<int>(this,0x23d));
     iVar1 = STField<int>(this,0x235);
+    /* ST_CALLSITE[004E1633]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar3 = LookupRecordByte(STField<char>(this,0x24));
     if ((&DAT_007e1984)[(uint)bVar3 + (iVar1 * 3 + (uint)bVar2) * 3] == '\0') {
       return 0;

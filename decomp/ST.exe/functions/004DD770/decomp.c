@@ -9,7 +9,9 @@ uint __thiscall FUN_004dd770(void *this,int param_1)
 {
   if (STField<int>(this,0x4d4) == param_1) {
     STField<undefined4>(this,0x4d0) = 1;
+    /* ST_CALLSITE[004DD791]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     TLOBaseTy::RotateSpr(this,0);
+    /* ST_CALLSITE[004DD7A1]: CALL dword ptr [EDX + 0x90] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0x90))(3,0x415);
   }

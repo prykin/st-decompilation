@@ -10,7 +10,9 @@ void __thiscall STColl3C::sub_005FA070(STColl3C *this)
 
 {
   if (this->field_02DD == CASE_5) {
+    /* ST_CALLSITE[005FA07E]: CALL dword ptr [EAX + 0x20] */
     this->vfunc_20();
+    /* ST_CALLSITE[005FA083]: CALL 0x00405952; direct=00405952 sub_004167A0 */
     sub_004167A0(this);
   }
   thunk_FUN_005fa030(this);

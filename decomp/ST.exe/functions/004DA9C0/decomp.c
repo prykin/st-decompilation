@@ -46,6 +46,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
     piVar11 = local_1c;
     recordIndex = (byte)local_14;
     if (*local_1c == 1) {
+      /* ST_CALLSITE[004DA9F6]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_54 = LookupRecordByte(recordIndex);
       local_EAX_54 = (int)(byte)local_EAX_54;
       if (local_EAX_54 == 1) {
@@ -73,19 +74,23 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
           *piVar11 = 2;
           piVar11[4] = iVar3;
           if (uVar8 == uVar7) {
+            /* ST_CALLSITE[004DAA8E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
             local_EAX_206 = LookupRecordByte(recordIndex);
             local_EAX_206 = (int)(byte)local_EAX_206;
             if (local_EAX_206 == 1) {
+              /* ST_CALLSITE[004DAAE6]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
               SoundClassTy::PlaySound
                         ((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,0x71,nullptr
                          ,0);
             }
             else if (local_EAX_206 == 2) {
+              /* ST_CALLSITE[004DAACD]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
               SoundClassTy::PlaySound
                         ((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,0x72,nullptr
                          ,0);
             }
             else if (local_EAX_206 == 3) {
+              /* ST_CALLSITE[004DAAB4]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
               SoundClassTy::PlaySound
                         ((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,0x73,nullptr
                          ,0);
@@ -99,6 +104,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
       local_10 = nullptr;
       local_8 = nullptr;
       do {
+        /* ST_CALLSITE[004DAB0F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         uVar3 = LookupRecordByte(recordIndex);
         uVar3 = (int)(byte)uVar3;
         if (uVar3 == 1) {
@@ -171,6 +177,7 @@ LAB_004dabff:
          (*local_8 == 0)) {
         if (uVar8 == DAT_0080874d) {
           *local_8 = 1;
+          /* ST_CALLSITE[004DACDE]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           local_EAX_798 = LookupRecordByte((char)uVar8);
           local_EAX_798 = (int)(byte)local_EAX_798;
           if (local_EAX_798 == 1) {
@@ -183,6 +190,7 @@ LAB_004dabff:
             if (local_EAX_798 != 3) goto LAB_004dad15;
             iVar3 = 0x79;
           }
+          /* ST_CALLSITE[004DAD10]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
           SoundClassTy::PlaySound
                     ((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar3,nullptr,0);
         }
@@ -195,6 +203,7 @@ LAB_004dad15:
           piVar11 = piVar11 + 1;
         }
         do {
+          /* ST_CALLSITE[004DAD3C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           uVar6 = LookupRecordByte((char)local_14);
           uVar6 = (int)(byte)uVar6;
           if ((*(char *)(*(int *)(&DAT_007bfc00 + uVar6 * 4) + iVar3) == '\0') &&
@@ -238,6 +247,7 @@ LAB_004dad15:
           iVar3 = 0;
           piVar11 = local_2bc;
           do {
+            /* ST_CALLSITE[004DAE3D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
             local_EAX_1149 = LookupRecordByte((char)local_c);
             local_EAX_1149 = (int)(byte)local_EAX_1149;
             if ((*(char *)(*(int *)(&DAT_007bfc00 + local_EAX_1149 * 4) + iVar3) == '\0') &&
@@ -245,6 +255,7 @@ LAB_004dad15:
               local_50.arg1.words.low = (word)iVar3;
               uVar5 = thunk_FUN_004e60d0(uVar7,iVar3);
               local_50.arg1.words.high = (short)uVar5 + 1;
+              /* ST_CALLSITE[004DAE78]: CALL dword ptr [EDX] */
               g_aiBossClass_008117BC->GetMessage(&local_50);
             }
             iVar3 = iVar3 + 1;

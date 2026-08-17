@@ -48,7 +48,7 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
     iVar4 = (message->arg0).i32;
     if (*(uint *)(iVar4 + 0xc) < 2) {
       this_00->field_0020 = *(undefined4 *)(iVar4 + 0x20);
-      this_00->field_0024 = *(char *)(iVar4 + 4);
+      this_00->field_0024 = ((char *)iVar4)[4];
       this_00->field_0025 = *(undefined2 *)(iVar4 + 0x14);
       this_00->field_0027 = *(undefined2 *)(iVar4 + 0x18);
       puVar2 = Library::DKW::TBL::FUN_006ae310(nullptr,5,2,5,0x4045c5);
@@ -62,12 +62,15 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
           element = (void *)((int)element + 4);
         } while ((int)index < local_c);
       }
+      /* ST_CALLSITE[0042400B]: CALL 0x004059d9; direct=004059D9 STAllPlayersC::RegisterGroup */
       STAllPlayersC::RegisterGroup
                 (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
       this_00->field_0031 = this_00->field_0018 * DAT_00808754;
     }
     else if (*(uint *)(iVar4 + 0xc) == 2) {
+      /* ST_CALLSITE[00423F7A]: CALL 0x00404f48; direct=00404F48 STGroupC::RestoreGrpData */
       RestoreGrpData(this_00,iVar4);
+      /* ST_CALLSITE[00423F8F]: CALL 0x004059d9; direct=004059D9 STAllPlayersC::RegisterGroup */
       STAllPlayersC::RegisterGroup
                 (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
       g_currentExceptionFrame = local_50.previous;
@@ -78,6 +81,7 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
     thunk_FUN_00423e00(this_00);
     DArrayDestroy((DArrayTy *)this_00->field_0029);
     this_00->field_0029 = nullptr;
+    /* ST_CALLSITE[00423F36]: CALL 0x004019ab; direct=004019AB STAllPlayersC::UnRegisterGroup */
     STAllPlayersC::UnRegisterGroup
               (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
     if ((DArrayTy *)this_00->field_002D != nullptr) {

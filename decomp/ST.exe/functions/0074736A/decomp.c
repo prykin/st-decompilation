@@ -12,16 +12,19 @@ undefined4 FUN_0074736a(AnonShape_0074736A_AA1936BB *param_1,undefined4 *param_2
   uint uVar5;
 
   lpCriticalSection = param_1->field_002C;
+  /* ST_CALLSITE[00747377]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(lpCriticalSection);
   param_1->field_0034 = param_2;
   if (param_2 == nullptr) {
     param_1->field_0038 = 0;
   }
   else {
+    /* ST_CALLSITE[00747393]: CALL dword ptr [ECX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (**(code **)*param_2)(param_2,&DAT_007a1ae0,&param_1->field_0038);
     if (-1 < iVar2) {
       piVar1 = (int *)param_1->field_0038;
+      /* ST_CALLSITE[0074739E]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar1 + 8))(piVar1);
     }
@@ -48,6 +51,7 @@ undefined4 FUN_0074736a(AnonShape_0074736A_AA1936BB *param_1,undefined4 *param_2
       }
     }
   }
+  /* ST_CALLSITE[007473EF]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(lpCriticalSection);
   return 0;
 }

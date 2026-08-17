@@ -36,10 +36,12 @@ undefined4 * __cdecl CreatePlrData(int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     }
+    /* ST_CALLSITE[00649AD7]: CALL 0x0040412e; direct=0040412E CreatePlrDataForBO */
     puVar2 = CreatePlrDataForBO();
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;
   }
+  /* ST_CALLSITE[00649AF2]: CALL 0x0040380f; direct=0040380F CreatePlrDataForWS */
   puVar2 = CreatePlrDataForWS();
   g_currentExceptionFrame = local_4c.previous;
   return puVar2;

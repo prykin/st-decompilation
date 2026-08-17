@@ -35,9 +35,11 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
     g_currentExceptionFrame = &local_48;
     errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
     if (errorCode == 0) {
+      /* ST_CALLSITE[00594DAA]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
       MMMObjTy::OutRGlProc
                 (param_2,param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16,
                  &g_startSystem_0081176C->field_0140);
+      /* ST_CALLSITE[00594DCB]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
       MMMObjTy::OutRGlProc
                 (param_3,param_1,param_2,param_3,param_4,param_5,param_6,0x15,
                  &g_startSystem_0081176C->field_0140);
@@ -46,6 +48,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
       uVar4 = 0xffffffff;
       uVar3 = 0xfffffffe;
       resourceString = LoadResourceString(param_8,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[00594DF7]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
                 (this_00,0,param_4,param_5,param_6,0x15,resourceString,uVar3,uVar4,pcVar5,uVar6);
       g_currentExceptionFrame = local_48.previous;

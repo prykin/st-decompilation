@@ -152,6 +152,7 @@ LAB_004af325:
     iVar9 = DArrayGetNext(g_array_007FA150,(byte *)&local_10);
     while (-1 < iVar9) {
       if (local_10 != nullptr) {
+        /* ST_CALLSITE[004AF38D]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
         *(undefined1 *)
          ((int)psVar8 +
@@ -241,6 +242,7 @@ LAB_004af325:
                   if (0 < (int)pDVar15->count) {
                     do {
                       DArrayGetElement(pDVar15,uVar21,&local_10);
+                      /* ST_CALLSITE[004AF6E9]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                       uVar18 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
@@ -262,6 +264,7 @@ LAB_004af325:
                   if (0 < (int)pDVar15->count) {
                     do {
                       DArrayGetElement(pDVar15,uVar21,&local_10);
+                      /* ST_CALLSITE[004AF78E]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                       uVar18 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
@@ -283,6 +286,7 @@ LAB_004af325:
                   if (0 < (int)pDVar15->count) {
                     do {
                       DArrayGetElement(pDVar15,uVar21,&local_10);
+                      /* ST_CALLSITE[004AF833]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                       uVar18 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
@@ -304,6 +308,7 @@ LAB_004af325:
                   if (0 < (int)pDVar15->count) {
                     do {
                       DArrayGetElement(pDVar15,uVar21,&local_10);
+                      /* ST_CALLSITE[004AF8D8]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                       uVar18 = local_6 - local_18 >> 0x1f;
                       if (((int)((local_6 - local_18 ^ uVar18) - uVar18) <= iVar10) &&
@@ -322,6 +327,7 @@ LAB_004af325:
                    (uVar21 = 0, 0 < (int)g_array_007FA16C->count)) {
                   do {
                     DArrayGetElement(g_array_007FA16C,uVar21,&local_10);
+                    /* ST_CALLSITE[004AFB68]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                     STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                     uVar18 = local_6 - local_18 >> 0x1f;
                     if (((int)((local_6 - local_18 ^ uVar18) - uVar18) < 0xe) &&
@@ -359,15 +365,19 @@ LAB_004af325:
                                 (local_10 = *(STFishC **)
                                              ((int)(g_worldGrid.cells)->objects + iVar19),
                                 local_10 != nullptr)) &&
+                               /* ST_CALLSITE[004AFA05]: CALL dword ptr [EDX + 0x2c] */
                                (((dVar13 = local_10->slot_2C(), dVar13 == 0x53 &&
                                  (local_10->field_0018 == *(int *)(param_9 + 0x18))) ||
+                                /* ST_CALLSITE[004AFA1D]: CALL dword ptr [EAX + 0x2c] */
+                                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                 ((dVar13 = local_10->slot_2C(),
-                                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                  0x53 < (int)dVar13 &&
+                                 /* ST_CALLSITE[004AFA2A]: CALL dword ptr [EDX + 0x2c] */
                                  ((dVar13 = local_10->slot_2C(),
                                   (int)dVar13 < 0x5b &&
                                   (*(int *)&local_10[2].field_0xfd == *(int *)(param_9 + 0x18)))))))
                                )))) {
+                          /* ST_CALLSITE[004AFA73]: CALL dword ptr [EDX + 0x2c] */
                           dVar13 = local_10->slot_2C();
                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                           if ((dVar13 == 0x53) && (local_10->field_0018 == *(int *)(param_9 + 0x18))
@@ -391,6 +401,7 @@ LAB_004af325:
             if ((pDVar15 != nullptr) && (uVar21 = 0, 0 < (int)pDVar15->count)) {
               do {
                 DArrayGetElement(pDVar15,uVar21,&local_10);
+                /* ST_CALLSITE[004AF645]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                 uVar18 = local_6 - local_18 >> 0x1f;
                 if (((int)((local_6 - local_18 ^ uVar18) - uVar18) < 0x10) &&

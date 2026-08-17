@@ -66,6 +66,7 @@ void __thiscall FUN_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
             *(undefined4 *)(&this_00->field_0xe13 + iVar1 * 0xc) = 0;
             FUN_006c1ba0(iVar1);
             if (iVar1 == 2) {
+              /* ST_CALLSITE[0056818E]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
               SoundClassTy::PlaySound(this_00,SOUND_MODE_1,nullptr,0x4b7,nullptr,0);
             }
           }

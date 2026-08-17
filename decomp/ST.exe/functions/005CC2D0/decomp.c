@@ -59,6 +59,7 @@ LAB_005cc360:
     DArrayDestroy((DArrayTy *)this_00->field_2237);
     this_00->field_2237 = nullptr;
   }
+  /* ST_CALLSITE[005CC39A]: CALL 0x00403fb7; direct=00403FB7 SettMapTy::DoneSettMap */
   SettMapTy::DoneSettMap((SettMapTy *)this_00);
   g_currentExceptionFrame = local_4c.previous;
   return;

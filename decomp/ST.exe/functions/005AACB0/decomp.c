@@ -76,6 +76,7 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
     }
     local_14->field_0013 = (uint)param_6;
     *(uint *)&local_14->field_0x1f = local_8;
+    /* ST_CALLSITE[005AAD8D]: CALL 0x00403422; direct=00403422 HoloTy::CalcHologram */
     puVar4 = CalcHologram(local_14,&local_14->field_000F,local_8,local_c,param_5,param_6,
                           (byte)param_8);
     this_00->field_000B = puVar4;
@@ -117,6 +118,7 @@ switchD_005aadcd_default:
         return 1;
       }
     }
+    /* ST_CALLSITE[005AAE8B]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     Done(this_00);
   }
   g_currentExceptionFrame = local_58.previous;

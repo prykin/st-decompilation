@@ -40,18 +40,22 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   local_58[0x10] = nullptr;
   local_58[0x11] = &DAT_00856900;
   local_10 = this;
+  /* ST_CALLSITE[006D5930]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(local_8);
   pAVar2 = local_c;
   if (((*(int *)(iVar1 + 0x90) == 0) || (*(int *)(iVar1 + 0x94) == 0)) ||
      (*(int *)(STField<int>(this,0xe0) + 0x30c) == 0)) {
+    /* ST_CALLSITE[006D5CAF]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(local_8);
     return 0x8000ffff;
   }
   if (param_1 < 0) {
+    /* ST_CALLSITE[006D596B]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(local_8);
     return 0x80070057;
   }
   if (0 < param_1) {
+    /* ST_CALLSITE[006D5985]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(local_8);
     return 0x40103;
   }
@@ -106,6 +110,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
       param_2[5] = DAT_007a1704;
       param_2[6] = DAT_007a1708;
       param_2[7] = DAT_007a170c;
+      /* ST_CALLSITE[006D5B7A]: CALL dword ptr [0x0085bb90] */
       LeaveCriticalSection(local_8);
       return 0;
     }
@@ -113,6 +118,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
     param_2[5] = DAT_007a16f4;
     param_2[6] = DAT_007a16f8;
     param_2[7] = DAT_007a16fc;
+    /* ST_CALLSITE[006D5BB8]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(local_8);
     return 0;
   }
@@ -125,6 +131,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
     puVar7 = (byte *)(&DAT_00856958);
     memmove(puVar7, puVar6, 0x400); /* compiler REP MOVS byte copy */
     param_2[0x10] = param_2[0x10] + 0x400;
+    /* ST_CALLSITE[006D5C1B]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(local_8);
     return 0;
   }
@@ -133,6 +140,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
     param_2[5] = DAT_007a16d4;
     param_2[6] = DAT_007a16d8;
     param_2[7] = DAT_007a16dc;
+    /* ST_CALLSITE[006D5C5F]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(local_8);
     return 0;
   }
@@ -140,6 +148,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   param_2[5] = DAT_007a16c4;
   param_2[6] = DAT_007a16c8;
   param_2[7] = DAT_007a16cc;
+  /* ST_CALLSITE[006D5C9A]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(local_8);
   return 0;
 }

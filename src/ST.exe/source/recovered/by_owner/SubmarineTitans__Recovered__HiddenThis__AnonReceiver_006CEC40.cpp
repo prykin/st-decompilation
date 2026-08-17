@@ -48,8 +48,8 @@ st::fn_006D63E0
   undefined4 local_8;
 
   local_8 = 0xffffffff;
-  puStack_c = st::pointer_boundary_cast<undefined *>(&DAT_0079dd90);
-  puStack_10 = st::pointer_boundary_cast<undefined1 *>(&st_image_0072D964);
+  puStack_c = (undefined *)&DAT_0079dd90;
+  puStack_10 = (undefined1 *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 0);
   iVar8 = *(int *)&this->field_0x284;
@@ -57,6 +57,7 @@ st::fn_006D63E0
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(uint *)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0xc) & 0x100) == 0) {
     ExceptionList = &local_14;
+    /* ST_CALLSITE[006D6444]: CALL dword ptr [EDX + 0xc] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)(*param_1 + 0xc))(param_1,&local_bc);
     if (iVar4 < 0) {
@@ -66,6 +67,7 @@ st::fn_006D63E0
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = *(int *)(*(int *)&this->field_0x288 + 0x28);
     if ((*(uint *)(iVar4 + 8) & 0x4000000) != 0) {
+      /* ST_CALLSITE[006D6467]: CALL dword ptr [0x0085bb8c] */
       st::external_00000018((LPCRITICAL_SECTION)(iVar4 + 0x4f0));
     }
     iVar4 = *(int *)&this->field_0x288;
@@ -78,6 +80,7 @@ st::fn_006D63E0
       local_a0 = *(int *)(iVar4 + 0x20);
       pcVar2 = *(code **)(*(int *)(iVar4 + 0x28) + 0x4e4);
       if (pcVar2 != nullptr) {
+        /* ST_CALLSITE[006D64C2]: CALL ECX */
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         (*pcVar2)(*(undefined4 *)(*(int *)(iVar4 + 0x28) + 0x4ec),iVar7,iVar1,local_a0,
                   *(undefined4 *)(iVar4 + 0x24));
@@ -90,7 +93,7 @@ st::fn_006D63E0
                  *(DWORD *)(iVar4 + 0x14));
     }
     else {
-      if (((*(byte *)(iVar4 + 4) & 8) == 0) &&
+      if (((((byte *)iVar4)[4] & 8) == 0) &&
          ((*(int *)(iVar4 + 0x20) != *(int *)(iVar4 + 0x10) * 2 ||
           (*(int *)(iVar4 + 0x24) != *(int *)(iVar4 + 0x14) * 2)))) {
         local_c0 = 0;
@@ -107,6 +110,7 @@ st::fn_006D63E0
       local_a8 = iVar7;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (*(code **)(iVar4 + 0x4e4) != nullptr) {
+        /* ST_CALLSITE[006D6571]: CALL ECX */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar4 + 0x4e4))
                   (*(undefined4 *)(iVar4 + 0x4ec),iVar7,local_a4,local_a0,local_9c);
@@ -114,6 +118,7 @@ st::fn_006D63E0
       iVar4 = *(int *)&this->field_0x288;
       if ((*(int *)(*(int *)(iVar4 + 0x28) + 0x20) < 0x11) && (*(ushort *)(iVar8 + 0x3e) < 0x11)) {
         uVar5 = (uint)*(ushort *)(iVar8 + 0x3e) * *(int *)(iVar8 + 0x34) + 0x1f >> 3 & 0x1ffffffc;
+        /* ST_CALLSITE[006D65C9]: CALL dword ptr [0x0085bbb8] */
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         BVar6 = st::external_00000023((uint *)(((*(int *)(iVar8 + 0x38) - *(int *)(iVar4 + 0xc)) -
                                       *(int *)(iVar4 + 0x14)) * uVar5 + (int)local_bc),
@@ -127,6 +132,7 @@ st::fn_006D63E0
           iVar4 = 0;
           local_d0 = iVar7;
           do {
+            /* ST_CALLSITE[006D663B]: CALL dword ptr [ECX + 0x64] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar7 = (**(code **)(*piVar3 + 100))(piVar3,&local_d0,local_98,0x21,0);
             if (iVar7 == 0) goto LAB_006d666f;
@@ -184,6 +190,7 @@ LAB_006d666f:
             local_8 = 0xffffffff;
           }
         }
+        /* ST_CALLSITE[006D685A]: CALL dword ptr [ECX + 0x80] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar3 + 0x80))(piVar3,0);
       }
@@ -191,6 +198,7 @@ LAB_006d666f:
         piVar3 = *(int **)(*(int *)(iVar4 + 0x28) + 0x40);
         local_b8 = 0;
         do {
+          /* ST_CALLSITE[006D687C]: CALL dword ptr [EDX + 0x44] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar4 = (**(code **)(*piVar3 + 0x44))(piVar3,local_b4);
           if (iVar4 == 0) goto LAB_006d68c8;
@@ -205,21 +213,25 @@ LAB_006d666f:
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_006d68c8:
           iVar4 = *(int *)(*(int *)&this->field_0x288 + 0x28);
+          /* ST_CALLSITE[006D68E8]: CALL dword ptr [0x0085bab0] */
           st::external_000000B4(local_b4[0],*(int *)(iVar4 + 0x10),*(int *)(iVar4 + 0x14),(LPPOINT)0x0);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           hrgn = *(HRGN *)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0x494);
           if (hrgn != (HRGN)0x0) {
+            /* ST_CALLSITE[006D6909]: CALL dword ptr [0x0085baac] */
             st::external_000000B3(local_b4[0],hrgn);
           }
           *(HDC **)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0x47c) = local_b4;
           *(int **)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0x480) = piVar3;
           iVar4 = *(int *)&this->field_0x288;
+          /* ST_CALLSITE[006D697B]: CALL dword ptr [0x0085baa4] */
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           st::external_000000B1(local_b4[0],local_a8,local_a4,local_a0,local_9c,*(int *)(iVar4 + 8),
                         *(int *)(iVar4 + 0xc),*(int *)(iVar4 + 0x10),*(int *)(iVar4 + 0x14),local_bc
                         ,(BITMAPINFO *)(iVar8 + 0x30),0,0xcc0020);
           iVar8 = 0;
           do {
+            /* ST_CALLSITE[006D698D]: CALL dword ptr [EAX + 0x68] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar4 = (**(code **)(*piVar3 + 0x68))(piVar3,local_b4[0]);
             if (iVar4 == 0) break;
@@ -237,6 +249,7 @@ LAB_006d68c8:
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar8 = *(int *)(*(int *)&this->field_0x288 + 0x28);
     if ((*(uint *)(iVar8 + 8) & 0x4000000) != 0) {
+      /* ST_CALLSITE[006D69F5]: CALL dword ptr [0x0085bb90] */
       st::external_00000019((LPCRITICAL_SECTION)(iVar8 + 0x4f0));
     }
   }

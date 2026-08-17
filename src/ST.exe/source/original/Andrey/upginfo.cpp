@@ -43,6 +43,7 @@ void __thiscall st::fn_005528B0(UpgPanelTy *this)
     iVar4 = 0x31;
     g_upgPanel_00802A48 = local_8;
     pCVar2 = st::fn_0040577C(st::mutable_c_string("BKG_UPDATESW"),0);
+    /* ST_CALLSITE[00552914]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     st::fn_00403800
               ((SpecPanelTy *)this_00,pCVar2,iVar4,uVar5,iVar7,iVar10,UVar11,uVar12,uVar13);
     puVar3 = st::fn_00709AF0
@@ -125,6 +126,7 @@ void __thiscall st::fn_00552AF0(UpgPanelTy *this,int param_1)
   int local_44 [16];
 
   if (param_1 != this->field_005C) {
+    /* ST_CALLSITE[00552B07]: CALL 0x00404d36; direct=00404D36 SpecPanelTy::ShiftControls */
     st::fn_00404D36((SpecPanelTy *)this,param_1);
     sVar3 = (short)this->field_0174;
     this->field_0028 = 0x24;
@@ -185,6 +187,7 @@ void __thiscall st::fn_00552BC0(UpgPanelTy *this)
     puVar7 = puVar8;
     puVar9 = local_298;
     memmove(puVar9, puVar7, 0x240); /* compiler REP MOVS byte copy */
+    /* ST_CALLSITE[00552C19]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     st::fn_004035BC(g_allPlayers_007FA174,0x10,(AnonShape_0043BEB0_1C00EC12 *)puVar8);
     iVar6 = 0x19;
     puVar8 = &pUVar2->field_01AB;
@@ -198,6 +201,7 @@ void __thiscall st::fn_00552BC0(UpgPanelTy *this)
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
       }
       pBVar4 = st::fn_0070B3A0(pAVar10,uVar3);
+      /* ST_CALLSITE[00552C6B]: CALL 0x00403229; direct=00403229 DibPut */
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0x24,iVar6,'\x01',(byte *)pBVar4);
       puVar8 = puVar8 + 0xc;
       iVar6 = iVar6 + 0x1b;
@@ -218,6 +222,7 @@ void __thiscall st::fn_00552BC0(UpgPanelTy *this)
           pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
         }
         pBVar4 = st::fn_0070B3A0(pAVar10,uVar3);
+        /* ST_CALLSITE[00552CDF]: CALL 0x00403229; direct=00403229 DibPut */
         st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_8,iVar6,'\x01',
                (byte *)pBVar4);
         puVar8 = puVar8 + 0xc;
@@ -240,6 +245,7 @@ void __thiscall st::fn_00552BC0(UpgPanelTy *this)
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EB;
       }
       pBVar4 = st::fn_0070B3A0(pAVar10,uVar3);
+      /* ST_CALLSITE[00552D58]: CALL 0x00403229; direct=00403229 DibPut */
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,0xd3,iVar6,'\x01',(byte *)pBVar4);
       puVar8 = puVar8 + 0xc;
       iVar6 = iVar6 + 0x1b;
@@ -293,11 +299,14 @@ int __thiscall st::fn_00552E40(UpgPanelTy *this,STMessage *message)
     st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\upginfo.cpp"),0x68);
     return 0xffff;
   }
+  /* ST_CALLSITE[00552E79]: CALL 0x00401401; direct=00401401 SpecPanelTy::GetMessage */
   st::fn_00401401((SpecPanelTy *)local_8,message);
   if (message->id == MESS_ID_CREATE) {
+    /* ST_CALLSITE[00552EA4]: CALL 0x00401d20; direct=00401D20 UpgPanelTy::InitUpgPanel */
     st::fn_00401D20(this_00);
   }
   else if (message->id == MESS_SHARED_0003) {
+    /* ST_CALLSITE[00552E8B]: CALL 0x00401ab4; direct=00401AB4 UpgPanelTy::DoneUpgPanel */
     st::fn_00401AB4(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return 0;

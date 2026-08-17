@@ -54,6 +54,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[0062E77E]: CALL 0x00403ebd; direct=00403EBD STGameObjC::GetMessage */
   iVar6 = STGameObjC::GetMessage((STGameObjC *)local_14,message);
   if (iVar6 == 0xffff) {
     return 0xffff;
@@ -66,6 +67,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
     }
     else if (SVar3 == MESS_SHARED_010F) {
       local_10 = thunk_FUN_0062f940(this_00,&local_c);
+      /* ST_CALLSITE[0062EB26]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,(int *)this_00->field_0018,local_10,local_c);
       FreeAndNull(&local_10);
       g_currentExceptionFrame = local_58.previous;
@@ -82,6 +84,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
   if (SVar3 == MESS_ID_NONE) {
     if (this_00->field_01FA == CASE_1) {
       if ((this_00->field_01F9 == '\0') &&
+         /* ST_CALLSITE[0062EAB0]: CALL 0x00401d39; direct=00401D39 STRubbishC::sub_0062FEA0 */
          (local_EAX_880 = sub_0062FEA0(this_00,this_00->field_01D5,this_00->field_01D9),
          local_EAX_880 != 0)) {
         thunk_FUN_0062fe00((STJellyGunC *)this_00);
@@ -95,6 +98,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
+    /* ST_CALLSITE[0062EA76]: CALL 0x00405885; direct=00405885 STRubbishC::sub_0062F900 */
     sub_0062F900(this_00);
     g_currentExceptionFrame = local_58.previous;
     return 0;
@@ -141,6 +145,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
         pAVar12 = (AnonShape_0062FA80_0B91B2B9 *)local_8;
       }
       if ((pSVar8 == nullptr) &&
+         /* ST_CALLSITE[0062E93E]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
          (iVar7 = DumpClassC::WritePtr
                             ((short)this_00->field_01D5,(short)this_00->field_01D9,
                              (short)this_00->field_01DD,1,
@@ -155,14 +160,17 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
         iVar10 = local_8->field_001C;
         iVar10 = STBiasedDiv16(iVar10, 200); /* exact signed 16-bit grid-index division */
         this_00->field_01DD = iVar10;
+        /* ST_CALLSITE[0062E9EE]: CALL 0x00401d39; direct=00401D39 STRubbishC::sub_0062FEA0 */
         local_EAX_686 = sub_0062FEA0(this_00,iVar7,iVar11);
         this_00->field_01F9 = (char)local_EAX_686;
         goto LAB_0062ea02;
       }
     }
+    /* ST_CALLSITE[0062E9FD]: CALL 0x00405885; direct=00405885 STRubbishC::sub_0062F900 */
     sub_0062F900(this_00);
   }
 LAB_0062ea02:
+  /* ST_CALLSITE[0062EA05]: CALL 0x00403edb; direct=00403EDB STRubbishC::sub_0062FCA0 */
   local_EAX_709 = sub_0062FCA0(this_00,(AnonShape_0062FCA0_22A9EE35 *)pAVar12);
   if (local_EAX_709 == 0xffff) {
     return 0xffff;

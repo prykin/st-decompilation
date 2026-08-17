@@ -39,7 +39,9 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0x8a);
     return;
   }
+  /* ST_CALLSITE[004FE9AC]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut(local_c->field_0180,0,0,'\x01',(byte *)local_c->field_0954);
+  /* ST_CALLSITE[004FE9C5]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0,'\x01',(byte *)this_00->field_0958
         );
   if (this_00->field_02E2 != nullptr) {
@@ -47,6 +49,7 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
   }
   if (this_00->field_0B63 == '\0') {
     if (DAT_0080874e == '\x03') {
+      /* ST_CALLSITE[004FEA09]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut(this_00->field_018C,0,0,'\x06',(byte *)this_00->field_0974[1]);
       goto LAB_004fea77;
     }
@@ -55,18 +58,22 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
   }
   else {
     if (DAT_0080874e == '\x03') {
+      /* ST_CALLSITE[004FEA49]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut(this_00->field_018C,0,0,'\x06',(byte *)this_00->field_0974[3]);
       goto LAB_004fea77;
     }
     pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,0);
     pRVar10 = (RecoveredSourceFamily_dibcopy *)this_00->field_0188;
   }
+  /* ST_CALLSITE[004FEA6F]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut(pRVar10,0,0,'\x01',(byte *)pBVar4);
 LAB_004fea77:
+  /* ST_CALLSITE[004FEA7B]: CALL 0x00403977; direct=00403977 CPanelTy::PaintDeep */
   PaintDeep(this_00,1);
   if (this_00->field_0B63 == '\x02') {
     dVar11 = this_00->field_0B95->count;
     pcVar3 = LoadResourceString(0x36b9,g_hINSTANCE_00807618);
+    /* ST_CALLSITE[004FEAAF]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"&1%s&0%d",pcVar3,dVar11);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                      *(int *)(this_00->field_0958 + 2) + -4,0x2d);
@@ -74,7 +81,9 @@ LAB_004fea77:
   }
   cVar7 = this_00->field_0B63;
   if (((cVar7 == '\x01') || (cVar7 == '\x04')) || (cVar7 == '\x03')) {
+    /* ST_CALLSITE[004FEB13]: CALL 0x004048c7; direct=004048C7 CPanelTy::PaintName */
     PaintName(this_00,1);
+    /* ST_CALLSITE[004FEB1C]: CALL 0x004019c4; direct=004019C4 CPanelTy::PaintLife */
     PaintLife(this_00,1);
     iVar9 = this_00->field_0B66;
     if (((iVar9 == 7) || (iVar9 == 0x13)) || (iVar9 == 0x1b)) {
@@ -82,6 +91,7 @@ LAB_004fea77:
         uVar5 = thunk_FUN_00526ba0(*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xb81,
                                    this_00->field_0xb85);
         pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BE,uVar5);
+        /* ST_CALLSITE[004FEB7A]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0xb,0x31,'\x01',(byte *)pBVar4);
         FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0x3b,0x31,7,0x21,0);
         bVar1 = this_00->field_0xb86;
@@ -102,13 +112,16 @@ LAB_004fea77:
                    (byte *)this_00->field_028A,0,iVar9,*(int *)(this_00->field_028A + 4) - uVar6,5,
                    uVar6);
         pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
+        /* ST_CALLSITE[004FEC2E]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,10,0x30,'\x06',(byte *)pBVar4);
       }
     }
     else {
+      /* ST_CALLSITE[004FEB3A]: CALL 0x00402694; direct=00402694 CPanelTy::PaintWeap */
       PaintWeap(this_00,1);
     }
     if ((DAT_0080874e == '\x03') && (this_00->field_0B6A == '\x03')) {
+      /* ST_CALLSITE[004FEC4A]: CALL 0x00402667; direct=00402667 CPanelTy::PaintEnergy */
       PaintEnergy(this_00,1);
     }
   }

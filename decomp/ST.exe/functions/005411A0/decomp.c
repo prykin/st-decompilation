@@ -57,6 +57,7 @@ void __cdecl FUN_005411a0(DArrayTy *param_1,char *param_2,char *text)
     } while (cVar1 != '\0');
     local_8 = Library::DKW::LIB::MemAlloc(~uVar4 + ~uVar5 + 2);
     if (local_8 != nullptr) {
+      /* ST_CALLSITE[00541211]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)local_8,text,param_2);
       for (puVar3 = Library::MSVCRT::FUN_0072e560(local_8,'\n'); puVar3 != nullptr;
           puVar3 = Library::MSVCRT::FUN_0072e560(puVar3,'\n')) {

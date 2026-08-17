@@ -66,6 +66,7 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
             if (DAT_0080c963 < iVar6) {
               this_00->field_02C3 = DAT_0080c963;
             }
+            /* ST_CALLSITE[005BFB12]: CALL 0x004016fe; direct=004016FE MReportTy::PaintMainScore */
             PaintMainScore(this_00,this_00->field_02C3,uVar9,0);
             bVar4 = true;
           }
@@ -81,6 +82,7 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
             if ((int)(&DAT_0080c943)[iVar8] < iVar6) {
               (&this_00->field_02A3)[iVar8] = (&DAT_0080c943)[iVar8];
             }
+            /* ST_CALLSITE[005BFA9D]: CALL 0x004016fe; direct=004016FE MReportTy::PaintMainScore */
             PaintMainScore(this_00,(&this_00->field_02A3)[iVar8],this_00->field_02A3,iVar8);
             bVar4 = true;
           }
@@ -89,6 +91,7 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
             iVar6 = (&DAT_0080c943)[iVar8];
             iVar10 = iVar8;
 LAB_005bfb27:
+            /* ST_CALLSITE[005BFB2A]: CALL 0x004016fe; direct=004016FE MReportTy::PaintMainScore */
             PaintMainScore(this_00,iVar6,uVar9,iVar10);
           }
           iVar8 = iVar8 + 1;
@@ -97,6 +100,7 @@ LAB_005bfb27:
       if (bVar4) {
         thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
         FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+        /* ST_CALLSITE[005BFB8B]: CALL 0x00402298; direct=00402298 PutDDXClip */
         PutDDXClip(0x1a,0x46,0x1a,0x46,this_00->field_0073->field_0004,
                    (byte *)this_00->field_0073->field_0008,'\x01',(BITMAPINFO *)this_00->field_005D);
         pAVar2 = this_00->field_0073;
@@ -111,12 +115,14 @@ LAB_005bfb27:
   }
   else if (cVar1 == '\x03') {
     if (local_c->field_0453 != nullptr) {
+      /* ST_CALLSITE[005BF94D]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar8 = HoloTy::NextFas(local_c->field_0453);
       if (iVar8 != 0) {
         local_8 = 0;
       }
     }
     if (this_00->field_0457 != nullptr) {
+      /* ST_CALLSITE[005BF963]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar8 = HoloTy::NextFas(this_00->field_0457);
       if (iVar8 != 0) {
         local_8 = 0;
@@ -124,11 +130,13 @@ LAB_005bfb27:
     }
     if (local_8 != 0) {
       if (this_00->field_0453 != nullptr) {
+        /* ST_CALLSITE[005BF982]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_00->field_0453);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_0453);
         this_00->field_0453 = nullptr;
       }
       if (this_00->field_0457 != nullptr) {
+        /* ST_CALLSITE[005BF9A6]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_00->field_0457);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_0457);
         this_00->field_0457 = nullptr;
@@ -141,6 +149,7 @@ LAB_005bfb27:
   }
   else if (cVar1 == '\x04') {
     if (local_c->field_0453 != nullptr) {
+      /* ST_CALLSITE[005BF8C6]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar8 = HoloTy::NextFas(local_c->field_0453);
       if (iVar8 == 0) {
         uVar9 = *(uint *)&this_00->field_0453->field_0x3;
@@ -153,6 +162,7 @@ LAB_005bfb27:
       }
     }
     if (this_00->field_0457 != nullptr) {
+      /* ST_CALLSITE[005BF8F7]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar8 = HoloTy::NextFas(this_00->field_0457);
       if (iVar8 == 0) {
         uVar9 = *(uint *)&this_00->field_0457->field_0x3;

@@ -17,7 +17,7 @@
    /SubmarineTitans/Recovered/Enums/STGroupBoatC_field_0020State. Cases:
    CASE_0=0;CASE_14=20;CASE_1AE=430 */
 
-STGroupBoatC * __thiscall STGroupBoatC::sub_004232A0(STGroupBoatC *this)
+STGroupC * __thiscall STGroupBoatC::sub_004232A0(STGroupBoatC *this)
 
 {
   sub_006E60E0(this);
@@ -29,6 +29,6 @@ STGroupBoatC * __thiscall STGroupBoatC::sub_004232A0(STGroupBoatC *this)
   this->field_0027 = 0;
   this->field_0035 = 0;
   this->field_0039 = 0;
-  return this;
+  return (STGroupC *)this;
 }
 

@@ -40,6 +40,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
     RaiseInternalException(iVar3,0,"E:\\__titans\\tapp.cpp",0x914);
     return;
   }
+  /* ST_CALLSITE[0057145A]: CALL dword ptr [0x0085bc80] */
   hFile = CreateFileA(&local_10->field_7B06,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,
                       (HANDLE)0x0);
   if (hFile == (HANDLE)0xffffffff) {
@@ -47,13 +48,17 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
     goto cf_common_exit_00571620;
   }
   if ((param_1 != 0) &&
+     /* ST_CALLSITE[00571479]: CALL dword ptr [0x0085bc74] */
      (((DVar3 = SetFilePointer(hFile,0,(PLONG)0x0,0), DVar3 == 0xffffffff ||
+       /* ST_CALLSITE[00571494]: CALL dword ptr [0x0085bc68] */
        (BVar4 = ReadFile(hFile,&pSVar2->field_1134,4,&local_c,(LPOVERLAPPED)0x0), BVar4 == 0)) ||
       (local_c != 4)))) {
     local_8 = 1;
   }
   if ((local_8 == 0) &&
+     /* ST_CALLSITE[005714BE]: CALL dword ptr [0x0085bc74] */
      (DVar3 = SetFilePointer(hFile,pSVar2->field_1191,(PLONG)0x0,0), DVar3 != 0xffffffff)) {
+    /* ST_CALLSITE[005714DA]: CALL dword ptr [0x0085bc68] */
     BVar4 = ReadFile(hFile,local_2c,0x1b,&local_c,(LPOVERLAPPED)0x0);
     if ((BVar4 != 0) && (local_c == 0x1b)) {
       iVar6 = 0;
@@ -108,15 +113,19 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
         pvVar7 = Library::DKW::LIB::MemRealloc(pSVar2->field_1189,newSize);
         pSVar2->field_1189 = pvVar7;
       }
+      /* ST_CALLSITE[00571598]: CALL dword ptr [0x0085bc74] */
       DVar3 = SetFilePointer(hFile,pSVar2->field_1191,(PLONG)0x0,0);
       if (((DVar3 == 0xffffffff) ||
+          /* ST_CALLSITE[005715B2]: CALL dword ptr [0x0085bc68] */
           (BVar4 = ReadFile(hFile,pSVar2->field_1189,newSize,&local_c,(LPOVERLAPPED)0x0), BVar4 == 0
           )) || (local_c != newSize)) {
         local_8 = 1;
+        /* ST_CALLSITE[005715E0]: CALL dword ptr [0x0085bbc8] */
         CloseHandle(hFile);
       }
       else {
         pSVar2->field_1191 = pSVar2->field_1191 + newSize;
+        /* ST_CALLSITE[005715D0]: CALL dword ptr [0x0085bbc8] */
         CloseHandle(hFile);
       }
       goto cf_common_exit_00571620;
@@ -124,6 +133,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
     pSVar2->field_1185 = 0;
     if (g_popUp_008016D8 != nullptr) {
       thunk_FUN_0052d320(g_popUp_008016D8,"Playing of commands has finished!",8);
+      /* ST_CALLSITE[00571609]: CALL dword ptr [0x0085bbc8] */
       CloseHandle(hFile);
       goto cf_common_exit_00571620;
     }
@@ -131,6 +141,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   else {
     local_8 = 1;
   }
+  /* ST_CALLSITE[00571615]: CALL dword ptr [0x0085bbc8] */
   CloseHandle(hFile);
 cf_common_exit_00571620:
   if ((local_8 != 0) && (pSVar2->field_1185 = 0, g_popUp_008016D8 != nullptr)) {

@@ -31,6 +31,7 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
   if (errorCode == 0) {
     switch(*(undefined4 *)&local_c->field_0x361) {
     case 1:
+      /* ST_CALLSITE[004C950E]: CALL 0x00402a9f; direct=00402A9F TLOBaseTy::sub_004CEB00 */
       uVar5 = sub_004CEB00(local_c,*(int *)&local_c->field_0x369);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
@@ -48,9 +49,11 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
       return uVar5;
     case 5:
       local_8 = 1;
+      /* ST_CALLSITE[004C9570]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       uVar2 = LookupRecordByte(*(char *)&local_c->field_023D);
       this_00->field_0241 =
            *(int *)(&DAT_007e4178 + ((uint)(byte)uVar2 + this_00->field_0235 * 3) * 4);
+      /* ST_CALLSITE[004C9597]: CALL 0x00405768; direct=00405768 TLOBaseTy::sub_004CC900 */
       sub_004CC900(this_00);
       g_currentExceptionFrame = local_50.previous;
       return 1;

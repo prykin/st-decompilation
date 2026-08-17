@@ -45,8 +45,10 @@ SettMapMTy::AddPlayerList(SettMapMTy *this,int param_1,uint param_2,int param_3,
         else {
           if ((bVar1 < 2) || (3 < bVar1)) goto LAB_005d11ad;
           param_2 = param_2 + 1;
+          /* ST_CALLSITE[005D117D]: CALL 0x004017d0; direct=004017D0 SettMapMTy::sub_005D00B0 */
           sub_005D00B0(local_8,element_1f84,param_2);
         }
+        /* ST_CALLSITE[005D11A8]: CALL 0x00401bdb; direct=00401BDB SettMapMTy::ChangePlayerList */
         ChangePlayerList(this_00,param_1,param_2,param_3,'\0',param_4);
       }
 LAB_005d11ad:
@@ -93,6 +95,7 @@ LAB_005d1245:
           if (DAT_008067a0 == '\0') {
             pcVar7 = &CHAR_00h_00807ddd;
           }
+          /* ST_CALLSITE[005D1299]: CALL 0x004013a7; direct=004013A7 SettMapMTy::AddPlayerList */
           AddPlayerList(local_8,DAT_0080877f,uVar9,(DAT_0080874f != '\0') + 2,pcVar7);
         }
       }

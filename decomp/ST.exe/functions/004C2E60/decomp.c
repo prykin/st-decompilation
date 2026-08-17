@@ -15,12 +15,13 @@ undefined4 __fastcall FUN_004c2e60(int param_1)
     if (*(int *)(param_1 + 0x24d) != -1) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(param_1 + 0x24) != *(int *)(param_1 + 0x23d)) {
+        /* ST_CALLSITE[004C2E9B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         bVar2 = LookupRecordByte((char)*(int *)(param_1 + 0x23d));
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar1 = *(int *)(param_1 + 0x235);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        bVar3 = LookupRecordByte(*(char *)(param_1 + 0x24));
+        /* ST_CALLSITE[004C2EC0]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
+        bVar3 = LookupRecordByte(((char *)param_1)[0x24]);
         if ((&DAT_007e1984)[(uint)bVar3 + (iVar1 * 3 + (uint)bVar2) * 3] == '\0') {
           return 0;
         }

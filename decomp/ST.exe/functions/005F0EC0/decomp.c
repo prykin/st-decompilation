@@ -116,6 +116,7 @@ FUN_005f0ec0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
       local_14 = 0;
     }
   }
+  /* ST_CALLSITE[005F104D]: CALL dword ptr [EDX + 0x8] */
   g_playSystem_00802A38->vfunc_08(0x14f,0,0,(short)local_158,0);
   return;
 }

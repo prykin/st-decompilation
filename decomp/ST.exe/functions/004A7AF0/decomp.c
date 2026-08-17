@@ -65,6 +65,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
             local_1a = 3;
             local_2c = 1;
             Library::DKW::TBL::DArrayPut(this->field_022E,param_3,&local_2c);
+            /* ST_CALLSITE[004A7C80]: CALL 0x0040331e; direct=0040331E STGroupBoatC::sub_004A7E30 */
             iVar3 = sub_004A7E30(this,1);
             return (uint)(iVar3 != 0);
           }
@@ -100,6 +101,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   }
   local_2c = 1;
   Library::DKW::TBL::DArrayPut(array,param_3,&local_2c);
+  /* ST_CALLSITE[004A7B9B]: CALL 0x0040331e; direct=0040331E STGroupBoatC::sub_004A7E30 */
   iVar3 = sub_004A7E30(this,1);
   return (uint)(iVar3 != 0);
 }

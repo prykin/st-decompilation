@@ -53,13 +53,16 @@ void __thiscall AiPlrClassTy::sub_0067BFD0(AiPlrClassTy *this,DArrayTy *param_1,
         local_40 = (AnonShape_0068FD00_A5257008 *)0x67;
         local_38 = 0;
         local_3c = local_c->field_06FE;
+        /* ST_CALLSITE[0067C068]: CALL 0x00402a09; direct=00402A09 AiPlrClassTy::sub_0067BF30 */
         local_37 = sub_0067BF30(local_c);
         local_33 = *(undefined4 *)(puVar4 + 6);
+        /* ST_CALLSITE[0067C078]: CALL 0x00404228; direct=00404228 AiPlrClassTy::sub_0067BEF0 */
         iVar2 = sub_0067BEF0(this_00);
         local_2f = (undefined2)iVar2;
         local_2d = *(undefined4 *)(puVar1 + 2);
         local_29 = *(undefined4 *)(puVar1 + 4);
         local_25 = *(undefined4 *)(puVar1 + 6);
+        /* ST_CALLSITE[0067C0A1]: CALL 0x00405dc6; direct=00405DC6 AiPlrClassTy::sub_0067A020 */
         sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_40,(uint)*puVar4);
         uVar6 = local_8;
       }

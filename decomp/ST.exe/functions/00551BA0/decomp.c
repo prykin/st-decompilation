@@ -59,9 +59,11 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
                                   *(ushort *)
                                    (&this_00->field_0x1ab +
                                    (iVar4 + (uint)(byte)this_00->field_01D0 * 2) * 4) - 1);
+            /* ST_CALLSITE[00551D40]: CALL 0x00403229; direct=00403229 DibPut */
             DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,0x39,'\x01',
                    (byte *)pBVar2);
           }
+          /* ST_CALLSITE[00551D6A]: CALL dword ptr [0x0085bde8] */
           wsprintfA(&this_00->field_018D,"%d:1",
                     (uint)*(ushort *)
                            (&this_00->field_0x1ad +
@@ -85,6 +87,7 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
       resourceString = LoadResourceString(0x4e5b,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(this_00->field_0189,resourceString,iVar6,iVar4,uVar3,iVar7,iVar9);
     }
+    /* ST_CALLSITE[00551DBF]: CALL 0x004048f4; direct=004048F4 TradePanelTy::PaintIndicators */
     PaintIndicators(this_00);
     g_currentExceptionFrame = local_54.previous;
     return;

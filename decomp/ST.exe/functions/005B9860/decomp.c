@@ -37,6 +37,7 @@ MMMObjTy::OutLstProc
     g_currentExceptionFrame = &local_4c;
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (errorCode == 0) {
+      /* ST_CALLSITE[005B98CD]: CALL 0x004042d2; direct=004042D2 MMMObjTy::OutBSlProc */
       OutBSlProc(param_2,param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16,
                  &g_startSystem_0081176C->field_0140);
       Library::DKW::DDX::FUN_006c68f0
@@ -47,9 +48,9 @@ MMMObjTy::OutLstProc
       pcVar5 = g_startSystem_0081176C->field_0034;
       uVar4 = 0xffffffff;
       uVar3 = 0xfffffffe;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       resourceString =
-           LoadResourceString(0x26b4 - (*(char *)(local_8 + 0x1a5f) != '\x01'),g_hINSTANCE_00807618);
+           LoadResourceString(0x26b4 - (((char *)local_8)[0x1a5f] != '\x01'),g_hINSTANCE_00807618);
+      /* ST_CALLSITE[005B993F]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
                 (this_00,0,param_4,param_5,param_6,0x15,resourceString,uVar3,uVar4,pcVar5,uVar6);
       g_currentExceptionFrame = local_4c.previous;

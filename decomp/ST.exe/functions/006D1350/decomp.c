@@ -20,7 +20,7 @@ FUN_006d1350(undefined2 *param_1,int param_2,byte *param_3,int param_4,int param
         while (param_3 = param_3 + 1, bVar1 != param_8) {
           uVar2 = *(undefined4 *)(param_5 + (uint)bVar1 * 4);
           *puVar3 = (short)uVar2;
-          *(char *)(puVar3 + 1) = (char)((uint)uVar2 >> 0x10);
+          ((char *)puVar3)[1] = (char)((uint)uVar2 >> 0x10);
           iVar4 = iVar4 + -1;
           if (iVar4 == 0) goto LAB_006d13a9;
           puVar3 = (undefined2 *)((int)puVar3 + 3);

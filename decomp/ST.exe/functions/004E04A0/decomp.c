@@ -27,6 +27,7 @@ undefined4 __fastcall FUN_004e04a0(AnonShape_004E04A0_3A5B2D2E *param_1)
     switch(param_1->field_04E8) {
     case 0:
 switchD_004e04e5_caseD_0:
+      /* ST_CALLSITE[004E0578]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)&param_1->field_0x1d5,0xb);
       break;
     case 1:
@@ -96,6 +97,7 @@ LAB_004e05d3:
     return 0;
   }
   this = &param_1->field_0x1d5;
+  /* ST_CALLSITE[004E05FF]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar1 = STT3DSprC::LoadSequence((STT3DSprC *)this,0xb,PTR_0080678c,local_8,CASE_1D);
   if (iVar1 != 0) {
     RaiseInternalException
@@ -129,7 +131,9 @@ LAB_004e05d3:
   iVar2 = iVar2 + -1;
 cf_common_exit_004E068C:
   thunk_FUN_004abce0(this,0xb,uVar3,iVar2,'\0');
+  /* ST_CALLSITE[004E06A1]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase((STT3DSprC *)this,'\v',uVar3);
+  /* ST_CALLSITE[004E06B7]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   STT3DSprC::StartShow((STT3DSprC *)this,0xb,g_playSystem_00802A38->field_00E4);
   return 0;
 }

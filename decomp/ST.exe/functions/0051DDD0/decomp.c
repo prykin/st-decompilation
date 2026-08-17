@@ -91,12 +91,14 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
     this_00->field_0044 = this_00->field_0050 - this_00->field_0048;
     this_00->field_0174 = this_00->field_0048 + this_00->field_0050;
   }
+  /* ST_CALLSITE[0051DE46]: CALL 0x004017f8; direct=004017F8 PanelTy::GetMessage */
   PanelTy::GetMessage((PanelTy *)this_00,message);
   SVar3 = message->id;
   if (SVar3 < MESS_OPTPANELTY_C001) {
     if (SVar3 == MESS_SHARED_C000) {
       UVar27 = 0x274e;
       pCVar17 = thunk_FUN_00571240("BUT_MEDIUM",0);
+      /* ST_CALLSITE[0051F034]: CALL 0x00403508; direct=00403508 UPanelTy::PaintIBut */
       UPanelTy::PaintIBut((UPanelTy *)this_00,(AnonShape_0053DAF0_3BDC2979 *)message,pCVar17,UVar27);
       g_currentExceptionFrame = local_84.previous;
       return 0;
@@ -162,64 +164,87 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                 return 0;
               }
             }
+            /* ST_CALLSITE[0051E6F4]: CALL 0x004054c5; direct=004054C5 HelpPanelTy::LinkAct */
             LinkAct(this_00,STField<int>(piVar10,0x11),STField<undefined4>(piVar10,0x15));
             uVar18 = STField<undefined4>(piVar10,0x15);
             pvVar6 = STField<void *>(piVar10,0x11);
             switch((char)piVar10[4]) {
             case '\x01':
+              /* ST_CALLSITE[0051E75E]: CALL 0x00404e85; direct=00404E85 HelpPanelTy::RCProc */
               RCProc(this_00,(int)pvVar6,uVar18,'\0');
+              /* ST_CALLSITE[0051E765]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x02':
+              /* ST_CALLSITE[0051E7F4]: CALL 0x00403747; direct=00403747 HelpPanelTy::ObjProc */
               ObjProc(this_00,(int)pvVar6,uVar18,'\0');
+              /* ST_CALLSITE[0051E7FB]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x03':
+              /* ST_CALLSITE[0051E7CE]: CALL 0x00403878; direct=00403878 HelpPanelTy::SubProc */
               SubProc(this_00,(int)pvVar6,'\0');
+              /* ST_CALLSITE[0051E7D5]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x04':
+              /* ST_CALLSITE[0051E81A]: CALL 0x004057e0; direct=004057E0 HelpPanelTy::ArmProc */
               ArmProc(this_00,(int)pvVar6,uVar18,'\0');
+              /* ST_CALLSITE[0051E821]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x05':
+              /* ST_CALLSITE[0051E7A9]: CALL 0x00402833; direct=00402833 HelpPanelTy::TechProc */
               TechProc(this_00,(uint)pvVar6,(byte)uVar18,'\0');
+              /* ST_CALLSITE[0051E7B0]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x06':
+              /* ST_CALLSITE[0051E783]: CALL 0x00405e61; direct=00405E61 HelpPanelTy::TTreeProc */
               TTreeProc(this_00,(uint)pvVar6,'\0');
+              /* ST_CALLSITE[0051E78A]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\a':
+              /* ST_CALLSITE[0051E738]: CALL 0x004011fe; direct=004011FE HelpPanelTy::MObjProc */
               MObjProc(this_00);
+              /* ST_CALLSITE[0051E73F]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\b':
+              /* ST_CALLSITE[0051E88B]: CALL 0x004020b8; direct=004020B8 HelpPanelTy::TipProc */
               TipProc(this_00,pvVar6,uVar18,'\0');
               break;
             case '\n':
+              /* ST_CALLSITE[0051E716]: CALL 0x00405803; direct=00405803 HelpPanelTy::IndexBut */
               IndexBut(this_00);
+              /* ST_CALLSITE[0051E71D]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\v':
+              /* ST_CALLSITE[0051E840]: CALL 0x00402cac; direct=00402CAC HelpPanelTy::SpecProc */
               SpecProc(this_00,(int)pvVar6,uVar18,'\0');
+              /* ST_CALLSITE[0051E847]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\f':
+              /* ST_CALLSITE[0051E865]: CALL 0x00403bc0; direct=00403BC0 HelpPanelTy::NatProc */
               NatProc(this_00,(int)pvVar6,'\0');
+              /* ST_CALLSITE[0051E86C]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
               PutToSHlp(this_00);
               g_currentExceptionFrame = local_84.previous;
               return 0;
             }
+            /* ST_CALLSITE[0051E892]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
             PutToSHlp(this_00);
             g_currentExceptionFrame = local_84.previous;
             return 0;
@@ -257,6 +282,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               return 0;
             }
             DAT_0080734d = DAT_0080734d == '\0';
+            /* ST_CALLSITE[0051E951]: CALL 0x00402d38; direct=00402D38 HelpPanelTy::sub_00515180 */
             sub_00515180(this_00,'\b');
             g_currentExceptionFrame = local_84.previous;
             return 0;
@@ -358,6 +384,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             if (iVar9 <= this_00->field_0044) {
               this_00->field_0044 = iVar9;
               this_00->field_0172 = CASE_1;
+              /* ST_CALLSITE[0051DF53]: CALL 0x00404fd9; direct=00404FD9 HelpPanelTy::ShiftControls */
               ShiftControls(this_00,1);
             }
             Library::DKW::DDX::FUN_006b3640
@@ -385,6 +412,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           return 0;
         }
         if (SVar3 == MESS_ID_CREATE) {
+          /* ST_CALLSITE[0051DEAD]: CALL 0x00403111; direct=00403111 HelpPanelTy::InitHelpPanel */
           InitHelpPanel(this_00);
           g_currentExceptionFrame = local_84.previous;
           return 0;
@@ -393,6 +421,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           g_currentExceptionFrame = local_84.previous;
           return 0;
         }
+        /* ST_CALLSITE[0051DE92]: CALL 0x00401398; direct=00401398 HelpPanelTy::DoneHelpPanel */
         DoneHelpPanel(this_00);
         g_currentExceptionFrame = local_84.previous;
         return 0;
@@ -495,6 +524,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
       return 0;
     }
     if (SVar3 == MESS_SHARED_BFFF) {
+      /* ST_CALLSITE[0051EFF8]: CALL dword ptr [EDX + 0x18] */
       this_00->SetPanel('\0');
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_84.previous;
@@ -615,7 +645,7 @@ joined_r0x0051eec7:
             else {
               iVar9 = 0;
             }
-            if ((iVar9 == 0) || (bVar22 = *(byte *)(iVar9 + 0x11), bVar22 == 0)) goto LAB_0051ef61;
+            if ((iVar9 == 0) || (bVar22 = ((byte *)iVar9)[0x11], bVar22 == 0)) goto LAB_0051ef61;
             uVar18 = local_c;
             if (bVar22 < STField<byte>(local_8,0x11)) {
               do {
@@ -628,9 +658,9 @@ joined_r0x0051eec7:
                 else {
                   iVar9 = 0;
                 }
-                if ((iVar9 == 0) || (*(byte *)(iVar9 + 0x11) == 0)) goto joined_r0x0051eec7;
-              } while (*(byte *)(iVar9 + 0x11) != bVar22);
-              if (*(char *)(iVar9 + 0x13) == '\0') {
+                if ((iVar9 == 0) || (((byte *)iVar9)[0x11] == 0)) goto joined_r0x0051eec7;
+              } while (((byte *)iVar9)[0x11] != bVar22);
+              if (((char *)iVar9)[0x13] == '\0') {
                 local_14 = local_14 | 1 << (bVar22 & 0x1f);
               }
             }
@@ -695,45 +725,58 @@ LAB_0051ef61:
       default:
         goto switchD_0051ea9b_caseD_0;
       case '\x01':
+        /* ST_CALLSITE[0051EABA]: CALL 0x00404e85; direct=00404E85 HelpPanelTy::RCProc */
         RCProc(this_00,(int)pvVar6,uVar18,'\0');
         break;
       case '\x02':
+        /* ST_CALLSITE[0051EAEC]: CALL 0x00403747; direct=00403747 HelpPanelTy::ObjProc */
         ObjProc(this_00,(int)pvVar6,uVar18,'\0');
         break;
       case '\x03':
+        /* ST_CALLSITE[0051EADF]: CALL 0x00403878; direct=00403878 HelpPanelTy::SubProc */
         SubProc(this_00,(int)pvVar6,'\0');
         break;
       case '\x04':
+        /* ST_CALLSITE[0051EAF9]: CALL 0x004057e0; direct=004057E0 HelpPanelTy::ArmProc */
         ArmProc(this_00,(int)pvVar6,uVar18,'\0');
         break;
       case '\x05':
+        /* ST_CALLSITE[0051EAD3]: CALL 0x00402833; direct=00402833 HelpPanelTy::TechProc */
         TechProc(this_00,(uint)pvVar6,(byte)uVar18,'\0');
         break;
       case '\x06':
+        /* ST_CALLSITE[0051EAC6]: CALL 0x00405e61; direct=00405E61 HelpPanelTy::TTreeProc */
         TTreeProc(this_00,(uint)pvVar6,'\0');
         break;
       case '\a':
+        /* ST_CALLSITE[0051EAAD]: CALL 0x004011fe; direct=004011FE HelpPanelTy::MObjProc */
         MObjProc(this_00);
         break;
       case '\b':
+        /* ST_CALLSITE[0051EB1F]: CALL 0x004020b8; direct=004020B8 HelpPanelTy::TipProc */
         TipProc(this_00,pvVar6,uVar18,'\0');
         break;
       case '\n':
+        /* ST_CALLSITE[0051EAA4]: CALL 0x00405803; direct=00405803 HelpPanelTy::IndexBut */
         IndexBut(this_00);
         break;
       case '\v':
+        /* ST_CALLSITE[0051EB06]: CALL 0x00402cac; direct=00402CAC HelpPanelTy::SpecProc */
         SpecProc(this_00,(int)pvVar6,uVar18,'\0');
         break;
       case '\f':
+        /* ST_CALLSITE[0051EB12]: CALL 0x00403bc0; direct=00403BC0 HelpPanelTy::NatProc */
         NatProc(this_00,(int)pvVar6,'\0');
       }
       bVar24 = true;
 switchD_0051ea9b_caseD_0:
       if (bVar24) {
+        /* ST_CALLSITE[0051EB2F]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
         PutToSHlp(this_00);
         g_currentExceptionFrame = local_84.previous;
         return 0;
       }
+      /* ST_CALLSITE[0051EB55]: CALL 0x00405362; direct=00405362 HelpPanelTy::ChangeTree */
       ChangeTree(this_00,local_1c,(message->arg0).i32);
       g_currentExceptionFrame = local_84.previous;
       return 0;
@@ -758,10 +801,12 @@ switchD_0051ea9b_caseD_0:
       break;
     case MESS_SHARED_8166:
       pBVar13 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0220,0);
+      /* ST_CALLSITE[0051EBC2]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x1c3,0x2d,'\x06',(byte *)pBVar13);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pBVar13 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0220,
                              (*(int *)((message->arg2).u32 + 0x1c) != 1) + 1);
+      /* ST_CALLSITE[0051EBF7]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x1c3,
              (message->arg0).words.high + 0x2d,'\x06',(byte *)pBVar13);
       Library::DKW::DDX::FUN_006b3640
@@ -776,30 +821,37 @@ switchD_0051ea9b_caseD_0:
   else {
     switch(SVar3) {
     case MESS_SHARED_C09F:
+      /* ST_CALLSITE[0051F06C]: CALL 0x004029c8; direct=004029C8 HelpPanelTy::HomeBut */
       HomeBut(this_00);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_BEHPANELTY_C0A0:
+      /* ST_CALLSITE[0051F087]: CALL 0x00402e2d; direct=00402E2D HelpPanelTy::BackBut */
       BackBut(this_00);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_FSGSTY_C0A1:
+      /* ST_CALLSITE[0051F0A2]: CALL 0x00405803; direct=00405803 HelpPanelTy::IndexBut */
       IndexBut(this_00);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_SHARED_C0A2:
+      /* ST_CALLSITE[0051F0BD]: CALL 0x00403b43; direct=00403B43 HelpPanelTy::PrevBut */
       PrevBut(this_00);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_SHARED_C0A3:
+      /* ST_CALLSITE[0051F0D8]: CALL 0x00401a1e; direct=00401A1E HelpPanelTy::NextBut */
       NextBut(this_00);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_BLDLABPANELTY_C0A4:
+      /* ST_CALLSITE[0051F0F3]: CALL 0x00405c31; direct=00405C31 HelpPanelTy::BwdBut */
       BwdBut(this_00);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_FRMPANELTY_C0A5:
+      /* ST_CALLSITE[0051F10E]: CALL 0x004039cc; direct=004039CC HelpPanelTy::FwdBut */
       FwdBut(this_00);
       g_currentExceptionFrame = local_84.previous;
       return 0;
@@ -830,6 +882,7 @@ switchD_0051ea9b_caseD_0:
     pCVar17 = thunk_FUN_00571240(pcVar25,0);
     bVar22 = 1;
   }
+  /* ST_CALLSITE[0051F195]: CALL 0x00403495; direct=00403495 UPanelTy::PaintBut */
   UPanelTy::PaintBut((UPanelTy *)this_00,(AnonShape_0053D7A0_044B6141 *)message,bVar22,pCVar17,
                      pcVar26);
 cf_common_exit_0051F19A:
@@ -877,8 +930,10 @@ switchD_0051e4d9_caseD_6:
       return 0;
     }
   }
+  /* ST_CALLSITE[0051E5EF]: CALL 0x00402833; direct=00402833 HelpPanelTy::TechProc */
   TechProc(this_00,*(uint *)((int)local_10 + (uint)uVar21 * 0xd),
            *(byte *)((int)local_10 + (uint)uVar21 * 0xd + 4),'\0');
+  /* ST_CALLSITE[0051E5F6]: CALL 0x00405100; direct=00405100 HelpPanelTy::PutToSHlp */
   PutToSHlp(this_00);
   g_currentExceptionFrame = local_84.previous;
   return 0;
@@ -898,6 +953,7 @@ switchD_0051dfcc_caseD_7:
     this_00->field_0030 = (undefined2)UVar27;
     this_00->field_0032 = STPiece<2,2>(UVar27);
     if (g_cursorClass_00802A30 != nullptr) {
+      /* ST_CALLSITE[0051E1F4]: CALL dword ptr [EAX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
     }
@@ -911,6 +967,7 @@ switchD_0051dfcc_caseD_7:
   *(undefined2 *)&this_00->field_0x2c = 0;
   *(undefined2 *)&this_00->field_0x2e = 2;
   *(undefined4 **)&this_00->field_0030 = local_10;
+  /* ST_CALLSITE[0051E227]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
   g_currentExceptionFrame = local_84.previous;

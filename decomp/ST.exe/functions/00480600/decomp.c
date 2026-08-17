@@ -74,16 +74,21 @@ undefined4 __fastcall FUN_00480600(void *param_1)
     local_c = puVar5;
     uVar4 = thunk_FUN_004ac910(this,'\x0e');
     if (local_8 != uVar4) {
+      /* ST_CALLSITE[00480858]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase(this,'\x0e',local_8);
+      /* ST_CALLSITE[0048086A]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase(this,'\f',(int)puVar5 + STField<int>(param_1,0x822) + iVar3);
+      /* ST_CALLSITE[00480873]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       iVar3 = STT3DSprC::ShowCurFase(this,'\x0e');
       if (iVar3 != 0) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[0048088A]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       iVar3 = STT3DSprC::ShowCurFase(this,'\f');
       if (iVar3 != 0) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[004808A5]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
       iVar3 = STT3DSprC::SetCurShad(this,'\x0e',(uint)local_c);
       if (iVar3 != 0) {
         return 0xffffffff;
@@ -96,16 +101,21 @@ switchD_004806bc_caseD_a:
              0x18;
     uVar4 = thunk_FUN_004ac910(this,'\x0e');
     if (uVar10 != uVar4) {
+      /* ST_CALLSITE[00480F73]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase(this,'\x0e',uVar10);
+      /* ST_CALLSITE[00480F7D]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase(this,'\f',uVar10);
+      /* ST_CALLSITE[00480F86]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       iVar3 = STT3DSprC::ShowCurFase(this,'\x0e');
       if (iVar3 != 0) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[00480F9D]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       iVar3 = STT3DSprC::ShowCurFase(this,'\f');
       if (iVar3 != 0) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[00480FDB]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
       iVar3 = STT3DSprC::SetCurShad
                         (this,'\x0e',(0x18 - (int)STField<short>(param_1,0x6c) / 0xf) % 0x18);
       if (iVar3 != 0) {
@@ -125,16 +135,21 @@ switchD_004806bc_caseD_a:
     int scalar_local_c = scalar_puVar5;
     uVar4 = thunk_FUN_004ac910(this,'\x0e');
     if (local_8 != uVar4) {
+      /* ST_CALLSITE[00480750]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase(this,'\x0e',local_8);
+      /* ST_CALLSITE[00480762]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase(this,'\f',scalar_puVar5 + STField<int>(param_1,0x822) + iVar19);
+      /* ST_CALLSITE[0048076B]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       iVar3 = STT3DSprC::ShowCurFase(this,'\x0e');
       if (iVar3 != 0) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[00480782]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       iVar3 = STT3DSprC::ShowCurFase(this,'\f');
       if (iVar3 != 0) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[004807A5]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
       iVar3 = STT3DSprC::SetCurShad(this,'\x0e',STField<int>(param_1,0x822) + scalar_local_c);
       if (iVar3 != 0) {
         return 0xffffffff;
@@ -150,6 +165,7 @@ switchD_004806bc_caseD_a:
         if (iVar3 == -1) {
           STField<undefined4>(param_1,0x74a) = 0;
           if (g_sndUnderAttMeneg_00811798 != nullptr) {
+            /* ST_CALLSITE[0048091E]: CALL 0x00405056; direct=00405056 SndUnderAttMenegC::sub_00620E40 */
             SndUnderAttMenegC::sub_00620E40
                       (g_sndUnderAttMeneg_00811798,(int)STField<short>(param_1,0x47),
                        (int)STField<short>(param_1,0x49),(uint)DAT_0080874d);
@@ -160,8 +176,8 @@ switchD_004806bc_caseD_a:
             STField<int>(param_1,0x74a) = iVar3 + -1;
           }
           if (STField<int>(param_1,0x74a) == (int)PTR_00806724->entryCount / 2 + 1) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (*(code *)**(undefined4 **)this)();
+            /* ST_CALLSITE[0048097D]: CALL dword ptr [EDX] */
+            this->vfunc_00();
           }
           sVar13 = PTR_00806724->entryCount;
 LAB_00480bfa:
@@ -216,11 +232,13 @@ LAB_00480b80:
                 STField<int>(param_1,0x74a) = iVar3 + 1;
               }
               if (STField<int>(param_1,0x74a) == (int)PTR_00806724->entryCount / 2 + 1) {
+                /* ST_CALLSITE[00480BCC]: CALL 0x004021a3; direct=004021A3 STAllPlayersC::DelObjFromTmps */
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 STAllPlayersC::DelObjFromTmps
                           (g_allPlayers_007FA174,DAT_0080874d,STField<int>(param_1,0x20),bVar21,
                            CONCAT22((short)((uint)STField<int>(param_1,0x74a) >> 0x10),
                                     STField<undefined2>(param_1,0x32)));
+                /* ST_CALLSITE[00480BE4]: CALL 0x00403643; direct=00403643 STAllPlayersC::DelObjFromSaveTmps */
                 STAllPlayersC::DelObjFromSaveTmps
                           (g_allPlayers_007FA174,STField<int>(param_1,0x20),
                            STField<char>(param_1,0x24),STField<short>(param_1,0x32));
@@ -263,8 +281,8 @@ LAB_00480b30:
                 STField<int>(param_1,0x74a) = iVar3 + -1;
               }
               if (STField<int>(param_1,0x74a) == (int)PTR_00806724->entryCount / 2 + 1) {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                (*(code *)**(undefined4 **)this)();
+                /* ST_CALLSITE[00480B7C]: CALL dword ptr [EAX] */
+                this->vfunc_00();
               }
             }
             sVar13 = PTR_00806724->entryCount;
@@ -279,11 +297,12 @@ LAB_00480b30:
         STField<int>(param_1,0x74a) = STField<int>(param_1,0x74a) + -1;
       }
       if (STField<int>(param_1,0x74a) == -1) {
+        /* ST_CALLSITE[00480C2C]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
         STT3DSprC::sub_004ACE30(this,0,0);
       }
       if (STField<int>(param_1,0x74a) == (int)PTR_00806724->entryCount / 2 + 1) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (*(code *)**(undefined4 **)this)();
+        /* ST_CALLSITE[00480C4F]: CALL dword ptr [EAX] */
+        this->vfunc_00();
       }
       if (STField<int>(param_1,0x74a) <= (int)PTR_00806724->entryCount / 2) goto LAB_00480c7f;
 LAB_00480c6a:
@@ -293,6 +312,7 @@ LAB_00480c6a:
     }
 LAB_00480c7f:
     if (-1 < STField<int>(param_1,0x74a)) {
+      /* ST_CALLSITE[00480CA0]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
       STT3DSprC::sub_004ACE30
                 (this,PTR_00806724->entries[STField<int>(param_1,0x74a)],
                  (int)PTR_00806724->field_002C);
@@ -358,8 +378,11 @@ LAB_00480e0f:
         }
         if (!bVar11) {
           if (STField<int>(param_1,0x746) == 1) {
+            /* ST_CALLSITE[00480E30]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
             STT3DSprC::sub_004ACE60(this,'\x0e');
+            /* ST_CALLSITE[00480E39]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
             STT3DSprC::sub_004ACE60(this,'\r');
+            /* ST_CALLSITE[00480E42]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
             STT3DSprC::sub_004ACE60(this,'\f');
             thunk_FUN_004aceb0(this,'\x01');
             thunk_FUN_004aceb0(this,'\x02');
@@ -376,16 +399,27 @@ LAB_00480e0f:
       }
       local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar21));
       if (STField<int>(param_1,0x746) == 0) {
+        /* ST_CALLSITE[00480EA9]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         STT3DSprC::sub_004ACE60(this,'\x0e');
+        /* ST_CALLSITE[00480EB2]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         STT3DSprC::sub_004ACE60(this,'\r');
+        /* ST_CALLSITE[00480EBB]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         STT3DSprC::sub_004ACE60(this,'\f');
+        /* ST_CALLSITE[00480EC4]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         STT3DSprC::sub_004ACE60(this,'\x01');
+        /* ST_CALLSITE[00480ECD]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         STT3DSprC::sub_004ACE60(this,'\x02');
+        /* ST_CALLSITE[00480ED6]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         STT3DSprC::sub_004ACE60(this,'\0');
+        /* ST_CALLSITE[00480EDF]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         STT3DSprC::sub_004ACE60(this,'\x0f');
+        /* ST_CALLSITE[00480EE8]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         STT3DSprC::sub_004ACE60(this,'\v');
+        /* ST_CALLSITE[00480EF1]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         STT3DSprC::sub_004ACE60(this,'\n');
+        /* ST_CALLSITE[00480EFA]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         STT3DSprC::sub_004ACE60(this,'\t');
+        /* ST_CALLSITE[00480F03]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         STT3DSprC::sub_004ACE60(this,'\b');
         STField<undefined4>(param_1,0x746) = 1;
       }
@@ -450,6 +484,7 @@ LAB_00480f12:
         STPiece<0,2>(local_18) = (short)uVar7;
         iVar9 = (int)(short)local_18 + iVar3 + STField<short>(param_1,0x41);
       }
+      /* ST_CALLSITE[0048119D]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       TraksClassTy::TraksCreate
                 (g_traksClass_00802A7C,1,2,7,iVar9,iVar8 + ((uVar4 >> 0x10) % 7 - 3),iVar6,sVar13,
                  sVar14,sVar15,sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);

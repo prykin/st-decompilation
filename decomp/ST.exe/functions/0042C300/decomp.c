@@ -69,8 +69,10 @@ LAB_0042c3a0:
       do {
         DArrayGetElement(array,index,&param_1);
         if (_param_1 == (ushort)param_5) {
+          /* ST_CALLSITE[0042C3FF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           this = STAllPlayersC::GetObjPtr(in_ECX,(char)_param_4,(ushort)param_5,CASE_1);
+          /* ST_CALLSITE[0042C40A]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
           (*this->vtable[1].vfunc_14)(this,0);
           _param_1 = 0xffff;
           Library::DKW::TBL::DArrayPut(array,index,&param_1);

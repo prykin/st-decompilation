@@ -22,6 +22,7 @@ void FUN_004e70f0(int param_1,int param_2,int param_3,uint *param_4)
   if ((((-1 < param_1) && (param_1 < 8)) && (-1 < param_2)) && (param_2 < 3)) {
     *param_4 = 0xffffffff;
     *(undefined4 *)param_3 = 0xffffffff;
+    /* ST_CALLSITE[004E7135]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar4 = LookupRecordByte((char)param_1);
     auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
     iVar2 = param_2 + (bVar4 - 1) * 3;

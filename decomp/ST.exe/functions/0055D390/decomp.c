@@ -11,6 +11,7 @@
 void __thiscall FUN_0055d390(void *this,char *resourceString,char *param_2,ulong param_3)
 
 {
+  /* ST_CALLSITE[0055D3A4]: CALL dword ptr [0x0085c030] */
   CFsgsConnection::JoinChannel(this,resourceString,param_2,param_3);
   Library::MSVCRT::_strncpy((char *)((int)this + 0x648),resourceString,0x3f);
   STField<undefined1>(this,0x687) = 0;

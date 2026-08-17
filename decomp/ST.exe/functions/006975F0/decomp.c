@@ -86,9 +86,10 @@ void __thiscall CGenerate::sub_006975F0(CGenerate *this)
                 else {
                   iVar7 = 0;
                 }
-                if (*(char *)(iVar7 + 1) == '\0') {
+                if (((char *)iVar7)[1] == '\0') {
                   iVar3 = this->field_5833;
-                  *(undefined1 *)(iVar7 + 1) = 1;
+                  ((undefined1 *)iVar7)[1] = 1;
+                  /* ST_CALLSITE[006977D5]: CALL 0x00405731; direct=00405731 CGenerate::sub_006A0E30 */
                   sub_006A0E30(this,*(int *)(iVar7 + 2) % iVar3,*(int *)(iVar7 + 2) / iVar3,
                                (uint)(element_5853_2->field_000D != 1),-1);
                   local_8 = local_8 + -1;

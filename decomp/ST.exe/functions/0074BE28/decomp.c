@@ -5,14 +5,18 @@ void __fastcall FUN_0074be28(AnonShape_0074BE28_A72B0079 *param_1)
 
 {
   if (param_1->field_008C != nullptr) {
+    /* ST_CALLSITE[0074BE3A]: CALL dword ptr [EAX + 0xc] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1->field_008C + 0xc))(1);
   }
   if (param_1->field_0090 != nullptr) {
+    /* ST_CALLSITE[0074BE4B]: CALL dword ptr [EAX + 0xc] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1->field_0090 + 0xc))(1);
   }
+  /* ST_CALLSITE[0074BE58]: CALL EDI */
   DeleteCriticalSection((LPCRITICAL_SECTION)&param_1->field_0x74);
+  /* ST_CALLSITE[0074BE5E]: CALL EDI */
   DeleteCriticalSection((LPCRITICAL_SECTION)&param_1->field_0x5c);
   FUN_00746f77((AnonShape_00746F77_1F40C93D *)param_1);
   return;

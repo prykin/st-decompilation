@@ -9,7 +9,9 @@ void FUN_0074d6de(undefined4 param_1,LPWSTR lpWideCharStr)
 {
   CHAR local_24 [32];
 
+  /* ST_CALLSITE[0074D6F0]: CALL dword ptr [0x0085bde8] */
   wsprintfA(local_24,"%d",param_1);
+  /* ST_CALLSITE[0074D708]: CALL dword ptr [0x0085bb68] */
   MultiByteToWideChar(0,0,local_24,-1,lpWideCharStr,0x20);
   return;
 }

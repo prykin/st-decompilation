@@ -39,8 +39,10 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
   param_1->field_0DEE = 0;
   if (param_1->field_0785 != '\0') {
     local_10 = param_1;
+    /* ST_CALLSITE[0057255D]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)local_15c,"%s%s%s",&param_1->field_0x28,PTR_s_SAVEGAME__0079b0cc,
               local_8);
+    /* ST_CALLSITE[00572574]: CALL dword ptr [0x0085bcec] */
     hFindFile = FindFirstFileA((LPCSTR)local_15c,&local_29c);
     if (hFindFile != (HANDLE)0xffffffff) {
       do {
@@ -48,13 +50,16 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
           local_c = 1;
           break;
         }
+        /* ST_CALLSITE[00572599]: CALL dword ptr [0x0085bcf0] */
         BVar3 = FindNextFileA(hFindFile,&local_29c);
       } while (BVar3 != 0);
     }
     if (hFindFile != (HANDLE)0xffffffff) {
+      /* ST_CALLSITE[005725B2]: CALL dword ptr [0x0085bcf4] */
       FindClose(hFindFile);
     }
     if (local_c != 0) {
+      /* ST_CALLSITE[005725E2]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)local_15c,"%s%s%s\\%s",&param_1->field_0x28,PTR_s_SAVEGAME__0079b0cc,
                 local_8,PTR_s_PL_LOG_0079b0d0);
       local_58.previous = g_currentExceptionFrame;

@@ -22,6 +22,7 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
   uint index;
 
   piVar3 = param_2;
+  /* ST_CALLSITE[004409A0]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   param_2 = (int *)GetObjPtr(in_ECX,(char)param_2,(ushort)param_3,CASE_1);
   if ((STGameObjC *)param_2 == nullptr) {
@@ -34,6 +35,7 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
               (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x21ee);
   }
+  /* ST_CALLSITE[004409F1]: CALL dword ptr [EDX + 0x2c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar5 = (**(code **)(*param_2 + 0x2c))();
   if ((((iVar5 == 0x33) &&
@@ -42,9 +44,11 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
     do {
       DArrayGetElement(array,index,&param_2);
       if (param_2 != nullptr) {
+        /* ST_CALLSITE[00440A35]: CALL dword ptr [EDX + 0xc] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (**(code **)(*param_2 + 0xc))();
         if (iVar5 == 4) {
+          /* ST_CALLSITE[00440A4A]: CALL dword ptr [EAX + 0x14] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*param_2 + 0x14))(param_1,param_3);
         }

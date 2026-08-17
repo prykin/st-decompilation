@@ -127,6 +127,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           local_44->field_0030 = (undefined2)iVar14;
           local_44->field_0032 = STPiece<2,2>(iVar14);
           if (g_cursorClass_00802A30 != nullptr) {
+            /* ST_CALLSITE[0051B6AA]: CALL dword ptr [EDX] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_44->field_0x18);
           }
@@ -134,11 +135,13 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       }
       GVar19 = (Global_sub_005259B0_param_1Enum)param_1;
       UVar5 = thunk_FUN_00524fe0(GVar19);
+      /* ST_CALLSITE[0051B6BE]: CALL 0x00403ef9; direct=00403EF9 HelpPanelTy::DrawTitle */
       DrawTitle(this_00,0x55fd,param_2,UVar5);
       local_EAX_296 = thunk_FUN_005259b0(GVar19,0,'\x01');
       pBVar5_mg0 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0244,
                                 local_EAX_296);
       if (pBVar5_mg0 != nullptr) {
+        /* ST_CALLSITE[0051B6FF]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x35,
                (0x1e - (pBVar5_mg0->bmiHeader).biHeight) / 2 + 0x2a,'\x06',(byte *)pBVar5_mg0);
       }
@@ -160,6 +163,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                 pcVar6_mg1 = LoadResourceString(0x565c,g_hINSTANCE_00807618);
                 uVar15 = 2;
                 pcVar7_mg0 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
+                /* ST_CALLSITE[0051B911]: CALL EDI */
                 wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d &%d%s &%d(%s)",2,local_c,
                           (DAT_0080874e != '\x03') - 1 & 5,pcVar7_mg0,uVar15,pcVar6_mg1);
               }
@@ -168,6 +172,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                 uVar15 = 2;
                 iVar16 = iVar14;
                 pcVar7_mg1 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
+                /* ST_CALLSITE[0051B8C4]: CALL EDI */
                 wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d &%d%s &%d(%d %s)",2,local_c,
                           (DAT_0080874e != '\x03') - 1 & 5,pcVar7_mg1,uVar15,iVar16,pcVar6_mg2);
               }
@@ -176,6 +181,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
               pcVar6_mg3 = LoadResourceString(0x565c,g_hINSTANCE_00807618);
               uVar15 = 2;
               pcVar7_mg2 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
+              /* ST_CALLSITE[0051B86C]: CALL EDI */
               wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d/%d*%d &%d%s &%d(%s)",2,local_c,local_14
                         ,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar7_mg2,uVar15,pcVar6_mg3);
             }
@@ -184,6 +190,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
               uVar15 = 2;
               iVar16 = iVar14;
               pcVar7_mg3 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
+              /* ST_CALLSITE[0051B818]: CALL EDI */
               wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d/%d*%d &%d%s &%d(%d %s)",2,local_c,
                         local_14,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar7_mg3,uVar15,iVar16,
                         pcVar6_mg4);
@@ -218,6 +225,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         uVar6 = thunk_FUN_005276e0(*(Global_sub_005276E0_param_1Enum *)
                                     ((int)&DAT_007bf67c + (int)piVar10),0);
         pBVar5_mg1 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0230,uVar6);
+        /* ST_CALLSITE[0051BA47]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
                (byte *)pBVar5_mg1);
         local_60 = 0x96;
@@ -239,6 +247,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         pcVar6_mg7 = LoadResourceString(0x55f7,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,pcVar6_mg7,iVar16,iVar18,uVar20);
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
+        /* ST_CALLSITE[0051BB2B]: CALL EDI */
         wsprintfA((LPSTR)&DAT_0080f33a,"%4d",iVar14);
         ccFntTy::WrStr(this_00->field_01E8,(char *)&DAT_0080f33a,1,-1,
                        (DAT_0080874e != '\x03') - 1 & 4);
@@ -256,6 +265,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       }
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       pcVar6_mg8 = LoadResourceString(0x5658,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0051BBFF]: CALL EDI */
       wsprintfA((LPSTR)&DAT_0080f33a,"%s:",pcVar6_mg8);
       ccFntTy::WrStr(this_00->field_01E0,(char *)&DAT_0080f33a,-3,-1,3);
       iVar14 = *(int *)(&DAT_007d1fdc + param_1 * 4);
@@ -368,9 +378,11 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         local_EAX_2416 = thunk_FUN_00526ba0(local_c,cVar13);
         pBVar5_mg4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0240,
                                   local_EAX_2416);
+        /* ST_CALLSITE[0051BF35]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
                (byte *)pBVar5_mg4);
         pBVar4 = local_38;
+        /* ST_CALLSITE[0051BF53]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
                (byte *)local_38);
         local_34 = 0x94;
@@ -425,9 +437,11 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           local_EAX_2872 = thunk_FUN_00526ba0(local_c,cVar13);
           pBVar5_mg6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_023C,
                                     local_EAX_2872);
+          /* ST_CALLSITE[0051C0FD]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
                  (byte *)pBVar5_mg6);
           pBVar4 = local_38;
+          /* ST_CALLSITE[0051C11B]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
                  (byte *)local_38);
           local_34 = 0x94;
@@ -479,9 +493,11 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           local_EAX_3288 = thunk_FUN_00526ba0(local_c,cVar13);
           pBVar5_mg8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_023C,
                                     local_EAX_3288);
+          /* ST_CALLSITE[0051C29D]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
                  (byte *)pBVar5_mg8);
           pBVar4 = local_38;
+          /* ST_CALLSITE[0051C2BB]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
                  (byte *)local_38);
           local_34 = 0x94;
@@ -536,9 +552,11 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                 local_EAX_3708 = thunk_FUN_00526ba0(local_c,cVar13);
                 pBVar5_mgA = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0240,
                                           local_EAX_3708);
+                /* ST_CALLSITE[0051C441]: CALL 0x00403229; direct=00403229 DibPut */
                 DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
                        (byte *)pBVar5_mgA);
                 pBVar4 = local_38;
+                /* ST_CALLSITE[0051C45F]: CALL 0x00403229; direct=00403229 DibPut */
                 DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
                        (byte *)local_38);
                 local_34 = 0x94;
@@ -564,7 +582,9 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
               }
               local_14 = piVar10;
               UVar5 = thunk_FUN_00525ca0(GVar19);
+              /* ST_CALLSITE[0051C4F6]: CALL 0x00402dab; direct=00402DAB HelpPanelTy::DrawDescription */
               DrawDescription(this_00,(int *)&local_8,UVar5);
+              /* ST_CALLSITE[0051C508]: CALL 0x0040506f; direct=0040506F HelpPanelTy::AddLinks */
               AddLinks(this_00,(int *)&local_8,'\x04',param_1,param_2);
               g_currentExceptionFrame = local_a4.previous;
               return;

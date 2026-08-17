@@ -13,6 +13,7 @@
 void __fastcall TLOEmbryoTy::sub_00419CF0(int *param_1,undefined4 param_2,uint param_3)
 
 {
+  /* ST_CALLSITE[00419D0B]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject */
   STAllPlayersC::RegisterObject
             (g_allPlayers_007FA174,(char)param_1[9],
              STReplaceLowWord((uint32_t)(param_2), (uint16_t)((short)param_1[0xc])),param_3,param_1,1,0);

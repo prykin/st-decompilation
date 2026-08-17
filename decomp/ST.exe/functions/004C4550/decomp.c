@@ -98,6 +98,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         local_94 = *(undefined2 *)(&this->field_02A9 + (int)param_1 * 0x20);
         local_98 = (undefined2)local_10;
         local_92 = *(undefined2 *)(&this->field_0x2ad + iVar9);
+        /* ST_CALLSITE[004C4C9F]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
         STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x168,0,0,local_b0,0);
         return 0;
       }
@@ -181,6 +182,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                                    (&this->field_028D)[(int)piVar2 * 0x20],this->field_0024,
                                    this->field_0018,this->field_0032);
                 if (this->field_05AC == CASE_47) {
+                  /* ST_CALLSITE[004C4F54]: CALL dword ptr [EAX + 0x90] */
                   this->vfunc_90(4,0x315);
                 }
               }
@@ -203,6 +205,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                 else {
                   iVar3 = 0x28;
                 }
+                /* ST_CALLSITE[004C4FDA]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
                 STPlaySystemC::CreateGameObject(g_playSystem_00802A38,iVar3,0,0,local_84,0);
               }
               *(int *)(&this->field_0x2c5 + iVar9) = *(int *)(&this->field_0x2c5 + iVar9) + -1;
@@ -231,6 +234,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar11 = (int)param_1 * 0x80;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)(&this->field_0x2a5 + iVar9);
+      /* ST_CALLSITE[004C4A64]: CALL 0x00403909; direct=00403909 STAllPlayersC::sub_004DB160 */
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
                  (int *)(&this->field_0x2a5 + iVar9),&this->field_02A9 + iVar3,
@@ -238,17 +242,21 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       thunk_FUN_00584a30(this->field_04E0[0],this->field_04E0[1],this->field_04E0[2],
                          *param_1 * 0xc9 + 100,(&this->field_02A9)[iVar3] * 0xc9 + 100,
                          this->field_0024,local_1c,this->field_0018,this->field_0032);
+      /* ST_CALLSITE[004C4AC2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1394 = LookupRecordByte(DAT_0080874d);
       local_EAX_1394 = (int)(byte)local_EAX_1394;
       if (local_EAX_1394 == 1) {
+        /* ST_CALLSITE[004C4B1C]: CALL dword ptr [EDX + 0x90] */
         this->vfunc_90(6,0x9e);
         return 0;
       }
       if (local_EAX_1394 == 2) {
+        /* ST_CALLSITE[004C4B00]: CALL dword ptr [EAX + 0x90] */
         this->vfunc_90(6,0x9f);
         return 0;
       }
       if (local_EAX_1394 == 3) {
+        /* ST_CALLSITE[004C4AE4]: CALL dword ptr [EDX + 0x90] */
         this->vfunc_90(6,0xa0);
         return 0;
       }
@@ -258,6 +266,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar11 = (int)param_1 * 0x80;
       iVar9 = (int)param_1 * 0x80;
       param_1 = (int *)(&this->field_0x2a5 + iVar11);
+      /* ST_CALLSITE[004C4871]: CALL 0x00403909; direct=00403909 STAllPlayersC::sub_004DB160 */
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
                  (int *)(&this->field_0x2a5 + iVar11),&this->field_02A9 + iVar3,
@@ -266,17 +275,21 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                          (ushort)this->field_04E0[0],(ushort)this->field_04E0[1],
                          (ushort)this->field_04E0[2],(short)*param_1 * 0xc9 + 100,
                          (short)(&this->field_02A9)[iVar3] * 0xc9 + 100,(ushort)local_1c);
+      /* ST_CALLSITE[004C48D5]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       uVar4 = LookupRecordByte(DAT_0080874d);
       uVar4 = (int)(byte)uVar4;
       if (uVar4 == 1) {
+        /* ST_CALLSITE[004C492F]: CALL dword ptr [EDX + 0x90] */
         this->vfunc_90(6,0x98);
         return 0;
       }
       if (uVar4 == 2) {
+        /* ST_CALLSITE[004C4913]: CALL dword ptr [EAX + 0x90] */
         this->vfunc_90(6,0x99);
         return 0;
       }
       if (uVar4 == 3) {
+        /* ST_CALLSITE[004C48F7]: CALL dword ptr [EDX + 0x90] */
         this->vfunc_90(6,0x9a);
         return 0;
       }
@@ -300,6 +313,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar9 = (int)param_1 * 0x80;
       iVar11 = (int)param_1 * 0x80;
       param_1 = (int *)(&this->field_0x2a5 + iVar9);
+      /* ST_CALLSITE[004C496B]: CALL 0x00403909; direct=00403909 STAllPlayersC::sub_004DB160 */
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
                  (int *)(&this->field_0x2a5 + iVar9),&this->field_02A9 + iVar3,
@@ -308,17 +322,21 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                          (ushort)this->field_04E0[0],(ushort)this->field_04E0[1],
                          (ushort)this->field_04E0[2],(short)*param_1 * 0xc9 + 100,
                          (short)(&this->field_02A9)[iVar3] * 0xc9 + 100,(ushort)local_1c);
+      /* ST_CALLSITE[004C49CE]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1150 = LookupRecordByte(DAT_0080874d);
       local_EAX_1150 = (int)(byte)local_EAX_1150;
       if (local_EAX_1150 == 1) {
+        /* ST_CALLSITE[004C4A28]: CALL dword ptr [EDX + 0x90] */
         this->vfunc_90(6,0x9b);
         return 0;
       }
       if (local_EAX_1150 == 2) {
+        /* ST_CALLSITE[004C4A0C]: CALL dword ptr [EAX + 0x90] */
         this->vfunc_90(6,0x9c);
         return 0;
       }
       if (local_EAX_1150 == 3) {
+        /* ST_CALLSITE[004C49F0]: CALL dword ptr [EDX + 0x90] */
         this->vfunc_90(6,0x9d);
         return 0;
       }
@@ -363,6 +381,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
            (((g_worldGrid.sizeY <= sVar5 || (sVar7 = (short)local_14, sVar7 < 0)) ||
             ((g_worldGrid.sizeZ <= sVar7 ||
              (STGridAt3D(g_worldGrid, sVar6, sVar5, sVar7).objects[1] == nullptr)))))) {
+          /* ST_CALLSITE[004C4728]: CALL 0x00404bf6; direct=00404BF6 STJellyManC::Error */
           STJellyManC::Error(local_24,local_18,param_1,local_10);
           *(undefined4 *)(&this->field_0x29d + (int)piVar2 * 0x80) = 1;
           *(int *)(&this->field_0x2c5 + (int)piVar2 * 0x80) =

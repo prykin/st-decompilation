@@ -52,6 +52,7 @@ FUN_004e99e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
     local_60 = 1000;
     local_4c = 0x6c;
     local_5c = local_70;
+    /* ST_CALLSITE[004E9A9C]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
     STPlaySystemC::CreateGameObject
               (g_playSystem_00802A38,0x3e9,0,(int *)((int)this + 0x61b),&local_74,0);
     uVar1 = *(undefined4 *)(STField<int>(this,0x61b) + 0x18);

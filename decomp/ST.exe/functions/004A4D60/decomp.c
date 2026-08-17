@@ -78,6 +78,7 @@ LAB_004a4e27:
       } while ((int)index < iVar2);
     }
   }
+  /* ST_CALLSITE[004A4E44]: CALL 0x00403251; direct=00403251 STGroupBoatC::DistributeDock */
   DistributeDock(this_00,0,(DArrayTy *)this_00->field_029F,(DArrayTy *)this_00->field_0029);
   g_currentExceptionFrame = local_50.previous;
   return;

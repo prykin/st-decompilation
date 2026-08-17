@@ -11,8 +11,10 @@ AnonShape_00639480_B53D0B0F * __fastcall FUN_00639480(AnonShape_00639480_B53D0B0
 {
   int iVar1;
 
+  /* ST_CALLSITE[00639484]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)param_1);
-  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&param_1->field_01D5);
+  /* ST_CALLSITE[00639491]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  STT3DSprC::STT3DSprC((STT3DSprC *)&param_1->field_01D5);
   param_1->field_01D5 = &VTable_0079D338;
   *(VTable_0079D1D8 **)param_1 = &VTable_0079D1D8;
   memset(&param_1->field_0x231, 0, 0x3e); /* compiler bulk-zero initialization */

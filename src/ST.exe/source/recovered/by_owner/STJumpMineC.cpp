@@ -50,6 +50,7 @@ byte __thiscall st::fn_006191A0(STJumpMineC *this,uint param_1,int param_2)
     if (((param_1 == 0) || (g_visibleClass_00802A88 == nullptr)) ||
        ((iVar2 = (int)this->field_00CD, DAT_0080874d == -1 ||
         (g_visibleClass_00802A88->field_00F8 == 0)))) goto cf_common_exit_00619287;
+    /* ST_CALLSITE[00619238]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     st::fn_00403F53
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,(int)this->field_00C9,
                (int)this->field_00CB,&param_2,(int *)&local_8);
@@ -183,6 +184,7 @@ void __thiscall st::fn_00619A20(STJumpMineC *this)
   int local_8;
 
   if ((int)this->field_0097 < 0) {
+    /* ST_CALLSITE[00619A3C]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
     st::fn_004056EB(this,this->field_008F);
   }
   pVVar1 = g_visibleClass_00802A88;
@@ -195,6 +197,7 @@ void __thiscall st::fn_00619A20(STJumpMineC *this)
   else {
     iVar2 = (int)this->field_00CD;
     if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+          /* ST_CALLSITE[00619A8A]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (st::fn_00403F53
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                       (int)this->field_00C9,(int)this->field_00CB,&local_8,&local_c), iVar2 < 0)) ||
@@ -282,6 +285,7 @@ int __thiscall st::fn_00619C70(STJumpMineC *this)
     iVar13 = (this->field_0117 * iVar13 * iVar13) / 10000 + this->field_0113 * iVar13 +
              this->field_00D7;
     iVar14 = STBiasedDiv16(iVar13, 200); /* exact signed 16-bit grid-index division */
+    /* ST_CALLSITE[00619D2C]: CALL 0x004046ab; direct=004046AB STJumpMineC::sub_0061B340 */
     uVar2 = st::fn_004046AB(this,this->field_00C9,this->field_00CB,iVar14,this->field_009F,
                          this->field_00A3,iVar13,&local_c);
     switch(uVar2) {
@@ -320,7 +324,7 @@ int __thiscall st::fn_00619C70(STJumpMineC *this)
       this->field_00D7 = local_c;
       this->field_00E3 = this->field_00A7;
       this->field_00A7 = local_c;
-      if (((void *)this->field_007D != nullptr) &&
+      if (((void *)this->field_007D != 0) &&
          (iVar13 = st::fn_00402E19((void *)this->field_007D,this->field_009F,this->field_00A3,
                                       local_c,(undefined4 *)&this->field_0x11f), iVar13 != 0)) {
         if (this->field_014B != '\0') {
@@ -349,6 +353,7 @@ int __thiscall st::fn_00619C70(STJumpMineC *this)
       return 1;
     case 3:
       this->field_00A7 = local_c;
+      /* ST_CALLSITE[00619FEB]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
       iVar13 = st::fn_004056EB(this,2);
       if (iVar13 != 0) {
         this->field_0093 = CASE_5;
@@ -379,6 +384,7 @@ LAB_00619e5f:
     iVar13 = (this->field_0107 * iVar13) / 10000 + this->field_00D3;
     local_28 = STBiasedDiv16(iVar14, 0xc9); /* exact signed 16-bit grid-index division */
     local_24 = STBiasedDiv16(iVar13, 0xc9); /* exact signed 16-bit grid-index division */
+    /* ST_CALLSITE[0061A1A9]: CALL 0x004046ab; direct=004046AB STJumpMineC::sub_0061B340 */
     iVar3 = st::fn_004046AB(this,(short)local_28,(short)local_24,local_20,iVar14,iVar13,local_1c,
                          &local_c);
     switch(iVar3) {
@@ -401,13 +407,14 @@ LAB_00619e5f:
       this->field_00CF = iVar14;
       this->field_00D3 = iVar13;
       this->field_00A7 = local_c;
-      iVar13 = st::fn_0040169A(this,st::pointer_boundary_cast<undefined4 *>(&local_30));
+      iVar13 = st::fn_0040169A(this,(undefined4 *)&local_30);
       if ((iVar13 < 1) || (299 < this->field_0141)) {
         if (iVar13 == 0) {
           iVar13 = st::fn_00403E6D(this,CASE_1,this->field_009F,this->field_00A3,this->field_00A7
                                      );
           if (iVar13 == 0) {
 LAB_0061a4f4:
+            /* ST_CALLSITE[0061A4F6]: CALL 0x004023ec; direct=004023EC STJumpMineC::sub_006192E0 */
             st::fn_004023EC(this);
           }
           else {
@@ -450,7 +457,7 @@ LAB_0061a4fd:
         this->field_00CF = iVar14;
         this->field_00D3 = iVar13;
         this->field_00A7 = local_c;
-        iVar13 = st::fn_0040169A(this,st::pointer_boundary_cast<undefined4 *>(&local_30));
+        iVar13 = st::fn_0040169A(this,(undefined4 *)&local_30);
         if ((iVar13 < 1) || (299 < this->field_0141)) {
           if (iVar13 != 0) goto LAB_0061a4fd;
           iVar13 = st::fn_00403E6D(this,CASE_1,this->field_009F,this->field_00A3,this->field_00A7
@@ -560,6 +567,7 @@ LAB_0061a4fd:
       }
       this->field_00CD = sVar8;
       if (this->field_0093 == CASE_3) {
+        /* ST_CALLSITE[0061A904]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
         st::fn_00401433
                   (g_traksClass_00802A7C,1,1,0,iVar14,local_8,uVar12,0,0,0,0,0,0,-1,0,0);
       }
@@ -644,6 +652,7 @@ LAB_0061a4fd:
       sVar10 = sVar9;
     }
     local_10 = (int)sVar10;
+    /* ST_CALLSITE[0061AA4B]: CALL 0x004046ab; direct=004046AB STJumpMineC::sub_0061B340 */
     local_28 = st::fn_004046AB(this,sVar9,sVar8,local_30,iVar13,local_8,local_1c,&local_c);
     switch(local_28) {
     case 0:
@@ -682,6 +691,7 @@ LAB_0061a4fd:
       this->field_00A7 = local_c;
       this->field_009F = iVar13;
       this->field_00A3 = local_8;
+      /* ST_CALLSITE[0061AB87]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
       iVar13 = st::fn_004056EB(this,2);
       this->field_0093 = CASE_6 - (iVar13 != 0);
       break;
@@ -703,7 +713,7 @@ cf_common_exit_0061A55D:
     }
     break;
   case CASE_5:
-    if ((this->field_014B != '\0') && ((void *)this->field_007D != nullptr)) {
+    if ((this->field_014B != '\0') && ((void *)this->field_007D != 0)) {
       st::fn_00405C59((void *)this->field_007D,this->field_0145,0);
       this->field_014B = 0;
     }
@@ -758,6 +768,7 @@ LAB_0061acc2:
     if (g_visibleClass_00802A88 != nullptr) {
       iVar13 = (int)this->field_00CD;
       if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+            /* ST_CALLSITE[0061AD9B]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             (st::fn_00403F53
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                         (int)this->field_00C9,(int)this->field_00CB,&local_28,&local_24), iVar13 < 0
@@ -784,6 +795,7 @@ LAB_0061acc2:
   default:
     goto switchD_00619c92_default;
   }
+  /* ST_CALLSITE[0061AE41]: CALL 0x004023ec; direct=004023EC STJumpMineC::sub_006192E0 */
   st::fn_004023EC(this);
 switchD_00619c92_default:
   return local_2c;
@@ -812,6 +824,8 @@ st::fn_0061B340
           int param_6,int *param_7)
 
 {
+  uint32_t _local_c;
+
   int _param_1 = static_cast<int>(param_1);
   int _param_2 = static_cast<int>(param_2);
 
@@ -919,7 +933,9 @@ st::fn_0061B340
              ((g_playSystem_00802A38 == nullptr ||
               (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)))) &&
             (pSVar4->value_20 == 1000)) &&
+           /* ST_CALLSITE[0061B555]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
            ((iVar7 = pSVar4->vfunc_F0(), iVar7 != 0 &&
+            /* ST_CALLSITE[0061B567]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
             (iVar7 = pSVar4->vfunc_F8(), iVar7 != 0)))) {
           bVar1 = *(byte *)&pSVar4[1].vtable;
           bVar2 = *(byte *)&this->field_0051;
@@ -1033,10 +1049,12 @@ LAB_0061b993:
                  g_bulkInitializedRecords_008087C7[bVar1].field_0023;
       }
       if (bVar10) {
+        /* ST_CALLSITE[0061BAC0]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
         iVar7 = pSVar4->vfunc_F0();
         if (iVar7 == 0) {
           return local_8;
         }
+        /* ST_CALLSITE[0061BAD2]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
         iVar7 = pSVar4->vfunc_F8();
         if (iVar7 == 0) {
           return local_8;

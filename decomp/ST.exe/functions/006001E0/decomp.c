@@ -27,6 +27,7 @@ uint __thiscall FUN_006001e0(void *this,int param_1)
   if (((g_playSystem_00802A38->field_00E4 & 1) == 0) &&
      (iVar3 = STField<int>(this,0x233) + iVar5,
      0x31 < (int)*(short *)(iVar3 + 4) - (int)*(short *)(iVar3 + 10))) {
+    /* ST_CALLSITE[00600278]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
     TraksClassTy::TraksCreate
               (g_traksClass_00802A7C,1,1,0,(int)*(short *)(iVar3 + 0x12),
                (int)*(short *)(iVar3 + 0x14),(int)*(short *)(iVar3 + 0x16),0,0,0,0,0,0,-1,0,0);
@@ -76,6 +77,7 @@ LAB_0060033c:
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((STField<int *>(this,0x1e9) != nullptr) &&
+         /* ST_CALLSITE[00600435]: CALL dword ptr [EAX + 0xe0] */
          (iVar3 = (**(code **)(*STField<int *>(this,0x1e9) + 0xe0))
                             (STField<undefined4>(this,0x1ed),(int)&param_1 + 2,&local_6,&local_8,
                              &local_18), iVar3 == 0)) {

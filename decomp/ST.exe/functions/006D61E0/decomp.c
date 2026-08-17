@@ -13,11 +13,13 @@ void FUN_006d61e0(int *param_1)
   iVar2 = *(int *)(iVar1 + 0x68) + -1;
   *(int *)(iVar1 + 0x68) = iVar2;
   if ((iVar2 < 1) && (*(int *)(iVar1 + 0x6c) != 0)) {
+    /* ST_CALLSITE[006D6207]: CALL dword ptr [ECX + 0x80] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(**(int **)(iVar1 + 100) + 0x80))(*(int **)(iVar1 + 100),0);
     if ((*(int *)(*(int *)(iVar1 + 0x5c) + 0x310) != 0) &&
        (iVar2 = *(int *)(*(int *)(*(int *)(iVar1 + 0x5c) + 0x288) + 0x28),
        (*(uint *)(iVar2 + 8) & 0x4000000) != 0)) {
+      /* ST_CALLSITE[006D6232]: CALL dword ptr [0x0085bb90] */
       LeaveCriticalSection((LPCRITICAL_SECTION)(iVar2 + 0x4f0));
     }
     *(undefined4 *)(iVar1 + 0x6c) = 0;

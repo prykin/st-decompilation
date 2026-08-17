@@ -5,6 +5,7 @@ undefined4 __fastcall FUN_004e8f90(AnonShape_004E8F90_6386CD4A *param_1)
 
 {
   if ((param_1->field_04D8 != 0xffff) && (param_1->field_04D8 = 0xffff, param_1->field_04E0 != 0)) {
+    /* ST_CALLSITE[004E8FCB]: CALL 0x00401dd4; direct=00401DD4 TLOFakeTy::sub_004D0A80 */
     TLOFakeTy::sub_004D0A80
               (g_tLOFake_00800BCC,param_1->field_04E4,param_1->field_04E8,param_1->field_04EC);
     param_1->field_04E0 = 0;

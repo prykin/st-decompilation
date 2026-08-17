@@ -36,6 +36,7 @@ int __cdecl _GetEmbrTobjGrpExch(uint param_1,int param_2)
       this = thunk_FUN_0042b760((char)param_1,0);
     }
     if (this != nullptr) {
+      /* ST_CALLSITE[006762B7]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
       local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this);
     }
     array = local_c;
@@ -48,8 +49,10 @@ int __cdecl _GetEmbrTobjGrpExch(uint param_1,int param_2)
       do {
         puVar2 = DArrayAt<ushort>(array, uVar4);
 LAB_006762e0:
+        /* ST_CALLSITE[006762F0]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,*puVar2,CASE_1);
         if (this_00 != nullptr) {
+          /* ST_CALLSITE[006762FF]: CALL dword ptr [EAX + 0x2c] */
           iVar3 = this_00->vfunc_2C();
           if (iVar3 == 0x78) {
             iVar3 = this_00->field_0259;

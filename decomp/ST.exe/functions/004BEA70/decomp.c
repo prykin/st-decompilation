@@ -176,8 +176,9 @@ bool __thiscall TLOBaseTy::FUN_004bea70(TLOBaseTy *this,int *param_1)
   *param_1 = this->field_05AC;
   STField<byte>(param_1,5) =
        ((this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D) - 1U & 0xfe) + 3;
+  /* ST_CALLSITE[004BEAAF]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar5 = LookupRecordByte(*(char *)&this->field_023D);
-  *(byte *)(param_1 + 1) = bVar5;
+  ((byte *)param_1)[1] = bVar5;
   if (((this->field_01D1 & 4) == 0) && (this->field_0420 == 0)) {
     uVar7 = 1;
   }
@@ -185,7 +186,7 @@ bool __thiscall TLOBaseTy::FUN_004bea70(TLOBaseTy *this,int *param_1)
     uVar7 = 0;
   }
   STField<undefined1>(param_1,7) = uVar7;
-  *(undefined1 *)(param_1 + 2) = *(undefined1 *)&this->field_021D;
+  ((undefined1 *)param_1)[2] = *(undefined1 *)&this->field_021D;
   switch(this->field_0245) {
   case CASE_0:
   case CASE_1:
@@ -206,6 +207,7 @@ bool __thiscall TLOBaseTy::FUN_004bea70(TLOBaseTy *this,int *param_1)
   iVar21 = 0;
   iVar20 = thunk_FUN_004e8030(this->field_05AC);
   if (iVar20 == 3) {
+    /* ST_CALLSITE[004BEB41]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar5 = LookupRecordByte(*(char *)&this->field_0024);
     if (bVar5 != 3) {
 LAB_004beb5f:
@@ -214,6 +216,7 @@ LAB_004beb5f:
     }
 LAB_004beb6d:
     STField<undefined1>(param_1,9) = 0x33;
+    /* ST_CALLSITE[004BEB7D]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
     if (((this->field_0245 == CASE_0) && (local_EAX_269 = sub_004D6DF0(this), local_EAX_269 != 0))
        && (iVar21 = thunk_FUN_004e4140((int)this->field_0024), iVar21 != 0)) {
       uVar7 = 1;
@@ -226,12 +229,14 @@ LAB_004bebef:
     STField<undefined1>(param_1,0xf) = uVar7;
   }
   else {
+    /* ST_CALLSITE[004BEB56]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar5 = LookupRecordByte(*(char *)&this->field_0024);
     if (bVar5 == 3) goto LAB_004beb5f;
 LAB_004beb63:
     if ((iVar20 != 1) && (iVar20 != 2)) goto LAB_004beb6d;
     if (*(int *)&this->field_0x361 != 5) {
       STField<undefined1>(param_1,9) = 0x20;
+      /* ST_CALLSITE[004BEBC5]: CALL dword ptr [EDX + 0x7c] */
       iVar21 = this->vfunc_7C();
       if ((iVar21 == 100) ||
          (((this->field_0245 != CASE_0 && (this->field_0245 != CASE_5)) ||
@@ -264,8 +269,10 @@ LAB_004bf427:
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004BF3EB]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2427 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF412]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2466 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_2466 = (int)(byte)local_EAX_2466;
       if ((&DAT_007e1984)[local_EAX_2466 + ((uint)(byte)local_EAX_2427 + iVar21 * 3) * 3] != '\0')
@@ -273,11 +280,13 @@ LAB_004bf427:
 LAB_004bf438:
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     STField<undefined1>(param_1,0xb) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF457]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2535 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF47E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2574 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_2574 = (int)(byte)local_EAX_2574;
       if ((&DAT_007e1984)[local_EAX_2574 + ((uint)(byte)local_EAX_2535 + iVar21 * 3) * 3] == '\0')
@@ -289,8 +298,10 @@ LAB_004bf438:
   case CASE_33:
     STField<undefined1>(param_1,10) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF37E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2318 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF3A5]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2357 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_2357 = (int)(byte)local_EAX_2357;
       if ((&DAT_007e1984)[local_EAX_2357 + ((uint)(byte)local_EAX_2318 + iVar21 * 3) * 3] == '\0')
@@ -301,8 +312,10 @@ LAB_004bf438:
   case CASE_35:
     STField<undefined1>(param_1,10) = 0x21;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF0BD]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1613 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF0E4]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1652 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_1652 = (int)(byte)local_EAX_1652;
       if ((&DAT_007e1984)[local_EAX_1652 + ((uint)(byte)local_EAX_1613 + iVar21 * 3) * 3] == '\0')
@@ -319,8 +332,10 @@ LAB_004bef54:
   case CASE_37:
     STField<undefined1>(param_1,10) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF30F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2207 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF336]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2246 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_2246 = (int)(byte)local_EAX_2246;
       if ((&DAT_007e1984)[local_EAX_2246 + ((uint)(byte)local_EAX_2207 + iVar21 * 3) * 3] == '\0')
@@ -331,8 +346,10 @@ LAB_004bef54:
   case CASE_3A:
     STField<undefined1>(param_1,10) = 0x22;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF2A2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2098 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF2C9]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2137 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_2137 = (int)(byte)local_EAX_2137;
       if ((&DAT_007e1984)[local_EAX_2137 + ((uint)(byte)local_EAX_2098 + iVar21 * 3) * 3] == '\0')
@@ -344,8 +361,10 @@ LAB_004bef54:
     STField<undefined1>(param_1,10) = 0x28;
     if (this->field_0245 == CASE_0) {
       if (this->field_0024 != (byte *)this->field_023D) {
+        /* ST_CALLSITE[004BF746]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_3286 = LookupRecordByte((char)(byte *)this->field_023D);
         iVar21 = this->field_0235;
+        /* ST_CALLSITE[004BF76D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_3325 = LookupRecordByte(*(char *)&this->field_0024);
         local_EAX_3325 = (int)(byte)local_EAX_3325;
         if ((&DAT_007e1984)[local_EAX_3325 + ((uint)(byte)local_EAX_3286 + iVar21 * 3) * 3] == '\0')
@@ -358,12 +377,14 @@ LAB_004bef54:
 LAB_004bf7a5:
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     STField<undefined1>(param_1,0xb) = 0x29;
     if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF7D0]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3424 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF7F7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3463 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_3463 = (int)(byte)local_EAX_3463;
       if ((&DAT_007e1984)[local_EAX_3463 + ((uint)(byte)local_EAX_3424 + iVar21 * 3) * 3] == '\0')
@@ -394,7 +415,7 @@ LAB_004becbd:
       if (this->field_0245 == CASE_0) {
         if (this->field_0261 != 0) {
           if ((*(byte *)&this->field_0265 & 2) != 0) {
-            *(undefined1 *)(param_1 + 4) = 3;
+            ((undefined1 *)param_1)[4] = 3;
             goto switchD_004bec4d_caseD_36;
           }
           goto LAB_004becaa;
@@ -407,8 +428,9 @@ LAB_004becaa:
       if (this->field_0245 == CASE_5) goto LAB_004becbd;
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
 switchD_004bec4d_caseD_36:
+    /* ST_CALLSITE[004BECCF]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_607 = LookupRecordByte(*(char *)&this->field_0024);
     local_EAX_607 = (int)(byte)local_EAX_607;
     if (local_EAX_607 == 1) {
@@ -432,8 +454,9 @@ switchD_004bec4d_caseD_36:
       else {
         uVar7 = 1;
       }
-      *(undefined1 *)(param_1 + 4) = uVar7;
+      ((undefined1 *)param_1)[4] = uVar7;
     }
+    /* ST_CALLSITE[004BED45]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_725 = LookupRecordByte(*(char *)&this->field_0024);
     local_EAX_725 = (int)(byte)local_EAX_725;
     if (local_EAX_725 == 1) {
@@ -445,6 +468,7 @@ switchD_004bec4d_caseD_36:
     else {
       iVar21 = 0;
     }
+    /* ST_CALLSITE[004BED72]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_770 = LookupRecordByte(*(char *)&this->field_023D);
     if (*(int *)(&DAT_00791b14 + ((uint)(byte)local_EAX_770 + this->field_0235 * 3) * 4) != 0) {
       if (((iVar21 == 0) || (iVar11 = thunk_FUN_004e60d0((int)this->field_0024,iVar21), iVar11 == 0)
@@ -463,13 +487,14 @@ switchD_004bec4d_caseD_36:
       }
       STField<char>(param_1,0x11) = cVar6;
       if ((this->field_0245 == CASE_4) || (this->field_0245 == CASE_3)) {
-        *(undefined1 *)(param_1 + 3) = 0x16;
+        ((undefined1 *)param_1)[3] = 0x16;
+        /* ST_CALLSITE[004BEE55]: CALL 0x004015a5; direct=004015A5 TLOBaseTy::sub_004C7070 */
         if ((this->field_0245 != CASE_4) || (iVar21 = sub_004C7070(this,0), iVar21 == 0))
         goto LAB_004bee65;
         uVar7 = 1;
       }
       else {
-        *(undefined1 *)(param_1 + 3) = 0x15;
+        ((undefined1 *)param_1)[3] = 0x15;
         if (((iVar21 == 0) ||
             (iVar21 = thunk_FUN_004e60d0((int)this->field_0024,iVar21), iVar21 == 0)) ||
            (((this->field_0245 != CASE_0 && (this->field_0245 != CASE_5)) ||
@@ -494,7 +519,7 @@ LAB_004bee65:
       else {
         uVar7 = 0;
       }
-      *(undefined1 *)(param_1 + 5) = uVar7;
+      ((undefined1 *)param_1)[5] = uVar7;
       STField<undefined1>(param_1,0xd) = 1;
       if ((bVar26) &&
          (((TVar2 = this->field_046C, TVar2 == 0 || (TVar2 == CASE_1)) || (TVar2 == CASE_2)))) {
@@ -515,12 +540,15 @@ LAB_004bee65:
     if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf5fe:
       if ((this->field_0245 != CASE_0) ||
+         /* ST_CALLSITE[004BF614]: CALL 0x00405ace; direct=00405ACE TLOBaseTy::sub_004C7860 */
          (local_EAX_2980 = sub_004C7860(this,1,9,1,0,1), local_EAX_2980 == 0)) goto LAB_004bf624;
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004BF5C2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2898 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF5E9]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2937 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_2937 = (int)(byte)local_EAX_2937;
       if ((&DAT_007e1984)[local_EAX_2937 + ((uint)(byte)local_EAX_2898 + iVar21 * 3) * 3] != '\0')
@@ -528,11 +556,13 @@ LAB_004bf5fe:
 LAB_004bf624:
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     STField<undefined1>(param_1,0xb) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF643]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3027 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF66A]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3066 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_3066 = (int)(byte)local_EAX_3066;
       if ((&DAT_007e1984)[local_EAX_3066 + ((uint)(byte)local_EAX_3027 + iVar21 * 3) * 3] == '\0')
@@ -544,8 +574,10 @@ LAB_004bf624:
   case CASE_43:
     STField<undefined1>(param_1,10) = 0x23;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF225]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1973 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF24C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2012 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_2012 = (int)(byte)local_EAX_2012;
       if ((&DAT_007e1984)[local_EAX_2012 + ((uint)(byte)local_EAX_1973 + iVar21 * 3) * 3] == '\0')
@@ -560,8 +592,10 @@ joined_r0x004bf200:
   case CASE_44:
     STField<undefined1>(param_1,10) = 0x1b;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF6B8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3144 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF6DF]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3183 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_3183 = (int)(byte)local_EAX_3183;
       if ((&DAT_007e1984)[local_EAX_3183 + ((uint)(byte)local_EAX_3144 + iVar21 * 3) * 3] == '\0')
@@ -577,8 +611,10 @@ LAB_004bf708:
   case CASE_45:
     STField<undefined1>(param_1,10) = 0x1a;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BEEFF]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1167 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BEF26]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1206 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_1206 = (int)(byte)local_EAX_1206;
       if ((&DAT_007e1984)[local_EAX_1206 + ((uint)(byte)local_EAX_1167 + iVar21 * 3) * 3] == '\0')
@@ -594,12 +630,15 @@ LAB_004bf708:
     if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf508:
       if ((this->field_0245 != CASE_0) ||
+         /* ST_CALLSITE[004BF51E]: CALL 0x00405ace; direct=00405ACE TLOBaseTy::sub_004C7860 */
          (local_EAX_2734 = sub_004C7860(this,1,0x15,1,0,1), local_EAX_2734 == 0)) goto LAB_004bf52e;
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004BF4CC]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2652 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF4F3]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2691 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_2691 = (int)(byte)local_EAX_2691;
       if ((&DAT_007e1984)[local_EAX_2691 + ((uint)(byte)local_EAX_2652 + iVar21 * 3) * 3] != '\0')
@@ -607,11 +646,13 @@ LAB_004bf508:
 LAB_004bf52e:
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     STField<undefined1>(param_1,0xb) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF54D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2781 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF574]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2820 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_2820 = (int)(byte)local_EAX_2820;
       if ((&DAT_007e1984)[local_EAX_2820 + ((uint)(byte)local_EAX_2781 + iVar21 * 3) * 3] == '\0')
@@ -624,8 +665,10 @@ LAB_004bf52e:
     if (this->field_04D0 != CASE_1) {
       STField<undefined1>(param_1,10) = 0x24;
       if (this->field_0024 != (byte *)this->field_023D) {
+        /* ST_CALLSITE[004BF1A8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_1848 = LookupRecordByte((char)(byte *)this->field_023D);
         iVar21 = this->field_0235;
+        /* ST_CALLSITE[004BF1CF]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_1887 = LookupRecordByte(*(char *)&this->field_0024);
         local_EAX_1887 = (int)(byte)local_EAX_1887;
         if ((&DAT_007e1984)[local_EAX_1887 + ((uint)(byte)local_EAX_1848 + iVar21 * 3) * 3] == '\0')
@@ -637,8 +680,10 @@ LAB_004bf52e:
     }
     STField<undefined1>(param_1,10) = 0x25;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF13B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1739 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF162]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1778 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_1778 = (int)(byte)local_EAX_1778;
       if ((&DAT_007e1984)[local_EAX_1778 + ((uint)(byte)local_EAX_1739 + iVar21 * 3) * 3] == '\0')
@@ -657,8 +702,10 @@ LAB_004beff1:
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004BEFB5]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1349 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BEFDC]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1388 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_1388 = (int)(byte)local_EAX_1388;
       if ((&DAT_007e1984)[local_EAX_1388 + ((uint)(byte)local_EAX_1349 + iVar21 * 3) * 3] != '\0')
@@ -666,11 +713,13 @@ LAB_004beff1:
 LAB_004bf02b:
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     STField<undefined1>(param_1,0xb) = 0x19;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF048]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1496 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF06F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1535 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_1535 = (int)(byte)local_EAX_1535;
       if ((&DAT_007e1984)[local_EAX_1535 + ((uint)(byte)local_EAX_1496 + iVar21 * 3) * 3] == '\0')
@@ -687,8 +736,10 @@ LAB_004bf873:
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004BF837]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3527 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF85E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3566 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_3566 = (int)(byte)local_EAX_3566;
       if ((&DAT_007e1984)[local_EAX_3566 + ((uint)(byte)local_EAX_3527 + iVar21 * 3) * 3] != '\0')
@@ -696,11 +747,13 @@ LAB_004bf873:
 LAB_004bf884:
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     STField<undefined1>(param_1,0xb) = 0x31;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BF8A3]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3635 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF8CA]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3674 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_3674 = (int)(byte)local_EAX_3674;
       if ((&DAT_007e1984)[local_EAX_3674 + ((uint)(byte)local_EAX_3635 + iVar21 * 3) * 3] == '\0')
@@ -717,8 +770,10 @@ LAB_004bf954:
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004BF918]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3752 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF93F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3791 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_3791 = (int)(byte)local_EAX_3791;
       if ((&DAT_007e1984)[local_EAX_3791 + ((uint)(byte)local_EAX_3752 + iVar21 * 3) * 3] != '\0')
@@ -726,7 +781,7 @@ LAB_004bf954:
 LAB_004bf965:
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     STField<undefined1>(param_1,0xb) = 0x39;
     if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf9c0:
@@ -735,8 +790,10 @@ LAB_004bf9c0:
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004BF984]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3860 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BF9AB]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3899 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_3899 = (int)(byte)local_EAX_3899;
       if ((&DAT_007e1984)[local_EAX_3899 + ((uint)(byte)local_EAX_3860 + iVar21 * 3) * 3] != '\0')
@@ -745,10 +802,12 @@ LAB_004bf9f7:
       uVar7 = 0;
     }
     STField<undefined1>(param_1,0x11) = uVar7;
-    *(undefined1 *)(param_1 + 3) = 0x46;
+    ((undefined1 *)param_1)[3] = 0x46;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BFA14]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4004 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BFA3B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4043 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_4043 = (int)(byte)local_EAX_4043;
       if ((&DAT_007e1984)[local_EAX_4043 + ((uint)(byte)local_EAX_4004 + iVar21 * 3) * 3] == '\0')
@@ -766,8 +825,10 @@ LAB_004bf9f7:
   case CASE_5A:
     STField<undefined1>(param_1,10) = 0x41;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BFDC3]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4947 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BFDEA]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4986 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_4986 = (int)(byte)local_EAX_4986;
       if ((&DAT_007e1984)[local_EAX_4986 + ((uint)(byte)local_EAX_4947 + iVar21 * 3) * 3] == '\0')
@@ -786,8 +847,10 @@ LAB_004bfbca:
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004BFB8E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4382 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BFBB5]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4421 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_4421 = (int)(byte)local_EAX_4421;
       if ((&DAT_007e1984)[local_EAX_4421 + ((uint)(byte)local_EAX_4382 + iVar21 * 3) * 3] != '\0')
@@ -795,11 +858,13 @@ LAB_004bfbca:
 LAB_004bfbdb:
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     STField<undefined1>(param_1,0xb) = 0x37;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BFBFA]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4490 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BFC21]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4529 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_4529 = (int)(byte)local_EAX_4529;
       if ((&DAT_007e1984)[local_EAX_4529 + ((uint)(byte)local_EAX_4490 + iVar21 * 3) * 3] == '\0')
@@ -811,8 +876,10 @@ LAB_004bfbdb:
   case CASE_5D:
     STField<undefined1>(param_1,10) = 0x43;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BFCDC]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4716 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BFD03]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4755 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_4755 = (int)(byte)local_EAX_4755;
       if ((&DAT_007e1984)[local_EAX_4755 + ((uint)(byte)local_EAX_4716 + iVar21 * 3) * 3] == '\0')
@@ -831,8 +898,10 @@ LAB_004c0170:
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004C0134]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5828 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004C015B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5867 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_5867 = (int)(byte)local_EAX_5867;
       if ((&DAT_007e1984)[local_EAX_5867 + ((uint)(byte)local_EAX_5828 + iVar21 * 3) * 3] != '\0')
@@ -840,11 +909,13 @@ LAB_004c0170:
 LAB_004c0181:
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     STField<undefined1>(param_1,0xb) = 0x31;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004C01A0]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5936 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004C01C7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5975 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_5975 = (int)(byte)local_EAX_5975;
       if ((&DAT_007e1984)[local_EAX_5975 + ((uint)(byte)local_EAX_5936 + iVar21 * 3) * 3] == '\0')
@@ -856,8 +927,10 @@ LAB_004c0181:
   case CASE_61:
     STField<undefined1>(param_1,10) = 0x3b;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BFD56]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4838 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BFD7D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4877 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_4877 = (int)(byte)local_EAX_4877;
       if ((&DAT_007e1984)[local_EAX_4877 + ((uint)(byte)local_EAX_4838 + iVar21 * 3) * 3] == '\0')
@@ -868,8 +941,10 @@ LAB_004c0181:
   case CASE_64:
     STField<undefined1>(param_1,10) = 0x40;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BFC6F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4607 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BFC96]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4646 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_4646 = (int)(byte)local_EAX_4646;
       if ((&DAT_007e1984)[local_EAX_4646 + ((uint)(byte)local_EAX_4607 + iVar21 * 3) * 3] == '\0')
@@ -890,7 +965,7 @@ cf_common_join_004BEF5A:
       if (this->field_0245 == CASE_0) {
         if (this->field_0261 != 0) {
           if ((*(byte *)&this->field_0265 & 2) != 0) {
-            *(undefined1 *)(param_1 + 4) = 3;
+            ((undefined1 *)param_1)[4] = 3;
             break;
           }
           goto LAB_004c0261;
@@ -910,8 +985,10 @@ LAB_004c0261:
   case CASE_6C:
     STField<undefined1>(param_1,10) = 0x3e;
     if (this->field_0024 != (byte *)this->field_023D) {
+      /* ST_CALLSITE[004BFE36]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5062 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BFE5D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5101 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_5101 = (int)(byte)local_EAX_5101;
       if ((&DAT_007e1984)[local_EAX_5101 + ((uint)(byte)local_EAX_5062 + iVar21 * 3) * 3] == '\0')
@@ -931,8 +1008,10 @@ LAB_004bfee5:
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004BFEA9]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5177 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BFED0]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5216 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_5216 = (int)(byte)local_EAX_5216;
       if ((&DAT_007e1984)[local_EAX_5216 + ((uint)(byte)local_EAX_5177 + iVar21 * 3) * 3] != '\0')
@@ -940,7 +1019,7 @@ LAB_004bfee5:
 LAB_004bff0a:
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     STField<undefined1>(param_1,0xb) = 0x38;
     if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bff65:
@@ -948,8 +1027,10 @@ LAB_004bff65:
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004BFF29]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5305 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BFF50]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5344 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_5344 = (int)(byte)local_EAX_5344;
       if ((&DAT_007e1984)[local_EAX_5344 + ((uint)(byte)local_EAX_5305 + iVar21 * 3) * 3] != '\0')
@@ -958,7 +1039,7 @@ LAB_004bff80:
       uVar7 = 0;
     }
     STField<undefined1>(param_1,0x11) = uVar7;
-    *(undefined1 *)(param_1 + 3) = 0x45;
+    ((undefined1 *)param_1)[3] = 0x45;
     if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bffdb:
       if ((this->field_0245 == CASE_0) && (this->field_04D4 != 0)) {
@@ -967,8 +1048,10 @@ LAB_004bffdb:
       }
     }
     else {
+      /* ST_CALLSITE[004BFF9F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5423 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004BFFC6]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5462 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_5462 = (int)(byte)local_EAX_5462;
       if ((&DAT_007e1984)[local_EAX_5462 + ((uint)(byte)local_EAX_5423 + iVar21 * 3) * 3] != '\0')
@@ -981,8 +1064,10 @@ LAB_004bfffc:
     if (this->field_04E0[4] == 0) {
       STField<undefined1>(param_1,10) = 0x36;
       if (this->field_0024 != (byte *)this->field_023D) {
+        /* ST_CALLSITE[004BFB1B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_4267 = LookupRecordByte((char)(byte *)this->field_023D);
         iVar21 = this->field_0235;
+        /* ST_CALLSITE[004BFB42]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_4306 = LookupRecordByte(*(char *)&this->field_0024);
         local_EAX_4306 = (int)(byte)local_EAX_4306;
         if ((&DAT_007e1984)[local_EAX_4306 + ((uint)(byte)local_EAX_4267 + iVar21 * 3) * 3] == '\0')
@@ -994,8 +1079,10 @@ LAB_004bfffc:
     else {
       STField<undefined1>(param_1,10) = 0x34;
       if (this->field_0024 != (byte *)this->field_023D) {
+        /* ST_CALLSITE[004BFAA1]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_4145 = LookupRecordByte((char)(byte *)this->field_023D);
         iVar21 = this->field_0235;
+        /* ST_CALLSITE[004BFAC8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_4184 = LookupRecordByte(*(char *)&this->field_0024);
         local_EAX_4184 = (int)(byte)local_EAX_4184;
         if ((&DAT_007e1984)[local_EAX_4184 + ((uint)(byte)local_EAX_4145 + iVar21 * 3) * 3] == '\0')
@@ -1007,7 +1094,7 @@ LAB_004bfffc:
 cf_common_join_004C0278:
     uVar7 = 0;
 LAB_004bef5f:
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     break;
   case CASE_72:
     STField<undefined1>(param_1,10) = 0x34;
@@ -1017,8 +1104,10 @@ LAB_004c005c:
       uVar7 = 1;
     }
     else {
+      /* ST_CALLSITE[004C0020]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5552 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004C0047]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5591 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_5591 = (int)(byte)local_EAX_5591;
       if ((&DAT_007e1984)[local_EAX_5591 + ((uint)(byte)local_EAX_5552 + iVar21 * 3) * 3] != '\0')
@@ -1026,7 +1115,7 @@ LAB_004c005c:
 LAB_004c006d:
       uVar7 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar7;
+    ((undefined1 *)param_1)[4] = uVar7;
     STField<undefined1>(param_1,0xb) = 0x4f;
     if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004c00cc:
@@ -1038,8 +1127,10 @@ LAB_004c00cc:
       }
     }
     else {
+      /* ST_CALLSITE[004C008C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       uVar13 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
+      /* ST_CALLSITE[004C00B3]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       uVar14 = LookupRecordByte(*(char *)&this->field_0024);
       uVar14 = (int)(byte)uVar14;
       if ((&DAT_007e1984)[uVar14 + ((uint)(byte)uVar13 + iVar21 * 3) * 3] != '\0')
@@ -1055,6 +1146,7 @@ cf_common_join_004C01F3:
   case CASE_5C:
     if (*(int *)&this->field_0x361 == 1) {
       STField<undefined4>(param_1,0x1d) = *(undefined4 *)&this->field_0x369;
+      /* ST_CALLSITE[004C05C6]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar5 = LookupRecordByte(*(char *)&this->field_0024);
       if (bVar5 == 3) {
         sVar8 = (short)this->field_03A4;
@@ -1067,9 +1159,11 @@ cf_common_join_004C01F3:
       STField<short>(param_1,0x27) = sVar8 - sVar19;
       STField<short>(param_1,0x2b) = (short)((this->field_039C * (100 - this->field_0394)) / 100);
       STField<char>(param_1,0x2f) = (char)this->field_0394;
+      /* ST_CALLSITE[004C062D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar5 = LookupRecordByte(*(char *)&this->field_0024);
       STField<byte>(param_1,0x25) = bVar5;
       if (this->field_05AC == CASE_40) {
+        /* ST_CALLSITE[004C068F]: CALL 0x00401b59; direct=00401B59 TLOBaseTy::sub_004C9370 */
         local_EAX_7199 = sub_004C9370(this,1,9,-1);
         STField<char>(param_1,0x31) = (char)local_EAX_7199;
         if ((*(int *)&this->field_0x361 == 1) && (*(int *)&this->field_0x369 == 9)) {
@@ -1077,6 +1171,7 @@ cf_common_join_004C01F3:
         }
       }
       else if (this->field_05AC == CASE_49) {
+        /* ST_CALLSITE[004C0655]: CALL 0x00401b59; direct=00401B59 TLOBaseTy::sub_004C9370 */
         local_EAX_7141 = sub_004C9370(this,1,0x15,-1);
         STField<char>(param_1,0x31) = (char)local_EAX_7141;
         if ((*(int *)&this->field_0x361 == 1) && (*(int *)&this->field_0x369 == 0x15)) {
@@ -1114,6 +1209,7 @@ cf_common_join_004C01F3:
                              piVar25[3]);
         *puVar22 = 0xffff;
         *(char *)((int)param_1 + 0x2f + (int)piVar4) = (char)((piVar25[2] * 100) / piVar25[3]);
+        /* ST_CALLSITE[004C0753]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar5 = LookupRecordByte(*(char *)&this->field_0024);
         *(byte *)((int)param_1 + 0x25 + (int)piVar4) = bVar5;
       }
@@ -1133,7 +1229,7 @@ cf_common_join_004C01F3:
             uVar24 = (undefined2)*(int *)(&DAT_007e6028 + (puVar17[-3] - 0x96) * 0x14);
             switch(puVar17[-3]) {
             case 0x96:
-              *(undefined1 *)(param_1 + 7) = 1;
+              ((undefined1 *)param_1)[7] = 1;
               *(undefined2 *)(param_1 + 8) = uVar24;
               STField<short>(param_1,0x1e) = (short)puVar17[-2];
               STField<char>(param_1,0x1d) = (char)*puVar17;
@@ -1145,7 +1241,7 @@ cf_common_join_004C01F3:
               STField<char>(param_1,0x23) = (char)*puVar17;
               break;
             case 0x98:
-              *(undefined1 *)(param_1 + 10) = 1;
+              ((undefined1 *)param_1)[10] = 1;
               *(undefined2 *)(param_1 + 0xb) = uVar24;
               STField<short>(param_1,0x2a) = (short)puVar17[-2];
               STField<char>(param_1,0x29) = (char)*puVar17;
@@ -1156,9 +1252,8 @@ cf_common_join_004C01F3:
               *(short *)(param_1 + 0xc) = (short)puVar17[-2];
               STField<char>(param_1,0x2f) = (char)*puVar17;
               break;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0x9a:
-              *(undefined1 *)(param_1 + 0xd) = 1;
+              ((undefined1 *)param_1)[0xd] = 1;
               *(undefined2 *)(param_1 + 0xe) = uVar24;
               STField<short>(param_1,0x36) = (short)puVar17[-2];
               STField<char>(param_1,0x35) = (char)*puVar17;
@@ -1175,16 +1270,14 @@ cf_common_join_004C01F3:
               *(short *)(param_1 + 0x12) = (short)puVar17[-2];
               STField<char>(param_1,0x47) = (char)*puVar17;
               break;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xa9:
-              *(undefined1 *)(param_1 + 0x10) = 1;
+              ((undefined1 *)param_1)[0x10] = 1;
               *(undefined2 *)(param_1 + 0x11) = uVar24;
               STField<short>(param_1,0x42) = (short)puVar17[-2];
               STField<char>(param_1,0x41) = (char)*puVar17;
               break;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xab:
-              *(undefined1 *)(param_1 + 0x13) = 1;
+              ((undefined1 *)param_1)[0x13] = 1;
               *(undefined2 *)(param_1 + 0x14) = uVar24;
               STField<short>(param_1,0x4e) = (short)puVar17[-2];
               STField<char>(param_1,0x4d) = (char)*puVar17;
@@ -1212,7 +1305,7 @@ cf_common_join_004C01F3:
   case CASE_59:
   case CASE_5A:
     if (*(int *)&this->field_0x361 == 2) {
-      *(undefined1 *)(param_1 + 0xf) = this->field_0x369;
+      ((undefined1 *)param_1)[0xf] = this->field_0x369;
       if (*(byte *)((int)&DAT_00798fd8 + *(int *)&this->field_0x369) < 2) {
         cVar6 = '\0';
       }
@@ -1226,7 +1319,7 @@ cf_common_join_004C01F3:
       STField<undefined2>(param_1,0x2b) = 0xffff;
     }
     else {
-      *(undefined1 *)(param_1 + 0xf) = 0;
+      ((undefined1 *)param_1)[0xf] = 0;
       STField<undefined1>(param_1,0x3d) = 0;
       STField<undefined1>(param_1,0x3e) = 0;
       STField<undefined2>(param_1,0x27) = 0xffff;
@@ -1332,6 +1425,7 @@ cf_common_join_004C01F3:
       STField<undefined1>(param_1,0x47) = 3;
       break;
     case 1:
+      /* ST_CALLSITE[004C0B44]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_8404 = LookupRecordByte(*(char *)&this->field_0024);
       local_EAX_8404 = (int)(byte)local_EAX_8404;
       if (local_EAX_8404 == 1) {
@@ -1363,11 +1457,11 @@ cf_common_join_004C01F3:
     }
     break;
   case CASE_41:
-    *(undefined1 *)(param_1 + 7) = 0xff;
+    ((undefined1 *)param_1)[7] = 0xff;
     goto switchD_004bef7c_caseD_37;
   case CASE_43:
   case CASE_4C:
-    *(char *)(param_1 + 7) = (char)this->field_04E0[0];
+    ((char *)param_1)[7] = (char)this->field_04E0[0];
     iVar21 = this->field_04D8 * 0x28;
     iVar21 = iVar21 / 10000 + (iVar21 >> 0x1f);
     goto cf_common_join_004C0FC5;
@@ -1377,6 +1471,7 @@ cf_common_join_004C01F3:
       STField<char>(param_1,0x2f) = (char)this->field_0394;
       STField<short>(param_1,0x27) = (short)this->field_03A0 - *(short *)&this->field_03B0;
       STField<short>(param_1,0x2b) = (short)this->field_039C - *(short *)&this->field_03AC;
+      /* ST_CALLSITE[004C092A]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar5 = LookupRecordByte(*(char *)&this->field_0024);
       STField<byte>(param_1,0x25) = bVar5;
       STField<short>(param_1,0x3f) = (short)this->field_04D0;
@@ -1394,10 +1489,10 @@ cf_common_join_004C01F3:
       TVar12 = this->field_04D0;
 LAB_004c0285:
       if (TVar12 == CASE_1) {
-        *(undefined1 *)(param_1 + 0xd) = 0x28;
+        ((undefined1 *)param_1)[0xd] = 0x28;
       }
       else {
-        *(undefined1 *)(param_1 + 0xd) = 0xff;
+        ((undefined1 *)param_1)[0xd] = 0xff;
       }
       break;
     }
@@ -1421,7 +1516,7 @@ LAB_004c0f8e:
             (char)((longlong)iVar21 * 0x51eb851f >> 0x3f);
     goto LAB_004c0fcc;
   case CASE_50:
-    *(undefined1 *)(param_1 + 7) =
+    ((undefined1 *)param_1)[7] =
          *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1942_0x97a;
     STField<undefined1>(param_1,0x1d) =
          *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1943_0x97e;
@@ -1429,7 +1524,7 @@ LAB_004c0f8e:
          *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1944_0x982;
     STField<undefined1>(param_1,0x1f) =
          *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1945_0x986;
-    *(undefined1 *)(param_1 + 8) =
+    ((undefined1 *)param_1)[8] =
          *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1946_0x98a;
     STField<undefined1>(param_1,0x21) =
          *(undefined1 *)&g_packedRecords_A62x8[(int)this->field_0024].field1947_0x98e;
@@ -1447,16 +1542,14 @@ switchD_004bef7c_caseD_52:
           if (*(int *)(&DAT_007e6028 + (puVar17[-3] * 5 + -0x2ee) * 4) != 0) {
             uVar24 = (undefined2)*(int *)(&DAT_007e6028 + (puVar17[-3] * 5 + -0x2ee) * 4);
             switch(puVar17[-3]) {
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xad:
-              *(undefined1 *)(param_1 + 0xd) = 1;
+              ((undefined1 *)param_1)[0xd] = 1;
               *(undefined2 *)(param_1 + 0xe) = uVar24;
               STField<short>(param_1,0x36) = (short)puVar17[-2];
               STField<char>(param_1,0x35) = (char)*puVar17;
               break;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xae:
-              *(undefined1 *)(param_1 + 0x10) = 1;
+              ((undefined1 *)param_1)[0x10] = 1;
               *(undefined2 *)(param_1 + 0x11) = uVar24;
               STField<short>(param_1,0x42) = (short)puVar17[-2];
               STField<char>(param_1,0x41) = (char)*puVar17;
@@ -1468,7 +1561,7 @@ switchD_004bef7c_caseD_52:
               STField<char>(param_1,0x23) = (char)*puVar17;
               break;
             case 0xb5:
-              *(undefined1 *)(param_1 + 10) = 1;
+              ((undefined1 *)param_1)[10] = 1;
               *(undefined2 *)(param_1 + 0xb) = uVar24;
               STField<short>(param_1,0x2a) = (short)puVar17[-2];
               STField<char>(param_1,0x29) = (char)*puVar17;
@@ -1480,7 +1573,7 @@ switchD_004bef7c_caseD_52:
               STField<char>(param_1,0x3b) = (char)*puVar17;
               break;
             case 0xbc:
-              *(undefined1 *)(param_1 + 7) = 1;
+              ((undefined1 *)param_1)[7] = 1;
               *(undefined2 *)(param_1 + 8) = uVar24;
               STField<short>(param_1,0x1e) = (short)puVar17[-2];
               STField<char>(param_1,0x1d) = (char)*puVar17;
@@ -1509,9 +1602,8 @@ switchD_004bef7c_caseD_52:
     iVar21 = this->field_04D4 * 0x21;
     iVar21 = iVar21 / 0x28 + (iVar21 >> 0x1f);
     goto cf_common_join_004C0FC5;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case CASE_61:
-    *(char *)(param_1 + 0xd) = (char)((int)(this->field_04E0[0xe] * 0x21) / DAT_007be8c4);
+    ((char *)param_1)[0xd] = (char)((int)(this->field_04E0[0xe] * 0x21) / DAT_007be8c4);
     if (this->field_04E0[0x10] == 0) {
       STField<undefined1>(param_1,0x35) = 0;
     }
@@ -1532,7 +1624,7 @@ switchD_004bef7c_caseD_52:
     STField<TLOBaseTy_field_04D0State>(param_1,0x1d) = TVar12;
     break;
   case CASE_68:
-    *(undefined1 *)(param_1 + 7) = 0x21;
+    ((undefined1 *)param_1)[7] = 0x21;
     STField<int>(param_1,0x1d) = (this->field_04D4 * 0x21) / 200;
     break;
   case CASE_6D:
@@ -1542,6 +1634,7 @@ switchD_004bef7c_caseD_52:
     do {
       if (param_1[-2] != 0) {
         *local_c = *param_1;
+        /* ST_CALLSITE[004C0E40]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar5 = LookupRecordByte(*(char *)&this->field_0024);
         *(byte *)(iVar21 + 0x25 + (int)piVar4) = bVar5;
         *(char *)(iVar21 + 0x2f + (int)piVar4) = (char)param_1[2];
@@ -1555,7 +1648,7 @@ switchD_004bef7c_caseD_52:
       STField<undefined1>(piVar4,0x17) = 0;
       STField<undefined1>(piVar4,0x16) = 0;
       STField<undefined1>(piVar4,0x19) = 0;
-      *(undefined1 *)(piVar4 + 6) = 0;
+      ((undefined1 *)piVar4)[6] = 0;
     }
     else {
       STField<bool>(piVar4,0x17) = (int)this->field_04E0[0] < 100;
@@ -1597,10 +1690,10 @@ switchD_004bef7c_caseD_52:
       goto LAB_004c0f8e;
     }
     if (this->field_04D0 == CASE_1) {
-      *(undefined1 *)(param_1 + 0xd) = 0x21;
+      ((undefined1 *)param_1)[0xd] = 0x21;
     }
     else {
-      *(undefined1 *)(param_1 + 0xd) = 0;
+      ((undefined1 *)param_1)[0xd] = 0;
     }
     break;
   case CASE_73:
@@ -1609,9 +1702,8 @@ LAB_004c0fbb:
     iVar21 = iVar21 / 5000 + (iVar21 >> 0x1f);
 cf_common_join_004C0FC5:
     cVar6 = (char)iVar21 - (char)(iVar21 >> 0x1f);
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004c0fcc:
-    *(char *)(param_1 + 0xd) = cVar6;
+    ((char *)param_1)[0xd] = cVar6;
   }
   piVar4[0x16] = 0;
   iVar21 = *(int *)&this->field_0x361;
@@ -1630,6 +1722,7 @@ LAB_004c0fcc:
       return bVar26;
     }
     if (this->field_03C8 != 0) {
+      /* ST_CALLSITE[004C103C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar5 = LookupRecordByte(*(char *)&this->field_0024);
       iVar21 = (-(uint)(bVar5 != 3) & 0xffffffe1) + 0xbdb;
       piVar4[0x16] = iVar21;
@@ -1642,7 +1735,7 @@ LAB_004c0fcc:
     pAVar18 = (AnonPointee_TLOBaseTy_061B *)(iVar21 - CASE_1);
     bVar26 = SUB41(pAVar18,0);
     switch(pAVar18) {
-    case nullptr:
+    case 0:
       local_EAX_9757 = thunk_FUN_0044e1b0((int)this->field_0024);
       if (local_EAX_9757 == 0) {
         piVar4[0x16] = 0xbdf;

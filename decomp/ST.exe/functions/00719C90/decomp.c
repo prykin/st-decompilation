@@ -22,9 +22,11 @@ int __cdecl FUN_00719c90(MCIERROR mcierr,MCIDEVICEID *param_2)
   *param_2 = 0;
   iVar2 = 0;
   if (DAT_007f07c4 != 0) {
+    /* ST_CALLSITE[00719CCB]: CALL dword ptr [0x0085bebc] */
     BVar1 = mciGetErrorStringA(mcierr,local_104,0x100);
     iVar2 = 0;
     if (BVar1 != 0) {
+      /* ST_CALLSITE[00719CE8]: CALL dword ptr [0x0085bdec] */
       iVar2 = MessageBoxA((HWND)0x0,local_104,"MCI error",0x2030);
     }
   }

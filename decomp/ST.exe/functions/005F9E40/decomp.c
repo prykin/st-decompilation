@@ -13,9 +13,12 @@ void __fastcall FUN_005f9e40(AnonShape_005F9E40_7E333F34 *param_1)
   if (pAVar1 != nullptr) {
     this = *(STT3DSprC **)pAVar1;
     if (this != nullptr) {
+      /* ST_CALLSITE[005F9E60]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase(this,'\x0e',*(uint *)(pAVar1 + 1));
+      /* ST_CALLSITE[005F9E69]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       STT3DSprC::ShowCurFase(this,'\x0e');
       pAVar1 = param_1->field_02E6;
+      /* ST_CALLSITE[005F9EB5]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       STT3DSprC::sub_004AD3C0
                 (this,(float)(int)pAVar1->field_0014 * _DAT_007904f8 * _DAT_007904f0,
                  (float)(int)pAVar1->field_0018 * _DAT_007904f8 * _DAT_007904f0,

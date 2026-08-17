@@ -177,7 +177,9 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
       local_68 = FUN_0070aa70(g_cMf32_00806790,param_13,0,1);
       local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_13,1);
     }
+    /* ST_CALLSITE[004F33EE]: CALL dword ptr [EDX + 0x8] */
     (*pCVar3->field_000C->vtable->CreateObject)
+              /* ST_CALLSITE[004F33EE]: CALL dword ptr [EDX + 0x8] */
               ((SystemClassTy *)pCVar3->field_000C,2,&local_c,nullptr,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_c;

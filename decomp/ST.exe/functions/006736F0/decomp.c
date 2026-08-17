@@ -179,6 +179,7 @@ LAB_006739cd:
     }
     if (cVar2 == ']') {
       DAT_00811914 = DAT_00811914 + 1;
+      /* ST_CALLSITE[006739FC]: CALL dword ptr [ECX + 0x10] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       pcVar6 = (char *)(**(code **)&PTR_0081194c->field_0x10)(PTR_00857528);
       if (pcVar6 == nullptr) {
@@ -249,6 +250,7 @@ LAB_006739cd:
       }
       thunk_FUN_00672b60(PTR_00811948,PTR_0081194c);
       if ((code *)PTR_0081194c->field_0014 != nullptr) {
+        /* ST_CALLSITE[00673B50]: CALL EAX */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (*(code *)PTR_0081194c->field_0014)(PTR_00811948,1);
       }

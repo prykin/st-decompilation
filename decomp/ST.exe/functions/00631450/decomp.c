@@ -24,8 +24,10 @@ undefined4 __thiscall STManRuinC::sub_00631450(STManRuinC *this)
       else {
         element_0038 = nullptr;
       }
+      /* ST_CALLSITE[00631496]: CALL 0x00401d57; direct=00401D57 STManRuinC::sub_00630BB0 */
       sub_00630BB0(this,element_0038->field_0000,element_0038->field_0002,element_0038->field_0004,element_0038->field_0008,(int)element_0038->field_0006,
                    element_0038->field_0014);
+      /* ST_CALLSITE[006314AD]: CALL 0x00405c9f; direct=00405C9F STManRuinC::sub_00630C50 */
       puVar2 = sub_00630C50(this,this->field_0040,this->field_004C,0,1,element_0038->field_0014);
       element_0038->field_0010 = puVar2;
       if (puVar2 == nullptr) {

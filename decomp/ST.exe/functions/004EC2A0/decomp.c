@@ -43,8 +43,10 @@ undefined4 __fastcall FUN_004ec2a0(int param_1)
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xe,uVar3,uVar3,'\0');
+    /* ST_CALLSITE[004EC371]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\x0e',uVar3);
+    /* ST_CALLSITE[004EC38B]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xe,g_playSystem_00802A38->field_00E4);
   }

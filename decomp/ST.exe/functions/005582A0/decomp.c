@@ -61,8 +61,8 @@ byte * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint *param
     return nullptr;
   }
   if (local_24->field_0114 != 0) {
-    local_c = (undefined4 *)FUN_006b0020(&local_24->field_00F4->flags,(int *)&local_10);
-    local_14 = (undefined4 *)FUN_006b0020(&pVVar2->field_0110->flags,(int *)&local_18);
+    local_c = FUN_006b0020(&local_24->field_00F4->flags,(int *)&local_10);
+    local_14 = FUN_006b0020(&pVVar2->field_0110->flags,(int *)&local_18);
     if (pVVar2->field_0114 != 0) {
       iVar5 = pVVar2->field_002C * pVVar2->field_0028 * 4;
       goto LAB_0055832e;

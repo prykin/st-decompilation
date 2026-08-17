@@ -19,6 +19,7 @@ void __cdecl FUN_006ad2a0(byte *param_1)
   char local_104 [4];
   char local_100 [252];
 
+  /* ST_CALLSITE[006AD2B8]: CALL dword ptr [0x0085bb94] */
   DVar2 = GetModuleFileNameA((HMODULE)0x0,local_10c,0x104);
   if (DVar2 == 0) {
     local_10c[0] = "Debug Message"[0];

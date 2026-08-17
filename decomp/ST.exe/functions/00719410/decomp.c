@@ -44,6 +44,7 @@ FUN_00719410(undefined4 param_1,Global_sub_00719410_param_2Enum param_2,undefine
   else if (param_2 == CASE_3) {
     dwParam1 = 0x2300;
   }
+  /* ST_CALLSITE[0071948F]: CALL dword ptr [0x0085bec0] */
   mcierr = mciSendCommandA(0,0x803,dwParam1,(DWORD_PTR)&local_18);
   if (mcierr == 0) {
     return local_14;

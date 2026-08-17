@@ -44,6 +44,7 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
       thunk_FUN_00695cd0(this,param_1,param_2,-1);
     }
     else {
+      /* ST_CALLSITE[00696570]: CALL 0x0040564b; direct=0040564B CGenerate::sub_006948E0 */
       sub_006948E0(this,this->field_5833);
       iVar2 = STField<int>(piVar5,0x15);
       local_18 = 0;
@@ -57,6 +58,7 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
           else {
             puVar4 = nullptr;
           }
+          /* ST_CALLSITE[006965AA]: CALL 0x0040208b; direct=0040208B CGenerate::sub_00696400 */
           local_28 = sub_00696400(this,*(int *)(puVar4 + 2),(int)local_54);
           local_14 = 0;
           local_10 = 0;

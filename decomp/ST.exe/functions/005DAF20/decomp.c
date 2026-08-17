@@ -32,6 +32,7 @@ LAB_005daf91:
   }
   FUN_006b6500(g_int_00811764,DAT_0080733c);
 LAB_005dafab:
+  /* ST_CALLSITE[005DAFAD]: CALL 0x00402b30; direct=00402B30 StartSystemTy::sub_005DAB30 */
   sub_005DAB30(this);
   thunk_FUN_005dac60();
   thunk_FUN_005daa60();

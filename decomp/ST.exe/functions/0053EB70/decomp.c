@@ -50,10 +50,12 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
     this_00->field_0044 = iVar6;
     this_00->field_0174 = (this_00->field_0048 - iVar6) + DAT_00806734;
   }
+  /* ST_CALLSITE[0053EBE6]: CALL 0x004017f8; direct=004017F8 PanelTy::GetMessage */
   PanelTy::GetMessage((PanelTy *)this_00,message);
   SVar1 = message->id;
   if (SVar1 < MESS_SHARED_C000) {
     if (SVar1 == MESS_SHARED_BFFF) {
+      /* ST_CALLSITE[0053ECF4]: CALL dword ptr [EDX + 0x1c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)this_00->field_0000->field_001C)(0);
       thunk_FUN_005252c0(0xae);
@@ -69,6 +71,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
         if (this_00->field_0044 <= iVar6) {
           this_00->field_0044 = iVar6;
           this_00->field_0172 = CASE_1;
+          /* ST_CALLSITE[0053ECBF]: CALL dword ptr [EDX + 0x18] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (*(code *)this_00->field_0000->field_0018)(1);
         }
@@ -95,6 +98,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_SHARED_0003) {
+      /* ST_CALLSITE[0053EC0E]: CALL 0x004033f5; direct=004033F5 SpecPanelTy::DonePanel */
       DonePanel(this_00);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
@@ -106,6 +110,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
     uVar9 = 0;
     uVar8 = 0x274e;
     pCVar7 = thunk_FUN_00571240("BUT_MEDIUM",0);
+    /* ST_CALLSITE[0053ED3C]: CALL dword ptr [EBX + 0x10] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)pAVar2->field_0010)(message,pCVar7,uVar8,uVar9,uVar10);
   }

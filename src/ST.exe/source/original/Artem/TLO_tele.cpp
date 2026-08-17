@@ -68,6 +68,7 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
+      /* ST_CALLSITE[004E9D8D]: CALL 0x0040542a; direct=0040542A TLOBaseTy::sub_004C6C70 */
       st::fn_0040542A(local_20,local_20->field_0474,local_20->field_0478,st::machine_word_boundary_cast<undefined4>(local_20->field_047C + 1));
       g_currentExceptionFrame = local_64.previous;
       return 0;
@@ -78,6 +79,7 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
                       (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)local_20->field_0470,
                        (int *)&local_8);
     if (iVar5 != 0) {
+      /* ST_CALLSITE[004E9ED3]: CALL 0x00404e9e; direct=00404E9E TLOBaseTy::sub_004EA620 */
       st::fn_00404E9E(this_00);
       g_currentExceptionFrame = local_64.previous;
       return 0;
@@ -87,6 +89,7 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
       this_00->field_048C = 1;
       this_00->field_046C = CASE_3;
       st::fn_004031E3(this_00,(uint *)local_14,(int *)local_10,local_c);
+      /* ST_CALLSITE[004E9E61]: CALL 0x00402455; direct=00402455 sub_00415B30 */
       st::fn_00402455(this_00,local_14[0],local_10[0],local_c[0],
                    *(short *)&this_00->field_0474 * 0xc9 + 200,
                    *(short *)&this_00->field_0478 * 0xc9 + 200,
@@ -96,6 +99,7 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
       if (g_tLOFake_00800BCC == nullptr) {
         st::fn_00404395();
       }
+      /* ST_CALLSITE[004E9EB0]: CALL 0x00401582; direct=00401582 TLOFakeTy::sub_004D0970 */
       st::fn_00401582
                 (g_tLOFake_00800BCC,this_00->field_0480,this_00->field_0484,this_00->field_0488);
       this_00->field_0494 = 1;
@@ -104,6 +108,7 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
     }
     break;
   case CASE_3:
+    /* ST_CALLSITE[004E9EF4]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
     iVar5 = st::fn_00402847((STJellyGunC *)local_20,&local_18,&local_1c);
     if (iVar5 == -1) {
       iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_tele.cpp"),0x19a,0,-5,st::mutable_c_string("%s"),
@@ -168,11 +173,13 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
     }
     if (uVar3 + 0x79 <= uVar10) {
       if (local_20->field_0494 != 0) {
+        /* ST_CALLSITE[004EA0E7]: CALL 0x00401dd4; direct=00401DD4 TLOFakeTy::sub_004D0A80 */
         st::fn_00401DD4
                   (g_tLOFake_00800BCC,local_20->field_0480,local_20->field_0484,local_20->field_0488
                   );
         this_00->field_0494 = 0;
       }
+      /* ST_CALLSITE[004EA0F4]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
       st::fn_0040464C(this_00);
       this_00->field_05B0 = this_00->field_0480;
       this_00->field_05B8 = this_00->field_0488;
@@ -205,6 +212,7 @@ int __thiscall st::fn_004E9CE0(TLOBaseTy *this)
       else {
         puVar4 = (undefined *)st::fn_00405C45((int)this_00->field_0024,this_00->field_0235,0);
       }
+      /* ST_CALLSITE[004EA1FC]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
       st::fn_004023A1((TLOEmbryoTy *)this_00,puVar4);
       this_00->field_046C = CASE_5;
       uVar3 = g_playSystem_00802A38->field_00E4;

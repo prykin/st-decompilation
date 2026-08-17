@@ -55,6 +55,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         if (DAT_0085751c != nullptr) {
+          /* ST_CALLSITE[006A5AC3]: CALL EAX */
           (*DAT_0085751c)(puVar2 + 8,puVar2[4]);
           goto cf_continue_loop_006A5B2E;
         }

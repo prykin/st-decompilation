@@ -96,6 +96,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
                     uStack_38 = (undefined1)((uint)element_00bd >> 0x10);
                     cStack_3b = '\x01';
                     uStack_37 = uVar5;
+                    /* ST_CALLSITE[0068ED95]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
                     AiFltClassTy::GetAiMess(this_00,local_44);
                     if ('\0' < local_3c) {
                       element_00bd->state = 1;
@@ -134,6 +135,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
                 local_44[0] = 0x69;
                 uStack_3a = (undefined2)((uint)element_00bd >> 8);
                 uStack_38 = uVar5;
+                /* ST_CALLSITE[0068EE47]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
                 AiFltClassTy::GetAiMess(element_00a5_2->field_0004,local_44);
                 if ('\0' < local_3c) {
                   element_00bd->state = 2;
@@ -166,6 +168,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
                 cStack_3b = (char)((uint)element_00bd >> 8);
                 uStack_3a = (undefined2)((uint)element_00bd >> 0x10);
                 local_3c = cVar3;
+                /* ST_CALLSITE[0068EEBA]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
                 AiFltClassTy::GetAiMess(element_00a5_2->field_0004,local_44);
               }
             }

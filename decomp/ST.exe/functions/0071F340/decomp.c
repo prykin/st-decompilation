@@ -12,6 +12,7 @@ int __fastcall FUN_0071f340(int *param_1)
   iVar3 = param_1[0x4f];
   if (iVar3 < param_1[0x81]) {
     do {
+      /* ST_CALLSITE[0071F36A]: CALL dword ptr [EDX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar1 = (**(code **)(*param_1 + 8))(iVar3,iVar3 == param_1[0x4e]);
       if (param_1[0xc] < iVar1 + iVar2) break;

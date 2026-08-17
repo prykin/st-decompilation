@@ -15,6 +15,7 @@ STJellyManC * __thiscall st::fn_005810D0(STJellyManC *this)
 
 {
 
+  /* ST_CALLSITE[005810D4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
   this->vtable = &st_global_0079B68C;
   memset(&this->field_0x1d9, 0, 0x2e); /* compiler bulk-zero initialization */

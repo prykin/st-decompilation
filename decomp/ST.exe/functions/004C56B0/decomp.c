@@ -40,7 +40,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
   if (*(int *)((int)&this->field_02CC + iVar6 + 1) < *(int *)((int)&this->field_02D0 + iVar6 + 1)) {
     pvVar1 = (void *)((int)param_1 + this->field_0235 * 2);
     if ((&DAT_00792ca0)[(int)pvVar1 * 3] == 0xb3) {
-      auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+      void * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
       if (((AnonShape_005EFAE0_B406B78B *)this->field_04E0[3] != nullptr)
          && (iVar4 = STPlaySystemC::sub_006E62D0
                                (g_playSystem_00802A38,

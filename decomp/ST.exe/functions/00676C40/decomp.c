@@ -39,6 +39,7 @@ uint __cdecl FUN_00676c40(DArrayTy *param_1,callback_00676C40_p1 *param_2)
         else {
           arg_1 = nullptr;
         }
+        /* ST_CALLSITE[00676C88]: CALL dword ptr [EBP + 0xc] */
         iVar4 = (*param_2)(arg_1,arg_2);
         if (0 < iVar4) {
           FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)param_1,uVar5,uVar1);

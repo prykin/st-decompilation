@@ -14,6 +14,7 @@ void FUN_006aacb0(void)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   ExceptionList = &local_14;
+  /* ST_CALLSITE[006AACDB]: CALL dword ptr [0x0085bb98] */
   GetSystemInfo((LPSYSTEM_INFO)&DAT_00858e00);
   local_8 = 0;
   FUN_006aad10();

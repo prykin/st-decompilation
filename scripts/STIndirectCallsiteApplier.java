@@ -13,17 +13,23 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
+import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.FunctionDefinitionDataType;
 import ghidra.program.model.data.ParameterDefinition;
 import ghidra.program.model.data.ParameterDefinitionImpl;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
+import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.pcode.DataTypeSymbol;
@@ -34,6 +40,8 @@ import ghidra.program.model.symbol.Symbol;
 
 public class STIndirectCallsiteApplier extends GhidraScript {
     private static final String MARKER = "[STIndirectCallsiteApplier]";
+    private static final CategoryPath FUNCTIONS =
+        new CategoryPath("/SubmarineTitans/Recovered/IndirectCallFunctions");
     private final List<Report> report = new ArrayList<>();
     private DataTypeManager dataTypes;
     private int pointerSize;
@@ -76,12 +84,19 @@ public class STIndirectCallsiteApplier extends GhidraScript {
     }
 
     private void apply(Map<String, String> row) {
-        String target = row.get("function_address") + "@" + row.get("call_address");
+        String action = row.get("action");
+        String target = action.startsWith("vtable_slot_") ?
+            row.get("function_address") + "@" + row.get("slot_offset") :
+            row.get("function_address") + "@" + row.get("call_address");
         if (!enabled(row.get("apply"))) {
-            report.add(new Report(target, row.get("action"), "disabled", "apply=0"));
+            report.add(new Report(target, action, "disabled", "apply=0"));
             return;
         }
         try {
+            if (action.startsWith("vtable_slot_")) {
+                applyVtableSlot(target, row);
+                return;
+            }
             Address entry = address(row.get("function_address"));
             Address call = address(row.get("call_address"));
             Function function = entry == null ? null :
@@ -98,7 +113,7 @@ public class STIndirectCallsiteApplier extends GhidraScript {
                 return;
             }
             boolean marker = hasMarker(call);
-            if ("cleanup".equals(row.get("action"))) {
+            if ("cleanup".equals(action)) {
                 if (!marker) {
                     preserve(target, row, "cleanup refused for a foreign override");
                     return;
@@ -109,8 +124,8 @@ public class STIndirectCallsiteApplier extends GhidraScript {
                     "stale script-owned call-site override removed"));
                 return;
             }
-            if (!"apply".equals(row.get("action"))) {
-                conflict(target, row, "unknown action " + row.get("action"));
+            if (!"apply".equals(action)) {
+                conflict(target, row, "unknown action " + action);
                 return;
             }
             FunctionDefinitionDataType desired = desired(row);
@@ -139,6 +154,141 @@ public class STIndirectCallsiteApplier extends GhidraScript {
                     ", return=" + row.get("proposed_return_type")));
         }
         catch (Exception exception) { conflict(target, row, message(exception)); }
+    }
+
+    private void applyVtableSlot(String target, Map<String, String> row) throws Exception {
+        String action = row.get("action");
+        boolean variadic = "vtable_slot_variadic".equals(action);
+        if (!variadic && !"vtable_slot_fixed".equals(action)) {
+            conflict(target, row, "unknown physical-slot action " + action);
+            return;
+        }
+        DataType found = dataTypes.getDataType(row.get("function_address"));
+        if (!(found instanceof Structure structure)) {
+            conflict(target, row, "physical vtable structure is missing");
+            return;
+        }
+        int offset = Integer.parseInt(row.get("slot_offset"));
+        DataTypeComponent component = structure.getComponentAt(offset);
+        if (component == null || component.getOffset() != offset ||
+                component.getLength() != pointerSize) {
+            conflict(target, row, "physical slot geometry changed");
+            return;
+        }
+        String current = typeSpec(component.getDataType());
+        if (!current.equals(row.get("expected_override"))) {
+            preserve(target, row, "stale physical slot: expected " +
+                row.get("expected_override") + ", found " + current);
+            return;
+        }
+        if (!(component.getDataType() instanceof Pointer pointer)) {
+            preserve(target, row, "physical slot is not a pointer");
+            return;
+        }
+        FunctionDefinition prior = pointer.getDataType() instanceof FunctionDefinition value ?
+            value : null;
+        boolean unresolved = pointer.getDataType() instanceof VoidDataType;
+        boolean generatedCallable = prior != null &&
+            text(prior.getComment()).contains(MARKER) &&
+            text(component.getComment()).contains(MARKER);
+        if (!unresolved && !generatedCallable) {
+            preserve(target, row,
+                "only an unresolved void* or this applier's generated slot may change");
+            return;
+        }
+        int count = Integer.parseInt(row.get("stack_parameter_count"));
+        String[] specifications = count == 0 && row.get("proposed_parameter_types").isBlank() ?
+            new String[0] : row.get("proposed_parameter_types").split(";", -1);
+        if (count < 0 || count > 64 || specifications.length != count)
+            throw new IllegalArgumentException("physical slot parameter count mismatch");
+        DataType receiver = resolve(row.get("receiver_type"));
+        DataType returned = resolve(row.get("proposed_return_type"));
+        if (!(receiver instanceof Pointer) || returned == null)
+            throw new IllegalArgumentException("physical slot ABI types are missing");
+        String leaf = structure.getName().replaceAll("[^A-Za-z0-9_]", "_");
+        String name = String.format("dense_%s_%02X", leaf, offset);
+        FunctionDefinitionDataType desired = new FunctionDefinitionDataType(
+            FUNCTIONS, name, dataTypes);
+        desired.setCallingConvention("__thiscall");
+        desired.setReturnType(returned);
+        desired.setVarArgs(variadic);
+        ParameterDefinition[] arguments = new ParameterDefinition[count + 1];
+        arguments[0] = new ParameterDefinitionImpl("this", receiver,
+            "exact unadjusted receiver shared by the physical slot family");
+        for (int index = 0; index < count; index++) {
+            DataType type = resolve(specifications[index]);
+            if (type == null) throw new IllegalArgumentException(
+                "missing physical slot parameter " + specifications[index]);
+            arguments[index + 1] = new ParameterDefinitionImpl("arg_" + (index + 1),
+                type, "neutral machine-width stack argument");
+        }
+        desired.setArguments(arguments);
+        desired.setComment(MARKER + " receiver-aware " +
+            (variadic ? "variadic" : "fixed-arity") + " physical slot; " +
+            row.get("evidence"));
+        if (prior != null && !safeGeneratedCallableRepair(
+                prior, desired, variadic)) {
+            preserve(target, row,
+                "existing generated callable may only retain its ABI while " +
+                "repairing the neutral machine-word/EDX:EAX return transport");
+            return;
+        }
+        DataType existing = dataTypes.getDataType(FUNCTIONS, name);
+        FunctionDefinition definition;
+        if (existing == null) {
+            DataType resolved = dataTypes.resolve(desired, DataTypeConflictHandler.KEEP_HANDLER);
+            if (!(resolved instanceof FunctionDefinition generated))
+                throw new IllegalArgumentException("generated slot type resolution failed");
+            definition = generated;
+        }
+        else if (existing instanceof FunctionDefinition generated &&
+                text(generated.getComment()).contains(MARKER)) {
+            if (!generated.isEquivalentSignature(desired) ||
+                    generated.hasVarArgs() != variadic) generated.replaceWith(desired);
+            definition = generated;
+        }
+        else {
+            preserve(target, row, "generated function type name is occupied");
+            return;
+        }
+        PointerDataType callable = new PointerDataType(definition, pointerSize, dataTypes);
+        String field = component.getFieldName();
+        String comment = MARKER + " physical " +
+            (variadic ? "variadic" : "fixed-arity") + " callable slot; " +
+            row.get("evidence");
+        structure.replaceAtOffset(offset, callable, pointerSize, field, comment);
+        report.add(new Report(target, action, "applied",
+            "physical slot now has a receiver-aware callable ABI"));
+    }
+
+    private boolean safeGeneratedCallableRepair(FunctionDefinition prior,
+            FunctionDefinition desired, boolean variadic) {
+        if (!"__thiscall".equals(prior.getCallingConventionName())) return false;
+        boolean returnRepair = prior.hasVarArgs() == variadic && Set.of(
+            "/undefined4->/ulonglong",
+            "/undefined8->/ulonglong",
+            "/ulonglong->/undefined4"
+        ).contains(typeSpec(prior.getReturnType()) + "->" +
+            typeSpec(desired.getReturnType()));
+        ParameterDefinition[] before = prior.getArguments();
+        ParameterDefinition[] after = desired.getArguments();
+        if (returnRepair) {
+            if (before.length != after.length) return false;
+            for (int index = 0; index < before.length; index++)
+                if (!typeSpec(before[index].getDataType()).equals(
+                        typeSpec(after[index].getDataType()))) return false;
+            return true;
+        }
+        // A generated receiver-only variadic fallback may become one fixed
+        // neutral word only after the analyzer closes every inflated PUSH group
+        // against the following direct call's exact stack cleanup.
+        return prior.hasVarArgs() && !variadic &&
+            typeSpec(prior.getReturnType()).equals(
+                typeSpec(desired.getReturnType())) &&
+            before.length == 1 && after.length == 2 &&
+            typeSpec(before[0].getDataType()).equals(
+                typeSpec(after[0].getDataType())) &&
+            "/undefined4".equals(typeSpec(after[1].getDataType()));
     }
 
     private FunctionDefinitionDataType desired(Map<String, String> row) throws Exception {
@@ -216,7 +366,9 @@ public class STIndirectCallsiteApplier extends GhidraScript {
             row.get("evidence").contains("machine callable");
         String mode = machine ?
             ("/void".equals(row.get("proposed_return_type")) ?
-                "machine-void" : "machine-word") : "dispatch";
+                "machine-void" : Set.of("/float", "/double")
+                    .contains(row.get("proposed_return_type")) ?
+                    "machine-float" : "machine-word") : "dispatch";
         lines.add(MARKER + " exact slot 0x" +
             Integer.toHexString(Integer.parseInt(row.get("slot_offset")))
                 .toUpperCase(Locale.ROOT) + "; mode=" + mode +

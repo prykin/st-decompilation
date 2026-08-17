@@ -19,19 +19,22 @@ uint FUN_00749708(undefined4 *param_1,int *param_2,uint param_3)
   }
   else {
     puVar6 = (undefined4 *)*param_1;
+    /* ST_CALLSITE[0074972F]: CALL dword ptr [ECX + 0x1c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar4 = (**(code **)(*param_2 + 0x1c))(param_2,*puVar6,puVar6[1],puVar6[2],puVar6[3]);
     if (param_3 != 0) {
       puVar6 = (undefined4 *)*param_1;
+      /* ST_CALLSITE[00749755]: CALL dword ptr [ECX + 0xc] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (**(code **)(*param_2 + 0xc))
                         (param_2,*puVar6,puVar6[1],puVar6[2],puVar6[3],param_1[1],param_1[2]);
       if ((-1 < (int)uVar4) && (local_8 = 0, param_1[3] != 0)) {
-        auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+        undefined4 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
         while( true ) {
           puVar5 = (undefined4 *)(puVar3[4] + (int)param_1_after_write);
           puVar6 = (undefined4 *)puVar5[5];
           puVar1 = (undefined4 *)*puVar3;
+          /* ST_CALLSITE[007497A9]: CALL dword ptr [EDX + 0x14] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar4 = (**(code **)(*param_2 + 0x14))
                             (param_2,*puVar1,puVar1[1],puVar1[2],puVar1[3],*puVar5,puVar5[1],
@@ -45,6 +48,7 @@ uint FUN_00749708(undefined4 *param_1,int *param_2,uint param_3)
               puVar1 = *(undefined4 **)(puVar6[8] + 4 + param_3 * 8);
               puVar5 = *(undefined4 **)(puVar6[8] + param_3 * 8);
               puVar2 = (undefined4 *)*puVar3;
+              /* ST_CALLSITE[007497FA]: CALL dword ptr [EDX + 0x18] */
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               uVar4 = (**(code **)(*param_2 + 0x18))
                                 (param_2,*puVar2,puVar2[1],puVar2[2],puVar2[3],*puVar6,*puVar5,

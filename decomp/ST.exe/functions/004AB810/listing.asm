@@ -1,4 +1,4 @@
-FUN_004ab810:
+STT3DSprC::STT3DSprC:
 004AB810  8B C1                     MOV EAX,ECX
 004AB812  33 C9                     XOR ECX,ECX
 004AB814  C7 00 90 07 79 00         MOV dword ptr [EAX],0x790790

@@ -79,6 +79,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
     iVar9 = iVar9 + -1;
   } while (iVar9 != 0);
   this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
+  /* ST_CALLSITE[004EEAEE]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
   pcVar4 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"HOLD_FONT",0);
   this_00->field_028A = pcVar4;
   pcVar4->field_0058 = 1;
@@ -90,6 +91,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   this_00->field_0184 = puVar6;
   text = &this_00->field_006C;
   pCVar5 = thunk_FUN_00571240("BKG_BLDBOATBUT",0);
+  /* ST_CALLSITE[004EEB40]: CALL dword ptr [0x0085bde8] */
   wsprintfA(text,"%s0",pCVar5);
   puVar6 = cMf32::RecGet(g_cMf32_00806790,1,text,nullptr,1);
   this_00->field_028E = puVar6;
@@ -99,6 +101,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   else {
     iVar9 = DAT_0080874d + 1;
   }
+  /* ST_CALLSITE[004EEB79]: CALL dword ptr [0x0085bde8] */
   wsprintfA(text,"BOATS_%d",iVar9);
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806794,CASE_B,text,0xffffffff,0,1,0,nullptr);
@@ -107,6 +110,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
                      (PTR_00806794,CASE_B,"BOATS_D",0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar6;
   pCVar5 = thunk_FUN_00571240("BKG_BLDBOATBUT",0);
+  /* ST_CALLSITE[004EEBFB]: CALL 0x00404241; direct=00404241 ProdPanelTy::InitProdPanel */
   ProdPanelTy::InitProdPanel
             ((ProdPanelTy *)this_00,0x2723,0x3f,2,0xc1,0xc,0x85,99,0x68,0xc4,99,0x20,0x13,0x33,
              pCVar5);
@@ -177,6 +181,7 @@ switchD_004eed0b_default:
   local_24 = 1;
   local_20 = 1;
   local_44 = local_64;
+  /* ST_CALLSITE[004EEDB2]: CALL dword ptr [EDX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;

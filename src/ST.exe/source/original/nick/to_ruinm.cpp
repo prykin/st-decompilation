@@ -54,13 +54,16 @@ int __thiscall st::fn_00630430(STManRuinC *this,STMessage *message)
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
+    /* ST_CALLSITE[006306E6]: CALL 0x004052ea; direct=004052EA STManRuinC::sub_00631220 */
     local_14 = (byte *)st::fn_004052EA(local_c,(int *)&local_10);
+    /* ST_CALLSITE[00630702]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
     st::fn_00401078(g_playSystem_00802A38,st::pointer_boundary_cast<char *>(PTR_DAT_0079d198),local_14,local_10,0xc);
     st::fn_006AB060(&local_14);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (SVar1 == MESS_SHARED_0003) {
+    /* ST_CALLSITE[006306BF]: CALL 0x004012f3; direct=004012F3 STManRuinC::sub_00631560 */
     st::fn_004012F3(local_c);
     g_currentExceptionFrame = local_58.previous;
     return 0;
@@ -81,6 +84,7 @@ int __thiscall st::fn_00630430(STManRuinC *this,STMessage *message)
             iVar8 = st::fn_004050A6();
             element_003c[2] = iVar8;
             if (iVar8 != 0) {
+              /* ST_CALLSITE[00630604]: CALL 0x00405c9f; direct=00405C9F STManRuinC::sub_00630C50 */
               puVar6 = st::fn_00405C9F(this_00,*element_003c,element_003c[3],1,1,0);
               if (puVar6 == nullptr) {
                 element_003c[2] = 0;
@@ -95,13 +99,13 @@ int __thiscall st::fn_00630430(STManRuinC *this,STMessage *message)
             if ((element_003c[2] != 0) || (iVar8 == 2)) {
               st::fn_006E9350
                         (g_sT3DSMAPContext_00807598,element_003c->spriteHandle,
-                         PTR_00806724->entries[*(byte *)(element_003c + 8)],(int)PTR_00806724->field_002C
+                         PTR_00806724->entries[((byte *)element_003c)[8]],(int)PTR_00806724->field_002C
                         );
             }
             if (g_playSystem_00802A38->field_00E4 % 6 == 0) {
-              *(char *)(element_003c + 8) = *(char *)(element_003c + 8) + '\x01';
+              ((char *)element_003c)[8] = ((char *)element_003c)[8] + '\x01';
             }
-            if (PTR_00806724->entryCount <= (short)(ushort)*(byte *)(element_003c + 8)) {
+            if (PTR_00806724->entryCount <= (short)(ushort)((byte *)element_003c)[8]) {
               st::fn_006E8BA0
                         (g_sT3DSMAPContext_00807598,element_003c->spriteHandle);
               st::fn_006B0C70((DArrayTy *)this_00->field_003C,uVar2);
@@ -110,6 +114,7 @@ int __thiscall st::fn_00630430(STManRuinC *this,STMessage *message)
         }
       }
     }
+    /* ST_CALLSITE[006306A3]: CALL 0x00403bbb; direct=00403BBB STManRuinC::sub_00631010 */
     st::fn_00403BBB(this_00);
     g_currentExceptionFrame = local_58.previous;
     return 0;
@@ -132,8 +137,10 @@ LAB_006304e7:
   }
   else {
     if (local_8->field_000C == 2) {
+      /* ST_CALLSITE[006304CF]: CALL 0x00402176; direct=00402176 STManRuinC::sub_00631390 */
       st::fn_00402176(this_00,(undefined4 *)local_8);
       this_00->field_0071 = this_00->field_0065;
+      /* ST_CALLSITE[006304DC]: CALL 0x004013bb; direct=004013BB STManRuinC::sub_00631450 */
       st::fn_004013BB(this_00);
       goto LAB_00630558;
     }

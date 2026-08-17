@@ -610,7 +610,8 @@ LAB_0049c94e:
 0049C964  8B 01                     MOV EAX,dword ptr [ECX]
 0049C966  8D 55 E8                  LEA EDX,[EBP + -0x18]
 0049C969  52                        PUSH EDX
-0049C96A  FF 90 88 00 00 00         CALL dword ptr [EAX + 0x88]
+STGroupBoatC::GrpLoadRC::override::prt_49c96a_e9a929de:
+0049C96A  FF 90 88 00 00 00         CALL dword ptr [EAX + 0x88]  ; [STIndirectCallsiteApplier] exact slot 0x88; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4
 0049C970  85 C0                     TEST EAX,EAX
 0049C972  0F 8F 8B 00 00 00         JG 0x0049ca03
 0049C978  EB 77                     JMP 0x0049c9f1

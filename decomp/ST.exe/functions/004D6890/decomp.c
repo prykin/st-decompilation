@@ -16,12 +16,14 @@ void __thiscall FUN_004d6890(void *this,AnonShape_004D6890_0C7826D6 *param_1)
     pAVar5 = (AnonShape_004D6890_0C7826D6 *)((int)&pAVar5->field_0003 + 1);
   }
   *(undefined2 *)pAVar5 = 0;
+  /* ST_CALLSITE[004D68B2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar2 = LookupRecordByte(STField<char>(this,0x24));
   param_1->field_0007 = bVar2;
   *(undefined1 *)param_1 = 1;
   uVar3 = STField<undefined1>(this,0x21d);
   param_1->field_0002 = 2;
   param_1->field_0001 = uVar3;
+  /* ST_CALLSITE[004D68CE]: CALL dword ptr [EDX + 0x7c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar3 = (**(code **)(*(int *)this + 0x7c))();
   param_1->field_001B = uVar3;

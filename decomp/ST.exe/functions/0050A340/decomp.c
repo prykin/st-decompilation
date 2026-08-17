@@ -105,19 +105,24 @@ void __thiscall CPanelTy::PaintCtrlObjSI(CPanelTy *this)
   switch(local_1c->field_0BFA) {
   case CASE_0:
   case CASE_3:
+    /* ST_CALLSITE[0050A3A2]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)local_1c->field_0194,0,0x46,'\x01',
            (byte *)local_1c->field_09D9[0]);
+    /* ST_CALLSITE[0050A3BB]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,0,'\x06',
            (byte *)this_00->field_09D9[9]);
     break;
   case CASE_1:
     if (local_1c->field_0BFB == '\x02') {
+      /* ST_CALLSITE[0050A41F]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_1c->field_0194,0,0,'\x06',
              (byte *)local_1c->field_09D9[0xb]);
+      /* ST_CALLSITE[0050A438]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,0x46,'\x01',
              (byte *)this_00->field_09D9[2]);
       break;
     }
+    /* ST_CALLSITE[0050A459]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)local_1c->field_0194,0,0,'\x06',
            (byte *)local_1c->field_09D9[0xb]);
     switch(this_00->field_0BF5) {
@@ -163,11 +168,14 @@ LAB_0050a4e4:
       pbVar13 = (byte *)this_00->field_09D9[5];
       pRVar16 = (RecoveredSourceFamily_dibcopy *)this_00->field_0194;
     }
+    /* ST_CALLSITE[0050A4F2]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(pRVar16,0,0x46,'\x01',pbVar13);
     break;
   case CASE_4:
+    /* ST_CALLSITE[0050A3DC]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)local_1c->field_0194,0,0,'\x06',
            (byte *)local_1c->field_09D9[9]);
+    /* ST_CALLSITE[0050A3F5]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,0x46,'\x01',
            (byte *)this_00->field_09D9[1]);
   }
@@ -178,10 +186,12 @@ LAB_0050a4e4:
       case CASE_DE:
       case CASE_E0:
       case CASE_FE:
+        /* ST_CALLSITE[0050A549]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x2c,0x52,'\x01',
                (byte *)this_00->field_09D9[0xc]);
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02D2,
                               (uint)this_00->field_0C11);
+        /* ST_CALLSITE[0050A571]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x2e,0x54,'\x01',(byte *)pBVar6);
         pbVar13 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[1],0,0x70,0x12
                                               ,0x62,0xd,0);
@@ -197,6 +207,7 @@ LAB_0050a4e4:
           iVar12 = -1;
           pcVar7_mg1 = LoadResourceString(resourceId,g_hINSTANCE_00807618);
           ccFntTy::WrStr(this_00->field_01B8,pcVar7_mg1,iVar12,iVar18,uVar10);
+          /* ST_CALLSITE[0050A5F8]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x70,0x58,'\x01',pbVar13);
           ccFntTy::EraseSufr(this_00->field_01B8);
         }
@@ -204,6 +215,7 @@ LAB_0050a4e4:
                                               ,0x5a,0x14,0);
         if (pbVar13 != nullptr) {
           uVar10 = 0;
+          /* ST_CALLSITE[0050A646]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)&DAT_0080f33a,"%06d",*(undefined4 *)&this_00->field_0xc12);
           switch(this_00->field_0C11) {
           case CASE_0:
@@ -220,6 +232,7 @@ LAB_0050a4e4:
             uVar10 = 5;
           }
           ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,uVar10);
+          /* ST_CALLSITE[0050A6A0]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x78,0x69,'\x01',pbVar13);
           ccFntTy::EraseSufr(this_00->field_01C4);
         }
@@ -228,10 +241,12 @@ LAB_0050a4e4:
         CVar2 = this_00->field_0C11;
         if ((CVar2 != CASE_0) && (CVar2 < 0x16)) {
           pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CE,CVar2 - 1);
+          /* ST_CALLSITE[0050A6E7]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x29,0x51,'\x01',
                  (byte *)pBVar6);
         }
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,10);
+        /* ST_CALLSITE[0050A70B]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x27,0x4f,'\x06',(byte *)pBVar6);
         pbVar13 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[1],0,0x5d,0xb,
                                               0x73,0x19,0);
@@ -245,6 +260,7 @@ LAB_0050a4e4:
           UVar5 = thunk_FUN_00525290(this_00->field_0C11);
           pcVar7_mg0 = LoadResourceString(UVar5,pHVar15);
           ccFntTy::WrTxt(this_00->field_01B8,pcVar7_mg0,iVar12,iVar18,uVar10,iVar19,iVar20);
+          /* ST_CALLSITE[0050A777]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x5d,0x51,'\x01',pbVar13);
           ccFntTy::EraseSufr(this_00->field_01B8);
         }
@@ -252,6 +268,7 @@ LAB_0050a4e4:
                                               ,0x9f,0x1c,0);
         if (pbVar13 != nullptr) {
           ccFntTy::WrTxt(this_00->field_01B8,(char *)this_00->field_0C16,-2,-1,3,-1,-1);
+          /* ST_CALLSITE[0050A7DF]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x27,0x6c,'\x01',pbVar13);
           ccFntTy::EraseSufr(this_00->field_01B8);
         }
@@ -261,6 +278,7 @@ LAB_0050a4e4:
   }
   if (this_00->field_0BFB == '\x02') {
     if (*(int *)&this_00->field_0xc12 != 0) {
+      /* ST_CALLSITE[0050A826]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x28,0x50,'\x01',
              (byte *)this_00->field_09D9[0xe]);
       local_EAX_1273 =
@@ -268,8 +286,10 @@ LAB_0050a4e4:
                               this_00->field_0C1A);
       pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02C2,local_EAX_1273
                            );
+      /* ST_CALLSITE[0050A859]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x2a,0x52,'\x01',(byte *)pBVar6);
       pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
+      /* ST_CALLSITE[0050A87D]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x7b,'\x01',(byte *)pBVar6);
       pbVar13 = (byte *)(((uint)(byte)this_00->field_0C24 * 0x21) / 100);
       local_14 = nullptr;
@@ -278,6 +298,7 @@ LAB_0050a4e4:
         local_14 = pbVar13;
         do {
           pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+          /* ST_CALLSITE[0050A8D4]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                  (byte *)pBVar6);
           iVar12 = iVar12 + 4;
@@ -288,6 +309,7 @@ LAB_0050a4e4:
         iVar12 = (int)local_14 * 4 + 0x35;
         do {
           pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          /* ST_CALLSITE[0050A90C]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                  (byte *)pBVar6);
           iVar12 = iVar12 + 4;
@@ -319,6 +341,7 @@ LAB_0050a4e4:
       }
 LAB_0050af64:
       ccFntTy::WrTxt(this_00->field_01B8,&this_00->field_01E1,-2,-1,5,-1,-1);
+      /* ST_CALLSITE[0050AF9D]: CALL 0x00402a3b; direct=00402A3B CPanelTy::PaintCostsXYSI */
       PaintCostsXYSI(this_00,this_00->field_0194,this_00->field_0C1C,this_00->field_0C20,7,4);
     }
     goto switchD_0050a9c9_caseD_5f;
@@ -332,6 +355,7 @@ LAB_0050af64:
       UVar5 = 0x36bb;
       goto cf_common_exit_0050B38B;
     case CASE_1:
+      /* ST_CALLSITE[0050AA41]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x27,0x51,'\x01',
              (byte *)this_00->field_09D9[0xd]);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x15,0x6c,0xc3,0xb);
@@ -342,8 +366,10 @@ LAB_0050af64:
       iVar12 = -2;
       pcVar7_mg14 = LoadResourceString(0x36bd,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,pcVar7_mg14,iVar12,iVar18,uVar10,iVar19,iVar20);
+      /* ST_CALLSITE[0050AAA8]: CALL 0x00404f1b; direct=00404F1B CPanelTy::PaintDamageXY */
       PaintDamageXY(this_00,this_00->field_0194,0x5c,0x50,*(byte *)&this_00->field_0C3D,0x2714);
       pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
+      /* ST_CALLSITE[0050AAC9]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x7b,'\x01',(byte *)pBVar6);
       pbVar13 = (byte *)((uint)(this_00->field_0C3D * 0x21) / 100);
       local_8 = nullptr;
@@ -352,6 +378,7 @@ LAB_0050af64:
         local_8 = pbVar13;
         do {
           pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+          /* ST_CALLSITE[0050AB17]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                  (byte *)pBVar6);
           iVar12 = iVar12 + 4;
@@ -362,6 +389,7 @@ LAB_0050af64:
         iVar12 = (int)local_8 * 4 + 0x35;
         do {
           pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          /* ST_CALLSITE[0050AB53]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                  (byte *)pBVar6);
           iVar12 = iVar12 + 4;
@@ -377,6 +405,7 @@ LAB_0050af64:
       pcVar7_mg13 = LoadResourceString(0x36bc,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,pcVar7_mg13,iVar12,iVar18,uVar10,iVar19,iVar20);
       pcVar17 = &this_00->field_01E1;
+      /* ST_CALLSITE[0050ABA4]: CALL dword ptr [0x0085bde8] */
       wsprintfA(pcVar17,"%4d",this_00->field_0C3D);
       ccFntTy::SetSurf(this_00->field_01BC,this_00->field_0194,0,0x28,0x79,0x9b,0xf);
       this_01 = this_00->field_01BC;
@@ -395,7 +424,9 @@ cf_common_exit_0050B38B:
       break;
     case CASE_4:
       if (this_00->field_0C31 != '\0') {
+        /* ST_CALLSITE[0050AC08]: CALL 0x004052d6; direct=004052D6 CPanelTy::PaintNameResSI */
         PaintNameResSI(this_00);
+        /* ST_CALLSITE[0050AC0F]: CALL 0x00403ed1; direct=00403ED1 CPanelTy::PaintPerResSI */
         PaintPerResSI(this_00);
       }
     }
@@ -411,20 +442,25 @@ cf_common_exit_0050B38B:
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x24,0x4c,0xa4,0x2b);
       if (this_00->field_0C2F == 0) goto LAB_0050b386;
       pcVar7_mg12 = LoadResourceString(0x273c,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0050AC89]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)&DAT_0080f33a,"%d %s",(uint)(ushort)this_00->field_0C2F,pcVar7_mg12);
       ccFntTy::WrTxt(this_00->field_01B8,(char *)&DAT_0080f33a,-2,-1,5,-1,-1);
     }
     else {
+      /* ST_CALLSITE[0050AC25]: CALL 0x004052d6; direct=004052D6 CPanelTy::PaintNameResSI */
       PaintNameResSI(this_00);
+      /* ST_CALLSITE[0050AC2C]: CALL 0x00403ed1; direct=00403ED1 CPanelTy::PaintPerResSI */
       PaintPerResSI(this_00);
     }
     break;
   case CASE_5B:
+    /* ST_CALLSITE[0050BBC3]: CALL 0x00404697; direct=00404697 CPanelTy::PaintArsenal */
     PaintArsenal(this_00);
     break;
   case CASE_5C:
   case CASE_6E:
     if (*(int *)&this_00->field_0xc12 != 0) {
+      /* ST_CALLSITE[0050ADE5]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x28,0x50,'\x01',
              (byte *)this_00->field_09D9[0xe]);
       local_EAX_2744 =
@@ -432,8 +468,10 @@ cf_common_exit_0050B38B:
                               this_00->field_0C1A);
       pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BA,local_EAX_2744
                            );
+      /* ST_CALLSITE[0050AE18]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x2a,0x52,'\x01',(byte *)pBVar6);
       pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
+      /* ST_CALLSITE[0050AE3C]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x7b,'\x01',(byte *)pBVar6);
       pbVar13 = (byte *)(((uint)(byte)this_00->field_0C24 * 0x21) / 100);
       local_14 = nullptr;
@@ -442,6 +480,7 @@ cf_common_exit_0050B38B:
         local_14 = pbVar13;
         do {
           pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+          /* ST_CALLSITE[0050AE93]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                  (byte *)pBVar6);
           iVar12 = iVar12 + 4;
@@ -452,6 +491,7 @@ cf_common_exit_0050B38B:
         iVar12 = (int)local_14 * 4 + 0x35;
         do {
           pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+          /* ST_CALLSITE[0050AECB]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                  (byte *)pBVar6);
           iVar12 = iVar12 + 4;
@@ -488,6 +528,7 @@ cf_common_exit_0050B38B:
       goto LAB_0050b386;
     }
     if (CVar3 == CASE_6E) {
+      /* ST_CALLSITE[0050AFCF]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&this_00->field_01E1,"%d",(uint)(ushort)this_00->field_0C2F);
       ccFntTy::SetSurf(this_00->field_01C4,this_00->field_0194,0,0x1c,0x58,0xb7,0xf);
       ccFntTy::WrStr(this_00->field_01C4,&this_00->field_01E1,-1,-1,5);
@@ -497,12 +538,15 @@ cf_common_exit_0050B38B:
     }
     break;
   case CASE_5D:
+    /* ST_CALLSITE[0050A9D2]: CALL 0x00403b16; direct=00403B16 CPanelTy::PaintBioSonar */
     PaintBioSonar(this_00);
     break;
   case CASE_5E:
+    /* ST_CALLSITE[0050ACC5]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x2c,0x52,'\x01',
            (byte *)this_00->field_09D9[0xc]);
     pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02D2,0);
+    /* ST_CALLSITE[0050ACE6]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x2e,0x54,'\x01',(byte *)pBVar6);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x73,0x50,0x5f,0xb);
     iVar20 = -1;
@@ -521,6 +565,7 @@ cf_common_exit_0050B38B:
     pcVar7_mgF = LoadResourceString(0x2721,g_hINSTANCE_00807618);
     ccFntTy::WrTxt(this_00->field_01B8,pcVar7_mgF,iVar12,iVar18,uVar10,iVar19,iVar20);
     pcVar17 = &this_00->field_01E1;
+    /* ST_CALLSITE[0050AD89]: CALL dword ptr [0x0085bde8] */
     wsprintfA(pcVar17,"%6d",(uint)(ushort)this_00->field_0C34);
     ccFntTy::SetSurf(this_00->field_01C4,this_00->field_0194,0,0x91,0x73,0x26,0xf);
     uVar10 = 4;
@@ -534,6 +579,7 @@ cf_common_exit_0050B38B:
     pcVar7_mgD = LoadResourceString(0x2738,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,pcVar7_mgD,iVar12,iVar18,uVar10);
     pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
+    /* ST_CALLSITE[0050B3FE]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x5b,'\x01',(byte *)pBVar6);
     pbVar13 = (byte *)(((uint)(byte)this_00->field_0C2A * 0x21) / 100);
     pbVar9 = nullptr;
@@ -542,6 +588,7 @@ cf_common_exit_0050B38B:
       local_14 = pbVar13;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+        /* ST_CALLSITE[0050B452]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x5d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -553,15 +600,18 @@ cf_common_exit_0050B38B:
       iVar12 = (int)pbVar9 * 4 + 0x35;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        /* ST_CALLSITE[0050B48D]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x5d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
       } while (iVar12 < 0xb9);
     }
+    /* ST_CALLSITE[0050B4B5]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&this_00->field_01E1,"%d%%",(uint)(byte)this_00->field_0C2A);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x15,0x68,0xc3,0xc);
     ccFntTy::WrStr(this_00->field_01B8,&this_00->field_01E1,-1,-1,5);
     pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
+    /* ST_CALLSITE[0050B50B]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x7b,'\x01',(byte *)pBVar6);
     pbVar13 = (byte *)(uint)this_00->field_0C29;
     local_8 = nullptr;
@@ -570,6 +620,7 @@ cf_common_exit_0050B38B:
       local_8 = pbVar13;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+        /* ST_CALLSITE[0050B549]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -580,6 +631,7 @@ cf_common_exit_0050B38B:
       iVar12 = (int)local_8 * 4 + 0x35;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        /* ST_CALLSITE[0050B585]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -594,6 +646,7 @@ cf_common_exit_0050B38B:
     pcVar7_mgB = LoadResourceString(0x2725,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,pcVar7_mgB,iVar12,iVar18,uVar10);
     resourceString = &this_00->field_01E1;
+    /* ST_CALLSITE[0050B71E]: CALL EDI */
     wsprintfA(resourceString,"%d",*(undefined4 *)&this_00->field_0xc12);
     ccFntTy::SetSurf(this_00->field_01C4,this_00->field_0194,0,0x7f,0x66,0x24,0xb);
     ccFntTy::WrStr(this_00->field_01C4,resourceString,-1,-1,5);
@@ -603,10 +656,12 @@ cf_common_exit_0050B38B:
     iVar12 = -1;
     pcVar7_mgC = LoadResourceString(0x2740,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,pcVar7_mgC,iVar12,iVar18,uVar10);
+    /* ST_CALLSITE[0050B7A0]: CALL EDI */
     wsprintfA(resourceString,"%d",this_00->field_0C16);
     ccFntTy::SetSurf(this_00->field_01C4,this_00->field_0194,0,0xa5,0x4f,0x24,0xb);
     ccFntTy::WrStr(this_00->field_01C4,resourceString,-1,-1,4);
     pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
+    /* ST_CALLSITE[0050B7F2]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x7b,'\x01',(byte *)pBVar6);
     uVar10 = this_00->field_0C16;
     if (uVar10 < *(uint *)&this_00->field_0xc12) {
@@ -624,6 +679,7 @@ cf_common_exit_0050B38B:
       local_8 = pbVar13;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+        /* ST_CALLSITE[0050B84F]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -635,6 +691,7 @@ cf_common_exit_0050B38B:
       iVar12 = (int)pbVar9 * 4 + 0x35;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        /* ST_CALLSITE[0050B88B]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -648,14 +705,17 @@ LAB_0050b386:
       UVar5 = 0x2713;
       goto cf_common_exit_0050B38B;
     }
+    /* ST_CALLSITE[0050B099]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x28,0x50,'\x01',
            (byte *)this_00->field_09D9[0xe]);
     local_EAX_3436 =
          thunk_FUN_00526ba0(*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12,
                             this_00->field_0C1A);
     pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BA,local_EAX_3436);
+    /* ST_CALLSITE[0050B0CC]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x2a,0x52,'\x01',(byte *)pBVar6);
     pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
+    /* ST_CALLSITE[0050B0F0]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x7b,'\x01',(byte *)pBVar6);
     pbVar13 = (byte *)(((uint)(byte)this_00->field_0C24 * 0x21) / 100);
     local_14 = nullptr;
@@ -664,6 +724,7 @@ LAB_0050b386:
       local_14 = pbVar13;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+        /* ST_CALLSITE[0050B147]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -674,6 +735,7 @@ LAB_0050b386:
       iVar12 = (int)local_14 * 4 + 0x35;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        /* ST_CALLSITE[0050B17F]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -705,19 +767,25 @@ LAB_0050b386:
     pbVar13 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[1],0,100,0x13,0x18
                                           ,0xc,0);
     if (pbVar13 != nullptr) {
+      /* ST_CALLSITE[0050B276]: CALL EDI */
       wsprintfA((LPSTR)&DAT_0080f33a,"%4d",(uint)(ushort)this_00->field_0C1C);
       ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,7);
+      /* ST_CALLSITE[0050B29F]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,100,0x59,'\x01',pbVar13);
+      /* ST_CALLSITE[0050B2B8]: CALL EDI */
       wsprintfA((LPSTR)&DAT_0080f33a,"%4d",(uint)(ushort)this_00->field_0C20);
       ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,5);
+      /* ST_CALLSITE[0050B2E4]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0xaf,0x59,'\x01',pbVar13);
       ccFntTy::EraseSufr(this_00->field_01C4);
     }
     puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806794,CASE_1,"BUT_RCTTYPESI04",0xffffffff,0,1,0,
                         nullptr);
+    /* ST_CALLSITE[0050B325]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x82,0x56,'\x01',(byte *)puVar8);
     pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0B1B,0);
+    /* ST_CALLSITE[0050B349]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0xa1,0x56,'\x01',(byte *)pBVar6);
     break;
   case CASE_64:
@@ -727,10 +795,12 @@ LAB_0050b386:
     iVar12 = -1;
     pcVar7_mg8 = LoadResourceString(0x272d,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,pcVar7_mg8,iVar12,iVar18,uVar10);
+    /* ST_CALLSITE[0050BAC5]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&this_00->field_01E1,"%4d",*(undefined4 *)&this_00->field_0xc12);
     ccFntTy::SetSurf(this_00->field_01C4,this_00->field_0194,0,0x66,0x65,0x24,0xb);
     ccFntTy::WrStr(this_00->field_01C4,&this_00->field_01E1,-1,-1,7);
     pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
+    /* ST_CALLSITE[0050BB18]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x7b,'\x01',(byte *)pBVar6);
     if (this_00->field_0C16 == 0) {
       pbVar13 = nullptr;
@@ -744,6 +814,7 @@ LAB_0050b386:
       local_8 = pbVar13;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+        /* ST_CALLSITE[0050BB6D]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -754,6 +825,7 @@ LAB_0050b386:
       iVar12 = (int)local_8 * 4 + 0x35;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        /* ST_CALLSITE[0050BBA9]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -769,12 +841,14 @@ LAB_0050b386:
     pcVar7_mg6 = LoadResourceString(0x272b,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,pcVar7_mg6,iVar12,iVar18,uVar10);
     pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
+    /* ST_CALLSITE[0050B900]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x50,'\x01',(byte *)pBVar6);
     uVar10 = 0;
     if (this_00->field_0C11 != CASE_0) {
       iVar12 = 0x35;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+        /* ST_CALLSITE[0050B934]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x52,'\x01',
                (byte *)pBVar6);
         uVar10 = uVar10 + 1;
@@ -785,6 +859,7 @@ LAB_0050b386:
       iVar12 = uVar10 * 4 + 0x35;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        /* ST_CALLSITE[0050B973]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x52,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -797,12 +872,14 @@ LAB_0050b386:
     pcVar7_mg7 = LoadResourceString(0x272c,g_hINSTANCE_00807618);
     ccFntTy::WrStr(this_00->field_01B8,pcVar7_mg7,iVar12,iVar18,uVar10);
     pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
+    /* ST_CALLSITE[0050B9E3]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x71,'\x01',(byte *)pBVar6);
     uVar10 = 0;
     if (*(int *)&this_00->field_0xc12 != 0) {
       iVar12 = 0x35;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+        /* ST_CALLSITE[0050BA17]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x73,'\x01',
                (byte *)pBVar6);
         uVar10 = uVar10 + 1;
@@ -813,6 +890,7 @@ LAB_0050b386:
       iVar12 = uVar10 * 4 + 0x35;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        /* ST_CALLSITE[0050BA58]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x73,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -827,13 +905,16 @@ LAB_0050b386:
     local_14 = (byte *)0x2c;
     do {
       pbVar13 = local_14;
+      /* ST_CALLSITE[0050BC0E]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,(int)(local_14 + -2),0x55,'\x01',
              (byte *)this_00->field_09D9[0xe]);
       uVar6 = thunk_FUN_00526ba0(*local_10,local_8[-10]);
       pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02C2,uVar6);
+      /* ST_CALLSITE[0050BC3F]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,(int)pbVar13,0x57,'\x01',
              (byte *)pBVar6);
       pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,4);
+      /* ST_CALLSITE[0050BC65]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12 + -2,0x58,'\x01',
              (byte *)pBVar6);
       local_c = 0;
@@ -844,6 +925,7 @@ LAB_0050b386:
         local_c = uVar10;
         do {
           pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,7);
+          /* ST_CALLSITE[0050BCB3]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,iVar18,'\x01',
                  (byte *)pBVar6);
           iVar18 = iVar18 + -4;
@@ -855,6 +937,7 @@ LAB_0050b386:
         local_18 = 10 - local_c;
         do {
           pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,8);
+          /* ST_CALLSITE[0050BD03]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,iVar18,'\x01',
                  (byte *)pBVar6);
           iVar18 = iVar18 + -4;
@@ -866,6 +949,7 @@ LAB_0050b386:
       local_8 = local_8 + 1;
       iVar12 = iVar12 + 0x1a;
     } while (local_8 + local_20 < (byte *)0x2);
+    /* ST_CALLSITE[0050BD5D]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"%d %% %d",(uint)(byte)this_00->field_0C24,
               (uint)(byte)this_00->field_0C25);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x5f,0x4d,0x2f,0xb);
@@ -879,6 +963,7 @@ cf_common_exit_0050BD93:
   case CASE_72:
   case CASE_73:
     pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
+    /* ST_CALLSITE[0050B5B9]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x7b,'\x01',(byte *)pBVar6);
     pbVar13 = (byte *)(uint)this_00->field_0C29;
     local_8 = nullptr;
@@ -888,6 +973,7 @@ cf_common_exit_0050BD93:
       local_8 = pbVar13;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+        /* ST_CALLSITE[0050B5FA]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -899,6 +985,7 @@ cf_common_exit_0050BD93:
       iVar12 = (int)local_8 * 4 + 0x35;
       do {
         pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        /* ST_CALLSITE[0050B635]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12,0x7d,'\x01',
                (byte *)pBVar6);
         iVar12 = iVar12 + 4;
@@ -914,11 +1001,13 @@ cf_common_exit_0050BD93:
       iVar12 = -1;
       pcVar7_mg4 = LoadResourceString(0x36c4 - (pbVar13 < (byte *)0x21),g_hINSTANCE_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,pcVar7_mg4,iVar12,iVar18,uVar10,iVar19,iVar20);
+      /* ST_CALLSITE[0050B6AE]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x24,0x4c,'\x01',pbVar9);
       ccFntTy::EraseSufr(this_00->field_01B8);
     }
   }
 switchD_0050a9c9_caseD_5f:
+  /* ST_CALLSITE[0050BD9A]: CALL 0x004019b5; direct=004019B5 CPanelTy::PaintIDSObj */
   PaintIDSObj(this_00);
 switchD_0050a52e_caseD_df:
   if (-1 < (int)this_00->field_0148[5]) {

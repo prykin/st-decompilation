@@ -89,7 +89,7 @@ LAB_0044ac57:
       } while ((int)uVar7 < (int)dVar6);
       tempGroup_after_write = dVar6;
       if (dVar6 != 0) {
-        auto objectIds_after_write = nullptr; /* compiler stack-slot lifetime split */
+        DArrayTy * objectIds_after_write = nullptr; /* compiler stack-slot lifetime split */
         piVar5 = (int *)(iVar3 + 10);
         array = local_c;
         do {

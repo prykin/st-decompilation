@@ -18,6 +18,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
 
   bVar3 = false;
   bVar2 = false;
+  /* ST_CALLSITE[004DDD71]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar4 = LookupRecordByte((char)param_1[9]);
   uVar4 = (int)(byte)uVar4;
   if (uVar4 == 1) {
@@ -48,6 +49,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
           iVar7 = piVar8[-2] + -0x96;
           iVar5 = thunk_FUN_004e60d0(param_1[9],local_8);
           local_c = *(int *)(&DAT_007e601c + (iVar5 + iVar7 * 5) * 4);
+          /* ST_CALLSITE[004DDE3B]: CALL dword ptr [EAX + 0x2c] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar5 = (**(code **)(*param_1 + 0x2c))();
           iVar5 = thunk_FUN_004b72e0((char)param_1[9],iVar5);
@@ -56,6 +58,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
             if (iVar5 == 0) {
               local_c = local_c * 4;
               if (g_sndUnderAttMeneg_00811798 != nullptr) {
+                /* ST_CALLSITE[004DDE86]: CALL 0x00402af4; direct=00402AF4 SndUnderAttMenegC::sub_00621580 */
                 SndUnderAttMenegC::sub_00621580(g_sndUnderAttMeneg_00811798,(byte *)param_1[9],5);
               }
             }

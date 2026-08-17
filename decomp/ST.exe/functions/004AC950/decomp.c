@@ -20,7 +20,7 @@ int __thiscall FUN_004ac950(void *this,int param_1)
     if (iVar5 == iVar4) {
       return iVar3;
     }
-    if ((*(byte *)(iVar1 + 0xf) & 2) == 0) {
+    if ((((byte *)iVar1)[0xf] & 2) == 0) {
       if (iVar3 < iVar4) {
         return iVar5 + 1;
       }

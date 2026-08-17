@@ -136,6 +136,7 @@ LAB_0067b724:
                         local_4c[0].field_0009 = 1;
                         local_4c[0].field_000A = pvVar8;
                         if (&stack0x00000000 != (undefined1 *)0x4c) {
+                          /* ST_CALLSITE[0067B75D]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
                           AiTactClassTy::GetAiMess((AiTactClassTy *)local_8,local_4c);
                           uVar7 = local_c;
                         }
@@ -162,6 +163,7 @@ LAB_0067b724:
               local_8 = nullptr;
             }
             else {
+              /* ST_CALLSITE[0067B7B1]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               local_8 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,*(char *)&this_00->field_05D7,
                                    STField<ushort>(pvVar8,8),CASE_1);
@@ -206,6 +208,7 @@ LAB_0067b724:
             g_currentExceptionFrame = local_90.previous;
             return;
           }
+          /* ST_CALLSITE[0067B8C7]: CALL 0x00402e37; direct=00402E37 AiPlrClassTy::SetTech */
           SetTech(this_00,*(int *)((int)local_c8 + iVar10),*(int *)((int)local_ac + iVar10),
                   (int)this_00->field_0663,(char)this_00->field_0660);
           iVar10 = iVar10 + 4;

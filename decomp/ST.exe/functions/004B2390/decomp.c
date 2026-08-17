@@ -34,6 +34,7 @@ FUN_004b2390(uint param_1,int param_2,int param_3,int param_4,int *param_5,int p
            ((-1 < sVar4 && (sVar4 < g_worldGrid.sizeZ)))) &&
           (((STGridAt3D(g_pathingGrid, sVar3, sVar1, sVar4) == 0 &&
             ((local_8 = 1, param_6 != 0 && (g_visibleClass_00802A88 != nullptr)))) &&
+           /* ST_CALLSITE[004B24A4]: CALL 0x004052a4; direct=004052A4 VisibleClassTy::sub_0055B1C0 */
            (iVar2 = VisibleClassTy::sub_0055B1C0
                               (g_visibleClass_00802A88,param_2,param_3,param_4,param_1), iVar2 != 0)
            ))))) {

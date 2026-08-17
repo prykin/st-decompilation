@@ -179,7 +179,7 @@ byte * __thiscall st::fn_0061D710(STLightC *this,int *param_1)
     pbVar12 = pbVar12 + 1;
     pbVar10 = pbVar10 + 1;
   }
-  local_14 = (byte *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&this->field_00A3->flags),(int *)&local_10);
+  local_14 = st::pointer_boundary_cast<byte *>(st::fn_006B0020(&this->field_00A3->flags,(int *)&local_10));
   *(uint *)local_c = local_10 + 4;
   pbVar10 = local_14;
   pbVar12 = local_c;
@@ -227,6 +227,7 @@ int __thiscall st::fn_0061D8F0(STLightC *this,undefined4 *param_1)
   puVar5 = (byte *)(param_1);
   memmove(puVar7, puVar5, 0x90); /* compiler REP MOVS byte copy */
   iVar4 = 0;
+  /* ST_CALLSITE[0061D921]: CALL 0x004050d3; direct=004050D3 STLightC::sub_0061D9C0 */
   local_c = st::fn_004050D3(this,(ushort *)(param_1 + 0x24),&local_10,1);
   piVar1 = (int *)(local_c + (int)(param_1 + 0x24));
   piVar6 = piVar1 + 1;
@@ -478,6 +479,7 @@ undefined4 __thiscall st::fn_0061F290(STLightC *this,int param_1)
                 iVar3 = (int)(short)lVar6;
               }
               if ((((((DAT_0080874d == -1) || (this_00->field_00F8 == 0)) ||
+                    /* ST_CALLSITE[0061F401]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                     (st::fn_00403F53
                                (this_00,this_00->field_010C,iVar3,local_8,&local_18,&local_1c),
                     iVar4 < 0)) || ((4 < iVar4 || (local_18 < 0)))) ||

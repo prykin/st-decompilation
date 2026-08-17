@@ -136,11 +136,13 @@ cf_common_exit_00419F6C:
       else if (uVar2 != 0x3e9) goto cf_common_exit_00419F6C;
     }
   }
+  /* ST_CALLSITE[0041A060]: CALL dword ptr [EAX + 0x30] */
   (*this->vtable->vfunc_30)((short)this->field_0121);
   pbVar6 = this->field_0121;
   pbVar17 = this->field_011D;
   memmove(pbVar17, pbVar6, 0x36); /* compiler REP MOVS byte copy */
   iVar15 = 0;
+  /* ST_CALLSITE[0041A083]: CALL dword ptr [EDX + 0x34] */
   (*this->vtable->vfunc_34)((short)this->field_0129);
   puVar16 = (byte *)(this->field_0129);
   puVar18 = (byte *)(this->field_0125);
@@ -149,6 +151,7 @@ cf_common_exit_00419F6C:
   uVar2 = this->field_0020;
   if (uVar2 < 0x1af) {
     if (uVar2 == 0x1ae) {
+      /* ST_CALLSITE[0041A23F]: CALL dword ptr [EDX + 0x58] */
       (*this->vtable->vfunc_58)((short)this->field_01B1);
       pAVar11 = this->field_01B1;
       pAVar10 = this->field_01AD;
@@ -156,6 +159,7 @@ cf_common_exit_00419F6C:
       pAVar10->field_0004 = pAVar11->field_0004;
       pAVar10->field_0008 = pAVar11->field_0008;
       pAVar10->field_000A = pAVar11->field_000A;
+      /* ST_CALLSITE[0041A271]: CALL dword ptr [EDX + 0x64] */
       (*this->vtable->vfunc_64)((short)this->field_01C9);
       puVar12 = this->field_01C9;
       puVar3 = this->field_01C5;
@@ -189,12 +193,14 @@ cf_common_exit_00419F6C:
         this->field_0179 = nullptr;
         this->field_017D = nullptr;
         this->field_0181 = nullptr;
+        /* ST_CALLSITE[0041A13E]: CALL dword ptr [EAX + 0x40] */
         (*this->vtable->vfunc_40)((short)ppDVar1);
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_015D,&(*ppDVar1)->flags);
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_0161,&this->field_0175->flags);
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_0165,&this->field_0179->flags);
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_0169,&this->field_017D->flags);
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_016D,&this->field_0181->flags);
+        /* ST_CALLSITE[0041A19D]: CALL dword ptr [EDX + 0x4c] */
         (*this->vtable->vfunc_4C)((short)this->field_0199);
         pAVar9 = this->field_0199;
         pAVar8 = this->field_0195;
@@ -204,6 +210,7 @@ cf_common_exit_00419F6C:
         pAVar8->field_000C = pAVar9->field_000C;
         pAVar8->field_0010 = pAVar9->field_0010;
         pAVar8->field_0012 = pAVar9->field_0012;
+        /* ST_CALLSITE[0041A1DB]: CALL dword ptr [EDX + 0x58] */
         (*this->vtable->vfunc_58)((short)this->field_01B1);
         pAVar11 = this->field_01B1;
         pAVar10 = this->field_01AD;
@@ -211,6 +218,7 @@ cf_common_exit_00419F6C:
         pAVar10->field_0004 = pAVar11->field_0004;
         pAVar10->field_0008 = pAVar11->field_0008;
         pAVar10->field_000A = pAVar11->field_000A;
+        /* ST_CALLSITE[0041A20D]: CALL dword ptr [EDX + 0x60] */
         (*this->vtable->vfunc_60)((short)this->field_01C1);
         puVar16 = (byte *)(this->field_01C1);
         puVar18 = (byte *)(this->field_01BD);
@@ -239,6 +247,7 @@ cf_common_exit_00419F6C:
       }
       *puVar16 = 0;
       this->field_0139 = 0;
+      /* ST_CALLSITE[0041A30A]: CALL dword ptr [EDX + 0x38] */
       (*this->vtable->vfunc_38)((short)puVar16);
       Library::DKW::TBL::FUN_006afe40(&this->field_012D,(uint *)*puVar16);
       Library::DKW::TBL::FUN_006afe40(&this->field_0131,(uint *)this->field_0139);
@@ -259,15 +268,18 @@ cf_common_exit_00419F6C:
       this->field_0151 = 0;
       this->field_0155 = 0;
       this->field_0159 = 0;
+      /* ST_CALLSITE[0041A385]: CALL dword ptr [EDX + 0x3c] */
       (*this->vtable->vfunc_3C)((short)puVar16);
       Library::DKW::TBL::FUN_006afe40(&this->field_013D,(uint *)*puVar16);
       Library::DKW::TBL::FUN_006afe40(&this->field_0141,(uint *)this->field_0151);
       Library::DKW::TBL::FUN_006afe40(&this->field_0145,(uint *)this->field_0155);
       Library::DKW::TBL::FUN_006afe40(&this->field_0149,(uint *)this->field_0159);
+      /* ST_CALLSITE[0041A3D3]: CALL dword ptr [EAX + 0x44] */
       (*this->vtable->vfunc_44)((short)this->field_0189);
       puVar16 = (byte *)(this->field_0189);
       puVar18 = (byte *)(this->field_0185);
       memmove(puVar18, puVar16, 0x129); /* compiler REP MOVS byte copy */
+      /* ST_CALLSITE[0041A3F5]: CALL dword ptr [EDX + 0x48] */
       (*this->vtable->vfunc_48)((short)this->field_0191);
       puVar18 = (byte *)(this->field_0191);
       puVar4 = this->field_018D;
@@ -284,14 +296,17 @@ cf_common_exit_00419F6C:
         DArrayDestroy((DArrayTy *)this->field_019D);
         this->field_019D = 0;
       }
+      /* ST_CALLSITE[0041A453]: CALL dword ptr [EDX + 0x50] */
       (*this->vtable->vfunc_50)((short)puVar16);
       Library::DKW::TBL::FUN_006afe40(&this->field_019D,(uint *)*puVar16);
+      /* ST_CALLSITE[0041A46A]: CALL dword ptr [EAX + 0x54] */
       (*this->vtable->vfunc_54)((short)this->field_01A9);
       puVar16 = (byte *)(this->field_01A9);
       puVar18 = (byte *)(this->field_01A5);
       *puVar18 = *puVar16;
       puVar18[1] = puVar16[1];
       puVar18[2] = puVar16[2];
+      /* ST_CALLSITE[0041A494]: CALL dword ptr [EAX + 0x5c] */
       (*this->vtable->vfunc_5C)((short)this->field_01B9);
       pAVar14 = this->field_01B9;
       pAVar13 = this->field_01B5;

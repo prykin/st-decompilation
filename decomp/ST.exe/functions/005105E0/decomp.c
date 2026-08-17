@@ -62,6 +62,7 @@ FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char 
   piVar5 = nullptr;
   text = FUN_006f2c00(param_2,1,local_8);
   local_c = cMf32::RecGet(g_cMf32_00806790,1,text,piVar5,iVar3);
+  /* ST_CALLSITE[005106C4]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)pFVar2->field_0068,local_18,local_10,'\x01',
          (byte *)local_c);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);

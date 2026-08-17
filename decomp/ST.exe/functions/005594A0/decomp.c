@@ -45,6 +45,7 @@ VisibleClassTy::sub_005594A0
       ((g_playSystem_00802A38 == nullptr ||
        (g_bulkInitializedRecords_008087C7[(int)param_4].field_0022 < 8)))))) {
     if ((param_7 & 0x1000) != 0) {
+      /* ST_CALLSITE[00559511]: CALL 0x00403b02; direct=00403B02 VisibleClassTy::sub_0055BB00 */
       sub_0055BB00(this,1,(short)param_1,(short)param_2,param_3,(uint)param_4,(byte)param_5,param_6);
     }
     if (((param_4 + 0xfc)[(int)this] != '\0') && ((param_7 & 2) != 0)) {

@@ -251,6 +251,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   pcVar15 = pcVar14 + -1;
   memmove(pcVar15, pcVar12, uVar9); /* compiler REP MOVS byte copy */
   uVar10 = 0;
+  /* ST_CALLSITE[00532F50]: CALL dword ptr [0x0085bcec] */
   hFindFile = FindFirstFileA(&this_01->field_006C,&local_1f4);
   local_18 = hFindFile;
   if (hFindFile != (HANDLE)0xffffffff) {
@@ -346,10 +347,12 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
         }
       }
       g_currentExceptionFrame = pIVar4;
+      /* ST_CALLSITE[00533114]: CALL dword ptr [0x0085bcf0] */
       BVar7 = FindNextFileA(hFindFile,&local_1f4);
     } while (BVar7 != 0);
   }
   if (hFindFile != (HANDLE)0xffffffff) {
+    /* ST_CALLSITE[00533128]: CALL dword ptr [0x0085bcf4] */
     FindClose(hFindFile);
   }
   uVar9 = this_01->field_01E9->elementSize;
@@ -371,6 +374,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
             DArrayGetElement(this_01->field_01ED,uVar10,&local_2c);
             index = uVar10 + 1;
             DArrayGetElement(this_01->field_01ED,index,&local_24);
+            /* ST_CALLSITE[00533180]: CALL dword ptr [0x0085bcd8] */
             LVar8 = CompareFileTime(&local_2c,&local_24);
             if (LVar8 < 0) {
               FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)this_01->field_01ED,uVar10,index);

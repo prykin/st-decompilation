@@ -4,6 +4,7 @@
 void FUN_006b68c0(undefined4 *param_1)
 
 {
+  /* ST_CALLSITE[006B68D8]: CALL dword ptr [ECX + 0x30] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*(int *)*param_1 + 0x30))((int *)*param_1,0,&LAB_006b68b0,&param_1,0);
   return;

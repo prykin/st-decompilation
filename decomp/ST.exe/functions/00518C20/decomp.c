@@ -84,6 +84,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
           local_40->field_0030 = (undefined2)iVar13;
           local_40->field_0032 = STPiece<2,2>(iVar13);
           if (g_cursorClass_00802A30 != nullptr) {
+            /* ST_CALLSITE[00518D05]: CALL dword ptr [EDX] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)g_cursorClass_00802A30->field_0000)(&local_40->field_0x18);
           }
@@ -95,7 +96,9 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       _local_20 = CONCAT31(uStack_1f,cVar5);
       local_1c = local_EAX_243 & 0xff;
       UVar6 = thunk_FUN_00523410(param_1,cVar5,0);
+      /* ST_CALLSITE[00518D43]: CALL 0x00403ef9; direct=00403EF9 HelpPanelTy::DrawTitle */
       DrawTitle(this_00,0x55fb,local_1c,UVar6);
+      /* ST_CALLSITE[00518D5A]: CALL 0x00403d78; direct=00403D78 HelpPanelTy::DrawObj */
       DrawObj(this_00,(int *)&local_8,(STAllPlayersC_GetTOBJImage_param_2Enum *)param_1,
               (byte)_local_20,this_00->field_023C);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x19c,0xf);
@@ -174,6 +177,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       }
       if (local_c != 0) {
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
+        /* ST_CALLSITE[0051901A]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%4d",local_c);
         ccFntTy::WrStr(this_00->field_01E8,(char *)&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 7);
@@ -194,6 +198,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       local_c = *(UINT *)(&DAT_007e055c + param_1 * 4);
       if (local_c != 0) {
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
+        /* ST_CALLSITE[00519129]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%4d",local_c);
         ccFntTy::WrStr(this_00->field_01E8,(char *)&DAT_0080f33a,1,-1,
                        (DAT_0080874e != '\x03') - 1 & 4);
@@ -214,6 +219,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       local_c = *(UINT *)(&DAT_00854428 + param_1 * 4);
       if (local_c != 0) {
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
+        /* ST_CALLSITE[0051921A]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%4d",local_c);
         ccFntTy::WrStr(this_00->field_01E8,(char *)&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 6);
@@ -261,6 +267,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_8 = local_8 + 0xf;
         uVar16 = thunk_FUN_005276e0(*pGVar3,0);
         pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0230,uVar16);
+        /* ST_CALLSITE[005193E8]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x96,local_8,'\x01',
                (byte *)pBVar8);
         local_60 = 0x96;
@@ -288,6 +295,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       pcVar7 = LoadResourceString(0x564c,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,pcVar7,iVar13,iVar14,uVar16);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
+      /* ST_CALLSITE[00519521]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)&DAT_0080f33a,"%d",*(undefined4 *)(&DAT_007dfbac + param_1 * 4));
       ccFntTy::WrStr(this_00->field_01E0,(char *)&DAT_0080f33a,-3,-1,2);
       local_8 = local_8 + 0xf;
@@ -362,12 +370,14 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       pcVar7 = LoadResourceString(local_c,g_hINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,pcVar7,iVar13,iVar14,uVar16);
       local_8 = local_8 + 0xf;
+      /* ST_CALLSITE[0051978D]: CALL 0x00403f17; direct=00403F17 HelpPanelTy::DrawWeapon */
       iVar13 = DrawWeapon(this_00,0x96,(int *)&local_8,*(int *)(&DAT_007a8b18 + param_1 * 4),
                           *(int *)(&DAT_007a8bb8 + param_1 * 4),(byte)_local_20);
       cVar4 = local_d;
       if ((iVar13 != 0) || (local_d = '\0', cVar4 != '\0')) {
         local_d = '\x01';
       }
+      /* ST_CALLSITE[005197C4]: CALL 0x00403f17; direct=00403F17 HelpPanelTy::DrawWeapon */
       iVar13 = DrawWeapon(this_00,0x96,(int *)&local_8,*(int *)(&DAT_007a8cf8 + param_1 * 4),
                           *(int *)(&DAT_007a8d98 + param_1 * 4),(byte)_local_20);
       cVar4 = local_d;
@@ -450,6 +460,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         pcVar7 = LoadResourceString(0x5651,g_hINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,pcVar7,iVar13,iVar14,uVar16);
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x5f,local_8 - 3,0x16,0x14);
+        /* ST_CALLSITE[00519B87]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%4d",local_c);
         ccFntTy::WrStr(this_00->field_01E8,(char *)&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 7);
@@ -467,7 +478,9 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_8 = local_8 + 0x14;
       }
       UVar6 = thunk_FUN_00523410(param_1,(char)_local_20,2);
+      /* ST_CALLSITE[00519C5A]: CALL 0x00402dab; direct=00402DAB HelpPanelTy::DrawDescription */
       DrawDescription(this_00,(int *)&local_8,UVar6);
+      /* ST_CALLSITE[00519C6A]: CALL 0x0040506f; direct=0040506F HelpPanelTy::AddLinks */
       AddLinks(this_00,(int *)&local_8,'\x03',param_1,0);
       g_currentExceptionFrame = local_a4.previous;
       return;

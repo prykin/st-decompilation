@@ -15,6 +15,7 @@ void __thiscall UpgPanelTy::ShiftControls(UpgPanelTy *this,int param_1)
   int local_44 [16];
 
   if (param_1 != this->field_005C) {
+    /* ST_CALLSITE[00552B07]: CALL 0x00404d36; direct=00404D36 SpecPanelTy::ShiftControls */
     SpecPanelTy::ShiftControls((SpecPanelTy *)this,param_1);
     sVar3 = (short)this->field_0174;
     this->field_0028 = 0x24;

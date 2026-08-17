@@ -22,41 +22,51 @@ void __thiscall MMsgTy::InitMMsg(MMsgTy *this)
   if (errorCode == 0) {
     g_startSystem_0081176C->field_02E6 = local_8;
     local_8->field_009A = 8;
+    /* ST_CALLSITE[005B6BAB]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     MMObjTy::InitSprBut((MMObjTy *)local_8,(RecoveredRecord_MMObjTy_005B5240 *)&local_8->field_0x9b,
                         "MM_MBUT12",0x194,0x213,0x24,0x12,0x12,7,0xa0,0x31,0x14,nullptr
                         ,0,0,0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6BF3]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     MMObjTy::InitSprBut((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[0].field_01DA,
                         "MM_MBUT08",0x25c,0x213,0xf,0x14,2,8,0xa0,0x34,0x14,nullptr,0,0
                         ,0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6C3B]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     MMObjTy::InitSprBut((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[1].field_01DA,
                         "MM_MBUT09",0x261,0x1da,0x10,0x12,1,7,0xa0,0x34,0xf,nullptr,0,0
                         ,0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6C83]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     MMObjTy::InitSprBut((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[2].field_01DA,
                         "MM_MBUT10",0x264,0x1a3,0x10,0x10,2,6,0x9e,0x33,10,nullptr,0,0,
                         0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6CC8]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     MMObjTy::InitSprBut((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[3].field_01DA,
                         "MM_MBUT07",0,0x1a3,0x2f,0x10,0x1c,6,0x9d,0x31,10,nullptr,0,0,0
                         ,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6D0D]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     MMObjTy::InitSprBut((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[4].field_01DA,
                         "MM_MBUT06",0,0x1da,0x32,0x12,0x1d,7,0xa0,0x32,0xf,nullptr,0,0,
                         0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6D52]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     MMObjTy::InitSprBut((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[5].field_01DA,
                         "MM_MBUT05",0,0x213,0x34,0x13,0x21,9,0xa0,0x33,0x14,nullptr,0,0
                         ,0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6D9A]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     MMObjTy::InitSprBut((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->array_00BC[6].field_01DA,
                         "MM_MBUT11",0xb4,0x213,0x37,0x12,0x26,8,0xa0,0x30,0x14,nullptr,
                         0,0,0,0,0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6DDF]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
     MMObjTy::InitSprBut((MMObjTy *)this_00,
                         (RecoveredRecord_MMObjTy_005B5240 *)&this_00->field_0x1caf,
                         "MM_TABLO",0x30,0x203,0xb5,0x11,0,0,0,0,0x14,nullptr,0,0,0,0,
                         0x4b,0,nullptr,0,0,0,-1,-1);
+    /* ST_CALLSITE[005B6DE6]: CALL 0x0040462e; direct=0040462E MMsgTy::HideSprites */
     HideSprites(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return;

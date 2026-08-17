@@ -54,10 +54,12 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
       local_8->field_0030 = (undefined2)iVar2;
       local_8->field_0032 = STPiece<2,2>(iVar2);
       if (g_cursorClass_00802A30 != nullptr) {
+        /* ST_CALLSITE[00511EC2]: CALL dword ptr [EAX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)g_cursorClass_00802A30->field_0000)(&local_8->field_0x18);
       }
     }
+    /* ST_CALLSITE[00511EC8]: CALL 0x00404fd9; direct=00404FD9 HelpPanelTy::ShiftControls */
     ShiftControls(this_00,0);
   }
   else {
@@ -72,6 +74,7 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
+      /* ST_CALLSITE[00511E7B]: CALL 0x00402ed2; direct=00402ED2 CPanelTy::ShiftControls */
       CPanelTy::ShiftControls(g_cPanel_00801688,0);
       g_currentExceptionFrame = local_4c.previous;
       return;

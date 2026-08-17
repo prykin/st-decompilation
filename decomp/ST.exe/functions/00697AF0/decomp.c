@@ -24,7 +24,7 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
   if (pDVar1 != nullptr) {
     uVar2 = pDVar1->count;
     uVar7 = 0;
-    auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+    AnonShape_00697AF0_A94F4D28 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
     local_c = 0;
     local_10 = nullptr;
     local_8 = 0;

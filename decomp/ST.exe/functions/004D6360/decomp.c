@@ -20,6 +20,7 @@ int __thiscall FUN_004d6360(void *this,short param_1,short param_2,short param_3
   iVar4 = STField<int>(this,0x261);
   iVar1 = STField<int>(this,0x25d);
   iVar7 = 2 - (uint)(STField<int>(this,0x2c) != 1);
+  /* ST_CALLSITE[004D6392]: CALL dword ptr [EDX + 0xf8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(*(int *)this + 0xf8))();
   if (iVar3 != 0) {

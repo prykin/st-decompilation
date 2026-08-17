@@ -98,6 +98,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
     local_620 = 0x6340;
     local_688[2] = uVar3;
     local_678 = uVar2;
+    /* ST_CALLSITE[005DE43E]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,8,&this_00->field_0550,nullptr,local_8c4,0);
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_0558);

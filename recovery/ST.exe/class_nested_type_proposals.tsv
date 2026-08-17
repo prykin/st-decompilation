@@ -1,5 +1,4 @@
 apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	reason
-0	AiEventClassTy	0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiEventClassTy_0000	52	3	102	review	multiple non-overlapping fixed offsets through one class pointer field
 0	AiFltClassTy	547	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0223	32	2	10	review	multiple non-overlapping fixed offsets through one class pointer field
 0	AiFltClassTy	559	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_022F	32	2	14	review	multiple non-overlapping fixed offsets through one class pointer field
 0	AiFltClassTy	644	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	324	7	15	review	multiple non-overlapping fixed offsets through one class pointer field

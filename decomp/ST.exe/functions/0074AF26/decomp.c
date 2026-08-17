@@ -57,6 +57,7 @@ FUN_0074af26(void *this,uint param_1,uint param_2,undefined4 param_3,undefined4 
   local_1c[2] = uVar2 + param_1;
   local_1c[3] = ((int)uVar2 >> 0x1f) + param_2 + (uint)CARRY4(uVar2,param_1);
   if (STField<int>(this,0xac) == 0) {
+    /* ST_CALLSITE[0074B029]: CALL dword ptr [ECX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)**(undefined4 **)(STField<int>(this,0x78) + 0x18))();
     if (-1 < iVar3) {
@@ -72,6 +73,7 @@ FUN_0074af26(void *this,uint param_1,uint param_2,undefined4 param_3,undefined4 
     puVar6 = local_1c;
     puVar7 = auStack_40;
     memmove(puVar7, puVar6, 0x18); /* compiler REP MOVS byte copy */
+    /* ST_CALLSITE[0074B05E]: CALL dword ptr [EDX + 0xc] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar4 = (**(code **)(iVar3 + 0xc))(piVar1,-(uint)(this != nullptr) & (int)this + 0xcU);
   }

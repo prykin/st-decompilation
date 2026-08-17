@@ -48,6 +48,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
       this_00 = local_14;
       pDVar4 = local_c;
       if (local_8 != nullptr) {
+        /* ST_CALLSITE[0052D3F1]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)local_8,"%s%1d%s",&DAT_007c6ff0,param_2,param_1);
         pDVar4 = (DArrayTy *)ccFntTy::_TxtToSarr(this_00->field_0094,local_8);
         local_c = pDVar4;
@@ -77,6 +78,7 @@ LAB_0052d48d:
               this_00->field_009C = this_00->field_009C + 1;
             }
             if (((byte)this_00->field_009C <= DAT_00807346) &&
+               /* ST_CALLSITE[0052D4CB]: CALL 0x004041b5; direct=004041B5 PopUpTy::OutStr */
                (OutStr(this_00,this_00->field_009C - 1), DAT_00807342 != 0)) {
               if ((int)((byte)this_00->field_009C - 1) < (int)this_00->field_0098[2]) {
                 pcVar6 = *(char **)((this_00->field_0098[5] - 4) +

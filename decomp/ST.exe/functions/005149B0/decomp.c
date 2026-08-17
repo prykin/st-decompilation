@@ -62,6 +62,7 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
         if ((*(int *)(pbVar2 + iVar6 + 9) != param_1) ||
            (((bVar1 != 3 && (bVar1 != 0xc)) && (*(int *)(pbVar2 + iVar6 + 0xd) != param_2))))
         goto switchD_00514a29_caseD_5;
+        /* ST_CALLSITE[00514A58]: CALL 0x00401a37; direct=00401A37 HelpPanelTy::sub_005148A0 */
         sub_005148A0(local_8,uVar9);
         pAVar3 = pHVar7->field_01B3;
         uVar10 = 0;

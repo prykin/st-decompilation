@@ -11,11 +11,13 @@ void __fastcall FUN_0041cf50(AnonShape_0041CF50_01071190 *param_1)
   int iVar1;
 
   if (g_visibleClass_00802A88 != nullptr) {
+    /* ST_CALLSITE[0041CF7D]: CALL 0x00402018; direct=00402018 VisibleClassTy::sub_00559620 */
     VisibleClassTy::sub_00559620
               (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
                (char)param_1->field_005F,*(undefined **)&param_1->field_0x24,param_1->field_0105,
                *(int *)&param_1->field_0x18,0xffffffff);
   }
+  /* ST_CALLSITE[0041CF86]: CALL dword ptr [EAX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(param_1->field_0000 + 8))();
   if ((iVar1 == 1) && (*(uint *)&param_1->field_0x24 == (uint)DAT_0080874d)) {

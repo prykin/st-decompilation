@@ -45,6 +45,7 @@ int __thiscall STBoatC::BackAttack(STBoatC *this,int *param_1)
     if (this->field_082E != CASE_3) {
 LAB_00465581:
       this->field_00B7 = 0;
+      /* ST_CALLSITE[00465591]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
       local_EAX_481 = sub_00460360(this);
       return local_EAX_481;
     }
@@ -55,26 +56,32 @@ LAB_00465581:
          ((this->field_0043 == this->field_0036 &&
           (pSVar6 = (STBoatC *)CONCAT22(uVar7,this->field_0045),
           this->field_0045 == this->field_0038)))) {
+        /* ST_CALLSITE[0046542C]: CALL dword ptr [EDX + 0xd8] */
         iVar4 = this->vfunc_D8();
         return -(uint)(iVar4 != 0);
       }
       this->field_0832 = 0;
     }
     if (this->field_0832 == 0) {
+      /* ST_CALLSITE[00465477]: CALL dword ptr [EAX + 0x10] */
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       sVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,CONCAT22(uVar8,this->field_0045),
                          this->field_0034,this->field_0036,
                          STReplaceLowWord((uint32_t)(pSVar6), (uint16_t)(this->field_0038)));
+      /* ST_CALLSITE[0046547D]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
       uVar5 = sub_004176C0(this,sVar2);
+      /* ST_CALLSITE[00465485]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar5 = sub_00417910(this,(short)uVar5);
       if (uVar5 != 0xffffffff) {
         if (uVar5 == 0) {
+          /* ST_CALLSITE[004654B7]: CALL 0x00402455; direct=00402455 sub_00415B30 */
           sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,this->field_0034,
                        this->field_0036,this->field_0038,this->field_0061);
           this->field_007A = 0;
           this->field_0832 = 1;
         }
+        /* ST_CALLSITE[004654D1]: CALL dword ptr [EDX + 0xd8] */
         iVar4 = this->vfunc_D8();
         return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
@@ -90,6 +97,7 @@ LAB_00465581:
     if (this->field_0832 != 1) {
       return 2;
     }
+    /* ST_CALLSITE[00465529]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
     iVar4 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
     if (iVar4 == -1) {
       local_EAX_424 =
@@ -104,6 +112,7 @@ LAB_00465581:
   }
   else {
     if (this->field_06F7 != CASE_15) {
+      /* ST_CALLSITE[004653CB]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
       local_EAX_27 = sub_00460360(this);
       if (local_EAX_27 != 0) {
         return local_EAX_27;
@@ -126,21 +135,26 @@ LAB_00465581:
     if (this->field_0832 == 0) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       iVar4 = STReplaceLowWord((uint32_t)(in_EDX), (uint16_t)(this->field_0049 * 0xc9)) + 100;
+      /* ST_CALLSITE[00465646]: CALL dword ptr [EAX + 0x10] */
       sVar2 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(this->field_0045)),
                          this->field_0047 * 0xc9 + 100,(short)iVar4,
                          STReplaceLowWord((uint32_t)(pSVar6), (uint16_t)(this->field_004B * 200)) + 100);
+      /* ST_CALLSITE[0046564C]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
       uVar5 = sub_004176C0(this,sVar2);
+      /* ST_CALLSITE[00465654]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar5 = sub_00417910(this,(short)uVar5);
       if (uVar5 != 0xffffffff) {
         if (uVar5 == 0) {
+          /* ST_CALLSITE[0046569E]: CALL 0x00402455; direct=00402455 sub_00415B30 */
           sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
                        this->field_0047 * 0xc9 + 100,this->field_0049 * 0xc9 + 100,
                        this->field_004B * 200 + 100,this->field_0061);
           this->field_007A = 0;
           this->field_0832 = 1;
         }
+        /* ST_CALLSITE[004656B8]: CALL dword ptr [EDX + 0xd8] */
         iVar4 = this->vfunc_D8();
         return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
@@ -158,6 +172,7 @@ cf_error_exit_00465763:
     if (this->field_0832 != 1) {
       return 2;
     }
+    /* ST_CALLSITE[0046570D]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
     iVar4 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
     if (iVar4 == -1) {
       local_EAX_929 =
@@ -171,10 +186,12 @@ cf_error_exit_00465763:
     }
   }
   if (iVar4 != 0) {
+    /* ST_CALLSITE[00465723]: CALL dword ptr [EAX + 0xd8] */
     iVar4 = this->vfunc_D8();
     return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
   }
 LAB_004655df:
+  /* ST_CALLSITE[004655E3]: CALL dword ptr [EDX + 0xd8] */
   iVar4 = this->vfunc_D8();
   return -(uint)(iVar4 != 0);
 }

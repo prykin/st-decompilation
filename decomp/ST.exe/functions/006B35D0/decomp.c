@@ -12,8 +12,10 @@ undefined4 FUN_006b35d0(int *param_1,uint param_2)
     uVar2 = *puVar1;
     if (((uVar2 & 0x8000) != 0) && (((byte)uVar2 & 0x30) == 0x20)) {
       if ((uVar2 & 0x80000) != 0) {
+        /* ST_CALLSITE[006B360C]: CALL dword ptr [0x0085bb8c] */
         EnterCriticalSection((LPCRITICAL_SECTION)(*param_1 + 0x4f0));
         FUN_006b23e0((int)param_1,puVar1);
+        /* ST_CALLSITE[006B3622]: CALL dword ptr [0x0085bb90] */
         LeaveCriticalSection((LPCRITICAL_SECTION)(*param_1 + 0x4f0));
         return 0;
       }

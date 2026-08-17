@@ -261,6 +261,7 @@ LAB_00610886:
           if (4 < *(int *)&param_1->field_0x248) goto LAB_00610911;
           uVar17 = 5;
         }
+        /* ST_CALLSITE[0061090C]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
         TraksClassTy::TraksCreate
                   (g_traksClass_00802A7C,1,1,uVar17,(int)*(short *)&param_1->field_0x25a,
                    (int)*(short *)&param_1->field_0x25c,(int)*(short *)&param_1->field_0x25e,0,0,0,0
@@ -286,6 +287,7 @@ LAB_00610969:
         local_44 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
         local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
         ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_58,&local_48,0.0,0.0,0.0,1);
+        /* ST_CALLSITE[00610A75]: CALL dword ptr [EDX + 0x14] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                           (STPiece<2,2>(local_68),uStack_62,STPiece<2,2>(local_60),local_58 >> 0x10,
@@ -303,9 +305,12 @@ LAB_00610969:
         if (iVar15 == 2) goto LAB_00610969;
         *(undefined4 *)&param_1->field_0x237 = 0;
       }
+      /* ST_CALLSITE[00610A97]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase
                 (*(STT3DSprC **)&param_1->field_0x252,'\r',*(uint *)&param_1->field_0x237);
+      /* ST_CALLSITE[00610AA4]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       STT3DSprC::ShowCurFase(*(STT3DSprC **)&param_1->field_0x252,'\r');
+      /* ST_CALLSITE[00610AF7]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       STT3DSprC::sub_004AD3C0
                 (*(STT3DSprC **)&param_1->field_0x252,
                  (float)*(int *)&param_1->field_0x22b * _DAT_007904f8 * _DAT_007904f0,
@@ -329,6 +334,7 @@ LAB_00610969:
       iVar9 = *(int *)&param_1->field_0x22b;
       iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
       if (((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+         /* ST_CALLSITE[00610BCA]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
          ((VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar15,
                       (int *)&local_24,&local_20), (int)local_c < 0 ||
@@ -383,6 +389,7 @@ cf_common_exit_006121E1:
           if (4 < *(int *)&param_1->field_0x248) goto LAB_00610d47;
           uVar17 = 5;
         }
+        /* ST_CALLSITE[00610D42]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
         TraksClassTy::TraksCreate
                   (g_traksClass_00802A7C,1,1,uVar17,(int)*(short *)&param_1->field_0x25a,
                    (int)*(short *)&param_1->field_0x25c,(int)*(short *)&param_1->field_0x25e,0,0,0,0
@@ -408,6 +415,7 @@ LAB_00610d9f:
         local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
         local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
         ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68,&local_3c,0.0,0.0,0.0,1);
+        /* ST_CALLSITE[00610EAB]: CALL dword ptr [EAX + 0x14] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                           (STPiece<2,2>(local_58),uStack_52,STPiece<2,2>(local_50),local_68 >> 0x10,
@@ -425,9 +433,12 @@ LAB_00610d9f:
         if (iVar15 == 2) goto LAB_00610d9f;
         *(undefined4 *)&param_1->field_0x237 = 0;
       }
+      /* ST_CALLSITE[00610ECD]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase
                 (*(STT3DSprC **)&param_1->field_0x252,'\r',*(uint *)&param_1->field_0x237);
+      /* ST_CALLSITE[00610EDA]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       STT3DSprC::ShowCurFase(*(STT3DSprC **)&param_1->field_0x252,'\r');
+      /* ST_CALLSITE[00610F2D]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       STT3DSprC::sub_004AD3C0
                 (*(STT3DSprC **)&param_1->field_0x252,
                  (float)*(int *)&param_1->field_0x22b * _DAT_007904f8 * _DAT_007904f0,
@@ -451,6 +462,7 @@ LAB_00610d9f:
       iVar9 = *(int *)&param_1->field_0x22b;
       iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
       if (((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+         /* ST_CALLSITE[00611000]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
          ((VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar15,
                       (int *)&local_24,&local_20), (int)local_c < 0 ||
@@ -536,6 +548,7 @@ LAB_00611185:
         if (4 < *(int *)&param_1->field_0x248) goto LAB_006112a8;
         uVar17 = 5;
       }
+      /* ST_CALLSITE[006112A3]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       TraksClassTy::TraksCreate
                 (g_traksClass_00802A7C,1,1,uVar17,(int)*(short *)&param_1->field_0x25a,
                  (int)*(short *)&param_1->field_0x25c,(int)*(short *)&param_1->field_0x25e,0,0,0,0,0
@@ -561,6 +574,7 @@ LAB_00611304:
       local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68,&local_3c,0.0,0.0,0.0,1);
+      /* ST_CALLSITE[00611410]: CALL dword ptr [EAX + 0x14] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                         (STPiece<2,2>(local_58),uStack_52,STPiece<2,2>(local_50),local_68 >> 0x10,
@@ -578,8 +592,11 @@ LAB_00611304:
       if (iVar15 == 2) goto LAB_00611304;
       *(undefined4 *)&param_1->field_0x237 = 0;
     }
+    /* ST_CALLSITE[00611432]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase(*(STT3DSprC **)&param_1->field_0x252,'\r',*(uint *)&param_1->field_0x237);
+    /* ST_CALLSITE[0061143F]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
     STT3DSprC::ShowCurFase(*(STT3DSprC **)&param_1->field_0x252,'\r');
+    /* ST_CALLSITE[00611492]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     STT3DSprC::sub_004AD3C0
               (*(STT3DSprC **)&param_1->field_0x252,
                (float)*(int *)&param_1->field_0x22b * _DAT_007904f8 * _DAT_007904f0,
@@ -602,6 +619,7 @@ LAB_00611304:
       iVar9 = *(int *)&param_1->field_0x22b;
       iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
       if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+           /* ST_CALLSITE[00611565]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
            (VisibleClassTy::sub_00558C00
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar15,
                        (int *)&local_24,&local_20), (int)local_c < 0)) ||
@@ -677,6 +695,7 @@ LAB_006117e5:
         if (4 < *(int *)&param_1->field_0x248) goto LAB_0061190f;
         uVar17 = 5;
       }
+      /* ST_CALLSITE[0061190A]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       TraksClassTy::TraksCreate
                 (g_traksClass_00802A7C,1,1,uVar17,(int)*(short *)&param_1->field_0x25a,
                  (int)*(short *)&param_1->field_0x25c,(int)*(short *)&param_1->field_0x25e,0,0,0,0,0
@@ -702,6 +721,7 @@ LAB_0061196b:
       local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68,&local_3c,0.0,0.0,0.0,1);
+      /* ST_CALLSITE[00611A77]: CALL dword ptr [EDX + 0x14] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                         (STPiece<2,2>(local_58),uStack_52,STPiece<2,2>(local_50),local_68 >> 0x10,
@@ -719,8 +739,11 @@ LAB_0061196b:
       if (iVar15 == 2) goto LAB_0061196b;
       *(undefined4 *)&param_1->field_0x237 = 0;
     }
+    /* ST_CALLSITE[00611A99]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase(*(STT3DSprC **)&param_1->field_0x252,'\r',*(uint *)&param_1->field_0x237);
+    /* ST_CALLSITE[00611AA6]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
     STT3DSprC::ShowCurFase(*(STT3DSprC **)&param_1->field_0x252,'\r');
+    /* ST_CALLSITE[00611AF9]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     STT3DSprC::sub_004AD3C0
               (*(STT3DSprC **)&param_1->field_0x252,
                (float)*(int *)&param_1->field_0x22b * _DAT_007904f8 * _DAT_007904f0,
@@ -743,6 +766,7 @@ LAB_0061196b:
     iVar9 = *(int *)&param_1->field_0x22b;
     iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
     if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+         /* ST_CALLSITE[00611BC4]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
          ((VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar15,
                       (int *)&local_24,&local_20), (int)local_c < 0 ||
@@ -774,6 +798,7 @@ LAB_006115da:
       thunk_FUN_00613280(param_1,(int)*(short *)&param_1->field_0x1e9,
                          (int)*(short *)&param_1->field_0x1eb,(int)*(short *)&param_1->field_0x1ed,
                          uVar7);
+      /* ST_CALLSITE[00611CF9]: CALL 0x00405993; direct=00405993 STGenBombC::LoadImagSpr */
       STGenBombC::LoadImagSpr((STGenBombC *)param_1,1,0);
       if ((param_1->field_0x250 != '\0') &&
          (*(STT3DSprC **)&param_1->field_0x252 != nullptr)) {
@@ -790,48 +815,64 @@ LAB_006115da:
       local_24 = thunk_FUN_004ac910(*(void **)&param_1->field_0x252,'\x0e');
       if (0xe < (int)uVar17) {
         if (uVar17 == 0xf) {
+          /* ST_CALLSITE[00611D83]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
           STT3DSprC::StartShow
                     (*(STT3DSprC **)&param_1->field_0x252,0xf,g_playSystem_00802A38->field_00E4);
         }
         uVar5 = thunk_FUN_004ac910(*(void **)&param_1->field_0x252,'\x0f');
+        /* ST_CALLSITE[00611D9F]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
         STT3DSprC::ShowCurFase(*(STT3DSprC **)&param_1->field_0x252,'\x0f');
+        /* ST_CALLSITE[00611DAC]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar15 = STT3DSprC::sub_004ACD30(*(STT3DSprC **)&param_1->field_0x252,'\x0f');
         if ((int)uVar5 < iVar15) {
           uVar5 = uVar5 + 1;
         }
+        /* ST_CALLSITE[00611DBF]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
         STT3DSprC::SetCurFase(*(STT3DSprC **)&param_1->field_0x252,'\x0f',uVar5);
       }
       if (param_1->field_0x251 != '\0') {
+        /* ST_CALLSITE[00611DD6]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar15 = STT3DSprC::sub_004ACD30(*(STT3DSprC **)&param_1->field_0x252,'\x0e');
         iVar9 = thunk_FUN_004ac910(*(void **)&param_1->field_0x252,'\x0e');
         if (iVar15 + -1 == iVar9) {
+          /* ST_CALLSITE[00611DF7]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
           STT3DSprC::StopShow(*(STT3DSprC **)&param_1->field_0x252,0xe);
         }
       }
+      /* ST_CALLSITE[00611E04]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar15 = STT3DSprC::sub_004ACD30(*(STT3DSprC **)&param_1->field_0x252,'\r');
       iVar9 = thunk_FUN_004ac910(*(void **)&param_1->field_0x252,'\r');
       if (iVar15 + -1 == iVar9) {
+        /* ST_CALLSITE[00611E25]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow(*(STT3DSprC **)&param_1->field_0x252,0xd);
       }
+      /* ST_CALLSITE[00611E32]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar15 = STT3DSprC::sub_004ACD30(*(STT3DSprC **)&param_1->field_0x252,'\x0f');
       iVar9 = thunk_FUN_004ac910(*(void **)&param_1->field_0x252,'\x0f');
       if (iVar15 + -1 == iVar9) {
         *(undefined4 *)&param_1->field_0x20c = 9;
         return local_1c;
       }
+      /* ST_CALLSITE[00611E67]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar15 = STT3DSprC::sub_004ACD30(*(STT3DSprC **)&param_1->field_0x252,'\r');
       if ((int)uVar17 < iVar15) {
         uVar17 = uVar17 + 1;
       }
+      /* ST_CALLSITE[00611E79]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar15 = STT3DSprC::sub_004ACD30(*(STT3DSprC **)&param_1->field_0x252,'\x0e');
       uVar5 = local_24;
       if ((int)local_24 < iVar15) {
         uVar5 = local_24 + 1;
       }
+      /* ST_CALLSITE[00611E8F]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase(*(STT3DSprC **)&param_1->field_0x252,'\x0e',uVar5);
+      /* ST_CALLSITE[00611E9C]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       STT3DSprC::ShowCurFase(*(STT3DSprC **)&param_1->field_0x252,'\x0e');
+      /* ST_CALLSITE[00611EAA]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase(*(STT3DSprC **)&param_1->field_0x252,'\r',uVar17);
+      /* ST_CALLSITE[00611EB7]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       STT3DSprC::ShowCurFase(*(STT3DSprC **)&param_1->field_0x252,'\r');
+      /* ST_CALLSITE[00611F0A]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       STT3DSprC::sub_004AD3C0
                 (*(STT3DSprC **)&param_1->field_0x252,
                  (float)*(int *)&param_1->field_0x22b * _DAT_007904f8 * _DAT_007904f0,
@@ -857,6 +898,7 @@ LAB_006115da:
       iVar9 = *(int *)&param_1->field_0x22b;
       iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
       if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+            /* ST_CALLSITE[00611FD5]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             (VisibleClassTy::sub_00558C00
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar15,
                         &local_20,(int *)&local_c), -1 < (int)local_24)) &&
@@ -973,6 +1015,7 @@ LAB_006122dd:
         if (4 < *(int *)&param_1->field_0x248) goto LAB_006123fd;
         uVar17 = 5;
       }
+      /* ST_CALLSITE[006123F8]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       TraksClassTy::TraksCreate
                 (g_traksClass_00802A7C,1,1,uVar17,(int)*(short *)&param_1->field_0x25a,
                  (int)*(short *)&param_1->field_0x25c,(int)*(short *)&param_1->field_0x25e,0,0,0,0,0
@@ -998,6 +1041,7 @@ LAB_00612459:
       local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
       ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68,&local_3c,0.0,0.0,0.0,1);
+      /* ST_CALLSITE[00612565]: CALL dword ptr [EAX + 0x14] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                         (STPiece<2,2>(local_58),uStack_52,STPiece<2,2>(local_50),local_68 >> 0x10,
@@ -1015,8 +1059,11 @@ LAB_00612459:
       if (iVar15 == 2) goto LAB_00612459;
       *(undefined4 *)&param_1->field_0x237 = 0;
     }
+    /* ST_CALLSITE[00612587]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase(*(STT3DSprC **)&param_1->field_0x252,'\r',*(uint *)&param_1->field_0x237);
+    /* ST_CALLSITE[00612594]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
     STT3DSprC::ShowCurFase(*(STT3DSprC **)&param_1->field_0x252,'\r');
+    /* ST_CALLSITE[006125E7]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     STT3DSprC::sub_004AD3C0
               (*(STT3DSprC **)&param_1->field_0x252,
                (float)*(int *)&param_1->field_0x22b * _DAT_007904f8 * _DAT_007904f0,
@@ -1039,6 +1086,7 @@ LAB_00612459:
     iVar9 = *(int *)&param_1->field_0x22b;
     iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+          /* ST_CALLSITE[006126BA]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar15,
                       &local_20,(int *)&local_c), (int)local_24 < 0)) ||

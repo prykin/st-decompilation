@@ -32,6 +32,7 @@ void __fastcall FUN_005f0620(AnonShape_005F0620_60AA17CE *param_1)
     }
     local_24.arg1.words.low = param_1->field_02A3;
     local_24.arg1.words.high = param_1->field_02AB;
+    /* ST_CALLSITE[005F0690]: CALL dword ptr [EAX] */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
 switchD_005f064c_default:

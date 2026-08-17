@@ -28,6 +28,7 @@ undefined4 __thiscall STMineSetC::sub_00627400(STMineSetC *this,undefined4 param
          ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar3 ||
          (STGridAt3D(g_worldGrid, sVar1, sVar2, sVar3).objects[(byte)this->field_008E] == nullptr)))) &&
+       /* ST_CALLSITE[0062751C]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
        (iVar4 = DumpClassC::WritePtr
                           (sVar1,sVar2,sVar3,this->field_008E,
                            (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar4 == 0)) {
@@ -41,11 +42,13 @@ undefined4 __thiscall STMineSetC::sub_00627400(STMineSetC *this,undefined4 param
       return this->field_02AE;
     }
     if ((int)(((ulonglong)(this->field_0315 - g_playSystem_00802A38->field_00E4) % 200) / 3) != 0) {
+      /* ST_CALLSITE[0062758D]: CALL dword ptr [EDX + 0x2c] */
       dVar5 = this_00->slot_2C();
       if (dVar5 == 0xe6) {
         thunk_FUN_0058f1e0(this_00,0);
       }
       else if ((0xe6 < (int)dVar5) && ((int)dVar5 < 0xec)) {
+        /* ST_CALLSITE[006275A4]: CALL 0x00402612; direct=00402612 STFishC::sub_0057D5F0 */
         STFishC::sub_0057D5F0(this_00,0);
         return param_1;
       }

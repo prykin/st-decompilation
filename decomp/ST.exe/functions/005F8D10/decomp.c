@@ -11,6 +11,7 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
   short local_8;
   short local_6;
 
+  /* ST_CALLSITE[005F8D1F]: CALL dword ptr [EAX + 0x1c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar2 = (**(code **)(*param_1 + 0x1c))();
   thunk_FUN_005fa0b0((STColl3C *)param_1);
@@ -19,6 +20,7 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
     uVar2 = 5;
     if (STField<char>(param_1,0x29d) == '\x01') {
       if (STField<char>(param_1,699) == '\x01') {
+        /* ST_CALLSITE[005F8D6C]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0((STFishC *)param_1,&local_a,&local_8,&local_6);
         if ((((int)local_a == STField<int>(param_1,0x291)) &&
             ((int)local_8 == STField<int>(param_1,0x295))) &&
@@ -38,6 +40,7 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
     break;
   case 1:
     if (STField<int>(param_1,0x2ea) != 0) {
+      /* ST_CALLSITE[005F8DEB]: CALL 0x00404ae3; direct=00404AE3 STColl3C::sub_005F9450 */
       STColl3C::sub_005F9450((STColl3C *)param_1);
       STField<uint>(param_1,0x2d5) = g_playSystem_00802A38->field_00E4;
       uVar1 = g_playSystem_00802A38->field_00E4;
@@ -68,6 +71,7 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
     }
     else {
       if ((param_1[0xa8] != 0) && (STField<char>(param_1,0x29d) == '\0')) {
+        /* ST_CALLSITE[005F8E87]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0((STFishC *)param_1,&local_a,&local_8,&local_6);
         return 10;
       }

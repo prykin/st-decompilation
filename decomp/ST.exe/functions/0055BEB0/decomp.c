@@ -10,11 +10,13 @@ void __thiscall FUN_0055beb0(void *this,DWORD lastError)
 {
   int iVar1;
 
+  /* ST_CALLSITE[0055BEB6]: CALL dword ptr [0x0085c048] */
   iVar1 = CFsgsConnection::IsInitialized(this);
   if (((iVar1 != 0) && (STField<undefined1>(this,8) = 0, STField<char>(this,9) == '\0')) &&
      (g_fSGS_0081174C != nullptr)) {
     STField<undefined4>(this,0x1b) = 0x614f;
     STField<DWORD>(this,0x1f) = lastError;
+    /* ST_CALLSITE[0055BEED]: CALL dword ptr [EDX] */
     g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
   }
   return;

@@ -54,6 +54,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
 
   local_8 = 1;
   local_20 = this;
+  /* ST_CALLSITE[005AD3A8]: CALL dword ptr [0x0085bedc] */
   DVar5 = timeGetTime();
   this->field_0061 = DVar5;
   local_b0.previous = g_currentExceptionFrame;
@@ -71,8 +72,11 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
     return;
   }
   if (((local_20->field_0065 == '\x01') && (local_20->field_1C8F != (HANDLE)0x0)) &&
+     /* ST_CALLSITE[005AD3F9]: CALL dword ptr [0x0085bce0] */
      (DVar5 = WaitForSingleObject(local_20->field_1C8F,0), DVar5 == 0)) {
+    /* ST_CALLSITE[005AD40A]: CALL dword ptr [0x0085bce4] */
     FindNextChangeNotification(this_00->field_1C8F);
+    /* ST_CALLSITE[005AD419]: CALL 0x00403b0c; direct=00403B0C ChooseMapTy::PrepFiles */
     PrepFiles(this_00,this_00->field_1C93);
     iVar6 = this_00->array_00BC[0xc].field_01EC;
     this_00->field_002D = 5;
@@ -85,6 +89,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
   }
   if ((this_00->array_00BC[0xc].field_01E4 != 0) &&
      (0xf9 < this_00->field_0061 - this_00->array_00BC[0xc].field_01E8)) {
+    /* ST_CALLSITE[005AD47E]: CALL 0x004042b4; direct=004042B4 ChooseMapTy::ShowDescription */
     ShowDescription(this_00,this_00->field_1C93);
     this_00->array_00BC[0xc].field_01E4 = 0;
   }
@@ -99,6 +104,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
         local_c = nullptr;
         Library::DKW::DDX::FUN_006b7510(g_int_00811764,-1,&local_14,-1,0);
         if (DAT_008067a0 != '\0') {
+          /* ST_CALLSITE[005ADA31]: CALL dword ptr [0x0085c05c] */
           CFsgsConnection::PumpMessages((CFsgsConnection *)&DAT_00802a90);
         }
         local_10 = 0;
@@ -115,11 +121,13 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
               local_6c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
               iVar6 = this_00->array_00BC[0xc].field_01DB;
               if (*(int *)(iVar6 + 0x2e6) == 0) {
+                /* ST_CALLSITE[005ADBE3]: CALL dword ptr [EAX] */
                 this_00->GetMessage(&local_6c);
               }
               else {
                 local_6c.unknown_08 = this_00->field_0008;
                 local_6c.unknown_0c = 2;
+                /* ST_CALLSITE[005ADBD4]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
                 MMsgTy::SetMessage(*(MMsgTy **)(iVar6 + 0x2e6),0x2522,'\0',&local_6c.unknown_00,
                                    nullptr,nullptr,0,0);
               }
@@ -168,6 +176,7 @@ switchD_005adb01_caseD_c:
                 }
               }
               else if (local_18 == 0x1b) {
+                /* ST_CALLSITE[005ADA9A]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
                 StartSystemTy::AddToChat
                           ((StartSystemTy *)this_00->array_00BC[0xc].field_01DB,(int)local_c);
               }
@@ -194,14 +203,17 @@ switchD_005adb01_caseD_c:
       local_8 = 0;
     }
     if (((this_00->field_20B3 != '\0') && (this_00->field_20B8 != nullptr)) &&
+       /* ST_CALLSITE[005AD69F]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar6 = HoloTy::NextFas(this_00->field_20B8), iVar6 != 0)) {
       local_8 = 0;
     }
     if (((this_00->field_20B4 != '\0') && (this_00->field_20BC != nullptr)) &&
+       /* ST_CALLSITE[005AD6BF]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar6 = HoloTy::NextFas(this_00->field_20BC), iVar6 != 0)) {
       local_8 = 0;
     }
     if (((this_00->field_20B7 != '\0') && (this_00->field_20C0 != nullptr)) &&
+       /* ST_CALLSITE[005AD6DF]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
        (iVar6 = HoloTy::NextFas(this_00->field_20C0), iVar6 != 0)) {
       local_8 = 0;
     }
@@ -211,16 +223,19 @@ switchD_005adb01_caseD_c:
     }
     if (local_8 != 0) {
       if ((this_00->field_20B3 != '\0') && (this_00->field_20B8 != nullptr)) {
+        /* ST_CALLSITE[005AD721]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_00->field_20B8);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_20B8);
         this_00->field_20B8 = nullptr;
       }
       if ((this_00->field_20B4 != '\0') && (this_00->field_20BC != nullptr)) {
+        /* ST_CALLSITE[005AD74F]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_00->field_20BC);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_20BC);
         this_00->field_20BC = nullptr;
       }
       if ((this_00->field_20B7 != '\0') && (this_00->field_20C0 != nullptr)) {
+        /* ST_CALLSITE[005AD77D]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
         HoloTy::Done(this_00->field_20C0);
         Library::MSVCRT::FUN_0072e2b0(this_00->field_20C0);
         this_00->field_20C0 = nullptr;
@@ -233,6 +248,7 @@ switchD_005adb01_caseD_c:
           FUN_006b3af0((int *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC);
         }
       }
+      /* ST_CALLSITE[005AD7E0]: CALL 0x0040175d; direct=0040175D ChooseMapTy::CreateCtrls */
       CreateCtrls(this_00,'\x01');
       uVar3 = this_00->array_00BC[0xc].field_01F4;
       if (uVar3 != 0xffffffff) {
@@ -293,6 +309,7 @@ switchD_005adb01_caseD_c:
         Library::DKW::DDX::FUN_006b3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
       }
+      /* ST_CALLSITE[005AD9C4]: CALL 0x00402725; direct=00402725 ChooseMapTy::PaintChooseMap */
       PaintChooseMap(this_00,'\0');
       g_currentExceptionFrame = local_b0.previous;
       return;
@@ -310,6 +327,7 @@ switchD_005adb01_caseD_c:
       local_8 = 0;
     }
     if ((this_00->field_20B3 != '\0') && (this_00->field_20B8 != nullptr)) {
+      /* ST_CALLSITE[005AD510]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar6 = HoloTy::NextFas(this_00->field_20B8);
       if (iVar6 == 0) {
         uVar3 = *(uint *)&this_00->field_20B8->field_0x3;
@@ -322,6 +340,7 @@ switchD_005adb01_caseD_c:
       }
     }
     if ((this_00->field_20B4 != '\0') && (this_00->field_20BC != nullptr)) {
+      /* ST_CALLSITE[005AD54C]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar6 = HoloTy::NextFas(this_00->field_20BC);
       if (iVar6 == 0) {
         uVar3 = *(uint *)&this_00->field_20BC->field_0x3;
@@ -334,6 +353,7 @@ switchD_005adb01_caseD_c:
       }
     }
     if ((this_00->field_20B7 != '\0') && (this_00->field_20C0 != nullptr)) {
+      /* ST_CALLSITE[005AD588]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       iVar6 = HoloTy::NextFas(this_00->field_20C0);
       if (iVar6 == 0) {
         uVar3 = *(uint *)&this_00->field_20C0->field_0x3;

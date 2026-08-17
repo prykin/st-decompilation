@@ -138,6 +138,7 @@ LAB_005bbb22:
       local_dd0[7] = (ccFntTy *)0x104;
       local_d80 = 2;
       local_d7c = 0x631f;
+      /* ST_CALLSITE[005BBDD6]: CALL dword ptr [EAX + 0x8] */
       (*local_10->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)local_10->field_000C,6,&local_10->field_1C86,nullptr,local_dd0,
                  0);
@@ -154,6 +155,7 @@ LAB_005bbb22:
       local_22 = 1;
       local_28 = 1;
       STPiece<0,2>(local_2c) = 1;
+      /* ST_CALLSITE[005BBE50]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
       MMsgTy::StatePanel((this_00->array_00BC[0xc].field_01DB)->field_02E6,(int)&local_2c);
     }
   }
@@ -214,6 +216,7 @@ LAB_005bbb22:
     local_3b4 = local_51c;
     local_234 = local_51c;
     local_c4 = local_51c;
+    /* ST_CALLSITE[005BBD37]: CALL dword ptr [EAX + 0x8] */
     (*local_10->field_000C->vtable->CreateObject)
               ((SystemClassTy *)local_10->field_000C,7,&local_10->array_00BC[0xc].field_01F3,
                nullptr,local_544,0);

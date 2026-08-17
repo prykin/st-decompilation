@@ -33,6 +33,7 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
     Library::DKW::DDX::FUN_006b88d0
               (&this_00->field_00AD,g_dDXContext_0080759C,0,nullptr,0x8000000,0,
                nullptr,0);
+    /* ST_CALLSITE[00543680]: CALL 0x0040376f; direct=0040376F CursorClassTy::SetImages */
     SetImages(this_00,param_1,"CUR_MENU",0x32,nullptr,0,-1,-1);
     local_EAX_157 =
          Library::Ourlib::MFRLOAD::mfRLoad

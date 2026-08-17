@@ -196,6 +196,7 @@ joined_r0x005ed4b7:
       goto joined_r0x005ed4b7;
     }
   }
+  /* ST_CALLSITE[005ED564]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
   iVar8 = DumpClassC::WritePtr(sVar6,sVar10,sVar1 + sVar5,0,this);
   if (iVar8 == 0) {
     STField<char>(this,0x252) = STField<char>(this,0x252) + '\x01';

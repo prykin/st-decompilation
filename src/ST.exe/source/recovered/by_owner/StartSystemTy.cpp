@@ -75,7 +75,7 @@ StartSystemTy * __thiscall st::fn_005DA610(StartSystemTy *this,undefined4 param_
 void __thiscall st::fn_005DA910(StartSystemTy *this)
 
 {
-  if ((undefined4 *)this->field_068A != nullptr) {
+  if ((undefined4 *)this->field_068A != 0) {
     st::fn_006B6110((undefined4 *)this->field_068A);
   }
   this->field_068A = 0;
@@ -127,7 +127,7 @@ undefined1 __thiscall st::fn_005DA940(StartSystemTy *this,int param_1)
 void __thiscall st::fn_005DAB30(StartSystemTy *this)
 
 {
-  if ((undefined4 *)this->field_068E != nullptr) {
+  if ((undefined4 *)this->field_068E != 0) {
     st::fn_006B6110((undefined4 *)this->field_068E);
   }
   this->field_068E = 0;
@@ -168,6 +168,7 @@ LAB_005daf91:
   }
   st::fn_006B6500(g_int_00811764,DAT_0080733c);
 LAB_005dafab:
+  /* ST_CALLSITE[005DAFAD]: CALL 0x00402b30; direct=00402B30 StartSystemTy::sub_005DAB30 */
   st::fn_00402B30(this);
   st::fn_00404B83();
   st::fn_004034F4();
@@ -274,6 +275,7 @@ void __thiscall st::fn_005DB2A0(StartSystemTy *this)
 undefined4 __thiscall st::fn_005DCD90(StartSystemTy *this)
 
 {
+  /* ST_CALLSITE[005DCD99]: CALL dword ptr [EAX + 0x10] */
   this->vfunc_10(0x303,0);
   return 0;
 }
@@ -308,11 +310,15 @@ void __thiscall st::fn_005DCDB0(StartSystemTy *this)
   if (this->field_069A != nullptr) {
     st::fn_006AB060(&this->field_069A);
   }
+  /* ST_CALLSITE[005DCE24]: CALL 0x004039ea; direct=004039EA DelAllAccelerators */
   st::fn_004039EA();
+  /* ST_CALLSITE[005DCE2B]: CALL 0x00402f86; direct=00402F86 StartSystemTy::sub_005DB2A0 */
   st::fn_00402F86(this);
   DAT_0080c50a = 1;
+  /* ST_CALLSITE[005DCE3C]: CALL 0x0040590c; direct=0040590C StartSystemTy::sub_005DAF20 */
   st::fn_0040590C(this);
   st::fn_0040550B();
+  /* ST_CALLSITE[005DCE4A]: CALL 0x004055f6; direct=004055F6 StartSystemTy::sub_005DA910 */
   st::fn_004055F6(this);
   st::fn_006E52D0((AnonShape_006E52D0_AF06BCD2 *)this);
   return;
@@ -357,13 +363,14 @@ void __thiscall st::fn_006E56B0(StartSystemTy *this,uint param_1)
 
   uVar2 = param_1;
   local_8 = nullptr;
-  iVar3 = st::fn_006E5360(this,param_1,(int *)&param_1,st::pointer_boundary_cast<undefined4 *>(&local_8));
+  iVar3 = st::fn_006E5360(this,param_1,(int *)&param_1,(undefined4 *)&local_8);
   if (iVar3 == 0) {
     local_18 = 3;
+    /* ST_CALLSITE[006E56E8]: CALL dword ptr [EDX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*local_8)(local_28);
   }
-  iVar3 = st::fn_006E5360(this,uVar2,(int *)&param_1,st::pointer_boundary_cast<undefined4 *>(&local_8));
+  iVar3 = st::fn_006E5360(this,uVar2,(int *)&param_1,(undefined4 *)&local_8);
   if (iVar3 == 0) {
     st::fn_006B0C70(this->field_0010,param_1);
     st::fn_006E3970(this->field_0018,uVar2);

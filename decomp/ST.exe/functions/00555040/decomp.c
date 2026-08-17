@@ -42,6 +42,7 @@ cLoadingTy::SetState
   char *pcVar4_mg6;
 
   local_8 = this;
+  /* ST_CALLSITE[00555051]: CALL 0x0040249b; direct=0040249B cLoadingTy::sub_00555570 */
   sub_00555570(this);
   if (this->field_003C < -1) {
     return;
@@ -100,6 +101,7 @@ cLoadingTy::SetState
     pcVar8 = pcVar8 + -uVar5;
     pcVar12 = (char *)((int)puVar11 + -1);
     memmove(pcVar12, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    /* ST_CALLSITE[00555119]: CALL 0x00404381; direct=00404381 cLoadingTy::DrawLine */
     DrawLine(local_8,local_450);
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -158,6 +160,7 @@ cLoadingTy::SetState
       }
     }
     else {
+      /* ST_CALLSITE[005551C3]: CALL dword ptr [0x0085bedc] */
       DVar3 = timeGetTime();
       uVar5 = pcVar9->field_0040;
       param_2 = DVar3 - pcVar9->field_0044;
@@ -211,12 +214,14 @@ cLoadingTy::SetState
           pcVar9 = local_8;
         } while (uVar4 != 0);
       }
+      /* ST_CALLSITE[00555242]: CALL 0x00404381; direct=00404381 cLoadingTy::DrawLine */
       DrawLine(pcVar9,local_450);
       pcVar9->field_0050 = uVar5;
       g_currentExceptionFrame = local_50.previous;
       return;
     }
     if ((code *)pcVar9->field_0058 != nullptr) {
+      /* ST_CALLSITE[0055526B]: CALL EAX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pcVar9->field_0058)(pcVar9->field_0054);
       g_currentExceptionFrame = local_50.previous;
@@ -331,11 +336,13 @@ joined_r0x00555393:
       pcVar12 = (char *)((int)puVar11 + -1);
       memmove(pcVar12, pcVar8, uVar5); /* compiler REP MOVS byte copy */
     }
+    /* ST_CALLSITE[005553C9]: CALL 0x00401230; direct=00401230 cLoadingTy::DrawLineCR */
     DrawLineCR(pcVar9,(char *)local_450);
     g_currentExceptionFrame = local_50.previous;
     return;
   default:
     if ((code *)local_8->field_0058 != nullptr) {
+      /* ST_CALLSITE[005553EE]: CALL EAX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)local_8->field_0058)(local_8->field_0054);
     }

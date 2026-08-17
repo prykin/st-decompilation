@@ -104,6 +104,7 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
     FUN_006b5f80((int *)g_ddxContext_008075A8,*local_20.i32,*(int *)(local_20.u32 + 4),(int)local_8,
                  (int)pbVar4);
                     /* WARNING: Load size is inaccurate */
+    /* ST_CALLSITE[005C0CC6]: CALL 0x00402298; direct=00402298 PutDDXClip */
     PutDDXClip(*SVar3.i32,*(int *)(SVar3.u32 + 4),*SVar3.i32,*(int *)(SVar3.u32 + 4),(uint)local_8,
                pbVar4,'\x01',(BITMAPINFO *)local_c->field_005D);
                     /* WARNING: Load size is inaccurate */

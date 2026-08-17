@@ -20,6 +20,7 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
   int local_8;
 
   if ((int)this->field_008F < 0) {
+    /* ST_CALLSITE[005F469C]: CALL 0x004055ba; direct=004055BA STBHEShellC::sub_005F35F0 */
     sub_005F35F0(this,this->field_0087);
   }
   pVVar2 = g_visibleClass_00802A88;
@@ -31,6 +32,7 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
     iVar3 = this->field_0093;
     iVar3 = STBiasedDiv16(iVar3, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+          /* ST_CALLSITE[005F4767]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,iVar5,
                       &local_c,&local_10), -1 < local_8)) && ((local_8 < 5 && (-1 < local_c)))) &&
@@ -69,6 +71,7 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
       iVar3 = ((this->field_00A3 - this->field_0097) * 0x28) / local_8 + this->field_0097;
       iVar4 = ((this->field_00A7 - this->field_009B) * 0x28) / local_8 + this->field_009B;
     }
+    /* ST_CALLSITE[005F490F]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
     TraksClassTy::TraksCreate(g_traksClass_00802A7C,1,1,0,iVar5,iVar3,iVar4,0,0,0,0,0,0,-1,0,0);
     if (this->field_00C4 == '\0') {
       Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this->field_008F,0);

@@ -16,11 +16,14 @@ void __fastcall FUN_00624000(STMineSetC *param_1)
   ushort *puVar2;
 
   this = &param_1->field_01D5;
+  /* ST_CALLSITE[0062400E]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
   STT3DSprC::StopShow((STT3DSprC *)this,0xe);
   if (param_1->field_0352 != '\0') {
+    /* ST_CALLSITE[00624021]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
     STT3DSprC::StopShow((STT3DSprC *)this,0xc);
     SVar1 = param_1->field_02AD;
     if (((SVar1 == CASE_0) || (SVar1 == CASE_1)) || (SVar1 == CASE_2)) {
+      /* ST_CALLSITE[0062403C]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this,0xc);
     }
   }

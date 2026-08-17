@@ -40,6 +40,7 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this)
         local_34 = 0;
         local_22 = 0;
         Library::DKW::TBL::DArrayPut(this->field_022E,index,&local_34);
+        /* ST_CALLSITE[004A8117]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar2 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this->field_0024,(ushort)STPiece<0,4>(local_30),CASE_1);
         if (pSVar2 == nullptr) {
@@ -62,6 +63,7 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this)
   DArrayGetElement(this->field_022A,this->field_0232,&local_1c);
   array = local_8;
   if (local_8->count != 0) {
+    /* ST_CALLSITE[004A81B5]: CALL 0x00405d7b; direct=00405D7B STGroupBoatC::InitWay */
     InitWay(this,local_8,(int)local_1c,(int)local_1a,(int)local_18);
   }
   DArrayDestroy(array);

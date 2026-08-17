@@ -32,9 +32,11 @@ int __thiscall PanelTy::GetMessage(PanelTy *this,STMessage *message)
   if (local_EAX_47 == 0) {
     SVar1 = message->id;
     if (SVar1 == MESS_ID_CREATE) {
+      /* ST_CALLSITE[00538519]: CALL 0x00401e01; direct=00401E01 PanelTy::InitPanel */
       InitPanel(local_8);
     }
     else if (SVar1 == MESS_SHARED_0003) {
+      /* ST_CALLSITE[00538510]: CALL 0x00404ad9; direct=00404AD9 PanelTy::DonePanel */
       DonePanel(local_8);
     }
     else if (SVar1 == MESS_SHARED_0005) {

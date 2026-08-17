@@ -17,6 +17,7 @@ void __thiscall CGenerate::sub_0069FF90(CGenerate *this)
 
   pcVar1 = *(code **)&(this->aggregate_001C).field_0x22e;
   if (pcVar1 != nullptr) {
+    /* ST_CALLSITE[0069FF9C]: CALL EAX */
     (*pcVar1)(0);
   }
   return;

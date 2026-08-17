@@ -36,7 +36,7 @@ uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
     *(undefined1 *)puVar9 = 0;
     puVar9 = (uint *)((int)puVar9 + 1);
   }
-  auto param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
+  uint * param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
   if (0 < (int)param_1[2]) {
     do {
       pcVar8 = *(char **)(param_1[5] + (int)param_2_after_write * 4);

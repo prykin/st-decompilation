@@ -140,8 +140,10 @@ LPSTR __cdecl st::fn_006F2C00(char *text,int param_2,undefined4 param_3)
   }
   else {
     st::fn_0072DE60(param_2,local_24,10);
+    /* ST_CALLSITE[006F2C3F]: CALL EDI */
     st::external_00000080(local_44,st::mutable_c_string("%s%s%s"),"%s%0",local_24,&DAT_007d5630);
     pCVar5 = st::pointer_boundary_cast<LPSTR>(&DAT_00856e40 + iVar2 * 0x20);
+    /* ST_CALLSITE[006F2C57]: CALL EDI */
     st::external_00000080(pCVar5,local_44,text,param_3);
   }
   DAT_00856fc4 = DAT_00856fc4 + 1;
@@ -228,6 +230,8 @@ void st::fn_006F4E70(byte *param_1,int param_2,uint *param_3,int param_4,int par
                  byte *param_7,int param_8)
 
 {
+  int scalar_param_3;
+
   int iVar1;
   uint uVar2;
   bool bVar3;
@@ -258,7 +262,7 @@ void st::fn_006F4E70(byte *param_1,int param_2,uint *param_3,int param_4,int par
         if ((uVar5 & 0x80) == 0) {
           do {
             param_1 = param_1 + uVar5;
-            int scalar_param_3 = (int)param_3 + uVar5 * 2; /* split integer lifetime from pointer-typed SSA storage */
+            scalar_param_3 = (int)param_3 + uVar5 * 2; /* split integer lifetime from pointer-typed SSA storage */
             pbVar10 = pbVar9 + -uVar5;
             if (pbVar10 == nullptr || (int)pbVar9 < (int)uVar5) goto LAB_006f4f0f;
             bVar4 = *param_6;
@@ -412,14 +416,15 @@ LAB_006f4f9d:
 }
 
 // 006F4FE0 FUN_006f4fe0
-#line 1 "decomp/ST.exe/functions/006F4FE0/decomp.c"
-
+#line 4 "decomp/ST.exe/functions/006F4FE0/decomp.c"
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
 byte * st::fn_006F4FE0(byte *param_1,int param_2,uint *param_3,int param_4,int param_5,byte *param_6,
                    int param_7,int param_8,byte *param_9,int param_10,int param_11)
 
 {
+  int scalar_param_3;
+
   uint uVar1;
   byte bVar2;
   bool bVar3;
@@ -453,7 +458,7 @@ byte * st::fn_006F4FE0(byte *param_1,int param_2,uint *param_3,int param_4,int p
           do {
             param_1 = param_1 + uVar4;
             PTR_00856fe0 = PTR_00856fe0 + uVar4;
-            int scalar_param_3 = (int)param_3 + uVar4 * 2; /* split integer lifetime from pointer-typed SSA storage */
+            scalar_param_3 = (int)param_3 + uVar4 * 2; /* split integer lifetime from pointer-typed SSA storage */
             iVar9 = iVar8 - uVar4;
             if (iVar9 == 0 || iVar8 < (int)uVar4) goto LAB_006f50a4;
             bVar2 = *param_6;
@@ -869,8 +874,7 @@ cf_continue_loop_006F53F2:
 }
 
 // 006F5430 FUN_006f5430
-#line 1 "decomp/ST.exe/functions/006F5430/decomp.c"
-
+#line 4 "decomp/ST.exe/functions/006F5430/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
@@ -1143,6 +1147,8 @@ void st::fn_006F5760(undefined1 *param_1,int param_2,uint *param_3,int param_4,i
                  byte *param_6,int param_7,int param_8,int param_9)
 
 {
+  int scalar_param_3;
+
   uint uVar1;
   byte bVar2;
   bool bVar3;
@@ -1177,7 +1183,7 @@ void st::fn_006F5760(undefined1 *param_1,int param_2,uint *param_3,int param_4,i
         if ((uVar5 & 0x80) == 0) {
           do {
             param_1 = param_1 + uVar5;
-            int scalar_param_3 = (int)param_3 + uVar5 * 2; /* split integer lifetime from pointer-typed SSA storage */
+            scalar_param_3 = (int)param_3 + uVar5 * 2; /* split integer lifetime from pointer-typed SSA storage */
             iStack_18 = iVar9 - uVar5;
             if (iStack_18 == 0 || iVar9 < (int)uVar5) goto LAB_006f5824;
             bVar2 = *param_6;
@@ -1345,6 +1351,8 @@ uint st::fn_006F5920(byte *param_1,int param_2,uint *param_3,int param_4,int par
                  int param_7,int param_8,uint param_9,byte *param_10,int param_11,int param_12)
 
 {
+  int scalar_param_3;
+
   uint uVar1;
   byte bVar2;
   bool bVar3;
@@ -1382,7 +1390,7 @@ uint st::fn_006F5920(byte *param_1,int param_2,uint *param_3,int param_4,int par
           do {
             param_1 = param_1 + uVar4;
             PTR_00857024 = PTR_00857024 + uVar4;
-            int scalar_param_3 = (int)param_3 + uVar4 * 2; /* split integer lifetime from pointer-typed SSA storage */
+            scalar_param_3 = (int)param_3 + uVar4 * 2; /* split integer lifetime from pointer-typed SSA storage */
             iStack_18 = iVar9 - uVar4;
             if (iStack_18 == 0 || iVar9 < (int)uVar4) goto LAB_006f5a0d;
             bVar2 = *param_6;

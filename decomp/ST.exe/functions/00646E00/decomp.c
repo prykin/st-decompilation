@@ -76,6 +76,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
       param_3_after_write = (int)g_worldGrid.sizeX;
     }
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+          /* ST_CALLSITE[00646F85]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           ((VisibleClassTy::sub_00558C00
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
                        &local_c,&local_10), pVVar3 = g_visibleClass_00802A88, -1 < param_1 &&
@@ -84,6 +85,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
              (iVar5 < pVVar2->field_0034)))))))) && (pVVar2->field_004C != nullptr)) &&
         ((pVVar2->field_004C[local_c + iVar5 * pVVar2->field_0030] == 0 && (DAT_0080874d != -1))))
        && (((((g_visibleClass_00802A88->field_00F8 != 0 &&
+              /* ST_CALLSITE[00647027]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
               (((VisibleClassTy::sub_00558C00
                            (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_2,
                             iVar6,&local_10,&local_c), pVVar2 = g_visibleClass_00802A88,
@@ -92,6 +94,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
              (((iVar5 < pVVar3->field_0034 && (pVVar3->field_004C != nullptr)) &&
               (pVVar3->field_004C[local_10 + iVar5 * pVVar3->field_0030] == 0)))) &&
             ((((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+              /* ST_CALLSITE[006470B8]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
               ((VisibleClassTy::sub_00558C00
                           (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_3_after_write,iVar6
                            ,&local_10,&local_c), iVar5 = local_8, pVVar3 = g_visibleClass_00802A88,
@@ -103,6 +106,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
               (pVVar2->field_004C[local_10 + local_c * pVVar2->field_0030] == 0)))))) &&
            ((DAT_0080874d != -1 &&
             (((g_visibleClass_00802A88->field_00F8 != 0 &&
+              /* ST_CALLSITE[00647148]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
               (VisibleClassTy::sub_00558C00
                          (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_2,
                           local_8,&param_2,&local_10), -1 < param_2)) &&
@@ -110,6 +114,7 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
               ((((local_10 = g_centeredOffsets5[param_1] + local_10, -1 < local_10 &&
                  (local_10 < pVVar3->field_0034)) && (pVVar3->field_004C != nullptr)) &&
                ((pVVar3->field_004C[param_2 + local_10 * pVVar3->field_0030] == 0 &&
+                /* ST_CALLSITE[00647196]: CALL 0x00404e5d; direct=00404E5D VisibleClassTy::sub_005F1D80 */
                 (iVar5 = VisibleClassTy::sub_005F1D80(g_visibleClass_00802A88,param_3_after_write,iVar5,param_1)
                 , iVar5 != 1)))))))))))))) {
       return 0;

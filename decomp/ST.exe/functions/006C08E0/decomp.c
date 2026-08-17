@@ -42,6 +42,7 @@ void FUN_006c08e0(void)
 
   do {
     local_34 = 1;
+    /* ST_CALLSITE[006C08F5]: CALL dword ptr [0x0085bb8c] */
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
     local_c = 0;
     do {
@@ -56,11 +57,13 @@ void FUN_006c08e0(void)
           local_18 = 0;
           pAVar10 = *(uint *)(&DAT_0085500c + iVar9) >> 1;
           local_20 = pAVar10;
+          /* ST_CALLSITE[006C0992]: CALL dword ptr [ECX + 0x24] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar4 = (**(code **)(*(int *)(&PTR_00855004)[local_c * 0x31] + 0x24))
                             ((&PTR_00855004)[local_c * 0x31],local_38);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           if (((iVar4 != 0) || ((local_38[0] & 2) != 0)) ||
+             /* ST_CALLSITE[006C09B5]: CALL dword ptr [ECX + 0x10] */
              (iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x10))
                                 ((&PTR_00855004)[uVar2 * 0x31],&local_14,local_3c), iVar4 != 0))
           goto cf_common_join_006C0E00;
@@ -78,6 +81,7 @@ LAB_006c0af5:
                   }
                   else {
                     if ((*(byte *)(&DAT_00854ffc + uVar2 * 0x31) & 1) == 0) {
+                      /* ST_CALLSITE[006C0B06]: CALL dword ptr [EDX + 0x48] */
                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                       (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x48))
                                 ((&PTR_00855004)[uVar2 * 0x31]);
@@ -92,6 +96,7 @@ LAB_006c0af5:
             }
             else if ((pAVar9 <= local_14) || ((local_14 < pAVar10 && (pAVar10 <= pAVar9)))) {
               if ((*(byte *)(&DAT_00854ffc + uVar2 * 0x31) & 1) == 0) {
+                /* ST_CALLSITE[006C09F2]: CALL dword ptr [ECX + 0x48] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x48))
                           ((&PTR_00855004)[uVar2 * 0x31]);
@@ -116,6 +121,7 @@ LAB_006c0af5:
             }
             else {
               if (local_14 < local_20) {
+                /* ST_CALLSITE[006C0A6F]: CALL dword ptr [ESI + 0x2c] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x2c))
                                   ((&PTR_00855004)[uVar2 * 0x31],local_20,(int)local_28 - local_20,
@@ -131,6 +137,7 @@ LAB_006c0af5:
                     *(byte *)puVar11 = bVar3 & 0x80;
                     puVar11 = (uint *)((int)puVar11 + 1);
                   }
+                  /* ST_CALLSITE[006C0AC1]: CALL dword ptr [ECX + 0x4c] */
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x4c))
                                     ((&PTR_00855004)[uVar2 * 0x31],local_8,local_1c,local_30,
@@ -156,6 +163,7 @@ LAB_006c0b45:
                      ((uint)*(ushort *)(&DAT_0085508e + iVar9) * iVar4);
               }
               local_28 = local_ESI_1151;
+              /* ST_CALLSITE[006C0BA1]: CALL dword ptr [ECX + 0x2c] */
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x2c))
                                 ((&PTR_00855004)[uVar2 * 0x31],local_24,local_ECX_632,&local_8,
@@ -185,7 +193,7 @@ LAB_006c0b45:
 LAB_006c0c93:
                       if (((int)local_c < local_EDI_947[0xd]) || (local_EDI_947[0xe] < (int)local_c)
                          ) goto LAB_006c0c9d;
-                      if ((*(byte *)(local_EDI_947 + 5) & 0x40) != 0) {
+                      if ((((byte *)local_EDI_947)[5] & 0x40) != 0) {
                         local_EDI_947[0xd] = -1;
                         local_EDI_947[0xe] = -1;
                         (&DAT_00855024)[uVar2 * 0x31] = local_EDI_947[4];
@@ -193,6 +201,7 @@ LAB_006c0c93:
                         (&DAT_0085501c)[uVar2 * 0x31] = local_EDI_947[3];
                         (&DAT_00854ffc)[uVar2 * 0x31] = local_EDI_947[5];
                         *(undefined4 *)(&DAT_00855010 + iVar9) = 0x7fffffff;
+                        /* ST_CALLSITE[006C0CDA]: CALL dword ptr [0x0085bedc] */
                         DVar5 = timeGetTime();
                         (&DAT_00855000)[uVar2 * 0x31] = DVar5;
                         uVar6 = (&DAT_00854ffc)[uVar2 * 0x31];
@@ -266,6 +275,7 @@ LAB_006c0d87:
                 }
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_006c0d93:
+                /* ST_CALLSITE[006C0DA9]: CALL dword ptr [ECX + 0x4c] */
                 iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x4c))
                                   ((&PTR_00855004)[uVar2 * 0x31],local_8,local_1c,local_30,local_2c);
                 if (iVar4 == 0) {
@@ -277,6 +287,7 @@ LAB_006c0d93:
                     }
                     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                     if ((local_20 <= local_24) &&
+                       /* ST_CALLSITE[006C0DF5]: CALL dword ptr [ECX + 0x30] */
                        (iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x30))
                                           ((&PTR_00855004)[uVar2 * 0x31],0,0,0), iVar4 != 0))
                     goto cf_common_join_006C0E00;
@@ -291,6 +302,7 @@ cf_common_join_006C0E00:
           }
 cf_common_join_006C0F07:
           if (local_18 != 0) {
+            /* ST_CALLSITE[006C0F2C]: CALL dword ptr [0x0085be5c] */
             PostMessageA(g_hWnd_00854FF0,0x3b9,1,local_c & 0xffff | 0x44530000);
           }
         }
@@ -301,14 +313,17 @@ cf_common_join_006C0F07:
           piVar1 = (&PTR_00855004)[uVar2 * 0x31];
           bVar3 = 1;
           if (piVar1 != nullptr) {
+            /* ST_CALLSITE[006C0957]: CALL dword ptr [EDX + 0x48] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*piVar1 + 0x48))(piVar1);
             piVar1 = (&PTR_00855008)[uVar2 * 0x31];
             if (piVar1 != nullptr) {
+              /* ST_CALLSITE[006C0966]: CALL dword ptr [ECX + 0x8] */
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(*piVar1 + 8))(piVar1);
               (&PTR_00855008)[uVar2 * 0x31] = nullptr;
             }
+            /* ST_CALLSITE[006C0972]: CALL dword ptr [EDX + 0x8] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 8))((&PTR_00855004)[uVar2 * 0x31]);
             (&PTR_00855004)[uVar2 * 0x31] = nullptr;
@@ -317,12 +332,14 @@ cf_common_join_006C0E05:
           local_18 = *(uint *)pAVar13 & 8;
           piVar1 = (&PTR_00855008)[uVar2 * 0x31];
           if (piVar1 != nullptr) {
+            /* ST_CALLSITE[006C0E17]: CALL dword ptr [EDX + 0x8] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*piVar1 + 8))(piVar1);
             (&PTR_00855008)[uVar2 * 0x31] = nullptr;
           }
           piVar1 = (&PTR_00855004)[uVar2 * 0x31];
           if (piVar1 != nullptr) {
+            /* ST_CALLSITE[006C0E2B]: CALL dword ptr [ECX + 0x8] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*piVar1 + 8))(piVar1);
           }
@@ -344,11 +361,11 @@ cf_common_join_006C0E05:
                 iVar9 = piVar1[7];
               }
               if ((uVar2 & 0x2000) == 0) {
-                FUN_006c0800((short *)piVar1[3],*(byte *)(piVar1 + 4),uVar2,pAVar8,iVar9,piVar1[8],
+                FUN_006c0800((short *)piVar1[3],((byte *)piVar1)[4],uVar2,pAVar8,iVar9,piVar1[8],
                              piVar1[9],piVar1[10],piVar1[0xb],piVar1[0xc],local_c);
               }
               else {
-                FUN_006c2460(piVar1[1],piVar1[2],*(byte *)(piVar1 + 4),uVar2,pAVar8,iVar9,local_c);
+                FUN_006c2460(piVar1[1],piVar1[2],((byte *)piVar1)[4],uVar2,pAVar8,iVar9,local_c);
               }
               if (local_18 != 0) {
                 FUN_006c18d0(uVar6);
@@ -359,6 +376,7 @@ cf_common_join_006C0E05:
             }
           }
           if (local_18 != 0) {
+            /* ST_CALLSITE[006C0E8E]: CALL dword ptr [0x0085be5c] */
             PostMessageA(g_hWnd_00854FF0,0x3b9,(-(uint)bVar3 & 7) + 1,local_c & 0xffff | 0x44530000);
           }
         }
@@ -369,14 +387,19 @@ cf_common_join_006C0E05:
 cf_continue_loop_006C0F40:
       local_c = local_c + 1;
     } while ((int)local_c < 0x20);
+    /* ST_CALLSITE[006C0F5B]: CALL ESI */
     LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
     if (local_34 == 0) {
+      /* ST_CALLSITE[006C0F9C]: CALL dword ptr [0x0085bc6c] */
       Sleep(0x32);
     }
     else {
+      /* ST_CALLSITE[006C0F69]: CALL dword ptr [0x0085bb8c] */
       EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);
       DAT_008568c4 = (uint)(DAT_008568c4 == 0);
+      /* ST_CALLSITE[006C0F86]: CALL ESI */
       LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);
+      /* ST_CALLSITE[006C0F8F]: CALL dword ptr [0x0085bb7c] */
       SuspendThread(g_hThread_008568C0);
     }
   } while( true );

@@ -41,6 +41,7 @@ undefined4 __cdecl FUN_00680890(byte param_1,byte *param_2,uint param_3,undefine
   uVar4 = (uint)bVar2;
   pcVar5 = "M_ANY " + (uint)param_1 * 10;
   text = LoadResourceString(0x1b5a,g_hINSTANCE_00807618);
+  /* ST_CALLSITE[00680945]: CALL dword ptr [0x0085bde8] */
   wsprintfA(local_408,text,pcVar5,pcVar3,param_3,uVar4,uVar7);
   thunk_FUN_00674ef0(local_408);
   return 1;

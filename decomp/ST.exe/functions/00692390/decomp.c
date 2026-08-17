@@ -10,6 +10,7 @@ char * FUN_00692390(undefined4 param_1,undefined4 param_2,undefined4 param_3,und
   char *pcVar1;
 
   pcVar1 = thunk_FUN_00691650("CONTUR",param_4);
+  /* ST_CALLSITE[006923B8]: CALL dword ptr [0x0085bde8] */
   wsprintfA(&DAT_00853b6c,"%s%u%u%u",pcVar1,param_1,param_2,param_3);
   return &DAT_00853b6c;
 }

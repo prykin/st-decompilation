@@ -22,6 +22,7 @@ void __thiscall ResearchPanelTy::Update(ResearchPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[0053C541]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     STAllPlayersC::GetPanelInfo
               (g_allPlayers_007FA174,6,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_027A);
     if ((&this_00->field_027A)[(byte)this_00->field_0279] == 0) {
@@ -39,6 +40,7 @@ void __thiscall ResearchPanelTy::Update(ResearchPanelTy *this)
       uVar2 = *(uint *)((&this_00->field_027A)[(byte)this_00->field_0278] + 0xc);
     }
     thunk_FUN_0053f510(this_00,uVar2,uVar4);
+    /* ST_CALLSITE[0053C585]: CALL 0x00405664; direct=00405664 ResearchPanelTy::sub_0053C620 */
     sub_0053C620(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return;

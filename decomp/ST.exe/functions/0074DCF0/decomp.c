@@ -21,6 +21,7 @@ DWORD FUN_0074dcf0(undefined4 param_1,DWORD param_2,HWND param_3,UINT param_4)
 
   bVar1 = false;
   if ((param_2 != 0xffffffff) && (param_2 != 0)) {
+    /* ST_CALLSITE[0074DD0A]: CALL dword ptr [0x0085bd04] */
     local_24 = GetTickCount();
   }
   bVar6 = param_3 != (HWND)0x0;
@@ -29,17 +30,22 @@ DWORD FUN_0074dcf0(undefined4 param_1,DWORD param_2,HWND param_3,UINT param_4)
     if (10 < param_2) {
       DVar4 = 10;
     }
+    /* ST_CALLSITE[0074DD3F]: CALL dword ptr [0x0085bdd8] */
     DVar2 = MsgWaitForMultipleObjects(1,(HANDLE *)&param_1,0,DVar4,(-(uint)bVar6 & 8) + 0x40);
     UVar7 = param_4;
     hWnd = param_3;
     if ((DVar2 != 1) && ((DVar2 != 0x102 || (DVar4 == param_2)))) break;
     if (param_3 != (HWND)0x0) {
+      /* ST_CALLSITE[0074DD7A]: CALL EBP */
       while (BVar3 = PeekMessageA(&local_1c,hWnd,UVar7,UVar7,1), BVar3 != 0) {
+        /* ST_CALLSITE[0074DD85]: CALL dword ptr [0x0085bdf8] */
         DispatchMessageA(&local_1c);
       }
     }
+    /* ST_CALLSITE[0074DD9A]: CALL EBP */
     PeekMessageA(&local_1c,(HWND)0x0,0,0,0);
     if ((param_2 != 0xffffffff) && (param_2 != 0)) {
+      /* ST_CALLSITE[0074DDA9]: CALL dword ptr [0x0085bd04] */
       DVar4 = GetTickCount();
       if (param_2 < DVar4 - local_24) {
         param_2 = 0;
@@ -51,25 +57,34 @@ DWORD FUN_0074dcf0(undefined4 param_1,DWORD param_2,HWND param_3,UINT param_4)
       }
     }
     if (!bVar1) {
+      /* ST_CALLSITE[0074DDD9]: CALL ESI */
       pvVar5 = GetCurrentThread();
+      /* ST_CALLSITE[0074DDDC]: CALL dword ptr [0x0085bd08] */
       local_20 = GetThreadPriority(pvVar5);
       if (local_20 < 2) {
         nPriority = 2;
+        /* ST_CALLSITE[0074DDED]: CALL ESI */
         pvVar5 = GetCurrentThread();
+        /* ST_CALLSITE[0074DDF0]: CALL dword ptr [0x0085bb74] */
         SetThreadPriority(pvVar5,nPriority);
       }
       bVar1 = true;
     }
   }
   if (bVar1) {
+    /* ST_CALLSITE[0074DE0F]: CALL dword ptr [0x0085bcf8] */
     pvVar5 = GetCurrentThread();
+    /* ST_CALLSITE[0074DE16]: CALL dword ptr [0x0085bb74] */
     SetThreadPriority(pvVar5,local_20);
+    /* ST_CALLSITE[0074DE1E]: CALL dword ptr [0x0085bdd4] */
     DVar4 = GetQueueStatus(8);
     if ((DVar4 >> 0x10 & 8) != 0) {
       lParam = 0;
       wParam = 0;
       UVar7 = 0;
+      /* ST_CALLSITE[0074DE2E]: CALL dword ptr [0x0085bcd4] */
       DVar4 = GetCurrentThreadId();
+      /* ST_CALLSITE[0074DE35]: CALL dword ptr [0x0085be24] */
       PostThreadMessageA(DVar4,UVar7,wParam,lParam);
     }
   }

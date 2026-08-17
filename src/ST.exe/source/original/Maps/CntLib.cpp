@@ -19,6 +19,8 @@ void __thiscall
 st::fn_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *param_4)
 
 {
+  int scalar_local_1c;
+
   short *psVar1;
   int *piVar2;
   void *pvVar3;
@@ -120,6 +122,7 @@ LAB_0069177d:
       do {
         if (((param_3 == 0) || (local_c != 0)) || (local_8 != 0)) {
           if (param_4 != nullptr) {
+            /* ST_CALLSITE[00691910]: CALL ECX */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (*(code *)param_4)(0);
           }
@@ -131,7 +134,7 @@ LAB_0069177d:
           puVar9_mg2 = st::fn_006F0CD0(st::machine_word_boundary_cast<undefined4>(param_1),pcVar5,0);
           if (puVar9_mg2 != nullptr) {
             puVar4 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(0xa9));
-            int scalar_local_1c = local_c * 6; /* split integer lifetime from pointer-typed SSA storage */
+            scalar_local_1c = local_c * 6; /* split integer lifetime from pointer-typed SSA storage */
             local_28 = (int *)((int)local_14 +
                               (scalar_local_1c + local_8 + iVar10 * 0x49) * 8 + 0x1954);
             *local_28 = (int)puVar4;
@@ -424,6 +427,7 @@ LAB_00691a65:
           uVar17 = 0;
           uVar14 = 0;
           pcVar5 = st::fn_0040456B(st::machine_word_boundary_cast<undefined4>("STONE"),iVar10);
+          /* ST_CALLSITE[006918B4]: CALL dword ptr [0x0085bde8] */
           st::external_00000080(local_190,st::mutable_c_string("%s%u%u"),pcVar5,uVar14,uVar17);
           iVar15 = st::fn_006F21C0(param_2,7,local_190);
           if (iVar15 == 0) {

@@ -27,7 +27,7 @@ from typing import Any, Iterable, Sequence
 
 
 SCHEMA = "st-source-compile-audit"
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 GENERATED_MARKER = ".st-generated-source-tree.json"
 DIAGNOSTIC_RE = re.compile(
     r"^(.*?):(\d+):(\d+): (fatal error|error|warning|note): (.*)$"
@@ -186,6 +186,10 @@ class CompileAudit:
     def command(self, unit: Path) -> list[str]:
         return [
             self.compiler,
+            # The recovered ABI is 32-bit MSVC/x86.  Syntax-checking it with the
+            # 64-bit host data model manufactures pointer-to-int truncation
+            # diagnostics and hides the actual recovery queue.
+            "-m32",
             "-std=c++17",
             "-fms-extensions",
             "-fsyntax-only",
@@ -284,6 +288,8 @@ class CompileAudit:
             ),
             "compiler": self.compiler_version,
             "configuration": {
+                "target_data_model": "ilp32",
+                "pointer_width_bits": 32,
                 "language": "c++17",
                 "ms_extensions": True,
                 "error_limit_per_translation_unit": self.error_limit,

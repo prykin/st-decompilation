@@ -25,8 +25,9 @@ void FUN_004e6b40(byte *param_1,int param_2,uint *param_3)
       iVar5 = thunk_FUN_004e60d0((int)param_1,(uint)(byte)(&DAT_007c0dd1)[iVar7 + iVar2]);
       if (iVar5 == 0) {
         *param_3 = (uint)(byte)(&DAT_007c0dd1)[iVar7 + iVar2];
+        /* ST_CALLSITE[004E6BB2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar3 = LookupRecordByte((char)param_1);
-        *(byte *)(param_3 + 1) = bVar3;
+        ((byte *)param_3)[1] = bVar3;
         bVar4 = thunk_FUN_004e5c40(param_1,*param_3);
         STField<bool>(param_3,5) = bVar4;
         param_3 = (uint *)((int)param_3 + 6);

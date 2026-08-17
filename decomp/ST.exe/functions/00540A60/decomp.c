@@ -44,6 +44,7 @@ StartServTy::WrSarrDDX
     }
     ccFntTy::WrSarr(param_9,param_6,0,-1,param_7,param_8,param_10);
     FUN_006b5f80((int *)g_ddxContext_008075A8,param_2,param_3,local_8,param_5);
+    /* ST_CALLSITE[00540B79]: CALL 0x00405ed4; direct=00405ED4 TransPutDDX */
     TransPutDDX(param_2,param_3,'\x01',local_c,-(uint)(param_1 != 0));
     ccFntTy::EraseSufr(param_9);
     g_currentExceptionFrame = local_50.previous;

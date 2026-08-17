@@ -38,7 +38,7 @@ uint * FUN_0062d550(int *param_1,int *param_2)
     puVar8 = puVar4;
     do {
       if ((uint *)*param_1 != nullptr) {
-        local_8 = (uint *)FUN_006b0020((uint *)*param_1,(int *)&param_2_after_write);
+        local_8 = FUN_006b0020((uint *)*param_1,(int *)&param_2_after_write);
         if ((local_8 != nullptr) && (param_2_after_write != nullptr)) {
           *puVar8 = (uint)param_2_after_write;
           puVar9 = local_8;

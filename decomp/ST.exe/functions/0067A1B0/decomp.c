@@ -24,6 +24,7 @@ void __thiscall FUN_0067a1b0(void *this,int param_1)
           }
           if (((piVar2[1] != 0) && ((undefined4 *)*piVar2 != nullptr)) && (param_1 != 0))
           {
+            /* ST_CALLSITE[0067A201]: CALL dword ptr [EDX] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (*(code *)**(undefined4 **)*piVar2)(param_1);
           }

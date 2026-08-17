@@ -53,6 +53,7 @@ int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     case CASE_45:
+      /* ST_CALLSITE[004CBC67]: CALL 0x00404886; direct=00404886 TLOBaseTy::sub_004EAA20 */
       sub_004EAA20((AnonShape_004D9C80_80F657D3 *)local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;

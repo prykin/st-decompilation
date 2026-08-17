@@ -51,6 +51,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
     RaiseInternalException(local_EAX_35,0,"E:\\__titans\\Igor\\to_jell_m.cpp",0x192);
     return 0xffff;
   }
+  /* ST_CALLSITE[00581C2E]: CALL 0x00403ebd; direct=00403EBD STGameObjC::GetMessage */
   STGameObjC::GetMessage((STGameObjC *)local_10,message);
   SVar1 = message->id;
   if (MESS_SHARED_010F < SVar1) {
@@ -158,6 +159,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
     local_8[0x37] = 0;
     local_8[0x38] = 0;
     local_8[0x39] = 0;
+    /* ST_CALLSITE[00581F26]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,(int *)pSVar4->field_0018,local_8,0x3a);
     FreeAndNull(&local_8);
     g_currentExceptionFrame = local_54.previous;

@@ -94,6 +94,7 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
               this_00 = STGridAt3D(g_worldGrid, sVar14, sVar5, sVar11).objects[0];
             }
             if (((this_00 != nullptr) &&
+                /* ST_CALLSITE[005FED55]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                 (iVar8 = (*this_00->vtable[5].slots_00_28[0])(this_00), iVar8 != 0)) &&
                ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
                 ((g_playSystem_00802A38 == nullptr ||
@@ -128,6 +129,7 @@ LAB_005fee45:
                 bVar18 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                          g_bulkInitializedRecords_008087C7[bVar1].field_0023;
               }
+              /* ST_CALLSITE[005FEE5C]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
               if ((bVar18) && (iVar8 = (*this_00->vtable[5].slots_00_28[2])(this_00), iVar8 != 0)) {
                 thunk_FUN_00416270(this_00,(uint *)local_20,(int *)local_30,local_2c);
                 iVar7 = FUN_006acf90(param_1,param_2,(int)local_20[0],(int)local_30[0]);
@@ -144,6 +146,7 @@ LAB_005fee45:
                   }
                   auStack_69c[iVar13 * 6 + 2] = (uint)this_00[1].vtable;
                   auStack_69c[iVar13 * 6] = (uint)*(ushort *)&this_00[1].field_0xe;
+                  /* ST_CALLSITE[005FEEEF]: CALL dword ptr [EDX + 0x2c] */
                   uVar9 = this_00->GetObjectTypeId();
                   auStack_69c[iVar13 * 6 + 1] = uVar9;
                   auStack_69c[iVar13 * 6 + 3] = *(uint *)&this_00[0xe].field_0x1d;

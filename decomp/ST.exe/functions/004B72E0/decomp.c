@@ -9,6 +9,7 @@ undefined4 FUN_004b72e0(char param_1,int param_2)
 
   uVar2 = 0;
   if ((0x31 < param_2) && (param_2 < 0x74)) {
+    /* ST_CALLSITE[004B72FD]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar1 = LookupRecordByte(param_1);
     return *(undefined4 *)(&DAT_007e0c04 + ((uint)bVar1 + param_2 * 3) * 4);
   }

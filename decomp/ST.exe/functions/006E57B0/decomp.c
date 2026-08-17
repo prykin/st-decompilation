@@ -30,6 +30,7 @@ void __thiscall STPlaySystemC::sub_006E57B0(STPlaySystemC *this,int param_1)
           pvVar2 = pDVar1->data;
         }
         if ((STField<undefined4 *>(pvVar2,4))[1] == param_1) {
+          /* ST_CALLSITE[006E57EE]: CALL dword ptr [EAX] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)*STField<undefined4 *>(pvVar2,4))(local_24);
           DArrayRemoveAt(this->field_0010,index);

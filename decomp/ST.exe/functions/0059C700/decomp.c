@@ -74,6 +74,7 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
     local_60 = 0x6955;
     local_88c = local_8ac;
     local_68 = local_8ac;
+    /* ST_CALLSITE[0059C858]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,nullptr,local_8d8,0);
     local_8b8 = this_00->field_1AEC;
@@ -82,8 +83,10 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
     local_8d8[5] = (ccFntTy *)0xaa;
     local_8d8[6] = (ccFntTy *)0x14;
     local_8d8[7] = (ccFntTy *)0x10;
+    /* ST_CALLSITE[0059C8AE]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,nullptr,local_8d8,0);
+    /* ST_CALLSITE[0059C8CF]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar3 = MMObjTy::CreateSprBut((MMObjTy *)this_00,3,1,0x19a,0x13d,0x16,0x14,0x6900,0x6980);
     this_00->field_1AD0 = uVar3;
     this_00->field_002D = 0x61;

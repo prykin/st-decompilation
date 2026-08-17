@@ -46,6 +46,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
   do {
     iVar9 = local_18;
     local_8 = nullptr;
+    /* ST_CALLSITE[004888B6]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_38 = LookupRecordByte(STField<char>(this,0x24));
     local_EAX_38 = (int)(byte)local_EAX_38;
     local_1c = &DAT_00800fa0 + local_EAX_38 * 4;
@@ -64,6 +65,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
       break;
     case 4:
       local_1c = nullptr;
+      /* ST_CALLSITE[00488909]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       uVar4 = LookupRecordByte(STField<char>(this,0x24));
       uVar4 = (int)(byte)uVar4;
       local_8 = &DAT_00801370 + uVar4 * 4;
@@ -89,6 +91,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
         local_4c[1] = 0;
         iVar7 = thunk_FUN_004e6c20(STField<int>(this,0x24),local_c);
         if ((iVar7 == 0) ||
+           /* ST_CALLSITE[004889DB]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
            (((bVar4 = LookupRecordByte(STField<char>(this,0x24)), bVar4 == 3 && (iVar6 != 0x5c))
             && (g_packedRecords_A62x8[STField<int>(this,0x24)].field1965_0x9ca == 0)))) {
           local_44 = '\0';
@@ -96,25 +99,31 @@ void __thiscall FUN_00488890(void *this,int param_1)
         else {
           local_44 = '\x01';
         }
+        /* ST_CALLSITE[00488A19]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_393 = LookupRecordByte(STField<char>(this,0x24));
         iVar8 = local_10;
         local_EAX_393 = (int)(byte)local_EAX_393;
         local_3e = *(undefined2 *)(&DAT_008545a8 + (local_EAX_393 + local_10) * 4);
+        /* ST_CALLSITE[00488A3E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_430 = LookupRecordByte(STField<char>(this,0x24));
         local_EAX_430 = (int)(byte)local_EAX_430;
         local_42 = *(undefined2 *)(&DAT_007e1c4c + (local_EAX_430 + iVar8) * 4);
+        /* ST_CALLSITE[00488A60]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar4 = LookupRecordByte(STField<char>(this,0x24));
         if (bVar4 == 3) {
+          /* ST_CALLSITE[00488A73]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           local_EAX_483 = LookupRecordByte(STField<char>(this,0x24));
           local_EAX_483 = (int)(byte)local_EAX_483;
           local_40 = *(undefined2 *)(&DAT_007e315c + (local_EAX_483 + iVar8) * 4);
         }
         else {
+          /* ST_CALLSITE[00488A97]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           local_EAX_519 = LookupRecordByte(STField<char>(this,0x24));
           local_EAX_519 = (int)(byte)local_EAX_519;
           local_40 = *(undefined2 *)(&DAT_007e24f8 + (local_EAX_519 + iVar8) * 4);
         }
         local_3c = 0xffff;
+        /* ST_CALLSITE[00488ABF]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_43 = LookupRecordByte(STField<char>(this,0x24));
         thunk_FUN_004e6d00(STField<byte *>(this,0x24),local_4c[0],local_3a);
         Library::DKW::TBL::DArrayAppend(*(DArrayTy **)(param_1 + iVar9 * 4),local_4c);
@@ -138,8 +147,10 @@ void __thiscall FUN_00488890(void *this,int param_1)
         if (local_44 == '\0') {
           if (local_74 == '\0') {
 LAB_00488b5f:
+            /* ST_CALLSITE[00488B6C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
             local_EAX_732 = LookupRecordByte(STField<char>(local_14,0x24));
             local_10 = (uint)(byte)local_EAX_732 + local_7c[0] * 3;
+            /* ST_CALLSITE[00488B8E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
             uVar7 = LookupRecordByte(STField<char>(pvVar3,0x24));
             iVar9 = local_18;
             if (*(int *)(&DAT_007e1dac + local_10 * 4) <=

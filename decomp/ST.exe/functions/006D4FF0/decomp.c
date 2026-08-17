@@ -23,6 +23,7 @@ FUN_006d4ff0(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int p
   STField<undefined4>(this,0x310) = 0;
   STField<undefined4>(this,0x30c) = 1;
   if (DAT_007ee240 < 8) {
+    /* ST_CALLSITE[006D50BF]: CALL dword ptr [0x0085bdec] */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     MessageBoxA(*(HWND *)(param_4 + 0x78),"Need compile \"vidrend.cpp\" with /Zp8 option.",
                 "Error",0x1010);

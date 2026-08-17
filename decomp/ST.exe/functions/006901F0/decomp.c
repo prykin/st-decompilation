@@ -9,6 +9,7 @@ int __thiscall FUN_006901f0(void *this,int param_1,uint *param_2)
 
   this_00 = (AiFltClassTy *)thunk_FUN_0068e190(this,param_1);
   if (this_00 != nullptr) {
+    /* ST_CALLSITE[00690206]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
     iVar1 = AiFltClassTy::GetAiMess(this_00,param_2);
     return iVar1;
   }

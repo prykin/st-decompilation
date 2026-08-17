@@ -60,11 +60,14 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[00585A02]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
   STSprGameObjC::GetMessage((STSprGameObjC *)local_1c,message);
   SVar1 = message->id;
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
+      /* ST_CALLSITE[00585D4C]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
       local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
+      /* ST_CALLSITE[00585D5A]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
       local_14 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
       local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x67 + local_8);
       if (((local_18 != nullptr) && (local_14 != nullptr)) &&
@@ -97,6 +100,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
         pbVar9 = local_14;
         pbVar12 = &local_c[1].field_0x3 + local_8;
         memmove(pbVar12, pbVar9, local_10); /* compiler REP MOVS byte copy */
+        /* ST_CALLSITE[00585E94]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
         STPlaySystemC::SaveObjData
                   (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                    local_10 + 0x67 + local_8);
@@ -125,6 +129,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           memmove(puVar10, puVar8, 0x32); /* compiler REP MOVS byte copy */
           this_00->field_0249 = 0x28;
           this_00->field_024D = 0xfffffe70;
+          /* ST_CALLSITE[00585C08]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
           iVar4 = STT3DSprC::LoadSequence
                             ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_00806774,"lasbom",
                              CASE_1D);
@@ -133,8 +138,10 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_lbomb.cpp",0x19f
                       );
           }
+          /* ST_CALLSITE[00585C39]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
           STT3DSprC::StartShow
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
+          /* ST_CALLSITE[00585C58]: CALL 0x00403107; direct=00403107 sub_00416240 */
           sub_00416240(this_00,(ushort)this_00->field_026C,*(short *)&this_00->field_0270,
                        this_00->field_0274);
           this_00->field_0245 = (int)PTR_00806724->field_002C;
@@ -147,6 +154,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           puVar8 = (byte *)&this_00->field_0x258;
           memmove(puVar8, pAVar7, 0x32); /* compiler REP MOVS byte copy */
           local_8 = local_20->field_005F;
+          /* ST_CALLSITE[00585A90]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
           STAllPlayersC::RestoreGObjData
                     ((STAllPlayersC *)this_00,(undefined4 *)(&local_20[1].field_0x3 + local_8));
           pAVar7 = local_20;
@@ -185,6 +193,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
             local_2c = 0;
             local_28 = 0;
             local_24 = 0;
+            /* ST_CALLSITE[00585B9C]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
             STT3DSprC::RestoreSpr
                       ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
                        (AnonShape_004AD790_77673787 *)&pAVar7->field_0x63);
@@ -221,6 +230,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
     thunk_FUN_004ad5e0((STT3DSprC *)&this_00->field_01D5);
   }
   else if (SVar1 == MESS_STSPRGAMEOBJC_0113) {
+    /* ST_CALLSITE[00585EDD]: CALL dword ptr [EDX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)this_00->field_01D5)();
     g_currentExceptionFrame = local_80.previous;

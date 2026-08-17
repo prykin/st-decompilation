@@ -57,12 +57,16 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     if (g_cLoading_00802A58 != nullptr) {
       iVar6 = DAT_007f4e00;
       pcVar4 = LoadResourceString(0x2685,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0042A30E]: CALL dword ptr [0x0085bde8] */
       wsprintfA(local_f4,pcVar4,iVar6);
+      /* ST_CALLSITE[0042A327]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
       cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,local_f4);
       if (g_cLoading_00802A58 != nullptr) {
         iVar6 = DAT_007f4e00 / 2;
         pcVar4 = LoadResourceString(0x268c,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[0042A358]: CALL 0x00404d8b; direct=00404D8B cLoadingTy::SetProcess */
         cLoadingTy::SetProcess(g_cLoading_00802A58,0,pcVar4,iVar6);
+        /* ST_CALLSITE[0042A366]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
         cLoadingTy::SetState(g_cLoading_00802A58,CASE_0,0,nullptr);
       }
     }
@@ -164,8 +168,10 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     }
     DArrayDestroy(local_c);
     thunk_FUN_00428e50(&pAVar3->field_0000);
+    /* ST_CALLSITE[0042A605]: CALL 0x004010d7; direct=004010D7 LandInit */
     LandInit(pAVar3);
     if (g_cLoading_00802A58 != nullptr) {
+      /* ST_CALLSITE[0042A61D]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
       cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,nullptr);
     }
     g_currentExceptionFrame = local_74.previous;

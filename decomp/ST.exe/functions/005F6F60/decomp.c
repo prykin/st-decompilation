@@ -57,11 +57,13 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
   case CASE_1:
     if ((this->field_02E1 <= g_playSystem_00802A38->field_00E4) && (this->field_02EA == 0)) {
       if (this->field_02B7 < 0) {
+        /* ST_CALLSITE[005F6FD0]: CALL 0x00402a81; direct=00402A81 STColl3C::sub_005F8650 */
         iVar7 = sub_005F8650(this,this->field_0245,this->field_0249,this->field_024D);
         if (iVar7 != 0) {
           uVar12 = thunk_FUN_005f6ad0();
           this->field_02B6 = (char)uVar12;
           if ((char)uVar12 != '\0') {
+            /* ST_CALLSITE[005F7007]: CALL 0x00401d8e; direct=00401D8E STColl3C::LoadImagSpr */
             LoadImagSpr(this,1);
           }
           this->field_02BB = 1;
@@ -72,6 +74,7 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
         }
       }
       else {
+        /* ST_CALLSITE[005F7049]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
         iVar7 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
         if (((iVar7 != 0) && (iVar7 = thunk_FUN_005f89f0(this,2), iVar7 != 0)) &&
            (iVar7 = thunk_FUN_00417a20(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
@@ -81,6 +84,7 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
           this->field_02BB = 2;
           sVar1 = PTR_00806724->entryCount;
           this->field_02D1 = sVar1 + -1;
+          /* ST_CALLSITE[005F70D1]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
           STT3DSprC::sub_004ACE30
                     ((STT3DSprC *)&this->vtable_at_1d5,PTR_00806724->entries[sVar1 + -1],
                      (int)PTR_00806724->field_002C);
@@ -100,6 +104,7 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
     }
     if (this->field_02EA != 0) {
       if (this->field_029E != '\0') {
+        /* ST_CALLSITE[005F7130]: CALL 0x00404ae3; direct=00404AE3 STColl3C::sub_005F9450 */
         sub_005F9450(this);
       }
       if (this->field_02A0 < 1) goto cf_common_exit_005F7A68;
@@ -142,6 +147,7 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
       iVar7 = thunk_FUN_005f88d0(this,this->field_0289,0,nullptr,nullptr,
                                  nullptr);
       if (iVar7 == 0) {
+        /* ST_CALLSITE[005F7343]: CALL 0x00404ae3; direct=00404AE3 STColl3C::sub_005F9450 */
         sub_005F9450(this);
         return;
       }
@@ -159,6 +165,7 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
       this->field_02BB = 2;
       sVar1 = PTR_00806724->entryCount;
       this->field_02D1 = sVar1 + -1;
+      /* ST_CALLSITE[005F728A]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
       STT3DSprC::sub_004ACE30
                 ((STT3DSprC *)&this->vtable_at_1d5,PTR_00806724->entries[sVar1 + -1],
                  (int)PTR_00806724->field_002C);
@@ -167,6 +174,7 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
       this->field_029D = 0;
     }
     else {
+      /* ST_CALLSITE[005F716F]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
       iVar7 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
       if (iVar7 == 0) {
 LAB_005f744e:
@@ -188,6 +196,7 @@ LAB_005f744e:
       sVar1 = PTR_00806724->entryCount;
 LAB_005f7400:
       this->field_02D1 = sVar1 + -1;
+      /* ST_CALLSITE[005F7419]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
       STT3DSprC::sub_004ACE30
                 ((STT3DSprC *)&this->vtable_at_1d5,PTR_00806724->entries[sVar1 + -1],
                  (int)PTR_00806724->field_002C);
@@ -196,16 +205,19 @@ LAB_005f7400:
         this->field_029F = 0;
       }
     }
+    /* ST_CALLSITE[005F72E5]: CALL 0x00402a81; direct=00402A81 STColl3C::sub_005F8650 */
     iVar7 = sub_005F8650(this,(int)(short)(*(short *)&this->field_0291 * 0xc9 + 100),
                          (int)(short)(*(short *)&this->field_0295 * 0xc9 + 100),
                          (int)(short)(*(short *)&this->field_0299 * 200 + 100));
     if (iVar7 != 0) {
       thunk_FUN_005f6df0((STAllPlayersC *)this);
       thunk_FUN_004ad460(&this->vtable_at_1d5,0);
+      /* ST_CALLSITE[005F7306]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
       TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)0x2);
       this->field_02BB = 2;
       sVar1 = PTR_00806724->entryCount;
       this->field_02D1 = sVar1 + -1;
+      /* ST_CALLSITE[005F7335]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
       STT3DSprC::sub_004ACE30
                 ((STT3DSprC *)&this->vtable_at_1d5,PTR_00806724->entries[sVar1 + -1],
                  (int)PTR_00806724->field_002C);
@@ -235,6 +247,7 @@ LAB_005f7400:
     if (local_EAX_1370 < 0) {
       if (this->field_02EA != 0) {
         if (this->field_029E != '\0') {
+          /* ST_CALLSITE[005F74DB]: CALL 0x00404ae3; direct=00404AE3 STColl3C::sub_005F9450 */
           sub_005F9450(this);
         }
         if (this->field_02A0 < 1) {
@@ -273,6 +286,7 @@ LAB_005f79aa:
     break;
   case CASE_5:
     if (this->field_02EA != 0) {
+      /* ST_CALLSITE[005F7943]: CALL dword ptr [EDX + 0x20] */
       this->vfunc_20();
     }
     SVar4 = thunk_FUN_005f8d10((int *)this);
@@ -293,12 +307,14 @@ LAB_005f79aa:
                          (AnonShape_00495FF0_59081BDD *)this);
       thunk_FUN_004ad430((STT3DSprC *)&this->vtable_at_1d5);
       this->field_02BB = 0;
+      /* ST_CALLSITE[005F802D]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
       sub_0041C5A0(this);
       return;
     }
     break;
   case CASE_8:
     if (this->field_02EA == 0) {
+      /* ST_CALLSITE[005F7C92]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
       if ((int)local_8 != this->field_0291) {
         return;
@@ -308,6 +324,7 @@ LAB_005f79aa:
       }
       iVar7 = thunk_FUN_005f88d0(this,this->field_0289,1,(int *)&local_24,&local_2c,&local_28);
       if (iVar7 != 0) {
+        /* ST_CALLSITE[005F7CDD]: CALL 0x00401168; direct=00401168 STColl3C::CreateAddSpr */
         local_EAX_3453 = CreateAddSpr(this);
         if (local_EAX_3453 < 1) {
           return;
@@ -350,6 +367,7 @@ LAB_005f79aa:
         return;
       }
     }
+    /* ST_CALLSITE[005F7C1F]: CALL 0x00404ae3; direct=00404AE3 STColl3C::sub_005F9450 */
     sub_005F9450(this);
     this->field_02DD = CASE_C;
     this->field_02D5 = g_playSystem_00802A38->field_00E4;
@@ -382,16 +400,19 @@ LAB_005f7efc:
     }
     if (iVar7 == 3) {
       thunk_FUN_005fa030(this);
+      /* ST_CALLSITE[005F7E26]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
       iVar7 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
       if (iVar7 == 0) {
         this->field_0281 = this->field_0261;
         this->field_027D = this->field_025D;
         this->field_0285 = this->field_0265;
+        /* ST_CALLSITE[005F7E4D]: CALL 0x00404ae3; direct=00404AE3 STColl3C::sub_005F9450 */
         sub_005F9450(this);
       }
       else {
         this->field_029E = 1;
       }
+      /* ST_CALLSITE[005F7E69]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
       iVar7 = thunk_FUN_005fa360(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,(int)local_a,
                                  &local_14,&local_18,&local_10);
@@ -478,6 +499,7 @@ LAB_005f7efc:
       else {
         iVar7 = thunk_FUN_005f89f0(this,2);
         if (iVar7 != 0) {
+          /* ST_CALLSITE[005F7AAB]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
           iVar7 = thunk_FUN_005fa360(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
@@ -502,6 +524,7 @@ LAB_005f7efc:
     }
     if (this->field_02EA != 0) {
       if (this->field_029E != '\0') {
+        /* ST_CALLSITE[005F75CE]: CALL 0x00404ae3; direct=00404AE3 STColl3C::sub_005F9450 */
         sub_005F9450(this);
       }
       if (this->field_02A0 < 1) goto cf_common_exit_005F7A68;
@@ -518,8 +541,10 @@ LAB_005f7efc:
                                  (int)this->field_005D), 3 < iVar5)) {
           iVar7 = this->field_02EF;
           if (iVar7 != 0) goto LAB_005f7927;
+          /* ST_CALLSITE[005F7893]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
           iVar7 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
           if (iVar7 == 0) goto cf_common_exit_005F76D2;
+          /* ST_CALLSITE[005F78AE]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
           iVar7 = thunk_FUN_005fa360(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
@@ -538,6 +563,7 @@ LAB_005f7efc:
         iVar7 = thunk_FUN_005f88d0(this,this->field_0289,0,nullptr,nullptr,
                                    nullptr);
         if ((iVar7 != 0) && (iVar7 = thunk_FUN_005f89f0(this,2), iVar7 != 0)) {
+          /* ST_CALLSITE[005F779E]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
           iVar7 = thunk_FUN_005fa360(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
@@ -564,6 +590,7 @@ LAB_005f7927:
            FUN_006acfd0(this->field_025D,this->field_0261,(int)this->field_005B,
                         (int)this->field_005D);
       if (local_EAX_1734 < 4) {
+        /* ST_CALLSITE[005F76FA]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
         iVar7 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
         if (iVar7 == 0) goto cf_common_exit_005F76D2;
         iVar7 = thunk_FUN_005f8cc0(this);
@@ -581,8 +608,10 @@ LAB_005f7927:
         }
       }
       else {
+        /* ST_CALLSITE[005F764B]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
         iVar7 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
         if (iVar7 != 0) {
+          /* ST_CALLSITE[005F7667]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
           iVar7 = thunk_FUN_005fa360(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
@@ -607,15 +636,20 @@ cf_common_exit_005F76D2:
     iVar7 = thunk_FUN_004ac910(this_00,'\b');
     if (iVar7 == 1) {
       if (this->field_02BB != '\0') {
+        /* ST_CALLSITE[005F805B]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
         sub_0041C5A0(this);
+        /* ST_CALLSITE[005F8062]: CALL 0x00404629; direct=00404629 TLOBaseTy::sub_0041D590 */
         TLOBaseTy::sub_0041D590((TLOBaseTy *)this);
       }
+      /* ST_CALLSITE[005F806B]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,0xf);
     }
     if (iVar7 == *(int *)(&DAT_007ce73d + this->field_02CD * 0x39)) {
       thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,
                          (AnonShape_00495FF0_59081BDD *)this);
+      /* ST_CALLSITE[005F80AA]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,0xe);
+      /* ST_CALLSITE[005F80B3]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,0xc);
       uVar12 = 0xffffffff;
       iVar6 = thunk_FUN_004ad650((STT3DSprC *)this_00);
@@ -626,13 +660,16 @@ cf_common_exit_005F76D2:
       thunk_FUN_004ad5e0((STT3DSprC *)this_00);
     }
     if (iVar7 == *(int *)(&DAT_007ce745 + this->field_02CD * 0x39)) {
+      /* ST_CALLSITE[005F8125]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)this_00,9,g_playSystem_00802A38->field_00E4);
     }
     if (iVar7 == *(int *)(&DAT_007ce739 + this->field_02CD * 0x39) + -1) {
+      /* ST_CALLSITE[005F8146]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,8);
     }
     iVar7 = thunk_FUN_004ac910(this_00,'\t');
     if (iVar7 == *(int *)(&DAT_007ce749 + this->field_02CD * 0x39)) {
+      /* ST_CALLSITE[005F816B]: CALL 0x00401b04; direct=00401B04 STColl3C::sub_005F66B0 */
       sub_005F66B0(this);
     }
   }

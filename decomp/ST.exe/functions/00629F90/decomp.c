@@ -36,6 +36,7 @@ STParticleC::sub_00629F90(STParticleC *this,STParticleC *param_1,undefined4 para
   this->field_0056 = param_1->field_0024;
   this->field_005A = param_1->field_0028;
   if (this->field_0040 != '\0') {
+    /* ST_CALLSITE[00629FE5]: CALL 0x004013d4; direct=004013D4 STParticleC::sub_0062B4A0 */
     bVar4 = sub_0062B4A0(this);
     this->field_00D6 = bVar4;
   }

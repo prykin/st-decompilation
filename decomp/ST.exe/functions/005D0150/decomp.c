@@ -154,6 +154,7 @@ LAB_005d02c3:
                  ((*pcVar8 != '\0' &&
                   (((element_1f84->field_0x0 == '\0' && (element_1f84->field_0x4 != '\x01')) && (uVar12 < 0x18))
                   )))) {
+                /* ST_CALLSITE[005D0303]: CALL 0x004017d0; direct=004017D0 SettMapMTy::sub_005D00B0 */
                 sub_005D00B0(local_c,element_1f84,uVar13);
                 local_5 = '\x01';
                 break;
@@ -175,6 +176,7 @@ LAB_005d02c3:
           }
           if (((element_1f84 != nullptr) && (element_1f84->field_0x0 == '\0')) &&
              ((element_1f84->field_0x4 != '\x01' && (uVar12 < 0x18)))) {
+            /* ST_CALLSITE[005D0360]: CALL 0x004017d0; direct=004017D0 SettMapMTy::sub_005D00B0 */
             sub_005D00B0(local_c,element_1f84,uVar12);
           }
         }

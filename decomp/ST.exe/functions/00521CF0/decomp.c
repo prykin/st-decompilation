@@ -87,6 +87,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
           pcVar6_mg2 = LoadResourceString(0x2747 - (g_playSystem_00802A38->field_00F0 != 0),
                                           g_hINSTANCE_00807618);
           pcVar7_mg2 = LoadResourceString(0x42c3,g_hINSTANCE_00807618);
+          /* ST_CALLSITE[00521E1C]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar7_mg2,pcVar6_mg2);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
@@ -103,6 +104,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
           uVar8 = 0;
           pcVar6_mg3 = LoadResourceString(0x2747 - (byte)DAT_0080735e,g_hINSTANCE_00807618);
           pcVar7_mg3 = LoadResourceString(0x42c5,g_hINSTANCE_00807618);
+          /* ST_CALLSITE[00521EBB]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar7_mg3,pcVar6_mg3);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
@@ -123,6 +125,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
           }
           pcVar6_mg4 = LoadResourceString(0x2747 - (DAT_0080733c != 0),g_hINSTANCE_00807618);
           pcVar7_mg4 = LoadResourceString(0x42c4,g_hINSTANCE_00807618);
+          /* ST_CALLSITE[00521F63]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar7_mg4,pcVar6_mg4);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
@@ -165,11 +168,13 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             if (CONCAT31(extraout_var,bVar5) != 0) {
               if (0 < pAVar4->field_0198->field_0008) {
+                /* ST_CALLSITE[00522044]: CALL dword ptr [0x0085c064] */
                 CFsgsConnection::SendChatMessage
                           ((CFsgsConnection *)&DAT_00802a90,(char *)*pAVar4->field_0198->field_0014);
                 g_currentExceptionFrame = local_60.previous;
                 return;
               }
+              /* ST_CALLSITE[00522062]: CALL dword ptr [0x0085c064] */
               CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,nullptr);
               g_currentExceptionFrame = local_60.previous;
               return;
@@ -405,6 +410,7 @@ LAB_00522294:
               } while (bVar11 < DAT_00808aaf);
             }
           }
+          /* ST_CALLSITE[0052250A]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)&DAT_0080f33a,s__s>__s_007c40dc,local_4b4,local_474);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d != 0xff) {

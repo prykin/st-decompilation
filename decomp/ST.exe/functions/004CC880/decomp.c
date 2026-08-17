@@ -15,6 +15,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CC880(TLOBaseTy *this,undefined4 param_1
   iVar1 = this->field_0440;
   if ((((iVar1 != 2) && (iVar1 != 3)) && (iVar1 != 4)) &&
      (this->field_0440 = param_1, this->field_0444 != 0)) {
+    /* ST_CALLSITE[004CC8B8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar2 = LookupRecordByte(*(char *)&this->field_0024);
     if ((bVar2 != 3) || (this->field_043C == 2)) {
       this->field_0448 = 1;

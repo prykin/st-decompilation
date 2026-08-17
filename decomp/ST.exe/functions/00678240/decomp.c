@@ -74,11 +74,13 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
     }
     this = (STFishC *)*puVar3;
     if (((this != nullptr) && (this->field_0024 == param_1)) &&
+       /* ST_CALLSITE[006782FD]: CALL dword ptr [EAX + 0x2c] */
        ((local_10 = uVar9, dVar4 = this->slot_2C(), param_2 == 0 ||
         (pDVar7 = g_array_007FA158, (int)param_2 == dVar4)))) {
       iVar8 = 1;
       local_14 = 1;
       if ((param_4 != nullptr) && (*param_4 != 0)) {
+        /* ST_CALLSITE[00678330]: CALL dword ptr [EDX + 0x74] */
         (*this->vtable->vfunc_74)((short)local_28);
         pbVar10 = local_28;
         pbVar5 = param_4;
@@ -108,10 +110,12 @@ LAB_00678362:
       uVar9 = local_10;
       if ((iVar8 != 0) &&
          ((local_5 == -1 ||
+          /* ST_CALLSITE[0067837D]: CALL dword ptr [EAX + 0x6c] */
           (iVar6 = this->vfunc_6C(), pDVar7 = g_array_007FA158, uVar9 = local_10,
           local_5 == iVar6)))) {
         if ((0 < param_8) &&
            (((0 < param_9 && (0 < param_10)) &&
+            /* ST_CALLSITE[006783B1]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             ((STFishC::sub_004162B0(this,&local_8,&local_a,&local_c), local_8 < param_5 ||
              ((((local_a < param_6 || (local_c < param_7)) ||
                ((int)param_5 + (int)param_8 <= (int)local_8)) ||
@@ -123,6 +127,7 @@ LAB_00678362:
         uVar9 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar8 != 0) && (param_11 != nullptr)) &&
+           /* ST_CALLSITE[00678427]: CALL EAX */
            (iVar8 = (*(code *)param_11)(param_1,local_10,this,param_12), pDVar7 = g_array_007FA158,
            uVar9 = local_10, iVar8 != 0)) {
           g_currentExceptionFrame = local_6c.previous;

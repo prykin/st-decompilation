@@ -45,11 +45,13 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x935);
     return;
   }
+  /* ST_CALLSITE[005A11BD]: CALL dword ptr [0x0085bde8] */
   wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079c020,
             PTR_s_ST_INF_0079c024);
   pcVar4 = (char *)thunk_FUN_00649ff0(&DAT_0080f33a,&local_8,nullptr,nullptr);
   this_01 = local_c;
   if (pcVar4 == nullptr) {
+    /* ST_CALLSITE[005A1337]: CALL 0x00402ced; direct=00402CED FSGSTy::DoLogon */
     DoLogon(local_c);
     g_currentExceptionFrame = local_90.previous;
     return;
@@ -105,11 +107,13 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   this_00 = (this_01->array_00BC[0xc].field_01DB)->field_02E6;
   local_2c.unknown_08 = local_4c[2];
   if (this_00 != nullptr) {
+    /* ST_CALLSITE[005A12FF]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
     MMsgTy::SetMessage(this_00,0x25b7,'\x01',&local_2c.unknown_00,local_4c,nullptr,local_8
                        ,0x25b8);
     g_currentExceptionFrame = local_90.previous;
     return;
   }
+  /* ST_CALLSITE[005A131F]: CALL dword ptr [EAX] */
   this_01->GetMessage(&local_2c);
   g_currentExceptionFrame = local_90.previous;
   return;

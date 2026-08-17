@@ -27,10 +27,12 @@ void __thiscall FUN_0056a960(void *this,byte param_1,byte param_2)
   if ((g_visibleClass_00802A88 != nullptr) &&
      (param_2 == STField<byte>(this,0x112d))) {
     if (cVar2 == '\0') {
+      /* ST_CALLSITE[0056A9AE]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
       VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar1);
       return;
     }
     if (STField<char>(this,0x1474) != '\0') {
+      /* ST_CALLSITE[0056A9C9]: CALL 0x00405f15; direct=00405F15 VisibleClassTy::sub_0055B7F0 */
       VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,1,puVar1);
     }
   }

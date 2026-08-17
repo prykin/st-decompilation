@@ -68,8 +68,10 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
             DArrayGetElement(local_24,uVar7,local_c);
             if (local_c[0] == param_2) {
               DArrayRemoveAt(local_24,uVar7);
+              /* ST_CALLSITE[00446299]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar3 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c[0],CASE_1);
               local_14 = g_playSystem_00802A38->field_00E4;
+              /* ST_CALLSITE[004462B5]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
               STBoatC::CmdToObj(pSVar3,CASE_21,&local_14);
               break;
             }
@@ -116,8 +118,10 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
             if (0 < (int)dVar1) {
               do {
                 DArrayGetElement(local_24,uVar8,local_c);
+                /* ST_CALLSITE[00446391]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 pSVar3 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c[0],CASE_1);
                 local_14 = g_playSystem_00802A38->field_00E4;
+                /* ST_CALLSITE[004463AD]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                 STBoatC::CmdToObj(pSVar3,CASE_21,&local_14);
                 uVar8 = uVar8 + 1;
               } while ((int)uVar8 < (int)dVar1);
@@ -137,6 +141,7 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
     }
   }
   if (local_8 == 0) {
+    /* ST_CALLSITE[00446402]: CALL 0x00402095; direct=00402095 STAllPlayersC::DeletePGPairs */
     DeletePGPairs(local_1c,param_1);
   }
   g_currentExceptionFrame = local_6c.previous;

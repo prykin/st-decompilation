@@ -37,7 +37,7 @@ int __cdecl FUN_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,int p
       local_c = (char)uVar2;
       sStack_b = (short)((uint)uVar2 >> 8);
       uStack_9 = (undefined1)((uint)uVar2 >> 0x18);
-      uStack_8 = *(undefined1 *)(puVar3 + 1);
+      uStack_8 = ((undefined1 *)puVar3)[1];
       if ((local_c == '\x06') || (local_c == '\x03')) {
         pbVar4 = (byte *)thunk_FUN_0067ee40((int)sStack_b);
         if (pbVar4 == nullptr) {

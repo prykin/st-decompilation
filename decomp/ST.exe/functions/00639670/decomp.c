@@ -50,6 +50,7 @@ uint __thiscall FUN_00639670(void *this,int param_1)
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((STField<int *>(this,0x2bf) != nullptr) &&
+       /* ST_CALLSITE[0063988B]: CALL dword ptr [EDX + 0xe0] */
        (iVar4 = (**(code **)(*STField<int *>(this,0x2bf) + 0xe0))
                           (STField<undefined4>(this,0x2c3),(int)&param_1_after_write + 2,&local_6,
                            (int)&local_c + 2,&local_10), iVar4 != 0)) {

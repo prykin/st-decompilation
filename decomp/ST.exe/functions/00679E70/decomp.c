@@ -23,6 +23,7 @@ int __thiscall FUN_00679e70(void *this,short param_1)
           puVar2 = nullptr;
         }
         if (((puVar2[1] != 0) && ((AiTactClassTy *)*puVar2 != nullptr)) &&
+           /* ST_CALLSITE[00679EB7]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
            (iVar3 = AiTactClassTy::sub_0068E290((AiTactClassTy *)*puVar2,param_1), iVar3 != 0)) {
           return iVar3;
         }

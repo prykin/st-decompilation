@@ -45,6 +45,7 @@ void __thiscall st::fn_0051F8F0(HelpStringTy *this)
       st::fn_00710A90(pHVar3->field_011E,(int)pHVar3->field_012A,0,0,0,0,0);
       st::fn_007119C0(pHVar3->field_011E,&pHVar3->field_0018,0,-1,(uint)(byte)pHVar3->field_011D);
     }
+    /* ST_CALLSITE[0051FA03]: CALL 0x00403738; direct=00403738 PutDDX */
     st::fn_00403738((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e,DAT_00806734 + -0x1a,'\x01',
            (BITMAPINFO *)pHVar3->field_012A);
     g_currentExceptionFrame = local_4c.previous;
@@ -100,12 +101,14 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
          (DVar5 = st::fn_006E51B0(local_8->field_0010),
          this_00->field_0126 <= DVar5 - this_00->field_0122)) {
         memset(&this_00->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
+        /* ST_CALLSITE[0051FD19]: CALL 0x004015fa; direct=004015FA HelpStringTy::OutStr */
         st::fn_004015FA(this_00);
         this_00->field_011C = 0;
         this_00->field_012E = 0;
       }
       break;
     case MESS_ID_CREATE:
+      /* ST_CALLSITE[0051FBFE]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
       pcVar2 = (ccFntTy *)st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
       this_00->field_011E = pcVar2;
       pcVar2->field_0058 = 0;
@@ -138,6 +141,7 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
       }
       break;
     case MESS_SHARED_0005:
+      /* ST_CALLSITE[0051FCE2]: CALL 0x004015fa; direct=004015FA HelpStringTy::OutStr */
       st::fn_004015FA(local_8);
     }
     g_currentExceptionFrame = local_4c.previous;

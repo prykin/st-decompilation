@@ -48,6 +48,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
     STField<undefined1>(puVar13,2) = STField<undefined1>(puVar6,2);
     local_c->field_05D3 = 0x398;
     local_c->field_05EB = 1;
+    /* ST_CALLSITE[006789F7]: CALL 0x004054b1; direct=004054B1 AiEventClassTy::InitData */
     AiEventClassTy::InitData
               ((AiEventClassTy *)&local_c->vtable_at_1c,
                (int *)(local_c->field_06D1 + 0x12a + (int)param_1));

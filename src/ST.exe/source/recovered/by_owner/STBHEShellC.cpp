@@ -205,6 +205,7 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
       this->field_00C9 = 0;
       return 1;
     }
+    /* ST_CALLSITE[005F41C4]: CALL 0x0040473c; direct=0040473C STBHEShellC::sub_005F3BF0 */
     iVar6 = st::fn_0040473C(this,param_1,param_2,param_3,'\x01');
     if (iVar6 != 0) {
       this->field_00C9 = 1;
@@ -391,6 +392,7 @@ void __thiscall st::fn_005F4680(STBHEShellC *this)
   int local_8;
 
   if ((int)this->field_008F < 0) {
+    /* ST_CALLSITE[005F469C]: CALL 0x004055ba; direct=004055BA STBHEShellC::sub_005F35F0 */
     st::fn_004055BA(this,this->field_0087);
   }
   pVVar2 = g_visibleClass_00802A88;
@@ -402,6 +404,7 @@ void __thiscall st::fn_005F4680(STBHEShellC *this)
     iVar3 = this->field_0093;
     iVar3 = STBiasedDiv16(iVar3, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+          /* ST_CALLSITE[005F4767]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (st::fn_00403F53
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,iVar5,
                       &local_c,&local_10), -1 < local_8)) && ((local_8 < 5 && (-1 < local_c)))) &&
@@ -440,6 +443,7 @@ void __thiscall st::fn_005F4680(STBHEShellC *this)
       iVar3 = ((this->field_00A3 - this->field_0097) * 0x28) / local_8 + this->field_0097;
       iVar4 = ((this->field_00A7 - this->field_009B) * 0x28) / local_8 + this->field_009B;
     }
+    /* ST_CALLSITE[005F490F]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
     st::fn_00401433(g_traksClass_00802A7C,1,1,0,iVar5,iVar3,iVar4,0,0,0,0,0,0,-1,0,0);
     if (this->field_00C4 == '\0') {
       st::fn_006EAAA0(g_sT3DSMAPContext_00807598,this->field_008F,0);
@@ -612,6 +616,7 @@ int __thiscall st::fn_005F4FA0(STBHEShellC *this)
         (&this->field_0149)[local_8] = iVar6;
         if ((local_8 == 0) && (iVar6 = iVar6 / 200, iVar6 != this->field_0129)) {
           this->field_0129 = iVar6;
+          /* ST_CALLSITE[005F505D]: CALL 0x00401285; direct=00401285 STBHEShellC::sub_005F5700 */
           st::fn_00401285(this,iVar6,this->field_0139);
         }
         local_20 = 0;
@@ -843,7 +848,7 @@ byte * __thiscall st::fn_005F5A90(STBHEShellC *this,int *param_1)
   pbVar1[0xe] = 0;
   pbVar1[0xf] = 0;
   if (this->field_0169 != nullptr) {
-    local_c = (byte *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&this->field_0169->flags),(int *)&local_8);
+    local_c = st::pointer_boundary_cast<byte *>(st::fn_006B0020(&this->field_0169->flags,(int *)&local_8));
     pbVar2 = st::pointer_boundary_cast<byte *>(st::fn_006ACF50(pbVar1,local_8 + 300));
     *(uint *)(pbVar2 + 0x128) = local_8;
     pbVar6 = local_c;
@@ -882,7 +887,7 @@ int __thiscall st::fn_005F5B80(STBHEShellC *this,undefined4 *param_1)
   memmove(puVar7, puVar5, 0x128); /* compiler REP MOVS byte copy */
   iVar3 = 0x128;
   if (this->field_0169 != nullptr) {
-    pSVar2 = (STBHEShellC_field_0169DArray *)st::fn_006B0060(nullptr,st::pointer_boundary_cast<uint *>(param_1 + 0x4b));
+    pSVar2 = (STBHEShellC_field_0169DArray *)st::fn_006B0060(nullptr,param_1 + 0x4b);
     this->field_0169 = pSVar2;
     iVar3 = st::machine_word_boundary_cast<int>(param_1[0x4a] + 300);
   }
@@ -941,6 +946,7 @@ void __thiscall st::fn_005F5C40(STBHEShellC *this,int param_1,int param_2,int so
                              (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
   }
   local_10.unknown = (int)this->field_0018;
+  /* ST_CALLSITE[005F5CC6]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
   st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,soundId,&local_10,0);
   return;
 }
@@ -967,12 +973,14 @@ void __thiscall st::fn_005F5D10(STBHEShellC *this,int param_1)
       this->field_009B = this->field_0048;
       this->field_0034 = 0;
 LAB_005f5d4b:
+      /* ST_CALLSITE[005F5D59]: CALL 0x00404e0d; direct=00404E0D STBHEShellC::sub_005F5E30 */
       st::fn_00404E0D(this,this->field_0040,this->field_0044,this->field_0048);
       this->field_0104 = CASE_3;
       return;
     }
     if (param_1 == 2) {
-      if ((int *)this->field_0034 != nullptr) {
+      if ((int *)this->field_0034 != 0) {
+        /* ST_CALLSITE[005F5D91]: CALL dword ptr [EAX + 0xe0] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar1 = (**(code **)(*(int *)this->field_0034 + 0xe0))
                           (this->field_0038,(int)&param_1 + 2,&local_6,&local_8,&local_c);
@@ -1018,8 +1026,10 @@ void __thiscall st::fn_005F5E30(STBHEShellC *this,int param_1,int param_2,int pa
   this->field_00C0 = 0;
   this->field_00AB = 0;
   if (this->field_0103 != '\0') {
+    /* ST_CALLSITE[005F5EBF]: CALL 0x004055ba; direct=004055BA STBHEShellC::sub_005F35F0 */
     st::fn_004055BA(this,3);
   }
+  /* ST_CALLSITE[005F5ED9]: CALL 0x0040264e; direct=0040264E STBHEShellC::sub_005F5C40 */
   st::fn_0040264E(this,this->field_0093,this->field_0097,0x48a);
   return;
 }

@@ -56,7 +56,7 @@ FUN_007521b0(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,uint param_3,int 
   pbVar12 = (byte *)((int)puVar5 + 0x16);
   local_1c = -1;
   pbVar6 = (byte *)((uVar3 - 1) * uVar13 + param_3);
-  auto param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
+  AnonShape_006B4B20_3D4F4412 * param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
   local_30 = 0;
   local_14 = 0;
   pAVar14_mg0 = nullptr;
@@ -336,7 +336,7 @@ cf_continue_loop_007525E9:
   STField<byte>(puVar5,0xd) = (param_5 == 1) + 1U | (char)local_24 << 2;
   STField<undefined2>(puVar5,0x12) = (undefined2)local_c;
   *puVar5 = (int)pbVar12 - (int)puVar5;
-  *(undefined1 *)(puVar5 + 3) = 0x80;
+  ((undefined1 *)puVar5)[3] = 0x80;
   STField<undefined2>(puVar5,0xe) = STPiece<0,2>(local_28);
   *(short *)(puVar5 + 4) = (short)local_1c;
   *(short *)(puVar5 + 5) = (short)local_30 - (short)local_1c;

@@ -34,6 +34,7 @@ int __thiscall STRubbishC::sub_0062FEA0(STRubbishC *this,int param_1,int param_2
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return iVar2;
     }
+    /* ST_CALLSITE[0062FF35]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,this->field_01D5,
                this->field_01D9,&param_2,(int *)&local_8);

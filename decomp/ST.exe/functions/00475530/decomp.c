@@ -44,22 +44,26 @@ int __thiscall STBoatC::BackWaitLoad(STBoatC *this,int *param_1)
   iVar5 = this->field_05C0;
   if (iVar5 == 0) {
 LAB_00475545:
+    /* ST_CALLSITE[00475549]: CALL dword ptr [EAX + 0xd8] */
     iVar5 = this->vfunc_D8();
     return -(uint)(iVar5 != 0);
   }
   if ((iVar5 == 1) || (iVar5 == 2)) {
     SVar2 = this->field_05C4;
     if (SVar2 == CASE_0) {
+      /* ST_CALLSITE[00475578]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
       local_EAX_72 = sub_00460360(this);
       return local_EAX_72;
     }
     if (((((SVar2 == CASE_1) || (SVar2 == CASE_2)) || (SVar2 == CASE_3)) ||
         ((SVar2 == CASE_5 || (SVar2 == CASE_6)))) || (SVar2 == CASE_7)) {
       this->field_0076 = 1;
+      /* ST_CALLSITE[0047580C]: CALL dword ptr [EDX + 0xd8] */
       iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }
     if (SVar2 == CASE_4) {
+      /* ST_CALLSITE[004755CF]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
       local_1c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
       uVar6 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar6;
@@ -108,6 +112,7 @@ LAB_00475545:
             STPiece<0,2>(local_24) = (short)uVar3;
             iVar10 = (int)(short)local_24 + iVar5 + this->field_0041;
           }
+          /* ST_CALLSITE[00475737]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
           TraksClassTy::TraksCreate
                     (g_traksClass_00802A7C,1,2,7,iVar10,iVar9 + ((uVar6 >> 0x10) % 7 - 3),iVar8,
                      sVar12,sVar13,sVar14,sVar15,sVar16,sVar17,iVar18,sVar19,bVar20);
@@ -125,6 +130,7 @@ LAB_00475545:
         return -1;
       }
       if (local_1c != 0) {
+        /* ST_CALLSITE[00475770]: CALL dword ptr [EDX + 0xd8] */
         iVar5 = this->vfunc_D8();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
@@ -132,6 +138,7 @@ LAB_00475545:
     }
   }
   if (iVar5 == 3) {
+    /* ST_CALLSITE[004757C2]: CALL 0x00404e08; direct=00404E08 STBoatC::WaitLoad */
     local_EAX_658 = WaitLoad(this,(STBoatC *)0x2);
     return local_EAX_658;
   }

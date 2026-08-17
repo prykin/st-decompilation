@@ -13,26 +13,33 @@ int FUN_00747161(int *param_1,int param_2,int param_3)
 
   piVar2 = param_1;
   lpCriticalSection = (LPCRITICAL_SECTION)param_1[0xb];
+  /* ST_CALLSITE[00747173]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(lpCriticalSection);
   param_1[5] = param_2;
   param_1[6] = param_3;
+  /* ST_CALLSITE[0074718E]: CALL dword ptr [EAX + 0x14] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   if ((param_1[2] == 0) && (iVar3 = (**(code **)(*param_1 + 0x14))(param_1), iVar3 < 0)) {
+    /* ST_CALLSITE[00747198]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(lpCriticalSection);
     return iVar3;
   }
   if (param_1[2] != 2) {
     piVar1 = param_1 + -3;
+    /* ST_CALLSITE[007471B0]: CALL dword ptr [EAX + 0x18] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)(param_1[-3] + 0x18))();
     param_1 = nullptr;
     if (0 < iVar3) {
       do {
+        /* ST_CALLSITE[007471C5]: CALL dword ptr [EAX + 0x1c] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         piVar4 = (int *)(**(code **)(*piVar1 + 0x1c))(param_1);
+        /* ST_CALLSITE[007471D8]: CALL dword ptr [EDX + 0x1c] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((piVar4[6] != 0) && (iVar5 = (**(code **)(*piVar4 + 0x1c))(param_2,param_3), iVar5 < 0))
         {
+          /* ST_CALLSITE[00747208]: CALL dword ptr [0x0085bb90] */
           LeaveCriticalSection(lpCriticalSection);
           return iVar5;
         }
@@ -41,6 +48,7 @@ int FUN_00747161(int *param_1,int param_2,int param_3)
     }
   }
   piVar2[2] = 2;
+  /* ST_CALLSITE[007471F6]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(lpCriticalSection);
   return 0;
 }

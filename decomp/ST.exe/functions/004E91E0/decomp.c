@@ -39,20 +39,27 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
     }
   }
   else {
+    /* ST_CALLSITE[004E924C]: CALL dword ptr [EDX + 0x2c] */
     dVar9 = param_1->slot_2C();
+    /* ST_CALLSITE[004E9258]: CALL dword ptr [EAX + 0x2c] */
     if (((int)dVar9 < 1) || (dVar9 = param_1->slot_2C(), 0x28 < (int)dVar9)) {
+      /* ST_CALLSITE[004E9274]: CALL dword ptr [EAX + 0x2c] */
       dVar9 = param_1->slot_2C();
+      /* ST_CALLSITE[004E9280]: CALL dword ptr [EDX + 0x2c] */
       if (((int)dVar9 < 0x32) || (dVar9 = param_1->slot_2C(), 0x73 < (int)dVar9))
       {
         iVar13 = 100;
       }
       else {
+        /* ST_CALLSITE[004E9292]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         uVar6 = LookupRecordByte(*(char *)&param_1->field_0024);
+        /* ST_CALLSITE[004E92A3]: CALL dword ptr [EDX + 0x2c] */
         dVar9 = param_1->slot_2C();
         iVar13 = *(int *)(&DAT_007e37b0 + ((uint)(byte)uVar6 + dVar9 * 3) * 4);
       }
     }
     else {
+      /* ST_CALLSITE[004E9264]: CALL dword ptr [EDX + 0x2c] */
       dVar9 = param_1->slot_2C();
       iVar13 = *(int *)(&DAT_007e0d9c + dVar9 * 4);
     }
@@ -109,6 +116,7 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
       iVar13 = STField<int>(this,0x438);
       iVar14 = STField<int>(this,0x434);
       iVar11 = STField<int>(this,0x430);
+      /* ST_CALLSITE[004E945C]: CALL dword ptr [EAX + 0x2c] */
       SVar8 = param_1->slot_2C();
       thunk_FUN_004b2520(STField<uint>(this,0x24),SVar8,iVar11,iVar14,iVar13,puVar15,puVar16,
                          puVar17,uVar7,piVar18);
@@ -117,11 +125,13 @@ LAB_004e946f:
     if (((-1 < STField<int>(this,0x4e4)) && (-1 < STField<int>(this,0x4e8))) &&
        (-1 < STField<int>(this,0x4ec))) {
       STField<int>(this,0x4d8) = param_1->field_0018;
+      /* ST_CALLSITE[004E949A]: CALL dword ptr [EAX + 0x2c] */
       dVar9 = param_1->slot_2C();
       STField<dword>(this,0x4dc) = dVar9;
       if (g_tLOFake_00800BCC == nullptr) {
         thunk_FUN_004d0f00();
       }
+      /* ST_CALLSITE[004E94CC]: CALL 0x00401582; direct=00401582 TLOFakeTy::sub_004D0970 */
       TLOFakeTy::sub_004D0970
                 (g_tLOFake_00800BCC,STField<int>(this,0x4e4),STField<int>(this,0x4e8),
                  STField<int>(this,0x4ec));

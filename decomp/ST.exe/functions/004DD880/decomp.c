@@ -29,6 +29,7 @@ undefined4 __fastcall FUN_004dd880(AnonShape_004DDCC0_33DEB43E *param_1)
   int *local_8;
 
   local_20 = param_1;
+  /* ST_CALLSITE[004DD89B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   LookupRecordByte(param_1->field_0024);
   piVar8 = local_104;
   for (iVar6 = 0x37; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -36,8 +37,10 @@ undefined4 __fastcall FUN_004dd880(AnonShape_004DDCC0_33DEB43E *param_1)
     piVar8 = piVar8 + 1;
   }
   if (*(int *)&param_1->field_0024 != *(int *)&param_1->field_0x23d) {
+    /* ST_CALLSITE[004DD8C6]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar2 = LookupRecordByte((char)*(int *)&param_1->field_0x23d);
     iVar6 = *(int *)&param_1->field_0x235;
+    /* ST_CALLSITE[004DD8ED]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar3 = LookupRecordByte(param_1->field_0024);
     if ((&DAT_007e1984)[(uint)bVar3 + ((uint)bVar2 + iVar6 * 3) * 3] == '\0') goto LAB_004dda3a;
   }

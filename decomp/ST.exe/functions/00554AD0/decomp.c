@@ -15,6 +15,7 @@ void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
   cLoadingTy *local_8;
 
   local_8 = this;
+  /* ST_CALLSITE[00554ADA]: CALL 0x0040249b; direct=0040249B cLoadingTy::sub_00555570 */
   sub_00555570(this);
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -38,6 +39,7 @@ void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
                ,iVar4,iVar3,pcVar2->field_001C,pcVar2->field_0034,0);
     Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
     if ((code *)pcVar2->field_0058 != nullptr) {
+      /* ST_CALLSITE[00554BC0]: CALL EAX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)pcVar2->field_0058)(pcVar2->field_0054);
     }

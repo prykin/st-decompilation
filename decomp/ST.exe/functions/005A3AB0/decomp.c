@@ -36,7 +36,9 @@ void __thiscall FSGSTy::SetInfo(FSGSTy *this,byte *param_1,uint param_2,byte *pa
   if (g_cursorClass_00802A30 != nullptr) {
     g_cursorClass_00802A30->field_0493 = CASE_1;
     this_00->field_0494 = 0xffff;
+    /* ST_CALLSITE[005A3AED]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
     CursorClassTy::SetGCType(this_00,CASE_0,this_00->field_00C5,this_00->field_00C9);
+    /* ST_CALLSITE[005A3B02]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;
@@ -103,16 +105,22 @@ LAB_005a3b63:
           *(uint **)&this_01->field_0x31 = this_01->field_1B04;
           FUN_006e6080(this_01,2,this_01->field_1AE4,(undefined4 *)&this_01->field_0x1d);
         }
+        /* ST_CALLSITE[005A3D10]: CALL 0x004049df; direct=004049DF FSGSTy::sub_005A39A0 */
         sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Wins",param_2,param_3,0x1a,
                      0xf3,0x4e,0x12);
+        /* ST_CALLSITE[005A3D30]: CALL 0x004049df; direct=004049DF FSGSTy::sub_005A39A0 */
         sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Losses",param_2,param_3,0x7e
                      ,0xf3,0x4e,0x12);
+        /* ST_CALLSITE[005A3D53]: CALL 0x004049df; direct=004049DF FSGSTy::sub_005A39A0 */
         sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Draws",param_2,param_3,0xe2,
                      0xf3,0x4e,0x12);
+        /* ST_CALLSITE[005A3D76]: CALL 0x004049df; direct=004049DF FSGSTy::sub_005A39A0 */
         sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Disconnects",param_2,param_3
                      ,0x146,0xf3,0x4e,0x12);
+        /* ST_CALLSITE[005A3D96]: CALL 0x004049df; direct=004049DF FSGSTy::sub_005A39A0 */
         sub_005A39A0(this_01,this_01->field_1A7B,"1\\Rating",param_2,param_3,0x1a,0x11b,0x4e
                      ,0x17);
+        /* ST_CALLSITE[005A3DB6]: CALL 0x004049df; direct=004049DF FSGSTy::sub_005A39A0 */
         sub_005A39A0(this_01,this_01->field_1A7B,"1\\Rank",param_2,param_3,0x7e,0x11b,0x4e,
                      0x17);
         local_EAX_791 = thunk_FUN_0055d590("1\\Last Game",param_2,param_3);
@@ -132,8 +140,10 @@ LAB_005a3b63:
               local_c.dwHighDateTime = 0;
               local_c.dwLowDateTime = 0;
             }
+            /* ST_CALLSITE[005A3E13]: CALL dword ptr [0x0085bbb4] */
             BVar9 = FileTimeToSystemTime(&local_c,&local_24);
             if (BVar9 != 0) {
+              /* ST_CALLSITE[005A3E4A]: CALL dword ptr [0x0085bde8] */
               wsprintfA(local_88,"%2d/%2d/%4d",STPiece<6,4>(local_24) & 0xffff,local_24.wMonth,
                         local_24.wYear);
               FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1AC0,0,0xe2,0x11b,0xb2,
@@ -144,12 +154,16 @@ LAB_005a3b63:
             }
           }
         }
+        /* ST_CALLSITE[005A3ED2]: CALL 0x004049df; direct=004049DF FSGSTy::sub_005A39A0 */
         sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Wins",param_2,param_3,0x1a,
                      0x161,0x4e,0x12);
+        /* ST_CALLSITE[005A3EF2]: CALL 0x004049df; direct=004049DF FSGSTy::sub_005A39A0 */
         sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Losses",param_2,param_3,0x7e
                      ,0x161,0x4e,0x12);
+        /* ST_CALLSITE[005A3F15]: CALL 0x004049df; direct=004049DF FSGSTy::sub_005A39A0 */
         sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Draws",param_2,param_3,0xe2,
                      0x161,0x4e,0x12);
+        /* ST_CALLSITE[005A3F38]: CALL 0x004049df; direct=004049DF FSGSTy::sub_005A39A0 */
         sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Disconnects",param_2,param_3
                      ,0x146,0x161,0x4e,0x12);
         FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1ABC);

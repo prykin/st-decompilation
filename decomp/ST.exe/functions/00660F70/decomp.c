@@ -122,8 +122,10 @@ switchD_0066104e_caseD_9:
                                             ,0,nullptr), uVar12 = extraout_EDX, iVar9 == 0)))) {
               local_10 = nullptr;
               if (((0x53 < *local_8) && (*local_8 < 0x5b)) &&
+                 /* ST_CALLSITE[006611D9]: CALL 0x004059b6; direct=004059B6 AiFltClassTy::sub_0065E360 */
                  (array = (DArrayTy *)sub_0065E360(this,uVar12,0x53), array != nullptr)) {
                 if (((array->count != 0) && (g_allPlayers_007FA174 != nullptr)) &&
+                   /* ST_CALLSITE[00661208]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                    (pSVar10 = STAllPlayersC::GetObjPtr
                                         (g_allPlayers_007FA174,*(char *)&this->field_0024,
                                          *(ushort *)array->data,CASE_1),
@@ -146,6 +148,7 @@ switchD_0066104e_caseD_9:
               *(undefined2 *)(param_1 + 4) = (undefined2)local_18;
               STField<undefined2>(param_1,0x12) = (undefined2)local_1c;
             }
+            /* ST_CALLSITE[006612A9]: CALL 0x00403445; direct=00403445 _GetEmbrGrpTobjGrpExch */
             iVar8 = _GetEmbrGrpTobjGrpExch(this->field_0024,*local_8,(uint)(ushort)this->field_007D);
             if (0 < iVar8) {
               return;
@@ -181,6 +184,7 @@ switchD_0066104e_caseD_9:
           }
           local_6c.field_0006 = (short)uVar5;
           Library::MSVCRT::_strncpy(&local_6c.field_0x1d,(char *)((int)param_1 + 0x15),0xe);
+          /* ST_CALLSITE[0066136F]: CALL 0x004056be; direct=004056BE AiTactClassTy::PrepareToSave */
           local_EAX_1023 =
                AiTactClassTy::PrepareToSave
                          ((AiTactClassTy *)this->field_0284,&local_6c,this->field_007F);

@@ -85,7 +85,8 @@ int __thiscall st::fn_0068DC80(AiTactClassTy *this,undefined4 *param_1)
         do {
           *(undefined4 *)(iVar10 + 4) = pAVar2->field_0024;
           *(undefined4 *)(iVar10 + 0x77) = pAVar2->field_009D;
-          *(undefined1 *)(iVar10 + 0x6a) = pAVar2->field_0088;
+          ((undefined1 *)iVar10)[0x6a] = pAVar2->field_0088;
+          /* ST_CALLSITE[0068DDDE]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
           st::fn_00401BC2(g_playSystem_00802A38,900,st::machine_word_boundary_cast<undefined4>(&local_14),st::machine_word_boundary_cast<undefined4>(&local_c),iVar10,0);
           local_1c = local_c;
           local_20 = local_c->field_0018;
@@ -97,11 +98,13 @@ int __thiscall st::fn_0068DC80(AiTactClassTy *this,undefined4 *param_1)
       }
       local_10 = st::fn_004053C1(st::mutable_c_string("__REPAIR_FLEET__"),pAVar2->field_0039,0x8000,0,
                                     *(byte *)&pAVar2->field_0024);
+      /* ST_CALLSITE[0068DE43]: CALL 0x004014c4; direct=004014C4 FltDataPack */
       local_8 = st::fn_004014C4(local_10,&local_14);
       st::fn_00405BCD((int *)&local_10);
       *(undefined4 *)&local_8->field_0x4 = pAVar2->field_0024;
       *(undefined4 *)&local_8->field_0x77 = pAVar2->field_009D;
       local_8->field_0x6a = pAVar2->field_0088;
+      /* ST_CALLSITE[0068DE91]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
       st::fn_00401BC2(g_playSystem_00802A38,900,st::machine_word_boundary_cast<undefined4>(&local_14),st::machine_word_boundary_cast<undefined4>(&local_c),st::machine_word_boundary_cast<undefined4>(local_8),0);
       st::fn_00405BCD((int *)&local_8);
       local_1c = local_c;
@@ -114,6 +117,7 @@ int __thiscall st::fn_0068DC80(AiTactClassTy *this,undefined4 *param_1)
     return 0;
   }
   g_currentExceptionFrame = local_64.previous;
+  /* ST_CALLSITE[0068DEF4]: CALL 0x0040284c; direct=0040284C AiTactClassTy::sub_0068E010 */
   st::fn_0040284C(local_18);
   st::fn_00405BCD((int *)&local_8);
   st::fn_00405BCD((int *)&local_10);
@@ -159,6 +163,7 @@ byte * __thiscall st::fn_0068E050(AiTactClassTy *this,uint *param_1)
     else {
       puVar3 = &local_8->field_0020;
     }
+    /* ST_CALLSITE[0068E092]: CALL 0x0040518c; direct=0040518C TactDataPack */
     pbVar4 = st::fn_0040518C(puVar3,param_1);
     pbVar4[0] = 0x8e;
     pbVar4[1] = 3;
@@ -242,7 +247,7 @@ void __thiscall st::fn_0068E950(AiTactClassTy *this)
       st::fn_006AB060(slotStorage);
     }
     if (pAVar2->field_00BD != nullptr) {
-      pvVar3 = (void *)st::fn_006B0020(st::pointer_boundary_cast<uint *>(&pAVar2->field_00BD->flags),&local_c);
+      pvVar3 = st::fn_006B0020(&pAVar2->field_00BD->flags,&local_c);
       *slotStorage = pvVar3;
     }
     g_currentExceptionFrame = local_50.previous;
@@ -337,7 +342,7 @@ st::fn_0068EB30(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *param_1,short p
     param_1->field_0006 = param_1->field_0006 + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
     param_1->field_003A = pAVar3->field_012C;
     st::fn_006AE1C0((DArrayTy *)pAVar3->field_00BD,param_1);
-    st::fn_004049A8((DArrayTy *)pAVar3->field_00BD,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0040242D));
+    st::fn_004049A8((DArrayTy *)pAVar3->field_00BD,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0068E7D0));
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
@@ -448,6 +453,7 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
                     uStack_38 = (undefined1)((uint)element_00bd >> 0x10);
                     cStack_3b = '\x01';
                     uStack_37 = uVar5;
+                    /* ST_CALLSITE[0068ED95]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
                     st::fn_00401555(this_00,local_44);
                     if ('\0' < local_3c) {
                       element_00bd->state = 1;
@@ -486,6 +492,7 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
                 local_44[0] = 0x69;
                 uStack_3a = (undefined2)((uint)element_00bd >> 8);
                 uStack_38 = uVar5;
+                /* ST_CALLSITE[0068EE47]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
                 st::fn_00401555(st::pointer_boundary_cast<AiFltClassTy *>(element_00a5_2->field_0004),local_44);
                 if ('\0' < local_3c) {
                   element_00bd->state = 2;
@@ -518,6 +525,7 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
                 cStack_3b = (char)((uint)element_00bd >> 8);
                 uStack_3a = (undefined2)((uint)element_00bd >> 0x10);
                 local_3c = cVar3;
+                /* ST_CALLSITE[0068EEBA]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
                 st::fn_00401555(st::pointer_boundary_cast<AiFltClassTy *>(element_00a5_2->field_0004),local_44);
               }
             }
@@ -587,6 +595,7 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
   this_00 = local_8;
   if (iVar5 == 0) {
     if ((param_1 != nullptr) && (param_1[3] != 0)) {
+      /* ST_CALLSITE[0068F070]: CALL 0x00405af1; direct=00405AF1 AiTactClassTy::ClaimSave */
       st::fn_00405AF1(local_8);
       pAVar9 = this_00->field_00A5;
       if (0 < (int)pAVar9->count) {
@@ -600,7 +609,7 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
             element_00a5 = nullptr;
           }
           if (((undefined4 *)element_00a5 != nullptr) &&
-             (element_00a5->field_0004 != nullptr))
+             (element_00a5->field_0004 != 0))
           {
             st::fn_004034E0(st::pointer_boundary_cast<AnonShape_00660D40_E58DF1E6 *>(element_00a5->field_0004));
           }
@@ -609,7 +618,7 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
           bVar11 = uVar10 < pAVar9->count;
         } while ((int)uVar10 < (int)pAVar9->count);
       }
-      st::fn_004049A8((DArrayTy *)this_00->field_00BD,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0040242D));
+      st::fn_004049A8((DArrayTy *)this_00->field_00BD,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0068E7D0));
       local_c = param_1[3];
       while (local_c = local_c - 1, -1 < (int)local_c) {
         if (local_c < param_1[3]) {
@@ -622,12 +631,15 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
           this_01 = nullptr;
         }
         else {
+          /* ST_CALLSITE[0068F101]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_01 = st::fn_004028BA
                               (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar5,CASE_1);
         }
         if (this_01 != nullptr) {
+          /* ST_CALLSITE[0068F118]: CALL dword ptr [EAX + 0x2c] */
           iVar7 = this_01->vfunc_2C();
           if (iVar7 == 0x78) {
+            /* ST_CALLSITE[0068F128]: CALL dword ptr [EDX + 0x2c] */
             iVar7 = this_01->vfunc_2C();
             if (iVar7 == 0x78) {
               iVar7 = this_01->field_0259;
@@ -646,6 +658,7 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
               }
               if ((element_00bd_2 != nullptr) && (-1 < element_00bd_2->field_0030)) {
                 uVar1 = element_00bd_2->field_000C;
+                /* ST_CALLSITE[0068F17E]: CALL dword ptr [EDX + 0x2c] */
                 iVar7 = this_01->vfunc_2C();
                 if (iVar7 == 0x78) {
                   this_01->field_0269 = (uint)uVar1;
@@ -681,6 +694,7 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
                                ((int)&pAVar9->data->field_0004 + pAVar9->elementSize * uVar3);
                   }
                 }
+                /* ST_CALLSITE[0068F236]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
                 st::fn_00404200(this_02,(uint)this_01,0);
                 st::fn_006B0C70((DArrayTy *)param_1,local_c);
               }
@@ -689,6 +703,7 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
           }
         }
       }
+      /* ST_CALLSITE[0068F1BB]: CALL 0x00403652; direct=00403652 AiTactClassTy::ClaimRestore */
       st::fn_00403652(this_00);
     }
     g_currentExceptionFrame = local_50.previous;
@@ -757,9 +772,13 @@ void __thiscall st::fn_0068F360(AiTactClassTy *this,uint *param_1)
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
+  /* ST_CALLSITE[0068F3B2]: CALL 0x00404688; direct=00404688 AiTactClassTy::sub_0068E480 */
   local_c = st::fn_00404688(local_8,1);
+  /* ST_CALLSITE[0068F3BE]: CALL 0x00404688; direct=00404688 AiTactClassTy::sub_0068E480 */
   local_10 = st::fn_00404688(pAVar5,2);
+  /* ST_CALLSITE[0068F3CA]: CALL 0x00404688; direct=00404688 AiTactClassTy::sub_0068E480 */
   local_14 = st::fn_00404688(pAVar5,4);
+  /* ST_CALLSITE[0068F3D6]: CALL 0x00404688; direct=00404688 AiTactClassTy::sub_0068E480 */
   local_18 = st::fn_00404688(pAVar5,0x10);
   index = param_1[3];
 joined_r0x0068f3e2:
@@ -781,11 +800,13 @@ joined_r0x0068f3e2:
           this_00 = nullptr;
         }
         else {
+          /* ST_CALLSITE[0068F415]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = st::fn_004028BA
                               (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar6,CASE_1);
         }
         pAVar5 = local_8;
       } while (this_00 == nullptr);
+      /* ST_CALLSITE[0068F42C]: CALL dword ptr [EDX + 0x2c] */
       iVar7 = this_00->vfunc_2C();
       if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
       pAVar11 = local_8->field_00A5;
@@ -802,6 +823,7 @@ joined_r0x0068f3e2:
         }
       }
       uVar1 = pAVar8->field_007D;
+      /* ST_CALLSITE[0068F472]: CALL dword ptr [EDX + 0x2c] */
       iVar7 = this_00->vfunc_2C();
       if (iVar7 == 0x78) {
         this_00->field_0269 = (uint)uVar1;
@@ -868,6 +890,7 @@ LAB_0068f516:
         pAVar8 = *(AiFltClassTy **)((int)&pAVar11->data->field_0004 + pAVar11->elementSize * uVar12);
       }
     }
+    /* ST_CALLSITE[0068F551]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
     st::fn_00404200(pAVar8,(uint)this_00,0);
     st::fn_006B0C70((DArrayTy *)param_1,index);
     pAVar5 = local_8;
@@ -911,10 +934,12 @@ void __thiscall st::fn_0068F660(AiTactClassTy *this,DArrayTy *param_1)
           this_00 = nullptr;
         }
         else {
+          /* ST_CALLSITE[0068F6E1]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = st::fn_004028BA
                               (g_allPlayers_007FA174,*(char *)&local_8->field_0024,*puVar4,CASE_1);
         }
         if (this_00 != nullptr) {
+          /* ST_CALLSITE[0068F6F4]: CALL dword ptr [EAX + 0x2c] */
           iVar3 = this_00->vfunc_2C();
           if ((iVar3 < 1) || (0x28 < iVar3)) {
             bVar2 = false;
@@ -923,8 +948,10 @@ void __thiscall st::fn_0068F660(AiTactClassTy *this,DArrayTy *param_1)
             bVar2 = true;
           }
           if ((bVar2) &&
+             /* ST_CALLSITE[0068F719]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
              (this_01 = (AiFltClassTy *)st::fn_00405B23(local_8,this_00->field_081C),
              this_01 != nullptr)) {
+            /* ST_CALLSITE[0068F727]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
             st::fn_00404200(this_01,(uint)this_00,0);
             st::fn_006B0C70(param_1,index);
           }
@@ -968,9 +995,12 @@ void __thiscall st::fn_0068F7E0(AiTactClassTy *this)
   errorCode = st::fn_0072D7F0(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
+    /* ST_CALLSITE[0068F81E]: CALL 0x00404da9; direct=00404DA9 _GetStaffGrpExch */
     array = (DArrayTy *)st::fn_00404DA9(local_c->field_0024);
     local_8 = array;
+    /* ST_CALLSITE[0068F82E]: CALL 0x00403e04; direct=00403E04 AiTactClassTy::GiveObjByClaim */
     st::fn_00403E04(this_00,(uint *)array);
+    /* ST_CALLSITE[0068F836]: CALL 0x004040f2; direct=004040F2 AiTactClassTy::GiveObjByFltType */
     st::fn_004040F2(this_00,(uint *)array);
     if (array != nullptr) {
       st::fn_006AE110(array);
@@ -1030,7 +1060,9 @@ void __thiscall st::fn_0068FB30(AiTactClassTy *this,short param_1)
     local_33 = param_1;
     local_31 = 0;
     local_2b = st::fn_006AE290(nullptr,10,2,10);
+    /* ST_CALLSITE[0068FBA8]: CALL 0x00403cdd; direct=00403CDD AiTactClassTy::sub_006902B0 */
     st::fn_00403CDD(this_00,-0x8000,local_3c);
+    /* ST_CALLSITE[0068FBB0]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
     this_01 = (void *)st::fn_00405B23(this_00,param_1);
     if (this_01 != nullptr) {
       st::fn_004020EA(this_01,local_2b,0);
@@ -1098,6 +1130,7 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
     switch(*(uint *)param_1) {
     case 0x6a:
       local_8->field_009D = *(undefined4 *)&param_1->field_0x8;
+      /* ST_CALLSITE[0068FD63]: CALL 0x00403e68; direct=00403E68 AiTactClassTy::sub_00690230 */
       st::fn_00403E68(local_8,(uint *)param_1);
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -1110,6 +1143,7 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
         uStack_2f = param_1->field_0009;
         uStack_2e = (undefined2)param_1->field_000A;
         uStack_2c = (undefined2)((uint)param_1->field_000A >> 0x10);
+        /* ST_CALLSITE[0068FDBC]: CALL 0x00403e68; direct=00403E68 AiTactClassTy::sub_00690230 */
         st::fn_00403E68(local_8,local_3c);
         g_currentExceptionFrame = local_80.previous;
         return 0;
@@ -1117,6 +1151,7 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
       break;
     case 0x6e:
     case 0x74:
+      /* ST_CALLSITE[0068FDD8]: CALL 0x00403e68; direct=00403E68 AiTactClassTy::sub_00690230 */
       st::fn_00403E68(local_8,(uint *)param_1);
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -1124,6 +1159,7 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
       iVar4 = st::fn_0040457F(local_8,*(int *)((int)&param_1->field_000A + 2));
       iVar8 = *(int *)((int)&param_1->field_000A + 2);
       *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar4;
+      /* ST_CALLSITE[0068FE0C]: CALL 0x00401d0c; direct=00401D0C AiTactClassTy::sub_0068E610 */
       iVar3 = st::fn_00401D0C(this_00,iVar8);
       *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar3;
       g_currentExceptionFrame = local_80.previous;
@@ -1148,6 +1184,7 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
             local_30 = (undefined1)uVar1;
             uStack_2f = (undefined1)((uint)uVar1 >> 8);
             uStack_2e = (undefined2)((uint)uVar1 >> 0x10);
+            /* ST_CALLSITE[0068FE8C]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
             st::fn_00401555(st::pointer_boundary_cast<AiFltClassTy *>(element_00a5->field_0004),local_3c);
             if (0 < (int)local_3c[2]) {
               *(uint *)&param_1->field_0x8 = local_3c[2];
@@ -1177,7 +1214,8 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
             element_00a5 = nullptr;
           }
           if (((undefined4 *)element_00a5 != nullptr) &&
-             (element_00a5->field_0004 != nullptr)) {
+             (element_00a5->field_0004 != 0)) {
+            /* ST_CALLSITE[0068FF0E]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
             st::fn_00401555(st::pointer_boundary_cast<AiFltClassTy *>(element_00a5->field_0004),(uint *)param_1);
             st::fn_0040432C(g_playSystem_00802A38,*(uint *)(element_00a5->field_0004 + 8));
             st::fn_006B0C70((DArrayTy *)this_00->field_00A5,uVar9);
@@ -1191,16 +1229,19 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
     case 0x72:
       iVar8 = *(int *)&param_1->field_0x8;
       if (iVar8 == 0) {
+        /* ST_CALLSITE[0068FF9F]: CALL 0x00403e04; direct=00403E04 AiTactClassTy::GiveObjByClaim */
         st::fn_00403E04(local_8,*(uint **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       if (iVar8 == 1) {
+        /* ST_CALLSITE[0068FF80]: CALL 0x004040f2; direct=004040F2 AiTactClassTy::GiveObjByFltType */
         st::fn_004040F2(local_8,*(uint **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       if (iVar8 == 2) {
+        /* ST_CALLSITE[0068FF61]: CALL 0x004057ae; direct=004057AE AiTactClassTy::GiveObjByGrpNum */
         st::fn_004057AE(local_8,*(DArrayTy **)((int)&param_1->field_000A + 2));
         g_currentExceptionFrame = local_80.previous;
         return 0;
@@ -1219,7 +1260,8 @@ int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *
             element_00a5 = nullptr;
           }
           if ((((undefined4 *)element_00a5 != nullptr) &&
-              (element_00a5->field_0004 != nullptr)) &&
+              (element_00a5->field_0004 != 0)) &&
+             /* ST_CALLSITE[0068FFEA]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
              (st::fn_00401555(st::pointer_boundary_cast<AiFltClassTy *>(element_00a5->field_0004),(uint *)param_1),
              '\0' < (char)param_1->field_0x8)) {
             g_currentExceptionFrame = local_80.previous;
@@ -1339,11 +1381,13 @@ LAB_00690763:
         pSVar7 = nullptr;
       }
       else {
+        /* ST_CALLSITE[006907BF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar7 = st::fn_004028BA
                            (g_allPlayers_007FA174,*(char *)&local_c->field_0024,(ushort)local_10,
                             CASE_1);
       }
       if ((pSVar7 != nullptr) &&
+         /* ST_CALLSITE[006907DA]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
          (iVar6 = st::fn_00405B23(this_01,pSVar7->field_0030), iVar6 != 0)) {
         if (*(short *)(iVar6 + 0x7b) == 1) {
           sVar5 = (short)local_10;
@@ -1375,6 +1419,7 @@ LAB_00690763:
                 local_46 = *(undefined2 *)(iVar6 + 0x7b);
                 local_44 = (undefined2)local_20;
                 local_42 = local_14;
+                /* ST_CALLSITE[00690897]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
                 st::fn_00401555(this_00,local_54);
                 if ('\0' < local_4c) {
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -1453,7 +1498,9 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
     if (SVar1 < MESS_TORPHIT) {
       if (SVar1 == MESS_SHARED_010F) {
         local_c = nullptr;
+        /* ST_CALLSITE[00690C9C]: CALL 0x00404511; direct=00404511 AiTactClassTy::PrepareToSave */
         local_10 = st::fn_00404511(local_14,(uint *)&local_c);
+        /* ST_CALLSITE[00690CB3]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
         st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,(uint)local_c);
         if (local_10 != nullptr) {
           st::fn_006AB060(&local_10);
@@ -1462,10 +1509,13 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
       else if (SVar1 == MESS_ID_NONE) {
         if (local_14->field_0099 == 0) {
           local_14->field_0099 = 1;
+          /* ST_CALLSITE[00690C76]: CALL 0x00402c7f; direct=00402C7F AiTactClassTy::sub_00690A40 */
           st::fn_00402C7F(local_14);
         }
         else {
+          /* ST_CALLSITE[00690C82]: CALL 0x00402b49; direct=00402B49 AiTactClassTy::sub_00690AB0 */
           st::fn_00402B49(local_14);
+          /* ST_CALLSITE[00690C89]: CALL 0x00404598; direct=00404598 AiTactClassTy::ExecClaim */
           st::fn_00404598(this_00);
         }
       }
@@ -1475,6 +1525,7 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
           st::fn_006A5E40
                     (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_tact.cpp"),0x45e);
         }
+        /* ST_CALLSITE[00690C2F]: CALL 0x004037c9; direct=004037C9 AiTactClassTy::InitData */
         st::fn_004037C9(this_00,puVar7);
         if (puVar7[3] == 0) {
           this_00->field_001C = DAT_00808754;
@@ -1483,10 +1534,12 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
           this_00->field_001C = this_00->field_007E;
         }
         if (puVar7[3] == 0) {
+          /* ST_CALLSITE[00690C58]: CALL 0x00404741; direct=00404741 AiTactClassTy::InitDistrObj */
           st::fn_00404741(this_00);
         }
       }
       else if (SVar1 == MESS_SHARED_0003) {
+        /* ST_CALLSITE[00690C03]: CALL 0x0040284c; direct=0040284C AiTactClassTy::sub_0068E010 */
         st::fn_0040284C(local_14);
       }
     }
@@ -1502,7 +1555,7 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
             element_00a5 = nullptr;
           }
           local_8 = 0;
-          if ((((AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000 == nullptr) ||
+          if ((((AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000 == 0) ||
               (iVar5 = st::fn_006E62D0
                                  (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000,
                                   &local_8), iVar5 != 0)) || (local_8 == 0)) {
@@ -1520,6 +1573,7 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_SHARED_5DD5) {
+      /* ST_CALLSITE[00690CE0]: CALL 0x004046e2; direct=004046E2 AiTactClassTy::HelpOrganize */
       st::fn_004046E2(local_14,(AnonShape_00690650_F810CDF4 *)message);
     }
     st::fn_006E5FD0(this_00,message);

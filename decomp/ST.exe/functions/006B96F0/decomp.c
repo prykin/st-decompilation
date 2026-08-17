@@ -8,6 +8,7 @@ int FUN_006b96f0(int *param_1,uint *param_2,uint param_3,int param_4,uint param_
                       );
   if (iVar1 == 0) {
     if ((*(uint *)(*param_1 + 8) & 0x4000000) != 0) {
+      /* ST_CALLSITE[006B972B]: CALL dword ptr [0x0085bb8c] */
       EnterCriticalSection((LPCRITICAL_SECTION)(*param_1 + 0x4f0));
     }
     if (param_4 < 1) {
@@ -15,6 +16,7 @@ int FUN_006b96f0(int *param_1,uint *param_2,uint param_3,int param_4,uint param_
     }
     *(int *)(*(int *)(param_1[0x6c] + *param_2 * 4) + 200) = param_4;
     if ((*(uint *)(*param_1 + 8) & 0x4000000) != 0) {
+      /* ST_CALLSITE[006B9760]: CALL dword ptr [0x0085bb90] */
       LeaveCriticalSection((LPCRITICAL_SECTION)(*param_1 + 0x4f0));
     }
   }

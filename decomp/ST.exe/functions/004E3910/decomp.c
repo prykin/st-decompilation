@@ -182,17 +182,22 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
               if (g_worldGrid.sizeY <= iVar7) {
                 iVar7 = g_worldGrid.sizeY + -1;
               }
+              /* ST_CALLSITE[004E3E46]: CALL 0x00401fd7; direct=00401FD7 STSharkC::CreateShark */
               iVar10 = STSharkC::CreateShark
                                  (local_20,(int)local_20,local_1c,local_18,iVar10,iVar5,iVar4,iVar7,
                                   0,param_1[9]);
               this = (STT3DSprC *)((int)param_1 + 0x1d5);
               param_1[local_c + 0x134] = *(int *)(iVar10 + 0x18);
               cVar12 = '\0';
+              /* ST_CALLSITE[004E3E67]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
               iVar10 = STT3DSprC::sub_004ACD30(this,'\v');
               thunk_FUN_004abce0(this,0xb,0,iVar10,cVar12);
+              /* ST_CALLSITE[004E3E7E]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
               STT3DSprC::SetCurFase(this,'\v',0);
               thunk_FUN_004ac700(this,'\v');
+              /* ST_CALLSITE[004E3E9D]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
               STT3DSprC::StartShow(this,0xb,g_playSystem_00802A38->field_00E4);
+              /* ST_CALLSITE[004E3EAD]: CALL dword ptr [EAX + 0x90] */
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(*param_1 + 0x90))(3,0x25d);
             }

@@ -15,12 +15,14 @@ undefined4 __cdecl FUN_00719bb0(MCIDEVICEID *param_1)
     local_10 = 0;
     local_8 = 0;
     local_c = 4;
+    /* ST_CALLSITE[00719BEF]: CALL EDI */
     mciSendCommandA(*param_1,0x814,0x102,(DWORD_PTR)&local_14);
     if ((local_10 == 0x20c) || (local_10 == 0x212)) {
       MVar1 = *param_1;
     }
     else {
       local_c = 5;
+      /* ST_CALLSITE[00719C1A]: CALL EDI */
       mciSendCommandA(*param_1,0x814,0x102,(DWORD_PTR)&local_14);
       if (local_10 != 0) {
         return 1;

@@ -16,6 +16,7 @@ undefined4 FUN_00757d90(AnonShape_00757D90_5427B306 *param_1)
   iVar4 = pAVar3->field_0004;
   while( true ) {
     if (iVar4 == 0) {
+      /* ST_CALLSITE[00757DAB]: CALL dword ptr [ESI + 0xc] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar4 = (*(code *)pAVar3[1].field_0004)(param_1);
       if (iVar4 == 0) {
@@ -34,6 +35,7 @@ undefined4 FUN_00757d90(AnonShape_00757D90_5427B306 *param_1)
       pAVar3->field_0000 = pbVar5;
       pAVar3->field_0004 = iVar4;
       if (iVar4 == 0) {
+        /* ST_CALLSITE[00757DD8]: CALL dword ptr [ESI + 0xc] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (*(code *)pAVar3[1].field_0004)(param_1);
         if (iVar4 == 0) {
@@ -46,6 +48,7 @@ undefined4 FUN_00757d90(AnonShape_00757D90_5427B306 *param_1)
     }
     do {
       if (iVar4 == 0) {
+        /* ST_CALLSITE[00757DF7]: CALL dword ptr [ESI + 0xc] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar4 = (*(code *)pAVar3[1].field_0004)(param_1);
         if (iVar4 == 0) {

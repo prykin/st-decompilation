@@ -22,7 +22,7 @@ undefined4 FUN_00748eca(int param_1,uint param_2,uint *param_3)
   if (((((0x30 < param_2) || (0x30 < uVar1)) ||
        ((0xb < param_2 &&
         (((param_3[2] & 0xfffffe20) != 0 ||
-         ((((param_3[2] & 0x10) != 0 && ((*(byte *)(param_1 + 4) & 0x10) == 0)) && (param_2 < 0x20))
+         ((((param_3[2] & 0x10) != 0 && ((((byte *)param_1)[4] & 0x10) == 0)) && (param_2 < 0x20))
          )))))) ||
       (((0x2b < param_2 && (param_3[10] != 0)) && (param_3[10] != *(uint *)(param_1 + 0xc))))) ||
      ((0x2f < param_2 &&

@@ -76,12 +76,15 @@ void __fastcall FUN_005c0230(MReportTy *param_1)
   param_1->field_0033 = param_1->field_000A;
   FUN_006e6000(param_1,3,1,(undefined4 *)&param_1->field_0x1d);
   if (param_1->field_0066 == '\x01') {
+    /* ST_CALLSITE[005C041E]: CALL 0x00405ecf; direct=00405ECF MReportTy::CreateBut */
     uVar1 = MReportTy::CreateBut(param_1,1,1,0x2d,0x226,0x91,0x28,0x6201,0x6213);
     param_1->field_0093 = uVar1;
+    /* ST_CALLSITE[005C0447]: CALL 0x00405ecf; direct=00405ECF MReportTy::CreateBut */
     uVar1 = MReportTy::CreateBut(param_1,1,1,0x1e,0x1bd,300,0x1e,0x6202,0x6214);
     param_1->field_0097 = uVar1;
   }
   else {
+    /* ST_CALLSITE[005C0475]: CALL 0x00405ecf; direct=00405ECF MReportTy::CreateBut */
     uVar1 = MReportTy::CreateBut(param_1,1,1,0x262,0x226,0x91,0x28,0x6200,0x6212);
     param_1->field_008F = uVar1;
   }
@@ -112,8 +115,10 @@ void __fastcall FUN_005c0230(MReportTy *param_1)
   local_44 = 0xb208;
   local_24 = 0xb209;
   local_2c = local_4c;
+  /* ST_CALLSITE[005C0511]: CALL dword ptr [EDX + 0x8] */
   (*param_1->field_000C->vtable->CreateObject)
             ((SystemClassTy *)param_1->field_000C,5,&param_1->field_009F,nullptr,local_5c,0);
+  /* ST_CALLSITE[005C0516]: CALL 0x00403b07; direct=00403B07 MReportTy::SetCtrl */
   MReportTy::SetCtrl(param_1);
   return;
 }

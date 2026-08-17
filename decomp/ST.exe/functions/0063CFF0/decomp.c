@@ -34,7 +34,7 @@ undefined4 * __thiscall FUN_0063cff0(void *this,int *param_1)
   }
   *(undefined2 *)puVar5 = *(undefined2 *)puVar4;
   if (STField<uint *>(this,0x336) != nullptr) {
-    local_10 = (undefined4 *)FUN_006b0020(STField<uint *>(this,0x336),(int *)&local_c);
+    local_10 = FUN_006b0020(STField<uint *>(this,0x336),(int *)&local_c);
     STField<uint>(puVar1,0x152) = local_c;
     puVar4 = (byte *)(local_10);
     puVar5 = (byte *)((int)puVar1 + 0x156);

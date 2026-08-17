@@ -81,6 +81,7 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
         local_10 = (int)g_worldGrid.sizeX;
       }
       if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+            /* ST_CALLSITE[006044E3]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             ((VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar1,iVar5,
                          &local_18,&local_1c), pVVar4 = g_visibleClass_00802A88, local_8 < 0 ||
@@ -89,6 +90,7 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
                (pVVar3->field_0034 <= iVar5)))))))) || (pVVar3->field_004C == nullptr)) ||
           ((pVVar3->field_004C[local_18 + iVar5 * pVVar3->field_0030] != 0 || (DAT_0080874d == -1)))
           ) || (((((g_visibleClass_00802A88->field_00F8 == 0 ||
+                   /* ST_CALLSITE[00604585]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                    (((VisibleClassTy::sub_00558C00
                                 (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c
                                  ,iVar7,&local_1c,&local_18), pVVar3 = g_visibleClass_00802A88,
@@ -97,6 +99,7 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
                   (((pVVar4->field_0034 <= iVar5 || (pVVar4->field_004C == nullptr)) ||
                    (pVVar4->field_004C[local_1c + iVar5 * pVVar4->field_0030] != 0)))) ||
                  ((((DAT_0080874d == -1 || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+                   /* ST_CALLSITE[00604616]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                    ((VisibleClassTy::sub_00558C00
                                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10
                                 ,iVar7,&local_1c,&local_18), iVar1 = local_8, iVar5 = local_14,
@@ -108,6 +111,7 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
                    (pVVar3->field_004C[local_1c + iVar7 * pVVar3->field_0030] != 0)))))) ||
                 ((DAT_0080874d == -1 ||
                  (((g_visibleClass_00802A88->field_00F8 == 0 ||
+                   /* ST_CALLSITE[006046A2]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                    (VisibleClassTy::sub_00558C00
                               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,
                                local_14,&local_1c,&local_18), local_1c < 0)) ||
@@ -115,6 +119,7 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
                    ((((local_18 = g_centeredOffsets5[iVar1] + local_18, local_18 < 0 ||
                       (pVVar4->field_0034 <= local_18)) || (pVVar4->field_004C == nullptr)) ||
                     ((pVVar4->field_004C[local_1c + local_18 * pVVar4->field_0030] != 0 ||
+                     /* ST_CALLSITE[006046F0]: CALL 0x00404e5d; direct=00404E5D VisibleClassTy::sub_005F1D80 */
                      (iVar5 = VisibleClassTy::sub_005F1D80
                                         (g_visibleClass_00802A88,local_10,iVar5,local_8), iVar5 == 1
                      )))))))))))))) {

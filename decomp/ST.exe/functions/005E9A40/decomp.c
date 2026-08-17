@@ -17,6 +17,7 @@ void __thiscall WaitTy::sub_005E9A40(WaitTy *this)
     this->field_002D = 0x20;
     this->field_0031 = 0;
     this->field_0033 = 0;
+    /* ST_CALLSITE[005E9A7D]: CALL dword ptr [EDX + 0x18] */
     (*this->field_000C->vtable->vfunc_18)((short)&this->field_0x1d);
   }
   if (g_startSystem_0081176C->field_054C != 0) {

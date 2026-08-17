@@ -11,6 +11,7 @@ void FUN_0075cb40(undefined4 *param_1)
   undefined4 *local_8;
 
   puVar1 = param_1;
+  /* ST_CALLSITE[0075CB50]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   puVar2 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x54);
   STField<undefined4 *>(param_1,0x1ae) = puVar2;
@@ -20,6 +21,7 @@ void FUN_0075cb40(undefined4 *param_1)
     local_8 = (undefined4 *)(param_1[0x34] + 0x50);
     auto param_1_after_write = puVar2 + 0xb; /* compiler stack-slot lifetime split */
     do {
+      /* ST_CALLSITE[0075CB84]: CALL dword ptr [ECX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       puVar2 = (undefined4 *)(**(code **)*puVar1)(puVar1,1,0x100);
       *local_8 = puVar2;

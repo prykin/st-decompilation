@@ -23,6 +23,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
   int local_c;
   byte *local_8;
 
+  /* ST_CALLSITE[00638CAE]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
   iVar5 = STSprGameObjC::GetMessage(this,param_1);
   if (iVar5 == 0xffff) {
     return 0xffff;
@@ -34,6 +35,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     }
     local_8 = Library::DKW::LIB::MemAlloc(0x7a);
     thunk_FUN_00639bf0(this,(undefined4 *)local_8);
+    /* ST_CALLSITE[00639292]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,STField<int *>(this,0x18),local_8,0x7a);
     FreeAndNull(&local_8);
     return 0;
@@ -104,8 +106,10 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     if (STField<char>(this,0x270) == '\0') {
       return 0;
     }
+    /* ST_CALLSITE[00638EB5]: CALL 0x00403107; direct=00403107 sub_00416240 */
     sub_00416240(this,STField<ushort>(this,0x27a),STField<short>(this,0x27e),
                  STField<ushort>(this,0x282));
+    /* ST_CALLSITE[00638EBE]: CALL dword ptr [EAX + 0xd8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar4 = g_visibleClass_00802A88;
@@ -129,6 +133,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     iVar6 = STField<int>(this,0x27a);
     iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
     if (((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+         /* ST_CALLSITE[00638F8A]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
          (VisibleClassTy::sub_00558C00
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar8,
                      &local_c,&local_10), -1 < (int)param_1)) &&
@@ -170,25 +175,32 @@ joined_r0x00639236:
     this_00 = (STT3DSprC *)((int)this + 0x1d5);
     iVar8 = thunk_FUN_004ac910(this_00,'\r');
     if (STField<char>(this,0x2a2) != '\0') {
+      /* ST_CALLSITE[00639069]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar6 = STT3DSprC::sub_004ACD30(this_00,'\x0e');
       iVar7 = thunk_FUN_004ac910(this_00,'\x0e');
       if ((iVar6 + -1 <= iVar7) && (STField<char>(this,0x270) != '\0')) {
+        /* ST_CALLSITE[0063908C]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow(this_00,0xe);
       }
     }
     if ((iVar8 == 0x17) && (STField<char>(this,0x270) != '\0')) {
+      /* ST_CALLSITE[006390B2]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow(this_00,0xf,g_playSystem_00802A38->field_00E4);
     }
+    /* ST_CALLSITE[006390BB]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar8 = STT3DSprC::sub_004ACD30(this_00,'\r');
     iVar6 = thunk_FUN_004ac910(this_00,'\r');
     if (iVar8 + -1 == iVar6) {
+      /* ST_CALLSITE[006390D4]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow(this_00,0xd);
     }
+    /* ST_CALLSITE[006390DD]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar8 = STT3DSprC::sub_004ACD30(this_00,'\x0f');
     iVar6 = thunk_FUN_004ac910(this_00,'\x0f');
     if (iVar8 + -1 == iVar6) {
       STField<undefined1>(this,0x26f) = 3;
     }
+    /* ST_CALLSITE[006390FD]: CALL dword ptr [EDX + 0xd8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar4 = g_visibleClass_00802A88;
@@ -212,6 +224,7 @@ joined_r0x00639236:
     iVar6 = STField<int>(this,0x27a);
     iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+          /* ST_CALLSITE[006391D1]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar8,
                       &local_10,&local_c), -1 < (int)param_1)) &&

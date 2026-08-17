@@ -10,6 +10,7 @@
 uint __cdecl FUN_0064e260(undefined4 param_1,undefined4 param_2,STResourceC *param_3,int *param_4)
 
 {
+  /* ST_CALLSITE[0064E274]: CALL 0x00403a30; direct=00403A30 STResourceC::sub_00580D30 */
   STResourceC::sub_00580D30(param_3,(uint)(*param_4 == 5));
   return 0;
 }

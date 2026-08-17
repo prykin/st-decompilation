@@ -235,6 +235,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
       if (uVar23 == 0xffff) {
         return;
       }
+      /* ST_CALLSITE[00436F8D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar15 = GetObjPtr(g_allPlayers_007FA174,bVar1,uVar23,CASE_3);
       if (pSVar15 == nullptr) {
         return;
@@ -253,6 +254,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
     if (uVar23 == 0xffff) {
       return;
     }
+    /* ST_CALLSITE[00436FFA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     local_8 = GetObjPtr(g_allPlayers_007FA174,bVar1,uVar23,CASE_1);
     if (local_8 == nullptr) {
       return;
@@ -308,6 +310,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
       }
 cf_common_exit_00437191:
       local_8c.field_0014 = command;
+      /* ST_CALLSITE[0043719D]: CALL dword ptr [EDX] */
       local_8->GetMessage(&local_8c);
       return;
     case 0x29:
@@ -329,6 +332,7 @@ cf_common_exit_00437191:
       }
       local_8c.field_0010 = 0x5d98;
       local_74 = pDVar17;
+      /* ST_CALLSITE[004371E9]: CALL dword ptr [EAX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)pDVar26->flags)(&local_8c);
       DArrayDestroy(pDVar17);
@@ -348,6 +352,7 @@ cf_common_exit_00437191:
         if (pSVar16 == nullptr) {
           return;
         }
+        /* ST_CALLSITE[0043748A]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
         local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar14 = extraout_ECX_04;
@@ -377,6 +382,7 @@ cf_common_exit_00437191:
         if (pSVar16 == nullptr) {
           return;
         }
+        /* ST_CALLSITE[004372B9]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
         pDVar16 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar21 = extraout_ECX_01;
@@ -409,6 +415,7 @@ cf_common_exit_00437191:
         if (pSVar16 == nullptr) {
           return;
         }
+        /* ST_CALLSITE[0043734A]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
         local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar21 = extraout_EDX_02;
@@ -439,6 +446,7 @@ cf_common_exit_00437191:
         if (pSVar16 == nullptr) {
           return;
         }
+        /* ST_CALLSITE[004373D1]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
         local_EAX_1130 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
       }
       else {
@@ -478,6 +486,7 @@ cf_common_exit_00437191:
       } while (sVar13 < (short)(STField<uint>(command,0x13) >> 1));
     }
     pDVar26 = local_c;
+    /* ST_CALLSITE[00437512]: CALL 0x0040178f; direct=0040178F STAllPlayersC::AddObjsToGroup */
     AddObjsToGroup(local_20,STField<char>(command,8),0xfffe,local_c,(undefined2 *)&local_1c);
     DArrayDestroy(pDVar26);
   }
@@ -488,7 +497,9 @@ cf_common_exit_00437191:
     if ((STField<char>(command,0xe) == ')') && (*STField<char *>(command,0x17) == '\x01')) {
       return;
     }
+    /* ST_CALLSITE[00437556]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
     pDVar17 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
+    /* ST_CALLSITE[0043756E]: CALL 0x0040178f; direct=0040178F STAllPlayersC::AddObjsToGroup */
     AddObjsToGroup(local_20,STField<char>(command,8),0xfffe,pDVar17,(undefined2 *)&local_1c);
     DArrayDestroy(pDVar17);
   }
@@ -496,31 +507,38 @@ cf_common_exit_00437191:
   if (pSVar16 == nullptr) {
     return;
   }
+  /* ST_CALLSITE[00437598]: CALL 0x00403a71; direct=00403A71 STGroupBoatC::StartReceiveOrderSound */
   STGroupBoatC::StartReceiveOrderSound(pSVar16);
   switch(STField<undefined1>(command,0xe)) {
   case 10:
     goto cf_common_exit_0043824D;
   case 0x14:
+    /* ST_CALLSITE[004376E3]: CALL 0x004021bc; direct=004021BC STGroupBoatC::IsAgAtt */
     iVar24 = STGroupBoatC::IsAgAtt(pSVar16);
     if (iVar24 != 0) {
       local_EAX_2059 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
       uStack_14 = *STField<undefined2 *>(command,0x17);
       uStack_12 = (STField<undefined2 *>(command,0x17))[2];
+      /* ST_CALLSITE[0043774E]: CALL 0x004019d8; direct=004019D8 STGroupBoatC::sub_0049A500 */
       STGroupBoatC::sub_0049A500(pSVar16,nullptr,nullptr,auStack_10);
       Library::DKW::TBL::DArrayAppend(local_EAX_2059,&uStack_14);
       uStack_d8 = 1;
       pDStack_dc = local_EAX_2059;
+      /* ST_CALLSITE[0043777A]: CALL dword ptr [EAX + 0x8] */
       pSVar16->sub_00498D20(6,(short)&pDStack_dc);
       DArrayDestroy(local_EAX_2059);
       return;
     }
     uStack_4c = *STField<undefined2 *>(command,0x17);
     uStack_4a = (STField<undefined2 *>(command,0x17))[2];
+    /* ST_CALLSITE[00437708]: CALL 0x004019d8; direct=004019D8 STGroupBoatC::sub_0049A500 */
     STGroupBoatC::sub_0049A500(pSVar16,nullptr,nullptr,auStack_48);
+    /* ST_CALLSITE[00437717]: CALL dword ptr [EAX + 0x8] */
     pSVar16->sub_00498D20(1,(short)&uStack_4c);
     return;
   case 0x15:
     local_24 = 4 - (uint)*STField<byte *>(command,0x17);
+    /* ST_CALLSITE[004377A7]: CALL dword ptr [EDX + 0x8] */
     pSVar16->sub_00498D20(7,(short)&local_24);
     return;
   case 0x16:
@@ -561,6 +579,7 @@ LAB_00437842:
       local_14c = (uint)(*STField<char *>(command,0x17) != '\0');
       local_150 = 0;
       local_148 = local_EAX_2256;
+      /* ST_CALLSITE[0043787B]: CALL dword ptr [EAX + 0x8] */
       pSVar16->sub_00498D20(2,(short)&local_150);
       DArrayDestroy(local_EAX_2256);
       return;
@@ -572,6 +591,7 @@ LAB_00437842:
         uStack_e4 = *(undefined1 *)&local_8->field_0024;
         uStack_e3 = local_8->field_0032;
         uStack_e1 = local_8->field_0018;
+        /* ST_CALLSITE[00437912]: CALL dword ptr [EDX + 0x8] */
         pSVar16->sub_00498D20(0xf,(short)&uStack_e4);
         return;
       }
@@ -580,6 +600,7 @@ LAB_00437842:
       uStack_b0 = (ushort)(byte)puVar6[5];
       uStack_ae = (ushort)(byte)puVar6[6];
       uStack_ac = (ushort)(byte)puVar6[7];
+      /* ST_CALLSITE[004378BE]: CALL dword ptr [EAX + 0x8] */
       pSVar16->sub_00498D20(0xe,(short)&uStack_b0);
       return;
     }
@@ -596,6 +617,7 @@ LAB_00437842:
         Library::DKW::TBL::DArrayAppend(local_EAX_4622,&local_8->field_0032);
         local_138 = 0;
         local_134 = local_EAX_4622;
+        /* ST_CALLSITE[0043815F]: CALL dword ptr [EDX + 0x8] */
         pSVar16->sub_00498D20(5,(short)&local_138);
         DArrayDestroy(local_EAX_4622);
         return;
@@ -605,12 +627,15 @@ LAB_00437842:
       local_EAX_3962 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
       uStack_14 = *(undefined2 *)(STField<int>(command,0x17) + 1);
       uStack_12 = *(undefined2 *)(STField<int>(command,0x17) + 5);
+      /* ST_CALLSITE[00437EBE]: CALL 0x004019d8; direct=004019D8 STGroupBoatC::sub_0049A500 */
       STGroupBoatC::sub_0049A500(pSVar16,nullptr,nullptr,auStack_10);
       Library::DKW::TBL::DArrayAppend(local_EAX_3962,&uStack_14);
+      /* ST_CALLSITE[00437ED9]: CALL 0x004019d8; direct=004019D8 STGroupBoatC::sub_0049A500 */
       STGroupBoatC::sub_0049A500(pSVar16,&uStack_14,&uStack_12,nullptr);
       Library::DKW::TBL::DArrayAppend(local_EAX_3962,&uStack_14);
       uStack_d8 = 0;
       pDStack_dc = local_EAX_3962;
+      /* ST_CALLSITE[00437F05]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(6,(short)&pDStack_dc);
       DArrayDestroy(local_EAX_3962);
       return;
@@ -627,6 +652,7 @@ LAB_00437842:
         Library::DKW::TBL::DArrayAppend(local_EAX_4267,&pSVar19[1].field_0xe);
         uStack_d0 = 0;
         pDStack_cc = local_EAX_4267;
+        /* ST_CALLSITE[00437FF9]: CALL dword ptr [EAX + 0x8] */
         pSVar16->sub_00498D20(4,(short)&uStack_d0);
         DArrayDestroy(local_EAX_4267);
         return;
@@ -635,12 +661,14 @@ LAB_00437842:
     case 10:
       uStack_d0 = 1;
       pDStack_cc = nullptr;
+      /* ST_CALLSITE[00437F38]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(4,(short)&uStack_d0);
       return;
     case 0x10:
       uStack_b8 = *(undefined2 *)(puVar6 + 1);
       uStack_b6 = *(undefined2 *)(puVar6 + 5);
       uStack_b4 = *(undefined2 *)(puVar6 + 9);
+      /* ST_CALLSITE[004381D9]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(0x14,(short)&uStack_b8);
       return;
     case 0x13:
@@ -655,6 +683,7 @@ LAB_00437842:
         uStack_94 = *(undefined2 *)(puVar6 + 1);
         uStack_92 = *(undefined2 *)(puVar6 + 5);
         uStack_90 = *(undefined2 *)(puVar6 + 9);
+        /* ST_CALLSITE[004380FC]: CALL dword ptr [EAX + 0x8] */
         pSVar16->sub_00498D20(0x11,(short)&uStack_98);
         return;
       }
@@ -664,12 +693,14 @@ LAB_00437842:
       uStack_90 = 0;
       uStack_92 = 0;
       uStack_94 = 0;
+      /* ST_CALLSITE[00438039]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(0x11,(short)&uStack_98);
       return;
     case 0x18:
       uStack_a8 = *(undefined2 *)(puVar6 + 1);
       uStack_a6 = *(undefined2 *)(puVar6 + 5);
       uStack_a4 = *(undefined2 *)(puVar6 + 9);
+      /* ST_CALLSITE[0043819F]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(0x13,(short)&uStack_a8);
       return;
     }
@@ -721,39 +752,53 @@ LAB_00437842:
       arg_2 = 0xfffe;
       break;
     case 8:
+      /* ST_CALLSITE[00438596]: CALL dword ptr [EAX + 0x18] */
       (*pSVar16->vtable->vfunc_18)(arg_1,0,0,0);
       thunk_FUN_0043fc50(CASE_11,0);
       goto switchD_004384bc_default;
     case 9:
       pSVar22 = pSVar16->vtable;
+      /* ST_CALLSITE[00438526]: CALL dword ptr [EDI + 0x24] */
       dVar20 = (*pSVar22->slot_24)(pSVar16);
       uVar12 = (undefined2)dVar20;
+      /* ST_CALLSITE[0043852E]: CALL dword ptr [EAX + 0x20] */
       dVar20 = pSVar16->slot_20();
+      /* ST_CALLSITE[00438536]: CALL dword ptr [EDI + 0x18] */
       (*pSVar22->vfunc_18)(arg_1,0xffff,(short)dVar20 + 1,uVar12);
       goto switchD_004384bc_default;
     case 10:
       pSVar22 = pSVar16->vtable;
+      /* ST_CALLSITE[00438542]: CALL dword ptr [EDI + 0x24] */
       dVar20 = (*pSVar22->slot_24)(pSVar16);
       uVar12 = (undefined2)dVar20;
+      /* ST_CALLSITE[0043854A]: CALL dword ptr [EDX + 0x20] */
       dVar20 = pSVar16->slot_20();
+      /* ST_CALLSITE[00438552]: CALL dword ptr [EDI + 0x18] */
       (*pSVar22->vfunc_18)(arg_1,0xffff,(short)dVar20 + -1,uVar12);
       goto switchD_004384bc_default;
     case 0xb:
       pSVar22 = pSVar16->vtable;
+      /* ST_CALLSITE[0043855B]: CALL dword ptr [EDI + 0x24] */
       dVar20 = (*pSVar22->slot_24)(pSVar16);
       sVar13 = (short)dVar20 + 0x2d;
+      /* ST_CALLSITE[00438566]: CALL dword ptr [EAX + 0x20] */
       dVar20 = pSVar16->slot_20();
+      /* ST_CALLSITE[0043856D]: CALL dword ptr [EDI + 0x18] */
       (*pSVar22->vfunc_18)(arg_1,0xffff,(short)dVar20,sVar13);
       goto switchD_004384bc_default;
     case 0xc:
       pSVar22 = pSVar16->vtable;
+      /* ST_CALLSITE[00438576]: CALL dword ptr [EDI + 0x24] */
       dVar20 = (*pSVar22->slot_24)(pSVar16);
       sVar13 = (short)dVar20 + -0x2d;
+      /* ST_CALLSITE[00438581]: CALL dword ptr [EDX + 0x20] */
       dVar20 = pSVar16->slot_20();
+      /* ST_CALLSITE[00438588]: CALL dword ptr [EDI + 0x18] */
       (*pSVar22->vfunc_18)(arg_1,0xffff,(short)dVar20,sVar13);
     default:
       goto switchD_004384bc_default;
     }
+    /* ST_CALLSITE[004385C9]: CALL dword ptr [ECX + 0x18] */
     (*pSVar22->vfunc_18)(arg_1,arg_2,uVar23,uVar12);
 switchD_004384bc_default:
     puVar6 = STField<undefined1 *>(command,0x17);
@@ -765,18 +810,23 @@ switchD_004384bc_default:
     case 5:
       uStack_4c = *(undefined2 *)(puVar6 + 1);
       uStack_4a = *(undefined2 *)(puVar6 + 5);
+      /* ST_CALLSITE[00438606]: CALL 0x004019d8; direct=004019D8 STGroupBoatC::sub_0049A500 */
       STGroupBoatC::sub_0049A500(pSVar16,nullptr,nullptr,auStack_48);
+      /* ST_CALLSITE[00438615]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(1,(short)&uStack_4c);
       return;
     case 8:
 cf_common_exit_0043824D:
+      /* ST_CALLSITE[00438255]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(3,0);
       return;
     case 9:
     case 10:
     case 0xb:
     case 0xc:
+      /* ST_CALLSITE[0043862F]: CALL 0x004019d8; direct=004019D8 STGroupBoatC::sub_0049A500 */
       STGroupBoatC::sub_0049A500(pSVar16,&uStack_4c,&uStack_4a,auStack_48);
+      /* ST_CALLSITE[0043863E]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(1,(short)&uStack_4c);
       return;
     }
@@ -787,6 +837,7 @@ cf_common_exit_0043824D:
     uStack_122 = puVar9[2];
     uStack_120 = puVar9[4];
     uStack_11e = 0xffffffff;
+    /* ST_CALLSITE[0043834B]: CALL dword ptr [EDX + 0x8] */
     pSVar16->sub_00498D20(0xd,(short)&uStack_124);
     return;
   case 0x1a:
@@ -799,6 +850,7 @@ cf_common_exit_0043824D:
       uStack_52 = *(undefined2 *)(pcVar8 + 1);
       uStack_50 = *(undefined2 *)(pcVar8 + 5);
       uStack_4e = *(undefined2 *)(pcVar8 + 9);
+      /* ST_CALLSITE[0043849F]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(0x10,(short)&uStack_5c);
       return;
     }
@@ -811,6 +863,7 @@ cf_common_exit_0043824D:
            (((sStack_56 < g_worldGrid.sizeY && (-1 < sStack_54)) && (sStack_54 < g_worldGrid.sizeZ))
            )))) && ((pSVar19 = STGridAt3D(g_worldGrid, sStack_58, sStack_56, sStack_54).objects[0]
                     , pSVar19 != nullptr && (pSVar19->value_20 == 1000)))) {
+        /* ST_CALLSITE[00438408]: CALL dword ptr [EDX + 0x2c] */
         iVar24 = pSVar19->GetObjectTypeId();
         if (iVar24 == 0x37) {
           uStack_5c = 0;
@@ -819,6 +872,7 @@ cf_common_exit_0043824D:
           uStack_4e = 0;
         }
         else {
+          /* ST_CALLSITE[0043843B]: CALL dword ptr [EDX + 0x2c] */
           iVar24 = pSVar19->GetObjectTypeId();
           if (iVar24 != 0x6c) {
             return;
@@ -830,6 +884,7 @@ cf_common_exit_0043824D:
           }
           uStack_5c = 1;
         }
+        /* ST_CALLSITE[0043842B]: CALL dword ptr [EAX + 0x8] */
         pSVar16->sub_00498D20(0x10,(short)&uStack_5c);
         return;
       }
@@ -865,6 +920,7 @@ cf_common_exit_0043824D:
     if (*pcVar8 == '\x03') {
       uStack_9e = *(undefined2 *)(pcVar8 + 3);
       uStack_9c = *(undefined2 *)(pcVar8 + 5);
+      /* ST_CALLSITE[004379D1]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(0x12,(short)&sStack_a0);
       return;
     }
@@ -880,6 +936,7 @@ cf_common_exit_0043824D:
       local_10a = 0xffff;
       local_10c = 0xffff;
       local_110 = local_EAX_2766;
+      /* ST_CALLSITE[00437A43]: CALL dword ptr [EDX + 0x2c] */
       local_100 = pSVar19->GetObjectTypeId();
       local_fc = 1;
       local_f8 = nullptr;
@@ -889,10 +946,12 @@ cf_common_exit_0043824D:
       local_f0 = 0xffff;
       local_f2 = 0xffff;
       local_f4 = 0xffff;
+      /* ST_CALLSITE[00437A97]: CALL dword ptr [EAX + 0x8] */
       pSVar16->sub_00498D20(8,(short)&local_114);
       DArrayDestroy(local_c);
       return;
     }
+    /* ST_CALLSITE[00437AAE]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
     local_c = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)pSVar16);
     dVar20 = local_c->count;
     local_154 = dVar20;
@@ -910,6 +969,7 @@ cf_common_exit_00437E03:
       uStack_c0 = *(undefined2 *)(iVar24 + 1);
       uStack_be = *(undefined2 *)(iVar24 + 3);
       uStack_bc = *(undefined2 *)(iVar24 + 5);
+      /* ST_CALLSITE[00437E37]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(10,(short)&uStack_c0);
       pDVar26 = local_30_mg0;
     }
@@ -917,15 +977,20 @@ cf_common_exit_00437E03:
       uVar14 = 0;
       do {
         DArrayGetElement(local_c,uVar14,local_118);
+        /* ST_CALLSITE[00437B34]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar15 = GetObjPtr(g_allPlayers_007FA174,pSVar16->field_0024,STPiece<0,2>(local_118),CASE_1);
+        /* ST_CALLSITE[00437B3F]: CALL dword ptr [EAX + 0x2c] */
         iVar24 = pSVar15->vfunc_2C();
+        /* ST_CALLSITE[00437B4B]: CALL dword ptr [EDX + 0x2c] */
         if ((((iVar24 == 8) || (iVar24 = pSVar15->vfunc_2C(), iVar24 == 0x14)) ||
+            /* ST_CALLSITE[00437B57]: CALL dword ptr [EAX + 0x2c] */
             (iVar24 = pSVar15->vfunc_2C(), iVar24 == 0x1a)) &&
            (iVar24 = thunk_FUN_0045ff10(pSVar15), iVar24 == 0xc)) {
           puVar18 = (byte *)(thunk_FUN_0048dc90(pSVar15,local_1b8));
           puVar25 = (byte *)(&local_1fc);
           memmove(puVar25, puVar18, 0x42); /* compiler REP MOVS byte copy */
           iVar24 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_1f6,(int *)&local_40);
+          /* ST_CALLSITE[00437BBC]: CALL dword ptr [EDX + 0x88] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           if ((iVar24 == 0) && (iVar24 = (**(code **)(*local_40 + 0x88))(&local_e8), 0 < iVar24)) {
             if (local_e8 == 0xdc) {
@@ -978,6 +1043,7 @@ LAB_00437cb5:
       }
       else if (iVar24 == 1) {
         local_110 = local_34;
+        /* ST_CALLSITE[00437CEC]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar11 = LookupRecordByte(pSVar16->field_0024);
         local_100 = (-(uint)(bVar11 != 3) & 0xffffffdb) + 0x5e;
       }
@@ -1012,6 +1078,7 @@ LAB_00437cb5:
       local_f0 = 0xffff;
       local_f2 = 0xffff;
       local_f4 = 0xffff;
+      /* ST_CALLSITE[00437DFE]: CALL dword ptr [EAX + 0x8] */
       pSVar16->sub_00498D20(8,(short)&local_114);
     }
     DArrayDestroy(local_c);
@@ -1025,6 +1092,7 @@ LAB_00437cb5:
     cVar1 = *pcVar8;
     if (cVar1 == '\x01') {
       local_64 = *(undefined4 *)(pcVar8 + 1);
+      /* ST_CALLSITE[00438305]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(0x15,(short)&local_64);
       return;
     }
@@ -1032,11 +1100,13 @@ LAB_00437cb5:
       uStack_c4 = 0xffff;
       uStack_c6 = 0xffff;
       uStack_c8 = 0xffff;
+      /* ST_CALLSITE[004382E9]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(0xc,(short)&uStack_c8);
       return;
     }
     if (cVar1 == '\x04') {
       local_60 = *(undefined4 *)(pcVar8 + 1);
+      /* ST_CALLSITE[004382B8]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(0xb,(short)&local_60);
       return;
     }
@@ -1050,13 +1120,16 @@ LAB_00437cb5:
     uStack_16a = (uint)STField<byte>(command,8);
     uStack_166 = 0;
     uStack_157 = 0xffff;
+    /* ST_CALLSITE[00438239]: CALL dword ptr [EDX + 0x8] */
     pSVar16->sub_00498D20(9,(short)&uStack_174);
     return;
   case 0x28:
     if (*STField<char *>(command,0x17) == '\0') {
+      /* ST_CALLSITE[00438671]: CALL 0x004040bb; direct=004040BB STGroupBoatC::GenSwitch */
       STGroupBoatC::GenSwitch(pSVar16,0);
     }
     else if (*STField<char *>(command,0x17) == '\x01') {
+      /* ST_CALLSITE[0043865F]: CALL 0x004040bb; direct=004040BB STGroupBoatC::GenSwitch */
       STGroupBoatC::GenSwitch(pSVar16,1);
       return;
     }
@@ -1069,6 +1142,7 @@ LAB_00437cb5:
       local_8c.field_0010 = 0x5d98;
       local_8c.field_0014 = (undefined4 *)STReplaceLowWord((uint32_t)(local_8c.field_0014), (uint16_t)(1));
       local_74 = (DArrayTy *)pSVar16->field_0029;
+      /* ST_CALLSITE[00438287]: CALL dword ptr [EDX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)pDVar26->flags)(&local_8c);
       return;
@@ -1091,6 +1165,7 @@ LAB_00437cb5:
           iVar24 = (int)sVar13;
         } while (iVar24 < (int)(uint)*(ushort *)(puVar6 + 1));
       }
+      /* ST_CALLSITE[00437632]: CALL dword ptr [EAX + 0x8] */
       pSVar16->sub_00498D20(2,(short)&local_150);
       DArrayDestroy(local_148);
       return;
@@ -1106,6 +1181,7 @@ LAB_00437cb5:
           iVar24 = (int)sVar13;
         } while (iVar24 < (int)(uint)*(ushort *)(puVar6 + 1));
       }
+      /* ST_CALLSITE[00437697]: CALL dword ptr [EAX + 0x8] */
       pSVar16->sub_00498D20(5,(short)&local_138);
       DArrayDestroy(local_134);
       return;

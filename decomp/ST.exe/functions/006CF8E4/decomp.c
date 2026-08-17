@@ -20,7 +20,7 @@ int FUN_006cf8e4(void)
   *(undefined4 *)(unaff_EBP + -0x24) = 0xfffffffb;
   *(undefined4 *)(unaff_EBP + -4) = 0xffffffff;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  if (*(char *)(unaff_EBP + 0x34) == '\x02') {
+  if (((char *)unaff_EBP)[0x34] == '\x02') {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     piVar2 = *(int **)(**(int **)(unaff_EBP + 8) + 0x44);
     iVar3 = *piVar2;
@@ -28,6 +28,7 @@ int FUN_006cf8e4(void)
     *(int **)(iVar1 + -8) = piVar2;
     pcVar4 = *(code **)(iVar3 + 0x80);
     *(undefined4 *)(iVar1 + -0xc) = 0x6cf90e;
+    /* ST_CALLSITE[006CF908]: CALL dword ptr [EDX + 0x80] */
     (*pcVar4)();
   }
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

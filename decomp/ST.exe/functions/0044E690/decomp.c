@@ -22,8 +22,10 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   short *psVar3;
   STBoatC_field_06F3State *pSVar4;
 
+  /* ST_CALLSITE[0044E694]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)this);
-  thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[0044E6A1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  STT3DSprC::STT3DSprC((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = &VTable_00790700;
   this->vtable = &STBoatCVTable;
   puVar2 = (undefined4 *)&this->field_0x231;
@@ -58,7 +60,7 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
     psVar3 = psVar3 + 2;
   }
   *psVar3 = 0;
-  *(undefined1 *)(psVar3 + 1) = 0;
+  ((undefined1 *)psVar3)[1] = 0;
   memset(&this->field_0510, 0, 0x1c); /* compiler bulk-zero initialization */
   iVar1 = 0;
   psVar3 = &this->field_052C;

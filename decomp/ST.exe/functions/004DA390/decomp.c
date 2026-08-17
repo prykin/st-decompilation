@@ -50,6 +50,7 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
     pbVar8 = local_8;
     recordIndex = (byte)param_1;
     if (*local_8 != 0xff) {
+      /* ST_CALLSITE[004DA3C6]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       uVar5 = LookupRecordByte(*local_8);
       uVar5 = (int)(byte)uVar5;
       if (uVar5 == 1) {
@@ -110,6 +111,7 @@ LAB_004da4d3:
         *(undefined4 *)(pbVar3 + (uint)*pbVar3 * 0x10 + 9) = uVar9;
         uVar9 = thunk_FUN_004d89b0(bVar1);
         *(undefined4 *)(pbVar3 + (uint)*pbVar3 * 0x10 + 0xd) = uVar9;
+        /* ST_CALLSITE[004DA577]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar4 = LookupRecordByte(bVar1);
         if (bVar4 == 3) {
           uVar9 = thunk_FUN_004e4410(pbVar8);
@@ -118,6 +120,7 @@ LAB_004da4d3:
           uVar9 = thunk_FUN_004d8af0(bVar1);
         }
         *(undefined4 *)(pbVar3 + (uint)*pbVar3 * 0x10 + 0x11) = uVar9;
+        /* ST_CALLSITE[004DA5B5]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar4 = LookupRecordByte(bVar1);
         if (bVar4 == 3) {
           uVar10 = thunk_FUN_004e41c0(param_1);
@@ -165,6 +168,7 @@ LAB_004da71f:
       *(undefined4 *)(pbVar3 + 0x79) = uVar9;
       uVar9 = thunk_FUN_004d89b0(recordIndex);
       *(undefined4 *)(pbVar3 + 0x7d) = uVar9;
+      /* ST_CALLSITE[004DA762]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar4 = LookupRecordByte(recordIndex);
       if (bVar4 == 3) {
         uVar9 = thunk_FUN_004e4410((byte *)param_1);

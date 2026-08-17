@@ -31,7 +31,7 @@ void __fastcall FUN_0061dfe0(STLightC *param_1)
           puVar1 = (uint *)((int)piVar5 + 0x26);
           ST3DSMAPContext::sub_006E88C0
                     (g_sT3DSMAPContext_00807598,(int *)puVar1,piVar5[1],piVar5[2],piVar5[3],
-                     piVar5[4],piVar5[5],piVar5[6],piVar5[7],*(byte *)(piVar5 + 8),
+                     piVar5[4],piVar5[5],piVar5[6],piVar5[7],((byte *)piVar5)[8],
                      STField<undefined4>(piVar5,0x21),puVar4,0xffffffff);
           if (STField<byte>(piVar5,0x2f) == 0) {
             Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,*puVar1);

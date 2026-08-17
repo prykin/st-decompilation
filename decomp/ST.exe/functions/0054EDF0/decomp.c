@@ -18,13 +18,16 @@ void FUN_0054edf0(undefined4 *param_1,uint *param_2,uint param_3,uint param_4)
   if ((((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
        (DAT_0080874f == '\0')) || (cVar2 == '\x05')) && (DAT_008087a5 == 0)) {
     if (param_3 != 0) {
+      /* ST_CALLSITE[0054EE42]: CALL 0x0040422d; direct=0040422D STPlaySystemC::SetCtrlCmd */
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       STPlaySystemC::SetCtrlCmd(in_ECX,DAT_0080874d,0,cVar2,param_2,param_4,nullptr,0);
       return;
     }
-    auto param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+    undefined4 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+    /* ST_CALLSITE[0054EE62]: CALL 0x00401fff; direct=00401FFF STAllPlayersC::PrepareToCmd */
     uVar1 = STAllPlayersC::PrepareToCmd(g_allPlayers_007FA174,&param_1_after_write,&param_3);
     if (uVar1 != 0xffffffff) {
+      /* ST_CALLSITE[0054EE87]: CALL 0x0040422d; direct=0040422D STPlaySystemC::SetCtrlCmd */
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       STPlaySystemC::SetCtrlCmd(in_ECX,DAT_0080874d,uVar1,cVar2,param_2,param_4,param_1_after_write,param_3);
     }

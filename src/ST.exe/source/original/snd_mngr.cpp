@@ -44,6 +44,7 @@ int st::fn_00566600(int param_1)
   iVar2 = st::fn_0072D7F0(local_60.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_60.previous;
+    /* ST_CALLSITE[0056684D]: CALL 0x00403c01; direct=00403C01 SoundManagerTy::sub_00566900 */
     st::fn_00403C01(local_10);
     return iVar2;
   }
@@ -220,6 +221,7 @@ int __thiscall st::fn_00566C20(SoundManagerTy *this,STMessage *message)
     }
     else if (SVar2 == MESS_SHARED_0003) {
       g_soundManager_008033F0 = nullptr;
+      /* ST_CALLSITE[00566C87]: CALL 0x00403c01; direct=00403C01 SoundManagerTy::sub_00566900 */
       st::fn_00403C01(local_8);
     }
     goto LAB_00566d75;
@@ -272,7 +274,9 @@ LAB_00566d35:
       }
     }
   }
+  /* ST_CALLSITE[00566D66]: CALL 0x00401609; direct=00401609 SoundManagerTy::sub_00566AA0 */
   st::fn_00401609(local_8);
+  /* ST_CALLSITE[00566D70]: CALL 0x00401253; direct=00401253 SoundClassTy::CheckFader */
   st::fn_00401253((SoundClassTy *)&g_sound);
 LAB_00566d75:
   g_currentExceptionFrame = local_4c.previous;

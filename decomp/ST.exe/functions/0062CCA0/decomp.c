@@ -53,6 +53,7 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
       local_c->field_00B4 = DAT_00808754;
     }
     else {
+      /* ST_CALLSITE[0062CDA2]: CALL 0x00401d34; direct=00401D34 STManRub3C::sub_0062D840 */
       sub_0062D840(local_c,(undefined4 *)local_8);
     }
     if ((local_8 != nullptr) && (g_cMf32_00806754 != nullptr)) {
@@ -61,15 +62,20 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
   }
   else {
     if (SVar1 == MESS_SHARED_0003) {
+      /* ST_CALLSITE[0062CD3E]: CALL 0x00405245; direct=00405245 STManRub3C::sub_0062CF50 */
       sub_0062CF50(local_c);
+      /* ST_CALLSITE[0062CD45]: CALL 0x0040246e; direct=0040246E STManRub3C::sub_0062DD40 */
       sub_0062DD40(this_00);
+      /* ST_CALLSITE[0062CD4C]: CALL 0x00403e81; direct=00403E81 STManRub3C::sub_0062E130 */
       sub_0062E130(this_00);
       g_manRub3_008117A4 = nullptr;
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (SVar1 == MESS_SHARED_010F) {
+      /* ST_CALLSITE[0062CCFE]: CALL 0x00401cf8; direct=00401CF8 STManRub3C::sub_0062D670 */
       local_14 = sub_0062D670(local_c,&local_10);
+      /* ST_CALLSITE[0062CD19]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData
                 (g_playSystem_00802A38,PTR_s_RUBBISH_3_0079d080,local_14,local_10,0xc);
       FreeAndNull(&local_14);

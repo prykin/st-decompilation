@@ -24,8 +24,10 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
     do {
       DArrayGetElement(array,index,local_c);
       if ((STPiece<0,2>(local_c) != 0xffff) &&
+         /* ST_CALLSITE[0044CEA0]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
          (this = STAllPlayersC::GetObjPtr(local_8,DAT_0080874d,STPiece<0,2>(local_c),CASE_1),
          this != nullptr)) {
+        /* ST_CALLSITE[0044CEB1]: CALL dword ptr [EDX + 0x2c] */
         uVar3 = this->vfunc_2C();
         switch(uVar3) {
         case 1:
@@ -122,17 +124,21 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
     if (uVar4 != 0) {
       sVar5 = (short)(uVar4 >> 0x10);
       if (sVar5 == 0) {
+        /* ST_CALLSITE[0044CFE1]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         if (((short)uVar4 != 0) && (bVar2 = LookupRecordByte(DAT_0080874d), bVar2 == 3)) {
           return 0x2000000;
         }
       }
       else if ((short)uVar4 != 0) {
+        /* ST_CALLSITE[0044CFB4]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         bVar2 = LookupRecordByte(DAT_0080874d);
         return (-(uint)(bVar2 != 3) & 0xfe002000) + 0x2000000;
       }
+      /* ST_CALLSITE[0044D007]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       if ((sVar5 != 0) && (bVar2 = LookupRecordByte(DAT_0080874d), bVar2 != 3)) {
         return 0x2000;
       }
+      /* ST_CALLSITE[0044D024]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar2 = LookupRecordByte(DAT_0080874d);
       if (bVar2 == 3) {
         if (uVar4 < 0x100001) {

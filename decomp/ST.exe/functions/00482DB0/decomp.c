@@ -92,12 +92,14 @@ LAB_00482f52:
   if (iVar13 == -4) {
     return 4;
   }
+  /* ST_CALLSITE[00482F9C]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
   STFishC::sub_004162F0
             (local_14,(short *)(param_1 + 0x200),(short *)((int)param_1 + 0x802),
              (short *)(param_1 + 0x201));
   local_8 = (RecoveredRecord_STBoatC_00482DB0 *)local_14;
 LAB_00482fa9:
   this = local_8;
+  /* ST_CALLSITE[00482FAD]: CALL dword ptr [EDX + 0xf8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar13 = (**(code **)(*(int *)local_8 + 0xf8))();
   if (iVar13 == 0) {
@@ -105,6 +107,7 @@ LAB_00482fa9:
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   if ((*(int *)&this->field_0x20 == 0x1ae) &&
+     /* ST_CALLSITE[00482FC8]: CALL dword ptr [EAX + 0xf4] */
      (iVar13 = (**(code **)(*(int *)this + 0xf4))(param_1[9]), iVar13 == 0)) {
     return 4;
   }
@@ -150,6 +153,7 @@ LAB_00482fa9:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_1c = CONCAT22(sVar9,sVar8);
           local_c[0] = local_8->field_0045;
+          /* ST_CALLSITE[00483198]: CALL 0x00405907; direct=00405907 STSprGameObjC::CheckRay */
           iVar13 = STSprGameObjC::CheckRay
                              ((STSprGameObjC *)param_1,(short)uVar2 + sVar1,sVar12,(short)local_24,
                               sVar3,sVar8,local_8->field_0045,

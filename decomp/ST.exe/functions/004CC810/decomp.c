@@ -8,6 +8,7 @@ uint __fastcall FUN_004cc810(AnonShape_004CC900_31EE9CAA *param_1)
 
 {
   if (param_1->field_0448 != 0) {
+    /* ST_CALLSITE[004CC81D]: CALL 0x00405768; direct=00405768 TLOBaseTy::sub_004CC900 */
     TLOBaseTy::sub_004CC900((TLOBaseTy *)param_1);
   }
   param_1->field_0444 = 0;

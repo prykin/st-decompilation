@@ -17,10 +17,15 @@ int FUN_00672f00(void)
   uint uVar4;
   uint uVar5;
   char *pcVar6;
-  char *pcVar7;
+  byte *pbVar7;
+  char *pcVar8_mg3;
+  char *pcVar8;
+  byte *pbVar9;
+  char *pcVar8_mg1;
 
   piVar3 = DAT_00811958;
   if (DAT_00857560 != 0) {
+    /* ST_CALLSITE[00672F17]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)PTR_0081194c->field_0004)(DAT_00857560);
     DAT_00857560 = 0;
@@ -31,17 +36,17 @@ int FUN_00672f00(void)
       uVar4 = 0xffffffff;
       pcVar6 = (char *)piVar3[6];
       do {
-        pcVar7 = pcVar6;
+        pcVar8 = pcVar6;
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        pcVar7 = pcVar6 + 1;
+        pcVar8 = pcVar6 + 1;
         cVar1 = *pcVar6;
-        pcVar6 = pcVar7;
+        pcVar6 = pcVar8;
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
-      pcVar6 = pcVar7 + -uVar4;
-      pcVar7 = PTR_00857528;
-      memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
+      pcVar6 = pcVar8 + -uVar4;
+      pcVar8_mg1 = PTR_00857528;
+      memmove(pcVar8_mg1, pcVar6, uVar4); /* compiler REP MOVS byte copy */
       uVar5 = 0;
     }
     FUN_006a5e90((short *)piVar3[6]);
@@ -49,35 +54,35 @@ int FUN_00672f00(void)
       uVar4 = 0xffffffff;
       pcVar6 = (char *)piVar3[0xb];
       do {
-        pcVar7 = pcVar6;
+        pcVar8 = pcVar6;
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        pcVar7 = pcVar6 + 1;
+        pcVar8 = pcVar6 + 1;
         cVar1 = *pcVar6;
-        pcVar6 = pcVar7;
+        pcVar6 = pcVar8;
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
-      pcVar6 = pcVar7 + -uVar4;
-      pcVar7 = PTR_00811948;
-      memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
+      pcVar6 = pcVar8 + -uVar4;
+      pcVar8_mg3 = PTR_00811948;
+      memmove(pcVar8_mg3, pcVar6, uVar4); /* compiler REP MOVS byte copy */
       uVar5 = 0;
     }
     FUN_006a5e90((short *)piVar3[0xb]);
-    if ((DAT_0085753c != nullptr) && ((char *)piVar3[7] != nullptr)) {
+    if ((PTR_0085753c != nullptr) && ((char *)piVar3[7] != nullptr)) {
       uVar4 = 0xffffffff;
       pcVar6 = (char *)piVar3[7];
       do {
-        pcVar7 = pcVar6;
+        pcVar8 = pcVar6;
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        pcVar7 = pcVar6 + 1;
+        pcVar8 = pcVar6 + 1;
         cVar1 = *pcVar6;
-        pcVar6 = pcVar7;
+        pcVar6 = pcVar8;
       } while (cVar1 != '\0');
       uVar4 = ~uVar4;
-      pcVar6 = pcVar7 + -uVar4;
-      pcVar7 = DAT_0085753c;
-      memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
+      pbVar7 = (byte *)(pcVar8 + -uVar4);
+      pbVar9 = PTR_0085753c;
+      memmove(pbVar9, pbVar7, uVar4); /* compiler REP MOVS byte copy */
     }
     FUN_006a5e90((short *)piVar3[7]);
     DAT_007d2d24 = piVar3[3];
@@ -93,7 +98,7 @@ int FUN_00672f00(void)
     FreeAndNull(&PTR_00857528);
     FreeAndNull(&PTR_00811948);
     FreeAndNull(&PTR_0085755c);
-    FreeAndNull(&DAT_0085753c);
+    FreeAndNull(&PTR_0085753c);
     for (puVar2 = DAT_00811908; puVar2 != nullptr; puVar2 = (undefined4 *)*puVar2) {
       FUN_006a5e90((short *)puVar2[1]);
       FUN_006a5e90((short *)puVar2[2]);

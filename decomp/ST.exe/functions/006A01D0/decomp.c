@@ -69,6 +69,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                               (0x345,&(this_00->aggregate_001C).field_0x4,1,0,0);
   this_00->field_0018 = pcVar3;
+  /* ST_CALLSITE[006A02A2]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   sub_0069FF90(this_00);
   pbVar4 = (byte *)Library::Ourlib::MFSTMAP::mfTMapCreate
                              ((this_00->aggregate_001C).field_020C,
@@ -76,31 +77,39 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
                               *(cMf32 **)&(this_00->aggregate_001C).field_0x218,
                               *(int *)&(this_00->aggregate_001C).field_0x21d,0x20);
   this_00->field_000C = pbVar4;
+  /* ST_CALLSITE[006A02D2]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   sub_0069FF90(this_00);
   piVar5 = Library::Ourlib::MFSTMAP::FUN_006f0620((short *)this_00->field_000C);
   this_00->field_0008 = piVar5;
+  /* ST_CALLSITE[006A02E8]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   sub_0069FF90(this_00);
   thunk_FUN_006a2d80(1,this_00->field_0008);
+  /* ST_CALLSITE[006A02FD]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   sub_0069FF90(this_00);
   local_EAX_314 =
        Library::Ourlib::MFSTMAP::AuxTMapRefreshAll((short *)this_00->field_000C,this_00->field_0008);
   if (local_EAX_314 != 0) {
     local_c = 0;
   }
+  /* ST_CALLSITE[006A031B]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   sub_0069FF90(this_00);
   iVar6 = thunk_FUN_00693ad0(&this_00->field_0x24e,(undefined2 *)&this_00->field_53EB);
   if (iVar6 == 0) {
     local_c = 0;
   }
+  /* ST_CALLSITE[006A033B]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   sub_0069FF90(this_00);
   local_20 = (this_00->aggregate_001C).field_020C;
   local_1c = (this_00->aggregate_001C).field_0210;
   local_18 = 6;
+  /* ST_CALLSITE[006A035B]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   sub_0069FF90(this_00);
   thunk_FUN_006945c0(&this_00->field_0x1bef,&local_20);
+  /* ST_CALLSITE[006A0371]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   sub_0069FF90(this_00);
   thunk_FUN_00691690(&this_00->field_0x1c03,*(cMf32 **)&(this_00->aggregate_001C).field_0x21d,
                      nullptr,0,*(undefined **)&(this_00->aggregate_001C).field_0x22e);
+  /* ST_CALLSITE[006A0393]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   sub_0069FF90(this_00);
   g_currentExceptionFrame = local_64.previous;
   return local_c;

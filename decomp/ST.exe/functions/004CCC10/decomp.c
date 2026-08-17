@@ -49,6 +49,7 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
     auto param_1_after_write = local_294; /* compiler stack-slot lifetime split */
     iVar4 = 0;
     do {
+      /* ST_CALLSITE[004CCC88]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_120 = LookupRecordByte(STField<char>(this,0x24));
       local_EAX_120 = (int)(byte)local_EAX_120;
       if (*(char *)(*(int *)(&DAT_007bfc00 + local_EAX_120 * 4) + iVar4) == '\0') {
@@ -65,6 +66,7 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
                        *(int *)(&DAT_007e1218 +
                                (STField<int>(this,0x235) * 3 + STField<int>(this,0x239)) * 4));
     if (piVar1 == (int *)(uint)DAT_0080874d) {
+      /* ST_CALLSITE[004CCD16]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       uVar2 = LookupRecordByte(recordIndex);
       uVar2 = (int)(byte)uVar2;
       if (uVar2 == 1) {
@@ -72,9 +74,11 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
         uVar8 = 0x74;
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_004ccd43:
+        /* ST_CALLSITE[004CCD47]: CALL dword ptr [EAX + 0x90] */
         (**(code **)(iVar4 + 0x90))(6,uVar8);
       }
       else if (uVar2 == 2) {
+        /* ST_CALLSITE[004CCD37]: CALL dword ptr [EDX + 0x90] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)this + 0x90))(6,0x75);
       }
@@ -95,6 +99,7 @@ LAB_004ccd43:
       local_28.arg0.words.low = (word)piVar1;
       iVar4 = 0;
       do {
+        /* ST_CALLSITE[004CCD86]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_374 = LookupRecordByte(STField<char>(this,0x24));
         local_EAX_374 = (int)(byte)local_EAX_374;
         if ((*(char *)(*(int *)(&DAT_007bfc00 + local_EAX_374 * 4) + iVar4) == '\0') &&
@@ -105,6 +110,7 @@ LAB_004ccd43:
             local_28.arg1.words.low = (word)iVar4;
             uVar8 = thunk_FUN_004e60d0((int)piVar1,iVar4);
             local_28.arg1.words.high = (short)uVar8 + 1;
+            /* ST_CALLSITE[004CCDE7]: CALL dword ptr [EDX] */
             g_aiBossClass_008117BC->GetMessage(&local_28);
           }
         }
@@ -115,11 +121,13 @@ LAB_004ccd43:
   }
   STField<int *>(this,0x24) = piVar1;
   STField<int *>(this,0x5c0) = param_2;
+  /* ST_CALLSITE[004CCE10]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   local_EAX_512 = LookupRecordByte(recordIndex);
   local_EAX_512 = (int)(byte)local_EAX_512;
   STField<int>(this,0x239) = local_EAX_512 + -1;
   thunk_FUN_004b9920(this);
   iVar4 = 0;
+  /* ST_CALLSITE[004CCE2D]: CALL 0x00404bc9; direct=00404BC9 TLOEmbryoTy::sub_00419C70 */
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   TLOEmbryoTy::sub_00419C70(this,extraout_EDX,0);
   thunk_FUN_0041f630(this);
@@ -132,6 +140,7 @@ LAB_004ccd43:
     puVar3 = (undefined *)
              thunk_FUN_004e81b0(STField<int>(this,0x24),STField<int>(this,0x235),0);
   }
+  /* ST_CALLSITE[004CCE75]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
   TLOEmbryoTy::sub_0041C3F0(this,puVar3);
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uVar8 = extraout_EDX_00;
@@ -161,8 +170,10 @@ LAB_004ccedc:
     }
   }
   else {
+    /* ST_CALLSITE[004CCE9E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_654 = LookupRecordByte((char)STField<int>(this,0x23d));
     iVar2 = STField<int>(this,0x235);
+    /* ST_CALLSITE[004CCEC3]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_691 = LookupRecordByte(STField<char>(this,0x24));
     local_EAX_691 = (int)(byte)local_EAX_691;
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -179,8 +190,10 @@ LAB_004ccedc:
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = nullptr;
     if (STField<int>(this,0x24) != STField<int>(this,0x23d)) {
+      /* ST_CALLSITE[004CCFC4]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_948 = LookupRecordByte((char)STField<int>(this,0x23d));
       iVar2 = STField<int>(this,0x235);
+      /* ST_CALLSITE[004CCFEB]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       uVar5 = LookupRecordByte(STField<char>(this,0x24));
       uVar5 = (int)(byte)uVar5;
       if ((&DAT_007e1984)[uVar5 + ((uint)(byte)local_EAX_948 + iVar2 * 3) * 3] == '\0') {
@@ -231,8 +244,10 @@ LAB_004cd038:
     thunk_FUN_0058cf90(param_2,STField<undefined4>(this,0x24),STField<undefined2>(this,0x32));
   }
   if (STField<int>(this,0x24) != STField<int>(this,0x23d)) {
+    /* ST_CALLSITE[004CD152]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_1346 = LookupRecordByte((char)STField<int>(this,0x23d));
     iVar4 = STField<int>(this,0x235);
+    /* ST_CALLSITE[004CD179]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_1385 = LookupRecordByte(STField<char>(this,0x24));
     local_EAX_1385 = (int)(byte)local_EAX_1385;
     if ((&DAT_007e1984)[local_EAX_1385 + ((uint)(byte)local_EAX_1346 + iVar4 * 3) * 3] == '\0')
@@ -242,12 +257,15 @@ LAB_004cd038:
   if ((((iVar4 != 0x4d) || (STField<int>(this,0x4d0) == 2)) &&
       ((iVar4 != 0x4c || (STField<int>(this,0x4d0) == 2)))) &&
      ((iVar4 != 0x43 || (STField<int>(this,0x4d0) == 2)))) {
+    /* ST_CALLSITE[004CD1C4]: CALL dword ptr [EDX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)(*(int *)this + 0x2c))();
     thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(iVar4), (uint8_t)(STField<undefined1>(this,0x24))),iVar4);
   }
 LAB_004cd1d7:
+  /* ST_CALLSITE[004CD1D9]: CALL 0x00404e17; direct=00404E17 TLOBaseTy::ReloadLogoPlane */
   TLOBaseTy::ReloadLogoPlane(this);
+  /* ST_CALLSITE[004CD1E2]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
   TLOBaseTy::RotateSpr(this,1);
   if (STField<uint>(this,0x24) == (uint)*(byte *)(STField<int>(this,0x10) + 0x112d)) {
     thunk_FUN_004d8b70((char)STField<uint>(this,0x24));

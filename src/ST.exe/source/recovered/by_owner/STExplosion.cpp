@@ -17,6 +17,7 @@ STExplosion * __thiscall st::fn_00604080(STExplosion *this)
   int iVar1;
   STParticleC **ppSVar2;
 
+  /* ST_CALLSITE[00604084]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
   this->vtable = &st_global_0079CB14;
   this->field_0215 = nullptr;
@@ -137,6 +138,7 @@ int __thiscall st::fn_00604350(STExplosion *this)
         local_10 = (int)g_worldGrid.sizeX;
       }
       if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+            /* ST_CALLSITE[006044E3]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             ((st::fn_00403F53
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar1,iVar5,
                          &local_18,&local_1c), pVVar4 = g_visibleClass_00802A88, local_8 < 0 ||
@@ -145,6 +147,7 @@ int __thiscall st::fn_00604350(STExplosion *this)
                (pVVar3->field_0034 <= iVar5)))))))) || (pVVar3->field_004C == nullptr)) ||
           ((pVVar3->field_004C[local_18 + iVar5 * pVVar3->field_0030] != 0 || (DAT_0080874d == -1)))
           ) || (((((g_visibleClass_00802A88->field_00F8 == 0 ||
+                   /* ST_CALLSITE[00604585]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                    (((st::fn_00403F53
                                 (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c
                                  ,iVar7,&local_1c,&local_18), pVVar3 = g_visibleClass_00802A88,
@@ -153,6 +156,7 @@ int __thiscall st::fn_00604350(STExplosion *this)
                   (((pVVar4->field_0034 <= iVar5 || (pVVar4->field_004C == nullptr)) ||
                    (pVVar4->field_004C[local_1c + iVar5 * pVVar4->field_0030] != 0)))) ||
                  ((((DAT_0080874d == -1 || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+                   /* ST_CALLSITE[00604616]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                    ((st::fn_00403F53
                                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10
                                 ,iVar7,&local_1c,&local_18), iVar1 = local_8, iVar5 = local_14,
@@ -164,6 +168,7 @@ int __thiscall st::fn_00604350(STExplosion *this)
                    (pVVar3->field_004C[local_1c + iVar7 * pVVar3->field_0030] != 0)))))) ||
                 ((DAT_0080874d == -1 ||
                  (((g_visibleClass_00802A88->field_00F8 == 0 ||
+                   /* ST_CALLSITE[006046A2]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                    (st::fn_00403F53
                               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,
                                local_14,&local_1c,&local_18), local_1c < 0)) ||
@@ -171,6 +176,7 @@ int __thiscall st::fn_00604350(STExplosion *this)
                    ((((local_18 = g_centeredOffsets5[iVar1] + local_18, local_18 < 0 ||
                       (pVVar4->field_0034 <= local_18)) || (pVVar4->field_004C == nullptr)) ||
                     ((pVVar4->field_004C[local_1c + local_18 * pVVar4->field_0030] != 0 ||
+                     /* ST_CALLSITE[006046F0]: CALL 0x00404e5d; direct=00404E5D VisibleClassTy::sub_005F1D80 */
                      (iVar5 = st::fn_00404E5D
                                         (g_visibleClass_00802A88,local_10,iVar5,local_8), iVar5 == 1
                      )))))))))))))) {
@@ -212,6 +218,7 @@ int __thiscall st::fn_00604970(STExplosion *this)
     ppSVar4 = &this->field_0219;
     do {
       if (*ppSVar4 != nullptr) {
+        /* ST_CALLSITE[006049AD]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
         st::fn_00405C9A(*ppSVar4,&local_28);
         iVar1 = st::fn_00404C37(this,iVar2);
         if (iVar1 != 0) {
@@ -326,13 +333,14 @@ st::fn_00606050
 
   iVar6 = 0;
   local_5 = '\0';
+  /* ST_CALLSITE[0060606D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   local_EAX_29 = st::fn_004049B7((char)param_8);
   local_18 = (int)(byte)local_EAX_29;
   if (param_4 == 0x21) {
     this->field_02B7 = param_7;
   }
   local_74 = st::fn_004017AD((Global_sub_00606A50_param_1Enum)param_5);
-  local_14 = st::fn_004052EF(param_4,st::pointer_boundary_cast<void **>(&local_10),st::pointer_boundary_cast<undefined4 *>(&local_78),st::pointer_boundary_cast<undefined4 *>(&local_28),st::pointer_boundary_cast<undefined4 *>(&local_1c),st::pointer_boundary_cast<undefined4 *>(&local_24));
+  local_14 = st::fn_004052EF(param_4,st::pointer_boundary_cast<void **>(&local_10),(undefined4 *)&local_78,(undefined4 *)&local_28,(undefined4 *)&local_1c,(undefined4 *)&local_24);
   if (0 < local_24) {
     local_18 = local_24;
   }
@@ -347,6 +355,7 @@ st::fn_00606050
   this->field_001C = uVar3;
   iVar7 = (uVar3 >> 0x10) % (local_78 + 1U) + 9;
   local_c = iVar7;
+  /* ST_CALLSITE[00606105]: CALL 0x00403d8c; direct=00403D8C STExplosionC::CreateGroupPart */
   iVar2 = st::fn_00403D8C((STExplosionC *)this,iVar7);
   this->field_0269 = iVar2;
   if (iVar2 != iVar7) {
@@ -636,6 +645,7 @@ switchD_00606490_default:
         local_48 = param_3 + 0x5a;
       }
       local_b0.arg0.ptr = local_70;
+      /* ST_CALLSITE[006067E6]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
       st::fn_00405C9A((&this->field_0219)[(int)param_5],&local_b0);
       param_5 = (uint *)((int)param_5 + 1);
     } while ((int)param_5 < local_c);

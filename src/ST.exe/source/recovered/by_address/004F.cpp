@@ -111,6 +111,7 @@ void __thiscall st::fn_004F1890(void *this,byte param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   pbVar2 = st::fn_0070B650(*(short **)((int)this + (uint)param_1 * 4 + 0x2e2),
                         (uint)*(byte *)(param_1 + 0x2ea + (int)this));
+  /* ST_CALLSITE[004F1905]: CALL 0x00403229; direct=00403229 DibPut */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   st::fn_00403229(*(RecoveredSourceFamily_dibcopy **)((int)this + (-(uint)(param_1 != 0) & 8) * 4 + 0x180),
          iVar1,(DAT_0080874e == '\x03') + 6,'\x06',pbVar2);
@@ -216,12 +217,13 @@ void __thiscall st::fn_004F1C80(void *this,uint param_1,uint param_2)
 
   uVar2 = param_2;
   uVar1 = param_1;
-  iVar3 = st::fn_004058F3((char)param_1,(Global_sub_004F19D0_param_2Enum)param_2,st::pointer_boundary_cast<undefined4 *>(&param_1),
-                             st::pointer_boundary_cast<undefined4 *>(&param_2));
+  iVar3 = st::fn_004058F3((char)param_1,(Global_sub_004F19D0_param_2Enum)param_2,&param_1,
+                             &param_2);
   if (iVar3 != 0) {
     iVar3 = (uVar2 & 0xff) + (uVar1 & 0xff) * 6;
     pbVar4 = st::fn_0070B650(*(short **)((int)this + iVar3 * 4 + 0xd0b),
                           (uint)*(byte *)(iVar3 + 0xd3b + (int)this));
+    /* ST_CALLSITE[004F1CE2]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229(*(RecoveredSourceFamily_dibcopy **)((int)this + (0x6a - (uVar1 & 0xff)) * 4),param_1,
            param_2,'\x06',pbVar4);
   }
@@ -411,6 +413,7 @@ void __cdecl st::fn_004F4640(ushort *param_1,undefined *param_2,BYTE param_3)
   local_6c[0x38] = 0x7c;
   local_6c[0x39] = 0x7e;
   local_6c[0x3a] = 0x2a;
+  /* ST_CALLSITE[004F4896]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   st::fn_0070D1F0
             (0x19d,&local_a8,nullptr,local_6c,(int)param_1,local_30,6,7,1,0,0x20022c,param_2);
   return;
@@ -580,6 +583,7 @@ void __cdecl st::fn_004F4950(ushort *param_1,undefined *param_2,BYTE param_3)
   local_6c[0x54] = 0x7a;
   local_6c[0x55] = 0x7c;
   local_6c[0x56] = 0x7e;
+  /* ST_CALLSITE[004F4BB4]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   st::fn_0070D1F0
             (0x19d,&local_a8,nullptr,local_6c,(int)param_1,local_14,3,5,1,0,0x100081c,param_2);
   return;
@@ -735,6 +739,7 @@ void __cdecl st::fn_004F4C70(int param_1,undefined *param_2,BYTE param_3)
   local_64[0x54] = 0x7a;
   local_64[0x55] = 0x7c;
   local_64[0x56] = 0x7e;
+  /* ST_CALLSITE[004F4EAB]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   st::fn_0070D1F0
             (0x19d,&local_a0,nullptr,local_64,param_1,local_c,1,4,1,1,0x20081c,param_2);
   return;
@@ -785,7 +790,7 @@ AnonShape_004F4F90_2D6E0DDA * __fastcall st::fn_004F4F90(AnonShape_004F4F90_2D6E
   *(undefined4 *)&param_1->field_0x140 = 0;
   *(undefined4 *)&param_1->field_0x13c = 0;
   *(undefined4 *)&param_1->field_0x12c = 1;
-  puVar1 = st::pointer_boundary_cast<undefined1 *>(&param_1->field_0x94);
+  puVar1 = &param_1->field_0x94;
   memset(&param_1->field_0x3c, 0, 0x2c); /* compiler bulk-zero initialization */
   iVar3 = 0;
   memset((void *)puVar1, 0, 0x2c); /* compiler bulk-zero initialization */

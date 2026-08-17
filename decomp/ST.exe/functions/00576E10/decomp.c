@@ -21,7 +21,9 @@ undefined4 __thiscall GameSystemC::CreateSystemObjects(GameSystemC *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
+    /* ST_CALLSITE[00576E54]: CALL dword ptr [EAX + 0xc] */
     local_8->vfunc_0C(0x100,0xb2a4,0,0);
+    /* ST_CALLSITE[00576E69]: CALL dword ptr [EDX + 0xc] */
     this_00->vfunc_0C(0x102,0xb288,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;

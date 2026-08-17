@@ -43,8 +43,10 @@ FUN_005fd750(uint param_1,short param_2,short param_3,ushort param_4,uint param_
   local_30[2] = 1;
   local_30[1] = param_1;
   local_30[0] = 0x82;
+  /* ST_CALLSITE[005FD7A4]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,local_12,CASE_1);
   if (this != nullptr) {
+    /* ST_CALLSITE[005FD7B3]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
     iVar1 = (*this->vtable[1].vfunc_24)(this);
     if (iVar1 != 0) {
       local_16 = this->field_0018;
@@ -53,6 +55,7 @@ FUN_005fd750(uint param_1,short param_2,short param_3,ushort param_4,uint param_
   local_10 = param_6;
   local_c = 0xb4;
   local_8 = 5;
+  /* ST_CALLSITE[005FD7EE]: CALL dword ptr [EDX + 0x8] */
   g_playSystem_00802A38->vfunc_08(0x10a,0,0,(short)local_30,0);
   return;
 }

@@ -51,6 +51,7 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
         Library::MSVCRT::FUN_0072ee80(param_5,(byte *)"%4s%d%d%d%d");
         local_f = param_2;
         local_b = param_3;
+        /* ST_CALLSITE[0055CE81]: CALL 0x00404269; direct=00404269 FSGSTy::AddPlayer */
         FSGSTy::AddPlayer(g_fSGS_0081174C,(undefined4 *)local_34);
         uVar4 = 0xffffffff;
         pbVar6 = pbVar8_mg0;
@@ -62,8 +63,10 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
         } while (bVar1 != 0);
         if (((~uVar4 < 100) && (DAT_00807360 != '\0')) && (param_1 == CASE_2)) {
           pcVar4_mgB = LoadResourceString(0x259a,g_hINSTANCE_00807618);
+          /* ST_CALLSITE[0055CECF]: CALL dword ptr [0x0085bde8] */
           wsprintfA(local_688,"%s %s",pbVar8_mg0,pcVar4_mgB);
 LAB_0055cf74:
+          /* ST_CALLSITE[0055CF81]: CALL 0x0040347c; direct=0040347C FSGSTy::AddMessage */
           FSGSTy::AddMessage(g_fSGS_0081174C,1,(byte *)&CHAR_00h_008016a0,local_688,5);
           return;
         }
@@ -73,6 +76,7 @@ LAB_0055cf74:
       if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
+        /* ST_CALLSITE[0055CF1E]: CALL 0x00403ae4; direct=00403AE4 FSGSTy::DelPlayer */
         FSGSTy::DelPlayer(g_fSGS_0081174C,local_34);
         uVar4 = 0xffffffff;
         pbVar6 = pbVar8_mg0;
@@ -84,6 +88,7 @@ LAB_0055cf74:
         } while (bVar1 != 0);
         if ((~uVar4 < 100) && (DAT_00807360 != '\0')) {
           pcVar4_mgA = LoadResourceString(0x259b,g_hINSTANCE_00807618);
+          /* ST_CALLSITE[0055CF62]: CALL dword ptr [0x0085bde8] */
           wsprintfA(local_688,"%s %s",pbVar8_mg0,pcVar4_mgA);
           goto LAB_0055cf74;
         }
@@ -111,6 +116,7 @@ LAB_0055cf74:
       } while (bVar1 != 0);
       param_2 = Library::DKW::LIB::MemAlloc(~uVar4 + ~uVar5 + 4);
       if (param_2 != nullptr) {
+        /* ST_CALLSITE[0055C8C1]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)param_2,"%s %s",pcVar3_mg2,param_4);
         if (STField<char>(this,9) != '\0') {
           thunk_FUN_0055bdd0((char *)param_2,param_5);
@@ -118,6 +124,7 @@ LAB_0055cf74:
           return;
         }
         if (g_fSGS_0081174C != nullptr) {
+          /* ST_CALLSITE[0055C908]: CALL 0x0040347c; direct=0040347C FSGSTy::AddMessage */
           FSGSTy::AddMessage(g_fSGS_0081174C,9,param_2,param_5,0);
           FreeAndNull(&param_2);
           return;
@@ -136,6 +143,7 @@ LAB_0055cf74:
           local_449 = 0;
           Library::MSVCRT::_strncpy(local_448,param_5,0x410);
           local_345 = 0;
+          /* ST_CALLSITE[0055C97D]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
           StartSystemTy::AddToChat(g_startSystem_0081176C,(int)local_488);
         }
         FreeAndNull(&param_2);
@@ -168,6 +176,7 @@ LAB_0055c9c5:
         STField<char>(this,0x2b) = (STField<char>(this,0x2b) == '\a') + '\a';
       }
       if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
+        /* ST_CALLSITE[0055CA12]: CALL 0x0040347c; direct=0040347C FSGSTy::AddMessage */
         FSGSTy::AddMessage(g_fSGS_0081174C,STField<byte>(this,0x2b),param_4,param_5,5);
         return;
       }
@@ -193,6 +202,7 @@ LAB_0055c9c5:
       param_2 = Library::DKW::LIB::MemAlloc(~uVar4 + ~uVar5 + 4);
       if (param_2 != nullptr) {
         pcVar4_mg6 = LoadResourceString(0x2576,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[0055CC48]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)param_2,"%s %s",pcVar4_mg6,pbVar8_mg1);
         if (STField<char>(this,9) != '\0') {
           thunk_FUN_0055bdd0((char *)param_2,param_5);
@@ -200,6 +210,7 @@ LAB_0055c9c5:
           return;
         }
         if (g_fSGS_0081174C != nullptr) {
+          /* ST_CALLSITE[0055CC8F]: CALL 0x0040347c; direct=0040347C FSGSTy::AddMessage */
           FSGSTy::AddMessage(g_fSGS_0081174C,4,param_2,param_5,5);
           FreeAndNull(&param_2);
           return;
@@ -218,6 +229,7 @@ LAB_0055c9c5:
           local_449 = 0;
           Library::MSVCRT::_strncpy(local_448,param_5,0x410);
           local_345 = 0;
+          /* ST_CALLSITE[0055CD04]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
           StartSystemTy::AddToChat(g_startSystem_0081176C,(int)local_488);
         }
         FreeAndNull(&param_2);
@@ -226,7 +238,9 @@ LAB_0055c9c5:
       break;
     case CASE_7:
       if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
+        /* ST_CALLSITE[0055CE02]: CALL 0x0040347c; direct=0040347C FSGSTy::AddMessage */
         FSGSTy::AddMessage(g_fSGS_0081174C,1,(byte *)&CHAR_00h_008016a0,param_5,5);
+        /* ST_CALLSITE[0055CE0D]: CALL 0x00402c84; direct=00402C84 FSGSTy::JoinChannel */
         FSGSTy::JoinChannel(g_fSGS_0081174C);
         return;
       }
@@ -237,6 +251,7 @@ LAB_0055c9c5:
         local_25 = 0;
         local_f = param_2;
         local_b = param_3;
+        /* ST_CALLSITE[0055CFCB]: CALL 0x00404a75; direct=00404A75 FSGSTy::ChangePlayer */
         FSGSTy::ChangePlayer(g_fSGS_0081174C,local_34);
         return;
       }
@@ -246,6 +261,7 @@ LAB_0055c9c5:
       if (g_fSGS_0081174C != nullptr) {
         STField<undefined4>(this,0x1b) = 0x6156;
         STField<Global_sub_0055C830_param_1Enum>(this,0x1f) = param_1;
+        /* ST_CALLSITE[0055CFF8]: CALL dword ptr [EDX] */
         g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
       }
       break;
@@ -255,6 +271,7 @@ LAB_0055c9c5:
         return;
       }
       if (g_fSGS_0081174C != nullptr) {
+        /* ST_CALLSITE[0055CB08]: CALL 0x0040347c; direct=0040347C FSGSTy::AddMessage */
         FSGSTy::AddMessage(g_fSGS_0081174C,6,param_4,param_5,5);
         return;
       }
@@ -272,6 +289,7 @@ LAB_0055c9c5:
         local_449 = 0;
         Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
+        /* ST_CALLSITE[0055CB78]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
         StartSystemTy::AddToChat(g_startSystem_0081176C,(int)local_488);
         return;
       }
@@ -282,6 +300,7 @@ LAB_0055c9c5:
         return;
       }
       if (g_fSGS_0081174C != nullptr) {
+        /* ST_CALLSITE[0055CA55]: CALL 0x0040347c; direct=0040347C FSGSTy::AddMessage */
         FSGSTy::AddMessage(g_fSGS_0081174C,2,param_4,param_5,5);
         return;
       }
@@ -299,6 +318,7 @@ LAB_0055c9c5:
         local_449 = 0;
         Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
+        /* ST_CALLSITE[0055CAC5]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
         StartSystemTy::AddToChat(g_startSystem_0081176C,(int)local_488);
         return;
       }
@@ -309,6 +329,7 @@ LAB_0055c9c5:
         return;
       }
       if (g_fSGS_0081174C != nullptr) {
+        /* ST_CALLSITE[0055CD4F]: CALL 0x0040347c; direct=0040347C FSGSTy::AddMessage */
         FSGSTy::AddMessage(g_fSGS_0081174C,3,(byte *)&CHAR_00h_008016a0,param_5,5);
         return;
       }
@@ -338,18 +359,21 @@ LAB_0055c9c5:
         memmove(pcVar9, pcVar7, uVar4); /* compiler REP MOVS byte copy */
         Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
+        /* ST_CALLSITE[0055CDCE]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
         StartSystemTy::AddToChat(g_startSystem_0081176C,(int)local_488);
         return;
       }
       break;
     case CASE_17:
       if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
+        /* ST_CALLSITE[0055CBAB]: CALL 0x0040347c; direct=0040347C FSGSTy::AddMessage */
         FSGSTy::AddMessage(g_fSGS_0081174C,7,param_4,param_5,5);
         return;
       }
       break;
     case CASE_FF:
       if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
+        /* ST_CALLSITE[0055CBDE]: CALL 0x0040347c; direct=0040347C FSGSTy::AddMessage */
         FSGSTy::AddMessage(g_fSGS_0081174C,4,param_4,param_5,5);
         return;
       }

@@ -18,6 +18,7 @@ void FUN_00580ff0(ushort param_1,word param_2)
     local_24.arg1.words.high = param_2;
     local_24.arg1.words.low = param_1;
     local_24.id = 0x5de1;
+    /* ST_CALLSITE[00581032]: CALL dword ptr [EAX] */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;

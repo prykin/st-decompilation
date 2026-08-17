@@ -36,6 +36,7 @@ uint __thiscall FUN_0063c170(void *this,int param_1)
     }
     if (uVar2 == 2) {
       if (STField<int *>(this,0x397) != nullptr) {
+        /* ST_CALLSITE[0063C2B0]: CALL dword ptr [EAX + 0xe0] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar3 = (**(code **)(*STField<int *>(this,0x397) + 0xe0))
                           (STField<undefined4>(this,0x39b),(int)&param_1 + 2,&local_6,&local_8,

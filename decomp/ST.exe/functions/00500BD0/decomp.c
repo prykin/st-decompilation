@@ -127,6 +127,7 @@ LAB_00500d40:
             pRVar9 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0194;
             iVar10 = uVar6 * 0xb + 0x87;
           }
+          /* ST_CALLSITE[00500DDA]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut(pRVar9,iVar10,uVar6 * 0xb + 0xb,'\x06',(byte *)pBVar7);
           bVar8 = (-((char)local_c != '\0') & 2U) + 3;
           local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(bVar8));
@@ -150,6 +151,7 @@ joined_r0x00500e7c:
           }
           pBVar7 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
                                 local_8 & 0xff);
+          /* ST_CALLSITE[00500E51]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut(pRVar9,7,(uint)*pbVar1 * 0x1d + 6,'\x01',(byte *)pBVar7);
           bVar8 = (-((char)local_c != '\0') & 4U) + 2;
           local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar8));

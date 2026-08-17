@@ -330,9 +330,10 @@ LAB_00592b82:
         pBVar3 = FUN_0070b3a0(pAVar1,(int)(short)pAVar1->field_0029);
         FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar9,piVar9[1],(int)*(short *)(pAVar1 + 1),
                      (int)*(short *)&pAVar1[1].field_0x2);
+        /* ST_CALLSITE[00592C0A]: CALL 0x00403738; direct=00403738 PutDDX */
         PutDDX(*piVar9,piVar9[1],'\x01',pBVar3);
         if ((char)piVar9[5] != '\0') {
-          *(undefined1 *)(piVar9 + 5) = 0;
+          ((undefined1 *)piVar9)[5] = 0;
         }
         piVar9[4] = local_8->field_0061;
         switch(STField<undefined2>(piVar9,0x15)) {
@@ -340,21 +341,21 @@ LAB_00592b82:
           pAVar1->field_0029 = pAVar1->field_0029 + 1;
           if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
             pAVar1->field_0029 = 0;
-            *(undefined1 *)(piVar9 + 5) = 1;
+            ((undefined1 *)piVar9)[5] = 1;
           }
           break;
         case 1:
           pAVar1->field_0029 = pAVar1->field_0029 + -1;
           if ((short)pAVar1->field_0029 < 0) {
             pAVar1->field_0029 = pAVar1->field_0023 + -1;
-            *(undefined1 *)(piVar9 + 5) = 1;
+            ((undefined1 *)piVar9)[5] = 1;
           }
           break;
         case 2:
           pAVar1->field_0029 = pAVar1->field_0029 + 1;
           if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
             pAVar1->field_0029 = pAVar1->field_0023 + -1;
-            *(undefined1 *)(piVar9 + 5) = 1;
+            ((undefined1 *)piVar9)[5] = 1;
             STField<undefined2>(piVar9,0x15) = 3;
           }
           break;
@@ -362,7 +363,7 @@ LAB_00592b82:
           pAVar1->field_0029 = pAVar1->field_0029 + -1;
           if ((short)pAVar1->field_0029 < 0) {
             pAVar1->field_0029 = 0;
-            *(undefined1 *)(piVar9 + 5) = 1;
+            ((undefined1 *)piVar9)[5] = 1;
             STField<undefined2>(piVar9,0x15) = 2;
           }
         }

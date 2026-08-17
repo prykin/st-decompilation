@@ -49,6 +49,7 @@ int __thiscall STFieldC::FUN_0060c1a0(STFieldC *this,undefined4 *param_1)
           } while ((int)uVar6 < (int)pSVar2->count);
         }
         if (this->field_0225 != '\0') {
+          /* ST_CALLSITE[0060C246]: CALL 0x004010f5; direct=004010F5 STFieldC::sub_00609CD0 */
           sub_00609CD0(this);
         }
       }
@@ -56,6 +57,7 @@ int __thiscall STFieldC::FUN_0060c1a0(STFieldC *this,undefined4 *param_1)
       piVar4 = (int *)((int)param_1 + STField<int>(param_1,0x83) + 0x8b);
     }
     if ((this->field_023C != 0) && (this->field_0244 != nullptr)) {
+      /* ST_CALLSITE[0060C27B]: CALL 0x0040234c; direct=0040234C STFieldC::sub_0060D660 */
       iVar5 = sub_0060D660(this,piVar4);
       iVar1 = iVar1 + iVar5;
     }

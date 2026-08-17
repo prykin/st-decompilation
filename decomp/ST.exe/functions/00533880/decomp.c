@@ -53,7 +53,9 @@ void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
     local_8->field_01A0 = (uint)(param_1 != '\a');
     local_8->field_01A9 = 0;
     local_8->field_01A4 = CASE_5;
+    /* ST_CALLSITE[00533954]: CALL 0x00402851; direct=00402851 OptPanelTy::SetOptControls */
     SetOptControls(local_8);
+    /* ST_CALLSITE[00533960]: CALL 0x00405a42; direct=00405A42 OptPanelTy::SwitchOptPanel */
     SwitchOptPanel(this_00,-1);
     g_currentExceptionFrame = local_4c.previous;
     return;

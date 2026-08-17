@@ -17,7 +17,7 @@
 
 void __thiscall
 CPanelTy::PaintBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char *text,
-                  undefined *param_5)
+                  callback_004F3540_p5 *param_5)
 
 {
   uint uVar2;
@@ -53,8 +53,8 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,c
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar7 = 1;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar4 = (*(code *)param_5)(param_2);
+  /* ST_CALLSITE[004F3597]: CALL dword ptr [EBP + 0x18] */
+  uVar4 = (*param_5)(param_2);
   text_00 = FUN_006f2c00(text,1,uVar4);
   local_c = cMf32::RecGet(g_cMf32_00806790,param_3,text_00,errorCode,iVar7);
   pCVar3 = local_8;
@@ -91,6 +91,7 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,c
 LAB_004f3636:
     iVar7 = iVar7 - local_8->field_00C0;
   }
+  /* ST_CALLSITE[004F365B]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0148[uVar2 + 0xe],
          *local_10 - (&local_8->field_003C)[uVar2],iVar7 - iVar5,param_3,(byte *)local_c);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);

@@ -30,6 +30,7 @@ LAB_0074a6c4:
       uVar4 = param_1->field_00B8;
       pAVar8 = (AnonShape_0074A646_320FC166 *)(uVar2 + param_1->field_00B8);
       iVar5 = param_1->field_00BC;
+      /* ST_CALLSITE[0074A684]: CALL dword ptr [ECX + 0xc] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar1 + 0xc))(piVar1,&local_c);
       uVar9 = Library::MSVCRT::__alldiv
@@ -37,6 +38,7 @@ LAB_0074a6c4:
                          ((iVar3 + iVar5 + (uint)CARRY4(uVar2,uVar4)) - (int)local_8) -
                          (uint)(pAVar8 < local_c),10000,0);
       if (0x31 < (int)(UINT)uVar9) {
+        /* ST_CALLSITE[0074A6AB]: CALL dword ptr [0x0085bef0] */
         MVar6 = timeSetEvent((UINT)uVar9,10,&LAB_0074a606,(DWORD_PTR)param_1,0);
         param_1->field_00C0 = MVar6;
         if (MVar6 != 0) goto LAB_0074a6c4;

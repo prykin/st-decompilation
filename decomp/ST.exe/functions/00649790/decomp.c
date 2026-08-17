@@ -161,7 +161,9 @@ undefined4 * CreatePlrDataForBO(void)
             thunk_FUN_00683c70(local_17c,(AnonShape_00683C70_22193481 *)stack_bytes_neg_494,&local_1c,
                                local_34,nullptr);
   if (local_8 != nullptr) {
+    /* ST_CALLSITE[006498F3]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
     local_10 = EventDataPack(*(AllocationRecord_0065CD10 **)&local_8->field_0x106,&local_14);
+    /* ST_CALLSITE[00649908]: CALL 0x00405204; direct=00405204 PlrDataPack */
     local_c = PlrDataPack(local_8,(undefined4 *)local_10,local_14,&local_18);
     thunk_FUN_0065d0f0((int *)&local_10);
     thunk_FUN_0067d160((int *)&local_8);

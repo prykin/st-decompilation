@@ -30,6 +30,7 @@ undefined4 __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
         break;
       case 1:
         this->field_00FA = 0;
+        /* ST_CALLSITE[0045FFBB]: CALL 0x00403927; direct=00403927 STBoatC::sub_0045F6C0 */
         sub_0045F6C0(this);
         return 2;
       case -6:
@@ -44,7 +45,9 @@ switchD_00460024_caseD_1:
     }
   }
   else {
+    /* ST_CALLSITE[00460001]: CALL dword ptr [EDX + 0x1c] */
     uVar1 = this->vfunc_1C();
+    /* ST_CALLSITE[0046000A]: CALL dword ptr [EAX + 0xd8] */
     iVar2 = this->vfunc_D8();
     if (iVar2 == 0) {
       switch(uVar1) {
@@ -75,6 +78,7 @@ switchD_00460024_caseD_1:
         goto switchD_00460024_caseD_1;
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       case 2:
+        /* ST_CALLSITE[00460106]: CALL dword ptr [EDX + 0x20] */
         this->StopMove(unaff_EDI);
         return 3;
       }

@@ -51,7 +51,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   puVar2 = &local_14->field_0282;
   do {
     if ((uint *)*puVar2 != nullptr) {
-      local_c = (undefined4 *)FUN_006b0020((uint *)*puVar2,(int *)&local_8);
+      local_c = FUN_006b0020((uint *)*puVar2,(int *)&local_8);
       FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
     }
@@ -59,7 +59,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
     local_1c = (uint *)((int)local_1c + -1);
   } while (local_1c != nullptr);
   if (pSVar3->field_047B != nullptr) {
-    local_c = (undefined4 *)FUN_006b0020(&pSVar3->field_047B->flags,(int *)&local_8);
+    local_c = FUN_006b0020(&pSVar3->field_047B->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
@@ -114,7 +114,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
     psVar11 = psVar11 + 2;
   }
   *psVar11 = *psVar8;
-  *(char *)(psVar11 + 1) = (char)psVar8[1];
+  ((char *)psVar11)[1] = (char)psVar8[1];
   puVar9 = (byte *)&local_14->field_0510;
   puVar12 = (byte *)((int)puVar2 + 0x413);
   for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -234,7 +234,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
       *local_1c = 0;
     }
     else {
-      local_c = (undefined4 *)FUN_006b0020((uint *)*local_18,(int *)&local_8);
+      local_c = FUN_006b0020((uint *)*local_18,(int *)&local_8);
       puVar9 = (byte *)(local_c);
       puVar12 = (byte *)(uVar6 + (int)puVar2);
       memmove(puVar12, puVar9, local_8); /* compiler REP MOVS byte copy */
@@ -251,7 +251,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
     local_10 = uVar6;
   } while (local_20 != 0);
   if (pSVar3->field_047B != nullptr) {
-    local_c = (undefined4 *)FUN_006b0020(&pSVar3->field_047B->flags,(int *)&local_8);
+    local_c = FUN_006b0020(&pSVar3->field_047B->flags,(int *)&local_8);
     puVar9 = (byte *)(local_c);
     puVar12 = (byte *)(uVar6 + (int)puVar2);
     memmove(puVar12, puVar9, local_8); /* compiler REP MOVS byte copy */

@@ -46,6 +46,7 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
     if (SVar1 != MESS_OPTICCLASSC_0104) {
       if (SVar1 < 4) {
         if (SVar1 == MESS_SHARED_0003) {
+          /* ST_CALLSITE[004A8A99]: CALL 0x00404011; direct=00404011 CursorClassTy::DelOpticAcc */
           CursorClassTy::DelOpticAcc(g_cursorClass_00802A30);
           g_currentExceptionFrame = local_6c.previous;
           return 0;
@@ -85,7 +86,9 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
           g_currentExceptionFrame = local_6c.previous;
           return 0;
         }
+        /* ST_CALLSITE[004A899C]: CALL 0x0040255e; direct=0040255E OpticClassC::InitOptic */
         InitOptic(g_opticClass_007FB2A0);
+        /* ST_CALLSITE[004A89A7]: CALL 0x004039bd; direct=004039BD CursorClassTy::AddOpticAcc */
         CursorClassTy::AddOpticAcc(g_cursorClass_00802A30);
         goto LAB_004a8b47;
       }
@@ -112,6 +115,7 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = 0;
+    /* ST_CALLSITE[004A8B44]: CALL dword ptr [EAX + 0x18] */
     (*g_playSystem_00802A38->vtable->SendMessage)
               ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_28);
 LAB_004a8b47:
@@ -147,6 +151,7 @@ LAB_004a8b47:
     default:
       goto switchD_004a8b81_caseD_108;
     case MESS_SHARED_010F:
+      /* ST_CALLSITE[004A8B9F]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData
                 (g_playSystem_00802A38,"opticsave",(byte *)&DAT_008073d0,399,0xc);
       g_currentExceptionFrame = local_6c.previous;
@@ -159,6 +164,7 @@ LAB_004a8c23:
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = uVar5;
+    /* ST_CALLSITE[004A8C46]: CALL dword ptr [EDX + 0x18] */
     (*g_playSystem_00802A38->vtable->SendMessage)
               ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_28);
 LAB_004a8c49:

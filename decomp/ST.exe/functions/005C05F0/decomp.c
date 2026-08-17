@@ -48,11 +48,13 @@ void __thiscall MReportTy::sub_005C05F0(MReportTy *this)
   }
   FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
   if (this->field_0453 != nullptr) {
+    /* ST_CALLSITE[005C0694]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     HoloTy::Done(this->field_0453);
     Library::MSVCRT::FUN_0072e2b0(this->field_0453);
     this->field_0453 = nullptr;
   }
   if (this->field_0457 != nullptr) {
+    /* ST_CALLSITE[005C06B8]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     HoloTy::Done(this->field_0457);
     Library::MSVCRT::FUN_0072e2b0(this->field_0457);
     this->field_0457 = nullptr;
@@ -84,6 +86,7 @@ void __thiscall MReportTy::sub_005C05F0(MReportTy *this)
     bVar5 = 0x10;
     iVar4 = 1;
     iVar2 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x47,0x46,0x2bd,0x15e);
+    /* ST_CALLSITE[005C0757]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
     uVar7 = HoloTy::Init(this->field_0453,CASE_2,0x47,0x46,iVar2,iVar4,bVar5,cVar6,uVar8);
     if (uVar7 != 0) {
       pHVar1 = this->field_0453;
@@ -93,8 +96,10 @@ void __thiscall MReportTy::sub_005C05F0(MReportTy *this)
       if (-1 < (int)uVar8) {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar8);
       }
+      /* ST_CALLSITE[005C0790]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       HoloTy::NextFas(this->field_0453);
     }
+    /* ST_CALLSITE[005C079B]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
     HoloTy::NextFas(this->field_0453);
   }
   pHVar1 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -124,6 +129,7 @@ void __thiscall MReportTy::sub_005C05F0(MReportTy *this)
     bVar5 = 0x10;
     iVar4 = 1;
     iVar2 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x1a,10,0x2e9,0x32);
+    /* ST_CALLSITE[005C0812]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
     local_EAX_546 = HoloTy::Init(this->field_0457,CASE_3,0x1a,10,iVar2,iVar4,bVar5,cVar6,uVar8);
     if (local_EAX_546 != 0) {
       pHVar1 = this->field_0457;
@@ -133,10 +139,13 @@ void __thiscall MReportTy::sub_005C05F0(MReportTy *this)
       if (-1 < (int)uVar8) {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar8);
       }
+      /* ST_CALLSITE[005C084B]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       HoloTy::NextFas(this->field_0457);
     }
+    /* ST_CALLSITE[005C0856]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
     HoloTy::NextFas(this->field_0457);
   }
+  /* ST_CALLSITE[005C0862]: CALL 0x00403738; direct=00403738 PutDDX */
   PutDDX(0,0,'\x01',(BITMAPINFO *)this->field_005D);
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {

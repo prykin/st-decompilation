@@ -28,9 +28,12 @@ void __thiscall TradePanelTy::Update(TradePanelTy *this)
     local_14 = local_8->field_01AF;
     local_10 = local_8->field_01B3;
     local_c = local_8->field_01B7;
+    /* ST_CALLSITE[0055220A]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     STAllPlayersC::GetPanelInfo
               (g_allPlayers_007FA174,10,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_0x1ab);
+    /* ST_CALLSITE[00552211]: CALL 0x00404f9d; direct=00404F9D TradePanelTy::sub_00551B10 */
     sub_00551B10(this_00);
+    /* ST_CALLSITE[00552218]: CALL 0x0040391d; direct=0040391D TradePanelTy::PaintPanel */
     PaintPanel(this_00);
     g_currentExceptionFrame = local_5c.previous;
     return;

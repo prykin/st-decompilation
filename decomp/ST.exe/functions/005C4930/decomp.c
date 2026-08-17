@@ -27,6 +27,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 == 0) {
+    /* ST_CALLSITE[005C496B]: CALL 0x0040458e; direct=0040458E MMObjTy::DoneMMObj */
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (pSVar2->field_1F3F != nullptr) {
       cMf32::delete(pSVar2->field_1F3F);
@@ -46,9 +47,11 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     }
     iVar6 = pSVar2->field_004D;
     if (((iVar6 != 0x611f) && (iVar6 != 0x6109)) && (iVar6 != 0x6105)) {
+      /* ST_CALLSITE[005C49F6]: CALL 0x00401d43; direct=00401D43 DarkScreen */
       DarkScreen(g_dDXContext_0080759C,10,2);
     }
     if (pSVar2->field_21EC != nullptr) {
+      /* ST_CALLSITE[005C4A08]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pSVar2->field_21EC);
       Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21EC);
       pSVar2->field_21EC = nullptr;
@@ -68,21 +71,25 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       }
     }
     if (pSVar2->field_21F4 != nullptr) {
+      /* ST_CALLSITE[005C4AAD]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pSVar2->field_21F4);
       Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21F4);
       pSVar2->field_21F4 = nullptr;
     }
     if (pSVar2->field_21E8 != nullptr) {
+      /* ST_CALLSITE[005C4AD1]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pSVar2->field_21E8);
       Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21E8);
       pSVar2->field_21E8 = nullptr;
     }
     if (pSVar2->field_21F0 != nullptr) {
+      /* ST_CALLSITE[005C4AF5]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pSVar2->field_21F0);
       Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21F0);
       pSVar2->field_21F0 = nullptr;
     }
     if (pSVar2->field_21F8 != nullptr) {
+      /* ST_CALLSITE[005C4B19]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(pSVar2->field_21F8);
       Library::MSVCRT::FUN_0072e2b0(pSVar2->field_21F8);
       pSVar2->field_21F8 = nullptr;
@@ -149,6 +156,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     if ((pSVar2->field_21E7 != '\0') &&
        (this_00 = *(MMsgTy **)(pSVar2->array_00BC[0xc].field_01DB + 0x2e6), this_00 != nullptr
        )) {
+      /* ST_CALLSITE[005C4C99]: CALL 0x0040462e; direct=0040462E MMsgTy::HideSprites */
       MMsgTy::HideSprites(this_00);
       *(undefined4 *)(*(int *)(pSVar2->array_00BC[0xc].field_01DB + 0x2e6) + 0x1cab) = 0;
     }

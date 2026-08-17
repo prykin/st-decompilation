@@ -117,8 +117,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_0156 = (short)uVar1;
   local_8->field_0158 = (short)((uint)uVar1 >> 0x10);
   local_8->field_015A = STField<undefined2>(local_c,0x12d);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_8->field_01C9 = *(undefined1 *)(local_c + 0x69);
+  local_8->field_01C9 = ((undefined1 *)local_c)[0x69];
   local_8->field_015C = STField<undefined4>(local_c,0x12f);
   local_8->field_0164 = STField<undefined4>(local_c,0x13b);
   local_8->field_016C = STField<undefined2>(local_c,0x147);
@@ -213,7 +212,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
     psVar12 = psVar12 + 2;
   }
   *psVar12 = *psVar10;
-  *(char *)(psVar12 + 1) = (char)psVar10[1];
+  ((char *)psVar12)[1] = (char)psVar10[1];
   uVar1 = local_c[0xa8];
   local_8->field_0295 = (short)uVar1;
   local_8->field_0297 = (short)((uint)uVar1 >> 0x10);
@@ -243,8 +242,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   *(undefined4 *)&local_8->field_0x2c3 = STField<undefined4>(local_c,0x2d2);
   *(undefined4 *)&local_8->field_0x2c7 = STField<undefined4>(local_c,0x2d6);
   local_8->field_02CB = STField<undefined2>(local_c,0x2da);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_8->field_02CD = *(undefined1 *)(local_c + 0xb7);
+  local_8->field_02CD = ((undefined1 *)local_c)[0xb7];
   local_8->field_02CE = STField<undefined4>(local_c,0x2dd);
   uVar1 = STField<undefined4>(local_c,0x2e1);
   local_8->field_02D2 = (short)uVar1;

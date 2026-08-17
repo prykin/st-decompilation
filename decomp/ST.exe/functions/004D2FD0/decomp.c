@@ -50,10 +50,13 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   }
   puVar6 = (byte *)(local_10d);
   memmove(puVar6, puVar1, 0xb0); /* compiler REP MOVS byte copy */
+  /* ST_CALLSITE[004D3032]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
   local_2c[3] = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)param_1,(int *)&local_5d);
   local_59 = 0x14f;
+  /* ST_CALLSITE[004D304B]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
   local_10 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(param_1 + 0x1d5),&local_55);
   local_51 = local_5d + local_59;
+  /* ST_CALLSITE[004D3068]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_14 = (byte *)STT3DSprC::SaveSpr(*(STT3DSprC **)(param_1 + 0x35c),&local_4d);
   local_49 = local_55 + local_51;
@@ -64,6 +67,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   if (*(int *)(param_1 + 0x370) == 0) {
     local_2c[4] = (byte *)(param_1 + 0x350);
     do {
+      /* ST_CALLSITE[004D30A5]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
       puVar1 = (byte *)(STT3DSprC::SaveSpr(*(STT3DSprC **)local_2c[4],(uint *)((int)local_45 + iVar2)));
       *(undefined4 **)((int)local_2c + iVar2) = puVar1;
       *(AnonShape_0060EA30_DCEB68AD **)((int)local_45 + iVar2 + 0xc) = local_c;
@@ -111,6 +115,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
       }
     } while (iVar2 < 0xc);
   }
+  /* ST_CALLSITE[004D31A4]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   STPlaySystemC::SaveObjData(g_playSystem_00802A38,*(int **)(param_1 + 0x18),local_8,(uint)local_c);
   FreeAndNull(&local_8);

@@ -38,13 +38,16 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
     this->field_06CB = this->field_043B;
     this->field_06D5 = this->field_0445;
     this->field_06E7 = 0;
+    /* ST_CALLSITE[00480249]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
     sub_00481520(this,(int)this->field_043B,(int)this->field_043D,(int)this->field_043F);
+    /* ST_CALLSITE[00480251]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
     iVar5 = sub_0045FF50(this,0);
     return (-(uint)(iVar5 != -1) & 3) - 1;
   }
   iVar5 = this->field_06E7;
   if (iVar5 != 0) {
     if (iVar5 == 1) {
+      /* ST_CALLSITE[0047FFC5]: CALL dword ptr [EDX + 0x20] */
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       iVar5 = this->StopMove(unaff_EDI);
       if (iVar5 == -1) {
@@ -53,12 +56,15 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       if (iVar5 == 1) {
         this->field_06E7 = 2;
         this->field_06E3 = CASE_0;
+        /* ST_CALLSITE[0047FFFF]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
         sub_00481520(this,(int)this->field_06D1,(int)this->field_06D3,(int)this->field_06D5);
+        /* ST_CALLSITE[00480007]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
         iVar5 = sub_0045FF50(this,0);
         if (iVar5 == -1) {
           return -1;
         }
       }
+      /* ST_CALLSITE[00480019]: CALL dword ptr [EAX + 0xd8] */
       iVar5 = this->vfunc_D8();
       return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
     }
@@ -70,6 +76,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
+    /* ST_CALLSITE[0048003B]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
     iVar5 = sub_0045FF50(this,2);
     if (iVar5 == -1) {
       return -1;
@@ -127,13 +134,16 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
     this->field_06D7 = local_EAX_693;
     this->field_06E3 = CASE_1;
 cf_common_exit_004800EC:
+    /* ST_CALLSITE[00480106]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
     sub_00481520(this,(int)this->field_06D1,(int)this->field_06D3,(int)this->field_06D5);
+    /* ST_CALLSITE[0048010E]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
     iVar5 = sub_0045FF50(this,0);
     if (iVar5 != -1) {
       return 2;
     }
     return -1;
   }
+  /* ST_CALLSITE[0047FE42]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
   iVar5 = sub_0045FF50(this,2);
   if (iVar5 == -1) {
     return -1;
@@ -199,7 +209,9 @@ cf_common_exit_0047FEEB:
   sVar2 = this->field_06CD;
   sVar3 = this->field_06CB;
 LAB_0047ff67:
+  /* ST_CALLSITE[0047FF6A]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
   sub_00481520(this,(int)sVar3,(int)sVar2,(int)sVar1);
+  /* ST_CALLSITE[0047FF72]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
   iVar5 = sub_0045FF50(this,0);
   if (iVar5 != -1) {
     return 2;

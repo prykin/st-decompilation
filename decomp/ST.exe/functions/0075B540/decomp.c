@@ -29,6 +29,7 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (*param_3 == 0) {
+    /* ST_CALLSITE[0075B561]: CALL dword ptr [ECX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar4 = (**(code **)*param_1)(param_1,1,0x5d4);
     *param_3 = iVar4;
@@ -36,7 +37,7 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
   iVar4 = *param_3;
   piVar7 = nullptr;
   *(int *)(iVar4 + 0xd0) = param_2;
-  auto param_3_after_write = nullptr; /* compiler stack-slot lifetime split */
+  int * param_3_after_write = nullptr; /* compiler stack-slot lifetime split */
   local_8 = 1;
   do {
     bVar1 = *(byte *)(local_8 + param_2);

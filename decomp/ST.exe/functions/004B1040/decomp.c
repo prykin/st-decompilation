@@ -59,6 +59,7 @@ FUN_004b1040(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   }
   local_1d = param_9;
   local_15 = param_10;
+  /* ST_CALLSITE[004B10E1]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
   STPlaySystemC::CreateGameObject(g_playSystem_00802A38,1000,0,0,&local_5c,0);
   return;
 }

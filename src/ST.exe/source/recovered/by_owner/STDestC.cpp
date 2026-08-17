@@ -15,8 +15,10 @@ STDestC * __thiscall st::fn_006023F0(STDestC *this)
 
 {
 
+  /* ST_CALLSITE[006023F4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   st::fn_00401933((STGameObjC *)this);
-  st::fn_00401316((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
+  /* ST_CALLSITE[00602401]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+  st::fn_00401316((STT3DSprC *)&this->field_01D5);
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079CB10);
   this->vtable = &st_global_0079C9B0;
   memset(&this->field_0x231, 0, 0x17e); /* compiler bulk-zero initialization */
@@ -209,6 +211,7 @@ void __thiscall st::fn_00602BE0(STDestC *this)
     }
   }
   else if (this->field_036E != CASE_4) {
+    /* ST_CALLSITE[00602CDA]: CALL 0x00405d30; direct=00405D30 STDestC::sub_00602E90 */
     puVar3 = st::fn_00405D30(this);
     this->field_03AB = puVar3;
     if (puVar3 != nullptr) {
@@ -222,6 +225,7 @@ void __thiscall st::fn_00602BE0(STDestC *this)
     iVar2 = (int)this->field_0259;
     if (((DAT_0080874d != -1) &&
         ((((g_visibleClass_00802A88->field_00F8 != 0 &&
+           /* ST_CALLSITE[00602D5F]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
            (st::fn_00403F53
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                        (int)this->field_0255,(int)this->field_0257,&local_8,&local_c), -1 < iVar2))
@@ -236,6 +240,7 @@ void __thiscall st::fn_00602BE0(STDestC *this)
       this->field_037A = 0;
       return;
     }
+    /* ST_CALLSITE[00602DAB]: CALL dword ptr [EDX + 0xd8] */
     this->vfunc_D8();
     if (this->field_037A == '\0') {
       st::fn_00402982(&this->field_01D5,0);

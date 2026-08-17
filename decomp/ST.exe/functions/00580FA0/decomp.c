@@ -13,6 +13,7 @@ void FUN_00580fa0(void)
       pSVar2 = (STMessage *)&pSVar2->unknown_04;
     }
     local_24.id = 0x5de0;
+    /* ST_CALLSITE[00580FD2]: CALL dword ptr [EAX] */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;

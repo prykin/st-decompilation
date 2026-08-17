@@ -35,6 +35,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   local_8 = 0;
   local_44 = piVar2;
   local_10 = this;
+  /* ST_CALLSITE[006D6A49]: CALL dword ptr [0x0085bedc] */
   DVar6 = timeGetTime();
   *(int *)(STField<int>(this,0x288) + 0xe8) = *(int *)(STField<int>(this,0x288) + 0xe8) + 1;
   iVar3 = STField<int>(this,0x288);
@@ -73,6 +74,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
     if ((uVar8 & 1) == 0) {
       if (STField<int>(this,0x310) == 0) {
         if (STField<int>(this,0x300) != 0) {
+          /* ST_CALLSITE[006D6DEA]: CALL dword ptr [EAX + 0x80] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar2 + 0x80))(piVar2,0);
           STField<undefined4>(this,0x300) = 0;
@@ -80,6 +82,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         }
         iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
         if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
+          /* ST_CALLSITE[006D6E16]: CALL dword ptr [0x0085bb8c] */
           EnterCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
         }
         iVar3 = STField<int>(this,0x288);
@@ -95,11 +98,13 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         local_20.top = *(int *)(*(int *)(iVar3 + 0x28) + 0x14) + *(int *)(iVar3 + 0x1c);
         local_20.right = *(int *)(iVar3 + 0x20) + local_20.left;
         local_20.bottom = *(int *)(iVar3 + 0x24) + local_20.top;
+        /* ST_CALLSITE[006D6E92]: CALL dword ptr [0x0085be50] */
         BVar7 = IntersectRect(&local_54,&local_20,&local_40);
         if (BVar7 != 0) {
           iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
           pcVar5 = *(code **)(iVar3 + 0x4e4);
           if (pcVar5 != nullptr) {
+            /* ST_CALLSITE[006D6ECE]: CALL ECX */
             (*pcVar5)(*(undefined4 *)(iVar3 + 0x4ec),local_54.left,local_54.top,
                       local_54.right - local_54.left,local_54.bottom - local_54.top);
           }
@@ -107,17 +112,20 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
           local_c = 0;
           while( true ) {
             piVar4 = *(int **)(*(int *)(STField<int>(this,0x288) + 0x28) + 0x40);
+            /* ST_CALLSITE[006D6EF9]: CALL dword ptr [EDX + 0x14] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar9 = (**(code **)(*piVar4 + 0x14))(piVar4,&local_54,piVar2,&local_30,0x1000000,0);
             local_8 = iVar9;
             if (iVar9 == 0) break;
             if (iVar9 == -0x7789fe3e) {
+              /* ST_CALLSITE[006D6F10]: CALL dword ptr [EDX + 0x6c] */
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               (**(code **)(*piVar2 + 0x6c))(piVar2);
               FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(STField<int>(this,0x288) + 0x28));
             }
             else {
               if (((iVar9 != -0x7789ff60) && (iVar9 != -0x7789fe52)) || (local_c != 0)) break;
+              /* ST_CALLSITE[006D6F3D]: CALL dword ptr [0x0085bc6c] */
               Sleep(2);
             }
             local_c = local_c + 1;
@@ -130,16 +138,19 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         }
         iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
         if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
+          /* ST_CALLSITE[006D6F7C]: CALL dword ptr [0x0085bb90] */
           LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
         }
         Library::DKW::DDX::FUN_006bb370(*(DDXContext **)(STField<int>(this,0x288) + 0x28),0,0);
       }
       else {
         if (STField<int>(this,0x300) != 0) {
+          /* ST_CALLSITE[006D6D42]: CALL dword ptr [EAX + 0x80] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar2 + 0x80))(piVar2,0);
           iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
           if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
+            /* ST_CALLSITE[006D6D60]: CALL dword ptr [0x0085bb90] */
             LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
           }
           STField<undefined4>(this,0x300) = 0;
@@ -164,6 +175,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
     }
     else if ((STField<int>(this,0x304) == 0) || ((uVar8 & 0x2000000) != 0)) {
       if (STField<int>(this,0x300) != 0) {
+        /* ST_CALLSITE[006D6B6E]: CALL dword ptr [EAX + 0x80] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*piVar2 + 0x80))(piVar2,0);
         STField<undefined4>(this,0x300) = 0;
@@ -171,6 +183,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
       }
       iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
       if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
+        /* ST_CALLSITE[006D6B9A]: CALL dword ptr [0x0085bb8c] */
         EnterCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
       }
       iVar3 = STField<int>(this,0x288);
@@ -184,6 +197,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
       local_40.bottom = *(LONG *)(*(int *)(iVar3 + 0x28) + 0x1c);
       local_20.left = *(int *)(*(int *)(iVar3 + 0x28) + 0x10) + *(int *)(iVar3 + 0x18);
       local_20.top = *(int *)(*(int *)(iVar3 + 0x28) + 0x14) + *(int *)(iVar3 + 0x1c);
+      /* ST_CALLSITE[006D6C05]: CALL dword ptr [0x0085be54] */
       ClientToScreen(*(HWND *)(*(int *)(iVar3 + 0x28) + 4),(LPPOINT)&local_20);
       local_c = 0;
       local_20.right = *(int *)(STField<int>(this,0x288) + 0x20) + local_20.left;
@@ -191,10 +205,12 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
       do {
         if (STField<int>(this,0x304) == 0) {
           piVar4 = *(int **)(*(int *)(STField<int>(this,0x288) + 0x28) + 0x34);
+          /* ST_CALLSITE[006D6C7E]: CALL dword ptr [EDX + 0x14] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar9 = (**(code **)(*piVar4 + 0x14))(piVar4,&local_20,piVar2,&local_30,0x1000000,0);
         }
         else {
+          /* ST_CALLSITE[006D6C57]: CALL dword ptr [ECX + 0x84] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar9 = (**(code **)(*piVar2 + 0x84))
                             (piVar2,&local_30,
@@ -204,12 +220,14 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         local_8 = iVar9;
         if (iVar9 == 0) break;
         if (iVar9 == -0x7789fe3e) {
+          /* ST_CALLSITE[006D6C95]: CALL dword ptr [EDX + 0x6c] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar2 + 0x6c))(piVar2);
           FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(STField<int>(this,0x288) + 0x28));
         }
         else {
           if (((iVar9 != -0x7789ff60) && (iVar9 != -0x7789fe52)) || (local_c != 0)) break;
+          /* ST_CALLSITE[006D6CC2]: CALL dword ptr [0x0085bc6c] */
           Sleep(2);
         }
         local_c = local_c + 1;
@@ -224,10 +242,12 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
       }
       iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
       if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
+        /* ST_CALLSITE[006D6D1A]: CALL dword ptr [0x0085bb90] */
         LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
       }
     }
   }
+  /* ST_CALLSITE[006D6F95]: CALL dword ptr [0x0085bedc] */
   DVar6 = timeGetTime();
   iVar3 = *(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288;
   if (3 < *(uint *)(iVar3 + 0xe8)) {

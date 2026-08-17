@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_004e6fe0(int param_1)
 
@@ -15,6 +17,7 @@ int FUN_004e6fe0(int param_1)
   local_c = 0;
   local_8 = 0;
   if ((-1 < param_1) && (param_1 < 8)) {
+    /* ST_CALLSITE[004E700C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar1 = LookupRecordByte((char)param_1);
     uVar3 = 0;
     do {

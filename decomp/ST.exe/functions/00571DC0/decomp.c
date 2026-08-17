@@ -11,6 +11,7 @@ uint FUN_00571dc0(void)
   undefined2 local_c;
   uint local_8;
 
+  /* ST_CALLSITE[00571DC8]: CALL dword ptr [0x0085bc48] */
   UVar1 = GetLogicalDrives();
   local_10 = 0;
   local_14 = DAT_007ca690;
@@ -20,6 +21,7 @@ uint FUN_00571dc0(void)
     local_8 = UVar1;
     if ((UVar1 & 1) != 0) {
       local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)((char)iVar2 + 'A'));
+      /* ST_CALLSITE[00571DFA]: CALL ESI */
       UVar1 = GetDriveTypeA((LPCSTR)&local_14);
       if (UVar1 == 5) break;
     }

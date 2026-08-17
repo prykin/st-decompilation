@@ -40,6 +40,7 @@ VisibleClassTy::sub_005599D0
      (((g_playSystem_00802A38 == nullptr ||
        (g_bulkInitializedRecords_008087C7[param_4].field_0022 < 8)) &&
       (this->field_003C[param_4 + 6] != nullptr)))) {
+    /* ST_CALLSITE[00559A3A]: CALL 0x00401be5; direct=00401BE5 VisibleClassTy::sub_0055BBC0 */
     sub_0055BBC0(this,2,(short)param_1,(short)param_2,param_3,param_4,(byte)param_5,param_6);
     iVar1 = param_5 * 2 + 1;
     iVar5 = param_1 - param_5;

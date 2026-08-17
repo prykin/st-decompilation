@@ -529,8 +529,11 @@ void __thiscall st::fn_005A0590(FSGSTy *this)
 void __thiscall st::fn_005A07F0(FSGSTy *this)
 
 {
+  /* ST_CALLSITE[005A080F]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
   st::fn_00402DBF(0,this->field_0008,2,0xc0a5,2,0x4000002f,0,0,0,0,0,0);
+  /* ST_CALLSITE[005A082D]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
   st::fn_00402DBF(0,this->field_0008,2,0xc0a4,2,0x8000031,0,0,0,0,0,0);
+  /* ST_CALLSITE[005A084B]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
   st::fn_00402DBF(0,this->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
   if (this->field_1B10 != 0) {
     st::fn_006E56B0(this->field_000C,this->field_1B10);
@@ -803,6 +806,7 @@ st::fn_005A39A0
     } while (bVar1 != 0);
     if (iVar5 != -2) {
       uVar4 = st::fn_0072FF00(pbVar3);
+      /* ST_CALLSITE[005A39E5]: CALL dword ptr [0x0085bde8] */
       st::external_00000080(local_10,st::mutable_c_string("%6d"),uVar4);
       goto LAB_005a3a15;
     }

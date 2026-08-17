@@ -40,11 +40,14 @@ int __thiscall FUN_0063c510(void *this,int param_1)
     if ((STField<char>(this,0x29e) == '\x04') || (STField<char>(this,0x29e) == '\x01')) {
       this_00 = (STT3DSprC *)((int)this + 0x1d5);
       thunk_FUN_004abce0(this_00,0xd,0,0x13,'\0');
+      /* ST_CALLSITE[0063C664]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow(this_00,0xd,g_playSystem_00802A38->field_00E4);
       STField<undefined1>(this,0x29f) = 1;
       thunk_FUN_004ac6b0(this_00,'\r');
+      /* ST_CALLSITE[0063C693]: CALL 0x00403107; direct=00403107 sub_00416240 */
       sub_00416240(this,STField<ushort>(this,0x266),STField<short>(this,0x26a),
                    STField<ushort>(this,0x26e));
+      /* ST_CALLSITE[0063C69C]: CALL dword ptr [EDX + 0xd8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0xd8))();
       pVVar2 = g_visibleClass_00802A88;
@@ -56,6 +59,7 @@ int __thiscall FUN_0063c510(void *this,int param_1)
         iVar3 = STField<int>(this,0x266);
         iVar3 = STBiasedDiv16(iVar3, 0xc9); /* exact signed 16-bit grid-index division */
         if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+              /* ST_CALLSITE[0063C768]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
               (VisibleClassTy::sub_00558C00
                          (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,iVar4,
                           &local_c,&local_10), local_8 < 0)) || ((4 < local_8 || (local_c < 0)))) ||

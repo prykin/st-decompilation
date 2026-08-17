@@ -313,7 +313,7 @@ int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int
           if (0 < local_20) {
             do {
               if (local_44[local_78 + iVar2] < (int)uVar14) {
-                FUN_0040f4d0((undefined4 *)(local_78 * uVar14 + (int)local_24),uVar14,local_5c,0);
+                FUN_0040f4d0((byte *)(local_78 * uVar14 + (int)local_24),uVar14,local_5c,0);
                 iVar3 = DAT_007f4d2c;
               }
               local_78 = local_78 + 1;
@@ -440,8 +440,7 @@ LAB_00410872:
     local_78 = STObjectAtByteOffset(pRVar15, iVar19).field_0008;
     if ((((local_68 < 0) || (iVar3 <= local_68)) || (local_6c < 0)) ||
        ((DAT_007f4d30 <= local_6c ||
-        (*(short *)((int)PTR_007f4cf0 + (local_78 * local_48 + local_68 + iVar3 * local_6c) * 2) !=
-         0)))) {
+        (PTR_007f4cf0[local_78 * local_48 + local_68 + iVar3 * local_6c] != 0)))) {
       iVar2 = FUN_0040f270(&local_68,&local_6c,(int *)&local_78,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                            DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
       if (iVar2 != 0) goto LAB_004109fd;

@@ -266,22 +266,27 @@ switchD_00590d73_default:
         } while (iVar9 < 0xf);
         local_8 = local_8 + 1;
         if (2 < local_8) {
+          /* ST_CALLSITE[00590EA0]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
           st::fn_00401992((MMObjTy *)this_02,
                               (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_0x9b,
                               st::mutable_c_string("MM_MBUT00"),0xf2,0x13a,7,8,0,0,0x9d,0x38,10,
                               st::mutable_c_string("MM_MABUT00"),6,8,9,6,0x28,0,nullptr,0,0,0,-1,-1);
+          /* ST_CALLSITE[00590EEB]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
           st::fn_00401992((MMObjTy *)this_02,
                               (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[0].field_01DB
                               ,st::mutable_c_string("MM_MBUT01"),0x191,0x13a,9,8,0,0,0x9d,0x38,10,
                               st::mutable_c_string("MM_MABUT01"),8,8,8,6,0x32,0,nullptr,0,0,0,-1,-1);
+          /* ST_CALLSITE[00590F36]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
           st::fn_00401992((MMObjTy *)this_02,
                               (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[1].field_01DB
                               ,st::mutable_c_string("MM_MBUT02"),0xf2,0x173,8,6,0,0,0x9d,0x38,10,
                               st::mutable_c_string("MM_MABUT02"),8,7,10,5,0x28,0,nullptr,0,0,0,-1,-1);
+          /* ST_CALLSITE[00590F81]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
           st::fn_00401992((MMObjTy *)this_02,
                               (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[2].field_01DB
                               ,st::mutable_c_string("MM_MBUT03"),0x191,0x173,8,6,0,0,0x9d,0x38,10,
                               st::mutable_c_string("MM_MABUT03"),8,7,8,5,0x32,0,nullptr,0,0,0,-1,-1);
+          /* ST_CALLSITE[00590FCC]: CALL 0x00401992; direct=00401992 MMObjTy::InitSprBut */
           st::fn_00401992((MMObjTy *)this_02,
                               (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_00BB[3].field_01DB
                               ,st::mutable_c_string("MM_MBUT04"),0x143,0x1ac,7,8,0,0,0x9d,0x38,10,
@@ -292,11 +297,14 @@ switchD_00590d73_default:
           this_02->field_1BE8 = (uint)DAT_0080874e * 3 - CASE_3;
           puVar4 = st::fn_0070A9F0(g_cMf32_00806780,st::mutable_c_string("CMPGN_BKG"),0,1);
           g_startSystem_0081176C->field_002C = puVar4;
+          /* ST_CALLSITE[00591019]: CALL 0x00401d43; direct=00401D43 DarkScreen */
           st::fn_00401D43(g_dDXContext_0080759C,1,0);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           this_00 = *(MMsgTy **)(this_02->field_00BB[0xc].field_01DC + 0x2e6);
           if (this_00 != nullptr) {
+            /* ST_CALLSITE[00591037]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
             st::fn_00401FA5(this_00,0,0,1);
+            /* ST_CALLSITE[00591048]: CALL 0x00405191; direct=00405191 MMsgTy::ShowSprites */
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             st::fn_00405191(*(MMsgTy **)(this_02->field_00BB[0xc].field_01DC + 0x2e6));
             *(undefined4 *)(*(int *)(this_02->field_00BB[0xc].field_01DC + 0x2e6) + 0x1cab) =
@@ -310,7 +318,9 @@ switchD_00590d73_default:
             iVar19 = g_cursorClass_00802A30->field_00C5;
             g_cursorClass_00802A30->field_0493 = CASE_1;
             this_01->field_0494 = 0xffff;
+            /* ST_CALLSITE[005910A5]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             st::fn_0040507E(this_01,CASE_0,iVar19,iVar9);
+            /* ST_CALLSITE[005910BA]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
             st::fn_0040241E(this_01,this_01->field_00C5,this_01->field_00C9);
             this_01->field_00D2 = 0;
             this_01->field_04DF = -1;
@@ -331,6 +341,7 @@ switchD_00590d73_default:
           psVar7 = (short *)st::fn_00713480
                                       (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
                                        ,uVar12,iVar13,iVar14,iVar15);
+          /* ST_CALLSITE[00591124]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[2].field_00B9,psVar7,uVar17,uVar21);
           uVar21 = 0xffffffff;
           uVar17 = 7;
@@ -347,6 +358,7 @@ switchD_00590d73_default:
           psVar7 = (short *)st::fn_00713480
                                       (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
                                        ,uVar12,iVar13,iVar14,iVar15);
+          /* ST_CALLSITE[00591174]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[3].field_00B9,psVar7,uVar17,uVar21);
           uVar21 = 0xffffffff;
           uVar17 = 7;
@@ -363,13 +375,16 @@ switchD_00590d73_default:
           psVar7 = (short *)st::fn_00713480
                                       (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
                                        ,uVar12,iVar13,iVar14,iVar15);
+          /* ST_CALLSITE[005911C5]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[4].field_00B9,psVar7,uVar17,uVar21);
+          /* ST_CALLSITE[005911CA]: CALL 0x00401a5f; direct=00401A5F CampaignTy::PaintCampaign */
           st::fn_00401A5F(this_02);
           iVar9 = 0;
           if (this_02->field_009A != '\0') {
             local_c = 0;
             piVar10 = st::pointer_boundary_cast<int *>(&this_02->field_00BB[0].field_0028.field_0040);
             do {
+              /* ST_CALLSITE[005911E4]: CALL dword ptr [0x0085bedc] */
               DVar8 = st::external_000000DA();
               piVar10[1] = DVar8;
               *piVar10 = local_c;
@@ -408,7 +423,9 @@ switchD_00590d73_default:
               puVar5 = puVar5 + 1;
             }
             *(undefined2 *)puVar5 = 0xffff;
+            /* ST_CALLSITE[005912EE]: CALL 0x00401717; direct=00401717 MMsgTy::SetPanel */
             st::fn_00401717(*(MMsgTy **)(iVar9 + 0x2e6),0,(int)&local_26c,0,0);
+            /* ST_CALLSITE[00591303]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             st::fn_00404B51(*(MMsgTy **)(this_02->field_00BB[0xc].field_01DC + 0x2e6),
                                (int)local_70);
@@ -470,6 +487,7 @@ void __thiscall st::fn_005916F0(CampaignTy *this)
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (iVar3 == 0) {
+    /* ST_CALLSITE[0059172A]: CALL 0x0040458e; direct=0040458E MMObjTy::DoneMMObj */
     st::fn_0040458E((MMObjTy *)local_8);
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
@@ -479,6 +497,7 @@ void __thiscall st::fn_005916F0(CampaignTy *this)
         st::fn_006B3AF0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
+    /* ST_CALLSITE[0059176D]: CALL 0x00401d43; direct=00401D43 DarkScreen */
     st::fn_00401D43(g_dDXContext_0080759C,10,2);
     st::fn_0040329C(&g_sound,1);
     if (g_startSystem_0081176C->field_002C != nullptr) {
@@ -487,6 +506,7 @@ void __thiscall st::fn_005916F0(CampaignTy *this)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00 = *(MMsgTy **)(pCVar2->field_00BB[0xc].field_01DC + 0x2e6);
     if (this_00 != nullptr) {
+      /* ST_CALLSITE[005917AA]: CALL 0x0040462e; direct=0040462E MMsgTy::HideSprites */
       st::fn_0040462E(this_00);
       *(undefined4 *)(*(int *)(pCVar2->field_00BB[0xc].field_01DC + 0x2e6) + 0x1cab) = 0;
     }
@@ -500,7 +520,7 @@ void __thiscall st::fn_005916F0(CampaignTy *this)
           *puVar5 = 0;
         }
         if (puVar5[-0x2d] != 0) {
-          st::fn_006F20E0(g_cMf32_00806780,st::pointer_boundary_cast<uint *>(puVar5 + -0x2d));
+          st::fn_006F20E0(g_cMf32_00806780,puVar5 + -0x2d);
         }
         pCVar2 = local_8;
         puVar5 = puVar5 + 1;
@@ -583,6 +603,7 @@ void __thiscall st::fn_00591940(CampaignTy *this)
     return;
   }
   st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+  /* ST_CALLSITE[0059199D]: CALL 0x00403738; direct=00403738 PutDDX */
   st::fn_00403738(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
   pCVar2 = local_8;
   pcVar11 = g_startSystem_0081176C->field_0030;
@@ -591,6 +612,7 @@ void __thiscall st::fn_00591940(CampaignTy *this)
   resourceString =
        st::fn_006B0140((-(uint)(local_8->field_1FFC != 0) & 0xfffffca8) + 0x26b1,
                           g_hINSTANCE_00807618);
+  /* ST_CALLSITE[005919EB]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
   st::fn_00404C2D
             (this_00,0,0xe9,0x14,0x14c,0x18,resourceString,uVar8,uVar9,pcVar11,errorCode);
   if (g_startSystem_0081176C->field_0028 == 0) {
@@ -598,6 +620,7 @@ void __thiscall st::fn_00591940(CampaignTy *this)
     bVar10 = 0;
     text = st::fn_006F2C00(st::mutable_c_string("CMPG_BKG"),1,(uint)DAT_0080874e);
     pBVar3 = (BITMAPINFO *)st::fn_0070A9F0(g_cMf32_00806780,text,bVar10,iVar4);
+    /* ST_CALLSITE[00591AFD]: CALL 0x00403738; direct=00403738 PutDDX */
     st::fn_00403738(0xa5,0x37,'\x01',pBVar3);
   }
   else {
@@ -626,7 +649,7 @@ void __thiscall st::fn_00591940(CampaignTy *this)
     } while (iVar4 != 0);
     iVar4 = 0;
     if (pCVar2->field_009A != '\0') {
-      puVar6 = st::pointer_boundary_cast<uint *>(&pCVar2->field_00BB[0].field_0028.field_001C);
+      puVar6 = &pCVar2->field_00BB[0].field_0028.field_001C;
       do {
         if (puVar6[-6] != 0xffffffff) {
           st::fn_006B3730
@@ -699,6 +722,7 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
 
   local_8 = 1;
   local_c = this;
+  /* ST_CALLSITE[00591C08]: CALL dword ptr [0x0085bedc] */
   DVar6 = st::external_000000DA();
   this->field_0061 = DVar6;
   local_c4.previous = g_currentExceptionFrame;
@@ -715,13 +739,15 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
     st::fn_006A5E40(iVar6,0,st::mutable_c_string("E:\\__titans\\Start\\camp_obj.cpp"),0x117);
     return;
   }
+  /* ST_CALLSITE[00591C48]: CALL 0x0040261c; direct=0040261C CampaignTy::LightPalette */
   st::fn_0040261C(local_c);
+  /* ST_CALLSITE[00591C4F]: CALL 0x00404f4d; direct=00404F4D CampaignTy::AnimationCampaign */
   st::fn_00404F4D(this_00);
   cVar1 = this_00->field_0065;
   if (cVar1 == '\x01') {
     iVar14 = 0;
     if (this_00->field_009A != '\0') {
-      puVar13 = st::pointer_boundary_cast<uint *>(&this_00->field_00BB[0].field_014A.field_001C);
+      puVar13 = &this_00->field_00BB[0].field_014A.field_001C;
       do {
         if (((*(int *)((int)puVar13 + -0x165) != 0) && (*(char *)((int)puVar13 + -0x13f) != '\0'))
            && (puVar13[9] <= this_00->field_0061 - puVar13[10])) {
@@ -752,7 +778,7 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
             iVar14 = 0;
             local_8 = 0;
             if (uVar7 != 0) {
-              pDVar8 = st::pointer_boundary_cast<DWORD *>(&this_00->field_00BB[0].field_014A.field_0044);
+              pDVar8 = &this_00->field_00BB[0].field_014A.field_0044;
               do {
                 if (*(char *)((int)pDVar8 + -0x167) != '\0') {
                   *pDVar8 = this_00->field_0061;
@@ -859,6 +885,7 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
       local_68 = 0x68ff;
       local_48 = 0x697f;
       local_50 = local_70;
+      /* ST_CALLSITE[0059208E]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this_00->field_000C + 8))(5,this_00->field_0066,0,local_80,0);
       iVar14 = this_00->field_00BB[0xc].field_01DC;
@@ -867,6 +894,7 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
         local_1c = 1;
         local_1e = 1;
         STPiece<2,2>(local_28) = 1;
+        /* ST_CALLSITE[005920C5]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
         st::fn_00404B51(*(MMsgTy **)(iVar14 + 0x2e6),(int)&local_28);
       }
       this_00->field_0065 = 1;
@@ -877,7 +905,7 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
   else if (cVar1 == '\x04') {
     iVar14 = 0;
     if (this_00->field_009A != '\0') {
-      puVar13 = st::pointer_boundary_cast<uint *>(&this_00->field_00BB[0].field_00B9.field_0004);
+      puVar13 = &this_00->field_00BB[0].field_00B9.field_0004;
       do {
         if (this_00->field_0061 - *(int *)((int)puVar13 + -0x51) < *(uint *)((int)puVar13 + -0x55))
         {
@@ -918,7 +946,7 @@ LAB_00591d08:
     if (local_8 != 0) {
       this_00->field_0065 = 2;
       if (this_00->field_009A != '\0') {
-        puVar13 = st::pointer_boundary_cast<uint *>(&this_00->field_00BB[0].field_0028.field_0004);
+        puVar13 = &this_00->field_00BB[0].field_0028.field_0004;
         do {
           if (*puVar13 != 0xffffffff) {
             st::fn_006B3AF0((int *)puVar13[0x11],*puVar13);
@@ -963,7 +991,7 @@ void __thiscall st::fn_00592340(CampaignTy *this)
   pCVar3 = local_8;
   if (iVar4 == 0) {
     if (local_8->field_1BEC != 0) {
-      puVar1 = st::pointer_boundary_cast<undefined1 *>(&local_8->field_0x1bf8);
+      puVar1 = &local_8->field_0x1bf8;
       iVar4 = st::fn_00718F40
                         (g_dDXContext_0080759C,(undefined4 *)puVar1,0,0x100,10,&local_8->field_1BF4,
                          2,local_8->field_0061,&local_8->field_1BF0);
@@ -1010,12 +1038,14 @@ void __thiscall st::fn_00592470(CampaignTy *this)
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
+    /* ST_CALLSITE[005924A6]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
     st::fn_00403459((MMObjTy *)local_8);
     iVar2 = 0;
     if (this_00->field_009A != '\0') {
       iVar5 = 0x96;
       piVar4 = st::pointer_boundary_cast<int *>(&this_00->field_00BB[0].field_0028.field_0040);
       do {
+        /* ST_CALLSITE[005924C2]: CALL dword ptr [0x0085bedc] */
         DVar3 = st::external_000000DA();
         piVar4[1] = DVar3;
         *piVar4 = iVar5;
@@ -1372,9 +1402,10 @@ LAB_00592b82:
         pBVar3 = st::fn_0070B3A0(pAVar1,(int)(short)pAVar1->field_0029);
         st::fn_006B5F80((int *)g_ddxContext_008075A8,*piVar9,piVar9[1],(int)*(short *)(pAVar1 + 1),
                      (int)*(short *)&pAVar1[1].field_0x2);
+        /* ST_CALLSITE[00592C0A]: CALL 0x00403738; direct=00403738 PutDDX */
         st::fn_00403738(*piVar9,piVar9[1],'\x01',pBVar3);
         if ((char)piVar9[5] != '\0') {
-          *(undefined1 *)(piVar9 + 5) = 0;
+          ((undefined1 *)piVar9)[5] = 0;
         }
         piVar9[4] = local_8->field_0061;
         switch(STField<undefined2>(piVar9,0x15)) {
@@ -1382,21 +1413,21 @@ LAB_00592b82:
           pAVar1->field_0029 = pAVar1->field_0029 + 1;
           if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
             pAVar1->field_0029 = 0;
-            *(undefined1 *)(piVar9 + 5) = 1;
+            ((undefined1 *)piVar9)[5] = 1;
           }
           break;
         case 1:
           pAVar1->field_0029 = pAVar1->field_0029 + -1;
           if ((short)pAVar1->field_0029 < 0) {
             pAVar1->field_0029 = pAVar1->field_0023 + -1;
-            *(undefined1 *)(piVar9 + 5) = 1;
+            ((undefined1 *)piVar9)[5] = 1;
           }
           break;
         case 2:
           pAVar1->field_0029 = pAVar1->field_0029 + 1;
           if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
             pAVar1->field_0029 = pAVar1->field_0023 + -1;
-            *(undefined1 *)(piVar9 + 5) = 1;
+            ((undefined1 *)piVar9)[5] = 1;
             STField<undefined2>(piVar9,0x15) = 3;
           }
           break;
@@ -1404,7 +1435,7 @@ LAB_00592b82:
           pAVar1->field_0029 = pAVar1->field_0029 + -1;
           if ((short)pAVar1->field_0029 < 0) {
             pAVar1->field_0029 = 0;
-            *(undefined1 *)(piVar9 + 5) = 1;
+            ((undefined1 *)piVar9)[5] = 1;
             STField<undefined2>(piVar9,0x15) = 2;
           }
         }
@@ -1477,20 +1508,25 @@ int __thiscall st::fn_00593040(CampaignTy *this,STMessage *message)
   SVar2 = message->id;
   if (SVar2 < MESS_FSGSTY_6941) {
     if (SVar2 == MESS_SHARED_6940) {
+      /* ST_CALLSITE[0059318D]: CALL 0x004059c0; direct=004059C0 CampaignTy::sub_00592620 */
       st::fn_004059C0(this_00);
     }
     else if (SVar2 < 6) {
       if (SVar2 == MESS_SHARED_0005) {
+        /* ST_CALLSITE[005930E9]: CALL 0x00401a5f; direct=00401A5F CampaignTy::PaintCampaign */
         st::fn_00401A5F(this_00);
       }
       else if (SVar2 == MESS_ID_NONE) {
+        /* ST_CALLSITE[005930DD]: CALL 0x00404539; direct=00404539 CampaignTy::NoneCampaign */
         st::fn_00404539(this_00);
       }
       else if (SVar2 == MESS_ID_CREATE) {
+        /* ST_CALLSITE[005930D1]: CALL 0x004013d9; direct=004013D9 CampaignTy::InitCampaign */
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         st::fn_004013D9(this_00,*(undefined4 *)((message->arg0).u32 + 0x14));
       }
       else if (SVar2 == MESS_SHARED_0003) {
+        /* ST_CALLSITE[005930BE]: CALL 0x0040452a; direct=0040452A CampaignTy::DoneCampaign */
         st::fn_0040452A(this_00);
       }
     }
@@ -1502,11 +1538,13 @@ int __thiscall st::fn_00593040(CampaignTy *this,STMessage *message)
         bVar16 = 0;
         text = st::fn_006F2C00(st::mutable_c_string("CMPG_BKG"),1,(uint)DAT_0080874e);
         pBVar7 = (BITMAPINFO *)st::fn_0070A9F0(g_cMf32_00806780,text,bVar16,iVar17);
+        /* ST_CALLSITE[00593171]: CALL 0x00403738; direct=00403738 PutDDX */
         st::fn_00403738(0xa5,0x37,'\x01',pBVar7);
       }
       st::fn_00404BF1(this_00,4,'\x01',-1);
     }
     else if (SVar2 == MESS_PRIVIDERTY_693F) {
+      /* ST_CALLSITE[00593105]: CALL 0x00404ce1; direct=00404CE1 CampaignTy::sub_005925A0 */
       st::fn_00404CE1(this_00);
     }
     goto switchD_005931ad_caseD_6944;
@@ -1521,14 +1559,17 @@ int __thiscall st::fn_00593040(CampaignTy *this,STMessage *message)
     break;
   case MESS_WAITTY_6943:
     st::fn_004036C0(this_00,0x6942,(message->arg0).u32,0);
+    /* ST_CALLSITE[00593530]: CALL dword ptr [EDX + 0x8] */
     this_00->CloseButtons();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pMVar4 = *(MMsgTy **)(this_00->field_00BB[0xc].field_01DC + 0x2e6);
     if (pMVar4 != nullptr) {
+      /* ST_CALLSITE[0059354C]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       st::fn_00401FA5(pMVar4,1,0,1);
     }
     break;
   case MESS_SHARED_6940|MESS_SHARED_0008:
+    /* ST_CALLSITE[00593591]: CALL dword ptr [0x0085bde8] */
     st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_0080f22a),st::mutable_c_string("%sMISS%d00.AVI"),&CHAR_00h_00807784,(uint)DAT_0080874e);
     this_00->field_0049 = 1;
     this_00->field_004D = 0x7101;
@@ -1541,6 +1582,7 @@ int __thiscall st::fn_00593040(CampaignTy *this,STMessage *message)
     if ((((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) && (DAT_0080874e == 3)) &&
        (pMVar4 = *(MMsgTy **)(this_00->field_00BB[0xc].field_01DC + 0x2e6), pMVar4 != nullptr)
        ) {
+      /* ST_CALLSITE[0059340E]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
       st::fn_00403FA8(pMVar4,0x2530,'\0',nullptr,nullptr,nullptr,0,
                          0);
     }
@@ -1549,12 +1591,14 @@ int __thiscall st::fn_00593040(CampaignTy *this,STMessage *message)
       if (this_00->field_1FFC == 0) {
         pcVar9_mg0 = st::pointer_boundary_cast<char *>(PTR_DAT_0079bfec);
       }
+      /* ST_CALLSITE[0059344C]: CALL ESI */
       st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_0080ed16),st::mutable_c_string("%s%s%s%d01"),&CHAR_00h_00807680,st_global_0079BFE8
                 ,pcVar9_mg0,(uint)DAT_0080874e);
       pcVar9_mg1 = PTR_s_TUTOR_0079bff0;
       if (this_00->field_1FFC == 0) {
         pcVar9_mg1 = st::pointer_boundary_cast<char *>(PTR_DAT_0079bfec);
       }
+      /* ST_CALLSITE[00593480]: CALL ESI */
       st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_0080ef1e),st::mutable_c_string("%s%s%d01"),st_global_0079BFE8,pcVar9_mg1,
                 (uint)DAT_0080874e);
       uVar11 = 0xffffffff;
@@ -1572,14 +1616,17 @@ int __thiscall st::fn_00593040(CampaignTy *this,STMessage *message)
       pcVar14 = (char *)&DAT_0080ee1a;
       memmove(pcVar14, pcVar13, uVar11); /* compiler REP MOVS byte copy */
       STPiece<0,1>(DAT_008087a0) = 8;
+      /* ST_CALLSITE[005934B8]: CALL 0x00404b4c; direct=00404B4C STAppC::sub_0056E9E0 */
       iVar17 = st::fn_00404B4C((STAppC *)&DAT_00807620,1);
       if (iVar17 != 0) {
         memset(&DAT_0080c522, 0, 0x27f0); /* compiler bulk-zero initialization */
         st::fn_004036C0(this_00,(-(uint)(this_00->field_1FFC != 0) & 8) + 0x6948,0,0);
+        /* ST_CALLSITE[005934F4]: CALL dword ptr [EDX + 0x8] */
         this_00->CloseButtons();
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pMVar4 = *(MMsgTy **)(this_00->field_00BB[0xc].field_01DC + 0x2e6);
         if (pMVar4 != nullptr) {
+          /* ST_CALLSITE[00593511]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
           st::fn_00401FA5(pMVar4,1,0,1);
         }
       }
@@ -1700,6 +1747,7 @@ LAB_00593378:
   }
 switchD_005931ad_caseD_6944:
   g_currentExceptionFrame = local_54.previous;
+  /* ST_CALLSITE[005933C8]: CALL 0x00401280; direct=00401280 MMObjTy::GetMessage */
   iVar7 = st::fn_00401280((MMObjTy *)this_00,message);
   return iVar7;
 }

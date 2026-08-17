@@ -45,12 +45,14 @@ LAB_0051490d:
             if (STField<char>(piVar3,0x12) != '\0') {
               return;
             }
+            /* ST_CALLSITE[00514956]: CALL 0x00405362; direct=00405362 HelpPanelTy::ChangeTree */
             ChangeTree(this,piVar3,uVar4);
             return;
           }
           uVar4 = uVar4 + 1;
         } while (uVar4 < uVar2);
       }
+      /* ST_CALLSITE[0051492B]: CALL 0x00401a37; direct=00401A37 HelpPanelTy::sub_005148A0 */
       sub_005148A0(this,iVar6);
       iVar6 = param_1;
     }

@@ -19,6 +19,7 @@ undefined4 __fastcall FUN_004e9c20(AnonShape_004E9C20_50FC91C6 *param_1)
       }
     }
     if (param_1->field_0494 != 0) {
+      /* ST_CALLSITE[004E9C8D]: CALL 0x00401dd4; direct=00401DD4 TLOFakeTy::sub_004D0A80 */
       TLOFakeTy::sub_004D0A80
                 (g_tLOFake_00800BCC,param_1->field_0480,param_1->field_0484,param_1->field_0488);
       param_1->field_0494 = 0;

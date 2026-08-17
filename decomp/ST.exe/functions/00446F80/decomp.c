@@ -219,8 +219,10 @@ LAB_0044738a:
             DArrayGetElement(local_48,local_8,&local_c);
             DArrayGetElement(local_c,0,&local_34);
             DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
+            /* ST_CALLSITE[004475EB]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
             if ((STGameObjC *)local_28 != nullptr) {
+              /* ST_CALLSITE[00447609]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
               STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
               DArrayGetElement(local_40,local_8,&local_c);
               pDVar3_mg5 = (DArrayTy *)
@@ -235,9 +237,12 @@ LAB_0044738a:
                 if (0 < (int)pDVar3) {
                   do {
                     DArrayGetElement(pDVar3_mg5,uVar4,&local_28);
+                    /* ST_CALLSITE[00447670]: CALL dword ptr [EDX + 0xf8] */
                     iVar2 = local_28->vfunc_F8();
                     if (((iVar2 == 0) ||
+                        /* ST_CALLSITE[0044767F]: CALL dword ptr [EAX + 0xf0] */
                         (iVar2 = local_28->vfunc_F0(), iVar2 == 0)) ||
+                       /* ST_CALLSITE[00447695]: CALL dword ptr [EDX + 0xf4] */
                        (iVar2 = (*local_28->vtable->vfunc_F4)(local_a0), iVar2 == 0)) {
                       DArrayRemoveAt(pDVar3_mg5,uVar4);
                       uVar4 = uVar4 - 1;
@@ -268,6 +273,7 @@ LAB_0044738a:
                           local_44 = 1;
                           Library::DKW::TBL::DArrayPut(pDVar3_mg5,uVar4,&local_44);
                           DArrayGetElement(local_30,uVar4,&local_28);
+                          /* ST_CALLSITE[0044791D]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                           STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
                           local_9c = (uint)local_e;
                           local_98 = (int)local_10;
@@ -291,6 +297,7 @@ LAB_0044738a:
                         DArrayGetElement(pDVar3_mg5,uVar4,&local_44);
                         if (local_44 != 1) {
                           DArrayGetElement(local_30,uVar4,&local_28);
+                          /* ST_CALLSITE[0044776A]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                           STFishC::sub_004162B0(local_28,&local_38,&local_36,&local_66);
                           uVar8 = (int)local_38 - (int)local_e >> 0x1f;
                           if (((int)(((int)local_38 - (int)local_e ^ uVar8) - uVar8) < 3) &&
@@ -330,9 +337,12 @@ LAB_0044738a:
               DArrayGetElement(local_48,local_8,&local_80);
               DArrayGetElement(local_80,0,&local_34);
               DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
+              /* ST_CALLSITE[004478A6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
               if ((STGameObjC *)local_28 != nullptr) {
+                /* ST_CALLSITE[004478C4]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
+                /* ST_CALLSITE[004478E3]: CALL 0x00401c53; direct=00401C53 STAllPlayersC::PutOnPlaceGuardBoats */
                 PutOnPlaceGuardBoats
                           (local_6c,_param_1,(int)local_e,(int)local_10,local_16,(int)local_e,
                            (int)local_10,(int)local_16,local_84);
@@ -351,8 +361,10 @@ LAB_0044738a:
               DArrayGetElement(local_48,local_8,&local_80);
               DArrayGetElement(local_80,0,&local_34);
               DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
+              /* ST_CALLSITE[004479E6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
               if ((STGameObjC *)local_28 != nullptr) {
+                /* ST_CALLSITE[00447A04]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
                 uVar8 = 0;
                 local_14 = nullptr;
@@ -382,6 +394,7 @@ LAB_0044738a:
                         }
                         uVar8 = uVar8 + local_2c;
                         if ((local_88 != nullptr) && (local_88->count != 0)) {
+                          /* ST_CALLSITE[00447B1A]: CALL 0x00401c53; direct=00401C53 STAllPlayersC::PutOnPlaceGuardBoats */
                           PutOnPlaceGuardBoats
                                     (local_6c,_param_1,(int)local_e,(int)local_10,local_16,local_9c,
                                      local_98,local_94,local_88);
@@ -550,16 +563,20 @@ LAB_004471ad:
   pDVar3 = local_30;
 LAB_004471bd:
   if (local_1c == nullptr) goto LAB_0044738a;
+  /* ST_CALLSITE[004471D5]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
   if ((STGameObjC *)local_28 != nullptr) {
+    /* ST_CALLSITE[004471F3]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
     local_8 = local_8 + 1;
     if ((int)local_8 < (int)pDVar3) {
       do {
         DArrayGetElement(pDVar7,local_8,&local_54);
         if ((((local_4e != 1) &&
+             /* ST_CALLSITE[00447229]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
              (local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1),
              (STGameObjC *)local_28 != nullptr)) &&
+            /* ST_CALLSITE[00447247]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             (STFishC::sub_004162B0(local_28,&local_38,&local_36,&local_66),
             uVar4 = (int)local_38 - (int)local_e >> 0x1f,
             (int)(((int)local_38 - (int)local_e ^ uVar4) - uVar4) < 3)) &&

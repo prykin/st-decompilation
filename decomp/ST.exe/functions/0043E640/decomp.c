@@ -27,13 +27,16 @@ short FUN_0043e640(char param_1,Global_sub_0043E640_param_2Enum param_2,int para
     do {
       sVar4 = sVar3;
       piVar2 = *(int **)(*(int *)(iVar1 + 0x1c) + iVar7 * 4);
+      /* ST_CALLSITE[0043E685]: CALL dword ptr [EAX + 0x2c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((piVar2 != nullptr) && (GVar5 = (**(code **)(*piVar2 + 0x2c))(), GVar5 == param_2)) &&
+         /* ST_CALLSITE[0043E691]: CALL dword ptr [EDX + 0xf8] */
          (iVar6 = (**(code **)(*piVar2 + 0xf8))(), iVar6 != 0)) {
         if (param_3 == 0) {
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0043e6d3:
           if ((param_4 == -1) ||
+             /* ST_CALLSITE[0043E6E1]: CALL dword ptr [EAX + 0x6c] */
              (iVar6 = (**(code **)(**(int **)(*(int *)(iVar1 + 0x1c) + iVar7 * 4) + 0x6c))(),
              iVar6 == param_4)) {
             sVar4 = sVar4 + 1;
@@ -46,6 +49,7 @@ LAB_0043e6d3:
           case CASE_39:
           case CASE_4F:
           case CASE_5E:
+            /* ST_CALLSITE[0043E6C9]: CALL dword ptr [EAX + 0x88] */
             if ((param_3 == 1) && (iVar6 = (**(code **)(*piVar2 + 0x88))(local_c), 0 < iVar6))
             goto LAB_0043e6d3;
           }

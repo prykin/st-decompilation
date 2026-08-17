@@ -22,8 +22,10 @@ void __thiscall OptPanelTy::UpdateObjectives(OptPanelTy *this)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
+    /* ST_CALLSITE[00538112]: CALL 0x0040443a; direct=0040443A OptPanelTy::PrepMissObj */
     PrepMissObj(local_8);
     if (g_helpPanel_00801690 != nullptr) {
+      /* ST_CALLSITE[00538123]: CALL 0x00402d38; direct=00402D38 HelpPanelTy::sub_00515180 */
       HelpPanelTy::sub_00515180(g_helpPanel_00801690,'\a');
     }
     g_currentExceptionFrame = local_4c.previous;

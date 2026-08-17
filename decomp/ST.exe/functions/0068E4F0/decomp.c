@@ -40,9 +40,10 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
       else {
         iVar2 = 0;
       }
-      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       if ((*(AiFltClassTy **)(iVar2 + 4) != nullptr) &&
          (array_00 = (DArrayTy *)
+                     /* ST_CALLSITE[0068E543]: CALL 0x004059b6; direct=004059B6 AiFltClassTy::sub_0065E360 */
+                     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                      AiFltClassTy::sub_0065E360(*(AiFltClassTy **)(iVar2 + 4),iVar4,param_1),
          iVar4 = extraout_EDX_00, array_00 != nullptr)) {
         dVar1 = array_00->count;

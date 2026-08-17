@@ -9,6 +9,7 @@ uint FUN_006c6f10(AnonShape_006C6F10_68E82598 *param_1,undefined *param_2,undefi
 
   while( true ) {
     if ((0 < (int)param_1->field_006A) && (0 < (int)param_1->field_006E)) {
+      /* ST_CALLSITE[006C6F2E]: CALL EDI */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)param_3)(param_1);
     }
@@ -28,6 +29,7 @@ uint FUN_006c6f10(AnonShape_006C6F10_68E82598 *param_1,undefined *param_2,undefi
       param_1->field_0066 = param_1->field_001E;
       param_1->field_006A = param_1->field_0022;
       param_1->field_006E = param_1->field_0026;
+      /* ST_CALLSITE[006C6F7A]: CALL EBX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)param_2)(param_1);
     }

@@ -118,6 +118,7 @@ LAB_0057b6ff:
         }
         local_38 = param_1;
         local_3a = *(undefined2 *)(local_8 + 6 + uVar5 * 8);
+        /* ST_CALLSITE[0057B8C0]: CALL dword ptr [EDX + 0x8] */
         g_playSystem_00802A38->vfunc_08(0x106,0,0,(short)local_60,0);
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < (int)(uVar2 + 1));

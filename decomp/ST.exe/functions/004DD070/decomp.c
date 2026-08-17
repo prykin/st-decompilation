@@ -29,12 +29,14 @@ undefined4 __fastcall FUN_004dd070(AnonShape_004DD070_62E18556 *param_1)
     param_1->field_04E0 = iVar1 + param_1->field_0041;
     iVar3 = param_1->field_0045 + iVar3;
     param_1->field_04E8 = iVar3;
+    /* ST_CALLSITE[004DD1A7]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     STT3DSprC::sub_004AD3C0
               (param_1->field_05FF,(float)param_1->field_04E0 * _DAT_007904f8 * _DAT_007904f0,
                (float)iVar4 * _DAT_007904f8 * _DAT_007904f0,
                (float)iVar3 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if ((*(int *)(&DAT_00798f80 + param_1->field_04D0 * 4) + -1 <= param_1->field_04D4) &&
        (param_1->field_04D0 == 1)) {
+      /* ST_CALLSITE[004DD1CE]: CALL 0x00403efe; direct=00403EFE TLOBaseTy::sub_004C4550 */
       TLOBaseTy::sub_004C4550((TLOBaseTy *)param_1,nullptr);
     }
   }

@@ -31,6 +31,7 @@ byte __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param
     switch(this->field_02AD) {
     case CASE_0:
     case CASE_2:
+      /* ST_CALLSITE[006226FB]: CALL 0x00402865; direct=00402865 STMineSetC::sub_0041D6C0 */
       iVar4 = sub_0041D6C0(this,uVar3);
       if (iVar4 == 0) {
         return 0;
@@ -54,6 +55,7 @@ byte __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param
        (g_visibleClass_00802A88 != nullptr)) &&
       ((iVar4 = (int)this->field_004B, DAT_0080874d != 0xff &&
        ((((((g_visibleClass_00802A88->field_00F8 != 0 &&
+            /* ST_CALLSITE[006227AA]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             (VisibleClassTy::sub_00558C00
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                         (int)this->field_0047,(int)this->field_0049,&param_2,(int *)&local_8),

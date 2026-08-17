@@ -11,6 +11,7 @@ void __fastcall FUN_0055c180(CFsgsConnection *param_1)
   char *pcVar4;
 
   *(undefined4 *)(param_1 + 0x6b8) = 0;
+  /* ST_CALLSITE[0055C1CC]: CALL dword ptr [0x0085c034] */
   CFsgsConnection::Initialize
             (param_1,(-(uint)((DAT_00807dd1 & 0xffff0000) != 0xd0dd0000) & 0x10) + 0x45535344,
              DAT_00807dd5 & 0xffff0000 | DAT_00807dd1 >> 0x10,&DAT_00807da1,(_GUID *)&DAT_007cd6f0,9
@@ -24,13 +25,17 @@ void __fastcall FUN_0055c180(CFsgsConnection *param_1)
     pcVar4 = pcVar4 + 1;
   } while (cVar1 != '\0');
   if (iVar3 == -2) {
+    /* ST_CALLSITE[0055C20E]: CALL dword ptr [0x0085c010] */
     CFsgsConnection::GetFastestServer(param_1);
+    /* ST_CALLSITE[0055C220]: CALL dword ptr [EAX + 0x3c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)param_1 + 0x3c))(1,100,0,0);
     return;
   }
+  /* ST_CALLSITE[0055C1EA]: CALL dword ptr [0x0085c038] */
   uVar2 = CFsgsConnection::InitConnection(param_1,&CHAR_00h_00808406);
   if (uVar2 == 0) {
+    /* ST_CALLSITE[0055C1F4]: CALL dword ptr [0x0085bbcc] */
     lastError = GetLastError();
     thunk_FUN_0055beb0(param_1,lastError);
     return;

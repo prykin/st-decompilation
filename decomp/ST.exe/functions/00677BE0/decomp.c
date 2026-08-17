@@ -66,14 +66,17 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
     }
     this = (STFishC *)*puVar3;
     if (((this != nullptr) &&
+        /* ST_CALLSITE[00677C6F]: CALL dword ptr [EDX + 0x12c]; [STIndirectCallsiteApplier] exact slot 0x12C; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STFishC */
         (local_10 = uVar9, local_1c = (*this->vtable[1].vfunc_08)(this), pDVar8 = g_array_007FA160,
         (short)local_1c == param_1)) &&
        ((param_2 == 0 ||
+        /* ST_CALLSITE[00677C8F]: CALL dword ptr [EAX + 0x130]; [STIndirectCallsiteApplier] exact slot 0x130; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STFishC */
         (iVar4 = (*this->vtable[1].vfunc_0C)(this), pDVar8 = g_array_007FA160, iVar4 == param_2))))
     {
       iVar4 = 1;
       local_14 = 1;
       if ((param_3 != nullptr) && (*param_3 != 0)) {
+        /* ST_CALLSITE[00677CBC]: CALL dword ptr [EDX + 0x74] */
         (*this->vtable->vfunc_74)((short)local_2c);
         pbVar10 = local_2c;
         pbVar5 = param_3;
@@ -103,6 +106,7 @@ LAB_00677cee:
       uVar9 = local_10;
       if (iVar4 != 0) {
         if ((((0 < param_7) && (0 < param_8)) && (0 < param_9)) &&
+           /* ST_CALLSITE[00677D24]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
            ((((STFishC::sub_004162F0(this,&local_6,&local_8,&local_a), local_6 < param_4 ||
               (local_8 < param_5)) ||
              ((local_a < param_6 ||
@@ -115,6 +119,7 @@ LAB_00677cee:
         uVar9 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((iVar4 != 0) && (param_10 != nullptr)) &&
+           /* ST_CALLSITE[00677D9A]: CALL EAX */
            (iVar4 = (*(code *)param_10)(local_1c,local_10,this,param_11), pDVar8 = g_array_007FA160,
            uVar9 = local_10, iVar4 != 0)) {
           g_currentExceptionFrame = local_70.previous;

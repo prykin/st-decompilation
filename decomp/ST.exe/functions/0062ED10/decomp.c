@@ -15,6 +15,7 @@
 STRubbishC * __thiscall STRubbishC::STRubbishC(STRubbishC *this)
 
 {
+  /* ST_CALLSITE[0062ED13]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
   STGameObjC::STGameObjC((STGameObjC *)this);
   this->field_01D5 = -1;
   this->field_01D9 = -1;

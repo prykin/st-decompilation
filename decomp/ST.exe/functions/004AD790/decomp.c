@@ -48,6 +48,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   if (0 < local_18->field_0014) {
     local_c = nullptr;
     do {
+      /* ST_CALLSITE[004AD7E4]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar4 = sub_004ACD30(this_00,(char)iVar10);
       uVar9 = *param_1 + iVar4 * 4;
       *param_1 = uVar9;
@@ -99,6 +100,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
     pcVar12 = pcVar11;
     local_c = pcVar11;
     do {
+      /* ST_CALLSITE[004AD8B3]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       uVar5 = sub_004ACD30(this_00,(char)local_8);
       *(undefined4 *)pcVar12 = uVar5;
       pcVar11 = pcVar12 + 0x24;
@@ -170,6 +172,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
     local_10 = 0;
     do {
       pcVar11 = local_c;
+      /* ST_CALLSITE[004ADA3C]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       uVar9 = sub_004ACD30(this_00,(char)local_8);
       pcVar12 = *(char **)(&this_00->field_0020->field_0x4 + local_10);
       for (uVar7 = uVar9 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {

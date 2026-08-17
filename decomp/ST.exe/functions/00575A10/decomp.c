@@ -20,6 +20,7 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
   local_14 = ExceptionList;
   local_1c = &stack0xffffff8c;
   ExceptionList = &local_14;
+  /* ST_CALLSITE[00575A3B]: CALL dword ptr [0x0085bc4c] */
   g_hINSTANCE_00807618 = GetModuleHandleA("st_string.dll");
   if (g_hINSTANCE_00807618 == (HMODULE)0x0) {
     ExceptionList = local_14;
@@ -36,6 +37,7 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
                     (local_60.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0);
   if (iVar1 == 0) {
     local_1c = &stack0xffffff8c;
+    /* ST_CALLSITE[00575AD0]: CALL 0x004045f2; direct=004045F2 STAppC::InitApp */
     iVar2 = STAppC::InitApp((STAppC *)&DAT_00807620,param_1,param_2,param_3,param_4);
     if (iVar2 != 1) {
       ExceptionList = local_14;
@@ -50,6 +52,7 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
     if ((iVar1 != -0x5001fff6) &&
        ((iVar1 < -0x5001fff4 || (local_1c = &stack0xffffff8c, -0x5001fff3 < iVar1)))) {
       local_1c = &stack0xffffff8c;
+      /* ST_CALLSITE[00575B35]: CALL dword ptr [0x0085bdec] */
       MessageBoxA(g_hWnd_00806748,"Internal error","Internal error",0);
     }
   }
@@ -59,12 +62,15 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
       ExceptionList = local_14;
       return 0;
     }
+    /* ST_CALLSITE[00575BCD]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"%ssteditor.exe",&CHAR_00h_00807680);
   }
   else {
+    /* ST_CALLSITE[00575BAA]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079b114,
               &DAT_0080f126);
   }
+  /* ST_CALLSITE[00575BDD]: CALL dword ptr [0x0085bbc4] */
   WinExec((LPCSTR)&DAT_0080f33a,1);
   ExceptionList = local_14;
   return 0;

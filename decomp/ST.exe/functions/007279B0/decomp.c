@@ -28,17 +28,17 @@ void __thiscall FUN_007279b0(void *this,int param_1,int param_2,int param_3)
   local_14 = ExceptionList;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1 + 0x28) + param_2 * 0x1c;
-  piVar3 = (int *)((uint)*(byte *)(iVar2 + 1) * 0x10 + param_3);
+  piVar3 = (int *)((uint)((byte *)iVar2)[1] * 0x10 + param_3);
   DAT_008570a8 = *piVar3;
   DAT_008570ac = piVar3[1];
   DAT_008570b0 = piVar3[2];
   _DAT_008570b4 = piVar3[3];
-  piVar3 = (int *)((uint)*(byte *)(iVar2 + 2) * 0x10 + param_3);
+  piVar3 = (int *)((uint)((byte *)iVar2)[2] * 0x10 + param_3);
   DAT_008570b8 = *piVar3;
   DAT_008570bc = piVar3[1];
   DAT_008570c0 = piVar3[2];
   _DAT_008570c4 = piVar3[3];
-  piVar3 = (int *)((uint)*(byte *)(iVar2 + 3) * 0x10 + param_3);
+  piVar3 = (int *)((uint)((byte *)iVar2)[3] * 0x10 + param_3);
   DAT_008570c8 = *piVar3;
   DAT_008570cc = piVar3[1];
   DAT_008570d0 = piVar3[2];

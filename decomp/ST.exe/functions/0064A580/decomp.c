@@ -7,6 +7,7 @@ void FUN_0064a580(void)
 
 {
   if (HANDLE_008118f8 != (HANDLE)0x0) {
+    /* ST_CALLSITE[0064A58A]: CALL dword ptr [0x0085bbc8] */
     CloseHandle(HANDLE_008118f8);
   }
   HANDLE_008118f8 = (HANDLE)0x0;

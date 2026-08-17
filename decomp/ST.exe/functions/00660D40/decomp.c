@@ -66,7 +66,7 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
               STPiece<22,2>(local_5c) = *(undefined2 *)(iVar7 + 0xe);
               STPiece<24,2>(local_5c) = *(undefined2 *)(iVar7 + 0x10);
               STPiece<26,2>(local_5c) = *(undefined2 *)(iVar7 + 0x12);
-              STPiece<28,1>(local_5c) = *(char *)(iVar7 + 0x14);
+              STPiece<28,1>(local_5c) = ((char *)iVar7)[0x14];
               if ((((char)STPiece<28,1>(local_5c) < '\0') || ('\a' < (char)STPiece<28,1>(local_5c))) &&
                  ((STPiece<28,1>(local_5c) = local_8->field_0081, (char)STPiece<28,1>(local_5c) < '\0' ||
                   ('\a' < (char)STPiece<28,1>(local_5c))))) {
@@ -79,6 +79,7 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
               else {
                 sVar3 = 0;
               }
+              /* ST_CALLSITE[00660EB8]: CALL 0x004056be; direct=004056BE AiTactClassTy::PrepareToSave */
               AiTactClassTy::PrepareToSave(*(AiTactClassTy **)&pAVar2[4].field_0x74,&local_5c,sVar3);
               uVar5 = local_c;
               param_1 = (AnonShape_00660D40_E58DF1E6 *)local_8;

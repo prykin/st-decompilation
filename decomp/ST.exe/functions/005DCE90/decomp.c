@@ -49,6 +49,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
       if (local_8->field_0020 != 0) {
         sub_006E56B0(local_8,local_8->field_0020);
       }
+      /* ST_CALLSITE[005DD194]: CALL dword ptr [EDX + 0x8] */
       (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,0x306,puVar8,nullptr,message,0);
     }
     else {
@@ -58,6 +59,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
+          /* ST_CALLSITE[005DD0EB]: CALL dword ptr [EDX + 0x8] */
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x30a,puVar8,nullptr,message,0);
           goto switchD_005dd1c0_default;
@@ -68,6 +70,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
             if (local_8->field_0020 != 0) {
               sub_006E56B0(local_8,local_8->field_0020);
             }
+            /* ST_CALLSITE[005DD0C2]: CALL dword ptr [EAX + 0x8] */
             (*this_00->vtable->CreateObject)
                       ((SystemClassTy *)this_00,0x302,puVar8,nullptr,message,0);
           }
@@ -78,6 +81,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
+          /* ST_CALLSITE[005DD08E]: CALL dword ptr [EDX + 0x8] */
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x304,puVar8,nullptr,message,0);
           goto switchD_005dd1c0_default;
@@ -90,6 +94,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           }
           g_cMf32_00806758 = nullptr;
           if (g_cursorClass_00802A30 != nullptr) {
+            /* ST_CALLSITE[005DD048]: CALL 0x00401055; direct=00401055 CursorClassTy::sub_00544940 */
             CursorClassTy::sub_00544940(g_cursorClass_00802A30);
           }
           FUN_006bbb20(g_dDXContext_0080759C,1);
@@ -111,18 +116,21 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           goto switchD_005dd1c0_default;
         }
         if (DAT_00811768 != '\x01') {
+          /* ST_CALLSITE[005DCFE1]: CALL dword ptr [EDX + 0x8] */
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x301,puVar8,nullptr,message->arg0,0);
           goto switchD_005dd1c0_default;
         }
         if (g_int_00811764 == nullptr) {
           DAT_00811768 = '\0';
+          /* ST_CALLSITE[005DCFC7]: CALL dword ptr [EAX + 0x8] */
           (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,0x301,puVar8,nullptr,0,0);
           goto switchD_005dd1c0_default;
         }
-        if ((*(byte *)(g_int_00811764 + 1) & 1) == 0) {
+        if ((((byte *)g_int_00811764)[1] & 1) == 0) {
           DAT_0080877e = 0;
           (message->arg0).u32 = 0;
+          /* ST_CALLSITE[005DCFA8]: CALL dword ptr [EDX + 0x8] */
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x30d,puVar8,nullptr,message,0);
           goto switchD_005dd1c0_default;
@@ -136,6 +144,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
+          /* ST_CALLSITE[005DD16B]: CALL dword ptr [EAX + 0x8] */
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x30d,puVar8,nullptr,message,0);
           goto switchD_005dd1c0_default;
@@ -145,6 +154,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
+          /* ST_CALLSITE[005DD142]: CALL dword ptr [EDX + 0x8] */
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x30e,puVar8,nullptr,message,0);
           goto switchD_005dd1c0_default;
@@ -154,6 +164,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           sub_006E56B0(local_8,local_8->field_0020);
         }
       }
+      /* ST_CALLSITE[005DCF83]: CALL dword ptr [EAX + 0x8] */
       (*this_00->vtable->CreateObject)
                 ((SystemClassTy *)this_00,0x305,&this_00->field_0020,nullptr,message,0);
     }
@@ -167,6 +178,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
+          /* ST_CALLSITE[005DD1E8]: CALL dword ptr [EAX + 0x8] */
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x30b,puVar8,nullptr,message,0);
           break;
@@ -175,6 +187,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
+          /* ST_CALLSITE[005DD211]: CALL dword ptr [EDX + 0x8] */
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x307,puVar8,nullptr,message,0);
           break;
@@ -183,6 +196,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
+          /* ST_CALLSITE[005DD23A]: CALL dword ptr [EAX + 0x8] */
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x308,puVar8,nullptr,message,0);
           break;
@@ -191,6 +205,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (local_8->field_0020 != 0) {
             sub_006E56B0(local_8,local_8->field_0020);
           }
+          /* ST_CALLSITE[005DD260]: CALL dword ptr [EDX + 0x8] */
           (*this_00->vtable->CreateObject)
                     ((SystemClassTy *)this_00,0x30c,puVar8,nullptr,message,0);
         }
@@ -215,6 +230,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
       }
       local_48[3] = 2;
       local_48[2] = iVar5;
+      /* ST_CALLSITE[005DD2B4]: CALL dword ptr [EAX + 0x18] */
       (*this_00->vtable->vfunc_18)((short)local_48);
     }
   }

@@ -35,12 +35,13 @@ void FUN_006b7070(int *param_1)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffffcc;
-  if ((*(byte *)(param_1 + 1) & 1) != 0) {
+  if ((((byte *)param_1)[1] & 1) != 0) {
     piStack_40 = (int *)*param_1;
     puStack_38 = local_28;
     uStack_3c = 0;
     iStack_44 = 0x6b70b1;
     ExceptionList = &local_14;
+    /* ST_CALLSITE[006B70AE]: CALL dword ptr [ECX + 0x58] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)(*piStack_40 + 0x58))();
     if (iVar3 == -0x7788ffe2) {
@@ -66,6 +67,7 @@ void FUN_006b7070(int *param_1)
       pcVar2 = *(code **)(iVar4 + 0x58);
       puVar6 = (undefined1 *)((int)auStack_50 + iVar3);
       *(undefined4 *)((int)auStack_50 + iVar3) = 0x6b70f7;
+      /* ST_CALLSITE[006B70F4]: CALL dword ptr [ECX + 0x58] */
       iVar4 = (*pcVar2)();
       if (iVar4 == 0) {
         *(uint *)((int)&uStack_3c + iVar3) = *(uint *)((int)&uStack_3c + iVar3) | 0x20;
@@ -76,6 +78,7 @@ void FUN_006b7070(int *param_1)
         *(int **)(puVar6 + -0xc) = piVar1;
         pcVar2 = *(code **)(iVar4 + 0x7c);
         *(undefined4 *)(puVar6 + -0x10) = 0x6b710e;
+        /* ST_CALLSITE[006B710B]: CALL dword ptr [EAX + 0x7c] */
         (*pcVar2)();
       }
     }

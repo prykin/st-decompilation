@@ -47,12 +47,14 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
       }
       if ((local_10 == nullptr) && (g_allPlayers_007FA174 != nullptr)) {
         local_10 = (DArrayTy *)
+                   /* ST_CALLSITE[0065FB1A]: CALL 0x00401415; direct=00401415 STAllPlayersC::GetTOBJList */
                    STAllPlayersC::GetTOBJList
                              (g_allPlayers_007FA174,*(char *)&pAVar1->field_0024,param_1,0,-1);
       }
     }
     else if ((param_2 == 2) && (g_allPlayers_007FA174 != nullptr)) {
       local_10 = (DArrayTy *)
+                 /* ST_CALLSITE[0065FACD]: CALL 0x00401415; direct=00401415 STAllPlayersC::GetTOBJList */
                  STAllPlayersC::GetTOBJList
                            (g_allPlayers_007FA174,*(char *)&local_14->field_0024,param_1,0,-1);
     }
@@ -77,6 +79,7 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
         }
         local_18 = index;
         if ((STFishC *)*puVar3 != nullptr) {
+          /* ST_CALLSITE[0065FBEF]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)*puVar3,&local_6,&local_8,&local_a);
           if (((local_6 < *param_3) || (local_8 < param_3[1])) ||
              ((index = local_18, local_a < param_3[2] ||

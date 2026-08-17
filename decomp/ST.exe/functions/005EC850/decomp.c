@@ -40,6 +40,7 @@ int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
   local_14 = 0;
   local_10 = 0x10;
   local_c = 0;
+  /* ST_CALLSITE[005EC8CE]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
   STT3DSprC::RestoreSpr
             ((STT3DSprC *)&this->field_0x1d5,(int *)&local_24,
              (AnonShape_004AD790_77673787 *)(param_1 + 1));
@@ -58,6 +59,7 @@ int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
   }
   piVar6 = (int *)(&((AnonShape_004AD790_77673787 *)(param_1 + 1))->field_0x0 + iVar1);
   iVar1 = *piVar6;
+  /* ST_CALLSITE[005EC957]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
   RestoreGObjData(this,piVar6 + 1);
   return iVar1 + local_8;
 }

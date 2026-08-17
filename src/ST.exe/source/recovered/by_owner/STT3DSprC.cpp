@@ -1,6 +1,48 @@
 #include "st/generated.hpp"
 // Generated translation unit: source/recovered/by_owner/STT3DSprC.cpp
 
+// 004AB810 STT3DSprC::STT3DSprC
+#line 4 "decomp/ST.exe/functions/004AB810/decomp.c"
+/* [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=36, ignored=5, unknown=0
+
+   [STReturnSemanticsApplier] typed_pointer_return.
+   Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
+   structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_004AB810_8E5693D5 (current recovered
+   extent=20)
+
+   [STConstructorApplier] Recovered constructor candidate.
+   VTable: 00790790 (store 004AB814)
+   Evidence: final_vptr=00790790; returns_this=true; calls_before=0; field_writes_after=17;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=medium;
+   unique_exact_object_extent=64; extent_write_count=17 */
+
+STT3DSprC * __thiscall st::fn_004AB810(STT3DSprC *this)
+
+{
+  this->vtable = &st_global_00790790;
+  this->field_0014 = 0;
+  this->field_0018 = 0xffffffff;
+  this->field_0020 = nullptr;
+  this->field_0008 = 0;
+  this->field_0004 = 0;
+  this->field_0034 = nullptr;
+  this->field_0011 = 0;
+  this->field_0010 = 0;
+  this->field_0012 = 0;
+  this->field_002C = 0;
+  this->field_0028 = 0;
+  this->field_0024 = 0;
+  this->field_003C = g_sT3DSMAPContext_00807598;
+  this->field_0013 = 0;
+  this->field_0030 = 0;
+  this->field_0038 = 0;
+  this->field_001C = 0;
+  return this;
+}
+
 // 004ACD30 STT3DSprC::sub_004ACD30
 #line 4 "decomp/ST.exe/functions/004ACD30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
@@ -167,7 +209,7 @@ int __thiscall st::fn_004ACF50(STT3DSprC *this,char param_1)
   iVar3 = (int)param_1;
   st::fn_006EA6D0(this->field_003C,this->field_0018,iVar3,1);
   pAVar2 = this->field_0020;
-  pbVar1 = st::pointer_boundary_cast<byte *>(&pAVar2->field_0xe + iVar3 * 0x24);
+  pbVar1 = &pAVar2->field_0xe + iVar3 * 0x24;
   *pbVar1 = *pbVar1 | 0x40;
   return (int)(&pAVar2->field_0xe + iVar3 * 0x24);
 }
@@ -211,7 +253,7 @@ int __thiscall st::fn_004ACFE0(STT3DSprC *this,char param_1)
   iVar3 = (int)param_1;
   st::fn_006EA800(this->field_003C,this->field_0018,iVar3,1);
   pAVar2 = this->field_0020;
-  pbVar1 = st::pointer_boundary_cast<byte *>(&pAVar2->field_0xe + iVar3 * 0x24);
+  pbVar1 = &pAVar2->field_0xe + iVar3 * 0x24;
   *pbVar1 = *pbVar1 | 0x80;
   return (int)(&pAVar2->field_0xe + iVar3 * 0x24);
 }
@@ -252,7 +294,7 @@ void __thiscall st::fn_004AD070(STT3DSprC *this,byte param_1)
 
   if (((-1 < (char)param_1) && ((char)param_1 < ' ')) &&
      ((1 << (param_1 & 0x1f) & this->field_001C) != 0)) {
-    pbVar1 = st::pointer_boundary_cast<byte *>(&this->field_0020->field_0xe + (char)param_1 * 0x24);
+    pbVar1 = &this->field_0020->field_0xe + (char)param_1 * 0x24;
     *pbVar1 = *pbVar1 | 8;
     st::fn_006E9E60(this->field_003C,(uint *)this->field_0018,(int)(char)param_1);
   }

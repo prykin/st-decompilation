@@ -11,18 +11,18 @@ void __thiscall FUN_00488d10(void *this,undefined4 *param_1)
   *(undefined2 *)(param_1 + 4) = 0;
   STField<undefined1>(param_1,0x12) = 0;
   *param_1 = STField<undefined4>(this,0x6f7);
-  *(undefined1 *)(param_1 + 1) = 0x2b;
+  ((undefined1 *)param_1)[1] = 0x2b;
   STField<undefined1>(param_1,5) = 0x2c;
   STField<undefined1>(param_1,6) = 5;
   STField<undefined1>(param_1,7) = 6;
-  *(undefined1 *)(param_1 + 2) = 0x4d;
+  ((undefined1 *)param_1)[2] = 0x4d;
   STField<undefined1>(param_1,9) = 0x2d;
   if (STField<int>(this,0x7e6) == 0) {
     STField<undefined1>(param_1,0x11) = 3;
-    *(undefined1 *)(param_1 + 4) = 1;
+    ((undefined1 *)param_1)[4] = 1;
   }
   else {
-    *(undefined1 *)(param_1 + 4) = 3;
+    ((undefined1 *)param_1)[4] = 3;
     STField<undefined1>(param_1,0x11) = 1;
   }
   if (STField<int>(this,0x7ea) == 0) {
@@ -62,10 +62,10 @@ void __thiscall FUN_00488d10(void *this,undefined4 *param_1)
     STField<undefined1>(param_1,10) = 1;
     STField<undefined1>(param_1,0xb) = 1;
     if (STField<int>(this,0x45d) == 5) {
-      *(undefined1 *)(param_1 + 3) = 3;
+      ((undefined1 *)param_1)[3] = 3;
     }
     else {
-      *(undefined1 *)(param_1 + 3) = 1;
+      ((undefined1 *)param_1)[3] = 1;
     }
     if (STField<int>(this,0x45d) == 6) {
       STField<undefined1>(param_1,0xd) = 3;
@@ -99,7 +99,7 @@ void __thiscall FUN_00488d10(void *this,undefined4 *param_1)
   case 0x25:
     STField<undefined1>(param_1,10) = 0;
     STField<undefined1>(param_1,0xb) = 0;
-    *(undefined1 *)(param_1 + 3) = 0;
+    ((undefined1 *)param_1)[3] = 0;
     if (STField<int>(this,0x45d) == 6) {
       STField<undefined1>(param_1,0xd) = 3;
     }

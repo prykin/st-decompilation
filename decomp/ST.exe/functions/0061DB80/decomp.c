@@ -30,6 +30,7 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806774,CASE_0,(&PTR_s_light01_007d0164)[local_c->field_003C],
                         0xffffffff,0,1,0,nullptr);
+    /* ST_CALLSITE[0061DBE3]: CALL 0x004050d3; direct=004050D3 STLightC::sub_0061D9C0 */
     sub_0061D9C0(this_00,puVar3,(int *)&local_8,0);
     puVar4 = Library::DKW::LIB::MemAlloc(this_00->field_0093 << 4);
     this_00->field_0057 = puVar4;

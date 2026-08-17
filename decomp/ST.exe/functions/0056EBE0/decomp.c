@@ -63,8 +63,11 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
     pDVar3 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this->field_4EAB = &pDVar3->flags;
   }
+  /* ST_CALLSITE[0056ECE7]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
   pDVar3 = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,1,this->field_233C);
+  /* ST_CALLSITE[0056ECFF]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
   array = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,2,this->field_233C);
+  /* ST_CALLSITE[0056ED16]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
   array_00 = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,3,this->field_233C);
   pcVar9 = &this->field_11A7;
   local_8 = 8;

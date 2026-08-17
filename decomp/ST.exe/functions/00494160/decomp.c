@@ -23,11 +23,13 @@ void __thiscall FUN_00494160(void *this,int param_1)
           return;
         }
         STField<undefined4>(this,0x72e) = 1;
+        /* ST_CALLSITE[004941BC]: CALL dword ptr [EAX + 0x90] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*(int *)this + 0x90))(3,0x16c);
         return;
       }
       STField<undefined4>(this,0x72e) = 0;
+      /* ST_CALLSITE[004941DE]: CALL dword ptr [EDX + 0x90] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)this + 0x90))(3,0x16d);
       return;
@@ -41,6 +43,7 @@ void __thiscall FUN_00494160(void *this,int param_1)
   }
   if (param_1 != 1) {
     STField<undefined4>(this,0x732) = 0;
+    /* ST_CALLSITE[004944C7]: CALL dword ptr [EAX + 0x90] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)this + 0x90))(3,0x16d);
     return;
@@ -111,8 +114,11 @@ LAB_004943a0:
     }
     if (!bVar7) {
       pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
+      /* ST_CALLSITE[004943BA]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
       STT3DSprC::sub_004ACE60(pSVar1,'\x0e');
+      /* ST_CALLSITE[004943C3]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
       STT3DSprC::sub_004ACE60(pSVar1,'\r');
+      /* ST_CALLSITE[004943CC]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
       STT3DSprC::sub_004ACE60(pSVar1,'\f');
       thunk_FUN_004aceb0(pSVar1,'\x01');
       thunk_FUN_004aceb0(pSVar1,'\x02');
@@ -127,20 +133,32 @@ LAB_004943a0:
     }
   }
   pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
+  /* ST_CALLSITE[0049442F]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   STT3DSprC::sub_004ACE60(pSVar1,'\x0e');
+  /* ST_CALLSITE[00494438]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   STT3DSprC::sub_004ACE60(pSVar1,'\r');
+  /* ST_CALLSITE[00494441]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   STT3DSprC::sub_004ACE60(pSVar1,'\f');
+  /* ST_CALLSITE[0049444A]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   STT3DSprC::sub_004ACE60(pSVar1,'\x01');
+  /* ST_CALLSITE[00494453]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   STT3DSprC::sub_004ACE60(pSVar1,'\x02');
+  /* ST_CALLSITE[0049445C]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   STT3DSprC::sub_004ACE60(pSVar1,'\0');
+  /* ST_CALLSITE[00494465]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   STT3DSprC::sub_004ACE60(pSVar1,'\x0f');
+  /* ST_CALLSITE[0049446E]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   STT3DSprC::sub_004ACE60(pSVar1,'\v');
+  /* ST_CALLSITE[00494477]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   STT3DSprC::sub_004ACE60(pSVar1,'\n');
+  /* ST_CALLSITE[00494480]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   STT3DSprC::sub_004ACE60(pSVar1,'\t');
+  /* ST_CALLSITE[00494489]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
   STT3DSprC::sub_004ACE60(pSVar1,'\b');
   STField<undefined4>(this,0x746) = 1;
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_00494498:
+  /* ST_CALLSITE[004944A3]: CALL dword ptr [EDX + 0x90] */
   (**(code **)(*(int *)this + 0x90))(3,0x16c);
   return;
 }

@@ -33,7 +33,8 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
     local_38[2] = STField<undefined4>(this,0x1d9);
     local_38[0] = DAT_007e67b0;
     local_38[1] = 0x42;
-    bVar1 = LookupRecordByte(*(char *)(param_1 + 9));
+    /* ST_CALLSITE[0060BE96]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
+    bVar1 = LookupRecordByte(((char *)param_1)[9]);
     if (bVar1 == 3) {
       iVar2 = thunk_FUN_004e60d0(param_1[9],0x6a);
     }
@@ -71,6 +72,7 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
     local_58[4] = (int *)0x110;
     local_58[5] = local_38;
   }
+  /* ST_CALLSITE[0060BF48]: CALL dword ptr [EDX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)*param_1)(local_58);
   return local_40;

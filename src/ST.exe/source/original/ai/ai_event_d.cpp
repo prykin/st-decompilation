@@ -32,9 +32,9 @@ AllocationRecord_0065CD10 * __cdecl st::fn_0065C9E0(char *source)
     local_8->field_0005 = 2;
     st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_8->field_0x6),source,0x3f);
     pDVar1 = st::fn_006B54F0(nullptr,5,5);
-    local_8->field_0456 = st::pointer_boundary_cast<uint *>(&pDVar1->flags);
+    local_8->field_0456 = &pDVar1->flags;
     pDVar1 = st::fn_006AE290(nullptr,5,0x1b,5);
-    local_8->field_0462 = st::pointer_boundary_cast<uint *>(&pDVar1->flags);
+    local_8->field_0462 = &pDVar1->flags;
     st::fn_00405295((int *)&local_8[1].field_0x6,10);
     g_currentExceptionFrame = local_4c.previous;
     return (AllocationRecord_0065CD10 *)local_8;
@@ -89,7 +89,7 @@ AllocationRecord_0065CB00 * __cdecl st::fn_0065CB00(AllocationRecord_0065CB00 *p
     local_8->field_0001 = 0x49f;
     local_8->field_0005 = 2;
     iVar5 = local_8->field_047A;
-    if (&local_8->field_046E == nullptr) {
+    if (&local_8->field_046E == 0) {
       uVar7 = 0;
     }
     else {
@@ -97,7 +97,7 @@ AllocationRecord_0065CB00 * __cdecl st::fn_0065CB00(AllocationRecord_0065CB00 *p
     }
     puVar1 = (byte *)(st::fn_006AAC10(uVar7));
     local_8->field_0476 = st::pointer_boundary_cast<undefined4 *>(puVar1);
-    if (&local_8->field_046E == nullptr) {
+    if (&local_8->field_046E == 0) {
       uVar7 = 0;
     }
     else {
@@ -212,7 +212,7 @@ AllocationRecord_0065CD10 * __cdecl st::fn_0065CD10(AllocationRecord_0065CD10 *p
     param_1->field_046A = iVar3;
     iVar2 = st::fn_006C87F0((DArrayTy *)param_1->field_0456);
     param_1->field_045E = iVar2;
-    if (&param_1->field_046E == nullptr) {
+    if (&param_1->field_046E == 0) {
       iVar3 = 0;
     }
     else {
@@ -260,7 +260,7 @@ AllocationRecord_0065CD10 * __cdecl st::fn_0065CD10(AllocationRecord_0065CD10 *p
     st::fn_006C8840(local_8->field_0456,puVar9,&local_c);
     local_8->field_045A = (int)puVar9 + (-0x49e - (int)local_8);
     puVar10 = (undefined4 *)((int)puVar9 + local_8->field_045E);
-    if (&param_1->field_046E == nullptr) {
+    if (&param_1->field_046E == 0) {
       uVar7 = 0;
     }
     else {

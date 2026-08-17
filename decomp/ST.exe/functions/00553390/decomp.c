@@ -17,6 +17,7 @@ void __cdecl FUN_00553390(int param_1,int param_2,byte *param_3,int param_4,int 
      (((-1 < param_2 && (param_2 < param_5)) && ((-1 < param_6 && (param_6 < 0x10)))))) {
     param_3[param_2 * param_4 + param_1] = (byte)param_6;
     if (DAT_00802a50 != nullptr) {
+      /* ST_CALLSITE[005533DB]: CALL EDX */
       (*DAT_00802a50)(param_1,param_2,param_3);
     }
   }

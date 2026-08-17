@@ -14,6 +14,7 @@ int __thiscall STBoatC::BackPatrol(STBoatC *this,int *param_1)
   int iVar3;
 
   if (this->field_0497 == 0) {
+    /* ST_CALLSITE[00465BF1]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
     local_EAX_17 = sub_00460360(this);
     return local_EAX_17;
   }

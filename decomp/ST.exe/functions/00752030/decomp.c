@@ -10,6 +10,7 @@ UINT FUN_00752030(int param_1,LPVOID lpBuffer,UINT uBytes)
 {
   UINT UVar1;
 
+  /* ST_CALLSITE[00752042]: CALL dword ptr [0x0085bd00] */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   UVar1 = _lread(*(HFILE *)(param_1 + 0x32),lpBuffer,uBytes);
   if (UVar1 == 0xffffffff) {

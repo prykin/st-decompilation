@@ -9,7 +9,9 @@ undefined4 __thiscall FUN_00750104(void *this,AnonShape_00750104_599B328B *param
   int *local_8;
 
   local_8 = this;
+  /* ST_CALLSITE[00750115]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
+  /* ST_CALLSITE[00750125]: CALL dword ptr [ECX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(param_1->field_000C + 4))(&param_1->field_000C);
   this_00 = (int *)((int)this + 0x38);
@@ -32,6 +34,7 @@ undefined4 __thiscall FUN_00750104(void *this,AnonShape_00750104_599B328B *param
     FUN_0074e122(this_00,local_8,(int)param_1);
   }
   FUN_00750287(this);
+  /* ST_CALLSITE[00750190]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
   return 0;
 }

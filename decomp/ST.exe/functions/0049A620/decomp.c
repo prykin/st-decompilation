@@ -56,7 +56,9 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
     local_14->field_0041 = (int)local_14->field_00DF;
     *(undefined2 *)&local_14->field_0x30e = *(undefined2 *)&local_14->field_0xe3;
     *(undefined2 *)&local_14->field_0x310 = uVar2;
+    /* ST_CALLSITE[0049A6B0]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
     array = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)local_14);
+    /* ST_CALLSITE[0049A6CD]: CALL 0x00405d7b; direct=00405D7B STGroupBoatC::InitWay */
     InitWay(this_00,array,this_00->field_003D,this_00->field_0041,this_00->field_0045);
     DArrayDestroy(array);
     local_20 = g_playSystem_00802A38->field_00E4;
@@ -69,6 +71,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
         DArrayGetElement((DArrayTy *)this_00->field_0029,uVar5,local_c);
         if (STPiece<0,2>(local_c) != 0xffff) {
           this_01 = (STBoatC *)
+                    /* ST_CALLSITE[0049A721]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                     STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,this_00->field_0024,STPiece<0,2>(local_c),CASE_1);
           if (this_01 == nullptr) {
@@ -76,6 +79,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x629);
           }
+          /* ST_CALLSITE[0049A74F]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
           STBoatC::CmdToObj(this_01,CASE_1,&local_20);
         }
         uVar6 = uVar6 + 1;
@@ -93,6 +97,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
         do {
           DArrayGetElement((DArrayTy *)this_00->field_0029,uVar6,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
+            /* ST_CALLSITE[0049A7C6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             objPtr = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,this_00->field_0024,STPiece<0,2>(local_c),CASE_1);
             if (objPtr == nullptr) {

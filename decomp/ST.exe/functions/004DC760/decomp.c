@@ -15,8 +15,10 @@ undefined4 __fastcall FUN_004dc760(TLOBaseTy *param_1)
     if ((param_1->field_04E0[0] != 0) || (param_1->field_04D4 == 1)) {
       param_1->field_04D0 = CASE_1;
       param_1->field_04D4 = 0;
+      /* ST_CALLSITE[004DC9CB]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
       TLOBaseTy::RotateSpr(param_1,0);
       thunk_FUN_004c2c10((AnonShape_004C2C10_59B6D93C *)param_1);
+      /* ST_CALLSITE[004DC9E2]: CALL dword ptr [EDX + 0x90] */
       param_1->vfunc_90(4,0x339);
     }
   }
@@ -28,7 +30,9 @@ undefined4 __fastcall FUN_004dc760(TLOBaseTy *param_1)
         uVar2 = g_playSystem_00802A38->field_00E4;
         param_1->field_04D4 = 0;
         param_1->field_04DC = uVar2;
+        /* ST_CALLSITE[004DC95E]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
         TLOBaseTy::RotateSpr(param_1,0);
+        /* ST_CALLSITE[004DC967]: CALL dword ptr [EDX + 0x2c] */
         dVar4 = param_1->slot_2C();
         thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(dVar4), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar4);
         if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
@@ -41,6 +45,7 @@ undefined4 __fastcall FUN_004dc760(TLOBaseTy *param_1)
     else {
       if (param_1->field_0408 == 0) {
         thunk_FUN_004c2c10((AnonShape_004C2C10_59B6D93C *)param_1);
+        /* ST_CALLSITE[004DC8DF]: CALL dword ptr [EDX + 0x90] */
         param_1->vfunc_90(4,0x339);
       }
       if (param_1->field_04DC + 0x2d <= g_playSystem_00802A38->field_00E4) {
@@ -62,7 +67,9 @@ undefined4 __fastcall FUN_004dc760(TLOBaseTy *param_1)
       if (9999 < iVar3) {
         param_1->field_04D8 = 10000;
         param_1->field_04D0 = CASE_0;
+        /* ST_CALLSITE[004DC7E4]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
         TLOBaseTy::RotateSpr(param_1,0);
+        /* ST_CALLSITE[004DC7ED]: CALL dword ptr [EDX + 0x2c] */
         dVar4 = param_1->slot_2C();
         thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(dVar4), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar4);
         if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
@@ -74,9 +81,12 @@ undefined4 __fastcall FUN_004dc760(TLOBaseTy *param_1)
     if (param_1->field_04D4 == 1) {
       param_1->field_04D0 = CASE_1;
       param_1->field_04D4 = 0;
+      /* ST_CALLSITE[004DC852]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
       TLOBaseTy::RotateSpr(param_1,0);
       thunk_FUN_004c2c10((AnonShape_004C2C10_59B6D93C *)param_1);
+      /* ST_CALLSITE[004DC869]: CALL dword ptr [EAX + 0x90] */
       param_1->vfunc_90(4,0x339);
+      /* ST_CALLSITE[004DC873]: CALL dword ptr [EDX + 0x2c] */
       dVar4 = param_1->slot_2C();
       thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(dVar4), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar4);
       if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {

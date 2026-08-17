@@ -48,6 +48,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
         pcVar4 = &CHAR_S_007ca24c;
       }
     }
+    /* ST_CALLSITE[005C13DE]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"REPORT_%s_%c",pcVar4,
               (int)(char)((-(DAT_0080c522 != 0) & 0xfbU) + 0x46));
     puVar5 = FUN_0070a9f0(g_cMf32_00806780,(char *)&DAT_0080f33a,0,1);
@@ -59,6 +60,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
               ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&pMVar3->field_00A3);
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_470,0,0x100,0x2e,0x10,(undefined4 *)&pMVar3->field_0x1a3);
+    /* ST_CALLSITE[005C1479]: CALL 0x00403738; direct=00403738 PutDDX */
     PutDDX(0,0,'\x01',(BITMAPINFO *)*ppuVar1);
     if (pMVar3->field_0083 != nullptr) {
       ccFntTy::operator_delete((uint *)pMVar3->field_0083);

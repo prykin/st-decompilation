@@ -55,6 +55,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         local_34[3] = 2;
         local_34[4] = 0x6940;
         local_34[2] = iVar10;
+        /* ST_CALLSITE[005B7F76]: CALL dword ptr [EAX + 0x18] */
         (*this_00->field_000C->vtable->vfunc_18)((short)local_34);
       }
       this_00->field_1CA9 = 1;
@@ -103,12 +104,14 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         puVar6 = ccFntTy::CreateTypeSSpr
                            (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,uVar14,
                             iVar16,iVar17,iVar18);
+        /* ST_CALLSITE[005B8102]: CALL dword ptr [EAX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(local_10 + 8))(puVar6,uVar21,uVar22);
       }
       else {
         pcVar4 = LoadResourceString(param_7,g_hINSTANCE_00807618);
         pcVar5 = LoadResourceString(param_1,g_hINSTANCE_00807618);
+        /* ST_CALLSITE[005B8076]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar5,pcVar4,param_6);
         iVar10 = this_00->field_1D88;
         uVar22 = 0xffffffff;
@@ -116,6 +119,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         puVar6 = ccFntTy::CreateTypeSSpr
                            (g_startSystem_0081176C->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
                             0xffffffff,1,-1,-1);
+        /* ST_CALLSITE[005B80B7]: CALL dword ptr [ESI + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar10 + 8))(puVar6,uVar21,uVar22);
       }
@@ -164,6 +168,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         psVar8 = (short *)ccFntTy::CreateTypeSSpr
                                     (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,
                                      uVar14,iVar16,iVar17,iVar18);
+        /* ST_CALLSITE[005B840A]: CALL dword ptr [ESI + 0x8] */
         (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
         this_00->array_00BC[2].field_00B8.field_0008 = 0;
       }
@@ -202,6 +207,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           psVar8 = (short *)ccFntTy::CreateTypeSSpr
                                       (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
                                        ,uVar14,iVar16,iVar17,iVar18);
+          /* ST_CALLSITE[005B836E]: CALL dword ptr [ESI + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
           this_00->array_00BC[2].field_00B8.field_0008 = 0;
           this_00->array_00BC[1].field_0000 = 0x24ba;
@@ -243,6 +249,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           psVar8 = (short *)ccFntTy::CreateTypeSSpr
                                       (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
                                        ,uVar14,iVar16,iVar17,iVar18);
+          /* ST_CALLSITE[005B81E6]: CALL dword ptr [ESI + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_00->array_00BC[3].field_00B8,psVar8,uVar19,uVar20);
           this_00->array_00BC[3].field_00B8.field_0008 = 0;
           this_00->array_00BC[2].field_0000 = 0x24ba;
@@ -278,6 +285,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           psVar8 = (short *)ccFntTy::CreateTypeSSpr
                                       (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
                                        ,uVar14,iVar16,iVar17,iVar18);
+          /* ST_CALLSITE[005B8267]: CALL dword ptr [ESI + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
           this_00->array_00BC[2].field_00B8.field_0008 = 0;
           this_00->array_00BC[1].field_0000 = 0x24bb;
@@ -313,10 +321,12 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         psVar8 = (short *)ccFntTy::CreateTypeSSpr
                                     (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,
                                      uVar14,iVar16,iVar17,iVar18);
+        /* ST_CALLSITE[005B82E8]: CALL dword ptr [ESI + 0x8] */
         (*pSVar1->SetImagesPtr)(&this_00->array_00BC[1].field_00B8,psVar8,uVar19,uVar20);
         this_00->array_00BC[1].field_00B8.field_0008 = 0;
       }
 LAB_005b8415:
+      /* ST_CALLSITE[005B8417]: CALL 0x00403459; direct=00403459 MMObjTy::CloseButtons */
       MMObjTy::CloseButtons((MMObjTy *)this_00);
       bVar3 = 0;
       local_8 = local_8 & 0xffffff00;

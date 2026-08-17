@@ -36,6 +36,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
     sVar2 = param_1->field_0041;
     iVar5 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
     if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
+          /* ST_CALLSITE[00643F02]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar8,
                       &local_1c,&local_20), iVar9 < 0)) ||
@@ -54,6 +55,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
   }
   if (param_1->field_023D == 1) {
     if ((byte)param_1->field_027D < 8) {
+      /* ST_CALLSITE[00643FA4]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       local_c = STAllPlayersC::GetObjPtr
                           (g_allPlayers_007FA174,param_1->field_0024,param_1->field_0262,CASE_1);
     }
@@ -80,26 +82,32 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
   else {
     if (param_1->field_0270 == 0) {
       puVar1 = &param_1->field_0x1d5;
+      /* ST_CALLSITE[00644070]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       iVar9 = STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\0',(uint)(byte)param_1->field_027C);
       if (iVar9 != 0) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[00644087]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       iVar9 = STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\0');
       if (iVar9 != 0) {
         return 0xffffffff;
       }
       bVar7 = param_1->field_027C;
+      /* ST_CALLSITE[006440A6]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar9 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x01');
       if ((int)(uint)bVar7 < iVar9) {
+        /* ST_CALLSITE[006440B4]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
         iVar9 = STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x01',(uint)bVar7);
         if (iVar9 != 0) {
           return 0xffffffff;
         }
+        /* ST_CALLSITE[006440CB]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
         iVar9 = STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x01');
         if (iVar9 != 0) {
           return 0xffffffff;
         }
       }
+      /* ST_CALLSITE[006440E2]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar9 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x01');
       if (iVar9 != (byte)param_1->field_027C - 1) goto cf_common_exit_0064428F;
     }
@@ -113,6 +121,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
           param_1->field_027C = 0xfa;
           return 0;
         }
+        /* ST_CALLSITE[00644154]: CALL dword ptr [EDX + 0xe0] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar9 = (**(code **)(*local_8 + 0xe0))
                           (param_1->field_0278,&local_10,&local_14,&local_18,&local_24);
@@ -140,33 +149,41 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
           param_1->field_027C = 0xfa;
           return 0;
         }
+        /* ST_CALLSITE[006441E9]: CALL dword ptr [EAX + 0xe4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*local_8 + 0xe4))(param_1->field_0278);
       }
       puVar1 = &param_1->field_0x1d5;
+      /* ST_CALLSITE[00644202]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       iVar9 = STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\0',(uint)(byte)param_1->field_027C);
       if (iVar9 != 0) {
         return 0xffffffff;
       }
+      /* ST_CALLSITE[00644219]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       iVar9 = STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\0');
       if (iVar9 != 0) {
         return 0xffffffff;
       }
       bVar7 = param_1->field_027C;
+      /* ST_CALLSITE[00644238]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar9 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x01');
       if ((int)(uint)bVar7 < iVar9) {
+        /* ST_CALLSITE[00644246]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
         iVar9 = STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x01',(uint)bVar7);
         if (iVar9 != 0) {
           return 0xffffffff;
         }
+        /* ST_CALLSITE[0064425D]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
         iVar9 = STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x01');
         if (iVar9 != 0) {
           return 0xffffffff;
         }
       }
+      /* ST_CALLSITE[00644274]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar9 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x01');
       if (iVar9 != (byte)param_1->field_027C - 1) goto cf_common_exit_0064428F;
     }
+    /* ST_CALLSITE[0064428A]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
     STT3DSprC::StopShow((STT3DSprC *)&param_1->field_0x1d5,1);
   }
 cf_common_exit_0064428F:

@@ -33,9 +33,11 @@ void __thiscall FUN_00424620(void *this,uint param_1)
     do {
       DArrayGetElement(STField<DArrayTy *>(this,0x29),index,&param_1);
       if ((ushort)param_1 != 0xffff) {
+        /* ST_CALLSITE[004246B4]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_00 = STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,STField<char>(this,0x24),(ushort)param_1,
                              CASE_1);
+        /* ST_CALLSITE[004246BE]: CALL dword ptr [EDX + 0x104]; [STIndirectCallsiteApplier] exact slot 0x104; signature=__thiscall;/undefined1;pointer:/STGameObjC;/undefined1 */
         (*this_00->vtable[1].vfunc_30)(this_00,(char)uVar2);
       }
       uVar3 = uVar3 + 1;

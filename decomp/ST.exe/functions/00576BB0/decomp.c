@@ -23,13 +23,16 @@ void CreateBaseSystem(void)
       g_baseSystem_00811638 = nullptr;
     }
     else {
+      /* ST_CALLSITE[00576BF7]: CALL 0x00401348; direct=00401348 BaseSystemC::BaseSystemC */
       g_baseSystem_00811638 = BaseSystemC::BaseSystemC(this,g_app_00806728);
     }
     if (g_baseSystem_00811638 == nullptr) {
       RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0x38);
     }
     g_baseSystem_00811638->field_0020 = 0;
+    /* ST_CALLSITE[00576C32]: CALL dword ptr [EAX] */
     (*g_baseSystem_00811638->vtable->InitSystem)((SystemClassTy *)g_baseSystem_00811638);
+    /* ST_CALLSITE[00576C42]: CALL 0x006e4650; direct=006E4650 AppClassTy::AddSystem */
     AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)g_baseSystem_00811638,0);
     g_baseSystem_00811638->field_0020 = 1;
     g_currentExceptionFrame = local_48.previous;

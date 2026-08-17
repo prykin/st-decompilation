@@ -122,9 +122,11 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
         do {
           DArrayGetElement(this_00->field_010F,uVar15,&local_8);
           if (((ushort)local_8 != 0xffff) &&
+             /* ST_CALLSITE[0049C35C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
              (pSVar4 = STAllPlayersC::GetObjPtr
                                  (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1),
              pSVar4 != nullptr)) {
+            /* ST_CALLSITE[0049C36B]: CALL dword ptr [EAX + 0x2c] */
             iVar9 = pSVar4->vfunc_2C();
             iVar10 = 0;
             if (0 < local_14) {
@@ -136,6 +138,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
               } while (iVar10 < local_14);
             }
             if (((iVar10 != local_14) && (iVar9 == this_00->field_025E)) &&
+               /* ST_CALLSITE[0049C39C]: CALL dword ptr [EDX + 0x88] */
                (iVar9 = (*pSVar4->vtable->vfunc_88)(local_18), 0 < iVar9)) {
               Library::DKW::TBL::DArrayAppend(this_00->field_024E,&local_8);
             }
@@ -170,9 +173,11 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
         if (0 < (int)local_c) {
           do {
             DArrayGetElement(pDVar3,uVar15,&local_8);
+            /* ST_CALLSITE[0049C4B6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar4 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
             if ((pSVar4 != nullptr) &&
+               /* ST_CALLSITE[0049C4C7]: CALL dword ptr [EDX + 0x88] */
                (iVar9 = (*pSVar4->vtable->vfunc_88)(local_18), 0 < iVar9)) {
               Library::DKW::TBL::DArrayAppend(this_00->field_024E,&local_8);
             }
@@ -201,9 +206,11 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
         do {
           DArrayGetElement(this_00->field_0127,uVar15,&local_8);
           if ((((ushort)local_8 != 0xffff) &&
+              /* ST_CALLSITE[0049C58F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               (pSVar4 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1)
               , pSVar4 != nullptr)) &&
+             /* ST_CALLSITE[0049C59C]: CALL dword ptr [EDX + 0x2c] */
              ((iVar9 = pSVar4->vfunc_2C(), iVar9 == 0x3b || (iVar9 == 0x60)))) {
             Library::DKW::TBL::DArrayAppend(this_00->field_0266,&local_8);
           }
@@ -219,6 +226,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       }
     }
     if (this_00->field_0262 == 2) {
+      /* ST_CALLSITE[0049C613]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar2 = LookupRecordByte(this_00->field_0024);
       if (bVar2 == 3) {
         sVar25 = this_00->field_0274;
@@ -256,6 +264,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
         if (0 < (int)local_c) {
           do {
             DArrayGetElement(pDVar3,uVar15,&local_8);
+            /* ST_CALLSITE[0049C6F9]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar4 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
             if (pSVar4 != nullptr) {
@@ -268,6 +277,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       }
     }
     if (this_00->field_0262 == 1) {
+      /* ST_CALLSITE[0049C737]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar2 = LookupRecordByte(this_00->field_0024);
       if (bVar2 == 3) {
         cVar18 = this_00->field_0024;
@@ -277,6 +287,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
         cVar18 = this_00->field_0024;
         SVar26 = 0x3b;
       }
+      /* ST_CALLSITE[0049C758]: CALL 0x00401415; direct=00401415 STAllPlayersC::GetTOBJList */
       pDVar3 = (DArrayTy *)STAllPlayersC::GetTOBJList(g_allPlayers_007FA174,cVar18,SVar26,0,-1);
       if (pDVar3->count == 0) {
         pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
@@ -292,6 +303,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
         if (0 < (int)local_c) {
           do {
             DArrayGetElement(pDVar3,uVar15,&local_8);
+            /* ST_CALLSITE[0049C7C0]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar4 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
             if (pSVar4 != nullptr) {
@@ -303,6 +315,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       }
       DArrayDestroy(pDVar3);
     }
+    /* ST_CALLSITE[0049C7FD]: CALL 0x0040143d; direct=0040143D STGroupBoatC::DistributeMD */
     DistributeMD(this_00,1,this_00->field_024E,this_00->field_0266,(DArrayTy *)this_00->field_0029);
   }
   local_34[4] = 2;
@@ -315,6 +328,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       do {
         DArrayGetElement((DArrayTy *)this_00->field_0029,local_10,&local_8);
         objPtr = (STBoatC *)
+                 /* ST_CALLSITE[0049C875]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
         if (((objPtr != nullptr) &&
@@ -341,7 +355,9 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
                 pSVar11 = STGridAt3D(g_worldGrid, local_78[0], local_78[1], local_78[2]).objects[0];
               }
               if (((pSVar11 != nullptr) && (*(int *)&pSVar11->field_0x18 == local_72))
-                 && (iVar9 = (*pSVar11->vtable[2].slots_00_28[10])(&local_1c), 0 < iVar9)) break;
+                 /* ST_CALLSITE[0049C96A]: CALL dword ptr [EAX + 0x88]; [STIndirectCallsiteApplier] exact slot 0x88; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
+                 && (iVar9 = (*pSVar11->vtable[2].slots_00_28[10])(pSVar11,&local_1c), 0 < iVar9))
+              break;
             }
           }
           else if (local_68 != -1) {

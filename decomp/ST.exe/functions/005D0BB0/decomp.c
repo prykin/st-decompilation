@@ -65,6 +65,7 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
               bVar9 = uVar8 < pSVar7->count;
             } while ((int)uVar8 < (int)pSVar7->count);
           }
+          /* ST_CALLSITE[005D0C78]: CALL dword ptr [EDX + 0x2c] */
           local_c->SetListCtrls();
           this_00->field_2121 = this_00->field_2121 + 1;
           g_currentExceptionFrame = local_54.previous;
@@ -119,6 +120,7 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
             else {
               thunk_FUN_0056a960(&DAT_00807620,(byte)param_3,bVar10);
             }
+            /* ST_CALLSITE[005D0DAD]: CALL dword ptr [EAX + 0x2c] */
             this_00->SetListCtrls();
             DAT_00808aab = DAT_00808aab + 1;
           }

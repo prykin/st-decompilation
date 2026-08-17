@@ -161,14 +161,24 @@ public class STFunctionPointerParameterAnalyzer extends GhidraScript {
                     if (directCalledFunction(instruction) == null) {
                         Parameter parameter = operands.length == 0 ? null :
                             parameterValue(operands[0], registers, stackParameters);
+                        int cleanup = -1;
                         if (parameter != null && !parameter.isAutoParameter()) {
                             Key key = new Key(addr(function.getEntryPoint()),
                                 parameter.getOrdinal());
                             UseEvidence evidence = uses.computeIfAbsent(key,
                                 ignored -> new UseEvidence(function, parameter));
-                            evidence.argumentCounts.add(stackKnown ? pushes.size() : -1);
-                            int cleanup = stackKnown ?
+                            cleanup = stackKnown ?
                                 callerCleanupWords(instruction, pushes.size()) : -1;
+                            // Optimized MSVC code may stage arguments for a later call
+                            // below the actual callback argument.  The raw number of
+                            // preceding PUSH instructions is therefore only an upper
+                            // bound.  For cdecl, the first exact removal of a word which
+                            // predates this CALL proves the top callback-argument span;
+                            // retain the old upper bound only when no such removal is
+                            // visible so a callee-cleaned target can still prove itself
+                            // from RET n.
+                            evidence.argumentCounts.add(stackKnown && cleanup > 0 ?
+                                cleanup : stackKnown ? pushes.size() : -1);
                             evidence.callerCleanupCounts.add(cleanup);
                             if (cleanup >= 0) stackCleanupProofs++;
                             else stackCleanupFailures++;
@@ -176,8 +186,16 @@ public class STFunctionPointerParameterAnalyzer extends GhidraScript {
                                 instruction);
                             indirectParameterCalls++;
                         }
-                        stackKnown = false;
-                        pushes.clear();
+                        // A proven cdecl cleanup may be delayed across one or
+                        // more following calls.  Keep the physical PUSH stack
+                        // intact and let the later ADD/LEA consume it; clearing
+                        // here makes a second callback in the same basic block
+                        // spuriously unknown.  With no exact cleanup the stack
+                        // shape is still unsafe and must be discarded.
+                        if (cleanup < 0) {
+                            stackKnown = false;
+                            pushes.clear();
+                        }
                     }
                     else {
                         int cleanup = directCallCleanupWords(instruction);
@@ -655,6 +673,15 @@ public class STFunctionPointerParameterAnalyzer extends GhidraScript {
         while (instructions.hasNext() && count++ < 256 && live) {
             Instruction instruction = instructions.next();
             String rendered = instruction.toString().toUpperCase(Locale.ROOT);
+            if (rendered.equals("XOR ECX,ECX") ||
+                    rendered.equals("SUB ECX,ECX")) {
+                // The x86 zero idiom defines ECX without consuming its incoming
+                // value even though Ghidra lists ECX as both an input and an
+                // output object.  Switch-index scratch setup must not turn an
+                // ordinary cdecl callback into a fictitious __thiscall target.
+                live = false;
+                break;
+            }
             boolean scratch = "PUSH ECX".equals(rendered) &&
                 "MOV EBP,ESP".equals(previous) && "PUSH EBP".equals(beforePrevious);
             for (Object input : instruction.getInputObjects())
@@ -844,7 +871,7 @@ public class STFunctionPointerParameterAnalyzer extends GhidraScript {
         Function owner = currentProgram.getFunctionManager()
             .getFunctionContaining(call.getAddress());
         Instruction next = currentProgram.getListing().getInstructionAfter(call.getAddress());
-        int stackDeltaWords = 0;
+        int newerWords = 0;
         for (int scanned = 0; scanned < 32 && next != null && owner != null &&
                 owner.getBody().contains(next.getAddress()); scanned++) {
             String mnemonic = next.getMnemonicString().toUpperCase(Locale.ROOT);
@@ -854,29 +881,34 @@ public class STFunctionPointerParameterAnalyzer extends GhidraScript {
                 continue;
             }
             if ("PUSH".equals(mnemonic)) {
-                stackDeltaWords++;
+                newerWords++;
                 next = currentProgram.getListing().getInstructionAfter(next.getAddress());
                 continue;
             }
             if ("POP".equals(mnemonic)) {
-                stackDeltaWords--;
-                if (stackDeltaWords == -observedWords) return observedWords;
-                if (stackDeltaWords < -observedWords) return -1;
+                if (newerWords > 0) newerWords--;
+                else return 1;
                 next = currentProgram.getListing().getInstructionAfter(next.getAddress());
                 continue;
             }
             if ("CALL".equals(mnemonic)) {
                 Function target = resolveThunk(directCalledFunction(next));
                 if (target == null) return -1;
+                StackShape shape = stackShape(target);
+                // If the following call consumes a word which was already on
+                // the stack at the callback site, that word was deliberately
+                // staged for the later callee and cannot prove callback arity.
+                if (!shape.valid || target.hasVarArgs() ||
+                        newerWords < shape.wordCount) return -1;
                 Set<Long> pops = returnPops(target);
                 if (pops.size() != 1) return -1;
                 long popped = pops.iterator().next();
                 if (popped < 0 || popped % currentProgram.getDefaultPointerSize() != 0)
                     return -1;
-                stackDeltaWords -= (int)(popped /
+                int poppedWords = (int)(popped /
                     currentProgram.getDefaultPointerSize());
-                if (stackDeltaWords == -observedWords) return observedWords;
-                if (stackDeltaWords < -observedWords) return -1;
+                if (poppedWords > newerWords) return -1;
+                newerWords -= poppedWords;
                 next = currentProgram.getListing().getInstructionAfter(next.getAddress());
                 continue;
             }
@@ -895,10 +927,13 @@ public class STFunctionPointerParameterAnalyzer extends GhidraScript {
                         memory.displacement > 0) bytes = memory.displacement;
             }
             if (bytes >= 0 && bytes % currentProgram.getDefaultPointerSize() == 0) {
-                stackDeltaWords -= (int)(bytes /
+                int removed = (int)(bytes /
                     currentProgram.getDefaultPointerSize());
-                if (stackDeltaWords == -observedWords) return observedWords;
-                if (stackDeltaWords < -observedWords) return -1;
+                if (removed <= newerWords) newerWords -= removed;
+                else {
+                    int originalRemoved = removed - newerWords;
+                    return originalRemoved <= observedWords ? originalRemoved : -1;
+                }
                 next = currentProgram.getListing().getInstructionAfter(next.getAddress());
                 continue;
             }

@@ -148,6 +148,7 @@ CGenerate::sub_006991C0
   uVar15 = this->field_582F;
   memset(pbVar8, 0, uVar15); /* compiler bulk-zero initialization */
   uStackY_170 = 0x699252;
+  /* ST_CALLSITE[0069924D]: CALL 0x0040564b; direct=0040564B CGenerate::sub_006948E0 */
   sub_006948E0(this,this->field_5833);
   uVar15 = local_d4;
   local_b4 = (undefined1 *)auStackY_a34;
@@ -173,6 +174,7 @@ CGenerate::sub_006991C0
         *(int **)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = local_80;
         *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc) = iVar21;
         *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8) = 0x699323;
+        /* ST_CALLSITE[0069931E]: CALL 0x0040208b; direct=0040208B CGenerate::sub_00696400 */
         local_EAX_350 =
              sub_00696400(this,*(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc),
                           *(int *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4));

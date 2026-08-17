@@ -17,14 +17,17 @@ DWORD FUN_006c3630(LPDWORD lpThreadId)
   if ((lpThreadId[1] & 0x80000000) != 0) {
     FUN_006c3570((AnonShape_006C3570_37024033 *)lpThreadId);
   }
+  /* ST_CALLSITE[006C365A]: CALL dword ptr [0x0085c0e4] */
   DVar3 = CoCreateInstance((IID *)&DAT_007a10e8,(LPUNKNOWN)0x0,1,(IID *)&DAT_007a10f8,
                            (LPVOID *)(lpParameter + 0x15));
   if (-1 < (int)DVar3) {
     puVar1 = (undefined4 *)lpParameter[0x15];
+    /* ST_CALLSITE[006C3678]: CALL dword ptr [ECX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     DVar3 = (**(code **)*puVar1)(puVar1,&DAT_007a10d8,lpParameter + 0x16);
     if (DVar3 == 0) {
       piVar2 = (int *)lpParameter[0x16];
+      /* ST_CALLSITE[006C368D]: CALL dword ptr [EDX + 0x1c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       DVar3 = (**(code **)(*piVar2 + 0x1c))(piVar2,lpParameter + 0x1d);
       if (-1 < (int)DVar3) {
@@ -32,6 +35,7 @@ DWORD FUN_006c3630(LPDWORD lpThreadId)
         if (DVar3 == 0) {
           DVar3 = FUN_006d4f70(lpParameter + 0x11,lpParameter + 0x13,lpParameter);
           if (DVar3 == 0) {
+            /* ST_CALLSITE[006C36CB]: CALL dword ptr [0x0085bb70] */
             pvVar4 = CreateThread((LPSECURITY_ATTRIBUTES)0x0,0,FUN_006c3720,lpParameter,0,
                                   (LPDWORD)&lpThreadId);
             lpParameter[0x21] = (DWORD)pvVar4;
@@ -39,6 +43,7 @@ DWORD FUN_006c3630(LPDWORD lpThreadId)
               lpParameter[1] = lpParameter[1] | 0x80000000;
               return 0;
             }
+            /* ST_CALLSITE[006C36DB]: CALL dword ptr [0x0085bbcc] */
             DVar3 = GetLastError();
             if (DVar3 == 0) {
               FUN_006c3570((AnonShape_006C3570_37024033 *)lpParameter);

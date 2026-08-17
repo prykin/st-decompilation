@@ -234,6 +234,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_9b4 = 0x6335;
     local_b8c[3] = uVar7;
     local_9bc = local_d90;
+    /* ST_CALLSITE[0059DEC2]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,8,puVar9,nullptr,local_dc8,0);
     this_00->field_002D = 5;
@@ -288,15 +289,22 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_15c4 = 2;
     local_15c0 = 0xc0a2;
     local_15c8 = local_1608;
+    /* ST_CALLSITE[0059E071]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1B10,nullptr,local_1654,0);
+    /* ST_CALLSITE[0059E089]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     SetAccelerator(1,this_00->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
+    /* ST_CALLSITE[0059E0A6]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     SetAccelerator(1,this_00->field_0008,2,0xc0a4,2,0x8000031,0,0,0,0,0,0);
+    /* ST_CALLSITE[0059E0C6]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
     SetAccelerator(1,this_00->field_0008,2,0xc0a5,2,0x4000002f,0,0,0,0,0,0);
+    /* ST_CALLSITE[0059E0EC]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar7 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x17c,0x1be,0x55,0x14,0x6901,0x6984);
     this_00->field_1B18 = uVar7;
+    /* ST_CALLSITE[0059E117]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar7 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,0,499,0x156,0xe6,0x19,0x6903,0x6986);
     this_00->field_1B24 = uVar7;
+    /* ST_CALLSITE[0059E143]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
     uVar7 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x261,0x1b3,0xa0,0x19,0x6902,0x6985);
     this_00->field_1B1C = uVar7;
     local_4f8 = this_00->field_0008;
@@ -355,6 +363,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_98 = 0x8166;
     local_270[2] = uVar7;
     local_a0 = local_4f8;
+    /* ST_CALLSITE[0059E340]: CALL dword ptr [EAX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1B20,nullptr,local_520,0);
     if (this_00->field_1CDF != 0xffffffff) {
@@ -398,12 +407,14 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_1608 = local_1628;
     local_15c8 = local_1628;
     local_de4 = local_1628;
+    /* ST_CALLSITE[0059E49C]: CALL dword ptr [EAX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,nullptr,local_1654,0);
     local_1634 = this_00->field_1AEC;
     local_1654[4] = (ccFntTy *)0x1b5;
     local_1654[5] = (ccFntTy *)0x5f;
     local_1654[7] = (ccFntTy *)0x20;
+    /* ST_CALLSITE[0059E4E2]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,nullptr,local_1654,0);
     this_00->field_002D = 0x61;

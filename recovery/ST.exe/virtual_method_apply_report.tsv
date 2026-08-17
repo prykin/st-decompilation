@@ -135,6 +135,7 @@ target_address	status	proposed_name	detail
 004A4240	disabled	STGroupBoatC::ChangeMDNotify	all apply flags are 0
 004A4D60	disabled	STGroupBoatC::ChangeMDNotify	all apply flags are 0
 004A8920	disabled	OpticClassC::GetMessage	all apply flags are 0
+004AD550	disabled	STT3DSprC::vfunc_0	all apply flags are 0
 004B9FA0	disabled	TLOBaseTy::GetMessage	all apply flags are 0
 004BE0F0	disabled	TLOBaseTy::vfunc_2C	all apply flags are 0
 004BE110	disabled	TLOBaseTy::vfunc_C	all apply flags are 0
@@ -454,7 +455,7 @@ target_address	status	proposed_name	detail
 006406D0	disabled	STTorpC::GetMessage	all apply flags are 0
 00643E20	disabled	STTorpC::vfunc_D8	all apply flags are 0
 006461E0	disabled	STVolcanoC::GetMessage	all apply flags are 0
-00647B40	disabled	AiBossClassTy::vfunc_18	all apply flags are 0
+00647B40	disabled		all apply flags are 0
 00647B60	disabled		all apply flags are 0
 00647B80	disabled		all apply flags are 0
 00647BA0	disabled		all apply flags are 0
@@ -467,6 +468,7 @@ target_address	status	proposed_name	detail
 00647D50	disabled		all apply flags are 0
 00647D90	disabled	AiBossClassTy::vfunc_30	all apply flags are 0
 00648030	disabled	AiBossClassTy::GetMessage	all apply flags are 0
+0064CD10	disabled	AiEventClassTy::vfunc_30	all apply flags are 0
 0064E580	disabled		all apply flags are 0
 00667D90	disabled	AiFltClassTy::GetMessage	all apply flags are 0
 00678930	disabled	AiPlrClassTy::vfunc_18	all apply flags are 0

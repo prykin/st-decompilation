@@ -46,6 +46,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
   STMineSetC *local_8;
 
   local_8 = this;
+  /* ST_CALLSITE[00621B60]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
   local_EAX_16 = st::fn_00404F07((STSprGameObjC *)this,message);
   if (local_EAX_16 == 0xffff) {
     return 0xffff;
@@ -72,6 +73,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
     }
     if (SVar5 == MESS_HITKILL) {
       st::fn_00403D0F((STT3DSprC *)&local_8->field_01D5);
+      /* ST_CALLSITE[0062233F]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
       st::fn_00404147(this_00);
       g_currentExceptionFrame = local_60.previous;
       return 0;
@@ -89,6 +91,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
+      /* ST_CALLSITE[006222E6]: CALL dword ptr [EDX] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)local_8->field_01D5)();
       g_currentExceptionFrame = local_60.previous;
@@ -114,6 +117,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
   if (MESS_SHARED_0003 < SVar5) {
     if (SVar5 == MESS_SHARED_0108) {
       SVar11 = st::fn_0040581C();
+      /* ST_CALLSITE[00622276]: CALL 0x00402414; direct=00402414 STMineSetC::sub_00626B50 */
       st::fn_00402414(local_8,SVar11);
       g_currentExceptionFrame = local_60.previous;
       return 0;
@@ -123,12 +127,14 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
       return 0;
     }
     local_10 = st::fn_00401825((STAllPlayersC *)local_8,&local_c);
+    /* ST_CALLSITE[00622246]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     st::fn_004025F9(g_playSystem_00802A38,(int *)this_00->field_0018,local_10,local_c);
     st::fn_006AB060(&local_10);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   if (SVar5 == MESS_SHARED_0003) {
+    /* ST_CALLSITE[006221D2]: CALL 0x00402374; direct=00402374 STMineSetC::sub_00622880 */
     st::fn_00402374(local_8);
     if (this_00->field_0363 == nullptr) {
       g_currentExceptionFrame = local_60.previous;
@@ -145,12 +151,15 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
        (0x1194 < g_playSystem_00802A38->field_00E4 - local_8->field_035F)) {
       st::fn_0040525E(local_8);
     }
+    /* ST_CALLSITE[00621F07]: CALL 0x00405bfa; direct=00405BFA STMineSetC::sub_006239A0 */
     iVar13 = st::fn_00405BFA(this_00);
     if (iVar13 == 0) {
       if ((this_00->field_02AE == CASE_2) && (this_00->field_0353 == '\0')) {
+        /* ST_CALLSITE[00622101]: CALL 0x00405637; direct=00405637 STMineSetC::sub_006226C0 */
         bVar9 = st::fn_00405637(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
         this_00->field_0353 = bVar9;
         if (bVar9 != 0) {
+          /* ST_CALLSITE[00622114]: CALL 0x004012c6; direct=004012C6 STMineSetC::LoadImagMineSet */
           st::fn_004012C6(this_00,0);
           st::fn_00402982(&this_00->field_01D5,1);
         }
@@ -159,6 +168,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
     else {
       if ((((this_00->field_0314 == '\0') && (SVar10 = this_00->field_02AE, SVar10 != CASE_2)) &&
           (SVar10 != CASE_3)) && ((SVar10 != CASE_4 && (SVar10 != CASE_5)))) {
+        /* ST_CALLSITE[00621F3A]: CALL 0x00404093; direct=00404093 STMineSetC::sub_00627400 */
         SVar10 = st::fn_00404093(this_00,SVar10);
         this_00->field_02AE = SVar10;
       }
@@ -166,14 +176,17 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
       if (((SVar10 != CASE_2) && (SVar10 != CASE_3)) && ((SVar10 != CASE_4 && (SVar10 != CASE_5))))
       {
         if (this_00->field_0353 == '\0') {
+          /* ST_CALLSITE[00621F89]: CALL 0x00405637; direct=00405637 STMineSetC::sub_006226C0 */
           bVar9 = st::fn_00405637(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
           this_00->field_0353 = bVar9;
           if ((bVar9 != 0) && (this_00->field_02BA < 0)) {
+            /* ST_CALLSITE[00621FA6]: CALL 0x004012c6; direct=004012C6 STMineSetC::LoadImagMineSet */
             st::fn_004012C6(this_00,0);
             st::fn_00402982(&this_00->field_01D5,1);
           }
         }
         else if ((g_playSystem_00802A38->field_00E4 & 3) == 0) {
+          /* ST_CALLSITE[00621FD8]: CALL 0x00405637; direct=00405637 STMineSetC::sub_006226C0 */
           bVar9 = st::fn_00405637(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
           this_00->field_0353 = bVar9;
           if ((bVar9 == 0) && (this_00->field_02E9 != '\0')) {
@@ -192,6 +205,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
            ((((g_playSystem_00802A38->field_00E4 % 5 == 0 &&
               (0x19 < g_playSystem_00802A38->field_00E4 - this_00->field_0346)) &&
              ((this_00->field_02AE == CASE_0 || (this_00->field_02AE == CASE_1)))) &&
+            /* ST_CALLSITE[006220A5]: CALL 0x00405c5e; direct=00405C5E STMineSetC::sub_00625730 */
             (iVar13 = st::fn_00405C5E(this_00), iVar13 != 0)))) {
           this_00->field_02AE = CASE_2;
           this_00->field_030F =
@@ -244,6 +258,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
         pSVar15 = STGridAt3D(g_worldGrid, sVar2, sVar4, sVar3).objects[local_14];
       }
       if ((pSVar15 == nullptr) &&
+         /* ST_CALLSITE[00621E46]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
          (iVar13 = st::fn_00401325
                              (sVar2,sVar4,sVar3,this_00->field_008E,
                               (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar13 == 0)) {
@@ -254,6 +269,7 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
         iVar13 = 0;
       }
       if (iVar13 == 0) {
+        /* ST_CALLSITE[00621E6A]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
         st::fn_00404147(this_00);
       }
     }
@@ -263,11 +279,13 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
       this_00->field_02BA = local_EAX_831;
     }
     this_00->field_0363 = nullptr;
+    /* ST_CALLSITE[00621EB0]: CALL 0x004030b7; direct=004030B7 STAllPlayersC::RegisterMine */
     iVar13 = st::fn_004030B7(g_allPlayers_007FA174,this_00->field_0032,this_00);
     if (iVar13 == 0) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
+    /* ST_CALLSITE[00621EBF]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
     st::fn_00404147(this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -283,8 +301,10 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
     local_8->field_0286 = local_8->field_027A;
     local_8->field_028A = local_8->field_027E;
   }
+  /* ST_CALLSITE[00621C81]: CALL 0x00404b74; direct=00404B74 STMineSetC::sub_00622BA0 */
   iVar13 = st::fn_00404B74(local_8);
   if (iVar13 == 0) {
+    /* ST_CALLSITE[00621C8C]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
     st::fn_00404147(this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -311,15 +331,19 @@ cf_common_exit_00621D24:
   if (bVar8) {
     this_00->field_02AE = CASE_1;
     this_00->field_0353 = 1;
+    /* ST_CALLSITE[00621D53]: CALL 0x004012c6; direct=004012C6 STMineSetC::LoadImagMineSet */
     st::fn_004012C6(this_00,0);
+    /* ST_CALLSITE[00621D64]: CALL 0x004030b7; direct=004030B7 STAllPlayersC::RegisterMine */
     iVar13 = st::fn_004030B7(g_allPlayers_007FA174,0xffff,this_00);
     if (iVar13 != 0) {
+      /* ST_CALLSITE[00621D6F]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
       st::fn_00404147(this_00);
     }
     st::fn_00402BB7((AnonShape_00627700_6F319351 *)this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
+  /* ST_CALLSITE[00621D2A]: CALL 0x00404147; direct=00404147 STMineSetC::sub_00622670 */
   st::fn_00404147(this_00);
   g_currentExceptionFrame = local_60.previous;
   return 0;
@@ -366,6 +390,7 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
   iVar3 = st::fn_004052CC((STT3DSprC *)this_00);
   pSVar2->field_02BA = iVar3;
   if (param_1 == 0) {
+    /* ST_CALLSITE[006231E9]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar5 = st::fn_00404183
                       ((STT3DSprC *)this_00,0xe,PTR_00806774,st::pointer_boundary_cast<char *>((&PTR_DAT_007d02c4)[pSVar2->field_02AD])
                        ,CASE_1D);
@@ -374,12 +399,17 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
     }
     st::fn_004023C4(this_00,0x5a,0x45);
     st::fn_00405AA6(this_00,'\x0e');
+    /* ST_CALLSITE[0062321C]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064((STT3DSprC *)this_00,'\x0e',pSVar2->field_02CE);
+    /* ST_CALLSITE[00623225]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
     st::fn_004030BC((STT3DSprC *)this_00,'\x0e');
+    /* ST_CALLSITE[0062323B]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
+    /* ST_CALLSITE[00623244]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar5 = st::fn_004022AC((STT3DSprC *)this_00,'\x0e');
     pSVar2->field_02D2 = iVar5;
     if (pSVar2->field_0352 != '\0') {
+      /* ST_CALLSITE[0062327F]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar5 = st::fn_00404183
                         ((STT3DSprC *)this_00,0xc,PTR_00806774,
                          (&PTR_s_mine0_007d02d4)[pSVar2->field_0262 + (uint)pSVar2->field_02AD * 8],
@@ -387,16 +417,21 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
       if (iVar5 != 0) {
         return local_8;
       }
+      /* ST_CALLSITE[0062329E]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       st::fn_00401064((STT3DSprC *)this_00,'\f',pSVar2->field_02CE);
       st::fn_00405AA6(this_00,'\f');
+      /* ST_CALLSITE[006232B0]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       st::fn_004030BC((STT3DSprC *)this_00,'\f');
+      /* ST_CALLSITE[006232C5]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       st::fn_00405240((STT3DSprC *)this_00,0xc,g_playSystem_00802A38->field_00E4);
     }
     if (DAT_00807326 != '\0') {
+      /* ST_CALLSITE[006232E4]: CALL 0x004052fe; direct=004052FE STT3DSprC::SetCurShad */
       st::fn_004052FE((STT3DSprC *)this_00,'\x0e',(uint)(byte)pSVar2->field_02D6);
     }
   }
   else {
+    /* ST_CALLSITE[00623309]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar5 = st::fn_00404183
                       ((STT3DSprC *)this_00,0xe,PTR_00806774,
                        (&PTR_s_expdeep_007d0354)[pSVar2->field_02AD],CASE_1D);
@@ -404,9 +439,13 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
       return local_8;
     }
     st::fn_00405AA6(this_00,'\x0e');
+    /* ST_CALLSITE[00623331]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064((STT3DSprC *)this_00,'\x0e',pSVar2->field_02CE);
+    /* ST_CALLSITE[0062333A]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
     st::fn_004030BC((STT3DSprC *)this_00,'\x0e');
+    /* ST_CALLSITE[00623350]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
+    /* ST_CALLSITE[00623372]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar5 = st::fn_00404183
                       ((STT3DSprC *)this_00,10,PTR_00806774,
                        st::pointer_boundary_cast<char *>((&PTR_CHAR_e_007d0364)[pSVar2->field_02AD]),CASE_1D);
@@ -414,12 +453,18 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
       return local_8;
     }
     st::fn_00405AA6(this_00,'\n');
+    /* ST_CALLSITE[0062339A]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064((STT3DSprC *)this_00,'\n',pSVar2->field_02E1);
+    /* ST_CALLSITE[006233A3]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
     st::fn_004030BC((STT3DSprC *)this_00,'\n');
+    /* ST_CALLSITE[006233B3]: CALL 0x004044ee; direct=004044EE STT3DSprC::sub_004ACF20 */
     st::fn_004044EE((STT3DSprC *)this_00,PTR_008032b8,0x10);
+    /* ST_CALLSITE[006233BC]: CALL 0x00403233; direct=00403233 STT3DSprC::sub_004ACFE0 */
     st::fn_00403233((STT3DSprC *)this_00,'\n');
+    /* ST_CALLSITE[006233D2]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
     pSVar2->field_02E0 = 1;
+    /* ST_CALLSITE[006233FA]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar5 = st::fn_00404183
                       ((STT3DSprC *)this_00,9,PTR_00806764,
                        st::pointer_boundary_cast<char *>((&PTR_CHAR_e_007d0374)[pSVar2->field_02AD]),CASE_1D);
@@ -427,12 +472,17 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
       return local_8;
     }
     st::fn_00405AA6(this_00,'\t');
+    /* ST_CALLSITE[00623422]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064((STT3DSprC *)this_00,'\t',pSVar2->field_02DB);
+    /* ST_CALLSITE[0062342B]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
     st::fn_004030BC((STT3DSprC *)this_00,'\t');
+    /* ST_CALLSITE[00623441]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240((STT3DSprC *)this_00,9,g_playSystem_00802A38->field_00E4);
+    /* ST_CALLSITE[0062344A]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
     st::fn_00402761((STT3DSprC *)this_00,9);
     pSVar2->field_02DF = 1;
   }
+  /* ST_CALLSITE[006234A0]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   st::fn_004045D9
             ((STT3DSprC *)this_00,(float)pSVar2->field_02C2 * _DAT_007904f8 * _DAT_007904f0,
              (float)pSVar2->field_02C6 * _DAT_007904f8 * _DAT_007904f0,

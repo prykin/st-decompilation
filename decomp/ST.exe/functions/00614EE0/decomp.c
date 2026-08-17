@@ -50,6 +50,7 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
     iVar4 = 0;
   }
   else {
+    /* ST_CALLSITE[0061501F]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0(this_00,&local_a,&local_6,&local_8);
     if (((local_a == STField<short>(this,0x2c5)) && (local_6 == STField<short>(this,0x2c7)))
        && (local_8 == STField<short>(this,0x2c9))) {

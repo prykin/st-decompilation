@@ -54,6 +54,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[0060377F]: CALL 0x00403ebd; direct=00403EBD STGameObjC::GetMessage */
   iVar7 = STGameObjC::GetMessage((STGameObjC *)local_10,message);
   this_01 = local_10;
   if (iVar7 == 0xffff) {
@@ -86,6 +87,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
           }
         }
         if (this_00->field_026D == '\0') {
+          /* ST_CALLSITE[00603D18]: CALL 0x00401e9c; direct=00401E9C STExplosion::sub_00604350 */
           local_EAX_1496 = sub_00604350(this_00);
           if (local_EAX_1496 != 0) {
             thunk_FUN_00604820((int)this_00);
@@ -114,8 +116,10 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
           pAVar7 = pAVar3;
           puVar8 = (byte *)&this_00->field_0x1d5;
           memmove(puVar8, pAVar7, 0x40); /* compiler REP MOVS byte copy */
+          /* ST_CALLSITE[00603852]: CALL 0x004047a0; direct=004047A0 STExplosion::sub_00605130 */
           sub_00605130(local_10);
           puVar8 = (byte *)(&this_01->field_0272);
+          /* ST_CALLSITE[00603860]: CALL 0x00401e9c; direct=00401E9C STExplosion::sub_00604350 */
           local_EAX_288 = sub_00604350(this_01);
           if (local_EAX_288 != 0) {
             this_01->field_026D = 1;
@@ -130,6 +134,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
             iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar6 + -2;
             this_01->field_027E = 5;
+            /* ST_CALLSITE[00603921]: CALL 0x00404ca0; direct=00404CA0 STExplosion::sub_00606050 */
             local_EAX_481 =
                  sub_00606050(this_01,*(int *)&pAVar3->field_0x1c,*(int *)&pAVar3->field_0x20,
                               *(int *)&pAVar3->field_0x24,*(int *)&pAVar3->field_0x28,
@@ -217,8 +222,10 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
+      /* ST_CALLSITE[006037B9]: CALL 0x00401118; direct=00401118 STExplosion::sub_00604970 */
       sub_00604970(this_00);
       if (this_00->field_026D != '\0') {
+        /* ST_CALLSITE[006037CA]: CALL 0x0040514b; direct=0040514B STExplosion::sub_00605780 */
         sub_00605780(this_00);
       }
       if (this_00->field_02BB != nullptr) {
@@ -226,15 +233,18 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
         Library::MSVCRT::FUN_0072e2b0(this_00->field_02BB);
         this_00->field_02BB = nullptr;
       }
+      /* ST_CALLSITE[006037F5]: CALL 0x00403f3a; direct=00403F3A STExplosion::sub_00604120 */
       sub_00604120(this_00);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
+    /* ST_CALLSITE[00603D70]: CALL 0x0040565f; direct=0040565F STExplosionC::SaveObj */
     local_c = (byte *)STExplosionC::SaveObj((STExplosionC *)this_00,&local_8);
     if (local_c == nullptr) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
+    /* ST_CALLSITE[00603D8F]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,(int *)this_00->field_0018,local_c,local_8);
     slotStorage = &local_c;
   }

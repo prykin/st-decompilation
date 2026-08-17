@@ -25,6 +25,7 @@ BOOL __cdecl FUN_006a5620(int param_1)
   if ((DAT_00857154 & 0x8000) != 0) {
     return 1;
   }
+  /* ST_CALLSITE[006A567A]: CALL dword ptr [0x0085bb9c] */
   BVar3 = HeapValidate(DAT_0085a5c4,0,lpMem);
   return BVar3;
 }

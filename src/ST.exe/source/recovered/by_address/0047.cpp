@@ -25,6 +25,7 @@ int __fastcall st::fn_004769F0(int *param_1)
 {
   int iVar1;
 
+  /* ST_CALLSITE[004769F7]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
   iVar1 = st::fn_00403DF0((STBoatC *)param_1);
   return iVar1;
 }
@@ -39,6 +40,7 @@ int __fastcall st::fn_00476CC0(int *param_1)
 {
   int iVar1;
 
+  /* ST_CALLSITE[00476CC7]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
   iVar1 = st::fn_00403DF0((STBoatC *)param_1);
   return iVar1;
 }
@@ -53,6 +55,7 @@ int __fastcall st::fn_004795E0(int *param_1)
 {
   int iVar1;
 
+  /* ST_CALLSITE[004795E7]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
   iVar1 = st::fn_00403DF0((STBoatC *)param_1);
   return iVar1;
 }

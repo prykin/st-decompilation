@@ -20,11 +20,14 @@ int FUN_0074ceb2(AnonShape_0074CEB2_D881A5E3 *param_1,int *lpCriticalSection,int
   else {
     param_1->field_004C = param_3;
     lpCriticalSection_00 = *(LPCRITICAL_SECTION *)&param_1[-1].field_0x20;
+    /* ST_CALLSITE[0074CED6]: CALL dword ptr [0x0085bb8c] */
     EnterCriticalSection(lpCriticalSection_00);
+    /* ST_CALLSITE[0074CEDF]: CALL dword ptr [EAX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*lpCriticalSection + 4))(lpCriticalSection);
     piVar1 = param_1->field_0004;
     if (piVar1 != nullptr) {
+      /* ST_CALLSITE[0074CEEC]: CALL dword ptr [ECX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*piVar1 + 8))(piVar1);
     }
@@ -33,9 +36,11 @@ int FUN_0074ceb2(AnonShape_0074CEB2_D881A5E3 *param_1,int *lpCriticalSection,int
     this = *(void **)(param_1->field_0048 + 0x90);
     if ((STField<int>(this,0x18) != 0) &&
        (iVar2 = FUN_0074d156(this,lpCriticalSection,param_3), iVar2 < 0)) {
+      /* ST_CALLSITE[0074CF11]: CALL dword ptr [0x0085bb90] */
       LeaveCriticalSection(lpCriticalSection_00);
       return iVar2;
     }
+    /* ST_CALLSITE[0074CF1E]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(lpCriticalSection_00);
     iVar3 = 0;
   }

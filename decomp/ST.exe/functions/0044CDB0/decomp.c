@@ -18,6 +18,7 @@ void FUN_0044cdb0(uint param_1,DArrayTy *groupContent,int param_3)
     do {
       DArrayGetElement(groupContent,index,&param_1);
       if ((((ushort)param_1 != 0xffff) &&
+          /* ST_CALLSITE[0044CDF2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           (pSVar3 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,(char)uVar2,(ushort)param_1,CASE_1),
           pSVar3 != nullptr)) && (pSVar3->field_0020 == 0x14)) {
