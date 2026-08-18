@@ -1,7 +1,8 @@
 # Structure-recovery gap inventory
 
-Snapshot: last completed central `decomp/ST.exe/functions/*/decomp.c` corpus,
-5,720 decompiled functions. Counts below are diagnostic matches, not mutually
+Snapshot: accepted run
+`a63fc3c0069f31b2a60ea95b5f985a35e148fed461098b94fe4ef01dc03c4a34`,
+5,555 decompiled function bodies. Counts below are diagnostic matches, not mutually
 exclusive objects: one expression can belong to several rows. An interrupted
 export does not establish a newer snapshot; check that
 `recovery/ST.exe/export_receipt.json` says `passed`.
@@ -13,44 +14,44 @@ boundary and concrete before/after forms.
 
 ## Current post-ABI snapshot
 
-The last completed corpus contains 5,720 function bodies.
-`pseudocode_idioms.jsonl` records 4,556 function/kind rows across 2,984 bodies
-(52.2%); kinds overlap. The table below uses the narrowest current inventory
+The last completed corpus contains 5,555 function bodies.
+`pseudocode_idioms.jsonl` records 4,267 function/kind rows across 2,823 bodies
+(50.8%); kinds overlap. The table below uses the narrowest current inventory
 for each row (`pseudocode_idioms`, `decomp_quality`, or `compile_readiness`), so
 it should not be summed. For the complete compilation-facing view, see
 [`compile-readiness.md`](compile-readiness.md).
 
 | Remaining presentation class | Functions | Occurrences | Main next step |
 | --- | ---: | ---: | --- |
-| Stack-slot lifetime reuse | 467 | 4,284 | Split only address-stable HighFunction merge groups; inseparable groups remain presentation debt. |
-| Raw pointer + constant offset | 1,004 | 2,178 | Recover compatible pointer families; retain real byte-buffer arithmetic. |
-| Packed/piece compatibility view | 176 | 514 | Replace `STPiece` only with a discriminator-local union facet, named field, or equally exact packed helper. |
-| Raw indirect call | 763 | 1,853 | Recover callback/COM/vtable slot prototypes; audit likely unclassified runtime code separately. |
-| Residual return-width use | 103 | 292 | Distinguish return width, register clobbers, x87 stack outputs, and merged high variables. |
+| Stack-slot lifetime reuse | 271 | 476 | Split only address-stable HighFunction merge groups; inseparable groups remain presentation debt. |
+| Raw pointer + constant offset | 922 | 1,986 | Recover compatible pointer families; retain real byte-buffer arithmetic. |
+| Packed/piece compatibility view | 172 | 492 | Replace an audited helper only with a discriminator-local union facet, named field, or equally exact packed expression. |
+| Raw indirect call | 689 | 1,614 | Recover callback/COM/vtable slot prototypes; audit likely unclassified runtime code separately. |
+| Residual return-width use | 103 | 291 | Distinguish return width, register clobbers, x87 stack outputs, and merged high variables. |
 | Terminal debug trap | 968 | 1,277 | Already normalized to standalone noreturn `STDebugBreak()`. |
-| Residual live-in register | 133 | 474 | Verify function boundaries, SEH/setjmp state, and calling conventions. |
-| Runtime-stride DArray indexing | 40 | 77 | Present through a typed `DArrayAt<T>` source helper; a static datatype cannot fold it. |
+| Residual live-in register | 126 | 407 | Verify function boundaries, SEH/setjmp state, and calling conventions. |
+| Runtime-stride DArray indexing | 49 | 85 | Present through a typed `DArrayAt<T>` source helper; a static datatype cannot fold it. |
 | Flattened global record array | 17 | 36 | Recompose only after exact base, stride, field, and index proof. |
 
 ## Broad recursive textual audit
 
 The focused table above contains transformation idioms. A second recursive scan
-of all 5,720 `functions/**/decomp.c` files shows the larger naming/type debt in
+of all 5,555 `functions/**/decomp.c` files shows the larger naming/type debt in
 the same snapshot. Counts are overlapping textual matches and therefore are not
 numbers of unique recovered objects:
 
 | Residual class | Functions | Matches | Interpretation |
 | --- | ---: | ---: | --- |
-| Scalar cast over a generic structure field | 759 | 4,136 | Usually a wrong receiver/pointer family or a field-width overlap; prioritize this structural cluster. |
-| Any generic `field_XXXX` name | 2,439 | 62,160 | Mostly semantic naming debt; a generic name alone does not mean the width/layout is wrong. |
-| Generic global aggregate | 32 | 101 | Singleton/aggregate layout is present but its global and/or member semantics are unnamed. |
-| Anonymous recovered type | 1,256 | 4,216 | Cross-function shape-family consolidation remains incomplete. |
-| Explicit `undefined*` type | 3,637 | 18,200 | Mixed prototype, local, field, and return-type debt; aliases now make it syntactically expressible, not semantically resolved. |
-| Generic `DAT/PTR/UNK` symbol | 1,517 | 14,887 | Requires scalar/string/table/singleton/array classification before naming. |
-| `goto` or `LAB_*` control-flow label | 915 | 11,731 | Includes legitimate optimized shared tails as well as still-unstructured CFGs. |
-| Raw indirect call spelling | 763 | 1,853 | Callback/vtable/function-pointer prototype debt. |
-| Unresolved register input | 133 | 474 | ABI, boundary, or SEH/setjmp live-in debt. |
-| Raw pointer offset | 1,004 | 2,178 | Missing complete pointer family or intentional byte-buffer arithmetic. |
+| Scalar cast over a generic structure field | 703 | 3,794 | Usually a wrong receiver/pointer family or a field-width overlap; prioritize this structural cluster. |
+| Any generic `field_XXXX` name | 2,396 | 61,777 | Mostly semantic naming debt; a generic name alone does not mean the width/layout is wrong. |
+| Generic global aggregate | 33 | 113 | Singleton/aggregate layout is present but its global and/or member semantics are unnamed. |
+| Anonymous recovered type | 1,133 | 3,663 | Cross-function shape-family consolidation remains incomplete. |
+| Explicit `undefined*` type | 3,513 | 17,797 | Mixed prototype, local, field, and return-type debt; aliases now make it syntactically expressible, not semantically resolved. |
+| Generic `DAT/PTR/UNK` symbol | 1,465 | 14,430 | Requires scalar/string/table/singleton/array classification before naming. |
+| `goto` or `LAB_*` control-flow label | 886 | 11,601 | Includes legitimate optimized shared tails as well as still-unstructured CFGs. |
+| Raw indirect call spelling | 689 | 1,614 | Callback/vtable/function-pointer prototype debt. |
+| Unresolved register input | 126 | 407 | ABI, boundary, or SEH/setjmp live-in debt. |
+| Raw pointer offset | 922 | 1,986 | Missing complete pointer family or intentional byte-buffer arithmetic. |
 
 `STDecompExport` now regenerates `decomp_quality_summary.json` and
 `decomp_quality_issues.jsonl` from this recursive pass. The JSONL rows carry the
@@ -63,16 +64,16 @@ the old widespread `unaff_*` family substantially. The remaining work is no
 longer one missing global type database. It is concentrated in semantic
 ownership and optimized per-use representation:
 
-- 4,065 of 5,624 bodies still have a default Ghidra function symbol; qualified
+- 3,965 of 5,555 bodies still have a default Ghidra function symbol; qualified
   `FUN_`/`sub_`-style names remain a separate semantic-naming queue;
-- placeholder `field_XXXX` forms remain in 2,407 bodies;
-- 895 bodies still contain at least one `goto`;
-- 200 physical vtable candidates are known, 101 are high-confidence, and five
+- placeholder `field_XXXX` forms remain in 2,396 bodies;
+- 886 bodies still contain at least one `goto` or exported control-flow label;
+- 200 physical vtable candidates are known, 103 are high-confidence, and five
   owner conflicts remain;
-- virtual-method analysis leaves 212 placeholder names and 120 multi-owner
+- virtual-method analysis leaves 213 placeholder names and 120 multi-owner
   targets unresolved;
 - indirect-call application currently proves only a subset of the full audit;
-  741 bodies retain 1,806 raw calls, many in the late runtime address
+  689 bodies retain 1,614 raw calls, many in the late runtime address
   range and should be checked against library classification before game types
   are invented for them.
 

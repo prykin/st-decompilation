@@ -6,6 +6,30 @@ proposal/apply/export pipeline.
 
 The supported and tested setup is **Ghidra 12.1.2 with JDK 21**.
 
+## Reproducible Compose environment
+
+The preferred headless setup is the pinned Compose image at the repository
+root. After materializing Git LFS objects, run:
+
+```sh
+cp .env.example .env
+./docker/run.sh build-image
+./docker/run.sh project-hydrate
+./docker/run.sh doctor
+./docker/run.sh build-scripts
+./docker/run.sh headless-smoke
+```
+
+Pipeline modes are exposed directly as `./docker/run.sh core`, `deep`, `full`,
+`export`, and `full-export`. The container mounts the checkout at `/workspace`,
+opens the local ignored `proj/st.gpr`, derives Ghidra's project owner from
+`project.prp`, and drops root to the invoking host UID/GID before touching
+files. It does not contain GitHub credentials and cannot write `.git`. See
+[`../docker/README.md`](../docker/README.md) for logs, overrides, source audits,
+snapshot publication, hydration, and import behavior. A fresh checkout receives
+the verified packed `ghidra/ST.exe.gzf` through Git LFS and hydrates `proj/`
+before `doctor`; it never overlays one project database with another.
+
 ## Scripts, not a compiled Ghidra extension
 
 The files under `scripts/` are Ghidra Java scripts. They are sometimes referred
@@ -62,7 +86,7 @@ Normal refreshes no longer require launching every script or selecting every
 TSV manually. Run `STRecoveryLauncher` from Script Manager or
 **Tools → Submarine Titans → Run Recovery Pipeline**. The launcher
 writes an ignored `pipeline_bootstrap.log.tmp` while asking Ghidra to load and
-run `STRecoveryPipeline`, then atomically promotes it to
+run `STRecoveryPipeline`, then atomically promotes it to the ignored local
 `recovery/ST.exe/pipeline_bootstrap.log` only after successful completion. This
 preserves the last complete provider/runtime log across a JVM kill, reboot, or
 out-of-memory failure. Because Script Manager is connected directly to
@@ -279,8 +303,10 @@ pipeline deliberately does not call `DomainFile.save()` behind the UI's back.
 After a successful mutating mode, use **File → Save** when the action is enabled.
 If it is disabled, Ghidra's `Program.isChanged()` is already false and there is
 nothing for that action to save. Close the CodeBrowser and project normally,
-then reopen one newly recovered symbol as a persistence check before producing
-the verified packed checkpoint; do not publish while the program is still open. The export-only mode does not modify the program database.
+then reopen one newly recovered symbol as a persistence check. After an accepted
+export, close the GUI and run `docker/run.sh snapshot`, `snapshot-verify`, and
+`snapshot-publish`; only the packed checkpoint is Git-visible. The export-only
+mode does not modify the program database.
 
 Standalone scripts retain their dialogs for targeted experiments and for using
 nonstandard output roots. The path-free pipeline is the canonical routine
@@ -2017,8 +2043,12 @@ a new conflict is what requires another iteration.
 
 - `bin/` is ignored and must never be committed.
 - Ghidra `.lock`, `.lock~`, recovery, and temporary files are ignored.
-- The expanded database under `proj/` is ignored local working state. Publish
-  only the verified packed Program checkpoint under `ghidra/` through Git LFS.
+- Files under `proj/st.rep/idata/` are the actual expanded working database and
+  stay local/ignored. Ghidra may replace one `db.N.gbf` with a newer generation
+  during a save; this no longer creates Git/LFS churn.
+- `ghidra/ST.exe.gzf` is the deterministic committed checkpoint. Publish it only
+  when the semantic Program hash changed and the export receipt passed; hydrate
+  a new local project from it instead of copying or overlaying `.rep` files.
 - Local CodeBrowser UI state is not part of the analysis.
 - Generated Java `.class` and inner-class files are ignored. Do not deliberately
   compile scripts into `scripts/`.
@@ -2041,7 +2071,7 @@ versions can be genuine API differences. Script Manager refresh compiles the
 entire source bundle before any repository script can execute, so refresh-time
 compiler diagnostics remain in Ghidra's Console/application log. After a
 successful refresh, `STRecoveryLauncher` atomically promotes provider/runtime
-output to `recovery/ST.exe/pipeline_bootstrap.log`; a failed attempt leaves only
+output to the ignored `recovery/ST.exe/pipeline_bootstrap.log`; a failed attempt leaves only
 the ignored `.tmp` staging log and does not overwrite the prior successful log.
 Child load diagnostics are retained in the newest run's `build/` directory and
 indexed by `build_manifest.tsv`.

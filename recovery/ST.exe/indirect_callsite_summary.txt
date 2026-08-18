@@ -19,6 +19,7 @@ auto_apply=288
 cleanup=0
 conflicts=0
 decompile_failures=0
+decompile_failure_functions=
 policy=An override requires either exact physical dispatch consensus or an exact machine MOV tableReg,[receiverReg] plus live ECX=receiverReg chain, one unique offset-zero vtable owner, and matching p-code/machine arity. Without target-family evidence the return is void only when unused, or neutral undefined4 when the CALLIND owns one complete 32-bit output. An EDX:EAX bridge is address-local when one staged argument word and the following direct __fastcall close the machine chain.
 policy_density=Machine-only fallback is disabled when one function would receive more than 32 overrides. A dense set of use-only prototypes is not independent ABI evidence and can perturb whole-function SSA/register liveness; previously installed script-owned overrides in that function are removed.
 policy_dense_slot=A raw physical slot may replace void* only when its vtable has one unique offset-zero owner, every retained site has the exact live ECX receiver, and either at least three calls in two functions or eight calls in one complete dense family agree on one fixed arity. At least eight calls in two functions may instead prove multiple arities; that case becomes a conservative receiver-aware variadic slot.

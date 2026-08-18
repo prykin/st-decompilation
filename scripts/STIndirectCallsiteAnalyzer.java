@@ -50,6 +50,7 @@ import ghidra.program.model.symbol.Symbol;
 
 public class STIndirectCallsiteAnalyzer extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT = 45;
+    private static final int DECOMPILE_RETRY_TIMEOUT = 120;
     private static final int MAX_TRACE_DEPTH = 28;
     private static final int MAX_MACHINE_OVERRIDES_PER_FUNCTION = 32;
     private static final String MARKER = "[STIndirectCallsiteApplier]";
@@ -60,6 +61,7 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         machineFloatReturnMatches, machineWideUseSiteMatches,
         retainedMachineOverrides, suppressedMachineOverrides, densePhysicalSlots;
     private int conflicts, failures;
+    private final List<String> decompileFailureFunctions = new ArrayList<>();
     private Map<String, Set<String>> ownersByVtable;
     private final Set<String> suppressedMachineFunctions = new TreeSet<>();
     private final Map<String, Integer> exactMachineReceiverSites = new TreeMap<>();
@@ -150,6 +152,10 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
             ordered.size() + ", apply=" + ordered.stream().filter(row -> row.apply).count() +
             ", cleanup=" + ordered.stream().filter(row -> row.action.equals("cleanup")).count() +
             ", failures=" + failures);
+        if (failures != 0)
+            throw new IllegalStateException("Indirect-callsite decompilation remained " +
+                "incomplete after retry; failures=" + failures +
+                "; see indirect_callsite_summary.txt");
     }
 
     private List<DispatchAbi> dispatchAbis(List<Map<String, String>> rows) {
@@ -287,8 +293,17 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
             DecompileResults result = decompiler.decompileFunction(function,
                 DECOMPILE_TIMEOUT, monitor);
             if (result == null || !result.decompileCompleted()) {
-                failures++;
-                return;
+                decompiler.flushCache();
+                result = decompiler.decompileFunction(function,
+                    DECOMPILE_RETRY_TIMEOUT, monitor);
+                if (result == null || !result.decompileCompleted()) {
+                    failures++;
+                    String reason = result == null ? "no_result" :
+                        text(result.getErrorMessage());
+                    decompileFailureFunctions.add(addr(function.getEntryPoint()) + ":" +
+                        clean(reason));
+                    return;
+                }
             }
             functionsDecompiled++;
             Map<String, Site> sites = new HashMap<>();
@@ -1237,6 +1252,8 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
             "cleanup=" + rows.stream().filter(row -> row.action.equals("cleanup")).count(),
             "conflicts=" + conflicts,
             "decompile_failures=" + failures,
+            "decompile_failure_functions=" +
+                String.join(",", decompileFailureFunctions),
             "policy=An override requires either exact physical dispatch consensus or an " +
                 "exact machine MOV tableReg,[receiverReg] plus live ECX=receiverReg chain, " +
                 "one unique offset-zero vtable owner, and matching p-code/machine arity. " +

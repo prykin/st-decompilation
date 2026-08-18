@@ -1,5 +1,5 @@
 program=ST.exe
-source=<local-home>/st/recovery/ST.exe/prototype_proposals.tsv
+source=prototype_proposals.tsv
 repair_proposals=2
 type_auto_apply=0
 name_auto_apply=0

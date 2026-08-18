@@ -5,7 +5,7 @@ An evidence-driven decompilation of the original 32-bit Windows release of
 
 Repository: [prykin/st-decompilation](https://github.com/prykin/st-decompilation)
 
-The project combines a versioned Ghidra database, conservative recovery
+The project combines a packed Ghidra database checkpoint, conservative recovery
 scripts, reviewable proposal files, and an address-stable text corpus intended
 for human and LLM-assisted reverse engineering. The long-term goal is to turn
 the recovered program into readable, buildable, and eventually portable source
@@ -180,13 +180,39 @@ context on interactive database queries.
 
 Requirements:
 
-- Ghidra 12.1.2;
-- the JDK supported by that Ghidra release (JDK 21 for the current setup);
-- Git with enough free space for the Ghidra database and generated corpus;
+- Git with Git LFS and enough free space for the Ghidra database and generated corpus;
+- Docker with Compose v2 for the reproducible headless environment; or Ghidra
+  12.1.2 with JDK 21 for a direct host setup;
 - a legally obtained Submarine Titans installation for binary verification.
 
-Hydrate the ignored `proj/` working copy from `ghidra/ST.exe.gzf`, then open `proj/st.gpr` in Ghidra, add this repository's `scripts/` directory to the
-Ghidra Script Manager, and run scripts from the **SubmarineTitans** categories.
+The recommended setup keeps Ghidra and JDK off the host:
+
+```sh
+git lfs install --local
+git lfs pull
+cp .env.example .env
+./docker/run.sh build-image
+./docker/run.sh project-hydrate
+./docker/run.sh doctor
+./docker/run.sh build-scripts
+./docker/run.sh headless-smoke
+```
+
+`.env` and all container logs are machine-local and ignored. Recovery, export,
+source generation, and compiler-audit commands are documented in
+[`docker/README.md`](docker/README.md). Git synchronization always happens on
+the host; the container sees `.git` read-only and contains no repository
+credentials.
+
+The expanded `proj/st.gpr` and `proj/st.rep` are machine-local working state.
+After an accepted Program change, use `snapshot`, `snapshot-verify`, and
+`snapshot-publish` to update the deterministic `ghidra/ST.exe.gzf` checkpoint;
+do not repack it for commits which leave the Program semantic hash unchanged.
+
+For a direct host setup, open `proj/st.gpr` in Ghidra, add this repository's
+`scripts/` directory to the Ghidra Script Manager, and run scripts from the
+**SubmarineTitans** categories.
+
 The scripts are compiled by Ghidra on demand; they are not a separately built
 extension.
 

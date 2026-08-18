@@ -1,0 +1,45 @@
+name: st-decompilation
+
+services:
+  ghidra:
+    image: st-decompilation-ghidra:12.1.2
+    platform: ${ST_DOCKER_PLATFORM:-linux/amd64}
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        GHIDRA_VERSION: 12.1.2
+        GHIDRA_RELEASE_DATE: 20260605
+        GHIDRA_SHA256: b62e81a0390618466c019c60d8c2f796ced2509c4c1aea4a37644a77272cf99d
+    init: true
+    network_mode: none
+    hostname: st-ghidra
+    extra_hosts:
+      - "st-ghidra:127.0.0.1"
+    working_dir: /workspace
+    environment:
+      HOME: /home/st
+      ST_REPO: /workspace
+      ST_PROJECT_ROOT: /workspace/proj
+      ST_PROJECT_NAME: st
+      ST_PROGRAM: ST.exe
+      ST_HOST_UID: ${ST_HOST_UID:-1000}
+      ST_HOST_GID: ${ST_HOST_GID:-1000}
+      ST_JAVA_HEAP: ${ST_JAVA_HEAP:-6g}
+      ST_COMPILE_JOBS: ${ST_COMPILE_JOBS:-4}
+    volumes:
+      - type: bind
+        source: .
+        target: /workspace
+      - type: bind
+        source: ./.git
+        target: /workspace/.git
+        read_only: true
+      - type: volume
+        source: ghidra-home
+        target: /home/st
+    stop_grace_period: 2m
+    command: ["full-export"]
+
+volumes:
+  ghidra-home:

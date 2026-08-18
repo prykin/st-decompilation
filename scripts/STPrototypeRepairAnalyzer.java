@@ -43,7 +43,7 @@ public class STPrototypeRepairAnalyzer extends GhidraScript {
         writeTsv(proposals, source.header, repairs);
         Files.write(directory.resolve("prototype_repair_summary.txt"), List.of(
             "program=" + currentProgram.getName(),
-            "source=" + input.getAbsolutePath(),
+            "source=" + input.getName(),
             "repair_proposals=" + repairs.size(),
             "type_auto_apply=" + repairs.stream().filter(r -> enabled(r.get("type_apply"))).count(),
             "name_auto_apply=" + repairs.stream().filter(r -> enabled(r.get("name_apply"))).count(),

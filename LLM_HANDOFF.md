@@ -9,22 +9,28 @@ script.
 
 ## Environment
 
-- Authoritative repository path: `<local-home>/st` on the local disk. Do not use
-  or inspect an SMB mirror.
-- `.st-local/environment.conf` is the ignored machine profile for exact local
-  tool/project paths. Use it only when `access_mode=direct` and `pwd -P` equals
-  its `canonical_repo`; ignore it from every SMB or different checkout.
-- Ghidra host: Ghidra 12.1.2 with Homebrew OpenJDK 21.
-- Project on the Ghidra host: `<local-home>/st/proj/st.gpr`.
-- Scripts on the Ghidra host: `<local-home>/st/scripts`.
-- Recovery output: `<local-home>/st/recovery/ST.exe`.
-- LLM corpus: `<local-home>/st/decomp/ST.exe`.
+- Source synchronization is Git/LFS through `origin`; never use or inspect a
+  network mirror. Treat the current physical Git checkout as `<repo>` and do
+  not record its host path in tracked output.
+- The preferred runner is `docker/run.sh`. Compose supplies pinned Ghidra
+  12.1.2, JDK 21, Python, Clang, and Git LFS. The checkout is `/workspace` in
+  the container and `.git` is mounted read-only.
+- Root `.env` is the ignored machine profile. `.st-local/` contains ignored
+  outer logs, compiler output, and a credential-free Docker CLI directory.
+- The verified tracked database checkpoint is `ghidra/ST.exe.gzf`; the expanded
+  working project `proj/st.gpr` is local and ignored. A fresh checkout runs
+  `docker/run.sh project-hydrate` before `doctor`, `build-scripts`, and
+  `headless-smoke`. Recovery output is `recovery/ST.exe` and the LLM corpus is
+  `decomp/ST.exe`.
+- `docker/run.sh snapshot` writes an ignored hash-named packed Ghidra Program;
+  `snapshot-verify` imports it into a temporary read-only project and verifies
+  the exact semantic fingerprint without changing `proj/st.rep`.
+  `snapshot-publish` requires a matching passed export and updates the
+  deterministic Git/LFS checkpoint only when Program semantics changed.
 - Original executable: `bin/ST.exe` (ignored; never commit).
-- Long direct macOS headless runs must use the ignored
-  `.st-local/run-recovery.sh` or an equivalent `caffeinate -dims` wrapper. Two
-  observed resets followed idle sleep/wake rather than a kernel panic, thermal
-  shutdown, or a Java-initiated shutdown; sustained Ghidra CPU load is not a
-  macOS sleep assertion.
+- A direct macOS Ghidra installation is only an optional fallback. Its ignored
+  `.st-local/environment.conf` is valid only for the checkout that created it;
+  long host-side runs still require a sleep assertion.
 
 The scripts are ordinary Ghidra Java scripts compiled on demand, not a Gradle
 extension. `STRecoveryLauncher` infers repository paths and orchestrates the
@@ -43,67 +49,103 @@ corpus and reports, not one convenient `decomp.c`. Do not claim a source change
 affected Ghidra until the user has run the pipeline and the generated reports
 have been checked.
 
-## Latest accepted run
+## Current authoritative state
 
-The current authoritative headless export is run
-`036d42eb0e484bbb8e66c58b122cf717ed21ee49f3a6115be79be02c267db8b5`.
-Its receipt is `passed` with semantic hash
-`f5a831a90f31a838d0544d14c8d8bb95976a1aecae7346b11867562ab0027971`
-and manifest hash
-`4cfa3a9f97a05ffcef736e9e0653fbf0531c142fe45eda7af6b3775cc211ab73`.
-The manifest now also binds `pseudocode_runtime.h` as
-`e862abf02069a82b42314c50a439d81f7c9b31529c2ec493c0590f99e8e9196d`,
-so a compatibility-helper semantic change cannot hide behind an otherwise
-unchanged corpus receipt.
-It contains 10,407 function entries, 5,555 bodies, zero failed bodies, and 3,192
-typed physical-vtable slots. Both the broad export gate and ABI gate pass with
-zero errors and zero warnings. The latest headless `export` did not mutate the
-Program and completed in `00:05:41`; it reused all 10,407 function bodies and
-all 5,555 cached quality analyses.
+The current accepted headless export is run
+`a63fc3c0069f31b2a60ea95b5f985a35e148fed461098b94fe4ef01dc03c4a34`.
+Its receipt is `passed` with Program semantic hash
+`bfd44643f2e5256a9d5836adcbb3b547e17dbf6a8d41f24358ff514c2e258237`
+and corpus manifest hash
+`21b7a30b59e58741910a8087949413e53036b9c97a58ad118284b78b446c0e6a`.
+The manifest binds portable `program.json` metadata as
+`3bb8a76833b385eab3616325d3bd622ddaea5741bd8c60a99eb35c483ad7d761`.
+The manifest binds `pseudocode_runtime.h` as
+`e862abf02069a82b42314c50a439d81f7c9b31529c2ec493c0590f99e8e9196d`.
+Current repository HEAD is `df54348e9dc06a6276f1210f3ad73d08328b635a`
+(`Recover callable slots and pointer-word lifetimes`). Do not infer a clean
+working tree merely from this value; obtain an explicit status before editing
+or committing.
 
-The quality inventory contains 3,972 anonymous-shape occurrences, 17,609
-undefined types, 2,027 raw pointer offsets, 1,722 raw indirect calls, 291
+The accepted corpus contains 10,407 function records, 5,555 bodies, zero failed
+bodies, and 3,192 typed physical-vtable slots. The export and ABI gates both
+pass with zero errors and zero warnings. The latest recorded export pipeline
+totals `00:10:51`: `STIndirectCallsiteAnalyzer` accounts for about `00:04:43`
+and `STDecompExport` for about `00:03:41`. All 10,407 function bodies were
+reused; the exporter-source change intentionally invalidated the quality cache
+for this run. These are elapsed diagnostics, not committed wall-clock
+timestamps. A later focused read-only indirect-callsite audit decompiled all
+1,109 candidates with zero failures and retained the same 288 automatic
+proposals.
+
+The canonical Git/LFS Program checkpoint is the deterministic normalized
+`ghidra/ST.exe.gzf`: 28,507,588 bytes with packed SHA-256
+`2112ce3204107620a44c8ac1c4d13a77a696b4acf0a3f4a9dc10fc3736aebda8`.
+Two independent packs were byte-identical, a temporary-project import restored
+the exact semantic hash above, and a same-semantic publish left both content
+and mtime unchanged. The expanded 223 MiB `proj/` database is ignored local
+working state.
+
+The current quality inventory contains 3,663 anonymous-shape occurrences,
+17,797 undefined types, 3,794 casts over generic fields, 1,986 raw pointer
+offsets, 1,614 raw indirect calls, 1,434 canonical casted call results, 291
 return-width artifacts, 476 residual stack-slot-reuse occurrences, and 407
-unresolved register inputs. These are occurrence counts over all exported
-`functions/**/decomp.c`, not independent recovery facts.
+unresolved register inputs. The counts overlap and are occurrences across all
+exported `functions/**/decomp.c`, not independent recovery facts. In total,
+4,943 of 5,555 bodies have at least one quality row.
 
-`STIndirectCallsiteAnalyzer/Applier` is now part of export ABI stabilization.
-The accepted fixed point retains 145 exact call overrides from 3,431 machine
-candidates. Exact physical dispatch consensus wins; neutral machine fallbacks
-are suppressed for an entire function above 32 sites, because the rejected
-195-site dense family caused a measurable SSA/liveness regression. Stale
-script-owned overrides are removable while foreign/manual overrides remain
-protected. `STIndirectCallAnalyzer` still owns shared physical slot types.
-
-Exporter presentation recovery now splits 260 safe post-overwrite parameter
-lifetimes across 183 functions, including the cursor formerly printed as a
-mutation of `0075F590::param_2`. It also folds exact byte-pointer `REP STOSD`
-zero loops, 15 packed-bit reads, 23 indexed bit sets, one indexed bit clear, 29
-MSVC signed-divide-by-four forms, and nine 16.16 rounding forms. These helpers
-preserve machine behavior and make no game-semantic type claim.
-
-`tools/st_source_tree.py` emits 5,555 bodies as 322 C++17 translation units,
+`tools/st_source_tree.py` emits all 5,555 bodies as 322 C++17 translation units,
 with 1,044 bodies under proven original paths and address-stable
-`st::fn_ADDRESS` implementations. It materializes 2,233 exact unnamed field
-views, 1,130 physical-vtable forwarding wrappers, 1,312 uniquely owned
-non-virtual source methods, and 26 exact use-site dispatch wrappers. The latter
-keep 121 duplicated-receiver callsites readable and generation fails if one
-regresses to nested `exact_indirect_callee` syntax. The deterministic source
-audit contains 13,479 rows.
+`st::fn_ADDRESS` implementations. It generates 1,146 physical-vtable member
+wrappers, 1,314 uniquely owned non-virtual source methods, 37 exact indirect
+member wrappers, and 2,284 exact unnamed field views. The deterministic source
+audit contains 13,039 rows. The strict generated-source readability profile
+contains 6,964 generic undefined declarations, 2,505 pointer-boundary casts,
+1,614 raw code calls, 571 `unaff`/`extraout` occurrences, 38 undefined static
+casts, and three residual duplicated-vtable calls.
 
-With Apple Clang and a fixed limit of 64 diagnostics per translation unit, 203
-of 322 units pass. There are 1,109 retained errors, 1,092 mapped to stable
-function addresses. The leading typed clusters are undeclared identifiers
-(135), invalid casts (123), missing record members (100), assignment types (94),
-pointer indirection (92), non-callable values (70), and invalid operands (62).
-Compiler output remains ignored under `.st-local/`.
+The current fixed Apple Clang audit uses C++17, MS extensions, an ILP32 target,
+and a limit of 64 errors per translation unit. It passes 244 of 322 units and
+retains 450 errors: 436 map to stable function addresses and 14 do not. One
+translation unit reaches the 64-error cap, so 450 is a comparison floor rather
+than proof that no later diagnostics exist. Raw compiler output remains ignored
+under `.st-local/`; compare only runs with the same compiler configuration and
+per-TU error limit.
 
-The next database-level cluster is mutable byte-buffer pointer roles. Function
-`0040F4D0` is the representative case: all meaningful consumers treat its first
-parameter as mutable bytes, but the current prototype remains `undefined4 *`.
-Recover `byte *`/`char *` only from complete machine def-use plus unanimous
-direct-call evidence; do not patch the exported cast or specialize a neutral
-heterogeneous loader. Follow `Q-053` in `docs/recovery-task-queue.md`.
+The highest-leverage immediate compiler defect is the source member wrapper for
+the variadic physical slot used by `0066ACC0`: 63 of the 76 retained call-arity
+errors arise because the physical slot is variadic while the convenience member
+wrapper was emitted as zero-argument `slot_00()`. Repair the wrapper family
+generically from exact observed callsite arities; do not change the physical ABI
+or add an address exception. The next machine-level clusters are mixed
+pointer/float/scalar lifetimes in `0064A970`, `00548C40`, `00605B60`, and
+`00652810`, plus void-looking results consumed as values.
+
+## Ordered next work
+
+The accepted ordered queue currently ends at `Q-055`. Continue with the four
+items below; their full definitions and completion criteria are in
+`docs/recovery-task-queue.md`.
+
+1. `Q-056` — make compiler diagnostics an address-stable ratchet and close
+   source-generator wrapper/declaration failures. Remove the variadic-wrapper
+   arity family, unaddressed diagnostics, raw undeclared decompiler identifiers,
+   and unsafe lexical-lifetime crossings before asking the database for more
+   semantic types.
+2. `Q-057` — separate pointer, scalar, floating, DArray, stack-output, and
+   post-call SSA lifetimes; close return ABI/value-domain contradictions from
+   machine and call-boundary evidence. Never solve these with whole-local casts.
+3. `Q-058` — recover remaining callable ownership: physical vtables, callback
+   fields/parameters, function tables, library callbacks, and ownerless
+   `__thiscall` families. Shared physical ABI wins; address-local overrides
+   remain the last resort.
+4. `Q-059` — consolidate pointer layouts, anonymous records, arrays, global
+   aggregates, unclaimed executable ranges, and only then semantic names and CFG
+   presentation. Generic names are review debt, not permission to invent names.
+
+The intended dependency order is source-boundary correctness -> lifetime/ABI ->
+callable ownership -> aggregate/semantic consolidation. Run analyzer-only
+review, one apply pass, one confirming pass, ABI/export gates, source generation,
+and the fixed compiler audit for every queue item.
 
 ## Historical pre-compiler checkpoints
 
@@ -550,9 +592,9 @@ authoritative paths already inferred by the launcher:
 
 No individual paths are required:
 
-- analyzer root: `<local-home>/st/recovery`
-- proposal TSVs: `<local-home>/st/recovery/ST.exe/*.tsv`
-- export root: `<local-home>/st/decomp`
+- analyzer root: `<repo>/recovery`
+- proposal TSVs: `<repo>/recovery/ST.exe/*.tsv`
+- export root: `<repo>/decomp`
 
 Expected checks after completion:
 
@@ -603,7 +645,7 @@ summary counters remain pending runtime validation.
 
 ## Historical address-free continuation after that validation
 
-The following source changes were made later through the SMB-mounted repository
+The following source changes were made later through the former network-mounted workflow
 from a machine without Ghidra. They have passed `git diff --check`, a balanced-token scan over all 77 Java
 scripts, helper-definition/duplicate-control-flow checks, and source literal
 audits, but **have not been compiled or run in Ghidra yet**:
@@ -1243,7 +1285,7 @@ the database to the exact accepted semantic fingerprint.
 `STRecoveryLauncher` now writes bootstrap output to the ignored
 `pipeline_bootstrap.log.tmp` and atomically promotes it only after the child
 pipeline succeeds. A hard kill or reboot therefore preserves the last complete
-tracked bootstrap log instead of replacing it with an unaccepted prefix.
+machine-local bootstrap log instead of replacing it with an unaccepted prefix.
 
 Current accepted state:
 
@@ -1381,7 +1423,7 @@ Current accepted state:
 
 ## Count-driven stack outputs and readability regression gates
 
-The latest accepted work used the direct local checkout; no SMB path or copied
+The latest accepted work used the direct local checkout; no network path or copied
 project was involved. `STStackOutputArrayAnalyzer/Applier` is now a normal
 pipeline pair immediately after fixed stack-object recovery. It has no ST
 address/type allow-list. Its automatic proof requires the same exact

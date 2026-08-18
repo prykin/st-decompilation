@@ -3,23 +3,36 @@
 ## Purpose and source of truth
 
 This repository recovers the original 32-bit MSVC/x86 Submarine Titans program
-into readable, eventually buildable source. The live authoritative analysis is the local Ghidra 12.1.2 project under
-ignored `proj/`; the committed database checkpoint is the verified packed
-Program under `ghidra/`. `recovery/` and `decomp/` are generated, reviewable
-projections of that state. Do not hand-edit generated recovery or
-decompiler output to invent facts that belong in Ghidra or a recovery script.
+into readable, eventually buildable source. The live authoritative analysis is
+the local Ghidra 12.1.2 project under ignored `proj/`; the committed database
+checkpoint is the verified packed Program under `ghidra/`. `recovery/` and
+`decomp/` are generated, reviewable projections of that state. Do not hand-edit
+generated recovery or decompiler output to invent facts that belong in Ghidra
+or a recovery script.
 
 Original binaries are local under ignored `bin/` and must not be committed.
 
 ## Working model
 
-- If `.st-local/environment.conf` exists, it is a machine-local path profile.
-  Validate it with `.st-local/check-environment.sh` before using any value;
-  validation failure means that the whole profile must be ignored.
-  Use it only when `access_mode=direct` and the physical repository root
-  (`pwd -P`) exactly matches its `canonical_repo`; otherwise ignore it. In
-  particular, never reuse its paths from an SMB/network checkout. The entire
-  `.st-local/` directory is ignored and must not be committed.
+- Use an ordinary Git/LFS checkout on a local filesystem. Synchronize through
+  `origin`; do not inspect, edit, or run the project through a network mirror.
+- The preferred reproducible runner is `docker/run.sh`. Its Compose image pins
+  Ghidra 12.1.2 and JDK 21, mounts the working tree at `/workspace`, mounts
+  `.git` read-only, and has no repository credentials. Hydrate `proj/` first
+  when it is absent, then run `doctor`,
+  `build-scripts`, and `headless-smoke` before the first mutating pipeline pass.
+- Root `.env` is the ignored machine-local Compose profile; start from
+  `.env.example`. `.st-local/` contains ignored outer logs, compiler output, and
+  the credential-free Docker CLI directory. Neither path may be committed.
+- A validated direct-host `.st-local/environment.conf` remains an optional
+  fallback for GUI Ghidra. Never reuse it from another checkout or machine.
+- `docker/run.sh snapshot` creates a hash-named packed `.gzf` without writing
+  the source project; `snapshot-verify` reimports it into a temporary read-only
+  project and requires the semantic Program fingerprint to match. Snapshots
+  remain ignored under `.st-local/`; `snapshot-publish` requires a matching
+  passed export receipt and updates `ghidra/ST.exe.gzf` only after a semantic
+  Program change. A fresh checkout uses `project-hydrate` to create local
+  `proj/` and never overlays one project database with another.
 - `scripts/` contains Ghidra Java scripts, not a Gradle extension. Ghidra compiles
   them on demand with JDK 21.
 - On a direct macOS checkout, hold a system sleep assertion for every long

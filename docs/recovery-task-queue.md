@@ -25,8 +25,8 @@ artifacts.
 ### Q-000 Restore the accepted repository and Ghidra Program
 
 - Close Ghidra and verify that no process holds the project.
-- Restore tracked project, scripts, recovery output, corpus, and documentation
-  to `39097bd736`.
+- Restore the packed project checkpoint, scripts, recovery output, corpus, and
+  documentation from `39097bd736`, then hydrate a fresh local project.
 - Remove or quarantine untracked files belonging to the rejected experiment.
 - Open the restored project and verify the Program semantic hash before running
   an applier.
@@ -65,8 +65,8 @@ cheaper failure.
 
 ### Q-002 Isolate risky Program mutations
 
-Status: superseded for the current single authoritative local-project workflow.
-Do not create or maintain an unmanaged project copy. Source-bundle pinning,
+Status: superseded by the verified packed-checkpoint/local-project workflow.
+Do not create or maintain an unmanaged second working project. Source-bundle pinning,
 analyzer/applier separation, ABI barriers, run archives, and transactional
 corpus export provide the automated isolation used here. A new risky ABI
 heuristic must remain proposal-only until those gates cover it; the pipeline
@@ -734,6 +734,136 @@ Accepted state:
   436 address-mapped;
 - calls through `void`, dereferences of `void *`, and compiler diagnostics in
   the `006D8A60` pointer/scalar family are each zero.
+
+### Q-056 Ratchet source compilation and close wrapper/declaration failures
+
+Status: planned; first next item.
+
+Establish a deterministic address-stable compiler regression ratchet over the
+existing ignored Apple Clang audit. Compare only the same C++17/MS-extension,
+ILP32, 64-errors-per-TU configuration and the exact accepted source manifest.
+Raw compiler output stays under `.st-local/`; the durable policy must contain no
+machine path or wall-clock timestamp. A source-generation candidate is rejected
+when a previously passing TU fails, a per-address diagnostic family increases,
+an unaddressed error appears, or one TU newly reaches the diagnostic cap.
+
+The first concrete family is generic, not an address patch. A physical vtable
+slot may be conservatively variadic while the generated convenience member
+wrapper is currently emitted from one zero-argument view. In `0066ACC0` this
+produces 63 calls with one argument to `slot_00()`, accounting for most of the
+76 current arity errors. Generate exact forwarding overloads or use-site member
+wrappers from the already exported callsite ABI families; never narrow or widen
+the physical slot merely to satisfy C++ overload resolution.
+
+Close the remaining source-boundary failures in the same item:
+
+- undeclared p-code/decompiler tokens such as `puRam00000000`, `register0x*`,
+  `pARam*`, `unique*`, and stale switch labels must become explicit recovery
+  rows or hard presentation blockers rather than leaking into generated C++;
+- namespace/import/declaration identity must be resolved from exported records,
+  including address-taken functions and host ABI records;
+- declarations may be hoisted across `goto`/`case` only after exact lexical
+  dominance and initialization checks;
+- `STMessageArg` source facets may expose only the exact scalar/pointer union
+  view already present at that message boundary.
+
+Completion criteria:
+
+- no translation unit reaches the 64-error cap;
+- zero unaddressed compiler errors;
+- zero generator-owned member-wrapper arity, missing declaration, stale token,
+  or lexical-lifetime diagnostics;
+- source readability remains per-address nonincreasing and all focused generator
+  tests pass before atomic promotion.
+
+### Q-057 Separate value-domain lifetimes and close return ABI contradictions
+
+Status: planned; follows Q-056.
+
+Use normalized compiler diagnostics only as an address-stable discovery queue.
+For every enabled repair, re-prove the machine/p-code anchor in Ghidra. Extend
+local-lifetime recovery to distinguish pointer, scalar, floating, DArray,
+stack-output, and post-call values which share one Listing local or stack slot.
+A whole-local type is forbidden when the domains are not one persistent High
+Variable; use a dominance-safe exporter lifetime only when Ghidra cannot
+represent the split.
+
+Initial representative families are:
+
+- `0064A970`: callback results currently merge `int *`, `byte *`, and floating
+  values;
+- `00548C40`: an output pointer and later x87/float value share storage;
+- `00605B60`: a scalar switch domain is rendered as `undefined1 *`;
+- `00652810`: DArray, scalar, pointer, and count-driven output lifetimes still
+  collide after the recovered fixed output array;
+- functions whose current `void` return is consumed as a scalar or pointer.
+
+Return refinement continues to require complete callee return-path evidence and
+complete caller consumption. String-like `char *` and binary `byte *` parameters
+must be distinguished from full def-use and unanimous call-boundary consumers;
+the C++ compiler's signed-char rules are not semantic evidence.
+
+Completion criteria:
+
+- zero pointer-to-float, float-to-pointer, pointer-as-switch, and void-value
+  compiler families;
+- no increase in unresolved register inputs, return-width artifacts, stack-slot
+  reuse, generic pointer towers, or canonical casted call results at any address;
+- all ABI fixture and export gates pass after a confirming no-change pipeline.
+
+### Q-058 Recover callable ownership and indirect-call families
+
+Status: planned; follows Q-057.
+
+Partition the remaining raw indirect calls into physical vtables, stored
+callbacks, callback parameters, ordinary function tables, external/COM-style
+interfaces, and linked-library runtime code. Reuse the existing exact store,
+load, receiver, stack cleanup, return-consumption, source-bracketing, and target
+family evidence; a raw call or equal table geometry alone is insufficient.
+
+Recover ownerless `__thiscall` functions only from independent caller-family
+propagation plus unique physical-vtable agreement and sufficient receiver
+extent. Do not infer class ownership from a semantic-looking name, one caller,
+or source adjacency. Shared physical slot consensus outranks per-call overrides;
+use-site overrides remain an address-stable last-resort ABI view and must be
+removed when the physical slot becomes independently proven.
+
+Completion targets, used as direction rather than permission to weaken proof:
+
+- reduce raw indirect calls from 1,614 to below 500;
+- reduce ownerless `__thiscall` functions from 950 to below 400;
+- reduce canonical casted call results by at least half;
+- preserve every manual/imported ABI, all 3,192 accepted typed physical slots,
+  and the per-function readability baseline.
+
+### Q-059 Consolidate aggregates, executable coverage, and semantic identities
+
+Status: planned; follows Q-058.
+
+After ABI and ownership stabilize, consolidate exact pointer layouts and
+anonymous records through cross-function flow, complete copy/zero spans,
+discriminator-local union facets, array stride/bounds, allocation roots, and
+global producer/consumer evidence. Treat DArray runtime stride, packed transport,
+and adjacent global storage according to their existing safety boundaries.
+Geometry or a matching source basename alone must never merge identities.
+
+Then classify remaining `DAT`/`PTR`/`UNK` objects as scalar, string, pointer,
+array, table, or record before attempting semantic names. Recover additional
+function boundaries from the 83,886 current meaningful unclaimed executable
+bytes only when control flow, references, prologue/epilogue, or SEH funclet
+evidence agrees. Control-flow restructuring and semantic field/function naming
+are the final presentation layer; optimized shared tails and genuinely unknown
+names may remain explicit review debt.
+
+Completion targets:
+
+- all 322 translation units compile independently under the fixed audit; linking
+  and image-backed runtime definitions remain a separate later milestone;
+- raw pointer offsets fall below 500 and anonymous-shape occurrences below 1,000;
+- every remaining generic name, ambiguous shape, and unclaimed range is retained
+  in an address-stable review queue with an explicit rejection reason;
+- no semantic name, inheritance relation, array extent, or record merge is based
+  on an image address allow-list or hand-authored game-type list.
 
 ## Definition of done for one queue item
 

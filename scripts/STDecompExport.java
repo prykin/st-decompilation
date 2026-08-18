@@ -619,7 +619,7 @@ public class STDecompExport extends GhidraScript {
         writeJson(programRoot.resolve("program.json"), jsonObject(
             field("schema_version", "1"),
             field("program", currentProgram.getName()),
-            field("executable_path", currentProgram.getExecutablePath()),
+            field("executable_path", portableExecutablePath()),
             field("executable_format", currentProgram.getExecutableFormat()),
             field("language_id", currentProgram.getLanguageID().toString()),
             field("compiler_spec_id", currentProgram.getCompilerSpec().getCompilerSpecID().toString()),
@@ -628,6 +628,13 @@ public class STDecompExport extends GhidraScript {
             field("md5", nullToEmpty(currentProgram.getExecutableMD5())),
             field("sha256", nullToEmpty(currentProgram.getExecutableSHA256()))
         ));
+    }
+
+    private String portableExecutablePath() {
+        String value = nullToEmpty(currentProgram.getExecutablePath());
+        int separator = Math.max(value.lastIndexOf('/'), value.lastIndexOf('\\'));
+        String leaf = separator >= 0 ? value.substring(separator + 1) : value;
+        return leaf.isBlank() ? currentProgram.getName() : leaf;
     }
 
     private void exportMemoryMap() throws IOException {
@@ -8880,6 +8887,8 @@ public class STDecompExport extends GhidraScript {
                 Integer.toString(FUNCTION_ANALYSIS_SCHEMA)),
             field("ghidra_version", applicationVersion()),
             field("program", currentProgram.getName()),
+            field("program_metadata_sha256",
+                sha256File(programRoot.resolve("program.json"))),
             rawField("function_count", Integer.toString(exportedFunctionCount)),
             rawField("program_function_count", Integer.toString(programFunctionCount)),
             rawField("exported_function_count", Integer.toString(exportedFunctionCount)),
