@@ -49,8 +49,7 @@ import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.Symbol;
 
 public class STIndirectCallsiteAnalyzer extends GhidraScript {
-    private static final int DECOMPILE_TIMEOUT = 45;
-    private static final int DECOMPILE_RETRY_TIMEOUT = 120;
+    private static final int DECOMPILE_TIMEOUT = 600;
     private static final int MAX_TRACE_DEPTH = 28;
     private static final int MAX_MACHINE_OVERRIDES_PER_FUNCTION = 32;
     private static final String MARKER = "[STIndirectCallsiteApplier]";
@@ -154,7 +153,7 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
             ", failures=" + failures);
         if (failures != 0)
             throw new IllegalStateException("Indirect-callsite decompilation remained " +
-                "incomplete after retry; failures=" + failures +
+                "incomplete; failures=" + failures +
                 "; see indirect_callsite_summary.txt");
     }
 
@@ -293,17 +292,12 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
             DecompileResults result = decompiler.decompileFunction(function,
                 DECOMPILE_TIMEOUT, monitor);
             if (result == null || !result.decompileCompleted()) {
-                decompiler.flushCache();
-                result = decompiler.decompileFunction(function,
-                    DECOMPILE_RETRY_TIMEOUT, monitor);
-                if (result == null || !result.decompileCompleted()) {
-                    failures++;
-                    String reason = result == null ? "no_result" :
-                        text(result.getErrorMessage());
-                    decompileFailureFunctions.add(addr(function.getEntryPoint()) + ":" +
-                        clean(reason));
-                    return;
-                }
+                failures++;
+                String reason = result == null ? "no_result" :
+                    text(result.getErrorMessage());
+                decompileFailureFunctions.add(addr(function.getEntryPoint()) + ":" +
+                    clean(reason));
+                return;
             }
             functionsDecompiled++;
             Map<String, Site> sites = new HashMap<>();

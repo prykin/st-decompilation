@@ -225,7 +225,7 @@ public class STDArrayElementApplier extends GhidraScript {
                     continue;
                 }
                 DecompileResults decompiled =
-                    decompiler.decompileFunction(function, 30, monitor);
+                    decompiler.decompileFunction(function, 600, monitor);
                 if (!decompiled.decompileCompleted()) {
                     for (Map<String, String> row : entry.getValue())
                         localReport.add(localReport(row, "conflict",
@@ -725,7 +725,7 @@ public class STDArrayElementApplier extends GhidraScript {
                 monitor.checkCancelled();
                 Function function = function(entry.getKey());
                 DecompileResults decompiled = function == null ? null :
-                    decompiler.decompileFunction(function, 30, monitor);
+                    decompiler.decompileFunction(function, 600, monitor);
                 if (decompiled == null || !decompiled.decompileCompleted()) {
                     String detail = decompiled == null ? "function is missing" :
                         "fresh decompile failed: " +

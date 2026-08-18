@@ -19,6 +19,9 @@ class CompileAuditCommandTests(unittest.TestCase):
 
         self.assertEqual(2, SCHEMA_VERSION)
         self.assertIn("-m32", command)
+        self.assertIn("-std=c++17", command)
+        self.assertIn("-D_TIME_BITS=64", command)
+        self.assertIn("-D_FILE_OFFSET_BITS=64", command)
         self.assertLess(command.index("-m32"), command.index("-fsyntax-only"))
 
 

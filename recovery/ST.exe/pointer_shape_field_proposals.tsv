@@ -246,6 +246,8 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0044B5F0_D398D597	36	4	field_0024	/uint	1	fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0044B5F0_D398D597	48	2	field_0030	/ushort	1	fixed-offset dereference; observed_types={/ushort=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0044C720_4F46D223	2	1	field_0002	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_0044EE30_EE4C3745	493	4	field_01ED	/int	1	fixed-offset dereference; observed_types={/int=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_0044EE30_FA5EDDE4	69	4	field_0045	/int	1	fixed-offset dereference; observed_types={/int=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0045FF30_A86BE482	1113	4	field_0459	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00465C60_DB7C2FF2	4	2	field_0004	/ushort	1	fixed-offset dereference; observed_types={/ushort=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0046B100_089D1DB7	4	2	field_0004	/ushort	1	fixed-offset dereference; observed_types={/ushort=3}; exact_widths={}; indexed_strides={}; semantic_roles={}

@@ -37,7 +37,8 @@ static_assert(sizeof(undefined6) == 6);
 using byte = uint8_t;
 using ushort = uint16_t;
 using uint = uint32_t;
-using ulong = uint32_t;
+using ulong = unsigned long;
+static_assert(sizeof(ulong) == 4, "ST requires 32-bit ulong");
 using int3 = int32_t;   /* logical signed 24-bit value */
 using uint3 = uint32_t; /* logical unsigned 24-bit value */
 using float10 = long double;

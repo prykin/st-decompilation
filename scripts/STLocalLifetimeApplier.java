@@ -44,7 +44,7 @@ import ghidra.program.model.symbol.Symbol;
 
 public class STLocalLifetimeApplier extends GhidraScript {
     private static final String MARKER = "[STLocalLifetimeApplier]";
-    private static final int DECOMPILE_TIMEOUT = 45;
+    private static final int DECOMPILE_TIMEOUT = 600;
 
     private final List<ReportRow> report = new ArrayList<>();
     private final List<Applied> applied = new ArrayList<>();

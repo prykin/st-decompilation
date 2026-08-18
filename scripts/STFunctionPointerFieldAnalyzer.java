@@ -46,7 +46,7 @@ import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.SourceType;
 
 public class STFunctionPointerFieldAnalyzer extends GhidraScript {
-    private static final int DECOMPILE_TIMEOUT = 45;
+    private static final int DECOMPILE_TIMEOUT = 600;
     private static final int MAX_TRACE_DEPTH = 24;
     private static final String MARKER = "[STFunctionPointerFieldApplier]";
     private static final String TYPE_ROOT =

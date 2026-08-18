@@ -173,12 +173,14 @@ public class STTypeLifecycleApplier extends GhidraScript {
             else if ("remove".equals(row.get("action"))) {
                 String description = text(type.getDescription());
                 boolean anonymous = disposableAnonymous(type, description);
+                boolean generatedEnum = disposableGeneratedEnum(type, description);
                 if (hasPhysicalVptrCompanion(type)) {
                     report.add(new Report("remove", path, "preserved",
                         "physical vptr companion requires atomic class/vtable retirement"));
                     return;
                 }
-                if (!(description.contains(VIEW) || derivedView || anonymous) ||
+                if (!(description.contains(VIEW) || derivedView || anonymous ||
+                        generatedEnum) ||
                         type.getParents().size() != 0 ||
                         !(removalProvenance(text(type.getDescription())) || derivedView) ||
                         liveFunctionUses != 0 || liveListingUses != 0 ||
@@ -192,6 +194,8 @@ public class STTypeLifecycleApplier extends GhidraScript {
                     throw new IllegalStateException(
                         "datatype manager refused removal");
                 report.add(new Report("remove", path, "removed",
+                    generatedEnum ?
+                        "unreferenced switch enum without a stable typed target" :
                     anonymous ?
                         "unreferenced hash/script-owned anonymous type" :
                     derivedView ?
@@ -348,7 +352,8 @@ public class STTypeLifecycleApplier extends GhidraScript {
     }
     private boolean viewOrDerivative(DataType type) {
         String description = text(type.getDescription());
-        if (description.contains(VIEW) || disposableAnonymous(type, description))
+        if (description.contains(VIEW) || disposableAnonymous(type, description) ||
+                disposableGeneratedEnum(type, description))
             return true;
         return derivedFromView(type);
     }
@@ -382,6 +387,7 @@ public class STTypeLifecycleApplier extends GhidraScript {
             description.contains("[STTypeBootstrapApplier]") ||
             description.contains("[STDiscriminatedPayloadApplier]") ||
             description.contains("[STPointerShapeApplier]") ||
+            description.contains("[STSwitchEnumApplier]") ||
             description.contains("[STClassLayoutApplier]") ||
             description.contains("[STHiddenThisApplier generated]");
     }
@@ -396,6 +402,12 @@ public class STTypeLifecycleApplier extends GhidraScript {
                 description.contains("generated_layout_sha256=") ||
             path.startsWith("/SubmarineTitans/Recovered/HiddenThis/") &&
                 description.contains("[STHiddenThisApplier generated]");
+    }
+    private boolean disposableGeneratedEnum(DataType type, String description) {
+        return type instanceof ghidra.program.model.data.Enum &&
+            type.getPathName().startsWith(
+                "/SubmarineTitans/Recovered/Enums/") &&
+            description.contains("[STSwitchEnumApplier]");
     }
 
     /** Revalidate the physical class/vtable pair at mutation time. */

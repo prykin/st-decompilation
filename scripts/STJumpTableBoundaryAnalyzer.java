@@ -33,7 +33,7 @@ import ghidra.program.model.symbol.Reference;
 
 public class STJumpTableBoundaryAnalyzer extends GhidraScript {
     private static final int MAX_ENTRIES = 4096;
-    private static final int DECOMPILE_TIMEOUT = 60;
+    private static final int DECOMPILE_TIMEOUT = 600;
     private static final String TRUNCATION_WARNING =
         "Sanity check requires truncation of jumptable";
     private static final String APPLIER_MARKER = "[STJumpTableBoundaryApplier]";

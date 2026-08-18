@@ -48,6 +48,7 @@ import ghidra.program.model.symbol.SourceType;
 import ghidra.util.task.TaskMonitor;
 
 public class STSwitchEnumAnalyzer extends GhidraScript {
+    private static final int DECOMPILE_TIMEOUT = 600;
     private static final String CASE_NAME = "CASE_(?:NEG_)?[0-9A-Fa-f]+";
     private static final String CASE_ATOM =
         "-?(?:0[xX][0-9a-fA-F]+|[0-9]+)|[A-Za-z_][A-Za-z0-9_:]*";
@@ -110,31 +111,13 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         List<DecompileRetry> retries = new ArrayList<>();
         List<DecompileFailure> failures = new ArrayList<>();
         Map<Address, Decompiled> completed = new TreeMap<>();
-        Map<Address, String> initialReasons = new TreeMap<>();
-        List<Function> retryFunctions = new ArrayList<>();
-        for (Decompiled unit : parallelDecompile(candidates, 30)) {
+        for (Decompiled unit : parallelDecompile(candidates, DECOMPILE_TIMEOUT)) {
             if (unit.function == null) continue;
             if (unit.error.isBlank()) completed.put(unit.function.getEntryPoint(), unit);
-            else {
-                retryFunctions.add(unit.function);
-                initialReasons.put(unit.function.getEntryPoint(), unit.error);
-            }
-        }
-        for (Decompiled unit : parallelDecompile(retryFunctions, 120)) {
-            if (unit.function == null) continue;
-            String initial = initialReasons.getOrDefault(
-                unit.function.getEntryPoint(), "initial decompile failed");
-            if (unit.error.isBlank()) {
-                completed.put(unit.function.getEntryPoint(), unit);
-                retries.add(new DecompileRetry(unit.function, initial, "recovered"));
-            }
-            else {
-                failures.add(new DecompileFailure(unit.function, unit.error));
-                retries.add(new DecompileRetry(unit.function, initial, "failed"));
-            }
+            else failures.add(new DecompileFailure(unit.function, unit.error));
         }
         int candidateFunctions = candidates.size();
-        int decompileRetries = retryFunctions.size();
+        int decompileRetries = 0;
         int decompileFailures = failures.size();
         int rawSwitches = 0;
         for (Decompiled unit : completed.values())
@@ -148,7 +131,6 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             .thenComparing(p -> p.targetKind).thenComparing(p -> p.targetName));
         makeEnumNamesUnique(proposals);
         mergeObservedEnums(proposals, observedEnums);
-        addLocalDomainMaterialization(proposals);
         proposals.sort(Comparator.comparing((Proposal p) -> p.functionAddress)
             .thenComparing(p -> p.targetKind).thenComparing(p -> p.targetName));
         for (Proposal proposal : proposals) {
@@ -562,40 +544,6 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             proposal.evidenceFunctions.add(addr(function.getEntryPoint()));
         }
         return switches.size();
-    }
-
-    /**
-     * A decompiler local is not safe to type persistently without an
-     * address-stable HighVariable anchor.  The numeric domain itself is still
-     * exact and useful, however.  Emit a separate enabled generated_enum row so
-     * the script-owned enum exists for signatures, later lifetime analysis, and
-     * source reconstruction while the local target row remains review-only.
-     */
-    private void addLocalDomainMaterialization(List<Proposal> proposals) {
-        List<Proposal> generated = new ArrayList<>();
-        Set<String> existing = new TreeSet<>();
-        for (Proposal proposal : proposals)
-            if (proposal.targetKind.equals("generated_enum"))
-                existing.add(proposal.enumName);
-        for (Proposal local : proposals) {
-            if (!local.targetKind.equals("local") ||
-                    existing.contains(local.enumName)) continue;
-            Proposal domain = new Proposal(local.functionAddress,
-                local.expectedFunction, local.expectedSignature,
-                "generated_enum", local.enumName, -1, -1,
-                "/SubmarineTitans/Recovered/Enums/" + local.enumName,
-                local.owner, "", SourceType.ANALYSIS.toString(),
-                local.enumName, local.enumLength, true, "high",
-                "exact_local_switch_domain; script_owned_domain_materialization;" +
-                    " persistent_local_typing_requires_address_stable_anchor");
-            domain.values.addAll(local.values);
-            domain.expressions.addAll(local.expressions);
-            domain.switchSites.addAll(local.switchSites);
-            domain.evidenceFunctions.addAll(local.evidenceFunctions);
-            generated.add(domain);
-            existing.add(local.enumName);
-        }
-        proposals.addAll(generated);
     }
 
     private boolean isCandidate(Function function) {
@@ -1176,9 +1124,14 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             List<Proposal> proposals) throws Exception {
         Map<String, DomainState> merged = new TreeMap<>();
         for (Map.Entry<String, DomainState> entry : stored.entrySet())
-            merged.put(entry.getKey(), new DomainState(entry.getValue().length,
-                new TreeSet<>(entry.getValue().values)));
+            if (generatedEnumNamed(entry.getKey()) != null)
+                merged.put(entry.getKey(), new DomainState(entry.getValue().length,
+                    new TreeSet<>(entry.getValue().values)));
         for (Proposal proposal : proposals) {
+            // A decompiler local has no address-stable persistent identity.
+            // Keep its exact domain in the review proposal, but do not turn its
+            // unstable SSA spelling into durable state or a database datatype.
+            if (proposal.targetKind.equals("local")) continue;
             DomainState state = merged.get(proposal.enumName);
             if (state == null || state.length != proposal.enumLength) {
                 state = new DomainState(proposal.enumLength, new TreeSet<>());

@@ -65,11 +65,33 @@ run_logged() {
     local latest="$log_root/$name.latest.log"
     local previous="$log_root/$name.previous.log"
     local current="$log_root/.$name.current.log"
+    local heartbeat_interval=${ST_HEARTBEAT_INTERVAL_SECONDS:-30}
+    [[ "$heartbeat_interval" =~ ^[1-9][0-9]*$ ]] ||
+        fail "ST_HEARTBEAT_INTERVAL_SECONDS must be a positive integer"
     [[ ! -f "$latest" ]] || mv -f "$latest" "$previous"
     : > "$current"
+
+    # This background writer is deliberately outside the command-to-tee
+    # pipeline: liveness is visible in the terminal without polluting the
+    # retained latest/previous diagnostic logs.
+    (
+        local elapsed=0 hours minutes seconds
+        while sleep "$heartbeat_interval"; do
+            elapsed=$((elapsed + heartbeat_interval))
+            hours=$((elapsed / 3600))
+            minutes=$(((elapsed % 3600) / 60))
+            seconds=$((elapsed % 60))
+            printf 'heartbeat command=%s elapsed=%02d:%02d:%02d process=alive\n' \
+                "$name" "$hours" "$minutes" "$seconds"
+        done
+    ) &
+    local heartbeat_pid=$!
+
     set +e
     "$@" 2>&1 | tee "$current"
     local status=${PIPESTATUS[0]}
+    kill "$heartbeat_pid" 2>/dev/null || true
+    wait "$heartbeat_pid" 2>/dev/null || true
     set -e
     mv -f "$current" "$latest"
     return "$status"
@@ -144,13 +166,21 @@ snapshot_program() {
     [[ ! -f "$metadata" ]] || cp -f "$metadata" "$old_metadata"
     source_before=$(project_tree_sha256)
 
+    local snapshot_options=()
+    case ${ST_SNAPSHOT_ALLOW_MISSING_PACKED_TIME:-0} in
+        0) ;;
+        1) snapshot_options+=(allow-missing-packed-header-time) ;;
+        *) fail "ST_SNAPSHOT_ALLOW_MISSING_PACKED_TIME must be 0 or 1" ;;
+    esac
+
     set +e
     "$headless" "$project_root" "$project_name" \
         -process "$program" -noanalysis -readOnly \
         -scriptPath "$repo/scripts" \
         -postScript STEvidenceLedger.java fingerprint "$temporary_root/fingerprint" \
         -postScript STPackedSnapshot.java "$temporary_root/output" \
-            "$temporary_root/fingerprint/$program/program_semantic.sha256"
+            "$temporary_root/fingerprint/$program/program_semantic.sha256" \
+            "${snapshot_options[@]}"
     local status=$?
     set -e
     source_after=$(project_tree_sha256)
@@ -315,7 +345,7 @@ publish_snapshot() {
     packed_sha=$(snapshot_field "$metadata" packed_sha256)
     packed_size=$(snapshot_field "$metadata" packed_size)
     normalization=$(snapshot_field "$metadata" packed_normalization)
-    [[ "$normalization" == "zip-dos-time-1980-01-01" ]] ||
+    [[ "$normalization" == "zip-dos-time-1980-01-01+private-metadata-v5" ]] ||
         fail "unsupported packed snapshot normalization '$normalization'"
 
     local receipt="$repo/recovery/$program/export_receipt.json"
@@ -358,24 +388,31 @@ PY
             canonical_manifest=$(snapshot_field "$canonical_metadata" \
                 accepted_manifest_sha256 2>/dev/null || true)
             validate_sha256 "$canonical_packed"
-            [[ "$canonical_normalization" == "zip-dos-time-1980-01-01" ]] ||
+            [[ "$canonical_normalization" == "zip-dos-time-1980-01-01" ||
+                    "$canonical_normalization" == "zip-dos-time-1980-01-01+private-metadata-v3" ||
+                    "$canonical_normalization" == "zip-dos-time-1980-01-01+private-metadata-v4" ||
+                    "$canonical_normalization" == "zip-dos-time-1980-01-01+private-metadata-v5" ]] ||
                 fail "unsupported canonical snapshot normalization"
             canonical_actual=$(sha256sum "$canonical_snapshot" | awk '{print $1}')
             [[ "$canonical_actual" == "$canonical_packed" ]] ||
                 fail "canonical snapshot SHA-256 mismatch"
             [[ "$(stat -c '%s' "$canonical_snapshot")" == "$canonical_size" ]] ||
                 fail "canonical snapshot size mismatch"
-            if [[ "$canonical_manifest" != "$receipt_manifest" ]]; then
-                write_snapshot_metadata "$canonical_metadata" "$semantic" \
-                    "$canonical_packed" "$canonical_size" "$canonical_normalization" \
-                    "$program.gzf" "$receipt_manifest"
-                echo "snapshot_publish=metadata-updated"
-            else
-                echo "snapshot_publish=unchanged"
+            if [[ "$canonical_normalization" == "$normalization" &&
+                    "$canonical_packed" == "$packed_sha" &&
+                    "$canonical_size" == "$packed_size" ]]; then
+                if [[ "$canonical_manifest" != "$receipt_manifest" ]]; then
+                    write_snapshot_metadata "$canonical_metadata" "$semantic" \
+                        "$canonical_packed" "$canonical_size" \
+                        "$canonical_normalization" "$program.gzf" "$receipt_manifest"
+                    echo "snapshot_publish=metadata-updated"
+                else
+                    echo "snapshot_publish=unchanged"
+                fi
+                echo "semantic_sha256=$semantic"
+                echo "canonical_snapshot=$canonical_snapshot"
+                return
             fi
-            echo "semantic_sha256=$semantic"
-            echo "canonical_snapshot=$canonical_snapshot"
-            return
         fi
     fi
 

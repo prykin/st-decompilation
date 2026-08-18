@@ -120,20 +120,24 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             }
             else if (anchors.isEmpty() &&
                     (description.contains(VIEW) || derivedView ||
-                        disposableAnonymous(type, description)) &&
+                        disposableAnonymous(type, description) ||
+                        disposableGeneratedEnum(type, description)) &&
                     !hasPhysicalVptrCompanion(type) &&
                     (removalProvenance(description) || derivedView) && parents == 0 &&
                     functionUses == 0 && listingUses == 0) {
                 rows.add(new Row(true, "remove", type.getPathName(), "", "",
                     type.getLength(),
                     parents, functionUses, listingUses, description,
+                    disposableGeneratedEnum(type, description) ?
+                        "unreferenced switch enum without a stable typed target" :
                     disposableAnonymous(type, description) ?
                         "unreferenced hash/script-owned anonymous type" :
                         derivedView ? "unreferenced Pointer/Array derivative of view type" :
                         "unreferenced script-owned view type"));
             }
             else if (description.contains(VIEW) || derivedView ||
-                    disposableAnonymous(type, description)) {
+                    disposableAnonymous(type, description) ||
+                    disposableGeneratedEnum(type, description)) {
                 rows.add(new Row(false, "retain", type.getPathName(), "", "",
                     type.getLength(),
                     parents, functionUses, listingUses, description,
@@ -158,7 +162,8 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                 "Pointer/Array chains inherit " +
                 "view-only retirement without crossing through an owning structure. " +
                 "Non-view deletion is limited to generated anonymous PointerShapes/" +
-                "ClassPointees/HiddenThis types. A structure with an exact offset-zero " +
+                "ClassPointees/HiddenThis types and unreferenced switch enums whose " +
+                "decompiler-local spelling has no stable typed target. A structure with an exact offset-zero " +
                 "physical vptr companion is retained until class and vtable can be retired " +
                 "atomically. Equivalent types migrate only when one " +
                 "semantic anchor also shares the discriminator address/case, exact conflict " +
@@ -295,7 +300,8 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
 
     private boolean viewOrDerivative(DataType type) {
         String description = text(type.getDescription());
-        if (description.contains(VIEW) || disposableAnonymous(type, description))
+        if (description.contains(VIEW) || disposableAnonymous(type, description) ||
+                disposableGeneratedEnum(type, description))
             return true;
         return derivedFromView(type);
     }
@@ -336,6 +342,7 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             description.contains("[STTypeBootstrapApplier]") ||
             description.contains("[STDiscriminatedPayloadApplier]") ||
             description.contains("[STPointerShapeApplier]") ||
+            description.contains("[STSwitchEnumApplier]") ||
             description.contains("[STClassLayoutApplier]") ||
             description.contains("[STHiddenThisApplier generated]");
     }
@@ -350,6 +357,12 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                 description.contains("generated_layout_sha256=") ||
             path.startsWith("/SubmarineTitans/Recovered/HiddenThis/") &&
                 description.contains("[STHiddenThisApplier generated]");
+    }
+    private boolean disposableGeneratedEnum(DataType type, String description) {
+        return type instanceof ghidra.program.model.data.Enum &&
+            type.getPathName().startsWith(
+                "/SubmarineTitans/Recovered/Enums/") &&
+            description.contains("[STSwitchEnumApplier]");
     }
 
     /**

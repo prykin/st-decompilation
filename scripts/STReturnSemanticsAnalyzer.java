@@ -236,7 +236,7 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
         if (!mutable || (!pointerCandidate && !booleanCandidate && !ignoredReturnCandidate) ||
                 function.getBody().getNumAddresses() > 0x800) return null;
 
-        DecompileResults result = decompiler.decompileFunction(function, 30, monitor);
+        DecompileResults result = decompiler.decompileFunction(function, 600, monitor);
         if (!result.decompileCompleted() || result.getDecompiledFunction() == null) {
             failures.add(new Failure(addr(function.getEntryPoint()), function.getName(true),
                 result == null ? "no result" : result.getErrorMessage())); return null;

@@ -45,7 +45,7 @@ import ghidra.util.task.TaskMonitor;
 
 public class STLocalLifetimeAnalyzer extends GhidraScript {
     private static final String APPLIER_MARKER = "[STLocalLifetimeApplier]";
-    private static final int DECOMPILE_TIMEOUT = 45;
+    private static final int DECOMPILE_TIMEOUT = 600;
     private static final int DECOMPILE_CHUNK_SIZE = 256;
     private static final int RETURN_WEIGHT = 12;
     private static final int COPY_WEIGHT = 10;

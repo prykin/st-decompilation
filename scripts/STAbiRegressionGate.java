@@ -44,7 +44,7 @@ import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.listing.Function;
 
 public class STAbiRegressionGate extends GhidraScript {
-    private static final int DECOMPILE_TIMEOUT_SECONDS = 60;
+    private static final int DECOMPILE_TIMEOUT_SECONDS = 600;
     private static final boolean DECOMPILE_C_CODE = true;
     private static final boolean DECOMPILE_SYNTAX_TREE = true;
     private static final String METRIC_BASELINE_SCHEMA = "1";

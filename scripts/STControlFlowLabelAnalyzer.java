@@ -58,7 +58,7 @@ public class STControlFlowLabelAnalyzer extends GhidraScript {
         "^cf_[A-Za-z0-9_]+_([0-9A-Fa-f]{6,16})$");
     // Keep this aligned with STDecompExport: the two large message dispatchers
     // routinely need much longer than Ghidra's common 30-second script default.
-    private static final int DECOMPILE_TIMEOUT_SECONDS = 120;
+    private static final int DECOMPILE_TIMEOUT_SECONDS = 600;
     private static final int AUTO_COMMON_JOIN_GOTOS = 4;
 
     private BasicBlockModel blockModel;

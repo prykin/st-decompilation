@@ -29,7 +29,7 @@ import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.symbol.Reference;
 
 public class STUtilityFunctionAnalyzer extends GhidraScript {
-    private static final int TIMEOUT = 60;
+    private static final int TIMEOUT = 600;
 
     @Override
     protected void run() throws Exception {

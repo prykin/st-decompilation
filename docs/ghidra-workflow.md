@@ -305,8 +305,11 @@ If it is disabled, Ghidra's `Program.isChanged()` is already false and there is
 nothing for that action to save. Close the CodeBrowser and project normally,
 then reopen one newly recovered symbol as a persistence check. After an accepted
 export, close the GUI and run `docker/run.sh snapshot`, `snapshot-verify`, and
-`snapshot-publish`; only the packed checkpoint is Git-visible. The export-only
-mode does not modify the program database.
+`snapshot-publish`; only the normalized packed checkpoint is Git-visible. The
+packer removes workstation paths, database-owner identities, and volatile
+packed/change-record times, and the verifier requires the semantic Program
+fingerprint to survive a fresh import. The export-only mode does not modify the
+program database.
 
 Standalone scripts retain their dialogs for targeted experiments and for using
 nonstandard output roots. The path-free pipeline is the canonical routine

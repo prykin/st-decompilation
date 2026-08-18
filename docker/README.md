@@ -66,10 +66,15 @@ uses Ghidra's `DomainFile.packFile` API to create
 `.st-local/snapshots/ST.exe.<semantic-sha256>.gzf`. It hashes the project before
 and after the operation and fails if any source-project byte changed. Repeating
 the command at the same semantic state replaces the same hash-named file. The
-script pins the otherwise volatile ZIP/DOS timestamp in Ghidra's packed-file
-envelope to the ZIP epoch, making repeated packing byte-for-byte deterministic;
-it fails closed if that envelope changes in a future Ghidra version. After a
-semantic change, only the current and previous snapshots are retained.
+script pins the otherwise volatile ZIP/DOS and packed-header times, normalizes
+structurally identified database revision/change-record times, replaces
+database-owner records (including prefix-compressed copies) with fixed-width
+neutral values, and redacts absolute workstation paths. It rebuilds the entry
+CRC and compressed sizes, then fails closed if the Ghidra envelope or metadata
+framing changes.
+Repeating a pack of the same saved Program is therefore byte-for-byte
+deterministic. After a semantic change, only the current and previous snapshots
+are retained.
 
 `snapshot-verify` checks the packed-file hash and size, imports the snapshot
 into a temporary read-only Ghidra project, recomputes the semantic fingerprint,
@@ -83,10 +88,11 @@ workflow promotes one into Git LFS.
 `snapshot-publish` first rebuilds the local snapshot from the current expanded
 project, repeats the full round-trip verification, requires a passed export
 receipt with the same semantic Program fingerprint, and publishes the checkpoint
-as `ghidra/ST.exe.gzf` plus portable metadata. If the canonical and local semantic
-hashes already match, it leaves the tracked GZF byte-for-byte untouched even if
-a rehydrated working database happens to serialize internal storage differently.
-An exporter-only manifest change updates only the small metadata TSV.
+as `ghidra/ST.exe.gzf` plus portable metadata. It leaves the tracked GZF
+byte-for-byte untouched only when semantic hash, packed hash, size, and current
+normalization all match. A normalization upgrade replaces a legacy pack even
+when its Program semantic hash is unchanged. An exporter-only manifest change
+updates only the small metadata TSV.
 
 The expanded project is local working state and is not required in Git. On a
 fresh checkout, materialize it from the canonical packed checkpoint before

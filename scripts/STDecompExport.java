@@ -86,11 +86,7 @@ import ghidra.program.model.symbol.SymbolTable;
 import ghidra.program.util.DefinedStringIterator;
 
 public class STDecompExport extends GhidraScript {
-    private static final int DECOMPILE_TIMEOUT_SECONDS = 120;
-    private static final int LARGE_DECOMPILE_TIMEOUT_SECONDS = 300;
-    private static final int HUGE_DECOMPILE_TIMEOUT_SECONDS = 600;
-    private static final long LARGE_FUNCTION_ADDRESS_COUNT = 0x4000;
-    private static final long HUGE_FUNCTION_ADDRESS_COUNT = 0x8000;
+    private static final int DECOMPILE_TIMEOUT_SECONDS = 600;
     private static final int MAX_FILENAME_COMPONENT = 96;
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
@@ -1037,11 +1033,6 @@ public class STDecompExport extends GhidraScript {
     }
 
     private int decompileTimeoutSeconds(Function function) {
-        long addresses = function == null ? 0 : function.getBody().getNumAddresses();
-        if (addresses >= HUGE_FUNCTION_ADDRESS_COUNT)
-            return HUGE_DECOMPILE_TIMEOUT_SECONDS;
-        if (addresses >= LARGE_FUNCTION_ADDRESS_COUNT)
-            return LARGE_DECOMPILE_TIMEOUT_SECONDS;
         return DECOMPILE_TIMEOUT_SECONDS;
     }
 
@@ -6757,7 +6748,11 @@ public class STDecompExport extends GhidraScript {
             "using byte = uint8_t;\n" +
             "using ushort = uint16_t;\n" +
             "using uint = uint32_t;\n" +
-            "using ulong = uint32_t;\n" +
+            // Ghidra spells this scalar "ulong".  On 32-bit MSVC and the
+            // audit's i386/ILP32 target it is an unsigned long, not the
+            // distinct unsigned-int typedef selected by glibc for uint32_t.
+            "using ulong = unsigned long;\n" +
+            "static_assert(sizeof(ulong) == 4, \"ST requires 32-bit ulong\");\n" +
             "using int3 = int32_t;   /* logical signed 24-bit value */\n" +
             "using uint3 = uint32_t; /* logical unsigned 24-bit value */\n" +
             "using float10 = long double;\n" +

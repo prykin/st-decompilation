@@ -32,7 +32,7 @@ import ghidra.util.task.TaskMonitor;
 public class STPointerRoleRepairAnalyzer extends GhidraScript {
     private static final String POINTER_MARKER = "[STPointerShapeApplier]";
     private static final String REPAIR_MARKER = "[STPointerRoleRepairApplier]";
-    private static final int DECOMPILE_TIMEOUT = 60;
+    private static final int DECOMPILE_TIMEOUT = 600;
     private static final Pattern DECLARATION = Pattern.compile(
         "(?m)^\\s*(u?int|u?short|u?char|byte|undefined[1248]|bool|long|ulong)\\s+([^;]+);");
     private final List<Proposal> proposals = new ArrayList<>();

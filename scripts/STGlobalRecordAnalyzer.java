@@ -233,7 +233,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         try {
             for (Function function : scan.recordFunctions) {
                 monitor.checkCancelled();
-                DecompileResults decompiled = decompiler.decompileFunction(function, 60, monitor);
+                DecompileResults decompiled = decompiler.decompileFunction(function, 600, monitor);
                 if (!decompiled.decompileCompleted() ||
                         decompiled.getDecompiledFunction() == null) continue;
                 String rendered = decompiled.getDecompiledFunction().getC();

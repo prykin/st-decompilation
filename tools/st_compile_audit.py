@@ -190,6 +190,10 @@ class CompileAudit:
             # 64-bit host data model manufactures pointer-to-int truncation
             # diagnostics and hides the actual recovery queue.
             "-m32",
+            # Keep glibc's time_t ABI compatible with the recovered 64-bit
+            # MSVC scalar without changing the generated game type.
+            "-D_TIME_BITS=64",
+            "-D_FILE_OFFSET_BITS=64",
             "-std=c++17",
             "-fms-extensions",
             "-fsyntax-only",

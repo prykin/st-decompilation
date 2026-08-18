@@ -44,9 +44,7 @@ import ghidra.program.model.listing.Parameter;
 import ghidra.util.task.TaskMonitor;
 
 public class STDArrayElementAnalyzer extends GhidraScript {
-    private static final int DECOMPILE_TIMEOUT = 30;
-    private static final int LARGE_DECOMPILE_TIMEOUT = 120;
-    private static final long LARGE_FUNCTION_BYTES = 0x4000;
+    private static final int DECOMPILE_TIMEOUT = 600;
     private static final int MAX_ELEMENT_SIZE = 0x4000;
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
     private static final String ELEMENT_ROOT =
@@ -177,20 +175,9 @@ public class STDArrayElementAnalyzer extends GhidraScript {
         decompile(candidates);
     }
 
-    private int decompileTimeout(Function function) {
-        return function.getBody().getNumAddresses() >= LARGE_FUNCTION_BYTES ?
-            LARGE_DECOMPILE_TIMEOUT : DECOMPILE_TIMEOUT;
-    }
-
     private void decompile(List<Candidate> candidates) throws Exception {
-        List<Candidate> normal = new ArrayList<>();
-        List<Candidate> large = new ArrayList<>();
-        for (Candidate candidate : candidates)
-            (decompileTimeout(candidate.function) == LARGE_DECOMPILE_TIMEOUT ?
-                large : normal).add(candidate);
         functionsSeen += candidates.size();
-        decompileBatch(normal, DECOMPILE_TIMEOUT);
-        decompileBatch(large, LARGE_DECOMPILE_TIMEOUT);
+        decompileBatch(candidates, DECOMPILE_TIMEOUT);
     }
 
     private void decompileBatch(List<Candidate> candidates, int timeout)

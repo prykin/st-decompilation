@@ -321,7 +321,7 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
                     result.getDecompiledFunction().getC(), "");
             }
         };
-        callback.setTimeout(90);
+        callback.setTimeout(600);
         try {
             List<Decompiled> result = ParallelDecompiler.decompileFunctions(
                 callback, functions, monitor);

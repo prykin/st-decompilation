@@ -45,7 +45,7 @@ import ghidra.program.model.lang.OperandType;
 import ghidra.program.model.scalar.Scalar;
 
 public class STRecursivePointeeAnalyzer extends GhidraScript {
-    private static final int DECOMPILE_TIMEOUT = 120;
+    private static final int DECOMPILE_TIMEOUT = 600;
     private static final int MAX_NODE_SIZE = 0x4000;
     private static final String ROOT =
         "/SubmarineTitans/Recovered/RecursivePointees/";

@@ -207,7 +207,9 @@ credentials.
 The expanded `proj/st.gpr` and `proj/st.rep` are machine-local working state.
 After an accepted Program change, use `snapshot`, `snapshot-verify`, and
 `snapshot-publish` to update the deterministic `ghidra/ST.exe.gzf` checkpoint;
-do not repack it for commits which leave the Program semantic hash unchanged.
+the packer removes workstation paths, database-owner identities, and volatile
+packed/change-record times before hashing. Do not repack it for commits which
+leave both the Program semantic hash and packed normalization unchanged.
 
 For a direct host setup, open `proj/st.gpr` in Ghidra, add this repository's
 `scripts/` directory to the Ghidra Script Manager, and run scripts from the

@@ -52,38 +52,42 @@ have been checked.
 ## Current authoritative state
 
 The current accepted headless export is run
-`a63fc3c0069f31b2a60ea95b5f985a35e148fed461098b94fe4ef01dc03c4a34`.
+`70c27b37bda740675f0df8c0fc1395c4cf73fc26e9c24ea409e8738301b972ac`.
 Its receipt is `passed` with Program semantic hash
-`bfd44643f2e5256a9d5836adcbb3b547e17dbf6a8d41f24358ff514c2e258237`
+`08bae36b54cb8ddf14a1e734c23d387a8e2344e30be19e58fbadfa617bee1eeb`
 and corpus manifest hash
-`21b7a30b59e58741910a8087949413e53036b9c97a58ad118284b78b446c0e6a`.
+`c50b13669e0f1fac02131a52c9263b43b256c1d8e1dd9d8d4d8cbe973f88bea8`.
 The manifest binds portable `program.json` metadata as
 `3bb8a76833b385eab3616325d3bd622ddaea5741bd8c60a99eb35c483ad7d761`.
 The manifest binds `pseudocode_runtime.h` as
-`e862abf02069a82b42314c50a439d81f7c9b31529c2ec493c0590f99e8e9196d`.
-Current repository HEAD is `df54348e9dc06a6276f1210f3ad73d08328b635a`
-(`Recover callable slots and pointer-word lifetimes`). Do not infer a clean
-working tree merely from this value; obtain an explicit status before editing
-or committing.
+`5f9ea67996414f75fa6a1e313eb9701b6ae850640962e0e313d963ce184708a2`.
+Obtain the current repository revision and worktree status from Git; do not
+embed a soon-stale commit identifier in this handoff.
 
 The accepted corpus contains 10,407 function records, 5,555 bodies, zero failed
 bodies, and 3,192 typed physical-vtable slots. The export and ABI gates both
-pass with zero errors and zero warnings. The latest recorded export pipeline
-totals `00:10:51`: `STIndirectCallsiteAnalyzer` accounts for about `00:04:43`
-and `STDecompExport` for about `00:03:41`. All 10,407 function bodies were
-reused; the exporter-source change intentionally invalidated the quality cache
-for this run. These are elapsed diagnostics, not committed wall-clock
-timestamps. A later focused read-only indirect-callsite audit decompiled all
-1,109 candidates with zero failures and retained the same 288 automatic
-proposals.
+pass with zero errors and zero warnings. The latest full pipeline took
+`00:44:35`; this is an elapsed diagnostic, not a wall-clock timestamp. A focused
+read-only indirect-callsite audit retained the same 288 automatic proposals.
 
 The canonical Git/LFS Program checkpoint is the deterministic normalized
-`ghidra/ST.exe.gzf`: 28,507,588 bytes with packed SHA-256
-`2112ce3204107620a44c8ac1c4d13a77a696b4acf0a3f4a9dc10fc3736aebda8`.
-Two independent packs were byte-identical, a temporary-project import restored
-the exact semantic hash above, and a same-semantic publish left both content
-and mtime unchanged. The expanded 223 MiB `proj/` database is ignored local
+`ghidra/ST.exe.gzf`: 28,298,639 bytes with packed SHA-256
+`26255dabc7bd5da006ff1f439e7a383d3b7e51d6b313748f783dd6f1a79e1b9a`.
+Its normalization is
+`zip-dos-time-1980-01-01+private-metadata-v5`: ZIP time, database revision
+times, database owners, and absolute workstation paths are removed before the
+LFS hash is calculated. Two strict packs of the live ignored project were
+byte-identical, and a fresh temporary-project import restored the exact
+semantic hash above. The expanded `proj/` database remains ignored local
 working state.
+
+The replacement Git history carries the canonical GPLv3 `LICENSE` and an LFS
+packed Program checkpoint from its root commit onward; no expanded `proj/`
+database is reachable. A whole-history audit covers Git paths and blobs,
+non-Ghidra LFS payloads, and every inflated GZF payload. Concrete workstation
+paths, database owner identities, database revision times, and wall-clock data
+in log-like artifacts are forbidden. Commit author dates remain intentional
+Git metadata and committer identity/date must exactly match the author.
 
 The current quality inventory contains 3,663 anonymous-shape occurrences,
 17,797 undefined types, 3,794 casts over generic fields, 1,986 raw pointer
@@ -103,10 +107,10 @@ contains 6,964 generic undefined declarations, 2,505 pointer-boundary casts,
 1,614 raw code calls, 571 `unaff`/`extraout` occurrences, 38 undefined static
 casts, and three residual duplicated-vtable calls.
 
-The current fixed Apple Clang audit uses C++17, MS extensions, an ILP32 target,
-and a limit of 64 errors per translation unit. It passes 244 of 322 units and
-retains 450 errors: 436 map to stable function addresses and 14 do not. One
-translation unit reaches the 64-error cap, so 450 is a comparison floor rather
+The current fixed Docker Clang audit uses C++17, MS extensions, an ILP32 target,
+and a limit of 64 errors per translation unit. It passes 242 of 322 units and
+retains 452 errors: 438 map to stable function addresses and 14 do not. One
+translation unit reaches the 64-error cap, so 452 is a comparison floor rather
 than proof that no later diagnostics exist. Raw compiler output remains ignored
 under `.st-local/`; compare only runs with the same compiler configuration and
 per-TU error limit.

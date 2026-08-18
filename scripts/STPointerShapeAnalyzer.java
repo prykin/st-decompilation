@@ -55,10 +55,7 @@ import ghidra.program.model.pcode.PcodeOp;
 import ghidra.util.task.TaskMonitor;
 
 public class STPointerShapeAnalyzer extends GhidraScript {
-    private static final int DECOMPILE_TIMEOUT = 30;
-    private static final int LARGE_DECOMPILE_TIMEOUT = 120;
-    private static final int RETRY_DECOMPILE_TIMEOUT = 300;
-    private static final long LARGE_FUNCTION_BYTES = 0x4000;
+    private static final int DECOMPILE_TIMEOUT = 600;
     private static final int MAX_SHAPE_SIZE = 0x4000;
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
     private static final String ANON_ROOT = "/SubmarineTitans/Recovered/PointerShapes/";
@@ -227,8 +224,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         dataTypes = currentProgram.getDataTypeManager();
         Iterator<Structure> allStructures = dataTypes.getAllStructures();
         while (allStructures.hasNext()) structures.add(allStructures.next());
-        List<Function> normal = new ArrayList<>();
-        List<Function> large = new ArrayList<>();
+        List<Function> candidates = new ArrayList<>();
         List<Address> selectedFunctions = selectedFunctions();
         if (!selectedFunctions.isEmpty()) {
             for (Address selectedFunction : selectedFunctions) {
@@ -236,11 +232,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     .getFunctionAt(selectedFunction);
                 if (function == null) throw new IllegalArgumentException(
                     "No function at " + addr(selectedFunction));
-                if (candidate(function) && hasPointerMemoryAccess(function)) {
-                    if (decompileTimeout(function) == LARGE_DECOMPILE_TIMEOUT)
-                        large.add(function);
-                    else normal.add(function);
-                }
+                if (candidate(function) && hasPointerMemoryAccess(function))
+                    candidates.add(function);
             }
         }
         else {
@@ -249,12 +242,10 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 monitor.checkCancelled();
                 Function function = functions.next();
                 if (!candidate(function) || !hasPointerMemoryAccess(function)) continue;
-                (decompileTimeout(function) == LARGE_DECOMPILE_TIMEOUT ?
-                    large : normal).add(function);
+                candidates.add(function);
             }
         }
-        analyzeParallel(normal, DECOMPILE_TIMEOUT);
-        analyzeParallel(large, LARGE_DECOMPILE_TIMEOUT);
+        analyzeParallel(candidates, DECOMPILE_TIMEOUT);
         propagateCallBoundaryTypes();
 
         Analysis analysis = makeProposals();
@@ -282,11 +273,6 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             ", target_apply=" + analysis.targets.stream().filter(row -> row.apply).count() +
             ", anonymous_types=" + analysis.types.stream().filter(row -> row.apply).count() +
             ", failures=" + failures.size());
-    }
-
-    private int decompileTimeout(Function function) {
-        return function.getBody().getNumAddresses() >= LARGE_FUNCTION_BYTES ?
-            LARGE_DECOMPILE_TIMEOUT : DECOMPILE_TIMEOUT;
     }
 
     private boolean candidate(Function function) {
@@ -343,19 +329,6 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             List<Decompiled> units = ParallelDecompiler.decompileFunctions(
                 callback, functions, monitor);
             units.removeIf(unit -> unit == null || unit.function == null);
-            if (timeout < LARGE_DECOMPILE_TIMEOUT) {
-                List<Function> retry = units.stream()
-                    .filter(unit -> !unit.error.isBlank())
-                    .map(unit -> unit.function).toList();
-                if (!retry.isEmpty()) {
-                    units.removeIf(unit -> !unit.error.isBlank());
-                    callback.setTimeout(RETRY_DECOMPILE_TIMEOUT);
-                    List<Decompiled> retried = ParallelDecompiler.decompileFunctions(
-                        callback, retry, monitor);
-                    retried.removeIf(unit -> unit == null || unit.function == null);
-                    units.addAll(retried);
-                }
-            }
             units.sort(Comparator.comparing(unit -> unit.function.getEntryPoint()));
             for (Decompiled unit : units) analyzeFunction(unit);
         }
