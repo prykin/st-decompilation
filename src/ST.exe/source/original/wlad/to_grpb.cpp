@@ -1517,6 +1517,8 @@ undefined4 __thiscall st::fn_00499B80(STGroupBoatC *this)
 undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
 
 {
+  uint32_t _local_1c;
+
   ushort *puVar1;
   STGroupBoatC *this_00;
   int iVar3;
@@ -1735,7 +1737,7 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
               local_4c = local_4c + -1;
             } while (local_4c != 0);
             sVar13 = (short)local_58;
-            st::fn_006ACC70(this_00->field_020E,(int)sVar13,local_1c);
+            st::fn_006ACC70(this_00->field_020E,(int)sVar13,&_local_1c);
             local_48 = g_playSystem_00802A38->field_00E4;
             local_40 = (undefined1)_local_1c;
             local_44 = this_00->field_020A;
@@ -2050,6 +2052,9 @@ undefined4 __thiscall st::fn_0049A940(STGroupBoatC *this,int param_1)
 undefined4 __thiscall st::fn_0049AAF0(STGroupBoatC *this,int param_1)
 
 {
+  uint32_t _local_1c;
+  uint32_t _local_20;
+
   byte bVar1;
   byte bVar2;
   short sVar4;
@@ -2214,7 +2219,7 @@ LAB_0049af27:
                          (g_bulkInitializedRecords_008087C7[(char)local_2c].field_0022 < 8)))))) {
                       bVar1 = local_8->field_0024;
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      auto _local_20 = CONCAT31(uStack_1f,bVar1);
+                      _local_20 = CONCAT31(uStack_1f,bVar1);
                       if (DAT_00808a8f == '\0') {
                         if (local_2c == bVar1) {
 LAB_0049b073:
@@ -2268,7 +2273,7 @@ LAB_0049b073:
                         (g_bulkInitializedRecords_008087C7[(char)local_2c].field_0022 < 8)))) {
                       bVar1 = local_8->field_0024;
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      auto _local_1c = CONCAT31(uStack_1b,bVar1);
+                      _local_1c = CONCAT31(uStack_1b,bVar1);
                       if (DAT_00808a8f == '\0') {
                         if (local_2c == bVar1) {
 LAB_0049aec9:

@@ -85,6 +85,11 @@ snapshot is used. Snapshot files and their latest/previous metadata are ignored
 machine-local recovery artifacts unless a separately reviewed publication
 workflow promotes one into Git LFS.
 
+The redacted fixed-width import path inside a hydrated Program is not executable
+identity: its apparent basename can be only a suffix of the replacement token.
+Committed `decomp/*/program.json` therefore records the stable Ghidra Program
+name as `executable_path`; the export regression gate enforces that invariant.
+
 `snapshot-publish` first rebuilds the local snapshot from the current expanded
 project, repeats the full round-trip verification, requires a passed export
 receipt with the same semantic Program fingerprint, and publishes the checkpoint
@@ -138,14 +143,18 @@ pipeline under `recovery/ST.exe` and its ignored run archive.
 ```sh
 ./docker/run.sh source-tree
 ./docker/run.sh compile-audit
+./docker/run.sh compile-audit-baseline
 ./docker/run.sh source-audit
 ```
 
 `source-audit` regenerates `src/ST.exe` from a passed receipt and then compiles
 all translation units with the container's pinned Linux Clang environment. Its
 ignored results live under `.st-local/source-compile-audit-docker/ST.exe`.
-Do not compare its counts directly with an Apple Clang baseline; establish and
-compare a Docker baseline using the same image and error limit.
+`compile-audit` checks the tracked Docker baseline and never changes it.
+`compile-audit-baseline` is the explicit reviewed promotion command; it refuses
+to update when the regression gate fails. Do not compare these counts with a
+host compiler run: compiler identity, ILP32 flags, language mode, and diagnostic
+limit are part of the baseline contract.
 
 ## Importing from an original executable
 

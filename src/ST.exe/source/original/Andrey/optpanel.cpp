@@ -3826,7 +3826,7 @@ int __thiscall st::fn_00533D10(OptPanelTy *this,STMessage *message)
   SVar6 = message->id;
   if (SVar6 < 0xc007) {
     if (SVar6 == MESS_OPTPANELTY_C006) {
-      pcVar35 = (code *)st::fn_00529FE0;
+      pcVar35 = st::function_address_boundary_cast<code *>(st::fn_00529FE0);
       pCVar14 = st::fn_0040577C(st::mutable_c_string("BUT_MINUS"),0);
       bVar28 = 1;
     }
@@ -4184,7 +4184,7 @@ LAB_00534016:
               g_currentExceptionFrame = local_8c.previous;
               return 0;
             }
-            pcVar35 = (code *)st::fn_00529FE0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_00529FE0);
             pCVar14 = st::fn_0040577C(st::mutable_c_string("BUT_PLUS"),0);
             bVar28 = 1;
             goto LAB_00534654;
@@ -4230,7 +4230,7 @@ LAB_00534016:
         }
         pcVar26 = "BUT_SLDN";
       }
-      pcVar35 = (code *)st::fn_00529FE0;
+      pcVar35 = st::function_address_boundary_cast<code *>(st::fn_00529FE0);
       pCVar14 = st::fn_0040577C(pcVar26,0);
       bVar28 = 6;
     }
@@ -5631,13 +5631,13 @@ LAB_00535ef1:
     switch(this_00->field_01A4) {
     case CASE_1:
       if (DAT_0080874e == '\x03') {
-        pcVar35 = (code *)st::fn_0052A280;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
         UVar34 = 0x3e81;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A1E0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A230;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
         }
         UVar34 = 0x3e81;
       }
@@ -5645,13 +5645,13 @@ LAB_00535ef1:
     case CASE_2:
       if (DAT_0080874e == '\x03') {
         pcVar32 = this_00->field_0180;
-        pcVar35 = (code *)st::fn_0052A280;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
         UVar34 = 0x3e8b;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A1E0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A230;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
         }
         pcVar32 = this_00->field_0180;
         UVar34 = 0x3e8b;
@@ -5665,17 +5665,17 @@ LAB_00535ef1:
     case CASE_6:
       if (DAT_0080874e == '\x03') {
         iVar18 = 0;
-        pcVar35 = (code *)st::fn_0052A770;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A770);
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3efc;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A6F0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A6F0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A730;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A730);
         }
         iVar18 = 0;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3efc;
       }
       break;
@@ -5684,34 +5684,34 @@ LAB_00535ef1:
       if (iVar18 == 1) {
         if (DAT_0080874e == '\x03') {
           iVar18 = 1;
-          pcVar35 = (code *)st::fn_0052A640;
-          pcVar31 = (code *)st::fn_0052A4D0;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
           UVar34 = 0x3ee7;
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
           iVar18 = 1;
-          pcVar31 = (code *)st::fn_0052A4D0;
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
           UVar34 = 0x3ee7;
         }
       }
       else if (iVar18 == 2) {
         if (DAT_0080874e == '\x03') {
           iVar18 = 1;
-          pcVar35 = (code *)st::fn_0052A640;
-          pcVar31 = (code *)st::fn_0052A4D0;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
           UVar34 = 0x3ee5;
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
           iVar18 = 1;
-          pcVar31 = (code *)st::fn_0052A4D0;
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
           UVar34 = 0x3ee5;
         }
       }
@@ -5722,17 +5722,17 @@ LAB_00535ef1:
         }
         if (DAT_0080874e == '\x03') {
           iVar18 = 1;
-          pcVar35 = (code *)st::fn_0052A640;
-          pcVar31 = (code *)st::fn_0052A4D0;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
           UVar34 = 0x3ee6;
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
           iVar18 = 1;
-          pcVar31 = (code *)st::fn_0052A4D0;
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
           UVar34 = 0x3ee6;
         }
       }
@@ -5741,16 +5741,16 @@ LAB_00535ef1:
       iVar18 = *(int *)(message->arg0).ptr;
       if (iVar18 == 1) {
         if (DAT_0080874e == '\x03') {
-          pcVar35 = (code *)st::fn_0052A640;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
         }
         iVar18 = 1;
-        pcVar31 = (code *)st::fn_0052A4D0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
         UVar34 = 0x3ef1;
         pCVar14 = st::fn_0040577C(st::mutable_c_string("BUT_BUTOPT1"),0);
         /* ST_CALLSITE[005364AC]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
@@ -5765,16 +5765,16 @@ LAB_00535ef1:
           return 0;
         }
         if (DAT_0080874e == '\x03') {
-          pcVar35 = (code *)st::fn_0052A640;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
         }
         iVar18 = 1;
-        pcVar31 = (code *)st::fn_0052A4D0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
         UVar34 = 0x3ef2;
         pCVar14 = st::fn_0040577C(st::mutable_c_string("BUT_BUTOPT1"),0);
         /* ST_CALLSITE[005363FA]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
@@ -5784,20 +5784,20 @@ LAB_00535ef1:
         return 0;
       }
       if (DAT_0080874e == '\x03') {
-        pcVar35 = (code *)st::fn_0052A640;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
       }
       else {
 joined_r0x0053686a:
-        pcVar35 = (code *)st::fn_0052A540;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A5C0;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
         }
       }
 LAB_00536434:
       UVar34 = 0x3ef0;
 cf_common_exit_00536441:
       iVar18 = 1;
-      pcVar31 = (code *)st::fn_0052A4D0;
+      pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
       pCVar14 = st::fn_0040577C(st::mutable_c_string("BUT_BUTOPT1"),0);
       /* ST_CALLSITE[00536453]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
       st::fn_00404F0C(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar14,UVar34,pcVar31,pcVar35,
@@ -5807,17 +5807,17 @@ cf_common_exit_00536441:
     case CASE_9:
       if (DAT_0080874e == '\x03') {
         iVar18 = 0;
-        pcVar35 = (code *)st::fn_0052A770;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A770);
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3ef4;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A6F0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A6F0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A730;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A730);
         }
         iVar18 = 0;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3ef4;
       }
       break;
@@ -5825,16 +5825,16 @@ cf_common_exit_00536441:
       iVar18 = *(int *)(message->arg0).ptr;
       if (iVar18 == 1) {
         if (DAT_0080874e == '\x03') {
-          pcVar35 = (code *)st::fn_0052A640;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
         }
         iVar18 = 1;
-        pcVar31 = (code *)st::fn_0052A4D0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
         UVar34 = 0x3e90;
         pCVar14 = st::fn_0040577C(st::mutable_c_string("BUT_BUTOPT1"),0);
         /* ST_CALLSITE[005365CD]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
@@ -5845,16 +5845,16 @@ cf_common_exit_00536441:
       }
       if (iVar18 == 2) {
         if (DAT_0080874e == '\x03') {
-          pcVar35 = (code *)st::fn_0052A640;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
         }
         iVar18 = 1;
-        pcVar31 = (code *)st::fn_0052A4D0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
         UVar34 = 0x3e91;
         pCVar14 = st::fn_0040577C(st::mutable_c_string("BUT_BUTOPT1"),0);
         /* ST_CALLSITE[00536574]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
@@ -5865,16 +5865,16 @@ cf_common_exit_00536441:
       }
       if (iVar18 == 3) {
         if (DAT_0080874e == '\x03') {
-          pcVar35 = (code *)st::fn_0052A640;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
         }
         iVar18 = 1;
-        pcVar31 = (code *)st::fn_0052A4D0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A4D0);
         UVar34 = 0x3e92;
         pCVar14 = st::fn_0040577C(st::mutable_c_string("BUT_BUTOPT1"),0);
         /* ST_CALLSITE[0053651B]: CALL 0x00404f0c; direct=00404F0C OptPanelTy::PaintDblBut */
@@ -5900,13 +5900,13 @@ cf_common_exit_00536EE8:
     case CASE_1:
       if (DAT_0080874e == '\x03') {
         pcVar32 = this_00->field_0180;
-        pcVar35 = (code *)st::fn_0052A280;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
         UVar34 = 0x3e82;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A1E0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A230;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
         }
         pcVar32 = this_00->field_0180;
         UVar34 = 0x3e82;
@@ -5914,13 +5914,13 @@ cf_common_exit_00536EE8:
       break;
     case CASE_2:
       if (DAT_0080874e == '\x03') {
-        pcVar35 = (code *)st::fn_0052A280;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
         UVar34 = 0x3e8a;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A1E0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A230;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
         }
         UVar34 = 0x3e8a;
       }
@@ -5968,17 +5968,17 @@ cf_common_exit_00536EE8:
     case CASE_6:
       if (DAT_0080874e == '\x03') {
         iVar18 = 0;
-        pcVar35 = (code *)st::fn_0052A770;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A770);
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3efd;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A6F0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A6F0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A730;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A730);
         }
         iVar18 = 0;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3efd;
       }
       goto cf_common_exit_00536EE8;
@@ -5986,13 +5986,13 @@ cf_common_exit_00536EE8:
       iVar18 = *(int *)(message->arg0).ptr;
       if (iVar18 == 1) {
         if (DAT_0080874e == '\x03') {
-          pcVar35 = (code *)st::fn_0052A640;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
           UVar34 = 0x3ef1;
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
           UVar34 = 0x3ef1;
         }
@@ -6004,29 +6004,29 @@ cf_common_exit_00536EE8:
           return 0;
         }
         if (DAT_0080874e == '\x03') {
-          pcVar35 = (code *)st::fn_0052A640;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
           UVar34 = 0x3ef2;
           goto cf_common_exit_00536441;
         }
         goto LAB_00536d52;
       }
       if (DAT_0080874e != '\x03') goto joined_r0x0053686a;
-      pcVar35 = (code *)st::fn_0052A640;
+      pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
       goto LAB_00536434;
     case CASE_9:
       if (DAT_0080874e == '\x03') {
         iVar18 = 0;
-        pcVar35 = (code *)st::fn_0052A770;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A770);
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3ef5;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A6F0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A6F0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A730;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A730);
         }
         iVar18 = 0;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3ef5;
       }
       goto cf_common_exit_00536EE8;
@@ -6042,13 +6042,13 @@ cf_common_exit_00536DB5:
     case CASE_D:
       if (DAT_0080874e == '\x03') {
         pcVar32 = this_00->field_0180;
-        pcVar35 = (code *)st::fn_0052A280;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
         UVar34 = 0x3e93;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A1E0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A230;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
         }
         pcVar32 = this_00->field_0180;
         UVar34 = 0x3e93;
@@ -6060,13 +6060,13 @@ cf_common_exit_00536DB5:
     case CASE_1:
       if (DAT_0080874e == '\x03') {
         pcVar32 = this_00->field_0180;
-        pcVar35 = (code *)st::fn_0052A280;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
         UVar34 = 0x3e83;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A1E0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A230;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
         }
         pcVar32 = this_00->field_0180;
         UVar34 = 0x3e83;
@@ -6074,13 +6074,13 @@ cf_common_exit_00536DB5:
       goto cf_common_exit_00536F92;
     case CASE_2:
       if (DAT_0080874e == '\x03') {
-        pcVar35 = (code *)st::fn_0052A280;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
         UVar34 = 0x3e8c;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A1E0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A230;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
         }
         UVar34 = 0x3e8c;
       }
@@ -6093,30 +6093,30 @@ cf_common_exit_00536DB5:
     case CASE_6:
       if (DAT_0080874e == '\x03') {
         iVar18 = 0;
-        pcVar35 = (code *)st::fn_0052A770;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A770);
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3efe;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A6F0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A6F0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A730;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A730);
         }
         iVar18 = 0;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3efe;
       }
       break;
     case CASE_8:
       if (*(int *)(message->arg0).ptr == 1) {
         if (DAT_0080874e == '\x03') {
-          pcVar35 = (code *)st::fn_0052A640;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
           UVar34 = 0x3f02;
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
           UVar34 = 0x3f02;
         }
@@ -6127,13 +6127,13 @@ cf_common_exit_00536DB5:
           return 0;
         }
         if (DAT_0080874e == '\x03') {
-          pcVar35 = (code *)st::fn_0052A640;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
           UVar34 = 0x3f03;
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
           UVar34 = 0x3f03;
         }
@@ -6142,34 +6142,34 @@ cf_common_exit_00536DB5:
     case CASE_9:
       if (DAT_0080874e == '\x03') {
         iVar18 = 0;
-        pcVar35 = (code *)st::fn_0052A770;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A770);
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3ef6;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A6F0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A6F0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A730;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A730);
         }
         iVar18 = 0;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3ef6;
       }
       break;
     case CASE_D:
       if (DAT_0080874e == '\x03') {
         iVar18 = 0;
-        pcVar35 = (code *)st::fn_0052A770;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A770);
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3ef8;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A6F0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A6F0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A730;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A730);
         }
         iVar18 = 0;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3ef8;
       }
       break;
@@ -6182,12 +6182,12 @@ cf_common_exit_00536DB5:
     switch(this_00->field_01A4) {
     case CASE_1:
       if (DAT_0080874e == '\x03') {
-        pcVar35 = (code *)st::fn_0052A280;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
       }
       else {
-        pcVar35 = (code *)st::fn_0052A1E0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A230;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
         }
       }
       if (DAT_008067a0 == '\0') {
@@ -6201,13 +6201,13 @@ cf_common_exit_00536DB5:
     case CASE_2:
       if (DAT_0080874e == '\x03') {
         pcVar32 = this_00->field_0180;
-        pcVar35 = (code *)st::fn_0052A280;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
         UVar34 = 0x3e8d;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A1E0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A230;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
         }
         pcVar32 = this_00->field_0180;
         UVar34 = 0x3e8d;
@@ -6222,17 +6222,17 @@ cf_common_exit_00536DB5:
     case CASE_6:
       if (DAT_0080874e == '\x03') {
         iVar18 = 0;
-        pcVar35 = (code *)st::fn_0052A770;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A770);
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3eff;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A6F0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A6F0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A730;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A730);
         }
         iVar18 = 0;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3eff;
       }
       break;
@@ -6243,44 +6243,44 @@ cf_common_exit_00536DB5:
           return 0;
         }
         if (DAT_0080874e == '\x03') {
-          pcVar35 = (code *)st::fn_0052A640;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
           UVar34 = 0x3f06;
         }
         else {
-          pcVar35 = (code *)st::fn_0052A540;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A5C0;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
           }
           UVar34 = 0x3f06;
         }
         goto cf_common_exit_00536441;
       }
       if (DAT_0080874e == '\x03') {
-        pcVar35 = (code *)st::fn_0052A640;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A640);
         UVar34 = 0x3ef2;
         goto cf_common_exit_00536441;
       }
 LAB_00536d52:
-      pcVar35 = (code *)st::fn_0052A540;
+      pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A540);
       if (DAT_0080874e != '\x01') {
-        pcVar35 = (code *)st::fn_0052A5C0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A5C0);
       }
       UVar34 = 0x3ef2;
       goto cf_common_exit_00536441;
     case CASE_9:
       if (DAT_0080874e == '\x03') {
         iVar18 = 0;
-        pcVar35 = (code *)st::fn_0052A770;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A770);
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3ef7;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A6F0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A6F0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A730;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A730);
         }
         iVar18 = 0;
-        pcVar31 = (code *)st::fn_0052A6C0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
         UVar34 = 0x3ef7;
       }
     }
@@ -6295,29 +6295,29 @@ LAB_00536d52:
         }
         if (DAT_0080874e == '\x03') {
           iVar18 = 0;
-          pcVar35 = (code *)st::fn_0052A770;
-          pcVar31 = (code *)st::fn_0052A6C0;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A770);
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
           UVar34 = 0x3f04;
         }
         else {
-          pcVar35 = (code *)st::fn_0052A6F0;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A6F0);
           if (DAT_0080874e != '\x01') {
-            pcVar35 = (code *)st::fn_0052A730;
+            pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A730);
           }
           iVar18 = 0;
-          pcVar31 = (code *)st::fn_0052A6C0;
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
           UVar34 = 0x3f04;
         }
         goto cf_common_exit_00536EE8;
       }
       if (DAT_0080874e == '\x03') {
-        pcVar35 = (code *)st::fn_0052A280;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
         UVar34 = 0x3e8f;
       }
       else {
-        pcVar35 = (code *)st::fn_0052A1E0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A230;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
         }
         UVar34 = 0x3e8f;
       }
@@ -6325,13 +6325,13 @@ LAB_00536d52:
     }
     if (DAT_0080874e == '\x03') {
       pcVar32 = this_00->field_0180;
-      pcVar35 = (code *)st::fn_0052A280;
+      pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
       UVar34 = 0x3e85;
     }
     else {
-      pcVar35 = (code *)st::fn_0052A1E0;
+      pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
       if (DAT_0080874e != '\x01') {
-        pcVar35 = (code *)st::fn_0052A230;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
       }
       pcVar32 = this_00->field_0180;
       UVar34 = 0x3e85;
@@ -6344,28 +6344,28 @@ LAB_00536d52:
         return 0;
       }
       if (DAT_0080874e == '\x03') {
-        pcVar35 = (code *)st::fn_0052A770;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A770);
       }
       else {
-        pcVar35 = (code *)st::fn_0052A6F0;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A6F0);
         if (DAT_0080874e != '\x01') {
-          pcVar35 = (code *)st::fn_0052A730;
+          pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A730);
         }
       }
       iVar18 = 0;
-      pcVar31 = (code *)st::fn_0052A6C0;
+      pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A6C0);
       UVar34 = 0x3f05;
       goto cf_common_exit_00536EE8;
     }
     if (DAT_0080874e == '\x03') {
       pcVar32 = this_00->field_0180;
-      pcVar35 = (code *)st::fn_0052A280;
+      pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
       UVar34 = 0x3e86;
     }
     else {
-      pcVar35 = (code *)st::fn_0052A1E0;
+      pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
       if (DAT_0080874e != '\x01') {
-        pcVar35 = (code *)st::fn_0052A230;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
       }
       pcVar32 = this_00->field_0180;
       UVar34 = 0x3e86;
@@ -6377,12 +6377,12 @@ LAB_00536d52:
       return 0;
     }
     if (DAT_0080874e == '\x03') {
-      pcVar35 = (code *)st::fn_0052A280;
+      pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A280);
     }
     else {
-      pcVar35 = (code *)st::fn_0052A1E0;
+      pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A1E0);
       if (DAT_0080874e != '\x01') {
-        pcVar35 = (code *)st::fn_0052A230;
+        pcVar35 = st::function_address_boundary_cast<code *>(st::fn_0052A230);
       }
     }
     UVar34 = 0x3e87;

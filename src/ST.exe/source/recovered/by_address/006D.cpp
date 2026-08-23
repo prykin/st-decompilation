@@ -769,6 +769,8 @@ void st::fn_006D0F50(byte *param_1,int param_2,uint *param_3,int param_4,uint pa
                  int param_7,byte param_8,uint param_9)
 
 {
+  uint32_t _param_8;
+
   int iVar1;
   bool bVar2;
   byte bVar3;
@@ -779,7 +781,7 @@ void st::fn_006D0F50(byte *param_1,int param_2,uint *param_3,int param_4,uint pa
   if (0 < (int)param_5) {
     if (param_9 != 0xffffffff) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auto _param_8 = CONCAT13(param_8,CONCAT12(param_8,CONCAT11(param_8,param_8)));
+      _param_8 = CONCAT13(param_8,CONCAT12(param_8,CONCAT11(param_8,param_8)));
       /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
       param_9 = CONCAT13((byte)param_9,CONCAT12((byte)param_9,CONCAT11((byte)param_9,(byte)param_9))
                         );
@@ -10270,6 +10272,8 @@ void st::fn_006DC310(void)
 void __fastcall st::fn_006DC320(AnonShape_006DC320_0C876EFA *param_1)
 
 {
+  uint64_t _local_10;
+
   int iVar1;
   int iVar2;
   int iVar3;
@@ -10359,7 +10363,7 @@ void __fastcall st::fn_006DC320(AnonShape_006DC320_0C876EFA *param_1)
   st::fn_006E25D0
             ((ST3DSMAPContext *)param_1,&local_40,&local_30,(double)iStack_c,0.0,0.0,1);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  auto _local_10 = CONCAT44(local_38 - local_48,local_10);
+  _local_10 = CONCAT44(local_38 - local_48,local_10);
   param_1->field_02F8 = (double)(local_38 - local_48) * _DAT_0079b148;
   st::fn_006E25D0
             ((ST3DSMAPContext *)param_1,&local_40,&local_30,0.0,(double)local_8,0.0,1);

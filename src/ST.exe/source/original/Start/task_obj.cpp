@@ -3151,6 +3151,8 @@ void __thiscall
 st::fn_005E4300(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_4,short param_5)
 
 {
+  uint32_t _local_8;
+
   int *piVar1;
   MTaskTy *pMVar3;
   undefined4 *puVar4;
@@ -3189,7 +3191,7 @@ st::fn_005E4300(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_4,
       cVar6 = ((param_5 != 3) - 1U & 0xfe) + 0x18;
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    auto _local_8 = CONCAT31(uStack_7,cVar6);
+    _local_8 = CONCAT31(uStack_7,cVar6);
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_18 = this;

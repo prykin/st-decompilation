@@ -321,12 +321,12 @@ undefined4 __thiscall st::fn_004ABF00(STT3DSprC *this,char param_1,uint param_2)
       if (pSVar1->field_0010 == '\0') {
         puVar5 = pSVar1->field_0034;
         uVar4 = pSVar1->field_0018;
-        pcVar6 = (code *)st::fn_004AD6C0;
+        pcVar6 = st::function_address_boundary_cast<code *>(st::fn_004AD6C0);
       }
       else {
         puVar5 = pSVar1->field_0034;
         uVar4 = pSVar1->field_0018;
-        pcVar6 = (code *)st::fn_004AD740;
+        pcVar6 = st::function_address_boundary_cast<code *>(st::fn_004AD740);
       }
       st::fn_006E9520
                 (pSVar1->field_003C,uVar4,(uint)puVar5,(uint)pcVar6,(uint)pSVar1);
@@ -551,7 +551,7 @@ undefined4 __thiscall st::fn_004AC1A0(STT3DSprC *this,byte param_1,uint param_2)
       goto cf_common_exit_004AC330;
       pSVar1->field_0013 = param_1;
       pSVar1->field_0030 = *(undefined4 *)(&pSVar1->field_0020->field_0x18 + iVar4);
-      pcVar6 = (code *)st::fn_004AD6C0;
+      pcVar6 = st::function_address_boundary_cast<code *>(st::fn_004AD6C0);
     }
     else {
       if ((pSVar1->field_0038 == 0) ||
@@ -559,7 +559,7 @@ undefined4 __thiscall st::fn_004AC1A0(STT3DSprC *this,byte param_1,uint param_2)
       goto cf_common_exit_004AC330;
       pSVar1->field_0013 = param_1;
       pSVar1->field_0030 = piVar2[6];
-      pcVar6 = (code *)st::fn_004AD740;
+      pcVar6 = st::function_address_boundary_cast<code *>(st::fn_004AD740);
     }
     st::fn_006E9520
               (pSVar1->field_003C,pSVar1->field_0018,(uint)pSVar1->field_0034,(uint)pcVar6,
@@ -912,6 +912,8 @@ void __thiscall
 st::fn_004ADBA0(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_2)
 
 {
+  uint32_t _local_c;
+
   byte *pbVar1;
   ushort *puVar2;
   char cVar3;
@@ -1078,7 +1080,7 @@ st::fn_004ADBA0(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_
         *pbVar1 = *pbVar1 | 4;
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auto _local_c = CONCAT31(uStack_b,(char)local_8);
+      _local_c = CONCAT31(uStack_b,(char)local_8);
       if (local_10->field_001F == '\0') {
         /* ST_CALLSITE[004ADE3B]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
         st::fn_00401BAE(this_00,(char)local_8);

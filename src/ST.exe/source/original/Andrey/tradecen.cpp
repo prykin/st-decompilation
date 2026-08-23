@@ -896,7 +896,7 @@ LAB_00552481:
     }
     uVar17 = 1;
     uVar15 = 0;
-    pcVar13 = (code *)st::fn_00529FE0;
+    pcVar13 = st::function_address_boundary_cast<code *>(st::fn_00529FE0);
     pCVar3 = st::fn_0040577C(text,0);
     /* ST_CALLSITE[00552655]: CALL dword ptr [EBX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

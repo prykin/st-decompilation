@@ -3691,7 +3691,7 @@ st::fn_0069BDC0
       local_1c = (st_stack_frame + 32);
       local_58 = (int *)(st_stack_frame + 32);
       local_8 = 0xffffffff;
-      st::fn_00730810((undefined1 *)local_78,local_3c,0x40,(undefined *)st::fn_0069B8D0);
+      st::fn_00730810((undefined1 *)local_78,local_3c,0x40,st::function_address_boundary_cast<undefined *>(st::fn_0069B8D0));
       local_28 = (local_50 * param_5) / 100;
       local_60 = 0;
       if (0 < (int)local_3c) {

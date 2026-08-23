@@ -542,12 +542,18 @@ generate_source() {
 
 compile_source() {
     require_repository
+    local -a baseline_args=()
+    if [[ "${1:-}" == "update-baseline" ]]; then
+        baseline_args+=(--update-baseline)
+    fi
     python3 "$repo/tools/st_compile_audit.py" \
         --source-tree "$repo/src/ST.exe" \
         --output "$repo/.st-local/source-compile-audit-docker/ST.exe" \
         --compiler clang++ \
         --jobs "${ST_COMPILE_JOBS:-4}" \
-        --error-limit 64
+        --error-limit 64 \
+        --baseline "$repo/config/source-compile-regression-baseline.json" \
+        "${baseline_args[@]}"
 }
 
 doctor() {
@@ -601,6 +607,10 @@ case "$command" in
         (( $# == 0 )) || fail "compile-audit accepts no additional arguments"
         run_logged compile-audit compile_source
         ;;
+    compile-audit-baseline)
+        (( $# == 0 )) || fail "compile-audit-baseline accepts no additional arguments"
+        run_logged compile-audit compile_source update-baseline
+        ;;
     source-audit)
         (( $# == 0 )) || fail "source-audit accepts no additional arguments"
         run_logged source-tree generate_source
@@ -649,6 +659,6 @@ case "$command" in
         ;;
     *)
         fail "unknown command '$command'; expected core, deep, full, export, "\
-"full-export, build-scripts, source-tree, compile-audit, source-audit, import, doctor, headless-smoke, indirect-callsite-audit, snapshot, snapshot-verify, snapshot-publish, project-hydrate, or shell"
+"full-export, build-scripts, source-tree, compile-audit, compile-audit-baseline, source-audit, import, doctor, headless-smoke, indirect-callsite-audit, snapshot, snapshot-verify, snapshot-publish, project-hydrate, or shell"
         ;;
 esac

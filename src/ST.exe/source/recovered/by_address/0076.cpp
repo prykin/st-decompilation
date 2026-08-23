@@ -807,7 +807,7 @@ int __cdecl st::fn_00761A00(char *filename)
 {
   int iVar1;
 
-  iVar1 = FID_conflict__remove(filename);
+  iVar1 = st::fn_007619B0(filename);
   return iVar1;
 }
 

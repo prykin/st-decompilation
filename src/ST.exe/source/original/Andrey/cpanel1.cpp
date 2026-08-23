@@ -529,6 +529,8 @@ LAB_004fef26:
 void __thiscall st::fn_004FF110(CPanelTy *this,int param_1)
 
 {
+  uint32_t _local_14;
+
   char cVar1;
   CPanelTy *this_00;
   uint uVar3;
@@ -593,7 +595,7 @@ void __thiscall st::fn_004FF110(CPanelTy *this,int param_1)
       st::fn_00402CCF(this_00,(byte)uVar3);
       bVar5 = (-(param_1 != 0) & 0xf8U) + 8;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auto _local_14 = CONCAT31(uStack_13,bVar5);
+      _local_14 = CONCAT31(uStack_13,bVar5);
       if (bVar5 < 0xb) {
         if (-1 < (int)this_00->field_0148[bVar5]) {
           st::fn_006B3640
@@ -1046,6 +1048,8 @@ cf_common_exit_004FFB91:
 void __thiscall st::fn_004FFE90(CPanelTy *this)
 
 {
+  uint32_t _local_8;
+
   undefined1 *puVar1;
   char cVar2;
   CPanelTy *this_00;
@@ -1274,7 +1278,7 @@ LAB_00500126:
       st::fn_00403977(this_00,0);
       bVar4 = (DAT_0080874e != '\x03') + 5;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auto _local_8 = CONCAT31(uStack_7,bVar4);
+      _local_8 = CONCAT31(uStack_7,bVar4);
       if (bVar4 < 0xb) {
         if (-1 < (int)this_00->field_0148[bVar4]) {
           st::fn_006B3640

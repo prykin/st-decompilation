@@ -623,7 +623,7 @@ cf_common_exit_005109A5:
 LAB_00510902:
       iVar7 = 1;
       iVar3 = 0;
-      pcVar6 = (code *)st::fn_0052A080;
+      pcVar6 = st::function_address_boundary_cast<code *>(st::fn_0052A080);
       pCVar2 = st::fn_0040577C(pcVar5,0);
       /* ST_CALLSITE[00510910]: CALL dword ptr [EBX + 0x8] */
       (*pFVar4->PaintBut)((PanelTy *)this_00,(int)message,6,pCVar2,st::pointer_boundary_cast<undefined *>(pcVar6),iVar3,iVar7);

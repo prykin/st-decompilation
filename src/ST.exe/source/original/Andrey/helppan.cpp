@@ -4491,6 +4491,8 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
 void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
 
 {
+  uint32_t _local_20;
+
   HelpPanelTy_field_01A1State HVar1;
   HelpPanelTy *this_00;
   Global_sub_00528060_param_1Enum *pGVar3;
@@ -4576,7 +4578,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       local_EAX_243 = st::fn_00401F5A(param_1);
       cVar5 = (char)local_EAX_243;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auto _local_20 = CONCAT31(uStack_1f,cVar5);
+      _local_20 = CONCAT31(uStack_1f,cVar5);
       local_1c = local_EAX_243 & 0xff;
       UVar6 = st::fn_00403684(param_1,cVar5,0);
       /* ST_CALLSITE[00518D43]: CALL 0x00403ef9; direct=00403EF9 HelpPanelTy::DrawTitle */
@@ -7432,12 +7434,12 @@ switchD_0051ea9b_caseD_0:
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_OPTPANELTY_8164:
-      pcVar26 = (code *)st::fn_00529FE0;
+      pcVar26 = st::function_address_boundary_cast<code *>(st::fn_00529FE0);
       pCVar17 = st::fn_0040577C(st::mutable_c_string("BUT_SLUP"),0);
       bVar22 = 6;
       break;
     case MESS_OPTPANELTY_8165:
-      pcVar26 = (code *)st::fn_00529FE0;
+      pcVar26 = st::function_address_boundary_cast<code *>(st::fn_00529FE0);
       pCVar17 = st::fn_0040577C(st::mutable_c_string("BUT_SLDN"),0);
       bVar22 = 6;
       break;
@@ -7520,7 +7522,7 @@ switchD_0051ea9b_caseD_0:
     case MESS_SHARED_C0B5:
       pcVar25 = "BUT_HLPFWD";
     }
-    pcVar26 = (code *)st::fn_00529F90;
+    pcVar26 = st::function_address_boundary_cast<code *>(st::fn_00529F90);
     pCVar17 = st::fn_0040577C(pcVar25,0);
     bVar22 = 1;
   }

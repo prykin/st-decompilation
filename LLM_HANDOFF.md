@@ -102,47 +102,45 @@ with 1,044 bodies under proven original paths and address-stable
 `st::fn_ADDRESS` implementations. It generates 1,146 physical-vtable member
 wrappers, 1,314 uniquely owned non-virtual source methods, 37 exact indirect
 member wrappers, and 2,284 exact unnamed field views. The deterministic source
-audit contains 13,039 rows. The strict generated-source readability profile
-contains 6,964 generic undefined declarations, 2,505 pointer-boundary casts,
+audit contains 13,128 rows. The strict generated-source readability profile
+contains 6,964 generic undefined declarations, 2,469 pointer-boundary casts,
 1,614 raw code calls, 571 `unaff`/`extraout` occurrences, 38 undefined static
 casts, and three residual duplicated-vtable calls.
 
 The current fixed Docker Clang audit uses C++17, MS extensions, an ILP32 target,
-and a limit of 64 errors per translation unit. It passes 242 of 322 units and
-retains 452 errors: 438 map to stable function addresses and 14 do not. One
-translation unit reaches the 64-error cap, so 452 is a comparison floor rather
-than proof that no later diagnostics exist. Raw compiler output remains ignored
-under `.st-local/`; compare only runs with the same compiler configuration and
-per-TU error limit.
+and a limit of 64 errors per translation unit. It passes 258 of 322 units and
+retains 329 errors, all mapped to stable function addresses; no translation
+unit reaches the cap. The tracked deterministic source manifest is
+`374b34119f6743afee551b66365df444ee0f876d0f131380f41ff9a31f9fe0b2`.
+`config/source-compile-regression-baseline.json` binds this accepted compiler
+state and has SHA-256
+`b9f8e86f012dd4278f826d2eb491d56cd312881c9635b0e81f6d87b417dcb3ca`.
+The ratchet passes with zero regressions; raw compiler output remains ignored
+under `.st-local/`.
 
-The highest-leverage immediate compiler defect is the source member wrapper for
-the variadic physical slot used by `0066ACC0`: 63 of the 76 retained call-arity
-errors arise because the physical slot is variadic while the convenience member
-wrapper was emitted as zero-argument `slot_00()`. Repair the wrapper family
-generically from exact observed callsite arities; do not change the physical ABI
-or add an address exception. The next machine-level clusters are mixed
-pointer/float/scalar lifetimes in `0064A970`, `00548C40`, `00605B60`, and
-`00652810`, plus void-looking results consumed as values.
+Q-056 is complete. The source generator preserves variadic physical vtable
+prefixes with template forwarding, applies fixed physical member boundaries,
+materializes exact output/promoted stack lifetimes, resolves exact address-valued
+functions and globals, gives CPUID/opaque High values explicit boundaries, and
+emits exact `STMessageArg` facets. The former 63-call variadic-wrapper cluster,
+all undeclared identifiers, and all unaddressed template errors are closed.
+Eleven call-arity errors remain at ten stable addresses and belong to ABI
+recovery, not to the removed wrapper-family defect.
 
 ## Ordered next work
 
-The accepted ordered queue currently ends at `Q-055`. Continue with the four
-items below; their full definitions and completion criteria are in
+The accepted ordered queue currently ends at completed `Q-056`. Continue with
+the three items below; their full definitions and completion criteria are in
 `docs/recovery-task-queue.md`.
 
-1. `Q-056` — make compiler diagnostics an address-stable ratchet and close
-   source-generator wrapper/declaration failures. Remove the variadic-wrapper
-   arity family, unaddressed diagnostics, raw undeclared decompiler identifiers,
-   and unsafe lexical-lifetime crossings before asking the database for more
-   semantic types.
-2. `Q-057` — separate pointer, scalar, floating, DArray, stack-output, and
+1. `Q-057` — separate pointer, scalar, floating, DArray, stack-output, and
    post-call SSA lifetimes; close return ABI/value-domain contradictions from
    machine and call-boundary evidence. Never solve these with whole-local casts.
-3. `Q-058` — recover remaining callable ownership: physical vtables, callback
+2. `Q-058` — recover remaining callable ownership: physical vtables, callback
    fields/parameters, function tables, library callbacks, and ownerless
    `__thiscall` families. Shared physical ABI wins; address-local overrides
    remain the last resort.
-4. `Q-059` — consolidate pointer layouts, anonymous records, arrays, global
+3. `Q-059` — consolidate pointer layouts, anonymous records, arrays, global
    aggregates, unclaimed executable ranges, and only then semantic names and CFG
    presentation. Generic names are review debt, not permission to invent names.
 

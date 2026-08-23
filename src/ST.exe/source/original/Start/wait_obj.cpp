@@ -936,7 +936,7 @@ void __thiscall st::fn_005E7FE0(WaitTy *this)
     st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s%s"),&CHAR_00h_00807680,st_global_0079C244);
     local_1c = this_00->field_1A93;
     local_1b = this_00->field_1A8F;
-    iVar5 = st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,(undefined *)st::fn_005DB030,st::machine_word_boundary_cast<undefined4>(&local_1c),0);
+    iVar5 = st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,st::function_address_boundary_cast<undefined *>(st::fn_005DB030),st::machine_word_boundary_cast<undefined4>(&local_1c),0);
     if (iVar5 == -0x70) {
       local_a4.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_a4;
@@ -1214,7 +1214,7 @@ LAB_005e9233:
                     local_5b = pAVar6->field_0003;
                     local_57 = 0;
                     local_EAX_2136 =
-                         st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,(undefined *)st::fn_005DB030,st::machine_word_boundary_cast<undefined4>(&local_5c),
+                         st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,st::function_address_boundary_cast<undefined *>(st::fn_005DB030),st::machine_word_boundary_cast<undefined4>(&local_5c),
                                       0);
                     if (local_EAX_2136 == -0x70) {
                       local_5 = '\x01';
@@ -1228,7 +1228,7 @@ LAB_005e9233:
                     local_68 = *puVar1;
                     local_67 = pAVar6->field_0003;
                     local_63 = *(undefined4 *)&pAVar6->field_0x7;
-                    iVar8 = st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,(undefined *)st::fn_005DB030,
+                    iVar8 = st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,st::function_address_boundary_cast<undefined *>(st::fn_005DB030),
                                          st::machine_word_boundary_cast<undefined4>(&local_68),0);
                     if (iVar8 == -0x70) {
                       local_5 = '\x01';

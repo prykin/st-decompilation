@@ -1893,7 +1893,7 @@ int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
     pCVar6 = st::fn_0040577C(text,0);
     /* ST_CALLSITE[005402CA]: CALL 0x00403373; direct=00403373 PanelTy::PaintBut */
     st::fn_00403373((PanelTy *)this_00,(AnonShape_005389E0_C98BD548 *)message,1,pCVar6,
-                      (code *)st::fn_00529FE0,0,1);
+                      st::function_address_boundary_cast<code *>(st::fn_00529FE0),0,1);
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;

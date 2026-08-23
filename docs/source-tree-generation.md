@@ -58,6 +58,27 @@ therefore never enters Git. `--compiler`, `--jobs`, `--error-limit`,
 JSON report contains no wall-clock timestamp; elapsed time is printed only to
 the console.
 
+The audit also compares the candidate with the tracked deterministic baseline
+in `config/source-compile-regression-baseline.json`.  Compiler identity, ILP32
+configuration, language mode, and error limit must match.  It rejects a newly
+failing translation unit, a newly reached diagnostic cap, growth of an
+address-stable `(function, diagnostic family)`, or a new stable unaddressed
+family.  A baseline TU which already hit the cap contains only a diagnostic
+prefix; newly exposed families from that TU are therefore compared only after
+the candidate is no longer truncated.  This prevents the old cap from
+manufacturing regressions while retaining the stronger TU-level guards.
+
+The pinned Docker commands are:
+
+```sh
+./docker/run.sh compile-audit
+./docker/run.sh compile-audit-baseline
+```
+
+The second command is deliberately explicit and refuses to replace a failing
+baseline.  Use it only after reviewing an improved, passed candidate.  Neither
+the baseline nor the ignored local reports contain wall-clock timestamps.
+
 ## Output layout
 
 ```text
@@ -158,6 +179,12 @@ plain POD declaration would otherwise lose:
   emit a duplicated-receiver
   `exact_indirect_callee<...>(slot)(object, ...)` regression when this member
   form is available;
+- when the physical slot is variadic, its non-virtual wrapper preserves the
+  proven fixed prefix and forwards the remaining arguments through a template
+  pack.  It does not replace or narrow the physical function-pointer ABI;
+- fixed arguments of an already folded physical member call use the same exact
+  pointer/word boundary classifier as a raw indirect call.  Variadic tail
+  arguments remain untouched;
 - when a non-thunk `__thiscall` has one exact exported structure owner and a
   matching receiver parameter, that structure receives an ordinary forwarding
   method over `st::fn_ADDRESS`. Virtual slots keep their dispatch wrappers;
@@ -171,6 +198,14 @@ plain POD declaration would otherwise lose:
   recovered 8- or 16-bit stack parameter, the generator materializes that view
   as the target's ordinary `int` promotion. This applies only to an exact
   exported parameter ordinal and never to pointers or full-width parameters.
+- when a compiler stack-slot split is initialized with `auto` and every
+  address-of use reaches one unanimous exact scalar output parameter, its
+  source storage receives that exact non-generic four-byte view.  Concrete
+  pointer semantics are not inferred from this rule;
+- `STGridAt3D` coordinates are machine-word indices.  If a coordinate still
+  carries a pointer type from a reused SSA lifetime, the source tree places the
+  exact pointer-to-word boundary at that callsite rather than allowing a
+  template diagnostic to lose the function address;
 - an exact fixed raw-stack root covered by a machine-proven bulk zero span is
   already named by the exporter as `stack_bytes_neg_OFFSET[N]`. This is a real
   storage extent, but its byte element type does not assert an original record
@@ -213,12 +248,8 @@ before layout assertions or a real link are meaningful.
 
 `CMakeLists.txt` exposes every generated translation unit as an object target.
 It intentionally does not link. A full object build is expected to fail today
-and is now useful evidence rather than a missing-infrastructure failure. The
-current Apple Clang C++17 probe, with a limit of 64 diagnostics per translation
-unit, passes 243 of 322 units and records 505 errors, 488 of them mapped to
-a function address. No syntax diagnostic remains. The cap makes this a
-monotonic comparison baseline, not the
-uncapped total of all errors. Remaining diagnostics principally identify:
+and is now useful evidence rather than a missing-infrastructure failure.
+Remaining diagnostics principally identify:
 
 - unmaterialized `field_0x...` views over anonymous storage;
 - a 32-bit generic word whose pointer/scalar role is still unresolved;
@@ -231,3 +262,10 @@ These must feed address-stable Ghidra recovery or a mechanically exact source
 compatibility rule. Do not silence them with generated stubs, arbitrary casts,
 or hand-edited `src/ST.exe` files. `audit/issues.jsonl` is the deterministic
 assembly queue; compiler diagnostics are the next, narrower queue.
+
+The current pinned Docker Clang audit passes 258 of 322 translation units and
+retains 329 errors. All 329 map to stable function addresses, no translation
+unit reaches the 64-error limit, and the tracked regression gate passes. The
+former variadic-wrapper arity cluster, undeclared-identifier diagnostics, and
+unaddressed template errors are closed. Eleven address-stable call-arity sites
+remain as ABI recovery debt rather than source-generator declaration failures.

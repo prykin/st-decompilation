@@ -1966,7 +1966,7 @@
     },
     "004FB060": {
       "generic_undefined_declaration": 24,
-      "pointer_boundary_cast": 27,
+      "pointer_boundary_cast": 7,
       "raw_code_indirect_call": 7,
       "unaff_or_extraout": 17
     },
@@ -2739,9 +2739,6 @@
     "00558DC0": {
       "pointer_boundary_cast": 1
     },
-    "00559110": {
-      "pointer_boundary_cast": 1
-    },
     "00559B30": {
       "pointer_boundary_cast": 1
     },
@@ -2814,7 +2811,7 @@
     },
     "0055F410": {
       "generic_undefined_declaration": 18,
-      "pointer_boundary_cast": 3
+      "pointer_boundary_cast": 1
     },
     "00561240": {
       "pointer_boundary_cast": 1
@@ -2831,7 +2828,7 @@
     },
     "00562F50": {
       "generic_undefined_declaration": 18,
-      "pointer_boundary_cast": 3
+      "pointer_boundary_cast": 1
     },
     "00565820": {
       "generic_undefined_declaration": 2
@@ -3015,7 +3012,7 @@
     },
     "00575CB0": {
       "generic_undefined_declaration": 10,
-      "pointer_boundary_cast": 9,
+      "pointer_boundary_cast": 8,
       "unaff_or_extraout": 1
     },
     "00576AD0": {
@@ -5341,12 +5338,12 @@
     },
     "00664960": {
       "generic_undefined_declaration": 40,
-      "pointer_boundary_cast": 21,
+      "pointer_boundary_cast": 20,
       "unaff_or_extraout": 21
     },
     "00667D90": {
       "generic_undefined_declaration": 3,
-      "pointer_boundary_cast": 2,
+      "pointer_boundary_cast": 1,
       "unaff_or_extraout": 2
     },
     "00668180": {
@@ -5552,8 +5549,7 @@
       "generic_undefined_declaration": 10
     },
     "0067B3C0": {
-      "generic_undefined_declaration": 6,
-      "pointer_boundary_cast": 1
+      "generic_undefined_declaration": 6
     },
     "0067B520": {
       "generic_undefined_declaration": 4,
@@ -5571,7 +5567,6 @@
     },
     "0067C180": {
       "generic_undefined_declaration": 4,
-      "pointer_boundary_cast": 3,
       "raw_code_indirect_call": 3,
       "unaff_or_extraout": 1
     },
@@ -5691,7 +5686,7 @@
     },
     "006823E0": {
       "generic_undefined_declaration": 1,
-      "pointer_boundary_cast": 2
+      "pointer_boundary_cast": 1
     },
     "00682850": {
       "generic_undefined_declaration": 1
@@ -5744,15 +5739,12 @@
     "0068EA40": {
       "pointer_boundary_cast": 1
     },
-    "0068EB30": {
-      "pointer_boundary_cast": 1
-    },
     "0068EC70": {
       "generic_undefined_declaration": 6,
       "pointer_boundary_cast": 2
     },
     "0068F020": {
-      "pointer_boundary_cast": 2
+      "pointer_boundary_cast": 1
     },
     "0068FA00": {
       "generic_undefined_declaration": 1
@@ -6488,7 +6480,7 @@
     },
     "006C3630": {
       "generic_undefined_declaration": 1,
-      "pointer_boundary_cast": 4,
+      "pointer_boundary_cast": 3,
       "raw_code_indirect_call": 2
     },
     "006C3720": {
@@ -8798,6 +8790,7 @@
     "generic_pointer_tower",
     "generic_undefined_declaration",
     "machine_word_nullptr",
+    "opaque_decompiler_storage",
     "pointer_boundary_cast",
     "presentation_failure",
     "raw_code_indirect_call",
@@ -8811,7 +8804,7 @@
   "schema_version": 1,
   "totals": {
     "generic_undefined_declaration": 6964,
-    "pointer_boundary_cast": 2505,
+    "pointer_boundary_cast": 2469,
     "raw_code_indirect_call": 1614,
     "raw_duplicated_vtable_call": 3,
     "unaff_or_extraout": 571,

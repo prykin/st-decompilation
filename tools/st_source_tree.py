@@ -58,6 +58,18 @@ QUALIFIED_ADDRESS_SYMBOL_RE = re.compile(
     r"(st::fn_[0-9A-Fa-f]{8})"
     r"(?![A-Za-z0-9_])"
 )
+QUALIFIED_GENERATED_GLOBAL_RE = re.compile(
+    r"(?<![A-Za-z0-9_])"
+    r"(?:(?:[A-Za-z_][A-Za-z0-9_]*)\s*::\s*)+"
+    r"(st_(?:global|image|string)_[0-9A-F]{8})"
+    r"(?![A-Za-z0-9_])"
+)
+OPAQUE_DECOMPILER_STORAGE_RE = re.compile(
+    r"(?<![A-Za-z0-9_])(?P<name>"
+    r"(?:[A-Za-z]*Ram(?:0x)?[0-9A-Fa-f]{8}|"
+    r"register0x[0-9A-Fa-f]{8}|unique0x[0-9A-Fa-f]+))"
+    r"(?![A-Za-z0-9_])"
+)
 DEGRADED_DUPLICATED_RECEIVER_CALL_RE = re.compile(
     r"\(\*\s*st::exact_indirect_callee<[^;\n]+?>\(\s*"
     r"(?P<receiver>[A-Za-z_][A-Za-z0-9_]*)->vtable"
@@ -87,6 +99,7 @@ READABILITY_METRIC_KINDS = frozenset({
     "dangling_qualified_address_prefix",
     "machine_word_nullptr",
     "pointer_boundary_cast",
+    "opaque_decompiler_storage",
 })
 EXACT_INDIRECT_CALLSITE_RE = re.compile(
     r"\[STIndirectCallsiteApplier\]\s+exact slot 0x"
@@ -119,7 +132,7 @@ STANDARD_TYPE_NAMES = {
     "wchar_t", "max_align_t",
 }
 DECLARATION_NON_TYPES = {
-    "break", "case", "continue", "delete", "do", "else", "for", "goto",
+    "auto", "break", "case", "continue", "delete", "do", "else", "for", "goto",
     "if", "new", "return", "sizeof", "switch", "throw", "while",
 }
 
@@ -161,6 +174,7 @@ class MemberWrapper:
     parameter_types: tuple[str, ...]
     parameters: tuple[str, ...]
     argument_names: tuple[str, ...]
+    variadic: bool = False
 
 
 @dataclass(frozen=True)
@@ -235,7 +249,8 @@ def global_alias_for_token(
     if IDENTIFIER_RE.fullmatch(actual):
         return None
     rendered = safe_identifier(actual, "global")
-    if token not in {rendered, "_" + rendered}:
+    qualified_leaf = actual.rsplit("::", 1)[-1]
+    if token not in {rendered, "_" + rendered, qualified_leaf}:
         return None
     return f"st_global_{address.upper()}"
 
@@ -685,6 +700,7 @@ class TypeEmitter:
                             parameter_types=tuple(parameter_types),
                             parameters=tuple(parameters),
                             argument_names=tuple(argument_names),
+                            variadic=bool(detail.get("varargs")),
                         )
                     )
 
@@ -727,8 +743,13 @@ class TypeEmitter:
             if wrapper.member_name != member_name:
                 continue
             if (self._display_type_key(wrapper.return_type) == return_key and
-                    tuple(map(self._display_type_key, wrapper.parameter_types)) ==
-                    tuple(map(self._display_type_key, explicit_types))):
+                    (tuple(map(self._display_type_key, wrapper.parameter_types)) ==
+                     tuple(map(self._display_type_key, explicit_types)) or
+                     (wrapper.variadic and
+                      tuple(map(self._display_type_key, explicit_types[:len(
+                          wrapper.parameter_types)])) ==
+                      tuple(map(self._display_type_key,
+                                wrapper.parameter_types))))):
                 return member_name
             return None
 
@@ -806,7 +827,9 @@ class TypeEmitter:
             wrapper
             for wrapper in self.member_wrappers_by_record_path.get(owner_path, ())
             if wrapper.member_name == member_name
-            and len(wrapper.parameter_types) == explicit_argument_count
+            and (len(wrapper.parameter_types) == explicit_argument_count or
+                 (wrapper.variadic and
+                  len(wrapper.parameter_types) <= explicit_argument_count))
         ]
         if len(physical) == 1:
             return member_name
@@ -821,6 +844,38 @@ class TypeEmitter:
             and len(wrapper.parameter_types) == explicit_argument_count
         ]
         return member_name if len(candidates) == 1 else None
+
+    def physical_member_wrapper(
+        self,
+        receiver_display: str,
+        member_name: str,
+        explicit_argument_count: int,
+    ) -> MemberWrapper | None:
+        """Return one exact physical wrapper already present on the owner.
+
+        Export can fold a duplicated receiver before source assembly sees the
+        call.  The call then no longer contains an indirect function-pointer
+        expression, but its generated non-virtual member still has the exact
+        physical slot ABI.  Resolve that ABI only through one unique concrete
+        receiver record and matching arity; never select by record order.
+        """
+        owner_name = self.display_pointee_type(receiver_display)
+        if owner_name is None:
+            return None
+        paths = self.record_paths_by_name.get(owner_name, set())
+        if len(paths) != 1:
+            return None
+        owner_path = next(iter(paths))
+        candidates = [
+            wrapper
+            for wrapper in self.member_wrappers_by_record_path.get(owner_path, ())
+            if wrapper.member_name == member_name and (
+                len(wrapper.parameter_types) == explicit_argument_count or
+                (wrapper.variadic and
+                 len(wrapper.parameter_types) <= explicit_argument_count)
+            )
+        ]
+        return candidates[0] if len(candidates) == 1 else None
 
     @staticmethod
     def _display_type_key(type_text: str) -> str:
@@ -2260,13 +2315,18 @@ class TypeEmitter:
         lines.extend(["#pragma pack(pop)", ""])
         for path in definition_order:
             for wrapper in self.member_wrappers_by_record_path.get(path, ()):
-                parameters = ", ".join(wrapper.parameters)
+                parameters = list(wrapper.parameters)
+                if wrapper.variadic:
+                    parameters.append("Args... st_varargs")
+                    lines.append("template <typename... Args>")
                 lines.append(
                     f"inline {wrapper.return_type} {wrapper.owner_name}::"
-                    f"{wrapper.member_name}({parameters}) {{"
+                    f"{wrapper.member_name}({', '.join(parameters)}) {{"
                 )
-                arguments = ", ".join(("this", *wrapper.argument_names))
-                call = f"(vtable->{wrapper.member_name})({arguments})"
+                arguments = list(("this", *wrapper.argument_names))
+                if wrapper.variadic:
+                    arguments.append("st_varargs...")
+                call = f"(vtable->{wrapper.member_name})({', '.join(arguments)})"
                 if wrapper.return_type == "void":
                     lines.append(f"    {call};")
                 else:
@@ -2391,9 +2451,14 @@ class TypeEmitter:
         if not record["detail"]["components"] and length > 0:
             lines.append(f"    byte _storage[{length}];")
         for wrapper in self.member_wrappers_by_record_path.get(record_path, ()):
+            if wrapper.variadic:
+                lines.append("    template <typename... Args>")
+            parameters = list(wrapper.parameters)
+            if wrapper.variadic:
+                parameters.append("Args... st_varargs")
             lines.append(
                 f"    {wrapper.return_type} {wrapper.member_name}"
-                f"({', '.join(wrapper.parameters)});"
+                f"({', '.join(parameters)});"
             )
         for wrapper in self.exact_indirect_member_wrappers_by_record_path.get(
                 record_path, ()):
@@ -2436,6 +2501,8 @@ class SourceTreeGenerator:
         self.external_parameter_types: dict[str, tuple[str, ...]] = {}
         self.external_variadic: set[str] = set()
         self.callable_addresses_by_spelling: dict[str, set[str]] = defaultdict(set)
+        self.sanitized_callable_spellings: set[str] = set()
+        self.callable_symbol_resolution_cache: dict[str, str | None] = {}
         self.global_type_collisions: dict[str, str] = {}
         self.global_display_types: dict[str, str] = {}
         self.body_declarations: dict[str, str] = {}
@@ -2490,6 +2557,13 @@ class SourceTreeGenerator:
             }:
                 if spelling:
                     self.callable_addresses_by_spelling[spelling].add(address)
+                    for alias in {
+                        spelling.replace("@", "_"),
+                        safe_identifier(spelling, "function"),
+                    }:
+                        self.callable_addresses_by_spelling[alias].add(address)
+                        if alias != spelling:
+                            self.sanitized_callable_spellings.add(alias)
         self.types = read_jsonl(self.corpus / "types.jsonl")
         self.globals = read_jsonl(self.corpus / "globals.jsonl")
         self.global_by_address = {
@@ -2711,8 +2785,16 @@ class SourceTreeGenerator:
             "inline Target pointer_boundary_cast(Source value) noexcept {\n"
             "    static_assert(std::is_pointer_v<Target>);\n"
             "    static_assert(std::is_pointer_v<Source> || std::is_integral_v<Source>);\n"
-            "    if constexpr (std::is_pointer_v<Source>)\n"
-            "        return reinterpret_cast<Target>(value);\n"
+            "    if constexpr (std::is_pointer_v<Source>) {\n"
+            "        using TargetPointee = std::remove_pointer_t<Target>;\n"
+            "        using SourcePointee = std::remove_pointer_t<Source>;\n"
+            "        if constexpr (std::is_same_v<\n"
+            "                std::remove_const_t<TargetPointee>,\n"
+            "                std::remove_const_t<SourcePointee>>)\n"
+            "            return const_cast<Target>(value);\n"
+            "        else\n"
+            "            return reinterpret_cast<Target>(value);\n"
+            "    }\n"
             "    else\n"
             "        return reinterpret_cast<Target>(static_cast<uintptr_t>(value));\n"
             "}\n"
@@ -2725,9 +2807,34 @@ class SourceTreeGenerator:
             "    else\n"
             "        return static_cast<Target>(value);\n"
             "}\n"
+            "template <typename Target, typename Source>\n"
+            "inline Target function_address_boundary_cast(Source value) noexcept {\n"
+            "    static_assert(std::is_pointer_v<Target>);\n"
+            "    static_assert(std::is_pointer_v<Source>);\n"
+            "    return reinterpret_cast<Target>(value);\n"
+            "}\n"
             "inline char *mutable_c_string(const char *value) noexcept {\n"
             "    return const_cast<char *>(value);\n"
             "}\n"
+            "inline STMessageArg message_arg_u32(uint32_t value) noexcept {\n"
+            "    STMessageArg result{};\n"
+            "    result.u32 = value;\n"
+            "    return result;\n"
+            "}\n"
+            "inline STMessageArg message_arg_i32(int32_t value) noexcept {\n"
+            "    STMessageArg result{};\n"
+            "    result.i32 = value;\n"
+            "    return result;\n"
+            "}\n"
+            "template <typename T>\n"
+            "inline STMessageArg message_arg_pointer(T *value) noexcept {\n"
+            "    STMessageArg result{};\n"
+            "    result.ptr = const_cast<void *>(static_cast<const void *>(value));\n"
+            "    return result;\n"
+            "}\n"
+            "// Ghidra p-code exposes CPUID result tuples through a synthetic\n"
+            "// pointer-returning intrinsic.  The source port must provide it.\n"
+            "int *pcode_cpuid_info(uint leaf);\n"
             "// Exact per-instruction HighFunction call override exported from\n"
             "// Ghidra.  The physical vtable member can retain a shorter/base\n"
             "// declaration while this boundary exposes the proven call ABI.\n"
@@ -2867,6 +2974,9 @@ class SourceTreeGenerator:
             "pointer_boundary_cast": len(re.findall(
                 r"\bst::pointer_boundary_cast\s*<", code
             )),
+            "opaque_decompiler_storage": len(
+                OPAQUE_DECOMPILER_STORAGE_RE.findall(code)
+            ),
         }
         return {kind: count for kind, count in metrics.items() if count}
 
@@ -3448,9 +3558,15 @@ class SourceTreeGenerator:
             lambda match: match.group(1), transformed
         )
         self.stats["qualified_address_symbol_repairs"] += count
+        transformed, count = QUALIFIED_GENERATED_GLOBAL_RE.subn(
+            lambda match: match.group(1), transformed
+        )
+        self.stats["qualified_generated_global_repairs"] += count
         transformed = self._repair_split_qualified_address_symbols(
             address, transformed
         )
+        transformed = self._repair_callable_symbol_values(address, transformed)
+        transformed = self._repair_pcode_intrinsics(address, transformed)
         transformed = self._repair_stale_address_member_calls(
             address, function, transformed
         )
@@ -3458,7 +3574,13 @@ class SourceTreeGenerator:
             address, function, transformed
         )
         transformed = self._materialize_tagged_lifetimes(address, transformed)
+        transformed = self._refine_exact_auto_output_storage(
+            address, function, transformed
+        )
         transformed = self._materialize_exact_output_lifetimes(
+            address, function, transformed
+        )
+        transformed = self._materialize_machine_word_output_lifetimes(
             address, function, transformed
         )
         transformed = self._materialize_promoted_parameter_slots(
@@ -3474,7 +3596,19 @@ class SourceTreeGenerator:
         transformed = self._repair_exact_indirect_calls(
             address, function, transformed
         )
+        transformed = self._repair_physical_member_call_boundaries(
+            address, function, transformed
+        )
         transformed = self._repair_commuted_byte_subscripts(
+            address, function, transformed
+        )
+        transformed = self._repair_grid_index_boundaries(
+            address, function, transformed
+        )
+        transformed = self._repair_message_arg_facets(
+            address, function, transformed
+        )
+        transformed = self._materialize_opaque_decompiler_storage(
             address, function, transformed
         )
         transformed = self._repair_exact_pointer_boundaries(
@@ -4217,6 +4351,12 @@ class SourceTreeGenerator:
                     f"st::mutable_c_string({expression})",
                     "const char * -> char *",
                 )
+            if source.display_type == "function address":
+                return (
+                    f"st::function_address_boundary_cast<{target_type}>"
+                    f"({expression})",
+                    f"exact address-stable function value -> {target_display}",
+                )
             if (normalized_target == normalized_source or
                     self.type_emitter.display_cpp_equivalent(
                         target_display, source.display_type)):
@@ -4874,6 +5014,79 @@ class SourceTreeGenerator:
             self.stats["exact_indirect_argument_boundaries"] += 1
         return result
 
+    def _repair_physical_member_call_boundaries(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Express x86 word/pointer transports on already folded members.
+
+        ``STDecompExport`` can turn an exact duplicated-receiver dispatch into
+        ``object->slot_N(...)`` before the source generator runs.  Its physical
+        wrapper declaration remains authoritative, so apply the same exact
+        boundary classifier used for raw indirect calls to the fixed prefix of
+        that wrapper.  Variadic tail arguments remain untouched.
+        """
+        assert self.type_emitter is not None
+        declared = self._declared_types(function, body)
+        pattern = re.compile(
+            r"(?<![A-Za-z0-9_])(?P<receiver>[A-Za-z_][A-Za-z0-9_]*)"
+            r"->(?P<member>(?:slot|vfunc)_[0-9A-Fa-f]+)\s*\("
+        )
+        for _ in range(4):
+            masked = code_mask(body)
+            edits: list[tuple[int, int, str, str]] = []
+            for match in pattern.finditer(masked):
+                receiver_display = self._simple_expression_display(
+                    match.group("receiver"), declared
+                )
+                if receiver_display is None:
+                    continue
+                opening = masked.rfind("(", match.start(), match.end())
+                parsed = call_argument_spans(masked, opening, body)
+                if parsed is None:
+                    continue
+                spans, _ = parsed
+                wrapper = self.type_emitter.physical_member_wrapper(
+                    receiver_display, match.group("member"), len(spans)
+                )
+                if wrapper is None:
+                    continue
+                for ordinal, ((start, end), target_display) in enumerate(
+                        zip(spans, wrapper.parameter_types), 1):
+                    source = self._boundary_expression(
+                        body[start:end], declared
+                    )
+                    if source is None:
+                        continue
+                    converted = self._boundary_replacement(
+                        target_display, source, body[start:end]
+                    )
+                    if converted is None:
+                        continue
+                    replacement, transition = converted
+                    edits.append((
+                        start, end, replacement,
+                        f"{wrapper.owner_name}::{wrapper.member_name} "
+                        f"argument {ordinal}: {transition}",
+                    ))
+            selected: list[tuple[int, int, str, str]] = []
+            for edit in sorted(edits, key=lambda item: (item[1] - item[0], item[0])):
+                if any(edit[0] < old[1] and edit[1] > old[0]
+                       for old in selected):
+                    continue
+                selected.append(edit)
+            if not selected:
+                break
+            for start, end, replacement, detail in sorted(selected, reverse=True):
+                body = body[:start] + replacement + body[end:]
+                self.issues.append(Issue(
+                    "physical_member_argument_boundary", detail, address
+                ))
+            self.stats["physical_member_argument_boundaries"] += len(selected)
+        return body
+
     def _repair_folded_exact_member_calls(
         self,
         address: str,
@@ -5000,6 +5213,206 @@ class SourceTreeGenerator:
             body = body[:start] + replacement + body[end:]
         if edits:
             self.stats["commuted_byte_subscript_repairs"] += len(edits)
+        return body
+
+    def _repair_grid_index_boundaries(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Keep pointer-typed SSA lifetimes out of the grid helper template.
+
+        ``STGridAt3D`` is an exact affine-address presentation helper whose
+        three coordinates are x86 machine-word values.  A Listing local may
+        nevertheless retain an unrelated pointer type from another lifetime;
+        passing that value directly defers the error into the shared template
+        and loses the stable function address.  Apply the ordinary exact
+        pointer-to-word boundary at the callsite and nowhere else.
+        """
+        declared = self._declared_types(function, body)
+        pattern = re.compile(r"\bSTGridAt3D\s*\(")
+        masked = code_mask(body)
+        edits: list[tuple[int, int, str, str]] = []
+        for match in pattern.finditer(masked):
+            opening = masked.find("(", match.start(), match.end())
+            parsed = call_argument_spans(masked, opening, body)
+            if parsed is None:
+                continue
+            spans, _ = parsed
+            if len(spans) != 4:
+                continue
+            for ordinal, (start, end) in enumerate(spans[1:], 1):
+                source = self._boundary_expression(body[start:end], declared)
+                if source is None or not source.kind.endswith("_pointer"):
+                    continue
+                converted = self._boundary_replacement(
+                    "int", source, body[start:end]
+                )
+                if converted is None:
+                    continue
+                replacement, transition = converted
+                edits.append((
+                    start, end, replacement,
+                    f"coordinate {ordinal}: {transition}",
+                ))
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(
+                "grid_index_word_boundary", detail, address
+            ))
+        self.stats["grid_index_word_boundaries"] += len(edits)
+        return body
+
+    def _repair_message_arg_facets(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Replace invalid C union casts with one exact STMessageArg facet.
+
+        STMessageArg is a four-byte discriminator-dependent union.  C permits
+        scalar-to-union casts which C++ rejects, but selecting the physical
+        pointer, signed-word, or unsigned/raw-word member is source-compatible
+        and does not claim one meaning for every message ID.
+        """
+        assert self.type_emitter is not None
+        declared = self._declared_types(function, body)
+        pattern = re.compile(
+            r"\(\s*STMessageArg\s*\)\s*"
+            r"(?P<expression>"
+            r"(?:nullptr|-?0x[0-9A-Fa-f]+|-?[0-9]+|"
+            r"[A-Za-z_][A-Za-z0-9_]*)"
+            r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\r\n]+\])*)"
+        )
+        repairs: Counter[str] = Counter()
+
+        def replacement(match: re.Match[str]) -> str:
+            expression = match.group("expression")
+            source = self._boundary_expression(expression, declared)
+            if source is not None and source.kind.endswith("_pointer"):
+                repairs["ptr"] += 1
+                return f"st::message_arg_pointer({expression})"
+            display = "" if source is None else re.sub(
+                r"\s+", "", source.display_type
+            ).lower()
+            if (re.fullmatch(r"(?:signed)?(?:char|short|int|long|longlong)", display) or
+                    re.fullmatch(r"int(?:8|16|32)_t", display) or
+                    expression.startswith("-")):
+                repairs["i32"] += 1
+                return (
+                    "st::message_arg_i32(static_cast<int32_t>(" +
+                    expression + "))"
+                )
+            repairs["u32"] += 1
+            return (
+                "st::message_arg_u32(static_cast<uint32_t>(" +
+                expression + "))"
+            )
+
+        rewritten, count = pattern.subn(replacement, body)
+        if count:
+            detail = ", ".join(
+                f"{facet}={repairs[facet]}" for facet in sorted(repairs)
+            )
+            self.issues.append(Issue(
+                "message_arg_exact_facet",
+                f"{count} scalar/pointer union construction(s): {detail}",
+                address,
+            ))
+        self.stats["message_arg_exact_facets"] += count
+        return rewritten
+
+    def _materialize_opaque_decompiler_storage(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Make unresolved High/p-code storage explicit instead of undeclared.
+
+        Low-address ``uRam``/``pARam`` tokens, ``unique0x`` and synthetic
+        register names are not recovered globals.  They describe storage which
+        Ghidra could not attach to a Listing symbol.  A deterministic local
+        keeps the source parseable while an audit row preserves the unresolved
+        recovery obligation; no owner or semantic field is invented.
+        """
+        masked = code_mask(body)
+        declared = self._declared_types(function, body)
+        names = sorted({
+            match.group("name")
+            for match in OPAQUE_DECOMPILER_STORAGE_RE.finditer(masked)
+            if match.group("name") not in declared
+        })
+        if not names:
+            return body
+        replacements: dict[str, str] = {
+            name: safe_identifier("st_unresolved_" + name, "storage")
+            for name in names
+        }
+        declarations: list[str] = []
+        for name in names:
+            display = ""
+            assignment = re.compile(
+                rf"(?m)^\s*(?P<lhs>[A-Za-z_][A-Za-z0-9_]*"
+                rf"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*)*)\s*=\s*"
+                rf"{re.escape(name)}\s*;"
+            )
+            candidates = {
+                self._simple_expression_display(
+                    match.group("lhs"), declared, allow_record_name_fallback=True
+                ) or ""
+                for match in assignment.finditer(masked)
+            } - {""}
+            pointer_candidates = {
+                candidate for candidate in candidates
+                if self.type_emitter.display_pointer_kind(candidate) is not None
+            }
+            if len(pointer_candidates) == 1:
+                display = next(iter(pointer_candidates))
+            elif name.startswith(("puRam", "ppuRam")):
+                display = "undefined4 *"
+            elif name.startswith("p"):
+                display = "void *"
+            elif name.startswith("fRam"):
+                display = "float"
+            elif name.startswith("unique"):
+                rhs = re.search(
+                    rf"(?m)^\s*{re.escape(name)}\s*=\s*(?P<rhs>[^;]+);",
+                    masked,
+                )
+                display = (
+                    "float" if rhs and re.search(
+                        r"\b(?:float|double|fVar|DAT_008074(?:20|24))\b",
+                        rhs.group("rhs"),
+                    ) else "undefined4"
+                )
+            else:
+                display = "undefined4"
+            declarations.append(
+                f"  {display} {replacements[name]}{{}};\n"
+            )
+            self.issues.append(Issue(
+                "opaque_decompiler_storage",
+                f"{name} -> {replacements[name]}: unresolved {display} storage view",
+                address,
+            ))
+
+        def rewrite(piece: str) -> str:
+            return OPAQUE_DECOMPILER_STORAGE_RE.sub(
+                lambda match: replacements.get(
+                    match.group("name"), match.group("name")
+                ),
+                piece,
+            )
+
+        body = transform_code(body, rewrite)
+        opening = code_mask(body).find("{")
+        if opening < 0:
+            return body
+        body = body[:opening + 1] + "\n" + "".join(declarations) + body[opening + 1:]
+        self.stats["opaque_decompiler_storage_materializations"] += len(names)
         return body
 
     def _repair_exact_pointer_boundaries(
@@ -5262,6 +5675,104 @@ class SourceTreeGenerator:
             f"exact direct __thiscall ECX transport {source.display_type} -> "
             f"{target_display}",
         )
+
+    def _callable_symbol_address(self, spelling: str) -> str | None:
+        """Resolve one rendered callable spelling without choosing by order.
+
+        A function and its direct-jump thunk legitimately share one recovered
+        name.  For an address-valued occurrence the executable thunk entry is
+        the only deterministic representative when exactly one candidate
+        names another candidate as its target.  Other overload/name collisions
+        stay unresolved.
+        """
+        if spelling in self.callable_symbol_resolution_cache:
+            return self.callable_symbol_resolution_cache[spelling]
+        candidates = set(self.callable_addresses_by_spelling.get(spelling, ()))
+        if len(candidates) == 1:
+            result = next(iter(candidates))
+            self.callable_symbol_resolution_cache[spelling] = result
+            return result
+        thunks = []
+        for candidate in candidates:
+            function = self.function_by_address.get(candidate, {})
+            target, _ = split_address_label(str(function.get("thunk_target") or ""))
+            if function.get("thunk") and target in candidates:
+                thunks.append(candidate)
+        result = thunks[0] if len(thunks) == 1 else None
+        self.callable_symbol_resolution_cache[spelling] = result
+        return result
+
+    def _repair_callable_symbol_values(self, address: str, body: str) -> str:
+        """Use address-stable declarations for calls and address-valued names.
+
+        The ordinary direct-call pass is call-relation driven.  Ghidra also
+        prints sanitized names in callback assignments and as variadic
+        arguments, where no call relation exists.  Rewrite only an exact
+        unique corpus spelling (or its unique direct-jump thunk family); the
+        address remains the identity and overloaded names remain review debt.
+        """
+        token = re.compile(
+            r"(?<![A-Za-z0-9_.>])"
+            r"(?:[A-Za-z_][A-Za-z0-9_]*::)*"
+            r"[A-Za-z_][A-Za-z0-9_]*"
+            r"(?=\s*(?:\(|[,);}]|$))"
+        )
+        repairs = 0
+
+        def replace(piece: str) -> str:
+            nonlocal repairs
+
+            def one(match: re.Match[str]) -> str:
+                nonlocal repairs
+                spelling = match.group(0)
+                if (self.type_emitter is not None and
+                        spelling in self.type_emitter.record_paths_by_name):
+                    return spelling
+                target = self._callable_symbol_address(spelling)
+                if target is None:
+                    return spelling
+                # Types and namespace names can share an identifier with a
+                # function.  Require either invocation syntax or a value-like
+                # punctuation boundary before/after the token.
+                before = piece[:match.start()].rstrip()
+                after = piece[match.end():].lstrip()
+                invocation = after.startswith("(")
+                if not invocation and after.startswith("*"):
+                    return spelling
+                value_context = (
+                    (before[-1:] in {"=", ",", "(", "&", "{"}) or
+                    (after[:1] in {",", ")", ";", "}"}))
+                if invocation and spelling not in self.sanitized_callable_spellings:
+                    return spelling
+                if not invocation and not value_context:
+                    return spelling
+                repairs += 1
+                return function_symbol(target)
+
+            return token.sub(one, piece)
+
+        rewritten = transform_code(body, replace)
+        if repairs:
+            self.issues.append(Issue(
+                "address_stable_callable_symbol",
+                f"{repairs} exact call/address-valued spelling repair(s)",
+                address,
+            ))
+        self.stats["address_stable_callable_symbol_repairs"] += repairs
+        return rewritten
+
+    def _repair_pcode_intrinsics(self, address: str, body: str) -> str:
+        """Route Ghidra's CPUID p-code spellings through one declared boundary."""
+        pattern = re.compile(r"\bcpuid_[A-Za-z0-9_]+_info(?=\s*\()")
+        rewritten, count = pattern.subn("st::pcode_cpuid_info", body)
+        if count:
+            self.issues.append(Issue(
+                "pcode_intrinsic_boundary",
+                f"{count} CPUID p-code intrinsic call(s) require runtime implementation",
+                address,
+            ))
+        self.stats["pcode_intrinsic_boundaries"] += count
+        return rewritten
 
     def _rewrite_ambiguous_calls(
         self, body: str, candidates: Mapping[str, set[str]], *,
@@ -5684,6 +6195,189 @@ class SourceTreeGenerator:
             int(width) for width in widths
         ), variadic
 
+    def _materialize_machine_word_output_lifetimes(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Split a full-word output from the narrower source stack object.
+
+        Ghidra renders the post-write High value as ``_name`` when a neutral
+        utility output overwrites a narrow formal or a small stack-piece
+        aggregate.  The synthetic full-word read is independent evidence for
+        four bytes of storage; the producer itself supplies no semantic
+        pointee type.  Retain that distinction with one uint32_t output slot,
+        redirect only the exact producer argument, and leave every unrelated
+        use of the original source object intact.
+        """
+        masked = code_mask(body)
+        declared = self._declared_types(function, body)
+        direct_call = re.compile(r"\bst::fn_([0-9A-F]{8})\s*\(")
+        edits: list[tuple[int, int, str]] = []
+        names: set[str] = set()
+        for call in direct_call.finditer(masked):
+            producer = self.function_by_address.get(call.group(1))
+            if producer is None or "RECOVERED_UTILITY_SEMANTICS" not in set(
+                    producer.get("tags", ())):
+                continue
+            parameters = tuple(producer.get("parameters", ()))
+            opening = masked.find("(", call.start(), call.end())
+            parsed = call_argument_spans(masked, opening, body)
+            if parsed is None:
+                continue
+            spans, close = parsed
+            if len(spans) != len(parameters):
+                continue
+            for (start, end), parameter in zip(spans, parameters):
+                parameter_type = re.sub(
+                    r"\s+", "", str(parameter.get("type") or "")
+                )
+                parameter_name = str(parameter.get("name") or "")
+                if (parameter_type not in {"void*", "undefined*", "byte*"} or
+                        not re.match(
+                            r"(?i)^(?:out|result|destination|dest)",
+                            parameter_name,
+                        )):
+                    continue
+                argument = body[start:end].strip()
+                output = re.fullmatch(
+                    r"&?\s*([A-Za-z_][A-Za-z0-9_]*)", argument
+                )
+                if output is None:
+                    continue
+                original = output.group(1)
+                synthetic = "_" + original
+                if original not in declared or synthetic in declared:
+                    continue
+                token = re.compile(rf"\b{re.escape(synthetic)}\b")
+                occurrences = list(token.finditer(masked))
+                if not occurrences or any(item.start() < close for item in occurrences):
+                    continue
+                original_token = re.compile(rf"\b{re.escape(original)}\b")
+                if any(item.start() >= close for item in original_token.finditer(masked)):
+                    continue
+                names.add(synthetic)
+                edits.append((start, end, "&" + synthetic))
+        if not names:
+            return body
+        for start, end, replacement in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+        opening = code_mask(body).find("{")
+        if opening < 0:
+            return body
+        declarations = "".join(
+            f"  uint32_t {name};\n" for name in sorted(names)
+        )
+        body = body[:opening + 1] + "\n" + declarations + body[opening + 1:]
+        for name in sorted(names):
+            self.issues.append(Issue(
+                "machine_word_output_lifetime",
+                f"{name}: exact full-word utility output storage",
+                address,
+            ))
+        self.stats["machine_word_output_lifetimes"] += len(names)
+        return body
+
+    def _refine_exact_auto_output_storage(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Replace a stack-split ``auto`` with its exact output word type.
+
+        The exporter uses ``auto name = scalar`` when it can split a reused
+        stack lifetime but cannot state the later value domain.  If every
+        address-of use of that local is the same fixed parameter of an exact
+        direct callee, the pointee type is independent ABI evidence for the
+        physical output storage.  Limit this to scalar pointees whose target
+        width equals the x86 stack word; concrete object semantics are not
+        inferred here.
+        """
+        assert self.type_emitter is not None
+        declaration = re.compile(
+            r"(?m)^(?P<indent>[ \t]*)auto[ \t]+"
+            r"(?P<name>[A-Za-z_][A-Za-z0-9_]*)[ \t]*=[ \t]*"
+            r"(?P<rhs>[^;\r\n]+);[ \t]*"
+            r"/\* compiler stack-slot lifetime split \*/"
+        )
+        matches = list(declaration.finditer(body))
+        if not matches:
+            return body
+        masked = code_mask(body)
+        direct_call = re.compile(r"\bst::fn_([0-9A-F]{8})\s*\(")
+        address_uses: dict[str, list[str]] = defaultdict(list)
+        all_address_spans: dict[str, set[tuple[int, int]]] = defaultdict(set)
+        for call in direct_call.finditer(masked):
+            target = self.function_by_address.get(call.group(1))
+            if target is None:
+                continue
+            opening = masked.find("(", call.start(), call.end())
+            parsed = call_argument_spans(masked, opening, body)
+            if parsed is None:
+                continue
+            spans, _ = parsed
+            parameters, variadic = self._function_parameter_spec(target)
+            if len(spans) < len(parameters) or (
+                    not variadic and len(spans) != len(parameters)):
+                continue
+            for (start, end), target_display in zip(spans, parameters):
+                argument = body[start:end].strip()
+                output = re.fullmatch(r"&\s*([A-Za-z_][A-Za-z0-9_]*)", argument)
+                if output is None:
+                    continue
+                name = output.group(1)
+                address_uses[name].append(target_display)
+                all_address_spans[name].add((start, end))
+
+        edits: list[tuple[int, int, str, str]] = []
+        for match in matches:
+            name = match.group("name")
+            targets = address_uses.get(name, ())
+            if not targets:
+                continue
+            every_address = {
+                item.span()
+                for item in re.finditer(rf"&\s*\b{re.escape(name)}\b", masked)
+            }
+            if every_address != all_address_spans.get(name, set()):
+                continue
+            pointees = {
+                self.type_emitter.display_pointee_type(item) for item in targets
+            }
+            if None in pointees or len(pointees) != 1:
+                continue
+            pointee = next(iter(pointees))
+            assert pointee is not None
+            if (self.type_emitter.display_pointer_kind(pointee) is not None or
+                    self.type_emitter.display_storage_length(pointee) != 4):
+                continue
+            compact_pointee = re.sub(r"\s+", "", pointee)
+            if compact_pointee in {"undefined4", "uint", "dword", "DWORD"}:
+                type_expression = "uint32_t"
+            elif compact_pointee == "int":
+                type_expression = "int"
+            elif compact_pointee == "int32_t":
+                type_expression = "int32_t"
+            else:
+                type_expression = self.type_emitter.display_type_expression(pointee)
+            if type_expression is None:
+                continue
+            edits.append((
+                match.start(), match.end(),
+                f"{match.group('indent')}{type_expression} {name} = "
+                f"{match.group('rhs')}; /* compiler stack-slot lifetime split */",
+                f"{name}: unanimous exact output pointee {pointee}",
+            ))
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(
+                "exact_auto_output_storage", detail, address
+            ))
+        self.stats["exact_auto_output_storage_refinements"] += len(edits)
+        return body
+
     def _materialize_promoted_parameter_slots(
         self,
         address: str,
@@ -5705,16 +6399,18 @@ class SourceTreeGenerator:
         without an exact exported parameter ordinal are deliberately ignored.
         """
         masked = code_mask(body)
+        declared_types = self._declared_types(function, body)
         declarations: list[str] = []
         claimed: set[str] = set()
         for parameter in function.get("parameters", ()):
             name = str(parameter.get("name") or "")
             synthetic = "_" + name
-            if not re.fullmatch(r"param_[0-9]+", name) or not re.search(
+            if not IDENTIFIER_RE.fullmatch(name) or not re.search(
                     rf"\b{re.escape(synthetic)}\b", masked):
                 continue
-            if re.search(
-                    rf"(?m)^\s*auto\s+{re.escape(synthetic)}\s*=", masked):
+            if (synthetic in declared_types or re.search(
+                    rf"(?m)^[ \t]*auto[ \t]+{re.escape(synthetic)}"
+                    rf"[ \t]*(?:=|;)", masked)):
                 # The stronger lifetime splitter already proved a new value
                 # domain and exact lexical scope.  Reintroducing the incoming
                 # promoted slot would redeclare that same synthetic spelling.
@@ -5801,7 +6497,8 @@ class SourceTreeGenerator:
             if name in declared:
                 continue
             assignment = re.compile(
-                rf"(?m)^\s*{re.escape(name)}\s*=\s*(?P<rhs>[^;\r\n]+);"
+                rf"(?m)^\s*(?:auto\s+)?{re.escape(name)}\s*=\s*"
+                rf"(?P<rhs>[^;\r\n]+);"
             )
             widths: set[int] = set()
             for match in assignment.finditer(masked):
@@ -5827,6 +6524,14 @@ class SourceTreeGenerator:
                 f"{name}: exact {width}-byte assignment width",
                 address,
             ))
+
+        for name in materialized:
+            body = re.sub(
+                rf"(?m)^(?P<indent>[ \t]*)auto[ \t]+"
+                rf"{re.escape(name)}[ \t]*=",
+                rf"\g<indent>{name} =",
+                body,
+            )
 
         if not declarations:
             return body
@@ -6133,6 +6838,16 @@ class SourceTreeGenerator:
             if IDENTIFIER_RE.fullmatch(overlap) and re.search(rf"\b{re.escape(overlap)}\b", code):
                 names.add(overlap)
         names.update(ADDRESS_NAME_RE.findall(code))
+        # Some switch/jump-table companion symbols are present in globals.jsonl
+        # but absent from a function's compact referenced-global list.  Their
+        # address-bearing spelling is still an exact identity; retain the
+        # original declaration when it matches that one exported global.
+        for match in ADDRESS_CODED_GLOBAL_RE.finditer(code_only(code)):
+            item = self.global_by_address.get(match.group("address").upper())
+            name = match.group("name")
+            if (item is not None and name == str(item.get("name") or "") and
+                    IDENTIFIER_RE.fullmatch(name)):
+                names.add(name)
         names.update(re.findall(r"\bst_global_[0-9A-F]{8}\b", code))
         names.update(re.findall(r"\bst_image_[0-9A-F]{8}\b", code))
         names.update(re.findall(r"\bst_string_[0-9A-F]{8}\b", code))

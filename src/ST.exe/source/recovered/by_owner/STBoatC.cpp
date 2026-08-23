@@ -1047,6 +1047,12 @@ st::fn_0048DFD0
           int *param_6,int param_7,short *param_8,short *param_9,short *param_10)
 
 {
+  uint32_t _local_96;
+  uint32_t _local_b2;
+  uint32_t _local_b6;
+  uint32_t _local_cc;
+  uint32_t _local_d0;
+
   int _param_3 = static_cast<int>(param_3);
 
   short sVar1;
@@ -1580,15 +1586,15 @@ st::fn_0048DFD0
       local_88 = local_d4 + 1;
       local_d8 = local_e0[2] + 1;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auto _local_d0 = CONCAT22(local_e0[3],local_88);
+      _local_d0 = CONCAT22(local_e0[3],local_88);
       local_e0[1] = local_e0[3];
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auto _local_cc = CONCAT22(local_e0[3],local_84);
+      _local_cc = CONCAT22(local_e0[3],local_84);
       local_d6 = local_e0[3];
       local_d2 = local_e0[3];
       local_92 = local_92 + param_2;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auto _local_96 = CONCAT22(local_e0[2],local_92);
+      _local_96 = CONCAT22(local_e0[2],local_92);
       local_82 = local_92;
       local_86 = local_92;
       local_90 = local_d8;
@@ -1600,9 +1606,9 @@ st::fn_0048DFD0
       local_60 = local_d8;
       local_5c = local_d4;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auto _local_b6 = CONCAT22(local_e0[0],local_ae);
+      _local_b6 = CONCAT22(local_e0[0],local_ae);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auto _local_b2 = CONCAT22(local_84,local_aa);
+      _local_b2 = CONCAT22(local_84,local_aa);
       local_ac = local_84;
       local_5e = local_ae;
       local_5a = local_aa;

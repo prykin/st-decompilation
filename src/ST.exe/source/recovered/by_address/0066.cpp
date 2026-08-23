@@ -405,6 +405,8 @@ st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,s
             int param_5,int param_6)
 
 {
+  uint32_t _local_14;
+
   STGroupBoatC *pSVar1;
   short local_14;
   short sStack_12;
@@ -432,7 +434,7 @@ st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,s
       if (STGridAt3D(g_worldGrid, param_3, param_4, param_5).objects[0] != nullptr)
       {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        auto _local_14 = CONCAT22(param_4,param_3);
+        _local_14 = CONCAT22(param_4,param_3);
         if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
           local_10 = (short)param_5;
           local_c = st::machine_word_boundary_cast<undefined4>(param_1);

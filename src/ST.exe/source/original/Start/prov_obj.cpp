@@ -966,7 +966,7 @@ void __thiscall st::fn_005BAE00(PrividerTy *this)
                 local_2b = STField<undefined4>(psVar7,3);
                 local_27 = 0;
                 local_EAX_1381 =
-                     st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,(undefined *)st::fn_005DB030,st::machine_word_boundary_cast<undefined4>(&local_2c),0);
+                     st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,st::function_address_boundary_cast<undefined *>(st::fn_005DB030),st::machine_word_boundary_cast<undefined4>(&local_2c),0);
                 local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((local_EAX_1381 != -0x70) + '\x01'));
                 local_14 = (-(uint)(*pcVar12 != '\x02') & 2) + 0xd;
                 break;
@@ -977,7 +977,7 @@ void __thiscall st::fn_005BAE00(PrividerTy *this)
                 local_38 = *pcVar12;
                 local_37 = STField<undefined4>(psVar7,3);
                 local_33 = STField<undefined4>(psVar7,7);
-                iVar8 = st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,(undefined *)st::fn_005DB030,st::machine_word_boundary_cast<undefined4>(&local_38),0
+                iVar8 = st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,st::function_address_boundary_cast<undefined *>(st::fn_005DB030),st::machine_word_boundary_cast<undefined4>(&local_38),0
                                     );
                 local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(iVar8 == -0x70));
                 local_14 = 0x10;

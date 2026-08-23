@@ -4073,11 +4073,11 @@ void st::fn_00757280(undefined4 *param_1,undefined4 param_2)
     uVar1 = (**(code **)*param_1)(param_1,1,0x1c);
     param_1[4] = uVar1;
   }
-  *(code **)(param_1[4] + 8) = (code *)st::fn_007572F0;
-  *(code **)(param_1[4] + 0xc) = (code *)st::fn_00757300;
-  *(code **)(param_1[4] + 0x10) = (code *)st::fn_00757330;
-  *(code **)(param_1[4] + 0x14) = (code *)st::fn_00757CD0;
-  *(code **)(param_1[4] + 0x18) = (code *)st::fn_00757350;
+  *(code **)(param_1[4] + 8) = st::function_address_boundary_cast<code *>(st::fn_007572F0);
+  *(code **)(param_1[4] + 0xc) = st::function_address_boundary_cast<code *>(st::fn_00757300);
+  *(code **)(param_1[4] + 0x10) = st::function_address_boundary_cast<code *>(st::fn_00757330);
+  *(code **)(param_1[4] + 0x14) = st::function_address_boundary_cast<code *>(st::fn_00757CD0);
+  *(code **)(param_1[4] + 0x18) = st::function_address_boundary_cast<code *>(st::fn_00757350);
   *(undefined4 *)(param_1[4] + 4) = 0x7fffffff;
   *(undefined4 *)param_1[4] = param_2;
   return;
@@ -4449,7 +4449,7 @@ void st::fn_00757E60(AnonShape_00759190_45B6ED67 *param_1)
   iVar2 = 0x10;
   do {
     iVar3 = iVar2 + 4;
-    *(code **)((int)&param_1->field_01A6->field_0000 + iVar2) = (code *)st::fn_00758100;
+    *(code **)((int)&param_1->field_01A6->field_0000 + iVar2) = st::function_address_boundary_cast<code *>(st::fn_00758100);
     iVar2 = iVar3;
   } while (iVar3 < 0x50);
   param_1->field_01A6->field_0010 = st::machine_word_boundary_cast<undefined4>(st::fn_00757EF0);
@@ -5509,13 +5509,13 @@ void st::fn_0075DE90(AnonShape_0075DF10_BA4C6604 *param_1)
            /* ST_CALLSITE[0075DE9F]: CALL dword ptr [EAX] */
            (*(code *)param_1->field_0000->field_0000)(param_1,1,0x30);
   param_1->field_01B2 = pAVar1;
-  *(code **)pAVar1 = (code *)st::fn_0075DFE0;
+  *(code **)pAVar1 = st::function_address_boundary_cast<code *>(st::fn_0075DFE0);
   *(undefined4 *)&pAVar1->field_0x8 = 0;
   *(int *)&pAVar1[1].field_0x8 = *(int *)&param_1->field_0x70 * *(int *)&param_1->field_0x68;
   if (*(int *)&param_1->field_0x126 == 2) {
     uVar2 = *(undefined4 *)&pAVar1[1].field_0x8;
-    *(code **)&pAVar1->field_0x4 = (code *)st::fn_0075E000;
-    *(code **)&pAVar1->field_0xc = (code *)st::fn_0075E260;
+    *(code **)&pAVar1->field_0x4 = st::function_address_boundary_cast<code *>(st::fn_0075E000);
+    *(code **)&pAVar1->field_0xc = st::function_address_boundary_cast<code *>(st::fn_0075E260);
     /* ST_CALLSITE[0075DEE0]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar2 = (*(code *)param_1->field_0000->field_0004)(param_1,1,uVar2);
@@ -5523,8 +5523,8 @@ void st::fn_0075DE90(AnonShape_0075DF10_BA4C6604 *param_1)
     st::fn_0075DF10(param_1);
     return;
   }
-  *(code **)&pAVar1->field_0x4 = (code *)st::fn_0075E0C0;
-  *(code **)&pAVar1->field_0xc = (code *)st::fn_0075E100;
+  *(code **)&pAVar1->field_0x4 = st::function_address_boundary_cast<code *>(st::fn_0075E0C0);
+  *(code **)&pAVar1->field_0xc = st::function_address_boundary_cast<code *>(st::fn_0075E100);
   *(undefined4 *)(pAVar1 + 1) = 0;
   st::fn_0075DF10(param_1);
   return;

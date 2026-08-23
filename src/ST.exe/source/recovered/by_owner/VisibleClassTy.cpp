@@ -440,7 +440,7 @@ st::fn_00559110
     if (this->field_00FC[uVar5] != 0) {
       iVar9 = iVar8 * 2 + 1;
       auto param_4_after_write = param_1 - iVar8; /* compiler stack-slot lifetime split */
-      auto param_6_after_write = (int)param_2 - iVar8; /* compiler stack-slot lifetime split */
+      int param_6_after_write = (int)param_2 - iVar8; /* compiler stack-slot lifetime split */
       pbVar7 = st::fn_004028BF(iVar8);
       if (pbVar7 != nullptr) {
         iVar10 = iVar8;
@@ -469,7 +469,7 @@ st::fn_00559110
         if (((this->field_004C != nullptr) && (this->field_0050 != nullptr)) &&
            ((param_7 & 0x4000) != 0)) {
           /* ST_CALLSITE[0055926D]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
-          st::fn_00403F53(this,this->field_010C,param_1,(int)param_2,(int *)&param_4_after_write,st::pointer_boundary_cast<int *>(&param_6_after_write));
+          st::fn_00403F53(this,this->field_010C,param_1,(int)param_2,(int *)&param_4_after_write,&param_6_after_write);
           auto param_5_after_write = 0; /* compiler stack-slot lifetime split */
           param_4_after_write = param_4_after_write - iVar10;
           param_6_after_write = param_6_after_write + (g_centeredOffsets5[param_3] - iVar10);
@@ -1406,6 +1406,8 @@ st::fn_0055BB00
           byte param_6,uint param_7)
 
 {
+  uint32_t _local_c;
+
   undefined4 local_10;
   short local_c;
   char cStack_a;
@@ -1419,7 +1421,7 @@ st::fn_0055BB00
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_10 = CONCAT22(param_2,(short)CONCAT31((int3)param_5,param_1));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    auto _local_c = CONCAT13(param_6,CONCAT12(param_4,param_3));
+    _local_c = CONCAT13(param_6,CONCAT12(param_4,param_3));
     local_8 = param_7;
     st::fn_006AE1C0((DArrayTy *)this->field_0110,&local_10);
   }

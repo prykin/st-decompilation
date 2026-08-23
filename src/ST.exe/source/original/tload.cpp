@@ -13,6 +13,7 @@ void __cdecl st::fn_00428E50(short *param_1)
 
 {
   int scalar_local_28;
+  uint32_t _local_50;
 
   double dVar1;
   short sVar2;
@@ -191,7 +192,7 @@ LAB_00428e95:
   local_40 = nullptr;
   do {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    auto _local_50 = CONCAT31(uStack_4f,(byte)local_2c >> 1);
+    _local_50 = CONCAT31(uStack_4f,(byte)local_2c >> 1);
     st::fn_006DD610(pSVar7,(uint)local_40,10.0,10.0);
     local_44 = st::fn_006AE290(nullptr,10,0x1c,10);
     DAT_007f4dd0 = 0;
@@ -750,7 +751,7 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
   if (iVar3 == 0) {
     pAVar3 = (AnonShape_005751F0_0FFC949A *)
              st::fn_006EF640
-                       ((int)param_1,text,g_cMf32_00806760,g_cMf32_00806760,(undefined *)st::fn_00428A10);
+                       ((int)param_1,text,g_cMf32_00806760,g_cMf32_00806760,st::function_address_boundary_cast<undefined *>(st::fn_00428A10));
     local_1c = pAVar3;
     if (g_cLoading_00802A58 != nullptr) {
       iVar6 = DAT_007f4e00;

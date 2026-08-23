@@ -95,7 +95,7 @@ int __thiscall st::fn_005F27C0(STBHEShellC *this,STMessage *message)
         g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
-      pcVar15 = (code *)st::fn_005F3530;
+      pcVar15 = st::function_address_boundary_cast<code *>(st::fn_005F3530);
     }
     st::fn_006E9520
               (g_sT3DSMAPContext_00807598,uVar12,0,(uint)pcVar15,(uint)local_14);

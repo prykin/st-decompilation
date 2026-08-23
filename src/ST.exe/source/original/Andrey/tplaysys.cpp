@@ -1087,7 +1087,7 @@ int __thiscall st::fn_0054E4F0(STPlaySystemC *this,STMessage *message)
           pSVar10 = local_c;
           DAT_00802a3c = 0;
           st::fn_006F2E40
-                    (g_cMf32_00806754,st::pointer_boundary_cast<char *>(PTR_DAT_007c83b0),(undefined *)st::fn_0054CA10,local_c,0);
+                    (g_cMf32_00806754,st::pointer_boundary_cast<char *>(PTR_DAT_007c83b0),st::function_address_boundary_cast<undefined *>(st::fn_0054CA10),local_c,0);
           local_EAX_530 = st::fn_006B0140(0x4a39,g_hINSTANCE_00807618);
           /* ST_CALLSITE[0054E719]: CALL dword ptr [0x0085bde8] */
           st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%d %s"),DAT_00802a3c,local_EAX_530);

@@ -86,7 +86,7 @@ st::fn_00418030
       pSVar5 = nullptr;
     }
     else {
-      pSVar5 = STGridAt3D(g_worldGrid, local_2c, iVar15, iVar13).
+      pSVar5 = STGridAt3D(g_worldGrid, st::machine_word_boundary_cast<int>(local_2c), iVar15, iVar13).
                objects[(byte)local_58->field_008E];
     }
     if (pSVar5 == nullptr) {

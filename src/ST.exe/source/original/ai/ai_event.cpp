@@ -3584,7 +3584,7 @@ LAB_00659a1c:
                               if (iVar37 == 0) break;
                               if (local_160 != nullptr) {
                                 /* ST_CALLSITE[00655EE1]: CALL 0x00402932; direct=00402932 _EnumArt */
-                                st::fn_00402932(0,(byte *)pDStack_164,0,0,0,-1,-1,-1,(code *)st::fn_0064DD70,
+                                st::fn_00402932(0,(byte *)pDStack_164,0,0,0,-1,-1,-1,st::function_address_boundary_cast<code *>(st::fn_0064DD70),
                                          st::machine_word_boundary_cast<undefined4>(local_160));
                               }
                               goto cf_common_join_00659A73;
@@ -3619,7 +3619,7 @@ LAB_00659a1c:
                               /* ST_CALLSITE[0065614B]: CALL 0x00404142; direct=00404142 _EnumRCField */
                               st::fn_00404142((short)pDStack_164,(short)local_160,(short)local_15c,
                                            (short)local_158,(short)local_154,(short)local_150,
-                                           (short)local_14c,(code *)st::fn_0064E260,st::machine_word_boundary_cast<undefined4>(&local_148));
+                                           (short)local_14c,st::function_address_boundary_cast<code *>(st::fn_0064E260),st::machine_word_boundary_cast<undefined4>(&local_148));
                               goto cf_common_join_00659A73;
                             case 0x597:
                               iVar37 = st::fn_004018B6((RecoveredRecord_AiEventClassTy_00650090 *
@@ -3628,7 +3628,7 @@ LAB_00659a1c:
                               /* ST_CALLSITE[006561BC]: CALL 0x00404142; direct=00404142 _EnumRCField */
                               st::fn_00404142((short)local_15c,(short)local_158,(short)local_154,
                                            (short)local_150,(short)local_14c,(short)local_148,
-                                           (short)local_144,(code *)st::fn_0064E290,
+                                           (short)local_144,st::function_address_boundary_cast<code *>(st::fn_0064E290),
                                            (int)local_160 << 0x10 | (uint)pDStack_164 & 0xffff);
                               goto cf_common_join_00659A73;
                             case 0x598:
@@ -3651,7 +3651,7 @@ LAB_00659a1c:
                               /* ST_CALLSITE[00655FCC]: CALL 0x004013f2; direct=004013F2 _EnumDest */
                               st::fn_004013F2((byte *)local_160,(char)pDStack_164,(short)local_15c,
                                         (short)local_158,(short)local_154,(short)local_150,
-                                        (short)local_14c,(short)local_148,(code *)st::fn_0064DF30,
+                                        (short)local_14c,(short)local_148,st::function_address_boundary_cast<code *>(st::fn_0064DF30),
                                         st::machine_word_boundary_cast<undefined4>(&local_144));
                               goto cf_common_join_00659A73;
                             case 0x59a:
@@ -3659,7 +3659,7 @@ LAB_00659a1c:
                               if (iVar37 == 0) break;
                               if (local_160 != nullptr) {
                                 /* ST_CALLSITE[00656019]: CALL 0x004013f2; direct=004013F2 _EnumDest */
-                                st::fn_004013F2((byte *)pDStack_164,-1,0,0,0,-1,-1,-1,(code *)st::fn_0064DF70,
+                                st::fn_004013F2((byte *)pDStack_164,-1,0,0,0,-1,-1,-1,st::function_address_boundary_cast<code *>(st::fn_0064DF70),
                                           st::machine_word_boundary_cast<undefined4>(local_160));
                               }
                               goto cf_common_join_00659A73;
@@ -3721,7 +3721,7 @@ LAB_00659a1c:
                                       st::fn_00403675(*puVar12,(short)local_15c,(char)local_158,local_154
                                                  ,(short)local_150,(short)local_14c,(short)local_148
                                                  ,(short)local_144,(short)local_140,(short)local_13c
-                                                 ,(code *)st::fn_0064E1F0,st::machine_word_boundary_cast<undefined4>(&local_138));
+                                                 ,st::function_address_boundary_cast<code *>(st::fn_0064E1F0),st::machine_word_boundary_cast<undefined4>(&local_138));
                                       puVar12 = puVar12 + 1;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != nullptr);
@@ -3752,7 +3752,7 @@ LAB_00659a1c:
                                       st::fn_00403675(*puVar12,(short)local_158,(char)local_154,local_150
                                                  ,(short)local_14c,(short)local_148,(short)local_144
                                                  ,(short)local_140,(short)local_13c,(short)local_138
-                                                 ,(code *)st::fn_0064E230,st::machine_word_boundary_cast<undefined4>(local_15c));
+                                                 ,st::function_address_boundary_cast<code *>(st::fn_0064E230),st::machine_word_boundary_cast<undefined4>(local_15c));
                                       puVar12 = puVar12 + 1;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != nullptr);
@@ -4306,7 +4306,7 @@ LAB_00659a1c:
                               /* ST_CALLSITE[00655E6C]: CALL 0x00402932; direct=00402932 _EnumArt */
                               st::fn_00402932((short)pDStack_164,(byte *)local_160,(short)local_15c,
                                        (short)local_158,(short)local_154,(short)local_150,
-                                       (short)local_14c,(short)local_148,(code *)st::fn_0064DD30,
+                                       (short)local_14c,(short)local_148,st::function_address_boundary_cast<code *>(st::fn_0064DD30),
                                        st::machine_word_boundary_cast<undefined4>(&local_144));
                             }
                             goto cf_common_join_00659A73;
@@ -6298,7 +6298,7 @@ LAB_00655871:
                               /* ST_CALLSITE[00655763]: CALL 0x004013f2; direct=004013F2 _EnumDest */
                               local_EAX_12115 =
                                    st::fn_004013F2(nullptr,-1,sVar25,sVar23,sVar6,1,1,1,
-                                             (code *)st::fn_00678890,0);
+                                             st::function_address_boundary_cast<code *>(st::fn_00678890),0);
                               if ((local_EAX_12115 == -1) && (g_fish_00811984 != nullptr)) {
                                 pSVar32 = g_fish_00811984;
                               }
@@ -6560,7 +6560,7 @@ LAB_006559e3:
                                     st::fn_00403882((short)*puVar12,(short)local_15c,(byte *)local_158,
                                                 (short)local_154,(short)local_150,(short)local_14c,
                                                 (short)local_148,(short)local_144,(short)local_140,
-                                                (code *)st::fn_0064DAC0,st::machine_word_boundary_cast<undefined4>(&local_13c));
+                                                st::function_address_boundary_cast<code *>(st::fn_0064DAC0),st::machine_word_boundary_cast<undefined4>(&local_13c));
                                     puVar12 = puVar12 + 1;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != nullptr);

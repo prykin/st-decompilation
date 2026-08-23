@@ -1341,7 +1341,7 @@ DWORD st::fn_006C3630(LPDWORD lpThreadId)
           DVar3 = st::fn_006D4F70(st::pointer_boundary_cast<undefined4 *>(lpParameter + 0x11),st::machine_word_boundary_cast<undefined4>(lpParameter + 0x13),st::machine_word_boundary_cast<undefined4>(lpParameter));
           if (DVar3 == 0) {
             /* ST_CALLSITE[006C36CB]: CALL dword ptr [0x0085bb70] */
-            pvVar4 = st::external_00000011((LPSECURITY_ATTRIBUTES)0x0,0,st::pointer_boundary_cast<LPTHREAD_START_ROUTINE>(st::fn_006C3720),st::pointer_boundary_cast<LPVOID>(lpParameter),0,
+            pvVar4 = st::external_00000011((LPSECURITY_ATTRIBUTES)0x0,0,st::function_address_boundary_cast<LPTHREAD_START_ROUTINE>(st::fn_006C3720),st::pointer_boundary_cast<LPVOID>(lpParameter),0,
                                   (LPDWORD)&lpThreadId);
             lpParameter[0x21] = (DWORD)pvVar4;
             if (pvVar4 != (HANDLE)0x0) {
@@ -2990,7 +2990,7 @@ void st::fn_006C72F0(AnonShape_006C72F0_54F06289 *param_1)
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
     iVar5 = st::fn_0072D7F0
-                      (local_70.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,local_8);
+                      (local_70.jumpBuffer,2,st::fn_0072DA21,local_8);
     local_1c = (st_stack_frame + 0);
     if (iVar5 == 0) {
       local_8 = 0;
@@ -3053,7 +3053,7 @@ void st::fn_006C7430(AnonShape_006C7430_D1D36538 *param_1)
   g_currentExceptionFrame = &local_70;
   ExceptionList = &local_14;
   local_8 = st::fn_0072D7F0
-                      (local_70.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0xffffffff);
+                      (local_70.jumpBuffer,2,st::fn_0072DA21,0xffffffff);
   local_1c = (st_stack_frame + 0);
   if (local_8 == 0) {
     if (param_1->field_0072 == nullptr) {
@@ -3523,7 +3523,7 @@ void st::fn_006C7EA0(AnonPointee_MReportTy_0073 *param_1,undefined4 param_2,unde
   local_10 = param_1;
   local_8 = (uint)param_5;
   local_c = param_2;
-  st::fn_006D8260(param_3,param_4,(undefined *)st::fn_006C7EE0,st::machine_word_boundary_cast<undefined4>(&local_10));
+  st::fn_006D8260(param_3,param_4,st::function_address_boundary_cast<undefined *>(st::fn_006C7EE0),st::machine_word_boundary_cast<undefined4>(&local_10));
   return;
 }
 

@@ -2779,6 +2779,8 @@ undefined4 st::fn_00497370(int param_1,int param_2,uint param_3,uint param_4,voi
 {
   alignas(4) byte st_stack_frame[140];
 
+  uint32_t _local_5c;
+
   byte bVar1;
   dword dVar2;
   void *this;
@@ -2845,7 +2847,7 @@ undefined4 st::fn_00497370(int param_1,int param_2,uint param_3,uint param_4,voi
       uVar3 = puVar12[2];
       if (uVar3 != param_3) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        auto _local_5c = CONCAT31(uStack_5b,(char)uVar3);
+        _local_5c = CONCAT31(uStack_5b,(char)uVar3);
         if (DAT_00808a8f == '\0') {
           if ((char)uVar3 == (char)param_3) {
 LAB_004974ca:

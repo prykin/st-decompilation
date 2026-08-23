@@ -17,8 +17,16 @@ template <typename Target, typename Source>
 inline Target pointer_boundary_cast(Source value) noexcept {
     static_assert(std::is_pointer_v<Target>);
     static_assert(std::is_pointer_v<Source> || std::is_integral_v<Source>);
-    if constexpr (std::is_pointer_v<Source>)
-        return reinterpret_cast<Target>(value);
+    if constexpr (std::is_pointer_v<Source>) {
+        using TargetPointee = std::remove_pointer_t<Target>;
+        using SourcePointee = std::remove_pointer_t<Source>;
+        if constexpr (std::is_same_v<
+                std::remove_const_t<TargetPointee>,
+                std::remove_const_t<SourcePointee>>)
+            return const_cast<Target>(value);
+        else
+            return reinterpret_cast<Target>(value);
+    }
     else
         return reinterpret_cast<Target>(static_cast<uintptr_t>(value));
 }
@@ -31,9 +39,34 @@ inline Target machine_word_boundary_cast(Source value) noexcept {
     else
         return static_cast<Target>(value);
 }
+template <typename Target, typename Source>
+inline Target function_address_boundary_cast(Source value) noexcept {
+    static_assert(std::is_pointer_v<Target>);
+    static_assert(std::is_pointer_v<Source>);
+    return reinterpret_cast<Target>(value);
+}
 inline char *mutable_c_string(const char *value) noexcept {
     return const_cast<char *>(value);
 }
+inline STMessageArg message_arg_u32(uint32_t value) noexcept {
+    STMessageArg result{};
+    result.u32 = value;
+    return result;
+}
+inline STMessageArg message_arg_i32(int32_t value) noexcept {
+    STMessageArg result{};
+    result.i32 = value;
+    return result;
+}
+template <typename T>
+inline STMessageArg message_arg_pointer(T *value) noexcept {
+    STMessageArg result{};
+    result.ptr = const_cast<void *>(static_cast<const void *>(value));
+    return result;
+}
+// Ghidra p-code exposes CPUID result tuples through a synthetic
+// pointer-returning intrinsic.  The source port must provide it.
+int *pcode_cpuid_info(uint leaf);
 // Exact per-instruction HighFunction call override exported from
 // Ghidra.  The physical vtable member can retain a shorter/base
 // declaration while this boundary exposes the proven call ABI.

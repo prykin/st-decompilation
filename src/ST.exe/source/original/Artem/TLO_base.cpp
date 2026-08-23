@@ -448,6 +448,8 @@ int __thiscall st::fn_004B80D0(TLOBaseTy *this,int param_1,int param_2)
 int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
 
 {
+  undefined4 * st_unresolved_puRam00000000{};
+
   byte bVar1;
   byte bVar2;
   byte bVar3;
@@ -1637,17 +1639,17 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
       case 0xbf:
         pAVar24 = (AnonShape_004B9FA0_0EE05DAC *)st::fn_0040186B((int)this_00->field_0024,0x67);
         iVar26 = 0;
-        if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 1)) {
+        if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&st_unresolved_puRam00000000 + 1)) {
           iVar26 = (local_5c[0] * 9) / 10 + (local_5c[0] * 9 >> 0x1f);
 LAB_004bb547:
           iVar26 = st::machine_word_boundary_cast<int>(local_5c[0] - (iVar26 - (iVar26 >> 0x1f)));
         }
         else {
-          if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 2)) {
+          if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&st_unresolved_puRam00000000 + 2)) {
             iVar26 = (local_5c[0] * 0x11) / 0x14 + (local_5c[0] * 0x11 >> 0x1f);
             goto LAB_004bb547;
           }
-          if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 3)) {
+          if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&st_unresolved_puRam00000000 + 3)) {
             iVar26 = (local_5c[0] * 4) / 5 + (local_5c[0] * 4 >> 0x1f);
             goto LAB_004bb547;
           }
@@ -1678,14 +1680,14 @@ LAB_004bb58d:
         }
       }
       iVar26 = 0;
-      if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 1)) {
+      if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&st_unresolved_puRam00000000 + 1)) {
         iVar26 = st::machine_word_boundary_cast<int>(local_5c[0] * 8);
       }
-      else if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 2)) {
+      else if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&st_unresolved_puRam00000000 + 2)) {
         iVar26 = st::machine_word_boundary_cast<int>(local_5c[0] * 6);
       }
       else {
-        if (pAVar24 != (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 3)) goto LAB_004bb5dd;
+        if (pAVar24 != (AnonShape_004B9FA0_0EE05DAC *)((int)&st_unresolved_puRam00000000 + 3)) goto LAB_004bb5dd;
         iVar26 = st::machine_word_boundary_cast<int>(local_5c[0] * 4);
       }
       iVar26 = st::machine_word_boundary_cast<int>(local_5c[0] - iVar26 / 10);
@@ -1713,7 +1715,7 @@ LAB_004bb4a1:
         goto LAB_004bb4a1;
       }
     }
-    if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&puRam00000000 + 1)) {
+    if (pAVar24 == (AnonShape_004B9FA0_0EE05DAC *)((int)&st_unresolved_puRam00000000 + 1)) {
       iVar26 = st::machine_word_boundary_cast<int>(local_5c[0] - (local_5c[0] * 9) / 10);
     }
     local_5c[0] = st::machine_word_boundary_cast<int>(local_5c[0] - iVar26);
@@ -1797,7 +1799,7 @@ LAB_004bb5dd:
             /* ST_CALLSITE[004BBDD0]: CALL dword ptr [EAX] */
             g_aiBossClass_008117BC->GetMessage(&local_7c);
           }
-          local_7c.arg0 = (STMessageArg)this_00->field_0008;
+          local_7c.arg0 = st::message_arg_u32(static_cast<uint32_t>(this_00->field_0008));
           local_7c.unknown_08 = this_00->field_000C->systemId;
           local_7c.unknown_0c = 0;
           local_7c.id = MESS_SYSTEMCLASSTY_000A;
@@ -1812,7 +1814,7 @@ LAB_004bb5dd:
         local_7c.arg1.words.low = (word)local_54;
         /* ST_CALLSITE[004BBE50]: CALL dword ptr [EAX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (*(code *)*puRam00000000)(&local_7c);
+        (*(code *)*st_unresolved_puRam00000000)(&local_7c);
       }
       if (g_sndUnderAttMeneg_00811798 != nullptr) {
         /* ST_CALLSITE[004BBE75]: CALL 0x004028c4; direct=004028C4 SndUnderAttMenegC::sub_0061F8B0 */
@@ -2594,14 +2596,14 @@ LAB_004bbfe9:
       break;
     case 2:
       if (this_00->field_04D4 != 0) {
-        st::fn_00405097(this_00,(int *)((int)&puRam00000000 + 1),st::machine_word_boundary_cast<int>(this_00->field_04E0[1] - 5));
+        st::fn_00405097(this_00,(int *)((int)&st_unresolved_puRam00000000 + 1),st::machine_word_boundary_cast<int>(this_00->field_04E0[1] - 5));
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
       break;
     case 3:
       if (this_00->field_04D4 != 0) {
-        st::fn_00405097(this_00,(int *)((int)&puRam00000000 + 1),st::machine_word_boundary_cast<int>(this_00->field_04E0[1] + 5));
+        st::fn_00405097(this_00,(int *)((int)&st_unresolved_puRam00000000 + 1),st::machine_word_boundary_cast<int>(this_00->field_04E0[1] + 5));
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
@@ -2610,7 +2612,7 @@ LAB_004bbfe9:
       piVar43 = nullptr;
       goto LAB_004bd06b;
     case 5:
-      piVar43 = (int *)((int)&puRam00000000 + 1);
+      piVar43 = (int *)((int)&st_unresolved_puRam00000000 + 1);
 LAB_004bd06b:
       st::fn_00405C40(this_00,piVar43);
     }

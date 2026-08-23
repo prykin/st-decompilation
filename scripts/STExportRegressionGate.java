@@ -116,6 +116,16 @@ public class STExportRegressionGate extends GhidraScript {
     }
 
     private void internalChecks(CorpusMetrics now) {
+        boolean portableProgramIdentity = !now.programName.isBlank() &&
+            now.programName.equals(now.executablePath);
+        add(portableProgramIdentity ? "info" : "error", "portable_program_identity", 0,
+            portableProgramIdentity ? 0 : 1,
+            portableProgramIdentity ? "ok" : "metadata_regression",
+            portableProgramIdentity ?
+                "program.json uses the stable Ghidra Program name for executable_path" :
+                "program.json executable_path must equal program and must not expose or " +
+                    "inherit redacted workstation-path fragments: program=" +
+                    now.programName + "; executable_path=" + now.executablePath);
         add(now.failedBodies == 0 ? "info" : "error", "decompile_failures", 0,
             now.failedBodies, now.failedBodies == 0 ? "ok" : "regressed",
             "Every body_exported function must have decompile_status=ok");
@@ -363,6 +373,15 @@ public class STExportRegressionGate extends GhidraScript {
 
     private CorpusMetrics metrics(Path root) throws Exception {
         CorpusMetrics result = new CorpusMetrics();
+        Path programPath = root.resolve("program.json");
+        // The retained pre_export regression snapshot intentionally contains only the
+        // artifacts consumed by cross-export comparisons.  Portable identity is a strict
+        // current-corpus invariant, so legacy/minimal baselines need not carry program.json.
+        if (Files.isRegularFile(programPath)) {
+            String program = Files.readString(programPath, StandardCharsets.UTF_8);
+            result.programName = jsonString(program, "program");
+            result.executablePath = jsonString(program, "executable_path");
+        }
         String manifest = Files.readString(root.resolve("manifest.json"), StandardCharsets.UTF_8);
         for (String key : List.of("function_count", "body_function_count",
                 "function_covered_executable_byte_count", "unclaimed_meaningful_byte_count"))
@@ -611,6 +630,14 @@ public class STExportRegressionGate extends GhidraScript {
         return Long.parseLong(matcher.group(1));
     }
 
+    private String jsonString(String text, String key) {
+        Matcher matcher = Pattern.compile("\\\"" + Pattern.quote(key) +
+            "\\\"\\s*:\\s*\\\"((?:\\\\.|[^\\\"])*)\\\"").matcher(text);
+        if (!matcher.find())
+            throw new IllegalStateException("Missing string metadata key " + key);
+        return unescape(matcher.group(1));
+    }
+
     private long jsonLongOrDefault(String text, String key, long fallback) {
         Matcher matcher = Pattern.compile("\\\"" + Pattern.quote(key) +
             "\\\"\\s*:\\s*([0-9]+)").matcher(text);
@@ -778,6 +805,8 @@ public class STExportRegressionGate extends GhidraScript {
         long voidVtableSlots;
         long dispatchVtables;
         boolean hasBroadQualityDetails;
+        String programName = "";
+        String executablePath = "";
         long number(String name) { return numbers.getOrDefault(name, 0L); }
     }
 

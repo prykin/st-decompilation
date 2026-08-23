@@ -311,6 +311,8 @@ void __thiscall st::fn_005205E0(InfocPanelTy *this,int param_1)
 void __thiscall st::fn_005206F0(InfocPanelTy *this)
 
 {
+  uint32_t _local_18;
+
   undefined1 *puVar1;
   byte bVar2;
   InfocPanelTy *this_00;
@@ -421,7 +423,7 @@ void __thiscall st::fn_005206F0(InfocPanelTy *this)
         iVar7 = -1;
         bVar4 = *local_c;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        auto _local_18 = CONCAT31(uStack_17,bVar4);
+        _local_18 = CONCAT31(uStack_17,bVar4);
         if (DAT_0080874d == bVar4) {
 LAB_00520987:
           uVar5 = 0;

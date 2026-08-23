@@ -1620,6 +1620,8 @@ st::fn_005C0B00(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,char
                    uint *param_5)
 
 {
+  uint32_t _local_10;
+
   word wVar1;
   STMessageArg SVar3;
   byte *pbVar4;
@@ -1648,7 +1650,7 @@ st::fn_005C0B00(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,char
   }
   local_20 = param_1->arg1;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  auto _local_10 = CONCAT31(uStack_f,cVar8);
+  _local_10 = CONCAT31(uStack_f,cVar8);
   if (param_4 == '\0') {
     local_14 = this->field_0077;
   }

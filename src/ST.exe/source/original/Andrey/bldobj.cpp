@@ -369,7 +369,7 @@ int __thiscall st::fn_004F1080(BldObjPanelTy *this,STMessage *message)
     if (SVar1 == MESS_BLDOBJPANELTY_B206) {
       /* ST_CALLSITE[004F1174]: CALL 0x00401ce4; direct=00401CE4 ProdPanelTy::PaintTab */
       st::fn_00401CE4
-                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,(code *)st::fn_0052A7B0);
+                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,st::function_address_boundary_cast<code *>(st::fn_0052A7B0));
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

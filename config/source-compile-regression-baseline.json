@@ -1,0 +1,3079 @@
+{
+  "address_error_families": [
+    {
+      "address": "0040F4D0",
+      "count": 4,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00413AF0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "004168D0",
+      "count": 1,
+      "kind": "call_arity"
+    },
+    {
+      "address": "00416DB0",
+      "count": 1,
+      "kind": "call_arity"
+    },
+    {
+      "address": "00449B60",
+      "count": 1,
+      "kind": "pointer_indirection"
+    },
+    {
+      "address": "0044D320",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "00480600",
+      "count": 3,
+      "kind": "other"
+    },
+    {
+      "address": "004900E0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00495720",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00495720",
+      "count": 1,
+      "kind": "return_type"
+    },
+    {
+      "address": "00495750",
+      "count": 1,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "00496CC0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "004BEA70",
+      "count": 8,
+      "kind": "other"
+    },
+    {
+      "address": "004C3570",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "004C4550",
+      "count": 4,
+      "kind": "other"
+    },
+    {
+      "address": "004C7C50",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "004FAE90",
+      "count": 1,
+      "kind": "call_argument_type"
+    },
+    {
+      "address": "00502360",
+      "count": 5,
+      "kind": "other"
+    },
+    {
+      "address": "005097E0",
+      "count": 5,
+      "kind": "other"
+    },
+    {
+      "address": "0051DDD0",
+      "count": 7,
+      "kind": "other"
+    },
+    {
+      "address": "00540C40",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00548C40",
+      "count": 20,
+      "kind": "other"
+    },
+    {
+      "address": "0054D640",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0054E4F0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0054F1D0",
+      "count": 1,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "00553390",
+      "count": 1,
+      "kind": "pointer_indirection"
+    },
+    {
+      "address": "00553410",
+      "count": 1,
+      "kind": "pointer_indirection"
+    },
+    {
+      "address": "0055BCB0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0055C180",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "0055C320",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0055EE70",
+      "count": 4,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "005623C0",
+      "count": 2,
+      "kind": "other"
+    },
+    {
+      "address": "0056ADC0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00581BF0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0058E570",
+      "count": 1,
+      "kind": "call_argument_type"
+    },
+    {
+      "address": "00590B40",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00591BF0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00595E40",
+      "count": 1,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "0059B2C0",
+      "count": 3,
+      "kind": "other"
+    },
+    {
+      "address": "005A2380",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "005A3540",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "005A4350",
+      "count": 2,
+      "kind": "other"
+    },
+    {
+      "address": "005B3430",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "005C0B00",
+      "count": 4,
+      "kind": "pointer_indirection"
+    },
+    {
+      "address": "005C7800",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "005C8200",
+      "count": 2,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "005D1400",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "005D1400",
+      "count": 13,
+      "kind": "other"
+    },
+    {
+      "address": "005D5560",
+      "count": 4,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "005D5560",
+      "count": 6,
+      "kind": "other"
+    },
+    {
+      "address": "005DAC80",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "005E1330",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "005E1330",
+      "count": 4,
+      "kind": "other"
+    },
+    {
+      "address": "006010A0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00604A90",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00605B60",
+      "count": 17,
+      "kind": "other"
+    },
+    {
+      "address": "0060D390",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00614A90",
+      "count": 2,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00618240",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00618C00",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0061E7F0",
+      "count": 1,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "0062BBC0",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "0062BFF0",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "0062D670",
+      "count": 4,
+      "kind": "other"
+    },
+    {
+      "address": "0062ED90",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00630430",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00630430",
+      "count": 3,
+      "kind": "invalid_operands"
+    },
+    {
+      "address": "00630430",
+      "count": 4,
+      "kind": "other"
+    },
+    {
+      "address": "00648FE0",
+      "count": 1,
+      "kind": "pointer_indirection"
+    },
+    {
+      "address": "0064A970",
+      "count": 8,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "0064A970",
+      "count": 21,
+      "kind": "other"
+    },
+    {
+      "address": "00652810",
+      "count": 5,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00652810",
+      "count": 15,
+      "kind": "other"
+    },
+    {
+      "address": "0065BD70",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "0066ACC0",
+      "count": 7,
+      "kind": "other"
+    },
+    {
+      "address": "00674AF0",
+      "count": 3,
+      "kind": "pointer_indirection"
+    },
+    {
+      "address": "00678980",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0067D3B0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00680890",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "006809F0",
+      "count": 1,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "00682290",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00683C70",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00683C70",
+      "count": 2,
+      "kind": "other"
+    },
+    {
+      "address": "00694C30",
+      "count": 2,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00694CD0",
+      "count": 1,
+      "kind": "call_arity"
+    },
+    {
+      "address": "006975F0",
+      "count": 2,
+      "kind": "other"
+    },
+    {
+      "address": "006A01D0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "006A5990",
+      "count": 1,
+      "kind": "pointer_indirection"
+    },
+    {
+      "address": "006ACED8",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "006ACF0D",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "006AD4D0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "006ADC30",
+      "count": 3,
+      "kind": "other"
+    },
+    {
+      "address": "006ADC30",
+      "count": 4,
+      "kind": "pointer_indirection"
+    },
+    {
+      "address": "006B2020",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "006B3070",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "006BFBF0",
+      "count": 2,
+      "kind": "pointer_indirection"
+    },
+    {
+      "address": "006C0800",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "006C08E0",
+      "count": 4,
+      "kind": "other"
+    },
+    {
+      "address": "006C2050",
+      "count": 3,
+      "kind": "pointer_indirection"
+    },
+    {
+      "address": "006C2140",
+      "count": 1,
+      "kind": "pointer_indirection"
+    },
+    {
+      "address": "006DDD50",
+      "count": 1,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "006E9490",
+      "count": 2,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "006E9CB0",
+      "count": 2,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "006E9D40",
+      "count": 2,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "006E9DD0",
+      "count": 2,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "006E9E60",
+      "count": 2,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "006F31D0",
+      "count": 3,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "006F31D0",
+      "count": 6,
+      "kind": "other"
+    },
+    {
+      "address": "0070C900",
+      "count": 1,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "00711110",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "007111C0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "007140E0",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "00714B30",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "007279B0",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0072AFC0",
+      "count": 1,
+      "kind": "other"
+    },
+    {
+      "address": "007495BF",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "007498EC",
+      "count": 1,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "0074AB3D",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0074BC6A",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0074BD15",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0074C6EA",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0074C8EC",
+      "count": 1,
+      "kind": "call_arity"
+    },
+    {
+      "address": "0074C8F6",
+      "count": 1,
+      "kind": "call_arity"
+    },
+    {
+      "address": "0074C900",
+      "count": 1,
+      "kind": "call_arity"
+    },
+    {
+      "address": "0074D678",
+      "count": 1,
+      "kind": "call_argument_type"
+    },
+    {
+      "address": "0074DCA1",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0074DFF5",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0074E0D6",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0074E17D",
+      "count": 1,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "0074E337",
+      "count": 2,
+      "kind": "call_arity"
+    },
+    {
+      "address": "0074E337",
+      "count": 1,
+      "kind": "invalid_cast"
+    },
+    {
+      "address": "0074E7B1",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "0074E847",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "00750565",
+      "count": 1,
+      "kind": "call_arity"
+    },
+    {
+      "address": "0075056F",
+      "count": 1,
+      "kind": "call_arity"
+    },
+    {
+      "address": "00750579",
+      "count": 1,
+      "kind": "call_arity"
+    },
+    {
+      "address": "0075E890",
+      "count": 1,
+      "kind": "assignment_type"
+    },
+    {
+      "address": "007611C0",
+      "count": 5,
+      "kind": "other"
+    }
+  ],
+  "address_translation_units": [
+    {
+      "address": "0040F4D0",
+      "translation_units": [
+        "source/recovered/by_address/0040.cpp"
+      ]
+    },
+    {
+      "address": "00413AF0",
+      "translation_units": [
+        "source/recovered/by_address/0041.cpp"
+      ]
+    },
+    {
+      "address": "004168D0",
+      "translation_units": [
+        "source/recovered/by_address/0041.cpp"
+      ]
+    },
+    {
+      "address": "00416DB0",
+      "translation_units": [
+        "source/recovered/by_address/0041.cpp"
+      ]
+    },
+    {
+      "address": "00449B60",
+      "translation_units": [
+        "source/original/wlad/to_allpl.cpp"
+      ]
+    },
+    {
+      "address": "0044D320",
+      "translation_units": [
+        "source/recovered/by_address/0044.cpp"
+      ]
+    },
+    {
+      "address": "00480600",
+      "translation_units": [
+        "source/recovered/by_address/0048.cpp"
+      ]
+    },
+    {
+      "address": "004900E0",
+      "translation_units": [
+        "source/original/wlad/To_boat.cpp"
+      ]
+    },
+    {
+      "address": "00495720",
+      "translation_units": [
+        "source/recovered/by_address/0049.cpp"
+      ]
+    },
+    {
+      "address": "00495750",
+      "translation_units": [
+        "source/recovered/by_address/0049.cpp"
+      ]
+    },
+    {
+      "address": "00496CC0",
+      "translation_units": [
+        "source/recovered/by_address/0049.cpp"
+      ]
+    },
+    {
+      "address": "004BEA70",
+      "translation_units": [
+        "source/recovered/by_owner/TLOBaseTy.cpp"
+      ]
+    },
+    {
+      "address": "004C3570",
+      "translation_units": [
+        "source/original/Artem/TLO_bfire.cpp"
+      ]
+    },
+    {
+      "address": "004C4550",
+      "translation_units": [
+        "source/recovered/by_owner/TLOBaseTy.cpp"
+      ]
+    },
+    {
+      "address": "004C7C50",
+      "translation_units": [
+        "source/recovered/by_address/004C.cpp"
+      ]
+    },
+    {
+      "address": "004FAE90",
+      "translation_units": [
+        "source/recovered/by_owner/CPanelTy.cpp"
+      ]
+    },
+    {
+      "address": "00502360",
+      "translation_units": [
+        "source/original/Andrey/cpanel2.cpp"
+      ]
+    },
+    {
+      "address": "005097E0",
+      "translation_units": [
+        "source/original/Andrey/cpanel4.cpp"
+      ]
+    },
+    {
+      "address": "0051DDD0",
+      "translation_units": [
+        "source/original/Andrey/helppan.cpp"
+      ]
+    },
+    {
+      "address": "00540C40",
+      "translation_units": [
+        "source/recovered/by_address/0054.cpp"
+      ]
+    },
+    {
+      "address": "00548C40",
+      "translation_units": [
+        "source/original/Andrey/to_cursor.cpp"
+      ]
+    },
+    {
+      "address": "0054D640",
+      "translation_units": [
+        "source/original/Andrey/tplaysys.cpp"
+      ]
+    },
+    {
+      "address": "0054E4F0",
+      "translation_units": [
+        "source/original/Andrey/tplaysys.cpp"
+      ]
+    },
+    {
+      "address": "0054F1D0",
+      "translation_units": [
+        "source/original/Andrey/tplaysys.cpp"
+      ]
+    },
+    {
+      "address": "00553390",
+      "translation_units": [
+        "source/recovered/by_address/0055.cpp"
+      ]
+    },
+    {
+      "address": "00553410",
+      "translation_units": [
+        "source/recovered/by_address/0055.cpp"
+      ]
+    },
+    {
+      "address": "0055BCB0",
+      "translation_units": [
+        "source/recovered/by_address/0055.cpp"
+      ]
+    },
+    {
+      "address": "0055C180",
+      "translation_units": [
+        "source/recovered/by_address/0055.cpp"
+      ]
+    },
+    {
+      "address": "0055C320",
+      "translation_units": [
+        "source/recovered/by_address/0055.cpp"
+      ]
+    },
+    {
+      "address": "0055EE70",
+      "translation_units": [
+        "source/recovered/by_address/0055.cpp"
+      ]
+    },
+    {
+      "address": "005623C0",
+      "translation_units": [
+        "source/recovered/by_address/0056.cpp"
+      ]
+    },
+    {
+      "address": "0056ADC0",
+      "translation_units": [
+        "source/original/tapp.cpp"
+      ]
+    },
+    {
+      "address": "00581BF0",
+      "translation_units": [
+        "source/original/Igor/to_jell_m.cpp"
+      ]
+    },
+    {
+      "address": "0058E570",
+      "translation_units": [
+        "source/original/Igor/To_shark.cpp"
+      ]
+    },
+    {
+      "address": "00590B40",
+      "translation_units": [
+        "source/original/Start/camp_obj.cpp"
+      ]
+    },
+    {
+      "address": "00591BF0",
+      "translation_units": [
+        "source/original/Start/camp_obj.cpp"
+      ]
+    },
+    {
+      "address": "00595E40",
+      "translation_units": [
+        "source/original/Start/fsgs_obj.cpp"
+      ]
+    },
+    {
+      "address": "0059B2C0",
+      "translation_units": [
+        "source/original/Start/fsgs_obj.cpp"
+      ]
+    },
+    {
+      "address": "005A2380",
+      "translation_units": [
+        "source/original/Start/fsgs_obj.cpp"
+      ]
+    },
+    {
+      "address": "005A3540",
+      "translation_units": [
+        "source/original/Start/fsgs_obj.cpp"
+      ]
+    },
+    {
+      "address": "005A4350",
+      "translation_units": [
+        "source/original/Start/fsgs_obj.cpp"
+      ]
+    },
+    {
+      "address": "005B3430",
+      "translation_units": [
+        "source/original/Start/main_obj.cpp"
+      ]
+    },
+    {
+      "address": "005C0B00",
+      "translation_units": [
+        "source/original/Start/rpt_obj.cpp"
+      ]
+    },
+    {
+      "address": "005C7800",
+      "translation_units": [
+        "source/recovered/by_address/005C.cpp"
+      ]
+    },
+    {
+      "address": "005C8200",
+      "translation_units": [
+        "source/original/Start/sett_obj.cpp"
+      ]
+    },
+    {
+      "address": "005D1400",
+      "translation_units": [
+        "source/original/Start/settmobj.cpp"
+      ]
+    },
+    {
+      "address": "005D5560",
+      "translation_units": [
+        "source/original/Start/settsobj.cpp"
+      ]
+    },
+    {
+      "address": "005DAC80",
+      "translation_units": [
+        "source/original/Start/startsys.cpp"
+      ]
+    },
+    {
+      "address": "005E1330",
+      "translation_units": [
+        "source/original/Start/task_obj.cpp"
+      ]
+    },
+    {
+      "address": "006010A0",
+      "translation_units": [
+        "source/recovered/by_address/0060.cpp"
+      ]
+    },
+    {
+      "address": "00604A90",
+      "translation_units": [
+        "source/original/nick/to_Expl.cpp"
+      ]
+    },
+    {
+      "address": "00605B60",
+      "translation_units": [
+        "source/recovered/by_address/0060.cpp"
+      ]
+    },
+    {
+      "address": "0060D390",
+      "translation_units": [
+        "source/recovered/by_address/0060.cpp"
+      ]
+    },
+    {
+      "address": "00614A90",
+      "translation_units": [
+        "source/recovered/by_address/0061.cpp"
+      ]
+    },
+    {
+      "address": "00618240",
+      "translation_units": [
+        "source/recovered/by_address/0061.cpp"
+      ]
+    },
+    {
+      "address": "00618C00",
+      "translation_units": [
+        "source/original/nick/to_jump_mine.cpp"
+      ]
+    },
+    {
+      "address": "0061E7F0",
+      "translation_units": [
+        "source/recovered/by_address/0061.cpp"
+      ]
+    },
+    {
+      "address": "0062BBC0",
+      "translation_units": [
+        "source/recovered/by_address/0062.cpp"
+      ]
+    },
+    {
+      "address": "0062BFF0",
+      "translation_units": [
+        "source/recovered/by_address/0062.cpp"
+      ]
+    },
+    {
+      "address": "0062D670",
+      "translation_units": [
+        "source/recovered/by_owner/STManRub3C.cpp"
+      ]
+    },
+    {
+      "address": "0062ED90",
+      "translation_units": [
+        "source/original/nick/to_Rubb.cpp"
+      ]
+    },
+    {
+      "address": "00630430",
+      "translation_units": [
+        "source/original/nick/to_ruinm.cpp"
+      ]
+    },
+    {
+      "address": "00648FE0",
+      "translation_units": [
+        "source/original/ai/ai_creat.cpp"
+      ]
+    },
+    {
+      "address": "0064A970",
+      "translation_units": [
+        "source/original/ai/ai_erc.cpp"
+      ]
+    },
+    {
+      "address": "00652810",
+      "translation_units": [
+        "source/original/ai/ai_event.cpp"
+      ]
+    },
+    {
+      "address": "0065BD70",
+      "translation_units": [
+        "source/recovered/by_owner/AiEventClassTy.cpp"
+      ]
+    },
+    {
+      "address": "0066ACC0",
+      "translation_units": [
+        "source/original/ai/ai_interp.cpp"
+      ]
+    },
+    {
+      "address": "00674AF0",
+      "translation_units": [
+        "source/recovered/by_address/0067.cpp"
+      ]
+    },
+    {
+      "address": "00678980",
+      "translation_units": [
+        "source/original/ai/ai_plr.cpp"
+      ]
+    },
+    {
+      "address": "0067D3B0",
+      "translation_units": [
+        "source/original/ai/ai_plr_d.cpp"
+      ]
+    },
+    {
+      "address": "00680890",
+      "translation_units": [
+        "source/original/ai/ai_script.cpp"
+      ]
+    },
+    {
+      "address": "006809F0",
+      "translation_units": [
+        "source/original/ai/ai_script.cpp"
+      ]
+    },
+    {
+      "address": "00682290",
+      "translation_units": [
+        "source/recovered/by_address/0068.cpp"
+      ]
+    },
+    {
+      "address": "00683C70",
+      "translation_units": [
+        "source/original/ai/ai_script.cpp"
+      ]
+    },
+    {
+      "address": "00694C30",
+      "translation_units": [
+        "source/recovered/by_owner/CGenerate.cpp"
+      ]
+    },
+    {
+      "address": "00694CD0",
+      "translation_units": [
+        "source/recovered/by_owner/CGenerate.cpp"
+      ]
+    },
+    {
+      "address": "006975F0",
+      "translation_units": [
+        "source/recovered/by_owner/CGenerate.cpp"
+      ]
+    },
+    {
+      "address": "006A01D0",
+      "translation_units": [
+        "source/original/Maps/generate.cpp"
+      ]
+    },
+    {
+      "address": "006A5990",
+      "translation_units": [
+        "source/recovered/by_address/006A.cpp"
+      ]
+    },
+    {
+      "address": "006ACED8",
+      "translation_units": [
+        "source/recovered/by_address/006A.cpp"
+      ]
+    },
+    {
+      "address": "006ACF0D",
+      "translation_units": [
+        "source/recovered/by_address/006A.cpp"
+      ]
+    },
+    {
+      "address": "006AD4D0",
+      "translation_units": [
+        "source/recovered/by_address/006A.cpp"
+      ]
+    },
+    {
+      "address": "006ADC30",
+      "translation_units": [
+        "source/recovered/by_address/006A.cpp"
+      ]
+    },
+    {
+      "address": "006B2020",
+      "translation_units": [
+        "source/recovered/by_address/006B.cpp"
+      ]
+    },
+    {
+      "address": "006B3070",
+      "translation_units": [
+        "source/recovered/by_address/006B.cpp"
+      ]
+    },
+    {
+      "address": "006BFBF0",
+      "translation_units": [
+        "source/recovered/by_address/006B.cpp"
+      ]
+    },
+    {
+      "address": "006C0800",
+      "translation_units": [
+        "source/recovered/by_address/006C.cpp"
+      ]
+    },
+    {
+      "address": "006C08E0",
+      "translation_units": [
+        "source/recovered/by_address/006C.cpp"
+      ]
+    },
+    {
+      "address": "006C2050",
+      "translation_units": [
+        "source/recovered/by_address/006C.cpp"
+      ]
+    },
+    {
+      "address": "006C2140",
+      "translation_units": [
+        "source/recovered/by_address/006C.cpp"
+      ]
+    },
+    {
+      "address": "006DDD50",
+      "translation_units": [
+        "source/recovered/by_owner/ST3DSMAPContext.cpp"
+      ]
+    },
+    {
+      "address": "006E9490",
+      "translation_units": [
+        "source/recovered/by_address/006E.cpp"
+      ]
+    },
+    {
+      "address": "006E9CB0",
+      "translation_units": [
+        "source/recovered/by_owner/ST3DSMAPContext.cpp"
+      ]
+    },
+    {
+      "address": "006E9D40",
+      "translation_units": [
+        "source/recovered/by_owner/ST3DSMAPContext.cpp"
+      ]
+    },
+    {
+      "address": "006E9DD0",
+      "translation_units": [
+        "source/recovered/by_address/006E.cpp"
+      ]
+    },
+    {
+      "address": "006E9E60",
+      "translation_units": [
+        "source/recovered/by_address/006E.cpp"
+      ]
+    },
+    {
+      "address": "006F31D0",
+      "translation_units": [
+        "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_006F31D0.cpp"
+      ]
+    },
+    {
+      "address": "0070C900",
+      "translation_units": [
+        "source/recovered/by_address/0070.cpp"
+      ]
+    },
+    {
+      "address": "00711110",
+      "translation_units": [
+        "source/recovered/by_address/0071.cpp"
+      ]
+    },
+    {
+      "address": "007111C0",
+      "translation_units": [
+        "source/recovered/by_address/0071.cpp"
+      ]
+    },
+    {
+      "address": "007140E0",
+      "translation_units": [
+        "source/recovered/by_address/0071.cpp"
+      ]
+    },
+    {
+      "address": "00714B30",
+      "translation_units": [
+        "source/recovered/by_address/0071.cpp"
+      ]
+    },
+    {
+      "address": "007279B0",
+      "translation_units": [
+        "source/recovered/by_address/0072.cpp"
+      ]
+    },
+    {
+      "address": "0072AFC0",
+      "translation_units": [
+        "source/recovered/by_address/0072.cpp"
+      ]
+    },
+    {
+      "address": "007495BF",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "007498EC",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074AB3D",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074BC6A",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074BD15",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074C6EA",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074C8EC",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074C8F6",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074C900",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074D678",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074DCA1",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074DFF5",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074E0D6",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074E17D",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074E337",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074E7B1",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "0074E847",
+      "translation_units": [
+        "source/recovered/by_address/0074.cpp"
+      ]
+    },
+    {
+      "address": "00750565",
+      "translation_units": [
+        "source/recovered/by_address/0075.cpp"
+      ]
+    },
+    {
+      "address": "0075056F",
+      "translation_units": [
+        "source/recovered/by_address/0075.cpp"
+      ]
+    },
+    {
+      "address": "00750579",
+      "translation_units": [
+        "source/recovered/by_address/0075.cpp"
+      ]
+    },
+    {
+      "address": "0075E890",
+      "translation_units": [
+        "source/recovered/by_address/0075.cpp"
+      ]
+    },
+    {
+      "address": "007611C0",
+      "translation_units": [
+        "source/recovered/by_address/0076.cpp"
+      ]
+    }
+  ],
+  "compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+  "configuration": {
+    "error_limit_per_translation_unit": 64,
+    "language": "c++17",
+    "ms_extensions": true,
+    "pointer_width_bits": 32,
+    "target_data_model": "ilp32",
+    "warnings_included": false
+  },
+  "input_manifest_sha256": "c50b13669e0f1fac02131a52c9263b43b256c1d8e1dd9d8d4d8cbe973f88bea8",
+  "program_semantic_sha256": "08bae36b54cb8ddf14a1e734c23d387a8e2344e30be19e58fbadfa617bee1eeb",
+  "schema": "st-source-compile-regression-baseline",
+  "schema_version": 1,
+  "source_manifest_sha256": "374b34119f6743afee551b66365df444ee0f876d0f131380f41ff9a31f9fe0b2",
+  "translation_units": {
+    "source/original/Andrey/behpanel.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/bldboat.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/bldlab.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/bldobj.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/cp_sup.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/cpanel.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/cpanel1.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/cpanel2.cpp": {
+      "errors": 5,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/cpanel3.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/cpanel4.cpp": {
+      "errors": 5,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/frmpanel.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/helppan.cpp": {
+      "errors": 7,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/helpstr.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/infocen.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/intercom.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/minimap.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/money.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/mpopup.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/optpanel.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/panel.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/pause.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/playpan.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/research.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/setamine.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/specpan.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/support.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/tintersys.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/to_cursor.cpp": {
+      "errors": 20,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/tplaysys.cpp": {
+      "errors": 3,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/tradecen.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Andrey/upginfo.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_BldMark.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_ai.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_ai_fnd.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_base.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_bcomm.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_bfire.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_bmove.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_bproc.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_bspr.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_dock.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_embryo.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_glsat.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_htech.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_jump.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_rc.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_shark.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_tele.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_tls.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_trade.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Artem/TLO_vqb.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Igor/To_fish.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Igor/To_gold.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Igor/To_shark.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Igor/to_crab.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Igor/to_etorp.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Igor/to_jell_m.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Igor/to_jelly.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Igor/to_lbomb.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Igor/to_mbomb.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Igor/to_oct.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Igor/to_sat.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Maps/CntLib.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Maps/DefObj.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Maps/gen_map.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Maps/generate.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Maps/map_cnt.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Maps/prepare.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Object/To_alga.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Start/adv_obj.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Start/camp_obj.cpp": {
+      "errors": 2,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Start/combo.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Start/fsgs_obj.cpp": {
+      "errors": 8,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Start/hologram.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Start/load_obj.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Start/main_obj.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Start/mmenuobj.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Start/mmsg_obj.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Start/prov_obj.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Start/rpt_obj.cpp": {
+      "errors": 4,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Start/sett_obj.cpp": {
+      "errors": 2,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Start/settmobj.cpp": {
+      "errors": 14,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Start/settsobj.cpp": {
+      "errors": 10,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Start/sid_obj.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Start/startsys.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Start/task_obj.cpp": {
+      "errors": 5,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/Start/test_obj.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/Start/wait_obj.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/ai/Ai_lex.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_boss.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_boss_d.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_creat.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_erc.cpp": {
+      "errors": 29,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_event.cpp": {
+      "errors": 20,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_event_d.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_flt.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_flt_d.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_interp.cpp": {
+      "errors": 7,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_mdef.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_plr.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_plr_d.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_script.cpp": {
+      "errors": 5,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_tact.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/ai/ai_tact_d.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/grig/loading.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/grig/traks.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/grig/visible.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_BheShell.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_DcBom.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_Expl.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_GnBom.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_Part.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_Rubb.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_TmMin.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_artf.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_basis.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_coll3.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_cont.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_dest.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_field.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_jbomb_m.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_jump_mine.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_light.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_manag.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_mine_set.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_rab3m.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_ruinm.cpp": {
+      "errors": 8,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_supp.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_torp.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/nick/to_volc.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/pal_tbl.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/paltool.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/scoreai.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/snd_mngr.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/sound.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/tapp.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/tinittxt.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/tload.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/tsystem.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/wlad/Grpway3d.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/wlad/Tc_gobj.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/wlad/Td3dshad.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/wlad/To_boat.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/wlad/To_dump.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/wlad/To_optic.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/wlad/Tspr3d.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/wlad/tc_grp.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/original/wlad/to_allpl.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/original/wlad/to_grpb.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0040.cpp": {
+      "errors": 4,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0041.cpp": {
+      "errors": 3,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0042.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0043.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0044.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0045.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0046.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0047.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0048.cpp": {
+      "errors": 3,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0049.cpp": {
+      "errors": 4,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/004A.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/004B.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/004C.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/004D.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/004E.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/004F.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0050.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0051.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0052.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0053.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0054.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0055.cpp": {
+      "errors": 9,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0056.cpp": {
+      "errors": 2,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0057.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0058.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0059.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/005A.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/005B.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/005C.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/005D.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/005E.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/005F.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0060.cpp": {
+      "errors": 19,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0061.cpp": {
+      "errors": 4,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0062.cpp": {
+      "errors": 2,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0063.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0064.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0065.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0066.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0067.cpp": {
+      "errors": 3,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0068.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0069.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/006A.cpp": {
+      "errors": 11,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/006B.cpp": {
+      "errors": 4,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/006C.cpp": {
+      "errors": 9,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/006D.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/006E.cpp": {
+      "errors": 6,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/006F.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0070.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0071.cpp": {
+      "errors": 4,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0072.cpp": {
+      "errors": 2,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0074.cpp": {
+      "errors": 19,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0075.cpp": {
+      "errors": 4,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0076.cpp": {
+      "errors": 5,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/AiBossClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/AiEventClassTy.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/AiFltClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/AiPlrClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/AiTactClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/AppClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/BaseSystemC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/BldBoatPanelTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/BldLabPanelTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/BldObjPanelTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/CBaseRenderer.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/CGenerate.cpp": {
+      "errors": 5,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/CPanelTy.cpp": {
+      "errors": 1,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/CampaignTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/ChooseMapTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/ComboTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/CursorClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/DebugSystemC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/DumpClassC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/EditorClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/FSGSTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/GameSystemC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/HelpPanelTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/HelpStringTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/InterSystemC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/JumpManagC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/MAdvTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/MMObjTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/MMsgTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/MReportTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/MTestTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/MainMenuTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/MoneyTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/OptPanelTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/OpticClassC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/PlayPanelTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/PrividerTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/RadioClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/ResearchPanelTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/ST3DSMAPContext.cpp": {
+      "errors": 5,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STAllPlayersC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STAppC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STArtiafactC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STBHEShellC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STBoatC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STColl3C.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STContainerC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STCrabC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STDcResourcC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STDestC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STExplosion.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STFieldC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STFishC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STGameObjC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STGroupBoatC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STGroupC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STJellyGunC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STJellyManC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STJumpMineC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STLBombC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STLightC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STMBombC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STManBasisC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STManRub3C.cpp": {
+      "errors": 4,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STManRuinC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STMineSetC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STOctopusC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STParticleC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STPlaySystemC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STResourceC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STRubbishC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STSatC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STSharkC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STSprGameObjC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STT3DSprC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STTmMineC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/STVolcanoC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SettMapMTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SliderClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SndUnderAttMenegC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SoundClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SoundManagerTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SpriteClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/StartSystemTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004167A0.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004248D0.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004603B0.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00493610.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0054A9B0.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00573260.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00601500.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00636260.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00644410.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0065DA50.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0065ED90.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00664540.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00678E00.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00693D00.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_006CEC40.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_006F31D0.cpp": {
+      "errors": 9,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00702510.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00714CE0.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00727C80.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00728640.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SystemClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SystemWithNamedObjClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/TLOBaseTy.cpp": {
+      "errors": 12,
+      "passed": false,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/TLOBldMark.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/TLOEmbryoTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/TLOFakeTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/TradePanelTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/TraksClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/ViewerClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/VisibleClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/WaitTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/cLoadingTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    }
+  },
+  "unaddressed_error_families": []
+}

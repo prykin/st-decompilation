@@ -353,7 +353,7 @@ LAB_00576308:
       } while (local_18 < (int)local_20);
     }
     if (0 < pSVar18->field_003C) {
-      st::fn_006ACCD0(pSVar18->field_0040,(undefined4 *)pSVar18->field_003C,0x2c,st::pointer_boundary_cast<STFnType_callback_006ACCD0_p3_a4a7f328 *>(st::fn_00575C80));
+      st::fn_006ACCD0(pSVar18->field_0040,(undefined4 *)pSVar18->field_003C,0x2c,st::function_address_boundary_cast<STFnType_callback_006ACCD0_p3_a4a7f328 *>(st::fn_00575C80));
       pSVar6 = g_sT3DSMAPContext_00807598;
       iVar14 = pSVar18->field_003C;
       g_sT3DSMAPContext_00807598->field_0290 = st::machine_word_boundary_cast<undefined4>(pSVar18->field_0040);

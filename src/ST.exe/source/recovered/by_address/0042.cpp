@@ -1358,7 +1358,7 @@ void st::fn_0042AAC0(int param_1,uint param_2,int param_3)
 int st::fn_0042B5B0(char param_1,ushort param_2)
 
 {
-  int _param_1 = static_cast<int>(param_1);
+  uint32_t _param_1;
 
   uint uVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -1368,7 +1368,7 @@ int st::fn_0042B5B0(char param_1,ushort param_2)
 
   uVar1 = ((DArrayTy *)g_packedRecords_A62x8[param_1].field3_0x9)->count;
   if ((uVar1 != 0) && (param_2 < uVar1)) {
-    st::fn_006ACC70((DArrayTy *)g_packedRecords_A62x8[param_1].field3_0x9,(uint)param_2,&param_1);
+    st::fn_006ACC70((DArrayTy *)g_packedRecords_A62x8[param_1].field3_0x9,(uint)param_2,&_param_1);
     return (uint)(_param_1 != 0);
   }
   return 0;
@@ -1436,8 +1436,6 @@ int st::fn_0042B5B0(char param_1,ushort param_2)
 STGroupBoatC * st::fn_0042B760(char param_1,ushort param_2)
 
 {
-  int _param_1 = static_cast<int>(param_1);
-
   uint uVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;

@@ -1041,6 +1041,9 @@ undefined4 st::fn_006263B0(Global_sub_006263B0_param_1Enum param_1)
 undefined4 __thiscall st::fn_006264D0(void *this,int *param_1,int param_2)
 
 {
+  uint32_t _local_44;
+  uint32_t _local_50;
+
   byte bVar1;
   byte bVar2;
   STWorldObject *this_00;
@@ -1188,9 +1191,9 @@ undefined4 __thiscall st::fn_006264D0(void *this,int *param_1,int param_2)
               bVar3 = *(byte *)&this_00[1].vtable;
               bVar1 = ((byte *)piVar9)[9];
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              auto _local_50 = CONCAT31(uStack_4f,bVar3);
+              _local_50 = CONCAT31(uStack_4f,bVar3);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              auto _local_44 = CONCAT31(uStack_43,bVar1);
+              _local_44 = CONCAT31(uStack_43,bVar1);
               if (DAT_00808a8f == '\0') {
                 if (bVar3 == bVar1) {
 LAB_0062687f:

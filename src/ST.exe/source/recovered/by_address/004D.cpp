@@ -2861,6 +2861,8 @@ void __thiscall st::fn_004DA340(void *this,byte *param_1)
 undefined4 __thiscall st::fn_004DA390(void *this,uint param_1,byte *param_2,int param_3)
 
 {
+  uint32_t _local_10;
+
   byte bVar2;
   byte *pbVar3;
   byte bVar4;
@@ -2927,7 +2929,7 @@ undefined4 __thiscall st::fn_004DA390(void *this,uint param_1,byte *param_2,int 
       if (((bVar4 != 0xff) && (bVar4 != param_1)) && (pbVar8[-1] != 0)) {
         if (param_3 != 0) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          auto _local_10 = CONCAT31(uStack_f,bVar4);
+          _local_10 = CONCAT31(uStack_f,bVar4);
           if (DAT_00808a8f == '\0') {
             if (bVar4 == recordIndex) {
 LAB_004da4d3:
@@ -3070,6 +3072,8 @@ LAB_004da71f:
 undefined4 __fastcall st::fn_004DA9C0(undefined4 param_1)
 
 {
+  uint32_t _local_2c;
+
   byte bVar1;
   byte bVar2;
   int local_EAX_54;
@@ -3188,7 +3192,7 @@ undefined4 __fastcall st::fn_004DA9C0(undefined4 param_1)
         if (((local_8 != (int *)uVar8) && (bVar1 = *local_c, bVar1 != 0xff)) && (local_c[-1] != 0))
         {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          auto _local_2c = CONCAT31(uStack_2b,bVar1);
+          _local_2c = CONCAT31(uStack_2b,bVar1);
           if (DAT_00808a8f == '\0') {
             if (bVar1 == recordIndex) {
 LAB_004dabff:

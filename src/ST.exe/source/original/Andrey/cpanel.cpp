@@ -3198,7 +3198,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       if (5 < uVar3) {
         uVar3 = 0;
       }
-      pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A320);
+      pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A320);
       iVar6 = 0;
       pcVar25 = st::fn_00405493(*(Global_sub_00529590_param_1Enum *)
                                     ((int)local_44->field_0B1F + uVar3 + 0x83),local_44->field_0B99);
@@ -3235,7 +3235,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       if (5 < uVar3) {
         uVar3 = 0;
       }
-      pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A320);
+      pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A320);
       iVar6 = 0;
       pcVar25 = st::fn_00405493((&local_44->field_0BFE)[uVar3],local_44->field_0BF5);
       pCVar7 = st::fn_0040577C(pcVar25,iVar6);
@@ -3243,7 +3243,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       st::fn_004022D9(this_00,5,message,1,pCVar7,pcVar31_callback_1536d7ef);
       break;
     case MESS_BLDOBJPANELTY_B206:
-      pcVar31_callback_802a15be = st::pointer_boundary_cast<STFnType_callback_004F42A0_p6_b660cf6b *>(st::fn_0052A7B0);
+      pcVar31_callback_802a15be = st::function_address_boundary_cast<STFnType_callback_004F42A0_p6_b660cf6b *>(st::fn_0052A7B0);
       pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_MFFRAMES"),0);
       text = st::fn_0040577C(st::mutable_c_string("BUT_MFTABS"),0);
       /* ST_CALLSITE[004FD148]: CALL 0x004047dc; direct=004047DC CPanelTy::PaintTab */
@@ -3254,7 +3254,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       st::fn_00401889();
       break;
     case MESS_TRADEPANELTY_B20B:
-      pcVar31_callback_802a15be = st::pointer_boundary_cast<STFnType_callback_004F42A0_p6_b660cf6b *>(st::fn_0052A7B0);
+      pcVar31_callback_802a15be = st::function_address_boundary_cast<STFnType_callback_004F42A0_p6_b660cf6b *>(st::fn_0052A7B0);
       pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_MFFRAMES"),0);
       /* ST_CALLSITE[004FD176]: CALL 0x004047dc; direct=004047DC CPanelTy::PaintTab */
       st::fn_004047DC(this_00,5,message,1,st::mutable_c_string("BUT_RCTTYPESI"),pCVar7,pcVar31_callback_802a15be);
@@ -3271,7 +3271,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       if (5 < uVar3) {
         uVar3 = 0;
       }
-      pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A320);
+      pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A320);
       iVar6 = 0;
       pcVar25 = st::fn_00405493(*(Global_sub_00529590_param_1Enum *)
                                     ((int)local_44->field_0B1F + uVar3 + 0x83),local_44->field_0B99);
@@ -3290,7 +3290,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       if (5 < uVar3) {
         uVar3 = 0;
       }
-      pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A320);
+      pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A320);
       iVar6 = 0;
       pcVar25 = st::fn_00405493((&local_44->field_0BFE)[uVar3],local_44->field_0BF5);
       pCVar7 = st::fn_0040577C(pcVar25,iVar6);
@@ -3327,7 +3327,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
       case CASE_5F:
         pcVar25 = "BUT_TBDN";
 LAB_004fd533:
-        pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0);
+        pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0);
         pCVar7 = st::fn_0040577C(pcVar25,0);
         /* ST_CALLSITE[004FD546]: CALL 0x004022d9; direct=004022D9 CPanelTy::PaintBut */
         st::fn_004022D9(this_00,5,message,1,pCVar7,pcVar31_callback_1536d7ef);
@@ -3336,7 +3336,7 @@ LAB_004fd533:
       case CASE_65:
       case CASE_6D:
         /* ST_CALLSITE[004FD4D0]: CALL 0x004022d9; direct=004022D9 CPanelTy::PaintBut */
-        st::fn_004022D9(local_44,5,message,1,st::mutable_c_string("BUT_MINUSSI"),st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0));
+        st::fn_004022D9(local_44,5,message,1,st::mutable_c_string("BUT_MINUSSI"),st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0));
       }
       break;
     case 0xb214:
@@ -3349,7 +3349,7 @@ LAB_004fd533:
       case CASE_65:
       case CASE_6D:
         /* ST_CALLSITE[004FD51D]: CALL 0x004022d9; direct=004022D9 CPanelTy::PaintBut */
-        st::fn_004022D9(local_44,5,message,1,st::mutable_c_string("BUT_PLUSSI"),st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0));
+        st::fn_004022D9(local_44,5,message,1,st::mutable_c_string("BUT_PLUSSI"),st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0));
       }
       break;
     case 0xb21a:
@@ -3495,7 +3495,7 @@ cf_common_exit_004FD1D2:
     if (MESS_CPANELTY_B106 < SVar1) {
       switch(SVar1) {
       case 0xb107:
-        pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A3E0);
+        pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A3E0);
         pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_MAPSMIL"),0);
         /* ST_CALLSITE[004FC700]: CALL 0x004022d9; direct=004022D9 CPanelTy::PaintBut */
         st::fn_004022D9(this_00,4,message,6,pCVar7,pcVar31_callback_1536d7ef);
@@ -3521,7 +3521,7 @@ cf_common_exit_004FD1D2:
         }
         break;
       case MESS_FRMPANELTY_B109:
-        pcVar31 = (code *)st::fn_0052A390;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A390);
         pcVar25 = "BUT_MAPZIN";
         goto cf_common_exit_004FBCF3;
       case MESS_FRMPANELTY_B10A:
@@ -3545,7 +3545,7 @@ cf_common_exit_004FD1D2:
         }
         break;
       case MESS_FRMPANELTY_B10B:
-        pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A390);
+        pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A390);
         pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_MAPZOUT"),0);
         /* ST_CALLSITE[004FC73A]: CALL 0x004022d9; direct=004022D9 CPanelTy::PaintBut */
         st::fn_004022D9(this_00,4,message,6,pCVar7,pcVar31_callback_1536d7ef);
@@ -3570,7 +3570,7 @@ cf_common_exit_004FD1D2:
         }
         break;
       case MESS_CPANELTY_B10D:
-        pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A390);
+        pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A390);
         pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_MAPTLFT"),0);
         /* ST_CALLSITE[004FC763]: CALL 0x004022d9; direct=004022D9 CPanelTy::PaintBut */
         st::fn_004022D9(this_00,4,message,6,pCVar7,pcVar31_callback_1536d7ef);
@@ -3600,7 +3600,7 @@ cf_common_exit_004FD1D2:
           goto cf_common_exit_004FD60B;
         }
         if (SVar1 != MESS_CPANELTY_B105) goto cf_common_exit_004FD60B;
-        pcVar31 = (code *)st::fn_0052A3E0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A3E0);
         pcVar25 = "BUT_MAPSCIV";
         goto cf_common_exit_004FBCF3;
       }
@@ -4467,7 +4467,7 @@ LAB_004fb8ee:
   }
   switch(SVar1) {
   case 0xb10f:
-    pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A390);
+    pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A390);
     pcVar25 = "BUT_MAPTRT";
 cf_common_exit_004FBCF3:
     pCVar7 = st::fn_0040577C(pcVar25,0);
@@ -4503,7 +4503,7 @@ LAB_004fc9c0:
     puVar23 = (undefined4 *)0x29;
     goto cf_common_exit_004FCF18;
   case MESS_CPANELTY_B110|MESS_ID_CREATE:
-    pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A030);
+    pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A030);
     pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_AIASS"),0);
     /* ST_CALLSITE[004FCC1A]: CALL 0x004022d9; direct=004022D9 CPanelTy::PaintBut */
     st::fn_004022D9(this_00,4,message,1,pCVar7,pcVar31_callback_1536d7ef);
@@ -4522,7 +4522,7 @@ LAB_004fc53f:
     st::fn_00405E2F(0xae);
     break;
   case 0xb114:
-    pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A3E0);
+    pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_0052A3E0);
     pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_MAPDIR"),0);
     /* ST_CALLSITE[004FCBF1]: CALL 0x004022d9; direct=004022D9 CPanelTy::PaintBut */
     st::fn_004022D9(this_00,4,message,6,pCVar7,pcVar31_callback_1536d7ef);
@@ -4534,9 +4534,9 @@ LAB_004fc53f:
     }
     break;
   case MESS_CPANELTY_B110|MESS_SHARED_0008:
-    pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529F90);
+    pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529F90);
     if (DAT_0080874e != '\x03') {
-      pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0);
+      pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0);
     }
     pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_SHOWUPD"),0);
     /* ST_CALLSITE[004FCB7E]: CALL 0x004022d9; direct=004022D9 CPanelTy::PaintBut */
@@ -4549,13 +4549,13 @@ LAB_004fc53f:
     }
     break;
   case MESS_CPANELTY_B110|MESS_SYSTEMCLASSTY_000A:
-    pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529F90);
+    pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529F90);
     pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_SHOWFRM"),0);
     /* ST_CALLSITE[004FCBB7]: CALL 0x004022d9; direct=004022D9 CPanelTy::PaintBut */
     st::fn_004022D9(this_00,3,message,((DAT_0080874e != '\x03') - 1U & 5) + 1,pCVar7,pcVar31_callback_1536d7ef);
     break;
   case 0xb12a:
-    pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0);
+    pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0);
     UVar28 = 0x274c;
     pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_SMALL"),0);
     /* ST_CALLSITE[004FCB08]: CALL 0x00405ea2; direct=00405EA2 CPanelTy::PaintTxtBut */
@@ -4599,7 +4599,7 @@ LAB_004fc53f:
     }
     goto cf_common_exit_004FCF18;
   case 0xb12e:
-    pcVar31 = (code *)st::fn_0052A2D0;
+    pcVar31 = st::function_address_boundary_cast<code *>(st::fn_0052A2D0);
     UVar28 = 0x3aa5;
     uVar26 = 0;
     iVar6 = 1;
@@ -4629,7 +4629,7 @@ LAB_004fc53f:
     puVar23 = (undefined4 *)0x9;
     goto cf_common_exit_004FCF18;
   case 0xb13f:
-    pcVar31_callback_1536d7ef = st::pointer_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0);
+    pcVar31_callback_1536d7ef = st::function_address_boundary_cast<STFnType_callback_004F3540_p5_e7706eff *>(st::fn_00529FE0);
     UVar28 = 0x274c;
     pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_SMALL"),0);
     /* ST_CALLSITE[004FCB36]: CALL 0x00405ea2; direct=00405EA2 CPanelTy::PaintTxtBut */

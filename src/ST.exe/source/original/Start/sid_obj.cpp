@@ -1311,7 +1311,7 @@ LAB_005d97ca:
             /* ST_CALLSITE[005D96E4]: CALL dword ptr [0x0085bde8] */
             st::external_00000080(st::pointer_boundary_cast<LPSTR>(&this_00->field_1CD4),st::mutable_c_string("%s%s%s"),&CHAR_00h_00807680,
                       st_global_0079C19C,uVar12);
-            st::fn_00725910((HANDLE)&this_00->field_1CD4,&st_global_007CC8BC,0,(undefined *)st::fn_00725C20,0,0);
+            st::fn_00725910((HANDLE)&this_00->field_1CD4,&st_global_007CC8BC,0,st::function_address_boundary_cast<undefined *>(st::fn_00725C20),0,0);
             /* ST_CALLSITE[005D9705]: CALL 0x0040392c; direct=0040392C SIDTy::PrepFiles */
             st::fn_0040392C(this_00);
             this_00->array_00BC[0xc].field_01DF = 0;

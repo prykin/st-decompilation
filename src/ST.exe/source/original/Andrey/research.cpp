@@ -431,7 +431,7 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
     case MESS_RESEARCHPANELTY_C0B4:
       /* ST_CALLSITE[0053CCC5]: CALL 0x00403ea4; direct=00403EA4 ProdPanelTy::PaintTab */
       st::fn_00403EA4
-                ((ProdPanelTy *)this_00,(AnonShape_0053FEE0_A49592EB *)message,(code *)st::fn_0052A7B0);
+                ((ProdPanelTy *)this_00,(AnonShape_0053FEE0_A49592EB *)message,st::function_address_boundary_cast<code *>(st::fn_0052A7B0));
     }
   }
   g_currentExceptionFrame = local_58.previous;

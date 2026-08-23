@@ -1811,6 +1811,8 @@ cf_common_exit_0041BE5F:
 int __thiscall st::fn_0041E530(STSprGameObjC *this,STMessage *message)
 
 {
+  uint32_t _local_c;
+
   byte bVar1;
   STMessageId SVar2;
   STSprGameObjC *this_00;
@@ -2209,7 +2211,7 @@ LAB_0041ebc0:
   }
   if (bVar9) goto LAB_0041eccc;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  auto _local_c = CONCAT31(uStack_b,local_5);
+  _local_c = CONCAT31(uStack_b,local_5);
   if (DAT_00808a8f == '\0') {
     if (local_5 == DAT_0080874d) {
 LAB_0041ec79:
@@ -2280,6 +2282,11 @@ st::fn_0041F9B0
           ,short param_6,STSprGameObjC_CheckRay_param_7Enum param_7,int *param_8,int param_9)
 
 {
+  uint32_t _local_34;
+  uint32_t _local_38;
+  uint32_t _local_3c;
+  uint32_t _local_40;
+
   byte bVar1;
   byte bVar2;
   byte bVar4;
@@ -2462,9 +2469,9 @@ LAB_0041fe0d:
                 bVar4 = *(byte *)&pSVar11[1].vtable;
                 bVar1 = (byte)local_1c->field_0024;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                auto _local_38 = CONCAT31(uStack_37,bVar4);
+                _local_38 = CONCAT31(uStack_37,bVar4);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                auto _local_3c = CONCAT31(uStack_3b,bVar1);
+                _local_3c = CONCAT31(uStack_3b,bVar1);
                 if (DAT_00808a8f == '\0') {
                   if (bVar4 == bVar1) {
 LAB_0041fffd:
@@ -2521,9 +2528,9 @@ LAB_0041fffd:
               bVar4 = *(byte *)&pSVar11[1].vtable;
               bVar1 = (byte)local_1c->field_0024;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              auto _local_40 = CONCAT31(uStack_3f,bVar4);
+              _local_40 = CONCAT31(uStack_3f,bVar4);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              auto _local_34 = CONCAT31(uStack_33,bVar1);
+              _local_34 = CONCAT31(uStack_33,bVar1);
               if (DAT_00808a8f == '\0') {
                 if (bVar4 == bVar1) {
 LAB_0041fdc6:

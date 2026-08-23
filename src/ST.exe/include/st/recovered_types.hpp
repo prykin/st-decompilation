@@ -19050,9 +19050,11 @@ struct AnonReceiver_0064A970 {
     byte _unknown_0005[127];
     undefined1 field_0x84; // exact unnamed-byte view referenced by exported code
     byte _unknown_0085[3];
-    undefined4 slot_00();
+    template <typename... Args>
+    undefined4 slot_00(Args... st_varargs);
     float slot_04(undefined4 arg_1);
-    undefined4 slot_08();
+    template <typename... Args>
+    undefined4 slot_08(Args... st_varargs);
     undefined4 slot_18();
     void slot_20(undefined4 arg_1, undefined4 arg_2);
     undefined4 vfunc_8(undefined4 arg_1);
@@ -42916,16 +42918,18 @@ inline void STWorldObject::vfunc_0(undefined4 arg_1) {
     reinterpret_cast<void (__thiscall *)(STWorldObject *, undefined4)>(vtable->slots_00_28[0])(this, arg_1);
 }
 
-inline undefined4 AnonReceiver_0064A970::slot_00() {
-    return (vtable->slot_00)(this);
+template <typename... Args>
+inline undefined4 AnonReceiver_0064A970::slot_00(Args... st_varargs) {
+    return (vtable->slot_00)(this, st_varargs...);
 }
 
 inline float AnonReceiver_0064A970::slot_04(undefined4 arg_1) {
     return (vtable->slot_04)(this, arg_1);
 }
 
-inline undefined4 AnonReceiver_0064A970::slot_08() {
-    return (vtable->slot_08)(this);
+template <typename... Args>
+inline undefined4 AnonReceiver_0064A970::slot_08(Args... st_varargs) {
+    return (vtable->slot_08)(this, st_varargs...);
 }
 
 inline undefined4 AnonReceiver_0064A970::slot_18() {

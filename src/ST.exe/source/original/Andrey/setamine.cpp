@@ -294,6 +294,8 @@ void __thiscall st::fn_0053D3B0(SAMPanelTy *this)
 int __thiscall st::fn_0053D4D0(SAMPanelTy *this,STMessage *message)
 
 {
+  uint32_t _local_10;
+
   STMessageId SVar1;
   SAMPanelTyVTable *pSVar2;
   int iVar3;
@@ -367,7 +369,7 @@ int __thiscall st::fn_0053D4D0(SAMPanelTy *this,STMessage *message)
       iVar12 = *(int *)(message->arg1).ptr;
       iVar3 = *(int *)((int)(message->arg1).ptr + 4);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      auto _local_10 = CONCAT31(uStack_f,bVar5);
+      _local_10 = CONCAT31(uStack_f,bVar5);
       iVar7 = DAT_00806734;
       if (this_00->field_005C != 0) {
         iVar7 = this_00->field_0044;

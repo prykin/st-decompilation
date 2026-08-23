@@ -1415,6 +1415,8 @@ st::fn_006141B0(void *this,int param_1,Global_sub_006141B0_param_2Enum param_2,i
 void __thiscall st::fn_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
 
 {
+  uint32_t _local_c;
+
   byte bVar1;
   byte bVar2;
   byte bVar3;
@@ -1479,7 +1481,7 @@ void __thiscall st::fn_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
     bVar2 = STField<byte>(this,0x1d9);
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    auto _local_c = CONCAT31(uStack_b,bVar2);
+    _local_c = CONCAT31(uStack_b,bVar2);
     if (DAT_00808a8f == '\0') {
       if (bVar1 == bVar2) {
 LAB_0061478b:
@@ -4082,6 +4084,9 @@ st::fn_0061C910(void *this,int param_1,STJumpMineC_field_0093State param_2,undef
 undefined4 __thiscall st::fn_0061CA90(void *this,int param_1,int param_2,int param_3,int *param_4)
 
 {
+  uint32_t _local_30;
+  uint32_t _local_40;
+
   byte bVar1;
   byte bVar2;
   byte bVar3;
@@ -4186,9 +4191,9 @@ undefined4 __thiscall st::fn_0061CA90(void *this,int param_1,int param_2,int par
                 bVar1 = *(byte *)&this_00[1].vtable;
                 bVar2 = STField<byte>(local_44,0x51);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                auto _local_30 = CONCAT31(uStack_2f,bVar1);
+                _local_30 = CONCAT31(uStack_2f,bVar1);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                auto _local_40 = CONCAT31(uStack_3f,bVar2);
+                _local_40 = CONCAT31(uStack_3f,bVar2);
                 if (DAT_00808a8f == '\0') {
                   if (bVar1 == bVar2) {
 LAB_0061cd61:

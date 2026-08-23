@@ -650,7 +650,7 @@ int __thiscall st::fn_004EE4D0(BehPanelTy *this,STMessage *message)
       pBVar1 = this_00->vtable;
       iVar12 = 1;
       iVar11 = 0;
-      pcVar9 = (code *)st::fn_0052A320;
+      pcVar9 = st::function_address_boundary_cast<code *>(st::fn_0052A320);
       iVar8 = 0;
       pcVar4 = st::fn_00405493((&this_00->field_01AF)[(message->arg0).words.high],
                                   this_00->field_01AB);
@@ -668,7 +668,7 @@ int __thiscall st::fn_004EE4D0(BehPanelTy *this,STMessage *message)
       pBVar1 = this_00->vtable;
       iVar12 = 1;
       iVar11 = 0;
-      pcVar9 = (code *)st::fn_0052A320;
+      pcVar9 = st::function_address_boundary_cast<code *>(st::fn_0052A320);
       iVar8 = 0;
       pcVar4 = st::fn_00405493((&this_00->field_01AF)[(message->arg0).words.high],
                                   this_00->field_01AB);

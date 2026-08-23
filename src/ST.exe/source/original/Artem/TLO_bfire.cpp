@@ -228,6 +228,8 @@ int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
 
   uint32_t _local_2c;
   uint32_t _local_34;
+  uint32_t _local_50;
+  uint32_t _local_54;
 
   byte bVar1;
   byte bVar2;
@@ -419,9 +421,9 @@ LAB_004c4080:
                                       bVar1 = *(byte *)&local_8->field_0024;
                                       bVar2 = *(byte *)&this_00->field_0024;
                                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      auto _local_50 = CONCAT31(uStack_4f,bVar1);
+                                      _local_50 = CONCAT31(uStack_4f,bVar1);
                                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      auto _local_54 = CONCAT31(uStack_53,bVar2);
+                                      _local_54 = CONCAT31(uStack_53,bVar2);
                                       if (DAT_00808a8f == '\0') {
                                         if (bVar1 == bVar2) {
 LAB_004c4192:

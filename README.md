@@ -164,7 +164,10 @@ and the generated object target does not yet fully compile or link. See
 `python3 tools/st_compile_audit.py` then compiles every generated translation
 unit independently and writes an address-stable diagnostic queue under the
 ignored `.st-local/` profile. Compiler/environment output stays out of the
-committed deterministic tree while build progress remains measurable.
+committed deterministic tree while build progress remains measurable. A
+tracked deterministic baseline rejects per-function diagnostic-family growth,
+new unaddressed failures, newly failing translation units, and a newly reached
+diagnostic cap; baseline promotion is a separate explicit reviewed command.
 
 ABI-changing automation is guarded before the first Program mutation and again
 at dependency barriers by `STAbiRegressionGate`. Its durable sentinels and exact

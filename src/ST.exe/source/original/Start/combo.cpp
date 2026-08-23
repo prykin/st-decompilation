@@ -398,7 +398,7 @@ int __thiscall st::fn_00594440(ComboTy *this,STMessage *message)
   SVar2 = message->id;
   if (SVar2 < 0x10000) {
     if (SVar2 == MESS_COMBOTY_FFFF) {
-      message->arg1 = (STMessageArg)local_c->field_00CC;
+      message->arg1 = st::message_arg_u32(static_cast<uint32_t>(local_c->field_00CC));
       goto cf_common_exit_00594615;
     }
     switch(SVar2) {

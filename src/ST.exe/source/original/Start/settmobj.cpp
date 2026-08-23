@@ -3103,6 +3103,8 @@ void __thiscall
 st::fn_005D0BB0(SettMapMTy *this,uint param_1,uint param_2,uint param_3)
 
 {
+  uint32_t _local_10;
+
   byte bVar1;
   SettMapMTy *this_00;
   int errorCode;
@@ -3167,7 +3169,7 @@ st::fn_005D0BB0(SettMapMTy *this,uint param_1,uint param_2,uint param_3)
           if ((bVar10 != 0xff) && (param_3 != bVar10)) {
             if (element_1f84->field_0004 == '\x04') {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              auto _local_10 = CONCAT31(uStack_f,bVar10);
+              _local_10 = CONCAT31(uStack_f,bVar10);
               if ((byte)param_3 == bVar10) {
                 uVar4 = 0;
                 uVar8 = (uint)bVar10;

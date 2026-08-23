@@ -338,6 +338,29 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertNotIn("undefined1 field_0x0;", header)
         self.assertEqual(emitter.materialized_gap_fields, 2)
 
+    def test_variadic_physical_vtable_slot_forwards_every_use_site_family(self) -> None:
+        records = self.records()
+        function = next(
+            item for item in records if item["path"] == "/Owner_method"
+        )
+        function["detail"]["varargs"] = True
+
+        emitter = TypeEmitter(records, [])
+        header = emitter.emit()
+
+        self.assertIn("template <typename... Args>", header)
+        self.assertIn(
+            "int method(int value, Args... st_varargs);", header
+        )
+        self.assertIn(
+            "inline int Owner::method(int value, Args... st_varargs)", header
+        )
+        self.assertIn(
+            "(vtable->method)(this, value, st_varargs...)", header
+        )
+        wrapper = emitter.member_wrappers_by_record_path["/Owner"][0]
+        self.assertTrue(wrapper.variadic)
+
     def test_source_walker_materializes_nested_inline_array_gap_view(self) -> None:
         records = self.records() + [{
             "path": "/Child[2]",
@@ -503,6 +526,32 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
             ),
             body,
         )
+
+    def test_pointer_typed_grid_coordinate_uses_machine_word_boundary(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter([], generator.issues)
+        function = {
+            "parameters": [
+                {"name": "grid", "type": "Grid *"},
+                {"name": "reused", "type": "short *"},
+            ]
+        }
+        body = (
+            "void fn(Grid *grid, short *reused) {\n"
+            "  use(STGridAt3D(*grid, reused, 2, 3));\n"
+            "}\n"
+        )
+        actual = generator._repair_grid_index_boundaries(
+            "00102030", function, body
+        )
+        self.assertIn(
+            "STGridAt3D(*grid, "
+            "st::machine_word_boundary_cast<int>(reused), 2, 3)",
+            actual,
+        )
+        self.assertEqual(generator.stats["grid_index_word_boundaries"], 1)
 
     def test_exact_callsite_declaration_unwraps_wrapped_vtable_slot(self) -> None:
         records = self.records()
@@ -714,6 +763,43 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         header = generator.type_emitter.emit()
         self.assertIn("int vfunc_0(int value);", header)
         self.assertNotIn("undefined4 vfunc_0", header)
+
+    def test_folded_physical_member_uses_exact_word_boundary(self) -> None:
+        records = self.records()
+        records.append({
+            "path": "/undefined4", "name": "undefined4",
+            "class": "Undefined4DataType", "length": 4, "detail": {},
+        })
+        function_type = next(
+            item for item in records if item["path"] == "/Owner_method"
+        )
+        function_type["detail"]["arguments"][1]["type"] = "/undefined4"
+        table = next(item for item in records if item["path"] == "/OwnerVTable")
+        table["detail"]["components"][0]["field_name"] = "slot_00"
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("."), Path("receipt.json")
+        )
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        function = {
+            "parameters": [
+                {"name": "owner", "type": "Owner *"},
+                {"name": "child", "type": "Child *"},
+            ]
+        }
+
+        rewritten = generator._repair_physical_member_call_boundaries(
+            "00400000", function,
+            "int f(Owner *owner, Child *child) { "
+            "return owner->slot_00(child); }",
+        )
+
+        self.assertIn(
+            "owner->slot_00(st::machine_word_boundary_cast<undefined4>(child))",
+            rewritten,
+        )
+        self.assertEqual(
+            generator.stats["physical_member_argument_boundaries"], 1
+        )
 
     def test_duplicated_receiver_exact_cast_is_a_hard_regression(self) -> None:
         degraded = (
@@ -1532,6 +1618,18 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
             {"address": "007C3B5C", "name": "DAT_007C3B5C"},
         ))
 
+    def test_qualified_ghidra_global_leaf_gets_stable_address_alias(self) -> None:
+        item = {
+            "address": "0044D1D0",
+            "name": "switchD_0044d04b::switchdataD_0044d1d0",
+        }
+        self.assertEqual(
+            "st_global_0044D1D0",
+            global_alias_for_token(
+                "switchdataD_0044d1d0", "0044D1D0", item
+            ),
+        )
+
     def test_only_address_taken_external_label_matches(self) -> None:
         source = "handler = &LAB_0072d964; goto LAB_0072d964;"
         matches = list(ADDRESS_TAKEN_LABEL_RE.finditer(source))
@@ -1597,6 +1695,25 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertIn("uint32_t _local_2c;", actual)
         self.assertIn("_local_2c = CONCAT22(high, low);", actual)
 
+    def test_unscoped_concat_piece_removes_unsafe_auto_redeclaration(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        body = (
+            "void fn() {\n"
+            "  if (condition) goto done;\n"
+            "  auto _local_10 = CONCAT31(high, low);\n"
+            "done:\n"
+            "  use(_local_10);\n"
+            "}\n"
+        )
+        actual = generator._materialize_unscoped_synthetic_words(
+            "00102030", {"parameters": []}, body
+        )
+        self.assertIn("uint32_t _local_10;", actual)
+        self.assertIn("_local_10 = CONCAT31(high, low);", actual)
+        self.assertNotIn("auto _local_10", actual)
+
     def test_exporter_scalar_split_is_hoisted_without_retyping(self) -> None:
         generator = SourceTreeGenerator(
             Path("."), Path("."), Path("out"), Path("receipt")
@@ -1639,6 +1756,22 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         )
         self.assertEqual(
             generator.stats["promoted_parameter_slot_materializations"], 1
+        )
+
+    def test_semantically_named_narrow_parameter_gets_machine_word_slot(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        function = {
+            "parameters": [{
+                "name": "objectId", "type": "char", "length": 1,
+                "storage": "Stack[0x4]:1",
+            }],
+        }
+        actual = generator._materialize_promoted_parameter_slots(
+            "00102030", function,
+            "int fn(char objectId) { return _objectId; }\n",
+        )
+        self.assertIn(
+            "int _objectId = static_cast<int>(objectId);", actual
         )
 
     def test_full_width_parameter_does_not_get_synthetic_slot(self) -> None:
@@ -1687,6 +1820,64 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         )
         self.assertIn("int _param_1 = static_cast<int>(param_1);", actual)
         self.assertNotIn("uint _param_1", actual)
+
+    def test_label_is_not_mistaken_for_synthetic_slot_declaration(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        function = {
+            "parameters": [{
+                "name": "param_1", "type": "short", "length": 2,
+                "storage": "Stack[0x4]:2",
+            }],
+        }
+        body = (
+            "int fn(short param_1) {\n"
+            "LAB_00102040:\n"
+            "  _param_1 = (int)param_1;\n"
+            "  return _param_1;\n"
+            "}\n"
+        )
+        actual = generator._materialize_promoted_parameter_slots(
+            "00102030", function, body
+        )
+        self.assertIn("int _param_1 = static_cast<int>(param_1);", actual)
+
+    def test_stack_split_auto_uses_unanimous_exact_output_word(self) -> None:
+        records = [
+            primitive("/undefined4", "undefined4", 4),
+            pointer("/undefined4 *", "/undefined4"),
+        ]
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.type_emitter = TypeEmitter(records, generator.issues)
+        generator.function_by_address = {
+            "00102040": {
+                "address": "00102040",
+                "parameters": [{"name": "output", "type": "undefined4 *"}],
+            }
+        }
+        body = (
+            "void fn() {\n"
+            "  auto value_after_write = 0; /* compiler stack-slot lifetime split */\n"
+            "  st::fn_00102040(&value_after_write);\n"
+            "  use(value_after_write);\n"
+            "}\n"
+        )
+        actual = generator._refine_exact_auto_output_storage(
+            "00102030", {"parameters": []}, body
+        )
+        self.assertIn("uint32_t value_after_write = 0;", actual)
+
+    def test_exact_address_coded_global_is_declared_without_reference_list(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        record = {
+            "address": "0044D1D4", "name": "PTR_caseD_3_0044d1d4",
+            "type": "undefined4 *",
+        }
+        generator.global_by_address = {"0044D1D4": record}
+        names = generator._used_global_names(
+            {"referenced_globals": []},
+            "void fn() { use(PTR_caseD_3_0044d1d4); }",
+        )
+        self.assertIn("PTR_caseD_3_0044d1d4", names)
 
     def test_raw_stack_addresses_share_exact_relative_arena(self) -> None:
         generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
@@ -1758,6 +1949,123 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         self.assertEqual(
             generator.stats["exact_output_lifetime_materializations"], 1
         )
+
+    def test_neutral_utility_output_materializes_full_machine_word(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.type_emitter = TypeEmitter([], [])
+        generator.function_by_address = {
+            "00102030": {
+                "address": "00102030",
+                "tags": ["RECOVERED_UTILITY_SEMANTICS"],
+                "parameters": [
+                    {"name": "array", "type": "DArrayTy *"},
+                    {"name": "index", "type": "uint"},
+                    {"name": "outElement", "type": "void *"},
+                ],
+            },
+        }
+        function = {
+            "parameters": [{
+                "name": "objectId", "type": "char", "length": 1,
+                "storage": "Stack[0x4]:1",
+            }],
+        }
+        body = (
+            "int fn(char objectId) {\n"
+            "  st::fn_00102030(array,index,&objectId);\n"
+            "  return _objectId;\n"
+            "}\n"
+        )
+        actual = generator._materialize_machine_word_output_lifetimes(
+            "00102020", function, body
+        )
+        self.assertIn("uint32_t _objectId;", actual)
+        self.assertIn("st::fn_00102030(array,index,&_objectId);", actual)
+
+    def test_callable_value_uses_unique_address_stable_thunk(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.function_by_address = {
+            "00102030": {"thunk": True, "thunk_target": "00102040 target"},
+            "00102040": {"thunk": False, "thunk_target": ""},
+        }
+        generator.callable_addresses_by_spelling["Callback"].update(
+            {"00102030", "00102040"}
+        )
+        actual = generator._repair_callable_symbol_values(
+            "00102010", "void fn() { handler = Callback; }"
+        )
+        self.assertIn("handler = st::fn_00102030;", actual)
+
+    def test_unique_ordinary_call_is_not_rewritten_without_call_relation(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.function_by_address = {"00102030": {}}
+        generator.callable_addresses_by_spelling["NamedCall"].add("00102030")
+        body = "void fn() { NamedCall(value); }"
+        self.assertEqual(
+            body, generator._repair_callable_symbol_values("00102010", body)
+        )
+
+    def test_sanitized_callable_call_uses_address_stable_symbol(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.function_by_address = {"00102030": {}}
+        generator.callable_addresses_by_spelling["FID_conflict__remove"].add(
+            "00102030"
+        )
+        generator.sanitized_callable_spellings.add("FID_conflict__remove")
+        actual = generator._repair_callable_symbol_values(
+            "00102010", "void fn() { FID_conflict__remove(value); }"
+        )
+        self.assertIn("st::fn_00102030(value)", actual)
+
+    def test_constructor_spelling_does_not_replace_record_declaration(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.type_emitter = TypeEmitter([{
+            "path": "/Owner", "name": "Owner", "class": "StructureDB",
+            "length": 4, "detail": {"components": []},
+        }], [])
+        generator.function_by_address = {"00102030": {}}
+        generator.callable_addresses_by_spelling["Owner"].add("00102030")
+        body = "void fn(Owner *owner) { Owner *copy = owner; }"
+        self.assertEqual(
+            body, generator._repair_callable_symbol_values("00102010", body)
+        )
+
+    def test_message_arg_cast_selects_storage_facet(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.type_emitter = TypeEmitter([], [])
+        function = {
+            "parameters": [
+                {"name": "owner", "type": "Owner *"},
+                {"name": "value", "type": "int"},
+            ]
+        }
+        actual = generator._repair_message_arg_facets(
+            "00102020", function,
+            "arg0 = (STMessageArg)owner; arg1 = (STMessageArg)value;",
+        )
+        self.assertIn("st::message_arg_pointer(owner)", actual)
+        self.assertIn("st::message_arg_i32(static_cast<int32_t>(value))", actual)
+
+    def test_address_stable_function_value_uses_dedicated_boundary(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.type_emitter = TypeEmitter([], [])
+        replacement = generator._boundary_replacement(
+            "char *",
+            BoundaryValue("function address", "concrete_pointer", True),
+            "st::fn_00102030",
+        )
+        self.assertIsNotNone(replacement)
+        self.assertIn("function_address_boundary_cast", replacement[0])
+
+    def test_opaque_high_storage_becomes_explicit_audit_local(self) -> None:
+        generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))
+        generator.type_emitter = TypeEmitter([], [])
+        actual = generator._materialize_opaque_decompiler_storage(
+            "00102020", {"parameters": []},
+            "void fn() { fRam00000021 = 1.0; use(fRam00000021); }",
+        )
+        self.assertIn("float st_unresolved_fRam00000021{};", actual)
+        self.assertNotIn(" use(fRam00000021)", actual)
 
     def test_exact_utility_output_uses_concrete_function_return_type(self) -> None:
         generator = SourceTreeGenerator(Path("."), Path("."), Path("out"), Path("receipt"))

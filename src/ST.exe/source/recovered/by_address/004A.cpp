@@ -251,6 +251,8 @@ void st::fn_004A9990(void)
 void st::fn_004A9B60(int param_1,int param_2,int param_3,int param_4)
 
 {
+  float st_unresolved_unique0x10000069{};
+
   int iVar1;
   int iVar2;
   int iVar3;
@@ -265,7 +267,7 @@ void st::fn_004A9B60(int param_1,int param_2,int param_3,int param_4)
   DAT_00807414 = param_2;
   DAT_0080741c = param_4;
   st::fn_006DD660(g_sT3DSMAPContext_00807598,iVar1,iVar3,param_3,param_4);
-  unique0x10000069 = ((float)iVar1 * DAT_00807420) / (float)DAT_00807408;
+  st_unresolved_unique0x10000069 = ((float)iVar1 * DAT_00807420) / (float)DAT_00807408;
   _DAT_00807441 = ((float)(iVar2 + param_3) * DAT_00807420) / (float)DAT_00807408;
   _DAT_00807445 = ((float)(iVar4 + param_4) * DAT_00807424) / (float)DAT_0080740c;
   _DAT_00807449 = ((float)iVar3 * DAT_00807424) / (float)DAT_0080740c;

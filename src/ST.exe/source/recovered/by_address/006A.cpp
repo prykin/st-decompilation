@@ -2346,6 +2346,8 @@ cf_continue_loop_006A5B2E:
 void __cdecl st::fn_006A5BE0(int param_1)
 
 {
+  uint32_t _local_8;
+
   byte bVar2;
   int iVar3;
   uint uVar4;
@@ -2367,7 +2369,7 @@ void __cdecl st::fn_006A5BE0(int param_1)
     if (iVar3 <= iVar6) break;
     bVar2 = *(byte *)(iVar6 + 0x20 + param_1);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    auto _local_8 = CONCAT31(uStack_7,bVar2);
+    _local_8 = CONCAT31(uStack_7,bVar2);
     if (DAT_007f148c < 2) {
       uVar4 = *(ushort *)(PTR_DAT_007f1280 + (uint)bVar2 * 2) & 0x157;
     }
@@ -4158,10 +4160,10 @@ void st::fn_006AAD10(void)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   uVar2 = (uint)(in_ID & 1) * 0x200000 ^ 0x200000;
   if (uVar2 == (uint)(uVar2 != 0) * 0x200000) {
-    piVar1 = (int *)cpuid_basic_info(0);
+    piVar1 = (int *)st::pcode_cpuid_info(0);
     if ((((*piVar1 != 0) && (piVar1[1] == 0x756e6547)) && (piVar1[2] == 0x49656e69)) &&
        (piVar1[3] == 0x6c65746e)) {
-      piVar1 = (int *)cpuid_Version_info(1);
+      piVar1 = (int *)st::pcode_cpuid_info(1);
       local_8 = *piVar1;
       local_c = piVar1[2];
     }

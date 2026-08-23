@@ -1,4 +1,5 @@
 severity	check	before	after	delta	status	detail
+info	portable_program_identity	0	0	0	ok	program.json uses the stable Ghidra Program name for executable_path
 info	decompile_failures	0	0	0	ok	Every body_exported function must have decompile_status=ok
 info	hard_text_blockers	0	0	0	ok	Every exported body must be independently representable with its declared runtime include
 info	generated_enum_bitwise_composition	0	0	0	ok	Strict internal invariant, not a baseline delta: generated enum CASE_*|CASE_* compositions must be repaired before export

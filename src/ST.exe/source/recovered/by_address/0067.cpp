@@ -25,9 +25,9 @@ undefined4 st::fn_00672930(int param_1)
 
   uVar1 = DAT_00811944;
   DAT_00811944 = param_1;
-  PTR_thunk_FUN_00673160_007d2d1c = (undefined *)st::fn_00673110;
+  PTR_thunk_FUN_00673160_007d2d1c = st::function_address_boundary_cast<undefined *>(st::fn_00673110);
   if (param_1 == 0) {
-    PTR_thunk_FUN_00673160_007d2d1c = (undefined *)st::fn_00673160;
+    PTR_thunk_FUN_00673160_007d2d1c = st::function_address_boundary_cast<undefined *>(st::fn_00673160);
   }
   return uVar1;
 }
@@ -4412,6 +4412,8 @@ void __fastcall st::fn_0067B380(int param_1)
 undefined4 __cdecl st::fn_0067BA50(AiFltClassTy *param_1,uint *param_2)
 
 {
+  uint32_t _local_14;
+
   uint local_48 [2];
   char local_40;
   undefined2 local_3f;
@@ -4431,7 +4433,7 @@ undefined4 __cdecl st::fn_0067BA50(AiFltClassTy *param_1,uint *param_2)
   if (('\0' < local_40) && (param_2 != nullptr)) {
     local_10 = local_3d;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    auto _local_14 = CONCAT22(local_3f,param_1->field_007D);
+    _local_14 = CONCAT22(local_3f,param_1->field_007D);
     local_c = local_39;
     local_8 = 0xffffffff;
     st::fn_006AE1C0((DArrayTy *)param_2,&local_14);

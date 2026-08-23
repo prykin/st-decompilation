@@ -1046,7 +1046,7 @@ st::fn_00672440
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 9;
         /* ST_CALLSITE[00672590]: CALL dword ptr [EDX + 0x4] */
-        *(float *)(param_3 + *param_3 * 2 + 4) = this_00->slot_04(arg_1);
+        *(float *)(param_3 + *param_3 * 2 + 4) = this_00->slot_04(st::machine_word_boundary_cast<undefined4>(arg_1));
         *param_3 = *param_3 + 1;
         param_3[3] = param_3[3] + 1;
       }

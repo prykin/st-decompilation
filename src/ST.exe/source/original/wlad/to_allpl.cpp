@@ -503,6 +503,8 @@ st::fn_0042B620
           STAllPlayersC_GetObjPtr_param_3Enum param_3)
 
 {
+  uint32_t _objPtr;
+
   int iVar2;
   STGameObjC *pSVar3;
   DArrayTy *array;
@@ -556,7 +558,7 @@ st::fn_0042B620
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar2 = st::fn_006ACC70(array,(uint)param_2,&objPtr);
+  iVar2 = st::fn_006ACC70(array,(uint)param_2,&_objPtr);
   return (STGameObjC *)(-(uint)(iVar2 != -4) & _objPtr);
 }
 
@@ -7250,15 +7252,15 @@ void __thiscall st::fn_00436F20(STAllPlayersC *this,void *command)
       local_6c = (DArrayTy *)(int)(short)uVar23;
       local_30_mg0 = (DArrayTy *)(int)(short)uVar3;
       iVar24 = (int)(short)uVar2;
-      if ((STGridAt3D(g_pathingGrid, iVar24, local_6c, local_30_mg0) != 0) &&
+      if ((STGridAt3D(g_pathingGrid, iVar24, st::machine_word_boundary_cast<int>(local_6c), st::machine_word_boundary_cast<int>(local_30_mg0)) != 0) &&
          ((((((((short)uVar2 < 0 || (g_worldGrid.sizeX <= (short)uVar2)) || ((short)uVar23 < 0)) ||
              ((g_worldGrid.sizeY <= (short)uVar23 || ((short)uVar3 < 0)))) ||
             (g_worldGrid.sizeZ <= (short)uVar3)) ||
-           (STGridAt3D(g_worldGrid, iVar24, local_6c, local_30_mg0).objects[0] ==
+           (STGridAt3D(g_worldGrid, iVar24, st::machine_word_boundary_cast<int>(local_6c), st::machine_word_boundary_cast<int>(local_30_mg0)).objects[0] ==
             nullptr)) && (local_28 = local_2c, (short)uVar3 < 5)))) {
         while( true ) {
           sVar13 = (short)local_28;
-          if (STGridAt3D(g_pathingGrid, iVar24, local_6c, sVar13) == 0) break;
+          if (STGridAt3D(g_pathingGrid, iVar24, st::machine_word_boundary_cast<int>(local_6c), sVar13) == 0) break;
           if (((((-1 < (short)uVar2) && ((short)uVar2 < g_worldGrid.sizeX)) &&
                ((-1 < (short)uVar23 &&
                 ((((short)uVar23 < g_worldGrid.sizeY && (-1 < sVar13)) &&
@@ -17355,7 +17357,7 @@ st::fn_00449B60
           STAllPlayersC_DestroyObjectMsg_param_3Enum param_3,undefined4 param_4)
 
 {
-  int _param_1 = static_cast<int>(param_1);
+  uint32_t _param_1;
 
   uint uVar2;
   int iVar3;
@@ -17404,7 +17406,7 @@ st::fn_00449B60
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (((array != nullptr) &&
-      (iVar3 = st::fn_006ACC70(array,param_2 & 0xffff,&param_1), iVar3 != -4)) &&
+      (iVar3 = st::fn_006ACC70(array,param_2 & 0xffff,&_param_1), iVar3 != -4)) &&
      (_param_1 != 0)) {
     local_20 = 10000;
     local_1c = 0;
@@ -19131,6 +19133,8 @@ st::fn_0044C720
           int *param_6)
 
 {
+  uint32_t _local_24;
+
   byte bVar1;
   byte bVar2;
   int iVar3;
@@ -19216,7 +19220,7 @@ LAB_0044c950:
                     (g_bulkInitializedRecords_008087C7[piVar4[9]].field_0022 < 8)))) {
                   bVar1 = ((byte *)piVar4)[9];
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  auto _local_24 = CONCAT31(uStack_23,bVar1);
+                  _local_24 = CONCAT31(uStack_23,bVar1);
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == DAT_0080874d) {
 LAB_0044ca10:

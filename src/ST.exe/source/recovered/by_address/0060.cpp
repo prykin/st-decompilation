@@ -3980,6 +3980,11 @@ int __fastcall st::fn_0060AEF0(void *param_1)
 {
   alignas(4) byte st_stack_frame[272];
 
+  uint32_t _local_b4;
+  uint32_t _local_b8;
+  uint32_t _local_c4;
+  uint32_t _local_c8;
+
   undefined4 *puVar1;
   undefined4 *puVar2;
   byte bVar3;
@@ -4173,10 +4178,10 @@ int __fastcall st::fn_0060AEF0(void *param_1)
                       (g_bulkInitializedRecords_008087C7[uVar21].field_0022 < 8)))) {
                     bVar3 = *(byte *)&pSVar29->field_0024;
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    auto _local_b8 = CONCAT31(uStack_b7,bVar3);
+                    _local_b8 = CONCAT31(uStack_b7,bVar3);
                     bVar4 = STField<byte>(param_1,0x1d9);
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    auto _local_b4 = CONCAT31(uStack_b3,bVar4);
+                    _local_b4 = CONCAT31(uStack_b3,bVar4);
                     if (DAT_00808a8f == '\0') {
                       if (bVar3 == bVar4) {
 LAB_0060b2ce:
@@ -4249,10 +4254,10 @@ LAB_0060b2ce:
                       (g_bulkInitializedRecords_008087C7[uVar21].field_0022 < 8)))) {
                     bVar3 = *(byte *)&pSVar29->field_0024;
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    auto _local_c8 = CONCAT31(uStack_c7,bVar3);
+                    _local_c8 = CONCAT31(uStack_c7,bVar3);
                     bVar4 = STField<byte>(param_1,0x1d9);
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    auto _local_c4 = CONCAT31(uStack_c3,bVar4);
+                    _local_c4 = CONCAT31(uStack_c3,bVar4);
                     if (DAT_00808a8f == '\0') {
                       if (bVar3 == bVar4) {
 LAB_0060b48b:

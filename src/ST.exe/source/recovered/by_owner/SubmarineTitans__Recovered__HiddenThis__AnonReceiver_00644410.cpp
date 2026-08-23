@@ -270,7 +270,7 @@ st::fn_00644410
                           }
                           iVar6 = STBiasedDiv16(iVar14, 0xc9); /* exact signed 16-bit grid-index division */
                           iVar4 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
-                          if (STGridAt3D(g_pathingGrid, iVar4, iVar6, param_1) < 0) {
+                          if (STGridAt3D(g_pathingGrid, iVar4, iVar6, st::machine_word_boundary_cast<int>(param_1)) < 0) {
                             iVar7 = local_38;
                             local_18 = local_30;
                             iVar14 = local_34;

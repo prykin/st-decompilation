@@ -875,8 +875,8 @@ LAB_0056016e:
         g_runtimeRecords_008032F4 =
              (RuntimeRecord_008032F4_0014 *)(g_runtimeRecords_00803300 + DAT_0080337c);
         uStackY_20c = 0x56084e;
-        local_6c[0] = st::fn_00403044(piVar16,DAT_00803398,uVar23,10,param_10,st::pointer_boundary_cast<STFnType_callback_0055F0C0_p5_7e883f49 *>(st::fn_00562170),
-                                         st::pointer_boundary_cast<STFnType_callback_0055F0C0_p6_32c552e1 *>(st::fn_00562E10));
+        local_6c[0] = st::fn_00403044(piVar16,DAT_00803398,uVar23,10,param_10,st::function_address_boundary_cast<STFnType_callback_0055F0C0_p5_7e883f49 *>(st::fn_00562170),
+                                         st::function_address_boundary_cast<STFnType_callback_0055F0C0_p6_32c552e1 *>(st::fn_00562E10));
         local_40 = local_6c[0];
         if (local_6c[0] == nullptr) {
           local_1c = (st_stack_frame + 44);
@@ -2159,8 +2159,8 @@ LAB_005637bc:
         g_runtimeRecords_008032F4 =
              (RuntimeRecord_008032F4_0014 *)(g_runtimeRecords_00803300 + DAT_0080337c);
         uStackY_208 = 0x56439f;
-        local_6c[0] = st::fn_00403044(local_160,DAT_00803398,uVar23,10,param_10,st::pointer_boundary_cast<STFnType_callback_0055F0C0_p5_7e883f49 *>(st::fn_00562170),
-                                         st::pointer_boundary_cast<STFnType_callback_0055F0C0_p6_32c552e1 *>(st::fn_00564DD0));
+        local_6c[0] = st::fn_00403044(local_160,DAT_00803398,uVar23,10,param_10,st::function_address_boundary_cast<STFnType_callback_0055F0C0_p5_7e883f49 *>(st::fn_00562170),
+                                         st::function_address_boundary_cast<STFnType_callback_0055F0C0_p6_32c552e1 *>(st::fn_00564DD0));
         local_40 = local_6c[0];
         if (local_6c[0] == nullptr) {
           local_1c = (st_stack_frame + 44);
@@ -2339,6 +2339,7 @@ uint * st::fn_00565820(uint param_1,int param_2,int param_3,int param_4,int para
 
 {
   int scalar_local_18;
+  uint32_t _local_6c;
 
   byte bVar1;
   byte bVar2;
@@ -2519,7 +2520,7 @@ uint * st::fn_00565820(uint param_1,int param_2,int param_3,int param_4,int para
                 {
                   bVar1 = *(byte *)&((STWorldObject *)local_50->flags)[1].vtable;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  auto _local_6c = CONCAT31(uStack_6b,bVar1);
+                  _local_6c = CONCAT31(uStack_6b,bVar1);
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == (byte)param_1) {
 LAB_00565c6c:

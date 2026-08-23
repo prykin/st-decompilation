@@ -737,7 +737,7 @@ Accepted state:
 
 ### Q-056 Ratchet source compilation and close wrapper/declaration failures
 
-Status: planned; first next item.
+Status: completed for the source-assembly boundary.
 
 Establish a deterministic address-stable compiler regression ratchet over the
 existing ignored Apple Clang audit. Compare only the same C++17/MS-extension,
@@ -775,6 +775,47 @@ Completion criteria:
   or lexical-lifetime diagnostics;
 - source readability remains per-address nonincreasing and all focused generator
   tests pass before atomic promotion.
+
+Implemented result:
+
+- `tools/st_compile_audit.py` emits a deterministic address-stable snapshot and
+  compares the pinned compiler/configuration, every TU pass/cap state,
+  `(function address, diagnostic family)` counts, and stable unaddressed
+  families. A capped baseline TU is treated as a truncated prefix rather than
+  false proof that its unseen families were absent;
+- `config/source-compile-regression-baseline.json` is updated only by the
+  explicit reviewed `--update-baseline` path. The Docker frontend exposes
+  `compile-audit-baseline`; a failed gate cannot update it;
+- variadic physical vtable members preserve their fixed ABI prefix and forward
+  the remaining use-site arguments through a template pack. Fixed physical
+  member arguments receive exact pointer/word boundaries without changing the
+  Program ABI;
+- exact address-valued functions, stale qualified globals, missing exact
+  address-coded global declarations, CPUID p-code spellings, opaque High
+  storage, narrow promoted incoming slots, scalar output slots, and exact
+  `STMessageArg` facets are assembled generically from exported identity/type
+  records;
+- the declaration detector no longer mistakes a preceding `LAB_*:` label for
+  a C++ type. Unsafe goto/case lifetimes are hoisted only when their machine
+  storage width or incoming integer promotion is independently exact;
+- pointer-typed reused SSA coordinates are converted at the `STGridAt3D`
+  machine-word boundary, so template diagnostics retain a function address.
+
+Accepted source-only state:
+
+- source manifest
+  `374b34119f6743afee551b66365df444ee0f876d0f131380f41ff9a31f9fe0b2`;
+- tracked baseline SHA-256
+  `b9f8e86f012dd4278f826d2eb491d56cd312881c9635b0e81f6d87b417dcb3ca`;
+- pinned Docker Clang audit: 258/322 translation units pass, 329 errors remain,
+  all 329 mapped to stable function addresses, no TU reaches the 64-error cap,
+  and the regression gate passes with zero regressions;
+- zero compiler `undeclared_identifier` diagnostics and zero unaddressed
+  diagnostics. The former 63-call variadic-wrapper arity family is gone; the
+  remaining 11 arity diagnostics belong to ten explicit address-stable ABI
+  review sites;
+- 103 focused Python tests pass, `bash -n` passes for the Docker frontend, and
+  the atomic per-address readability gate passes.
 
 ### Q-057 Separate value-domain lifetimes and close return ABI contradictions
 

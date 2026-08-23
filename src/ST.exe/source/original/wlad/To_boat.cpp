@@ -1902,7 +1902,7 @@ LAB_00450e28:
         local_9c.id = MESS_SYSTEMCLASSTY_000A;
         local_9c.unknown_0c = 0;
         local_9c.unknown_08 = g_playSystem_00802A38->field_0014;
-        local_9c.arg0 = (STMessageArg)this_00->field_0008;
+        local_9c.arg0 = st::message_arg_u32(static_cast<uint32_t>(this_00->field_0008));
         st::fn_006E5810((SystemClassTy *)g_playSystem_00802A38,&local_9c.unknown_00);
         g_currentExceptionFrame = local_184.previous;
         return 0;
@@ -1916,7 +1916,7 @@ LAB_0045ad7b:
       local_9c.id = MESS_SYSTEMCLASSTY_000A;
       local_9c.unknown_0c = 0;
       local_9c.unknown_08 = g_playSystem_00802A38->field_0014;
-      local_9c.arg0 = (STMessageArg)this_00->field_0008;
+      local_9c.arg0 = st::message_arg_u32(static_cast<uint32_t>(this_00->field_0008));
       st::fn_006E5810((SystemClassTy *)g_playSystem_00802A38,&local_9c.unknown_00);
       g_currentExceptionFrame = local_184.previous;
       return 0;
@@ -7305,7 +7305,7 @@ LAB_0045910d:
         local_9c.id = MESS_AIPLRCLASSTY_5D94;
         local_9c.arg0.words.high = this_00->field_0032;
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
-        local_9c.arg1 = (STMessageArg)this_00->field_0018;
+        local_9c.arg1 = st::message_arg_i32(static_cast<int32_t>(this_00->field_0018));
         /* ST_CALLSITE[004596B2]: CALL dword ptr [EDX] */
         pAVar22->GetMessage(&local_9c);
       }
@@ -7726,7 +7726,7 @@ LAB_0045910d:
         local_9c.id = MESS_AIPLRCLASSTY_5D94;
         local_9c.arg0.words.high = this_00->field_0032;
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
-        local_9c.arg1 = (STMessageArg)this_00->field_0018;
+        local_9c.arg1 = st::message_arg_i32(static_cast<int32_t>(this_00->field_0018));
         /* ST_CALLSITE[00459A1F]: CALL dword ptr [EDX] */
         pAVar22->GetMessage(&local_9c);
       }

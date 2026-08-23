@@ -611,9 +611,9 @@ st::fn_00677290(undefined4 param_1,uint param_2,char param_3,short param_4,short
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = (code *)st::fn_00677250;
+    pcVar2 = st::function_address_boundary_cast<code *>(st::fn_00677250);
     if (param_10 == 0) {
-      pcVar2 = (code *)st::fn_00677220;
+      pcVar2 = st::function_address_boundary_cast<code *>(st::fn_00677220);
     }
     local_8 = pDVar1;
     /* ST_CALLSITE[00677314]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */
@@ -655,9 +655,9 @@ st::fn_006773B0(undefined4 param_1,uint param_2,char param_3,short param_4,short
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = (code *)st::fn_00677250;
+    pcVar2 = st::function_address_boundary_cast<code *>(st::fn_00677250);
     if (param_10 == 0) {
-      pcVar2 = (code *)st::fn_00677220;
+      pcVar2 = st::function_address_boundary_cast<code *>(st::fn_00677220);
     }
     local_8 = pDVar1;
     /* ST_CALLSITE[00677431]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */
@@ -699,9 +699,9 @@ st::fn_006774C0(undefined4 param_1,byte *param_2,char param_3,short param_4,shor
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = (code *)st::fn_00677250;
+    pcVar2 = st::function_address_boundary_cast<code *>(st::fn_00677250);
     if (param_10 == 0) {
-      pcVar2 = (code *)st::fn_00677220;
+      pcVar2 = st::function_address_boundary_cast<code *>(st::fn_00677220);
     }
     local_8 = pDVar1;
     /* ST_CALLSITE[00677544]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */
@@ -743,9 +743,9 @@ st::fn_006775E0(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = st::fn_006AE290(nullptr,10,2,10);
-    pcVar2 = (code *)st::fn_00677250;
+    pcVar2 = st::function_address_boundary_cast<code *>(st::fn_00677250);
     if (param_12 == 0) {
-      pcVar2 = (code *)st::fn_00677220;
+      pcVar2 = st::function_address_boundary_cast<code *>(st::fn_00677220);
     }
     local_8 = pDVar1;
     /* ST_CALLSITE[00677665]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */

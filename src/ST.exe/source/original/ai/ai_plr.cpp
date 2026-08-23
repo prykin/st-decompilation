@@ -390,7 +390,7 @@ st::fn_0067B3C0(AiPlrClassTy *this,int param_1,int param_2,int param_3,char para
     local_14 = iVar3;
     local_10 = iVar3;
     st::fn_006AE1C0((DArrayTy *)local_8->field_06A1,&local_1c);
-    st::fn_004049A8((DArrayTy *)pAVar2->field_06A1,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0067B350));
+    st::fn_004049A8((DArrayTy *)pAVar2->field_06A1,st::function_address_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0067B350));
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -702,7 +702,7 @@ void __thiscall st::fn_0067C180(AiPlrClassTy *this)
           array = st::fn_006AE290(nullptr,5,0x10,5);
           local_c = array;
           /* ST_CALLSITE[0067C248]: CALL 0x004027e3; direct=004027E3 AiPlrClassTy::sub_0067A240 */
-          st::fn_004027E3(this_00,(undefined *)st::fn_0067BA50,array);
+          st::fn_004027E3(this_00,st::function_address_boundary_cast<undefined *>(st::fn_0067BA50),array);
           uVar14 = array->count;
           uVar12 = 0;
           iVar13 = 0;
@@ -801,8 +801,8 @@ void __thiscall st::fn_0067C180(AiPlrClassTy *this)
                   array = local_c;
                 } while ((int)local_8 < (int)*(uint *)(iVar13 + 0xc));
               }
-              st::fn_004049A8(this_00->field_06AD,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0067BAF0));
-              st::fn_004049A8(array,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0067BB20));
+              st::fn_004049A8(this_00->field_06AD,st::function_address_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0067BAF0));
+              st::fn_004049A8(array,st::function_address_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0067BB20));
               /* ST_CALLSITE[0067C45A]: CALL 0x00401c80; direct=00401C80 AiPlrClassTy::sub_0067BFD0 */
               st::fn_00401C80(this_00,array,this_00->field_06AD);
               this_00->field_0689 = 1;
@@ -827,7 +827,7 @@ LAB_0067c61b:
           pDVar10 = st::fn_006AE290(nullptr,5,0x10,5);
           local_c = pDVar10;
           /* ST_CALLSITE[0067C4CC]: CALL 0x004027e3; direct=004027E3 AiPlrClassTy::sub_0067A240 */
-          st::fn_004027E3(this_00,(undefined *)st::fn_0067BA50,pDVar10);
+          st::fn_004027E3(this_00,st::function_address_boundary_cast<undefined *>(st::fn_0067BA50),pDVar10);
           iVar13 = iVar4 + pDVar10->count;
           if (iVar13 == 0) {
             /* ST_CALLSITE[0067C4DD]: CALL 0x0040394f; direct=0040394F AiPlrClassTy::sub_0067C110 */
@@ -881,7 +881,7 @@ LAB_0067c61b:
                     } while ((int)local_8 < (int)*(uint *)(iVar13 + 0xc));
                   }
                 }
-                st::fn_004049A8(this_00->field_06AD,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0067BAF0));
+                st::fn_004049A8(this_00->field_06AD,st::function_address_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0067BAF0));
               }
               if (this_00->field_06AD->count == 0) {
                 /* ST_CALLSITE[0067C605]: CALL 0x0040394f; direct=0040394F AiPlrClassTy::sub_0067C110 */
@@ -1058,7 +1058,7 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
           }
           local_38.unknown_08 = this_00->field_000C->systemId;
           local_38.unknown_0c = 0;
-          local_38.arg0 = (STMessageArg)this_00->field_0008;
+          local_38.arg0 = st::message_arg_u32(static_cast<uint32_t>(this_00->field_0008));
           local_38.id = MESS_SYSTEMCLASSTY_000A;
           st::fn_006E5810(this_00->field_000C,&local_38.unknown_00);
         }

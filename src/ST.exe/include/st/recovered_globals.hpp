@@ -1820,6 +1820,7 @@ extern undefined *PTR_LAB_00531ce8;
 extern undefined *PTR_PTR_007bb198;
 extern undefined *PTR_RegQueryValueExA_0085b954;
 extern undefined *PTR_RegSetValueExA_0085b95c;
+extern undefined *PTR_caseD_3_0044d1d4;
 extern undefined *PTR_caseD_50_004b88dc;
 extern char *PTR_s_ACCKEYS_PLAYER_0079b0d8;
 extern char *PTR_s_ADDON_0079c060;
@@ -2662,6 +2663,7 @@ extern TraksClassTy *g_traksClass_00802A7C;
 extern UpgPanelTy *g_upgPanel_00802A48;
 extern VisibleClassTy *g_visibleClass_00802A88;
 extern STWorldGrid g_worldGrid;
+extern undefined *st_global_0044D1D0; // image symbol: switchD_0044d04b::switchdataD_0044d1d0
 extern STGameObjCVTable st_global_007900A0; // image symbol: STGameObjCVTable
 extern VTable_00790508 st_global_00790508; // image symbol: VTable_00790508
 extern STAllPlayersCVTable st_global_0079059C; // image symbol: STAllPlayersCVTable

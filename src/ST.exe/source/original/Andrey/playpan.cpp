@@ -1065,7 +1065,7 @@ LAB_0053b2ea:
         }
         text = "BUT_SLDN";
       }
-      pcVar18 = (code *)st::fn_00529FE0;
+      pcVar18 = st::function_address_boundary_cast<code *>(st::fn_00529FE0);
       pCVar10 = st::fn_0040577C(text,0);
       /* ST_CALLSITE[0053B51E]: CALL 0x00403495; direct=00403495 UPanelTy::PaintBut */
       st::fn_00403495((UPanelTy *)this_00,(AnonShape_0053D7A0_044B6141 *)message,6,pCVar10,

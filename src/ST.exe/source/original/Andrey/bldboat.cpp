@@ -362,6 +362,8 @@ LAB_004ef4e9:
 int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
 
 {
+  uint32_t _local_14;
+
   STMessageId SVar1;
   BldBoatPanelTy *this_00;
   ushort uVar3;
@@ -406,7 +408,7 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
     if (SVar1 == MESS_SHARED_B202) {
       /* ST_CALLSITE[004EF7C4]: CALL 0x00401ce4; direct=00401CE4 ProdPanelTy::PaintTab */
       st::fn_00401CE4
-                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,(code *)st::fn_004EF5F0);
+                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,st::function_address_boundary_cast<code *>(st::fn_004EF5F0));
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -450,7 +452,7 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
         sStack_f = 0;
         uStack_d = 0;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        auto _local_14 = CONCAT31((int3)*puVar6,1);
+        _local_14 = CONCAT31((int3)*puVar6,1);
         local_10 = (undefined1)((uint)*puVar6 >> 0x18);
         local_c = 0;
         local_a = 0;

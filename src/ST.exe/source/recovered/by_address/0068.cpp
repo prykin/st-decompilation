@@ -2322,6 +2322,8 @@ uint __thiscall st::fn_0068E140(void *this,int param_1)
 undefined4 __thiscall st::fn_0068E190(void *this,int param_1)
 
 {
+  undefined4 st_unresolved_uRam00000004{};
+
   int iVar1;
   uint uVar2;
   int *piVar3;
@@ -2351,7 +2353,7 @@ undefined4 __thiscall st::fn_0068E190(void *this,int param_1)
           return 0;
         }
         if (uVar2 <= uVar4) {
-          return uRam00000004;
+          return st_unresolved_uRam00000004;
         }
         return *(undefined4 *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c) + 4);
       }

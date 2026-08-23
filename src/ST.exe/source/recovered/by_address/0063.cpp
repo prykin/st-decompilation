@@ -1458,6 +1458,9 @@ LAB_00632f7e:
 void __thiscall st::fn_00633770(void *this,int param_1,int param_2)
 
 {
+  float st_unresolved_fRam00000021{};
+  undefined4 st_unresolved_uRam00000008{};
+
   float fVar1;
   float fVar2;
   float fVar3;
@@ -1858,8 +1861,8 @@ void __thiscall st::fn_00633770(void *this,int param_1,int param_2)
                          (fVar6 * STField<float>(this,0x75) + fVar1);
                   }
                   else {
-                    uRam00000008 = 1;
-                    fRam00000021 = STField<float>(this,0x41) -
+                    st_unresolved_uRam00000008 = 1;
+                    st_unresolved_fRam00000021 = STField<float>(this,0x41) -
                                    (fVar6 * STField<float>(this,0x75) + fVar1);
                   }
                 }

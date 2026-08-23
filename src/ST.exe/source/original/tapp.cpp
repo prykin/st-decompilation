@@ -157,7 +157,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   g_nWidth_00806730 = 800;
   DAT_00806734 = 600;
   DAT_00806738 = 8;
-  local_6c.lpfnWndProc = MainWindowProc;
+  local_6c.lpfnWndProc = st::function_address_boundary_cast<WNDPROC>(st::fn_0040251D);
   local_6c.hInstance = hInstance;
   /* ST_CALLSITE[0056AEA7]: CALL dword ptr [0x0085ba74] */
   local_6c.hbrBackground = st::external_000000A5(0);
@@ -2611,14 +2611,14 @@ switchD_0056fad2_caseD_6102:
       if (((bVar3 <= bVar4) && (pSVar11->field_6CE2 <= bVar4)) && (bVar4 != 0)) {
         bVar29 = false;
         local_44[4] = 0x6103;
-        local_30 = (STMessageArg)0x0;
+        local_30 = st::message_arg_u32(static_cast<uint32_t>(0x0));
         pSVar11->field_6CE1 = 0;
       }
       if (bVar29) {
         bVar29 = true;
         if (((pSVar11->field_6CE1 < bVar3) && (pSVar11->field_6CE2 <= bVar3)) && (bVar3 != 0)) {
           local_44[4] = 0x6104;
-          local_30 = (STMessageArg)0x1;
+          local_30 = st::message_arg_u32(static_cast<uint32_t>(0x1));
           pSVar11->field_6CE0 = 0;
           bVar29 = false;
         }
@@ -2631,7 +2631,7 @@ switchD_0056fad2_caseD_6102:
             }
             else if (bVar4 != 0) {
               local_44[4] = 0x7101;
-              local_30 = (STMessageArg)0x4;
+              local_30 = st::message_arg_u32(static_cast<uint32_t>(0x4));
               pSVar11->field_6CE2 = 0;
               bVar29 = false;
             }
@@ -2666,7 +2666,7 @@ switchD_0056fad2_caseD_6102:
             iVar19 = st::fn_00404B4C(pSVar11,1);
             if (iVar19 != 0) {
               local_44[4] = 0x6104;
-              local_30 = (STMessageArg)0x0;
+              local_30 = st::message_arg_u32(static_cast<uint32_t>(0x0));
             }
           }
         }
@@ -2683,7 +2683,7 @@ switchD_0056fad2_caseD_6102:
         }
         if (bVar29) {
           local_44[4] = 0x610a;
-          local_30 = (STMessageArg)0x6;
+          local_30 = st::message_arg_u32(static_cast<uint32_t>(0x6));
         }
       }
       pSVar22 = pSVar11->vtable;

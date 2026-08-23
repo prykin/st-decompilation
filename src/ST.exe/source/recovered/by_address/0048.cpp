@@ -549,6 +549,8 @@ st::fn_00481560(void *this,short param_1,short param_2,short param_3,short param
             short param_6)
 
 {
+  uint32_t _local_2c;
+
   longlong lVar1;
   void *pvVar2;
   int uVar2;
@@ -702,7 +704,7 @@ st::fn_00481560(void *this,short param_1,short param_2,short param_3,short param
           local_28 = 0;
           local_90 = (uint)(short)local_a4[2];
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          auto _local_2c = CONCAT22(*local_a4,local_a4[-1]);
+          _local_2c = CONCAT22(*local_a4,local_a4[-1]);
           local_8c = (int)local_90 >> 0x1f;
           puVar5 = st::fn_0040342C(local_104,local_a4[-1],0,STField<short>(local_60,0x6c));
           local_2c = (short)*puVar5;

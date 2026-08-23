@@ -2405,7 +2405,7 @@ int __thiscall st::fn_00667D90(AiFltClassTy *this,STMessage *message)
           uVar5 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
           this_00->field_001C = uVar5;
           this_00->field_0203 = (uVar5 >> 0x10) % 0x1a + 0x19;
-          st::fn_004049A8(this_00->field_020B,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_00660D10));
+          st::fn_004049A8(this_00->field_020B,st::function_address_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_00660D10));
           this_00->field_0170 = *(short *)&this_00->field_022F->field_0xc;
           this_00->field_0127 = *(undefined2 *)&this_00->field_0223->field_0xc;
         }

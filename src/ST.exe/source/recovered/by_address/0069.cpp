@@ -3068,7 +3068,7 @@ int st::fn_00698DE0(undefined1 *param_1,uint param_2,int param_3,undefined4 para
 
   puVar3 = param_1;
   local_8 = 0;
-  st::fn_00730810(param_1,param_2,10,(undefined *)st::fn_00698DB0);
+  st::fn_00730810(param_1,param_2,10,st::function_address_boundary_cast<undefined *>(st::fn_00698DB0));
   iVar2 = *(int *)(param_1 + param_2 * 10 + -4);
   uVar5 = 0;
   uVar4 = param_2;
@@ -4629,9 +4629,9 @@ void __thiscall st::fn_0069F5C0(void *this,uint param_1,uint param_2,uint param_
     uVar2 = st::fn_0072E6C0();
     uVar3 = (int)uVar2 % 0xb;
   }
-  auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
+  uint32_t param_3_after_write = 0; /* compiler stack-slot lifetime split */
   puVar4 = st::fn_00405A56(*(Global_sub_00692C10_param_1Enum *)(&DAT_007d7f90 + uVar3 * 8),
-                              *(int *)(&DAT_007d7f94 + uVar3 * 8),(undefined4 *)&param_3_after_write,uVar1,0);
+                              *(int *)(&DAT_007d7f94 + uVar3 * 8),&param_3_after_write,uVar1,0);
   puVar4[5] = param_1;
   puVar4[6] = param_2;
   /* ST_CALLSITE[0069F629]: CALL 0x00404822; direct=00404822 CGenerate::sub_006A09F0 */

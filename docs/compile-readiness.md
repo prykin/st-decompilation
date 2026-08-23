@@ -36,7 +36,7 @@ sites, not unique source objects.
 
 | Class | Functions | Body share | Occurrences | State | What remains |
 | --- | ---: | ---: | ---: | --- | --- |
-| Translation-unit/declaration assembly | 5,555 | 100.00% | 5,555 | assembled and audited | `tools/st_source_tree.py` emits 322 deterministic TUs; the current 64-diagnostic compiler audit passes 244 and maps 436 of 450 capped errors to function addresses. |
+| Translation-unit/declaration assembly | 5,555 | 100.00% | 5,555 | assembled and audited | `tools/st_source_tree.py` emits 322 deterministic TUs; the pinned Docker audit passes 258 and maps all 329 errors to function addresses. No TU reaches the 64-error cap. |
 | Default `FUN_ADDRESS` names | 3,967 | 71.41% | 3,967 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
 | Undefined function signatures | 3,741 | 67.34% | 3,741 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
 | Undefined scalar spelling | 3,501 | 63.02% | 17,584 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
@@ -180,12 +180,13 @@ owned non-virtual `__thiscall` functions as forwarding class methods over their
 address-stable `st::fn_ADDRESS` implementations. It does not alter packed layout
 or synthesize inheritance. It also renames 247 exact address-taken global-object
 uses whose image symbol collides with a C++ type name to `st_global_ADDRESS`,
-without changing the Ghidra symbol. With a fixed 64-error-per-TU Apple Clang
-probe, 244 of 322 units pass; 450 errors remain, 436 mapped to stable
-function addresses. The typed categories are assignment types (74), pointer
-indirection (22), undeclared identifiers (31), invalid casts (28), call
-argument types (4), call arity (76), invalid operands (3), and return type (1);
-211 diagnostics remain in the general `other` bucket. Calls through values
+without changing the Ghidra symbol. With the pinned 64-error-per-TU Docker
+Clang probe, 258 of 322 units pass; 329 errors remain and all map to stable
+function addresses. The typed categories are assignment types (76), pointer
+indirection (22), invalid casts (28), call argument types (3), call arity (11),
+invalid operands (3), and return type (1); 185 diagnostics remain in the
+general `other` bucket. There are no undeclared identifiers, no unaddressed
+errors, and no TU reaches the cap. Calls through values
 declared `void`, dereferences of neutral `void *`, and the pointer/scalar
 conflict family rooted at `006D8A60` are all zero. Exact
 unnamed component spelling accounts for part of the remaining missing-record-
@@ -193,5 +194,6 @@ member queue. Address-generated aliases repair 146 invalid address-coded global
 spellings and 68 address-taken external labels; exact arity resolves 34
 otherwise ambiguous direct calls, and two exact output lifetimes are
 materialized without changing the Ghidra ABI. One direct-call ambiguity remains.
-These capped counts are a comparison baseline,
-not an assertion that later diagnostics in a failed TU do not exist.
+The tracked address-stable compiler baseline now rejects local family growth,
+new unaddressed errors, newly failing TUs, and a newly reached cap; updating it
+is an explicit reviewed operation.

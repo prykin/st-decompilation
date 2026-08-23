@@ -627,10 +627,12 @@ public class STDecompExport extends GhidraScript {
     }
 
     private String portableExecutablePath() {
-        String value = nullToEmpty(currentProgram.getExecutablePath());
-        int separator = Math.max(value.lastIndexOf('/'), value.lastIndexOf('\\'));
-        String leaf = separator >= 0 ? value.substring(separator + 1) : value;
-        return leaf.isBlank() ? currentProgram.getName() : leaf;
+        // DomainFile.packFile snapshots deliberately redact workstation paths with a
+        // fixed-width token.  After hydration getExecutablePath() therefore remains useful
+        // only as private import provenance and its apparent basename can be a token suffix
+        // such as "r".  The Ghidra Program name is the portable executable identity used by
+        // every other corpus artifact, so never derive committed metadata from that path.
+        return currentProgram.getName();
     }
 
     private void exportMemoryMap() throws IOException {

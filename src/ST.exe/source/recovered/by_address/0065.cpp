@@ -3443,7 +3443,7 @@ st::fn_0065E9A0(void *this,short *param_1,short *param_2,uint param_3,uint param
       param_6 = STReplaceLowByte((uint32_t)(param_6), (uint8_t)(0xff));
     }
     /* ST_CALLSITE[0065EA70]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */
-    st::fn_004012F8(st::machine_word_boundary_cast<undefined4>(psVar4),param_3,param_4,param_5,(char)param_6,0,0,0,-1,-1,-1,(code *)st::fn_0065E860,
+    st::fn_004012F8(st::machine_word_boundary_cast<undefined4>(psVar4),param_3,param_4,param_5,(char)param_6,0,0,0,-1,-1,-1,st::function_address_boundary_cast<code *>(st::fn_0065E860),
                local_8,(undefined *)(~-(uint)(param_7 != 0) & 0x404935));
     if (DAT_00811900 != 0) {
       iVar3 = st::fn_00402423((void *)((int)local_10 + 0x1c),(int *)local_8,DAT_00811900);
@@ -3516,7 +3516,7 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
           param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(0xff));
         }
         /* ST_CALLSITE[0065EC3A]: CALL 0x004012f8; direct=004012F8 _EnumPlObj */
-        st::fn_004012F8(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,(code *)st::fn_0065E860,
+        st::fn_004012F8(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,st::function_address_boundary_cast<code *>(st::fn_0065E860),
                    local_c,nullptr);
         if (DAT_00811900 == 0) {
           local_8 = 0;
@@ -3571,6 +3571,8 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
 undefined4 __fastcall st::fn_0065EF70(AnonShape_0065EF70_E78A8204 *param_1)
 
 {
+  uint32_t _local_c;
+
   byte bVar1;
   byte bVar2;
   DArrayTy *pDVar3;
@@ -3608,7 +3610,7 @@ undefined4 __fastcall st::fn_0065EF70(AnonShape_0065EF70_E78A8204 *param_1)
              ((g_playSystem_00802A38 == nullptr || (*pbVar7 < 8)))) {
             bVar1 = local_8->field_0024;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            auto _local_c = CONCAT31(uStack_b,bVar1);
+            _local_c = CONCAT31(uStack_b,bVar1);
             if (DAT_00808a8f == '\0') {
               if (bVar5 == bVar1) {
 LAB_0065f095:

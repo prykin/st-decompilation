@@ -436,7 +436,7 @@ st::fn_0066ACC0
         ppAVar20 = local_50;
         do {
           uVar33 = 0;
-          pcVar31 = (code *)st::fn_00677ED0;
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_00677ED0);
           /* ST_CALLSITE[0066D3DE]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
           uVar13 = this_00->slot_00(local_10);
           sVar30 = (short)uVar13;
@@ -1350,7 +1350,7 @@ LAB_0066bff3:
         do {
           puVar32 = nullptr;
           puVar15 = nullptr;
-          pcVar31 = (code *)st::fn_006771E0;
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_006771E0);
           /* ST_CALLSITE[0066C41E]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
           uVar13 = this_00->slot_00(local_10);
           sVar30 = (short)uVar13;
@@ -1433,7 +1433,7 @@ LAB_0066bff3:
         do {
           puVar32 = nullptr;
           puVar15 = nullptr;
-          pcVar31 = (code *)st::fn_006771E0;
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_006771E0);
           /* ST_CALLSITE[0066C5C6]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
           uVar13 = this_00->slot_00(local_10);
           sVar30 = (short)uVar13;
@@ -1536,7 +1536,7 @@ LAB_0066bff3:
         do {
           puVar32 = nullptr;
           puVar15 = nullptr;
-          pcVar31 = (code *)st::fn_006771E0;
+          pcVar31 = st::function_address_boundary_cast<code *>(st::fn_006771E0);
           /* ST_CALLSITE[0066C819]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
           uVar13 = this_00->slot_00(local_10);
           sVar30 = (short)uVar13;
@@ -2080,7 +2080,7 @@ cf_continue_loop_0066CFCA:
       ppAVar20 = local_50;
       do {
         uVar33 = 0;
-        pcVar31 = (code *)st::fn_00677EF0;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_00677EF0);
         /* ST_CALLSITE[0066D99F]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
         uVar13 = this_00->slot_00(local_10);
         sVar30 = (short)uVar13;
@@ -2210,7 +2210,7 @@ cf_continue_loop_0066CFCA:
     }
     DAT_00811980 = 0;
     uVar33 = 0;
-    pcVar31 = (code *)st::fn_00678870;
+    pcVar31 = st::function_address_boundary_cast<code *>(st::fn_00678870);
     /* ST_CALLSITE[0066DC97]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
     uVar13 = this_00->slot_00(param_1 + 0x23);
     sVar30 = (short)uVar13;
@@ -2307,7 +2307,7 @@ cf_continue_loop_0066CFCA:
       ppAVar20 = local_50;
       do {
         uVar33 = 0;
-        pcVar31 = (code *)st::fn_00678560;
+        pcVar31 = st::function_address_boundary_cast<code *>(st::fn_00678560);
         /* ST_CALLSITE[0066DEF1]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
         uVar13 = this_00->slot_00(local_8);
         sVar30 = (short)uVar13;
@@ -2361,7 +2361,7 @@ cf_continue_loop_0066CFCA:
     }
     DAT_00811980 = 0;
     uVar33 = 0;
-    pcVar31 = (code *)st::fn_00677BC0;
+    pcVar31 = st::function_address_boundary_cast<code *>(st::fn_00677BC0);
     /* ST_CALLSITE[0066D769]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
     uVar13 = this_00->slot_00(param_1 + 0x1e);
     sVar30 = (short)uVar13;
@@ -2578,7 +2578,7 @@ cf_common_exit_0066DCED:
     if (local_EAX_14021 == 1) {
       puVar32 = nullptr;
       puVar15 = nullptr;
-      pcVar31 = (code *)st::fn_00677200;
+      pcVar31 = st::function_address_boundary_cast<code *>(st::fn_00677200);
       sVar25 = -1;
       sVar26 = -1;
       sVar27 = -1;
@@ -2608,9 +2608,9 @@ cf_common_exit_0066DCED:
           /* ST_CALLSITE[0066E44B]: CALL dword ptr [EAX + 0x20] */
           this_00->slot_20(iVar4,(int)local_5a);
           /* ST_CALLSITE[0066E45B]: CALL dword ptr [EDX + 0x20] */
-          this_00->slot_20(local_8,(int)local_52);
+          this_00->slot_20(st::machine_word_boundary_cast<undefined4>(local_8),(int)local_52);
           /* ST_CALLSITE[0066E46B]: CALL dword ptr [EDX + 0x20] */
-          this_00->slot_20(local_c,(int)local_58);
+          this_00->slot_20(st::machine_word_boundary_cast<undefined4>(local_c),(int)local_58);
         }
         if (-1 < iVar8) {
           /* ST_CALLSITE[0066E47A]: CALL dword ptr [EDX + 0x11c] */
@@ -2685,7 +2685,7 @@ cf_common_exit_0066DCED:
     local_EAX_14752 = st::fn_004016B8(this_00,(char *)local_8,0,(uint *)local_50);
     if (local_EAX_14752 == 1) {
       uVar13 = 0;
-      pcVar31 = (code *)st::fn_00677F20;
+      pcVar31 = st::function_address_boundary_cast<code *>(st::fn_00677F20);
       sVar25 = -1;
       sVar26 = -1;
       sVar27 = -1;
@@ -2714,9 +2714,9 @@ cf_common_exit_0066DCED:
           /* ST_CALLSITE[0066E71D]: CALL dword ptr [EAX + 0x20] */
           this_00->slot_20(iVar4,(int)local_5c);
           /* ST_CALLSITE[0066E72D]: CALL dword ptr [EDX + 0x20] */
-          this_00->slot_20(local_8,(int)local_56);
+          this_00->slot_20(st::machine_word_boundary_cast<undefined4>(local_8),(int)local_56);
           /* ST_CALLSITE[0066E73D]: CALL dword ptr [EDX + 0x20] */
-          this_00->slot_20(local_c,(int)local_54);
+          this_00->slot_20(st::machine_word_boundary_cast<undefined4>(local_c),(int)local_54);
         }
         if (-1 < iVar8) {
           /* ST_CALLSITE[0066E74C]: CALL dword ptr [EDX + 0x11c] */
@@ -2767,7 +2767,7 @@ cf_common_exit_0066DCED:
       } while ((int)local_c < param_2);
     }
     uVar13 = 0;
-    pcVar31 = (code *)st::fn_00678220;
+    pcVar31 = st::function_address_boundary_cast<code *>(st::fn_00678220);
     sVar25 = -1;
     sVar26 = -1;
     sVar27 = -1;
@@ -2795,9 +2795,9 @@ cf_common_exit_0066DCED:
         /* ST_CALLSITE[0066E929]: CALL dword ptr [EAX + 0x20] */
         this_00->slot_20(iVar4,(int)local_60);
         /* ST_CALLSITE[0066E939]: CALL dword ptr [EDX + 0x20] */
-        this_00->slot_20(local_8,(int)local_5e);
+        this_00->slot_20(st::machine_word_boundary_cast<undefined4>(local_8),(int)local_5e);
         /* ST_CALLSITE[0066E949]: CALL dword ptr [EDX + 0x20] */
-        this_00->slot_20(local_c,(int)STPiece<2,2>(local_28));
+        this_00->slot_20(st::machine_word_boundary_cast<undefined4>(local_c),(int)STPiece<2,2>(local_28));
       }
       if (-1 < iVar8) {
         /* ST_CALLSITE[0066E958]: CALL dword ptr [EDX + 0x11c] */
@@ -2836,7 +2836,7 @@ cf_common_exit_0066DCED:
       } while ((int)local_c < param_2);
     }
     uVar13 = 0;
-    pcVar31 = (code *)st::fn_00678890;
+    pcVar31 = st::function_address_boundary_cast<code *>(st::fn_00678890);
     sVar25 = -1;
     sVar26 = -1;
     sVar27 = -1;
@@ -2868,9 +2868,9 @@ cf_common_exit_0066DCED:
         /* ST_CALLSITE[0066EAE2]: CALL dword ptr [EAX + 0x20] */
         this_00->slot_20(iVar4,(int)STPiece<2,2>(local_30));
         /* ST_CALLSITE[0066EAF2]: CALL dword ptr [EDX + 0x20] */
-        this_00->slot_20(local_8,(int)STPiece<2,2>(local_24));
+        this_00->slot_20(st::machine_word_boundary_cast<undefined4>(local_8),(int)STPiece<2,2>(local_24));
         /* ST_CALLSITE[0066EB02]: CALL dword ptr [EDX + 0x20] */
-        this_00->slot_20(local_c,(int)STPiece<2,2>(local_1c));
+        this_00->slot_20(st::machine_word_boundary_cast<undefined4>(local_c),(int)STPiece<2,2>(local_1c));
       }
       if (-1 < iVar8) {
         /* ST_CALLSITE[0066EB11]: CALL dword ptr [EDX + 0x11c] */
@@ -2933,7 +2933,7 @@ cf_common_exit_0066DCED:
     local_EAX_16356 = st::fn_004016B8(this_00,(char *)local_8,0,(uint *)local_50);
     if (local_EAX_16356 == 1) {
       uVar13 = 0;
-      pcVar31 = (code *)st::fn_00678580;
+      pcVar31 = st::function_address_boundary_cast<code *>(st::fn_00678580);
       sVar25 = -1;
       sVar26 = -1;
       sVar27 = -1;
@@ -2964,9 +2964,9 @@ cf_common_exit_0066DCED:
           /* ST_CALLSITE[0066ED63]: CALL dword ptr [EAX + 0x20] */
           this_00->slot_20(iVar4,(int)STPiece<2,2>(local_2c));
           /* ST_CALLSITE[0066ED73]: CALL dword ptr [EDX + 0x20] */
-          this_00->slot_20(local_8,(int)STPiece<2,2>(local_18));
+          this_00->slot_20(st::machine_word_boundary_cast<undefined4>(local_8),(int)STPiece<2,2>(local_18));
           /* ST_CALLSITE[0066ED83]: CALL dword ptr [EDX + 0x20] */
-          this_00->slot_20(local_c,(int)STPiece<2,2>(local_10));
+          this_00->slot_20(st::machine_word_boundary_cast<undefined4>(local_c),(int)STPiece<2,2>(local_10));
         }
         if (-1 < iVar8) {
           /* ST_CALLSITE[0066ED92]: CALL dword ptr [EDX + 0x11c] */
@@ -4004,7 +4004,7 @@ float * st::fn_00671F10(int param_1,int *param_2,int *param_3)
         case 2:
         case 5:
           /* ST_CALLSITE[0067222C]: CALL dword ptr [EDX + 0x4] */
-          local_20 = local_24->slot_04(arg_1);
+          local_20 = local_24->slot_04(st::machine_word_boundary_cast<undefined4>(arg_1));
           local_18 = st::pointer_boundary_cast<float *>(st::fn_006AAC10(4));
           *local_18 = local_20;
           if (param_2 != nullptr) {

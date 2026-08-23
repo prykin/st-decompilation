@@ -2548,7 +2548,7 @@ undefined4 st::fn_00575A10(HINSTANCE param_1,undefined4 param_2,undefined4 param
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   iVar1 = st::fn_0072D7F0
-                    (local_60.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0);
+                    (local_60.jumpBuffer,2,st::fn_0072DA21,0);
   if (iVar1 == 0) {
     local_1c = (st_stack_frame + 8);
     /* ST_CALLSITE[00575AD0]: CALL 0x004045f2; direct=004045F2 STAppC::InitApp */

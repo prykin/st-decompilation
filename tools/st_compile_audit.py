@@ -27,7 +27,9 @@ from typing import Any, Iterable, Sequence
 
 
 SCHEMA = "st-source-compile-audit"
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
+REGRESSION_SCHEMA = "st-source-compile-regression-baseline"
+REGRESSION_SCHEMA_VERSION = 1
 GENERATED_MARKER = ".st-generated-source-tree.json"
 DIAGNOSTIC_RE = re.compile(
     r"^(.*?):(\d+):(\d+): (fatal error|error|warning|note): (.*)$"
@@ -76,6 +78,184 @@ class CompileResult:
     translation_unit: str
     return_code: int
     diagnostics: tuple[Diagnostic, ...]
+
+
+def stable_unaddressed_key(diagnostic: Diagnostic) -> str:
+    """Identify one compiler family without depending on generated line numbers."""
+    return "\t".join((
+        diagnostic.translation_unit,
+        diagnostic.kind,
+        re.sub(r"\s+", " ", diagnostic.message).strip(),
+    ))
+
+
+def regression_snapshot(
+    summary: dict[str, Any], results: Sequence[CompileResult]
+) -> dict[str, Any]:
+    errors = [
+        diagnostic
+        for result in results for diagnostic in result.diagnostics
+        if diagnostic.severity == "error"
+    ]
+    error_limit = int(
+        summary["configuration"]["error_limit_per_translation_unit"]
+    )
+    units: dict[str, dict[str, Any]] = {}
+    for result in sorted(results, key=lambda item: item.translation_unit):
+        result_errors = [
+            item for item in result.diagnostics if item.severity == "error"
+        ]
+        reached_limit = any(
+            item.kind == "diagnostic_limit" for item in result_errors
+        ) or bool(error_limit and len(result_errors) >= error_limit)
+        units[result.translation_unit] = {
+            "passed": result.return_code == 0,
+            "errors": len(result_errors),
+            "reached_error_limit": reached_limit,
+        }
+    addressed = Counter(
+        (item.address, item.kind) for item in errors if item.address
+    )
+    address_translation_units: dict[str, set[str]] = {}
+    for item in errors:
+        if item.address:
+            address_translation_units.setdefault(item.address, set()).add(
+                item.translation_unit
+            )
+    unaddressed = Counter(
+        stable_unaddressed_key(item) for item in errors if not item.address
+    )
+    return {
+        "schema": REGRESSION_SCHEMA,
+        "schema_version": REGRESSION_SCHEMA_VERSION,
+        "compiler": summary["compiler"],
+        "configuration": summary["configuration"],
+        "source_manifest_sha256": summary["source_manifest_sha256"],
+        "input_manifest_sha256": summary["input_manifest_sha256"],
+        "program_semantic_sha256": summary["program_semantic_sha256"],
+        "translation_units": units,
+        "address_error_families": [
+            {"address": address, "kind": kind, "count": count}
+            for (address, kind), count in sorted(addressed.items())
+        ],
+        "address_translation_units": [
+            {"address": address, "translation_units": sorted(units)}
+            for address, units in sorted(address_translation_units.items())
+        ],
+        "unaddressed_error_families": [
+            {"key": key, "count": count}
+            for key, count in sorted(unaddressed.items())
+        ],
+    }
+
+
+def compare_regression_snapshot(
+    baseline: Mapping[str, Any], current: Mapping[str, Any]
+) -> dict[str, Any]:
+    if (baseline.get("schema") != REGRESSION_SCHEMA or
+            int(baseline.get("schema_version", 0)) != REGRESSION_SCHEMA_VERSION):
+        raise AuditError("unsupported compile-regression baseline schema")
+    mismatches: list[str] = []
+    if baseline.get("compiler") != current.get("compiler"):
+        mismatches.append("compiler")
+    if baseline.get("configuration") != current.get("configuration"):
+        mismatches.append("configuration")
+    if mismatches:
+        raise AuditError(
+            "compile-regression baseline is not comparable: " +
+            ", ".join(mismatches)
+        )
+
+    regressions: list[dict[str, Any]] = []
+    previous_units = baseline.get("translation_units", {})
+    current_units = current.get("translation_units", {})
+    for unit, previous in sorted(previous_units.items()):
+        candidate = current_units.get(unit)
+        if candidate is None:
+            continue
+        if bool(previous.get("passed")) and not bool(candidate.get("passed")):
+            regressions.append({
+                "kind": "previously_passing_translation_unit_failed",
+                "translation_unit": unit,
+            })
+        if (not bool(previous.get("reached_error_limit")) and
+                bool(candidate.get("reached_error_limit"))):
+            regressions.append({
+                "kind": "translation_unit_newly_reached_error_limit",
+                "translation_unit": unit,
+                "current_errors": int(candidate.get("errors", 0)),
+            })
+
+    def family_counts(
+        value: Mapping[str, Any], field: str, key_fields: tuple[str, ...]
+    ) -> dict[tuple[str, ...], int]:
+        return {
+            tuple(str(item.get(key, "")) for key in key_fields):
+                int(item.get("count", 0))
+            for item in value.get(field, ())
+        }
+
+    previous_addressed = family_counts(
+        baseline, "address_error_families", ("address", "kind")
+    )
+    current_addressed = family_counts(
+        current, "address_error_families", ("address", "kind")
+    )
+    # A translation unit which hit the compiler's diagnostic cap supplies only
+    # a prefix of its error families.  Once a candidate brings that unit below
+    # the cap, a family absent from the truncated prefix is not evidence of a
+    # new regression.  Keep the stronger TU-level guards above, and compare
+    # address families only for baselines whose diagnostics were complete.
+    capped_baseline_units = {
+        unit for unit, detail in previous_units.items()
+        if bool(detail.get("reached_error_limit"))
+    }
+    address_units: dict[str, set[str]] = {}
+    for result in current.get("address_translation_units", ()):  # v2+
+        address_units[str(result.get("address", ""))] = set(
+            map(str, result.get("translation_units", ()))
+        )
+    for (address, kind), count in sorted(current_addressed.items()):
+        old = previous_addressed.get((address, kind), 0)
+        if count > old:
+            units = address_units.get(address, set())
+            if units and units <= capped_baseline_units:
+                continue
+            regressions.append({
+                "kind": "address_error_family_increased",
+                "address": address,
+                "diagnostic_kind": kind,
+                "baseline_count": old,
+                "current_count": count,
+            })
+
+    previous_unaddressed = family_counts(
+        baseline, "unaddressed_error_families", ("key",)
+    )
+    current_unaddressed = family_counts(
+        current, "unaddressed_error_families", ("key",)
+    )
+    for (key,), count in sorted(current_unaddressed.items()):
+        old = previous_unaddressed.get((key,), 0)
+        if count > old:
+            regressions.append({
+                "kind": "unaddressed_error_appeared",
+                "family": key,
+                "baseline_count": old,
+                "current_count": count,
+            })
+    return {
+        "schema": "st-source-compile-regression-report",
+        "schema_version": 1,
+        "status": "failed" if regressions else "passed",
+        "baseline_source_manifest_sha256": baseline.get(
+            "source_manifest_sha256", ""
+        ),
+        "current_source_manifest_sha256": current.get(
+            "source_manifest_sha256", ""
+        ),
+        "regressions": regressions,
+    }
 
 
 def json_dump(value: Any) -> str:
@@ -264,7 +444,9 @@ class CompileAudit:
             ))
         return CompileResult(relative, process.returncode, tuple(diagnostics))
 
-    def run(self) -> dict[str, Any]:
+    def run(
+        self, baseline: Mapping[str, Any] | None = None
+    ) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
         units = self.validate()
         with concurrent.futures.ThreadPoolExecutor(max_workers=self.jobs) as pool:
             results = list(pool.map(self.compile_one, units))
@@ -310,11 +492,33 @@ class CompileAudit:
             },
             "error_kind_counts": dict(sorted(kind_counts.items())),
         }
-        self.write(summary, diagnostics)
-        return summary
+        snapshot = regression_snapshot(summary, results)
+        regression = (
+            compare_regression_snapshot(baseline, snapshot)
+            if baseline is not None else {
+                "schema": "st-source-compile-regression-report",
+                "schema_version": 1,
+                "status": "not_configured",
+                "baseline_source_manifest_sha256": "",
+                "current_source_manifest_sha256": snapshot[
+                    "source_manifest_sha256"
+                ],
+                "regressions": [],
+            }
+        )
+        summary["regression_gate"] = {
+            "status": regression["status"],
+            "regressions": len(regression["regressions"]),
+        }
+        self.write(summary, diagnostics, snapshot, regression)
+        return summary, snapshot, regression
 
     def write(
-        self, summary: dict[str, Any], diagnostics: Iterable[Diagnostic]
+        self,
+        summary: dict[str, Any],
+        diagnostics: Iterable[Diagnostic],
+        snapshot: Mapping[str, Any],
+        regression: Mapping[str, Any],
     ) -> None:
         self.output.parent.mkdir(parents=True, exist_ok=True)
         staging = self.output.parent / f".{self.output.name}.staging-{os.getpid()}"
@@ -332,6 +536,12 @@ class CompileAudit:
                     for item in diagnostics
                 ),
                 encoding="utf-8",
+            )
+            (staging / "regression_snapshot.json").write_text(
+                json_dump(snapshot), encoding="utf-8"
+            )
+            (staging / "regression_report.json").write_text(
+                json_dump(regression), encoding="utf-8"
             )
             if self.output.exists():
                 shutil.rmtree(self.output)
@@ -359,6 +569,18 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
         "--include-warnings", action="store_true",
         help="retain warnings in issues.jsonl",
     )
+    parser.add_argument(
+        "--baseline",
+        help="tracked deterministic compile-regression baseline",
+    )
+    parser.add_argument(
+        "--no-regression-gate", action="store_true",
+        help="do not load or compare the configured regression baseline",
+    )
+    parser.add_argument(
+        "--update-baseline", action="store_true",
+        help="replace the baseline with this passed/not-configured snapshot",
+    )
     return parser.parse_args(argv)
 
 
@@ -380,6 +602,14 @@ def main(argv: Sequence[str] = ()) -> int:
             raise AuditError("--jobs must be positive")
         if arguments.error_limit < 0:
             raise AuditError("--error-limit must be non-negative")
+        baseline_path = (
+            Path(arguments.baseline).resolve()
+            if arguments.baseline else
+            repo / "config" / "source-compile-regression-baseline.json"
+        )
+        baseline: Mapping[str, Any] | None = None
+        if not arguments.no_regression_gate and baseline_path.is_file():
+            baseline = json.loads(baseline_path.read_text(encoding="utf-8"))
         audit = CompileAudit(
             source_tree=source_tree,
             output=output,
@@ -388,7 +618,7 @@ def main(argv: Sequence[str] = ()) -> int:
             error_limit=arguments.error_limit,
             include_warnings=arguments.include_warnings,
         )
-        summary = audit.run()
+        summary, snapshot, regression = audit.run(baseline)
         statistics = summary["statistics"]
         print(
             "Compile audit: "
@@ -396,8 +626,21 @@ def main(argv: Sequence[str] = ()) -> int:
             f"{statistics['translation_units']} translation units pass; "
             f"{statistics['errors']} errors; report={output}"
         )
+        print(
+            "Compile regression gate: "
+            f"{regression['status']}; "
+            f"regressions={len(regression['regressions'])}"
+        )
+        if arguments.update_baseline:
+            if regression["status"] == "failed":
+                raise AuditError(
+                    "refusing to update a failed compile-regression baseline"
+                )
+            baseline_path.parent.mkdir(parents=True, exist_ok=True)
+            baseline_path.write_text(json_dump(snapshot), encoding="utf-8")
+            print(f"Compile regression baseline updated: {baseline_path}")
         print(f"Total compile-audit time: {elapsed_text(time.monotonic() - start)}")
-        return 0
+        return 1 if regression["status"] == "failed" else 0
     except (AuditError, OSError, subprocess.SubprocessError, ValueError) as error:
         print(f"error: {error}", file=sys.stderr)
         print(f"Total compile-audit time: {elapsed_text(time.monotonic() - start)}")

@@ -342,7 +342,7 @@ st::fn_0068EB30(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *param_1,short p
     param_1->field_0006 = param_1->field_0006 + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
     param_1->field_003A = pAVar3->field_012C;
     st::fn_006AE1C0((DArrayTy *)pAVar3->field_00BD,param_1);
-    st::fn_004049A8((DArrayTy *)pAVar3->field_00BD,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0068E7D0));
+    st::fn_004049A8((DArrayTy *)pAVar3->field_00BD,st::function_address_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0068E7D0));
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
@@ -569,6 +569,8 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
 void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
 
 {
+  AiFltClassTy * st_unresolved_pARam00000004{};
+
   ushort uVar1;
   AiTactClassTy_field_00BDDArray *pAVar2;
   uint uVar3;
@@ -618,7 +620,7 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
           bVar11 = uVar10 < pAVar9->count;
         } while ((int)uVar10 < (int)pAVar9->count);
       }
-      st::fn_004049A8((DArrayTy *)this_00->field_00BD,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0068E7D0));
+      st::fn_004049A8((DArrayTy *)this_00->field_00BD,st::function_address_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_0068E7D0));
       local_c = param_1[3];
       while (local_c = local_c - 1, -1 < (int)local_c) {
         if (local_c < param_1[3]) {
@@ -687,7 +689,7 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
                   this_02 = nullptr;
                 }
                 else {
-                  this_02 = pARam00000004;
+                  this_02 = st_unresolved_pARam00000004;
                   if (uVar3 < pAVar9->count) {
                     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
                     this_02 = *(AiFltClassTy **)
@@ -731,6 +733,8 @@ void __thiscall st::fn_0068F020(AiTactClassTy *this,uint *param_1)
 void __thiscall st::fn_0068F360(AiTactClassTy *this,uint *param_1)
 
 {
+  AiFltClassTy * st_unresolved_pARam00000004{};
+
   ushort uVar1;
   short sVar2;
   uint index;
@@ -815,7 +819,7 @@ joined_r0x0068f3e2:
         pAVar8 = nullptr;
       }
       else {
-        pAVar8 = pARam00000004;
+        pAVar8 = st_unresolved_pARam00000004;
         if (local_c < pAVar11->count) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
           pAVar8 = *(AiFltClassTy **)
@@ -884,7 +888,7 @@ LAB_0068f516:
       pAVar8 = nullptr;
     }
     else {
-      pAVar8 = pARam00000004;
+      pAVar8 = st_unresolved_pARam00000004;
       if (uVar12 < pAVar11->count) {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
         pAVar8 = *(AiFltClassTy **)((int)&pAVar11->data->field_0004 + pAVar11->elementSize * uVar12);
@@ -1288,6 +1292,8 @@ void __thiscall
 st::fn_00690650(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *param_1)
 
 {
+  uint32_t _local_14;
+
   byte bVar1;
   byte bVar2;
   byte bVar3;
@@ -1330,7 +1336,7 @@ st::fn_00690650(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *param_1)
   local_20 = STReplaceLowWord((uint32_t)(unaff_EDI), (uint16_t)(param_1->field_001A));
   bVar1 = param_1->field_0018;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  auto _local_14 = CONCAT31(uStack_13,bVar1);
+  _local_14 = CONCAT31(uStack_13,bVar1);
   if (7 < bVar1) {
     return;
   }

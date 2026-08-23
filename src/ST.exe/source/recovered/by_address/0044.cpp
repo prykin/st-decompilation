@@ -60,8 +60,6 @@ void st::fn_00440750(int param_1)
 void st::fn_004407A0(char param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  int _param_1 = static_cast<int>(param_1);
-
   DArrayTy *array;
   dword dVar1;
   uint index;
@@ -787,7 +785,7 @@ uint __fastcall st::fn_0044CE40(STAllPlayersC *param_1)
                     /* WARNING: Could not recover jumptable at 0x0044d04b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          uVar4 = (*(code *)(&switchD_0044d04b::switchdataD_0044d1d0)
+          uVar4 = (*(code *)(&st_global_0044D1D0)
                             [*(byte *)((int)&PTR_caseD_3_0044d1d4 + uVar4 + 3)])();
           return uVar4;
         }

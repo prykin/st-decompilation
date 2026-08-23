@@ -229,7 +229,7 @@ void __thiscall st::fn_0065F980(AiFltClassTy *this)
     local_24.arg0.words.high = this->field_007D;
     local_24.arg2.words.low = *(undefined2 *)&this->field_00B3;
     local_24.id = 0x5de5;
-    local_24.arg1 = (STMessageArg)this;
+    local_24.arg1 = st::message_arg_pointer(this);
     /* ST_CALLSITE[0065F9CD]: CALL dword ptr [EAX] */
     g_aiBossClass_008117BC->GetMessage(&local_24);
     this->field_00B3 = 0;
@@ -1249,7 +1249,7 @@ void __fastcall st::fn_00664960(AiFltClassTy *param_1)
       break;
     case 4:
       st::fn_006AE1C0(param_1->field_020B,&local_3c);
-      st::fn_004049A8(param_1->field_020B,st::pointer_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_00660D10));
+      st::fn_004049A8(param_1->field_020B,st::function_address_boundary_cast<STFnType_callback_00676C40_p1_6bf6b031 *>(st::fn_00660D10));
       goto cf_common_join_00665024;
     case 5:
       if (param_1->field_020B != nullptr) {

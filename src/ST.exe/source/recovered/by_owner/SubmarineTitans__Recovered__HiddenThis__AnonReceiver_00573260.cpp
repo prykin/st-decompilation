@@ -19,6 +19,8 @@ st::fn_00573260
           (AnonReceiver_00573260 *this)
 
 {
+  undefined4 st_unresolved_register0x00000000{};
+
   int iVar1;
   uint uVar2;
   InternalExceptionFrame local_138;
@@ -50,10 +52,10 @@ st::fn_00573260
     if (uVar2 != 0) {
       st::fn_006B7E00(*(int *)&local_8->field_0x4,3,(undefined4 *)&local_14,(undefined4 *)&local_24);
     }
-    register0x00000000 = (uint)(local_14 + local_24) >> 1;
+    st_unresolved_register0x00000000 = (uint)(local_14 + local_24) >> 1;
   }
   else {
-    register0x00000000 = 0;
+    st_unresolved_register0x00000000 = 0;
   }
   g_currentExceptionFrame = &local_b0;
   local_b0.previous = local_f4.previous;

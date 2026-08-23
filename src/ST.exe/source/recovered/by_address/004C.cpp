@@ -662,6 +662,8 @@ st::fn_004C5350(void *this,int param_1,int *param_2,int param_3,int param_4,unde
             int param_6,int param_7)
 
 {
+  uint32_t _local_10;
+
   byte bVar1;
   byte bVar2;
   byte bVar3;
@@ -731,7 +733,7 @@ st::fn_004C5350(void *this,int param_1,int *param_2,int param_3,int param_4,unde
   bVar2 = STField<byte>(this,0x24);
   param_7 = STReplaceLowByte((uint32_t)(param_7), (uint8_t)(bVar1));
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  auto _local_10 = CONCAT31(uStack_f,bVar2);
+  _local_10 = CONCAT31(uStack_f,bVar2);
   if (DAT_00808a8f == '\0') {
     if (bVar1 == bVar2) {
 LAB_004c5502:
