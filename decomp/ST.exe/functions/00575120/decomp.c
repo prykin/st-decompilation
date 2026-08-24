@@ -5,10 +5,10 @@ void __thiscall
 FUN_00575120(void *this,AnonShape_005745E0_AF52CC75 *param_1,int param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   int iVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   undefined4 *local_8;
 
   iVar3 = 6;

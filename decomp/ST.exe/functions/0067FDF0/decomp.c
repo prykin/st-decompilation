@@ -10,7 +10,7 @@ uint __cdecl FUN_0067fdf0(AnonShape_00683780_11EA4E23 *param_1,byte *param_2)
   int local_EAX_31;
   int uVar1;
   uint uVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;

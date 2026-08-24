@@ -8,7 +8,7 @@ void FUN_006c72f0(AnonShape_006C72F0_54F06289 *param_1)
   int iVar2;
   int iVar3;
   int iVar5;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar6;
   uint uVar7;
   InternalExceptionFrame local_70;
@@ -16,9 +16,9 @@ void FUN_006c72f0(AnonShape_006C72F0_54F06289 *param_1)
   int local_28;
   int local_24;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

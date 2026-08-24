@@ -4,12 +4,12 @@
 undefined4 * __thiscall FUN_00614950(void *this,int *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   uint uVar3;
   byte *puVar4;
   byte *puVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   uint local_8;
 
   local_8 = 0x116;

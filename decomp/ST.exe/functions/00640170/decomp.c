@@ -7,9 +7,8 @@ undefined4 __thiscall FUN_00640170(void *this,int param_1,int param_2,undefined4
 
 {
   float fVar1;
-  undefined4 uVar2;
-  undefined4 *puVar4;
-
+  uint uVar2;
+  uint *puVar4;
   uVar2 = 0;
   if (STField<undefined4 *>(this,0x37f) != nullptr) {
     puVar4 = STField<undefined4 *>(this,0x37f);

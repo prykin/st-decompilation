@@ -25,7 +25,8 @@ void FUN_007498ec(int *param_1,AnonShape_0074987C_9BF4FFD0 *param_2)
       piVar2 = &DAT_007a16e0;
     }
     else if (sVar1 == 0x10) {
-      piVar2 = (int *)FUN_0074987c(&local_14,param_2);
+      FUN_0074987c(&local_14,param_2);
+      piVar2 = &local_14;
     }
     else if (sVar1 == 0x18) {
       piVar2 = &DAT_007a16d0;

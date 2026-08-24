@@ -10,13 +10,13 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
                  undefined4 *param_5)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   int iVar5;
   int local_EAX_72;
   int local_EAX_205;
   byte *puVar6;
-  AnonShape_006C7D20_41F6C243 *pAVar7;
+  RecoveredRecord_FSGSTy_006C7D20 *pRVar7;
   int local_EAX_485;
   DWORD DVar8;
   int iVar4;
@@ -115,12 +115,12 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
           local_c->field_1A9B = puVar6;
           if (puVar6 != nullptr) {
             memmove(puVar6, param_5, param_4); /* compiler REP MOVS byte copy */
-            pAVar7 = (AnonShape_006C7D20_41F6C243 *)
+            pRVar7 = (RecoveredRecord_FSGSTy_006C7D20 *)
                      Library::DKW::GPC::FUN_006c7dc0(local_c->field_1A9B);
-            pFVar14->field_1A9F = pAVar7;
-            if (pAVar7 != nullptr) {
+            pFVar14->field_1A9F = pRVar7;
+            if (pRVar7 != nullptr) {
               memset(&local_4e0, 0, 0x400); /* compiler bulk-zero initialization */
-              FUN_006c7d20(pAVar7,(int)&local_4e0,&local_10);
+              FUN_006c7d20(pRVar7,(int)&local_4e0,&local_10);
               iVar12 = 0x80;
               local_8 = (int *)0x40;
               do {

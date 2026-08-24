@@ -28,7 +28,7 @@ void __thiscall STLightC::sub_0061E4F0(STLightC *this)
           uVar3 = this->field_00AC * 0x41c64e6d + 0x3039;
           this->field_00AC = uVar3;
           if (((uVar3 >> 0x10) % 5 == 0) &&
-             ((iVar5 != 0 || ((iVar6 != 0 && (local_8 != *(int *)this->field_009B + -1)))))) {
+             ((iVar5 != 0 || ((iVar6 != 0 && (local_8 != *STField<int *>(this,0x9B) + -1)))))) {
             uVar3 = this->field_00AC * 0x41c64e6d + 0x3039;
             this->field_00AC = uVar3;
             pfVar4 = (float *)(*(int *)((int)this->field_009F + iVar5 * 4) + iVar6);

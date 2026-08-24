@@ -18,7 +18,7 @@ FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,shor
   short local_14;
   short sStack_12;
   short local_10;
-  undefined4 local_c;
+  uint local_c;
   short local_8;
 
   param_1->field_00A7 = 0;

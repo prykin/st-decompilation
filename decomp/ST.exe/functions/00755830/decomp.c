@@ -7,7 +7,7 @@
 uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   short sVar2;
   uint uVar3;
   DWORD uVar4;
@@ -30,8 +30,8 @@ uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3
       return uVar3;
     }
     uVar4 = Library::DKW::FMM::FUN_006d4c50
-                      ((int)param_1->field_0008,uVar3,
-                       (int)*(short *)&param_1->field_0008->field_0x16);
+                      ((AnonNested_00757670_0008_104EC36D *)param_1->field_0008,uVar3,
+                       (int)((AnonNested_00757670_0008_104EC36D *)param_1->field_0008)->field_0016);
     if (uVar4 == 0) {
       *(uint *)&param_1->field_0008->field_0x8 = *(uint *)&param_1->field_0008->field_0x8 | 0x10;
       iVar4 = param_1->field_0008->field_0034;

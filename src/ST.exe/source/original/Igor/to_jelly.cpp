@@ -26,7 +26,7 @@
 void __thiscall st::fn_005825C0(STJellyGunC *this)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   byte bVar2;
   byte bVar3;
   short sVar4;
@@ -48,7 +48,7 @@ void __thiscall st::fn_005825C0(STJellyGunC *this)
   int local_EAX_970;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined2 uVar16;
+  ushort uVar16;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
   AnonShape_0041AF40_F59F8577 *pAVar18;
@@ -469,7 +469,7 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
 {
   char cVar1;
   STMessageId SVar2;
-  undefined4 uVar3;
+  uint uVar3;
   STJellyGunC *this_00;
   int local_EAX_80;
   int local_EAX_793;
@@ -570,7 +570,7 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
         return 0;
       }
       if (SVar2 == MESS_ID_CREATE) {
-        local_38 = st::pointer_boundary_cast<AnonShape_00583270_F758043B *>((message->arg0).ptr);
+        local_38 = static_cast<AnonShape_00583270_F758043B *>((message->arg0).ptr);
         if (*(uint *)&local_38->field_0xc < 2) {
           this_00->field_0235 = CASE_4;
           this_00->field_023D = 0;
@@ -757,7 +757,7 @@ int __thiscall st::fn_00583270(STJellyGunC *this,STMessage *message)
       local_14 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
       /* ST_CALLSITE[00583884]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
       local_18 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = st::pointer_boundary_cast<AnonShape_00583270_0B8831C2 *>(st::fn_006AAC70(local_10 + 0x6f + local_8));
+      local_c = static_cast<AnonShape_00583270_0B8831C2 *>(st::fn_006AAC70(local_10 + 0x6f + local_8));
       if (((local_14 != nullptr) && (local_18 != nullptr)) &&
          (local_c != nullptr)) {
         puVar11 = (byte *)&this_00->field_0x256;

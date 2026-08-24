@@ -7,9 +7,13 @@ Automatic: 0
 leaf_void: 0
 ignored_eax_void: 0
 repair_unsafe_eax_rollback: 0
+repair_false_machine_eax_return: 0
+diagnostic_residue_void: 0
 void_eax_read_review: 0
 typed_pointer_return: 0
 forwarded_call_return: 0
+typed_machine_return: 0
+machine_scalar_return: 0
 returned_pointer_parameter: 0
 pointer_producer_argument_roundtrip: 0
 machine_eax_return: 0

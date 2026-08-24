@@ -14,7 +14,7 @@ STAllPlayersC::UnRegisterArtefact
   int errorCode;
   STGameObjC *pSVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_50;
   STAllPlayersC *local_c;
   undefined4 local_8;

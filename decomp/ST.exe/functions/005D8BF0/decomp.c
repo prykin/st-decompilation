@@ -38,7 +38,7 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   byte *pbVar17;
   byte *pbVar18;
   bool bVar19;
-  undefined4 uVar20;
+  uint uVar20;
   _WIN32_FIND_DATAA local_21c;
   byte local_dc [64];
   InternalExceptionFrame local_9c;

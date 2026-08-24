@@ -12,8 +12,7 @@ STGameObjC * __thiscall st::fn_004158E0(STGameObjC *this)
 
 {
   int iVar1;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   st::fn_006E60E0(this);
   this->vtable = &st_global_007900A0;
   this->field_0020 = 0;

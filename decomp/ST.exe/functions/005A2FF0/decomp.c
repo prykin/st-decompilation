@@ -16,7 +16,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
   int local_EAX_63;
   FSGSTy_field_1EAADArray *pFVar6;
   int iVar3;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar6;
   dword dVar8;
   FSGSTy_field_1EAAElement *element_1eaa;

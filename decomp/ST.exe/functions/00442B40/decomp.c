@@ -13,7 +13,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   STGameObjC *this;
   uint uVar4;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
   char objPtr;

@@ -29,9 +29,9 @@ int * FUN_0055f0c0(int *param_1,uint param_2,uint param_3,int param_4,uint param
   int local_2c;
   int local_28;
   int *local_24;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
   int *piVar4_mg0;

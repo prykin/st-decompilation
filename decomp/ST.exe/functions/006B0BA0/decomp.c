@@ -10,8 +10,7 @@ FUN_006b0ba0(DDXContext *param_1,undefined4 param_2,undefined4 param_3,undefined
 
 {
   int *piVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   if ((param_1 != nullptr) && (piVar1 = (int *)param_1->field_003C, piVar1 != nullptr))
   {
     /* ST_CALLSITE[006B0BC2]: CALL dword ptr [ECX + 0x10] */

@@ -14,8 +14,8 @@ void __thiscall CGenerate::sub_00696810(CGenerate *this)
   int iVar3;
   uint uVar4;
   int iVar5;
-  undefined4 uVar6;
-  undefined4 uVar7;
+  uint uVar6;
+  uint uVar7;
   int local_38 [9];
   int local_14;
   uint local_10;

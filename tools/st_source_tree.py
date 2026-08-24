@@ -914,10 +914,11 @@ class TypeEmitter:
             "uint16_t": "uint16_t",
             "undefined4": "uint32_t",
             "uint": "uint32_t",
-            "ulong": "uint32_t",
+            "ulong": "unsigned_long",
             "dword": "uint32_t",
-            "DWORD": "uint32_t",
+            "DWORD": "unsigned_long",
             "UINT": "uint32_t",
+            "size_t": "uint32_t",
             "uint32_t": "uint32_t",
             "undefined8": "uint64_t",
             "ulonglong": "uint64_t",
@@ -1503,6 +1504,84 @@ class TypeEmitter:
         ):
             return "concrete"
         return None
+
+    @functools.lru_cache(maxsize=None)
+    def display_is_void_pointer(self, display_name: str) -> bool:
+        """Whether a display spelling resolves exactly to ``void *``.
+
+        Win32 aliases such as ``LPVOID`` do not contain a literal star, but the emitted
+        typedef still has ordinary C++ object-pointer conversion rules.  Follow the exported
+        datatype graph instead of making every such assignment use a project helper.
+        """
+        candidates = self.paths_by_display_name.get(display_name, set())
+        results: set[bool] = set()
+        for path in candidates:
+            current = self._unwrap_typedef_path(path, set())
+            record = self.by_path.get(current) if current else None
+            if record is None or record["class"] != "PointerDB":
+                results.add(False)
+                continue
+            pointee = self._unwrap_typedef_path(
+                str(record["detail"]["points_to"]), set()
+            )
+            results.add(pointee == "/void")
+        if len(results) == 1:
+            return next(iter(results))
+        return re.sub(r"\s+", "", display_name) in {"void*", "constvoid*"}
+
+    def display_is_neutral_storage_pointer(self, display_name: str) -> bool:
+        """Whether a pointer is an exact byte/word storage view.
+
+        This deliberately excludes signed semantic scalars and every structure pointer.  It is
+        used only when the expression is independently known to be an address of storage.
+        """
+        pointee = self.display_pointee_type(display_name)
+        if pointee is None:
+            return False
+        key = self.cpp_type_key(pointee)
+        return key in {
+            "uint8_t", "uint16_t", "uint32_t", "uint64_t",
+            "unsigned_long", "char",
+        }
+
+    @functools.lru_cache(maxsize=None)
+    def display_integer_pointer_width(self, display_name: str) -> int | None:
+        """Return an exact primitive-integer pointee width.
+
+        Equal-width signed/unsigned and Win32 alias pointers are storage views
+        of the same x86 bytes but remain distinct C++ pointer types.  Records,
+        enums, floats, void and function pointers are deliberately excluded.
+        """
+        pointee = self.display_pointee_type(display_name)
+        if pointee is None:
+            return None
+        candidates = self.paths_by_display_name.get(pointee, set())
+        if candidates:
+            widths: set[int] = set()
+            for path in candidates:
+                current = self._unwrap_typedef_path(path, set())
+                record = self.by_path.get(current) if current else None
+                if record is None:
+                    return None
+                kind = str(record.get("class") or "")
+                if not (kind.endswith("IntegerDataType") or
+                        kind.startswith("Undefined")):
+                    return None
+                width = int(record.get("length", -1))
+                if width <= 0:
+                    return None
+                widths.add(width)
+            return next(iter(widths)) if len(widths) == 1 else None
+        key = self.cpp_type_key(pointee)
+        widths = {
+            "uint8_t": 1, "int8_t": 1, "char": 1,
+            "uint16_t": 2, "int16_t": 2, "short": 2,
+            "uint32_t": 4, "int32_t": 4, "int": 4,
+            "unsigned_long": 4, "long": 4,
+            "size_t": 4,
+            "uint64_t": 8, "int64_t": 8,
+        }
+        return widths.get(key)
 
     @functools.lru_cache(maxsize=None)
     def display_pointee_type(self, display_name: str) -> str | None:
@@ -4156,6 +4235,15 @@ class SourceTreeGenerator:
     ) -> BoundaryValue | None:
         assert self.type_emitter is not None
         compact = expression.strip()
+        # Ghidra frequently wraps address arithmetic in one or more redundant
+        # whole-expression parentheses.  They carry no type information, but
+        # leaving them in place hides an otherwise exact leading cast from the
+        # boundary classifier (for example ``((byte *)offset + delta)``).
+        while compact.startswith("("):
+            closing = self._matching_delimiter(compact, 0, "(", ")")
+            if closing != len(compact) - 1:
+                break
+            compact = compact[1:closing].strip()
         if compact == "nullptr":
             return BoundaryValue("nullptr", "null_pointer")
         if re.fullmatch(r"st::fn_[0-9A-F]{8}", compact):
@@ -4218,7 +4306,8 @@ class SourceTreeGenerator:
                     kind = self.type_emitter.display_pointer_kind(source) or "concrete"
                     return BoundaryValue(source, kind + "_pointer", True)
                 if re.fullmatch(
-                        r"_?(?:DAT|PTR)_[0-9A-Fa-f]{8}", based.group("base")):
+                        r"(?:_?(?:DAT|PTR)_[0-9A-Fa-f]{8}|st_global_[0-9A-Fa-f]{8})",
+                        based.group("base")):
                     return BoundaryValue(
                         "address inside unresolved image datum", "generic_pointer", True
                     )
@@ -4233,7 +4322,8 @@ class SourceTreeGenerator:
                 return BoundaryValue(source, kind + "_pointer", True)
             if named and re.fullmatch(
                     r"(?:_?(?:DAT|PTR)_[0-9A-Fa-f]{8}|st_image_[0-9A-F]{8}|"
-                    r"stack0x[0-9A-Fa-f]+)", named.group(0)):
+                    r"st_global_[0-9A-Fa-f]{8}|stack0x[0-9A-Fa-f]+)",
+                    named.group(0)):
                 return BoundaryValue(
                     "address of unresolved image datum", "generic_pointer", True
                 )
@@ -4306,7 +4396,12 @@ class SourceTreeGenerator:
                 pointer_kind = self.type_emitter.display_pointer_kind(display)
                 if pointer_kind:
                     return BoundaryValue(display, pointer_kind + "_pointer")
-                if re.sub(r"\s+", "", display) == "undefined4":
+                # Arithmetic rooted in any target-width machine word is still
+                # a machine-word value.  Exporter recovery deliberately spells
+                # proven scalar lifetimes as uint rather than undefined4; do
+                # not lose the exact scalar-to-pointer transport boundary just
+                # because that readability repair succeeded.
+                if self.type_emitter.display_machine_word_scalar(display):
                     return BoundaryValue(display, "generic_word")
         return None
 
@@ -4342,7 +4437,7 @@ class SourceTreeGenerator:
             # Every object pointer converts to void * implicitly in C++ just as
             # it does in the decompiler's C dialect.  Emitting a helper there
             # adds noise without solving a language-boundary incompatibility.
-            if normalized_target in {"void*", "constvoid*"} and \
+            if self.type_emitter.display_is_void_pointer(target_display) and \
                     source.kind.endswith("_pointer"):
                 return None
             if normalized_target == "char*" and \
@@ -4361,6 +4456,16 @@ class SourceTreeGenerator:
                     self.type_emitter.display_cpp_equivalent(
                         target_display, source.display_type)):
                 return None
+            # A neutral void receiver reaching one independently recovered object type is an
+            # ordinary C++ void-pointer conversion.  Keep it visible as language syntax rather
+            # than wrapping a readable constructor/base-initializer call in a project helper.
+            if (source.kind.endswith("_pointer") and
+                    self.type_emitter.display_is_void_pointer(
+                        source.display_type) and target_pointer == "concrete"):
+                return (
+                    f"static_cast<{target_type}>({expression})",
+                    f"void storage pointer -> {target_display}",
+                )
             # Ghidra has already made this representation boundary explicit.
             # When the recovered producer/consumer type changes, retarget the
             # outer C pointer cast instead of wrapping it in a second project-
@@ -4382,10 +4487,24 @@ class SourceTreeGenerator:
             # generic byte/word pointer view needs only the ordinary source cast;
             # pointer_boundary_cast would add no proof and can explode once a
             # large byte-buffer function loses a false anonymous-record type.
-            if target_pointer == "generic" and source.address_storage:
+            if source.address_storage and (
+                    target_pointer == "generic" or
+                    self.type_emitter.display_is_neutral_storage_pointer(
+                        target_display)):
                 return (
                     f"({target_type}){expression.strip()}",
                     f"exact storage address {source.display_type} -> "
+                    f"{target_display}",
+                )
+            target_integer_width = \
+                self.type_emitter.display_integer_pointer_width(target_display)
+            source_integer_width = \
+                self.type_emitter.display_integer_pointer_width(source.display_type)
+            if (target_integer_width is not None and
+                    target_integer_width == source_integer_width):
+                return (
+                    f"reinterpret_cast<{target_type}>({expression})",
+                    f"equal-width integer storage {source.display_type} -> "
                     f"{target_display}",
                 )
             zero_member = self.type_emitter.display_zero_member_for_pointer_conversion(
@@ -5587,7 +5706,9 @@ class SourceTreeGenerator:
         for assignment in assignment_patterns:
             for match in assignment.finditer(masked):
                 lhs = match.group("lhs").strip()
-                target_display = self._simple_expression_display(lhs, declared_types)
+                target_display = self._simple_expression_display(
+                    lhs, declared_types, allow_record_name_fallback=True
+                )
                 if not target_display:
                     continue
                 start = match.end()

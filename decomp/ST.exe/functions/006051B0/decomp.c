@@ -18,7 +18,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   STT3DSprC *pSVar7;
   int iVar9;
   int iVar8;
-  undefined4 uVar10;
+  uint uVar10;
   bool bVar11;
   InternalExceptionFrame local_68;
   undefined4 local_24;

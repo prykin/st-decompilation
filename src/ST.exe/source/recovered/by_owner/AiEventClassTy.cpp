@@ -13,8 +13,7 @@ AiEventClassTy * __thiscall st::fn_0064CC90(AiEventClassTy *this)
 
 {
   int iVar1;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   this->field_0004 = '\0';
   this->field_0084 = 0;
   this->vtable = &st_global_0079D67C;
@@ -188,7 +187,7 @@ int __thiscall st::fn_0065BD70(AiEventClassTy *this,STMessage *message,int param
     this->field_052F[0] = (uint)message->arg0;
     goto cf_common_exit_0065C65B;
   case MESS_AIBOSSCLASSTY_5DC6:
-    pcVar9 = st::pointer_boundary_cast<char *>((message->arg0).ptr);
+    pcVar9 = static_cast<char *>((message->arg0).ptr);
     pDVar10 = this->field_05B3;
     uVar6 = 0;
     break;
@@ -319,7 +318,7 @@ LAB_0065c021:
   case 0x5de0:
   case 0x5de1:
   case 0x5de2:
-    this_00 = st::pointer_boundary_cast<STFishC *>((message->arg0).ptr);
+    this_00 = static_cast<STFishC *>((message->arg0).ptr);
     if (this_00 != nullptr) {
       this->field_052F[0] = 0;
       this->field_052F[1] = 0;

@@ -30,7 +30,7 @@ LAB_005f5d4b:
       if ((int *)this->field_0034 != nullptr) {
         /* ST_CALLSITE[005F5D91]: CALL dword ptr [EAX + 0xe0] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar1 = (**(code **)(*(int *)this->field_0034 + 0xe0))
+        iVar1 = (**(code **)(*STField<int *>(this,0x34) + 0xe0))
                           (this->field_0038,(int)&param_1 + 2,&local_6,&local_8,&local_c);
         if (iVar1 == 0) {
           this->field_0040 = (int)STPiece<2,2>(param_1);

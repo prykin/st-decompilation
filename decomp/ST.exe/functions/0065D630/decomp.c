@@ -4,7 +4,7 @@
 void __fastcall FUN_0065d630(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   undefined4 local_24 [8];
 
   thunk_FUN_0065e6c0(param_1,param_2);

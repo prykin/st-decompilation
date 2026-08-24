@@ -10,10 +10,9 @@ undefined4 __fastcall FUN_004cd480(AnonShape_004CC900_31EE9CAA *param_1)
   int local_EAX_235;
   int uVar1;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
-  undefined4 uVar6;
-
+  uint uVar6;
   iVar3 = 0;
   /* ST_CALLSITE[004CD493]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   local_EAX_19 = LookupRecordByte(param_1->field_0x464);

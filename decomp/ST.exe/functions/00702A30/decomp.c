@@ -21,8 +21,8 @@ void FUN_00702a30(undefined1 *param_1,int param_2,byte *param_3,int param_4,usho
   ushort *puVar8;
   byte *pbVar9;
   byte *pbVar10;
-  undefined1 *puVar11;
-  undefined1 *puVar12;
+  byte *puVar11;
+  byte *puVar12;
   byte *pbVar12_mg0;
   uint local_10;
   uint local_c;

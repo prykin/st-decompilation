@@ -18,8 +18,8 @@ void FUN_00702510(undefined1 *param_1,int param_2,byte *param_3,int param_4,usho
   ushort *puVar5;
   ushort *puVar6;
   byte bVar7;
-  undefined1 *puVar8;
-  undefined1 *puVar9;
+  byte *puVar8;
+  byte *puVar9;
   byte *pbVar10;
   byte *pbVar11_mg0;
   uint local_10;

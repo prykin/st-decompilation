@@ -1,7 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_0055c590(undefined4 param_1,LPCVOID param_2,LPCVOID param_3)
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0055C590 -> EXTERNAL:00000059 @ 0055C63C
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0055C590 -> EXTERNAL:00000059 @ 0055C63C */
+
+void FUN_0055c590(undefined4 param_1,LPCVOID lpBuffer,LPCVOID nNumberOfBytesToWrite)
 
 {
   bool bVar1;
@@ -12,7 +18,7 @@ void FUN_0055c590(undefined4 param_1,LPCVOID param_2,LPCVOID param_3)
   if (g_fSGS_0081174C == nullptr) {
     return;
   }
-  if (param_2 != (LPCVOID)0x0) {
+  if (lpBuffer != (LPCVOID)0x0) {
     bVar1 = true;
     /* ST_CALLSITE[0055C5D5]: CALL ESI */
     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079aef0);
@@ -24,11 +30,12 @@ void FUN_0055c590(undefined4 param_1,LPCVOID param_2,LPCVOID param_3)
     /* ST_CALLSITE[0055C61F]: CALL dword ptr [0x0085bc80] */
     hFile = CreateFileA((LPCSTR)&DAT_0080f33a,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,
                         (HANDLE)0x0);
-    pvVar2 = param_3;
+    pvVar2 = nNumberOfBytesToWrite;
     if (hFile != (HANDLE)0xffffffff) {
       /* ST_CALLSITE[0055C63C]: CALL dword ptr [0x0085bc90] */
-      BVar3 = WriteFile(hFile,param_2,(DWORD)param_3,(LPDWORD)&param_2,(LPOVERLAPPED)0x0);
-      if ((BVar3 != 0) && (pvVar2 == param_2)) {
+      BVar3 = WriteFile(hFile,lpBuffer,(DWORD)nNumberOfBytesToWrite,(LPDWORD)&lpBuffer,
+                        (LPOVERLAPPED)0x0);
+      if ((BVar3 != 0) && (pvVar2 == lpBuffer)) {
         bVar1 = false;
       }
       /* ST_CALLSITE[0055C64E]: CALL dword ptr [0x0085bbc8] */

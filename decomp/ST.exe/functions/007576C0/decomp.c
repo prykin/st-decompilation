@@ -4,8 +4,7 @@
 void FUN_007576c0(undefined4 *param_1)
 
 {
-  undefined4 *puVar1;
-
+  uint *puVar1;
   /* ST_CALLSITE[007576CE]: CALL dword ptr [EAX] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,0,0x1c);

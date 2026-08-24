@@ -25,7 +25,7 @@ ST3DSMAPContext::sub_006EA8A0
   if ((param_1 < (uint)this->field_0310) &&
      (puVar1 = (uint *)(this->field_031C + param_1 * 0x114), (*puVar1 & 0x8000) != 0)) {
     if ((int)puVar1[0x25] <= param_2) {
-      FUN_006e91a0();
+      FUN_006e91a0("SprSetPlanePhan");
       return;
     }
     if ((int)param_3 < 1) {
@@ -44,7 +44,7 @@ ST3DSMAPContext::sub_006EA8A0
     }
   }
   else if (param_1 != 0xffffffff) {
-    FUN_006e8c50();
+    FUN_006e8c50("SprSetPlanePhan");
   }
   return;
 }

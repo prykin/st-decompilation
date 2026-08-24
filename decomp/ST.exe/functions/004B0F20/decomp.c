@@ -17,14 +17,21 @@
 
    [STPrototypeApplier] Propagated parameter 5.
    Evidence: 004CDFD0 -> 004B0F20 @ 004CE028; zero-filled partial register load at 004CE011 |
-   0064D270 -> 004B0F20 @ 0064D6D4; AiEventClassTy::__CreateObjPl parameter param_6 */
+   0064D270 -> 004B0F20 @ 0064D6D4; AiEventClassTy::__CreateObjPl parameter param_6
 
-void __cdecl
+   [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /int; every later accumulator definition is an exact full-width integer transform of that value;
+   at least two resolved callers confirm that the entry is an externally observed ABI boundary;
+   machine CFG audit: used=1, ignored=1, unknown=0 */
+
+int __cdecl
 FUN_004b0f20(int param_1,int param_2,int param_3,int param_4,int param_5,uint param_6,int param_7,
             char *param_8,undefined4 param_9,undefined4 param_10)
 
 {
-  undefined4 *puVar2;
+  int iVar1_mg1;
+  uint *puVar2;
   undefined4 local_74;
   int local_70;
   undefined4 local_6c;
@@ -77,7 +84,7 @@ FUN_004b0f20(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   local_21 = param_10;
   local_1d = 100;
   /* ST_CALLSITE[004B0FEA]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
-  STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x3e9,0,0,&local_74,0);
-  return;
+  iVar1_mg1 = STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x3e9,0,0,&local_74,0);
+  return iVar1_mg1;
 }
 

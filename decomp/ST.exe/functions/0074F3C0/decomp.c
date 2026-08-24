@@ -14,7 +14,7 @@ FUN_0074f3c0(int *param_1,uint *param_2,uint param_3,uint *param_4,
   uint uVar2;
   uint uVar3;
   uint uVar4;
-  undefined4 uVar5;
+  uint uVar5;
   uint uVar6;
   LPCRITICAL_SECTION p_Var7;
 

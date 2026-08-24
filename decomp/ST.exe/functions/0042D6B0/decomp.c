@@ -13,8 +13,7 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
   int iVar3;
-  undefined4 *puVar4;
-
+  uint *puVar4;
   iVar3 = (int)param_1;
   iVar1 = g_packedRecords_A62x8[iVar3].field200_0x203;
   if (iVar1 == 0) {

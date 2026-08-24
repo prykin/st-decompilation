@@ -22,7 +22,7 @@ STAllPlayersC::DestroyObjectMsg
 {
   uint uVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   DArrayTy *array;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;

@@ -538,7 +538,7 @@ switchD_006288e6_caseD_0:
 undefined4 __thiscall st::fn_00629070(STParticleC *this,int param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   uint uVar3;
   short sVar5;
@@ -549,7 +549,7 @@ undefined4 __thiscall st::fn_00629070(STParticleC *this,int param_1)
   ushort *puVar9;
   int iVar10;
   int iVar11;
-  undefined4 uVar11;
+  uint uVar11;
   int iVar12;
   char **ppcVar13;
   bool bVar14;
@@ -685,7 +685,7 @@ LAB_00629242:
   local_1c->field_00CA = puVar9;
   puVar1 = &local_1c->field_00C6;
   st::fn_006E8660
-            (g_sT3DSMAPContext_00807598,st::pointer_boundary_cast<int *>(puVar1),2,0,STField<uint>(puVar9,9),
+            (g_sT3DSMAPContext_00807598,reinterpret_cast<int *>(puVar1),2,0,STField<uint>(puVar9,9),
              STField<uint>(puVar9,0xd),local_10,local_c,0);
   if (DAT_00807326 != '\0') {
     st::fn_006E9520
@@ -781,7 +781,7 @@ LAB_00629242:
 undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   AnonPointee_STParticleC_00EB *pAVar2;
   short sVar4;
   float fVar5;
@@ -792,7 +792,7 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
   ushort *puVar8;
   int iVar9;
   int iVar10;
-  undefined4 uVar10;
+  uint uVar10;
   int iVar11;
   bool bVar12;
   uint *puVar13;
@@ -831,7 +831,7 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
     puVar1 = &pSVar7->field_00C6;
     if ((int)pSVar7->field_00C6 < 0) {
       st::fn_006E8660
-                (g_sT3DSMAPContext_00807598,st::pointer_boundary_cast<int *>(puVar1),2,0,STField<uint>(puVar8,9),
+                (g_sT3DSMAPContext_00807598,reinterpret_cast<int *>(puVar1),2,0,STField<uint>(puVar8,9),
                  STField<uint>(puVar8,0xd),0x5a,0x45,0);
     }
     else {

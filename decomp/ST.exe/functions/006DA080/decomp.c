@@ -12,9 +12,9 @@ int FUN_006da080(int *param_1,uint *param_2,int param_3,int param_4,int param_5,
   int iVar2;
   uint local_2c [3];
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

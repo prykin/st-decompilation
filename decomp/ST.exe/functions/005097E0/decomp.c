@@ -25,7 +25,7 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   char *pcVar5_mg0;
   LPSTR pCVar5;
   uint uVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   int iVar12;
   uint uVar8;
   byte bVar9;
@@ -33,16 +33,16 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   int iVar11;
   int iVar13;
   uint *puVar14;
-  undefined1 *puVar15;
-  undefined4 uVar16;
-  undefined4 uVar17;
+  byte *puVar15;
+  uint uVar16;
+  uint uVar17;
   short sVar18;
   ushort uVar19;
   ushort uVar20;
   int iVar21;
-  undefined4 uVar22;
+  uint uVar22;
   char *pcVar23;
-  undefined4 uVar24;
+  uint uVar24;
   AnonShape_004F2E40_DC76A8C6 local_b44 [7];
   undefined4 local_25c [84];
   InternalExceptionFrame local_10c;
@@ -71,7 +71,7 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   uint *local_18;
   int local_14;
   uint local_10;
-  undefined1 *local_c;
+  byte *local_c;
   uint *local_8;
 
   local_10c.previous = g_currentExceptionFrame;
@@ -147,19 +147,19 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
       if (*local_1c == 0) goto LAB_00509a02;
       iVar13 = 0xe;
       iVar11 = 0xf;
-      switch(local_1c + iVar10) {
+      switch(static_cast<uint32_t>(STRawWord(local_1c + iVar10))) {
       case 0:
         iVar13 = 0x4b;
         break;
-      case (Global_sub_00529590_param_1Enum *)0x1:
+      case 0x1:
         iVar13 = 0x88;
         break;
-      case (Global_sub_00529590_param_1Enum *)0x2:
+      case 0x2:
         goto switchD_00509942_caseD_2;
-      case (Global_sub_00529590_param_1Enum *)0x3:
+      case 0x3:
         iVar13 = 0x88;
         goto switchD_00509942_caseD_2;
-      case (Global_sub_00529590_param_1Enum *)0x4:
+      case 0x4:
         iVar13 = 0x4b;
 switchD_00509942_caseD_2:
         iVar11 = 0x37;

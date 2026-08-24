@@ -16,10 +16,10 @@ ST3DSMAPContext::sub_00709470
           (ST3DSMAPContext *this,int *param_1,int param_2,int param_3,int param_4,byte param_5)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   short sVar2;
   int iVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   RecoveredSourceFamily_dibcopy *pRVar5;
   byte *pbVar6;
   int iVar7;
@@ -31,7 +31,7 @@ ST3DSMAPContext::sub_00709470
   int iVar13;
   undefined4 local_414;
   ST3DSMAPContext *local_14;
-  undefined4 local_10;
+  uint local_10;
   int local_c;
   int local_8;
 

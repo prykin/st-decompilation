@@ -10,6 +10,7 @@ int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int
 {
   int iVar1;
   int iVar2;
+  int iVar2_mg2;
   int iVar3;
   int iVar4;
   AnonShape_00412960_B35D15BC *pAVar5;
@@ -63,22 +64,23 @@ int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int
       DAT_007f4d28 = (DAT_007f4d28 * iVar2) / iVar4;
     }
     if (param_8 == 0) {
-      iVar2 = FUN_00412de0(param_1,param_2,param_3);
-      if (iVar2 == 0) {
+      iVar2_mg2 = FUN_00412de0(param_1,param_2,param_3);
+      if (iVar2_mg2 == 0) {
         FUN_0040eb90();
         return 0;
       }
     }
     else {
-      iVar2 = FUN_00412b80(param_1,param_2,param_3);
-      if (iVar2 == 0) {
+      iVar2_mg2 = FUN_00412b80(param_1,param_2,param_3);
+      if (iVar2_mg2 == 0) {
         return 0;
       }
     }
-    if (iVar2 != -4) {
+    if (iVar2_mg2 != -4) {
       RaiseInternalException
-                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0xc7a);
-      return iVar2;
+                (iVar2_mg2,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",
+                 0xc7a);
+      return iVar2_mg2;
     }
   }
   return -4;

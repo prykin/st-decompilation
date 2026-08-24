@@ -7,7 +7,7 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
 {
   short *psVar1;
   int iVar2;
-  undefined1 *puVar3;
+  byte *puVar3;
   uint uVar4;
   uint uVar5;
   int local_EAX_152;

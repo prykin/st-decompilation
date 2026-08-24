@@ -13,7 +13,7 @@ SndUnderAttMenegC::sub_00621300(SndUnderAttMenegC *this,int param_1,int param_2,
   SndUnderAttMenegC_field_0101DArray *array;
   uint index;
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_8;
 
   uVar2 = 0xffffffff;

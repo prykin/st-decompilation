@@ -234,7 +234,7 @@ byte * __thiscall st::fn_005F1FA0(STManBasisC *this,int *param_1)
 
 {
   uint size;
-  undefined4 uVar1;
+  uint uVar1;
   byte *pbVar2;
   uint uVar4;
   uint *puVar5;
@@ -259,7 +259,7 @@ byte * __thiscall st::fn_005F1FA0(STManBasisC *this,int *param_1)
     }
   }
   if (this->field_003C != nullptr) {
-    local_14 = st::pointer_boundary_cast<uint *>(st::fn_006B0020(&this->field_003C->flags,(int *)&local_c));
+    local_14 = static_cast<uint *>(st::fn_006B0020(&this->field_003C->flags,(int *)&local_c));
     if (local_c == 0) {
       st::fn_006AE110(this->field_003C);
       this->field_003C = nullptr;
@@ -319,7 +319,7 @@ undefined4 __thiscall st::fn_005F2110(STManBasisC *this,undefined4 *param_1)
   void *pvVar3;
   int iVar4;
   uint uVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   int *piVar7;
   ushort **ppuVar8;
 
@@ -331,7 +331,7 @@ undefined4 __thiscall st::fn_005F2110(STManBasisC *this,undefined4 *param_1)
     ppuVar8 = ppuVar8 + 1;
   }
   DAT_00811788 = this->field_0034;
-  piVar7 = st::pointer_boundary_cast<int *>(param_1 + 10);
+  piVar7 = reinterpret_cast<int *>(param_1 + 10);
   if (this->field_0038 != nullptr) {
     pSVar2 = (STManBasisC_field_0038DArray *)st::fn_006B0060(nullptr,param_1 + 0xb);
     this->field_0038 = pSVar2;
@@ -369,7 +369,7 @@ int __thiscall st::fn_005F21D0(STManBasisC *this)
   dword dVar1;
   STManBasisC_field_0038DArray *pSVar2;
   DArrayTy *pDVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   short *psVar5;
   uint uVar6;
 

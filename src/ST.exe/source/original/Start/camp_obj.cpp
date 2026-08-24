@@ -17,8 +17,8 @@ void __thiscall st::fn_00590B40(CampaignTy *this,undefined4 param_1)
   int iVar2;
   LPSTR pCVar3;
   ushort *puVar4;
-  undefined4 *puVar5;
-  uint *puVar6;
+  uint *puVar5;
+  char *pcVar6;
   short *psVar7;
   DWORD DVar8;
   int iVar16;
@@ -30,10 +30,10 @@ void __thiscall st::fn_00590B40(CampaignTy *this,undefined4 param_1)
   int iVar14;
   int iVar15;
   byte bVar16;
-  undefined1 uVar17;
-  undefined4 uVar18;
+  byte uVar17;
+  uint uVar18;
   int iVar19;
-  undefined4 uVar20;
+  uint uVar20;
   uint uVar21;
   undefined4 local_26c;
   undefined4 local_245;
@@ -90,7 +90,7 @@ void __thiscall st::fn_00590B40(CampaignTy *this,undefined4 param_1)
         bVar16 = 0;
         pCVar3 = st::fn_006F2C00(st::mutable_c_string("CMPG_FLC"),3,iVar9);
         puVar4 = st::fn_0071AD00(g_cMf32_00806780,pCVar3,bVar16,iVar19);
-        *puVar5 = st::machine_word_boundary_cast<undefined4>(puVar4);
+        *puVar5 = st::machine_word_boundary_cast<uint>(puVar4);
         puVar5 = puVar5 + 1;
         iVar9 = iVar9 + 1;
         local_c = local_c + -1;
@@ -105,7 +105,7 @@ void __thiscall st::fn_00590B40(CampaignTy *this,undefined4 param_1)
       bVar16 = 0;
       pCVar3 = st::fn_006F2C00(st::mutable_c_string("CMPG_FONFLC"),2,iVar9);
       puVar4 = st::fn_0071AD00(g_cMf32_00806780,pCVar3,bVar16,iVar19);
-      *puVar5 = st::machine_word_boundary_cast<undefined4>(puVar4);
+      *puVar5 = st::machine_word_boundary_cast<uint>(puVar4);
       iVar9 = iVar9 + 1;
       puVar5 = puVar5 + 1;
     } while (iVar9 < 4);
@@ -337,10 +337,10 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar19 = 0x28;
           iVar9 = 0x8c;
-          puVar6 = (uint *)st::fn_006B0140(0x23f1,g_hINSTANCE_00807618);
+          pcVar6 = st::fn_006B0140(0x23f1,g_hINSTANCE_00807618);
           psVar7 = (short *)st::fn_00713480
-                                      (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
-                                       ,uVar12,iVar13,iVar14,iVar15);
+                                      ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar6,iVar9,
+                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15);
           /* ST_CALLSITE[00591124]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[2].field_00B9,psVar7,uVar17,uVar21);
           uVar21 = 0xffffffff;
@@ -354,10 +354,10 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar19 = 0x28;
           iVar9 = 0x8c;
-          puVar6 = (uint *)st::fn_006B0140(0x23f0,g_hINSTANCE_00807618);
+          pcVar6 = st::fn_006B0140(0x23f0,g_hINSTANCE_00807618);
           psVar7 = (short *)st::fn_00713480
-                                      (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
-                                       ,uVar12,iVar13,iVar14,iVar15);
+                                      ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar6,iVar9,
+                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15);
           /* ST_CALLSITE[00591174]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[3].field_00B9,psVar7,uVar17,uVar21);
           uVar21 = 0xffffffff;
@@ -371,10 +371,10 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar19 = 0x28;
           iVar9 = 0x8c;
-          puVar6 = (uint *)st::fn_006B0140(0x23f2,g_hINSTANCE_00807618);
+          pcVar6 = st::fn_006B0140(0x23f2,g_hINSTANCE_00807618);
           psVar7 = (short *)st::fn_00713480
-                                      (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
-                                       ,uVar12,iVar13,iVar14,iVar15);
+                                      ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar6,iVar9,
+                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15);
           /* ST_CALLSITE[005911C5]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[4].field_00B9,psVar7,uVar17,uVar21);
           /* ST_CALLSITE[005911CA]: CALL 0x00401a5f; direct=00401A5F CampaignTy::PaintCampaign */
@@ -382,7 +382,7 @@ switchD_00590d73_default:
           iVar9 = 0;
           if (this_02->field_009A != '\0') {
             local_c = 0;
-            piVar10 = st::pointer_boundary_cast<int *>(&this_02->field_00BB[0].field_0028.field_0040);
+            piVar10 = reinterpret_cast<int *>(&this_02->field_00BB[0].field_0028.field_0040);
             do {
               /* ST_CALLSITE[005911E4]: CALL dword ptr [0x0085bedc] */
               DVar8 = st::external_000000DA();
@@ -475,7 +475,7 @@ void __thiscall st::fn_005916F0(CampaignTy *this)
   int iVar3;
   int iVar6;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   uint *puVar6;
   int iVar7;
   InternalExceptionFrame local_4c;
@@ -578,7 +578,7 @@ void __thiscall st::fn_00591940(CampaignTy *this)
   int iVar5;
   StartServTy *this_00;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   uint *puVar6;
   int iVar7;
   uint uVar8;
@@ -606,7 +606,7 @@ void __thiscall st::fn_00591940(CampaignTy *this)
   /* ST_CALLSITE[0059199D]: CALL 0x00403738; direct=00403738 PutDDX */
   st::fn_00403738(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
   pCVar2 = local_8;
-  pcVar11 = g_startSystem_0081176C->field_0030;
+  pcVar11 = (ccFntTy *)g_startSystem_0081176C->field_0030;
   uVar9 = 0xffffffff;
   uVar8 = 0xfffffffe;
   resourceString =
@@ -699,7 +699,7 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
   DWORD *pDVar8;
   int *piVar9;
   int iVar11;
-  undefined4 *puVar10;
+  uint *puVar10;
   int iVar12;
   uint *puVar13;
   int iVar14;
@@ -778,7 +778,7 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
             iVar14 = 0;
             local_8 = 0;
             if (uVar7 != 0) {
-              pDVar8 = &this_00->field_00BB[0].field_014A.field_0044;
+              pDVar8 = (DWORD *)&this_00->field_00BB[0].field_014A.field_0044;
               do {
                 if (*(char *)((int)pDVar8 + -0x167) != '\0') {
                   *pDVar8 = this_00->field_0061;
@@ -870,7 +870,7 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
         puVar10[2] = iVar3 + iVar4;
         puVar10[4] = piVar9[2];
         iVar12 = iVar12 + 1;
-        puVar10[3] = st::machine_word_boundary_cast<undefined4>(piVar9[0x1a] + piVar9[1]);
+        puVar10[3] = st::machine_word_boundary_cast<uint>(piVar9[0x1a] + piVar9[1]);
         puVar10[5] = piVar9[3];
         puVar10 = puVar10 + 0x1c;
         iVar14 = iVar14 + -1;
@@ -887,7 +887,7 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
       local_50 = local_70;
       /* ST_CALLSITE[0059208E]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)this_00->field_000C + 8))(5,this_00->field_0066,0,local_80,0);
+      (**(code **)(*STField<int *>(this_00,0xC) + 8))(5,this_00->field_0066,0,local_80,0);
       iVar14 = this_00->field_00BB[0xc].field_01DC;
       if (*(int *)(iVar14 + 0x2e6) != 0) {
         memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
@@ -977,7 +977,7 @@ LAB_00591d08:
 void __thiscall st::fn_00592340(CampaignTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   CampaignTy *pCVar3;
   int iVar4;
   int iVar5;
@@ -1043,7 +1043,7 @@ void __thiscall st::fn_00592470(CampaignTy *this)
     iVar2 = 0;
     if (this_00->field_009A != '\0') {
       iVar5 = 0x96;
-      piVar4 = st::pointer_boundary_cast<int *>(&this_00->field_00BB[0].field_0028.field_0040);
+      piVar4 = reinterpret_cast<int *>(&this_00->field_00BB[0].field_0028.field_0040);
       do {
         /* ST_CALLSITE[005924C2]: CALL dword ptr [0x0085bedc] */
         DVar3 = st::external_000000DA();
@@ -1093,7 +1093,7 @@ void __thiscall st::fn_005926E0(CampaignTy *this)
   CampaignTy_field_1BE8State CVar5;
   int iVar6;
   uint *puVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   int *piVar9;
   uint uVar10;
   char cVar11;
@@ -1640,7 +1640,7 @@ int __thiscall st::fn_00593040(CampaignTy *this,STMessage *message)
     st::fn_00404DB8((MTaskTy *)this_00);
     break;
   case MESS_SHARED_697F:
-    piVar3 = st::pointer_boundary_cast<int *>((message->arg0).ptr);
+    piVar3 = static_cast<int *>((message->arg0).ptr);
     if (*piVar3 == 1) {
       iVar17 = 2;
     }

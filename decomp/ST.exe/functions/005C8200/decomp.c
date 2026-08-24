@@ -17,7 +17,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200
           (AnonReceiver_0053F510 *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   byte bVar2;
   SettMapTy *this_00;
   int iVar2;

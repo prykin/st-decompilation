@@ -21,20 +21,20 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   ushort *puVar4;
   DArrayTy *pDVar5;
   int iVar17;
-  undefined4 uVar6;
-  undefined4 uVar7;
+  uint uVar6;
+  uint uVar7;
   short sVar8;
   ushort uVar9;
   uint uVar10;
   byte bVar11;
-  undefined4 uVar12;
+  uint uVar12;
   char *pcVar13;
   int *piVar14;
   int iVar15;
-  undefined4 uVar16;
+  uint uVar16;
   int iVar18;
-  undefined4 *puVar19;
-  undefined4 uVar20;
+  uint *puVar19;
+  uint uVar20;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
 
@@ -46,7 +46,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   if (iVar2 == 0) {
     g_optPanel_008016DC = local_8;
     /* ST_CALLSITE[0052E62C]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar2 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
+    pcVar2 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     this_00->field_017C = pcVar2;
     pcVar2->field_0058 = 0;
     pcVar2->field_005C = 0;
@@ -88,7 +88,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     this_00->field_0198 = local_EAX_317;
     puVar4 = this_00->field_0184 + 0x14;
     iVar18 = 1;
-    uVar11 = FUN_006b4fe0((int)this_00->field_0184);
+    uVar11 = FUN_006b4fe0(this_00->field_0184);
     puVar4 = (ushort *)
              FUN_006b50c0(0xde,0xb,(uint)this_00->field_0184[7],uVar11,(undefined4 *)puVar4,iVar18);
     this_00->field_01E5 = puVar4;

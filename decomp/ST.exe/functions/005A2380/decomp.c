@@ -12,7 +12,7 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
   FSGSTy_field_1EA6DArray *array;
   FSGSTy *this_00;
   int iVar3;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar5;
   uint uVar6;

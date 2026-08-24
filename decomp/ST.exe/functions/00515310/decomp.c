@@ -21,7 +21,7 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
   char *pcVar7_mg1;
   char *pcVar7_mg2;
   uint *puVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   uint uVar9;
   char *pcVar10;
   UINT resourceId;

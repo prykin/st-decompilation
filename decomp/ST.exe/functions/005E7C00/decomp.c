@@ -19,7 +19,7 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
   int iVar6;
   DArrayTy *pDVar7;
   DArrayTy *pDVar8;
-  undefined4 *puVar9;
+  uint *puVar9;
   char *pcVar10;
   int iVar11;
   uint uVar12;
@@ -50,11 +50,12 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
                      ((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC)->field_0004,
                      (0x16 - pWVar5->field_1AF4) * 0x13,0);
       }
-      pDVar7 = (DArrayTy *)ccFntTy::_TxtToSarr(g_startSystem_0081176C->field_0030,param_1);
+      pDVar7 = (DArrayTy *)
+               ccFntTy::_TxtToSarr((ccFntTy *)g_startSystem_0081176C->field_0030,param_1);
       pDVar8 = local_10;
       if (pDVar7 != nullptr) {
         pDVar8 = (DArrayTy *)
-                 ccFntTy::FormSarr(g_startSystem_0081176C->field_0030,(uint *)pDVar7,
+                 ccFntTy::FormSarr((ccFntTy *)g_startSystem_0081176C->field_0030,(uint *)pDVar7,
                                    " ,.;:!?/\\()[]{}",0x1e4,0,0xffffffff,1);
         local_10 = pDVar8;
         FUN_006b5570(pDVar7);
@@ -118,15 +119,15 @@ LAB_005e7d14:
         do {
           FUN_006b4170((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC,0,0,uVar12,
                        ((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC)->field_0004,0x13,0);
-          ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)pWVar5->field_1AEC,0,2,uVar12,
-                           *(int *)(pWVar5->field_1AEC + 2) + -4,0x13);
+          ccFntTy::SetSurf((ccFntTy *)g_startSystem_0081176C->field_0030,(int)pWVar5->field_1AEC,0,2
+                           ,uVar12,*(int *)(pWVar5->field_1AEC + 2) + -4,0x13);
           if (iVar6 < (int)pWVar5->field_1AF0->elementSize) {
             pcVar10 = *(char **)(pWVar5->field_1AF0->growCapacity + iVar6 * 4);
           }
           else {
             pcVar10 = nullptr;
           }
-          ccFntTy::WrStr(g_startSystem_0081176C->field_0030,pcVar10,0,-1,1);
+          ccFntTy::WrStr((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar10,0,-1,1);
           FUN_006b35d0((int *)g_ddxContext_008075A8,*local_8);
           iVar6 = iVar6 + 1;
           local_8 = local_8 + 1;

@@ -35,6 +35,7 @@ import ghidra.program.model.data.Undefined;
 import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
+import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
@@ -43,6 +44,7 @@ import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.pcode.DataTypeSymbol;
 import ghidra.program.model.pcode.HighFunction;
 import ghidra.program.model.pcode.HighFunctionDBUtil;
+import ghidra.program.model.scalar.Scalar;
 import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.Symbol;
@@ -59,6 +61,7 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
     private final Map<Address, ParameterReturn> returnedPointerParameterCache =
         new HashMap<>();
     private final Set<Address> returnedPointerParameterMisses = new HashSet<>();
+    private final Map<Address, String> machineScalarReturnCache = new HashMap<>();
     private boolean repairOnly;
 
     @Override
@@ -123,6 +126,42 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 "restore the earlier evidence-backed void type after an unsafe automated " +
                 "rollback; post-CALL EAX reads alone do not prove a source-level return value" +
                 observedEvidence(observed));
+
+        /*
+         * The first machine-return implementation counted `xor eax,eax` as a
+         * read of the preceding CALL result because EAX appears in x86's input
+         * object list.  It is in fact an exact kill.  Repair only values which
+         * carry our marker and whose now-correct complete caller audit proves
+         * that every resolved caller kills EAX.
+         */
+        boolean falseMachineReturn = mutable && currentType.equals("/undefined4") &&
+            hasMarker(function, "machine_eax_return") && observed != null &&
+            observed.used == 0 && observed.unknown == 0 && observed.ignored >= 2;
+        if (falseMachineReturn)
+            return row(function, currentType, "/void", function.hasNoReturn(), false,
+                true, "repair_false_machine_eax_return", "high",
+                "the earlier machine return was admitted only because a self-zeroing " +
+                "XOR/SUB was misclassified as reading the call result; every resolved " +
+                "caller now proves an exact EAX kill" + observedEvidence(observed));
+        /*
+         * Repair the short-lived returned-parameter normalization during the ordinary export
+         * safety pass as well.  This needs no caller/decompiler evidence: the complete machine
+         * CFG proves that every RET carries the same formal pointer parameter, while the marker
+         * proves that the current void return is automation-owned.
+         */
+        ParameterReturn erasedReturnedParameter = mutable &&
+            currentType.equals("pointer:/void") &&
+            hasMarker(function, "returned_pointer_parameter") ?
+                cachedReturnedPointerParameter(function) : null;
+        if (erasedReturnedParameter != null &&
+                !erasedReturnedParameter.type.equals(currentType))
+            return row(function, currentType, erasedReturnedParameter.type,
+                function.hasNoReturn(), false, true,
+                "returned_pointer_parameter", "high",
+                "the complete machine CFG returns incoming pointer parameter " +
+                erasedReturnedParameter.name + " (ordinal=" +
+                erasedReturnedParameter.ordinal + "); restore its exact formal pointer " +
+                "type after the obsolete void-pointer normalization");
         // The export safety pass repairs only a mutation made by this script itself. Ordinary
         // semantic discovery belongs to deep mode; otherwise export can start a transitive
         // void-inference chain and fail its own small ABI stabilization bound.
@@ -143,10 +182,44 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 "leaf_void", "high",
                 "leaf function has RET and never writes EAX/AX/AL/AH");
 
+        /*
+         * Low-level validation helpers commonly call a diagnostic routine and
+         * immediately return through a shared epilogue.  Once that diagnostic
+         * routine is correctly typed void, Ghidra exposes its residual EAX as
+         * `extraout_EAX`.  The containing routine is source-level void only
+         * when every direct caller independently kills EAX and at least one
+         * terminal path ends in the machine-proven diagnostic wrapper.
+         */
+        boolean diagnosticResidueVoid = mutable && !currentType.equals("/void") &&
+            observed != null && observed.used == 0 && observed.unknown == 0 &&
+            observed.ignored > 0 && hasTerminalDiagnosticReturn(function);
+        if (diagnosticResidueVoid)
+            return row(function, currentType, "/void", function.hasNoReturn(), false,
+                true, "diagnostic_residue_void", "high",
+                "every direct caller kills EAX before reading it and at least one " +
+                "callee return path consists of a machine-proven void diagnostic " +
+                "wrapper followed only by an epilogue" + observedEvidence(observed));
+
+        String scalarMachineReturn = mutable && genericUnknown(currentType) &&
+            observed != null && observed.used > 0 ?
+                machineScalarReturnType(function) : "";
+        if (!scalarMachineReturn.isBlank() &&
+                !scalarMachineReturn.equals(currentType))
+            return row(function, currentType, scalarMachineReturn,
+                function.hasNoReturn(), false, true,
+                "machine_scalar_return", "high",
+                "every reachable RET carries a machine-proven scalar domain; exact " +
+                "negative immediate returns establish signed int while zero is a " +
+                "signedness-neutral member of that same domain" +
+                observedEvidence(observed));
+
+        int observedCallers = observed == null ? 0 :
+            observed.used + observed.ignored + observed.unknown;
+        boolean forwardedCallerGate = observed != null && observed.used > 0 &&
+            observed.unknown == 0 && observedCallers >= 1;
         String forwardedReturn = mutable &&
             (genericUnknown(currentType) || currentType.equals("/void")) &&
-            observed != null && observed.used >= 2 ?
-                exactForwardedCallReturn(function) : "";
+            forwardedCallerGate ? exactForwardedCallReturn(function) : "";
         if (!forwardedReturn.isBlank() && !forwardedReturn.equals(currentType))
             return row(function, currentType, forwardedReturn,
                 function.hasNoReturn(), false, true,
@@ -154,13 +227,27 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 "every reachable RET receives full EAX from a trusted concrete " +
                     "callee with return type " + forwardedReturn +
                     "; every later accumulator definition is an exact full-width " +
-                    "integer transform of that value" +
+                    "integer transform of that value; every resolved caller-use path " +
+                    "is closed and at least one caller consumes the ABI result" +
                     observedEvidence(observed));
+
+        String typedMachineReturn = mutable && observed != null &&
+            observed.used > 0 && observed.unknown == 0 &&
+            (genericUnknown(currentType) || currentType.equals("/void")) ?
+                exactTypedGlobalOrCallReturn(function) : "";
+        if (!typedMachineReturn.isBlank() &&
+                !typedMachineReturn.equals(currentType))
+            return row(function, currentType, typedMachineReturn,
+                function.hasNoReturn(), false, true,
+                "typed_machine_return", "high",
+                "every reachable RET carries one identical concrete 32-bit type from " +
+                    "an exact typed global load or trusted call return; stores and tests " +
+                    "preserve that EAX value" + observedEvidence(observed));
 
         RoundTripReturn roundTrip = mutable &&
             (genericUnknown(currentType) || currentType.equals("/void") ||
                 hasMarker(function, "pointer_producer_argument_roundtrip")) &&
-            observed != null && observed.used >= 2 && observed.unknown == 0 ?
+            observed != null && observed.used >= 1 && observed.unknown == 0 ?
                 exactPointerProducerRoundTripReturn(function) : null;
         boolean roundTripOverrideRepair = roundTrip != null &&
             needsRoundTripCallOverride(function, roundTrip);
@@ -175,9 +262,36 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                     "CFG returns unchanged in EAX (roundtrip_calls=" +
                     roundTrip.roundTripCalls + ")" + observedEvidence(observed));
 
+        if (mutable && staleRecoveredConstructorReturn(function, currentType))
+            return row(function, currentType, "pointer:/void",
+                function.hasNoReturn(), false, true,
+                "typed_pointer_return", "high",
+                "the script-owned anonymous constructor shell lost its unique exact " +
+                "allocation-extent proof; retain only the machine-proven pointer return");
+
+        /*
+         * Keep the exact formal pointer type when the function returns one of its parameters.
+         * The proof establishes identity, so changing ``T *`` to ``void *`` throws away an
+         * already valid source boundary and forces every caller which immediately dereferences
+         * the result to add a cast.  This branch also repairs the short-lived script-owned
+         * ``void *`` normalization from earlier passes; it never reopens manual/imported types.
+         */
+        ParameterReturn genericReturnedParameterRepair = mutable &&
+            currentType.startsWith("pointer:") && genericPointerReturn(currentType) &&
+            !currentType.equals("pointer:/void") &&
+            hasMarker(function, "returned_pointer_parameter") ?
+                cachedReturnedPointerParameter(function) : null;
+        if (genericReturnedParameterRepair != null &&
+                !genericReturnedParameterRepair.type.equals(currentType))
+            return row(function, currentType, genericReturnedParameterRepair.type,
+                function.hasNoReturn(), false, true,
+                "returned_pointer_parameter", "high",
+                "the complete machine CFG still returns the same incoming pointer parameter; " +
+                "preserve that parameter's exact formal pointer type at the return boundary");
+
         ParameterReturn returnedParameter = mutable &&
             (genericUnknown(currentType) || currentType.equals("/void")) &&
-            observed != null && observed.used >= 2 && observed.unknown == 0 ?
+            observed != null && observed.used >= 1 && observed.unknown == 0 ?
                 cachedReturnedPointerParameter(function) : null;
         if (returnedParameter != null)
             return row(function, currentType, returnedParameter.type,
@@ -312,9 +426,15 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 unknown = true;
                 continue;
             }
+            String mnemonic = cursor.getMnemonicString().toUpperCase(Locale.ROOT);
+            // XOR/SUB EAX,EAX defines zero independently of the old EAX value.
+            // Ghidra nevertheless exposes both operands as input objects.
+            if (clearsAccumulatorWithoutReading(cursor)) {
+                killedPaths++;
+                continue;
+            }
             if (accumulatorWidth(cursor.getInputObjects()) > 0)
                 return ReturnDisposition.USED;
-            String mnemonic = cursor.getMnemonicString().toUpperCase(Locale.ROOT);
             if (mnemonic.startsWith("RET")) {
                 /*
                  * RET does not read EAX at the instruction level.  Treating every tail call as
@@ -359,10 +479,65 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             ReturnDisposition.IGNORED : ReturnDisposition.UNKNOWN;
     }
 
+    private boolean clearsAccumulatorWithoutReading(Instruction instruction) {
+        String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+        if (!"XOR".equals(mnemonic) && !"SUB".equals(mnemonic)) return false;
+        Register left = instruction.getRegister(0);
+        Register right = instruction.getRegister(1);
+        return left != null && right != null &&
+            "EAX".equals(left.getName().toUpperCase(Locale.ROOT)) &&
+            "EAX".equals(right.getName().toUpperCase(Locale.ROOT));
+    }
+
+    private boolean hasTerminalDiagnosticReturn(Function function) {
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction call = instructions.next();
+            if (!"CALL".equalsIgnoreCase(call.getMnemonicString())) continue;
+            Function called = resolveThunk(directCalledFunction(call));
+            String comment = called == null ? null : called.getComment();
+            if (called == null || !"/void".equals(typeSpec(called.getReturnType())) ||
+                    comment == null || !comment.contains(
+                        "[STAbiConsistencyApplier] machine_diagnostic_stack_prototype"))
+                continue;
+            Address cursorAddress = call.getFallThrough();
+            Set<Address> seen = new HashSet<>();
+            for (int count = 0; count < 16 && cursorAddress != null &&
+                    seen.add(cursorAddress); count++) {
+                Instruction cursor = currentProgram.getListing()
+                    .getInstructionAt(cursorAddress);
+                if (cursor == null || !function.getBody().contains(cursorAddress)) break;
+                String mnemonic = cursor.getMnemonicString().toUpperCase(Locale.ROOT);
+                if (mnemonic.startsWith("RET")) return true;
+                if ("CALL".equals(mnemonic) ||
+                        accumulatorWidth(cursor.getInputObjects()) > 0 ||
+                        accumulatorWidth(cursor.getResultObjects()) > 0) break;
+                List<Address> successors = instructionSuccessors(function, cursor);
+                if (successors.size() != 1) break;
+                cursorAddress = successors.get(0);
+            }
+        }
+        return false;
+    }
+
     private boolean hasMarker(Function function, String semantic) {
         String comment = function.getComment();
         return comment != null &&
             comment.contains("[STReturnSemanticsApplier] " + semantic);
+    }
+
+    private boolean staleRecoveredConstructorReturn(Function function,
+            String currentType) {
+        String prefix = "pointer:/SubmarineTitans/Recovered/Classes/RecoveredClass_";
+        if (!currentType.equals(prefix + addr(function.getEntryPoint())) ||
+                !hasMarker(function, "typed_pointer_return")) return false;
+        for (Parameter parameter : function.getParameters()) {
+            if (!parameter.isAutoParameter()) continue;
+            String receiver = typeSpec(parameter.getDataType());
+            return !receiver.equals(currentType);
+        }
+        return true;
     }
 
     private boolean protectedNonVoidReturn(Function function) {
@@ -418,6 +593,123 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             if (allReturnsForwardType(function, type, totalReturns))
                 proven.add(type);
         return proven.size() == 1 ? proven.get(0) : "";
+    }
+
+    /**
+     * Recover the common lazy-loader/accessor form directly from machine state:
+     * {@code EAX = typed_global; if (!EAX) EAX = TrustedProducer(); typed_global = EAX; RET}.
+     * A concrete global or imported/recovered call return is independent type
+     * provenance.  The proof follows every CFG path and rejects any partial write,
+     * untyped full write, unresolved edge, or disagreement between return paths.
+     */
+    private String exactTypedGlobalOrCallReturn(Function function) {
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null || function.getBody().getNumAddresses() > 0x2000)
+            return "";
+        int totalReturns = 0;
+        InstructionIterator count = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (count.hasNext())
+            if (count.next().getMnemonicString().toUpperCase(Locale.ROOT)
+                    .startsWith("RET")) totalReturns++;
+        if (totalReturns == 0) return "";
+
+        Deque<TypedReturnState> pending = new ArrayDeque<>();
+        pending.add(new TypedReturnState(entry.getAddress(), null));
+        Set<TypedReturnState> visited = new HashSet<>();
+        Set<Address> reachedReturns = new HashSet<>();
+        Map<String, String> returnedTypes = new HashMap<>();
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            TypedReturnState state = pending.removeFirst();
+            if (!visited.add(state) || ++nodes > 32768) continue;
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (instruction == null ||
+                    !function.getBody().contains(instruction.getAddress())) return "";
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            MachineType type = state.type;
+            if ("CALL".equals(mnemonic)) {
+                type = trustedReturnMachineType(instruction);
+            }
+            else if (accumulatorWidth(instruction.getResultObjects()) > 0) {
+                if (standaloneEaxOperand(instruction, 0))
+                    type = "MOV".equals(mnemonic) ?
+                        typedGlobalLoadedIntoEax(instruction) : null;
+                else if (!("MOV".equals(mnemonic) &&
+                        standaloneEaxOperand(instruction, 1)))
+                    type = null;
+            }
+            if (mnemonic.startsWith("RET")) {
+                if (type == null) return "";
+                reachedReturns.add(instruction.getAddress());
+                returnedTypes.merge(type.key, type.proposed,
+                    this::preferredMachineTypeSpec);
+                continue;
+            }
+            List<Address> successors = instructionSuccessors(function, instruction);
+            if (successors.isEmpty()) return "";
+            for (Address successor : successors)
+                pending.addLast(new TypedReturnState(successor, type));
+        }
+        return reachedReturns.size() == totalReturns && returnedTypes.size() == 1 ?
+            returnedTypes.values().iterator().next() : "";
+    }
+
+    private MachineType trustedReturnMachineType(Instruction instruction) {
+        Function called = resolveThunk(directCalledFunction(instruction));
+        if (called == null) return null;
+        String scalar = machineScalarReturnType(called);
+        if (!scalar.isBlank() && genericUnknown(typeSpec(called.getReturnType())))
+            return new MachineType(scalar, scalar);
+        Function trusted = trustedReturnFunction(called);
+        return trusted == null ? null : machineType(trusted.getReturnType());
+    }
+
+    private MachineType typedGlobalLoadedIntoEax(Instruction instruction) {
+        Register destination = instruction.getRegister(0);
+        if (destination == null ||
+                !"EAX".equals(destination.getName().toUpperCase(Locale.ROOT)))
+            return null;
+        String rendered = instruction.toString();
+        if (!rendered.contains("[") || instruction.getNumOperands() < 2) return null;
+        MachineType agreed = null;
+        for (Reference reference : instruction.getOperandReferences(1)) {
+            Data data = currentProgram.getListing().getDataAt(reference.getToAddress());
+            if (data == null || !data.isDefined()) continue;
+            DataType type = data.getDataType();
+            if (!concreteMachineReturn(type)) continue;
+            MachineType candidate = machineType(type);
+            if (agreed != null && !agreed.key.equals(candidate.key)) return null;
+            agreed = agreed == null ? candidate : new MachineType(agreed.key,
+                preferredMachineTypeSpec(agreed.proposed, candidate.proposed));
+        }
+        return agreed;
+    }
+
+    /**
+     * Windows handle typedefs often collapse to the same physical pointer type
+     * while Ghidra renders a global as {@code HINSTANCE__ *} and an imported
+     * producer as {@code HMODULE}.  Compare the fully unwrapped machine type,
+     * but retain the stronger named typedef as the proposed source spelling.
+     */
+    private MachineType machineType(DataType type) {
+        return new MachineType(canonicalMachineType(type), typeSpec(type));
+    }
+
+    private String canonicalMachineType(DataType type) {
+        type = unwrap(type);
+        if (type instanceof Pointer pointer)
+            return "pointer:" + canonicalMachineType(pointer.getDataType());
+        return type == null ? "" : type.getPathName();
+    }
+
+    private String preferredMachineTypeSpec(String left, String right) {
+        boolean leftNamed = left != null && !left.startsWith("pointer:");
+        boolean rightNamed = right != null && !right.startsWith("pointer:");
+        if (leftNamed != rightNamed) return rightNamed ? right : left;
+        return left.compareTo(right) <= 0 ? left : right;
     }
 
     /**
@@ -490,7 +782,14 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
         int ordinal = returnedOrdinals.iterator().next();
         Parameter parameter = pointerParameters.get(ordinal);
         return new ParameterReturn(ordinal, parameter.getName(),
-            typeSpec(parameter.getFormalDataType()));
+            returnedPointerType(parameter));
+    }
+
+    private String returnedPointerType(Parameter parameter) {
+        // Returning an incoming pointer preserves its complete source type.  Generic
+        // ``undefinedN`` pointees still carry an exact storage-width contract; erasing that
+        // contract to ``void *`` is neither required by the machine proof nor source-neutral.
+        return typeSpec(parameter.getFormalDataType());
     }
 
     private ParameterReturn cachedReturnedPointerParameter(Function function) {
@@ -785,6 +1084,17 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 if (function.getBody().contains(flow) && !result.contains(flow))
                     result.add(flow);
         }
+        // INT3 is resumable at the machine ABI boundary even though the
+        // standalone pseudocode helper deliberately treats it as noreturn.
+        // Following its physical next instruction is required to prove the
+        // value retained in EAX by debug-reporting wrappers.
+        if (result.isEmpty() && "INT3".equalsIgnoreCase(
+                instruction.getMnemonicString())) {
+            Instruction next = currentProgram.getListing()
+                .getInstructionAfter(instruction.getAddress());
+            if (next != null && function.getBody().contains(next.getAddress()))
+                result.add(next.getAddress());
+        }
         return result;
     }
 
@@ -823,6 +1133,7 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
              comment.contains("[STPrototypeRepairApplier]") ||
              comment.contains("[STConstructorApplier]") ||
              comment.contains("[STReturnSemanticsApplier] typed_pointer_return") ||
+             comment.contains("[STReturnSemanticsApplier] typed_machine_return") ||
              comment.contains("[STReturnSemanticsApplier] forwarded_call_return") ||
              comment.contains("[STReturnSemanticsApplier] machine_eax_return") ||
              comment.contains("[STReturnSemanticsApplier] shared_tail_return")) ?
@@ -971,12 +1282,21 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
      * to unknown, so Ghidra's current ANALYSIS type cannot validate itself.
      */
     private String machineScalarReturnType(Function function) {
+        Address address = function.getEntryPoint();
+        if (machineScalarReturnCache.containsKey(address))
+            return machineScalarReturnCache.get(address);
+        String result = computeMachineScalarReturnType(function);
+        machineScalarReturnCache.put(address, result);
+        return result;
+    }
+
+    private String computeMachineScalarReturnType(Function function) {
         Instruction entry = currentProgram.getListing()
             .getInstructionAt(function.getEntryPoint());
         if (entry == null || function.getBody().getNumAddresses() > 0x2000)
             return "";
         Deque<ScalarReturnState> pending = new ArrayDeque<>();
-        pending.add(new ScalarReturnState(entry.getAddress(), ""));
+        pending.add(new ScalarReturnState(entry.getAddress(), "", ""));
         Set<ScalarReturnState> visited = new HashSet<>();
         Set<String> returned = new HashSet<>();
         int nodes = 0;
@@ -989,30 +1309,84 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                     !function.getBody().contains(instruction.getAddress())) return "";
             String mnemonic = instruction.getMnemonicString()
                 .toUpperCase(Locale.ROOT);
-            if ("CALL".equals(mnemonic)) return "";
-            String scalar = state.type;
-            int written = accumulatorWidth(instruction.getResultObjects());
-            if (written > 0) {
-                if (written != 4) scalar = "";
-                else if ("MOVZX".equals(mnemonic) || "DIV".equals(mnemonic))
-                    scalar = "/uint";
-                else if ("MOVSX".equals(mnemonic) || "IDIV".equals(mnemonic))
-                    scalar = "/int";
-                else if (!scalar.isBlank() &&
-                        preservesAccumulatorType(instruction, scalar)) {
-                    // Exact full-width transform retains the proven scalar ABI.
+            String eax = state.eax;
+            String ecx = state.ecx;
+            if ("CALL".equals(mnemonic)) {
+                eax = "";
+                ecx = "";
+            }
+            else {
+                Register destination = standaloneRegisterOperand(instruction, 0);
+                if (destination != null) {
+                    String destinationName = destination.getName()
+                        .toUpperCase(Locale.ROOT);
+                    if ("EAX".equals(destinationName))
+                        eax = scalarRegisterDefinition(instruction, eax, ecx);
+                    else if ("ECX".equals(destinationName))
+                        ecx = scalarRegisterDefinition(instruction, ecx, eax);
                 }
-                else scalar = "";
+                else if ("IDIV".equals(mnemonic)) eax = "/int";
+                else if ("DIV".equals(mnemonic)) eax = "/uint";
+                else if (accumulatorWidth(instruction.getResultObjects()) > 0)
+                    eax = "";
             }
             if (mnemonic.startsWith("RET")) {
-                if (scalar.isBlank()) return "";
-                returned.add(scalar);
+                if (eax.isBlank()) return "";
+                returned.add(eax);
                 continue;
             }
             for (Address successor : instructionSuccessors(function, instruction))
-                pending.addLast(new ScalarReturnState(successor, scalar));
+                pending.addLast(new ScalarReturnState(successor, eax, ecx));
         }
-        return returned.size() == 1 ? returned.iterator().next() : "";
+        if (returned.isEmpty()) return "";
+        if (returned.stream().allMatch(value -> value.equals("/int") ||
+                value.equals("$zero")) && returned.contains("/int")) return "/int";
+        if (returned.stream().allMatch(value -> value.equals("/uint") ||
+                value.equals("$zero")) && returned.contains("/uint")) return "/uint";
+        return returned.size() == 1 && !returned.contains("$zero") ?
+            returned.iterator().next() : "";
+    }
+
+    private String scalarRegisterDefinition(Instruction instruction,
+            String previous, String otherAccumulator) {
+        String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+        Register destination = standaloneRegisterOperand(instruction, 0);
+        if (destination == null || destination.getBitLength() != 32) return "";
+        Register source = standaloneRegisterOperand(instruction, 1);
+        if (("XOR".equals(mnemonic) || "SUB".equals(mnemonic)) &&
+                source != null && destination.getName().equalsIgnoreCase(source.getName()))
+            return "$zero";
+        if ("MOV".equals(mnemonic)) {
+            Scalar immediate = instruction.getScalar(1);
+            if (immediate != null) {
+                long value = immediate.getUnsignedValue() & 0xffffffffL;
+                if (value == 0) return "$zero";
+                if ((value & 0x80000000L) != 0) return "/int";
+                return "";
+            }
+            if (source != null && source.getBitLength() == 32) {
+                String name = source.getName().toUpperCase(Locale.ROOT);
+                if (("EAX".equals(name) && "ECX".equals(
+                        destination.getName().toUpperCase(Locale.ROOT))) ||
+                    ("ECX".equals(name) && "EAX".equals(
+                        destination.getName().toUpperCase(Locale.ROOT))))
+                    return otherAccumulator;
+            }
+            return "";
+        }
+        if ("MOVZX".equals(mnemonic)) return "/uint";
+        if ("MOVSX".equals(mnemonic)) return "/int";
+        if (!previous.isBlank() && !"$zero".equals(previous) &&
+                preservesAccumulatorType(instruction, previous)) return previous;
+        return "";
+    }
+
+    private Register standaloneRegisterOperand(Instruction instruction,
+            int operandIndex) {
+        if (operandIndex < 0 || operandIndex >= instruction.getNumOperands()) return null;
+        Object[] objects = instruction.getOpObjects(operandIndex);
+        return objects.length == 1 && objects[0] instanceof Register register ?
+            register : null;
     }
 
     private boolean concreteMachineReturn(DataType type) {
@@ -1259,8 +1633,10 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 "\nFunctions: " + functions + "\nProposals: " + rows.size() +
                 "\nAutomatic: " + rows.stream().filter(row -> row.apply).count() + "\n");
             for (String id : List.of("leaf_void", "ignored_eax_void",
-                    "repair_unsafe_eax_rollback", "void_eax_read_review",
+                    "repair_unsafe_eax_rollback", "repair_false_machine_eax_return",
+                    "diagnostic_residue_void", "void_eax_read_review",
                     "typed_pointer_return", "forwarded_call_return",
+                    "typed_machine_return", "machine_scalar_return",
                     "returned_pointer_parameter", "pointer_producer_argument_roundtrip",
                     "machine_eax_return", "shared_tail_return",
                     "boolean_return_domain", "noreturn_terminal_call"))
@@ -1295,7 +1671,9 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
     private static class ReturnUse { int used, ignored, unknown; }
     private record ScanState(Address address, int distance) {}
     private record ForwardState(Address address, boolean hasValue) {}
-    private record ScalarReturnState(Address address, String type) {}
+    private record MachineType(String key, String proposed) {}
+    private record TypedReturnState(Address address, MachineType type) {}
+    private record ScalarReturnState(Address address, String eax, String ecx) {}
     private record MachineReturnState(Address address, boolean fullAccumulator) {}
     private record ParameterReturnState(Address address, int ordinal) {}
     private record ParameterReturn(int ordinal, String name, String type) {}

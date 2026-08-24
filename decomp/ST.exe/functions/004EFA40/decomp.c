@@ -12,8 +12,7 @@ BldLabPanelTy * __cdecl CreateBldLabPanel(void)
 
 {
   BldLabPanelTy *this;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   this = (BldLabPanelTy *)FUN_006b04d0(0x27e);
   if (this != nullptr) {
     sub_006E5FB0(this);

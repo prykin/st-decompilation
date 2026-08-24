@@ -14,8 +14,8 @@ void FUN_006b7070(int *param_1)
   int iVar3;
   int iVar4;
   uint uVar5;
-  undefined1 *puVar6;
-  undefined4 *puVar7;
+  byte *puVar6;
+  uint *puVar7;
   undefined4 auStack_50 [2];
   undefined1 auStack_48 [4];
   int iStack_44;
@@ -23,10 +23,10 @@ void FUN_006b7070(int *param_1)
   uint uStack_3c;
   uint *puStack_38;
   uint local_28 [2];
-  undefined1 *local_20;
-  undefined1 *local_1c;
+  byte *local_20;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

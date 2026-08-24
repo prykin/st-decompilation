@@ -18,14 +18,15 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   uint local_EAX_356;
   LPSTR text_00;
   ushort *puVar3;
-  uint uVar4;
-  undefined4 *puVar5;
+  HDC pHVar4;
+  uint *puVar5;
+  uint uVar6;
   int iVar11;
-  uint *puVar6;
-  uint uVar7;
-  char *pcVar8;
+  uint *puVar7;
+  uint uVar8;
   char *pcVar9;
-  byte bVar10;
+  char *pcVar10;
+  byte bVar11;
   int iVar12;
   undefined1 local_65c;
   char local_65b [515];
@@ -63,58 +64,58 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   this_00 = g_cMf32_00806780;
   if (DAT_0080874e == '\x01') {
     local_c = 0;
-    uVar4 = 0xffffffff;
-    pcVar9 = "LOADINGW";
+    uVar6 = 0xffffffff;
+    pcVar10 = "LOADINGW";
     do {
-      pcVar8 = pcVar9;
-      if (uVar4 == 0) break;
-      uVar4 = uVar4 - 1;
-      pcVar8 = pcVar9 + 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar8;
+      pcVar9 = pcVar10;
+      if (uVar6 == 0) break;
+      uVar6 = uVar6 - 1;
+      pcVar9 = pcVar10 + 1;
+      cVar1 = *pcVar10;
+      pcVar10 = pcVar9;
     } while (cVar1 != '\0');
-    uVar4 = ~uVar4;
+    uVar6 = ~uVar6;
     local_65c = 1;
-    pcVar9 = pcVar8 + -uVar4;
-    pcVar8 = local_65b;
-    memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
+    pcVar10 = pcVar9 + -uVar6;
+    pcVar9 = local_65b;
+    memmove(pcVar9, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_65c);
     puVar5 = cMf32::RecNameGetNext(this_00);
-    uVar4 = local_c;
+    uVar6 = local_c;
     while (puVar5 != nullptr) {
-      local_c = uVar4 + 1;
+      local_c = uVar6 + 1;
       puVar5 = cMf32::RecNameGetNext(this_00);
-      uVar4 = local_c;
+      uVar6 = local_c;
     }
-    local_c = uVar4;
-    if (uVar4 == 0) {
+    local_c = uVar6;
+    if (uVar6 == 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\grig\\loading.cpp",0x24);
     }
     iVar12 = 1;
-    bVar10 = 0;
-    uVar7 = Library::MSVCRT::FUN_0072e6c0();
-    text_00 = FUN_006f2c00("LOADINGW",1,uVar7 % uVar4 + 1);
+    bVar11 = 0;
+    uVar8 = Library::MSVCRT::FUN_0072e6c0();
+    text_00 = FUN_006f2c00("LOADINGW",1,uVar8 % uVar6 + 1);
   }
   else {
     if (DAT_0080874e == '\x02') {
       local_c = 0;
-      uVar4 = 0xffffffff;
-      pcVar9 = "LOADINGB";
+      uVar6 = 0xffffffff;
+      pcVar10 = "LOADINGB";
       do {
-        pcVar8 = pcVar9;
-        if (uVar4 == 0) break;
-        uVar4 = uVar4 - 1;
-        pcVar8 = pcVar9 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar8;
+        pcVar9 = pcVar10;
+        if (uVar6 == 0) break;
+        uVar6 = uVar6 - 1;
+        pcVar9 = pcVar10 + 1;
+        cVar1 = *pcVar10;
+        pcVar10 = pcVar9;
       } while (cVar1 != '\0');
-      uVar4 = ~uVar4;
+      uVar6 = ~uVar6;
       local_254 = 1;
-      pcVar9 = pcVar8 + -uVar4;
-      pcVar8 = local_253;
-      memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
-      uVar7 = 0;
+      pcVar10 = pcVar9 + -uVar6;
+      pcVar9 = local_253;
+      memmove(pcVar9, pcVar10, uVar6); /* compiler REP MOVS byte copy */
+      uVar8 = 0;
       cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_254);
       puVar5 = cMf32::RecNameGetNext(this_00);
       while (puVar5 != nullptr) {
@@ -122,10 +123,10 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
         puVar5 = cMf32::RecNameGetNext(this_00);
       }
       iVar12 = 1;
-      bVar10 = 0;
+      bVar11 = 0;
       local_EAX_356 = Library::MSVCRT::FUN_0072e6c0();
-      uVar4 = local_EAX_356 % local_c;
-      pcVar9 = "LOADINGB";
+      uVar6 = local_EAX_356 % local_c;
+      pcVar10 = "LOADINGB";
     }
     else {
       if (DAT_0080874e != '\x03') {
@@ -134,21 +135,21 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
         goto LAB_00554324;
       }
       local_c = 0;
-      uVar4 = 0xffffffff;
-      pcVar9 = "LOADINGS";
+      uVar6 = 0xffffffff;
+      pcVar10 = "LOADINGS";
       do {
-        pcVar8 = pcVar9;
-        if (uVar4 == 0) break;
-        uVar4 = uVar4 - 1;
-        pcVar8 = pcVar9 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar8;
+        pcVar9 = pcVar10;
+        if (uVar6 == 0) break;
+        uVar6 = uVar6 - 1;
+        pcVar9 = pcVar10 + 1;
+        cVar1 = *pcVar10;
+        pcVar10 = pcVar9;
       } while (cVar1 != '\0');
-      uVar4 = ~uVar4;
+      uVar6 = ~uVar6;
       local_458 = 1;
-      pcVar9 = pcVar8 + -uVar4;
-      pcVar8 = local_457;
-      memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
+      pcVar10 = pcVar9 + -uVar6;
+      pcVar9 = local_457;
+      memmove(pcVar9, pcVar10, uVar6); /* compiler REP MOVS byte copy */
       cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_458);
       puVar5 = cMf32::RecNameGetNext(this_00);
       while (puVar5 != nullptr) {
@@ -156,23 +157,23 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
         puVar5 = cMf32::RecNameGetNext(this_00);
       }
       iVar12 = 1;
-      bVar10 = 0;
+      bVar11 = 0;
       uVar5 = Library::MSVCRT::FUN_0072e6c0();
-      uVar4 = uVar5 % local_c;
-      pcVar9 = "LOADINGS";
+      uVar6 = uVar5 % local_c;
+      pcVar10 = "LOADINGS";
     }
-    text_00 = FUN_006f2c00(pcVar9,1,uVar4 + 1);
+    text_00 = FUN_006f2c00(pcVar10,1,uVar6 + 1);
   }
-  puVar3 = FUN_0070a9f0(g_cMf32_00806780,text_00,bVar10,iVar12);
+  puVar3 = FUN_0070a9f0(g_cMf32_00806780,text_00,bVar11,iVar12);
   *local_8 = (uint)puVar3;
 LAB_00554324:
-  uVar4 = thunk_FUN_00553e20(*local_8,nullptr,DAT_00807dd9);
-  local_8[2] = uVar4;
+  pHVar4 = thunk_FUN_00553e20(*local_8,nullptr,DAT_00807dd9);
+  local_8[2] = (uint)pHVar4;
   puVar5 = ccFntTy::CreateSurf((ccFntTy *)local_8[2],*local_8,0,0,0,0,0,1);
   local_8[1] = (uint)puVar5;
   if (text != nullptr) {
-    uVar4 = thunk_FUN_00555600(text);
-    local_8[0x13] = uVar4;
+    uVar6 = thunk_FUN_00555600(text);
+    local_8[0x13] = uVar6;
   }
   local_8[0x12] = param_3;
   g_currentExceptionFrame = local_50.previous;

@@ -5,7 +5,7 @@ int FUN_00749ec2(AnonShape_00749EC2_C411FB81 *param_1)
 
 {
   AnonShape_00749EC2_C411FB81 *lpCriticalSection;
-  undefined1 *this;
+  byte *this;
   AnonNested_AnonShape_00749EC2_C411FB81_006C_7E3C32DA *pAVar1;
   int iVar2;
   int iVar3;

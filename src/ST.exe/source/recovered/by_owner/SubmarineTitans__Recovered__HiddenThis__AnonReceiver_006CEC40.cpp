@@ -41,15 +41,15 @@ st::fn_006D63E0
   undefined4 local_98 [4];
   int local_88;
   ushort *local_74;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079dd90;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 0);
   iVar8 = *(int *)&this->field_0x284;

@@ -132,7 +132,7 @@ int __thiscall st::fn_0057BF60(STFishC *this,STMessage *message)
     local_14 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
     /* ST_CALLSITE[0057C4C7]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
     local_18 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-    local_c = st::pointer_boundary_cast<AnonShape_0057BF60_C1393638 *>(st::fn_006AAC70(local_10 + 0x46 + local_8));
+    local_c = static_cast<AnonShape_0057BF60_C1393638 *>(st::fn_006AAC70(local_10 + 0x46 + local_8));
     if (local_14 == nullptr) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -309,7 +309,7 @@ cf_error_exit_0057C332:
   case CASE_EA:
     /* ST_CALLSITE[0057C2E5]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar6 = st::fn_00404183
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::pointer_boundary_cast<char *>(&DAT_007cb008),CASE_1D);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,(char *)&DAT_007cb008,CASE_1D);
     if (iVar6 != 0) {
       iVar6 = 0xfd;
       goto cf_error_exit_0057C332;
@@ -318,7 +318,7 @@ cf_error_exit_0057C332:
   case CASE_EB:
     /* ST_CALLSITE[0057C319]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar6 = st::fn_00404183
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,st::pointer_boundary_cast<char *>(&DAT_007cb010),CASE_1D);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,PTR_0080676c,(char *)&DAT_007cb010,CASE_1D);
     if (iVar6 != 0) {
       iVar6 = 0x104;
       goto cf_error_exit_0057C332;

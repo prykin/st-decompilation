@@ -13,7 +13,7 @@ uint __cdecl FUN_00553480(int param_1,int param_2,int param_3,uint param_4,int p
   uint uVar2;
   uint uVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   undefined4 local_18 [4];
   int local_8;
 

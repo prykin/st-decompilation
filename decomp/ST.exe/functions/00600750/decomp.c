@@ -16,8 +16,8 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
   uint uVar7;
   int iVar8;
   uint uVar9;
-  undefined4 uVar10;
-  undefined4 uVar11;
+  uint uVar10;
+  uint uVar11;
   int local_2c;
   uint local_28;
   int local_24;

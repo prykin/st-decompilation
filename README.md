@@ -225,7 +225,8 @@ For routine work, run `STRecoveryLauncher` instead of launching every pair
 manually. The launcher retains compiler/bootstrap output and then invokes
 `STRecoveryPipeline`, which infers the repository from its location under `scripts/`, supplies
 all `recovery/ST.exe/*.tsv` and `decomp/` paths automatically, and offers
-bounded `core`, `deep`, `full`, `export`, and `full-export` sequences. It never
+bounded `core`, `deep`, `abi-refresh`, `full`, `export`, and `full-export`
+sequences. It never
 enables review-only rows and fails rather than exporting when a mutating loop
 has not reached a fixed point. Each loop continues from the current
 proposal/apply state only while an enabled row both reports a mutation and

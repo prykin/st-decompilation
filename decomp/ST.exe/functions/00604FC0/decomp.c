@@ -22,7 +22,7 @@ undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param
   puVar6 = (byte *)&param_1->field_0x44;
   puVar8 = (byte *)((int)this + 0x219);
   memmove(puVar8, puVar6, 0x50); /* compiler REP MOVS byte copy */
-  piVar9 = (int *)&param_1->field_0xe2;
+  piVar9 = (undefined4 *)&param_1->field_0xe2;
   STField<undefined4>(this,0x269) = *(undefined4 *)&param_1->field_0x94;
   STField<undefined1>(this,0x26d) = param_1->field_0x98;
   STField<undefined4>(this,0x26e) = param_1->field_0099;
@@ -34,7 +34,7 @@ undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param
   STField<undefined4>(this,0x27e) = param_1->field_00A9;
   if (STField<int>(this,0x215) != 0) {
     iVar3 = *piVar9;
-    pDVar1 = FUN_006b0060(nullptr,(uint *)&param_1[1].field_0x2);
+    pDVar1 = FUN_006b0060(nullptr,(undefined4 *)&param_1[1].field_0x2);
     STField<DArrayTy *>(this,0x215) = pDVar1;
     piVar9 = (int *)(&param_1[1].field_0x2 + iVar3);
   }

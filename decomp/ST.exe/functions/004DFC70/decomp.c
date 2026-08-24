@@ -9,9 +9,9 @@ int __thiscall FUN_004dfc70(void *this,int *param_1)
   int iVar3;
   DArrayTy *pDVar4;
   uint uVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   uint *puVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   int iVar9;
   undefined4 local_20;
   int local_1c;

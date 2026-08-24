@@ -13,7 +13,7 @@
 void __thiscall STRubbishC::sub_00630260(STRubbishC *this,int param_1,int param_2)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int local_24 [4];
   undefined4 local_14;
   int local_10;

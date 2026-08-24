@@ -404,7 +404,7 @@ st::fn_00676D80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char 
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar5;
   dword dVar6;
   dword dVar7;
@@ -777,7 +777,7 @@ st::fn_00677960(short param_1,short param_2,short param_3,short param_4,short pa
 {
   STFishC *this;
   int iVar2;
-  undefined4 *puVar2;
+  uint *puVar2;
   dword dVar3;
   int iVar5;
   int iVar4;
@@ -869,7 +869,7 @@ st::fn_00677BE0(short param_1,short param_2,byte *param_3,short param_4,short pa
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
   byte *pbVar5;
   int iVar7;
@@ -1005,7 +1005,7 @@ st::fn_00677F40(short param_1,byte *param_2,short param_3,short param_4,short pa
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar3;
+  uint *puVar3;
   byte *pbVar4;
   int iVar5;
   int iVar6;
@@ -1127,7 +1127,7 @@ st::fn_00678240(int param_1,short param_2,char param_3,byte *param_4,short param
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar3;
+  uint *puVar3;
   dword dVar4;
   byte *pbVar5;
   int iVar6;
@@ -1270,7 +1270,7 @@ st::fn_006785A0(byte *param_1,char param_2,short param_3,short param_4,short par
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar3;
+  uint *puVar3;
   byte *pbVar4;
   int iVar5;
   int iVar6;

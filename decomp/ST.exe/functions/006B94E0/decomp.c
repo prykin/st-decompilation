@@ -5,12 +5,12 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
                  int param_5,int param_6,int param_7,int param_8)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   int iVar8;
 

@@ -9,17 +9,17 @@ void FUN_006db450(undefined4 *param_1,int param_2,undefined2 *param_3,int param_
                  int param_6)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   bool bVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar5;
   int iVar6;
-  undefined1 uVar7;
-  undefined2 *puVar8;
-  undefined1 *puVar9;
-  undefined4 *puVar10;
-  undefined2 *puVar11;
+  byte uVar7;
+  ushort *puVar8;
+  byte *puVar9;
+  uint *puVar10;
+  ushort *puVar11;
   bool bVar12;
 
   if (((uint)param_1 & 1) == 0) {

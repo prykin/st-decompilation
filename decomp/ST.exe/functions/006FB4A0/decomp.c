@@ -8,19 +8,19 @@ void FUN_006fb4a0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
                  uint param_12,int param_13,byte *param_14,int param_15,int param_16)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte *pbVar2;
   uint uVar3;
   uint uVar4;
   int iVar5;
   int iVar6;
-  undefined1 uVar7;
+  byte uVar7;
   byte bVar8;
   ushort *puVar9;
   byte *pbVar10;
   byte *pbVar11;
-  undefined1 *puVar12;
-  undefined1 *puVar13;
+  byte *puVar12;
+  byte *puVar13;
   byte *pbVar14;
   byte *pbVar15;
   int local_14;

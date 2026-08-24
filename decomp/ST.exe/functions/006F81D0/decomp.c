@@ -17,9 +17,8 @@ void FUN_006f81d0(undefined1 *param_1,int param_2,byte *param_3,int param_4,usho
   uint uVar7;
   uint uVar8;
   int iVar9;
-  undefined1 *puVar10;
-  undefined1 *puVar11;
-
+  byte *puVar10;
+  byte *puVar11;
   pbVar3 = param_16 + param_10;
   _DAT_00857000 = 1;
   pbVar6 = (byte *)(param_14 + ((int)pbVar3 >> 3));

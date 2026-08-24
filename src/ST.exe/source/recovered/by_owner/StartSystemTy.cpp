@@ -9,14 +9,17 @@
    table_confidence=high
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 005DA610 returns StartSystemTy::StartSystemTy this @ 005DA74D */
+   Evidence: 005DA610 returns StartSystemTy::StartSystemTy this @ 005DA74D
 
-StartSystemTy * __thiscall st::fn_005DA610(StartSystemTy *this,undefined4 param_1)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 005DA610 -> 006E51C0 @ 005DA621 */
+
+StartSystemTy * __thiscall st::fn_005DA610(StartSystemTy *this,AppClassTy *param_1)
 
 {
   int iVar1;
 
-  st::fn_006E51C0((SystemClassTy *)this,st::pointer_boundary_cast<AppClassTy *>(param_1),0x200);
+  st::fn_006E51C0((SystemClassTy *)this,param_1,0x200);
   st::fn_00715820((SpriteClassTy *)&this->field_02F8);
   st::fn_00715820((SpriteClassTy *)&this->field_038D);
   st::fn_00715820((SpriteClassTy *)&this->field_041E);
@@ -100,7 +103,7 @@ undefined1 __thiscall st::fn_005DA940(StartSystemTy *this,int param_1)
 
   iVar3 = 4;
   piVar4 = (int *)(this->field_068A + 0xc + param_1 * 0x14);
-  piVar5 = st::pointer_boundary_cast<int *>(&DAT_007cd700);
+  piVar5 = reinterpret_cast<int *>(&DAT_007cd700);
   do {
     if (iVar3 == 0) {
       return 1;
@@ -333,23 +336,32 @@ void __thiscall st::fn_005DCDB0(StartSystemTy *this)
    [STReturnSemanticsApplier] forwarded_call_return.
    Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
    /undefined4; every later accumulator definition is an exact full-width integer transform of that
-   value; machine CFG audit: used=3, ignored=0, unknown=0 */
+   value; machine CFG audit: used=3, ignored=0, unknown=0
 
-undefined4 __thiscall
+   [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=3, ignored=0, unknown=0 */
+
+int __thiscall
 st::fn_006E5360(StartSystemTy *this,int param_1,int *param_2,undefined4 *param_3)
 
 {
-  undefined4 uVar1;
+  int iVar1;
 
-  uVar1 = st::fn_006E3450(this->field_0010,param_1,param_2,param_3);
-  return uVar1;
+  iVar1 = st::fn_006E3450(this->field_0010,param_1,param_2,param_3);
+  return iVar1;
 }
 
 // 006E56B0 StartSystemTy::sub_006E56B0
 #line 4 "decomp/ST.exe/functions/006E56B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=4; incoming_this_accesses=3;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=5 */
+   incoming_edx_uses=0; incoming_stack_parameter_uses=5
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=174, used=0,
+   unknown=0), and decompilation contains no value return */
 
 void __thiscall st::fn_006E56B0(StartSystemTy *this,uint param_1)
 

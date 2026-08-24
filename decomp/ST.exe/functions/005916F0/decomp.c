@@ -13,7 +13,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
   int iVar3;
   int iVar6;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   uint *puVar6;
   int iVar7;
   InternalExceptionFrame local_4c;

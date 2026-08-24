@@ -7,7 +7,7 @@
 uint FUN_007474f4(LPVOID *ppv)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   uint uVar2;
   uint uVar3;
 

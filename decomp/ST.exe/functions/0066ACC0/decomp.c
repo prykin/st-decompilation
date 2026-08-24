@@ -105,7 +105,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
   char *local_EAX_9737;
   char *local_EAX_9848;
   int iVar12;
-  undefined4 uVar13;
+  uint uVar13;
   byte *pbVar14;
   char *local_EAX_10183;
   char *local_EAX_10303;
@@ -241,7 +241,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
   short sVar30;
   code *pcVar31;
   undefined *puVar32;
-  undefined4 uVar33;
+  uint uVar33;
   undefined4 local_628 [78];
   undefined4 local_4f0 [78];
   undefined4 local_3b8 [78];
@@ -2008,7 +2008,7 @@ cf_continue_loop_0066CFCA:
     }
     goto cf_common_exit_00670431;
   }
-  switch(iVar4) {
+  switch(static_cast<uint32_t>(STRawWord(iVar4))) {
   case 0x7f7:
     local_8 = nullptr;
     do {
@@ -2412,7 +2412,7 @@ cf_common_exit_0066DCED:
     /* ST_CALLSITE[0066E009]: CALL dword ptr [EDX] */
     iVar4 = this_00->slot_00(param_1 + 10);
     switch(local_8) {
-    case (AiFltClassTy *)0xdc:
+    case 0xdc:
       if (((int)local_10 < 0x32) || (0x73 < (int)local_10)) {
         bVar2 = false;
       }
@@ -2436,7 +2436,7 @@ cf_common_exit_0066DCED:
         }
       }
       break;
-    case (AiFltClassTy *)0xdd:
+    case 0xdd:
       if (((int)local_10 < 0x32) || (0x73 < (int)local_10)) {
         bVar2 = false;
       }
@@ -2460,7 +2460,7 @@ cf_common_exit_0066DCED:
         }
       }
       break;
-    case (AiFltClassTy *)0xde:
+    case 0xde:
       if (((int)local_10 < 0x32) || (0x73 < (int)local_10)) {
         bVar2 = false;
       }
@@ -2487,7 +2487,7 @@ cf_common_exit_0066DCED:
     default:
       local_c = nullptr;
       break;
-    case (AiFltClassTy *)0xe2:
+    case 0xe2:
       if (((int)local_10 < 0x32) || (0x73 < (int)local_10)) {
         bVar2 = false;
       }

@@ -9,7 +9,7 @@
 undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   byte bVar2;
   uint uVar3;
   int iVar4;

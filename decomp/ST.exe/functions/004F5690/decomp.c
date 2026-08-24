@@ -18,7 +18,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   int iVar4;
   int local_EAX_155;
   int *piVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   ccFntTy *pcVar7;
   LPSTR pCVar8;
   ushort *local_EAX_643;
@@ -113,21 +113,21 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   int local_EAX_6804;
   uint uVar13;
   uint uVar14;
-  undefined1 *puVar15;
+  byte *puVar15;
   uint *puVar16;
   ushort **ppuVar17;
-  undefined4 uVar18;
-  undefined4 uVar19;
+  uint uVar18;
+  uint uVar19;
   short sVar20;
   ushort uVar21;
   byte bVar22;
   int iVar23;
   int *piVar24;
   int iVar25;
-  undefined4 uVar26;
-  undefined4 *puVar27;
+  uint uVar26;
+  uint *puVar27;
   short *psVar28;
-  undefined4 uVar29;
+  uint uVar29;
   InternalExceptionFrame local_78;
   int local_34;
   int local_30;
@@ -166,7 +166,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       iVar4 = 1;
       puVar9 = PTR_0080679c + 0x14;
       local_8 = piVar24;
-      local_EAX_155 = FUN_006b4fe0((int)PTR_0080679c);
+      local_EAX_155 = FUN_006b4fe0(PTR_0080679c);
       piVar5 = (int *)FUN_006b50c0(*piVar24,piVar24[0x16],(uint)PTR_0080679c[7],local_EAX_155,
                                    (undefined4 *)puVar9,iVar4);
       piVar24[0x46] = (int)piVar5;
@@ -239,7 +239,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     ccFntTy::SetSurf(this_00->field_01CC,(int)local_EAX_643,0,0,0,0,0);
     iVar4 = 1;
     puVar9 = PTR_0080679c + 0x14;
-    uVar4 = FUN_006b4fe0((int)PTR_0080679c);
+    uVar4 = FUN_006b4fe0(PTR_0080679c);
     puVar9 = (ushort *)
              FUN_006b50c0(this_00->field_0104,this_00->field_0108,(uint)PTR_0080679c[7],uVar4,
                           (undefined4 *)puVar9,iVar4);
@@ -488,7 +488,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       iVar4 = 1;
       puVar9 = PTR_0080679c + 0x14;
       local_1c = pcVar11;
-      local_EAX_2409 = FUN_006b4fe0((int)PTR_0080679c);
+      local_EAX_2409 = FUN_006b4fe0(PTR_0080679c);
       uVar14 = (uint)PTR_0080679c[7];
       iVar3 = FUN_007111c0(this_00->field_01B8,pcVar11);
       iVar22 = FUN_00711110(this_00->field_01B8,pcVar11);

@@ -133,11 +133,10 @@ anonymous_type	category	length	defined_components	concrete_fields	meaningful_fie
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_007233F0_0064_6FCF4A7B	pointer_shape	116	2	2	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_0074C571_00CC_C64502DE	pointer_shape	148	2	2	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_0074C8A9_0090_6FCAB5DF	pointer_shape	144	2	2	0	0	0	1				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonNested_00755D40_000C_A3EEF781	pointer_shape	56	2	1	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_00757360_0008_E15F2681	pointer_shape	24	2	2	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_00757530_000C_743CE253	pointer_shape	56	2	1	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_007575B0_000C_8FAD8207	pointer_shape	52	2	0	0	0	0	1				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonNested_00757670_0008_104EC36D	pointer_shape	56	3	3	0	0	0	1				no_named_layout_match	referenced
+/SubmarineTitans/Recovered/PointerShapes/AnonNested_00757670_0008_104EC36D	pointer_shape	56	3	3	0	1	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_00758100_0010_55B841DF	pointer_shape	20	4	0	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_0075A800_019A_8DF3E337	pointer_shape	20	2	1	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_0075CF90_019E_7AA50958	pointer_shape	20	2	1	0	0	0	1				no_named_layout_match	referenced
@@ -147,7 +146,7 @@ anonymous_type	category	length	defined_components	concrete_fields	meaningful_fie
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_0075DF10_01B2_1F0F9C79	pointer_shape	32	4	0	0	0	0	1		/SubmarineTitans/Recovered/DArraySpecializations/AiPlrClassTy_field_06A1DArray,/SubmarineTitans/Recovered/DArraySpecializations/AiTactClassTy_field_00A5DArray,/SubmarineTitans/Recovered/DArraySpecializations/AiTactClassTy_field_00BDDArray,/SubmarineTitans/Recovered/DArraySpecializations/BldLabPanelTy_field_027ADArray,/SubmarineTitans/Recovered/DArraySpecializations/CGenerate_field_5853DArray,/SubmarineTitans/Recovered/DArraySpecializations/FSGSTy_field_1EA6DArray,/SubmarineTitans/Recovered/DArraySpecializations/FSGSTy_field_1EAADArray,/SubmarineTitans/Recovered/DArraySpecializations/FSGSTy_field_1EBEDArray,/SubmarineTitans/Recovered/DArraySpecializations/FSGSTy_field_1FB3DArray,/SubmarineTitans/Recovered/DArraySpecializations/HelpPanelTy_field_01BBDArray,/SubmarineTitans/Recovered/DArraySpecializations/HelpPanelTy_field_01CBDArray,/SubmarineTitans/Recovered/DArraySpecializations/HelpPanelTy_field_01D7DArray,/SubmarineTitans/Recovered/DArraySpecializations/MTaskTy_field_0074DArray,/SubmarineTitans/Recovered/DArraySpecializations/OptPanelTy_field_02FDDArray,/SubmarineTitans/Recovered/DArraySpecializations/STBHEShellC_field_0169DArray,/SubmarineTitans/Recovered/DArraySpecializations/STFieldC_field_0234DArray,/SubmarineTitans/Recovered/DArraySpecializations/STLightC_field_00A3DArray,/SubmarineTitans/Recovered/DArraySpecializations/STManBasisC_field_0038DArray,/SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_0038DArray,/SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_003CDArray,/SubmarineTitans/Recovered/DArraySpecializations/STTmMineC_field_0336DArray,/SubmarineTitans/Recovered/DArraySpecializations/SettMapMTy_field_1E2FDArray,/SubmarineTitans/Recovered/DArraySpecializations/SettMapMTy_field_1F7CDArray,/SubmarineTitans/Recovered/DArraySpecializations/SettMapMTy_field_1F84DArray,/SubmarineTitans/Recovered/DArraySpecializations/SettMapMTy_field_2237DArray,/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00B9DArray,/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00C5DArray,/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00D1DArray,/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00DDDArray,/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00E9DArray,/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00F5DArray,/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_0101DArray,/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_010ADArray,/SubmarineTitans/Recovered/DArraySpecializations/TraksClassTy_field_0024DArray,/SubmarineTitans/Recovered/DArraySpecializations/VisibleClassTy_field_00F4DArray,/SubmarineTitans/Recovered/DArraySpecializations/VisibleClassTy_field_0110DArray,/SubmarineTitans/Recovered/DArrayTy,/SubmarineTitans/Recovered/STMessage,/SystemClassTy		partial_named_review	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_0075DFE0_01B2_B9C955BF	pointer_shape	48	2	0	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_0075E000_01B2_B6D867E9	pointer_shape	48	5	1	0	0	0	1				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonNested_0075EB40_0080_454B432A	pointer_shape	12	3	3	0	0	0	2	/SoundPosition,/SubmarineTitans/Recovered/STPosition32			exact_named_ambiguous	referenced
+/SubmarineTitans/Recovered/PointerShapes/AnonNested_0075EB40_0080_454B432A	pointer_shape	12	3	3	0	0	0	1	/SoundPosition,/SubmarineTitans/Recovered/STPosition32			exact_named_ambiguous	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_0075EF30_01BA_0FEC5BB1	pointer_shape	32	3	2	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_0075F7D0_01BA_88B72737	pointer_shape	24	2	2	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_0075FA00_01BA_0DE014D6	pointer_shape	32	3	1	0	0	0	1		/SystemClassTy		partial_named_review	referenced
@@ -188,7 +187,6 @@ anonymous_type	category	length	defined_components	concrete_fields	meaningful_fie
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_00754B80_75BFDB7A_0080_4681841F	pointer_shape	12	3	0	0	0	0	1		/SoundPosition,/SubmarineTitans/Recovered/STPosition32,/unknwn.h/IUnknownVtbl,/winbase.h/_SECURITY_ATTRIBUTES,/wingdi.h/_ABC		partial_named_review	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_00754FD0_6B521B56_0008_2A163446	pointer_shape	84	2	1	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_00754FD0_6B521B56_000C_1591C729	pointer_shape	72	9	0	0	0	0	1				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_00755970_4FB144E0_000C_11C2AAE5	pointer_shape	54	3	1	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_00755E10_BD685653_0008_8628F4E0	pointer_shape	56	3	0	0	0	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_00757D90_5427B306_0010_D8C59A06	pointer_shape	8	2	0	0	0	0	1	/SubmarineTitans/Recovered/DArrayElements/AiTactClassTy_field_00A5Element			exact_named_review	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_00759190_45B6ED67_01A6_2E084C16	pointer_shape	76	6	0	0	0	0	1				no_named_layout_match	referenced
@@ -662,7 +660,7 @@ anonymous_type	category	length	defined_components	concrete_fields	meaningful_fie
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_006C7430_D1D36538	pointer_shape	120	8	6	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_006C7700_7DDC3CA1	pointer_shape	60	12	10	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_006C7B20_5A99C851	pointer_shape	56	3	3	0	1	0	0				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonShape_006C7D20_41F6C243	pointer_shape	48	4	4	0	1	0	0				no_named_layout_match	referenced
+/SubmarineTitans/Recovered/PointerShapes/AnonShape_006C7D20_41F6C243	pointer_shape	48	4	4	0	0	0	0				no_named_layout_match	unreferenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_006CEC40_BB23E716	pointer_shape	76	4	4	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_006CECB0_97249119	pointer_shape	72	8	4	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_006CEEE0_CDA60BFB	pointer_shape	452	3	3	0	1	0	0				no_named_layout_match	referenced
@@ -746,10 +744,10 @@ anonymous_type	category	length	defined_components	concrete_fields	meaningful_fie
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_007470E5_0A8F5E67	pointer_shape	48	2	1	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0074731F_00DF946A	pointer_shape	56	2	1	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0074736A_AA1936BB	pointer_shape	60	4	2	0	1	0	0				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonShape_0074756B_58F08DE7	pointer_shape	20	3	0	0	1	0	0				no_named_layout_match	referenced
+/SubmarineTitans/Recovered/PointerShapes/AnonShape_0074756B_58F08DE7	pointer_shape	20	3	0	0	1	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_007477EA_440BD1E9	pointer_shape	12	2	1	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00747822_A1E67AF6	pointer_shape	20	4	1	0	4	0	0				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonShape_00747874_535F3AAD	pointer_shape	16	2	0	0	1	0	0				no_named_layout_match	referenced
+/SubmarineTitans/Recovered/PointerShapes/AnonShape_00747874_535F3AAD	pointer_shape	16	2	0	0	1	0	1				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00747AA5_87CB4B56	pointer_shape	12	2	2	0	3	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00747AF8_C78FFF68	pointer_shape	16	3	1	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00747C63_5B932397	pointer_shape	104	3	3	0	1	0	0				no_named_layout_match	referenced
@@ -757,7 +755,7 @@ anonymous_type	category	length	defined_components	concrete_fields	meaningful_fie
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00747F3B_C97131D7	pointer_shape	16	2	2	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_007480A5_22FE1AF9	pointer_shape	104	3	2	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00748186_DDF6596C	pointer_shape	104	3	3	0	1	0	0				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonShape_007482D8_1685BA8E	pointer_shape	140	5	0	0	1	0	0				no_named_layout_match	referenced
+/SubmarineTitans/Recovered/PointerShapes/AnonShape_007482D8_1685BA8E	pointer_shape	140	5	0	0	0	0	0				no_named_layout_match	unreferenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0074837C_3396F25D	pointer_shape	160	2	0	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0074868B_7E9383CB	pointer_shape	12	2	0	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00748721_F11EED2A	pointer_shape	64	7	0	0	1	0	0				no_named_layout_match	referenced
@@ -790,7 +788,7 @@ anonymous_type	category	length	defined_components	concrete_fields	meaningful_fie
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0074BE28_A72B0079	pointer_shape	148	2	2	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0074C571_537DB7FB	pointer_shape	208	2	2	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0074C5D2_07BD206F	pointer_shape	68	8	0	0	1	0	0				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonShape_0074C613_A217E84A	pointer_shape	208	6	1	0	1	0	0				no_named_layout_match	referenced
+/SubmarineTitans/Recovered/PointerShapes/AnonShape_0074C613_A217E84A	pointer_shape	208	6	1	0	2	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0074C7B6_0CB193FF	pointer_shape	164	3	1	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0074C8A9_0F993FDC	pointer_shape	148	1	1	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0074CEB2_D881A5E3	pointer_shape	80	3	3	0	2	0	0				no_named_layout_match	referenced
@@ -808,7 +806,7 @@ anonymous_type	category	length	defined_components	concrete_fields	meaningful_fie
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00750287_BC8A1854	pointer_shape	112	12	10	0	2	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00750F20_F8C16F98	pointer_shape	20	3	2	0	2	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00750FB0_15A3AC3E	pointer_shape	16	2	2	0	1	0	0				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonShape_00753C80_4C8E695D	pointer_shape	20	3	3	0	6	0	0				no_named_layout_match	referenced
+/SubmarineTitans/Recovered/PointerShapes/AnonShape_00753C80_4C8E695D	pointer_shape	20	3	3	0	10	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00753CE0_1943F9C2	pointer_shape	56	2	1	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00753FD0_4E1BB8DD	pointer_shape	64	4	2	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00754185_34BF31BE	pointer_shape	80	9	7	0	1	0	0				no_named_layout_match	referenced
@@ -819,10 +817,8 @@ anonymous_type	category	length	defined_components	concrete_fields	meaningful_fie
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_007550C0_25940DF4	pointer_shape	56	4	0	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00755180_CB9F7747	pointer_shape	24	2	1	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_007553F0_ACB112C2	pointer_shape	16	2	2	0	1	0	0				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonShape_00755560_6DE97093	pointer_shape	40	4	2	0	1	0	0		/winuser.h/tagWNDCLASSA		partial_named_review	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonShape_00755970_4FB144E0	pointer_shape	16	2	2	0	1	0	0				no_named_layout_match	referenced
+/SubmarineTitans/Recovered/PointerShapes/AnonShape_00755970_C9B0D864	pointer_shape	10	2	2	0	0	0	0				no_named_layout_match	unreferenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00755BC0_D59C64DD	pointer_shape	32	4	4	0	1	0	0				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonShape_00755D40_9BC6D2DA	pointer_shape	16	1	1	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00755E10_BD685653	pointer_shape	32	4	3	0	2	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00756480_42788A49	pointer_shape	288	24	5	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_00756800_BE569F2C	pointer_shape	412	7	2	0	1	0	0				no_named_layout_match	referenced
@@ -873,8 +869,7 @@ anonymous_type	category	length	defined_components	concrete_fields	meaningful_fie
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0075E000_A9FEDC0C	pointer_shape	440	1	1	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0075E750_D250320C	pointer_shape	448	2	2	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0075E7D0_08EF6D02	pointer_shape	448	2	2	0	1	0	0				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonShape_0075E890_C23EB446	pointer_shape	446	2	2	0	1	0	0				no_named_layout_match	referenced
-/SubmarineTitans/Recovered/PointerShapes/AnonShape_0075EB40_977462DD	pointer_shape	132	1	1	0	1	0	0				no_named_layout_match	referenced
+/SubmarineTitans/Recovered/PointerShapes/AnonShape_0075E890_C23EB446	pointer_shape	446	2	2	0	3	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0075EC80_53406127	pointer_shape	448	4	4	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0075EF30_9859F226	pointer_shape	448	1	1	0	1	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/AnonShape_0075F590_570A7014	pointer_shape	448	2	2	0	1	0	0				no_named_layout_match	referenced
@@ -924,6 +919,7 @@ anonymous_type	category	length	defined_components	concrete_fields	meaningful_fie
 /SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_CPanelTy_00501D00	pointer_shape	60	3	3	0	2	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_CursorClassTy_00544100	pointer_shape	64	8	8	0	0	0	0				no_named_layout_match	unreferenced
 /SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_DumpClassC_00495EC0	pointer_shape	100	3	3	0	2	0	0				no_named_layout_match	referenced
+/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_FSGSTy_006C7D20	pointer_shape	48	4	4	0	2	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_MMMObjTy_005B6560	pointer_shape	76	5	5	0	2	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_MMObjTy_005B5240	pointer_shape	432	8	4	0	2	0	0				no_named_layout_match	referenced
 /SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_MReportTy_005BD4B0	pointer_shape	24	4	4	0	2	0	0				no_named_layout_match	referenced

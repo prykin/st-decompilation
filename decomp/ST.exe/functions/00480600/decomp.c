@@ -12,9 +12,9 @@ undefined4 __fastcall FUN_00480600(void *param_1)
   int local_EAX_145;
   int iVar4;
   int local_EAX_1646;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar8;
   int iVar9;
   uint uVar10;
@@ -30,7 +30,7 @@ undefined4 __fastcall FUN_00480600(void *param_1)
   short sVar20;
   byte bVar21;
   undefined4 local_20 [2];
-  undefined4 local_18;
+  uint local_18;
   short local_14;
   int local_10;
   undefined4 *local_c;

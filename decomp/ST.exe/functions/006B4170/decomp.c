@@ -60,7 +60,7 @@ void FUN_006b4170(RecoveredSourceFamily_dibcopy *param_1,int param_2,int lprcSrc
                  int param_5,int param_6,byte param_7)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   BOOL BVar2;
   int iVar3;
   byte *pbVar4;
@@ -71,9 +71,9 @@ void FUN_006b4170(RecoveredSourceFamily_dibcopy *param_1,int param_2,int lprcSrc
   uint local_44;
   RECT local_3c;
   RECT local_2c;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

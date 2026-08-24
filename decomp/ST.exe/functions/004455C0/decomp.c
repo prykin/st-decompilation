@@ -22,7 +22,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   InternalExceptionFrame local_58;
-  undefined4 local_14;
+  uint local_14;
   STAllPlayersC *local_10;
   int local_c;
   STGroupC *local_8;

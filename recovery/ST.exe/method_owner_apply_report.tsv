@@ -913,4 +913,7 @@ address	status	proposed_name	detail
 007178C0	disabled	ST3DSMAPContext::sub_007178C0	all apply flags are 0
 0071A990	disabled	SoundClassTy::sub_0071A990	all apply flags are 0
 0072B700	disabled		all apply flags are 0
+0074857E	disabled		all apply flags are 0
 00749D5F	disabled	CBaseRenderer::sub_00749D5F	all apply flags are 0
+0074C38F	unchanged	RecoveredClass_0074CDC5::sub_0074C38F	owner=unchanged; this_type=unchanged
+0074C658	unchanged	RecoveredClass_0074CFC0::sub_0074C658	owner=unchanged; this_type=unchanged

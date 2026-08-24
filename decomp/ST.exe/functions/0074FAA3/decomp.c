@@ -7,12 +7,12 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
   ushort uVar1;
   int *piVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   ushort *puVar5;
   uint uVar6;
-  undefined2 *puVar7;
+  ushort *puVar7;
   int *piVar8;
-  undefined4 *puVar9;
+  uint *puVar9;
   uint local_8;
 
   STField<undefined4>(this,0xc) = 0;

@@ -3,6 +3,10 @@
 
 // 00640130 FUN_00640130
 #line 4 "decomp/ST.exe/functions/00640130/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __fastcall st::fn_00640130(AnonShape_00640130_D1AC047E *param_1)
 
 {
@@ -26,9 +30,8 @@ undefined4 __thiscall st::fn_00640170(void *this,int param_1,int param_2,undefin
 
 {
   float fVar1;
-  undefined4 uVar2;
-  undefined4 *puVar4;
-
+  uint uVar2;
+  uint *puVar4;
   uVar2 = 0;
   if (STField<undefined4 *>(this,0x37f) != nullptr) {
     puVar4 = STField<undefined4 *>(this,0x37f);
@@ -56,7 +59,7 @@ void __fastcall st::fn_00640240(AnonShape_00640240_D1DBDD81 *param_1)
   AnonNested_AnonShape_00640240_D1DBDD81_037F_89D39015 *pAVar1;
 
   if (param_1->field_037F != nullptr) {
-    st::fn_006E8660(st::pointer_boundary_cast<ST3DSMAPContext *>(param_1->field_0211),(int *)param_1->field_037F,0,0,0,0,0,0,0);
+    st::fn_006E8660(static_cast<ST3DSMAPContext *>(param_1->field_0211),(int *)param_1->field_037F,0,0,0,0,0,0,0);
     st::fn_006E9520
               (param_1->field_0211,param_1->field_037F->field_0000,0,0x640320,
                (uint)param_1->field_037F);
@@ -89,6 +92,9 @@ void st::fn_00640320(void *param_1,undefined4 param_2,int *param_3,AnonShape_006
 // 00640390 FUN_00640390
 #line 4 "decomp/ST.exe/functions/00640390/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00640390(void *this,int param_1)
 
@@ -260,21 +266,23 @@ st::fn_006405F0(int param_1,undefined4 param_2,undefined4 param_3,ushort param_4
 undefined4 __fastcall st::fn_00643E20(AnonShape_00643E20_B7FEAA75 *param_1,undefined4 param_2)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   short sVar2;
   VisibleClassTy *pVVar3;
   STGameObjC *pSVar4;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
+  int iVar9_mg1;
+  int iVar9_mg3;
   byte bVar7;
   int iVar8;
   int iVar9;
   int local_24;
   int local_20;
   int local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
+  uint local_18;
+  uint local_14;
+  uint local_10;
   STGameObjC *local_c;
   int *local_8;
 
@@ -370,10 +378,10 @@ undefined4 __fastcall st::fn_00643E20(AnonShape_00643E20_B7FEAA75 *param_1,undef
     else {
       bVar7 = param_1->field_027C;
       if (bVar7 < 0xf) {
-        iVar9 = st::fn_006E62D0
-                          (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_0274,
-                           (int *)&local_8);
-        if (iVar9 == -4) {
+        iVar9_mg1 = st::fn_006E62D0
+                              (g_playSystem_00802A38,
+                               (AnonShape_005EFAE0_B406B78B *)param_1->field_0274,(int *)&local_8);
+        if (iVar9_mg1 == -4) {
           param_1->field_027C = 0xfa;
           return 0;
         }
@@ -398,10 +406,10 @@ undefined4 __fastcall st::fn_00643E20(AnonShape_00643E20_B7FEAA75 *param_1,undef
         bVar7 = param_1->field_027C;
       }
       if (bVar7 == 0xf) {
-        iVar9 = st::fn_006E62D0
-                          (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_0274,
-                           (int *)&local_8);
-        if (iVar9 == -4) {
+        iVar9_mg3 = st::fn_006E62D0
+                              (g_playSystem_00802A38,
+                               (AnonShape_005EFAE0_B406B78B *)param_1->field_0274,(int *)&local_8);
+        if (iVar9_mg3 == -4) {
           param_1->field_027C = 0xfa;
           return 0;
         }
@@ -521,7 +529,7 @@ void __cdecl st::fn_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
   ushort uVar1;
   int local_EAX_69;
   int uVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   uint *puVar5;
   uint uVar6;
@@ -739,8 +747,7 @@ undefined4 __cdecl st::fn_00645D30(int param_1,Global_sub_00645D30_param_2Enum p
 
 {
   int uVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   /* ST_CALLSITE[00645D41]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   uVar1 = st::fn_004049B7((char)param_1);
   uVar1 = (int)(byte)uVar1;
@@ -836,8 +843,7 @@ st::fn_00646110(int param_1,int param_2,undefined4 *param_3,undefined4 *param_4,
 
 {
   int iVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   uVar2 = 0;
   *param_3 = 0;
   iVar1 = param_1 + -0x96;
@@ -1097,6 +1103,10 @@ cf_common_exit_00647445:
 
 // 00647960 FUN_00647960
 #line 4 "decomp/ST.exe/functions/00647960/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __fastcall st::fn_00647960(int param_1)
 
 {
@@ -1124,7 +1134,11 @@ void __fastcall st::fn_00647960(int param_1)
 // 00647A60 FUN_00647a60
 #line 4 "decomp/ST.exe/functions/00647A60/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00647A60 -> 00568DD0 @ 00647A96 */
+   Evidence: 00647A60 -> 00568DD0 @ 00647A96
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00647A60(void *this,int soundId)
 
@@ -1345,7 +1359,7 @@ undefined4 __cdecl st::fn_00648A30(int param_1,char *param_2)
   }
   if (param_2 != nullptr) {
     uVar3 = 0xffffffff;
-    pcVar5 = st::pointer_boundary_cast<char *>(&pAVar2->field_0x5ee);
+    pcVar5 = (char *)&pAVar2->field_0x5ee;
     do {
       pcVar6 = pcVar5;
       if (uVar3 == 0) break;
@@ -1708,7 +1722,11 @@ void st::fn_0064A580(void)
 // 0064A5B0 FUN_0064a5b0
 #line 4 "decomp/ST.exe/functions/0064A5B0/decomp.c"
 /* [STPrototypeRepairApplier] Propagated parameter 0.
-   Evidence: 0064A5B0 -> EXTERNAL:00000059 @ 0064A60A */
+   Evidence: 0064A5B0 -> EXTERNAL:00000059 @ 0064A60A
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __cdecl st::fn_0064A5B0(LPDWORD lpNumberOfBytesWritten)
 
@@ -1729,7 +1747,7 @@ void __cdecl st::fn_0064A5B0(LPDWORD lpNumberOfBytesWritten)
       pDVar4 = (LPDWORD)((int)pDVar4 + 1);
     } while ((char)DVar2 != '\0');
     /* ST_CALLSITE[0064A5E6]: CALL ESI */
-    st::external_00000059(HANDLE_008118f8,st::pointer_boundary_cast<LPCVOID>(lpNumberOfBytesWritten),~uVar3 - 1,(LPDWORD)&lpNumberOfBytesWritten,
+    st::external_00000059(HANDLE_008118f8,lpNumberOfBytesWritten,~uVar3 - 1,(LPDWORD)&lpNumberOfBytesWritten,
               (LPOVERLAPPED)0x0);
     uVar3 = 0xffffffff;
     pcVar5 = &CHAR_0Dh_007d2a00;
@@ -1740,7 +1758,7 @@ void __cdecl st::fn_0064A5B0(LPDWORD lpNumberOfBytesWritten)
       pcVar5 = pcVar5 + 1;
     } while (cVar1 != '\0');
     /* ST_CALLSITE[0064A60A]: CALL ESI */
-    st::external_00000059(HANDLE_008118f8,(LPCVOID)&CHAR_0Dh_007d2a00,~uVar3 - 1,(LPDWORD)&lpNumberOfBytesWritten,
+    st::external_00000059(HANDLE_008118f8,&CHAR_0Dh_007d2a00,~uVar3 - 1,(LPDWORD)&lpNumberOfBytesWritten,
               (LPOVERLAPPED)0x0);
   }
   return;
@@ -2045,7 +2063,7 @@ undefined4 __cdecl st::fn_0064E290(undefined4 param_1,undefined4 param_2,void *p
   }
   if (sVar2 == 0) {
     /* ST_CALLSITE[0064E2B8]: CALL 0x0040492b; direct=0040492B STResourceC::sub_005802A0 */
-    st::fn_0040492B(st::pointer_boundary_cast<STResourceC *>(param_3),uVar1,1);
+    st::fn_0040492B(static_cast<STResourceC *>(param_3),uVar1,1);
     return 0;
   }
   if (0 < sVar2) {
@@ -2120,9 +2138,8 @@ st::fn_0064E5C0(undefined1 param_1,short param_2,short param_3,undefined4 param_
   undefined2 in_stack_0000000a;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined2 in_stack_0000000e;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   local_c = _param_2;
   local_8 = _param_3;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -3495,8 +3512,7 @@ undefined4 __cdecl st::fn_0064F900(short *param_1)
 
 {
   int iVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   iVar1 = 0;
   do {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

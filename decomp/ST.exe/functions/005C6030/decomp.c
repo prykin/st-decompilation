@@ -8,23 +8,23 @@
 void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   int iVar2;
   SettMapTy_field_1E26State SVar3;
   MMMObjTy *pMVar4;
   bool bVar6;
   int iVar11;
-  undefined4 uVar7;
+  uint uVar7;
   cMf32 *pcVar8;
   DArrayTy *pDVar9;
   uint uVar10;
   int iVar12;
   int iVar13;
   SettMapTy *this_00;
-  undefined4 uVar14;
+  uint uVar14;
   byte *puVar15;
   uint *puVar16;
-  undefined4 uVar17;
+  uint uVar17;
   byte *puVar18;
   undefined4 local_ef4 [566];
   undefined4 local_61c [17];

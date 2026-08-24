@@ -588,7 +588,7 @@ st::fn_0042B7D0
   int iVar5;
   int iVar3;
   int iVar4;
-  undefined4 uVar6;
+  uint uVar6;
   uint uVar7;
   uint uVar8;
   InternalExceptionFrame local_90;
@@ -731,7 +731,7 @@ st::fn_0042BB30
   int iVar2;
   DArrayTy *pDVar3;
   STGameObjC *this_00;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
   int *piVar6;
   Global_sub_0043FC50_param_1Enum GVar7;
@@ -852,7 +852,7 @@ st::fn_0042BEA0
 
 {
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   STGameObjC *this_00;
   char objPtr;
   int *piVar4;
@@ -981,7 +981,7 @@ st::fn_0042C1C0
 {
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   uint index;
   InternalExceptionFrame local_54;
   dword local_10;
@@ -1135,7 +1135,7 @@ st::fn_0042C4B0
 {
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   uint index;
   InternalExceptionFrame local_54;
   dword local_10;
@@ -1194,19 +1194,18 @@ st::fn_0042C5F0
           (STAllPlayersC *this,char param_1,int param_2,char param_3,uint param_4)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   DArrayTy *pDVar3;
   dword dVar4;
   STGameObjC *pSVar6;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar8;
   uint uVar9;
   Global_sub_0043FC50_param_1Enum GVar10;
   undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_c = 0xffffffff;
   if (param_2 < 0x1a5) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -1470,7 +1469,7 @@ undefined4 st::fn_0042CDE0(char param_1,int param_2,int param_3,char param_4,sho
   DArrayTy *array;
   dword dVar1;
   int iVar3;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   uint index;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -1537,7 +1536,7 @@ st::fn_0042CEF0(STAllPlayersC *this,int param_1,char param_2,short param_3)
       if ((param_1 == 0x1b8) || (param_1 == 0x1ae)) goto LAB_0042d011;
     }
     else if ((999 < param_1) && (param_1 < 0x3ea)) {
-      piVar4 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[uVar5].field204_0x211);
+      piVar4 = reinterpret_cast<int *>(&g_packedRecords_A62x8[uVar5].field204_0x211);
       local_8 = 10;
       do {
         if ((*(int *)((int)piVar4 + -10) == 0x19a) && (*(int *)((int)piVar4 + -6) == (int)param_2))
@@ -1579,7 +1578,7 @@ LAB_0042cf42:
   }
   if (param_1 != 0x1a4) {
     if (param_1 == 0x14) {
-      piVar4 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[uVar5].field204_0x211);
+      piVar4 = reinterpret_cast<int *>(&g_packedRecords_A62x8[uVar5].field204_0x211);
       local_8 = 10;
       do {
         if ((*(int *)((int)piVar4 + -10) == 0x3c) && (*(int *)((int)piVar4 + -6) == (int)param_2)) {
@@ -1932,8 +1931,7 @@ void st::fn_0042D6B0(char param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
   int iVar3;
-  undefined4 *puVar4;
-
+  uint *puVar4;
   iVar3 = (int)param_1;
   iVar1 = g_packedRecords_A62x8[iVar3].field200_0x203;
   if (iVar1 == 0) {
@@ -1980,7 +1978,7 @@ st::fn_0042D980
   DArrayTy *pDVar1;
   dword dVar2;
   int local_EAX_75;
-  undefined4 uVar4;
+  uint uVar4;
   STGameObjC *pSVar5;
   int local_EAX_631;
   int iVar4;
@@ -2337,7 +2335,7 @@ st::fn_0042E210
   int iVar8;
   int local_EAX_1462;
   int local_EAX_2281;
-  undefined4 uVar9;
+  uint uVar9;
   int iVar6;
   int iVar10;
   ushort uVar11;
@@ -2824,7 +2822,7 @@ st::fn_0042EFD0(STAllPlayersC *this,char param_1,ushort param_2,int param_3)
   DArrayTy *array;
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_50;
   DArrayTy *local_c;
   int local_8;
@@ -2876,7 +2874,7 @@ st::fn_0042F140(STAllPlayersC *this,char param_1,ushort param_2,int param_3)
   DArrayTy *array;
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_50;
   DArrayTy *local_c;
   int local_8;
@@ -2940,7 +2938,7 @@ st::fn_0042F2B0
   int iVar7;
   int local_EAX_1804;
   int local_EAX_3102;
-  undefined4 uVar8;
+  uint uVar8;
   STGameObjC *pSVar9;
   DArrayTy *pDVar10;
   int iVar6;
@@ -2956,8 +2954,7 @@ st::fn_0042F2B0
   DArrayTy *local_14;
   STGroupBoatC *local_10;
   undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_8;
   iVar11 = (int)param_1;
   local_c = 0;
   local_14 = (DArrayTy *)g_packedRecords_A62x8[iVar11].field3_0x9;
@@ -3455,7 +3452,7 @@ undefined4 __thiscall st::fn_00430470(STAllPlayersC *this,int param_1,short para
   uint index;
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   uint index_00;
@@ -3519,7 +3516,7 @@ undefined4 __thiscall st::fn_00430620(STAllPlayersC *this,short param_1,int para
 {
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_50;
   undefined4 local_c;
   int local_8;
@@ -3571,7 +3568,7 @@ undefined4 __thiscall st::fn_00430620(STAllPlayersC *this,short param_1,int para
 undefined1 st::fn_00430750(Global_sub_00430750_param_1Enum param_1)
 
 {
-  undefined1 uVar2;
+  byte uVar2;
   int iVar3;
 
   switch(param_1) {
@@ -3669,7 +3666,7 @@ st::fn_00430960(STAllPlayersC *this,short param_1,int param_2)
 {
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   InternalExceptionFrame local_4c;
   int local_8;
 
@@ -3727,7 +3724,7 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
   PackedRecord_A62x8 *pPVar7;
   uint uVar8;
   uint uVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   int iVar12;
   int *piVar13;
   char cVar14;
@@ -3938,7 +3935,7 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
     if (SVar2 == MESS_ID_NONE) {
       iVar12 = 0;
       local_14 = &g_bulkInitializedRecords_008087C7[0].field_0022;
-      piVar13 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[0].field1981_0xa0a);
+      piVar13 = reinterpret_cast<int *>(&g_packedRecords_A62x8[0].field1981_0xa0a);
       do {
         cVar14 = (char)iVar12;
         if (0x18 < g_playSystem_00802A38->field_00E4 - *piVar13) {
@@ -3986,9 +3983,9 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
         puVar10 = &g_packedRecords_A62x8[0].field2_0x5;
         do {
           puVar6 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
-          puVar10[1] = st::machine_word_boundary_cast<undefined4>(puVar6);
+          puVar10[1] = st::machine_word_boundary_cast<uint>(puVar6);
           puVar6 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
-          *puVar10 = st::machine_word_boundary_cast<undefined4>(puVar6);
+          *puVar10 = st::machine_word_boundary_cast<uint>(puVar6);
           if (*pbVar5 != 0xff) {
             st::fn_004045C0((int)piVar13);
             /* ST_CALLSITE[00430C8E]: CALL 0x00401fc8; direct=00401FC8 STAllPlayersC::sub_004EB010 */
@@ -4010,7 +4007,7 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
         st::fn_00401F37(DAT_00808a90 & 0xff);
         DAT_007fa168 = st::machine_word_boundary_cast<undefined4>(st::fn_006AAC70((int)g_worldGrid.planeStride));
         uVar8 = (uint)g_worldGrid.planeStride;
-        puVar10 = st::pointer_boundary_cast<undefined4 *>(DAT_007fa168);
+        puVar10 = st::pointer_boundary_cast<uint *>(DAT_007fa168);
         for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
           *puVar10 = 0x50505050;
           puVar10 = puVar10 + 1;
@@ -4026,9 +4023,9 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
       puVar10 = &g_packedRecords_A62x8[0].field2_0x5;
       do {
         puVar6 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
-        puVar10[1] = st::machine_word_boundary_cast<undefined4>(puVar6);
+        puVar10[1] = st::machine_word_boundary_cast<uint>(puVar6);
         puVar6 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
-        *puVar10 = st::machine_word_boundary_cast<undefined4>(puVar6);
+        *puVar10 = st::machine_word_boundary_cast<uint>(puVar6);
         st::fn_00403E90(cVar14);
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         puVar10 = (undefined4 *)((int)puVar10 + 0xa62);
@@ -4216,7 +4213,7 @@ st::fn_004314E0
   undefined4 extraout_ECX_05;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_06;
-  undefined4 uVar7;
+  uint uVar7;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -5856,14 +5853,14 @@ st::fn_00433E90
   undefined2 extraout_var_07;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_08;
-  undefined2 uVar8;
+  ushort uVar8;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_09;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_10;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  undefined4 uVar7;
+  uint uVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_11;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -6746,8 +6743,7 @@ st::fn_004354E0(STAllPlayersC *this,char param_1,undefined4 param_2,undefined4 p
   dword local_14;
   DArrayTy *local_10;
   void *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   iVar4 = st::fn_0072D7F0(local_64.jumpBuffer,0);
@@ -6825,7 +6821,7 @@ st::fn_004354E0(STAllPlayersC *this,char param_1,undefined4 param_2,undefined4 p
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_10 = (DArrayTy *)((int)local_10 + 0xa62);
   } while ((int)local_10 < 0x7fa135);
-  piVar5 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[0].field3_0x9);
+  piVar5 = reinterpret_cast<int *>(&g_packedRecords_A62x8[0].field3_0x9);
   do {
     iVar3 = *piVar5;
     if (((iVar3 != 0) && (iVar8 = *(int *)(iVar3 + 0xc), iVar8 != 0)) &&
@@ -6875,7 +6871,7 @@ st::fn_00435930
   uint uVar5;
   int iVar5;
   STGameObjC *pSVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EDX;
@@ -7026,12 +7022,12 @@ void __thiscall st::fn_00436F20(STAllPlayersC *this,void *command)
   ushort uVar3;
   short sVar4;
   short sVar5;
-  undefined1 *puVar6;
+  byte *puVar6;
   int iVar7;
   char *pcVar8;
-  undefined2 *puVar9;
+  ushort *puVar9;
   byte bVar11;
-  undefined2 uVar12;
+  ushort uVar12;
   short sVar13;
   uint uVar14;
   STGameObjC *pSVar15;
@@ -7044,6 +7040,7 @@ void __thiscall st::fn_00436F20(STAllPlayersC *this,void *command)
   DArrayTy *local_EAX_2256;
   DArrayTy *local_EAX_2766;
   byte *puVar18;
+  int iVar24_mgD;
   int local_EAX_3281;
   STWorldObject *pSVar19;
   DArrayTy *local_EAX_3962;
@@ -7056,7 +7053,7 @@ void __thiscall st::fn_00436F20(STAllPlayersC *this,void *command)
   undefined4 extraout_ECX_00;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_01;
-  undefined4 uVar21;
+  uint uVar21;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_02;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -7953,10 +7950,12 @@ cf_common_exit_00437E03:
           puVar18 = (byte *)(st::fn_004024CD(pSVar15,local_1b8));
           puVar25 = (byte *)(&local_1fc);
           memmove(puVar25, puVar18, 0x42); /* compiler REP MOVS byte copy */
-          iVar24 = st::fn_006E62D0(g_playSystem_00802A38,local_1f6,(int *)&local_40);
+          iVar24 = 0;
+          iVar24_mgD = st::fn_006E62D0(g_playSystem_00802A38,local_1f6,(int *)&local_40);
           /* ST_CALLSITE[00437BBC]: CALL dword ptr [EDX + 0x88] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          if ((iVar24 == 0) && (iVar24 = (**(code **)(*local_40 + 0x88))(&local_e8), 0 < iVar24)) {
+          if ((iVar24_mgD == 0) && (iVar24 = (**(code **)(*local_40 + 0x88))(&local_e8), 0 < iVar24)
+             ) {
             if (local_e8 == 0xdc) {
               local_d4 = local_d4 + 1;
               pDVar26 = local_6c;
@@ -8207,10 +8206,10 @@ void __thiscall st::fn_00438E30(STAllPlayersC *this,int param_1)
   /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   iVar7 = uVar4 * 0xa62;
   if (g_packedRecords_A62x8[uVar4].field200_0x203 == 0) {
-    local_8 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[uVar4].field96_0x163);
+    local_8 = reinterpret_cast<int *>(&g_packedRecords_A62x8[uVar4].field96_0x163);
   }
   else if (g_packedRecords_A62x8[uVar4].field200_0x203 == 1) {
-    local_8 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[uVar4].field149_0x1b3);
+    local_8 = reinterpret_cast<int *>(&g_packedRecords_A62x8[uVar4].field149_0x1b3);
   }
   else {
     iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x16dd,0,0,st::mutable_c_string("%s"),
@@ -8365,7 +8364,7 @@ void __thiscall st::fn_00439100(STAllPlayersC *this,int param_1)
   undefined4 extraout_ECX;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
-  undefined4 uVar10;
+  uint uVar10;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -8384,7 +8383,7 @@ void __thiscall st::fn_00439100(STAllPlayersC *this,int param_1)
   undefined2 extraout_var_06;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_07;
-  undefined2 uVar11;
+  ushort uVar11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_08;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -9426,7 +9425,7 @@ st::fn_0043AAF0
   dword dVar1;
   int iVar3;
   int iVar7;
-  undefined4 uVar4;
+  uint uVar4;
   STGameObjC *pSVar5;
   ushort uVar6;
   int iVar8;
@@ -9558,12 +9557,12 @@ LAB_0043acdb:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::SetActivePanel
 
-   [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 0043AE40 -> 0043AAF0 @ 0043AFDF | 0043AE40 -> 0043AAF0 @ 0043B3A5 | 0043AE40 ->
-   0043AAF0 @ 0043B82D | 0043AE40 -> 0043AAF0 @ 0043BAA0 */
+   [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 0043AE40 -> 006EB230 @ 0043B010 | 0043AE40 -> 006EB230 @ 0043B3D6 | 0043AE40 ->
+   006EB230 @ 0043B85E | 0043AE40 -> 006EB230 @ 0043BAD2 */
 
 void __thiscall
-st::fn_0043AE40(STAllPlayersC *this,uint *param_1,int param_2,int param_3)
+st::fn_0043AE40(STAllPlayersC *this,uint param_1,int param_2,int param_3)
 
 {
   int *piVar1;
@@ -9589,7 +9588,7 @@ st::fn_0043AE40(STAllPlayersC *this,uint *param_1,int param_2,int param_3)
   local_10 = 0;
   local_c = 0;
   local_8 = 0;
-  if (param_1 == nullptr) {
+  if (param_1 == 0) {
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar6 = (uint)DAT_0080874d * 0xa62;
     if (g_packedRecords_A62x8[DAT_0080874d].field200_0x203 == 0) {
@@ -9640,9 +9639,9 @@ st::fn_0043AE40(STAllPlayersC *this,uint *param_1,int param_2,int param_3)
           (iVar6 = st::fn_004024F0(0x3c,STReplaceLowByte((uint32_t)(piVar1), (uint8_t)((char)piVar1[1])),
                                STField<DArrayTy *>(piVar1,10),
                                CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),&local_10,
-                               &local_c,&local_8,(uint *)&param_1), iVar6 == 0)) &&
+                               &local_c,&local_8,&param_1), iVar6 == 0)) &&
          (iVar6 = st::fn_006EB230
-                            (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                            (g_sT3DSMAPContext_00807598,param_1,DAT_00807410,DAT_00807414,
                              DAT_00807418,DAT_0080741c), iVar6 != 1)) {
         st::fn_0040386E(local_10,local_c,local_8);
         st::fn_00405547(1);
@@ -9676,9 +9675,9 @@ st::fn_0043AE40(STAllPlayersC *this,uint *param_1,int param_2,int param_3)
             /* ST_CALLSITE[0043B82D]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
             iVar6 = st::fn_004024F0(0x3c,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)(((undefined1 *)iVar6)[4])),
                                 *(DArrayTy **)(iVar6 + 10),uVar9,&local_10,&local_c,&local_8,
-                                (uint *)&param_1), iVar6 == 0)) &&
+                                &param_1), iVar6 == 0)) &&
            (iVar6 = st::fn_006EB230
-                              (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                              (g_sT3DSMAPContext_00807598,param_1,DAT_00807410,DAT_00807414,
                                DAT_00807418,DAT_0080741c), iVar6 != 1)) {
           st::fn_0040386E(local_10,local_c,local_8);
           st::fn_00405547(1);
@@ -9733,7 +9732,7 @@ st::fn_0043AE40(STAllPlayersC *this,uint *param_1,int param_2,int param_3)
     iVar6 = 0;
     goto cf_common_exit_0043BB49;
   }
-  if (param_1 != (uint *)0x1) {
+  if (param_1 != 1) {
     local_EAX_58 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x1b2b,0,0,
                                       st::mutable_c_string("%s"),"STAllPlayersC::SetActivePanel invalid panel number");
     if (local_EAX_58 == 0) {
@@ -9768,9 +9767,9 @@ LAB_0043aee4:
             /* ST_CALLSITE[0043AFDF]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
             iVar6 = st::fn_004024F0(0x19a,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)((char)piVar1[1])),
                                 STField<DArrayTy *>(piVar1,10),uVar9,&local_10,&local_c,&local_8,
-                                (uint *)&param_1), iVar6 == 0)) &&
+                                &param_1), iVar6 == 0)) &&
            (iVar6 = st::fn_006EB230
-                              (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                              (g_sT3DSMAPContext_00807598,param_1,DAT_00807410,DAT_00807414,
                                DAT_00807418,DAT_0080741c), iVar6 != 1)) {
           st::fn_0040386E(local_10,local_c,local_8);
           st::fn_00405547(1);
@@ -9870,9 +9869,9 @@ cf_common_exit_0043B294:
           /* ST_CALLSITE[0043B3A5]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
           iVar6 = st::fn_004024F0(0x19a,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)((char)piVar1[1])),
                               STField<DArrayTy *>(piVar1,10),uVar9,&local_10,&local_c,&local_8,
-                              (uint *)&param_1), iVar6 == 0)) &&
+                              &param_1), iVar6 == 0)) &&
          (iVar6 = st::fn_006EB230
-                            (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                            (g_sT3DSMAPContext_00807598,param_1,DAT_00807410,DAT_00807414,
                              DAT_00807418,DAT_0080741c), iVar6 != 1)) {
         st::fn_0040386E(local_10,local_c,local_8);
         st::fn_00405547(1);
@@ -10008,7 +10007,7 @@ st::fn_0043BEB0
   int local_EAX_3922;
   int local_EAX_4134;
   int local_EAX_4501;
-  undefined4 uVar12;
+  uint uVar12;
   int local_EAX_5245;
   AnonShape_0043BEB0_1C00EC12 *pAVar13;
   int local_EAX_5472;
@@ -11311,7 +11310,7 @@ LAB_0043d5c4:
         if ((ushort)g_packedRecords_A62x8[uVar17].field103_0x171 < 2) {
           return;
         }
-        *(undefined4 *)&param_2[0xf].field_0xc = 0xffffffff;
+        *(int *)&param_2[0xf].field_0xc = 0xffffffff;
         param_2[0x11].field_0004 = 0xff;
         param_2[0x11].field_0005 = 0xff;
         param_2[0x11].field_0006 = 0xff;
@@ -11948,7 +11947,7 @@ int __thiscall st::fn_00440860(STAllPlayersC *this,int param_1,int *param_2,uint
   }
   else {
     /* ST_CALLSITE[004408D2]: CALL 0x00402748; direct=00402748 STAllPlayersC::_SubMDObject */
-    iVar5 = st::fn_00402748(st::pointer_boundary_cast<undefined4 *>(piVar3),uVar7);
+    iVar5 = st::fn_00402748(reinterpret_cast<undefined4 *>(piVar3),uVar7);
   }
   if ((((iVar5 == 1) &&
        (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field2_0x5, array != nullptr)
@@ -12048,7 +12047,7 @@ st::fn_00440AA0(STAllPlayersC *this,char param_1,DArrayTy *param_2,DArrayTy *par
   DArrayTy *pDVar6;
   int iVar4;
   uint *puVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   Global_sub_00430750_param_1Enum GVar9;
   int iVar11;
   int local_EAX_2155;
@@ -12233,7 +12232,7 @@ LAB_00440c19:
               }
               if ((pSVar4->field_0020 == 0x14) && (iVar5 = st::fn_00402EDC(pSVar4), iVar5 == 4))
               {
-                puVar8 = (undefined4 *)st::fn_004040B6(pSVar4,local_130);
+                puVar8 = st::fn_004040B6(pSVar4,local_130);
                 psVar16 = &local_fc;
                 for (iVar5 = 0xd; dVar1 = local_48, iVar5 != 0; iVar5 = iVar5 + -1) {
                   *(undefined4 *)psVar16 = *puVar8;
@@ -12718,7 +12717,7 @@ void __thiscall st::fn_00441CE0(STAllPlayersC *this,char param_1)
   DArrayTy *pDVar8;
   int iVar10;
   short *psVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   int *piVar13;
   uint uVar14;
   short *psVar15;
@@ -12800,7 +12799,7 @@ void __thiscall st::fn_00441CE0(STAllPlayersC *this,char param_1)
       pDVar16 = pDVar8;
       do {
         pDVar3 = st::fn_006AE290(nullptr,0,0x24,1);
-        *puVar12 = st::machine_word_boundary_cast<undefined4>(pDVar3);
+        *puVar12 = st::machine_word_boundary_cast<uint>(pDVar3);
         puVar12 = puVar12 + 1;
         pDVar16 = (DArrayTy *)((int)&pDVar16[-1].data + 3);
       } while (pDVar16 != nullptr);
@@ -12978,7 +12977,7 @@ undefined4 __thiscall st::fn_00442300(STAllPlayersC *this,char param_1,uint para
   STGameObjC *pSVar4_mg1;
   int iVar5;
   int iVar6;
-  undefined4 uVar6;
+  uint uVar6;
   uint uVar7;
   uint uVar8;
   int *piVar9;
@@ -13045,7 +13044,7 @@ undefined4 __thiscall st::fn_00442300(STAllPlayersC *this,char param_1,uint para
     return local_10;
   }
   if (0 < local_4c) {
-    piVar9 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[param_1].field5_0xf);
+    piVar9 = reinterpret_cast<int *>(&g_packedRecords_A62x8[param_1].field5_0xf);
     iVar11 = local_4c;
     do {
       if (*piVar9 == 0) {
@@ -13259,7 +13258,7 @@ undefined4 st::fn_00442B40(undefined4 *param_1,uint param_2)
   STGameObjC *this;
   uint uVar4;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
   char objPtr;
@@ -13401,7 +13400,7 @@ st::fn_00442E50
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STWorldCell *extraout_EDX;
   STWorldCell *pSVar12;
-  undefined2 uVar13;
+  ushort uVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -13474,8 +13473,7 @@ st::fn_00442E50
   short local_12;
   short local_10;
   int local_e;
-  undefined4 local_8;
-
+  uint local_8;
   local_d0[4] = 4;
   local_d0[0] = 0x38;
   local_d0[1] = 0x39;
@@ -13682,7 +13680,8 @@ LAB_0044326c:
               } while ((int)uVar15 < (int)uVar16);
             }
             if ((int)uVar15 < (int)uVar16) goto cf_common_join_004435CD;
-            psVar7 = (short *)st::fn_004024CD(this_00,local_19c);
+            st::fn_004024CD(this_00,local_19c);
+            psVar7 = (short *)local_19c;
             psVar19 = local_158;
             for (iVar11 = 0x10; iVar11 != 0; iVar11 = iVar11 + -1) {
               *(undefined4 *)psVar19 = *(undefined4 *)psVar7;
@@ -14097,13 +14096,13 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
   AnonShape_00443F30_5DF553AC *pAVar11;
   uint *puVar12;
   uint uVar13;
-  AnonShape_00443F30_9F0248D4 *pAVar14;
+  uint pAVar14;
   InternalExceptionFrame local_88;
   STAllPlayersC *local_44;
   uint *local_40;
   uint *local_3c;
   uint *local_38;
-  AnonShape_00443F30_9F0248D4 *local_34;
+  uint local_34;
   int *local_30;
   byte *local_2c;
   uint local_28;
@@ -14117,7 +14116,7 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
   AnonNested_00443F30_0839_FB957E77 *local_8;
   byte *pbVar4;
 
-  local_34 = (AnonShape_00443F30_9F0248D4 *)0x4;
+  local_34 = 0x4;
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
   local_44 = this;
@@ -14128,7 +14127,7 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
     local_28 = 0x5590;
     do {
       if (0 < (int)local_34) {
-        local_10 = local_34;
+        local_10 = st::pointer_boundary_cast<AnonShape_00443F30_9F0248D4 *>(local_34);
         puVar4 = (byte *)&local_14[-1].field_0x68f;
         do {
           if ((uint *)*puVar4 != nullptr) {
@@ -14221,7 +14220,7 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
     pbVar2 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(local_28));
     pbVar3 = pbVar2 + 8;
     *(undefined4 *)pbVar2 = local_44->field_001C;
-    piVar6 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[0].field3_0x9);
+    piVar6 = reinterpret_cast<int *>(&g_packedRecords_A62x8[0].field3_0x9);
     do {
       local_10 = (AnonShape_00443F30_9F0248D4 *)0x5;
       *(undefined4 *)(pbVar3 + -4) = *(undefined4 *)(piVar6[-1] + 0xc);
@@ -14648,7 +14647,7 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
       local_24 = (AnonShape_00443F30_5DF553AC *)
                  ((int)&((AnonShape_00443F30_9F0248D4 *)((int)local_24 + 0xaa4))->field_0004 + 3);
     } while ((int)local_18 < 0x7fa91e);
-    local_30 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[0].field1976_0x9f6);
+    local_30 = reinterpret_cast<int *>(&g_packedRecords_A62x8[0].field1976_0x9f6);
     local_10 = (AnonShape_00443F30_9F0248D4 *)(local_2c + 0xa73);
     do {
       local_10->field_0008 = (DArrayTy *)local_30[5];
@@ -14800,7 +14799,7 @@ uint __thiscall st::fn_004455C0(STAllPlayersC *this,undefined4 *param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   InternalExceptionFrame local_58;
-  undefined4 local_14;
+  uint local_14;
   STAllPlayersC *local_10;
   int local_c;
   STGroupC *local_8;
@@ -14909,8 +14908,7 @@ st::fn_004458D0
 
 {
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   uVar3 = 0;
   switch(param_1) {
   case CASE_1:
@@ -15137,7 +15135,7 @@ st::fn_00445A40(STAllPlayersC *this,uint param_1,uint *param_2,uint *param_3)
     local_30 = pDVar5->count;
     local_20 = 0;
     if (0 < (int)local_30) {
-      local_24 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[objPtr].field1976_0x9f6);
+      local_24 = reinterpret_cast<int *>(&g_packedRecords_A62x8[objPtr].field1976_0x9f6);
       do {
         st::fn_006ACC70(pDVar5,local_20,local_8);
         /* ST_CALLSITE[00445CF7]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -15202,7 +15200,7 @@ LAB_00445dca:
 LAB_00445e36:
   uVar6 = 0;
   if (0 < (int)local_c) {
-    local_24 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[objPtr].field1976_0x9f6);
+    local_24 = reinterpret_cast<int *>(&g_packedRecords_A62x8[objPtr].field1976_0x9f6);
     do {
       if (*local_24 == 0) break;
       st::fn_006ACC70(local_14,uVar6,local_8);
@@ -15217,7 +15215,7 @@ LAB_00445e36:
   }
   uVar6 = 0;
   if (0 < (int)local_10) {
-    local_24 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[objPtr].field1976_0x9f6);
+    local_24 = reinterpret_cast<int *>(&g_packedRecords_A62x8[objPtr].field1976_0x9f6);
     do {
       if (*local_24 == 0) break;
       st::fn_006ACC70(local_18,uVar6,local_8);
@@ -15267,7 +15265,7 @@ st::fn_004461B0(STAllPlayersC *this,char param_1,short param_2,int param_3)
   int exceptionCode;
   STBoatC *pSVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   uint uVar6;
   uint uVar7;
   DArrayTy *array;
@@ -15849,7 +15847,7 @@ void __thiscall st::fn_00446F80(STAllPlayersC *this,char param_1)
   uint uVar6;
   DArrayTy *pDVar7;
   uint uVar8;
-  undefined4 *puVar9;
+  uint *puVar9;
   DArrayTy *pDVar10;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;
@@ -16082,7 +16080,7 @@ LAB_0044738a:
                   pDVar3_mg5 = st::fn_006AE290(nullptr,(uint)local_14,4,1);
                   st::fn_006AE140
                             (pDVar3_mg5,(uint)((int)&pDVar3[-1].data + 3),&local_44);
-                  puVar9 = st::pointer_boundary_cast<undefined4 *>(pDVar3_mg5->data);
+                  puVar9 = static_cast<uint *>(pDVar3_mg5->data);
                   for (; pDVar10 = local_1c, pDVar7 = local_14, pDVar3 != nullptr;
                       pDVar3 = (DArrayTy *)((int)&pDVar3[-1].data + 3)) {
                     *puVar9 = 0;
@@ -16500,7 +16498,7 @@ st::fn_00448120
   short sVar10;
   short sVar11;
   dword dVar12;
-  undefined2 *puVar13;
+  ushort *puVar13;
   short *psVar14;
   uint uVar15;
   int *piVar16;
@@ -16560,9 +16558,9 @@ st::fn_00448120
   uint local_20_mg0;
   uint local_1c;
   uint local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
+  uint local_14;
+  uint local_10;
+  uint local_c;
   uint local_8;
 
   uVar15 = param_5;
@@ -17361,7 +17359,7 @@ st::fn_00449B60
 
   uint uVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   DArrayTy *array;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;
@@ -17438,7 +17436,7 @@ st::fn_00449CE0(STAllPlayersC *this,ushort param_1,void *param_2)
 {
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_4c;
   int local_8;
 
@@ -17492,7 +17490,7 @@ st::fn_00449E60
   int errorCode;
   STGameObjC *pSVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_50;
   STAllPlayersC *local_c;
   undefined4 local_8;
@@ -17544,7 +17542,7 @@ undefined4 __thiscall st::fn_00449FD0(STAllPlayersC *this,ushort param_1,void *p
 {
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_4c;
   int local_8;
 
@@ -17600,7 +17598,7 @@ st::fn_0044A150(STAllPlayersC *this,uint param_1,uint param_2,STMineSetC *param_
   int errorCode;
   STGameObjC *pSVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_50;
   STAllPlayersC *local_c;
   undefined4 local_8;
@@ -17653,7 +17651,7 @@ st::fn_0044A2C0(STAllPlayersC *this,ushort param_1,void *param_2)
 {
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_4c;
   int local_8;
 
@@ -17709,7 +17707,7 @@ st::fn_0044A440(STAllPlayersC *this,uint param_1,STResourceC *param_2)
   int errorCode;
   STGameObjC *pSVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_50;
   STAllPlayersC *local_c;
   undefined4 local_8;
@@ -17762,7 +17760,7 @@ st::fn_0044A5B0(STAllPlayersC *this,ushort param_1,void *param_2)
 {
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_4c;
   int local_8;
 
@@ -17816,7 +17814,7 @@ st::fn_0044A730
   int errorCode;
   STGameObjC *pSVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_50;
   STAllPlayersC *local_c;
   undefined4 local_8;
@@ -17868,7 +17866,7 @@ undefined4 __thiscall st::fn_0044A8A0(STAllPlayersC *this,ushort param_1,void *p
 {
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_4c;
   int local_8;
 
@@ -17921,7 +17919,7 @@ st::fn_0044AA20(STAllPlayersC *this,uint param_1,AnonShape_0044AA20_1EE9340C *pa
   int errorCode;
   STGameObjC *pSVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_50;
   STAllPlayersC *local_c;
   undefined4 local_8;
@@ -18254,12 +18252,12 @@ void st::fn_0044AF50(char param_1,int param_2)
 void __thiscall st::fn_0044B030(STAllPlayersC *this,char param_1,int param_2,int objPtr)
 
 {
-  undefined4 uVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
-  undefined4 uVar4;
+  uint uVar1;
+  uint uVar2;
+  uint uVar3;
+  uint uVar4;
   int iVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   uint uVar8;
   AnonPointee_TLOBaseTy_0607 *pAVar10;
   AnonPointee_TLOBaseTy_0607 *pAVar9;
@@ -19281,7 +19279,7 @@ LAB_0044c94c:
       }
       uVar9 = st::machine_word_boundary_cast<uint>(pDVar7->count * 4 + 3);
       *param_6 = uVar9;
-      local_14 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(uVar9));
+      local_14 = static_cast<ushort *>(st::fn_006AAC70(uVar9));
       *local_14 = (ushort)pDVar7->count;
       ((undefined1 *)local_14)[1] = (undefined1)param_1;
       puVar11 = (byte *)(pDVar7->data);
@@ -19321,7 +19319,7 @@ LAB_0044c94c:
       }
       uVar9 = st::machine_word_boundary_cast<uint>(pDVar7->count * 2 + 3);
       *param_6 = uVar9;
-      local_14 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(uVar9));
+      local_14 = static_cast<ushort *>(st::fn_006AAC70(uVar9));
       *local_14 = (ushort)pDVar7->count;
       ((undefined1 *)local_14)[1] = 3;
       puVar11 = (byte *)(pDVar7->data);

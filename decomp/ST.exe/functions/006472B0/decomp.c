@@ -9,7 +9,7 @@
 undefined4 __thiscall STVolcanoC::sub_006472B0(STVolcanoC *this)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
 
   uVar1 = 0;

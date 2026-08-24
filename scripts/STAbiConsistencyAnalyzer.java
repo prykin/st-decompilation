@@ -39,12 +39,14 @@ import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.GhidraClass;
+import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Listing;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.VariableStorage;
 import ghidra.program.model.scalar.Scalar;
+import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.SourceType;
 
 public class STAbiConsistencyAnalyzer extends GhidraScript {
@@ -102,6 +104,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             // body reads the complete incoming stack range.  Recover that boundary before
             // the ordinary parameter-width passes need Listing parameters to exist.
             if (addDefaultEspStackPrototype(function, rows)) continue;
+            if (addDiagnosticStackPrototype(function, rows)) continue;
             // A full prototype rewrite changes ordinals.  Do not emit stale
             // per-parameter rows for the same baseline in this pass.
             if (addMachineStackArityExpansion(function, rows)) continue;
@@ -423,6 +426,75 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             sites.add(addr(instruction.getAddress()) + " " + instruction);
         }
         return bytes == null ? null : new RetPurge(bytes, sites);
+    }
+
+    /**
+     * Recover the compact MSVC diagnostic-wrapper ABI without trusting its
+     * callers.  These wrappers read one callee-cleaned stack word, forward it
+     * as the substitution for an immutable {@code %s} diagnostic format, test
+     * the reporting result, optionally execute INT3, and return.  EAX is merely
+     * the reporter's physical residue: the source operation is void.
+     *
+     * The exact RET 4, complete pre-write EBP+8 read, register-to-PUSH flow,
+     * immutable format, library call, and trap are all required.  This is a
+     * typed machine-width anchor for the otherwise truncated stack prototype;
+     * ordinary RET 4 helpers remain untouched.
+     */
+    private boolean addDiagnosticStackPrototype(Function function, List<Row> rows)
+            throws Exception {
+        if (pointerSize != 4 || function.hasVarArgs() ||
+                !"__stdcall".equals(function.getCallingConventionName()) ||
+                manual(function.getSignatureSource()) ||
+                manual(function.getReturn().getSource()) ||
+                !explicitParameters(function).isEmpty()) return false;
+        RetPurge purge = uniformRetPurge(function);
+        if (purge == null || purge.bytes != pointerSize) return false;
+        IncomingStackEvidence incoming = incomingStackEvidence(function,
+            pointerSize * 2L, pointerSize);
+        for (long offset = pointerSize * 2L;
+                offset < pointerSize * 3L; offset++)
+            if (!incoming.readBytes.contains(offset)) return false;
+
+        String incomingRegister = "";
+        boolean pushedIncoming = false, diagnosticFormat = false;
+        boolean libraryCall = false, trap = false;
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if ("MOV".equals(mnemonic) && instruction.getNumOperands() >= 2 &&
+                    Long.valueOf(pointerSize * 2L).equals(stackOffset(instruction, 1)))
+                incomingRegister = fullRegister(
+                    instruction.getDefaultOperandRepresentation(0));
+            else if ("PUSH".equals(mnemonic) && !incomingRegister.isBlank() &&
+                    incomingRegister.equals(fullRegister(
+                        instruction.getDefaultOperandRepresentation(0))))
+                pushedIncoming = true;
+            if ("PUSH".equals(mnemonic)) {
+                for (Reference reference : instruction.getOperandReferences(0)) {
+                    Data data = listing.getDataAt(reference.getToAddress());
+                    Object value = data == null ? null : data.getValue();
+                    if (value instanceof String string && string.contains("%s"))
+                        diagnosticFormat = true;
+                }
+            }
+            if ("CALL".equals(mnemonic)) {
+                Function called = resolveThunk(directCalledFunction(instruction));
+                if (called != null && isLibrary(called)) libraryCall = true;
+            }
+            if ("INT3".equals(mnemonic)) trap = true;
+        }
+        if (!pushedIncoming || !diagnosticFormat || !libraryCall || !trap) return false;
+
+        rows.add(Row.full(function, "machine_diagnostic_stack_prototype", true,
+            "/void", "__stdcall", false, "pointer:/char", "diagnosticName", "high",
+            "exact RET 4 diagnostic wrapper reads EBP+8 before overlap, forwards " +
+            "that complete word through one register PUSH to a library reporter with " +
+            "an immutable %s format, tests the reporter result, and contains INT3; " +
+            "the reporter's residual EAX is not a source return; read_sites=" +
+            String.join(" | ", incoming.sites) + "; ret_sites=" +
+            String.join(" | ", purge.sites)));
+        return true;
     }
 
     /**
@@ -840,6 +912,11 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     private void addLegacyMachineArityReturnMigration(Function function, List<Row> rows) {
         if (!hasTag(function, "RECOVERED_ABI_CONSISTENCY")) return;
         if (function.getReturn().getVariableStorage().isUnassignedStorage()) return;
+        // This migration repairs only the legacy materialized undefined1 return.
+        // Once another analyzer has established a concrete return (notably void),
+        // the historical comment remains as provenance and must not resurrect the
+        // obsolete unsized return on every fixed-point pass.
+        if (!Undefined.isUndefined(unwrap(function.getReturnType()))) return;
         String comment = function.getComment();
         if (comment == null || !comment.contains(
                 "[STAbiConsistencyApplier] machine_thiscall_arity ") ||

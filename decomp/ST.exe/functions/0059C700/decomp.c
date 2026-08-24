@@ -11,7 +11,7 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
   FSGSTy *this_00;
   int iVar5;
   DArrayTy *pDVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar6;
   char *text;

@@ -22,9 +22,9 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
   int iVar8;
   bool bVar10;
   char *text;
-  undefined4 uVar11;
+  uint uVar11;
   uint uVar12;
-  undefined4 uVar13;
+  uint uVar13;
   InternalExceptionFrame local_5c;
   int local_18;
   int local_14;

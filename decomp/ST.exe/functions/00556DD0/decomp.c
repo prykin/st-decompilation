@@ -17,7 +17,7 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
   int iVar3;
   int iVar8;
   int iVar4;
-  undefined4 uVar9;
+  uint uVar9;
   short sVar10;
   short sVar11;
   cMf32 *pcVar12;

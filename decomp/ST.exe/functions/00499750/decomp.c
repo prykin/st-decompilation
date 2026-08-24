@@ -15,7 +15,7 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,DArr
   int iVar3;
   ushort *puVar4;
   int iVar6;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar7;
   uint index;
   InternalExceptionFrame local_58;

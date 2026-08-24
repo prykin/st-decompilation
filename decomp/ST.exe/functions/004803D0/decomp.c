@@ -5,6 +5,7 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *
 
 {
   int local_EAX_141;
+  int iVar2_mg3;
   int local_EAX_344;
   int iVar1;
   int iVar2;
@@ -46,8 +47,9 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *
       return -1;
     }
     if (g_playSystem_00802A38->field_00E4 % 0x25 == 0) {
-      iVar2 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
-      if (iVar2 == -4) {
+      iVar2_mg3 = STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
+      if (iVar2_mg3 == -4) {
         return 0;
       }
       if (param_1->field_0716 == param_1->field_0712) {

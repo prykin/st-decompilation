@@ -25,14 +25,14 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   int iVar5;
   int local_EAX_584;
   int local_EAX_755;
-  undefined4 uVar8;
+  uint uVar8;
   char *pcVar8;
   uint *puVar9;
   char *local_EAX_2492;
   char *local_EAX_2562;
   byte bVar4;
   int uVar11;
-  undefined4 *puVar10;
+  uint *puVar10;
   char *local_EAX_3266;
   char *pcVar10;
   int iVar14;
@@ -534,7 +534,7 @@ LAB_005bef6c:
   }
   iVar6 = 1;
   puVar24 = this_00->field_005D + 0x14;
-  uVar11 = FUN_006b4fe0((int)this_00->field_005D);
+  uVar11 = FUN_006b4fe0(this_00->field_005D);
   local_c = (RecoveredRecord_MReportTy_005BD4B0 *)
             FUN_006b50c0(400,0x32,(uint)this_00->field_005D[7],uVar11,(undefined4 *)puVar24,iVar6);
   uVar12 = local_c->field_0014;

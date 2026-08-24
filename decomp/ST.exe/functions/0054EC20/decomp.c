@@ -16,8 +16,8 @@
 void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this)
 
 {
-  undefined4 *puVar1;
-  undefined4 *puVar2;
+  uint *puVar1;
+  uint *puVar2;
   uint uVar4;
   int iVar5;
   char *pcVar6;
@@ -78,7 +78,7 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this)
           pcVar11 = pcVar11 + 1;
         }
         pcVar6 = pcVar6 + local_8;
-        *(int *)local_10->field_004F = *(int *)local_10->field_004F + 1;
+        *STField<int *>(local_10,0x4F) = *STField<int *>(local_10,0x4F) + 1;
         local_c = (AnonPointee_PlaySystemTy_0039 *)local_c->field_0000;
       } while (local_c != nullptr);
       local_c = nullptr;
@@ -88,7 +88,7 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this)
     if (pPVar10->field_0039 != nullptr) {
       FUN_006b9890((int *)&pPVar10->field_0039);
     }
-    if ((*(int *)pPVar10->field_004F != 0) && (DAT_0080c512 == 0)) {
+    if ((*STField<int *>(pPVar10,0x4F) != 0) && (DAT_0080c512 == 0)) {
       iVar5 = FUN_00715360(g_int_00811764,1,'8',pPVar10->field_004F,local_14,1,0xffffffff);
       if (iVar5 != 0) {
         thunk_FUN_00550380(4);

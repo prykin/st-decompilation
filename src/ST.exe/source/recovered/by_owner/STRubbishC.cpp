@@ -49,7 +49,7 @@ st::fn_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE35 *param_
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -125,8 +125,7 @@ int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *par
   int iVar3;
   int iVar4;
   int iVar5;
-  undefined4 *puVar6;
-
+  uint *puVar6;
   /* ST_CALLSITE[0062FCA7]: CALL 0x004017f3; direct=004017F3 STRubbishC::RubbishCreatePart */
   iVar3 = st::fn_004017F3(this);
   iVar4 = this->field_01E1;
@@ -161,7 +160,8 @@ int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *par
     if (this->field_01F9 != '\0') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar4 = st::fn_0040318E(this,iVar3,*(undefined4 *)((&this->field_01E5)[iVar3] + 0xc),
-                                 *(undefined4 *)((&this->field_01E5)[iVar3] + 4));
+                                 *(STRubbishC_LoadImagSpr_param_4Enum *)
+                                  ((&this->field_01E5)[iVar3] + 4));
       if (iVar4 != 0) {
         st::fn_004047BE(this,iVar3);
         return iVar3;
@@ -260,7 +260,7 @@ int __thiscall st::fn_0062FEA0(STRubbishC *this,int param_1,int param_2)
 void __thiscall st::fn_00630260(STRubbishC *this,int param_1,int param_2)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int local_24 [4];
   undefined4 local_14;
   int local_10;

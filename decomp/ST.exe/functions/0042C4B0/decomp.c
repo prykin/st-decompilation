@@ -12,7 +12,7 @@ STAllPlayersC::DelObjsFromTmp
 {
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   uint index;
   InternalExceptionFrame local_54;
   dword local_10;

@@ -5,9 +5,9 @@ void FUN_00760970(int param_1,AnonShape_00760970_DF0E462C *param_2,int *param_3,
                  int param_5)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int *piVar2;
-  undefined1 *puVar3;
+  byte *puVar3;
   AnonNested_00760970_0050_3C80E9C1 *pAVar4;
   int iVar5;
   int iVar6;

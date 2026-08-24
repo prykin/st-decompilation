@@ -1,17 +1,21 @@
 #include "../../pseudocode_runtime.h"
 
 
-int FUN_006c7d20(AnonShape_006C7D20_41F6C243 *param_1,int param_2,int *param_3)
+/* [STTypeFamilyApplier] CONTEXTUAL_GENERATED_RECORD.
+   Evidence: one script-owned pointer shape is used only by functions with one unique class-owner
+   context; promote its stable machine layout to a generated owner-qualified record name */
+
+int FUN_006c7d20(RecoveredRecord_FSGSTy_006C7D20 *param_1,int param_2,int *param_3)
 
 {
   char cVar1;
   uint uVar2;
-  undefined1 *puVar3;
-  undefined1 *puVar4;
+  byte *puVar3;
+  byte *puVar4;
   int iVar5;
   int iVar6;
 
-  uVar2 = Library::DKW::GPC::FUN_006d80c0((int)param_1);
+  uVar2 = Library::DKW::GPC::FUN_006d80c0(param_1);
   if ((uVar2 != 0) && (uVar2 != 0xffffffff)) {
     return 0;
   }

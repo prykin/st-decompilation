@@ -3,7 +3,11 @@
    Evidence: 00515650 -> 006B5440 @ 00515737
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005C87C0 -> 006B5440 @ 005C885D; /StartSystemTy+0x2f0 */
+   Evidence: 005C87C0 -> 006B5440 @ 005C885D; /StartSystemTy+0x2f0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=24, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void FUN_006b5440(ushort *param_1,int param_2,int param_3,int param_4,tagBITMAPINFO *tOBJImage,
                  int param_6,byte param_7)

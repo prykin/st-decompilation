@@ -11,7 +11,7 @@ void __thiscall FSGSTy::PaintGameNew(FSGSTy *this)
   ushort *puVar1;
   FSGSTy *pFVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *pcVar6;
   uint uVar7;
   uint uVar8;

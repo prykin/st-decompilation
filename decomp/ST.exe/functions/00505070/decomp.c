@@ -1,7 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
-uint __thiscall FUN_00505070(void *this,byte param_1)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00505070 -> 005050B0 @ 0050507A */
+
+uint __thiscall FUN_00505070(void *this,CPanelTy_sub_005050B0_param_1Enum param_1)
 
 {
   uint uVar1;

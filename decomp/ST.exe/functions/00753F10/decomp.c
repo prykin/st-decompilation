@@ -8,8 +8,7 @@ FUN_00753f10(undefined4 param_1,int param_2,int param_3,undefined4 param_4,undef
 {
   AnonShape_00754185_34BF31BE *context;
   int _Value;
-  undefined1 *puVar1;
-
+  byte *puVar1;
   puVar1 = &stack0xfffffffc;
   context = (AnonShape_00754185_34BF31BE *)thunk_FUN_006a3be0(0xc1d2);
   if (context == nullptr) {

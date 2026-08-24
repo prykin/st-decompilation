@@ -62,12 +62,12 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
   ushort uVar3;
   short sVar4;
   short sVar5;
-  undefined1 *puVar6;
+  byte *puVar6;
   int iVar7;
   char *pcVar8;
-  undefined2 *puVar9;
+  ushort *puVar9;
   byte bVar11;
-  undefined2 uVar12;
+  ushort uVar12;
   short sVar13;
   uint uVar14;
   STGameObjC *pSVar15;
@@ -80,6 +80,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
   DArrayTy *local_EAX_2256;
   DArrayTy *local_EAX_2766;
   byte *puVar18;
+  int iVar24_mgD;
   int local_EAX_3281;
   STWorldObject *pSVar19;
   DArrayTy *local_EAX_3962;
@@ -92,7 +93,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
   undefined4 extraout_ECX_00;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_01;
-  undefined4 uVar21;
+  uint uVar21;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_02;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -989,10 +990,12 @@ cf_common_exit_00437E03:
           puVar18 = (byte *)(thunk_FUN_0048dc90(pSVar15,local_1b8));
           puVar25 = (byte *)(&local_1fc);
           memmove(puVar25, puVar18, 0x42); /* compiler REP MOVS byte copy */
-          iVar24 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_1f6,(int *)&local_40);
+          iVar24 = 0;
+          iVar24_mgD = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_1f6,(int *)&local_40);
           /* ST_CALLSITE[00437BBC]: CALL dword ptr [EDX + 0x88] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          if ((iVar24 == 0) && (iVar24 = (**(code **)(*local_40 + 0x88))(&local_e8), 0 < iVar24)) {
+          if ((iVar24_mgD == 0) && (iVar24 = (**(code **)(*local_40 + 0x88))(&local_e8), 0 < iVar24)
+             ) {
             if (local_e8 == 0xdc) {
               local_d4 = local_d4 + 1;
               pDVar26 = local_6c;

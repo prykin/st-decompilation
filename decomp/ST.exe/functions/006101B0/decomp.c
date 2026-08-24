@@ -19,7 +19,7 @@ int __fastcall FUN_006101b0(AnonReceiver_0060EF40 *param_1)
   uint uVar6;
   uint uVar5;
   uint local_EAX_8584;
-  undefined4 uVar7;
+  uint uVar7;
   short sVar8;
   int iVar9;
   int iVar10;
@@ -29,9 +29,9 @@ int __fastcall FUN_006101b0(AnonReceiver_0060EF40 *param_1)
   int iVar15;
   bool bVar16;
   uint uVar17;
-  undefined1 uVar18;
-  undefined1 uVar19;
-  undefined2 uVar20;
+  byte uVar18;
+  byte uVar19;
+  ushort uVar20;
   undefined4 local_68;
   undefined4 local_64;
   undefined2 uStack_62;

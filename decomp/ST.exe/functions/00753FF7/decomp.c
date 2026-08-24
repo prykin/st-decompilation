@@ -8,13 +8,13 @@
 void FUN_00753ff7(void)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   int iVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EBP;
-  undefined1 *puVar3;
-  undefined1 *puVar4;
-  undefined1 *puVar5;
+  byte *puVar3;
+  byte *puVar4;
+  byte *puVar5;
   bool bVar6;
 
   bVar6 = false;

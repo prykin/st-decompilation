@@ -25,7 +25,7 @@ int __thiscall st::fn_00495980(DumpClassC *this,STMessage *message)
   int iVar7;
   short *psVar8;
   STWorldObject **ppSVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   InternalExceptionFrame local_90;
   InternalExceptionFrame local_4c;
   DumpClassC *local_8;
@@ -53,7 +53,7 @@ LAB_00495c27:
     g_pathingGrid.sizeY = PTR_00806750[1];
     g_pathingGrid.sizeZ = 5;
     g_pathingGrid.planeStride = *PTR_00806750 * PTR_00806750[1];
-    g_pathingGrid.cells =st::pointer_boundary_cast<short *>(
+    g_pathingGrid.cells =static_cast<short *>(
          st::fn_006AAC70((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX * 10));
     if (g_pathingGrid.cells == nullptr) {
       st::fn_006A5E40
@@ -74,7 +74,7 @@ LAB_00495c27:
     g_pathingScratchGrid.sizeZ = g_pathingGrid.sizeZ;
     g_pathingScratchGrid.sizeX = g_pathingGrid.sizeX;
     g_pathingScratchGrid.planeStride = g_pathingGrid.planeStride;
-    g_pathingScratchGrid.cells =st::pointer_boundary_cast<short *>(
+    g_pathingScratchGrid.cells =static_cast<short *>(
          st::fn_006AAC70
                    ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
                     2));
@@ -86,7 +86,7 @@ LAB_00495c27:
     g_worldGrid.sizeZ = g_pathingGrid.sizeZ;
     g_worldGrid.sizeX = g_pathingGrid.sizeX;
     g_worldGrid.planeStride = g_pathingGrid.planeStride;
-    g_worldGrid.cells =st::pointer_boundary_cast<STWorldCell *>(
+    g_worldGrid.cells =static_cast<STWorldCell *>(
          st::fn_006AAC70
                    ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
                     8));
@@ -109,7 +109,7 @@ LAB_00495c27:
                              ((int)g_pathingScratchGrid.sizeY * (int)g_pathingScratchGrid.sizeX));
     iVar4 = (int)g_pathingScratchGrid.sizeY;
     iVar7 = (int)g_pathingScratchGrid.sizeX;
-    puVar10 = st::pointer_boundary_cast<undefined4 *>(DAT_007fb26c);
+    puVar10 = st::pointer_boundary_cast<uint *>(DAT_007fb26c);
     for (uVar5 = (uint)(iVar4 * iVar7) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
       *puVar10 = 0;
       puVar10 = puVar10 + 1;
@@ -178,8 +178,7 @@ st::fn_00495EC0
 
 {
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   if ((((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) || (param_2 < 0)) ||
      (((g_worldGrid.sizeY <= param_2 || (param_3 < 0)) || (g_worldGrid.sizeZ <= param_3)))) {
     iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),0x7f,0,0,st::mutable_c_string("%s"),

@@ -1,6 +1,6 @@
 program=ST.exe
 source=prototype_proposals.tsv
-repair_proposals=2
+repair_proposals=1
 type_auto_apply=0
 name_auto_apply=0
 note=Rows are emitted only for targets carrying an earlier STPrototypeApplier marker.

@@ -19,7 +19,7 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *piVar1;
   int iVar3;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar4;
   InternalExceptionFrame local_50;
   undefined4 local_c;

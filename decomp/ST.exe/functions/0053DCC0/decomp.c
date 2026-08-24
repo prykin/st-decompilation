@@ -14,7 +14,7 @@ UPanelTy::PaintLBut(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte par
   UPanelTy *pUVar3;
   int iVar6;
   int iVar4;
-  undefined4 uVar7;
+  uint uVar7;
   LPSTR text;
   int iVar5;
   InternalExceptionFrame local_58;

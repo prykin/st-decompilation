@@ -89,7 +89,7 @@ LAB_0055832e:
   local_8->field_0034 = (uint)DAT_0080874d;
   local_8->field_0038 = local_10;
   local_8->field_003C = local_18;
-  local_8->field_0048 = *(undefined4 *)pVVar2->field_00FC;
+  local_8->field_0048 = *STField<undefined4 *>(pVVar2,0xFC);
   local_8->field_004C = *(undefined4 *)(pVVar2->field_00FC + 4);
   if (pVVar2->field_0114 != 0) {
     local_1c = pVVar2->field_003C;

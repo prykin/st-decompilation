@@ -23,7 +23,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   DArrayTy *pDVar8;
   int iVar10;
   short *psVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   int *piVar13;
   uint uVar14;
   short *psVar15;

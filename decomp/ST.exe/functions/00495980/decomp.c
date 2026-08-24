@@ -23,7 +23,7 @@ int __thiscall DumpClassC::GetMessage(DumpClassC *this,STMessage *message)
   int iVar7;
   short *psVar8;
   STWorldObject **ppSVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   InternalExceptionFrame local_90;
   InternalExceptionFrame local_4c;
   DumpClassC *local_8;

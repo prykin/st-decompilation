@@ -4,7 +4,7 @@
 void FUN_0075b8e0(undefined4 *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
   /* ST_CALLSITE[0075B8EE]: CALL dword ptr [EAX] */

@@ -22,8 +22,7 @@ uint FUN_00757530(AnonShape_00757530_EEED7D69 *param_1,int param_2,undefined4 *p
   sVar2 = param_1->field_000C->field_0034;
   if (sVar2 == 0) {
     /* ST_CALLSITE[00757566]: CALL dword ptr [EAX + 0x8] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar3 = (*(code *)param_1->field_000C->field_0008)(param_3 + 2);
+    iVar3 = (*STField<code *>(param_1->field_000C,0x0008))(param_3 + 2);
   }
   else {
     iVar3 = (int)sVar2;

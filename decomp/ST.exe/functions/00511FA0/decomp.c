@@ -11,7 +11,7 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
   HelpPanelTy *this_00;
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 

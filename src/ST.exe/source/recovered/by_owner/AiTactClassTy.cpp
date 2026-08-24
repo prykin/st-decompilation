@@ -228,7 +228,7 @@ void __thiscall st::fn_00690230(AiTactClassTy *this,uint *param_1)
 
 {
   AiFltClassTy *this_00;
-  undefined1 *puVar1;
+  byte *puVar1;
   AiTactClassTy_field_00A5DArray *pAVar2;
   uint uVar3;
   bool bVar4;
@@ -269,7 +269,7 @@ void __thiscall st::fn_006902B0(AiTactClassTy *this,short param_1,uint *param_2)
 
 {
   AiFltClassTy *this_00;
-  undefined1 *puVar1;
+  byte *puVar1;
   AiTactClassTy_field_00A5DArray *pAVar2;
   uint uVar3;
   bool bVar4;

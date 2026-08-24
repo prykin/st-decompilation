@@ -7,9 +7,8 @@ undefined4 FUN_006b7830(AnonShape_006B7830_769CA2DF *param_1,uint param_2)
   short *psVar1;
   uint uVar2;
   int iVar3;
-  undefined4 *puVar4;
-  undefined4 *puVar5;
-
+  uint *puVar4;
+  uint *puVar5;
   if (param_2 < (uint)param_1->field_0008) {
     psVar1 = *(short **)(param_2 * 4 + param_1->field_0014);
     if (psVar1 != nullptr) {

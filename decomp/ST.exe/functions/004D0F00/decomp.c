@@ -1,7 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 FUN_004d0f00(void)
+/* [STReturnSemanticsApplier] forwarded_call_return.
+   Evidence: every reachable RET receives full EAX from a trusted concrete callee with return type
+   /int; every later accumulator definition is an exact full-width integer transform of that value;
+   at least two resolved callers confirm that the entry is an externally observed ABI boundary;
+   machine CFG audit: used=1, ignored=3, unknown=0 */
+
+int FUN_004d0f00(void)
 
 {
   undefined4 local_20 [7];

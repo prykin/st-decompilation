@@ -973,7 +973,7 @@ st::fn_00672440
   AnonReceiver_0064A970 *this_00;
   int iVar2;
   char *arg_1;
-  undefined4 uVar1;
+  uint uVar1;
   int iVar3;
   short *psVar4;
   InternalExceptionFrame local_64;
@@ -1000,7 +1000,7 @@ st::fn_00672440
     }
     return iVar2;
   }
-  st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_1c->field_0x4),&CHAR_00h_008016a0,0x7f);
+  st::fn_0072E340((char *)&local_1c->field_0x4,&CHAR_00h_008016a0,0x7f);
   *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
   if (param_3 != nullptr) {
     psVar4 = param_3;

@@ -9,7 +9,11 @@
    [STReturnSemanticsApplier] returned_pointer_parameter.
    Evidence: every reachable RET receives full EAX from the same incoming pointer parameter this
    (ordinal=0); no intervening full or partial accumulator definition changes that value; machine
-   CFG audit: used=34, ignored=11, unknown=0 */
+   CFG audit: used=34, ignored=11, unknown=0
+
+   [STReturnSemanticsApplier] typed_pointer_return.
+   Evidence: the script-owned anonymous constructor shell lost its unique exact allocation-extent
+   proof; retain only the machine-proven pointer return */
 
 void * __thiscall sub_006E5FB0(void *this)
 

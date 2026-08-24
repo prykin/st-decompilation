@@ -23,12 +23,12 @@ undefined4 __thiscall st::fn_00415ED0(STJellyGunC *this,undefined4 *param_1,int 
   short sVar6;
   int iVar7;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   puStack_c = (undefined *)&DAT_007901b0;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   if ((this->field_0068 == this->field_0064) && (0 < this->field_0068)) {
@@ -439,8 +439,7 @@ undefined4 __thiscall st::fn_00584380(STJellyGunC *this)
 {
   undefined4 *this_00;
   int iVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   this_00 = &this->field_01D5;
   /* ST_CALLSITE[0058439F]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar1 = st::fn_00404183((STT3DSprC *)this_00,8,PTR_00806774,st::mutable_c_string("Expb11"),CASE_1D);

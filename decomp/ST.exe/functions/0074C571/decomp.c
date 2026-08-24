@@ -5,8 +5,7 @@ int FUN_0074c571(AnonShape_0074C571_537DB7FB *param_1)
 
 {
   int iVar1;
-  undefined1 *lpCriticalSection;
-
+  byte *lpCriticalSection;
   lpCriticalSection = &param_1->field_00CC->field_0x5c;
   /* ST_CALLSITE[0074C588]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection((LPCRITICAL_SECTION)lpCriticalSection);

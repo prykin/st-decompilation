@@ -13,8 +13,7 @@ undefined4 __cdecl
 FUN_00525ef0(Global_sub_00525EF0_param_1Enum param_1,Global_sub_00525EF0_param_2Enum param_2)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   switch(param_1) {
   case CASE_1:

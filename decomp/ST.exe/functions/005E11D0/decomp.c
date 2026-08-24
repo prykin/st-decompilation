@@ -14,7 +14,7 @@ MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char pa
 
 {
   int errorCode;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   uint uVar4;
   uint uVar5;

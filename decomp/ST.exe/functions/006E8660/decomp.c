@@ -4,9 +4,14 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=31; incoming_this_accesses=10;
    incoming_edx_uses=0; incoming_stack_parameter_uses=10; direct_non_thunk_callers=34;
-   incoming_ecx_receiver_callers=3; attributed_named_callers=25; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=3; attributed_named_callers=25; owner_evidence_coverage=adequate
 
-undefined4 __thiscall
+   [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=3, ignored=38, unknown=0 */
+
+int __thiscall
 ST3DSMAPContext::sub_006E8660
           (ST3DSMAPContext *this,int *param_1,uint param_2,uint param_3,uint param_4,uint param_5,
           uint param_6,uint param_7,uint param_8)
@@ -45,7 +50,7 @@ ST3DSMAPContext::sub_006E8660
     if (this->field_0318 <= this->field_0314) {
       pbVar1 = Library::DKW::LIB::MemRealloc(this->field_031C,(this->field_0318 + 10) * 0x114);
       if (pbVar1 == nullptr) {
-        return 0xfffffffe;
+        return -2;
       }
       this->field_031C = pbVar1;
       pbVar1 = pbVar1 + this->field_0314 * 0x114;
@@ -79,7 +84,7 @@ ST3DSMAPContext::sub_006E8660
     pvVar2 = Library::DKW::LIB::MemAllocClear(param_2 << 2);
     *(void **)(pAVar4 + 1) = pvVar2;
     if (pvVar2 == nullptr) {
-      return 0xfffffffe;
+      return -2;
     }
   }
   if ((0 < (int)param_4) && (0 < (int)param_5)) {

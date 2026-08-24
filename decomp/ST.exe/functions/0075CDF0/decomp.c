@@ -5,9 +5,9 @@ void FUN_0075cdf0(int *param_1,int param_2)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
 
   /* ST_CALLSITE[0075CDFF]: CALL dword ptr [EAX] */

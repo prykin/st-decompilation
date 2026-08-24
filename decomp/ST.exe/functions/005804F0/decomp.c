@@ -6,7 +6,11 @@
    004E0250 -> 005804F0 @ 004E030B; zero-filled partial register load at 004E02FF
 
    [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 005804F0 -> 00580FF0 @ 0058053D */
+   Evidence: 005804F0 -> 00580FF0 @ 0058053D
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall FUN_005804f0(void *this,undefined4 param_1,ushort param_2,ushort param_3)
 

@@ -4,7 +4,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Igor\to_sat.cpp
    Diagnostic line evidence: 283 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+
+   [STReturnSemanticsApplier] repair_false_machine_eax_return.
+   Evidence: the earlier machine return was admitted only because a self-zeroing XOR/SUB was
+   misclassified as reading the call result; every resolved caller now proves an exact EAX kill;
+   machine CFG audit: used=0, ignored=3, unknown=0 */
 
 void __thiscall FUN_0058c560(void *this,int param_1,int param_2)
 

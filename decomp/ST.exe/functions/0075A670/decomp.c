@@ -6,10 +6,10 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
 {
   int *piVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
   int iVar5;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar6;
   int *piVar8;
   int iVar9;

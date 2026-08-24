@@ -11,18 +11,18 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   bool bVar2;
   InterSystemC *this_00;
   int iVar3;
-  ccFntTy *pcVar3;
-  int iVar5;
-  LPSTR pCVar6;
-  ushort *puVar7;
+  HDC pHVar3;
+  LPSTR pCVar4;
+  ushort *puVar5;
   char *text;
   int iVar4;
-  undefined4 uVar9;
-  uint uVar10;
-  byte bVar11;
+  int iVar6;
+  uint uVar8;
+  uint uVar9;
+  byte bVar10;
+  int iVar11;
   int iVar12;
-  int iVar13;
-  undefined4 *puVar14;
+  uint *puVar13;
   InternalExceptionFrame local_1c8;
   uint local_184 [4];
   undefined4 local_174;
@@ -58,49 +58,49 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   this_00 = local_8;
   if (iVar3 == 0) {
     if (DAT_0080874e == '\x01') {
-      pcVar3 = (ccFntTy *)thunk_FUN_00541cf0(PTR_0080679c,nullptr,DAT_00807dd9);
+      pHVar3 = thunk_FUN_00541cf0(PTR_0080679c,nullptr,DAT_00807dd9);
     }
     else if (DAT_0080874e == '\x02') {
-      pcVar3 = (ccFntTy *)thunk_FUN_00541f60(PTR_0080679c,nullptr,DAT_00807dd9);
+      pHVar3 = thunk_FUN_00541f60(PTR_0080679c,nullptr,DAT_00807dd9);
     }
     else {
-      pcVar3 = (ccFntTy *)thunk_FUN_005421d0(PTR_0080679c,nullptr,DAT_00807dd9);
+      pHVar3 = thunk_FUN_005421d0(PTR_0080679c,nullptr,DAT_00807dd9);
     }
-    this_00->field_0024 = pcVar3;
-    pcVar3->field_0058 = 1;
-    pcVar3->field_005C = 0;
-    pcVar3 = (ccFntTy *)thunk_FUN_005412b0(PTR_0080679c,nullptr,DAT_00807dd9);
-    this_00->field_0028 = pcVar3;
-    pcVar3->field_0058 = 0;
-    pcVar3->field_005C = 0;
-    iVar5 = thunk_FUN_005416a0((int)PTR_0080679c,nullptr,DAT_00807dd9);
-    this_00->field_002C = iVar5;
-    *(undefined4 *)(iVar5 + 0x58) = 1;
-    *(undefined4 *)(iVar5 + 0x5c) = 0;
-    iVar5 = thunk_FUN_005419e0((int)PTR_0080679c,nullptr,DAT_00807dd9);
-    this_00->field_0030 = iVar5;
-    *(undefined4 *)(iVar5 + 0x58) = 1;
-    *(undefined4 *)(iVar5 + 0x5c) = 0;
+    this_00->field_0024 = pHVar3;
+    pHVar3[0x16].unused = 1;
+    pHVar3[0x17].unused = 0;
+    pHVar3 = thunk_FUN_005412b0(PTR_0080679c,nullptr,DAT_00807dd9);
+    this_00->field_0028 = pHVar3;
+    pHVar3[0x16].unused = 0;
+    pHVar3[0x17].unused = 0;
+    pHVar3 = thunk_FUN_005416a0((int)PTR_0080679c,nullptr,DAT_00807dd9);
+    this_00->field_002C = pHVar3;
+    pHVar3[0x16].unused = 1;
+    pHVar3[0x17].unused = 0;
+    pHVar3 = thunk_FUN_005419e0((int)PTR_0080679c,nullptr,DAT_00807dd9);
+    this_00->field_0030 = pHVar3;
+    pHVar3[0x16].unused = 1;
+    pHVar3[0x17].unused = 0;
     thunk_FUN_0056a500();
     memset(local_184, 0, 0x17c); /* compiler bulk-zero initialization */
-    puVar14 = nullptr;
-    iVar13 = 0;
-    iVar12 = 1;
-    bVar11 = 0;
-    uVar10 = 0xffffffff;
-    uVar9 = 0;
-    iVar5 = 1;
+    puVar13 = nullptr;
+    iVar12 = 0;
+    iVar11 = 1;
+    bVar10 = 0;
+    uVar9 = 0xffffffff;
+    uVar8 = 0;
+    iVar6 = 1;
     local_184[1] = 1;
     local_184[0] = 1;
-    pCVar6 = thunk_FUN_00571240("BUT_FILEOPT",0);
-    pCVar6 = FUN_006f2c00(pCVar6,iVar5,uVar9);
-    puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (PTR_00806794,CASE_1,pCVar6,uVar10,bVar11,iVar12,iVar13,puVar14);
+    pCVar4 = thunk_FUN_00571240("BUT_FILEOPT",0);
+    pCVar4 = FUN_006f2c00(pCVar4,iVar6,uVar8);
+    puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (PTR_00806794,CASE_1,pCVar4,uVar9,bVar10,iVar11,iVar12,puVar13);
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 5) + 0x26;
-    local_174 = *(undefined4 *)(puVar7 + 2);
+    local_174 = *(undefined4 *)(puVar5 + 2);
     local_164 = this_00->field_0014;
     local_184[3] = (DAT_0080874e != '\x03') + 7;
-    local_170 = *(undefined4 *)(puVar7 + 4);
+    local_170 = *(undefined4 *)(puVar5 + 4);
     local_e0 = 0x101;
     local_104 = 0x101;
     local_dc = 3;
@@ -152,12 +152,12 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
     if ((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
        (DAT_0080874f == '\0')) {
-      bVar11 = 1;
+      bVar10 = 1;
     }
     else {
-      bVar11 = 0;
+      bVar10 = 0;
     }
-    local_184[0] = (uint)bVar11;
+    local_184[0] = (uint)bVar10;
     local_d0 = 0x2719;
     local_f4 = 0x2719;
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 2) + 0x128;
@@ -272,9 +272,9 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     }
     thunk_FUN_0056a500();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != nullptr)) {
-      uVar10 = 8;
+      uVar9 = 8;
       text = LoadResourceString(0x4275,g_hINSTANCE_00807618);
-      thunk_FUN_0052d320(g_popUp_008016D8,text,uVar10);
+      thunk_FUN_0052d320(g_popUp_008016D8,text,uVar9);
     }
     g_currentExceptionFrame = local_1c8.previous;
     return 0;

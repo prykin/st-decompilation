@@ -13,7 +13,7 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
   int errorCode;
   ushort *puVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   STTmMineC *local_c;

@@ -21,7 +21,7 @@ FUN_004b1040(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
             char *param_8,undefined4 param_9,undefined4 param_10)
 
 {
-  undefined4 *puVar2;
+  uint *puVar2;
   undefined4 local_5c;
   int local_58;
   undefined4 local_54;

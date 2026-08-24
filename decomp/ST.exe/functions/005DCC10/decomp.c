@@ -11,7 +11,7 @@ undefined4 __thiscall StartSystemTy::InitSystem(StartSystemTy *this)
   int iVar2;
   LPSTR pCVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   StartSystemTy *this_00;
   InternalExceptionFrame local_90;
   InternalExceptionFrame local_4c;

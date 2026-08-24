@@ -8,8 +8,7 @@
 undefined4 FUN_00748d92(int param_1,int param_2)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x14) < param_2) {
     uVar1 = 0x8004020d;

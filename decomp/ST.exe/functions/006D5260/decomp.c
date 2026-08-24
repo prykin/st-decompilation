@@ -16,8 +16,8 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
   int *piVar9;
   HDC hdc;
   UINT UVar10;
-  undefined1 *puVar11;
-  undefined1 *puVar12;
+  byte *puVar11;
+  byte *puVar12;
   undefined4 *iStart;
   UINT iStart_00;
   bool bVar13;

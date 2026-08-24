@@ -14,8 +14,8 @@ void FUN_00706e30(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   uint uVar3;
   uint uVar4;
   uint uVar5;
-  undefined1 *puVar6;
-  undefined1 *puVar7;
+  byte *puVar6;
+  byte *puVar7;
   ushort *puVar8;
   ushort *puVar9;
   byte bVar10;

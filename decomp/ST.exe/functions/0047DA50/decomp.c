@@ -18,11 +18,11 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
 {
   uint uVar1;
   STBoatC_field_06A5State SVar2;
-  undefined4 uVar3;
-  undefined2 uVar5;
+  uint uVar3;
+  ushort uVar5;
   uint uVar6;
   int local_EAX_269;
-  undefined4 *puVar7;
+  uint *puVar7;
   int local_EAX_865;
   int iVar8;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -44,7 +44,7 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
   short sVar21;
   byte bVar22;
   undefined4 local_2c [2];
-  undefined4 local_24;
+  uint local_24;
   short local_20;
   int local_1c;
   undefined4 local_18;
@@ -57,7 +57,7 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
   sub_004952E0(this);
   if ((this->field_06A1 == 1) || (this->field_06A1 == 2)) {
     /* ST_CALLSITE[0047DDF5]: CALL 0x004014fb; direct=004014FB STBoatC::Annih */
-    iVar8 = Annih(this,(undefined4 *)0x2);
+    iVar8 = Annih(this,2);
     return iVar8;
   }
   SVar2 = this->field_06A5;

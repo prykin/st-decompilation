@@ -17,8 +17,8 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
   int iVar8;
   byte *puVar9;
   byte *puVar10;
-  undefined4 uVar11;
-  undefined4 uVar12;
+  uint uVar11;
+  uint uVar12;
   int local_10;
   int local_c;
   byte *local_8;

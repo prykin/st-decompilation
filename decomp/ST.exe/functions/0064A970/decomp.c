@@ -14,7 +14,15 @@
 float * FUN_0064a970(char *param_1,int param_2,int *param_3)
 
 {
-  undefined4 *puVar1;
+  float float_local_28_3;
+  float float_local_18_4;
+  float float_local_18_5;
+  float float_local_18_6;
+  float float_local_c_7;
+  float float_local_c_8;
+  float float_local_c_9;
+  float float_local_c_10;
+  uint *puVar1;
   byte bVar2;
   char cVar3;
   short sVar4;
@@ -43,7 +51,7 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
   char *local_EAX_5067;
   char *local_EAX_5222;
   char *pcVar13_mg5;
-  undefined4 uVar12;
+  uint uVar12;
   char *pcVar13;
   char *local_EAX_5998;
   char *local_EAX_6215;
@@ -55,6 +63,7 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
   float *pfVar17;
   bool bVar18;
   float10 fVar19;
+  float10 fVar19_mg9;
   longlong lVar20;
   InternalExceptionFrame local_c0;
   undefined4 local_7c;
@@ -278,7 +287,7 @@ cf_common_exit_0064BBB1:
         /* ST_CALLSITE[0064B1C4]: CALL dword ptr [EAX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         local_18 = (byte *)(**(code **)*local_38)(param_1);
-        local_c = (int *)(float)(int)local_18;
+        float_local_c_7 = (float)(int)local_18; /* split floating lifetime from pointer-typed SSA storage */
         /* ST_CALLSITE[0064B1D4]: CALL dword ptr [EDX + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
@@ -286,7 +295,7 @@ cf_common_exit_0064BBB1:
         local_8 = Library::DKW::LIB::MemAllocClear(4);
         switch((int)*(short *)(local_10 + 1)) {
         case 1:
-          *local_8 = local_14 + (float)local_c;
+          *local_8 = local_14 + float_local_c_7;
           break;
         default:
           local_EAX_2282 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
@@ -322,7 +331,7 @@ cf_common_exit_0064BBB1:
           /* ST_CALLSITE[0064B3F9]: CALL dword ptr [EAX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-          local_c = (int *)(float)fVar19;
+          float_local_c_8 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
           /* ST_CALLSITE[0064B404]: CALL dword ptr [EDX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
@@ -331,7 +340,7 @@ cf_common_exit_0064BBB1:
           iVar6 = (int)*(short *)(local_10 + 1);
           switch(iVar6) {
           case 1:
-            *local_8 = local_14 + (float)local_c;
+            *local_8 = local_14 + float_local_c_8;
             break;
           default:
             goto switchD_0064b42d_caseD_2;
@@ -354,7 +363,7 @@ cf_common_exit_0064BBB1:
         /* ST_CALLSITE[0064B4AA]: CALL dword ptr [EDX + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-        local_c = (int *)(float)fVar19;
+        float_local_c_9 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
         /* ST_CALLSITE[0064B4B5]: CALL dword ptr [EAX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         local_18 = (byte *)(**(code **)*local_38)(param_1 + 5);
@@ -363,7 +372,7 @@ cf_common_exit_0064BBB1:
         iVar6 = (int)*(short *)(local_10 + 1);
         switch(iVar6) {
         case 1:
-          *local_8 = local_14 + (float)local_c;
+          *local_8 = local_14 + float_local_c_9;
           break;
         default:
 switchD_0064b42d_caseD_2:
@@ -881,13 +890,13 @@ LAB_0064b80a:
 LAB_0064b8f1:
               /* ST_CALLSITE[0064B8F6]: CALL dword ptr [EAX] */
               local_18 = (byte *)(**(code **)*local_38)(param_1);
-              local_c = (int *)(float)(int)local_18;
+              float_local_c_10 = (float)(int)local_18; /* split floating lifetime from pointer-typed SSA storage */
 LAB_0064b901:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
                 /* ST_CALLSITE[0064B910]: CALL dword ptr [EDX + 0x4] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-                local_c = (int *)(float)fVar19;
+                float_local_c_10 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
               }
             }
             else {
@@ -903,13 +912,13 @@ LAB_0064b901:
               RaiseInternalException
                         (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
             }
-            local_28 = (char *)((float)local_c + (float)local_28);
+            float_local_28_3 = (char *)((float)local_c + (float)local_28); /* split floating lifetime from pointer-typed SSA storage */
             param_1 = param_1 + 5;
             iVar6 = iVar6 + -1;
           } while (iVar6 != 0);
         }
         local_8 = Library::DKW::LIB::MemAllocClear(4);
-        *local_8 = (float)local_28 / (float)param_2;
+        *local_8 = float_local_28_3 / (float)param_2;
         goto cf_common_exit_0064B291;
       }
       if (iVar6 == 0x41) {
@@ -930,8 +939,8 @@ LAB_0064b901:
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_CALLSITE[0064B837]: CALL dword ptr [EDX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-          *local_8 = (float)-fVar19;
+          fVar19_mg9 = (float10)(**(code **)(*local_38 + 4))(param_1);
+          *local_8 = (float)-fVar19_mg9;
           goto cf_common_exit_0064B36F;
         }
         goto LAB_0064b7ea;
@@ -997,7 +1006,7 @@ LAB_0064b663:
         /* ST_CALLSITE[0064BB6F]: CALL dword ptr [EAX + 0x4] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-        local_18 = (byte *)(float)fVar19;
+        float_local_18_4 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
         /* ST_CALLSITE[0064BB7A]: CALL dword ptr [EDX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar6 = (**(code **)*local_38)(param_1 + 5);
@@ -1009,8 +1018,8 @@ LAB_0064b663:
         }
         local_8 = Library::DKW::LIB::MemAllocClear(iVar6 + 10);
         Library::MSVCRT::FUN_007301e0
-                  (SUB84((double)(float)local_18,0),
-                   (int)((ulonglong)(double)(float)local_18 >> 0x20),iVar6,(char *)local_8);
+                  (SUB84((double)float_local_18_4,0),
+                   (int)((ulonglong)(double)float_local_18_4 >> 0x20),iVar6,(char *)local_8);
         goto cf_common_exit_0064BBB1;
       }
     }
@@ -1053,10 +1062,10 @@ LAB_0064bd33:
       /* ST_CALLSITE[0064BCDC]: CALL dword ptr [EDX + 0x4] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-      local_18 = (byte *)(float)fVar19;
+      float_local_18_5 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       Library::MSVCRT::FUN_0072e150
-                (SUB84((double)(float)local_18,0),(uint)((ulonglong)(double)(float)local_18 >> 0x20)
+                (SUB84((double)float_local_18_5,0),(uint)((ulonglong)(double)float_local_18_5 >> 0x20)
                 );
       lVar20 = Library::MSVCRT::__ftol();
       *local_8 = (float)lVar20;
@@ -1078,10 +1087,10 @@ LAB_0064bd33:
       /* ST_CALLSITE[0064BD77]: CALL dword ptr [EAX + 0x4] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-      local_18 = (byte *)(float)fVar19;
+      float_local_18_6 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       Library::MSVCRT::FUN_00730450
-                (SUB84((double)(float)local_18,0),(uint)((ulonglong)(double)(float)local_18 >> 0x20)
+                (SUB84((double)float_local_18_6,0),(uint)((ulonglong)(double)float_local_18_6 >> 0x20)
                 );
       lVar20 = Library::MSVCRT::__ftol();
       *local_8 = (float)lVar20;

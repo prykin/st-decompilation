@@ -10,11 +10,11 @@ int __thiscall STBoatC::BackWaitLoad(STBoatC *this,int *param_1)
 {
   uint uVar1;
   STBoatC_field_05C4State SVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar5;
   int local_EAX_72;
   uint uVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   int local_EAX_624;
   int local_EAX_658;
   int iVar4;
@@ -32,7 +32,7 @@ int __thiscall STBoatC::BackWaitLoad(STBoatC *this,int *param_1)
   short sVar19;
   byte bVar20;
   undefined4 local_2c [2];
-  undefined4 local_24;
+  uint local_24;
   short local_20;
   int local_1c;
   undefined4 local_18;

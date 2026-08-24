@@ -54,7 +54,7 @@ void __thiscall ChooseMapTy::PrepFiles(ChooseMapTy *this,uint param_1)
   byte *pbVar24;
   bool bVar25;
   DArrayTy *pDVar26;
-  undefined4 uVar27;
+  uint uVar27;
   byte local_370 [260];
   _WIN32_FIND_DATAA local_26c;
   InternalExceptionFrame local_12c;

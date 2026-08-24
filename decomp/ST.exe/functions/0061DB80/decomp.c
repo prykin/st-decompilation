@@ -12,10 +12,10 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
   STLightC *this_00;
   int iVar2;
   ushort *puVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   STLightC_field_00A3DArray *pSVar5;
   int iVar6;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   InternalExceptionFrame local_50;
   STLightC *local_c;
@@ -51,7 +51,7 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
         *(undefined4 *)((int)this_00->field_0057 + iVar1 * 4) = 0xffffffff;
       } while (iVar7 < this_00->field_0093);
     }
-    *(undefined4 *)this_00->field_0057 = 0;
+    *STField<undefined4 *>(this_00,0x57) = 0;
     *(undefined4 *)((int)this_00->field_0057 + this_00->field_0093 * 0xc) = 0;
     pSVar5 = (STLightC_field_00A3DArray *)
              Library::DKW::TBL::DArrayCreate(nullptr,local_8,0x30,10);

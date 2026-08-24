@@ -16,8 +16,9 @@
 void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
 
 {
-  int iVar3;
+  int iVar3_mg0;
   int local_EAX_104;
+  int iVar3;
   int iVar2;
   STFishC *local_14;
   short local_e;
@@ -36,10 +37,10 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar3 = STPlaySystemC::sub_006E62D0
-                    (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
-                     (int *)&local_14);
-  if (iVar3 != -4) {
+  iVar3_mg0 = STPlaySystemC::sub_006E62D0
+                        (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
+                         (int *)&local_14);
+  if (iVar3_mg0 != -4) {
     /* ST_CALLSITE[0049211B]: CALL dword ptr [EDX + 0xac] */
     (*local_14->vtable->vfunc_AC)(this->field_0018);
     /* ST_CALLSITE[00492139]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */

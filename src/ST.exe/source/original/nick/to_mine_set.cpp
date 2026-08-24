@@ -365,7 +365,7 @@ undefined4 __thiscall st::fn_00623170(STMineSetC *this,int param_1)
   int iVar3;
   int iVar5;
   int iVar4;
-  undefined4 uVar6;
+  uint uVar6;
   InternalExceptionFrame local_50;
   STMineSetC *local_c;
   undefined4 local_8;

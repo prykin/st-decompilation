@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
   STWorldObject *pSVar2;
   short sVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   short sVar6;
   void *local_8;
 

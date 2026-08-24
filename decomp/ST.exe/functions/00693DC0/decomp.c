@@ -8,7 +8,7 @@
 undefined4 FUN_00693dc0(cMf32 *param_1,undefined4 param_2)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   AnonReceiver_00693D00 *in_ECX;
   int iVar2;

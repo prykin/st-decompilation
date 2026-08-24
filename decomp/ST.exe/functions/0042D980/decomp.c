@@ -18,7 +18,7 @@ STAllPlayersC::GetActiveCenter
   DArrayTy *pDVar1;
   dword dVar2;
   int local_EAX_75;
-  undefined4 uVar4;
+  uint uVar4;
   STGameObjC *pSVar5;
   int local_EAX_631;
   int iVar4;

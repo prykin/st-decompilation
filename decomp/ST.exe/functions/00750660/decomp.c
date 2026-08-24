@@ -7,8 +7,8 @@ void FUN_00750660(undefined1 *param_1,int param_2,undefined1 *param_3,int param_
                  undefined1 *param_5,int param_6,int param_7,int param_8,int param_9)
 
 {
-  undefined1 uVar1;
-  undefined1 uVar2;
+  byte uVar1;
+  byte uVar2;
   bool bVar3;
   int iVar4;
   int iVar5;

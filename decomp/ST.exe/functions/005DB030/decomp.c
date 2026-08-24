@@ -27,7 +27,7 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   InternalExceptionFrame local_6c;
   undefined1 local_28 [3];
   int local_25;
-  undefined1 *local_20;
+  byte *local_20;
   int *local_1c;
   char *local_18;
   int local_14;

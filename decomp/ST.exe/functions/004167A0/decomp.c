@@ -9,7 +9,7 @@ void __thiscall sub_004167A0(void *this)
 
 {
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

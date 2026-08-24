@@ -9,7 +9,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
   short sVar3;
   int iVar4;
   int iVar5;
-  undefined2 *puVar7;
+  ushort *puVar7;
   uint uVar8;
   short *psVar10;
   uint uVar11;

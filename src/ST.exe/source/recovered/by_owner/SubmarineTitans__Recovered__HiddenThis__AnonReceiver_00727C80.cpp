@@ -29,7 +29,7 @@ st::fn_00727DA0
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX;
   uint uVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   AnonShape_00727DA0_C4265AA0 *pAVar9;
   uint uVar10;
   AnonShape_00727DA0_C4265AA0 *pAVar11;
@@ -37,7 +37,7 @@ st::fn_00727DA0
   byte *pbVar13;
   int *piVar14;
   uint uVar15;
-  undefined2 *puVar16;
+  ushort *puVar16;
   byte *pbVar17;
   AnonShape_00728170_7560EBA7 local_60;
   int local_38;
@@ -84,7 +84,7 @@ st::fn_00727DA0
   auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
   pAVar9 = (AnonShape_00727DA0_C4265AA0 *)0x7fff0000;
   auto param_1_after_write = (AnonShape_00727DA0_C4265AA0 *)0x80000000; /* compiler stack-slot lifetime split */
-  piVar14 = st::pointer_boundary_cast<int *>(&DAT_008570ac);
+  piVar14 = reinterpret_cast<int *>(&DAT_008570ac);
   do {
     pAVar1 = (AnonShape_00727DA0_C4265AA0 *)*piVar14;
     if ((int)pAVar1 < (int)pAVar9) {
@@ -233,7 +233,7 @@ st::fn_007282B0
 {
   byte *pbVar1;
   float fVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
   int iVar5;
   int iVar6;

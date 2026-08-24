@@ -7,7 +7,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
 
 {
   byte bVar1;
-  undefined2 uVar2;
+  ushort uVar2;
   char cVar3;
   ushort *puVar4;
   STGameObjC *this;

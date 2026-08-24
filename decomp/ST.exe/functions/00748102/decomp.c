@@ -19,8 +19,7 @@ undefined4 FUN_00748102(int param_1,int *param_2)
 
 {
   int *piVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   if (param_2 == nullptr) {
     uVar2 = 0x80004003;
   }

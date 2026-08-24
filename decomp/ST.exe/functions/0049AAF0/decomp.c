@@ -22,7 +22,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
   int iVar8;
   dword dVar9;
   int iVar9;
-  undefined4 uVar10;
+  uint uVar10;
   int iVar11;
   STWorldObject *pSVar12;
   STGroupBoatC *pSVar13;

@@ -58,9 +58,8 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
   char *pcVar21;
   int *piVar22;
   char cVar23;
-  undefined2 uVar24;
-  undefined4 uVar25;
-
+  ushort uVar24;
+  uint uVar25;
   if (param_1->field_04D0 == CASE_1) {
     if (*(int *)&param_1->field_01F5->field_0x1a4 == *(int *)&param_1->field_01F5->field_0x1a0) {
       uVar12 = param_1->field_04E0[2];

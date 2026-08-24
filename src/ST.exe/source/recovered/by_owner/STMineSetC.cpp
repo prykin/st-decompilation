@@ -7,7 +7,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=13;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0041D1A0(STMineSetC *this,int param_1)
 
@@ -40,7 +44,11 @@ void __thiscall st::fn_0041D1A0(STMineSetC *this,int param_1)
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0041D2B0(STMineSetC *this)
 
@@ -273,7 +281,7 @@ undefined4 __thiscall st::fn_00622BA0(STMineSetC *this)
 {
   STMineSetC_field_02ADState SVar1;
   STMineSetC_sub_00626B50_param_1Enum SVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar5;
   short sVar6;
@@ -401,7 +409,7 @@ undefined4 __thiscall st::fn_006239A0(STMineSetC *this)
   byte bVar2;
   AnonReceiver_00636260 *this_01;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
@@ -877,7 +885,7 @@ undefined4 __thiscall st::fn_00625730(STMineSetC *this)
   int iVar7;
   Global_sub_006263B0_param_1Enum GVar8;
   uint uVar9;
-  undefined4 uVar10;
+  uint uVar10;
   int iVar5;
   int iVar13;
   int iVar11;
@@ -1001,7 +1009,7 @@ LAB_006259bf:
               }
             }
             else {
-              st::fn_004031E3(this_00,(uint *)&local_a,(int *)&local_8,&local_6);
+              st::fn_004031E3(this_00,(uint *)&local_a,&local_8,&local_6);
               local_EAX_752 =
                    st::fn_006ACF0D(this->field_02C2,this->field_02C6,this->field_02CA,(int)local_a,
                                 (int)local_8,(int)local_6);
@@ -1134,7 +1142,7 @@ LAB_00625d60:
           if (iVar6 != 0) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             if (in_stack_00000010 != 0) {
-              st::fn_004031E3(pSVar16,(uint *)&local_a,(int *)&local_8,&local_6);
+              st::fn_004031E3(pSVar16,(uint *)&local_a,&local_8,&local_6);
               iVar5 = st::fn_006ACF0D(this->field_02C2,this->field_02C6,this->field_02CA,(int)local_a,
                                    (int)local_8,(int)local_6);
               if (iVar5 < *(int *)(&DAT_007d0294 + (uint)this->field_02AD * 4)) {

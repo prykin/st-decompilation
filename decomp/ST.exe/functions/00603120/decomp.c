@@ -10,7 +10,7 @@ undefined4 __thiscall STDestC::sub_00603120(STDestC *this)
 
 {
   short sVar1;
-  undefined4 uVar2;
+  uint uVar2;
   short sVar3;
   short sVar4;
 

@@ -19,7 +19,7 @@ void __thiscall FUN_007279b0(void *this,int param_1,int param_2,int param_3)
   uint uStack_40;
   uint local_20;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

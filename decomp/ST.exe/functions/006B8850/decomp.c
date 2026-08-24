@@ -1,6 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void FUN_006b8850(AnonShape_006B8850_E5DFE1E1 *param_1)
 
 {

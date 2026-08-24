@@ -11,20 +11,20 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
   STManRuinC *this_00;
   int iVar2;
   short *psVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   ushort *puVar5;
   uint uVar6;
   int iVar7;
   int iVar8;
   uint uVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   bool bVar11;
   short local_24;
   short local_22;
   short local_20;
   short local_1e;
   undefined4 local_1c;
-  undefined4 local_10;
+  int local_10;
   STManRuinC *local_c;
   DArrayTy *local_8;
 

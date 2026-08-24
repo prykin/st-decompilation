@@ -41,7 +41,7 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     DAT_00811908 = 0;
     DAT_007d2d24 = 0x600;
   }
-  local_1c = st::pointer_boundary_cast<int *>(st::fn_006AAC10(0x30));
+  local_1c = static_cast<int *>(st::fn_006AAC10(0x30));
   if (local_1c == nullptr) {
     return -2;
   }
@@ -65,15 +65,15 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     return exceptionCode;
   }
   if (PTR_0085755c == nullptr) {
-    local_c = st::pointer_boundary_cast<short *>(st::fn_006AAC70(0x401));
+    local_c = static_cast<short *>(st::fn_006AAC70(0x401));
     *(char *)local_c = '\0';
   }
   if (PTR_00857528 == nullptr) {
-    local_10 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(0x401));
+    local_10 = static_cast<short *>(st::fn_006AAC70(0x401));
     *(char *)local_10 = '\0';
   }
   if (PTR_00811948 == nullptr) {
-    local_14 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(0x401));
+    local_14 = static_cast<short *>(st::fn_006AAC70(0x401));
     *(char *)local_14 = '\0';
   }
   if (PTR_0085753c == nullptr) {

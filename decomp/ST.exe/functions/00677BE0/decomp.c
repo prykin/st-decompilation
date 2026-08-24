@@ -14,7 +14,7 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
   byte *pbVar5;
   int iVar7;

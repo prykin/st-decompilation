@@ -12,7 +12,7 @@ ST3DSMAPContext::sub_006EB350(ST3DSMAPContext *this,int param_1,int param_2,int 
 {
   byte *pbVar1;
   int iVar2;
-  undefined2 uVar3;
+  ushort uVar3;
   int iVar4;
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

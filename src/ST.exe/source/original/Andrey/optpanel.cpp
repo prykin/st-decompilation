@@ -60,20 +60,20 @@ void __thiscall st::fn_0052E5E0(OptPanelTy *this)
   ushort *puVar4;
   DArrayTy *pDVar5;
   int iVar17;
-  undefined4 uVar6;
-  undefined4 uVar7;
+  uint uVar6;
+  uint uVar7;
   short sVar8;
   ushort uVar9;
   uint uVar10;
   byte bVar11;
-  undefined4 uVar12;
+  uint uVar12;
   char *pcVar13;
   int *piVar14;
   int iVar15;
-  undefined4 uVar16;
+  uint uVar16;
   int iVar18;
-  undefined4 *puVar19;
-  undefined4 uVar20;
+  uint *puVar19;
+  uint uVar20;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
 
@@ -85,7 +85,7 @@ void __thiscall st::fn_0052E5E0(OptPanelTy *this)
   if (iVar2 == 0) {
     g_optPanel_008016DC = local_8;
     /* ST_CALLSITE[0052E62C]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar2 = (ccFntTy *)st::fn_0070DF00(0x19d,g_interSystem_00802A28->field_0028);
+    pcVar2 = (ccFntTy *)st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     this_00->field_017C = pcVar2;
     pcVar2->field_0058 = 0;
     pcVar2->field_005C = 0;
@@ -127,7 +127,7 @@ void __thiscall st::fn_0052E5E0(OptPanelTy *this)
     this_00->field_0198 = local_EAX_317;
     puVar4 = this_00->field_0184 + 0x14;
     iVar18 = 1;
-    uVar11 = st::fn_006B4FE0((int)this_00->field_0184);
+    uVar11 = st::fn_006B4FE0(this_00->field_0184);
     puVar4 = (ushort *)
              st::fn_006B50C0(0xde,0xb,(uint)this_00->field_0184[7],uVar11,(undefined4 *)puVar4,iVar18);
     this_00->field_01E5 = puVar4;
@@ -306,7 +306,7 @@ st::fn_0052EB50
   int iVar5;
   uint *puVar6;
   uint *puVar7;
-  undefined4 uVar8;
+  uint uVar8;
   int *piVar9;
   int iVar11;
   uint local_42c [6];
@@ -409,7 +409,11 @@ st::fn_0052EB50
 #line 4 "decomp/ST.exe/functions/0052EDF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
-   OptPanelTy::PaintVolume */
+   OptPanelTy::PaintVolume
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=8, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0052EDF0(OptPanelTy *this,byte param_1,byte param_2)
 
@@ -482,7 +486,11 @@ void __thiscall st::fn_0052EDF0(OptPanelTy *this,byte param_1,byte param_2)
 #line 4 "decomp/ST.exe/functions/0052EFB0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
-   OptPanelTy::PaintDblBut */
+   OptPanelTy::PaintDblBut
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 st::fn_0052EFB0
@@ -492,7 +500,7 @@ st::fn_0052EFB0
 {
   OptPanelTy *pOVar2;
   int iVar3;
-  undefined4 uVar3;
+  uint uVar3;
   LPSTR pCVar4;
   uint uVar5;
   char *resourceString;
@@ -913,7 +921,7 @@ void __thiscall st::fn_0052F900(OptPanelTy *this,int param_1)
   OptPanelTy *this_00;
   short sVar2;
   int iVar5;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar6;
   uint *puVar7;
@@ -1042,7 +1050,7 @@ void __thiscall st::fn_0052FB00(OptPanelTy *this)
   int local_EAX_5906;
   int local_EAX_6096;
   HANDLE pvVar5;
-  undefined4 uVar6;
+  uint uVar6;
   LPSTR pCVar7;
   int iVar17;
   uint uVar8;
@@ -1059,17 +1067,17 @@ void __thiscall st::fn_0052FB00(OptPanelTy *this)
   int *piVar19;
   int iVar20;
   int iVar21;
-  undefined4 uVar22;
+  uint uVar22;
   short sVar23;
   ushort uVar24;
   UINT UVar25;
   RecoveredSourceFamily_dibcopy *pRVar26;
-  undefined4 uVar27;
+  uint uVar27;
   char *pcVar28;
   int iVar29;
-  undefined4 uVar30;
+  uint uVar30;
   uint uVar31;
-  undefined4 uVar32;
+  uint uVar32;
   uint local_1c48 [112];
   ccFntTy *local_1a88 [3];
   int local_1a7c;
@@ -1302,11 +1310,11 @@ LAB_005305b4:
         pcVar28[3] = '\0';
         pcVar28 = pcVar28 + 4;
       }
-      local_EAX_338 = st::fn_00711110(this_00->field_0180,st::pointer_boundary_cast<char *>(&this_00->field_0x1f5));
+      local_EAX_338 = st::fn_00711110(this_00->field_0180,(char *)&this_00->field_0x1f5);
       if (local_EAX_338 < 0xee) {
 LAB_0052fd4a:
         uVar31 = 0xffffffff;
-        pcVar28 = st::pointer_boundary_cast<char *>(&this_00->field_0x1f5);
+        pcVar28 = (char *)&this_00->field_0x1f5;
         do {
           pcVar14 = pcVar28;
           if (uVar31 == 0) break;
@@ -1326,7 +1334,7 @@ LAB_0052fd4a:
       }
       else {
         uVar31 = 0xffffffff;
-        pcVar28 = st::pointer_boundary_cast<char *>(&this_00->field_0x1f5);
+        pcVar28 = (char *)&this_00->field_0x1f5;
         do {
           if (uVar31 == 0) break;
           uVar31 = uVar31 - 1;
@@ -1337,7 +1345,7 @@ LAB_0052fd4a:
         local_34 = 10;
         do {
           local_34 = local_34 + 1;
-          st::fn_0072E340(local_984,st::pointer_boundary_cast<char *>(&this_00->field_0x1f5),local_34);
+          st::fn_0072E340(local_984,(char *)&this_00->field_0x1f5,local_34);
           uVar31 = 0xffffffff;
           pcVar28 = &st_global_007C7278;
           do {
@@ -1374,7 +1382,7 @@ LAB_0052fd4a:
           pcVar28[3] = '\0';
           pcVar28 = pcVar28 + 4;
         }
-        st::fn_0072E340(local_984,st::pointer_boundary_cast<char *>(&this_00->field_0x1f5),local_34 - 3);
+        st::fn_0072E340(local_984,(char *)&this_00->field_0x1f5,local_34 - 3);
         uVar31 = 0xffffffff;
         pcVar28 = &st_global_007C7274;
         do {
@@ -2740,10 +2748,10 @@ void __thiscall st::fn_005325B0(OptPanelTy *this)
 {
   alignas(4) byte st_stack_frame[308];
 
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   byte bVar3;
-  undefined2 uVar5;
+  ushort uVar5;
   int local_EAX_67;
   int iVar5;
   cMf32 *pcVar6;
@@ -2954,7 +2962,7 @@ LAB_00532883:
 void __thiscall st::fn_00532A80(OptPanelTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   uint uVar2;
   OptPanelTy *this_00;
   int iVar4;
@@ -3466,7 +3474,7 @@ undefined4 __thiscall st::fn_00533470(OptPanelTy *this,byte *param_1)
   byte *pbVar4;
   int iVar6;
   int iVar5;
-  undefined4 uVar7;
+  uint uVar7;
   byte *pbVar8;
   uint uVar9;
   bool bVar10;
@@ -3702,15 +3710,15 @@ void __thiscall st::fn_00533A10(OptPanelTy *this,char param_1,byte param_2)
 int __thiscall st::fn_00533D10(OptPanelTy *this,STMessage *message)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   OptPanelTy_field_01A4State OVar4;
   ushort uVar5;
   STMessageId SVar6;
   OptPanelTy_field_02FDDArray *pOVar7;
-  undefined2 uVar8;
+  ushort uVar8;
   InternalExceptionFrame *pIVar9;
-  undefined1 uVar10;
+  byte uVar10;
   int local_EAX_48;
   DWORD DVar11;
   uint uVar12;
@@ -3740,7 +3748,7 @@ int __thiscall st::fn_00533D10(OptPanelTy *this,STMessage *message)
   bool bVar24;
   uint uVar25;
   char *pcVar26;
-  undefined4 uVar27;
+  uint uVar27;
   byte bVar28;
   int iVar30;
   code *pcVar31;
@@ -4358,7 +4366,7 @@ LAB_00534654:
         memmove(pcVar23, pcVar26, uVar19); /* compiler REP MOVS byte copy */
         uVar17 = 0;
         uVar19 = 0xffffffff;
-        pcVar26 = st::pointer_boundary_cast<char *>(&this_00->field_0x1f5);
+        pcVar26 = (char *)&this_00->field_0x1f5;
         do {
           pcVar23 = pcVar26;
           if (uVar19 == 0) break;
@@ -4547,7 +4555,7 @@ LAB_00534654:
         memmove(pcVar23, pcVar26, uVar19); /* compiler REP MOVS byte copy */
         uVar17 = 0;
         uVar19 = 0xffffffff;
-        pcVar26 = st::pointer_boundary_cast<char *>(&this_00->field_0x1f5);
+        pcVar26 = (char *)&this_00->field_0x1f5;
         do {
           pcVar23 = pcVar26;
           if (uVar19 == 0) break;
@@ -4690,7 +4698,7 @@ LAB_00534654:
         memmove(pcVar23, pcVar26, uVar19); /* compiler REP MOVS byte copy */
         uVar17 = 0;
         uVar19 = 0xffffffff;
-        pcVar26 = st::pointer_boundary_cast<char *>(&this_00->field_0x1f5);
+        pcVar26 = (char *)&this_00->field_0x1f5;
         do {
           pcVar23 = pcVar26;
           if (uVar19 == 0) break;
@@ -5116,7 +5124,7 @@ switchD_00534835_caseD_1:
       } while (cVar2 != '\0');
       uVar19 = ~uVar19;
       pcVar26 = pcVar23 + -uVar19;
-      pcVar23 = st::pointer_boundary_cast<char *>(&this_00->field_0x1f5);
+      pcVar23 = (char *)&this_00->field_0x1f5;
       memmove(pcVar23, pcVar26, uVar19); /* compiler REP MOVS byte copy */
       uVar8 = this_00->field_002E;
       uVar10 = this_00->field_01A9;
@@ -5208,7 +5216,7 @@ switchD_00534835_caseD_1:
           local_20 = st::fn_004012AD((int)pcVar15,(char *)(element_02fd_2 + 0x13),(int *)&local_18);
           uVar19 = local_8;
           if (local_20 != nullptr) {
-            local_14 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(local_18 + local_8 * 2));
+            local_14 = static_cast<uint *>(st::fn_006AAC10(local_18 + local_8 * 2));
             *(undefined1 *)local_14 = 1;
             pbVar16 = (byte *)((int)local_14 + uVar19);
             *pbVar16 = DAT_0080874d;
@@ -5241,7 +5249,7 @@ switchD_00534835_caseD_1:
         }
       }
       else {
-        local_14 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(2));
+        local_14 = static_cast<uint *>(st::fn_006AAC10(2));
         if (local_14 != nullptr) {
           *(undefined1 *)local_14 = 0;
           STField<byte>(local_14,1) = DAT_0080874d;
@@ -5309,7 +5317,7 @@ switchD_00534835_caseD_1:
       } while (cVar2 != '\0');
       uVar19 = ~uVar19;
       pcVar26 = pcVar23 + -uVar19;
-      pcVar23 = st::pointer_boundary_cast<char *>(&this_00->field_0x1f5);
+      pcVar23 = (char *)&this_00->field_0x1f5;
       memmove(pcVar23, pcVar26, uVar19); /* compiler REP MOVS byte copy */
       uVar8 = this_00->field_002E;
       uVar10 = this_00->field_01A9;

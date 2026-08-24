@@ -20,7 +20,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   int iVar9;
   short *psVar10;
   STGameObjC *pSVar11;
-  undefined2 *puVar12;
+  ushort *puVar12;
   int iVar13;
   int iVar14;
   int iVar7;
@@ -43,7 +43,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   uint local_28;
   uint local_20;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
   undefined4 *piVar16_mg0;

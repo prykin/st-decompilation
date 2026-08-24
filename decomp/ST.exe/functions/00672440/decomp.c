@@ -19,7 +19,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
   AnonReceiver_0064A970 *this_00;
   int iVar2;
   char *arg_1;
-  undefined4 uVar1;
+  uint uVar1;
   int iVar3;
   short *psVar4;
   InternalExceptionFrame local_64;

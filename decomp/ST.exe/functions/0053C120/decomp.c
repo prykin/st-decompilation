@@ -14,10 +14,10 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   DArrayTy *pDVar3;
   LPSTR text;
   ushort *puVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar8;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar9;
   int iVar10;
   int *piVar11;

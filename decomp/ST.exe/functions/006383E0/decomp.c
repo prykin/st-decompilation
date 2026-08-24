@@ -27,7 +27,7 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
   int iVar9;
   short sVar10;
   int iVar11;
-  undefined1 *puVar12;
+  byte *puVar12;
   int iVar14;
   STWorldObject *this;
   short sVar15;
@@ -46,13 +46,12 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
   ushort local_3c;
   ushort local_3a;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  undefined4 *puVar13;
-
+  uint *puVar13;
   puStack_c = &DAT_0079d1c8;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

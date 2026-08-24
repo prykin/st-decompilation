@@ -30,7 +30,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
           int param_13)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   uint uVar2;
   int iVar3;
   int iVar4;

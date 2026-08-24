@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_0074ca21(void *this,int param_1)
 {
   int iVar2;
   int iVar1;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
 
   if (STField<int>(this,0x40) == 0) {

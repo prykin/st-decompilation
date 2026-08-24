@@ -14,8 +14,8 @@ void FUN_00705ed0(undefined1 *param_1,int param_2,byte *param_3,int param_4,byte
   uint uVar1;
   uint uVar2;
   int iVar3;
-  undefined1 *puVar4;
-  undefined1 *puVar5;
+  byte *puVar4;
+  byte *puVar5;
   byte *pbVar6;
   byte bVar7;
   byte *pbVar8_mg0;

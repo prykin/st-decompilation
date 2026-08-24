@@ -15,7 +15,7 @@ STAllPlayersC::RegisterGroup(STAllPlayersC *this,char param_1,ushort param_2,int
   DArrayTy *array;
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_50;
   DArrayTy *local_c;
   int local_8;

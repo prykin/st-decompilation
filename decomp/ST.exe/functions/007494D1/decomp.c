@@ -15,7 +15,7 @@ FUN_007494d1(AnonShape_007494D1_ECEF44C3 *param_1,undefined4 *param_2,
   LONG LVar3;
   HANDLE pvVar4;
   AnonShape_007494D1_ECEF44C3 *pAVar5;
-  undefined4 uVar6;
+  uint uVar6;
   LPCRITICAL_SECTION lpCriticalSection_00;
   _SYSTEM_INFO local_28;
 

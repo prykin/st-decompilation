@@ -47,7 +47,7 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
                (int)local_8);
   }
   uVar8 = 0;
-  pcVar7 = g_startSystem_0081176C->field_0030;
+  pcVar7 = (ccFntTy *)g_startSystem_0081176C->field_0030;
   uVar6 = 0xffffffff;
   uVar5 = 0xfffffffe;
   if (pPVar2->array_00BC[0xc].field_01DF == '\x01') {

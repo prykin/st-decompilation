@@ -13,7 +13,7 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
   int iVar3;
   int iVar4;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   undefined4 local_264;
   undefined4 local_257;
   undefined4 local_253;

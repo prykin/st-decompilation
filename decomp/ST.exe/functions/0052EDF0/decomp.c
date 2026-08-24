@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
-   OptPanelTy::PaintVolume */
+   OptPanelTy::PaintVolume
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=8, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall OptPanelTy::PaintVolume(OptPanelTy *this,byte param_1,byte param_2)
 

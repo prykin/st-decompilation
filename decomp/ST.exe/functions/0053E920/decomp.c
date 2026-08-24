@@ -11,7 +11,7 @@ undefined4 __thiscall SpecPanelTy::SetPanel(SpecPanelTy *this,char param_1)
   SpecPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar4;
   InternalExceptionFrame local_4c;
   SpecPanelTy *local_8;
@@ -35,8 +35,7 @@ undefined4 __thiscall SpecPanelTy::SetPanel(SpecPanelTy *this,char param_1)
     }
     else {
       /* ST_CALLSITE[0053E97A]: CALL dword ptr [EDX + 0x20] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)local_8->field_0000->field_0020)();
+      (*STField<code *>(local_8->field_0000,0x0020))();
       iVar4 = 1;
     }
     /* ST_CALLSITE[0053E9A7]: CALL 0x0040438b; direct=0040438B SpecPanelTy::SwitchPanel */

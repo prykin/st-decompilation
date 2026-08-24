@@ -12,7 +12,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   int iVar3;
   STBoatC *this_00;
   int iVar4;
-  undefined4 uVar3;
+  uint uVar3;
   uint index;
   uint uVar7;
   InternalExceptionFrame local_58;

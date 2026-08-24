@@ -14,7 +14,7 @@ MMMObjTy::OutEdProc(MMMObjTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,u
                    undefined4 *param_8)
 
 {
-  undefined4 *puVar2;
+  uint *puVar2;
   int errorCode;
   int iVar3;
   InternalExceptionFrame local_4c;

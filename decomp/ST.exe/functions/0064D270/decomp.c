@@ -5,23 +5,28 @@
    E:\__titans\ai\ai_event.cpp
    AiEventClassTy::__CreateObjPl
 
-   [STPrototypeApplier] Propagated parameter 3.
-   Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
-
-   [STPrototypeApplier] Propagated parameter 4.
-   Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
-
-   [STPrototypeApplier] Propagated parameter 5.
-   Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
-
    [STPrototypeApplier] Propagated parameter 6.
-   Evidence: 0064D270 -> 004B0F20 @ 0064D6D4 | 0064D270 -> 004B1040 @ 0064D679 */
+   Evidence: 0064D270 -> 004B0F20 @ 0064D6D4 | 0064D270 -> 004B1040 @ 0064D679
+
+   [STPrototypeRepairApplier] Propagated parameter 3.
+   Evidence: 0064D270 -> 004B0F20 @ 0064D6D4 | 0064D270 -> 004B1040 @ 0064D679 | 0064D270 ->
+   00675B10 @ 0064D376 | incoming stack slot is read as a int before its address is passed as a
+   distinct output lifetime
+
+   [STPrototypeRepairApplier] Propagated parameter 4.
+   Evidence: 0064D270 -> 004B0F20 @ 0064D6D4 | 0064D270 -> 004B1040 @ 0064D679 | 0064D270 ->
+   00675B10 @ 0064D376 | incoming stack slot is read as a int before its address is passed as a
+   distinct output lifetime
+
+   [STPrototypeRepairApplier] Propagated parameter 5.
+   Evidence: 0064D270 -> 004B0F20 @ 0064D6D4 | 0064D270 -> 004B1040 @ 0064D679 | incoming stack slot
+   is read as a int before its address is passed as a distinct output lifetime */
 
 int __thiscall
 AiEventClassTy::__CreateObjPl
-          (AiEventClassTy *this,uint param_1,short param_2,short *param_3,short *param_4,
-          short *param_5,uint param_6,uint param_7,char *param_8,undefined4 param_9,
-          undefined4 param_10,int param_11,int param_12)
+          (AiEventClassTy *this,uint param_1,short param_2,int param_3,int param_4,int param_5,
+          uint param_6,uint param_7,char *param_8,undefined4 param_9,undefined4 param_10,
+          int param_11,int param_12)
 
 {
   bool bVar2;
@@ -53,11 +58,11 @@ AiEventClassTy::__CreateObjPl
   undefined4 local_5b;
   AiEventClassTy *local_38;
   short local_34 [2];
-  undefined4 local_30;
+  uint local_30;
   int local_2c;
   short local_28 [2];
   int local_24;
-  undefined4 local_20;
+  uint local_20;
   short local_1c [2];
   uint local_18;
   int local_14;
@@ -110,19 +115,19 @@ AiEventClassTy::__CreateObjPl
     else {
       iVar3 = thunk_FUN_004961b0((short)param_3,(short)param_4,(short)param_5);
       if (iVar3 == 0) {
-        local_2c = (int)param_3 + -1;
-        local_24 = (int)param_4 + -1;
+        local_2c = param_3 + -1;
+        local_24 = param_4 + -1;
         local_18 = 3;
         local_34[0] = 3;
         local_34[1] = 0;
         thunk_FUN_006756d0((short *)&local_2c,(short *)&local_24,(short *)&local_18,local_34);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_3 = (short *)(local_2c + 1);
+        param_3 = local_2c + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_4 = (short *)(local_24 + 1);
+        param_4 = local_24 + 1;
       }
-      iVar5 = thunk_FUN_00675b10((int)param_3,(int)param_4,(short)param_5,(short *)&param_3,
-                                 (short *)&param_4,(short *)&param_5,(int)param_2);
+      iVar5 = thunk_FUN_00675b10(param_3,param_4,(short)param_5,(short *)&param_3,(short *)&param_4,
+                                 (short *)&param_5,(int)param_2);
     }
     uVar7 = param_7;
     if (iVar5 != 0) {

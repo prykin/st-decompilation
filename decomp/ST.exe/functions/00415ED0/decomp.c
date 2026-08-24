@@ -21,7 +21,7 @@ undefined4 __thiscall STJellyGunC::sub_00415ED0(STJellyGunC *this,undefined4 *pa
   short sVar6;
   int iVar7;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

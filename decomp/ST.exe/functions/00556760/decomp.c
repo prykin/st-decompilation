@@ -28,7 +28,7 @@ TraksClassTy::TraksCreate
   uint uVar11;
   byte bVar12;
   int iVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
   InternalExceptionFrame local_a8;
   uint local_64;
   TraksClassTy *local_60;

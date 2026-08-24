@@ -34,7 +34,7 @@ ST3DSMAPContext::sub_006E9EF0
     uVar3 = *(uint *)(this->field_031C + param_1 * 0x114);
     if ((uVar3 & 0x8000) != 0) {
       if (puVar1[0x25] <= param_2) {
-        FUN_006e91a0();
+        FUN_006e91a0("SprSetPlaneAnim");
         return;
       }
       if (param_3 != 0) {
@@ -82,7 +82,7 @@ ST3DSMAPContext::sub_006E9EF0
     }
   }
   if (param_1 != 0xffffffff) {
-    FUN_006e8c50();
+    FUN_006e8c50("SprSetPlaneAnim");
   }
   return;
 }

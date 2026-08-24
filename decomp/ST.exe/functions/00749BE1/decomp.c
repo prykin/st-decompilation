@@ -5,10 +5,10 @@ undefined4 __thiscall FUN_00749be1(void *this,undefined4 param_1,undefined4 para
 
 {
   LPCRITICAL_SECTION lpCriticalSection;
-  undefined4 uVar1;
+  uint uVar1;
   void *this_00;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   void *local_8;
 
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x7c);

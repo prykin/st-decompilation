@@ -4,12 +4,12 @@
 void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   int iVar3;
   uint uVar4;
   int iVar2;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   short sVar7;
   int iVar8;
   uint uVar9;

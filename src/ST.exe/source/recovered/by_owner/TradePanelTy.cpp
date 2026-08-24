@@ -15,8 +15,7 @@ void __thiscall st::fn_00551800(TradePanelTy *this)
   uint uVar2;
   int iVar2;
   uint uVar3;
-  undefined4 uVar4;
-
+  uint uVar4;
   iVar1 = this->field_01C8;
   if ((&this->field_01BC)[(byte)this->field_01D0] == 0) {
     if (iVar1 != 0) {
@@ -155,8 +154,7 @@ void __thiscall st::fn_00551B10(TradePanelTy *this)
 undefined4 __thiscall st::fn_00552160(TradePanelTy *this,char param_1,char param_2)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   if ((this->field_0184 != param_1) &&
      /* ST_CALLSITE[00552178]: CALL 0x00401e4c; direct=00401E4C SpecPanelTy::SetPanel */

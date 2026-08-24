@@ -5,12 +5,17 @@
    /SubmarineTitans/Recovered/Enums/Global_sub_005FF430_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16
 
-   [STPrototypeApplier] Propagated parameter 4.
-   Evidence: 005FF430 -> 00416270 @ 005FF4AC */
+   [STPrototypeRepairApplier] Propagated parameter 3.
+   Evidence: incoming stack slot is read as a uint before its address is passed as a distinct output
+   lifetime
+
+   [STPrototypeRepairApplier] Propagated parameter 4.
+   Evidence: incoming stack slot is read as a uint before its address is passed as a distinct output
+   lifetime */
 
 undefined4 __thiscall
-FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,undefined4 param_3,
-            short *param_4,undefined4 param_5,short *param_6,short *param_7,undefined2 *param_8)
+FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,uint param_3,
+            uint param_4,undefined4 param_5,short *param_6,short *param_7,undefined2 *param_8)
 
 {
   ushort *puVar1;
@@ -20,8 +25,7 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,unde
   int iVar4;
   uint uVar5;
   uint uVar6;
-  undefined4 uVar7;
-
+  uint uVar7;
   uVar7 = 0;
   if (param_2 != 30000) {
     puVar1 = (ushort *)
@@ -35,7 +39,7 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,unde
     if (this_00 == nullptr) {
       return 0;
     }
-    thunk_FUN_00416270(this_00,&param_3,(int *)&param_4,(short *)((int)&param_5 + 2));
+    thunk_FUN_00416270(this_00,&param_3,(short *)&param_4,(short *)((int)&param_5 + 2));
     /* ST_CALLSITE[005FF4B5]: CALL dword ptr [EDX + 0x78] */
     iVar4 = this_00->vfunc_78();
     if (iVar4 < 1) {

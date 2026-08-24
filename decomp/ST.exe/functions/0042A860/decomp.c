@@ -10,7 +10,7 @@ void FUN_0042a860(void)
 
 {
   int iVar1;
-  undefined1 *puVar1;
+  byte *puVar1;
   short *psVar2;
   int iVar3;
   undefined1 local_448 [1024];

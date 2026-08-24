@@ -101,7 +101,7 @@ switchD_005b4c27_default:
         sub_005B4860(this_00);
         /* ST_CALLSITE[005B4D9B]: CALL dword ptr [EDX + 0x10] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*(int *)this_00->field_000C + 0x10))(0x309,0);
+        (**(code **)(*STField<int *>(this_00,0xC) + 0x10))(0x309,0);
         goto cf_common_exit_005B4EEC;
       }
       if (this_00->field_1EE3 != '\x01') goto cf_common_exit_005B4EEC;

@@ -6,10 +6,11 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=13; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
 
-   [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 004CA7B0 -> 004CAFC0 @ 004CA7FB */
+   [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: incoming stack slot is read as a uint before its address is passed as a distinct output
+   lifetime */
 
-undefined4 __thiscall TLOBaseTy::sub_004CA7B0(TLOBaseTy *this,uint *param_1,int param_2)
+undefined4 __thiscall TLOBaseTy::sub_004CA7B0(TLOBaseTy *this,uint param_1,int param_2)
 
 {
   undefined4 *this_00;
@@ -17,15 +18,15 @@ undefined4 __thiscall TLOBaseTy::sub_004CA7B0(TLOBaseTy *this,uint *param_1,int 
   int iVar2;
   uint uVar3;
   int iVar4;
-  uint **ppuVar5;
+  uint *puVar5;
   byte bVar6;
   uint *puVar7;
-  uint *puVar8;
+  uint uVar8;
   uint local_10;
   int local_c;
   TLOBaseTy_field_0245State local_8;
 
-  puVar8 = param_1;
+  uVar8 = param_1;
   local_c = 0;
   this_00 = &this->field_01D5;
   bVar6 = (byte)param_1;
@@ -36,10 +37,10 @@ undefined4 __thiscall TLOBaseTy::sub_004CA7B0(TLOBaseTy *this,uint *param_1,int 
   }
   local_8 = this->field_0245;
   puVar7 = &local_10;
-  ppuVar5 = &param_1;
+  puVar5 = &param_1;
   uVar3 = thunk_FUN_004ab050();
   /* ST_CALLSITE[004CA7FB]: CALL 0x00404101; direct=00404101 TLOBaseTy::sub_004CAFC0 */
-  sub_004CAFC0(this,(TLOBaseTy_sub_004CAFC0_param_1Enum)puVar8,uVar3,(uint *)ppuVar5,puVar7);
+  sub_004CAFC0(this,uVar8,uVar3,puVar5,puVar7);
   if (((int)param_1 < 0) || ((int)local_10 < 0)) {
     /* ST_CALLSITE[004CAACE]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
     STT3DSprC::StopShow((STT3DSprC *)this_00,bVar6);
@@ -52,9 +53,9 @@ cf_common_exit_004CA871:
     iVar2 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,bVar6);
     if (iVar2 != 1) {
       iVar4 = ((0x18 - this->field_0259 / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18;
-      iVar2 = (int)param_1 * iVar4;
+      iVar2 = param_1 * iVar4;
       thunk_FUN_004abce0(this_00,bVar6,iVar2,iVar2,'\0');
-      int scalar_puVar8 = (int)param_1 * iVar4; /* split integer lifetime from pointer-typed SSA storage */
+      uVar8 = param_1 * iVar4;
       goto cf_common_exit_004CAAA4;
     }
   }
@@ -67,33 +68,33 @@ LAB_004ca835:
     if ((this->field_0255 == 0) || (local_8 != CASE_5)) {
       /* ST_CALLSITE[004CAA1F]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar2 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,bVar6);
-      if (iVar2 < (int)((local_10 - (int)param_1) + 1)) {
+      if (iVar2 < (int)((local_10 - param_1) + 1)) {
         /* ST_CALLSITE[004CAA34]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar2 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,bVar6);
-        local_10 = iVar2 + -1 + (int)param_1;
+        local_10 = iVar2 + -1 + param_1;
       }
       pAVar1 = this->field_01F5;
-      iVar2 = *(int *)(&pAVar1->field_0x10 + scalar_puVar8 * 0x24);
-      if (iVar2 < *(int *)(&pAVar1->field_0x14 + scalar_puVar8 * 0x24)) {
-        iVar2 = *(int *)(&pAVar1->field_0x18 + scalar_puVar8 * 0x24) - iVar2;
+      iVar2 = *(int *)(&pAVar1->field_0x10 + uVar8 * 0x24);
+      if (iVar2 < *(int *)(&pAVar1->field_0x14 + uVar8 * 0x24)) {
+        iVar2 = *(int *)(&pAVar1->field_0x18 + uVar8 * 0x24) - iVar2;
       }
       else {
-        iVar2 = iVar2 - *(int *)(&pAVar1->field_0x18 + scalar_puVar8 * 0x24);
+        iVar2 = iVar2 - *(int *)(&pAVar1->field_0x18 + uVar8 * 0x24);
       }
-      thunk_FUN_004abce0(this_00,bVar6,(int)param_1,local_10,'\0');
-      puVar8 = param_1;
+      thunk_FUN_004abce0(this_00,bVar6,param_1,local_10,'\0');
+      uVar8 = param_1;
       if (param_2 != 0) {
         if ((int)param_1 < (int)local_10) {
-          if ((int)local_10 < iVar2 + (int)param_1) {
+          if ((int)local_10 < (int)(iVar2 + param_1)) {
             iVar2 = 0;
           }
-          puVar8 = (uint *)((int)param_1 + iVar2);
+          uVar8 = param_1 + iVar2;
         }
         else {
-          if ((int)param_1 - iVar2 < (int)local_10) {
+          if ((int)(param_1 - iVar2) < (int)local_10) {
             iVar2 = 0;
           }
-          puVar8 = (uint *)((int)param_1 - iVar2);
+          uVar8 = param_1 - iVar2;
         }
       }
       goto cf_common_exit_004CAAA4;
@@ -108,42 +109,42 @@ LAB_004ca835:
         local_c = (((0x18 - this->field_0259 / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18) / 3;
       }
       pAVar1 = this->field_01F5;
-      iVar2 = *(int *)(&pAVar1->field_0x10 + (int)puVar8 * 0x24);
-      if (iVar2 < *(int *)(&pAVar1->field_0x14 + (int)puVar8 * 0x24)) {
-        local_8 = *(int *)(&pAVar1->field_0x18 + (int)puVar8 * 0x24) - iVar2;
+      iVar2 = *(int *)(&pAVar1->field_0x10 + uVar8 * 0x24);
+      if (iVar2 < *(int *)(&pAVar1->field_0x14 + uVar8 * 0x24)) {
+        local_8 = *(int *)(&pAVar1->field_0x18 + uVar8 * 0x24) - iVar2;
       }
       else {
-        local_8 = iVar2 - *(int *)(&pAVar1->field_0x18 + (int)puVar8 * 0x24);
+        local_8 = iVar2 - *(int *)(&pAVar1->field_0x18 + uVar8 * 0x24);
       }
       iVar2 = local_c + 1;
-      thunk_FUN_004abce0(this_00,bVar6,(int)param_1 * local_c,iVar2 * (int)param_1 + -1,'\0');
+      thunk_FUN_004abce0(this_00,bVar6,param_1 * local_c,iVar2 * param_1 + -1,'\0');
       if (param_2 == 0) {
-        puVar8 = (uint *)((int)param_1 * local_c);
+        uVar8 = param_1 * local_c;
       }
       else {
-        iVar4 = (int)param_1 * local_c;
-        iVar2 = iVar2 * (int)param_1 + -1;
+        iVar4 = param_1 * local_c;
+        iVar2 = iVar2 * param_1 + -1;
         if (iVar4 < iVar2) {
           if (iVar2 < (int)(iVar4 + local_8)) {
             local_8 = CASE_0;
           }
-          puVar8 = (uint *)(iVar4 + local_8);
+          uVar8 = iVar4 + local_8;
         }
         else {
           if ((int)(iVar4 - local_8) < iVar2) {
             local_8 = CASE_0;
           }
-          puVar8 = (uint *)(iVar4 - local_8);
+          uVar8 = iVar4 - local_8;
         }
       }
       goto cf_common_exit_004CAAA4;
     }
   }
   thunk_FUN_004abce0(this_00,bVar6,0,0,'\0');
-  puVar8 = nullptr;
+  uVar8 = 0;
 cf_common_exit_004CAAA4:
   /* ST_CALLSITE[004CAAA7]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
-  STT3DSprC::SetCurFase((STT3DSprC *)this_00,bVar6,(uint)puVar8);
+  STT3DSprC::SetCurFase((STT3DSprC *)this_00,bVar6,uVar8);
   /* ST_CALLSITE[004CAABB]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   STT3DSprC::StartShow((STT3DSprC *)this_00,bVar6,g_playSystem_00802A38->field_00E4);
   return 0;

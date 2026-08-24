@@ -17,8 +17,8 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   int iVar6;
   int iVar8;
   uint uVar9;
-  undefined4 uVar10;
-  undefined4 *puVar11;
+  uint uVar10;
+  uint *puVar11;
   bool bVar12;
   int *piVar13;
   int local_358 [11];
@@ -170,7 +170,7 @@ switchD_004f0850_default:
   local_44 = local_64;
   /* ST_CALLSITE[004F0900]: CALL dword ptr [EDX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
+  (**(code **)(*STField<int *>(this_00,0xC) + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }

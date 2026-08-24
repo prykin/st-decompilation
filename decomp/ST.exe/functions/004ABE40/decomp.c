@@ -16,7 +16,7 @@ undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,uint pa
   int iVar2;
   int iVar5;
   int iVar4;
-  undefined4 uVar6;
+  uint uVar6;
   int *piVar7;
 
   if (this->field_0018 != 0xffffffff) {

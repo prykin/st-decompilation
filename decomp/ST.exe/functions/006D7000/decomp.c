@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_006d7000(void *this,int *param_1)
 {
   int iVar1;
   int *piVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int *piVar5;
   int *piVar6;

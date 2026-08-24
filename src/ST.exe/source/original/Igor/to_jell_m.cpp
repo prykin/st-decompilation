@@ -15,8 +15,7 @@ st::fn_00581AC0(STJellyManC *this,undefined4 param_1,int *param_2,undefined4 par
 
 {
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   if (this->field_020F < this->field_01FD) {
     uVar3 = st::fn_004022E3(param_1,st::machine_word_boundary_cast<undefined4>(param_2),param_3,this->field_01ED,this->field_01F1,
                                this->field_01F5,this->field_01F9,this->field_0018,this->field_0024,
@@ -53,6 +52,7 @@ int __thiscall st::fn_00581BF0(STJellyManC *this,STMessage *message)
   int local_EAX_556;
   int local_EAX_677;
   int *piVar6;
+  int iVar7_mg1;
   int iVar7;
   int iVar8;
   int local_EAX_1154;
@@ -135,8 +135,8 @@ int __thiscall st::fn_00581BF0(STJellyManC *this,STMessage *message)
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        iVar7 = st::fn_006E5380(g_playSystem_00802A38,(message->arg0).i32,(undefined4 *)&local_c);
-        if (iVar7 != 0) {
+        iVar7_mg1 = st::fn_006E5380(g_playSystem_00802A38,(message->arg0).i32,(undefined4 *)&local_c);
+        if (iVar7_mg1 != 0) {
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }

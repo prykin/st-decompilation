@@ -4,8 +4,10 @@
 undefined4 __fastcall FUN_004eccf0(AnonShape_004ECC70_4D35D723 *param_1)
 
 {
-  int iVar2;
+  int iVar2_mg1;
+  int iVar2_mg2;
   int iVar1;
+  int iVar2;
   longlong lVar3;
 
   if ((param_1->field_04D4 + 0x19 <= g_playSystem_00802A38->field_00E4) &&
@@ -13,10 +15,10 @@ undefined4 __fastcall FUN_004eccf0(AnonShape_004ECC70_4D35D723 *param_1)
     lVar3 = FUN_006b12cc(0x19);
     iVar2 = (int)lVar3;
     lVar3 = FUN_006b12cc(0x1194);
-    iVar2 = FUN_006b12a8((int)lVar3,iVar2);
+    iVar2_mg1 = FUN_006b12a8((int)lVar3,iVar2);
     lVar3 = FUN_006b12cc(5000);
-    iVar2 = FUN_006b12a8((int)lVar3,iVar2);
-    iVar1 = FUN_006b1280(iVar2);
+    iVar2_mg2 = FUN_006b12a8((int)lVar3,iVar2_mg1);
+    iVar1 = FUN_006b1280(iVar2_mg2);
     iVar2 = param_1->field_04D0 + iVar1;
     param_1->field_04D0 = iVar2;
     if ((4999 < iVar2) && (param_1->field_04D0 = 5000, param_1->field_05AC == 0x73)) {

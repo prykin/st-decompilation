@@ -32,7 +32,7 @@ void __thiscall st::fn_004EFB60(BldLabPanelTy *this)
     puVar3 = st::fn_006F1CE0(g_cMf32_00806790,1,st::mutable_c_string("BKG_BUILDLABW"),nullptr,1);
     this_00->field_0184 = puVar3;
     puVar3 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c1910),0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,(char *)&DAT_007c1910,0xffffffff,0,1,0,nullptr);
     this_00->field_0188 = puVar3;
     puVar3 = st::fn_00709AF0
                        (PTR_00806794,CASE_B,st::mutable_c_string("OBJSD"),0xffffffff,0,1,0,nullptr);

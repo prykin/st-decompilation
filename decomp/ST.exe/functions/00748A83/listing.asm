@@ -1,4 +1,4 @@
-FUN_00748a83:
+RecoveredClass_00748A83::FUN_00748a83:
 00748A83  8B C1                     MOV EAX,ECX
 00748A85  33 D2                     XOR EDX,EDX
 00748A87  8B 4C 24 10               MOV ECX,dword ptr [ESP + 0x10]

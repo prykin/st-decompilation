@@ -19,6 +19,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.regex.Pattern;
 
 import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.decompiler.parallel.DecompilerCallback;
@@ -37,10 +38,13 @@ import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
+import ghidra.program.model.listing.Instruction;
+import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
+import ghidra.program.model.symbol.StackReference;
 import ghidra.util.task.TaskMonitor;
 
 public class STLocalLifetimeAnalyzer extends GhidraScript {
@@ -55,6 +59,9 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     private static final int ARITHMETIC_ROLE_WEIGHT = 4;
     private static final int BOOLEAN_ROLE_WEIGHT = 10;
     private static final int BYTE_AFFINE_ROLE_WEIGHT = 10;
+    private static final int FLOAT_ROLE_WEIGHT = 12;
+    private static final int CONTROL_INDEX_ROLE_WEIGHT = 12;
+    private static final int PEER_POINTER_WEIGHT = 4;
 
     private final List<Row> rows = new ArrayList<>();
     private final List<Failure> failures = new ArrayList<>();
@@ -228,9 +235,14 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         Map<Short, Decision> decisions = new TreeMap<>();
         for (Map.Entry<Short, List<Object>> entry : groups.entrySet()) {
             Map<String, TypeEvidence> evidence = new TreeMap<>();
+            boolean mixedDomainEligible = merged || genericUnknown(currentType);
             for (Object varnode : entry.getValue())
                 collectEvidence(varnode, evidence,
-                    scalarRoleEligible(currentType));
+                    scalarRoleEligible(currentType) ||
+                        mixedDomainEligible && !semanticPointer(currentType),
+                    mixedDomainEligible);
+            if (!merged && genericUnknown(currentType))
+                reinforceMachineControlIndex(function, highSymbol, evidence);
             if (receiverAliasCandidate)
                 collectReceiverAliasEvidence(function, entry.getValue(),
                     currentType, evidence);
@@ -299,6 +311,114 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         }
     }
 
+    private void reinforceMachineControlIndex(Function function, Object highSymbol,
+            Map<String, TypeEvidence> evidence) {
+        TypeEvidence unsigned = evidence.get("/uint");
+        if (unsigned == null || unsigned.sources.contains("control_index")) return;
+        try {
+            Symbol symbol = (Symbol)highSymbol.getClass()
+                .getMethod("getSymbol").invoke(highSymbol);
+            Object object = symbol == null ? null : symbol.getObject();
+            if (!(object instanceof Variable variable) ||
+                    !variable.isStackVariable() || variable.getLength() != 4 ||
+                    !machineControlIndex(function, variable.getStackOffset())) return;
+            unsigned.score += CONTROL_INDEX_ROLE_WEIGHT;
+            unsigned.sources.add("control_index");
+        }
+        catch (Exception ignored) {
+            // A missing persistent stack identity cannot reinforce p-code evidence.
+        }
+    }
+
+    /** Exact dword stack load -> bounded table-byte selector -> computed JMP. */
+    private boolean machineControlIndex(Function function, int stackOffset) {
+        List<Instruction> instructions = new ArrayList<>();
+        InstructionIterator iterator = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) instructions.add(iterator.next());
+        for (int index = 0; index < instructions.size(); index++) {
+            Instruction load = instructions.get(index);
+            if (!"MOV".equalsIgnoreCase(load.getMnemonicString()) ||
+                    load.getNumOperands() < 2 ||
+                    !stackOperand(load, 1, stackOffset)) continue;
+            String source = load.getDefaultOperandRepresentation(1)
+                .toUpperCase(Locale.ROOT);
+            if (!source.contains("DWORD PTR")) continue;
+            String root = fullRegister(load.getDefaultOperandRepresentation(0));
+            if (root.isBlank()) continue;
+            Set<String> values = new HashSet<>();
+            values.add(root);
+            boolean compared = false, tableLoad = false;
+            for (int next = index + 1; next < instructions.size() && next <= index + 80;
+                    next++) {
+                Instruction instruction = instructions.get(next);
+                String mnemonic = instruction.getMnemonicString()
+                    .toUpperCase(Locale.ROOT);
+                String operand0 = instruction.getNumOperands() > 0 ?
+                    instruction.getDefaultOperandRepresentation(0)
+                        .toUpperCase(Locale.ROOT) : "";
+                String operand1 = instruction.getNumOperands() > 1 ?
+                    instruction.getDefaultOperandRepresentation(1)
+                        .toUpperCase(Locale.ROOT) : "";
+                if ((mnemonic.equals("CMP") || mnemonic.equals("TEST")) &&
+                        values.stream().anyMatch(value ->
+                            containsRegister(operand0, value) ||
+                            containsRegister(operand1, value))) compared = true;
+                boolean propagated = mnemonic.equals("MOV") && operand1.contains("[") &&
+                    values.stream().anyMatch(value -> containsRegister(operand1, value));
+                String destination = fullRegister(operand0);
+                if (propagated && !destination.isBlank()) {
+                    values.add(destination);
+                    tableLoad = true;
+                }
+                if (mnemonic.equals("JMP") && instruction.getFlowType().isComputed() &&
+                        tableLoad && compared && values.stream().anyMatch(value ->
+                            containsRegister(operand0, value))) return true;
+                if (!destination.isBlank() && writesFirstOperand(mnemonic) &&
+                        !propagated) {
+                    String copied = mnemonic.equals("MOV") ? fullRegister(operand1) : "";
+                    if (copied.isBlank() || !values.contains(copied))
+                        values.remove(destination);
+                }
+                if (mnemonic.equals("CALL") || values.isEmpty()) break;
+            }
+        }
+        return false;
+    }
+
+    private boolean stackOperand(Instruction instruction, int operand,
+            int expectedOffset) {
+        for (ghidra.program.model.symbol.Reference reference :
+                instruction.getOperandReferences(operand))
+            if (reference instanceof StackReference stack &&
+                    stack.getStackOffset() == expectedOffset) return true;
+        return false;
+    }
+
+    private String fullRegister(String operand) {
+        String value = operand == null ? "" : operand.trim().toUpperCase(Locale.ROOT);
+        return switch (value) {
+            case "EAX", "AX", "AL", "AH" -> "EAX";
+            case "EBX", "BX", "BL", "BH" -> "EBX";
+            case "ECX", "CX", "CL", "CH" -> "ECX";
+            case "EDX", "DX", "DL", "DH" -> "EDX";
+            case "ESI", "EDI", "EBP", "ESP" -> value;
+            default -> "";
+        };
+    }
+
+    private boolean containsRegister(String operand, String register) {
+        return operand != null && Pattern.compile("(?<![A-Z0-9_])" +
+            Pattern.quote(register) + "(?![A-Z0-9_])")
+            .matcher(operand.toUpperCase(Locale.ROOT)).find();
+    }
+
+    private boolean writesFirstOperand(String mnemonic) {
+        return !Set.of("CMP", "TEST", "PUSH", "CALL", "JMP", "JZ", "JNZ",
+            "JA", "JAE", "JB", "JBE", "JG", "JGE", "JL", "JLE")
+            .contains(mnemonic);
+    }
+
     private boolean requiresIsolation(short group, String specification,
             Map<Short, Decision> decisions) {
         for (Map.Entry<Short, Decision> sibling : decisions.entrySet()) {
@@ -319,8 +439,11 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         return evidence.sources.contains("call_return") ||
             evidence.sources.contains("typed_copy") ||
             evidence.sources.contains("typed_cast") ||
+            evidence.sources.contains("floating_role") ||
+            evidence.sources.contains("control_index") ||
             evidence.sources.contains("byte_pointer_result") ||
             evidence.sources.contains("byte_pointer_index") ||
+            evidence.sources.contains("peer_pointer_comparison") ||
             evidence.sources.contains("receiver_alias") ||
             evidence.sources.contains("typed_recursive_field");
     }
@@ -343,9 +466,15 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         if (evidence.sources.contains("call_return")) return RETURN_WEIGHT;
         if (evidence.sources.contains("typed_copy")) return COPY_WEIGHT;
         if (evidence.sources.contains("typed_cast")) return COPY_WEIGHT;
+        if (evidence.sources.contains("floating_role"))
+            return FLOAT_ROLE_WEIGHT;
+        if (evidence.sources.contains("control_index"))
+            return CONTROL_INDEX_ROLE_WEIGHT;
         if (evidence.sources.contains("byte_pointer_result") ||
                 evidence.sources.contains("byte_pointer_index"))
             return BYTE_AFFINE_ROLE_WEIGHT;
+        if (evidence.sources.contains("peer_pointer_comparison"))
+            return PEER_POINTER_WEIGHT * 2;
         if (evidence.sources.contains("typed_recursive_field"))
             return TYPED_FIELD_WEIGHT;
         return ARGUMENT_WEIGHT * 2;
@@ -561,7 +690,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     }
 
     private void collectEvidence(Object varnode,
-            Map<String, TypeEvidence> evidence, boolean scalarEligible) {
+            Map<String, TypeEvidence> evidence, boolean scalarEligible,
+            boolean mixedDomainEligible) {
         try {
             Object definition = varnode.getClass().getMethod("getDef").invoke(varnode);
             if (definition != null) {
@@ -580,6 +710,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                     collectBytePointerAffineRole(definition, varnode, evidence);
                 if (scalarEligible)
                     collectScalarRole(definition, varnode, evidence);
+                if (mixedDomainEligible)
+                    collectFloatingRole(definition, varnode, evidence);
             }
             @SuppressWarnings("unchecked")
             Iterator<Object> descendants = (Iterator<Object>)varnode.getClass()
@@ -594,11 +726,144 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                     collectBytePointerAffineRole(op, varnode, evidence);
                 if (scalarEligible)
                     collectScalarRole(op, varnode, evidence);
+                collectPeerPointerComparison(op, varnode, evidence);
+                if (mixedDomainEligible)
+                    collectFloatingRole(op, varnode, evidence);
             }
+            if (mixedDomainEligible)
+                collectControlIndexRole(varnode, evidence);
         }
         catch (Exception ignored) {
             // One malformed p-code edge does not invalidate other independent anchors.
         }
+    }
+
+    /**
+     * A FLOAT_* p-code operation is an exact value-domain boundary.  It is
+     * stronger than the decompiler's current nominal local type: MSVC commonly
+     * reuses one four-byte stack slot for a pointer and, later, for an x87
+     * single-precision temporary.  Only operands which the p-code operation
+     * itself interprets as floating values participate; integer inputs to
+     * FLOAT_INT2FLOAT and boolean/integer outputs of comparisons/conversions do
+     * not.
+     */
+    private void collectFloatingRole(Object op, Object varnode,
+            Map<String, TypeEvidence> evidence) throws Exception {
+        String operation = mnemonic(op);
+        if (!operation.startsWith("FLOAT_")) return;
+        int operand = operandOf(op, varnode);
+        boolean output = sameLifetime(op.getClass().getMethod("getOutput")
+            .invoke(op), varnode);
+        boolean floating = switch (operation) {
+            case "FLOAT_INT2FLOAT" -> output;
+            case "FLOAT_TRUNC", "FLOAT_CEIL", "FLOAT_FLOOR", "FLOAT_ROUND" ->
+                operand == 0;
+            case "FLOAT_EQUAL", "FLOAT_NOTEQUAL", "FLOAT_LESS",
+                    "FLOAT_LESSEQUAL", "FLOAT_NAN" -> operand >= 0;
+            default -> operand >= 0 || output;
+        };
+        if (!floating) return;
+        int size = ((Number)varnode.getClass().getMethod("getSize")
+            .invoke(varnode)).intValue();
+        String specification = floatingSpecification(size);
+        if (specification == null) return;
+        Evidence anchor = anchor(op, "floating_value_role",
+            output ? -1 : operand, null, operation);
+        TypeEvidence value = evidence.computeIfAbsent(specification,
+            ignored -> new TypeEvidence(specification));
+        if (!value.anchorKeys.add(anchor.key())) return;
+        value.score += FLOAT_ROLE_WEIGHT;
+        value.sources.add("floating_role");
+        value.anchors.add(anchor);
+    }
+
+    private String floatingSpecification(int size) {
+        return switch (size) {
+            case 4 -> "/float";
+            case 8 -> "/double";
+            case 10 -> "/float10";
+            default -> null;
+        };
+    }
+
+    /**
+     * Recognize the exact computed-jump selector chain rather than treating a
+     * pointer-looking value in a switch as a pointer.  The selector must be an
+     * index of a scale-4 PTRADD/INT_MULT and that result must reach BRANCHIND
+     * only through address construction and one table LOAD.  An ordinary array
+     * subscript or indirect function-pointer call therefore does not qualify.
+     */
+    private void collectControlIndexRole(Object varnode,
+            Map<String, TypeEvidence> evidence) throws Exception {
+        @SuppressWarnings("unchecked")
+        Iterator<Object> descendants = (Iterator<Object>)varnode.getClass()
+            .getMethod("getDescendants").invoke(varnode);
+        while (descendants.hasNext()) {
+            Object op = descendants.next();
+            String operation = mnemonic(op);
+            int operand = operandOf(op, varnode);
+            if (operand < 0 || !switchScaleFour(op, operation, operand))
+                continue;
+            Object output = op.getClass().getMethod("getOutput").invoke(op);
+            if (output == null || !reachesBranchInd(output,
+                    java.util.Collections.newSetFromMap(
+                        new java.util.IdentityHashMap<>()), 0, false))
+                continue;
+            int size = ((Number)varnode.getClass().getMethod("getSize")
+                .invoke(varnode)).intValue();
+            String specification = scalarSpecification(
+                "unsigned_scalar_role", size);
+            if (specification == null) return;
+            Evidence anchor = anchor(op, "control_index_role", operand,
+                null, operation);
+            TypeEvidence value = evidence.computeIfAbsent(specification,
+                ignored -> new TypeEvidence(specification));
+            if (!value.anchorKeys.add(anchor.key())) return;
+            value.score += CONTROL_INDEX_ROLE_WEIGHT;
+            value.sources.add("control_index");
+            value.anchors.add(anchor);
+            return;
+        }
+    }
+
+    private boolean switchScaleFour(Object op, String operation, int operand)
+            throws Exception {
+        int count = ((Number)op.getClass().getMethod("getNumInputs")
+            .invoke(op)).intValue();
+        if (operation.equals("PTRADD") && count >= 3 && operand == 1) {
+            Long scale = constant(op.getClass().getMethod("getInput", int.class)
+                .invoke(op, 2));
+            return scale != null && scale == 4;
+        }
+        if (!operation.equals("INT_MULT") || count != 2) return false;
+        int other = operand == 0 ? 1 : 0;
+        Long scale = constant(op.getClass().getMethod("getInput", int.class)
+            .invoke(op, other));
+        return scale != null && scale == 4;
+    }
+
+    private boolean reachesBranchInd(Object varnode, Set<Object> visited,
+            int depth, boolean loaded) throws Exception {
+        if (varnode == null || depth > 8 || !visited.add(varnode)) return false;
+        @SuppressWarnings("unchecked")
+        Iterator<Object> descendants = (Iterator<Object>)varnode.getClass()
+            .getMethod("getDescendants").invoke(varnode);
+        while (descendants.hasNext()) {
+            Object op = descendants.next();
+            String operation = mnemonic(op);
+            if (operation.equals("BRANCHIND")) {
+                if (loaded && operandOf(op, varnode) >= 0) return true;
+                continue;
+            }
+            boolean nextLoaded = loaded || operation.equals("LOAD");
+            if (!Set.of("COPY", "CAST", "INT_ADD", "PTRADD", "LOAD",
+                    "MULTIEQUAL", "INDIRECT").contains(operation))
+                continue;
+            Object output = op.getClass().getMethod("getOutput").invoke(op);
+            if (output != null && reachesBranchInd(output, visited, depth + 1,
+                    nextLoaded)) return true;
+        }
+        return false;
     }
 
     /**
@@ -698,6 +963,48 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         value.score += role.weight;
         value.sources.add(role.source);
         value.anchors.add(anchor);
+    }
+
+    /**
+     * Repair an earlier scalar lifetime guess when the exact same SSA value is
+     * repeatedly ordered against a concrete pointer peer.  MSVC's generic sort
+     * and partition loops compare byte cursors with INT_LESS/INT_LESSEQUAL;
+     * those integer p-code mnemonics describe the machine comparison, not a
+     * scalar source domain.  One nominal peer is review-only.  Two distinct
+     * comparison anchors which agree on one concrete pointer type are enough to
+     * restore only an automation-owned scalar local; manual/imported symbols
+     * remain protected by the ordinary proposal path.
+     */
+    private void collectPeerPointerComparison(Object op, Object varnode,
+            Map<String, TypeEvidence> evidence) throws Exception {
+        String operation = mnemonic(op);
+        if (!Set.of("INT_LESS", "INT_LESSEQUAL", "INT_SLESS",
+                "INT_SLESSEQUAL").contains(operation)) return;
+        int operand = operandOf(op, varnode);
+        if (operand < 0) return;
+        int count = ((Number)op.getClass().getMethod("getNumInputs")
+            .invoke(op)).intValue();
+        if (count != 2) return;
+        Object peer = op.getClass().getMethod("getInput", int.class)
+            .invoke(op, operand == 0 ? 1 : 0);
+        Object high = peer == null ? null : peer.getClass()
+            .getMethod("getHigh").invoke(peer);
+        if (high == null) return;
+        DataType type = (DataType)high.getClass().getMethod("getDataType")
+            .invoke(high);
+        if (!semanticPointer(type)) return;
+        DataType base = untypedef(type);
+        if (!(base instanceof Pointer pointer)) return;
+        DataType pointed = untypedef(pointer.getDataType());
+        if (!(pointed instanceof Structure structure) ||
+                !hashOwnedGeneratedStructure(structure)) return;
+        int size = ((Number)varnode.getClass().getMethod("getSize")
+            .invoke(varnode)).intValue();
+        if (!usableType(type, size)) return;
+        Evidence anchor = anchor(op, "peer_pointer_comparison", operand,
+            null, typeSpecification(type));
+        addEvidence(evidence, type, PEER_POINTER_WEIGHT,
+            "peer_pointer_comparison", anchor);
     }
 
     private ScalarRole scalarRole(Object op, Object varnode) throws Exception {
@@ -1010,7 +1317,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     private boolean hashOwnedGeneratedStructure(Structure structure) {
         String description = text(structure.getDescription());
         if (Set.of("[STRecursivePointeeApplier]", "[STClassLayoutApplier]",
-                "[STGlobalDataApplier]", "[STPointerShapeApplier]",
+                "[STGlobalDataApplier]", "[STGlobalAggregateApplier]",
+                "[STPointerShapeApplier]",
                 "[STTypeFamilyApplier]").stream().noneMatch(description::contains))
             return false;
         String stored = storedLayoutHash(description);

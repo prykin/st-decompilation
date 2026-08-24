@@ -8,7 +8,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
   DArrayTy *array;
   int iVar2;
   DArrayTy *array_00;
-  undefined2 *puVar3;
+  ushort *puVar3;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */

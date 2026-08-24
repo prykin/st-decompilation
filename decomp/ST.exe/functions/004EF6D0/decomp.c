@@ -17,7 +17,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
   ushort uVar3;
   int iVar4;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   int iVar6;
   int iVar7;
   InternalExceptionFrame local_58;

@@ -46,7 +46,7 @@ int FUN_006d5820(AnonShape_006D5820_330472AB *param_1,undefined4 *param_2)
   }
   /* ST_CALLSITE[006D58A4]: CALL dword ptr [ECX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)param_1->field_0004 + 4))((int *)param_1->field_0004);
+  (**(code **)(*STField<int *>(param_1,0x4) + 4))((int *)param_1->field_0004);
   *param_2 = param_1->field_0004;
   /* ST_CALLSITE[006D58B0]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(lpCriticalSection);

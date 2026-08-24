@@ -8,7 +8,7 @@ void FUN_00562e10(undefined4 param_1,undefined4 param_2,undefined4 *param_3,int 
   int iVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar6;
   int iVar7;
 

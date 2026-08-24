@@ -12,7 +12,7 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
   CGenerate_field_5853DArray *pCVar1;
   int iVar2;
   uint uVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   int *piVar5;
   int local_54 [9];
   undefined1 local_30 [4];

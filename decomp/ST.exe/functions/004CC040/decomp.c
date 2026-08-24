@@ -12,8 +12,7 @@
 undefined4 __fastcall FUN_004cc040(TLOBaseTy *param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   switch(param_1->field_05AC) {
   case CASE_32:

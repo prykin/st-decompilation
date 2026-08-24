@@ -150,7 +150,7 @@ int __thiscall st::fn_0040AE40(void *this,uint param_1,char param_2)
   iVar9 = local_8 * g_pathingGrid.planeStride;
   iVar8 = local_c * g_pathingGrid.sizeX;
   if (g_pathingGrid.cells[local_48->field_00BB + iVar8 + iVar9] < 0) {
-    psVar6 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(0x90));
+    psVar6 = static_cast<short *>(st::fn_006AAC70(0x90));
     pSVar5->field_009F = psVar6;
     for (iVar8 = 0x24; iVar8 != 0; iVar8 = iVar8 + -1) {
       psVar6[0] = -1;
@@ -264,7 +264,7 @@ joined_r0x0040b258:
     }
 LAB_0040b481:
     if (psVar6 == nullptr) goto LAB_0040b56a;
-    psVar6 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(0x90));
+    psVar6 = static_cast<short *>(st::fn_006AAC70(0x90));
     pSVar5->field_009F = psVar6;
     for (iVar8 = 0x24; iVar8 != 0; iVar8 = iVar8 + -1) {
       psVar6[0] = -1;
@@ -388,13 +388,13 @@ LAB_0040b56a:
                         (int)g_pathingGrid.sizeZ,(short *)(int)pSVar5->field_0047,
                         (short *)(int)pSVar5->field_0049,(short *)(int)pSVar5->field_004B,
                         (short *)pSVar5->field_00BB,(short *)pSVar5->field_00BF,
-                        (short *)pSVar5->field_00C3,pSVar5->field_00B7,st::pointer_boundary_cast<int *>(&pSVar5->field_00A3),local_28,
+                        (short *)pSVar5->field_00C3,pSVar5->field_00B7,reinterpret_cast<int *>(&pSVar5->field_00A3),local_28,
                         psVar6,local_24);
     pSVar5->field_009F = psVar7;
     if (psVar7 == nullptr) {
       scalar_psVar13 = (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX; /* split integer lifetime from pointer-typed SSA storage */
       int scalar_local_40 = scalar_psVar13;
-      local_2c = st::pointer_boundary_cast<short *>(st::fn_006AAC70((int)g_pathingGrid.sizeZ * scalar_psVar13 * 2));
+      local_2c = static_cast<short *>(st::fn_006AAC70((int)g_pathingGrid.sizeZ * scalar_psVar13 * 2));
       iVar8 = (int)g_pathingGrid.sizeZ;
       temp_103f0adf3284 = g_pathingGrid.cells;
       psVar6 = local_2c;
@@ -445,7 +445,7 @@ LAB_0040b56a:
                       (undefined4 *)(int)g_pathingGrid.sizeZ,(short *)(int)pSVar5->field_0047,
                       (short *)(int)pSVar5->field_0049,(short *)(int)pSVar5->field_004B,
                       (short *)pSVar5->field_00BB,(short *)pSVar5->field_00BF,
-                      (short *)pSVar5->field_00C3,pSVar5->field_00B7,st::pointer_boundary_cast<int *>(&pSVar5->field_00A3),local_24);
+                      (short *)pSVar5->field_00C3,pSVar5->field_00B7,reinterpret_cast<int *>(&pSVar5->field_00A3),local_24);
       pSVar5->field_009F = local_EAX_2797;
     }
     st::fn_006AB060(&local_28);
@@ -493,7 +493,7 @@ st::fn_0040BC90(void *this,uint param_1,short *param_2,short *param_3,short *par
   local_28 = this;
   pSVar1 = st::fn_0040286F(this,(ushort)param_1);
   if (pSVar1 != nullptr) {
-    local_8 = st::pointer_boundary_cast<short *>(st::fn_006AAC70
+    local_8 = static_cast<short *>(st::fn_006AAC70
                         ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
                          (int)g_pathingGrid.sizeX * 2));
     uVar4 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
@@ -629,7 +629,7 @@ undefined4 * __thiscall st::fn_0040C080(void *this,uint param_1,DArrayTy *param_
   ushort uVar2;
   int iVar3;
   STFishC *this_00;
-  undefined4 *puVar4;
+  uint *puVar4;
   STGameObjC *pSVar5;
   int iVar6;
   int iVar8;
@@ -640,7 +640,7 @@ undefined4 * __thiscall st::fn_0040C080(void *this,uint param_1,DArrayTy *param_
   int iVar11;
   uint index;
   void *pvVar12;
-  undefined4 *puVar13;
+  uint *puVar13;
   Global_sub_006C8EC0_param_3Enum aGStackY_f8 [9];
   undefined4 uStackY_d4;
   int local_b8;
@@ -673,15 +673,15 @@ undefined4 * __thiscall st::fn_0040C080(void *this,uint param_1,DArrayTy *param_
   int local_2c;
   short local_24 [2];
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_00790020;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 12);
   dVar8 = param_2->count;
@@ -690,13 +690,13 @@ undefined4 * __thiscall st::fn_0040C080(void *this,uint param_1,DArrayTy *param_
     uStackY_d4 = 0x40c0c5;
     ExceptionList = &local_14;
     local_1c = (st_stack_frame + 12);
-    puVar4 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(4));
+    puVar4 = static_cast<uint *>(st::fn_006AAC70(4));
     *puVar4 = 0xfffffffc;
   }
   else {
     uStackY_d4 = 0x40c0dd;
     ExceptionList = &local_14;
-    puVar4 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(dVar8 * 4));
+    puVar4 = static_cast<uint *>(st::fn_006AAC70(dVar8 * 4));
     if (puVar4 != nullptr) {
       uStackY_d4 = 0x40c0f8;
       pSVar5 = st::fn_0040286F(this,(ushort)param_1);
@@ -1059,6 +1059,7 @@ int st::fn_0040E0F0(int param_1,int param_2,int param_3,int param_4,int param_5)
   bool bVar2;
   int iVar3;
   int iVar8;
+  int iVar9_mg5;
   int iVar4;
   uint uVar5;
   uint uVar6;
@@ -1086,15 +1087,15 @@ int st::fn_0040E0F0(int param_1,int param_2,int param_3,int param_4,int param_5)
   int local_28;
   byte *local_24;
   uint local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_00790030;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 24);
   local_38 = 0;
@@ -1317,9 +1318,9 @@ int st::fn_0040E0F0(int param_1,int param_2,int param_3,int param_4,int param_5)
            ((DAT_007f4d30 <= local_4c ||
             (iVar3 = local_34,
             PTR_007f4cf0[local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c] != 0)))) {
-          iVar9 = st::fn_0040F270(local_48,&local_4c,local_54,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
-                               DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
-          if (iVar9 != 0) {
+          iVar9_mg5 = st::fn_0040F270(local_48,&local_4c,local_54,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
+                                   DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
+          if (iVar9_mg5 != 0) {
             iVar3 = -4;
             goto LAB_0040e872;
           }
@@ -1372,6 +1373,7 @@ int st::fn_0040FC40(int param_1,int param_2,int param_3,int param_4,int param_5,
   uint uVar5;
   uint uVar6;
   int iVar18;
+  int iVar2_mg3;
   int iVar7;
   uint uVar8;
   int iVar9;
@@ -1382,7 +1384,7 @@ int st::fn_0040FC40(int param_1,int param_2,int param_3,int param_4,int param_5,
   uint uVar14;
   RuntimeRecord_007F4D3C_0014 *pRVar15;
   uint uVar16;
-  undefined4 *puVar17;
+  uint *puVar17;
   int iVar19;
   int local_12c;
   int local_114;
@@ -1411,15 +1413,15 @@ int st::fn_0040FC40(int param_1,int param_2,int param_3,int param_4,int param_5,
   int local_44 [8];
   undefined4 *local_24;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_00790060;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 28);
   local_50 = 0;
@@ -1796,9 +1798,10 @@ LAB_00410872:
     if ((((local_68 < 0) || (iVar3 <= local_68)) || (local_6c < 0)) ||
        ((DAT_007f4d30 <= local_6c ||
         (PTR_007f4cf0[local_78 * local_48 + local_68 + iVar3 * local_6c] != 0)))) {
-      iVar2 = st::fn_0040F270(&local_68,&local_6c,(int *)&local_78,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
-                           DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
-      if (iVar2 != 0) goto LAB_004109fd;
+      iVar2_mg3 = st::fn_0040F270(&local_68,&local_6c,(int *)&local_78,DAT_007f4d0c >> 2,
+                               DAT_007f4d10 >> 2,DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,
+                               param_3 >> 2);
+      if (iVar2_mg3 != 0) goto LAB_004109fd;
       uVar14 = local_78 * local_48 + local_68 + DAT_007f4d2c * local_6c ^ 7;
       STBitSet(g_bitset_007F4CFC, uVar14);
       STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar19).field_0000 = local_68;
@@ -1998,15 +2001,15 @@ int st::fn_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,
   int local_28;
   byte *local_24;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_00790070;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 28);
   local_44 = 0;
@@ -2034,7 +2037,7 @@ int st::fn_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,
     }
     local_64 = *(int *)(&DAT_007a4bf8 + param_5 * 4);
     ExceptionList = &local_14;
-    psVar1 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(local_64 << 5));
+    psVar1 = static_cast<short *>(st::fn_006AAC70(local_64 << 5));
     local_54 = psVar1;
     uVar2 = st::fn_00411CF0((char *)psVar1,local_64);
     local_3c = (int)(uVar2 * param_6 + 0xb4) / 0x168;
@@ -2194,7 +2197,7 @@ int st::fn_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,
           local_60 = param_3;
           local_64 = local_64 + 1;
           uVar4 = uVar4 + 0x20;
-          local_54 = st::pointer_boundary_cast<short *>(st::fn_006ACF50(local_54,uVar4));
+          local_54 = static_cast<short *>(st::fn_006ACF50(local_54,uVar4));
           uVar2 = st::fn_00411CF0((char *)local_54,local_64);
           local_3c = (int)(uVar2 * param_6 + 0xb4) / 0x168;
           if (local_3c == uVar2) {
@@ -2329,15 +2332,15 @@ int st::fn_00411E50(int param_1,int param_2,int param_3,int param_4,int param_5,
   byte *local_28;
   uint local_24;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_00790080;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 32);
   local_48 = 0;
@@ -2366,7 +2369,7 @@ int st::fn_00411E50(int param_1,int param_2,int param_3,int param_4,int param_5,
     }
     local_68 = *(int *)(&DAT_007a4bf8 + param_5 * 4);
     ExceptionList = &local_14;
-    local_58 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(local_68 << 5));
+    local_58 = static_cast<short *>(st::fn_006AAC70(local_68 << 5));
     local_34 = st::fn_00411CF0((char *)local_58,local_68);
     local_40 = (int)(local_34 * param_6 + 0xb4) / 0x168;
     if (local_40 == local_34) {
@@ -2527,7 +2530,7 @@ int st::fn_00411E50(int param_1,int param_2,int param_3,int param_4,int param_5,
           local_64 = param_3;
           local_68 = local_68 + 1;
           uVar4 = uVar4 + 0x20;
-          local_58 = st::pointer_boundary_cast<short *>(st::fn_006ACF50(local_58,uVar4));
+          local_58 = static_cast<short *>(st::fn_006ACF50(local_58,uVar4));
           local_34 = st::fn_00411CF0((char *)local_58,local_68);
           local_40 = (int)(local_34 * param_6 + 0xb4) / 0x168;
           if (local_40 == local_34) {
@@ -2635,6 +2638,7 @@ int st::fn_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,
 {
   int iVar1;
   int iVar2;
+  int iVar2_mg2;
   int iVar3;
   int iVar4;
   AnonShape_00412960_B35D15BC *pAVar5;
@@ -2688,22 +2692,23 @@ int st::fn_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,
       DAT_007f4d28 = (DAT_007f4d28 * iVar2) / iVar4;
     }
     if (param_8 == 0) {
-      iVar2 = st::fn_00412DE0(param_1,param_2,param_3);
-      if (iVar2 == 0) {
+      iVar2_mg2 = st::fn_00412DE0(param_1,param_2,param_3);
+      if (iVar2_mg2 == 0) {
         st::fn_0040EB90();
         return 0;
       }
     }
     else {
-      iVar2 = st::fn_00412B80(param_1,param_2,param_3);
-      if (iVar2 == 0) {
+      iVar2_mg2 = st::fn_00412B80(param_1,param_2,param_3);
+      if (iVar2_mg2 == 0) {
         return 0;
       }
     }
-    if (iVar2 != -4) {
+    if (iVar2_mg2 != -4) {
       st::fn_006A5E40
-                (iVar2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\Grpway3d.cpp"),0xc7a);
-      return iVar2;
+                (iVar2_mg2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\Grpway3d.cpp"),
+                 0xc7a);
+      return iVar2_mg2;
     }
   }
   return -4;
@@ -2722,30 +2727,32 @@ int st::fn_00413050(int param_1,int param_2,int param_3,int param_4,int param_5)
 {
   int iVar1;
   int iVar2;
+  int iVar2_mg1;
 
-  iVar2 = param_1;
+  iVar1 = param_1;
   if (((((DAT_007f4d20 < 0xc9) && (-1 < param_1)) && (param_1 < DAT_007f4d2c)) &&
       ((-1 < param_2 && (param_2 < DAT_007f4d30)))) && ((-1 < param_3 && (param_3 < DAT_007f4d34))))
   {
     if ((DAT_007f4d20 < 10) || (param_5 < 1)) {
-      iVar1 = 0;
+      iVar2 = 0;
     }
     else {
-      iVar1 = *(int *)(&DAT_007a4bf8 + param_5 * 4);
+      iVar2 = *(int *)(&DAT_007a4bf8 + param_5 * 4);
     }
     param_1 = (int)PTR_007f4d54;
     if (((byte)DAT_007f4d08 & 1) == 0) {
       param_1 = (int)PTR_007f4d50;
     }
-    iVar2 = st::fn_00413170(iVar2,param_2,param_3,param_4,(undefined4 *)&param_1,iVar1);
-    if (iVar2 == 0) {
+    iVar2_mg1 = st::fn_00413170(iVar1,param_2,param_3,param_4,(undefined4 *)&param_1,iVar2);
+    if (iVar2_mg1 == 0) {
       st::fn_0040EB90();
       return 0;
     }
-    if (iVar2 != -4) {
+    if (iVar2_mg1 != -4) {
       st::fn_006A5E40
-                (iVar2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\Grpway3d.cpp"),0xca9);
-      return iVar2;
+                (iVar2_mg1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\Grpway3d.cpp"),
+                 0xca9);
+      return iVar2_mg1;
     }
   }
   return -4;
@@ -2823,7 +2830,7 @@ int st::fn_00415160
       puVar6 = nullptr;
     }
     else {
-      puVar6 = st::pointer_boundary_cast<ushort *>(param_2->data);
+      puVar6 = static_cast<ushort *>(param_2->data);
     }
     pSVar7 = st::fn_0040286F(param_1,*puVar6);
     if (pSVar7 != nullptr) {

@@ -13,12 +13,12 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this)
 
 {
   HoloTy_field_0001State HVar2;
-  undefined1 uVar3;
-  undefined1 uVar4;
+  byte uVar3;
+  byte uVar4;
   STT3DSprC *pSVar5;
   HoloTy *pHVar6;
   int iVar8;
-  undefined4 *puVar7;
+  uint *puVar7;
   int iVar9;
   HoloTy *pHVar10;
   HoloTy *pHVar11;

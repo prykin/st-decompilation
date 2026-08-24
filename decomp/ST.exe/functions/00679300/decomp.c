@@ -12,7 +12,7 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
   AiPlrClassTy *pAVar3;
   int iVar4;
   uint index;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar5;
   int iVar6;
   AiTactClassTy *this_00;

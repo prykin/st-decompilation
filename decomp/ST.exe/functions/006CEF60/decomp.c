@@ -51,9 +51,9 @@ int FUN_006cef60(int *param_1,AnonShape_006D86E0_D6D32C07 *param_2,
   int local_28;
   int local_24;
   uint local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

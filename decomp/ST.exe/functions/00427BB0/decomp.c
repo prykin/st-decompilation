@@ -13,7 +13,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
 
 {
   byte bVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   void *pvVar3;
   RuntimeRecord_007F4D74_0010 *pRVar4;
   int iVar5;

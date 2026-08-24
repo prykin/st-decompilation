@@ -47,22 +47,22 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
   uint uVar11;
   uint uVar12;
   HelpPanelTy_field_01BBElement *element_01bb_2;
-  undefined4 uVar14;
+  uint uVar14;
   int iVar15;
-  undefined4 uVar16;
+  uint uVar16;
   int iVar17;
   short sVar18;
   ushort uVar19;
   byte bVar20;
-  undefined4 uVar21;
+  uint uVar21;
   char *pcVar22;
   int *piVar23;
   int iVar24;
   ushort *puVar25;
-  undefined4 uVar26;
+  uint uVar26;
   int iVar27;
-  undefined4 *puVar28;
-  undefined4 uVar29;
+  uint *puVar28;
+  uint uVar29;
   InternalExceptionFrame local_6c;
   undefined4 local_28;
   undefined4 local_24;
@@ -222,7 +222,7 @@ LAB_00510fa9:
   local_EAX_739 = cMf32::RecGet(g_cMf32_00806790,1,pCVar6,piVar23,iVar27);
   this_00->field_024C = local_EAX_739;
   /* ST_CALLSITE[0051112C]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-  pcVar7 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
+  pcVar7 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
   this_00->field_01E0 = pcVar7;
   pcVar7->field_0058 = 0;
   pcVar7->field_005C = 0;
@@ -293,14 +293,14 @@ LAB_00510fa9:
   iVar27 = *(int *)&pcVar7->field_0x8a;
   iVar24 = 1;
   puVar25 = this_00->field_01DC + 0x14;
-  uVar17 = FUN_006b4fe0((int)this_00->field_01DC);
+  uVar17 = FUN_006b4fe0(this_00->field_01DC);
   local_EAX_1285 =
        FUN_006b50c0(0x19c,iVar27 + 1,(uint)this_00->field_01DC[7],uVar17,(undefined4 *)puVar25,
                     iVar24);
   this_00->field_01EC = (ushort *)local_EAX_1285;
   iVar27 = 1;
   puVar25 = this_00->field_01DC + 0x14;
-  local_EAX_1308 = FUN_006b4fe0((int)this_00->field_01DC);
+  local_EAX_1308 = FUN_006b4fe0(this_00->field_01DC);
   pAVar8 = (AnonPointee_HelpPanelTy_0218 *)
            FUN_006b50c0(0x19c,600,(uint)this_00->field_01DC[7],local_EAX_1308,(undefined4 *)puVar25,
                         iVar27);

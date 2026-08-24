@@ -15,11 +15,10 @@
    used=60, ignored=0, unknown=0
 
    [STReturnSemanticsApplier] returned_pointer_parameter.
-   Evidence: every reachable RET receives full EAX from the same incoming pointer parameter param_1
-   (ordinal=0); no intervening full or partial accumulator definition changes that value; machine
-   CFG audit: used=60, ignored=0, unknown=0 */
+   Evidence: the complete machine CFG returns incoming pointer parameter param_1 (ordinal=0);
+   restore its exact formal pointer type after the obsolete void-pointer normalization */
 
-undefined4 * FUN_0041dc40(undefined4 *param_1,short param_2,ushort param_3,short param_4)
+uint * FUN_0041dc40(undefined4 *param_1,short param_2,ushort param_3,short param_4)
 
 {
   uint uVar1;
@@ -28,8 +27,7 @@ undefined4 * FUN_0041dc40(undefined4 *param_1,short param_2,ushort param_3,short
   int iVar4;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   short in_stack_0000000a;
-  undefined4 local_c;
-
+  uint local_c;
   iVar4 = (int)param_4;
   uVar1 = FUN_006aff50(iVar4);
   uVar2 = FUN_006aff5b(iVar4);

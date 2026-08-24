@@ -27,19 +27,19 @@ SpecPanelTy::InitPanel
   int iVar5;
   ushort *puVar5;
   ccFntTy *pcVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   char *resourceString;
   LPSTR pCVar8;
   uint uVar9;
   uint uVar10;
-  undefined4 uVar11;
-  undefined4 uVar12;
-  undefined4 uVar13;
-  undefined4 uVar14;
-  undefined4 uVar15;
+  uint uVar11;
+  uint uVar12;
+  uint uVar13;
+  uint uVar14;
+  uint uVar15;
   int iVar16;
-  undefined4 uVar17;
-  undefined4 uVar18;
+  uint uVar17;
+  uint uVar18;
   InternalExceptionFrame local_4c;
   SpecPanelTy *local_8;
 
@@ -53,7 +53,7 @@ SpecPanelTy::InitPanel
     puVar5 = cMf32::RecGet(g_cMf32_00806790,1,text,nullptr,1);
     pSVar4->field_0185 = puVar5;
     /* ST_CALLSITE[0053E469]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar6 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
+    pcVar6 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     pSVar4->field_0189 = pcVar6;
     pcVar6->field_0058 = 0;
     pcVar6->field_005C = 0;
@@ -91,8 +91,7 @@ SpecPanelTy::InitPanel
     uVar11 = 0xbfff;
     pCVar8 = thunk_FUN_00571240("BUT_MEDIUM",0);
     /* ST_CALLSITE[0053E552]: CALL dword ptr [EDI + 0x4] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar11 = (*(code *)pAVar2->field_0004)
+    uVar11 = (*STField<code *>(pAVar2,0x4))
                        (0,1,param_7,param_8,0,1,1,pCVar8,uVar11,uVar12,uVar13,uVar14,uVar15,uVar17,
                         uVar18);
     pSVar4->field_017C = uVar11;

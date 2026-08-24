@@ -1152,7 +1152,7 @@ void st::fn_006F5760(undefined1 *param_1,int param_2,uint *param_3,int param_4,i
   uint uVar1;
   byte bVar2;
   bool bVar3;
-  undefined1 uVar4;
+  byte uVar4;
   uint uVar5;
   uint uVar6;
   uint uVar7;
@@ -1160,7 +1160,7 @@ void st::fn_006F5760(undefined1 *param_1,int param_2,uint *param_3,int param_4,i
   int iVar9;
   int iVar10;
   byte *pbVar11;
-  undefined1 *puVar12;
+  byte *puVar12;
   int iStack_18;
 
   DAT_0085702c = param_9;
@@ -1586,15 +1586,14 @@ st::fn_006F5BD0(undefined1 *param_1,int param_2,byte *param_3,int param_4,int pa
 {
   byte bVar1;
   bool bVar2;
-  undefined1 uVar3;
+  byte uVar3;
   uint uVar4;
   uint uVar5;
   uint uVar6;
   int iVar7;
   int iVar8;
   byte *pbVar9;
-  undefined1 *puVar10;
-
+  byte *puVar10;
   uVar3 = 0;
   do {
     uVar4 = (uint)*param_3;
@@ -1756,7 +1755,7 @@ void st::fn_006F5D80(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  byte *param_6,int param_7,int param_8,int param_9,int param_10,int param_11)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
   uint uVar3;
   byte bVar4;
@@ -1929,12 +1928,12 @@ void st::fn_006F6020(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  byte *param_12,int param_13,int param_14)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
   uint uVar3;
   byte bVar4;
   uint uVar5;
-  undefined1 uVar6;
+  byte uVar6;
   int iVar7;
   byte *pbVar8;
   byte *pbVar9;
@@ -2602,7 +2601,7 @@ void st::fn_006F6AE0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  int param_12,byte *param_13,int param_14)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte *pbVar2;
   byte *pbVar3;
   uint uVar4;
@@ -2611,7 +2610,7 @@ void st::fn_006F6AE0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
   uint uVar7;
   byte *pbVar8;
   int iVar9;
-  undefined1 *puVar10;
+  byte *puVar10;
   int local_c;
   uint local_8;
 
@@ -4184,9 +4183,8 @@ void st::fn_006F81D0(undefined1 *param_1,int param_2,byte *param_3,int param_4,u
   uint uVar7;
   uint uVar8;
   int iVar9;
-  undefined1 *puVar10;
-  undefined1 *puVar11;
-
+  byte *puVar10;
+  byte *puVar11;
   pbVar3 = param_16 + param_10;
   _DAT_00857000 = 1;
   pbVar6 = (byte *)(param_14 + ((int)pbVar3 >> 3));
@@ -4399,7 +4397,7 @@ void st::fn_006F85A0(undefined1 *param_1,int param_2,byte *param_3,int param_4,b
 {
   byte bVar1;
   uint uVar2;
-  undefined1 *puVar3;
+  byte *puVar3;
   uint uVar4;
   int iVar5;
 
@@ -4472,15 +4470,15 @@ void st::fn_006F8660(undefined4 *param_1,int param_2,byte *param_3,int param_4,i
                  ,uint param_7,int param_8)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int iVar2;
   byte *pbVar3;
   uint uVar4;
   byte *pbVar5;
   byte bVar6;
   uint uVar7;
-  undefined4 *puVar8;
-  undefined4 *puVar9;
+  uint *puVar8;
+  uint *puVar9;
   uint local_c;
   uint local_8;
   byte *pbVar5_mg0;
@@ -4663,7 +4661,7 @@ void st::fn_006F88A0(undefined1 *param_1,int param_2,byte *param_3,int param_4,b
   byte bVar4;
   uint uVar5;
   int iVar6;
-  undefined1 *puVar7;
+  byte *puVar7;
   int local_8;
 
   if (-1 < param_9 + -1) {
@@ -6483,14 +6481,14 @@ void st::fn_006FA280(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  int param_12,int param_13)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   uint uVar2;
   uint uVar3;
   int iVar4;
   byte bVar5;
   byte *pbVar6;
-  undefined1 *puVar7;
-  undefined1 *puVar8;
+  byte *puVar7;
+  byte *puVar8;
   ushort *puVar9;
   ushort *puVar10;
   uint local_14;
@@ -6798,14 +6796,14 @@ void st::fn_006FA7A0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  int param_12,int param_13,byte *param_14,int param_15,int param_16)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   uint uVar2;
   uint uVar3;
-  undefined1 *puVar4;
-  undefined1 *puVar5;
+  byte *puVar4;
+  byte *puVar5;
   ushort *puVar6;
   ushort *puVar7;
-  undefined1 uVar8;
+  byte uVar8;
   byte bVar9;
   byte *pbVar10_mg2;
   int iVar10;
@@ -7200,21 +7198,21 @@ void st::fn_006FADC0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  uint param_12,int param_13)
 
 {
-  undefined1 uVar1;
-  undefined1 *puVar2;
+  byte uVar1;
+  byte *puVar2;
   ushort uVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   uint uVar5;
   uint uVar6;
   int iVar7;
   int iVar8;
   byte bVar9;
-  undefined1 *puVar10;
+  byte *puVar10;
   ushort *puVar11;
   ushort *puVar12;
   int local_10;
   uint local_c;
-  undefined1 *local_8;
+  byte *local_8;
   ushort *puVar13_mg0;
 
   _DAT_00857000 = 1;
@@ -7674,19 +7672,19 @@ void st::fn_006FB4A0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  uint param_12,int param_13,byte *param_14,int param_15,int param_16)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte *pbVar2;
   uint uVar3;
   uint uVar4;
   int iVar5;
   int iVar6;
-  undefined1 uVar7;
+  byte uVar7;
   byte bVar8;
   ushort *puVar9;
   byte *pbVar10;
   byte *pbVar11;
-  undefined1 *puVar12;
-  undefined1 *puVar13;
+  byte *puVar12;
+  byte *puVar13;
   byte *pbVar14;
   byte *pbVar15;
   int local_14;
@@ -10273,19 +10271,19 @@ void st::fn_006FDEA0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  int param_12,int param_13,int param_14,int param_15,int param_16)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   uint uVar2;
   byte *pbVar3;
   uint uVar4;
   byte bVar5;
   int iVar6;
-  undefined1 *puVar7;
+  byte *puVar7;
   byte *pbVar8;
   ushort *puVar9;
   uint local_18;
   int local_14;
   ushort *local_10;
-  undefined1 *local_c;
+  byte *local_c;
   byte *local_8;
 
   pbVar3 = (byte *)(param_13 + (param_15 >> 3));
@@ -10644,20 +10642,20 @@ void st::fn_006FE570(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  int param_18,int param_19)
 
 {
-  undefined1 uVar1;
-  undefined1 *puVar2;
+  byte uVar1;
+  byte *puVar2;
   byte *pbVar3;
   ushort *puVar4;
-  undefined1 uVar5;
+  byte uVar5;
   uint uVar6;
   byte *pbVar7;
   byte bVar8;
   uint uVar9;
   int iVar10;
   byte *pbVar11_mg3;
-  undefined1 *puVar11;
+  byte *puVar11;
   uint local_1c;
-  undefined1 *local_18;
+  byte *local_18;
   int local_14;
   byte *local_10;
   byte *local_c;
@@ -11117,7 +11115,7 @@ void st::fn_006FED50(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  uint param_12,int param_13,int param_14,int param_15,int param_16)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
   uint uVar3;
   int iVar4;
@@ -11125,12 +11123,12 @@ void st::fn_006FED50(undefined1 *param_1,int param_2,ushort *param_3,int param_4
   uint uVar6;
   int iVar7;
   ushort *puVar8;
-  undefined1 *puVar9;
+  byte *puVar9;
   byte *pbVar10;
   byte *pbVar11;
   uint local_18;
   int local_14;
-  undefined1 *local_10;
+  byte *local_10;
   byte *local_c;
   ushort *local_8;
 
@@ -11675,11 +11673,11 @@ void st::fn_006FF690(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  int param_18,int param_19)
 
 {
-  undefined1 uVar1;
-  undefined1 *puVar2;
+  byte uVar1;
+  byte *puVar2;
   uint uVar3;
   int iVar4;
-  undefined1 uVar5;
+  byte uVar5;
   byte *pbVar6;
   byte bVar7;
   uint uVar8;
@@ -11688,11 +11686,11 @@ void st::fn_006FF690(undefined1 *param_1,int param_2,ushort *param_3,int param_4
   byte *pbVar11;
   byte *pbVar12;
   byte *pbVar13;
-  undefined1 *puVar14;
-  undefined1 *puVar15;
+  byte *puVar14;
+  byte *puVar15;
   uint local_1c;
   int local_18;
-  undefined1 *local_14;
+  byte *local_14;
   byte *local_10;
   byte *local_c;
   ushort *local_8;

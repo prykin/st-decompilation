@@ -5,7 +5,7 @@ undefined4 * __cdecl FUN_00680590(byte *param_1)
 
 {
   byte *_Drive;
-  undefined4 *puVar1;
+  uint *puVar1;
   char *text;
   byte *pbVar2;
   CHAR local_404 [1024];

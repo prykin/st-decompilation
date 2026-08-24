@@ -17,11 +17,11 @@ STBoatC::GetCellForLoading
           undefined2 *param_9,short *param_10,short *param_11,undefined2 *param_12)
 
 {
-  undefined2 uVar1;
+  ushort uVar1;
   int *piVar3;
   int iVar4;
   int iVar10;
-  undefined4 uVar5;
+  uint uVar5;
   uint uVar6;
   uint uVar7;
   int iVar8;

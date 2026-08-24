@@ -12,7 +12,7 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
   PopUpTy *pPVar3;
   int iVar4;
   DArrayTy *pDVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar9;
   uint uVar6;
   uint uVar7;

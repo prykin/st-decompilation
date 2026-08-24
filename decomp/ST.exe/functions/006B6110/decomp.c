@@ -1,12 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void FUN_006b6110(undefined4 *param_1)
 
 {
   int iVar1;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   if (param_1 != nullptr) {
     iVar1 = 0;
     if (0 < (int)param_1[1]) {

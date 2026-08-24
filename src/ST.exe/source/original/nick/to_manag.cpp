@@ -43,7 +43,7 @@ int __thiscall st::fn_0061F660(SndUnderAttMenegC *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 == MESS_ID_NONE) {
     iVar8 = 0xafffff5;
-    piVar7 = st::pointer_boundary_cast<int *>(&local_8->field_0031);
+    piVar7 = reinterpret_cast<int *>(&local_8->field_0031);
     do {
       if (*(char *)((int)piVar7 + -0x11) != '\0') {
         st::fn_006E6780(g_sT3DSMAPContext_00807598,iVar8);

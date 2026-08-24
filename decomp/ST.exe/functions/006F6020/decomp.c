@@ -8,12 +8,12 @@ void FUN_006f6020(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
                  byte *param_12,int param_13,int param_14)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
   uint uVar3;
   byte bVar4;
   uint uVar5;
-  undefined1 uVar6;
+  byte uVar6;
   int iVar7;
   byte *pbVar8;
   byte *pbVar9;

@@ -103,7 +103,7 @@ int __thiscall st::fn_0058D7C0(STSharkC *this,STMessage *message)
       local_18 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
       /* ST_CALLSITE[0058DD5F]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
       local_14 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = st::pointer_boundary_cast<AnonShape_0058D7C0_99A937C6 *>(st::fn_006AAC70(local_10 + 0x66 + local_8));
+      local_c = static_cast<AnonShape_0058D7C0_99A937C6 *>(st::fn_006AAC70(local_10 + 0x66 + local_8));
       if (local_18 == nullptr) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
@@ -729,7 +729,7 @@ st::fn_00590010
 
 {
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_38 [5];
   int local_24;
   int local_20;

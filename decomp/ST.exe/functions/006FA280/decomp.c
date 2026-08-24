@@ -8,14 +8,14 @@ void FUN_006fa280(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
                  int param_12,int param_13)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   uint uVar2;
   uint uVar3;
   int iVar4;
   byte bVar5;
   byte *pbVar6;
-  undefined1 *puVar7;
-  undefined1 *puVar8;
+  byte *puVar7;
+  byte *puVar8;
   ushort *puVar9;
   ushort *puVar10;
   uint local_14;

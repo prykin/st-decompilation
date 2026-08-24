@@ -12,8 +12,8 @@ void FUN_00754185(AnonShape_00754185_34BF31BE *context)
 
 {
   uint *puVar1;
-  undefined1 uVar2;
-  undefined1 *puVar3;
+  byte uVar2;
+  byte *puVar3;
   int iVar4;
   uint uVar5;
   int iVar6;
@@ -22,10 +22,9 @@ void FUN_00754185(AnonShape_00754185_34BF31BE *context)
   int extraout_ECX;
   int iVar8;
   uint uVar9;
-  undefined2 *puVar10;
+  ushort *puVar10;
   int *piVar11;
-  undefined1 *puVar12;
-
+  byte *puVar12;
   puVar10 = (undefined2 *)&context[0x19f].field_0x20;
   for (iVar7 = 0x2000; iVar7 != 0; iVar7 = iVar7 + -1) {
     *puVar10 = 0x4000;

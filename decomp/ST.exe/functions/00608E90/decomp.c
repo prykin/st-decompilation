@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   int local_EAX_15;
   int local_EAX_871;
   uint uVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar2;
   int iVar5;
   int iVar6;
@@ -198,8 +198,8 @@ LAB_00609164:
       iVar7 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
       iVar5 = STField<int>(this,0x1e9);
       iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
-      thunk_FUN_00496cc0(iVar5,iVar7,STField<uint>(this,0x1d9),iVar6,STField<uint>(this,0x18),
-                         this);
+      thunk_FUN_00496cc0(iVar5,iVar7,STField<uint *>(this,0x1d9),iVar6,STField<uint>(this,0x18)
+                         ,this);
       if (STField<int>(this,0x209) != 0) {
         if ((STField<int>(this,0x221) == 0) &&
            (thunk_FUN_0060c2d0(this), STField<int>(this,0x221) == 0)) goto LAB_00609164;

@@ -14,6 +14,14 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
   int iVar2;
   int iVar3;
   int iVar4;
+  int iVar4_mg8;
+  int iVar4_mg7;
+  int iVar4_mg6;
+  int iVar4_mg5;
+  int iVar4_mg4;
+  int iVar4_mg3;
+  int iVar4_mg2;
+  int iVar4_mg1;
 
   iVar4 = param_1 + 0xb;
   iVar2 = param_1 + -0xc + param_3;
@@ -25,28 +33,28 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
       if (param_5 <= iVar4) {
         if (param_6 <= iVar1) {
           /* ST_CALLSITE[0054BA61]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-          iVar4 = OpticClassC::sub_004AB070
-                            (g_opticClass_007FB2A0,CASE_5,1.4013e-45,
-                             (uint)STField<byte>(this,0xd1),0);
+          iVar4_mg8 = OpticClassC::sub_004AB070
+                                (g_opticClass_007FB2A0,CASE_5,1.4013e-45,
+                                 (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             /* ST_CALLSITE[0054BA84]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             CursorClassTy::SetGCType
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_40,STField<int>(this,0x34),
-                       STField<int>(this,0x38));
+                      (this,(-(ushort)(iVar4_mg8 != -2) & 0xfff6) + CASE_40,
+                       STField<int>(this,0x34),STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
           return 1;
         }
         if (iVar3 <= param_6) {
           /* ST_CALLSITE[0054BAB5]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-          iVar4 = OpticClassC::sub_004AB070
-                            (g_opticClass_007FB2A0,CASE_6,1.4013e-45,
-                             (uint)STField<byte>(this,0xd1),0);
+          iVar4_mg7 = OpticClassC::sub_004AB070
+                                (g_opticClass_007FB2A0,CASE_6,1.4013e-45,
+                                 (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             /* ST_CALLSITE[0054BAD8]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             CursorClassTy::SetGCType
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_42,STField<int>(this,0x34),
-                       STField<int>(this,0x38));
+                      (this,(-(ushort)(iVar4_mg7 != -2) & 0xfff6) + CASE_42,
+                       STField<int>(this,0x34),STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
           return 1;
@@ -55,28 +63,28 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
       if (iVar2 <= param_5) {
         if (param_6 <= iVar1) {
           /* ST_CALLSITE[0054BB12]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-          iVar4 = OpticClassC::sub_004AB070
-                            (g_opticClass_007FB2A0,CASE_7,1.4013e-45,
-                             (uint)STField<byte>(this,0xd1),0);
+          iVar4_mg6 = OpticClassC::sub_004AB070
+                                (g_opticClass_007FB2A0,CASE_7,1.4013e-45,
+                                 (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             /* ST_CALLSITE[0054BB35]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             CursorClassTy::SetGCType
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_41,STField<int>(this,0x34),
-                       STField<int>(this,0x38));
+                      (this,(-(ushort)(iVar4_mg6 != -2) & 0xfff6) + CASE_41,
+                       STField<int>(this,0x34),STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
           return 1;
         }
         if (iVar3 <= param_6) {
           /* ST_CALLSITE[0054BB66]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-          iVar4 = OpticClassC::sub_004AB070
-                            (g_opticClass_007FB2A0,CASE_8,1.4013e-45,
-                             (uint)STField<byte>(this,0xd1),0);
+          iVar4_mg5 = OpticClassC::sub_004AB070
+                                (g_opticClass_007FB2A0,CASE_8,1.4013e-45,
+                                 (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             /* ST_CALLSITE[0054BB89]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             CursorClassTy::SetGCType
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_43,STField<int>(this,0x34),
-                       STField<int>(this,0x38));
+                      (this,(-(ushort)(iVar4_mg5 != -2) & 0xfff6) + CASE_43,
+                       STField<int>(this,0x34),STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
           return 1;
@@ -84,56 +92,56 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
       }
       if (param_5 <= iVar4) {
         /* ST_CALLSITE[0054BBBA]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-        iVar4 = OpticClassC::sub_004AB070
-                          (g_opticClass_007FB2A0,CASE_1,1.4013e-45,(uint)STField<byte>(this,0xd1)
-                           ,0);
+        iVar4_mg4 = OpticClassC::sub_004AB070
+                              (g_opticClass_007FB2A0,CASE_1,1.4013e-45,
+                               (uint)STField<byte>(this,0xd1),0);
         if (param_7 != 0) {
           /* ST_CALLSITE[0054BBDD]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           CursorClassTy::SetGCType
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3F,STField<int>(this,0x34),
-                     STField<int>(this,0x38));
+                    (this,(-(ushort)(iVar4_mg4 != -2) & 0xfff6) + CASE_3F,STField<int>(this,0x34)
+                     ,STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
         return 1;
       }
       if (iVar2 <= param_5) {
         /* ST_CALLSITE[0054BC0F]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-        iVar4 = OpticClassC::sub_004AB070
-                          (g_opticClass_007FB2A0,CASE_2,1.4013e-45,(uint)STField<byte>(this,0xd1)
-                           ,0);
+        iVar4_mg3 = OpticClassC::sub_004AB070
+                              (g_opticClass_007FB2A0,CASE_2,1.4013e-45,
+                               (uint)STField<byte>(this,0xd1),0);
         if (param_7 != 0) {
           /* ST_CALLSITE[0054BC32]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           CursorClassTy::SetGCType
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3E,STField<int>(this,0x34),
-                     STField<int>(this,0x38));
+                    (this,(-(ushort)(iVar4_mg3 != -2) & 0xfff6) + CASE_3E,STField<int>(this,0x34)
+                     ,STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
         return 1;
       }
       if (param_6 <= iVar1) {
         /* ST_CALLSITE[0054BC63]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-        iVar4 = OpticClassC::sub_004AB070
-                          (g_opticClass_007FB2A0,CASE_3,1.4013e-45,(uint)STField<byte>(this,0xd1)
-                           ,0);
+        iVar4_mg2 = OpticClassC::sub_004AB070
+                              (g_opticClass_007FB2A0,CASE_3,1.4013e-45,
+                               (uint)STField<byte>(this,0xd1),0);
         if (param_7 != 0) {
           /* ST_CALLSITE[0054BC86]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           CursorClassTy::SetGCType
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3C,STField<int>(this,0x34),
-                     STField<int>(this,0x38));
+                    (this,(-(ushort)(iVar4_mg2 != -2) & 0xfff6) + CASE_3C,STField<int>(this,0x34)
+                     ,STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
         return 1;
       }
       if (iVar3 <= param_6) {
         /* ST_CALLSITE[0054BCB7]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-        iVar4 = OpticClassC::sub_004AB070
-                          (g_opticClass_007FB2A0,CASE_4,1.4013e-45,(uint)STField<byte>(this,0xd1)
-                           ,0);
+        iVar4_mg1 = OpticClassC::sub_004AB070
+                              (g_opticClass_007FB2A0,CASE_4,1.4013e-45,
+                               (uint)STField<byte>(this,0xd1),0);
         if (param_7 != 0) {
           /* ST_CALLSITE[0054BCDA]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           CursorClassTy::SetGCType
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3D,STField<int>(this,0x34),
-                     STField<int>(this,0x38));
+                    (this,(-(ushort)(iVar4_mg1 != -2) & 0xfff6) + CASE_3D,STField<int>(this,0x34)
+                     ,STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
         return 1;

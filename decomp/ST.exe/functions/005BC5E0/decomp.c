@@ -12,7 +12,7 @@
 int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   ushort uVar2;
   STMessageId SVar3;
   StartSystemTy *pSVar4;
@@ -20,23 +20,29 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
   STMessageArg SVar6;
   CursorClassTy *pCVar8;
   PrividerTy *this_00;
-  undefined1 uVar9;
+  byte uVar9;
   DWORD DVar9_mg0;
   int local_EAX_61;
-  int iVar11;
+  int iVar11_mg5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
-  HoloTy *pHVar12;
+  int iVar11_mg2;
+  int iVar11_mg3;
+  HoloTy *pHVar10;
   uint uVar18;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
-  undefined4 uVar13;
+  int iVar11_mgC;
+  uint uVar11;
+  int iVar11_mgD;
+  int iVar11_mgA;
   int iVar10;
   int iVar13;
-  MMsgTy *pMVar14;
-  int iVar16;
-  byte bVar17;
-  char cVar18;
+  int iVar12;
+  MMsgTy *pMVar13;
+  int iVar15;
+  byte bVar16;
+  char cVar17;
   uint uVar19;
   InternalExceptionFrame local_8c;
   undefined4 local_48;
@@ -123,10 +129,10 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
                           (g_startSystem_0081176C,this_00->array_00BC[0xc].field_01E1);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if (CONCAT31(extraout_var,uVar9) == 0) {
-          iVar11 = this_00->array_00BC[0xc].field_01E1;
+          iVar12 = this_00->array_00BC[0xc].field_01E1;
           this_00->array_00BC[0xc].field_01F1 = uVar9;
-          iVar11 = thunk_FUN_005da980(iVar11);
-          if ((iVar11 == 0) && (iVar11 = thunk_FUN_005daa90(), iVar11 == 0)) {
+          iVar11_mg2 = thunk_FUN_005da980(iVar12);
+          if ((iVar11_mg2 == 0) && (iVar11_mg3 = thunk_FUN_005daa90(), iVar11_mg3 == 0)) {
             DAT_0080877e = 0;
             /* ST_CALLSITE[005BC957]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
             CloseButtons(this_00,'\0');
@@ -154,37 +160,38 @@ LAB_005bccb9:
         if (SVar3 == MESS_PRIVIDERTY_631F) {
           FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_1C8E,0,3,0x16,0x22c,0x16,0xff
                       );
-          ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)this_00->field_1C8E,0,5,0x16,
-                           0x226,0x16);
-          ccFntTy::WrStr(g_startSystem_0081176C->field_0030,*(char **)(message->arg0).ptr,0,-1,3);
+          ccFntTy::SetSurf((ccFntTy *)g_startSystem_0081176C->field_0030,(int)this_00->field_1C8E,0,
+                           5,0x16,0x226,0x16);
+          ccFntTy::WrStr((ccFntTy *)g_startSystem_0081176C->field_0030,*(char **)(message->arg0).ptr
+                         ,0,-1,3);
           uVar2 = (message->arg1).words.low;
           if ((uVar2 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
             uVar19 = (uint)(message->arg1).words.high;
-            iVar11 = uVar2 + 5;
-            FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1C8E,0,iVar11,uVar19 + 0x19,
-                         iVar11,uVar19 + 0x28,9,0xd);
+            iVar12 = uVar2 + 5;
+            FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1C8E,0,iVar12,uVar19 + 0x19,
+                         iVar12,uVar19 + 0x28,9,0xd);
           }
           FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1C8A);
         }
         else if (SVar3 == MESS_SHARED_64FF) {
           this_00->array_00BC[0xc].field_01F1 = 0;
-          iVar11 = thunk_FUN_005daa90();
-          if (iVar11 == 0) {
+          iVar11_mg5 = thunk_FUN_005daa90();
+          if (iVar11_mg5 == 0) {
             this_00->field_0031 = 0;
-            uVar13 = this_00->array_00BC[0xc].field_01F3;
+            uVar11 = this_00->array_00BC[0xc].field_01F3;
             puVar1 = &this_00->field_0x1d;
             this_00->field_002D = 0x20;
-            FUN_006e6080(this_00,2,uVar13,(undefined4 *)puVar1);
+            FUN_006e6080(this_00,2,uVar11,(undefined4 *)puVar1);
             this_00->field_002D = 0x28;
             uVar19 = *(uint *)(g_startSystem_0081176C->field_068E + 4);
-            uVar13 = this_00->array_00BC[0xc].field_01F3;
+            uVar11 = this_00->array_00BC[0xc].field_01F3;
             this_00->field_0031 = uVar19 & ((int)uVar19 < 0) - 1;
-            FUN_006e6080(this_00,2,uVar13,(undefined4 *)puVar1);
+            FUN_006e6080(this_00,2,uVar11,(undefined4 *)puVar1);
             if (0 < *(int *)(g_startSystem_0081176C->field_068E + 4)) {
-              uVar13 = this_00->array_00BC[0xc].field_01F3;
+              uVar11 = this_00->array_00BC[0xc].field_01F3;
               this_00->field_002D = 0x20;
               this_00->field_0031 = 1;
-              FUN_006e6080(this_00,2,uVar13,(undefined4 *)puVar1);
+              FUN_006e6080(this_00,2,uVar11,(undefined4 *)puVar1);
             }
             pSVar4 = this_00->array_00BC[0xc].field_01DB;
             if (pSVar4->field_02E6 != nullptr) {
@@ -214,17 +221,17 @@ LAB_005bccb9:
       FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_1C82,0,0,
                    (uint)(message->arg1).words.high,
                    ((RecoveredSourceFamily_dibcopy *)this_00->field_1C82)->field_0004,0x13,0);
-      ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)this_00->field_1C82,0,4,
+      ccFntTy::SetSurf((ccFntTy *)g_startSystem_0081176C->field_0030,(int)this_00->field_1C82,0,4,
                        (uint)(message->arg1).words.high,*(int *)(this_00->field_1C82 + 2) + -4,0x13);
       if (this_00->array_00BC[0xc].field_01DF == '\0') {
-        iVar11 = g_startSystem_0081176C->field_068A;
+        iVar12 = g_startSystem_0081176C->field_068A;
       }
       else {
-        iVar11 = g_startSystem_0081176C->field_068E;
+        iVar12 = g_startSystem_0081176C->field_068E;
       }
-      if (iVar11 != 0) {
-        ccFntTy::WrStr(g_startSystem_0081176C->field_0030,
-                       *(char **)(iVar11 + 8 + (uint)(message->arg0).words.low * 0x14),2,-1,
+      if (iVar12 != 0) {
+        ccFntTy::WrStr((ccFntTy *)g_startSystem_0081176C->field_0030,
+                       *(char **)(iVar12 + 8 + (uint)(message->arg0).words.low * 0x14),2,-1,
                        (-(uint)((message->arg0).words.high != 0) & 2) + 1);
       }
       uVar19 = (uint)(message->arg1).words.high;
@@ -278,7 +285,7 @@ LAB_005bccb9:
     thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
     /* ST_CALLSITE[005BC9FD]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
     CloseButtons(this_00,'\x01');
-    pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
+    pMVar13 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
     goto cf_common_exit_005BCD75;
   case MESS_FSGSTY_6949:
 switchD_005bc9da_caseD_6949:
@@ -286,20 +293,20 @@ switchD_005bc9da_caseD_6949:
     uVar9 = StartSystemTy::sub_005DA940(g_startSystem_0081176C,this_00->array_00BC[0xc].field_01E1);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if (CONCAT31(extraout_var_00,uVar9) != 0) goto LAB_005bccb9;
-    iVar11 = thunk_FUN_005da980(this_00->array_00BC[0xc].field_01E1);
-    if (iVar11 != 0) break;
+    iVar11_mgC = thunk_FUN_005da980(this_00->array_00BC[0xc].field_01E1);
+    if (iVar11_mgC != 0) break;
     if ((int)this_00->field_1C92->elementSize < 1) {
-      uVar13 = 0;
+      uVar11 = 0;
     }
     else {
-      uVar13 = *(undefined4 *)this_00->field_1C92->growCapacity;
+      uVar11 = *(undefined4 *)this_00->field_1C92->growCapacity;
     }
-    iVar11 = thunk_FUN_005dab70(0,uVar13);
-    if (iVar11 != 0) {
-      pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
-      if (pMVar14 != nullptr) {
+    iVar11_mgD = thunk_FUN_005dab70(0,uVar11);
+    if (iVar11_mgD != 0) {
+      pMVar13 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
+      if (pMVar13 != nullptr) {
         /* ST_CALLSITE[005BCD2D]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
-        MMsgTy::SetMessage(pMVar14,0x2134,'\0',nullptr,nullptr,nullptr
+        MMsgTy::SetMessage(pMVar13,0x2134,'\0',nullptr,nullptr,nullptr
                            ,0,0);
       }
       break;
@@ -308,23 +315,23 @@ switchD_005bc9da_caseD_6949:
     thunk_FUN_005b6350(this_00,0x611f,(-(uint)(message->id != MESS_SHARED_6501) & 8) + 4,0x11);
     /* ST_CALLSITE[005BCD64]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
     CloseButtons(this_00,'\x01');
-    pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
+    pMVar13 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
     goto cf_common_exit_005BCD75;
   case 0x694e:
-    iVar11 = thunk_FUN_005dab70(this_00->array_00BC[0xc].field_01E1,&CHAR_00h_008016a0);
-    if (iVar11 == 0) {
+    iVar11_mgA = thunk_FUN_005dab70(this_00->array_00BC[0xc].field_01E1,&CHAR_00h_008016a0);
+    if (iVar11_mgA == 0) {
       DVar5 = this_00->field_0061;
       this_00->array_00BC[0xc].field_01F1 = 1;
       this_00->array_00BC[0xc].field_01E9 = DVar5;
       this_00->array_00BC[0xc].field_01ED = 0;
       pCVar8 = g_cursorClass_00802A30;
       if (g_cursorClass_00802A30 != nullptr) {
-        iVar11 = g_cursorClass_00802A30->field_00C9;
-        iVar16 = g_cursorClass_00802A30->field_00C5;
+        iVar12 = g_cursorClass_00802A30->field_00C9;
+        iVar15 = g_cursorClass_00802A30->field_00C5;
         g_cursorClass_00802A30->field_0493 = CASE_5;
         pCVar8->field_0494 = 0xffff;
         /* ST_CALLSITE[005BCDF2]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
-        CursorClassTy::SetGCType(pCVar8,CASE_0,iVar16,iVar11);
+        CursorClassTy::SetGCType(pCVar8,CASE_0,iVar15,iVar12);
         /* ST_CALLSITE[005BCE07]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
         CursorClassTy::DrawSprite(pCVar8,pCVar8->field_00C5,pCVar8->field_00C9);
         pCVar8->field_00D2 = 0;
@@ -337,11 +344,11 @@ switchD_005bc9da_caseD_6949:
     thunk_FUN_005b6350(this_00,0x610a,0,0);
     /* ST_CALLSITE[005BCA4F]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
     CloseButtons(this_00,'\x01');
-    pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
+    pMVar13 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
 cf_common_exit_005BCD75:
-    if (pMVar14 != nullptr) {
+    if (pMVar13 != nullptr) {
       /* ST_CALLSITE[005BCD82]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
-      MMsgTy::HidePanel(pMVar14,1,0,1);
+      MMsgTy::HidePanel(pMVar13,1,0,1);
     }
     break;
   case MESS_PRIVIDERTY_6952:
@@ -349,12 +356,12 @@ cf_common_exit_005BCD75:
     pCVar8 = g_cursorClass_00802A30;
     DAT_0080877e = 1;
     if (g_cursorClass_00802A30 != nullptr) {
-      iVar11 = g_cursorClass_00802A30->field_00C9;
-      iVar16 = g_cursorClass_00802A30->field_00C5;
+      iVar12 = g_cursorClass_00802A30->field_00C9;
+      iVar15 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       pCVar8->field_0494 = 0xffff;
       /* ST_CALLSITE[005BCAA5]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
-      CursorClassTy::SetGCType(pCVar8,CASE_0,iVar16,iVar11);
+      CursorClassTy::SetGCType(pCVar8,CASE_0,iVar15,iVar12);
       /* ST_CALLSITE[005BCABA]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
       CursorClassTy::DrawSprite(pCVar8,pCVar8->field_00C5,pCVar8->field_00C9);
       pCVar8->field_00D2 = 0;
@@ -364,10 +371,10 @@ cf_common_exit_005BCD75:
       thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
       /* ST_CALLSITE[005BCAF4]: CALL 0x00404c8c; direct=00404C8C PrividerTy::CloseButtons */
       CloseButtons(this_00,'\x01');
-      pMVar14 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
-      if (pMVar14 != nullptr) {
+      pMVar13 = (this_00->array_00BC[0xc].field_01DB)->field_02E6;
+      if (pMVar13 != nullptr) {
         /* ST_CALLSITE[005BCB11]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
-        MMsgTy::HidePanel(pMVar14,1,0,1);
+        MMsgTy::HidePanel(pMVar13,1,0,1);
       }
     }
     else {
@@ -389,40 +396,40 @@ cf_common_exit_005BCD75:
       FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x402f13,0x22e,0x2e,
                    (ushort *)&(this_00->array_00BC[0xc].field_01DB)->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x79,0x197);
-      pHVar12 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-      if (pHVar12 == nullptr) {
-        pHVar12 = nullptr;
+      pHVar10 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+      if (pHVar10 == nullptr) {
+        pHVar10 = nullptr;
       }
       else {
-        pHVar12->field_0002 = 1;
-        pHVar12->field_0000 = 0;
-        *(undefined4 *)&pHVar12->field_0x3 = 0xffffffff;
-        pHVar12->field_0001 = CASE_2;
-        pHVar12->field_0007 = nullptr;
-        pHVar12->field_000B = nullptr;
-        pHVar12->field_000F = 0;
-        *(undefined4 *)&pHVar12->field_0x1b = 1;
-        pHVar12->field_0013 = 1;
-        pHVar12->field_0017 = -1;
-        pHVar12->field_0027 = 0;
-        pHVar12->field_0023 = 0;
-        pHVar12->field_002F = 1;
-        pHVar12->field_002B = 1;
+        pHVar10->field_0002 = 1;
+        pHVar10->field_0000 = 0;
+        *(undefined4 *)&pHVar10->field_0x3 = 0xffffffff;
+        pHVar10->field_0001 = CASE_2;
+        pHVar10->field_0007 = nullptr;
+        pHVar10->field_000B = nullptr;
+        pHVar10->field_000F = 0;
+        *(undefined4 *)&pHVar10->field_0x1b = 1;
+        pHVar10->field_0013 = 1;
+        pHVar10->field_0017 = -1;
+        pHVar10->field_0027 = 0;
+        pHVar10->field_0023 = 0;
+        pHVar10->field_002F = 1;
+        pHVar10->field_002B = 1;
       }
-      this_00->field_1C9A = pHVar12;
-      if (pHVar12 != nullptr) {
+      this_00->field_1C9A = pHVar10;
+      if (pHVar10 != nullptr) {
         uVar19 = 0;
-        cVar18 = '\x01';
-        bVar17 = 0x10;
-        iVar16 = 1;
-        iVar11 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
+        cVar17 = '\x01';
+        bVar16 = 0x10;
+        iVar15 = 1;
+        iVar12 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
         /* ST_CALLSITE[005BCC41]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
-        uVar18 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar11,iVar16,bVar17,cVar18,
+        uVar18 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar12,iVar15,bVar16,cVar17,
                               uVar19);
         if (uVar18 != 0) {
-          pHVar12 = this_00->field_1C9A;
-          pHVar12->field_0002 = 1;
-          pHVar12->field_0017 = pHVar12->field_0013;
+          pHVar10 = this_00->field_1C9A;
+          pHVar10->field_0002 = 1;
+          pHVar10->field_0017 = pHVar10->field_0013;
           uVar19 = *(uint *)&this_00->field_1C9A->field_0x3;
           if (-1 < (int)uVar19) {
             Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar19);

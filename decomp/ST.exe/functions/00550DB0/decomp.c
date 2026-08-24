@@ -8,9 +8,9 @@
 void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   TradePanelTy *this_00;
-  undefined4 *puVar3;
+  uint *puVar3;
   LPSTR pCVar4;
   ccFntTy *pcVar5;
   ushort *puVar6;
@@ -22,15 +22,15 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   int *piVar12;
   bool bVar13;
   int iVar14;
-  undefined4 uVar15;
+  uint uVar15;
   int iVar16;
   uint uVar17;
   int iVar18;
   UINT UVar19;
-  undefined4 *puVar20;
+  uint *puVar20;
   int *piVar21;
-  undefined4 uVar22;
-  undefined4 *puVar23;
+  uint uVar22;
+  uint *puVar23;
   uint local_5e0 [84];
   int local_490 [6];
   undefined4 local_478;

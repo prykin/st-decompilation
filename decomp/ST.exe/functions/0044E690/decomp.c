@@ -18,7 +18,7 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   short *psVar3;
   STBoatC_field_06F3State *pSVar4;
 

@@ -5,12 +5,12 @@
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::SetActivePanel
 
-   [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 0043AE40 -> 0043AAF0 @ 0043AFDF | 0043AE40 -> 0043AAF0 @ 0043B3A5 | 0043AE40 ->
-   0043AAF0 @ 0043B82D | 0043AE40 -> 0043AAF0 @ 0043BAA0 */
+   [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 0043AE40 -> 006EB230 @ 0043B010 | 0043AE40 -> 006EB230 @ 0043B3D6 | 0043AE40 ->
+   006EB230 @ 0043B85E | 0043AE40 -> 006EB230 @ 0043BAD2 */
 
 void __thiscall
-STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int param_3)
+STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int param_3)
 
 {
   int *piVar1;
@@ -36,7 +36,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
   local_10 = 0;
   local_c = 0;
   local_8 = 0;
-  if (param_1 == nullptr) {
+  if (param_1 == 0) {
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar6 = (uint)DAT_0080874d * 0xa62;
     if (g_packedRecords_A62x8[DAT_0080874d].field200_0x203 == 0) {
@@ -87,9 +87,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
           (iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(piVar1), (uint8_t)((char)piVar1[1])),
                                STField<DArrayTy *>(piVar1,10),
                                CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),&local_10,
-                               &local_c,&local_8,(uint *)&param_1), iVar6 == 0)) &&
+                               &local_c,&local_8,&param_1), iVar6 == 0)) &&
          (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
-                            (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                            (g_sT3DSMAPContext_00807598,param_1,DAT_00807410,DAT_00807414,
                              DAT_00807418,DAT_0080741c), iVar6 != 1)) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);
@@ -123,9 +123,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
             /* ST_CALLSITE[0043B82D]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
             iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)(((undefined1 *)iVar6)[4])),
                                 *(DArrayTy **)(iVar6 + 10),uVar9,&local_10,&local_c,&local_8,
-                                (uint *)&param_1), iVar6 == 0)) &&
+                                &param_1), iVar6 == 0)) &&
            (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
-                              (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                              (g_sT3DSMAPContext_00807598,param_1,DAT_00807410,DAT_00807414,
                                DAT_00807418,DAT_0080741c), iVar6 != 1)) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
@@ -180,7 +180,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
     iVar6 = 0;
     goto cf_common_exit_0043BB49;
   }
-  if (param_1 != (uint *)0x1) {
+  if (param_1 != 1) {
     local_EAX_58 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1b2b,0,0,
                                       "%s","STAllPlayersC::SetActivePanel invalid panel number");
     if (local_EAX_58 == 0) {
@@ -215,9 +215,9 @@ LAB_0043aee4:
             /* ST_CALLSITE[0043AFDF]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
             iVar6 = GetCamPoint(0x19a,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)((char)piVar1[1])),
                                 STField<DArrayTy *>(piVar1,10),uVar9,&local_10,&local_c,&local_8,
-                                (uint *)&param_1), iVar6 == 0)) &&
+                                &param_1), iVar6 == 0)) &&
            (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
-                              (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                              (g_sT3DSMAPContext_00807598,param_1,DAT_00807410,DAT_00807414,
                                DAT_00807418,DAT_0080741c), iVar6 != 1)) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
@@ -317,9 +317,9 @@ cf_common_exit_0043B294:
           /* ST_CALLSITE[0043B3A5]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
           iVar6 = GetCamPoint(0x19a,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)((char)piVar1[1])),
                               STField<DArrayTy *>(piVar1,10),uVar9,&local_10,&local_c,&local_8,
-                              (uint *)&param_1), iVar6 == 0)) &&
+                              &param_1), iVar6 == 0)) &&
          (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
-                            (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                            (g_sT3DSMAPContext_00807598,param_1,DAT_00807410,DAT_00807414,
                              DAT_00807418,DAT_0080741c), iVar6 != 1)) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);

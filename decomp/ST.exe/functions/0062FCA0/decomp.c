@@ -14,8 +14,7 @@ int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9
   int iVar3;
   int iVar4;
   int iVar5;
-  undefined4 *puVar6;
-
+  uint *puVar6;
   /* ST_CALLSITE[0062FCA7]: CALL 0x004017f3; direct=004017F3 STRubbishC::RubbishCreatePart */
   iVar3 = RubbishCreatePart(this);
   iVar4 = this->field_01E1;
@@ -50,7 +49,8 @@ int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9
     if (this->field_01F9 != '\0') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar4 = thunk_FUN_0062f080(this,iVar3,*(undefined4 *)((&this->field_01E5)[iVar3] + 0xc),
-                                 *(undefined4 *)((&this->field_01E5)[iVar3] + 4));
+                                 *(STRubbishC_LoadImagSpr_param_4Enum *)
+                                  ((&this->field_01E5)[iVar3] + 4));
       if (iVar4 != 0) {
         thunk_FUN_0062f0d0(this,iVar3);
         return iVar3;

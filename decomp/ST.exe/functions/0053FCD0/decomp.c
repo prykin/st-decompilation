@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   ProdPanelTy::PaintTab */
+   ProdPanelTy::PaintTab
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,undefined *param_2)
@@ -12,7 +16,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
   AnonNested_0053FCD0_0014_03E531EF *pAVar1;
   ProdPanelTy *pPVar3;
   int *piVar4;
-  undefined4 uVar5;
+  uint uVar5;
   LPSTR pCVar6;
   int iVar7;
   int iVar8;

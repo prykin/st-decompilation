@@ -6,7 +6,7 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
 
 {
   short sVar1;
-  undefined2 uVar2;
+  ushort uVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   uint uVar3;

@@ -13,7 +13,7 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   uint *puVar5;
   int iVar6;
   int iVar7;

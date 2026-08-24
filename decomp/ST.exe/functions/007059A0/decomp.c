@@ -7,7 +7,7 @@ void FUN_007059a0(undefined1 *param_1,int param_2,byte *param_3,int param_4,int 
                  int param_7,int param_8,uint param_9,int param_10)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   uint uVar2;
   uint uVar3;
   int iVar4;
@@ -16,13 +16,12 @@ void FUN_007059a0(undefined1 *param_1,int param_2,byte *param_3,int param_4,int 
   byte *pbVar7;
   byte *pbVar8;
   byte *pbVar9;
-  undefined1 *puVar10;
-  undefined1 *puVar11;
-  undefined1 *puVar12;
+  byte *puVar10;
+  byte *puVar11;
+  byte *puVar12;
   uint local_10;
   uint local_c;
-  undefined1 *local_8;
-
+  byte *local_8;
   _DAT_00857000 = 1;
   pbVar7 = param_3;
   do {

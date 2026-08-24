@@ -11,7 +11,7 @@ undefined4 __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
   ProdPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar4;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
@@ -35,8 +35,7 @@ undefined4 __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
     }
     else {
       /* ST_CALLSITE[0053F6AA]: CALL dword ptr [EDX + 0x1c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)local_8->field_0000->field_001C)();
+      (*STField<code *>(local_8->field_0000,0x001C))();
       iVar4 = 1;
     }
     /* ST_CALLSITE[0053F6D7]: CALL 0x00403b48; direct=00403B48 ProdPanelTy::SwitchPanel */

@@ -4,7 +4,11 @@
 
    [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
    Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
-   semantic function names, and exact first-argument call flow */
+   semantic function names, and exact first-argument call flow
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void FUN_006c7f10(RecoveredSourceFamily_dibcopy *param_1,int param_2,int *param_3,int param_4,
                  byte param_5)

@@ -4,7 +4,7 @@
 undefined4 __fastcall FUN_006604b0(AiFltClassTy *param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  undefined2 uVar1;
+  ushort uVar1;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   STGroupBoatC *this;

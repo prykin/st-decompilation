@@ -7,8 +7,7 @@
 undefined2 * FUN_006bc3e0(ushort *param_1,undefined2 *param_2,undefined4 *param_3)
 
 {
-  undefined2 *puVar1;
-
+  ushort *puVar1;
   puVar1 = param_2;
   if (param_2 == nullptr) {
     puVar1 = Library::DKW::LIB::MemAlloc(0x404);

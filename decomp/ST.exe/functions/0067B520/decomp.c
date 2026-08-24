@@ -22,14 +22,14 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this)
   AiPlrClassTy_field_06A1DArray *array;
   int local_EAX_259;
   int local_EAX_300;
-  undefined1 uVar3;
+  byte uVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
   int local_EAX_427;
   uint uVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar4;
   int local_EAX_824;
   int iVar9;

@@ -23,7 +23,7 @@ ST3DSMAPContext::sub_006E68C0
   int iVar5;
   int iVar6;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   longlong lVar9;
   float local_8;
 
@@ -33,7 +33,7 @@ ST3DSMAPContext::sub_006E68C0
   iVar6 = this->field_03DC;
   fVar4 = _DAT_0079dfd0 / (float)iVar6;
   iVar5 = iVar6 / 2;
-  iVar7 = (int)*(short *)this->field_0280;
+  iVar7 = (int)*STField<short *>(this,0x280);
   local_8 = 0.0;
   fVar2 = (float)iVar7 * (float)this->field_00C8;
   switch(this->field_00A8) {

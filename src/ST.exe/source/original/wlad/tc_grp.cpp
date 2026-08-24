@@ -362,7 +362,7 @@ undefined4 __thiscall st::fn_00423B50(STGroupC *this,DArrayTy *param_1,int param
   uint uVar2;
   int errorCode;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   uint index;
   uint uVar5;
   InternalExceptionFrame local_54;

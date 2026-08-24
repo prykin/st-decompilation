@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
-   MReportTy::PaintMainScore */
+   MReportTy::PaintMainScore
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param_2,int param_3)
 

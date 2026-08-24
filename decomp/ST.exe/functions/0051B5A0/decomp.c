@@ -64,7 +64,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   HINSTANCE pHVar12;
   char cVar13;
   int iVar14;
-  undefined4 uVar15;
+  uint uVar15;
   int iVar16;
   int iVar18;
   Global_sub_005259B0_param_1Enum GVar19;

@@ -14,7 +14,7 @@ STRubbishC::sub_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE3
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   int iVar4;
   int iVar5;

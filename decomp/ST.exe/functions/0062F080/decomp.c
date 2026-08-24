@@ -1,6 +1,9 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0062F080 -> 0062F3B0 @ 0062F0A9 */
+
 undefined4 __thiscall
 FUN_0062f080(void *this,int param_1,undefined4 param_2,STRubbishC_LoadImagSpr_param_4Enum param_3)
 

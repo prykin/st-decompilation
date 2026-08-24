@@ -40,7 +40,7 @@ int __thiscall CursorClassTy::GetMessage(CursorClassTy *this,STMessage *message)
   int local_EAX_1318;
   int local_EAX_1737;
   int local_EAX_2209;
-  undefined4 uVar11;
+  uint uVar11;
   int local_EAX_2439;
   int local_EAX_2734;
   int local_EAX_3132;
@@ -60,7 +60,7 @@ int __thiscall CursorClassTy::GetMessage(CursorClassTy *this,STMessage *message)
   int local_EAX_4779;
   int local_EAX_4809;
   int iVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
   int local_EAX_5241;
   int local_EAX_5271;
   int local_EAX_6047;
@@ -69,7 +69,7 @@ int __thiscall CursorClassTy::GetMessage(CursorClassTy *this,STMessage *message)
   ushort *puVar16;
   int local_EAX_7651;
   int iVar8;
-  undefined2 uVar15;
+  ushort uVar15;
   int iVar17;
   uint uVar16;
   int iVar18;
@@ -1439,9 +1439,9 @@ switchD_00545816_default:
         *(undefined1 *)puVar14 = 0x3a;
         puVar14 = (undefined4 *)((int)puVar14 + 1);
       }
-      ccFntTy::SetSurf(g_interSystem_00802A28->field_0028,(int)this_00->field_04D2,0,5,5,
+      ccFntTy::SetSurf((ccFntTy *)g_interSystem_00802A28->field_0028,(int)this_00->field_04D2,0,5,5,
                        this_00->field_04CA + -10,this_00->field_04CE + -10);
-      ccFntTy::WrTxt(g_interSystem_00802A28->field_0028,(char *)local_524,-2,-1,
+      ccFntTy::WrTxt((ccFntTy *)g_interSystem_00802A28->field_0028,(char *)local_524,-2,-1,
                      (uint)(message->arg0).words.low,-1,-1);
       FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,0,0,this_00->field_04CA,
                    this_00->field_04CE,0x6f,0xd);

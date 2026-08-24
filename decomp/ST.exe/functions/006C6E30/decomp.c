@@ -4,7 +4,7 @@
 int FUN_006c6e30(AnonShape_006C6E30_3C2F0429 *param_1)
 
 {
-  undefined1 *slotStorage;
+  byte *slotStorage;
   AnonShape_006C6E30_3C2F0429 *pAVar1;
   int iVar2;
   int *piVar3;
@@ -18,8 +18,7 @@ int FUN_006c6e30(AnonShape_006C6E30_3C2F0429 *param_1)
   slotStorage = &param_1->field_0x2a;
   FreeAndNull(slotStorage);
   /* ST_CALLSITE[006C6E4C]: CALL dword ptr [ESI + 0x42] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar2 = (*(code *)param_1->field_0042)(param_1,&local_10,9);
+  iVar2 = (*STField<code *>(param_1,0x42))(param_1,&local_10,9);
   if (iVar2 == 9) {
     param_1->field_001A = (int)local_10;
     param_1->field_001E = (int)local_e;
@@ -37,8 +36,7 @@ int FUN_006c6e30(AnonShape_006C6E30_3C2F0429 *param_1)
         return -2;
       }
       /* ST_CALLSITE[006C6EBC]: CALL dword ptr [ESI + 0x42] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      pAVar4 = (AnonShape_006C6E30_3C2F0429 *)(*(code *)param_1->field_0042)(param_1,piVar3,pAVar1);
+      pAVar4 = (AnonShape_006C6E30_3C2F0429 *)(*STField<code *>(param_1,0x42))(param_1,piVar3,pAVar1);
       if (pAVar4 != pAVar1) {
         FreeAndNull(slotStorage);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

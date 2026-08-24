@@ -12,9 +12,9 @@ undefined2 FUN_00416db0(short param_1,short param_2,undefined4 param_3,short par
   float local_2c;
   undefined4 local_28;
   undefined2 local_24;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

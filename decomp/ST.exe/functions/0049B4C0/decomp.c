@@ -13,7 +13,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   STBoatC *this_00;
   STGameObjC *objPtr;
   int iVar4;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar5;
   uint uVar6;
   uint uVar8;

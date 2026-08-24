@@ -14,13 +14,13 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   int iVar2;
   LPSTR pCVar2;
   ushort *puVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar6;
   int iVar5;
   byte bVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar8;
-  undefined4 uVar9;
+  uint uVar9;
   InternalExceptionFrame local_4c;
   MainMenuTy *local_8;
 

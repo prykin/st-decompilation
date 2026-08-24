@@ -4,9 +4,9 @@
 undefined4 __cdecl FUN_006a20e0(int *param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   ushort uVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   short sVar5;
   bool bVar6;

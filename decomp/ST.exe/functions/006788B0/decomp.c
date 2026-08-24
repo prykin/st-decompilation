@@ -9,8 +9,7 @@
 AiPlrClassTy * __thiscall AiPlrClassTy::AiPlrClassTy(AiPlrClassTy *this)
 
 {
-  undefined4 *puVar2;
-
+  uint *puVar2;
   sub_006E60E0(this);
   /* ST_CALLSITE[006788BE]: CALL 0x00402c2f; direct=00402C2F AiEventClassTy::AiEventClassTy */
   AiEventClassTy::AiEventClassTy((AiEventClassTy *)&this->vtable_at_1c);

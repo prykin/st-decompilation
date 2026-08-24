@@ -4,9 +4,9 @@
 undefined4 __thiscall FUN_00747429(void *this,undefined4 param_1,undefined4 param_2)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int *local_8;
 
   puVar1 = STField<undefined4 *>(this,0x40);

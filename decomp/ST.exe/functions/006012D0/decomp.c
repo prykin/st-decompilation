@@ -12,7 +12,7 @@ undefined4 * __thiscall FUN_006012d0(void *this,int *param_1)
   byte *puVar7;
   int iVar8;
   byte *puVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   int local_18;
   int local_14;
   int local_10;

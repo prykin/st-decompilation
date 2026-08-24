@@ -30,9 +30,9 @@ undefined4 __thiscall FUN_00639c90(void *this,STMessage *param_1)
   byte *puVar14;
   byte *puVar15;
   longlong lVar16;
-  undefined4 uVar17;
-  undefined4 uVar18;
-  undefined4 uVar19;
+  uint uVar17;
+  uint uVar18;
+  uint uVar19;
   float fVar20;
   float fVar21;
   float fVar22;

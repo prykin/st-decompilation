@@ -10,7 +10,7 @@ undefined4 __fastcall FUN_005ebd80(AnonShape_005EBD80_1A4ED01F *param_1)
   bool bVar3;
   bool bVar4;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   uint uVar7;
   short sVar8;
 

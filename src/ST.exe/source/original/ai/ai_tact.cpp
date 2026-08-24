@@ -144,7 +144,7 @@ byte * __thiscall st::fn_0068E050(AiTactClassTy *this,uint *param_1)
 {
   AiTactClassTy *pAVar2;
   int errorCode;
-  undefined4 *puVar3;
+  uint *puVar3;
   byte *pbVar4;
   int iVar4;
   byte *pbVar5;
@@ -288,7 +288,7 @@ void __thiscall st::fn_0068EA40(AiTactClassTy *this)
     if ((local_8->field_0130 != nullptr) &&
        (local_8->field_00BD != nullptr)) {
       st::fn_006AE110((DArrayTy *)local_8->field_00BD);
-      pAVar3 = (AiTactClassTy_field_00BDDArray *)st::fn_006B0060(nullptr,st::pointer_boundary_cast<uint *>(pAVar2->field_0130));
+      pAVar3 = (AiTactClassTy_field_00BDDArray *)st::fn_006B0060(nullptr,static_cast<uint *>(pAVar2->field_0130));
       pAVar2->field_00BD = pAVar3;
     }
     g_currentExceptionFrame = local_4c.previous;
@@ -375,8 +375,8 @@ void __thiscall st::fn_0068EC70(AiTactClassTy *this)
   AiFltClassTy *this_00;
   uint uVar1;
   char cVar3;
-  undefined1 uVar4;
-  undefined1 uVar5;
+  byte uVar4;
+  byte uVar5;
   AiTactClassTy *pAVar6;
   char cVar7;
   int iVar8;
@@ -1096,7 +1096,7 @@ void __thiscall st::fn_0068FB30(AiTactClassTy *this,short param_1)
 int __thiscall st::fn_0068FD00(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   AiTactClassTy *this_00;
   int local_EAX_35;
   int iVar4;
@@ -1320,13 +1320,13 @@ st::fn_00690650(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *param_1)
   undefined2 local_46;
   undefined2 local_44;
   undefined1 local_42;
-  undefined4 local_20;
+  uint local_20;
   undefined2 local_1c;
   undefined2 uStack_1a;
-  undefined4 local_18;
+  uint local_18;
   byte local_14;
   undefined3 uStack_13;
-  undefined4 local_10;
+  uint local_10;
   AiTactClassTy *local_c;
   uint local_8;
 
@@ -1480,10 +1480,11 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
   AiTactClassTy *this_00;
   int iVar3;
   AiTactClassTy_field_00A5DArray *pAVar3;
-  int iVar5;
+  int iVar5_mg1;
   int iVar4;
+  int iVar5;
   uint uVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   AiTactClassTy_field_00A5Element *element_00a5;
   bool bVar8;
   InternalExceptionFrame local_58;
@@ -1526,7 +1527,7 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
         }
       }
       else if (SVar1 == MESS_ID_CREATE) {
-        puVar7 = st::pointer_boundary_cast<undefined4 *>((message->arg0).ptr);
+        puVar7 = static_cast<uint *>((message->arg0).ptr);
         if (puVar7 == nullptr) {
           st::fn_006A5E40
                     (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_tact.cpp"),0x45e);
@@ -1562,9 +1563,9 @@ int __thiscall st::fn_00690B90(AiTactClassTy *this,STMessage *message)
           }
           local_8 = 0;
           if ((((AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000 == 0) ||
-              (iVar5 = st::fn_006E62D0
-                                 (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000,
-                                  &local_8), iVar5 != 0)) || (local_8 == 0)) {
+              (iVar5_mg1 = st::fn_006E62D0
+                                     (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000,
+                                      &local_8), iVar5_mg1 != 0)) || (local_8 == 0)) {
             element_00a5->field_0004 = 0;
             element_00a5->field_0000 = 0;
           }

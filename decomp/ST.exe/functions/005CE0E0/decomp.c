@@ -37,7 +37,7 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this)
   DArrayTy *pDVar14;
   SettMapMTyVTable *pSVar15;
   int iVar16;
-  undefined4 uVar16;
+  uint uVar16;
   int iVar17;
   void *pvVar18;
   STMessage *pSVar19;

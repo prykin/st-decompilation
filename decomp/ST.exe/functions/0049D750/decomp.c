@@ -16,7 +16,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
   STBoatC *this_02;
   uint uVar4;
   int iVar7;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar6;
   dword dVar7;
   uint uVar9;

@@ -184,7 +184,7 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
   longlong lVar10;
   float local_20 [2];
   int local_18;
-  float local_14;
+  float local_14_mg0;
   int local_10;
   int local_c;
   undefined4 local_8;
@@ -216,15 +216,15 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
   else if (param_4 == '\x01') {
     iVar4 = st::fn_006ACED8(this->field_0093,this->field_0097,param_1,param_2);
     this->field_00EF = iVar4;
-    local_14 = (float)iVar4;
+    local_14_mg0 = (float)iVar4;
     if (iVar4 < 0x1f7) {
       this->field_00F7 = (this->field_00DF * this->field_00DF * 10000) / 0x1f6;
       iVar6 = this->field_009B;
       lVar9 = st::fn_0072E288();
       uVar7 = (int)lVar9 + 1;
-      fVar3 = (float)(int)local_14 / (float)(int)(uVar7 * 2);
-      local_14 = (fVar3 * fVar3) / (float)(int)local_14;
-      dVar1 = (double)(fVar3 / local_14 + _DAT_00790784);
+      fVar3 = (float)(int)local_14_mg0 / (float)(int)(uVar7 * 2);
+      local_14_mg0 = (fVar3 * fVar3) / (float)(int)local_14_mg0;
+      dVar1 = (double)(fVar3 / local_14_mg0 + _DAT_00790784);
       st::fn_0072E150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
       lVar9 = st::fn_0072E288();
       local_10 = (int)lVar9;
@@ -283,8 +283,8 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
           this->field_00DF = (int)lVar9;
           lVar9 = st::fn_0072E288();
           this->field_00EB = (int)lVar9;
-          this->field_00D7 = ((param_1 - this->field_00D1) * local_10) / (int)local_14;
-          this->field_00DB = ((param_2 - this->field_00D3) * local_10) / (int)local_14;
+          this->field_00D7 = ((param_1 - this->field_00D1) * local_10) / (int)local_14_mg0;
+          this->field_00DB = ((param_2 - this->field_00D3) * local_10) / (int)local_14_mg0;
           uVar7 = g_playSystem_00802A38->field_00E4;
           this->field_00C9 = 1;
           this->field_00FB = uVar7;
@@ -471,7 +471,7 @@ st::fn_005F4C50
   int iVar1;
   STBHEShellC_field_0169DArray *pSVar2;
   STBHEShellC_field_0169Element *element_0169;
-  undefined4 *puVar4;
+  uint *puVar4;
   uint uVar5;
   int iVar6;
   int iVar7;
@@ -787,7 +787,7 @@ int __thiscall st::fn_005F5700(STBHEShellC *this,int param_1,int param_2)
            (this_00 = g_worldGrid.cells
                       [(int)sVar6 * (int)sVar2 + (int)g_worldGrid.planeStride * (int)sVar7 +
                        (int)sVar3].objects[0], this_00 != nullptr)))))) {
-        st::fn_004031E3(this_00,(uint *)&local_6,(int *)((int)&param_1 + 2),&local_8);
+        st::fn_004031E3(this_00,(uint *)&local_6,(short *)((int)&param_1 + 2),&local_8);
         if (*(int *)&this_00[1].field_0x8 == 1) {
           iVar4 = st::fn_006ACED8((int)local_6,(int)STPiece<2,2>(param_1),this->field_0111,this->field_0115);
           if (param_2 <= iVar4) {
@@ -982,7 +982,7 @@ LAB_005f5d4b:
       if ((int *)this->field_0034 != 0) {
         /* ST_CALLSITE[005F5D91]: CALL dword ptr [EAX + 0xe0] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar1 = (**(code **)(*(int *)this->field_0034 + 0xe0))
+        iVar1 = (**(code **)(*STField<int *>(this,0x34) + 0xe0))
                           (this->field_0038,(int)&param_1 + 2,&local_6,&local_8,&local_c);
         if (iVar1 == 0) {
           this->field_0040 = (int)STPiece<2,2>(param_1);

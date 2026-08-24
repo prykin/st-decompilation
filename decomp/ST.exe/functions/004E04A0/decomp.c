@@ -9,7 +9,7 @@
 undefined4 __fastcall FUN_004e04a0(AnonShape_004E04A0_3A5B2D2E *param_1)
 
 {
-  undefined1 *this;
+  byte *this;
   int iVar1;
   int iVar2;
   uint uVar3;

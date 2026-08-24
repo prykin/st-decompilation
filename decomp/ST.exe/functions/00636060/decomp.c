@@ -9,8 +9,7 @@ void __thiscall FUN_00636060(void *this,int param_1,int param_2,int param_3,int 
 
 {
   char cVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   cVar1 = STField<char>(this,4);
   uVar2 = thunk_FUN_00635bf0(param_1,param_2,param_3);
   STField<char>(this,4) = (char)uVar2;

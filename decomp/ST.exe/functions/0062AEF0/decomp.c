@@ -9,7 +9,7 @@
 void __thiscall STParticleC::sub_0062AEF0(STParticleC *this,undefined4 *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   STParticleC *pSVar3;
 
   uVar1 = this->field_00CE;

@@ -11,7 +11,7 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
   CPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar4;
   uint *puVar5;
   InternalExceptionFrame local_4c;

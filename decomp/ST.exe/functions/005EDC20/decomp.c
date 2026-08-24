@@ -12,12 +12,11 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
   uint uVar5;
   int iVar6;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar9;
-  undefined4 uVar10;
+  uint uVar10;
   uint uVar11;
-  undefined4 uVar12;
-
+  uint uVar12;
   if (0 < param_1->field_005F) {
     sVar2 = param_1->field_005D;
     sVar1 = param_1->field_005F + -1;

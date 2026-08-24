@@ -1,8 +1,14 @@
 #include "../../pseudocode_runtime.h"
 
 
-uint FUN_00496a90(int param_1,int param_2,int param_3,undefined4 param_4,int param_5,
-                 undefined4 *param_6)
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00496CC0 -> 00496A90 @ 00496CE2; FUN_00496cc0 parameter param_3
+
+   [STPrototypeApplier] Propagated parameter 5.
+   Evidence: 00496E40 -> 00496A90 @ 00496E60; address of FUN_00496e40 parameter param_4 */
+
+uint FUN_00496a90(int param_1,int param_2,uint *param_3,undefined4 param_4,int param_5,uint *param_6
+                 )
 
 {
   dword dVar1;
@@ -25,8 +31,8 @@ uint FUN_00496a90(int param_1,int param_2,int param_3,undefined4 param_4,int par
         piVar3 = nullptr;
       }
       if ((piVar3[4] == param_5) &&
-         (((uVar2 = uVar4, *piVar3 != param_1 || (piVar3[1] != param_2)) || (piVar3[2] != param_3)))
-         ) {
+         (((uVar2 = uVar4, *piVar3 != param_1 || (piVar3[1] != param_2)) ||
+          ((uint *)piVar3[2] != param_3)))) {
         *param_6 = 1;
         pDVar5 = g_array_007FB270;
       }

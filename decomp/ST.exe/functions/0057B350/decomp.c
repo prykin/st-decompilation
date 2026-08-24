@@ -10,15 +10,15 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
 
 {
   short *psVar1;
-  undefined2 *puVar2;
+  ushort *puVar2;
   int iVar3;
   int *piVar5;
-  undefined2 uVar6;
+  ushort uVar6;
   void *pvVar7;
   int local_EAX_70;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar8;
-  undefined2 uVar9;
+  ushort uVar9;
   int iVar10;
   int *piVar11;
   int local_18;

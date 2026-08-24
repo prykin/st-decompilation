@@ -4,7 +4,7 @@
 undefined4 FUN_006029c0(void)
 
 {
-  undefined1 *this;
+  byte *this;
   short sVar1;
   int local_EAX_41;
   char *text;

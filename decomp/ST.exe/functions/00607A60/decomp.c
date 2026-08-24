@@ -12,7 +12,7 @@ int __thiscall FUN_00607a60(void *this,int param_1,int param_2,int param_3)
   int iVar4;
   int *piVar5;
   STMessage *pSVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   char in_stack_00000020;
   int local_d0 [20];

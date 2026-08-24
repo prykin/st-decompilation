@@ -5,11 +5,11 @@ void FUN_0069f660(undefined4 param_1,int param_2,int param_3,int param_4,int par
 
 {
   int iVar1;
-  undefined2 *puVar2;
+  ushort *puVar2;
   int iVar3;
   int iVar4;
-  undefined2 *puVar5;
-  undefined2 *puVar6;
+  ushort *puVar5;
+  ushort *puVar6;
   uint uVar7;
   int iVar8;
   int iVar9;

@@ -7,7 +7,7 @@ int FUN_006c6ae0(AnonShape_006C6AE0_9C4F43C2 *param_1)
   int iVar1;
   int iVar2;
   int *piVar3;
-  undefined4 uVar4;
+  uint uVar4;
   short local_14;
   short local_12;
   byte local_10;
@@ -17,8 +17,7 @@ int FUN_006c6ae0(AnonShape_006C6AE0_9C4F43C2 *param_1)
   short local_8;
 
   /* ST_CALLSITE[006C6AF3]: CALL dword ptr [ESI + 0x42] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar2 = (*(code *)param_1->field_0042)(param_1,&local_c,6);
+  iVar2 = (*STField<code *>(param_1,0x42))(param_1,&local_c,6);
   if (iVar2 == 6) {
     if (local_c != 0x4947) {
       return -5;
@@ -30,8 +29,7 @@ int FUN_006c6ae0(AnonShape_006C6AE0_9C4F43C2 *param_1)
       return -5;
     }
     /* ST_CALLSITE[006C6B32]: CALL dword ptr [ESI + 0x42] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar2 = (*(code *)param_1->field_0042)(param_1,&local_14,7);
+    iVar2 = (*STField<code *>(param_1,0x42))(param_1,&local_14,7);
     if (iVar2 == 7) {
       param_1->field_000C = (int)local_12;
       param_1->field_0008 = (int)local_14;
@@ -46,8 +44,7 @@ int FUN_006c6ae0(AnonShape_006C6AE0_9C4F43C2 *param_1)
           return -2;
         }
         /* ST_CALLSITE[006C6B8C]: CALL dword ptr [ESI + 0x42] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar2 = (*(code *)param_1->field_0042)(param_1,piVar3,iVar1);
+        iVar2 = (*STField<code *>(param_1,0x42))(param_1,piVar3,iVar1);
         if (iVar2 == iVar1) {
           iVar2 = 0;
         }
@@ -59,8 +56,7 @@ int FUN_006c6ae0(AnonShape_006C6AE0_9C4F43C2 *param_1)
         }
       }
       /* ST_CALLSITE[006C6BAC]: CALL dword ptr [ESI + 0x4a] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      uVar4 = (*(code *)param_1->field_004A)(param_1);
+      uVar4 = (*STField<code *>(param_1,0x4A))(param_1);
       param_1->field_0052 = uVar4;
       param_1->field_0056 = 4;
       return iVar2;

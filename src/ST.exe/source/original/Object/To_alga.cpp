@@ -41,7 +41,7 @@ int __thiscall st::fn_00575CB0(STAlgaC *this,STMessage *message)
   int iVar14;
   uint uVar15;
   uint uVar16;
-  undefined4 uVar17;
+  uint uVar17;
   STAlgaC *pSVar18;
   byte *puVar19;
   AnonShape_00575CB0_0408A0C4 *pAVar20;
@@ -52,7 +52,7 @@ int __thiscall st::fn_00575CB0(STAlgaC *this,STMessage *message)
   byte *puVar25;
   byte *pbVar26;
   AnonNested_00575CB0_0004_76DA00C1 *pAVar27;
-  undefined1 *puVar28;
+  byte *puVar28;
   bool bVar29;
   longlong lVar30;
   InternalExceptionFrame local_e8;
@@ -64,14 +64,14 @@ int __thiscall st::fn_00575CB0(STAlgaC *this,STMessage *message)
   undefined4 local_50;
   undefined4 local_4c;
   undefined4 local_48;
-  undefined4 local_44;
+  uint local_44;
   AnonShape_00575CB0_C367735D *local_3c;
   int local_38;
   uint local_34;
   int local_30;
   STAlgaC *local_2c;
   int local_28;
-  undefined4 local_24;
+  int local_24;
   AnonShape_0060EA30_DCEB68AD *local_20;
   byte *local_1c;
   int local_18;
@@ -253,7 +253,7 @@ LAB_00576308:
           iVar14 = local_10->field_0086;
           if (iVar14 < 0) {
             if (local_28 <= pSVar18->field_0044) {
-              puVar12 = st::pointer_boundary_cast<ushort *>(st::fn_006ACF50(pSVar18->field_0048,(local_28 * 5 + 0x32) * 4));
+              puVar12 = static_cast<ushort *>(st::fn_006ACF50(pSVar18->field_0048,(local_28 * 5 + 0x32) * 4));
               pSVar18->field_0048 = puVar12;
               local_28 = iVar7 + 10;
             }
@@ -309,7 +309,7 @@ LAB_00576308:
           }
           else if ((iVar14 < piVar22[1]) && ((piVar22[4] == 0 || (iVar14 < piVar22[3])))) {
             if (local_30 <= pSVar18->field_003C) {
-              pRVar13 = st::pointer_boundary_cast<RuntimeRecord_007F4D3C_0014 *>(st::fn_006ACF50
+              pRVar13 = static_cast<RuntimeRecord_007F4D3C_0014 *>(st::fn_006ACF50
                                   (pSVar18->field_0040,(local_30 * 0xb + 0x6e) * 4));
               pSVar18->field_0040 = pRVar13;
               local_30 = iVar24 + 10;
@@ -435,7 +435,7 @@ LAB_00576308:
         } while (cVar1 != '\0');
         uVar15 = ~uVar15;
         pcVar21 = pcVar23 + -uVar15;
-        pcVar23 = st::pointer_boundary_cast<char *>(&pAVar5->field_0x6);
+        pcVar23 = (char *)&pAVar5->field_0x6;
         memmove(pcVar23, pcVar21, uVar15); /* compiler REP MOVS byte copy */
         uVar16 = 0;
         puVar28 = &local_10->field_0x46;
@@ -497,7 +497,7 @@ LAB_00576308:
         } while (cVar1 != '\0');
         uVar15 = ~uVar15;
         pcVar21 = pcVar23 + -uVar15;
-        pcVar23 = st::pointer_boundary_cast<char *>(&pAVar5->field_0x6);
+        pcVar23 = (char *)&pAVar5->field_0x6;
         memmove(pcVar23, pcVar21, uVar15); /* compiler REP MOVS byte copy */
         uVar16 = 0;
         local_8 = (AnonShape_00575CB0_0408A0C4 *)&local_10->field_0x46;

@@ -64,9 +64,9 @@ void __thiscall st::fn_005040A0(CPanelTy *this)
 void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
 
 {
-  undefined1 uVar2;
-  undefined1 uVar3;
-  undefined1 uVar4;
+  byte uVar2;
+  byte uVar3;
+  byte uVar4;
   CPanelTy *this_00;
   byte bVar5;
   int iVar6;
@@ -80,7 +80,7 @@ void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
   bool bVar13;
   uint uVar14;
   int iVar15;
-  undefined4 *puVar16;
+  uint *puVar16;
   char local_ac [68];
   InternalExceptionFrame local_68;
   CPanelTy *local_24;
@@ -88,7 +88,7 @@ void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
   uint local_1c;
   AnonShape_0043BEB0_1C00EC12 *local_18;
   uint *local_14;
-  undefined1 *local_10;
+  byte *local_10;
   AnonShape_0043BEB0_1C00EC12 *local_c;
   byte local_5;
 

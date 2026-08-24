@@ -13,7 +13,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   int iVar1;
   HoloTy *this_00;
   int iVar4;
-  undefined1 *puVar5;
+  byte *puVar5;
   int iVar3;
   HoloTy **ppHVar6;
   uint *puVar7;
@@ -32,11 +32,11 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   uint *local_3c [3];
   int local_30;
   int local_2c [2];
-  undefined1 *local_24;
+  byte *local_24;
   uint local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

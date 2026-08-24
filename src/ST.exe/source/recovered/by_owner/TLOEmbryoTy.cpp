@@ -11,7 +11,7 @@
 undefined4 __fastcall st::fn_00419C70(int *param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
 
@@ -63,8 +63,7 @@ void __thiscall st::fn_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
 
 {
   int iVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   if (((-1 < (int)param_1) &&
       (this->field_0101 = param_1, g_visibleClass_00802A88 != nullptr)) &&
      ((this->field_01D1 & 1) == 0)) {

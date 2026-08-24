@@ -6,8 +6,7 @@
 undefined4 __fastcall FUN_00416390(AnonShape_00416390_86C8F938 *param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 2;
   if ((g_playSystem_00802A38->field_00E4 & 1) != 0) {
     return uVar1;

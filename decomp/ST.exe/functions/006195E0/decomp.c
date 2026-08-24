@@ -13,7 +13,7 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
   int iVar2;
   ushort *puVar3;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   uint *puVar5;
   STJumpMineC *pSVar6;
   InternalExceptionFrame local_4c;

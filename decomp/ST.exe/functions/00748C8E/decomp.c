@@ -11,8 +11,7 @@ undefined4 FUN_00748c8e(int param_1,undefined4 *param_2,int *param_3)
   uint uVar1;
   uint uVar2;
   int iVar3;
-  undefined4 uVar4;
-
+  uint uVar4;
   if ((((byte *)param_1)[4] & 0x20) == 0) {
     uVar4 = 0x80040251;
   }

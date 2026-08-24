@@ -8,10 +8,10 @@ FUN_006e89b0(void *this,int *param_1,undefined4 param_2,int param_3,undefined4 p
 
 {
   int iVar1;
-  undefined4 *puVar2;
-
-  iVar1 = ST3DSMAPContext::sub_006E8660(this,param_1,0,0,0,0,0,0,0);
-  if (iVar1 == 0) {
+  int iVar1_mg0;
+  uint *puVar2;
+  iVar1_mg0 = ST3DSMAPContext::sub_006E8660(this,param_1,0,0,0,0,0,0,0);
+  if (iVar1_mg0 == 0) {
     iVar1 = STField<int>(this,0x31c) + *param_1 * 0x114;
     puVar2 = Library::DKW::LIB::MemAlloc(param_3 * 0x10 + 0x25);
     *(undefined4 **)(iVar1 + 0xa0) = puVar2;
@@ -29,8 +29,8 @@ FUN_006e89b0(void *this,int *param_1,undefined4 param_2,int param_3,undefined4 p
     *(undefined4 *)(*(int *)(iVar1 + 0xa0) + 0x1d) = param_10;
     *(undefined4 *)(*(int *)(iVar1 + 0xa0) + 0x21) = param_11;
     *(uint *)(iVar1 + 4) = *(uint *)(iVar1 + 4) | 0x2005;
-    iVar1 = 0;
+    iVar1_mg0 = 0;
   }
-  return iVar1;
+  return iVar1_mg0;
 }
 

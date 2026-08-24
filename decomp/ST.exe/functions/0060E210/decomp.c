@@ -8,9 +8,14 @@
 
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0060E2EC FILD dword ptr [EAX + ESI*0x4] classifies dword parameter loaded at 0060E2DF |
-   0060E35B FILD dword ptr [EDX] classifies dword parameter loaded at 0060E34F */
+   0060E35B FILD dword ptr [EDX] classifies dword parameter loaded at 0060E34F
 
-undefined4 FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4,int param_5)
+   [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=4, ignored=0, unknown=0 */
+
+int FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4,int param_5)
 
 {
   int iVar1;
@@ -89,6 +94,6 @@ undefined4 FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4
     FUN_006a5e90((short *)pdVar2);
     return 0;
   }
-  return 0xfffffffe;
+  return -2;
 }
 

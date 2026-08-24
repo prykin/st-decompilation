@@ -22,7 +22,7 @@ OptPanelTy::CreateSlider
   int iVar5;
   uint *puVar6;
   uint *puVar7;
-  undefined4 uVar8;
+  uint uVar8;
   int *piVar9;
   int iVar11;
   uint local_42c [6];

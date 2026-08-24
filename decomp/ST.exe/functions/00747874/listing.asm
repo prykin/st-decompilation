@@ -1,4 +1,4 @@
-FUN_00747874:
+RecoveredClass_00747874::FUN_00747874:
 00747874  8B 44 24 04               MOV EAX,dword ptr [ESP + 0x4]
 00747878  56                        PUSH ESI
 00747879  8B F1                     MOV ESI,ECX

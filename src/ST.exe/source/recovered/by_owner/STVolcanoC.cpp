@@ -89,7 +89,7 @@ undefined4 __thiscall st::fn_00646DB0(STVolcanoC *this,undefined4 *param_1)
 undefined4 __thiscall st::fn_006472B0(STVolcanoC *this)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
 
   uVar1 = 0;
@@ -115,7 +115,11 @@ undefined4 __thiscall st::fn_006472B0(STVolcanoC *this)
 /* [STMethodOwnerApplier] Structural method owner recovered as STVolcanoC.
    Evidence: this_call_owners=[STVolcanoC]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_006479E0(STVolcanoC *this)
 

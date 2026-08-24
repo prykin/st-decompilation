@@ -243,6 +243,12 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/PlayPanelTy.cpp
     source/recovered/by_owner/PrividerTy.cpp
     source/recovered/by_owner/RadioClassTy.cpp
+    source/recovered/by_owner/RecoveredClass_0074756B.cpp
+    source/recovered/by_owner/RecoveredClass_00747874.cpp
+    source/recovered/by_owner/RecoveredClass_00748A83.cpp
+    source/recovered/by_owner/RecoveredClass_0074A95F.cpp
+    source/recovered/by_owner/RecoveredClass_0074CDC5.cpp
+    source/recovered/by_owner/RecoveredClass_0074CFC0.cpp
     source/recovered/by_owner/ResearchPanelTy.cpp
     source/recovered/by_owner/ST3DSMAPContext.cpp
     source/recovered/by_owner/STAllPlayersC.cpp

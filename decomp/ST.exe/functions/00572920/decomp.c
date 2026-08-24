@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_00572920(void *this,byte param_1)
 
 {
   void *pvVar1;
-  undefined4 uVar2;
+  uint uVar2;
   LSTATUS LVar3;
   uint uVar4;
   int iVar5;

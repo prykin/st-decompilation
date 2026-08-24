@@ -11,9 +11,9 @@
 byte * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
 
 {
-  undefined1 uVar2;
-  undefined1 uVar3;
-  undefined1 uVar4;
+  byte uVar2;
+  byte uVar3;
+  byte uVar4;
   STTorpC *this_00;
   int iVar5;
   byte *pbVar5;

@@ -15,8 +15,8 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
   int iVar2;
   LPSTR pCVar3;
   ushort *puVar4;
-  undefined4 *puVar5;
-  uint *puVar6;
+  uint *puVar5;
+  char *pcVar6;
   short *psVar7;
   DWORD DVar8;
   int iVar16;
@@ -28,10 +28,10 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
   int iVar14;
   int iVar15;
   byte bVar16;
-  undefined1 uVar17;
-  undefined4 uVar18;
+  byte uVar17;
+  uint uVar18;
   int iVar19;
-  undefined4 uVar20;
+  uint uVar20;
   uint uVar21;
   undefined4 local_26c;
   undefined4 local_245;
@@ -335,10 +335,10 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar19 = 0x28;
           iVar9 = 0x8c;
-          puVar6 = (uint *)LoadResourceString(0x23f1,g_hINSTANCE_00807618);
+          pcVar6 = LoadResourceString(0x23f1,g_hINSTANCE_00807618);
           psVar7 = (short *)ccFntTy::CreateTypeSSpr
-                                      (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
-                                       ,uVar12,iVar13,iVar14,iVar15);
+                                      ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar6,iVar9,
+                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15);
           /* ST_CALLSITE[00591124]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[2].field_00B9,psVar7,uVar17,uVar21);
           uVar21 = 0xffffffff;
@@ -352,10 +352,10 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar19 = 0x28;
           iVar9 = 0x8c;
-          puVar6 = (uint *)LoadResourceString(0x23f0,g_hINSTANCE_00807618);
+          pcVar6 = LoadResourceString(0x23f0,g_hINSTANCE_00807618);
           psVar7 = (short *)ccFntTy::CreateTypeSSpr
-                                      (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
-                                       ,uVar12,iVar13,iVar14,iVar15);
+                                      ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar6,iVar9,
+                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15);
           /* ST_CALLSITE[00591174]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[3].field_00B9,psVar7,uVar17,uVar21);
           uVar21 = 0xffffffff;
@@ -369,10 +369,10 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar19 = 0x28;
           iVar9 = 0x8c;
-          puVar6 = (uint *)LoadResourceString(0x23f2,g_hINSTANCE_00807618);
+          pcVar6 = LoadResourceString(0x23f2,g_hINSTANCE_00807618);
           psVar7 = (short *)ccFntTy::CreateTypeSSpr
-                                      (g_startSystem_0081176C->field_0030,puVar6,iVar9,iVar19,cVar11
-                                       ,uVar12,iVar13,iVar14,iVar15);
+                                      ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar6,iVar9,
+                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15);
           /* ST_CALLSITE[005911C5]: CALL dword ptr [EBX + 0x8] */
           (*pSVar1->SetImagesPtr)(&this_02->field_00BB[4].field_00B9,psVar7,uVar17,uVar21);
           /* ST_CALLSITE[005911CA]: CALL 0x00401a5f; direct=00401A5F CampaignTy::PaintCampaign */

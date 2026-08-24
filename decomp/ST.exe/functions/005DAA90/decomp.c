@@ -1,7 +1,10 @@
-#include "../../pseudocode_runtime.h"
 
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=3, ignored=0, unknown=0 */
 
-undefined4 FUN_005daa90(void)
+int FUN_005daa90(void)
 
 {
   int iVar1;
@@ -23,6 +26,6 @@ undefined4 FUN_005daa90(void)
     /* ST_CALLSITE[005DAAFE]: CALL 0x00402b30; direct=00402B30 StartSystemTy::sub_005DAB30 */
     StartSystemTy::sub_005DAB30(local_8);
   }
-  return 0xfffffffa;
+  return -6;
 }
 

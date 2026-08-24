@@ -15,7 +15,7 @@
 void __thiscall WaitTy::NoneWait(WaitTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   byte **slotStorage;
   char cVar2;
   byte bVar3;
@@ -40,12 +40,12 @@ void __thiscall WaitTy::NoneWait(WaitTy *this)
   uint *puVar17;
   uint uVar18;
   AnonShape_005E84D0_1273B60D *pAVar19;
-  undefined4 *puVar20;
+  uint *puVar20;
   STMessage *pSVar21;
   char *pcVar22;
-  undefined4 *puVar23;
+  uint *puVar23;
   UINT UVar24;
-  undefined4 uVar25;
+  uint uVar25;
   char local_114 [2];
   undefined1 local_112;
   InternalExceptionFrame local_ec;

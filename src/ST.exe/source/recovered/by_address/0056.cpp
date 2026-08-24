@@ -81,7 +81,7 @@ int * st::fn_00561240(int param_1,int param_2,int param_3)
   iVar4 = STRoundFixed16(param_1_after_write);
   iVar3 = ((STRoundFixed16(local_8)) - iVar4) + 1;
   local_10 = iVar4;
-  piVar5 = st::pointer_boundary_cast<int *>(st::fn_006AAC10(iVar3 * 8 + 0x1c));
+  piVar5 = static_cast<int *>(st::fn_006AAC10(iVar3 * 8 + 0x1c));
   local_18 = 2;
   piVar5[4] = iVar3;
   piVar5[3] = iVar4;
@@ -384,7 +384,8 @@ int st::fn_00562170(int *param_1,int param_2)
 }
 
 // 005623C0 FUN_005623c0
-#line 4 "decomp/ST.exe/functions/005623C0/decomp.c"
+#line 1 "decomp/ST.exe/functions/005623C0/decomp.c"
+
 int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5)
 
 {
@@ -405,7 +406,7 @@ int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5
   int iVar10;
   int iVar11;
   uint uVar12;
-  undefined1 *puVar13;
+  byte *puVar13;
   uint uVar14;
   int *piVar15;
   byte *pbVar16;
@@ -756,7 +757,7 @@ void st::fn_00562E10(undefined4 param_1,undefined4 param_2,undefined4 *param_3,i
   int iVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar6;
   int iVar7;
 
@@ -1438,7 +1439,7 @@ void __fastcall st::fn_00567330(int param_1)
   byte bVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar4;
+  uint *puVar4;
   int *piVar5;
   uint uVar6;
   uint uVar7;
@@ -1555,8 +1556,8 @@ void __thiscall st::fn_00567510(void *this,int param_1,int param_2,int param_3,i
   int *piVar12;
   int iVar13;
   int iVar14;
-  undefined4 uVar15;
-  undefined4 uVar16;
+  uint uVar15;
+  uint uVar16;
   InternalExceptionFrame local_b0;
   InternalExceptionFrame local_6c;
   uint local_28;
@@ -1943,14 +1944,18 @@ void __thiscall st::fn_00567C10(void *this,int *param_1)
 #line 4 "decomp/ST.exe/functions/00568010/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00568010_param_1Enum. Cases:
-   CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8 */
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
 
 {
   SoundClassTy *this_00;
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   InternalExceptionFrame local_50;
   SoundClassTy *local_c;
   uint local_8;
@@ -1958,7 +1963,7 @@ void __thiscall st::fn_00568010(void *this,Global_sub_00568010_param_1Enum param
   if (STField<int>(this,0xf8b) != 0) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
-    local_c = st::pointer_boundary_cast<SoundClassTy *>(this);
+    local_c = static_cast<SoundClassTy *>(this);
     iVar1 = st::fn_0072D7F0(local_50.jumpBuffer,0);
     this_00 = local_c;
     if (iVar1 == 0) {
@@ -2512,7 +2517,7 @@ st::fn_0056A2A0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *
   int iVar3;
   uint *puVar4;
   DWORD DVar5;
-  undefined4 uVar6;
+  uint uVar6;
   InternalExceptionFrame local_4c;
   void *local_8;
 
@@ -2656,12 +2661,16 @@ void __fastcall st::fn_0056A820(int *param_1)
 
 // 0056A840 FUN_0056a840
 #line 4 "decomp/ST.exe/functions/0056A840/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __thiscall st::fn_0056A840(void *this,byte param_1)
 
 {
   undefined *puVar1;
-  undefined1 *puVar2;
-  undefined1 *puVar3;
+  byte *puVar2;
+  byte *puVar3;
   int local_8;
 
   puVar1 = nullptr;
@@ -2688,7 +2697,11 @@ void __thiscall st::fn_0056A840(void *this,byte param_1)
 #line 4 "decomp/ST.exe/functions/0056A8D0/decomp.c"
 /* [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/byte Evidence:
    entry-use width=/byte; unmasked_dword_reads=0; evidence=0056A8D3 MOV EAX,dword ptr [EBP + 0x8];
-   first-use mask */
+   first-use mask
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=10, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0056A8D0(void *this,byte param_1,byte param_2,char param_3)
 
@@ -2926,7 +2939,7 @@ void __thiscall st::fn_0056F250(void *this,char param_1,byte param_2,char *param
   char *pcVar9;
   char *pcVar10;
   byte *pbVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   char cVar13;
   ushort *puVar14;
   int iVar15;
@@ -3030,7 +3043,7 @@ LAB_0056f325:
         if (g_sT3DSMAPContext_00807598 != nullptr) {
           iVar15 = 1;
           puVar14 = PTR_0080679c + 0x14;
-          uVar4 = st::fn_006B4FE0((int)PTR_0080679c);
+          uVar4 = st::fn_006B4FE0(PTR_0080679c);
           local_c = (AnonShape_006B5050_99986F91 *)
                     st::fn_006B50C0(0x8b,0x8b,(uint)PTR_0080679c[7],uVar4,(undefined4 *)puVar14,iVar15);
           if (local_c != nullptr) {
@@ -3192,7 +3205,7 @@ undefined4 __fastcall st::fn_0056F930(AnonShape_0056F930_C6277D80 *param_1)
     else {
       resourceId = (cVar1 != '\x02') + 0x2689;
     }
-    puVar6 = st::pointer_boundary_cast<undefined *>(st_global_0079B034);
+    puVar6 = reinterpret_cast<undefined *>(st_global_0079B034);
     pcVar2 = st::fn_006B0140(0x268b,g_hINSTANCE_00807618);
     iVar5 = *(int *)&param_1[4].field_0x8fa + 1;
     pcVar3 = st::fn_006B0140(resourceId,g_hINSTANCE_00807618);

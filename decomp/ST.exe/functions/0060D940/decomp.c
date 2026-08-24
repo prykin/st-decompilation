@@ -7,11 +7,11 @@ undefined4 __fastcall FUN_0060d940(AnonShape_0060D940_4FDF4902 *param_1)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   float fVar3;
   int iVar4;
   AnonNested_AnonShape_0060D940_4FDF4902_0244_00248A15 *pAVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   uint uVar7;
   int iVar8;
   float10 fVar9;

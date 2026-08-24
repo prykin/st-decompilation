@@ -30,8 +30,8 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
 
 {
   char cVar1;
-  undefined1 uVar2;
-  undefined1 uVar3;
+  byte uVar2;
+  byte uVar3;
   short sVar4;
   short sVar5;
   short sVar6;
@@ -46,11 +46,13 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   int local_EAX_595;
   dword dVar15;
   uint uVar17;
-  undefined4 uVar18;
+  uint uVar18;
   dword dVar19;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
+  int iVar30_mg4A;
   int local_EAX_5256;
+  int iVar30_mg4C;
   int local_EAX_5399;
   STGroupBoatC *pSVar21_mg4;
   int local_EAX_5934;
@@ -61,7 +63,8 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   int local_EAX_6464;
   int local_EAX_6595;
   int local_EAX_6651;
-  undefined4 *puVar21;
+  uint *puVar21;
+  int iVar30_mg2E;
   uint local_EAX_7866;
   int local_EAX_8444;
   int local_EAX_10750;
@@ -150,19 +153,25 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   SndUnderAttMenegC *pSVar23;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   SndUnderAttMenegC *extraout_EAX;
+  int iVar30_mg1A;
   int local_EAX_46313;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
+  int iVar30_mg1E;
+  int iVar30_mg3;
   int iVar13;
   uint uVar16;
+  int iVar30_mg6;
+  int iVar30_mg8;
   STGroupBoatC *this_01;
   int local_EAX_48884;
+  int iVar30_mg9;
   int iVar29;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
-  undefined2 uVar25;
+  ushort uVar25;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -174,7 +183,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   undefined2 extraout_var_04;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_05;
-  undefined2 uVar28;
+  ushort uVar28;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_06;
   STGroupBoatCVTable *pSVar26;
@@ -374,9 +383,9 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
         }
       }
       if (this_00->field_07CA != nullptr) {
-        iVar30 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,this_00->field_07CA,(int *)&local_4c);
-        if (iVar30 == -4) {
+        iVar30_mg3 = STPlaySystemC::sub_006E62D0
+                               (g_playSystem_00802A38,this_00->field_07CA,(int *)&local_4c);
+        if (iVar30_mg3 == -4) {
           iVar13 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x12f7,0,0,
                                       "%s","STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL");
           if (iVar13 != 0) {
@@ -402,9 +411,9 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       }
       /* ST_CALLSITE[0045A9CC]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
       if (((this_00->field_045D == CASE_14) || (uVar16 = CheckPBoxCmd(this_00,CASE_14), uVar16 != 0)
-          ) && (iVar30 = STPlaySystemC::sub_006E62D0
-                                   (g_playSystem_00802A38,this_00->field_05A2,(int *)&local_10),
-               iVar30 != -4)) {
+          ) && (iVar30_mg6 = STPlaySystemC::sub_006E62D0
+                                       (g_playSystem_00802A38,this_00->field_05A2,(int *)&local_10),
+               iVar30_mg6 != -4)) {
         thunk_FUN_00492510(local_10,this_00->field_0018);
       }
       this_00->field_0455 = 1;
@@ -468,10 +477,10 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       }
       if (((this_00->field_045D == CASE_13) &&
           ((AnonShape_005EFAE0_B406B78B *)this_00->field_0524 != nullptr)
-          ) && (iVar30 = STPlaySystemC::sub_006E62D0
-                                   (g_playSystem_00802A38,
-                                    (AnonShape_005EFAE0_B406B78B *)this_00->field_0524,
-                                    (int *)&local_24), iVar30 != -4)) {
+          ) && (iVar30_mg8 = STPlaySystemC::sub_006E62D0
+                                       (g_playSystem_00802A38,
+                                        (AnonShape_005EFAE0_B406B78B *)this_00->field_0524,
+                                        (int *)&local_24), iVar30_mg8 != -4)) {
         thunk_FUN_004cf3e0(local_24,this_00->field_0018);
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -561,9 +570,9 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       return 0;
     }
     if ((this_00->field_05A6 == nullptr) &&
-       (iVar30 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,this_00->field_05A2,(int *)&this_00->field_05A6),
-       iVar30 == -4)) {
+       (iVar30_mg9 = STPlaySystemC::sub_006E62D0
+                               (g_playSystem_00802A38,this_00->field_05A2,
+                                (int *)&this_00->field_05A6), iVar30_mg9 == -4)) {
       RaiseInternalException
                 (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x1372);
     }
@@ -1010,9 +1019,9 @@ LAB_00459f59:
       /* ST_CALLSITE[0045A2DB]: CALL 0x004027ca; direct=004027CA STBoatC::sub_00492420 */
       sub_00492420(this_00);
       if (this_00->field_07CA != nullptr) {
-        iVar30 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,this_00->field_07CA,(int *)&local_58);
-        if (iVar30 == -4) {
+        iVar30_mg1A = STPlaySystemC::sub_006E62D0
+                                (g_playSystem_00802A38,this_00->field_07CA,(int *)&local_58);
+        if (iVar30_mg1A == -4) {
           local_EAX_46313 =
                ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1296,0,0,"%s",
                                   "STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL");
@@ -1069,10 +1078,10 @@ LAB_00459f59:
       }
       if (((this_00->field_045D == CASE_13) &&
           ((AnonShape_005EFAE0_B406B78B *)this_00->field_0524 != nullptr)
-          ) && (iVar30 = STPlaySystemC::sub_006E62D0
-                                   (g_playSystem_00802A38,
-                                    (AnonShape_005EFAE0_B406B78B *)this_00->field_0524,
-                                    (int *)&local_28), iVar30 != -4)) {
+          ) && (iVar30_mg1E = STPlaySystemC::sub_006E62D0
+                                        (g_playSystem_00802A38,
+                                         (AnonShape_005EFAE0_B406B78B *)this_00->field_0524,
+                                         (int *)&local_28), iVar30_mg1E != -4)) {
         thunk_FUN_004cf3e0(local_28,this_00->field_0018);
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -1438,9 +1447,9 @@ joined_r0x00450a10:
       if (this_00->field_045D == CASE_14) {
         if (this_00->field_05C0 == 3) {
           if ((this_00->field_05A6 == nullptr) &&
-             (iVar30 = STPlaySystemC::sub_006E62D0
-                                 (g_playSystem_00802A38,this_00->field_05A2,
-                                  (int *)&this_00->field_05A6), iVar30 == -4)) {
+             (iVar30_mg2E = STPlaySystemC::sub_006E62D0
+                                      (g_playSystem_00802A38,this_00->field_05A2,
+                                       (int *)&this_00->field_05A6), iVar30_mg2E == -4)) {
             RaiseInternalException
                       (-4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x43c);
           }
@@ -2816,7 +2825,7 @@ LAB_0045ad7b:
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_11;
           /* ST_CALLSITE[00452E3E]: CALL 0x00404543; direct=00404543 STBoatC::Build */
-          local_EAX_16398 = Build(this_00,0);
+          local_EAX_16398 = Build(this_00,nullptr);
           local_8 = local_EAX_16398;
           if (local_EAX_16398 == -1) {
             RaiseInternalException
@@ -5741,7 +5750,7 @@ LAB_0045ad7b:
         if (this_00->field_045D == 0) {
           this_00->field_045D = CASE_B;
           /* ST_CALLSITE[00457571]: CALL 0x004014fb; direct=004014FB STBoatC::Annih */
-          local_EAX_34625 = Annih(this_00,nullptr);
+          local_EAX_34625 = Annih(this_00,0);
           local_8 = local_EAX_34625;
           if (local_EAX_34625 == -1) {
             RaiseInternalException
@@ -7184,7 +7193,7 @@ LAB_0045910d:
       break;
     case CASE_B:
       /* ST_CALLSITE[00459B1F]: CALL 0x004014fb; direct=004014FB STBoatC::Annih */
-      local_EAX_44271 = Annih(this_00,(undefined4 *)0x2);
+      local_EAX_44271 = Annih(this_00,2);
       local_8 = local_EAX_44271;
       if (local_EAX_44271 == -1) {
         RaiseInternalException
@@ -7321,7 +7330,7 @@ LAB_0045910d:
       break;
     case CASE_11:
       /* ST_CALLSITE[0045950C]: CALL 0x00404543; direct=00404543 STBoatC::Build */
-      local_EAX_42716 = Build(this_00,2);
+      local_EAX_42716 = Build(this_00,(uint *)0x2);
       local_8 = local_EAX_42716;
       if (local_EAX_42716 == -1) {
         RaiseInternalException
@@ -8486,8 +8495,8 @@ LAB_00450268:
   this_00->field_046B = nullptr;
   STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this_00->field_0471,(int *)&this_00->field_046B);
   if (this_00->field_07CA != nullptr) {
-    iVar30 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this_00->field_07CA,&local_30);
-    if (iVar30 == -4) {
+    iVar30_mg4A = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this_00->field_07CA,&local_30);
+    if (iVar30_mg4A == -4) {
       local_EAX_5256 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x335,0,0,"%s",
                               "STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0");
@@ -8502,10 +8511,10 @@ LAB_00450268:
               (this_00->field_0211,this_00->field_01ED,*(int *)(local_30 + 0x1ed));
   }
   if ((this_00->field_045D == CASE_F) && (this_00->field_0596 == CASE_3)) {
-    iVar30 = STPlaySystemC::sub_006E62D0
-                       (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this_00->field_0x58e
-                        ,&local_30);
-    if (iVar30 == -4) {
+    iVar30_mg4C = STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,
+                             *(AnonShape_005EFAE0_B406B78B **)&this_00->field_0x58e,&local_30);
+    if (iVar30_mg4C == -4) {
       local_EAX_5399 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x33c,0,0,"%s",
                               "STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name");

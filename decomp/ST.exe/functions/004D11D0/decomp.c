@@ -42,7 +42,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   undefined4 extraout_EDX_01;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
-  undefined4 uVar9;
+  uint uVar9;
   RecoveredRecord_TLOEmbryoTy_004D11D0 *pRVar10;
   int iVar11;
   byte *puVar12;

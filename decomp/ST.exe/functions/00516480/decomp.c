@@ -11,11 +11,11 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   HelpPanelTy_field_01A1State HVar1;
   AnonPointee_HelpPanelTy_0218 *pAVar2;
   HelpPanelTy *this_00;
-  undefined1 uVar4;
+  byte uVar4;
   int local_EAX_36;
   uint uVar5;
   char *pcVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   BITMAPINFO *pBVar8;
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

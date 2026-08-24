@@ -20,7 +20,7 @@ int __thiscall st::fn_004A8920(OpticClassC *this,STMessage *message)
   uint uVar3;
   int iVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   longlong lVar6;
   InternalExceptionFrame local_6c;
   undefined1 local_28 [12];

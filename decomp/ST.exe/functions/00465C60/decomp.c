@@ -33,7 +33,7 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1)
   STBoatC *pSVar1;
   STBoatC_field_06F7State SVar2;
   bool bVar4;
-  undefined2 uVar5;
+  ushort uVar5;
   int local_EAX_56;
   STWorldObject *pSVar6;
   int local_EAX_437;
@@ -82,7 +82,7 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1)
   int local_EAX_11852;
   uint uVar9;
   int local_EAX_12513;
-  undefined4 *puVar10;
+  uint *puVar10;
   uint uVar11;
   int local_EAX_13191;
   int local_EAX_14419;
@@ -121,7 +121,7 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1)
   short sVar24;
   byte bVar25;
   undefined4 local_2c [2];
-  undefined4 local_24;
+  uint local_24;
   short local_20;
   uint local_1c;
   int local_18;
@@ -520,15 +520,15 @@ cf_common_exit_00465E5A:
             return 2;
           }
           thunk_FUN_004e15f0(pSVar1,this->field_0018);
-          sVar18 = this->field_049D;
-          sVar12 = this->field_049B;
+          sVar12 = this->field_049D;
+          sVar18 = this->field_049B;
           iVar8 = this->field_049F + 1;
           *(undefined4 *)&this->field_0x4cd = 0;
           *(undefined4 *)&this->field_0x4d5 = 4;
           this->field_00B7 = 0;
 LAB_00468322:
           /* ST_CALLSITE[00468325]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
-          sub_00481520(this,(int)sVar12,(int)sVar18,iVar8);
+          sub_00481520(this,(int)sVar18,(int)sVar12,iVar8);
           /* ST_CALLSITE[0046832D]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
           sub_00460260(this,0);
           return 2;
@@ -1168,8 +1168,8 @@ cf_error_exit_004660E9:
               }
               thunk_FUN_004e15f0(pSVar1,this->field_0018);
               iVar8 = (int)this->field_04C9;
-              sVar18 = this->field_04C7;
-              sVar12 = this->field_04C5;
+              sVar12 = this->field_04C7;
+              sVar18 = this->field_04C5;
               *(undefined4 *)&this->field_0x4cd = 0;
               *(undefined4 *)&this->field_0x4d5 = 10;
               this->field_00B7 = 0;

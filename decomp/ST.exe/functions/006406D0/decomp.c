@@ -24,13 +24,13 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
 {
   char cVar1;
   short sVar2;
-  undefined2 uVar3;
+  ushort uVar3;
   STMessageId SVar4;
   STTorpC_field_0259State SVar5;
   longlong lVar6;
   STTorpC *this_00;
   byte bVar8;
-  undefined2 uVar9;
+  ushort uVar9;
   int local_EAX_50;
   int iVar12;
   int *piVar13_mg0;
@@ -42,18 +42,19 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   byte *puVar15;
   int *piVar13_mg1;
   short sVar10;
-  undefined4 uVar18;
+  uint uVar18;
   uint uVar17;
   int iVar10;
   STGameObjC *this_01;
   uint uVar19;
+  int iVar14_mg9;
   int local_EAX_8983;
   int iVar11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
-  undefined2 uVar21;
+  ushort uVar21;
   uint uVar20;
   int iVar22;
   byte *puVar23;
@@ -61,10 +62,10 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   char *pcVar25;
   char *pcVar26;
   bool bVar28;
-  undefined1 uVar29;
-  undefined1 uVar30;
-  undefined1 uVar31;
-  undefined1 uVar32;
+  byte uVar29;
+  byte uVar30;
+  byte uVar31;
+  byte uVar32;
   InternalExceptionFrame local_28c;
   undefined4 local_248 [2];
   undefined1 local_240 [8];
@@ -798,10 +799,10 @@ switchD_00640c2d_caseD_a2:
                            this_00->field_0262,this_00->field_0259,local_c4 / 2,1);
       }
       if (this_00->field_0270 == 1) {
-        iVar14 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this_00->field_0274
-                            ,(int *)&local_30);
-        if (iVar14 == -4) {
+        iVar14_mg9 = STPlaySystemC::sub_006E62D0
+                               (g_playSystem_00802A38,
+                                (AnonShape_005EFAE0_B406B78B *)this_00->field_0274,(int *)&local_30);
+        if (iVar14_mg9 == -4) {
           thunk_FUN_006457e0((int)this_00);
           g_currentExceptionFrame = local_28c.previous;
           return 0;
@@ -1160,12 +1161,13 @@ LAB_00641a40:
       this_00->field_001C = uVar19;
       bVar8 = 5;
     }
-    thunk_FUN_0057b670((int *)this_00,0,(uint)bVar8,(short *)0x1,(short *)(uVar19 >> 0x10));
+    thunk_FUN_0057b670((int *)this_00,nullptr,(uint)bVar8,(short *)0x1,(short *)(uVar19 >> 0x10)
+                      );
   }
   if (this_00->field_0259 == CASE_B7) {
     uVar19 = this_00->field_001C * 0x41c64e6d + 0x3039;
     this_00->field_001C = uVar19;
-    thunk_FUN_0057b670((int *)this_00,0,5,(short *)0x1,(short *)(uVar19 >> 0x10));
+    thunk_FUN_0057b670((int *)this_00,nullptr,5,(short *)0x1,(short *)(uVar19 >> 0x10));
   }
   if (this_00->field_0259 == CASE_AC) {
     thunk_FUN_0057ba30(this_00,1);

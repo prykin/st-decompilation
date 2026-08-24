@@ -4,7 +4,7 @@
 void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   uint uVar3;
   uint uVar4;

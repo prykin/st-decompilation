@@ -13,7 +13,7 @@ cLoadingTy::InitParam
 {
   ushort *puVar1;
   ccFntTy *pcVar2;
-  undefined4 uVar3;
+  uint uVar3;
   cLoadingTy *pcVar5;
   int local_EAX_36;
   byte *puVar6;

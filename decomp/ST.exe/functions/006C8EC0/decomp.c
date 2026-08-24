@@ -33,9 +33,9 @@ FUN_006c8ec0(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int
   bool bVar13;
   bool bVar14;
   short *psVar15;
-  undefined4 uVar16;
+  uint uVar16;
   int *local_4c_mg2;
-  undefined4 *puVar17;
+  uint *puVar17;
   int iVar18;
   int iVar19;
   int iVar20;

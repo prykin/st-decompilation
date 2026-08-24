@@ -8,8 +8,7 @@ undefined4 __fastcall FUN_00490d90(STGameObjC *objPtr)
 
 {
   int iVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   iVar1 = objPtr->field_06F7;
   if (((((iVar1 == 8) || (iVar1 == 0x14)) || (iVar1 == 0x1a)) ||
       ((((iVar1 == 7 || (iVar1 == 0x13)) || ((iVar1 == 0x1b || ((iVar1 == 0xc || (iVar1 == 0x18)))))

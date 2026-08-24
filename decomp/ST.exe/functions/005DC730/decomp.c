@@ -19,7 +19,7 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
   StartSystemTy *this_00;
   int iVar4;
   DArrayTy *pDVar4_mg0;
-  undefined1 *puVar6;
+  byte *puVar6;
   DArrayTy *pDVar4_mg2;
   char *pcVar7_mg1;
   uint uVar7;
@@ -32,7 +32,7 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
   InternalExceptionFrame local_70;
   undefined1 local_2c [16];
   undefined4 local_1c;
-  undefined4 local_18;
+  uint local_18;
   DArrayTy *local_c;
   StartSystemTy *local_8;
   char *puVar5;

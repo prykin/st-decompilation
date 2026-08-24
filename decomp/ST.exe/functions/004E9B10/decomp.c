@@ -4,8 +4,7 @@
 undefined4 __thiscall FUN_004e9b10(void *this,int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   if (STField<int>(this,0x4f8) != 0) {
     if (STField<int>(this,0x4fc) == 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

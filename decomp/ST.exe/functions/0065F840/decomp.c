@@ -10,7 +10,7 @@ uint * FUN_0065f840(DArrayTy *param_1,uint param_2,int param_3)
   int iVar1;
   DArrayTy *array;
   uint uVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   uint uVar4;
   InternalExceptionFrame local_54;
   undefined4 local_10;

@@ -4,7 +4,7 @@
 uint FUN_006d8036(void)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
   byte bVar3;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

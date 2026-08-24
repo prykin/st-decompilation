@@ -18,7 +18,7 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
 {
   AiFltClassTy *pAVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   uint index;
   DArrayTy *array;
   InternalExceptionFrame local_5c;

@@ -4,12 +4,11 @@
 void __fastcall FUN_00584b10(AnonShape_00584B10_33997544 *param_1)
 
 {
-  undefined1 *this;
+  byte *this;
   uint uVar1;
   int iVar2;
-  undefined4 uVar3;
-  undefined4 uVar4;
-
+  uint uVar3;
+  uint uVar4;
   this = &param_1->field_0x1d5;
   /* ST_CALLSITE[00584B1E]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
   STT3DSprC::StopShow((STT3DSprC *)this,0xe);

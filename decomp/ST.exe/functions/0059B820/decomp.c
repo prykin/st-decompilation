@@ -13,7 +13,7 @@
 void __thiscall FSGSTy::sub_0059B820(FSGSTy *this)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
   byte *pbVar3;
   LPCSTR pCVar4;

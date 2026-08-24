@@ -16,13 +16,13 @@ void __thiscall st::fn_005B2970(MainMenuTy *this,char param_1)
   int iVar2;
   LPSTR pCVar2;
   ushort *puVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar6;
   int iVar5;
   byte bVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar8;
-  undefined4 uVar9;
+  uint uVar9;
   InternalExceptionFrame local_4c;
   MainMenuTy *local_8;
 
@@ -69,7 +69,7 @@ void __thiscall st::fn_005B2970(MainMenuTy *this,char param_1)
       bVar6 = 0;
       pCVar2 = st::fn_006F2C00(st::mutable_c_string("MM_FLC"),2,iVar5);
       puVar3 = st::fn_0071AD00(g_cMf32_00806780,pCVar2,bVar6,iVar8);
-      *puVar4 = st::machine_word_boundary_cast<undefined4>(puVar3);
+      *puVar4 = st::machine_word_boundary_cast<uint>(puVar3);
       iVar5 = iVar5 + 1;
       puVar4 = puVar4 + 1;
     } while (iVar5 < 10);
@@ -317,7 +317,7 @@ void __thiscall st::fn_005B3160(MainMenuTy *this)
     pMVar2 = local_8;
     if (local_8->field_1EE3 == '\0') {
       uVar10 = 0;
-      pcVar9 = g_startSystem_0081176C->field_0030;
+      pcVar9 = (ccFntTy *)g_startSystem_0081176C->field_0030;
       uVar8 = 0xffffffff;
       uVar7 = 0xfffffffe;
       pcVar3 = st::fn_006B0140(0x26ac,g_hINSTANCE_00807618);
@@ -336,7 +336,7 @@ void __thiscall st::fn_005B3160(MainMenuTy *this)
                  g_startSystem_0081176C->field_0034,0);
     }
     else if (local_8->field_1EE3 == '\x01') {
-      pcVar9 = g_startSystem_0081176C->field_0030;
+      pcVar9 = (ccFntTy *)g_startSystem_0081176C->field_0030;
       uVar8 = 0xffffffff;
       uVar7 = 0xfffffffe;
       pcVar3 = st::fn_006B0140(0x26b0,g_hINSTANCE_00807618);
@@ -410,7 +410,7 @@ void __thiscall st::fn_005B3430(MainMenuTy *this)
   int iVar7;
   int iVar8;
   uint *puVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   InternalExceptionFrame local_54;
   MainMenuTy *local_10;
   uint *local_c;
@@ -474,7 +474,7 @@ void __thiscall st::fn_005B3430(MainMenuTy *this)
             iVar8 = 0;
             local_8 = 0;
             if (uVar6 != 0) {
-              pDVar7 = &this_00->field_00BB[0].field_014A.field_0044;
+              pDVar7 = (DWORD *)&this_00->field_00BB[0].field_014A.field_0044;
               do {
                 if (*(char *)((int)pDVar7 + -0x167) != '\0') {
                   *pDVar7 = this_00->field_0061;
@@ -654,7 +654,7 @@ LAB_005b353c:
 void __thiscall st::fn_005B3B00(MainMenuTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   MainMenuTy *pMVar3;
   int iVar4;
   int iVar5;
@@ -720,7 +720,7 @@ void __thiscall st::fn_005B3C30(MainMenuTy *this)
     iVar2 = 0;
     if (this_00->field_009A != 0) {
       iVar5 = 0x96;
-      piVar4 = st::pointer_boundary_cast<int *>(&this_00->field_00BB[0].field_0028.field_0040);
+      piVar4 = reinterpret_cast<int *>(&this_00->field_00BB[0].field_0028.field_0040);
       do {
         /* ST_CALLSITE[005B3C82]: CALL dword ptr [0x0085bedc] */
         DVar3 = st::external_000000DA();
@@ -762,30 +762,29 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
   MainMenuTy_Record_00BB_01FB *pMVar3;
   MainMenuTy *this_01;
   int iVar9;
-  uint *puVar4;
+  char *pcVar4;
   short *psVar5;
-  char *pcVar6;
-  DWORD DVar7;
+  DWORD DVar6;
   int iVar6;
-  int iVar8;
+  int iVar7;
   StartServTy *this_02;
   StartServTy *this_03;
   StartServTy *this_04;
-  StartServTy *pSVar9;
-  byte bVar10;
-  int *piVar11;
-  int iVar12;
-  undefined4 *puVar13;
-  ccFntTy_CreateTypeSSpr_param_4Enum cVar14;
-  uint uVar15;
+  StartServTy *pSVar8;
+  byte bVar9;
+  int *piVar10;
+  int iVar11;
+  uint *puVar12;
+  ccFntTy_CreateTypeSSpr_param_4Enum cVar13;
+  uint uVar14;
   UINT resourceId;
+  int iVar15;
   int iVar16;
   int iVar17;
-  int iVar18;
-  undefined1 uVar19;
-  ccFntTy *pcVar20;
+  byte uVar18;
+  ccFntTy *pcVar19;
+  uint uVar20;
   uint uVar21;
-  uint uVar22;
   undefined4 local_24c;
   undefined4 local_162;
   undefined4 local_155;
@@ -796,19 +795,19 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
   MainMenuTy *local_c;
   uint local_8;
 
-  piVar11 = &this->field_00BB[0].field_00B9.field_0008;
-  iVar12 = 0xd;
+  piVar10 = &this->field_00BB[0].field_00B9.field_0008;
+  iVar11 = 0xd;
   do {
-    piVar11[-0x30] = 0;
-    *piVar11 = 0;
-    puVar13 = (undefined4 *)((int)piVar11 + -0xbb);
-    piVar11 = (int *)((int)piVar11 + 0x1fb);
-    iVar12 = iVar12 + -1;
-    for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar13 = 0;
-      puVar13 = puVar13 + 1;
+    piVar10[-0x30] = 0;
+    *piVar10 = 0;
+    puVar12 = (undefined4 *)((int)piVar10 + -0xbb);
+    piVar10 = (int *)((int)piVar10 + 0x1fb);
+    iVar11 = iVar11 + -1;
+    for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
+      *puVar12 = 0;
+      puVar12 = puVar12 + 1;
     }
-  } while (iVar12 != 0);
+  } while (iVar11 != 0);
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
@@ -826,93 +825,93 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
   }
   local_c->field_1EE3 = param_1;
   if (param_1 == '\0') {
-    uVar21 = 0xffffffff;
-    uVar19 = 7;
-    iVar18 = -1;
+    uVar20 = 0xffffffff;
+    uVar18 = 7;
     iVar17 = -1;
-    iVar16 = 1;
+    iVar16 = -1;
+    iVar15 = 1;
     local_c->field_009A = 5;
-    uVar15 = 0xffffffff;
+    uVar14 = 0xffffffff;
     local_c->field_00BB[0].field_0001 = 0x2334;
     pSVar1 = local_c->field_00BB[0].field_00B9.vtable;
-    cVar14 = CASE_FFFFFFFE;
-    iVar8 = 0x28;
+    cVar13 = CASE_FFFFFFFE;
+    iVar7 = 0x28;
     pMVar3 = local_c->field_00BB;
-    iVar12 = 0x8c;
-    puVar4 = (uint *)st::fn_006B0140(0x2334,g_hINSTANCE_00807618);
+    iVar11 = 0x8c;
+    pcVar4 = st::fn_006B0140(0x2334,g_hINSTANCE_00807618);
     psVar5 = (short *)st::fn_00713480
-                                (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
-                                 uVar15,iVar16,iVar17,iVar18);
+                                ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
+                                 cVar13,uVar14,iVar15,iVar16,iVar17);
     /* ST_CALLSITE[005B4138]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(st::pointer_boundary_cast<SpriteClassTy *>(&pMVar3->field_00B9),psVar5,uVar19,uVar21);
-    uVar21 = 0xffffffff;
-    uVar19 = 7;
-    iVar18 = -1;
+    (*pSVar1->SetImagesPtr)(st::pointer_boundary_cast<SpriteClassTy *>(&pMVar3->field_00B9),psVar5,uVar18,uVar20);
+    uVar20 = 0xffffffff;
+    uVar18 = 7;
     iVar17 = -1;
-    iVar16 = 1;
-    uVar15 = 0xffffffff;
+    iVar16 = -1;
+    iVar15 = 1;
+    uVar14 = 0xffffffff;
     this_01->field_00BB[1].field_0001 = 0x2335;
     pSVar1 = this_01->field_00BB[1].field_00B9.vtable;
-    cVar14 = CASE_FFFFFFFE;
-    iVar8 = 0x28;
-    iVar12 = 0x8c;
-    puVar4 = (uint *)st::fn_006B0140(0x2335,g_hINSTANCE_00807618);
+    cVar13 = CASE_FFFFFFFE;
+    iVar7 = 0x28;
+    iVar11 = 0x8c;
+    pcVar4 = st::fn_006B0140(0x2335,g_hINSTANCE_00807618);
     psVar5 = (short *)st::fn_00713480
-                                (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
-                                 uVar15,iVar16,iVar17,iVar18);
+                                ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
+                                 cVar13,uVar14,iVar15,iVar16,iVar17);
     /* ST_CALLSITE[005B4188]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[1].field_00B9,psVar5,uVar19,uVar21);
-    uVar21 = 0xffffffff;
-    uVar19 = 7;
-    iVar18 = -1;
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[1].field_00B9,psVar5,uVar18,uVar20);
+    uVar20 = 0xffffffff;
+    uVar18 = 7;
+    iVar17 = -1;
     pSVar1 = this_01->field_00BB[2].field_00B9.vtable;
-    iVar17 = -1;
-    iVar16 = 1;
-    uVar15 = 0xffffffff;
+    iVar16 = -1;
+    iVar15 = 1;
+    uVar14 = 0xffffffff;
     this_01->field_00BB[2].field_0001 = 0x2332;
-    cVar14 = CASE_FFFFFFFE;
-    iVar8 = 0x28;
-    iVar12 = 0x8c;
-    puVar4 = (uint *)st::fn_006B0140(0x2332,g_hINSTANCE_00807618);
+    cVar13 = CASE_FFFFFFFE;
+    iVar7 = 0x28;
+    iVar11 = 0x8c;
+    pcVar4 = st::fn_006B0140(0x2332,g_hINSTANCE_00807618);
     psVar5 = (short *)st::fn_00713480
-                                (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
-                                 uVar15,iVar16,iVar17,iVar18);
+                                ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
+                                 cVar13,uVar14,iVar15,iVar16,iVar17);
     /* ST_CALLSITE[005B41D8]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[2].field_00B9,psVar5,uVar19,uVar21);
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[2].field_00B9,psVar5,uVar18,uVar20);
     pSVar1 = this_01->field_00BB[3].field_00B9.vtable;
-    uVar21 = 0xffffffff;
-    uVar19 = 7;
-    iVar18 = -1;
+    uVar20 = 0xffffffff;
+    uVar18 = 7;
     iVar17 = -1;
-    iVar16 = 1;
-    uVar15 = 0xffffffff;
-    cVar14 = CASE_FFFFFFFE;
+    iVar16 = -1;
+    iVar15 = 1;
+    uVar14 = 0xffffffff;
+    cVar13 = CASE_FFFFFFFE;
     this_01->field_00BB[3].field_0001 = 0x2333;
-    iVar8 = 0x28;
-    iVar12 = 0x8c;
-    puVar4 = (uint *)st::fn_006B0140(0x2333,g_hINSTANCE_00807618);
+    iVar7 = 0x28;
+    iVar11 = 0x8c;
+    pcVar4 = st::fn_006B0140(0x2333,g_hINSTANCE_00807618);
     psVar5 = (short *)st::fn_00713480
-                                (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
-                                 uVar15,iVar16,iVar17,iVar18);
+                                ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
+                                 cVar13,uVar14,iVar15,iVar16,iVar17);
     /* ST_CALLSITE[005B4229]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[3].field_00B9,psVar5,uVar19,uVar21);
-    uVar21 = 0xffffffff;
-    uVar19 = 7;
-    iVar18 = -1;
-    pSVar1 = this_01->field_00BB[4].field_00B9.vtable;
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[3].field_00B9,psVar5,uVar18,uVar20);
+    uVar20 = 0xffffffff;
+    uVar18 = 7;
     iVar17 = -1;
-    iVar16 = 1;
-    uVar15 = 0xffffffff;
+    pSVar1 = this_01->field_00BB[4].field_00B9.vtable;
+    iVar16 = -1;
+    iVar15 = 1;
+    uVar14 = 0xffffffff;
     this_01->field_00BB[4].field_0001 = 0x2336;
-    cVar14 = CASE_FFFFFFFE;
-    iVar8 = 0x28;
-    iVar12 = 0x8c;
-    puVar4 = (uint *)st::fn_006B0140(0x2336,g_hINSTANCE_00807618);
+    cVar13 = CASE_FFFFFFFE;
+    iVar7 = 0x28;
+    iVar11 = 0x8c;
+    pcVar4 = st::fn_006B0140(0x2336,g_hINSTANCE_00807618);
     psVar5 = (short *)st::fn_00713480
-                                (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
-                                 uVar15,iVar16,iVar17,iVar18);
+                                ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
+                                 cVar13,uVar14,iVar15,iVar16,iVar17);
     /* ST_CALLSITE[005B4279]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[4].field_00B9,psVar5,uVar19,uVar21);
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[4].field_00B9,psVar5,uVar18,uVar20);
     this_01->field_00BB[0].field_000E = this_01->field_0008;
     this_01->field_00BB[0].field_0012 = 2;
     this_01->field_00BB[0].field_0016 = 0x6944;
@@ -929,133 +928,133 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     this_01->field_00BB[4].field_0012 = 1;
     this_01->field_00BB[4].field_0016 = 0x7102;
     st::fn_006BA9E0(g_dDXContext_0080759C,0xe9,0x14,0x14c,0x18,0);
-    uVar22 = 0;
-    pcVar20 = g_startSystem_0081176C->field_0030;
-    uVar21 = 0xffffffff;
-    uVar15 = 0xfffffffe;
-    pcVar6 = st::fn_006B0140(0x26ac,g_hINSTANCE_00807618);
+    uVar21 = 0;
+    pcVar19 = (ccFntTy *)g_startSystem_0081176C->field_0030;
+    uVar20 = 0xffffffff;
+    uVar14 = 0xfffffffe;
+    pcVar4 = st::fn_006B0140(0x26ac,g_hINSTANCE_00807618);
     /* ST_CALLSITE[005B4342]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
-    st::fn_00404C2D(this_03,0,0xe9,0x14,0x14c,0x18,pcVar6,uVar15,uVar21,pcVar20,uVar22);
-    uVar22 = DAT_00807dd5 >> 0x10 & 0xff;
-    uVar21 = DAT_00807dd5 & 0xffff;
-    uVar15 = DAT_00807dd5 >> 0x18;
-    pcVar6 = st::fn_006B0140(0x2329,g_hINSTANCE_00807618);
+    st::fn_00404C2D(this_03,0,0xe9,0x14,0x14c,0x18,pcVar4,uVar14,uVar20,pcVar19,uVar21);
+    uVar21 = DAT_00807dd5 >> 0x10 & 0xff;
+    uVar20 = DAT_00807dd5 & 0xffff;
+    uVar14 = DAT_00807dd5 >> 0x18;
+    pcVar4 = st::fn_006B0140(0x2329,g_hINSTANCE_00807618);
     /* ST_CALLSITE[005B4380]: CALL dword ptr [0x0085bde8] */
-    st::external_00000080((LPSTR)(this_01->field_00BB[0xc].field_01DC + 0x3c),pcVar6,uVar15,uVar22,uVar21);
-    pSVar9 = this_01->field_00BB[0xc].field_01DC + 0x3c;
+    st::external_00000080((LPSTR)(this_01->field_00BB[0xc].field_01DC + 0x3c),pcVar4,uVar14,uVar21,uVar20);
+    pSVar8 = this_01->field_00BB[0xc].field_01DC + 0x3c;
     /* ST_CALLSITE[005B43AD]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
     st::fn_00404C2D
-              (pSVar9,0,0,0x240,800,0x18,(char *)pSVar9,0xfffffffe,0xffffffff,
+              (pSVar8,0,0,0x240,800,0x18,(char *)pSVar8,0xfffffffe,0xffffffff,
                g_startSystem_0081176C->field_0034,0);
   }
   else if (param_1 == '\x01') {
-    uVar21 = 0xffffffff;
-    uVar19 = 7;
-    iVar18 = -1;
+    uVar20 = 0xffffffff;
+    uVar18 = 7;
     iVar17 = -1;
-    iVar16 = 1;
+    iVar16 = -1;
+    iVar15 = 1;
     local_c->field_009A = 5;
-    uVar15 = 0xffffffff;
+    uVar14 = 0xffffffff;
     local_c->field_00BB[0].field_0001 = 0x233c;
     pSVar1 = local_c->field_00BB[0].field_00B9.vtable;
-    cVar14 = CASE_FFFFFFFE;
-    iVar8 = 0x28;
+    cVar13 = CASE_FFFFFFFE;
+    iVar7 = 0x28;
     pMVar3 = local_c->field_00BB;
-    iVar12 = 0x8c;
-    puVar4 = (uint *)st::fn_006B0140(0x233c,g_hINSTANCE_00807618);
+    iVar11 = 0x8c;
+    pcVar4 = st::fn_006B0140(0x233c,g_hINSTANCE_00807618);
     psVar5 = (short *)st::fn_00713480
-                                (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
-                                 uVar15,iVar16,iVar17,iVar18);
+                                ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
+                                 cVar13,uVar14,iVar15,iVar16,iVar17);
     /* ST_CALLSITE[005B3E40]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(st::pointer_boundary_cast<SpriteClassTy *>(&pMVar3->field_00B9),psVar5,uVar19,uVar21);
-    uVar21 = 0xffffffff;
-    uVar19 = 7;
-    iVar18 = -1;
+    (*pSVar1->SetImagesPtr)(st::pointer_boundary_cast<SpriteClassTy *>(&pMVar3->field_00B9),psVar5,uVar18,uVar20);
+    uVar20 = 0xffffffff;
+    uVar18 = 7;
     iVar17 = -1;
-    iVar16 = 1;
-    uVar15 = 0xffffffff;
+    iVar16 = -1;
+    iVar15 = 1;
+    uVar14 = 0xffffffff;
     this_01->field_00BB[1].field_0001 = 0x233d;
     pSVar1 = this_01->field_00BB[1].field_00B9.vtable;
-    cVar14 = CASE_FFFFFFFE;
-    iVar8 = 0x28;
-    iVar12 = 0x8c;
-    puVar4 = (uint *)st::fn_006B0140(0x233d,g_hINSTANCE_00807618);
+    cVar13 = CASE_FFFFFFFE;
+    iVar7 = 0x28;
+    iVar11 = 0x8c;
+    pcVar4 = st::fn_006B0140(0x233d,g_hINSTANCE_00807618);
     psVar5 = (short *)st::fn_00713480
-                                (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
-                                 uVar15,iVar16,iVar17,iVar18);
+                                ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
+                                 cVar13,uVar14,iVar15,iVar16,iVar17);
     /* ST_CALLSITE[005B3E90]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[1].field_00B9,psVar5,uVar19,uVar21);
-    uVar21 = 0xffffffff;
-    uVar19 = 7;
-    iVar18 = -1;
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[1].field_00B9,psVar5,uVar18,uVar20);
+    uVar20 = 0xffffffff;
+    uVar18 = 7;
+    iVar17 = -1;
     pSVar1 = this_01->field_00BB[2].field_00B9.vtable;
-    iVar17 = -1;
-    iVar16 = 1;
-    uVar15 = 0xffffffff;
+    iVar16 = -1;
+    iVar15 = 1;
+    uVar14 = 0xffffffff;
     this_01->field_00BB[2].field_0001 = 0x233e;
-    cVar14 = CASE_FFFFFFFE;
-    iVar8 = 0x28;
-    iVar12 = 0x8c;
-    puVar4 = (uint *)st::fn_006B0140(0x233e,g_hINSTANCE_00807618);
+    cVar13 = CASE_FFFFFFFE;
+    iVar7 = 0x28;
+    iVar11 = 0x8c;
+    pcVar4 = st::fn_006B0140(0x233e,g_hINSTANCE_00807618);
     psVar5 = (short *)st::fn_00713480
-                                (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
-                                 uVar15,iVar16,iVar17,iVar18);
+                                ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
+                                 cVar13,uVar14,iVar15,iVar16,iVar17);
     /* ST_CALLSITE[005B3EE1]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[2].field_00B9,psVar5,uVar19,uVar21);
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[2].field_00B9,psVar5,uVar18,uVar20);
     pSVar1 = this_01->field_00BB[3].field_00B9.vtable;
-    uVar21 = 0xffffffff;
-    uVar19 = 7;
-    iVar18 = -1;
+    uVar20 = 0xffffffff;
+    uVar18 = 7;
     iVar17 = -1;
-    iVar16 = 1;
-    uVar15 = 0xffffffff;
-    cVar14 = CASE_FFFFFFFE;
+    iVar16 = -1;
+    iVar15 = 1;
+    uVar14 = 0xffffffff;
+    cVar13 = CASE_FFFFFFFE;
     this_01->field_00BB[3].field_0001 = 0x233f;
-    iVar8 = 0x28;
-    iVar12 = 0x8c;
-    puVar4 = (uint *)st::fn_006B0140(0x233f,g_hINSTANCE_00807618);
+    iVar7 = 0x28;
+    iVar11 = 0x8c;
+    pcVar4 = st::fn_006B0140(0x233f,g_hINSTANCE_00807618);
     psVar5 = (short *)st::fn_00713480
-                                (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
-                                 uVar15,iVar16,iVar17,iVar18);
+                                ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
+                                 cVar13,uVar14,iVar15,iVar16,iVar17);
     /* ST_CALLSITE[005B3F31]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[3].field_00B9,psVar5,uVar19,uVar21);
-    uVar21 = 0xffffffff;
-    uVar19 = 7;
-    iVar18 = -1;
-    pSVar1 = this_01->field_00BB[4].field_00B9.vtable;
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[3].field_00B9,psVar5,uVar18,uVar20);
+    uVar20 = 0xffffffff;
+    uVar18 = 7;
     iVar17 = -1;
-    iVar16 = 1;
-    uVar15 = 0xffffffff;
+    pSVar1 = this_01->field_00BB[4].field_00B9.vtable;
+    iVar16 = -1;
+    iVar15 = 1;
+    uVar14 = 0xffffffff;
     this_01->field_00BB[4].field_0001 = 0x2359;
-    cVar14 = CASE_FFFFFFFE;
-    iVar8 = 0x28;
-    iVar12 = 0x8c;
-    puVar4 = (uint *)st::fn_006B0140(0x2359,g_hINSTANCE_00807618);
+    cVar13 = CASE_FFFFFFFE;
+    iVar7 = 0x28;
+    iVar11 = 0x8c;
+    pcVar4 = st::fn_006B0140(0x2359,g_hINSTANCE_00807618);
     psVar5 = (short *)st::fn_00713480
-                                (g_startSystem_0081176C->field_0030,puVar4,iVar12,iVar8,cVar14,
-                                 uVar15,iVar16,iVar17,iVar18);
+                                ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
+                                 cVar13,uVar14,iVar15,iVar16,iVar17);
     /* ST_CALLSITE[005B3F81]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[4].field_00B9,psVar5,uVar19,uVar21);
-    bVar10 = 0;
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[4].field_00B9,psVar5,uVar18,uVar20);
+    bVar9 = 0;
     local_8 = local_8 & 0xffffff00;
     if (this_01->field_009A != 0) {
       do {
-        uVar15 = local_8 & 0xff;
-        bVar10 = bVar10 + 1;
-        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar10));
-        this_01->field_00BB[uVar15].field_000E = 0x200;
-        this_01->field_00BB[uVar15].field_0012 = 0;
-      } while (bVar10 < this_01->field_009A);
+        uVar14 = local_8 & 0xff;
+        bVar9 = bVar9 + 1;
+        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar9));
+        this_01->field_00BB[uVar14].field_000E = 0x200;
+        this_01->field_00BB[uVar14].field_0012 = 0;
+      } while (bVar9 < this_01->field_009A);
     }
     this_01->field_00BB[0].field_0016 = 0x6122;
     this_01->field_00BB[1].field_0016 = 0x611f;
     this_01->field_00BB[2].field_0016 = 0x611f;
     this_01->field_00BB[3].field_0016 = 0x611f;
     this_01->field_00BB[4].field_0016 = 0x6122;
-    puVar13 = &local_24c;
-    memset(puVar13, 0, 0x1fb); /* compiler bulk-zero initialization */
-    puVar13 = (undefined4 *)((byte *)puVar13 + 0x1f8);
-    pSVar9 = this_01->field_00BB[0xc].field_01DC;
+    puVar12 = &local_24c;
+    memset(puVar12, 0, 0x1fb); /* compiler bulk-zero initialization */
+    puVar12 = (undefined4 *)((byte *)puVar12 + 0x1f8);
+    pSVar8 = this_01->field_00BB[0xc].field_01DC;
     local_155 = this_01->field_0008;
     this_01->field_00BB[0].field_001A = 0;
     this_01->field_00BB[1].field_001A = 2;
@@ -1066,19 +1065,19 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
     local_13d = 1;
     local_151 = 2;
     local_14d = 0x6943;
-    this_00 = *(MMsgTy **)(pSVar9 + 0x2e6);
+    this_00 = *(MMsgTy **)(pSVar8 + 0x2e6);
     if (this_00 != nullptr) {
       /* ST_CALLSITE[005B4085]: CALL 0x00401717; direct=00401717 MMsgTy::SetPanel */
       st::fn_00401717(this_00,0,(int)&local_24c,0,0);
     }
     st::fn_006BA9E0(g_dDXContext_0080759C,0xe9,0x14,0x14c,0x18,0);
-    uVar22 = 0;
-    pcVar20 = g_startSystem_0081176C->field_0030;
-    uVar21 = 0xffffffff;
-    uVar15 = 0xfffffffe;
-    pcVar6 = st::fn_006B0140(0x26b0,g_hINSTANCE_00807618);
+    uVar21 = 0;
+    pcVar19 = (ccFntTy *)g_startSystem_0081176C->field_0030;
+    uVar20 = 0xffffffff;
+    uVar14 = 0xfffffffe;
+    pcVar4 = st::fn_006B0140(0x26b0,g_hINSTANCE_00807618);
     /* ST_CALLSITE[005B40D6]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
-    st::fn_00404C2D(this_02,0,0xe9,0x14,0x14c,0x18,pcVar6,uVar15,uVar21,pcVar20,uVar22);
+    st::fn_00404C2D(this_02,0,0xe9,0x14,0x14c,0x18,pcVar4,uVar14,uVar20,pcVar19,uVar21);
   }
   if (param_2 != 0) {
     /* ST_CALLSITE[005B43BE]: CALL 0x004059b1; direct=004059B1 MainMenuTy::PaintMainMenu */
@@ -1091,45 +1090,45 @@ void __thiscall st::fn_005B3D60(MainMenuTy *this,char param_1,int param_2)
   st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
   st::fn_006BA9E0(g_dDXContext_0080759C,0xe9,0x14,0x14c,0x18,0);
   if (this_01->field_1EE3 == '\0') {
-    pcVar20 = g_startSystem_0081176C->field_0030;
+    pcVar19 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     resourceId = 0x26ac;
 LAB_005b4465:
-    uVar22 = 0;
-    uVar21 = 0xffffffff;
-    uVar15 = 0xfffffffe;
-    pcVar6 = st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
+    uVar21 = 0;
+    uVar20 = 0xffffffff;
+    uVar14 = 0xfffffffe;
+    pcVar4 = st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
     /* ST_CALLSITE[005B447B]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
-    st::fn_00404C2D(this_04,0,0xe9,0x14,0x14c,0x18,pcVar6,uVar15,uVar21,pcVar20,uVar22);
+    st::fn_00404C2D(this_04,0,0xe9,0x14,0x14c,0x18,pcVar4,uVar14,uVar20,pcVar19,uVar21);
   }
   else if (this_01->field_1EE3 == '\x01') {
-    pcVar20 = g_startSystem_0081176C->field_0030;
+    pcVar19 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     resourceId = 0x26b0;
     goto LAB_005b4465;
   }
-  uVar22 = DAT_00807dd5 >> 0x10 & 0xff;
-  uVar21 = DAT_00807dd5 & 0xffff;
-  uVar15 = DAT_00807dd5 >> 0x18;
-  pcVar6 = st::fn_006B0140(0x2329,g_hINSTANCE_00807618);
+  uVar21 = DAT_00807dd5 >> 0x10 & 0xff;
+  uVar20 = DAT_00807dd5 & 0xffff;
+  uVar14 = DAT_00807dd5 >> 0x18;
+  pcVar4 = st::fn_006B0140(0x2329,g_hINSTANCE_00807618);
   /* ST_CALLSITE[005B44B9]: CALL dword ptr [0x0085bde8] */
-  st::external_00000080((LPSTR)(this_01->field_00BB[0xc].field_01DC + 0x3c),pcVar6,uVar15,uVar22,uVar21);
-  pSVar9 = this_01->field_00BB[0xc].field_01DC + 0x3c;
+  st::external_00000080((LPSTR)(this_01->field_00BB[0xc].field_01DC + 0x3c),pcVar4,uVar14,uVar21,uVar20);
+  pSVar8 = this_01->field_00BB[0xc].field_01DC + 0x3c;
   /* ST_CALLSITE[005B44E9]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
   st::fn_00404C2D
-            (pSVar9,0,0,0x240,800,0x18,(char *)pSVar9,0xfffffffe,0xffffffff,
+            (pSVar8,0,0,0x240,800,0x18,(char *)pSVar8,0xfffffffe,0xffffffff,
              g_startSystem_0081176C->field_0034,0);
 LAB_005b44f1:
   local_8 = local_8 & 0xffffff00;
   if (this_01->field_009A != 0) {
     do {
-      uVar15 = local_8 & 0xff;
+      uVar14 = local_8 & 0xff;
       /* ST_CALLSITE[005B451C]: CALL dword ptr [0x0085bedc] */
-      DVar7 = st::external_000000DA();
-      this_01->field_00BB[uVar15].field_0028.field_0044 = DVar7;
-      this_01->field_00BB[uVar15].field_0028.field_0040 = uVar15 * 0x96;
-      this_01->field_00BB[uVar15].field_0000 = 1;
-      bVar10 = (char)local_8 + 1;
-      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar10));
-    } while (bVar10 < this_01->field_009A);
+      DVar6 = st::external_000000DA();
+      this_01->field_00BB[uVar14].field_0028.field_0044 = DVar6;
+      this_01->field_00BB[uVar14].field_0028.field_0040 = uVar14 * 0x96;
+      this_01->field_00BB[uVar14].field_0000 = 1;
+      bVar9 = (char)local_8 + 1;
+      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar9));
+    } while (bVar9 < this_01->field_009A);
   }
   this_01->field_0065 = 3;
   st::fn_00404BF1(this_01,1,'\0',-1);
@@ -1356,7 +1355,7 @@ switchD_005b4c27_default:
         st::fn_0040560F(this_00);
         /* ST_CALLSITE[005B4D9B]: CALL dword ptr [EDX + 0x10] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*(int *)this_00->field_000C + 0x10))(0x309,0);
+        (**(code **)(*STField<int *>(this_00,0xC) + 0x10))(0x309,0);
         goto cf_common_exit_005B4EEC;
       }
       if (this_00->field_1EE3 != '\x01') goto cf_common_exit_005B4EEC;

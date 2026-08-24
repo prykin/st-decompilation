@@ -7,6 +7,7 @@
 void __fastcall FUN_00627790(STMineSetC *param_1)
 
 {
+  int iVar1_mg1;
   int iVar1;
   STMessage *pSVar2;
   STMessage local_28;
@@ -21,10 +22,10 @@ void __fastcall FUN_00627790(STMineSetC *param_1)
     local_28.arg0.words.low = *(undefined2 *)&param_1->field_0024;
     local_28.arg0.words.high = param_1->field_0032;
     if ((((AnonShape_005EFAE0_B406B78B *)param_1->field_0241 == nullptr)
-        || (iVar1 = STPlaySystemC::sub_006E62D0
-                              (g_playSystem_00802A38,
-                               (AnonShape_005EFAE0_B406B78B *)param_1->field_0241,&local_8),
-           iVar1 == -4)) || (local_8 == 0)) {
+        || (iVar1_mg1 = STPlaySystemC::sub_006E62D0
+                                  (g_playSystem_00802A38,
+                                   (AnonShape_005EFAE0_B406B78B *)param_1->field_0241,&local_8),
+           iVar1_mg1 == -4)) || (local_8 == 0)) {
       local_28.arg1.words.low = 0xff;
       local_28.arg1.words.high = 0xffff;
     }

@@ -20,7 +20,7 @@ int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
   ccFntTy *pcVar4;
   int uVar12;
   ushort *puVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   DArrayTy *pDVar7;
   DWORD DVar8;
   int iVar9;
@@ -133,7 +133,7 @@ LAB_0052e184:
     pcVar4->field_0x9e = DAT_007c6ff0;
     iVar11 = 1;
     puVar5 = PTR_0080679c + 0x14;
-    uVar12 = FUN_006b4fe0((int)PTR_0080679c);
+    uVar12 = FUN_006b4fe0(PTR_0080679c);
     puVar5 = (ushort *)
              FUN_006b50c0((&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0x11d,(uint)PTR_0080679c[7],
                           uVar12,(undefined4 *)puVar5,iVar11);

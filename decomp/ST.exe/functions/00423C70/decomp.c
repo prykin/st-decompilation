@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  uint uVar2;
   STGameObjC *this_00;
   uint index;
   uint uVar3;

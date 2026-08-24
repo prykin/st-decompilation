@@ -8,7 +8,7 @@
 undefined4 FUN_0040eb90(void)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar3;
   int iVar5;
   int *piVar6;
@@ -37,7 +37,7 @@ undefined4 FUN_0040eb90(void)
   int local_28;
   int local_20;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
   undefined4 *piVar10;

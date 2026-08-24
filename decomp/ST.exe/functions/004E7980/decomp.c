@@ -17,7 +17,7 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,byte param_3)
   int iVar7;
   uint *puVar8;
   int iVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   byte *pbVar11;
   int *piVar12;
   uint **ppuVar13;

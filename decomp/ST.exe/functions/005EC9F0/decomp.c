@@ -6,7 +6,7 @@
 undefined4 FUN_005ec9f0(int param_1)
 
 {
-  undefined1 *this;
+  byte *this;
   int local_EAX_48;
   int iVar2;
   int local_EAX_322;

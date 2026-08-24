@@ -4,8 +4,7 @@
 void __thiscall sub_0041C5A0(void *this)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   if ((g_visibleClass_00802A88 != nullptr) &&
      ((STField<byte>(this,0x1d1) & 1) == 0)) {
     /* ST_CALLSITE[0041C5DE]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */

@@ -2,7 +2,11 @@
 
 
 /* [STPrototypeApplier] Propagated parameter 3.
-   Evidence: 0061CFB0 -> 00568DD0 @ 0061D036 */
+   Evidence: 0061CFB0 -> 00568DD0 @ 0061D036
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall FUN_0061cfb0(void *this,int param_1,int param_2,int soundId)
 

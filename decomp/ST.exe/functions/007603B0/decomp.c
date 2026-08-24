@@ -5,11 +5,11 @@ void FUN_007603b0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *param_3
                  int param_5)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int iVar2;
   int iVar3;
   int iVar4;
-  undefined1 *puVar5;
+  byte *puVar5;
   int iVar6;
   int iVar7;
   int *piVar8;

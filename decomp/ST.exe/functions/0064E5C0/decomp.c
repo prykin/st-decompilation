@@ -15,9 +15,8 @@ FUN_0064e5c0(undefined1 param_1,short param_2,short param_3,undefined4 param_4,i
   undefined2 in_stack_0000000a;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined2 in_stack_0000000e;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   local_c = _param_2;
   local_8 = _param_3;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

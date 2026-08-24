@@ -37,7 +37,7 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
   int iVar7;
   int local_EAX_263;
   int local_EAX_294;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar9;
   int uVar10;
   int local_EAX_683;
@@ -48,7 +48,7 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
   int local_EAX_2277;
   uint uVar11;
   uint uVar12;
-  undefined4 *puVar13;
+  uint *puVar13;
   AnonPointee_TLOBaseTy_0607 *pAVar14;
   int local_14;
   int local_10;

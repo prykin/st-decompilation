@@ -22,7 +22,7 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,shor
             int param_5,int *param_6,short *param_7)
 
 {
-  undefined2 *puVar1;
+  ushort *puVar1;
   byte bVar2;
   byte bVar3;
   byte bVar4;
@@ -34,35 +34,35 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,shor
   int iVar11;
   int iVar14;
   int iVar15;
-  undefined2 uVar9;
+  ushort uVar9;
   int iVar11_mg3;
   int iVar22;
   int iVar12;
   int iVar11_mg0;
-  undefined4 uVar13;
+  uint uVar13;
   short sVar14;
   uint uVar15;
   int iVar16;
   int iVar17;
-  undefined2 uVar18;
+  ushort uVar18;
   short sVar19;
   int iVar20;
   int iVar21;
   int iVar23;
   int iVar24;
-  undefined4 *puVar25;
+  uint *puVar25;
   STWorldObject *this;
   bool bVar26;
   longlong lVar27;
   int *local_120;
   int local_fc;
-  undefined1 *local_f0;
+  byte *local_f0;
   short local_e8 [6];
   int local_dc;
   int local_d8;
   int local_d4;
   int local_d0;
-  undefined1 *local_cc;
+  byte *local_cc;
   int local_c8;
   int local_c4;
   int local_b8;
@@ -92,9 +92,9 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,shor
   short local_26;
   undefined2 local_24;
   short local_20 [2];
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
@@ -404,7 +404,7 @@ LAB_0057a96b:
                     /* ST_CALLSITE[0057A982]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                     if ((bVar26) && (iVar16 = (*this->vtable[5].slots_00_28[2])(this), iVar16 != 0))
                     {
-                      thunk_FUN_00416270(this,(uint *)local_b4,(int *)local_e8,local_20);
+                      thunk_FUN_00416270(this,(uint *)local_b4,local_e8,local_20);
                       iVar14 = thunk_FUN_0057bc50(iVar24,iVar20,local_40,local_8c,local_98,local_a8,
                                                   (int)local_b4[0],(int)local_e8[0],(int)local_20[0]
                                                  );

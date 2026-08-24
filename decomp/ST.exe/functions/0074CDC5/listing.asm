@@ -1,4 +1,4 @@
-FUN_0074cdc5:
+RecoveredClass_0074CDC5::FUN_0074cdc5:
 0074CDC5  56                        PUSH ESI
 0074CDC6  57                        PUSH EDI
 0074CDC7  FF 74 24 18               PUSH dword ptr [ESP + 0x18]

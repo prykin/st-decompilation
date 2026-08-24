@@ -13,7 +13,7 @@ void FUN_007068d0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   int iVar1;
   uint uVar2;
   int iVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   byte bVar5;
   uint uVar6;
   byte *pbVar7;

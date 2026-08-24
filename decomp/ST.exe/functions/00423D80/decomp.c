@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_00423d80(void *this,DArrayTy *groupContent)
 {
   uint uVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   uint index;
   uint uVar4;
   undefined4 local_c;

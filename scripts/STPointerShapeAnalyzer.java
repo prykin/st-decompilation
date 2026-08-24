@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -27,6 +28,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import ghidra.app.decompiler.DecompileResults;
+import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.parallel.DecompilerCallback;
 import ghidra.app.decompiler.parallel.ParallelDecompiler;
 import ghidra.app.script.GhidraScript;
@@ -51,10 +53,13 @@ import ghidra.program.model.listing.Variable;
 import ghidra.program.model.lang.Register;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
+import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.pcode.PcodeOp;
 import ghidra.util.task.TaskMonitor;
 
 public class STPointerShapeAnalyzer extends GhidraScript {
+    private static final String RECOVERED_CLASS_ROOT =
+        "/SubmarineTitans/Recovered/Classes/";
     private static final int DECOMPILE_TIMEOUT = 600;
     private static final int MAX_SHAPE_SIZE = 0x4000;
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
@@ -330,11 +335,36 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 callback, functions, monitor);
             units.removeIf(unit -> unit == null || unit.function == null);
             units.sort(Comparator.comparing(unit -> unit.function.getEntryPoint()));
-            for (Decompiled unit : units) analyzeFunction(unit);
+            for (Decompiled unit : units) {
+                if (unit.error.isBlank()) analyzeFunction(unit);
+                else analyzeFunction(retryDecompile(unit.function, timeout));
+            }
         }
         finally {
             callback.dispose();
         }
+    }
+
+    /** A parallel worker timeout may be resource contention; retry that exact function alone. */
+    private Decompiled retryDecompile(Function function, int timeout) {
+        DecompInterface decompiler = new DecompInterface();
+        decompiler.toggleCCode(true);
+        decompiler.toggleSyntaxTree(true);
+        try {
+            if (!decompiler.openProgram(currentProgram))
+                return new Decompiled(function, "", "serial retry could not open program");
+            DecompileResults result = decompiler.decompileFunction(function, timeout, monitor);
+            if (!result.decompileCompleted() || result.getDecompiledFunction() == null)
+                return new Decompiled(function, "",
+                    "serial retry: " + (result.getErrorMessage() == null ?
+                        "decompile failed" : result.getErrorMessage()));
+            return new Decompiled(function, result.getDecompiledFunction().getC(), "");
+        }
+        catch (Exception exception) {
+            return new Decompiled(function, "", "serial retry exception: " +
+                exception.getMessage());
+        }
+        finally { decompiler.dispose(); }
     }
 
     private void analyzeFunction(Decompiled unit) throws Exception {
@@ -362,6 +392,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         collectTypedReinterpretedAccesses(function, c, locals, stableStorages,
             functionTargets);
         int ownerSpillHints = collectOwnerThisSpills(function, c, locals,
+            stableStorages, functionTargets);
+        int constructorThisHints = collectConstructorThisMachineFields(function, c, locals,
             stableStorages, functionTargets);
         collectNestedAccesses(function, c, locals, stableStorages, functionTargets,
             renderedPointerWidths);
@@ -416,7 +448,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         collectCallTypeEdges(function, c, locals, renderedStructurePointers);
         boolean hasRawAccess = rawAccesses != before;
         if (hasRawAccess) functionsWithRawAccess++;
-        if (!hasRawAccess && ownerSpillHints == 0) return;
+        if (!hasRawAccess && ownerSpillHints == 0 && constructorThisHints == 0) return;
         // A typed helper call can identify sibling locals that are not themselves
         // dereferenced in this particular function (for example, three DArray
         // pointers unpacked from one 12-byte element). Keep them ephemeral until
@@ -1567,6 +1599,217 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         target.functions.add(addr(function.getEntryPoint()));
     }
 
+    /**
+     * Recover an unnamed class shell from the complete machine constructor idiom. Ordinary
+     * auto-this pointers remain excluded from geometry-only shape inference. This exception
+     * requires an exact offset-zero store of a known physical vtable plus at least two other
+     * fixed-width stores through aliases of the unadjusted incoming ECX receiver.
+     */
+    private int collectConstructorThisMachineFields(Function function, String c,
+            Map<String, Variable> locals, Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets) {
+        if (!"__thiscall".equals(function.getCallingConventionName())) return 0;
+        Variable receiver = locals.get("this");
+        if (!(receiver instanceof Parameter parameter) || !parameter.isAutoParameter())
+            return 0;
+        TargetEvidence target = canonicalTarget(function, locals, stableStorages,
+            functionTargets, "this");
+        if (target == null) return 0;
+
+        Set<String> aliases = new HashSet<>();
+        aliases.add("ECX");
+        List<MachineConstructorField> fields = new ArrayList<>();
+        String vtableType = "";
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if ("MOV".equals(mnemonic) && instruction.getNumOperands() >= 2) {
+                String destinationText = instruction.getDefaultOperandRepresentation(0)
+                    .toUpperCase(Locale.ROOT);
+                Matcher memory = MEMORY_REGISTER.matcher(destinationText);
+                if (memory.matches() && aliases.contains(memory.group(1))) {
+                    long offset = memory.group(2) == null ? 0 :
+                        parseUnsigned(memory.group(2));
+                    int width = machineMemoryWidth(destinationText);
+                    if (offset >= 0 && width > 0 && offset + width <= MAX_SHAPE_SIZE) {
+                        String type = offset == 0 ? storedVtableType(instruction) : "";
+                        fields.add(new MachineConstructorField(offset, width, type,
+                            addr(instruction.getAddress()) + " " + instruction));
+                        if (!type.isBlank()) vtableType = type;
+                    }
+                }
+            }
+
+            String destination = registerOperand(instruction, 0);
+            String source = registerOperand(instruction, 1);
+            if ("MOV".equals(mnemonic) && destination != null) {
+                boolean receiverAlias = source != null && aliases.contains(source);
+                aliases.remove(destination);
+                if (receiverAlias) aliases.add(destination);
+            }
+            else if (destination != null && instruction.getResultObjects().length > 0)
+                aliases.remove(destination);
+            if (instruction.getFlowType().isCall())
+                aliases.removeAll(Set.of("EAX", "ECX", "EDX"));
+        }
+        if (vtableType.isBlank() || fields.size() < 3) return 0;
+        target.constructorThisCandidate = true;
+        long requiredExtent = fields.stream().mapToLong(field ->
+            field.offset + field.width).max().orElse(0);
+        target.constructorAllocationExtent = constructorAllocationExtent(function,
+            requiredExtent);
+        target.constructorThisAnchor = target.constructorAllocationExtent > 0;
+        for (MachineConstructorField field : fields)
+            recordField(function, target, field.offset, field.width, field.type,
+                "constructor receiver store " + field.detail);
+        collectConstructorTypedStores(function, c, locals, target, fields);
+        return fields.size();
+    }
+
+    /**
+     * Refine one machine-proven constructor store from an exact typed source parameter.
+     * The decompiler assignment supplies type identity only after the machine scan has
+     * independently proved the same receiver offset and width; it cannot create geometry.
+     */
+    private void collectConstructorTypedStores(Function function, String c,
+            Map<String, Variable> locals, TargetEvidence target,
+            List<MachineConstructorField> machineFields) {
+        if (c == null || c.isEmpty()) return;
+        Map<Long, Integer> widths = new HashMap<>();
+        for (MachineConstructorField field : machineFields)
+            widths.put(field.offset, field.width);
+        Pattern assignment = Pattern.compile(
+            "(?m)^\\s*this\\s*->\\s*field_(?:0[xX])?([0-9A-Fa-f]+)\\s*=\\s*" +
+            "([A-Za-z_$][A-Za-z0-9_$]*)\\s*;\\s*$");
+        Matcher matcher = assignment.matcher(c);
+        while (matcher.find()) {
+            long offset;
+            try { offset = Long.parseUnsignedLong(matcher.group(1), 16); }
+            catch (NumberFormatException ignored) { continue; }
+            if (widths.getOrDefault(offset, -1) !=
+                    currentProgram.getDefaultPointerSize()) continue;
+            Variable source = locals.get(matcher.group(2));
+            if (!(source instanceof Parameter parameter) || parameter.isAutoParameter())
+                continue;
+            String type = typeSpecification(source.getDataType());
+            if (!type.startsWith("pointer:") || structureFromPointer(type) == null) continue;
+            FieldEvidence field = target.fields.get(offset);
+            if (field == null) continue;
+            field.types.merge(type, 1, Integer::sum);
+            field.sites.add(addr(function.getEntryPoint()) +
+                " exact typed constructor store this+0x" +
+                Long.toHexString(offset).toUpperCase(Locale.ROOT) + " <- " +
+                source.getName());
+        }
+    }
+
+    /**
+     * A vptr store proves constructor-like initialization but not the complete object extent:
+     * base constructors and subobject initializers are routinely invoked on larger objects.
+     * Anchor an anonymous class shell only when one direct caller carries an exact allocation
+     * result, unchanged, into ECX and every such observed allocation agrees on one size.
+     */
+    private long constructorAllocationExtent(Function constructor, long requiredExtent) {
+        Set<Long> extents = new TreeSet<>();
+        for (Function caller : constructor.getCallingFunctions(monitor)) {
+            Map<String, Long> aliases = new HashMap<>();
+            Long immediatePush = null;
+            InstructionIterator instructions = currentProgram.getListing()
+                .getInstructions(caller.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+                if ("PUSH".equals(mnemonic)) {
+                    immediatePush = immediateOperand(instruction);
+                    continue;
+                }
+                if (instruction.getFlowType().isCall()) {
+                    Function called = resolveThunk(directCalledFunction(instruction));
+                    if (called != null && called.getEntryPoint().equals(
+                            constructor.getEntryPoint())) {
+                        Long extent = aliases.get("ECX");
+                        if (extent != null) extents.add(extent);
+                    }
+                    if (called != null && immediatePush != null &&
+                            allocationLikeLibraryCall(called, immediatePush)) {
+                        aliases.clear();
+                        aliases.put("EAX", immediatePush);
+                    }
+                    else {
+                        aliases.remove("EAX");
+                        aliases.remove("ECX");
+                        aliases.remove("EDX");
+                    }
+                    immediatePush = null;
+                    continue;
+                }
+                String destination = registerOperand(instruction, 0);
+                String source = registerOperand(instruction, 1);
+                if ("MOV".equals(mnemonic) && destination != null) {
+                    Long extent = source == null ? null : aliases.get(source);
+                    aliases.remove(destination);
+                    if (extent != null) aliases.put(destination, extent);
+                }
+                else if (destination != null && machineWritesFirstOperand(mnemonic))
+                    aliases.remove(destination);
+                if (!"PUSH".equals(mnemonic)) immediatePush = null;
+            }
+        }
+        if (extents.size() != 1) return -1;
+        long extent = extents.iterator().next();
+        return extent >= requiredExtent && extent <= MAX_SHAPE_SIZE ? extent : -1;
+    }
+
+    private Long immediateOperand(Instruction instruction) {
+        if (instruction == null || instruction.getNumOperands() != 1) return null;
+        String value = instruction.getDefaultOperandRepresentation(0).trim();
+        try {
+            long parsed = parseUnsigned(value);
+            return parsed >= 4 && parsed <= MAX_SHAPE_SIZE ? parsed : null;
+        }
+        catch (RuntimeException ignored) { return null; }
+    }
+
+    private boolean allocationLikeLibraryCall(Function function, long extent) {
+        if (extent < 4 || function.getParameterCount() != 1 ||
+                !"__cdecl".equals(function.getCallingConventionName()) ||
+                !function.getName(true).contains("MSVCRT")) return false;
+        Parameter parameter = function.getParameters()[0];
+        DataType type = untypedef(parameter.getFormalDataType());
+        return !(type instanceof Pointer) && parameter.getLength() ==
+            currentProgram.getDefaultPointerSize() && isLibrary(function);
+    }
+
+    private Function directCalledFunction(Instruction instruction) {
+        if (instruction == null) return null;
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(flow);
+            if (function != null) return function;
+        }
+        return null;
+    }
+
+    private String storedVtableType(Instruction instruction) {
+        for (Reference reference : instruction.getOperandReferences(1)) {
+            Data data = currentProgram.getListing().getDefinedDataAt(reference.getToAddress());
+            if (data == null) continue;
+            DataType type = untypedef(data.getDataType());
+            if (type instanceof Structure structure &&
+                    structure.getPathName().contains("/VTables/"))
+                return "pointer:" + structure.getPathName();
+            Symbol symbol = currentProgram.getSymbolTable()
+                .getPrimarySymbol(reference.getToAddress());
+            if (symbol == null || !symbol.getName().startsWith("VTable_")) continue;
+            DataType candidate = dataTypes.getDataType(
+                "/SubmarineTitans/Recovered/VTables/" + symbol.getName());
+            if (candidate instanceof Structure structure)
+                return "pointer:" + structure.getPathName();
+        }
+        return "";
+    }
+
     private void recordPointerField(Function function, TargetEvidence parent, long parentOffset,
             String detail) {
         recordField(function, parent, parentOffset, currentProgram.getDefaultPointerSize(),
@@ -1706,12 +1949,17 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 local.getVariableStorage().toString();
             if (storage.isBlank()) return null;
             String key = addr(function.getEntryPoint()) + "|" + kind + "|" + storage;
-            return new TargetEvidence(key, kind, function.getEntryPoint(),
+            TargetEvidence result = new TargetEvidence(key, kind, function.getEntryPoint(),
                 function.getName(true), name, storage, typeSpecification(local.getDataType()),
                 source, scriptOwnedPointer(comment) ||
                     !protectedSource(local.getSource()) &&
                     generatedOwnedPointer(local.getDataType()), typeFamilyOwned(comment),
                 stableStorages.contains(storage));
+            Matcher lifetime = Pattern.compile(
+                "\\[STLocalLifetimeApplier\\][^\\r\\n]*\\btype=([^;\\s]+)")
+                .matcher(comment);
+            if (lifetime.find()) result.lifetimeBaselineType = lifetime.group(1);
+            return result;
         }
         List<Symbol> matches = currentProgram.getSymbolTable().getGlobalSymbols(name);
         Symbol symbol = null;
@@ -2481,6 +2729,29 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 "typed-call evidence is variant-specific and must not become one persistent type");
 
         String currentStructure = pointedStructure(target.expectedType);
+        String recoveredConstructorPath = target.functionAddress == null ? "" :
+            RECOVERED_CLASS_ROOT + "RecoveredClass_" + addr(target.functionAddress);
+        boolean recoveredConstructorOwned =
+            recoveredConstructorPath.equals(currentStructure) &&
+            generatedRecoveredConstructorOwned(currentStructure);
+        if (target.constructorThisCandidate && !target.constructorThisAnchor &&
+                recoveredConstructorOwned)
+            return new TargetDecision(true, false, "/void", "repair",
+                "script-owned anonymous class shell removed: vptr initialization is real, " +
+                "but no unique exact allocation extent reaches this constructor-like receiver");
+        if (target.scriptOwned && target.expectedType.startsWith("pointer:") &&
+                !target.lifetimeBaselineType.isBlank() &&
+                !target.lifetimeBaselineType.startsWith("pointer:") &&
+                target.lifetimeBaselineType.startsWith("/"))
+            return new TargetDecision(true, false,
+                "scalar:" + target.lifetimeBaselineType, "repair",
+                "later pointer-shape typing conflicted with the address-stable " +
+                "STLocalLifetimeApplier scalar baseline");
+        if (!target.expectedType.startsWith("pointer:") &&
+                target.expectedType.equals(target.lifetimeBaselineType))
+            return new TargetDecision(false, false, "", "existing",
+                "address-stable STLocalLifetimeApplier scalar baseline retained; " +
+                "later fixed-offset spelling does not license a persistent pointer type");
         if (!target.directThisOwner.isBlank() && target.scriptOwned &&
                 target.databaseBacked && !target.directThisOwner.equals(currentStructure)) {
             Structure owner = structureFromPointer("pointer:" + target.directThisOwner);
@@ -2493,10 +2764,24 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         }
         boolean generatedAnonymous = !currentStructure.isBlank() && target.scriptOwned &&
             generatedRefinablePath(currentStructure);
+        boolean currentRecoveredConstructor =
+            recoveredConstructorPath.equals(currentStructure);
+        if (currentRecoveredConstructor && target.constructorThisAnchor) {
+            if (!validFields(target)) return new TargetDecision(false, false,
+                currentStructure, "review",
+                "constructor allocation extent is exact but field widths conflict");
+            boolean apply = automaticTarget(target);
+            return new TargetDecision(apply, true, currentStructure,
+                apply ? "layout" : "review",
+                "exact unadjusted ECX receiver stores a known physical vtable at offset zero " +
+                "and one direct allocator chain proves the complete constructor extent=" +
+                target.constructorAllocationExtent);
+        }
         TargetDecision commonReceiver = commonReceiverBoundaryDecision(target,
             currentStructure);
         if (commonReceiver != null) return commonReceiver;
-        if (!currentStructure.isBlank() && !generatedAnonymous)
+        if (!currentStructure.isBlank() && !generatedAnonymous &&
+                !currentRecoveredConstructor)
             return new TargetDecision(false, false, currentStructure, "existing",
                 "target already has a named/manual structure pointer type");
 
@@ -2613,6 +2898,21 @@ public class STPointerShapeAnalyzer extends GhidraScript {
 
         if (!validFields(target)) return new TargetDecision(false, false, "", "review",
             "conflicting or invalid access widths");
+
+        if (target.constructorThisAnchor) {
+            String path = RECOVERED_CLASS_ROOT + "RecoveredClass_" +
+                addr(target.functionAddress);
+            boolean multiField = target.fields.size() >= 3 && target.accessCount >= 3;
+            boolean replaceable = replaceable(target.expectedType) || target.scriptOwned ||
+                path.equals(pointedStructure(target.expectedType));
+            boolean apply = multiField && replaceable && automaticTarget(target);
+            return new TargetDecision(apply, true, path,
+                apply ? "layout" : "review",
+                "exact unadjusted ECX receiver stores a known physical vtable at offset zero " +
+                "and one direct allocator chain proves the complete constructor extent=" +
+                target.constructorAllocationExtent +
+                (!replaceable ? "; concrete receiver type preserved" : ""));
+        }
 
         // Older STTypeFamilyAnalyzer versions merged anonymous structures on
         // offset/width geometry alone. That is not a type identity: unrelated
@@ -3130,6 +3430,15 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 description.contains("generated_layout_sha256=");
     }
 
+    private boolean generatedRecoveredConstructorOwned(String path) {
+        if (path == null || !path.startsWith(RECOVERED_CLASS_ROOT)) return false;
+        Structure structure = structureFromPointer("pointer:" + path);
+        if (structure == null) return false;
+        String description = structure.getDescription();
+        return description != null && description.contains(APPLIER_MARKER) &&
+            description.contains("generated_layout_sha256=");
+    }
+
     private boolean anonymousOnlyTypeEvidence(TargetEvidence target) {
         for (String specification : target.typeEvidence.keySet()) {
             Structure structure = structureFromPointer(specification);
@@ -3583,6 +3892,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private int proposalLength(TargetEvidence target, TargetDecision decision) {
+        if (target.constructorThisAnchor && target.constructorAllocationExtent > 0)
+            return (int)target.constructorAllocationExtent;
         int observed = shapeLength(target);
         DataType existing = dataTypes.getDataType(decision.typePath);
         return existing instanceof Structure structure ?
@@ -4077,8 +4388,10 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         final Map<String, Set<String>> incomingNamedTypes = new TreeMap<>();
         final Set<String> typeSites = new TreeSet<>();
         final Set<String> functions = new TreeSet<>();
-        boolean discriminatedPayload, callResultView, scaledPointerEvidence;
-        String directThisOwner = "";
+        boolean discriminatedPayload, callResultView, scaledPointerEvidence,
+            constructorThisCandidate, constructorThisAnchor;
+        String directThisOwner = "", lifetimeBaselineType = "";
+        long constructorAllocationExtent = -1;
         int accessCount, dArrayIndexEvidence, genericPointerConsumers;
         TargetEvidence(String key, String kind, Address functionAddress, String functionName,
                 String name, String locator, String expectedType, String expectedSource,
@@ -4113,6 +4426,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private record MachineNestedValue(MachineMemberPointer member, long childOffset) {}
     private record MachineMemory(String baseRegister, long displacement, boolean fixed,
         Set<String> registers, int width) {}
+    private record MachineConstructorField(long offset, int width, String type,
+        String detail) {}
     private record IndexedMember(String baseName, String indexText, long index,
         String memberName, long memberOffset, long absoluteOffset,
         TargetEvidence target, Structure owner) {
@@ -4206,7 +4521,10 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             this.functionName = target.functionName; this.kind = target.kind;
             this.name = target.name; this.locator = target.locator;
             this.expectedType = target.expectedType; this.expectedSource = target.expectedSource;
-            this.proposedType = decision.typePath.isBlank() ? "" : "pointer:" + decision.typePath;
+            this.proposedType = decision.typePath.isBlank() ? "" :
+                decision.typePath.startsWith("scalar:") ?
+                    decision.typePath.substring("scalar:".length()) :
+                    "pointer:" + decision.typePath;
             this.accessCount = target.accessCount; this.fieldCount = target.fields.size();
             this.confidence = decision.confidence;
             this.typeEvidence = target.typeEvidence.toString();

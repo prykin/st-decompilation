@@ -3,21 +3,25 @@
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 00749106 -> EXTERNAL:00000019 @ 0074914E | 00749106 -> EXTERNAL:00000019 @ 00749164 |
-   00749106 -> EXTERNAL:00000019 @ 0074917C | 00749106 -> EXTERNAL:00000019 @ 007491B4 */
+   00749106 -> EXTERNAL:00000019 @ 0074917C | 00749106 -> EXTERNAL:00000019 @ 007491B4
 
-undefined4
-FUN_00749106(AnonShape_00749106_79800343 *param_1,LPCRITICAL_SECTION lpCriticalSection,
-            undefined4 *param_3)
+   [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=1, ignored=0, unknown=0 */
+
+int FUN_00749106(AnonShape_00749106_79800343 *param_1,LPCRITICAL_SECTION lpCriticalSection,
+                undefined4 *param_3)
 
 {
   LONG LVar1;
   PRTL_CRITICAL_SECTION_DEBUG p_Var2;
   HANDLE pvVar3;
-  undefined4 uVar4;
+  int iVar4;
   LPCRITICAL_SECTION lpCriticalSection_00;
 
   if ((lpCriticalSection == (LPCRITICAL_SECTION)0x0) || (param_3 == nullptr)) {
-    uVar4 = 0x80004003;
+    iVar4 = -0x7fffbffd;
   }
   else {
     lpCriticalSection_00 =
@@ -48,26 +52,26 @@ FUN_00749106(AnonShape_00749106_79800343 *param_1,LPCRITICAL_SECTION lpCriticalS
           param_1->field_0040 = 1;
           /* ST_CALLSITE[007491B4]: CALL dword ptr [0x0085bb90] */
           LeaveCriticalSection(lpCriticalSection_00);
-          uVar4 = 0;
+          iVar4 = 0;
         }
         else {
           /* ST_CALLSITE[0074917C]: CALL dword ptr [0x0085bb90] */
           LeaveCriticalSection(lpCriticalSection_00);
-          uVar4 = 0x80040210;
+          iVar4 = -0x7ffbfdf0;
         }
       }
       else {
         /* ST_CALLSITE[00749164]: CALL dword ptr [0x0085bb90] */
         LeaveCriticalSection(lpCriticalSection_00);
-        uVar4 = 0x8004020f;
+        iVar4 = -0x7ffbfdf1;
       }
     }
     else {
       /* ST_CALLSITE[0074914E]: CALL dword ptr [0x0085bb90] */
       LeaveCriticalSection(lpCriticalSection_00);
-      uVar4 = 0x8004020e;
+      iVar4 = -0x7ffbfdf2;
     }
   }
-  return uVar4;
+  return iVar4;
 }
 

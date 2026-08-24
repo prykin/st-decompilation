@@ -14,7 +14,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00493610::FUN_00493610
 {
   short sVar1;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar4;
   short sVar5;
   int iVar6;

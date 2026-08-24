@@ -15,7 +15,7 @@ sub_00415B30(void *this,short param_1,short param_2,short param_3,short param_4,
   short sVar7;
   int iVar8;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

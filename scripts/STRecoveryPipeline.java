@@ -259,6 +259,7 @@ public class STRecoveryPipeline extends GhidraScript {
             switch (options.mode) {
                 case "core" -> { runCore(); recordEvidence(); }
                 case "deep" -> { runDeep(); recordEvidence(); }
+                case "abi-refresh" -> { runAbiRefresh(); recordEvidence(); }
                 case "full" -> { runCore(); runDeep(); recordEvidence(); }
                 case "export" -> finalizeAndExport();
                 case "full-export" -> {
@@ -459,6 +460,39 @@ public class STRecoveryPipeline extends GhidraScript {
         // structural/type fixed points, when exact call/copy anchors are strongest.
         runLocalLifetimeFixpoint();
         runTypeLifecycleFixpoint();
+    }
+
+    /**
+     * Bounded ABI-only fixed point for analyzer changes which affect function boundaries and
+     * decompiler SSA lifetimes but do not require broad layout/ownership rediscovery. This is a
+     * first-class pipeline mode rather than an ad-hoc script list: every pass keeps the normal
+     * proposal/applier transactions, convergence accounting, ABI gate and evidence ledger.
+     */
+    private void runAbiRefresh() throws Exception {
+        section("ABI prototype and return refresh");
+        boolean converged = false;
+        for (int pass = 1; pass <= MAX_DEEP_PASSES; pass++) {
+            int changed = pair("STAbiConsistencyAnalyzer.java",
+                "STAbiConsistencyApplier.java", "abi_consistency_proposals.tsv",
+                "abi_consistency_apply_report.tsv");
+            changed += pair("STReturnSemanticsAnalyzer.java",
+                "STReturnSemanticsApplier.java", "return_semantics_proposals.tsv",
+                "return_semantics_apply_report.tsv");
+            changed += runPrototypeCycle();
+            runAbiRegressionGate("abi-refresh-pass-" + pass);
+            println("ABI refresh pass " + pass + ": mutating rows=" + changed);
+            if (changed == 0) {
+                converged = true;
+                break;
+            }
+        }
+        if (!converged)
+            throw new IllegalStateException("ABI refresh did not reach a fixed point in " +
+                MAX_DEEP_PASSES + " passes; inspect prototype, return-semantics and " +
+                "ABI-consistency apply reports under " + recoveryProgram);
+
+        runLocalLifetimeFixpoint();
+        runAbiRegressionGate("abi-refresh-final");
     }
 
     private void runExport() throws Exception {
@@ -2214,6 +2248,7 @@ public class STRecoveryPipeline extends GhidraScript {
                 "Core structural refresh",
                 "Full automatic recovery",
                 "Deep propagation only",
+                "ABI prototype and return refresh",
                 "Export corpus only",
                 "Full recovery and export");
             String selected = askChoice("Submarine Titans recovery pipeline",
@@ -2223,6 +2258,7 @@ public class STRecoveryPipeline extends GhidraScript {
                 case "Core structural refresh" -> "core";
                 case "Full automatic recovery" -> "full";
                 case "Deep propagation only" -> "deep";
+                case "ABI prototype and return refresh" -> "abi-refresh";
                 case "Export corpus only" -> "export";
                 case "Full recovery and export" -> "full-export";
                 default -> throw new IllegalArgumentException("Unknown selection " + selected);
@@ -2235,9 +2271,11 @@ public class STRecoveryPipeline extends GhidraScript {
     private String normalizeMode(String value) {
         String mode = value.toLowerCase(Locale.ROOT).replace('_', '-');
         if (mode.equals("auto")) return "full";
-        if (Set.of("core", "deep", "full", "export", "full-export").contains(mode))
+        if (Set.of("core", "deep", "abi-refresh", "full", "export", "full-export")
+                .contains(mode))
             return mode;
-        throw new IllegalArgumentException("Mode must be core, deep, full, export, or full-export");
+        throw new IllegalArgumentException("Mode must be core, deep, abi-refresh, full, " +
+            "export, or full-export");
     }
 
     private Path inferredRepository() {

@@ -14,7 +14,7 @@ undefined4 STAllPlayersC::PushTV(char param_1,int param_2,int param_3,char param
   DArrayTy *array;
   dword dVar1;
   int iVar3;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   uint index;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

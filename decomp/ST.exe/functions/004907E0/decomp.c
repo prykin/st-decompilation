@@ -5,11 +5,10 @@ void __thiscall FUN_004907e0(void *this,short *param_1,short *param_2,short *par
 
 {
   short sVar1;
-  undefined4 uVar2;
-  undefined4 *puVar3;
+  uint uVar2;
+  uint *puVar3;
   undefined4 local_14 [2];
-  undefined4 local_c;
-
+  uint local_c;
   local_c = (uint)STField<ushort>(this,0x2a6);
   puVar3 = thunk_FUN_0041dc40(local_14,STField<ushort>(this,0x2a6),STField<ushort>(this,0x2aa)
                               ,STField<short>(this,0x6c));

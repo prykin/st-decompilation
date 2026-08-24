@@ -13,6 +13,7 @@ STPlaySystemC::CreateGameObject
 {
   STPlaySystemC *this_00;
   int iVar2;
+  int iVar4_mg2;
   int iVar4;
   int local_EAX_203;
   int iVar3;
@@ -26,8 +27,8 @@ STPlaySystemC::CreateGameObject
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 == 0) {
-    iVar4 = thunk_FUN_0054cbb0(param_1,(undefined4 *)local_8);
-    if (iVar4 != 0) {
+    iVar4_mg2 = thunk_FUN_0054cbb0(param_1,(undefined4 *)local_8);
+    if (iVar4_mg2 != 0) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xef);
     }

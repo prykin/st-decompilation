@@ -13,7 +13,7 @@ void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
   PopUpTy *this_00;
   byte bVar4;
   int iVar5;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *resourceString;
   int uVar9;
   int iVar6;

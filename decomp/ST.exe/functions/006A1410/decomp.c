@@ -10,13 +10,13 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
             undefined4 param_7)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   uint *puVar2;
   int iVar3;
   int iVar4;
   uint local_14;
   uint local_10;
-  undefined4 local_c;
+  uint local_c;
   undefined2 local_8;
 
   local_c = 0;

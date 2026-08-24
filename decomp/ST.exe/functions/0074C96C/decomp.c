@@ -4,33 +4,36 @@
 undefined4 __thiscall FUN_0074c96c(void *this,int param_1)
 
 {
-  void *pvVar1;
-  undefined4 *puVar2;
-  undefined4 uVar3;
+  RecoveredClass_0074CDC5 *this_00;
+  uint *puVar1;
+  RecoveredClass_0074CFC0 *pRVar2;
+  uint uVar3;
   undefined4 local_8;
 
   local_8 = 0;
   if (STField<int>(this,0x8c) == 0) {
-    pvVar1 = (void *)Library::MSVCRT::FUN_0072e530(0xe8);
-    if (pvVar1 == nullptr) {
-      puVar2 = nullptr;
+    this_00 = (RecoveredClass_0074CDC5 *)Library::MSVCRT::FUN_0072e530(0xe8);
+    if (this_00 == nullptr) {
+      puVar1 = nullptr;
     }
     else {
-      puVar2 = FUN_0074cdc5(pvVar1,0,(int)this,&local_8,(char *)"Input");
+      puVar1 = RecoveredClass_0074CDC5::FUN_0074cdc5
+                         (this_00,0,(int)this,&local_8,(char *)"Input");
     }
-    STField<undefined4 *>(this,0x8c) = puVar2;
-    if (puVar2 == nullptr) goto LAB_0074c9fe;
+    STField<undefined4 *>(this,0x8c) = puVar1;
+    if (puVar1 == nullptr) goto LAB_0074c9fe;
   }
   if (STField<int>(this,0x90) == 0) {
-    pvVar1 = (void *)Library::MSVCRT::FUN_0072e530(0xb0);
-    if (pvVar1 == nullptr) {
-      puVar2 = nullptr;
+    pRVar2 = (RecoveredClass_0074CFC0 *)Library::MSVCRT::FUN_0072e530(0xb0);
+    if (pRVar2 == nullptr) {
+      pRVar2 = nullptr;
     }
     else {
-      puVar2 = FUN_0074cfc0(pvVar1,0,(int)this,&local_8,(char *)"Output");
+      pRVar2 = RecoveredClass_0074CFC0::FUN_0074cfc0
+                         (pRVar2,0,(int)this,&local_8,(char *)"Output");
     }
-    STField<undefined4 *>(this,0x90) = puVar2;
-    if (puVar2 == nullptr) {
+    STField<RecoveredClass_0074CFC0 *>(this,0x90) = pRVar2;
+    if (pRVar2 == nullptr) {
       if (STField<int *>(this,0x8c) != nullptr) {
         /* ST_CALLSITE[0074C9F5]: CALL dword ptr [EAX + 0xc] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

@@ -19,7 +19,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
   FSGSTy_field_1EA6DArray *array;
   FSGSTy_field_1EAADArray *pFVar5;
   DArrayTy *pDVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar14;
   int iVar8;
   byte *puVar9;
@@ -155,7 +155,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     }
     iVar8 = 1;
     puVar13 = this_00->field_005D + 0x14;
-    uVar6_mg0 = FUN_006b4fe0((int)this_00->field_005D);
+    uVar6_mg0 = FUN_006b4fe0(this_00->field_005D);
     local_EAX_212 =
          FUN_006b50c0(0x1bf,0x175,(uint)this_00->field_005D[7],uVar6_mg0,(undefined4 *)puVar13,iVar8
                      );

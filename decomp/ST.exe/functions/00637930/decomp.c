@@ -10,7 +10,7 @@ void __cdecl
 FUN_00637930(uint param_1,int param_2,int param_3,int param_4,int param_5,uint param_6,int param_7)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   ushort *puVar2;
   uint local_8;
 

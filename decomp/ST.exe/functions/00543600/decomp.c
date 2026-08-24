@@ -8,7 +8,7 @@
 void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   CursorClassTy *this_00;
   int local_EAX_34;
   ushort *local_EAX_157;
@@ -46,7 +46,7 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
     local_8 = cMf32::RecGet(g_cMf32_00806780,1,"CURSOR_PAL",nullptr,1);
     puVar5 = local_8 + 0x14;
     iVar6 = 1;
-    uVar3 = FUN_006b4fe0((int)local_8);
+    uVar3 = FUN_006b4fe0(local_8);
     puVar5 = (ushort *)FUN_006b50c0(800,0x96,(uint)local_8[7],uVar3,(undefined4 *)puVar5,iVar6);
     this_00->field_04D2 = puVar5;
     cMf32::RecMemFree(g_cMf32_00806780,(uint *)&local_8);

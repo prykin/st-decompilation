@@ -21,7 +21,7 @@ STAllPlayersC::GetCamPoint
   dword dVar1;
   int iVar3;
   int iVar7;
-  undefined4 uVar4;
+  uint uVar4;
   STGameObjC *pSVar5;
   ushort uVar6;
   int iVar8;

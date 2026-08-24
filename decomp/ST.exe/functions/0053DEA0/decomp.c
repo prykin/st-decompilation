@@ -36,7 +36,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   UPanelTy *pUVar2;
   int iVar3;
   int iVar4;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar5;
   int *piVar6;
   int local_1d0 [4];
@@ -140,7 +140,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     }
     /* ST_CALLSITE[0053E0B9]: CALL dword ptr [EAX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)pUVar2->field_000C + 8))(2,&local_c,0,local_1d0,0);
+    (**(code **)(*STField<int *>(pUVar2,0xC) + 8))(2,&local_c,0,local_1d0,0);
     g_currentExceptionFrame = local_54.previous;
     return local_c;
   }

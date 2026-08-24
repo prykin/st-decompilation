@@ -14,15 +14,15 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
   ushort *puVar3;
   int iVar6;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar7;
   uint uVar8;
   byte bVar9;
   int iVar10;
   UINT UVar11;
-  undefined4 uVar12;
-  undefined4 uVar13;
-  undefined4 *puVar14;
+  uint uVar12;
+  uint uVar13;
+  uint *puVar14;
   InternalExceptionFrame local_4c;
   UpgPanelTy *local_8;
 

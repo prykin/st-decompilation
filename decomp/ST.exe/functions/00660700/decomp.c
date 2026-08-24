@@ -12,7 +12,7 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
   STGroupBoatC *this_01;
   short sVar3;
   undefined4 local_14;
-  undefined4 local_10;
+  uint local_10;
   short local_c;
   short sStack_a;
   short local_8;

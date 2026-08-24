@@ -28,7 +28,7 @@ void __thiscall CPanelTy::Update4PanelSI(CPanelTy *this)
   uint uVar8;
   byte *pbVar9;
   char *pcVar18;
-  undefined4 uVar10;
+  uint uVar10;
   uint uVar11;
   int iVar13;
   char cVar12;

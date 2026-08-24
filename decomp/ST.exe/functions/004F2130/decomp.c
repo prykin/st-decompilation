@@ -9,7 +9,11 @@
    0x1c]; first-use mask
    [STAbiConsistencyApplier] stack_parameter_width target=parameter:7: parameter=/ushort Evidence:
    entry-use width=/ushort; unmasked_dword_reads=0; evidence=004F2269 MOV EDX,dword ptr [EBP +
-   0x20]; first-use mask */
+   0x20]; first-use mask
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 CPanelTy::PaintCostsXY

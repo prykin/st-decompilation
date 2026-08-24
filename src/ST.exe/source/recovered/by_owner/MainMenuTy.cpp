@@ -29,7 +29,7 @@ void __thiscall st::fn_005B47E0(MainMenuTy *this)
       this->field_0031 = 1;
       /* ST_CALLSITE[005B4823]: CALL dword ptr [EAX + 0x18] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)this->field_000C + 0x18))(&this->field_0x1d);
+      (**(code **)(*STField<int *>(this,0xC) + 0x18))(&this->field_0x1d);
     }
     puVar1 = puVar1 + 1;
     local_8 = local_8 + -1;
@@ -65,7 +65,7 @@ void __thiscall st::fn_005B4860(MainMenuTy *this)
       this->field_0031 = 0;
       /* ST_CALLSITE[005B48A3]: CALL dword ptr [EAX + 0x18] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)this->field_000C + 0x18))(&this->field_0x1d);
+      (**(code **)(*STField<int *>(this,0xC) + 0x18))(&this->field_0x1d);
     }
     puVar1 = puVar1 + 1;
     local_8 = local_8 + -1;

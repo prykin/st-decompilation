@@ -13,7 +13,7 @@ STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param
   int errorCode;
   STGameObjC *pSVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   uint index;
   InternalExceptionFrame local_50;
   STGroupBoatC *local_c;

@@ -20,7 +20,7 @@ STRubbishC::LoadImagSpr
   int iVar2;
   int iVar4;
   int iVar3;
-  undefined4 uVar5;
+  uint uVar5;
   InternalExceptionFrame local_5c;
   undefined4 local_18;
   STT3DSprC *local_14;

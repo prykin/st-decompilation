@@ -20,8 +20,8 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
   int iVar7;
   int iVar9;
   uint uVar10;
-  undefined4 uVar11;
-  undefined4 *puVar12;
+  uint uVar11;
+  uint *puVar12;
   bool bVar13;
   int *piVar14;
   int local_2e8 [11];
@@ -76,7 +76,7 @@ void __thiscall st::fn_004EEA40(BldBoatPanelTy *this)
   puVar12 = &local_1c->field_027A;
   do {
     pDVar3 = st::fn_006AE290(nullptr,10,0x30,5);
-    *puVar12 = st::machine_word_boundary_cast<undefined4>(pDVar3);
+    *puVar12 = st::machine_word_boundary_cast<uint>(pDVar3);
     puVar12 = puVar12 + 1;
     iVar9 = iVar9 + -1;
   } while (iVar9 != 0);
@@ -185,7 +185,7 @@ switchD_004eed0b_default:
   local_44 = local_64;
   /* ST_CALLSITE[004EEDB2]: CALL dword ptr [EDX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
+  (**(code **)(*STField<int *>(this_00,0xC) + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }
@@ -369,7 +369,7 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
   ushort uVar3;
   int iVar4;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   int iVar6;
   int iVar7;
   InternalExceptionFrame local_58;

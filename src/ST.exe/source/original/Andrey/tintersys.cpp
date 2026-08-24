@@ -13,18 +13,18 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
   bool bVar2;
   InterSystemC *this_00;
   int iVar3;
-  ccFntTy *pcVar3;
-  int iVar5;
-  LPSTR pCVar6;
-  ushort *puVar7;
+  HDC pHVar3;
+  LPSTR pCVar4;
+  ushort *puVar5;
   char *text;
   int iVar4;
-  undefined4 uVar9;
-  uint uVar10;
-  byte bVar11;
+  int iVar6;
+  uint uVar8;
+  uint uVar9;
+  byte bVar10;
+  int iVar11;
   int iVar12;
-  int iVar13;
-  undefined4 *puVar14;
+  uint *puVar13;
   InternalExceptionFrame local_1c8;
   uint local_184 [4];
   undefined4 local_174;
@@ -60,49 +60,49 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
   this_00 = local_8;
   if (iVar3 == 0) {
     if (DAT_0080874e == '\x01') {
-      pcVar3 = (ccFntTy *)st::fn_00403D37(PTR_0080679c,nullptr,DAT_00807dd9);
+      pHVar3 = st::fn_00403D37(PTR_0080679c,nullptr,DAT_00807dd9);
     }
     else if (DAT_0080874e == '\x02') {
-      pcVar3 = (ccFntTy *)st::fn_0040474B(PTR_0080679c,nullptr,DAT_00807dd9);
+      pHVar3 = st::fn_0040474B(PTR_0080679c,nullptr,DAT_00807dd9);
     }
     else {
-      pcVar3 = (ccFntTy *)st::fn_0040178A(PTR_0080679c,nullptr,DAT_00807dd9);
+      pHVar3 = st::fn_0040178A(PTR_0080679c,nullptr,DAT_00807dd9);
     }
-    this_00->field_0024 = pcVar3;
-    pcVar3->field_0058 = 1;
-    pcVar3->field_005C = 0;
-    pcVar3 = (ccFntTy *)st::fn_004046F1(PTR_0080679c,nullptr,DAT_00807dd9);
-    this_00->field_0028 = pcVar3;
-    pcVar3->field_0058 = 0;
-    pcVar3->field_005C = 0;
-    iVar5 = st::fn_0040267B((int)PTR_0080679c,nullptr,DAT_00807dd9);
-    this_00->field_002C = iVar5;
-    *(undefined4 *)(iVar5 + 0x58) = 1;
-    *(undefined4 *)(iVar5 + 0x5c) = 0;
-    iVar5 = st::fn_004024FF((int)PTR_0080679c,nullptr,DAT_00807dd9);
-    this_00->field_0030 = iVar5;
-    *(undefined4 *)(iVar5 + 0x58) = 1;
-    *(undefined4 *)(iVar5 + 0x5c) = 0;
+    this_00->field_0024 = pHVar3;
+    pHVar3[0x16].unused = 1;
+    pHVar3[0x17].unused = 0;
+    pHVar3 = st::fn_004046F1(PTR_0080679c,nullptr,DAT_00807dd9);
+    this_00->field_0028 = pHVar3;
+    pHVar3[0x16].unused = 0;
+    pHVar3[0x17].unused = 0;
+    pHVar3 = st::fn_0040267B((int)PTR_0080679c,nullptr,DAT_00807dd9);
+    this_00->field_002C = pHVar3;
+    pHVar3[0x16].unused = 1;
+    pHVar3[0x17].unused = 0;
+    pHVar3 = st::fn_004024FF((int)PTR_0080679c,nullptr,DAT_00807dd9);
+    this_00->field_0030 = pHVar3;
+    pHVar3[0x16].unused = 1;
+    pHVar3[0x17].unused = 0;
     st::fn_004021C6();
     memset(local_184, 0, 0x17c); /* compiler bulk-zero initialization */
-    puVar14 = nullptr;
-    iVar13 = 0;
-    iVar12 = 1;
-    bVar11 = 0;
-    uVar10 = 0xffffffff;
-    uVar9 = 0;
-    iVar5 = 1;
+    puVar13 = nullptr;
+    iVar12 = 0;
+    iVar11 = 1;
+    bVar10 = 0;
+    uVar9 = 0xffffffff;
+    uVar8 = 0;
+    iVar6 = 1;
     local_184[1] = 1;
     local_184[0] = 1;
-    pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_FILEOPT"),0);
-    pCVar6 = st::fn_006F2C00(pCVar6,iVar5,uVar9);
-    puVar7 = st::fn_00709AF0
-                       (PTR_00806794,CASE_1,pCVar6,uVar10,bVar11,iVar12,iVar13,puVar14);
+    pCVar4 = st::fn_0040577C(st::mutable_c_string("BUT_FILEOPT"),0);
+    pCVar4 = st::fn_006F2C00(pCVar4,iVar6,uVar8);
+    puVar5 = st::fn_00709AF0
+                       (PTR_00806794,CASE_1,pCVar4,uVar9,bVar10,iVar11,iVar12,puVar13);
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 5) + 0x26;
-    local_174 = *(undefined4 *)(puVar7 + 2);
+    local_174 = *(undefined4 *)(puVar5 + 2);
     local_164 = this_00->field_0014;
     local_184[3] = (DAT_0080874e != '\x03') + 7;
-    local_170 = *(undefined4 *)(puVar7 + 4);
+    local_170 = *(undefined4 *)(puVar5 + 4);
     local_e0 = 0x101;
     local_104 = 0x101;
     local_dc = 3;
@@ -154,12 +154,12 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_184),1);
     if ((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
        (DAT_0080874f == '\0')) {
-      bVar11 = 1;
+      bVar10 = 1;
     }
     else {
-      bVar11 = 0;
+      bVar10 = 0;
     }
-    local_184[0] = (uint)bVar11;
+    local_184[0] = (uint)bVar10;
     local_d0 = 0x2719;
     local_f4 = 0x2719;
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 2) + 0x128;
@@ -274,9 +274,9 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
     }
     st::fn_004021C6();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != nullptr)) {
-      uVar10 = 8;
+      uVar9 = 8;
       text = st::fn_006B0140(0x4275,g_hINSTANCE_00807618);
-      st::fn_004014D8(g_popUp_008016D8,text,uVar10);
+      st::fn_004014D8(g_popUp_008016D8,text,uVar9);
     }
     g_currentExceptionFrame = local_1c8.previous;
     return 0;
@@ -296,7 +296,11 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\tintersys.cpp
    Diagnostic line evidence: 202 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void st::fn_00542D80(void)
 
@@ -363,7 +367,7 @@ int __thiscall st::fn_00542F40(InterSystemC *this,STMessage *message)
   int iVar3;
   uint uVar3;
   LPSTR pCVar4;
-  undefined4 uVar5;
+  uint uVar5;
   BITMAPINFO *pBVar6;
   int iVar12;
   char *text;
@@ -373,7 +377,7 @@ int __thiscall st::fn_00542F40(InterSystemC *this,STMessage *message)
   int *piVar10;
   int iVar11;
   int iVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
   InternalExceptionFrame local_50;
   tagBITMAPINFO *local_c;
   InterSystemC *local_8;
@@ -472,7 +476,7 @@ switchD_00543107_caseD_b904:
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    piVar10 = st::pointer_boundary_cast<int *>((message->arg1).ptr);
+    piVar10 = static_cast<int *>((message->arg1).ptr);
     st::fn_006B5F80((int *)g_ddxContext_008075A8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
     SVar1 = message->id;
     if (SVar1 == MESS_INTERSYSTEMC_B900) {
@@ -538,7 +542,7 @@ LAB_00543291:
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
-      piVar10 = st::pointer_boundary_cast<int *>((message->arg1).ptr);
+      piVar10 = static_cast<int *>((message->arg1).ptr);
       st::fn_006B5F80((int *)g_ddxContext_008075A8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
       puVar14 = nullptr;
       iVar11 = 0;

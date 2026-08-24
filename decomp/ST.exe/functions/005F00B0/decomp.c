@@ -5,8 +5,8 @@ void __thiscall FUN_005f00b0(void *this,undefined1 *param_1)
 
 {
   int iVar1;
-  undefined1 uVar2;
-  undefined4 uVar3;
+  byte uVar2;
+  uint uVar3;
   char local_14 [16];
 
   *param_1 = 4;

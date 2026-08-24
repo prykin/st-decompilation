@@ -14,7 +14,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
 {
   ushort **slotStorage;
   STAppC_field_1180State SVar1;
-  undefined4 uVar2;
+  uint uVar2;
   ST3DSMAPContext *pSVar4;
   InternalExceptionFrame *pIVar5;
   int iVar11;
@@ -37,9 +37,9 @@ void __thiscall STAppC::StartGame(STAppC *this)
   cLoadingTy *this_00;
   STAppC *pSVar11;
   char *pcVar12;
-  undefined4 *puVar13;
+  uint *puVar13;
   byte *pbVar14;
-  undefined1 *puVar15;
+  byte *puVar15;
   byte local_328 [260];
   byte local_224;
   undefined4 local_223;

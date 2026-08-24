@@ -4,9 +4,9 @@
 void __thiscall FUN_00626d70(void *this,AnonShape_00626D70_1F4C15C4 *param_1)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
 
   /* ST_CALLSITE[00626D79]: CALL dword ptr [EAX + 0x2c] */

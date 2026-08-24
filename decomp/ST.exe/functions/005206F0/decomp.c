@@ -8,14 +8,14 @@
 void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   byte bVar2;
   InfocPanelTy *this_00;
   byte bVar4;
   int iVar5;
   UINT resourceId;
   char *resourceString;
-  undefined4 uVar5;
+  uint uVar5;
   BITMAPINFO *pBVar6;
   int iVar6;
   int iVar7;

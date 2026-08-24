@@ -10,7 +10,7 @@ undefined4 * __cdecl CreatePlrData(int param_1)
 
 {
   int errorCode;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   InternalExceptionFrame local_4c;
   undefined4 *local_8;

@@ -13,19 +13,18 @@ STAllPlayersC::DelObjFromTmps
           (STAllPlayersC *this,char param_1,int param_2,char param_3,uint param_4)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   DArrayTy *pDVar3;
   dword dVar4;
   STGameObjC *pSVar6;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar8;
   uint uVar9;
   Global_sub_0043FC50_param_1Enum GVar10;
   undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_c = 0xffffffff;
   if (param_2 < 0x1a5) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

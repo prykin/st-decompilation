@@ -9,12 +9,11 @@ int FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int param_5)
 
 {
   uint size;
-  undefined4 *puVar1;
+  uint *puVar1;
   uint uVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
-
+  uint *puVar5;
   if (0x100 < (int)param_4) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = 0;

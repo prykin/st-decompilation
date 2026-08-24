@@ -4,8 +4,7 @@
 undefined4 __thiscall FUN_00692ae0(void *this,uint param_1,int param_2)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   if ((-1 < param_2) && (param_2 < 5)) {
     if ((param_1 & 0x1000) == 0) {

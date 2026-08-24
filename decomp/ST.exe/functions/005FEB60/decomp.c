@@ -23,7 +23,7 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   int iVar15;
   uint *puVar16;
   STWorldObject *this_00;
-  undefined4 *puVar17;
+  uint *puVar17;
   bool bVar18;
   uint auStack_69c [383];
   undefined4 uStack_a0;
@@ -36,9 +36,9 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   short local_2c [4];
   int local_24;
   short local_20 [2];
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
@@ -131,7 +131,7 @@ LAB_005fee45:
               }
               /* ST_CALLSITE[005FEE5C]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
               if ((bVar18) && (iVar8 = (*this_00->vtable[5].slots_00_28[2])(this_00), iVar8 != 0)) {
-                thunk_FUN_00416270(this_00,(uint *)local_20,(int *)local_30,local_2c);
+                thunk_FUN_00416270(this_00,(uint *)local_20,local_30,local_2c);
                 iVar7 = FUN_006acf90(param_1,param_2,(int)local_20[0],(int)local_30[0]);
                 iVar8 = thunk_FUN_005fe990(param_3 - local_2c[0],iVar7);
                 if (iVar8 != 0) {

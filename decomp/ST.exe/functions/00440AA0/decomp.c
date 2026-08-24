@@ -19,7 +19,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
   DArrayTy *pDVar6;
   int iVar4;
   uint *puVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   Global_sub_00430750_param_1Enum GVar9;
   int iVar11;
   int local_EAX_2155;
@@ -204,7 +204,7 @@ LAB_00440c19:
               }
               if ((pSVar4->field_0020 == 0x14) && (iVar5 = thunk_FUN_0045ff10(pSVar4), iVar5 == 4))
               {
-                puVar8 = (undefined4 *)thunk_FUN_0048dcc0(pSVar4,local_130);
+                puVar8 = thunk_FUN_0048dcc0(pSVar4,local_130);
                 psVar16 = &local_fc;
                 for (iVar5 = 0xd; dVar1 = local_48, iVar5 != 0; iVar5 = iVar5 + -1) {
                   *(undefined4 *)psVar16 = *puVar8;

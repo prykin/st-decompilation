@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_007489f8(void *this,undefined4 *param_1)
 
 {
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_007489f8(void *this,undefined4 *param_1)
   int *apiStack_38 [2];
   int iStack_30;
   undefined4 *apuStack_2c [4];
-  undefined1 *puStack_1c;
+  byte *puStack_1c;
   int **ppiStack_18;
   int *local_8;
 

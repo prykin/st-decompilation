@@ -12,9 +12,9 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
   uint uVar1;
   short *psVar2;
   short *psVar3;
-  undefined4 uVar4;
+  uint uVar4;
   STBoatC_field_06F7State SVar5;
-  undefined2 uVar7;
+  ushort uVar7;
   int local_EAX_56;
   int local_EAX_102;
   int local_EAX_474;
@@ -29,14 +29,20 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
   uint local_EAX_2614;
   uint local_EAX_2622;
   int local_EAX_2667;
-  undefined4 *puVar13;
+  uint *puVar13;
   int iVar14;
   int iVar15;
   int local_EAX_3796;
+  int iVar11_mgF;
   int uVar11;
+  int iVar11_mg12;
   int local_EAX_4422;
+  int iVar11_mg15;
+  int iVar11_mg1F;
   int local_EAX_4951;
+  int iVar11_mg23;
   int local_EAX_5437;
+  int iVar11_mg26;
   uint uVar12;
   int local_EAX_6119;
   short sVar8;
@@ -56,7 +62,7 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
   byte bVar24;
   uint uVar25;
   undefined4 local_30 [2];
-  undefined4 local_28;
+  uint local_28;
   short local_24;
   int local_20;
   int local_1c;
@@ -408,9 +414,9 @@ LAB_00479ba6:
                 SVar5 = this->field_06F7;
                 if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
-                    (iVar11 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
-                    iVar11 != -4)))) {
+                    (iVar11_mgF = STPlaySystemC::sub_006E62D0
+                                            (g_playSystem_00802A38,this->field_07CA,(int *)&local_8)
+                    , iVar11_mgF != -4)))) {
                   iVar12 = (int)this->field_0045;
                   iVar11 = (int)this->field_0043;
                   iVar14 = (int)this->field_0041;
@@ -469,9 +475,9 @@ LAB_00479ba6:
                 SVar5 = this->field_06F7;
                 if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
-                    (iVar11 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
-                    iVar11 != -4)))) {
+                    (iVar11_mg12 = STPlaySystemC::sub_006E62D0
+                                             (g_playSystem_00802A38,this->field_07CA,(int *)&local_8
+                                             ), iVar11_mg12 != -4)))) {
                   iVar14 = (int)this->field_0045;
                   iVar11 = (int)this->field_0043;
                   iVar12 = (int)this->field_0041;
@@ -495,9 +501,9 @@ LAB_00479ba6:
                 *(undefined4 *)&this->field_0x65d = 0;
                 if (((SVar5 == CASE_7) || ((SVar5 == CASE_13 || (SVar5 == CASE_1B)))) &&
                    ((this->field_07CA != nullptr &&
-                    (iVar11 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
-                    iVar11 != -4)))) {
+                    (iVar11_mg15 = STPlaySystemC::sub_006E62D0
+                                             (g_playSystem_00802A38,this->field_07CA,(int *)&local_8
+                                             ), iVar11_mg15 != -4)))) {
                   thunk_FUN_004ad460((void *)((int)&local_8[0xd].vtable + 1),0);
                 }
                 thunk_FUN_004ad460(&this->field_01D5,0);
@@ -527,9 +533,9 @@ LAB_00479ba6:
                 SVar5 = this->field_06F7;
                 if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
-                    (iVar11 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
-                    iVar11 != -4)))) {
+                    (iVar11_mg1F = STPlaySystemC::sub_006E62D0
+                                             (g_playSystem_00802A38,this->field_07CA,(int *)&local_8
+                                             ), iVar11_mg1F != -4)))) {
                   iVar12 = (int)this->field_0045;
                   iVar11 = (int)this->field_0043;
                   iVar14 = (int)this->field_0041;
@@ -590,9 +596,9 @@ LAB_00479ba6:
                 SVar5 = this->field_06F7;
                 if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
-                    (iVar11 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
-                    iVar11 != -4)))) {
+                    (iVar11_mg23 = STPlaySystemC::sub_006E62D0
+                                             (g_playSystem_00802A38,this->field_07CA,(int *)&local_8
+                                             ), iVar11_mg23 != -4)))) {
                   iVar14 = (int)this->field_0045;
                   iVar11 = (int)this->field_0043;
                   iVar12 = (int)this->field_0041;
@@ -616,9 +622,9 @@ LAB_00479ba6:
                 *(undefined4 *)&this->field_0x65d = 0;
                 if (((SVar5 == CASE_7) || ((SVar5 == CASE_13 || (SVar5 == CASE_1B)))) &&
                    ((this->field_07CA != nullptr &&
-                    (iVar11 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
-                    iVar11 != -4)))) {
+                    (iVar11_mg26 = STPlaySystemC::sub_006E62D0
+                                             (g_playSystem_00802A38,this->field_07CA,(int *)&local_8
+                                             ), iVar11_mg26 != -4)))) {
                   thunk_FUN_004ad460((void *)((int)&local_8[0xd].vtable + 1),0);
                 }
                 thunk_FUN_004ad460(&this->field_01D5,0);

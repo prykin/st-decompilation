@@ -27,7 +27,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
   int iVar6;
   int iVar5;
   uint uVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   bool bVar9;
   InternalExceptionFrame local_54;
   STSprGameObjC *local_10;

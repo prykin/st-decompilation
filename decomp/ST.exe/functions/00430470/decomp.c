@@ -11,7 +11,7 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
   uint index;
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   uint index_00;

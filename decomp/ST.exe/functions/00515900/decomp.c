@@ -20,7 +20,7 @@ HelpPanelTy::DrawWeapon
   UINT UVar6;
   char *pcVar7;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   Global_sub_005259B0_param_1Enum GVar9;
   HINSTANCE pHVar10;
   InternalExceptionFrame local_6c;

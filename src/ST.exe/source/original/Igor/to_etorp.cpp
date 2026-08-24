@@ -26,7 +26,7 @@ st::fn_0057A2C0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,s
 {
   alignas(4) byte st_stack_frame[348];
 
-  undefined2 *puVar1;
+  ushort *puVar1;
   byte bVar2;
   byte bVar3;
   byte bVar4;
@@ -38,35 +38,35 @@ st::fn_0057A2C0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,s
   int iVar11;
   int iVar14;
   int iVar15;
-  undefined2 uVar9;
+  ushort uVar9;
   int iVar11_mg3;
   int iVar22;
   int iVar12;
   int iVar11_mg0;
-  undefined4 uVar13;
+  uint uVar13;
   short sVar14;
   uint uVar15;
   int iVar16;
   int iVar17;
-  undefined2 uVar18;
+  ushort uVar18;
   short sVar19;
   int iVar20;
   int iVar21;
   int iVar23;
   int iVar24;
-  undefined4 *puVar25;
+  uint *puVar25;
   STWorldObject *this;
   bool bVar26;
   longlong lVar27;
   int *local_120;
   int local_fc;
-  undefined1 *local_f0;
+  byte *local_f0;
   short local_e8 [6];
   int local_dc;
   int local_d8;
   int local_d4;
   int local_d0;
-  undefined1 *local_cc;
+  byte *local_cc;
   int local_c8;
   int local_c4;
   int local_b8;
@@ -96,15 +96,15 @@ st::fn_0057A2C0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,s
   short local_26;
   undefined2 local_24;
   short local_20 [2];
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079b3a8;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 32);
   local_f0 = nullptr;
@@ -408,7 +408,7 @@ LAB_0057a96b:
                     /* ST_CALLSITE[0057A982]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                     if ((bVar26) && (iVar16 = this->vfunc_F8(), iVar16 != 0))
                     {
-                      st::fn_004031E3(this,(uint *)local_b4,(int *)local_e8,local_20);
+                      st::fn_004031E3(this,(uint *)local_b4,local_e8,local_20);
                       iVar14 = st::fn_00401726(iVar24,iVar20,local_40,local_8c,local_98,local_a8,
                                                   (int)local_b4[0],(int)local_e8[0],(int)local_20[0]
                                                  );
@@ -419,7 +419,7 @@ LAB_0057a96b:
                                                 (int)local_b4[0],(int)local_e8[0],(int)local_20[0]),
                          iVar15 * 0x324 <= iVar14 * local_c4 * 2)) {
                         puVar25 = (undefined4 *)(local_cc + local_d8 * 0x2c);
-                        *puVar25 = st::machine_word_boundary_cast<undefined4>(this[1].vtable);
+                        *puVar25 = st::machine_word_boundary_cast<uint>(this[1].vtable);
                         STField<undefined4>(puVar25,0x26) = *(undefined4 *)&this->field_0x18;
                         STField<undefined2>(puVar25,0x2a) = *(undefined2 *)&this[1].field_0xe;
                         STField<STWorldObject *>(puVar25,0x1a) = this;
@@ -503,15 +503,15 @@ undefined4 __cdecl st::fn_0057B350(int *param_1,int param_2,int *param_3)
 
 {
   short *psVar1;
-  undefined2 *puVar2;
+  ushort *puVar2;
   int iVar3;
   int *piVar5;
-  undefined2 uVar6;
+  ushort uVar6;
   void *pvVar7;
   int local_EAX_70;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar8;
-  undefined2 uVar9;
+  ushort uVar9;
   int iVar10;
   int *piVar11;
   int local_18;

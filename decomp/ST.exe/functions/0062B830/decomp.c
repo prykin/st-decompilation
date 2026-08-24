@@ -14,7 +14,11 @@
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: 004B8C80 -> 0062B830 @ 004B95E3; MOVSX at 004B95C2 establishes signed source width 2 |
    004B9FA0 -> 0062B830 @ 004BBD81; MOVSX at 004BBD60 establishes signed source width 2 | 004D32C0
-   -> 0062B830 @ 004D4CD9; MOVSX at 004D4CB8 establishes signed source width 2 */
+   -> 0062B830 @ 004D4CD9; MOVSX at 004D4CB8 establishes signed source width 2
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __cdecl
 FUN_0062b830(int param_1,int param_2,int param_3,undefined4 param_4,int *param_5,undefined4 param_6,

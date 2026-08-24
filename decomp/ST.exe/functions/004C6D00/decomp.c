@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
   int iVar4;
   int local_EAX_244;
   int local_EAX_371;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar3;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
@@ -78,7 +78,7 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
       }
       else if (iVar4 == 1) {
         param_1->field_0400 = 1;
-        thunk_FUN_00416270(param_1,(uint *)local_10,(int *)local_14,local_18);
+        thunk_FUN_00416270(param_1,(uint *)local_10,local_14,local_18);
         sVar2 = *(short *)&param_1->field_05B0 * 0xc9 + 100;
         if (((local_10[0] == sVar2) &&
             (local_14[0] == (short)(*(short *)&param_1->field_05B4 * 0xc9 + 100))) &&

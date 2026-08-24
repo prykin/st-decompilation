@@ -13,7 +13,7 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
 {
   STFishC *this;
   int iVar2;
-  undefined4 *puVar2;
+  uint *puVar2;
   dword dVar3;
   int iVar5;
   int iVar4;

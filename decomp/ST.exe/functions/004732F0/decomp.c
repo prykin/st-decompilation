@@ -25,19 +25,23 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
 {
   short *psVar1;
   STFishCVTable *pSVar2;
-  undefined2 uVar4;
+  ushort uVar4;
+  int iVar11_mg1;
   int iVar10;
   int local_EAX_522;
+  int iVar11_mg5;
+  int iVar11_mgD;
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   STBoatC_field_0596State SVar6;
+  int iVar11_mg1F;
   STWorldObject *pSVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   uint uVar8;
   int local_EAX_2224;
-  undefined4 *puVar9;
+  uint *puVar9;
   int local_EAX_3016;
   int local_EAX_3489;
   uint uVar10;
@@ -62,7 +66,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
   undefined2 extraout_var_08;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
-  undefined2 uVar14;
+  ushort uVar14;
   uint uVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_09;
@@ -93,7 +97,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
   short sVar23;
   byte bVar24;
   undefined4 local_40 [2];
-  undefined4 local_38;
+  uint local_38;
   short local_34;
   uint local_30;
   int local_2c;
@@ -102,7 +106,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
   undefined4 *local_20;
   int local_1c;
   int local_18;
-  undefined4 local_14;
+  uint local_14;
   int local_10;
   STFishC *local_c;
   short local_8;
@@ -136,8 +140,8 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
     }
     if ((local_c == nullptr) ||
        ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != param_1)) {
-      iVar11 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1,(int *)&local_c);
-      if (iVar11 == -4) {
+      iVar11_mg1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1,(int *)&local_c);
+      if (iVar11_mg1 == -4) {
         return 0;
       }
       /* ST_CALLSITE[00473404]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
@@ -211,10 +215,10 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                   STGridAt3D(g_worldGrid, sVar16, sVar18, sVar17).objects[0];
       }
       if ((((local_c == nullptr) || (local_c->field_0018 != *(int *)&this->field_0x58e)) &&
-          (iVar11 = STPlaySystemC::sub_006E62D0
-                              (g_playSystem_00802A38,
-                               *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,(int *)&local_c),
-          iVar11 == -4)) ||
+          (iVar11_mg5 = STPlaySystemC::sub_006E62D0
+                                  (g_playSystem_00802A38,
+                                   *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
+                                   (int *)&local_c), iVar11_mg5 == -4)) ||
          /* ST_CALLSITE[004735E4]: CALL dword ptr [EDX + 0xa4] */
          ((iVar11 = local_c->vfunc_A4(), iVar11 == 1 ||
           /* ST_CALLSITE[004735F8]: CALL dword ptr [EAX + 0xc0] */
@@ -285,10 +289,10 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                   STGridAt3D(g_worldGrid, sVar16, sVar18, sVar17).objects[0];
       }
       if (((local_c == nullptr) || (local_c->field_0018 != *(int *)&this->field_0x58e)) &&
-         (iVar11 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,
-                              *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,(int *)&local_c),
-         iVar11 == -4)) {
+         (iVar11_mgD = STPlaySystemC::sub_006E62D0
+                                 (g_playSystem_00802A38,
+                                  *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
+                                  (int *)&local_c), iVar11_mgD == -4)) {
         return 0;
       }
       /* ST_CALLSITE[004737C3]: CALL dword ptr [EDX + 0xa4] */
@@ -371,10 +375,10 @@ LAB_004736e2:
                 STGridAt3D(g_worldGrid, sVar16, sVar18, sVar17).objects[0];
     }
     if (((local_c == nullptr) || (local_c->field_0018 != *(int *)&this->field_0x58e)) &&
-       (iVar11 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,
-                            *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,(int *)&local_c),
-       iVar11 == -4)) {
+       (iVar11_mg1F = STPlaySystemC::sub_006E62D0
+                                (g_playSystem_00802A38,
+                                 *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,(int *)&local_c
+                                ), iVar11_mg1F == -4)) {
       return 0;
     }
     /* ST_CALLSITE[00473A09]: CALL dword ptr [EDX + 0xa4] */

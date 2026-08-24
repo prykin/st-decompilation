@@ -8,12 +8,11 @@ undefined4 * __thiscall FUN_006e9080(void *this,uint param_1,uint param_2,uint p
   uint uVar2;
   int iVar3;
   ushort *puVar4;
-  undefined4 uVar5;
-
+  uint uVar5;
   if ((STField<uint>(this,0x310) <= param_1) ||
      (puVar1 = (uint *)(STField<int>(this,0x31c) + param_1 * 0x114), (*puVar1 & 0x8000) == 0)) {
     if (param_1 != 0xffffffff) {
-      FUN_006e8c50();
+      FUN_006e8c50("AddStaticLandSpr");
     }
     return nullptr;
   }
@@ -33,7 +32,7 @@ undefined4 * __thiscall FUN_006e9080(void *this,uint param_1,uint param_2,uint p
     Library::Ourlib::ST3DSMAP::SprClose(this,param_1);
     return (undefined4 *)puVar4;
   }
-  FUN_006e91a0();
+  FUN_006e91a0("AddStaticLandSpr");
   Library::Ourlib::ST3DSMAP::SprClose(this,param_1);
   return nullptr;
 }

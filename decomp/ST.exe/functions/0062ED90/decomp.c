@@ -10,7 +10,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
 {
   int iVar2;
   int *piVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   STT3DSprC *pSVar4;
   int iVar7;
   int iVar5;

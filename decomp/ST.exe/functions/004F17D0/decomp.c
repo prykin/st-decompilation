@@ -16,7 +16,7 @@ void __thiscall CPanelTy::sub_004F17D0(CPanelTy *this,int param_1,byte param_2)
   int iVar1;
   uint uVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   CPanelTy_field_0B99State *pCVar5;
 
   if (param_2 < 6) {

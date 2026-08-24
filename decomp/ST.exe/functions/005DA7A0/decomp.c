@@ -4,7 +4,7 @@
 undefined4 FUN_005da7a0(void)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int *piVar2;
   int iVar4;
   bool bVar5;

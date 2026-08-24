@@ -4,7 +4,11 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\support.cpp
    Diagnostic line evidence: 20 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=31, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __cdecl PutDDX(int param_1,int param_2,char param_3,BITMAPINFO *param_4)
 

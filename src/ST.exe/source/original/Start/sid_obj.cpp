@@ -15,7 +15,7 @@ void __thiscall st::fn_005D7A50(SIDTy *this)
   int iVar3;
   int local_EAX_181;
   ushort *puVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   int uVar3;
   int local_EAX_410;
   DArrayTy *pDVar5;
@@ -51,7 +51,7 @@ void __thiscall st::fn_005D7A50(SIDTy *this)
     }
     iVar9 = 1;
     puVar3 = g_startSystem_0081176C->field_002C + 0x14;
-    local_EAX_181 = st::fn_006B4FE0((int)g_startSystem_0081176C->field_002C);
+    local_EAX_181 = st::fn_006B4FE0(g_startSystem_0081176C->field_002C);
     puVar3 = (ushort *)
              st::fn_006B50C0(0x15e,0xa5,(uint)g_startSystem_0081176C->field_002C[7],local_EAX_181,
                           (undefined4 *)puVar3,iVar9);
@@ -72,7 +72,7 @@ void __thiscall st::fn_005D7A50(SIDTy *this)
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
     puVar3 = g_startSystem_0081176C->field_002C + 0x14;
-    uVar3 = st::fn_006B4FE0((int)g_startSystem_0081176C->field_002C);
+    uVar3 = st::fn_006B4FE0(g_startSystem_0081176C->field_002C);
     puVar3 = (ushort *)
              st::fn_006B50C0(0x13e,0xe,(uint)g_startSystem_0081176C->field_002C[7],uVar3,
                           (undefined4 *)puVar3,iVar9);
@@ -93,7 +93,7 @@ void __thiscall st::fn_005D7A50(SIDTy *this)
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
     puVar3 = g_startSystem_0081176C->field_002C + 0x14;
-    local_EAX_410 = st::fn_006B4FE0((int)g_startSystem_0081176C->field_002C);
+    local_EAX_410 = st::fn_006B4FE0(g_startSystem_0081176C->field_002C);
     puVar3 = (ushort *)
              st::fn_006B50C0(0x104,0x28,(uint)g_startSystem_0081176C->field_002C[7],local_EAX_410,
                           (undefined4 *)puVar3,iVar9);
@@ -161,7 +161,7 @@ void __thiscall st::fn_005D7A50(SIDTy *this)
     st::fn_006B6020(pDVar5,0,&CHAR_00h_008016a0);
     iVar9 = 1;
     puVar3 = this_00->field_1CB8 + 0x14;
-    local_EAX_923 = st::fn_006B4FE0((int)this_00->field_1CB8);
+    local_EAX_923 = st::fn_006B4FE0(this_00->field_1CB8);
     puVar3 = (ushort *)
              st::fn_006B50C0(0x156,0xe,(uint)this_00->field_1CB8[7],local_EAX_923,(undefined4 *)puVar3,
                           iVar9);
@@ -332,7 +332,7 @@ void __thiscall st::fn_005D81F0(SIDTy *this)
     /* ST_CALLSITE[005D8266]: CALL 0x0040392c; direct=0040392C SIDTy::PrepFiles */
     st::fn_0040392C(this_00);
     this_00->field_002D = 5;
-    piVar6 = st::pointer_boundary_cast<int *>(&this_00->field_1AF1);
+    piVar6 = reinterpret_cast<int *>(&this_00->field_1AF1);
     iVar5 = 2;
     do {
       if (*piVar6 != 0) {
@@ -755,7 +755,7 @@ void __thiscall st::fn_005D8BF0(SIDTy *this)
   byte *pbVar17;
   byte *pbVar18;
   bool bVar19;
-  undefined4 uVar20;
+  uint uVar20;
   _WIN32_FIND_DATAA local_21c;
   byte local_dc [64];
   InternalExceptionFrame local_9c;
@@ -1045,7 +1045,7 @@ void __thiscall st::fn_005D9250(SIDTy *this)
   ushort *puVar1;
   SIDTy *pSVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *pcVar6;
   char *resourceString;
   uint uVar7;
@@ -1132,7 +1132,7 @@ void __thiscall st::fn_005D9250(SIDTy *this)
 int __thiscall st::fn_005D9470(SIDTy *this,STMessage *message)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   byte bVar3;
   ushort uVar4;
@@ -1144,8 +1144,8 @@ int __thiscall st::fn_005D9470(SIDTy *this,STMessage *message)
   SIDTy *this_00;
   DWORD DVar11;
   int local_EAX_48;
-  undefined4 uVar12;
-  undefined4 *puVar13;
+  uint uVar12;
+  uint *puVar13;
   char *pcVar12_mg2;
   int iVar11;
   int iVar19;
@@ -1311,7 +1311,7 @@ LAB_005d97ca:
             /* ST_CALLSITE[005D96E4]: CALL dword ptr [0x0085bde8] */
             st::external_00000080(st::pointer_boundary_cast<LPSTR>(&this_00->field_1CD4),st::mutable_c_string("%s%s%s"),&CHAR_00h_00807680,
                       st_global_0079C19C,uVar12);
-            st::fn_00725910((HANDLE)&this_00->field_1CD4,&st_global_007CC8BC,0,st::function_address_boundary_cast<undefined *>(st::fn_00725C20),0,0);
+            st::fn_00725910(&this_00->field_1CD4,&st_global_007CC8BC,0,st::function_address_boundary_cast<undefined *>(st::fn_00725C20),0,0);
             /* ST_CALLSITE[005D9705]: CALL 0x0040392c; direct=0040392C SIDTy::PrepFiles */
             st::fn_0040392C(this_00);
             this_00->array_00BC[0xc].field_01DF = 0;
@@ -1502,7 +1502,7 @@ LAB_005d97ca:
       goto cf_common_exit_005D9CCB;
     }
     if ((SVar5 < MESS_SHARED_6980) || (MESS_SIDTY_6981 < SVar5)) goto cf_common_exit_005D9CCB;
-    piVar8 = st::pointer_boundary_cast<int *>((message->arg1).ptr);
+    piVar8 = static_cast<int *>((message->arg1).ptr);
     local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)message->id + 0x81));
     local_20 = *piVar8 + -0xe1;
     local_18 = piVar8[2];

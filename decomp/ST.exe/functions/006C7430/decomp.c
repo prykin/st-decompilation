@@ -12,9 +12,9 @@ void FUN_006c7430(AnonShape_006C7430_D1D36538 *param_1)
   int local_28;
   int local_24;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   int local_8;
 

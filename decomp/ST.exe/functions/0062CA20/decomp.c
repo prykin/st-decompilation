@@ -7,7 +7,7 @@
 int __cdecl FUN_0062ca20(undefined4 *param_1,uint *param_2)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   uint uVar3;
   byte *puVar4;
 

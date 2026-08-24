@@ -81,7 +81,7 @@ LAB_006bbc85:
       if (local_18 != 0) goto LAB_006bbdfd;
       /* ST_CALLSITE[006BBD27]: CALL dword ptr [EDX + 0x38] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)param_1->field_0040 + 0x38))((int *)param_1->field_0040,local_28);
+      (**(code **)(*STField<int *>(param_1,0x40) + 0x38))((int *)param_1->field_0040,local_28);
     }
     if (local_10 != 0) {
       piVar1 = param_1->field_0044;

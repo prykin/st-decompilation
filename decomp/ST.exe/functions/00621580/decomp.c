@@ -7,7 +7,11 @@
    [STMethodOwnerApplier] Structural method owner recovered as SndUnderAttMenegC.
    Evidence: this_call_owners=[SndUnderAttMenegC]; agreed_this_calls=15; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=5; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=5; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=15, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall SndUnderAttMenegC::sub_00621580(SndUnderAttMenegC *this,byte *param_1,int param_2)
 

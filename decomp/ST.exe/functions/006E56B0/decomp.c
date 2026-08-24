@@ -3,7 +3,11 @@
 
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=4; incoming_this_accesses=3;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=5 */
+   incoming_edx_uses=0; incoming_stack_parameter_uses=5
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=174, used=0,
+   unknown=0), and decompilation contains no value return */
 
 void __thiscall StartSystemTy::sub_006E56B0(StartSystemTy *this,uint param_1)
 

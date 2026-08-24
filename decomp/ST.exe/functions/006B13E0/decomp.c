@@ -9,7 +9,7 @@ void FUN_006b13e0(int *param_1)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int *piVar3;
 
   if ((param_1 != nullptr) && (iVar1 = *param_1, iVar1 != 0)) {

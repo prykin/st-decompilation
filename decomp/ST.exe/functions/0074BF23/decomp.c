@@ -8,9 +8,8 @@ undefined4 FUN_0074bf23(int param_1,ushort *param_2,undefined4 *param_3)
   int iVar1;
   int iVar2;
   int *piVar3;
-  undefined4 uVar4;
-  undefined4 uVar5;
-
+  uint uVar4;
+  uint uVar5;
   uVar4 = 0;
   if (param_3 == nullptr) {
     uVar4 = 0x80004003;

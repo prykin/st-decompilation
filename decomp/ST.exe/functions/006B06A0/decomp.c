@@ -11,12 +11,13 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
   BYTE *pBVar3;
   BYTE *pBVar4;
   HPALETTE pHVar5;
+  int iVar7_mg7;
   BYTE BVar6;
   int iVar7;
   LOGPALETTE *pLVar8;
   WORD *pWVar9;
   tagLOGPALETTE **pptVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
   tagLOGPALETTE *local_408;
   tagPALETTEENTRY *local_404;
   LOGPALETTE *pLVar8_mg0;
@@ -139,8 +140,8 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
         return false;
       }
     }
-    iVar7 = FUN_006b0520(param_1,(int)&local_404,0,0x100);
-    return (bool)('\x01' - (iVar7 != 0));
+    iVar7_mg7 = FUN_006b0520(param_1,(int)&local_404,0,0x100);
+    return (bool)('\x01' - (iVar7_mg7 != 0));
   }
   return false;
 }

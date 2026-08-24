@@ -15,11 +15,13 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
   bool bVar2;
   TLOBaseTy *this_00;
   int local_EAX_36;
+  int iVar5_mgE;
   int local_EAX_612;
   int iVar3;
   uint uVar3;
   int uVar4;
   undefined *puVar4;
+  int iVar5_mg1;
   int iVar7;
   int iVar5;
   int iVar6;
@@ -73,10 +75,10 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     }
     break;
   case CASE_2:
-    iVar5 = STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)local_20->field_0470,
-                       (int *)&local_8);
-    if (iVar5 != 0) {
+    iVar5_mgE = STPlaySystemC::sub_006E62D0
+                          (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)local_20->field_0470
+                           ,(int *)&local_8);
+    if (iVar5_mgE != 0) {
       /* ST_CALLSITE[004E9ED3]: CALL 0x00404e9e; direct=00404E9E TLOBaseTy::sub_004EA620 */
       sub_004EA620(this_00);
       g_currentExceptionFrame = local_64.previous;
@@ -86,7 +88,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     if (iVar5 != 0) {
       this_00->field_048C = 1;
       this_00->field_046C = CASE_3;
-      thunk_FUN_00416270(this_00,(uint *)local_14,(int *)local_10,local_c);
+      thunk_FUN_00416270(this_00,(uint *)local_14,local_10,local_c);
       /* ST_CALLSITE[004E9E61]: CALL 0x00402455; direct=00402455 sub_00415B30 */
       sub_00415B30(this_00,local_14[0],local_10[0],local_c[0],
                    *(short *)&this_00->field_0474 * 0xc9 + 200,
@@ -222,9 +224,10 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     break;
   case CASE_5:
     if ((local_20->field_048C != 0) &&
-       (iVar5 = STPlaySystemC::sub_006E62D0
-                          (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)local_20->field_0470
-                           ,(int *)&local_8), iVar5 == 0)) {
+       (iVar5_mg1 = STPlaySystemC::sub_006E62D0
+                              (g_playSystem_00802A38,
+                               (AnonShape_005EFAE0_B406B78B *)local_20->field_0470,(int *)&local_8),
+       iVar5_mg1 == 0)) {
       thunk_FUN_004e95c0(local_8,(STBoatC *)this_00);
     }
     this_00->field_046C = 0;

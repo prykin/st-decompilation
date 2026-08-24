@@ -6,8 +6,7 @@ undefined4 FUN_00747029(AnonShape_00747029_F1EF8B79 *param_1,undefined4 *param_2
 {
   LPCRITICAL_SECTION lpCriticalSection;
   int *piVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   if (param_2 == nullptr) {
     uVar2 = 0x80004003;
   }

@@ -8,7 +8,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
   dword dVar1;
   byte bVar2;
   STGameObjC *this;
-  undefined4 uVar3;
+  uint uVar3;
   uint uVar4;
   short sVar5;
   uint index;

@@ -19,8 +19,8 @@ InterSystemC * __thiscall st::fn_00542440(InterSystemC *this,AppClassTy *param_1
 {
   st::fn_006E51C0((SystemClassTy *)this,param_1,5);
   this->vtable = &st_global_0079ADB8;
-  this->field_0030 = 0;
-  this->field_002C = 0;
+  this->field_0030 = nullptr;
+  this->field_002C = nullptr;
   this->field_0028 = nullptr;
   return this;
 }
@@ -58,13 +58,13 @@ void __thiscall st::fn_00542EC0(InterSystemC *this)
     st::fn_00710560((uint *)this->field_0028);
     this->field_0028 = nullptr;
   }
-  if ((uint *)this->field_002C != 0) {
+  if (this->field_002C != nullptr) {
     st::fn_00710560((uint *)this->field_002C);
-    this->field_002C = 0;
+    this->field_002C = nullptr;
   }
-  if ((uint *)this->field_0030 != 0) {
+  if (this->field_0030 != nullptr) {
     st::fn_00710560((uint *)this->field_0030);
-    this->field_0030 = 0;
+    this->field_0030 = nullptr;
   }
   st::fn_006E52D0((AnonShape_006E52D0_AF06BCD2 *)this);
   return;

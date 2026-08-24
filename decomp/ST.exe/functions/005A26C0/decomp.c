@@ -12,7 +12,7 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
   FSGSTy_field_1EA6DArray *pFVar2;
   FSGSTy *this_00;
   int iVar4;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
   int iVar6;
   uint index;

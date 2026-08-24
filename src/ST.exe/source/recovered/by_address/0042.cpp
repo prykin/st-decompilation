@@ -45,7 +45,7 @@ void __thiscall st::fn_00422E20(void *this,byte param_1)
   undefined4 extraout_ECX_01;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_02;
-  undefined4 uVar2;
+  uint uVar2;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_03;
   Global_sub_0043FC50_param_1Enum GVar3;
@@ -134,7 +134,7 @@ void __thiscall st::fn_00422FF0(void *this,byte param_1)
   if (((param_1 & 1) != 0) && ((STField<uint>(this,0x1d1) & 1) != 0)) {
     STField<uint>(this,0x1d1) = STField<uint>(this,0x1d1) & 0xfffffffe;
     /* ST_CALLSITE[00423043]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
-    st::fn_004023A1(st::pointer_boundary_cast<TLOEmbryoTy *>(this),STField<undefined *>(this,0x101));
+    st::fn_004023A1(static_cast<TLOEmbryoTy *>(this),STField<undefined *>(this,0x101));
   }
   if (((param_1 & 2) != 0) && ((STField<uint>(this,0x1d1) & 2) != 0)) {
     STField<uint>(this,0x1d1) = STField<uint>(this,0x1d1) & 0xfffffffd;
@@ -395,7 +395,7 @@ undefined4 __thiscall st::fn_00423C70(void *this,short param_1)
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  uint uVar2;
   STGameObjC *this_00;
   uint index;
   uint uVar3;
@@ -451,7 +451,7 @@ undefined4 __thiscall st::fn_00423D80(void *this,DArrayTy *groupContent)
 {
   uint uVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   uint index;
   uint uVar4;
   undefined4 local_c;
@@ -486,7 +486,7 @@ void __fastcall st::fn_00423E00(void *param_1)
   DArrayTy *groupContent;
 
   /* ST_CALLSITE[00423E04]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
-  groupContent = (DArrayTy *)st::fn_00402DB5(st::pointer_boundary_cast<STGroupC *>(param_1));
+  groupContent = (DArrayTy *)st::fn_00402DB5(static_cast<STGroupC *>(param_1));
   st::fn_004031E8(param_1,groupContent);
   st::fn_006AE110(groupContent);
   return;
@@ -499,8 +499,7 @@ void st::fn_00423E30(int param_1,uint param_2,int param_3)
 {
   uint uVar1;
   uint uVar2;
-  undefined4 *puVar3;
-
+  uint *puVar3;
   if (param_2 < param_3 + param_2) {
     uVar1 = (param_3 + param_2) - param_2;
     puVar3 = (undefined4 *)(param_1 + param_2 * 2);
@@ -1286,8 +1285,7 @@ void st::fn_0042A9F0(char param_1)
   int iVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   /* ST_CALLSITE[0042AA02]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   st::fn_004032E7(in_ECX,param_1,0,0,0);
@@ -1332,8 +1330,7 @@ void st::fn_0042AAC0(int param_1,uint param_2,int param_3)
 
 {
   int iVar1;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   if (param_2 < param_3 + param_2) {
     puVar2 = (undefined4 *)(param_1 + param_2 * 4);
     for (iVar1 = (param_3 + param_2) - param_2; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -1474,7 +1471,7 @@ uint st::fn_0042D770(char param_1,int *param_2)
   STAllPlayersC *local_24;
   int local_20;
   int local_1c;
-  undefined4 local_18;
+  uint local_18;
   uint local_14;
   DArrayTy *local_10;
   undefined4 local_c;

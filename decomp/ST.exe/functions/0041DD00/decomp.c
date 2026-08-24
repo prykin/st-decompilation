@@ -7,7 +7,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
 
 {
   float fVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   float fVar4;
   float fVar5;

@@ -14,7 +14,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
   CursorClassTy *this_01;
   FSGSTy *this_02;
   int iVar4;
-  undefined4 *puVar4;
+  uint *puVar4;
   char *resourceString;
   int iVar9;
   uint uVar5;

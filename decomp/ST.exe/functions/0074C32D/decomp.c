@@ -12,8 +12,7 @@ FUN_0074c32d(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
             double param_5)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   if (STField<int *>(this,0x90) == nullptr) {
     uVar1 = 0;
   }

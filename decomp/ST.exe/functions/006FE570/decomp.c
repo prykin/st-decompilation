@@ -9,20 +9,20 @@ void FUN_006fe570(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
                  int param_18,int param_19)
 
 {
-  undefined1 uVar1;
-  undefined1 *puVar2;
+  byte uVar1;
+  byte *puVar2;
   byte *pbVar3;
   ushort *puVar4;
-  undefined1 uVar5;
+  byte uVar5;
   uint uVar6;
   byte *pbVar7;
   byte bVar8;
   uint uVar9;
   int iVar10;
   byte *pbVar11_mg3;
-  undefined1 *puVar11;
+  byte *puVar11;
   uint local_1c;
-  undefined1 *local_18;
+  byte *local_18;
   int local_14;
   byte *local_10;
   byte *local_c;

@@ -12,11 +12,10 @@ int FUN_006bc360(ushort *param_1,undefined4 *param_2,int *param_3)
 
 {
   int iVar1;
-  undefined1 *puVar2;
+  byte *puVar2;
   int iVar3;
-  undefined1 *puVar4;
-
-  iVar1 = FUN_006b4fe0((int)param_1);
+  byte *puVar4;
+  iVar1 = FUN_006b4fe0(param_1);
   if ((param_2 == nullptr) &&
      (param_2 = Library::DKW::LIB::MemAlloc(0x400), param_2 == nullptr)) {
     return 0;

@@ -8,9 +8,11 @@
    [STSwitchEnumApplier] Switch target field_045D uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_045DState. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23
-    */
 
-void __thiscall STBoatC::ReleaseLoad(STBoatC *this,uint param_1)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00491070 -> 0045EF00 @ 004910F7 */
+
+void __thiscall STBoatC::ReleaseLoad(STBoatC *this,uint *param_1)
 
 {
   int iVar2;
@@ -38,9 +40,9 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,uint param_1)
       } while (iVar3 < 0x17);
       if ((this->field_045D == CASE_14) && (iVar3 == 0x17)) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = g_playSystem_00802A38->field_00E4;
+        param_1 = (uint *)g_playSystem_00802A38->field_00E4;
         /* ST_CALLSITE[004910F7]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
-        CmdToObj(this,CASE_3,&param_1);
+        CmdToObj(this,CASE_3,(uint *)&param_1);
       }
       this->field_0314 = 0;
       this->field_0076 = 1;

@@ -64,7 +64,7 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
   int iVar39;
   byte bVar23;
   int iVar24;
-  undefined1 *puVar25;
+  byte *puVar25;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar26;
   AnonShape_005D1400_5A9F7B11 *pAVar27;
   uint uVar28;
@@ -75,7 +75,7 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
   BulkInitializedRecord_008087C7 *pBVar31;
   uint uVar32;
   uint puVar17;
-  AnonShape_005D1400_891386BF *pAVar34;
+  uint pAVar34;
   SettMapMTy_field_1F84Element *element_1f84_3;
   char *pcVar35;
   SettMapMTy_field_1F84Element *element_1f84_4;
@@ -84,7 +84,7 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
   bool bVar39;
   bool bVar40;
   int iVar41;
-  undefined4 uVar42;
+  uint uVar42;
   int iVar43;
   char local_640 [1044];
   char local_22c [64];
@@ -114,7 +114,7 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
   undefined4 local_3c;
   undefined4 local_38;
   undefined4 local_34;
-  undefined1 *local_30;
+  byte *local_30;
   uint local_2c;
   int local_28;
   uint local_24;
@@ -1550,7 +1550,7 @@ LAB_005d3188:
           if ((DAT_0080877e != '\0') && (this_00->field_1E26 != CASE_5)) {
             local_c = nullptr;
             pAVar21 = local_18->field_0050;
-            pAVar34 = (AnonShape_005D1400_891386BF *)pAVar21->field_000C;
+            pAVar34 = pAVar21->field_000C;
             if (0 < (int)pAVar34) {
               do {
                 if (local_c < pAVar34) {
@@ -1579,7 +1579,7 @@ LAB_005d3188:
                           ((DArrayTy *)this_00->field_1E2F,&this_00->field_1E33);
                 local_c = (AnonShape_005D1400_891386BF *)&local_c->field_0x1;
                 pAVar21 = local_18->field_0050;
-                pAVar34 = (AnonShape_005D1400_891386BF *)pAVar21->field_000C;
+                pAVar34 = pAVar21->field_000C;
               } while ((int)local_c < (int)pAVar34);
             }
           }
@@ -1821,7 +1821,7 @@ LAB_005d34ee:
   FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_20CC[(int)pcVar29 + 10],0,
                *piVar13 + -0x113,0,piVar13[2],piVar13[3],0xff);
   if (pAVar37 == nullptr) goto switchD_005d35aa_default;
-  switch(local_30) {
+  switch(static_cast<uint32_t>(STRawWord(local_30))) {
   case 0:
     if (((pAVar37->field_0x0 == '\0') || (pAVar37->field_0x4 != '\x02')) ||
        (*(int *)&pAVar37->field_0x6 != DAT_0080877f)) break;
@@ -1831,7 +1831,7 @@ LAB_005d34ee:
                (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67);
     iVar24 = 2 - (uint)(pAVar37->field_0x1 != '\0');
     goto LAB_005d3bf4;
-  case (undefined1 *)0x1:
+  case 0x1:
     if (pAVar37->field_0x0 != '\0') {
       local_28 = local_28 + 1;
       local_24 = local_24 + 1;
@@ -1875,7 +1875,7 @@ LAB_005d34ee:
       }
     }
     break;
-  case (undefined1 *)0x2:
+  case 0x2:
     if (pAVar37->field_0x0 == '\0') break;
     /* ST_CALLSITE[005D371A]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     MMObjTy::PaintButDib
@@ -1936,7 +1936,7 @@ LAB_005d3780:
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,(char *)&DAT_0080f33a,-1,-1,2);
     pcVar29 = local_10;
     break;
-  case (undefined1 *)0x3:
+  case 0x3:
     /* ST_CALLSITE[005D37E5]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     MMObjTy::PaintButDib
               ((MMObjTy *)this_00,this_00->field_20CC[(int)pcVar29 + 10],&local_28,2,
@@ -1950,7 +1950,7 @@ LAB_005d3780:
     iVar24 = local_20;
     puVar18 = (uint *)thunk_FUN_005cbbe0(this_00,pAVar37);
     goto LAB_005d38bd;
-  case (undefined1 *)0x4:
+  case 0x4:
     /* ST_CALLSITE[005D3843]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     MMObjTy::PaintButDib
               ((MMObjTy *)this_00,this_00->field_20CC[(int)pcVar29 + 10],&local_28,2,0x67,0x67);
@@ -1989,7 +1989,7 @@ LAB_005d38bd:
                                          iVar24);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,pcVar35,iVar41,iVar43,uVar30);
     break;
-  case (undefined1 *)0x5:
+  case 0x5:
     if ((pAVar37->field_0x0 == '\0') ||
        /* ST_CALLSITE[005D396F]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
        (MMObjTy::PaintButDib
@@ -2046,7 +2046,7 @@ LAB_005d38bd:
     if (iVar24 < 0) break;
     pAVar26 = (AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_1F4B;
     goto LAB_005d3bfa;
-  case (undefined1 *)0x6:
+  case 0x6:
     /* ST_CALLSITE[005D3AE8]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     MMObjTy::PaintButDib
               ((MMObjTy *)this_00,this_00->field_20CC[(int)pcVar29 + 10],&local_28,2,0x67,0x67);
@@ -2093,7 +2093,7 @@ LAB_005d38bd:
       ccFntTy::WrStr(g_startSystem_0081176C->field_0034,(char *)&DAT_0080f33a,-1,-1,2);
     }
     break;
-  case (undefined1 *)0x7:
+  case 0x7:
     /* ST_CALLSITE[005D3BDB]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     MMObjTy::PaintButDib
               ((MMObjTy *)this_00,this_00->field_20CC[(int)pcVar29 + 10],&local_28,2,

@@ -10,7 +10,7 @@ void FUN_006f5760(undefined1 *param_1,int param_2,uint *param_3,int param_4,int 
   uint uVar1;
   byte bVar2;
   bool bVar3;
-  undefined1 uVar4;
+  byte uVar4;
   uint uVar5;
   uint uVar6;
   uint uVar7;
@@ -18,7 +18,7 @@ void FUN_006f5760(undefined1 *param_1,int param_2,uint *param_3,int param_4,int 
   int iVar9;
   int iVar10;
   byte *pbVar11;
-  undefined1 *puVar12;
+  byte *puVar12;
   int iStack_18;
 
   DAT_0085702c = param_9;

@@ -19,7 +19,7 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
   STMessageId SVar3;
   STLightC *this_00;
   int iVar5;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar6;
   int iVar7;
   byte *puVar8;
@@ -184,10 +184,10 @@ undefined4 __thiscall st::fn_0061DB80(STLightC *this)
   STLightC *this_00;
   int iVar2;
   ushort *puVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   STLightC_field_00A3DArray *pSVar5;
   int iVar6;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   InternalExceptionFrame local_50;
   STLightC *local_c;
@@ -204,7 +204,7 @@ undefined4 __thiscall st::fn_0061DB80(STLightC *this)
                         0xffffffff,0,1,0,nullptr);
     /* ST_CALLSITE[0061DBE3]: CALL 0x004050d3; direct=004050D3 STLightC::sub_0061D9C0 */
     st::fn_004050D3(this_00,puVar3,(int *)&local_8,0);
-    puVar4 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this_00->field_0093 << 4)));
+    puVar4 = static_cast<uint *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this_00->field_0093 << 4)));
     this_00->field_0057 = puVar4;
     for (iVar7 = (this_00->field_0093 & 0xfffffffU) << 2; iVar7 != 0; iVar7 = iVar7 + -1) {
       *puVar4 = 0;
@@ -223,7 +223,7 @@ undefined4 __thiscall st::fn_0061DB80(STLightC *this)
         *(undefined4 *)((int)this_00->field_0057 + iVar1 * 4) = 0xffffffff;
       } while (iVar7 < this_00->field_0093);
     }
-    *(undefined4 *)this_00->field_0057 = 0;
+    *STField<undefined4 *>(this_00,0x57) = 0;
     *(undefined4 *)((int)this_00->field_0057 + this_00->field_0093 * 0xc) = 0;
     pSVar5 = (STLightC_field_00A3DArray *)
              st::fn_006AE290(nullptr,local_8,0x30,10);

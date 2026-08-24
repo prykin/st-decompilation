@@ -14,6 +14,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
   bool bVar2;
   int iVar3;
   int iVar8;
+  int iVar9_mg5;
   int iVar4;
   uint uVar5;
   uint uVar6;
@@ -41,9 +42,9 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
   int local_28;
   byte *local_24;
   uint local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
@@ -272,9 +273,9 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
            ((DAT_007f4d30 <= local_4c ||
             (iVar3 = local_34,
             PTR_007f4cf0[local_54[0] * local_34 + local_48[0] + DAT_007f4d2c * local_4c] != 0)))) {
-          iVar9 = FUN_0040f270(local_48,&local_4c,local_54,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
-                               DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
-          if (iVar9 != 0) {
+          iVar9_mg5 = FUN_0040f270(local_48,&local_4c,local_54,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
+                                   DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
+          if (iVar9_mg5 != 0) {
             iVar3 = -4;
             goto LAB_0040e872;
           }

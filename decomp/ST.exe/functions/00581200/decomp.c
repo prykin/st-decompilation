@@ -9,7 +9,7 @@ void __fastcall FUN_00581200(int param_1)
   char cVar3;
   STWorldObject *pSVar4;
   void *this;
-  undefined4 uVar5;
+  uint uVar5;
   uint uVar6;
   uint uVar7;
   AnonShape_00581200_BFD82E5E *pAVar8;
@@ -29,7 +29,7 @@ void __fastcall FUN_00581200(int param_1)
   int local_38;
   int local_34;
   int local_30;
-  int local_2c;
+  uint local_2c;
   uint local_28;
   int local_24;
   int local_20;
@@ -93,7 +93,7 @@ void __fastcall FUN_00581200(int param_1)
           ((pSVar4 = STGridAt3D(g_worldGrid, sVar13, local_10, sVar16).objects[0],
            pSVar4 != nullptr &&
            (((((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
-              /* ST_CALLSITE[00581381]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+              /* ST_CALLSITE[00581381]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
               (iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(pSVar4), pAVar8 = local_c, iVar12 != 0))
              && (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)) &&
             ((g_playSystem_00802A38 == nullptr ||
@@ -111,7 +111,7 @@ void __fastcall FUN_00581200(int param_1)
         }
         iVar10 = local_18;
         if ((bVar17) &&
-           /* ST_CALLSITE[00581430]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+           /* ST_CALLSITE[00581430]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
            (iVar12 = (*pSVar4->vtable[5].slots_00_28[2])(pSVar4), iVar10 = local_18, iVar12 != 0)) {
           *(STWorldObject **)(pAVar8->field_020B + local_1c * 4) = pSVar4;
           local_1c = local_1c + 1;
@@ -175,7 +175,7 @@ LAB_00581545:
             (pSVar4 = STGridAt3D(g_worldGrid, sVar13, sVar16, sVar9).objects[0],
             pSVar4 == nullptr)))))) ||
          ((((pSVar4->value_20 != 1000 && (pSVar4->value_20 != 0x14)) ||
-           /* ST_CALLSITE[005815F6]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+           /* ST_CALLSITE[005815F6]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
            ((iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(pSVar4), iVar12 == 0 ||
             ((STWorldObjectVTable *)0x7 < pSVar4[1].vtable)))) ||
           ((g_playSystem_00802A38 != nullptr &&
@@ -218,7 +218,7 @@ LAB_0058171d:
       }
       bVar17 = iVar12 < 0;
 LAB_00581728:
-      /* ST_CALLSITE[00581734]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+      /* ST_CALLSITE[00581734]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
       if ((bVar17) && (iVar12 = (*pSVar4->vtable[5].slots_00_28[2])(pSVar4), iVar12 != 0)) {
         local_1c = local_1c + 1;
         *(STWorldObject **)(local_c->field_020B + -4 + local_1c * 4) = pSVar4;
@@ -250,8 +250,8 @@ cf_break_loop_00581775:
           iVar11 = local_24;
           local_54 = -1;
           iVar15 = 0x1fffff;
-          thunk_FUN_00416270(*(void **)(local_c->field_020B + local_24 * 4),&local_28,&local_2c,
-                             &local_8);
+          thunk_FUN_00416270(*(void **)(local_c->field_020B + local_24 * 4),&local_28,
+                             (short *)&local_2c,&local_8);
           iVar10 = local_c->field_01FD + -1;
           if (-1 < iVar10) {
             local_40 = (int *)(local_c->field_0207 + iVar10 * 4);

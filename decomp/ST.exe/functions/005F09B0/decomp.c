@@ -4,8 +4,7 @@
 undefined4 __thiscall FUN_005f09b0(void *this,AnonShape_005EFAE0_B406B78B *param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   if ((STField<char>(this,0x24f) == '\0') && (param_1 != nullptr)) {
     STField<undefined4>(this,0x2a7) = param_1->field_0018;

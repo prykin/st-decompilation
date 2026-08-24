@@ -38,7 +38,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
     pMVar2 = local_8;
     if (local_8->field_1EE3 == '\0') {
       uVar10 = 0;
-      pcVar9 = g_startSystem_0081176C->field_0030;
+      pcVar9 = (ccFntTy *)g_startSystem_0081176C->field_0030;
       uVar8 = 0xffffffff;
       uVar7 = 0xfffffffe;
       pcVar3 = LoadResourceString(0x26ac,g_hINSTANCE_00807618);
@@ -57,7 +57,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
                  g_startSystem_0081176C->field_0034,0);
     }
     else if (local_8->field_1EE3 == '\x01') {
-      pcVar9 = g_startSystem_0081176C->field_0030;
+      pcVar9 = (ccFntTy *)g_startSystem_0081176C->field_0030;
       uVar8 = 0xffffffff;
       uVar7 = 0xfffffffe;
       pcVar3 = LoadResourceString(0x26b0,g_hINSTANCE_00807618);

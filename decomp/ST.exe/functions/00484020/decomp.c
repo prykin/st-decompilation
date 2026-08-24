@@ -16,7 +16,7 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
   int iVar5;
   uint uVar6;
   int *piVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   int iVar9;
   uint uVar10;
   int iVar11;
@@ -36,7 +36,7 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
   int local_24;
   undefined4 local_20;
   STWorldObject *local_1c;
-  int local_18;
+  uint local_18;
   uint local_14;
   STWorldObject *local_10;
   undefined *local_c;
@@ -72,7 +72,7 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
       (local_10 = STGridAt3D(g_worldGrid, sVar3, sVar4, sVar1).objects[1], local_10 == nullptr)))) {
     return 0;
   }
-  thunk_FUN_00416270(local_10,&local_14,&local_18,&param_1);
+  thunk_FUN_00416270(local_10,&local_14,(short *)&local_18,&param_1);
   local_30 = 0;
   if (0 < local_8) {
     local_34 = (short *)(local_c + 2);

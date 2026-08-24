@@ -18,7 +18,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
   ushort *puVar6;
   int uVar7;
   ushort *puVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   HoloTy *pHVar6;
   uint uVar10;
   uint local_EAX_1420;
@@ -103,7 +103,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     PaintWait(this_01,'\x01');
     iVar14 = 1;
     puVar4 = this_01->field_005D + 0x14;
-    uVar7 = FUN_006b4fe0((int)this_01->field_005D);
+    uVar7 = FUN_006b4fe0(this_01->field_005D);
     puVar4 = (ushort *)
              FUN_006b50c0(0x1e4,399,(uint)this_01->field_005D[7],uVar7,(undefined4 *)puVar4,iVar14);
     this_01->field_1AEC = puVar4;

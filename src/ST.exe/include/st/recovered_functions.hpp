@@ -34,7 +34,7 @@ undefined4 __thiscall fn_0040104B(void * st_this, short * param_1, short * param
 // 00401055 CursorClassTy::sub_00544940
 void __thiscall fn_00401055(CursorClassTy * st_this);
 // 0040105A thunk_FUN_00627850
-undefined __cdecl fn_0040105A(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, int param_5, int param_6, int param_7, undefined4 param_8, char * param_9, undefined4 param_10);
+void __cdecl fn_0040105A(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, int param_5, int param_6, int param_7, undefined4 param_8, char * param_9, undefined4 param_10);
 // 0040105F InterSystemC::DoneSystem
 void __thiscall fn_0040105F(InterSystemC * st_this);
 // 00401064 STT3DSprC::SetCurFase
@@ -44,7 +44,7 @@ undefined __stdcall fn_00401069(void);
 // 0040106E thunk_FUN_00652300
 int __cdecl fn_0040106E(RecoveredRecord_AiEventClassTy_00652300 * param_1);
 // 00401073 SndUnderAttMenegC::sub_00621780
-undefined __thiscall fn_00401073(SndUnderAttMenegC * st_this, uint param_1);
+void __thiscall fn_00401073(SndUnderAttMenegC * st_this, uint param_1);
 // 00401078 STPlaySystemC::SaveObjData
 int __thiscall fn_00401078(STPlaySystemC * st_this, char * text, byte * param_2, uint param_3, byte param_4);
 // 0040107D thunk_FUN_004e8dc0
@@ -92,7 +92,7 @@ undefined __cdecl fn_004010EB(uint param_1, uint param_2, int param_3);
 // 004010F0 thunk_FUN_0044cdb0
 undefined __stdcall fn_004010F0(uint param_1, DArrayTy * groupContent, int param_3);
 // 004010F5 STFieldC::sub_00609CD0
-undefined __thiscall fn_004010F5(STFieldC * st_this);
+void __thiscall fn_004010F5(STFieldC * st_this);
 // 004010FA thunk_FUN_00697cf0
 undefined __thiscall fn_004010FA(void * st_this, int param_1, int param_2);
 // 004010FF STAllPlayersC::GetScrObjList
@@ -176,7 +176,7 @@ undefined4 __cdecl fn_004011CC(int param_1);
 // 004011D1 STBoatC::CreateGame
 uint __thiscall fn_004011D1(STBoatC * st_this, int * param_1);
 // 004011DB STBoatC::ReleaseLoad
-undefined __thiscall fn_004011DB(STBoatC * st_this, undefined4 param_1);
+undefined __thiscall fn_004011DB(STBoatC * st_this, uint * param_1);
 // 004011EA BldBoatPanelTy::PaintBldBut
 undefined __thiscall fn_004011EA(BldBoatPanelTy * st_this, AnonShape_004EF320_444F9AB1 * param_1);
 // 004011EF thunk_FUN_004cc370
@@ -192,7 +192,7 @@ int __cdecl fn_00401208(AnonShape_00652670_DFEA616F * param_1);
 // 0040120D thunk_FUN_006507e0
 undefined4 __cdecl fn_0040120D(int param_1);
 // 00401212 thunk_FUN_0056a8d0
-undefined __thiscall fn_00401212(void * st_this, byte param_1, byte param_2, char param_3);
+void __thiscall fn_00401212(void * st_this, byte param_1, byte param_2, char param_3);
 // 00401217 MReportTy::OutTGlProc
 undefined __thiscall fn_00401217(MReportTy * st_this, DDXContext * param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, int param_8);
 // 0040121C STAppC::STAppC
@@ -310,7 +310,7 @@ BaseSystemC * __thiscall fn_00401348(BaseSystemC * st_this, AppClassTy * param_1
 // 0040134D thunk_FUN_004ed4b0
 undefined4 __fastcall fn_0040134D(int param_1);
 // 00401352 thunk_FUN_004168b0
-undefined4 __fastcall fn_00401352(int param_1);
+void __fastcall fn_00401352(int param_1);
 // 0040135C CPanelTy::sub_00501A10
 undefined __thiscall fn_0040135C(CPanelTy * st_this);
 // 00401361 thunk_FUN_004d8d00
@@ -320,7 +320,7 @@ void __stdcall fn_00401366(void);
 // 0040136B thunk_FUN_00647c80
 undefined fn_0040136B(void);
 // 00401370 thunk_FUN_005508f0
-undefined __thiscall fn_00401370(void * st_this, int param_1);
+void __thiscall fn_00401370(void * st_this, int param_1);
 // 00401375 thunk_FUN_00567060
 uint __fastcall fn_00401375(int param_1);
 // 0040137A SettMapMTy::GetMessage
@@ -364,7 +364,7 @@ undefined __thiscall fn_004013D9(CampaignTy * st_this, undefined4 param_1);
 // 004013DE thunk_FUN_004df8c0
 undefined4 __fastcall fn_004013DE(int param_1);
 // 004013E8 thunk_FUN_00419c50
-undefined __thiscall fn_004013E8(void * st_this, ushort param_1);
+void __thiscall fn_004013E8(void * st_this, ushort param_1);
 // 004013ED thunk_FUN_006029c0
 undefined4 __stdcall fn_004013ED(void);
 // 004013F2 _EnumDest
@@ -440,7 +440,7 @@ undefined4 __thiscall fn_004014B5(STMineSetC * st_this, STMineSetC_sub_00624920_
 // 004014BA thunk_FUN_00482db0
 int __fastcall fn_004014BA(int * param_1, undefined4 param_2);
 // 004014BF AiFltClassTy::sub_0065F980
-undefined __thiscall fn_004014BF(AiFltClassTy * st_this);
+void __thiscall fn_004014BF(AiFltClassTy * st_this);
 // 004014C4 FltDataPack
 AllocationRecord_006684E0 * __cdecl fn_004014C4(AllocationRecord_006684E0 * param_1, uint * param_2);
 // 004014C9 STBHEShellC::sub_005F3470
@@ -464,7 +464,7 @@ undefined fn_004014F1(void);
 // 004014F6 AiFltClassTy::sub_00664760
 undefined __thiscall fn_004014F6(AiFltClassTy * st_this);
 // 004014FB STBoatC::Annih
-int __thiscall fn_004014FB(STBoatC * st_this, undefined4 * param_1);
+int __thiscall fn_004014FB(STBoatC * st_this, uint param_1);
 // 00401500 thunk_FUN_00683450
 void __stdcall fn_00401500(void);
 // 00401505 thunk_FUN_00650b10
@@ -508,7 +508,7 @@ void __stdcall fn_0040156E(Global_sub_00615BB0_param_1Enum param_1, undefined4 *
 // 00401573 thunk_FUN_0068e4f0
 uint * __thiscall fn_00401573(void * st_this, int param_1);
 // 00401578 STAppC::ChangeResolution
-undefined __thiscall fn_00401578(STAppC * st_this, int param_1);
+void __thiscall fn_00401578(STAppC * st_this, int param_1);
 // 0040157D STFieldC::CreateField
 undefined4 * __thiscall fn_0040157D(STFieldC * st_this, int param_1, int param_2);
 // 00401582 TLOFakeTy::sub_004D0970
@@ -588,7 +588,7 @@ undefined __thiscall fn_0040164A(STBoatC * st_this, STFishC * param_1);
 // 0040164F thunk_FUN_0064f5a0
 undefined4 __cdecl fn_0040164F(int param_1);
 // 0040165E FSGSTy::PrepBkgMess
-undefined __thiscall fn_0040165E(FSGSTy * st_this, char param_1);
+void __thiscall fn_0040165E(FSGSTy * st_this, char param_1);
 // 00401663 thunk_FUN_004d9bd0
 undefined4 __fastcall fn_00401663(AnonShape_004D9BD0_B3B50583 * param_1);
 // 00401668 thunk_FUN_004dd850
@@ -628,7 +628,7 @@ int __thiscall fn_004016B8(AnonReceiver_0064A970 * st_this, char * param_1, uint
 // 004016BD thunk_FUN_005eda50
 undefined4 __fastcall fn_004016BD(AnonShape_005EDA50_4BDBD797 * param_1);
 // 004016C2 thunk_FUN_005745e0
-undefined __cdecl fn_004016C2(AnonShape_005745E0_AF52CC75 * param_1, undefined4 * param_2);
+void __cdecl fn_004016C2(AnonShape_005745E0_AF52CC75 * param_1, undefined4 * param_2);
 // 004016C7 STJellyGunC::sub_00582580
 int __thiscall fn_004016C7(STJellyGunC * st_this);
 // 004016CC thunk_FUN_006832e0
@@ -648,7 +648,7 @@ undefined4 __cdecl fn_004016EF(short * param_1);
 // 004016F4 thunk_FUN_00616f60
 int __thiscall fn_004016F4(void * st_this, int * param_1, int * param_2, int * param_3);
 // 004016FE MReportTy::PaintMainScore
-undefined __thiscall fn_004016FE(MReportTy * st_this, int param_1, uint param_2, int param_3);
+void __thiscall fn_004016FE(MReportTy * st_this, int param_1, uint param_2, int param_3);
 // 00401703 MAdvTy::GetMessage
 int __thiscall fn_00401703(MAdvTy * st_this, STMessage * message);
 // 00401708 STBoatC::SetNewMD
@@ -702,7 +702,7 @@ undefined __thiscall fn_00401780(void * st_this, undefined4 * param_1);
 // 00401785 STColl3C::sub_005F6F60
 undefined __thiscall fn_00401785(STColl3C * st_this);
 // 0040178A thunk_FUN_005421d0
-undefined __cdecl fn_0040178A(ushort * param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_0040178A(ushort * param_1, undefined * param_2, BYTE param_3);
 // 0040178F STAllPlayersC::AddObjsToGroup
 undefined4 __thiscall fn_0040178F(STAllPlayersC * st_this, char param_1, ushort param_2, DArrayTy * groupContent, undefined2 * param_4);
 // 00401794 thunk_FUN_006766c0
@@ -736,7 +736,7 @@ undefined __thiscall fn_004017DA(GameSystemC * st_this);
 // 004017DF CPanelTy::PaintBCapacity
 void __thiscall fn_004017DF(CPanelTy * st_this);
 // 004017E4 OpticClassC::sub_004AB070
-undefined4 __thiscall fn_004017E4(OpticClassC * st_this, OpticClassC_sub_004AB070_param_1Enum param_1, float param_2, int param_3, int param_4);
+int __thiscall fn_004017E4(OpticClassC * st_this, OpticClassC_sub_004AB070_param_1Enum param_1, float param_2, int param_3, int param_4);
 // 004017E9 CPanelTy::CreateBut
 undefined4 __thiscall fn_004017E9(CPanelTy * st_this, byte param_1, undefined4 param_2, int param_3, int param_4, int param_5, byte param_6, char * text, undefined4 param_8, undefined4 param_9, short param_10, ushort param_11, int param_12, char * param_13, int param_14, undefined4 param_15, undefined4 param_16);
 // 004017EE thunk_FUN_005fcf50
@@ -782,9 +782,9 @@ undefined4 __fastcall fn_00401866(AnonShape_004D9C80_80F657D3 * param_1);
 // 0040186B thunk_FUN_004e60d0
 undefined4 __stdcall fn_0040186B(int param_1, int param_2);
 // 00401870 HelpPanelTy::CheckBkView
-undefined __thiscall fn_00401870(HelpPanelTy * st_this, int param_1, ushort param_2);
+void __thiscall fn_00401870(HelpPanelTy * st_this, int param_1, ushort param_2);
 // 00401875 STAllPlayersC::SetActivePanel
-undefined __thiscall fn_00401875(STAllPlayersC * st_this, uint * param_1, int param_2, int param_3);
+undefined __thiscall fn_00401875(STAllPlayersC * st_this, uint param_1, int param_2, int param_3);
 // 0040187A STLightC::sub_0061D710
 byte * __thiscall fn_0040187A(STLightC * st_this, int * param_1);
 // 00401884 STAllPlayersC::PushTV
@@ -800,7 +800,7 @@ undefined fn_00401898(void);
 // 0040189D MainMenuTy::DoneMainMenu
 undefined __thiscall fn_0040189D(MainMenuTy * st_this);
 // 004018A2 thunk_FUN_004b0f20
-undefined __cdecl fn_004018A2(int param_1, int param_2, int param_3, int param_4, int param_5, uint param_6, int param_7, char * param_8, undefined4 param_9, undefined4 param_10);
+int __cdecl fn_004018A2(int param_1, int param_2, int param_3, int param_4, int param_5, uint param_6, int param_7, char * param_8, undefined4 param_9, undefined4 param_10);
 // 004018A7 StartStrateg
 void __cdecl fn_004018A7(AnonShape_00648C10_30A1BBFD * strategData, uint param_2);
 // 004018AC thunk_FUN_00682fb0
@@ -892,7 +892,7 @@ int __thiscall fn_0040198D(MMsgTy * st_this, STMessage * message);
 // 00401992 MMObjTy::InitSprBut
 void __thiscall fn_00401992(MMObjTy * st_this, RecoveredRecord_MMObjTy_005B5240 * param_1, char * text, int param_3, int param_4, int param_5, int param_6, undefined4 param_7, undefined4 param_8, undefined4 param_9, undefined4 param_10, uint param_11, char * param_12, int param_13, int param_14, undefined4 param_15, undefined4 param_16, undefined4 param_17, UINT param_18, ccFntTy * param_19, int param_20, int param_21, int param_22, int param_23, int param_24);
 // 00401997 thunk_FUN_0041f630
-undefined __fastcall fn_00401997(AnonShape_0041F630_B1BEE81C * param_1);
+void __fastcall fn_00401997(AnonShape_0041F630_B1BEE81C * param_1);
 // 0040199C thunk_FUN_0064e700
 undefined4 __cdecl fn_0040199C(int param_1);
 // 004019A1 thunk_FUN_004e4630
@@ -906,7 +906,7 @@ undefined4 __cdecl fn_004019B0(int * param_1, int param_2, int param_3, int para
 // 004019B5 CPanelTy::PaintIDSObj
 undefined __thiscall fn_004019B5(CPanelTy * st_this);
 // 004019BA STGroupBoatC::GetDepotForAttack
-undefined __thiscall fn_004019BA(STGroupBoatC * st_this, uint param_1, undefined1 * param_2, short * param_3, short * param_4, short * param_5, short * param_6);
+void __thiscall fn_004019BA(STGroupBoatC * st_this, uint param_1, undefined1 * param_2, short * param_3, short * param_4, short * param_5, short * param_6);
 // 004019BF thunk_FUN_005293f0
 UINT __cdecl fn_004019BF(Global_sub_005293F0_param_1Enum param_1);
 // 004019C4 CPanelTy::PaintLife
@@ -942,7 +942,7 @@ void __thiscall fn_00401A14(CGenerate * st_this);
 // 00401A19 MTestTy::sub_005E5F60
 int __thiscall fn_00401A19(MTestTy * st_this);
 // 00401A1E HelpPanelTy::NextBut
-undefined __thiscall fn_00401A1E(HelpPanelTy * st_this);
+void __thiscall fn_00401A1E(HelpPanelTy * st_this);
 // 00401A23 TraksClassTy::GetMessage
 int __thiscall fn_00401A23(TraksClassTy * st_this, STMessage * message);
 // 00401A28 thunk_FUN_004e7390
@@ -1004,7 +1004,7 @@ undefined4 __thiscall fn_00401AAF(AnonReceiver_00416270 * st_this, int param_1);
 // 00401AB4 UpgPanelTy::DoneUpgPanel
 undefined __thiscall fn_00401AB4(UpgPanelTy * st_this);
 // 00401AB9 thunk_FUN_005fa0b0
-undefined __fastcall fn_00401AB9(STColl3C * param_1);
+void __fastcall fn_00401AB9(STColl3C * param_1);
 // 00401ABE thunk_FUN_00609950
 undefined4 * __fastcall fn_00401ABE(STGroupBoatC * param_1);
 // 00401AC3 SoundManagerTy::sub_00566970
@@ -1012,7 +1012,7 @@ undefined __thiscall fn_00401AC3(SoundManagerTy * st_this, int param_1, int para
 // 00401AC8 thunk_FUN_0064ef50
 undefined4 __cdecl fn_00401AC8(int param_1);
 // 00401ACD HelpPanelTy::CreateList
-undefined __thiscall fn_00401ACD(HelpPanelTy * st_this);
+void __thiscall fn_00401ACD(HelpPanelTy * st_this);
 // 00401AD2 CPanelTy::sub_0052AFE0
 undefined __thiscall fn_00401AD2(CPanelTy * st_this, byte param_1, float param_2, float param_3);
 // 00401AD7 thunk_FUN_0054cdb0
@@ -1036,7 +1036,7 @@ int __thiscall fn_00401B04(STColl3C * st_this);
 // 00401B09 AiFltClassTy::GoToRepair
 undefined __thiscall fn_00401B09(AiFltClassTy * st_this);
 // 00401B0E thunk_FUN_005eeff0
-undefined __thiscall fn_00401B0E(void * st_this, int param_1);
+void __thiscall fn_00401B0E(void * st_this, int param_1);
 // 00401B13 thunk_FUN_0063c4a0
 int __thiscall fn_00401B13(void * st_this, int param_1);
 // 00401B18 thunk_FUN_004e4f30
@@ -1056,7 +1056,7 @@ undefined __thiscall fn_00401B3B(void * st_this, byte param_1);
 // 00401B40 thunk_FUN_006366d0
 void __fastcall fn_00401B40(AnonShape_006366D0_80B1100F * param_1);
 // 00401B45 WaitTy::sub_005E9A40
-undefined __thiscall fn_00401B45(WaitTy * st_this);
+void __thiscall fn_00401B45(WaitTy * st_this);
 // 00401B4A thunk_FUN_004c2c10
 undefined4 __fastcall fn_00401B4A(AnonShape_004C2C10_59B6D93C * param_1);
 // 00401B4F thunk_FUN_004cc220
@@ -1096,7 +1096,7 @@ void __thiscall fn_00401BA9(CPanelTy * st_this, byte param_1, byte param_2);
 // 00401BAE STT3DSprC::sub_004ACE60
 int __thiscall fn_00401BAE(STT3DSprC * st_this, char param_1);
 // 00401BB3 STVolcanoC::sub_006479E0
-undefined __thiscall fn_00401BB3(STVolcanoC * st_this);
+void __thiscall fn_00401BB3(STVolcanoC * st_this);
 // 00401BB8 MMsgTy::PaintMMsg
 undefined __thiscall fn_00401BB8(MMsgTy * st_this);
 // 00401BBD SndUnderAttMenegC::sub_006211E0
@@ -1214,7 +1214,7 @@ undefined __thiscall fn_00401CDA(void * st_this, Global_sub_00568940_param_1Enum
 // 00401CDF AiFltClassTy::sub_0065D6E0
 undefined __fastcall fn_00401CDF(AnonShape_0065D6E0_0F9074F6 * param_1, undefined4 param_2);
 // 00401CE4 ProdPanelTy::PaintTab
-undefined __thiscall fn_00401CE4(ProdPanelTy * st_this, AnonShape_0053FCD0_D10A885A * param_1, code *param_2);
+void __thiscall fn_00401CE4(ProdPanelTy * st_this, AnonShape_0053FCD0_D10A885A * param_1, code *param_2);
 // 00401CE9 STLightC::sub_0061F290
 undefined4 __thiscall fn_00401CE9(STLightC * st_this, int param_1);
 // 00401CEE thunk_FUN_00616280
@@ -1234,7 +1234,7 @@ int __thiscall fn_00401D0C(AiTactClassTy * st_this, int param_1);
 // 00401D11 AiEventClassTy::PrepareToSave
 undefined4 * __thiscall fn_00401D11(AiEventClassTy * st_this, uint * param_1);
 // 00401D16 thunk_FUN_00640390
-undefined __thiscall fn_00401D16(void * st_this, int param_1);
+void __thiscall fn_00401D16(void * st_this, int param_1);
 // 00401D1B thunk_FUN_0062f7a0
 undefined __fastcall fn_00401D1B(AnonShape_0062F7A0_700302F7 * param_1);
 // 00401D20 UpgPanelTy::InitUpgPanel
@@ -1260,7 +1260,7 @@ undefined __thiscall fn_00401D4D(BehPanelTy * st_this);
 // 00401D52 thunk_FUN_004e28d0
 undefined4 __fastcall fn_00401D52(int param_1);
 // 00401D57 STManRuinC::sub_00630BB0
-void __thiscall fn_00401D57(STManRuinC * st_this, short param_1, short param_2, short param_3, undefined4 param_4, int param_5, undefined4 param_6);
+void __thiscall fn_00401D57(STManRuinC * st_this, short param_1, short param_2, short param_3, undefined4 param_4, int param_5, int param_6);
 // 00401D5C thunk_FUN_005440c0
 void __thiscall fn_00401D5C(void * st_this, int param_1, undefined4 * param_2, int param_3);
 // 00401D61 thunk_FUN_0044d320
@@ -1368,11 +1368,11 @@ undefined4 __stdcall fn_00401E6A(byte * param_1);
 // 00401E6F STBoatC::CheckForReplenisher
 undefined4 __thiscall fn_00401E6F(STBoatC * st_this);
 // 00401E74 thunk_FUN_00440700
-undefined __stdcall fn_00401E74(int param_1);
+void __stdcall fn_00401E74(int param_1);
 // 00401E7E thunk_FUN_0043e460
 short __stdcall fn_00401E7E(char param_1);
 // 00401E83 MoneyTy::sub_0052BC30
-undefined __thiscall fn_00401E83(MoneyTy * st_this, uint param_1, uint param_2, uint param_3, byte param_4, byte param_5, int param_6);
+void __thiscall fn_00401E83(MoneyTy * st_this, uint param_1, uint param_2, uint param_3, byte param_4, byte param_5, int param_6);
 // 00401E88 thunk_FUN_00529fe0
 undefined4 __cdecl fn_00401E88(int param_1);
 // 00401E8D thunk_FUN_006771e0
@@ -1406,7 +1406,7 @@ STSatC * __thiscall fn_00401ECE(STSatC * st_this);
 // 00401ED3 STDcResourcC::CreateRes
 int __thiscall fn_00401ED3(STDcResourcC * st_this);
 // 00401ED8 STTmMineC::thunk_FUN_0063ddb0
-undefined __thiscall fn_00401ED8(STTmMineC * st_this, int param_1);
+void __thiscall fn_00401ED8(STTmMineC * st_this, int param_1);
 // 00401EDD thunk_FUN_004b7140
 int __stdcall fn_00401EDD(undefined4 param_1, int param_2);
 // 00401EE2 FSGSTy::sub_0059B820
@@ -1416,7 +1416,7 @@ undefined __thiscall fn_00401EE7(void * st_this, undefined4 param_1);
 // 00401EEC STGroupBoatC::SaveGrpBData
 undefined4 * __thiscall fn_00401EEC(STGroupBoatC * st_this, int * param_1);
 // 00401EF1 thunk_FUN_0065e6c0
-undefined __fastcall fn_00401EF1(AnonShape_0065DA10_8B0AA883 * param_1, undefined4 param_2);
+void __fastcall fn_00401EF1(AnonShape_0065DA10_8B0AA883 * param_1, undefined4 param_2);
 // 00401EF6 thunk_FUN_005ec510
 undefined __thiscall fn_00401EF6(void * st_this, char * param_1);
 // 00401EFB STSharkC::LifeShark
@@ -1540,9 +1540,9 @@ undefined4 __cdecl fn_00402027(int param_1);
 // 0040202C thunk_FUN_0060cef0
 undefined4 __fastcall fn_0040202C(AnonShape_0060CEF0_8FC1D59C * param_1);
 // 00402031 FSGSTy::PaintLadder
-undefined __thiscall fn_00402031(FSGSTy * st_this);
+void __thiscall fn_00402031(FSGSTy * st_this);
 // 00402036 thunk_FUN_00594850
-undefined __cdecl fn_00402036(int param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_00402036(int param_1, undefined * param_2, BYTE param_3);
 // 0040203B thunk_FUN_0041dbc0
 undefined fn_0040203B(void);
 // 00402040 thunk_FUN_005809e0
@@ -1630,7 +1630,7 @@ undefined __thiscall fn_00402117(void * st_this, int param_1, int param_2, uint 
 // 0040211C thunk_FUN_0052a730
 undefined4 __cdecl fn_0040211C(int param_1);
 // 00402121 PanelTy::PaintIBut
-undefined __thiscall fn_00402121(PanelTy * st_this, AnonShape_00538DB0_574DDCD0 * param_1, char * param_2, UINT param_3, int param_4, int param_5);
+void __thiscall fn_00402121(PanelTy * st_this, AnonShape_00538DB0_574DDCD0 * param_1, char * param_2, UINT param_3, int param_4, int param_5);
 // 00402126 STBoatC::CmdToObj
 undefined __thiscall fn_00402126(STBoatC * st_this, STBoatC_CmdToObj_param_1Enum param_1, uint * param_2);
 // 0040212B thunk_FUN_005fb540
@@ -1656,7 +1656,7 @@ int __thiscall fn_00402162(AnonReceiver_00636260 * st_this);
 // 00402167 thunk_FUN_004df950
 undefined4 __fastcall fn_00402167(int param_1);
 // 0040216C STMineSetC::sub_0041D2B0
-undefined __thiscall fn_0040216C(STMineSetC * st_this);
+void __thiscall fn_0040216C(STMineSetC * st_this);
 // 00402171 StartSystemTy::CreateSystemObjects
 undefined __thiscall fn_00402171(StartSystemTy * st_this);
 // 00402176 STManRuinC::sub_00631390
@@ -1694,7 +1694,7 @@ PausePanelTy * __cdecl fn_004021CB(void);
 // 004021D0 PausePanelTy::GetMessage
 int __thiscall fn_004021D0(PausePanelTy * st_this, STMessage * message);
 // 004021D5 thunk_FUN_004ad310
-undefined __fastcall fn_004021D5(STT3DSprC * param_1);
+void __fastcall fn_004021D5(STT3DSprC * param_1);
 // 004021DA thunk_FUN_0054cf00
 int __thiscall fn_004021DA(void * st_this, int param_1, undefined4 * param_2, int * param_3, undefined4 param_4, int param_5);
 // 004021DF STFieldC::LoadImagSpr
@@ -1706,7 +1706,7 @@ undefined4 __thiscall fn_004021E9(void * st_this, short param_1, short param_2);
 // 004021EE IntercomPanelTy::DoneIntercomPanel
 undefined __thiscall fn_004021EE(IntercomPanelTy * st_this);
 // 004021F3 thunk_FUN_0058c560
-undefined __thiscall fn_004021F3(void * st_this, int param_1, int param_2);
+void __thiscall fn_004021F3(void * st_this, int param_1, int param_2);
 // 004021F8 thunk_FUN_0042a9c0
 undefined4 __stdcall fn_004021F8(char param_1);
 // 004021FD thunk_FUN_00677700
@@ -1844,7 +1844,7 @@ undefined4 __fastcall fn_00402356(int param_1);
 // 0040235B thunk_FUN_0052a6c0
 undefined4 __cdecl fn_0040235B(int param_1);
 // 00402360 thunk_FUN_005da980
-undefined4 __stdcall fn_00402360(int param_1);
+int __stdcall fn_00402360(int param_1);
 // 00402365 STSprGameObjC::thunk_FUN_005ef9f0
 dword __thiscall fn_00402365(STSprGameObjC * st_this);
 // 0040236F STVolcanoC::sub_00646DB0
@@ -2000,7 +2000,7 @@ undefined4 __thiscall fn_004024F5(STOctopusC * st_this, short param_1, short par
 // 004024FA STAllPlayersC::_AssignDocks
 uint * __thiscall fn_004024FA(STAllPlayersC * st_this, char param_1, DArrayTy * param_2, DArrayTy * param_3);
 // 004024FF thunk_FUN_005419e0
-undefined __cdecl fn_004024FF(int param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_004024FF(int param_1, undefined * param_2, BYTE param_3);
 // 00402504 thunk_FUN_004e4aa0
 undefined4 __fastcall fn_00402504(int * param_1);
 // 00402509 TraksClassTy::TraksClassTy
@@ -2068,9 +2068,9 @@ TraksClassTy * __cdecl fn_004025A9(void);
 // 004025AE thunk_FUN_00430750
 undefined1 __stdcall fn_004025AE(Global_sub_00430750_param_1Enum param_1);
 // 004025B3 STAppC::sub_0056EF50
-undefined __thiscall fn_004025B3(STAppC * st_this);
+void __thiscall fn_004025B3(STAppC * st_this);
 // 004025B8 STAppC::sub_0056EBE0
-undefined __thiscall fn_004025B8(STAppC * st_this);
+void __thiscall fn_004025B8(STAppC * st_this);
 // 004025BD thunk_FUN_0055bd40
 CFsgsConnection * __thiscall fn_004025BD(void * st_this, byte param_1);
 // 004025C2 thunk_FUN_004e4990
@@ -2138,7 +2138,7 @@ undefined4 __cdecl fn_0040266C(int param_1);
 // 00402671 CreateAiTact
 AiTactClassTy * __cdecl fn_00402671(void);
 // 0040267B thunk_FUN_005416a0
-undefined __cdecl fn_0040267B(int param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_0040267B(int param_1, undefined * param_2, BYTE param_3);
 // 00402680 UPanelTy::CreateTab
 undefined4 __thiscall fn_00402680(UPanelTy * st_this, byte param_1, byte param_2, int param_3, int param_4, uint param_5, uint param_6, int param_7, int param_8, undefined4 param_9, undefined4 param_10);
 // 00402685 thunk_FUN_004d8b30
@@ -2168,7 +2168,7 @@ undefined4 __cdecl fn_004026BC(short * param_1);
 // 004026C1 thunk_FUN_0044e260
 undefined __stdcall fn_004026C1(uint param_1, uint param_2, uint param_3, int * param_4);
 // 004026C6 thunk_FUN_005ff3a0
-undefined4 __thiscall fn_004026C6(void * st_this, undefined2 * param_1, undefined2 * param_2, short * param_3);
+undefined4 __thiscall fn_004026C6(void * st_this, uint * param_1, short * param_2, short * param_3);
 // 004026CB thunk_FUN_004ad510
 void __fastcall fn_004026CB(int param_1);
 // 004026D5 thunk_FUN_00693cb0
@@ -2224,7 +2224,7 @@ int __thiscall fn_00402752(CampaignTy * st_this, STMessage * message);
 // 00402757 thunk_FUN_005f0470
 undefined4 __thiscall fn_00402757(void * st_this, int param_1);
 // 00402761 STT3DSprC::sub_004AD070
-undefined __thiscall fn_00402761(STT3DSprC * st_this, byte param_1);
+void __thiscall fn_00402761(STT3DSprC * st_this, byte param_1);
 // 00402766 PlayPanelTy::GetMessage
 int __thiscall fn_00402766(PlayPanelTy * st_this, STMessage * message);
 // 0040276B thunk_FUN_005fd710
@@ -2264,9 +2264,9 @@ void __thiscall fn_004027C0(STAllPlayersC * st_this, uint param_1, int param_2, 
 // 004027C5 STAllPlayersC::_DeleteGuardBoat
 undefined4 __thiscall fn_004027C5(STAllPlayersC * st_this, char param_1, short param_2, int param_3);
 // 004027CA STBoatC::sub_00492420
-undefined __thiscall fn_004027CA(STBoatC * st_this);
+void __thiscall fn_004027CA(STBoatC * st_this);
 // 004027CF thunk_FUN_0060c2d0
-undefined __fastcall fn_004027CF(STJellyGunC * param_1);
+void __fastcall fn_004027CF(STJellyGunC * param_1);
 // 004027D4 thunk_FUN_006173a0
 undefined4 __thiscall fn_004027D4(void * st_this, int param_1, int * param_2, int * param_3, int * param_4);
 // 004027D9 thunk_FUN_00589a20
@@ -2354,7 +2354,7 @@ undefined __thiscall fn_004028AB(void * st_this, TLOBaseTy_sub_004CAFC0_param_1E
 // 004028B0 thunk_FUN_00481560
 uint __thiscall fn_004028B0(void * st_this, short param_1, short param_2, short param_3, short param_4, short param_5, short param_6);
 // 004028B5 StartSystemTy::CreateChatView
-undefined __thiscall fn_004028B5(StartSystemTy * st_this);
+void __thiscall fn_004028B5(StartSystemTy * st_this);
 // 004028BA STAllPlayersC::GetObjPtr
 STGameObjC * __thiscall fn_004028BA(STAllPlayersC * st_this, char objPtr, ushort param_2, STAllPlayersC_GetObjPtr_param_3Enum param_3);
 // 004028BF thunk_FUN_005532f0
@@ -2388,7 +2388,7 @@ int __thiscall fn_00402900(void * st_this, int param_1, int param_2, int param_3
 // 00402905 thunk_FUN_0041dbe0
 undefined4 __stdcall fn_00402905(undefined4 param_1, undefined2 * param_2, undefined2 * param_3, undefined2 * param_4, undefined4 * param_5);
 // 0040290A thunk_FUN_004f4950
-undefined __cdecl fn_0040290A(ushort * param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_0040290A(ushort * param_1, undefined * param_2, BYTE param_3);
 // 0040290F thunk_FUN_004924a0
 void __fastcall fn_0040290F(void * param_1);
 // 00402914 BldBoatPanelTy::ShiftControls
@@ -2462,13 +2462,13 @@ undefined4 __thiscall fn_004029BE(void * st_this, undefined4 param_1);
 // 004029C3 thunk_FUN_005ec4a0
 int __thiscall fn_004029C3(void * st_this, undefined4 * param_1);
 // 004029C8 HelpPanelTy::HomeBut
-undefined __thiscall fn_004029C8(HelpPanelTy * st_this);
+void __thiscall fn_004029C8(HelpPanelTy * st_this);
 // 004029CD SIDTy::PaintSID
 undefined __thiscall fn_004029CD(SIDTy * st_this);
 // 004029D2 thunk_FUN_004d9bb0
 undefined __fastcall fn_004029D2(int param_1);
 // 004029D7 thunk_FUN_004ea6e0
-undefined __stdcall fn_004029D7(uint param_1, int param_2, int param_3, undefined4 param_4);
+void __stdcall fn_004029D7(uint param_1, int param_2, int param_3, undefined4 param_4);
 // 004029DC thunk_FUN_0062e610
 uint __thiscall fn_004029DC(void * st_this, int param_1, int * param_2);
 // 004029E1 thunk_FUN_004dd6c0
@@ -2536,7 +2536,7 @@ undefined __cdecl fn_00402A86(undefined4 param_1, ushort param_2, ushort param_3
 // 00402A8B thunk_FUN_0065e700
 undefined4 __fastcall fn_00402A8B(AnonReceiver_0065ED90 * param_1, undefined4 param_2, int * param_3, int * param_4, int * param_5);
 // 00402A90 thunk_FUN_004ad5e0
-undefined __fastcall fn_00402A90(STT3DSprC * param_1);
+void __fastcall fn_00402A90(STT3DSprC * param_1);
 // 00402A95 thunk_FUN_0062b990
 undefined __cdecl fn_00402A95(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, int param_5, undefined4 param_6, undefined4 param_7);
 // 00402A9A SettMapTy::PaintSC
@@ -2574,7 +2574,7 @@ int __cdecl fn_00402AE5(int param_1);
 // 00402AEF CreateSTManRuin
 STManRuinC * __cdecl fn_00402AEF(void);
 // 00402AF4 SndUnderAttMenegC::sub_00621580
-undefined __thiscall fn_00402AF4(SndUnderAttMenegC * st_this, byte * param_1, int param_2);
+void __thiscall fn_00402AF4(SndUnderAttMenegC * st_this, byte * param_1, int param_2);
 // 00402AF9 thunk_FUN_004d7c10
 undefined4 __stdcall fn_00402AF9(char param_1, int param_2, int param_3, int param_4);
 // 00402AFE thunk_FUN_004168d0
@@ -2602,7 +2602,7 @@ undefined __thiscall fn_00402B35(void * st_this, char * param_1);
 // 00402B3A ProdPanelTy::ShiftControls
 void __thiscall fn_00402B3A(ProdPanelTy * st_this, int param_1);
 // 00402B3F STMineSetC::sub_0041D1A0
-undefined __thiscall fn_00402B3F(STMineSetC * st_this, int param_1);
+void __thiscall fn_00402B3F(STMineSetC * st_this, int param_1);
 // 00402B44 thunk_FUN_0056a820
 undefined fn_00402B44(void);
 // 00402B49 AiTactClassTy::sub_00690AB0
@@ -2710,7 +2710,7 @@ undefined4 __thiscall fn_00402C57(STVolcanoC * st_this);
 // 00402C5C thunk_FUN_006831f0
 undefined __stdcall fn_00402C5C(void);
 // 00402C61 thunk_FUN_0067bf60
-undefined4 __thiscall fn_00402C61(void * st_this, char param_1, uint param_2);
+void __thiscall fn_00402C61(void * st_this, char param_1, uint param_2);
 // 00402C70 FSGSTy::Download
 undefined __thiscall fn_00402C70(FSGSTy * st_this, undefined4 param_1, undefined4 param_2);
 // 00402C75 thunk_FUN_005fce70
@@ -2760,7 +2760,7 @@ STBoatC * __thiscall fn_00402CDE(STBoatC * st_this);
 // 00402CE3 TLOEmbryoTy::thunk_FUN_004d6c50
 dword __thiscall fn_00402CE3(TLOEmbryoTy * st_this);
 // 00402CE8 thunk_FUN_00496cc0
-undefined __stdcall fn_00402CE8(int param_1, int param_2, uint param_3, undefined4 param_4, uint param_5, void * param_6);
+undefined __stdcall fn_00402CE8(int param_1, int param_2, uint * param_3, undefined4 param_4, uint param_5, void * param_6);
 // 00402CED FSGSTy::DoLogon
 undefined __thiscall fn_00402CED(FSGSTy * st_this);
 // 00402CF2 STDestC::sub_00602BE0
@@ -2842,9 +2842,9 @@ undefined __cdecl fn_00402DBF(int param_1, undefined4 param_2, undefined4 param_
 // 00402DC4 thunk_FUN_0060ca20
 undefined4 __fastcall fn_00402DC4(int param_1);
 // 00402DC9 AiFltClassTy::sub_00660F70
-undefined __thiscall fn_00402DC9(AiFltClassTy * st_this, uint * param_1, undefined2 param_2);
+void __thiscall fn_00402DC9(AiFltClassTy * st_this, uint * param_1, undefined2 param_2);
 // 00402DCE thunk_FUN_00647960
-undefined __fastcall fn_00402DCE(int param_1);
+void __fastcall fn_00402DCE(int param_1);
 // 00402DD3 thunk_FUN_00553840
 short __cdecl fn_00402DD3(short param_1);
 // 00402DD8 thunk_FUN_00637930
@@ -2952,7 +2952,7 @@ PopUpTy * __cdecl fn_00402EE1(void);
 // 00402EE6 thunk_FUN_00497110
 undefined __stdcall fn_00402EE6(AnonShape_00497110_11FEE69C * param_1, AnonShape_00497110_465BC742 * param_2);
 // 00402EEB HelpPanelTy::CreateSlider
-undefined __thiscall fn_00402EEB(HelpPanelTy * st_this, int param_1);
+void __thiscall fn_00402EEB(HelpPanelTy * st_this, int param_1);
 // 00402EF0 thunk_FUN_00494df0
 undefined __fastcall fn_00402EF0(AnonShape_00494DF0_56294F0B * param_1);
 // 00402EF5 thunk_FUN_0068e800
@@ -2964,7 +2964,7 @@ undefined4 __stdcall fn_00402EFF(int param_1, int param_2, AnonShape_0060F940_1C
 // 00402F04 thunk_FUN_005f06e0
 undefined __fastcall fn_00402F04(AnonShape_005F0620_60AA17CE * param_1);
 // 00402F0E thunk_FUN_004b7710
-undefined __stdcall fn_00402F0E(uint param_1, int param_2);
+void __stdcall fn_00402F0E(uint param_1, int param_2);
 // 00402F13 MMMObjTy::OutEdProc
 undefined __thiscall fn_00402F13(MMMObjTy * st_this, AnonShape_GLOBAL_0080759C_9638EF10 * param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, undefined4 * param_8);
 // 00402F18 thunk_FUN_0055d480
@@ -3068,7 +3068,7 @@ undefined __thiscall fn_00403021(void * st_this, AnonShape_00580780_266862D6 * p
 // 00403026 STCrabC::thunk_FUN_0057a2a0
 dword __thiscall fn_00403026(STCrabC * st_this);
 // 0040302B thunk_FUN_0062e440
-undefined4 __stdcall fn_0040302B(int param_1, undefined2 param_2, undefined2 param_3, undefined2 param_4, int param_5, int param_6);
+undefined4 __stdcall fn_0040302B(int param_1, undefined2 param_2, undefined2 param_3, undefined2 param_4, int param_5, uint param_6);
 // 00403030 thunk_FUN_006a1100
 bool __cdecl fn_00403030(int * param_1, int param_2, int param_3, int param_4, int param_5, ushort * param_6);
 // 00403035 HelpPanelTy::HelpPanelTy
@@ -3086,7 +3086,7 @@ undefined4 __thiscall fn_0040304E(STGroupBoatC * st_this, int param_1);
 // 00403053 thunk_FUN_00680bd0
 undefined4 __stdcall fn_00403053(void);
 // 00403058 CursorClassTy::sub_0054B540
-undefined __thiscall fn_00403058(CursorClassTy * st_this);
+void __thiscall fn_00403058(CursorClassTy * st_this);
 // 0040305D thunk_FUN_005ff150
 undefined __stdcall fn_0040305D(int param_1, int * param_2, int param_3);
 // 00403062 CPanelTy::PaintTV
@@ -3104,7 +3104,7 @@ undefined __stdcall fn_0040307B(int param_1, uint param_2, int param_3);
 // 00403080 AiTactClassTy::thunk_FUN_0068e730
 undefined4 __thiscall fn_00403080(AiTactClassTy * st_this, int param_1);
 // 00403085 GameSystemC::sub_00577690
-undefined __thiscall fn_00403085(GameSystemC * st_this);
+int __thiscall fn_00403085(GameSystemC * st_this);
 // 0040308A thunk_FUN_006a2e50
 undefined __cdecl fn_0040308A(int param_1, int param_2, int param_3, int param_4, undefined4 param_5, char * param_6, int param_7, int param_8);
 // 0040308F thunk_FUN_006823a0
@@ -3116,7 +3116,7 @@ void __thiscall fn_00403099(MMMObjTy * st_this, int param_1, MMMObjTy * param_2,
 // 0040309E thunk_FUN_005ef470
 undefined fn_0040309E(void);
 // 004030A3 thunk_FUN_0057b670
-undefined4 __cdecl fn_004030A3(int * param_1, uint param_2, uint param_3, short * param_4, short * param_5);
+undefined4 __cdecl fn_004030A3(int * param_1, uint * param_2, uint param_3, short * param_4, short * param_5);
 // 004030A8 thunk_FUN_0055c260
 undefined __thiscall fn_004030A8(void * st_this, DWORD param_1);
 // 004030AD TLOBaseTy::TLOBaseTy
@@ -3202,7 +3202,7 @@ int __fastcall fn_00403184(STBoatC * param_1);
 // 00403189 thunk_FUN_0058d080
 undefined4 __cdecl fn_00403189(int param_1);
 // 0040318E thunk_FUN_0062f080
-undefined4 __thiscall fn_0040318E(void * st_this, int param_1, undefined4 param_2, undefined4 param_3);
+undefined4 __thiscall fn_0040318E(void * st_this, int param_1, undefined4 param_2, STRubbishC_LoadImagSpr_param_4Enum param_3);
 // 00403193 thunk_FUN_00617aa0
 undefined __thiscall fn_00403193(void * st_this, int param_1);
 // 00403198 thunk_FUN_00681ad0
@@ -3236,7 +3236,7 @@ undefined4 __thiscall fn_004031D9(void * st_this, int param_1);
 // 004031DE STBoatC::sub_00460260
 int __thiscall fn_004031DE(STBoatC * st_this, int param_1);
 // 004031E3 thunk_FUN_00416270
-undefined __thiscall fn_004031E3(void * st_this, uint * param_1, int * param_2, short * param_3);
+undefined __thiscall fn_004031E3(void * st_this, uint * param_1, short * param_2, short * param_3);
 // 004031E8 thunk_FUN_00423d80
 undefined4 __thiscall fn_004031E8(void * st_this, DArrayTy * groupContent);
 // 004031ED thunk_FUN_0064feb0
@@ -3272,7 +3272,7 @@ undefined4 __thiscall fn_00403238(void * st_this, undefined4 param_1);
 // 0040323D STBHEShellC::sub_005F5A90
 byte * __thiscall fn_0040323D(STBHEShellC * st_this, int * param_1);
 // 00403242 PlayPanelTy::PaintPlayPanel
-undefined __thiscall fn_00403242(PlayPanelTy * st_this);
+void __thiscall fn_00403242(PlayPanelTy * st_this);
 // 00403247 thunk_FUN_005f4a30
 undefined4 __stdcall fn_00403247(int param_1, byte param_2, int param_3);
 // 00403251 STGroupBoatC::DistributeDock
@@ -3350,7 +3350,7 @@ byte * __thiscall fn_00403300(AiPlrClassTy * st_this, uint * param_1);
 // 00403305 STLightC::sub_0061D8F0
 int __thiscall fn_00403305(STLightC * st_this, undefined4 * param_1);
 // 0040330A StartSystemTy::GetIP
-undefined __thiscall fn_0040330A(StartSystemTy * st_this);
+void __thiscall fn_0040330A(StartSystemTy * st_this);
 // 0040330F thunk_FUN_004d01f0
 undefined4 __fastcall fn_0040330F(void * param_1);
 // 00403314 thunk_FUN_004945c0
@@ -3444,7 +3444,7 @@ undefined4 __cdecl fn_004033FA(undefined4 param_1, Global_sub_004AFFA0_param_2En
 // 004033FF AiPlrClassTy::InitData
 int __thiscall fn_004033FF(AiPlrClassTy * st_this, undefined4 * param_1);
 // 00403404 STSprGameObjC::sub_0041F970
-undefined __thiscall fn_00403404(STSprGameObjC * st_this);
+void __thiscall fn_00403404(STSprGameObjC * st_this);
 // 00403409 thunk_FUN_005926a0
 void __stdcall fn_00403409(int * param_1);
 // 0040340E STGroupC::AddObj
@@ -3498,7 +3498,7 @@ undefined4 __thiscall fn_0040348B(STGroupBoatC * st_this, char param_1, short pa
 // 00403490 thunk_FUN_00677220
 uint __stdcall fn_00403490(void);
 // 00403495 UPanelTy::PaintBut
-undefined __thiscall fn_00403495(UPanelTy * st_this, AnonShape_0053D7A0_044B6141 * param_1, byte param_2, char * param_3, code *param_4);
+void __thiscall fn_00403495(UPanelTy * st_this, AnonShape_0053D7A0_044B6141 * param_1, byte param_2, char * param_3, code *param_4);
 // 0040349A thunk_FUN_006a2700
 void __cdecl fn_0040349A(int * param_1, uint param_2, int param_3, int param_4, uint param_5, int param_6, ushort * param_7, undefined * param_8, undefined4 param_9);
 // 0040349F thunk_FUN_0041c2c0
@@ -3530,13 +3530,13 @@ STVolcanoC * __cdecl fn_004034E5(void);
 // 004034EA STGroupC::GetMessage
 int __thiscall fn_004034EA(STGroupC * st_this, STMessage * message);
 // 004034EF thunk_FUN_005da130
-undefined __cdecl fn_004034EF(ushort * param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_004034EF(ushort * param_1, undefined * param_2, BYTE param_3);
 // 004034F4 thunk_FUN_005daa60
-undefined __stdcall fn_004034F4(void);
+void __stdcall fn_004034F4(void);
 // 004034FE CPanelTy::PaintInfoObj
 undefined __thiscall fn_004034FE(CPanelTy * st_this);
 // 00403508 UPanelTy::PaintIBut
-undefined __thiscall fn_00403508(UPanelTy * st_this, AnonShape_0053DAF0_3BDC2979 * param_1, char * param_2, UINT param_3);
+void __thiscall fn_00403508(UPanelTy * st_this, AnonShape_0053DAF0_3BDC2979 * param_1, char * param_2, UINT param_3);
 // 0040350D thunk_FUN_004c5e60
 undefined4 __fastcall fn_0040350D(int param_1);
 // 00403512 thunk_FUN_006034e0
@@ -3584,7 +3584,7 @@ UINT __cdecl fn_00403576(Global_sub_00528A30_param_1Enum param_1, char param_2);
 // 0040357B thunk_FUN_004d8db0
 undefined4 __fastcall fn_0040357B(AnonShape_004D8DB0_597A2A4F * param_1);
 // 00403580 thunk_FUN_0060a430
-undefined __thiscall fn_00403580(void * st_this, int param_1);
+void __thiscall fn_00403580(void * st_this, int param_1);
 // 00403585 STBoatC::ExpIsOver
 undefined __thiscall fn_00403585(STBoatC * st_this, uint param_1);
 // 0040358A thunk_FUN_004b6d20
@@ -3732,9 +3732,9 @@ undefined4 __thiscall fn_004036ED(void * st_this, int param_1, int param_2, int 
 // 004036F2 thunk_FUN_00424790
 undefined4 __fastcall fn_004036F2(STGroupBoatC * param_1);
 // 004036F7 STSprGameObjC::LoadLifeFrame
-undefined __thiscall fn_004036F7(STSprGameObjC * st_this);
+void __thiscall fn_004036F7(STSprGameObjC * st_this);
 // 004036FC thunk_FUN_00647a60
-undefined __thiscall fn_004036FC(void * st_this, int soundId);
+void __thiscall fn_004036FC(void * st_this, int soundId);
 // 00403701 TraksClassTy::CreateDate
 int __thiscall fn_00403701(TraksClassTy * st_this);
 // 00403706 MReportTy::NoneMReport
@@ -3756,7 +3756,7 @@ void __cdecl fn_00403729(int * param_1, int param_2, int param_3, int param_4, i
 // 00403733 STMBombC::STMBombC
 STMBombC * __thiscall fn_00403733(STMBombC * st_this);
 // 00403738 PutDDX
-undefined __cdecl fn_00403738(int param_1, int param_2, char param_3, BITMAPINFO * param_4);
+void __cdecl fn_00403738(int param_1, int param_2, char param_3, BITMAPINFO * param_4);
 // 0040373D thunk_FUN_004b9cf0
 uint __fastcall fn_0040373D(AnonShape_004B9D90_4F3151F9 * param_1);
 // 00403742 thunk_FUN_00589b10
@@ -3790,7 +3790,7 @@ undefined4 __cdecl fn_0040378D(int param_1);
 // 00403792 AiBossClassTy::GetMessage
 int __thiscall fn_00403792(AiBossClassTy * st_this, STMessage * message);
 // 00403797 thunk_FUN_0063de20
-undefined __thiscall fn_00403797(void * st_this, int soundId);
+void __thiscall fn_00403797(void * st_this, int soundId);
 // 0040379C thunk_FUN_004769f0
 int __fastcall fn_0040379C(int * param_1);
 // 004037A1 thunk_FUN_0062dbd0
@@ -3818,7 +3818,7 @@ int __thiscall fn_004037DD(void * st_this, int param_1, undefined4 param_2, int 
 // 004037E2 thunk_FUN_00412960
 int __stdcall fn_004037E2(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, AnonShape_00412960_B35D15BC * param_7, int param_8);
 // 004037E7 thunk_FUN_0065d600
-undefined __fastcall fn_004037E7(int param_1);
+void __fastcall fn_004037E7(int param_1);
 // 004037F1 thunk_FUN_004e7e10
 undefined4 __stdcall fn_004037F1(uint * param_1);
 // 004037F6 thunk_FUN_006367d0
@@ -3856,11 +3856,11 @@ undefined __thiscall fn_00403841(void * st_this, int param_1, int param_2);
 // 00403846 thunk_FUN_0041d600
 void fn_00403846(void);
 // 0040384B TLOBaseTy::sub_004CA7B0
-undefined4 __thiscall fn_0040384B(TLOBaseTy * st_this, uint * param_1, int param_2);
+undefined4 __thiscall fn_0040384B(TLOBaseTy * st_this, uint param_1, int param_2);
 // 00403850 thunk_FUN_0063d660
 undefined4 __thiscall fn_00403850(void * st_this, char param_1);
 // 00403855 STBoatC::sub_004602B0
-undefined __thiscall fn_00403855(STBoatC * st_this);
+void __thiscall fn_00403855(STBoatC * st_this);
 // 0040385A thunk_FUN_006509e0
 undefined4 __cdecl fn_0040385A(int param_1);
 // 0040385F thunk_FUN_004deff0
@@ -3928,7 +3928,7 @@ OptPanelTy * __cdecl fn_004038FF(void);
 // 00403904 thunk_FUN_0064fb80
 undefined4 __cdecl fn_00403904(RecoveredRecord_AiEventClassTy_0064FB80 * param_1);
 // 00403909 STAllPlayersC::sub_004DB160
-undefined __thiscall fn_00403909(STAllPlayersC * st_this, int param_1, undefined4 param_2, int * param_3, int * param_4, int * param_5, int * param_6);
+void __thiscall fn_00403909(STAllPlayersC * st_this, int param_1, undefined4 param_2, int * param_3, int * param_4, int * param_5, int * param_6);
 // 0040390E thunk_FUN_004b2390
 undefined4 __cdecl fn_0040390E(uint param_1, int param_2, int param_3, int param_4, int * param_5, int param_6);
 // 00403913 thunk_FUN_00693e60
@@ -3952,7 +3952,7 @@ void __thiscall fn_0040393B(SettMapMTy * st_this, AnonShape_005D4990_5F0525CF * 
 // 00403940 thunk_FUN_006a36e0
 undefined4 __cdecl fn_00403940(int * param_1, int param_2, int param_3, int param_4, undefined * param_5, undefined4 param_6);
 // 00403945 thunk_FUN_004f4c70
-undefined __cdecl fn_00403945(int param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_00403945(int param_1, undefined * param_2, BYTE param_3);
 // 0040394A thunk_FUN_006937b0
 undefined __cdecl fn_0040394A(undefined4 param_1, undefined4 param_2);
 // 0040394F AiPlrClassTy::sub_0067C110
@@ -3992,7 +3992,7 @@ UINT __cdecl fn_004039A4(Global_sub_00525CA0_param_1Enum param_1);
 // 004039A9 thunk_FUN_00494f00
 undefined __fastcall fn_004039A9(AnonShape_00494F00_45028F21 * param_1);
 // 004039AE STAppC::sub_0056F040
-undefined __thiscall fn_004039AE(STAppC * st_this);
+void __thiscall fn_004039AE(STAppC * st_this);
 // 004039B3 thunk_FUN_005fada0
 undefined4 __thiscall fn_004039B3(void * st_this, int param_1, uint param_2, int param_3);
 // 004039B8 STSprGameObjC::thunk_FUN_005f0450
@@ -4018,7 +4018,7 @@ undefined fn_004039E5(void);
 // 004039EA DelAllAccelerators
 undefined __stdcall fn_004039EA(void);
 // 004039EF thunk_FUN_0052cce0
-undefined __cdecl fn_004039EF(ushort * param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_004039EF(ushort * param_1, undefined * param_2, BYTE param_3);
 // 004039F4 thunk_FUN_00613280
 undefined __thiscall fn_004039F4(void * st_this, int param_1, int param_2, int param_3, undefined4 param_4);
 // 004039F9 thunk_FUN_0041ad50
@@ -4042,7 +4042,7 @@ uint __thiscall fn_00403A26(STManRuinC * st_this, int param_1, int param_2, int 
 // 00403A2B STBoatC::Defence
 int __thiscall fn_00403A2B(STBoatC * st_this, int param_1);
 // 00403A30 STResourceC::sub_00580D30
-undefined __thiscall fn_00403A30(STResourceC * st_this, int param_1);
+void __thiscall fn_00403A30(STResourceC * st_this, int param_1);
 // 00403A35 STAllPlayersC::_AssignMDPairs
 uint * __thiscall fn_00403A35(STAllPlayersC * st_this, char param_1, int param_2, DArrayTy * param_3, DArrayTy * param_4, DArrayTy * param_5);
 // 00403A3A OptPanelTy::PreInitOptPanel
@@ -4156,7 +4156,7 @@ void __thiscall fn_00403B57(void * st_this, uint param_1, uint param_2);
 // 00403B5C thunk_FUN_0062e240
 undefined __thiscall fn_00403B5C(void * st_this, undefined4 param_1, int param_2, int param_3, int param_4, int param_5, uint param_6);
 // 00403B61 ChatGlassTy::OutChGlProc
-undefined __thiscall fn_00403B61(ChatGlassTy * st_this, AnonShape_GLOBAL_0080759C_9638EF10 * param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, undefined4 * param_8);
+void __thiscall fn_00403B61(ChatGlassTy * st_this, AnonShape_GLOBAL_0080759C_9638EF10 * param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, undefined4 * param_8);
 // 00403B66 thunk_FUN_00497030
 uint __stdcall fn_00403B66(int param_1, int param_2, int param_3, int param_4, int param_5);
 // 00403B6B thunk_FUN_005ef430
@@ -4172,13 +4172,13 @@ undefined4 __fastcall fn_00403B7F(TLOBaseTy * param_1);
 // 00403B84 CreateTLOBase
 TLOBaseTy * __cdecl fn_00403B84(void);
 // 00403B89 thunk_FUN_0064a5b0
-undefined __cdecl fn_00403B89(LPDWORD lpNumberOfBytesWritten);
+void __cdecl fn_00403B89(LPDWORD lpNumberOfBytesWritten);
 // 00403B8E PrividerTy::InitPrivider
 undefined __thiscall fn_00403B8E(PrividerTy * st_this, char param_1, char param_2);
 // 00403B93 thunk_FUN_00602740
 undefined __thiscall fn_00403B93(void * st_this, char * param_1);
 // 00403B98 thunk_FUN_00672af0
-undefined4 __thiscall fn_00403B98(void * st_this, byte param_1);
+void __thiscall fn_00403B98(void * st_this, byte param_1);
 // 00403B9D thunk_FUN_0062ca70
 uint __cdecl fn_00403B9D(undefined4 * param_1, undefined4 * param_2);
 // 00403BA2 thunk_FUN_004b7de0
@@ -4222,7 +4222,7 @@ void __thiscall fn_00403C0B(STBoatC * st_this);
 // 00403C10 thunk_FUN_005fd6a0
 int __fastcall fn_00403C10(void * param_1);
 // 00403C15 AiEventClassTy::__CreateObjPl
-int __thiscall fn_00403C15(AiEventClassTy * st_this, uint param_1, short param_2, short * param_3, short * param_4, short * param_5, uint param_6, uint param_7, char * param_8, undefined4 param_9, undefined4 param_10, int param_11, int param_12);
+int __thiscall fn_00403C15(AiEventClassTy * st_this, uint param_1, short param_2, int param_3, int param_4, int param_5, uint param_6, uint param_7, char * param_8, undefined4 param_9, undefined4 param_10, int param_11, int param_12);
 // 00403C1A STColl3C::sub_005FA070
 undefined __thiscall fn_00403C1A(STColl3C * st_this);
 // 00403C1F STBoatC::Dismant
@@ -4318,7 +4318,7 @@ STManRuinC * __thiscall fn_00403D0A(STManRuinC * st_this);
 // 00403D0F thunk_FUN_004ad430
 undefined __fastcall fn_00403D0F(STT3DSprC * param_1);
 // 00403D14 thunk_FUN_00495010
-undefined __thiscall fn_00403D14(void * st_this, undefined4 param_1);
+void __thiscall fn_00403D14(void * st_this, undefined4 param_1);
 // 00403D19 thunk_FUN_00589870
 void __thiscall fn_00403D19(void * st_this, int param_1, int param_2, int soundId);
 // 00403D1E thunk_FUN_005738d0
@@ -4330,7 +4330,7 @@ int __thiscall fn_00403D28(void * st_this, int param_1, int param_2);
 // 00403D2D thunk_FUN_00589940
 void * __cdecl fn_00403D2D(void);
 // 00403D37 thunk_FUN_00541cf0
-undefined __cdecl fn_00403D37(ushort * param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_00403D37(ushort * param_1, undefined * param_2, BYTE param_3);
 // 00403D3C thunk_FUN_0041d820
 undefined fn_00403D3C(void);
 // 00403D41 thunk_FUN_0058bd90
@@ -4388,7 +4388,7 @@ undefined __thiscall fn_00403DC3(void * st_this, AnonShape_00603470_D413D02D * p
 // 00403DC8 thunk_FUN_006027f0
 undefined __thiscall fn_00403DC8(void * st_this, char * param_1);
 // 00403DCD thunk_FUN_005ff430
-undefined4 __thiscall fn_00403DCD(void * st_this, Global_sub_005FF430_param_1Enum param_1, int param_2, undefined4 param_3, short * param_4, undefined4 param_5, short * param_6, short * param_7, undefined2 * param_8);
+undefined4 __thiscall fn_00403DCD(void * st_this, Global_sub_005FF430_param_1Enum param_1, int param_2, uint param_3, uint param_4, undefined4 param_5, short * param_6, short * param_7, undefined2 * param_8);
 // 00403DD7 InfocPanelTy::PaintInfocObj
 void __thiscall fn_00403DD7(InfocPanelTy * st_this, ushort param_1, ushort param_2, int param_3, int param_4);
 // 00403DDC thunk_FUN_00635a40
@@ -4444,7 +4444,7 @@ int __fastcall fn_00403E54(void * param_1);
 // 00403E59 STColl3C::sub_005F66F0
 byte * __thiscall fn_00403E59(STColl3C * st_this, uint * param_1);
 // 00403E5E thunk_FUN_005da310
-undefined __cdecl fn_00403E5E(int param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_00403E5E(int param_1, undefined * param_2, BYTE param_3);
 // 00403E63 thunk_FUN_00553910
 void __cdecl fn_00403E63(int param_1, int param_2, byte * param_3, uint param_4, int param_5);
 // 00403E68 AiTactClassTy::sub_00690230
@@ -4462,7 +4462,7 @@ undefined __thiscall fn_00403E81(STManRub3C * st_this);
 // 00403E86 thunk_FUN_005713b0
 void __fastcall fn_00403E86(int param_1);
 // 00403E8B thunk_FUN_00496a90
-uint __stdcall fn_00403E8B(int param_1, int param_2, int param_3, undefined4 param_4, int param_5, undefined4 * param_6);
+uint __stdcall fn_00403E8B(int param_1, int param_2, uint * param_3, undefined4 param_4, int param_5, uint * param_6);
 // 00403E90 thunk_FUN_004b6fc0
 undefined4 __stdcall fn_00403E90(char param_1);
 // 00403E95 FSGSTy::CreateGame
@@ -4548,7 +4548,7 @@ char * __thiscall fn_00403F5D(void * st_this, char * param_1);
 // 00403F62 thunk_FUN_004ecdd0
 undefined __fastcall fn_00403F62(int param_1);
 // 00403F67 thunk_FUN_0056a840
-undefined __thiscall fn_00403F67(void * st_this, byte param_1);
+void __thiscall fn_00403F67(void * st_this, byte param_1);
 // 00403F6C thunk_FUN_00660620
 undefined4 __fastcall fn_00403F6C(AnonShape_00660620_6BCED4D7 * param_1, undefined4 param_2, uint param_3);
 // 00403F71 thunk_FUN_006139a0
@@ -4558,11 +4558,11 @@ undefined4 __cdecl fn_00403F76(undefined4 param_1, undefined4 param_2, undefined
 // 00403F7B AiFltClassTy::AppendPoint
 int __thiscall fn_00403F7B(AiFltClassTy * st_this, short * param_1, int param_2);
 // 00403F80 STGroupBoatC::ReMakePatrolPoints
-undefined __thiscall fn_00403F80(STGroupBoatC * st_this);
+void __thiscall fn_00403F80(STGroupBoatC * st_this);
 // 00403F85 STBoatC::BackLoadObj
 int __thiscall fn_00403F85(STBoatC * st_this, int * param_1);
 // 00403F8A thunk_FUN_005f9f70
-undefined __fastcall fn_00403F8A(AnonShape_005F9F70_43CA4DAC * param_1);
+void __fastcall fn_00403F8A(AnonShape_005F9F70_43CA4DAC * param_1);
 // 00403F8F thunk_FUN_004e5cc0
 int __stdcall fn_00403F8F(int param_1, uint param_2, int param_3);
 // 00403F94 TLOBaseTy::SetActivity
@@ -4572,7 +4572,7 @@ undefined4 __stdcall fn_00403F99(void);
 // 00403F9E thunk_FUN_0064fce0
 undefined4 __cdecl fn_00403F9E(short * param_1);
 // 00403FA3 CreateInterSystem
-undefined __stdcall fn_00403FA3(void);
+void __stdcall fn_00403FA3(void);
 // 00403FA8 MMsgTy::SetMessage
 undefined4 __thiscall fn_00403FA8(MMsgTy * st_this, UINT param_1, char param_2, undefined4 * param_3, undefined4 * param_4, undefined4 * param_5, int param_6, UINT param_7);
 // 00403FAD FSGSTy::NewGameCtrls
@@ -4678,7 +4678,7 @@ uint __cdecl fn_004040AC(int param_1, int param_2, uint param_3, int param_4, ui
 // 004040B1 InfocPanelTy::InitInfocPanel
 undefined __thiscall fn_004040B1(InfocPanelTy * st_this);
 // 004040B6 thunk_FUN_0048dcc0
-undefined __thiscall fn_004040B6(void * st_this, undefined4 * param_1);
+undefined4 * __thiscall fn_004040B6(void * st_this, undefined4 * param_1);
 // 004040BB STGroupBoatC::GenSwitch
 void __thiscall fn_004040BB(STGroupBoatC * st_this, int param_1);
 // 004040C0 STArtiafactC::thunk_FUN_005ef490
@@ -4868,7 +4868,7 @@ HDC __cdecl fn_004042A5(int param_1, undefined * param_2, BYTE param_3);
 // 004042AF thunk_FUN_004ac910
 undefined4 __thiscall fn_004042AF(void * st_this, char param_1);
 // 004042B4 ChooseMapTy::ShowDescription
-undefined __thiscall fn_004042B4(ChooseMapTy * st_this, uint param_1);
+void __thiscall fn_004042B4(ChooseMapTy * st_this, uint param_1);
 // 004042B9 thunk_FUN_00572920
 undefined4 __thiscall fn_004042B9(void * st_this, byte param_1);
 // 004042BE BehPanelTy::PaintBBut
@@ -4912,7 +4912,7 @@ undefined __thiscall fn_00404322(HelpPanelTy * st_this);
 // 00404327 FrmPanelTy::Update
 undefined __thiscall fn_00404327(FrmPanelTy * st_this);
 // 0040432C thunk_FUN_0054cf70
-undefined __thiscall fn_0040432C(void * st_this, uint param_1);
+void __thiscall fn_0040432C(void * st_this, uint param_1);
 // 00404331 thunk_FUN_0065e3b0
 int __fastcall fn_00404331(AnonShape_0065DA10_8B0AA883 * param_1, undefined4 param_2);
 // 00404336 thunk_FUN_004d87b0
@@ -4950,9 +4950,9 @@ undefined4 __thiscall fn_00404386(void * st_this, int param_1);
 // 0040438B SpecPanelTy::SwitchPanel
 undefined __thiscall fn_0040438B(SpecPanelTy * st_this, int param_1);
 // 00404390 thunk_FUN_004e42e0
-undefined __stdcall fn_00404390(int param_1);
+uint __stdcall fn_00404390(int param_1);
 // 00404395 thunk_FUN_004d0f00
-undefined4 __stdcall fn_00404395(void);
+int __stdcall fn_00404395(void);
 // 0040439A thunk_FUN_0068fa00
 undefined __thiscall fn_0040439A(void * st_this, uint * param_1);
 // 0040439F thunk_FUN_0057b990
@@ -5116,13 +5116,13 @@ undefined __thiscall fn_00404539(CampaignTy * st_this);
 // 0040453E thunk_FUN_00605b60
 int __thiscall fn_0040453E(void * st_this, uint param_1, uint param_2, int * param_3, int param_4);
 // 00404543 STBoatC::Build
-int __thiscall fn_00404543(STBoatC * st_this, uint param_1);
+int __thiscall fn_00404543(STBoatC * st_this, uint * param_1);
 // 00404548 thunk_FUN_0067ff00
 undefined4 __cdecl fn_00404548(char * param_1);
 // 0040454D FSGSTy::InitFSGS
 undefined __thiscall fn_0040454D(FSGSTy * st_this, byte param_1);
 // 00404552 thunk_FUN_00571320
-undefined __thiscall fn_00404552(void * st_this, HWND param_1);
+void __thiscall fn_00404552(void * st_this, HWND param_1);
 // 00404557 thunk_FUN_00495ea0
 void __stdcall fn_00404557(void);
 // 0040455C STBoatC::PrepareForLoading
@@ -5130,7 +5130,7 @@ undefined __thiscall fn_0040455C(STBoatC * st_this, int param_1, short param_2, 
 // 00404566 thunk_FUN_00615390
 undefined __fastcall fn_00404566(AnonShape_00615390_8FE15FE8 * param_1);
 // 0040456B thunk_FUN_00691650
-char * __stdcall fn_0040456B(undefined4 param_1, undefined4 param_2);
+char * __stdcall fn_0040456B(char * text, undefined4 param_2);
 // 00404570 FSGSTy::ChatCtrls
 undefined __thiscall fn_00404570(FSGSTy * st_this);
 // 00404575 thunk_FUN_00566f30
@@ -5194,7 +5194,7 @@ int __stdcall fn_00404606(char param_1, ushort param_2);
 // 0040460B thunk_FUN_00424530
 undefined __thiscall fn_0040460B(void * st_this, uint param_1);
 // 00404610 thunk_FUN_00600110
-undefined __thiscall fn_00404610(void * st_this, int param_1, int param_2, int soundId);
+void __thiscall fn_00404610(void * st_this, int param_1, int param_2, int soundId);
 // 00404615 thunk_FUN_004d08c0
 undefined4 __stdcall fn_00404615(void);
 // 0040461A STManRuinC::sub_00630AC0
@@ -5278,7 +5278,7 @@ int __thiscall fn_004046E7(CGenerate * st_this, int param_1, int param_2, int pa
 // 004046EC TradePanelTy::Update
 undefined __thiscall fn_004046EC(TradePanelTy * st_this);
 // 004046F1 thunk_FUN_005412b0
-undefined __cdecl fn_004046F1(ushort * param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_004046F1(ushort * param_1, undefined * param_2, BYTE param_3);
 // 004046F6 thunk_FUN_004e82b0
 undefined __stdcall fn_004046F6(void);
 // 004046FB thunk_FUN_0067ff50
@@ -5312,7 +5312,7 @@ undefined __thiscall fn_00404741(AiTactClassTy * st_this);
 // 00404746 thunk_FUN_00555600
 undefined __stdcall fn_00404746(undefined4 param_1);
 // 0040474B thunk_FUN_00541f60
-undefined __cdecl fn_0040474B(ushort * param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_0040474B(ushort * param_1, undefined * param_2, BYTE param_3);
 // 00404755 thunk_FUN_0060ec40
 void * __cdecl fn_00404755(void);
 // 0040475A InterSystemC::InterSystemC
@@ -5350,7 +5350,7 @@ undefined4 __stdcall fn_004047AF(int param_1, int * param_2, int * param_3, int 
 // 004047B4 Library::MSVCRT::thunk_FUN_006a4160
 int * __cdecl fn_004047B4(undefined4 * param_1, uint param_2, uint param_3, char * param_4, int param_5);
 // 004047BE thunk_FUN_0062f0d0
-undefined __thiscall fn_004047BE(void * st_this, int param_1);
+void __thiscall fn_004047BE(void * st_this, int param_1);
 // 004047C3 thunk_FUN_00571a30
 void __cdecl fn_004047C3(AnonShape_00571A30_8BA8841B * param_1, AnonShape_00571A30_67EE4B56 * param_2, char param_3);
 // 004047CD thunk_FUN_00650240
@@ -5402,7 +5402,7 @@ byte * __thiscall fn_00404845(TraksClassTy * st_this, uint * param_1);
 // 0040484A thunk_FUN_004b1040
 undefined __cdecl fn_0040484A(int param_1, int param_2, int param_3, int param_4, int param_5, uint param_6, int param_7, char * param_8, undefined4 param_9, undefined4 param_10);
 // 00404854 thunk_FUN_004ad0e0
-undefined __thiscall fn_00404854(void * st_this, byte param_1);
+void __thiscall fn_00404854(void * st_this, byte param_1);
 // 00404859 STGroupBoatC::GrpRepare
 undefined4 __thiscall fn_00404859(STGroupBoatC * st_this, int param_1);
 // 0040485E thunk_FUN_00678ba0
@@ -5476,7 +5476,7 @@ undefined4 __thiscall fn_00404908(STBoatC * st_this, short param_1, short param_
 // 0040490D STJumpMineC::sub_00619350
 byte * __thiscall fn_0040490D(STJumpMineC * st_this, undefined4 * param_1);
 // 00404912 thunk_FUN_004d8190
-undefined __stdcall fn_00404912(void);
+void __stdcall fn_00404912(void);
 // 00404917 STColl3C::GetMessage
 int __thiscall fn_00404917(STColl3C * st_this, STMessage * message);
 // 0040491C thunk_FUN_0067f260
@@ -5486,7 +5486,7 @@ uint __fastcall fn_00404921(AnonShape_004DCCF0_FF75E3FE * param_1);
 // 00404926 thunk_FUN_004cc7f0
 undefined4 __fastcall fn_00404926(int param_1);
 // 0040492B STResourceC::sub_005802A0
-undefined __thiscall fn_0040492B(STResourceC * st_this, undefined4 param_1, undefined4 param_2);
+void __thiscall fn_0040492B(STResourceC * st_this, undefined4 param_1, undefined4 param_2);
 // 00404930 thunk_FUN_00584d10
 undefined __fastcall fn_00404930(AnonShape_00584D10_AA6E9D03 * param_1);
 // 0040493A thunk_FUN_004620f0
@@ -5526,13 +5526,13 @@ undefined4 __thiscall fn_0040498A(STT3DSprC * st_this, byte param_1);
 // 0040498F thunk_FUN_004e2040
 undefined4 __fastcall fn_0040498F(void * param_1);
 // 00404994 thunk_FUN_0055c590
-undefined __stdcall fn_00404994(undefined4 param_1, LPCVOID param_2, LPCVOID param_3);
+undefined __stdcall fn_00404994(undefined4 param_1, LPCVOID lpBuffer, LPCVOID nNumberOfBytesToWrite);
 // 00404999 thunk_FUN_004ad6c0
 int __stdcall fn_00404999(AnonReceiver_004248D0 * param_1, undefined4 param_2, int * param_3, int param_4);
 // 0040499E MMObjTy::PaintSprBut
 void __thiscall fn_0040499E(MMObjTy * st_this, int param_1, uint param_2, int param_3, int param_4, int param_5);
 // 004049A8 thunk_FUN_00676c40
-undefined4 __cdecl fn_004049A8(DArrayTy * param_1, callback_00676C40_p1 * param_2);
+void __cdecl fn_004049A8(DArrayTy * param_1, callback_00676C40_p1 * param_2);
 // 004049AD thunk_FUN_004d8f80
 undefined4 __fastcall fn_004049AD(AnonShape_004D8F80_1255A4D6 * param_1);
 // 004049B2 thunk_FUN_00651900
@@ -5550,7 +5550,7 @@ undefined4 __thiscall fn_004049CB(STBoatC * st_this);
 // 004049D0 thunk_FUN_005fb030
 undefined __fastcall fn_004049D0(AnonShape_005FB030_9C7404C6 * param_1);
 // 004049D5 SettMapTy::PaintSettMap
-undefined __thiscall fn_004049D5(SettMapTy * st_this, char param_1);
+void __thiscall fn_004049D5(SettMapTy * st_this, char param_1);
 // 004049DA thunk_FUN_0067a0c0
 undefined4 __thiscall fn_004049DA(void * st_this, uint param_1, int param_2);
 // 004049DF FSGSTy::sub_005A39A0
@@ -5576,7 +5576,7 @@ undefined __thiscall fn_00404A0C(CPanelTy * st_this);
 // 00404A11 TLOBaseTy::sub_004C96E0
 void __thiscall fn_00404A11(TLOBaseTy * st_this);
 // 00404A16 thunk_FUN_004f4640
-undefined __cdecl fn_00404A16(ushort * param_1, undefined * param_2, BYTE param_3);
+HDC __cdecl fn_00404A16(ushort * param_1, undefined * param_2, BYTE param_3);
 // 00404A1B thunk_FUN_004e48d0
 undefined4 __stdcall fn_00404A1B(void);
 // 00404A20 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::thunk_FUN_0065da50
@@ -5584,7 +5584,7 @@ uint __thiscall fn_00404A20(AnonReceiver_0065DA50 * st_this, int param_1, char p
 // 00404A25 thunk_FUN_00424710
 undefined fn_00404A25(void);
 // 00404A2A thunk_FUN_005dab70
-undefined4 __stdcall fn_00404A2A(int param_1, undefined4 param_2);
+int __stdcall fn_00404A2A(int param_1, undefined4 param_2);
 // 00404A2F thunk_FUN_004be240
 undefined __thiscall fn_00404A2F(void * st_this, char * param_1);
 // 00404A3E thunk_FUN_00496250
@@ -5612,7 +5612,7 @@ undefined __thiscall fn_00404A75(FSGSTy * st_this, byte * param_1);
 // 00404A7A STParticleC::sub_00629F20
 undefined __thiscall fn_00404A7A(STParticleC * st_this);
 // 00404A7F thunk_FUN_0062b830
-undefined __cdecl fn_00404A7F(int param_1, int param_2, int param_3, undefined4 param_4, int * param_5, undefined4 param_6, undefined4 param_7, int param_8, int param_9);
+void __cdecl fn_00404A7F(int param_1, int param_2, int param_3, undefined4 param_4, int * param_5, undefined4 param_6, undefined4 param_7, int param_8, int param_9);
 // 00404A84 SettMapMTy::UpdatePing
 void __thiscall fn_00404A84(SettMapMTy * st_this, int param_1, undefined4 param_2);
 // 00404A89 SettMapMTy::SendDesc
@@ -5744,7 +5744,7 @@ undefined4 __fastcall fn_00404BC9(int * param_1, undefined4 param_2, int param_3
 // 00404BCE thunk_FUN_00417f30
 bool __thiscall fn_00404BCE(void * st_this, short param_1, short param_2, short param_3);
 // 00404BD3 thunk_FUN_00553e20
-undefined __cdecl fn_00404BD3(int param_1, undefined * param_2, byte param_3);
+HDC __cdecl fn_00404BD3(int param_1, undefined * param_2, byte param_3);
 // 00404BD8 SoundClassTy::PlaySound
 void __thiscall fn_00404BD8(SoundClassTy * st_this, SoundPlayMode mode, char * soundName, int soundId, SoundPosition * position, int flags);
 // 00404BE2 thunk_FUN_004accd0
@@ -5796,11 +5796,11 @@ undefined __stdcall fn_00404C55(Global_sub_0043FC50_param_1Enum param_1, int par
 // 00404C5A thunk_FUN_004be3d0
 undefined __thiscall fn_00404C5A(void * st_this, int param_1);
 // 00404C5F MMObjTy::PaintButDib
-undefined __thiscall fn_00404C5F(MMObjTy * st_this, int param_1, int * param_2, int param_3, byte param_4, uint param_5);
+void __thiscall fn_00404C5F(MMObjTy * st_this, int param_1, int * param_2, int param_3, byte param_4, uint param_5);
 // 00404C64 thunk_FUN_005c2760
 undefined __stdcall fn_00404C64(void);
 // 00404C69 InfocPanelTy::PaintInfoc
-undefined __thiscall fn_00404C69(InfocPanelTy * st_this);
+void __thiscall fn_00404C69(InfocPanelTy * st_this);
 // 00404C6E thunk_FUN_00613140
 undefined4 __thiscall fn_00404C6E(void * st_this, int param_1, int param_2, int param_3, int param_4, int param_5, int param_6);
 // 00404C73 thunk_FUN_00678890
@@ -5852,13 +5852,13 @@ undefined __thiscall fn_00404CE1(CampaignTy * st_this);
 // 00404CEB thunk_FUN_004aaf60
 undefined __stdcall fn_00404CEB(int param_1);
 // 00404CF5 thunk_FUN_006a1620
-undefined __cdecl fn_00404CF5(int * param_1, int param_2, int param_3, int param_4, int param_5, ushort * param_6, undefined * param_7, undefined4 param_8);
+void __cdecl fn_00404CF5(int * param_1, int param_2, int param_3, int param_4, int param_5, ushort * param_6, undefined * param_7, undefined4 param_8);
 // 00404CFA STGroupBoatC::sub_00498D20
 void __thiscall fn_00404CFA(STGroupBoatC * st_this, STGroupBoatC_sub_00498D20_orderTypeEnum orderType, DArrayTy * data);
 // 00404CFF STBoatC::Scout
 int __thiscall fn_00404CFF(STBoatC * st_this, int param_1);
 // 00404D04 thunk_FUN_004d8530
-undefined __stdcall fn_00404D04(STResourceC * param_1);
+void __stdcall fn_00404D04(STResourceC * param_1);
 // 00404D09 JumpManagC::sub_006179D0
 undefined __thiscall fn_00404D09(JumpManagC * st_this);
 // 00404D0E STOctopusC::Bad
@@ -6056,7 +6056,7 @@ dword __thiscall fn_00404F02(TLOBaseTy * st_this);
 // 00404F07 STSprGameObjC::GetMessage
 int __thiscall fn_00404F07(STSprGameObjC * st_this, STMessage * message);
 // 00404F0C OptPanelTy::PaintDblBut
-undefined __thiscall fn_00404F0C(OptPanelTy * st_this, AnonShape_0052EFB0_CC661192 * param_1, char * param_2, UINT param_3, code *param_4, code *param_5, int param_6);
+void __thiscall fn_00404F0C(OptPanelTy * st_this, AnonShape_0052EFB0_CC661192 * param_1, char * param_2, UINT param_3, code *param_4, code *param_5, int param_6);
 // 00404F16 OptPanelTy::Question
 undefined __thiscall fn_00404F16(OptPanelTy * st_this, char param_1);
 // 00404F1B CPanelTy::PaintDamageXY
@@ -6142,7 +6142,7 @@ undefined __cdecl fn_00404FE8(char * param_1, undefined4 param_2, undefined4 par
 // 00404FED thunk_FUN_00651250
 int __cdecl fn_00404FED(int param_1);
 // 00404FF2 thunk_FUN_0040cdb0
-undefined __thiscall fn_00404FF2(void * st_this, uint param_1);
+void __thiscall fn_00404FF2(void * st_this, uint param_1);
 // 00404FF7 MReportTy::InitMReport
 undefined __thiscall fn_00404FF7(MReportTy * st_this, undefined1 param_1);
 // 00404FFC thunk_FUN_005fd6e0
@@ -6176,7 +6176,7 @@ void __thiscall fn_00405042(void * st_this, int param_1, char * param_2, undefin
 // 00405047 thunk_FUN_006a5530
 int __cdecl fn_00405047(int param_1);
 // 0040504C PausePanelTy::SwitchPausePanel
-undefined __thiscall fn_0040504C(PausePanelTy * st_this, int param_1);
+void __thiscall fn_0040504C(PausePanelTy * st_this, int param_1);
 // 00405051 thunk_FUN_00423c70
 undefined4 __thiscall fn_00405051(void * st_this, short param_1);
 // 00405056 SndUnderAttMenegC::sub_00620E40
@@ -6204,7 +6204,7 @@ dword __thiscall fn_0040508D(STArtiafactC * st_this);
 // 00405092 thunk_FUN_004d6930
 undefined __thiscall fn_00405092(void * st_this, AnonShape_004D6930_FDF7B020 * param_1);
 // 00405097 thunk_FUN_004dbcc0
-undefined4 __thiscall fn_00405097(void * st_this, int * param_1, int param_2);
+undefined4 __thiscall fn_00405097(void * st_this, uint param_1, int param_2);
 // 0040509C thunk_FUN_004aa8d0
 undefined4 __stdcall fn_0040509C(float param_1);
 // 004050A1 thunk_FUN_0064dac0
@@ -6236,7 +6236,7 @@ undefined __thiscall fn_004050E2(FSGSTy * st_this);
 // 004050E7 thunk_FUN_004da9c0
 undefined4 __fastcall fn_004050E7(undefined4 param_1);
 // 004050EC thunk_FUN_00640130
-undefined __fastcall fn_004050EC(AnonShape_00640130_D1AC047E * param_1);
+void __fastcall fn_004050EC(AnonShape_00640130_D1AC047E * param_1);
 // 004050F1 thunk_FUN_00627790
 undefined __fastcall fn_004050F1(STMineSetC * param_1);
 // 004050F6 CGenerate::sub_006A0470
@@ -6246,11 +6246,11 @@ undefined4 __cdecl fn_004050FB(undefined4 param_1, undefined4 param_2, int * par
 // 00405100 HelpPanelTy::PutToSHlp
 undefined __thiscall fn_00405100(HelpPanelTy * st_this);
 // 00405105 thunk_FUN_00418010
-undefined __thiscall fn_00405105(void * st_this, byte param_1);
+void __thiscall fn_00405105(void * st_this, byte param_1);
 // 0040510A thunk_FUN_0064eba0
 undefined4 __cdecl fn_0040510A(int param_1);
 // 0040510F thunk_FUN_00568010
-undefined __thiscall fn_0040510F(void * st_this, Global_sub_00568010_param_1Enum param_1);
+void __thiscall fn_0040510F(void * st_this, Global_sub_00568010_param_1Enum param_1);
 // 00405114 thunk_FUN_00640170
 undefined4 __thiscall fn_00405114(void * st_this, int param_1, int param_2, undefined4 param_3);
 // 00405119 JumpManagC::sub_00618170
@@ -6268,7 +6268,7 @@ undefined4 __cdecl fn_00405132(RecoveredRecord_AiEventClassTy_00650BD0 * param_1
 // 00405137 thunk_FUN_0062bbc0
 int * __cdecl fn_00405137(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7, int param_8, undefined4 param_9, undefined4 param_10);
 // 0040513C thunk_FUN_0054cbb0
-undefined4 __stdcall fn_0040513C(int param_1, undefined4 * param_2);
+int __stdcall fn_0040513C(int param_1, undefined4 * param_2);
 // 00405141 thunk_FUN_004ace00
 void __thiscall fn_00405141(void * st_this, char param_1, int param_2, undefined4 param_3);
 // 00405146 STGroupBoatC::DistributeTargets
@@ -6304,11 +6304,11 @@ void __thiscall fn_00405191(MMsgTy * st_this);
 // 00405196 thunk_FUN_0067fce0
 int __cdecl fn_00405196(byte * param_1);
 // 0040519B thunk_FUN_005804f0
-undefined __thiscall fn_0040519B(void * st_this, undefined4 param_1, ushort param_2, ushort param_3);
+void __thiscall fn_0040519B(void * st_this, undefined4 param_1, ushort param_2, ushort param_3);
 // 004051A0 CreatePrivider
 PrividerTy * __cdecl fn_004051A0(void);
 // 004051A5 thunk_FUN_006377b0
-undefined __cdecl fn_004051A5(uint param_1, int param_2, int param_3, int param_4, int param_5, uint param_6);
+void __cdecl fn_004051A5(uint param_1, int param_2, int param_3, int param_4, int param_5, uint param_6);
 // 004051AA thunk_FUN_0060e680
 undefined4 __cdecl fn_004051AA(uint param_1, uint param_2, uint param_3, uint param_4, uint param_5, uint param_6, int * param_7, int param_8, uint * param_9, uint * param_10, uint * param_11);
 // 004051AF STGroupBoatC::Recharge
@@ -6374,7 +6374,7 @@ int __stdcall fn_0040524F(int param_1, uint param_2);
 // 00405254 thunk_FUN_006a1c80
 undefined4 __cdecl fn_00405254(int * param_1, uint param_2, int param_3, int param_4, int param_5, undefined * param_6, undefined4 param_7);
 // 00405259 thunk_FUN_00505070
-uint __thiscall fn_00405259(void * st_this, byte param_1);
+uint __thiscall fn_00405259(void * st_this, CPanelTy_sub_005050B0_param_1Enum param_1);
 // 0040525E thunk_FUN_00627390
 void __fastcall fn_0040525E(STMineSetC * param_1);
 // 00405268 CreateWait
@@ -6558,7 +6558,7 @@ uint __thiscall fn_0040543E(STManRub3C * st_this, int param_1, int param_2, int 
 // 00405443 STPlaySystemC::sub_0054EBB0
 int __thiscall fn_00405443(STPlaySystemC * st_this, char * param_1, uint param_2);
 // 00405448 thunk_FUN_004e6e10
-undefined __stdcall fn_00405448(int param_1, uint param_2, undefined4 * param_3, undefined4 * param_4);
+void __stdcall fn_00405448(int param_1, uint param_2, undefined4 * param_3, undefined4 * param_4);
 // 0040544D thunk_FUN_00497000
 undefined __stdcall fn_0040544D(void);
 // 00405452 thunk_FUN_004233a0
@@ -6644,7 +6644,7 @@ undefined __thiscall fn_00405524(AnonReceiver_0053F510 * st_this);
 // 00405529 FSGSTy::ConnectProc
 undefined __thiscall fn_00405529(FSGSTy * st_this, int param_1, int param_2);
 // 00405533 thunk_FUN_0062fe00
-undefined __fastcall fn_00405533(STJellyGunC * param_1);
+void __fastcall fn_00405533(STJellyGunC * param_1);
 // 00405538 TradePanelTy::DoneTradePanel
 undefined __thiscall fn_00405538(TradePanelTy * st_this);
 // 00405542 thunk_FUN_0055d390
@@ -6772,7 +6772,7 @@ undefined __thiscall fn_00405696(void * st_this, int * param_1, uint param_2, in
 // 0040569B thunk_FUN_00660b50
 undefined4 __fastcall fn_0040569B(AnonShape_00660620_6BCED4D7 * param_1, int param_2, short param_3, short param_4, int param_5, int param_6);
 // 004056A0 thunk_FUN_0063e660
-undefined __fastcall fn_004056A0(AnonShape_0063E660_4D42AB87 * param_1);
+void __fastcall fn_004056A0(AnonShape_0063E660_4D42AB87 * param_1);
 // 004056A5 thunk_FUN_0067fc10
 int __cdecl fn_004056A5(byte * param_1);
 // 004056AA thunk_FUN_0064cd10
@@ -6868,7 +6868,7 @@ FrmPanelTy * __cdecl fn_0040579A(void);
 // 0040579F thunk_FUN_00423120
 undefined4 __fastcall fn_0040579F(int param_1);
 // 004057A4 thunk_FUN_0061cfb0
-undefined __thiscall fn_004057A4(void * st_this, int param_1, int param_2, int soundId);
+void __thiscall fn_004057A4(void * st_this, int param_1, int param_2, int soundId);
 // 004057AE AiTactClassTy::GiveObjByGrpNum
 undefined __thiscall fn_004057AE(AiTactClassTy * st_this, DArrayTy * param_1);
 // 004057B3 thunk_FUN_005fa180
@@ -6900,7 +6900,7 @@ int __stdcall fn_004057F9(char playerId, byte * param_2, byte * param_3);
 // 004057FE STBoatC::thunk_FUN_00486a40
 dword __thiscall fn_004057FE(STBoatC * st_this);
 // 00405803 HelpPanelTy::IndexBut
-undefined __thiscall fn_00405803(HelpPanelTy * st_this);
+void __thiscall fn_00405803(HelpPanelTy * st_this);
 // 00405808 thunk_FUN_0063cc10
 int __fastcall fn_00405808(void * param_1);
 // 0040580D FSGSTy::sub_005A07F0
@@ -6920,9 +6920,9 @@ undefined4 __thiscall fn_0040582B(void * st_this, int param_1, int param_2);
 // 00405830 TLOBaseTy::teleNone
 int __thiscall fn_00405830(TLOBaseTy * st_this);
 // 00405835 thunk_FUN_0041ce40
-undefined __thiscall fn_00405835(void * st_this, int param_1);
+void __thiscall fn_00405835(void * st_this, int param_1);
 // 0040583A thunk_FUN_005daa90
-undefined4 __stdcall fn_0040583A(void);
+int __stdcall fn_0040583A(void);
 // 0040583F thunk_FUN_00580dc0
 undefined4 __fastcall fn_0040583F(STJellyGunC * param_1);
 // 00405844 thunk_FUN_006616b0
@@ -7006,7 +7006,7 @@ undefined4 * __thiscall fn_00405911(STDcResourcC * st_this);
 // 00405916 CreateAiPlr
 AiPlrClassTy * __cdecl fn_00405916(void);
 // 0040591B STAppC::sub_0056EE90
-undefined __thiscall fn_0040591B(STAppC * st_this);
+void __thiscall fn_0040591B(STAppC * st_this);
 // 00405920 STAllPlayersC::PushTV
 void __stdcall fn_00405920(char param_1, int param_2);
 // 00405925 thunk_FUN_00694890
@@ -7148,7 +7148,7 @@ bool __thiscall fn_00405A83(void * st_this, uint param_1);
 // 00405A88 SettMapTy::CloseButtons
 undefined __thiscall fn_00405A88(SettMapTy * st_this);
 // 00405A8D CPanelTy::PaintCostsXY
-undefined __thiscall fn_00405A8D(CPanelTy * st_this, int param_1, int param_2, int param_3, ushort param_4, ushort param_5, ushort param_6, ushort param_7);
+void __thiscall fn_00405A8D(CPanelTy * st_this, int param_1, int param_2, int param_3, ushort param_4, ushort param_5, ushort param_6, ushort param_7);
 // 00405A92 thunk_FUN_00444e70
 undefined __thiscall fn_00405A92(void * st_this, ushort * param_1);
 // 00405A9C thunk_FUN_0068e300
@@ -7202,7 +7202,7 @@ uint __fastcall fn_00405B1E(AnonShape_004CC900_31EE9CAA * param_1);
 // 00405B23 AiTactClassTy::sub_0068E290
 int __thiscall fn_00405B23(AiTactClassTy * st_this, short param_1);
 // 00405B28 cLoadingTy::delete
-undefined __cdecl fn_00405B28(uint * param_1);
+void __cdecl fn_00405B28(uint * param_1);
 // 00405B2D STBoatC::BackTeleport
 int __thiscall fn_00405B2D(STBoatC * st_this, int * param_1);
 // 00405B32 thunk_FUN_004ead90
@@ -7210,7 +7210,7 @@ undefined4 __fastcall fn_00405B32(AnonShape_004EAD90_30D2E515 * param_1);
 // 00405B37 SndUnderAttMenegC::sub_006216E0
 uint __thiscall fn_00405B37(SndUnderAttMenegC * st_this, undefined4 param_1);
 // 00405B3C thunk_FUN_0060e210
-undefined4 __stdcall fn_00405B3C(void * param_1, undefined4 param_2, int param_3, int param_4, int param_5);
+int __stdcall fn_00405B3C(void * param_1, undefined4 param_2, int param_3, int param_4, int param_5);
 // 00405B41 thunk_FUN_0041ad20
 undefined __stdcall fn_00405B41(int * param_1);
 // 00405B46 SettMapMTy::ChangePlayerColor
@@ -7306,7 +7306,7 @@ int __stdcall fn_00405C36(int param_1);
 // 00405C3B HelpPanelTy::SwitchOptPanel
 void __thiscall fn_00405C3B(HelpPanelTy * st_this, int param_1);
 // 00405C40 thunk_FUN_004dbf30
-undefined4 __thiscall fn_00405C40(void * st_this, int * param_1);
+undefined4 __thiscall fn_00405C40(void * st_this, uint param_1);
 // 00405C45 thunk_FUN_004e81b0
 undefined4 __cdecl fn_00405C45(int param_1, int param_2, int param_3);
 // 00405C4A STBoatC::thunk_FUN_004952c0
@@ -7362,7 +7362,7 @@ undefined __thiscall fn_00405CCC(BldLabPanelTy * st_this);
 // 00405CD1 thunk_FUN_00672970
 void __thiscall fn_00405CD1(void * st_this, byte param_1);
 // 00405CD6 StartSystemTy::StartSystemTy
-StartSystemTy * __thiscall fn_00405CD6(StartSystemTy * st_this, undefined4 param_1);
+StartSystemTy * __thiscall fn_00405CD6(StartSystemTy * st_this, AppClassTy * param_1);
 // 00405CDB thunk_FUN_00637f40
 undefined __cdecl fn_00405CDB(uint param_1, uint param_2, int param_3);
 // 00405CE0 thunk_FUN_005f0090
@@ -7384,7 +7384,7 @@ undefined __thiscall fn_00405D03(CPanelTy * st_this, CPanelTy_sub_004FA870_param
 // 00405D08 thunk_FUN_00617560
 void __thiscall fn_00405D08(void * st_this, int soundId);
 // 00405D0D CGenerate::sub_0069ADA0
-undefined __thiscall fn_00405D0D(CGenerate * st_this, int param_1, int param_2);
+void __thiscall fn_00405D0D(CGenerate * st_this, int param_1, int param_2);
 // 00405D12 STAllPlayersC::SetActivityToObjs
 undefined __thiscall fn_00405D12(STAllPlayersC * st_this, uint param_1, int param_2, DArrayTy * param_3, uint param_4);
 // 00405D17 thunk_FUN_0064a940
@@ -7476,7 +7476,7 @@ undefined4 __fastcall fn_00405DE9(AnonShape_005EE6E0_AB6798ED * param_1);
 // 00405DEE CPanelTy::sub_004F1950
 void __thiscall fn_00405DEE(CPanelTy * st_this);
 // 00405DF3 OptPanelTy::PaintVolume
-undefined __thiscall fn_00405DF3(OptPanelTy * st_this, byte param_1, byte param_2);
+void __thiscall fn_00405DF3(OptPanelTy * st_this, byte param_1, byte param_2);
 // 00405DF8 thunk_FUN_004be180
 undefined __thiscall fn_00405DF8(void * st_this, undefined4 param_1);
 // 00405DFD thunk_FUN_004d7b10
@@ -7484,7 +7484,7 @@ undefined4 __stdcall fn_00405DFD(char param_1, int param_2);
 // 00405E02 thunk_FUN_0041d8c0
 undefined fn_00405E02(void);
 // 00405E07 PlayPanelTy::sub_0053A540
-undefined __thiscall fn_00405E07(PlayPanelTy * st_this);
+void __thiscall fn_00405E07(PlayPanelTy * st_this);
 // 00405E0C thunk_FUN_0055beb0
 undefined __thiscall fn_00405E0C(void * st_this, DWORD lastError);
 // 00405E11 thunk_FUN_004df1a0
@@ -7504,7 +7504,7 @@ undefined __cdecl fn_00405E2F(Global_sub_005252C0_param_1Enum param_1);
 // 00405E34 thunk_FUN_004e9c00
 undefined __fastcall fn_00405E34(int param_1);
 // 00405E39 thunk_FUN_004b76d0
-undefined __stdcall fn_00405E39(uint param_1, int param_2);
+void __stdcall fn_00405E39(uint param_1, int param_2);
 // 00405E3E thunk_FUN_004b9d20
 undefined4 __thiscall fn_00405E3E(void * st_this, STBoatC * param_1);
 // 00405E43 STBoatC::GetExplosionInfo
@@ -7618,9 +7618,8 @@ int __cdecl fn_0040F1D0(int *param_1,int *param_2);
 // 0040F220 FUN_0040f220
 int __cdecl fn_0040F220(AnonShape_0040F220_61B59860 *param_1,AnonShape_0040F220_06315B9F *param_2);
 // 0040F270 FUN_0040f270
-undefined4
-fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,int param_6,int param_7,
-            int param_8,int param_9);
+int fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,int param_6,
+                int param_7,int param_8,int param_9);
 // 0040F4D0 FUN_0040f4d0
 void fn_0040F4D0(byte *param_1,uint param_2,int param_3,int param_4);
 // 0040F840 FUN_0040f840
@@ -7640,14 +7639,13 @@ int fn_00411E50(int param_1,int param_2,int param_3,int param_4,int param_5,uint
 int fn_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
                 AnonShape_00412960_B35D15BC *param_7,int param_8);
 // 00412B80 FUN_00412b80
-undefined4 fn_00412B80(int param_1,int param_2,int param_3);
+int fn_00412B80(int param_1,int param_2,int param_3);
 // 00412DE0 FUN_00412de0
-undefined4 fn_00412DE0(int param_1,int param_2,int param_3);
+int fn_00412DE0(int param_1,int param_2,int param_3);
 // 00413050 FUN_00413050
 int fn_00413050(int param_1,int param_2,int param_3,int param_4,int param_5);
 // 00413170 FUN_00413170
-undefined4
-fn_00413170(int param_1,int param_2,int param_3,int param_4,undefined4 *param_5,int param_6);
+int fn_00413170(int param_1,int param_2,int param_3,int param_4,undefined4 *param_5,int param_6);
 // 004137F0 FUN_004137f0
 undefined4 fn_004137F0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint param_3,int param_4);
 // 00413AF0 FUN_00413af0
@@ -7679,7 +7677,7 @@ undefined4 __thiscall fn_00415ED0(STJellyGunC *st_this,undefined4 *param_1,int *
 // 00416240 sub_00416240
 void __thiscall fn_00416240(void *st_this,ushort param_1,short param_2,ushort param_3);
 // 00416270 FUN_00416270
-void __thiscall fn_00416270(void *st_this,uint *param_1,int *param_2,short *param_3);
+void __thiscall fn_00416270(void *st_this,uint *param_1,short *param_2,short *param_3);
 // 004162B0 STFishC::sub_004162B0
 void __thiscall fn_004162B0(STFishC *st_this,short *param_1,short *param_2,short *param_3);
 // 004162F0 STFishC::sub_004162F0
@@ -7697,7 +7695,7 @@ void __thiscall fn_004167A0(void *st_this);
 // 00416840 FUN_00416840
 void __thiscall fn_00416840(void *st_this,undefined2 *param_1,undefined2 *param_2,undefined2 *param_3);
 // 004168B0 FUN_004168b0
-undefined4 __fastcall fn_004168B0(int param_1);
+void __fastcall fn_004168B0(int param_1);
 // 004168D0 FUN_004168d0
 undefined2 fn_004168D0(short param_1,short param_2,undefined4 param_3,short param_4,short param_5);
 // 00416DB0 FUN_00416db0
@@ -7899,7 +7897,7 @@ fn_0041DBE0(undefined4 param_1,undefined2 *param_2,undefined2 *param_3,undefined
 // 0041DC20 FUN_0041dc20
 void fn_0041DC20(void);
 // 0041DC40 FUN_0041dc40
-undefined4 * fn_0041DC40(undefined4 *param_1,short param_2,ushort param_3,short param_4);
+uint * fn_0041DC40(undefined4 *param_1,short param_2,ushort param_3,short param_4);
 // 0041DD00 FUN_0041dd00
 void __thiscall fn_0041DD00(void *st_this,int param_1);
 // 0041E510 FUN_0041e510
@@ -8236,13 +8234,13 @@ fn_0043AAF0
           int *param_7,uint *param_8);
 // 0043AE40 STAllPlayersC::SetActivePanel
 void __thiscall
-fn_0043AE40(STAllPlayersC *st_this,uint *param_1,int param_2,int param_3);
+fn_0043AE40(STAllPlayersC *st_this,uint param_1,int param_2,int param_3);
 // 0043BEB0 STAllPlayersC::GetPanelInfo
 void __thiscall
 fn_0043BEB0
           (STAllPlayersC *st_this,undefined4 param_1,AnonShape_0043BEB0_1C00EC12 *param_2);
 // 0043E420 FUN_0043e420
-undefined4 * fn_0043E420(undefined4 *param_1,char param_2);
+uint * fn_0043E420(undefined4 *param_1,char param_2);
 // 0043E460 FUN_0043e460
 short fn_0043E460(char param_1);
 // 0043E4E0 STAllPlayersC::GetObjsList
@@ -8492,7 +8490,7 @@ int __thiscall fn_00465C60(STBoatC *st_this,int *param_1);
 // 0046AA50 STBoatC::BackLoadRC
 int __thiscall fn_0046AA50(STBoatC *st_this,STBoatC *param_1);
 // 0046B100 STBoatC::Build
-int __thiscall fn_0046B100(STBoatC *st_this,uint param_1);
+int __thiscall fn_0046B100(STBoatC *st_this,uint *param_1);
 // 0046C980 STBoatC::BackBuild
 int __thiscall fn_0046C980(STBoatC *st_this,int *param_1);
 // 0046CF20 STBoatC::CreateGame
@@ -8548,7 +8546,7 @@ undefined4 __thiscall fn_0047C050(STBoatC *st_this,STBoatC *param_1);
 // 0047CF20 STBoatC::BackBring
 int __thiscall fn_0047CF20(STBoatC *st_this,int *param_1);
 // 0047D080 STBoatC::Annih
-int __thiscall fn_0047D080(STBoatC *st_this,undefined4 *param_1);
+int __thiscall fn_0047D080(STBoatC *st_this,uint param_1);
 // 0047DA50 STBoatC::BackAnnih
 int __thiscall fn_0047DA50(STBoatC *st_this,int *param_1);
 // 0047DF00 STBoatC::Dismant
@@ -8663,9 +8661,9 @@ void __thiscall fn_0048D930(STBoatC *st_this);
 // 0048DBA0 STBoatC::sub_0048DBA0
 void __thiscall fn_0048DBA0(STBoatC *st_this);
 // 0048DC90 FUN_0048dc90
-undefined4 * __thiscall fn_0048DC90(void *st_this,undefined4 *param_1);
+uint * __thiscall fn_0048DC90(void *st_this,undefined4 *param_1);
 // 0048DCC0 FUN_0048dcc0
-void __thiscall fn_0048DCC0(void *st_this,undefined4 *param_1);
+uint * __thiscall fn_0048DCC0(void *st_this,undefined4 *param_1);
 // 0048DCF0 FUN_0048dcf0
 bool __fastcall fn_0048DCF0(STBoatC *param_1);
 // 0048DF40 FUN_0048df40
@@ -8710,7 +8708,7 @@ void __thiscall fn_00490ED0(void *st_this,char *param_1);
 // 00490F60 FUN_00490f60
 void __fastcall fn_00490F60(STBoatC *param_1);
 // 00491070 STBoatC::ReleaseLoad
-void __thiscall fn_00491070(STBoatC *st_this,uint param_1);
+void __thiscall fn_00491070(STBoatC *st_this,uint *param_1);
 // 00491180 FUN_00491180
 undefined4 __fastcall fn_00491180(int param_1);
 // 004911B0 FUN_004911b0
@@ -8851,13 +8849,13 @@ uint fn_00496250(int param_1,int param_2,int param_3);
 void fn_004969F0(int param_1,int param_2,int param_3,int param_4,uint param_5,undefined4 param_6,
                  uint param_7);
 // 00496A90 FUN_00496a90
-uint fn_00496A90(int param_1,int param_2,int param_3,undefined4 param_4,int param_5,
-                 undefined4 *param_6);
+uint fn_00496A90(int param_1,int param_2,uint *param_3,undefined4 param_4,int param_5,uint *param_6
+                 );
 // 00496B30 FUN_00496b30
 void fn_00496B30(uint param_1,int param_2,int param_3);
 // 00496CC0 FUN_00496cc0
-void fn_00496CC0(int param_1,int param_2,uint param_3,undefined4 param_4,uint param_5,void *param_6
-                 );
+void fn_00496CC0(int param_1,int param_2,uint *param_3,undefined4 param_4,uint param_5,
+                 void *param_6);
 // 00496E40 FUN_00496e40
 void fn_00496E40(int param_1,int param_2,undefined4 param_3,int param_4);
 // 00496F00 FUN_00496f00
@@ -9040,7 +9038,7 @@ undefined1 fn_004AB030(void);
 // 004AB050 FUN_004ab050
 int fn_004AB050(void);
 // 004AB070 OpticClassC::sub_004AB070
-undefined4 __thiscall
+int __thiscall
 fn_004AB070
           (OpticClassC *st_this,OpticClassC_sub_004AB070_param_1Enum param_1,float param_2,int param_3,
           int param_4);
@@ -9205,7 +9203,7 @@ undefined4 __cdecl
 fn_004B0D10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int param_6,int param_7
             ,int param_8,int param_9);
 // 004B0F20 FUN_004b0f20
-void __cdecl
+int __cdecl
 fn_004B0F20(int param_1,int param_2,int param_3,int param_4,int param_5,uint param_6,int param_7,
             char *param_8,undefined4 param_9,undefined4 param_10);
 // 004B1040 FUN_004b1040
@@ -9506,7 +9504,7 @@ int __thiscall fn_004C9770(TLOBaseTy *st_this);
 // 004CA3C0 TLOBaseTy::ReloadLogoPlane
 int __thiscall fn_004CA3C0(TLOBaseTy *st_this);
 // 004CA7B0 TLOBaseTy::sub_004CA7B0
-undefined4 __thiscall fn_004CA7B0(TLOBaseTy *st_this,uint *param_1,int param_2);
+undefined4 __thiscall fn_004CA7B0(TLOBaseTy *st_this,uint param_1,int param_2);
 // 004CABB0 TLOBaseTy::RotateSpr
 int __thiscall fn_004CABB0(TLOBaseTy *st_this,int param_1);
 // 004CAFC0 TLOBaseTy::sub_004CAFC0
@@ -9665,7 +9663,7 @@ int __thiscall fn_004D0B90(TLOFakeTy *st_this,STMessage *message);
 // 004D0ED0 CreateTLOFake
 TLOFakeTy * __cdecl fn_004D0ED0(void);
 // 004D0F00 FUN_004d0f00
-undefined4 fn_004D0F00(void);
+int fn_004D0F00(void);
 // 004D0F80 FUN_004d0f80
 undefined4 fn_004D0F80(void);
 // 004D0FA0 FUN_004d0fa0
@@ -9897,11 +9895,11 @@ undefined4 __thiscall fn_004DBB10(void *st_this,int param_1);
 // 004DBB60 FUN_004dbb60
 undefined4 __thiscall fn_004DBB60(void *st_this,int *param_1,int param_2);
 // 004DBCC0 FUN_004dbcc0
-undefined4 __thiscall fn_004DBCC0(void *st_this,int *param_1,int param_2);
+undefined4 __thiscall fn_004DBCC0(void *st_this,uint param_1,int param_2);
 // 004DBE00 FUN_004dbe00
 undefined4 __thiscall fn_004DBE00(void *st_this,int *param_1);
 // 004DBF30 FUN_004dbf30
-undefined4 __thiscall fn_004DBF30(void *st_this,int *param_1);
+undefined4 __thiscall fn_004DBF30(void *st_this,uint param_1);
 // 004DC150 TLOBaseTy::sub_004DC150
 void __thiscall fn_004DC150(TLOBaseTy *st_this);
 // 004DC1E0 FUN_004dc1e0
@@ -10163,7 +10161,7 @@ int fn_004E4230(int param_1,int param_2);
 // 004E4270 FUN_004e4270
 void fn_004E4270(int param_1,int param_2);
 // 004E42E0 FUN_004e42e0
-void fn_004E42E0(int param_1);
+uint fn_004E42E0(int param_1);
 // 004E4330 FUN_004e4330
 int fn_004E4330(int param_1,int param_2);
 // 004E4380 FUN_004e4380
@@ -10589,11 +10587,11 @@ fn_004F42A0(CPanelTy *st_this,byte param_1,STMessage *param_2,byte param_3,char 
 // 004F4570 CPanelTy::sub_004F4570
 void __thiscall fn_004F4570(CPanelTy *st_this,char param_1,int param_2,int param_3);
 // 004F4640 FUN_004f4640
-void __cdecl fn_004F4640(ushort *param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_004F4640(ushort *param_1,undefined *param_2,BYTE param_3);
 // 004F4950 FUN_004f4950
-void __cdecl fn_004F4950(ushort *param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_004F4950(ushort *param_1,undefined *param_2,BYTE param_3);
 // 004F4C70 FUN_004f4c70
-void __cdecl fn_004F4C70(int param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_004F4C70(int param_1,undefined *param_2,BYTE param_3);
 // 004F4F60 FUN_004f4f60
 void * __cdecl fn_004F4F60(void);
 // 004F4F90 FUN_004f4f90
@@ -10715,7 +10713,7 @@ void __thiscall fn_00504CF0(CPanelTy *st_this);
 // 00504E60 CPanelTy::PaintIDSObj
 void __thiscall fn_00504E60(CPanelTy *st_this);
 // 00505070 FUN_00505070
-uint __thiscall fn_00505070(void *st_this,byte param_1);
+uint __thiscall fn_00505070(void *st_this,CPanelTy_sub_005050B0_param_1Enum param_1);
 // 005050B0 CPanelTy::sub_005050B0
 int __thiscall fn_005050B0(CPanelTy *st_this,CPanelTy_sub_005050B0_param_1Enum param_1);
 // 00505230 CPanelTy::PaintMunition
@@ -11027,7 +11025,7 @@ void __thiscall fn_0052BDA0(MoneyTy *st_this,char param_1,int param_2);
 // 0052BF00 MoneyTy::GetMessage
 int __thiscall fn_0052BF00(MoneyTy *st_this,STMessage *message);
 // 0052CCE0 FUN_0052cce0
-void __cdecl fn_0052CCE0(ushort *param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_0052CCE0(ushort *param_1,undefined *param_2,BYTE param_3);
 // 0052D020 CreatePopUp
 PopUpTy * __cdecl fn_0052D020(void);
 // 0052D0A0 PopUpTy::OutProc
@@ -11293,17 +11291,17 @@ void fn_00541030(void);
 // 005411A0 FUN_005411a0
 void __cdecl fn_005411A0(DArrayTy *param_1,char *param_2,char *text);
 // 005412B0 FUN_005412b0
-void __cdecl fn_005412B0(ushort *param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_005412B0(ushort *param_1,undefined *param_2,BYTE param_3);
 // 005416A0 FUN_005416a0
-void __cdecl fn_005416A0(int param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_005416A0(int param_1,undefined *param_2,BYTE param_3);
 // 005419E0 FUN_005419e0
-void __cdecl fn_005419E0(int param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_005419E0(int param_1,undefined *param_2,BYTE param_3);
 // 00541CF0 FUN_00541cf0
-void __cdecl fn_00541CF0(ushort *param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_00541CF0(ushort *param_1,undefined *param_2,BYTE param_3);
 // 00541F60 FUN_00541f60
-void __cdecl fn_00541F60(ushort *param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_00541F60(ushort *param_1,undefined *param_2,BYTE param_3);
 // 005421D0 FUN_005421d0
-void __cdecl fn_005421D0(ushort *param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_005421D0(ushort *param_1,undefined *param_2,BYTE param_3);
 // 00542440 InterSystemC::InterSystemC
 InterSystemC * __thiscall fn_00542440(InterSystemC *st_this,AppClassTy *param_1);
 // 00542480 InterSystemC::CreateSystemObjects
@@ -11400,7 +11398,7 @@ int __cdecl fn_0054CA10(int *param_1,undefined4 param_2,cMf32 *param_3,int param
 // 0054CB40 STPlaySystemC::STPlaySystemC
 STPlaySystemC * __thiscall fn_0054CB40(STPlaySystemC *st_this,AppClassTy *param_1);
 // 0054CBB0 FUN_0054cbb0
-undefined4 fn_0054CBB0(int param_1,undefined4 *param_2);
+int fn_0054CBB0(int param_1,undefined4 *param_2);
 // 0054CC20 STPlaySystemC::CreateGameObject
 int __thiscall
 fn_0054CC20
@@ -11556,7 +11554,7 @@ void __cdecl fn_00553D40(int param_1,int param_2,int param_3);
 // 00553DB0 FUN_00553db0
 void __cdecl fn_00553DB0(int param_1,int param_2,int param_3);
 // 00553E20 FUN_00553e20
-void __cdecl fn_00553E20(int param_1,undefined *param_2,byte param_3);
+HDC __cdecl fn_00553E20(int param_1,undefined *param_2,byte param_3);
 // 005540E0 cLoadingTy::new
 uint * __thiscall fn_005540E0(cLoadingTy *st_this,uint param_1,char *text,uint param_3);
 // 005544E0 cLoadingTy::delete
@@ -11793,7 +11791,7 @@ void __thiscall fn_0055C500(void *st_this,int param_1);
 // 0055C550 FUN_0055c550
 void __fastcall fn_0055C550(int param_1);
 // 0055C590 FUN_0055c590
-void fn_0055C590(undefined4 param_1,LPCVOID param_2,LPCVOID param_3);
+void fn_0055C590(undefined4 param_1,LPCVOID lpBuffer,LPCVOID nNumberOfBytesToWrite);
 // 0055C6C0 FUN_0055c6c0
 void __thiscall fn_0055C6C0(void *st_this,int param_1);
 // 0055C740 FUN_0055c740
@@ -12111,7 +12109,7 @@ void fn_00577280(void);
 // 00577440 FUN_00577440
 void __fastcall fn_00577440(int param_1);
 // 00577690 GameSystemC::sub_00577690
-void __thiscall fn_00577690(GameSystemC *st_this);
+int __thiscall fn_00577690(GameSystemC *st_this);
 // 005776D0 GameSystemC::GetMessage
 int __thiscall fn_005776D0(GameSystemC *st_this,STMessage *message);
 // 005781C0 DebugSystemC::DebugSystemC
@@ -12166,7 +12164,7 @@ fn_0057A2C0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,short
 undefined4 __cdecl fn_0057B350(int *param_1,int param_2,int *param_3);
 // 0057B670 FUN_0057b670
 undefined4 __cdecl
-fn_0057B670(int *param_1,uint param_2,uint param_3,short *param_4,short *param_5);
+fn_0057B670(int *param_1,uint *param_2,uint param_3,short *param_4,short *param_5);
 // 0057B990 FUN_0057b990
 void __cdecl
 fn_0057B990(undefined4 param_1,undefined4 param_2,int param_3,ushort param_4,undefined2 param_5,
@@ -12574,7 +12572,7 @@ int __thiscall fn_00594440(ComboTy *st_this,STMessage *message);
 // 005947D0 CreateVisible
 Visible * __cdecl fn_005947D0(void);
 // 00594850 FUN_00594850
-void __cdecl fn_00594850(int param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_00594850(int param_1,undefined *param_2,BYTE param_3);
 // 00594B90 FSGSTy::OutChSlProc
 void __thiscall
 fn_00594B90(FSGSTy *st_this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,undefined4 param_2,
@@ -13086,11 +13084,11 @@ int __thiscall fn_005D9470(SIDTy *st_this,STMessage *message);
 // 005D9F80 CreateSID
 SIDTy * __cdecl fn_005D9F80(void);
 // 005DA130 FUN_005da130
-void __cdecl fn_005DA130(ushort *param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_005DA130(ushort *param_1,undefined *param_2,BYTE param_3);
 // 005DA310 FUN_005da310
-void __cdecl fn_005DA310(int param_1,undefined *param_2,BYTE param_3);
+HDC __cdecl fn_005DA310(int param_1,undefined *param_2,BYTE param_3);
 // 005DA610 StartSystemTy::StartSystemTy
-StartSystemTy * __thiscall fn_005DA610(StartSystemTy *st_this,undefined4 param_1);
+StartSystemTy * __thiscall fn_005DA610(StartSystemTy *st_this,AppClassTy *param_1);
 // 005DA7A0 FUN_005da7a0
 undefined4 fn_005DA7A0(void);
 // 005DA910 StartSystemTy::sub_005DA910
@@ -13098,15 +13096,15 @@ void __thiscall fn_005DA910(StartSystemTy *st_this);
 // 005DA940 StartSystemTy::sub_005DA940
 undefined1 __thiscall fn_005DA940(StartSystemTy *st_this,int param_1);
 // 005DA980 FUN_005da980
-undefined4 fn_005DA980(int param_1);
+int fn_005DA980(int param_1);
 // 005DAA60 FUN_005daa60
 void fn_005DAA60(void);
 // 005DAA90 FUN_005daa90
-undefined4 fn_005DAA90(void);
+int fn_005DAA90(void);
 // 005DAB30 StartSystemTy::sub_005DAB30
 void __thiscall fn_005DAB30(StartSystemTy *st_this);
 // 005DAB70 FUN_005dab70
-undefined4 fn_005DAB70(int param_1,undefined4 param_2);
+int fn_005DAB70(int param_1,undefined4 param_2);
 // 005DAC60 FUN_005dac60
 void fn_005DAC60(void);
 // 005DAC80 StartSystemTy::GetIP
@@ -13755,12 +13753,11 @@ void fn_005FF150(int param_1,int *param_2,int param_3);
 // 005FF1F0 FUN_005ff1f0
 int __thiscall fn_005FF1F0(void *st_this,undefined4 param_1,int param_2,int param_3);
 // 005FF3A0 FUN_005ff3a0
-undefined4 __thiscall
-fn_005FF3A0(void *st_this,undefined2 *param_1,undefined2 *param_2,short *param_3);
+undefined4 __thiscall fn_005FF3A0(void *st_this,uint *param_1,short *param_2,short *param_3);
 // 005FF430 FUN_005ff430
 undefined4 __thiscall
-fn_005FF430(void *st_this,Global_sub_005FF430_param_1Enum param_1,int param_2,undefined4 param_3,
-            short *param_4,undefined4 param_5,short *param_6,short *param_7,undefined2 *param_8);
+fn_005FF430(void *st_this,Global_sub_005FF430_param_1Enum param_1,int param_2,uint param_3,
+            uint param_4,undefined4 param_5,short *param_6,short *param_7,undefined2 *param_8);
 // 005FFF60 FUN_005fff60
 undefined4 __thiscall fn_005FFF60(void *st_this,int param_1,int param_2);
 // 00600110 FUN_00600110
@@ -13988,7 +13985,7 @@ undefined4 __fastcall fn_0060DAB0(AnonShape_0060DAB0_7A3B9916 *param_1);
 // 0060DD70 FUN_0060dd70
 int __fastcall fn_0060DD70(AnonShape_0060DD70_701DD710 *param_1);
 // 0060E210 FUN_0060e210
-undefined4 fn_0060E210(void *param_1,undefined4 param_2,int param_3,int param_4,int param_5);
+int fn_0060E210(void *param_1,undefined4 param_2,int param_3,int param_4,int param_5);
 // 0060E470 FUN_0060e470
 undefined4 __cdecl
 fn_0060E470(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,
@@ -14612,7 +14609,7 @@ fn_0062E240(void *st_this,undefined4 param_1,int param_2,int param_3,int param_4
 void __thiscall fn_0062E3A0(void *st_this,int *param_1,uint param_2,int param_3);
 // 0062E440 FUN_0062e440
 undefined4
-fn_0062E440(int param_1,ushort param_2,ushort param_3,ushort param_4,int param_5,int param_6);
+fn_0062E440(int param_1,ushort param_2,ushort param_3,ushort param_4,int param_5,uint param_6);
 // 0062E490 FUN_0062e490
 undefined4 __thiscall fn_0062E490(void *st_this,int *param_1);
 // 0062E520 FUN_0062e520
@@ -14708,7 +14705,7 @@ undefined4 __thiscall fn_00630AC0(STManRuinC *st_this,uint param_1);
 void __thiscall
 fn_00630BB0
           (STManRuinC *st_this,short param_1,short param_2,short param_3,undefined4 param_4,int param_5
-          ,undefined4 param_6);
+          ,int param_6);
 // 00630C50 STManRuinC::sub_00630C50
 ushort * __thiscall
 fn_00630C50
@@ -15126,9 +15123,9 @@ void __thiscall fn_0064D0E0(void *st_this,int param_1,char *param_2,undefined4 p
 // 0064D270 AiEventClassTy::__CreateObjPl
 int __thiscall
 fn_0064D270
-          (AiEventClassTy *st_this,uint param_1,short param_2,short *param_3,short *param_4,
-          short *param_5,uint param_6,uint param_7,char *param_8,undefined4 param_9,
-          undefined4 param_10,int param_11,int param_12);
+          (AiEventClassTy *st_this,uint param_1,short param_2,int param_3,int param_4,int param_5,
+          uint param_6,uint param_7,char *param_8,undefined4 param_9,undefined4 param_10,
+          int param_11,int param_12);
 // 0064D890 AiEventClassTy::_CreateRCCont
 int __thiscall
 fn_0064D890
@@ -15658,7 +15655,7 @@ void __thiscall fn_00672A70(void *st_this,byte param_1);
 // 00672AB0 FUN_00672ab0
 void __thiscall fn_00672AB0(void *st_this,byte param_1);
 // 00672AF0 FUN_00672af0
-uint __thiscall fn_00672AF0(void *st_this,byte param_1);
+void __thiscall fn_00672AF0(void *st_this,byte param_1);
 // 00672B30 FUN_00672b30
 undefined1 fn_00672B30(void);
 // 00672B60 FUN_00672b60
@@ -15686,7 +15683,7 @@ int fn_00673D20(void);
 // 006747E0 FUN_006747e0
 void fn_006747E0(int param_1,int param_2);
 // 006748D0 FUN_006748d0
-undefined4 fn_006748D0(void);
+int fn_006748D0(void);
 // 00674AF0 FUN_00674af0
 char * fn_00674AF0(int param_1);
 // 00674C10 FUN_00674c10
@@ -15750,7 +15747,7 @@ int fn_006767D0(void);
 // 00676930 FUN_00676930
 void __cdecl fn_00676930(uint param_1);
 // 00676C40 FUN_00676c40
-uint __cdecl fn_00676C40(DArrayTy *param_1,callback_00676C40_p1 *param_2);
+void __cdecl fn_00676C40(DArrayTy *param_1,callback_00676C40_p1 *param_2);
 // 00676CE0 FUN_00676ce0
 void __cdecl fn_00676CE0(DArrayTy *param_1,undefined *param_2);
 // 00676D80 _EnumPlObj
@@ -15942,7 +15939,7 @@ int __thiscall fn_0067BEF0(AiPlrClassTy *st_this);
 // 0067BF30 AiPlrClassTy::sub_0067BF30
 int __thiscall fn_0067BF30(AiPlrClassTy *st_this);
 // 0067BF60 FUN_0067bf60
-ushort * __thiscall fn_0067BF60(void *st_this,char param_1,uint param_2);
+void __thiscall fn_0067BF60(void *st_this,char param_1,uint param_2);
 // 0067BFD0 AiPlrClassTy::sub_0067BFD0
 void __thiscall fn_0067BFD0(AiPlrClassTy *st_this,DArrayTy *param_1,DArrayTy *param_2);
 // 0067C110 AiPlrClassTy::sub_0067C110
@@ -16408,7 +16405,7 @@ void __cdecl fn_00691540(int *param_1);
 // 00691570 FUN_00691570
 undefined4 * __fastcall fn_00691570(undefined4 *param_1);
 // 00691650 FUN_00691650
-char * fn_00691650(undefined4 param_1,undefined4 param_2);
+char * fn_00691650(char *text,undefined4 param_2);
 // 00691690 FUN_00691690
 void __thiscall
 fn_00691690(void *st_this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *param_4);
@@ -17019,7 +17016,7 @@ int __stdcall fn_006AE140(DArrayTy * array, uint index, void * element);
 // 006AE1C0 Library::DKW::TBL::DArrayAppend [statically linked library; implementation excluded]
 int __stdcall fn_006AE1C0(DArrayTy * array, void * element);
 // 006AE230 FUN_006ae230
-undefined4 fn_006AE230(uint *param_1);
+int fn_006AE230(uint *param_1);
 // 006AE290 Library::DKW::TBL::DArrayCreate [statically linked library; implementation excluded]
 DArrayTy * __stdcall fn_006AE290(DArrayTy * array, uint initialCapacity, uint elementSize, uint growCapacity);
 // 006AE310 Library::DKW::TBL::FUN_006ae310 [statically linked library; implementation excluded]
@@ -17065,8 +17062,7 @@ undefined4 __fastcall fn_006B0460(int *param_1,int *param_2,int *param_3);
 // 006B04D0 FUN_006b04d0
 undefined4 * fn_006B04D0(uint param_1);
 // 006B0520 FUN_006b0520
-undefined4
-fn_006B0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT param_3,int param_4);
+int fn_006B0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT param_3,int param_4);
 // 006B06A0 FUN_006b06a0
 bool fn_006B06A0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_2,int param_3,
                  UINT param_4,int param_5);
@@ -17113,13 +17109,13 @@ int __stdcall fn_006B11D0(uint * param_1, uint param_2, undefined4 * param_3);
 // 006B1280 FUN_006b1280
 int __cdecl fn_006B1280(int param_1);
 // 006B12A8 FUN_006b12a8
-undefined4 __cdecl fn_006B12A8(int param_1,int param_2);
+int __cdecl fn_006B12A8(int param_1,int param_2);
 // 006B12BC FUN_006b12bc
-undefined4 __cdecl fn_006B12BC(int param_1,int param_2,int param_3);
+int __cdecl fn_006B12BC(int param_1,int param_2,int param_3);
 // 006B12CC FUN_006b12cc
 longlong __cdecl fn_006B12CC(int param_1);
 // 006B12DC FUN_006b12dc
-undefined4 __cdecl fn_006B12DC(int param_1,int param_2);
+int __cdecl fn_006B12DC(int param_1,int param_2);
 // 006B1300 Library::DKW::DDX::FUN_006b1300 [statically linked library; implementation excluded]
 int __stdcall fn_006B1300(int * param_1, DDXContext * param_2);
 // 006B13E0 FUN_006b13e0
@@ -17269,7 +17265,7 @@ undefined4 fn_006B4B20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int par
 // 006B4FA0 FUN_006b4fa0
 int fn_006B4FA0(int *param_1);
 // 006B4FE0 FUN_006b4fe0
-int fn_006B4FE0(int param_1);
+int fn_006B4FE0(ushort *param_1);
 // 006B5010 FUN_006b5010
 int fn_006B5010(int param_1);
 // 006B5050 FUN_006b5050
@@ -17284,7 +17280,7 @@ undefined __stdcall fn_006B5110(int param_1, int param_2, int param_3, int param
 void fn_006B5440(ushort *param_1,int param_2,int param_3,int param_4,tagBITMAPINFO *tOBJImage,
                  int param_6,byte param_7);
 // 006B5480 FUN_006b5480
-undefined4 fn_006B5480(AnonShape_006B5480_2C1D4FBF *param_1);
+int fn_006B5480(AnonShape_006B5480_2C1D4FBF *param_1);
 // 006B54F0 Library::DKW::TBL::SArrayCreate [statically linked library; implementation excluded]
 DArrayTy * __stdcall fn_006B54F0(DArrayTy * array, uint initialCapacity, uint growCapacity);
 // 006B5570 FUN_006b5570
@@ -17366,7 +17362,7 @@ int __stdcall fn_006B7400(int * param_1, int param_2, int * param_3, int * param
 // 006B7510 Library::DKW::DDX::FUN_006b7510 [statically linked library; implementation excluded]
 int __stdcall fn_006B7510(int * param_1, int param_2, int * param_3, int param_4, int param_5);
 // 006B75C0 FUN_006b75c0
-int fn_006B75C0(int *param_1,int param_2,int *param_3);
+int fn_006B75C0(int *param_1,int param_2,uint param_3);
 // 006B7650 Library::DKW::DDX::FUN_006b7650 [statically linked library; implementation excluded]
 int __stdcall fn_006B7650(int * param_1, int param_2, undefined4 param_3, undefined4 param_4);
 // 006B76D0 FUN_006b76d0
@@ -17380,7 +17376,7 @@ char * fn_006B77E0(char *param_1,byte *param_2);
 // 006B7830 FUN_006b7830
 undefined4 fn_006B7830(AnonShape_006B7830_769CA2DF *param_1,uint param_2);
 // 006B78C0 FUN_006b78c0
-char * fn_006B78C0(char *param_1,char *param_2);
+void fn_006B78C0(char *param_1,char *param_2);
 // 006B7920 Library::DKW::SND::FUN_006b7920 [statically linked library; implementation excluded]
 undefined4 __stdcall fn_006B7920(undefined4 * param_1, DWORD_PTR param_2);
 // 006B7E00 Library::DKW::SND::FUN_006b7e00 [statically linked library; implementation excluded]
@@ -17398,7 +17394,7 @@ undefined4 fn_006B8200(AnonShape_006B8200_800652FF *param_1,uint param_2,uint pa
 // 006B8240 FUN_006b8240
 char * fn_006B8240(char *param_1,int param_2);
 // 006B8280 FUN_006b8280
-char * fn_006B8280(char *param_1,char *param_2);
+void fn_006B8280(char *param_1,char *param_2);
 // 006B82E0 Library::DKW::DDX::FUN_006b82e0 [statically linked library; implementation excluded]
 int __stdcall fn_006B82E0(DDXContext * param_1, int param_2, int param_3, byte * param_4, int param_5, int param_6, uint param_7, byte * param_8);
 // 006B84D0 FUN_006b84d0
@@ -17444,7 +17440,7 @@ void fn_006B9890(int *param_1);
 // 006B98C0 FUN_006b98c0
 undefined4 fn_006B98C0(int *param_1,int *param_2);
 // 006B9910 FUN_006b9910
-undefined4 * fn_006B9910(undefined4 *param_1,int param_2);
+void fn_006B9910(undefined4 *param_1,int param_2);
 // 006B9940 Library::DKW::DDX::FUN_006b9940 [statically linked library; implementation excluded]
 int __stdcall fn_006B9940(undefined4 * param_1, undefined4 param_2, undefined4 param_3, int * param_4);
 // 006B9A40 Library::DKW::DDX::FUN_006b9a40 [statically linked library; implementation excluded]
@@ -17549,7 +17545,7 @@ int * fn_006BFB50(int *param_1,uint param_2);
 // 006BFB70 FUN_006bfb70
 int * fn_006BFB70(int param_1);
 // 006BFB90 FUN_006bfb90
-DWORD fn_006BFB90(HANDLE param_1,LPDWORD lpNumberOfBytesRead,LPVOID lpBuffer,
+DWORD fn_006BFB90(HANDLE hFile,LPDWORD lpNumberOfBytesRead,LPVOID lpBuffer,
                   DWORD nNumberOfBytesToRead);
 // 006BFBF0 FUN_006bfbf0
 int fn_006BFBF0(AnonShape_006BFBF0_13F73F95 *param_1);
@@ -17757,7 +17753,7 @@ void fn_006C6850(int param_1,int param_2,int param_3,int param_4,int param_5,und
 // 006C68F0 Library::DKW::DDX::FUN_006c68f0 [statically linked library; implementation excluded]
 int __stdcall fn_006C68F0(AnonShape_GLOBAL_0080759C_9638EF10 * param_1, int param_2, int param_3, int param_4, int param_5, int param_6);
 // 006C6A60 FUN_006c6a60
-void fn_006C6A60(ushort *param_1);
+HPALETTE fn_006C6A60(ushort *param_1);
 // 006C6A90 FUN_006c6a90
 void fn_006C6A90(int *param_1,int param_2,int param_3);
 // 006C6AE0 FUN_006c6ae0
@@ -17811,11 +17807,11 @@ uint __stdcall fn_006C7CB0(int param_1, undefined4 * param_2, uint param_3);
 // 006C7D00 FUN_006c7d00
 void fn_006C7D00(undefined4 *param_1,undefined4 param_2,undefined4 param_3);
 // 006C7D20 FUN_006c7d20
-int fn_006C7D20(AnonShape_006C7D20_41F6C243 *param_1,int param_2,int *param_3);
+int fn_006C7D20(RecoveredRecord_FSGSTy_006C7D20 *param_1,int param_2,int *param_3);
 // 006C7DC0 Library::DKW::GPC::FUN_006c7dc0 [statically linked library; implementation excluded]
 undefined4 * __stdcall fn_006C7DC0(undefined4 param_1);
 // 006C7E30 FUN_006c7e30
-uint fn_006C7E30(int param_1,undefined4 *param_2,uint param_3);
+uint fn_006C7E30(int param_1,undefined4 *param_2,UINT_PTR ucb);
 // 006C7E80 FUN_006c7e80
 undefined4 fn_006C7E80(int param_1);
 // 006C7E90 FUN_006c7e90
@@ -17952,10 +17948,10 @@ undefined4
 fn_006D0680(RecoveredSourceFamily_dibcopy *param_1,int *param_2,uint *param_3,
             RecoveredSourceFamily_dibcopy *param_4,int *param_5,uint *param_6);
 // 006D07D0 FUN_006d07d0
-UINT fn_006D07D0(int param_1,HPALETTE param_2,int param_3);
+UINT fn_006D07D0(int param_1,HPALETTE h,int param_3);
 // 006D0820 FUN_006d0820
 void fn_006D0820(int param_1,int param_2,int param_3,int param_4,
-                 AnonShape_006D0820_E08F8169 *param_5,int param_6,int *param_7,int param_8,
+                 AnonShape_006D0820_E08F8169 *param_5,int param_6,uint param_7,int param_8,
                  int param_9,int param_10,int param_11,HPALETTE param_12);
 // 006D0A20 Library::DKW::DDX::FUN_006d0a20 [statically linked library; implementation excluded]
 int __stdcall fn_006D0A20(uint param_1, int * param_2, int param_3, int param_4, BITMAPINFO * param_5, uint * param_6, int param_7, int param_8, DWORD param_9, DWORD param_10);
@@ -18072,7 +18068,7 @@ undefined4 __stdcall fn_006D4B30(int param_1, int param_2);
 // 006D4BA0 Library::DKW::FMM::FUN_006d4ba0 [statically linked library; implementation excluded]
 DWORD __stdcall fn_006D4BA0(int param_1, int param_2, undefined4 param_3);
 // 006D4C50 Library::DKW::FMM::FUN_006d4c50 [statically linked library; implementation excluded]
-DWORD __stdcall fn_006D4C50(int param_1, int param_2, int param_3);
+DWORD __stdcall fn_006D4C50(AnonNested_00757670_0008_104EC36D * param_1, int param_2, int param_3);
 // 006D4CF0 FUN_006d4cf0
 undefined4 __cdecl fn_006D4CF0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_2);
 // 006D4EF0 FUN_006d4ef0
@@ -18142,7 +18138,7 @@ undefined4 * __thiscall fn_006D5D80(void *st_this,byte param_1);
 // 006D5DB0 FUN_006d5db0
 void __fastcall fn_006D5DB0(undefined4 *param_1);
 // 006D5DF0 FUN_006d5df0
-undefined4 fn_006D5DF0(int param_1,AnonShape_006D5DF0_C24DE923 *param_2);
+int fn_006D5DF0(int param_1,AnonShape_006D5DF0_C24DE923 *param_2);
 // 006D5E50 FUN_006d5e50
 int fn_006D5E50(int param_1,undefined4 *param_2,undefined4 *param_3);
 // 006D5ED0 FUN_006d5ed0
@@ -18249,7 +18245,7 @@ void fn_006D7540(int param_1);
 // 006D7550 Library::DKW::WGR::FUN_006d7550 [statically linked library; implementation excluded]
 LPBITMAPINFO __stdcall fn_006D7550(HDC param_1, int param_2, int param_3, int param_4, UINT param_5, uint param_6, HPALETTE param_7);
 // 006D7770 FUN_006d7770
-void fn_006D7770(AnonShape_006D7770_4ECBDE32 *param_1);
+int fn_006D7770(AnonShape_006D7770_4ECBDE32 *param_1);
 // 006D7830 FUN_006d7830
 void fn_006D7830(undefined1 *param_1,int param_2,undefined4 *param_3,int param_4,int param_5,
                  undefined1 param_6);
@@ -18266,7 +18262,7 @@ uint fn_006D7FDA(void);
 // 006D8036 FUN_006d8036
 uint fn_006D8036(void);
 // 006D80C0 Library::DKW::GPC::FUN_006d80c0 [statically linked library; implementation excluded]
-uint __stdcall fn_006D80C0(int param_1);
+uint __stdcall fn_006D80C0(RecoveredRecord_FSGSTy_006C7D20 * param_1);
 // 006D8120 FUN_006d8120
 uint __cdecl fn_006D8120(AnonShape_006D8120_534053F7 *param_1);
 // 006D822B FUN_006d822b
@@ -18324,9 +18320,9 @@ void fn_006DB450(undefined4 *param_1,int param_2,undefined2 *param_3,int param_4
 // 006DB5F0 FUN_006db5f0
 uint fn_006DB5F0(int param_1,int param_2);
 // 006DB610 FUN_006db610
-undefined4 fn_006DB610(int param_1,int param_2);
+int fn_006DB610(int param_1,int param_2);
 // 006DB630 FUN_006db630
-undefined4 fn_006DB630(int param_1,int param_2,int param_3);
+int fn_006DB630(int param_1,int param_2,int param_3);
 // 006DB640 Library::DKW::STR::FUN_006db640 [statically linked library; implementation excluded]
 int __stdcall fn_006DB640(int param_1);
 // 006DB6D0 FUN_006db6d0
@@ -18383,7 +18379,9 @@ void __thiscall
 fn_006DD530(ST3DSMAPContext *st_this,float *param_1,float *param_2,float *param_3);
 // 006DD610 ST3DSMAPContext::sub_006DD610
 void __thiscall
-fn_006DD610(ST3DSMAPContext *st_this,uint param_2,double param_3,double param_4);
+fn_006DD610
+          (ST3DSMAPContext *st_this,ST3DSMAPContext_field_00A8State param_2,double param_3,
+          double param_4);
 // 006DD660 Library::Ourlib::STREND::FUN_006dd660 [statically linked library; implementation excluded]
 undefined __thiscall fn_006DD660(void * st_this, int param_1, int param_2, int param_3, int param_4);
 // 006DD6E0 Library::Ourlib::STREND::FUN_006dd6e0 [statically linked library; implementation excluded]
@@ -18409,7 +18407,7 @@ undefined4 fn_006DDBD0(void);
 // 006DDBE0 ST3DSMAPContext::sub_006DDBE0
 void __thiscall fn_006DDBE0(ST3DSMAPContext *st_this);
 // 006DDD50 ST3DSMAPContext::sub_006DDD50
-uint __fastcall fn_006DDD50(ST3DSMAPContext *param_1);
+void __fastcall fn_006DDD50(ST3DSMAPContext *param_1);
 // 006DE570 Library::Ourlib::STREND::FUN_006de570 [statically linked library; implementation excluded]
 int __thiscall fn_006DE570(void * st_this, int param_1, int param_2);
 // 006DE9C0 ST3DSMAPContext::sub_006DE9C0 [statically linked library; implementation excluded]
@@ -18482,7 +18480,7 @@ undefined __thiscall fn_006E3970(AppClassTy * st_this, int param_1);
 // 006E3A70 Library::Ourlib::SAPP::FUN_006e3a70 [statically linked library; implementation excluded]
 undefined __thiscall fn_006E3A70(void * st_this, int param_1, int * param_2, undefined4 * param_3);
 // 006E3A90 FUN_006e3a90
-void __thiscall fn_006E3A90(void *st_this,int param_1,undefined4 *param_2);
+int __thiscall fn_006E3A90(void *st_this,int param_1,undefined4 *param_2);
 // 006E3AB0 AppClassTy::PostMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E3AB0(AppClassTy * st_this, undefined4 * param_1);
 // 006E3B50 AppClassTy::PostNextMessage [statically linked library; implementation excluded]
@@ -18556,10 +18554,10 @@ int __thiscall fn_006E51F0(SystemClassTy * st_this);
 // 006E52D0 FUN_006e52d0
 void __fastcall fn_006E52D0(AnonShape_006E52D0_AF06BCD2 *param_1);
 // 006E5360 StartSystemTy::sub_006E5360
-undefined4 __thiscall
+int __thiscall
 fn_006E5360(StartSystemTy *st_this,int param_1,int *param_2,undefined4 *param_3);
 // 006E5380 FUN_006e5380
-void __thiscall fn_006E5380(void *st_this,int param_1,undefined4 *param_2);
+int __thiscall fn_006E5380(void *st_this,int param_1,undefined4 *param_2);
 // 006E53A0 SystemClassTy::FindFirstObject [statically linked library; implementation excluded]
 int __thiscall fn_006E53A0(SystemClassTy * st_this, int param_1, int * param_2);
 // 006E54B0 SystemClassTy::_CreateObject [statically linked library; implementation excluded]
@@ -18616,7 +18614,7 @@ STGroupBoatC * __thiscall fn_006E60E0(void *st_this);
 // 006E6100 SystemWithNamedObjClassTy::SystemWithNamedObjClassTy
 SystemWithNamedObjClassTy * __thiscall
 fn_006E6100
-          (SystemWithNamedObjClassTy *st_this,undefined4 param_1,undefined4 param_2);
+          (SystemWithNamedObjClassTy *st_this,AppClassTy *param_1,undefined4 param_2);
 // 006E6130 FUN_006e6130
 void __thiscall fn_006E6130(void *st_this,undefined4 param_1,undefined4 param_2);
 // 006E6150 FUN_006e6150
@@ -18627,7 +18625,7 @@ int __thiscall fn_006E6170(SystemWithNamedObjClassTy * st_this, STObjectTypeId p
 // 006E6200 Library::Ourlib::SAPP::FUN_006e6200 [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006E6200(void * st_this, int param_1, undefined4 * param_2, undefined4 * param_3, int * param_4, undefined4 param_5, undefined4 param_6);
 // 006E62D0 STPlaySystemC::sub_006E62D0
-undefined4 __thiscall
+int __thiscall
 fn_006E62D0(STPlaySystemC *st_this,AnonShape_005EFAE0_B406B78B *param_1,int *param_2);
 // 006E6330 SystemWithNamedObjClassTy::SendMessage [statically linked library; implementation excluded]
 int __thiscall fn_006E6330(SystemWithNamedObjClassTy * st_this, int param_1);
@@ -18694,7 +18692,7 @@ void __thiscall fn_006E8630(ST3DSMAPContext *st_this,undefined4 param_1);
 // 006E8640 ST3DSMAPContext::sub_006E8640
 char * __thiscall fn_006E8640(ST3DSMAPContext *st_this,char *text,char *param_2);
 // 006E8660 ST3DSMAPContext::sub_006E8660
-undefined4 __thiscall
+int __thiscall
 fn_006E8660
           (ST3DSMAPContext *st_this,int *param_1,uint param_2,uint param_3,uint param_4,uint param_5,
           uint param_6,uint param_7,uint param_8);
@@ -18719,7 +18717,7 @@ undefined __thiscall fn_006E8B00(void * st_this, uint param_1, uint param_2);
 // 006E8BA0 Library::Ourlib::ST3DSMAP::SprClose [statically linked library; implementation excluded]
 undefined __thiscall fn_006E8BA0(void * st_this, uint param_1);
 // 006E8C50 FUN_006e8c50
-void fn_006E8C50(void);
+void fn_006E8C50(char *diagnosticName);
 // 006E8C80 Library::Ourlib::ST3DSMAP::SprGlowLineMove [statically linked library; implementation excluded]
 undefined __thiscall fn_006E8C80(void * st_this, uint param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7);
 // 006E8D20 Library::Ourlib::ST3DSMAP::SprGlowLineSetColors [statically linked library; implementation excluded]
@@ -18738,7 +18736,7 @@ fn_006E9000
 // 006E9080 FUN_006e9080
 undefined4 * __thiscall fn_006E9080(void *st_this,uint param_1,uint param_2,uint param_3);
 // 006E91A0 FUN_006e91a0
-void fn_006E91A0(void);
+void fn_006E91A0(char *diagnosticName);
 // 006E91D0 ST3DSMAPContext::sub_006E91D0
 void __thiscall fn_006E91D0(ST3DSMAPContext *st_this,int *param_1);
 // 006E9210 Library::Ourlib::ST3DSMAP::SprSetSplit [statically linked library; implementation excluded]
@@ -18750,7 +18748,7 @@ undefined __thiscall fn_006E9350(void * st_this, uint param_1, uint param_2, int
 // 006E93C0 FUN_006e93c0
 void __thiscall fn_006E93C0(void *st_this,uint param_1,int param_2,uint param_3);
 // 006E9490 FUN_006e9490
-uint * __thiscall fn_006E9490(void *st_this,uint *param_1,int param_2,int param_3);
+void __thiscall fn_006E9490(void *st_this,uint *param_1,int param_2,int param_3);
 // 006E9520 Library::Ourlib::ST3DSMAP::SprSetShadow [statically linked library; implementation excluded]
 undefined __thiscall fn_006E9520(void * st_this, uint param_1, uint param_2, uint param_3, uint param_4);
 // 006E96D0 Library::Ourlib::ST3DSMAP::FUN_006e96d0 [statically linked library; implementation excluded]
@@ -18772,13 +18770,13 @@ void fn_006E9A10(uint *param_1,int param_2,uint param_3);
 // 006E9AF0 Library::Ourlib::ST3DSMAP::SprSetIms [statically linked library; implementation excluded]
 undefined4 __thiscall fn_006E9AF0(void * st_this, uint param_1, uint param_2, uint param_3, uint param_4, uint param_5, uint param_6, uint param_7, int param_8);
 // 006E9CB0 ST3DSMAPContext::sub_006E9CB0
-uint * __thiscall fn_006E9CB0(ST3DSMAPContext *st_this,uint *param_1,uint param_2);
+void __thiscall fn_006E9CB0(ST3DSMAPContext *st_this,uint *param_1,uint param_2);
 // 006E9D40 ST3DSMAPContext::sub_006E9D40
-uint * __thiscall fn_006E9D40(ST3DSMAPContext *st_this,uint *param_1,uint param_2);
+void __thiscall fn_006E9D40(ST3DSMAPContext *st_this,uint *param_1,uint param_2);
 // 006E9DD0 FUN_006e9dd0
-uint * __thiscall fn_006E9DD0(void *st_this,uint *param_1,uint param_2);
+void __thiscall fn_006E9DD0(void *st_this,uint *param_1,uint param_2);
 // 006E9E60 FUN_006e9e60
-uint * __thiscall fn_006E9E60(void *st_this,uint *param_1,uint param_2);
+void __thiscall fn_006E9E60(void *st_this,uint *param_1,uint param_2);
 // 006E9EF0 ST3DSMAPContext::sub_006E9EF0
 void __thiscall
 fn_006E9EF0
@@ -19344,7 +19342,7 @@ undefined1 __cdecl fn_0070C9A0(AnonShape_0070C9E0_7137F001 *param_1,int param_2,
 // 0070C9E0 FUN_0070c9e0
 undefined4 * __cdecl fn_0070C9E0(AnonShape_0070C9E0_7137F001 *param_1,char param_2,uint *param_3);
 // 0070CAF0 FUN_0070caf0
-void __cdecl fn_0070CAF0(AnonShape_0070C9E0_7137F001 *param_1,uint *param_2,uint *param_3);
+void __cdecl fn_0070CAF0(AnonShape_0070C9E0_7137F001 *param_1,uint *param_2,int param_3);
 // 0070CB20 FUN_0070cb20
 uint __cdecl
 fn_0070CB20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte param_6,byte param_7
@@ -19440,7 +19438,7 @@ char * __thiscall fn_00713080(ccFntTy * st_this, char * param_1, int param_2);
 // 00713200 ccFntTy::GetFittingStr [statically linked library; implementation excluded]
 char * __thiscall fn_00713200(ccFntTy * st_this, char * param_1, uint * param_2, uint * param_3, int param_4, undefined4 * param_5);
 // 00713480 ccFntTy::CreateTypeSSpr [statically linked library; implementation excluded]
-undefined4 * __thiscall fn_00713480(ccFntTy * st_this, uint * param_1, int param_2, int param_3, ccFntTy_CreateTypeSSpr_param_4Enum param_4, uint param_5, int param_6, int param_7, int param_8);
+undefined4 * __thiscall fn_00713480(ccFntTy * st_this, char * resourceString, int param_2, int param_3, ccFntTy_CreateTypeSSpr_param_4Enum param_4, uint param_5, int param_6, int param_7, int param_8);
 // 00713B00 cTypingTy::TypingInit [statically linked library; implementation excluded]
 int __thiscall fn_00713B00(cTypingTy * st_this, uint * param_1, void * param_2, int param_3, undefined4 param_4, undefined4 param_5, int param_6, int param_7, uint param_8, uint param_9, int param_10, int param_11, int param_12, undefined4 param_13);
 // 00713F30 cTypingTy::TypingInitSarr [statically linked library; implementation excluded]
@@ -19601,7 +19599,7 @@ undefined4 __cdecl fn_00719BB0(MCIDEVICEID *param_1);
 // 00719C60 FUN_00719c60
 void __cdecl fn_00719C60(DWORD_PTR dwParam2);
 // 00719C90 FUN_00719c90
-int __cdecl fn_00719C90(MCIERROR mcierr,MCIDEVICEID *param_2);
+void __cdecl fn_00719C90(MCIERROR mcierr,MCIDEVICEID *param_2);
 // 00719D00 Library::Ourlib::MFWAV::mfWavLoad [statically linked library; implementation excluded]
 ushort * __cdecl fn_00719D00(cMf32 * param_1, char * soundName, byte param_3, ushort * param_4);
 // 00719DF0 Library::Ourlib::MFWAV::mfWavGetType [statically linked library; implementation excluded]
@@ -20723,7 +20721,7 @@ uint * __cdecl fn_00746AC0(uint * param_1, uint param_2);
 // 00746B90 Library::MSVCRT::FUN_00746b90 [statically linked library; implementation excluded]
 undefined __stdcall fn_00746B90(LPVOID * param_1);
 // 00746BAB FUN_00746bab
-HRESULT fn_00746BAB(LPUNKNOWN param_1,IID *param_2,void **param_3,int *param_4);
+HRESULT fn_00746BAB(LPUNKNOWN pUnkOuter,IID *param_2,void **param_3,LPVOID *ppv);
 // 00746C24 FUN_00746c24
 void * __thiscall
 fn_00746C24(void *st_this,undefined4 param_1,int param_2,undefined4 param_3,undefined4 *param_4);
@@ -20781,8 +20779,10 @@ undefined4 __fastcall fn_0074747F(int param_1);
 undefined4 fn_0074748E(LPVOID *ppv);
 // 007474F4 FUN_007474f4
 uint fn_007474F4(LPVOID *ppv);
-// 0074756B FUN_0074756b
-undefined4 * __thiscall fn_0074756B(void *st_this,AnonShape_0074756B_58F08DE7 *param_1);
+// 0074756B RecoveredClass_0074756B::FUN_0074756b
+undefined4 * __thiscall
+fn_0074756B
+          (RecoveredClass_0074756B *st_this,AnonShape_0074756B_58F08DE7 *param_1);
 // 007475E7 FUN_007475e7
 undefined4 * __thiscall fn_007475E7(void *st_this,byte param_1);
 // 00747603 FUN_00747603
@@ -20803,8 +20803,10 @@ undefined4 fn_007477EA(AnonShape_007477EA_440BD1E9 *param_1,uint param_2);
 uint fn_00747822(AnonShape_00747822_A1E67AF6 *param_1);
 // 0074784F FUN_0074784f
 undefined4 fn_0074784F(AnonShape_00747822_A1E67AF6 *param_1);
-// 00747874 FUN_00747874
-undefined4 * __thiscall fn_00747874(void *st_this,AnonShape_00747874_535F3AAD *param_1);
+// 00747874 RecoveredClass_00747874::FUN_00747874
+undefined4 * __thiscall
+fn_00747874
+          (RecoveredClass_00747874 *st_this,AnonShape_00747874_535F3AAD *param_1);
 // 007478BC FUN_007478bc
 undefined4 * __thiscall fn_007478BC(void *st_this,byte param_1);
 // 007478D8 FUN_007478d8
@@ -20852,7 +20854,7 @@ undefined4 fn_00747F52(void);
 // 00747F57 FUN_00747f57
 uint __thiscall fn_00747F57(void *st_this,undefined4 *param_1);
 // 00747F68 FUN_00747f68
-undefined4 __thiscall fn_00747F68(void *st_this,int *param_1);
+int __thiscall fn_00747F68(void *st_this,int *param_1);
 // 00747F91 FUN_00747f91
 undefined4 fn_00747F91(void);
 // 00747F94 FUN_00747f94
@@ -20885,7 +20887,7 @@ undefined4 fn_007482A5(void);
 undefined4 fn_007482AB(int param_1,undefined4 param_2);
 // 007482D8 FUN_007482d8
 undefined4
-fn_007482D8(AnonShape_007482D8_1685BA8E *param_1,undefined4 param_2,undefined4 param_3,
+fn_007482D8(AnonShape_0074C613_A217E84A *param_1,undefined4 param_2,undefined4 param_3,
             undefined4 param_4,undefined4 param_5,double param_6);
 // 00748308 CBaseOutputPin
 void * __thiscall
@@ -20962,10 +20964,11 @@ undefined4 fn_007489C7(void);
 uint __fastcall fn_007489CF(int param_1);
 // 007489F8 FUN_007489f8
 undefined4 __thiscall fn_007489F8(void *st_this,undefined4 *param_1);
-// 00748A83 FUN_00748a83
-void __thiscall
-fn_00748A83(void *st_this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-            undefined4 param_5);
+// 00748A83 RecoveredClass_00748A83::FUN_00748a83
+RecoveredClass_00748A83 * __thiscall
+fn_00748A83
+          (RecoveredClass_00748A83 *st_this,undefined4 param_1,undefined4 param_2,undefined4 param_3,
+          undefined4 param_4,undefined4 param_5);
 // 00748AB7 FUN_00748ab7
 undefined4 * __thiscall fn_00748AB7(void *st_this,byte param_1);
 // 00748AD3 FUN_00748ad3
@@ -21020,9 +21023,8 @@ void __fastcall fn_00749091(int param_1);
 // 007490C6 FUN_007490c6
 void fn_007490C6(int *param_1,char *param_2,undefined4 *param_3);
 // 00749106 FUN_00749106
-undefined4
-fn_00749106(AnonShape_00749106_79800343 *param_1,LPCRITICAL_SECTION lpCriticalSection,
-            undefined4 *param_3);
+int fn_00749106(AnonShape_00749106_79800343 *param_1,LPCRITICAL_SECTION lpCriticalSection,
+                undefined4 *param_3);
 // 007491C3 FUN_007491c3
 undefined4 fn_007491C3(AnonShape_007491C3_A434B833 *param_1,undefined4 *param_2);
 // 00749212 FUN_00749212
@@ -21056,7 +21058,7 @@ uint fn_00749708(undefined4 *param_1,int *param_2,uint param_3);
 // 00749841 FUN_00749841
 int fn_00749841(RecoveredSourceFamily_dibcopy *param_1);
 // 0074987C FUN_0074987c
-void fn_0074987C(undefined4 *param_1,AnonShape_0074987C_9BF4FFD0 *param_2);
+uint * fn_0074987C(undefined4 *param_1,AnonShape_0074987C_9BF4FFD0 *param_2);
 // 007498EC FUN_007498ec
 void fn_007498EC(int *param_1,AnonShape_0074987C_9BF4FFD0 *param_2);
 // 00749989 FUN_00749989
@@ -21165,8 +21167,10 @@ undefined4 __fastcall fn_0074A8EB(int *param_1);
 void fn_0074A959(void);
 // 0074A95C FUN_0074a95c
 void fn_0074A95C(void);
-// 0074A95F FUN_0074a95f
-undefined4 * __thiscall fn_0074A95F(void *st_this,int param_1,undefined4 param_2,short *param_3);
+// 0074A95F RecoveredClass_0074A95F::FUN_0074a95f
+undefined4 * __thiscall
+fn_0074A95F
+          (RecoveredClass_0074A95F *st_this,int param_1,undefined4 param_2,short *param_3);
 // 0074A9A6 FUN_0074a9a6
 undefined4 * __thiscall fn_0074A9A6(void *st_this,byte param_1);
 // 0074A9C2 FUN_0074a9c2
@@ -21265,7 +21269,7 @@ undefined4 __fastcall fn_0074B763(undefined4 param_1);
 // 0074B777 FUN_0074b777
 void fn_0074B777(void);
 // 0074B79E FUN_0074b79e
-void fn_0074B79E(void);
+HMODULE fn_0074B79E(void);
 // 0074B7B8 FUN_0074b7b8
 int __thiscall fn_0074B7B8(void *st_this,undefined4 param_1,int param_2);
 // 0074B7E4 FUN_0074b7e4
@@ -21368,9 +21372,11 @@ fn_0074C32D(void *st_this,undefined4 param_1,undefined4 param_2,undefined4 param
             double param_5);
 // 0074C35B FUN_0074c35b
 uint __fastcall fn_0074C35B(int param_1);
-// 0074C38F FUN_0074c38f
+// 0074C38F RecoveredClass_0074CDC5::sub_0074C38F
 undefined4 * __thiscall
-fn_0074C38F(void *st_this,undefined4 param_1,int param_2,undefined4 param_3,char *text);
+fn_0074C38F
+          (RecoveredClass_0074CDC5 *st_this,undefined4 param_1,int param_2,undefined4 param_3,
+          char *text);
 // 0074C3D8 FUN_0074c3d8
 undefined4 * __thiscall fn_0074C3D8(void *st_this,byte param_1);
 // 0074C3F4 FUN_0074c3f4
@@ -21395,9 +21401,11 @@ int fn_0074C5D2(AnonShape_0074C5D2_07BD206F *param_1,int *param_2);
 undefined1
 fn_0074C613(AnonShape_0074C613_A217E84A *param_1,undefined4 param_2,undefined4 param_3,
             undefined4 param_4,undefined4 param_5,double param_6);
-// 0074C658 FUN_0074c658
+// 0074C658 RecoveredClass_0074CFC0::sub_0074C658
 undefined4 * __thiscall
-fn_0074C658(void *st_this,undefined4 param_1,int param_2,undefined4 param_3,char *text);
+fn_0074C658
+          (RecoveredClass_0074CFC0 *st_this,undefined4 param_1,int param_2,undefined4 param_3,
+          char *text);
 // 0074C69E FUN_0074c69e
 undefined4 * __thiscall fn_0074C69E(void *st_this,byte param_1);
 // 0074C6BA FUN_0074c6ba
@@ -21446,9 +21454,11 @@ int __thiscall fn_0074CAA4(void *st_this,int *param_1,int *param_2);
 int * __thiscall fn_0074CB34(void *st_this,int *param_1);
 // 0074CCE2 FUN_0074cce2
 int __thiscall fn_0074CCE2(void *st_this,int *param_1);
-// 0074CDC5 FUN_0074cdc5
+// 0074CDC5 RecoveredClass_0074CDC5::FUN_0074cdc5
 undefined4 * __thiscall
-fn_0074CDC5(void *st_this,undefined4 param_1,int param_2,undefined4 param_3,char *text);
+fn_0074CDC5
+          (RecoveredClass_0074CDC5 *st_this,undefined4 param_1,int param_2,undefined4 param_3,
+          char *text);
 // 0074CE11 FUN_0074ce11
 undefined4 * __thiscall fn_0074CE11(void *st_this,byte param_1);
 // 0074CE2D FUN_0074ce2d
@@ -21461,9 +21471,11 @@ undefined4 fn_0074CF2D(int param_1,undefined4 param_2);
 int __thiscall fn_0074CF58(void *st_this,undefined4 param_1);
 // 0074CF93 FUN_0074cf93
 undefined4 fn_0074CF93(int param_1,undefined4 param_2);
-// 0074CFC0 FUN_0074cfc0
-undefined4 * __thiscall
-fn_0074CFC0(void *st_this,undefined4 param_1,int param_2,undefined4 param_3,char *text);
+// 0074CFC0 RecoveredClass_0074CFC0::FUN_0074cfc0
+RecoveredClass_0074CFC0 * __thiscall
+fn_0074CFC0
+          (RecoveredClass_0074CFC0 *st_this,undefined4 param_1,int param_2,undefined4 param_3,
+          char *text);
 // 0074CFFB FUN_0074cffb
 undefined4 * __thiscall fn_0074CFFB(void *st_this,byte param_1);
 // 0074D017 FUN_0074d017
@@ -21568,7 +21580,7 @@ void __fastcall fn_0074E310(int *param_1);
 // 0074E31D FUN_0074e31d
 undefined4 fn_0074E31D(undefined4 param_1,undefined4 *param_2);
 // 0074E337 FUN_0074e337
-uint fn_0074E337(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4,int *param_5);
+uint fn_0074E337(int *param_1,undefined4 param_2,int *param_3,int *param_4,int *param_5);
 // 0074E40E FUN_0074e40e
 uint fn_0074E40E(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int *param_5
                  ,undefined4 param_6);
@@ -21618,9 +21630,9 @@ void __fastcall fn_0074E823(int param_1);
 // 0074E847 FUN_0074e847
 undefined4 fn_0074E847(int *param_1,char *param_2,undefined4 *param_3);
 // 0074E88E FUN_0074e88e
-undefined4 __thiscall fn_0074E88E(void *st_this,int *param_1);
+int __thiscall fn_0074E88E(void *st_this,int *param_1);
 // 0074E8DF FUN_0074e8df
-undefined4 __thiscall fn_0074E8DF(void *st_this,int *param_1);
+int __thiscall fn_0074E8DF(void *st_this,int *param_1);
 // 0074E930 FUN_0074e930
 int fn_0074E930(int *param_1,undefined4 param_2);
 // 0074E962 FUN_0074e962
@@ -21879,11 +21891,11 @@ int __cdecl fn_007519D0(ushort *param_1,byte *param_2);
 // 00751B10 FUN_00751b10
 undefined4 fn_00751B10(int *param_1,uint param_2);
 // 00751B60 Library::DKW::DB::FUN_00751b60 [statically linked library; implementation excluded]
-int __stdcall fn_00751B60(int param_1, ushort * param_2, undefined4 * param_3);
+int __stdcall fn_00751B60(int param_1, ushort * param_2, DWORD * param_3);
 // 00751BA0 FUN_00751ba0
-DWORD fn_00751BA0(int *param_1,ushort *param_2,undefined4 *param_3,uint param_4);
+DWORD fn_00751BA0(int *param_1,DWORD param_2,undefined4 *param_3,uint param_4);
 // 00751BF0 FUN_00751bf0
-DWORD fn_00751BF0(int *param_1,ushort *param_2,undefined4 *param_3,uint param_4);
+DWORD fn_00751BF0(int *param_1,DWORD param_2,undefined4 *param_3,uint param_4);
 // 00751C40 FUN_00751c40
 int fn_00751C40(undefined4 param_1,uint param_2,int param_3,uint *param_4,int param_5);
 // 00751CB0 Library::DKW::WGR::FUN_00751cb0 [statically linked library; implementation excluded]
@@ -21956,7 +21968,7 @@ void fn_00753B00(LPCSTR param_1,undefined4 *param_2,undefined2 param_3);
 // 00753B40 FUN_00753b40
 int fn_00753B40(AnonShape_00753C80_4C8E695D *param_1);
 // 00753B80 FUN_00753b80
-undefined4 * fn_00753B80(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,int param_3);
+int fn_00753B80(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,int param_3);
 // 00753BC0 Library::DKW::DB::FUN_00753bc0 [statically linked library; implementation excluded]
 int __stdcall fn_00753BC0(int param_1, undefined4 * param_2, undefined4 * param_3);
 // 00753C80 FUN_00753c80
@@ -21994,12 +22006,10 @@ void fn_00754185(AnonShape_00754185_34BF31BE *context);
 // 00754360 FUN_00754360
 DWORD fn_00754360(int param_1,DWORD param_2,undefined4 *param_3,uint param_4);
 // 00754390 FUN_00754390
-undefined4
-fn_00754390(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,undefined4 *param_3,
-            undefined4 *param_4);
+int fn_00754390(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,undefined4 *param_3,
+                undefined4 *param_4);
 // 007543F0 FUN_007543f0
-undefined4
-fn_007543F0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefined4 *param_3);
+int fn_007543F0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefined4 *param_3);
 // 00754530 Library::DKW::JPG::FUN_00754530 [statically linked library; implementation excluded]
 int __stdcall fn_00754530(int param_1, uint * param_2, int param_3, uint param_4, undefined4 param_5, uint param_6);
 // 00754AF0 FUN_00754af0
@@ -22010,7 +22020,7 @@ void fn_00754B80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param_
 // 00754EC0 Library::DKW::DB::FUN_00754ec0 [statically linked library; implementation excluded]
 DWORD __stdcall fn_00754EC0(int param_1);
 // 00754F40 FUN_00754f40
-undefined4 fn_00754F40(LPCSTR param_1);
+undefined4 fn_00754F40(LPCSTR lpFileName);
 // 00754FD0 FUN_00754fd0
 uint fn_00754FD0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ushort param_3);
 // 007550C0 FUN_007550c0
@@ -22023,24 +22033,23 @@ int __stdcall fn_007552D0(int param_1, int param_2, int param_3);
 // 00755330 Library::DKW::FMM::FUN_00755330 [statically linked library; implementation excluded]
 int __stdcall fn_00755330(int param_1, int param_2, int param_3);
 // 007553F0 FUN_007553f0
-undefined4
-fn_007553F0(AnonShape_007553F0_ACB112C2 *param_1,int *param_2,undefined4 *param_3,
-            undefined4 *param_4);
+int fn_007553F0(AnonShape_007553F0_ACB112C2 *param_1,int *param_2,undefined4 *param_3,
+                undefined4 *param_4);
 // 00755560 FUN_00755560
-uint fn_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,int param_3,
+uint fn_00755560(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,int param_3,
                  undefined4 param_4);
 // 00755830 FUN_00755830
 uint fn_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3);
 // 00755970 FUN_00755970
-int fn_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_3);
+int fn_00755970(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,int param_3);
 // 00755A80 Library::DKW::FMM::FUN_00755a80 [statically linked library; implementation excluded]
 int __stdcall fn_00755A80(int param_1, uint param_2);
 // 00755BC0 FUN_00755bc0
 int fn_00755BC0(AnonShape_00755BC0_D59C64DD *param_1,int param_2);
 // 00755D40 FUN_00755d40
-void fn_00755D40(AnonShape_00755D40_9BC6D2DA *param_1,int param_2,int param_3);
+void fn_00755D40(AnonShape_00753C80_4C8E695D *param_1,int param_2,int param_3);
 // 00755DA0 FUN_00755da0
-uint fn_00755DA0(uint param_1,undefined4 *param_2);
+uint fn_00755DA0(AnonShape_00753C80_4C8E695D *param_1,undefined4 *param_2);
 // 00755E10 FUN_00755e10
 int fn_00755E10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 param_3);
 // 007561D0 FUN_007561d0
@@ -22358,9 +22367,10 @@ undefined __stdcall fn_0075E7D0(AnonShape_0075E7D0_08EF6D02 * param_1, int param
 // 0075E890 FUN_0075e890
 void fn_0075E890(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,int param_4);
 // 0075E980 FUN_0075e980
-void fn_0075E980(int param_1,int param_2,int *param_3,int param_4,int param_5);
+void fn_0075E980(AnonShape_0075E890_C23EB446 *param_1,int param_2,int *param_3,int param_4,
+                 int param_5);
 // 0075EB40 FUN_0075eb40
-void fn_0075EB40(AnonShape_0075EB40_977462DD *param_1,int param_2,int param_3,int param_4,
+void fn_0075EB40(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,int param_4,
                  int param_5,int param_6,byte *param_7);
 // 0075EC80 Library::DKW::JPG::FUN_0075ec80 [statically linked library; implementation excluded]
 undefined __stdcall fn_0075EC80(AnonShape_0075EC80_53406127 * param_1, int param_2, int * param_3, byte * param_4);
@@ -22451,7 +22461,7 @@ void fn_00761770(int param_1,int param_2,int *param_3,int *param_4,int param_5);
 // 007617B0 KERNEL32.DLL::RtlUnwind
 void __stdcall fn_007617B0(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue);
 // 00761960 FUN_00761960
-undefined4 __cdecl fn_00761960(LPCSTR param_1,LPCSTR param_2);
+undefined4 __cdecl fn_00761960(LPCSTR lpExistingFileName,LPCSTR lpNewFileName);
 // 007619B0 FID_conflict:_remove
 int __cdecl fn_007619B0(char *_Filename);
 // 00761A00 FUN_00761a00
@@ -23022,7 +23032,7 @@ inline int AiEventClassTy::_CreateRCCont(ushort param_1, short param_2, int para
     return st::fn_0064D890(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
 }
 
-inline int AiEventClassTy::__CreateObjPl(uint param_1, short param_2, short *param_3, short *param_4, short *param_5, uint param_6, uint param_7, char *param_8, undefined4 param_9, undefined4 param_10, int param_11, int param_12) {
+inline int AiEventClassTy::__CreateObjPl(uint param_1, short param_2, int param_3, int param_4, int param_5, uint param_6, uint param_7, char *param_8, undefined4 param_9, undefined4 param_10, int param_11, int param_12) {
     return st::fn_0064D270(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10, param_11, param_12);
 }
 
@@ -24242,8 +24252,8 @@ inline void FrmPanelTy::PaintBut(AnonShape_005105E0_BBFE3E3B *param_1, char *par
     st::fn_005105E0(this, param_1, param_2);
 }
 
-inline void GameSystemC::sub_00577690() {
-    st::fn_00577690(this);
+inline int GameSystemC::sub_00577690() {
+    return st::fn_00577690(this);
 }
 
 inline void HelpPanelTy::AddLinks(int *param_1, char param_2, int param_3, int param_4) {
@@ -24894,7 +24904,7 @@ inline void OpticClassC::ReInitOptic(int param_1) {
     st::fn_004A9540(this, param_1);
 }
 
-inline undefined4 OpticClassC::sub_004AB070(OpticClassC_sub_004AB070_param_1Enum param_1, float param_2, int param_3, int param_4) {
+inline int OpticClassC::sub_004AB070(OpticClassC_sub_004AB070_param_1Enum param_1, float param_2, int param_3, int param_4) {
     return st::fn_004AB070(this, param_1, param_2, param_3, param_4);
 }
 
@@ -25366,7 +25376,7 @@ inline void STAllPlayersC::SelfCheckObjControl() {
     st::fn_00435060(this);
 }
 
-inline void STAllPlayersC::SetActivePanel(uint *param_1, int param_2, int param_3) {
+inline void STAllPlayersC::SetActivePanel(uint param_1, int param_2, int param_3) {
     st::fn_0043AE40(this, param_1, param_2, param_3);
 }
 
@@ -25558,7 +25568,7 @@ inline void STBHEShellC::sub_005F5E30(int param_1, int param_2, int param_3) {
     st::fn_005F5E30(this, param_1, param_2, param_3);
 }
 
-inline int STBoatC::Annih(undefined4 *param_1) {
+inline int STBoatC::Annih(uint param_1) {
     return st::fn_0047D080(this, param_1);
 }
 
@@ -25622,7 +25632,7 @@ inline undefined4 STBoatC::Bring(STBoatC *param_1) {
     return st::fn_0047C050(this, param_1);
 }
 
-inline int STBoatC::Build(uint param_1) {
+inline int STBoatC::Build(uint *param_1) {
     return st::fn_0046B100(this, param_1);
 }
 
@@ -26402,7 +26412,7 @@ inline undefined4 STManRuinC::sub_00630AC0(uint param_1) {
     return st::fn_00630AC0(this, param_1);
 }
 
-inline void STManRuinC::sub_00630BB0(short param_1, short param_2, short param_3, undefined4 param_4, int param_5, undefined4 param_6) {
+inline void STManRuinC::sub_00630BB0(short param_1, short param_2, short param_3, undefined4 param_4, int param_5, int param_6) {
     st::fn_00630BB0(this, param_1, param_2, param_3, param_4, param_5, param_6);
 }
 
@@ -26598,7 +26608,7 @@ inline void STPlaySystemC::sub_006E57B0(int param_1) {
     st::fn_006E57B0(this, param_1);
 }
 
-inline undefined4 STPlaySystemC::sub_006E62D0(AnonShape_005EFAE0_B406B78B *param_1, int *param_2) {
+inline int STPlaySystemC::sub_006E62D0(AnonShape_005EFAE0_B406B78B *param_1, int *param_2) {
     return st::fn_006E62D0(this, param_1, param_2);
 }
 
@@ -27162,12 +27172,44 @@ inline void StartSystemTy::sub_005DB2A0() {
     st::fn_005DB2A0(this);
 }
 
-inline undefined4 StartSystemTy::sub_006E5360(int param_1, int *param_2, undefined4 *param_3) {
+inline int StartSystemTy::sub_006E5360(int param_1, int *param_2, undefined4 *param_3) {
     return st::fn_006E5360(this, param_1, param_2, param_3);
 }
 
 inline void StartSystemTy::sub_006E56B0(uint param_1) {
     st::fn_006E56B0(this, param_1);
+}
+
+inline undefined4 * RecoveredClass_0074756B::FUN_0074756b(AnonShape_0074756B_58F08DE7 *param_1) {
+    return st::fn_0074756B(this, param_1);
+}
+
+inline undefined4 * RecoveredClass_00747874::FUN_00747874(AnonShape_00747874_535F3AAD *param_1) {
+    return st::fn_00747874(this, param_1);
+}
+
+inline RecoveredClass_00748A83 * RecoveredClass_00748A83::FUN_00748a83(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5) {
+    return st::fn_00748A83(this, param_1, param_2, param_3, param_4, param_5);
+}
+
+inline undefined4 * RecoveredClass_0074A95F::FUN_0074a95f(int param_1, undefined4 param_2, short *param_3) {
+    return st::fn_0074A95F(this, param_1, param_2, param_3);
+}
+
+inline undefined4 * RecoveredClass_0074CDC5::FUN_0074cdc5(undefined4 param_1, int param_2, undefined4 param_3, char *text) {
+    return st::fn_0074CDC5(this, param_1, param_2, param_3, text);
+}
+
+inline undefined4 * RecoveredClass_0074CDC5::sub_0074C38F(undefined4 param_1, int param_2, undefined4 param_3, char *text) {
+    return st::fn_0074C38F(this, param_1, param_2, param_3, text);
+}
+
+inline RecoveredClass_0074CFC0 * RecoveredClass_0074CFC0::FUN_0074cfc0(undefined4 param_1, int param_2, undefined4 param_3, char *text) {
+    return st::fn_0074CFC0(this, param_1, param_2, param_3, text);
+}
+
+inline undefined4 * RecoveredClass_0074CFC0::sub_0074C658(undefined4 param_1, int param_2, undefined4 param_3, char *text) {
+    return st::fn_0074C658(this, param_1, param_2, param_3, text);
 }
 
 inline undefined4 AnonReceiver_00416270::FUN_005faa10(int param_1) {
@@ -27326,7 +27368,7 @@ inline void ST3DSMAPContext::sub_006DD530(float *param_1, float *param_2, float 
     st::fn_006DD530(this, param_1, param_2, param_3);
 }
 
-inline void ST3DSMAPContext::sub_006DD610(uint param_2, double param_3, double param_4) {
+inline void ST3DSMAPContext::sub_006DD610(ST3DSMAPContext_field_00A8State param_2, double param_3, double param_4) {
     st::fn_006DD610(this, param_2, param_3, param_4);
 }
 
@@ -27434,7 +27476,7 @@ inline char * ST3DSMAPContext::sub_006E8640(char *text, char *param_2) {
     return st::fn_006E8640(this, text, param_2);
 }
 
-inline undefined4 ST3DSMAPContext::sub_006E8660(int *param_1, uint param_2, uint param_3, uint param_4, uint param_5, uint param_6, uint param_7, uint param_8) {
+inline int ST3DSMAPContext::sub_006E8660(int *param_1, uint param_2, uint param_3, uint param_4, uint param_5, uint param_6, uint param_7, uint param_8) {
     return st::fn_006E8660(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
 }
 
@@ -27458,12 +27500,12 @@ inline undefined4 ST3DSMAPContext::sub_006E98E0(uint param_1, uint param_2, int 
     return st::fn_006E98E0(this, param_1, param_2, param_3, param_4, param_5);
 }
 
-inline uint * ST3DSMAPContext::sub_006E9CB0(uint *param_1, uint param_2) {
-    return st::fn_006E9CB0(this, param_1, param_2);
+inline void ST3DSMAPContext::sub_006E9CB0(uint *param_1, uint param_2) {
+    st::fn_006E9CB0(this, param_1, param_2);
 }
 
-inline uint * ST3DSMAPContext::sub_006E9D40(uint *param_1, uint param_2) {
-    return st::fn_006E9D40(this, param_1, param_2);
+inline void ST3DSMAPContext::sub_006E9D40(uint *param_1, uint param_2) {
+    st::fn_006E9D40(this, param_1, param_2);
 }
 
 inline void ST3DSMAPContext::sub_006E9EF0(uint param_1, uint param_2, int param_3, int param_4, uint param_5, ushort param_6) {
@@ -27646,7 +27688,7 @@ inline void TLOBaseTy::sub_004C96E0() {
     st::fn_004C96E0(this);
 }
 
-inline undefined4 TLOBaseTy::sub_004CA7B0(uint *param_1, int param_2) {
+inline undefined4 TLOBaseTy::sub_004CA7B0(uint param_1, int param_2) {
     return st::fn_004CA7B0(this, param_1, param_2);
 }
 
@@ -28162,8 +28204,8 @@ inline undefined4 * ccFntTy::CreateSurf(int param_1, uint param_2, int param_3, 
     return st::fn_00710BA0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
 }
 
-inline undefined4 * ccFntTy::CreateTypeSSpr(uint * param_1, int param_2, int param_3, ccFntTy_CreateTypeSSpr_param_4Enum param_4, uint param_5, int param_6, int param_7, int param_8) {
-    return st::fn_00713480(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
+inline undefined4 * ccFntTy::CreateTypeSSpr(char * resourceString, int param_2, int param_3, ccFntTy_CreateTypeSSpr_param_4Enum param_4, uint param_5, int param_6, int param_7, int param_8) {
+    return st::fn_00713480(this, resourceString, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
 }
 
 inline int ccFntTy::EraseSufr() {

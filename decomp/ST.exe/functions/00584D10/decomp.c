@@ -4,13 +4,13 @@
 void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   uint uVar2;
   uint uVar3;
   int iVar4;
   int iVar5;
   int iVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   undefined4 local_64 [6];
   short local_4a;
   short sStack_48;
@@ -44,7 +44,7 @@ void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
   local_64[1] = uVar1;
   do {
     local_3e = (undefined2)iVar6;
-    thunk_FUN_00416270(param_1,(uint *)&local_4a,(int *)&sStack_48,&local_46);
+    thunk_FUN_00416270(param_1,(uint *)&local_4a,&sStack_48,&local_46);
     if (local_c < 4) {
       uVar2 = FUN_006aff50(iVar6);
       uVar3 = FUN_006aff5b(local_8);

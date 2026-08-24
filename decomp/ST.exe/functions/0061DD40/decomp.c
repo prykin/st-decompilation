@@ -34,7 +34,7 @@ undefined4 __fastcall FUN_0061dd40(RecoveredRecord_STLightC_0061DD40 *param_1)
     if (0 < param_1->field_0093) {
       do {
         iVar6 = 0;
-        if (0 < *(int *)param_1->field_009B) {
+        if (0 < *STField<int *>(param_1,0x9B)) {
           local_8 = 0;
           do {
             iVar2 = *(int *)(param_1->field_009F + local_c * 4);

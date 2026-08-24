@@ -7,12 +7,12 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
   byte bVar1;
   byte bVar2;
   byte bVar3;
-  undefined2 uVar4;
+  ushort uVar4;
   STWorldObject *this_00;
-  undefined4 uVar5;
+  uint uVar5;
   STWorldObjectVTable *pSVar6;
-  undefined2 uVar7;
-  undefined2 uVar8;
+  ushort uVar7;
+  ushort uVar8;
   short sVar9;
   int iVar10;
   int iVar12;
@@ -142,7 +142,8 @@ LAB_0061cd61:
                 if ((bVar20) &&
                    /* ST_CALLSITE[0061CD78]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                    (iVar16 = (*this_00->vtable[5].slots_00_28[2])(this_00), iVar16 != 0)) {
-                  thunk_FUN_00416270(this_00,(uint *)&local_6,(int *)((int)&param_3 + 2),&local_22);
+                  thunk_FUN_00416270(this_00,(uint *)&local_6,(short *)((int)&param_3 + 2),&local_22
+                                    );
                   uVar4 = *(undefined2 *)&this_00[1].field_0xe;
                   memset(piVar17, 0, 0x2c); /* compiler bulk-zero initialization */
                   uVar5 = *(undefined4 *)&this_00->field_0x18;

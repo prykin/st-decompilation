@@ -45,7 +45,7 @@ void __fastcall FUN_00586af0(int *param_1)
   int local_4c;
   int local_48;
   STGameObjC *local_44;
-  undefined4 local_40;
+  uint local_40;
   int local_3c;
   int local_38;
   int local_34;
@@ -125,7 +125,7 @@ LAB_00587844:
         STField<undefined4>(param_1,0x263) = 0;
         goto LAB_00588350;
       }
-      thunk_FUN_00416270(local_44,(uint *)((int)param_1 + 0x241),(int *)((int)param_1 + 0x243),
+      thunk_FUN_00416270(local_44,(uint *)((int)param_1 + 0x241),(short *)((int)param_1 + 0x243),
                          (short *)((int)param_1 + 0x245));
       local_EAX_3393 =
            FUN_006acf0d((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
@@ -133,7 +133,7 @@ LAB_00587844:
                         (int)STField<short>(param_1,0x243),(int)STField<short>(param_1,0x245));
     }
     else {
-      thunk_FUN_00416270(local_44,(uint *)((int)param_1 + 0x241),(int *)((int)param_1 + 0x243),
+      thunk_FUN_00416270(local_44,(uint *)((int)param_1 + 0x241),(short *)((int)param_1 + 0x243),
                          (short *)((int)param_1 + 0x245));
       local_EAX_3393 =
            FUN_006acf0d((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),

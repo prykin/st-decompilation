@@ -15,7 +15,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
   SettMapMTy_field_2237DArray *pSVar3;
   int uVar6;
   AnonPointee_SettMapMTy_2204 *pAVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   HoloTy *pHVar6;
   uint uVar9;
   int iVar10;
@@ -59,7 +59,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
     puVar1 = g_startSystem_0081176C->field_02F0;
     this_00->field_005D = puVar1;
     puVar12 = puVar1 + 0x14;
-    uVar6 = FUN_006b4fe0((int)puVar1);
+    uVar6 = FUN_006b4fe0(puVar1);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pAVar4 = (AnonPointee_SettMapMTy_2204 *)
              FUN_006b50c0(0xfa,0x16,(uint)*(ushort *)(this_00->field_005D + 0xe),uVar6,

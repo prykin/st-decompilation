@@ -21,10 +21,10 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
             int param_5,byte param_6,char param_7,uint param_8)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   HoloTy *this_00;
   int iVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   uint uVar5;
   uint uVar6;
   InternalExceptionFrame local_58;

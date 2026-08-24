@@ -18,13 +18,13 @@ void __thiscall FUN_00709670(void *this,uint param_1,int param_2,int param_3,byt
   int iVar5;
   uint uVar6;
   int iVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000011;
   uint auStack_54 [5];
   byte abStack_40 [4];
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

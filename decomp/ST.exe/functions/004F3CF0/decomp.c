@@ -21,7 +21,7 @@ CPanelTy::PaintTxtBut
   uint uVar2;
   CPanelTy *pCVar3;
   int *errorCode;
-  undefined4 uVar4;
+  uint uVar4;
   LPSTR text;
   uint uVar5;
   char *resourceString;
@@ -92,8 +92,9 @@ cf_common_join_004F3D83:
       DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0148[uVar2 + 0xe],local_10,local_c,
              param_3,(byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(g_interSystem_00802A28->field_0024,(int)pCVar3->field_0148[uVar2 + 0xe],0,
-                       local_10,local_c,local_18[2],local_18[3]);
+      ccFntTy::SetSurf((ccFntTy *)g_interSystem_00802A28->field_0024,
+                       (int)pCVar3->field_0148[uVar2 + 0xe],0,local_10,local_c,local_18[2],
+                       local_18[3]);
       iVar10 = -1;
       iVar7 = -1;
       /* ST_CALLSITE[004F3E4F]: CALL dword ptr [EBP + 0x1c] */
@@ -101,8 +102,8 @@ cf_common_join_004F3D83:
       iVar6 = -1;
       iVar9 = -2;
       resourceString = LoadResourceString(param_5,g_hINSTANCE_00807618);
-      ccFntTy::WrTxt(g_interSystem_00802A28->field_0024,resourceString,iVar9,iVar6,uVar5,iVar7,
-                     iVar10);
+      ccFntTy::WrTxt((ccFntTy *)g_interSystem_00802A28->field_0024,resourceString,iVar9,iVar6,uVar5,
+                     iVar7,iVar10);
       if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)pCVar3->field_0148[uVar2],0xffffffff,

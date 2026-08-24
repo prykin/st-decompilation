@@ -21,9 +21,10 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
   STContainerC *this_00;
   int local_EAX_16;
   int iVar8;
+  int iVar13_mg9;
   uint uVar8;
   int local_EAX_598;
-  undefined4 uVar10;
+  uint uVar10;
   STGameObjC *this_01;
   int uVar9;
   int iVar12;
@@ -33,7 +34,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined2 uVar14;
+  ushort uVar14;
   byte *puVar15;
   byte *puVar16;
   byte *puVar17;
@@ -267,10 +268,10 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         thunk_FUN_005ec9f0(0);
         if (((((AnonShape_005EFAE0_B406B78B *)this_00->field_0358 !=
                nullptr) && ((short)this_00->field_0342 == 1)) &&
-            (iVar13 = STPlaySystemC::sub_006E62D0
-                                (g_playSystem_00802A38,
-                                 (AnonShape_005EFAE0_B406B78B *)this_00->field_0358,&local_18),
-            iVar13 != -4)) && (this_00->field_0211 != nullptr)) {
+            (iVar13_mg9 = STPlaySystemC::sub_006E62D0
+                                    (g_playSystem_00802A38,
+                                     (AnonShape_005EFAE0_B406B78B *)this_00->field_0358,&local_18),
+            iVar13_mg9 != -4)) && (this_00->field_0211 != nullptr)) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           Library::Ourlib::ST3DSMAP::SprSetLevBefore
                     (this_00->field_0211,this_00->field_01ED,*(int *)(local_18 + 0x1ed));

@@ -12,8 +12,8 @@
 int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
 
 {
-  undefined4 *puVar1;
-  undefined1 *puVar2;
+  uint *puVar1;
+  byte *puVar2;
   byte bVar3;
   byte bVar4;
   STMessageId SVar5;
@@ -23,7 +23,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
   int iVar8;
   uint uVar9;
   LPSTR pCVar10;
-  undefined4 uVar11;
+  uint uVar11;
   BITMAPINFO *pBVar12;
   int iVar12;
   int iVar13;

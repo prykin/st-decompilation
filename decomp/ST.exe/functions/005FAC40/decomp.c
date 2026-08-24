@@ -30,7 +30,7 @@ FUN_005fac40(void *this,short param_1,int param_2,int param_3,short param_4,shor
       _param_5 = param_6;
     }
     else {
-      thunk_FUN_00416270(this,(uint *)&param_1,(int *)&param_4,&param_5);
+      thunk_FUN_00416270(this,(uint *)&param_1,&param_4,&param_5);
     }
     if (param_2 == 1) {
       *(int *)(STField<int>(this,0x2e6) + 0x14) = (int)param_1;

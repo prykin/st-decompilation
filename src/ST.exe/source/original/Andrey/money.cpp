@@ -18,8 +18,8 @@
 int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
 
 {
-  undefined1 uVar1;
-  undefined4 uVar2;
+  byte uVar1;
+  uint uVar2;
   uint uVar3;
   bool bVar5;
   MoneyTy *this_00;
@@ -42,7 +42,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
   byte bVar15;
   int iVar16;
   char *text_00;
-  undefined4 *puVar17;
+  uint *puVar17;
   InternalExceptionFrame local_bc;
   AnonShape_0052B760_30F4E0D5 local_78;
   int local_58;
@@ -307,7 +307,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       this_00->field_0082 = puVar9;
       puVar8 = PTR_0080679c + 0x14;
       iVar10 = 1;
-      uVar12 = st::fn_006B4FE0((int)PTR_0080679c);
+      uVar12 = st::fn_006B4FE0(PTR_0080679c);
       puVar8 = (ushort *)
                st::fn_006B50C0(this_00->field_0040,this_00->field_0044,(uint)PTR_0080679c[7],uVar12,
                             (undefined4 *)puVar8,iVar10);
@@ -329,7 +329,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
         puVar17 = (undefined4 *)((int)puVar17 + 1);
       }
       puVar8 = PTR_0080679c + 0x14;
-      local_EAX_597 = st::fn_006B4FE0((int)PTR_0080679c);
+      local_EAX_597 = st::fn_006B4FE0(PTR_0080679c);
       puVar8 = (ushort *)
                st::fn_006B50C0(this_00->field_0048,this_00->field_004C,(uint)PTR_0080679c[7],
                             local_EAX_597,(undefined4 *)puVar8,iVar10);
@@ -351,7 +351,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
         puVar17 = (undefined4 *)((int)puVar17 + 1);
       }
       puVar8 = PTR_0080679c + 0x14;
-      local_EAX_719 = st::fn_006B4FE0((int)PTR_0080679c);
+      local_EAX_719 = st::fn_006B4FE0(PTR_0080679c);
       puVar8 = (ushort *)
                st::fn_006B50C0(this_00->field_0050,this_00->field_0054,(uint)PTR_0080679c[7],
                             local_EAX_719,(undefined4 *)puVar8,iVar10);
@@ -373,7 +373,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
         puVar17 = (undefined4 *)((int)puVar17 + 1);
       }
       puVar8 = PTR_0080679c + 0x14;
-      local_EAX_841 = st::fn_006B4FE0((int)PTR_0080679c);
+      local_EAX_841 = st::fn_006B4FE0(PTR_0080679c);
       puVar8 = (ushort *)
                st::fn_006B50C0(this_00->field_0060,this_00->field_0064,(uint)PTR_0080679c[7],
                             local_EAX_841,(undefined4 *)puVar8,iVar10);

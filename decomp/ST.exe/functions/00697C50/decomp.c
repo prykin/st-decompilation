@@ -10,7 +10,7 @@ undefined4 __thiscall CGenerate::sub_00697C50(CGenerate *this,int param_1,int pa
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   undefined1 local_10 [8];
   undefined4 local_8;
 

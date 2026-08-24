@@ -20,7 +20,7 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   short *psVar1;
   int *piVar2;
   void *pvVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   char *pcVar5;
   AnonShape_006DBCA0_EF06575F *pAVar6;
   ST3DSMAPContext *this_00;
@@ -29,7 +29,7 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   uint uVar8;
   ushort *puVar9_mg2;
   ushort *puVar9_mg3;
-  undefined4 *puVar9;
+  uint *puVar9;
   ushort *puVar9_mg4;
   ushort *puVar9_mg5;
   ushort *puVar9_mg6;
@@ -38,9 +38,9 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   ushort *puVar11;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar12;
   byte bVar13;
-  undefined4 uVar14;
+  uint uVar14;
   int iVar16;
-  undefined4 uVar17;
+  uint uVar17;
   CHAR local_190 [260];
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 local_8c;
   AnonShape_006B4B20_3D4F4412 *local_3c;
@@ -107,7 +107,8 @@ LAB_0069177d:
     iVar10 = local_20;
     iVar16 = (int)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + local_20 * 4));
     ST3DSMAPContext::sub_006DC050
-              (this_00,0,0,0,iVar16,iVar16,-10.0,10.0,-10.0,10.0,10.0,9.965999793052674,0);
+              (this_00,nullptr,0,0,iVar16,iVar16,-10.0,10.0,-10.0,10.0,10.0,
+               9.965999793052674,0);
     ST3DSMAPContext::sub_006DD610(this_00,4,10.0,10.0);
     this_00->field_0128 = 0;
     ST3DSMAPContext::sub_006DD790(this_00,149.97069);

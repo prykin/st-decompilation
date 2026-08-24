@@ -14,7 +14,7 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
 
 {
   int iVar1;
-  undefined2 uVar3;
+  ushort uVar3;
   STGroupBoatC *this_00;
   int iVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -24,10 +24,10 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
   uint uVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined4 *puVar6;
+  uint *puVar6;
   int iVar8;
   int iVar11;
-  undefined4 uVar9;
+  uint uVar9;
   DArrayTy *pDVar10;
   int iVar12;
   uint uVar13;
@@ -56,8 +56,8 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
   undefined4 local_1c;
   uint local_18;
   uint local_14;
-  int local_10;
-  undefined4 local_c;
+  uint local_10;
+  uint local_c;
   STGameObjC *local_8;
 
   local_34 = 0;
@@ -142,7 +142,7 @@ LAB_0048a37f:
                   local_38 = local_38 + 200;
                 }
                 iVar12 = local_38;
-                thunk_FUN_00416270(local_8,&local_14,&local_10,(short *)&local_c);
+                thunk_FUN_00416270(local_8,&local_14,(short *)&local_10,(short *)&local_c);
                 iVar7 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,
                                      (int)this->field_0045,(int)(short)local_14,(int)(short)local_10
                                      ,(int)(short)local_c);
@@ -271,7 +271,7 @@ LAB_00489eb0:
             if (((iVar12 != 0) && (iVar12 = (*local_8->vtable[1].MoveStep)(local_8), iVar12 != 0))
                /* ST_CALLSITE[00489FBB]: CALL dword ptr [EDX + 0xf4] */
                && (iVar12 = (*local_8->vtable[1].vfunc_20)(local_8), iVar12 != 0)) {
-              thunk_FUN_00416270(local_8,&local_14,&local_10,(short *)&local_c);
+              thunk_FUN_00416270(local_8,&local_14,(short *)&local_10,(short *)&local_c);
               local_EAX_1627 =
                    FUN_006acf0d((int)this->field_0041,(int)this->field_0043,(int)this->field_0045,
                                 (int)(short)local_14,(int)(short)local_10,(int)(short)local_c);

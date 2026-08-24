@@ -14,7 +14,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   ushort *puVar4;
   STGameObjC *pSVar5;
   int iVar7;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar8;
   uint uVar9;
   InternalExceptionFrame local_58;

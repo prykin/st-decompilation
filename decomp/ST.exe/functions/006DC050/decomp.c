@@ -32,7 +32,11 @@
    field as double, 006DC2BA reads owner field as double, 006DC2D2 reads owner field as double |
    006DC23E forwards adjacent incoming dwords to ST3DSMAPContext::sub_006DBD20 parameter stack slot
    +0x1c typed /double | 006DC23E forwards adjacent incoming dwords to ST3DSMAPContext::sub_006DBD20
-   parameter stack slot +0x2c typed /double */
+   parameter stack slot +0x2c typed /double
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 005751F0 -> 006DC050 @ 005752A1; data at 0080759C | 00691690 -> 006DC050 @ 006917D4;
+   zeroed full register at 006917A2 | 006DC050 -> 006DBD20 @ 006DC10A */
 
 void __thiscall
 ST3DSMAPContext::sub_006DC050
@@ -43,7 +47,7 @@ ST3DSMAPContext::sub_006DC050
 {
   double dVar1;
   double dVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   AnonShape_006DBCA0_EF06575F *pAVar4;
   AnonShape_006DBCA0_EF06575F *pAVar5;
   longlong lVar6;

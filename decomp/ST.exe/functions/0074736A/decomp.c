@@ -7,7 +7,7 @@ undefined4 FUN_0074736a(AnonShape_0074736A_AA1936BB *param_1,undefined4 *param_2
   LPCRITICAL_SECTION lpCriticalSection;
   int *piVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   uint uVar4;
   uint uVar5;
 

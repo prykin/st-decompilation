@@ -87,7 +87,7 @@ undefined4 __fastcall st::fn_004D0310(TLOBaseTy *param_1)
   /* ST_CALLSITE[004D034E]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar5 = st::fn_00404183
                     ((STT3DSprC *)param_1->field_05FF,0xe,PTR_0080677c,
-                     st::pointer_boundary_cast<char *>(&DAT_007a9342 + *(int *)&param_1->field_0x369 * 6),CASE_1D);
+                     (char *)&DAT_007a9342 + *(int *)&param_1->field_0x369 * 6,CASE_1D);
   if (iVar5 != 0) {
     st::fn_006A5E40
               (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_dock.cpp"),0x298);
@@ -211,7 +211,7 @@ undefined4 __thiscall st::fn_004D0970(TLOFakeTy *this,int param_1,int param_2,in
   if (this->field_0249 <= this->field_0245 + 1) {
     iVar1 = st::machine_word_boundary_cast<int>(this->field_0249 + 10);
     this->field_0249 = iVar1;
-    puVar2 = st::pointer_boundary_cast<ushort *>(st::fn_006ACF50(this->field_024D,iVar1 * 0xc));
+    puVar2 = static_cast<ushort *>(st::fn_006ACF50(this->field_024D,iVar1 * 0xc));
     this->field_024D = puVar2;
   }
   *(int *)(this->field_024D + this->field_0245 * 6) = param_1;
@@ -351,7 +351,7 @@ int __thiscall st::fn_004D0B90(TLOFakeTy *this,STMessage *message)
     iVar6 = 0;
     if (pTVar4->field_023D == 2) {
       if (pTVar4->field_0249 != 0) {
-        puVar5 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(pTVar4->field_0249 * 0xc)));
+        puVar5 = static_cast<ushort *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(pTVar4->field_0249 * 0xc)));
         pTVar4->field_024D = puVar5;
       }
       if (pTVar4->field_0245 != 0) {

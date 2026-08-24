@@ -62,11 +62,11 @@ st::fn_004AB880
   void *pvVar6;
   int iVar7;
   int iVar4;
-  undefined4 uVar8;
+  uint uVar8;
   int *piVar9;
   uint uVar10;
   uint uVar11;
-  undefined4 *puVar13;
+  uint *puVar13;
   int iVar14;
   char *pcVar15;
   char *pcVar16;
@@ -180,7 +180,7 @@ undefined4 __thiscall st::fn_004ABB30(STT3DSprC *this,byte param_1)
   STT3DSprC *pSVar2;
   int local_EAX_35;
   int iVar3;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   InternalExceptionFrame local_4c;
   STT3DSprC *local_8;
@@ -246,7 +246,7 @@ undefined4 __thiscall st::fn_004ABE40(STT3DSprC *this,char param_1,uint param_2)
   int iVar2;
   int iVar5;
   int iVar4;
-  undefined4 uVar6;
+  uint uVar6;
   int *piVar7;
 
   if (this->field_0018 != 0xffffffff) {
@@ -288,7 +288,7 @@ undefined4 __thiscall st::fn_004ABF00(STT3DSprC *this,char param_1,uint param_2)
 {
   STT3DSprC *pSVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   uint uVar4;
   ushort *puVar5;
   code *pcVar6;
@@ -350,7 +350,7 @@ undefined4 __thiscall st::fn_004AC040(STT3DSprC *this,char param_1)
   STT3DSprC *pSVar2;
   int local_EAX_35;
   int iVar3;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   InternalExceptionFrame local_4c;
   STT3DSprC *local_8;
@@ -490,7 +490,7 @@ undefined4 __thiscall st::fn_004AC1A0(STT3DSprC *this,byte param_1,uint param_2)
   int local_EAX_35;
   int *piVar2;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   uint uVar5;
   code *pcVar6;
@@ -582,7 +582,7 @@ undefined4 __thiscall st::fn_004AC410(STT3DSprC *this,byte param_1)
 {
   STT3DSprC *pSVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   uint uVar5;
   InternalExceptionFrame local_4c;
   STT3DSprC *local_8;
@@ -662,7 +662,7 @@ st::fn_004AD1F0(STT3DSprC *this,ushort *param_1,uint param_2,uint param_3,STDcRe
   int local_EAX_34;
   AnonPointee_STT3DSprC_0020 *pAVar3;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   uint uVar5;
   int iVar6;
   InternalExceptionFrame local_4c;
@@ -681,7 +681,7 @@ st::fn_004AD1F0(STT3DSprC *this,ushort *param_1,uint param_2,uint param_3,STDcRe
     st::fn_006E8660
               (local_8->field_003C,(int *)&local_8->field_0018,param_7,0,param_5,param_6,param_2,
                param_3,(uint)param_4);
-    pAVar3 = st::pointer_boundary_cast<AnonPointee_STT3DSprC_0020 *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(pSVar2->field_0014 * 0x24)));
+    pAVar3 = static_cast<AnonPointee_STT3DSprC_0020 *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(pSVar2->field_0014 * 0x24)));
     pSVar2->field_0020 = pAVar3;
     for (uVar5 = st::machine_word_boundary_cast<uint>(pSVar2->field_0014 * 9 & 0x3fffffff); uVar5 != 0; uVar5 = uVar5 - 1) {
       *(undefined4 *)pAVar3 = 0;
@@ -716,9 +716,9 @@ undefined4 * __thiscall st::fn_004AD790(STT3DSprC *this,uint *param_1)
   STT3DSprC *this_00;
   int local_EAX_35;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar3;
-  undefined4 *puVar6;
+  uint *puVar6;
   uint uVar7;
   uint uVar9;
   int iVar10;
@@ -774,7 +774,7 @@ undefined4 * __thiscall st::fn_004AD790(STT3DSprC *this,uint *param_1)
       local_c = (char *)((int)local_c + 0x24);
     } while (iVar10 < this_00->field_0014);
   }
-  local_14 = st::pointer_boundary_cast<AnonShape_004AD790_77673787 *>(st::fn_006AAC70(*param_1));
+  local_14 = static_cast<AnonShape_004AD790_77673787 *>(st::fn_006AAC70(*param_1));
   uVar9 = *param_1;
   pAVar13 = local_14;
   for (uVar7 = uVar9 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -785,7 +785,7 @@ undefined4 * __thiscall st::fn_004AD790(STT3DSprC *this,uint *param_1)
     *(undefined1 *)pAVar13 = 0;
     pAVar13 = (AnonShape_004AD790_77673787 *)&pAVar13->field_0x1;
   }
-  pcVar11 = st::pointer_boundary_cast<char *>(&local_14[1].field_0x4);
+  pcVar11 = (char *)&local_14[1].field_0x4;
   *(undefined4 *)local_14 = this_00->field_0004;
   *(undefined4 *)&local_14->field_0x4 = this_00->field_0008;
   local_14->field_0x8 = this_00->field_0010;

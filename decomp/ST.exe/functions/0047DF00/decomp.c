@@ -20,10 +20,11 @@
 int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
 
 {
+  void *param_1_after_output = nullptr; /* compiler output-call stack-slot lifetime split */
   STBoatC_field_06C3State SVar1;
-  undefined4 uVar2;
+  uint uVar2;
   STBoatC_field_06F7State SVar3;
-  undefined2 uVar5;
+  ushort uVar5;
   short sVar8;
   int local_EAX_51;
   int local_EAX_97;
@@ -38,7 +39,7 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
   int iVar10;
   uint uVar11;
   int local_EAX_2246;
-  undefined4 *puVar12;
+  uint *puVar12;
   uint uVar13;
   int local_EAX_3170;
   short sVar6;
@@ -61,7 +62,7 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
   short sVar21;
   byte bVar22;
   undefined4 local_2c [2];
-  undefined4 local_24;
+  uint local_24;
   short local_20;
   uint local_1c;
   int local_18;
@@ -97,19 +98,19 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
     else {
       param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar16, sVar14).objects[0];
     }
-    if ((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) {
+    if ((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) {
       return 0;
     }
-    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != local_1c) {
+    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 != local_1c) {
       return 0;
     }
-    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x20 != 1000) {
+    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x20 != 1000) {
       return 0;
     }
-    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024) {
+    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024) {
       return 0;
     }
-    iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1);
+    iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output);
     if (iVar9 == 0) {
       return 0;
     }
@@ -200,11 +201,11 @@ LAB_0047f4cd:
       else {
         param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+      if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
            *(int *)&this->field_0x6af)) ||
-         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
+         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024 ||
+          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 == 0)))) {
         return 0;
       }
       iVar8 = thunk_FUN_00495420(this,&this->field_06B3,&this->field_06B5,&this->field_06B7);
@@ -243,11 +244,11 @@ LAB_0047e0a4:
       else {
         param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+      if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
            *(int *)&this->field_0x6af)) ||
-         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
+         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024 ||
+          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 == 0)))) {
         /* ST_CALLSITE[0047E176]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
         sub_004602B0(this);
         this->field_00B7 = 0;
@@ -291,17 +292,17 @@ LAB_0047e0a4:
         else {
           param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
-        if ((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) {
+        if ((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) {
           return 0;
         }
-        if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+        if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
             *(int *)&this->field_0x6af) {
           return 0;
         }
-        if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024) {
+        if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024) {
           return 0;
         }
-        iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1);
+        iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output);
         if (iVar9 == 0) {
           return 0;
         }
@@ -452,18 +453,18 @@ LAB_0047edd5:
         else {
           param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
-        if ((((AnonShape_004B9D90_4F3151F9 *)param_1 != nullptr) &&
-            (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 ==
+        if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output != nullptr) &&
+            (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 ==
              *(int *)&this->field_0x6af)) &&
-           ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 == this->field_0024 &&
-            (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 != 0)))) {
-          thunk_FUN_004b9cf0((AnonShape_004B9D90_4F3151F9 *)param_1);
+           ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 == this->field_0024 &&
+            (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 != 0)))) {
+          thunk_FUN_004b9cf0((AnonShape_004B9D90_4F3151F9 *)param_1_after_output);
           this->field_06C3 = CASE_4;
           goto cf_common_exit_0047F19A;
         }
         STPlaySystemC::sub_006E62D0
                   (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                   (int *)&param_1);
+                   (int *)&param_1_after_output);
         if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {
           param_1[300] = 0;
         }
@@ -654,12 +655,12 @@ LAB_0047edd5:
         else {
           param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
-        if ((((AnonShape_004B9D90_4F3151F9 *)param_1 != nullptr) &&
-            (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 ==
+        if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output != nullptr) &&
+            (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 ==
              *(int *)&this->field_0x6af)) &&
-           ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 == this->field_0024 &&
-            (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 != 0)))) {
-          if (STField<int>(param_1,0x245) == 6) {
+           ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 == this->field_0024 &&
+            (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 != 0)))) {
+          if (STField<int>(param_1_after_output,0x245) == 6) {
             if (this->field_06B9 == 1) {
               this->field_06C3 = CASE_5;
               this->field_06C7 = 0;
@@ -672,7 +673,7 @@ LAB_0047edd5:
         }
         STPlaySystemC::sub_006E62D0
                   (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                   (int *)&param_1);
+                   (int *)&param_1_after_output);
         if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {
           param_1[300] = 0;
         }
@@ -714,21 +715,21 @@ cf_common_exit_0047F19A:
       else {
         param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+      if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
            *(int *)&this->field_0x6af)) ||
-         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
+         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024 ||
+          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 == 0)))) {
         STPlaySystemC::sub_006E62D0
                   (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                   (int *)&param_1);
+                   (int *)&param_1_after_output);
         if (param_1 == nullptr) {
           return 0;
         }
       }
       else {
         if (this->field_06B9 != 1) {
-          thunk_FUN_004b9cf0((AnonShape_004B9D90_4F3151F9 *)param_1);
+          thunk_FUN_004b9cf0((AnonShape_004B9D90_4F3151F9 *)param_1_after_output);
           this->field_06C3 = CASE_4;
           return 2;
         }
@@ -755,14 +756,14 @@ cf_common_exit_0047F19A:
       else {
         param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+      if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
            *(int *)&this->field_0x6af)) ||
-         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
+         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024 ||
+          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 == 0)))) {
         STPlaySystemC::sub_006E62D0
                   (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                   (int *)&param_1);
+                   (int *)&param_1_after_output);
         if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {
           param_1[300] = 0;
         }
@@ -785,14 +786,14 @@ cf_common_exit_0047F19A:
       else {
         param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+      if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
            *(int *)&this->field_0x6af)) ||
-         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
+         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024 ||
+          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 == 0)))) {
         STPlaySystemC::sub_006E62D0
                   (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                   (int *)&param_1);
+                   (int *)&param_1_after_output);
         if (param_1 == nullptr) {
           return 0;
         }

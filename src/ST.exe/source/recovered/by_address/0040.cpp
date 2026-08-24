@@ -100,6 +100,10 @@ LAB_0040cd0a:
 
 // 0040CDB0 FUN_0040cdb0
 #line 4 "decomp/ST.exe/functions/0040CDB0/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=8, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __thiscall st::fn_0040CDB0(void *this,uint param_1)
 
 {
@@ -590,7 +594,7 @@ LAB_0040dde1:
   st::fn_006A5E90((short *)pSVar7->field_0097);
   pSVar7->field_00A7 = st::machine_word_boundary_cast<int>(pSVar7->field_00A7 + local_3c);
   pSVar7->field_00AB = local_40;
-  puVar15 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC10(0x10));
+  puVar15 = static_cast<ushort *>(st::fn_006AAC10(0x10));
   pSVar7->field_0097 = puVar15;
   if (puVar15 != nullptr) {
     pSVar7->field_009B = 2;
@@ -615,7 +619,7 @@ undefined4 st::fn_0040EB90(void)
 {
   alignas(4) byte st_stack_frame[148];
 
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar3;
   int iVar5;
   int *piVar6;
@@ -644,14 +648,14 @@ undefined4 st::fn_0040EB90(void)
   int local_28;
   int local_20;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
   undefined4 *piVar10;
 
   iVar3 = DAT_007f4d20;
   puStack_c = (undefined *)&DAT_00790040;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   iVar13 = 0;
   uStack_90 = 0x40ebd1;
@@ -793,7 +797,7 @@ undefined4 st::fn_0040EB90(void)
         iVar13 = 30000;
         local_54 = 0;
         if (0 < DAT_007f4d20) {
-          piVar14 = st::pointer_boundary_cast<int *>(PTR_007f4d00 + 2);
+          piVar14 = reinterpret_cast<int *>(PTR_007f4d00 + 2);
           do {
             if (-1 < piVar14[-2]) {
               puVar1 = (undefined4 *)*piVar14;
@@ -842,7 +846,7 @@ undefined4 st::fn_0040EB90(void)
                  (callback_006ACCD0_p3 *)aiStack_a8[iVar3 * -3 + 6]);
     local_54 = 0;
     if (0 < DAT_007f4d20) {
-      piVar6 = st::pointer_boundary_cast<int *>(PTR_007f4d00 + 2);
+      piVar6 = reinterpret_cast<int *>(PTR_007f4d00 + 2);
       do {
         iVar13 = 30000;
         local_28 = 0;
@@ -920,9 +924,13 @@ int __cdecl st::fn_0040F220(AnonShape_0040F220_61B59860 *param_1,AnonShape_0040F
 
 // 0040F270 FUN_0040f270
 #line 4 "decomp/ST.exe/functions/0040F270/decomp.c"
-undefined4
-st::fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,int param_6,int param_7,
-            int param_8,int param_9)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=7, ignored=0, unknown=0 */
+
+int st::fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,int param_6,
+                int param_7,int param_8,int param_9)
 
 {
   int iVar1;
@@ -980,7 +988,7 @@ st::fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,i
       return 0;
     }
   }
-  return 0xfffffffc;
+  return -4;
 }
 
 // 0040F4D0 FUN_0040f4d0

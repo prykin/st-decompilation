@@ -4,7 +4,7 @@
 undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   TLOBaseTy_field_0245State TVar2;
   AnonPointee_TLOBaseTy_01F5 *pAVar3;
   byte bVar4;
@@ -12,6 +12,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
   int local_EAX_675;
   int local_EAX_852;
   int local_EAX_1028;
+  int iVar5_mgD;
   int iVar6;
   int TVar6;
   int uVar4;
@@ -286,9 +287,9 @@ cf_common_exit_004B8F5A:
           (local_8 = 1, param_1->field_05AC == CASE_65)) &&
          ((param_1->field_0408 != 0 &&
           ((param_1->field_040C != nullptr &&
-           (iVar5 = STPlaySystemC::sub_006E62D0
-                              (g_playSystem_00802A38,param_1->field_040C,(int *)&local_c),
-           iVar5 == 0)))))) {
+           (iVar5_mgD = STPlaySystemC::sub_006E62D0
+                                  (g_playSystem_00802A38,param_1->field_040C,(int *)&local_c),
+           iVar5_mgD == 0)))))) {
         thunk_FUN_0060d340(local_c);
         /* ST_CALLSITE[004B92CD]: CALL dword ptr [EAX + 0x90] */
         param_1->vfunc_90(3,0x3d9);
@@ -346,7 +347,7 @@ cf_common_join_004B92EE:
     iVar6 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
     if (((int)local_c + (-1 - iVar6) <= iVar5) && ((param_1->field_01F1 & 0x2000) == 0)) {
       /* ST_CALLSITE[004B9382]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
-      TLOBaseTy::sub_004CA7B0(param_1,(uint *)0xd,0);
+      TLOBaseTy::sub_004CA7B0(param_1,0xd,0);
     }
   }
   if ((local_8 != 0) &&

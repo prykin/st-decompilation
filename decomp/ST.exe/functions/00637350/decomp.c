@@ -96,7 +96,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
                     ((this = g_worldGrid.cells
                              [(int)sVar3 * (int)sVar9 + (int)sVar6 * (int)g_worldGrid.planeStride +
                               (int)sVar12].objects[0], this != nullptr &&
-                     /* ST_CALLSITE[0063751B]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+                     /* ST_CALLSITE[0063751B]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                      (iVar11 = (*this->vtable[5].slots_00_28[0])(this), uVar7 = param_9_after_write, iVar11 != 0
                      )))))) && (this[1].vtable < (STWorldObjectVTable *)0x8)) &&
                  ((g_playSystem_00802A38 == nullptr ||
@@ -134,10 +134,10 @@ LAB_006375fd:
                   iVar15 = _param_6;
                 }
                 if ((bVar16) &&
-                   /* ST_CALLSITE[00637610]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+                   /* ST_CALLSITE[00637610]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                    (iVar11 = (*this->vtable[5].slots_00_28[2])(this), uVar7 = param_9_after_write, iVar11 != 0))
                 {
-                  thunk_FUN_00416270(this,(uint *)((int)&param_4 + 2),(int *)((int)&param_3 + 2),
+                  thunk_FUN_00416270(this,(uint *)((int)&param_4 + 2),(short *)((int)&param_3 + 2),
                                      (short *)&stack0x0000001e);
                   iVar10 = FUN_006aced8((int)STPiece<2,2>(param_4),(int)STPiece<2,2>(param_3),param_1,param_2);
                   uVar7 = param_9_after_write;
@@ -151,7 +151,7 @@ LAB_006375fd:
                     local_58[3] = (uint *)0x4;
                     local_58[4] = (uint *)0x110;
                     local_58[5] = local_38;
-                    /* ST_CALLSITE[0063767C]: [STIndirectCallsiteApplier] exact slot 0x0; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
+                    /* ST_CALLSITE[0063767C]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
                     (*this->vtable->slots_00_28[0])(this,local_58);
                     local_8 = local_8 + 1;
                     uVar7 = param_9_after_write;

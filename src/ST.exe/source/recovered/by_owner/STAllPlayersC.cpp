@@ -40,7 +40,11 @@ STAllPlayersC * __thiscall st::fn_0042A940(STAllPlayersC *this)
    [STMethodOwnerApplier] Structural method owner recovered as STAllPlayersC.
    Evidence: this_call_owners=[STAllPlayersC]; agreed_this_calls=3; incoming_this_accesses=8;
    incoming_edx_uses=0; incoming_stack_parameter_uses=39; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 st::fn_004DB160
@@ -368,7 +372,7 @@ LAB_004db638:
 undefined4 __thiscall st::fn_004EB010(STAllPlayersC *this,int param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   byte bVar2;
   uint uVar3;
   int iVar4;
@@ -442,7 +446,7 @@ byte * __thiscall st::fn_005EC370(STAllPlayersC *this,uint *param_1)
   uint local_c;
   uint local_8;
 
-  local_10 = st::pointer_boundary_cast<AnonShape_005EC370_C8356E04 *>(st::fn_006AAC70(0x246));
+  local_10 = static_cast<AnonShape_005EC370_C8356E04 *>(st::fn_006AAC70(0x246));
   puVar4 = (byte *)&this[1].field_0xa;
   pAVar7 = local_10;
   for (iVar1 = 0x54; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -460,7 +464,7 @@ byte * __thiscall st::fn_005EC370(STAllPlayersC *this,uint *param_1)
   /* ST_CALLSITE[005EC3CB]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
   local_18 = st::fn_0040119A(this,(int *)&local_c);
   newSize = local_c + 0x24e + local_8;
-  local_10 = st::pointer_boundary_cast<AnonShape_005EC370_C8356E04 *>(st::fn_006ACF50(local_10,newSize));
+  local_10 = static_cast<AnonShape_005EC370_C8356E04 *>(st::fn_006ACF50(local_10,newSize));
   local_10->field_0246 = local_8;
   pAVar3 = local_10 + 1;
   puVar4 = (byte *)(local_14);
@@ -554,7 +558,7 @@ int __thiscall st::fn_005EC850(STAllPlayersC *this,int *param_1)
   piVar6 = (int *)(&((AnonShape_004AD790_77673787 *)(param_1 + 1))->field_0x0 + iVar1);
   iVar1 = *piVar6;
   /* ST_CALLSITE[005EC957]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
-  st::fn_0040551F(this,st::pointer_boundary_cast<undefined4 *>(piVar6 + 1));
+  st::fn_0040551F(this,reinterpret_cast<undefined4 *>(piVar6 + 1));
   return iVar1 + local_8;
 }
 
@@ -581,7 +585,7 @@ byte * __thiscall st::fn_005FCAD0(STAllPlayersC *this,uint *param_1)
   uint local_c;
   uint local_8;
 
-  local_10 = st::pointer_boundary_cast<AnonShape_005FCAD0_CB9D1D1A *>(st::fn_006AAC70(0x24a));
+  local_10 = static_cast<AnonShape_005FCAD0_CB9D1D1A *>(st::fn_006AAC70(0x24a));
   puVar4 = (byte *)&this[1].field_0xa;
   pAVar7 = local_10;
   for (iVar1 = 0x55; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -599,7 +603,7 @@ byte * __thiscall st::fn_005FCAD0(STAllPlayersC *this,uint *param_1)
   /* ST_CALLSITE[005FCB2B]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
   local_18 = st::fn_0040119A(this,(int *)&local_c);
   newSize = local_c + 0x252 + local_8;
-  local_10 = st::pointer_boundary_cast<AnonShape_005FCAD0_CB9D1D1A *>(st::fn_006ACF50(local_10,newSize));
+  local_10 = static_cast<AnonShape_005FCAD0_CB9D1D1A *>(st::fn_006ACF50(local_10,newSize));
   local_10->field_0246 = local_8;
   pAVar3 = local_10 + 1;
   puVar4 = (byte *)(local_14);
@@ -644,7 +648,7 @@ byte * __thiscall st::fn_00622990(STAllPlayersC *this,uint *param_1)
   int iVar1;
   uint uVar2;
   AnonShape_00622990_E4CFDE96 *pAVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   uint *puVar5;
   AnonShape_00622990_E4CFDE96 *pAVar6;
   uint *puVar7;
@@ -654,7 +658,7 @@ byte * __thiscall st::fn_00622990(STAllPlayersC *this,uint *param_1)
   uint local_c;
   uint local_8;
 
-  local_10 = st::pointer_boundary_cast<AnonShape_00622990_E4CFDE96 *>(st::fn_006AAC70(0x109));
+  local_10 = static_cast<AnonShape_00622990_E4CFDE96 *>(st::fn_006AAC70(0x109));
   puVar4 = (undefined4 *)&this->field_0x25e;
   pAVar6 = local_10;
   for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -669,7 +673,7 @@ byte * __thiscall st::fn_00622990(STAllPlayersC *this,uint *param_1)
   /* ST_CALLSITE[006229D7]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
   local_18 = st::fn_0040119A(this,(int *)&local_c);
   newSize = local_c + 0x111 + local_8;
-  local_10 = st::pointer_boundary_cast<AnonShape_00622990_E4CFDE96 *>(st::fn_006ACF50(local_10,newSize));
+  local_10 = static_cast<AnonShape_00622990_E4CFDE96 *>(st::fn_006ACF50(local_10,newSize));
   local_10->field_0109 = local_8;
   pAVar3 = local_10 + 1;
   puVar4 = local_14;
@@ -746,7 +750,7 @@ int __thiscall st::fn_00622AB0(STAllPlayersC *this,undefined4 *param_1)
   piVar4 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0x10d))->field_0x0 + iVar2);
   iVar1 = *piVar4;
   /* ST_CALLSITE[00622B53]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
-  st::fn_0040551F(this,st::pointer_boundary_cast<undefined4 *>(piVar4 + 1));
+  st::fn_0040551F(this,reinterpret_cast<undefined4 *>(piVar4 + 1));
   return iVar1 + iVar2 + 0x109;
 }
 

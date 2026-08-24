@@ -15,9 +15,9 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
 {
   int *piVar1;
   MTaskTy *pMVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar5;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *resourceString;
   int iVar9;
   char cVar6;

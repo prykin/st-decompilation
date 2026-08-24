@@ -19,7 +19,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   STGameObjC *pSVar4_mg1;
   int iVar5;
   int iVar6;
-  undefined4 uVar6;
+  uint uVar6;
   uint uVar7;
   uint uVar8;
   int *piVar9;

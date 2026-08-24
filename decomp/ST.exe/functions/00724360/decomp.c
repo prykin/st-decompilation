@@ -10,7 +10,7 @@ void __fastcall FUN_00724360(AnonShape_00724360_3CA25F92 *param_1)
 {
   undefined4 local_24 [2];
   int local_1c;
-  undefined1 *local_18;
+  byte *local_18;
   undefined4 local_14;
   uint local_10;
 

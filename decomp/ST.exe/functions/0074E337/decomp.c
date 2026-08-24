@@ -1,7 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
-uint FUN_0074e337(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4,int *param_5)
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0074E40E -> 0074E337 @ 0074E421; FUN_0074e40e parameter param_5 */
+
+uint FUN_0074e337(int *param_1,undefined4 param_2,int *param_3,int *param_4,int *param_5)
 
 {
   HMODULE hModule;
@@ -18,7 +21,7 @@ uint FUN_0074e337(int *param_1,undefined4 param_2,int *param_3,undefined4 param_
     return 0x8002802b;
   }
   if (*param_1 == 0) {
-    hModule = (HMODULE)FUN_0074b79e();
+    hModule = FUN_0074b79e();
     if ((hModule == (HMODULE)0x0) ||
        /* ST_CALLSITE[0074E383]: CALL ESI */
        (pFVar1 = GetProcAddress(hModule,"LoadRegTypeLib"), pFVar1 == (FARPROC)0x0)) {

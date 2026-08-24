@@ -13,15 +13,15 @@ undefined4 * __cdecl FUN_00561670(int param_1,int param_2,int param_3,int *param
   short sVar2;
   short sVar3;
   int *piVar4;
-  undefined4 *puVar5;
-  undefined4 *puVar6;
+  uint *puVar5;
+  uint *puVar6;
   uint uVar7;
   int *piVar7_mg0;
   int iVar8;
   short *psVar9;
   int *piVar10;
   int *piVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   int iVar13;
   int local_3c;
   uint local_34;

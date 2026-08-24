@@ -20,7 +20,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
   int iVar5;
   int iVar6;
   STMessage *pSVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   dword *pdVar9;
   InternalExceptionFrame local_8c;
   dword local_48 [8];

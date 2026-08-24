@@ -10,7 +10,7 @@ undefined4 __thiscall DebugSystemC::CreateSystemObjects(DebugSystemC *this)
 {
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   InternalExceptionFrame local_4c;
   DebugSystemC *local_8;
 

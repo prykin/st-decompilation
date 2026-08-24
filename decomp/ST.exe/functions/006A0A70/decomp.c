@@ -8,7 +8,7 @@
 void __fastcall FUN_006a0a70(int *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
   puVar1 = Library::DKW::LIB::MemAlloc(0xaa);

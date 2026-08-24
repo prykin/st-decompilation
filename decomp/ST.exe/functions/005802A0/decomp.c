@@ -3,7 +3,11 @@
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STResourceC.
    Evidence: this_call_owners=[STResourceC]; agreed_this_calls=1; incoming_this_accesses=3;
-   incoming_edx_uses=0 */
+   incoming_edx_uses=0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall STResourceC::sub_005802A0(STResourceC *this,int param_1,int param_2)
 

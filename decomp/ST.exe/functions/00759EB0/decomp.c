@@ -4,12 +4,11 @@
 void FUN_00759eb0(int param_1,int param_2,int param_3,int param_4,int param_5,uint param_6)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   uint uVar2;
-  undefined4 *puVar3;
-  undefined4 *puVar4;
-  undefined4 *puVar5;
-
+  uint *puVar3;
+  uint *puVar4;
+  uint *puVar5;
   puVar1 = (undefined4 *)(param_1 + param_2 * 4);
   puVar3 = (undefined4 *)(param_3 + param_4 * 4);
   if (0 < param_5) {

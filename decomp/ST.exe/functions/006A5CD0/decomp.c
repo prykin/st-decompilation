@@ -5,7 +5,7 @@ undefined4 FUN_006a5cd0(void)
 
 {
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   undefined4 local_38 [2];
   int local_30;
   int local_2c;

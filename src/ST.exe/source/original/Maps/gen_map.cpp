@@ -17,7 +17,7 @@ st::fn_00695A60
   byte *pbVar3;
   ushort *puVar4;
   CGenerate_field_5853DArray *pCVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   uint size;
   InternalExceptionFrame local_50;
@@ -41,7 +41,7 @@ st::fn_00695A60
     local_8->field_5847 = param_3;
     pbVar3 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(size));
     pCVar2->field_584B = pbVar3;
-    puVar4 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(pCVar2->field_582F * ((-(uint)(param_6 != 0) & 7) + 1) * 2));
+    puVar4 = static_cast<ushort *>(st::fn_006AAC70(pCVar2->field_582F * ((-(uint)(param_6 != 0) & 7) + 1) * 2));
     pCVar2->field_584F = puVar4;
     pCVar5 = (CGenerate_field_5853DArray *)
              st::fn_006AE290(nullptr,10,0x1d,10);

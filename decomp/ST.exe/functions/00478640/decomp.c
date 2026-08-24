@@ -8,12 +8,12 @@
 int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   short sVar2;
   short sVar3;
   short sVar4;
   STWorldObject *pSVar5;
-  undefined2 uVar7;
+  ushort uVar7;
   int local_EAX_103;
   int local_EAX_147;
   int local_EAX_201;
@@ -183,7 +183,7 @@ LAB_0047885b:
                                     &this->field_0623);
         if (iVar11 == 0) goto LAB_0047885b;
         sVar2 = this->field_0621;
-        sVar3 = this->field_061F;
+        sVar4 = this->field_061F;
         goto LAB_00478b7a;
       }
       break;
@@ -302,9 +302,9 @@ LAB_00478b5f:
     this->field_00B7 = 3;
 LAB_00478b73:
     sVar2 = this->field_0621;
-    sVar3 = this->field_061F;
+    sVar4 = this->field_061F;
 LAB_00478b7a:
-    sVar4 = this->field_061D;
+    sVar3 = this->field_061D;
   }
   else {
     if (iVar11 != 3) {
@@ -456,8 +456,8 @@ LAB_00478ff2:
                           (short *)&this->field_0x62b);
       if (iVar11 != 1) goto LAB_00478d20;
       sVar2 = *(short *)&this->field_0x62b;
-      sVar3 = this->field_0629;
-      sVar4 = this->field_0627;
+      sVar4 = this->field_0629;
+      sVar3 = this->field_0627;
       break;
     case -1:
       local_EAX_1434 =
@@ -473,8 +473,8 @@ LAB_00478ff2:
     }
   }
   iVar10 = (int)sVar2;
-  iVar12 = (int)sVar3;
-  iVar11 = (int)sVar4;
+  iVar12 = (int)sVar4;
+  iVar11 = (int)sVar3;
 cf_common_exit_00478B83:
   /* ST_CALLSITE[00478B85]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
   sub_00481520(this,iVar11,iVar12,iVar10);

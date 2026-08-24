@@ -27,7 +27,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
   int iVar9;
   uint uVar10;
   uint uVar11;
-  undefined1 *puVar12;
+  byte *puVar12;
   byte bVar13;
   byte bVar14;
   short *psVar15;

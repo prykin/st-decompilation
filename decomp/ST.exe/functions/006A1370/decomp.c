@@ -13,8 +13,7 @@ int __cdecl FUN_006a1370(int *param_1,int param_2,int param_3,int param_4,int pa
 {
   ushort uVar1;
   int iVar2;
-  undefined4 *puVar3;
-
+  uint *puVar3;
   *(undefined4 *)param_5 = 0;
   *(undefined2 *)(param_5 + 4) = 0;
   iVar2 = param_4;

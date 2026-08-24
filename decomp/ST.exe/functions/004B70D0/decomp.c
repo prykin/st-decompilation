@@ -1,4 +1,3 @@
-#include "../../pseudocode_runtime.h"
 
 
 /* [STPrototypeRepairApplier] Propagated parameter 0.
@@ -8,7 +7,7 @@
 int FUN_004b70d0(uint param_1,int param_2)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
   puVar1 = &g_packedRecords_A62x8[(char)param_1].field1940_0x972;

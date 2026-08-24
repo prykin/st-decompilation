@@ -6,8 +6,7 @@ FUN_006a2690(int *param_1,int param_2,int param_3,int param_4,undefined4 param_5
             ,undefined *param_7,undefined4 param_8)
 
 {
-  undefined4 *puVar1;
-
+  uint *puVar1;
   if (param_7 != nullptr) {
     /* ST_CALLSITE[006A26AD]: CALL EAX */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

@@ -12,7 +12,7 @@
 int __thiscall STLightC::sub_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   void *pvVar2;
   uint uVar3;
   int iVar4;

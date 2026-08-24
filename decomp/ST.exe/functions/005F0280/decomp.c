@@ -4,9 +4,8 @@
 void __thiscall FUN_005f0280(void *this,undefined1 *param_1)
 
 {
-  undefined1 uVar1;
-  undefined4 uVar2;
-
+  byte uVar1;
+  uint uVar2;
   *param_1 = 4;
   param_1[1] = 1;
   /* ST_CALLSITE[005F0293]: CALL dword ptr [EAX + 0x2c] */

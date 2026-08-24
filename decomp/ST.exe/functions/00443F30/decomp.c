@@ -23,13 +23,13 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
   AnonShape_00443F30_5DF553AC *pAVar11;
   uint *puVar12;
   uint uVar13;
-  AnonShape_00443F30_9F0248D4 *pAVar14;
+  uint pAVar14;
   InternalExceptionFrame local_88;
   STAllPlayersC *local_44;
   uint *local_40;
   uint *local_3c;
   uint *local_38;
-  AnonShape_00443F30_9F0248D4 *local_34;
+  uint local_34;
   int *local_30;
   byte *local_2c;
   uint local_28;
@@ -43,7 +43,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
   AnonNested_00443F30_0839_FB957E77 *local_8;
   byte *pbVar4;
 
-  local_34 = (AnonShape_00443F30_9F0248D4 *)0x4;
+  local_34 = 0x4;
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
   local_44 = this;

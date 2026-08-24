@@ -4,7 +4,7 @@
 undefined4 FUN_00749e34(AnonShape_00749E34_D5356433 *param_1)
 
 {
-  undefined1 *this;
+  byte *this;
   int *piVar1;
 
   /* ST_CALLSITE[00749E40]: CALL dword ptr [0x0085bb8c] */

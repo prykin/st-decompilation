@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
-   PanelTy::PaintIBut */
+   PanelTy::PaintIBut
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 PanelTy::PaintIBut(PanelTy *this,AnonShape_00538DB0_574DDCD0 *param_1,char *param_2,UINT param_3,
@@ -12,16 +16,16 @@ PanelTy::PaintIBut(PanelTy *this,AnonShape_00538DB0_574DDCD0 *param_1,char *para
 {
   PanelTy *pPVar2;
   undefined4 *errorCode;
-  undefined4 uVar3;
+  uint uVar3;
   LPSTR text;
   ushort *puVar4;
   char *resourceString;
   uint uVar5;
   byte bVar6;
   int iVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   int iVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   InternalExceptionFrame local_58;
   AnonNested_00538DB0_0018_D0DE3542 *local_14;
   PanelTy *local_10;
@@ -76,13 +80,13 @@ LAB_00538de2:
   uVar5 = local_c;
   /* ST_CALLSITE[00538E84]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)pPVar2->field_0068,local_8,local_c,'\x01',(byte *)puVar4);
-  ccFntTy::SetSurf(g_interSystem_00802A28->field_0024,pPVar2->field_0068,0,local_8,uVar5,
+  ccFntTy::SetSurf((ccFntTy *)g_interSystem_00802A28->field_0024,pPVar2->field_0068,0,local_8,uVar5,
                    local_14->field_0008,local_14->field_000C);
   uVar5 = thunk_FUN_00529fe0((int)param_1);
   iVar9 = -1;
   iVar7 = -2;
   resourceString = LoadResourceString(param_3,g_hINSTANCE_00807618);
-  ccFntTy::WrStr(g_interSystem_00802A28->field_0024,resourceString,iVar7,iVar9,uVar5);
+  ccFntTy::WrStr((ccFntTy *)g_interSystem_00802A28->field_0024,resourceString,iVar7,iVar9,uVar5);
   Library::DKW::DDX::FUN_006b3640
             ((int *)g_ddxContext_008075A8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,
              pPVar2->field_0044);

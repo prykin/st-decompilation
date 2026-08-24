@@ -116,8 +116,7 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
             iVar5 != 0) {
         if (iVar5 == -0x7789fe3e) {
           /* ST_CALLSITE[006B912D]: CALL dword ptr [EAX + 0x6c] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (*(code *)param_1->field_0000->field_006C)(param_1);
+          (*STField<code *>(param_1->field_0000,0x006C))(param_1);
           FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar3->field_0000);
         }
         else {

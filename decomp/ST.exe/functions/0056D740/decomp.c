@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
-   STAppC::ChangeResolution */
+   STAppC::ChangeResolution
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
 
@@ -16,7 +20,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
   int iVar5;
   InternalExceptionFrame *pIVar6;
   uint uVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   undefined4 local_4bc [256];
   InternalExceptionFrame local_bc;
   undefined4 local_78 [4];

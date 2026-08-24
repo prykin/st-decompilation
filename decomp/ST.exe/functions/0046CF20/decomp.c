@@ -19,10 +19,11 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
   short sVar2;
   short sVar3;
   short sVar4;
-  undefined2 uVar5;
+  ushort uVar5;
   uint uVar8;
   uint local_EAX_141;
   int iVar6;
+  int iVar7_mg4;
   int local_EAX_688;
   STGroupBoatC *this_00;
   int local_EAX_928;
@@ -75,10 +76,10 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
       if (iVar7 == 0) {
         uVar10 = 0;
         if (((AnonShape_005EFAE0_B406B78B *)this->field_0524 != nullptr)
-           && (iVar7 = STPlaySystemC::sub_006E62D0
-                                 (g_playSystem_00802A38,
-                                  (AnonShape_005EFAE0_B406B78B *)this->field_0524,(int *)&local_8),
-              iVar7 != -4)) {
+           && (iVar7_mg4 = STPlaySystemC::sub_006E62D0
+                                     (g_playSystem_00802A38,
+                                      (AnonShape_005EFAE0_B406B78B *)this->field_0524,
+                                      (int *)&local_8), iVar7_mg4 != -4)) {
           thunk_FUN_004cf3e0(local_8,this->field_0018);
           Library::Ourlib::ST3DSMAP::SprRstLev(this->field_0211,this->field_01ED);
         }

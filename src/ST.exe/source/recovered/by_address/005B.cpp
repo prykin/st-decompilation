@@ -103,10 +103,9 @@ MainMenuTy * __cdecl st::fn_005B50E0(void)
 {
   MainMenuTy *this;
   int iVar1;
-  undefined4 *puVar3;
+  uint *puVar3;
   SpriteClassTy *this_00;
-  undefined4 *puVar4;
-
+  uint *puVar4;
   this = (MainMenuTy *)st::fn_006B04D0(0x1ee4);
   if (this != nullptr) {
     st::fn_006E5FB0(this);

@@ -19,7 +19,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
   int local_EAX_19;
   int iVar5;
   int local_EAX_308;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *pcVar11;
   char *local_EAX_530;
   DWORD DVar7;

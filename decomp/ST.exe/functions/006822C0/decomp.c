@@ -4,8 +4,7 @@
 undefined4 FUN_006822c0(char *param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   if (*param_1 == '\x01') {
     return *(undefined4 *)(param_1 + 1);
   }

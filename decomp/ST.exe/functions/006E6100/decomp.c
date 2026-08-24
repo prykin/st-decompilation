@@ -8,11 +8,14 @@
 
    [STPrototypeApplier] Propagated return.
    Evidence: 006E6100 returns SystemWithNamedObjClassTy::SystemWithNamedObjClassTy this @ 006E6126
-    */
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0054CB40 -> 006E6100 @ 0054CB4C; STPlaySystemC::STPlaySystemC parameter param_1 |
+   006E6100 -> 006E51C0 @ 006E6110 */
 
 SystemWithNamedObjClassTy * __thiscall
 SystemWithNamedObjClassTy::SystemWithNamedObjClassTy
-          (SystemWithNamedObjClassTy *this,undefined4 param_1,undefined4 param_2)
+          (SystemWithNamedObjClassTy *this,AppClassTy *param_1,undefined4 param_2)
 
 {
   SystemClassTy::SystemClassTy((SystemClassTy *)this,param_1,param_2);

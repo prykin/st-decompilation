@@ -20,7 +20,7 @@ ST3DSMAPContext::sub_006EA800(ST3DSMAPContext *this,uint param_1,int param_2,int
   if ((param_1 < (uint)this->field_0310) &&
      (puVar1 = (uint *)(this->field_031C + param_1 * 0x114), (*puVar1 & 0x8000) != 0)) {
     if ((int)puVar1[0x25] <= param_2) {
-      FUN_006e91a0();
+      FUN_006e91a0("SprSetPlaneMShadow");
       return;
     }
     puVar2 = (ushort *)(puVar1[0x29] + 2 + param_2 * 4);
@@ -36,7 +36,7 @@ ST3DSMAPContext::sub_006EA800(ST3DSMAPContext *this,uint param_1,int param_2,int
     }
   }
   else if (param_1 != 0xffffffff) {
-    FUN_006e8c50();
+    FUN_006e8c50("SprSetPlaneMShadow");
   }
   return;
 }

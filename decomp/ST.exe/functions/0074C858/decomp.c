@@ -8,7 +8,7 @@
 undefined4 __thiscall FUN_0074c858(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   LPCRITICAL_SECTION lpCriticalSection;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

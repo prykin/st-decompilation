@@ -17,8 +17,7 @@ STAllPlayersC::GetBoatWeaponInfo
 
 {
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   uVar3 = 0;
   switch(param_1) {
   case CASE_1:

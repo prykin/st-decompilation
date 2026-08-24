@@ -5,9 +5,9 @@ undefined4 __thiscall FUN_0074a05b(void *this,int param_1)
 
 {
   LPCRITICAL_SECTION lpCriticalSection;
-  undefined4 uVar1;
-  void *this_00;
-  undefined4 *puVar2;
+  uint uVar1;
+  RecoveredClass_0074A95F *this_00;
+  uint *puVar2;
   void *local_8;
 
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x7c);
@@ -17,12 +17,13 @@ undefined4 __thiscall FUN_0074a05b(void *this,int param_1)
   local_8 = nullptr;
   if (param_1 == 0) {
     if (STField<int>(this,0x78) == 0) {
-      this_00 = (void *)Library::MSVCRT::FUN_0072e530(0xe0);
+      this_00 = (RecoveredClass_0074A95F *)Library::MSVCRT::FUN_0072e530(0xe0);
       if (this_00 == nullptr) {
         puVar2 = nullptr;
       }
       else {
-        puVar2 = FUN_0074a95f(this_00,(int)this,&local_8,(short *)&DAT_007ee298);
+        puVar2 = RecoveredClass_0074A95F::FUN_0074a95f
+                           (this_00,(int)this,&local_8,(short *)&DAT_007ee298);
       }
       STField<undefined4 *>(this,0x78) = puVar2;
     }

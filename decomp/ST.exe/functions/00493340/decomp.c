@@ -16,7 +16,7 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this)
   DArrayTy *array_00;
   dword dVar1;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   uint index;
   uint local_14;
   STFishC *local_10;

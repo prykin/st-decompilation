@@ -10,9 +10,9 @@ void FUN_006d86e0(AnonShape_006D86E0_D6D32C07 *param_1,int param_2,
 
 {
   short sVar1;
-  undefined1 *puVar2;
+  byte *puVar2;
   byte bVar3;
-  undefined1 uVar4;
+  byte uVar4;
   AnonShape_006D86E0_768BB816 *pAVar5;
   AnonShape_006D86E0_D6D32C07 AVar6;
   AnonShape_006D86E0_D6D32C07 AVar7;

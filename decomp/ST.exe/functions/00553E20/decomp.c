@@ -1,36 +1,42 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __cdecl FUN_00553e20(int param_1,undefined *param_2,byte param_3)
+/* [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=1, ignored=0, unknown=0 */
+
+HDC __cdecl FUN_00553e20(int param_1,undefined *param_2,byte param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  HDC pHVar2;
+  int iVar3;
+  uint uVar4;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_98;
   byte local_5c [88];
 
-  pLVar6 = &local_98;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_98;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_98.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Verdana";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Verdana";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_98.lfHeight = -0x10;
   local_98.lfWidth = 0;
   local_98.lfEscapement = 0;
@@ -43,9 +49,9 @@ void __cdecl FUN_00553e20(int param_1,undefined *param_2,byte param_3)
   local_98.lfClipPrecision = '\x02';
   local_98.lfQuality = '\x01';
   local_98.lfPitchAndFamily = '\"';
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_98.lfFaceName;
-  memmove(pCVar8, pcVar5, uVar3); /* compiler REP MOVS byte copy */
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_98.lfFaceName;
+  memmove(pCVar9, pcVar6, uVar4); /* compiler REP MOVS byte copy */
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_3 = 0xe4fae200;
   local_5c[0] = 0x20;
@@ -136,8 +142,9 @@ void __cdecl FUN_00553e20(int param_1,undefined *param_2,byte param_3)
   local_5c[0x55] = 0x7c;
   local_5c[0x56] = 0x7e;
   /* ST_CALLSITE[0055403F]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
-  ccFntTy::operator_new
-            (0x19d,&local_98,nullptr,local_5c,param_1,&param_3,1,3,1,1,0x40021c,param_2);
-  return;
+  pHVar2 = ccFntTy::operator_new
+                     (0x19d,&local_98,nullptr,local_5c,param_1,&param_3,1,3,1,1,0x40021c,param_2
+                     );
+  return pHVar2;
 }
 

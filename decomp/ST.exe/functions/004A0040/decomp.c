@@ -11,7 +11,7 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  undefined2 uVar5;
+  ushort uVar5;
   STGroupBoatC *pSVar6;
   DArrayTy *array;
   int iVar7;
@@ -19,7 +19,7 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
   dword dVar8;
   DArrayTy *array_00;
   int iVar10;
-  undefined4 uVar9;
+  uint uVar9;
   int iVar11;
   uint uVar12;
   uint uVar13;

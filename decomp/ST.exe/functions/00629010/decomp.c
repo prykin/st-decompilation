@@ -9,7 +9,7 @@
 uint * FUN_00629010(void)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   uint *puVar2;
 
   puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x108);

@@ -22,11 +22,11 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
   char *pcVar4;
   ushort *puVar5;
   int iVar6;
-  undefined1 *puVar7;
-  undefined4 *puVar8;
+  byte *puVar7;
+  uint *puVar8;
   uint uVar9;
   byte bVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
   InternalExceptionFrame local_54;
   CPanelTy *local_10;
   int local_c;

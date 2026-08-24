@@ -4,6 +4,7 @@
 undefined4 __fastcall FUN_004e27e0(TLOBaseTy *param_1)
 
 {
+  int iVar1_mg0;
   int iVar1;
   int iVar2;
   TLOBaseTy_field_04D0State *pTVar3;
@@ -15,9 +16,9 @@ undefined4 __fastcall FUN_004e27e0(TLOBaseTy *param_1)
     iVar2 = 2;
     do {
       if (((AnonShape_005EFAE0_B406B78B *)*pTVar3 != nullptr) &&
-         ((iVar1 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*pTVar3,
-                              (int *)&local_8), iVar1 != 0 ||
+         ((iVar1_mg0 = STPlaySystemC::sub_006E62D0
+                                 (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*pTVar3,
+                                  (int *)&local_8), iVar1_mg0 != 0 ||
           (iVar1 = thunk_FUN_0045ff10(local_8), iVar1 != 4)))) {
         *pTVar3 = CASE_0;
       }

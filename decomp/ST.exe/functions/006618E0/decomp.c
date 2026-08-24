@@ -17,7 +17,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
 {
   bool bVar2;
   AiFltClassTy *pAVar3;
-  undefined2 uVar4;
+  ushort uVar4;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   int local_EAX_154;

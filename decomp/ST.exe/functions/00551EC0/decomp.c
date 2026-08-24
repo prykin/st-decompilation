@@ -19,7 +19,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   byte bVar7;
   int iVar9;
   int iVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
   InternalExceptionFrame local_54;
   TradePanelTy *local_10;
   int local_c;

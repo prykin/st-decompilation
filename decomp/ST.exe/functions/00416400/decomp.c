@@ -51,7 +51,7 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
       param_1->field_00E3 = '\0';
       return 0;
     }
-    thunk_FUN_00416270(param_1,(uint *)local_24,(int *)local_20,local_1c);
+    thunk_FUN_00416270(param_1,(uint *)local_24,local_20,local_1c);
     iVar4 = param_1->field_00D3 + 1;
     local_6 = 0;
     param_1->field_00D3 = iVar4;

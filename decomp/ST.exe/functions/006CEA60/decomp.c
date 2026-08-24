@@ -9,7 +9,7 @@ void CopyRows(byte *destination,int destinationPitch,byte *source,int sourcePitc
              int rowCount)
 
 {
-  undefined8 uVar1;
+  ulonglong uVar1;
   byte bVar2;
   bool bVar3;
   uint uVar5;

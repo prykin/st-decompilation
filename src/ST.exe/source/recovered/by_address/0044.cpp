@@ -20,6 +20,10 @@ byte st::fn_004406C0(char recordIndex)
 
 // 00440700 FUN_00440700
 #line 4 "decomp/ST.exe/functions/00440700/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void st::fn_00440700(int param_1)
 
 {
@@ -623,7 +627,7 @@ uint __fastcall st::fn_0044CE40(STAllPlayersC *param_1)
   dword dVar1;
   byte bVar2;
   STGameObjC *this;
-  undefined4 uVar3;
+  uint uVar3;
   uint uVar4;
   short sVar5;
   uint index;
@@ -834,7 +838,7 @@ byte * st::fn_0044D320(Global_sub_0044D320_param_1Enum param_1)
   uint uVar6;
   int local_EAX_2244;
   int local_EAX_2370;
-  undefined4 uVar7;
+  uint uVar7;
   int local_EAX_2562;
   int iVar4;
   undefined4 local_18;
@@ -1551,7 +1555,7 @@ void st::fn_0044E260(uint param_1,uint param_2,uint param_3,int *param_4)
       if (param_2_after_write != 0) {
         local_8 = 10000;
         local_c = 0;
-        local_14 = st::pointer_boundary_cast<STGameObjC *>(local_18->data);
+        local_14 = static_cast<STGameObjC *>(local_18->data);
         auto param_1_after_write = 10000; /* compiler stack-slot lifetime split */
         local_10 = 0;
         uVar12 = param_2_after_write;

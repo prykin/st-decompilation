@@ -15,7 +15,7 @@ undefined4 FUN_004e76e0(int param_1,uint *param_2,byte param_3)
   int iVar6;
   int iVar7;
   uint *puVar8;
-  undefined4 *puVar9;
+  uint *puVar9;
   int *piVar10;
   uint **ppuVar11;
   uint *local_c;

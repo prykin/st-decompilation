@@ -16,10 +16,10 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
   DArrayTy *pDVar3;
   LPSTR text;
   ushort *puVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar8;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar9;
   int iVar10;
   int *piVar11;
@@ -66,7 +66,7 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
   puVar5 = &local_10->field_027A;
   do {
     pDVar3 = st::fn_006AE290(nullptr,0x28,0x30,10);
-    *puVar5 = st::machine_word_boundary_cast<undefined4>(pDVar3);
+    *puVar5 = st::machine_word_boundary_cast<uint>(pDVar3);
     puVar5 = puVar5 + 1;
     iVar7 = iVar7 + -1;
   } while (iVar7 != 0);
@@ -77,10 +77,10 @@ void __thiscall st::fn_0053C120(ResearchPanelTy *this)
   puVar4 = st::fn_006F1CE0(g_cMf32_00806790,1,text,piVar11,iVar7);
   this_00->field_0184 = puVar4;
   puVar4 = st::fn_00709AF0
-                     (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c20a0),0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,(char *)&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar4;
   puVar4 = st::fn_00709AF0
-                     (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c38c8),0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,(char *)&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
   this_00->field_018C = puVar4;
   /* ST_CALLSITE[0053C257]: CALL 0x00404241; direct=00404241 ProdPanelTy::InitProdPanel */
   st::fn_00404241
@@ -312,10 +312,10 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
   ResearchPanelTy *this_00;
   int iVar3;
   int iVar5;
-  undefined1 *puVar6;
+  byte *puVar6;
   int iVar4;
   int iVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   InternalExceptionFrame local_58;
   uint local_14;
   undefined1 local_10;

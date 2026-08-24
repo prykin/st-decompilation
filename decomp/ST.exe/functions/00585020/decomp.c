@@ -5,7 +5,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
 
 {
   int iVar1;
-  undefined1 *this;
+  byte *this;
   STWorldObject *pSVar2;
   int iVar4;
   uint uVar5;

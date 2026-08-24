@@ -18,7 +18,7 @@ AiPlrClassTy::sub_0067A020(AiPlrClassTy *this,AnonShape_0068FD00_A5257008 *param
 {
   AiTactClassTy *this_00;
   uint uVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   DArrayTy *pDVar3;
   uint uVar4;
 

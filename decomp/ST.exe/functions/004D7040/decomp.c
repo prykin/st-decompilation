@@ -8,6 +8,8 @@ undefined4 __fastcall FUN_004d7040(int *param_1)
   int iVar3;
   int iVar4;
   int iVar5;
+  int iVar2_mg4;
+  int iVar2_mg5;
   int iVar1;
   longlong lVar6;
   int local_8;
@@ -70,10 +72,10 @@ undefined4 __fastcall FUN_004d7040(int *param_1)
       lVar6 = FUN_006b12cc(iVar3);
       iVar5 = (int)lVar6;
       lVar6 = FUN_006b12cc(iVar2);
-      iVar2 = FUN_006b12bc((int)lVar6,iVar5,iVar4);
+      iVar2_mg4 = FUN_006b12bc((int)lVar6,iVar5,iVar4);
       lVar6 = FUN_006b12cc(0x5dc);
-      iVar2 = FUN_006b12a8((int)lVar6,iVar2);
-      iVar1 = FUN_006b1280(iVar2);
+      iVar2_mg5 = FUN_006b12a8((int)lVar6,iVar2_mg4);
+      iVar1 = FUN_006b1280(iVar2_mg5);
       if ((uint)(STField<int>(param_1,0x119) + iVar1) < g_playSystem_00802A38->field_00E4) {
         iVar2 = *param_1;
         STField<uint>(param_1,0x119) = g_playSystem_00802A38->field_00E4;

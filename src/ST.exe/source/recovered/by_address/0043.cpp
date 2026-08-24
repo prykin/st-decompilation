@@ -175,7 +175,7 @@ short st::fn_00435B90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3
   int *arg_2;
   short sVar4;
   STGameObjC *pSVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
@@ -877,18 +877,17 @@ switchD_00435c5c_caseD_1:
    used=6, ignored=0, unknown=0
 
    [STReturnSemanticsApplier] returned_pointer_parameter.
-   Evidence: every reachable RET receives full EAX from the same incoming pointer parameter param_1
-   (ordinal=0); no intervening full or partial accumulator definition changes that value; machine
-   CFG audit: used=6, ignored=0, unknown=0 */
+   Evidence: the complete machine CFG returns incoming pointer parameter param_1 (ordinal=0);
+   restore its exact formal pointer type after the obsolete void-pointer normalization */
 
-undefined4 * st::fn_0043E420(undefined4 *param_1,char param_2)
+uint * st::fn_0043E420(undefined4 *param_1,char param_2)
 
 {
   int *piVar2;
   int *piVar3;
 
   piVar2 = &g_packedRecords_A62x8[param_2].field18_0x2b;
-  piVar3 = st::pointer_boundary_cast<int *>(param_1);
+  piVar3 = reinterpret_cast<int *>(param_1);
   memmove(piVar3, piVar2, 0x138); /* compiler REP MOVS byte copy */
   return param_1;
 }

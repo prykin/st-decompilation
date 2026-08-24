@@ -16,9 +16,9 @@ int __fastcall FUN_007295f0(AnonShape_007295F0_722683CC *param_1)
   int local_28;
   int local_24;
   uint *local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

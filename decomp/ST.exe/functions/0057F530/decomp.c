@@ -8,7 +8,7 @@
 char * __thiscall FUN_0057f530(void *this,int param_1)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int3 extraout_var;
   int iVar2;

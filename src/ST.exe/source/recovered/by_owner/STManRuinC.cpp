@@ -170,12 +170,15 @@ undefined4 __thiscall st::fn_00630AC0(STManRuinC *this,uint param_1)
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 00631190 -> 00630BB0 @ 006311CA; STManRuinC::FUN_00631190 parameter param_7 */
 
 void __thiscall
 st::fn_00630BB0
           (STManRuinC *this,short param_1,short param_2,short param_3,undefined4 param_4,int param_5
-          ,undefined4 param_6)
+          ,int param_6)
 
 {
 
@@ -210,7 +213,7 @@ st::fn_00630C50
           (STManRuinC *this,undefined4 param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   STManRuinC *pSVar2;
   int iVar3;
   ushort *puVar3;
@@ -287,7 +290,7 @@ st::fn_00630C50
     uVar9 = 100;
     uVar8 = 0x78;
   }
-  st::fn_006E8660(g_sT3DSMAPContext_00807598,st::pointer_boundary_cast<int *>(puVar1),1,0,uVar6,uVar7,uVar8,uVar9,0);
+  st::fn_006E8660(g_sT3DSMAPContext_00807598,reinterpret_cast<int *>(puVar1),1,0,uVar6,uVar7,uVar8,uVar9,0);
   st::fn_006E98E0
             (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
   st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,0);
@@ -336,7 +339,7 @@ void __thiscall st::fn_00631010(STManRuinC *this)
   short local_1c;
   short local_1a;
   undefined4 local_18;
-  undefined4 local_c;
+  int local_c;
   uint local_8;
 
   pSVar1 = this->field_0038;
@@ -431,7 +434,7 @@ void __thiscall st::fn_00631220(STManRuinC *this,int *param_1)
 {
   STManRuinC_field_0038DArray *pSVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   uint uVar4;
   byte *puVar6;
   byte *pbVar7;
@@ -454,7 +457,7 @@ void __thiscall st::fn_00631220(STManRuinC *this,int *param_1)
     local_10 = local_10 + this->field_0030;
   }
   uVar4 = local_10;
-  puVar3 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(local_10));
+  puVar3 = static_cast<uint *>(st::fn_006AAC70(local_10));
   this->field_0065 = this->field_0071;
   if (puVar3 == nullptr) {
     *param_1 = uVar4;

@@ -10,8 +10,7 @@
 undefined4 __thiscall FUN_004e95c0(void *this,STBoatC *param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   if (STField<int>(this,0x4d8) == param_1->field_0018) {
     STField<undefined4>(this,0x4d8) = 0xffff;

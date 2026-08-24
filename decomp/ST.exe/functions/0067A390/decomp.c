@@ -5,7 +5,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
 
 {
   short sVar1;
-  undefined4 uVar2;
+  uint uVar2;
   short local_AX_1386;
   short local_AX_1503;
   short local_AX_2340;
@@ -27,7 +27,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
   Global_sub_0043E640_param_2Enum GVar6;
   uint uVar7;
   int local_EAX_2177;
-  undefined4 *puVar8;
+  uint *puVar8;
   uint uVar9;
   AnonShape_0068FD00_A5257008 **ppAVar10;
   uint uVar11;

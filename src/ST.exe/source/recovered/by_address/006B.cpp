@@ -18,7 +18,7 @@ void * st::fn_006B0020(uint *param_1,int *param_2)
   if (param_2 != nullptr) {
     *param_2 = 0;
   }
-  puVar1 = st::pointer_boundary_cast<uint *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(param_1[3] * param_1[2] + 0x1c)));
+  puVar1 = static_cast<uint *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(param_1[3] * param_1[2] + 0x1c)));
   if (puVar1 == nullptr) {
     return nullptr;
   }
@@ -49,7 +49,7 @@ DArrayTy * st::fn_006B0060(uint *param_1,uint *param_2)
   uVar2 = st::machine_word_boundary_cast<uint>(pDVar1->elementSize * param_2[3]);
   pDVar1->count = param_2[3];
   puVar4 = param_2 + 7;
-  puVar5 = st::pointer_boundary_cast<uint *>(pDVar1->data);
+  puVar5 = static_cast<uint *>(pDVar1->data);
   memmove(puVar5, puVar4, uVar2); /* compiler REP MOVS byte copy */
   return pDVar1;
 }
@@ -74,7 +74,7 @@ uint * st::fn_006B00C0(uint *param_1,uint *param_2,undefined *param_3)
   uVar2 = st::machine_word_boundary_cast<uint>(pDVar1->elementSize * pDVar1->count);
   pDVar1->growCallback = param_3;
   puVar5 = param_2 + 7;
-  puVar6 = st::pointer_boundary_cast<uint *>(pDVar1->data);
+  puVar6 = static_cast<uint *>(pDVar1->data);
   memmove(puVar6, puVar5, uVar2); /* compiler REP MOVS byte copy */
   iVar4 = st::machine_word_boundary_cast<int>(pDVar1->capacity - pDVar1->count);
   if (iVar4 != 0) {
@@ -163,12 +163,12 @@ void st::fn_006B0290(int param_1,int param_2,int param_3,int param_4,int *param_
 
 {
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   puStack_c = (undefined *)&DAT_0079d880;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
@@ -185,12 +185,12 @@ void st::fn_006B0330(int param_1,int param_2,int param_3,int param_4,int param_5
 
 {
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   puStack_c = (undefined *)&DAT_0079d890;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
@@ -206,12 +206,12 @@ void st::fn_006B03D0(char *param_1,char *param_2,int param_3,int param_4,char pa
 
 {
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   puStack_c = (undefined *)&DAT_0079d8a0;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
@@ -271,7 +271,7 @@ undefined4 * st::fn_006B04D0(uint param_1)
   if (piVar1 != nullptr) {
     piVar3 = piVar1;
     memset(piVar3, 0, param_1); /* compiler bulk-zero initialization */
-    return st::pointer_boundary_cast<undefined4 *>(piVar1);
+    return reinterpret_cast<undefined4 *>(piVar1);
   }
   return nullptr;
 }
@@ -282,13 +282,17 @@ undefined4 * st::fn_006B04D0(uint param_1)
    Evidence: 006B0A20 -> 006B0520 @ 006B0B2C
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 006B0A20 -> 006B0520 @ 006B0B2C; FUN_006b0a20 parameter param_1 */
+   Evidence: 006B0A20 -> 006B0520 @ 006B0B2C; FUN_006b0a20 parameter param_1
 
-undefined4
-st::fn_006B0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT param_3,int param_4)
+   [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=3, ignored=0, unknown=0 */
+
+int st::fn_006B0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT param_3,int param_4)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   byte *pbVar3;
 
@@ -297,7 +301,7 @@ st::fn_006B0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT par
       puVar1 = st::fn_006B04D0(0x200);
       *(undefined4 **)&param_1[1].field_0x8 = puVar1;
       if (puVar1 == nullptr) {
-        return 0xfffffffe;
+        return -2;
       }
     }
     if (0 < param_4) {
@@ -324,7 +328,7 @@ st::fn_006B0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT par
       puVar1 = st::fn_006B04D0(0x400);
       *(undefined4 **)&param_1[1].field_0x8 = puVar1;
       if (puVar1 == nullptr) {
-        return 0xfffffffe;
+        return -2;
       }
     }
     if (0 < param_4) {
@@ -359,12 +363,13 @@ bool st::fn_006B06A0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *par
   BYTE *pBVar3;
   BYTE *pBVar4;
   HPALETTE pHVar5;
+  int iVar7_mg7;
   BYTE BVar6;
   int iVar7;
   LOGPALETTE *pLVar8;
   WORD *pWVar9;
   tagLOGPALETTE **pptVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
   tagLOGPALETTE *local_408;
   tagPALETTEENTRY *local_404;
   LOGPALETTE *pLVar8_mg0;
@@ -376,7 +381,7 @@ bool st::fn_006B06A0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *par
   }
   if (param_1->field_04B4 != (HPALETTE)0x0) {
     /* ST_CALLSITE[006B06CD]: CALL dword ptr [0x0085ba78] */
-    st::external_000000A6(st::pointer_boundary_cast<HGDIOBJ>(param_1->field_04B4));
+    st::external_000000A6(param_1->field_04B4);
     param_1->field_04B4 = (HPALETTE)0x0;
   }
   pLVar8_mg0 = param_2;
@@ -487,8 +492,8 @@ bool st::fn_006B06A0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *par
         return false;
       }
     }
-    iVar7 = st::fn_006B0520(param_1,(int)&local_404,0,0x100);
-    return (bool)('\x01' - (iVar7 != 0));
+    iVar7_mg7 = st::fn_006B0520(param_1,(int)&local_404,0,0x100);
+    return (bool)('\x01' - (iVar7_mg7 != 0));
   }
   return false;
 }
@@ -573,11 +578,11 @@ int st::fn_006B0A20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT
   int *piVar1;
   int iVar2;
   BYTE *pBVar3;
+  int iVar2_mg1;
   UINT UVar4;
-  int iVar5;
+  PALETTEENTRY *pPVar5;
   PALETTEENTRY *pPVar6;
-  PALETTEENTRY *pPVar7;
-  undefined4 *puVar8;
+  uint *puVar7;
   PALETTEENTRY local_404 [256];
 
   if (param_1 != nullptr) {
@@ -593,12 +598,12 @@ int st::fn_006B0A20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT
       }
     }
     if ((param_2 != 0) && (0 < (int)param_4)) {
-      pPVar6 = (PALETTEENTRY *)(param_2 + iVar2 * 4);
-      pPVar7 = local_404;
+      pPVar5 = (PALETTEENTRY *)(param_2 + iVar2 * 4);
+      pPVar6 = local_404;
       for (UVar4 = param_4; UVar4 != 0; UVar4 = UVar4 - 1) {
-        *pPVar7 = *pPVar6;
+        *pPVar6 = *pPVar5;
+        pPVar5 = pPVar5 + 1;
         pPVar6 = pPVar6 + 1;
-        pPVar7 = pPVar7 + 1;
       }
       pBVar3 = &local_404[0].peFlags;
       UVar4 = param_4;
@@ -622,19 +627,20 @@ int st::fn_006B0A20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT
       st::external_000000A9(*(HPALETTE *)param_1,iStart,param_4,local_404);
       /* ST_CALLSITE[006B0B1D]: CALL EDI */
       st::external_000000A9(param_1->field_04B4,iStart,param_4,local_404);
-      iVar2 = st::fn_006B0520(param_1,(int)local_404,iStart,param_4);
+      iVar2_mg1 = st::fn_006B0520(param_1,(int)local_404,iStart,param_4);
       if (*(undefined4 **)&param_1[1].field_0x24 != nullptr) {
-        puVar8 = *(undefined4 **)&param_1[1].field_0x24;
-        for (iVar5 = 0x2000; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *puVar8 = 0xffffffff;
-          puVar8 = puVar8 + 1;
+        puVar7 = *(undefined4 **)&param_1[1].field_0x24;
+        for (iVar2 = 0x2000; iVar2 != 0; iVar2 = iVar2 + -1) {
+          *puVar7 = 0xffffffff;
+          puVar7 = puVar7 + 1;
         }
         memset((void *)(*(int *)&param_1[1].field_0x24 + 0x8000), 0, 0x8000); /* compiler bulk-zero initialization */
         /* ST_CALLSITE[006B0B70]: CALL dword ptr [0x0085ba84] */
         st::external_000000A9(*(HPALETTE *)&param_1[1].field_0x28,iStart,param_4,local_404);
       }
-      if (((iVar2 != -0x7789fdc4) && (iVar2 != -0x7789fdb3)) && (iVar2 != -0x7fffbfff)) {
-        return iVar2;
+      if (((iVar2_mg1 != -0x7789fdc4) && (iVar2_mg1 != -0x7789fdb3)) && (iVar2_mg1 != -0x7fffbfff))
+      {
+        return iVar2_mg1;
       }
     }
   }
@@ -652,8 +658,7 @@ st::fn_006B0BA0(DDXContext *param_1,undefined4 param_2,undefined4 param_3,undefi
 
 {
   int *piVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   if ((param_1 != nullptr) && (piVar1 = (int *)param_1->field_003C, piVar1 != nullptr))
   {
     /* ST_CALLSITE[006B0BC2]: CALL dword ptr [ECX + 0x10] */
@@ -676,7 +681,7 @@ undefined4 st::fn_006B0BE0(int param_1,tagPALETTEENTRY *param_2,UINT iStart,UINT
 
 {
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   HDC hdc;
   tagPALETTEENTRY *local_404;
 
@@ -749,9 +754,9 @@ int st::fn_006B0C70(DArrayTy *array,uint index)
 undefined4 st::fn_006B0CD0(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2,uint param_3)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -1082,7 +1087,12 @@ int __cdecl st::fn_006B1280(int param_1)
 
 // 006B12A8 FUN_006b12a8
 #line 4 "decomp/ST.exe/functions/006B12A8/decomp.c"
-undefined4 __cdecl st::fn_006B12A8(int param_1,int param_2)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=5, ignored=0, unknown=0 */
+
+int __cdecl st::fn_006B12A8(int param_1,int param_2)
 
 {
   return (int)(((longlong)param_1 * (longlong)DAT_007eda8c) / (longlong)param_2);
@@ -1090,7 +1100,12 @@ undefined4 __cdecl st::fn_006B12A8(int param_1,int param_2)
 
 // 006B12BC FUN_006b12bc
 #line 4 "decomp/ST.exe/functions/006B12BC/decomp.c"
-undefined4 __cdecl st::fn_006B12BC(int param_1,int param_2,int param_3)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=1, ignored=0, unknown=0 */
+
+int __cdecl st::fn_006B12BC(int param_1,int param_2,int param_3)
 
 {
   return (int)(((longlong)param_1 * (longlong)param_2) / (longlong)param_3);
@@ -1106,7 +1121,12 @@ longlong __cdecl st::fn_006B12CC(int param_1)
 
 // 006B12DC FUN_006b12dc
 #line 4 "decomp/ST.exe/functions/006B12DC/decomp.c"
-undefined4 __cdecl st::fn_006B12DC(int param_1,int param_2)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=3, ignored=0, unknown=0 */
+
+int __cdecl st::fn_006B12DC(int param_1,int param_2)
 
 {
   return (int)(((longlong)param_1 * (longlong)param_2) / (longlong)DAT_007eda8c);
@@ -1122,7 +1142,7 @@ void st::fn_006B13E0(int *param_1)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int *piVar3;
 
   if ((param_1 != nullptr) && (iVar1 = *param_1, iVar1 != 0)) {
@@ -1158,8 +1178,7 @@ void st::fn_006B13E0(int *param_1)
 undefined4 st::fn_006B1940(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar1 = *(undefined4 *)(param_1 + 0x1d0);
   *(undefined4 *)(param_1 + 0x1d0) = 0;
@@ -1171,8 +1190,7 @@ undefined4 st::fn_006B1940(int param_1)
 undefined4 st::fn_006B1960(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar1 = *(undefined4 *)(param_1 + 0x1d0);
   *(undefined4 *)(param_1 + 0x1d0) = 1;
@@ -1378,15 +1396,18 @@ uint st::fn_006B1C80(int param_1,uint param_2)
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 0056ADC0 -> 006B1CC0 @ 0056B2EF; data at 008075A8 | 0056ADC0 -> 006B1CC0 @ 0056B32D;
    data at 008075A8 | 0056D740 -> 006B1CC0 @ 0056D9FA; data at 008075A8 | 0056D740 -> 006B1CC0 @
-   0056DA39; data at 008075A8 */
+   0056DA39; data at 008075A8
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void st::fn_006B1CC0(DDXContext_008075A8 *param_1,int param_2,undefined4 param_3,undefined4 param_4,
                  undefined4 *param_5)
 
 {
-  undefined4 uVar1;
-  undefined4 uVar2;
-
+  uint uVar1;
+  uint uVar2;
   if (param_2 < 0) {
     param_2 = 10;
   }
@@ -1718,7 +1739,11 @@ void st::fn_006B27B0(int param_1,uint param_2,uint *param_3,uint *param_4)
    00599AA9; data at 008075A8 | 005AACB0 -> 006B2800 @ 005AADE6; data at 008075A8 | 005AACB0 ->
    006B2800 @ 005AAE05; data at 008075A8 | 005E1330 -> 006B2800 @ 005E1E3B; data at 008075A8 |
    005E1330 -> 006B2800 @ 005E21BE; data at 008075A8 | 005E1330 -> 006B2800 @ 005E281E; data at
-   008075A8 */
+   008075A8
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=20, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void st::fn_006B2800(DDXContext_008075A8 *param_1,uint param_2,uint param_3,uint param_4)
 
@@ -1799,6 +1824,10 @@ bool st::fn_006B28C0(DDXContext_008075A8 *param_1,uint param_2,int param_3)
 // 006B3020 FUN_006b3020
 #line 1 "decomp/ST.exe/functions/006B3020/decomp.c"
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=10, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void st::fn_006B3020(int param_1,uint param_2,uint param_3)
 
 {
@@ -1832,8 +1861,7 @@ undefined4 st::fn_006B30D0(int param_1,uint param_2,int param_3)
 {
   uint *puVar1;
   uint uVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   uVar3 = 0xffffffff;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((param_2 < *(uint *)(param_1 + 0x1a0)) &&
@@ -2294,7 +2322,7 @@ void st::fn_006B4170(RecoveredSourceFamily_dibcopy *param_1,int param_2,int lprc
 {
   alignas(4) byte st_stack_frame[120];
 
-  undefined1 *puVar1;
+  byte *puVar1;
   BOOL BVar2;
   int iVar3;
   byte *pbVar4;
@@ -2305,15 +2333,15 @@ void st::fn_006B4170(RecoveredSourceFamily_dibcopy *param_1,int param_2,int lprc
   uint local_44;
   RECT local_3c;
   RECT local_2c;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079d8b0;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 20);
   if ((0 < param_5) && (0 < param_6)) {
@@ -2463,7 +2491,7 @@ undefined4 st::fn_006B4B20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int
   pAVar3 = (AnonShape_006B4B20_3D4F4412 *)param_2->field_0004;
   uVar4 = param_2->field_0008;
   uVar15 = (uint)param_2->field_000E * (int)pAVar3 + 0x1f >> 3 & 0x1ffffffc;
-  puVar5 = st::pointer_boundary_cast<uint *>(st::fn_006AAC70((int)((int)&pAVar3->field_0x1 * uVar4 * 3) / 2 + 0x16));
+  puVar5 = static_cast<uint *>(st::fn_006AAC70((int)((int)&pAVar3->field_0x1 * uVar4 * 3) / 2 + 0x16));
   if (puVar5 == nullptr) {
     return 0xfffffffe;
   }
@@ -2715,17 +2743,30 @@ int st::fn_006B4FA0(int *param_1)
 // 006B4FE0 FUN_006b4fe0
 #line 1 "decomp/ST.exe/functions/006B4FE0/decomp.c"
 
-int st::fn_006B4FE0(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004F5690 -> 006B4FE0 @ 004F572B; data at 0080679C | 004F5690 -> 006B4FE0 @ 004F593D;
+   data at 0080679C | 004F5690 -> 006B4FE0 @ 004F5FF9; data at 0080679C | 00511AB0 -> 006B4FE0 @
+   00511B28; /HelpPanelTy+0x1dc | 0051FBA0 -> 006B4FE0 @ 0051FC1E; data at 0080679C | 005219E0 ->
+   006B4FE0 @ 00521A74; return of cMf32::RecGet | 0052BF00 -> 006B4FE0 @ 0052C0D9; data at 0080679C
+   | 0052BF00 -> 006B4FE0 @ 0052C155; data at 0080679C | 0052BF00 -> 006B4FE0 @ 0052C1CF; data at
+   0080679C | 0052BF00 -> 006B4FE0 @ 0052C249; data at 0080679C | 0052DD20 -> 006B4FE0 @ 0052DDAF;
+   data at 0080679C | 0052E5E0 -> 006B4FE0 @ 0052E738; /OptPanelTy+0x184 | 005381B0 -> 006B4FE0 @
+   005381F4; data at 0080679C | 00543600 -> 006B4FE0 @ 005436EE; return of cMf32::RecGet | 0056F250
+   -> 006B4FE0 @ 0056F505; data at 0080679C | 005CBD00 -> 006B4FE0 @ 005CBDD5; /StartSystemTy+0x2f0
+   | 005D7A50 -> 006B4FE0 @ 005D7B05; /StartSystemTy+0x2c | 005D7A50 -> 006B4FE0 @ 005D7B79;
+   /StartSystemTy+0x2c | 005D7A50 -> 006B4FE0 @ 005D7BEA; /StartSystemTy+0x2c | 006BC360 -> 006B4FE0
+   @ 006BC369; FUN_006bc360 parameter param_1 */
+
+int st::fn_006B4FE0(ushort *param_1)
 
 {
   ushort uVar1;
   int iVar2;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)(param_1 + 0x20);
+  iVar2 = *(int *)(param_1 + 0x10);
   if (iVar2 == 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar1 = *(ushort *)(param_1 + 0xe);
+    uVar1 = param_1[7];
     if ((uVar1 != 0) && (uVar1 < 9)) {
       iVar2 = 1 << ((byte)uVar1 & 0x1f);
     }
@@ -2798,8 +2839,7 @@ int st::fn_006B50C0(int param_1,int param_2,int param_3,uint param_4,undefined4 
 
 {
   int iVar1;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   if (0x100 < (int)param_4) {
     param_4 = 0;
   }
@@ -2822,7 +2862,11 @@ int st::fn_006B50C0(int param_1,int param_2,int param_3,uint param_4,undefined4 
    Evidence: 00515650 -> 006B5440 @ 00515737
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005C87C0 -> 006B5440 @ 005C885D; /StartSystemTy+0x2f0 */
+   Evidence: 005C87C0 -> 006B5440 @ 005C885D; /StartSystemTy+0x2f0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=24, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void st::fn_006B5440(ushort *param_1,int param_2,int param_3,int param_4,tagBITMAPINFO *tOBJImage,
                  int param_6,byte param_7)
@@ -2836,18 +2880,22 @@ void st::fn_006B5440(ushort *param_1,int param_2,int param_3,int param_4,tagBITM
 
 // 006B5480 FUN_006b5480
 #line 4 "decomp/ST.exe/functions/006B5480/decomp.c"
-undefined4 st::fn_006B5480(AnonShape_006B5480_2C1D4FBF *param_1)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=4, ignored=0, unknown=0 */
+
+int st::fn_006B5480(AnonShape_006B5480_2C1D4FBF *param_1)
 
 {
   void *pvVar1;
   uint uVar2;
   int iVar3;
-  undefined4 *puVar4;
-
+  uint *puVar4;
   pvVar1 = st::fn_006ACF50
                      ((void *)param_1->field_0014,(param_1->field_000C + param_1->field_0010) * 4);
   if (pvVar1 == nullptr) {
-    return 0xfffffffe;
+    return -2;
   }
   puVar4 = (undefined4 *)((int)pvVar1 + param_1->field_000C * 4);
   for (uVar2 = st::machine_word_boundary_cast<uint>(param_1->field_0010 & 0x3fffffff); uVar2 != 0; uVar2 = uVar2 - 1) {
@@ -2937,7 +2985,7 @@ uint __fastcall st::fn_006B5A50(DArrayTy *param_1,AnonShape_006B5A50_BD82F60D *p
   }
   iVar1 = st::machine_word_boundary_cast<int>(param_1->count * param_1->elementSize);
   bVar4 = true;
-  pcVar2 = st::pointer_boundary_cast<char *>(param_1->data);
+  pcVar2 = static_cast<char *>(param_1->data);
   pcVar3 = param_2->field_001C;
   do {
     if (iVar1 == 0) break;
@@ -2961,7 +3009,7 @@ void st::fn_006B5B10(AnonShape_006E6FB0_BC494FEA *param_1,int param_2,int param_
 {
   AnonNested_006E6FB0_0008_71212DD0 *pAVar1;
   uint uVar2;
-  undefined1 *puVar3;
+  byte *puVar3;
   int iVar4;
   uint uVar5;
   int iVar6;
@@ -3232,7 +3280,11 @@ void st::fn_006B5B10(AnonShape_006E6FB0_BC494FEA *param_1,int param_2,int param_
 
    [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
    Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
-   semantic function names, and exact first-argument call flow */
+   semantic function names, and exact first-argument call flow
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=51, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void st::fn_006B5EE0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,int param_4,
                  int param_5,int param_6,byte param_7,int param_8)
@@ -3342,12 +3394,15 @@ char * st::fn_006B60B0(char *param_1,char *param_2)
 
 // 006B6110 FUN_006b6110
 #line 4 "decomp/ST.exe/functions/006B6110/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void st::fn_006B6110(undefined4 *param_1)
 
 {
   int iVar1;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   if (param_1 != nullptr) {
     iVar1 = 0;
     if (0 < (int)param_1[1]) {
@@ -3535,11 +3590,11 @@ int st::fn_006B66A0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,un
   int *piVar1;
   code *pcVar2;
   int iVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar5;
-  undefined1 *puVar6;
+  byte *puVar6;
   char *pcVar7;
-  undefined1 *puVar8;
+  byte *puVar8;
   undefined4 auStack_2c [2];
   undefined1 auStack_24 [4];
   int iStack_20;
@@ -3584,7 +3639,7 @@ int st::fn_006B66A0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,un
       *(undefined4 *)(puVar8 + -4) = *(undefined4 *)((int)&param_5 + iVar3);
       *(undefined4 *)(puVar8 + -8) = 0x6b673a;
       pcVar7 = st::fn_006C49B0(*(char **)(puVar8 + -4));
-      puVar4[0xc] = st::machine_word_boundary_cast<undefined4>(pcVar7);
+      puVar4[0xc] = st::machine_word_boundary_cast<uint>(pcVar7);
     }
   }
   else if (iVar5 == 0) {
@@ -3621,8 +3676,8 @@ void st::fn_006B7070(int *param_1)
   int iVar3;
   int iVar4;
   uint uVar5;
-  undefined1 *puVar6;
-  undefined4 *puVar7;
+  byte *puVar6;
+  uint *puVar7;
   undefined4 auStack_50 [2];
   undefined1 auStack_48 [4];
   int iStack_44;
@@ -3630,16 +3685,16 @@ void st::fn_006B7070(int *param_1)
   uint uStack_3c;
   uint *puStack_38;
   uint local_28 [2];
-  undefined1 *local_20;
-  undefined1 *local_1c;
+  byte *local_20;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079d908;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 8);
   if ((((byte *)param_1)[1] & 1) != 0) {
@@ -3716,30 +3771,31 @@ int st::fn_006B7140(int *param_1)
 // 006B75C0 FUN_006b75c0
 #line 1 "decomp/ST.exe/functions/006B75C0/decomp.c"
 
-/* [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 006B75C0 -> 006B7510 @ 006B7602 | 006B75C0 -> 006B7510 @ 006B762A */
+/* [STPrototypeRepairApplier] Propagated parameter 2.
+   Evidence: incoming stack slot is read as a uint before its address is passed as a distinct output
+   lifetime */
 
-int st::fn_006B75C0(int *param_1,int param_2,int *param_3)
+int st::fn_006B75C0(int *param_1,int param_2,uint param_3)
 
 {
-  int *piVar1;
+  uint uVar1;
   int iVar2;
   DWORD DVar3;
   DWORD DVar4;
 
-  piVar1 = param_3;
-  iVar2 = st::fn_006B7510(param_1,(int)param_3,(int *)&param_3,-1,0);
+  uVar1 = param_3;
+  iVar2 = st::fn_006B7510(param_1,param_3,(int *)&param_3,-1,0);
   if (iVar2 == 0) {
     if ((0 < param_2) && ((int)param_3 < 1)) {
       /* ST_CALLSITE[006B75F3]: CALL EBX */
       DVar3 = st::external_000000DA();
-      iVar2 = st::fn_006B7510(param_1,(int)piVar1,(int *)&param_3,-1,0);
+      iVar2 = st::fn_006B7510(param_1,uVar1,(int *)&param_3,-1,0);
       if (iVar2 != 0) {
         return iVar2;
       }
       /* ST_CALLSITE[006B7612]: CALL EBX */
       while (((int)param_3 < 1 && (DVar4 = st::external_000000DA(), (int)(DVar4 - DVar3) < param_2))) {
-        iVar2 = st::fn_006B7510(param_1,(int)piVar1,(int *)&param_3,-1,0);
+        iVar2 = st::fn_006B7510(param_1,uVar1,(int *)&param_3,-1,0);
         if (iVar2 != 0) {
           return iVar2;
         }
@@ -3761,8 +3817,7 @@ void st::fn_006B76D0(int *param_1)
 {
   int *piVar1;
   int iVar2;
-  undefined4 *puVar3;
-
+  uint *puVar3;
   if (param_1 != nullptr) {
     piVar1 = (int *)*param_1;
     if (piVar1 != nullptr) {
@@ -3781,7 +3836,7 @@ void st::fn_006B76D0(int *param_1)
         puVar3 = (undefined4 *)*puVar3) {
       st::fn_006A5E90((short *)puVar3[4]);
     }
-    st::fn_006D25A0(st::pointer_boundary_cast<undefined4 *>(param_1 + 0x11));
+    st::fn_006D25A0(reinterpret_cast<undefined4 *>(param_1 + 0x11));
     st::fn_006AB060(param_1 + 0xd);
     st::fn_006AB060(param_1 + 0xc);
   }
@@ -3790,6 +3845,10 @@ void st::fn_006B76D0(int *param_1)
 
 // 006B7740 FUN_006b7740
 #line 4 "decomp/ST.exe/functions/006B7740/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void st::fn_006B7740(int *param_1)
 
 {
@@ -3883,9 +3942,8 @@ undefined4 st::fn_006B7830(AnonShape_006B7830_769CA2DF *param_1,uint param_2)
   short *psVar1;
   uint uVar2;
   int iVar3;
-  undefined4 *puVar4;
-  undefined4 *puVar5;
-
+  uint *puVar4;
+  uint *puVar5;
   if (param_2 < (uint)param_1->field_0008) {
     psVar1 = *(short **)(param_2 * 4 + param_1->field_0014);
     if (psVar1 != nullptr) {
@@ -3916,12 +3974,12 @@ undefined4 st::fn_006B7830(AnonShape_006B7830_769CA2DF *param_1,uint param_2)
 
 // 006B78C0 FUN_006b78c0
 #line 4 "decomp/ST.exe/functions/006B78C0/decomp.c"
-/* [STReturnSemanticsApplier] machine_eax_return.
-   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
-   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
-   used=2, ignored=7, unknown=0 */
+/* [STReturnSemanticsApplier] repair_false_machine_eax_return.
+   Evidence: the earlier machine return was admitted only because a self-zeroing XOR/SUB was
+   misclassified as reading the call result; every resolved caller now proves an exact EAX kill;
+   machine CFG audit: used=0, ignored=9, unknown=0 */
 
-char * st::fn_006B78C0(char *param_1,char *param_2)
+void st::fn_006B78C0(char *param_1,char *param_2)
 
 {
   char cVar1;
@@ -3956,7 +4014,7 @@ char * st::fn_006B78C0(char *param_1,char *param_2)
   if ((uVar2 != 1) && ((param_2[uVar2 - 2] == '\\' || (param_2[uVar2 - 2] == '/')))) {
     param_2[uVar2 - 2] = '\0';
   }
-  return param_2;
+  return;
 }
 
 // 006B81D0 FUN_006b81d0
@@ -3979,8 +4037,7 @@ undefined4 st::fn_006B8200(AnonShape_006B8200_800652FF *param_1,uint param_2,uin
 
 {
   int iVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   if ((param_2 < param_1->field_0008) && (param_3 < param_1->field_0008)) {
     iVar1 = param_1->field_0014;
     uVar2 = *(undefined4 *)(iVar1 + param_2 * 4);
@@ -4018,12 +4075,12 @@ char * st::fn_006B8240(char *param_1,int param_2)
 
 // 006B8280 FUN_006b8280
 #line 4 "decomp/ST.exe/functions/006B8280/decomp.c"
-/* [STReturnSemanticsApplier] machine_eax_return.
-   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
-   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
-   used=19, ignored=17, unknown=0 */
+/* [STReturnSemanticsApplier] repair_false_machine_eax_return.
+   Evidence: the earlier machine return was admitted only because a self-zeroing XOR/SUB was
+   misclassified as reading the call result; every resolved caller now proves an exact EAX kill;
+   machine CFG audit: used=0, ignored=36, unknown=0 */
 
-char * st::fn_006B8280(char *param_1,char *param_2)
+void st::fn_006B8280(char *param_1,char *param_2)
 
 {
   char cVar1;
@@ -4060,7 +4117,7 @@ char * st::fn_006B8280(char *param_1,char *param_2)
     param_2[uVar2 - 1] = '\\';
     param_2[uVar2] = '\0';
   }
-  return param_2;
+  return;
 }
 
 // 006B84D0 FUN_006b84d0
@@ -4134,6 +4191,10 @@ void st::fn_006B84D0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int para
 
 // 006B8850 FUN_006b8850
 #line 4 "decomp/ST.exe/functions/006B8850/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void st::fn_006B8850(AnonShape_006B8850_E5DFE1E1 *param_1)
 
 {
@@ -4407,8 +4468,7 @@ int st::fn_006B8F10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
             iVar5 != 0) {
         if (iVar5 == -0x7789fe3e) {
           /* ST_CALLSITE[006B912D]: CALL dword ptr [EAX + 0x6c] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (*(code *)param_1->field_0000->field_006C)(param_1);
+          (*STField<code *>(param_1->field_0000,0x006C))(param_1);
           st::fn_006CEC40((AnonShape_006CEC40_BB23E716 *)pAVar3->field_0000);
         }
         else {
@@ -4639,12 +4699,12 @@ void st::fn_006B94E0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int
                  int param_5,int param_6,int param_7,int param_8)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   int iVar8;
 
@@ -4781,7 +4841,7 @@ undefined4 st::fn_006B98C0(int *param_1,int *param_2)
 
 {
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int *piVar3;
   int *piVar4;
 
@@ -4813,12 +4873,12 @@ undefined4 st::fn_006B98C0(int *param_1,int *param_2)
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 006736F0 -> 006B9910 @ 00673830 | 006B7190 -> 006B9910 @ 006B723F
 
-   [STReturnSemanticsApplier] machine_eax_return.
-   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
-   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
-   used=2, ignored=19, unknown=0 */
+   [STReturnSemanticsApplier] repair_false_machine_eax_return.
+   Evidence: the earlier machine return was admitted only because a self-zeroing XOR/SUB was
+   misclassified as reading the call result; every resolved caller now proves an exact EAX kill;
+   machine CFG audit: used=0, ignored=21, unknown=0 */
 
-undefined4 * st::fn_006B9910(undefined4 *param_1,int param_2)
+void st::fn_006B9910(undefined4 *param_1,int param_2)
 
 {
   int *piVar1;
@@ -4831,10 +4891,10 @@ undefined4 * st::fn_006B9910(undefined4 *param_1,int param_2)
       piVar1 = piVar2;
     }
     *piVar1 = param_2;
-    return (undefined4 *)0;
+    return;
   }
   *param_1 = param_2;
-  return param_1;
+  return;
 }
 
 // 006B9B20 FUN_006b9b20
@@ -5008,8 +5068,7 @@ void st::fn_006BA780(DDXContext *param_1,int param_2)
 undefined4 st::fn_006BB690(AnonShape_006BB690_EB7315D1 *param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   if ((param_1->field_000C & 0x100) != 0) {
     return 0;
   }
@@ -5193,6 +5252,10 @@ LAB_006bb943:
 
 // 006BB980 FUN_006bb980
 #line 4 "decomp/ST.exe/functions/006BB980/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=20, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void st::fn_006BB980(AnonShape_006BB980_E41494A1 *param_1)
 
 {
@@ -5288,8 +5351,7 @@ int st::fn_006BB9D0(AnonShape_006BB9D0_BD42D958 *param_1,int param_2,int param_3
 undefined4 st::fn_006BBB00(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = param_1->field_0498;
   param_1->field_0498 = param_2;
   return uVar1;
@@ -5377,7 +5439,7 @@ LAB_006bbc85:
       if (local_18 != 0) goto LAB_006bbdfd;
       /* ST_CALLSITE[006BBD27]: CALL dword ptr [EDX + 0x38] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)param_1->field_0040 + 0x38))((int *)param_1->field_0040,local_28);
+      (**(code **)(*STField<int *>(param_1,0x40) + 0x38))((int *)param_1->field_0040,local_28);
     }
     if (local_10 != 0) {
       piVar1 = param_1->field_0044;
@@ -5597,11 +5659,10 @@ int st::fn_006BC360(ushort *param_1,undefined4 *param_2,int *param_3)
 
 {
   int iVar1;
-  undefined1 *puVar2;
+  byte *puVar2;
   int iVar3;
-  undefined1 *puVar4;
-
-  iVar1 = st::fn_006B4FE0((int)param_1);
+  byte *puVar4;
+  iVar1 = st::fn_006B4FE0(param_1);
   if ((param_2 == nullptr) &&
      (param_2 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(0x400)), param_2 == nullptr)) {
     return 0;
@@ -5634,11 +5695,10 @@ int st::fn_006BC360(ushort *param_1,undefined4 *param_2,int *param_3)
 undefined2 * st::fn_006BC3E0(ushort *param_1,undefined2 *param_2,undefined4 *param_3)
 
 {
-  undefined2 *puVar1;
-
+  ushort *puVar1;
   puVar1 = param_2;
   if (param_2 == nullptr) {
-    puVar1 = st::pointer_boundary_cast<undefined2 *>(st::fn_006AAC70(0x404));
+    puVar1 = static_cast<ushort *>(st::fn_006AAC70(0x404));
     if (puVar1 == nullptr) {
       return nullptr;
     }
@@ -6298,15 +6358,15 @@ void st::fn_006BD260(void)
 {
   uint uVar1;
   uint uVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079d940;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   ExceptionList = &local_14;
   *(undefined4 *)g_int_00854FD4[0x70] = 0;
@@ -6427,7 +6487,7 @@ void st::fn_006BD4B0(void)
           DAT_00854fe4 = DAT_00854fec;
         }
         if (((DAT_00854ed4 == 0) &&
-            (iVar2 = st::fn_006CFEB0(st::pointer_boundary_cast<int *>(&DAT_00854ef0),PTR_00854fd8,PTR_00854f90), iVar2 != 0)) &&
+            (iVar2 = st::fn_006CFEB0(reinterpret_cast<int *>(&DAT_00854ef0),PTR_00854fd8,PTR_00854f90), iVar2 != 0)) &&
            (local_EAX_386 =
                  st::fn_006D1AD0((int *)g_int_00854FD4[0x70],100,DAT_00854ef0,DAT_00854ef4,DAT_00854ef8
                               ,DAT_00854efc,g_int_00854FD4[3],g_int_00854FD4[4],1),
@@ -6526,9 +6586,12 @@ int * st::fn_006BFB70(int param_1)
    006BFE70 -> 006BFB90 @ 006C04D5 | 006BFE70 -> 006BFB90 @ 006C0604
 
    [STPrototypeApplier] Propagated parameter 3.
-   Evidence: 006BFB90 -> EXTERNAL:0000004F @ 006BFBD0 | 006BFE70 -> 006BFB90 @ 006BFEB9 */
+   Evidence: 006BFB90 -> EXTERNAL:0000004F @ 006BFBD0 | 006BFE70 -> 006BFB90 @ 006BFEB9
 
-DWORD st::fn_006BFB90(HANDLE param_1,LPDWORD lpNumberOfBytesRead,LPVOID lpBuffer,
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 006BFB90 -> EXTERNAL:00000052 @ 006BFBA1 */
+
+DWORD st::fn_006BFB90(HANDLE hFile,LPDWORD lpNumberOfBytesRead,LPVOID lpBuffer,
                   DWORD nNumberOfBytesToRead)
 
 {
@@ -6537,11 +6600,11 @@ DWORD st::fn_006BFB90(HANDLE param_1,LPDWORD lpNumberOfBytesRead,LPVOID lpBuffer
   DWORD DVar2;
 
   /* ST_CALLSITE[006BFBA1]: CALL dword ptr [0x0085bc74] */
-  DVar1 = st::external_00000052(param_1,(LONG)lpNumberOfBytesRead,(PLONG)0x0,0);
+  DVar1 = st::external_00000052(hFile,(LONG)lpNumberOfBytesRead,(PLONG)0x0,0);
   DVar2 = nNumberOfBytesToRead;
   if ((DVar1 != 0xffffffff) &&
      /* ST_CALLSITE[006BFBD0]: CALL dword ptr [0x0085bc68] */
-     (BVar2 = st::external_0000004F(param_1,lpBuffer,nNumberOfBytesToRead,(LPDWORD)&lpNumberOfBytesRead,
+     (BVar2 = st::external_0000004F(hFile,lpBuffer,nNumberOfBytesToRead,(LPDWORD)&lpNumberOfBytesRead,
                        (LPOVERLAPPED)0x0), BVar2 != 0)) {
     return -(uint)(lpNumberOfBytesRead != (LPDWORD)DVar2) & 0xfffffff2;
   }
@@ -6563,8 +6626,8 @@ DWORD st::fn_006BFB90(HANDLE param_1,LPDWORD lpNumberOfBytesRead,LPVOID lpBuffer
 int st::fn_006BFBF0(AnonShape_006BFBF0_13F73F95 *param_1)
 
 {
-  undefined1 *puVar1;
-  undefined1 *puVar2;
+  byte *puVar1;
+  byte *puVar2;
   int *piVar3;
   AnonShape_006BFBF0_13F73F95 *pAVar4;
   uint uVar5;
@@ -6574,7 +6637,7 @@ int st::fn_006BFBF0(AnonShape_006BFBF0_13F73F95 *param_1)
   byte *puVar9;
   byte *puVar11;
   uint local_34 [4];
-  undefined1 *local_24;
+  byte *local_24;
   undefined4 local_20;
   undefined4 local_1c;
   undefined4 local_18;
@@ -6736,16 +6799,16 @@ DWORD st::fn_006BFE70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,i
 {
   short *psVar1;
   LPDWORD pDVar2;
-  undefined4 uVar3;
+  uint uVar3;
   LPVOID pvVar4;
   AnonShape_006BFE70_9EDC24A5 *pAVar5;
   int iVar6;
   DWORD DVar7;
   AnonShape_006BFE70_9EDC24A5 *pAVar8;
-  undefined2 uVar9;
+  ushort uVar9;
   uint uVar10;
   int iVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   uint uVar13;
   byte *pbVar14;
   byte *pbVar15;
@@ -6778,7 +6841,7 @@ DWORD st::fn_006BFE70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,i
     else {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_c = st::fn_006BFB90(*(HANDLE *)(*(int *)(param_2->field_001C + 4) + 0xc),
-                             (LPDWORD)param_2->field_0028,st::pointer_boundary_cast<LPVOID>(param_1),param_3);
+                             (LPDWORD)param_2->field_0028,param_1,param_3);
     }
     param_2->field_0028 = st::machine_word_boundary_cast<undefined4>(param_2->field_0028 + param_3);
     param_2->field_00C0 = param_2->field_00C0 - param_3 / (int)(uint)param_2->field_0096;

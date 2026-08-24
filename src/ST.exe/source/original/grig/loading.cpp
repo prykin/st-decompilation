@@ -20,14 +20,15 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
   uint local_EAX_356;
   LPSTR text_00;
   ushort *puVar3;
-  uint uVar4;
-  undefined4 *puVar5;
+  HDC pHVar4;
+  uint *puVar5;
+  uint uVar6;
   int iVar11;
-  uint *puVar6;
-  uint uVar7;
-  char *pcVar8;
+  uint *puVar7;
+  uint uVar8;
   char *pcVar9;
-  byte bVar10;
+  char *pcVar10;
+  byte bVar11;
   int iVar12;
   undefined1 local_65c;
   char local_65b [515];
@@ -61,62 +62,62 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  local_8 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(param_1));
+  local_8 = static_cast<uint *>(st::fn_006AAC10(param_1));
   this_00 = g_cMf32_00806780;
   if (DAT_0080874e == '\x01') {
     local_c = 0;
-    uVar4 = 0xffffffff;
-    pcVar9 = "LOADINGW";
+    uVar6 = 0xffffffff;
+    pcVar10 = "LOADINGW";
     do {
-      pcVar8 = pcVar9;
-      if (uVar4 == 0) break;
-      uVar4 = uVar4 - 1;
-      pcVar8 = pcVar9 + 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar8;
+      pcVar9 = pcVar10;
+      if (uVar6 == 0) break;
+      uVar6 = uVar6 - 1;
+      pcVar9 = pcVar10 + 1;
+      cVar1 = *pcVar10;
+      pcVar10 = pcVar9;
     } while (cVar1 != '\0');
-    uVar4 = ~uVar4;
+    uVar6 = ~uVar6;
     local_65c = 1;
-    pcVar9 = pcVar8 + -uVar4;
-    pcVar8 = local_65b;
-    memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
+    pcVar10 = pcVar9 + -uVar6;
+    pcVar9 = local_65b;
+    memmove(pcVar9, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     st::fn_006F12B0(g_cMf32_00806780,st::machine_word_boundary_cast<undefined4>(st::fn_006F2D10),st::machine_word_boundary_cast<undefined4>(&local_65c));
     puVar5 = st::fn_006F2790(this_00);
-    uVar4 = local_c;
+    uVar6 = local_c;
     while (puVar5 != nullptr) {
-      local_c = uVar4 + 1;
+      local_c = uVar6 + 1;
       puVar5 = st::fn_006F2790(this_00);
-      uVar4 = local_c;
+      uVar6 = local_c;
     }
-    local_c = uVar4;
-    if (uVar4 == 0) {
+    local_c = uVar6;
+    if (uVar6 == 0) {
       st::fn_006A5E40
                 (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\grig\\loading.cpp"),0x24);
     }
     iVar12 = 1;
-    bVar10 = 0;
-    uVar7 = st::fn_0072E6C0();
-    text_00 = st::fn_006F2C00(st::mutable_c_string("LOADINGW"),1,uVar7 % uVar4 + 1);
+    bVar11 = 0;
+    uVar8 = st::fn_0072E6C0();
+    text_00 = st::fn_006F2C00(st::mutable_c_string("LOADINGW"),1,uVar8 % uVar6 + 1);
   }
   else {
     if (DAT_0080874e == '\x02') {
       local_c = 0;
-      uVar4 = 0xffffffff;
-      pcVar9 = "LOADINGB";
+      uVar6 = 0xffffffff;
+      pcVar10 = "LOADINGB";
       do {
-        pcVar8 = pcVar9;
-        if (uVar4 == 0) break;
-        uVar4 = uVar4 - 1;
-        pcVar8 = pcVar9 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar8;
+        pcVar9 = pcVar10;
+        if (uVar6 == 0) break;
+        uVar6 = uVar6 - 1;
+        pcVar9 = pcVar10 + 1;
+        cVar1 = *pcVar10;
+        pcVar10 = pcVar9;
       } while (cVar1 != '\0');
-      uVar4 = ~uVar4;
+      uVar6 = ~uVar6;
       local_254 = 1;
-      pcVar9 = pcVar8 + -uVar4;
-      pcVar8 = local_253;
-      memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
-      uVar7 = 0;
+      pcVar10 = pcVar9 + -uVar6;
+      pcVar9 = local_253;
+      memmove(pcVar9, pcVar10, uVar6); /* compiler REP MOVS byte copy */
+      uVar8 = 0;
       st::fn_006F12B0(g_cMf32_00806780,st::machine_word_boundary_cast<undefined4>(st::fn_006F2D10),st::machine_word_boundary_cast<undefined4>(&local_254));
       puVar5 = st::fn_006F2790(this_00);
       while (puVar5 != nullptr) {
@@ -124,10 +125,10 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
         puVar5 = st::fn_006F2790(this_00);
       }
       iVar12 = 1;
-      bVar10 = 0;
+      bVar11 = 0;
       local_EAX_356 = st::fn_0072E6C0();
-      uVar4 = local_EAX_356 % local_c;
-      pcVar9 = "LOADINGB";
+      uVar6 = local_EAX_356 % local_c;
+      pcVar10 = "LOADINGB";
     }
     else {
       if (DAT_0080874e != '\x03') {
@@ -136,21 +137,21 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
         goto LAB_00554324;
       }
       local_c = 0;
-      uVar4 = 0xffffffff;
-      pcVar9 = "LOADINGS";
+      uVar6 = 0xffffffff;
+      pcVar10 = "LOADINGS";
       do {
-        pcVar8 = pcVar9;
-        if (uVar4 == 0) break;
-        uVar4 = uVar4 - 1;
-        pcVar8 = pcVar9 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar8;
+        pcVar9 = pcVar10;
+        if (uVar6 == 0) break;
+        uVar6 = uVar6 - 1;
+        pcVar9 = pcVar10 + 1;
+        cVar1 = *pcVar10;
+        pcVar10 = pcVar9;
       } while (cVar1 != '\0');
-      uVar4 = ~uVar4;
+      uVar6 = ~uVar6;
       local_458 = 1;
-      pcVar9 = pcVar8 + -uVar4;
-      pcVar8 = local_457;
-      memmove(pcVar8, pcVar9, uVar4); /* compiler REP MOVS byte copy */
+      pcVar10 = pcVar9 + -uVar6;
+      pcVar9 = local_457;
+      memmove(pcVar9, pcVar10, uVar6); /* compiler REP MOVS byte copy */
       st::fn_006F12B0(g_cMf32_00806780,st::machine_word_boundary_cast<undefined4>(st::fn_006F2D10),st::machine_word_boundary_cast<undefined4>(&local_458));
       puVar5 = st::fn_006F2790(this_00);
       while (puVar5 != nullptr) {
@@ -158,23 +159,23 @@ uint * __thiscall st::fn_005540E0(cLoadingTy *this,uint param_1,char *text,uint 
         puVar5 = st::fn_006F2790(this_00);
       }
       iVar12 = 1;
-      bVar10 = 0;
+      bVar11 = 0;
       uVar5 = st::fn_0072E6C0();
-      uVar4 = uVar5 % local_c;
-      pcVar9 = "LOADINGS";
+      uVar6 = uVar5 % local_c;
+      pcVar10 = "LOADINGS";
     }
-    text_00 = st::fn_006F2C00(pcVar9,1,uVar4 + 1);
+    text_00 = st::fn_006F2C00(pcVar10,1,uVar6 + 1);
   }
-  puVar3 = st::fn_0070A9F0(g_cMf32_00806780,text_00,bVar10,iVar12);
+  puVar3 = st::fn_0070A9F0(g_cMf32_00806780,text_00,bVar11,iVar12);
   *local_8 = (uint)puVar3;
 LAB_00554324:
-  uVar4 = st::fn_00404BD3(*local_8,nullptr,DAT_00807dd9);
-  local_8[2] = uVar4;
+  pHVar4 = st::fn_00404BD3(*local_8,nullptr,DAT_00807dd9);
+  local_8[2] = (uint)pHVar4;
   puVar5 = st::fn_00710BA0((ccFntTy *)local_8[2],*local_8,0,0,0,0,0,1);
   local_8[1] = (uint)puVar5;
   if (text != nullptr) {
-    uVar4 = st::fn_00404746(st::machine_word_boundary_cast<undefined4>(text));
-    local_8[0x13] = uVar4;
+    uVar6 = st::fn_00404746(st::machine_word_boundary_cast<undefined4>(text));
+    local_8[0x13] = uVar6;
   }
   local_8[0x12] = param_3;
   g_currentExceptionFrame = local_50.previous;
@@ -189,7 +190,11 @@ LAB_00554324:
 
    [STCallsiteConventionApplier] __cdecl inferred from all-caller stack cleanup. Evidence: all 2
    callers reclaim stack arguments [4] matching the explicit parameter width; no explicit ECX
-   pointer receiver setup observed */
+   pointer receiver setup observed
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __cdecl st::fn_005544E0(uint *param_1)
 
@@ -236,7 +241,7 @@ void __thiscall st::fn_00554660(cLoadingTy *this,int param_1,int param_2)
   int iVar4;
   int iVar3;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   undefined4 local_44c [256];
   InternalExceptionFrame local_4c;
   cLoadingTy *local_8;
@@ -286,7 +291,7 @@ st::fn_00554800
 {
   ushort *puVar1;
   ccFntTy *pcVar2;
-  undefined4 uVar3;
+  uint uVar3;
   cLoadingTy *pcVar5;
   int local_EAX_36;
   byte *puVar6;
@@ -410,8 +415,7 @@ void __thiscall st::fn_00554AD0(cLoadingTy *this,uint *param_1)
     st::fn_006BB370(g_dDXContext_0080759C,0,0);
     if ((code *)pcVar2->field_0058 != 0) {
       /* ST_CALLSITE[00554BC0]: CALL EAX */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)pcVar2->field_0058)(pcVar2->field_0054);
+      (*STField<code *>(pcVar2,0x58))(pcVar2->field_0054);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -495,8 +499,7 @@ void __thiscall st::fn_00554C80(cLoadingTy *this,char *resourceString)
     st::fn_006BB370(g_dDXContext_0080759C,0,0);
     if ((code *)pcVar2->field_0058 != 0) {
       /* ST_CALLSITE[00554E31]: CALL EAX */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)pcVar2->field_0058)(pcVar2->field_0054);
+      (*STField<code *>(pcVar2,0x58))(pcVar2->field_0054);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -793,8 +796,7 @@ st::fn_00555040
     }
     if ((code *)pcVar9->field_0058 != 0) {
       /* ST_CALLSITE[0055526B]: CALL EAX */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)pcVar9->field_0058)(pcVar9->field_0054);
+      (*STField<code *>(pcVar9,0x58))(pcVar9->field_0054);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -914,8 +916,7 @@ joined_r0x00555393:
   default:
     if ((code *)local_8->field_0058 != 0) {
       /* ST_CALLSITE[005553EE]: CALL EAX */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)local_8->field_0058)(local_8->field_0054);
+      (*STField<code *>(local_8,0x58))(local_8->field_0054);
     }
   }
   g_currentExceptionFrame = local_50.previous;

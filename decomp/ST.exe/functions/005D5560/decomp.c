@@ -40,14 +40,14 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
   char *local_EAX_3994;
   AnonNested_005D5560_0050_EBFA0A51 *pAVar20;
   char *pcVar15;
-  undefined4 uVar21;
+  uint uVar21;
   char *local_EAX_6384;
   BITMAPINFO *pBVar22;
   int iVar22;
   byte bVar23;
   int iVar24;
   int iVar25;
-  undefined1 *puVar26;
+  byte *puVar26;
   char cVar27;
   SettMapTy_field_2179State SVar28;
   uint uVar29;
@@ -73,7 +73,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
   undefined4 local_38;
   undefined4 local_34;
   undefined4 local_30;
-  undefined1 *local_2c;
+  byte *local_2c;
   uint local_28;
   int local_24;
   uint local_20;
@@ -1236,8 +1236,8 @@ LAB_005d6784:
   local_28 = uVar30;
   FUN_006b4170(this_00->field_20F4[uVar30],0,*piVar10 + -0x113,0,piVar10[2],piVar10[3],0xff);
   if (pAVar35 == nullptr) goto switchD_005d6abd_default;
-  switch(local_2c) {
-  case (undefined1 *)0x1:
+  switch(static_cast<uint32_t>(STRawWord(local_2c))) {
+  case 0x1:
     if (*(char *)pAVar35 != '\0') {
       local_24 = local_24 + 1;
       local_20 = local_20 + 1;
@@ -1281,7 +1281,7 @@ LAB_005d6784:
       }
     }
     break;
-  case (undefined1 *)0x2:
+  case 0x2:
     if (*(char *)pAVar35 == '\0') break;
     /* ST_CALLSITE[005D6BD2]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     MMObjTy::PaintButDib
@@ -1343,7 +1343,7 @@ LAB_005d6c37:
     ccFntTy::WrStr(pSVar12->field_0034,(char *)&DAT_0080f33a,-1,-1,2);
     uVar30 = local_28;
     break;
-  case (undefined1 *)0x3:
+  case 0x3:
     /* ST_CALLSITE[005D6C9C]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     MMObjTy::PaintButDib
               ((MMObjTy *)this_00,(int)this_00->field_20F4[uVar30],&local_24,2,
@@ -1357,7 +1357,7 @@ LAB_005d6c37:
     iVar24 = local_1c;
     puVar36 = (uint *)thunk_FUN_005cbbe0(this_00,pAVar35);
     goto LAB_005d6d70;
-  case (undefined1 *)0x4:
+  case 0x4:
     /* ST_CALLSITE[005D6CFA]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     MMObjTy::PaintButDib((MMObjTy *)this_00,(int)this_00->field_20F4[uVar30],&local_24,2,0x67,0x67);
     if (pAVar35->field_0x4 == '\x02') {
@@ -1393,7 +1393,7 @@ LAB_005d6d70:
                                          iVar24);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,pcVar16,iVar25,iVar38,uVar29);
     break;
-  case (undefined1 *)0x5:
+  case 0x5:
     if ((*(char *)pAVar35 != '\0') &&
        /* ST_CALLSITE[005D6E23]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
        (MMObjTy::PaintButDib

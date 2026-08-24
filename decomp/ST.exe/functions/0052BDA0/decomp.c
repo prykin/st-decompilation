@@ -13,10 +13,10 @@
 void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   ushort *puVar2;
   byte bVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   uint uVar5;
   uint uVar6;
   CHAR local_c [8];

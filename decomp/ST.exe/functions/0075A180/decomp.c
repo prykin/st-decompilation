@@ -6,15 +6,15 @@ void FUN_0075a180(AnonShape_0075A180_7E367FD8 *param_1)
 {
   int iVar1;
   int iVar2;
-  undefined4 *puVar3;
-  undefined4 *puVar4;
-  undefined4 uVar5;
+  uint *puVar3;
+  uint *puVar4;
+  uint uVar5;
   int iVar6;
   int iVar7;
   int iVar8;
   int *piVar9;
-  undefined4 *puVar10;
-  undefined4 *puVar11;
+  uint *puVar10;
+  uint *puVar11;
   int iVar12;
   int local_18;
   int *local_10;

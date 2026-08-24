@@ -16,7 +16,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
 {
   byte *pbVar1;
   int uVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   TLOBaseTyVTable *pTVar5;
   STMessage *pSVar6;

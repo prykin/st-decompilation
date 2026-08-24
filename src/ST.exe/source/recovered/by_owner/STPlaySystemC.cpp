@@ -14,7 +14,7 @@
 STPlaySystemC * __thiscall st::fn_0054CB40(STPlaySystemC *this,AppClassTy *param_1)
 
 {
-  st::fn_006E6100((SystemWithNamedObjClassTy *)this,st::machine_word_boundary_cast<undefined4>(param_1),4);
+  st::fn_006E6100((SystemWithNamedObjClassTy *)this,param_1,4);
   this->vtable = &st_global_0079AE38;
   this->field_0034 = 0;
   this->field_00E4 = 0;
@@ -219,9 +219,14 @@ void __thiscall st::fn_006E57B0(STPlaySystemC *this,int param_1)
    Evidence: 004732F0 -> 006E62D0 @ 004733E4; STBoatC::LoadObj parameter param_1 | 004749C0 ->
    006E62D0 @ 00474A98; /STBoatC+0x5a2 | 004749C0 -> 006E62D0 @ 00474FD8; /STBoatC+0x5a2 | 004749C0
    -> 006E62D0 @ 004750BA; /STBoatC+0x5a2 | 005EFAE0 -> 006E62D0 @ 005EFB01; FUN_005efae0 parameter
-   param_1 */
+   param_1
 
-undefined4 __thiscall
+   [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=115, ignored=20, unknown=0 */
+
+int __thiscall
 st::fn_006E62D0(STPlaySystemC *this,AnonShape_005EFAE0_B406B78B *param_1,int *param_2)
 
 {
@@ -235,7 +240,7 @@ st::fn_006E62D0(STPlaySystemC *this,AnonShape_005EFAE0_B406B78B *param_1,int *pa
     pDVar1 = this->field_0010;
     uVar2 = pDVar1->iteratorIndex;
     if (pDVar1->count <= uVar2) {
-      return 0xfffffffc;
+      return -4;
     }
     pvVar4 = DArrayAt<void>(pDVar1, uVar2);
     pDVar1->iteratorIndex = uVar2 + 1;
@@ -248,6 +253,6 @@ st::fn_006E62D0(STPlaySystemC *this,AnonShape_005EFAE0_B406B78B *param_1,int *pa
       return 0;
     }
   }
-  return 0xfffffffc;
+  return -4;
 }
 

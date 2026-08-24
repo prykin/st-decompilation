@@ -100,7 +100,7 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,uint par
   int local_EAX_35;
   int *piVar2;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   uint uVar5;
   code *pcVar6;

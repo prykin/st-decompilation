@@ -35,16 +35,16 @@ st::fn_0067CF30(char *source,undefined2 param_2,char *param_3,undefined4 param_4
     st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0x28);
     return nullptr;
   }
-  local_8 = st::pointer_boundary_cast<AnonShape_0067CF30_CDCAC01F *>(st::fn_006AAC10(299));
+  local_8 = static_cast<AnonShape_0067CF30_CDCAC01F *>(st::fn_006AAC10(299));
   *(undefined4 *)local_8 = 0x38e;
   *(undefined4 *)&local_8->field_0x14 = 299;
   local_8->field_0x18 = 2;
-  st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_8->field_0x1b),source,0x3f);
+  st::fn_0072E340((char *)&local_8->field_0x1b,source,0x3f);
   _Source = source;
   if (param_3 != nullptr) {
     _Source = param_3;
   }
-  st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_8->field_0x5b),_Source,0xb);
+  st::fn_0072E340((char *)&local_8->field_0x5b,_Source,0xb);
   local_8->field_0019 = param_2;
   local_8->field_006D = 0xff;
   pDVar1 = st::fn_006AE290(nullptr,5,0x10,5);
@@ -79,7 +79,7 @@ AllocationRecord_0067D1D0 * __cdecl st::fn_0067D1D0(AllocationRecord_0067D1D0 *p
   AllocationRecord_00690FC0 *pAVar3;
   AllocationRecord_0067D1D0 *pAVar4;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   AnonShape_0067D1D0_21940C5B *pAVar7;
   uint uVar8;
   bool bVar9;
@@ -92,7 +92,7 @@ AllocationRecord_0067D1D0 * __cdecl st::fn_0067D1D0(AllocationRecord_0067D1D0 *p
   g_currentExceptionFrame = &local_4c;
   iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    local_8 = st::pointer_boundary_cast<AnonShape_0067D1D0_21940C5B *>(st::fn_006AAC10(299));
+    local_8 = static_cast<AnonShape_0067D1D0_21940C5B *>(st::fn_006AAC10(299));
     pAVar4_mg0 = param_1;
     pAVar7 = local_8;
     memmove(pAVar7, pAVar4_mg0, 0x12a); /* compiler REP MOVS byte copy */
@@ -135,7 +135,7 @@ AllocationRecord_0067D1D0 * __cdecl st::fn_0067D1D0(AllocationRecord_0067D1D0 *p
         if (puVar6[1] == 0) {
           pAVar3 = st::fn_004052AE((AllocationRecord_00690FC0 *)
                                       (&param_1->field_0x12a + puVar6[2]));
-          *puVar6 = st::machine_word_boundary_cast<undefined4>(pAVar3);
+          *puVar6 = st::machine_word_boundary_cast<uint>(pAVar3);
           pAVar4 = (AllocationRecord_0067D1D0 *)local_8;
         }
         iVar5 = pAVar4->field_00C2;
@@ -182,7 +182,7 @@ st::fn_0067D3B0(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param
   DArrayTy *pDVar7;
   int iVar12;
   uint uVar8;
-  undefined1 *puVar9;
+  byte *puVar9;
   int iVar10;
   byte *puVar11;
   int iVar13;
@@ -275,7 +275,7 @@ st::fn_0067D3B0(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param
       iVar10 = iVar10 + -1;
     } while (iVar10 != 0);
     *param_4 = iVar13 + 299U;
-    pAVar6 = st::pointer_boundary_cast<AllocationRecord_0067D3B0 *>(st::fn_006AAC10(iVar13 + 299U));
+    pAVar6 = static_cast<AllocationRecord_0067D3B0 *>(st::fn_006AAC10(iVar13 + 299U));
     pAVar15 = param_1;
     pAVar19 = pAVar6;
     memmove(pAVar19, pAVar15, 0x12a); /* compiler REP MOVS byte copy */
@@ -412,7 +412,7 @@ undefined4 * __cdecl st::fn_0067D880(int param_1,char *param_2)
 {
   int errorCode;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   InternalExceptionFrame local_50;
   AllocationRecord_0067D1D0 *local_c;
   AllocationRecord_0067D1D0 *local_8;
@@ -558,7 +558,7 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
   uint *puVar4;
   int iVar7;
   uint uVar8;
-  undefined1 *_Source;
+  byte *_Source;
   char *pcVar11;
   undefined1 local_2ec [516];
   char local_e8 [64];
@@ -631,7 +631,7 @@ uint * __cdecl st::fn_0067DC20(cMf32 *param_1,int param_2,char *param_3,uint par
           pcVar11 = pcVar11 + 4;
         }
         st::fn_0072E340(local_e8,st::pointer_boundary_cast<char *>(_Source),0x3f);
-        st::fn_0072E340(local_a8,st::pointer_boundary_cast<char *>(&local_8->field_0x5b),0xb);
+        st::fn_0072E340(local_a8,(char *)&local_8->field_0x5b,0xb);
         st::fn_0072E340(local_9c,pcVar3,0x1f);
         st::fn_0072E340(local_78,PTR_s_OBJECTIVES_0079d718,0x1f);
         local_54 = (int)local_8->field_0019;

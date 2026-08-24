@@ -41,17 +41,17 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
   *param_1 = 0x98;
   uint * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   do {
-    switch(param_1_after_write) {
+    switch(static_cast<uint32_t>(STRawWord(param_1_after_write))) {
     case 0:
       ppDVar2 = (DArrayTy **)local_8->field_0030;
       break;
-    case (uint *)0x1:
+    case 0x1:
       ppDVar2 = &local_8->field_0050;
       break;
-    case (uint *)0x2:
+    case 0x2:
       ppDVar2 = &local_8->field_0070;
       break;
-    case (uint *)0x3:
+    case 0x3:
       ppDVar2 = (DArrayTy **)&local_8->field_0x90;
       break;
     default:

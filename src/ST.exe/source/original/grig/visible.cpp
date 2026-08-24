@@ -65,7 +65,7 @@ void __thiscall st::fn_005578D0(VisibleClassTy *this)
     pVVar3->field_0038 = pbVar7;
     pbVar7 = st::pointer_boundary_cast<byte *>(st::fn_006AAC10(pVVar3->field_0030 * pVVar3->field_0034));
     pVVar3->field_004C = pbVar7;
-    puVar8 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC10(st::machine_word_boundary_cast<uint>(pVVar3->field_0030 * pVVar3->field_0034 * 2)));
+    puVar8 = static_cast<ushort *>(st::fn_006AAC10(st::machine_word_boundary_cast<uint>(pVVar3->field_0030 * pVVar3->field_0034 * 2)));
     pVVar3->field_0050 = puVar8;
     ppvVar16 = pVVar3->field_003C;
     iVar14 = 4;
@@ -143,17 +143,17 @@ LAB_00557b44:
 void __thiscall st::fn_00557C90(VisibleClassTy *this)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   ST3DSMAPContext *pSVar3;
   VisibleClassTy *this_00;
   int iVar4;
   LPSTR pCVar4;
-  undefined4 *puVar5;
-  undefined4 *puVar6;
+  uint *puVar5;
+  uint *puVar6;
   VisibleClassTy_field_0110Element *element_0110;
   int iVar8;
   VisibleClassTy_field_0110DArray *pVVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   int iVar11;
   uint uVar12;
   bool bVar13;
@@ -374,7 +374,7 @@ byte * __thiscall st::fn_005582A0(VisibleClassTy *this,uint *param_1)
 LAB_0055832e:
   uVar9 = iVar5 + local_18 + 0x81 + local_10;
   *param_1 = uVar9;
-  local_8 = st::pointer_boundary_cast<AnonShape_005582A0_F54946B9 *>(st::fn_006AAC10(uVar9));
+  local_8 = static_cast<AnonShape_005582A0_F54946B9 *>(st::fn_006AAC10(uVar9));
   *(undefined4 *)local_8 = 0x50;
   *(undefined4 *)&local_8->field_0x4 = 0xff;
   *(undefined4 *)&local_8->field_0x8 = 2;
@@ -391,7 +391,7 @@ LAB_0055832e:
   local_8->field_0034 = (uint)DAT_0080874d;
   local_8->field_0038 = local_10;
   local_8->field_003C = local_18;
-  local_8->field_0048 = *(undefined4 *)pVVar2->field_00FC;
+  local_8->field_0048 = *STField<undefined4 *>(pVVar2,0xFC);
   local_8->field_004C = *(undefined4 *)(pVVar2->field_00FC + 4);
   if (pVVar2->field_0114 != 0) {
     local_1c = pVVar2->field_003C;
@@ -492,7 +492,7 @@ void __thiscall st::fn_005585F0(Visible *this,ushort *param_1)
       local_10 = 4;
       local_8 = (uint *)(param_1 + 0x40);
       do {
-        puVar4 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(uVar3));
+        puVar4 = static_cast<uint *>(st::fn_006AAC10(uVar3));
         *local_c = puVar4;
         uVar7 = pVVar2->field_002C * pVVar2->field_0028;
         local_c = local_c + 1;

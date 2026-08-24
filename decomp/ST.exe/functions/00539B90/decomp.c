@@ -30,19 +30,19 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
   int *piVar10;
   UINT resourceId;
   int iVar11;
-  undefined4 uVar12;
-  undefined4 uVar13;
+  uint uVar12;
+  uint uVar13;
   short sVar14;
   ushort uVar15;
   uint uVar16;
   byte bVar17;
-  undefined4 uVar18;
+  uint uVar18;
   char *pcVar19;
   int iVar20;
   int *piVar21;
-  undefined4 uVar22;
-  undefined4 *puVar23;
-  undefined4 uVar24;
+  uint uVar22;
+  uint *puVar23;
+  uint uVar24;
   undefined4 local_6b8 [140];
   int local_488 [6];
   undefined4 local_470;
@@ -92,7 +92,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
   if (iVar8 == 0) {
     g_playPanel_008016E4 = local_14;
     /* ST_CALLSITE[00539BF8]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar4 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
+    pcVar4 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     this_00->field_01DD = pcVar4;
     pcVar4->field_0058 = 0;
     pcVar4->field_005C = 0;

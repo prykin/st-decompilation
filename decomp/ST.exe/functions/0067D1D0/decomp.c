@@ -22,7 +22,7 @@ AllocationRecord_0067D1D0 * __cdecl FUN_0067d1d0(AllocationRecord_0067D1D0 *para
   AllocationRecord_00690FC0 *pAVar3;
   AllocationRecord_0067D1D0 *pAVar4;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   AnonShape_0067D1D0_21940C5B *pAVar7;
   uint uVar8;
   bool bVar9;

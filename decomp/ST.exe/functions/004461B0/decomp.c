@@ -15,7 +15,7 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
   int exceptionCode;
   STBoatC *pSVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   uint uVar6;
   uint uVar7;
   DArrayTy *array;

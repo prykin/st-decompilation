@@ -26,7 +26,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
   DWORD *pDVar8;
   int *piVar9;
   int iVar11;
-  undefined4 *puVar10;
+  uint *puVar10;
   int iVar12;
   uint *puVar13;
   int iVar14;
@@ -214,7 +214,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
       local_50 = local_70;
       /* ST_CALLSITE[0059208E]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)this_00->field_000C + 8))(5,this_00->field_0066,0,local_80,0);
+      (**(code **)(*STField<int *>(this_00,0xC) + 8))(5,this_00->field_0066,0,local_80,0);
       iVar14 = this_00->field_00BB[0xc].field_01DC;
       if (*(int *)(iVar14 + 0x2e6) != 0) {
         memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */

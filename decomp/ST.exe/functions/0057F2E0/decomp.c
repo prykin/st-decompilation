@@ -10,7 +10,7 @@ undefined4 * __thiscall STDcResourcC::sub_0057F2E0(STDcResourcC *this,int param_
 
 {
   char cVar1;
-  undefined1 uVar2;
+  byte uVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   uint uVar3;

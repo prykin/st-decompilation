@@ -8,7 +8,7 @@ void __fastcall FUN_00567330(int param_1)
   byte bVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar4;
+  uint *puVar4;
   int *piVar5;
   uint uVar6;
   uint uVar7;

@@ -30,8 +30,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
   int iVar14;
   int iVar15;
   byte *pbVar16;
-  undefined1 *puVar17;
-  undefined1 *puVar18;
+  byte *puVar17;
+  byte *puVar18;
   int local_54;
   int local_50;
   int local_4c;

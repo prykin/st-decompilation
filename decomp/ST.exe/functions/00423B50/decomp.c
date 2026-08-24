@@ -12,7 +12,7 @@ undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,DArrayTy *param_1,int par
   uint uVar2;
   int errorCode;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   uint index;
   uint uVar5;
   InternalExceptionFrame local_54;

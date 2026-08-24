@@ -22,7 +22,7 @@ st::fn_004C6BB0(void *this,undefined4 param_1,undefined4 param_2,undefined4 para
   STField<undefined4>(this,0x400) = 0;
   STField<undefined4>(this,0x404) = 0;
   iVar1 = st::fn_00404318
-                    (st::pointer_boundary_cast<AnonReceiver_004167A0 *>(this),STField<short>(this,0x3e0),(short)param_2,(short)param_3);
+                    (static_cast<AnonReceiver_004167A0 *>(this),STField<short>(this,0x3e0),(short)param_2,(short)param_3);
   if (iVar1 == -1) {
     st::fn_006A5E40
               (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bmove.cpp"),0x1c);
@@ -48,7 +48,7 @@ undefined4 __fastcall st::fn_004C6D00(STJellyGunC *param_1)
   int iVar4;
   int local_EAX_244;
   int local_EAX_371;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar3;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
@@ -113,7 +113,7 @@ undefined4 __fastcall st::fn_004C6D00(STJellyGunC *param_1)
       }
       else if (iVar4 == 1) {
         param_1->field_0400 = 1;
-        st::fn_004031E3(param_1,(uint *)local_10,(int *)local_14,local_18);
+        st::fn_004031E3(param_1,(uint *)local_10,local_14,local_18);
         sVar2 = *(short *)&param_1->field_05B0 * 0xc9 + 100;
         if (((local_10[0] == sVar2) &&
             (local_14[0] == (short)(*(short *)&param_1->field_05B4 * 0xc9 + 100))) &&

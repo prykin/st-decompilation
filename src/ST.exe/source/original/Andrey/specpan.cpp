@@ -5,7 +5,11 @@
 #line 4 "decomp/ST.exe/functions/0053D7A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   UPanelTy::PaintBut */
+   UPanelTy::PaintBut
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 st::fn_0053D7A0(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte param_2,char *param_3,
@@ -15,7 +19,7 @@ st::fn_0053D7A0(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte param_2
   AnonNested_0053D7A0_0018_F6872402 *pAVar1;
   UPanelTy *pUVar3;
   int *errorCode;
-  undefined4 uVar4;
+  uint uVar4;
   LPSTR text;
   int iVar5;
   InternalExceptionFrame local_58;
@@ -148,7 +152,11 @@ st::fn_0053D920
 #line 4 "decomp/ST.exe/functions/0053DAF0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   UPanelTy::PaintIBut */
+   UPanelTy::PaintIBut
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 st::fn_0053DAF0(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *param_2,UINT param_3)
@@ -156,16 +164,16 @@ st::fn_0053DAF0(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *param_
 {
   UPanelTy *pUVar2;
   undefined4 *errorCode;
-  undefined4 uVar3;
+  uint uVar3;
   LPSTR text;
   ushort *puVar4;
   char *resourceString;
   uint uVar5;
   byte bVar6;
   int iVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   int iVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   InternalExceptionFrame local_58;
   AnonNested_0053DAF0_0018_BAFC63C8 *local_14;
   UPanelTy *local_10;
@@ -199,13 +207,13 @@ st::fn_0053DAF0(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *param_
     /* ST_CALLSITE[0053DB97]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_c,local_8,'\x01',(byte *)puVar4
           );
-    st::fn_00710A90(g_interSystem_00802A28->field_0024,pUVar2->field_0068,0,local_c,uVar5,
-                     local_14->field_0008,local_14->field_000C);
+    st::fn_00710A90((ccFntTy *)g_interSystem_00802A28->field_0024,pUVar2->field_0068,0,local_c,
+                     uVar5,local_14->field_0008,local_14->field_000C);
     uVar5 = st::fn_00401E88((int)param_1);
     iVar9 = -1;
     iVar7 = -2;
     resourceString = st::fn_006B0140(param_3,g_hINSTANCE_00807618);
-    st::fn_007119C0(g_interSystem_00802A28->field_0024,resourceString,iVar7,iVar9,uVar5);
+    st::fn_007119C0((ccFntTy *)g_interSystem_00802A28->field_0024,resourceString,iVar7,iVar9,uVar5);
     st::fn_006B3640
               ((int *)g_ddxContext_008075A8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,
                pUVar2->field_0044);
@@ -237,7 +245,7 @@ st::fn_0053DCC0(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte param_2
   UPanelTy *pUVar3;
   int iVar6;
   int iVar4;
-  undefined4 uVar7;
+  uint uVar7;
   LPSTR text;
   int iVar5;
   InternalExceptionFrame local_58;
@@ -333,7 +341,7 @@ st::fn_0053DEA0(UPanelTy *this,undefined4 param_1,int param_2,int param_3,int pa
   UPanelTy *pUVar2;
   int iVar3;
   int iVar4;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar5;
   int *piVar6;
   int local_1d0 [4];
@@ -383,7 +391,7 @@ st::fn_0053DEA0(UPanelTy *this,undefined4 param_1,int param_2,int param_3,int pa
     local_1d0[1] = param_1;
     local_1d0[0] = param_2;
     if (param_6 != (LPSTR)0x0) {
-      text = st::pointer_boundary_cast<char *>(&local_10->field_006C);
+      text = (char *)&local_10->field_006C;
       /* ST_CALLSITE[0053DF17]: CALL dword ptr [0x0085bde8] */
       st::external_00000080(text,st::mutable_c_string("%s0"),param_6);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_5,text,nullptr,1);
@@ -437,7 +445,7 @@ st::fn_0053DEA0(UPanelTy *this,undefined4 param_1,int param_2,int param_3,int pa
     }
     /* ST_CALLSITE[0053E0B9]: CALL dword ptr [EAX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)pUVar2->field_000C + 8))(2,&local_c,0,local_1d0,0);
+    (**(code **)(*STField<int *>(pUVar2,0xC) + 8))(2,&local_c,0,local_1d0,0);
     g_currentExceptionFrame = local_54.previous;
     return local_c;
   }
@@ -465,7 +473,7 @@ st::fn_0053E1C0(UPanelTy *this,byte param_1,byte param_2,int param_3,int param_4
   byte bVar2;
   int iVar3;
   int iVar5;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar6;
   uint *puVar7;
@@ -539,7 +547,7 @@ st::fn_0053E1C0(UPanelTy *this,byte param_1,byte param_2,int param_3,int param_4
     local_3c = local_5c;
     /* ST_CALLSITE[0053E30F]: CALL dword ptr [EDX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)local_c->field_000C + 8))(5,&local_8,0,local_6c,0);
+    (**(code **)(*STField<int *>(local_c,0xC) + 8))(5,&local_8,0,local_6c,0);
     g_currentExceptionFrame = local_b0.previous;
     return local_8;
   }
@@ -581,19 +589,19 @@ st::fn_0053E3F0
   int iVar5;
   ushort *puVar5;
   ccFntTy *pcVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   char *resourceString;
   LPSTR pCVar8;
   uint uVar9;
   uint uVar10;
-  undefined4 uVar11;
-  undefined4 uVar12;
-  undefined4 uVar13;
-  undefined4 uVar14;
-  undefined4 uVar15;
+  uint uVar11;
+  uint uVar12;
+  uint uVar13;
+  uint uVar14;
+  uint uVar15;
   int iVar16;
-  undefined4 uVar17;
-  undefined4 uVar18;
+  uint uVar17;
+  uint uVar18;
   InternalExceptionFrame local_4c;
   SpecPanelTy *local_8;
 
@@ -607,7 +615,7 @@ st::fn_0053E3F0
     puVar5 = st::fn_006F1CE0(g_cMf32_00806790,1,text,nullptr,1);
     pSVar4->field_0185 = puVar5;
     /* ST_CALLSITE[0053E469]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar6 = (ccFntTy *)st::fn_0070DF00(0x19d,g_interSystem_00802A28->field_0028);
+    pcVar6 = (ccFntTy *)st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     pSVar4->field_0189 = pcVar6;
     pcVar6->field_0058 = 0;
     pcVar6->field_005C = 0;
@@ -645,8 +653,7 @@ st::fn_0053E3F0
     uVar11 = 0xbfff;
     pCVar8 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
     /* ST_CALLSITE[0053E552]: CALL dword ptr [EDI + 0x4] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar11 = (*(code *)pAVar2->field_0004)
+    uVar11 = (*STField<code *>(pAVar2,0x4))
                        (0,1,param_7,param_8,0,1,1,pCVar8,uVar11,uVar12,uVar13,uVar14,uVar15,uVar17,
                         uVar18);
     pSVar4->field_017C = uVar11;
@@ -761,8 +768,7 @@ void __thiscall st::fn_0053E760(SpecPanelTy *this,int param_1)
       }
     }
     /* ST_CALLSITE[0053E841]: CALL dword ptr [EDX + 0x18] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (*(code *)pSVar3->field_0000->field_0018)(0);
+    (*STField<code *>(pSVar3->field_0000,0x0018))(0);
   }
   else {
     if (SVar1 == CASE_2) {
@@ -806,7 +812,7 @@ undefined4 __thiscall st::fn_0053E920(SpecPanelTy *this,char param_1)
   SpecPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar4;
   InternalExceptionFrame local_4c;
   SpecPanelTy *local_8;
@@ -830,8 +836,7 @@ undefined4 __thiscall st::fn_0053E920(SpecPanelTy *this,char param_1)
     }
     else {
       /* ST_CALLSITE[0053E97A]: CALL dword ptr [EDX + 0x20] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)local_8->field_0000->field_0020)();
+      (*STField<code *>(local_8->field_0000,0x0020))();
       iVar4 = 1;
     }
     /* ST_CALLSITE[0053E9A7]: CALL 0x0040438b; direct=0040438B SpecPanelTy::SwitchPanel */
@@ -923,9 +928,9 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
   int iVar6;
   LPSTR pCVar7;
   int iVar5;
-  undefined4 uVar8;
-  undefined4 uVar9;
-  undefined4 uVar10;
+  uint uVar8;
+  uint uVar9;
+  uint uVar10;
   InternalExceptionFrame local_4c;
   SpecPanelTy *local_8;
 
@@ -956,8 +961,7 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
   if (SVar1 < MESS_SHARED_C000) {
     if (SVar1 == MESS_SHARED_BFFF) {
       /* ST_CALLSITE[0053ECF4]: CALL dword ptr [EDX + 0x1c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)this_00->field_0000->field_001C)(0);
+      (*STField<code *>(this_00->field_0000,0x001C))(0);
       st::fn_00405E2F(0xae);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
@@ -972,8 +976,7 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
           this_00->field_0044 = iVar6;
           this_00->field_0172 = CASE_1;
           /* ST_CALLSITE[0053ECBF]: CALL dword ptr [EDX + 0x18] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (*(code *)this_00->field_0000->field_0018)(1);
+          (*STField<code *>(this_00->field_0000,0x0018))(1);
         }
         st::fn_006B3640
                   ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
@@ -1011,8 +1014,7 @@ int __thiscall st::fn_0053EB70(SpecPanelTy *this,STMessage *message)
     uVar8 = 0x274e;
     pCVar7 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
     /* ST_CALLSITE[0053ED3C]: CALL dword ptr [EBX + 0x10] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (*(code *)pAVar2->field_0010)(message,pCVar7,uVar8,uVar9,uVar10);
+    (*STField<code *>(pAVar2,0x10))(message,pCVar7,uVar8,uVar9,uVar10);
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;
@@ -1093,16 +1095,16 @@ st::fn_0053EF20
   LPSTR pCVar4;
   ushort *puVar5;
   char *resourceString;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar2;
   int iVar10;
   uint uVar6;
-  undefined1 *puVar7;
+  byte *puVar7;
   uint uVar8;
   byte bVar9;
   int iVar11;
   int iVar12;
-  undefined4 *puVar13;
+  uint *puVar13;
   InternalExceptionFrame local_58;
   ProdPanelTy *local_14;
   int local_10;
@@ -1115,7 +1117,7 @@ st::fn_0053EF20
   local_EAX_36 = st::fn_0072D7F0(local_58.jumpBuffer,0);
   if (local_EAX_36 == 0) {
     /* ST_CALLSITE[0053EF64]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar3 = (ccFntTy *)st::fn_0070DF00(0x19d,g_interSystem_00802A28->field_0028);
+    pcVar3 = (ccFntTy *)st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     this_00 = local_14;
     puVar13 = nullptr;
     iVar12 = 0;
@@ -1295,8 +1297,7 @@ void __thiscall st::fn_0053F3A0(ProdPanelTy *this,int param_1)
       return;
     }
     /* ST_CALLSITE[0053F448]: CALL dword ptr [EDX + 0x18] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (*(code *)local_8->field_0000->field_0018)(0);
+    (*STField<code *>(local_8->field_0000,0x0018))(0);
   }
   else {
     if (PVar1 == CASE_2) {
@@ -1340,7 +1341,7 @@ undefined4 __thiscall st::fn_0053F650(ProdPanelTy *this,char param_1)
   ProdPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar4;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
@@ -1364,8 +1365,7 @@ undefined4 __thiscall st::fn_0053F650(ProdPanelTy *this,char param_1)
     }
     else {
       /* ST_CALLSITE[0053F6AA]: CALL dword ptr [EDX + 0x1c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)local_8->field_0000->field_001C)();
+      (*STField<code *>(local_8->field_0000,0x001C))();
       iVar4 = 1;
     }
     /* ST_CALLSITE[0053F6D7]: CALL 0x00403b48; direct=00403B48 ProdPanelTy::SwitchPanel */
@@ -1399,7 +1399,7 @@ void __thiscall st::fn_0053F780(ProdPanelTy *this,int param_1)
   ProdPanelTy *this_00;
   short sVar2;
   int iVar5;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar6;
   int *piVar8;
@@ -1427,7 +1427,7 @@ void __thiscall st::fn_0053F780(ProdPanelTy *this,int param_1)
       if (this_00->field_019D != 0) {
         st::fn_006E6080(this_00,2,this_00->field_019D,(undefined4 *)&this_00->field_0x18);
       }
-      piVar8 = st::pointer_boundary_cast<int *>(&this_00->field_01A1);
+      piVar8 = reinterpret_cast<int *>(&this_00->field_01A1);
       iVar6 = 5;
       do {
         if (*piVar8 != 0) {
@@ -1476,7 +1476,7 @@ st::fn_0053F940
   int iVar3;
   int iVar4;
   int *piVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int *piVar7;
   int iVar9;
   int local_42c [6];
@@ -1618,7 +1618,11 @@ st::fn_0053F940
 #line 4 "decomp/ST.exe/functions/0053FCD0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   ProdPanelTy::PaintTab */
+   ProdPanelTy::PaintTab
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 st::fn_0053FCD0(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,code *param_2)
@@ -1627,7 +1631,7 @@ st::fn_0053FCD0(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,code *par
   AnonNested_0053FCD0_0014_03E531EF *pAVar1;
   ProdPanelTy *pPVar3;
   int *piVar4;
-  undefined4 uVar5;
+  uint uVar5;
   LPSTR pCVar6;
   int iVar7;
   int iVar8;
@@ -1707,7 +1711,7 @@ st::fn_0053FEE0(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,code *par
   AnonNested_0053FEE0_0014_154E5252 *pAVar1;
   ProdPanelTy *pPVar3;
   int *piVar4;
-  undefined4 uVar5;
+  uint uVar5;
   LPSTR pCVar6;
   int iVar7;
   int iVar8;
@@ -1838,8 +1842,7 @@ int __thiscall st::fn_005400F0(ProdPanelTy *this,STMessage *message)
           this_00->field_0044 = iVar5;
           this_00->field_0172 = CASE_1;
           /* ST_CALLSITE[00540236]: CALL dword ptr [EDX + 0x18] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (*(code *)this_00->field_0000->field_0018)(1);
+          (*STField<code *>(this_00->field_0000,0x0018))(1);
         }
         st::fn_006B3640
                   ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,

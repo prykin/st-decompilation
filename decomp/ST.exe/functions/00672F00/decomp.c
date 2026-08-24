@@ -12,7 +12,7 @@ int FUN_00672f00(void)
 
 {
   char cVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   int *piVar3;
   uint uVar4;
   uint uVar5;
@@ -26,8 +26,7 @@ int FUN_00672f00(void)
   piVar3 = DAT_00811958;
   if (DAT_00857560 != 0) {
     /* ST_CALLSITE[00672F17]: CALL dword ptr [EAX + 0x4] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (*(code *)PTR_0081194c->field_0004)(DAT_00857560);
+    (*STField<code *>(PTR_0081194c,0x4))(DAT_00857560);
     DAT_00857560 = 0;
   }
   FUN_006b98c0((int *)&DAT_00811958,piVar3);

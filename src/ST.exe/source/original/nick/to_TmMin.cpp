@@ -88,7 +88,7 @@ undefined4 __thiscall st::fn_0063DEF0(STTmMineC *this,int param_1)
   int errorCode;
   ushort *puVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   STTmMineC *local_c;
@@ -159,7 +159,7 @@ undefined4 __thiscall st::fn_0063E160(STTmMineC *this,uint param_1,int param_2)
   int errorCode;
   ushort *puVar6;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   ST3DSMAPContext **ppSVar9;
   InternalExceptionFrame local_58;
   undefined4 local_14;
@@ -247,7 +247,7 @@ undefined4 __thiscall st::fn_0063F3D0(STTmMineC *this,int param_1)
   int errorCode;
   ushort *puVar4;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   STTmMineC *local_c;
@@ -287,7 +287,7 @@ undefined4 __thiscall st::fn_0063F3D0(STTmMineC *this,int param_1)
       pSVar3->field_034B = puVar4;
       pSVar3->field_034F = 0;
     }
-    puVar1 = st::pointer_boundary_cast<uint *>(&pSVar3->field_0363);
+    puVar1 = (uint *)&pSVar3->field_0363;
     if ((pSVar3->field_0363 == 0xffffffff) && (param_1 != 0)) {
       puVar4 = st::fn_00709AF0
                          (PTR_00806774,CASE_1D,st::mutable_c_string("expl_vc1"),0xffffffff,0,1,0,

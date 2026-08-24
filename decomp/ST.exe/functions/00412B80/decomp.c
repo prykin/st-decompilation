@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 FUN_00412b80(int param_1,int param_2,int param_3)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=1, ignored=0, unknown=0 */
+
+int FUN_00412b80(int param_1,int param_2,int param_3)
 
 {
   int iVar1;
@@ -44,7 +49,7 @@ undefined4 FUN_00412b80(int param_1,int param_2,int param_3)
                                   *(int *)(iVar7 + 4 + DAT_007f4d48),
                                   *(int *)(iVar7 + 8 + DAT_007f4d48),iVar1 >> 2,iVar2 >> 2,
                                   iVar3 >> 2), iVar5 != 0)) {
-        return 0xfffffffc;
+        return -4;
       }
       uVar6 = local_8 * iVar4 + local_c + DAT_007f4d2c * local_10 ^ 7;
       STBitSet(g_bitset_007F4CFC, uVar6);

@@ -15,7 +15,7 @@ undefined4 __thiscall STColl3C::sub_005FA8B0(STColl3C *this,int *param_1,int *pa
   dword dVar4;
   int iVar5;
   STFishC *this_00;
-  undefined4 uVar6;
+  uint uVar6;
   STFishC *local_14;
   undefined4 local_10;
   short local_a;

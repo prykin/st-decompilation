@@ -14,7 +14,7 @@ PanelTy::PaintLBut(PanelTy *this,AnonShape_00538FC0_B5E96243 *param_1,byte param
   PanelTy *pPVar3;
   int iVar6;
   int local_EAX_145;
-  undefined4 uVar7;
+  uint uVar7;
   LPSTR text;
   int iVar5;
   InternalExceptionFrame local_58;

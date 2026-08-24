@@ -6,14 +6,18 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as PlayPanelTy.
    Evidence: this_call_owners=[PlayPanelTy]; agreed_this_calls=2; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0053A540(PlayPanelTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   byte bVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int *piVar6;
   bool bVar7;
@@ -41,7 +45,7 @@ void __thiscall st::fn_0053A540(PlayPanelTy *this)
   st::fn_006E6080(this,2,this->field_01C5,(undefined4 *)puVar1);
   bVar2 = 0;
   this->field_0028 = 0x20;
-  piVar6 = st::pointer_boundary_cast<int *>(&this->field_01A1);
+  piVar6 = reinterpret_cast<int *>(&this->field_01A1);
   do {
     if (*piVar6 != 0) {
       if ((bVar2 < DAT_00808aaf) && (DAT_00808a8f == '\0')) {

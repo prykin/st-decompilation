@@ -20,8 +20,7 @@ undefined4 __thiscall TLOBaseTy::sub_004B7F90(TLOBaseTy *this,int param_1)
 {
   TLOBaseTy_field_046CState TVar1;
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   uVar3 = 0;
   switch(this->field_0245) {
   case CASE_0:

@@ -20,7 +20,7 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
   int iVar4;
   int local_EAX_155;
   int *piVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   ccFntTy *pcVar7;
   LPSTR pCVar8;
   ushort *local_EAX_643;
@@ -115,21 +115,21 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
   int local_EAX_6804;
   uint uVar13;
   uint uVar14;
-  undefined1 *puVar15;
+  byte *puVar15;
   uint *puVar16;
   ushort **ppuVar17;
-  undefined4 uVar18;
-  undefined4 uVar19;
+  uint uVar18;
+  uint uVar19;
   short sVar20;
   ushort uVar21;
   byte bVar22;
   int iVar23;
   int *piVar24;
   int iVar25;
-  undefined4 uVar26;
-  undefined4 *puVar27;
+  uint uVar26;
+  uint *puVar27;
   short *psVar28;
-  undefined4 uVar29;
+  uint uVar29;
   InternalExceptionFrame local_78;
   int local_34;
   int local_30;
@@ -160,7 +160,7 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
     else {
       iVar4 = (-(uint)((char)_DAT_00807348 != '\x01') & 0x80) + 0x70;
     }
-    piVar24 = st::pointer_boundary_cast<int *>(&local_18->field_0068);
+    piVar24 = reinterpret_cast<int *>(&local_18->field_0068);
     local_18->field_0090 = iVar4;
     local_18->field_008C = iVar4;
     local_10 = (AnonShape_00710790_4CBB90D4 *)&DAT_0000000b;
@@ -168,7 +168,7 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
       iVar4 = 1;
       puVar9 = PTR_0080679c + 0x14;
       local_8 = piVar24;
-      local_EAX_155 = st::fn_006B4FE0((int)PTR_0080679c);
+      local_EAX_155 = st::fn_006B4FE0(PTR_0080679c);
       piVar5 = (int *)st::fn_006B50C0(*piVar24,piVar24[0x16],(uint)PTR_0080679c[7],local_EAX_155,
                                    (undefined4 *)puVar9,iVar4);
       piVar24[0x46] = (int)piVar5;
@@ -241,7 +241,7 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
     st::fn_00710A90(this_00->field_01CC,(int)local_EAX_643,0,0,0,0,0);
     iVar4 = 1;
     puVar9 = PTR_0080679c + 0x14;
-    uVar4 = st::fn_006B4FE0((int)PTR_0080679c);
+    uVar4 = st::fn_006B4FE0(PTR_0080679c);
     puVar9 = (ushort *)
              st::fn_006B50C0(this_00->field_0104,this_00->field_0108,(uint)PTR_0080679c[7],uVar4,
                           (undefined4 *)puVar9,iVar4);
@@ -289,7 +289,7 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
     this_00->field_0296 = local_EAX_1028;
     local_EAX_1062 =
          st::fn_00709AF0
-                   (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c20a0),0xffffffff,0,1,0,nullptr);
+                   (PTR_00806794,CASE_B,(char *)&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
     this_00->field_029A = local_EAX_1062;
     if (DAT_0080874e != '\x03') {
       puVar6 = nullptr;
@@ -341,7 +341,7 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
     this_00->field_02BE = local_EAX_1307;
     local_EAX_1342 =
          st::fn_00709AF0
-                   (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c1910),0xffffffff,0,1,0,nullptr);
+                   (PTR_00806794,CASE_B,(char *)&DAT_007c1910,0xffffffff,0,1,0,nullptr);
     this_00->field_02C2 = local_EAX_1342;
     local_EAX_1374 =
          st::fn_00709AF0
@@ -363,11 +363,11 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
     this_00->field_02CE = local_EAX_1450;
     local_EAX_1485 =
          st::fn_00709AF0
-                   (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c204c),0xffffffff,0,1,0,nullptr);
+                   (PTR_00806794,CASE_B,(char *)&DAT_007c204c,0xffffffff,0,1,0,nullptr);
     this_00->field_02D2 = local_EAX_1485;
     local_EAX_1516 =
          st::fn_00709AF0
-                   (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c2048),0xffffffff,0,1,0,nullptr);
+                   (PTR_00806794,CASE_B,(char *)&DAT_007c2048,0xffffffff,0,1,0,nullptr);
     this_00->field_02D6 = local_EAX_1516;
     puVar6 = nullptr;
     iVar23 = 0;
@@ -490,7 +490,7 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
       iVar4 = 1;
       puVar9 = PTR_0080679c + 0x14;
       local_1c = pcVar11;
-      local_EAX_2409 = st::fn_006B4FE0((int)PTR_0080679c);
+      local_EAX_2409 = st::fn_006B4FE0(PTR_0080679c);
       uVar14 = (uint)PTR_0080679c[7];
       iVar3 = st::fn_007111C0(this_00->field_01B8,pcVar11);
       iVar22 = st::fn_00711110(this_00->field_01B8,pcVar11);
@@ -732,7 +732,7 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
         local_EAX_4218 =
              st::fn_00709AF0
                        (PTR_00806794,CASE_1F,pcVar12,uVar14,bVar2,iVar4,iVar23,puVar27);
-        puVar6[-0x12] = st::machine_word_boundary_cast<undefined4>(local_EAX_4218);
+        puVar6[-0x12] = st::machine_word_boundary_cast<uint>(local_EAX_4218);
         puVar15[-0xc] = 0;
         *puVar15 = 1;
         local_8 = (int *)((int)local_8 + 0xb);
@@ -768,7 +768,7 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
     st::fn_004034FE(this_00);
     st::fn_006B1A50(g_ddxContext_008075A8,3,nullptr,&this_00->field_011C);
     iVar4 = this_00->field_011C;
-    piVar24 = st::pointer_boundary_cast<int *>(&this_00->field_003C);
+    piVar24 = reinterpret_cast<int *>(&this_00->field_003C);
     this_00->field_0040 = iVar4;
     *piVar24 = iVar4;
     if (DAT_0080874e == '\x03') {
@@ -1107,7 +1107,7 @@ void __thiscall st::fn_004F5690(CPanelTy *this)
 void __thiscall st::fn_004F7800(CPanelTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   CPanelTy *this_00;
   int iVar3;
   int iVar4;
@@ -1266,7 +1266,7 @@ void __thiscall st::fn_004F7800(CPanelTy *this)
     } while (iVar5 != 0);
     if ((g_sT3DSMAPContext_00807598 != nullptr) &&
        (this_00->field_0DB3 != nullptr)) {
-      st::fn_006E6580(g_sT3DSMAPContext_00807598,st::pointer_boundary_cast<int *>(this_00->field_0DB3));
+      st::fn_006E6580(g_sT3DSMAPContext_00807598,static_cast<int *>(this_00->field_0DB3));
     }
     this_00->field_0DB3 = nullptr;
     if (g_sT3DSMAPContext_00807598 != nullptr) {
@@ -1357,7 +1357,7 @@ void __thiscall st::fn_004F7800(CPanelTy *this)
       this_00->field_01C4 = nullptr;
     }
     if (this_00->field_01C0 != nullptr) {
-      st::fn_00710560(st::pointer_boundary_cast<uint *>(this_00->field_01C0));
+      st::fn_00710560(static_cast<uint *>(this_00->field_01C0));
       this_00->field_01C0 = nullptr;
     }
     if (this_00->field_01BC != nullptr) {
@@ -1429,7 +1429,7 @@ void __thiscall st::fn_004F80A0(CPanelTy *this)
   CPanelTy *this_00;
   byte bVar4;
   int iVar5;
-  undefined1 *puVar6;
+  byte *puVar6;
   char *text;
   ushort *local_EAX_411;
   ushort *puVar7;
@@ -1446,17 +1446,17 @@ void __thiscall st::fn_004F80A0(CPanelTy *this)
   uint uVar15;
   cMf32 *pcVar16;
   int iVar17;
-  undefined4 *puVar18;
+  uint *puVar18;
   InternalExceptionFrame local_74;
   undefined4 local_30;
   undefined4 local_2c;
   uint local_28;
   CPanelTy *local_24;
-  undefined1 *local_20;
+  byte *local_20;
   int *local_1c;
   byte *local_18;
-  undefined1 *local_14;
-  undefined1 *local_10;
+  byte *local_14;
+  byte *local_10;
   uint local_c;
   byte local_5;
 
@@ -1649,7 +1649,7 @@ joined_r0x004f81d1:
   if (local_5 != 0) {
     local_18 = &this_00->field_0D3B;
     local_20 = &this_00->field_0xc87;
-    local_1c = st::pointer_boundary_cast<int *>(&this_00->field_0D53);
+    local_1c = reinterpret_cast<int *>(&this_00->field_0D53);
     do {
       local_c = local_c & 0xffffff00;
       local_14 = local_20;
@@ -2035,7 +2035,7 @@ void __thiscall st::fn_004F92B0(CPanelTy *this,int *param_1,undefined4 param_2)
   int errorCode;
   uint *puVar4;
   DArrayTy *pDVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   int iVar7;
   uint uVar8;
   InternalExceptionFrame local_50;
@@ -2210,7 +2210,7 @@ void __thiscall st::fn_004F96A0(CPanelTy *this)
   int iVar9;
   uint uVar10;
   uint uVar11;
-  undefined1 *puVar12;
+  byte *puVar12;
   byte bVar13;
   byte bVar14;
   short *psVar15;
@@ -2449,7 +2449,7 @@ void __thiscall st::fn_004F9CD0(CPanelTy *this,char *param_1)
     if (g_cMf32_00806758 != nullptr) {
       pDVar4 = (DArrayTy *)st::fn_00715050(g_cMf32_00806758,param_1,0);
       if (pDVar4 != nullptr) {
-        st::fn_0072E340(st::pointer_boundary_cast<char *>(&DAT_0080c4d7),param_1,0x1f);
+        st::fn_0072E340((char *)&DAT_0080c4d7,param_1,0x1f);
         pCVar3 = local_8;
         DAT_0080c4f6 = 0;
         if (local_8->field_024B != nullptr) {
@@ -2514,11 +2514,11 @@ void __thiscall st::fn_004F9ED0(CPanelTy *this)
   char *pcVar4;
   ushort *puVar5;
   int iVar6;
-  undefined1 *puVar7;
-  undefined4 *puVar8;
+  byte *puVar7;
+  uint *puVar8;
   uint uVar9;
   byte bVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
   InternalExceptionFrame local_54;
   CPanelTy *local_10;
   int local_c;
@@ -2606,7 +2606,7 @@ void __thiscall st::fn_004F9ED0(CPanelTy *this)
               pcVar4 = st::fn_00403607(nullptr,0);
               puVar5 = st::fn_00709AF0
                                  (PTR_00806794,CASE_1F,pcVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
-              puVar8[-3] = st::machine_word_boundary_cast<undefined4>(puVar5);
+              puVar8[-3] = st::machine_word_boundary_cast<uint>(puVar5);
               puVar7[-2] = 0;
               *puVar7 = 4;
               *puVar8 = this_00->field_0038;
@@ -2628,7 +2628,7 @@ void __thiscall st::fn_004F9ED0(CPanelTy *this)
                 pcVar4 = st::fn_00403607(nullptr,0);
                 puVar5 = st::fn_00709AF0
                                    (PTR_00806794,CASE_1F,pcVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
-                puVar8[-0x12] = st::machine_word_boundary_cast<undefined4>(puVar5);
+                puVar8[-0x12] = st::machine_word_boundary_cast<uint>(puVar5);
                 puVar7[-0xc] = 0;
                 *puVar7 = 4;
                 *puVar8 = this_00->field_0038;
@@ -2729,7 +2729,7 @@ undefined4 __thiscall st::fn_004FA400(CPanelTy *this,int param_1)
   CPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar4;
   uint *puVar5;
   InternalExceptionFrame local_4c;
@@ -2988,21 +2988,21 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
   ushort **ppuVar15;
   FrmPanelTy *pFVar16;
   short sVar17;
-  undefined1 *puVar18;
+  byte *puVar18;
   int *piVar19;
   bool *pbVar20;
   bool local_ZF_8552;
   bool bVar14;
   uint *puVar21;
   uint uVar22;
-  undefined4 *puVar23;
+  uint *puVar23;
   ushort *puVar24;
   char *pcVar25;
-  undefined4 uVar26;
+  uint uVar26;
   char cVar27;
   UINT UVar28;
   int iVar29;
-  undefined4 *puVar30;
+  uint *puVar30;
   code *pcVar31;
   STFnType_callback_004F3540_p5_e7706eff * pcVar31_callback_1536d7ef;
   STFnType_callback_004F42A0_p6_b660cf6b * pcVar31_callback_802a15be;
@@ -3026,8 +3026,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
   undefined4 local_14;
   bool local_d;
   int *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_44 = this;
   DVar4 = st::fn_006E51B0(this->field_0010);
   this->field_0038 = DVar4;
@@ -3054,7 +3053,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
     case 0xb182:
     case 0xb183:
     case 0xb184:
-      piVar19 = st::pointer_boundary_cast<int *>((message->arg1).ptr);
+      piVar19 = static_cast<int *>((message->arg1).ptr);
       iVar6 = DAT_00806734;
       if (local_44->field_0138 != 0) {
         iVar6 = local_44->field_00A8;
@@ -3136,7 +3135,7 @@ int __thiscall st::fn_004FB060(CPanelTy *this,STMessage *message)
     case 0xb1a2:
     case 0xb1a3:
     case 0xb1a4:
-      piVar19 = st::pointer_boundary_cast<int *>((message->arg1).ptr);
+      piVar19 = static_cast<int *>((message->arg1).ptr);
       uVar7 = st::fn_00405259(local_44,(char)SVar1 + 0x61);
       iVar6 = DAT_00806734;
       if (this_00->field_0138 != 0) {
@@ -3356,7 +3355,7 @@ LAB_004fd533:
     case 0xb21c:
       if (local_44->field_0BF5 != CASE_6D) break;
       local_c = (int *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(1));
-      piVar19 = st::pointer_boundary_cast<int *>((message->arg1).ptr);
+      piVar19 = static_cast<int *>((message->arg1).ptr);
       switch((message->arg0).u32) {
       case 0:
         local_c = (int *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(1));
@@ -3692,9 +3691,9 @@ LAB_004fbe73:
         case 2:
         case 6:
           if (DAT_0080874e != '\x03') {
-            local_1c = st::pointer_boundary_cast<char *>(&local_44->field_0B63);
+            local_1c = (char *)&local_44->field_0B63;
             if ((short)local_8 != 2) {
-              local_1c = st::pointer_boundary_cast<char *>(&local_44->field_0C51);
+              local_1c = (char *)&local_44->field_0C51;
             }
             if ((*local_1c != '\0') &&
                ((((short)local_8 != 2 ||
@@ -3758,9 +3757,9 @@ LAB_004fbe73:
         case 3:
         case 5:
           if (DAT_0080874e == '\x03') {
-            local_1c = st::pointer_boundary_cast<char *>(&local_44->field_0B63);
+            local_1c = (char *)&local_44->field_0B63;
             if ((short)local_8 != 3) {
-              local_1c = st::pointer_boundary_cast<char *>(&local_44->field_0C51);
+              local_1c = (char *)&local_44->field_0C51;
             }
             bVar13 = 0xff;
             local_c = (int *)0xff;
@@ -3862,8 +3861,7 @@ LAB_004fbe73:
               local_8 = iVar12;
               if (-1 < (short)local_8) {
                 /* ST_CALLSITE[004FC522]: CALL 0x00401875; direct=00401875 STAllPlayersC::SetActivePanel */
-                st::fn_00401875
-                          (g_allPlayers_007FA174,(uint *)0x1,(short)local_8 + 1,1);
+                st::fn_00401875(g_allPlayers_007FA174,1,(short)local_8 + 1,1);
               }
             }
           }
@@ -3903,8 +3901,7 @@ LAB_004fbe73:
               local_8 = iVar12;
               if (-1 < (short)local_8) {
                 /* ST_CALLSITE[004FC445]: CALL 0x00401875; direct=00401875 STAllPlayersC::SetActivePanel */
-                st::fn_00401875
-                          (g_allPlayers_007FA174,nullptr,(short)local_8 + 1,1);
+                st::fn_00401875(g_allPlayers_007FA174,0,(short)local_8 + 1,1);
               }
             }
           }
@@ -4115,22 +4112,19 @@ LAB_004fbaa0:
           else {
             if ((bVar13 == 5) && (g_researchPanel_008016E8 != nullptr)) {
               /* ST_CALLSITE[004FB1E3]: CALL dword ptr [EDX + 0x1c] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              (*(code *)g_researchPanel_008016E8->field_0000->field_001C)();
+              (*STField<code *>(g_researchPanel_008016E8->field_0000,0x001C))();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_00;
             }
             if ((bVar13 == 6) && (g_bldBoatPanel_0080167C != nullptr)) {
               /* ST_CALLSITE[004FB1F7]: CALL dword ptr [EAX + 0x1c] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              (*(code *)g_bldBoatPanel_0080167C->field_0000->field_001C)();
+              (*STField<code *>(g_bldBoatPanel_0080167C->field_0000,0x001C))();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_01;
             }
             if ((bVar13 == 7) && (g_bldObjPanel_00801684 != nullptr)) {
               /* ST_CALLSITE[004FB20B]: CALL dword ptr [EDX + 0x1c] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              (*(code *)g_bldObjPanel_00801684->field_0000->field_001C)();
+              (*STField<code *>(g_bldObjPanel_00801684->field_0000,0x001C))();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_02;
             }
@@ -4155,8 +4149,7 @@ LAB_004fbaa0:
             }
             if ((bVar13 == 0xb) && (g_bldLabPanel_00801680 != nullptr)) {
               /* ST_CALLSITE[004FB25B]: CALL dword ptr [EDX + 0x1c] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              (*(code *)g_bldLabPanel_00801680->field_0000->field_001C)();
+              (*STField<code *>(g_bldLabPanel_00801680->field_0000,0x001C))();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_06;
             }
@@ -4241,7 +4234,7 @@ LAB_004fbaa0:
               local_EAX_1162 =
                    st::fn_00709AF0
                              (PTR_00806794,CASE_1F,pcVar25,uVar5,bVar13,iVar6,iVar12,puVar30);
-              puVar23[-3] = st::machine_word_boundary_cast<undefined4>(local_EAX_1162);
+              puVar23[-3] = st::machine_word_boundary_cast<uint>(local_EAX_1162);
               puVar18[-2] = (char)*local_EAX_1162;
               *puVar18 = 3;
               *puVar23 = this_00->field_0038;
@@ -4263,7 +4256,7 @@ LAB_004fbaa0:
                 pcVar25 = st::fn_00403607(nullptr,0);
                 puVar6 = st::fn_00709AF0
                                    (PTR_00806794,CASE_1F,pcVar25,uVar5,bVar13,iVar6,iVar12,puVar30);
-                puVar23[-0x12] = st::machine_word_boundary_cast<undefined4>(puVar6);
+                puVar23[-0x12] = st::machine_word_boundary_cast<uint>(puVar6);
                 puVar18[-0xc] = (char)*puVar6;
                 *puVar18 = 3;
                 *puVar23 = this_00->field_0038;

@@ -18,7 +18,7 @@
 int __thiscall STBoatC::BackToDok(STBoatC *this,int *param_1)
 
 {
-  undefined2 uVar2;
+  ushort uVar2;
   int local_EAX_46;
   int iVar4;
   int local_EAX_338;

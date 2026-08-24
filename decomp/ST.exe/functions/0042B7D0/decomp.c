@@ -25,7 +25,7 @@ STAllPlayersC::AddObjsToGroup
   int iVar5;
   int iVar3;
   int iVar4;
-  undefined4 uVar6;
+  uint uVar6;
   uint uVar7;
   uint uVar8;
   InternalExceptionFrame local_90;

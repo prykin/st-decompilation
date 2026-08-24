@@ -11,7 +11,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
   float fVar3;
   uint uVar4;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   float10 fVar8;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0;

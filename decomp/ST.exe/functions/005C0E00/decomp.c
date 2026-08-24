@@ -8,14 +8,14 @@
 void __thiscall MReportTy::SetCtrl(MReportTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   DArrayTy *pDVar2;
   short sVar4;
   int local_EAX_39;
   int iVar5;
   byte *puVar5;
   ushort *puVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar8;
   int iVar9;
   MReportTy *this_00;

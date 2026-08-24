@@ -9,7 +9,7 @@ undefined4 FUN_00749212(int param_1,int *param_2,undefined4 param_3,undefined4 p
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   LPCRITICAL_SECTION lpCriticalSection;
 
   *param_2 = 0;

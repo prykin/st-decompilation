@@ -4,10 +4,9 @@
 void __thiscall FUN_00603470(void *this,AnonShape_00603470_D413D02D *param_1)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   /* ST_CALLSITE[00603479]: CALL dword ptr [EAX + 0x2c] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar3 = (**(code **)(*(int *)this + 0x2c))();

@@ -27,7 +27,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   byte *pbVar12;
   char *pcVar13;
   byte *pbVar14;
-  undefined4 *puVar15;
+  uint *puVar15;
   uint *puVar16;
   byte bVar17;
   undefined4 local_5a8 [256];

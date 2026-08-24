@@ -8,8 +8,8 @@
 void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *param_1)
 
 {
-  undefined4 uVar1;
-  undefined4 *puVar3;
+  uint uVar1;
+  uint *puVar3;
   int iVar3;
   byte *puVar4;
   DArrayTy *pDVar5;

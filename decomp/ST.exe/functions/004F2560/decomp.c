@@ -40,7 +40,7 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
   int local_30;
   int local_2c;
   int local_28;
-  undefined1 *local_24;
+  byte *local_24;
   RecoveredSourceFamily_dibcopy *local_20;
   uint local_1c;
   AnonShape_004F2560_DB98CB49 *local_18;

@@ -12,8 +12,7 @@ BldObjPanelTy * __cdecl CreateBldObjPanel(void)
 
 {
   BldObjPanelTy *this;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   this = (BldObjPanelTy *)FUN_006b04d0(0x296);
   if (this != nullptr) {
     sub_006E5FB0(this);

@@ -10,8 +10,8 @@ void FUN_00703160(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
 {
   uint uVar1;
   uint uVar2;
-  undefined1 *puVar3;
-  undefined1 *puVar4;
+  byte *puVar3;
+  byte *puVar4;
   byte *pbVar5;
   byte *pbVar6;
   byte bVar7;

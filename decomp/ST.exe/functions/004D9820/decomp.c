@@ -8,6 +8,8 @@ undefined4 __fastcall FUN_004d9820(int *param_1)
   short sVar1;
   int iVar3;
   int iVar2;
+  int iVar7_mg3;
+  int iVar7_mg4;
   int iVar6;
   short sVar4;
   short sVar5;
@@ -69,12 +71,12 @@ undefined4 __fastcall FUN_004d9820(int *param_1)
     lVar10 = FUN_006b12cc(0xd);
     iVar9 = (int)lVar10;
     lVar10 = FUN_006b12cc(iVar7);
-    iVar7 = FUN_006b12a8((int)lVar10,iVar9);
-    iVar7 = iVar7 + DAT_007eda8c;
+    iVar7_mg3 = FUN_006b12a8((int)lVar10,iVar9);
+    iVar7 = iVar7_mg3 + DAT_007eda8c;
     iVar9 = thunk_FUN_004d8230();
     lVar10 = FUN_006b12cc(iVar9);
-    iVar7 = FUN_006b12dc((int)lVar10,iVar7);
-    iVar6 = FUN_006b1280(iVar7);
+    iVar7_mg4 = FUN_006b12dc((int)lVar10,iVar7);
+    iVar6 = FUN_006b1280(iVar7_mg4);
   }
   param_1[0x139] = iVar6;
   if ((uint)(param_1[0x139] + param_1[0x135]) <= g_playSystem_00802A38->field_00E4) {

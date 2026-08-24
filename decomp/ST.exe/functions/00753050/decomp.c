@@ -4,7 +4,7 @@
 void FUN_00753050(int param_1,int param_2,char param_3)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   uint uVar2;
   AnonPointee_TLOBaseTy_0607 *pAVar3;
   AnonPointee_TLOBaseTy_0607 *pAVar4;

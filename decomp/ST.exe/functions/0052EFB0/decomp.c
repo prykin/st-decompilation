@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
-   OptPanelTy::PaintDblBut */
+   OptPanelTy::PaintDblBut
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 OptPanelTy::PaintDblBut
@@ -13,7 +17,7 @@ OptPanelTy::PaintDblBut
 {
   OptPanelTy *pOVar2;
   int iVar3;
-  undefined4 uVar3;
+  uint uVar3;
   LPSTR pCVar4;
   uint uVar5;
   char *resourceString;

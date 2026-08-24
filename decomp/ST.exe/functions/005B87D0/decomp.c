@@ -16,25 +16,24 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
   int iVar4;
   char *pcVar5;
   char *pcVar6;
-  undefined4 *puVar7;
-  uint *puVar8;
-  short *psVar9;
+  uint *puVar7;
+  short *psVar8;
   int iVar9;
-  uint uVar10;
-  UINT *pUVar11;
-  MMsgTy_Record_00BC_01FB *pMVar12;
+  uint uVar9;
+  UINT *pUVar10;
+  MMsgTy_Record_00BC_01FB *pMVar11;
+  int iVar13;
   int iVar14;
-  int iVar15;
-  ccFntTy_CreateTypeSSpr_param_4Enum cVar16;
-  uint uVar17;
+  ccFntTy_CreateTypeSSpr_param_4Enum cVar15;
+  uint uVar16;
+  int iVar17;
   int iVar18;
   int iVar19;
-  int iVar20;
-  undefined1 uVar21;
-  undefined4 uVar22;
-  undefined4 uVar23;
-  uint uVar24;
-  uint local_478 [256];
+  byte uVar20;
+  uint uVar21;
+  uint uVar22;
+  uint uVar23;
+  CHAR local_478 [1024];
   InternalExceptionFrame local_78;
   int local_34 [8];
   MMsgTy *local_14;
@@ -60,98 +59,98 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
       else {
         this_00->field_1CD0 = param_1;
         if (param_3 == 0) {
-          uVar23 = 0xffffffff;
+          uVar22 = 0xffffffff;
           local_8 = this_00->field_1D88;
-          uVar22 = 7;
-          iVar20 = -1;
+          uVar21 = 7;
           iVar19 = -1;
-          iVar18 = 1;
-          uVar10 = 0xffffffff;
-          cVar16 = CASE_FFFFFFFE;
-          iVar15 = 0x39;
-          iVar14 = 0x158;
-          puVar8 = (uint *)LoadResourceString(param_1,g_hINSTANCE_00807618);
+          iVar18 = -1;
+          iVar17 = 1;
+          uVar9 = 0xffffffff;
+          cVar15 = CASE_FFFFFFFE;
+          iVar14 = 0x39;
+          iVar13 = 0x158;
+          pcVar5 = LoadResourceString(param_1,g_hINSTANCE_00807618);
           puVar7 = ccFntTy::CreateTypeSSpr
-                             (g_startSystem_0081176C->field_0030,puVar8,iVar14,iVar15,cVar16,uVar10,
-                              iVar18,iVar19,iVar20);
+                             ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar5,iVar13,iVar14,
+                              cVar15,uVar9,iVar17,iVar18,iVar19);
           /* ST_CALLSITE[005B8913]: CALL dword ptr [EDX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (**(code **)(local_8 + 8))(puVar7,uVar22,uVar23);
+          (**(code **)(local_8 + 8))(puVar7,uVar21,uVar22);
           this_00->field_1D90 = 0;
         }
         else {
           pcVar5 = LoadResourceString(param_4,g_hINSTANCE_00807618);
           pcVar6 = LoadResourceString(param_1,g_hINSTANCE_00807618);
           /* ST_CALLSITE[005B887D]: CALL dword ptr [0x0085bde8] */
-          wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar6,pcVar5,param_3);
-          iVar14 = this_00->field_1D88;
-          uVar23 = 0xffffffff;
-          uVar22 = 7;
+          wsprintfA(local_478,"%s\n(%s=%li)",pcVar6,pcVar5,param_3);
+          iVar13 = this_00->field_1D88;
+          uVar22 = 0xffffffff;
+          uVar21 = 7;
           puVar7 = ccFntTy::CreateTypeSSpr
-                             (g_startSystem_0081176C->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
-                              0xffffffff,1,-1,-1);
+                             ((ccFntTy *)g_startSystem_0081176C->field_0030,local_478,0x158,0x39,
+                              CASE_FFFFFFFE,0xffffffff,1,-1,-1);
           /* ST_CALLSITE[005B88BF]: CALL dword ptr [EDI + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (**(code **)(iVar14 + 8))(puVar7,uVar22,uVar23);
+          (**(code **)(iVar13 + 8))(puVar7,uVar21,uVar22);
           this_00->field_1D90 = 0;
         }
       }
       local_8 = local_8 & 0xffffff00;
       if (this_00->field_009A != 0) {
         do {
-          uVar10 = local_8 & 0xff;
-          local_10 = (UINT *)(uVar10 * 0x27 + param_2);
+          uVar9 = local_8 & 0xff;
+          local_10 = (UINT *)(uVar9 * 0x27 + param_2);
           if (*local_10 == 0) {
-            pMVar12 = this_00->array_00BC + uVar10;
-            for (iVar14 = 9; iVar14 != 0; iVar14 = iVar14 + -1) {
-              pMVar12->field_0000 = 0;
-              pMVar12 = (MMsgTy_Record_00BC_01FB *)&pMVar12->field_0x4;
+            pMVar11 = this_00->array_00BC + uVar9;
+            for (iVar13 = 9; iVar13 != 0; iVar13 = iVar13 + -1) {
+              pMVar11->field_0000 = 0;
+              pMVar11 = (MMsgTy_Record_00BC_01FB *)&pMVar11->field_0x4;
             }
-            *(undefined2 *)&pMVar12->field_0000 = 0;
-            *(undefined1 *)((int)&pMVar12->field_0000 + 2) = 0;
+            *(undefined2 *)&pMVar11->field_0000 = 0;
+            *(undefined1 *)((int)&pMVar11->field_0000 + 2) = 0;
           }
           else {
-            uVar24 = 0xffffffff;
-            uVar21 = 7;
-            iVar20 = -1;
+            uVar23 = 0xffffffff;
+            uVar20 = 7;
             iVar19 = -1;
-            iVar18 = 1;
-            uVar17 = 0xffffffff;
-            cVar16 = CASE_FFFFFFFE;
-            iVar15 = 0x1e;
-            iVar14 = 0x7d;
-            pSVar1 = this_00->array_00BC[uVar10].field_00B8.vtable;
-            puVar8 = (uint *)LoadResourceString(*local_10,g_hINSTANCE_00807618);
-            psVar9 = (short *)ccFntTy::CreateTypeSSpr
-                                        (g_startSystem_0081176C->field_0030,puVar8,iVar14,iVar15,
-                                         cVar16,uVar17,iVar18,iVar19,iVar20);
+            iVar18 = -1;
+            iVar17 = 1;
+            uVar16 = 0xffffffff;
+            cVar15 = CASE_FFFFFFFE;
+            iVar14 = 0x1e;
+            iVar13 = 0x7d;
+            pSVar1 = this_00->array_00BC[uVar9].field_00B8.vtable;
+            pcVar5 = LoadResourceString(*local_10,g_hINSTANCE_00807618);
+            psVar8 = (short *)ccFntTy::CreateTypeSSpr
+                                        ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar5,iVar13
+                                         ,iVar14,cVar15,uVar16,iVar17,iVar18,iVar19);
             /* ST_CALLSITE[005B89B1]: CALL dword ptr [ESI + 0x8] */
-            (*pSVar1->SetImagesPtr)(&this_00->array_00BC[uVar10].field_00B8,psVar9,uVar21,uVar24);
-            if ((*local_10 == this_00->array_00BC[uVar10].field_0000) && ((char)local_10[1] == '\0')
-               ) {
-              this_00->array_00BC[uVar10].field_00B8.field_0008 =
-                   this_00->array_00BC[uVar10].field_00B8.field_000C + -3;
-              pUVar11 = local_10;
-              pMVar12 = this_00->array_00BC + uVar10;
-              for (iVar14 = 9; iVar14 != 0; iVar14 = iVar14 + -1) {
-                pMVar12->field_0000 = *pUVar11;
-                pUVar11 = pUVar11 + 1;
-                pMVar12 = (MMsgTy_Record_00BC_01FB *)&pMVar12->field_0x4;
+            (*pSVar1->SetImagesPtr)(&this_00->array_00BC[uVar9].field_00B8,psVar8,uVar20,uVar23);
+            if ((*local_10 == this_00->array_00BC[uVar9].field_0000) && ((char)local_10[1] == '\0'))
+            {
+              this_00->array_00BC[uVar9].field_00B8.field_0008 =
+                   this_00->array_00BC[uVar9].field_00B8.field_000C + -3;
+              pUVar10 = local_10;
+              pMVar11 = this_00->array_00BC + uVar9;
+              for (iVar13 = 9; iVar13 != 0; iVar13 = iVar13 + -1) {
+                pMVar11->field_0000 = *pUVar10;
+                pUVar10 = pUVar10 + 1;
+                pMVar11 = (MMsgTy_Record_00BC_01FB *)&pMVar11->field_0x4;
               }
-              *(short *)&pMVar12->field_0000 = (short)*pUVar11;
-              *(undefined1 *)((int)&pMVar12->field_0000 + 2) = STField<undefined1>(pUVar11,2);
+              *(short *)&pMVar11->field_0000 = (short)*pUVar10;
+              *(undefined1 *)((int)&pMVar11->field_0000 + 2) = STField<undefined1>(pUVar10,2);
             }
             else {
-              this_00->array_00BC[uVar10].field_00B8.field_0008 = 0;
-              pUVar11 = local_10;
-              pMVar12 = this_00->array_00BC + uVar10;
-              for (iVar14 = 9; iVar14 != 0; iVar14 = iVar14 + -1) {
-                pMVar12->field_0000 = *pUVar11;
-                pUVar11 = pUVar11 + 1;
-                pMVar12 = (MMsgTy_Record_00BC_01FB *)&pMVar12->field_0x4;
+              this_00->array_00BC[uVar9].field_00B8.field_0008 = 0;
+              pUVar10 = local_10;
+              pMVar11 = this_00->array_00BC + uVar9;
+              for (iVar13 = 9; iVar13 != 0; iVar13 = iVar13 + -1) {
+                pMVar11->field_0000 = *pUVar10;
+                pUVar10 = pUVar10 + 1;
+                pMVar11 = (MMsgTy_Record_00BC_01FB *)&pMVar11->field_0x4;
               }
-              *(short *)&pMVar12->field_0000 = (short)*pUVar11;
-              *(undefined1 *)((int)&pMVar12->field_0000 + 2) = STField<undefined1>(pUVar11,2);
+              *(short *)&pMVar11->field_0000 = (short)*pUVar10;
+              *(undefined1 *)((int)&pMVar11->field_0000 + 2) = STField<undefined1>(pUVar10,2);
             }
           }
           bVar4 = (char)local_8 + 1;
@@ -162,10 +161,10 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
       local_8 = local_8 & 0xffffff00;
       if (this_00->field_009A != 0) {
         do {
-          uVar10 = local_8 & 0xff;
-          this_00->array_00BC[uVar10].field_0027.field_0044 = this_00->field_0061;
-          this_00->array_00BC[uVar10].field_0027.field_0040 = ((local_c & 0xff) + 1) * 100;
-          if (this_00->array_00BC[uVar10].field_0000 != 0) {
+          uVar9 = local_8 & 0xff;
+          this_00->array_00BC[uVar9].field_0027.field_0044 = this_00->field_0061;
+          this_00->array_00BC[uVar9].field_0027.field_0040 = ((local_c & 0xff) + 1) * 100;
+          if (this_00->array_00BC[uVar9].field_0000 != 0) {
             local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((char)local_c + '\x01'));
           }
           bVar4 = bVar4 + 1;
@@ -179,13 +178,13 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
       this_00->field_1CA8 = 1;
       this_00->field_0065 = 3;
       thunk_FUN_005b6730(this_00,5,'\0',-1);
-      iVar14 = this_00->field_1CAB;
-      if (iVar14 != 0) {
+      iVar13 = this_00->field_1CAB;
+      if (iVar13 != 0) {
         pSVar2 = this_00->field_000C;
         memset(local_34, 0, 0x20); /* compiler bulk-zero initialization */
         local_34[3] = 2;
         local_34[4] = 0x6940;
-        local_34[2] = iVar14;
+        local_34[2] = iVar13;
         /* ST_CALLSITE[005B8B12]: CALL dword ptr [EAX + 0x18] */
         (*pSVar2->vtable->vfunc_18)((short)local_34);
       }

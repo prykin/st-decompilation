@@ -6,7 +6,7 @@ FUN_006a34e0(int *param_1,uint param_2,int param_3,uint param_4,int param_5,int 
             ushort *param_7,undefined *param_8,undefined4 param_9)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   int iVar2;

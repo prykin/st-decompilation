@@ -10,8 +10,7 @@ STGameObjC * __thiscall STGameObjC::STGameObjC(STGameObjC *this)
 
 {
   int iVar1;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   sub_006E60E0(this);
   this->vtable = &STGameObjCVTable;
   this->field_0020 = 0;

@@ -17,7 +17,7 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
   HDC hdc;
   PALETTEENTRY *pPVar2;
   UINT UVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   int iVar6;
   int iVar7;
   uint uVar8;
@@ -50,7 +50,7 @@ void FUN_006c7f90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar8 = *(int *)(param_1 + 2) * (uint)param_1[7] + 0x1f >> 3 & 0x1ffffffc;
     local_c = puVar10;
-    iVar5 = FUN_006b4fe0((int)param_1);
+    iVar5 = FUN_006b4fe0(param_1);
     /* ST_CALLSITE[006C800D]: CALL dword ptr [0x0085be4c] */
     hdc = GetDC((HWND)0x0);
     /* ST_CALLSITE[006C8024]: CALL dword ptr [0x0085ba80] */

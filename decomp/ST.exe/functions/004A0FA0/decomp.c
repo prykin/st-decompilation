@@ -191,8 +191,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this)
   uint local_14;
   DArrayTy *local_10;
   DArrayTy *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_14 = this->field_002D->count;
   local_e8 = 0xffffffff;
   local_c = nullptr;

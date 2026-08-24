@@ -16,10 +16,10 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
   ResearchPanelTy *this_00;
   int iVar3;
   int iVar5;
-  undefined1 *puVar6;
+  byte *puVar6;
   int iVar4;
   int iVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   InternalExceptionFrame local_58;
   uint local_14;
   undefined1 local_10;

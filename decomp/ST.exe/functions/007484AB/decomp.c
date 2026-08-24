@@ -9,8 +9,7 @@ undefined4 __thiscall FUN_007484ab(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   piVar1 = *(int **)(param_1 + 0x9c);
   if (piVar1 == nullptr) {

@@ -12,7 +12,7 @@ STAllPlayersC::AddObjToTmp2
 
 {
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   STGameObjC *this_00;
   char objPtr;
   int *piVar4;

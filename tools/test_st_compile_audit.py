@@ -6,6 +6,7 @@ from st_compile_audit import (
     CompileResult,
     Diagnostic,
     SCHEMA_VERSION,
+    classify_value_domain,
     compare_regression_snapshot,
     regression_snapshot,
 )
@@ -24,12 +25,28 @@ class CompileAuditCommandTests(unittest.TestCase):
 
         command = audit.command(Path("/tmp/source-tree/source/unit.cpp"))
 
-        self.assertEqual(3, SCHEMA_VERSION)
+        self.assertEqual(4, SCHEMA_VERSION)
         self.assertIn("-m32", command)
         self.assertIn("-std=c++17", command)
         self.assertIn("-D_TIME_BITS=64", command)
         self.assertIn("-D_FILE_OFFSET_BITS=64", command)
         self.assertLess(command.index("-m32"), command.index("-fsyntax-only"))
+
+    def test_q057_value_domains_do_not_replace_regression_kind(self):
+        self.assertEqual(
+            "pointer_float",
+            classify_value_domain("C-style cast from 'uint *' to 'float' is not allowed"),
+        )
+        self.assertEqual(
+            "pointer_switch",
+            classify_value_domain(
+                "statement requires expression of integer type ('undefined1 *' invalid)"
+            ),
+        )
+        self.assertEqual(
+            "void_value",
+            classify_value_domain("cannot cast from type 'void' to pointer type 'uint *'"),
+        )
 
 
 class CompileRegressionTests(unittest.TestCase):
@@ -51,7 +68,7 @@ class CompileRegressionTests(unittest.TestCase):
         }
 
     @staticmethod
-    def diagnostic(unit, kind, address="", message="problem"):
+    def diagnostic(unit, kind, address="", message="problem", value_domain=""):
         return Diagnostic(
             translation_unit=unit,
             location=(
@@ -64,6 +81,7 @@ class CompileRegressionTests(unittest.TestCase):
             kind=kind,
             message=message,
             address=address,
+            value_domain_family=value_domain,
         )
 
     def test_gate_rejects_address_family_growth_and_new_unaddressed_error(self):
@@ -105,6 +123,29 @@ class CompileRegressionTests(unittest.TestCase):
         self.assertEqual(
             "passed", compare_regression_snapshot(baseline, improved)["status"]
         )
+
+    def test_gate_ratchets_q057_value_domain_by_address(self):
+        unit = "source/value.cpp"
+        baseline = regression_snapshot(
+            self.summary(), [CompileResult(unit, 0, ())]
+        )
+        current = regression_snapshot(self.summary(), [CompileResult(
+            unit, 1, (self.diagnostic(
+                unit, "other", "00605B60",
+                "statement requires expression of integer type",
+                "pointer_switch",
+            ),)
+        )])
+
+        report = compare_regression_snapshot(baseline, current)
+
+        self.assertEqual("failed", report["status"])
+        self.assertTrue(any(
+            item["kind"] == "address_value_domain_family_increased" and
+            item["address"] == "00605B60" and
+            item["family"] == "pointer_switch"
+            for item in report["regressions"]
+        ))
 
     def test_truncated_baseline_does_not_invent_new_address_families(self):
         unit = "source/large.cpp"

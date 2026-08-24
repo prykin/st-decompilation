@@ -10,8 +10,7 @@ void __thiscall TLOEmbryoTy::sub_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
 
 {
   int iVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   if (((-1 < (int)param_1) &&
       (this->field_0101 = param_1, g_visibleClass_00802A88 != nullptr)) &&
      ((this->field_01D1 & 1) == 0)) {

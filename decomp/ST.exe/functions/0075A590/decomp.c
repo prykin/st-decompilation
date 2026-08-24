@@ -7,10 +7,10 @@
 void FUN_0075a590(AnonShape_0075A180_7E367FD8 *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   int iVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   uint uVar5;
   int *piVar6;
   uint uVar7;

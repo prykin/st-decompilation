@@ -1,3 +1,2 @@
 type_apply	name_apply	repair	protected_override	function_address	expected_function	target_kind	target_ordinal	expected_target_name	expected_target_type	expected_target_source	proposed_name	proposed_type	confidence	evidence_sites	reason
-0	0	1	0	00751BA0	FUN_00751ba0	parameter	1	param_2	pointer:/ushort	DEFAULT		/WinDef.h/DWORD	review	00751BA0 -> 00754360 @ 00751BCB	type_evidence={/WinDef.h/DWORD=1}; name_evidence={}; strong_evidence=0; script_target_repair
-0	0	1	0	00751BF0	FUN_00751bf0	parameter	1	param_2	pointer:/ushort	DEFAULT		/WinDef.h/DWORD	review	00751BF0 -> 00754360 @ 00751C1B	type_evidence={/WinDef.h/DWORD=1}; name_evidence={}; strong_evidence=0; script_target_repair
+0	0	1	0	004E2190	FUN_004e2190	parameter	1	param_1	pointer:/int	DEFAULT		pointer:/STBoatC	review	004E2190 -> 00490CA0 @ 004E21C7	type_evidence={pointer:/STBoatC=1}; name_evidence={}; strong_evidence=0; script_target_repair

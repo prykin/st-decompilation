@@ -9,7 +9,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
 
 {
   ccFntTy *pcVar1;
-  undefined4 uVar2;
+  uint uVar2;
   FSGSTy *this_00;
   int iVar7;
   uint uVar4;
@@ -80,7 +80,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
     }
     iVar8 = 1;
     puVar12 = this_00->field_005D + 0x14;
-    uVar4 = FUN_006b4fe0((int)this_00->field_005D);
+    uVar4 = FUN_006b4fe0(this_00->field_005D);
     local_EAX_163 =
          FUN_006b50c0(0x2c8 - this_00->field_1B4C,0x149,(uint)this_00->field_005D[7],uVar4,
                       (undefined4 *)puVar12,iVar8);

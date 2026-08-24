@@ -10,7 +10,7 @@ undefined4 __thiscall STAllPlayersC::RegisterBlot(STAllPlayersC *this,ushort par
 {
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_4c;
   int local_8;
 

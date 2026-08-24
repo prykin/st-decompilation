@@ -23,9 +23,9 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
   int iVar6;
   LPSTR pCVar7;
   int iVar5;
-  undefined4 uVar8;
-  undefined4 uVar9;
-  undefined4 uVar10;
+  uint uVar8;
+  uint uVar9;
+  uint uVar10;
   InternalExceptionFrame local_4c;
   SpecPanelTy *local_8;
 
@@ -56,8 +56,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
   if (SVar1 < MESS_SHARED_C000) {
     if (SVar1 == MESS_SHARED_BFFF) {
       /* ST_CALLSITE[0053ECF4]: CALL dword ptr [EDX + 0x1c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)this_00->field_0000->field_001C)(0);
+      (*STField<code *>(this_00->field_0000,0x001C))(0);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
@@ -72,8 +71,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
           this_00->field_0044 = iVar6;
           this_00->field_0172 = CASE_1;
           /* ST_CALLSITE[0053ECBF]: CALL dword ptr [EDX + 0x18] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (*(code *)this_00->field_0000->field_0018)(1);
+          (*STField<code *>(this_00->field_0000,0x0018))(1);
         }
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
@@ -111,8 +109,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
     uVar8 = 0x274e;
     pCVar7 = thunk_FUN_00571240("BUT_MEDIUM",0);
     /* ST_CALLSITE[0053ED3C]: CALL dword ptr [EBX + 0x10] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (*(code *)pAVar2->field_0010)(message,pCVar7,uVar8,uVar9,uVar10);
+    (*STField<code *>(pAVar2,0x10))(message,pCVar7,uVar8,uVar9,uVar10);
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;

@@ -9,11 +9,11 @@ void FUN_006ff690(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
                  int param_18,int param_19)
 
 {
-  undefined1 uVar1;
-  undefined1 *puVar2;
+  byte uVar1;
+  byte *puVar2;
   uint uVar3;
   int iVar4;
-  undefined1 uVar5;
+  byte uVar5;
   byte *pbVar6;
   byte bVar7;
   uint uVar8;
@@ -22,11 +22,11 @@ void FUN_006ff690(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   byte *pbVar11;
   byte *pbVar12;
   byte *pbVar13;
-  undefined1 *puVar14;
-  undefined1 *puVar15;
+  byte *puVar14;
+  byte *puVar15;
   uint local_1c;
   int local_18;
-  undefined1 *local_14;
+  byte *local_14;
   byte *local_10;
   byte *local_c;
   ushort *local_8;

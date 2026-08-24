@@ -22,9 +22,9 @@ st::fn_00644410
   int iVar5;
   int iVar6;
   int iVar7;
-  undefined2 uVar9;
+  ushort uVar9;
   int iVar8;
-  undefined4 *puVar10;
+  uint *puVar10;
   short sVar11;
   STWorldObject *this_00;
   int iVar12;
@@ -374,7 +374,7 @@ st::fn_00645F10
   void *pvVar2;
   undefined4 local_60 [5];
   undefined2 local_4c;
-  undefined2 local_4a;
+  short local_4a;
   short local_48;
   ushort local_46;
   ushort local_44;
@@ -389,7 +389,7 @@ st::fn_00645F10
   undefined2 local_2f;
   undefined1 local_c;
   short local_8;
-  undefined2 local_6;
+  short local_6;
 
   pvVar2 = param_1;
   if (param_1 != nullptr) {
@@ -398,7 +398,7 @@ st::fn_00645F10
     local_60[2] = 1;
     local_60[1] = STField<undefined4>(param_1,0x24);
     local_60[0] = 0x28;
-    st::fn_004031E3(param_1,(uint *)((int)&param_1 + 2),(int *)&local_6,&local_8);
+    st::fn_004031E3(param_1,(uint *)((int)&param_1 + 2),&local_6,&local_8);
     local_4c = STPiece<2,2>(param_1);
     local_2f = STField<undefined2>(pvVar2,0x32);
     local_46 = param_2;

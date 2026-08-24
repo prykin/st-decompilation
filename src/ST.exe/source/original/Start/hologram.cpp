@@ -111,11 +111,11 @@ st::fn_005AA880
   uint uVar2;
   int iVar3;
   int iVar2;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   uint uVar9;
   longlong lVar10;
   InternalExceptionFrame local_78;
@@ -278,10 +278,10 @@ st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int par
             int param_5,byte param_6,char param_7,uint param_8)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   HoloTy *this_00;
   int iVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   uint uVar5;
   uint uVar6;
   InternalExceptionFrame local_58;
@@ -443,7 +443,7 @@ undefined4 __thiscall st::fn_005AB0A0(HoloTy *this)
   uint uVar1;
   int iVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   InternalExceptionFrame local_50;
   HoloTy *local_c;
   undefined4 local_8;

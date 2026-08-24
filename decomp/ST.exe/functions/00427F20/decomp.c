@@ -15,7 +15,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
 
 {
   double dVar1;
-  undefined1 *puVar2;
+  byte *puVar2;
   int local_EAX_196;
   int iVar3;
   int local_EAX_311;
@@ -33,7 +33,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   int iVar11;
   int *piVar12;
   int iVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
   longlong lVar15;
   int local_b8;
   int *local_b4;
@@ -49,9 +49,9 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   int local_34;
   int local_30;
   int local_2c;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

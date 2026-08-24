@@ -15,9 +15,9 @@ void __thiscall BldLabPanelTy::sub_004EFE20(BldLabPanelTy *this)
   int iVar4;
   Global_sub_00526BA0_param_1Enum *pGVar5;
   byte *pbVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   byte *puVar8;
-  undefined4 uVar9;
+  uint uVar9;
   int local_14;
   undefined4 *local_c;
   int local_8;

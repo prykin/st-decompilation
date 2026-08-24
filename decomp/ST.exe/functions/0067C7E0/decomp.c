@@ -14,7 +14,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
 {
   char cVar1;
   STMessageId SVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   AiPlrClassTy *this_00;
   int iVar5;
   byte *pbVar5;
@@ -22,6 +22,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   STGameObjC *this_01;
   AiFltClassTy *this_02;
   DArrayTy *pDVar7;
+  int iVar9_mg2;
   int iVar8;
   int iVar9;
   uint uVar10;
@@ -202,10 +203,10 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           }
           if ((AnonShape_005EFAE0_B406B78B *)piVar15[1] != nullptr) {
             local_c = 0;
-            iVar9 = STPlaySystemC::sub_006E62D0
-                              (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)piVar15[1],
-                               &local_c);
-            if ((iVar9 == 0) && (local_c != 0)) {
+            iVar9_mg2 = STPlaySystemC::sub_006E62D0
+                                  (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)piVar15[1],
+                                   &local_c);
+            if ((iVar9_mg2 == 0) && (local_c != 0)) {
               *piVar15 = local_c;
             }
             else {

@@ -15,7 +15,7 @@
 void __thiscall st::fn_0059B820(FSGSTy *this)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
   byte *pbVar3;
   LPCSTR pCVar4;
@@ -222,7 +222,7 @@ switchD_0059b84b_default:
 void __thiscall st::fn_0059BE50(FSGSTy *this)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int iVar2;
 
   uVar1 = this->array_00BC[0xc].field_01DF;
@@ -786,7 +786,7 @@ st::fn_005A39A0
   byte bVar1;
   char cVar2;
   byte *pbVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
   uint uVar6;
   char *pcVar8;

@@ -30,7 +30,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
   int iVar6;
   int iVar7;
   char *pcVar8;
-  undefined1 *puVar9;
+  byte *puVar9;
   int iVar11;
   int local_EAX_282;
   int iVar12;
@@ -54,7 +54,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
   uint uVar22;
   int iVar23;
   int iVar24;
-  undefined4 *puVar25;
+  uint *puVar25;
   uint *puVar26;
   byte *pbVar27;
   uint uVar28;
@@ -98,9 +98,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
   int local_2c;
   int local_28;
   uint local_24;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

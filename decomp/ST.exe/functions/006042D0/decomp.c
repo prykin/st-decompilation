@@ -12,7 +12,7 @@ int __thiscall FUN_006042d0(void *this,STMessageId param_1)
   int iVar1;
   int iVar2;
   STMessage *pSVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   STMessage local_24;
 
   iVar2 = 0;

@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
-   FSGSTy::PrepBkgMess */
+   FSGSTy::PrepBkgMess
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
 
@@ -41,7 +45,7 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
     }
     iVar7 = 1;
     puVar3 = pFVar2->field_005D + 0x14;
-    uVar4 = FUN_006b4fe0((int)pFVar2->field_005D);
+    uVar4 = FUN_006b4fe0(pFVar2->field_005D);
     puVar3 = (ushort *)
              FUN_006b50c0(local_c,local_8,(uint)pFVar2->field_005D[7],uVar4,(undefined4 *)puVar3,
                           iVar7);

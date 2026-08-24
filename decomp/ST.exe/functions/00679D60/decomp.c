@@ -7,7 +7,7 @@ int __thiscall FUN_00679d60(void *this,byte *param_1,byte *param_2)
   byte bVar1;
   uint uVar2;
   void *this_00;
-  undefined4 *puVar3;
+  uint *puVar3;
   byte *pbVar4;
   int iVar6;
   int iVar5;

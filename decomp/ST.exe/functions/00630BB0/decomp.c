@@ -14,12 +14,15 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 00631190 -> 00630BB0 @ 006311CA; STManRuinC::FUN_00631190 parameter param_7 */
 
 void __thiscall
 STManRuinC::sub_00630BB0
           (STManRuinC *this,short param_1,short param_2,short param_3,undefined4 param_4,int param_5
-          ,undefined4 param_6)
+          ,int param_6)
 
 {
 

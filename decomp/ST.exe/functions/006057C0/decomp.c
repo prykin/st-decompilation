@@ -6,7 +6,7 @@
 void __fastcall FUN_006057c0(STExplosionC *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   uint uVar2;
   short sVar3;
   VisibleClassTy *pVVar4;

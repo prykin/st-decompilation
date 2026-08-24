@@ -5,7 +5,7 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
 
 {
   uint index;
-  undefined1 uVar1;
+  byte uVar1;
   DArrayTy *pDVar4;
   int local_EAX_178;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -22,12 +22,12 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
   int local_EAX_707;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_02;
-  undefined1 *puVar8;
+  byte *puVar8;
   uint *puVar9;
   int *piVar10;
   uint index_00;
   uint *puVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   undefined1 local_78 [8];
   char local_70;
   uint local_48 [2];
@@ -38,11 +38,10 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
   undefined2 local_3a;
   undefined4 local_36 [7];
   int local_18;
-  undefined4 local_14;
+  uint local_14;
   int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   puVar8 = nullptr;
   local_8 = 0;
   local_c = 0;

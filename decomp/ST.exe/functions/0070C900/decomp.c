@@ -13,7 +13,7 @@ FUN_0070c900(RecoveredSourceFamily_dibcopy *param_1,uint *param_2,char param_3,i
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   uint *puVar4;
   InternalExceptionFrame local_4c;

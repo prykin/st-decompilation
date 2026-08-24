@@ -14,10 +14,9 @@ MainMenuTy * __cdecl CreateMainMenu(void)
 {
   MainMenuTy *this;
   int iVar1;
-  undefined4 *puVar3;
+  uint *puVar3;
   SpriteClassTy *this_00;
-  undefined4 *puVar4;
-
+  uint *puVar4;
   this = (MainMenuTy *)FUN_006b04d0(0x1ee4);
   if (this != nullptr) {
     sub_006E5FB0(this);

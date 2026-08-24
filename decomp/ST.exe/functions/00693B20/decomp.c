@@ -6,7 +6,7 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
             undefined4 param_6,undefined1 param_7,char *param_8)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   char cVar2;
   int iVar3;
   uint uVar4;

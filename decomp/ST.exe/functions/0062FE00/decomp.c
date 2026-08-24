@@ -1,6 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __fastcall FUN_0062fe00(STJellyGunC *param_1)
 
 {
@@ -25,7 +29,7 @@ void __fastcall FUN_0062fe00(STJellyGunC *param_1)
         *(STT3DSprC **)(*piVar4 + 0x10) = pSVar1;
       }
       iVar2 = thunk_FUN_0062f080(param_1,iVar3,*(undefined4 *)(*piVar4 + 0xc),
-                                 *(undefined4 *)(*piVar4 + 4));
+                                 *(STRubbishC_LoadImagSpr_param_4Enum *)(*piVar4 + 4));
       if (iVar2 == 0) {
         if (param_1->field_01E1 == 1) {
           /* ST_CALLSITE[0062FE59]: CALL 0x00405885; direct=00405885 STRubbishC::sub_0062F900 */

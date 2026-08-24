@@ -22,10 +22,10 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
   dword dVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined2 uVar5;
+  ushort uVar5;
   int local_EAX_3601;
   uint uVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int uVar2;
   int uVar6;
   int local_EAX_4514;
@@ -36,7 +36,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
   undefined2 extraout_var_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
-  undefined2 uVar8;
+  ushort uVar8;
   int iVar7;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
@@ -44,7 +44,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
   undefined2 extraout_var_02;
   int iVar9;
   int iVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   uint uVar13;
   int *piVar14;
   int iVar15;

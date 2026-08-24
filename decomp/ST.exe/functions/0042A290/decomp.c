@@ -20,12 +20,12 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
   AnonShape_005751F0_0FFC949A *pAVar3;
   char *pcVar4;
   int iVar6;
-  undefined1 *puVar7;
+  byte *puVar7;
   AnonShape_006DBCA0_EF06575F *pAVar8;
   int *piVar9;
   int iVar5;
   short *psVar10;
-  undefined1 *puVar11;
+  byte *puVar11;
   uint uVar12;
   byte *puVar13;
   ST3DSMAPContext *this;
@@ -100,7 +100,8 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     iVar6 = (int)lVar16;
     local_30 = iVar6;
     ST3DSMAPContext::sub_006DC050
-              (this,0,0,0,iVar6,iVar6,-10.0,10.0,-10.0,10.0,10.0,9.965999793052674,0);
+              (this,nullptr,0,0,iVar6,iVar6,-10.0,10.0,-10.0,10.0,10.0,9.965999793052674,0
+              );
     this->field_0128 = 0;
     ST3DSMAPContext::sub_006DD790(this,140.204);
     ST3DSMAPContext::sub_006DD800(this,219.932);

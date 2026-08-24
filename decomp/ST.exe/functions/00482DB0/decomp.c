@@ -13,27 +13,28 @@ int __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
 
 {
   short sVar1;
-  undefined4 uVar2;
+  uint uVar2;
   RecoveredRecord_STBoatC_00482DB0 *this;
   short sVar3;
   STWorldObject *pSVar4;
+  int iVar13_mg1;
   int iVar12;
   uint uVar6;
   uint uVar5;
-  undefined4 *puVar7;
+  uint *puVar7;
   short sVar8;
   short sVar9;
-  undefined2 uVar11;
+  ushort uVar11;
   uint uVar10;
   short sVar12;
   int iVar13;
   undefined4 local_3c [2];
   undefined4 local_34 [2];
-  undefined4 local_2c;
+  uint local_2c;
   undefined2 local_28;
   undefined4 local_24;
   int local_20;
-  int local_1c;
+  uint local_1c;
   uint local_18;
   STFishC *local_14;
   ushort *local_10;
@@ -86,10 +87,10 @@ LAB_00482f52:
       goto LAB_00482f52;
     }
   }
-  iVar13 = STPlaySystemC::sub_006E62D0
-                     (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1[0x1fd],
-                      (int *)&local_14);
-  if (iVar13 == -4) {
+  iVar13_mg1 = STPlaySystemC::sub_006E62D0
+                         (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1[0x1fd],
+                          (int *)&local_14);
+  if (iVar13_mg1 == -4) {
     return 4;
   }
   /* ST_CALLSITE[00482F9C]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
@@ -111,7 +112,7 @@ LAB_00482fa9:
      (iVar13 = (**(code **)(*(int *)this + 0xf4))(param_1[9]), iVar13 == 0)) {
     return 4;
   }
-  thunk_FUN_00416270(this,&local_18,&local_1c,local_c);
+  thunk_FUN_00416270(this,&local_18,(short *)&local_1c,local_c);
   iVar12 = FUN_006acf0d((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
                         (int)STField<short>(param_1,0x45),(int)(short)local_18,
                         (int)(short)local_1c,(int)local_c[0]);

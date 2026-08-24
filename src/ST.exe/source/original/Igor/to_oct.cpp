@@ -186,7 +186,7 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
     local_14 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
     /* ST_CALLSITE[0058A171]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
     local_18 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-    local_c = st::pointer_boundary_cast<AnonShape_00589C10_CECA1FB4 *>(st::fn_006AAC70(local_10 + 0x96 + local_8));
+    local_c = static_cast<AnonShape_00589C10_CECA1FB4 *>(st::fn_006AAC70(local_10 + 0x96 + local_8));
     if (local_14 == nullptr) {
       g_currentExceptionFrame = local_88.previous;
       return 0;

@@ -13,7 +13,7 @@ void __thiscall
 MMObjTy::PaintSprBut(MMObjTy *this,int param_1,uint param_2,int param_3,int param_4,int param_5)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   MMObjTy *pMVar3;
   int iVar4;
   int iVar6;

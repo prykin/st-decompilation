@@ -109,6 +109,7 @@ st::fn_0054CC20
 {
   STPlaySystemC *this_00;
   int iVar2;
+  int iVar4_mg2;
   int iVar4;
   int local_EAX_203;
   int iVar3;
@@ -122,8 +123,8 @@ st::fn_0054CC20
   iVar2 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 == 0) {
-    iVar4 = st::fn_0040513C(param_1,(undefined4 *)local_8);
-    if (iVar4 != 0) {
+    iVar4_mg2 = st::fn_0040513C(param_1,(undefined4 *)local_8);
+    if (iVar4_mg2 != 0) {
       st::fn_006A5E40
                 (-4,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Andrey\\tplaysys.cpp"),0xef);
     }
@@ -172,8 +173,9 @@ int st::fn_0054CDD0(undefined4 *param_1,int param_2,undefined4 *param_3,int *par
 
 {
   int iVar2;
-  int iVar4;
+  int iVar4_mg0;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_58;
   void *local_14;
   int local_10;
@@ -185,8 +187,8 @@ int st::fn_0054CDD0(undefined4 *param_1,int param_2,undefined4 *param_3,int *par
   g_currentExceptionFrame = &local_58;
   iVar2 = st::fn_0072D7F0(local_58.jumpBuffer,0);
   if (iVar2 == 0) {
-    iVar4 = st::fn_0040513C(param_2,(undefined4 *)&local_8);
-    if (iVar4 == 0) {
+    iVar4_mg0 = st::fn_0040513C(param_2,(undefined4 *)&local_8);
+    if (iVar4_mg0 == 0) {
       local_10 = st::fn_006E6200
                            (local_14,local_8,param_1,param_3,&local_c,st::machine_word_boundary_cast<undefined4>(param_5),param_6);
     }
@@ -229,7 +231,7 @@ undefined4 __thiscall st::fn_0054CFC0(STPlaySystemC *this)
   AnonPointee_STPlaySystemC_003D *pAVar4;
   void *pvVar5;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   InternalExceptionFrame local_54;
   uint local_10;
   uint *local_c;
@@ -246,7 +248,7 @@ undefined4 __thiscall st::fn_0054CFC0(STPlaySystemC *this)
     st::fn_006E51F0((SystemClassTy *)local_8);
     pSVar3->field_0039 = nullptr;
     pSVar3->field_0045 = 7;
-    pAVar4 = st::pointer_boundary_cast<AnonPointee_STPlaySystemC_003D *>(st::fn_006AAC70(7));
+    pAVar4 = static_cast<AnonPointee_STPlaySystemC_003D *>(st::fn_006AAC70(7));
     pSVar3->field_003D = pAVar4;
     pSVar3->field_0053 = 0x1400;
     pvVar5 = st::fn_006AAC70(0x1400);
@@ -334,7 +336,7 @@ void __thiscall st::fn_0054D180(STPlaySystemC *this)
     pSVar2->field_0045 = 0;
     pSVar2->field_0053 = 0;
     if (pSVar2->field_0065 != 0) {
-      st::fn_006B9890(st::pointer_boundary_cast<int *>(&pSVar2->field_0065));
+      st::fn_006B9890(reinterpret_cast<int *>(&pSVar2->field_0065));
     }
     pSVar2->field_0069 = 0;
     pSVar2->field_006D = 0;
@@ -524,7 +526,7 @@ undefined4 __thiscall st::fn_0054D640(STPlaySystemC *this)
   DWORD DVar5_mg1;
   char *pcVar4;
   int iVar5;
-  undefined4 uVar5;
+  uint uVar5;
   uint uVar6;
   int iVar7;
   DWORD *pDVar8;
@@ -780,7 +782,7 @@ undefined4 __thiscall st::fn_0054D640(STPlaySystemC *this)
             case 0x11:
               iVar7 = 0;
               if (DAT_00808aaf != 0) {
-                pcVar3 = st::pointer_boundary_cast<char *>(&DAT_00808af6);
+                pcVar3 = (char *)&DAT_00808af6;
                 do {
                   if ((*(int *)(pcVar3 + -6) == local_18) && (*pcVar3 != '\0')) {
                     pcVar2 = st::fn_006B0140(0x426f,g_hINSTANCE_00807618);
@@ -835,7 +837,7 @@ undefined4 __thiscall st::fn_0054D640(STPlaySystemC *this)
                     st::fn_006B0C70(g_array_0080C4FE,uVar6);
                     iVar7 = 0;
                     if (DAT_00808aaf != 0) {
-                      pcVar3 = st::pointer_boundary_cast<char *>(&DAT_00808af6);
+                      pcVar3 = (char *)&DAT_00808af6;
                       do {
                         if ((*(int *)(pcVar3 + -6) == local_18) && (*pcVar3 != '\0')) {
                           pcVar2 = st::fn_006B0140(0x426e,g_hINSTANCE_00807618);
@@ -858,7 +860,7 @@ undefined4 __thiscall st::fn_0054D640(STPlaySystemC *this)
             case 0x1a:
               iVar7 = 0;
               if (DAT_00808aaf != 0) {
-                pcVar3 = st::pointer_boundary_cast<char *>(&DAT_00808af6);
+                pcVar3 = (char *)&DAT_00808af6;
                 do {
                   if ((*(int *)(pcVar3 + -6) == local_18) && (*pcVar3 != '\0')) {
                     *(DWORD *)(pcVar3 + 2) = local_1c;
@@ -890,7 +892,7 @@ undefined4 __thiscall st::fn_0054D640(STPlaySystemC *this)
         this_00->field_0038 = 0;
       }
       if ((this_00->field_0038 == '\0') && (iVar7 = 0, DAT_00808aaf != 0)) {
-        pDVar8 = &DAT_00808af8;
+        pDVar8 = (DWORD *)&DAT_00808af8;
         do {
           *pDVar8 = DVar10;
           iVar7 = iVar7 + 1;
@@ -902,7 +904,7 @@ undefined4 __thiscall st::fn_0054D640(STPlaySystemC *this)
     if (((((DAT_00808783 == '\x03') && (DAT_00808788 == 0)) && (this_00->field_00E8 == 0)) &&
         ((this_00->field_0038 == '\0' && (this_00->field_0059 == 0)))) &&
        (iVar7 = 0, DAT_00808aaf != 0)) {
-      piVar9 = st::pointer_boundary_cast<int *>(&DAT_00808af0);
+      piVar9 = reinterpret_cast<int *>(&DAT_00808af0);
       do {
         if (((piVar9 != (int *)0x40) && (*piVar9 != 0)) &&
            ((*piVar9 != DAT_0080877f &&
@@ -1010,7 +1012,7 @@ int __thiscall st::fn_0054E4F0(STPlaySystemC *this,STMessage *message)
   int local_EAX_19;
   int iVar5;
   int local_EAX_308;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *pcVar11;
   char *local_EAX_530;
   DWORD DVar7;
@@ -1118,7 +1120,7 @@ int __thiscall st::fn_0054E4F0(STPlaySystemC *this,STMessage *message)
             st::fn_00715360(g_int_00811764,1,'.',nullptr,0,0,0xffffffff);
           }
           else if (DAT_00808aaf != 0) {
-            pDVar14 = &DAT_00808af8;
+            pDVar14 = (DWORD *)&DAT_00808af8;
             do {
               DVar7 = st::fn_006E51B0((STAppC *)&DAT_00807620);
               *pDVar14 = DVar7;
@@ -1137,7 +1139,7 @@ int __thiscall st::fn_0054E4F0(STPlaySystemC *this,STMessage *message)
         uVar9 = 0;
         DAT_00808788 = 0;
         if (DAT_00808aaf != 0) {
-          pcVar12 = st::pointer_boundary_cast<char *>(&DAT_00808af6);
+          pcVar12 = (char *)&DAT_00808af6;
           do {
             piVar4 = g_int_00811764;
             if ((*(int *)(pcVar12 + -6) == pSVar10->field_00F4) && (*pcVar12 != '\0')) {
@@ -1249,8 +1251,8 @@ void __thiscall st::fn_0054E950(STPlaySystemC *this,undefined4 *param_1,uint par
 void __thiscall st::fn_0054EC20(PlaySystemTy *this)
 
 {
-  undefined4 *puVar1;
-  undefined4 *puVar2;
+  uint *puVar1;
+  uint *puVar2;
   uint uVar4;
   int iVar5;
   char *pcVar6;
@@ -1289,7 +1291,7 @@ void __thiscall st::fn_0054EC20(PlaySystemTy *this)
     }
     uVar4 = local_8;
     if (local_10->field_0053 < local_8) {
-      pcVar6 = st::pointer_boundary_cast<char *>(st::fn_006ACF50(local_10->field_004F,local_8));
+      pcVar6 = static_cast<char *>(st::fn_006ACF50(local_10->field_004F,local_8));
       pPVar10->field_004F = pcVar6;
       pPVar10->field_0053 = uVar4;
     }
@@ -1311,7 +1313,7 @@ void __thiscall st::fn_0054EC20(PlaySystemTy *this)
           pcVar11 = pcVar11 + 1;
         }
         pcVar6 = pcVar6 + local_8;
-        *(int *)local_10->field_004F = *(int *)local_10->field_004F + 1;
+        *STField<int *>(local_10,0x4F) = *STField<int *>(local_10,0x4F) + 1;
         local_c = (AnonPointee_PlaySystemTy_0039 *)local_c->field_0000;
       } while (local_c != nullptr);
       local_c = nullptr;
@@ -1321,7 +1323,7 @@ void __thiscall st::fn_0054EC20(PlaySystemTy *this)
     if (pPVar10->field_0039 != nullptr) {
       st::fn_006B9890((int *)&pPVar10->field_0039);
     }
-    if ((*(int *)pPVar10->field_004F != 0) && (DAT_0080c512 == 0)) {
+    if ((*STField<int *>(pPVar10,0x4F) != 0) && (DAT_0080c512 == 0)) {
       iVar5 = st::fn_00715360(g_int_00811764,1,'8',pPVar10->field_004F,local_14,1,0xffffffff);
       if (iVar5 != 0) {
         st::fn_004059ED(4);
@@ -1495,7 +1497,7 @@ undefined4 * __thiscall st::fn_0054F1D0(STPlaySystemC *this)
 
 {
   AnonPointee_STPlaySystemC_0039 **ppAVar1;
-  undefined2 *puVar2;
+  ushort *puVar2;
   char cVar3;
   AnonPointee_STPlaySystemC_0039 *pAVar4;
   STPlaySystemC *pSVar6;
@@ -1521,14 +1523,14 @@ undefined4 * __thiscall st::fn_0054F1D0(STPlaySystemC *this)
   undefined4 *extraout_EAX;
   int *piVar18;
   uint uVar19;
-  undefined4 *puVar20;
+  uint *puVar20;
   uint *puVar21;
   uint *puVar22;
   STPlaySystemC *pSVar23;
   AnonPointee_STPlaySystemC_0039 *pAVar24;
   uint *puVar25;
   char *pcVar26;
-  undefined4 *puVar27;
+  uint *puVar27;
   bool bVar28;
   char local_17c [260];
   InternalExceptionFrame local_78;
@@ -1581,7 +1583,7 @@ undefined4 * __thiscall st::fn_0054F1D0(STPlaySystemC *this)
           uVar11 = (uint)DAT_00808aaf;
           bVar28 = true;
           if (uVar11 != 0) {
-            piVar18 = st::pointer_boundary_cast<int *>(&DAT_00808af0);
+            piVar18 = reinterpret_cast<int *>(&DAT_00808af0);
             do {
               if (*piVar18 == local_30) {
                 bVar28 = false;
@@ -1645,7 +1647,7 @@ LAB_0054f52c:
                 local_2c = (AnonPointee_STPlaySystemC_0039 **)
                            (STField<int>(puVar21,0x13) + STField<int>(puVar21,0xf));
                 uVar11 = (int)local_2c + 0x1b;
-                puVar12 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(uVar11));
+                puVar12 = static_cast<uint *>(st::fn_006AAC10(uVar11));
                 puVar22 = puVar21;
                 puVar25 = puVar12;
                 memmove(puVar25, puVar22, uVar11); /* compiler REP MOVS byte copy */
@@ -1688,7 +1690,7 @@ LAB_0054f52c:
               pSVar23->field_0061 = local_30;
               uVar11 = 0;
               if (DAT_00808aaf != 0) {
-                pcVar14 = st::pointer_boundary_cast<char *>(&DAT_00808af6);
+                pcVar14 = (char *)&DAT_00808af6;
                 do {
                   if ((*(int *)(pcVar14 + -6) == local_30) && (*pcVar14 != '\0')) {
                     /* ST_CALLSITE[0054F500]: CALL dword ptr [0x0085bde8] */
@@ -1735,7 +1737,7 @@ LAB_0054f531:
     local_34 = uVar11;
     local_2c = ppAVar1;
     if ((uint)pSVar23->field_0045 < uVar11) {
-      pAVar15 = st::pointer_boundary_cast<AnonPointee_STPlaySystemC_003D *>(st::fn_006ACF50(pSVar23->field_003D,uVar11));
+      pAVar15 = static_cast<AnonPointee_STPlaySystemC_003D *>(st::fn_006ACF50(pSVar23->field_003D,uVar11));
       pSVar23->field_003D = pAVar15;
       pSVar23->field_0045 = uVar11;
     }
@@ -1986,7 +1988,7 @@ LAB_0054f98b:
       goto switchD_0054fb75_caseD_12;
     case 0x31:
       if ((int)pSVar23->field_0045 < (int)local_18) {
-        pAVar15 = st::pointer_boundary_cast<AnonPointee_STPlaySystemC_003D *>(st::fn_006ACF50(pSVar23->field_003D,local_18));
+        pAVar15 = static_cast<AnonPointee_STPlaySystemC_003D *>(st::fn_006ACF50(pSVar23->field_003D,local_18));
         pSVar23->field_003D = pAVar15;
         pSVar23->field_0045 = local_18;
       }
@@ -2024,7 +2026,7 @@ LAB_0054fbb7:
         if (pAVar15->field_0004 != '\0') {
           pSVar23->field_0057 = pAVar15->field_0005;
           pAVar15->field_0005 = 0;
-          pSVar23->field_0049 = *(undefined4 *)pSVar23->field_003D;
+          pSVar23->field_0049 = *STField<undefined4 *>(pSVar23,0x3D);
           pSVar23->field_004D = pSVar23->field_003D->field_0004;
           pSVar23->field_004E = 0;
           st::fn_00403C83(pSVar23);

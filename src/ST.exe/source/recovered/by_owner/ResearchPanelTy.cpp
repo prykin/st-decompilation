@@ -46,12 +46,12 @@ void __thiscall st::fn_0053C490(ResearchPanelTy *this,int param_1)
 void __thiscall st::fn_0053C620(ResearchPanelTy *this)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   UINT UVar2;
   uint uVar3;
   int iVar4;
   Global_sub_00528060_param_1Enum *pGVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   byte *puVar7;
   int local_14;
   int local_c;

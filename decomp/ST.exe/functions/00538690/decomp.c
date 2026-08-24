@@ -22,7 +22,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   PanelTy *pPVar2;
   int iVar3;
   int iVar4;
-  undefined4 uVar3;
+  uint uVar3;
   InternalExceptionFrame local_1d0;
   int local_18c [4];
   undefined4 local_17c;
@@ -120,7 +120,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     }
     /* ST_CALLSITE[005388C5]: CALL dword ptr [EDX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)pPVar2->field_000C + 8))(2,&local_8,0,local_18c,0);
+    (**(code **)(*STField<int *>(pPVar2,0xC) + 8))(2,&local_8,0,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_8;
   }

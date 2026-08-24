@@ -5,8 +5,7 @@ undefined4 __fastcall FUN_0074a1c9(int *param_1)
 
 {
   int *piVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   piVar1 = (int *)param_1[0x2b];
   if (piVar1 != nullptr) {
     /* ST_CALLSITE[0074A1E3]: CALL dword ptr [ECX + 0x8] */

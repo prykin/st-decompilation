@@ -8,7 +8,7 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
   uint uVar3;
   int uVar2;
   void *this;
-  undefined4 *puVar2;
+  uint *puVar2;
   uint uVar4;
   int iVar5;
   int iVar6;

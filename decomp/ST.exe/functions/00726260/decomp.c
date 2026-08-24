@@ -2,7 +2,11 @@
 
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 00709A10 -> 00726260 @ 00709A5F */
+   Evidence: 00709A10 -> 00726260 @ 00709A5F
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __cdecl FUN_00726260(uint *param_1)
 

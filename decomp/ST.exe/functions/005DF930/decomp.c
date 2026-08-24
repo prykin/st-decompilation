@@ -6,9 +6,8 @@ void FUN_005df930(int param_1,uint param_2,int param_3)
 {
   int iVar1;
   uint uVar2;
-  undefined4 *puVar3;
-  undefined4 *puVar4;
-
+  uint *puVar3;
+  uint *puVar4;
   puVar3 = (undefined4 *)(param_1 + param_2 * 0x9e);
   puVar4 = puVar3;
   for (uVar2 = (param_3 * 0x4f & 0x7fffffffU) >> 1; uVar2 != 0; uVar2 = uVar2 - 1) {

@@ -12,7 +12,7 @@ int __cdecl FUN_0064a830(int *param_1,undefined4 *param_2)
   int iVar1;
   int iVar2;
   void *pvVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;

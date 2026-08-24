@@ -15,16 +15,16 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
   uint uVar4;
   int iVar8;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   short sVar7;
   int iVar9;
-  undefined2 uVar10;
+  ushort uVar10;
   int iVar11;
   UINT UVar12;
-  undefined4 uVar13;
+  uint uVar13;
   char *pcVar14;
-  undefined4 uVar15;
-  undefined4 uVar16;
+  uint uVar15;
+  uint uVar16;
   InternalExceptionFrame local_4c;
   FrmPanelTy *local_8;
 

@@ -11,7 +11,7 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
 {
   STMineSetC_field_02ADState SVar1;
   STMineSetC_sub_00626B50_param_1Enum SVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar5;
   short sVar6;

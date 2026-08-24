@@ -1,14 +1,20 @@
 
-void FUN_0075e980(int param_1,int param_2,int *param_3,int param_4,int param_5)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0075E890 -> 0075E980 @ 0075E8E3; FUN_0075e890 parameter param_1 */
+
+void FUN_0075e980(AnonShape_0075E890_C23EB446 *param_1,int param_2,int *param_3,int param_4,
+                 int param_5)
 
 {
-  uint uVar1;
-  int iVar2;
+  AnonNested_0075EB40_0080_454B432A *pAVar1;
+  AnonShape_0075E890_C23EB446 *pAVar2;
   uint uVar3;
   int iVar4;
-  int iVar5;
-  int *piVar6;
+  uint uVar5;
+  int iVar6;
   int iVar7;
+  int *piVar8;
+  int iVar9;
   int local_428 [256];
   int local_28;
   int local_24;
@@ -22,98 +28,97 @@ void FUN_0075e980(int param_1,int param_2,int *param_3,int param_4,int param_5)
   int *piVar7;
 
   piVar7 = param_3;
-  iVar2 = param_1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_c = *(int *)(param_1 + 0x7c);
+  pAVar2 = param_1;
+  local_c = *(int *)&param_1->field_0x7c;
   local_20 = (int)param_3 * 2 + 0x1c >> 1;
   local_8 = 0x7fffffff;
-  auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
+  AnonShape_0075E890_C23EB446 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   local_28 = param_2 * 2 + 0x18 >> 1;
   local_24 = param_4 * 2 + 0x18 >> 1;
   if (0 < local_c) {
-    piVar6 = *(int **)(iVar2 + 0x80);
+    pAVar1 = pAVar2->field_0080;
     auto param_3_after_write = local_428; /* compiler stack-slot lifetime split */
-    local_18 = *piVar6;
-    local_10 = piVar6[1];
-    local_14 = piVar6[2];
+    local_18 = pAVar1->field_0000;
+    local_10 = pAVar1->field_0004;
+    local_14 = pAVar1->field_0008;
     do {
-      uVar1 = (uint)*(byte *)(local_18 + param_1_after_write);
-      if ((int)uVar1 < param_2) {
-        iVar5 = (uVar1 - param_2) * (uVar1 - param_2);
-        iVar4 = param_2 + 0x18;
+      uVar3 = (uint)(byte)(&param_1_after_write->field_0x0)[local_18];
+      if ((int)uVar3 < param_2) {
+        iVar7 = (uVar3 - param_2) * (uVar3 - param_2);
+        iVar6 = param_2 + 0x18;
 LAB_0075ea13:
-        iVar2 = iVar4;
+        iVar4 = iVar6;
       }
       else {
-        iVar2 = param_2 + 0x18;
-        iVar4 = param_2;
-        if (iVar2 < (int)uVar1) {
-          iVar5 = (uVar1 - iVar2) * (uVar1 - iVar2);
+        iVar4 = param_2 + 0x18;
+        iVar6 = param_2;
+        if (iVar4 < (int)uVar3) {
+          iVar7 = (uVar3 - iVar4) * (uVar3 - iVar4);
           goto LAB_0075ea13;
         }
-        iVar5 = 0;
-        if (local_28 < (int)uVar1) goto LAB_0075ea13;
+        iVar7 = 0;
+        if (local_28 < (int)uVar3) goto LAB_0075ea13;
       }
-      uVar3 = (uint)*(byte *)(local_10 + param_1_after_write);
-      if ((int)uVar3 < (int)piVar7) {
-        iVar4 = (uVar3 - (int)piVar7) * 3;
-        iVar5 = iVar5 + iVar4 * iVar4;
-        iVar4 = uVar3 - (int)(piVar7 + 7);
+      uVar5 = (uint)(byte)(&param_1_after_write->field_0x0)[local_10];
+      if ((int)uVar5 < (int)piVar7) {
+        iVar6 = (uVar5 - (int)piVar7) * 3;
+        iVar7 = iVar7 + iVar6 * iVar6;
+        iVar6 = uVar5 - (int)(piVar7 + 7);
       }
       else {
-        piVar6 = piVar7 + 7;
-        if ((int)piVar6 < (int)uVar3) {
-          iVar4 = (uVar3 - (int)piVar6) * 3;
-          iVar5 = iVar5 + iVar4 * iVar4;
+        piVar8 = piVar7 + 7;
+        if ((int)piVar8 < (int)uVar5) {
+          iVar6 = (uVar5 - (int)piVar8) * 3;
+          iVar7 = iVar7 + iVar6 * iVar6;
         }
-        else if ((int)uVar3 <= local_20) {
-          iVar4 = uVar3 - (int)piVar6;
+        else if ((int)uVar5 <= local_20) {
+          iVar6 = uVar5 - (int)piVar8;
           goto LAB_0075ea6d;
         }
-        iVar4 = uVar3 - (int)piVar7;
+        iVar6 = uVar5 - (int)piVar7;
       }
 LAB_0075ea6d:
-      uVar3 = (uint)*(byte *)(local_14 + param_1_after_write);
-      if ((int)uVar3 < param_4) {
-        iVar7 = (uVar3 - param_4) * 2;
-        iVar5 = iVar5 + iVar7 * iVar7;
-        local_1c = uVar3 - (param_4 + 0x18);
+      uVar5 = (uint)(byte)(&param_1_after_write->field_0x0)[local_14];
+      if ((int)uVar5 < param_4) {
+        iVar9 = (uVar5 - param_4) * 2;
+        iVar7 = iVar7 + iVar9 * iVar9;
+        local_1c = uVar5 - (param_4 + 0x18);
       }
       else {
         local_1c = param_4 + 0x18;
-        if (local_1c < (int)uVar3) {
-          iVar7 = (uVar3 - local_1c) * 2;
-          iVar5 = iVar5 + iVar7 * iVar7;
+        if (local_1c < (int)uVar5) {
+          iVar9 = (uVar5 - local_1c) * 2;
+          iVar7 = iVar7 + iVar9 * iVar9;
         }
-        else if ((int)uVar3 <= local_24) {
-          local_1c = uVar3 - local_1c;
+        else if ((int)uVar5 <= local_24) {
+          local_1c = uVar5 - local_1c;
           goto LAB_0075eac8;
         }
-        local_1c = uVar3 - param_4;
+        local_1c = uVar5 - param_4;
       }
 LAB_0075eac8:
-      iVar2 = (uVar1 - iVar2) * (uVar1 - iVar2) + iVar4 * 3 * iVar4 * 3 +
+      iVar4 = (uVar3 - iVar4) * (uVar3 - iVar4) + iVar6 * 3 * iVar6 * 3 +
               local_1c * 2 * local_1c * 2;
-      *param_3_after_write = iVar5;
-      if (iVar2 < local_8) {
-        local_8 = iVar2;
+      *param_3_after_write = iVar7;
+      if (iVar4 < local_8) {
+        local_8 = iVar4;
       }
-      param_1_after_write = param_1_after_write + 1;
+      param_1_after_write = (AnonShape_0075E890_C23EB446 *)&param_1_after_write->field_0x1;
       param_3_after_write = param_3_after_write + 1;
-    } while (param_1_after_write < local_c);
+    } while ((int)param_1_after_write < local_c);
   }
-  iVar2 = 0;
   iVar4 = 0;
+  iVar6 = 0;
   if (0 < local_c) {
-    piVar6 = local_428;
+    piVar8 = local_428;
     do {
-      if (*piVar6 <= local_8) {
-        *(char *)(iVar2 + param_5) = (char)iVar4;
-        iVar2 = iVar2 + 1;
+      if (*piVar8 <= local_8) {
+        *(char *)(iVar4 + param_5) = (char)iVar6;
+        iVar4 = iVar4 + 1;
       }
-      iVar4 = iVar4 + 1;
-      piVar6 = piVar6 + 1;
-    } while (iVar4 < local_c);
+      iVar6 = iVar6 + 1;
+      piVar8 = piVar8 + 1;
+    } while (iVar6 < local_c);
   }
   return;
 }

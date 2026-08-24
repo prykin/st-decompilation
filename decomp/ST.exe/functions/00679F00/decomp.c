@@ -10,7 +10,7 @@ FUN_00679f00(void *this,uint param_1,AnonShape_0068FD00_A5257008 *param_2,int pa
 {
   int iVar1;
   AiTactClassTy *this_00;
-  undefined4 *puVar2;
+  uint *puVar2;
   int local_EAX_70;
   int iVar2;
 

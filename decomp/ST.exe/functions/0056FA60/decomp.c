@@ -112,7 +112,7 @@ switchD_0056fad2_caseD_6105:
         pSVar12 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
         if (pSVar12 != nullptr) {
           /* ST_CALLSITE[005702FC]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
-          StartSystemTy::StartSystemTy(pSVar12,pSVar11);
+          StartSystemTy::StartSystemTy(pSVar12,(AppClassTy *)pSVar11);
         }
         /* ST_CALLSITE[00570309]: CALL dword ptr [EDX] */
         g_startSystem_0081176C->InitSystem();
@@ -282,7 +282,7 @@ switchD_0056fad2_caseD_6102:
         pSVar12 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
         if (pSVar12 != nullptr) {
           /* ST_CALLSITE[0057021A]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
-          StartSystemTy::StartSystemTy(pSVar12,pSVar11);
+          StartSystemTy::StartSystemTy(pSVar12,(AppClassTy *)pSVar11);
         }
         /* ST_CALLSITE[00570227]: CALL dword ptr [EDX] */
         g_startSystem_0081176C->InitSystem();

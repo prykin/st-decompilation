@@ -6,13 +6,15 @@ void __thiscall FUN_005f04b0(void *this,int *param_1)
 {
   int *piVar1;
   int *piVar2;
+  int iVar3_mg0;
   int iVar3;
 
   piVar1 = param_1;
-  iVar3 = STPlaySystemC::sub_006E62D0
-                    (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1,(int *)&param_1);
+  iVar3_mg0 = STPlaySystemC::sub_006E62D0
+                        (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1,
+                         (int *)&param_1);
   piVar2 = param_1;
-  if (iVar3 != -4) {
+  if (iVar3_mg0 != -4) {
     /* ST_CALLSITE[005F04DB]: CALL dword ptr [EDX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar3 = (**(code **)(*param_1 + 0x2c))();

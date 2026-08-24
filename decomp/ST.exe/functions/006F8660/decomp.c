@@ -5,15 +5,15 @@ void FUN_006f8660(undefined4 *param_1,int param_2,byte *param_3,int param_4,int 
                  ,uint param_7,int param_8)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int iVar2;
   byte *pbVar3;
   uint uVar4;
   byte *pbVar5;
   byte bVar6;
   uint uVar7;
-  undefined4 *puVar8;
-  undefined4 *puVar9;
+  uint *puVar8;
+  uint *puVar9;
   uint local_c;
   uint local_8;
   byte *pbVar5_mg0;

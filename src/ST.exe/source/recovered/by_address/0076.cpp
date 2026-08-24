@@ -97,11 +97,11 @@ void st::fn_007603B0(int *param_1,AnonShape_007603B0_DAA8AD99 *param_2,int *para
                  int param_5)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int iVar2;
   int iVar3;
   int iVar4;
-  undefined1 *puVar5;
+  byte *puVar5;
   int iVar6;
   int iVar7;
   int *piVar8;
@@ -260,9 +260,9 @@ void st::fn_00760970(int param_1,AnonShape_00760970_DF0E462C *param_2,int *param
 {
   int scalar_local_18;
 
-  undefined1 uVar1;
+  byte uVar1;
   int *piVar2;
-  undefined1 *puVar3;
+  byte *puVar3;
   AnonNested_00760970_0050_3C80E9C1 *pAVar4;
   int iVar5;
   int iVar6;
@@ -428,7 +428,7 @@ void st::fn_00760DF0(int param_1,AnonShape_00760DF0_41372EAE *param_2,int *param
   float *pfVar7;
   int iVar8;
   AnonNested_00760DF0_0050_4F781EBD *pAVar9;
-  undefined1 *puVar10;
+  byte *puVar10;
   longlong lVar11;
   float local_120 [16];
   float local_e0 [8];
@@ -549,7 +549,7 @@ void st::fn_007611C0(int param_1,AnonShape_007611C0_0B5C7A2E *param_2,int *param
                  int param_5)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int *piVar2;
   int iVar3;
   AnonShape_007611C0_979BF099 AVar4;
@@ -656,9 +656,9 @@ void st::fn_007611C0(int param_1,AnonShape_007611C0_0B5C7A2E *param_2,int *param
 void st::fn_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int iVar2;
-  undefined1 *puVar3;
+  byte *puVar3;
   int *piVar4;
   int iVar5;
   int *piVar6;
@@ -734,15 +734,21 @@ void st::fn_00761770(int param_1,int param_2,int *param_3,int *param_4,int param
 
 // 00761960 FUN_00761960
 #line 4 "decomp/ST.exe/functions/00761960/decomp.c"
-undefined4 __cdecl st::fn_00761960(LPCSTR param_1,LPCSTR param_2)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00761960 -> EXTERNAL:00000058 @ 0076196C
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00761960 -> EXTERNAL:00000058 @ 0076196C */
+
+undefined4 __cdecl st::fn_00761960(LPCSTR lpExistingFileName,LPCSTR lpNewFileName)
 
 {
   BOOL BVar1;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_8;
 
   /* ST_CALLSITE[0076196C]: CALL dword ptr [0x0085bc8c] */
-  BVar1 = st::external_00000058(param_1,param_2);
+  BVar1 = st::external_00000058(lpExistingFileName,lpNewFileName);
   if (BVar1 == 0) {
     /* ST_CALLSITE[00761976]: CALL dword ptr [0x0085bbcc] */
     local_8 = st::external_00000028();

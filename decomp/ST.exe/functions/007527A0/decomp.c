@@ -15,7 +15,7 @@ FUN_007527a0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char
 {
   int iVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   uint uVar4;
   uint uVar5;
   char *pcVar6;

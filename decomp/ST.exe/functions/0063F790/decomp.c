@@ -140,7 +140,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
     if ((*(char *)(param_1->field_037F + 0x15) == '\0') &&
        ((g_playSystem_00802A38->field_00E4 & 1) == 0)) {
       *(undefined1 *)(param_1->field_037F + 0x15) = 1;
-      uVar9 = *(uint *)param_1->field_037F;
+      uVar9 = *STField<uint *>(param_1,0x37F);
       if (-1 < (int)uVar9) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::Ourlib::ST3DSMAP::FUN_006e9720

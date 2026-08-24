@@ -18,7 +18,7 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
   TLOEmbryoTy *this_00;
   int local_EAX_39;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int uVar8;
   uint uVar9;
   int iVar5;

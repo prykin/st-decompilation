@@ -7,7 +7,7 @@
 uint __thiscall FUN_006903a0(void *this,int param_1,undefined4 param_2)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   uint uVar2;
 
   puVar1 = (undefined4 *)thunk_FUN_0068e190(this,param_1);

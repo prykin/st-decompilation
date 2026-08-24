@@ -17,8 +17,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
   char *pcVar4;
   char *pcVar5;
   byte *puVar6;
-  uint *puVar7;
-  short *psVar8;
+  short *psVar7;
   int iVar8;
   int iVar9;
   int iVar10;
@@ -29,11 +28,11 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
   int iVar16;
   int iVar17;
   int iVar18;
-  undefined1 uVar19;
+  byte uVar19;
   uint uVar20;
-  undefined4 uVar21;
-  undefined4 uVar22;
-  uint local_478 [256];
+  uint uVar21;
+  uint uVar22;
+  CHAR local_478 [1024];
   InternalExceptionFrame local_78;
   int local_34 [8];
   MMsgTy *local_14;
@@ -100,10 +99,10 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar15 = CASE_FFFFFFFE;
         iVar9 = 0x39;
         iVar10 = 0x158;
-        puVar7 = (uint *)LoadResourceString(param_1,g_hINSTANCE_00807618);
+        pcVar4 = LoadResourceString(param_1,g_hINSTANCE_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
-                           (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,uVar14,
-                            iVar16,iVar17,iVar18);
+                           ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,iVar9,cVar15
+                            ,uVar14,iVar16,iVar17,iVar18);
         /* ST_CALLSITE[005B8102]: CALL dword ptr [EAX + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(local_10 + 8))(puVar6,uVar21,uVar22);
@@ -112,13 +111,13 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         pcVar4 = LoadResourceString(param_7,g_hINSTANCE_00807618);
         pcVar5 = LoadResourceString(param_1,g_hINSTANCE_00807618);
         /* ST_CALLSITE[005B8076]: CALL dword ptr [0x0085bde8] */
-        wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar5,pcVar4,param_6);
+        wsprintfA(local_478,"%s\n(%s=%li)",pcVar5,pcVar4,param_6);
         iVar10 = this_00->field_1D88;
         uVar22 = 0xffffffff;
         uVar21 = 7;
         puVar6 = ccFntTy::CreateTypeSSpr
-                           (g_startSystem_0081176C->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
-                            0xffffffff,1,-1,-1);
+                           ((ccFntTy *)g_startSystem_0081176C->field_0030,local_478,0x158,0x39,
+                            CASE_FFFFFFFE,0xffffffff,1,-1,-1);
         /* ST_CALLSITE[005B80B7]: CALL dword ptr [ESI + 0x8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar10 + 8))(puVar6,uVar21,uVar22);
@@ -164,12 +163,12 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar15 = CASE_FFFFFFFE;
         iVar9 = 0x1e;
         iVar10 = 0x7d;
-        puVar7 = (uint *)LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618);
-        psVar8 = (short *)ccFntTy::CreateTypeSSpr
-                                    (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,
-                                     uVar14,iVar16,iVar17,iVar18);
+        pcVar4 = LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618);
+        psVar7 = (short *)ccFntTy::CreateTypeSSpr
+                                    ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,
+                                     iVar9,cVar15,uVar14,iVar16,iVar17,iVar18);
         /* ST_CALLSITE[005B840A]: CALL dword ptr [ESI + 0x8] */
-        (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
+        (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar7,uVar19,uVar20);
         this_00->array_00BC[2].field_00B8.field_0008 = 0;
       }
       else {
@@ -202,13 +201,12 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar15 = CASE_FFFFFFFE;
           iVar9 = 0x1e;
           iVar10 = 0x7d;
-          puVar7 = (uint *)LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618
-                                             );
-          psVar8 = (short *)ccFntTy::CreateTypeSSpr
-                                      (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
-                                       ,uVar14,iVar16,iVar17,iVar18);
+          pcVar4 = LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618);
+          psVar7 = (short *)ccFntTy::CreateTypeSSpr
+                                      ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,
+                                       iVar9,cVar15,uVar14,iVar16,iVar17,iVar18);
           /* ST_CALLSITE[005B836E]: CALL dword ptr [ESI + 0x8] */
-          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
+          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar7,uVar19,uVar20);
           this_00->array_00BC[2].field_00B8.field_0008 = 0;
           this_00->array_00BC[1].field_0000 = 0x24ba;
           this_00->array_00BC[1].field_0025 = 1;
@@ -244,13 +242,12 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar15 = CASE_FFFFFFFE;
           iVar9 = 0x1e;
           iVar10 = 0x7d;
-          puVar7 = (uint *)LoadResourceString(this_00->array_00BC[3].field_0000,g_hINSTANCE_00807618
-                                             );
-          psVar8 = (short *)ccFntTy::CreateTypeSSpr
-                                      (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
-                                       ,uVar14,iVar16,iVar17,iVar18);
+          pcVar4 = LoadResourceString(this_00->array_00BC[3].field_0000,g_hINSTANCE_00807618);
+          psVar7 = (short *)ccFntTy::CreateTypeSSpr
+                                      ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,
+                                       iVar9,cVar15,uVar14,iVar16,iVar17,iVar18);
           /* ST_CALLSITE[005B81E6]: CALL dword ptr [ESI + 0x8] */
-          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[3].field_00B8,psVar8,uVar19,uVar20);
+          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[3].field_00B8,psVar7,uVar19,uVar20);
           this_00->array_00BC[3].field_00B8.field_0008 = 0;
           this_00->array_00BC[2].field_0000 = 0x24ba;
           this_00->array_00BC[2].field_0025 = 1;
@@ -280,13 +277,12 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar15 = CASE_FFFFFFFE;
           iVar9 = 0x1e;
           iVar10 = 0x7d;
-          puVar7 = (uint *)LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618
-                                             );
-          psVar8 = (short *)ccFntTy::CreateTypeSSpr
-                                      (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15
-                                       ,uVar14,iVar16,iVar17,iVar18);
+          pcVar4 = LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618);
+          psVar7 = (short *)ccFntTy::CreateTypeSSpr
+                                      ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,
+                                       iVar9,cVar15,uVar14,iVar16,iVar17,iVar18);
           /* ST_CALLSITE[005B8267]: CALL dword ptr [ESI + 0x8] */
-          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar8,uVar19,uVar20);
+          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar7,uVar19,uVar20);
           this_00->array_00BC[2].field_00B8.field_0008 = 0;
           this_00->array_00BC[1].field_0000 = 0x24bb;
           this_00->array_00BC[1].field_0025 = 1;
@@ -317,12 +313,12 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar15 = CASE_FFFFFFFE;
         iVar9 = 0x1e;
         iVar10 = 0x7d;
-        puVar7 = (uint *)LoadResourceString(this_00->array_00BC[1].field_0000,g_hINSTANCE_00807618);
-        psVar8 = (short *)ccFntTy::CreateTypeSSpr
-                                    (g_startSystem_0081176C->field_0030,puVar7,iVar10,iVar9,cVar15,
-                                     uVar14,iVar16,iVar17,iVar18);
+        pcVar4 = LoadResourceString(this_00->array_00BC[1].field_0000,g_hINSTANCE_00807618);
+        psVar7 = (short *)ccFntTy::CreateTypeSSpr
+                                    ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,
+                                     iVar9,cVar15,uVar14,iVar16,iVar17,iVar18);
         /* ST_CALLSITE[005B82E8]: CALL dword ptr [ESI + 0x8] */
-        (*pSVar1->SetImagesPtr)(&this_00->array_00BC[1].field_00B8,psVar8,uVar19,uVar20);
+        (*pSVar1->SetImagesPtr)(&this_00->array_00BC[1].field_00B8,psVar7,uVar19,uVar20);
         this_00->array_00BC[1].field_00B8.field_0008 = 0;
       }
 LAB_005b8415:

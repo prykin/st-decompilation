@@ -20,7 +20,7 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
 {
   STColl3CVTable_at_1D5 **this_00;
   short sVar1;
-  undefined1 uVar2;
+  byte uVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   int local_EAX_1370;
@@ -39,7 +39,7 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
   uint uVar9;
   int iVar10;
   uint uVar11;
-  undefined4 uVar12;
+  uint uVar12;
   ushort uVar13;
   undefined4 local_2c;
   undefined4 local_28;
@@ -340,7 +340,7 @@ LAB_005f79aa:
         *(undefined4 *)(&this->field_0x2a6 + this->field_02A0 * 6) = local_28;
         (&this->field_0x2a5)[this->field_02A0 * 6] = this->field_0024;
         if (local_EAX_3453 == 2) {
-          *(undefined4 *)this->field_02E6 = local_2c;
+          *STField<undefined4 *>(this,0x2E6) = local_2c;
         }
         if (*(STT3DSprC **)this->field_02E6 != nullptr) {
           uVar13 = 30000;

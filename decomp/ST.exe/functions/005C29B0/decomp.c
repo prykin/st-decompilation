@@ -37,7 +37,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   ushort *local_EAX_977;
   int uVar22;
   AnonPointee_SettMapMTy_1C67 *pAVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   char *pcVar24_mg3;
   char *pcVar24_mg4;
   char *pcVar24_mg5;
@@ -62,7 +62,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   uint local_EAX_4970;
   uint local_EAX_5300;
   uint local_EAX_5811;
-  undefined4 uVar17;
+  uint uVar17;
   DArrayTy *pDVar18;
   uint uVar19;
   uint uVar21;
@@ -255,12 +255,12 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   if (((SVar1 == 6) || (SVar1 == CASE_7)) || (SVar1 == 0xe)) {
     this_01->field_21E3 = 1;
     iVar33 = 1;
-    puVar10 = (undefined4 *)(this_01->field_005D + 0x28);
-    uVar22 = FUN_006b4fe0(this_01->field_005D);
+    puVar13 = (ushort *)this_01->field_005D + 0x14;
+    uVar22 = FUN_006b4fe0((ushort *)this_01->field_005D);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pAVar9 = (AnonPointee_SettMapMTy_1C67 *)
-             FUN_006b50c0(0xf9,0x123,(uint)*(ushort *)(this_01->field_005D + 0xe),uVar22,puVar10,
-                          iVar33);
+             FUN_006b50c0(0xf9,0x123,(uint)*(ushort *)(this_01->field_005D + 0xe),uVar22,
+                          (undefined4 *)puVar13,iVar33);
     this_01->field_1C67 = pAVar9;
     uVar19 = pAVar9[1].field_0008;
     if (uVar19 == 0) {
@@ -504,12 +504,12 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   ppuVar26 = &this_01->field_20F4;
   do {
     iVar33 = 1;
-    puVar10 = (undefined4 *)(this_01->field_005D + 0x28);
-    local_EAX_2693 = FUN_006b4fe0(this_01->field_005D);
+    puVar13 = (ushort *)this_01->field_005D + 0x14;
+    local_EAX_2693 = FUN_006b4fe0((ushort *)this_01->field_005D);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     puVar13 = (ushort *)
               FUN_006b50c0(0x1e5,0x14,(uint)*(ushort *)(this_01->field_005D + 0xe),local_EAX_2693,
-                           puVar10,iVar33);
+                           (undefined4 *)puVar13,iVar33);
     *ppuVar26 = puVar13;
     local_14 = *(HANDLE *)(puVar13 + 10);
     if (local_14 == (HANDLE)0x0) {
@@ -534,12 +534,12 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     local_c = local_c + 0x19;
   } while ((int)local_c < 0x13b);
   iVar33 = 1;
-  puVar10 = (undefined4 *)(this_01->field_005D + 0x28);
-  local_EAX_2876 = FUN_006b4fe0(this_01->field_005D);
+  puVar13 = (ushort *)this_01->field_005D + 0x14;
+  local_EAX_2876 = FUN_006b4fe0((ushort *)this_01->field_005D);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   pAVar14 = (AnonPointee_SettMapMTy_1E1E *)
             FUN_006b50c0(0x205,0x8c,(uint)*(ushort *)(this_01->field_005D + 0xe),local_EAX_2876,
-                         puVar10,iVar33);
+                         (undefined4 *)puVar13,iVar33);
   this_01->field_1E1E = pAVar14;
   uVar19 = pAVar14[1].field_0008;
   if (uVar19 == 0) {

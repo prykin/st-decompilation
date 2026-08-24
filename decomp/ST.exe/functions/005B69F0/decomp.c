@@ -7,7 +7,11 @@
 
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 005AD050 -> 005B69F0 @ 005AD199 | 005C4E20 -> 005B69F0 @ 005C4F76 | 005E79B0 ->
-   005B69F0 @ 005E7AEA */
+   005B69F0 @ 005E7AEA
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 ChatGlassTy::OutChGlProc
@@ -15,7 +19,7 @@ ChatGlassTy::OutChGlProc
           undefined4 param_3,int param_4,int param_5,int param_6,int param_7,undefined4 *param_8)
 
 {
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   int iVar4;
   InternalExceptionFrame local_4c;

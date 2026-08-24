@@ -4,21 +4,23 @@
 undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefined4 param_2)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   short sVar2;
   VisibleClassTy *pVVar3;
   STGameObjC *pSVar4;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
+  int iVar9_mg1;
+  int iVar9_mg3;
   byte bVar7;
   int iVar8;
   int iVar9;
   int local_24;
   int local_20;
   int local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
+  uint local_18;
+  uint local_14;
+  uint local_10;
   STGameObjC *local_c;
   int *local_8;
 
@@ -114,10 +116,10 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
     else {
       bVar7 = param_1->field_027C;
       if (bVar7 < 0xf) {
-        iVar9 = STPlaySystemC::sub_006E62D0
-                          (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_0274,
-                           (int *)&local_8);
-        if (iVar9 == -4) {
+        iVar9_mg1 = STPlaySystemC::sub_006E62D0
+                              (g_playSystem_00802A38,
+                               (AnonShape_005EFAE0_B406B78B *)param_1->field_0274,(int *)&local_8);
+        if (iVar9_mg1 == -4) {
           param_1->field_027C = 0xfa;
           return 0;
         }
@@ -142,10 +144,10 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
         bVar7 = param_1->field_027C;
       }
       if (bVar7 == 0xf) {
-        iVar9 = STPlaySystemC::sub_006E62D0
-                          (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_0274,
-                           (int *)&local_8);
-        if (iVar9 == -4) {
+        iVar9_mg3 = STPlaySystemC::sub_006E62D0
+                              (g_playSystem_00802A38,
+                               (AnonShape_005EFAE0_B406B78B *)param_1->field_0274,(int *)&local_8);
+        if (iVar9_mg3 == -4) {
           param_1->field_027C = 0xfa;
           return 0;
         }

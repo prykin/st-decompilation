@@ -14,7 +14,7 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
   undefined4 extraout_ECX_01;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_02;
-  undefined4 uVar2;
+  uint uVar2;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_03;
   Global_sub_0043FC50_param_1Enum GVar3;

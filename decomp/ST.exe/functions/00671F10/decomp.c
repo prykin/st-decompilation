@@ -11,7 +11,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
 
 {
   short sVar1;
-  undefined1 *arg_1;
+  byte *arg_1;
   int iVar3;
   int iVar2;
   char *pcVar3;

@@ -14,7 +14,7 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
 {
   ushort *puVar1;
   int errorCode;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
   uint uVar5;
   uint uVar6;

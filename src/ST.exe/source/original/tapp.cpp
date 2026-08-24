@@ -21,7 +21,7 @@ undefined4 __thiscall
 st::fn_0056ADC0(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 param_3,int param_4)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   bool bVar4;
   byte bVar5;
@@ -55,7 +55,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   char *local_EAX_4860;
   char *local_EAX_4878;
   int iVar15;
-  undefined4 uVar12;
+  uint uVar12;
   int iVar13;
   uint uVar14;
   uint uVar15;
@@ -64,7 +64,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   char *pcVar18;
   WNDCLASSA *pWVar19;
   char *pcVar20;
-  undefined4 *puVar21;
+  uint *puVar21;
   AnonShape_00683C70_22193481 **ppAVar22;
   UINT UVar23;
   AnonShape_00683C70_22193481 *local_560;
@@ -78,7 +78,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   WNDCLASSA local_6c;
   DWORD local_44;
   HWND local_40;
-  undefined1 *local_3c;
+  byte *local_3c;
   int local_38;
   undefined4 *local_34;
   int local_30;
@@ -408,7 +408,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
       } while (cVar2 != '\0');
       if (iVar13 != -2) {
         uVar14 = 0xffffffff;
-        pcVar17 = st::pointer_boundary_cast<char *>(&pSVar16->field_0x60);
+        pcVar17 = (char *)&pSVar16->field_0x60;
         do {
           pcVar18 = pcVar17;
           if (uVar14 == 0) break;
@@ -666,7 +666,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
           pSVar10 = (StartSystemTy *)st::fn_0072E530(0x6b6);
           if (pSVar10 != nullptr) {
             /* ST_CALLSITE[0056B905]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
-            st::fn_00405CD6(pSVar10,st::machine_word_boundary_cast<undefined4>(pSVar16));
+            st::fn_00405CD6(pSVar10,(AppClassTy *)pSVar16);
           }
           /* ST_CALLSITE[0056B912]: CALL dword ptr [EAX] */
           g_startSystem_0081176C->InitSystem();
@@ -677,7 +677,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
           pSVar16->field_117C = 1;
           pSVar16->field_1163 = 1;
           if ((undefined1 *)PTR_00857168->field_000C != 0) {
-            switch(*(undefined1 *)PTR_00857168->field_000C) {
+            switch(*STField<undefined1 *>(PTR_00857168,0xC)) {
             case 0x4d:
             case 0x6d:
               pSVar16->field_1163 = 3;
@@ -729,7 +729,7 @@ st::fn_0056ADC0(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
       } while (cVar2 != '\0');
       uVar14 = ~uVar14;
       pcVar17 = pcVar18 + -uVar14;
-      pcVar18 = st::pointer_boundary_cast<char *>(&pSVar16->field_0x6ce3);
+      pcVar18 = (char *)&pSVar16->field_0x6ce3;
       memmove(pcVar18, pcVar17, uVar14); /* compiler REP MOVS byte copy */
       uVar15 = 0;
     }
@@ -827,7 +827,7 @@ switchD_0056b4ce_caseD_47:
           pSVar10 = (StartSystemTy *)st::fn_0072E530(0x6b6);
           if (pSVar10 != nullptr) {
             /* ST_CALLSITE[0056BDC8]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
-            st::fn_00405CD6(pSVar10,st::machine_word_boundary_cast<undefined4>(pSVar16));
+            st::fn_00405CD6(pSVar10,(AppClassTy *)pSVar16);
           }
           /* ST_CALLSITE[0056BDD5]: CALL dword ptr [EAX] */
           g_startSystem_0081176C->InitSystem();
@@ -926,7 +926,7 @@ switchD_0056b4ce_caseD_57:
       } while (cVar2 != '\0');
       if (iVar13 != -2) {
         uVar14 = 0xffffffff;
-        pcVar17 = st::pointer_boundary_cast<char *>(&pSVar16->field_0x60);
+        pcVar17 = (char *)&pSVar16->field_0x60;
         do {
           pcVar18 = pcVar17;
           if (uVar14 == 0) break;
@@ -1087,7 +1087,7 @@ switchD_0056b4ce_caseD_57:
            /* ST_CALLSITE[0056BB52]: CALL dword ptr [0x0085bc74] */
            (DVar8 = st::external_00000052(hFile,0,(PLONG)0x0,2), DVar8 != 0xffffffff)) {
           /* ST_CALLSITE[0056BB71]: CALL dword ptr [0x0085bc90] */
-          st::external_00000059(hFile,(LPCVOID)&pSVar16->field_1134,4,st::pointer_boundary_cast<LPDWORD>(&local_44),(LPOVERLAPPED)0x0);
+          st::external_00000059(hFile,&pSVar16->field_1134,4,(LPDWORD)&local_44,(LPOVERLAPPED)0x0);
           /* ST_CALLSITE[0056BB78]: CALL dword ptr [0x0085bbc8] */
           st::external_00000027(hFile);
           pSVar16->field_1181 = 1;
@@ -1249,7 +1249,7 @@ void __thiscall st::fn_0056C750(STAppC *this)
     st::fn_004032C4((AnonShape_005672E0_9A0A2ED1 *)this_00);
     local_94.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_94;
-    local_c = st::pointer_boundary_cast<int *>(this_00);
+    local_c = reinterpret_cast<int *>(this_00);
     iVar4 = st::fn_0072D7F0(local_94.jumpBuffer,0);
     piVar2 = local_c;
     if ((iVar4 == 0) && (*local_c != 0)) {
@@ -1501,7 +1501,7 @@ undefined4 __thiscall st::fn_0056D1F0(STAppC *this)
 {
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   InternalExceptionFrame local_4c;
   STAppC *local_8;
 
@@ -1553,7 +1553,7 @@ undefined4 __thiscall st::fn_0056D1F0(STAppC *this)
 void __thiscall st::fn_0056D370(STAppC *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   int errorCode;
   int iVar3;
   byte *puVar4;
@@ -1663,7 +1663,11 @@ void __thiscall st::fn_0056D580(STAppC *this)
 #line 4 "decomp/ST.exe/functions/0056D740/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
-   STAppC::ChangeResolution */
+   STAppC::ChangeResolution
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0056D740(STAppC *this,int param_1)
 
@@ -1676,7 +1680,7 @@ void __thiscall st::fn_0056D740(STAppC *this,int param_1)
   int iVar5;
   InternalExceptionFrame *pIVar6;
   uint uVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   undefined4 local_4bc [256];
   InternalExceptionFrame local_bc;
   undefined4 local_78 [4];
@@ -1794,7 +1798,7 @@ void __thiscall st::fn_0056DB80(STAppC *this)
 {
   ushort **slotStorage;
   STAppC_field_1180State SVar1;
-  undefined4 uVar2;
+  uint uVar2;
   ST3DSMAPContext *pSVar4;
   InternalExceptionFrame *pIVar5;
   int iVar11;
@@ -1817,9 +1821,9 @@ void __thiscall st::fn_0056DB80(STAppC *this)
   cLoadingTy *this_00;
   STAppC *pSVar11;
   char *pcVar12;
-  undefined4 *puVar13;
+  uint *puVar13;
   byte *pbVar14;
-  undefined1 *puVar15;
+  byte *puVar15;
   byte local_328 [260];
   byte local_224;
   undefined4 local_223;
@@ -2329,7 +2333,7 @@ switchD_0056fad2_caseD_6105:
         pSVar12 = (StartSystemTy *)st::fn_0072E530(0x6b6);
         if (pSVar12 != nullptr) {
           /* ST_CALLSITE[005702FC]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
-          st::fn_00405CD6(pSVar12,st::machine_word_boundary_cast<undefined4>(pSVar11));
+          st::fn_00405CD6(pSVar12,(AppClassTy *)pSVar11);
         }
         /* ST_CALLSITE[00570309]: CALL dword ptr [EDX] */
         g_startSystem_0081176C->InitSystem();
@@ -2384,7 +2388,7 @@ switchD_0056fad2_caseD_6105:
       } while (cVar1 != '\0');
       uVar26 = ~uVar26;
       pcVar14 = pcVar24 + -uVar26;
-      pcVar24 = st::pointer_boundary_cast<char *>(&pSVar11->field_0x7a02);
+      pcVar24 = (char *)&pSVar11->field_0x7a02;
       memmove(pcVar24, pcVar14, uVar26); /* compiler REP MOVS byte copy */
       uVar18 = 0;
       /* ST_CALLSITE[0056FB42]: CALL 0x00403990; direct=00403990 STAppC::OpenGameDBs */
@@ -2455,7 +2459,7 @@ switchD_0056fad2_caseD_6105:
       /* ST_CALLSITE[0056FF2C]: CALL 0x00401578; direct=00401578 STAppC::ChangeResolution */
       st::fn_00401578(pSVar11,0);
       uVar26 = 0xffffffff;
-      pcVar14 = st::pointer_boundary_cast<char *>(&pSVar11->field_0x77fa);
+      pcVar14 = (char *)&pSVar11->field_0x77fa;
       do {
         pcVar24 = pcVar14;
         if (uVar26 == 0) break;
@@ -2499,7 +2503,7 @@ switchD_0056fad2_caseD_6102:
         pSVar12 = (StartSystemTy *)st::fn_0072E530(0x6b6);
         if (pSVar12 != nullptr) {
           /* ST_CALLSITE[0057021A]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
-          st::fn_00405CD6(pSVar12,st::machine_word_boundary_cast<undefined4>(pSVar11));
+          st::fn_00405CD6(pSVar12,(AppClassTy *)pSVar11);
         }
         /* ST_CALLSITE[00570227]: CALL dword ptr [EDX] */
         g_startSystem_0081176C->InitSystem();
@@ -2654,7 +2658,7 @@ switchD_0056fad2_caseD_6102:
             } while (cVar1 != '\0');
             uVar26 = ~uVar26;
             pcVar14 = pcVar24 + -uVar26;
-            pcVar24 = st::pointer_boundary_cast<char *>(&pSVar11->field_0x77fa);
+            pcVar24 = (char *)&pSVar11->field_0x77fa;
             memmove(pcVar24, pcVar14, uVar26); /* compiler REP MOVS byte copy */
             if ((pSVar11->field_1180 == CASE_3) || (pSVar11->field_1180 == CASE_B)) {
               pSVar11->field_1180 = CASE_3;
@@ -2708,7 +2712,7 @@ switchD_0056fad2_caseD_6102:
       if ((g_anonShape_006C3FC0_72DDFA27_008075A0->field_0004 & 0x40000000) != 0) {
         st::fn_006C3F00((int)g_anonShape_006C3FC0_72DDFA27_008075A0);
       }
-      local_10 = st::fn_006C2A00((LPVOID)&DAT_00803408);
+      local_10 = st::fn_006C2A00(&DAT_00803408);
       if ((local_10 != 0) && (g_int_008075A4 == nullptr)) {
         st::fn_006E3DB0((int)&pSVar11->field_0x113a);
         g_currentExceptionFrame = local_a4.previous;
@@ -2837,7 +2841,7 @@ LAB_00570645:
       }
       if (local_10 == 0) {
         st::fn_006C3B00
-                  (st::pointer_boundary_cast<LPVOID>(g_anonShape_006C3FC0_72DDFA27_008075A0),(LPCSTR)&DAT_00803408,(uint)local_8);
+                  (g_anonShape_006C3FC0_72DDFA27_008075A0,(LPCSTR)&DAT_00803408,(uint)local_8);
       }
       else {
         st::fn_006C2AE0(g_int_008075A4,st::machine_word_boundary_cast<undefined4>(&DAT_00803408),(uint)local_8);
@@ -3132,7 +3136,7 @@ void __thiscall st::fn_00571400(STAppC *this,int param_1)
      /* ST_CALLSITE[00571479]: CALL dword ptr [0x0085bc74] */
      (((DVar3 = st::external_00000052(hFile,0,(PLONG)0x0,0), DVar3 == 0xffffffff ||
        /* ST_CALLSITE[00571494]: CALL dword ptr [0x0085bc68] */
-       (BVar4 = st::external_0000004F(hFile,(LPVOID)&pSVar2->field_1134,4,st::pointer_boundary_cast<LPDWORD>(&local_c),(LPOVERLAPPED)0x0), BVar4 == 0)) ||
+       (BVar4 = st::external_0000004F(hFile,&pSVar2->field_1134,4,(LPDWORD)&local_c,(LPOVERLAPPED)0x0), BVar4 == 0)) ||
       (local_c != 4)))) {
     local_8 = 1;
   }
@@ -3140,7 +3144,7 @@ void __thiscall st::fn_00571400(STAppC *this,int param_1)
      /* ST_CALLSITE[005714BE]: CALL dword ptr [0x0085bc74] */
      (DVar3 = st::external_00000052(hFile,pSVar2->field_1191,(PLONG)0x0,0), DVar3 != 0xffffffff)) {
     /* ST_CALLSITE[005714DA]: CALL dword ptr [0x0085bc68] */
-    BVar4 = st::external_0000004F(hFile,st::pointer_boundary_cast<LPVOID>(local_2c),0x1b,st::pointer_boundary_cast<LPDWORD>(&local_c),(LPOVERLAPPED)0x0);
+    BVar4 = st::external_0000004F(hFile,local_2c,0x1b,(LPDWORD)&local_c,(LPOVERLAPPED)0x0);
     if ((BVar4 != 0) && (local_c == 0x1b)) {
       iVar6 = 0;
       switch(local_1e & 0xff) {
@@ -3192,13 +3196,13 @@ void __thiscall st::fn_00571400(STAppC *this,int param_1)
       if (pSVar2->field_118D < newSize) {
         pSVar2->field_118D = newSize;
         pvVar7 = st::fn_006ACF50(pSVar2->field_1189,newSize);
-        pSVar2->field_1189 = st::pointer_boundary_cast<LPVOID>(pvVar7);
+        pSVar2->field_1189 = pvVar7;
       }
       /* ST_CALLSITE[00571598]: CALL dword ptr [0x0085bc74] */
       DVar3 = st::external_00000052(hFile,pSVar2->field_1191,(PLONG)0x0,0);
       if (((DVar3 == 0xffffffff) ||
           /* ST_CALLSITE[005715B2]: CALL dword ptr [0x0085bc68] */
-          (BVar4 = st::external_0000004F(hFile,pSVar2->field_1189,newSize,st::pointer_boundary_cast<LPDWORD>(&local_c),(LPOVERLAPPED)0x0), BVar4 == 0
+          (BVar4 = st::external_0000004F(hFile,pSVar2->field_1189,newSize,(LPDWORD)&local_c,(LPOVERLAPPED)0x0), BVar4 == 0
           )) || (local_c != newSize)) {
         local_8 = 1;
         /* ST_CALLSITE[005715E0]: CALL dword ptr [0x0085bbc8] */

@@ -9,7 +9,7 @@ void FUN_006b0290(int param_1,int param_2,int param_3,int param_4,int *param_5,i
 
 {
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

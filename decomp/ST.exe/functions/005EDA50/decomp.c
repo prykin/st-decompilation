@@ -10,7 +10,7 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
   STBoatC *this;
   int iVar4;
   dword dVar5;
-  undefined4 uVar6;
+  uint uVar6;
   undefined4 local_18;
   int local_14;
   int local_10;

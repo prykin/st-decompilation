@@ -6,7 +6,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Igor\to_sat.cpp
    Diagnostic line evidence: 283 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+
+   [STReturnSemanticsApplier] repair_false_machine_eax_return.
+   Evidence: the earlier machine return was admitted only because a self-zeroing XOR/SUB was
+   misclassified as reading the call result; every resolved caller now proves an exact EAX kill;
+   machine CFG audit: used=0, ignored=3, unknown=0 */
 
 void __thiscall st::fn_0058C560(void *this,int param_1,int param_2)
 
@@ -132,7 +137,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
       local_18 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
       /* ST_CALLSITE[0058CB87]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
       local_14 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = st::pointer_boundary_cast<AnonShape_0058C760_5C56630E *>(st::fn_006AAC70(local_10 + 0x7c + local_8));
+      local_c = static_cast<AnonShape_0058C760_5C56630E *>(st::fn_006AAC70(local_10 + 0x7c + local_8));
       if (((local_18 != nullptr) && (local_14 != nullptr)) &&
          (local_c != nullptr)) {
         puVar11 = (byte *)&this_00->field_0x275;
@@ -212,7 +217,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
           puVar11 = (byte *)(&this_00->field_01D5);
           /* ST_CALLSITE[0058C9CD]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
           iVar7 = st::fn_00404183
-                            ((STT3DSprC *)puVar11,0xe,PTR_00806774,st::pointer_boundary_cast<char *>(&DAT_007cbaa8),CASE_1D);
+                            ((STT3DSprC *)puVar11,0xe,PTR_00806774,(char *)&DAT_007cbaa8,CASE_1D);
           if (iVar7 != 0) {
             st::fn_006A5E40
                       (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Igor\\to_sat.cpp"),0x158);
@@ -235,7 +240,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
           st::fn_00401064((STT3DSprC *)puVar11,'\x0e',0);
         }
         else if (uVar8 == 2) {
-          local_20 = st::pointer_boundary_cast<AnonShape_0058C760_4470B7C6 *>((message->arg0).ptr);
+          local_20 = static_cast<AnonShape_0058C760_4470B7C6 *>((message->arg0).ptr);
           pAVar10 = local_20;
           puVar11 = (byte *)&this_00->field_0x275;
           memmove(puVar11, pAVar10, 0x26); /* compiler REP MOVS byte copy */

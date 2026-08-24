@@ -149,7 +149,7 @@ LAB_006801d2:
 void st::fn_00680270(LPCSTR param_1)
 
 {
-  st::fn_0072EA70(param_1,st::pointer_boundary_cast<char *>(&DAT_007d1d98));
+  st::fn_0072EA70(param_1,(char *)&DAT_007d1d98);
   return;
 }
 
@@ -315,7 +315,7 @@ undefined4 * __cdecl st::fn_00680590(byte *param_1)
 
 {
   byte *_Drive;
-  undefined4 *puVar1;
+  uint *puVar1;
   char *text;
   byte *pbVar2;
   CHAR local_404 [1024];
@@ -341,7 +341,7 @@ undefined4 * __cdecl st::fn_00680650(byte *param_1,uint param_2)
 
 {
   byte *_Drive;
-  undefined4 *puVar1;
+  uint *puVar1;
   char *text;
   byte *pbVar2;
   CHAR local_404 [1024];
@@ -367,7 +367,7 @@ undefined4 * __cdecl st::fn_00680710(byte *param_1,uint param_2)
 
 {
   byte *_Drive;
-  undefined4 *puVar1;
+  uint *puVar1;
   char *text;
   byte *pbVar2;
   CHAR local_404 [1024];
@@ -397,8 +397,8 @@ void __cdecl st::fn_006807D0(undefined4 *param_1)
 
 {
   char *pcVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
+  uint uVar2;
+  uint uVar3;
   CHAR local_404 [1024];
 
   st::fn_00405876();
@@ -903,7 +903,7 @@ undefined4 st::fn_00681670(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
 
   iVar1 = DAT_008488b0;
@@ -960,7 +960,7 @@ undefined4 st::fn_006817A0(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
 
   iVar1 = DAT_008488b0;
@@ -1011,7 +1011,7 @@ undefined4 st::fn_006818B0(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
 
   iVar1 = DAT_008488b0;
@@ -1105,7 +1105,7 @@ undefined4 st::fn_00681AD0(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
 
   iVar1 = DAT_008488b0;
@@ -1142,7 +1142,7 @@ undefined4 st::fn_00681BB0(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
 
   iVar1 = DAT_008488b0;
@@ -1458,8 +1458,7 @@ void st::fn_00682290(void)
 undefined4 st::fn_006822C0(char *param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   if (*param_1 == '\x01') {
     return *(undefined4 *)(param_1 + 1);
   }
@@ -2516,7 +2515,7 @@ uint * __thiscall st::fn_0068E4F0(void *this,int param_1)
   DArrayTy *array;
   int iVar2;
   DArrayTy *array_00;
-  undefined2 *puVar3;
+  ushort *puVar3;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   int extraout_EDX;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -2842,7 +2841,7 @@ int __thiscall st::fn_0068FAC0(void *this,ushort param_1,undefined4 param_2)
   local_38[0] = 0x76;
   local_2d = param_2;
   /* ST_CALLSITE[0068FAFE]: CALL 0x00403cdd; direct=00403CDD AiTactClassTy::sub_006902B0 */
-  st::fn_00403CDD(st::pointer_boundary_cast<AiTactClassTy *>(this),-0x8000,local_38);
+  st::fn_00403CDD(static_cast<AiTactClassTy *>(this),-0x8000,local_38);
   return (int)local_29;
 }
 

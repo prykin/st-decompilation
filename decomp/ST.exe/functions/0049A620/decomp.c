@@ -8,14 +8,14 @@
 undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
 
 {
-  undefined2 uVar2;
+  ushort uVar2;
   STGroupBoatC *this_00;
   int iVar2;
   DArrayTy *array;
   STBoatC *this_01;
   STGameObjC *objPtr;
   int iVar3;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   uint uVar5;
   uint uVar6;

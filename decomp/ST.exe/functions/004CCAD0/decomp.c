@@ -4,8 +4,7 @@
 void __fastcall FUN_004ccad0(AnonShape_004CCAD0_262475FB *param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   thunk_FUN_00423160();
   uVar1 = 0;
   if (param_1->field_0361 != 0) {

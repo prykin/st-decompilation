@@ -1,6 +1,10 @@
 
 /* [STPrototypeRepairApplier] Propagated parameter 0.
-   Evidence: 00580D30 -> 004D8530 @ 00580D75 */
+   Evidence: 00580D30 -> 004D8530 @ 00580D75
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void FUN_004d8530(STResourceC *param_1)
 

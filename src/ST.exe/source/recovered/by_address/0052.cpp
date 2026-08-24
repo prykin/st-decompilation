@@ -46,7 +46,7 @@ IntercomPanelTy * __cdecl st::fn_00521840(void)
 void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
 
 {
-  undefined1 *_Str1;
+  byte *_Str1;
   char cVar1;
   byte bVar2;
   byte bVar3;
@@ -182,7 +182,7 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
         if (uVar8 != 0) {
           local_c = local_c & 0xffffff00;
           local_5 = '\0';
-          local_EAX_705 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::pointer_boundary_cast<char *>(&DAT_007c40f4),4);
+          local_EAX_705 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),(char *)&DAT_007c40f4,4);
           if (local_EAX_705 == 0) {
             local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(1));
           }
@@ -573,7 +573,7 @@ LAB_00522a79:
     if (DAT_0080874e != '\x03') goto LAB_00522ad4;
   }
   else {
-    iVar3 = st::fn_0072E6F0(_Str1,st::pointer_boundary_cast<char *>(&DAT_007c415c),4);
+    iVar3 = st::fn_0072E6F0(_Str1,(char *)&DAT_007c415c,4);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
       st::fn_00404336(DAT_0080874d,1000);
       st::fn_00404B8D(DAT_0080874d);
@@ -588,7 +588,7 @@ LAB_00522a79:
     }
     if (DAT_0080874e == '\x03') goto LAB_00522a79;
 LAB_00522ad4:
-    iVar3 = st::fn_0072E6F0(_Str1,st::pointer_boundary_cast<char *>(&DAT_007c4144),3);
+    iVar3 = st::fn_0072E6F0(_Str1,(char *)&DAT_007c4144,3);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
       st::fn_00404106((uint)DAT_0080874d,100);
       st::fn_00404B8D(DAT_0080874d);
@@ -601,11 +601,11 @@ LAB_00522ad4:
     st::fn_00404B8D(DAT_0080874d);
   }
 LAB_00522b59:
-  iVar3 = st::fn_0072E6F0(_Str1,st::pointer_boundary_cast<char *>(&DAT_007c4134),4);
+  iVar3 = st::fn_0072E6F0(_Str1,(char *)&DAT_007c4134,4);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
     st::fn_00404EC6((uint)DAT_0080874d);
   }
-  iVar3 = st::fn_0072E6F0(_Str1,st::pointer_boundary_cast<char *>(&DAT_007c4130),3);
+  iVar3 = st::fn_0072E6F0(_Str1,(char *)&DAT_007c4130,3);
   if ((iVar3 == 0) && (g_visibleClass_00802A88 != nullptr)) {
     if (g_visibleClass_00802A88->field_0114 == 0) {
       g_visibleClass_00802A88->field_00F8 = 0;
@@ -2351,8 +2351,7 @@ undefined4 __cdecl
 st::fn_00525EF0(Global_sub_00525EF0_param_1Enum param_1,Global_sub_00525EF0_param_2Enum param_2)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   switch(param_1) {
   case CASE_1:
@@ -4344,8 +4343,7 @@ UINT __cdecl st::fn_005293F0(Global_sub_005293F0_param_1Enum param_1)
 undefined4 __cdecl st::fn_00529480(Global_sub_00529480_param_1Enum param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 10000;
   switch(param_1) {
   case CASE_0:
@@ -4796,8 +4794,7 @@ undefined4 __cdecl st::fn_00529D80(Global_sub_00529D80_param_1Enum param_1,int p
 undefined4 __cdecl st::fn_00529F90(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x14)) {
@@ -4816,8 +4813,7 @@ undefined4 __cdecl st::fn_00529F90(int param_1)
 undefined4 __cdecl st::fn_00529FE0(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x14)) {
@@ -4838,8 +4834,7 @@ undefined4 __cdecl st::fn_00529FE0(int param_1)
 undefined4 __cdecl st::fn_0052A030(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x14)) {
@@ -4877,8 +4872,7 @@ undefined4 __cdecl st::fn_0052A080(int param_1)
 undefined4 __cdecl st::fn_0052A0D0(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 1;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x14)) {
@@ -4950,8 +4944,7 @@ undefined4 __cdecl st::fn_0052A1E0(int param_1)
 undefined4 __cdecl st::fn_0052A230(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x14)) {
@@ -5007,8 +5000,7 @@ undefined4 __cdecl st::fn_0052A2D0(int param_1)
 undefined4 __cdecl st::fn_0052A320(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 1;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined2 *)(param_1 + 0x14)) {
@@ -5177,8 +5169,7 @@ uint __cdecl st::fn_0052A6C0(int param_1)
 undefined4 __cdecl st::fn_0052A6F0(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(short *)(param_1 + 0x14) == 0) {
@@ -5196,8 +5187,7 @@ undefined4 __cdecl st::fn_0052A6F0(int param_1)
 undefined4 __cdecl st::fn_0052A730(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 7;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(short *)(param_1 + 0x14) == 0) {
@@ -5215,8 +5205,7 @@ undefined4 __cdecl st::fn_0052A730(int param_1)
 undefined4 __cdecl st::fn_0052A770(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 5;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(short *)(param_1 + 0x14) == 0) {
@@ -5346,20 +5335,20 @@ undefined4 * __cdecl st::fn_0052A970(uint param_1,int param_2)
       if ((param_1 & 0x1000000) != 0) {
         if (((uVar5 != 0) || ((param_1 & 0x8000000) != 0)) ||
            (pcVar2 = &CHAR_00h_008016a0, uVar3 != 0)) {
-          pcVar2 = st::pointer_boundary_cast<char *>(&DAT_007c6eec);
+          pcVar2 = (char *)&DAT_007c6eec;
         }
         /* ST_CALLSITE[0052A9F0]: CALL dword ptr [0x0085bde8] */
         st::external_00000080((LPSTR)&DAT_008016a4,st::mutable_c_string("%s%s"),"Shift",pcVar2);
       }
       if ((param_1 & 0x8000000) != 0) {
         if ((uVar5 != 0) || (pcVar2 = &CHAR_00h_008016a0, uVar3 != 0)) {
-          pcVar2 = st::pointer_boundary_cast<char *>(&DAT_007c6eec);
+          pcVar2 = (char *)&DAT_007c6eec;
         }
         /* ST_CALLSITE[0052AA2B]: CALL EDI */
         st::external_00000080((LPSTR)&DAT_008016a4,st::mutable_c_string("%s%s%s"),&DAT_008016a4,&DAT_007c5454,pcVar2);
       }
       if (uVar3 != 0) {
-        pcVar2 = st::pointer_boundary_cast<char *>(&DAT_007c6eec);
+        pcVar2 = (char *)&DAT_007c6eec;
         if (uVar5 == 0) {
           pcVar2 = &CHAR_00h_008016a0;
         }
@@ -5367,7 +5356,7 @@ undefined4 * __cdecl st::fn_0052A970(uint param_1,int param_2)
         st::external_00000080((LPSTR)&DAT_008016a4,st::mutable_c_string("%s%s%s"),&DAT_008016a4,&DAT_007c5670,pcVar2);
       }
       if (uVar5 < 0x100) {
-        pcVar2 = st::pointer_boundary_cast<char *>(&DAT_007c5210 + (param_1 & 0xffff) * 0x14);
+        pcVar2 = (char *)&DAT_007c5210 + (param_1 & 0xffff) * 0x14;
       }
       else {
         pcVar2 = &CHAR_00h_008016a0;
@@ -5470,40 +5459,46 @@ MoneyTy * __cdecl st::fn_0052B670(void)
 // 0052CCE0 FUN_0052cce0
 #line 4 "decomp/ST.exe/functions/0052CCE0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0052DD20 -> 0052CCE0 @ 0052DD7E; data at 0080679C */
+   Evidence: 0052DD20 -> 0052CCE0 @ 0052DD7E; data at 0080679C
 
-void __cdecl st::fn_0052CCE0(ushort *param_1,undefined *param_2,BYTE param_3)
+   [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=1, ignored=0, unknown=0 */
+
+HDC __cdecl st::fn_0052CCE0(ushort *param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_b0;
   byte local_74 [88];
   byte local_1c [24];
 
-  pLVar6 = &local_b0;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_b0;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_b0.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Verdana";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Verdana";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_b0.lfHeight = -0xf;
   local_b0.lfWidth = 0;
   local_b0.lfEscapement = 0;
@@ -5517,18 +5512,18 @@ void __cdecl st::fn_0052CCE0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_b0.lfQuality = '\x01';
   local_b0.lfPitchAndFamily = '\"';
   local_1c[0] = 0;
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_b0.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_b0.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_1c[1] = 0xa6;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_1c[3] = 0xa6;
   local_1c[2] = 10;
@@ -5637,9 +5632,10 @@ void __cdecl st::fn_0052CCE0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_74[0x55] = 0x7c;
   local_74[0x56] = 0x7e;
   /* ST_CALLSITE[0052CF57]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
-  st::fn_0070D1F0
-            (0x19d,&local_b0,nullptr,local_74,(int)param_1,local_1c,10,2,2,1,0x10001c,param_2);
-  return;
+  pHVar2 = st::fn_0070D1F0
+                     (0x19d,&local_b0,nullptr,local_74,(int)param_1,local_1c,10,2,2,1,0x10001c,
+                      param_2);
+  return pHVar2;
 }
 
 // 0052D020 CreatePopUp
@@ -5693,12 +5689,12 @@ void __thiscall st::fn_0052D320(void *this,char *text,uint param_2)
   bVar1 = (byte)param_2;
   if (STField<char>(this,0x9c) == '\0') {
     /* ST_CALLSITE[0052D33A]: CALL 0x00402fea; direct=00402FEA PopUpTy::AddStr */
-    st::fn_00402FEA(st::pointer_boundary_cast<PopUpTy *>(this),&st_global_007C3B5C,bVar1);
+    st::fn_00402FEA(static_cast<PopUpTy *>(this),&st_global_007C3B5C,bVar1);
     /* ST_CALLSITE[0052D347]: CALL 0x00402fea; direct=00402FEA PopUpTy::AddStr */
-    st::fn_00402FEA(st::pointer_boundary_cast<PopUpTy *>(this),&st_global_007C3B5C,bVar1);
+    st::fn_00402FEA(static_cast<PopUpTy *>(this),&st_global_007C3B5C,bVar1);
   }
   /* ST_CALLSITE[0052D353]: CALL 0x00402fea; direct=00402FEA PopUpTy::AddStr */
-  st::fn_00402FEA(st::pointer_boundary_cast<PopUpTy *>(this),text,bVar1);
+  st::fn_00402FEA(static_cast<PopUpTy *>(this),text,bVar1);
   return;
 }
 

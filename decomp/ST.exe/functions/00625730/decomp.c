@@ -24,7 +24,7 @@ undefined4 __thiscall STMineSetC::sub_00625730(STMineSetC *this)
   int iVar7;
   Global_sub_006263B0_param_1Enum GVar8;
   uint uVar9;
-  undefined4 uVar10;
+  uint uVar10;
   int iVar5;
   int iVar13;
   int iVar11;
@@ -148,7 +148,7 @@ LAB_006259bf:
               }
             }
             else {
-              thunk_FUN_00416270(this_00,(uint *)&local_a,(int *)&local_8,&local_6);
+              thunk_FUN_00416270(this_00,(uint *)&local_a,&local_8,&local_6);
               local_EAX_752 =
                    FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)local_a,
                                 (int)local_8,(int)local_6);
@@ -281,7 +281,7 @@ LAB_00625d60:
           if (iVar6 != 0) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             if (in_stack_00000010 != 0) {
-              thunk_FUN_00416270(pSVar16,(uint *)&local_a,(int *)&local_8,&local_6);
+              thunk_FUN_00416270(pSVar16,(uint *)&local_a,&local_8,&local_6);
               iVar5 = FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)local_a,
                                    (int)local_8,(int)local_6);
               if (iVar5 < *(int *)(&DAT_007d0294 + (uint)this->field_02AD * 4)) {

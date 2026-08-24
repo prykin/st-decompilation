@@ -23,7 +23,7 @@ st::fn_006A2770(int *param_1,int param_2,int param_3,int param_4,ushort *param_5
   puVar2 = param_5;
   if (((((-1 < param_2) && (param_2 < *param_1)) && (-1 < param_3)) &&
       ((param_3 < param_1[1] && (-1 < param_4)))) && (param_4 < 6)) {
-    local_8 = st::pointer_boundary_cast<int *>(&DAT_007df86c);
+    local_8 = reinterpret_cast<int *>(&DAT_007df86c);
     do {
       uVar4 = st::machine_word_boundary_cast<uint>(local_8[-1] + param_2);
       iVar3 = *local_8 + param_3;
@@ -36,7 +36,7 @@ st::fn_006A2770(int *param_1,int param_2,int param_3,int param_4,ushort *param_5
       local_8 = local_8 + 2;
     } while ((int)local_8 < 0x7df88c);
     auto param_5_after_write = (ushort *)&DAT_007df888; /* compiler stack-slot lifetime split */
-    piVar5 = st::pointer_boundary_cast<int *>(&DAT_007df86c);
+    piVar5 = reinterpret_cast<int *>(&DAT_007df86c);
     do {
       iVar3 = piVar5[-1];
       iVar1 = *piVar5;

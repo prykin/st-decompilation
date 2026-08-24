@@ -29,7 +29,7 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
   uint uVar6;
   int local_EAX_2244;
   int local_EAX_2370;
-  undefined4 uVar7;
+  uint uVar7;
   int local_EAX_2562;
   int iVar4;
   undefined4 local_18;

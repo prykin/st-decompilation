@@ -18,7 +18,7 @@ STManRuinC::sub_00630C50
           (STManRuinC *this,undefined4 param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   STManRuinC *pSVar2;
   int iVar3;
   ushort *puVar3;

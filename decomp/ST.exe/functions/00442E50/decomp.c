@@ -34,7 +34,7 @@ STAllPlayersC::_AssignMDPairs
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   STWorldCell *extraout_EDX;
   STWorldCell *pSVar12;
-  undefined2 uVar13;
+  ushort uVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -107,8 +107,7 @@ STAllPlayersC::_AssignMDPairs
   short local_12;
   short local_10;
   int local_e;
-  undefined4 local_8;
-
+  uint local_8;
   local_d0[4] = 4;
   local_d0[0] = 0x38;
   local_d0[1] = 0x39;
@@ -315,7 +314,8 @@ LAB_0044326c:
               } while ((int)uVar15 < (int)uVar16);
             }
             if ((int)uVar15 < (int)uVar16) goto cf_common_join_004435CD;
-            psVar7 = (short *)thunk_FUN_0048dc90(this_00,local_19c);
+            thunk_FUN_0048dc90(this_00,local_19c);
+            psVar7 = (short *)local_19c;
             psVar19 = local_158;
             for (iVar11 = 0x10; iVar11 != 0; iVar11 = iVar11 + -1) {
               *(undefined4 *)psVar19 = *(undefined4 *)psVar7;

@@ -18,7 +18,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
   ushort uVar2;
   int iVar3;
   STFishC *this_00;
-  undefined4 *puVar4;
+  uint *puVar4;
   STGameObjC *pSVar5;
   int iVar6;
   int iVar8;
@@ -29,7 +29,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
   int iVar11;
   uint index;
   void *pvVar12;
-  undefined4 *puVar13;
+  uint *puVar13;
   Global_sub_006C8EC0_param_3Enum aGStackY_f8 [9];
   undefined4 uStackY_d4;
   int local_b8;
@@ -62,9 +62,9 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
   int local_2c;
   short local_24 [2];
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

@@ -7,7 +7,7 @@ FUN_00747b12(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   uint uVar3;
   uint uVar4;
 

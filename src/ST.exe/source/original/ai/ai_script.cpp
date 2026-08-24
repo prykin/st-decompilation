@@ -181,7 +181,7 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
           int param_1_after_write = 0; /* compiler stack-slot lifetime split */
           param_2 = st::fn_00401604(pcVar2,(int)pfVar8,&param_1_after_write);
           if (param_2 == nullptr) {
-            st::fn_00405411(param_1_after_write,st::pointer_boundary_cast<char *>(&DAT_00847824));
+            st::fn_00405411(param_1_after_write,(char *)&DAT_00847824);
             return;
           }
           if (param_1_after_write == 1) {
@@ -432,8 +432,8 @@ int __cdecl st::fn_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,in
 
 {
   int iVar1;
-  undefined4 uVar2;
-  undefined4 *puVar3;
+  uint uVar2;
+  uint *puVar3;
   byte *pbVar4;
   int iVar5;
   int iVar6;
@@ -496,7 +496,7 @@ int __cdecl st::fn_006838B0(int *param_1,char param_2,byte *param_3,int param_4)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   undefined1 local_c;
   undefined2 uStack_b;
@@ -666,7 +666,7 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
   byte *pbVar3_mg0;
   int local_EAX_907;
   int local_EAX_1897;
-  undefined4 uVar3;
+  uint uVar3;
   int local_EAX_2430;
   char *local_EAX_2603;
   int local_EAX_2631;
@@ -700,7 +700,7 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   char *local_EAX_25691;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *local_EAX_26162;
   char *local_EAX_26713;
   int local_EAX_27312;
@@ -726,7 +726,7 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
   undefined2 extraout_var_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
-  undefined2 uVar13;
+  ushort uVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -795,13 +795,13 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
   undefined4 local_b4;
   undefined4 local_b0;
   undefined4 local_ac;
-  undefined1 *local_a8;
+  byte *local_a8;
   byte local_a4 [4];
-  undefined4 local_a0;
+  uint local_a0;
   undefined2 local_9c;
   undefined4 uStack_9a;
   undefined2 uStack_96;
-  undefined4 local_94;
+  uint local_94;
   undefined4 local_90;
   float local_8c;
   float local_88;
@@ -832,9 +832,9 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
   undefined1 local_44;
   undefined2 local_43;
   undefined2 local_41;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
   int local_30;
   AllocationRecord_006684E0 *local_2c;
   AllocationRecord_0067D3B0 *local_28;
@@ -921,12 +921,12 @@ uint * st::fn_00683C70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,un
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x468);
       }
-      iVar8 = st::fn_00402F40(st::mutable_c_string("_inc_path"),st::pointer_boundary_cast<char *>(&param_2->field_0x104),nullptr);
+      iVar8 = st::fn_00402F40(st::mutable_c_string("_inc_path"),(char *)&param_2->field_0x104,nullptr);
       if (iVar8 == 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x469);
       }
-      iVar8 = st::fn_00402F40(st::mutable_c_string("_maps_path"),st::pointer_boundary_cast<char *>(&param_2->field_0x208),nullptr);
+      iVar8 = st::fn_00402F40(st::mutable_c_string("_maps_path"),(char *)&param_2->field_0x208,nullptr);
       if (iVar8 == 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x46a);
@@ -4913,12 +4913,12 @@ st::fn_0068CEC0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *para
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa56);
       }
-      iVar4 = st::fn_00402F40(st::mutable_c_string("_inc_path"),st::pointer_boundary_cast<char *>(&param_2->field_0x104),nullptr);
+      iVar4 = st::fn_00402F40(st::mutable_c_string("_inc_path"),(char *)&param_2->field_0x104,nullptr);
       if (iVar4 == 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa57);
       }
-      iVar4 = st::fn_00402F40(st::mutable_c_string("_maps_path"),st::pointer_boundary_cast<char *>(&param_2->field_0x208),nullptr);
+      iVar4 = st::fn_00402F40(st::mutable_c_string("_maps_path"),(char *)&param_2->field_0x208,nullptr);
       if (iVar4 == 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa58);
@@ -4942,14 +4942,14 @@ st::fn_0068CEC0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *para
       st::external_0000001F(lpFileName,0x104,st::pointer_boundary_cast<LPSTR>(&DAT_0084868c),nullptr);
       st::fn_0072E730
                 ((byte *)&DAT_0084868c,(byte *)&DAT_008478a8,(byte *)&DAT_00848790,(byte *)&DAT_0084858c,(byte *)&DAT_00811990);
-      st::fn_0072F110(st::pointer_boundary_cast<char *>(&DAT_0084868c),st::pointer_boundary_cast<char *>(&DAT_008478a8),st::pointer_boundary_cast<char *>(&DAT_00848790),nullptr,nullptr);
-      iVar4 = st::fn_00402F40(st::mutable_c_string("_curr_path"),st::pointer_boundary_cast<char *>(&DAT_0084868c),nullptr);
+      st::fn_0072F110((char *)&DAT_0084868c,(char *)&DAT_008478a8,(char *)&DAT_00848790,nullptr,nullptr);
+      iVar4 = st::fn_00402F40(st::mutable_c_string("_curr_path"),(char *)&DAT_0084868c,nullptr);
       if (iVar4 == 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa5f);
       }
       puVar18 = nullptr;
-      pcVar17 = st::pointer_boundary_cast<char *>(&DAT_0084868c);
+      pcVar17 = (char *)&DAT_0084868c;
       pbVar5_mg0 = st::fn_00401AA5(DAT_00848a24);
       iVar4 = st::fn_00402F40((char *)pbVar5_mg0,pcVar17,puVar18);
       if (iVar4 == 0) {

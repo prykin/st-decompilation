@@ -14,7 +14,7 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
   int errorCode;
   ushort *puVar4;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   STTmMineC *local_c;

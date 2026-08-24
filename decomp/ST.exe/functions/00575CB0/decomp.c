@@ -39,7 +39,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
   int iVar14;
   uint uVar15;
   uint uVar16;
-  undefined4 uVar17;
+  uint uVar17;
   STAlgaC *pSVar18;
   byte *puVar19;
   AnonShape_00575CB0_0408A0C4 *pAVar20;
@@ -50,7 +50,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
   byte *puVar25;
   byte *pbVar26;
   AnonNested_00575CB0_0004_76DA00C1 *pAVar27;
-  undefined1 *puVar28;
+  byte *puVar28;
   bool bVar29;
   longlong lVar30;
   InternalExceptionFrame local_e8;
@@ -62,14 +62,14 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
   undefined4 local_50;
   undefined4 local_4c;
   undefined4 local_48;
-  undefined4 local_44;
+  uint local_44;
   AnonShape_00575CB0_C367735D *local_3c;
   int local_38;
   uint local_34;
   int local_30;
   STAlgaC *local_2c;
   int local_28;
-  undefined4 local_24;
+  int local_24;
   AnonShape_0060EA30_DCEB68AD *local_20;
   byte *local_1c;
   int local_18;

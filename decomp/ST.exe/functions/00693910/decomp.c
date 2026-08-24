@@ -10,7 +10,7 @@ AnonShape_00693910_1CC6632C * __fastcall FUN_00693910(AnonShape_00693910_1CC6632
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   byte *puVar3;
   AnonShape_00693910_1CC6632C *pAVar4;
   byte *puVar5;

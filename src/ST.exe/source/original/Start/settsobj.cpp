@@ -117,7 +117,7 @@ LAB_005d5030:
         }
         /* ST_CALLSITE[005D5040]: CALL dword ptr [EDX + 0x18] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*(int *)pSVar5->field_000C + 0x18))(&pSVar5->field_0x1d);
+        (**(code **)(*STField<int *>(pSVar5,0xC) + 0x18))(&pSVar5->field_0x1d);
         iVar8 = local_10;
       }
       iVar10 = iVar10 + 1;
@@ -440,14 +440,14 @@ int __thiscall st::fn_005D5560(SettMapSTy *this,STMessage *message)
   char *local_EAX_3994;
   AnonNested_005D5560_0050_EBFA0A51 *pAVar20;
   char *pcVar15;
-  undefined4 uVar21;
+  uint uVar21;
   char *local_EAX_6384;
   BITMAPINFO *pBVar22;
   int iVar22;
   byte bVar23;
   int iVar24;
   int iVar25;
-  undefined1 *puVar26;
+  byte *puVar26;
   char cVar27;
   SettMapTy_field_2179State SVar28;
   uint uVar29;
@@ -473,7 +473,7 @@ int __thiscall st::fn_005D5560(SettMapSTy *this,STMessage *message)
   undefined4 local_38;
   undefined4 local_34;
   undefined4 local_30;
-  undefined1 *local_2c;
+  byte *local_2c;
   uint local_28;
   int local_24;
   uint local_20;
@@ -814,7 +814,7 @@ LAB_005d5ff8:
             local_14 = (AnonShape_005D5560_9031BF1B *)
                        &g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0x1;
             pcVar34 = pcVar33 + -uVar30;
-            pcVar33 = st::pointer_boundary_cast<char *>(&g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0x1);
+            pcVar33 = (char *)&g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0x1;
             memmove(pcVar33, pcVar34, uVar30); /* compiler REP MOVS byte copy */
             uVar29 = 0;
             if (pcVar16[4] == '\x02') {
@@ -828,7 +828,7 @@ LAB_005d5ff8:
               *(undefined1 *)(g_bulkInitializedRecords_008087C7 + (byte)pcVar16[2]) = 1;
               if (local_8 == nullptr) {
                 uVar30 = 0xffffffff;
-                local_8 = st::pointer_boundary_cast<char *>(&g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0x1);
+                local_8 = (char *)&g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0x1;
                 pcVar34 = &CHAR_00h_008016a0;
                 do {
                   pcVar33 = pcVar34;
@@ -847,7 +847,7 @@ LAB_005d5ff8:
               else {
                 pcVar34 = local_8 + 0x4c;
                 uVar30 = 0xffffffff;
-                local_8 = st::pointer_boundary_cast<char *>(&g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0x1);
+                local_8 = (char *)&g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0x1;
                 do {
                   pcVar33 = pcVar34;
                   if (uVar30 == 0) break;
@@ -1620,7 +1620,7 @@ LAB_005d6784:
   }
   uVar30 = temp_5fb73ea9b4 - 0x6a7f >> 3;
   local_2c = (undefined1 *)(temp_5fb73ea9b4 + 1 & 7);
-  piVar10 = st::pointer_boundary_cast<int *>((message->arg1).ptr);
+  piVar10 = static_cast<int *>((message->arg1).ptr);
   local_1c = piVar10[2];
   local_18 = piVar10[3];
   pDVar18 = this_00->field_1F84;
@@ -1634,10 +1634,10 @@ LAB_005d6784:
     pAVar35 = DArrayAt<AnonShape_005CBBE0_2D1CAA09>(pDVar18, uVar29);
   }
   local_28 = uVar30;
-  st::fn_006B4170(st::pointer_boundary_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar30]),0,*piVar10 + -0x113,0,piVar10[2],piVar10[3],0xff);
+  st::fn_006B4170(static_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar30]),0,*piVar10 + -0x113,0,piVar10[2],piVar10[3],0xff);
   if (pAVar35 == nullptr) goto switchD_005d6abd_default;
-  switch(local_2c) {
-  case (undefined1 *)0x1:
+  switch(static_cast<uint32_t>(STRawWord(local_2c))) {
+  case 0x1:
     if (*(char *)pAVar35 != '\0') {
       local_24 = local_24 + 1;
       local_20 = local_20 + 1;
@@ -1676,12 +1676,12 @@ LAB_005d6784:
         default:
           bVar23 = 0xff;
         }
-        st::fn_006B4170(st::pointer_boundary_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar30]),0,local_24 + 2,local_20 + 2,local_1c + -4,
+        st::fn_006B4170(static_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar30]),0,local_24 + 2,local_20 + 2,local_1c + -4,
                      local_18 + -4,bVar23);
       }
     }
     break;
-  case (undefined1 *)0x2:
+  case 0x2:
     if (*(char *)pAVar35 == '\0') break;
     /* ST_CALLSITE[005D6BD2]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     st::fn_00404C5F
@@ -1743,7 +1743,7 @@ LAB_005d6c37:
     st::fn_007119C0(pSVar12->field_0034,(char *)&DAT_0080f33a,-1,-1,2);
     uVar30 = local_28;
     break;
-  case (undefined1 *)0x3:
+  case 0x3:
     /* ST_CALLSITE[005D6C9C]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     st::fn_00404C5F
               ((MMObjTy *)this_00,(int)this_00->field_20F4[uVar30],&local_24,2,
@@ -1753,11 +1753,11 @@ LAB_005d6c37:
     uVar29 = 2;
     iVar38 = -1;
     iVar25 = -1;
-    pcVar16 = st::pointer_boundary_cast<char *>(&DAT_007c2310);
+    pcVar16 = (char *)&DAT_007c2310;
     iVar24 = local_1c;
     puVar36 = (uint *)st::fn_00401C0D(this_00,pAVar35);
     goto LAB_005d6d70;
-  case (undefined1 *)0x4:
+  case 0x4:
     /* ST_CALLSITE[005D6CFA]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     st::fn_00404C5F((MMObjTy *)this_00,(int)this_00->field_20F4[uVar30],&local_24,2,0x67,0x67);
     if (pAVar35->field_0x4 == '\x02') {
@@ -1793,7 +1793,7 @@ LAB_005d6d70:
                                          iVar24);
     st::fn_007119C0(g_startSystem_0081176C->field_0034,pcVar16,iVar25,iVar38,uVar29);
     break;
-  case (undefined1 *)0x5:
+  case 0x5:
     if ((*(char *)pAVar35 != '\0') &&
        /* ST_CALLSITE[005D6E23]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
        (st::fn_00404C5F
@@ -1842,7 +1842,7 @@ LAB_005d6d70:
             pBVar22 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_1F4B,
                                    iVar24 + -1);
             /* ST_CALLSITE[005D6FB6]: CALL 0x00403229; direct=00403229 DibPut */
-            st::fn_00403229(st::pointer_boundary_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar30]),
+            st::fn_00403229(static_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar30]),
                    (local_1c - (pBVar22->bmiHeader).biWidth) / 2 + local_24,
                    (local_18 - (pBVar22->bmiHeader).biHeight) / 2 + 1 + local_20,'\x06',
                    (byte *)pBVar22);

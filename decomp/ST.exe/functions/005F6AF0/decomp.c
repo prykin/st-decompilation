@@ -15,7 +15,7 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
   int local_EAX_247;
   int iVar2;
   int iVar3;
-  undefined4 uVar5;
+  uint uVar5;
   InternalExceptionFrame local_50;
   undefined4 local_c;
   STColl3C *local_8;

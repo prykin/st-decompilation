@@ -7,7 +7,7 @@
 void FUN_0075405f(void)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined1 in_AL;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

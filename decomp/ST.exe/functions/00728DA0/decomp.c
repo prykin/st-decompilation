@@ -15,15 +15,15 @@ FUN_00728da0(void *this,int param_1,int param_2,short *param_3,uint param_4,int 
   int iVar5;
   bool bVar6;
   short *psVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   RuntimeRecord_00857110_0008 *pRVar9;
   uint uVar10;
   uint uVar11;
   int iVar12;
-  undefined1 *puVar13;
+  byte *puVar13;
   int iVar14;
   int iVar15;
-  undefined4 *puVar16;
+  uint *puVar16;
   short asStack_c8 [2];
   undefined4 uStack_c4;
   short local_b0 [8];
@@ -44,7 +44,7 @@ FUN_00728da0(void *this,int param_1,int param_2,short *param_3,uint param_4,int 
   uint local_40;
   uint local_34;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

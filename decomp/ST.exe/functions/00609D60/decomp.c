@@ -15,7 +15,7 @@ undefined4 __thiscall STFieldC::LoadImagSpr(STFieldC *this,uint param_1)
   int errorCode;
   ushort *puVar5;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int *piVar8;
   char *text;
   InternalExceptionFrame local_54;

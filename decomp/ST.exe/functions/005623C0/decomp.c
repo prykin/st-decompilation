@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
 
@@ -19,7 +17,7 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
   int iVar10;
   int iVar11;
   uint uVar12;
-  undefined1 *puVar13;
+  byte *puVar13;
   uint uVar14;
   int *piVar15;
   byte *pbVar16;

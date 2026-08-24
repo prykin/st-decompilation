@@ -11,12 +11,12 @@ void FUN_0075a490(AnonShape_0075A180_7E367FD8 *param_1)
   int iVar2;
   int iVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar6;
   int iVar7;
   int iVar8;
   int *piVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   int local_18;
   int local_14;
   undefined4 *local_10;

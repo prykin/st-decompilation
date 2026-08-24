@@ -11,8 +11,7 @@
 void * __cdecl FUN_005fd6e0(void)
 
 {
-  undefined4 *puVar1;
-
+  uint *puVar1;
   puVar1 = FUN_006b04d0(0x243);
   if (puVar1 != nullptr) {
     puVar1 = thunk_FUN_005fd710(puVar1);

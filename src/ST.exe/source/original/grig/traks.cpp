@@ -43,7 +43,7 @@ void __thiscall
 st::fn_00555910(TraksClassTy *this,RecoveredRecord_TraksClassTy_00555910 *param_1)
 
 {
-  undefined2 uVar1;
+  ushort uVar1;
   int iVar3;
   int iVar5;
   short sVar3;
@@ -342,7 +342,7 @@ void __thiscall st::fn_00556170(TraksClassTy *this,ushort *param_1)
   byte bVar8;
   int iVar10;
   int iVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   InternalExceptionFrame local_54;
   int local_10;
   TraksClassTy *local_c;
@@ -562,7 +562,7 @@ st::fn_00556760
   uint uVar11;
   byte bVar12;
   int iVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
   InternalExceptionFrame local_a8;
   uint local_64;
   TraksClassTy *local_60;
@@ -778,7 +778,7 @@ undefined4 __thiscall st::fn_00556DD0(TraksClassTy *this,int *param_1)
   int iVar3;
   int iVar8;
   int iVar4;
-  undefined4 uVar9;
+  uint uVar9;
   short sVar10;
   short sVar11;
   cMf32 *pcVar12;

@@ -13,7 +13,7 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
 
 {
   ccFntTy *pcVar1;
-  undefined4 uVar2;
+  uint uVar2;
   StartSystemTy *this_00;
   int iVar5;
   int iVar4;

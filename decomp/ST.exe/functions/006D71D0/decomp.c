@@ -4,42 +4,41 @@
 undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
 
 {
-  int *this_00;
-  void *this_01;
-  undefined4 *puVar1;
+  RecoveredClass_0074CDC5 *this_00;
+  RecoveredClass_0074CFC0 *pRVar1;
   int local_8;
 
   local_8 = 0;
   if ((STField<int>(this,0x8c) == 0) || (STField<int>(this,0x90) == 0)) {
-    this_00 = (int *)Library::MSVCRT::FUN_0072e530(0xe8);
+    this_00 = (RecoveredClass_0074CDC5 *)Library::MSVCRT::FUN_0072e530(0xe8);
     if (this_00 == nullptr) {
       this_00 = nullptr;
     }
     else {
-      FUN_0074cdc5(this_00,0,(int)this,&local_8,(char *)"Input");
-      *this_00 = (int)&VTable_0079DED8;
-      this_00[3] = (int)&VTable_0079DE90;
-      this_00[4] = (int)&VTable_0079DE7C;
-      this_00[0x26] = (int)&VTable_0079DE58;
+      RecoveredClass_0074CDC5::FUN_0074cdc5(this_00,0,(int)this,&local_8,(char *)"Input");
+      this_00->field_0000 = (VTable_007A1950 *)&VTable_0079DED8;
+      this_00->field_000C = &VTable_0079DE90;
+      this_00->field_0010 = &VTable_0079DE7C;
+      this_00->field_0098 = &VTable_0079DE58;
     }
-    STField<int *>(this,0x8c) = this_00;
+    STField<RecoveredClass_0074CDC5 *>(this,0x8c) = this_00;
     if (local_8 < 0) {
       if (this_00 != nullptr) {
         /* ST_CALLSITE[006D72F3]: CALL dword ptr [EDX + 0xc] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*this_00 + 0xc))(1);
+        (*this_00->field_0000->slot_0C)(this_00,1);
       }
     }
     else if (this_00 != nullptr) {
-      this_01 = (void *)Library::MSVCRT::FUN_0072e530(0xb0);
-      if (this_01 == nullptr) {
-        puVar1 = nullptr;
+      pRVar1 = (RecoveredClass_0074CFC0 *)Library::MSVCRT::FUN_0072e530(0xb0);
+      if (pRVar1 == nullptr) {
+        pRVar1 = nullptr;
       }
       else {
-        puVar1 = FUN_0074cfc0(this_01,0,(int)this,&local_8,(char *)"Output");
+        pRVar1 = RecoveredClass_0074CFC0::FUN_0074cfc0
+                           (pRVar1,0,(int)this,&local_8,(char *)"Output");
       }
-      STField<undefined4 *>(this,0x90) = puVar1;
-      if ((local_8 < 0) || (puVar1 == nullptr)) {
+      STField<RecoveredClass_0074CFC0 *>(this,0x90) = pRVar1;
+      if ((local_8 < 0) || (pRVar1 == nullptr)) {
         if (STField<int *>(this,0x8c) != nullptr) {
           /* ST_CALLSITE[006D72C1]: CALL dword ptr [EDX + 0xc] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

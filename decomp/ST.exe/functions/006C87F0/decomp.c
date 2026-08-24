@@ -11,7 +11,7 @@ int FUN_006c87f0(DArrayTy *param_1)
   uint uVar2;
   int iVar3;
   dword dVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *pcVar6;
 
   dVar4 = param_1->elementSize;

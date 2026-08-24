@@ -10,6 +10,7 @@ FUN_0062e240(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
   STWorldObject *this_00;
   short sVar2;
   int iVar3;
+  int iVar3_mg1;
   short sVar4;
   short sVar5;
   uint uVar6;
@@ -26,9 +27,9 @@ FUN_0062e240(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
        /* ST_CALLSITE[0062E2BE]: CALL dword ptr [EDX + 0x2c] */
        (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x6e)))) ||
      ((param_5 != 0 &&
-      (iVar3 = STPlaySystemC::sub_006E62D0
-                         (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_5,
-                          (int *)&local_8), iVar3 != -4)))) {
+      (iVar3_mg1 = STPlaySystemC::sub_006E62D0
+                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_5,
+                              (int *)&local_8), iVar3_mg1 != -4)))) {
     uVar6 = param_6;
     if (param_6 == 0) {
       uVar6 = 1;

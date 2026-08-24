@@ -4,9 +4,9 @@
 undefined4 __fastcall FUN_004dccf0(AnonShape_004DCCF0_FF75E3FE *param_1)
 
 {
-  undefined2 uVar1;
-  undefined4 uVar2;
-  undefined4 *puVar4;
+  ushort uVar1;
+  uint uVar2;
+  uint *puVar4;
   undefined4 local_48 [7];
   undefined4 local_2c;
   undefined4 local_28;

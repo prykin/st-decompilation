@@ -39,7 +39,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
   short sVar10;
   short sVar11;
   dword dVar12;
-  undefined2 *puVar13;
+  ushort *puVar13;
   short *psVar14;
   uint uVar15;
   int *piVar16;
@@ -99,9 +99,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
   uint local_20_mg0;
   uint local_1c;
   uint local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
+  uint local_14;
+  uint local_10;
+  uint local_c;
   uint local_8;
 
   uVar15 = param_5;

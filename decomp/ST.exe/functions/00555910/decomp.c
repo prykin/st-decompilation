@@ -10,7 +10,7 @@ void __thiscall
 TraksClassTy::DrawTrakSprite(TraksClassTy *this,RecoveredRecord_TraksClassTy_00555910 *param_1)
 
 {
-  undefined2 uVar1;
+  ushort uVar1;
   int iVar3;
   int iVar5;
   short sVar3;

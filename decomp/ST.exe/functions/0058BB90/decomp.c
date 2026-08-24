@@ -4,7 +4,7 @@
 void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
   int iVar3;
   undefined *puVar5;

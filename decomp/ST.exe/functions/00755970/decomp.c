@@ -1,48 +1,50 @@
 #include "../../pseudocode_runtime.h"
 
 
-int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_3)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00754390 -> 00755970 @ 0075439E; FUN_00754390 parameter param_1 */
+
+int FUN_00755970(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,int param_3)
 
 {
   short sVar1;
-  AnonShape_00755970_4FB144E0 *pAVar2;
-  AnonShape_00755970_4FB144E0 *pAVar3;
+  AnonShape_00753C80_4C8E695D *pAVar2;
+  AnonShape_00753C80_4C8E695D *pAVar3;
+  int iVar7_mg1;
   uint uVar4;
-  int iVar5;
-  AnonShape_00755970_4FB144E0 *pAVar6;
-  int iVar7;
-  AnonShape_00755970_4FB144E0 *pAVar8;
+  AnonShape_00753C80_4C8E695D *pAVar5;
+  int iVar6;
+  AnonShape_00753C80_4C8E695D *pAVar7;
   int local_c;
   uint *local_8;
 
   pAVar2 = param_1;
-  iVar7 = 0;
+  iVar6 = 0;
   local_8 = nullptr;
   local_c = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   param_1->field_000C =
-       *(AnonNested_AnonShape_00755970_4FB144E0_000C_11C2AAE5 **)(param_1->field_0008 + 0x50);
+       *(AnonNested_AnonShape_00753C80_4C8E695D_000C_9E74E987 **)&param_1->field_0008[1].field_0x18;
   do {
     pAVar2->field_000C->field_001C = local_8;
-    iVar7 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)pAVar2,iVar7,(int)local_8);
-    auto param_1_after_write = (AnonShape_00755970_4FB144E0 *)0xffffffff; /* compiler stack-slot lifetime split */
-    pAVar6 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
+    iVar7_mg1 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)pAVar2,iVar6,(int)local_8);
+    auto param_1_after_write = (AnonShape_00753C80_4C8E695D *)0xffffffff; /* compiler stack-slot lifetime split */
+    pAVar5 = (AnonShape_00753C80_4C8E695D *)0xffffffff;
     pAVar3 = nullptr;
-    if (0 < *(short *)(iVar7 + 8)) {
+    if (0 < *(short *)(iVar7_mg1 + 8)) {
       do {
-        pAVar8 = pAVar3;
-        if (pAVar2->field_000C->field_0030 == 0xff) {
+        pAVar7 = pAVar3;
+        if (*(int *)&pAVar2->field_000C->field_0x30 == 0xff) {
           /* ST_CALLSITE[007559C7]: CALL dword ptr [EAX + 0x4] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           uVar4 = (**(code **)&pAVar2->field_000C->field_0x4)(param_2);
         }
         else {
           uVar4 = FUN_007575b0((AnonShape_007575B0_A94973CA *)pAVar2,param_2,
-                               (ushort *)((int)&pAVar8[1].field_0008 + iVar7));
+                               (ushort *)(&pAVar7[1].field_0x4 + iVar7_mg1));
         }
-        pAVar6 = param_1_after_write;
+        pAVar5 = param_1_after_write;
         if ((int)uVar4 < 0) break;
-        pAVar6 = pAVar8;
+        pAVar5 = pAVar7;
         if (uVar4 == 0) {
           local_c = 1;
           break;
@@ -51,31 +53,31 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
         if (sVar1 == 0) {
           /* ST_CALLSITE[007559F8]: CALL dword ptr [EAX + 0x8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar5 = (**(code **)&pAVar2->field_000C->field_0x8)((int)&pAVar8[1].field_0008 + iVar7);
+          iVar6 = (**(code **)&pAVar2->field_000C->field_0x8)(&pAVar7[1].field_0x4 + iVar7_mg1);
         }
         else {
-          iVar5 = (int)sVar1;
+          iVar6 = (int)sVar1;
         }
-        pAVar3 = (AnonShape_00755970_4FB144E0 *)((int)&pAVar8->field_0008 + iVar5);
-        *(AnonShape_00755970_4FB144E0 **)
+        pAVar3 = (AnonShape_00753C80_4C8E695D *)((int)&pAVar7->field_0008 + iVar6);
+        *(AnonShape_00753C80_4C8E695D **)
          (&pAVar2->field_000C[1].field_0xe + (int)pAVar2->field_000C->field_001C * 8) = pAVar3;
-        param_1_after_write = pAVar8;
-      } while ((int)pAVar3 < (int)*(short *)(iVar7 + 8));
+        param_1_after_write = pAVar7;
+      } while ((int)pAVar3 < (int)*(short *)(iVar7_mg1 + 8));
     }
-    *(AnonShape_00755970_4FB144E0 **)
-     (&pAVar2->field_000C[1].field_0xe + (int)pAVar2->field_000C->field_001C * 8) = pAVar6;
+    *(AnonShape_00753C80_4C8E695D **)
+     (&pAVar2->field_000C[1].field_0xe + (int)pAVar2->field_000C->field_001C * 8) = pAVar5;
     if ((local_c != 0) && (param_3 != 0)) {
       return local_c;
     }
-    if (pAVar6 == (AnonShape_00755970_4FB144E0 *)0xffffffff) {
-      iVar7 = *(int *)(iVar7 + 4);
+    if (pAVar5 == (AnonShape_00753C80_4C8E695D *)0xffffffff) {
+      iVar6 = *(int *)(iVar7_mg1 + 4);
     }
     else {
-      iVar7 = *(int *)(&pAVar6[1].field_0x0 + iVar7);
+      iVar6 = STObjectAtByteOffset(pAVar5, iVar7_mg1).field_0010;
     }
-    *(AnonShape_00755970_4FB144E0 **)(&pAVar2->field_000C[1].field_0xe + (int)local_8 * 8) = pAVar6;
+    *(AnonShape_00753C80_4C8E695D **)(&pAVar2->field_000C[1].field_0xe + (int)local_8 * 8) = pAVar5;
     local_8 = (uint *)((int)local_8 + 1);
-    if (iVar7 == -1) {
+    if (iVar6 == -1) {
       return local_c;
     }
   } while( true );

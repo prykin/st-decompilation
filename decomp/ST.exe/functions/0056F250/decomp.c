@@ -17,7 +17,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   char *pcVar9;
   char *pcVar10;
   byte *pbVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   char cVar13;
   ushort *puVar14;
   int iVar15;
@@ -121,7 +121,7 @@ LAB_0056f325:
         if (g_sT3DSMAPContext_00807598 != nullptr) {
           iVar15 = 1;
           puVar14 = PTR_0080679c + 0x14;
-          uVar4 = FUN_006b4fe0((int)PTR_0080679c);
+          uVar4 = FUN_006b4fe0(PTR_0080679c);
           local_c = (AnonShape_006B5050_99986F91 *)
                     FUN_006b50c0(0x8b,0x8b,(uint)PTR_0080679c[7],uVar4,(undefined4 *)puVar14,iVar15);
           if (local_c != nullptr) {

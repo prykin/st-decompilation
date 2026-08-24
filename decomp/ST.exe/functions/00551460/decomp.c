@@ -13,14 +13,14 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
   int errorCode;
   LPSTR pCVar3;
   int iVar4;
-  undefined4 uVar5;
-  undefined4 uVar6;
-  undefined4 uVar7;
-  undefined4 uVar8;
-  undefined4 uVar9;
-  undefined4 uVar10;
-  undefined4 uVar11;
-  undefined4 uVar12;
+  uint uVar5;
+  uint uVar6;
+  uint uVar7;
+  uint uVar8;
+  uint uVar9;
+  uint uVar10;
+  uint uVar11;
+  uint uVar12;
   InternalExceptionFrame local_4c;
   TradePanelTy *local_8;
 
@@ -54,8 +54,7 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
       if (this_00->field_01BB == '\0') {
         pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
         /* ST_CALLSITE[00551577]: CALL dword ptr [EDI + 0x4] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        uVar6 = (*(code *)pAVar1->field_0004)
+        uVar6 = (*STField<code *>(pAVar1,0x4))
                           (0,1,0xac,0x57,0,1,1,pCVar3,uVar6,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12);
         uVar5 = 1;
         pAVar1 = this_00->field_0000;
@@ -68,16 +67,14 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
         this_00->field_01C8 = uVar6;
         pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
         /* ST_CALLSITE[005515B9]: CALL dword ptr [EDI + 0x4] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        uVar6 = (*(code *)pAVar1->field_0004)
+        uVar6 = (*STField<code *>(pAVar1,0x4))
                           (0,1,0xe5,0x57,0,1,1,pCVar3,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12,uVar5);
         this_00->field_01CC = uVar6;
       }
       else {
         pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
         /* ST_CALLSITE[00551550]: CALL dword ptr [EDI + 0x4] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        uVar6 = (*(code *)pAVar1->field_0004)(0,1,0xca,0x57,0,1,1,pCVar3);
+        uVar6 = (*STField<code *>(pAVar1,0x4))(0,1,0xca,0x57,0,1,1,pCVar3);
         this_00->field_01C8 = uVar6;
       }
       /* ST_CALLSITE[005515C4]: CALL 0x00404f9d; direct=00404F9D TradePanelTy::sub_00551B10 */

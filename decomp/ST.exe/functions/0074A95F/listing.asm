@@ -1,4 +1,4 @@
-FUN_0074a95f:
+RecoveredClass_0074A95F::FUN_0074a95f:
 0074A95F  56                        PUSH ESI
 0074A960  57                        PUSH EDI
 0074A961  FF 74 24 14               PUSH dword ptr [ESP + 0x14]

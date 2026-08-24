@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sett_obj.cpp
-   SettMapTy::PaintSettMap */
+   SettMapTy::PaintSettMap
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
 
@@ -86,7 +90,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
                  (undefined4 *)(pSVar3->array_00BC[0xc].field_01DB + 0x140));
     }
     uVar10 = 0;
-    pcVar9 = g_startSystem_0081176C->field_0030;
+    pcVar9 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     uVar8 = 0xffffffff;
     uVar7 = 0xfffffffe;
     resourceString = LoadResourceString(0x26b2,g_hINSTANCE_00807618);

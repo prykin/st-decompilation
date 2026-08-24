@@ -16,7 +16,7 @@ void FUN_00760df0(int param_1,AnonShape_00760DF0_41372EAE *param_2,int *param_3,
   float *pfVar7;
   int iVar8;
   AnonNested_00760DF0_0050_4F781EBD *pAVar9;
-  undefined1 *puVar10;
+  byte *puVar10;
   longlong lVar11;
   float local_120 [16];
   float local_e0 [8];

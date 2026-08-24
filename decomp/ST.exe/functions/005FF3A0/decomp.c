@@ -1,8 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall
-FUN_005ff3a0(void *this,undefined2 *param_1,undefined2 *param_2,short *param_3)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 005FF3A0 -> 00416270 @ 005FF3EB
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 005FF3A0 -> 00416270 @ 005FF3EB */
+
+undefined4 __thiscall FUN_005ff3a0(void *this,uint *param_1,short *param_2,short *param_3)
 
 {
   STGameObjC *this_00;
@@ -16,7 +21,7 @@ FUN_005ff3a0(void *this,undefined2 *param_1,undefined2 *param_2,short *param_3)
     /* ST_CALLSITE[005FF3CD]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
     iVar1 = (*this_00->vtable[1].vfunc_24)(this_00);
     if (iVar1 != 0) {
-      thunk_FUN_00416270(this_00,(uint *)param_1,(int *)param_2,param_3);
+      thunk_FUN_00416270(this_00,param_1,param_2,param_3);
       *param_3 = *param_3 + -0x1e;
       return 1;
     }

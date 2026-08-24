@@ -18,7 +18,7 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this)
   DArrayTy **ppDVar1;
   uint uVar2;
   ushort *puVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   byte *pbVar6;
   void *pvVar7;
   AnonPointee_STGameObjC_0195 *pAVar8;

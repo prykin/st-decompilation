@@ -4,7 +4,7 @@
 undefined4 FUN_0074aa28(int param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   LPCRITICAL_SECTION lpCriticalSection;
   LPCRITICAL_SECTION lpCriticalSection_00;
 

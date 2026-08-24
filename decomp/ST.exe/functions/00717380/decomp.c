@@ -6,7 +6,7 @@ void __fastcall FUN_00717380(AnonShape_00717380_FEFD061B *param_1)
 {
   uint uVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   byte *pbVar4;
   byte *pbVar5;
   int iVar6;
@@ -18,7 +18,7 @@ void __fastcall FUN_00717380(AnonShape_00717380_FEFD061B *param_1)
 
   if (param_1->field_0466 != 0) {
     iVar9 = 10000;
-    iVar10 = *(int *)param_1->field_04D6;
+    iVar10 = *STField<int *>(param_1,0x4D6);
     param_1->field_04DE = 0;
     iVar6 = 0;
     if (0 < param_1->field_04CE) {

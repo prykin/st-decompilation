@@ -12,8 +12,7 @@ ResearchPanelTy * __cdecl CreateResearchPanel(void)
 
 {
   ResearchPanelTy *this;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   this = (ResearchPanelTy *)FUN_006b04d0(0x286);
   if (this != nullptr) {
     sub_006E5FB0(this);

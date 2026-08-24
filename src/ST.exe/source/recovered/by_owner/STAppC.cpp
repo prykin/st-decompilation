@@ -174,7 +174,11 @@ undefined4 __thiscall st::fn_0056E9E0(STAppC *this,int param_1)
 /* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=1; incoming_this_accesses=16;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0056EBE0(STAppC *this)
 
@@ -216,7 +220,7 @@ void __thiscall st::fn_0056EBE0(STAppC *this)
     } while (cVar1 != '\0');
     uVar5 = ~uVar5;
     pcVar9 = pcVar11 + -uVar5;
-    pcVar11 = st::pointer_boundary_cast<char *>(&this->field_0x2340);
+    pcVar11 = (char *)&this->field_0x2340;
     memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
     uVar5 = 0;
     puVar2 = st::fn_0071AA10(g_cMf32_0080675C,(char *)(uVar8 + 0x70),0);
@@ -238,7 +242,7 @@ void __thiscall st::fn_0056EBE0(STAppC *this)
   array = (DArrayTy *)st::fn_00403F44(g_cMf32_0080675C,2,this->field_233C);
   /* ST_CALLSITE[0056ED16]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
   array_00 = (DArrayTy *)st::fn_00403F44(g_cMf32_0080675C,3,this->field_233C);
-  pcVar9 = st::pointer_boundary_cast<char *>(&this->field_11A7);
+  pcVar9 = (char *)&this->field_11A7;
   local_8 = 8;
   do {
     uVar8 = 0xffffffff;
@@ -303,7 +307,11 @@ void __thiscall st::fn_0056EBE0(STAppC *this)
 /* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0056EE90(STAppC *this)
 
@@ -337,7 +345,11 @@ void __thiscall st::fn_0056EE90(STAppC *this)
 /* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=2; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0056EF50(STAppC *this)
 
@@ -362,7 +374,7 @@ void __thiscall st::fn_0056EF50(STAppC *this)
   }
   this->field_112D = 0xff;
   this->field_112E = 0;
-  pcVar1 = st::pointer_boundary_cast<char *>(&this->field_11C9);
+  pcVar1 = (char *)&this->field_11C9;
   iVar3 = 8;
   do {
     if (((*pcVar1 != -1) && (pcVar1[-1] != '\0')) && (pcVar1[-0x22] == '\0')) {
@@ -395,7 +407,11 @@ void __thiscall st::fn_0056EF50(STAppC *this)
 
    [STSwitchEnumApplier] Switch target field_1180 uses
    /SubmarineTitans/Recovered/Enums/STAppC_field_1180State. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_6=6;CASE_8=8;CASE_9=9;CASE_B=11;CASE_C=12 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_6=6;CASE_8=8;CASE_9=9;CASE_B=11;CASE_C=12
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0056F040(STAppC *this)
 
@@ -409,7 +425,7 @@ void __thiscall st::fn_0056F040(STAppC *this)
   int local_c;
 
   iVar5 = 8;
-  pcVar2 = st::pointer_boundary_cast<char *>(&this->field_11A7);
+  pcVar2 = (char *)&this->field_11A7;
   do {
     if (((pcVar2[0x22] != this->field_112D) || (pcVar2[0x21] != this->field_112E)) &&
        (*pcVar2 == '\0')) {
@@ -424,7 +440,7 @@ void __thiscall st::fn_0056F040(STAppC *this)
   case CASE_3:
   case CASE_6:
   case CASE_8:
-    pcVar2 = st::pointer_boundary_cast<char *>(&this->field_11C9);
+    pcVar2 = (char *)&this->field_11C9;
     this->field_148F = 0;
     local_c = 8;
     do {
@@ -443,7 +459,7 @@ void __thiscall st::fn_0056F040(STAppC *this)
           } while (cVar1 != '\0');
           uVar3 = ~uVar3;
           pcVar6 = pcVar8 + -uVar3;
-          pcVar8 = st::pointer_boundary_cast<char *>(&this->field_0x1490 + (uint)(byte)this->field_148F * 0x9c);
+          pcVar8 = (char *)&this->field_0x1490 + (uint)(byte)this->field_148F * 0x9c;
           memmove(pcVar8, pcVar6, uVar3); /* compiler REP MOVS byte copy */
         }
         (&this->field_0x14d4)[(uint)(byte)this->field_148F * 0x9c] = *pcVar2;

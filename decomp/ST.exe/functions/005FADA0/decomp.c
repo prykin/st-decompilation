@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_005fada0(void *this,int param_1,uint param_2,int param
 
 {
   uint uVar1;
-  undefined4 uVar3;
+  uint uVar3;
   short local_a;
   short local_8;
   short local_6;
@@ -20,7 +20,7 @@ undefined4 __thiscall FUN_005fada0(void *this,int param_1,uint param_2,int param
   }
   if (STField<int>(this,0x2e6) != 0) {
     memset((void *)(STField<int>(this,0x2e6) + 8), 0, 0x2a); /* compiler bulk-zero initialization */
-    thunk_FUN_00416270(this,(uint *)&local_6,(int *)&local_8,&local_a);
+    thunk_FUN_00416270(this,(uint *)&local_6,&local_8,&local_a);
     if (param_3 == 1) {
       thunk_FUN_005fac40(this,0,1,param_1,local_6,local_8,(int)local_a);
     }

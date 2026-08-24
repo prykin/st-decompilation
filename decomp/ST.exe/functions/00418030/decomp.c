@@ -20,7 +20,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
   uint uVar4;
   STWorldObject *pSVar5;
   ushort *puVar6;
-  undefined4 uVar7;
+  uint uVar7;
   short *psVar8;
   uint uVar5;
   STBoatC *pSVar9;

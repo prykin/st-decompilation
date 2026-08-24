@@ -12,8 +12,7 @@ BldBoatPanelTy * __cdecl CreateBldBoatPanel(void)
 
 {
   BldBoatPanelTy *this;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   this = (BldBoatPanelTy *)FUN_006b04d0(0x296);
   if (this != nullptr) {
     sub_006E5FB0(this);

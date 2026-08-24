@@ -23,7 +23,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
   byte bVar2;
   AnonReceiver_00636260 *this_01;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;

@@ -77,7 +77,7 @@ st::fn_0061FA40(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   SndUnderAttMenegC_field_00B9DArray *array;
   uint index;
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_8;
 
   uVar2 = 0xffffffff;
@@ -307,7 +307,7 @@ st::fn_00620030(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   SndUnderAttMenegC_field_00C5DArray *array;
   uint index;
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_8;
 
   uVar2 = 0xffffffff;
@@ -468,7 +468,7 @@ st::fn_006203F0(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   SndUnderAttMenegC_field_00D1DArray *array;
   uint index;
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_8;
 
   uVar2 = 0xffffffff;
@@ -619,7 +619,7 @@ st::fn_00620780(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   SndUnderAttMenegC_field_00DDDArray *array;
   uint index;
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_8;
 
   uVar2 = 0xffffffff;
@@ -765,7 +765,7 @@ st::fn_00620B20(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   SndUnderAttMenegC_field_00E9DArray *array;
   uint index;
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_8;
 
   uVar2 = 0xffffffff;
@@ -867,7 +867,7 @@ st::fn_00620DA0
   char *pcVar2;
 
   iVar1 = 0;
-  pcVar2 = st::pointer_boundary_cast<char *>(&this->field_0020);
+  pcVar2 = (char *)&this->field_0020;
   do {
     if (*pcVar2 == '\0') {
       (&this->field_0020)[iVar1 * 0x1d] = 1;
@@ -955,7 +955,7 @@ st::fn_00620F60(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   SndUnderAttMenegC_field_00F5DArray *array;
   uint index;
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_8;
 
   uVar2 = 0xffffffff;
@@ -1104,7 +1104,7 @@ st::fn_00621300(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   SndUnderAttMenegC_field_0101DArray *array;
   uint index;
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_8;
 
   uVar2 = 0xffffffff;
@@ -1193,7 +1193,11 @@ st::fn_00621430
    [STMethodOwnerApplier] Structural method owner recovered as SndUnderAttMenegC.
    Evidence: this_call_owners=[SndUnderAttMenegC]; agreed_this_calls=15; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=5; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=5; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=15, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00621580(SndUnderAttMenegC *this,byte *param_1,int param_2)
 
@@ -1261,7 +1265,11 @@ uint __thiscall st::fn_006216E0(SndUnderAttMenegC *this,undefined4 param_1)
 /* [STMethodOwnerApplier] Structural method owner recovered as SndUnderAttMenegC.
    Evidence: this_call_owners=[SndUnderAttMenegC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00621780(SndUnderAttMenegC *this,uint param_1)
 
@@ -1269,7 +1277,7 @@ void __thiscall st::fn_00621780(SndUnderAttMenegC *this,uint param_1)
   SndUnderAttMenegC_field_010ADArray *pSVar1;
   char *text;
   int soundId;
-  undefined1 *puVar2;
+  byte *puVar2;
   uint uVar3;
   SoundPosition local_10;
 

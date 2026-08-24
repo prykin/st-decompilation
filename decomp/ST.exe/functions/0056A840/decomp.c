@@ -1,12 +1,16 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __thiscall FUN_0056a840(void *this,byte param_1)
 
 {
   undefined *puVar1;
-  undefined1 *puVar2;
-  undefined1 *puVar3;
+  byte *puVar2;
+  byte *puVar3;
   int local_8;
 
   puVar1 = nullptr;

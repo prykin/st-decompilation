@@ -64,7 +64,7 @@ int __thiscall STBHEShellC::sub_005F5700(STBHEShellC *this,int param_1,int param
            (this_00 = g_worldGrid.cells
                       [(int)sVar6 * (int)sVar2 + (int)g_worldGrid.planeStride * (int)sVar7 +
                        (int)sVar3].objects[0], this_00 != nullptr)))))) {
-        thunk_FUN_00416270(this_00,(uint *)&local_6,(int *)((int)&param_1 + 2),&local_8);
+        thunk_FUN_00416270(this_00,(uint *)&local_6,(short *)((int)&param_1 + 2),&local_8);
         if (*(int *)&this_00[1].field_0x8 == 1) {
           iVar4 = FUN_006aced8((int)local_6,(int)STPiece<2,2>(param_1),this->field_0111,this->field_0115);
           if (param_2 <= iVar4) {

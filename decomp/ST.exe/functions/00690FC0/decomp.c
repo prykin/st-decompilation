@@ -23,7 +23,7 @@ AllocationRecord_00690FC0 * __cdecl FUN_00690fc0(AllocationRecord_00690FC0 *para
   AllocationRecord_00690FC0 *pAVar7;
   InternalExceptionFrame local_54;
   undefined4 local_10;
-  undefined1 *local_c;
+  byte *local_c;
   AnonShape_00690FC0_955C4112 *local_8;
 
   local_8 = nullptr;

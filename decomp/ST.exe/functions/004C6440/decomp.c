@@ -22,7 +22,7 @@ TLOBldMark::sub_004C6440
   VisibleClassTy *pVVar4;
   int iVar5;
   DWORD DVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int *piVar8;
   int iVar9;
   uint uVar10;

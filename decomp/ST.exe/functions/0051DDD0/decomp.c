@@ -34,7 +34,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   int iVar8;
   int iVar9;
   int *piVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
   HelpPanelTy_field_01D7Element *pHVar12;
   BITMAPINFO *pBVar13;
   char *pcVar13_mg1;
@@ -67,7 +67,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   uint local_14;
   undefined4 *local_10;
   uint local_c;
-  UINT *local_8;
+  UINT *local_8_mg0;
 
   local_84.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_84;
@@ -116,7 +116,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
       if (MESS_SHARED_0060 < SVar3) {
         if (SVar3 == MESS_SHARED_0061) {
           local_c = (uint)(message->arg1).words.low;
-          local_8 = (UINT *)(uint)(message->arg1).words.high;
+          local_8_mg0 = (UINT *)(uint)(message->arg1).words.high;
           if (this_00->field_0172 != CASE_1) {
             g_currentExceptionFrame = local_84.previous;
             return 0;
@@ -151,13 +151,13 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               local_2c = piVar10[1] + local_18 + 0x16 + this_00->field_0044;
               local_28 = piVar10[2];
               if (((((int)local_c < local_30) || (local_28 + local_30 <= (int)local_c)) ||
-                  ((int)local_8 < local_2c)) || (local_24 + local_2c <= (int)local_8)) {
+                  ((int)local_8_mg0 < local_2c)) || (local_24 + local_2c <= (int)local_8_mg0)) {
                 bVar24 = false;
               }
               else {
                 bVar24 = true;
               }
-              if ((bVar24) && ((int)local_8 < this_00->field_0044 + 300)) break;
+              if ((bVar24) && ((int)local_8_mg0 < this_00->field_0044 + 300)) break;
               local_1c = (int *)((int)local_1c + 1);
               if (local_14 <= local_1c) {
                 g_currentExceptionFrame = local_84.previous;
@@ -267,7 +267,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             local_28 = pHVar12->field_0008;
             local_24 = pHVar12->field_000C;
             if (((((int)local_c < local_30) || (local_28 + local_30 <= (int)local_c)) ||
-                ((int)local_8 < local_2c)) || (local_24 + local_2c <= (int)local_8)) {
+                ((int)local_8_mg0 < local_2c)) || (local_24 + local_2c <= (int)local_8_mg0)) {
               bVar24 = false;
             }
             else {
@@ -277,7 +277,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               g_currentExceptionFrame = local_84.previous;
               return 0;
             }
-            if (this_00->field_0044 + 300 <= (int)local_8) {
+            if (this_00->field_0044 + 300 <= (int)local_8_mg0) {
               g_currentExceptionFrame = local_84.previous;
               return 0;
             }
@@ -439,14 +439,14 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         case CASE_5:
         case CASE_B:
         case CASE_C:
-          local_8 = nullptr;
+          local_8_mg0 = nullptr;
           local_14 = this_00->field_01D7->count;
           if ((undefined4 *)local_14 != nullptr) {
             do {
-              if (local_8 < local_14) {
+              if (local_8_mg0 < local_14) {
                 /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
                 piVar10 = (int *)((int)&this_00->field_01D7->data->field_0000 +
-                                 this_00->field_01D7->elementSize * (int)local_8);
+                                 this_00->field_01D7->elementSize * (int)local_8_mg0);
               }
               else {
                 piVar10 = nullptr;
@@ -466,21 +466,21 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                 bVar24 = true;
               }
               if ((bVar24) && ((int)local_c < this_00->field_0044 + 300)) goto LAB_0051e1b2;
-              local_8 = (UINT *)((int)local_8 + 1);
-            } while (local_8 < local_14);
+              local_8_mg0 = (UINT *)((int)local_8_mg0 + 1);
+            } while (local_8_mg0 < local_14);
           }
           break;
         case CASE_6:
           if (this_00->field_01A3 == (void *)0x1) {
-            local_8 = (UINT *)&DAT_007c2b58;
+            local_8_mg0 = (UINT *)&DAT_007c2b58;
             local_14 = 0x33;
           }
           else if (this_00->field_01A3 == (void *)0x2) {
-            local_8 = (UINT *)&DAT_007c2df0;
+            local_8_mg0 = (UINT *)&DAT_007c2df0;
             local_14 = 0x39;
           }
           else {
-            local_8 = &DAT_007c30d8;
+            local_8_mg0 = &DAT_007c30d8;
             local_14 = 0x46;
           }
           uVar21 = 0;
@@ -490,10 +490,10 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             local_1c = (int *)(uint)(ushort)this_00->field_01AF;
             do {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_40 = *(int *)((int)local_8 + (uint)uVar21 * 0xd + 5) + 0x21 +
+              local_40 = *(int *)((int)local_8_mg0 + (uint)uVar21 * 0xd + 5) + 0x21 +
                          this_00->field_003C;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_3c = (*(int *)((int)local_8 + (uint)uVar21 * 0xd + 9) -
+              local_3c = (*(int *)((int)local_8_mg0 + (uint)uVar21 * 0xd + 9) -
                          (uint)(ushort)this_00->field_01B1 * this_00->field_01C3) + (int)local_1c +
                          0x16 + this_00->field_0044;
               if ((((int)local_18 < local_40) || (local_40 + 0x1a <= (int)local_18)) ||
@@ -506,8 +506,8 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               if ((bVar24) && ((int)local_c < this_00->field_0044 + 300)) {
                 local_10 = (undefined4 *)
                            thunk_FUN_00528060(*(Global_sub_00528060_param_1Enum *)
-                                               ((int)local_8 + (uint)uVar21 * 0xd),
-                                              *(char *)((int)local_8 + (uint)uVar21 * 0xd + 4));
+                                               ((int)local_8_mg0 + (uint)uVar21 * 0xd),
+                                              *(char *)((int)local_8_mg0 + (uint)uVar21 * 0xd + 4));
                 if (local_10 != (undefined4 *)0x2711) goto LAB_0051e1b2;
                 local_10 = nullptr;
                 break;
@@ -546,21 +546,21 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
       uVar18 = (uint)(message->arg0).words.low;
       if (uVar18 < pHVar19->count) {
         if (HVar2 == 0) {
-          local_8 = (UINT *)(this_00->field_01B3->field_0008 * uVar18 +
-                            this_00->field_01B3->field_001C);
+          local_8_mg0 = (UINT *)(this_00->field_01B3->field_0008 * uVar18 +
+                                this_00->field_01B3->field_001C);
         }
         else {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          local_8 = (UINT *)((int)&this_00->field_01BB->data->resourceId +
-                            this_00->field_01BB->elementSize * uVar18);
+          local_8_mg0 = (UINT *)((int)&this_00->field_01BB->data->resourceId +
+                                this_00->field_01BB->elementSize * uVar18);
         }
       }
       else {
-        local_8 = nullptr;
+        local_8_mg0 = nullptr;
       }
-      if (local_8 != nullptr) {
+      if (local_8_mg0 != nullptr) {
         bVar24 = (message->arg0).words.high == 1;
-        local_18 = *local_8;
+        local_18 = *local_8_mg0;
         if (DAT_0080874e == '\x03') {
           local_1c = (int *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(!bVar24));
         }
@@ -605,11 +605,11 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         pcVar23 = (char *)&DAT_0080f33a;
         memmove(pcVar23, pcVar25, uVar18); /* compiler REP MOVS byte copy */
         puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n');
-        pUVar8 = local_8;
-        while (local_8 = pUVar8, puVar14 != nullptr) {
+        pUVar8 = local_8_mg0;
+        while (local_8_mg0 = pUVar8, puVar14 != nullptr) {
           *(undefined1 *)puVar14 = 0x20;
           puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n');
-          pUVar8 = local_8;
+          pUVar8 = local_8_mg0;
         }
         ccFntTy::WrStr(this_00->field_01E4,(char *)&DAT_0080f33a,
                        (uint)STField<byte>(pUVar8,0x11) * 0x14 + 10,-1,(uint)local_1c & 0xff);
@@ -625,10 +625,10 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           iVar9 = (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC)->field_0008 / 2;
           FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar16,iVar9,iVar16 + 8,
                        iVar9,(byte)local_1c,0xd);
-          if (STField<char>(local_8,0x13) == '\0') {
+          if (STField<char>(local_8_mg0,0x13) == '\0') {
             iVar9 = *(int *)(this_00->field_01EC + 4);
           }
-          iVar16 = (uint)STField<byte>(local_8,0x11) * 0x14;
+          iVar16 = (uint)STField<byte>(local_8_mg0,0x11) * 0x14;
           FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar16,0,iVar16,iVar9,
                        (byte)local_10,0xd);
           local_14 = 0;
@@ -647,7 +647,7 @@ joined_r0x0051eec7:
             }
             if ((iVar9 == 0) || (bVar22 = ((byte *)iVar9)[0x11], bVar22 == 0)) goto LAB_0051ef61;
             uVar18 = local_c;
-            if (bVar22 < STField<byte>(local_8,0x11)) {
+            if (bVar22 < STField<byte>(local_8_mg0,0x11)) {
               do {
                 uVar18 = uVar18 - 1;
                 if ((int)uVar18 < 1) goto joined_r0x0051eec7;
@@ -917,13 +917,13 @@ switchD_0051e4d9_caseD_6:
                (uint)(ushort)this_00->field_01B1 * this_00->field_01C3) + (int)local_1c + 0x16 +
                this_00->field_0044;
     if ((((int)local_c < local_30) || (local_30 + 0x1a <= (int)local_c)) ||
-       (((int)local_8 < local_2c || (local_2c + 0xe <= (int)local_8)))) {
+       (((int)local_8_mg0 < local_2c || (local_2c + 0xe <= (int)local_8_mg0)))) {
       bVar24 = false;
     }
     else {
       bVar24 = true;
     }
-    if ((bVar24) && ((int)local_8 < this_00->field_0044 + 300)) break;
+    if ((bVar24) && ((int)local_8_mg0 < this_00->field_0044 + 300)) break;
     uVar21 = uVar21 + 1;
     if ((ushort)local_18 <= uVar21) {
       g_currentExceptionFrame = local_84.previous;

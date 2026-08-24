@@ -11,8 +11,7 @@
 undefined4 __fastcall FUN_00627670(STMineSetC *param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   switch(param_1->field_02AD) {
   case CASE_0:

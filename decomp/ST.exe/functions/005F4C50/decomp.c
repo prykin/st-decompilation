@@ -16,7 +16,7 @@ STBHEShellC::sub_005F4C50
   int iVar1;
   STBHEShellC_field_0169DArray *pSVar2;
   STBHEShellC_field_0169Element *element_0169;
-  undefined4 *puVar4;
+  uint *puVar4;
   uint uVar5;
   int iVar6;
   int iVar7;

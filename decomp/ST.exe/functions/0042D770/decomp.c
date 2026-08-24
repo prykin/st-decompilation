@@ -22,7 +22,7 @@ uint FUN_0042d770(char param_1,int *param_2)
   STAllPlayersC *local_24;
   int local_20;
   int local_1c;
-  undefined4 local_18;
+  uint local_18;
   uint local_14;
   DArrayTy *local_10;
   undefined4 local_c;

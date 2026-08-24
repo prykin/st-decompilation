@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_00604a00(void *this,int param_1)
 
 {
   STParticleC *this_00;
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
   STMessage *pSVar3;
   STMessage local_24;

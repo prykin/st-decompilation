@@ -7,6 +7,7 @@ undefined4 __fastcall FUN_004e9050(TLOBaseTy *param_1)
   TLOBaseTy_field_04D0State TVar1;
   int uVar2;
   int iVar2;
+  int iVar2_mg3;
   uint uVar3;
   byte *pbVar4;
 
@@ -53,10 +54,10 @@ LAB_004e914a:
   if (((param_1->field_05AC == CASE_6C) &&
       (param_1->field_061B != nullptr)) && (param_1->field_04E0[7] == 0))
   {
-    iVar2 = STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_04E0[6],
-                       nullptr);
-    if (iVar2 != 0) {
+    iVar2_mg3 = STPlaySystemC::sub_006E62D0
+                          (g_playSystem_00802A38,
+                           (AnonShape_005EFAE0_B406B78B *)param_1->field_04E0[6],nullptr);
+    if (iVar2_mg3 != 0) {
       param_1->field_04E0[6] = 0;
       param_1->field_061B = nullptr;
     }

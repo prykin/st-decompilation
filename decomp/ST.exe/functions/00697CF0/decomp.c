@@ -11,7 +11,7 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
   int iVar2;
   void **ppvVar3;
   uint local_EAX_231;
-  undefined2 *puVar4;
+  ushort *puVar4;
   short *psVar5;
   uint local_EAX_1023;
   uint local_EAX_1070;
@@ -35,10 +35,10 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
   int iVar13;
   byte *pbVar14;
   int iVar15;
-  undefined1 *puVar16;
-  undefined1 *puVar17;
+  byte *puVar16;
+  byte *puVar17;
   AnonShape_00697CF0_36737CA3 *pAVar18;
-  undefined4 *puVar19;
+  uint *puVar19;
   int iVar20;
   bool bVar21;
   uint auStack_10c [8];
@@ -46,7 +46,7 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
   undefined1 local_c0 [4];
   uint local_bc;
   int local_b8;
-  undefined1 *local_b4;
+  byte *local_b4;
   int local_ac;
   int local_a8;
   AnonShape_00697CF0_36737CA3 *local_a4;
@@ -72,10 +72,10 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
   int local_3c;
   int local_38;
   int local_2c;
-  undefined1 *local_28;
-  undefined1 *local_1c;
+  byte *local_28;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

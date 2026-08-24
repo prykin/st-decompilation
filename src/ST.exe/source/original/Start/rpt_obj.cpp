@@ -23,14 +23,15 @@ st::fn_005BD4B0
   int iVar3;
   int iVar2;
   int uVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   char *pcVar5;
   char *pcVar6;
   UINT resourceId;
   int iVar6;
   uint uVar7;
   uint uVar8;
-  int iVar9;
+  ushort *puVar9;
+  int iVar10;
   InternalExceptionFrame local_50;
   int local_c;
   RecoveredRecord_MReportTy_005BD4B0 *local_8;
@@ -42,14 +43,14 @@ st::fn_005BD4B0
     iVar2 = st::fn_0072D7F0(local_50.jumpBuffer,0);
     iVar3 = local_c;
     if (iVar2 == 0) {
-      iVar9 = 1;
+      iVar10 = 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      puVar4 = (undefined4 *)(*(int *)(local_c + 0x5d) + 0x28);
+      puVar9 = *(ushort **)(local_c + 0x5d) + 0x14;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar3 = st::fn_006B4FE0(*(int *)(local_c + 0x5d));
+      uVar3 = st::fn_006B4FE0(*(ushort **)(local_c + 0x5d));
       local_8 = (RecoveredRecord_MReportTy_005BD4B0 *)
                 st::fn_006B50C0(param_6,param_7,(uint)*(ushort *)(*(int *)(iVar3 + 0x5d) + 0xe),uVar3,
-                             puVar4,iVar9);
+                             (undefined4 *)puVar9,iVar10);
       uVar8 = local_8->field_0014;
       if (uVar8 == 0) {
         uVar8 = ((uint)local_8->field_000E * local_8->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
@@ -118,7 +119,7 @@ st::fn_005BD4B0
 void __thiscall st::fn_005BD7A0(MReportTy *this,undefined1 param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   DArrayTy *pDVar2;
   CursorClassTy *this_00;
   cMf32 *pcVar4;
@@ -233,20 +234,20 @@ void __thiscall st::fn_005BD7A0(MReportTy *this,undefined1 param_1)
   pcVar6->field_005C = 0;
   iVar23 = 1;
   puVar22 = this_01->field_005D + 0x14;
-  local_EAX_485 = st::fn_006B4FE0((int)this_01->field_005D);
+  local_EAX_485 = st::fn_006B4FE0(this_01->field_005D);
   pAVar7 = (AnonPointee_MReportTy_0077 *)
            st::fn_006B50C0(0x91,0x28,(uint)this_01->field_005D[7],local_EAX_485,(undefined4 *)puVar22,
                         iVar23);
   this_01->field_0077 = pAVar7;
   iVar23 = 1;
   puVar22 = this_01->field_005D + 0x14;
-  uVar8 = st::fn_006B4FE0((int)this_01->field_005D);
+  uVar8 = st::fn_006B4FE0(this_01->field_005D);
   pvVar8 = (void *)st::fn_006B50C0(300,0x1e,(uint)this_01->field_005D[7],uVar8,(undefined4 *)puVar22,
                                 iVar23);
   this_01->field_007B = pvVar8;
   iVar23 = 1;
   puVar22 = this_01->field_005D + 0x14;
-  local_EAX_565 = st::fn_006B4FE0((int)this_01->field_005D);
+  local_EAX_565 = st::fn_006B4FE0(this_01->field_005D);
   pRVar9 = (RecoveredSourceFamily_dibcopy *)
            st::fn_006B50C0(0x2e9,0x15e,(uint)this_01->field_005D[7],local_EAX_565,(undefined4 *)puVar22
                         ,iVar23);
@@ -364,7 +365,7 @@ void __thiscall st::fn_005BD7A0(MReportTy *this,undefined1 param_1)
       } while (local_10 != 0);
     } while (local_8 != 0);
     iVar23 = 2;
-    piVar14 = st::pointer_boundary_cast<int *>(&this_01->field_034F);
+    piVar14 = reinterpret_cast<int *>(&this_01->field_034F);
     do {
       if (*(int *)(*piVar14 + 0xc) != 0) {
         this_01->field_006A = (char)iVar23;
@@ -524,7 +525,7 @@ void __thiscall st::fn_005BD7A0(MReportTy *this,undefined1 param_1)
 void __thiscall st::fn_005BE310(MReportTy *this)
 
 {
-  undefined2 uVar2;
+  ushort uVar2;
   MReportTy *pMVar3;
   int iVar3;
   int iVar4;
@@ -640,14 +641,14 @@ void __thiscall st::fn_005BE5B0(MReportTy *this,char param_1)
   int iVar5;
   int local_EAX_584;
   int local_EAX_755;
-  undefined4 uVar8;
+  uint uVar8;
   char *pcVar8;
   uint *puVar9;
   char *local_EAX_2492;
   char *local_EAX_2562;
   byte bVar4;
   int uVar11;
-  undefined4 *puVar10;
+  uint *puVar10;
   char *local_EAX_3266;
   char *pcVar10;
   int iVar14;
@@ -1149,7 +1150,7 @@ LAB_005bef6c:
   }
   iVar6 = 1;
   puVar24 = this_00->field_005D + 0x14;
-  uVar11 = st::fn_006B4FE0((int)this_00->field_005D);
+  uVar11 = st::fn_006B4FE0(this_00->field_005D);
   local_c = (RecoveredRecord_MReportTy_005BD4B0 *)
             st::fn_006B50C0(400,0x32,(uint)this_00->field_005D[7],uVar11,(undefined4 *)puVar24,iVar6);
   uVar12 = local_c->field_0014;
@@ -1401,7 +1402,11 @@ LAB_005bfb27:
 #line 4 "decomp/ST.exe/functions/005BFD30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
-   MReportTy::PaintMainScore */
+   MReportTy::PaintMainScore
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_005BFD30(MReportTy *this,int param_1,uint param_2,int param_3)
 
@@ -1546,9 +1551,9 @@ st::fn_005C0980
 {
   int iVar4;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   undefined4 local_1cc [4];
   undefined4 local_1bc;
   undefined4 local_1b8;
@@ -1627,7 +1632,7 @@ st::fn_005C0B00(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,char
   byte *pbVar4;
   AnonPointee_MReportTy_0077 *pAVar5;
   int errorCode;
-  undefined4 *puVar6;
+  uint *puVar6;
   int iVar7;
   char cVar8;
   uint uVar9;
@@ -1655,7 +1660,7 @@ st::fn_005C0B00(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,char
     local_14 = this->field_0077;
   }
   else {
-    local_14 = st::pointer_boundary_cast<AnonPointee_MReportTy_0077 *>(this->field_007B);
+    local_14 = static_cast<AnonPointee_MReportTy_0077 *>(this->field_007B);
   }
   local_1c = (byte *)local_14->field_0008;
   local_8 = (undefined4 *)local_14->field_0004;
@@ -1739,14 +1744,14 @@ st::fn_005C0B00(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,char
 void __thiscall st::fn_005C0E00(MReportTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   DArrayTy *pDVar2;
   short sVar4;
   int local_EAX_39;
   int iVar5;
   byte *puVar5;
   ushort *puVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar8;
   int iVar9;
   MReportTy *this_00;
@@ -1850,7 +1855,7 @@ void __thiscall st::fn_005C0E00(MReportTy *this)
       this_00->field_0069 = 0;
       this_00->field_02A3 = 0;
       if (DAT_0080c83e != 0) {
-        piVar10 = st::pointer_boundary_cast<int *>(&DAT_0080c947);
+        piVar10 = reinterpret_cast<int *>(&DAT_0080c947);
         do {
           if (this_00->field_02A3 < *piVar10) {
             this_00->field_02A3 = *piVar10;
@@ -2196,8 +2201,8 @@ int __thiscall st::fn_005C1A90(MReportTy *this,STMessage *message)
   char *pcVar22;
   UINT UVar23;
   InternalExceptionFrame local_5c;
-  undefined4 local_18;
-  undefined4 local_14;
+  uint local_18;
+  uint local_14;
   MReportTy *local_10;
   int local_c;
   int *local_8;
@@ -2258,7 +2263,7 @@ int __thiscall st::fn_005C1A90(MReportTy *this,STMessage *message)
           st::fn_007119C0(this_00->field_0087,(char *)&DAT_0080f33a,-1,-1,
                          (uint)((message->arg0).words.high == 1));
           if ((message->arg0).words.high == 1) {
-            pRVar8 = st::pointer_boundary_cast<RecoveredSourceFamily_dibcopy *>((message->arg1).ptr);
+            pRVar8 = static_cast<RecoveredSourceFamily_dibcopy *>((message->arg1).ptr);
             st::fn_006B5EE0(pRVar8,0,0,0,pRVar8->field_0004,pRVar8->field_0008,0x18,0xd);
           }
         }
@@ -2351,7 +2356,7 @@ int __thiscall st::fn_005C1A90(MReportTy *this,STMessage *message)
         st::fn_007119C0(this_00->field_0087,(char *)&DAT_0080f33a,-1,-1,
                        (uint)((message->arg0).words.high == 1));
         if ((message->arg0).words.high == 1) {
-          pRVar8 = st::pointer_boundary_cast<RecoveredSourceFamily_dibcopy *>((message->arg1).ptr);
+          pRVar8 = static_cast<RecoveredSourceFamily_dibcopy *>((message->arg1).ptr);
           st::fn_006B5EE0(pRVar8,0,0,0,pRVar8->field_0004,pRVar8->field_0008,0x18,0xd);
         }
       }

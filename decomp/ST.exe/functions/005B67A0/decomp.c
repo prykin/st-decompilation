@@ -29,7 +29,7 @@ MMMObjTy::OutRGlProc
           int param_6,int param_7,undefined4 *param_8)
 
 {
-  undefined4 *puVar2;
+  uint *puVar2;
   int errorCode;
   int iVar3;
   InternalExceptionFrame local_4c;

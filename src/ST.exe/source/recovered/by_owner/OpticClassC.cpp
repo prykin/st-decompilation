@@ -35,9 +35,14 @@ OpticClassC * __thiscall st::fn_004A88C0(OpticClassC *this)
 
    [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/OpticClassC_sub_004AB070_param_1Enum. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8
 
-undefined4 __thiscall
+   [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=8, ignored=4, unknown=0 */
+
+int __thiscall
 st::fn_004AB070
           (OpticClassC *this,OpticClassC_sub_004AB070_param_1Enum param_1,float param_2,int param_3,
           int param_4)
@@ -50,7 +55,7 @@ st::fn_004AB070
   DVar1 = st::external_000000DA();
   if (DVar1 - this->field_0018 < 0x32) {
     if (this->field_001C == -2) {
-      return 0xfffffffe;
+      return -2;
     }
     this->field_001C = 0xffffffff;
     return 0;
@@ -111,6 +116,6 @@ LAB_004ab0d1:
   }
 switchD_004ab11d_default:
   this->field_001C = 0xfffffffe;
-  return 0xfffffffe;
+  return -2;
 }
 

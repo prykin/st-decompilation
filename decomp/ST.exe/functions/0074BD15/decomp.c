@@ -4,7 +4,7 @@
 undefined4 FUN_0074bd15(ushort *param_1,undefined4 *param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   uint uVar2;
   uint uVar3;
 

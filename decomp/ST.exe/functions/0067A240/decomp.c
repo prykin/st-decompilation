@@ -17,7 +17,7 @@ void __thiscall AiPlrClassTy::sub_0067A240(AiPlrClassTy *this,undefined *param_1
 
 {
   uint uVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   DArrayTy *pDVar4;
   uint uVar5;

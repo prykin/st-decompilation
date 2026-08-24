@@ -11,7 +11,7 @@ undefined4 __cdecl FUN_0067f030(char *text,char *param_2,uint *param_3)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   InternalExceptionFrame local_4c;
   uint local_8;
 

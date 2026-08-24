@@ -11,7 +11,7 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
   ushort uVar1;
   int local_EAX_69;
   int uVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   uint *puVar5;
   uint uVar6;

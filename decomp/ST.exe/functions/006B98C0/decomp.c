@@ -5,7 +5,7 @@ undefined4 FUN_006b98c0(int *param_1,int *param_2)
 
 {
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int *piVar3;
   int *piVar4;
 

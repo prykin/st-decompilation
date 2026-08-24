@@ -6,8 +6,7 @@ int FUN_00748721(AnonShape_00748721_F11EED2A *param_1,int *param_2)
 {
   int *piVar1;
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   piVar1 = param_2;
   if (param_2 == nullptr) {
     iVar2 = -0x7fffbffd;

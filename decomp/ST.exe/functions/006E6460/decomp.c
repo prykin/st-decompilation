@@ -10,8 +10,7 @@ FUN_006e6460(void *this,undefined4 param_1,int param_2,undefined2 param_3,undefi
             byte param_5,int param_6)
 
 {
-  undefined4 *puVar1;
-
+  uint *puVar1;
   if (param_2 < 1) {
     return nullptr;
   }

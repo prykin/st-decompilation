@@ -57,8 +57,8 @@ void FUN_006d8a60(byte *param_1,int param_2,byte *param_3,int param_4,uint param
   AnonShape_006D8A60_D503343B AVar9;
   char cVar10;
   int iVar11;
-  undefined1 uVar12;
-  undefined2 uVar13;
+  byte uVar12;
+  ushort uVar13;
   uint uVar14;
   uint uVar15;
   byte *pbVar16;

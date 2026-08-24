@@ -113,9 +113,11 @@ source_target	destination_target	site
 00412960|parameter|Stack[0x4]:4	00412B80|parameter|Stack[0x4]:4	00412960 C call -> FUN_00412b80
 00412960|parameter|Stack[0x8]:4	00412B80|parameter|Stack[0x8]:4	00412960 C call -> FUN_00412b80
 00412960|parameter|Stack[0xc]:4	00412B80|parameter|Stack[0xc]:4	00412960 C call -> FUN_00412b80
+00412960|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00412960 C call -> RaiseInternalException
 00413050|parameter|Stack[0x8]:4	00413170|parameter|Stack[0x8]:4	00413050 C call -> FUN_00413170
 00413050|parameter|Stack[0xc]:4	00413170|parameter|Stack[0xc]:4	00413050 C call -> FUN_00413170
 00413050|parameter|Stack[0x10]:4	00413170|parameter|Stack[0x10]:4	00413050 C call -> FUN_00413170
+00413050|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	00413050 C call -> RaiseInternalException
 00413AF0|parameter|Stack[0x4]:4	00423E70|parameter|ECX:4 (auto)	00413AF0 C call -> FUN_00423e70
 00413AF0|parameter|Stack[0x4]:4	00423E70|parameter|ECX:4 (auto)	00413AF0 C call -> FUN_00423e70
 00413AF0|parameter|Stack[0x4]:4	00423E70|parameter|ECX:4 (auto)	00413AF0 C call -> FUN_00423e70
@@ -4718,6 +4720,8 @@ source_target	destination_target	site
 004D67B0|parameter|Stack[0x4]:4	0041DD00|parameter|Stack[0x4]:4	004D67B0 C call -> FUN_0041dd00
 004D6F70|parameter|ECX:4	004D6DF0|parameter|ECX:4 (auto)	004D6F70 C call -> TLOBaseTy::sub_004D6DF0
 004D6F70|parameter|ECX:4	004D6EB0|parameter|ECX:4 (auto)	004D6F70 C call -> FUN_004d6eb0
+004D7040|local|EAX:4	006B12A8|parameter|Stack[0x8]:4	004D7040 C call -> FUN_006b12a8
+004D7040|local|EAX:4	006B1280|parameter|Stack[0x4]:4	004D7040 C call -> FUN_006b1280
 004D7270|parameter|ECX:4	004D6F70|parameter|ECX:4	004D7270 C call -> FUN_004d6f70
 004D7270|local|EAX:4	00637C50|parameter|Stack[0x4]:4	004D7270 C call -> FUN_00637c50
 004D7480|parameter|Stack[0x4]:1	004D78E0|parameter|Stack[0x4]:1	004D7480 C call -> FUN_004d78e0
@@ -4759,6 +4763,7 @@ source_target	destination_target	site
 004D9350|parameter|ECX:4	004CABB0|parameter|ECX:4 (auto)	004D9350 C call -> TLOBaseTy::RotateSpr
 004D9350|parameter|ECX:4	004CABB0|parameter|ECX:4 (auto)	004D9350 C call -> TLOBaseTy::RotateSpr
 004D96B0|local|Stack[-0x8]:4	006AE1C0|parameter|Stack[0x8]:4	004D96B0 C call -> Library::DKW::TBL::DArrayAppend
+004D9820|local|EAX:4	006B1280|parameter|Stack[0x4]:4	004D9820 C call -> FUN_006b1280
 004D9820|parameter|ECX:4	004D9B20|parameter|ECX:4	004D9820 C call -> FUN_004d9b20
 004D9C20|parameter|ECX:4	004CBC10|parameter|ECX:4 (auto)	004D9C20 C call -> TLOBaseTy::AddSprInit
 004D9C20|parameter|ECX:4	004CABB0|parameter|ECX:4 (auto)	004D9C20 C call -> TLOBaseTy::RotateSpr
@@ -5128,6 +5133,8 @@ source_target	destination_target	site
 004EC0F0|local|EAX:4	006EA340|parameter|Stack[0x4]:4	004EC0F0 C call -> FUN_006ea340
 004ECC70|parameter|ECX:4	0041D3E0|parameter|ECX:4 (auto)	004ECC70 C call -> FUN_0041d3e0
 004ECCC0|parameter|ECX:4	0041D4F0|parameter|ECX:4	004ECCC0 C call -> FUN_0041d4f0
+004ECCF0|local|EAX:4	006B12A8|parameter|Stack[0x8]:4	004ECCF0 C call -> FUN_006b12a8
+004ECCF0|local|EAX:4	006B1280|parameter|Stack[0x4]:4	004ECCF0 C call -> FUN_006b1280
 004ECCF0|parameter|ECX:4	004C2C10|parameter|ECX:4	004ECCF0 C call -> FUN_004c2c10
 004ECE40|parameter|ECX:4	004CBC10|parameter|ECX:4 (auto)	004ECE40 C call -> TLOBaseTy::AddSprInit
 004ECE40|parameter|ECX:4	004CABB0|parameter|ECX:4 (auto)	004ECE40 C call -> TLOBaseTy::RotateSpr
@@ -8759,6 +8766,7 @@ source_target	destination_target	site
 005B6F10|local|Stack[-0x8]:4	005B6220|parameter|ECX:4 (auto)	005B6F10 C call -> MMObjTy::DoneMMObj
 005B6FF0|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	005B6FF0 C call -> RaiseInternalException
 005B7540|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	005B7540 C call -> RaiseInternalException
+005B7540|local|EAX:4	00713480|parameter|Stack[0x4]:4	005B7540 C call -> ccFntTy::CreateTypeSSpr
 005B7EF0|parameter|Stack[0x4]:4	006B0140|parameter|Stack[0x4]:4	005B7EF0 C call -> LoadResourceString
 005B7EF0|parameter|Stack[0x1c]:4	006B0140|parameter|Stack[0x4]:4	005B7EF0 C call -> LoadResourceString
 005B7EF0|parameter|Stack[0x4]:4	006B0140|parameter|Stack[0x4]:4	005B7EF0 C call -> LoadResourceString
@@ -10463,7 +10471,6 @@ source_target	destination_target	site
 00615FD0|parameter|ECX:4 (auto)	00617560|parameter|ECX:4 (auto)	00615FD0 C call -> FUN_00617560
 00615FD0|parameter|ECX:4 (auto)	006132F0|parameter|ECX:4 (auto)	00615FD0 C call -> STGenBombC::LoadImagSpr
 00615FD0|parameter|ECX:4 (auto)	0060EC00|parameter|ECX:4	00615FD0 C call -> FUN_0060ec00
-00616280|local|Stack[-0xc]:4	00416270|parameter|Stack[0x8]:4	00616280 C call -> FUN_00416270
 00616280|local|Stack[-0x10]:4	00416270|parameter|Stack[0xc]:4	00616280 C call -> FUN_00416270
 006164E0|parameter|ECX:4 (auto)	00616280|parameter|ECX:4 (auto)	006164E0 C call -> FUN_00616280
 006164E0|parameter|ECX:4 (auto)	006173A0|parameter|ECX:4 (auto)	006164E0 C call -> FUN_006173a0
@@ -14206,8 +14213,11 @@ source_target	destination_target	site
 006AB090|local|Stack[-0x38]:4	006BFB50|parameter|Stack[0x4]:4	006AB090 C call -> FUN_006bfb50
 006ACCD0|parameter|Stack[0xc]:4	006CE700|parameter|Stack[0xc]:4	006ACCD0 C call -> FUN_006ce700
 006ACCD0|local|Stack[-0x8]:4	006CE700|parameter|Stack[0x4]:4	006ACCD0 C call -> FUN_006ce700
+006ACCD0|local|EDI:4	006CE700|parameter|Stack[0x8]:4	006ACCD0 C call -> FUN_006ce700
 006ACCD0|parameter|Stack[0xc]:4	006CE700|parameter|Stack[0xc]:4	006ACCD0 C call -> FUN_006ce700
+006ACCD0|local|EDI:4	006CE700|parameter|Stack[0x8]:4	006ACCD0 C call -> FUN_006ce700
 006ACCD0|parameter|Stack[0xc]:4	006CE700|parameter|Stack[0xc]:4	006ACCD0 C call -> FUN_006ce700
+006ACCD0|local|EDI:4	006CE700|parameter|Stack[0x8]:4	006ACCD0 C call -> FUN_006ce700
 006ACCD0|parameter|Stack[0xc]:4	006CE700|parameter|Stack[0xc]:4	006ACCD0 C call -> FUN_006ce700
 006AD190|parameter|Stack[0x8]:4	0072EA70|parameter|Stack[0x4]:4	006AD190 C call -> Library::MSVCRT::FUN_0072ea70
 006AD2A0|local|Stack[-0x10c]:4	EXTERNAL:0000001A|parameter|Stack[0x8]:4	006AD2A0 C call -> KERNEL32.DLL::GetModuleFileNameA
@@ -14948,10 +14958,10 @@ source_target	destination_target	site
 006D54C0|parameter|ECX:4	0074A193|parameter|ECX:4	006D54C0 C call -> FUN_0074a193
 006D54C0|local|Stack[-0x8]:4	006BBE40|parameter|Stack[0x4]:4	006D54C0 C call -> FUN_006bbe40
 006D54C0|local|Stack[-0x18]:4	EXTERNAL:00000019|parameter|Stack[0x4]:4	006D54C0 C call -> KERNEL32.DLL::LeaveCriticalSection
-006D5720|parameter|ECX:4 (auto)	0074A95F|parameter|ECX:4 (auto)	006D5720 C call -> FUN_0074a95f
-006D5720|parameter|Stack[0x8]:4	0074A95F|parameter|Stack[0x4]:4	006D5720 C call -> FUN_0074a95f
-006D5720|parameter|Stack[0x10]:4	0074A95F|parameter|Stack[0x8]:4	006D5720 C call -> FUN_0074a95f
-006D5720|parameter|Stack[0x14]:4	0074A95F|parameter|Stack[0xc]:4	006D5720 C call -> FUN_0074a95f
+006D5720|parameter|ECX:4 (auto)	0074A95F|parameter|ECX:4 (auto)	006D5720 C call -> RecoveredClass_0074A95F::FUN_0074a95f
+006D5720|parameter|Stack[0x8]:4	0074A95F|parameter|Stack[0x4]:4	006D5720 C call -> RecoveredClass_0074A95F::FUN_0074a95f
+006D5720|parameter|Stack[0x10]:4	0074A95F|parameter|Stack[0x8]:4	006D5720 C call -> RecoveredClass_0074A95F::FUN_0074a95f
+006D5720|parameter|Stack[0x14]:4	0074A95F|parameter|Stack[0xc]:4	006D5720 C call -> RecoveredClass_0074A95F::FUN_0074a95f
 006D57F0|parameter|ECX:4 (auto)	007485C5|parameter|ECX:4	006D57F0 C call -> FUN_007485c5
 006D57F0|parameter|ECX:4 (auto)	0072E2B0|parameter|Stack[0x4]:4	006D57F0 C call -> Library::MSVCRT::FUN_0072e2b0
 006D5820|parameter|Stack[0x4]:4	0074862E|parameter|Stack[0x4]:4	006D5820 C call -> FUN_0074862e
@@ -14979,12 +14989,12 @@ source_target	destination_target	site
 006D5ED0|parameter|ECX:4	006D6160|parameter|Stack[0x4]:4	006D5ED0 C call -> FUN_006d6160
 006D5ED0|local|Stack[-0x8]:4	EXTERNAL:00000019|parameter|Stack[0x4]:4	006D5ED0 C call -> KERNEL32.DLL::LeaveCriticalSection
 006D5ED0|local|Stack[-0x8]:4	EXTERNAL:00000019|parameter|Stack[0x4]:4	006D5ED0 C call -> KERNEL32.DLL::LeaveCriticalSection
-006D6160|parameter|ECX:4 (auto)	00748A83|parameter|ECX:4 (auto)	006D6160 C call -> FUN_00748a83
-006D6160|parameter|Stack[0x8]:4	00748A83|parameter|Stack[0x4]:4	006D6160 C call -> FUN_00748a83
-006D6160|parameter|Stack[0x4]:4	00748A83|parameter|Stack[0x8]:4	006D6160 C call -> FUN_00748a83
-006D6160|parameter|Stack[0xc]:4	00748A83|parameter|Stack[0xc]:4	006D6160 C call -> FUN_00748a83
-006D6160|parameter|Stack[0x10]:4	00748A83|parameter|Stack[0x10]:4	006D6160 C call -> FUN_00748a83
-006D6160|parameter|Stack[0x14]:4	00748A83|parameter|Stack[0x14]:4	006D6160 C call -> FUN_00748a83
+006D6160|parameter|ECX:4 (auto)	00748A83|parameter|ECX:4 (auto)	006D6160 C call -> RecoveredClass_00748A83::FUN_00748a83
+006D6160|parameter|Stack[0x8]:4	00748A83|parameter|Stack[0x4]:4	006D6160 C call -> RecoveredClass_00748A83::FUN_00748a83
+006D6160|parameter|Stack[0x4]:4	00748A83|parameter|Stack[0x8]:4	006D6160 C call -> RecoveredClass_00748A83::FUN_00748a83
+006D6160|parameter|Stack[0xc]:4	00748A83|parameter|Stack[0xc]:4	006D6160 C call -> RecoveredClass_00748A83::FUN_00748a83
+006D6160|parameter|Stack[0x10]:4	00748A83|parameter|Stack[0x10]:4	006D6160 C call -> RecoveredClass_00748A83::FUN_00748a83
+006D6160|parameter|Stack[0x14]:4	00748A83|parameter|Stack[0x14]:4	006D6160 C call -> RecoveredClass_00748A83::FUN_00748a83
 006D6190|parameter|ECX:4 (auto)	00748AD3|parameter|ECX:4	006D6190 C call -> FUN_00748ad3
 006D6190|parameter|ECX:4 (auto)	0072E2B0|parameter|Stack[0x4]:4	006D6190 C call -> Library::MSVCRT::FUN_0072e2b0
 006D61C0|parameter|Stack[0x4]:4	00748B37|parameter|Stack[0x4]:4	006D61C0 C call -> FUN_00748b37
@@ -15028,8 +15038,8 @@ source_target	destination_target	site
 006D70B0|parameter|Stack[0x8]:4	0074C952|parameter|Stack[0x8]:4	006D70B0 C call -> FUN_0074c952
 006D71A0|parameter|ECX:4 (auto)	0074BE28|parameter|ECX:4	006D71A0 C call -> FUN_0074be28
 006D71A0|parameter|ECX:4 (auto)	0072E2B0|parameter|Stack[0x4]:4	006D71A0 C call -> Library::MSVCRT::FUN_0072e2b0
-006D71D0|parameter|ECX:4 (auto)	0074CDC5|parameter|Stack[0x8]:4	006D71D0 C call -> FUN_0074cdc5
-006D71D0|parameter|ECX:4 (auto)	0074CFC0|parameter|Stack[0x8]:4	006D71D0 C call -> FUN_0074cfc0
+006D71D0|parameter|ECX:4 (auto)	0074CDC5|parameter|Stack[0x8]:4	006D71D0 C call -> RecoveredClass_0074CDC5::FUN_0074cdc5
+006D71D0|parameter|ECX:4 (auto)	0074CFC0|parameter|Stack[0x8]:4	006D71D0 C call -> RecoveredClass_0074CFC0::FUN_0074cfc0
 006D7310|parameter|Stack[0x8]:4	0074DCA1|parameter|Stack[0x8]:4	006D7310 C call -> FUN_0074dca1
 006D7330|parameter|Stack[0x4]:4	0074CEB2|parameter|Stack[0x4]:4	006D7330 C call -> FUN_0074ceb2
 006D7330|parameter|Stack[0x8]:4	0074CEB2|parameter|Stack[0x8]:4	006D7330 C call -> FUN_0074ceb2
@@ -16259,7 +16269,7 @@ source_target	destination_target	site
 007494B5|parameter|ECX:4 (auto)	0072E2B0|parameter|Stack[0x4]:4	007494B5 C call -> Library::MSVCRT::FUN_0072e2b0
 007495BF|parameter|ECX:4	00749415|parameter|ECX:4	007495BF C call -> FUN_00749415
 007495BF|parameter|ECX:4	007496A1|parameter|ECX:4	007495BF C call -> FUN_007496a1
-007495BF|parameter|ECX:4	00748A83|parameter|Stack[0x8]:4	007495BF C call -> FUN_00748a83
+007495BF|parameter|ECX:4	00748A83|parameter|Stack[0x8]:4	007495BF C call -> RecoveredClass_00748A83::FUN_00748a83
 007496E0|parameter|ECX:4	007496A1|parameter|ECX:4	007496E0 C call -> FUN_007496a1
 007496E0|parameter|ECX:4	00749091|parameter|ECX:4	007496E0 C call -> FUN_00749091
 007498EC|parameter|Stack[0x8]:4	0074987C|parameter|Stack[0x8]:4	007498EC C call -> FUN_0074987c
@@ -16281,7 +16291,7 @@ source_target	destination_target	site
 00749F88|parameter|Stack[0x4]:4	00747161|parameter|Stack[0x4]:4	00749F88 C call -> FUN_00747161
 00749F88|parameter|Stack[0x8]:4	00747161|parameter|Stack[0x8]:4	00749F88 C call -> FUN_00747161
 00749F88|parameter|Stack[0xc]:4	00747161|parameter|Stack[0xc]:4	00749F88 C call -> FUN_00747161
-0074A05B|parameter|ECX:4 (auto)	0074A95F|parameter|Stack[0x4]:4	0074A05B C call -> FUN_0074a95f
+0074A05B|parameter|ECX:4 (auto)	0074A95F|parameter|Stack[0x4]:4	0074A05B C call -> RecoveredClass_0074A95F::FUN_0074a95f
 0074A0C1|parameter|Stack[0x8]:4	0074D5D3|parameter|Stack[0x4]:4	0074A0C1 C call -> FUN_0074d5d3
 0074A143|parameter|ECX:4 (auto)	00749D5F|parameter|ECX:4	0074A143 C call -> FUN_00749d5f
 0074A193|parameter|ECX:4	0074A81D|parameter|ECX:4 (auto)	0074A193 C call -> FUN_0074a81d
@@ -16364,8 +16374,8 @@ source_target	destination_target	site
 0074BDE0|parameter|Stack[0x8]:4	00746EE3|parameter|Stack[0x8]:4	0074BDE0 C call -> FUN_00746ee3
 0074BDE0|parameter|Stack[0xc]:4	00746EE3|parameter|Stack[0x10]:4	0074BDE0 C call -> FUN_00746ee3
 0074BE28|parameter|ECX:4	00746F77|parameter|ECX:4	0074BE28 C call -> FUN_00746f77
-0074BE76|parameter|ECX:4 (auto)	0074C38F|parameter|Stack[0x8]:4	0074BE76 C call -> FUN_0074c38f
-0074BE76|parameter|ECX:4 (auto)	0074C658|parameter|Stack[0x8]:4	0074BE76 C call -> FUN_0074c658
+0074BE76|parameter|ECX:4 (auto)	0074C38F|parameter|Stack[0x8]:4	0074BE76 C call -> RecoveredClass_0074CDC5::sub_0074C38F
+0074BE76|parameter|ECX:4 (auto)	0074C658|parameter|Stack[0x8]:4	0074BE76 C call -> RecoveredClass_0074CFC0::sub_0074C658
 0074BF23|parameter|Stack[0x8]:4	0074D5D3|parameter|Stack[0x4]:4	0074BF23 C call -> FUN_0074d5d3
 0074BF23|parameter|Stack[0x8]:4	0074D5D3|parameter|Stack[0x4]:4	0074BF23 C call -> FUN_0074d5d3
 0074C115|parameter|ECX:4 (auto)	0074BFBF|parameter|ECX:4 (auto)	0074C115 C call -> FUN_0074bfbf
@@ -16410,27 +16420,27 @@ source_target	destination_target	site
 0074C952|parameter|Stack[0x4]:4	0074BDE0|parameter|Stack[0x4]:4	0074C952 C call -> FUN_0074bde0
 0074C952|parameter|Stack[0x8]:4	0074BDE0|parameter|Stack[0x8]:4	0074C952 C call -> FUN_0074bde0
 0074C952|parameter|Stack[0xc]:4	0074BDE0|parameter|Stack[0xc]:4	0074C952 C call -> FUN_0074bde0
-0074C96C|parameter|ECX:4 (auto)	0074CDC5|parameter|Stack[0x8]:4	0074C96C C call -> FUN_0074cdc5
-0074C96C|parameter|ECX:4 (auto)	0074CFC0|parameter|Stack[0x8]:4	0074C96C C call -> FUN_0074cfc0
+0074C96C|parameter|ECX:4 (auto)	0074CDC5|parameter|Stack[0x8]:4	0074C96C C call -> RecoveredClass_0074CDC5::FUN_0074cdc5
+0074C96C|parameter|ECX:4 (auto)	0074CFC0|parameter|Stack[0x8]:4	0074C96C C call -> RecoveredClass_0074CFC0::FUN_0074cfc0
 0074CA21|parameter|ECX:4 (auto)	00747429|parameter|ECX:4 (auto)	0074CA21 C call -> FUN_00747429
 0074CB34|local|Stack[-0xc]:4	0074BC50|parameter|Stack[0x4]:4	0074CB34 C call -> FUN_0074bc50
 0074CCE2|parameter|ECX:4 (auto)	0074CB34|parameter|ECX:4 (auto)	0074CCE2 C call -> FUN_0074cb34
 0074CCE2|parameter|Stack[0x4]:4	0074CB34|parameter|Stack[0x4]:4	0074CCE2 C call -> FUN_0074cb34
 0074CCE2|parameter|ECX:4 (auto)	00747406|parameter|ECX:4 (auto)	0074CCE2 C call -> FUN_00747406
-0074CDC5|parameter|ECX:4 (auto)	0074C38F|parameter|ECX:4 (auto)	0074CDC5 C call -> FUN_0074c38f
-0074CDC5|parameter|Stack[0x4]:4	0074C38F|parameter|Stack[0x4]:4	0074CDC5 C call -> FUN_0074c38f
-0074CDC5|parameter|Stack[0x8]:4	0074C38F|parameter|Stack[0x8]:4	0074CDC5 C call -> FUN_0074c38f
-0074CDC5|parameter|Stack[0xc]:4	0074C38F|parameter|Stack[0xc]:4	0074CDC5 C call -> FUN_0074c38f
-0074CDC5|parameter|Stack[0x10]:4	0074C38F|parameter|Stack[0x10]:4	0074CDC5 C call -> FUN_0074c38f
+0074CDC5|parameter|ECX:4 (auto)	0074C38F|parameter|ECX:4 (auto)	0074CDC5 C call -> RecoveredClass_0074CDC5::sub_0074C38F
+0074CDC5|parameter|Stack[0x4]:4	0074C38F|parameter|Stack[0x4]:4	0074CDC5 C call -> RecoveredClass_0074CDC5::sub_0074C38F
+0074CDC5|parameter|Stack[0x8]:4	0074C38F|parameter|Stack[0x8]:4	0074CDC5 C call -> RecoveredClass_0074CDC5::sub_0074C38F
+0074CDC5|parameter|Stack[0xc]:4	0074C38F|parameter|Stack[0xc]:4	0074CDC5 C call -> RecoveredClass_0074CDC5::sub_0074C38F
+0074CDC5|parameter|Stack[0x10]:4	0074C38F|parameter|Stack[0x10]:4	0074CDC5 C call -> RecoveredClass_0074CDC5::sub_0074C38F
 0074CE11|parameter|ECX:4 (auto)	007485C5|parameter|ECX:4	0074CE11 C call -> FUN_007485c5
 0074CE11|parameter|ECX:4 (auto)	0072E2B0|parameter|Stack[0x4]:4	0074CE11 C call -> Library::MSVCRT::FUN_0072e2b0
 0074CEB2|parameter|Stack[0x8]:4	0074D156|parameter|Stack[0x4]:4	0074CEB2 C call -> FUN_0074d156
 0074CEB2|parameter|Stack[0xc]:4	0074D156|parameter|Stack[0x8]:4	0074CEB2 C call -> FUN_0074d156
-0074CFC0|parameter|ECX:4 (auto)	0074C658|parameter|ECX:4 (auto)	0074CFC0 C call -> FUN_0074c658
-0074CFC0|parameter|Stack[0x4]:4	0074C658|parameter|Stack[0x4]:4	0074CFC0 C call -> FUN_0074c658
-0074CFC0|parameter|Stack[0x8]:4	0074C658|parameter|Stack[0x8]:4	0074CFC0 C call -> FUN_0074c658
-0074CFC0|parameter|Stack[0xc]:4	0074C658|parameter|Stack[0xc]:4	0074CFC0 C call -> FUN_0074c658
-0074CFC0|parameter|Stack[0x10]:4	0074C658|parameter|Stack[0x10]:4	0074CFC0 C call -> FUN_0074c658
+0074CFC0|parameter|ECX:4 (auto)	0074C658|parameter|ECX:4 (auto)	0074CFC0 C call -> RecoveredClass_0074CFC0::sub_0074C658
+0074CFC0|parameter|Stack[0x4]:4	0074C658|parameter|Stack[0x4]:4	0074CFC0 C call -> RecoveredClass_0074CFC0::sub_0074C658
+0074CFC0|parameter|Stack[0x8]:4	0074C658|parameter|Stack[0x8]:4	0074CFC0 C call -> RecoveredClass_0074CFC0::sub_0074C658
+0074CFC0|parameter|Stack[0xc]:4	0074C658|parameter|Stack[0xc]:4	0074CFC0 C call -> RecoveredClass_0074CFC0::sub_0074C658
+0074CFC0|parameter|Stack[0x10]:4	0074C658|parameter|Stack[0x10]:4	0074CFC0 C call -> RecoveredClass_0074CFC0::sub_0074C658
 0074CFFB|parameter|ECX:4 (auto)	0074C6BA|parameter|ECX:4	0074CFFB C call -> FUN_0074c6ba
 0074CFFB|parameter|ECX:4 (auto)	0072E2B0|parameter|Stack[0x4]:4	0074CFFB C call -> Library::MSVCRT::FUN_0072e2b0
 0074D1EA|parameter|Stack[0x4]:4	EXTERNAL:00000007|parameter|Stack[0x8]:4	0074D1EA C call -> KERNEL32.DLL::CreateEventA
@@ -16754,6 +16764,7 @@ source_target	destination_target	site
 00755E10|parameter|Stack[0x4]:4	00753B80|parameter|Stack[0x4]:4	00755E10 C call -> FUN_00753b80
 00755E10|parameter|Stack[0xc]:4	00753B80|parameter|Stack[0x8]:4	00755E10 C call -> FUN_00753b80
 00755E10|parameter|Stack[0x4]:4	007574C0|parameter|Stack[0x4]:4	00755E10 C call -> FUN_007574c0
+00755E10|local|EAX:4	007574C0|parameter|Stack[0x8]:4	00755E10 C call -> FUN_007574c0
 00755E10|parameter|Stack[0x4]:4	00757670|parameter|Stack[0x4]:4	00755E10 C call -> FUN_00757670
 00755E10|parameter|Stack[0x4]:4	00757530|parameter|Stack[0x4]:4	00755E10 C call -> FUN_00757530
 00755E10|parameter|Stack[0x4]:4	00755DA0|parameter|Stack[0x4]:4	00755E10 C call -> FUN_00755da0
@@ -16764,6 +16775,7 @@ source_target	destination_target	site
 00755E10|parameter|Stack[0x4]:4	00753B80|parameter|Stack[0x4]:4	00755E10 C call -> FUN_00753b80
 00755E10|parameter|Stack[0xc]:4	00753B80|parameter|Stack[0x8]:4	00755E10 C call -> FUN_00753b80
 00755E10|parameter|Stack[0x4]:4	007574C0|parameter|Stack[0x4]:4	00755E10 C call -> FUN_007574c0
+00755E10|local|EAX:4	007574C0|parameter|Stack[0x8]:4	00755E10 C call -> FUN_007574c0
 00755E10|parameter|Stack[0x4]:4	00757670|parameter|Stack[0x4]:4	00755E10 C call -> FUN_00757670
 00755E10|parameter|Stack[0x4]:4	00757530|parameter|Stack[0x4]:4	00755E10 C call -> FUN_00757530
 00755E10|parameter|Stack[0x4]:4	00755DA0|parameter|Stack[0x4]:4	00755E10 C call -> FUN_00755da0

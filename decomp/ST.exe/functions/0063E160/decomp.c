@@ -16,7 +16,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
   int errorCode;
   ushort *puVar6;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   ST3DSMAPContext **ppSVar9;
   InternalExceptionFrame local_58;
   undefined4 local_14;

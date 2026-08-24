@@ -3,14 +3,18 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
-   StartSystemTy::CreateChatView */
+   StartSystemTy::CreateChatView
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
 
 {
   ccFntTy *pcVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
+  uint uVar2;
+  uint uVar3;
   StartSystemTy *this_00;
   int iVar6;
   int iVar5;

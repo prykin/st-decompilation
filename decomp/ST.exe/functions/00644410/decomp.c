@@ -20,9 +20,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
   int iVar5;
   int iVar6;
   int iVar7;
-  undefined2 uVar9;
+  ushort uVar9;
   int iVar8;
-  undefined4 *puVar10;
+  uint *puVar10;
   short sVar11;
   STWorldObject *this_00;
   int iVar12;

@@ -25,15 +25,15 @@
 int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   OptPanelTy_field_01A4State OVar4;
   ushort uVar5;
   STMessageId SVar6;
   OptPanelTy_field_02FDDArray *pOVar7;
-  undefined2 uVar8;
+  ushort uVar8;
   InternalExceptionFrame *pIVar9;
-  undefined1 uVar10;
+  byte uVar10;
   int local_EAX_48;
   DWORD DVar11;
   uint uVar12;
@@ -63,7 +63,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
   bool bVar24;
   uint uVar25;
   char *pcVar26;
-  undefined4 uVar27;
+  uint uVar27;
   byte bVar28;
   int iVar30;
   code *pcVar31;

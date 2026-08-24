@@ -6,8 +6,7 @@ undefined4 __thiscall FUN_0062f830(void *this,int param_1,int param_2,int param_
 {
   int *piVar1;
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   uVar3 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   piVar1 = *(int **)((int)this + param_2 * 4 + 0x1e5);

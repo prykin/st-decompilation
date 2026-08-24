@@ -4,8 +4,7 @@
 void __cdecl FUN_006a5560(undefined *param_1,undefined4 param_2)
 
 {
-  undefined4 *puVar1;
-
+  uint *puVar1;
   puVar1 = PTR_0085496c;
   if ((DAT_007ec178 & 1) != 0) {
     for (; puVar1 != nullptr; puVar1 = (undefined4 *)*puVar1) {

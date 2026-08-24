@@ -4,14 +4,14 @@
 void __fastcall FUN_00579350(AnonShape_00579350_2E014C47 *param_1)
 
 {
-  undefined1 *this;
+  byte *this;
   int iVar2;
   uint uVar3;
   int iVar1;
   int iVar4;
   uint local_EAX_315;
   uint uVar2;
-  undefined4 uVar5;
+  uint uVar5;
   short sVar6;
 
   sVar6 = param_1->field_0041;

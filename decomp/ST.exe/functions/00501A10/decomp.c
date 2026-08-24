@@ -18,7 +18,7 @@
 void __thiscall CPanelTy::sub_00501A10(CPanelTy *this)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   BITMAPINFO *pBVar2;
 
   puVar1 = &this->field_0434;

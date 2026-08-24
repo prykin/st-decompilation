@@ -24,12 +24,13 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
   uint uVar9;
   int *piVar10;
   int iVar12;
-  undefined4 *puVar13;
-  undefined4 *puVar14;
+  uint *puVar13;
+  uint *puVar14;
+  ST3DSMAPContext_field_00A8State SVar15;
   InternalExceptionFrame local_68;
   uint local_24;
   int local_20;
-  uint local_1c;
+  ST3DSMAPContext_field_00A8State local_1c;
   int local_18;
   uint local_14;
   ST3DSMAPContext *local_10;
@@ -101,10 +102,10 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
       } while (iVar6 < STField<int>(param_1,0x455));
     }
     local_24 = param_3 * param_3;
-    local_1c = 0;
+    local_1c = CASE_0;
     local_c = param_2;
     do {
-      uVar9 = local_1c;
+      SVar15 = local_1c;
       if (g_cLoading_00802A58 != nullptr) {
         /* ST_CALLSITE[0052AD04]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
         st::fn_00403472(g_cLoading_00802A58,CASE_1,local_14,nullptr);
@@ -112,7 +113,7 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
       local_14 = local_14 + 1;
       local_18 = (int)*param_1;
       st::fn_006DD610
-                (this,uVar9 | 8,(double)((float)local_18 * _DAT_007904f4),
+                (this,SVar15 | 8,(double)((float)local_18 * _DAT_007904f4),
                  (double)((float)(int)param_1[1] * _DAT_007904f4));
       st::fn_006DDBE0(this);
       st::fn_006DDD50(this);
@@ -140,10 +141,10 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
             puVar14 = (undefined4 *)((int)puVar14 + 1);
           }
           local_18 = local_18 + param_3;
-          uVar9 = local_1c;
+          SVar15 = local_1c;
         } while (iVar6 < (int)param_3);
       }
-      local_1c = uVar9 + 1;
+      local_1c = SVar15 + CASE_1;
       local_c = local_c + 1;
     } while ((int)local_1c < 4);
     g_currentExceptionFrame = local_68.previous;

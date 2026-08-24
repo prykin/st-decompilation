@@ -14,8 +14,9 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
 
 {
   int iVar2;
-  int iVar4;
+  int iVar4_mg0;
   int iVar3;
+  int iVar4;
   InternalExceptionFrame local_58;
   void *local_14;
   int local_10;
@@ -27,8 +28,8 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
   g_currentExceptionFrame = &local_58;
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar2 == 0) {
-    iVar4 = thunk_FUN_0054cbb0(param_2,&local_8);
-    if (iVar4 == 0) {
+    iVar4_mg0 = thunk_FUN_0054cbb0(param_2,&local_8);
+    if (iVar4_mg0 == 0) {
       local_10 = Library::Ourlib::SAPP::FUN_006e6200
                            (local_14,local_8,param_1,param_3,&local_c,param_5,param_6);
     }

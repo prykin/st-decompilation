@@ -25,7 +25,7 @@ AiEventClassTy::_CreateRCCont
   short local_20 [4];
   int local_18;
   int local_14;
-  undefined4 local_10;
+  uint local_10;
   int local_c;
   int local_8;
 

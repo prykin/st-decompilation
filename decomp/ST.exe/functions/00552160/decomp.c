@@ -9,8 +9,7 @@
 undefined4 __thiscall TradePanelTy::sub_00552160(TradePanelTy *this,char param_1,char param_2)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   if ((this->field_0184 != param_1) &&
      /* ST_CALLSITE[00552178]: CALL 0x00401e4c; direct=00401E4C SpecPanelTy::SetPanel */

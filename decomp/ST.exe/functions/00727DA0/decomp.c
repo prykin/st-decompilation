@@ -27,7 +27,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX;
   uint uVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   AnonShape_00727DA0_C4265AA0 *pAVar9;
   uint uVar10;
   AnonShape_00727DA0_C4265AA0 *pAVar11;
@@ -35,7 +35,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
   byte *pbVar13;
   int *piVar14;
   uint uVar15;
-  undefined2 *puVar16;
+  ushort *puVar16;
   byte *pbVar17;
   AnonShape_00728170_7560EBA7 local_60;
   int local_38;

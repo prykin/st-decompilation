@@ -6,7 +6,11 @@
    HelpPanelTy::CheckBkView
    [STAbiConsistencyApplier] stack_parameter_width target=parameter:2: parameter=/ushort Evidence:
    entry-use width=/ushort; unmasked_dword_reads=0; evidence=00511ACA MOV ECX,dword ptr [EBP + 0xc];
-   first-use mask */
+   first-use mask
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=12, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort param_2)
 
@@ -17,7 +21,7 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort pa
   int iVar4;
   int uVar5;
   AnonPointee_HelpPanelTy_0218 *pAVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar8;
   uint uVar6;
   ushort *puVar7;
@@ -38,7 +42,7 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort pa
       pAVar4 = local_c->field_0218;
       slotStorage = &local_c->field_0218;
       puVar7 = local_c->field_01DC + 0x14;
-      uVar5 = FUN_006b4fe0((int)local_c->field_01DC);
+      uVar5 = FUN_006b4fe0(local_c->field_01DC);
       pAVar4 = (AnonPointee_HelpPanelTy_0218 *)
                FUN_006b50c0(pAVar4->field_0004,pAVar4->field_0008 + 0x32,(uint)pHVar3->field_01DC[7]
                             ,uVar5,(undefined4 *)puVar7,iVar9);

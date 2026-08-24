@@ -29,7 +29,7 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
   BITMAPINFO *pBVar10;
   char *pcVar17;
   Global_sub_00525EF0_param_1Enum GVar8;
-  undefined4 uVar11;
+  uint uVar11;
   ushort *puVar12;
   int iVar15;
   char cVar13;

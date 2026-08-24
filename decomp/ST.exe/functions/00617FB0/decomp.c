@@ -20,7 +20,7 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
   uint uVar5;
   int iVar6;
   uint *puVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   uint *puVar9;
   byte *pbVar10;
   uint *puVar11;

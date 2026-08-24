@@ -15,7 +15,7 @@ void FUN_006f88a0(undefined1 *param_1,int param_2,byte *param_3,int param_4,byte
   byte bVar4;
   uint uVar5;
   int iVar6;
-  undefined1 *puVar7;
+  byte *puVar7;
   int local_8;
 
   if (-1 < param_9 + -1) {

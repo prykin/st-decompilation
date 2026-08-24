@@ -25,7 +25,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
   int iVar11;
   int iVar12;
   int iVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
   int iVar15;
   int iVar16;
   int iVar17;
@@ -40,9 +40,9 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
   int local_58;
   int local_54 [10];
   int local_2c;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

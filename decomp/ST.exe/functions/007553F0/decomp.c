@@ -1,9 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4
-FUN_007553f0(AnonShape_007553F0_ACB112C2 *param_1,int *param_2,undefined4 *param_3,
-            undefined4 *param_4)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=2, ignored=0, unknown=0 */
+
+int FUN_007553f0(AnonShape_007553F0_ACB112C2 *param_1,int *param_2,undefined4 *param_3,
+                undefined4 *param_4)
 
 {
   short sVar1;
@@ -49,7 +53,7 @@ LAB_00755464:
     do {
       if (iVar3 == 0) {
         FUN_00750fb0((AnonShape_00750FB0_15A3AC3E *)param_1,0,0);
-        return 0xfffffffc;
+        return -4;
       }
       *(int *)(iVar2 + 0x1c) = iVar3 + -1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -83,7 +87,7 @@ LAB_00755464:
     piVar5 = FUN_006bfb70(uVar7);
     *param_2 = (int)piVar5;
     if (piVar5 == nullptr) {
-      return 0xfffffffe;
+      return -2;
     }
   }
   if ((undefined4 *)*param_2 != nullptr) {

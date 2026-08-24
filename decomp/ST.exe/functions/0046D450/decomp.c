@@ -20,7 +20,7 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
   STFishC *pSVar2;
   STWorldObject *pSVar3;
   STBoatC_field_06F7State SVar4;
-  undefined2 uVar6;
+  ushort uVar6;
   int local_EAX_51;
   int iVar6;
   int local_EAX_769;
@@ -35,7 +35,7 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
   int iVar8;
   uint uVar9;
   int local_EAX_2671;
-  undefined4 *puVar10;
+  uint *puVar10;
   uint uVar11;
   int local_EAX_3355;
   int local_EAX_4165;
@@ -62,7 +62,7 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
   short sVar26;
   byte bVar27;
   undefined4 local_28 [2];
-  undefined4 local_20;
+  uint local_20;
   short local_1c;
   uint local_18;
   int local_14;

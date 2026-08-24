@@ -22,8 +22,9 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
   int local_EAX_16;
   int iVar8;
   int local_EAX_520;
-  undefined4 uVar8;
+  uint uVar8;
   uint uVar9;
+  int iVar13_mg9;
   STGameObjC *pSVar10;
   int iVar12;
   byte bVar11;
@@ -418,8 +419,8 @@ switchD_005eb5ad_caseD_129:
     return 0;
   }
   if ((local_8->field_02AB == -1) &&
-     (iVar13 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_8->field_02A7,&local_14),
-     iVar13 != -4)) {
+     (iVar13_mg9 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_8->field_02A7,&local_14),
+     iVar13_mg9 != -4)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_02AB = *(undefined2 *)(local_14 + 0x32);
   }

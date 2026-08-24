@@ -8,7 +8,7 @@
 void __thiscall MReportTy::DoneMReport(MReportTy *this)
 
 {
-  undefined2 uVar2;
+  ushort uVar2;
   MReportTy *pMVar3;
   int iVar3;
   int iVar4;

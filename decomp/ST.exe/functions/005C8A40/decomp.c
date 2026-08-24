@@ -75,7 +75,7 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
   char *pcVar21;
   RecoveredSourceFamily_dibcopy *pRVar22;
   UINT resourceId;
-  undefined4 uVar23;
+  uint uVar23;
   InternalExceptionFrame local_dc;
   CHAR local_98 [52];
   undefined4 local_64;
@@ -1439,13 +1439,14 @@ LAB_005ca73b:
     FUN_006c7570((RecoveredSourceFamily_dibcopy *)this_00->field_1C67,0,*piVar7 + -10,
                  piVar7[1] + -0xb4,(undefined4 *)piVar7[2],piVar7[3],piVar7[3] / 2,
                  (-((message->arg0).words.low != 0) & 0xfcU) + 0x23);
-    ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,this_00->field_1C67,0,*piVar7 + -10,
-                     piVar7[1] - 0xb4,piVar7[2],piVar7[3]);
+    ccFntTy::SetSurf((ccFntTy *)g_startSystem_0081176C->field_0030,this_00->field_1C67,0,
+                     *piVar7 + -10,piVar7[1] - 0xb4,piVar7[2],piVar7[3]);
     uVar18 = ((message->arg0).words.low != 1) + 5;
     iVar14 = -1;
     iVar15 = -1;
     local_EAX_7946 = LoadResourceString(0x234a,g_hINSTANCE_00807618);
-    ccFntTy::WrStr(g_startSystem_0081176C->field_0030,local_EAX_7946,iVar15,iVar14,uVar18);
+    ccFntTy::WrStr((ccFntTy *)g_startSystem_0081176C->field_0030,local_EAX_7946,iVar15,iVar14,uVar18
+                  );
     if ((message->arg0).words.low != 3) break;
 LAB_005ca964:
     thunk_FUN_005b6730(this_00,9,'\x01',-1);

@@ -5,7 +5,7 @@ int FUN_00755180(AnonShape_00755180_CB9F7747 *param_1,LPCSTR param_2,undefined4 
                 )
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   undefined4 **slotStorage;
   InternalExceptionFrame local_4c;

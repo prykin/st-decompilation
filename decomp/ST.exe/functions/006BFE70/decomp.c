@@ -22,16 +22,16 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,int 
 {
   short *psVar1;
   LPDWORD pDVar2;
-  undefined4 uVar3;
+  uint uVar3;
   LPVOID pvVar4;
   AnonShape_006BFE70_9EDC24A5 *pAVar5;
   int iVar6;
   DWORD DVar7;
   AnonShape_006BFE70_9EDC24A5 *pAVar8;
-  undefined2 uVar9;
+  ushort uVar9;
   uint uVar10;
   int iVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   uint uVar13;
   byte *pbVar14;
   byte *pbVar15;

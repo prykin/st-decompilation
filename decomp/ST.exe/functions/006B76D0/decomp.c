@@ -10,8 +10,7 @@ void FUN_006b76d0(int *param_1)
 {
   int *piVar1;
   int iVar2;
-  undefined4 *puVar3;
-
+  uint *puVar3;
   if (param_1 != nullptr) {
     piVar1 = (int *)*param_1;
     if (piVar1 != nullptr) {

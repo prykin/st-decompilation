@@ -12,9 +12,9 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   dword dVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   uint *puVar5_mg0;
   int *piVar5;
   uint local_EAX_492;
@@ -77,7 +77,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   uint local_178;
   int local_174;
   int local_170;
-  undefined1 *local_16c;
+  byte *local_16c;
   int local_164;
   int local_15c;
   int local_158;
@@ -109,8 +109,8 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   int local_84;
   int local_7c;
   void *local_78;
-  undefined1 *local_74;
-  undefined1 *local_70;
+  byte *local_74;
+  byte *local_70;
   int local_6c;
   int local_68 [9];
   uint local_44;
@@ -120,9 +120,9 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   AnonShape_0069CB50_B339E56A *local_30;
   undefined4 *local_28;
   int local_24;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

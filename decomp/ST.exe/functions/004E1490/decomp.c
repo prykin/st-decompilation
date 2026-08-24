@@ -10,8 +10,7 @@ undefined4 __fastcall FUN_004e1490(STBoatC *param_1)
   int iVar1;
   byte bVar2;
   byte bVar3;
-  undefined4 uVar4;
-
+  uint uVar4;
   uVar4 = 0;
   if (param_1->field_0024 != param_1->field_023D) {
     /* ST_CALLSITE[004E14AB]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */

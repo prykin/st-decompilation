@@ -162,7 +162,7 @@ void __thiscall st::fn_0052D370(PopUpTy *this,char *param_1,byte param_2)
         cVar1 = *pcVar6;
         pcVar6 = pcVar6 + 1;
       } while (cVar1 != '\0');
-      local_8 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(~uVar9 + 4));
+      local_8 = static_cast<uint *>(st::fn_006AAC10(~uVar9 + 4));
       this_00 = local_14;
       pDVar4 = local_c;
       if (local_8 != nullptr) {
@@ -253,7 +253,7 @@ void __thiscall st::fn_0052D690(PopUpTy *this)
   PopUpTy *this_00;
   byte bVar4;
   int iVar5;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *resourceString;
   int uVar9;
   int iVar6;
@@ -471,7 +471,7 @@ void __thiscall st::fn_0052DB90(PopUpTy *this)
   PopUpTy *pPVar3;
   int iVar4;
   DArrayTy *pDVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar9;
   uint uVar6;
   uint uVar7;
@@ -552,7 +552,7 @@ int __thiscall st::fn_0052DD20(PopUpTy *this,STMessage *message)
   ccFntTy *pcVar4;
   int uVar12;
   ushort *puVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   DArrayTy *pDVar7;
   DWORD DVar8;
   int iVar9;
@@ -665,7 +665,7 @@ LAB_0052e184:
     pcVar4->field_0x9e = DAT_007c6ff0;
     iVar11 = 1;
     puVar5 = PTR_0080679c + 0x14;
-    uVar12 = st::fn_006B4FE0((int)PTR_0080679c);
+    uVar12 = st::fn_006B4FE0(PTR_0080679c);
     puVar5 = (ushort *)
              st::fn_006B50C0((&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0x11d,(uint)PTR_0080679c[7],
                           uVar12,(undefined4 *)puVar5,iVar11);

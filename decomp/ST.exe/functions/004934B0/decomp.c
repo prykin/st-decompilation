@@ -9,7 +9,7 @@ FUN_004934b0(void *this,short *param_1,short *param_2,short *param_3,int *param_
   dword dVar1;
   int iVar3;
   int iVar2;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
   uint local_14;
   STFishC *local_10;

@@ -251,8 +251,7 @@ LAB_006739cd:
       thunk_FUN_00672b60(PTR_00811948,PTR_0081194c);
       if ((code *)PTR_0081194c->field_0014 != nullptr) {
         /* ST_CALLSITE[00673B50]: CALL EAX */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (*(code *)PTR_0081194c->field_0014)(PTR_00811948,1);
+        (*STField<code *>(PTR_0081194c,0x14))(PTR_00811948,1);
       }
       DAT_007d2d24 = DAT_007d2d24 | 0x80;
       g_currentExceptionFrame = local_54.previous;

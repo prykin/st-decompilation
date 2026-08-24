@@ -9,7 +9,11 @@
 
    [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 004A8920 -> 006E1050 @ 004A89F8; data at 00807598 | 006E1460 -> 006E1050 @ 006E15DE;
-   ST3DSMAPContext::sub_006E1460 this; stable alias ESI */
+   ST3DSMAPContext::sub_006E1460 this; stable alias ESI
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __fastcall ST3DSMAPContext::sub_006E1050(ST3DSMAPContext *param_1)
 

@@ -21,7 +21,7 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
   CPanelTy *this_00;
   byte bVar4;
   int iVar5;
-  undefined1 *puVar6;
+  byte *puVar6;
   char *text;
   ushort *local_EAX_411;
   ushort *puVar7;
@@ -38,17 +38,17 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
   uint uVar15;
   cMf32 *pcVar16;
   int iVar17;
-  undefined4 *puVar18;
+  uint *puVar18;
   InternalExceptionFrame local_74;
   undefined4 local_30;
   undefined4 local_2c;
   uint local_28;
   CPanelTy *local_24;
-  undefined1 *local_20;
+  byte *local_20;
   int *local_1c;
   byte *local_18;
-  undefined1 *local_14;
-  undefined1 *local_10;
+  byte *local_14;
+  byte *local_10;
   uint local_c;
   byte local_5;
 

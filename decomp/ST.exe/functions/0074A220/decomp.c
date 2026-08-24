@@ -11,7 +11,7 @@ undefined4 __thiscall FUN_0074a220(int *param_1,int *param_2,uint *param_3,uint 
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_ESI;
 

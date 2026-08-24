@@ -24,7 +24,7 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
   longlong lVar10;
   float local_20 [2];
   int local_18;
-  float local_14;
+  float local_14_mg0;
   int local_10;
   int local_c;
   undefined4 local_8;
@@ -56,15 +56,15 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
   else if (param_4 == '\x01') {
     iVar4 = FUN_006aced8(this->field_0093,this->field_0097,param_1,param_2);
     this->field_00EF = iVar4;
-    local_14 = (float)iVar4;
+    local_14_mg0 = (float)iVar4;
     if (iVar4 < 0x1f7) {
       this->field_00F7 = (this->field_00DF * this->field_00DF * 10000) / 0x1f6;
       iVar6 = this->field_009B;
       lVar9 = Library::MSVCRT::__ftol();
       uVar7 = (int)lVar9 + 1;
-      fVar3 = (float)(int)local_14 / (float)(int)(uVar7 * 2);
-      local_14 = (fVar3 * fVar3) / (float)(int)local_14;
-      dVar1 = (double)(fVar3 / local_14 + _DAT_00790784);
+      fVar3 = (float)(int)local_14_mg0 / (float)(int)(uVar7 * 2);
+      local_14_mg0 = (fVar3 * fVar3) / (float)(int)local_14_mg0;
+      dVar1 = (double)(fVar3 / local_14_mg0 + _DAT_00790784);
       Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
       lVar9 = Library::MSVCRT::__ftol();
       local_10 = (int)lVar9;
@@ -123,8 +123,8 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
           this->field_00DF = (int)lVar9;
           lVar9 = Library::MSVCRT::__ftol();
           this->field_00EB = (int)lVar9;
-          this->field_00D7 = ((param_1 - this->field_00D1) * local_10) / (int)local_14;
-          this->field_00DB = ((param_2 - this->field_00D3) * local_10) / (int)local_14;
+          this->field_00D7 = ((param_1 - this->field_00D1) * local_10) / (int)local_14_mg0;
+          this->field_00DB = ((param_2 - this->field_00D3) * local_10) / (int)local_14_mg0;
           uVar7 = g_playSystem_00802A38->field_00E4;
           this->field_00C9 = 1;
           this->field_00FB = uVar7;

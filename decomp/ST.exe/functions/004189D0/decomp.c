@@ -20,11 +20,10 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
   int iVar6;
   uint uVar7;
   int iVar5;
-  undefined4 uVar8;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint uVar8;
+  uint local_10;
+  uint local_c;
+  uint local_8;
   if (this->field_00E8 == 1) {
     thunk_FUN_00417830((AnonShape_00417830_9254190A *)this);
     return 0;

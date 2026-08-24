@@ -8,7 +8,7 @@
 undefined2 __thiscall AiFltClassTy::sub_0065D9C0(AiFltClassTy *this)
 
 {
-  undefined2 uVar1;
+  ushort uVar1;
   STGroupBoatC *pSVar2;
 
   if ((this->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {

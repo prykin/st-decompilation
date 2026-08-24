@@ -63,10 +63,10 @@ uint __thiscall st::fn_006A06D0(void *this,int param_1,int param_2)
 void __fastcall st::fn_006A0A70(int *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
-  puVar1 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(0xaa));
+  puVar1 = static_cast<uint *>(st::fn_006AAC70(0xaa));
   *param_1 = (int)puVar1;
   for (iVar2 = 0x2a; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar1 = 0;
@@ -248,7 +248,7 @@ st::fn_006A0EF0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
   local_14 = local_2c;
   local_10 = 0;
   local_8 = 0;
-  local_c = st::pointer_boundary_cast<int *>(&DAT_007df82c);
+  local_c = reinterpret_cast<int *>(&DAT_007df82c);
   do {
     iVar3 = st::machine_word_boundary_cast<int>(local_c[-1] + param_2);
     iVar4 = *local_c + param_3;
@@ -416,7 +416,7 @@ st::fn_006A12B0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
 
   if (((((-1 < param_2) && (param_2 < *param_1)) && (-1 < param_3)) &&
       ((param_3 < param_1[1] && (-1 < param_4)))) && (param_4 < 6)) {
-    piVar4 = st::pointer_boundary_cast<int *>(&DAT_007df82c);
+    piVar4 = reinterpret_cast<int *>(&DAT_007df82c);
     do {
       iVar2 = st::machine_word_boundary_cast<int>(piVar4[-1] + param_2);
       iVar3 = *piVar4 + param_3;
@@ -448,8 +448,7 @@ int __cdecl st::fn_006A1370(int *param_1,int param_2,int param_3,int param_4,int
 {
   ushort uVar1;
   int iVar2;
-  undefined4 *puVar3;
-
+  uint *puVar3;
   *(undefined4 *)param_5 = 0;
   *(undefined2 *)(param_5 + 4) = 0;
   iVar2 = param_4;
@@ -484,13 +483,13 @@ st::fn_006A1410(int *param_1,int param_2,int param_3,int param_4,int param_5,und
             undefined4 param_7)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   uint *puVar2;
   int iVar3;
   int iVar4;
   uint local_14;
   uint local_10;
-  undefined4 local_c;
+  uint local_c;
   undefined2 local_8;
 
   local_c = 0;
@@ -557,13 +556,17 @@ st::fn_006A1410(int *param_1,int param_2,int param_3,int param_4,int param_5,und
 
 // 006A1620 FUN_006a1620
 #line 4 "decomp/ST.exe/functions/006A1620/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __cdecl
 st::fn_006A1620(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort *param_6,
             undefined *param_7,undefined4 param_8)
 
 {
   ushort *puVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   ushort uVar3;
   ushort uVar4;
   uint uVar5;
@@ -647,7 +650,7 @@ st::fn_006A17B0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
     local_c = 0;
     do {
       auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
-      local_8 = st::pointer_boundary_cast<int *>(&DAT_007df82c);
+      local_8 = reinterpret_cast<int *>(&DAT_007df82c);
       do {
         iVar2 = st::machine_word_boundary_cast<int>(local_8[-1] + param_2);
         iVar7 = *local_8 + param_3;
@@ -700,7 +703,7 @@ st::fn_006A19D0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
             undefined *param_7,undefined4 param_8)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   ushort uVar2;
   ushort uVar3;
   bool bVar4;
@@ -711,7 +714,7 @@ st::fn_006A19D0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
   uint uVar7;
   byte bVar8;
   undefined1 local_14 [8];
-  undefined4 local_c;
+  uint local_c;
   ushort local_8;
 
   st::fn_0040414C(param_1,param_2,param_3,param_4,(int)local_14);
@@ -782,7 +785,7 @@ st::fn_006A1BB0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
 
   if (((((-1 < param_2) && (param_2 < *param_1)) && (-1 < param_3)) &&
       ((param_3 < param_1[1] && (-1 < param_4)))) && (param_4 < 6)) {
-    piVar3 = st::pointer_boundary_cast<int *>(&DAT_007df82c);
+    piVar3 = reinterpret_cast<int *>(&DAT_007df82c);
     do {
       iVar1 = st::machine_word_boundary_cast<int>(piVar3[-1] + param_2);
       iVar2 = *piVar3 + param_3;
@@ -897,7 +900,7 @@ st::fn_006A1EB0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
       }
       st::fn_00403729(param_1,param_2,param_3,(int)(short)local_EAX_102,iVar1,param_7,param_8);
     }
-    local_10 = st::pointer_boundary_cast<int *>(&DAT_007df82c);
+    local_10 = reinterpret_cast<int *>(&DAT_007df82c);
     do {
       uVar6 = st::machine_word_boundary_cast<uint>(local_10[-1] + param_2);
       iVar1 = *local_10 + param_3;
@@ -934,9 +937,9 @@ st::fn_006A1EB0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
 undefined4 __cdecl st::fn_006A20E0(int *param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   ushort uVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   short sVar5;
   bool bVar6;
@@ -1154,8 +1157,7 @@ st::fn_006A2690(int *param_1,int param_2,int param_3,int param_4,undefined4 para
             ,undefined *param_7,undefined4 param_8)
 
 {
-  undefined4 *puVar1;
-
+  uint *puVar1;
   if (param_7 != nullptr) {
     /* ST_CALLSITE[006A26AD]: CALL EAX */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -1500,7 +1502,7 @@ st::fn_006A34E0(int *param_1,uint param_2,int param_3,uint param_4,int param_5,i
             ushort *param_7,undefined *param_8,undefined4 param_9)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   int iVar2;
@@ -1582,7 +1584,7 @@ st::fn_006A3840(int *param_1,int param_2,int param_3,int param_4,ushort *param_5
   ushort local_10 [4];
   int *local_8;
 
-  local_8 = st::pointer_boundary_cast<int *>(&DAT_007dfb74);
+  local_8 = reinterpret_cast<int *>(&DAT_007dfb74);
   do {
     iVar3 = st::machine_word_boundary_cast<int>(local_8[-1] + param_2);
     iVar4 = *local_8 + param_3;
@@ -1672,7 +1674,7 @@ int __cdecl st::fn_006A3AE0(int param_1)
   int *piVar2;
 
   iVar1 = 0;
-  piVar2 = st::pointer_boundary_cast<int *>(&DAT_007dfaf0);
+  piVar2 = reinterpret_cast<int *>(&DAT_007dfaf0);
   do {
     if (*piVar2 == param_1) {
       return iVar1;
@@ -1815,9 +1817,9 @@ undefined4 * __cdecl st::fn_006A40C0(int param_1,int param_2,uint param_3,char *
     uVar2 = (int)piVar4 - (int)piVar1;
     piVar4 = piVar1;
     memset(piVar4, 0, uVar2); /* compiler bulk-zero initialization */
-    return st::pointer_boundary_cast<undefined4 *>(piVar1);
+    return reinterpret_cast<undefined4 *>(piVar1);
   }
-  return st::pointer_boundary_cast<undefined4 *>(piVar1);
+  return reinterpret_cast<undefined4 *>(piVar1);
 }
 
 // 006A4130 FUN_006a4130
@@ -1834,7 +1836,7 @@ int * __cdecl st::fn_006A4130(int *param_1,uint param_2)
 {
   int *piVar1;
 
-  piVar1 = st::fn_004047B4(st::pointer_boundary_cast<undefined4 *>(param_1),param_2,1,nullptr,0);
+  piVar1 = st::fn_004047B4(reinterpret_cast<undefined4 *>(param_1),param_2,1,nullptr,0);
   return piVar1;
 }
 
@@ -1880,8 +1882,7 @@ void __cdecl st::fn_006A4EF0(int param_1)
 undefined4 __cdecl st::fn_006A5050(undefined4 param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = DAT_007ec180;
   DAT_007ec180 = param_1;
   return uVar1;
@@ -1894,8 +1895,8 @@ undefined * __cdecl st::fn_006A5100(undefined *param_1)
 {
   undefined *puVar1;
 
-  puVar1 = st::pointer_boundary_cast<undefined *>(PTR_FUN_007f1498);
-  PTR_FUN_007f1498 = st::pointer_boundary_cast<undefined *>(param_1);
+  puVar1 = reinterpret_cast<undefined *>(PTR_FUN_007f1498);
+  PTR_FUN_007f1498 = reinterpret_cast<undefined *>(param_1);
   return puVar1;
 }
 
@@ -1905,15 +1906,15 @@ undefined4 __cdecl st::fn_006A5130(char *param_1,char param_2,int param_3)
 
 {
   char cVar1;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   puStack_c = (undefined *)&DAT_0079d850;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   uVar3 = 1;
   local_8 = 0;
@@ -1943,9 +1944,9 @@ undefined4 st::fn_006A5210(void)
 
 {
   bool bVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   undefined4 local_c;
 
   local_c = 1;
@@ -2058,8 +2059,7 @@ int __cdecl st::fn_006A5530(int param_1)
 void __cdecl st::fn_006A5560(undefined *param_1,undefined4 param_2)
 
 {
-  undefined4 *puVar1;
-
+  uint *puVar1;
   puVar1 = PTR_0085496c;
   if ((DAT_007ec178 & 1) != 0) {
     for (; puVar1 != nullptr; puVar1 = (undefined4 *)*puVar1) {
@@ -2088,7 +2088,7 @@ undefined4 __cdecl st::fn_006A55D0(void *param_1,UINT_PTR ucb,int param_3)
     return 0;
   }
   /* ST_CALLSITE[006A55F4]: CALL dword ptr [0x0085bba0] */
-  if ((param_3 != 0) && (BVar1 = st::external_0000001D(st::pointer_boundary_cast<LPVOID>(param_1),ucb), BVar1 != 0)) {
+  if ((param_3 != 0) && (BVar1 = st::external_0000001D(param_1,ucb), BVar1 != 0)) {
     return 0;
   }
   return 1;
@@ -2121,7 +2121,7 @@ BOOL __cdecl st::fn_006A5620(int param_1)
     return 1;
   }
   /* ST_CALLSITE[006A567A]: CALL dword ptr [0x0085bb9c] */
-  BVar3 = st::external_0000001C(st::pointer_boundary_cast<HANDLE>(DAT_0085a5c4),0,st::pointer_boundary_cast<LPCVOID>(lpMem));
+  BVar3 = st::external_0000001C(st::pointer_boundary_cast<HANDLE>(DAT_0085a5c4),0,lpMem);
   return BVar3;
 }
 
@@ -2165,8 +2165,7 @@ st::fn_006A56B0(void *param_1,UINT_PTR param_2,int *param_3,undefined4 *param_4,
 undefined4 __cdecl st::fn_006A5770(undefined4 param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = DAT_0085751c;
   DAT_0085751c = param_1;
   return uVar1;
@@ -2177,8 +2176,8 @@ undefined4 __cdecl st::fn_006A5770(undefined4 param_1)
 void __cdecl st::fn_006A57A0(undefined4 *param_1)
 
 {
-  undefined4 *puVar2;
-  undefined4 *puVar3;
+  uint *puVar2;
+  uint *puVar3;
   int iVar4;
   uint uVar5;
 
@@ -2226,7 +2225,7 @@ st::fn_006A58B0(undefined4 *param_1,AnonShape_006A58B0_8049417A *param_2,
             AnonShape_006A58B0_CDE73679 *param_3)
 
 {
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   int iVar4;
 
@@ -2263,11 +2262,10 @@ st::fn_006A58B0(undefined4 *param_1,AnonShape_006A58B0_8049417A *param_2,
 void __cdecl st::fn_006A5990(undefined4 *param_1)
 
 {
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   uint uVar4;
-  undefined4 *puVar5;
-
+  uint *puVar5;
   puVar5 = nullptr;
   iVar3 = st::fn_00730FA0(0,0,0,0,(byte *)"%s");
   if (iVar3 == 1) {
@@ -2351,7 +2349,7 @@ void __cdecl st::fn_006A5BE0(int param_1)
   byte bVar2;
   int iVar3;
   uint uVar4;
-  undefined1 *puVar5;
+  byte *puVar5;
   int iVar6;
   undefined1 local_50 [52];
   byte local_1c [20];
@@ -2398,7 +2396,7 @@ undefined4 st::fn_006A5CD0(void)
 
 {
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   undefined4 local_38 [2];
   int local_30;
   int local_2c;
@@ -3930,7 +3928,7 @@ int st::fn_006A7D50(int param_1,int param_2,int param_3,int param_4,int param_5,
   uint uVar9;
   int iVar10;
   int iVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   uint local_4c;
   int local_48;
   int local_44;
@@ -4014,7 +4012,7 @@ LAB_006a8234:
     }
     local_24 = 0;
     local_1c = (ushort *)&SHORT_007ed576;
-    local_3c = st::pointer_boundary_cast<int *>(&DAT_007ed640);
+    local_3c = reinterpret_cast<int *>(&DAT_007ed640);
     do {
       iVar8 = (int)(short)local_1c[-3];
       local_20 = local_30 + iVar8;
@@ -4120,13 +4118,13 @@ void st::fn_006AACB0(void)
 
 {
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079d860;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   ExceptionList = &local_14;
   /* ST_CALLSITE[006AACDB]: CALL dword ptr [0x0085bb98] */
@@ -5157,8 +5155,7 @@ int __fastcall st::fn_006ACC70(DArrayTy *array,uint index,void *outElement)
 {
   uint uVar1;
   uint uVar2;
-  undefined4 *puVar3;
-
+  uint *puVar3;
   if (array->count <= index) {
     return -4;
   }
@@ -5219,54 +5216,55 @@ void st::fn_006ACCD0(RuntimeRecord_007F4D3C_0014 *param_1,undefined4 *param_2,in
                  callback_006ACCD0_p3 *param_4)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int *piVar2;
-  int iVar3;
+  RuntimeRecord_007F4D3C_0014 *pRVar3;
+  int iVar4;
   RuntimeRecord_007F4D3C_0014 *arg_1;
   RuntimeRecord_007F4D3C_0014 *arg_2;
-  RuntimeRecord_007F4D3C_0014 *pRVar4;
-  RuntimeRecord_007F4D3C_0014 *pRVar5;
+  RuntimeRecord_007F4D3C_0014 *pRVar4_mg0;
+  RuntimeRecord_007F4D3C_0014 *pRVar5_mg1;
   undefined4 local_fc;
-  undefined4 local_f8 [59];
-  undefined4 *local_c;
+  uint local_f8 [59];
+  uint *local_c;
   RuntimeRecord_007F4D3C_0014 *local_8;
   RuntimeRecord_007F4D3C_0014 *pRVar5_mg0;
 
   pRVar5_mg0 = param_1;
   if (1 < (int)param_2) {
-    iVar3 = (int)param_2 * param_3;
+    iVar4 = (int)param_2 * param_3;
     piVar2 = &param_1->field_0000;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = &local_fc;
     local_c = local_f8;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = nullptr;
-    pRVar5 = (RuntimeRecord_007F4D3C_0014 *)((int)piVar2 + iVar3);
+    pRVar3 = (RuntimeRecord_007F4D3C_0014 *)((int)piVar2 + iVar4);
 cf_continue_loop_006ACD0D:
-    local_8 = pRVar5;
+    local_8 = pRVar3;
     arg_2 = pRVar5_mg0;
-    pRVar4 = local_8;
-    iVar3 = ((int)local_8 - (int)arg_2) / param_3;
-    if (7 < iVar3) {
-      st::fn_006CE700((byte *)arg_2,(byte *)((int)&arg_2->field_0000 + (iVar3 / 2) * param_3),param_3);
+    pRVar4_mg0 = local_8;
+    iVar4 = ((int)local_8 - (int)arg_2) / param_3;
+    if (7 < iVar4) {
+      st::fn_006CE700((byte *)arg_2,(byte *)((int)&arg_2->field_0000 + (iVar4 / 2) * param_3),param_3);
       arg_1 = arg_2;
 cf_continue_loop_006ACD37:
       arg_1 = (RuntimeRecord_007F4D3C_0014 *)((int)&arg_1->field_0000 + param_3);
       if (arg_1 < local_8) goto code_r0x006acd43;
       goto LAB_006acd4f;
     }
-    for (pRVar5 = (RuntimeRecord_007F4D3C_0014 *)((int)local_8 - param_3); local_8 = arg_2,
-        pRVar4 = arg_2, arg_2 < pRVar5;
-        pRVar5 = (RuntimeRecord_007F4D3C_0014 *)((int)pRVar5 - param_3)) {
-      while (pRVar4 = (RuntimeRecord_007F4D3C_0014 *)((int)&pRVar4->field_0000 + param_3),
-            pRVar4 <= pRVar5) {
+    for (pRVar5_mg1 = (RuntimeRecord_007F4D3C_0014 *)((int)local_8 - param_3); local_8 = arg_2,
+        pRVar3 = arg_2, arg_2 < pRVar5_mg1;
+        pRVar5_mg1 = (RuntimeRecord_007F4D3C_0014 *)((int)pRVar5_mg1 - param_3)) {
+      while (pRVar3 = (RuntimeRecord_007F4D3C_0014 *)((int)&pRVar3->field_0000 + param_3),
+            pRVar3 <= pRVar5_mg1) {
         /* ST_CALLSITE[006ACE0C]: CALL dword ptr [EBP + 0x14] */
-        iVar3 = (*param_4)(st::machine_word_boundary_cast<undefined4>(pRVar4),st::machine_word_boundary_cast<undefined4>(local_8));
-        if (0 < iVar3) {
-          local_8 = pRVar4;
+        iVar4 = (*param_4)(st::machine_word_boundary_cast<undefined4>(pRVar3),st::machine_word_boundary_cast<undefined4>(local_8));
+        if (0 < iVar4) {
+          local_8 = pRVar3;
         }
       }
-      st::fn_006CE700((byte *)local_8,(byte *)pRVar5,param_3);
+      st::fn_006CE700((byte *)local_8,(byte *)pRVar5_mg1,param_3);
     }
     if (0 < (int)param_1) {
       param_1 = (RuntimeRecord_007F4D3C_0014 *)((int)&param_1[-1].field_0010 + 3);
@@ -5274,48 +5272,48 @@ cf_continue_loop_006ACD37:
       param_2 = param_2 + -2;
       local_c = local_c + -2;
       pRVar5_mg0 = (RuntimeRecord_007F4D3C_0014 *)*param_2;
-      pRVar5 = (RuntimeRecord_007F4D3C_0014 *)*puVar1;
+      pRVar3 = (RuntimeRecord_007F4D3C_0014 *)*puVar1;
       goto cf_continue_loop_006ACD0D;
     }
   }
   return;
 code_r0x006acd43:
   /* ST_CALLSITE[006ACD45]: CALL dword ptr [EBP + 0x14] */
-  iVar3 = (*param_4)(st::machine_word_boundary_cast<undefined4>(arg_1),st::machine_word_boundary_cast<undefined4>(arg_2));
-  if (iVar3 < 1) goto cf_continue_loop_006ACD37;
+  iVar4 = (*param_4)(st::machine_word_boundary_cast<undefined4>(arg_1),st::machine_word_boundary_cast<undefined4>(arg_2));
+  if (iVar4 < 1) goto cf_continue_loop_006ACD37;
 LAB_006acd4f:
   do {
-    pRVar4 = (RuntimeRecord_007F4D3C_0014 *)((int)pRVar4 - param_3);
-    if (pRVar4 <= arg_2) break;
+    pRVar4_mg0 = (RuntimeRecord_007F4D3C_0014 *)((int)pRVar4_mg0 - param_3);
+    if (pRVar4_mg0 <= arg_2) break;
     /* ST_CALLSITE[006ACD58]: CALL dword ptr [EBP + 0x14] */
-    iVar3 = (*param_4)(st::machine_word_boundary_cast<undefined4>(pRVar4),st::machine_word_boundary_cast<undefined4>(arg_2));
-  } while (-1 < iVar3);
-  if (arg_1 <= pRVar4) {
-    st::fn_006CE700((byte *)arg_1,(byte *)pRVar4,param_3);
+    iVar4 = (*param_4)(st::machine_word_boundary_cast<undefined4>(pRVar4_mg0),st::machine_word_boundary_cast<undefined4>(arg_2));
+  } while (-1 < iVar4);
+  if (arg_1 <= pRVar4_mg0) {
+    st::fn_006CE700((byte *)arg_1,(byte *)pRVar4_mg0,param_3);
     goto cf_continue_loop_006ACD37;
   }
-  st::fn_006CE700((byte *)arg_2,(byte *)pRVar4,param_3);
+  st::fn_006CE700((byte *)arg_2,(byte *)pRVar4_mg0,param_3);
   pRVar5_mg0 = arg_2;
-  pRVar5 = pRVar4;
+  pRVar3 = pRVar4_mg0;
   if (((RuntimeRecord_007F4D3C_0014 *)((int)&arg_1->field_0000 + param_3) < local_8) &&
-     (pRVar5_mg0 = arg_1, pRVar5 = local_8,
-     (RuntimeRecord_007F4D3C_0014 *)((int)&arg_2->field_0000 + param_3) < pRVar4)) {
-    if ((int)pRVar4 - (int)arg_2 < (int)local_8 - (int)arg_1) {
+     (pRVar5_mg0 = arg_1, pRVar3 = local_8,
+     (RuntimeRecord_007F4D3C_0014 *)((int)&arg_2->field_0000 + param_3) < pRVar4_mg0)) {
+    if ((int)pRVar4_mg0 - (int)arg_2 < (int)local_8 - (int)arg_1) {
       *param_2 = st::machine_word_boundary_cast<undefined4>(arg_1);
       param_2 = param_2 + 2;
-      *local_c = st::machine_word_boundary_cast<undefined4>(local_8);
+      *local_c = st::machine_word_boundary_cast<uint>(local_8);
       param_1 = (RuntimeRecord_007F4D3C_0014 *)((int)&param_1->field_0000 + 1);
       local_c = local_c + 2;
       pRVar5_mg0 = arg_2;
-      pRVar5 = pRVar4;
+      pRVar3 = pRVar4_mg0;
     }
     else {
       *param_2 = st::machine_word_boundary_cast<undefined4>(arg_2);
       param_2 = param_2 + 2;
-      *local_c = st::machine_word_boundary_cast<undefined4>(pRVar4);
+      *local_c = st::machine_word_boundary_cast<uint>(pRVar4_mg0);
       param_1 = (RuntimeRecord_007F4D3C_0014 *)((int)&param_1->field_0000 + 1);
       local_c = local_c + 2;
-      pRVar5 = local_8;
+      pRVar3 = local_8;
     }
   }
   goto cf_continue_loop_006ACD0D;
@@ -5606,9 +5604,9 @@ undefined4 st::fn_006AD190(undefined4 param_1,char *text,int param_3)
     g_int_00854EB4 = nullptr;
   }
   if ((text != nullptr) && (*text != '\0')) {
-    pcVar2 = st::pointer_boundary_cast<char *>(&DAT_007ed7b0);
+    pcVar2 = (char *)&DAT_007ed7b0;
     if (param_3 == 0) {
-      pcVar2 = st::pointer_boundary_cast<char *>(&DAT_007ed7ac);
+      pcVar2 = (char *)&DAT_007ed7ac;
     }
     piVar1 = (int *)st::fn_0072EA70(text,pcVar2);
     if (piVar1 == nullptr) {
@@ -5656,8 +5654,7 @@ void st::fn_006AD270(DDXContext *param_1)
 undefined4 st::fn_006AD280(undefined4 param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = DAT_007ed798;
   DAT_007ed798 = param_1;
   return uVar1;
@@ -5820,7 +5817,7 @@ st::fn_006AD4D0(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *
   uint *puVar7;
   char *pcVar9;
   char *pcVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 *unaff_EBP;
   uint *puVar12;
@@ -6347,7 +6344,7 @@ undefined4 __cdecl st::fn_006ADC30(int *param_1)
   }
   g_int_00854A9C = g_int_00854EB4;
   if (g_int_00854EB4 != nullptr) {
-    puVar2 = st::pointer_boundary_cast<uint *>(ExceptionList);
+    puVar2 = static_cast<uint *>(ExceptionList);
     if (DAT_007ed79c != 0) {
       st::fn_00733F70(g_int_00854EB4,st::mutable_c_string("\n%d ===========================================  %02d.%02d.%d  %d:%02d:%02d.%03d\n"));
       DAT_007ed79c = 0;
@@ -6363,20 +6360,20 @@ undefined4 __cdecl st::fn_006ADC30(int *param_1)
     st::fn_00733F70(g_int_00854A9C,st::mutable_c_string("%08X "));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(*param_1 + 0x10) != 0) {
-      st::fn_00733F70(g_int_00854A9C,st::pointer_boundary_cast<char *>(&DAT_007ed984));
+      st::fn_00733F70(g_int_00854A9C,(char *)&DAT_007ed984);
       DAT_00854aa0 = 0;
       st::fn_00733F70(g_int_00854A9C,st::mutable_c_string("%08X"));
       DAT_00854aa0 = DAT_00854aa0 + 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((int)DAT_00854aa0 < *(int *)(*param_1 + 0x10)) {
         do {
-          st::fn_00733F70(g_int_00854A9C,st::pointer_boundary_cast<char *>(&DAT_007ed978));
+          st::fn_00733F70(g_int_00854A9C,(char *)&DAT_007ed978);
           st::fn_00733F70(g_int_00854A9C,st::mutable_c_string("%08X"));
           DAT_00854aa0 = DAT_00854aa0 + 1;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         } while ((int)DAT_00854aa0 < *(int *)(*param_1 + 0x10));
       }
-      st::fn_00733F70(g_int_00854A9C,st::pointer_boundary_cast<char *>(&DAT_007ed974));
+      st::fn_00733F70(g_int_00854A9C,(char *)&DAT_007ed974);
     }
     st::fn_00733F70(g_int_00854A9C,st::mutable_c_string("----------------\n"));
     st::fn_00733F70(g_int_00854A9C,st::mutable_c_string("%08X  %08X  %08X  %08X  %08X  %08X  %08X  %08X\n"));
@@ -6498,7 +6495,7 @@ void st::fn_006AE110(DArrayTy *array)
 
 {
   if (array != nullptr) {
-    st::fn_006A5E90(st::pointer_boundary_cast<short *>(array->data));
+    st::fn_006A5E90(static_cast<short *>(array->data));
     if ((array->flags & 8) != 0) {
       st::fn_006A5E90((short *)array);
     }
@@ -6508,14 +6505,19 @@ void st::fn_006AE110(DArrayTy *array)
 
 // 006AE230 FUN_006ae230
 #line 4 "decomp/ST.exe/functions/006AE230/decomp.c"
-undefined4 st::fn_006AE230(uint *param_1)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=6, ignored=0, unknown=0 */
+
+int st::fn_006AE230(uint *param_1)
 
 {
   void *pvVar1;
 
   pvVar1 = st::fn_006ACF50((void *)param_1[7],(param_1[4] + param_1[5]) * param_1[2]);
   if (pvVar1 == nullptr) {
-    return 0xfffffffe;
+    return -2;
   }
   if ((*param_1 & 0x100) != 0) {
     /* ST_CALLSITE[006AE26F]: CALL dword ptr [ESI + 0x18] */
@@ -6542,7 +6544,7 @@ int st::fn_006AE3B0(int param_1,int param_2,int param_3,int param_4,int param_5,
   int iVar7;
   int iVar8;
   int iVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   int iVar11;
   uint local_3c;
   int local_38;
@@ -6585,7 +6587,7 @@ int st::fn_006AE3B0(int param_1,int param_2,int param_3,int param_4,int param_5,
       uVar5 = st::fn_006A6320(uVar5);
       auto param_8_after_write = 0; /* compiler stack-slot lifetime split */
       local_18 = (ushort *)&SHORT_007ed576;
-      local_14 = st::pointer_boundary_cast<int *>(&DAT_007ed640);
+      local_14 = reinterpret_cast<int *>(&DAT_007ed640);
       do {
         iVar11 = (int)(short)local_18[-3];
         uVar6 = local_30 + iVar11;

@@ -48,6 +48,12 @@ apply	owner	type_path	existing_length	observed_min_size	exact_allocation_size	pr
 1	PrividerTy	/PrividerTy	7326	7326	7326	7326	49	49	high	full	unique_allocation_size_and_this_accesses	005B9B10 | 005BA560 | 005BA8B0 | 005BAAC0 | 005BAE00 | 005BB910 | 005BB9F0 | 005BBA90 | 005BC050 | 005BC5E0 | 005BD2E0
 1	ProdPanelTy	/ProdPanelTy	421	421		421	24	24	high	full	observed_this_access_extent	004FA870 | 004FAB10 | 004FB060 | 00503BB0 | 0050F430 | 0053EE30 | 0053EF20 | 0053F220 | 0053F3A0 | 0053F650 | 0053F780 | 0053F940 | 0053FCD0 | 0053FEE0 | 005400F0 | 005449B0
 1	RadioClassTy	/RadioClassTy	40	40		40	3	3	high	full	observed_this_access_extent	0071E040
+0	RecoveredClass_0074756B	/SubmarineTitans/Recovered/Classes/RecoveredClass_0074756B	48	24		24	6	6	manual	full	existing_manual_or_unowned_structure_preserved	0074756B
+0	RecoveredClass_00747874	/SubmarineTitans/Recovered/Classes/RecoveredClass_00747874	20	20		20	5	5	manual	full	existing_manual_or_unowned_structure_preserved	00747874
+0	RecoveredClass_00748A83	/SubmarineTitans/Recovered/Classes/RecoveredClass_00748A83	72	72		72	10	10	manual	full	existing_manual_or_unowned_structure_preserved	00748A83
+0	RecoveredClass_0074A95F	/SubmarineTitans/Recovered/Classes/RecoveredClass_0074A95F	224	220		220	5	5	manual	full	existing_manual_or_unowned_structure_preserved	0074A95F
+0	RecoveredClass_0074CDC5	/SubmarineTitans/Recovered/Classes/RecoveredClass_0074CDC5	232	232		232	7	7	manual	full	existing_manual_or_unowned_structure_preserved	0074C38F | 0074CDC5
+0	RecoveredClass_0074CFC0	/SubmarineTitans/Recovered/Classes/RecoveredClass_0074CFC0	176	172		172	6	6	manual	full	existing_manual_or_unowned_structure_preserved	0074C658 | 0074CFC0
 1	ResearchPanelTy	/ResearchPanelTy	646	646	646	646	42	40	high	full	unique_allocation_size_and_this_accesses	0053BFF0 | 0053C120 | 0053C490 | 0053C500 | 0053C620 | 0053C820 | 0053CA80
 1	SAMPanelTy	/SAMPanelTy	465	465	465	465	25	25	high	full	unique_allocation_size_and_this_accesses	004F9ED0 | 004FA870 | 004FAB10 | 004FB060 | 004FF380 | 00503BB0 | 0050F430 | 00511FA0 | 0052F2B0 | 0053A820 | 0053CE10 | 0053CEF0 | 0053D1A0 | 0053D290 | 0053D3B0 | 0053D4D0 | 005449B0
 1	SIDTy	/SIDTy	7640	7381	7640	7640	53	53	high	full	unique_allocation_size_and_this_accesses	005D7A50 | 005D7F80 | 005D81F0 | 005D8450 | 005D8A90 | 005D8BF0 | 005D9250 | 005D9470 | 005D9F80

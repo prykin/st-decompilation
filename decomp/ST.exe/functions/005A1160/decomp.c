@@ -14,7 +14,7 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   FSGSTy *this_01;
   int iVar4;
   char *pcVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar11;
   uint uVar6;
   uint uVar7;

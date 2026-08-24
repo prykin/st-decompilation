@@ -68,8 +68,7 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
     Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
     if ((code *)pcVar2->field_0058 != nullptr) {
       /* ST_CALLSITE[00554E31]: CALL EAX */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)pcVar2->field_0058)(pcVar2->field_0054);
+      (*STField<code *>(pcVar2,0x58))(pcVar2->field_0054);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

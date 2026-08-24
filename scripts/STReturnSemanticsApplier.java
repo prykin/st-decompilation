@@ -106,7 +106,15 @@ public class STReturnSemanticsApplier extends GhidraScript {
             int overrideChanges = applyRoundTripOverrides(function, row, overrides);
             if ("repair_unsafe_eax_rollback".equals(row.get("semantic_id")))
                 removeCommentBlock(function, "revert_unsafe_ignored_eax_void");
-            if (functionChange || overrideChanges > 0) addComment(function, row);
+            if ("repair_false_machine_eax_return".equals(row.get("semantic_id")))
+                removeCommentBlock(function, "machine_eax_return");
+            if (functionChange || overrideChanges > 0) {
+                // A semantic family may legitimately refine its proposed type on a later
+                // evidence pass (for example undefined4 -> int). Refresh only that exact
+                // automation-owned block; ordinary unchanged passes remain byte-idempotent.
+                removeCommentBlock(function, row.get("semantic_id"));
+                addComment(function, row);
+            }
             report.add(new Report(addressText, row.get("semantic_id"),
                 functionChange || overrideChanges > 0 ? "applied" : "unchanged",
                 row.get("proposed_return_type") + ", noreturn=" + proposedNoReturn +

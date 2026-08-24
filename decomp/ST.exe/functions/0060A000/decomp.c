@@ -7,10 +7,10 @@ undefined4 __fastcall FUN_0060a000(AnonShape_0060A000_715F6478 *param_1)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   uint uVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   float10 fVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0;

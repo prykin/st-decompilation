@@ -7,12 +7,12 @@ void FUN_007055d0(undefined1 *param_1,int param_2,byte *param_3,int param_4,int 
                  int param_7,int param_8,int param_9,int param_10)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   uint uVar2;
   uint uVar3;
   int iVar4;
-  undefined1 *puVar5;
-  undefined1 *puVar6;
+  byte *puVar5;
+  byte *puVar6;
   byte bVar7;
   int iVar8;
   byte *pbVar9;

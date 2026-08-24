@@ -2,7 +2,11 @@
 
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 00533D10 -> 00571320 @ 00534053 | 00533D10 -> 00571320 @ 0053515A */
+   Evidence: 00533D10 -> 00571320 @ 00534053 | 00533D10 -> 00571320 @ 0053515A
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall FUN_00571320(void *this,HWND param_1)
 

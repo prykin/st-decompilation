@@ -13,8 +13,7 @@ void __cdecl FUN_00553910(int param_1,int param_2,byte *param_3,uint param_4,int
 
 {
   short sVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   if ((((param_3 != nullptr) && (-1 < param_1)) && (param_1 < (int)param_4)) &&
      ((-1 < param_2 && (param_2 < param_5)))) {
     uVar2 = thunk_FUN_00553480(param_1,param_2,(int)param_3,param_4,param_5);

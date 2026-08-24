@@ -194,10 +194,10 @@ STGroupBoatC::sub_00498D20
 
 {
   DArrayTy *pDVar1;
-  undefined2 uVar2;
+  ushort uVar2;
   DArrayTy *local_EAX_149;
   DArrayTy *pDVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   DArrayTy *local_EAX_438;
   DArrayTy *local_EAX_524;
   DArrayTy *local_EAX_739;

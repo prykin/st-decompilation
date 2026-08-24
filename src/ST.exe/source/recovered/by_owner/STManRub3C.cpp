@@ -90,17 +90,17 @@ byte * __thiscall st::fn_0062D670(STManRub3C *this,uint *param_1)
   *param_1 = 0x98;
   uint * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   do {
-    switch(param_1_after_write) {
+    switch(static_cast<uint32_t>(STRawWord(param_1_after_write))) {
     case 0:
       ppDVar2 = (DArrayTy **)local_8->field_0030;
       break;
-    case (uint *)0x1:
+    case 0x1:
       ppDVar2 = &local_8->field_0050;
       break;
-    case (uint *)0x2:
+    case 0x2:
       ppDVar2 = &local_8->field_0070;
       break;
-    case (uint *)0x3:
+    case 0x3:
       ppDVar2 = (DArrayTy **)&local_8->field_0x90;
       break;
     default:
@@ -134,7 +134,7 @@ switchD_0062d6cc_default:
 int __thiscall st::fn_0062D840(STManRub3C *this,undefined4 *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   int iVar3;
   byte *puVar4;
@@ -152,7 +152,7 @@ int __thiscall st::fn_0062D840(STManRub3C *this,undefined4 *param_1)
   auto param_1_after_write = (undefined4 *)0x98; /* compiler stack-slot lifetime split */
   puVar4 = (byte *)(puVar1);
   memmove(puVar6, puVar4, 0x98); /* compiler REP MOVS byte copy */
-  piVar5 = st::pointer_boundary_cast<int *>(puVar1 + 0x26);
+  piVar5 = reinterpret_cast<int *>(puVar1 + 0x26);
   this->field_00B4 = this->field_00B0;
   iVar3 = 0;
   do {

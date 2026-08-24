@@ -9,7 +9,7 @@
 void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   DArrayTy *pDVar2;
   CursorClassTy *this_00;
   cMf32 *pcVar4;
@@ -124,20 +124,20 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   pcVar6->field_005C = 0;
   iVar23 = 1;
   puVar22 = this_01->field_005D + 0x14;
-  local_EAX_485 = FUN_006b4fe0((int)this_01->field_005D);
+  local_EAX_485 = FUN_006b4fe0(this_01->field_005D);
   pAVar7 = (AnonPointee_MReportTy_0077 *)
            FUN_006b50c0(0x91,0x28,(uint)this_01->field_005D[7],local_EAX_485,(undefined4 *)puVar22,
                         iVar23);
   this_01->field_0077 = pAVar7;
   iVar23 = 1;
   puVar22 = this_01->field_005D + 0x14;
-  uVar8 = FUN_006b4fe0((int)this_01->field_005D);
+  uVar8 = FUN_006b4fe0(this_01->field_005D);
   pvVar8 = (void *)FUN_006b50c0(300,0x1e,(uint)this_01->field_005D[7],uVar8,(undefined4 *)puVar22,
                                 iVar23);
   this_01->field_007B = pvVar8;
   iVar23 = 1;
   puVar22 = this_01->field_005D + 0x14;
-  local_EAX_565 = FUN_006b4fe0((int)this_01->field_005D);
+  local_EAX_565 = FUN_006b4fe0(this_01->field_005D);
   pRVar9 = (RecoveredSourceFamily_dibcopy *)
            FUN_006b50c0(0x2e9,0x15e,(uint)this_01->field_005D[7],local_EAX_565,(undefined4 *)puVar22
                         ,iVar23);

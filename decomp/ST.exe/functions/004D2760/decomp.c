@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
   TLOBaseTy *pTVar3;
   int iVar4;
   uint uVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   int iVar7;
   TLOBaseTy *local_c;
   TLOBaseTy *local_8;

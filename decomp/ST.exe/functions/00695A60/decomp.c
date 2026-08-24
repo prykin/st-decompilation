@@ -15,7 +15,7 @@ CGenerate::CteateField
   byte *pbVar3;
   ushort *puVar4;
   CGenerate_field_5853DArray *pCVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   uint size;
   InternalExceptionFrame local_50;

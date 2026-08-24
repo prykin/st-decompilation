@@ -16,6 +16,7 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   MMsgTy *this_01;
   int iVar6;
   uint uVar6;
+  char *pcVar11_mg1;
   short *psVar7;
   int iVar9;
   int iVar8;
@@ -29,7 +30,7 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   int iVar18;
   int iVar19;
   int iVar20;
-  undefined1 uVar21;
+  byte uVar21;
   uint uVar22;
   InternalExceptionFrame local_bc;
   int local_78 [8];
@@ -281,10 +282,11 @@ LAB_005b7655:
                 iVar8 = 0x1e;
                 this_00 = &local_8->field_00B8;
                 iVar10 = 0x7d;
-                puVar12 = (uint *)LoadResourceString(local_8->field_0000,g_hINSTANCE_00807618);
+                pcVar11_mg1 = LoadResourceString(local_8->field_0000,g_hINSTANCE_00807618);
                 psVar7 = (short *)ccFntTy::CreateTypeSSpr
-                                            (g_startSystem_0081176C->field_0030,puVar12,iVar10,iVar8
-                                             ,cVar17,uVar6,iVar18,iVar19,iVar20);
+                                            ((ccFntTy *)g_startSystem_0081176C->field_0030,
+                                             pcVar11_mg1,iVar10,iVar8,cVar17,uVar6,iVar18,iVar19,
+                                             iVar20);
                 /* ST_CALLSITE[005B77FF]: CALL dword ptr [EDI + 0x8] */
                 (*pSVar3->SetImagesPtr)(this_00,psVar7,uVar21,uVar22);
                 (local_8->field_00B8).field_0008 = 0;

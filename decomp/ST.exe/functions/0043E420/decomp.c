@@ -7,11 +7,10 @@
    used=6, ignored=0, unknown=0
 
    [STReturnSemanticsApplier] returned_pointer_parameter.
-   Evidence: every reachable RET receives full EAX from the same incoming pointer parameter param_1
-   (ordinal=0); no intervening full or partial accumulator definition changes that value; machine
-   CFG audit: used=6, ignored=0, unknown=0 */
+   Evidence: the complete machine CFG returns incoming pointer parameter param_1 (ordinal=0);
+   restore its exact formal pointer type after the obsolete void-pointer normalization */
 
-undefined4 * FUN_0043e420(undefined4 *param_1,char param_2)
+uint * FUN_0043e420(undefined4 *param_1,char param_2)
 
 {
   int *piVar2;

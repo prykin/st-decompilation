@@ -10,9 +10,9 @@
 void __thiscall st::fn_00550DB0(TradePanelTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   TradePanelTy *this_00;
-  undefined4 *puVar3;
+  uint *puVar3;
   LPSTR pCVar4;
   ccFntTy *pcVar5;
   ushort *puVar6;
@@ -24,15 +24,15 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
   int *piVar12;
   bool bVar13;
   int iVar14;
-  undefined4 uVar15;
+  uint uVar15;
   int iVar16;
   uint uVar17;
   int iVar18;
   UINT UVar19;
-  undefined4 *puVar20;
+  uint *puVar20;
   int *piVar21;
-  undefined4 uVar22;
-  undefined4 *puVar23;
+  uint uVar22;
+  uint *puVar23;
   uint local_5e0 [84];
   int local_490 [6];
   undefined4 local_478;
@@ -105,10 +105,10 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     pcVar5->field_0058 = 1;
     pcVar5->field_005C = 0;
     puVar6 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c204c),0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,(char *)&DAT_007c204c,0xffffffff,0,1,0,nullptr);
     this_00->field_01D1 = puVar6;
     puVar6 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c2048),0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,(char *)&DAT_007c2048,0xffffffff,0,1,0,nullptr);
     this_00->field_01D5 = puVar6;
     iVar9 = 1;
     uVar17 = 0xffffffff;
@@ -301,14 +301,14 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
   int errorCode;
   LPSTR pCVar3;
   int iVar4;
-  undefined4 uVar5;
-  undefined4 uVar6;
-  undefined4 uVar7;
-  undefined4 uVar8;
-  undefined4 uVar9;
-  undefined4 uVar10;
-  undefined4 uVar11;
-  undefined4 uVar12;
+  uint uVar5;
+  uint uVar6;
+  uint uVar7;
+  uint uVar8;
+  uint uVar9;
+  uint uVar10;
+  uint uVar11;
+  uint uVar12;
   InternalExceptionFrame local_4c;
   TradePanelTy *local_8;
 
@@ -342,8 +342,7 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
       if (this_00->field_01BB == '\0') {
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
         /* ST_CALLSITE[00551577]: CALL dword ptr [EDI + 0x4] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        uVar6 = (*(code *)pAVar1->field_0004)
+        uVar6 = (*STField<code *>(pAVar1,0x4))
                           (0,1,0xac,0x57,0,1,1,pCVar3,uVar6,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12);
         uVar5 = 1;
         pAVar1 = this_00->field_0000;
@@ -356,16 +355,14 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
         this_00->field_01C8 = uVar6;
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
         /* ST_CALLSITE[005515B9]: CALL dword ptr [EDI + 0x4] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        uVar6 = (*(code *)pAVar1->field_0004)
+        uVar6 = (*STField<code *>(pAVar1,0x4))
                           (0,1,0xe5,0x57,0,1,1,pCVar3,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12,uVar5);
         this_00->field_01CC = uVar6;
       }
       else {
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
         /* ST_CALLSITE[00551550]: CALL dword ptr [EDI + 0x4] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        uVar6 = (*(code *)pAVar1->field_0004)(0,1,0xca,0x57,0,1,1,pCVar3);
+        uVar6 = (*STField<code *>(pAVar1,0x4))(0,1,0xca,0x57,0,1,1,pCVar3);
         this_00->field_01C8 = uVar6;
       }
       /* ST_CALLSITE[005515C4]: CALL 0x00404f9d; direct=00404F9D TradePanelTy::sub_00551B10 */
@@ -564,7 +561,7 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
   byte bVar7;
   int iVar9;
   int iVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
   InternalExceptionFrame local_54;
   TradePanelTy *local_10;
   int local_c;
@@ -695,7 +692,7 @@ void __thiscall st::fn_005521B0(TradePanelTy *this)
 int __thiscall st::fn_005522A0(TradePanelTy *this,STMessage *message)
 
 {
-  undefined2 uVar1;
+  ushort uVar1;
   STMessageId SVar2;
   TradePanelTy *this_00;
   int iVar3;
@@ -712,9 +709,9 @@ int __thiscall st::fn_005522A0(TradePanelTy *this,STMessage *message)
   int iVar12;
   code *pcVar13;
   int iVar14;
-  undefined4 uVar15;
-  undefined4 *puVar16;
-  undefined4 uVar17;
+  uint uVar15;
+  uint *puVar16;
+  uint uVar17;
   InternalExceptionFrame local_68;
   undefined1 local_24;
   short sStack_23;
@@ -756,8 +753,7 @@ LAB_00552481:
       uVar15 = 0;
       pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
       /* ST_CALLSITE[00552494]: CALL dword ptr [EBX + 0x10] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)pAVar8->field_0010)(message,pCVar3,iVar7,uVar15,uVar17);
+      (*STField<code *>(pAVar8,0x10))(message,pCVar3,iVar7,uVar15,uVar17);
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
@@ -778,8 +774,7 @@ LAB_00552481:
         if (this_00->field_01BB != '\0') {
           this_00->field_0028 = 0xbfff;
           /* ST_CALLSITE[005523CB]: CALL dword ptr [EDX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (*(code *)this_00->field_0000->field_0000)(&this_00->field_0x18);
+          (*STField<code *>(this_00->field_0000,0x0000))(&this_00->field_0x18);
           g_currentExceptionFrame = local_68.previous;
           return 0;
         }
@@ -899,8 +894,7 @@ LAB_00552481:
     pcVar13 = st::function_address_boundary_cast<code *>(st::fn_00529FE0);
     pCVar3 = st::fn_0040577C(text,0);
     /* ST_CALLSITE[00552655]: CALL dword ptr [EBX + 0x8] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (*(code *)pAVar8->field_0008)(message,1,pCVar3,pcVar13,uVar15,uVar17);
+    (*STField<code *>(pAVar8,0x8))(message,1,pCVar3,pcVar13,uVar15,uVar17);
   }
   g_currentExceptionFrame = local_68.previous;
   return 0;

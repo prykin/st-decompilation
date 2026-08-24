@@ -17,7 +17,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
 {
   bool bVar2;
   AiFltClassTy *pAVar3;
-  undefined2 uVar4;
+  ushort uVar4;
   int iVar5;
   int iVar7;
   DArrayTy *array;

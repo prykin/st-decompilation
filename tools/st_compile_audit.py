@@ -27,7 +27,7 @@ from typing import Any, Iterable, Sequence
 
 
 SCHEMA = "st-source-compile-audit"
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 REGRESSION_SCHEMA = "st-source-compile-regression-baseline"
 REGRESSION_SCHEMA_VERSION = 1
 GENERATED_MARKER = ".st-generated-source-tree.json"
@@ -55,6 +55,7 @@ class Diagnostic:
     message: str
     option: str = ""
     address: str = ""
+    value_domain_family: str = ""
 
     def as_json(self) -> dict[str, Any]:
         result: dict[str, Any] = {
@@ -70,6 +71,8 @@ class Diagnostic:
             result["option"] = self.option
         if self.address:
             result["address"] = self.address
+        if self.value_domain_family:
+            result["value_domain_family"] = self.value_domain_family
         return result
 
 
@@ -116,6 +119,11 @@ def regression_snapshot(
     addressed = Counter(
         (item.address, item.kind) for item in errors if item.address
     )
+    addressed_value_domains = Counter(
+        (item.address, item.value_domain_family)
+        for item in errors
+        if item.address and item.value_domain_family
+    )
     address_translation_units: dict[str, set[str]] = {}
     for item in errors:
         if item.address:
@@ -137,6 +145,10 @@ def regression_snapshot(
         "address_error_families": [
             {"address": address, "kind": kind, "count": count}
             for (address, kind), count in sorted(addressed.items())
+        ],
+        "address_value_domain_families": [
+            {"address": address, "family": family, "count": count}
+            for (address, family), count in sorted(addressed_value_domains.items())
         ],
         "address_translation_units": [
             {"address": address, "translation_units": sorted(units)}
@@ -229,6 +241,33 @@ def compare_regression_snapshot(
                 "current_count": count,
             })
 
+    # Q-057 domains refine broad compiler kinds (pointer_switch is usually
+    # merely "other").  Once a reviewed baseline contains this optional field,
+    # prevent one domain from silently replacing another at the same address
+    # while the broad error-kind count stays unchanged.  Existing v1 baselines
+    # remain readable and acquire the stronger ratchet at their next update.
+    if "address_value_domain_families" in baseline:
+        previous_domains = family_counts(
+            baseline, "address_value_domain_families", ("address", "family")
+        )
+        current_domains = family_counts(
+            current, "address_value_domain_families", ("address", "family")
+        )
+        for (address, family), count in sorted(current_domains.items()):
+            old = previous_domains.get((address, family), 0)
+            if count <= old:
+                continue
+            units = address_units.get(address, set())
+            if units and units <= capped_baseline_units:
+                continue
+            regressions.append({
+                "kind": "address_value_domain_family_increased",
+                "address": address,
+                "family": family,
+                "baseline_count": old,
+                "current_count": count,
+            })
+
     previous_unaddressed = family_counts(
         baseline, "unaddressed_error_families", ("key",)
     )
@@ -307,6 +346,25 @@ def classify(message: str) -> str:
         if needle in lowered:
             return kind
     return "other"
+
+
+def classify_value_domain(message: str) -> str:
+    """Normalize Q-057 discovery families without perturbing regression kinds."""
+    lowered = message.lower()
+    pointer = "*'" in lowered or "pointer type" in lowered
+    if (("to 'float'" in lowered and pointer) or
+            ("from type 'float' to pointer type" in lowered)):
+        return "pointer_float"
+    if ("statement requires expression of integer type" in lowered and pointer):
+        return "pointer_switch"
+    if (("not implicitly convertible to 'int'" in lowered or
+            "pointer to integer conversion" in lowered or
+            "integer to pointer conversion" in lowered) and pointer):
+        return "pointer_scalar"
+    if ("from type 'void'" in lowered or "from 'void'" in lowered or
+            "called object type 'void'" in lowered):
+        return "void_value"
+    return ""
 
 
 class CompileAudit:
@@ -429,6 +487,7 @@ class CompileAudit:
                 message=message,
                 option=option,
                 address=address_match.group(1).upper() if address_match else "",
+                value_domain_family=classify_value_domain(message),
             ))
         if process.returncode and not any(
             item.severity == "error" for item in diagnostics
@@ -461,6 +520,10 @@ class CompileAudit:
         errors = [item for item in diagnostics if item.severity == "error"]
         warnings = [item for item in diagnostics if item.severity == "warning"]
         kind_counts = Counter(item.kind for item in errors)
+        value_domain_counts = Counter(
+            item.value_domain_family for item in errors
+            if item.value_domain_family
+        )
         addressed_errors = sum(bool(item.address) for item in errors)
         summary = {
             "schema": SCHEMA,
@@ -491,6 +554,7 @@ class CompileAudit:
                 "warnings": len(warnings),
             },
             "error_kind_counts": dict(sorted(kind_counts.items())),
+            "value_domain_family_counts": dict(sorted(value_domain_counts.items())),
         }
         snapshot = regression_snapshot(summary, results)
         regression = (

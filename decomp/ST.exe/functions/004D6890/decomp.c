@@ -4,9 +4,9 @@
 void __thiscall FUN_004d6890(void *this,AnonShape_004D6890_0C7826D6 *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   byte bVar2;
-  undefined1 uVar3;
+  byte uVar3;
   int iVar4;
   AnonShape_004D6890_0C7826D6 *pAVar5;
 

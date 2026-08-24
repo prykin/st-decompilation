@@ -19,12 +19,12 @@ st::fn_0060EF40
 {
   alignas(4) byte st_stack_frame[224];
 
-  undefined1 *puVar1;
+  byte *puVar1;
   code *pcVar2;
   int iVar3;
   int iVar1;
   void *pvVar4;
-  undefined4 uVar5;
+  uint uVar5;
   short sVar6;
   int iVar8;
   short sVar9;
@@ -51,7 +51,7 @@ st::fn_0060EF40
   short *local_6c;
   int local_68 [2];
   short local_60 [6];
-  undefined1 *local_54;
+  byte *local_54;
   int local_50;
   int local_4c;
   int local_48;
@@ -64,15 +64,15 @@ st::fn_0060EF40
   int local_2c;
   int local_24;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079ce98;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 20);
   sVar10 = *(short *)&this->field_0x215;
@@ -82,7 +82,7 @@ st::fn_0060EF40
   ExceptionList = &local_14;
   local_2c = (int)sVar9;
   local_20 = (int)sVar10;
-  st::fn_0040156E((int)*(short *)&this->field_0x1f5,st::pointer_boundary_cast<undefined4 *>(local_b8),(undefined4 *)&local_74,0,nullptr);
+  st::fn_0040156E((int)*(short *)&this->field_0x1f5,reinterpret_cast<undefined4 *>(local_b8),(undefined4 *)&local_74,0,nullptr);
   local_3c = sVar10 + local_b8[0];
   local_48 = sVar9 + local_74;
   sVar10 = *(short *)&this->field_0x1ef;

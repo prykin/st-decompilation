@@ -51,7 +51,7 @@ void __thiscall st::fn_005219E0(IntercomPanelTy *this)
 {
   IntercomPanelTy *pIVar2;
   int iVar3;
-  undefined4 *puVar3;
+  uint *puVar3;
   LPSTR text;
   ushort *puVar4;
   uint uVar5;
@@ -82,7 +82,7 @@ void __thiscall st::fn_005219E0(IntercomPanelTy *this)
     puVar6 = puVar4 + 0x14;
     iVar10 = 1;
     pIVar2->field_0184 = puVar4;
-    uVar5 = st::fn_006B4FE0((int)puVar4);
+    uVar5 = st::fn_006B4FE0(puVar4);
     puVar6 = (ushort *)
              st::fn_006B50C0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
                           (uint)pIVar2->field_0184[7],uVar5,(undefined4 *)puVar6,iVar10);
@@ -137,7 +137,7 @@ void __thiscall st::fn_00521B90(IntercomPanelTy *this)
     pIVar2->field_01A0 = 0;
     g_intercomPanel_0080169C = nullptr;
     if (pIVar2->field_0180 != nullptr) {
-      st::fn_00710560(st::pointer_boundary_cast<uint *>(pIVar2->field_0180));
+      st::fn_00710560(static_cast<uint *>(pIVar2->field_0180));
       pIVar2->field_0180 = nullptr;
     }
     if (pIVar2->field_0184 != nullptr) {
@@ -316,7 +316,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
               *ppAVar11 = nullptr;
               ppAVar11 = ppAVar11 + 1;
             }
-            pAVar3 = st::pointer_boundary_cast<AnonShape_00710790_4CBB90D4 *>(this_00->field_0180);
+            pAVar3 = static_cast<AnonShape_00710790_4CBB90D4 *>(this_00->field_0180);
             this_00->field_0044 = iVar7;
             this_00->field_0172 = CASE_1;
             local_8dc[0] = (AnonShape_00710790_4CBB90D4 *)0x1;
@@ -406,8 +406,8 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
     }
     puVar8 = (byte *)st::fn_006B4FA0((int *)puVar4);
     memset(puVar8, 0, local_8); /* compiler bulk-zero initialization */
-    st::fn_00710A90(st::pointer_boundary_cast<ccFntTy *>(this_00->field_0180),(int)this_00->field_019C,0,0,0,0,0);
-    st::fn_007119C0(st::pointer_boundary_cast<ccFntTy *>(this_00->field_0180),*(char **)(message->arg0).ptr,0,-1,0);
+    st::fn_00710A90(static_cast<ccFntTy *>(this_00->field_0180),(int)this_00->field_019C,0,0,0,0,0);
+    st::fn_007119C0(static_cast<ccFntTy *>(this_00->field_0180),*(char **)(message->arg0).ptr,0,-1,0);
     uVar1 = (message->arg1).words.low;
     if ((uVar1 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
       uVar10 = (uint)(message->arg1).words.high;

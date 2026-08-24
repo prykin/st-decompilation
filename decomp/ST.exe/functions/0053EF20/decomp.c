@@ -31,16 +31,16 @@ ProdPanelTy::InitProdPanel
   LPSTR pCVar4;
   ushort *puVar5;
   char *resourceString;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar2;
   int iVar10;
   uint uVar6;
-  undefined1 *puVar7;
+  byte *puVar7;
   uint uVar8;
   byte bVar9;
   int iVar11;
   int iVar12;
-  undefined4 *puVar13;
+  uint *puVar13;
   InternalExceptionFrame local_58;
   ProdPanelTy *local_14;
   int local_10;
@@ -53,7 +53,7 @@ ProdPanelTy::InitProdPanel
   local_EAX_36 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (local_EAX_36 == 0) {
     /* ST_CALLSITE[0053EF64]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
+    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     this_00 = local_14;
     puVar13 = nullptr;
     iVar12 = 0;

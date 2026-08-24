@@ -8,7 +8,7 @@
 undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
 
 {
-  undefined2 uVar2;
+  ushort uVar2;
   STGroupBoatC *pSVar3;
   DArrayTy *array;
   int iVar3;
@@ -16,7 +16,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
   DArrayTy *array_00;
   uint uVar5;
   int iVar6;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   uint index;
   InternalExceptionFrame local_78;

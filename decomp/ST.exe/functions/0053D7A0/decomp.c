@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   UPanelTy::PaintBut */
+   UPanelTy::PaintBut
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 UPanelTy::PaintBut(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte param_2,char *param_3,
@@ -13,7 +17,7 @@ UPanelTy::PaintBut(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte para
   AnonNested_0053D7A0_0018_F6872402 *pAVar1;
   UPanelTy *pUVar3;
   int *errorCode;
-  undefined4 uVar4;
+  uint uVar4;
   LPSTR text;
   int iVar5;
   InternalExceptionFrame local_58;

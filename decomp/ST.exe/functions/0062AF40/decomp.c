@@ -9,10 +9,9 @@
 undefined4 * __thiscall FUN_0062af40(void *this,undefined4 *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
-  undefined4 *puVar3;
-
+  uint *puVar3;
   puVar1 = Library::DKW::LIB::MemAlloc(0xd7);
   *param_1 = 0;
   if (puVar1 != nullptr) {

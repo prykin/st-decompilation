@@ -1937,7 +1937,7 @@ void __thiscall st::fn_00507F60(CPanelTy *this)
   BITMAPINFO *pBVar10;
   char *pcVar17;
   Global_sub_00525EF0_param_1Enum GVar8;
-  undefined4 uVar11;
+  uint uVar11;
   ushort *puVar12;
   int iVar15;
   char cVar13;
@@ -2068,7 +2068,7 @@ cf_common_exit_005091B9:
         this_00->field_0028 = 5;
         st::fn_006E6080(this_00,2,this_00->field_0302,(undefined4 *)&this_00->field_0x18);
         local_8 = (byte *)((uint)local_8 & 0xffffff00);
-        pcVar18 = st::pointer_boundary_cast<char *>(&this_00->field_0BFE);
+        pcVar18 = (char *)&this_00->field_0BFE;
         do {
           if (*pcVar18 != '\0') {
             /* ST_CALLSITE[00508082]: CALL 0x0040313e; direct=0040313E CPanelTy::sub_004F17D0 */
@@ -2234,7 +2234,7 @@ cf_common_exit_005091B9:
       this_00->field_0028 = 5;
       st::fn_006E6080(this_00,2,this_00->field_0302,(undefined4 *)&this_00->field_0x18);
       local_8 = (byte *)((uint)local_8 & 0xffffff00);
-      pcVar18 = st::pointer_boundary_cast<char *>(&this_00->field_0BFE);
+      pcVar18 = (char *)&this_00->field_0BFE;
       do {
         if (*pcVar18 != '\0') {
           /* ST_CALLSITE[00508448]: CALL 0x0040313e; direct=0040313E CPanelTy::sub_004F17D0 */
@@ -2788,7 +2788,7 @@ void __thiscall st::fn_005097E0(CPanelTy *this,char param_1)
   char *pcVar5_mg0;
   LPSTR pCVar5;
   uint uVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   int iVar12;
   uint uVar8;
   byte bVar9;
@@ -2796,16 +2796,16 @@ void __thiscall st::fn_005097E0(CPanelTy *this,char param_1)
   int iVar11;
   int iVar13;
   uint *puVar14;
-  undefined1 *puVar15;
-  undefined4 uVar16;
-  undefined4 uVar17;
+  byte *puVar15;
+  uint uVar16;
+  uint uVar17;
   short sVar18;
   ushort uVar19;
   ushort uVar20;
   int iVar21;
-  undefined4 uVar22;
+  uint uVar22;
   char *pcVar23;
-  undefined4 uVar24;
+  uint uVar24;
   AnonShape_004F2E40_DC76A8C6 local_b44 [7];
   undefined4 local_25c [84];
   InternalExceptionFrame local_10c;
@@ -2834,7 +2834,7 @@ void __thiscall st::fn_005097E0(CPanelTy *this,char param_1)
   uint *local_18;
   int local_14;
   uint local_10;
-  undefined1 *local_c;
+  byte *local_c;
   uint *local_8;
 
   local_10c.previous = g_currentExceptionFrame;
@@ -2910,19 +2910,19 @@ void __thiscall st::fn_005097E0(CPanelTy *this,char param_1)
       if (*local_1c == 0) goto LAB_00509a02;
       iVar13 = 0xe;
       iVar11 = 0xf;
-      switch(local_1c + iVar10) {
+      switch(static_cast<uint32_t>(STRawWord(local_1c + iVar10))) {
       case 0:
         iVar13 = 0x4b;
         break;
-      case (Global_sub_00529590_param_1Enum *)0x1:
+      case 0x1:
         iVar13 = 0x88;
         break;
-      case (Global_sub_00529590_param_1Enum *)0x2:
+      case 0x2:
         goto switchD_00509942_caseD_2;
-      case (Global_sub_00529590_param_1Enum *)0x3:
+      case 0x3:
         iVar13 = 0x88;
         goto switchD_00509942_caseD_2;
-      case (Global_sub_00529590_param_1Enum *)0x4:
+      case 0x4:
         iVar13 = 0x4b;
 switchD_00509942_caseD_2:
         iVar11 = 0x37;
@@ -4270,7 +4270,7 @@ void __thiscall st::fn_0050C620(CPanelTy *this)
   uint uVar8;
   byte *pbVar9;
   char *pcVar18;
-  undefined4 uVar10;
+  uint uVar10;
   uint uVar11;
   int iVar13;
   char cVar12;
@@ -4404,7 +4404,7 @@ cf_common_exit_0050E007:
         this_00->field_0028 = 5;
         st::fn_006E6080(this_00,2,this_00->field_0302,(undefined4 *)&this_00->field_0x18);
         local_c = local_c & 0xffffff00;
-        pcVar19 = st::pointer_boundary_cast<char *>(&this_00->field_0BFE);
+        pcVar19 = (char *)&this_00->field_0BFE;
         do {
           if (*pcVar19 != '\0') {
             /* ST_CALLSITE[0050C742]: CALL 0x0040313e; direct=0040313E CPanelTy::sub_004F17D0 */
@@ -4567,7 +4567,7 @@ cf_common_exit_0050E007:
       this_00->field_0028 = 5;
       st::fn_006E6080(this_00,2,this_00->field_0302,(undefined4 *)&this_00->field_0x18);
       local_c = local_c & 0xffffff00;
-      pcVar19 = st::pointer_boundary_cast<char *>(&this_00->field_0BFE);
+      pcVar19 = (char *)&this_00->field_0BFE;
       do {
         if (*pcVar19 != '\0') {
           /* ST_CALLSITE[0050CAAA]: CALL 0x0040313e; direct=0040313E CPanelTy::sub_004F17D0 */
@@ -5419,25 +5419,25 @@ void __thiscall st::fn_0050E7D0(CPanelTy *this,char param_1)
   LPSTR pCVar6;
   BITMAPINFO *pBVar7;
   uint uVar8;
-  undefined4 *puVar9;
+  uint *puVar9;
   int iVar17;
-  undefined1 uVar10;
-  undefined1 *puVar11;
+  byte uVar10;
+  byte *puVar11;
   uint uVar12;
   byte bVar13;
   int iVar14;
   uint *puVar15;
   int iVar16;
   bool bVar17;
-  undefined4 uVar18;
-  undefined4 uVar19;
+  uint uVar18;
+  uint uVar19;
   short sVar20;
   int iVar21;
   ushort uVar22;
   ushort uVar23;
-  undefined4 uVar24;
+  uint uVar24;
   char *pcVar25;
-  undefined4 uVar26;
+  uint uVar26;
   AnonShape_004F2E40_DC76A8C6 local_84c [5];
   undefined4 local_25c [84];
   InternalExceptionFrame local_10c;
@@ -5462,10 +5462,10 @@ void __thiscall st::fn_0050E7D0(CPanelTy *this,char param_1)
   int local_28;
   AnonShape_004F2E40_DC76A8C6 *local_24;
   CPanelTy *local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   uint local_18;
   Global_sub_00529590_param_1Enum *local_14;
-  undefined1 *local_10;
+  byte *local_10;
   uint local_c;
   Global_sub_00529590_param_1Enum *local_8;
 
@@ -5686,7 +5686,7 @@ LAB_0050eb47:
         puVar11 = local_10;
         puVar9[-1] = iVar14 + 1;
         *puVar9 = 0;
-        puVar9[2] = st::machine_word_boundary_cast<undefined4>(puVar11);
+        puVar9[2] = st::machine_word_boundary_cast<uint>(puVar11);
         bVar17 = local_14 != nullptr;
         puVar9[4] = 0x1d;
         iVar21 = DAT_00806734;
@@ -5882,7 +5882,7 @@ void __thiscall st::fn_0050F430(CPanelTy *this,byte param_1)
   int iVar6;
   bool *pbVar7;
   bool *pbVar8;
-  undefined4 *puVar9;
+  uint *puVar9;
   bool local_19c [36];
   bool local_178 [36];
   bool local_154 [36];

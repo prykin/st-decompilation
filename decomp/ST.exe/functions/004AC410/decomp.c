@@ -10,7 +10,7 @@ undefined4 __thiscall STT3DSprC::StopShow(STT3DSprC *this,byte param_1)
 {
   STT3DSprC *pSVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   uint uVar5;
   InternalExceptionFrame local_4c;
   STT3DSprC *local_8;

@@ -14,10 +14,9 @@ CampaignTy * __cdecl CreateCampaign(void)
 {
   CampaignTy *this;
   int iVar1;
-  undefined4 *puVar3;
+  uint *puVar3;
   SpriteClassTy *this_00;
-  undefined4 *puVar5;
-
+  uint *puVar5;
   this = (CampaignTy *)FUN_006b04d0(0x2000);
   if (this != nullptr) {
     sub_006E5FB0(this);

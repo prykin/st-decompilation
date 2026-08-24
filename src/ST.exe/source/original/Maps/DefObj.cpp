@@ -34,7 +34,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
   char *pcVar10;
   Global_sub_00692C10_param_1Enum *pGVar11;
   char *pcVar12;
-  undefined4 *puVar13;
+  uint *puVar13;
   CHAR local_108 [260];
 
   if (param_1 < 0x1a5) {

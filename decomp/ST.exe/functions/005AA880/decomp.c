@@ -22,11 +22,11 @@ HoloTy::CalcHologram
   uint uVar2;
   int iVar3;
   int iVar2;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   uint uVar9;
   longlong lVar10;
   InternalExceptionFrame local_78;

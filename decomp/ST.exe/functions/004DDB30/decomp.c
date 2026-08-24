@@ -4,7 +4,7 @@
 undefined4 __thiscall FUN_004ddb30(void *this,int param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
   int iVar3;
   int iVar4;

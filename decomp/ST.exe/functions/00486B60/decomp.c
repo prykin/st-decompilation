@@ -4,13 +4,13 @@
 void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
 
 {
-  undefined1 *puVar1;
-  undefined1 uVar2;
+  byte *puVar1;
+  byte uVar2;
   byte bVar3;
   int iVar5;
   int iVar4;
   int local_EAX_316;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   int *local_c;
   short local_8;

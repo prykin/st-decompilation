@@ -17,7 +17,7 @@ MTaskTy::CreateTextSSpr
   int iVar3;
   int iVar4;
   AnonShape_006B4B20_3D4F4412 *pAVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   InternalExceptionFrame local_5c;
   int local_18;
   int local_14;

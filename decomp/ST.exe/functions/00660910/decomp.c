@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_00660910(void *this,short param_1,short param_2,short 
 
 {
   STWorldObject *pSVar1;
-  undefined4 uVar2;
+  uint uVar2;
   STGroupBoatC *this_00;
   undefined1 local_c;
   undefined2 uStack_b;

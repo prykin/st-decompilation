@@ -11,8 +11,7 @@
 AiPlrClassTy * __thiscall st::fn_006788B0(AiPlrClassTy *this)
 
 {
-  undefined4 *puVar2;
-
+  uint *puVar2;
   st::fn_006E60E0(this);
   /* ST_CALLSITE[006788BE]: CALL 0x00402c2f; direct=00402C2F AiEventClassTy::AiEventClassTy */
   st::fn_00402C2F((AiEventClassTy *)&this->vtable_at_1c);
@@ -160,7 +159,7 @@ st::fn_0067A020(AiPlrClassTy *this,AnonShape_0068FD00_A5257008 *param_1,int para
 {
   AiTactClassTy *this_00;
   uint uVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   DArrayTy *pDVar3;
   uint uVar4;
 
@@ -216,7 +215,7 @@ void __thiscall st::fn_0067A240(AiPlrClassTy *this,undefined *param_1,DArrayTy *
 
 {
   uint uVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   DArrayTy *pDVar4;
   uint uVar5;

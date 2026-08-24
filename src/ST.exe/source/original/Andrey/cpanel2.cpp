@@ -495,18 +495,18 @@ void __thiscall st::fn_00502360(CPanelTy *this)
   byte bVar8;
   int iVar9;
   uint *puVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
   int iVar12;
-  undefined4 uVar13;
-  undefined4 uVar14;
+  uint uVar13;
+  uint uVar14;
   short sVar15;
   ushort uVar16;
   ushort uVar17;
   int iVar18;
-  undefined1 *puVar19;
-  undefined4 uVar20;
+  byte *puVar19;
+  uint uVar20;
   char *pcVar21;
-  undefined4 uVar22;
+  uint uVar22;
   AnonShape_004F2E40_DC76A8C6 local_bb0 [7];
   undefined4 local_2c8 [112];
   undefined4 local_108 [22];
@@ -525,8 +525,7 @@ void __thiscall st::fn_00502360(CPanelTy *this)
   Global_sub_00529590_param_1Enum *local_14;
   uint local_10;
   uint *local_c;
-  undefined1 *local_8;
-
+  byte *local_8;
   puVar11 = local_108;
   local_1c = this;
   for (iVar7 = 0x16; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -586,19 +585,19 @@ void __thiscall st::fn_00502360(CPanelTy *this)
       if (*local_14 == 0) goto LAB_0050254c;
       iVar12 = 2;
       iVar9 = 5;
-      switch(local_14 + iVar7) {
+      switch(static_cast<uint32_t>(STRawWord(local_14 + iVar7))) {
       case 0:
         iVar12 = 0x3f;
         break;
-      case (Global_sub_00529590_param_1Enum *)0x1:
+      case 0x1:
         iVar12 = 0x7c;
         break;
-      case (Global_sub_00529590_param_1Enum *)0x2:
+      case 0x2:
         goto switchD_0050248c_caseD_2;
-      case (Global_sub_00529590_param_1Enum *)0x3:
+      case 0x3:
         iVar12 = 0x7c;
         goto switchD_0050248c_caseD_2;
-      case (Global_sub_00529590_param_1Enum *)0x4:
+      case 0x4:
         iVar12 = 0x3f;
 switchD_0050248c_caseD_2:
         iVar9 = 0x29;
@@ -1102,18 +1101,18 @@ void __thiscall st::fn_00503450(CPanelTy *this)
   int iVar10;
   int iVar11;
   uint *puVar12;
-  undefined4 *puVar13;
+  uint *puVar13;
   uint uVar14;
-  undefined4 uVar15;
-  undefined4 uVar16;
+  uint uVar15;
+  uint uVar16;
   short sVar17;
   ushort uVar18;
   ushort uVar19;
-  undefined1 *puVar20;
-  undefined4 uVar21;
+  byte *puVar20;
+  uint uVar21;
   int iVar22;
   char *pcVar23;
-  undefined4 uVar24;
+  uint uVar24;
   undefined4 local_c28 [140];
   AnonShape_004F2E40_DC76A8C6 local_9f8 [7];
   undefined4 local_110 [22];

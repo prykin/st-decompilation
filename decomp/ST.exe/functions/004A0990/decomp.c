@@ -10,12 +10,13 @@ undefined4 __thiscall STGroupBoatC::GrpRepSub(STGroupBoatC *this,int param_1)
 {
   STGroupBoatC *pSVar2;
   int iVar3;
+  int iVar8_mg1;
   dword dVar3;
   DArrayTy *pDVar4;
   DArrayTy *array;
   uint uVar5;
   int iVar7;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar8;
   STBoatC *pSVar9;
   uint uVar11;
@@ -65,8 +66,9 @@ undefined4 __thiscall STGroupBoatC::GrpRepSub(STGroupBoatC *this,int param_1)
   if ((param_1 != 1) && (param_1 != 0)) goto LAB_004a0c5b;
   memset(&local_30->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
   local_30->field_0065 = 0;
-  iVar8 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_30->field_01C5,(int *)&local_8);
-  if (iVar8 == -4) {
+  iVar8_mg1 = STPlaySystemC::sub_006E62D0
+                        (g_playSystem_00802A38,local_30->field_01C5,(int *)&local_8);
+  if (iVar8_mg1 == -4) {
     return 0;
   }
   /* ST_CALLSITE[004A0A48]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */

@@ -13,7 +13,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
 
 {
   DArrayTy **ppDVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   uint *puVar3;
   dword dVar4;
   AnonPointee_STGameObjC_0195 *pAVar5;

@@ -13,7 +13,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
   int iVar3;
   int local_EAX_181;
   ushort *puVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   int uVar3;
   int local_EAX_410;
   DArrayTy *pDVar5;
@@ -49,7 +49,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     }
     iVar9 = 1;
     puVar3 = g_startSystem_0081176C->field_002C + 0x14;
-    local_EAX_181 = FUN_006b4fe0((int)g_startSystem_0081176C->field_002C);
+    local_EAX_181 = FUN_006b4fe0(g_startSystem_0081176C->field_002C);
     puVar3 = (ushort *)
              FUN_006b50c0(0x15e,0xa5,(uint)g_startSystem_0081176C->field_002C[7],local_EAX_181,
                           (undefined4 *)puVar3,iVar9);
@@ -70,7 +70,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
     puVar3 = g_startSystem_0081176C->field_002C + 0x14;
-    uVar3 = FUN_006b4fe0((int)g_startSystem_0081176C->field_002C);
+    uVar3 = FUN_006b4fe0(g_startSystem_0081176C->field_002C);
     puVar3 = (ushort *)
              FUN_006b50c0(0x13e,0xe,(uint)g_startSystem_0081176C->field_002C[7],uVar3,
                           (undefined4 *)puVar3,iVar9);
@@ -91,7 +91,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
     puVar3 = g_startSystem_0081176C->field_002C + 0x14;
-    local_EAX_410 = FUN_006b4fe0((int)g_startSystem_0081176C->field_002C);
+    local_EAX_410 = FUN_006b4fe0(g_startSystem_0081176C->field_002C);
     puVar3 = (ushort *)
              FUN_006b50c0(0x104,0x28,(uint)g_startSystem_0081176C->field_002C[7],local_EAX_410,
                           (undefined4 *)puVar3,iVar9);
@@ -159,7 +159,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     Library::DKW::TBL::FUN_006b6020(pDVar5,0,&CHAR_00h_008016a0);
     iVar9 = 1;
     puVar3 = this_00->field_1CB8 + 0x14;
-    local_EAX_923 = FUN_006b4fe0((int)this_00->field_1CB8);
+    local_EAX_923 = FUN_006b4fe0(this_00->field_1CB8);
     puVar3 = (ushort *)
              FUN_006b50c0(0x156,0xe,(uint)this_00->field_1CB8[7],local_EAX_923,(undefined4 *)puVar3,
                           iVar9);

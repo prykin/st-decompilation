@@ -19,7 +19,7 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
   OptPanelTy *this_00;
   short sVar2;
   int iVar5;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar6;
   uint *puVar7;

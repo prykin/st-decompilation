@@ -17,16 +17,16 @@ void __thiscall st::fn_0050FD60(FrmPanelTy *this)
   uint uVar4;
   int iVar8;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   short sVar7;
   int iVar9;
-  undefined2 uVar10;
+  ushort uVar10;
   int iVar11;
   UINT UVar12;
-  undefined4 uVar13;
+  uint uVar13;
   char *pcVar14;
-  undefined4 uVar15;
-  undefined4 uVar16;
+  uint uVar15;
+  uint uVar16;
   InternalExceptionFrame local_4c;
   FrmPanelTy *local_8;
 
@@ -387,7 +387,7 @@ void __thiscall st::fn_005104B0(FrmPanelTy *this)
     st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\Andrey\\frmpanel.cpp"),0x70);
     return;
   }
-  piVar5 = st::pointer_boundary_cast<int *>(&local_8->field_01AB);
+  piVar5 = reinterpret_cast<int *>(&local_8->field_01AB);
   local_10[0] = *piVar5;
   local_10[1] = local_8->field_01AF;
   *piVar5 = 0;
@@ -517,7 +517,7 @@ int __thiscall st::fn_005107C0(FrmPanelTy *this,STMessage *message)
   char *pcVar5;
   code *pcVar6;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   InternalExceptionFrame local_60;
   uint local_1c [4];
   undefined2 local_c;

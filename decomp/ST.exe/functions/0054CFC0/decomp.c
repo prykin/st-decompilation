@@ -18,7 +18,7 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this)
   AnonPointee_STPlaySystemC_003D *pAVar4;
   void *pvVar5;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   InternalExceptionFrame local_54;
   uint local_10;
   uint *local_c;

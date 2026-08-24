@@ -4,10 +4,9 @@
 void __thiscall FUN_00580700(void *this,undefined1 *param_1)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   *param_1 = 4;
   uVar1 = STField<undefined1>(this,0x21d);
   param_1[2] = 0;

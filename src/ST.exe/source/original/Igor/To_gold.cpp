@@ -75,7 +75,7 @@ int __thiscall st::fn_0057E0A0(STDcResourcC *this,STMessage *message)
   int iVar11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined2 uVar15;
+  ushort uVar15;
   int local_EAX_826;
   int local_EAX_979;
   int local_EAX_1359;
@@ -279,7 +279,7 @@ int __thiscall st::fn_0057E0A0(STDcResourcC *this,STMessage *message)
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
-      st::fn_006E6580((void *)this_00->field_0211,st::pointer_boundary_cast<int *>(this_00->field_0273));
+      st::fn_006E6580((void *)this_00->field_0211,static_cast<int *>(this_00->field_0273));
       this_00->field_0273 = nullptr;
       g_currentExceptionFrame = local_68.previous;
       return 0;
@@ -527,7 +527,7 @@ LAB_0057e6f0:
       this_00->field_0273 = puVar13;
       goto cf_common_join_0057E9C2;
     }
-    piVar23 = st::pointer_boundary_cast<int *>(this_00->field_0273);
+    piVar23 = static_cast<int *>(this_00->field_0273);
     if (piVar23 == nullptr) goto cf_common_join_0057E9C2;
   }
   else {
@@ -591,7 +591,7 @@ LAB_0057e6f0:
       }
     }
     if (uVar12 != 2) goto cf_common_join_0057E9C2;
-    piVar23 = st::pointer_boundary_cast<int *>(this_00->field_0273);
+    piVar23 = static_cast<int *>(this_00->field_0273);
   }
   st::fn_006E6580((void *)this_00->field_0211,piVar23);
   this_00->field_0273 = nullptr;
@@ -663,12 +663,12 @@ undefined4 * __thiscall st::fn_0057F580(STDcResourcC *this)
 
 {
   HoloTy_field_0001State HVar2;
-  undefined1 uVar3;
-  undefined1 uVar4;
+  byte uVar3;
+  byte uVar4;
   STT3DSprC *pSVar5;
   HoloTy *pHVar6;
   int iVar8;
-  undefined4 *puVar7;
+  uint *puVar7;
   int iVar9;
   HoloTy *pHVar10;
   HoloTy *pHVar11;
@@ -1030,7 +1030,7 @@ undefined4 * __thiscall st::fn_00580B60(STFieldC *this,int param_1,int param_2)
   STFieldC *pSVar2;
   int iVar3;
   ushort *puVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *text;
   InternalExceptionFrame local_50;
   STFieldC *local_c;

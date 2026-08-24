@@ -11,7 +11,7 @@ undefined4 FUN_006b0be0(int param_1,tagPALETTEENTRY *param_2,UINT iStart,UINT cE
 
 {
   int *piVar1;
-  undefined4 uVar2;
+  uint uVar2;
   HDC hdc;
   tagPALETTEENTRY *local_404;
 

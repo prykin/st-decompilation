@@ -7,7 +7,7 @@ FUN_00631e00(void *this,uint param_1,int param_2,undefined4 *param_3,undefined4 
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int *piVar3;
   uint uVar4;
   int iVar5;

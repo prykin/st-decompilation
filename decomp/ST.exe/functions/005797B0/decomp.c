@@ -20,7 +20,7 @@ undefined4 __thiscall FUN_005797b0(void *this,short *param_1,short *param_2,unde
   short sVar4;
   short sVar5;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar8;
   int iVar9;
   bool bVar10;

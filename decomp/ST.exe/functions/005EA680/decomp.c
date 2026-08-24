@@ -17,7 +17,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   MMsgTy *this_00;
   StartSystemTy *this_01;
   DArrayTy *pDVar3;
-  undefined4 uVar4;
+  uint uVar4;
   WaitTy *this_02;
   bool bVar6;
   DWORD DVar7;

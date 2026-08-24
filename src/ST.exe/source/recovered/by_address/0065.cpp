@@ -2662,6 +2662,10 @@ void __fastcall st::fn_0065D590(int param_1)
 
 // 0065D600 FUN_0065d600
 #line 4 "decomp/ST.exe/functions/0065D600/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __fastcall st::fn_0065D600(int param_1)
 
 {
@@ -2678,7 +2682,7 @@ void __fastcall st::fn_0065D600(int param_1)
 void __fastcall st::fn_0065D630(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   undefined4 local_24 [8];
 
   st::fn_00401EF1(param_1,param_2);
@@ -2727,7 +2731,7 @@ void __thiscall st::fn_0065D940(void *this,DArrayTy *param_1,int param_2)
                            (g_allPlayers_007FA174,STField<char>(this,0x24),*puVar1,CASE_1);
         if (objPtr != nullptr) {
           /* ST_CALLSITE[0065D98B]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
-          st::fn_00404200(st::pointer_boundary_cast<AiFltClassTy *>(this),(uint)objPtr,param_2);
+          st::fn_00404200(static_cast<AiFltClassTy *>(this),(uint)objPtr,param_2);
         }
         uVar2 = uVar2 + 1;
         bVar3 = uVar2 < param_1->count;
@@ -2963,7 +2967,7 @@ st::fn_0065E070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint pa
 
 {
   byte bVar1;
-  undefined2 uVar2;
+  ushort uVar2;
   char cVar3;
   ushort *puVar4;
   STGameObjC *this;
@@ -3266,6 +3270,10 @@ LAB_0065e5a7:
 
 // 0065E6C0 FUN_0065e6c0
 #line 4 "decomp/ST.exe/functions/0065E6C0/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __fastcall st::fn_0065E6C0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2)
 
 {
@@ -3433,7 +3441,7 @@ st::fn_0065E9A0(void *this,short *param_1,short *param_2,uint param_3,uint param
   local_10 = this;
   uVar2 = st::fn_00401E7E((char)psVar4);
   if (uVar2 != 0) {
-    local_8 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)uVar2 * 0x2c));
+    local_8 = static_cast<uint *>(st::fn_006AAC10((uint)uVar2 * 0x2c));
     DAT_00811900 = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((char)param_6 == '\b') {
@@ -3506,7 +3514,7 @@ st::fn_0065EB70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,u
         local_8 = 0;
       }
       else {
-        local_c = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)uVar1 * 0x2c));
+        local_c = static_cast<uint *>(st::fn_006AAC10((uint)uVar1 * 0x2c));
         DAT_00811900 = 0;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((char)param_7 == '\b') {
@@ -3677,7 +3685,7 @@ uint * st::fn_0065F840(DArrayTy *param_1,uint param_2,int param_3)
   int iVar1;
   DArrayTy *array;
   uint uVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   uint uVar4;
   InternalExceptionFrame local_54;
   undefined4 local_10;
@@ -3829,7 +3837,7 @@ st::fn_0065FE10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *para
 
 {
   short sVar1;
-  undefined2 uVar2;
+  ushort uVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   uint uVar3;

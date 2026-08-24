@@ -1,9 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4
-FUN_0040f270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,int param_6,int param_7,
-            int param_8,int param_9)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=7, ignored=0, unknown=0 */
+
+int FUN_0040f270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,int param_6,
+                int param_7,int param_8,int param_9)
 
 {
   int iVar1;
@@ -61,6 +65,6 @@ FUN_0040f270(int *param_1,int *param_2,int *param_3,int param_4,int param_5,int 
       return 0;
     }
   }
-  return 0xfffffffc;
+  return -4;
 }
 

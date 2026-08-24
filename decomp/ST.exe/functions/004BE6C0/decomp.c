@@ -6,9 +6,9 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
 {
   short sVar1;
   byte bVar2;
-  undefined1 uVar3;
+  byte uVar3;
   int uVar4;
-  undefined4 uVar5;
+  uint uVar5;
   int local_EAX_571;
   int iVar6;
   int iVar8;

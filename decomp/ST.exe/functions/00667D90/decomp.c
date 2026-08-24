@@ -13,7 +13,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   AiFltClassTy *this_00;
   ushort uVar4;
   int iVar5;

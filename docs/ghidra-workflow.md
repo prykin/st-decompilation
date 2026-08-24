@@ -20,8 +20,9 @@ cp .env.example .env
 ./docker/run.sh headless-smoke
 ```
 
-Pipeline modes are exposed directly as `./docker/run.sh core`, `deep`, `full`,
-`export`, and `full-export`. The container mounts the checkout at `/workspace`,
+Pipeline modes are exposed directly as `./docker/run.sh core`, `deep`,
+`abi-refresh`, `full`, `export`, and `full-export`. The container mounts the
+checkout at `/workspace`,
 opens the local ignored `proj/st.gpr`, derives Ghidra's project owner from
 `project.prp`, and drops root to the invoking host UID/GID before touching
 files. It does not contain GitHub credentials and cannot write `.git`. See
@@ -106,6 +107,7 @@ Only one mode is selected; no file or directory dialogs follow:
 | --- | --- |
 | `core` | Baseline/debug/message recovery followed by bounded unclaimed-code and factory/vtable/constructor/class fixpoint loops. This is the default. |
 | `deep` | Slower ownership, ABI, prototype, global, pointer-shape, enum, provenance, control-flow, and library propagation. Requires current core outputs. |
+| `abi-refresh` | Run the bounded ABI-only fixed point for ABI consistency, full return-semantics discovery, prototype repair/propagation, and local SSA-lifetime recovery. Use after changing those analyzers when broad layout/ownership evidence is already current. |
 | `full` | Run `core` and then `deep`; does not start the expensive corpus export. |
 | `export` | Stabilize script-owned parameter storage, repair stale return rollbacks, stabilize the final indirect/vtable ABI layer, record and verify the current Program plus recovery artifacts, snapshot the last accepted corpus, transactionally export into `<repo>/decomp`, and run the regression gate. |
 | `full-export` | Run the complete recovery pipeline, perform the same final ABI synchronization/evidence checkpoint, transactionally export, and run the regression gate. |

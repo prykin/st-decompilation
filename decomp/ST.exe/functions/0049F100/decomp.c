@@ -16,7 +16,7 @@ undefined4 __thiscall STGroupBoatC::Capture(STGroupBoatC *this,int param_1)
   DArrayTy *array_00;
   STGameObjC *this_00;
   int iVar7;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar6;
   uint uVar7;
   uint uVar8;

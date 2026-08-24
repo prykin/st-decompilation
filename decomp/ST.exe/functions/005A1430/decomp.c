@@ -11,7 +11,7 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
   ushort *puVar1;
   FSGSTy *pFVar3;
   int errorCode;
-  undefined4 *puVar4;
+  uint *puVar4;
   char *pcVar5;
   char *pcVar6;
   int iVar7;

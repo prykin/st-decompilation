@@ -16,7 +16,7 @@ undefined4 __thiscall FUN_004ac9e0(void *this,int param_1)
   uint local_28;
   uint local_20;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

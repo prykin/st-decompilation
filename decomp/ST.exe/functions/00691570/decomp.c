@@ -5,8 +5,8 @@ undefined4 * __fastcall FUN_00691570(undefined4 *param_1)
 
 {
   int iVar1;
-  undefined4 *puVar2;
-  undefined4 *puVar3;
+  uint *puVar2;
+  uint *puVar3;
   int local_8;
 
   puVar3 = param_1 + 0x654;

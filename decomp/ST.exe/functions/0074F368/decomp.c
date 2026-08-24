@@ -6,7 +6,7 @@ FUN_0074f368(undefined4 param_1,undefined4 *param_2,char *param_3,undefined4 par
             undefined4 param_5,char *param_6)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
   char *pcVar3;
   bool bVar4;

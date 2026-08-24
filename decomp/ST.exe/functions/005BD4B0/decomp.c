@@ -21,14 +21,15 @@ MReportTy::OutTGlProc
   int iVar3;
   int iVar2;
   int uVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   char *pcVar5;
   char *pcVar6;
   UINT resourceId;
   int iVar6;
   uint uVar7;
   uint uVar8;
-  int iVar9;
+  ushort *puVar9;
+  int iVar10;
   InternalExceptionFrame local_50;
   int local_c;
   RecoveredRecord_MReportTy_005BD4B0 *local_8;
@@ -40,14 +41,14 @@ MReportTy::OutTGlProc
     iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     iVar3 = local_c;
     if (iVar2 == 0) {
-      iVar9 = 1;
+      iVar10 = 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      puVar4 = (undefined4 *)(*(int *)(local_c + 0x5d) + 0x28);
+      puVar9 = *(ushort **)(local_c + 0x5d) + 0x14;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar3 = FUN_006b4fe0(*(int *)(local_c + 0x5d));
+      uVar3 = FUN_006b4fe0(*(ushort **)(local_c + 0x5d));
       local_8 = (RecoveredRecord_MReportTy_005BD4B0 *)
                 FUN_006b50c0(param_6,param_7,(uint)*(ushort *)(*(int *)(iVar3 + 0x5d) + 0xe),uVar3,
-                             puVar4,iVar9);
+                             (undefined4 *)puVar9,iVar10);
       uVar8 = local_8->field_0014;
       if (uVar8 == 0) {
         uVar8 = ((uint)local_8->field_000E * local_8->field_0004 + 0x1f >> 3 & 0x1ffffffc) *

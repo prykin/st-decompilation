@@ -11,13 +11,13 @@ undefined4 __fastcall FUN_00632e30(AnonShape_00632E30_A9A0278F *param_1)
   float fVar3;
   bool bVar4;
   void *pvVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   uint uVar10;
   uint local_EAX_1564;
   uint local_EAX_1602;
   int iVar7;
   float *pfVar8;
-  undefined4 uVar9;
+  uint uVar9;
   uint uVar11;
   uint uVar12;
   int iVar13;

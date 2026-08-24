@@ -17,7 +17,7 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
   LPSTR pCVar6;
   ushort *puVar7;
   char *resourceString;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar3;
   int iVar9;
   uint uVar10;
@@ -38,7 +38,7 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
     local_8->field_003C = iVar4;
     local_8->field_0174 = (local_8->field_0040 - iVar4) + g_nWidth_00806730;
     /* ST_CALLSITE[005392E9]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar5 = (ccFntTy *)st::fn_0070DF00(0x19d,g_interSystem_00802A28->field_0028);
+    pcVar5 = (ccFntTy *)st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     this_00->field_017C = pcVar5;
     pcVar5->field_0058 = 0;
     pcVar5->field_005C = 0;
@@ -129,7 +129,11 @@ void __thiscall st::fn_00539490(PausePanelTy *this)
 
    [STSwitchEnumApplier] Switch target field_0172 uses
    /SubmarineTitans/Recovered/Enums/PausePanelTy_field_0172State. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_005395B0(PausePanelTy *this,int param_1)
 

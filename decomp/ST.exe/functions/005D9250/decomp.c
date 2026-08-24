@@ -15,7 +15,7 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
   ushort *puVar1;
   SIDTy *pSVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *pcVar6;
   char *resourceString;
   uint uVar7;

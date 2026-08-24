@@ -21,21 +21,24 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,STBoatC *param_1)
 {
   uint uVar1;
   STBoatC_field_05C4State SVar2;
-  undefined4 uVar3;
+  uint uVar3;
   ulonglong uVar4;
-  undefined2 uVar6;
+  ushort uVar6;
   int iVar10;
   int local_EAX_164;
+  int iVar12_mg2;
   int local_EAX_248;
   uint uVar7;
   int local_EAX_758;
-  undefined4 *puVar8;
+  uint *puVar8;
   int iVar9;
   int iVar11;
   int local_EAX_1388;
   int local_EAX_1495;
+  int iVar12_mgD;
   int local_EAX_1592;
   int local_EAX_1718;
+  int iVar12_mg11;
   int local_EAX_2278;
   int iVar12;
   STBoatC *pSVar13;
@@ -55,7 +58,7 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,STBoatC *param_1)
   undefined4 local_40;
   undefined4 local_3c;
   undefined4 local_2c [2];
-  undefined4 local_24;
+  uint local_24;
   short local_20;
   int local_1c;
   undefined4 local_18;
@@ -94,9 +97,9 @@ LAB_00475068:
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if ((this->field_05A6 == nullptr) &&
-         (iVar12 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,this->field_05A2,(int *)&this->field_05A6),
-         iVar12 == -4)) {
+         (iVar12_mg11 = STPlaySystemC::sub_006E62D0
+                                  (g_playSystem_00802A38,this->field_05A2,(int *)&this->field_05A6),
+         iVar12_mg11 == -4)) {
         RaiseInternalException
                   (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2fea
                   );
@@ -173,8 +176,9 @@ switchD_00474a47_caseD_2:
         goto switchD_00474a47_caseD_2;
       case 3:
         this->field_05C0 = 0;
-        iVar12 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
-        if (iVar12 != -4) {
+        iVar12_mg2 = STPlaySystemC::sub_006E62D0
+                               (g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
+        if (iVar12_mg2 != -4) {
           /* ST_CALLSITE[00474ADC]: CALL 0x004054e3; direct=004054E3 STBoatC::NotReadyForLoading */
           NotReadyForLoading(param_1,this->field_0018);
           return 2;
@@ -334,9 +338,9 @@ switchD_00474a47_caseD_2:
       if (SVar2 == CASE_6) {
         if (this->field_006E == 0x2f) {
           this->field_0076 = 0;
-          iVar12 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
-          if (iVar12 == -4) {
+          iVar12_mgD = STPlaySystemC::sub_006E62D0
+                                 (g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
+          if (iVar12_mgD == -4) {
             local_EAX_1592 =
                  ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2fd1,0,0,"%s"
                                     ,"STBoatC::WaitLoad WAITLOAD_PREPARE ptr=NULL 2");

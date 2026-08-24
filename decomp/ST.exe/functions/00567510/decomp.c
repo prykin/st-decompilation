@@ -19,8 +19,8 @@ void __thiscall FUN_00567510(void *this,int param_1,int param_2,int param_3,int 
   int *piVar12;
   int iVar13;
   int iVar14;
-  undefined4 uVar15;
-  undefined4 uVar16;
+  uint uVar15;
+  uint uVar16;
   InternalExceptionFrame local_b0;
   InternalExceptionFrame local_6c;
   uint local_28;

@@ -29,8 +29,7 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
   dword local_14;
   DArrayTy *local_10;
   void *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);

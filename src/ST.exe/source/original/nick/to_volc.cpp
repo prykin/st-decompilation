@@ -315,7 +315,7 @@ undefined4 __thiscall st::fn_006474E0(STVolcanoC *this,int param_1)
   int errorCode;
   ushort *puVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   InternalExceptionFrame local_5c;
   undefined4 local_18;
   STVolcanoC *local_14;

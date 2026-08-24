@@ -23,7 +23,7 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,c
   uint uVar2;
   CPanelTy *pCVar3;
   int *errorCode;
-  undefined4 uVar4;
+  uint uVar4;
   LPSTR text_00;
   int iVar6;
   int iVar5;

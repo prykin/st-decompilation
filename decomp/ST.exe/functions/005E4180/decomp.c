@@ -13,9 +13,9 @@ MTaskTy::CreateBut(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined
 {
   int iVar4;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   undefined4 local_1cc [4];
   undefined4 local_1bc;
   undefined4 local_1b8;

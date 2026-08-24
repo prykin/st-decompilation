@@ -47,7 +47,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   char local_2d;
   char local_2c;
   char local_2b;
-  undefined4 local_2a;
+  uint local_2a;
   short local_26;
   short local_24;
   short local_22;

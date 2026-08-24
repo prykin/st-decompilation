@@ -105,7 +105,12 @@ int st::fn_00411CF0(char *param_1,int param_2)
 
 // 00412B80 FUN_00412b80
 #line 4 "decomp/ST.exe/functions/00412B80/decomp.c"
-undefined4 st::fn_00412B80(int param_1,int param_2,int param_3)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=1, ignored=0, unknown=0 */
+
+int st::fn_00412B80(int param_1,int param_2,int param_3)
 
 {
   int iVar1;
@@ -148,7 +153,7 @@ undefined4 st::fn_00412B80(int param_1,int param_2,int param_3)
                                   *(int *)(iVar7 + 4 + DAT_007f4d48),
                                   *(int *)(iVar7 + 8 + DAT_007f4d48),iVar1 >> 2,iVar2 >> 2,
                                   iVar3 >> 2), iVar5 != 0)) {
-        return 0xfffffffc;
+        return -4;
       }
       uVar6 = local_8 * iVar4 + local_c + DAT_007f4d2c * local_10 ^ 7;
       STBitSet(g_bitset_007F4CFC, uVar6);
@@ -164,7 +169,12 @@ undefined4 st::fn_00412B80(int param_1,int param_2,int param_3)
 
 // 00412DE0 FUN_00412de0
 #line 4 "decomp/ST.exe/functions/00412DE0/decomp.c"
-undefined4 st::fn_00412DE0(int param_1,int param_2,int param_3)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=1, ignored=0, unknown=0 */
+
+int st::fn_00412DE0(int param_1,int param_2,int param_3)
 
 {
   int iVar1;
@@ -208,7 +218,7 @@ undefined4 st::fn_00412DE0(int param_1,int param_2,int param_3)
          && (iVar5 = st::fn_0040F270(&local_c,&local_10,&local_8,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                   DAT_007f4d1c >> 2,iVar1 >> 2,iVar2 >> 2,iVar3 >> 2), iVar5 != 0))
       {
-        return 0xfffffffc;
+        return -4;
       }
       uVar6 = local_8 * iVar4 + local_c + DAT_007f4d2c * local_10 ^ 7;
       STBitSet(g_bitset_007F4CFC, uVar6);
@@ -224,8 +234,12 @@ undefined4 st::fn_00412DE0(int param_1,int param_2,int param_3)
 
 // 00413170 FUN_00413170
 #line 4 "decomp/ST.exe/functions/00413170/decomp.c"
-undefined4
-st::fn_00413170(int param_1,int param_2,int param_3,int param_4,undefined4 *param_5,int param_6)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=1, ignored=0, unknown=0 */
+
+int st::fn_00413170(int param_1,int param_2,int param_3,int param_4,undefined4 *param_5,int param_6)
 
 {
   char *pcVar1;
@@ -343,7 +357,7 @@ cf_break_loop_004134EC:
 LAB_0041350c:
       do {
         if (pcVar9[3] < '\0') {
-          return 0xfffffffc;
+          return -4;
         }
         iVar4 = st::machine_word_boundary_cast<int>(pcVar9[2] + param_3);
         if ((iVar4 < 0) || (DAT_007f4d34 <= iVar4)) goto LAB_004135d8;
@@ -500,9 +514,9 @@ undefined4 st::fn_004137F0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint
     AnonShape_004137F0_350C8AE0 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
     auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
     auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
-    pAVar5 = st::pointer_boundary_cast<AnonNested_AnonShape_004137F0_350C8AE0_0059_F07A8D99 *>(st::fn_006AAC70(iVar8 * 0x10 + 0xc));
+    pAVar5 = static_cast<AnonNested_AnonShape_004137F0_350C8AE0_0059_F07A8D99 *>(st::fn_006AAC70(iVar8 * 0x10 + 0xc));
     this->field_0059 = pAVar5;
-    piVar9 = st::pointer_boundary_cast<int *>(&pAVar5->field_000C);
+    piVar9 = reinterpret_cast<int *>(&pAVar5->field_000C);
     pAVar5->field_0004 = iVar4;
     param_3 = 0;
     this->field_0059->field_0008 = uVar3;
@@ -544,7 +558,7 @@ undefined4 st::fn_004137F0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint
     }
     iVar4 = this->field_0059->field_0000;
     iVar8 = iVar4 / 2;
-    piVar9 = st::pointer_boundary_cast<int *>(&this->field_0059->field_000C);
+    piVar9 = reinterpret_cast<int *>(&this->field_0059->field_000C);
     iVar10 = 0;
     if (0 < iVar4) {
       do {
@@ -582,7 +596,7 @@ void st::fn_00413AF0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int
   int iVar9;
   short *psVar10;
   STGameObjC *pSVar11;
-  undefined2 *puVar12;
+  ushort *puVar12;
   int iVar13;
   int iVar14;
   int iVar7;
@@ -605,14 +619,14 @@ void st::fn_00413AF0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int
   uint local_28;
   uint local_20;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
   undefined4 *piVar16_mg0;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_00790090;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   PTR_007f4d04 = nullptr;
   PTR_007f4cf0 = st::pointer_boundary_cast<undefined2 *>(g_pathingGrid.cells);
@@ -703,7 +717,7 @@ void st::fn_00413AF0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int
     local_48 = 0;
     local_28 = 0;
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-    piVar16_mg0 = st::pointer_boundary_cast<undefined4 *>(extraout_EDX);
+    piVar16_mg0 = reinterpret_cast<undefined4 *>(extraout_EDX);
     if (STField<short>(param_1,0x27) != 0) {
       do {
         if (local_28 < param_2->count) {
@@ -717,7 +731,7 @@ void st::fn_00413AF0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int
         *(undefined4 *)((int)aiStackY_a0 + iVar8 + iVar5 + 0x1c) = 0x413fdb;
         pSVar11 = st::fn_0040286F(param_1,*(ushort *)((st_stack_frame + 20) + iVar8 + iVar5));
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-        piVar16_mg0 = st::pointer_boundary_cast<undefined4 *>(extraout_EDX_01);
+        piVar16_mg0 = reinterpret_cast<undefined4 *>(extraout_EDX_01);
         if (pSVar11 != nullptr) {
           pSVar11->field_00B7 = 0;
           if (0 < DAT_007f4d24) {
@@ -785,7 +799,7 @@ void st::fn_00413AF0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int
                    *(undefined4 *)(STField<int>(param_1,0x59) + 0x14 + iVar14 * 0x10);
             }
             local_48 = iVar14 + 1;
-            piVar16_mg0 = st::pointer_boundary_cast<undefined4 *>(STField<int *>(param_1,0x59));
+            piVar16_mg0 = reinterpret_cast<undefined4 *>(STField<int *>(param_1,0x59));
             if (*piVar16_mg0 <= local_48) {
               local_48 = 0;
             }
@@ -1361,12 +1375,12 @@ st::fn_00415B30(void *this,short param_1,short param_2,short param_3,short param
   short sVar7;
   int iVar8;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   puStack_c = (undefined *)&DAT_007901a0;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
@@ -1511,22 +1525,23 @@ void __thiscall st::fn_00416240(void *this,ushort param_1,short param_2,ushort p
 
 // 00416270 FUN_00416270
 #line 4 "decomp/ST.exe/functions/00416270/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 0057B670 -> 00416270 @ 0057B716 | 005FAC40 -> 00416270 @ 005FAC6A
-
-   [STPrototypeApplier] Propagated parameter 1.
+/* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0057B670 -> 00416270 @ 0057B716; address of FUN_0057b670 parameter param_2 | 005FAC40
    -> 00416270 @ 005FAC6A; address of FUN_005fac40 parameter param_1
 
    [STPrototypeRepairApplier] Propagated parameter 3.
    Evidence: 00484020 -> 00416270 @ 00484166; address of FUN_00484020 parameter param_1 | 005FAC40
-   -> 00416270 @ 005FAC6A; address of FUN_005fac40 parameter param_5 */
+   -> 00416270 @ 005FAC6A; address of FUN_005fac40 parameter param_5
 
-void __thiscall st::fn_00416270(void *this,uint *param_1,int *param_2,short *param_3)
+   [STPrototypeRepairApplier] Propagated parameter 2.
+   Evidence: 005FAC40 -> 00416270 @ 005FAC6A; address of FUN_005fac40 parameter param_4 | 005FF3A0
+   -> 00416270 @ 005FF3EB; FUN_005ff3a0 parameter param_2 */
+
+void __thiscall st::fn_00416270(void *this,uint *param_1,short *param_2,short *param_3)
 
 {
   *(undefined2 *)param_1 = STField<undefined2>(this,0x41);
-  *(undefined2 *)param_2 = STField<undefined2>(this,0x43);
+  *param_2 = STField<short>(this,0x43);
   *param_3 = STField<short>(this,0x45);
   return;
 }
@@ -1554,8 +1569,7 @@ undefined1 __fastcall st::fn_00416350(int param_1)
 undefined4 __fastcall st::fn_00416390(AnonShape_00416390_86C8F938 *param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 2;
   if ((g_playSystem_00802A38->field_00E4 & 1) != 0) {
     return uVar1;
@@ -1624,7 +1638,7 @@ int __fastcall st::fn_00416400(STJellyGunC *param_1)
       param_1->field_00E3 = '\0';
       return 0;
     }
-    st::fn_004031E3(param_1,(uint *)local_24,(int *)local_20,local_1c);
+    st::fn_004031E3(param_1,(uint *)local_24,local_20,local_1c);
     iVar4 = st::machine_word_boundary_cast<int>(param_1->field_00D3 + 1);
     local_6 = 0;
     param_1->field_00D3 = iVar4;
@@ -1701,12 +1715,12 @@ void __thiscall st::fn_004167A0(void *this)
 
 {
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   puStack_c = (undefined *)&DAT_007901d0;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   if (STField<int>(this,0x97) != 0) {
@@ -1737,17 +1751,17 @@ void __thiscall st::fn_00416840(void *this,undefined2 *param_1,undefined2 *param
 
 // 004168B0 FUN_004168b0
 #line 4 "decomp/ST.exe/functions/004168B0/decomp.c"
-/* [STReturnSemanticsApplier] machine_eax_return.
-   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
-   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
-   used=6, ignored=0, unknown=0 */
+/* [STReturnSemanticsApplier] repair_false_machine_eax_return.
+   Evidence: the earlier machine return was admitted only because a self-zeroing XOR/SUB was
+   misclassified as reading the call result; every resolved caller now proves an exact EAX kill;
+   machine CFG audit: used=0, ignored=6, unknown=0 */
 
-undefined4 __fastcall st::fn_004168B0(int param_1)
+void __fastcall st::fn_004168B0(int param_1)
 
 {
   ((undefined1 *)param_1)[0xe3] = 1;
   *(undefined4 *)(param_1 + 0x7e) = 1;
-  return 1;
+  return;
 }
 
 // 004168D0 FUN_004168d0
@@ -1765,14 +1779,14 @@ undefined2 st::fn_004168D0(short param_1,short param_2,undefined4 param_3,short 
   float local_2c;
   undefined4 local_28;
   undefined2 local_24;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   puStack_c = (undefined *)&DAT_00790350;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 12);
   local_8 = 0;
@@ -1898,14 +1912,14 @@ undefined2 st::fn_00416DB0(short param_1,short param_2,undefined4 param_3,short 
   float local_2c;
   undefined4 local_28;
   undefined2 local_24;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   puStack_c = (undefined *)&DAT_007904e0;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 12);
   local_8 = 0;
@@ -2226,13 +2240,13 @@ void __thiscall st::fn_00417A00(void *this,byte param_1)
 undefined4 __thiscall st::fn_00417A20(void *this,short param_1,short param_2,short param_3,int param_4)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
 
   if (STField<int>(this,0x2c) == 0) {
     if (param_4 == 1) {
       st::fn_00404EC1(STField<short>(this,0x5b),STField<short>(this,0x5d),
-                         STField<short>(this,0x5f),STField<byte>(this,0x8e),st::pointer_boundary_cast<AnonShape_00495FF0_59081BDD *>(this));
+                         STField<short>(this,0x5f),STField<byte>(this,0x8e),static_cast<AnonShape_00495FF0_59081BDD *>(this));
     }
     STField<short>(this,0x47) = param_1;
     STField<short>(this,0x4b) = param_3;
@@ -2242,20 +2256,20 @@ undefined4 __thiscall st::fn_00417A20(void *this,short param_1,short param_2,sho
     STField<short>(this,0x45) = param_3 * 200 + 100;
     if (param_4 == 1) {
       /* ST_CALLSITE[00417AC1]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
-      uVar1 = st::fn_00401325(param_1,param_2,param_3,STField<byte>(this,0x8e),st::pointer_boundary_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
+      uVar1 = st::fn_00401325(param_1,param_2,param_3,STField<byte>(this,0x8e),static_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
       return uVar1;
     }
   }
   else {
     if (param_4 == 1) {
       st::fn_00404EC1(STField<short>(this,0x5b),STField<short>(this,0x5d),
-                         STField<short>(this,0x5f),STField<byte>(this,0x8e),st::pointer_boundary_cast<AnonShape_00495FF0_59081BDD *>(this));
+                         STField<short>(this,0x5f),STField<byte>(this,0x8e),static_cast<AnonShape_00495FF0_59081BDD *>(this));
       st::fn_00404EC1(STField<short>(this,0x5b) + 1,STField<short>(this,0x5d),
-                         STField<short>(this,0x5f),STField<byte>(this,0x8e),st::pointer_boundary_cast<AnonShape_00495FF0_59081BDD *>(this));
+                         STField<short>(this,0x5f),STField<byte>(this,0x8e),static_cast<AnonShape_00495FF0_59081BDD *>(this));
       st::fn_00404EC1(STField<short>(this,0x5b),STField<short>(this,0x5d) + 1,
-                         STField<short>(this,0x5f),STField<byte>(this,0x8e),st::pointer_boundary_cast<AnonShape_00495FF0_59081BDD *>(this));
+                         STField<short>(this,0x5f),STField<byte>(this,0x8e),static_cast<AnonShape_00495FF0_59081BDD *>(this));
       st::fn_00404EC1(STField<short>(this,0x5b) + 1,STField<short>(this,0x5d) + 1,
-                         STField<short>(this,0x5f),STField<byte>(this,0x8e),st::pointer_boundary_cast<AnonShape_00495FF0_59081BDD *>(this));
+                         STField<short>(this,0x5f),STField<byte>(this,0x8e),static_cast<AnonShape_00495FF0_59081BDD *>(this));
     }
     STField<short>(this,0x47) = param_1;
     STField<short>(this,0x4b) = param_3;
@@ -2265,28 +2279,28 @@ undefined4 __thiscall st::fn_00417A20(void *this,short param_1,short param_2,sho
     STField<short>(this,0x45) = param_3 * 200 + 100;
     if (param_4 == 1) {
       /* ST_CALLSITE[00417BD6]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
-      iVar2 = st::fn_00401325(param_1,param_2,param_3,STField<byte>(this,0x8e),st::pointer_boundary_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
+      iVar2 = st::fn_00401325(param_1,param_2,param_3,STField<byte>(this,0x8e),static_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
       if (iVar2 != 0) {
         return 0xffffffff;
       }
       /* ST_CALLSITE[00417C0C]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
       iVar2 = st::fn_00401325
                         (STField<short>(this,0x47) + 1,STField<short>(this,0x49),
-                         STField<short>(this,0x4b),STField<byte>(this,0x8e),st::pointer_boundary_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
+                         STField<short>(this,0x4b),STField<byte>(this,0x8e),static_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
       if (iVar2 != 0) {
         return 0xffffffff;
       }
       /* ST_CALLSITE[00417C42]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
       iVar2 = st::fn_00401325
                         (STField<short>(this,0x47),STField<short>(this,0x49) + 1,
-                         STField<short>(this,0x4b),STField<byte>(this,0x8e),st::pointer_boundary_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
+                         STField<short>(this,0x4b),STField<byte>(this,0x8e),static_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
       if (iVar2 != 0) {
         return 0xffffffff;
       }
       /* ST_CALLSITE[00417C7A]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
       uVar1 = st::fn_00401325
                         (STField<short>(this,0x47) + 1,STField<short>(this,0x49) + 1,
-                         STField<short>(this,0x4b),STField<byte>(this,0x8e),st::pointer_boundary_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
+                         STField<short>(this,0x4b),STField<byte>(this,0x8e),static_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
       return uVar1;
     }
   }
@@ -2357,7 +2371,11 @@ void __thiscall st::fn_00417FF0(void *this,byte param_1)
    Evidence: 00583E30 -> 00418010 @ 00583FA5; literal 5 at 00583FA1 | 0058E570 -> 00418010 @
    0058E6E2; literal 8 at 0058E6DE | 0058E570 -> 00418010 @ 0058EA27; literal 6 at 0058EA23 |
    0058F030 -> 00418010 @ 0058F0D7; literal 6 at 0058F0D3 | 0058F030 -> 00418010 @ 0058F12B; literal
-   6 at 0058F127 */
+   6 at 0058F127
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=11, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00418010(void *this,byte param_1)
 
@@ -2878,7 +2896,11 @@ void __thiscall st::fn_00419C30(void *this,ushort param_1)
 #line 4 "decomp/ST.exe/functions/00419C50/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00419C53 MOV AX,word ptr
-   [EBP + 0x8] */
+   [EBP + 0x8]
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00419C50(void *this,ushort param_1)
 
@@ -3254,8 +3276,7 @@ void __thiscall st::fn_0041C380(void *this,SoundPlayMode mode,int soundId)
 void __thiscall st::fn_0041C5A0(void *this)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   if ((g_visibleClass_00802A88 != nullptr) &&
      ((STField<byte>(this,0x1d1) & 1) == 0)) {
     /* ST_CALLSITE[0041C5DE]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */
@@ -3305,7 +3326,7 @@ void __thiscall st::fn_0041C6E0(void *this,undefined *param_1)
   /* ST_CALLSITE[0041C6E6]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
   st::fn_0040464C(this);
   /* ST_CALLSITE[0041C6F1]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
-  st::fn_004023A1(st::pointer_boundary_cast<TLOEmbryoTy *>(this),param_1);
+  st::fn_004023A1(static_cast<TLOEmbryoTy *>(this),param_1);
   return;
 }
 
@@ -3570,6 +3591,9 @@ int __fastcall st::fn_0041CAF0(AnonShape_0041CAF0_1630B9E0 *param_1)
 // 0041CE40 FUN_0041ce40
 #line 4 "decomp/ST.exe/functions/0041CE40/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0041CE40(void *this,int param_1)
 
@@ -4069,11 +4093,10 @@ void st::fn_0041DC20(void)
    used=60, ignored=0, unknown=0
 
    [STReturnSemanticsApplier] returned_pointer_parameter.
-   Evidence: every reachable RET receives full EAX from the same incoming pointer parameter param_1
-   (ordinal=0); no intervening full or partial accumulator definition changes that value; machine
-   CFG audit: used=60, ignored=0, unknown=0 */
+   Evidence: the complete machine CFG returns incoming pointer parameter param_1 (ordinal=0);
+   restore its exact formal pointer type after the obsolete void-pointer normalization */
 
-undefined4 * st::fn_0041DC40(undefined4 *param_1,short param_2,ushort param_3,short param_4)
+uint * st::fn_0041DC40(undefined4 *param_1,short param_2,ushort param_3,short param_4)
 
 {
   uint uVar1;
@@ -4082,8 +4105,7 @@ undefined4 * st::fn_0041DC40(undefined4 *param_1,short param_2,ushort param_3,sh
   int iVar4;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   short in_stack_0000000a;
-  undefined4 local_c;
-
+  uint local_c;
   iVar4 = (int)param_4;
   uVar1 = st::fn_006AFF50(iVar4);
   uVar2 = st::fn_006AFF5B(iVar4);
@@ -4107,7 +4129,7 @@ void __thiscall st::fn_0041DD00(void *this,int param_1)
 
 {
   float fVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   float fVar4;
   float fVar5;
@@ -4186,7 +4208,7 @@ void __thiscall st::fn_0041DD00(void *this,int param_1)
     }
   }
   /* ST_CALLSITE[0041DD26]: CALL 0x0040381e; direct=0040381E STSprGameObjC::LoadActFrame */
-  st::fn_0040381E(st::pointer_boundary_cast<STSprGameObjC *>(this));
+  st::fn_0040381E(static_cast<STSprGameObjC *>(this));
   if (((0 < STField<int>(this,0x105)) && (STField<uint>(this,0x24) == (uint)DAT_0080874d)) &&
      (STField<int>(this,0x20) != 0x14)) {
     st::fn_006E6710
@@ -4328,7 +4350,7 @@ void __fastcall st::fn_0041F390(int param_1)
 void __fastcall st::fn_0041F3B0(STSprGameObjC *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   uint uVar3;
   uint uVar4;
@@ -4432,13 +4454,17 @@ LAB_0041f5a0:
 
 // 0041F630 FUN_0041f630
 #line 4 "decomp/ST.exe/functions/0041F630/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __fastcall st::fn_0041F630(AnonShape_0041F630_B1BEE81C *param_1)
 
 {
   byte bVar1;
   byte bVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar4;
   uint uVar5;
   bool bVar6;

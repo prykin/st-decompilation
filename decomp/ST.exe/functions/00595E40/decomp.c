@@ -17,13 +17,13 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   ushort *puVar4;
   ushort *local_EAX_284;
   ushort *local_EAX_317;
-  void *pvVar4;
+  HPALETTE pHVar4;
   FSGSTy_field_1FB3DArray *pFVar5;
   ccFntTy *pcVar6;
   StartServTy *pSVar7;
   int local_EAX_679;
   AnonPointee_FSGSTy_1A97 *pAVar8;
-  undefined4 *puVar9;
+  uint *puVar9;
   LPSTR text;
   ushort *local_EAX_811;
   int uVar11;
@@ -93,8 +93,8 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_450,0,0x100,0x8b,0x15,
              (undefined4 *)&(this_01->array_00BC[0xc].field_01DB)->field_0x144);
-  pvVar4 = (void *)FUN_006c6a60(this_01->field_005D);
-  this_01->array_00BC[0xc].field_01E7 = pvVar4;
+  pHVar4 = FUN_006c6a60(this_01->field_005D);
+  this_01->array_00BC[0xc].field_01E7 = pHVar4;
   this_01->field_1F5B = this_01->field_0008;
   this_01->field_1F3B = this_01->field_0008;
   this_01->field_1F5F = 2;
@@ -126,7 +126,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   *(undefined4 *)(pSVar7 + 0x5c) = 0;
   puVar10 = this_01->field_005D + 0x14;
   iVar14 = 1;
-  local_EAX_679 = FUN_006b4fe0((int)this_01->field_005D);
+  local_EAX_679 = FUN_006b4fe0(this_01->field_005D);
   pAVar8 = (AnonPointee_FSGSTy_1A97 *)
            FUN_006b50c0(0x24d,0x59,(uint)this_01->field_005D[7],local_EAX_679,(undefined4 *)puVar10,
                         iVar14);
@@ -159,7 +159,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
             );
   iVar14 = 1;
   puVar10 = this_01->field_005D + 0x14;
-  uVar11 = FUN_006b4fe0((int)this_01->field_005D);
+  uVar11 = FUN_006b4fe0(this_01->field_005D);
   puVar10 = (ushort *)
             FUN_006b50c0(0x1b8,0x106,(uint)this_01->field_005D[7],uVar11,(undefined4 *)puVar10,
                          iVar14);

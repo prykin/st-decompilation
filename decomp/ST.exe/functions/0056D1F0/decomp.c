@@ -14,7 +14,7 @@ undefined4 __thiscall STAppC::CommonFunction(STAppC *this)
 {
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   InternalExceptionFrame local_4c;
   STAppC *local_8;
 

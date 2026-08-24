@@ -13,8 +13,7 @@ void __thiscall TradePanelTy::sub_00551800(TradePanelTy *this)
   uint uVar2;
   int iVar2;
   uint uVar3;
-  undefined4 uVar4;
-
+  uint uVar4;
   iVar1 = this->field_01C8;
   if ((&this->field_01BC)[(byte)this->field_01D0] == 0) {
     if (iVar1 != 0) {

@@ -10,7 +10,11 @@
    00599AA9; data at 008075A8 | 005AACB0 -> 006B2800 @ 005AADE6; data at 008075A8 | 005AACB0 ->
    006B2800 @ 005AAE05; data at 008075A8 | 005E1330 -> 006B2800 @ 005E1E3B; data at 008075A8 |
    005E1330 -> 006B2800 @ 005E21BE; data at 008075A8 | 005E1330 -> 006B2800 @ 005E281E; data at
-   008075A8 */
+   008075A8
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=20, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void FUN_006b2800(DDXContext_008075A8 *param_1,uint param_2,uint param_3,uint param_4)
 

@@ -11,7 +11,7 @@ byte * __thiscall STAllPlayersC::FUN_00622990(STAllPlayersC *this,uint *param_1)
   int iVar1;
   uint uVar2;
   AnonShape_00622990_E4CFDE96 *pAVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   uint *puVar5;
   AnonShape_00622990_E4CFDE96 *pAVar6;
   uint *puVar7;

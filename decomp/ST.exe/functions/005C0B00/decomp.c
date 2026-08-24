@@ -22,7 +22,7 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
   byte *pbVar4;
   AnonPointee_MReportTy_0077 *pAVar5;
   int errorCode;
-  undefined4 *puVar6;
+  uint *puVar6;
   int iVar7;
   char cVar8;
   uint uVar9;

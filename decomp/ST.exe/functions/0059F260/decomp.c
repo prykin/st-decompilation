@@ -14,7 +14,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   uint uVar3;
   int local_EAX_198;
   LPBITMAPINFO ptVar4;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar7;
   int iVar8;
   int iVar9;
@@ -58,7 +58,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     }
     iVar8 = 1;
     puVar11 = this_00->field_005D + 0x14;
-    uVar3 = FUN_006b4fe0((int)this_00->field_005D);
+    uVar3 = FUN_006b4fe0(this_00->field_005D);
     local_EAX_198 =
          FUN_006b50c0(0x2e1,0x175,(uint)this_00->field_005D[7],uVar3,(undefined4 *)puVar11,iVar8);
     this_00->field_1E8E = local_EAX_198;

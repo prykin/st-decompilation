@@ -5,7 +5,11 @@
    Evidence: 00755830 -> 007574C0 @ 00755958
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 00755830 -> 007574C0 @ 00755958 */
+   Evidence: 00755830 -> 007574C0 @ 00755958
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void FUN_007574c0(AnonShape_00753C80_4C8E695D *param_1,int param_2,uint *param_3,int param_4)
 

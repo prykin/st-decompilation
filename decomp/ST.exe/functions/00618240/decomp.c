@@ -28,15 +28,15 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
   int iVar16;
   byte *puVar17;
   STWorldObject *this_00;
-  undefined1 *puVar18;
+  byte *puVar18;
   bool bVar19;
   uint auStack_bc [4];
   undefined4 uStack_ac;
   short local_84 [2];
   int local_80;
-  undefined1 *local_6c;
+  byte *local_6c;
   int local_64;
-  undefined1 *local_60;
+  byte *local_60;
   int local_5c;
   int local_58 [2];
   short local_50 [2];
@@ -48,9 +48,9 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
   int local_2c;
   int local_24;
   short local_20 [2];
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
@@ -174,7 +174,7 @@ LAB_0061856a:
                         auStack_bc[iVar14 * -0x78 + 2] = (uint)local_50;
                         auStack_bc[iVar14 * -0x78 + 1] = 0x6185a2;
                         thunk_FUN_00416270(this_00,(uint *)auStack_bc[iVar14 * -0x78 + 2],
-                                           (int *)auStack_bc[iVar14 * -0x78 + 3],
+                                           (short *)auStack_bc[iVar14 * -0x78 + 3],
                                            (short *)auStack_bc[iVar14 * -0x78 + 4]);
                         puVar17 = (byte *)(local_60 + iVar12 * 0x2c);
                         *puVar17 = this_00[1].vtable;

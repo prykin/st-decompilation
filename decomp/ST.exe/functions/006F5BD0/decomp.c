@@ -7,15 +7,14 @@ FUN_006f5bd0(undefined1 *param_1,int param_2,byte *param_3,int param_4,int param
 {
   byte bVar1;
   bool bVar2;
-  undefined1 uVar3;
+  byte uVar3;
   uint uVar4;
   uint uVar5;
   uint uVar6;
   int iVar7;
   int iVar8;
   byte *pbVar9;
-  undefined1 *puVar10;
-
+  byte *puVar10;
   uVar3 = 0;
   do {
     uVar4 = (uint)*param_3;

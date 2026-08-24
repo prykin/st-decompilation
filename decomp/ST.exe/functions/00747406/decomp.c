@@ -8,8 +8,7 @@ undefined4 __thiscall FUN_00747406(void *this,undefined4 param_1,int *param_2,un
 
 {
   int *piVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   piVar1 = STField<int *>(this,0x44);
   if (piVar1 == nullptr) {
     uVar2 = 0x80004001;

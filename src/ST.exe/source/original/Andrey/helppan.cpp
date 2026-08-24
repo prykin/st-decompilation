@@ -49,22 +49,22 @@ void __thiscall st::fn_00510E30(HelpPanelTy *this)
   uint uVar11;
   uint uVar12;
   HelpPanelTy_field_01BBElement *element_01bb_2;
-  undefined4 uVar14;
+  uint uVar14;
   int iVar15;
-  undefined4 uVar16;
+  uint uVar16;
   int iVar17;
   short sVar18;
   ushort uVar19;
   byte bVar20;
-  undefined4 uVar21;
+  uint uVar21;
   char *pcVar22;
   int *piVar23;
   int iVar24;
   ushort *puVar25;
-  undefined4 uVar26;
+  uint uVar26;
   int iVar27;
-  undefined4 *puVar28;
-  undefined4 uVar29;
+  uint *puVar28;
+  uint uVar29;
   InternalExceptionFrame local_6c;
   undefined4 local_28;
   undefined4 local_24;
@@ -224,7 +224,7 @@ LAB_00510fa9:
   local_EAX_739 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar6,piVar23,iVar27);
   this_00->field_024C = local_EAX_739;
   /* ST_CALLSITE[0051112C]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-  pcVar7 = (ccFntTy *)st::fn_0070DF00(0x19d,g_interSystem_00802A28->field_0028);
+  pcVar7 = (ccFntTy *)st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
   this_00->field_01E0 = pcVar7;
   pcVar7->field_0058 = 0;
   pcVar7->field_005C = 0;
@@ -254,11 +254,11 @@ LAB_00510fa9:
   this_00->field_0224 = local_EAX_911;
   local_EAX_945 =
        st::fn_00709AF0
-                 (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c20a0),0xffffffff,0,1,0,nullptr);
+                 (PTR_00806794,CASE_B,(char *)&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
   this_00->field_0230 = local_EAX_945;
   local_EAX_976 =
        st::fn_00709AF0
-                 (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c38c8),0xffffffff,0,1,0,nullptr);
+                 (PTR_00806794,CASE_B,(char *)&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
   this_00->field_0234 = local_EAX_976;
   local_EAX_1009 =
        st::fn_00709AF0
@@ -270,7 +270,7 @@ LAB_00510fa9:
   this_00->field_022C = local_EAX_1040;
   local_EAX_1074 =
        st::fn_00709AF0
-                 (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c2048),0xffffffff,0,1,0,nullptr);
+                 (PTR_00806794,CASE_B,(char *)&DAT_007c2048,0xffffffff,0,1,0,nullptr);
   this_00->field_0238 = local_EAX_1074;
   local_EAX_1104 =
        st::fn_00709AF0
@@ -282,7 +282,7 @@ LAB_00510fa9:
   this_00->field_023C = st::machine_word_boundary_cast<undefined4>(local_EAX_1138);
   local_EAX_1169 =
        st::fn_00709AF0
-                 (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c1910),0xffffffff,0,1,0,nullptr);
+                 (PTR_00806794,CASE_B,(char *)&DAT_007c1910,0xffffffff,0,1,0,nullptr);
   this_00->field_0240 = st::machine_word_boundary_cast<undefined4>(local_EAX_1169);
   local_EAX_1202 =
        st::fn_00709AF0
@@ -295,14 +295,14 @@ LAB_00510fa9:
   iVar27 = *(int *)&pcVar7->field_0x8a;
   iVar24 = 1;
   puVar25 = this_00->field_01DC + 0x14;
-  uVar17 = st::fn_006B4FE0((int)this_00->field_01DC);
+  uVar17 = st::fn_006B4FE0(this_00->field_01DC);
   local_EAX_1285 =
        st::fn_006B50C0(0x19c,iVar27 + 1,(uint)this_00->field_01DC[7],uVar17,(undefined4 *)puVar25,
                     iVar24);
   this_00->field_01EC = (ushort *)local_EAX_1285;
   iVar27 = 1;
   puVar25 = this_00->field_01DC + 0x14;
-  local_EAX_1308 = st::fn_006B4FE0((int)this_00->field_01DC);
+  local_EAX_1308 = st::fn_006B4FE0(this_00->field_01DC);
   pAVar8 = (AnonPointee_HelpPanelTy_0218 *)
            st::fn_006B50C0(0x19c,600,(uint)this_00->field_01DC[7],local_EAX_1308,(undefined4 *)puVar25,
                         iVar27);
@@ -511,7 +511,11 @@ void __thiscall st::fn_00511760(HelpPanelTy *this)
    HelpPanelTy::CheckBkView
    [STAbiConsistencyApplier] stack_parameter_width target=parameter:2: parameter=/ushort Evidence:
    entry-use width=/ushort; unmasked_dword_reads=0; evidence=00511ACA MOV ECX,dword ptr [EBP + 0xc];
-   first-use mask */
+   first-use mask
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=12, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00511AB0(HelpPanelTy *this,int param_1,ushort param_2)
 
@@ -522,7 +526,7 @@ void __thiscall st::fn_00511AB0(HelpPanelTy *this,int param_1,ushort param_2)
   int iVar4;
   int uVar5;
   AnonPointee_HelpPanelTy_0218 *pAVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar8;
   uint uVar6;
   ushort *puVar7;
@@ -543,7 +547,7 @@ void __thiscall st::fn_00511AB0(HelpPanelTy *this,int param_1,ushort param_2)
       pAVar4 = local_c->field_0218;
       slotStorage = &local_c->field_0218;
       puVar7 = local_c->field_01DC + 0x14;
-      uVar5 = st::fn_006B4FE0((int)local_c->field_01DC);
+      uVar5 = st::fn_006B4FE0(local_c->field_01DC);
       pAVar4 = (AnonPointee_HelpPanelTy_0218 *)
                st::fn_006B50C0(pAVar4->field_0004,st::machine_word_boundary_cast<int>(pAVar4->field_0008 + 0x32),(uint)pHVar3->field_01DC[7]
                             ,uVar5,(undefined4 *)puVar7,iVar9);
@@ -753,7 +757,7 @@ undefined4 __thiscall st::fn_00511FA0(HelpPanelTy *this,char param_1)
   HelpPanelTy *this_00;
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 
@@ -844,7 +848,11 @@ undefined4 __thiscall st::fn_00511FA0(HelpPanelTy *this,char param_1)
 #line 4 "decomp/ST.exe/functions/005123A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
-   HelpPanelTy::CreateList */
+   HelpPanelTy::CreateList
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_005123A0(HelpPanelTy *this)
 
@@ -1037,7 +1045,11 @@ void __thiscall st::fn_005123A0(HelpPanelTy *this)
 #line 4 "decomp/ST.exe/functions/00512830/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
-   HelpPanelTy::CreateSlider */
+   HelpPanelTy::CreateSlider
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00512830(HelpPanelTy *this,int param_1)
 
@@ -1384,7 +1396,7 @@ void __thiscall st::fn_00512BE0(HelpPanelTy *this,int param_1)
 void __thiscall st::fn_00513030(HelpPanelTy *this,int *param_1,int param_2)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   DArrayTy *array;
   AnonPointee_HelpPanelTy_01B3 *pAVar2;
   bool bVar4;
@@ -1638,7 +1650,11 @@ void __thiscall st::fn_005134B0(HelpPanelTy *this)
 #line 4 "decomp/ST.exe/functions/005135F0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
-   HelpPanelTy::HomeBut */
+   HelpPanelTy::HomeBut
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_005135F0(HelpPanelTy *this)
 
@@ -1834,7 +1850,11 @@ void __thiscall st::fn_00513810(HelpPanelTy *this)
 #line 4 "decomp/ST.exe/functions/00513A40/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
-   HelpPanelTy::IndexBut */
+   HelpPanelTy::IndexBut
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=8, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00513A40(HelpPanelTy *this)
 
@@ -2074,7 +2094,11 @@ LAB_00513e3e:
 #line 4 "decomp/ST.exe/functions/00513FA0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
-   HelpPanelTy::NextBut */
+   HelpPanelTy::NextBut
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00513FA0(HelpPanelTy *this)
 
@@ -2584,7 +2608,7 @@ switchD_00514a29_caseD_5:
 void __thiscall st::fn_00514F10(HelpPanelTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   HelpPanelTy *this_00;
   int iVar3;
   DArrayTy *pDVar4;
@@ -2683,7 +2707,7 @@ void __thiscall st::fn_00515310(HelpPanelTy *this,UINT param_1,int param_2,UINT 
   char *pcVar7_mg1;
   char *pcVar7_mg2;
   uint *puVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   uint uVar9;
   char *pcVar10;
   UINT resourceId;
@@ -2901,7 +2925,7 @@ st::fn_00515900
   UINT UVar6;
   char *pcVar7;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   Global_sub_005259B0_param_1Enum GVar9;
   HINSTANCE pHVar10;
   InternalExceptionFrame local_6c;
@@ -3051,7 +3075,7 @@ void __thiscall st::fn_00515C00(HelpPanelTy *this,int *param_1,UINT param_2)
     memmove(pcVar6, pcVar5, uVar8); /* compiler REP MOVS byte copy */
     st::fn_00712D30
               (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a,st::mutable_c_string(" ,.;:!?/\\()[]{}"),
-               (uint *)&DAT_007c21ec,0x19c,st::pointer_boundary_cast<char *>(&DAT_007c2198),1);
+               (uint *)&DAT_007c21ec,0x19c,(char *)&DAT_007c2198,1);
     iVar3 = st::fn_007113E0(this_00->field_01E0,&DAT_0080f33a);
     /* ST_CALLSITE[00515D08]: CALL 0x00401870; direct=00401870 HelpPanelTy::CheckBkView */
     st::fn_00401870(this_00,*param_1,(ushort)iVar3);
@@ -3126,8 +3150,8 @@ st::fn_00515E30(HelpPanelTy *this,int *param_1,char param_2,int param_3,int para
     return;
   }
   if (DAT_007e68a0 != '\0') {
-    pcVar7 = st::pointer_boundary_cast<char *>(&DAT_007e68a0);
-    local_10 = st::pointer_boundary_cast<int *>(&DAT_007e68a5);
+    pcVar7 = (char *)&DAT_007e68a0;
+    local_10 = reinterpret_cast<int *>(&DAT_007e68a5);
     do {
       if (((*pcVar7 == param_2) && (local_10[-1] == param_3)) && (*local_10 == param_4)) {
         local_c = (int *)((int)local_10 + 5);
@@ -3319,11 +3343,11 @@ void __thiscall st::fn_00516480(HelpPanelTy *this,uint param_1,char param_2)
   HelpPanelTy_field_01A1State HVar1;
   AnonPointee_HelpPanelTy_0218 *pAVar2;
   HelpPanelTy *this_00;
-  undefined1 uVar4;
+  byte uVar4;
   int local_EAX_36;
   uint uVar5;
   char *pcVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   BITMAPINFO *pBVar8;
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -3524,7 +3548,7 @@ void __thiscall st::fn_00516A40(HelpPanelTy *this,uint param_1,byte param_2,char
   HelpPanelTy_field_01A1State HVar2;
   HelpPanelTy *this_00;
   BITMAPINFO *pBVar4;
-  undefined1 uVar5;
+  byte uVar5;
   ushort uVar6;
   int local_EAX_70;
   UINT UVar7;
@@ -4232,7 +4256,7 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
       iVar15 = -3;
       pcVar5_mgA = st::fn_006B0140(0x562b,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,pcVar5_mgA,iVar15,iVar17,uVar19);
-      local_18 = st::pointer_boundary_cast<char *>(&pAVar10->field_0x19);
+      local_18 = (char *)&pAVar10->field_0x19;
       pGVar12 = (Global_sub_00526BA0_param_1Enum *)&pAVar10->field_0x11;
       local_1c = 2;
       do {
@@ -4790,7 +4814,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       iVar13 = 1;
       pcVar7 = st::fn_006B0140(0x5658,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,pcVar7,iVar13,iVar14,uVar16);
-      piVar9 = st::pointer_boundary_cast<int *>(&DAT_007dfc70);
+      piVar9 = reinterpret_cast<int *>(&DAT_007dfc70);
       local_c = DAT_007dfc70;
       local_18 = (Global_sub_00528060_param_1Enum *)0x28;
       iVar13 = DAT_007dfc70;
@@ -4825,7 +4849,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
       iVar13 = 1;
       pcVar7 = st::fn_006B0140(0x564d,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,pcVar7,iVar13,iVar14,uVar16);
-      piVar9 = st::pointer_boundary_cast<int *>(&DAT_007e04a0);
+      piVar9 = reinterpret_cast<int *>(&DAT_007e04a0);
       local_c = DAT_007e04a0;
       local_18 = (Global_sub_00528060_param_1Enum *)0x28;
       iVar13 = DAT_007e04a0;
@@ -5549,7 +5573,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
   HINSTANCE pHVar12;
   char cVar13;
   int iVar14;
-  undefined4 uVar15;
+  uint uVar15;
   int iVar16;
   int iVar18;
   Global_sub_005259B0_param_1Enum GVar19;
@@ -5759,7 +5783,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
       }
       else {
         iVar16 = 0;
-        piVar10 = st::pointer_boundary_cast<int *>(&DAT_007d2234);
+        piVar10 = reinterpret_cast<int *>(&DAT_007d2234);
         do {
           if (*piVar10 != -1) {
             local_40 = (&DAT_007d2234)[iVar16];
@@ -5769,7 +5793,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
           piVar10 = piVar10 + 1;
           iVar16 = iVar16 + 1;
         } while ((int)piVar10 < 0x7d22e8);
-        piVar10 = st::pointer_boundary_cast<int *>(&DAT_007d2234);
+        piVar10 = reinterpret_cast<int *>(&DAT_007d2234);
         do {
           iVar16 = *piVar10;
           if (iVar16 != -1) {
@@ -5887,7 +5911,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
       iVar14 = -3;
       pcVar6_mgF = st::fn_006B0140(0x5660,g_hINSTANCE_00807618);
       st::fn_007119C0(this_00->field_01E0,pcVar6_mgF,iVar14,iVar16,uVar20);
-      local_14 = st::pointer_boundary_cast<int *>(&DAT_007a8b1c);
+      local_14 = reinterpret_cast<int *>(&DAT_007a8b1c);
       local_c = CASE_1;
       do {
         GVar9 = local_c;
@@ -5943,7 +5967,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
         local_14 = local_14 + 1;
         local_c = GVar9 + CASE_1;
       } while ((int)GVar9 < 0x28);
-      local_14 = st::pointer_boundary_cast<int *>(&DAT_007a8cfc);
+      local_14 = reinterpret_cast<int *>(&DAT_007a8cfc);
       local_c = CASE_1;
       do {
         GVar9 = local_c;
@@ -5999,7 +6023,7 @@ void __thiscall st::fn_0051B5A0(HelpPanelTy *this,int param_1,int param_2,char p
         local_14 = local_14 + 1;
         local_c = GVar9 + CASE_1;
         if (0x27 < (int)GVar9) {
-          piVar10 = st::pointer_boundary_cast<int *>(&DAT_00792ca0);
+          piVar10 = reinterpret_cast<int *>(&DAT_00792ca0);
           local_c = CASE_32;
           do {
             local_18 = 2;
@@ -6585,7 +6609,7 @@ LAB_0051d689:
     memmove(pcVar11, pcVar9, uVar7); /* compiler REP MOVS byte copy */
     st::fn_00712D30
               (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a,st::mutable_c_string(" ,.;:!?/\\()[]{}"),
-               (uint *)&DAT_007c21ec,0x19c,st::pointer_boundary_cast<char *>(&DAT_007c2198),1);
+               (uint *)&DAT_007c21ec,0x19c,(char *)&DAT_007c2198,1);
     uVar10 = st::fn_007113E0(this_00->field_01E0,&DAT_0080f33a);
     local_c = uVar10;
     /* ST_CALLSITE[0051D71B]: CALL 0x00401870; direct=00401870 HelpPanelTy::CheckBkView */
@@ -6678,7 +6702,7 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
   int iVar8;
   int iVar9;
   int *piVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
   HelpPanelTy_field_01D7Element *pHVar12;
   BITMAPINFO *pBVar13;
   char *pcVar13_mg1;
@@ -6711,7 +6735,7 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
   uint local_14;
   undefined4 *local_10;
   uint local_c;
-  UINT *local_8;
+  UINT *local_8_mg0;
 
   local_84.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_84;
@@ -6760,7 +6784,7 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
       if (MESS_SHARED_0060 < SVar3) {
         if (SVar3 == MESS_SHARED_0061) {
           local_c = (uint)(message->arg1).words.low;
-          local_8 = (UINT *)(uint)(message->arg1).words.high;
+          local_8_mg0 = (UINT *)(uint)(message->arg1).words.high;
           if (this_00->field_0172 != CASE_1) {
             g_currentExceptionFrame = local_84.previous;
             return 0;
@@ -6795,13 +6819,13 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
               local_2c = piVar10[1] + local_18 + 0x16 + this_00->field_0044;
               local_28 = piVar10[2];
               if (((((int)local_c < local_30) || (local_28 + local_30 <= (int)local_c)) ||
-                  ((int)local_8 < local_2c)) || (local_24 + local_2c <= (int)local_8)) {
+                  ((int)local_8_mg0 < local_2c)) || (local_24 + local_2c <= (int)local_8_mg0)) {
                 bVar24 = false;
               }
               else {
                 bVar24 = true;
               }
-              if ((bVar24) && ((int)local_8 < this_00->field_0044 + 300)) break;
+              if ((bVar24) && ((int)local_8_mg0 < this_00->field_0044 + 300)) break;
               local_1c = (int *)((int)local_1c + 1);
               if (local_14 <= local_1c) {
                 g_currentExceptionFrame = local_84.previous;
@@ -6911,7 +6935,7 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
             local_28 = pHVar12->field_0008;
             local_24 = pHVar12->field_000C;
             if (((((int)local_c < local_30) || (local_28 + local_30 <= (int)local_c)) ||
-                ((int)local_8 < local_2c)) || (local_24 + local_2c <= (int)local_8)) {
+                ((int)local_8_mg0 < local_2c)) || (local_24 + local_2c <= (int)local_8_mg0)) {
               bVar24 = false;
             }
             else {
@@ -6921,7 +6945,7 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
               g_currentExceptionFrame = local_84.previous;
               return 0;
             }
-            if (this_00->field_0044 + 300 <= (int)local_8) {
+            if (this_00->field_0044 + 300 <= (int)local_8_mg0) {
               g_currentExceptionFrame = local_84.previous;
               return 0;
             }
@@ -7083,14 +7107,14 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
         case CASE_5:
         case CASE_B:
         case CASE_C:
-          local_8 = nullptr;
+          local_8_mg0 = nullptr;
           local_14 = this_00->field_01D7->count;
           if ((undefined4 *)local_14 != 0) {
             do {
-              if (local_8 < local_14) {
+              if (local_8_mg0 < local_14) {
                 /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
                 piVar10 = (int *)((int)&this_00->field_01D7->data->field_0000 +
-                                 this_00->field_01D7->elementSize * (int)local_8);
+                                 this_00->field_01D7->elementSize * (int)local_8_mg0);
               }
               else {
                 piVar10 = nullptr;
@@ -7110,21 +7134,21 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
                 bVar24 = true;
               }
               if ((bVar24) && ((int)local_c < this_00->field_0044 + 300)) goto LAB_0051e1b2;
-              local_8 = (UINT *)((int)local_8 + 1);
-            } while (local_8 < local_14);
+              local_8_mg0 = (UINT *)((int)local_8_mg0 + 1);
+            } while (local_8_mg0 < local_14);
           }
           break;
         case CASE_6:
           if (this_00->field_01A3 == (void *)0x1) {
-            local_8 = (UINT *)&DAT_007c2b58;
+            local_8_mg0 = (UINT *)&DAT_007c2b58;
             local_14 = 0x33;
           }
           else if (this_00->field_01A3 == (void *)0x2) {
-            local_8 = (UINT *)&DAT_007c2df0;
+            local_8_mg0 = (UINT *)&DAT_007c2df0;
             local_14 = 0x39;
           }
           else {
-            local_8 = &DAT_007c30d8;
+            local_8_mg0 = &DAT_007c30d8;
             local_14 = 0x46;
           }
           uVar21 = 0;
@@ -7134,10 +7158,10 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
             local_1c = (int *)(uint)(ushort)this_00->field_01AF;
             do {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_40 = *(int *)((int)local_8 + (uint)uVar21 * 0xd + 5) + 0x21 +
+              local_40 = *(int *)((int)local_8_mg0 + (uint)uVar21 * 0xd + 5) + 0x21 +
                          this_00->field_003C;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_3c = (*(int *)((int)local_8 + (uint)uVar21 * 0xd + 9) -
+              local_3c = (*(int *)((int)local_8_mg0 + (uint)uVar21 * 0xd + 9) -
                          (uint)(ushort)this_00->field_01B1 * this_00->field_01C3) + (int)local_1c +
                          0x16 + this_00->field_0044;
               if ((((int)local_18 < local_40) || (local_40 + 0x1a <= (int)local_18)) ||
@@ -7150,8 +7174,8 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
               if ((bVar24) && ((int)local_c < this_00->field_0044 + 300)) {
                 local_10 = (undefined4 *)
                            st::fn_00404B29(*(Global_sub_00528060_param_1Enum *)
-                                               ((int)local_8 + (uint)uVar21 * 0xd),
-                                              *(char *)((int)local_8 + (uint)uVar21 * 0xd + 4));
+                                               ((int)local_8_mg0 + (uint)uVar21 * 0xd),
+                                              *(char *)((int)local_8_mg0 + (uint)uVar21 * 0xd + 4));
                 if (local_10 != (undefined4 *)0x2711) goto LAB_0051e1b2;
                 local_10 = nullptr;
                 break;
@@ -7190,21 +7214,21 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
       uVar18 = (uint)(message->arg0).words.low;
       if (uVar18 < pHVar19->count) {
         if (HVar2 == 0) {
-          local_8 = (UINT *)(this_00->field_01B3->field_0008 * uVar18 +
-                            this_00->field_01B3->field_001C);
+          local_8_mg0 = (UINT *)(this_00->field_01B3->field_0008 * uVar18 +
+                                this_00->field_01B3->field_001C);
         }
         else {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          local_8 = (UINT *)((int)&this_00->field_01BB->data->resourceId +
-                            this_00->field_01BB->elementSize * uVar18);
+          local_8_mg0 = (UINT *)((int)&this_00->field_01BB->data->resourceId +
+                                this_00->field_01BB->elementSize * uVar18);
         }
       }
       else {
-        local_8 = nullptr;
+        local_8_mg0 = nullptr;
       }
-      if (local_8 != nullptr) {
+      if (local_8_mg0 != nullptr) {
         bVar24 = (message->arg0).words.high == 1;
-        local_18 = *local_8;
+        local_18 = *local_8_mg0;
         if (DAT_0080874e == '\x03') {
           local_1c = (int *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(!bVar24));
         }
@@ -7249,11 +7273,11 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
         pcVar23 = (char *)&DAT_0080f33a;
         memmove(pcVar23, pcVar25, uVar18); /* compiler REP MOVS byte copy */
         puVar14 = st::fn_0072E560(&DAT_0080f33a,'\n');
-        pUVar8 = local_8;
-        while (local_8 = pUVar8, puVar14 != nullptr) {
+        pUVar8 = local_8_mg0;
+        while (local_8_mg0 = pUVar8, puVar14 != nullptr) {
           *(undefined1 *)puVar14 = 0x20;
           puVar14 = st::fn_0072E560(puVar14,'\n');
-          pUVar8 = local_8;
+          pUVar8 = local_8_mg0;
         }
         st::fn_007119C0(this_00->field_01E4,(char *)&DAT_0080f33a,
                        (uint)STField<byte>(pUVar8,0x11) * 0x14 + 10,-1,(uint)local_1c & 0xff);
@@ -7269,10 +7293,10 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
           iVar9 = (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC)->field_0008 / 2;
           st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar16,iVar9,iVar16 + 8,
                        iVar9,(byte)local_1c,0xd);
-          if (STField<char>(local_8,0x13) == '\0') {
+          if (STField<char>(local_8_mg0,0x13) == '\0') {
             iVar9 = *(int *)(this_00->field_01EC + 4);
           }
-          iVar16 = (uint)STField<byte>(local_8,0x11) * 0x14;
+          iVar16 = (uint)STField<byte>(local_8_mg0,0x11) * 0x14;
           st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar16,0,iVar16,iVar9,
                        (byte)local_10,0xd);
           local_14 = 0;
@@ -7291,7 +7315,7 @@ joined_r0x0051eec7:
             }
             if ((iVar9 == 0) || (bVar22 = ((byte *)iVar9)[0x11], bVar22 == 0)) goto LAB_0051ef61;
             uVar18 = local_c;
-            if (bVar22 < STField<byte>(local_8,0x11)) {
+            if (bVar22 < STField<byte>(local_8_mg0,0x11)) {
               do {
                 uVar18 = uVar18 - 1;
                 if ((int)uVar18 < 1) goto joined_r0x0051eec7;
@@ -7561,13 +7585,13 @@ switchD_0051e4d9_caseD_6:
                (uint)(ushort)this_00->field_01B1 * this_00->field_01C3) + (int)local_1c + 0x16 +
                this_00->field_0044;
     if ((((int)local_c < local_30) || (local_30 + 0x1a <= (int)local_c)) ||
-       (((int)local_8 < local_2c || (local_2c + 0xe <= (int)local_8)))) {
+       (((int)local_8_mg0 < local_2c || (local_2c + 0xe <= (int)local_8_mg0)))) {
       bVar24 = false;
     }
     else {
       bVar24 = true;
     }
-    if ((bVar24) && ((int)local_8 < this_00->field_0044 + 300)) break;
+    if ((bVar24) && ((int)local_8_mg0 < this_00->field_0044 + 300)) break;
     uVar21 = uVar21 + 1;
     if ((ushort)local_18 <= uVar21) {
       g_currentExceptionFrame = local_84.previous;

@@ -8,7 +8,7 @@
 int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   AiTactClassTy *this_00;
   int local_EAX_35;
   int iVar4;

@@ -18,7 +18,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   uint uVar4;
   char *pcVar6;
   char *pcVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   char cVar9;
   uint *puVar10;
   InternalExceptionFrame local_54;

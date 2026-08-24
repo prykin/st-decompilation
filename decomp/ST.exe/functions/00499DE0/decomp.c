@@ -15,7 +15,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   dword dVar4;
   int iVar6;
   STGameObjC *this_01;
-  undefined4 uVar7;
+  uint uVar7;
   DArrayTy *pDVar8;
   int iVar5;
   ushort *puVar9;

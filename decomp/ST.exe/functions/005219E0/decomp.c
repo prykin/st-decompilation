@@ -10,7 +10,7 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
 {
   IntercomPanelTy *pIVar2;
   int iVar3;
-  undefined4 *puVar3;
+  uint *puVar3;
   LPSTR text;
   ushort *puVar4;
   uint uVar5;
@@ -41,7 +41,7 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
     puVar6 = puVar4 + 0x14;
     iVar10 = 1;
     pIVar2->field_0184 = puVar4;
-    uVar5 = FUN_006b4fe0((int)puVar4);
+    uVar5 = FUN_006b4fe0(puVar4);
     puVar6 = (ushort *)
              FUN_006b50c0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
                           (uint)pIVar2->field_0184[7],uVar5,(undefined4 *)puVar6,iVar10);

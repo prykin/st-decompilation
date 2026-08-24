@@ -7,11 +7,11 @@ undefined4 FUN_00693eb0(int param_1,int param_2)
 
 {
   int iVar1;
-  undefined1 uVar2;
-  undefined1 uVar3;
-  undefined4 uVar4;
-  undefined1 *puVar5;
-  undefined1 *puVar6;
+  byte uVar2;
+  byte uVar3;
+  uint uVar4;
+  byte *puVar5;
+  byte *puVar6;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 *in_ECX;
   int iVar7;
@@ -23,8 +23,7 @@ undefined4 FUN_00693eb0(int param_1,int param_2)
   char acStack_1979 [614];
   undefined4 auStack_1713 [1473];
   int local_c;
-  undefined1 *local_8;
-
+  byte *local_8;
   iVar10 = param_2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   puVar8 = (byte *)(in_ECX);

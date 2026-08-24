@@ -10,17 +10,17 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
 {
   byte bVar1;
   int iVar2;
-  undefined1 uVar3;
+  byte uVar3;
   int iVar4;
   int iVar5;
   int iVar6;
   int *piVar7;
   uint uVar8;
   int iVar9;
-  undefined1 *puVar10;
+  byte *puVar10;
   char cVar11;
-  undefined4 *puVar12;
-  undefined1 *puVar13;
+  uint *puVar12;
+  byte *puVar13;
   int local_51c [257];
   undefined4 local_118;
   int *local_10;

@@ -29,7 +29,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
   int iVar11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined2 uVar15;
+  ushort uVar15;
   int local_EAX_826;
   int local_EAX_979;
   int local_EAX_1359;

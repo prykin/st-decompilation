@@ -4,7 +4,7 @@
 undefined4 * __thiscall FUN_0063cff0(void *this,int *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   byte *puVar4;
   byte *puVar5;

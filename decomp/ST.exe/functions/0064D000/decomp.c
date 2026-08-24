@@ -13,7 +13,7 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
   AllocationRecord_0065CD10 *pAVar3;
   AllocationRecord_0065CD10 *pAVar3_mg1;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   InternalExceptionFrame local_4c;
   AiEventClassTy *local_8;
 

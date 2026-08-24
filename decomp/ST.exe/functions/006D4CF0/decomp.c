@@ -7,7 +7,7 @@ undefined4 __cdecl FUN_006d4cf0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_
   int iVar1;
   int iVar2;
   ushort uVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
   int iVar6;
   uint uVar7;

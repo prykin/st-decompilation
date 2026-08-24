@@ -1258,7 +1258,7 @@ void st::fn_007012F0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  int param_12,byte *param_13,int param_14,int param_15,int param_16)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
   uint uVar3;
   uint uVar4;
@@ -1266,8 +1266,8 @@ void st::fn_007012F0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
   ushort *puVar6;
   byte bVar7;
   int iVar8;
-  undefined1 *puVar9;
-  undefined1 *puVar10;
+  byte *puVar9;
+  byte *puVar10;
   byte *pbVar11;
   byte *pbVar12;
   uint local_28;
@@ -1806,7 +1806,7 @@ void st::fn_00701AD0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
                  uint param_12,byte *param_13,int param_14,int param_15,int param_16)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
   uint uVar3;
   int iVar4;
@@ -1815,8 +1815,8 @@ void st::fn_00701AD0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
   ushort *puVar7;
   byte bVar8;
   int iVar9;
-  undefined1 *puVar10;
-  undefined1 *puVar11;
+  byte *puVar10;
+  byte *puVar11;
   byte *pbVar13;
   byte *pbVar14;
   uint local_28;
@@ -2525,8 +2525,8 @@ void st::fn_00702510(undefined1 *param_1,int param_2,byte *param_3,int param_4,u
   ushort *puVar5;
   ushort *puVar6;
   byte bVar7;
-  undefined1 *puVar8;
-  undefined1 *puVar9;
+  byte *puVar8;
+  byte *puVar9;
   byte *pbVar10;
   byte *pbVar11_mg0;
   uint local_10;
@@ -2848,8 +2848,8 @@ void st::fn_00702A30(undefined1 *param_1,int param_2,byte *param_3,int param_4,u
   ushort *puVar8;
   byte *pbVar9;
   byte *pbVar10;
-  undefined1 *puVar11;
-  undefined1 *puVar12;
+  byte *puVar11;
+  byte *puVar12;
   byte *pbVar12_mg0;
   uint local_10;
   uint local_c;
@@ -3300,8 +3300,8 @@ void st::fn_00703160(undefined1 *param_1,int param_2,ushort *param_3,int param_4
 {
   uint uVar1;
   uint uVar2;
-  undefined1 *puVar3;
-  undefined1 *puVar4;
+  byte *puVar3;
+  byte *puVar4;
   byte *pbVar5;
   byte *pbVar6;
   byte bVar7;
@@ -3608,8 +3608,8 @@ void st::fn_00703650(undefined1 *param_1,int param_2,ushort *param_3,int param_4
   ushort *puVar5;
   ushort *puVar6;
   byte bVar7;
-  undefined1 *puVar8;
-  undefined1 *puVar9;
+  byte *puVar8;
+  byte *puVar9;
   byte *pbVar10;
   byte *pbVar11;
   uint local_c;
@@ -4053,8 +4053,8 @@ void st::fn_00703D40(undefined1 *param_1,int param_2,byte *param_3,int param_4,u
   uint uVar2;
   byte *pbVar3;
   uint uVar4;
-  undefined1 *puVar5;
-  undefined1 *puVar6;
+  byte *puVar5;
+  byte *puVar6;
   int iVar7;
   ushort *puVar8;
   byte *pbVar9;
@@ -4449,8 +4449,8 @@ void st::fn_00704460(undefined1 *param_1,int param_2,byte *param_3,int param_4,u
   byte *pbVar8;
   int iVar9;
   byte *pbVar10;
-  undefined1 *puVar11;
-  undefined1 *puVar12;
+  byte *puVar11;
+  byte *puVar12;
   uint local_18;
   int local_14;
   byte *local_10;
@@ -5687,12 +5687,12 @@ void st::fn_007055D0(undefined1 *param_1,int param_2,byte *param_3,int param_4,i
                  int param_7,int param_8,int param_9,int param_10)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   uint uVar2;
   uint uVar3;
   int iVar4;
-  undefined1 *puVar5;
-  undefined1 *puVar6;
+  byte *puVar5;
+  byte *puVar6;
   byte bVar7;
   int iVar8;
   byte *pbVar9;
@@ -5971,7 +5971,7 @@ void st::fn_007059A0(undefined1 *param_1,int param_2,byte *param_3,int param_4,i
                  int param_7,int param_8,uint param_9,int param_10)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   uint uVar2;
   uint uVar3;
   int iVar4;
@@ -5980,13 +5980,12 @@ void st::fn_007059A0(undefined1 *param_1,int param_2,byte *param_3,int param_4,i
   byte *pbVar7;
   byte *pbVar8;
   byte *pbVar9;
-  undefined1 *puVar10;
-  undefined1 *puVar11;
-  undefined1 *puVar12;
+  byte *puVar10;
+  byte *puVar11;
+  byte *puVar12;
   uint local_10;
   uint local_c;
-  undefined1 *local_8;
-
+  byte *local_8;
   _DAT_00857000 = 1;
   pbVar7 = param_3;
   do {
@@ -6398,8 +6397,8 @@ void st::fn_00705ED0(undefined1 *param_1,int param_2,byte *param_3,int param_4,b
   uint uVar1;
   uint uVar2;
   int iVar3;
-  undefined1 *puVar4;
-  undefined1 *puVar5;
+  byte *puVar4;
+  byte *puVar5;
   byte *pbVar6;
   byte bVar7;
   byte *pbVar8_mg0;
@@ -6711,8 +6710,8 @@ void st::fn_00706340(undefined1 *param_1,int param_2,byte *param_3,int param_4,b
   byte *pbVar5;
   byte *pbVar6;
   byte bVar7;
-  undefined1 *puVar8;
-  undefined1 *puVar9;
+  byte *puVar8;
+  byte *puVar9;
   byte *pbVar10;
   byte *pbVar11;
   byte *pbVar12;
@@ -7145,7 +7144,7 @@ void st::fn_007068D0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
   int iVar1;
   uint uVar2;
   int iVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   byte bVar5;
   uint uVar6;
   byte *pbVar7;
@@ -7461,8 +7460,8 @@ void st::fn_00706E30(undefined1 *param_1,int param_2,ushort *param_3,int param_4
   uint uVar3;
   uint uVar4;
   uint uVar5;
-  undefined1 *puVar6;
-  undefined1 *puVar7;
+  byte *puVar6;
+  byte *puVar7;
   ushort *puVar8;
   ushort *puVar9;
   byte bVar10;
@@ -8094,8 +8093,8 @@ void st::fn_00707810(undefined1 *param_1,int param_2,ushort *param_3,int param_4
   ushort *puVar10;
   byte *pbVar9;
   byte *pbVar11;
-  undefined1 *puVar12;
-  undefined1 *puVar13;
+  byte *puVar12;
+  byte *puVar13;
   int *piVar14;
   int iVar15;
   int local_80 [31];
@@ -9054,15 +9053,15 @@ int __fastcall st::fn_00708650(undefined4 *param_1)
   uint *local_28;
   uint *local_24;
   uint local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079e200;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 0);
   iVar7 = 0;
@@ -9331,18 +9330,18 @@ void __thiscall st::fn_00709670(void *this,uint param_1,int param_2,int param_3,
   int iVar5;
   uint uVar6;
   int iVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000011;
   uint auStack_54 [5];
   byte abStack_40 [4];
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   puStack_c = (undefined *)&DAT_0079e210;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   if (((param_1 < STField<uint>(this,0x310)) &&
       (puVar1 = (uint *)(STField<int>(this,0x31c) + param_1 * 0x114), (*puVar1 & 0x8000) != 0))
@@ -9383,7 +9382,7 @@ void __thiscall st::fn_00709670(void *this,uint param_1,int param_2,int param_3,
     auStack_54[-uVar4] = 0x709770;
     ExceptionList = &local_14;
     st::fn_00709470
-              (st::pointer_boundary_cast<ST3DSMAPContext *>(this),(int *)auStack_54[1 - uVar4],auStack_54[2 - uVar4],auStack_54[3 - uVar4],
+              (static_cast<ST3DSMAPContext *>(this),(int *)auStack_54[1 - uVar4],auStack_54[2 - uVar4],auStack_54[3 - uVar4],
                auStack_54[4 - uVar4],abStack_40[iVar5]);
   }
   ExceptionList = local_14;
@@ -9833,7 +9832,7 @@ st::fn_0070C210(byte *param_1,undefined2 *param_2,undefined2 *param_3,DWORD *par
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
@@ -9896,7 +9895,7 @@ st::fn_0070C900(RecoveredSourceFamily_dibcopy *param_1,uint *param_2,char param_
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   uint *puVar4;
   InternalExceptionFrame local_4c;
@@ -9953,7 +9952,7 @@ undefined4 * __cdecl st::fn_0070C9E0(AnonShape_0070C9E0_7137F001 *param_1,char p
 {
   char cVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
   uint uVar5;
   uint uVar6;
@@ -9987,7 +9986,7 @@ undefined4 * __cdecl st::fn_0070C9E0(AnonShape_0070C9E0_7137F001 *param_1,char p
     iVar2 = local_c + 8 + ((int)(local_c + 8) >> 0x1f & 7U);
   }
   uVar6 = (iVar2 >> 3) * local_10;
-  puVar3 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC10(uVar6));
+  puVar3 = static_cast<uint *>(st::fn_006AAC10(uVar6));
   if (puVar3 == nullptr) {
     return nullptr;
   }
@@ -10020,22 +10019,22 @@ undefined4 * __cdecl st::fn_0070C9E0(AnonShape_0070C9E0_7137F001 *param_1,char p
 
 // 0070CAF0 FUN_0070caf0
 #line 4 "decomp/ST.exe/functions/0070CAF0/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 2.
+/* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0070CAF0 -> 0070C9E0 @ 0070CAFF
 
-   [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0070CAF0 -> 0070C9E0 @ 0070CAFF */
+   [STPrototypeRepairApplier] Propagated parameter 2.
+   Evidence: incoming stack slot is read as a int before its address is passed as a distinct output
+   lifetime */
 
-void __cdecl st::fn_0070CAF0(AnonShape_0070C9E0_7137F001 *param_1,uint *param_2,uint *param_3)
+void __cdecl st::fn_0070CAF0(AnonShape_0070C9E0_7137F001 *param_1,uint *param_2,int param_3)
 
 {
-  undefined4 *puVar1;
-
+  uint *puVar1;
   puVar1 = st::fn_0070C9E0(param_1,(char)param_3,(uint *)&param_3);
   if (puVar1 == nullptr) {
     return;
   }
-  *param_2 = (uint)param_3;
+  *param_2 = param_3;
   return;
 }
 
@@ -10079,7 +10078,7 @@ st::fn_0070CB20(uint param_1,int param_2,int *param_3,int param_4,int param_5,by
   }
   local_14 = local_54;
   auto param_10_after_write = 0; /* compiler stack-slot lifetime split */
-  local_c = st::pointer_boundary_cast<int *>(&DAT_007f014c);
+  local_c = reinterpret_cast<int *>(&DAT_007f014c);
   do {
     iVar6 = st::machine_word_boundary_cast<int>(local_c[-1] + param_1);
     iVar10 = *local_c + param_2;
@@ -10185,8 +10184,7 @@ undefined4 __cdecl st::fn_0070CDC0(byte *param_1)
 {
   byte bVar1;
   byte *pbVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   pbVar2 = param_1;
   if (*param_1 != 0) {
     bVar1 = param_1[1];

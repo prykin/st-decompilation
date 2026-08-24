@@ -4,7 +4,7 @@
 int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   int iVar3;
   uint uVar4;

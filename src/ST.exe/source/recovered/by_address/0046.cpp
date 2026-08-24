@@ -12,7 +12,7 @@ int __thiscall st::fn_004601F0(void *this,int param_1)
     STField<undefined4>(this,0xf4) = 0;
   }
   /* ST_CALLSITE[00460206]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
-  iVar1 = st::fn_00403B34(st::pointer_boundary_cast<STBoatC *>(this),param_1);
+  iVar1 = st::fn_00403B34(static_cast<STBoatC *>(this),param_1);
   if ((iVar1 == 2) && (STField<int>(this,0xf4) == 1)) {
     /* ST_CALLSITE[0046021D]: CALL dword ptr [EAX + 0x20] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -38,7 +38,7 @@ void __thiscall st::fn_004602E0(void *this,int param_1)
     STField<short>(this,0xf8) = (short)((ulonglong)(uVar1 >> 0x10) % 0x1f) + 0x1e;
   }
   /* ST_CALLSITE[00460334]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
-  st::fn_00403B34(st::pointer_boundary_cast<STBoatC *>(this),param_1);
+  st::fn_00403B34(static_cast<STBoatC *>(this),param_1);
   return;
 }
 
@@ -56,8 +56,8 @@ int __thiscall st::fn_004603B0(void *this,STTorpC *param_1)
   uint uVar2;
   int iVar3;
   int iVar4;
-  undefined4 uVar5;
-  undefined2 uVar6;
+  uint uVar5;
+  ushort uVar6;
   int iVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
@@ -70,7 +70,7 @@ int __thiscall st::fn_004603B0(void *this,STTorpC *param_1)
   undefined2 extraout_var_02;
   uint index;
   bool bVar10;
-  undefined4 uVar11;
+  uint uVar11;
   uint local_8;
 
   if ((param_1 == nullptr) || (param_1 == (STTorpC *)0x1)) {
@@ -100,7 +100,7 @@ int __thiscall st::fn_004603B0(void *this,STTorpC *param_1)
           iVar3 = st::fn_0040478C(param_1,STField<int>(this,0x18),&local_8);
           if (iVar3 != 2) {
             if (iVar3 == 0) {
-              iVar4 = st::fn_00403A99(st::pointer_boundary_cast<AnonReceiver_004603B0 *>(this),(RecoveredRecord_STBoatC_004838E0 *)param_1);
+              iVar4 = st::fn_00403A99(static_cast<AnonReceiver_004603B0 *>(this),(RecoveredRecord_STBoatC_004838E0 *)param_1);
               if (iVar4 == 1) {
                 /* ST_CALLSITE[004604AB]: CALL 0x0040368e; direct=0040368E STTorpC::SetDangerous */
                 st::fn_0040368E(param_1,STField<uint>(this,0x18),&local_8);
@@ -177,9 +177,9 @@ LAB_00460581:
                     iVar4 = (int)STField<short>(this,0x47);
                   }
                   /* ST_CALLSITE[004605B9]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
-                  st::fn_00404F6B(st::pointer_boundary_cast<STBoatC *>(this),iVar4,iVar8,iVar7);
+                  st::fn_00404F6B(static_cast<STBoatC *>(this),iVar4,iVar8,iVar7);
                   /* ST_CALLSITE[004605C2]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
-                  iVar7 = st::fn_00403B34(st::pointer_boundary_cast<STBoatC *>(this),0);
+                  iVar7 = st::fn_00403B34(static_cast<STBoatC *>(this),0);
                   if (iVar7 == -1) {
                     return -1;
                   }
@@ -203,7 +203,7 @@ LAB_00460581:
   if (STField<int>(this,0x82e) == 1) {
     STField<int>(this,0x836) = STField<int>(this,0x836) + 1;
     /* ST_CALLSITE[00460516]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
-    iVar7 = st::fn_00403B34(st::pointer_boundary_cast<STBoatC *>(this),2);
+    iVar7 = st::fn_00403B34(static_cast<STBoatC *>(this),2);
     if (iVar7 == -1) {
       return -1;
     }
@@ -214,7 +214,7 @@ LAB_00460581:
       STField<undefined4>(this,0x82e) = 0;
     }
   }
-  if ((STField<int>(this,0x82e) == 2) && (iVar7 = st::fn_00405E57(st::pointer_boundary_cast<STBoatC *>(this)), iVar7 == 1)) {
+  if ((STField<int>(this,0x82e) == 2) && (iVar7 = st::fn_00405E57(static_cast<STBoatC *>(this)), iVar7 == 1)) {
     sVar1 = STField<short>(this,0x469);
     STField<short>(this,0x469) = -sVar1;
     /* ST_CALLSITE[004606F9]: CALL dword ptr [EDX + 0x18] */
@@ -226,10 +226,10 @@ LAB_00460581:
       STField<undefined4>(this,0x82e) = 3;
       /* ST_CALLSITE[00460725]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
       st::fn_00404F6B
-                (st::pointer_boundary_cast<STBoatC *>(this),(int)STField<short>(this,0x47),(int)STField<short>(this,0x49),
+                (static_cast<STBoatC *>(this),(int)STField<short>(this,0x47),(int)STField<short>(this,0x49),
                  (int)STField<short>(this,0x469) + (int)STField<short>(this,0x4b));
       /* ST_CALLSITE[0046072D]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
-      iVar7 = st::fn_00403B34(st::pointer_boundary_cast<STBoatC *>(this),0);
+      iVar7 = st::fn_00403B34(static_cast<STBoatC *>(this),0);
       if (iVar7 == -1) {
         return -1;
       }
@@ -241,7 +241,7 @@ LAB_00460581:
   if (STField<int>(this,0x82e) == 3) {
     STField<int>(this,0x836) = STField<int>(this,0x836) + 1;
     /* ST_CALLSITE[0046076D]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
-    iVar7 = st::fn_00403B34(st::pointer_boundary_cast<STBoatC *>(this),2);
+    iVar7 = st::fn_00403B34(static_cast<STBoatC *>(this),2);
     if (iVar7 == -1) {
       return -1;
     }
@@ -294,34 +294,38 @@ int __thiscall st::fn_00462180(void *this,int param_1)
   byte bVar5;
   short sVar6;
   short sVar7;
-  undefined4 uVar8;
+  uint uVar8;
   short sVar9;
   uint uVar11;
   STGameObjC *this_00;
   int local_EAX_486;
   int local_EAX_837;
   uint uVar10;
-  undefined4 *puVar12;
+  uint *puVar12;
   int local_EAX_1646;
   int local_EAX_1824;
   STGroupBoatC *pSVar13;
   dword dVar14;
   int iVar15;
   int local_EAX_5975;
+  int iVar16_mg26;
+  int iVar16_mg2D;
+  int iVar16_mg30;
   int local_EAX_7817;
   STFishC *pSVar15;
+  int iVar16_mg1C;
   uint local_EAX_9668;
   int iVar16;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined2 uVar17;
+  ushort uVar17;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
-  undefined2 uVar21;
+  ushort uVar21;
   STFishC *pSVar18;
   uint uVar19;
   STFishCVTable *pSVar20;
@@ -339,12 +343,12 @@ int __thiscall st::fn_00462180(void *this,int param_1)
   undefined2 local_40;
   undefined2 local_3e;
   undefined4 local_38;
-  undefined4 local_30;
+  uint local_30;
   undefined2 local_2c;
   undefined4 local_28;
   int local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
+  uint local_20;
+  uint local_1c;
   short local_16;
   STFishC *local_14;
   uint local_10;
@@ -409,15 +413,15 @@ LAB_00462320:
         STField<undefined4>(this,0xb7) = 3;
         /* ST_CALLSITE[00462881]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
         st::fn_00404F6B
-                  (st::pointer_boundary_cast<STBoatC *>(this),(int)STField<short>(this,0x800),(int)STField<short>(this,0x802),
+                  (static_cast<STBoatC *>(this),(int)STField<short>(this,0x800),(int)STField<short>(this,0x802),
                    (int)STField<short>(this,0x804));
         /* ST_CALLSITE[0046288A]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-        st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),0);
+        st::fn_004031DE(static_cast<STBoatC *>(this),0);
         goto cf_common_exit_00464889;
       }
       if (iVar16 == 1) {
         /* ST_CALLSITE[004628A0]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-        local_EAX_1824 = st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),2);
+        local_EAX_1824 = st::fn_004031DE(static_cast<STBoatC *>(this),2);
         switch(local_EAX_1824) {
         case 0:
           sVar9 = STField<short>(this,0x804);
@@ -477,13 +481,13 @@ LAB_00462c49:
               /* ST_CALLSITE[00462C97]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
               st::fn_004018C5(local_14,(short *)local_c,psVar2,psVar1);
               /* ST_CALLSITE[00462CAD]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
-              st::fn_00404F6B(st::pointer_boundary_cast<STBoatC *>(this),(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
+              st::fn_00404F6B(static_cast<STBoatC *>(this),(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
               st::fn_0040232E(*(short *)&local_c->vtable,*psVar2,*psVar1);
               st::fn_0040232E(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
               st::fn_0040232E(*(short *)&local_c->vtable,*psVar2 + 1,*psVar1);
               st::fn_0040232E(*(short *)&local_c->vtable + 1,*psVar2 + 1,*psVar1);
               /* ST_CALLSITE[00462D36]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-              st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),0);
+              st::fn_004031DE(static_cast<STBoatC *>(this),0);
               STField<undefined2>(this,0xf8) = 0;
               st::fn_00404CCD(*(short *)&local_c->vtable,*psVar2,*psVar1);
               st::fn_00404CCD(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
@@ -507,9 +511,9 @@ LAB_00462c49:
 cf_common_exit_00462E32:
             /* ST_CALLSITE[00462E35]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
             st::fn_00404F6B
-                      (st::pointer_boundary_cast<STBoatC *>(this),(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
+                      (static_cast<STBoatC *>(this),(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
             /* ST_CALLSITE[00462E3E]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-            st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),0);
+            st::fn_004031DE(static_cast<STBoatC *>(this),0);
             return 2;
           }
           break;
@@ -571,7 +575,7 @@ LAB_00462a36:
             }
           }
           /* ST_CALLSITE[00462A67]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
-          st::fn_00403855(st::pointer_boundary_cast<STBoatC *>(this));
+          st::fn_00403855(static_cast<STBoatC *>(this));
           pSVar13 = st::fn_00405CF9(STField<char>(this,0x24),STField<ushort>(this,0x30));
           /* ST_CALLSITE[00462A9B]: CALL 0x004019ba; direct=004019BA STGroupBoatC::GetDepotForAttack */
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -604,7 +608,7 @@ LAB_00462a36:
             return -1;
           }
           /* ST_CALLSITE[0046356E]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
-          iVar16 = st::fn_00402847(st::pointer_boundary_cast<STJellyGunC *>(this),st::pointer_boundary_cast<undefined4 *>(local_74),(int *)&local_10);
+          iVar16 = st::fn_00402847(static_cast<STJellyGunC *>(this),reinterpret_cast<undefined4 *>(local_74),(int *)&local_10);
           if (iVar16 == -1) {
             return -1;
           }
@@ -710,7 +714,7 @@ LAB_00462a36:
           return (-(uint)(iVar16 != 0) & 0xfffffffd) + 2;
         }
         /* ST_CALLSITE[00462E5D]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-        iVar15 = st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),2);
+        iVar15 = st::fn_004031DE(static_cast<STBoatC *>(this),2);
         switch(iVar15) {
         case 0:
           local_58 = &local_4c;
@@ -779,7 +783,7 @@ LAB_00463442:
             }
           }
           /* ST_CALLSITE[00463473]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
-          st::fn_00403855(st::pointer_boundary_cast<STBoatC *>(this));
+          st::fn_00403855(static_cast<STBoatC *>(this));
           pSVar13 = st::fn_00405CF9(STField<char>(this,0x24),STField<ushort>(this,0x30));
           /* ST_CALLSITE[004634A7]: CALL 0x004019ba; direct=004019BA STGroupBoatC::GetDepotForAttack */
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -796,9 +800,9 @@ LAB_00463442:
             STField<short>(this,0x800) = (short)local_24;
             /* ST_CALLSITE[004634F4]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
             st::fn_00404F6B
-                      (st::pointer_boundary_cast<STBoatC *>(this),(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
+                      (static_cast<STBoatC *>(this),(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
             /* ST_CALLSITE[004634FD]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-            st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),0);
+            st::fn_004031DE(static_cast<STBoatC *>(this),0);
             return 2;
           }
           break;
@@ -882,13 +886,13 @@ LAB_00462fde:
                 st::fn_004018C5(local_14,(short *)local_c,psVar2,psVar1);
                 /* ST_CALLSITE[00463118]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
                 st::fn_00404F6B
-                          (st::pointer_boundary_cast<STBoatC *>(this),(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
+                          (static_cast<STBoatC *>(this),(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
                 st::fn_0040232E(*(short *)&local_c->vtable,*psVar2,*psVar1);
                 st::fn_0040232E(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
                 st::fn_0040232E(*(short *)&local_c->vtable,*psVar2 + 1,*psVar1);
                 st::fn_0040232E(*(short *)&local_c->vtable + 1,*psVar2 + 1,*psVar1);
                 /* ST_CALLSITE[004631A1]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-                st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),0);
+                st::fn_004031DE(static_cast<STBoatC *>(this),0);
                 STField<undefined2>(this,0xf8) = 0;
                 st::fn_00404CCD(*(short *)&local_c->vtable,*psVar2,*psVar1);
                 st::fn_00404CCD(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
@@ -921,9 +925,9 @@ LAB_00462fde:
             STField<short>(this,0x800) = (short)local_24;
             /* ST_CALLSITE[004632B9]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
             st::fn_00404F6B
-                      (st::pointer_boundary_cast<STBoatC *>(this),(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
+                      (static_cast<STBoatC *>(this),(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
             /* ST_CALLSITE[004632C2]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-            st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),0);
+            st::fn_004031DE(static_cast<STBoatC *>(this),0);
             STField<undefined2>(this,0xf8) = 0;
             return 2;
           }
@@ -939,7 +943,7 @@ LAB_00462fde:
         iVar16 = STField<int>(this,0x836) + 1;
         STField<int>(this,0x836) = iVar16;
         if ((iVar16 % 5 == 0) && (STField<int>(this,0x82e) == 0)) {
-          local_EAX_486 = st::fn_004014BA(st::pointer_boundary_cast<int *>(this),0);
+          local_EAX_486 = st::fn_004014BA(static_cast<int *>(this),0);
           switch(local_EAX_486) {
           case 0:
             sVar9 = STField<short>(this,0x804);
@@ -968,13 +972,14 @@ LAB_004625fd:
             if (STField<char>(this,0x2b2) != '\0') {
               puVar22 = (ushort *)((int)this + 0x2a8);
               do {
-                puVar12 = st::fn_0040342C(st::pointer_boundary_cast<undefined4 *>(local_74),(short)*(undefined4 *)(puVar22 + -1),
+                puVar12 = st::fn_0040342C(reinterpret_cast<undefined4 *>(local_74),(short)*(undefined4 *)(puVar22 + -1),
                                              puVar22[1],STField<short>(this,0x6c));
                 local_9c.field_000E = STField<short>(this,0x41) + (short)*puVar12;
                 local_9c.field_0010 = STField<short>(this,0x43) - (short)((uint)*puVar12 >> 0x10);
                 local_9c.field_0012 = *(short *)(puVar12 + 1) + STField<short>(this,0x45);
                 local_30 = (uint)*puVar22 << 0x10;
-                puVar12 = st::fn_0040342C((undefined4 *)&local_c,0,0,STField<short>(this,0x6c));
+                st::fn_0040342C((undefined4 *)&local_c,0,0,STField<short>(this,0x6c));
+                puVar12 = (uint *)&local_c;
                 uVar8 = *puVar12;
                 local_2c = *(undefined2 *)(puVar12 + 1);
                 local_9c.field_0014 = (short)uVar8 + *(short *)&pSVar23[1].field_0x1d;
@@ -1014,17 +1019,17 @@ LAB_004625fd:
                 (STField<short>(this,0x802) != STField<short>(this,0x808))) ||
                (STField<short>(this,0x804) != STField<short>(this,0x80a))) {
               /* ST_CALLSITE[00462473]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
-              st::fn_00403855(st::pointer_boundary_cast<STBoatC *>(this));
+              st::fn_00403855(static_cast<STBoatC *>(this));
               /* ST_CALLSITE[00462492]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
               st::fn_00404F6B
-                        (st::pointer_boundary_cast<STBoatC *>(this),(int)STField<short>(this,0x800),(int)STField<short>(this,0x802),
+                        (static_cast<STBoatC *>(this),(int)STField<short>(this,0x800),(int)STField<short>(this,0x802),
                          (int)STField<short>(this,0x804));
               STField<undefined2>(this,0x806) = STField<undefined2>(this,0x800);
               STField<undefined2>(this,0x808) = STField<undefined2>(this,0x802);
               STField<undefined2>(this,0x80a) = STField<undefined2>(this,0x804);
 LAB_004624c3:
               /* ST_CALLSITE[004624C5]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-              local_EAX_837 = st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),0);
+              local_EAX_837 = st::fn_004031DE(static_cast<STBoatC *>(this),0);
               if (local_EAX_837 == -1) {
                 return -1;
               }
@@ -1057,7 +1062,7 @@ LAB_004624c3:
                 STField<undefined4>(this,0x82e) = 3;
                 /* ST_CALLSITE[0046241D]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
                 st::fn_00404F6B
-                          (st::pointer_boundary_cast<STBoatC *>(this),(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
+                          (static_cast<STBoatC *>(this),(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
                 goto LAB_004624c3;
               }
               STField<short>(this,0x814) = STField<short>(this,0x814) + -0xc9;
@@ -1072,7 +1077,7 @@ LAB_004624c3:
             /* ST_CALLSITE[004624EC]: CALL dword ptr [EDX + 0x20] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (**(code **)(*(int *)this + 0x20))();
-            uVar10 = st::fn_00402987(st::pointer_boundary_cast<AnonShape_004836C0_617DC527 *>(this));
+            uVar10 = st::fn_00402987(static_cast<AnonShape_004836C0_617DC527 *>(this));
             st::fn_004021E9(this,STField<short>(this,0x6c),(short)uVar10);
           }
         }
@@ -1084,7 +1089,7 @@ LAB_004624c3:
           return 2;
         }
         if (iVar16 == 1) {
-          iVar16 = st::fn_0040314D(st::pointer_boundary_cast<AnonShape_00417830_9254190A *>(this));
+          iVar16 = st::fn_0040314D(static_cast<AnonShape_00417830_9254190A *>(this));
           /* ST_CALLSITE[004627DA]: CALL dword ptr [EAX + 0xd8] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*(int *)this + 0xd8))();
@@ -1102,7 +1107,7 @@ cf_common_exit_0046401F:
             return -1;
           }
           /* ST_CALLSITE[0046280F]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-          local_EAX_1646 = st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),2);
+          local_EAX_1646 = st::fn_004031DE(static_cast<STBoatC *>(this),2);
           switch(local_EAX_1646) {
           case 0:
           case 1:
@@ -1116,7 +1121,7 @@ cf_common_exit_0046401F:
           }
         }
         /* ST_CALLSITE[004627EE]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-        local_EAX_1646 = st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),2);
+        local_EAX_1646 = st::fn_004031DE(static_cast<STBoatC *>(this),2);
         switch(local_EAX_1646) {
         case 0:
         case 1:
@@ -1140,17 +1145,17 @@ cf_common_exit_0046401F:
         }
         /* ST_CALLSITE[004638AF]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
         st::fn_00404F6B
-                  (st::pointer_boundary_cast<STBoatC *>(this),(int)STField<short>(this,0x800),(int)STField<short>(this,0x802),
+                  (static_cast<STBoatC *>(this),(int)STField<short>(this,0x800),(int)STField<short>(this,0x802),
                    (int)STField<short>(this,0x804));
         /* ST_CALLSITE[004638B8]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-        st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),0);
+        st::fn_004031DE(static_cast<STBoatC *>(this),0);
         STField<undefined2>(this,0xf8) = 0;
         goto cf_common_exit_00464889;
       }
       if (iVar16 != 1) {
         if (iVar16 == 2) {
           /* ST_CALLSITE[00464009]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-          local_EAX_7817 = st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),2);
+          local_EAX_7817 = st::fn_004031DE(static_cast<STBoatC *>(this),2);
           switch(local_EAX_7817) {
           case 0:
             break;
@@ -1239,13 +1244,13 @@ cf_common_exit_00464282:
                     st::fn_004018C5(local_14,(short *)local_c,psVar2,psVar1);
                     /* ST_CALLSITE[004642BE]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
                     st::fn_00404F6B
-                              (st::pointer_boundary_cast<STBoatC *>(this),(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
+                              (static_cast<STBoatC *>(this),(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
                     st::fn_0040232E(*(short *)&local_c->vtable,*psVar2,*psVar1);
                     st::fn_0040232E(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
                     st::fn_0040232E(*(short *)&local_c->vtable,*psVar2 + 1,*psVar1);
                     st::fn_0040232E(*(short *)&local_c->vtable + 1,*psVar2 + 1,*psVar1);
                     /* ST_CALLSITE[00464347]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-                    st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),0);
+                    st::fn_004031DE(static_cast<STBoatC *>(this),0);
                     STField<undefined2>(this,0xf8) = 0;
                     st::fn_00404CCD(*(short *)&local_c->vtable,*psVar2,*psVar1);
                     st::fn_00404CCD(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
@@ -1298,16 +1303,17 @@ LAB_0046461c:
                     STGridAt3D(g_worldGrid, sVar7, sVar6, sVar9).objects[0];
         }
         if ((local_c == nullptr) || (local_c->field_0018 != STField<int>(this,0x7f4))) {
-          iVar16 = st::fn_006E62D0
-                             (g_playSystem_00802A38,
-                              STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_c);
-          pSVar15 = st::pointer_boundary_cast<STFishC *>(this);
+          iVar16_mg1C = st::fn_006E62D0
+                                  (g_playSystem_00802A38,
+                                   STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),
+                                   (int *)&local_c);
+          pSVar15 = static_cast<STFishC *>(this);
           /* ST_CALLSITE[0046465A]: CALL dword ptr [EAX + 0xf8] */
-          if (((iVar16 == -4) || (iVar16 = local_c->vfunc_F8(), iVar16 == 0)) ||
-             ((*(int *)&local_c->field_0x20 == 0x1ae &&
-              /* ST_CALLSITE[0046467A]: CALL dword ptr [EDX + 0xf4] */
-              (iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24)), iVar16 == 0
-              )))) {
+          if (((iVar16_mg1C == -4) || (iVar16 = local_c->vfunc_F8(), iVar16 == 0))
+             || ((*(int *)&local_c->field_0x20 == 0x1ae &&
+                 /* ST_CALLSITE[0046467A]: CALL dword ptr [EDX + 0xf4] */
+                 (iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24)),
+                 iVar16 == 0)))) {
             pSVar20 = *(STFishCVTable **)this;
             local_58 = &local_4c;
             local_4c = 10000;
@@ -1338,23 +1344,23 @@ LAB_0046461c:
         }
         else {
 LAB_0046470b:
-          st::fn_004031E3(local_c,&local_10,st::pointer_boundary_cast<int *>(&local_28),(short *)&local_14);
+          st::fn_004031E3(local_c,&local_10,(short *)&local_28,(short *)&local_14);
           /* ST_CALLSITE[0046473B]: CALL dword ptr [EDX + 0x10] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           sVar9 = (**(code **)(*(int *)this + 0x10))
                             (STField<undefined2>(this,0x41),STField<undefined2>(this,0x43),
                              STField<undefined2>(this,0x45),local_10,local_28,local_14);
           /* ST_CALLSITE[00464744]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
-          local_EAX_9668 = st::fn_004030B2(st::pointer_boundary_cast<STBoatC *>(this),sVar9);
+          local_EAX_9668 = st::fn_004030B2(static_cast<STBoatC *>(this),sVar9);
           /* ST_CALLSITE[0046474C]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
-          st::fn_004022FC(st::pointer_boundary_cast<STBoatC *>(this),(short)local_EAX_9668);
+          st::fn_004022FC(static_cast<STBoatC *>(this),(short)local_EAX_9668);
           /* ST_CALLSITE[00464772]: CALL 0x00402455; direct=00402455 sub_00415B30 */
           st::fn_00402455(this,STField<short>(this,0x41),STField<short>(this,0x43),
                        STField<short>(this,0x45),(short)local_10,(short)local_28,(short)local_14,
                        STField<byte>(this,0x61));
           STField<undefined4>(this,0x7a) = 0;
           /* ST_CALLSITE[00464788]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
-          iVar16 = st::fn_00402847(st::pointer_boundary_cast<STJellyGunC *>(this),&local_30,local_74);
+          iVar16 = st::fn_00402847(static_cast<STJellyGunC *>(this),&local_30,local_74);
           if (iVar16 == -1) {
             return -1;
           }
@@ -1407,7 +1413,7 @@ cf_common_exit_00464889:
         return (-(uint)(iVar16 != 0) & 0xfffffffd) + 2;
       }
       /* ST_CALLSITE[004638D7]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-      local_EAX_5975 = st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),2);
+      local_EAX_5975 = st::fn_004031DE(static_cast<STBoatC *>(this),2);
       switch(local_EAX_5975) {
       case 0:
         sVar9 = STField<short>(this,0x804);
@@ -1437,19 +1443,21 @@ LAB_00463d56:
                      STGridAt3D(g_worldGrid, sVar7, sVar6, sVar9).objects[0];
         }
         if ((local_14 == nullptr) || (local_14->field_0018 != STField<int>(this,0x7f4))) {
-          iVar16 = st::fn_006E62D0
-                             (g_playSystem_00802A38,
-                              STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_14);
-          /* ST_CALLSITE[00463F8B]: CALL dword ptr [EDX + 0xf8] */
-          if (((iVar16 != -4) && (iVar16 = local_14->vfunc_F8(), iVar16 != 0)) &&
+          iVar16_mg30 = st::fn_006E62D0
+                                  (g_playSystem_00802A38,
+                                   STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),
+                                   (int *)&local_14);
+          if (((iVar16_mg30 != -4) &&
+              /* ST_CALLSITE[00463F8B]: CALL dword ptr [EDX + 0xf8] */
+              (iVar16 = local_14->vfunc_F8(), iVar16 != 0)) &&
              ((*(int *)&local_14->field_0x20 != 0x1ae ||
               /* ST_CALLSITE[00463FAB]: CALL dword ptr [EAX + 0xf4] */
               (iVar16 = (*local_14->vtable->vfunc_F4)(STField<undefined4>(this,0x24)),
               iVar16 != 0)))) {
             /* ST_CALLSITE[00463FC2]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             st::fn_004018C5(local_14,(short *)local_c,psVar2,psVar1);
-            sVar9 = *psVar1;
-            sVar6 = *psVar2;
+            sVar6 = *psVar1;
+            sVar9 = *psVar2;
             iVar16 = (int)*(short *)&local_c->vtable;
             goto cf_common_exit_00463FD6;
           }
@@ -1468,13 +1476,13 @@ LAB_00463d56:
               /* ST_CALLSITE[00463E2C]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
               st::fn_004018C5(local_14,(short *)local_c,psVar2,psVar1);
               /* ST_CALLSITE[00463E42]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
-              st::fn_00404F6B(st::pointer_boundary_cast<STBoatC *>(this),(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
+              st::fn_00404F6B(static_cast<STBoatC *>(this),(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
               st::fn_0040232E(*(short *)&local_c->vtable,*psVar2,*psVar1);
               st::fn_0040232E(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
               st::fn_0040232E(*(short *)&local_c->vtable,*psVar2 + 1,*psVar1);
               st::fn_0040232E(*(short *)&local_c->vtable + 1,*psVar2 + 1,*psVar1);
               /* ST_CALLSITE[00463ECB]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-              st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),0);
+              st::fn_004031DE(static_cast<STBoatC *>(this),0);
               STField<undefined2>(this,0xf8) = 0;
               st::fn_00404CCD(*(short *)&local_c->vtable,*psVar2,*psVar1);
               st::fn_00404CCD(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
@@ -1493,13 +1501,13 @@ LAB_00463d56:
               STField<undefined4>(this,0x82e) = 3;
               return 2;
             }
-            sVar9 = *psVar1;
-            sVar6 = *psVar2;
+            sVar6 = *psVar1;
+            sVar9 = *psVar2;
 cf_common_exit_00463FD6:
             /* ST_CALLSITE[00463FD8]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
-            st::fn_00404F6B(st::pointer_boundary_cast<STBoatC *>(this),iVar16,(int)sVar6,(int)sVar9);
+            st::fn_00404F6B(static_cast<STBoatC *>(this),iVar16,(int)sVar9,(int)sVar6);
             /* ST_CALLSITE[00463FE1]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
-            st::fn_004031DE(st::pointer_boundary_cast<STBoatC *>(this),0);
+            st::fn_004031DE(static_cast<STBoatC *>(this),0);
             STField<undefined2>(this,0xf8) = 0;
 switchD_004638e6_caseD_2:
             return 2;
@@ -1545,16 +1553,17 @@ LAB_00463b9d:
             }
           }
           /* ST_CALLSITE[00463BE5]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
-          st::fn_00403855(st::pointer_boundary_cast<STBoatC *>(this));
+          st::fn_00403855(static_cast<STBoatC *>(this));
           return 0;
         }
         /* ST_CALLSITE[00463BF7]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
-        st::fn_00403855(st::pointer_boundary_cast<STBoatC *>(this));
-        iVar16 = st::fn_006E62D0
-                           (g_playSystem_00802A38,
-                            STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_c);
+        st::fn_00403855(static_cast<STBoatC *>(this));
+        iVar16_mg2D = st::fn_006E62D0
+                                (g_playSystem_00802A38,
+                                 STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),
+                                 (int *)&local_c);
         /* ST_CALLSITE[00463C20]: CALL dword ptr [EAX + 0xf8] */
-        if ((iVar16 != -4) && (iVar16 = local_c->vfunc_F8(), iVar16 != 0)) {
+        if ((iVar16_mg2D != -4) && (iVar16 = local_c->vfunc_F8(), iVar16 != 0)) {
           if (*(int *)&local_c->field_0x20 == 0x1ae) {
             /* ST_CALLSITE[00463C44]: CALL dword ptr [EDX + 0xf4] */
             iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24));
@@ -1567,8 +1576,8 @@ LAB_00463a83:
                     (local_c,(short *)((int)this + 0x800),(short *)((int)this + 0x802),
                      (short *)((int)this + 0x804));
 LAB_00463a91:
-          sVar9 = STField<short>(this,0x804);
-          sVar6 = STField<short>(this,0x802);
+          sVar6 = STField<short>(this,0x804);
+          sVar9 = STField<short>(this,0x802);
           iVar16 = (int)STField<short>(this,0x800);
           goto cf_common_exit_00463FD6;
         }
@@ -1601,11 +1610,13 @@ LAB_004639e6:
                     STGridAt3D(g_worldGrid, sVar7, sVar6, sVar9).objects[0];
         }
         if ((local_c == nullptr) || (local_c->field_0018 != STField<int>(this,0x7f4))) {
-          iVar16 = st::fn_006E62D0
-                             (g_playSystem_00802A38,
-                              STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_c);
+          iVar16_mg26 = st::fn_006E62D0
+                                  (g_playSystem_00802A38,
+                                   STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),
+                                   (int *)&local_c);
           /* ST_CALLSITE[00463A52]: CALL dword ptr [EAX + 0xf8] */
-          if ((iVar16 != -4) && (iVar16 = local_c->vfunc_F8(), iVar16 != 0)) {
+          if ((iVar16_mg26 != -4) && (iVar16 = local_c->vfunc_F8(), iVar16 != 0))
+          {
             if (*(int *)&local_c->field_0x20 == 0x1ae) {
               /* ST_CALLSITE[00463A72]: CALL dword ptr [EDX + 0xf4] */
               iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24));
@@ -1659,7 +1670,7 @@ int __thiscall st::fn_004658D0(void *this,int param_1)
     STField<undefined4>(this,0x497) = 0;
     /* ST_CALLSITE[00465AFD]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
     st::fn_00404F6B
-              (st::pointer_boundary_cast<STBoatC *>(this),STField<int>(this,199),STField<int>(this,0xcb),STField<int>(this,0xcf));
+              (static_cast<STBoatC *>(this),STField<int>(this,199),STField<int>(this,0xcb),STField<int>(this,0xcf));
     st::fn_00402266(this,0);
     /* ST_CALLSITE[00465B0E]: CALL dword ptr [EDX + 0xd8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -1678,14 +1689,14 @@ int __thiscall st::fn_004658D0(void *this,int param_1)
                          STField<uint>(this,0x48f));
       if (uVar2 == 0) {
         /* ST_CALLSITE[004659CF]: CALL 0x00403a2b; direct=00403A2B STBoatC::Defence */
-        iVar1 = st::fn_00403A2B(st::pointer_boundary_cast<STBoatC *>(this),0);
+        iVar1 = st::fn_00403A2B(static_cast<STBoatC *>(this),0);
         if (iVar1 == -1) {
           return -1;
         }
         if ((STField<int>(this,0x82e) == 0) && (STField<int>(this,0x48b) == 0xffff)) {
           /* ST_CALLSITE[00465A0D]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
           st::fn_00404F6B
-                    (st::pointer_boundary_cast<STBoatC *>(this),STField<int>(this,199),STField<int>(this,0xcb),
+                    (static_cast<STBoatC *>(this),STField<int>(this,199),STField<int>(this,0xcb),
                      STField<int>(this,0xcf));
           st::fn_00402266(this,0);
           return 2;
@@ -1698,7 +1709,7 @@ LAB_0046597c:
       STField<undefined4>(this,0x497) = 1;
       STField<undefined4>(this,0x493) = 0;
       /* ST_CALLSITE[0046598B]: CALL 0x00403a2b; direct=00403A2B STBoatC::Defence */
-      local_EAX_187 = st::fn_00403A2B(st::pointer_boundary_cast<STBoatC *>(this),0);
+      local_EAX_187 = st::fn_00403A2B(static_cast<STBoatC *>(this),0);
       return (-(uint)(local_EAX_187 != -1) & 3) - 1;
     default:
       goto switchD_0046590f_caseD_2;
@@ -1714,7 +1725,7 @@ LAB_0046597c:
       if (uVar2 != 0) goto LAB_0046597c;
       /* ST_CALLSITE[00465963]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
       st::fn_00404F6B
-                (st::pointer_boundary_cast<STBoatC *>(this),STField<int>(this,199),STField<int>(this,0xcb),
+                (static_cast<STBoatC *>(this),STField<int>(this,199),STField<int>(this,0xcb),
                  STField<int>(this,0xcf));
       st::fn_00402266(this,0);
       break;
@@ -1726,7 +1737,7 @@ LAB_0046597c:
 switchD_0046590f_caseD_2:
     if (STField<int>(this,0x497) == 1) {
       /* ST_CALLSITE[00465A4E]: CALL 0x00403a2b; direct=00403A2B STBoatC::Defence */
-      local_EAX_382 = st::fn_00403A2B(st::pointer_boundary_cast<STBoatC *>(this),2);
+      local_EAX_382 = st::fn_00403A2B(static_cast<STBoatC *>(this),2);
       if (local_EAX_382 == -1) {
         return -1;
       }
@@ -1735,7 +1746,7 @@ switchD_0046590f_caseD_2:
         STField<undefined4>(this,0x497) = 0;
         /* ST_CALLSITE[00465AA6]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
         st::fn_00404F6B
-                  (st::pointer_boundary_cast<STBoatC *>(this),STField<int>(this,199),STField<int>(this,0xcb),
+                  (static_cast<STBoatC *>(this),STField<int>(this,199),STField<int>(this,0xcb),
                    STField<int>(this,0xcf));
         st::fn_00402266(this,0);
         return 2;

@@ -83,6 +83,7 @@ import ghidra.program.model.symbol.ReferenceManager;
 import ghidra.program.model.symbol.Symbol;
 import ghidra.program.model.symbol.SymbolIterator;
 import ghidra.program.model.symbol.SymbolTable;
+import ghidra.program.model.symbol.StackReference;
 import ghidra.program.util.DefinedStringIterator;
 
 public class STDecompExport extends GhidraScript {
@@ -153,6 +154,8 @@ public class STDecompExport extends GhidraScript {
         "/* compiler bulk-zero initialization */";
     private static final String STACK_SLOT_SPLIT_MARKER =
         "/* compiler stack-slot lifetime split */";
+    private static final String OUTPUT_CALL_SLOT_SPLIT_MARKER =
+        "/* compiler output-call stack-slot lifetime split */";
     private static final Pattern PACKED_BIT_SET = Pattern.compile(
         "(?m)^(?<indent>[ \\t]*)(?<base>[A-Za-z_$][A-Za-z0-9_$]*)" +
         "\\[\\(int\\)(?<index>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*>>[ \\t]*3\\]" +
@@ -275,6 +278,28 @@ public class STDecompExport extends GhidraScript {
         "\\*\\s*\\(\\s*(?<cast>[A-Za-z_$][A-Za-z0-9_$:<> ]*(?:\\s*\\*\\s*)+)\\)" +
         "\\s*\\(\\s*\\(int\\)\\s*(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*" +
         "\\+\\s*(?<offset>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
+    private static final Pattern CASTED_GENERIC_FIELD_VALUE = Pattern.compile(
+        "\\*\\s*\\(\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:<> ]*)\\s*\\*\\s*\\)\\s*" +
+        "(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*->\\s*field_(?:0[xX])?" +
+        // The offset token must be consumed in full and must terminate the
+        // postfix expression.  Without the possessive quantifier/boundary this
+        // pattern could match the prefix of
+        //   *(T *)owner->field_000A->member
+        // and turn it into the invalid `*STField<T *>(owner,0xA)->member`.
+        "(?<offset>[0-9A-Fa-f]++)(?![0-9A-Fa-f])(?!(?:\\s*)(?:->|\\.|\\[))");
+    private static final Pattern LEGACY_TRUNCATED_CASTED_FIELD = Pattern.compile(
+        "\\*STField<(?<type>[A-Za-z_$][A-Za-z0-9_$:<> ]*)\\s*\\*>\\(" +
+        "(?<base>[A-Za-z_$][A-Za-z0-9_$]*),\\s*0[xX](?<offset>[0-9A-Fa-f]++)\\)" +
+        "(?<suffix>\\s*(?:->|\\.|\\[))");
+    private static final Pattern LEGACY_TRUNCATED_CODE_FIELD = Pattern.compile(
+        "\\*STField<code\\s*\\*>\\((?<base>[A-Za-z_$][A-Za-z0-9_$]*),\\s*" +
+        "0[xX](?<ownerOffset>[0-9A-Fa-f]++)\\)\\s*->\\s*field_(?:0[xX])?" +
+        "(?<slotOffset>[0-9A-Fa-f]++)(?![0-9A-Fa-f])");
+    private static final Pattern RAW_CODE_FIELD_CHAIN = Pattern.compile(
+        "\\*\\s*\\(\\s*code\\s*\\*\\s*\\)\\s*" +
+        "(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*->\\s*field_(?:0[xX])?" +
+        "(?<ownerOffset>[0-9A-Fa-f]++)(?![0-9A-Fa-f])\\s*->\\s*" +
+        "field_(?:0[xX])?(?<slotOffset>[0-9A-Fa-f]++)(?![0-9A-Fa-f])");
     private static final Pattern RAW_INDIRECT_CALL = Pattern.compile(
         "\\(\\*\\*?\\(code \\*\\*?\\)|\\(\\*\\(code \\*\\)");
     private static final Pattern EXPLICIT_TYPED_VTABLE_DISPATCH = Pattern.compile(
@@ -377,6 +402,9 @@ public class STDecompExport extends GhidraScript {
     private static final Pattern ROUNDTRIP_RETURN_ORDINAL = Pattern.compile(
         "\\[STReturnSemanticsApplier] pointer_producer_argument_roundtrip_call;" +
         "\\s*return_parameter_ordinal=([0-9]+)");
+    private static final Pattern RETURNED_POINTER_PARAMETER_ORDINAL = Pattern.compile(
+        "\\[STReturnSemanticsApplier] returned_pointer_parameter\\..*?" +
+        "ordinal=([0-9]+)", Pattern.DOTALL);
     private static final Pattern RESIDUAL_CONTROL_FLOW = Pattern.compile(
         "\\b(?:goto|LAB_[0-9A-Fa-f]+)\\b");
     private static final Pattern GENERATED_ENUM_COMPOSITION = Pattern.compile(
@@ -904,13 +932,20 @@ public class STDecompExport extends GhidraScript {
 
             if (reusable) {
                 if (bodyExported) {
+                    String originalBody = Files.readString(decompPath,
+                        StandardCharsets.UTF_8);
+                    String normalizedBody = normalizedFunctionText(function,
+                        originalBody);
+                    boolean presentationChanged = !normalizedBody.equals(originalBody);
+                    if (presentationChanged) writeText(decompPath, normalizedBody);
                     CachedFunctionAnalysis cached = cachedFunctionAnalysis.get(id);
-                    if (cached != null && cached.fingerprint.equals(fingerprint)) {
+                    if (!presentationChanged && cached != null &&
+                            cached.fingerprint.equals(fingerprint)) {
                         replayFunctionAnalysis(function, cached);
                         currentFunctionAnalysis.put(id, cached);
                         analysisCacheHits++;
                     }
-                    else normalizeAndCatalog(function, decompPath, fingerprint,
+                    else catalogAndCache(function, normalizedBody, fingerprint,
                         currentFunctionAnalysis);
                 }
                 String meta = Files.readString(metaPath, StandardCharsets.UTF_8).trim();
@@ -1053,15 +1088,34 @@ public class STDecompExport extends GhidraScript {
     private void normalizeAndCatalog(Function function, Path path, String fingerprint,
             Map<String, CachedFunctionAnalysis> cache) throws IOException {
         String original = Files.readString(path, StandardCharsets.UTF_8);
-        String literalized = literalizeReferencedStrings(function, original);
+        String annotated = normalizedFunctionText(function, original);
+        if (!annotated.equals(original)) writeText(path, annotated);
+        catalogAndCache(function, annotated, fingerprint, cache);
+    }
+
+    /**
+     * Cached bodies are a performance artifact, not a frozen presentation layer.  Run the
+     * current idempotent normalizers over every reused body and invalidate only its cheap
+     * text-quality cache when the spelling changes; never force a Ghidra decompile merely
+     * because an exporter rule improved.
+     */
+    private String normalizedFunctionText(Function function, String original) {
+        String literalized = literalizeReferencedStrings(function,
+            stripExporterPseudocodeComments(original));
         NormalizedCode normalized = normalizePseudocode(literalized);
         NormalizedCode machineNormalized =
             normalizeMachinePseudocode(function, normalized.code);
         NormalizedCode enumNormalized =
             normalizeKnownEnumCompositions(function, machineNormalized.code);
-        String annotated = annotatePseudocode(function, enumNormalized.code);
-        if (!annotated.equals(original)) writeText(path, annotated);
-        catalogAndCache(function, annotated, fingerprint, cache);
+        return annotatePseudocode(function, enumNormalized.code);
+    }
+
+    /** Cached bodies retain presentation hints, but every pass must derive them anew. */
+    private String stripExporterPseudocodeComments(String code) {
+        if (code == null || code.isEmpty() || !code.contains("ST_PSEUDO[")) return code;
+        return Pattern.compile(
+            "(?ms)^[ \\t]*/\\*\\s*ST_PSEUDO\\[.*?\\*/[ \\t]*(?:\\R|$)")
+            .matcher(code).replaceAll("");
     }
 
     private void catalogAndCache(Function function, String code, String fingerprint,
@@ -1262,8 +1316,10 @@ public class STDecompExport extends GhidraScript {
             normalizePartialPieceSyntax(lowPieces.code);
         NormalizedCode typedFields =
             normalizeExplicitByteOffsetFields(partialPieces.code);
+        NormalizedCode castedFields =
+            normalizeCastedGenericFieldValues(typedFields.code);
         NormalizedCode byteOffsets =
-            normalizeSimpleByteOffsetDereferences(typedFields.code);
+            normalizeSimpleByteOffsetDereferences(castedFields.code);
         NormalizedCode packedBits =
             normalizePackedBitOperations(byteOffsets.code);
         NormalizedCode signedQuartering =
@@ -1283,6 +1339,7 @@ public class STDecompExport extends GhidraScript {
             recordAddresses.replacements +
             narrowReturns.replacements + lowPieces.replacements +
             partialPieces.replacements + typedFields.replacements +
+            castedFields.replacements +
             byteOffsets.replacements + packedBits.replacements + signedQuartering.replacements +
             fixedRounding.replacements;
         for (int index = 0; index < lines.length; index++) {
@@ -1318,7 +1375,10 @@ public class STDecompExport extends GhidraScript {
         String normalized = String.join(System.lineSeparator(), output);
         NormalizedCode nullPointers = normalizeTypedNullPointers(normalized);
         NormalizedCode nullCases = normalizeNullSwitchCases(nullPointers.code);
-        NormalizedCode semicolons = normalizeDetachedSemicolons(nullCases.code);
+        NormalizedCode scalarSwitches =
+            normalizePointerTypedSwitchDomains(nullCases.code);
+        NormalizedCode semicolons =
+            normalizeDetachedSemicolons(scalarSwitches.code);
         NormalizedCode scalarLifetimes =
             normalizeIntegerStoredInPointerLifetimes(semicolons.code);
         NormalizedCode narrowPromotions =
@@ -1331,7 +1391,7 @@ public class STDecompExport extends GhidraScript {
             removeDeadSyntheticDeclarations(deadCodePointers.code);
         return new NormalizedCode(deadSynthetics.code,
             replacements + nullPointers.replacements + nullCases.replacements +
-                semicolons.replacements +
+                scalarSwitches.replacements + semicolons.replacements +
                 scalarLifetimes.replacements + deadCodePointers.replacements +
                 narrowPromotions.replacements + biasedDivisions.replacements +
                 deadSynthetics.replacements);
@@ -1723,6 +1783,19 @@ public class STDecompExport extends GhidraScript {
         if (code.contains(marker) && code.lines().anyMatch(line ->
                 line.contains(marker) && line.contains("scalar_") &&
                     line.contains("code **"))) return true;
+        if (Pattern.compile("(?m)^\\s*otherwise retain buffer arithmetic \\*/\\s*$")
+                .matcher(code).find()) return true;
+        Matcher reused = Pattern.compile(
+            "\\b(?<name>param_[0-9]+_after_write(?:_[0-9]+)?)\\b").matcher(code);
+        Set<String> reusedNames = new HashSet<>();
+        while (reused.find()) reusedNames.add(reused.group("name"));
+        for (String name : reusedNames) {
+            Pattern declaration = Pattern.compile(
+                "(?m)^\\s*(?:auto|void|byte|char|u?short|u?int|u?long|undefined[1248]?|" +
+                "[A-Za-z_$][A-Za-z0-9_$:]*)\\s*(?:\\*+\\s*)?" +
+                Pattern.quote(name) + "\\s*(?:=|;)");
+            if (!declaration.matcher(code).find()) return true;
+        }
         int stackDeclaration = code.indexOf("byte stack_bytes_neg_");
         if (stackDeclaration >= 0) {
             Matcher bodyBrace = Pattern.compile("(?m)^\\{[ \\t]*$").matcher(code);
@@ -1985,6 +2058,93 @@ public class STDecompExport extends GhidraScript {
     }
 
     /**
+     * A generated field name is an exact byte offset even when its storage type is still a
+     * generic word. Preserve a casted pointee view without spelling it as raw pointer
+     * arithmetic; this is the same byte-exact STField projection used for explicit offsets.
+     */
+    private NormalizedCode normalizeCastedGenericFieldValues(String code) {
+        if (code == null || code.isEmpty() || !code.contains("->field_"))
+            return new NormalizedCode(code, 0);
+        // Repair bodies cached by the pre-boundary implementation.  That rule
+        // consumed only the first member of a longer postfix expression and
+        // left the suffix attached to the scalar/function value returned by
+        // STField, yielding uncompilable text.  Restore the exact Ghidra cast
+        // spelling first; the guarded current rule below deliberately leaves
+        // the complete postfix expression alone.
+        Matcher rawCode = RAW_CODE_FIELD_CHAIN.matcher(code);
+        StringBuffer repairedRawCode = new StringBuffer();
+        int replacements = 0;
+        while (rawCode.find()) {
+            long ownerOffset;
+            try {
+                ownerOffset = Long.parseUnsignedLong(
+                    rawCode.group("ownerOffset"), 16);
+            }
+            catch (NumberFormatException ignored) { continue; }
+            String ownerField = String.format(Locale.ROOT, "field_%04X", ownerOffset);
+            String replacement = "*STField<code *>(" + rawCode.group("base") +
+                "->" + ownerField + ",0x" +
+                rawCode.group("slotOffset").toUpperCase(Locale.ROOT) + ")";
+            rawCode.appendReplacement(repairedRawCode,
+                Matcher.quoteReplacement(replacement));
+            replacements++;
+        }
+        rawCode.appendTail(repairedRawCode);
+
+        Matcher legacyCode = LEGACY_TRUNCATED_CODE_FIELD.matcher(
+            repairedRawCode.toString());
+        StringBuffer repairedCode = new StringBuffer();
+        while (legacyCode.find()) {
+            long ownerOffset;
+            try {
+                ownerOffset = Long.parseUnsignedLong(
+                    legacyCode.group("ownerOffset"), 16);
+            }
+            catch (NumberFormatException ignored) { continue; }
+            String ownerField = String.format(Locale.ROOT, "field_%04X", ownerOffset);
+            String replacement = "*STField<code *>(" + legacyCode.group("base") +
+                "->" + ownerField + ",0x" +
+                legacyCode.group("slotOffset").toUpperCase(Locale.ROOT) + ")";
+            legacyCode.appendReplacement(repairedCode,
+                Matcher.quoteReplacement(replacement));
+            replacements++;
+        }
+        legacyCode.appendTail(repairedCode);
+
+        Matcher legacy = LEGACY_TRUNCATED_CASTED_FIELD.matcher(repairedCode.toString());
+        StringBuffer repaired = new StringBuffer();
+        while (legacy.find()) {
+            long offset;
+            try { offset = Long.parseUnsignedLong(legacy.group("offset"), 16); }
+            catch (NumberFormatException ignored) { continue; }
+            String field = String.format(Locale.ROOT, "field_%04X", offset);
+            String replacement = "*(" + legacy.group("type").trim() + " *)" +
+                legacy.group("base") + "->" + field + legacy.group("suffix");
+            legacy.appendReplacement(repaired, Matcher.quoteReplacement(replacement));
+            replacements++;
+        }
+        legacy.appendTail(repaired);
+
+        Matcher matcher = CASTED_GENERIC_FIELD_VALUE.matcher(repaired.toString());
+        StringBuffer output = new StringBuffer();
+        while (matcher.find()) {
+            String type = matcher.group("type").trim();
+            if (type.isBlank()) continue;
+            long offset;
+            try { offset = Long.parseUnsignedLong(matcher.group("offset"), 16); }
+            catch (NumberFormatException ignored) { continue; }
+            String replacement = "*STField<" + type + " *>(" +
+                matcher.group("base") + ",0x" +
+                Long.toHexString(offset).toUpperCase(Locale.ROOT) + ")";
+            matcher.appendReplacement(output, Matcher.quoteReplacement(replacement));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return replacements == 0 ? new NormalizedCode(code, 0) :
+            new NormalizedCode(output.toString(), replacements);
+    }
+
+    /**
      * A byte cursor remains byte-addressed even when Ghidra keeps its physical
      * storage in a recycled scalar stack slot.  The decompiler then spells one
      * ordinary subscript as {@code *(byte *)(cursor + 2)}.  Preserve the exact
@@ -2115,6 +2275,75 @@ public class STDecompExport extends GhidraScript {
         }
         matcher.appendTail(output);
         return new NormalizedCode(output.toString(), replacements);
+    }
+
+    /**
+     * Ghidra can assign a pointer type to an integer switch lifetime when the
+     * same Listing local is a real pointer elsewhere.  Prove the presentation
+     * domain from the complete switch itself: at least two case constants and
+     * at least one explicit pointer-cast constant must occur inside the matched
+     * brace range.  Convert only the selector and those constants through the
+     * runtime's exact machine-word view; the persistent pointer declaration and
+     * every pointer-semantic lifetime remain untouched.
+     */
+    private NormalizedCode normalizePointerTypedSwitchDomains(String code) {
+        if (code == null || code.isEmpty() || !code.contains("switch") ||
+                !Pattern.compile("case\\s+\\([^:\\r\\n]*\\*+\\s*\\)")
+                    .matcher(code).find())
+            return new NormalizedCode(code, 0);
+        Pattern pointerCase = Pattern.compile(
+            "(?m)^(?<indent>[ \\t]*)case\\s+\\([^:\\r\\n()]*\\*+\\s*\\)\\s*" +
+            "(?<value>(?:0[xX][0-9A-Fa-f]+|[0-9]+))\\s*:");
+        String normalized = code;
+        int replacements = 0;
+        int search = 0;
+        while (true) {
+            Matcher keyword = Pattern.compile("\\bswitch\\s*\\(")
+                .matcher(normalized);
+            if (!keyword.find(search)) break;
+            int open = normalized.indexOf('(', keyword.start());
+            int close = matchingParenthesis(normalized, open);
+            if (close < 0) break;
+            int brace = skipHorizontalWhitespace(normalized, close + 1);
+            if (brace >= normalized.length() || normalized.charAt(brace) != '{') {
+                search = close + 1;
+                continue;
+            }
+            int bodyEnd = matchingDelimiter(normalized, brace, '{', '}');
+            if (bodyEnd < 0) break;
+            String expression = normalized.substring(open + 1, close).trim();
+            if (expression.contains("STRawWord(")) {
+                search = bodyEnd + 1;
+                continue;
+            }
+            String body = normalized.substring(brace + 1, bodyEnd);
+            Matcher cases = Pattern.compile("(?m)^\\s*case\\b[^:]*:")
+                .matcher(body);
+            int caseCount = 0;
+            while (cases.find()) caseCount++;
+            Matcher castCases = pointerCase.matcher(body);
+            int castCount = 0;
+            StringBuffer rewrittenBody = new StringBuffer();
+            while (castCases.find()) {
+                castCases.appendReplacement(rewrittenBody,
+                    Matcher.quoteReplacement(castCases.group("indent") +
+                        "case " + castCases.group("value") + ":"));
+                castCount++;
+            }
+            if (caseCount < 2 || castCount == 0) {
+                search = bodyEnd + 1;
+                continue;
+            }
+            castCases.appendTail(rewrittenBody);
+            String selector = "static_cast<uint32_t>(STRawWord(" +
+                expression + "))";
+            normalized = normalized.substring(0, open + 1) + selector +
+                normalized.substring(close, brace + 1) + rewrittenBody +
+                normalized.substring(bodyEnd);
+            replacements += castCount + 1;
+            search = open + selector.length() + 2;
+        }
+        return new NormalizedCode(normalized, replacements);
     }
 
     /** Remove Ghidra's unprototyped executable-pointer locals after another
@@ -2802,15 +3031,857 @@ public class STDecompExport extends GhidraScript {
             }
         }
         NormalizedCode x87 = normalizeSavedX87AcrossFtol(function, normalized);
-        NormalizedCode physicalX87 = normalizePhysicalX87CallResults(
+        NormalizedCode stackFloats = normalizeMachineStackFloatLocals(
             function, x87.code);
+        NormalizedCode storageViews = normalizeGenericMachineStorageViews(
+            function, stackFloats.code);
+        NormalizedCode anonymousScalars = normalizeAnonymousPointerScalarViews(
+            storageViews.code);
+        NormalizedCode physicalX87 = normalizePhysicalX87CallResults(
+            function, anonymousScalars.code);
         NormalizedCode stackSlots = normalizeReusedParameterLifetimes(
             function, physicalX87.code);
         NormalizedCode roundTrips = normalizeRoundTripCallResults(function,
             stackSlots.code);
-        return new NormalizedCode(roundTrips.code,
-            replacements + x87.replacements + physicalX87.replacements +
-                stackSlots.replacements + roundTrips.replacements);
+        NormalizedCode returnedParameters = normalizeReturnedParameterCallResults(
+            function, roundTrips.code);
+        NormalizedCode reusedAliasOrder =
+            repairPredeclarationReusedParameterAliases(returnedParameters.code);
+        return new NormalizedCode(reusedAliasOrder.code,
+            replacements + x87.replacements + stackFloats.replacements +
+                storageViews.replacements +
+                anonymousScalars.replacements +
+                physicalX87.replacements +
+                stackSlots.replacements + roundTrips.replacements +
+                returnedParameters.replacements + reusedAliasOrder.replacements);
+    }
+
+    /**
+     * Undo a decompiler-only anonymous pointer view when the complete rendered
+     * lifetime is an ordered machine-word domain.  Pointer-shape inference can
+     * leak through an untyped output call and make offsets/cursors look like
+     * {@code AnonShape *}; repeated comparisons with independently declared
+     * integer words prove the opposite domain.  No candidate with a member,
+     * subscript, or dereference use is changed, and the scalar proof propagates
+     * only through direct comparisons/assignments between candidate locals.
+     */
+    private NormalizedCode normalizeAnonymousPointerScalarViews(String code) {
+        Pattern declaration = Pattern.compile(
+            "(?m)^(?<indent>[ \\t]*)(?<type>Anon(?:Shape|Nested)_[A-Za-z0-9_$]+)" +
+            "\\s*\\*\\s*(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;\\s*$");
+        Matcher declarations = declaration.matcher(code);
+        Map<String, String> candidates = new LinkedHashMap<>();
+        while (declarations.find())
+            candidates.putIfAbsent(declarations.group("name"), declarations.group("type"));
+        if (candidates.isEmpty()) return new NormalizedCode(code, 0);
+
+        Set<String> scalarNames = new LinkedHashSet<>();
+        Matcher scalars = Pattern.compile(
+            "(?m)^\\s*(?:u?int|dword|DWORD|size_t|undefined4)\\s+" +
+            "(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*(?:[;=,])")
+            .matcher(code);
+        while (scalars.find()) scalarNames.add(scalars.group("name"));
+
+        Map<String, Set<String>> peers = new LinkedHashMap<>();
+        for (String name : candidates.keySet()) peers.put(name, new LinkedHashSet<>());
+        Set<String> selected = new LinkedHashSet<>();
+        Pattern comparison = Pattern.compile(
+            "(?<left>[A-Za-z_$][A-Za-z0-9_$]*)\\s*(?:<=|>=|<|>)\\s*" +
+            "(?<right>[A-Za-z_$][A-Za-z0-9_$]*|0x[0-9A-Fa-f]+|[0-9]+)");
+        Matcher compared = comparison.matcher(code);
+        while (compared.find()) {
+            String left = compared.group("left");
+            String right = compared.group("right");
+            if (candidates.containsKey(left) && candidates.containsKey(right)) {
+                peers.get(left).add(right);
+                peers.get(right).add(left);
+            }
+            else if (candidates.containsKey(left) &&
+                    (scalarNames.contains(right) || Character.isDigit(right.charAt(0))))
+                selected.add(left);
+            else if (candidates.containsKey(right) && scalarNames.contains(left))
+                selected.add(right);
+        }
+        Pattern assignment = Pattern.compile(
+            "(?m)^\\s*(?<left>[A-Za-z_$][A-Za-z0-9_$]*)\\s*=\\s*" +
+            "(?:\\([^;=]+?\\*\\)\\s*)?(?<right>[A-Za-z_$][A-Za-z0-9_$]*)" +
+            "\\s*;\\s*$");
+        Matcher assigned = assignment.matcher(code);
+        while (assigned.find()) {
+            String left = assigned.group("left");
+            String right = assigned.group("right");
+            if (candidates.containsKey(left) && candidates.containsKey(right)) {
+                peers.get(left).add(right);
+                peers.get(right).add(left);
+            }
+            else if (candidates.containsKey(left) && scalarNames.contains(right))
+                selected.add(left);
+        }
+        boolean changed;
+        do {
+            changed = false;
+            for (String name : new ArrayList<>(selected))
+                for (String peer : peers.getOrDefault(name, Set.of()))
+                    changed |= selected.add(peer);
+        } while (changed);
+
+        String usesOnly = declaration.matcher(code).replaceAll("");
+        Set<String> pointerRole = new LinkedHashSet<>();
+        for (String name : candidates.keySet()) {
+            String token = Pattern.quote(name);
+            String withoutZeroMemberAddress = Pattern.compile("&\\s*\\b" + token +
+                "\\s*->\\s*field_(?:0x)?0+\\b").matcher(usesOnly)
+                .replaceAll("");
+            boolean structuralUse = Pattern.compile("\\b" + token +
+                "\\s*->|\\b" + token + "\\s*\\[|\\*\\s*\\(?\\s*" +
+                token + "\\b").matcher(withoutZeroMemberAddress).find();
+            if (structuralUse) pointerRole.add(name);
+        }
+        /*
+         * Do not poison a complete comparison/assignment family merely because one peer has
+         * a genuine pointer lifetime.  Optimized x86 commonly reuses the same register across
+         * a scalar coordinate and a later pointer; the explicit cast at that boundary is the
+         * evidence for keeping the boundary, not for turning every scalar peer back into an
+         * anonymous pointer.  Only the variable with the actual dereference/member use is
+         * retained as a pointer.
+         */
+        selected.removeAll(pointerRole);
+        if (selected.isEmpty()) return new NormalizedCode(code, 0);
+
+        String normalized = code;
+        int replacements = 0;
+        for (String name : selected) {
+            String type = candidates.get(name);
+            Pattern declared = Pattern.compile(
+                "(?m)^(?<indent>[ \\t]*)" + Pattern.quote(type) +
+                "\\s*\\*\\s*" + Pattern.quote(name) + "\\s*;\\s*$");
+            Matcher declaredMatcher = declared.matcher(normalized);
+            if (declaredMatcher.find()) {
+                normalized = declaredMatcher.replaceFirst(Matcher.quoteReplacement(
+                    declaredMatcher.group("indent") + "uint " + name + ";"));
+                replacements++;
+            }
+            Pattern pointerLoad = Pattern.compile(
+                "(?m)^(?<indent>[ \\t]*)" + Pattern.quote(name) +
+                "\\s*=\\s*\\*\\s*\\(\\s*" + Pattern.quote(type) +
+                "\\s*\\*\\*\\s*\\)\\s*(?<address>[^;]+);\\s*$");
+            Matcher loaded = pointerLoad.matcher(normalized);
+            StringBuffer loadOutput = new StringBuffer();
+            while (loaded.find()) {
+                loaded.appendReplacement(loadOutput, Matcher.quoteReplacement(
+                    loaded.group("indent") + name + " = *(uint *)" +
+                    loaded.group("address").trim() + ";"));
+                replacements++;
+            }
+            loaded.appendTail(loadOutput);
+            normalized = loadOutput.toString();
+            Pattern castAssignment = Pattern.compile(
+                "(?m)^(?<indent>[ \\t]*)" + Pattern.quote(name) +
+                "\\s*=\\s*\\(\\s*" + Pattern.quote(type) +
+                "\\s*\\*\\s*\\)\\s*(?<value>[^;]+);\\s*$");
+            Matcher casted = castAssignment.matcher(normalized);
+            StringBuffer castOutput = new StringBuffer();
+            while (casted.find()) {
+                casted.appendReplacement(castOutput, Matcher.quoteReplacement(
+                    casted.group("indent") + name + " = " +
+                    casted.group("value").trim() + ";"));
+                replacements++;
+            }
+            casted.appendTail(castOutput);
+            normalized = castOutput.toString();
+            Pattern nullUse = Pattern.compile("(?m)(\\b" + Pattern.quote(name) +
+                "\\b\\s*(?:=|==|!=)\\s*)nullptr\\b");
+            Matcher nullMatcher = nullUse.matcher(normalized);
+            StringBuffer nullOutput = new StringBuffer();
+            while (nullMatcher.find()) {
+                nullMatcher.appendReplacement(nullOutput,
+                    Matcher.quoteReplacement(nullMatcher.group(1) + "0"));
+                replacements++;
+            }
+            nullMatcher.appendTail(nullOutput);
+            normalized = nullOutput.toString();
+            Pattern zeroMemberAddress = Pattern.compile("&\\s*\\b" +
+                Pattern.quote(name) + "\\s*->\\s*field_(?:0x)?0+\\b");
+            Matcher zeroMemberMatcher = zeroMemberAddress.matcher(normalized);
+            StringBuffer zeroMemberOutput = new StringBuffer();
+            while (zeroMemberMatcher.find()) {
+                zeroMemberMatcher.appendReplacement(zeroMemberOutput,
+                    Matcher.quoteReplacement("(byte *)" + name));
+                replacements++;
+            }
+            zeroMemberMatcher.appendTail(zeroMemberOutput);
+            normalized = zeroMemberOutput.toString();
+        }
+        return replacements == 0 ? new NormalizedCode(code, 0) :
+            new NormalizedCode(normalized, replacements);
+    }
+
+    /**
+     * Cached normalized bodies can be projected again after a parameter type
+     * changes.  Never let an exporter-owned post-write alias leak backwards
+     * across its own declaration: the entry lifetime still belongs to the ABI
+     * parameter.  This is an idempotence repair over our exact marker and
+     * deterministic alias spelling, not a new lifetime inference.
+     */
+    private NormalizedCode repairPredeclarationReusedParameterAliases(String code) {
+        if (code == null || !code.contains(STACK_SLOT_SPLIT_MARKER))
+            return new NormalizedCode(code, 0);
+        List<String> lines = new ArrayList<>(Arrays.asList(code.split("\\R", -1)));
+        Pattern declaration = Pattern.compile(
+            "^\\s*(?:auto|void|byte|char|u?short|u?int|u?long|undefined[1248]?|" +
+            "[A-Za-z_$][A-Za-z0-9_$:]*)\\s*(?:\\*+\\s*)?" +
+            "(?<alias>(?<parameter>param_[0-9]+)_after_write(?:_[0-9]+)?)" +
+            "\\s*=.*" + Pattern.quote(STACK_SLOT_SPLIT_MARKER) + "\\s*$");
+        int replacements = 0;
+        for (int declarationLine = 0; declarationLine < lines.size(); declarationLine++) {
+            Matcher matcher = declaration.matcher(lines.get(declarationLine));
+            if (!matcher.matches()) continue;
+            String alias = matcher.group("alias");
+            String parameter = matcher.group("parameter");
+            for (int index = 0; index < declarationLine; index++) {
+                String repaired = replaceIdentifier(lines.get(index), alias, parameter);
+                if (!repaired.equals(lines.get(index))) {
+                    lines.set(index, repaired);
+                    replacements++;
+                }
+            }
+        }
+        return replacements == 0 ? new NormalizedCode(code, 0) :
+            new NormalizedCode(String.join(System.lineSeparator(), lines), replacements);
+    }
+
+    /**
+     * Spell exact-width decompiler storage without claiming a semantic domain. Ghidra may keep
+     * a four-byte Listing local as undefined4 after a callee is correctly refined to a short
+     * output pointer; the same slot is then transported as a dword for packed composition.
+     * Exact word+dword machine accesses prove a neutral uint transport view. A one-byte generic
+     * pointee is equivalently the already defined neutral byte type.
+     */
+    private NormalizedCode normalizeGenericMachineStorageViews(Function function,
+            String code) {
+        if (function == null || code == null || code.isEmpty())
+            return new NormalizedCode(code, 0);
+        String normalized = code;
+        int replacements = 0;
+
+        /*
+         * A machine-proven ``return param_N`` retains the formal pointer's exact storage
+         * contract in Ghidra.  ``undefinedN`` and the corresponding unsigned fixed-width
+         * spelling are the same executable C++ alias in pseudocode_runtime.h; use the latter
+         * only for the newly exposed return declaration so restoring that ABI does not add a
+         * generic declaration to the text corpus.
+         */
+        int returnedOrdinal = returnedPointerParameterOrdinal(function);
+        if (returnedOrdinal >= 0) {
+            Pattern returnedPointer = Pattern.compile(
+                "(?m)^(?<indent>[ \\t]*)undefined(?<width>[1248])" +
+                "(?<tail>[ \\t]*\\*+[ \\t]*(?:(?:__cdecl|__stdcall|" +
+                "__thiscall|__fastcall)[ \\t\\r\\n]+)?" +
+                "(?:[A-Za-z_$][A-Za-z0-9_$]*::)*" +
+                Pattern.quote(function.getName()) + "[ \\t\\r\\n]*\\()");
+            Matcher returnedMatcher = returnedPointer.matcher(normalized);
+            if (returnedMatcher.find() && !returnedMatcher.find()) {
+                returnedMatcher.reset();
+                StringBuffer returnedOutput = new StringBuffer();
+                while (returnedMatcher.find()) {
+                    returnedMatcher.appendReplacement(returnedOutput,
+                        Matcher.quoteReplacement(returnedMatcher.group("indent") +
+                            neutralUnsignedType(returnedMatcher.group("width")) +
+                            returnedMatcher.group("tail")));
+                    replacements++;
+                }
+                returnedMatcher.appendTail(returnedOutput);
+                normalized = returnedOutput.toString();
+            }
+        }
+
+        Pattern bytePointer = Pattern.compile(
+            "(?m)^(\\s*)undefined1\\s*\\*\\s*([A-Za-z_$][A-Za-z0-9_$]*)\\s*;\\s*$");
+        Matcher byteMatcher = bytePointer.matcher(normalized);
+        StringBuffer byteOutput = new StringBuffer();
+        while (byteMatcher.find()) {
+            byteMatcher.appendReplacement(byteOutput, Matcher.quoteReplacement(
+                byteMatcher.group(1) + "byte *" + byteMatcher.group(2) + ";"));
+            replacements++;
+        }
+        byteMatcher.appendTail(byteOutput);
+        normalized = byteOutput.toString();
+
+        // Ghidra's uVar/puVar spelling already records an unsigned machine-width
+        // transport role. Preserve that exact width in ordinary C++ instead of
+        // carrying an undefinedN declaration into the generated source.
+        Pattern unsignedPointer = Pattern.compile(
+            "(?m)^(\\s*)undefined(?<width>[1248])\\s*(?<stars>\\*+)\\s*" +
+            "(?<name>puVar[0-9]+(?:_mg[0-9]+)?)\\s*;\\s*$");
+        Matcher unsignedPointerMatcher = unsignedPointer.matcher(normalized);
+        StringBuffer unsignedPointerOutput = new StringBuffer();
+        while (unsignedPointerMatcher.find()) {
+            String type = neutralUnsignedType(unsignedPointerMatcher.group("width"));
+            unsignedPointerMatcher.appendReplacement(unsignedPointerOutput,
+                Matcher.quoteReplacement(unsignedPointerMatcher.group(1) + type + " " +
+                    unsignedPointerMatcher.group("stars") +
+                    unsignedPointerMatcher.group("name") + ";"));
+            replacements++;
+        }
+        unsignedPointerMatcher.appendTail(unsignedPointerOutput);
+        normalized = unsignedPointerOutput.toString();
+
+        Pattern unsignedScalar = Pattern.compile(
+            "(?m)^(\\s*)undefined(?<width>[1248])\\s+" +
+            "(?<name>uVar[0-9]+(?:_mg[0-9]+)?)\\s*;\\s*$");
+        Matcher unsignedScalarMatcher = unsignedScalar.matcher(normalized);
+        StringBuffer unsignedScalarOutput = new StringBuffer();
+        while (unsignedScalarMatcher.find()) {
+            String type = neutralUnsignedType(unsignedScalarMatcher.group("width"));
+            unsignedScalarMatcher.appendReplacement(unsignedScalarOutput,
+                Matcher.quoteReplacement(unsignedScalarMatcher.group(1) + type + " " +
+                    unsignedScalarMatcher.group("name") + ";"));
+            replacements++;
+        }
+        unsignedScalarMatcher.appendTail(unsignedScalarOutput);
+        normalized = unsignedScalarOutput.toString();
+
+        NormalizedCode wordArrayCursors = normalizeMachineWordStackArrayCursors(normalized);
+        normalized = wordArrayCursors.code;
+        replacements += wordArrayCursors.replacements;
+
+        Map<String, Variable> locals = new LinkedHashMap<>();
+        for (Variable variable : function.getLocalVariables())
+            if (variable.isStackVariable() && variable.getName() != null)
+                locals.putIfAbsent(variable.getName(), variable);
+        Pattern declaration = Pattern.compile(
+            "(?m)^(\\s*)undefined4\\s+([A-Za-z_$][A-Za-z0-9_$]*)\\s*;\\s*$");
+        Matcher matcher = declaration.matcher(normalized);
+        StringBuffer output = new StringBuffer();
+        Set<String> narrowOutputLocals = new LinkedHashSet<>();
+        while (matcher.find()) {
+            String name = matcher.group(2);
+            int narrowAddressUses = patternOccurrences(normalized, Pattern.compile(
+                "\\(\\s*short\\s*\\*\\s*\\)\\s*&\\s*" +
+                Pattern.quote(name) + "(?![A-Za-z0-9_$])"));
+            int narrowValueUses = patternOccurrences(normalized, Pattern.compile(
+                "\\(\\s*short\\s*\\)\\s*" + Pattern.quote(name) +
+                "(?![A-Za-z0-9_$])"));
+            int totalUses = identifierOccurrences(normalized, name);
+            if (narrowAddressUses > 0 &&
+                    totalUses == 1 + narrowAddressUses + narrowValueUses) {
+                matcher.appendReplacement(output, Matcher.quoteReplacement(
+                    matcher.group(1) + "short " + name + ";"));
+                narrowOutputLocals.add(name);
+                replacements++;
+                continue;
+            }
+            Variable variable = locals.get(matcher.group(2));
+            Set<Integer> widths = variable == null ? Set.of() :
+                exactStackAccessWidths(function, variable.getStackOffset());
+            if (!widths.contains(2) || !widths.contains(4)) continue;
+            matcher.appendReplacement(output, Matcher.quoteReplacement(
+                matcher.group(1) + "uint " + matcher.group(2) + ";"));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        normalized = output.toString();
+        for (String name : narrowOutputLocals) {
+            Pattern redundant = Pattern.compile(
+                "\\(\\s*short\\s*\\*\\s*\\)\\s*&\\s*" +
+                Pattern.quote(name) + "(?![A-Za-z0-9_$])");
+            normalized = redundant.matcher(normalized).replaceAll(
+                Matcher.quoteReplacement("&" + name));
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    /**
+     * Ghidra sometimes loses the inferred unsigned transport view of a stack
+     * word array after an unrelated SSA lifetime is split.  Restore only the
+     * closed LIFO/cursor shape: one generic dword pointer is initialized from
+     * one generic dword array, is advanced by whole elements, and stores an
+     * independently pointer-typed value.  This proves machine-word transport,
+     * not a semantic element type, so both declarations become neutral uint.
+     */
+    private NormalizedCode normalizeMachineWordStackArrayCursors(String code) {
+        Pattern arrayDeclaration = Pattern.compile(
+            "(?m)^(?<indent>[ \\t]*)undefined4\\s+(?<name>[A-Za-z_$][A-Za-z0-9_$]*)" +
+            "(?<suffix>\\s*\\[\\s*[1-9][0-9]*\\s*\\]\\s*;)\\s*$");
+        Pattern cursorDeclaration = Pattern.compile(
+            "(?m)^(?<indent>[ \\t]*)undefined4\\s*\\*\\s*" +
+            "(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;\\s*$");
+        Matcher arrays = arrayDeclaration.matcher(code);
+        Matcher cursors = cursorDeclaration.matcher(code);
+        Map<String, String> arrayLines = new LinkedHashMap<>();
+        Map<String, String> cursorLines = new LinkedHashMap<>();
+        while (arrays.find()) arrayLines.putIfAbsent(arrays.group("name"), arrays.group());
+        while (cursors.find()) cursorLines.putIfAbsent(cursors.group("name"), cursors.group());
+        if (arrayLines.isEmpty() || cursorLines.isEmpty())
+            return new NormalizedCode(code, 0);
+
+        Set<String> pointerValues = pointerDeclarations(code).keySet();
+        Set<String> selectedArrays = new LinkedHashSet<>();
+        Set<String> selectedCursors = new LinkedHashSet<>();
+        for (String cursor : cursorLines.keySet()) {
+            for (String array : arrayLines.keySet()) {
+                Pattern initialization = Pattern.compile(
+                    "(?m)^\\s*" + Pattern.quote(cursor) + "\\s*=\\s*(?:&\\s*" +
+                    Pattern.quote(array) + "\\s*\\[\\s*0\\s*\\]|" +
+                    Pattern.quote(array) + ")\\s*;\\s*$");
+                if (!initialization.matcher(code).find()) continue;
+                Pattern step = Pattern.compile(
+                    "(?m)^\\s*" + Pattern.quote(cursor) + "\\s*=\\s*" +
+                    Pattern.quote(cursor) + "\\s*[+-]\\s*(?:0x[0-9a-fA-F]+|[1-9][0-9]*)\\s*;\\s*$");
+                if (!step.matcher(code).find()) continue;
+                boolean pointerStore = false;
+                for (String value : pointerValues) {
+                    if (value.equals(cursor)) continue;
+                    Pattern store = Pattern.compile(
+                        "(?m)^\\s*\\*\\s*" + Pattern.quote(cursor) +
+                        "\\s*=\\s*" + Pattern.quote(value) + "\\s*;\\s*$");
+                    if (store.matcher(code).find()) {
+                        pointerStore = true;
+                        break;
+                    }
+                }
+                if (!pointerStore) continue;
+                selectedArrays.add(array);
+                selectedCursors.add(cursor);
+            }
+        }
+        if (selectedArrays.isEmpty()) return new NormalizedCode(code, 0);
+
+        String normalized = code;
+        int replacements = 0;
+        for (String array : selectedArrays) {
+            Pattern declaration = Pattern.compile(
+                "(?m)^(?<indent>[ \\t]*)undefined4\\s+" + Pattern.quote(array) +
+                "(?<suffix>\\s*\\[\\s*[1-9][0-9]*\\s*\\]\\s*;)\\s*$");
+            Matcher matcher = declaration.matcher(normalized);
+            if (matcher.find()) {
+                normalized = matcher.replaceFirst(Matcher.quoteReplacement(
+                    matcher.group("indent") + "uint " + array + matcher.group("suffix")));
+                replacements++;
+            }
+        }
+        for (String cursor : selectedCursors) {
+            Pattern declaration = Pattern.compile(
+                "(?m)^(?<indent>[ \\t]*)undefined4\\s*\\*\\s*" +
+                Pattern.quote(cursor) + "\\s*;\\s*$");
+            Matcher matcher = declaration.matcher(normalized);
+            if (matcher.find()) {
+                normalized = matcher.replaceFirst(Matcher.quoteReplacement(
+                    matcher.group("indent") + "uint *" + cursor + ";"));
+                replacements++;
+            }
+        }
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    private String neutralUnsignedType(String width) {
+        return switch (width) {
+            case "1" -> "byte";
+            case "2" -> "ushort";
+            case "4" -> "uint";
+            case "8" -> "ulonglong";
+            default -> throw new IllegalArgumentException("unsupported width " + width);
+        };
+    }
+
+    private int patternOccurrences(String text, Pattern pattern) {
+        int result = 0;
+        Matcher matcher = pattern.matcher(text == null ? "" : text);
+        while (matcher.find()) result++;
+        return result;
+    }
+
+    private Set<Integer> exactStackAccessWidths(Function function, int stackOffset) {
+        Set<Integer> widths = new HashSet<>();
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            for (int operand = 0; operand < instruction.getNumOperands(); operand++) {
+                boolean exact = false;
+                for (Reference reference : instruction.getOperandReferences(operand))
+                    if (reference instanceof StackReference stack &&
+                            stack.getStackOffset() == stackOffset) {
+                        exact = true;
+                        break;
+                    }
+                if (!exact) continue;
+                String rendered = instruction.getDefaultOperandRepresentation(operand)
+                    .toUpperCase(Locale.ROOT);
+                if (rendered.contains("BYTE PTR")) widths.add(1);
+                else if (rendered.contains("WORD PTR") &&
+                        !rendered.contains("DWORD PTR")) widths.add(2);
+                else if (rendered.contains("DWORD PTR")) widths.add(4);
+                else if (rendered.contains("QWORD PTR")) widths.add(8);
+            }
+        }
+        return widths;
+    }
+
+    /**
+     * Ghidra can retain a pointer declaration for one address-taken stack slot
+     * even when the machine code consistently reads that exact storage with x87
+     * single-precision operations.  Recover only a whole rendered lifetime: the
+     * slot must have repeated exact {@code float ptr [EBP+off]} evidence, every
+     * address use must already carry a {@code float *} cast, and no pointer
+     * dereference/arithmetic/null role may remain.  Mixed stack slots are left to
+     * the interval splitter below instead of receiving a misleading whole-local
+     * type.
+     */
+    private NormalizedCode normalizeMachineStackFloatLocals(Function function,
+            String code) {
+        if (function == null || code == null || code.isEmpty() ||
+                !code.contains("(float)")) return new NormalizedCode(code, 0);
+        Map<Integer, Integer> floatAccesses = new HashMap<>();
+        Set<Integer> conflictingX87Widths = new HashSet<>();
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (!mnemonic.startsWith("FLD") && !mnemonic.startsWith("FST")) continue;
+            String rendered = instruction.toString().toLowerCase(Locale.ROOT);
+            for (int operand = 0; operand < instruction.getNumOperands(); operand++) {
+                for (Reference reference : instruction.getOperandReferences(operand)) {
+                    if (!(reference instanceof StackReference stack)) continue;
+                    int offset = stack.getStackOffset();
+                    if (rendered.contains("float ptr"))
+                        floatAccesses.merge(offset, 1, Integer::sum);
+                    else if (rendered.contains("double ptr") ||
+                            rendered.contains("tbyte ptr"))
+                        conflictingX87Widths.add(offset);
+                }
+            }
+        }
+        if (floatAccesses.isEmpty()) return new NormalizedCode(code, 0);
+
+        String normalized = code;
+        int replacements = 0;
+        for (Variable variable : function.getLocalVariables()) {
+            if (!variable.isStackVariable() || variable.getLength() != 4 ||
+                    floatAccesses.getOrDefault(variable.getStackOffset(), 0) < 2 ||
+                    conflictingX87Widths.contains(variable.getStackOffset())) continue;
+            String name = variable.getName();
+            PointerDeclaration declaration = pointerDeclarations(normalized).get(name);
+            if (declaration == null) continue;
+            Pattern declarationLine = Pattern.compile(
+                "(?m)^" + Pattern.quote(declaration.indent) +
+                Pattern.quote(declaration.type) + "\\s*" +
+                Pattern.quote("*".repeat(declaration.stars)) + "\\s*" +
+                Pattern.quote(name) + "\\s*;$");
+            Matcher declared = declarationLine.matcher(normalized);
+            if (!declared.find() || declared.find()) continue;
+            String withoutDeclaration = declarationLine.matcher(normalized)
+                .replaceFirst("");
+            Pattern addressUse = Pattern.compile("&\\s*" + Pattern.quote(name) + "\\b");
+            Matcher addresses = addressUse.matcher(withoutDeclaration);
+            boolean badAddress = false;
+            while (addresses.find()) {
+                int start = Math.max(0, addresses.start() - 24);
+                String prefix = withoutDeclaration.substring(start, addresses.start());
+                if (!prefix.matches("(?s).*\\(\\s*float\\s*\\*\\s*\\)\\s*$")) {
+                    badAddress = true;
+                    break;
+                }
+            }
+            if (badAddress || pointerSemanticUse(withoutDeclaration, name) ||
+                    Pattern.compile("(?m)^\\s*" + Pattern.quote(name) +
+                        "\\s*=").matcher(withoutDeclaration).find()) continue;
+            String rewritten = declarationLine.matcher(normalized)
+                .replaceFirst(Matcher.quoteReplacement(
+                    declaration.indent + "float " + name + ";"));
+            rewritten = rewritten.replaceAll(
+                "\\(\\s*float\\s*\\*\\s*\\)\\s*&\\s*" +
+                    Pattern.quote(name) + "\\b", "&" + name);
+            rewritten = rewritten.replaceAll(
+                "\\(\\s*float\\s*\\)\\s*" + Pattern.quote(name) + "\\b",
+                name);
+            normalized = rewritten;
+            replacements++;
+        }
+        NormalizedCode intervals = normalizeExplicitFloatPointerLifetimes(normalized);
+        return new NormalizedCode(intervals.code,
+            replacements + intervals.replacements);
+    }
+
+    private boolean pointerSemanticUse(String code, String name) {
+        String token = Pattern.quote(name);
+        return Pattern.compile("\\b" + token + "\\s*(?:->|\\[)").matcher(code).find() ||
+            Pattern.compile("\\*\\s*" + token + "\\b").matcher(code).find() ||
+            Pattern.compile("\\b" + token + "\\s*(?:\\+|-)=?").matcher(code).find() ||
+            Pattern.compile("\\b" + token +
+                "\\s*(?:==|!=)\\s*(?:nullptr|\\([^)]*\\*\\)\\s*0x0|0x0)")
+                .matcher(code).find();
+    }
+
+    /**
+     * Split an explicitly floating value which Ghidra stores in a pointer-typed
+     * SSA local.  The alias declarations live at function scope without an
+     * initializer: placing an initialized declaration inside a switch arm makes
+     * otherwise valid compiler-generated gotos cross that initialization.  A
+     * lifetime starts only at an explicit pointer-cast-from-float or an
+     * assignment whose expression contains an independently declared floating
+     * value.  It ends before the next pointer-semantic definition/use.  Null in
+     * an already proven floating branch is the machine zero value, not a new
+     * pointer lifetime.
+     */
+    private NormalizedCode normalizeExplicitFloatPointerLifetimes(String code) {
+        NormalizedCode migrated = migrateInvalidFloatingLifetimeAliases(code);
+        code = migrated.code;
+        Map<String, PointerDeclaration> pointers = pointerDeclarations(code);
+        if (pointers.isEmpty()) return new NormalizedCode(code, 0);
+        List<String> lines = new ArrayList<>(Arrays.asList(code.split("\\R", -1)));
+        Set<String> floatingNames = new HashSet<>();
+        Pattern floatingDeclaration = Pattern.compile(
+            "^\\s*(?:float|double|float10)\\s+" +
+            "(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*(?:[;=]).*$");
+        for (String line : lines) {
+            Matcher declaration = floatingDeclaration.matcher(line);
+            if (declaration.matches()) floatingNames.add(declaration.group("name"));
+        }
+
+        Set<String> declarations = new java.util.LinkedHashSet<>();
+        int replacements = migrated.replacements;
+        int ordinal = 1;
+        final String marker =
+            "/* split floating lifetime from pointer-typed SSA storage */";
+
+        // Migrate bodies cached by the earlier inline-declaration rule.
+        Pattern oldDeclaration = Pattern.compile(
+            "^(?<indent>[ \\t]*)float\\s+(?<alias>float_(?<name>" +
+            "[A-Za-z_$][A-Za-z0-9_$]*)_[0-9]+)\\s*=\\s*(?<rhs>.+);\\s*" +
+            Pattern.quote(marker) + "\\s*$");
+        for (int index = 0; index < lines.size(); index++) {
+            Matcher old = oldDeclaration.matcher(lines.get(index));
+            if (!old.matches() || !pointers.containsKey(old.group("name"))) continue;
+            declarations.add(old.group("alias"));
+            floatingNames.add(old.group("alias"));
+            lines.set(index, old.group("indent") + old.group("alias") + " = " +
+                old.group("rhs").trim() + "; " + marker);
+            replacements++;
+        }
+
+        Pattern assignment = Pattern.compile(
+            "^(?<indent>[ \\t]*)(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*=\\s*" +
+            "(?<rhs>.+);\\s*$");
+        for (String name : pointers.keySet()) {
+            String alias = null;
+            boolean active = false;
+            for (int index = 0; index < lines.size(); index++) {
+                String line = lines.get(index);
+                Matcher candidate = assignment.matcher(line);
+                if (candidate.matches() && name.equals(candidate.group("name"))) {
+                    String rhs = candidate.group("rhs").trim();
+                    boolean explicit = explicitPointerFloatCast(rhs);
+                    boolean floating = explicit || explicitFloatingResult(rhs) ||
+                        !outerPointerCast(rhs) && !topLevelCallExpression(rhs) &&
+                            floatingExpression(rhs, floatingNames);
+                    if (active && nullPointerExpression(rhs)) {
+                        lines.set(index, candidate.group("indent") + alias +
+                            " = 0.0f; " + marker);
+                        replacements++;
+                        continue;
+                    }
+                    if (!floating) {
+                        active = false;
+                        alias = null;
+                        continue;
+                    }
+                    if (!active) {
+                        alias = "float_" + name + "_" + ordinal++;
+                        while (identifierOccurrences(code, alias) != 0 ||
+                                declarations.contains(alias))
+                            alias = "float_" + name + "_" + ordinal++;
+                        declarations.add(alias);
+                        floatingNames.add(alias);
+                        active = true;
+                    }
+                    String value = explicit ? stripPointerFloatCast(rhs) : rhs;
+                    lines.set(index, candidate.group("indent") + alias + " = " +
+                        value + "; " + marker);
+                    replacements++;
+                    continue;
+                }
+                if (!active) continue;
+                if (!identifierToken(line, name)) {
+                    if (line.strip().matches(
+                            "(?:break|continue|return|goto)\\b.*")) {
+                        active = false;
+                        alias = null;
+                    }
+                    continue;
+                }
+                if (pointerSemanticLifetimeUse(line, name)) {
+                    active = false;
+                    alias = null;
+                    continue;
+                }
+                lines.set(index, replaceIdentifier(line, name, alias)
+                    .replaceAll("\\(\\s*float\\s*\\)\\s*" +
+                        Pattern.quote(alias) + "\\b", alias));
+                replacements++;
+                if (line.strip().matches("(?:break|continue|return|goto)\\b.*")) {
+                    active = false;
+                    alias = null;
+                }
+            }
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        String normalized = String.join(System.lineSeparator(), lines);
+        if (!declarations.isEmpty()) {
+            Matcher body = Pattern.compile("(?m)^\\{[ \\t]*$").matcher(normalized);
+            if (!body.find()) return new NormalizedCode(code, 0);
+            int newline = normalized.indexOf('\n', body.end());
+            if (newline < 0) return new NormalizedCode(code, 0);
+            StringBuilder inserted = new StringBuilder();
+            for (String declaration : declarations)
+                if (!Pattern.compile("(?m)^\\s*float\\s+" +
+                        Pattern.quote(declaration) + "\\s*;").matcher(normalized).find())
+                    inserted.append("  float ").append(declaration).append(";")
+                        .append(System.lineSeparator());
+            normalized = normalized.substring(0, newline + 1) + inserted +
+                normalized.substring(newline + 1);
+            replacements += declarations.size();
+        }
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    private boolean explicitPointerFloatCast(String expression) {
+        return Pattern.compile(
+            "^\\([^;()]+\\*+\\)\\s*\\(*\\s*\\(float\\)")
+            .matcher(expression).find();
+    }
+
+    private String stripPointerFloatCast(String expression) {
+        return expression.replaceFirst(
+            "^\\([^;()]+\\*+\\)\\s*", "");
+    }
+
+    private boolean explicitFloatingResult(String expression) {
+        return Pattern.compile("^\\(*\\s*\\(\\s*(?:float|double|float10)\\s*\\)")
+            .matcher(expression).find();
+    }
+
+    private boolean outerPointerCast(String expression) {
+        return Pattern.compile("^\\(\\s*[^;()]+\\*+\\s*\\)")
+            .matcher(expression).find();
+    }
+
+    private boolean topLevelCallExpression(String expression) {
+        String value = expression.stripLeading();
+        while (value.startsWith("(")) {
+            int close = matchingDelimiter(value, 0, '(', ')');
+            if (close <= 0 || close == value.length() - 1) break;
+            String prefix = value.substring(1, close).trim();
+            if (prefix.matches("(?:const\\s+)?[A-Za-z_$][A-Za-z0-9_$:<> ]*\\*+"))
+                value = value.substring(close + 1).stripLeading();
+            else break;
+        }
+        return Pattern.compile("^[A-Za-z_$][A-Za-z0-9_$:]*\\s*\\(")
+            .matcher(value).find();
+    }
+
+    /**
+     * Reverse cached aliases created by the former expression-wide float test.
+     * A pointer cast is a pointer result even when its operand mentions a float;
+     * a call is restored only when the alias is subsequently consumed as a
+     * pointer.  The exact exporter marker and deterministic alias make this a
+     * bounded migration rather than a semantic guess.
+     */
+    private NormalizedCode migrateInvalidFloatingLifetimeAliases(String code) {
+        final String marker =
+            "/* split floating lifetime from pointer-typed SSA storage */";
+        Map<String, PointerDeclaration> pointers = pointerDeclarations(code);
+        if (pointers.isEmpty() || !code.contains(marker))
+            return new NormalizedCode(code, 0);
+        List<String> lines = new ArrayList<>(Arrays.asList(code.split("\\R", -1)));
+        Set<String> invalid = new LinkedHashSet<>();
+        Map<String, String> originals = new LinkedHashMap<>();
+        Pattern assignment = Pattern.compile(
+            "^\\s*(?<alias>float_[A-Za-z_$][A-Za-z0-9_$]*_[0-9]+)" +
+            "\\s*=\\s*(?<rhs>.+);\\s*" + Pattern.quote(marker) + "\\s*$");
+        for (int index = 0; index < lines.size(); index++) {
+            Matcher candidate = assignment.matcher(lines.get(index));
+            if (!candidate.matches()) continue;
+            String alias = candidate.group("alias");
+            String original = null;
+            for (String pointer : pointers.keySet()) {
+                if (alias.matches("float_" + Pattern.quote(pointer) + "_[0-9]+")) {
+                    original = pointer;
+                    break;
+                }
+            }
+            if (original == null) continue;
+            String rhs = candidate.group("rhs").trim();
+            String suffix = String.join(System.lineSeparator(),
+                lines.subList(index + 1, lines.size()));
+            boolean pointerUse = Pattern.compile(
+                "\\(\\s*[A-Za-z_$][A-Za-z0-9_$:<> ]*\\*+\\s*\\)\\s*" +
+                    Pattern.quote(alias) + "\\b|\\breturn\\s+" +
+                    Pattern.quote(alias) + "\\s*;")
+                .matcher(suffix).find() || pointerSemanticUse(suffix, alias);
+            if (outerPointerCast(rhs) && !explicitPointerFloatCast(rhs) ||
+                    topLevelCallExpression(rhs) && pointerUse) {
+                invalid.add(alias);
+                originals.put(alias, original);
+            }
+        }
+        if (invalid.isEmpty()) return new NormalizedCode(code, 0);
+        int replacements = 0;
+        Pattern declaration = Pattern.compile(
+            "^\\s*float\\s+(?<alias>float_[A-Za-z_$][A-Za-z0-9_$]*_[0-9]+)" +
+            "\\s*;\\s*$");
+        List<String> repaired = new ArrayList<>();
+        for (String line : lines) {
+            Matcher declared = declaration.matcher(line);
+            if (declared.matches() && invalid.contains(declared.group("alias"))) {
+                replacements++;
+                continue;
+            }
+            String value = line;
+            for (String alias : invalid) {
+                String replaced = replaceIdentifier(value, alias, originals.get(alias));
+                if (!replaced.equals(value)) {
+                    value = replaced;
+                    replacements++;
+                }
+            }
+            if (value.contains(marker) && invalid.stream().anyMatch(alias ->
+                    line.contains(alias + " =")))
+                value = value.replace(marker, "").stripTrailing();
+            repaired.add(value);
+        }
+        return new NormalizedCode(String.join(System.lineSeparator(), repaired), replacements);
+    }
+
+    private boolean floatingExpression(String expression,
+            Set<String> floatingNames) {
+        if (Pattern.compile("\\(\\s*(?:float|double|float10)\\s*\\)")
+                .matcher(expression).find()) return true;
+        for (String name : floatingNames)
+            if (identifierToken(expression, name)) return true;
+        return Pattern.compile("(?<![A-Za-z0-9_$])(?:[0-9]+\\.[0-9]*|" +
+            "\\.[0-9]+)(?:[eE][+-]?[0-9]+)?[fFlL]?(?![A-Za-z0-9_$])")
+            .matcher(expression).find();
+    }
+
+    private boolean identifierToken(String text, String name) {
+        return Pattern.compile("(?<![A-Za-z0-9_$])" + Pattern.quote(name) +
+            "(?![A-Za-z0-9_$])").matcher(text).find();
+    }
+
+    private boolean pointerSemanticLifetimeUse(String line, String name) {
+        String token = Pattern.quote(name);
+        String withoutFloatCast = line.replaceAll(
+            "\\(\\s*float\\s*\\)\\s*" + token + "\\b", name);
+        return Pattern.compile("\\b" + token + "\\s*(?:->|\\[)")
+                .matcher(withoutFloatCast).find() ||
+            Pattern.compile("(?:^|[=,(])\\s*\\*\\s*" + token + "\\b")
+                .matcher(withoutFloatCast).find() ||
+            Pattern.compile("&\\s*" + token + "\\b")
+                .matcher(withoutFloatCast).find() ||
+            Pattern.compile("\\b" + token +
+                "\\s*(?:==|!=)\\s*(?:nullptr|0x0)")
+                .matcher(withoutFloatCast).find();
     }
 
     /**
@@ -3068,6 +4139,123 @@ public class STDecompExport extends GhidraScript {
     }
 
     /**
+     * Keep a returned-parameter helper as ordinary source sequencing when one caller needs a
+     * different pointer view.  Ghidra's C printer legally emits
+     * {@code result = (T *)helper(..., storage, ...)}, but wrapping the call itself in a cast is
+     * a readability regression in the C++ source tree.  The callee marker and complete machine
+     * CFG prove that the result is the exact actual at {@code ordinal}; therefore render:
+     *
+     * <pre>
+     * helper(..., storage, ...);
+     * result = (T *)storage;
+     * </pre>
+     *
+     * Only a simple actual and one complete assignment statement are accepted.  Argument
+     * evaluation order and the call side effects remain unchanged, while the representation
+     * boundary is attached to storage rather than obscuring the call.
+     */
+    private NormalizedCode normalizeReturnedParameterCallResults(Function function,
+            String code) {
+        if (function == null || code == null || code.isEmpty())
+            return new NormalizedCode(code, 0);
+        Map<String, Integer> returnedOrdinals = new LinkedHashMap<>();
+        Set<String> conflicts = new HashSet<>();
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            if (!"CALL".equalsIgnoreCase(instruction.getMnemonicString())) continue;
+            Function direct = directCalledFunction(instruction);
+            Function target = resolvedThunkTarget(direct);
+            int ordinal = returnedPointerParameterOrdinal(target);
+            if (direct == null || ordinal < 0) continue;
+            Integer previous = returnedOrdinals.putIfAbsent(direct.getName(), ordinal);
+            if (previous != null && previous.intValue() != ordinal)
+                conflicts.add(direct.getName());
+        }
+        for (String conflict : conflicts) returnedOrdinals.remove(conflict);
+        if (returnedOrdinals.isEmpty()) return new NormalizedCode(code, 0);
+
+        String normalized = code;
+        int replacements = 0;
+        for (Map.Entry<String, Integer> proof : returnedOrdinals.entrySet()) {
+            Pattern callName = Pattern.compile("(?<![A-Za-z0-9_$])" +
+                "(?<name>(?:[A-Za-z_$][A-Za-z0-9_$]*::)*" +
+                Pattern.quote(proof.getKey()) + ")\\s*\\(");
+            Matcher matcher = callName.matcher(normalized);
+            List<ReturnedParameterAssignment> edits = new ArrayList<>();
+            while (matcher.find()) {
+                int open = matcher.end() - 1;
+                int close = matchingParenthesis(normalized, open);
+                if (close < 0) continue;
+                int semicolon = skipHorizontalWhitespace(normalized, close + 1);
+                if (semicolon >= normalized.length() ||
+                        normalized.charAt(semicolon) != ';') continue;
+                List<String> arguments = splitTopLevelArguments(
+                    normalized.substring(open + 1, close));
+                int ordinal = proof.getValue();
+                if (ordinal < 0 || ordinal >= arguments.size()) continue;
+                String returned = arguments.get(ordinal).trim();
+                boolean simpleReturned = SIMPLE_IDENTIFIER.matcher(returned).matches();
+                boolean addressedReturned = Pattern.compile(
+                    "&\\s*[A-Za-z_$][A-Za-z0-9_$]*").matcher(returned).matches();
+                if (!simpleReturned && !addressedReturned) continue;
+
+                int lineStart = normalized.lastIndexOf('\n', matcher.start()) + 1;
+                String prefix = normalized.substring(lineStart, matcher.start());
+                Matcher assignment = Pattern.compile(
+                    "^(?<indent>[ \\t]*)(?<result>[A-Za-z_$][A-Za-z0-9_$]*)" +
+                    "[ \\t]*=[ \\t]*(?<cast>\\([A-Za-z_$][A-Za-z0-9_$: ]*" +
+                    "\\s*\\*+\\))[ \\t]*$").matcher(prefix);
+                Matcher plainAssignment = Pattern.compile(
+                    "^(?<indent>[ \\t]*)(?<result>[A-Za-z_$][A-Za-z0-9_$]*)" +
+                    "[ \\t]*=[ \\t]*$").matcher(prefix);
+                boolean casted = assignment.matches();
+                if (!casted && (!addressedReturned || !plainAssignment.matches()))
+                    continue;
+                String call = normalized.substring(matcher.start(), close + 1);
+                String indent = casted ? assignment.group("indent") :
+                    plainAssignment.group("indent");
+                String result = casted ? assignment.group("result") :
+                    plainAssignment.group("result");
+                String projected = casted ? assignment.group("cast") + returned :
+                    returned;
+                String replacement = indent + call + ";\n" + indent +
+                    result + " = " + projected + ";";
+                edits.add(new ReturnedParameterAssignment(lineStart, semicolon + 1,
+                    replacement));
+            }
+            for (ReturnedParameterAssignment edit : edits.reversed()) {
+                normalized = normalized.substring(0, edit.start) + edit.replacement +
+                    normalized.substring(edit.end);
+                replacements++;
+            }
+        }
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    private int returnedPointerParameterOrdinal(Function function) {
+        if (function == null) return -1;
+        String comment = listing.getComment(CommentType.PLATE,
+            function.getEntryPoint());
+        if (comment == null) return -1;
+        Matcher matcher = RETURNED_POINTER_PARAMETER_ORDINAL.matcher(comment);
+        if (!matcher.find()) return -1;
+        try { return Integer.parseInt(matcher.group(1)); }
+        catch (NumberFormatException exception) { return -1; }
+    }
+
+    private Function resolvedThunkTarget(Function function) {
+        Set<Address> seen = new HashSet<>();
+        while (function != null && function.isThunk() &&
+                seen.add(function.getEntryPoint())) {
+            Function target = function.getThunkedFunction(false);
+            if (target == null || target.equals(function)) break;
+            function = target;
+        }
+        return function;
+    }
+
+    /**
      * Split a compiler-recycled incoming stack slot in the text projection.
      *
      * The Listing must keep the entry parameter because it is part of the ABI.
@@ -3084,8 +4272,13 @@ public class STDecompExport extends GhidraScript {
             return new NormalizedCode(code, 0);
         Set<String> candidates = reusedParameterNames(function);
         if (candidates.isEmpty()) return new NormalizedCode(code, 0);
-        List<String> lines = new ArrayList<>(Arrays.asList(code.split("\\R", -1)));
-        int replacements = repairExistingReusedLifetimeDeclarations(
+        NormalizedCode migrated = migrateLegacyOutputCallLifetimes(candidates, code);
+        NormalizedCode outputCalls = normalizeOutputCallReusedParameters(
+            candidates, migrated.code);
+        List<String> lines = new ArrayList<>(Arrays.asList(
+            outputCalls.code.split("\\R", -1)));
+        int replacements = migrated.replacements + outputCalls.replacements +
+            repairExistingReusedLifetimeDeclarations(
             function, candidates, lines);
         for (String name : candidates) {
             Pattern assignment = Pattern.compile("^(?<indent>[ \\t]*)" +
@@ -3131,7 +4324,8 @@ public class STDecompExport extends GhidraScript {
 
             String local = name + "_after_write";
             int suffix = 2;
-            while (identifierOccurrences(code, local) != 0)
+            String currentProjection = String.join(System.lineSeparator(), lines);
+            while (identifierOccurrences(currentProjection, local) != 0)
                 local = name + "_after_write_" + suffix++;
             String rhs = selected.group("rhs").trim();
             String declarationType = reusedLifetimeDeclarationType(function, name, rhs);
@@ -3143,6 +4337,206 @@ public class STDecompExport extends GhidraScript {
             replacements++;
         }
         return new NormalizedCode(String.join(System.lineSeparator(), lines), replacements);
+    }
+
+    /**
+     * Migrate the first output-call projection, which used the same
+     * {@code param_N_after_write} spelling as ordinary explicit assignments.
+     * When an ordinary split shadows it, the outer declaration is dead and can
+     * be removed.  Otherwise invert the old mechanical rewrite, then let the
+     * current evidence-gated pass decide whether the value is really a pointer
+     * lifetime or merely a scalar output.
+     */
+    private NormalizedCode migrateLegacyOutputCallLifetimes(Set<String> candidates,
+            String code) {
+        String migrated = code;
+        int replacements = 0;
+        for (String parameter : candidates) {
+            String legacy = parameter + "_after_write";
+            Pattern declaration = Pattern.compile(
+                "(?m)^[ \\t]*void[ \\t]*\\*[ \\t]*" + Pattern.quote(legacy) +
+                "[ \\t]*=[ \\t]*nullptr;[ \\t]*" +
+                Pattern.quote(OUTPUT_CALL_SLOT_SPLIT_MARKER) + "[ \\t]*(?:\\R|$)");
+            Matcher declared = declaration.matcher(migrated);
+            if (!declared.find()) continue;
+            String withoutOuter = migrated.substring(0, declared.start()) +
+                migrated.substring(declared.end());
+            Pattern shadow = Pattern.compile(
+                "(?m)^[ \\t]*(?:auto|void|byte|char|u?short|u?int|u?long|" +
+                "undefined[1248]?|[A-Za-z_$][A-Za-z0-9_$:]*)[ \\t]*" +
+                "(?:\\*+[ \\t]*)?" + Pattern.quote(legacy) +
+                "[ \\t]*(?:=|;)");
+            if (shadow.matcher(withoutOuter).find()) {
+                migrated = withoutOuter;
+                replacements++;
+                continue;
+            }
+
+            // Restore the exact pre-normalization parameter spelling.  This
+            // reverses only an exporter-owned identifier and address operand;
+            // the current pass below will create `_after_output` again when
+            // fixed-offset pointer evidence still exists.
+            migrated = replaceIdentifier(withoutOuter, legacy, parameter);
+            replacements++;
+        }
+        return new NormalizedCode(migrated, replacements);
+    }
+
+    /**
+     * A callee may overwrite an incoming scalar parameter slot through `&param` rather than an
+     * explicit assignment visible in decompiler text.  The repair applier's exact marker proves
+     * that lifetime boundary.  Materialize a neutral pointer local only when all later uses are
+     * fixed byte-offset dereferences and no label can bypass the defining call.
+     */
+    private NormalizedCode normalizeOutputCallReusedParameters(Set<String> candidates,
+            String code) {
+        String normalized = code;
+        int replacements = 0;
+        for (String name : candidates) {
+            Pattern address = Pattern.compile(
+                "\\(\\s*(?<word>int|uint|undefined4)\\s*\\*\\s*\\)\\s*&\\s*" +
+                Pattern.quote(name) + "(?![A-Za-z0-9_$])");
+            Matcher matcher = address.matcher(normalized);
+            if (!matcher.find()) continue;
+            if (!hasOutputPointerLifetime(normalized, name, matcher.end())) continue;
+            String local = name + "_after_output";
+            int suffix = 2;
+            while (identifierOccurrences(normalized, local) != 0)
+                local = name + "_after_output_" + suffix++;
+
+            String word = matcher.group("word");
+            normalized = address.matcher(normalized).replaceAll(Matcher.quoteReplacement(
+                "(" + word + " *)&" + local));
+            normalized = normalizeFixedPointerParameterFields(normalized, name, local);
+            normalized = replacePointerCasts(normalized, name, local);
+            normalized = normalizeOutputCallPointerAliases(normalized, name, local);
+
+            int body = Pattern.compile("(?m)^\\{[ \\t]*$").matcher(normalized).find() ?
+                bodyBraceStart(normalized) : -1;
+            if (body < 0) continue;
+            int insert = normalized.indexOf('\n', body);
+            if (insert < 0) continue;
+            insert++;
+            normalized = normalized.substring(0, insert) + "  void *" + local +
+                " = nullptr; " + OUTPUT_CALL_SLOT_SPLIT_MARKER +
+                System.lineSeparator() + normalized.substring(insert);
+            replacements++;
+        }
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    private boolean hasOutputPointerLifetime(String code, String parameter,
+            int afterAddress) {
+        String suffix = code.substring(Math.min(afterAddress, code.length()));
+        if (hasFixedPointerOffsetUse(suffix, parameter)) return true;
+        Matcher aliases = Pattern.compile("(?m)^\\s*(?<alias>[A-Za-z_$][A-Za-z0-9_$]*)" +
+            "\\s*=\\s*" + Pattern.quote(parameter) + "\\s*;\\s*$").matcher(suffix);
+        while (aliases.find()) {
+            if (hasFixedPointerOffsetUse(suffix.substring(aliases.end()),
+                    aliases.group("alias"))) return true;
+        }
+        return false;
+    }
+
+    /**
+     * Ghidra may copy the overwritten parameter slot through an integer-typed
+     * HighVariable before using that copy as a pointer.  The output-call proof
+     * already split the physical slot; carry that split through an exact alias
+     * only when the alias has no earlier value use and its remaining uses are
+     * fixed-offset pointer dereferences.  This is lifetime presentation, not a
+     * semantic pointee inference, so the alias deliberately stays {@code void *}.
+     */
+    private String normalizeOutputCallPointerAliases(String code, String parameter,
+            String local) {
+        Pattern declaration = Pattern.compile(
+            "(?m)^(?<indent>[ \\t]*)(?<type>int|uint|undefined4)[ \\t]+" +
+            "(?<alias>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*;[ \\t]*$");
+        Matcher declarations = declaration.matcher(code);
+        while (declarations.find()) {
+            String alias = declarations.group("alias");
+            Pattern assignment = Pattern.compile(
+                "(?m)^(?<indent>[ \\t]*)" + Pattern.quote(alias) +
+                "[ \\t]*=[ \\t]*" + Pattern.quote(parameter) +
+                "[ \\t]*;[ \\t]*$");
+            Matcher assignments = assignment.matcher(code);
+            if (!assignments.find(declarations.end())) continue;
+            int outputBoundary = code.lastIndexOf("&" + local, assignments.start());
+            if (outputBoundary < declarations.end()) continue;
+            String beforeAssignment = code.substring(declarations.end(), assignments.start());
+            if (identifierOccurrences(beforeAssignment, alias) != 0) continue;
+
+            int nextDefinition = nextSimpleAssignment(code, alias, assignments.end());
+            String afterAssignment = code.substring(assignments.end(),
+                nextDefinition < 0 ? code.length() : nextDefinition);
+            if (!hasFixedPointerOffsetUse(afterAssignment, alias)) continue;
+
+            String rewrittenDeclaration = declarations.group("indent") + "void *" + alias + ";";
+            code = code.substring(0, declarations.start()) + rewrittenDeclaration +
+                code.substring(declarations.end());
+            int assignmentShift = rewrittenDeclaration.length() -
+                (declarations.end() - declarations.start());
+            int assignmentStart = assignments.start() + assignmentShift;
+            Matcher rewrittenAssignment = assignment.matcher(code);
+            if (!rewrittenAssignment.find(Math.max(0, assignmentStart - 2))) continue;
+            String replacement = rewrittenAssignment.group("indent") + alias + " = " + local + ";";
+            code = code.substring(0, rewrittenAssignment.start()) + replacement +
+                code.substring(rewrittenAssignment.end());
+            code = normalizeFixedPointerParameterFields(code, alias, alias);
+            declarations = declaration.matcher(code);
+        }
+        return code;
+    }
+
+    private int nextSimpleAssignment(String code, String name, int start) {
+        Matcher matcher = Pattern.compile("(?m)^\\s*" + Pattern.quote(name) +
+            "\\s*=").matcher(code);
+        return matcher.find(start) ? matcher.start() : -1;
+    }
+
+    private boolean hasFixedPointerOffsetUse(String code, String name) {
+        Pattern raw = Pattern.compile(
+            "\\*\\s*\\(\\s*[A-Za-z_$][A-Za-z0-9_$:<> ]*\\s*\\*+\\s*\\)\\s*" +
+            "\\(\\s*(?:\\(\\s*(?:int|uint|undefined4)\\s*\\)\\s*)?" +
+            Pattern.quote(name) + "\\s*\\+\\s*(?:0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
+        if (raw.matcher(code).find()) return true;
+        return Pattern.compile("STField<[^>]+>\\(\\s*" + Pattern.quote(name) +
+            "\\s*,").matcher(code).find();
+    }
+
+    private int bodyBraceStart(String code) {
+        Matcher matcher = Pattern.compile("(?m)^\\{[ \\t]*$").matcher(code);
+        return matcher.find() ? matcher.start() : -1;
+    }
+
+    private String normalizeFixedPointerParameterFields(String code, String parameter,
+            String local) {
+        Pattern access = Pattern.compile(
+            "\\*\\s*\\(\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:]*(?:\\s*\\*+)?)" +
+            "\\s*\\*\\s*\\)\\s*\\(\\s*(?:\\(\\s*(?:int|uint|undefined4)\\s*\\)\\s*)?" +
+            Pattern.quote(parameter) + "\\s*\\+\\s*" +
+            "(?<offset>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
+        Matcher matcher = access.matcher(code);
+        StringBuffer output = new StringBuffer();
+        while (matcher.find()) matcher.appendReplacement(output, Matcher.quoteReplacement(
+            "STField<" + matcher.group("type").trim() + ">(" + local + "," +
+            matcher.group("offset") + ")"));
+        matcher.appendTail(output);
+        String rewritten = output.toString();
+        return rewritten.replaceAll(
+            "(STField<[^>]+>\\(\\s*)" + Pattern.quote(parameter) + "(\\s*,)",
+            "$1" + Matcher.quoteReplacement(local) + "$2");
+    }
+
+    private String replacePointerCasts(String code, String parameter, String local) {
+        Pattern cast = Pattern.compile(
+            "(?<cast>\\(\\s*[A-Za-z_$][A-Za-z0-9_$:<> ]*\\s*\\*+\\s*\\))\\s*" +
+            Pattern.quote(parameter) + "(?![A-Za-z0-9_$])");
+        Matcher matcher = cast.matcher(code);
+        StringBuffer output = new StringBuffer();
+        while (matcher.find()) matcher.appendReplacement(output, Matcher.quoteReplacement(
+            matcher.group("cast") + local));
+        matcher.appendTail(output);
+        return output.toString();
     }
 
     /**
@@ -5784,7 +7178,8 @@ public class STDecompExport extends GhidraScript {
                 addIdiom(evidence, "bulk_zero_initialization", index + 1, line);
             if (line.contains(BULK_COPY_MARKER))
                 addIdiom(evidence, "bulk_byte_copy", index + 1, line);
-            if (line.contains(STACK_SLOT_SPLIT_MARKER))
+            if (line.contains(STACK_SLOT_SPLIT_MARKER) ||
+                    line.contains(OUTPUT_CALL_SLOT_SPLIT_MARKER))
                 addIdiom(evidence, "stack_slot_reuse", index + 1, line);
             if (line.contains("DArrayAt<"))
                 addIdiom(evidence, "dynamic_array_indexing", index + 1, line);
@@ -5810,7 +7205,8 @@ public class STDecompExport extends GhidraScript {
                 (kind.equals("bulk_byte_copy") && code != null &&
                     code.contains(BULK_COPY_MARKER)) ||
                 (kind.equals("stack_slot_reuse") && code != null &&
-                    code.contains(STACK_SLOT_SPLIT_MARKER)) ||
+                    (code.contains(STACK_SLOT_SPLIT_MARKER) ||
+                     code.contains(OUTPUT_CALL_SLOT_SPLIT_MARKER))) ||
                 (kind.equals("dynamic_array_indexing") && code != null &&
                     code.contains("DArrayAt<"));
             if (normalizedSite) pseudocodeNormalizationCount += value.occurrences;
@@ -5935,6 +7331,9 @@ public class STDecompExport extends GhidraScript {
                 }
             }
         }
+        if (containsOutputCallScalarAlias(code))
+            addQuality(evidence, "output_call_scalar_alias", 1, 1,
+                "integer local aliases a pointer-valued output-call stack-slot lifetime");
         // The legacy casted_call_result inventory is deliberately retained for
         // corpus compatibility, but it scans one rendered line at a time.  A
         // harmless decompiler wrapping change can therefore turn an existing
@@ -5988,6 +7387,24 @@ public class STDecompExport extends GhidraScript {
         }
     }
 
+    private boolean containsOutputCallScalarAlias(String code) {
+        if (code == null || !code.contains(OUTPUT_CALL_SLOT_SPLIT_MARKER)) return false;
+        Pattern declaration = Pattern.compile(
+            "(?m)^\\s*(?:int|uint|undefined4)\\s+" +
+            "(?<alias>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;\\s*$");
+        Matcher declarations = declaration.matcher(code);
+        while (declarations.find()) {
+            String alias = declarations.group("alias");
+            Matcher assignment = Pattern.compile("(?m)^\\s*" + Pattern.quote(alias) +
+                "\\s*=\\s*param_[0-9]+\\s*;\\s*$").matcher(code);
+            assignment.region(declarations.end(), code.length());
+            while (assignment.find()) {
+                if (hasFixedPointerOffsetUse(code.substring(assignment.end()), alias)) return true;
+            }
+        }
+        return false;
+    }
+
     private void addQualityMatches(Map<String, QualityEvidence> evidence, String kind,
             Pattern pattern, String line, int lineNumber) {
         Matcher matcher = pattern.matcher(line);
@@ -6013,7 +7430,7 @@ public class STDecompExport extends GhidraScript {
                  "excessive_pointer_depth", "nullptr_deduced_local",
                  "nullptr_switch_case", "generic_undefined_declaration",
                  "casted_call_result", "canonical_casted_call_result",
-                 "roundtrip_call_presentation_failure" -> "high";
+                 "roundtrip_call_presentation_failure", "output_call_scalar_alias" -> "high";
             case "raw_pointer_offset", "packed_or_unaligned_piece",
                  "generic_global_aggregate", "undefined_type",
                  "flattened_global_record_array", "dynamic_array_indexing",
@@ -6027,7 +7444,7 @@ public class STDecompExport extends GhidraScript {
         return switch (kind) {
             case "return_width_artifact", "unresolved_register_input" -> "abi_recovery";
             case "suspicious_subnormal_literal" -> "abi_recovery";
-            case "stack_slot_reuse", "call_clobber_piece" ->
+            case "stack_slot_reuse", "call_clobber_piece", "output_call_scalar_alias" ->
                 "ssa_lifetime_presentation";
             case "nullptr_deduced_local", "nullptr_switch_case" ->
                 "source_declaration_recovery";
@@ -6054,7 +7471,8 @@ public class STDecompExport extends GhidraScript {
         return switch (kind) {
             case "generated_enum_bitwise_composition", "degraded_exact_indirect_call",
                  "excessive_pointer_depth", "nullptr_deduced_local",
-                 "nullptr_switch_case", "roundtrip_call_presentation_failure" ->
+                 "nullptr_switch_case", "roundtrip_call_presentation_failure",
+                 "output_call_scalar_alias" ->
                 "strict_zero";
             case "generic_undefined_declaration" -> "nonincreasing";
             case "casted_call_result", "canonical_casted_call_result" -> "nonincreasing";
@@ -6099,6 +7517,8 @@ public class STDecompExport extends GhidraScript {
                 "propagate the concrete return ABI or install an exact use-site override; a new pointer cast around a call is a readability regression";
             case "roundtrip_call_presentation_failure" ->
                 "repair the machine-proven returned-parameter call projection; never assign the result of a source-level void helper";
+            case "output_call_scalar_alias" ->
+                "carry the proven output-call stack-slot lifetime through the exact local alias instead of retaining integer pointer arithmetic";
             case "control_flow_label" ->
                 "restructure only after CFG/post-dominator proof; optimized shared tails may legitimately require a label";
             case "raw_indirect_call" ->
@@ -6297,6 +7717,21 @@ public class STDecompExport extends GhidraScript {
         for (StackSlotLifetime slot : slots.values())
             if (slot.readBeforeWrite && slot.written && slot.readAfterWrite)
                 result.add(slot.parameterName);
+        String comment = function.getComment();
+        if (comment != null) {
+            Matcher repair = Pattern.compile(
+                "\\[STPrototypeRepairApplier\\] Propagated parameter ([0-9]+)\\." +
+                "\\s*Evidence: incoming stack slot is read as a [^\\r\\n]+ before its " +
+                "address is passed as a distinct output lifetime")
+                .matcher(comment);
+            while (repair.find()) {
+                int ordinal = Integer.parseInt(repair.group(1));
+                for (Parameter parameter : function.getParameters())
+                    if (!parameter.isAutoParameter() &&
+                            parameter.getOrdinal() == ordinal)
+                        result.add(parameter.getName());
+            }
+        }
         Set<String> immutable = Set.copyOf(result);
         stackSlotReuseCache.put(function.getEntryPoint(), immutable);
         return immutable;
@@ -8172,7 +9607,9 @@ public class STDecompExport extends GhidraScript {
         int returnedOrdinal) { }
     private record RoundTripRewrite(String code, int replacements, boolean matched) { }
     private record RoundTripRewriteCandidate(int start, int end, String replacement,
-        boolean alreadyNormalized) { }
+            boolean alreadyNormalized) { }
+    private record ReturnedParameterAssignment(int start, int end,
+            String replacement) { }
     private record FunctionFingerprints(String canonical, String paddedCallFixup) { }
     private record StackObjectPresentation(String name, long bytes) { }
     private record FixedZeroStore(long offset, int width) { }

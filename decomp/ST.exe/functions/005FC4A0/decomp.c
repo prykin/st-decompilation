@@ -11,7 +11,7 @@ undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
   bool bVar4;
   bool bVar5;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   short sVar8;
 
   sVar8 = param_1->field_034E;

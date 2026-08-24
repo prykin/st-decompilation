@@ -305,7 +305,7 @@ undefined4 __thiscall st::fn_004A7E30(STGroupBoatC *this,int param_1)
     }
     iVar5 = 0;
     dVar1 = this->field_022E->count;
-    piVar3 = st::pointer_boundary_cast<int *>(this->field_022E->data);
+    piVar3 = static_cast<int *>(this->field_022E->data);
     if (0 < (int)dVar1) {
       do {
         if (((short)piVar3[1] != -1) && (*piVar3 == 0)) {

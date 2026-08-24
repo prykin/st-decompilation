@@ -24,7 +24,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
   RecoveredSourceFamily_dibcopy *pRVar6;
   StartSystemTy *this_00;
   int iVar10;
-  undefined4 *puVar8;
+  uint *puVar8;
   int iVar9;
   int iVar11;
   uint uVar12;

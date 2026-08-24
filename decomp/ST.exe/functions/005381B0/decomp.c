@@ -12,7 +12,7 @@ void __thiscall PanelTy::InitPanel(PanelTy *this)
   int iVar2;
   int uVar3;
   int *piVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar7;
   uint uVar4;
   uint uVar5;
@@ -29,7 +29,7 @@ void __thiscall PanelTy::InitPanel(PanelTy *this)
   if (iVar2 == 0) {
     iVar8 = 1;
     puVar6 = PTR_0080679c + 0x14;
-    uVar3 = FUN_006b4fe0((int)PTR_0080679c);
+    uVar3 = FUN_006b4fe0(PTR_0080679c);
     piVar2 = (int *)FUN_006b50c0(this_00->field_0040,this_00->field_0048,(uint)PTR_0080679c[7],uVar3
                                  ,(undefined4 *)puVar6,iVar8);
     this_00->field_0068 = piVar2;

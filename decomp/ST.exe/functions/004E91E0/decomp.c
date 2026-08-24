@@ -21,9 +21,9 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
   short sVar12;
   int iVar13;
   int iVar14;
-  undefined4 *puVar15;
-  undefined4 *puVar16;
-  undefined4 *puVar17;
+  uint *puVar15;
+  uint *puVar16;
+  uint *puVar17;
   int *piVar18;
 
   if (STField<int>(this,0x5ac) == 0x6c) {

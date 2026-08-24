@@ -14,7 +14,7 @@ FUN_004b2520(uint param_1,STBoatC_field_06F7State param_2,int param_3,int param_
             undefined4 *param_6,undefined4 *param_7,undefined4 *param_8,int param_9,int *param_10)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   byte bVar2;
   byte bVar3;
   short sVar4;
@@ -25,7 +25,7 @@ FUN_004b2520(uint param_1,STBoatC_field_06F7State param_2,int param_3,int param_
   int iVar8;
   int iVar9;
   uint uVar10;
-  undefined4 uVar11;
+  uint uVar11;
   short sVar12;
   int iVar13;
   int *piVar14;
@@ -41,7 +41,7 @@ FUN_004b2520(uint param_1,STBoatC_field_06F7State param_2,int param_3,int param_
   int local_2c;
   int local_28;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

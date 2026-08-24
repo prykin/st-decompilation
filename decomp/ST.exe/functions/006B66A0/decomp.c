@@ -11,11 +11,11 @@ int FUN_006b66a0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undef
   int *piVar1;
   code *pcVar2;
   int iVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar5;
-  undefined1 *puVar6;
+  byte *puVar6;
   char *pcVar7;
-  undefined1 *puVar8;
+  byte *puVar8;
   undefined4 auStack_2c [2];
   undefined1 auStack_24 [4];
   int iStack_20;

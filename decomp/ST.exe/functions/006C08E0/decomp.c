@@ -14,27 +14,27 @@ void FUN_006c08e0(void)
   uint uVar6;
   uint local_ECX_632;
   uint uVar7;
-  AnonShape_006BFBF0_13F73F95 *pAVar8;
+  uint pAVar8;
   int iVar9;
   short *psVar10;
-  AnonShape_006BFBF0_13F73F95 *local_ESI_1151;
+  uint local_ESI_1151;
   uint pAVar10;
   uint *puVar11;
   int *local_EDI_947;
-  undefined4 *puVar12;
+  uint *puVar12;
   AnonShape_006BFE70_9EDC24A5 *pAVar13;
   undefined1 local_3c [4];
   byte local_38 [4];
   int local_34;
   undefined4 local_30;
   undefined4 local_2c;
-  AnonShape_006BFBF0_13F73F95 *local_28;
+  uint local_28;
   uint local_24;
   uint local_20;
   uint local_1c;
   uint local_18;
   uint local_14;
-  AnonShape_006BFBF0_13F73F95 *local_10;
+  uint local_10;
   uint local_c;
   uint *local_8;
   uint pAVar9;
@@ -68,7 +68,7 @@ void FUN_006c08e0(void)
                                 ((&PTR_00855004)[uVar2 * 0x31],&local_14,local_3c), iVar4 != 0))
           goto cf_common_join_006C0E00;
           pAVar9 = *(uint *)(&DAT_00855010 + iVar9);
-          local_28 = *(AnonShape_006BFBF0_13F73F95 **)(&DAT_0085500c + iVar9);
+          local_28 = *(uint *)(&DAT_0085500c + iVar9);
           if (pAVar9 <= local_28) {
             uVar6 = *(uint *)pAVar13;
             if ((uVar6 & 0x10) == 0) {
@@ -117,15 +117,16 @@ LAB_006c0af5:
               if (local_20 <= local_14) goto LAB_006c0b45;
               if ((*(byte *)pAVar13 & 4) == 0) goto cf_common_join_006C0F07;
               local_24 = local_20;
-              local_ECX_632 = (int)local_28 - local_20;
+              local_ECX_632 = ((int)local_28 - (int)local_20);
             }
             else {
               if (local_14 < local_20) {
                 /* ST_CALLSITE[006C0A6F]: CALL dword ptr [ESI + 0x2c] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x2c))
-                                  ((&PTR_00855004)[uVar2 * 0x31],local_20,(int)local_28 - local_20,
-                                   &local_8,&local_1c,&local_30,&local_2c,0);
+                                  ((&PTR_00855004)[uVar2 * 0x31],local_20,
+                                   (int)local_28 - (int)local_20,&local_8,&local_1c,&local_30,
+                                   &local_2c,0);
                 if (iVar4 == 0) {
                   bVar3 = (*(short *)(&DAT_00855090 + iVar9) != 8) - 1;
                   puVar11 = local_8;
@@ -154,13 +155,11 @@ LAB_006c0b45:
               local_24 = 0;
               local_ECX_632 = local_20;
             }
-            local_10 = (AnonShape_006BFBF0_13F73F95 *)local_ECX_632;
+            local_10 = local_ECX_632;
             if (local_ECX_632 != 0) {
-              local_ESI_1151 = (AnonShape_006BFBF0_13F73F95 *)local_ECX_632;
-              if (iVar4 < (int)(local_ECX_632 / *(ushort *)(&DAT_0085508e + iVar9))) {
-                local_ESI_1151 =
-                     (AnonShape_006BFBF0_13F73F95 *)
-                     ((uint)*(ushort *)(&DAT_0085508e + iVar9) * iVar4);
+              local_ESI_1151 = local_ECX_632;
+              if (iVar4 < (int)((uint)local_ECX_632 / (uint)*(ushort *)(&DAT_0085508e + iVar9))) {
+                local_ESI_1151 = ((uint)*(ushort *)(&DAT_0085508e + iVar9) * iVar4);
               }
               local_28 = local_ESI_1151;
               /* ST_CALLSITE[006C0BA1]: CALL dword ptr [ECX + 0x2c] */
@@ -172,13 +171,13 @@ LAB_006c0b45:
                 if ((local_ESI_1151 < local_ECX_632) &&
                    ((*(byte *)(&DAT_00854ffc + uVar2 * 0x31) & 1) == 0)) {
                   bVar3 = (*(short *)(&DAT_00855090 + iVar9) != 8) - 1;
-                  puVar11 = (uint *)(&local_ESI_1151->field_0x0 + (int)local_8);
+                  puVar11 = (uint *)((byte *)local_ESI_1151 + (int)local_8);
                   for (uVar6 = local_1c - (int)local_ESI_1151 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
                     *puVar11 = CONCAT22(CONCAT11(bVar3,bVar3),CONCAT11(bVar3,bVar3)) & 0x80808080;
                     puVar11 = puVar11 + 1;
                   }
                   for (uVar6 = local_1c - (int)local_ESI_1151 & 3; local_ESI_1151 = local_28,
-                      local_ECX_632 = (uint)local_10, uVar6 != 0; uVar6 = uVar6 - 1) {
+                      local_ECX_632 = local_10, uVar6 != 0; uVar6 = uVar6 - 1) {
                     *(byte *)puVar11 = bVar3 & 0x80;
                     puVar11 = (uint *)((int)puVar11 + 1);
                   }
@@ -186,7 +185,8 @@ LAB_006c0b45:
                 FUN_006bfe70(local_8,pAVar13,(int)local_ESI_1151);
                 if (*(int *)(&DAT_008550b8 + iVar9) < 1) {
                   uVar6 = (&DAT_00854ffc)[uVar2 * 0x31];
-                  *(undefined1 **)(&DAT_00855010 + iVar9) = &local_ESI_1151->field_0x0 + local_24;
+                  *(undefined1 **)(&DAT_00855010 + iVar9) =
+                       (byte *)local_24 + (int)(byte *)local_ESI_1151;
                   if ((uVar6 & 1) == 0) {
                     if ((local_ESI_1151 < local_ECX_632) &&
                        (local_EDI_947 = DAT_00854ff4, DAT_00854ff4 != nullptr)) {
@@ -266,9 +266,9 @@ LAB_006c0c93:
                     }
                     *(uint *)(&DAT_008550b8 + iVar9) = uVar6;
                     if (local_ESI_1151 < local_ECX_632) {
-                      iVar4 = local_ECX_632 - (int)local_ESI_1151;
+                      iVar4 = (int)local_ECX_632 - (int)local_ESI_1151;
 LAB_006c0d87:
-                      FUN_006bfe70((undefined4 *)(&local_ESI_1151->field_0x0 + (int)local_8),pAVar13
+                      FUN_006bfe70((undefined4 *)((byte *)local_ESI_1151 + (int)local_8),pAVar13
                                    ,iVar4);
                     }
                   }
@@ -344,7 +344,7 @@ cf_common_join_006C0E05:
             (**(code **)(*piVar1 + 8))(piVar1);
           }
           uVar6 = local_c;
-          local_28 = *(AnonShape_006BFBF0_13F73F95 **)(&DAT_00855028 + iVar9);
+          local_28 = *(uint *)(&DAT_00855028 + iVar9);
           iVar9 = *(int *)(&DAT_0085502c + iVar9);
           for (iVar4 = 0x31; piVar1 = DAT_00854ff4, iVar4 != 0; iVar4 = iVar4 + -1) {
             *(undefined4 *)pAVar13 = 0;
@@ -355,7 +355,7 @@ cf_common_join_006C0E05:
               uVar2 = piVar1[5];
               pAVar8 = local_28;
               if ((uVar2 & 0x10) == 0) {
-                pAVar8 = (AnonShape_006BFBF0_13F73F95 *)piVar1[6];
+                pAVar8 = piVar1[6];
               }
               if ((uVar2 & 0x20) == 0) {
                 iVar9 = piVar1[7];

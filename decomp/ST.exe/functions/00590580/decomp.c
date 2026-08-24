@@ -44,7 +44,7 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
     pMVar2 = local_8;
     /* ST_CALLSITE[005905DB]: CALL 0x00403738; direct=00403738 PutDDX */
     PutDDX(0,0,'\x01',(BITMAPINFO *)local_8->field_005E);
-    pcVar11 = g_startSystem_0081176C->field_0030;
+    pcVar11 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     uVar12 = 1;
     uVar10 = 0xffffffff;
     if (pMVar2->field_005D == '\0') {
@@ -52,7 +52,7 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
       pcVar3 = LoadResourceString(0x25e4,g_hINSTANCE_00807618);
       /* ST_CALLSITE[005906B7]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX(this_02,0,0,0x1b8,800,0x14,pcVar3,uVar9,uVar10,pcVar11,uVar12);
-      pcVar11 = g_startSystem_0081176C->field_0030;
+      pcVar11 = (ccFntTy *)g_startSystem_0081176C->field_0030;
       uVar9 = 1;
       uVar12 = 0xffffffff;
       uVar10 = 0xffffffff;
@@ -69,14 +69,14 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
       pcVar3 = LoadResourceString(0x25e5,g_hINSTANCE_00807618);
       /* ST_CALLSITE[0059061C]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX(this_00,0,10,10,0x30c,0x32,pcVar3,uVar9,uVar10,pcVar11,uVar12);
-      pcVar11 = g_startSystem_0081176C->field_0030;
+      pcVar11 = (ccFntTy *)g_startSystem_0081176C->field_0030;
       uVar9 = 1;
       uVar12 = 0xffffffff;
       uVar10 = 0;
       pcVar3 = LoadResourceString(0x25e6,g_hINSTANCE_00807618);
       /* ST_CALLSITE[00590658]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX(this_01,0,0x10e,0x3c,0x20d,0xfa,pcVar3,uVar10,uVar12,pcVar11,uVar9);
-      pcVar11 = g_startSystem_0081176C->field_0030;
+      pcVar11 = (ccFntTy *)g_startSystem_0081176C->field_0030;
       uVar9 = 1;
       uVar12 = 0xffffffff;
       uVar10 = 0;

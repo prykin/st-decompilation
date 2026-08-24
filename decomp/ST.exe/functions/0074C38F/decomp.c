@@ -2,18 +2,26 @@
 
 
 /* [STPrototypeRepairApplier] Propagated parameter 4.
-   Evidence: 0074BE76 -> 0074C38F @ 0074BEA7 */
+   Evidence: 0074BE76 -> 0074C38F @ 0074BEA7
+
+   [STMethodOwnerApplier] Structural method owner recovered as RecoveredClass_0074CDC5.
+   Evidence: this_call_owners=[RecoveredClass_0074CDC5]; agreed_this_calls=1;
+   incoming_this_accesses=5; incoming_edx_uses=0; incoming_stack_parameter_uses=4;
+   direct_non_thunk_callers=2; incoming_ecx_receiver_callers=1; attributed_named_callers=1;
+   owner_evidence_coverage=adequate */
 
 undefined4 * __thiscall
-FUN_0074c38f(void *this,undefined4 param_1,int param_2,undefined4 param_3,char *text)
+RecoveredClass_0074CDC5::sub_0074C38F
+          (RecoveredClass_0074CDC5 *this,undefined4 param_1,int param_2,undefined4 param_3,
+          char *text)
 
 {
   FUN_0074857e(this,param_1,param_2,param_2 + 0x5c,param_3,(short *)text);
-  STField<int>(this,0xd8) = param_2;
-  *(VTable_007A17C8 **)this = &VTable_007A17C8;
-  STField<VTable_007A1780 *>(this,0xc) = &VTable_007A1780;
-  STField<VTable_007A1768 *>(this,0x10) = &VTable_007A1768;
-  STField<VTable_007A1740 *>(this,0x98) = &VTable_007A1740;
-  return this;
+  *(int *)&this->field_0xd8 = param_2;
+  this->field_0000 = (VTable_007A1950 *)&VTable_007A17C8;
+  this->field_000C = &VTable_007A1780;
+  this->field_0010 = &VTable_007A1768;
+  this->field_0098 = &VTable_007A1740;
+  return &this->field_0000;
 }
 

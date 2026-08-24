@@ -17,7 +17,7 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
   int iVar3;
   uint uVar3;
   LPSTR pCVar4;
-  undefined4 uVar5;
+  uint uVar5;
   BITMAPINFO *pBVar6;
   int iVar12;
   char *text;
@@ -27,7 +27,7 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
   int *piVar10;
   int iVar11;
   int iVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
   InternalExceptionFrame local_50;
   tagBITMAPINFO *local_c;
   InterSystemC *local_8;

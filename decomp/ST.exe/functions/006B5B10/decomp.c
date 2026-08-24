@@ -11,7 +11,7 @@ void FUN_006b5b10(AnonShape_006E6FB0_BC494FEA *param_1,int param_2,int param_3,i
 {
   AnonNested_006E6FB0_0008_71212DD0 *pAVar1;
   uint uVar2;
-  undefined1 *puVar3;
+  byte *puVar3;
   int iVar4;
   uint uVar5;
   int iVar6;

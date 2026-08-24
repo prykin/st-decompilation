@@ -58,9 +58,9 @@ ST3DSMAPContext::sub_006E1460(ST3DSMAPContext *this,double param_2,double param_
   undefined4 local_2c;
   undefined4 local_28;
   undefined8 local_24;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

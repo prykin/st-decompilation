@@ -19,6 +19,11 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   int local_EAX_691;
   int local_EAX_948;
   int uVar5;
+  int iVar2_mg9;
+  int iVar2_mgA;
+  int iVar2_mgB;
+  int iVar4_mg6;
+  int iVar4_mg7;
   int local_EAX_1346;
   int local_EAX_1385;
   int iVar4;
@@ -31,9 +36,9 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
   STMessage *pSVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   char recordIndex;
-  undefined4 uVar8;
+  uint uVar8;
   int local_294 [155];
   STMessage local_28;
   int local_8;
@@ -201,28 +206,29 @@ LAB_004ccedc:
         goto LAB_004cd038;
       }
     }
-    iVar2 = STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x40c),
-                       (int *)&param_2);
-    if ((iVar2 == 0) && (param_2 != nullptr)) {
+    iVar2_mg9 = STPlaySystemC::sub_006E62D0
+                          (g_playSystem_00802A38,
+                           STField<AnonShape_005EFAE0_B406B78B *>(this,0x40c),(int *)&param_2);
+    if ((iVar2_mg9 == 0) && (param_2 != nullptr)) {
       thunk_FUN_0060bc80(param_2,STField<undefined4>(this,0x24),STField<ushort>(this,0x32));
     }
   }
 LAB_004cd038:
   if (((STField<int>(this,0x5ac) == 0x6a) &&
       (STField<uint>(this,0x4d4) <= g_playSystem_00802A38->field_00E4)) &&
-     (iVar2 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x4d0),
-                         (int *)&param_2), iVar2 == 0)) {
+     (iVar2_mgA = STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,
+                             STField<AnonShape_005EFAE0_B406B78B *>(this,0x4d0),(int *)&param_2),
+     iVar2_mgA == 0)) {
     thunk_FUN_005822b0(param_2,STField<undefined4>(this,0x24),STField<ushort>(this,0x32));
   }
   if ((STField<int>(this,0x5ac) == 0x41) && (0 < STField<int>(this,0x4e4))) {
     puVar7 = (undefined4 *)((int)this + 0x4d0);
     do {
       if (((AnonShape_005EFAE0_B406B78B *)*puVar7 != nullptr) &&
-         (iVar2 = STPlaySystemC::sub_006E62D0
-                            (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar7,
-                             (int *)&param_2), iVar2 == 0)) {
+         (iVar2_mgB = STPlaySystemC::sub_006E62D0
+                                (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar7,
+                                 (int *)&param_2), iVar2_mgB == 0)) {
         thunk_FUN_00590130(param_2,STField<undefined4>(this,0x24));
       }
       iVar4 = iVar4 + 1;
@@ -230,17 +236,18 @@ LAB_004cd038:
     } while (iVar4 < STField<int>(this,0x4e4));
   }
   if ((STField<int>(this,0x5ac) == 0x69) &&
-     (iVar4 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x4ec),
-                         (int *)&param_2), iVar4 == 0)) {
+     (iVar4_mg6 = STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,
+                             STField<AnonShape_005EFAE0_B406B78B *>(this,0x4ec),(int *)&param_2),
+     iVar4_mg6 == 0)) {
     thunk_FUN_00618b40(param_2,STField<undefined4>(this,0x24),STField<undefined2>(this,0x32));
   }
   if (((STField<int>(this,0x5ac) == 0x70) &&
       (STField<AnonShape_005EFAE0_B406B78B *>(this,0x4f0) != nullptr))
-     && (iVar4 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,
-                            STField<AnonShape_005EFAE0_B406B78B *>(this,0x4f0),(int *)&param_2),
-        iVar4 == 0)) {
+     && (iVar4_mg7 = STPlaySystemC::sub_006E62D0
+                               (g_playSystem_00802A38,
+                                STField<AnonShape_005EFAE0_B406B78B *>(this,0x4f0),(int *)&param_2
+                               ), iVar4_mg7 == 0)) {
     thunk_FUN_0058cf90(param_2,STField<undefined4>(this,0x24),STField<undefined2>(this,0x32));
   }
   if (STField<int>(this,0x24) != STField<int>(this,0x23d)) {

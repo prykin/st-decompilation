@@ -4,11 +4,11 @@
 undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
 
 {
+  int iVar1_mg0;
   int iVar1;
   int uVar2;
   int local_EAX_378;
-  undefined4 uVar3;
-
+  uint uVar3;
   if (STField<int *>(this,0x4d8) != param_1) {
     return 0;
   }
@@ -20,10 +20,10 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
             (g_tLOFake_00800BCC,STField<int>(this,0x4e4),STField<int>(this,0x4e8),
              STField<int>(this,0x4ec));
   STField<undefined4>(this,0x4e0) = 0;
-  iVar1 = STPlaySystemC::sub_006E62D0
-                    (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x4d8),
-                     (int *)&param_1);
-  if (iVar1 == 0) {
+  iVar1_mg0 = STPlaySystemC::sub_006E62D0
+                        (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x4d8),
+                         (int *)&param_1);
+  if (iVar1_mg0 == 0) {
     /* ST_CALLSITE[004E9732]: CALL dword ptr [EAX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*param_1 + 0x2c))();

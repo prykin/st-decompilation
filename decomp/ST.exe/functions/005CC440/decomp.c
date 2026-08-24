@@ -10,7 +10,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
 {
   StartSystemTy *this_00;
   int iVar3;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar4;
   int iVar5;
   int iVar6;

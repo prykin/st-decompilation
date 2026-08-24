@@ -17,7 +17,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   int local_EAX_1940;
   short sVar8;
   int iVar9;
-  undefined4 uVar10;
+  uint uVar10;
   short *psVar11;
   int iVar13;
   uint uVar14;

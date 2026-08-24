@@ -5,9 +5,9 @@ undefined4 FUN_006a5210(void)
 
 {
   bool bVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   undefined4 local_c;
 
   local_c = 1;

@@ -25,9 +25,9 @@ byte * __cdecl st::fn_006A2ED0(short *param_1)
   int iVar8;
   int *piVar10;
   int iVar11;
-  undefined1 *puVar12;
+  byte *puVar12;
   uint uVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
   int iVar15;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   cMf32 *in_stack_00000008;
@@ -49,7 +49,7 @@ byte * __cdecl st::fn_006A2ED0(short *param_1)
             (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Maps\\prepare.cpp"),0xcf);
 LAB_006a2f2f:
   st::fn_006DC050
-            ((ST3DSMAPContext *)local_14,0,0,0,0x8c,0x8c,
+            ((ST3DSMAPContext *)local_14,nullptr,0,0,0x8c,0x8c,
              (double)((float)-(int)*param_1 * _DAT_0079d84c),
              (double)((float)(int)*param_1 * _DAT_0079d84c),
              (double)((float)-(int)param_1[1] * _DAT_0079d84c),
@@ -78,7 +78,7 @@ LAB_006a2f2f:
              (double)((float)(int)param_1[1] * _DAT_007904f4));
   st::fn_006DDBE0((ST3DSMAPContext *)local_14);
   st::fn_006DDD50((ST3DSMAPContext *)local_14);
-  local_8 = st::pointer_boundary_cast<short *>(st::fn_006AAC10(0x4b79));
+  local_8 = static_cast<short *>(st::fn_006AAC10(0x4b79));
   iVar11 = 0;
   iVar6 = 0;
   do {

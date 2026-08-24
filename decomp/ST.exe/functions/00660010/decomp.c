@@ -5,8 +5,8 @@ undefined4 __fastcall FUN_00660010(AiFltClassTy *param_1)
 
 {
   short sVar1;
-  undefined4 uVar2;
-  undefined2 uVar3;
+  uint uVar2;
+  ushort uVar3;
   int iVar4;
   DArrayTy *array;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

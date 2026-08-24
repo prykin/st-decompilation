@@ -14,7 +14,7 @@ void __cdecl FUN_00428e50(short *param_1)
   short sVar2;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar3;
   AnonShape_00428E50_DFCBD4F2 *pAVar4;
-  undefined4 uVar5;
+  uint uVar5;
   DArrayTy *array;
   AnonShape_006DBCA0_EF06575F *pAVar6;
   ST3DSMAPContext *pSVar7;
@@ -27,9 +27,9 @@ void __cdecl FUN_00428e50(short *param_1)
   int iVar14;
   int *piVar15;
   void *pvVar16;
-  undefined4 *puVar17;
+  uint *puVar17;
   int iVar18;
-  undefined4 *puVar19;
+  uint *puVar19;
   bool bVar20;
   float10 fVar21;
   longlong lVar22;
@@ -91,6 +91,9 @@ void __cdecl FUN_00428e50(short *param_1)
   AnonShape_00428E50_DFCBD4F2 *local_10;
   byte local_9;
   int *local_8;
+  double dVar1_mg1;
+  double dVar1_mg3;
+  double dVar1_mg2;
 
   pAVar6 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
   if (pAVar6 == nullptr) {
@@ -104,8 +107,8 @@ void __cdecl FUN_00428e50(short *param_1)
   pSVar7 = local_30;
   RaiseInternalException(-2,g_overwriteContext_007ED77C,"E:\\__titans\\tload.cpp",0x24d);
 LAB_00428e95:
-  dVar1 = ((double)DAT_00807570 * _DAT_00790590) / (double)_DAT_007ac580 + _DAT_007901c0;
-  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  dVar1_mg1 = ((double)DAT_00807570 * _DAT_00790590) / (double)_DAT_007ac580 + _DAT_007901c0;
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar1_mg1,0),(uint)((ulonglong)dVar1_mg1 >> 0x20));
   lVar22 = Library::MSVCRT::__ftol();
   iVar14 = (int)lVar22;
   uVar12 = iVar14 + 3U & 0xfffffffc;
@@ -114,15 +117,15 @@ LAB_00428e95:
   local_14 = iVar14;
   fVar21 = Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
   local_b4 = (double)((float10)_DAT_00790580 / fVar21);
-  dVar1 = _DAT_00790570 / local_b4 + _DAT_007901c0;
-  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  dVar1_mg2 = _DAT_00790570 / local_b4 + _DAT_007901c0;
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar1_mg2,0),(uint)((ulonglong)dVar1_mg2 >> 0x20));
   lVar22 = Library::MSVCRT::__ftol();
   local_c4 = (uint)lVar22;
-  dVar1 = (double)local_14;
+  dVar1_mg3 = (double)local_14;
   local_14 = uVar12 - iVar14;
   ST3DSMAPContext::sub_006DC050
-            (pSVar7,0,0,0,uVar12,local_c4,-14.14213562373,
-             ((double)(int)(uVar12 - iVar14) * (_DAT_00790590 / dVar1) + _DAT_00790590) -
+            (pSVar7,nullptr,0,0,uVar12,local_c4,-14.14213562373,
+             ((double)(int)(uVar12 - iVar14) * (_DAT_00790590 / dVar1_mg3) + _DAT_00790590) -
              _DAT_00790560,-10.0,(double)(int)local_c4 * local_b4 - _DAT_00790580,10.0,
              9.965999793052674,0);
   pSVar7->field_0128 = 0xff;
@@ -140,7 +143,7 @@ LAB_00428e95:
       local_40 = local_40 + 1;
     } while (iVar14 < STField<int>(param_1,0x455));
   }
-  ST3DSMAPContext::sub_006DD610(pSVar7,0,10.0,10.0);
+  ST3DSMAPContext::sub_006DD610(pSVar7,CASE_0,10.0,10.0);
   local_d4[0] = 10.0;
   local_d4[1] = 10.0;
   local_d4[2] = 0.0;
@@ -188,7 +191,7 @@ LAB_00428e95:
   do {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_50 = CONCAT31(uStack_4f,(byte)local_2c >> 1);
-    ST3DSMAPContext::sub_006DD610(pSVar7,(uint)local_40,10.0,10.0);
+    ST3DSMAPContext::sub_006DD610(pSVar7,(ST3DSMAPContext_field_00A8State)local_40,10.0,10.0);
     local_44 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x1c,10);
     DAT_007f4dd0 = 0;
     local_90 = 0;
@@ -392,7 +395,7 @@ LAB_0042958f:
               goto cf_continue_loop_004296CF;
             }
             if (local_94 < 3) goto cf_continue_loop_004296CF;
-            *(byte *)local_10->field_003C = *(byte *)local_10->field_003C | local_50;
+            *STField<byte *>(local_10,0x3C) = *STField<byte *>(local_10,0x3C) | local_50;
             iVar14 = local_10->field_003C;
 LAB_00429d7a:
             ((byte *)iVar14)[1] = ((byte *)iVar14)[1] | local_50;
@@ -516,7 +519,7 @@ LAB_00429715:
                     if (iVar14 != 0) {
                       if ((int)local_10->field_0024 < 3) {
                         if (2 < local_94) {
-                          *(byte *)local_10->field_003C = *(byte *)local_10->field_003C | local_50;
+                          *STField<byte *>(local_10,0x3C) = *STField<byte *>(local_10,0x3C) | local_50;
                           iVar14 = local_10->field_003C;
                           goto LAB_00429d7a;
                         }
@@ -674,7 +677,7 @@ LAB_00429d7d:
     }
     DArrayDestroy(array);
     local_9 = local_9 << 1;
-    local_40 = (int *)((int)local_40 + 1);
+    local_40 = (int *)((int)local_40 + CASE_1);
     local_2c = STReplaceLowByte((uint32_t)(local_2c), (uint8_t)((byte)local_2c << 2));
     if (3 < (int)local_40) {
       if (pSVar7 != nullptr) {

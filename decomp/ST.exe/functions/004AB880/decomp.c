@@ -60,11 +60,11 @@ STT3DSprC::LoadSequence
   void *pvVar6;
   int iVar7;
   int iVar4;
-  undefined4 uVar8;
+  uint uVar8;
   int *piVar9;
   uint uVar10;
   uint uVar11;
-  undefined4 *puVar13;
+  uint *puVar13;
   int iVar14;
   char *pcVar15;
   char *pcVar16;

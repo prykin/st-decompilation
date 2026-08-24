@@ -17,10 +17,10 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
   int *piVar8;
   int iVar9;
   int iVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
   uint *puVar12;
   uint **ppuVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
   int iVar15;
   int local_20;
   int local_1c;

@@ -12,7 +12,7 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
   STFieldC *pSVar2;
   int iVar3;
   ushort *puVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *text;
   InternalExceptionFrame local_50;
   STFieldC *local_c;

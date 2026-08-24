@@ -30,7 +30,7 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   uint uVar6;
   char cVar7;
   ccFntTy **ppcVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   ccFntTy *local_fe4 [6];
   undefined4 local_fcc;
   undefined4 local_fc8;

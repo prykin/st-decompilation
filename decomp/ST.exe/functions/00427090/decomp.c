@@ -14,7 +14,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   void *pvVar3;
   int iVar4;
   int iVar7;

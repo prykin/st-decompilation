@@ -4,7 +4,7 @@
 undefined4 FUN_006728f0(undefined4 *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   byte *puVar3;
 
   uVar1 = DAT_00811910;

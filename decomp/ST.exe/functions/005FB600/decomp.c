@@ -4,8 +4,8 @@
 undefined4 __fastcall FUN_005fb600(void *param_1)
 
 {
-  undefined1 uVar1;
-  undefined4 uVar2;
+  byte uVar1;
+  uint uVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
 

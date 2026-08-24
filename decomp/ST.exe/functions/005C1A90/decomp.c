@@ -42,8 +42,8 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
   char *pcVar22;
   UINT UVar23;
   InternalExceptionFrame local_5c;
-  undefined4 local_18;
-  undefined4 local_14;
+  uint local_18;
+  uint local_14;
   MReportTy *local_10;
   int local_c;
   int *local_8;

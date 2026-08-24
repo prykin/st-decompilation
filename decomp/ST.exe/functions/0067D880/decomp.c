@@ -11,7 +11,7 @@ undefined4 * __cdecl LoadPlrEdit(int param_1,char *param_2)
 {
   int errorCode;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   InternalExceptionFrame local_50;
   AllocationRecord_0067D1D0 *local_c;
   AllocationRecord_0067D1D0 *local_8;

@@ -9,7 +9,7 @@
 undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   AnonPointee_STParticleC_00EB *pAVar2;
   short sVar4;
   float fVar5;
@@ -20,7 +20,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   ushort *puVar8;
   int iVar9;
   int iVar10;
-  undefined4 uVar10;
+  uint uVar10;
   int iVar11;
   bool bVar12;
   uint *puVar13;

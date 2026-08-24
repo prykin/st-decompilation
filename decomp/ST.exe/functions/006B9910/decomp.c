@@ -4,12 +4,12 @@
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 006736F0 -> 006B9910 @ 00673830 | 006B7190 -> 006B9910 @ 006B723F
 
-   [STReturnSemanticsApplier] machine_eax_return.
-   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
-   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
-   used=2, ignored=19, unknown=0 */
+   [STReturnSemanticsApplier] repair_false_machine_eax_return.
+   Evidence: the earlier machine return was admitted only because a self-zeroing XOR/SUB was
+   misclassified as reading the call result; every resolved caller now proves an exact EAX kill;
+   machine CFG audit: used=0, ignored=21, unknown=0 */
 
-undefined4 * FUN_006b9910(undefined4 *param_1,int param_2)
+void FUN_006b9910(undefined4 *param_1,int param_2)
 
 {
   int *piVar1;
@@ -22,9 +22,9 @@ undefined4 * FUN_006b9910(undefined4 *param_1,int param_2)
       piVar1 = piVar2;
     }
     *piVar1 = param_2;
-    return (undefined4 *)0;
+    return;
   }
   *param_1 = param_2;
-  return param_1;
+  return;
 }
 

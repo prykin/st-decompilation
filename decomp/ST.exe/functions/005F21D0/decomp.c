@@ -12,7 +12,7 @@ int __thiscall STManBasisC::sub_005F21D0(STManBasisC *this)
   dword dVar1;
   STManBasisC_field_0038DArray *pSVar2;
   DArrayTy *pDVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   short *psVar5;
   uint uVar6;
 

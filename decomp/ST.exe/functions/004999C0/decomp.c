@@ -14,7 +14,7 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   int errorCode;
   DArrayTy *array;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   uint index;
   InternalExceptionFrame local_54;
   STGroupBoatC *local_10;

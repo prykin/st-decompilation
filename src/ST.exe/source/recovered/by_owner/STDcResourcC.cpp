@@ -38,7 +38,7 @@ undefined4 * __thiscall st::fn_0057F2E0(STDcResourcC *this,int param_1,int param
 
 {
   char cVar1;
-  undefined1 uVar2;
+  byte uVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   uint uVar3;
@@ -157,7 +157,7 @@ undefined4 * __thiscall st::fn_0057F470(STDcResourcC *this,int param_1,int param
 
 {
   char cVar1;
-  undefined1 uVar2;
+  byte uVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   uint uVar3;

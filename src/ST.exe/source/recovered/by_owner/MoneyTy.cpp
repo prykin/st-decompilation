@@ -235,7 +235,11 @@ void __thiscall st::fn_0052BBE0(MoneyTy *this)
 
    [STPrototypeApplier] Propagated parameter 5.
    Evidence: 004D8B70 -> 0052BC30 @ 004D8C18; literal 1 at 004D8BFD | 004D8B70 -> 0052BC30 @
-   004D8C55; literal 0 at 004D8C48 | 004D8B70 -> 0052BC30 @ 004D8C9A; literal 1 at 004D8C88 */
+   004D8C55; literal 0 at 004D8C48 | 004D8B70 -> 0052BC30 @ 004D8C9A; literal 1 at 004D8C88
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 st::fn_0052BC30
@@ -308,10 +312,10 @@ LAB_0052bc8f:
 void __thiscall st::fn_0052BDA0(MoneyTy *this,char param_1,int param_2)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   ushort *puVar2;
   byte bVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   uint uVar5;
   uint uVar6;
   CHAR local_c [8];

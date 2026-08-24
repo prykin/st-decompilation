@@ -8,7 +8,7 @@
 void __thiscall MainMenuTy::LightPalette(MainMenuTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   MainMenuTy *pMVar3;
   int iVar4;
   int iVar5;

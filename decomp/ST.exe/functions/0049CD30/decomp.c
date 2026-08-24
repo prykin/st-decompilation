@@ -18,7 +18,7 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
   dword dVar7;
   DArrayTy *array_00;
   int iVar9;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar10;
   uint uVar11;
   uint uVar12;

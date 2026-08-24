@@ -23,9 +23,9 @@ byte * __cdecl FUN_006a2ed0(short *param_1)
   int iVar8;
   int *piVar10;
   int iVar11;
-  undefined1 *puVar12;
+  byte *puVar12;
   uint uVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
   int iVar15;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   cMf32 *in_stack_00000008;
@@ -47,7 +47,7 @@ byte * __cdecl FUN_006a2ed0(short *param_1)
             (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Maps\\prepare.cpp",0xcf);
 LAB_006a2f2f:
   ST3DSMAPContext::sub_006DC050
-            ((ST3DSMAPContext *)local_14,0,0,0,0x8c,0x8c,
+            ((ST3DSMAPContext *)local_14,nullptr,0,0,0x8c,0x8c,
              (double)((float)-(int)*param_1 * _DAT_0079d84c),
              (double)((float)(int)*param_1 * _DAT_0079d84c),
              (double)((float)-(int)param_1[1] * _DAT_0079d84c),

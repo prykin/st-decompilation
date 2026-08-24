@@ -18,8 +18,8 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   int iVar7;
   int iVar9;
   uint uVar10;
-  undefined4 uVar11;
-  undefined4 *puVar12;
+  uint uVar11;
+  uint *puVar12;
   bool bVar13;
   int *piVar14;
   int local_2e8 [11];
@@ -183,7 +183,7 @@ switchD_004eed0b_default:
   local_44 = local_64;
   /* ST_CALLSITE[004EEDB2]: CALL dword ptr [EDX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
+  (**(code **)(*STField<int *>(this_00,0xC) + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }

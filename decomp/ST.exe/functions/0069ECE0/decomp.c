@@ -5,7 +5,7 @@ void __thiscall FUN_0069ece0(void *this,int param_1,int param_2)
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   int iVar4;
   int local_19c [100];

@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_00495750(void *this,float param_1)
   float fVar1;
   uint uVar2;
   DWORD DVar3;
-  undefined4 uVar4;
+  uint uVar4;
   longlong lVar5;
   CHAR local_6c [100];
   float local_8;

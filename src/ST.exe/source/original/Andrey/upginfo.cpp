@@ -16,15 +16,15 @@ void __thiscall st::fn_005528B0(UpgPanelTy *this)
   ushort *puVar3;
   int iVar6;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar7;
   uint uVar8;
   byte bVar9;
   int iVar10;
   UINT UVar11;
-  undefined4 uVar12;
-  undefined4 uVar13;
-  undefined4 *puVar14;
+  uint uVar12;
+  uint uVar13;
+  uint *puVar14;
   InternalExceptionFrame local_4c;
   UpgPanelTy *local_8;
 
@@ -47,10 +47,10 @@ void __thiscall st::fn_005528B0(UpgPanelTy *this)
     st::fn_00403800
               ((SpecPanelTy *)this_00,pCVar2,iVar4,uVar5,iVar7,iVar10,UVar11,uVar12,uVar13);
     puVar3 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c20a0),0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,(char *)&DAT_007c20a0,0xffffffff,0,1,0,nullptr);
     this_00->field_03EB = puVar3;
     puVar3 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c38c8),0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,(char *)&DAT_007c38c8,0xffffffff,0,1,0,nullptr);
     this_00->field_03EF = puVar3;
     puVar14 = nullptr;
     iVar7 = 0;

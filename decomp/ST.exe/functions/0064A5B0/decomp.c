@@ -2,7 +2,11 @@
 
 
 /* [STPrototypeRepairApplier] Propagated parameter 0.
-   Evidence: 0064A5B0 -> EXTERNAL:00000059 @ 0064A60A */
+   Evidence: 0064A5B0 -> EXTERNAL:00000059 @ 0064A60A
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __cdecl FUN_0064a5b0(LPDWORD lpNumberOfBytesWritten)
 

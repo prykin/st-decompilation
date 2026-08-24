@@ -115,7 +115,7 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
       pcVar2->field_005C = 0;
       puVar3 = PTR_0080679c + 0x14;
       iVar7 = 1;
-      uVar4 = st::fn_006B4FE0((int)PTR_0080679c);
+      uVar4 = st::fn_006B4FE0(PTR_0080679c);
       puVar3 = (ushort *)
                st::fn_006B50C0((g_nWidth_00806730 -
                             ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e)) + -0x87,0x12,

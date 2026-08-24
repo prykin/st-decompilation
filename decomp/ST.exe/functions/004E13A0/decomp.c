@@ -7,8 +7,7 @@ undefined4 __fastcall FUN_004e13a0(int param_1)
   int iVar1;
   byte bVar2;
   byte bVar3;
-  undefined4 uVar4;
-
+  uint uVar4;
   uVar4 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x24) != *(int *)(param_1 + 0x23d)) {

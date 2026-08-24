@@ -9,8 +9,7 @@ undefined4 __fastcall FUN_00580dc0(STJellyGunC *param_1)
   short sVar3;
   AnonShape_004E0250_5A3B9236 *pAVar4;
   int iVar5;
-  undefined4 uVar6;
-
+  uint uVar6;
   uVar6 = 0;
   iVar5 = thunk_FUN_005809e0((short)*(undefined4 *)&param_1->field_0x245,
                              (short)*(undefined4 *)&param_1->field_0x249,

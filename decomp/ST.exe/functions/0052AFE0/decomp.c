@@ -15,7 +15,7 @@ void __thiscall CPanelTy::sub_0052AFE0(CPanelTy *this,byte param_1,float param_2
   float fVar3;
   float fVar4;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   int *piVar7;
   int iVar8;
   longlong lVar9;

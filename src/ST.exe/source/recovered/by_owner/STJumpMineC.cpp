@@ -252,7 +252,7 @@ int __thiscall st::fn_00619C70(STJumpMineC *this)
 
 {
   VisibleClassTy *pVVar1;
-  undefined4 uVar2;
+  uint uVar2;
   uint local_EAX_444;
   int iVar3;
   int iVar4;

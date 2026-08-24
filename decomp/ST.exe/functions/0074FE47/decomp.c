@@ -21,13 +21,13 @@ int FUN_0074fe47(AnonShape_0074FE47_5517BCCF *param_1,double param_2)
   if (iVar1 == 0) {
     /* ST_CALLSITE[0074FE84]: CALL dword ptr [EAX + 0xc] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar1 = (**(code **)(*(int *)param_1->field_0004 + 0xc))(&param_1[-1].field_0x1c);
+    iVar1 = (**(code **)(*STField<int *>(param_1,0x4) + 0xc))(&param_1[-1].field_0x1c);
     if (-1 < iVar1) {
       param_1->field_000C = (int)lVar2;
       param_1->field_0010 = (int)((ulonglong)lVar2 >> 0x20);
       /* ST_CALLSITE[0074FE9A]: CALL dword ptr [EAX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar1 = (**(code **)(*(int *)param_1->field_0004 + 8))();
+      iVar1 = (**(code **)(*STField<int *>(param_1,0x4) + 8))();
     }
   }
   else {

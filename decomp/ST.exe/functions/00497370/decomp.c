@@ -15,7 +15,7 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,uint param_4,void *
   int iVar3;
   uint uVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar6;
   int iVar7;
   uint uVar8;
@@ -34,14 +34,14 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,uint param_4,void *
   dword local_44;
   int local_40;
   int *local_3c;
-  undefined1 *local_38;
+  byte *local_38;
   uint local_34;
   int local_30;
   undefined4 local_28;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

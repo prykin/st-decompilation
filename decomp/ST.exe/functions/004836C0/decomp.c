@@ -8,7 +8,7 @@ uint __fastcall FUN_004836c0(AnonShape_004836C0_617DC527 *param_1)
   short sVar2;
   short sVar3;
   STWorldObject *pSVar4;
-  undefined2 uVar6;
+  ushort uVar6;
   uint uVar5;
 
   sVar1 = *(short *)(param_1 + 1);

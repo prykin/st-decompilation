@@ -5,7 +5,7 @@ int FUN_004e8030(int param_1)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   undefined *puVar3;
   int iVar4;
 

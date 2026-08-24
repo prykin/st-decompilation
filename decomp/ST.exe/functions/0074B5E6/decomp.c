@@ -9,11 +9,10 @@ FUN_0074b5e6(void *this,uint param_1,LPCRITICAL_SECTION lpCriticalSection,uint p
             uint param_5,uint param_6)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   PRTL_CRITICAL_SECTION_DEBUG p_Var2;
   longlong lVar3;
-  undefined8 uVar4;
-
+  ulonglong uVar4;
   if (lpCriticalSection == (LPCRITICAL_SECTION)0x0) {
     uVar1 = 0x80004003;
   }

@@ -4,8 +4,7 @@
 undefined4 FUN_004d86a0(uint param_1,int param_2)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   g_packedRecords_A62x8[param_1].field15_0x1f = *(undefined4 *)(&DAT_007bf558 + param_2 * 4);
   g_packedRecords_A62x8[param_1].field16_0x23 = *(undefined4 *)(&DAT_007bf570 + param_2 * 4);
   if (g_packedRecords_A62x8[param_1].field0_0x0 == '\x03') {

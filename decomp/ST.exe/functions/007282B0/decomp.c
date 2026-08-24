@@ -17,7 +17,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_007282b0
 {
   byte *pbVar1;
   float fVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
   int iVar5;
   int iVar6;

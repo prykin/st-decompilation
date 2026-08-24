@@ -5,8 +5,7 @@ undefined4 FUN_0074731f(AnonShape_0074731F_00DF946A *param_1,short *param_2)
 
 {
   int *piVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   if (param_2 == nullptr) {
     uVar2 = 0x80004003;
   }

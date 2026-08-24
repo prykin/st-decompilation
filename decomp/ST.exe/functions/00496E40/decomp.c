@@ -13,7 +13,7 @@ void FUN_00496e40(int param_1,int param_2,undefined4 param_3,int param_4)
   int iVar2;
   void *pvVar3;
 
-  index = thunk_FUN_00496a90(param_1,param_2,0,param_3,param_4,&param_4);
+  index = thunk_FUN_00496a90(param_1,param_2,nullptr,param_3,param_4,(uint *)&param_4);
   if (-1 < (int)index) {
     if (index < g_array_007FB270->count) {
       pvVar3 = DArrayAt<void>(g_array_007FB270, index);

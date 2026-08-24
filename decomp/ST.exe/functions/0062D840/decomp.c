@@ -9,7 +9,7 @@
 int __thiscall STManRub3C::sub_0062D840(STManRub3C *this,undefined4 *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   int iVar3;
   byte *puVar4;

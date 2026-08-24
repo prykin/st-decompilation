@@ -22,7 +22,7 @@ STSprGameObjC::CheckRay
   int local_EAX_47;
   int iVar5;
   int iVar9;
-  undefined4 uVar5;
+  uint uVar5;
   short sVar6;
   short sVar7;
   int iVar8;

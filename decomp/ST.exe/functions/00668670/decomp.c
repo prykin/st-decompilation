@@ -8,7 +8,7 @@
 void __cdecl FUN_00668670(int param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
   if (((char *)param_1)[0x18] != '\0') {

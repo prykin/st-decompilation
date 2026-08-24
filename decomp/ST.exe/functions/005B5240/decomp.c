@@ -32,23 +32,23 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
 
 {
   int iVar2;
+  char *resourceString;
   uint *puVar2;
-  undefined4 *puVar3;
   int iVar4;
-  int iVar5;
-  ccFntTy_CreateTypeSSpr_param_4Enum cVar6;
+  int iVar3;
+  ccFntTy_CreateTypeSSpr_param_4Enum cVar4;
+  uint uVar5;
+  uint uVar6;
   uint uVar7;
-  undefined4 uVar8;
-  undefined4 uVar9;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
-    puVar3 = (undefined4 *)&param_1->field_0x21;
-    memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
-    puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
+    puVar2 = (undefined4 *)&param_1->field_0x21;
+    memset(puVar2, 0, 0x27); /* compiler bulk-zero initialization */
+    puVar2 = (undefined4 *)((byte *)puVar2 + 0x24);
     *(undefined4 *)&param_1->field_0x8 = param_9;
     *(undefined4 *)param_1 = param_7;
     *(undefined4 *)&param_1->field_0x4 = param_8;
@@ -94,17 +94,18 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
     param_1->field_00F5 = param_3 + param_5;
     param_1->field_00F9 = param_4 + param_6;
     if ((param_18 != 0) && (param_19 != nullptr)) {
-      uVar9 = 0xffffffff;
-      uVar8 = 7;
-      iVar5 = *(int *)&param_1->field_0xd9;
       uVar7 = 0xffffffff;
-      cVar6 = CASE_FFFFFFFE;
-      puVar2 = (uint *)LoadResourceString(param_18,g_hINSTANCE_00807618);
-      puVar3 = ccFntTy::CreateTypeSSpr
-                         (param_19,puVar2,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
+      uVar6 = 7;
+      iVar3 = *(int *)&param_1->field_0xd9;
+      uVar5 = 0xffffffff;
+      cVar4 = CASE_FFFFFFFE;
+      resourceString = LoadResourceString(param_18,g_hINSTANCE_00807618);
+      puVar2 = ccFntTy::CreateTypeSSpr
+                         (param_19,resourceString,param_20,param_21,cVar4,uVar5,param_22,param_23,
+                          param_24);
       /* ST_CALLSITE[005B5412]: CALL dword ptr [EBX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(iVar5 + 8))(puVar3,uVar8,uVar9);
+      (**(code **)(iVar3 + 8))(puVar2,uVar6,uVar7);
     }
     param_1->field_00E1 = 0;
     g_currentExceptionFrame = local_48.previous;

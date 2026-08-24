@@ -17,7 +17,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
   STBoatC *objPtr;
   short *psVar6;
   int iVar8;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar9;
   int iVar10;
   STWorldObject *pSVar11;
@@ -334,7 +334,8 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
         if (((objPtr != nullptr) &&
             (iVar9 = thunk_FUN_0045ff10((STGameObjC *)objPtr), iVar9 == 0xc)) &&
            (local_1c = thunk_FUN_0048d440(objPtr), local_1c != 0)) {
-          psVar6 = (short *)thunk_FUN_0048dc90(objPtr,local_100);
+          thunk_FUN_0048dc90(objPtr,local_100);
+          psVar6 = (short *)local_100;
           psVar17 = local_78;
           for (iVar9 = 0x10; iVar9 != 0; iVar9 = iVar9 + -1) {
             *(undefined4 *)psVar17 = *(undefined4 *)psVar6;

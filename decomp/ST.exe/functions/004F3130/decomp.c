@@ -41,7 +41,7 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
   CPanelTy *pCVar3;
   int iVar4;
   int iVar5;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar6;
   InternalExceptionFrame local_1d0;
   int local_18c [4];

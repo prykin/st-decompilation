@@ -63,7 +63,7 @@ void __thiscall st::fn_005C0190(MReportTy *this)
   local_8 = 4;
   this->field_0029 = 2;
   this->field_002D = 0x20;
-  piVar1 = st::pointer_boundary_cast<int *>(&this->field_008F);
+  piVar1 = reinterpret_cast<int *>(&this->field_008F);
   do {
     if (*piVar1 != 0) {
       this->field_0025 = *piVar1;

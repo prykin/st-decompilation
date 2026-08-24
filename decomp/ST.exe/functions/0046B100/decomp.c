@@ -14,9 +14,12 @@
 
    [STSwitchEnumApplier] Switch target field_050C uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_050CState. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_5=5 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_5=5
 
-int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0046B100 -> 0045EF00 @ 0046B5C6 */
+
+int __thiscall STBoatC::Build(STBoatC *this,uint *param_1)
 
 {
   byte bVar1;
@@ -24,14 +27,14 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   ushort uVar3;
   STBoatC_field_0508State SVar4;
   STWorldObject *pSVar5;
-  undefined2 uVar7;
-  undefined4 uVar8;
+  ushort uVar7;
+  uint uVar8;
   int local_EAX_420;
   int local_EAX_950;
   int iVar9;
   uint uVar10;
   int iVar13;
-  undefined4 *puVar11;
+  uint *puVar11;
   uint uVar12;
   int local_EAX_2223;
   int local_EAX_2460;
@@ -107,12 +110,12 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   int local_20;
   int local_1c;
   uint local_18;
-  uint local_14;
+  uint *local_14;
   undefined4 *local_10;
-  undefined4 local_c;
+  uint local_c;
   short local_8;
 
-  if ((param_1 == 0) || (pSVar15 = this, param_1 == 1)) {
+  if ((param_1 == nullptr) || (pSVar15 = this, param_1 == (uint *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     sVar19 = this->field_0373;
@@ -167,8 +170,8 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
       }
       break;
     case 2:
-      local_14 = g_playSystem_00802A38->field_00E4;
-      if (local_14 % 10 != 0) break;
+      local_14 = (uint *)g_playSystem_00802A38->field_00E4;
+      if ((uint)local_14 % 10 != 0) break;
       sVar19 = this->field_04DD;
       uVar3 = this->field_04DF;
       local_18 = (uint)uVar3;
@@ -227,7 +230,7 @@ LAB_0046b5ac:
         if (bVar17) {
           param_1 = local_14;
           /* ST_CALLSITE[0046B5C6]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
-          CmdToObj(this,CASE_3,&param_1);
+          CmdToObj(this,CASE_3,(uint *)&param_1);
           break;
         }
       }

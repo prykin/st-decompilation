@@ -33,6 +33,7 @@ import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.StructureDataType;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
+import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
@@ -295,6 +296,9 @@ public class STPointerShapeApplier extends GhidraScript {
             SourceType source = variable.getSource();
             SourceType proposedSource = optionalSource(row.get("proposed_source"));
             boolean owned = scriptOwnedPointer(variable.getComment());
+            boolean autoThisCleanup = variable instanceof Parameter parameter &&
+                parameter.isAutoParameter() && proposedType.equals("pointer:/void") &&
+                currentType.equals(unt(row.get("expected_type")));
             if (row.containsKey("proposed_comment")) {
                 if (!row.containsKey("expected_comment")) {
                     report.add(targetReport(row, "preserved",
@@ -336,7 +340,7 @@ public class STPointerShapeApplier extends GhidraScript {
                     currentType + " != " + expected));
                 return;
             }
-            if (!owned && !replaceable(variable.getDataType())) {
+            if (!owned && !autoThisCleanup && !replaceable(variable.getDataType())) {
                 report.add(targetReport(row, "preserved", "concrete non-generic variable type"));
                 return;
             }
@@ -369,6 +373,7 @@ public class STPointerShapeApplier extends GhidraScript {
             throw new IllegalArgumentException("auto this proposal is not a pointer");
         type = pointer.getDataType();
         while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
+        if (type instanceof VoidDataType) return removeRecoveredClassOwner(function);
         if (!(type instanceof Structure structure))
             throw new IllegalArgumentException("auto this proposal has no class structure");
         if (structure.getPathName().contains("/Recovered/PointerShapes/") ||
@@ -400,6 +405,33 @@ public class STPointerShapeApplier extends GhidraScript {
                 !structure.isEquivalent(actual.getDataType()))
             throw new IllegalStateException("class namespace did not regenerate the this type");
         return refreshed;
+    }
+
+    private Parameter removeRecoveredClassOwner(Function function) throws Exception {
+        Namespace current = function.getParentNamespace();
+        String expected = "RecoveredClass_" +
+            function.getEntryPoint().toString().toUpperCase(Locale.ROOT);
+        if (!(current instanceof GhidraClass) || !expected.equals(current.getName()))
+            throw new IllegalArgumentException(
+                "refusing to detach a non-script anonymous class owner");
+        DataType shell = dataTypes.getDataType(
+            "/SubmarineTitans/Recovered/Classes/" + expected);
+        if (!(shell instanceof Structure structure) ||
+                structure.getDescription() == null ||
+                !structure.getDescription().contains(MARKER))
+            throw new IllegalArgumentException(
+                "anonymous class shell is not owned by this applier");
+        function.setParentNamespace(currentProgram.getGlobalNamespace());
+        for (Parameter candidate : function.getParameters()) {
+            if (!candidate.isAutoParameter()) continue;
+            DataType actual = untypedef(candidate.getDataType());
+            if (!(actual instanceof Pointer actualPointer) ||
+                    !(untypedef(actualPointer.getDataType()) instanceof VoidDataType))
+                throw new IllegalStateException(
+                    "detaching the generated class did not restore void * this");
+            return candidate;
+        }
+        throw new IllegalStateException("detaching the generated class removed auto this");
     }
 
     private void applyGlobal(Map<String, String> row) {
@@ -501,12 +533,19 @@ public class STPointerShapeApplier extends GhidraScript {
     }
 
     private DataType resolvePointer(String specification) {
-        if (!specification.startsWith("pointer:")) return null;
+        if (!specification.startsWith("pointer:")) {
+            if ("/void".equals(specification)) return VoidDataType.dataType;
+            if (specification.matches("/undefined(?:1|2|4|8)?")) {
+                String suffix = specification.substring("/undefined".length());
+                int size = suffix.isBlank() ? 1 : Integer.parseInt(suffix);
+                return Undefined.getUndefinedDataType(size);
+            }
+            return dataTypes.getDataType(specification);
+        }
         String path = specification.substring("pointer:".length());
         DataType pointed;
-        if (path.startsWith("pointer:")) {
-            pointed = resolvePointer(path);
-        }
+        if (path.startsWith("pointer:")) pointed = resolvePointer(path);
+        else if ("/void".equals(path)) pointed = VoidDataType.dataType;
         else if (path.matches("/undefined(?:1|2|4|8)?")) {
             String suffix = path.substring("/undefined".length());
             int size = suffix.isBlank() ? 1 : Integer.parseInt(suffix);

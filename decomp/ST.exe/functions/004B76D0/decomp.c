@@ -9,7 +9,11 @@
    EDI,dword ptr [EBP + 0x8]; first-use mask or exact narrow callee formal
    [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:0: parameter=/uint
    Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
-   /uint */
+   /uint
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=8, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void FUN_004b76d0(uint param_1,int param_2)
 

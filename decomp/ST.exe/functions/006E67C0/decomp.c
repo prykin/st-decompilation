@@ -6,8 +6,7 @@ FUN_006e67c0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
             undefined4 param_5,int param_6)
 
 {
-  undefined4 *puVar1;
-
+  uint *puVar1;
   puVar1 = STField<undefined4 *>(this,0x452);
   do {
     if (puVar1 == nullptr) {

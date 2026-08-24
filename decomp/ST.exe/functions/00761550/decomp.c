@@ -4,9 +4,9 @@
 void FUN_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int iVar2;
-  undefined1 *puVar3;
+  byte *puVar3;
   int *piVar4;
   int iVar5;
   int *piVar6;

@@ -15,7 +15,7 @@ void __thiscall STBoatC::GetInfo16(STBoatC *this,AnonShape_00488F30_727896DE *pa
 {
   int uVar2;
   int iVar4;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar5;
   int iVar6;
   uint uVar7;

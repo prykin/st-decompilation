@@ -9,7 +9,7 @@ FUN_006d5720(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefi
             char *text)
 
 {
-  FUN_0074a95f(this,param_2,param_4,(short *)text);
+  RecoveredClass_0074A95F::FUN_0074a95f(this,param_2,param_4,(short *)text);
   STField<int>(this,0xe0) = param_2;
   STField<undefined4>(this,0xe4) = param_3;
   *(VTable_0079DCBC **)this = &VTable_0079DCBC;

@@ -35,13 +35,13 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   undefined2 local_46;
   undefined2 local_44;
   undefined1 local_42;
-  undefined4 local_20;
+  uint local_20;
   undefined2 local_1c;
   undefined2 uStack_1a;
-  undefined4 local_18;
+  uint local_18;
   byte local_14;
   undefined3 uStack_13;
-  undefined4 local_10;
+  uint local_10;
   AiTactClassTy *local_c;
   uint local_8;
 

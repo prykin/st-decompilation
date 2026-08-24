@@ -14,8 +14,7 @@ void FUN_006db1f0(ushort *param_1,int param_2,byte *param_3,int param_4,int para
   ushort uVar7;
   byte *pbVar8;
   uint *puVar9;
-  undefined4 *puVar10;
-
+  uint *puVar10;
   iVar5 = param_5;
   if (((uint)param_1 & 2) == 0) {
     do {

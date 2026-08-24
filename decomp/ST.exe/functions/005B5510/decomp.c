@@ -13,7 +13,7 @@ MMObjTy::CreateSprBut
 {
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_1cc [4];
   undefined4 local_1bc;
   undefined4 local_1b8;

@@ -13,7 +13,7 @@
 void __thiscall FSGSTy::sub_0059BE50(FSGSTy *this)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int iVar2;
 
   uVar1 = this->array_00BC[0xc].field_01DF;

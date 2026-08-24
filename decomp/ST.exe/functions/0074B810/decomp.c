@@ -4,7 +4,7 @@
 undefined4 FUN_0074b810(int *param_1,char *param_2,undefined4 *param_3)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
   char *pcVar3;
   bool bVar4;

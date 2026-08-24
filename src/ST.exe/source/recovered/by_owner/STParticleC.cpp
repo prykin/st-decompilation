@@ -91,14 +91,14 @@ switchD_00629e96_default:
 void __thiscall st::fn_00629F20(STParticleC *this)
 
 {
-  int iVar1;
+  int iVar1_mg0;
   AnonPointee_STParticleC_00EB *local_8;
 
   local_8 = (AnonPointee_STParticleC_00EB *)this;
-  iVar1 = st::fn_006E62D0
-                    (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_00E7,
-                     (int *)&local_8);
-  if (iVar1 != -4) {
+  iVar1_mg0 = st::fn_006E62D0
+                        (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_00E7,
+                         (int *)&local_8);
+  if (iVar1_mg0 != -4) {
     this->field_00EB = local_8;
     return;
   }
@@ -394,7 +394,7 @@ void __thiscall st::fn_0062A860(STParticleC *this)
 void __thiscall st::fn_0062AEF0(STParticleC *this,undefined4 *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   STParticleC *pSVar3;
 
   uVar1 = this->field_00CE;

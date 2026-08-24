@@ -1,4 +1,3 @@
-#include "../../pseudocode_runtime.h"
 
 
 /* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
@@ -15,7 +14,7 @@ int FUN_0055ee70(byte *param_1,int param_2,int param_3)
   char *pcVar4;
   int iVar5;
   int iVar6;
-  undefined1 *puVar7;
+  byte *puVar7;
   int iVar8;
   byte *pbVar9;
   char *pcVar10;

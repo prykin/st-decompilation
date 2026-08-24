@@ -15,8 +15,7 @@ DumpClassC::WritePtr
 
 {
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   if ((((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) || (param_2 < 0)) ||
      (((g_worldGrid.sizeY <= param_2 || (param_3 < 0)) || (g_worldGrid.sizeZ <= param_3)))) {
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_dump.cpp",0x7f,0,0,"%s",

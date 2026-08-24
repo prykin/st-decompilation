@@ -7,9 +7,12 @@
    table_confidence=high
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 005DA610 returns StartSystemTy::StartSystemTy this @ 005DA74D */
+   Evidence: 005DA610 returns StartSystemTy::StartSystemTy this @ 005DA74D
 
-StartSystemTy * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,undefined4 param_1)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 005DA610 -> 006E51C0 @ 005DA621 */
+
+StartSystemTy * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,AppClassTy *param_1)
 
 {
   int iVar1;

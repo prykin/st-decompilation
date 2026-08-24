@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
   int local_EAX_798;
   int uVar6;
   int local_EAX_1149;
-  undefined4 uVar5;
+  uint uVar5;
   uint uVar7;
   byte recordIndex;
   uint uVar8;

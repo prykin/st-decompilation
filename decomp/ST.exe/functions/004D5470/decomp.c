@@ -7,7 +7,7 @@ undefined4 __fastcall FUN_004d5470(int param_1)
   int iVar2;
   uint uVar3;
   int iVar1;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar5;
 
   iVar2 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)param_1);

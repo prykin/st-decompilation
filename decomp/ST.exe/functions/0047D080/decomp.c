@@ -11,19 +11,23 @@
 
    [STSwitchEnumApplier] Switch target field_06A5 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_06A5State. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
 
-int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
+   [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: incoming stack slot is read as a uint before its address is passed as a distinct output
+   lifetime */
+
+int __thiscall STBoatC::Annih(STBoatC *this,uint param_1)
 
 {
   uint uVar1;
   STWorldObject *pSVar2;
-  undefined4 uVar3;
-  undefined2 uVar5;
+  uint uVar3;
+  ushort uVar5;
   int iVar6;
   uint uVar7;
   int local_EAX_499;
-  undefined4 *puVar8;
+  uint *puVar8;
   int local_EAX_1310;
   int iVar9;
   int iVar10;
@@ -46,7 +50,7 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
   undefined4 local_30;
   undefined4 local_2c;
   undefined4 local_28 [2];
-  undefined4 local_20;
+  uint local_20;
   short local_1c;
   int local_18;
   undefined4 local_14;
@@ -55,7 +59,7 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
   int local_8;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((param_1 == nullptr) || (param_1 == (undefined4 *)0x1)) {
+  if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     sVar15 = this->field_0423;
     sVar16 = this->field_0425;
@@ -138,10 +142,10 @@ LAB_0047d831:
         local_8 = (uVar1 >> 0x10) % 7 - 3;
         if ((this->field_074A <= (int)PTR_00806724->entryCount / 2) &&
            (local_c = 0, this->field_02BF != '\0')) {
-          param_1 = (undefined4 *)&this->field_0x2b3;
+          param_1 = (uint)&this->field_0x2b3;
           do {
-            puVar8 = thunk_FUN_0041dc40(local_28,(short)*param_1,*(ushort *)(param_1 + 1),
-                                        this->field_006C);
+            puVar8 = thunk_FUN_0041dc40(local_28,(short)*(undefined4 *)param_1,
+                                        *(ushort *)(param_1 + 4),this->field_006C);
             uVar3 = *puVar8;
             bVar22 = 0;
             sVar21 = 0;
@@ -179,7 +183,7 @@ LAB_0047d831:
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,iVar13,iVar12 + ((uVar7 >> 0x10) % 7 - 3),iVar11,
                        sVar15,sVar16,sVar17,sVar18,sVar19,sVar20,iVar6,sVar21,bVar22);
-            param_1 = (undefined4 *)((int)param_1 + 6);
+            param_1 = param_1 + 6;
             local_c = local_c + 1;
           } while (local_c < (int)(uint)(byte)this->field_02BF);
         }
@@ -214,9 +218,9 @@ LAB_0047d831:
           }
           /* ST_CALLSITE[0047D561]: CALL 0x004042a0; direct=004042A0 STBoatC::sub_004952E0 */
           sub_004952E0(this);
-          param_1 = (undefined4 *)g_playSystem_00802A38->field_00E4;
+          param_1 = g_playSystem_00802A38->field_00E4;
           /* ST_CALLSITE[0047D57C]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
-          CmdToObj(this,CASE_3,(uint *)&param_1);
+          CmdToObj(this,CASE_3,&param_1);
         }
       }
     }
@@ -247,9 +251,9 @@ LAB_0047d241:
           goto LAB_0047d7e6;
         }
       }
-      param_1 = (undefined4 *)g_playSystem_00802A38->field_00E4;
+      param_1 = g_playSystem_00802A38->field_00E4;
       /* ST_CALLSITE[0047D6D7]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
-      CmdToObj(this,CASE_3,(uint *)&param_1);
+      CmdToObj(this,CASE_3,&param_1);
     }
   }
   else {

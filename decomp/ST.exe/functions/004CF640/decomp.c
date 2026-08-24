@@ -25,10 +25,10 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
   uint local_4a [7];
   int local_2c;
   int local_28;
-  undefined4 local_24;
-  undefined4 local_20;
+  uint local_24;
+  uint local_20;
   int local_1c;
-  undefined4 local_18;
+  uint local_18;
   int *local_14;
   undefined *local_10;
   undefined *local_c;

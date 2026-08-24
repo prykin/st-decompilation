@@ -6,8 +6,7 @@ void __thiscall FUN_00626c90(void *this,char *param_1)
 {
   char cVar1;
   byte bVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   if (STField<char>(this,0x2ad) == '\x02') {
     *param_1 = ((STField<uint>(this,0x262) != (uint)DAT_0080874d) - 1U & 0xfe) + 3;
   }

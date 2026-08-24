@@ -5,8 +5,8 @@ void __thiscall FUN_00488890(void *this,int param_1)
 
 {
   uint index;
-  undefined4 *puVar1;
-  undefined4 *puVar2;
+  uint *puVar1;
+  uint *puVar2;
   void *pvVar3;
   byte bVar4;
   int local_EAX_38;

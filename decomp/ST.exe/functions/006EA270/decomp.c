@@ -8,7 +8,12 @@
    [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
    Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=57; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=47;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=35; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=35; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] diagnostic_residue_void.
+   Evidence: every direct caller kills EAX before reading it and at least one callee return path
+   consists of a machine-proven void diagnostic wrapper followed only by an epilogue; machine CFG
+   audit: used=0, ignored=75, unknown=0 */
 
 void __thiscall
 ST3DSMAPContext::sub_006EA270(ST3DSMAPContext *this,uint param_1,uint param_2,uint param_3)
@@ -23,12 +28,12 @@ ST3DSMAPContext::sub_006EA270(ST3DSMAPContext *this,uint param_1,uint param_2,ui
         FUN_006e9a10(puVar1,param_2,param_3);
         return;
       }
-      FUN_006e91a0();
+      FUN_006e91a0("SprSetPlaneImNum");
       return;
     }
   }
   else if (param_1 != 0xffffffff) {
-    FUN_006e8c50();
+    FUN_006e8c50("SprSetPlaneImNum");
   }
   return;
 }

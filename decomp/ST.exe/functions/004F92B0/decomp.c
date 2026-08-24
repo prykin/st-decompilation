@@ -13,7 +13,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
   int errorCode;
   uint *puVar4;
   DArrayTy *pDVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   int iVar7;
   uint uVar8;
   InternalExceptionFrame local_50;

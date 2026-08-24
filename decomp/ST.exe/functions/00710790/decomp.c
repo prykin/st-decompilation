@@ -2,7 +2,11 @@
 
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 007140E0 -> 00710790 @ 00714523 */
+   Evidence: 007140E0 -> 00710790 @ 00714523
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=49, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __cdecl FUN_00710790(AnonShape_00710790_4CBB90D4 *param_1)
 
@@ -10,7 +14,7 @@ void __cdecl FUN_00710790(AnonShape_00710790_4CBB90D4 *param_1)
   AnonShape_00710790_4CBB90D4 *pAVar1;
   AnonShape_00710790_4CBB90D4 *pAVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
   int iVar6;
 

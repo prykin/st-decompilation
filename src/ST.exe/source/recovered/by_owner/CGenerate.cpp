@@ -781,7 +781,7 @@ void __thiscall st::fn_006964F0(CGenerate *this,uint param_1,int param_2)
   CGenerate_field_5853DArray *pCVar1;
   int iVar2;
   uint uVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   int *piVar5;
   int local_54 [9];
   undefined1 local_30 [4];
@@ -959,8 +959,8 @@ void __thiscall st::fn_00696810(CGenerate *this)
   int iVar3;
   uint uVar4;
   int iVar5;
-  undefined4 uVar6;
-  undefined4 uVar7;
+  uint uVar6;
+  uint uVar7;
   int local_38 [9];
   int local_14;
   uint local_10;
@@ -1232,7 +1232,7 @@ int __thiscall st::fn_006971B0(CGenerate *this)
   int iVar7;
   uint uVar8;
   int iVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   int local_38;
   int local_20;
 
@@ -1665,7 +1665,7 @@ undefined4 __thiscall st::fn_00697C50(CGenerate *this,int param_1,int param_2,in
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   undefined1 local_10 [8];
   undefined4 local_8;
 
@@ -1978,12 +1978,12 @@ st::fn_006991C0
   int iVar20;
   int iVar21;
   int iVar22;
-  undefined1 *puVar23;
+  byte *puVar23;
   int iVar24;
   int iVar25;
-  undefined4 *puVar26;
-  undefined4 *puVar27;
-  undefined4 *puVar28;
+  uint *puVar26;
+  uint *puVar27;
+  uint *puVar28;
   bool bVar29;
   int aiStackY_1150 [17];
   undefined1 auStackY_110c [496];
@@ -2008,16 +2008,16 @@ st::fn_006991C0
   int local_11c;
   int local_118;
   int local_114;
-  undefined1 *local_110;
+  byte *local_110;
   undefined4 *local_10c;
-  undefined1 *local_108;
+  byte *local_108;
   int local_104;
   int local_100;
   uint local_fc;
   int local_f4;
   int local_f0;
   int local_ec;
-  undefined1 *local_e8;
+  byte *local_e8;
   undefined4 *local_e4;
   int local_e0;
   int local_dc;
@@ -2025,14 +2025,14 @@ st::fn_006991C0
   int local_c0;
   int local_bc;
   int local_b8;
-  undefined1 *local_b4;
+  byte *local_b4;
   int local_b0;
   undefined4 *local_ac;
-  undefined1 *local_a8;
+  byte *local_a8;
   int local_a4;
   undefined4 *local_a0;
-  undefined1 *local_9c;
-  undefined1 *local_94;
+  byte *local_9c;
+  byte *local_94;
   int local_90;
   int local_8c;
   int local_88;
@@ -2044,21 +2044,21 @@ st::fn_006991C0
   int local_4c;
   int local_48;
   int local_44;
-  undefined1 *local_3c;
+  byte *local_3c;
   int local_38;
   int local_30;
   int local_28;
-  undefined1 *local_24;
+  byte *local_24;
   undefined4 *local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079d7b8;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 36);
   local_f0 = 0;
@@ -3207,7 +3207,11 @@ LAB_00699f26:
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=12;
    incoming_edx_uses=2; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0069ADA0(CGenerate *this,int param_1,int param_2)
 
@@ -3245,8 +3249,8 @@ void __thiscall st::fn_0069ADA0(CGenerate *this,int param_1,int param_2)
         if (*(short *)(iVar8 + 8) == 0) {
           *psVar6 = -1;
           psVar6[1] = -1;
-          psVar6[*(short *)this->field_000C] = -1;
-          psVar6[*(short *)this->field_000C + 1] = -1;
+          psVar6[*STField<short *>(this,0xC)] = -1;
+          psVar6[*STField<short *>(this,0xC) + 1] = -1;
         }
         else {
           uVar10 = 0x8000;
@@ -3292,7 +3296,7 @@ void __thiscall st::fn_0069ADA0(CGenerate *this,int param_1,int param_2)
                 else {
                   sVar2 = -1;
                 }
-                psVar6[*(short *)this->field_000C] = sVar2;
+                psVar6[*STField<short *>(this,0xC)] = sVar2;
               }
               uVar13 = *(uint *)(iVar8 + 0x38);
               if ((uVar11 & uVar13) != 0) {
@@ -3302,7 +3306,7 @@ void __thiscall st::fn_0069ADA0(CGenerate *this,int param_1,int param_2)
                 else {
                   sVar2 = -1;
                 }
-                psVar6[*(short *)this->field_000C + 1] = sVar2;
+                psVar6[*STField<short *>(this,0xC) + 1] = sVar2;
               }
               psVar6 = psVar6 + -iVar3;
               uVar11 = uVar11 >> 1;
@@ -3338,13 +3342,13 @@ void __thiscall st::fn_0069ADA0(CGenerate *this,int param_1,int param_2)
             else {
               sVar2 = -1;
             }
-            psVar6[*(short *)this->field_000C] = sVar2;
+            psVar6[*STField<short *>(this,0xC)] = sVar2;
             if ((uVar13 & *(uint *)(iVar8 + 0x38)) == 0) {
-              psVar6[*(short *)this->field_000C + 1] =
+              psVar6[*STField<short *>(this,0xC) + 1] =
                    (-(ushort)((*(uint *)(iVar8 + 0x38) & 1) != 0) & 0x3fff) + 0xbfff;
             }
             else {
-              psVar6[*(short *)this->field_000C + 1] = -1;
+              psVar6[*STField<short *>(this,0xC) + 1] = -1;
             }
           }
         }
@@ -3372,7 +3376,7 @@ void __thiscall st::fn_0069ADA0(CGenerate *this,int param_1,int param_2)
               iVar8 = iVar8 + 1;
               psVar9 = psVar9 + 1;
               psVar6 = psVar6 + 1;
-            } while (iVar8 < *(short *)this->field_000C);
+            } while (iVar8 < *STField<short *>(this,0xC));
           }
           pbVar5 = st::pointer_boundary_cast<byte *>(this->field_000C);
           param_2_after_write = param_2_after_write + 1;
@@ -3417,7 +3421,7 @@ int __thiscall st::fn_0069B190(CGenerate *this,int param_1,int param_2,int param
   this->field_5837 = param_2;
   st::fn_006AB060(&this->field_584F);
   uVar4 = uVar9 * 2;
-  puVar2 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(uVar4));
+  puVar2 = static_cast<ushort *>(st::fn_006AAC70(uVar4));
   this->field_584F = puVar2;
   for (uVar9 = (uVar9 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {
     puVar2[0] = 0;
@@ -3575,7 +3579,7 @@ st::fn_0069BDC0
 {
   alignas(4) byte st_stack_frame[184];
 
-  undefined1 *puVar1;
+  byte *puVar1;
   int iVar2;
   int iVar4;
   int iVar3;
@@ -3586,7 +3590,7 @@ st::fn_0069BDC0
   int iVar7;
   int *piVar8;
   int iVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   int *piVar11;
   int local_7c;
   undefined4 *local_78;
@@ -3607,15 +3611,15 @@ st::fn_0069BDC0
   int local_28;
   int local_24;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079d808;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 32);
   local_40 = 0;
@@ -3806,9 +3810,9 @@ uint __fastcall st::fn_0069CB50(int *param_1)
   alignas(4) byte st_stack_frame[416];
 
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   dword dVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   uint *puVar5_mg0;
   int *piVar5;
   uint local_EAX_492;
@@ -3871,7 +3875,7 @@ uint __fastcall st::fn_0069CB50(int *param_1)
   uint local_178;
   int local_174;
   int local_170;
-  undefined1 *local_16c;
+  byte *local_16c;
   int local_164;
   int local_15c;
   int local_158;
@@ -3903,8 +3907,8 @@ uint __fastcall st::fn_0069CB50(int *param_1)
   int local_84;
   int local_7c;
   void *local_78;
-  undefined1 *local_74;
-  undefined1 *local_70;
+  byte *local_74;
+  byte *local_70;
   int local_6c;
   int local_68 [9];
   uint local_44;
@@ -3914,15 +3918,15 @@ uint __fastcall st::fn_0069CB50(int *param_1)
   AnonShape_0069CB50_B339E56A *local_30;
   undefined4 *local_28;
   int local_24;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079d818;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 4);
   iVar17 = 0;
@@ -5001,7 +5005,7 @@ void __thiscall st::fn_006A0470(CGenerate *this)
 {
   ushort uVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int *piVar4;
   char *pcVar5;
   int iVar6;
@@ -5009,7 +5013,7 @@ void __thiscall st::fn_006A0470(CGenerate *this)
   uint uVar8;
   int iVar9;
   void *pvVar10;
-  undefined4 uVar11;
+  uint uVar11;
   byte local_14;
   int local_10;
   int local_c;
@@ -5019,7 +5023,7 @@ void __thiscall st::fn_006A0470(CGenerate *this)
   this->field_5703 = iVar6;
   iVar2 = st::machine_word_boundary_cast<int>(this->field_0008[1] * 0x28);
   this->field_5707 = iVar2;
-  puVar3 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(iVar6 * iVar2));
+  puVar3 = static_cast<uint *>(st::fn_006AAC70(iVar6 * iVar2));
   uVar7 = this->field_5703 * this->field_5707;
   this->field_56FF = puVar3;
   for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -5102,7 +5106,7 @@ void __thiscall st::fn_006A09F0(CGenerate *this,byte *param_1,uint param_2)
   /* ST_CALLSITE[006A0A14]: CALL dword ptr [0x0085bde8] */
   st::external_00000080(local_108,st::mutable_c_string("%s%08u"),&DAT_007c8400,this->field_570B);
   st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this->field_0018),0xc,local_108,param_1,param_2,nullptr,'\0',nullptr);
-  this->field_570B = this->field_570B + 1;
+  this->field_570B = st::machine_word_boundary_cast<undefined4>(this->field_570B + 1);
   return;
 }
 

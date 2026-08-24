@@ -192,7 +192,7 @@ int __thiscall st::fn_00679300(AiPlrClassTy *this,byte *param_1)
   AiPlrClassTy *pAVar3;
   int iVar4;
   uint index;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar5;
   int iVar6;
   AiTactClassTy *this_00;
@@ -269,7 +269,7 @@ int __thiscall st::fn_00679470(AiPlrClassTy *this)
   DArrayTy *pDVar1;
   AiPlrClassTy *pAVar3;
   int iVar4;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar5;
   int iVar6;
   AiTactClassTy *this_00;
@@ -429,14 +429,14 @@ void __thiscall st::fn_0067B520(AiPlrClassTy *this)
   AiPlrClassTy_field_06A1DArray *array;
   int local_EAX_259;
   int local_EAX_300;
-  undefined1 uVar3;
+  byte uVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
   int local_EAX_427;
   uint uVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar4;
   int local_EAX_824;
   int iVar9;
@@ -608,7 +608,7 @@ LAB_0067b724:
       if (((g_allPlayers_007FA174 != nullptr) && (this_00->field_0662 == '\x01')) &&
          (local_EAX_824 = st::fn_00402A68(this_00,(int)this_00->field_0660),
          local_EAX_824 < (int)((-(uint)(this_00->field_05EC != 3) & 0xfffffffc) + 5))) {
-        st::fn_0040523B(this_00->field_05D7,(int)this_00->field_0660,st::pointer_boundary_cast<undefined4 *>(local_c8),st::pointer_boundary_cast<undefined4 *>(local_ac));
+        st::fn_0040523B(this_00->field_05D7,(int)this_00->field_0660,reinterpret_cast<undefined4 *>(local_c8),reinterpret_cast<undefined4 *>(local_ac));
         iVar10 = 0;
         do {
           if (*(int *)((int)local_c8 + iVar10) == 0) {
@@ -653,14 +653,14 @@ void __thiscall st::fn_0067C180(AiPlrClassTy *this)
 {
   STFishC *pSVar1;
   AiPlrClassTy *this_00;
-  undefined2 uVar3;
+  ushort uVar3;
   int local_EAX_93;
   DArrayTy *array;
   short *psVar4;
   int *piVar5;
   int iVar6;
   IMAGE_DOS_HEADER *pIVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   dword dVar9;
   int iVar4;
   DArrayTy *pDVar10;
@@ -931,7 +931,7 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
 {
   char cVar1;
   STMessageId SVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   AiPlrClassTy *this_00;
   int iVar5;
   byte *pbVar5;
@@ -939,6 +939,7 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
   STGameObjC *this_01;
   AiFltClassTy *this_02;
   DArrayTy *pDVar7;
+  int iVar9_mg2;
   int iVar8;
   int iVar9;
   uint uVar10;
@@ -1009,7 +1010,7 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
         } while (cVar1 != '\0');
         uVar10 = ~uVar10;
         pcVar12 = pcVar12 + -uVar10;
-        pcVar14 = st::pointer_boundary_cast<char *>(&g_bulkInitializedRecords_008087C7[this_00->field_05D7].field_0x1);
+        pcVar14 = (char *)&g_bulkInitializedRecords_008087C7[this_00->field_05D7].field_0x1;
         memmove(pcVar14, pcVar12, uVar10); /* compiler REP MOVS byte copy */
         if (local_18 != nullptr) {
           st::fn_006AB060(&local_18);
@@ -1064,7 +1065,7 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
         }
       }
       else if (SVar2 == MESS_ID_CREATE) {
-        puVar3 = st::pointer_boundary_cast<undefined4 *>((message->arg0).ptr);
+        puVar3 = static_cast<uint *>((message->arg0).ptr);
         if (puVar3 == nullptr) {
           st::fn_006A5E40
                     (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr.cpp"),0x586);
@@ -1119,10 +1120,10 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
           }
           if ((AnonShape_005EFAE0_B406B78B *)piVar15[1] != 0) {
             local_c = 0;
-            iVar9 = st::fn_006E62D0
-                              (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)piVar15[1],
-                               &local_c);
-            if ((iVar9 == 0) && (local_c != 0)) {
+            iVar9_mg2 = st::fn_006E62D0
+                                  (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)piVar15[1],
+                                   &local_c);
+            if ((iVar9_mg2 == 0) && (local_c != 0)) {
               *piVar15 = local_c;
             }
             else {
@@ -1168,11 +1169,11 @@ int __thiscall st::fn_0067C7E0(AiPlrClassTy *this,STMessage *message)
     switch(SVar2) {
     case 0x5d98:
       if ((message->arg0).words.low == 0) {
-        st::fn_00402270(local_10->field_05D7,st::pointer_boundary_cast<DArrayTy *>((message->arg1).ptr));
+        st::fn_00402270(local_10->field_05D7,static_cast<DArrayTy *>((message->arg1).ptr));
       }
       else {
         local_8 = nullptr;
-        st::fn_006AFE40((int *)&local_8,st::pointer_boundary_cast<uint *>((message->arg1).ptr));
+        st::fn_006AFE40((int *)&local_8,static_cast<uint *>((message->arg1).ptr));
         pDVar7 = local_8;
         if (local_8 != nullptr) {
           ppAVar16 = &local_6c;

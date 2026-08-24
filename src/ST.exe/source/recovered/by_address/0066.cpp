@@ -7,8 +7,8 @@ undefined4 __fastcall st::fn_00660010(AiFltClassTy *param_1)
 
 {
   short sVar1;
-  undefined4 uVar2;
-  undefined2 uVar3;
+  uint uVar2;
+  ushort uVar3;
   int iVar4;
   DArrayTy *array;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -101,7 +101,7 @@ undefined4 __thiscall st::fn_00660420(void *this,undefined4 param_1)
 undefined4 __fastcall st::fn_006604B0(AiFltClassTy *param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  undefined2 uVar1;
+  ushort uVar1;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   STGroupBoatC *this;
@@ -246,7 +246,7 @@ st::fn_00660700(void *this,short param_1,short param_2,short param_3,int param_4
   STGroupBoatC *this_01;
   short sVar3;
   undefined4 local_14;
-  undefined4 local_10;
+  uint local_10;
   short local_c;
   short sStack_a;
   short local_8;
@@ -329,7 +329,7 @@ undefined4 __thiscall st::fn_00660910(void *this,short param_1,short param_2,sho
 
 {
   STWorldObject *pSVar1;
-  undefined4 uVar2;
+  uint uVar2;
   STGroupBoatC *this_00;
   undefined1 local_c;
   undefined2 uStack_b;
@@ -411,14 +411,14 @@ st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,s
   short local_14;
   short sStack_12;
   short local_10;
-  undefined4 local_c;
+  uint local_c;
   short local_8;
 
   param_1->field_00A7 = 0;
   if (param_6 == 0) {
     local_8 = (short)param_5;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = st::machine_word_boundary_cast<undefined4>((AnonShape_00660620_6BCED4D7 *)CONCAT22(param_4,param_3));
+    local_c = st::machine_word_boundary_cast<uint>((AnonShape_00660620_6BCED4D7 *)CONCAT22(param_4,param_3));
     if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
       pSVar1 = st::fn_00405CF9(param_1->field_0024,param_1->field_007D);
       if (pSVar1 != nullptr) {
@@ -437,7 +437,7 @@ st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,s
         _local_14 = CONCAT22(param_4,param_3);
         if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
           local_10 = (short)param_5;
-          local_c = st::machine_word_boundary_cast<undefined4>(param_1);
+          local_c = st::machine_word_boundary_cast<uint>(param_1);
           pSVar1 = st::fn_00405CF9(param_1->field_0024,param_1->field_007D);
           if (pSVar1 != nullptr) {
             /* ST_CALLSITE[00660C8B]: CALL dword ptr [EDX + 0x8] */
@@ -533,7 +533,7 @@ void __fastcall st::fn_00660D40(AnonShape_00660D40_E58DF1E6 *param_1)
                   ('\a' < (char)STPiece<28,1>(local_5c))))) {
                 STPiece<28,1>(local_5c) = local_8->field_0024;
               }
-              st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_5c.field_0x1d),(char *)(iVar7 + 0x15),0xe);
+              st::fn_0072E340((char *)&local_5c.field_0x1d,(char *)(iVar7 + 0x15),0xe);
               if (iVar6 == 0) {
                 sVar3 = *(short *)&pAVar2->field_0x7f;
               }
@@ -765,7 +765,7 @@ AiFltClassTy * __cdecl st::fn_00668150(void)
 void __cdecl st::fn_00668670(int param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
   if (((char *)param_1)[0x18] != '\0') {

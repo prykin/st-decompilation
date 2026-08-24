@@ -5,8 +5,8 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
 
 {
   short *psVar1;
-  undefined4 *puVar2;
-  undefined4 uVar3;
+  uint *puVar2;
+  uint uVar3;
   int *piVar4;
   int iVar5;
   int iVar6;

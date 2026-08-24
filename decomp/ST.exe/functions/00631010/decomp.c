@@ -22,7 +22,7 @@ void __thiscall STManRuinC::sub_00631010(STManRuinC *this)
   short local_1c;
   short local_1a;
   undefined4 local_18;
-  undefined4 local_c;
+  int local_c;
   uint local_8;
 
   pSVar1 = this->field_0038;

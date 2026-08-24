@@ -29,7 +29,7 @@ int __thiscall STBoatC::BackLoadRC(STBoatC *this,STBoatC *param_1)
 
 {
   STBoatC_field_04D9State SVar1;
-  undefined2 uVar3;
+  ushort uVar3;
   int local_EAX_56;
   int local_EAX_90;
   int local_EAX_185;

@@ -12,12 +12,12 @@
 int __thiscall ComboTy::GetMessage(ComboTy *this,STMessage *message)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   STMessageId SVar2;
   ushort *puVar3;
   ComboTy *this_00;
   int local_EAX_35;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar5;
   int iVar6;
   int iVar7;

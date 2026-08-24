@@ -1,10 +1,9 @@
-#include "../../pseudocode_runtime.h"
 
 
 int FUN_004e4330(int param_1,int param_2)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
   puVar1 = &g_packedRecords_A62x8[param_1].field1949_0x996;

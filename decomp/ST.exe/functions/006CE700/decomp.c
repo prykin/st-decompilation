@@ -27,7 +27,7 @@ void FUN_006ce700(byte *param_1,byte *param_2,int param_3)
 
 {
   byte bVar1;
-  undefined4 uVar2;
+  uint uVar2;
   bool bVar3;
   char cVar4;
 

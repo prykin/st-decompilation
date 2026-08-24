@@ -80,11 +80,11 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   case 2:
   case 4:
   case 5:
-    pcVar7 = g_startSystem_0081176C->field_0030;
+    pcVar7 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     resourceId = 0x26ae;
     break;
   case 3:
-    pcVar7 = g_startSystem_0081176C->field_0030;
+    pcVar7 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     resourceId = 0x26af;
     break;
   default:
@@ -93,11 +93,11 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   case 10:
   case 0xb:
   case 0xc:
-    pcVar7 = g_startSystem_0081176C->field_0030;
+    pcVar7 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     resourceId = 0x26ad;
     break;
   case 0x13:
-    pcVar7 = g_startSystem_0081176C->field_0030;
+    pcVar7 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     resourceId = (DAT_00803400 != '\f') + 0x26ad;
   }
   uVar8 = 0;

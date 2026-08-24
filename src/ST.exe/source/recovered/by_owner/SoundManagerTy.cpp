@@ -45,8 +45,7 @@ void __thiscall st::fn_00566970(SoundManagerTy *this,int param_1,int param_2)
   LPSTR pCVar1;
   int iVar2;
   char *text;
-  undefined4 *puVar3;
-
+  uint *puVar3;
   if (((this->field_0018 != nullptr) && (iVar2 = this->field_0028, iVar2 != 0)) &&
      (-1 < param_1)) {
     switch(this->field_0038) {

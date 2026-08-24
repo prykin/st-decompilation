@@ -13,7 +13,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar2;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar4;
   uint uVar3;
   int iVar5;

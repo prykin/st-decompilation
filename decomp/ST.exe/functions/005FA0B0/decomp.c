@@ -2,7 +2,11 @@
 
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005F5F20 -> 005FA0B0 @ 005F6290 */
+   Evidence: 005F5F20 -> 005FA0B0 @ 005F6290
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __fastcall FUN_005fa0b0(STColl3C *param_1)
 

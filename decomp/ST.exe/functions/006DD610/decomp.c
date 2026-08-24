@@ -23,10 +23,16 @@
    or consumed as double prove physical EBP slot boundaries; merged_slots={1=2, 3=2}; sites=006DD64A
    forwards adjacent incoming dwords to Library::Ourlib::STREND::FUN_006dd050 parameter stack slot
    +0x4 typed /double | 006DD64A forwards adjacent incoming dwords to
-   Library::Ourlib::STREND::FUN_006dd050 parameter stack slot +0xc typed /double */
+   Library::Ourlib::STREND::FUN_006dd050 parameter stack slot +0xc typed /double
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 006DD610 -> 006DD050 @ 006DD64A | 006E1460 -> 006DD610 @ 006E152A;
+   /SubmarineTitans/Recovered/LibraryContexts/ST3DSMAPContext+0xa8 */
 
 void __thiscall
-ST3DSMAPContext::sub_006DD610(ST3DSMAPContext *this,uint param_2,double param_3,double param_4)
+ST3DSMAPContext::sub_006DD610
+          (ST3DSMAPContext *this,ST3DSMAPContext_field_00A8State param_2,double param_3,
+          double param_4)
 
 {
   this->field_0088 = param_3;

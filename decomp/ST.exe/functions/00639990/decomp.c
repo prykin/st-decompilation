@@ -4,10 +4,9 @@
 undefined4 __fastcall FUN_00639990(AnonShape_00639990_2135AB0A *param_1)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   if (param_1->field_026F < 2) {
     puVar1 = &param_1->field_0x1d5;
     /* ST_CALLSITE[00639AC8]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */

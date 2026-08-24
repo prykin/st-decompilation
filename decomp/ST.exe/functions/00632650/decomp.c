@@ -35,7 +35,7 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
 
 {
   DArrayTy *pDVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   uint uVar4;
   uint uVar5;

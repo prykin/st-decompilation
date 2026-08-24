@@ -7,8 +7,7 @@
 uint FUN_00747822(AnonShape_00747822_A1E67AF6 *param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   /* ST_CALLSITE[0074782C]: CALL dword ptr [EAX + 0x14] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   uVar1 = (**(code **)(*param_1->field_000C + 0x14))();

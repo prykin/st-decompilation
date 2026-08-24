@@ -254,15 +254,15 @@ void st::fn_00648FE0(void)
         memmove(piVar9, piVar7, 0x14); /* compiler REP MOVS byte copy */
         iVar13 = 0;
         piVar7 = st::pointer_boundary_cast<int *>(DAT_0080ed12 + 0x106);
-        piVar9 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[DAT_0080874d].field376_0x2ff);
+        piVar9 = reinterpret_cast<int *>(&g_packedRecords_A62x8[DAT_0080874d].field376_0x2ff);
         memmove(piVar9, piVar7, 0x14); /* compiler REP MOVS byte copy */
         iVar13 = 0;
         piVar7 = st::pointer_boundary_cast<int *>(DAT_0080ed12 + 0x10b);
-        piVar9 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[DAT_0080874d].field410_0x327);
+        piVar9 = reinterpret_cast<int *>(&g_packedRecords_A62x8[DAT_0080874d].field410_0x327);
         memmove(piVar9, piVar7, 0x26c); /* compiler REP MOVS byte copy */
         iVar13 = 0;
         piVar7 = st::pointer_boundary_cast<int *>(DAT_0080ed12 + 0x1a6);
-        piVar9 = st::pointer_boundary_cast<int *>(&g_packedRecords_A62x8[DAT_0080874d].field1024_0x593);
+        piVar9 = reinterpret_cast<int *>(&g_packedRecords_A62x8[DAT_0080874d].field1024_0x593);
         memmove(piVar9, piVar7, 0x1a8); /* compiler REP MOVS byte copy */
         iVar13 = 0;
         piVar7 = st::pointer_boundary_cast<int *>(DAT_0080ed12 + 0x210);
@@ -286,7 +286,7 @@ void st::fn_00648FE0(void)
   pcVar6 = local_c;
   if (local_c != nullptr) {
     /* ST_CALLSITE[006491C4]: CALL 0x00403f2b; direct=00403F2B CreateArbiter */
-    st::fn_00403F2B((int)local_c,st::pointer_boundary_cast<char *>(&DAT_00809960));
+    st::fn_00403F2B((int)local_c,(char *)&DAT_00809960);
     local_1c = 0;
     local_18 = g_bulkInitializedRecords_008087C7;
     do {
@@ -306,7 +306,7 @@ void st::fn_00648FE0(void)
           case 0xe:
           case 0xf:
           case 0x13:
-            local_10 = st::pointer_boundary_cast<char *>(&local_18->field_0x1);
+            local_10 = (char *)&local_18->field_0x1;
             break;
           case 3:
           case 8:
@@ -330,12 +330,12 @@ LAB_00649255:
            local_8 != nullptr)) {
           local_14 = 0;
           if (DAT_00808aaf != 0) {
-            pcVar5 = st::pointer_boundary_cast<char *>(&DAT_00808af6);
+            pcVar5 = (char *)&DAT_00808af6;
             do {
               if ((pcVar5[-2] == pBVar10->field_0022) && (*pcVar5 == '\0')) {
                 uVar3 = 0xffffffff;
                 local_20 = pcVar5 + -0x46;
-                pcVar8 = st::pointer_boundary_cast<char *>(&local_8->field_0x1b);
+                pcVar8 = (char *)&local_8->field_0x1b;
                 do {
                   pcVar11 = pcVar8;
                   if (uVar3 == 0) break;
@@ -383,7 +383,7 @@ undefined4 * st::fn_006494C0(void)
   char cVar1;
   int iVar3;
   int iVar4;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar5;
   uint uVar6;
   uint uVar7;
@@ -560,7 +560,7 @@ undefined4 * st::fn_00649790(void)
   char cVar1;
   int iVar3;
   int iVar4;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar5;
   uint uVar6;
   uint uVar7;
@@ -734,7 +734,7 @@ undefined4 * __cdecl st::fn_00649A60(int param_1)
 
 {
   int errorCode;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   InternalExceptionFrame local_4c;
   undefined4 *local_8;
@@ -785,7 +785,7 @@ undefined4 * st::fn_00649B90(void)
   char cVar1;
   int iVar3;
   int iVar4;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar5;
   uint uVar6;
   uint uVar7;
@@ -976,7 +976,7 @@ undefined4 * st::fn_00649EB0(void)
 {
   int errorCode;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   InternalExceptionFrame local_5c;
   uint local_18;
   uint local_14;

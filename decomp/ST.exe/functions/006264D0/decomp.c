@@ -21,7 +21,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_ESI;
   short sVar12;
-  undefined4 *puVar13;
+  uint *puVar13;
   int iVar14;
   bool bVar15;
   undefined4 local_bc [6];
@@ -39,22 +39,22 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   int local_60;
   int local_5c;
   int local_58;
-  undefined4 local_54;
+  uint local_54;
   byte local_50;
   undefined3 uStack_4f;
   int local_4c;
   int local_48;
   byte local_44;
   undefined3 uStack_43;
-  undefined4 local_40;
+  uint local_40;
   int local_3c;
-  undefined4 local_38;
+  uint local_38;
   int local_34;
   int local_30;
   int local_2c;
   uint local_28;
-  int local_24;
-  undefined4 local_20;
+  uint local_24;
+  uint local_20;
   int local_1c;
   int *local_18;
   int local_14;
@@ -80,7 +80,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   if (param_1 == nullptr) {
     return 0;
   }
-  thunk_FUN_00416270(param_1,&local_28,&local_24,(short *)&local_38);
+  thunk_FUN_00416270(param_1,&local_28,(short *)&local_24,(short *)&local_38);
   iVar4 = (int)sVar11;
   iVar14 = (int)sVar12;
   iVar5 = FUN_006acf0d((int)sVar8,iVar14,iVar4,(int)(short)local_28,(int)(short)local_24,

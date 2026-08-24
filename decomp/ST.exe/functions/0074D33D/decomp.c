@@ -5,8 +5,7 @@ undefined4 __thiscall FUN_0074d33d(void *this,undefined4 param_1)
 
 {
   LPCRITICAL_SECTION lpCriticalSection;
-  undefined4 uVar1;
-
+  uint uVar1;
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x18);
   /* ST_CALLSITE[0074D345]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(lpCriticalSection);

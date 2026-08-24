@@ -11,7 +11,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C7070(TLOBaseTy *this,int param_1)
 {
   short sVar1;
   short sVar2;
-  undefined4 uVar3;
+  uint uVar3;
   short sVar4;
   int iVar5;
   undefined4 local_8;

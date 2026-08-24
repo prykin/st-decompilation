@@ -15,7 +15,7 @@ void FUN_006c0800(short *param_1,byte param_2,undefined4 param_3,undefined4 para
   uint uVar3;
   uint uVar4;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   AnonShape_006BFBF0_13F73F95 *pAVar7;
 
   iVar5 = param_11 * 0xc4;

@@ -8,7 +8,7 @@
 void __thiscall WaitTy::ShowDescription(WaitTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   RecoveredSourceFamily_dibcopy *pRVar2;
   cMf32 *pcVar4;
   int local_EAX_45;

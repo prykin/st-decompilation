@@ -8,17 +8,17 @@
 void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   ST3DSMAPContext *pSVar3;
   VisibleClassTy *this_00;
   int iVar4;
   LPSTR pCVar4;
-  undefined4 *puVar5;
-  undefined4 *puVar6;
+  uint *puVar5;
+  uint *puVar6;
   VisibleClassTy_field_0110Element *element_0110;
   int iVar8;
   VisibleClassTy_field_0110DArray *pVVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   int iVar11;
   uint uVar12;
   bool bVar13;

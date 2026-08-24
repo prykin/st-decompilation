@@ -2,8 +2,12 @@
 
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=1, ignored=0, unknown=0 */
 
-undefined4 FUN_006748d0(void)
+int FUN_006748d0(void)
 
 {
   uint uVar1;
@@ -46,7 +50,7 @@ undefined4 FUN_006748d0(void)
         DAT_00811914 = DAT_00811914 + 1;
       }
       DAT_007d2d18 = 0;
-      return 0xffffffc4;
+      return -0x3c;
     }
     if (iVar2 == -4) {
       DAT_007d2d18 = 0x84e;

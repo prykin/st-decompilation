@@ -4,7 +4,7 @@
 undefined4 * FUN_007530f0(undefined4 *param_1,LPCSTR param_2,DWORD param_3,undefined4 param_4)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   byte *puVar3;
   byte *puVar4;

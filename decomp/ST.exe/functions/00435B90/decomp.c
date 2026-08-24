@@ -18,7 +18,7 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
   int *arg_2;
   short sVar4;
   STGameObjC *pSVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;

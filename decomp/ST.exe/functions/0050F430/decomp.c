@@ -23,7 +23,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   int iVar6;
   bool *pbVar7;
   bool *pbVar8;
-  undefined4 *puVar9;
+  uint *puVar9;
   bool local_19c [36];
   bool local_178 [36];
   bool local_154 [36];

@@ -1,6 +1,11 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STReturnSemanticsApplier] diagnostic_residue_void.
+   Evidence: every direct caller kills EAX before reading it and at least one callee return path
+   consists of a machine-proven void diagnostic wrapper followed only by an epilogue; machine CFG
+   audit: used=0, ignored=16, unknown=0 */
+
 void __thiscall FUN_006ea340(void *this,uint param_1,int param_2,uint param_3)
 
 {
@@ -15,7 +20,7 @@ void __thiscall FUN_006ea340(void *this,uint param_1,int param_2,uint param_3)
          ((*(uint *)(iVar2 + param_2 * 0x114) & 0x8000) != 0)) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(uint *)(iVar2 + param_2 * 0x114 + 0x94) <= param_3) {
-          FUN_006e91a0();
+          FUN_006e91a0("SprSetLevPlane");
           return;
         }
         *(int *)(iVar1 + 0x1c) = param_2;
@@ -30,7 +35,7 @@ void __thiscall FUN_006ea340(void *this,uint param_1,int param_2,uint param_3)
     return;
   }
 LAB_006ea3ca:
-  FUN_006e8c50();
+  FUN_006e8c50("SprSetLevPlane");
   return;
 }
 

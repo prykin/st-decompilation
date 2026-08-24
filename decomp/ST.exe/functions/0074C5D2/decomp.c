@@ -14,7 +14,7 @@ int FUN_0074c5d2(AnonShape_0074C5D2_07BD206F *param_1,int *param_2)
   if (iVar1 == 0) {
     /* ST_CALLSITE[0074C5FF]: CALL dword ptr [EAX + 0x54] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar1 = (**(code **)(*(int *)param_1->field_0040 + 0x54))(param_2);
+    iVar1 = (**(code **)(*STField<int *>(param_1,0x40) + 0x54))(param_2);
   }
   /* ST_CALLSITE[0074C605]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(lpCriticalSection);

@@ -222,8 +222,7 @@ cLoadingTy::SetState
     }
     if ((code *)pcVar9->field_0058 != nullptr) {
       /* ST_CALLSITE[0055526B]: CALL EAX */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)pcVar9->field_0058)(pcVar9->field_0054);
+      (*STField<code *>(pcVar9,0x58))(pcVar9->field_0054);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -343,8 +342,7 @@ joined_r0x00555393:
   default:
     if ((code *)local_8->field_0058 != nullptr) {
       /* ST_CALLSITE[005553EE]: CALL EAX */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)local_8->field_0058)(local_8->field_0054);
+      (*STField<code *>(local_8,0x58))(local_8->field_0054);
     }
   }
   g_currentExceptionFrame = local_50.previous;

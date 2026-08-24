@@ -99,7 +99,7 @@ void __fastcall st::fn_0065D720(AnonShape_0065D720_52DE2AAB *param_1,undefined4 
 undefined2 __thiscall st::fn_0065D9C0(AiFltClassTy *this)
 
 {
-  undefined2 uVar1;
+  ushort uVar1;
   STGroupBoatC *pSVar2;
 
   if ((this->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
@@ -210,7 +210,11 @@ undefined4 __thiscall st::fn_0065F5C0(AiFltClassTy *this,short *param_1)
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=21, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0065F980(AiFltClassTy *this)
 
@@ -258,7 +262,7 @@ st::fn_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *param_3)
 {
   AiFltClassTy *pAVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   uint index;
   DArrayTy *array;
   InternalExceptionFrame local_5c;
@@ -342,7 +346,11 @@ st::fn_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *param_3)
 /* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
    Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=26;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00660F70(AiFltClassTy *this,uint *param_1,undefined2 param_2)
 
@@ -360,7 +368,7 @@ void __thiscall st::fn_00660F70(AiFltClassTy *this,uint *param_1,undefined2 para
   int iVar8;
   int local_EAX_1023;
   short sVar11;
-  undefined4 uVar12;
+  uint uVar12;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   AnonShape_0068EB30_4F4B480A *pAVar13;
@@ -520,7 +528,7 @@ switchD_0066104e_caseD_9:
             STPiece<28,1>(local_6c) = *(undefined1 *)&this->field_0024;
           }
           local_6c.field_0006 = (short)uVar5;
-          st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_6c.field_0x1d),(char *)((int)param_1 + 0x15),0xe);
+          st::fn_0072E340((char *)&local_6c.field_0x1d,(char *)((int)param_1 + 0x15),0xe);
           /* ST_CALLSITE[0066136F]: CALL 0x004056be; direct=004056BE AiTactClassTy::PrepareToSave */
           local_EAX_1023 =
                st::fn_004056BE
@@ -677,7 +685,7 @@ st::fn_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param_2,int para
 
 {
   AnonNested_AnonShape_00661CA0_93A030EF_020B_27162EA8 *pAVar1;
-  undefined4 uVar2;
+  uint uVar2;
   AiTactClassTy *pAVar3;
   STGameObjC *pSVar4;
   STGameObjC *this;
@@ -1082,9 +1090,9 @@ void __fastcall st::fn_00664960(AiFltClassTy *param_1)
   uint uVar8;
   uint uVar9;
   uint uVar10;
-  undefined2 uVar11;
+  ushort uVar11;
   AiPlrClassTy *this;
-  undefined2 uVar14;
+  ushort uVar14;
   int iVar17;
   short *psVar18;
   int iVar19;
@@ -1150,7 +1158,7 @@ void __fastcall st::fn_00664960(AiFltClassTy *param_1)
   int extraout_EDX_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_16;
-  undefined4 uVar25;
+  uint uVar25;
   int iVar26;
   uint *puVar27;
   uint *puVar28;
@@ -2440,7 +2448,7 @@ LAB_00665315:
       param_1->field_00AF = param_1->field_0280;
       iVar19 = st::fn_00403BE8(param_1,param_1->field_01AD,param_1->field_01C3,
                                   param_1->field_01C5,param_1->field_01C7,param_1->field_01B9,
-                                  param_1->field_01C9,st::pointer_boundary_cast<char *>(&param_1->field_0x1ca));
+                                  param_1->field_01C9,(char *)&param_1->field_0x1ca);
       if (-1 < iVar19) goto cf_common_exit_00667066;
       if (param_1->field_00B3 != 0) goto cf_common_join_00667047;
       goto cf_common_join_0066704E;

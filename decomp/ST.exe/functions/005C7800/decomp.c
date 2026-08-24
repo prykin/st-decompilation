@@ -7,7 +7,7 @@
 void FUN_005c7800(void)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   byte bVar2;
   char cVar3;
   SettMapTy_field_1E26State SVar4;

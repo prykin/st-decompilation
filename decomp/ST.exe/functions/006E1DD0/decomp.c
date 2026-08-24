@@ -8,10 +8,10 @@ FUN_006e1dd0(void *this,int param_1,int param_2,float *param_3,float *param_4,fl
 
 {
   double dVar1;
-  undefined2 uVar2;
+  ushort uVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 uVar3;
+  uint uVar3;
   float local_10;
   float local_c;
   float local_8;

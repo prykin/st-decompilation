@@ -7,7 +7,7 @@ void FUN_006d3d80(int param_1,int param_2,int param_3,byte *param_4,int param_5,
                  int param_19,byte *param_20,byte *param_21)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
   int iVar3;
   int iVar4;

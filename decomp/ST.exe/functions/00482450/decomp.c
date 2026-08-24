@@ -15,13 +15,13 @@ STBoatC::GetExplosionInfo
   STBoatC *pSVar3;
   int local_EAX_54;
   int iVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   uint uVar5;
   uint uVar6;
   uint uVar7;
   uint uVar8;
   int iVar9;
-  undefined4 uVar9;
+  uint uVar9;
   int iVar10;
   int iVar11;
   longlong local_EDXEAX_291;
@@ -75,7 +75,8 @@ STBoatC::GetExplosionInfo
               (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d50);
   }
-  puVar4 = thunk_FUN_0041dc40(&local_3c,(short)local_34,local_30,pSVar3->field_006C);
+  thunk_FUN_0041dc40(&local_3c,(short)local_34,local_30,pSVar3->field_006C);
+  puVar4 = &local_3c;
   uVar9 = *puVar4;
   local_30 = *(ushort *)(puVar4 + 1);
   *param_2 = pSVar3->field_0041 + (short)uVar9;

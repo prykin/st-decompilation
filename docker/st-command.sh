@@ -590,7 +590,7 @@ command=${1:-full-export}
 shift || true
 
 case "$command" in
-    core|deep|full|export|full-export)
+    core|deep|abi-refresh|full|export|full-export)
         (( $# == 0 )) || fail "$command accepts no additional arguments"
         with_project_lock run_logged "recovery-$command" run_recovery "$command"
         ;;
@@ -658,7 +658,7 @@ case "$command" in
         exec /bin/bash "$@"
         ;;
     *)
-        fail "unknown command '$command'; expected core, deep, full, export, "\
+        fail "unknown command '$command'; expected core, deep, abi-refresh, full, export, "\
 "full-export, build-scripts, source-tree, compile-audit, compile-audit-baseline, source-audit, import, doctor, headless-smoke, indirect-callsite-audit, snapshot, snapshot-verify, snapshot-publish, project-hydrate, or shell"
         ;;
 esac

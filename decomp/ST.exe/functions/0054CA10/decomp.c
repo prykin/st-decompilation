@@ -9,7 +9,7 @@ int __cdecl FUN_0054ca10(int *param_1,undefined4 param_2,cMf32 *param_3,int para
 {
   char cVar1;
   int *piVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
   uint uVar5;
   char *pcVar6;

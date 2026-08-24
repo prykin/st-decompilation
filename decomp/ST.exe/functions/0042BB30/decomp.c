@@ -17,7 +17,7 @@ STAllPlayersC::AddObjToTmp
   int iVar2;
   DArrayTy *pDVar3;
   STGameObjC *this_00;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
   int *piVar6;
   Global_sub_0043FC50_param_1Enum GVar7;

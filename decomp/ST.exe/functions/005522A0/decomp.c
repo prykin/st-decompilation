@@ -12,7 +12,7 @@
 int __thiscall TradePanelTy::GetMessage(TradePanelTy *this,STMessage *message)
 
 {
-  undefined2 uVar1;
+  ushort uVar1;
   STMessageId SVar2;
   TradePanelTy *this_00;
   int iVar3;
@@ -29,9 +29,9 @@ int __thiscall TradePanelTy::GetMessage(TradePanelTy *this,STMessage *message)
   int iVar12;
   code *pcVar13;
   int iVar14;
-  undefined4 uVar15;
-  undefined4 *puVar16;
-  undefined4 uVar17;
+  uint uVar15;
+  uint *puVar16;
+  uint uVar17;
   InternalExceptionFrame local_68;
   undefined1 local_24;
   short sStack_23;
@@ -73,8 +73,7 @@ LAB_00552481:
       uVar15 = 0;
       pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
       /* ST_CALLSITE[00552494]: CALL dword ptr [EBX + 0x10] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)pAVar8->field_0010)(message,pCVar3,iVar7,uVar15,uVar17);
+      (*STField<code *>(pAVar8,0x10))(message,pCVar3,iVar7,uVar15,uVar17);
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
@@ -95,8 +94,7 @@ LAB_00552481:
         if (this_00->field_01BB != '\0') {
           this_00->field_0028 = 0xbfff;
           /* ST_CALLSITE[005523CB]: CALL dword ptr [EDX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (*(code *)this_00->field_0000->field_0000)(&this_00->field_0x18);
+          (*STField<code *>(this_00->field_0000,0x0000))(&this_00->field_0x18);
           g_currentExceptionFrame = local_68.previous;
           return 0;
         }
@@ -216,8 +214,7 @@ LAB_00552481:
     pcVar13 = thunk_FUN_00529fe0;
     pCVar3 = thunk_FUN_00571240(text,0);
     /* ST_CALLSITE[00552655]: CALL dword ptr [EBX + 0x8] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (*(code *)pAVar8->field_0008)(message,1,pCVar3,pcVar13,uVar15,uVar17);
+    (*STField<code *>(pAVar8,0x8))(message,1,pCVar3,pcVar13,uVar15,uVar17);
   }
   g_currentExceptionFrame = local_68.previous;
   return 0;

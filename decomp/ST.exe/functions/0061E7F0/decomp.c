@@ -24,7 +24,7 @@ undefined4 __fastcall FUN_0061e7f0(STLightC *param_1)
   int iVar13;
   int iVar14;
   int iVar15;
-  undefined4 uVar16;
+  uint uVar16;
   uint uVar17;
   int *piVar18;
   longlong lVar19;
@@ -146,7 +146,7 @@ LAB_0061eb1a:
             piVar18 = param_1->field_0057;
             goto LAB_0061f028;
           }
-          if ((uVar17 == 0) && (local_14 == *(int *)param_1->field_009B + -2)) {
+          if ((uVar17 == 0) && (local_14 == *STField<int *>(param_1,0x9B) + -2)) {
             uVar22 = param_1->field_0044;
             iVar15 = param_1->field_0040;
             iVar20 = param_1->field_0020;

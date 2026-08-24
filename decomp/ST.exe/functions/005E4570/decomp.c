@@ -22,10 +22,10 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
   DWORD DVar8;
   int local_EAX_49;
   DArrayTy *pDVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   BITMAPINFO *pBVar11;
   char *pcVar12;
-  undefined4 *puVar12;
+  uint *puVar12;
   int iVar9;
   int iVar22;
   uint uVar13;

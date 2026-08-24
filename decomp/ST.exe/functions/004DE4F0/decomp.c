@@ -14,7 +14,7 @@ int __thiscall FUN_004de4f0(void *this,int param_1)
   int aiStackY_330 [97];
   undefined4 uStackY_1ac;
   int *piVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   int iVar9;
   int local_18c [45];
   int local_d8 [45];

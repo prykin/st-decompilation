@@ -5,8 +5,7 @@ void __thiscall FUN_00626fc0(void *this,char *param_1)
 
 {
   byte bVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   if (STField<int>(this,0x2ae) == 4) {
     *param_1 = '\x04';
   }

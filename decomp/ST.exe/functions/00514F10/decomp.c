@@ -8,7 +8,7 @@
 void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   HelpPanelTy *this_00;
   int iVar3;
   DArrayTy *pDVar4;

@@ -13,7 +13,7 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
   byte bVar2;
   int iVar3;
   int iVar5;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar6;
   uint *puVar7;
@@ -87,7 +87,7 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
     local_3c = local_5c;
     /* ST_CALLSITE[0053E30F]: CALL dword ptr [EDX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)local_c->field_000C + 8))(5,&local_8,0,local_6c,0);
+    (**(code **)(*STField<int *>(local_c,0xC) + 8))(5,&local_8,0,local_6c,0);
     g_currentExceptionFrame = local_b0.previous;
     return local_8;
   }

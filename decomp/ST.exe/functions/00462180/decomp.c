@@ -11,34 +11,38 @@ int __thiscall FUN_00462180(void *this,int param_1)
   byte bVar5;
   short sVar6;
   short sVar7;
-  undefined4 uVar8;
+  uint uVar8;
   short sVar9;
   uint uVar11;
   STGameObjC *this_00;
   int local_EAX_486;
   int local_EAX_837;
   uint uVar10;
-  undefined4 *puVar12;
+  uint *puVar12;
   int local_EAX_1646;
   int local_EAX_1824;
   STGroupBoatC *pSVar13;
   dword dVar14;
   int iVar15;
   int local_EAX_5975;
+  int iVar16_mg26;
+  int iVar16_mg2D;
+  int iVar16_mg30;
   int local_EAX_7817;
   STFishC *pSVar15;
+  int iVar16_mg1C;
   uint local_EAX_9668;
   int iVar16;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined2 uVar17;
+  ushort uVar17;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
-  undefined2 uVar21;
+  ushort uVar21;
   STFishC *pSVar18;
   uint uVar19;
   STFishCVTable *pSVar20;
@@ -56,12 +60,12 @@ int __thiscall FUN_00462180(void *this,int param_1)
   undefined2 local_40;
   undefined2 local_3e;
   undefined4 local_38;
-  undefined4 local_30;
+  uint local_30;
   undefined2 local_2c;
   undefined4 local_28;
   int local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
+  uint local_20;
+  uint local_1c;
   short local_16;
   STFishC *local_14;
   uint local_10;
@@ -691,7 +695,8 @@ LAB_004625fd:
                 local_9c.field_0010 = STField<short>(this,0x43) - (short)((uint)*puVar12 >> 0x10);
                 local_9c.field_0012 = *(short *)(puVar12 + 1) + STField<short>(this,0x45);
                 local_30 = (uint)*puVar22 << 0x10;
-                puVar12 = thunk_FUN_0041dc40(&local_c,0,0,STField<short>(this,0x6c));
+                thunk_FUN_0041dc40(&local_c,0,0,STField<short>(this,0x6c));
+                puVar12 = &local_c;
                 uVar8 = *puVar12;
                 local_2c = *(undefined2 *)(puVar12 + 1);
                 local_9c.field_0014 = (short)uVar8 + *(short *)&pSVar23[1].field_0x1d;
@@ -1016,16 +1021,17 @@ LAB_0046461c:
                     STGridAt3D(g_worldGrid, sVar7, sVar6, sVar9).objects[0];
         }
         if ((local_c == nullptr) || (local_c->field_0018 != STField<int>(this,0x7f4))) {
-          iVar16 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,
-                              STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_c);
+          iVar16_mg1C = STPlaySystemC::sub_006E62D0
+                                  (g_playSystem_00802A38,
+                                   STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),
+                                   (int *)&local_c);
           pSVar15 = this;
           /* ST_CALLSITE[0046465A]: CALL dword ptr [EAX + 0xf8] */
-          if (((iVar16 == -4) || (iVar16 = local_c->vfunc_F8(), iVar16 == 0)) ||
-             ((*(int *)&local_c->field_0x20 == 0x1ae &&
-              /* ST_CALLSITE[0046467A]: CALL dword ptr [EDX + 0xf4] */
-              (iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24)), iVar16 == 0
-              )))) {
+          if (((iVar16_mg1C == -4) || (iVar16 = local_c->vfunc_F8(), iVar16 == 0))
+             || ((*(int *)&local_c->field_0x20 == 0x1ae &&
+                 /* ST_CALLSITE[0046467A]: CALL dword ptr [EDX + 0xf4] */
+                 (iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24)),
+                 iVar16 == 0)))) {
             pSVar20 = *(STFishCVTable **)this;
             local_58 = &local_4c;
             local_4c = 10000;
@@ -1056,7 +1062,7 @@ LAB_0046461c:
         }
         else {
 LAB_0046470b:
-          thunk_FUN_00416270(local_c,&local_10,&local_28,(short *)&local_14);
+          thunk_FUN_00416270(local_c,&local_10,(short *)&local_28,(short *)&local_14);
           /* ST_CALLSITE[0046473B]: CALL dword ptr [EDX + 0x10] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           sVar9 = (**(code **)(*(int *)this + 0x10))
@@ -1155,19 +1161,21 @@ LAB_00463d56:
                      STGridAt3D(g_worldGrid, sVar7, sVar6, sVar9).objects[0];
         }
         if ((local_14 == nullptr) || (local_14->field_0018 != STField<int>(this,0x7f4))) {
-          iVar16 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,
-                              STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_14);
-          /* ST_CALLSITE[00463F8B]: CALL dword ptr [EDX + 0xf8] */
-          if (((iVar16 != -4) && (iVar16 = local_14->vfunc_F8(), iVar16 != 0)) &&
+          iVar16_mg30 = STPlaySystemC::sub_006E62D0
+                                  (g_playSystem_00802A38,
+                                   STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),
+                                   (int *)&local_14);
+          if (((iVar16_mg30 != -4) &&
+              /* ST_CALLSITE[00463F8B]: CALL dword ptr [EDX + 0xf8] */
+              (iVar16 = local_14->vfunc_F8(), iVar16 != 0)) &&
              ((*(int *)&local_14->field_0x20 != 0x1ae ||
               /* ST_CALLSITE[00463FAB]: CALL dword ptr [EAX + 0xf4] */
               (iVar16 = (*local_14->vtable->vfunc_F4)(STField<undefined4>(this,0x24)),
               iVar16 != 0)))) {
             /* ST_CALLSITE[00463FC2]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0(local_14,(short *)local_c,psVar2,psVar1);
-            sVar9 = *psVar1;
-            sVar6 = *psVar2;
+            sVar6 = *psVar1;
+            sVar9 = *psVar2;
             iVar16 = (int)*(short *)&local_c->vtable;
             goto cf_common_exit_00463FD6;
           }
@@ -1211,11 +1219,11 @@ LAB_00463d56:
               STField<undefined4>(this,0x82e) = 3;
               return 2;
             }
-            sVar9 = *psVar1;
-            sVar6 = *psVar2;
+            sVar6 = *psVar1;
+            sVar9 = *psVar2;
 cf_common_exit_00463FD6:
             /* ST_CALLSITE[00463FD8]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
-            STBoatC::sub_00481520(this,iVar16,(int)sVar6,(int)sVar9);
+            STBoatC::sub_00481520(this,iVar16,(int)sVar9,(int)sVar6);
             /* ST_CALLSITE[00463FE1]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
             STBoatC::sub_00460260(this,0);
             STField<undefined2>(this,0xf8) = 0;
@@ -1268,11 +1276,12 @@ LAB_00463b9d:
         }
         /* ST_CALLSITE[00463BF7]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
         STBoatC::sub_004602B0(this);
-        iVar16 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,
-                            STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_c);
+        iVar16_mg2D = STPlaySystemC::sub_006E62D0
+                                (g_playSystem_00802A38,
+                                 STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),
+                                 (int *)&local_c);
         /* ST_CALLSITE[00463C20]: CALL dword ptr [EAX + 0xf8] */
-        if ((iVar16 != -4) && (iVar16 = local_c->vfunc_F8(), iVar16 != 0)) {
+        if ((iVar16_mg2D != -4) && (iVar16 = local_c->vfunc_F8(), iVar16 != 0)) {
           if (*(int *)&local_c->field_0x20 == 0x1ae) {
             /* ST_CALLSITE[00463C44]: CALL dword ptr [EDX + 0xf4] */
             iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24));
@@ -1285,8 +1294,8 @@ LAB_00463a83:
                     (local_c,(short *)((int)this + 0x800),(short *)((int)this + 0x802),
                      (short *)((int)this + 0x804));
 LAB_00463a91:
-          sVar9 = STField<short>(this,0x804);
-          sVar6 = STField<short>(this,0x802);
+          sVar6 = STField<short>(this,0x804);
+          sVar9 = STField<short>(this,0x802);
           iVar16 = (int)STField<short>(this,0x800);
           goto cf_common_exit_00463FD6;
         }
@@ -1319,11 +1328,13 @@ LAB_004639e6:
                     STGridAt3D(g_worldGrid, sVar7, sVar6, sVar9).objects[0];
         }
         if ((local_c == nullptr) || (local_c->field_0018 != STField<int>(this,0x7f4))) {
-          iVar16 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,
-                              STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),(int *)&local_c);
+          iVar16_mg26 = STPlaySystemC::sub_006E62D0
+                                  (g_playSystem_00802A38,
+                                   STField<AnonShape_005EFAE0_B406B78B *>(this,0x7f4),
+                                   (int *)&local_c);
           /* ST_CALLSITE[00463A52]: CALL dword ptr [EAX + 0xf8] */
-          if ((iVar16 != -4) && (iVar16 = local_c->vfunc_F8(), iVar16 != 0)) {
+          if ((iVar16_mg26 != -4) && (iVar16 = local_c->vfunc_F8(), iVar16 != 0))
+          {
             if (*(int *)&local_c->field_0x20 == 0x1ae) {
               /* ST_CALLSITE[00463A72]: CALL dword ptr [EDX + 0xf4] */
               iVar16 = (*local_c->vtable->vfunc_F4)(STField<undefined4>(this,0x24));

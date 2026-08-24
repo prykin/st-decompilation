@@ -32,19 +32,19 @@ void __thiscall st::fn_00539B90(PlayPanelTy *this)
   int *piVar10;
   UINT resourceId;
   int iVar11;
-  undefined4 uVar12;
-  undefined4 uVar13;
+  uint uVar12;
+  uint uVar13;
   short sVar14;
   ushort uVar15;
   uint uVar16;
   byte bVar17;
-  undefined4 uVar18;
+  uint uVar18;
   char *pcVar19;
   int iVar20;
   int *piVar21;
-  undefined4 uVar22;
-  undefined4 *puVar23;
-  undefined4 uVar24;
+  uint uVar22;
+  uint *puVar23;
+  uint uVar24;
   undefined4 local_6b8 [140];
   int local_488 [6];
   undefined4 local_470;
@@ -94,7 +94,7 @@ void __thiscall st::fn_00539B90(PlayPanelTy *this)
   if (iVar8 == 0) {
     g_playPanel_008016E4 = local_14;
     /* ST_CALLSITE[00539BF8]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar4 = (ccFntTy *)st::fn_0070DF00(0x19d,g_interSystem_00802A28->field_0028);
+    pcVar4 = (ccFntTy *)st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     this_00->field_01DD = pcVar4;
     pcVar4->field_0058 = 0;
     pcVar4->field_005C = 0;
@@ -504,7 +504,7 @@ undefined4 __thiscall st::fn_0053A820(PlayPanelTy *this,char param_1)
   PlayPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar4;
   InternalExceptionFrame local_4c;
   PlayPanelTy *local_8;
@@ -634,7 +634,7 @@ void __thiscall st::fn_0053AA50(PlayPanelTy *this,int param_1)
       if (local_10->field_017C != 0) {
         st::fn_006E6080(local_10,2,local_10->field_017C,(undefined4 *)&local_10->field_0x18);
       }
-      piVar7 = st::pointer_boundary_cast<int *>(&this_00->field_0181);
+      piVar7 = reinterpret_cast<int *>(&this_00->field_0181);
       local_c = 8;
       do {
         iVar5 = 2;
@@ -674,7 +674,11 @@ void __thiscall st::fn_0053AA50(PlayPanelTy *this,int param_1)
 #line 4 "decomp/ST.exe/functions/0053AC00/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
-   PlayPanelTy::PaintPlayPanel */
+   PlayPanelTy::PaintPlayPanel
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_0053AC00(PlayPanelTy *this)
 
@@ -828,8 +832,8 @@ void __thiscall st::fn_0053AC00(PlayPanelTy *this)
 int __thiscall st::fn_0053AFB0(PlayPanelTy *this,STMessage *message)
 
 {
-  undefined4 *puVar1;
-  undefined1 *puVar2;
+  uint *puVar1;
+  byte *puVar2;
   byte bVar3;
   byte bVar4;
   STMessageId SVar5;
@@ -839,7 +843,7 @@ int __thiscall st::fn_0053AFB0(PlayPanelTy *this,STMessage *message)
   int iVar8;
   uint uVar9;
   LPSTR pCVar10;
-  undefined4 uVar11;
+  uint uVar11;
   BITMAPINFO *pBVar12;
   int iVar12;
   int iVar13;
@@ -934,7 +938,7 @@ int __thiscall st::fn_0053AFB0(PlayPanelTy *this,STMessage *message)
               } while (bVar14 < DAT_00808aaf);
             }
             this_00->field_0028 = 5;
-            piVar17 = st::pointer_boundary_cast<int *>(&this_00->field_01A1);
+            piVar17 = reinterpret_cast<int *>(&this_00->field_01A1);
             iVar8 = 8;
             do {
               if (*piVar17 != 0) {
@@ -991,7 +995,7 @@ LAB_0053b42f:
               }
             }
             this_00->field_0028 = 5;
-            piVar17 = st::pointer_boundary_cast<int *>(&this_00->field_01A1);
+            piVar17 = reinterpret_cast<int *>(&this_00->field_01A1);
             iVar8 = 8;
             do {
               if (*piVar17 != 0) {
@@ -1051,7 +1055,7 @@ LAB_0053b2ea:
             }
           }
           this_00->field_0028 = 5;
-          piVar17 = st::pointer_boundary_cast<int *>(&this_00->field_01A1);
+          piVar17 = reinterpret_cast<int *>(&this_00->field_01A1);
           iVar8 = 8;
           do {
             if (*piVar17 != 0) {
@@ -1078,7 +1082,7 @@ LAB_0053b2ea:
       /* ST_CALLSITE[0053B15F]: CALL 0x00403242; direct=00403242 PlayPanelTy::PaintPlayPanel */
       st::fn_00403242(this_00);
       this_00->field_0028 = 5;
-      piVar17 = st::pointer_boundary_cast<int *>(&this_00->field_01A1);
+      piVar17 = reinterpret_cast<int *>(&this_00->field_01A1);
       iVar8 = 8;
       do {
         if (*piVar17 != 0) {
@@ -1088,7 +1092,7 @@ LAB_0053b2ea:
         iVar8 = iVar8 + -1;
       } while (iVar8 != 0);
       this_00->field_0028 = 5;
-      piVar17 = st::pointer_boundary_cast<int *>(&this_00->field_0181);
+      piVar17 = reinterpret_cast<int *>(&this_00->field_0181);
       iVar8 = 8;
       do {
         if (*piVar17 != 0) {
@@ -1260,7 +1264,7 @@ LAB_0053b2ea:
     case 0xb514:
     case 0xb515:
     case 0xb516:
-      piVar17 = st::pointer_boundary_cast<int *>((message->arg1).ptr);
+      piVar17 = static_cast<int *>((message->arg1).ptr);
       local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)((char)message->id - 0xf));
       local_c = (ushort *)(*piVar17 - this_00->field_003C);
       if (this_00->field_005C == 0) {

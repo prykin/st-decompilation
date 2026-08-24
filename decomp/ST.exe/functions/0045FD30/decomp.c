@@ -17,7 +17,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this)
   short sVar3;
   STGroupBoatC *this_00;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   STBoatC *pSVar7;
 
   this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);

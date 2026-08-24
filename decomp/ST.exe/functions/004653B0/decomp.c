@@ -30,11 +30,11 @@ int __thiscall STBoatC::BackAttack(STBoatC *this,int *param_1)
   int local_EAX_481;
   int iVar3;
   int local_EAX_929;
-  undefined2 uVar7;
+  ushort uVar7;
   STBoatC *pSVar6;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int in_EDX;
-  undefined2 uVar8;
+  ushort uVar8;
   STBoatC *local_8;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

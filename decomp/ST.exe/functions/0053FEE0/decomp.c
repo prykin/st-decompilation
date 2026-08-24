@@ -12,7 +12,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
   AnonNested_0053FEE0_0014_154E5252 *pAVar1;
   ProdPanelTy *pPVar3;
   int *piVar4;
-  undefined4 uVar5;
+  uint uVar5;
   LPSTR pCVar6;
   int iVar7;
   int iVar8;

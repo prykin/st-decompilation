@@ -15,14 +15,14 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   int iVar7;
   int *piVar8;
   STMessage *pSVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   char in_stack_00000020;
   int local_ec [20];
   STMessage local_9c;
   undefined4 local_7c;
   undefined4 local_78 [5];
-  undefined1 *local_64;
+  byte *local_64;
   int local_5c;
   uint local_58;
   uint local_54;
@@ -143,38 +143,38 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
         STField<uint>(this,0x1c) = uVar4;
         local_48 = local_48 + (0x14 - (uVar4 >> 0x10) % 0x29);
         local_58 = local_20;
-        switch(local_64) {
+        switch(static_cast<uint32_t>(STRawWord(local_64))) {
         case 0:
-        case (undefined1 *)0x1:
-        case (undefined1 *)0x2:
+        case 0x1:
+        case 0x2:
           local_40 = 1000;
           uVar4 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
           STField<uint>(this,0x1c) = uVar4;
           local_44 = (uVar4 >> 0x10) % 3 + 6;
           break;
-        case (undefined1 *)0x3:
-        case (undefined1 *)0x4:
-        case (undefined1 *)0x5:
+        case 0x3:
+        case 0x4:
+        case 0x5:
           local_40 = 0xfa;
           uVar4 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
           STField<uint>(this,0x1c) = uVar4;
           local_44 = (uVar4 >> 0x10 & 3) + 6;
           break;
-        case (undefined1 *)0x6:
-        case (undefined1 *)0x7:
-        case (undefined1 *)0x8:
-        case (undefined1 *)0x9:
+        case 0x6:
+        case 0x7:
+        case 0x8:
+        case 0x9:
           uVar4 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
           STField<uint>(this,0x1c) = uVar4;
           local_40 = 0x15e;
           local_44 = (uVar4 >> 0x10) % 5 + 6;
           break;
-        case (undefined1 *)0xa:
-        case (undefined1 *)0xb:
-        case (undefined1 *)0xc:
-        case (undefined1 *)0xd:
-        case (undefined1 *)0xe:
-        case (undefined1 *)0xf:
+        case 0xa:
+        case 0xb:
+        case 0xc:
+        case 0xd:
+        case 0xe:
+        case 0xf:
           local_40 = 0x1c2;
           uVar4 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
           STField<uint>(this,0x1c) = uVar4;

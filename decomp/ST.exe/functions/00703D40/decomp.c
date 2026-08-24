@@ -13,8 +13,8 @@ void FUN_00703d40(undefined1 *param_1,int param_2,byte *param_3,int param_4,usho
   uint uVar2;
   byte *pbVar3;
   uint uVar4;
-  undefined1 *puVar5;
-  undefined1 *puVar6;
+  byte *puVar5;
+  byte *puVar6;
   int iVar7;
   ushort *puVar8;
   byte *pbVar9;

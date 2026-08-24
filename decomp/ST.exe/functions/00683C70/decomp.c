@@ -44,7 +44,7 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
   byte *pbVar3_mg0;
   int local_EAX_907;
   int local_EAX_1897;
-  undefined4 uVar3;
+  uint uVar3;
   int local_EAX_2430;
   char *local_EAX_2603;
   int local_EAX_2631;
@@ -78,7 +78,7 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   char *local_EAX_25691;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *local_EAX_26162;
   char *local_EAX_26713;
   int local_EAX_27312;
@@ -104,7 +104,7 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
   undefined2 extraout_var_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
-  undefined2 uVar13;
+  ushort uVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -173,13 +173,13 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
   undefined4 local_b4;
   undefined4 local_b0;
   undefined4 local_ac;
-  undefined1 *local_a8;
+  byte *local_a8;
   byte local_a4 [4];
-  undefined4 local_a0;
+  uint local_a0;
   undefined2 local_9c;
   undefined4 uStack_9a;
   undefined2 uStack_96;
-  undefined4 local_94;
+  uint local_94;
   undefined4 local_90;
   float local_8c;
   float local_88;
@@ -210,9 +210,9 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
   undefined1 local_44;
   undefined2 local_43;
   undefined2 local_41;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
   int local_30;
   AllocationRecord_006684E0 *local_2c;
   AllocationRecord_0067D3B0 *local_28;

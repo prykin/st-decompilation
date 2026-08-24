@@ -20,7 +20,7 @@
 int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   ushort uVar3;
   word wVar4;
@@ -43,12 +43,12 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
   DWORD DVar20;
   int local_EAX_61;
   UINT UVar21;
-  undefined4 *puVar22;
+  uint *puVar22;
   char *pcVar38_mg43;
   DArrayTy *local_EAX_1705;
   int local_EAX_3145;
   int local_EAX_3627;
-  undefined4 uVar23;
+  uint uVar23;
   int local_EAX_3743;
   char *pcVar24;
   DWORD DVar25;

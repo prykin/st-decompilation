@@ -4,7 +4,7 @@
 void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
 
 {
-  undefined1 *_Str1;
+  byte *_Str1;
   char cVar1;
   byte bVar2;
   byte bVar3;

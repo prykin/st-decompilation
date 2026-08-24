@@ -11,7 +11,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
   int uVar2;
   uint uVar3;
   uint uVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar6;
   uint uVar7;
   DArrayTy *pDVar8;
@@ -33,7 +33,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
   longlong local_EDXEAX_821;
   longlong local_EDXEAX_840;
   longlong local_EDXEAX_897;
-  undefined8 uVar13;
+  ulonglong uVar13;
   longlong local_EDXEAX_939;
   longlong local_EDXEAX_1141;
   longlong local_EDXEAX_1168;
@@ -111,7 +111,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
   int local_18;
   uint local_14;
   uint local_10;
-  undefined4 local_c;
+  uint local_c;
   ushort local_8;
 
   local_90 = (uint)STField<short>(this,0x237);

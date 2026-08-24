@@ -4,7 +4,7 @@
 void __cdecl FUN_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_00728170_7560EBA7 *param_2)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   uint uVar2;
   uint uVar3;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -14,7 +14,7 @@ void __cdecl FUN_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_0072817
   uint *puVar6;
   uint uVar7;
   int iVar8;
-  undefined1 *puVar9;
+  byte *puVar9;
   uint local_c;
 
   if ((((int)DAT_008570dc < (int)param_2->field_0024) &&

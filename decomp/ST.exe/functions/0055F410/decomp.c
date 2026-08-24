@@ -22,8 +22,8 @@ void AiCalcDispositionAreas
   byte *pbVar5;
   RuntimeRecord_008032F8_0014 *pRVar6;
   RuntimeRecord_00803310_0014 *pRVar7;
-  undefined4 *puVar8;
-  undefined4 *puVar9;
+  uint *puVar8;
+  uint *puVar9;
   int iVar15;
   int iVar10;
   short *psVar11;
@@ -47,7 +47,7 @@ void AiCalcDispositionAreas
   int iVar21;
   STWorldCell *pSVar22;
   uint uVar23;
-  undefined1 *puVar24;
+  byte *puVar24;
   RuntimeRecord_00803300_0014 *pRVar25;
   bool bVar26;
   undefined4 uStackY_2060;
@@ -108,12 +108,12 @@ void AiCalcDispositionAreas
   int local_3c;
   int local_38;
   int local_34;
-  undefined1 *local_30;
+  byte *local_30;
   int local_28_mg1;
   short *local_24;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
   RuntimeRecord_008032F8_0014 *temp_3fb0403402;

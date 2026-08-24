@@ -14,7 +14,7 @@ CGenerate::sub_0069BDC0
           RecoveredRecord_CGenerate_0069BDC0 *param_7)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   int iVar2;
   int iVar4;
   int iVar3;
@@ -25,7 +25,7 @@ CGenerate::sub_0069BDC0
   int iVar7;
   int *piVar8;
   int iVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   int *piVar11;
   int local_7c;
   undefined4 *local_78;
@@ -46,9 +46,9 @@ CGenerate::sub_0069BDC0
   int local_28;
   int local_24;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

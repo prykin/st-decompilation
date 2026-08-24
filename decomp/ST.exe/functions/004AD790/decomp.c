@@ -12,9 +12,9 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   STT3DSprC *this_00;
   int local_EAX_35;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar3;
-  undefined4 *puVar6;
+  uint *puVar6;
   uint uVar7;
   uint uVar9;
   int iVar10;

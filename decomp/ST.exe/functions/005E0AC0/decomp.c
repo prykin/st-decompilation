@@ -13,7 +13,7 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
 {
   int iVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   MTaskTy *this_00;
   int iVar4;
   tagBITMAPINFO *ptVar5;

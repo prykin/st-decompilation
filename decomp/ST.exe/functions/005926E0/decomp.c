@@ -21,7 +21,7 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   CampaignTy_field_1BE8State CVar5;
   int iVar6;
   uint *puVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   int *piVar9;
   uint uVar10;
   char cVar11;

@@ -13,7 +13,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
   DArrayTy *array;
   STBoatC *pSVar3;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar6;
   uint uVar7;
   int iVar5;

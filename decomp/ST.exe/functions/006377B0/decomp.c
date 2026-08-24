@@ -2,6 +2,9 @@
 
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=19, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __cdecl FUN_006377b0(uint param_1,int param_2,int param_3,int param_4,int param_5,uint param_6)
 

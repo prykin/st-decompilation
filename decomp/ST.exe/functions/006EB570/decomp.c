@@ -25,7 +25,7 @@ undefined4 FUN_006eb570(int *param_1,AnonShape_006EB570_80B255F3 *param_2)
   int local_6c;
   uint local_68;
   int local_64;
-  undefined1 *local_60;
+  byte *local_60;
   int local_5c;
   int local_58;
   byte *local_54;
@@ -41,9 +41,9 @@ undefined4 FUN_006eb570(int *param_1,AnonShape_006EB570_80B255F3 *param_2)
   uint local_2c;
   int local_28;
   int local_24;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

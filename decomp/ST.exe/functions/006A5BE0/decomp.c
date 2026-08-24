@@ -7,7 +7,7 @@ void __cdecl FUN_006a5be0(int param_1)
   byte bVar2;
   int iVar3;
   uint uVar4;
-  undefined1 *puVar5;
+  byte *puVar5;
   int iVar6;
   undefined1 local_50 [52];
   byte local_1c [20];

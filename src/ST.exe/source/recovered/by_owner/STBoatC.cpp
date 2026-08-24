@@ -104,7 +104,7 @@ STBoatC * __thiscall st::fn_0044E690(STBoatC *this)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   short *psVar3;
   STBoatC_field_06F3State *pSVar4;
 
@@ -407,7 +407,7 @@ undefined4 __thiscall st::fn_0045FF50(STBoatC *this,int param_1)
 {
   STGroupBoatC *this_00;
   int iVar1;
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
@@ -509,7 +509,11 @@ int __thiscall st::fn_00460260(STBoatC *this,int param_1)
 #line 4 "decomp/ST.exe/functions/004602B0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=3; incoming_this_accesses=2;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=0 */
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=59, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_004602B0(STBoatC *this)
 
@@ -558,6 +562,7 @@ int __thiscall st::fn_004803D0(STBoatC *this,AnonShape_004803D0_350EB461 *param_
 
 {
   int local_EAX_141;
+  int iVar2_mg3;
   int local_EAX_344;
   int iVar1;
   int iVar2;
@@ -599,8 +604,9 @@ int __thiscall st::fn_004803D0(STBoatC *this,AnonShape_004803D0_350EB461 *param_
       return -1;
     }
     if (g_playSystem_00802A38->field_00E4 % 0x25 == 0) {
-      iVar2 = st::fn_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
-      if (iVar2 == -4) {
+      iVar2_mg3 = st::fn_006E62D0
+                            (g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
+      if (iVar2_mg3 == -4) {
         return 0;
       }
       if (param_1->field_0716 == param_1->field_0712) {
@@ -1069,7 +1075,7 @@ st::fn_0048DFD0
   short sVar13;
   short *psVar14;
   int iVar15;
-  undefined4 *puVar16;
+  uint *puVar16;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined2 in_stack_0000000e;
   int local_3fc [194];
@@ -1954,7 +1960,11 @@ dword __thiscall st::fn_00490E70(STBoatC *this)
 #line 4 "decomp/ST.exe/functions/00492420/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=5;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=0 */
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00492420(STBoatC *this)
 

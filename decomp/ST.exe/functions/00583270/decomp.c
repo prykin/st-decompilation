@@ -19,7 +19,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
 {
   char cVar1;
   STMessageId SVar2;
-  undefined4 uVar3;
+  uint uVar3;
   STJellyGunC *this_00;
   int local_EAX_80;
   int local_EAX_793;

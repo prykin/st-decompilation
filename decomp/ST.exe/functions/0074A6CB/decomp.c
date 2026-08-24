@@ -4,9 +4,8 @@
 undefined4 __fastcall FUN_0074a6cb(AnonShape_0074A6CB_17890C91 *param_1)
 
 {
-  undefined1 *lpCriticalSection;
-  undefined4 uVar1;
-
+  byte *lpCriticalSection;
+  uint uVar1;
   lpCriticalSection = &param_1->field_0x94;
   /* ST_CALLSITE[0074A6D6]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection((LPCRITICAL_SECTION)lpCriticalSection);

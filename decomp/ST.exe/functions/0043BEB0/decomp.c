@@ -28,7 +28,7 @@ STAllPlayersC::GetPanelInfo
   int local_EAX_3922;
   int local_EAX_4134;
   int local_EAX_4501;
-  undefined4 uVar12;
+  uint uVar12;
   int local_EAX_5245;
   AnonShape_0043BEB0_1C00EC12 *pAVar13;
   int local_EAX_5472;
@@ -1331,7 +1331,7 @@ LAB_0043d5c4:
         if ((ushort)g_packedRecords_A62x8[uVar17].field103_0x171 < 2) {
           return;
         }
-        *(undefined4 *)&param_2[0xf].field_0xc = 0xffffffff;
+        *(int *)&param_2[0xf].field_0xc = 0xffffffff;
         param_2[0x11].field_0004 = 0xff;
         param_2[0x11].field_0005 = 0xff;
         param_2[0x11].field_0006 = 0xff;

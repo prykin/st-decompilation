@@ -19,7 +19,7 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
 
 {
   STBoatC_field_0615State SVar1;
-  undefined2 uVar3;
+  ushort uVar3;
   int local_EAX_36;
   int local_EAX_253;
   int local_EAX_463;

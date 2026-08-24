@@ -10,8 +10,7 @@ undefined4 __thiscall STJellyGunC::sub_00584380(STJellyGunC *this)
 {
   undefined4 *this_00;
   int iVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   this_00 = &this->field_01D5;
   /* ST_CALLSITE[0058439F]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar1 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,8,PTR_00806774,"Expb11",CASE_1D);

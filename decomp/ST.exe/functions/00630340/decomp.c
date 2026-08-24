@@ -6,8 +6,7 @@ FUN_00630340(void *this,int param_1,int *param_2,undefined4 *param_3,undefined4 
 
 {
   int iVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   uVar2 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((-1 < param_1) && (param_1 < 5)) &&

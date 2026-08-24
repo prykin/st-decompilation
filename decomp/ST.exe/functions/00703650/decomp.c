@@ -15,8 +15,8 @@ void FUN_00703650(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   ushort *puVar5;
   ushort *puVar6;
   byte bVar7;
-  undefined1 *puVar8;
-  undefined1 *puVar9;
+  byte *puVar8;
+  byte *puVar9;
   byte *pbVar10;
   byte *pbVar11;
   uint local_c;

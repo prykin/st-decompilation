@@ -8,7 +8,7 @@
 uint * __thiscall STGroupBoatC::Bring(STGroupBoatC *this,int param_1)
 
 {
-  undefined2 uVar2;
+  ushort uVar2;
   STGroupBoatC *pSVar3;
   int iVar3;
   STBoatC *pSVar4;

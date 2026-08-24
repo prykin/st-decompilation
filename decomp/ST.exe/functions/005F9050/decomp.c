@@ -25,7 +25,7 @@ undefined4 __thiscall FUN_005f9050(void *this,int *param_1,undefined4 *param_2)
        (iVar3 = thunk_FUN_004dd740((int)this_00), iVar3 == 0)) &&
       (iVar3 = thunk_FUN_004dd6c0(this_00,STField<undefined4>(this,0x18)), iVar3 != 0)))) {
     thunk_FUN_004dd770(this_00,STField<int>(this,0x18));
-    thunk_FUN_00416270(this_00,&local_8,(int *)((int)&local_8 + 2),local_c);
+    thunk_FUN_00416270(this_00,&local_8,(short *)((int)&local_8 + 2),local_c);
     iVar2 = thunk_FUN_004ad650((STT3DSprC *)((int)&this_00[0xd].vtable + 1));
     *param_2 = iVar2;
     *param_1 = local_c[0] + -0x5a;

@@ -83,7 +83,7 @@ undefined4 __thiscall st::fn_00609B90(STFieldC *this,int param_1)
   int errorCode;
   STFieldC_field_0234Element *element_0234;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   uint uVar7;
   InternalExceptionFrame local_4c;
   STFieldC *local_8;
@@ -145,7 +145,7 @@ undefined4 __thiscall st::fn_00609D60(STFieldC *this,uint param_1)
   int errorCode;
   ushort *puVar5;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int *piVar8;
   char *text;
   InternalExceptionFrame local_54;

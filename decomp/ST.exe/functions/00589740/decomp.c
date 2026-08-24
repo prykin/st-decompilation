@@ -4,10 +4,9 @@
 undefined4 __fastcall FUN_00589740(AnonShape_00589740_397F9B27 *param_1)
 
 {
-  undefined1 *this;
+  byte *this;
   int iVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   this = &param_1->field_0x1d5;
   /* ST_CALLSITE[0058975F]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar1 = STT3DSprC::LoadSequence((STT3DSprC *)this,8,PTR_00806774,"Expb23",CASE_1D);

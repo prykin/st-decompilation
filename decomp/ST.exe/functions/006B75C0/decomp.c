@@ -1,28 +1,29 @@
 
-/* [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 006B75C0 -> 006B7510 @ 006B7602 | 006B75C0 -> 006B7510 @ 006B762A */
+/* [STPrototypeRepairApplier] Propagated parameter 2.
+   Evidence: incoming stack slot is read as a uint before its address is passed as a distinct output
+   lifetime */
 
-int FUN_006b75c0(int *param_1,int param_2,int *param_3)
+int FUN_006b75c0(int *param_1,int param_2,uint param_3)
 
 {
-  int *piVar1;
+  uint uVar1;
   int iVar2;
   DWORD DVar3;
   DWORD DVar4;
 
-  piVar1 = param_3;
-  iVar2 = Library::DKW::DDX::FUN_006b7510(param_1,(int)param_3,(int *)&param_3,-1,0);
+  uVar1 = param_3;
+  iVar2 = Library::DKW::DDX::FUN_006b7510(param_1,param_3,(int *)&param_3,-1,0);
   if (iVar2 == 0) {
     if ((0 < param_2) && ((int)param_3 < 1)) {
       /* ST_CALLSITE[006B75F3]: CALL EBX */
       DVar3 = timeGetTime();
-      iVar2 = Library::DKW::DDX::FUN_006b7510(param_1,(int)piVar1,(int *)&param_3,-1,0);
+      iVar2 = Library::DKW::DDX::FUN_006b7510(param_1,uVar1,(int *)&param_3,-1,0);
       if (iVar2 != 0) {
         return iVar2;
       }
       /* ST_CALLSITE[006B7612]: CALL EBX */
       while (((int)param_3 < 1 && (DVar4 = timeGetTime(), (int)(DVar4 - DVar3) < param_2))) {
-        iVar2 = Library::DKW::DDX::FUN_006b7510(param_1,(int)piVar1,(int *)&param_3,-1,0);
+        iVar2 = Library::DKW::DDX::FUN_006b7510(param_1,uVar1,(int *)&param_3,-1,0);
         if (iVar2 != 0) {
           return iVar2;
         }

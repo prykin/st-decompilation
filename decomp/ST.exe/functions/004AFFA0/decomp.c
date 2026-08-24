@@ -16,7 +16,7 @@ FUN_004affa0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *par
   int iVar1;
   int local_EAX_441;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   undefined4 local_18;
   int local_14;
   STFishC *local_10;

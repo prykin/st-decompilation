@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_004abce0(void *this,byte param_1,int param_2,int param
 {
   ushort *puVar1;
   byte *pbVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int *piVar4;
   int iVar5;
   int iVar6;

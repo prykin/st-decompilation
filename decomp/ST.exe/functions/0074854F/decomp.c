@@ -13,8 +13,7 @@ FUN_0074854f(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 {
   int *piVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   piVar1 = STField<int *>(this,0x18);
   if (piVar1 == nullptr) {
     uVar2 = 0x80040209;

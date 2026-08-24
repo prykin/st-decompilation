@@ -20,7 +20,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   int iVar5;
   StartServTy *this_00;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   uint *puVar6;
   int iVar7;
   uint uVar8;
@@ -48,7 +48,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   /* ST_CALLSITE[0059199D]: CALL 0x00403738; direct=00403738 PutDDX */
   PutDDX(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
   pCVar2 = local_8;
-  pcVar11 = g_startSystem_0081176C->field_0030;
+  pcVar11 = (ccFntTy *)g_startSystem_0081176C->field_0030;
   uVar9 = 0xffffffff;
   uVar8 = 0xfffffffe;
   resourceString =

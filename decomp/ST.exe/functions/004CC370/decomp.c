@@ -40,8 +40,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
     goto cf_common_exit_004CC6D2;
   }
   /* ST_CALLSITE[004CC412]: CALL dword ptr [EDX + 0x7c] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar5 = (*(code *)param_1->field_0000->field_007C)();
+  iVar5 = (*STField<code *>(param_1->field_0000,0x007C))();
   if ((3 < iVar5 / 0x14) && (*(int *)&param_1->field_0x43c == 1)) {
     /* ST_CALLSITE[004CC438]: CALL 0x00405768; direct=00405768 TLOBaseTy::sub_004CC900 */
     TLOBaseTy::sub_004CC900((TLOBaseTy *)param_1);
@@ -122,8 +121,7 @@ cf_error_exit_004CC50A:
   thunk_FUN_004ad460((void *)param_1->field_0603,1);
   if ((*(int *)&param_1->field_0x43c == 3) || (*(int *)&param_1->field_0x43c == 4)) {
     /* ST_CALLSITE[004CC65A]: CALL dword ptr [EDX + 0x90] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (*(code *)param_1->field_0000->field_0090)(3,0x363);
+    (*STField<code *>(param_1->field_0000,0x0090))(3,0x363);
   }
   if (*(int *)&param_1->field_0x43c == 2) {
     /* ST_CALLSITE[004CC676]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
@@ -133,8 +131,7 @@ cf_error_exit_004CC50A:
       /* ST_CALLSITE[004CC6A8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_824 = LookupRecordByte(param_1->field_023D);
       /* ST_CALLSITE[004CC6CC]: CALL dword ptr [EDI + 0x90] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)pAVar2->field_0090)
+      (*STField<code *>(pAVar2,0x90))
                 (3,*(undefined4 *)
                     (&DAT_00795f18 + ((uint)(byte)local_EAX_824 + param_1->field_0235 * 3) * 4));
     }

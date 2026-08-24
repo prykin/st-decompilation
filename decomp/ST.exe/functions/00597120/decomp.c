@@ -34,8 +34,8 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this)
   FSGSTy *this_02;
   DWORD DVar6;
   int local_EAX_67;
-  undefined4 uVar7;
-  undefined4 *puVar8;
+  uint uVar7;
+  uint *puVar8;
   LPSTR pCVar9;
   ushort *puVar10;
   char *pcVar11_mg0;

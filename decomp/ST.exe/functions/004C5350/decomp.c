@@ -123,8 +123,8 @@ LAB_004c5515:
   if ((((iVar4 <= iVar5) || (uVar6 = local_c, param_6 == 0)) &&
       (uVar6 = 1, *(int *)(&DAT_00792a90 + (param_1 + STField<int>(this,0x235) * 2) * 4) == 1))
      && (param_6 != 0)) {
-    thunk_FUN_00416270(this_00,(uint *)&local_8,(int *)&local_6,(short *)((int)&param_3 + 2));
-    thunk_FUN_00416270(this,(uint *)((int)&param_5 + 2),(int *)((int)&param_4 + 2),
+    thunk_FUN_00416270(this_00,(uint *)&local_8,&local_6,(short *)((int)&param_3 + 2));
+    thunk_FUN_00416270(this,(uint *)((int)&param_5 + 2),(short *)((int)&param_4 + 2),
                        (short *)((int)&param_2 + 2));
     local_EAX_620 =
          FUN_006acf0d((int)local_8,(int)local_6,(int)STPiece<2,2>(param_3),(int)STPiece<2,2>(param_5),

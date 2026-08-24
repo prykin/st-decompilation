@@ -13,8 +13,7 @@
 uint __cdecl FUN_006755e0(int param_1)
 
 {
-  undefined2 uVar1;
-
+  ushort uVar1;
   uVar1 = (undefined2)((uint)param_1 >> 0x10);
   if ((0x31 < param_1) && (param_1 < 0x74)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

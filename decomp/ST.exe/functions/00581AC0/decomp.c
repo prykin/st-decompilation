@@ -13,8 +13,7 @@ STJellyManC::Error(STJellyManC *this,undefined4 param_1,int *param_2,undefined4 
 
 {
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   if (this->field_020F < this->field_01FD) {
     uVar3 = thunk_FUN_00582460(param_1,param_2,param_3,this->field_01ED,this->field_01F1,
                                this->field_01F5,this->field_01F9,this->field_0018,this->field_0024,

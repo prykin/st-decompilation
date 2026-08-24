@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_0074e8df(void *this,int *param_1)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=14, ignored=0, unknown=0 */
+
+int __thiscall FUN_0074e8df(void *this,int *param_1)
 
 {
   int *piVar1;
@@ -26,6 +31,6 @@ undefined4 __thiscall FUN_0074e8df(void *this,int *param_1)
       return 0;
     }
   }
-  return 0x80004001;
+  return -0x7fffbfff;
 }
 

@@ -6,7 +6,7 @@ FUN_0070c210(byte *param_1,undefined2 *param_2,undefined2 *param_3,DWORD *param_
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;

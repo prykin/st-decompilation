@@ -142,7 +142,7 @@ int __thiscall st::fn_005F5F20(STColl3C *this,STMessage *message)
     iVar8 = STBiasedDiv16(iVar2, 200); /* exact signed 16-bit grid-index division */
     local_8->field_0265 = iVar8;
     /* ST_CALLSITE[005F6073]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
-    st::fn_0040163B(local_8,st::pointer_boundary_cast<int *>(&local_8->field_027D),st::pointer_boundary_cast<int *>(&local_8->field_0281),st::pointer_boundary_cast<int *>(&local_8->field_0285));
+    st::fn_0040163B(local_8,reinterpret_cast<int *>(&local_8->field_027D),reinterpret_cast<int *>(&local_8->field_0281),reinterpret_cast<int *>(&local_8->field_0285));
     this_00->field_0269 = 600;
     this_00->field_02DD = CASE_1;
     this_00->field_02E1 = g_playSystem_00802A38->field_00E4 + this_00->field_0259;
@@ -193,7 +193,7 @@ LAB_005f61e2:
   g_currentExceptionFrame = local_60.previous;
   return 0;
 switchD_005f6301_caseD_110:
-  piVar3 = st::pointer_boundary_cast<int *>((message->arg0).ptr);
+  piVar3 = static_cast<int *>((message->arg0).ptr);
   /* ST_CALLSITE[005F6312]: CALL dword ptr [EAX + 0x78] */
   dVar6 = local_8->slot_78();
   if ((int)dVar6 < 1) {
@@ -233,7 +233,7 @@ undefined4 __thiscall st::fn_005F6AF0(STColl3C *this,int param_1)
   int local_EAX_247;
   int iVar2;
   int iVar3;
-  undefined4 uVar5;
+  uint uVar5;
   InternalExceptionFrame local_50;
   undefined4 local_c;
   STColl3C *local_8;
@@ -338,7 +338,7 @@ int __thiscall st::fn_005F94C0(STColl3C *this)
   local_8 = this;
   iVar2 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
-    puVar2 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC70(0x6c));
+    puVar2 = static_cast<ushort *>(st::fn_006AAC70(0x6c));
     local_8->field_02E6 = puVar2;
     for (iVar4 = 0x1b; iVar4 != 0; iVar4 = iVar4 + -1) {
       puVar2[0] = 0;

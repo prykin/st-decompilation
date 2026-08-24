@@ -10,9 +10,9 @@ undefined4 __fastcall FUN_0074a646(AnonShape_0074A646_320FC166 *param_1)
   uint uVar4;
   int iVar5;
   MMRESULT MVar6;
-  undefined4 uVar7;
+  uint uVar7;
   AnonShape_0074A646_320FC166 *pAVar8;
-  undefined8 uVar9;
+  ulonglong uVar9;
   AnonShape_0074A646_320FC166 *local_c;
   AnonShape_0074A646_320FC166 *local_8;
 

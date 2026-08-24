@@ -108,7 +108,7 @@ byte * __thiscall st::fn_0061D710(STLightC *this,int *param_1)
   if (iVar8 != 0) {
     iVar11 = iVar8 * 0x14;
     if (0 < iVar8) {
-      piVar7 = st::pointer_boundary_cast<int *>(this->field_009B);
+      piVar7 = static_cast<int *>(this->field_009B);
       do {
         iVar1 = *piVar7;
         piVar7 = piVar7 + 1;
@@ -232,7 +232,7 @@ int __thiscall st::fn_0061D8F0(STLightC *this,undefined4 *param_1)
   piVar1 = (int *)(local_c + (int)(param_1 + 0x24));
   piVar6 = piVar1 + 1;
   local_8 = piVar6;
-  piVar2 = st::pointer_boundary_cast<int *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this->field_0093 << 4)));
+  piVar2 = static_cast<int *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this->field_0093 << 4)));
   this->field_0057 = piVar2;
   for (iVar4 = (this->field_0093 & 0xfffffffU) << 2; iVar4 != 0; iVar4 = iVar4 + -1) {
     *piVar2 = *piVar6;
@@ -263,7 +263,7 @@ int __thiscall st::fn_0061D8F0(STLightC *this,undefined4 *param_1)
 int __thiscall st::fn_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   void *pvVar2;
   uint uVar3;
   int iVar4;
@@ -290,7 +290,7 @@ int __thiscall st::fn_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int p
     param_3 = 0;
   }
   uVar6 = this->field_0093;
-  puVar1 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(uVar6 * 4));
+  puVar1 = static_cast<uint *>(st::fn_006AAC70(uVar6 * 4));
   this->field_009B = puVar1;
   puVar8 = param_1;
   for (uVar3 = uVar6 & 0x3fffffff; uVar3 != 0; uVar3 = uVar3 - 1) {
@@ -307,7 +307,7 @@ int __thiscall st::fn_0061D9C0(STLightC *this,ushort *param_1,int *param_2,int p
   param_1 = param_1 + uVar6 * 2;
   iVar4 = this->field_0093;
   if (0 < iVar4) {
-    piVar5 = st::pointer_boundary_cast<int *>(this->field_009B);
+    piVar5 = static_cast<int *>(this->field_009B);
     do {
       iVar7 = *piVar5;
       piVar5 = piVar5 + 1;
@@ -375,7 +375,7 @@ void __thiscall st::fn_0061E4F0(STLightC *this)
           uVar3 = st::machine_word_boundary_cast<uint>(this->field_00AC * 0x41c64e6d + 0x3039);
           this->field_00AC = uVar3;
           if (((uVar3 >> 0x10) % 5 == 0) &&
-             ((iVar5 != 0 || ((iVar6 != 0 && (local_8 != *(int *)this->field_009B + -1)))))) {
+             ((iVar5 != 0 || ((iVar6 != 0 && (local_8 != *STField<int *>(this,0x9B) + -1)))))) {
             uVar3 = st::machine_word_boundary_cast<uint>(this->field_00AC * 0x41c64e6d + 0x3039);
             this->field_00AC = uVar3;
             pfVar4 = (float *)(*(int *)((int)this->field_009F + iVar5 * 4) + iVar6);

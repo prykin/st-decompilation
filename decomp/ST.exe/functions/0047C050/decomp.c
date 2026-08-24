@@ -27,7 +27,8 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
   int local_EAX_1820;
   int local_EAX_2517;
   int local_EAX_2567;
-  undefined4 uVar9;
+  uint uVar9;
+  int iVar8_mg1;
   int iVar7;
   dword dVar10;
   int iVar11;
@@ -48,8 +49,8 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
        (this->field_07CA == nullptr)) {
       return 0;
     }
-    iVar8 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
-    if (iVar8 == -4) {
+    iVar8_mg1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
+    if (iVar8_mg1 == -4) {
       iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3781,0,0,"%s",
                                  "STBoatC::Bring can not find object");
       if (iVar7 == 0) {

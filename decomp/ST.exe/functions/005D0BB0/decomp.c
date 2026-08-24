@@ -17,7 +17,7 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
   SettMapMTy *this_00;
   int errorCode;
   SettMapMTy_field_1F84Element *element_1f84;
-  undefined4 uVar4;
+  uint uVar4;
   uint uVar5;
   int iVar6;
   SettMapMTy_field_1F84DArray *pSVar7;

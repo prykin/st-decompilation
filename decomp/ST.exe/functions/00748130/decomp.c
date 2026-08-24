@@ -19,8 +19,7 @@ undefined4 FUN_00748130(int param_1,AnonShape_0074BC89_92881050 *param_2)
 
 {
   LPCRITICAL_SECTION lpCriticalSection;
-  undefined4 uVar1;
-
+  uint uVar1;
   if (param_2 == nullptr) {
     uVar1 = 0x80004003;
   }

@@ -11,7 +11,7 @@ undefined4 __thiscall HoloTy::NextFas(HoloTy *this)
   uint uVar1;
   int iVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   InternalExceptionFrame local_50;
   HoloTy *local_c;
   undefined4 local_8;

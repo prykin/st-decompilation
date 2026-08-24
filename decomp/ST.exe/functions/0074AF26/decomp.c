@@ -8,11 +8,11 @@ FUN_0074af26(void *this,uint param_1,uint param_2,undefined4 param_3,undefined4 
   int *piVar1;
   uint uVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
   uint *puVar6;
   uint *puVar7;
-  undefined8 uVar8;
+  ulonglong uVar8;
   uint auStack_40 [2];
   uint local_1c [4];
   undefined4 local_c;

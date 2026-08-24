@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   short local_a;
   short local_8;

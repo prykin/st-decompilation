@@ -39,7 +39,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
   longlong local_EDXEAX_136;
   longlong local_EDXEAX_163;
   longlong local_EDXEAX_197;
-  undefined8 uVar24;
+  ulonglong uVar24;
   longlong local_EDXEAX_321;
   longlong local_EDXEAX_330;
   longlong local_EDXEAX_355;

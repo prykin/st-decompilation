@@ -27,10 +27,10 @@ AllocationRecord_0065CD10 * __cdecl st::fn_0065C9E0(char *source)
   g_currentExceptionFrame = &local_4c;
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
-    local_8 = st::pointer_boundary_cast<AnonShape_0065C9E0_147DDF60 *>(st::fn_006AAC10(0x49f));
+    local_8 = static_cast<AnonShape_0065C9E0_147DDF60 *>(st::fn_006AAC10(0x49f));
     local_8->field_0001 = 0x49f;
     local_8->field_0005 = 2;
-    st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_8->field_0x6),source,0x3f);
+    st::fn_0072E340((char *)&local_8->field_0x6,source,0x3f);
     pDVar1 = st::fn_006B54F0(nullptr,5,5);
     local_8->field_0456 = &pDVar1->flags;
     pDVar1 = st::fn_006AE290(nullptr,5,0x1b,5);
@@ -78,7 +78,7 @@ AllocationRecord_0065CB00 * __cdecl st::fn_0065CB00(AllocationRecord_0065CB00 *p
   g_currentExceptionFrame = &local_4c;
   iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    local_8 = st::pointer_boundary_cast<AnonShape_0065CB00_C527AFF0 *>(st::fn_006AAC10(0x49f));
+    local_8 = static_cast<AnonShape_0065CB00_C527AFF0 *>(st::fn_006AAC10(0x49f));
     pAVar4_mg0 = param_1;
     pAVar8 = local_8;
     memmove(pAVar8, pAVar4_mg0, 0x49e); /* compiler REP MOVS byte copy */
@@ -169,7 +169,7 @@ AllocationRecord_0065CD10 * __cdecl st::fn_0065CD10(AllocationRecord_0065CD10 *p
   uint uVar7;
   int iVar8;
   uint *puVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   byte *puVar11;
   AnonShape_0065CD10_CB9334E9 *pAVar12;
   byte *puVar13;
@@ -220,7 +220,7 @@ AllocationRecord_0065CD10 * __cdecl st::fn_0065CD10(AllocationRecord_0065CD10 *p
     }
     local_c = local_c + iVar2 + iVar3;
     *param_2 = local_c + 0x49fU;
-    pAVar4 = st::pointer_boundary_cast<AnonShape_0065CD10_CB9334E9 *>(st::fn_006AAC10(local_c + 0x49fU));
+    pAVar4 = static_cast<AnonShape_0065CD10_CB9334E9 *>(st::fn_006AAC10(local_c + 0x49fU));
     pAVar5 = param_1;
     pAVar12 = pAVar4;
     memmove(pAVar12, pAVar5, 0x49e); /* compiler REP MOVS byte copy */
@@ -310,7 +310,7 @@ AnonShape_GLOBAL_008489CC_CDF8C3F4 * st::fn_0065D120(void)
   g_currentExceptionFrame = &local_4c;
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
-    local_8 = st::pointer_boundary_cast<AnonShape_GLOBAL_008489CC_CDF8C3F4 *>(st::fn_006AAC10(0x1b));
+    local_8 = static_cast<AnonShape_GLOBAL_008489CC_CDF8C3F4 *>(st::fn_006AAC10(0x1b));
     *(undefined1 *)local_8 = 0;
     local_8->field_0009 = 0xffff;
     pDVar1 = st::fn_006AE290(nullptr,5,2,5);

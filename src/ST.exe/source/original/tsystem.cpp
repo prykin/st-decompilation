@@ -13,7 +13,7 @@ undefined4 __thiscall st::fn_00576AD0(BaseSystemC *this)
   BaseSystemC *this_00;
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   InternalExceptionFrame local_50;
   BaseSystemC *local_c;
   undefined4 local_8;
@@ -143,7 +143,7 @@ undefined4 __thiscall st::fn_00576E10(GameSystemC *this)
   GameSystemC *this_00;
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   InternalExceptionFrame local_4c;
   GameSystemC *local_8;
 
@@ -184,9 +184,9 @@ undefined4 __thiscall st::fn_00576EF0(GameSystemC *this)
   int iVar4;
   AnonShape_006DBCA0_EF06575F *pAVar5;
   ST3DSMAPContext *pSVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   int iVar8;
-  undefined4 uVar9;
+  uint uVar9;
   InternalExceptionFrame local_90;
   InternalExceptionFrame local_4c;
   GameSystemC *local_8;
@@ -543,7 +543,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       this_00 = g_playPanel_008016E4;
       if (g_playPanel_008016E4 != nullptr) {
         g_playPanel_008016E4->field_0028 = 5;
-        piVar14 = st::pointer_boundary_cast<int *>(&this_00->field_0181);
+        piVar14 = reinterpret_cast<int *>(&this_00->field_0181);
         local_14 = 8;
         do {
           if (*piVar14 != 0) {
@@ -557,7 +557,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       if (uVar12 != DAT_0080874d) {
         pcVar15 = local_10;
         if (DAT_00808aaf != 0) {
-          pcVar8 = st::pointer_boundary_cast<char *>(&DAT_00808af5);
+          pcVar8 = (char *)&DAT_00808af5;
           uVar10 = (uint)DAT_00808aaf;
           do {
             if (((byte)pcVar8[-1] == uVar12) && (*pcVar8 != '\0')) {
@@ -568,7 +568,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
           } while (uVar10 != 0);
           if (DAT_00808aaf != 0) {
             uVar10 = (uint)DAT_00808aaf;
-            pcVar8 = st::pointer_boundary_cast<char *>(&DAT_00808af5);
+            pcVar8 = (char *)&DAT_00808af5;
             do {
               if (((ushort)(byte)pcVar8[-1] == *(ushort *)(piVar13 + 1)) && (*pcVar8 != '\0')) {
                 pcVar15 = pcVar8 + -0x45;
@@ -807,7 +807,7 @@ undefined4 __thiscall st::fn_00578200(DebugSystemC *this)
 {
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   InternalExceptionFrame local_4c;
   DebugSystemC *local_8;
 

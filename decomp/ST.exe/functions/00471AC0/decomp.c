@@ -22,7 +22,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
   int local_EAX_1296;
   int local_EAX_1512;
   uint local_EAX_1596;
-  undefined4 *puVar7;
+  uint *puVar7;
   int local_EAX_2039;
   int local_EAX_2149;
   int local_EAX_2286;
@@ -47,8 +47,8 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
   uint uVar10;
-  undefined4 uVar11;
-  undefined2 *puVar12;
+  uint uVar11;
+  ushort *puVar12;
   bool bVar13;
   RecoveredRecord_STBoatC_00645880 local_64;
   undefined4 local_3c [2];
@@ -58,8 +58,8 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
   int local_2c [2];
   uint local_24;
   STTorpC *local_20;
-  undefined4 local_1c;
-  int local_18;
+  uint local_1c;
+  uint local_18;
   uint local_14;
   undefined4 local_10;
   short local_c;
@@ -121,7 +121,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
       switch(local_EAX_2627) {
       case 0:
       case 10:
-        thunk_FUN_00416270(pSVar6,&local_14,&local_18,(short *)&local_1c);
+        thunk_FUN_00416270(pSVar6,&local_14,(short *)&local_18,(short *)&local_1c);
         local_64.field_000A = this->field_0043;
         local_64.field_0008 = this->field_0041;
         local_64.field_000C = this->field_0045;
@@ -179,7 +179,7 @@ cf_common_exit_00472A1F:
         break;
       case 9:
 LAB_00472a3a:
-        thunk_FUN_00416270(pSVar6,&local_14,&local_18,(short *)&local_1c);
+        thunk_FUN_00416270(pSVar6,&local_14,(short *)&local_18,(short *)&local_1c);
         /* ST_CALLSITE[00472A60]: CALL dword ptr [EDX + 0x10] */
         sVar4 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
@@ -272,7 +272,7 @@ LAB_00472a3a:
         switch(local_EAX_3904) {
         case 0:
         case 10:
-          thunk_FUN_00416270(pSVar6,&local_14,&local_18,(short *)&local_1c);
+          thunk_FUN_00416270(pSVar6,&local_14,(short *)&local_18,(short *)&local_1c);
           local_64.field_000A = this->field_0043;
           local_64.field_0008 = this->field_0041;
           local_64.field_000C = this->field_0045;
@@ -371,7 +371,7 @@ LAB_00472a3a:
       switch(local_EAX_3345) {
       case 0:
       case 10:
-        thunk_FUN_00416270(pSVar6,&local_14,&local_18,(short *)&local_1c);
+        thunk_FUN_00416270(pSVar6,&local_14,(short *)&local_18,(short *)&local_1c);
         local_64.field_000A = this->field_0043;
         local_64.field_0008 = this->field_0041;
         local_64.field_000C = this->field_0045;
@@ -601,7 +601,7 @@ LAB_00471ec9:
   switch(local_EAX_1296) {
   case 0:
   case 10:
-    thunk_FUN_00416270(pSVar6,&local_14,&local_18,(short *)&local_1c);
+    thunk_FUN_00416270(pSVar6,&local_14,(short *)&local_18,(short *)&local_1c);
     local_64.field_000A = this->field_0043;
     local_64.field_0008 = this->field_0041;
     local_64.field_000C = this->field_0045;
@@ -696,7 +696,7 @@ LAB_0047233a:
     this->field_00B7 = uVar11;
     break;
   case 9:
-    thunk_FUN_00416270(pSVar6,&local_14,&local_18,(short *)&local_1c);
+    thunk_FUN_00416270(pSVar6,&local_14,(short *)&local_18,(short *)&local_1c);
     /* ST_CALLSITE[004720F3]: CALL dword ptr [EDX + 0x10] */
     sVar4 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,

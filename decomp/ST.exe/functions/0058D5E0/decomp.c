@@ -5,7 +5,7 @@ int __cdecl
 FUN_0058d5e0(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   int iVar3;
 

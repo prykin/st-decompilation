@@ -31,7 +31,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
   StartSystemTy *this_00;
   DArrayTy *pDVar7;
   ChooseMapTy *this_01;
-  undefined1 uVar9;
+  byte uVar9;
   bool bVar11;
   DWORD DVar9_mg0;
   int local_EAX_52;
@@ -44,7 +44,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
   int iVar25;
   MMsgTy *pMVar12;
   uint uVar13;
-  undefined4 uVar14;
+  uint uVar14;
   char *pcVar15;
   byte *pbVar16;
   byte *pbVar17;
@@ -370,10 +370,10 @@ LAB_005b1da4:
                  (0x13 - (pBVar11->bmiHeader).biHeight) / 2 + (uint)(message->arg1).words.high,
                  '\x06',(byte *)pBVar11);
         }
-        ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)this_01->field_1C7B,0,
+        ccFntTy::SetSurf((ccFntTy *)g_startSystem_0081176C->field_0030,(int)this_01->field_1C7B,0,
                          (int)(pcVar15 + 4),(uint)(message->arg1).words.high,
                          (this_01->field_1C7B->field_0004 - (int)pcVar15) + -4,0x13);
-        ccFntTy::WrStr(g_startSystem_0081176C->field_0030,(char *)local_8,2,-1,
+        ccFntTy::WrStr((ccFntTy *)g_startSystem_0081176C->field_0030,(char *)local_8,2,-1,
                        (-(uint)((message->arg0).words.high != 0) & 2) + 1);
         uVar27 = (uint)(message->arg1).words.high;
         Library::DKW::DDX::FUN_006b3640

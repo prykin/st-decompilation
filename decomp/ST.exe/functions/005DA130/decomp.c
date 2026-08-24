@@ -2,39 +2,45 @@
 
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005DB4F0 -> 005DA130 @ 005DB713 */
+   Evidence: 005DB4F0 -> 005DA130 @ 005DB713
 
-void __cdecl FUN_005da130(ushort *param_1,undefined *param_2,BYTE param_3)
+   [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=1, ignored=0, unknown=0 */
+
+HDC __cdecl FUN_005da130(ushort *param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_78;
   byte local_3c [56];
 
-  pLVar6 = &local_78;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_78;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_78.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Verdana";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Verdana";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_78.lfHeight = -0x10;
   local_78.lfWidth = 0;
   local_78.lfEscapement = 0;
@@ -48,12 +54,12 @@ void __cdecl FUN_005da130(ushort *param_1,undefined *param_2,BYTE param_3)
   local_78.lfQuality = '\x01';
   local_78.lfPitchAndFamily = '\"';
   local_3c[0x20] = 0;
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_78.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_78.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_3c[0x25] = 0xfa;
   local_3c[0x28] = 0xfa;
@@ -63,10 +69,10 @@ void __cdecl FUN_005da130(ushort *param_1,undefined *param_2,BYTE param_3)
   local_3c[0x2e] = 6;
   local_3c[0x2f] = 6;
   local_3c[0x21] = 0x13;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_3c[0x22] = 2;
   local_3c[0x23] = 2;
@@ -114,9 +120,9 @@ void __cdecl FUN_005da130(ushort *param_1,undefined *param_2,BYTE param_3)
   local_3c[0x1e] = 0x59;
   local_3c[0x1f] = 0x5a;
   /* ST_CALLSITE[005DA2A0]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
-  ccFntTy::operator_new
-            (0x19d,&local_78,nullptr,local_3c,(int)param_1,local_3c + 0x20,7,3,1,1,0x100011c,
-             param_2);
-  return;
+  pHVar2 = ccFntTy::operator_new
+                     (0x19d,&local_78,nullptr,local_3c,(int)param_1,local_3c + 0x20,7,3,1,1,
+                      0x100011c,param_2);
+  return pHVar2;
 }
 

@@ -24,7 +24,7 @@ STAllPlayersC::UnRegisterObject
   int iVar7;
   int local_EAX_1804;
   int local_EAX_3102;
-  undefined4 uVar8;
+  uint uVar8;
   STGameObjC *pSVar9;
   DArrayTy *pDVar10;
   int iVar6;
@@ -40,8 +40,7 @@ STAllPlayersC::UnRegisterObject
   DArrayTy *local_14;
   STGroupBoatC *local_10;
   undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_8;
   iVar11 = (int)param_1;
   local_c = 0;
   local_14 = (DArrayTy *)g_packedRecords_A62x8[iVar11].field3_0x9;

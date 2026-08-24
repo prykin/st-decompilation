@@ -6,11 +6,11 @@ void FUN_0055dee0(byte *param_1)
 {
   byte bVar1;
   ushort uVar2;
-  undefined1 uVar3;
+  byte uVar3;
   int iVar4;
   int iVar5;
   uint uVar6;
-  undefined1 *puVar7;
+  byte *puVar7;
   short *psVar8;
   int iVar9;
   short sVar10;
@@ -22,11 +22,11 @@ void FUN_0055dee0(byte *param_1)
   int iVar16;
   byte *pbVar17;
   int iVar18;
-  undefined1 *local_44;
+  byte *local_44;
   ushort *local_40;
   ushort *local_3c;
   int local_38;
-  undefined1 *local_34;
+  byte *local_34;
   int local_30;
   int local_2c;
   short *local_28;

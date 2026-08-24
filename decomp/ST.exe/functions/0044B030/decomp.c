@@ -54,12 +54,12 @@
 void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int param_2,int objPtr)
 
 {
-  undefined4 uVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
-  undefined4 uVar4;
+  uint uVar1;
+  uint uVar2;
+  uint uVar3;
+  uint uVar4;
   int iVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   uint uVar8;
   AnonPointee_TLOBaseTy_0607 *pAVar10;
   AnonPointee_TLOBaseTy_0607 *pAVar9;

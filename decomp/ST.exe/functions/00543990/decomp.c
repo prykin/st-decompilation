@@ -17,7 +17,7 @@ void __thiscall CursorClassTy::ReInitCursorSpr(CursorClassTy *this,int param_1)
   int iVar2;
   int iVar3;
   char cVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   InternalExceptionFrame local_4c;
   CursorClassTy *local_8;
 

@@ -5,7 +5,7 @@ undefined4 FUN_00496f00(int param_1)
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  uint uVar2;
   void *pvVar3;
   uint uVar4;
   bool bVar5;

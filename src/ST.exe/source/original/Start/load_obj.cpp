@@ -80,7 +80,7 @@ st::fn_005AB300
           (ChooseMapTy *this,undefined1 param_1,ChooseMapTy_InitChooseMap_param_2Enum param_2)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   RecoveredSourceFamily_dibcopy *pRVar2;
   MMsgTy *this_00;
   ChooseMapTy *this_01;
@@ -93,7 +93,7 @@ st::fn_005AB300
   DArrayTy *pDVar5;
   int uVar14;
   AnonPointee_ChooseMapTy_1C7B *pAVar6;
-  undefined4 *puVar8;
+  uint *puVar8;
   HoloTy *pHVar9;
   uint uVar13;
   uint local_EAX_2254;
@@ -175,7 +175,7 @@ st::fn_005AB300
     }
   }
   uVar11 = 0xffffffff;
-  pcVar13 = st::pointer_boundary_cast<char *>(&this_01->field_1CA3);
+  pcVar13 = (char *)&this_01->field_1CA3;
   pcVar18 = &CHAR_00h_00807680;
   do {
     pcVar15 = pcVar18;
@@ -264,7 +264,7 @@ switchD_005ab3e3_caseD_9:
     } while (cVar21 != '\0');
     uVar11 = ~uVar11;
     iVar23 = -1;
-    pcVar18 = st::pointer_boundary_cast<char *>(&this_01->field_1CA3);
+    pcVar18 = (char *)&this_01->field_1CA3;
     do {
       pcVar15 = pcVar18;
       if (iVar23 == 0) break;
@@ -289,7 +289,7 @@ switchD_005ab3e3_caseD_9:
     } while (cVar21 != '\0');
     uVar11 = ~uVar11;
     iVar23 = -1;
-    pcVar13 = st::pointer_boundary_cast<char *>(&this_01->field_1CA3);
+    pcVar13 = (char *)&this_01->field_1CA3;
     do {
       pcVar15 = pcVar13;
       if (iVar23 == 0) break;
@@ -304,7 +304,7 @@ switchD_005ab3e3_caseD_9:
     pcVar13 = (char *)((byte *)pcVar13 + uVar11);
     uVar12 = 0;
     uVar11 = 0;
-    st::fn_006B8280(st::pointer_boundary_cast<char *>(&this_01->field_1CA3),st::pointer_boundary_cast<char *>(&this_01->field_1CA3));
+    st::fn_006B8280((char *)&this_01->field_1CA3,(char *)&this_01->field_1CA3);
     break;
   case 0x13:
     if (DAT_00803400 == 0xc) goto switchD_005ab3e3_caseD_9;
@@ -344,7 +344,7 @@ LAB_005ab4e5:
   }
   uVar11 = 0xffffffff;
   pcVar13 = &this_01->field_1DA7;
-  pcVar18 = st::pointer_boundary_cast<char *>(&this_01->field_1CA3);
+  pcVar18 = (char *)&this_01->field_1CA3;
   do {
     pcVar15 = pcVar18;
     if (uVar11 == 0) break;
@@ -365,7 +365,7 @@ LAB_005ab4e5:
   if (pvVar4 == (HANDLE)0xffffffff) {
     this_01->field_1C8F = (HANDLE)0x0;
   }
-  st::fn_006B8280(st::pointer_boundary_cast<char *>(&this_01->field_1CA3),st::pointer_boundary_cast<char *>(&this_01->field_1CA3));
+  st::fn_006B8280((char *)&this_01->field_1CA3,(char *)&this_01->field_1CA3);
   st::fn_006B8280(&this_01->field_1DA7,&this_01->field_1DA7);
   local_EAX_619 = st::fn_0070A9F0(g_cMf32_00806780,st::mutable_c_string("LOADSINGLE"),0,1);
   g_startSystem_0081176C->field_002C = local_EAX_619;
@@ -496,7 +496,7 @@ switchD_005ab66b_caseD_6:
         this_01->field_1BB2 = 0x5c;
         puVar22 = this_01->field_005D + 0x14;
         this_01->field_1B9A = 0;
-        uVar14 = st::fn_006B4FE0((int)this_01->field_005D);
+        uVar14 = st::fn_006B4FE0(this_01->field_005D);
         pAVar6 = (AnonPointee_ChooseMapTy_1C7B *)
                  st::fn_006B50C0(0x1e4,399,(uint)this_01->field_005D[7],uVar14,(undefined4 *)puVar22,
                               iVar23);
@@ -788,7 +788,7 @@ switchD_005ab66b_caseD_6:
         }
         iVar23 = 1;
         puVar22 = this_01->field_005D + 0x14;
-        local_EAX_3379 = st::fn_006B4FE0((int)this_01->field_005D);
+        local_EAX_3379 = st::fn_006B4FE0(this_01->field_005D);
         pAVar10 = (AnonPointee_ChooseMapTy_1C8B *)
                   st::fn_006B50C0(0x172,0x18,(uint)this_01->field_005D[7],local_EAX_3379,
                                (undefined4 *)puVar22,iVar23);
@@ -1222,11 +1222,11 @@ void __thiscall st::fn_005AD050(ChooseMapTy *this,char param_1)
   case 2:
   case 4:
   case 5:
-    pcVar7 = g_startSystem_0081176C->field_0030;
+    pcVar7 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     resourceId = 0x26ae;
     break;
   case 3:
-    pcVar7 = g_startSystem_0081176C->field_0030;
+    pcVar7 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     resourceId = 0x26af;
     break;
   default:
@@ -1235,11 +1235,11 @@ void __thiscall st::fn_005AD050(ChooseMapTy *this,char param_1)
   case 10:
   case 0xb:
   case 0xc:
-    pcVar7 = g_startSystem_0081176C->field_0030;
+    pcVar7 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     resourceId = 0x26ad;
     break;
   case 0x13:
-    pcVar7 = g_startSystem_0081176C->field_0030;
+    pcVar7 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     resourceId = (DAT_00803400 != '\f') + 0x26ad;
   }
   uVar8 = 0;
@@ -1695,7 +1695,10 @@ void __thiscall st::fn_005ADF10(ChooseMapTy *this)
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
-    */
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_005AE050(ChooseMapTy *this,uint param_1)
 
@@ -1712,7 +1715,7 @@ void __thiscall st::fn_005AE050(ChooseMapTy *this,uint param_1)
   int iVar7;
   int local_EAX_816;
   cMf32 *pcVar10;
-  undefined1 *puVar11;
+  byte *puVar11;
   uint *puVar12;
   int iVar16;
   uint uVar13;
@@ -1968,7 +1971,7 @@ void __thiscall st::fn_005AE050(ChooseMapTy *this,uint param_1)
         local_c = 0;
       }
       iVar15 = local_c;
-      local_8 = st::pointer_boundary_cast<char *>(&DAT_0080874e);
+      local_8 = (char *)&DAT_0080874e;
       st::fn_006F1CE0(local_14,0xc,st::pointer_boundary_cast<char *>(PTR_DAT_0079c068),(int *)&local_8,0);
       st::fn_006F1170(pcVar10);
       if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
@@ -2081,7 +2084,7 @@ void __thiscall st::fn_005AEAB0(ChooseMapTy *this,char param_1)
   uint uVar6;
   char cVar7;
   ccFntTy **ppcVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   ccFntTy *local_fe4 [6];
   undefined4 local_fcc;
   undefined4 local_fc8;
@@ -2763,7 +2766,7 @@ void __thiscall st::fn_005AFD00(ChooseMapTy *this,uint param_1)
   byte *pbVar24;
   bool bVar25;
   DArrayTy *pDVar26;
-  undefined4 uVar27;
+  uint uVar27;
   byte local_370 [260];
   _WIN32_FIND_DATAA local_26c;
   InternalExceptionFrame local_12c;
@@ -3302,7 +3305,7 @@ LAB_005b0523:
             }
           }
           else {
-            local_14 = st::pointer_boundary_cast<int *>(&DAT_008087b6);
+            local_14 = reinterpret_cast<int *>(&DAT_008087b6);
             puVar6 = st::fn_006F1CE0(pcVar5,0,PTR_s_DESCRIPTOR_0079c078,(int *)&local_14,0);
             if (((puVar6 != nullptr) && (DAT_008087b6 != 0)) &&
                ((_DAT_008087ba == local_c ||
@@ -3502,7 +3505,7 @@ int __thiscall st::fn_005B0BA0(ChooseMapTy *this,STMessage *message)
   StartSystemTy *this_00;
   DArrayTy *pDVar7;
   ChooseMapTy *this_01;
-  undefined1 uVar9;
+  byte uVar9;
   bool bVar11;
   DWORD DVar9_mg0;
   int local_EAX_52;
@@ -3515,7 +3518,7 @@ int __thiscall st::fn_005B0BA0(ChooseMapTy *this,STMessage *message)
   int iVar25;
   MMsgTy *pMVar12;
   uint uVar13;
-  undefined4 uVar14;
+  uint uVar14;
   char *pcVar15;
   byte *pbVar16;
   byte *pbVar17;
@@ -3640,7 +3643,7 @@ int __thiscall st::fn_005B0BA0(ChooseMapTy *this,STMessage *message)
       goto cf_common_exit_005B2053;
     }
     if (SVar3 == MESS_CHOOSEMAPTY_6327) {
-      piVar4 = st::pointer_boundary_cast<int *>((message->arg0).ptr);
+      piVar4 = static_cast<int *>((message->arg0).ptr);
       resourceId = 0x2342;
       /* ST_CALLSITE[005B0DF2]: CALL 0x00404c0f; direct=00404C0F ChooseMapTy::sub_005B5BE0 */
       st::fn_00404C0F(this_01,(RecoveredSourceFamily_dibcopy *)this_01->field_1C8B,piVar4);
@@ -3841,10 +3844,10 @@ LAB_005b1da4:
                  (0x13 - (pBVar11->bmiHeader).biHeight) / 2 + (uint)(message->arg1).words.high,
                  '\x06',(byte *)pBVar11);
         }
-        st::fn_00710A90(g_startSystem_0081176C->field_0030,(int)this_01->field_1C7B,0,
+        st::fn_00710A90((ccFntTy *)g_startSystem_0081176C->field_0030,(int)this_01->field_1C7B,0,
                          (int)(pcVar15 + 4),(uint)(message->arg1).words.high,
                          (this_01->field_1C7B->field_0004 - (int)pcVar15) + -4,0x13);
-        st::fn_007119C0(g_startSystem_0081176C->field_0030,(char *)local_8,2,-1,
+        st::fn_007119C0((ccFntTy *)g_startSystem_0081176C->field_0030,(char *)local_8,2,-1,
                        (-(uint)((message->arg0).words.high != 0) & 2) + 1);
         uVar27 = (uint)(message->arg1).words.high;
         st::fn_006B3640

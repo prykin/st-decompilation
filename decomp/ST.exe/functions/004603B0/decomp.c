@@ -13,8 +13,8 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
   uint uVar2;
   int iVar3;
   int iVar4;
-  undefined4 uVar5;
-  undefined2 uVar6;
+  uint uVar5;
+  ushort uVar6;
   int iVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
@@ -27,7 +27,7 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
   undefined2 extraout_var_02;
   uint index;
   bool bVar10;
-  undefined4 uVar11;
+  uint uVar11;
   uint local_8;
 
   if ((param_1 == nullptr) || (param_1 == (STTorpC *)0x1)) {

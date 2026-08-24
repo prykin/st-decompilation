@@ -8,7 +8,7 @@
 void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   CPanelTy *this_00;
   byte bVar4;

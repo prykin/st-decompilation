@@ -30,9 +30,9 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
   uint uVar8;
   uint uVar9;
   uint uVar10;
-  undefined2 uVar11;
+  ushort uVar11;
   AiPlrClassTy *this;
-  undefined2 uVar14;
+  ushort uVar14;
   int iVar17;
   short *psVar18;
   int iVar19;
@@ -98,7 +98,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
   int extraout_EDX_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_16;
-  undefined4 uVar25;
+  uint uVar25;
   int iVar26;
   uint *puVar27;
   uint *puVar28;

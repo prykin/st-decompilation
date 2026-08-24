@@ -5,7 +5,11 @@
 #line 4 "decomp/ST.exe/functions/005802A0/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STResourceC.
    Evidence: this_call_owners=[STResourceC]; agreed_this_calls=1; incoming_this_accesses=3;
-   incoming_edx_uses=0 */
+   incoming_edx_uses=0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_005802A0(STResourceC *this,int param_1,int param_2)
 
@@ -40,15 +44,18 @@ void __thiscall st::fn_005802A0(STResourceC *this,int param_1,int param_2)
 #line 4 "decomp/ST.exe/functions/00580D30/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STResourceC.
    Evidence: this_call_owners=[STResourceC]; agreed_this_calls=1; incoming_this_accesses=2;
-   incoming_edx_uses=0 */
+   incoming_edx_uses=0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00580D30(STResourceC *this,int param_1)
 
 {
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined2 uVar1;
-
+  ushort uVar1;
   if (param_1 != 0) {
     this->field_025D = 2;
   }

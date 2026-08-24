@@ -23,6 +23,7 @@ int __thiscall st::fn_00618C00(STJumpMineC *this,STMessage *message)
   byte bVar3;
   int local_EAX_35;
   int iVar4;
+  int iVar6_mg1;
   int iVar5;
   int iVar6;
   byte *puVar7;
@@ -157,9 +158,9 @@ LAB_00618ce0:
   }
   else if (SVar1 == MESS_ID_ALLCREATE) {
     if (((local_8->field_007D != 0) &&
-        (iVar6 = st::fn_006E62D0
-                           (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14), iVar6 != -4
-        )) && (this_00->field_007D = local_14, local_14 != nullptr)) {
+        (iVar6_mg1 = st::fn_006E62D0
+                               (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14),
+        iVar6_mg1 != -4)) && (this_00->field_007D = local_14, local_14 != nullptr)) {
       st::fn_00401E47(local_14,this_00->field_008B,st::machine_word_boundary_cast<undefined4>(this_00->field_0018),st::machine_word_boundary_cast<undefined4>(this_00));
     }
   }
@@ -196,7 +197,7 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
   int iVar2;
   ushort *puVar3;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   uint *puVar5;
   STJumpMineC *pSVar6;
   InternalExceptionFrame local_4c;

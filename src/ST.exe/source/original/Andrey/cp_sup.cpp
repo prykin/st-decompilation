@@ -253,7 +253,11 @@ st::fn_004F1F60
    0x1c]; first-use mask
    [STAbiConsistencyApplier] stack_parameter_width target=parameter:7: parameter=/ushort Evidence:
    entry-use width=/ushort; unmasked_dword_reads=0; evidence=004F2269 MOV EDX,dword ptr [EBP +
-   0x20]; first-use mask */
+   0x20]; first-use mask
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 st::fn_004F2130
@@ -425,7 +429,7 @@ void __thiscall st::fn_004F2560(CPanelTy *this,int param_1)
   int local_30;
   int local_2c;
   int local_28;
-  undefined1 *local_24;
+  byte *local_24;
   RecoveredSourceFamily_dibcopy *local_20;
   uint local_1c;
   AnonShape_004F2560_DB98CB49 *local_18;
@@ -818,7 +822,7 @@ st::fn_004F3130(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,int p
   CPanelTy *pCVar3;
   int iVar4;
   int iVar5;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar6;
   InternalExceptionFrame local_1d0;
   int local_18c [4];
@@ -995,7 +999,7 @@ st::fn_004F3540(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char
   uint uVar2;
   CPanelTy *pCVar3;
   int *errorCode;
-  undefined4 uVar4;
+  uint uVar4;
   LPSTR text_00;
   int iVar6;
   int iVar5;
@@ -1005,7 +1009,7 @@ st::fn_004F3540(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char
   ushort *local_c;
   CPanelTy *local_8;
 
-  local_10 = st::pointer_boundary_cast<int *>((param_2->arg1).ptr);
+  local_10 = static_cast<int *>((param_2->arg1).ptr);
   local_c = nullptr;
   if (param_5 == nullptr) {
     return;
@@ -1109,7 +1113,7 @@ st::fn_004F37C0(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char
   ushort *local_c;
   CPanelTy *local_8;
 
-  local_10 = st::pointer_boundary_cast<int *>((param_2->arg1).ptr);
+  local_10 = static_cast<int *>((param_2->arg1).ptr);
   local_c = nullptr;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -1208,7 +1212,7 @@ st::fn_004F3A30
   ushort *local_8;
 
   uVar2 = (uint)param_1;
-  local_18 = st::pointer_boundary_cast<int *>((param_2->arg1).ptr);
+  local_18 = static_cast<int *>((param_2->arg1).ptr);
   local_8 = nullptr;
   iVar5 = local_18[1];
   local_c = *local_18 - (&this->field_003C)[uVar2];
@@ -1311,7 +1315,7 @@ st::fn_004F3CF0
   uint uVar2;
   CPanelTy *pCVar3;
   int *errorCode;
-  undefined4 uVar4;
+  uint uVar4;
   LPSTR text;
   uint uVar5;
   char *resourceString;
@@ -1328,7 +1332,7 @@ st::fn_004F3CF0
   ushort *local_8;
 
   uVar2 = (uint)param_1;
-  local_18 = st::pointer_boundary_cast<int *>((param_2->arg1).ptr);
+  local_18 = static_cast<int *>((param_2->arg1).ptr);
   local_8 = nullptr;
   iVar9 = local_18[1];
   local_10 = *local_18 - (&this->field_003C)[uVar2];
@@ -1382,8 +1386,9 @@ cf_common_join_004F3D83:
       st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_14->field_0148[uVar2 + 0xe],local_10,local_c,
              param_3,(byte *)local_8);
       st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_8);
-      st::fn_00710A90(g_interSystem_00802A28->field_0024,(int)pCVar3->field_0148[uVar2 + 0xe],0,
-                       local_10,local_c,local_18[2],local_18[3]);
+      st::fn_00710A90((ccFntTy *)g_interSystem_00802A28->field_0024,
+                       (int)pCVar3->field_0148[uVar2 + 0xe],0,local_10,local_c,local_18[2],
+                       local_18[3]);
       iVar10 = -1;
       iVar7 = -1;
       /* ST_CALLSITE[004F3E4F]: CALL dword ptr [EBP + 0x1c] */
@@ -1391,8 +1396,8 @@ cf_common_join_004F3D83:
       iVar6 = -1;
       iVar9 = -2;
       resourceString = st::fn_006B0140(param_5,g_hINSTANCE_00807618);
-      st::fn_00711B70(g_interSystem_00802A28->field_0024,resourceString,iVar9,iVar6,uVar5,iVar7,
-                     iVar10);
+      st::fn_00711B70((ccFntTy *)g_interSystem_00802A28->field_0024,resourceString,iVar9,iVar6,uVar5,
+                     iVar7,iVar10);
       if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
         st::fn_006B3640
                   ((int *)g_ddxContext_008075A8,(uint)pCVar3->field_0148[uVar2],0xffffffff,
@@ -1426,7 +1431,7 @@ st::fn_004F3FE0(CPanelTy *this,byte param_1,AnonShape_004F3FE0_1578D6B9 *param_2
   uint uVar2;
   CPanelTy *pCVar3;
   int iVar4;
-  undefined4 uVar4;
+  uint uVar4;
   LPSTR text;
   int iVar5;
   int iVar6;
@@ -1540,7 +1545,7 @@ st::fn_004F42A0(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char
   uint uVar2;
   CPanelTy *pCVar3;
   int iVar4;
-  undefined4 uVar4;
+  uint uVar4;
   LPSTR text_00;
   int iVar5;
   int iVar6;

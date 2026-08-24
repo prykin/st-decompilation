@@ -5,8 +5,7 @@ void FUN_0075a7a0(AnonShape_0075A7A0_BCCC082B *param_1)
 
 {
   int iVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   uVar2 = 1;
   iVar1 = param_1->field_019A;
   if (param_1->field_0136 < 2) {

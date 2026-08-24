@@ -4,9 +4,8 @@
 void FUN_006d25a0(undefined4 *param_1)
 
 {
-  undefined4 *puVar1;
-  undefined4 *puVar2;
-
+  uint *puVar1;
+  uint *puVar2;
   puVar2 = param_1;
   param_1 = (undefined4 *)*param_1;
   while (param_1 != nullptr) {

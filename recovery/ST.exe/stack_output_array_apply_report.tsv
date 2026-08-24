@@ -148,10 +148,8 @@ target	status	detail
 0054F1D0:Stack[-40]	disabled	needs_two_exact_output_calls
 00556760:Stack[-88]	disabled	needs_two_exact_output_calls
 00556760:Stack[-8]	disabled	needs_two_exact_output_calls
-00566600:Stack[-356]	disabled	needs_two_exact_output_calls
 005718D0:Stack[-28]	disabled	needs_two_exact_output_calls
 005718D0:Stack[-28]	disabled	needs_two_exact_output_calls
-00572D30:Stack[-28]	disabled	needs_two_exact_output_calls
 00573260:Stack[-40]	disabled	needs_two_exact_output_calls
 00573260:Stack[-36]	disabled	needs_two_exact_output_calls
 00573260:Stack[-32]	disabled	needs_two_exact_output_calls
@@ -164,6 +162,7 @@ target	status	detail
 0057E0A0:Stack[-20]	disabled	needs_two_exact_output_calls
 00580380:Stack[-36]	disabled	needs_two_exact_output_calls
 005811C0:Stack[-36]	disabled	needs_two_exact_output_calls
+00581BF0:Stack[-12]	disabled	needs_two_exact_output_calls
 00582580:Stack[-36]	disabled	needs_two_exact_output_calls
 005825C0:Stack[-32]	disabled	needs_two_exact_output_calls
 00583E30:Stack[-8]	disabled	needs_two_exact_output_calls
@@ -327,8 +326,6 @@ target	status	detail
 00646D00:Stack[-36]	disabled	needs_two_exact_output_calls
 00646E00:Stack[-16]	disabled	needs_two_count_driven_consumers
 00646E00:Stack[-12]	disabled	needs_two_count_driven_consumers
-00649B90:Stack[-1172]	disabled	needs_two_exact_output_calls
-00649FF0:Stack[-816]	disabled	needs_two_exact_output_calls
 0064D270:Stack[-164]	disabled	needs_two_exact_output_calls
 00652810:Stack[-576]	disabled	needs_two_exact_output_calls
 00652810:Stack[-388]	disabled	needs_two_exact_output_calls
@@ -425,8 +422,6 @@ target	status	detail
 006E56B0:Stack[-8]	disabled	needs_two_count_driven_consumers
 006EB350:Stack[-20]	disabled	needs_two_exact_output_calls
 00717970:Stack[-12]	disabled	needs_two_exact_output_calls
-00719410:Stack[-20]	disabled	needs_two_exact_output_calls
-00725910:Stack[-264]	disabled	needs_two_count_driven_consumers
 00727DA0:Stack[-96]	disabled	needs_two_exact_output_calls
 00727DA0:Stack[-52]	disabled	needs_two_exact_output_calls
 0074C115:Stack[-8]	disabled	needs_two_exact_output_calls

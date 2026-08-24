@@ -17,7 +17,7 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
             ,int param_9,byte param_10)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   int iVar2;
   uint *puVar3;
   int iVar4;
@@ -33,9 +33,9 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
   int local_28;
   undefined4 local_24;
   uint local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

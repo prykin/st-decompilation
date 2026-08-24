@@ -18,6 +18,7 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
   dword dVar2;
   STMBombC *this_00;
   int local_EAX_85;
+  int iVar4_mgB;
   int local_EAX_1342;
   int iVar8;
   int iVar9;
@@ -90,7 +91,7 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
     local_20 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_10);
     /* ST_CALLSITE[0058923B]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
     local_1c = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_18);
-    local_14 = st::pointer_boundary_cast<AnonShape_00588BC0_84BDD66C *>(st::fn_006AAC70(local_18 + 0x87 + local_10));
+    local_14 = static_cast<AnonShape_00588BC0_84BDD66C *>(st::fn_006AAC70(local_18 + 0x87 + local_10));
     if (local_20 == nullptr) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -212,10 +213,10 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
           if (((AnonShape_005EFAE0_B406B78B *)this_00->field_029C ==
                0) ||
-             (iVar4 = st::fn_006E62D0
-                                (g_playSystem_00802A38,
-                                 (AnonShape_005EFAE0_B406B78B *)this_00->field_029C,(int *)&local_24
-                                ), iVar4 != 0)) {
+             (iVar4_mgB = st::fn_006E62D0
+                                    (g_playSystem_00802A38,
+                                     (AnonShape_005EFAE0_B406B78B *)this_00->field_029C,
+                                     (int *)&local_24), iVar4_mgB != 0)) {
             this_00->field_0231 = 1;
             this_00->field_0235 = 0;
             this_00->field_0239 = 0;
@@ -225,7 +226,7 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
             this_00->field_0231 = 0;
             this_00->field_0273 = STField<undefined2>(local_24,0x32);
             this_00->field_026F = STField<undefined4>(local_24,0x24);
-            st::fn_004031E3(local_24,(uint *)&local_6,(int *)&local_8,&local_a);
+            st::fn_004031E3(local_24,(uint *)&local_6,&local_8,&local_a);
             local_a = local_a - this_00->field_0045;
             local_8 = local_8 - this_00->field_0043;
             local_6 = local_6 - this_00->field_0041;

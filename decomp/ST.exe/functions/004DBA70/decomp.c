@@ -6,7 +6,7 @@ undefined4 __fastcall FUN_004dba70(int param_1)
 {
   AnonShape_004DBA70_007C3C4C *pAVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   AnonShape_004DBA70_007C3C4C *local_c;
   int local_8;
 

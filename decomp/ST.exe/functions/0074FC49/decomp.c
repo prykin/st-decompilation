@@ -42,7 +42,7 @@ FUN_0074fc49(void *this,int *param_1,int *param_2,uint *param_3,int param_4,doub
     /* ST_CALLSITE[0074FCDE]: CALL dword ptr [ECX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_2 + 8))(param_2);
-    uVar1 = FUN_0074e337((int *)((int)this + 0x48),param_6,nullptr,0,(int *)&local_8);
+    uVar1 = FUN_0074e337((int *)((int)this + 0x48),param_6,nullptr,nullptr,(int *)&local_8);
     if (-1 < (int)uVar1) {
       /* ST_CALLSITE[0074FCFC]: CALL dword ptr [ECX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

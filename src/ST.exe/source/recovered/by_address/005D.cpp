@@ -343,39 +343,45 @@ SIDTy * __cdecl st::fn_005D9F80(void)
 // 005DA130 FUN_005da130
 #line 4 "decomp/ST.exe/functions/005DA130/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005DB4F0 -> 005DA130 @ 005DB713 */
+   Evidence: 005DB4F0 -> 005DA130 @ 005DB713
 
-void __cdecl st::fn_005DA130(ushort *param_1,undefined *param_2,BYTE param_3)
+   [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=1, ignored=0, unknown=0 */
+
+HDC __cdecl st::fn_005DA130(ushort *param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_78;
   byte local_3c [56];
 
-  pLVar6 = &local_78;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_78;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_78.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Verdana";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Verdana";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_78.lfHeight = -0x10;
   local_78.lfWidth = 0;
   local_78.lfEscapement = 0;
@@ -389,12 +395,12 @@ void __cdecl st::fn_005DA130(ushort *param_1,undefined *param_2,BYTE param_3)
   local_78.lfQuality = '\x01';
   local_78.lfPitchAndFamily = '\"';
   local_3c[0x20] = 0;
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_78.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_78.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_3c[0x25] = 0xfa;
   local_3c[0x28] = 0xfa;
@@ -404,10 +410,10 @@ void __cdecl st::fn_005DA130(ushort *param_1,undefined *param_2,BYTE param_3)
   local_3c[0x2e] = 6;
   local_3c[0x2f] = 6;
   local_3c[0x21] = 0x13;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_3c[0x22] = 2;
   local_3c[0x23] = 2;
@@ -455,46 +461,52 @@ void __cdecl st::fn_005DA130(ushort *param_1,undefined *param_2,BYTE param_3)
   local_3c[0x1e] = 0x59;
   local_3c[0x1f] = 0x5a;
   /* ST_CALLSITE[005DA2A0]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
-  st::fn_0070D1F0
-            (0x19d,&local_78,nullptr,local_3c,(int)param_1,local_3c + 0x20,7,3,1,1,0x100011c,
-             param_2);
-  return;
+  pHVar2 = st::fn_0070D1F0
+                     (0x19d,&local_78,nullptr,local_3c,(int)param_1,local_3c + 0x20,7,3,1,1,
+                      0x100011c,param_2);
+  return pHVar2;
 }
 
 // 005DA310 FUN_005da310
 #line 4 "decomp/ST.exe/functions/005DA310/decomp.c"
-void __cdecl st::fn_005DA310(int param_1,undefined *param_2,BYTE param_3)
+/* [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=1, ignored=0, unknown=0 */
+
+HDC __cdecl st::fn_005DA310(int param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_a4;
   byte local_68 [88];
   byte local_10 [12];
 
-  pLVar6 = &local_a4;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_a4;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_a4.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Verdana";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Verdana";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_a4.lfHeight = -0xc;
   local_a4.lfWidth = 0;
   local_a4.lfEscapement = 0;
@@ -508,18 +520,18 @@ void __cdecl st::fn_005DA310(int param_1,undefined *param_2,BYTE param_3)
   local_a4.lfQuality = '\x01';
   local_a4.lfPitchAndFamily = '\"';
   local_10[0] = 0;
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_a4.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_a4.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_10[1] = 0x14;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_10[2] = 0x16;
   local_10[3] = 0xc;
@@ -616,9 +628,10 @@ void __cdecl st::fn_005DA310(int param_1,undefined *param_2,BYTE param_3)
   local_68[0x55] = 0x7c;
   local_68[0x56] = 0x7e;
   /* ST_CALLSITE[005DA55C]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
-  st::fn_0070D1F0
-            (0x19d,&local_a4,nullptr,local_68,param_1,local_10,4,2,1,0,0x20011c,param_2);
-  return;
+  pHVar2 = st::fn_0070D1F0
+                     (0x19d,&local_a4,nullptr,local_68,param_1,local_10,4,2,1,0,0x20011c,param_2
+                     );
+  return pHVar2;
 }
 
 // 005DA7A0 FUN_005da7a0
@@ -626,7 +639,7 @@ void __cdecl st::fn_005DA310(int param_1,undefined *param_2,BYTE param_3)
 undefined4 st::fn_005DA7A0(void)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int *piVar2;
   int iVar4;
   bool bVar5;
@@ -651,7 +664,7 @@ undefined4 st::fn_005DA7A0(void)
           bVar5 = false;
         }
         else {
-          *puVar1 = st::machine_word_boundary_cast<undefined4>(piVar4);
+          *puVar1 = st::machine_word_boundary_cast<uint>(piVar4);
           *piVar4 = *piVar4 + 1;
         }
       }
@@ -683,8 +696,14 @@ undefined4 st::fn_005DA7A0(void)
 }
 
 // 005DA980 FUN_005da980
-#line 4 "decomp/ST.exe/functions/005DA980/decomp.c"
-undefined4 st::fn_005DA980(int param_1)
+#line 1 "decomp/ST.exe/functions/005DA980/decomp.c"
+
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=2, ignored=0, unknown=0 */
+
+int st::fn_005DA980(int param_1)
 
 {
   int iVar1;
@@ -707,11 +726,15 @@ undefined4 st::fn_005DA980(int param_1)
   }
   g_currentExceptionFrame = local_4c.previous;
   st::fn_004034F4();
-  return 0xfffffffa;
+  return -6;
 }
 
 // 005DAA60 FUN_005daa60
 #line 1 "decomp/ST.exe/functions/005DAA60/decomp.c"
+
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void st::fn_005DAA60(void)
 
@@ -724,8 +747,14 @@ void st::fn_005DAA60(void)
 }
 
 // 005DAA90 FUN_005daa90
-#line 4 "decomp/ST.exe/functions/005DAA90/decomp.c"
-undefined4 st::fn_005DAA90(void)
+#line 1 "decomp/ST.exe/functions/005DAA90/decomp.c"
+
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=3, ignored=0, unknown=0 */
+
+int st::fn_005DAA90(void)
 
 {
   int iVar1;
@@ -747,12 +776,17 @@ undefined4 st::fn_005DAA90(void)
     /* ST_CALLSITE[005DAAFE]: CALL 0x00402b30; direct=00402B30 StartSystemTy::sub_005DAB30 */
     st::fn_00402B30(local_8);
   }
-  return 0xfffffffa;
+  return -6;
 }
 
 // 005DAB70 FUN_005dab70
 #line 4 "decomp/ST.exe/functions/005DAB70/decomp.c"
-undefined4 st::fn_005DAB70(int param_1,undefined4 param_2)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=2, ignored=0, unknown=0 */
+
+int st::fn_005DAB70(int param_1,undefined4 param_2)
 
 {
   int iVar1;
@@ -782,7 +816,7 @@ undefined4 st::fn_005DAB70(int param_1,undefined4 param_2)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  return 0xfffffffa;
+  return -6;
 }
 
 // 005DAC60 FUN_005dac60
@@ -841,7 +875,7 @@ undefined4 __cdecl st::fn_005DB030(byte *param_1,undefined4 param_2,char param_3
   InternalExceptionFrame local_6c;
   undefined1 local_28 [3];
   int local_25;
-  undefined1 *local_20;
+  byte *local_20;
   int *local_1c;
   char *local_18;
   int local_14;
@@ -1365,9 +1399,8 @@ void st::fn_005DF930(int param_1,uint param_2,int param_3)
 {
   int iVar1;
   uint uVar2;
-  undefined4 *puVar3;
-  undefined4 *puVar4;
-
+  uint *puVar3;
+  uint *puVar4;
   puVar3 = (undefined4 *)(param_1 + param_2 * 0x9e);
   puVar4 = puVar3;
   for (uVar2 = (param_3 * 0x4f & 0x7fffffffU) >> 1; uVar2 != 0; uVar2 = uVar2 - 1) {
@@ -1397,9 +1430,8 @@ void st::fn_005DF9B0(int param_1,uint param_2,int param_3)
 {
   int iVar1;
   uint uVar2;
-  undefined4 *puVar3;
-  undefined4 *puVar4;
-
+  uint *puVar3;
+  uint *puVar4;
   puVar3 = (undefined4 *)(param_1 + param_2 * 0x3e);
   puVar4 = puVar3;
   for (uVar2 = (param_3 * 0x1f & 0x7fffffffU) >> 1; uVar2 != 0; uVar2 = uVar2 - 1) {

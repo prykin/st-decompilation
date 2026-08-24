@@ -9,7 +9,7 @@ undefined4 FUN_006c2a00(LPVOID lpBuffer)
 {
   HANDLE hFile;
   BOOL BVar1;
-  undefined4 uVar2;
+  uint uVar2;
   DWORD local_8;
 
   uVar2 = 0;

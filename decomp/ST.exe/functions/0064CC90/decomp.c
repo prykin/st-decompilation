@@ -11,8 +11,7 @@ AiEventClassTy * __thiscall AiEventClassTy::AiEventClassTy(AiEventClassTy *this)
 
 {
   int iVar1;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   this->field_0004 = '\0';
   this->field_0084 = 0;
   this->vtable = &AiEventClassTyVTable;

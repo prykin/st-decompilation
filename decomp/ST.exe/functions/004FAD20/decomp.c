@@ -9,7 +9,7 @@
 void __thiscall CPanelTy::sub_004FAD20(CPanelTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   int iVar2;
 
   iVar2 = 6;

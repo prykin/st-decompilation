@@ -16,10 +16,11 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
   AiTactClassTy *this_00;
   int iVar3;
   AiTactClassTy_field_00A5DArray *pAVar3;
-  int iVar5;
+  int iVar5_mg1;
   int iVar4;
+  int iVar5;
   uint uVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   AiTactClassTy_field_00A5Element *element_00a5;
   bool bVar8;
   InternalExceptionFrame local_58;
@@ -98,9 +99,9 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
           }
           local_8 = 0;
           if ((((AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000 == nullptr) ||
-              (iVar5 = STPlaySystemC::sub_006E62D0
-                                 (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000,
-                                  &local_8), iVar5 != 0)) || (local_8 == 0)) {
+              (iVar5_mg1 = STPlaySystemC::sub_006E62D0
+                                     (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000,
+                                      &local_8), iVar5_mg1 != 0)) || (local_8 == 0)) {
             element_00a5->field_0004 = 0;
             element_00a5->field_0000 = 0;
           }

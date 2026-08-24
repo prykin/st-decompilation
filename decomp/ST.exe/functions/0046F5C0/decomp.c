@@ -10,8 +10,8 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
 {
   uint uVar1;
   STBoatC_field_0580State SVar2;
-  undefined4 uVar3;
-  undefined2 uVar5;
+  uint uVar3;
+  ushort uVar5;
   int local_EAX_53;
   int local_EAX_99;
   int iVar6;
@@ -29,7 +29,7 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
   int iVar7;
   uint uVar8;
   int local_EAX_2998;
-  undefined4 *puVar9;
+  uint *puVar9;
   int iVar10;
   int iVar11;
   int local_EAX_3697;
@@ -66,7 +66,7 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
   short sVar25;
   byte bVar26;
   undefined4 local_28 [2];
-  undefined4 local_20;
+  uint local_20;
   short local_1c;
   int local_18;
   int local_14;
@@ -122,12 +122,12 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
     this->field_0578 = 0;
     this->field_0574 = 0;
     sVar14 = this->field_0558;
-    sVar21 = this->field_0556;
-    sVar19 = this->field_0554;
+    sVar19 = this->field_0556;
+    sVar21 = this->field_0554;
     this->field_00B7 = 3;
 LAB_00470e23:
     /* ST_CALLSITE[00470E25]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
-    sub_00481520(this,(int)sVar19,(int)sVar21,sVar14 + 1);
+    sub_00481520(this,(int)sVar21,(int)sVar19,sVar14 + 1);
 cf_common_exit_00470E2B:
     /* ST_CALLSITE[00470E2D]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
     sub_00460260(this,0);
@@ -288,14 +288,14 @@ cf_error_exit_00470C46:
         }
         this->field_055A = pSVar17->field_0018;
         thunk_FUN_004e1fb0(pSVar17,this->field_0568,this->field_0018);
-        sVar21 = this->field_0570;
-        sVar19 = this->field_056E;
+        sVar19 = this->field_0570;
+        sVar21 = this->field_056E;
         sVar14 = this->field_056C;
         this->field_0580 = CASE_3;
         this->field_00B7 = 0;
 LAB_00470bfe:
         /* ST_CALLSITE[00470C00]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
-        sub_00481520(this,(int)sVar14,(int)sVar19,(int)sVar21);
+        sub_00481520(this,(int)sVar14,(int)sVar21,(int)sVar19);
         /* ST_CALLSITE[00470C09]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
         sub_00460260(this,0);
         return 2;
@@ -398,8 +398,8 @@ LAB_00470071:
         goto cf_error_exit_00470C46;
       }
       sVar14 = this->field_0558;
-      sVar21 = this->field_0556;
-      sVar19 = this->field_0554;
+      sVar19 = this->field_0556;
+      sVar21 = this->field_0554;
       this->field_0564 = 0;
       this->field_0580 = CASE_0;
       this->field_00B7 = 3;
@@ -646,8 +646,8 @@ LAB_004707ad:
       /* ST_CALLSITE[00470BE9]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
       sub_0048DFD0(this,sVar19,sVar14,uVar20,sVar22,sVar21,piVar13,iVar12,&this->field_055E,
                    (short *)&this->field_0x560,(short *)&this->field_0x562);
-      sVar21 = *(short *)&this->field_0x562;
-      sVar19 = *(short *)&this->field_0x560;
+      sVar19 = *(short *)&this->field_0x562;
+      sVar21 = *(short *)&this->field_0x560;
       sVar14 = this->field_055E;
       goto LAB_00470bfe;
     }

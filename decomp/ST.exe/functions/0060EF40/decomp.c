@@ -15,12 +15,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40
           (AnonReceiver_0060EF40 *this,int param_1)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   code *pcVar2;
   int iVar3;
   int iVar1;
   void *pvVar4;
-  undefined4 uVar5;
+  uint uVar5;
   short sVar6;
   int iVar8;
   short sVar9;
@@ -47,7 +47,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40
   short *local_6c;
   int local_68 [2];
   short local_60 [6];
-  undefined1 *local_54;
+  byte *local_54;
   int local_50;
   int local_4c;
   int local_48;
@@ -60,9 +60,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40
   int local_2c;
   int local_24;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

@@ -12,7 +12,7 @@ void __thiscall cLoadingTy::ShowScr(cLoadingTy *this,int param_1,int param_2)
   int iVar4;
   int iVar3;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   undefined4 local_44c [256];
   InternalExceptionFrame local_4c;
   cLoadingTy *local_8;

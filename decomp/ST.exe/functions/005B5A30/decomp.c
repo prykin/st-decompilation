@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
-   MMObjTy::PaintButDib */
+   MMObjTy::PaintButDib
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=16, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte param_4,uint param_5)

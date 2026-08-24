@@ -5,7 +5,7 @@ int FUN_006d4ef0(undefined4 *param_1,undefined4 param_2,int param_3)
 
 {
   void *this;
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   int local_8;
 

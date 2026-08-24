@@ -14,8 +14,8 @@
 int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
 
 {
-  undefined1 uVar1;
-  undefined1 uVar2;
+  byte uVar1;
+  byte uVar2;
   STBoatC_field_05D6State SVar3;
   short sVar5;
   int iVar6;
@@ -40,7 +40,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   short sVar20;
   byte bVar21;
   undefined4 local_30 [2];
-  undefined4 local_28;
+  uint local_28;
   short local_24;
   int local_20;
   uint local_1c;

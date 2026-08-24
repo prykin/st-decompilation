@@ -39,14 +39,14 @@ void __fastcall FUN_00750287(AnonShape_00750287_BC8A1854 *param_1)
       if (param_1->field_0054 != 0) {
         /* ST_CALLSITE[00750320]: CALL dword ptr [EDX + 0x18] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*(int *)param_1->field_0060 + 0x18))
+        (**(code **)(*STField<int *>(param_1,0x60) + 0x18))
                   /* ST_CALLSITE[00750320]: CALL dword ptr [EDX + 0x18] */
                   ((int *)param_1->field_0060,param_1->field_0054);
         ResetEvent((HANDLE)param_1->field_0050);
       }
       /* ST_CALLSITE[0075033F]: CALL dword ptr [EDX + 0x10] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)param_1->field_0060 + 0x10))
+      (**(code **)(*STField<int *>(param_1,0x60) + 0x10))
                 /* ST_CALLSITE[0075033F]: CALL dword ptr [EDX + 0x10] */
                 ((int *)param_1->field_0060,uVar3,local_8,0,0,param_1->field_0050,
                  &param_1->field_0054);

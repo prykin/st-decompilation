@@ -148,7 +148,7 @@ st::fn_0054A9B0
     st::fn_007158A0(pSVar6,(int *)g_ddxContext_008075A8,1,'\a',nullptr,0,0);
     /* ST_CALLSITE[0054AC30]: CALL dword ptr [EDX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)pAVar4->field_04EB + 4))
+    (**(code **)(*STField<int *>(pAVar4,0x4EB) + 4))
               (PTR_00806784,7,0,"CUR_CONFIRM2D",0xffffffff);
     *(undefined4 *)(pAVar4->field_04EB + 0x40) = 0x19;
     *(undefined4 *)(pAVar4->field_04EB + 8) = 0;
@@ -185,7 +185,7 @@ cf_common_exit_0054ACFD:
   if (-1 < (int)local_8) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006E98E0
-              (g_sT3DSMAPContext_00807598,local_8,0,*(int *)pAVar4->field_04E7,
+              (g_sT3DSMAPContext_00807598,local_8,0,*STField<int *>(pAVar4,0x4E7),
                *(int *)((int)pAVar4->field_04E7 + 0x21),1);
     st::fn_006EAAA0(g_sT3DSMAPContext_00807598,local_8,0);
     st::fn_006EA960

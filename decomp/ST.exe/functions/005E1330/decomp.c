@@ -55,7 +55,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   AnonShape_005E1330_47BFB53C *pAVar15;
   MTaskTy_field_0074Element *element_0074;
   byte *puVar16;
-  undefined1 *puVar17;
+  byte *puVar17;
   int iVar18;
   SpriteClassTy *pSVar19;
   byte *pbVar20;
@@ -130,7 +130,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   int local_128;
   int local_124;
   int local_120;
-  undefined1 *local_110;
+  byte *local_110;
   undefined1 local_10c;
   cTypingTy *local_10b;
   char local_107;
@@ -218,7 +218,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
       local_14 = pAVar15;
       if (((uint)(this_01->field_0069 - this_01->field_0061) <
            *(uint *)((int)&pAVar15->field_0x0 + 1)) && (this_01->field_006D != CASE_5)) break;
-      switch((char)*(int *)&pAVar15->field_0x0) {
+      switch(static_cast<uint32_t>(STRawWord((char)*(int *)&pAVar15->field_0x0))) {
       case '\x01':
         if ((this_01->field_006E != '\x01') ||
            ((pAVar15->field_0xd != '\0' && (pAVar15->field_0xd != '\x01')))) {
@@ -257,7 +257,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
             }
             iVar18 = 1;
             puVar28 = this_01->field_005D + 0x14;
-            local_EAX_2647 = FUN_006b4fe0((int)this_01->field_005D);
+            local_EAX_2647 = FUN_006b4fe0(this_01->field_005D);
             local_EAX_2671 =
                  FUN_006b50c0((int)local_18,local_84,(uint)this_01->field_005D[7],local_EAX_2647,
                               (undefined4 *)puVar28,iVar18);
@@ -369,15 +369,15 @@ LAB_005e200a:
                     local_1c = 0x1f47;
                     *piVar24 = (int)((int)&local_c->vtable + 1);
                     break;
-                  case (SpriteClassTy *)0x1:
+                  case 0x1:
                     local_1c = 0x1f48;
                     *piVar24 = (int)((int)&local_c->vtable + 1);
                     break;
-                  case (SpriteClassTy *)0x2:
+                  case 0x2:
                     local_1c = 0x1f49;
                     *piVar24 = (int)((int)&local_c->vtable + 1);
                     break;
-                  case (SpriteClassTy *)0x3:
+                  case 0x3:
                   default:
                     local_1c = 0x1f52;
                     *piVar24 = (int)((int)&local_c->vtable + 1);
@@ -395,7 +395,7 @@ LAB_005e200a:
                 piVar24[6] = 0x14;
                 local_e8 = piVar24[5];
                 puVar28 = puVar4 + 0x14;
-                local_EAX_3423 = FUN_006b4fe0((int)puVar4);
+                local_EAX_3423 = FUN_006b4fe0(puVar4);
                 local_EAX_3448 =
                      FUN_006b50c0(local_e8,0x14,(uint)this_01->field_005D[7],local_EAX_3423,
                                   (undefined4 *)puVar28,iVar18);
@@ -538,7 +538,7 @@ LAB_005e24c5:
               uVar26 = pAVar15->field_001A;
               iVar18 = 1;
               puVar28 = this_01->field_005D + 0x14;
-              uVar20 = FUN_006b4fe0((int)this_01->field_005D);
+              uVar20 = FUN_006b4fe0(this_01->field_005D);
               pAVar10 = (AnonPointee_MTaskTy_06BF *)
                         FUN_006b50c0(local_f0,uVar26,(uint)this_01->field_005D[7],uVar20,
                                      (undefined4 *)puVar28,iVar18);
@@ -727,7 +727,7 @@ LAB_005e24c5:
                   iVar18 = *(undefined4 *)((int)&pAVar15[1].field_0005 + 3);
                   iVar29 = 1;
                   puVar28 = this_01->field_005D + 0x14;
-                  uVar30 = FUN_006b4fe0((int)this_01->field_005D);
+                  uVar30 = FUN_006b4fe0(this_01->field_005D);
                   piVar24 = (int *)FUN_006b50c0(local_fc,iVar18,(uint)this_01->field_005D[7],uVar30,
                                                 (undefined4 *)puVar28,iVar29);
                   local_18 = local_138 + (local_7c & 0xff);
@@ -800,7 +800,7 @@ LAB_005e24c5:
                 iVar18 = *(undefined4 *)((int)&pAVar15[1].field_0005 + 3);
                 puVar28 = this_01->field_005D + 0x14;
                 local_f4 = (-(uint)(pAVar15->field_0x9 != '\x01') & 0xfffffffe) + 2;
-                local_EAX_6030 = FUN_006b4fe0((int)this_01->field_005D);
+                local_EAX_6030 = FUN_006b4fe0(this_01->field_005D);
                 local_138[0] = (int *)FUN_006b50c0(local_f8,iVar18,(uint)this_01->field_005D[7],
                                                    local_EAX_6030,(undefined4 *)puVar28,iVar29);
                 local_18 = (int **)local_138[0][5];

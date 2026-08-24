@@ -6,8 +6,7 @@
 void __fastcall FUN_005f6df0(STAllPlayersC *param_1)
 
 {
-  undefined1 *this;
-
+  byte *this;
   this = &param_1->field_0x1d5;
   /* ST_CALLSITE[005F6E44]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   STT3DSprC::sub_004AD3C0

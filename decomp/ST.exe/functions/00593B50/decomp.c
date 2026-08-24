@@ -8,7 +8,7 @@
 void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   uint *puVar2;
   ComboTy *this_00;
   int iVar4;
@@ -22,9 +22,9 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
   int iVar10;
   int iVar8;
   uint uVar9;
-  int iVar11;
-  uint uVar12;
-  int iVar14;
+  uint uVar10;
+  ushort *puVar12;
+  int iVar13;
   int local_528 [4];
   int local_518;
   int local_514;
@@ -64,78 +64,82 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
   }
   puVar5 = (byte *)&local_10->field_0088;
   memmove(puVar5, param_1, 0x80); /* compiler REP MOVS byte copy */
-  iVar8 = local_10->field_00D4;
+  iVar8 = 0;
+  puVar7 = (ushort *)local_10->field_00D4;
   local_10->field_009C = 0xffffffff;
-  if ((iVar8 != 0) && (iVar11 = local_10->field_00D0, iVar11 != 0)) {
-    if (iVar11 + -1 < local_10->field_00C8) {
+  if ((puVar7 != nullptr) && (iVar8 = local_10->field_00D0, iVar8 != 0)) {
+    if (iVar8 + -1 < local_10->field_00C8) {
       local_10->field_00C8 = 0;
     }
-    iVar14 = 1;
-    local_10->field_00F8 = iVar11 * local_10->field_00CC + 10;
-    puVar5 = (byte *)(iVar8 + 0x28);
-    local_EAX_159 = FUN_006b4fe0(iVar8);
+    iVar13 = 1;
+    local_10->field_00F8 = iVar8 * local_10->field_00CC + 10;
+    puVar12 = puVar7 + 0x14;
+    local_EAX_159 = FUN_006b4fe0(puVar7);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pRVar4 = (RecoveredSourceFamily_dibcopy *)
              FUN_006b50c0(this_00->field_00F4,this_00->field_00F8,
-                          (uint)*(ushort *)(this_00->field_00D4 + 0xe),local_EAX_159,puVar5,iVar14);
+                          (uint)*(ushort *)(this_00->field_00D4 + 0xe),local_EAX_159,
+                          (undefined4 *)puVar12,iVar13);
     this_00->field_00FC = pRVar4;
-    uVar12 = pRVar4[1].field_0004;
-    if (uVar12 == 0) {
-      uVar12 = ((uint)pRVar4->field_000E * pRVar4->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+    uVar10 = pRVar4[1].field_0004;
+    if (uVar10 == 0) {
+      uVar10 = ((uint)pRVar4->field_000E * pRVar4->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
                pRVar4->field_0008;
     }
     local_5 = this_00->field_00D8;
     puVar5 = (byte *)FUN_006b4fa0((int *)pRVar4);
     iVar8 = 1;
-    for (uVar9 = uVar12 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+    for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar5 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));
       puVar5 = (byte *)(puVar5 + 1);
     }
-    for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+    for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
       *(undefined1 *)puVar5 = local_5;
       puVar5 = (byte *)((int)puVar5 + 1);
     }
-    puVar5 = (byte *)(this_00->field_00D4 + 0x28);
-    uVar4 = FUN_006b4fe0(this_00->field_00D4);
+    puVar7 = (ushort *)this_00->field_00D4 + 0x14;
+    uVar4 = FUN_006b4fe0((ushort *)this_00->field_00D4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     piVar6 = (int *)FUN_006b50c0(this_00->field_00F4,this_00->field_00F8,
-                                 (uint)*(ushort *)(this_00->field_00D4 + 0xe),uVar4,puVar5,iVar8);
+                                 (uint)*(ushort *)(this_00->field_00D4 + 0xe),uVar4,
+                                 (undefined4 *)puVar7,iVar8);
     this_00->field_0100 = piVar6;
-    uVar12 = piVar6[5];
-    if (uVar12 == 0) {
-      uVar12 = ((uint)STField<ushort>(piVar6,0xe) * piVar6[1] + 0x1f >> 3 & 0x1ffffffc) *
+    uVar10 = piVar6[5];
+    if (uVar10 == 0) {
+      uVar10 = ((uint)STField<ushort>(piVar6,0xe) * piVar6[1] + 0x1f >> 3 & 0x1ffffffc) *
                piVar6[2];
     }
     local_5 = this_00->field_00E0;
     puVar5 = (byte *)FUN_006b4fa0(piVar6);
     iVar8 = 1;
-    for (uVar9 = uVar12 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+    for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar5 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));
       puVar5 = (byte *)(puVar5 + 1);
     }
-    for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+    for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
       *(undefined1 *)puVar5 = local_5;
       puVar5 = (byte *)((int)puVar5 + 1);
     }
-    puVar5 = (byte *)(this_00->field_00D4 + 0x28);
-    local_EAX_427 = FUN_006b4fe0(this_00->field_00D4);
+    puVar7 = (ushort *)this_00->field_00D4 + 0x14;
+    local_EAX_427 = FUN_006b4fe0((ushort *)this_00->field_00D4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     puVar7 = (ushort *)
              FUN_006b50c0(this_00->field_00F4 + -10,this_00->field_00CC,
-                          (uint)*(ushort *)(this_00->field_00D4 + 0xe),local_EAX_427,puVar5,iVar8);
+                          (uint)*(ushort *)(this_00->field_00D4 + 0xe),local_EAX_427,
+                          (undefined4 *)puVar7,iVar8);
     this_00->field_0104 = puVar7;
-    uVar12 = *(uint *)(puVar7 + 10);
-    if (uVar12 == 0) {
-      uVar12 = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+    uVar10 = *(uint *)(puVar7 + 10);
+    if (uVar10 == 0) {
+      uVar10 = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                *(int *)(puVar7 + 4);
     }
     local_5 = this_00->field_00D8;
     puVar5 = (byte *)FUN_006b4fa0((int *)puVar7);
-    for (uVar9 = uVar12 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+    for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar5 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));
       puVar5 = (byte *)(puVar5 + 1);
     }
-    for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+    for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
       *(undefined1 *)puVar5 = local_5;
       puVar5 = (byte *)((int)puVar5 + 1);
     }

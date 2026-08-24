@@ -6,7 +6,7 @@ FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
             undefined *param_7,undefined4 param_8)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   ushort uVar2;
   ushort uVar3;
   bool bVar4;
@@ -17,7 +17,7 @@ FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
   uint uVar7;
   byte bVar8;
   undefined1 local_14 [8];
-  undefined4 local_c;
+  uint local_c;
   ushort local_8;
 
   thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(int)local_14);

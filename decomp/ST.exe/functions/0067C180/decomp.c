@@ -17,14 +17,14 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
 {
   STFishC *pSVar1;
   AiPlrClassTy *this_00;
-  undefined2 uVar3;
+  ushort uVar3;
   int local_EAX_93;
   DArrayTy *array;
   short *psVar4;
   int *piVar5;
   int iVar6;
   IMAGE_DOS_HEADER *pIVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   dword dVar9;
   int iVar4;
   DArrayTy *pDVar10;

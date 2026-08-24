@@ -18,7 +18,7 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
   short sVar2;
   short sVar3;
   STWorldObject *pSVar4;
-  undefined1 uVar6;
+  byte uVar6;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STWorldObject *in_EAX;
   int iVar7;

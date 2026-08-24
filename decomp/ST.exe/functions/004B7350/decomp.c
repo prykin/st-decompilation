@@ -11,8 +11,7 @@
 undefined4 FUN_004b7350(uint param_1,Global_sub_004B7350_param_2Enum param_2)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0xffffffff;
   switch(param_2) {
   case CASE_32:

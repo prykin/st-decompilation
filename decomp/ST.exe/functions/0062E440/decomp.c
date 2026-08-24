@@ -1,19 +1,23 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STPrototypeRepairApplier] Propagated parameter 5.
+   Evidence: incoming stack slot is read as a uint before its address is passed as a distinct output
+   lifetime */
+
 undefined4
-FUN_0062e440(int param_1,ushort param_2,ushort param_3,ushort param_4,int param_5,int param_6)
+FUN_0062e440(int param_1,ushort param_2,ushort param_3,ushort param_4,int param_5,uint param_6)
 
 {
   uint uVar1;
-  undefined4 uVar2;
+  uint uVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STManRub3C *in_ECX;
 
   /* ST_CALLSITE[0062E463]: CALL 0x00403279; direct=00403279 STManRub3C::AddNewDock */
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   uVar1 = STManRub3C::AddNewDock
-                    (in_ECX,param_1,param_2,param_3,param_4,param_5,(ushort)param_6,&param_6);
+                    (in_ECX,param_1,param_2,param_3,param_4,param_5,(ushort)param_6,(int *)&param_6);
   uVar2 = 1;
   if ((int)uVar1 < 0) {
     uVar2 = 0xffffffff;

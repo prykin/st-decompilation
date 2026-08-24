@@ -1,8 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4
-FUN_00413170(int param_1,int param_2,int param_3,int param_4,undefined4 *param_5,int param_6)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=1, ignored=0, unknown=0 */
+
+int FUN_00413170(int param_1,int param_2,int param_3,int param_4,undefined4 *param_5,int param_6)
 
 {
   char *pcVar1;
@@ -120,7 +124,7 @@ cf_break_loop_004134EC:
 LAB_0041350c:
       do {
         if (pcVar9[3] < '\0') {
-          return 0xfffffffc;
+          return -4;
         }
         iVar4 = pcVar9[2] + param_3;
         if ((iVar4 < 0) || (DAT_007f4d34 <= iVar4)) goto LAB_004135d8;

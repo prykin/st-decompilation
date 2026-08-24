@@ -4,14 +4,18 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as PlayPanelTy.
    Evidence: this_call_owners=[PlayPanelTy]; agreed_this_calls=2; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall PlayPanelTy::sub_0053A540(PlayPanelTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   byte bVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int *piVar6;
   bool bVar7;

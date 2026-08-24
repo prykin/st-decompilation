@@ -36,7 +36,7 @@ STBoatC::sub_0048DFD0
   short sVar13;
   short *psVar14;
   int iVar15;
-  undefined4 *puVar16;
+  uint *puVar16;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined2 in_stack_0000000e;
   int local_3fc [194];

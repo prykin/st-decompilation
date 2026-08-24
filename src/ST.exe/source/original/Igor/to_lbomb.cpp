@@ -71,7 +71,7 @@ int __thiscall st::fn_005859A0(STLBombC *this,STMessage *message)
       local_18 = (byte *)st::fn_004018D4((STT3DSprC *)&this_00->field_01D5,&local_8);
       /* ST_CALLSITE[00585D5A]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
       local_14 = (byte *)st::fn_0040119A((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = st::pointer_boundary_cast<AnonShape_005859A0_2F00015D *>(st::fn_006AAC70(local_10 + 0x67 + local_8));
+      local_c = static_cast<AnonShape_005859A0_2F00015D *>(st::fn_006AAC70(local_10 + 0x67 + local_8));
       if (((local_18 != nullptr) && (local_14 != nullptr)) &&
          (local_c != nullptr)) {
         puVar8 = (byte *)&this_00->field_0x258;
@@ -151,7 +151,7 @@ int __thiscall st::fn_005859A0(STLBombC *this,STMessage *message)
           st::fn_00401730(this_00,this_00->field_026C,this_00->field_0270,0x463);
         }
         else if (uVar5 == 2) {
-          local_20 = st::pointer_boundary_cast<AnonShape_005859A0_2434EC3C *>((message->arg0).ptr);
+          local_20 = static_cast<AnonShape_005859A0_2434EC3C *>((message->arg0).ptr);
           pAVar7 = local_20;
           puVar8 = (byte *)&this_00->field_0x258;
           memmove(puVar8, pAVar7, 0x32); /* compiler REP MOVS byte copy */

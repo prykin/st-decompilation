@@ -51,9 +51,9 @@ void __thiscall st::fn_004F0C80(BldObjPanelTy *this)
   int iVar3;
   Global_sub_00523410_param_1Enum *pGVar4;
   byte *pbVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   byte *puVar7;
-  undefined4 uVar8;
+  uint uVar8;
   int local_14;
   undefined4 *local_c;
   int local_8;

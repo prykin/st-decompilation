@@ -17,8 +17,8 @@ InterSystemC * __thiscall InterSystemC::InterSystemC(InterSystemC *this,AppClass
 {
   SystemClassTy::SystemClassTy((SystemClassTy *)this,param_1,5);
   this->vtable = &InterSystemCVTable;
-  this->field_0030 = 0;
-  this->field_002C = 0;
+  this->field_0030 = nullptr;
+  this->field_002C = nullptr;
   this->field_0028 = nullptr;
   return this;
 }

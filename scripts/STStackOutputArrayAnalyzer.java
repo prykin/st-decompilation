@@ -510,7 +510,7 @@ public class STStackOutputArrayAnalyzer extends GhidraScript {
     }
     private static String text(String value) { return value == null ? "" : value; }
     private static String clean(String value) {
-        return text(value).replace('\t', ' ').replace('\r', ' ').replace('\n', ' ');
+        return text(value).replace('\t', ' ').replace('\r', ' ').replace('\n', ' ').strip();
     }
     private static String bit(boolean value) { return value ? "1" : "0"; }
 

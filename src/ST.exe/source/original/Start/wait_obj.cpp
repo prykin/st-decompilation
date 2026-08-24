@@ -75,7 +75,7 @@ void __thiscall st::fn_005E6770(WaitTy *this,undefined4 param_1,undefined4 param
   ushort *puVar6;
   int uVar7;
   ushort *puVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   HoloTy *pHVar6;
   uint uVar10;
   uint local_EAX_1420;
@@ -160,7 +160,7 @@ void __thiscall st::fn_005E6770(WaitTy *this,undefined4 param_1,undefined4 param
     st::fn_004043F4(this_01,'\x01');
     iVar14 = 1;
     puVar4 = this_01->field_005D + 0x14;
-    uVar7 = st::fn_006B4FE0((int)this_01->field_005D);
+    uVar7 = st::fn_006B4FE0(this_01->field_005D);
     puVar4 = (ushort *)
              st::fn_006B50C0(0x1e4,399,(uint)this_01->field_005D[7],uVar7,(undefined4 *)puVar4,iVar14);
     this_01->field_1AEC = puVar4;
@@ -695,7 +695,7 @@ void __thiscall st::fn_005E79B0(WaitTy *this,char param_1)
                  400,0x62,(undefined4 *)(pWVar2->array_00BC[0xc].field_01DB + 0x140));
     }
     uVar7 = 0;
-    pcVar6 = g_startSystem_0081176C->field_0030;
+    pcVar6 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     uVar5 = 0xffffffff;
     uVar4 = 0xfffffffe;
     resourceString = st::fn_006B0140(0x26ae,g_hINSTANCE_00807618);
@@ -734,7 +734,7 @@ void __thiscall st::fn_005E7C00(WaitTy *this,uint *param_1,int param_2)
   int iVar6;
   DArrayTy *pDVar7;
   DArrayTy *pDVar8;
-  undefined4 *puVar9;
+  uint *puVar9;
   char *pcVar10;
   int iVar11;
   uint uVar12;
@@ -765,11 +765,12 @@ void __thiscall st::fn_005E7C00(WaitTy *this,uint *param_1,int param_2)
                      ((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC)->field_0004,
                      (0x16 - pWVar5->field_1AF4) * 0x13,0);
       }
-      pDVar7 = (DArrayTy *)st::fn_00712F80(g_startSystem_0081176C->field_0030,param_1);
+      pDVar7 = (DArrayTy *)
+               st::fn_00712F80((ccFntTy *)g_startSystem_0081176C->field_0030,param_1);
       pDVar8 = local_10;
       if (pDVar7 != nullptr) {
         pDVar8 = (DArrayTy *)
-                 st::fn_007121F0(g_startSystem_0081176C->field_0030,(uint *)pDVar7,
+                 st::fn_007121F0((ccFntTy *)g_startSystem_0081176C->field_0030,(uint *)pDVar7,
                                    st::mutable_c_string(" ,.;:!?/\\()[]{}"),0x1e4,0,0xffffffff,1);
         local_10 = pDVar8;
         st::fn_006B5570(pDVar7);
@@ -833,15 +834,15 @@ LAB_005e7d14:
         do {
           st::fn_006B4170((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC,0,0,uVar12,
                        ((RecoveredSourceFamily_dibcopy *)pWVar5->field_1AEC)->field_0004,0x13,0);
-          st::fn_00710A90(g_startSystem_0081176C->field_0030,(int)pWVar5->field_1AEC,0,2,uVar12,
-                           *(int *)(pWVar5->field_1AEC + 2) + -4,0x13);
+          st::fn_00710A90((ccFntTy *)g_startSystem_0081176C->field_0030,(int)pWVar5->field_1AEC,0,2
+                           ,uVar12,*(int *)(pWVar5->field_1AEC + 2) + -4,0x13);
           if (iVar6 < (int)pWVar5->field_1AF0->elementSize) {
             pcVar10 = *(char **)(pWVar5->field_1AF0->growCapacity + iVar6 * 4);
           }
           else {
             pcVar10 = nullptr;
           }
-          st::fn_007119C0(g_startSystem_0081176C->field_0030,pcVar10,0,-1,1);
+          st::fn_007119C0((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar10,0,-1,1);
           st::fn_006B35D0((int *)g_ddxContext_008075A8,*local_8);
           iVar6 = iVar6 + 1;
           local_8 = local_8 + 1;
@@ -871,7 +872,7 @@ LAB_005e7d14:
 void __thiscall st::fn_005E7FE0(WaitTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   RecoveredSourceFamily_dibcopy *pRVar2;
   cMf32 *pcVar4;
   int local_EAX_45;
@@ -936,7 +937,7 @@ void __thiscall st::fn_005E7FE0(WaitTy *this)
     st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s%s"),&CHAR_00h_00807680,st_global_0079C244);
     local_1c = this_00->field_1A93;
     local_1b = this_00->field_1A8F;
-    iVar5 = st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,st::function_address_boundary_cast<undefined *>(st::fn_005DB030),st::machine_word_boundary_cast<undefined4>(&local_1c),0);
+    iVar5 = st::fn_00725910(&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,st::function_address_boundary_cast<undefined *>(st::fn_005DB030),st::machine_word_boundary_cast<undefined4>(&local_1c),0);
     if (iVar5 == -0x70) {
       local_a4.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_a4;
@@ -1019,7 +1020,7 @@ LAB_005e829d:
 void __thiscall st::fn_005E84D0(WaitTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   byte **slotStorage;
   char cVar2;
   byte bVar3;
@@ -1044,12 +1045,12 @@ void __thiscall st::fn_005E84D0(WaitTy *this)
   uint *puVar17;
   uint uVar18;
   AnonShape_005E84D0_1273B60D *pAVar19;
-  undefined4 *puVar20;
+  uint *puVar20;
   STMessage *pSVar21;
   char *pcVar22;
-  undefined4 *puVar23;
+  uint *puVar23;
   UINT UVar24;
-  undefined4 uVar25;
+  uint uVar25;
   char local_114 [2];
   undefined1 local_112;
   InternalExceptionFrame local_ec;
@@ -1214,7 +1215,7 @@ LAB_005e9233:
                     local_5b = pAVar6->field_0003;
                     local_57 = 0;
                     local_EAX_2136 =
-                         st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,st::function_address_boundary_cast<undefined *>(st::fn_005DB030),st::machine_word_boundary_cast<undefined4>(&local_5c),
+                         st::fn_00725910(&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,st::function_address_boundary_cast<undefined *>(st::fn_005DB030),st::machine_word_boundary_cast<undefined4>(&local_5c),
                                       0);
                     if (local_EAX_2136 == -0x70) {
                       local_5 = '\x01';
@@ -1228,7 +1229,7 @@ LAB_005e9233:
                     local_68 = *puVar1;
                     local_67 = pAVar6->field_0003;
                     local_63 = *(undefined4 *)&pAVar6->field_0x7;
-                    iVar8 = st::fn_00725910((HANDLE)&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,st::function_address_boundary_cast<undefined *>(st::fn_005DB030),
+                    iVar8 = st::fn_00725910(&DAT_0080f33a,st::mutable_c_string("*.DKD"),0,st::function_address_boundary_cast<undefined *>(st::fn_005DB030),
                                          st::machine_word_boundary_cast<undefined4>(&local_68),0);
                     if (iVar8 == -0x70) {
                       local_5 = '\x01';
@@ -1310,7 +1311,7 @@ LAB_005e8ee0:
                 /* ST_CALLSITE[005E8EEC]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 st::fn_00403FA8(*(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6),UVar24,
-                                   '\0',st::pointer_boundary_cast<undefined4 *>(piVar11),nullptr,nullptr,0,0);
+                                   '\0',reinterpret_cast<undefined4 *>(piVar11),nullptr,nullptr,0,0);
               }
               break;
             case 0x1b:
@@ -1434,7 +1435,7 @@ LAB_005e91f7:
            (3000 < this_01->field_0061 - this_01->field_1A7B)) && (this_01->field_1A7F != 0)) &&
          (this_01->field_1A83 != nullptr)) {
         uVar16 = st::machine_word_boundary_cast<uint>(this_01->field_1A7F * 4 + 4);
-        local_20 = st::pointer_boundary_cast<uint *>(st::fn_006AAC70(uVar16));
+        local_20 = static_cast<uint *>(st::fn_006AAC70(uVar16));
         local_18 = this_01->field_1A83;
         *local_20 = this_01->field_1A7F;
         puVar17 = local_20 + 1;
@@ -2100,7 +2101,7 @@ int __thiscall st::fn_005EA680(WaitTy *this,STMessage *message)
   MMsgTy *this_00;
   StartSystemTy *this_01;
   DArrayTy *pDVar3;
-  undefined4 uVar4;
+  uint uVar4;
   WaitTy *this_02;
   bool bVar6;
   DWORD DVar7;

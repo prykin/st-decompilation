@@ -12,15 +12,15 @@
 void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
 
 {
-  undefined1 *puVar1;
-  undefined4 uVar2;
+  byte *puVar1;
+  uint uVar2;
   PrividerTy *this_00;
   int iVar4;
   int iVar3;
   int iVar5;
   uint *puVar6;
-  ccFntTy **ppcVar7;
-  ccFntTy *local_dd0 [8];
+  HDC__ **ppHVar7;
+  HDC__ *local_dd0 [8];
   DArrayTy *local_db0;
   undefined4 local_d84;
   undefined4 local_d80;
@@ -91,10 +91,10 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
     *puVar6 = 0;
     puVar6 = puVar6 + 1;
   }
-  ppcVar7 = local_dd0;
+  ppHVar7 = local_dd0;
   for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *ppcVar7 = nullptr;
-    ppcVar7 = ppcVar7 + 1;
+    *ppHVar7 = nullptr;
+    ppHVar7 = ppHVar7 + 1;
   }
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
@@ -128,14 +128,14 @@ LAB_005bbb22:
     if (local_5 == '\0') {
       local_d84 = local_10->field_0008;
       local_dd0[0] = nullptr;
-      local_dd0[1] = (ccFntTy *)0x9;
+      local_dd0[1] = (HDC__ *)0x9;
       local_dd0[2] = g_startSystem_0081176C->field_0030;
       local_db0 = local_10->field_1C92;
-      local_dd0[3] = (ccFntTy *)0x7d;
-      local_dd0[4] = (ccFntTy *)0x1af;
-      local_dd0[5] = (ccFntTy *)0x226;
-      local_dd0[6] = (ccFntTy *)0x14;
-      local_dd0[7] = (ccFntTy *)0x104;
+      local_dd0[3] = (HDC__ *)0x7d;
+      local_dd0[4] = (HDC__ *)0x1af;
+      local_dd0[5] = (HDC__ *)0x226;
+      local_dd0[6] = (HDC__ *)0x14;
+      local_dd0[7] = (HDC__ *)0x104;
       local_d80 = 2;
       local_d7c = 0x631f;
       /* ST_CALLSITE[005BBDD6]: CALL dword ptr [EAX + 0x8] */

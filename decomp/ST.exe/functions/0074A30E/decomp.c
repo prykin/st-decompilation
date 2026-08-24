@@ -10,8 +10,7 @@
 undefined4 __thiscall FUN_0074a30e(int *param_1,int param_2)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   if ((param_2 == 0) || (param_1[0x19] == 0)) {
     uVar1 = 1;
   }

@@ -17,7 +17,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
   STMessageId SVar3;
   STLightC *this_00;
   int iVar5;
-  undefined4 uVar5;
+  uint uVar5;
   int iVar6;
   int iVar7;
   byte *puVar8;

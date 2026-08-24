@@ -22,7 +22,7 @@ st::fn_00418030
   uint uVar4;
   STWorldObject *pSVar5;
   ushort *puVar6;
-  undefined4 uVar7;
+  uint uVar7;
   short *psVar8;
   uint uVar5;
   STBoatC *pSVar9;
@@ -91,7 +91,7 @@ st::fn_00418030
     }
     if (pSVar5 == nullptr) {
       *(undefined4 *)&local_58->field_0x9b = 2;
-      puVar6 = st::pointer_boundary_cast<ushort *>(st::fn_006AAC10(0x10));
+      puVar6 = static_cast<ushort *>(st::fn_006AAC10(0x10));
       this_00->field_0097 = puVar6;
       puVar6[4] = param_1;
       this_00->field_0097[5] = param_2;
@@ -103,7 +103,7 @@ st::fn_00418030
     }
   }
   local_44 = (short *)0x3;
-  local_14 = st::pointer_boundary_cast<short *>(st::fn_006AAC10(0x2ae));
+  local_14 = static_cast<short *>(st::fn_006AAC10(0x2ae));
   sVar3 = this_00->field_0047;
   local_54 = local_14 + 0xab;
   iVar15 = 2;

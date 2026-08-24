@@ -17,6 +17,7 @@ int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int
   uint uVar5;
   uint uVar6;
   int iVar18;
+  int iVar2_mg3;
   int iVar7;
   uint uVar8;
   int iVar9;
@@ -27,7 +28,7 @@ int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int
   uint uVar14;
   RuntimeRecord_007F4D3C_0014 *pRVar15;
   uint uVar16;
-  undefined4 *puVar17;
+  uint *puVar17;
   int iVar19;
   int local_12c;
   int local_114;
@@ -56,9 +57,9 @@ int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int
   int local_44 [8];
   undefined4 *local_24;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
@@ -441,9 +442,10 @@ LAB_00410872:
     if ((((local_68 < 0) || (iVar3 <= local_68)) || (local_6c < 0)) ||
        ((DAT_007f4d30 <= local_6c ||
         (PTR_007f4cf0[local_78 * local_48 + local_68 + iVar3 * local_6c] != 0)))) {
-      iVar2 = FUN_0040f270(&local_68,&local_6c,(int *)&local_78,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
-                           DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
-      if (iVar2 != 0) goto LAB_004109fd;
+      iVar2_mg3 = FUN_0040f270(&local_68,&local_6c,(int *)&local_78,DAT_007f4d0c >> 2,
+                               DAT_007f4d10 >> 2,DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,
+                               param_3 >> 2);
+      if (iVar2_mg3 != 0) goto LAB_004109fd;
       uVar14 = local_78 * local_48 + local_68 + DAT_007f4d2c * local_6c ^ 7;
       STBitSet(g_bitset_007F4CFC, uVar14);
       STObjectAtByteOffset(g_runtimeRecords_007F4D3C, iVar19).field_0000 = local_68;

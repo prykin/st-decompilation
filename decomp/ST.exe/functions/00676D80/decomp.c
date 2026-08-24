@@ -22,7 +22,7 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar5;
   dword dVar6;
   dword dVar7;

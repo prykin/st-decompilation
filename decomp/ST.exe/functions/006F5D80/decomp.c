@@ -7,7 +7,7 @@ void FUN_006f5d80(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
                  byte *param_6,int param_7,int param_8,int param_9,int param_10,int param_11)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte bVar2;
   uint uVar3;
   byte bVar4;

@@ -16,7 +16,7 @@ int __fastcall FUN_00483300(int *param_1,undefined4 param_2)
   int iVar2;
   int iVar3;
   uint uVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   uint uVar6;
@@ -31,11 +31,10 @@ int __fastcall FUN_00483300(int *param_1,undefined4 param_2)
   int local_20;
   undefined4 local_1c;
   int local_18;
-  int local_14;
+  uint local_14;
   uint local_10;
   int *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   if (STField<int>(param_1,0x7e2) == 0) {
     if (STField<int>(param_1,0x7a2) != 0) goto LAB_00483342;
   }
@@ -46,7 +45,7 @@ LAB_00483342:
                      (g_allPlayers_007FA174,STField<char>(param_1,0x487),
                       STField<ushort>(param_1,0x48b),
                       STField<STAllPlayersC_GetObjPtr_param_3Enum>(param_1,0x483));
-    thunk_FUN_00416270(this,&local_10,&local_14,(short *)&local_8);
+    thunk_FUN_00416270(this,&local_10,(short *)&local_14,(short *)&local_8);
     iVar2 = FUN_006acf0d((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
                          (int)STField<short>(param_1,0x45),(int)(short)local_10,
                          (int)(short)local_14,(int)(short)local_8);

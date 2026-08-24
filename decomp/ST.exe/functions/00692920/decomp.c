@@ -14,14 +14,14 @@ AnonShape_006B4B20_3D4F4412 *
 FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,int param_5)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   AnonShape_006B4B20_3D4F4412 *pAVar2;
-  undefined1 *puVar3;
+  byte *puVar3;
   uint uVar4;
-  undefined1 *puVar5;
-  undefined4 *puVar6;
-  undefined4 *puVar7;
-  undefined4 *puVar8;
+  byte *puVar5;
+  uint *puVar6;
+  uint *puVar7;
+  uint *puVar8;
   ushort *local_10;
   int local_c;
   int local_8;

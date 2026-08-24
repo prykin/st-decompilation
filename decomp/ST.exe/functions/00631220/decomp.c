@@ -11,7 +11,7 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
 {
   STManRuinC_field_0038DArray *pSVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   uint uVar4;
   byte *puVar6;
   byte *pbVar7;

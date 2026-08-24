@@ -7,7 +7,7 @@
 DWORD FUN_006c3630(LPDWORD lpThreadId)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int *piVar2;
   LPDWORD lpParameter;
   DWORD DVar3;

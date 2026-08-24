@@ -4,8 +4,8 @@
 void FUN_00695140(undefined4 *param_1,undefined4 *param_2)
 
 {
-  undefined4 uVar1;
-  undefined4 uVar2;
+  uint uVar1;
+  uint uVar2;
   byte *puVar4;
 
   uVar1 = param_2[6];

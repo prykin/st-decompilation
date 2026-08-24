@@ -4,7 +4,7 @@
 void __fastcall FUN_005c0230(MReportTy *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int *piVar2;
   byte bVar3;
   int iVar4;

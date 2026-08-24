@@ -14,7 +14,7 @@ _EnumDest(byte *param_1,char param_2,short param_3,short param_4,short param_5,s
   byte bVar1;
   STFishC *this;
   int iVar3;
-  undefined4 *puVar3;
+  uint *puVar3;
   byte *pbVar4;
   int iVar5;
   int iVar6;

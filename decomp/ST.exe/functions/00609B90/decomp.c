@@ -14,7 +14,7 @@ undefined4 __thiscall STFieldC::InitSprSistem(STFieldC *this,int param_1)
   int errorCode;
   STFieldC_field_0234Element *element_0234;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   uint uVar7;
   InternalExceptionFrame local_4c;
   STFieldC *local_8;

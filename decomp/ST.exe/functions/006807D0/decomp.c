@@ -9,8 +9,8 @@ void __cdecl FUN_006807d0(undefined4 *param_1)
 
 {
   char *pcVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
+  uint uVar2;
+  uint uVar3;
   CHAR local_404 [1024];
 
   thunk_FUN_00674ce0();

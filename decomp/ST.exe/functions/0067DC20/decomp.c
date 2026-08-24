@@ -20,7 +20,7 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   uint *puVar4;
   int iVar7;
   uint uVar8;
-  undefined1 *_Source;
+  byte *_Source;
   char *pcVar11;
   undefined1 local_2ec [516];
   char local_e8 [64];

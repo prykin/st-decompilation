@@ -125,7 +125,6 @@ struct AnonNested_007219A0_0138_7CAF6BF8;
 struct AnonNested_007233F0_0064_6FCF4A7B;
 struct AnonNested_0074C571_00CC_C64502DE;
 struct AnonNested_0074C8A9_0090_6FCAB5DF;
-struct AnonNested_00755D40_000C_A3EEF781;
 struct AnonNested_00757360_0008_E15F2681;
 struct AnonNested_00757530_000C_743CE253;
 struct AnonNested_007575B0_000C_8FAD8207;
@@ -180,7 +179,6 @@ struct AnonNested_AnonShape_007543F0_E9DD5DAA_000C_D54F7079;
 struct AnonNested_AnonShape_00754B80_75BFDB7A_0080_4681841F;
 struct AnonNested_AnonShape_00754FD0_6B521B56_0008_2A163446;
 struct AnonNested_AnonShape_00754FD0_6B521B56_000C_1591C729;
-struct AnonNested_AnonShape_00755970_4FB144E0_000C_11C2AAE5;
 struct AnonNested_AnonShape_00755E10_BD685653_0008_8628F4E0;
 struct AnonNested_AnonShape_00757D90_5427B306_0010_D8C59A06;
 struct AnonNested_AnonShape_00759190_45B6ED67_01A6_2E084C16;
@@ -900,10 +898,7 @@ struct AnonShape_00754FD0_6B521B56;
 struct AnonShape_007550C0_25940DF4;
 struct AnonShape_00755180_CB9F7747;
 struct AnonShape_007553F0_ACB112C2;
-struct AnonShape_00755560_6DE97093;
-struct AnonShape_00755970_4FB144E0;
 struct AnonShape_00755BC0_D59C64DD;
-struct AnonShape_00755D40_9BC6D2DA;
 struct AnonShape_00755E10_BD685653;
 struct AnonShape_00756480_42788A49;
 struct AnonShape_00756800_BE569F2C;
@@ -955,7 +950,6 @@ struct AnonShape_0075E000_A9FEDC0C;
 struct AnonShape_0075E750_D250320C;
 struct AnonShape_0075E7D0_08EF6D02;
 struct AnonShape_0075E890_C23EB446;
-struct AnonShape_0075EB40_977462DD;
 struct AnonShape_0075EC80_53406127;
 struct AnonShape_0075EF30_9859F226;
 struct AnonShape_0075F590_570A7014;
@@ -1168,6 +1162,21 @@ struct PrividerTyVTable;
 struct ProdPanelTy;
 struct RadioClassTy;
 struct RadioClassTyVTable;
+struct RecoveredClass_006D5720;
+struct RecoveredClass_006D5CD0;
+struct RecoveredClass_006D70B0;
+struct RecoveredClass_006E5FB0;
+struct RecoveredClass_0074756B;
+struct RecoveredClass_00747874;
+struct RecoveredClass_00748A83;
+struct RecoveredClass_00749A93;
+struct RecoveredClass_0074A95F;
+struct RecoveredClass_0074C38F;
+struct RecoveredClass_0074C658;
+struct RecoveredClass_0074CDC5;
+struct RecoveredClass_0074CFC0;
+struct RecoveredClass_0074E7B1;
+struct RecoveredClass_0074EEF3;
 struct RecoveredRecord_AiEventClassTy_0064F1B0;
 struct RecoveredRecord_AiEventClassTy_0064F500;
 struct RecoveredRecord_AiEventClassTy_0064F780;
@@ -1194,6 +1203,7 @@ struct RecoveredRecord_CGenerate_0069BDC0;
 struct RecoveredRecord_CPanelTy_00501D00;
 struct RecoveredRecord_CursorClassTy_00544100;
 struct RecoveredRecord_DumpClassC_00495EC0;
+struct RecoveredRecord_FSGSTy_006C7D20;
 struct RecoveredRecord_MMMObjTy_005B6560;
 struct RecoveredRecord_MMObjTy_005B5240;
 struct RecoveredRecord_MReportTy_005BD4B0;
@@ -8430,7 +8440,7 @@ struct AiEventClassTy {
     int _CreateDest(short param_1, short param_2, short param_3, short param_4, short param_5, char *param_6, char *param_7, undefined4 param_8);
     int _CreateMine(ushort param_1, short param_2, int param_3, int param_4, undefined4 param_5, ushort param_6, char *param_7, undefined4 param_8, undefined4 param_9);
     int _CreateRCCont(ushort param_1, short param_2, int param_3, int param_4, undefined4 param_5, undefined4 param_6, char *param_7, int param_8);
-    int __CreateObjPl(uint param_1, short param_2, short *param_3, short *param_4, short *param_5, uint param_6, uint param_7, char *param_8, undefined4 param_9, undefined4 param_10, int param_11, int param_12);
+    int __CreateObjPl(uint param_1, short param_2, int param_3, int param_4, int param_5, uint param_6, uint param_7, char *param_8, undefined4 param_9, undefined4 param_10, int param_11, int param_12);
     int sub_0065BD70(STMessage *message, int param_2);
 };
 
@@ -9982,7 +9992,7 @@ struct GameSystemC {
     undefined4 CreateSystemObjects();
     undefined4 vfunc_1C();
     undefined4 GetMessage(int param_1);
-    void sub_00577690();
+    int sub_00577690();
 };
 
 struct HelpPanelTy {
@@ -10355,10 +10365,10 @@ struct InterSystemC {
     undefined4 field_0014; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     byte _unknown_0018[8];
     undefined4 field_0020; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=none; name_confidence=none; consistent_typed_class_pointer_access; typed_cross_class_recovery=1
-    ccFntTy *field_0024; // [STClassLayoutApplier] reads=8, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9
-    ccFntTy *field_0028; // [STClassLayoutApplier] reads=12, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=14
-    undefined4 field_002C; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
-    undefined4 field_0030; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=6
+    HDC__ *field_0024; // [STClassLayoutApplier] reads=8, writes=4; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=9; type_evidence=pointer:/WinDef.h/HDC__ <= 00542538 generic pointer-return assignment in InterSystemC::CreateInterfObjects
+    HDC__ *field_0028; // [STClassLayoutApplier] reads=12, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=14; type_evidence=pointer:/WinDef.h/HDC__ <= 00542557 generic pointer-return assignment in InterSystemC::CreateInterfObjects
+    HDC__ *field_002C; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/WinDef.h/HDC__ <= 00542573 generic pointer-return assignment in InterSystemC::CreateInterfObjects
+    HDC__ *field_0030; // [STClassLayoutApplier] reads=4, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=6; type_evidence=pointer:/WinDef.h/HDC__ <= 00542590 generic pointer-return assignment in InterSystemC::CreateInterfObjects
     undefined4 DoneSystem();
     undefined4 vfunc_0C(undefined2 arg_1, undefined2 arg_2, undefined2 arg_3, undefined2 arg_4);
     undefined4 vfunc_10(undefined2 arg_1, undefined2 arg_2);
@@ -11073,7 +11083,7 @@ struct OpticClassC {
     int GetMessage(STMessage *message);
     void InitOptic();
     void ReInitOptic(int param_1);
-    undefined4 sub_004AB070(OpticClassC_sub_004AB070_param_1Enum param_1, float param_2, int param_3, int param_4);
+    int sub_004AB070(OpticClassC_sub_004AB070_param_1Enum param_1, float param_2, int param_3, int param_4);
 };
 
 struct IMAGE_BASE_RELOCATION {
@@ -11333,7 +11343,7 @@ struct PopUpTy {
     byte _unknown_001C[56];
     uint field_0054[15]; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; bounded_member_array; count=15; element_size=4; [STClassArrayAnalyzer] fixed member array from machine evidence: counts=[15], bounded_sites=0, exact_loops=2, pointer_dereferences=0, element_candidates=[/uint], exact_pointer_candidates=[]; type_evidence=array:15:/uint <= 0052D053 exact pointer walk count=15, stride=4, cursor_displacement=0 | 0052DC34 exact pointer walk count=15, stride=4, cursor_displacement=60
     ushort *field_0090; // [STClassLayoutApplier] reads=20, writes=3; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=/int|pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PopUpTy_0090|pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy|pointer:/byte|pointer:/int|pointer:/ushort; typed_cross_class_recovery=12; type_evidence=/int <= 0052D200 [this+0x90] passed to ccFntTy::SetSurf parameter param_1 | pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_PopUpTy_0090 <= consistent nested dereferences through [this+0x90] | pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy <= 0052DD20 [this+0x90] passed to FUN_006b4170 parameter param_1; 0052DD20 [this+0x90] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_1 | pointer:/byte <= 0052DD20 [this+0x90] passed to Library::DKW::WGR::FUN_006b55f0 parameter param_5 | pointer:/int <= 0052D690 [this+0x90] passed to FUN_006b4fa0 parameter param_1; 0052DB90 [this+0x90] passed to FUN_006b4fa0 parameter param_1 | pointer:/ushort <= 0052D6D5 dynamic 2-byte dereference of field-derived address in PopUpTy::ChangeNumStr; 0052DC04 dynamic 2-byte dereference of field-derived address in PopUpTy::Clear
-    ccFntTy *field_0094; // [STClassLayoutApplier] reads=20, writes=5; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=13; type_evidence=pointer:/ccFntTy <= 0052D200 [this+0x94] used as receiver of ccFntTy::SetSurf; 0052D200 [this+0x94] used as receiver of ccFntTy::WrStr; 0052D370 [this+0x94] used as receiver of ccFntTy::FormSarr; 0052D370 [this+0x94] used as receiver of ccFntTy::SepColorStrInSarr; 0052D370 [this+0x94] used as receiver of ccFntTy::_TxtToSarr
+    ccFntTy *field_0094; // [STClassLayoutApplier] reads=20, writes=5; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/WinDef.h/HDC__|pointer:/ccFntTy; typed_cross_class_recovery=13; type_evidence=pointer:/WinDef.h/HDC__ <= 0052DD83 generic pointer-return assignment in PopUpTy::GetMessage | pointer:/ccFntTy <= 0052D200 [this+0x94] used as receiver of ccFntTy::SetSurf; 0052D200 [this+0x94] used as receiver of ccFntTy::WrStr; 0052D370 [this+0x94] used as receiver of ccFntTy::FormSarr; 0052D370 [this+0x94] used as receiver of ccFntTy::SepColorStrInSarr; 0052D370 [this+0x94] used as receiver of ccFntTy::_TxtToSarr
     uint *field_0098; // [STClassLayoutApplier] reads=28, writes=7; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/DArrayTy|pointer:/byte; typed_cross_class_recovery=18; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 0052D370 [this+0x98] passed to Library::DKW::TBL::FUN_006b5aa0 parameter param_1; 0052DB90 [this+0x98] passed to FUN_006b5570 parameter param_1; 0052DBF1 generic pointer-return assignment in PopUpTy::Clear; 0052DD20 [this+0x98] passed to FUN_006b5570 parameter param_1; 0052DEA4 generic pointer-return assignment in PopUpTy::GetMessage | pointer:/byte <= 0052E098 dynamic 1-byte dereference of field-derived address in PopUpTy::GetMessage
     undefined1 field_009C; // [STClassLayoutApplier] reads=28, writes=9; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=20
     undefined4 field_009D; // [STClassLayoutApplier] reads=2, writes=4; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=3
@@ -11676,7 +11686,7 @@ struct STAllPlayersC {
     void SaveTmp(int param_1);
     void SelectObjects(STAllPlayersC_SelectObjects_param_1Enum param_1, uint param_2, uint param_3);
     void SelfCheckObjControl();
-    void SetActivePanel(uint *param_1, int param_2, int param_3);
+    void SetActivePanel(uint param_1, int param_2, int param_3);
     void SetActivityToObjs(uint param_1, int param_2, DArrayTy *param_3, uint param_4);
     undefined4 UnRegisterArtefact(uint param_1, AnonShape_00449E60_F2069C78 *param_2);
     undefined4 UnRegisterBlot(uint param_1, AnonShape_0044AA20_1EE9340C *param_2);
@@ -12781,7 +12791,7 @@ struct STBoatC {
     undefined4 vfunc_118(undefined2 arg_1);
     undefined4 vfunc_11C();
     dword slot_120();
-    int Annih(undefined4 *param_1);
+    int Annih(uint param_1);
     int BackAnnih(int *param_1);
     int BackAttack(int *param_1);
     int BackBring(int *param_1);
@@ -12797,7 +12807,7 @@ struct STBoatC {
     int BackUnLoadRC(STBoatC *param_1);
     int BackWaitLoad(int *param_1);
     undefined4 Bring(STBoatC *param_1);
-    int Build(uint param_1);
+    int Build(uint *param_1);
     void CancelLoading(int param_1);
     int Capture(int param_1);
     undefined4 CheckForReplenisher();
@@ -14848,7 +14858,7 @@ struct STManRuinC {
     undefined4 FUN_00631190(uint param_1, short param_2, short param_3, short param_4, int param_5, undefined4 param_6, int param_7);
     uint sub_006308F0(int param_1, int param_2, int param_3, int param_4, undefined4 param_5, int param_6);
     undefined4 sub_00630AC0(uint param_1);
-    void sub_00630BB0(short param_1, short param_2, short param_3, undefined4 param_4, int param_5, undefined4 param_6);
+    void sub_00630BB0(short param_1, short param_2, short param_3, undefined4 param_4, int param_5, int param_6);
     ushort * sub_00630C50(undefined4 param_1, int param_2, int param_3, int param_4, int param_5);
     void sub_00631010();
     void sub_00631220(int *param_1);
@@ -15288,7 +15298,7 @@ struct STPlaySystemC {
     void sub_00550190();
     void sub_005505D0(int param_1, int *param_2);
     void sub_006E57B0(int param_1);
-    undefined4 sub_006E62D0(AnonShape_005EFAE0_B406B78B *param_1, int *param_2);
+    int sub_006E62D0(AnonShape_005EFAE0_B406B78B *param_1, int *param_2);
 };
 
 struct STResourceC {
@@ -16261,8 +16271,8 @@ struct StartSystemTy {
     byte _unknown_0024[4];
     undefined4 field_0028; // [STClassLayoutApplier] reads=7, writes=6; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=9
     ushort *field_002C; // [STClassLayoutApplier] reads=42, writes=9; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=49; type_evidence=pointer:/ushort <= 0059100F generic pointer-return assignment in CampaignTy::InitCampaign; 00595F1D generic pointer-return assignment in FSGSTy::InitFSGS; 005AB579 generic pointer-return assignment in ChooseMapTy::InitChooseMap; 005B2CBC generic pointer-return assignment in MainMenuTy::InitMainMenu; 005B9BE5 generic pointer-return assignment in PrividerTy::InitPrivider; 005C2B9F generic pointer-return assignment in SettMapMTy::sub_005C29B0; 005D7B16 dynamic 2-byte dereference of field-derived address in SIDTy::InitSID; 005D7B8A dynamic 2-byte dereference of field-derived address in SIDTy::InitSID; 005D7BFB dynamic 2-byte dereference of field-derived address in SIDTy::InitSID; 005E6846 generic pointer-return assignment in WaitTy::InitWait
-    ccFntTy *field_0030; // [STClassLayoutApplier] reads=57, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=59
-    ccFntTy *field_0034; // [STClassLayoutApplier] reads=179, writes=6; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0034|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4|pointer:/byte|pointer:/ccFntTy|pointer:/ushort; typed_cross_class_recovery=163; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0034 <= consistent nested dereferences through [this+0x34] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 005DD470 [this+0x34] passed to FUN_00710790 parameter param_1; 005DDC70 [this+0x34] passed to FUN_00710790 parameter param_1; 005DE050 [this+0x34] passed to FUN_00710790 parameter param_1; 005DE270 [this+0x34] passed to FUN_00710790 parameter param_1 | pointer:/byte <= 005AE47F dynamic 1-byte dereference of field-derived address in ChooseMapTy::ShowDescription; 005DC272 dynamic 1-byte dereference of field-derived address in StartSystemTy::LoadMapData; 005DC86D dynamic 1-byte dereference of field-derived address in StartSystemTy::SetObjectives | pointer:/ccFntTy <= 005DC050 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC050 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DD470 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DD470 [this+0x34] used as receiver of ccFntTy::WrStr; 005DD850 [this+0x34] used as receiver of ccFntTy::FormSarr; 005DD850 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DE050 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DE050 [this+0x34] used as receiver of ccFntTy::WrStr | pointer:/ushort <= 005AE474 dynamic 2-byte dereference of field-derived address in ChooseMapTy::ShowDescription; 005DC267 dynamic 2-byte dereference of field-derived address in StartSystemTy::LoadMapData; 005DC862 dynamic 2-byte dereference of field-derived address in StartSystemTy::SetObjectives
+    HDC__ *field_0030; // [STClassLayoutApplier] reads=57, writes=6; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=59; type_evidence=pointer:/WinDef.h/HDC__ <= 005DB718 generic pointer-return assignment in StartSystemTy::LoadGraph
+    ccFntTy *field_0034; // [STClassLayoutApplier] reads=179, writes=6; type_confidence=conflict; name_confidence=none; consistent_this_relative_access; inferred_type_conflict=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0034|pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4|pointer:/WinDef.h/HDC__|pointer:/byte|pointer:/ccFntTy|pointer:/ushort; typed_cross_class_recovery=163; type_evidence=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0034 <= consistent nested dereferences through [this+0x34] | pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 005DD470 [this+0x34] passed to FUN_00710790 parameter param_1; 005DDC70 [this+0x34] passed to FUN_00710790 parameter param_1; 005DE050 [this+0x34] passed to FUN_00710790 parameter param_1; 005DE270 [this+0x34] passed to FUN_00710790 parameter param_1 | pointer:/WinDef.h/HDC__ <= 005DB739 generic pointer-return assignment in StartSystemTy::LoadGraph | pointer:/byte <= 005AE47F dynamic 1-byte dereference of field-derived address in ChooseMapTy::ShowDescription; 005DC272 dynamic 1-byte dereference of field-derived address in StartSystemTy::LoadMapData; 005DC86D dynamic 1-byte dereference of field-derived address in StartSystemTy::SetObjectives | pointer:/ccFntTy <= 005DC050 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC050 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::FormIndentSarr; 005DC730 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DD470 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DD470 [this+0x34] used as receiver of ccFntTy::WrStr; 005DD850 [this+0x34] used as receiver of ccFntTy::FormSarr; 005DD850 [this+0x34] used as receiver of ccFntTy::SepColorStrInSarr; 005DE050 [this+0x34] used as receiver of ccFntTy::SetSurf; 005DE050 [this+0x34] used as receiver of ccFntTy::WrStr | pointer:/ushort <= 005AE474 dynamic 2-byte dereference of field-derived address in ChooseMapTy::ShowDescription; 005DC267 dynamic 2-byte dereference of field-derived address in StartSystemTy::LoadMapData; 005DC862 dynamic 2-byte dereference of field-derived address in StartSystemTy::SetObjectives
     HDC__ *field_0038; // [STClassLayoutApplier] reads=4, writes=5; type_confidence=existing; name_confidence=none; consistent_this_relative_access; concrete_type_already_present; typed_cross_class_recovery=8; type_evidence=pointer:/WinDef.h/HDC__ <= 005BD95A generic pointer-return assignment in MReportTy::InitMReport; 005C14EE generic pointer-return assignment in MReportTy::SetCtrl
     char field_003C; // [STClassLayoutApplier] reads=0, writes=0; type_confidence=existing; name_confidence=none; consistent_this_relative_access; dominant_char_pointer_role_over_neutral_byte_consumers; type_evidence=/char <= 005DB4F0 exact address of [this+0x3C] passed to Library::Ourlib::MFIMG::mfImtLoad parameter text; 005DB4F0 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1; 005DC050 exact address of [this+0x3C] passed to Library::DKW::TBL::FUN_006b5aa0 parameter text; 005DC050 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1; 005DC730 exact address of [this+0x3C] passed to Library::DKW::TBL::FUN_006b5aa0 parameter text; 005DC730 exact address of [this+0x3C] passed to USER32.DLL::wsprintfA parameter param_1
     byte _unknown_003D[259];
@@ -16423,7 +16433,7 @@ struct StartSystemTy {
     void sub_005DAB30();
     void sub_005DAF20();
     void sub_005DB2A0();
-    undefined4 sub_006E5360(int param_1, int *param_2, undefined4 *param_3);
+    int sub_006E5360(int param_1, int *param_2, undefined4 *param_3);
     void sub_006E56B0(uint param_1);
 };
 
@@ -17205,6 +17215,200 @@ struct AnonPointee_TradePanelTy_0000 {
     undefined1 field_0xc; // exact unnamed-byte view referenced by exported code
     byte _unknown_000D[3];
     undefined4 field_0010; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0
+};
+
+struct RecoveredClass_006D5720 {
+    VTable_0079DCBC *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_0079DCBC=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[8];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0014[132];
+    undefined4 field_0098; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_009C[68];
+    undefined4 field_00E0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_00E4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_00E8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+};
+
+struct RecoveredClass_006D5CD0 {
+    VTable_0079DD1C *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_0079DD1C=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[8];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0010[72];
+    undefined4 field_0058; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_005C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0060; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0064; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0068; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_006C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0070; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+};
+
+struct RecoveredClass_006D70B0 {
+    VTable_0079DDEC *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_0079DDEC=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[8];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0014[140];
+    undefined4 field_00A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+};
+
+struct RecoveredClass_006E5FB0 {
+    VTable_0079E1AC *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_0079E1AC=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+};
+
+struct RecoveredClass_0074756B {
+    VTable_007A1108 *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_007A1108=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonShape_0074756B_58F08DE7 *field_000C; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0074756B_58F08DE7=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_0x18; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0019[23];
+    undefined4 * FUN_0074756b(AnonShape_0074756B_58F08DE7 *param_1);
+};
+
+struct RecoveredClass_00747874 {
+    VTable_007A1128 *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_007A1128=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    AnonShape_00747874_535F3AAD *field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00747874_535F3AAD=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 * FUN_00747874(AnonShape_00747874_535F3AAD *param_1);
+};
+
+struct RecoveredClass_00748A83 {
+    VTable_007A1148 *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_007A1148=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_0x1c; // exact unnamed-byte view referenced by exported code
+    byte _unknown_001D[31];
+    undefined4 field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    RecoveredClass_00748A83 * FUN_00748a83(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5);
+};
+
+struct RecoveredClass_00749A93 {
+    VTable_007A13D0 *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_007A13D0=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[8];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0014[60];
+    undefined4 field_0050; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0054[12];
+    undefined4 field_0060; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0064; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0068; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_006C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0070; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0074; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0078; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_007C[48];
+    undefined4 field_00AC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_00B0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_00B4; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_00B8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_00BC; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_00C0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+};
+
+struct RecoveredClass_0074A95F {
+    VTable_007A1510 *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_007A1510=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[8];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0014[132];
+    undefined4 field_0098; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_009C[60];
+    undefined4 field_00D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_00DC[4];
+    undefined4 * FUN_0074a95f(int param_1, undefined4 param_2, short *param_3);
+};
+
+struct RecoveredClass_0074C38F {
+    VTable_007A17C8 *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_007A17C8=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[8];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0014[132];
+    undefined4 field_0098; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_009C[60];
+    undefined4 field_00D8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_00DC[4];
+};
+
+struct RecoveredClass_0074C658 {
+    VTable_007A1868 *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_007A1868=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[8];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0014[140];
+    undefined4 field_00A0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_00A4[4];
+};
+
+struct RecoveredClass_0074CDC5 {
+    VTable_007A1950 *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_007A1950=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[8];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0014[132];
+    undefined4 field_0098; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_009C[60];
+    undefined1 field_0xd8; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00D9[7];
+    undefined4 field_00E0; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined1 field_0xe4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00E5[3];
+    undefined4 * FUN_0074cdc5(undefined4 param_1, int param_2, undefined4 param_3, char *text);
+    undefined4 * sub_0074C38F(undefined4 param_1, int param_2, undefined4 param_3, char *text);
+};
+
+struct RecoveredClass_0074CFC0 {
+    VTable_007A19F0 *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_007A19F0=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[8];
+    undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0014[140];
+    undefined1 field_0xa0; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00A1[3];
+    undefined1 field_0xa4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_00A5[3];
+    undefined4 field_00A8; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_00AC[4];
+    RecoveredClass_0074CFC0 * FUN_0074cfc0(undefined4 param_1, int param_2, undefined4 param_3, char *text);
+    undefined4 * sub_0074C658(undefined4 param_1, int param_2, undefined4 param_3, char *text);
+};
+
+struct RecoveredClass_0074E7B1 {
+    VTable_007A1C60 *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_007A1C60=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_0004[4];
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_000C[12];
+    undefined4 field_0018; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+};
+
+struct RecoveredClass_0074EEF3 {
+    VTable_007A1D10 *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/VTables/VTable_007A1D10=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    byte _unknown_000C[44];
+    undefined4 field_0038; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_003C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0044; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+    undefined4 field_0048; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AiPlrClassTy_field_06A1Element {
@@ -19540,7 +19744,7 @@ struct FSGSTy_Record_00BC_01FB {
     undefined4 field_01EB; // [STClassLayoutApplier] nested evidence_count=10; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6763]; functions=[0059B820, 0059BE50, 005A2380, 005A26C0, 005A2D70, 005A2FF0, 005A3540, 005A40F0, 005A4350, 005AA2C0]
     undefined4 field_01EF; // [STClassLayoutApplier] nested evidence_count=2; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6767]; functions=[00595E40, 005AA2C0]
     ccFntTy *field_01F3; // [STClassLayoutApplier] nested evidence_count=23; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6771]; functions=[00595E40, 00597E70, 00599BE0, 00599E90, 0059A320, 0059A640, 0059A910, 0059B2C0, 0059C700, 0059C9F0, 0059CEE0, 0059D240, 0059D720, 0059E7F0, 0059EB00, 0059F260, 005A0DC0, 005A1160, 005A1430, 005A1630, 005A3AB0, 005A4350, 005AA2C0]; pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 0059D240 [this+0x1A73] passed to FUN_00710790 parameter param_1; 005A4350 [this+0x1A73] passed to FUN_00710790 parameter param_1 | pointer:/ccFntTy <= 00597E70 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 00597E70 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 0059801D typed receiver of ccFntTy::SetSurf; 00598044 typed receiver of ccFntTy::WrTxt; 00599BE0 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 00599BE0 [this+0x1A73] used as receiver of ccFntTy::WrStr; 00599C72 typed receiver of ccFntTy::SetSurf; 00599C95 typed receiver of ccFntTy::WrStr; 00599CD1 typed receiver of ccFntTy::SetSurf; 00599CF4 typed receiver of ccFntTy::WrStr; 00599D39 typed receiver of ccFntTy::SetSurf; 00599D5C typed receiver of ccFntTy::WrStr; 00599E90 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 00599E90 [this+0x1A73] used as receiver of ccFntTy::WrStr; 00599F22 typed receiver of ccFntTy::SetSurf; 00599F45 typed receiver of ccFntTy::WrStr; 00599F81 typed receiver of ccFntTy::SetSurf; 00599FA4 typed receiver of ccFntTy::WrStr; 00599FE3 typed receiver of ccFntTy::SetSurf; 0059A006 typed receiver of ccFntTy::WrStr; 0059A042 typed receiver of ccFntTy::SetSurf; 0059A065 typed receiver of ccFntTy::WrStr; 0059A0A1 typed receiver of ccFntTy::SetSurf; 0059A0C4 typed receiver of ccFntTy::WrStr; 0059A103 typed receiver of ccFntTy::SetSurf; 0059A126 typed receiver of ccFntTy::WrStr; 0059A168 typed receiver of ccFntTy::SetSurf; 0059A18B typed receiver of ccFntTy::WrStr; 0059A320 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 0059A320 [this+0x1A73] used as receiver of ccFntTy::WrStr; 0059A3B2 typed receiver of ccFntTy::SetSurf; 0059A3D5 typed receiver of ccFntTy::WrStr; 0059A411 typed receiver of ccFntTy::SetSurf; 0059A434 typed receiver of ccFntTy::WrStr; 0059A473 typed receiver of ccFntTy::SetSurf; 0059A496 typed receiver of ccFntTy::WrStr; 0059A4D8 typed receiver of ccFntTy::SetSurf; 0059A4FB typed receiver of ccFntTy::WrStr; 0059A640 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 0059A640 [this+0x1A73] used as receiver of ccFntTy::WrStr; 0059A6D2 typed receiver of ccFntTy::SetSurf; 0059A6F5 typed receiver of ccFntTy::WrStr; 0059A731 typed receiver of ccFntTy::SetSurf; 0059A754 typed receiver of ccFntTy::WrStr; 0059A796 typed receiver of ccFntTy::SetSurf; 0059A7B9 typed receiver of ccFntTy::WrStr; 0059A910 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 0059A910 [this+0x1A73] used as receiver of ccFntTy::WrStr; 0059A9A2 typed receiver of ccFntTy::SetSurf; 0059A9C5 typed receiver of ccFntTy::WrStr; 0059AA01 typed receiver of ccFntTy::SetSurf; 0059AA19 typed receiver of ccFntTy::WrStr; 0059AA35 typed receiver of ccFntTy::SetSurf; 0059AA57 typed receiver of ccFntTy::WrStr; 0059AA90 typed receiver of ccFntTy::SetSurf; 0059AAB2 typed receiver of ccFntTy::WrStr; 0059AAEE typed receiver of ccFntTy::SetSurf; 0059AB10 typed receiver of ccFntTy::WrStr; 0059AB4C typed receiver of ccFntTy::SetSurf; 0059AB6E typed receiver of ccFntTy::WrStr; 0059ABAD typed receiver of ccFntTy::SetSurf; 0059ABCF typed receiver of ccFntTy::WrStr; 0059ABEE typed receiver of ccFntTy::SetSurf; 0059AC11 typed receiver of ccFntTy::WrStr; 0059AC4D typed receiver of ccFntTy::SetSurf; 0059AC70 typed receiver of ccFntTy::WrStr; 0059ACAF typed receiver of ccFntTy::SetSurf; 0059ACD2 typed receiver of ccFntTy::WrStr; 0059AD14 typed receiver of ccFntTy::SetSurf; 0059AD37 typed receiver of ccFntTy::WrStr; 0059AD76 typed receiver of ccFntTy::SetSurf; 0059AD99 typed receiver of ccFntTy::WrStr; 0059ADD5 typed receiver of ccFntTy::SetSurf; 0059ADF8 typed receiver of ccFntTy::WrStr; 0059AE3A typed receiver of ccFntTy::SetSurf; 0059AE5D typed receiver of ccFntTy::WrStr; 0059AEA2 typed receiver of ccFntTy::SetSurf; 0059AEC5 typed receiver of ccFntTy::WrStr; 0059AEE4 typed receiver of ccFntTy::SetSurf; 0059AF07 typed receiver of ccFntTy::WrStr; 0059AF43 typed receiver of ccFntTy::SetSurf; 0059AF66 typed receiver of ccFntTy::WrStr; 0059AFA5 typed receiver of ccFntTy::SetSurf; 0059AFC8 typed receiver of ccFntTy::WrStr; 0059B00A typed receiver of ccFntTy::SetSurf; 0059B02D typed receiver of ccFntTy::WrStr; 0059B2C0 [this+0x1A73] passed to StartServTy::WrTextDDX parameter param_9; 005A0DC0 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A0DC0 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A0E7F typed receiver of ccFntTy::SetSurf; 005A0F0A typed receiver of ccFntTy::WrTxt; 005A1160 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A1160 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A1260 typed receiver of ccFntTy::SetSurf; 005A128B typed receiver of ccFntTy::WrTxt; 005A1430 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A1430 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A14EF typed receiver of ccFntTy::SetSurf; 005A1548 typed receiver of ccFntTy::WrTxt; 005A1630 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A1630 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A177F typed receiver of ccFntTy::SetSurf; 005A17A6 typed receiver of ccFntTy::WrTxt; 005A3AB0 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A3AB0 [this+0x1A73] used as receiver of ccFntTy::WrStr; 005A3AB0 [this+0x1A73] used as receiver of ccFntTy::_TxtToSarr; 005A3CA7 typed receiver of ccFntTy::_TxtToSarr; 005A3E97 typed receiver of ccFntTy::SetSurf; 005A3EAF typed receiver of ccFntTy::WrStr; 005A4350 [this+0x1A73] used as receiver of ccFntTy::SetSurf; 005A4350 [this+0x1A73] used as receiver of ccFntTy::WrStr; 005A4350 [this+0x1A73] used as receiver of ccFntTy::WrTxt; 005A473D typed receiver of ccFntTy::SetSurf; 005A4764 typed receiver of ccFntTy::WrTxt; 005A6DC2 typed receiver of ccFntTy::SetSurf; 005A6DE9 typed receiver of ccFntTy::WrTxt; 005A6F21 typed receiver of ccFntTy::SetSurf; 005A6F3C typed receiver of ccFntTy::WrStr; 005A7116 typed receiver of ccFntTy::SetSurf; 005A7131 typed receiver of ccFntTy::WrStr; 005A750D typed receiver of ccFntTy::SetSurf; 005A7549 typed receiver of ccFntTy::WrStr; 005A77EC typed receiver of ccFntTy::SetSurf; 005A783E typed receiver of ccFntTy::WrStr; 005A796F typed receiver of ccFntTy::SetSurf; 005A7986 typed receiver of ccFntTy::WrStr; 005A7AA4 typed receiver of ccFntTy::SetSurf; 005A7ABB typed receiver of ccFntTy::WrStr; 005A7C52 typed receiver of ccFntTy::SetSurf; 005A7C8D typed receiver of ccFntTy::WrStr; 005A7CB9 typed receiver of ccFntTy::SetSurf; 005A7CF6 typed receiver of ccFntTy::WrStr; 005A80FE typed receiver of ccFntTy::SetSurf; 005A8121 typed receiver of ccFntTy::WrStr; 005A813F typed receiver of ccFntTy::SetSurf; 005A8152 typed receiver of ccFntTy::WrStr; 005A816F typed receiver of ccFntTy::SetSurf; 005A8191 typed receiver of ccFntTy::WrStr; 005A81AF typed receiver of ccFntTy::SetSurf; 005A81DF typed receiver of ccFntTy::WrStr; 005A81FE typed receiver of ccFntTy::SetSurf; 005A8221 typed receiver of ccFntTy::WrStr; 005A8247 typed receiver of ccFntTy::SetSurf; 005A8278 typed receiver of ccFntTy::WrStr; 005A8297 typed receiver of ccFntTy::SetSurf; 005A82BA typed receiver of ccFntTy::WrStr; 005A82E0 typed receiver of ccFntTy::SetSurf; 005A8320 typed receiver of ccFntTy::WrStr; 005A8410 typed receiver of ccFntTy::SetSurf; 005A8433 typed receiver of ccFntTy::WrStr; 005A8452 typed receiver of ccFntTy::SetSurf; 005A8474 typed receiver of ccFntTy::WrStr; 005A8493 typed receiver of ccFntTy::SetSurf; 005A84B6 typed receiver of ccFntTy::WrStr; 005A84D5 typed receiver of ccFntTy::SetSurf; 005A84F8 typed receiver of ccFntTy::WrStr; 005A86FF typed receiver of ccFntTy::SetSurf; 005A8740 typed receiver of ccFntTy::WrStr; 005A8799 typed receiver of ccFntTy::SetSurf; 005A8807 typed receiver of ccFntTy::WrStr; 005A8866 typed receiver of ccFntTy::WrStr; 005A89A5 typed receiver of ccFntTy::SetSurf; 005A89CB typed receiver of ccFntTy::WrStr
-    ccFntTy *field_01F7; // [STClassLayoutApplier] nested evidence_count=5; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6775]; functions=[00595E40, 005967F0, 005A1F00, 005A4350, 005AA2C0]; pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 005A4350 [this+0x1A77] passed to FUN_00710790 parameter param_1 | pointer:/ccFntTy <= 005A1F00 [this+0x1A77] used as receiver of ccFntTy::FormSarr; 005A1F00 [this+0x1A77] used as receiver of ccFntTy::SepColorStrInSarr; 005A20E3 typed receiver of ccFntTy::FormSarr; 005A2138 typed receiver of ccFntTy::SepColorStrInSarr; 005A4350 [this+0x1A77] used as receiver of ccFntTy::SetSurf; 005A4350 [this+0x1A77] used as receiver of ccFntTy::WrStr; 005A73F7 typed receiver of ccFntTy::SetSurf; 005A740E typed receiver of ccFntTy::WrStr
+    ccFntTy *field_01F7; // [STClassLayoutApplier] nested evidence_count=5; [STClassLayoutAnalyzer] exact owner field evidence projected through fixed record geometry; absolute_offsets=[6775]; functions=[00595E40, 005967F0, 005A1F00, 005A4350, 005AA2C0]; pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710790_4CBB90D4 <= 005A4350 [this+0x1A77] passed to FUN_00710790 parameter param_1 | pointer:/WinDef.h/HDC__ <= 0059607D generic pointer-return assignment in FSGSTy::InitFSGS | pointer:/ccFntTy <= 005A1F00 [this+0x1A77] used as receiver of ccFntTy::FormSarr; 005A1F00 [this+0x1A77] used as receiver of ccFntTy::SepColorStrInSarr; 005A20E3 typed receiver of ccFntTy::FormSarr; 005A2138 typed receiver of ccFntTy::SepColorStrInSarr; 005A4350 [this+0x1A77] used as receiver of ccFntTy::SetSurf; 005A4350 [this+0x1A77] used as receiver of ccFntTy::WrStr; 005A73F7 typed receiver of ccFntTy::SetSurf; 005A740E typed receiver of ccFntTy::WrStr
 };
 
 struct FSGSTy {
@@ -20913,7 +21117,7 @@ struct ST3DSMAPContext {
     void sub_006DBD20(DDXContext *param_2, uint param_3, undefined4 param_4, int param_5, int param_6, double param_7, double param_8, double param_9, double param_10);
     void sub_006DC050(DDXContext *param_2, uint param_3, undefined4 param_4, int param_5, int param_6, double param_7, double param_8, double param_9, double param_10, double param_11, double param_12, int param_13);
     void sub_006DD530(float *param_1, float *param_2, float *param_3);
-    void sub_006DD610(uint param_2, double param_3, double param_4);
+    void sub_006DD610(ST3DSMAPContext_field_00A8State param_2, double param_3, double param_4);
     void sub_006DD790(float param_1);
     void sub_006DD800(float param_1);
     undefined sub_006DD870();
@@ -20940,14 +21144,14 @@ struct ST3DSMAPContext {
     void sub_006E8580(int *param_1);
     void sub_006E8630(undefined4 param_1);
     char * sub_006E8640(char *text, char *param_2);
-    undefined4 sub_006E8660(int *param_1, uint param_2, uint param_3, uint param_4, uint param_5, uint param_6, uint param_7, uint param_8);
+    int sub_006E8660(int *param_1, uint param_2, uint param_3, uint param_4, uint param_5, uint param_6, uint param_7, uint param_8);
     int sub_006E88C0(int *param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7, undefined4 param_8, byte param_9, undefined4 param_10, undefined4 param_11, undefined4 param_12);
     undefined4 sub_006E8EA0(AnonShape_006E8EA0_96B71903 * param_1);
     ushort * sub_006E9000(int param_1, ushort param_2, ushort param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6, int param_7);
     void sub_006E91D0(int *param_1);
     undefined4 sub_006E98E0(uint param_1, uint param_2, int param_3, int param_4, int param_5);
-    uint * sub_006E9CB0(uint *param_1, uint param_2);
-    uint * sub_006E9D40(uint *param_1, uint param_2);
+    void sub_006E9CB0(uint *param_1, uint param_2);
+    void sub_006E9D40(uint *param_1, uint param_2);
     void sub_006E9EF0(uint param_1, uint param_2, int param_3, int param_4, uint param_5, ushort param_6);
     void sub_006EA270(uint param_1, uint param_2, uint param_3);
     byte sub_006EA5E0(uint param_1, int param_2, int param_3);
@@ -21355,14 +21559,6 @@ struct AnonNested_0074C8A9_0090_6FCAB5DF {
     int field_0000; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/int=1}
     byte _unknown_0004[136];
     void *field_008C; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={pointer:/void=1}
-};
-
-struct AnonNested_00755D40_000C_A3EEF781 {
-    byte _unknown_0000[8];
-    undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}
-    byte _unknown_000C[40];
-    short field_0034; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/short=1}
-    byte _unknown_0036[2];
 };
 
 struct AnonNested_00757360_0008_E15F2681 {
@@ -21826,7 +22022,9 @@ struct AnonNested_AnonShape_00750FB0_15A3AC3E_000C_71DE54C3 {
 };
 
 struct AnonNested_AnonShape_00753C80_4C8E695D_0008_9237F694 {
-    byte _unknown_0000[8];
+    byte _unknown_0000[4];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[3];
     undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
     byte _unknown_0009[13];
     undefined1 field_0x16; // exact unnamed-byte view referenced by exported code
@@ -21839,7 +22037,9 @@ struct AnonNested_AnonShape_00753C80_4C8E695D_0008_9237F694 {
 };
 
 struct AnonNested_AnonShape_00753C80_4C8E695D_000C_9E74E987 {
-    byte _unknown_0000[8];
+    byte _unknown_0000[4];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[3];
     undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
     byte _unknown_0009[1];
     undefined1 field_0xa; // exact unnamed-byte view referenced by exported code
@@ -21855,7 +22055,9 @@ struct AnonNested_AnonShape_00753C80_4C8E695D_000C_9E74E987 {
     undefined1 field_0x24; // exact unnamed-byte view referenced by exported code
     byte _unknown_0025[5];
     undefined1 field_0x2a; // exact unnamed-byte view referenced by exported code
-    byte _unknown_002B[9];
+    byte _unknown_002B[5];
+    undefined1 field_0x30; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0031[3];
     undefined2 field_0034; // [STPointerShapeApplier] evidence_count=2; dereference through parent pointer field; observed_types={/undefined2=2}; exact_widths={}; semantic_roles={}
 };
 
@@ -21907,20 +22109,6 @@ struct AnonNested_AnonShape_00754FD0_6B521B56_000C_1591C729 {
     byte _unknown_0037[9];
     undefined4 field_0040; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
     undefined4 field_0044; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
-};
-
-struct AnonNested_AnonShape_00755970_4FB144E0_000C_11C2AAE5 {
-    byte _unknown_0000[4];
-    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0005[3];
-    undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0009[5];
-    undefined1 field_0xe; // exact unnamed-byte view referenced by exported code
-    byte _unknown_000F[13];
-    uint *field_001C; // [STPointerShapeApplier] evidence_count=5; dereference through parent pointer field; observed_types={/undefined4=3, pointer:/uint=2}; exact_widths={}; semantic_roles={}
-    byte _unknown_0020[16];
-    undefined4 field_0030; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
-    undefined2 field_0034; // [STPointerShapeApplier] evidence_count=1; dereference through parent pointer field; observed_types={/undefined2=1}; exact_widths={}; semantic_roles={}
 };
 
 struct AnonNested_AnonShape_00755E10_BD685653_0008_8628F4E0 {
@@ -29252,8 +29440,7 @@ struct AnonShape_006BF710_259ECA93 {
 };
 
 struct AnonShape_006BFBF0_13F73F95 {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0001[3];
+    byte _unknown_0000[4];
     undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
     byte _unknown_0005[3];
     undefined1 field_0x8; // exact unnamed-byte view referenced by exported code
@@ -30225,7 +30412,7 @@ struct AnonShape_006ECFC0_6CF214D7 {
 };
 
 struct AnonShape_006F31D0_0BFF23DC {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0000[1];
     undefined1 field_0x1; // exact unnamed-byte view referenced by exported code
     byte field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=1}
     undefined1 field_0x3; // exact unnamed-byte view referenced by exported code
@@ -30633,7 +30820,8 @@ struct AnonShape_0074756B_58F08DE7 {
     byte _unknown_0000[4];
     undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
     undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
-    byte _unknown_000C[4];
+    undefined1 field_0xc; // exact unnamed-byte view referenced by exported code
+    byte _unknown_000D[3];
     undefined4 field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}
 };
 
@@ -31291,7 +31479,10 @@ struct AnonShape_00750FB0_15A3AC3E {
 };
 
 struct AnonShape_00753C80_4C8E695D {
-    byte _unknown_0000[8];
+    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0001[3];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[3];
     AnonNested_AnonShape_00753C80_4C8E695D_0008_9237F694 *field_0008; // [STPointerShapeApplier] evidence_count=6; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     AnonNested_AnonShape_00753C80_4C8E695D_000C_9E74E987 *field_000C; // [STPointerShapeApplier] evidence_count=9; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
     int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -31415,27 +31606,6 @@ struct AnonShape_007553F0_ACB112C2 {
     int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=20}
 };
 
-struct AnonShape_00755560_6DE97093 {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0001[7];
-    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2}
-    int field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
-    undefined1 field_0x10; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0011[7];
-    undefined1 field_0x18; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0019[3];
-    undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, pointer:/undefined4=2}
-    byte _unknown_0020[4];
-    undefined4 field_0024; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
-};
-
-struct AnonShape_00755970_4FB144E0 {
-    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
-    byte _unknown_0001[7];
-    int field_0008; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-    AnonNested_AnonShape_00755970_4FB144E0_000C_11C2AAE5 *field_000C; // [STPointerShapeApplier] evidence_count=8; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-};
-
 struct AnonShape_00755BC0_D59C64DD {
     byte _unknown_0000[8];
     int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}
@@ -31443,11 +31613,6 @@ struct AnonShape_00755BC0_D59C64DD {
     int field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_0014[8];
     undefined4 *field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined4=1}
-};
-
-struct AnonShape_00755D40_9BC6D2DA {
-    byte _unknown_0000[12];
-    AnonNested_00755D40_000C_A3EEF781 *field_000C; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=2}
 };
 
 struct AnonShape_00755E10_BD685653 {
@@ -31997,15 +32162,14 @@ struct AnonShape_0075E7D0_08EF6D02 {
 };
 
 struct AnonShape_0075E890_C23EB446 {
-    byte _unknown_0000[128];
+    undefined1 field_0x0; // exact unnamed-byte view referenced by exported code
+    undefined1 field_0x1; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0002[122];
+    undefined1 field_0x7c; // exact unnamed-byte view referenced by exported code
+    byte _unknown_007D[3];
     AnonNested_0075EB40_0080_454B432A *field_0080; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0075EB40_0080_454B432A=1}; indexed_strides={}; semantic_roles={}
     byte _unknown_0084[310];
     int field_01BA; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=1}; indexed_strides={}; semantic_roles={}
-};
-
-struct AnonShape_0075EB40_977462DD {
-    byte _unknown_0000[128];
-    AnonNested_0075EB40_0080_454B432A *field_0080; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={pointer:/int=1}
 };
 
 struct AnonShape_0075EC80_53406127 {
@@ -32898,6 +33062,18 @@ struct RecoveredRecord_DumpClassC_00495EC0 {
     short field_005D; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
     short field_005F; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}
     byte _unknown_0061[3];
+};
+
+struct RecoveredRecord_FSGSTy_006C7D20 {
+    byte _unknown_0000[16];
+    char field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
+    byte _unknown_0011[1];
+    int field_0012; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    byte _unknown_0016[3];
+    char field_0019; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}
+    byte _unknown_001A[16];
+    int field_002A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
+    byte _unknown_002E[2];
 };
 
 struct RecoveredRecord_MMMObjTy_005B6560 {
@@ -37560,7 +37736,7 @@ struct TLOBaseTy {
     int sub_004C90C0();
     int sub_004C9370(int param_1, int param_2, int param_3);
     void sub_004C96E0();
-    undefined4 sub_004CA7B0(uint *param_1, int param_2);
+    undefined4 sub_004CA7B0(uint param_1, int param_2);
     void sub_004CAFC0(TLOBaseTy_sub_004CAFC0_param_1Enum param_1, uint param_2, uint *param_3, uint *param_4);
     undefined4 sub_004CBA30();
     void sub_004CBF30();
@@ -38377,7 +38553,7 @@ struct ccFntTy {
     undefined4 field_00A8; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
     undefined4 field_00AC; // [STClassLayoutApplier] reads=2, writes=0; type_confidence=none; name_confidence=none; consistent_this_relative_access
     undefined4 * CreateSurf(int param_1, uint param_2, int param_3, int param_4, int param_5, int param_6, int param_7);
-    undefined4 * CreateTypeSSpr(uint * param_1, int param_2, int param_3, ccFntTy_CreateTypeSSpr_param_4Enum param_4, uint param_5, int param_6, int param_7, int param_8);
+    undefined4 * CreateTypeSSpr(char * resourceString, int param_2, int param_3, ccFntTy_CreateTypeSSpr_param_4Enum param_4, uint param_5, int param_6, int param_7, int param_8);
     int EraseSufr();
     uint * FormIndentSarr(DArrayTy * param_1, char * text, uint * param_3, int param_4, int param_5, uint param_6, char * param_7, int param_8);
     char * FormIndentText(char * param_1, uint * param_2, char * text, uint * param_4, int param_5, char * param_6, int param_7);

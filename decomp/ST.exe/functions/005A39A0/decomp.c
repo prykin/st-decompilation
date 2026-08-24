@@ -29,7 +29,7 @@ FSGSTy::sub_005A39A0
   byte bVar1;
   char cVar2;
   byte *pbVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int iVar5;
   uint uVar6;
   char *pcVar8;

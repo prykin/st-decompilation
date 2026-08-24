@@ -4,7 +4,7 @@
 undefined4 FUN_00748186(AnonShape_00748186_DDF6596C *param_1,int *param_2)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
 
   if (param_2 == nullptr) {

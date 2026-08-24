@@ -9,7 +9,7 @@
 undefined4 __thiscall TLOBaseTy::sub_00417D30(TLOBaseTy *this)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
 
   if (this->field_002C == 0) {

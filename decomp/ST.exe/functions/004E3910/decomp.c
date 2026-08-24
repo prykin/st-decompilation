@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
   uint uVar6;
   int iVar7;
   short sVar8;
-  undefined4 uVar9;
+  uint uVar9;
   int iVar10;
   STSharkC *pSVar11;
   char cVar12;

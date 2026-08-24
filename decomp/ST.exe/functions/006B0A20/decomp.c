@@ -18,11 +18,11 @@ int FUN_006b0a20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT iS
   int *piVar1;
   int iVar2;
   BYTE *pBVar3;
+  int iVar2_mg1;
   UINT UVar4;
-  int iVar5;
+  PALETTEENTRY *pPVar5;
   PALETTEENTRY *pPVar6;
-  PALETTEENTRY *pPVar7;
-  undefined4 *puVar8;
+  uint *puVar7;
   PALETTEENTRY local_404 [256];
 
   if (param_1 != nullptr) {
@@ -38,12 +38,12 @@ int FUN_006b0a20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT iS
       }
     }
     if ((param_2 != 0) && (0 < (int)param_4)) {
-      pPVar6 = (PALETTEENTRY *)(param_2 + iVar2 * 4);
-      pPVar7 = local_404;
+      pPVar5 = (PALETTEENTRY *)(param_2 + iVar2 * 4);
+      pPVar6 = local_404;
       for (UVar4 = param_4; UVar4 != 0; UVar4 = UVar4 - 1) {
-        *pPVar7 = *pPVar6;
+        *pPVar6 = *pPVar5;
+        pPVar5 = pPVar5 + 1;
         pPVar6 = pPVar6 + 1;
-        pPVar7 = pPVar7 + 1;
       }
       pBVar3 = &local_404[0].peFlags;
       UVar4 = param_4;
@@ -67,19 +67,20 @@ int FUN_006b0a20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT iS
       SetPaletteEntries(*(HPALETTE *)param_1,iStart,param_4,local_404);
       /* ST_CALLSITE[006B0B1D]: CALL EDI */
       SetPaletteEntries(param_1->field_04B4,iStart,param_4,local_404);
-      iVar2 = FUN_006b0520(param_1,(int)local_404,iStart,param_4);
+      iVar2_mg1 = FUN_006b0520(param_1,(int)local_404,iStart,param_4);
       if (*(undefined4 **)&param_1[1].field_0x24 != nullptr) {
-        puVar8 = *(undefined4 **)&param_1[1].field_0x24;
-        for (iVar5 = 0x2000; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *puVar8 = 0xffffffff;
-          puVar8 = puVar8 + 1;
+        puVar7 = *(undefined4 **)&param_1[1].field_0x24;
+        for (iVar2 = 0x2000; iVar2 != 0; iVar2 = iVar2 + -1) {
+          *puVar7 = 0xffffffff;
+          puVar7 = puVar7 + 1;
         }
         memset((void *)(*(int *)&param_1[1].field_0x24 + 0x8000), 0, 0x8000); /* compiler bulk-zero initialization */
         /* ST_CALLSITE[006B0B70]: CALL dword ptr [0x0085ba84] */
         SetPaletteEntries(*(HPALETTE *)&param_1[1].field_0x28,iStart,param_4,local_404);
       }
-      if (((iVar2 != -0x7789fdc4) && (iVar2 != -0x7789fdb3)) && (iVar2 != -0x7fffbfff)) {
-        return iVar2;
+      if (((iVar2_mg1 != -0x7789fdc4) && (iVar2_mg1 != -0x7789fdb3)) && (iVar2_mg1 != -0x7fffbfff))
+      {
+        return iVar2_mg1;
       }
     }
   }

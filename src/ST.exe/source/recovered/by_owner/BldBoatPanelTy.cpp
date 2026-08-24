@@ -51,9 +51,9 @@ void __thiscall st::fn_004EF140(BldBoatPanelTy *this)
   int iVar3;
   Global_sub_00523410_param_1Enum *pGVar4;
   UINT *pUVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   UINT *pUVar7;
-  undefined4 uVar8;
+  uint uVar8;
   int local_14;
   UINT *local_c;
   int local_8;

@@ -15,7 +15,7 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
   char *text;
   int iVar4;
   int iVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   InternalExceptionFrame local_78;
   undefined4 local_34 [4];
   undefined4 local_24;

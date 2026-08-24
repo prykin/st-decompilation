@@ -18,8 +18,8 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
   AiFltClassTy *this_00;
   uint uVar1;
   char cVar3;
-  undefined1 uVar4;
-  undefined1 uVar5;
+  byte uVar4;
+  byte uVar5;
   AiTactClassTy *pAVar6;
   char cVar7;
   int iVar8;

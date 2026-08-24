@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_005fd3a0(void *this,int param_1)
   int local_EAX_152;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   byte *puVar6;
   byte *local_10;
   uint local_c;
@@ -49,7 +49,7 @@ LAB_005fd4eb:
         }
         local_EAX_152 = thunk_FUN_005fd850(this);
         if ((-1 < local_EAX_152) &&
-           (iVar4 = thunk_FUN_005ff3a0(this,&local_6,(undefined2 *)((int)&param_1 + 2),&local_8),
+           (iVar4 = thunk_FUN_005ff3a0(this,(uint *)&local_6,(short *)((int)&param_1 + 2),&local_8),
            iVar4 != 0)) {
           thunk_FUN_005fea50(this);
           thunk_FUN_005feb60(this,(int)local_6,(int)STPiece<2,2>(param_1),(int)local_8);

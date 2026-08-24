@@ -16,7 +16,7 @@ int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
   BldObjPanelTy *this_00;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar5;
   int iVar6;
   InternalExceptionFrame local_4c;

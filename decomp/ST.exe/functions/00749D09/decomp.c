@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_00749d09(int *param_1)
 
 {
   DWORD DVar1;
-  undefined4 uVar2;
+  uint uVar2;
   HANDLE local_c;
   int local_8;
 

@@ -7,8 +7,7 @@ undefined4 __thiscall FUN_0062f6c0(void *this,int param_1)
   int *slotStorage;
   int iVar1;
   STT3DSprC *pSVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   uVar3 = 0;
   if ((-1 < param_1) && (param_1 < 5)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

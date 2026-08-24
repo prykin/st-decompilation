@@ -4,11 +4,10 @@
 void __cdecl FUN_007285d0(int param_1,int param_2)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   uint uVar2;
   uint uVar3;
-  undefined1 *puVar4;
-
+  byte *puVar4;
   uVar1 = DAT_008570f8;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar2 = *(uint *)(param_2 + 0x24) & 0xffff0000;

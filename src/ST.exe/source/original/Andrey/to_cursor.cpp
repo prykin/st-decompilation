@@ -10,7 +10,7 @@
 void __thiscall st::fn_00543600(CursorClassTy *this,undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   CursorClassTy *this_00;
   int local_EAX_34;
   ushort *local_EAX_157;
@@ -48,7 +48,7 @@ void __thiscall st::fn_00543600(CursorClassTy *this,undefined4 param_1)
     local_8 = st::fn_006F1CE0(g_cMf32_00806780,1,st::mutable_c_string("CURSOR_PAL"),nullptr,1);
     puVar5 = local_8 + 0x14;
     iVar6 = 1;
-    uVar3 = st::fn_006B4FE0((int)local_8);
+    uVar3 = st::fn_006B4FE0(local_8);
     puVar5 = (ushort *)st::fn_006B50C0(800,0x96,(uint)local_8[7],uVar3,(undefined4 *)puVar5,iVar6);
     this_00->field_04D2 = puVar5;
     st::fn_006F20E0(g_cMf32_00806780,(uint *)&local_8);
@@ -141,7 +141,7 @@ void __thiscall st::fn_00543990(CursorClassTy *this,int param_1)
   int iVar2;
   int iVar3;
   char cVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   InternalExceptionFrame local_4c;
   CursorClassTy *local_8;
 
@@ -156,7 +156,7 @@ void __thiscall st::fn_00543990(CursorClassTy *this,int param_1)
     if (param_1 != 7) {
       iVar2 = 0x21;
       cVar4 = -0x7f;
-      puVar5 = st::pointer_boundary_cast<undefined4 *>(DAT_00811640);
+      puVar5 = st::pointer_boundary_cast<uint *>(DAT_00811640);
     }
     else {
       iVar2 = 0;
@@ -333,8 +333,8 @@ void __thiscall st::fn_00543C90(CursorClassTy *this,int param_1,int param_2)
           pSVar1->field_0008 = st::machine_word_boundary_cast<int>(pSVar1->field_0008 + 1);
           st::fn_006E2970
                     (g_sT3DSMAPContext_00807598,(float)pCVar4->field_04EF,(float)pCVar4->field_04F3,
-                     pCVar4->field_04F7,st::pointer_boundary_cast<int *>(&pCVar4->field_04EB->field_001C),
-                     st::pointer_boundary_cast<int *>(&pCVar4->field_04EB->field_0020));
+                     pCVar4->field_04F7,reinterpret_cast<int *>(&pCVar4->field_04EB->field_001C),
+                     reinterpret_cast<int *>(&pCVar4->field_04EB->field_0020));
           pCVar4->field_04EB->field_001C =st::machine_word_boundary_cast<undefined4>(
                pCVar4->field_04EB->field_001C - *(int *)((int)pCVar4->field_04E7 + 9) / 2);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -602,7 +602,7 @@ void __thiscall st::fn_005446C0(CursorClassTy *this)
   int iVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   InternalExceptionFrame local_b8;
   undefined4 local_74 [5];
   undefined4 local_60;
@@ -663,7 +663,7 @@ void __thiscall st::fn_00544800(CursorClassTy *this)
   int iVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   InternalExceptionFrame local_b8;
   undefined4 local_74 [5];
   undefined4 local_60;
@@ -754,7 +754,7 @@ int __thiscall st::fn_005449B0(CursorClassTy *this,STMessage *message)
   int local_EAX_1318;
   int local_EAX_1737;
   int local_EAX_2209;
-  undefined4 uVar11;
+  uint uVar11;
   int local_EAX_2439;
   int local_EAX_2734;
   int local_EAX_3132;
@@ -774,7 +774,7 @@ int __thiscall st::fn_005449B0(CursorClassTy *this,STMessage *message)
   int local_EAX_4779;
   int local_EAX_4809;
   int iVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
   int local_EAX_5241;
   int local_EAX_5271;
   int local_EAX_6047;
@@ -783,7 +783,7 @@ int __thiscall st::fn_005449B0(CursorClassTy *this,STMessage *message)
   ushort *puVar16;
   int local_EAX_7651;
   int iVar8;
-  undefined2 uVar15;
+  ushort uVar15;
   int iVar17;
   uint uVar16;
   int iVar18;
@@ -1893,7 +1893,7 @@ switchD_0054679d_default:
     this_00->field_04DA = UVar12;
     uVar32 = (message->arg0).words.high;
     if (uVar32 == 1) {
-      pAVar5 = st::pointer_boundary_cast<AnonShape_005449B0_F65ED625 *>((message->arg1).ptr);
+      pAVar5 = static_cast<AnonShape_005449B0_F65ED625 *>((message->arg1).ptr);
       local_8 = pAVar5;
       switch(*(undefined1 *)pAVar5) {
       case 1:
@@ -2153,9 +2153,9 @@ switchD_00545816_default:
         *(undefined1 *)puVar14 = 0x3a;
         puVar14 = (undefined4 *)((int)puVar14 + 1);
       }
-      st::fn_00710A90(g_interSystem_00802A28->field_0028,(int)this_00->field_04D2,0,5,5,
+      st::fn_00710A90((ccFntTy *)g_interSystem_00802A28->field_0028,(int)this_00->field_04D2,0,5,5,
                        st::machine_word_boundary_cast<int>(this_00->field_04CA + -10),st::machine_word_boundary_cast<int>(this_00->field_04CE + -10));
-      st::fn_00711B70(g_interSystem_00802A28->field_0028,(char *)local_524,-2,-1,
+      st::fn_00711B70((ccFntTy *)g_interSystem_00802A28->field_0028,(char *)local_524,-2,-1,
                      (uint)(message->arg0).words.low,-1,-1);
       st::fn_006B5EE0((RecoveredSourceFamily_dibcopy *)this_00->field_04D2,0,0,0,this_00->field_04CA,
                    this_00->field_04CE,0x6f,0xd);
@@ -3256,9 +3256,20 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
   uint32_t _local_78;
   uint32_t _local_80;
 
+  float float_local_20_1;
+  float float_local_1c_2;
+  float float_local_14_3;
+  float float_local_14_4;
+  float float_local_14_5;
+  float float_local_14_6;
+  float float_local_14_7;
+  float float_local_14_8;
+  float float_local_14_9;
+  float float_local_14_10;
+  float float_local_14_11;
   CursorClassTy_field_0494State CVar1;
   STFishC *pSVar2;
-  undefined4 uVar3;
+  uint uVar3;
   CursorClassTy *this_00;
   int iVar5;
   HelpPanelTy_sub_00514BC0_param_1Enum HVar5;
@@ -3405,7 +3416,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
   uint *local_14;
   float local_10;
   float local_c;
-  uint *local_8;
+  float local_8;
 
   local_2c8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_2c8;
@@ -3471,7 +3482,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         }
         if (local_4c != nullptr) {
           local_18 = (uint *)(local_9c + 1);
-          local_94 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)local_18));
+          local_94 = static_cast<uint *>(st::fn_006AAC10((uint)local_18));
           if (local_94 != nullptr) {
             *(char *)local_94 = (this_00->field_04A2 == CASE_A) + '\x01';
             puVar9 = local_4c;
@@ -3505,7 +3516,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         }
         if (local_1c != nullptr) {
           local_24 = (uint *)(local_a8 + 1);
-          local_18 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)local_24));
+          local_18 = static_cast<uint *>(st::fn_006AAC10((uint)local_24));
           if (local_18 != nullptr) {
             *(undefined1 *)local_18 = 3;
             puVar10 = local_1c;
@@ -3553,15 +3564,15 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
             iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,
                                  this_00->field_00C5 - this_00->field_04B2,
                                  this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                                 (float *)&local_8);
+                                 &local_8);
             if (iVar7 != 0) {
-              if (_DAT_0079034c <= (float)local_8) {
-                local_14 = local_8;
+              if (_DAT_0079034c <= local_8) {
+                float_local_14_3 = local_8; /* split floating lifetime from pointer-typed SSA storage */
                 st::fn_00405E7F
-                          ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                          ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
               }
               else {
-                local_14 = nullptr;
+                float_local_14_3 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
                 st::fn_00405E7F
                           ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
               }
@@ -3578,7 +3589,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         }
         if (local_54 != nullptr) {
           local_18 = (uint *)(local_a4 + 1);
-          local_24 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)local_18));
+          local_24 = static_cast<uint *>(st::fn_006AAC10((uint)local_18));
           if (local_24 != nullptr) {
             *(undefined1 *)local_24 = 4;
             puVar14 = (byte *)(local_54);
@@ -3629,7 +3640,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
       }
       if (local_3c != nullptr) {
         local_18 = (uint *)(local_98 + 1);
-        local_20 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)local_18));
+        local_20 = static_cast<uint *>(st::fn_006AAC10((uint)local_18));
         if (local_20 != nullptr) {
           *(char *)local_20 = (this_00->field_0494 == CASE_C) + '\x01';
           puVar9 = local_3c;
@@ -3655,7 +3666,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
     if (this_00->field_049A == nullptr) {
       iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                            this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                           (float *)&local_8);
+                           &local_8);
       if (iVar7 == 0) break;
       lVar13 = st::fn_0072E288();
       local_11b = (undefined1)lVar13;
@@ -3687,7 +3698,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
   case 6:
     iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 != 0) {
       lVar13 = st::fn_0072E288();
       local_130 = (uint)lVar13;
@@ -3702,13 +3713,13 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         local_128 = 4;
       }
       st::fn_00403C33((undefined4 *)0x14,&local_130,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_1c = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_1c_2 = local_8; /* split floating lifetime from pointer-typed SSA storage */
         st::fn_00405E7F
-                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
       }
       else {
-        local_1c = nullptr;
+        float_local_1c_2 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
         st::fn_00405E7F
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -3717,7 +3728,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
   case 8:
     iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 != 0) {
       local_178[0] = 2;
       lVar13 = st::fn_0072E288();
@@ -3730,13 +3741,13 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         local_171 = 4;
       }
       st::fn_00403C33((undefined4 *)0x16,(uint *)local_178,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_14 = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_14_4 = local_8; /* split floating lifetime from pointer-typed SSA storage */
         st::fn_00405E7F
-                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
       }
       else {
-        local_14 = nullptr;
+        float_local_14_4 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
         st::fn_00405E7F
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -3758,13 +3769,13 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
     st::fn_00403C33((undefined4 *)0x16,(uint *)local_160,0,0xffffffff);
     iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 == 0) break;
-    if (_DAT_0079034c <= (float)local_8) {
-      local_14 = local_8;
+    if (_DAT_0079034c <= local_8) {
+      float_local_14_5 = local_8; /* split floating lifetime from pointer-typed SSA storage */
     }
     else {
-      local_14 = nullptr;
+      float_local_14_5 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
     }
     goto LAB_00549b36;
   case 0xd:
@@ -3780,7 +3791,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         }
         if (local_44 != nullptr) {
           local_18 = (uint *)(local_a0 + 1);
-          local_14 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10((uint)local_18));
+          local_14 = static_cast<uint *>(st::fn_006AAC10((uint)local_18));
           if (local_14 != nullptr) {
             *(undefined1 *)local_14 = 3;
             puVar9 = local_44;
@@ -3820,7 +3831,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
   case 0x10:
     iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 != 0) {
       local_19c = ((this_00->field_0494 != CASE_F) - 1U & 0xf2) + 0x10;
       lVar13 = st::fn_0072E288();
@@ -3836,13 +3847,13 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         local_193 = 4;
       }
       st::fn_00403C33((undefined4 *)0x17,(uint *)&local_19c,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_20 = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_20_1 = local_8; /* split floating lifetime from pointer-typed SSA storage */
         st::fn_00405E7F
-                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
       }
       else {
-        local_20 = nullptr;
+        float_local_20_1 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
         st::fn_00405E7F
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -3851,7 +3862,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
   case 0x11:
     iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 != 0) {
       lVar13 = st::fn_0072E288();
       local_13c = (uint)lVar13;
@@ -3866,13 +3877,13 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         local_134 = 4;
       }
       st::fn_00403C33((undefined4 *)0x19,&local_13c,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_14 = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_14_6 = local_8; /* split floating lifetime from pointer-typed SSA storage */
         st::fn_00405E7F
-                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
       }
       else {
-        local_14 = nullptr;
+        float_local_14_6 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
         st::fn_00405E7F
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -3907,15 +3918,15 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
           st::fn_00403C33((undefined4 *)0x23,&local_c8,0,0xffffffff);
           iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                                this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                               (float *)&local_8);
+                               &local_8);
           if (iVar7 != 0) {
-            if (_DAT_0079034c <= (float)local_8) {
-              local_14 = local_8;
+            if (_DAT_0079034c <= local_8) {
+              float_local_14_7 = local_8; /* split floating lifetime from pointer-typed SSA storage */
               st::fn_00405E7F
-                        ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                        ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
             }
             else {
-              local_14 = nullptr;
+              float_local_14_7 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
               st::fn_00405E7F
                         ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
             }
@@ -3950,7 +3961,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
   case 0x19:
     iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 != 0) {
       lVar13 = st::fn_0072E288();
       local_207 = (undefined4)lVar13;
@@ -3966,13 +3977,13 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
       }
       local_208 = 0xb;
       st::fn_00403C33((undefined4 *)0x17,(uint *)&local_208,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_14 = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_14_8 = local_8; /* split floating lifetime from pointer-typed SSA storage */
         st::fn_00405E7F
-                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
       }
       else {
-        local_14 = nullptr;
+        float_local_14_8 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
         st::fn_00405E7F
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -4027,7 +4038,7 @@ LAB_0054a196:
     if (this_00->field_04A2 == 0x18) {
       iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                            this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                           (float *)&local_8);
+                           &local_8);
       if (iVar7 == 0) break;
       local_90 = 1;
       local_8c = 0;
@@ -4053,11 +4064,11 @@ LAB_0054a196:
         local_84 = 0;
       }
       st::fn_00403C33((undefined4 *)0x1a,&local_90,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_14 = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_14_9 = local_8; /* split floating lifetime from pointer-typed SSA storage */
       }
       else {
-        local_14 = nullptr;
+        float_local_14_9 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
       }
       goto LAB_00549c33;
     }
@@ -4077,17 +4088,17 @@ LAB_0054a196:
     st::fn_00403C33((undefined4 *)0x1a,&local_e0,0,0xffffffff);
     iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 == 0) break;
-    if (_DAT_0079034c <= (float)local_8) {
-      local_14 = local_8;
+    if (_DAT_0079034c <= local_8) {
+      float_local_14_10 = local_8; /* split floating lifetime from pointer-typed SSA storage */
     }
     else {
-      local_14 = nullptr;
+      float_local_14_10 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
     }
 LAB_00549b36:
     st::fn_00405E7F
-              ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_14);
+              ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,float_local_14_10);
     break;
   case 0x1e:
     if (this_00->field_049A == nullptr) break;
@@ -4119,17 +4130,17 @@ cf_common_join_0054A19A:
     st::fn_00403C33((undefined4 *)0x17,local_284,0,0xffffffff);
     iVar7 = st::fn_006E1DD0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 == 0) break;
-    if (_DAT_0079034c <= (float)local_8) {
-      local_14 = local_8;
+    if (_DAT_0079034c <= local_8) {
+      float_local_14_11 = local_8; /* split floating lifetime from pointer-typed SSA storage */
     }
     else {
-      local_14 = nullptr;
+      float_local_14_11 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
     }
 LAB_00549c33:
     st::fn_00405E7F
-              ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_14);
+              ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,float_local_14_11);
   }
 switchD_00548db5_caseD_3:
   if (((this_00->field_04A2 != 0) && (this_00->field_0xd3 == '\0')) &&
@@ -4446,7 +4457,7 @@ st::fn_0054BF40
   CursorClassTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   char *pcVar3;
   BITMAPINFO *pBVar4;
   uint uVar5;

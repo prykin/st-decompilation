@@ -9,7 +9,7 @@ undefined4 __fastcall FUN_0060dab0(AnonShape_0060DAB0_7A3B9916 *param_1)
   short sVar3;
   int iVar4;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   AnonNested_AnonShape_0060DAB0_7A3B9916_0244_2655E818 *pAVar8;
   int iVar9;

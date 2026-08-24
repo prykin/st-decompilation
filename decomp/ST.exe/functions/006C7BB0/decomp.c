@@ -8,8 +8,8 @@ undefined1 * FUN_006c7bb0(int *param_1,undefined1 *param_2,int *param_3)
 
 {
   int iVar1;
-  undefined1 *puVar2;
-  undefined1 *puVar3;
+  byte *puVar2;
+  byte *puVar3;
   int iVar4;
 
   iVar1 = STField<int>(param_1,0x1a);

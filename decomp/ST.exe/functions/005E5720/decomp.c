@@ -13,7 +13,7 @@ MTaskTy * __cdecl CreateMTask(void)
 
 {
   MTaskTy *this;
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
   this = (MTaskTy *)FUN_006b04d0(0x6d7);

@@ -11,7 +11,7 @@ STAllPlayersC::RegisterArtefact(STAllPlayersC *this,ushort param_1,void *param_2
 {
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_4c;
   int local_8;
 

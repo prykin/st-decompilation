@@ -9,8 +9,8 @@ void FUN_006d3a50(undefined2 *param_1,int param_2,byte *param_3,int param_4,int 
                  int param_7)
 
 {
-  undefined2 *puVar1;
-  undefined2 *puVar2;
+  ushort *puVar1;
+  ushort *puVar2;
   int local_8;
 
   if (0 < param_6) {

@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_0074a77d(int *param_1)
 
 {
   LPCRITICAL_SECTION lpCriticalSection;
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
 
   lpCriticalSection = (LPCRITICAL_SECTION)(param_1 + 0x25);

@@ -18,12 +18,12 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   int local_EAX_51;
   int local_EAX_97;
   int local_EAX_229;
-  undefined2 uVar6;
+  ushort uVar6;
   int iVar7;
   STGameObjC *pSVar8;
   uint uVar9;
   int local_EAX_1129;
-  undefined4 *puVar10;
+  uint *puVar10;
   uint uVar11;
   STBoatCVTable *pSVar12;
   int local_EAX_2033;
@@ -36,7 +36,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   uint uVar14;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  undefined4 uVar15;
+  uint uVar15;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -55,7 +55,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   STMessage local_64;
   STMessage local_44;
   undefined4 local_24 [2];
-  undefined4 local_1c;
+  uint local_1c;
   short local_18;
   uint local_14;
   int local_10;

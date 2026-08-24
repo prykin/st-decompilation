@@ -36,7 +36,7 @@ ST3DSMAPContext::sub_006E6FB0
   byte *pbVar9;
   int iVar10;
   int iVar11;
-  undefined1 *puVar12;
+  byte *puVar12;
   int iVar13;
   int iVar14;
   uint *puVar15;
@@ -48,7 +48,7 @@ ST3DSMAPContext::sub_006E6FB0
   int local_48;
   int local_40;
   int local_3c;
-  undefined1 *local_38;
+  byte *local_38;
   int local_34;
   int local_30;
   int local_2c;
@@ -61,6 +61,7 @@ ST3DSMAPContext::sub_006E6FB0
   int local_10;
   int local_c;
   int local_8;
+  double dVar1_mg0;
 
   if (((int)this->field_00A8 < 4) && (this->field_0280 != nullptr))
   {
@@ -129,7 +130,7 @@ ST3DSMAPContext::sub_006E6FB0
         else {
           iVar17 = this->field_03DC / 2;
           iVar10 = (int)*(short *)&this->field_0280->field_0x2;
-          iVar13 = (int)*(short *)this->field_0280;
+          iVar13 = (int)*STField<short *>(this,0x280);
           iVar8 = ((iVar10 + iVar13) * 0xb505) / this->field_03DC;
           switch(this->field_00A8) {
           case CASE_0:
@@ -236,7 +237,7 @@ ST3DSMAPContext::sub_006E6FB0
       }
       DAT_00856d84 = this->field_03DC / 2;
       _DAT_00856d80 =
-           (float)_DAT_0079cd88 / ((float)(int)*(short *)this->field_0280 * (float)this->field_00C8);
+           (float)_DAT_0079cd88 / ((float)(int)*STField<short *>(this,0x280) * (float)this->field_00C8);
       for (pAVar3 = this->field_0452; pAVar3 != nullptr;
           pAVar3 = (AnonPointee_ST3DSMAPContext_0452 *)pAVar3->field_0000) {
         switch(this->field_00A8) {
@@ -339,10 +340,10 @@ switchD_006e74ad_default:
       for (pAVar4 = this->field_044E; pAVar4 != nullptr;
           pAVar4 = (AnonPointee_ST3DSMAPContext_044E *)pAVar4->field_0000) {
         if (this->field_00C8 <= (double)pAVar4->field_0008) {
-          dVar1 = ((double)pAVar4->field_0008 / this->field_00C8) *
-                  (((double)this->field_03DC * _DAT_0079df60) /
-                  (double)(int)*(short *)this->field_0280);
-          Library::MSVCRT::FUN_00730450(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+          dVar1_mg0 = ((double)pAVar4->field_0008 / this->field_00C8) *
+                      (((double)this->field_03DC * _DAT_0079df60) /
+                      (double)(int)*STField<short *>(this,0x280));
+          Library::MSVCRT::FUN_00730450(SUB84(dVar1_mg0,0),(uint)((ulonglong)dVar1_mg0 >> 0x20));
           lVar19 = Library::MSVCRT::__ftol();
           iVar8 = (int)lVar19;
           switch(this->field_00A8) {
@@ -511,8 +512,8 @@ switchD_006e74ad_default:
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
               lVar19 = Library::MSVCRT::__ftol();
               ((byte *)puVar15)[0x44] = (byte)lVar19;
-              if (*(short *)this->field_0280 <= (short)(ushort)(byte)lVar19) {
-                ((char *)puVar15)[0x44] = *(char *)this->field_0280 + -1;
+              if (*STField<short *>(this,0x280) <= (short)(ushort)(byte)lVar19) {
+                ((char *)puVar15)[0x44] = *STField<char *>(this,0x280) + -1;
               }
               dVar1 = (double)((float)puVar15[0x1e] / (float)this->field_00C8);
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));

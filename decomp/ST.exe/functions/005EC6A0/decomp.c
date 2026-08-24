@@ -4,6 +4,7 @@
 void __fastcall FUN_005ec6a0(AnonShape_005EC6A0_C8559927 *param_1)
 
 {
+  int iVar1_mg1;
   int iVar1;
   STMessage *pSVar2;
   STMessage local_28;
@@ -19,10 +20,10 @@ void __fastcall FUN_005ec6a0(AnonShape_005EC6A0_C8559927 *param_1)
     local_28.arg1.words.low = param_1->field_032A;
     local_28.id = 0x5ddb;
     if ((AnonShape_005EFAE0_B406B78B *)param_1->field_0354 != nullptr) {
-      iVar1 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_0354,
-                         &local_8);
-      if (iVar1 != -4) {
+      iVar1_mg1 = STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,
+                             (AnonShape_005EFAE0_B406B78B *)param_1->field_0354,&local_8);
+      if (iVar1_mg1 != -4) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_28.arg1.words.high = *(word *)(local_8 + 0x32);
       }

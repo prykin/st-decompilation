@@ -72,7 +72,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
                 /* ST_CALLSITE[0048CF88]: CALL dword ptr [EAX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
                 iVar4 = (*this_00->vtable[1].vfunc_20)(this_00,pSVar2->field_0024);
                 if (iVar4 == 1) {
-                  thunk_FUN_00416270(this_00,(uint *)&local_a,(int *)&local_8,&local_6);
+                  thunk_FUN_00416270(this_00,(uint *)&local_a,&local_8,&local_6);
                   iVar4 = (int)pSVar2->field_0041 - (int)local_a;
                   iVar6 = (int)pSVar2->field_0043 - (int)local_8;
                   iVar7 = (int)pSVar2->field_0045 - (int)local_6;

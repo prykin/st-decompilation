@@ -16,6 +16,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
   dword dVar2;
   STMBombC *this_00;
   int local_EAX_85;
+  int iVar4_mgB;
   int local_EAX_1342;
   int iVar8;
   int iVar9;
@@ -210,10 +211,10 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
           if (((AnonShape_005EFAE0_B406B78B *)this_00->field_029C ==
                nullptr) ||
-             (iVar4 = STPlaySystemC::sub_006E62D0
-                                (g_playSystem_00802A38,
-                                 (AnonShape_005EFAE0_B406B78B *)this_00->field_029C,(int *)&local_24
-                                ), iVar4 != 0)) {
+             (iVar4_mgB = STPlaySystemC::sub_006E62D0
+                                    (g_playSystem_00802A38,
+                                     (AnonShape_005EFAE0_B406B78B *)this_00->field_029C,
+                                     (int *)&local_24), iVar4_mgB != 0)) {
             this_00->field_0231 = 1;
             this_00->field_0235 = 0;
             this_00->field_0239 = 0;
@@ -223,7 +224,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
             this_00->field_0231 = 0;
             this_00->field_0273 = STField<undefined2>(local_24,0x32);
             this_00->field_026F = STField<undefined4>(local_24,0x24);
-            thunk_FUN_00416270(local_24,(uint *)&local_6,(int *)&local_8,&local_a);
+            thunk_FUN_00416270(local_24,(uint *)&local_6,&local_8,&local_a);
             local_a = local_a - this_00->field_0045;
             local_8 = local_8 - this_00->field_0043;
             local_6 = local_6 - this_00->field_0041;

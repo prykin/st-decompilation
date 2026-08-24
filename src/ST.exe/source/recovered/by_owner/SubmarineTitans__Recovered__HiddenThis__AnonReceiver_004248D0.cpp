@@ -16,7 +16,7 @@ st::fn_00427090
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   void *pvVar3;
   int iVar4;
   int iVar7;
@@ -32,7 +32,7 @@ st::fn_00427090
 
   iVar11 = param_2;
   if (DAT_007f4d84 <= DAT_007f4d78) {
-    puVar2 = st::pointer_boundary_cast<undefined4 *>(st::fn_006ACF50(PTR_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4));
+    puVar2 = static_cast<uint *>(st::fn_006ACF50(PTR_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4));
     if (puVar2 == nullptr) {
       return 0;
     }
@@ -268,7 +268,7 @@ st::fn_00427BB0
 
 {
   byte bVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   void *pvVar3;
   RuntimeRecord_007F4D74_0010 *pRVar4;
   int iVar5;
@@ -325,7 +325,7 @@ st::fn_00427BB0
 LAB_00427cca:
           iVar9 = iVar8;
           if (DAT_007f4d84 <= DAT_007f4d78) {
-            puVar2 = st::pointer_boundary_cast<undefined4 *>(st::fn_006ACF50(PTR_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4));
+            puVar2 = static_cast<uint *>(st::fn_006ACF50(PTR_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4));
             if (puVar2 == nullptr) {
               return 0;
             }

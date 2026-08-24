@@ -19,7 +19,7 @@ undefined4 __thiscall
 STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 param_3,int param_4)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   bool bVar4;
   byte bVar5;
@@ -53,7 +53,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   char *local_EAX_4860;
   char *local_EAX_4878;
   int iVar15;
-  undefined4 uVar12;
+  uint uVar12;
   int iVar13;
   uint uVar14;
   uint uVar15;
@@ -62,7 +62,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   char *pcVar18;
   WNDCLASSA *pWVar19;
   char *pcVar20;
-  undefined4 *puVar21;
+  uint *puVar21;
   AnonShape_00683C70_22193481 **ppAVar22;
   UINT UVar23;
   AnonShape_00683C70_22193481 *local_560;
@@ -76,7 +76,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   WNDCLASSA local_6c;
   DWORD local_44;
   HWND local_40;
-  undefined1 *local_3c;
+  byte *local_3c;
   int local_38;
   undefined4 *local_34;
   int local_30;
@@ -664,7 +664,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
           pSVar10 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
           if (pSVar10 != nullptr) {
             /* ST_CALLSITE[0056B905]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
-            StartSystemTy::StartSystemTy(pSVar10,pSVar16);
+            StartSystemTy::StartSystemTy(pSVar10,(AppClassTy *)pSVar16);
           }
           /* ST_CALLSITE[0056B912]: CALL dword ptr [EAX] */
           g_startSystem_0081176C->InitSystem();
@@ -675,7 +675,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
           pSVar16->field_117C = 1;
           pSVar16->field_1163 = 1;
           if ((undefined1 *)PTR_00857168->field_000C != nullptr) {
-            switch(*(undefined1 *)PTR_00857168->field_000C) {
+            switch(*STField<undefined1 *>(PTR_00857168,0xC)) {
             case 0x4d:
             case 0x6d:
               pSVar16->field_1163 = 3;
@@ -825,7 +825,7 @@ switchD_0056b4ce_caseD_47:
           pSVar10 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
           if (pSVar10 != nullptr) {
             /* ST_CALLSITE[0056BDC8]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
-            StartSystemTy::StartSystemTy(pSVar10,pSVar16);
+            StartSystemTy::StartSystemTy(pSVar10,(AppClassTy *)pSVar16);
           }
           /* ST_CALLSITE[0056BDD5]: CALL dword ptr [EAX] */
           g_startSystem_0081176C->InitSystem();

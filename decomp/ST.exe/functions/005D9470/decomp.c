@@ -12,7 +12,7 @@
 int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   byte bVar3;
   ushort uVar4;
@@ -24,8 +24,8 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
   SIDTy *this_00;
   DWORD DVar11;
   int local_EAX_48;
-  undefined4 uVar12;
-  undefined4 *puVar13;
+  uint uVar12;
+  uint *puVar13;
   char *pcVar12_mg2;
   int iVar11;
   int iVar19;

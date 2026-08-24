@@ -58,10 +58,10 @@ void __thiscall st::fn_004FE370(CPanelTy *this,int param_1)
       resourceString = st::fn_006B0140(resourceId,module);
     }
     else if (param_1 == 0) {
-      resourceString = st::pointer_boundary_cast<char *>(&pCVar2->field_0C5D);
+      resourceString = (char *)&pCVar2->field_0C5D;
     }
     else {
-      resourceString = st::pointer_boundary_cast<char *>(&pCVar2->field_0B6F);
+      resourceString = (char *)&pCVar2->field_0B6F;
     }
     st::fn_00711B70(pCVar2->field_01B8,resourceString,-2,-1,0,-1,-1);
     g_currentExceptionFrame = local_4c.previous;
@@ -306,7 +306,7 @@ void __thiscall st::fn_004FE960(CPanelTy *this)
     return;
   }
   /* ST_CALLSITE[004FE9AC]: CALL 0x00403229; direct=00403229 DibPut */
-  st::fn_00403229(st::pointer_boundary_cast<RecoveredSourceFamily_dibcopy *>(local_c->field_0180),0,0,'\x01',(byte *)local_c->field_0954);
+  st::fn_00403229(static_cast<RecoveredSourceFamily_dibcopy *>(local_c->field_0180),0,0,'\x01',(byte *)local_c->field_0954);
   /* ST_CALLSITE[004FE9C5]: CALL 0x00403229; direct=00403229 DibPut */
   st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0,'\x01',(byte *)this_00->field_0958
         );
@@ -534,7 +534,7 @@ void __thiscall st::fn_004FF110(CPanelTy *this,int param_1)
   char cVar1;
   CPanelTy *this_00;
   uint uVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   byte bVar5;
   int iVar6;
   char *pcVar7;
@@ -542,14 +542,13 @@ void __thiscall st::fn_004FF110(CPanelTy *this,int param_1)
   uint uVar9;
   uint uVar10;
   int iVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   InternalExceptionFrame local_58;
   byte local_14;
   undefined3 uStack_13;
   CPanelTy *local_10;
   uint local_c;
-  undefined1 *local_8;
-
+  byte *local_8;
   if (param_1 == 0) {
     local_8 = &this->field_0C51;
   }
@@ -671,7 +670,7 @@ void __thiscall st::fn_004FF380(CPanelTy *this)
   char local_2d;
   char local_2c;
   char local_2b;
-  undefined4 local_2a;
+  uint local_2a;
   short local_26;
   short local_24;
   short local_22;
@@ -766,7 +765,7 @@ void __thiscall st::fn_004FF380(CPanelTy *this)
     iVar11 = 5;
     bVar19 = true;
     pcVar16 = local_1e;
-    pcVar18 = st::pointer_boundary_cast<char *>(&this_00->field_0xb8d);
+    pcVar18 = (char *)&this_00->field_0xb8d;
     do {
       if (iVar11 == 0) break;
       iVar11 = iVar11 + -1;
@@ -1014,7 +1013,7 @@ cf_common_exit_004FFB91:
   iVar11 = 5;
   bVar19 = true;
   pcVar16 = local_1e;
-  pcVar18 = st::pointer_boundary_cast<char *>(&this_00->field_0xb8d);
+  pcVar18 = (char *)&this_00->field_0xb8d;
   do {
     if (iVar11 == 0) break;
     iVar11 = iVar11 + -1;
@@ -1050,7 +1049,7 @@ void __thiscall st::fn_004FFE90(CPanelTy *this)
 {
   uint32_t _local_8;
 
-  undefined1 *puVar1;
+  byte *puVar1;
   char cVar2;
   CPanelTy *this_00;
   byte bVar4;
@@ -1265,7 +1264,7 @@ LAB_00500126:
     iVar7 = 5;
     bVar13 = true;
     pcVar10 = local_1a;
-    pcVar12 = st::pointer_boundary_cast<char *>(&this_00->field_0xc7b);
+    pcVar12 = (char *)&this_00->field_0xc7b;
     do {
       if (iVar7 == 0) break;
       iVar7 = iVar7 + -1;
@@ -1329,10 +1328,10 @@ void __thiscall st::fn_00500520(CPanelTy *this,int param_1)
   uint local_8;
 
   if (param_1 == 0) {
-    local_c = st::pointer_boundary_cast<char *>(&this->field_0C51);
+    local_c = (char *)&this->field_0C51;
   }
   else {
-    local_c = st::pointer_boundary_cast<char *>(&this->field_0B63);
+    local_c = (char *)&this->field_0B63;
   }
   if (param_1 == 0) {
     cVar3 = (DAT_0080874e != '\x03') + '\x05';

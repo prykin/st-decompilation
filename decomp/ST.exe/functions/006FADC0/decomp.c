@@ -8,21 +8,21 @@ void FUN_006fadc0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
                  uint param_12,int param_13)
 
 {
-  undefined1 uVar1;
-  undefined1 *puVar2;
+  byte uVar1;
+  byte *puVar2;
   ushort uVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   uint uVar5;
   uint uVar6;
   int iVar7;
   int iVar8;
   byte bVar9;
-  undefined1 *puVar10;
+  byte *puVar10;
   ushort *puVar11;
   ushort *puVar12;
   int local_10;
   uint local_c;
-  undefined1 *local_8;
+  byte *local_8;
   ushort *puVar13_mg0;
 
   _DAT_00857000 = 1;

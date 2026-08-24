@@ -23,7 +23,7 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
 {
   VisibleClassTy *pVVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int local_c;
   int local_8;
 

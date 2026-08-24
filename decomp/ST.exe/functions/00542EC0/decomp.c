@@ -16,13 +16,13 @@ void __thiscall InterSystemC::DoneSystem(InterSystemC *this)
     ccFntTy::operator_delete((uint *)this->field_0028);
     this->field_0028 = nullptr;
   }
-  if ((uint *)this->field_002C != nullptr) {
+  if (this->field_002C != nullptr) {
     ccFntTy::operator_delete((uint *)this->field_002C);
-    this->field_002C = 0;
+    this->field_002C = nullptr;
   }
-  if ((uint *)this->field_0030 != nullptr) {
+  if (this->field_0030 != nullptr) {
     ccFntTy::operator_delete((uint *)this->field_0030);
-    this->field_0030 = 0;
+    this->field_0030 = nullptr;
   }
   FUN_006e52d0((AnonShape_006E52D0_AF06BCD2 *)this);
   return;

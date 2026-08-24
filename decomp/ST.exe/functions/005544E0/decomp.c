@@ -7,7 +7,11 @@
 
    [STCallsiteConventionApplier] __cdecl inferred from all-caller stack cleanup. Evidence: all 2
    callers reclaim stack arguments [4] matching the explicit parameter width; no explicit ECX
-   pointer receiver setup observed */
+   pointer receiver setup observed
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __cdecl cLoadingTy::delete(uint *param_1)
 

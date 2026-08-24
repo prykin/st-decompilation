@@ -1,6 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void FUN_0075e890(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,int param_4)
 
 {
@@ -19,9 +23,8 @@ void FUN_0075e890(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,i
   iVar4 = (param_4 >> 2) * 0x20 + 4;
   piVar6 = (int *)((param_3 >> 3) * 0x20 + 2);
   iVar5 = (param_2 >> 2) * 0x20 + 4;
-  iVar1 = FUN_0075e980((int)param_1,iVar5,piVar6,iVar4,(int)local_188);
-  FUN_0075eb40((AnonShape_0075EB40_977462DD *)param_1,iVar5,(int)piVar6,iVar4,iVar1,(int)local_188,
-               local_88);
+  iVar1 = FUN_0075e980(param_1,iVar5,piVar6,iVar4,(int)local_188);
+  FUN_0075eb40(param_1,iVar5,(int)piVar6,iVar4,iVar1,(int)local_188,local_88);
   auto param_1_after_write = (AnonShape_0075E890_C23EB446 *)0x4; /* compiler stack-slot lifetime split */
   pbVar3 = local_88;
   piVar6 = (int *)(local_8 + (param_2 >> 2) * 0x10);

@@ -3,14 +3,18 @@
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00568010_param_1Enum. Cases:
-   CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8 */
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall FUN_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
 
 {
   SoundClassTy *this_00;
   int iVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   InternalExceptionFrame local_50;
   SoundClassTy *local_c;
   uint local_8;

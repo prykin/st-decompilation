@@ -19,15 +19,15 @@ void __thiscall st::fn_0051FF50(InfocPanelTy *this)
   int iVar9;
   int iVar7;
   int *piVar8;
-  undefined4 uVar9;
+  uint uVar9;
   int iVar10;
   uint uVar11;
   byte bVar12;
   int iVar13;
   UINT UVar14;
-  undefined4 uVar15;
-  undefined4 uVar16;
-  undefined4 *puVar17;
+  uint uVar15;
+  uint uVar16;
+  uint *puVar17;
   undefined4 local_430 [224];
   InternalExceptionFrame local_b0;
   undefined4 local_6c [4];
@@ -190,7 +190,7 @@ void __thiscall st::fn_0051FF50(InfocPanelTy *this)
     this_00->field_03B8 = 0x53;
     this_00->field_03C0 = 0x2769;
     iVar7 = 0xc;
-    piVar8 = st::pointer_boundary_cast<int *>(&this_00->field_02D8);
+    piVar8 = reinterpret_cast<int *>(&this_00->field_02D8);
     do {
       piVar8[-1] = piVar8[-1] + this_00->field_003C;
       iVar7 = iVar7 + -1;
@@ -313,14 +313,14 @@ void __thiscall st::fn_005206F0(InfocPanelTy *this)
 {
   uint32_t _local_18;
 
-  undefined1 *puVar1;
+  byte *puVar1;
   byte bVar2;
   InfocPanelTy *this_00;
   byte bVar4;
   int iVar5;
   UINT resourceId;
   char *resourceString;
-  undefined4 uVar5;
+  uint uVar5;
   BITMAPINFO *pBVar6;
   int iVar6;
   int iVar7;
@@ -555,7 +555,11 @@ st::fn_00520B50
 #line 4 "decomp/ST.exe/functions/00520D10/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
-   InfocPanelTy::PaintInfoc */
+   InfocPanelTy::PaintInfoc
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_00520D10(InfocPanelTy *this)
 
@@ -947,7 +951,7 @@ int __thiscall st::fn_00521490(InfocPanelTy *this,STMessage *message)
     st::fn_00404C69(this_00);
   }
   else if (SVar1 == MESS_PLAYPANELTY_B209) {
-    piVar3 = st::pointer_boundary_cast<int *>((message->arg0).ptr);
+    piVar3 = static_cast<int *>((message->arg0).ptr);
     iVar12 = piVar3[3];
     iVar2 = this_00->field_003C;
     bVar8 = (&this_00->field_01AB)[*piVar3];

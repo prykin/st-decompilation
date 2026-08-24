@@ -11,7 +11,7 @@ undefined4 __thiscall BaseSystemC::CreateSystemObjects(BaseSystemC *this)
   BaseSystemC *this_00;
   int errorCode;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   InternalExceptionFrame local_50;
   BaseSystemC *local_c;
   undefined4 local_8;

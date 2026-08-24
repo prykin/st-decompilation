@@ -10,8 +10,8 @@ int __cdecl FUN_00683780(int *param_1,AnonShape_00683780_11EA4E23 *param_2,int p
 
 {
   int iVar1;
-  undefined4 uVar2;
-  undefined4 *puVar3;
+  uint uVar2;
+  uint *puVar3;
   byte *pbVar4;
   int iVar5;
   int iVar6;

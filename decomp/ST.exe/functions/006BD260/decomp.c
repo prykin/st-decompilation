@@ -6,9 +6,9 @@ void FUN_006bd260(void)
 {
   uint uVar1;
   uint uVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

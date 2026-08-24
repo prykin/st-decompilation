@@ -6,7 +6,7 @@
 int FUN_0074c28a(AnonShape_007470E5_0A8F5E67 *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   AnonShape_007470E5_0A8F5E67 *pAVar2;
   AnonShape_007470E5_0A8F5E67 *pAVar3;
 

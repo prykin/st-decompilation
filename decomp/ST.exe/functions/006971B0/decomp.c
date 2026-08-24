@@ -20,7 +20,7 @@ int __thiscall CGenerate::sub_006971B0(CGenerate *this)
   int iVar7;
   uint uVar8;
   int iVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   int local_38;
   int local_20;
 

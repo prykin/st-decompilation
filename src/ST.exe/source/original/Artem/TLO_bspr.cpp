@@ -426,12 +426,12 @@ LAB_004ca0a2:
 int __thiscall st::fn_004CA3C0(TLOBaseTy *this)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   AnonPointee_TLOBaseTy_01F5 *pAVar2;
   TLOBaseTy *pTVar4;
   int iVar5;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar6;
   int iVar9;
   CHAR local_15c [256];
@@ -594,7 +594,7 @@ int __thiscall st::fn_004CA3C0(TLOBaseTy *this)
 int __thiscall st::fn_004CABB0(TLOBaseTy *this,int param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   AnonPointee_TLOBaseTy_01F5 *pAVar2;
   TLOBaseTy *this_00;
   int iVar4;
@@ -628,16 +628,16 @@ int __thiscall st::fn_004CABB0(TLOBaseTy *this,int param_1)
   }
   if (this_00->field_05EF != nullptr) {
     /* ST_CALLSITE[004CAC3D]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
-    st::fn_0040384B(this_00,(uint *)0xe,param_1);
+    st::fn_0040384B(this_00,0xe,param_1);
   }
   if (*(int *)(&DAT_00791a10 + this_00->field_0235 * 4) != 0) {
     /* ST_CALLSITE[004CAC5C]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
-    st::fn_0040384B(this_00,(uint *)0x9,param_1);
+    st::fn_0040384B(this_00,9,param_1);
     /* ST_CALLSITE[004CAC66]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
-    st::fn_0040384B(this_00,(uint *)0x8,param_1);
+    st::fn_0040384B(this_00,8,param_1);
     if (this_00->field_05AC == CASE_4E) {
       /* ST_CALLSITE[004CAC79]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
-      st::fn_0040384B(this_00,(uint *)0x7,param_1);
+      st::fn_0040384B(this_00,7,param_1);
       if (this_00->field_04D0 == CASE_1) {
         st::fn_00403ED6(&this_00->field_01D5,'\a');
       }
@@ -648,7 +648,7 @@ int __thiscall st::fn_004CABB0(TLOBaseTy *this,int param_1)
     }
     if (this_00->field_05AC == CASE_72) {
       /* ST_CALLSITE[004CACAA]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
-      st::fn_0040384B(this_00,(uint *)0x7,param_1);
+      st::fn_0040384B(this_00,7,param_1);
       if (this_00->field_04D0 == CASE_1) {
         st::fn_00403ED6(&this_00->field_01D5,'\a');
       }
@@ -659,7 +659,7 @@ int __thiscall st::fn_004CABB0(TLOBaseTy *this,int param_1)
     }
     if (this_00->field_05AC == CASE_70) {
       /* ST_CALLSITE[004CACDB]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
-      st::fn_0040384B(this_00,(uint *)0x7,param_1);
+      st::fn_0040384B(this_00,7,param_1);
       if (this_00->field_04D0 == CASE_1) {
         st::fn_00403ED6(&this_00->field_01D5,'\a');
       }
@@ -694,12 +694,12 @@ int __thiscall st::fn_004CABB0(TLOBaseTy *this,int param_1)
       goto LAB_004cadb1;
     }
     /* ST_CALLSITE[004CADA2]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
-    st::fn_0040384B(this_00,(uint *)0xd,param_1);
+    st::fn_0040384B(this_00,0xd,param_1);
   }
 LAB_004cadb1:
   if (this_00->field_05F7 != nullptr) {
     /* ST_CALLSITE[004CADC0]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
-    st::fn_0040384B(this_00,(uint *)&DAT_0000000c,param_1);
+    st::fn_0040384B(this_00,0xc,param_1);
   }
   if (this_00->field_05FF != nullptr) {
     st::fn_00404F34((int)this_00);
@@ -906,8 +906,7 @@ undefined4 __fastcall st::fn_004CC370(AnonShape_004CC370_02CE3D17 *param_1)
     goto cf_common_exit_004CC6D2;
   }
   /* ST_CALLSITE[004CC412]: CALL dword ptr [EDX + 0x7c] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar5 = (*(code *)param_1->field_0000->field_007C)();
+  iVar5 = (*STField<code *>(param_1->field_0000,0x007C))();
   if ((3 < iVar5 / 0x14) && (*(int *)&param_1->field_0x43c == 1)) {
     /* ST_CALLSITE[004CC438]: CALL 0x00405768; direct=00405768 TLOBaseTy::sub_004CC900 */
     st::fn_00405768((TLOBaseTy *)param_1);
@@ -988,8 +987,7 @@ cf_error_exit_004CC50A:
   st::fn_00402982((void *)param_1->field_0603,1);
   if ((*(int *)&param_1->field_0x43c == 3) || (*(int *)&param_1->field_0x43c == 4)) {
     /* ST_CALLSITE[004CC65A]: CALL dword ptr [EDX + 0x90] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (*(code *)param_1->field_0000->field_0090)(3,0x363);
+    (*STField<code *>(param_1->field_0000,0x0090))(3,0x363);
   }
   if (*(int *)&param_1->field_0x43c == 2) {
     /* ST_CALLSITE[004CC676]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
@@ -999,8 +997,7 @@ cf_error_exit_004CC50A:
       /* ST_CALLSITE[004CC6A8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_824 = st::fn_004049B7(param_1->field_023D);
       /* ST_CALLSITE[004CC6CC]: CALL dword ptr [EDI + 0x90] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (*(code *)pAVar2->field_0090)
+      (*STField<code *>(pAVar2,0x90))
                 (3,*(undefined4 *)
                     (&DAT_00795f18 + ((uint)(byte)local_EAX_824 + param_1->field_0235 * 3) * 4));
     }

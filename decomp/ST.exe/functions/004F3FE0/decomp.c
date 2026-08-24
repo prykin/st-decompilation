@@ -13,7 +13,7 @@ CPanelTy::PaintLBut(CPanelTy *this,byte param_1,AnonShape_004F3FE0_1578D6B9 *par
   uint uVar2;
   CPanelTy *pCVar3;
   int iVar4;
-  undefined4 uVar4;
+  uint uVar4;
   LPSTR text;
   int iVar5;
   int iVar6;

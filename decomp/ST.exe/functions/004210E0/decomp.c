@@ -33,7 +33,7 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
   DArrayTy **ppDVar23;
   byte *puVar24;
   InternalExceptionFrame local_6c;
-  undefined1 *local_28;
+  byte *local_28;
   int local_24;
   uint *local_20;
   DArrayTy **local_1c;

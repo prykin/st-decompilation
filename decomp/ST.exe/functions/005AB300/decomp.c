@@ -23,7 +23,7 @@ ChooseMapTy::InitChooseMap
           (ChooseMapTy *this,undefined1 param_1,ChooseMapTy_InitChooseMap_param_2Enum param_2)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   RecoveredSourceFamily_dibcopy *pRVar2;
   MMsgTy *this_00;
   ChooseMapTy *this_01;
@@ -36,7 +36,7 @@ ChooseMapTy::InitChooseMap
   DArrayTy *pDVar5;
   int uVar14;
   AnonPointee_ChooseMapTy_1C7B *pAVar6;
-  undefined4 *puVar8;
+  uint *puVar8;
   HoloTy *pHVar9;
   uint uVar13;
   uint local_EAX_2254;
@@ -439,7 +439,7 @@ switchD_005ab66b_caseD_6:
         this_01->field_1BB2 = 0x5c;
         puVar22 = this_01->field_005D + 0x14;
         this_01->field_1B9A = 0;
-        uVar14 = FUN_006b4fe0((int)this_01->field_005D);
+        uVar14 = FUN_006b4fe0(this_01->field_005D);
         pAVar6 = (AnonPointee_ChooseMapTy_1C7B *)
                  FUN_006b50c0(0x1e4,399,(uint)this_01->field_005D[7],uVar14,(undefined4 *)puVar22,
                               iVar23);
@@ -731,7 +731,7 @@ switchD_005ab66b_caseD_6:
         }
         iVar23 = 1;
         puVar22 = this_01->field_005D + 0x14;
-        local_EAX_3379 = FUN_006b4fe0((int)this_01->field_005D);
+        local_EAX_3379 = FUN_006b4fe0(this_01->field_005D);
         pAVar10 = (AnonPointee_ChooseMapTy_1C8B *)
                   FUN_006b50c0(0x172,0x18,(uint)this_01->field_005D[7],local_EAX_3379,
                                (undefined4 *)puVar22,iVar23);

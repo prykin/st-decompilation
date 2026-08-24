@@ -83,21 +83,21 @@ int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
   ushort **ppuVar15;
   FrmPanelTy *pFVar16;
   short sVar17;
-  undefined1 *puVar18;
+  byte *puVar18;
   int *piVar19;
   bool *pbVar20;
   bool local_ZF_8552;
   bool bVar14;
   uint *puVar21;
   uint uVar22;
-  undefined4 *puVar23;
+  uint *puVar23;
   ushort *puVar24;
   char *pcVar25;
-  undefined4 uVar26;
+  uint uVar26;
   char cVar27;
   UINT UVar28;
   int iVar29;
-  undefined4 *puVar30;
+  uint *puVar30;
   code *pcVar31;
   InternalExceptionFrame local_d0;
   bool local_8c [29];
@@ -119,8 +119,7 @@ int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
   undefined4 local_14;
   bool local_d;
   int *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_44 = this;
   DVar4 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0038 = DVar4;
@@ -955,8 +954,7 @@ LAB_004fbe73:
               local_8 = iVar12;
               if (-1 < (short)local_8) {
                 /* ST_CALLSITE[004FC522]: CALL 0x00401875; direct=00401875 STAllPlayersC::SetActivePanel */
-                STAllPlayersC::SetActivePanel
-                          (g_allPlayers_007FA174,(uint *)0x1,(short)local_8 + 1,1);
+                STAllPlayersC::SetActivePanel(g_allPlayers_007FA174,1,(short)local_8 + 1,1);
               }
             }
           }
@@ -996,8 +994,7 @@ LAB_004fbe73:
               local_8 = iVar12;
               if (-1 < (short)local_8) {
                 /* ST_CALLSITE[004FC445]: CALL 0x00401875; direct=00401875 STAllPlayersC::SetActivePanel */
-                STAllPlayersC::SetActivePanel
-                          (g_allPlayers_007FA174,nullptr,(short)local_8 + 1,1);
+                STAllPlayersC::SetActivePanel(g_allPlayers_007FA174,0,(short)local_8 + 1,1);
               }
             }
           }
@@ -1208,22 +1205,19 @@ LAB_004fbaa0:
           else {
             if ((bVar13 == 5) && (g_researchPanel_008016E8 != nullptr)) {
               /* ST_CALLSITE[004FB1E3]: CALL dword ptr [EDX + 0x1c] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              (*(code *)g_researchPanel_008016E8->field_0000->field_001C)();
+              (*STField<code *>(g_researchPanel_008016E8->field_0000,0x001C))();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_00;
             }
             if ((bVar13 == 6) && (g_bldBoatPanel_0080167C != nullptr)) {
               /* ST_CALLSITE[004FB1F7]: CALL dword ptr [EAX + 0x1c] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              (*(code *)g_bldBoatPanel_0080167C->field_0000->field_001C)();
+              (*STField<code *>(g_bldBoatPanel_0080167C->field_0000,0x001C))();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_01;
             }
             if ((bVar13 == 7) && (g_bldObjPanel_00801684 != nullptr)) {
               /* ST_CALLSITE[004FB20B]: CALL dword ptr [EDX + 0x1c] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              (*(code *)g_bldObjPanel_00801684->field_0000->field_001C)();
+              (*STField<code *>(g_bldObjPanel_00801684->field_0000,0x001C))();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_02;
             }
@@ -1248,8 +1242,7 @@ LAB_004fbaa0:
             }
             if ((bVar13 == 0xb) && (g_bldLabPanel_00801680 != nullptr)) {
               /* ST_CALLSITE[004FB25B]: CALL dword ptr [EDX + 0x1c] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              (*(code *)g_bldLabPanel_00801680->field_0000->field_001C)();
+              (*STField<code *>(g_bldLabPanel_00801680->field_0000,0x001C))();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               uVar26 = extraout_EDX_06;
             }

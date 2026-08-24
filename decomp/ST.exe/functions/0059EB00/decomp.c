@@ -15,7 +15,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   LPBITMAPINFO ptVar3;
   DArrayTy *pDVar4;
   FSGSTy_field_1EBEDArray *pFVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar7;
   int iVar9;
   byte *puVar10;
@@ -101,7 +101,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     }
     iVar9 = 1;
     puVar14 = this_00->field_005D + 0x14;
-    uVar2 = FUN_006b4fe0((int)this_00->field_005D);
+    uVar2 = FUN_006b4fe0(this_00->field_005D);
     local_EAX_168 =
          FUN_006b50c0(0x174,0x175,(uint)this_00->field_005D[7],uVar2,(undefined4 *)puVar14,iVar9);
     this_00->field_1E8E = local_EAX_168;

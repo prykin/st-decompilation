@@ -11,7 +11,7 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
   int uVar5;
   int iVar7;
   byte *pbVar8;
-  undefined4 uVar9;
+  uint uVar9;
   int iVar10;
   uint uVar10;
   int iVar6;

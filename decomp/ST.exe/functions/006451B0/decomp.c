@@ -15,7 +15,7 @@ undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,uint param_1,uint *par
   int errorCode;
   uint uVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_54;
   uint local_10 [2];
   STTorpC *local_8;

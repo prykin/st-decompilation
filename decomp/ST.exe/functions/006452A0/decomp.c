@@ -11,7 +11,7 @@ undefined4 __thiscall STTorpC::ClearDangerous(STTorpC *this,int param_1,uint par
   STTorpC *pSVar2;
   int errorCode;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   InternalExceptionFrame local_54;
   int local_10 [2];
   STTorpC *local_8;

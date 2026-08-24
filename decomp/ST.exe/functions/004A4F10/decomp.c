@@ -11,7 +11,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   STGroupBoatC *pSVar2;
   int iVar3;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   int iVar4;
   byte *puVar7;
   uint uVar8;
@@ -45,7 +45,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   }
   *param_1 = 0x321;
   if (local_14->field_0059 != nullptr) {
-    iVar5 = *(int *)local_14->field_0059 * 0x10;
+    iVar5 = *STField<int *>(local_14,0x59) * 0x10;
     local_8 = iVar5 + 0xc;
     *param_1 = iVar5 + 0x32d;
   }

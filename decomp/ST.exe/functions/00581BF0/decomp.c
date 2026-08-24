@@ -21,6 +21,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
   int local_EAX_556;
   int local_EAX_677;
   int *piVar6;
+  int iVar7_mg1;
   int iVar7;
   int iVar8;
   int local_EAX_1154;
@@ -103,8 +104,8 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        iVar7 = FUN_006e5380(g_playSystem_00802A38,(message->arg0).i32,&local_c);
-        if (iVar7 != 0) {
+        iVar7_mg1 = FUN_006e5380(g_playSystem_00802A38,(message->arg0).i32,&local_c);
+        if (iVar7_mg1 != 0) {
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }

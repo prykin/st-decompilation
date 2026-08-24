@@ -4,7 +4,7 @@
 void __thiscall FUN_00486e20(void *this,undefined4 *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   byte bVar2;
   int iVar6;
   int local_EAX_3188;

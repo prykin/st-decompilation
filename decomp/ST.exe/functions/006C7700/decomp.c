@@ -33,8 +33,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
 
   local_c = nullptr;
   /* ST_CALLSITE[006C7723]: CALL dword ptr [EBX + 0x36] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  DVar2 = (*(code *)param_1->field_0036)(param_1,&local_94,0x80);
+  DVar2 = (*STField<code *>(param_1,0x36))(param_1,&local_94,0x80);
   if (DVar2 != 0x80) {
     if (-1 < (int)DVar2) {
       return 0xfffffffb;
@@ -90,8 +89,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
         _llseek(param_1->field_0026,iVar7 + -0x301 + param_2,0);
       }
       /* ST_CALLSITE[006C7871]: CALL dword ptr [EBX + 0x36] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      DVar2 = (*(code *)param_1->field_0036)(param_1,&local_5,1);
+      DVar2 = (*STField<code *>(param_1,0x36))(param_1,&local_5,1);
       if (DVar2 != 1) {
         if (-1 < (int)DVar2) {
           return 0xfffffff4;
@@ -101,8 +99,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
       if (local_5 == '\f') {
         param_2 = 0x100;
         /* ST_CALLSITE[006C78A6]: CALL dword ptr [EBX + 0x36] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        DVar2 = (*(code *)param_1->field_0036)(param_1,local_c,0x300);
+        DVar2 = (*STField<code *>(param_1,0x36))(param_1,local_c,0x300);
         if (DVar2 != 0x300) {
           if (-1 < (int)DVar2) {
             return 0xfffffff4;

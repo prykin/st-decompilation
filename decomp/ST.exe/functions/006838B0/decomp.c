@@ -10,7 +10,7 @@ int __cdecl FUN_006838b0(int *param_1,char param_2,byte *param_3,int param_4)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   undefined1 local_c;
   undefined2 uStack_b;

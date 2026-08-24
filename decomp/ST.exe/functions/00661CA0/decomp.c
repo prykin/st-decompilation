@@ -11,7 +11,7 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
 
 {
   AnonNested_AnonShape_00661CA0_93A030EF_020B_27162EA8 *pAVar1;
-  undefined4 uVar2;
+  uint uVar2;
   AiTactClassTy *pAVar3;
   STGameObjC *pSVar4;
   STGameObjC *this;

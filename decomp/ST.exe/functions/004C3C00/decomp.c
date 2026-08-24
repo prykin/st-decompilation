@@ -21,8 +21,9 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   short sVar6;
   uint uVar10;
   int iVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   int local_EAX_1496;
+  int iVar15_mg5;
   int iVar16;
   uint uVar13;
   short sVar14;
@@ -51,7 +52,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   short local_38 [2];
   short local_34;
   undefined2 uStack_32;
-  undefined4 local_30;
+  uint local_30;
   short local_2c;
   undefined2 uStack_2a;
   int local_28;
@@ -147,7 +148,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                           iVar15 = local_18, iVar17 = local_28, iVar9 != 0)))) {
                         /* ST_CALLSITE[004C3E39]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                         STFishC::sub_004162B0(local_8,&local_12,&local_14,&local_a);
-                        thunk_FUN_00416270(local_8,(uint *)local_40,(int *)local_38,local_1c);
+                        thunk_FUN_00416270(local_8,(uint *)local_40,local_38,local_1c);
                         iVar15 = (int)(short)local_30;
                         iVar8 = FUN_006acf0d((int)local_40[0],(int)local_38[0],(int)local_1c[0],
                                              (int)local_2c,(int)local_34,iVar15);
@@ -345,10 +346,10 @@ LAB_004c42b5:
     if ((((STField<byte>(ppTVar16,0x265) & 2) != 0) &&
         (STField<AnonShape_005EFAE0_B406B78B *>(ppTVar16,0x28d) !=
          STField<AnonShape_005EFAE0_B406B78B *>(ppTVar16,0x26d))) &&
-       (iVar15 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,
-                            STField<AnonShape_005EFAE0_B406B78B *>(ppTVar16,0x26d),(int *)&local_8
-                           ), iVar15 != 0)) {
+       (iVar15_mg5 = STPlaySystemC::sub_006E62D0
+                               (g_playSystem_00802A38,
+                                STField<AnonShape_005EFAE0_B406B78B *>(ppTVar16,0x26d),
+                                (int *)&local_8), iVar15_mg5 != 0)) {
       STField<uint>(ppTVar16,0x265) = STField<uint>(ppTVar16,0x265) & 0xfffffffd;
       STField<undefined4>(ppTVar16,0x26d) = 0;
     }

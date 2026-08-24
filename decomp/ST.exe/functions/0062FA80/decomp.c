@@ -7,14 +7,14 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  undefined4 uVar4;
-  undefined4 uVar5;
+  uint uVar4;
+  uint uVar5;
   AnonShape_0062FA80_0B91B2B9 *pAVar6;
   int local_EAX_76;
   int iVar8;
   int iVar7;
   int *piVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   byte *puVar11;
   byte *puVar12;
   int local_c;

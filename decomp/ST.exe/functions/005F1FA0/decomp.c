@@ -13,7 +13,7 @@ byte * __thiscall STManBasisC::sub_005F1FA0(STManBasisC *this,int *param_1)
 
 {
   uint size;
-  undefined4 uVar1;
+  uint uVar1;
   byte *pbVar2;
   uint uVar4;
   uint *puVar5;

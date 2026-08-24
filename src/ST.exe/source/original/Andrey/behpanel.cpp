@@ -24,20 +24,20 @@ void __thiscall st::fn_004ED630(BehPanelTy *this)
   int iVar8;
   uint uVar9;
   Global_mfRLoad_param_2Enum GVar11;
-  undefined4 uVar12;
+  uint uVar12;
   short sVar13;
   int iVar14;
   uint uVar15;
-  undefined2 uVar16;
+  ushort uVar16;
   int iVar17;
   UINT UVar18;
-  undefined4 uVar19;
+  uint uVar19;
   int iVar20;
   char *pcVar21;
-  undefined4 uVar22;
-  undefined4 *puVar23;
-  undefined4 uVar24;
-  undefined4 uVar25;
+  uint uVar22;
+  uint *puVar23;
+  uint uVar24;
+  uint uVar25;
   int local_994 [32];
   undefined4 auStack_914 [3];
   int aiStack_908 [9];
@@ -478,7 +478,7 @@ void __thiscall st::fn_004EE0A0(BehPanelTy *this)
   local_8 = (Global_sub_005272B0_param_1Enum *)&local_24;
   local_14 = -0x1af - (int)this_00;
   pGVar7 = st::pointer_boundary_cast<Global_sub_005272B0_param_1Enum *>(&this_00->field_01AF);
-  piVar5 = st::pointer_boundary_cast<int *>(&this_00->field_01CF);
+  piVar5 = reinterpret_cast<int *>(&this_00->field_01CF);
   local_c = 6;
   do {
     this_00->field_0028 = 0x54;

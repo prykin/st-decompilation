@@ -34,9 +34,9 @@ int __fastcall FUN_00708650(undefined4 *param_1)
   uint *local_28;
   uint *local_24;
   uint local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

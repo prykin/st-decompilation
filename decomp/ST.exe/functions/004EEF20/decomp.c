@@ -4,7 +4,7 @@
 void __fastcall FUN_004eef20(AnonShape_004EEF20_59DE1DA2 *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
   if ((uint *)param_1->field_028A != nullptr) {

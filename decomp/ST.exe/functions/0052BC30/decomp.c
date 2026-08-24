@@ -8,7 +8,11 @@
 
    [STPrototypeApplier] Propagated parameter 5.
    Evidence: 004D8B70 -> 0052BC30 @ 004D8C18; literal 1 at 004D8BFD | 004D8B70 -> 0052BC30 @
-   004D8C55; literal 0 at 004D8C48 | 004D8B70 -> 0052BC30 @ 004D8C9A; literal 1 at 004D8C88 */
+   004D8C55; literal 0 at 004D8C48 | 004D8B70 -> 0052BC30 @ 004D8C9A; literal 1 at 004D8C88
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 MoneyTy::sub_0052BC30

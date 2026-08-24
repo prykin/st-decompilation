@@ -5,13 +5,16 @@
    Evidence: 0057B670 -> 00416270 @ 0057B716 | 0057B670 -> 0057A2C0 @ 0057B6F7
 
    [STPrototypeApplier] Propagated parameter 4.
-   Evidence: 0057B670 -> 00416270 @ 0057B716 | 0057B670 -> 0057A2C0 @ 0057B6F7 */
+   Evidence: 0057B670 -> 00416270 @ 0057B716 | 0057B670 -> 0057A2C0 @ 0057B6F7
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0057B670 -> 00416270 @ 0057B716 */
 
 undefined4 __cdecl
-FUN_0057b670(int *param_1,uint param_2,uint param_3,short *param_4,short *param_5)
+FUN_0057b670(int *param_1,uint *param_2,uint param_3,short *param_4,short *param_5)
 
 {
-  undefined2 uVar1;
+  ushort uVar1;
   int *this;
   uint uVar2;
   int iVar3;
@@ -41,8 +44,8 @@ FUN_0057b670(int *param_1,uint param_2,uint param_3,short *param_4,short *param_
   if (param_1 == nullptr) {
     return 1;
   }
-  if ((param_2 & 0xff) != 0) {
-    if ((param_2 & 0xff) != 1) {
+  if (((uint)param_2 & 0xff) != 0) {
+    if (((uint)param_2 & 0xff) != 1) {
       return 1;
     }
     thunk_FUN_0057b350(param_1,param_3,&local_8);
@@ -65,7 +68,7 @@ LAB_0057b6da:
                      param_5);
 LAB_0057b6ff:
   if (local_8 != 0) {
-    thunk_FUN_00416270(this,&param_2,(int *)&param_5,(short *)&param_4);
+    thunk_FUN_00416270(this,(uint *)&param_2,(short *)&param_5,(short *)&param_4);
     if (STField<int>(this,0x259) == 0x99) {
       param_1 = (int *)0xb4;
     }
@@ -89,7 +92,7 @@ LAB_0057b6ff:
         local_33 = STField<undefined4>(this,0x25e);
         local_34 = STField<undefined1>(this,0x25d);
         local_60[0] = 0x28;
-        local_46 = (undefined2)param_2;
+        local_46 = STPiece<0,2>(param_2);
         local_44 = STPiece<0,2>(param_5);
         local_42 = STPiece<0,2>(param_4);
         local_4a = uVar1;

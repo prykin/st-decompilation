@@ -8,9 +8,11 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import ghidra.app.script.GhidraScript;
@@ -18,6 +20,7 @@ import ghidra.program.model.address.Address;
 import ghidra.program.model.data.ArrayDataType;
 import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Structure;
@@ -181,11 +184,6 @@ public class STGlobalAggregateApplier extends GhidraScript {
             int at = pathAndLength.lastIndexOf('@');
             String path = at < 0 ? pathAndLength : pathAndLength.substring(0, at);
             int explicitLength = at < 0 ? -1 : integer(pathAndLength.substring(at + 1));
-            DataType existing = dataTypes.getDataType(path);
-            if (existing != null)
-                return existing instanceof Structure &&
-                    (explicitLength < 0 || existing.getLength() == explicitLength) ?
-                    existing : null;
             String fields = specification.substring(open + 1, close);
             int length = 0;
             List<RecordField> parsed = new ArrayList<>();
@@ -202,6 +200,13 @@ public class STGlobalAggregateApplier extends GhidraScript {
                 if (explicitLength < length) return null;
                 length = explicitLength;
             }
+            DataType existing = dataTypes.getDataType(path);
+            if (existing != null) {
+                if (!(existing instanceof Structure structure) ||
+                        structure.getLength() != length) return null;
+                migrateGeneratedLayoutHash(structure, parsed);
+                return structure;
+            }
             int separator = path.lastIndexOf('/');
             if (separator <= 0 || separator == path.length() - 1 || length < 1) return null;
             StructureDataType structure = new StructureDataType(
@@ -210,13 +215,57 @@ public class STGlobalAggregateApplier extends GhidraScript {
             for (RecordField field : parsed)
                 structure.replaceAtOffset(field.offset, field.type,
                     field.type.getLength(), field.name, null);
-            structure.setDescription(MARKER +
-                " Generated record layout from indexed machine-code accesses.");
+            structure.setDescription(generatedDescription(structure));
             DataType added = dataTypes.addDataType(structure,
                 DataTypeConflictHandler.REPLACE_HANDLER);
             return added instanceof Structure ? added : null;
         }
         return dataTypes.getDataType(specification);
+    }
+
+    private void migrateGeneratedLayoutHash(Structure structure,
+            List<RecordField> fields) {
+        String description = structure.getDescription();
+        if (description == null || !description.contains(MARKER) ||
+                description.contains("generated_layout_sha256=") ||
+                structure.getDefinedComponents().length != fields.size()) return;
+        for (RecordField field : fields) {
+            DataTypeComponent component = structure.getComponentAt(field.offset);
+            if (component == null || component.getOffset() != field.offset ||
+                    component.getLength() != field.type.getLength() ||
+                    !component.getDataType().isEquivalent(field.type) ||
+                    !clean(component.getFieldName()).equals(clean(field.name))) return;
+        }
+        structure.setDescription(generatedDescription(structure));
+    }
+
+    private String generatedDescription(Structure structure) {
+        return MARKER +
+            " Generated record layout from indexed machine-code accesses; " +
+            "generated_layout_sha256=" + layoutHash(structure);
+    }
+
+    private String layoutHash(Structure structure) {
+        StringBuilder value = new StringBuilder();
+        value.append("length=").append(structure.getLength()).append('\n');
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            value.append(component.getOffset()).append('|')
+                .append(component.getLength()).append('|')
+                .append(component.getDataType().getPathName()).append('|')
+                .append(clean(component.getFieldName())).append('|')
+                .append(clean(component.getComment())).append('\n');
+        }
+        try {
+            byte[] digest = MessageDigest.getInstance("SHA-256")
+                .digest(value.toString().getBytes(StandardCharsets.UTF_8));
+            StringBuilder result = new StringBuilder();
+            for (byte item : digest)
+                result.append(String.format(Locale.ROOT, "%02x", item & 0xff));
+            return result.toString();
+        }
+        catch (Exception exception) {
+            throw new IllegalStateException("SHA-256 unavailable", exception);
+        }
     }
     private boolean owned(Address address) {
         String comment = listing.getComment(CommentType.PLATE, address);

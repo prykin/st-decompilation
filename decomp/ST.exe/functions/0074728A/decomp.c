@@ -6,7 +6,7 @@ undefined4 FUN_0074728a(int param_1,ushort *param_2,uint *param_3)
 {
   int *piVar1;
   LPCRITICAL_SECTION lpCriticalSection;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   int iVar4;
   int iVar5;

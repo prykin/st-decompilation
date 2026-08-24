@@ -14,7 +14,7 @@ void __thiscall AiTactClassTy::sub_006902B0(AiTactClassTy *this,short param_1,ui
 
 {
   AiFltClassTy *this_00;
-  undefined1 *puVar1;
+  byte *puVar1;
   AiTactClassTy_field_00A5DArray *pAVar2;
   uint uVar3;
   bool bVar4;

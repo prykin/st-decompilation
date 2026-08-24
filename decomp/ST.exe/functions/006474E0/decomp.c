@@ -13,7 +13,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
   int errorCode;
   ushort *puVar3;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   InternalExceptionFrame local_5c;
   undefined4 local_18;
   STVolcanoC *local_14;

@@ -30,13 +30,13 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1)
 
 {
   STBoatC_field_050CState SVar1;
-  undefined2 uVar3;
+  ushort uVar3;
   int local_EAX_105;
   int local_EAX_354;
   int local_EAX_592;
   uint uVar4;
   int iVar5;
-  undefined4 uVar5;
+  uint uVar5;
   int local_EAX_1042;
   int local_EAX_1089;
   int iVar6;

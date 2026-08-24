@@ -7,8 +7,8 @@ FUN_004d6590(void *this,float param_1,short *param_2,short *param_3,short *param
 
 {
   float fVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
+  uint uVar2;
+  uint uVar3;
   float fVar4;
   float fVar5;
   short *psVar6;

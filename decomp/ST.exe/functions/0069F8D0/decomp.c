@@ -7,7 +7,7 @@ FUN_0069f8d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
 
 {
   short sVar1;
-  undefined2 *puVar2;
+  ushort *puVar2;
   int iVar3;
   short *psVar4;
   uint uVar5;

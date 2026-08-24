@@ -20,7 +20,7 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
   DArrayTy *pDVar3;
   int iVar3;
   ushort *puVar4;
-  undefined1 *puVar6;
+  byte *puVar6;
   DArrayTy *pDVar5_mg0;
   char *pcVar6_mg1;
   uint uVar7;
@@ -35,9 +35,9 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
   undefined4 local_58;
   undefined1 local_3c [16];
   undefined4 local_2c;
-  undefined4 local_28;
+  uint local_28;
   StartSystemTy *local_1c;
-  undefined1 *local_18;
+  byte *local_18;
   DArrayTy *local_14;
   undefined1 local_10;
   undefined1 local_f;

@@ -155,7 +155,7 @@ void __cdecl st::fn_005411A0(DArrayTy *param_1,char *param_2,char *text)
       cVar1 = *pcVar6;
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
-    local_8 = st::pointer_boundary_cast<uint *>(st::fn_006AAC70(~uVar4 + ~uVar5 + 2));
+    local_8 = static_cast<uint *>(st::fn_006AAC70(~uVar4 + ~uVar5 + 2));
     if (local_8 != nullptr) {
       /* ST_CALLSITE[00541211]: CALL dword ptr [0x0085bde8] */
       st::external_00000080((LPSTR)local_8,text,param_2);
@@ -174,40 +174,46 @@ void __cdecl st::fn_005411A0(DArrayTy *param_1,char *param_2,char *text)
 // 005412B0 FUN_005412b0
 #line 4 "decomp/ST.exe/functions/005412B0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005424A0 -> 005412B0 @ 00542552; data at 0080679C */
+   Evidence: 005424A0 -> 005412B0 @ 00542552; data at 0080679C
 
-void __cdecl st::fn_005412B0(ushort *param_1,undefined *param_2,BYTE param_3)
+   [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=1, ignored=0, unknown=0 */
+
+HDC __cdecl st::fn_005412B0(ushort *param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_cc;
   byte local_90 [88];
   byte local_38 [52];
 
-  pLVar6 = &local_cc;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_cc;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_cc.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Small Fonts";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Small Fonts";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_cc.lfHeight = -9;
   local_cc.lfWidth = 0;
   local_cc.lfEscapement = 0;
@@ -220,18 +226,18 @@ void __cdecl st::fn_005412B0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_cc.lfClipPrecision = '\x02';
   local_cc.lfQuality = '\x01';
   local_cc.lfPitchAndFamily = '\"';
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_cc.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_cc.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_38[0] = 0;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_38[1] = 0x6a;
   local_38[0x10] = 0x10;
@@ -370,45 +376,52 @@ void __cdecl st::fn_005412B0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_90[0x55] = 0x7c;
   local_90[0x56] = 0x7e;
   /* ST_CALLSITE[005415B7]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
-  st::fn_0070D1F0
-            (0x19d,&local_cc,nullptr,local_90,(int)param_1,local_38,7,7,1,0,0x20021c,param_2);
-  return;
+  pHVar2 = st::fn_0070D1F0
+                     (0x19d,&local_cc,nullptr,local_90,(int)param_1,local_38,7,7,1,0,0x20021c,
+                      param_2);
+  return pHVar2;
 }
 
 // 005416A0 FUN_005416a0
 #line 4 "decomp/ST.exe/functions/005416A0/decomp.c"
-void __cdecl st::fn_005416A0(int param_1,undefined *param_2,BYTE param_3)
+/* [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=1, ignored=0, unknown=0 */
+
+HDC __cdecl st::fn_005416A0(int param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_b0;
   byte local_74 [88];
   byte local_1c [24];
 
-  pLVar6 = &local_b0;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_b0;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_b0.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Verdana";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Verdana";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_b0.lfHeight = -0x10;
   local_b0.lfWidth = 0;
   local_b0.lfEscapement = 0;
@@ -421,18 +434,18 @@ void __cdecl st::fn_005416A0(int param_1,undefined *param_2,BYTE param_3)
   local_b0.lfClipPrecision = '\x02';
   local_b0.lfQuality = '\x01';
   local_b0.lfPitchAndFamily = '\"';
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_b0.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_b0.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_1c[0] = 0;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_1c[2] = 0x13;
   local_1c[1] = 0x49;
@@ -542,45 +555,52 @@ void __cdecl st::fn_005416A0(int param_1,undefined *param_2,BYTE param_3)
   local_74[0x55] = 0x7c;
   local_74[0x56] = 0x7e;
   /* ST_CALLSITE[0054191B]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
-  st::fn_0070D1F0
-            (0x19d,&local_b0,nullptr,local_74,param_1,local_1c,10,2,1,1,0x40001c,param_2);
-  return;
+  pHVar2 = st::fn_0070D1F0
+                     (0x19d,&local_b0,nullptr,local_74,param_1,local_1c,10,2,1,1,0x40001c,
+                      param_2);
+  return pHVar2;
 }
 
 // 005419E0 FUN_005419e0
 #line 4 "decomp/ST.exe/functions/005419E0/decomp.c"
-void __cdecl st::fn_005419E0(int param_1,undefined *param_2,BYTE param_3)
+/* [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=1, ignored=0, unknown=0 */
+
+HDC __cdecl st::fn_005419E0(int param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_a4;
   byte local_68 [88];
   byte local_10 [12];
 
-  pLVar6 = &local_a4;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_a4;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_a4.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "System";
+  uVar4 = 0xffffffff;
+  pcVar6 = "System";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_a4.lfHeight = -0xd;
   local_a4.lfWidth = 0;
   local_a4.lfEscapement = 0;
@@ -593,18 +613,18 @@ void __cdecl st::fn_005419E0(int param_1,undefined *param_2,BYTE param_3)
   local_a4.lfClipPrecision = '\x02';
   local_a4.lfQuality = '\x01';
   local_a4.lfPitchAndFamily = '\"';
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_a4.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_a4.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_10[7] = 0x8e;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_10[8] = 0x8e;
   local_10[0] = 0;
@@ -704,48 +724,55 @@ void __cdecl st::fn_005419E0(int param_1,undefined *param_2,BYTE param_3)
   local_68[0x55] = 0x7c;
   local_68[0x56] = 0x7e;
   /* ST_CALLSITE[00541C32]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
-  st::fn_0070D1F0
-            (0x19d,&local_a4,nullptr,local_68,param_1,local_10,2,5,1,0,0x100021c,param_2);
-  return;
+  pHVar2 = st::fn_0070D1F0
+                     (0x19d,&local_a4,nullptr,local_68,param_1,local_10,2,5,1,0,0x100021c,
+                      param_2);
+  return pHVar2;
 }
 
 // 00541CF0 FUN_00541cf0
 #line 4 "decomp/ST.exe/functions/00541CF0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005424A0 -> 00541CF0 @ 0054252E; data at 0080679C */
+   Evidence: 005424A0 -> 00541CF0 @ 0054252E; data at 0080679C
 
-void __cdecl st::fn_00541CF0(ushort *param_1,undefined *param_2,BYTE param_3)
+   [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=1, ignored=0, unknown=0 */
+
+HDC __cdecl st::fn_00541CF0(ushort *param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_90;
   byte local_54 [60];
   byte local_18 [20];
 
-  pLVar6 = &local_90;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_90;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_90.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Small Fonts";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Small Fonts";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_90.lfHeight = -8;
   local_90.lfWidth = 0;
   local_90.lfEscapement = 0;
@@ -759,12 +786,12 @@ void __cdecl st::fn_00541CF0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_90.lfQuality = '\x01';
   local_90.lfPitchAndFamily = '\"';
   local_18[0] = 0;
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_90.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_90.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_18[2] = 0x10;
   local_18[3] = 0x10;
@@ -776,10 +803,10 @@ void __cdecl st::fn_00541CF0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_18[10] = 0x10;
   local_18[0xb] = 0x10;
   local_18[0xc] = 0x10;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_18[1] = 0x13;
   local_18[7] = 0x12;
@@ -849,48 +876,55 @@ void __cdecl st::fn_00541CF0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_54[0x39] = 0x7e;
   local_54[0x3a] = 0x2a;
   /* ST_CALLSITE[00541EC9]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
-  st::fn_0070D1F0
-            (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,param_2);
-  return;
+  pHVar2 = st::fn_0070D1F0
+                     (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,
+                      param_2);
+  return pHVar2;
 }
 
 // 00541F60 FUN_00541f60
 #line 4 "decomp/ST.exe/functions/00541F60/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005424A0 -> 00541F60 @ 00542515; data at 0080679C */
+   Evidence: 005424A0 -> 00541F60 @ 00542515; data at 0080679C
 
-void __cdecl st::fn_00541F60(ushort *param_1,undefined *param_2,BYTE param_3)
+   [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=1, ignored=0, unknown=0 */
+
+HDC __cdecl st::fn_00541F60(ushort *param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_90;
   byte local_54 [60];
   byte local_18 [20];
 
-  pLVar6 = &local_90;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_90;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_90.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Small Fonts";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Small Fonts";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_90.lfHeight = -8;
   local_90.lfWidth = 0;
   local_90.lfEscapement = 0;
@@ -903,18 +937,18 @@ void __cdecl st::fn_00541F60(ushort *param_1,undefined *param_2,BYTE param_3)
   local_90.lfClipPrecision = '\x02';
   local_90.lfQuality = '\x01';
   local_90.lfPitchAndFamily = '\"';
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_90.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_90.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_18[0] = 0;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_18[1] = 99;
   local_18[2] = 0x8d;
@@ -994,48 +1028,55 @@ void __cdecl st::fn_00541F60(ushort *param_1,undefined *param_2,BYTE param_3)
   local_54[0x39] = 0x7e;
   local_54[0x3a] = 0x2a;
   /* ST_CALLSITE[00542138]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
-  st::fn_0070D1F0
-            (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,param_2);
-  return;
+  pHVar2 = st::fn_0070D1F0
+                     (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,
+                      param_2);
+  return pHVar2;
 }
 
 // 005421D0 FUN_005421d0
 #line 4 "decomp/ST.exe/functions/005421D0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005424A0 -> 005421D0 @ 00542500; data at 0080679C */
+   Evidence: 005424A0 -> 005421D0 @ 00542500; data at 0080679C
 
-void __cdecl st::fn_005421D0(ushort *param_1,undefined *param_2,BYTE param_3)
+   [STReturnSemanticsApplier] typed_machine_return.
+   Evidence: every reachable RET carries one identical concrete 32-bit type from an exact typed
+   global load or trusted call return; stores and tests preserve that EAX value; machine CFG audit:
+   used=1, ignored=0, unknown=0 */
+
+HDC __cdecl st::fn_005421D0(ushort *param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  HDC pHVar2;
+  int iVar3;
   uint uVar4;
-  char *pcVar5;
-  LOGFONTA *pLVar6;
-  char *pcVar7;
-  CHAR *pCVar8;
+  uint uVar5;
+  char *pcVar6;
+  LOGFONTA *pLVar7;
+  char *pcVar8;
+  CHAR *pCVar9;
   LOGFONTA local_90;
   byte local_54 [60];
   byte local_18 [20];
 
-  pLVar6 = &local_90;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  pLVar7 = &local_90;
+  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pLVar7->lfHeight = 0;
+    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
   }
   local_90.lfCharSet = param_3;
-  uVar3 = 0xffffffff;
-  pcVar5 = "Small Fonts";
+  uVar4 = 0xffffffff;
+  pcVar6 = "Small Fonts";
   do {
-    pcVar7 = pcVar5;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar7 = pcVar5 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar7;
+    pcVar8 = pcVar6;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_90.lfHeight = -8;
   local_90.lfWidth = 0;
   local_90.lfEscapement = 0;
@@ -1048,18 +1089,18 @@ void __cdecl st::fn_005421D0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_90.lfClipPrecision = '\x02';
   local_90.lfQuality = '\x01';
   local_90.lfPitchAndFamily = '\"';
-  pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_90.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+  pcVar6 = pcVar8 + -uVar4;
+  pCVar9 = local_90.lfFaceName;
+  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *(undefined4 *)pCVar9 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pCVar9 = pCVar9 + 4;
   }
   local_18[0] = 0;
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *pCVar9 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pCVar9 = pCVar9 + 1;
   }
   local_18[2] = 0x46;
   local_18[1] = 0x3f;
@@ -1139,9 +1180,10 @@ void __cdecl st::fn_005421D0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_54[0x39] = 0x7e;
   local_54[0x3a] = 0x2a;
   /* ST_CALLSITE[005423AA]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
-  st::fn_0070D1F0
-            (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,param_2);
-  return;
+  pHVar2 = st::fn_0070D1F0
+                     (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,
+                      param_2);
+  return pHVar2;
 }
 
 // 00543410 FUN_00543410
@@ -1314,8 +1356,7 @@ int __fastcall st::fn_00544990(CursorClassTy *param_1)
 undefined4 __fastcall st::fn_00548B90(int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x4a2) == 0) {
     return 1;
@@ -1357,6 +1398,14 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
   int iVar2;
   int iVar3;
   int iVar4;
+  int iVar4_mg8;
+  int iVar4_mg7;
+  int iVar4_mg6;
+  int iVar4_mg5;
+  int iVar4_mg4;
+  int iVar4_mg3;
+  int iVar4_mg2;
+  int iVar4_mg1;
 
   iVar4 = param_1 + 0xb;
   iVar2 = param_1 + -0xc + param_3;
@@ -1368,28 +1417,28 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
       if (param_5 <= iVar4) {
         if (param_6 <= iVar1) {
           /* ST_CALLSITE[0054BA61]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-          iVar4 = st::fn_004017E4
-                            (g_opticClass_007FB2A0,CASE_5,1.4013e-45,
-                             (uint)STField<byte>(this,0xd1),0);
+          iVar4_mg8 = st::fn_004017E4
+                                (g_opticClass_007FB2A0,CASE_5,1.4013e-45,
+                                 (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             /* ST_CALLSITE[0054BA84]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             st::fn_0040507E
-                      (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_40,STField<int>(this,0x34),
-                       STField<int>(this,0x38));
+                      (static_cast<CursorClassTy *>(this),(-(ushort)(iVar4_mg8 != -2) & 0xfff6) + CASE_40,
+                       STField<int>(this,0x34),STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
           return 1;
         }
         if (iVar3 <= param_6) {
           /* ST_CALLSITE[0054BAB5]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-          iVar4 = st::fn_004017E4
-                            (g_opticClass_007FB2A0,CASE_6,1.4013e-45,
-                             (uint)STField<byte>(this,0xd1),0);
+          iVar4_mg7 = st::fn_004017E4
+                                (g_opticClass_007FB2A0,CASE_6,1.4013e-45,
+                                 (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             /* ST_CALLSITE[0054BAD8]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             st::fn_0040507E
-                      (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_42,STField<int>(this,0x34),
-                       STField<int>(this,0x38));
+                      (static_cast<CursorClassTy *>(this),(-(ushort)(iVar4_mg7 != -2) & 0xfff6) + CASE_42,
+                       STField<int>(this,0x34),STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
           return 1;
@@ -1398,28 +1447,28 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
       if (iVar2 <= param_5) {
         if (param_6 <= iVar1) {
           /* ST_CALLSITE[0054BB12]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-          iVar4 = st::fn_004017E4
-                            (g_opticClass_007FB2A0,CASE_7,1.4013e-45,
-                             (uint)STField<byte>(this,0xd1),0);
+          iVar4_mg6 = st::fn_004017E4
+                                (g_opticClass_007FB2A0,CASE_7,1.4013e-45,
+                                 (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             /* ST_CALLSITE[0054BB35]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             st::fn_0040507E
-                      (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_41,STField<int>(this,0x34),
-                       STField<int>(this,0x38));
+                      (static_cast<CursorClassTy *>(this),(-(ushort)(iVar4_mg6 != -2) & 0xfff6) + CASE_41,
+                       STField<int>(this,0x34),STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
           return 1;
         }
         if (iVar3 <= param_6) {
           /* ST_CALLSITE[0054BB66]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-          iVar4 = st::fn_004017E4
-                            (g_opticClass_007FB2A0,CASE_8,1.4013e-45,
-                             (uint)STField<byte>(this,0xd1),0);
+          iVar4_mg5 = st::fn_004017E4
+                                (g_opticClass_007FB2A0,CASE_8,1.4013e-45,
+                                 (uint)STField<byte>(this,0xd1),0);
           if (param_7 != 0) {
             /* ST_CALLSITE[0054BB89]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
             st::fn_0040507E
-                      (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_43,STField<int>(this,0x34),
-                       STField<int>(this,0x38));
+                      (static_cast<CursorClassTy *>(this),(-(ushort)(iVar4_mg5 != -2) & 0xfff6) + CASE_43,
+                       STField<int>(this,0x34),STField<int>(this,0x38));
           }
           STField<undefined1>(this,0xd1) = 0;
           return 1;
@@ -1427,56 +1476,56 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
       }
       if (param_5 <= iVar4) {
         /* ST_CALLSITE[0054BBBA]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-        iVar4 = st::fn_004017E4
-                          (g_opticClass_007FB2A0,CASE_1,1.4013e-45,(uint)STField<byte>(this,0xd1)
-                           ,0);
+        iVar4_mg4 = st::fn_004017E4
+                              (g_opticClass_007FB2A0,CASE_1,1.4013e-45,
+                               (uint)STField<byte>(this,0xd1),0);
         if (param_7 != 0) {
           /* ST_CALLSITE[0054BBDD]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           st::fn_0040507E
-                    (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3F,STField<int>(this,0x34),
-                     STField<int>(this,0x38));
+                    (static_cast<CursorClassTy *>(this),(-(ushort)(iVar4_mg4 != -2) & 0xfff6) + CASE_3F,STField<int>(this,0x34)
+                     ,STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
         return 1;
       }
       if (iVar2 <= param_5) {
         /* ST_CALLSITE[0054BC0F]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-        iVar4 = st::fn_004017E4
-                          (g_opticClass_007FB2A0,CASE_2,1.4013e-45,(uint)STField<byte>(this,0xd1)
-                           ,0);
+        iVar4_mg3 = st::fn_004017E4
+                              (g_opticClass_007FB2A0,CASE_2,1.4013e-45,
+                               (uint)STField<byte>(this,0xd1),0);
         if (param_7 != 0) {
           /* ST_CALLSITE[0054BC32]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           st::fn_0040507E
-                    (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3E,STField<int>(this,0x34),
-                     STField<int>(this,0x38));
+                    (static_cast<CursorClassTy *>(this),(-(ushort)(iVar4_mg3 != -2) & 0xfff6) + CASE_3E,STField<int>(this,0x34)
+                     ,STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
         return 1;
       }
       if (param_6 <= iVar1) {
         /* ST_CALLSITE[0054BC63]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-        iVar4 = st::fn_004017E4
-                          (g_opticClass_007FB2A0,CASE_3,1.4013e-45,(uint)STField<byte>(this,0xd1)
-                           ,0);
+        iVar4_mg2 = st::fn_004017E4
+                              (g_opticClass_007FB2A0,CASE_3,1.4013e-45,
+                               (uint)STField<byte>(this,0xd1),0);
         if (param_7 != 0) {
           /* ST_CALLSITE[0054BC86]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           st::fn_0040507E
-                    (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3C,STField<int>(this,0x34),
-                     STField<int>(this,0x38));
+                    (static_cast<CursorClassTy *>(this),(-(ushort)(iVar4_mg2 != -2) & 0xfff6) + CASE_3C,STField<int>(this,0x34)
+                     ,STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
         return 1;
       }
       if (iVar3 <= param_6) {
         /* ST_CALLSITE[0054BCB7]: CALL 0x004017e4; direct=004017E4 OpticClassC::sub_004AB070 */
-        iVar4 = st::fn_004017E4
-                          (g_opticClass_007FB2A0,CASE_4,1.4013e-45,(uint)STField<byte>(this,0xd1)
-                           ,0);
+        iVar4_mg1 = st::fn_004017E4
+                              (g_opticClass_007FB2A0,CASE_4,1.4013e-45,
+                               (uint)STField<byte>(this,0xd1),0);
         if (param_7 != 0) {
           /* ST_CALLSITE[0054BCDA]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
           st::fn_0040507E
-                    (st::pointer_boundary_cast<CursorClassTy *>(this),(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3D,STField<int>(this,0x34),
-                     STField<int>(this,0x38));
+                    (static_cast<CursorClassTy *>(this),(-(ushort)(iVar4_mg1 != -2) & 0xfff6) + CASE_3D,STField<int>(this,0x34)
+                     ,STField<int>(this,0x38));
         }
         STField<undefined1>(this,0xd1) = 0;
         return 1;
@@ -1492,7 +1541,7 @@ st::fn_0054B9A0(void *this,int param_1,int param_2,int param_3,int param_4,int p
     if (iVar4 != 0) goto cf_common_exit_0054BA0C;
   }
   /* ST_CALLSITE[0054BA07]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
-  st::fn_0040507E(st::pointer_boundary_cast<CursorClassTy *>(this),CASE_0,STField<int>(this,0x34),STField<int>(this,0x38));
+  st::fn_0040507E(static_cast<CursorClassTy *>(this),CASE_0,STField<int>(this,0x34),STField<int>(this,0x38));
 cf_common_exit_0054BA0C:
   STField<undefined1>(this,0xd1) = 1;
   return 0;
@@ -1543,7 +1592,7 @@ int __cdecl st::fn_0054CA10(int *param_1,undefined4 param_2,cMf32 *param_3,int p
 {
   char cVar1;
   int *piVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
   uint uVar5;
   char *pcVar6;
@@ -1588,16 +1637,21 @@ int __cdecl st::fn_0054CA10(int *param_1,undefined4 param_2,cMf32 *param_3,int p
 
 // 0054CBB0 FUN_0054cbb0
 #line 4 "decomp/ST.exe/functions/0054CBB0/decomp.c"
-undefined4 st::fn_0054CBB0(int param_1,undefined4 *param_2)
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=2, ignored=0, unknown=0 */
+
+int st::fn_0054CBB0(int param_1,undefined4 *param_2)
 
 {
-  undefined4 uVar1;
+  int iVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
 
   iVar4 = 0;
-  uVar1 = 0xfffffffc;
+  iVar1 = -4;
   if (DAT_007c8238 != 0) {
     puVar3 = &DAT_007c8238;
     iVar2 = DAT_007c8238;
@@ -1606,15 +1660,15 @@ undefined4 st::fn_0054CBB0(int param_1,undefined4 *param_2)
       puVar3 = puVar3 + 2;
       iVar4 = iVar4 + 1;
       if (iVar2 == 0) {
-        return uVar1;
+        return iVar1;
       }
     }
     if (param_2 != nullptr) {
       *param_2 = *(undefined4 *)(iVar4 * 8 + 0x7c823c);
     }
-    uVar1 = 0;
+    iVar1 = 0;
   }
-  return uVar1;
+  return iVar1;
 }
 
 // 0054CD90 FUN_0054cd90
@@ -1641,7 +1695,7 @@ st::fn_0054CF00(void *this,int param_1,undefined4 *param_2,int *param_3,undefine
 {
   int iVar1;
 
-  iVar1 = st::fn_006E6170(st::pointer_boundary_cast<SystemWithNamedObjClassTy *>(this),param_1,param_2,&param_5,param_4,param_5);
+  iVar1 = st::fn_006E6170(static_cast<SystemWithNamedObjClassTy *>(this),param_1,param_2,&param_5,param_4,param_5);
   if (param_3 != nullptr) {
     *param_3 = param_5;
   }
@@ -1653,11 +1707,15 @@ st::fn_0054CF00(void *this,int param_1,undefined4 *param_2,int *param_3,undefine
 
 // 0054CF70 FUN_0054cf70
 #line 4 "decomp/ST.exe/functions/0054CF70/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=14, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __thiscall st::fn_0054CF70(void *this,uint param_1)
 
 {
   st::fn_00401AD7();
-  st::fn_006E56B0(st::pointer_boundary_cast<StartSystemTy *>(this),param_1);
+  st::fn_006E56B0(static_cast<StartSystemTy *>(this),param_1);
   return;
 }
 
@@ -1674,8 +1732,7 @@ undefined4 st::fn_0054CFA0(void)
 undefined4 * __thiscall st::fn_0054EAB0(void *this,int param_1,undefined4 *param_2)
 
 {
-  undefined4 *puVar1;
-
+  uint *puVar1;
   puVar1 = STField<undefined4 *>(this,0x65);
   if (param_2 != nullptr) {
     *param_2 = 0;

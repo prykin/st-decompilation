@@ -7,7 +7,7 @@ int __thiscall FUN_00711370(void *this,uint *param_1)
   char cVar1;
   uint *puVar2;
   int iVar3;
-  undefined1 uVar4;
+  byte uVar4;
   int local_8;
 
   uVar4 = 0;

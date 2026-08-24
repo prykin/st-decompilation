@@ -19,19 +19,19 @@ void __thiscall st::fn_0053CEF0(SAMPanelTy *this)
   char *pcVar17_mg1;
   int iVar15;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar8;
   short sVar9;
   uint uVar10;
   byte bVar11;
-  undefined2 uVar12;
+  ushort uVar12;
   int iVar13;
-  undefined4 uVar14;
+  uint uVar14;
   int iVar16;
   char *pcVar17;
-  undefined4 *puVar18;
-  undefined4 uVar19;
-  undefined4 uVar20;
+  uint *puVar18;
+  uint uVar19;
+  uint uVar20;
   InternalExceptionFrame local_5c;
   SAMPanelTy *local_14;
   int local_10;
@@ -206,7 +206,7 @@ void __thiscall st::fn_0053D290(SAMPanelTy *this,int param_1)
     this_00 = local_8;
     if (iVar3 == 0) {
       iVar5 = 7;
-      piVar6 = st::pointer_boundary_cast<int *>(&local_8->field_01B5);
+      piVar6 = reinterpret_cast<int *>(&local_8->field_01B5);
       do {
         if (*piVar6 != 0) {
           st::fn_006E6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x18);
@@ -259,7 +259,7 @@ void __thiscall st::fn_0053D3B0(SAMPanelTy *this)
     st::fn_004035BC
               (g_allPlayers_007FA174,0x12,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_01AB);
     this_00->field_0028 = 5;
-    piVar5 = st::pointer_boundary_cast<int *>(&this_00->field_01B5);
+    piVar5 = reinterpret_cast<int *>(&this_00->field_01B5);
     iVar4 = 6;
     do {
       if (*piVar5 != 0) {

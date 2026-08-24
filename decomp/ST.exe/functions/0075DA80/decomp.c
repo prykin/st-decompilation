@@ -9,7 +9,7 @@ void FUN_0075da80(AnonShape_0075DA80_57A0CDEF *param_1)
 
 {
   AnonNested_0075DA80_01B6_323D7698 *pAVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   int iVar4;
   int iVar5;

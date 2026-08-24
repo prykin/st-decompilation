@@ -29,7 +29,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
   StartSystemTy *pSVar2;
   FSGSTy *this_00;
   int iVar8;
-  undefined4 *puVar4;
+  uint *puVar4;
   char *resourceString;
   uint local_EAX_718;
   uint local_EAX_1280;

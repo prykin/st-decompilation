@@ -8,7 +8,7 @@
 undefined4 __thiscall FUN_0057cc90(void *this,Global_sub_0057CC90_param_1Enum param_1,uint param_2)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
   int iVar3;
 

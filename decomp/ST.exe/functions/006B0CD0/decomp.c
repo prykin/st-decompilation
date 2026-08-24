@@ -7,9 +7,9 @@
 undefined4 FUN_006b0cd0(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2,uint param_3)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   int iVar5;
   int iVar6;

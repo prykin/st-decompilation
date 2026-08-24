@@ -24,7 +24,7 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
   byte bVar8;
   int iVar10;
   int iVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   InternalExceptionFrame local_54;
   int local_10;
   TraksClassTy *local_c;

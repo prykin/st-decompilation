@@ -68,7 +68,7 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
                  400,0x62,(undefined4 *)(pWVar2->array_00BC[0xc].field_01DB + 0x140));
     }
     uVar7 = 0;
-    pcVar6 = g_startSystem_0081176C->field_0030;
+    pcVar6 = (ccFntTy *)g_startSystem_0081176C->field_0030;
     uVar5 = 0xffffffff;
     uVar4 = 0xfffffffe;
     resourceString = LoadResourceString(0x26ae,g_hINSTANCE_00807618);

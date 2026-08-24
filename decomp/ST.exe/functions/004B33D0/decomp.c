@@ -86,8 +86,8 @@ int FUN_004b33d0(uint param_1,int *param_2)
   byte *pbVar26;
   byte *pbVar27;
   int iVar28;
-  undefined4 *puVar29;
-  undefined1 *puVar30;
+  uint *puVar29;
+  byte *puVar30;
   bool bVar31;
   int local_35c;
   int local_358;
@@ -106,7 +106,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
   int local_2d7_mg1;
   undefined4 local_2d3;
   InternalExceptionFrame local_2c0;
-  undefined1 *local_27c;
+  byte *local_27c;
   int local_274;
   int local_270;
   int local_26c;
@@ -161,9 +161,9 @@ int FUN_004b33d0(uint param_1,int *param_2)
   int local_50;
   int local_4c [11];
   DArrayTy *local_20_mg0;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
   short sVar18;

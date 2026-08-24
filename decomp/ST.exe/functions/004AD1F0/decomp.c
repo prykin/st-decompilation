@@ -32,7 +32,7 @@ STT3DSprC::Init(STT3DSprC *this,ushort *param_1,uint param_2,uint param_3,STDcRe
   int local_EAX_34;
   AnonPointee_STT3DSprC_0020 *pAVar3;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   uint uVar5;
   int iVar6;
   InternalExceptionFrame local_4c;

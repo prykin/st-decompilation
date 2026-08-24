@@ -17,13 +17,13 @@ void __thiscall ST3DSMAPContext::sub_006DDBE0(ST3DSMAPContext *this)
 
 {
   uint uVar1;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   uint uVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   ushort *local_2c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

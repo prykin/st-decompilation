@@ -14,7 +14,7 @@ int st::fn_00566600(int param_1)
   char cVar1;
   int iVar2;
   cMf32 *pcVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   LPSTR pCVar4;
   uint uVar5;
   uint uVar6;

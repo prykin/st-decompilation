@@ -15,7 +15,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E3120(TLOBaseTy *this)
 
 {
   word wVar1;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar3;
   STMessage *pSVar4;
   STMessage local_24;

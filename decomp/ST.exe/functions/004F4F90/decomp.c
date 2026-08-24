@@ -9,11 +9,10 @@
 AnonShape_004F4F90_2D6E0DDA * __fastcall FUN_004f4f90(AnonShape_004F4F90_2D6E0DDA *param_1)
 
 {
-  undefined1 *puVar1;
-  undefined4 *puVar2;
+  byte *puVar1;
+  uint *puVar2;
   int iVar3;
-  undefined4 uVar4;
-
+  uint uVar4;
   sub_006E5FB0(param_1);
   *(VTable_0079AC18 **)param_1 = &VTable_0079AC18;
   *(undefined4 *)&param_1->field_0x134 = 0;

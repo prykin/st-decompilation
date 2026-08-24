@@ -23,7 +23,7 @@ ST3DSMAPContext::sub_006E98E0
      (pAVar1 = (AnonShape_006E8840_CF3FA5BA *)(this->field_031C + param_1 * 0x114),
      (*(uint *)(this->field_031C + param_1 * 0x114) & 0x8000) != 0)) {
     if ((uint)pAVar1->field_0094 <= param_2) {
-      FUN_006e91a0();
+      FUN_006e91a0("SprSetPlaneIms");
       return 0;
     }
     if (pAVar1->field_00A0 == nullptr) {
@@ -55,7 +55,7 @@ ST3DSMAPContext::sub_006E98E0
     }
   }
   else if (param_1 != 0xffffffff) {
-    FUN_006e8c50();
+    FUN_006e8c50("SprSetPlaneIms");
   }
   return 0;
 }

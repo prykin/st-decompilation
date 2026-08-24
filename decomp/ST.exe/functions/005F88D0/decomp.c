@@ -11,8 +11,7 @@ FUN_005f88d0(void *this,int param_1,int param_2,int *param_3,undefined4 *param_4
   short sVar3;
   STWorldObject *this_00;
   int iVar4;
-  undefined4 uVar5;
-
+  uint uVar5;
   sVar1 = STField<short>(this,0x285);
   sVar2 = STField<short>(this,0x281);
   sVar3 = STField<short>(this,0x27d);

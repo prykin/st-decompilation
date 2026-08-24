@@ -23,7 +23,7 @@ longlong FUN_0074d786(uint param_1,uint param_2,uint param_3,uint param_4,uint p
   longlong local_EDXEAX_214;
   longlong lVar12;
   longlong lVar14;
-  undefined8 uVar15;
+  ulonglong uVar15;
   longlong lVar16;
   longlong local_EDXEAX_650;
   longlong lVar13;

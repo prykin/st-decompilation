@@ -18,10 +18,10 @@ void FUN_00727230(int *param_1)
   int iVar8;
   int iVar9;
   int iVar10;
-  undefined1 *puVar11;
-  undefined1 *puVar12;
-  undefined1 *puVar13;
-  undefined1 *puVar14;
+  byte *puVar11;
+  byte *puVar12;
+  byte *puVar13;
+  byte *puVar14;
   uint *puVar15;
   bool bVar16;
   bool bVar17;

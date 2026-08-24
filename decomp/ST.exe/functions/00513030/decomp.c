@@ -8,7 +8,7 @@
 void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param_2)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   DArrayTy *array;
   AnonPointee_HelpPanelTy_01B3 *pAVar2;
   bool bVar4;

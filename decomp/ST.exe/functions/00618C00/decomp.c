@@ -21,6 +21,7 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
   byte bVar3;
   int local_EAX_35;
   int iVar4;
+  int iVar6_mg1;
   int iVar5;
   int iVar6;
   byte *puVar7;
@@ -155,9 +156,9 @@ LAB_00618ce0:
   }
   else if (SVar1 == MESS_ID_ALLCREATE) {
     if (((local_8->field_007D != 0) &&
-        (iVar6 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14), iVar6 != -4
-        )) && (this_00->field_007D = local_14, local_14 != nullptr)) {
+        (iVar6_mg1 = STPlaySystemC::sub_006E62D0
+                               (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14),
+        iVar6_mg1 != -4)) && (this_00->field_007D = local_14, local_14 != nullptr)) {
       thunk_FUN_00617a20(local_14,this_00->field_008B,this_00->field_0018,this_00);
     }
   }

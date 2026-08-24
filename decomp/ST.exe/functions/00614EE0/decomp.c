@@ -7,13 +7,13 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
   short sVar1;
   short sVar2;
   short sVar3;
+  int iVar4_mg0;
   int iVar4;
   int iVar5;
   int iVar6;
   STFishC *this_00;
   STFishC *local_1c;
-  short local_18 [2];
-  int local_14;
+  short local_18 [4];
   uint local_10;
   short local_a;
   short local_8;
@@ -23,7 +23,8 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
   sVar1 = STField<short>(this,0x2c5);
   sVar2 = STField<short>(this,0x2c9);
   sVar3 = STField<short>(this,0x2c7);
-  local_14 = 0;
+  local_18[2] = 0;
+  local_18[3] = 0;
   local_18[0] = 0;
   local_18[1] = 0;
   if ((((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
@@ -32,19 +33,20 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
        ((this_00 = (STFishC *)
                    STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], this_00 == nullptr ||
         (this_00->field_0018 != STField<int>(this,0x2d1))))))) &&
-     (iVar4 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x2d1),
-                         (int *)&local_1c), this_00 = local_1c, iVar4 == -4)) {
+     (iVar4_mg0 = STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,
+                             STField<AnonShape_005EFAE0_B406B78B *>(this,0x2d1),(int *)&local_1c),
+     this_00 = local_1c, iVar4_mg0 == -4)) {
     return -1;
   }
-  thunk_FUN_00416270(this_00,&local_10,&local_14,local_18);
+  thunk_FUN_00416270(this_00,&local_10,local_18 + 2,local_18);
   if ((((short)local_10 == STField<short>(this,0x2cb)) &&
-      ((short)local_14 == STField<short>(this,0x2cd))) &&
-     (local_18[0] == STField<short>(this,0x2cf))) {
+      ((short)STPiece<4,4>(local_18) == STField<short>(this,0x2cd))) &&
+     ((short)STPiece<0,4>(local_18) == STField<short>(this,0x2cf))) {
     return 0;
   }
-  iVar5 = (int)local_18[0] - (int)STField<short>(this,499);
-  iVar6 = (int)(short)local_14 - (int)STField<short>(this,0x1f1);
+  iVar5 = (int)(short)STPiece<0,4>(local_18) - (int)STField<short>(this,499);
+  iVar6 = (int)(short)STPiece<4,4>(local_18) - (int)STField<short>(this,0x1f1);
   iVar4 = (int)(short)local_10 - (int)STField<short>(this,0x1ef);
   if (iVar4 * iVar4 + iVar6 * iVar6 + iVar5 * iVar5 < 0x191) {
     iVar4 = 0;
@@ -67,7 +69,7 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
     if (((param_1 == STField<int>(this,0x2d5) + -3) && (iVar4 == 2)) ||
        ((param_1 == STField<int>(this,0x2d5) + -2 && (iVar4 != 0)))) {
       STField<undefined2>(this,0x2cb) = (undefined2)local_10;
-      STField<undefined2>(this,0x2cd) = (undefined2)local_14;
+      STField<short>(this,0x2cd) = local_18[2];
       STField<short>(this,0x2cf) = local_18[0];
       return iVar4;
     }

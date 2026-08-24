@@ -8,7 +8,7 @@ void FUN_006f6ae0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
                  int param_12,byte *param_13,int param_14)
 
 {
-  undefined1 uVar1;
+  byte uVar1;
   byte *pbVar2;
   byte *pbVar3;
   uint uVar4;
@@ -17,7 +17,7 @@ void FUN_006f6ae0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   uint uVar7;
   byte *pbVar8;
   int iVar9;
-  undefined1 *puVar10;
+  byte *puVar10;
   int local_c;
   uint local_8;
 

@@ -10,7 +10,7 @@
 undefined4 FUN_00749db2(int param_1,DWORD param_2,undefined4 *param_3)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   DWORD DVar2;
 
   if (param_3 == nullptr) {

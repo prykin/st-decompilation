@@ -20,9 +20,9 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
   int iVar8;
   bool bVar10;
   char *text;
-  undefined4 uVar11;
+  uint uVar11;
   uint uVar12;
-  undefined4 uVar13;
+  uint uVar13;
   InternalExceptionFrame local_5c;
   int local_18;
   int local_14;

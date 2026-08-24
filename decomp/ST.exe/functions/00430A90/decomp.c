@@ -25,7 +25,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
   PackedRecord_A62x8 *pPVar7;
   uint uVar8;
   uint uVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   int iVar12;
   int *piVar13;
   char cVar14;

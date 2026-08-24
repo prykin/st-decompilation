@@ -26,8 +26,8 @@ void st::fn_0055F410
   byte *pbVar5;
   RuntimeRecord_008032F8_0014 *pRVar6;
   RuntimeRecord_00803310_0014 *pRVar7;
-  undefined4 *puVar8;
-  undefined4 *puVar9;
+  uint *puVar8;
+  uint *puVar9;
   int iVar15;
   int iVar10;
   short *psVar11;
@@ -51,7 +51,7 @@ void st::fn_0055F410
   int iVar21;
   STWorldCell *pSVar22;
   uint uVar23;
-  undefined1 *puVar24;
+  byte *puVar24;
   RuntimeRecord_00803300_0014 *pRVar25;
   bool bVar26;
   undefined4 uStackY_2060;
@@ -112,12 +112,12 @@ void st::fn_0055F410
   int local_3c;
   int local_38;
   int local_34;
-  undefined1 *local_30;
+  byte *local_30;
   int local_28_mg1;
   short *local_24;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
   RuntimeRecord_008032F8_0014 *temp_3fb0403402;
@@ -125,7 +125,7 @@ void st::fn_0055F410
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079afd0;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 44);
   local_6c[0] = nullptr;
@@ -1054,15 +1054,15 @@ undefined4 * __cdecl st::fn_00561670(int param_1,int param_2,int param_3,int *pa
   short sVar2;
   short sVar3;
   int *piVar4;
-  undefined4 *puVar5;
-  undefined4 *puVar6;
+  uint *puVar5;
+  uint *puVar6;
   uint uVar7;
   int *piVar7_mg0;
   int iVar8;
   short *psVar9;
   int *piVar10;
   int *piVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   int iVar13;
   int local_3c;
   uint local_34;
@@ -1081,7 +1081,7 @@ undefined4 * __cdecl st::fn_00561670(int param_1,int param_2,int param_3,int *pa
   if (param_5 < 1) {
     return nullptr;
   }
-  puVar5 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC10(param_2 * param_3 * 2));
+  puVar5 = static_cast<uint *>(st::fn_006AAC10(param_2 * param_3 * 2));
   if (puVar5 == nullptr) {
     return nullptr;
   }
@@ -1319,7 +1319,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
   byte *pbVar5;
   RuntimeRecord_008032F8_0014 *pRVar6;
   RuntimeRecord_00803310_0014 *pRVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   int iVar14;
   int iVar9;
   short *psVar10;
@@ -1341,9 +1341,9 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
   int iVar18;
   int iVar20;
   STWorldCell *pSVar21;
-  undefined4 *puVar22;
+  uint *puVar22;
   uint uVar23;
-  undefined1 *puVar24;
+  byte *puVar24;
   RuntimeRecord_00803300_0014 *pRVar25;
   bool bVar26;
   undefined4 uStackY_219c;
@@ -1404,11 +1404,11 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
   int *local_40;
   int local_38;
   int local_34;
-  undefined1 *local_30;
+  byte *local_30;
   int local_28_mg1;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
   RuntimeRecord_008032F4_0014 *temp_203f9621b1d8;
@@ -1416,7 +1416,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
 
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079aff0;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 44);
   local_6c[0] = nullptr;

@@ -9,7 +9,7 @@
 undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   uint uVar3;
   short sVar5;
@@ -20,7 +20,7 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   ushort *puVar9;
   int iVar10;
   int iVar11;
-  undefined4 uVar11;
+  uint uVar11;
   int iVar12;
   char **ppcVar13;
   bool bVar14;

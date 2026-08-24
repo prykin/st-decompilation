@@ -3,7 +3,11 @@
 
 /* [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/byte Evidence:
    entry-use width=/byte; unmasked_dword_reads=0; evidence=0056A8D3 MOV EAX,dword ptr [EBP + 0x8];
-   first-use mask */
+   first-use mask
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=10, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall FUN_0056a8d0(void *this,byte param_1,byte param_2,char param_3)
 

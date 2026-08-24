@@ -14,7 +14,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   HelpPanelTy_field_01A1State HVar2;
   HelpPanelTy *this_00;
   BITMAPINFO *pBVar4;
-  undefined1 uVar5;
+  byte uVar5;
   ushort uVar6;
   int local_EAX_70;
   UINT UVar7;

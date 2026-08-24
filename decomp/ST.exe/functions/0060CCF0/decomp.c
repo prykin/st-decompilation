@@ -11,7 +11,7 @@ FUN_0060ccf0(void *this,int param_1,int param_2,int param_3,int param_4,int para
 
 {
   uint uVar1;
-  undefined2 *puVar2;
+  ushort *puVar2;
   int *piVar3;
   int iVar4;
 

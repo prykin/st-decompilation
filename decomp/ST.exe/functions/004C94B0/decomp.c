@@ -17,7 +17,7 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
   uint uVar3;
   int uVar2;
   int iVar4;
-  undefined4 uVar5;
+  uint uVar5;
   InternalExceptionFrame local_50;
   TLOBaseTy *local_c;
   undefined4 local_8;

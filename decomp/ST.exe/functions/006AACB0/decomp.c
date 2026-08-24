@@ -5,7 +5,7 @@ void FUN_006aacb0(void)
 
 {
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

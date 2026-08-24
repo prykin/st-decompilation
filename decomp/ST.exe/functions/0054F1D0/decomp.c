@@ -9,7 +9,7 @@ undefined4 * __thiscall STPlaySystemC::PrepareMail(STPlaySystemC *this)
 
 {
   AnonPointee_STPlaySystemC_0039 **ppAVar1;
-  undefined2 *puVar2;
+  ushort *puVar2;
   char cVar3;
   AnonPointee_STPlaySystemC_0039 *pAVar4;
   STPlaySystemC *pSVar6;
@@ -35,14 +35,14 @@ undefined4 * __thiscall STPlaySystemC::PrepareMail(STPlaySystemC *this)
   undefined4 *extraout_EAX;
   int *piVar18;
   uint uVar19;
-  undefined4 *puVar20;
+  uint *puVar20;
   uint *puVar21;
   uint *puVar22;
   STPlaySystemC *pSVar23;
   AnonPointee_STPlaySystemC_0039 *pAVar24;
   uint *puVar25;
   char *pcVar26;
-  undefined4 *puVar27;
+  uint *puVar27;
   bool bVar28;
   char local_17c [260];
   InternalExceptionFrame local_78;
@@ -538,7 +538,7 @@ LAB_0054fbb7:
         if (pAVar15->field_0004 != '\0') {
           pSVar23->field_0057 = pAVar15->field_0005;
           pAVar15->field_0005 = 0;
-          pSVar23->field_0049 = *(undefined4 *)pSVar23->field_003D;
+          pSVar23->field_0049 = *STField<undefined4 *>(pSVar23,0x3D);
           pSVar23->field_004D = pSVar23->field_003D->field_0004;
           pSVar23->field_004E = 0;
           thunk_FUN_00550110(pSVar23);

@@ -1,5 +1,5 @@
 program=ST.exe
-candidate_functions=1455
+candidate_functions=1460
 switches_seen=1075
 decompile_retries=0
 decompile_failures=0

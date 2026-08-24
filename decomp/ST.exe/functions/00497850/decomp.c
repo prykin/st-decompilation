@@ -7,7 +7,7 @@ FUN_00497850(int param_1,int param_2,int param_3,int param_4,int param_5,int par
 
 {
   int iVar1;
-  undefined4 uVar2;
+  uint uVar2;
   void *pvVar3;
 
   if (-1 < (int)param_7) {

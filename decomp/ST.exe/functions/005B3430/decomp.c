@@ -26,7 +26,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
   int iVar7;
   int iVar8;
   uint *puVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   InternalExceptionFrame local_54;
   MainMenuTy *local_10;
   uint *local_c;

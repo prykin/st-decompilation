@@ -11,7 +11,7 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   short sVar1;
   short sVar2;
   short sVar3;
-  undefined2 uVar5;
+  ushort uVar5;
   STGroupBoatC *pSVar6;
   DArrayTy *array;
   int iVar6;
@@ -20,7 +20,7 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   DArrayTy *array_00;
   STGameObjC *this_01;
   int iVar8;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar9;
   uint uVar10;
   uint index;

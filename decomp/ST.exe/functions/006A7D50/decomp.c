@@ -17,7 +17,7 @@ int FUN_006a7d50(int param_1,int param_2,int param_3,int param_4,int param_5,int
   uint uVar9;
   int iVar10;
   int iVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   uint local_4c;
   int local_48;
   int local_44;

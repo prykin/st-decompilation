@@ -4,7 +4,7 @@
 HRESULT FUN_0074c6ea(int *param_1,char *param_2,undefined4 *param_3)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   HRESULT HVar3;
   HRESULT HVar2;
   int iVar4;
@@ -55,7 +55,7 @@ HRESULT FUN_0074c6ea(int *param_1,char *param_2,undefined4 *param_3)
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         ppvVar5 = (void **)(*(int *)(param_1[0x28] + 0x8c) + 0xc);
       }
-      HVar2 = FUN_00746bab((LPUNKNOWN)param_1[1],nullptr,ppvVar5,param_1 + 0x29);
+      HVar2 = FUN_00746bab((LPUNKNOWN)param_1[1],nullptr,ppvVar5,(LPVOID *)(param_1 + 0x29));
       if (HVar2 < 0) {
         return HVar2;
       }

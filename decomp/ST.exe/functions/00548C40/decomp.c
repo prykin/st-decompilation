@@ -17,9 +17,20 @@
 void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
 
 {
+  float float_local_20_1;
+  float float_local_1c_2;
+  float float_local_14_3;
+  float float_local_14_4;
+  float float_local_14_5;
+  float float_local_14_6;
+  float float_local_14_7;
+  float float_local_14_8;
+  float float_local_14_9;
+  float float_local_14_10;
+  float float_local_14_11;
   CursorClassTy_field_0494State CVar1;
   STFishC *pSVar2;
-  undefined4 uVar3;
+  uint uVar3;
   CursorClassTy *this_00;
   int iVar5;
   HelpPanelTy_sub_00514BC0_param_1Enum HVar5;
@@ -166,7 +177,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   uint *local_14;
   float local_10;
   float local_c;
-  uint *local_8;
+  float local_8;
 
   local_2c8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_2c8;
@@ -314,15 +325,15 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
             iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,
                                  this_00->field_00C5 - this_00->field_04B2,
                                  this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                                 (float *)&local_8);
+                                 &local_8);
             if (iVar7 != 0) {
-              if (_DAT_0079034c <= (float)local_8) {
-                local_14 = local_8;
+              if (_DAT_0079034c <= local_8) {
+                float_local_14_3 = local_8; /* split floating lifetime from pointer-typed SSA storage */
                 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
-                          ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                          ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
               }
               else {
-                local_14 = nullptr;
+                float_local_14_3 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
                 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                           ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
               }
@@ -416,7 +427,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     if (this_00->field_049A == nullptr) {
       iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                            this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                           (float *)&local_8);
+                           &local_8);
       if (iVar7 == 0) break;
       lVar13 = Library::MSVCRT::__ftol();
       local_11b = (undefined1)lVar13;
@@ -448,7 +459,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 6:
     iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 != 0) {
       lVar13 = Library::MSVCRT::__ftol();
       local_130 = (uint)lVar13;
@@ -463,13 +474,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         local_128 = 4;
       }
       thunk_FUN_0054edf0((undefined4 *)0x14,&local_130,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_1c = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_1c_2 = local_8; /* split floating lifetime from pointer-typed SSA storage */
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
-                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
       }
       else {
-        local_1c = nullptr;
+        float_local_1c_2 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -478,7 +489,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 8:
     iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 != 0) {
       local_178[0] = 2;
       lVar13 = Library::MSVCRT::__ftol();
@@ -491,13 +502,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         local_171 = 4;
       }
       thunk_FUN_0054edf0((undefined4 *)0x16,(uint *)local_178,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_14 = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_14_4 = local_8; /* split floating lifetime from pointer-typed SSA storage */
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
-                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
       }
       else {
-        local_14 = nullptr;
+        float_local_14_4 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -519,13 +530,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     thunk_FUN_0054edf0((undefined4 *)0x16,(uint *)local_160,0,0xffffffff);
     iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 == 0) break;
-    if (_DAT_0079034c <= (float)local_8) {
-      local_14 = local_8;
+    if (_DAT_0079034c <= local_8) {
+      float_local_14_5 = local_8; /* split floating lifetime from pointer-typed SSA storage */
     }
     else {
-      local_14 = nullptr;
+      float_local_14_5 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
     }
     goto LAB_00549b36;
   case 0xd:
@@ -581,7 +592,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 0x10:
     iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 != 0) {
       local_19c = ((this_00->field_0494 != CASE_F) - 1U & 0xf2) + 0x10;
       lVar13 = Library::MSVCRT::__ftol();
@@ -597,13 +608,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         local_193 = 4;
       }
       thunk_FUN_0054edf0((undefined4 *)0x17,(uint *)&local_19c,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_20 = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_20_1 = local_8; /* split floating lifetime from pointer-typed SSA storage */
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
-                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
       }
       else {
-        local_20 = nullptr;
+        float_local_20_1 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -612,7 +623,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 0x11:
     iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 != 0) {
       lVar13 = Library::MSVCRT::__ftol();
       local_13c = (uint)lVar13;
@@ -627,13 +638,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         local_134 = 4;
       }
       thunk_FUN_0054edf0((undefined4 *)0x19,&local_13c,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_14 = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_14_6 = local_8; /* split floating lifetime from pointer-typed SSA storage */
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
-                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
       }
       else {
-        local_14 = nullptr;
+        float_local_14_6 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -668,15 +679,15 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
           thunk_FUN_0054edf0((undefined4 *)0x23,&local_c8,0,0xffffffff);
           iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                                this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                               (float *)&local_8);
+                               &local_8);
           if (iVar7 != 0) {
-            if (_DAT_0079034c <= (float)local_8) {
-              local_14 = local_8;
+            if (_DAT_0079034c <= local_8) {
+              float_local_14_7 = local_8; /* split floating lifetime from pointer-typed SSA storage */
               SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
-                        ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                        ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
             }
             else {
-              local_14 = nullptr;
+              float_local_14_7 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
               SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                         ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
             }
@@ -711,7 +722,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 0x19:
     iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 != 0) {
       lVar13 = Library::MSVCRT::__ftol();
       local_207 = (undefined4)lVar13;
@@ -727,13 +738,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       }
       local_208 = 0xb;
       thunk_FUN_0054edf0((undefined4 *)0x17,(uint *)&local_208,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_14 = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_14_8 = local_8; /* split floating lifetime from pointer-typed SSA storage */
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
-                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_8);
+                  ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,local_8);
       }
       else {
-        local_14 = nullptr;
+        float_local_14_8 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
                   ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,0.0);
       }
@@ -788,7 +799,7 @@ LAB_0054a196:
     if (this_00->field_04A2 == 0x18) {
       iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                            this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                           (float *)&local_8);
+                           &local_8);
       if (iVar7 == 0) break;
       local_90 = 1;
       local_8c = 0;
@@ -814,11 +825,11 @@ LAB_0054a196:
         local_84 = 0;
       }
       thunk_FUN_0054edf0((undefined4 *)0x1a,&local_90,0,0xffffffff);
-      if (_DAT_0079034c <= (float)local_8) {
-        local_14 = local_8;
+      if (_DAT_0079034c <= local_8) {
+        float_local_14_9 = local_8; /* split floating lifetime from pointer-typed SSA storage */
       }
       else {
-        local_14 = nullptr;
+        float_local_14_9 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
       }
       goto LAB_00549c33;
     }
@@ -838,17 +849,17 @@ LAB_0054a196:
     thunk_FUN_0054edf0((undefined4 *)0x1a,&local_e0,0,0xffffffff);
     iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 == 0) break;
-    if (_DAT_0079034c <= (float)local_8) {
-      local_14 = local_8;
+    if (_DAT_0079034c <= local_8) {
+      float_local_14_10 = local_8; /* split floating lifetime from pointer-typed SSA storage */
     }
     else {
-      local_14 = nullptr;
+      float_local_14_10 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
     }
 LAB_00549b36:
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
-              ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_14);
+              ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,float_local_14_10);
     break;
   case 0x1e:
     if (this_00->field_049A == nullptr) break;
@@ -880,17 +891,17 @@ cf_common_join_0054A19A:
     thunk_FUN_0054edf0((undefined4 *)0x17,local_284,0,0xffffffff);
     iVar7 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
-                         (float *)&local_8);
+                         &local_8);
     if (iVar7 == 0) break;
-    if (_DAT_0079034c <= (float)local_8) {
-      local_14 = local_8;
+    if (_DAT_0079034c <= local_8) {
+      float_local_14_11 = local_8; /* split floating lifetime from pointer-typed SSA storage */
     }
     else {
-      local_14 = nullptr;
+      float_local_14_11 = 0.0f; /* split floating lifetime from pointer-typed SSA storage */
     }
 LAB_00549c33:
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::thunk_FUN_0054a9b0
-              ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,(float)local_14);
+              ((AnonReceiver_0054A9B0 *)this_00,local_10,local_c,float_local_14_11);
   }
 switchD_00548db5_caseD_3:
   if (((this_00->field_04A2 != 0) && (this_00->field_0xd3 == '\0')) &&

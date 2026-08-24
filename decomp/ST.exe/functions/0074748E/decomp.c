@@ -7,10 +7,9 @@
 undefined4 FUN_0074748e(LPVOID *ppv)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   HRESULT HVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   /* ST_CALLSITE[0074749B]: CALL dword ptr [EAX + 0x20] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   puVar1 = (undefined4 *)(**(code **)((int)ppv[-4] + 0x20))();

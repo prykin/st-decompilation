@@ -4,7 +4,7 @@
 undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
 
 {
-  undefined1 *this;
+  byte *this;
   uint uVar1;
   int iVar2;
   int iVar4;
@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined4 uVar6;
+  uint uVar6;
   undefined4 local_38 [2];
   undefined4 local_30;
   undefined4 local_2c;

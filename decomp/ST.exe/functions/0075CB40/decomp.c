@@ -4,8 +4,8 @@
 void FUN_0075cb40(undefined4 *param_1)
 
 {
-  undefined4 *puVar1;
-  undefined4 *puVar2;
+  uint *puVar1;
+  uint *puVar2;
   int iVar3;
   int iVar4;
   undefined4 *local_8;

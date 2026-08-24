@@ -41,7 +41,7 @@ void st::fn_005335E0(void)
       pcVar9 = pcVar9 + 1;
     } while (cVar1 != '\0');
     local_10 = ~uVar4 + 0xd;
-    puVar2 = st::pointer_boundary_cast<uint *>(st::fn_006AAC10(local_10));
+    puVar2 = static_cast<uint *>(st::fn_006AAC10(local_10));
     local_c = puVar2;
     if (puVar2 != nullptr) {
       *(undefined1 *)puVar2 = 2;
@@ -344,8 +344,7 @@ ResearchPanelTy * __cdecl st::fn_0053BFF0(void)
 
 {
   ResearchPanelTy *this;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   this = (ResearchPanelTy *)st::fn_006B04D0(0x286);
   if (this != nullptr) {
     st::fn_006E5FB0(this);

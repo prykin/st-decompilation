@@ -42,9 +42,9 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
   byte *local_28;
   uint local_24;
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 

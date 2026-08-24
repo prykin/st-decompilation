@@ -11,11 +11,11 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
 {
   byte *pbVar1;
   uint uVar2;
-  undefined1 uVar3;
+  byte uVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   int iVar4;
-  undefined4 uVar6;
+  uint uVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
   int local_EAX_634;
@@ -29,7 +29,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   byte *pbVar10;
   STMessage *pSVar11;
   int *piVar12;
-  undefined2 uVar13;
+  ushort uVar13;
   int *piVar14;
   STMessage local_60;
   byte local_40 [20];

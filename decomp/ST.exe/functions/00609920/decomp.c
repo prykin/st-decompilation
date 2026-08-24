@@ -12,8 +12,7 @@ void * __cdecl FUN_00609920(void)
 
 {
   STGroupBoatC *pSVar1;
-  undefined4 *puVar2;
-
+  uint *puVar2;
   pSVar1 = (STGroupBoatC *)FUN_006b04d0(600);
   if (pSVar1 != nullptr) {
     puVar2 = thunk_FUN_00609950(pSVar1);

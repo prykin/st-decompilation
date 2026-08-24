@@ -11,7 +11,7 @@ undefined4 __thiscall STT3DSprC::ShowCurFase(STT3DSprC *this,char param_1)
   STT3DSprC *pSVar2;
   int local_EAX_35;
   int iVar3;
-  undefined4 uVar3;
+  uint uVar3;
   int iVar4;
   InternalExceptionFrame local_4c;
   STT3DSprC *local_8;

@@ -6,7 +6,7 @@ bool __thiscall FUN_00494870(void *this,uint param_1)
 {
   byte bVar1;
   byte bVar2;
-  undefined1 uVar3;
+  byte uVar3;
   int iVar4;
   uint uVar5;
   bool bVar6;

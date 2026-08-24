@@ -11,7 +11,7 @@ void __thiscall CGenerate::sub_006A0470(CGenerate *this)
 {
   ushort uVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int *piVar4;
   char *pcVar5;
   int iVar6;
@@ -19,7 +19,7 @@ void __thiscall CGenerate::sub_006A0470(CGenerate *this)
   uint uVar8;
   int iVar9;
   void *pvVar10;
-  undefined4 uVar11;
+  uint uVar11;
   byte local_14;
   int local_10;
   int local_c;

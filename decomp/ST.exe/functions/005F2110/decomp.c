@@ -15,7 +15,7 @@ undefined4 __thiscall STManBasisC::sub_005F2110(STManBasisC *this,undefined4 *pa
   void *pvVar3;
   int iVar4;
   uint uVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   int *piVar7;
   ushort **ppuVar8;
 

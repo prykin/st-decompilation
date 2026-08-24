@@ -19,7 +19,7 @@ undefined4 __thiscall st::fn_006A01D0(CGenerate *this)
   int local_EAX_314;
   int iVar6;
   int iVar3;
-  undefined4 uVar7;
+  uint uVar7;
   uint uVar8;
   char *pcVar10;
   char *pcVar11;
@@ -61,7 +61,7 @@ undefined4 __thiscall st::fn_006A01D0(CGenerate *this)
   } while (cVar1 != '\0');
   uVar8 = ~uVar8;
   pcVar10 = pcVar11 + -uVar8;
-  pcVar11 = st::pointer_boundary_cast<char *>(&local_10->field_0x53f3);
+  pcVar11 = (char *)&local_10->field_0x53f3;
   memmove(pcVar11, pcVar10, uVar8); /* compiler REP MOVS byte copy */
   local_8 = nullptr;
   st::fn_006F1CE0(*(cMf32 **)&(local_10->aggregate_001C).field_0x218,0xc,st::mutable_c_string("TEXTURE_DSCR"),
@@ -136,7 +136,7 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   uint uVar4;
   char *pcVar6;
   char *pcVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
   char cVar9;
   uint *puVar10;
   InternalExceptionFrame local_54;
@@ -178,7 +178,7 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   } while (cVar9 != '\0');
   uVar4 = ~uVar4;
   pcVar6 = pcVar6 + -uVar4;
-  pcVar7 = st::pointer_boundary_cast<char *>(&this_00->field_0x55fb);
+  pcVar7 = (char *)&this_00->field_0x55fb;
   memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
   st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this_00->field_0018),0,PTR_s_TITLE_MISSION_0079d838,(byte *)&this_00->field_0x55fb,0x104,
                 nullptr,'\0',nullptr);
@@ -228,7 +228,7 @@ undefined4 __thiscall st::fn_006A0960(CGenerate *this)
 {
   InternalExceptionFrame *pIVar2;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int local_48 [16];
   undefined4 local_8;
 

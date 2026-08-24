@@ -44,7 +44,7 @@ int __thiscall st::fn_004D11D0(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy_004
   undefined4 extraout_EDX_01;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
-  undefined4 uVar9;
+  uint uVar9;
   RecoveredRecord_TLOEmbryoTy_004D11D0 *pRVar10;
   int iVar11;
   byte *puVar12;
@@ -693,10 +693,10 @@ undefined4 __fastcall st::fn_004D32C0(TLOBaseTy *param_1)
   dword dVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined2 uVar5;
+  ushort uVar5;
   int local_EAX_3601;
   uint uVar3;
-  undefined4 uVar4;
+  uint uVar4;
   int uVar2;
   int uVar6;
   int local_EAX_4514;
@@ -707,7 +707,7 @@ undefined4 __fastcall st::fn_004D32C0(TLOBaseTy *param_1)
   undefined2 extraout_var_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
-  undefined2 uVar8;
+  ushort uVar8;
   int iVar7;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
@@ -715,7 +715,7 @@ undefined4 __fastcall st::fn_004D32C0(TLOBaseTy *param_1)
   undefined2 extraout_var_02;
   int iVar9;
   int iVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   uint uVar13;
   int *piVar14;
   int iVar15;
@@ -1697,7 +1697,7 @@ int __thiscall st::fn_004D55B0(TLOEmbryoTy *this,STMessage *message)
   TLOEmbryoTy *this_00;
   int local_EAX_39;
   int iVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int uVar8;
   uint uVar9;
   int iVar5;
@@ -1773,7 +1773,7 @@ int __thiscall st::fn_004D55B0(TLOEmbryoTy *this,STMessage *message)
           g_currentExceptionFrame = local_70.previous;
           return 0;
         }
-        local_8 = st::pointer_boundary_cast<int *>((message->arg0).ptr);
+        local_8 = static_cast<int *>((message->arg0).ptr);
         iVar13 = (this_00->field_0368 * 3 + this_00->field_036C) * 4;
         iVar11 = *local_8;
         if (this_00->field_0338 != 0) {
@@ -1840,7 +1840,7 @@ int __thiscall st::fn_004D55B0(TLOEmbryoTy *this,STMessage *message)
         g_currentExceptionFrame = local_70.previous;
         return 0;
       }
-      piVar12 = st::pointer_boundary_cast<int *>((message->arg0).ptr);
+      piVar12 = static_cast<int *>((message->arg0).ptr);
       if (*piVar12 != this_00->field_0024) {
         g_currentExceptionFrame = local_70.previous;
         return 0;
@@ -1979,7 +1979,7 @@ LAB_004d600f:
         return 0;
       }
       /* ST_CALLSITE[004D562A]: CALL 0x00405ed9; direct=00405ED9 TLOEmbryoTy::Create */
-      st::fn_00405ED9(this_00,st::pointer_boundary_cast<RecoveredRecord_TLOEmbryoTy_004D11D0 *>((message->arg0).ptr));
+      st::fn_00405ED9(this_00,static_cast<RecoveredRecord_TLOEmbryoTy_004D11D0 *>((message->arg0).ptr));
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }

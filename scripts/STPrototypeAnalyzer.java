@@ -68,6 +68,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
     private final Map<TargetKey, Evidence> evidence = new TreeMap<>();
     private final Map<TargetKey, Set<TargetKey>> boundaryEdges = new TreeMap<>();
     private final Set<TargetKey> localPointerOutputTargets = new TreeSet<>();
+    private final Set<TargetKey> definiteOutputReusedParameters = new TreeSet<>();
+    private final Set<TargetKey> addressedStackParameters = new TreeSet<>();
+    private final Map<TargetKey, Set<String>> addressedStackScalarDomains = new TreeMap<>();
     private final Map<TargetKey, String> definiteOutputTypes = new HashMap<>();
     private final List<CallSiteAudit> callSiteAudits = new ArrayList<>();
     private final List<ByteBufferAudit> byteBufferAudits = new ArrayList<>();
@@ -99,6 +102,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
             evidence.clear();
             boundaryEdges.clear();
             localPointerOutputTargets.clear();
+            definiteOutputReusedParameters.clear();
+            addressedStackParameters.clear();
+            addressedStackScalarDomains.clear();
             callSiteAudits.clear();
             byteBufferAudits.clear();
             reverseReturnEvidence = 0;
@@ -107,6 +113,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
             ScanCounts counts = scanAllFunctions();
             functionsSeen = counts.functions;
             callSites = counts.callSites;
+            addAddressedStackParameterScalarEvidence();
             addNarrowRawStorageFallbacks();
             addStronglyConnectedBoundaryEvidence();
             Map<TargetKey, String> nextSeeds = qualifiedInferredSeeds();
@@ -130,6 +137,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 evidence.clear();
                 boundaryEdges.clear();
                 localPointerOutputTargets.clear();
+                definiteOutputReusedParameters.clear();
+                addressedStackParameters.clear();
+                addressedStackScalarDomains.clear();
                 callSiteAudits.clear();
                 byteBufferAudits.clear();
                 reverseReturnEvidence = 0;
@@ -138,6 +148,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 ScanCounts finalCounts = scanAllFunctions();
                 functionsSeen = finalCounts.functions;
                 callSites = finalCounts.callSites;
+                addAddressedStackParameterScalarEvidence();
                 addNarrowRawStorageFallbacks();
                 addStronglyConnectedBoundaryEvidence();
                 propagationPasses = pass + 1;
@@ -894,8 +905,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
                         stackStateComplete);
                     propagateCall(caller, called, registers.get("ECX"), pushes, registers,
                         instruction.getAddress(), wrapper);
-                    applyDefiniteStackSlotOutputs(called, pushes, stackSpills,
-                        instruction.getAddress());
+                    applyDefiniteStackSlotOutputs(caller, called, pushes,
+                        stackSpills, instruction.getAddress());
                     String returnedType = inferredSeeds.getOrDefault(
                         new TargetKey(called.getEntryPoint(), "return", -1), "");
                     boolean inferredReturn = !returnedType.isBlank();
@@ -973,8 +984,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
         // stack formal. Do not propagate a longer apparent prefix here; stale caller-cleanup
         // or saved-register pushes can otherwise look like arguments and poison the global
         // prototype fixed point.
-        if (stackTargets.size() == pushes.size() ||
-                (called.hasVarArgs() && pushes.size() >= stackTargets.size())) {
+        if (hasCompleteStackArgumentSuffix(called, stackTargets, pushes)) {
             for (int index = 0; index < stackTargets.size(); index++) {
                 Parameter target = stackTargets.get(index);
                 Value value = pushes.get(pushes.size() - 1 - index);
@@ -1024,6 +1034,28 @@ public class STPrototypeAnalyzer extends GhidraScript {
     }
 
     /**
+     * Return true when the tracked PUSH suffix is a complete formal argument list.
+     * Older entries may be saved non-volatile registers or an enclosing frame value.
+     * They are safely excluded only when the callee itself proves the exact byte count
+     * with RET n; a convention-derived purge or caller cleanup is not sufficient.
+     */
+    private boolean hasCompleteStackArgumentSuffix(Function called,
+            List<Parameter> targets, List<Value> pushes) {
+        if (targets.size() == pushes.size() ||
+                called.hasVarArgs() && pushes.size() >= targets.size()) return true;
+        if (targets.isEmpty() || pushes.size() <= targets.size() || called.hasVarArgs() ||
+                !called.isStackPurgeSizeValid()) return false;
+        int word = currentProgram.getDefaultPointerSize();
+        int formalBytes = 0;
+        for (Parameter target : targets) {
+            int width = effectiveLength(target.getFormalDataType());
+            if (width < 1) return false;
+            formalBytes += ((width + word - 1) / word) * word;
+        }
+        return called.getStackPurgeSize() == formalBytes;
+    }
+
+    /**
      * Prove that the top tracked value is the word immediately supplying stack
      * argument zero. Register setup may sit between PUSH and CALL, but another
      * control transfer, stack adjustment, POP, or write through ESP invalidates
@@ -1063,6 +1095,26 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (value.parameterOrdinal < 0) return;
         Parameter source = explicitParameter(caller, value.parameterOrdinal);
         if (source == null) return;
+        TargetKey sourceKey = new TargetKey(caller.getEntryPoint(), "parameter",
+            source.getOrdinal());
+        String scalarBoundary = machineWordScalarBoundary(called, target);
+        if (!scalarBoundary.isBlank() &&
+                unwrap(source.getFormalDataType()) instanceof Pointer &&
+                value.extension == Extension.NONE && !value.literal)
+            addressedStackScalarDomains.computeIfAbsent(sourceKey,
+                ignored -> new TreeSet<>()).add(scalarBoundary);
+        /*
+         * LEA reg,[ebp+param] describes the address of the caller's stack slot,
+         * not the entry value stored in that slot. Propagating the callee's T *
+         * formal back into the caller used to turn an ordinary scalar input into
+         * T * when the compiler later reused that slot as an out-parameter local.
+         * Keep the forward output evidence, record the lifetime boundary for the
+         * repair pass below, and never create a value-domain boundary edge here.
+         */
+        if (value.addressedStackOffset != null) {
+            addressedStackParameters.add(sourceKey);
+            return;
+        }
         if (value.extension == Extension.NONE && !value.literal &&
                 effectiveLength(source.getFormalDataType()) ==
                     effectiveLength(target.getFormalDataType()))
@@ -1085,6 +1137,134 @@ public class STPrototypeAnalyzer extends GhidraScript {
             source, type, name, wrapper || protectedSource(target.getSource()) ||
                 !inferredTarget.isBlank() ||
                 trustedNamedLibraryParameter(called, target), siteText);
+    }
+
+    /**
+     * Repair an older script-owned pointer guess which came from passing the
+     * address of an incoming stack slot. The replacement domain is established
+     * only by a direct MOVSX/MOVZX read of that same entry slot; the retained ABI
+     * width remains one machine word. A real T ** parameter which is merely
+     * inspected through a partial register therefore remains untouched.
+     */
+    private void addAddressedStackParameterScalarEvidence() {
+        for (TargetKey key : addressedStackParameters) {
+            Function function = currentProgram.getFunctionManager()
+                .getFunctionAt(key.address);
+            Parameter parameter = function == null ? null :
+                explicitParameter(function, key.ordinal);
+            DataType formal = parameter == null ? null :
+                unwrap(parameter.getFormalDataType());
+            if (parameter == null || !parameter.hasStackStorage() ||
+                    !(formal instanceof Pointer) ||
+                    !scriptAppliedTarget(function, "parameter", key.ordinal)) continue;
+            Set<String> boundaryDomains = addressedStackScalarDomains
+                .getOrDefault(key, Set.of());
+            String proposed = boundaryDomains.size() == 1 ?
+                boundaryDomains.iterator().next() :
+                directExtendedEntryScalar(function, parameter);
+            if (proposed.isBlank()) continue;
+            addParameterEvidence(function, parameter, proposed, "", true,
+                "incoming stack slot is read as a " + proposed.substring(1) +
+                " before its address is passed as a distinct output lifetime");
+        }
+    }
+
+    private String directExtendedEntryScalar(Function function, Parameter parameter) {
+        Set<Long> offsets = parameterFrameOffsets(function, parameter);
+        Set<String> domains = new TreeSet<>();
+        Set<String> loaded = new HashSet<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(
+                instruction.toString().toUpperCase(Locale.ROOT));
+            if (("MOVSX".equals(mnemonic) || "MOVZX".equals(mnemonic)) &&
+                    operands.length >= 2 && isFullRegister(operands[0])) {
+                MemoryExpr memory = memoryExpr(operands[1]);
+                if (memory != null && "EBP".equals(memory.register) &&
+                        offsets.contains(memory.displacement)) {
+                    int sourceWidth = memoryOperandWidth(operands[1]);
+                    if (sourceWidth >= 1 &&
+                            sourceWidth < currentProgram.getDefaultPointerSize())
+                        domains.add("MOVSX".equals(mnemonic) ? "/int" : "/uint");
+                }
+            }
+
+            if (Set.of("ADD", "SUB", "IMUL", "MUL", "DIV", "IDIV", "SHL", "SHR",
+                    "SAR").contains(mnemonic)) {
+                for (String operand : operands) {
+                    String register = cleanRegister(operand);
+                    if (register != null && isFullRegister(operand) &&
+                            loaded.contains(register)) {
+                        domains.add(Set.of("IDIV", "SAR").contains(mnemonic) ?
+                            "/int" : "/uint");
+                        break;
+                    }
+                }
+            }
+
+            String destination = operands.length == 0 ? null :
+                cleanRegister(operands[0]);
+            if (destination != null && isFullRegister(operands[0]) &&
+                    writesRegister(mnemonic))
+                loaded.remove(destination);
+            if ("MOV".equals(mnemonic) && operands.length >= 2 &&
+                    destination != null && isFullRegister(operands[0])) {
+                MemoryExpr memory = memoryExpr(operands[1]);
+                if (memory != null && "EBP".equals(memory.register) &&
+                        offsets.contains(memory.displacement) &&
+                        memoryOperandWidth(operands[1]) ==
+                            currentProgram.getDefaultPointerSize())
+                    loaded.add(destination);
+            }
+        }
+        return domains.size() == 1 ? domains.iterator().next() : "";
+    }
+
+    private String machineWordScalarBoundary(Function function, Parameter parameter) {
+        String type = meaningfulType(parameter.getFormalDataType());
+        if (type.isBlank() || type.startsWith("pointer:") ||
+                primitiveSignedness(type) == null) return "";
+        boolean trusted = trustedParameter(function, parameter);
+        boolean exactNarrowStorage = exactIncomingScalarWidth(function, parameter) ==
+            effectiveLength(parameter.getFormalDataType()) &&
+            effectiveLength(parameter.getFormalDataType()) <
+                currentProgram.getDefaultPointerSize();
+        String comment = function.getComment();
+        String marker = "[STPrototypeApplier] Propagated parameter " +
+            parameter.getOrdinal() + ". Evidence: raw retained-width parameter lifetime";
+        if (!trusted && !exactNarrowStorage &&
+                (comment == null || !comment.contains(marker))) return "";
+        Boolean signed = primitiveSignedness(type);
+        return integerType(currentProgram.getDefaultPointerSize(), signed != null && signed);
+    }
+
+    private int exactIncomingScalarWidth(Function function, Parameter parameter) {
+        if (function == null || parameter == null || !parameter.hasStackStorage()) return -1;
+        Set<Long> offsets = parameterFrameOffsets(function, parameter);
+        Set<Integer> widths = new TreeSet<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if ("LEA".equals(mnemonic)) continue;
+            String[] operands = splitOperands(
+                instruction.toString().toUpperCase(Locale.ROOT));
+            for (int index = 0; index < operands.length; index++) {
+                MemoryExpr memory = memoryExpr(operands[index]);
+                if (memory == null || !"EBP".equals(memory.register) ||
+                        !offsets.contains(memory.displacement)) continue;
+                boolean writeOnly = index == 0 && Set.of("MOV", "MOVSX", "MOVZX",
+                    "LEA", "POP").contains(mnemonic);
+                if (writeOnly) continue;
+                int width = memoryOperandWidth(operands[index]);
+                if (width > 0) widths.add(width);
+            }
+        }
+        return widths.size() == 1 ? widths.iterator().next() : -1;
     }
 
     private void addParameterEvidence(Function function, Parameter parameter, String type,
@@ -1420,6 +1600,17 @@ public class STPrototypeAnalyzer extends GhidraScript {
                  machineForwardedReturn);
             boolean scalarRoleRepair = strongScalarRoleRepair(currentType, proposedType,
                 ev, strongTypeCount);
+            boolean stackSlotLifetimeRepair =
+                definiteOutputReusedParameters.contains(key) &&
+                !proposedType.isBlank() &&
+                typeLength(proposedType) == effectiveLength(target.getDataType()) &&
+                strongTypeCount > 0 &&
+                pointerScalarOrFloatDomainChange(currentType, proposedType);
+            boolean addressedStackScalarRepair =
+                addressedStackParameters.contains(key) &&
+                currentType.startsWith("pointer:") &&
+                isMachineWordScalar(proposedType) && strongTypeCount > 0 &&
+                noCompetingStrongType(ev, proposedType);
             ByteBufferProof byteProof = byteBufferProofs.get(key);
             boolean byteBufferRepair = "pointer:/byte".equals(proposedType) &&
                 byteProof != null && byteProof.qualifies &&
@@ -1428,9 +1619,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
             boolean safeScriptRepair = !scriptOwned ||
                 scriptRepairImproves(currentType, proposedType) ||
                 strongPrimitiveRoleRepair(currentType, proposedType, ev,
-                    strongTypeCount) || scalarRoleRepair || byteBufferRepair;
+                    strongTypeCount) || scalarRoleRepair || byteBufferRepair ||
+                stackSlotLifetimeRepair || addressedStackScalarRepair;
             boolean typeChange = compatible && !sameType(currentType, proposedType) &&
-                (safeToRefine(target, proposedType) || scriptOwned) && safeScriptRepair;
+                (safeToRefine(target, proposedType) || scriptOwned ||
+                    stackSlotLifetimeRepair) && safeScriptRepair;
             boolean enoughTypeEvidence = "return".equals(key.kind) ?
                 strongTypeCount > 0 : strongTypeCount > 0 || typeCount >= 2;
             boolean protectedOverride = legacyDebugGenericReturn(function, target, key,
@@ -1468,6 +1661,10 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 reasons.add("post_overwrite_scalar_role_replaces_generated_pointer_view");
             if (byteBufferRepair)
                 reasons.add("mixed_width_transport_replaces_generated_byte_shape");
+            if (stackSlotLifetimeRepair)
+                reasons.add("definite_output_stack_slot_lifetime_repair");
+            if (addressedStackScalarRepair)
+                reasons.add("addressed_stack_slot_entry_domain_repair");
             if (scriptOwned && !safeScriptRepair)
                 reasons.add("script_repair_would_lose_semantic_type");
             if (invalidThisName) reasons.add("explicit_parameter_named_this");
@@ -1616,17 +1813,19 @@ public class STPrototypeAnalyzer extends GhidraScript {
      * old input type leaks past the call and poisons unrelated downstream prototypes.  Only an
      * exact offset-zero write of the complete current pointee on every callee path qualifies.
      */
-    private void applyDefiniteStackSlotOutputs(Function called, List<Value> pushes,
-            Map<String, Value> stackSpills, Address site) {
+    private void applyDefiniteStackSlotOutputs(Function caller, Function called,
+            List<Value> pushes, Map<String, Value> stackSpills, Address site) {
         List<Parameter> targets = stackParameters(called);
-        if (!(targets.size() == pushes.size() ||
-                called.hasVarArgs() && pushes.size() >= targets.size())) return;
+        if (!hasCompleteStackArgumentSuffix(called, targets, pushes)) return;
         for (int index = 0; index < targets.size(); index++) {
             Value value = pushes.get(pushes.size() - 1 - index);
             if (value == null || value.addressedStackOffset == null) continue;
             Parameter target = targets.get(index);
             String outputType = definiteOutputType(called, target);
             if (outputType.isBlank()) continue;
+            if (value.parameterOrdinal >= 0)
+                definiteOutputReusedParameters.add(new TargetKey(
+                    caller.getEntryPoint(), "parameter", value.parameterOrdinal));
             String evidenceSite = addr(site) + " definite output through " +
                 called.getName(true) + " parameter " + target.getOrdinal();
             DataType formal = unwrap(target.getFormalDataType());
@@ -2505,6 +2704,15 @@ public class STPrototypeAnalyzer extends GhidraScript {
         return current.matches("/(?:undefined4|u?int(?:4)?|dword|pointer)");
     }
 
+    private boolean noCompetingStrongType(Evidence value, String proposed) {
+        for (String alternative : value.types.keySet()) {
+            if (alternative.equals(proposed)) continue;
+            if (!value.strongTypeSites.getOrDefault(alternative, Set.of()).isEmpty())
+                return false;
+        }
+        return true;
+    }
+
     /**
      * Retire a generated anonymous pointer view which escaped from an incoming stack slot after
      * that slot had already been overwritten with a machine word.  One trusted scalar boundary
@@ -2533,6 +2741,21 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (typeLength(specification) != currentProgram.getDefaultPointerSize()) return false;
         String value = specification.toLowerCase(Locale.ROOT);
         return value.matches("/(?:int|uint|long|ulong|undefined4|dword|uint4)");
+    }
+
+    private boolean pointerScalarOrFloatDomainChange(String current,
+            String proposed) {
+        boolean currentPointer = current != null && current.startsWith("pointer:");
+        boolean proposedPointer = proposed != null && proposed.startsWith("pointer:");
+        boolean currentFloat = Set.of("/float", "/double", "/float10")
+            .contains(current);
+        boolean proposedFloat = Set.of("/float", "/double", "/float10")
+            .contains(proposed);
+        boolean currentScalar = isMachineWordScalar(current);
+        boolean proposedScalar = isMachineWordScalar(proposed);
+        return currentPointer && (proposedFloat || proposedScalar) ||
+            proposedPointer && (currentFloat || currentScalar) ||
+            currentFloat && proposedScalar || proposedFloat && currentScalar;
     }
 
     private boolean primitiveOrVoidPointee(String specification) {
@@ -2588,6 +2811,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
             "stack_argument_underflow" : "cfg_stack_state_incomplete";
         else if (pushes.size() == expectedStack.size()) status = "exact_address_match";
         else if (resolved.hasVarArgs()) status = "varargs_address_match";
+        else if (hasCompleteStackArgumentSuffix(resolved, expectedStack, pushes))
+            status = "exact_callee_purge_suffix";
         else status = "address_match_with_prefix_pushes";
         callSiteAudits.add(new CallSiteAudit(caller, instruction.getAddress(), direct,
             resolved, thunkChain(direct), pushes.size(), expectedStack.size(),

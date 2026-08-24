@@ -27,7 +27,7 @@ STAllPlayersC::GetCursorType
   uint uVar5;
   int iVar5;
   STGameObjC *pSVar6;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EDX;

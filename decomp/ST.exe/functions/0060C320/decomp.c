@@ -8,14 +8,14 @@
 int __fastcall FUN_0060c320(void *param_1)
 
 {
-  undefined4 *puVar1;
-  undefined4 *puVar2;
+  uint *puVar1;
+  uint *puVar2;
   byte bVar3;
   byte bVar4;
   byte bVar5;
   code *pcVar6;
-  undefined4 uVar7;
-  undefined4 uVar8;
+  uint uVar7;
+  uint uVar8;
   void *this;
   void **ppvVar9;
   int iVar10;
@@ -39,7 +39,7 @@ int __fastcall FUN_0060c320(void *param_1)
   int local_7c;
   int local_74;
   int local_6c;
-  undefined1 *local_68;
+  byte *local_68;
   int local_64;
   int local_5c;
   int local_58;
@@ -51,9 +51,9 @@ int __fastcall FUN_0060c320(void *param_1)
   int local_2c;
   short local_28 [4];
   int local_20;
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
@@ -125,7 +125,7 @@ int __fastcall FUN_0060c320(void *param_1)
               if (this_00 != nullptr) {
                 pcVar6 = this_00->vtable[5].slots_00_28[0];
                 aiStack_ac[iVar11 * 0xfffffff1U + 2] = 0x60c4f6;
-                /* ST_CALLSITE[0060C4F0]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+                /* ST_CALLSITE[0060C4F0]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                 iVar12 = (*pcVar6)(this_00);
                 iVar18 = local_40;
                 if (((iVar12 != 0) && (this_00[1].vtable < (STWorldObjectVTable *)0x8)) &&
@@ -164,7 +164,7 @@ LAB_0060c5f5:
                   if (bVar20) {
                     pcVar6 = this_00->vtable[5].slots_00_28[2];
                     aiStack_ac[iVar11 * 0xfffffff1U + 2] = 0x60c612;
-                    /* ST_CALLSITE[0060C60C]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+                    /* ST_CALLSITE[0060C60C]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                     iVar14 = (*pcVar6)(this_00);
                     iVar12 = local_74;
                     iVar18 = local_40;
@@ -173,7 +173,7 @@ LAB_0060c5f5:
                       *puVar1 = this_00;
                       pcVar6 = this_00->vtable[2].slots_00_28[6];
                       aiStack_ac[iVar11 * 0xfffffff1U + 2] = 0x60c62f;
-                      /* ST_CALLSITE[0060C62C]: [STIndirectCallsiteApplier] exact slot 0x78; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+                      /* ST_CALLSITE[0060C62C]: CALL dword ptr [EAX + 0x78]; [STIndirectCallsiteApplier] exact slot 0x78; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                       iVar14 = (*pcVar6)(this_00);
                       iVar14 = iVar14 + 1;
                       iVar18 = local_40;
@@ -263,7 +263,7 @@ LAB_0060c5f5:
         (auStack_b0 + iVar11 * -0x1e)[0] = 0xc7b4;
         (auStack_b0 + iVar11 * -0x1e)[1] = 0x60;
         thunk_FUN_00416270(this,(uint *)aiStack_ac[iVar11 * -0xf],
-                           (int *)aiStack_ac[iVar11 * 0xfffffff1U + 1],
+                           (short *)aiStack_ac[iVar11 * 0xfffffff1U + 1],
                            (short *)aiStack_ac[iVar11 * 0xfffffff1U + 2]);
         aiStack_ac[iVar11 * 0xfffffff1U + 2] = (int)local_28[0];
         aiStack_ac[iVar11 * 0xfffffff1U + 1] = (int)local_80[0];

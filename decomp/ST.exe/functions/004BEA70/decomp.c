@@ -134,9 +134,9 @@ bool __thiscall TLOBaseTy::FUN_004bea70(TLOBaseTy *this,int *param_1)
   int local_EAX_5867;
   int local_EAX_5936;
   int local_EAX_5975;
-  undefined4 uVar15;
+  uint uVar15;
   int local_EAX_6574;
-  undefined1 uVar7;
+  byte uVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   int local_EAX_6676;
@@ -164,9 +164,9 @@ bool __thiscall TLOBaseTy::FUN_004bea70(TLOBaseTy *this,int *param_1)
   int local_EAX_10456;
   short sVar19;
   int iVar21;
-  undefined2 *puVar22;
+  ushort *puVar22;
   TLOBaseTy_field_04D0State *pTVar23;
-  undefined2 uVar24;
+  ushort uVar24;
   int *piVar25;
   bool bVar26;
   int *local_c;
@@ -1734,7 +1734,7 @@ LAB_004c0fcc:
     }
     pAVar18 = (AnonPointee_TLOBaseTy_061B *)(iVar21 - CASE_1);
     bVar26 = SUB41(pAVar18,0);
-    switch(pAVar18) {
+    switch(static_cast<uint32_t>(STRawWord(pAVar18))) {
     case 0:
       local_EAX_9757 = thunk_FUN_0044e1b0((int)this->field_0024);
       if (local_EAX_9757 == 0) {
@@ -1747,25 +1747,25 @@ LAB_004c0fcc:
       }
       piVar4[0x16] = (-(uint)(*(int *)&this->field_0x369 != 0x15) & 0xfffffffa) + 0xbc3;
       return SUB41(local_EAX_9757,0);
-    case (AnonPointee_TLOBaseTy_061B *)0x1:
+    case 0x1:
       piVar4[0x16] = 0xbbe;
       return bVar26;
-    case (AnonPointee_TLOBaseTy_061B *)0x2:
+    case 0x2:
       piVar4[0x16] = 0xbbf;
       return bVar26;
-    case (AnonPointee_TLOBaseTy_061B *)0x3:
+    case 0x3:
       piVar4[0x16] = 0xbc0;
       return bVar26;
-    case (AnonPointee_TLOBaseTy_061B *)0x4:
+    case 0x4:
       piVar4[0x16] = 0xbc1;
       return bVar26;
-    case (AnonPointee_TLOBaseTy_061B *)0x5:
+    case 0x5:
       piVar4[0x16] = 0xbc2;
       return bVar26;
-    case (AnonPointee_TLOBaseTy_061B *)0x6:
+    case 0x6:
       piVar4[0x16] = 0xbd2;
       return bVar26;
-    case (AnonPointee_TLOBaseTy_061B *)0x7:
+    case 0x7:
       piVar4[0x16] = 0xbdc;
       return bVar26;
     }

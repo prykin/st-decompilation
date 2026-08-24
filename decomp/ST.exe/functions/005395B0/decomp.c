@@ -7,7 +7,11 @@
 
    [STSwitchEnumApplier] Switch target field_0172 uses
    /SubmarineTitans/Recovered/Enums/PausePanelTy_field_0172State. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall PausePanelTy::SwitchPausePanel(PausePanelTy *this,int param_1)
 

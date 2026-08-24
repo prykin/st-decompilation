@@ -19,8 +19,8 @@ void __thiscall st::fn_004F05C0(BldObjPanelTy *this)
   int iVar6;
   int iVar8;
   uint uVar9;
-  undefined4 uVar10;
-  undefined4 *puVar11;
+  uint uVar10;
+  uint *puVar11;
   bool bVar12;
   int *piVar13;
   int local_358 [11];
@@ -74,7 +74,7 @@ void __thiscall st::fn_004F05C0(BldObjPanelTy *this)
   puVar11 = &local_1c->field_027E;
   do {
     pDVar3 = st::fn_006AE290(nullptr,10,0x30,5);
-    *puVar11 = st::machine_word_boundary_cast<undefined4>(pDVar3);
+    *puVar11 = st::machine_word_boundary_cast<uint>(pDVar3);
     puVar11 = puVar11 + 1;
     iVar8 = iVar8 + -1;
   } while (iVar8 != 0);
@@ -90,7 +90,7 @@ void __thiscall st::fn_004F05C0(BldObjPanelTy *this)
   puVar5 = st::fn_006F1CE0(g_cMf32_00806790,1,&this_00->field_006C,nullptr,1);
   this_00->field_027A = puVar5;
   puVar5 = st::fn_00709AF0
-                     (PTR_00806794,CASE_B,st::pointer_boundary_cast<char *>(&DAT_007c1910),0xffffffff,0,1,0,nullptr);
+                     (PTR_00806794,CASE_B,(char *)&DAT_007c1910,0xffffffff,0,1,0,nullptr);
   this_00->field_0188 = puVar5;
   puVar5 = st::fn_00709AF0
                      (PTR_00806794,CASE_B,st::mutable_c_string("OBJSD"),0xffffffff,0,1,0,nullptr);
@@ -172,7 +172,7 @@ switchD_004f0850_default:
   local_44 = local_64;
   /* ST_CALLSITE[004F0900]: CALL dword ptr [EDX + 0x8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0292,0,local_74,0);
+  (**(code **)(*STField<int *>(this_00,0xC) + 8))(5,&this_00->field_0292,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }
@@ -337,7 +337,7 @@ int __thiscall st::fn_004F1080(BldObjPanelTy *this,STMessage *message)
   BldObjPanelTy *this_00;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   int iVar5;
   int iVar6;
   InternalExceptionFrame local_4c;

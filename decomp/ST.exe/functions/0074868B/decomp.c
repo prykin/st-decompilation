@@ -14,8 +14,7 @@ FUN_0074868b(AnonShape_0074868B_7E9383CB *param_1,LPCRITICAL_SECTION lpCriticalS
 {
   LPCRITICAL_SECTION lpCriticalSection_00;
   int *piVar1;
-  undefined4 uVar2;
-
+  uint uVar2;
   if (lpCriticalSection == (LPCRITICAL_SECTION)0x0) {
     uVar2 = 0x80004003;
   }

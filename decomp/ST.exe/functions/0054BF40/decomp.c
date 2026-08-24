@@ -29,7 +29,7 @@ CursorClassTy::SetGCType
   CursorClassTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   char *pcVar3;
   BITMAPINFO *pBVar4;
   uint uVar5;

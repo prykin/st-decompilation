@@ -18,7 +18,7 @@ ProdPanelTy::CreateSlider
   int iVar3;
   int iVar4;
   int *piVar5;
-  undefined4 uVar6;
+  uint uVar6;
   int *piVar7;
   int iVar9;
   int local_42c [6];

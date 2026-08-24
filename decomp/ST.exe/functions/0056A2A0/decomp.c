@@ -10,7 +10,7 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
   int iVar3;
   uint *puVar4;
   DWORD DVar5;
-  undefined4 uVar6;
+  uint uVar6;
   InternalExceptionFrame local_4c;
   void *local_8;
 

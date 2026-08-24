@@ -11,7 +11,7 @@ undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
   PlayPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar4;
   InternalExceptionFrame local_4c;
   PlayPanelTy *local_8;

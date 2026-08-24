@@ -15,7 +15,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
   LPSTR pCVar6;
   ushort *puVar7;
   char *resourceString;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar3;
   int iVar9;
   uint uVar10;
@@ -36,7 +36,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
     local_8->field_003C = iVar4;
     local_8->field_0174 = (local_8->field_0040 - iVar4) + g_nWidth_00806730;
     /* ST_CALLSITE[005392E9]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
+    pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     this_00->field_017C = pcVar5;
     pcVar5->field_0058 = 0;
     pcVar5->field_005C = 0;

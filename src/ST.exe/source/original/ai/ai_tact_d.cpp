@@ -24,11 +24,11 @@ undefined4 * __cdecl st::fn_00690E90(char *source,undefined2 param_2,undefined2 
   g_currentExceptionFrame = &local_4c;
   exceptionCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
-    local_8 = st::pointer_boundary_cast<AnonShape_00690E90_9F986EB9 *>(st::fn_006AAC10(0x10c));
+    local_8 = static_cast<AnonShape_00690E90_9F986EB9 *>(st::fn_006AAC10(0x10c));
     *(undefined4 *)local_8 = 0x38e;
     *(undefined4 *)&local_8->field_0x14 = 0x10c;
     *(undefined1 *)((int)&local_8->field_0017 + 1) = 2;
-    st::fn_0072E340(st::pointer_boundary_cast<char *>(&local_8->field_0x1b),source,0x3f);
+    st::fn_0072E340((char *)&local_8->field_0x1b,source,0x3f);
     local_8->field_0019 = param_2;
     *(undefined2 *)&local_8->field_0x5c = param_3;
     if (local_8->field_0085 == 0) {
@@ -68,7 +68,7 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
   AllocationRecord_00690FC0 *pAVar7;
   InternalExceptionFrame local_54;
   undefined4 local_10;
-  undefined1 *local_c;
+  byte *local_c;
   AnonShape_00690FC0_955C4112 *local_8;
 
   local_8 = nullptr;
@@ -76,7 +76,7 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
   g_currentExceptionFrame = &local_54;
   iVar1 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   if (iVar1 == 0) {
-    pAVar1 = st::pointer_boundary_cast<AllocationRecord_00690FC0 *>(st::fn_006AAC10(0x10c));
+    pAVar1 = static_cast<AllocationRecord_00690FC0 *>(st::fn_006AAC10(0x10c));
     pAVar5 = param_1;
     pAVar7 = pAVar1;
     memmove(pAVar7, pAVar5, 0x10c); /* compiler REP MOVS byte copy */
@@ -188,7 +188,7 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
       iVar7 = iVar7 + -1;
     } while (iVar7 != 0);
     *param_2 = local_c + 0x10cU;
-    pAVar2 = st::pointer_boundary_cast<AnonShape_00691190_783A1B6D *>(st::fn_006AAC10(local_c + 0x10cU));
+    pAVar2 = static_cast<AnonShape_00691190_783A1B6D *>(st::fn_006AAC10(local_c + 0x10cU));
     puVar8 = (byte *)(param_1);
     pAVar11 = pAVar2;
     for (iVar7 = 0x43; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -238,7 +238,7 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
           if (pAVar3 != nullptr) {
             /* ST_CALLSITE[006912DC]: CALL 0x004014c4; direct=004014C4 FltDataPack */
             local_1c = st::fn_004014C4(pAVar3,&local_10);
-            local_8 = st::pointer_boundary_cast<AnonShape_00691190_783A1B6D *>(st::fn_006ACF50(local_8,st::machine_word_boundary_cast<uint>(local_8->field_0014 + local_10)));
+            local_8 = static_cast<AnonShape_00691190_783A1B6D *>(st::fn_006ACF50(local_8,st::machine_word_boundary_cast<uint>(local_8->field_0014 + local_10)));
             pAVar3 = local_1c;
             puVar8 = (byte *)(&local_8[1].field_0x3 + iVar7);
             memmove(puVar8, pAVar3, local_10); /* compiler REP MOVS byte copy */

@@ -1215,6 +1215,39 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
             ("0", "nullptr -> zero word"),
         )
 
+    def test_machine_word_arithmetic_retains_scalar_pointer_boundary(self) -> None:
+        generator = SourceTreeGenerator.__new__(SourceTreeGenerator)
+        generator.type_emitter = TypeEmitter([], [])
+        source = generator._boundary_expression(
+            "offset + delta", {"offset": "uint", "delta": "short"}
+        )
+        self.assertIsNotNone(source)
+        self.assertEqual(source.kind, "generic_word")
+        self.assertEqual(
+            generator._boundary_replacement(
+                "byte *", source, "offset + delta"
+            ),
+            (
+                "st::pointer_boundary_cast<byte *>(offset + delta)",
+                "uint -> byte *",
+            ),
+        )
+        wrapped_pointer = generator._boundary_expression(
+            "((byte *)offset + delta)",
+            {"offset": "uint", "delta": "short"},
+        )
+        self.assertIsNotNone(wrapped_pointer)
+        self.assertTrue(wrapped_pointer.kind.endswith("_pointer"))
+        self.assertEqual(
+            generator._boundary_replacement(
+                "uint", wrapped_pointer, "((byte *)offset + delta)"
+            ),
+            (
+                "st::machine_word_boundary_cast<uint>(((byte *)offset + delta))",
+                "byte * -> uint",
+            ),
+        )
+
     def test_runtime_scalar_alias_pointers_need_no_boundary_cast(self) -> None:
         generator = SourceTreeGenerator.__new__(SourceTreeGenerator)
         generator.type_emitter = TypeEmitter([], [])
@@ -1226,6 +1259,11 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
                 "undefined4 *", "uint *"
             )
         )
+        self.assertFalse(
+            generator.type_emitter.display_cpp_equivalent(
+                "undefined4 *", "DWORD *"
+            )
+        )
         self.assertIsNone(
             generator._boundary_replacement(
                 "uint *", BoundaryValue("dword *", "concrete_pointer"),
@@ -1234,6 +1272,78 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         )
         self.assertFalse(
             generator.type_emitter.display_cpp_equivalent("uint *", "short *")
+        )
+
+    def test_equal_width_integer_pointer_uses_storage_boundary(self) -> None:
+        generator = SourceTreeGenerator.__new__(SourceTreeGenerator)
+        generator.type_emitter = TypeEmitter([], [])
+        self.assertEqual(
+            generator._boundary_replacement(
+                "int *", BoundaryValue("uint *", "concrete_pointer"), "cursor"
+            ),
+            (
+                "reinterpret_cast<int *>(cursor)",
+                "equal-width integer storage uint * -> int *",
+            ),
+        )
+        self.assertEqual(
+            generator._boundary_replacement(
+                "undefined4 *",
+                BoundaryValue("DWORD *", "concrete_pointer", True),
+                "&value",
+            ),
+            (
+                "(undefined4 *)&value",
+                "exact storage address DWORD * -> undefined4 *",
+            ),
+        )
+
+    def test_void_alias_uses_ordinary_object_pointer_conversion(self) -> None:
+        records = self.records() + [
+            primitive("/void", "void", 1),
+            pointer("/void *", "/void"),
+            {
+                "path": "/LPVOID",
+                "name": "LPVOID",
+                "display_name": "LPVOID",
+                "class": "TypedefDB",
+                "length": 4,
+                "detail": {"base_type": "/void *"},
+            },
+        ]
+        generator = SourceTreeGenerator.__new__(SourceTreeGenerator)
+        generator.type_emitter = TypeEmitter(records, [])
+        self.assertTrue(generator.type_emitter.display_is_void_pointer("LPVOID"))
+        self.assertIsNone(
+            generator._boundary_replacement(
+                "LPVOID", BoundaryValue("Owner *", "concrete_pointer"), "owner"
+            )
+        )
+        self.assertEqual(
+            generator._boundary_replacement(
+                "Owner *", BoundaryValue("LPVOID", "generic_pointer"), "storage"
+            ),
+            (
+                "static_cast<Owner *>(storage)",
+                "void storage pointer -> Owner *",
+            ),
+        )
+
+    def test_exact_storage_address_uses_plain_neutral_pointer_cast(self) -> None:
+        generator = SourceTreeGenerator.__new__(SourceTreeGenerator)
+        generator.type_emitter = TypeEmitter([], [])
+        self.assertEqual(
+            generator._boundary_replacement(
+                "uint *",
+                BoundaryValue(
+                    "address of unresolved field", "generic_pointer", True
+                ),
+                "&record.field_0008",
+            ),
+            (
+                "(uint *)&record.field_0008",
+                "exact storage address address of unresolved field -> uint *",
+            ),
         )
 
     def test_existing_pointer_cast_is_retargeted_without_helper(self) -> None:

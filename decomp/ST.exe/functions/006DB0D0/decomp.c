@@ -12,7 +12,7 @@ void FUN_006db0d0(undefined4 *param_1,int param_2,int param_3,int param_4,int pa
   int iVar2;
   int iVar3;
   int *piVar4;
-  undefined1 *puVar5;
+  byte *puVar5;
   byte *pbVar6;
   int iVar7;
   bool bVar8;

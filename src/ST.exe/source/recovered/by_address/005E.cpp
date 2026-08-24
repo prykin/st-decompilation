@@ -15,7 +15,7 @@ MTaskTy * __cdecl st::fn_005E5720(void)
 
 {
   MTaskTy *this;
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
   this = (MTaskTy *)st::fn_006B04D0(0x6d7);
@@ -256,7 +256,7 @@ undefined4 __fastcall st::fn_005EBD80(AnonShape_005EBD80_1A4ED01F *param_1)
   bool bVar3;
   bool bVar4;
   int iVar5;
-  undefined4 uVar6;
+  uint uVar6;
   uint uVar7;
   short sVar8;
 
@@ -400,7 +400,7 @@ int __thiscall st::fn_005EC4A0(void *this,undefined4 *param_1)
   puVar3 = (byte *)((int)param_1 + 0x151);
   puVar4 = (byte *)((int)this + 0x231);
   memmove(puVar4, puVar3, 0xf5); /* compiler REP MOVS byte copy */
-  iVar1 = st::fn_00402559(st::pointer_boundary_cast<STAllPlayersC *>(this),(int *)((int)param_1 + 0x246));
+  iVar1 = st::fn_00402559(static_cast<STAllPlayersC *>(this),(int *)((int)param_1 + 0x246));
   return iVar1 + 0x246;
 }
 
@@ -507,6 +507,7 @@ char * __thiscall st::fn_005EC640(void *this,char *param_1)
 void __fastcall st::fn_005EC6A0(AnonShape_005EC6A0_C8559927 *param_1)
 
 {
+  int iVar1_mg1;
   int iVar1;
   STMessage *pSVar2;
   STMessage local_28;
@@ -522,10 +523,10 @@ void __fastcall st::fn_005EC6A0(AnonShape_005EC6A0_C8559927 *param_1)
     local_28.arg1.words.low = param_1->field_032A;
     local_28.id = 0x5ddb;
     if ((AnonShape_005EFAE0_B406B78B *)param_1->field_0354 != 0) {
-      iVar1 = st::fn_006E62D0
-                        (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_0354,
-                         &local_8);
-      if (iVar1 != -4) {
+      iVar1_mg1 = st::fn_006E62D0
+                            (g_playSystem_00802A38,
+                             (AnonShape_005EFAE0_B406B78B *)param_1->field_0354,&local_8);
+      if (iVar1_mg1 != -4) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_28.arg1.words.high = *(word *)(local_8 + 0x32);
       }
@@ -592,7 +593,7 @@ st::fn_005EC740(int param_1,undefined4 param_2,int param_3,undefined4 *param_4,c
 undefined4 st::fn_005EC9F0(int param_1)
 
 {
-  undefined1 *this;
+  byte *this;
   int local_EAX_48;
   int iVar2;
   int local_EAX_322;
@@ -884,7 +885,7 @@ undefined4 __thiscall st::fn_005ED1C0(void *this,int *param_1,int *param_2,int *
   if (iVar8 != sVar1) {
     if ((1 < STField<byte>(this,0x252)) && (STField<short>(this,600) == iVar8)) {
       iVar7 = st::fn_00404EC1(STField<short>(this,0x242),STField<short>(this,0x244),sVar1,0
-                                 ,st::pointer_boundary_cast<AnonShape_00495FF0_59081BDD *>(this));
+                                 ,static_cast<AnonShape_00495FF0_59081BDD *>(this));
       if (iVar7 == 0) {
         STField<char>(this,0x252) = STField<char>(this,0x252) + -1;
       }
@@ -986,7 +987,7 @@ joined_r0x005ed4b7:
     }
   }
   /* ST_CALLSITE[005ED564]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
-  iVar8 = st::fn_00401325(sVar6,sVar10,sVar1 + sVar5,0,st::pointer_boundary_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
+  iVar8 = st::fn_00401325(sVar6,sVar10,sVar1 + sVar5,0,static_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this));
   if (iVar8 == 0) {
     STField<char>(this,0x252) = STField<char>(this,0x252) + '\x01';
     STField<undefined2>(this,0x254) = STField<undefined2>(this,0x242);
@@ -1019,7 +1020,7 @@ undefined4 __fastcall st::fn_005EDA50(AnonShape_005EDA50_4BDBD797 *param_1)
   STBoatC *this;
   int iVar4;
   dword dVar5;
-  undefined4 uVar6;
+  uint uVar6;
   undefined4 local_18;
   int local_14;
   int local_10;
@@ -1080,12 +1081,11 @@ undefined4 __fastcall st::fn_005EDC20(AnonShape_005EDC20_3D37DB9E *param_1)
   uint uVar5;
   int iVar6;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   int iVar9;
-  undefined4 uVar10;
+  uint uVar10;
   uint uVar11;
-  undefined4 uVar12;
-
+  uint uVar12;
   if (0 < param_1->field_005F) {
     sVar2 = param_1->field_005D;
     sVar1 = param_1->field_005F + -1;
@@ -1406,7 +1406,7 @@ void __fastcall st::fn_005EE670(AnonShape_005EE670_EFEE702F *param_1)
 undefined4 __fastcall st::fn_005EE6E0(AnonShape_005EE6E0_AB6798ED *param_1)
 
 {
-  undefined1 *this;
+  byte *this;
   uint uVar1;
   int iVar2;
   int iVar4;
@@ -1416,7 +1416,7 @@ undefined4 __fastcall st::fn_005EE6E0(AnonShape_005EE6E0_AB6798ED *param_1)
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined4 uVar6;
+  uint uVar6;
   undefined4 local_38 [2];
   undefined4 local_30;
   undefined4 local_2c;
@@ -1672,6 +1672,9 @@ joined_r0x005eed0b:
 // 005EEFF0 FUN_005eeff0
 #line 4 "decomp/ST.exe/functions/005EEFF0/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall st::fn_005EEFF0(void *this,int param_1)
 
@@ -1812,7 +1815,7 @@ int __thiscall st::fn_005EF4B0(void *this,int param_1)
 
   if ((1 < STField<byte>(this,0x252)) &&
      (iVar1 = st::fn_00404EC1(STField<short>(this,0x254),STField<short>(this,0x256),
-                                 STField<short>(this,600),0,st::pointer_boundary_cast<AnonShape_00495FF0_59081BDD *>(this)), iVar1 == 0)) {
+                                 STField<short>(this,600),0,static_cast<AnonShape_00495FF0_59081BDD *>(this)), iVar1 == 0)) {
     STField<char>(this,0x252) = STField<char>(this,0x252) + -1;
   }
   iVar1 = (int)(short)(STField<short>(this,0x242) * 0xc9 + 100);
@@ -1875,7 +1878,7 @@ void __thiscall st::fn_005EF6C0(void *this,int param_1)
   STBoatC *local_8;
 
   this_00 = nullptr;
-  local_8 = st::pointer_boundary_cast<STBoatC *>(this);
+  local_8 = static_cast<STBoatC *>(this);
   if (STField<ushort>(this,0x2ab) != 0) {
     this_00 = (STBoatC *)
               /* ST_CALLSITE[005EF6E6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -1937,7 +1940,7 @@ bool __thiscall st::fn_005EF7A0(void *this,short param_1,short param_2,short par
          ((param_3 < g_worldGrid.sizeZ &&
           (STGridAt3D(g_worldGrid, sVar1, param_2, param_3).objects[0] != nullptr)))))) ||
        /* ST_CALLSITE[005EF89E]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
-       (_param_1 = (STWorldObject *)st::fn_00401325(sVar1,param_2,param_3,0,st::pointer_boundary_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this)),
+       (_param_1 = (STWorldObject *)st::fn_00401325(sVar1,param_2,param_3,0,static_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this)),
        _param_1 != nullptr)) goto cf_common_exit_005EF8D0;
     STField<char>(this,0x252) = STField<char>(this,0x252) + '\x01';
   }
@@ -2052,8 +2055,7 @@ undefined4 __thiscall st::fn_005EFAE0(void *this,AnonShape_005EFAE0_B406B78B *pa
 undefined4 __thiscall st::fn_005EFB80(void *this,int param_1)
 
 {
-  undefined4 uVar1;
-
+  uint uVar1;
   uVar1 = 0;
   if ((STField<char>(this,0x24f) != '\0') && (STField<int>(this,0x2a7) == param_1)) {
     STField<undefined4>(this,0x2a7) = 0;

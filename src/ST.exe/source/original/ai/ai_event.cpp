@@ -137,7 +137,7 @@ undefined4 * __thiscall st::fn_0064D000(AiEventClassTy *this,uint *param_1)
   AllocationRecord_0065CD10 *pAVar3;
   AllocationRecord_0065CD10 *pAVar3_mg1;
   int iVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   InternalExceptionFrame local_4c;
   AiEventClassTy *local_8;
 
@@ -176,23 +176,28 @@ undefined4 * __thiscall st::fn_0064D000(AiEventClassTy *this,uint *param_1)
    E:\__titans\ai\ai_event.cpp
    AiEventClassTy::__CreateObjPl
 
-   [STPrototypeApplier] Propagated parameter 3.
-   Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
-
-   [STPrototypeApplier] Propagated parameter 4.
-   Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
-
-   [STPrototypeApplier] Propagated parameter 5.
-   Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
-
    [STPrototypeApplier] Propagated parameter 6.
-   Evidence: 0064D270 -> 004B0F20 @ 0064D6D4 | 0064D270 -> 004B1040 @ 0064D679 */
+   Evidence: 0064D270 -> 004B0F20 @ 0064D6D4 | 0064D270 -> 004B1040 @ 0064D679
+
+   [STPrototypeRepairApplier] Propagated parameter 3.
+   Evidence: 0064D270 -> 004B0F20 @ 0064D6D4 | 0064D270 -> 004B1040 @ 0064D679 | 0064D270 ->
+   00675B10 @ 0064D376 | incoming stack slot is read as a int before its address is passed as a
+   distinct output lifetime
+
+   [STPrototypeRepairApplier] Propagated parameter 4.
+   Evidence: 0064D270 -> 004B0F20 @ 0064D6D4 | 0064D270 -> 004B1040 @ 0064D679 | 0064D270 ->
+   00675B10 @ 0064D376 | incoming stack slot is read as a int before its address is passed as a
+   distinct output lifetime
+
+   [STPrototypeRepairApplier] Propagated parameter 5.
+   Evidence: 0064D270 -> 004B0F20 @ 0064D6D4 | 0064D270 -> 004B1040 @ 0064D679 | incoming stack slot
+   is read as a int before its address is passed as a distinct output lifetime */
 
 int __thiscall
 st::fn_0064D270
-          (AiEventClassTy *this,uint param_1,short param_2,short *param_3,short *param_4,
-          short *param_5,uint param_6,uint param_7,char *param_8,undefined4 param_9,
-          undefined4 param_10,int param_11,int param_12)
+          (AiEventClassTy *this,uint param_1,short param_2,int param_3,int param_4,int param_5,
+          uint param_6,uint param_7,char *param_8,undefined4 param_9,undefined4 param_10,
+          int param_11,int param_12)
 
 {
   bool bVar2;
@@ -224,11 +229,11 @@ st::fn_0064D270
   undefined4 local_5b;
   AiEventClassTy *local_38;
   short local_34 [2];
-  undefined4 local_30;
+  uint local_30;
   int local_2c;
   short local_28 [2];
   int local_24;
-  undefined4 local_20;
+  uint local_20;
   short local_1c [2];
   uint local_18;
   int local_14;
@@ -281,19 +286,19 @@ st::fn_0064D270
     else {
       iVar3 = st::fn_00404D3B((short)param_3,(short)param_4,(short)param_5);
       if (iVar3 == 0) {
-        local_2c = (int)param_3 + -1;
-        local_24 = (int)param_4 + -1;
+        local_2c = param_3 + -1;
+        local_24 = param_4 + -1;
         local_18 = 3;
         local_34[0] = 3;
         local_34[1] = 0;
         st::fn_00401906((short *)&local_2c,(short *)&local_24,(short *)&local_18,local_34);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_3 = (short *)(local_2c + 1);
+        param_3 = local_2c + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_4 = (short *)(local_24 + 1);
+        param_4 = local_24 + 1;
       }
-      iVar5 = st::fn_00401D9D((int)param_3,(int)param_4,(short)param_5,(short *)&param_3,
-                                 (short *)&param_4,(short *)&param_5,(int)param_2);
+      iVar5 = st::fn_00401D9D(param_3,param_4,(short)param_5,(short *)&param_3,(short *)&param_4,
+                                 (short *)&param_5,(int)param_2);
     }
     uVar7 = param_7;
     if (iVar5 != 0) {
@@ -419,7 +424,7 @@ st::fn_0064D890
   short local_20 [4];
   int local_18;
   int local_14;
-  undefined4 local_10;
+  uint local_10;
   int local_c;
   int local_8;
 
@@ -501,7 +506,7 @@ st::fn_0064DB00
   short local_20 [4];
   int local_18;
   int local_14;
-  undefined4 local_10;
+  uint local_10;
   int local_c;
   int local_8;
 
@@ -646,7 +651,7 @@ st::fn_0064DFA0
   short local_20 [4];
   int local_18;
   int local_14;
-  undefined4 local_10;
+  uint local_10;
   int local_c;
   int local_8;
 
@@ -824,7 +829,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   char cVar5;
   short sVar6;
   int local_EAX_52;
-  undefined4 uVar7;
+  uint uVar7;
   int iVar7;
   int local_EAX_327;
   char *pcVar8_mg40;
@@ -834,7 +839,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   char *pcVar8_mg39;
   char *pcVar8_mg38;
   char *pcVar8_mg37;
-  undefined1 *puVar9;
+  byte *puVar9;
   int iVar37_mgC4;
   char *pcVar8_mg36;
   char *pcVar8_mg35;
@@ -905,7 +910,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   dword dVar15;
   dword *pdVar16;
   DArrayTy *pDVar17;
-  undefined2 *puVar18;
+  ushort *puVar18;
   int local_EAX_13452;
   char *pcVar8_mg3C;
   int local_EAX_13781;
@@ -998,10 +1003,10 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
   short sVar25;
-  undefined2 uVar29;
+  ushort uVar29;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  undefined4 uVar26;
+  uint uVar26;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -4597,7 +4602,7 @@ LAB_00659a1c:
                               }
                               if (local_EAX_488 == 0x3e) {
 switchD_00652b42_switchD:
-                                switch(local_15c) {
+                                switch(static_cast<uint32_t>(STRawWord(local_15c))) {
                                 case 0:
                                   iVar37 = st::fn_004046A6((int)&local_16c);
                                   if (iVar37 == 0) goto cf_common_join_00652A99;
@@ -4644,7 +4649,7 @@ switchD_00652b42_switchD:
                                          (int)local_160;
                                   }
                                   break;
-                                case (DArrayTy *)0x1:
+                                case 0x1:
                                   iVar37 = st::fn_004046A6((int)&local_16c);
                                   if (iVar37 == 0) goto cf_common_join_00652A99;
                                   switch(local_EAX_488) {
@@ -4684,7 +4689,7 @@ switchD_00652b42_switchD:
                                          (&DAT_0080e43b)[(int)pDStack_164] - (int)local_160;
                                   }
                                   break;
-                                case (DArrayTy *)0x2:
+                                case 0x2:
                                   iVar37 = st::fn_0040378D((int)&local_16c);
                                   if (iVar37 == 0) goto cf_common_join_00652A99;
                                   switch(local_EAX_488) {
@@ -4727,7 +4732,7 @@ switchD_00652b42_switchD:
                                          this_00->field_052F[(int)pDStack_164] - (int)local_160);
                                   }
                                   break;
-                                case (DArrayTy *)0x3:
+                                case 0x3:
                                   iVar37 = st::fn_004023F1((int)&local_16c);
                                   if (iVar37 == 0) goto cf_common_join_00652A99;
                                   if (local_EAX_488 == 5) {
@@ -4772,7 +4777,7 @@ switchD_00652b42_switchD:
                               }
                               goto cf_common_join_00659A73;
                             }
-                            switch(local_EAX_488) {
+                            switch(static_cast<uint32_t>(STRawWord(local_EAX_488))) {
                             case 0x51b:
                               iVar37 = st::fn_00403CD3((int)&local_16c);
                               if (iVar37 == 0) goto cf_common_join_00652A99;
@@ -5200,13 +5205,13 @@ LAB_00653bb7:
                                       case 0:
                                         local_1b0 = 0x104;
                                         break;
-                                      case (DArrayTy *)0x1:
+                                      case 0x1:
                                         local_1b0 = 0x105;
                                         break;
-                                      case (DArrayTy *)0x2:
+                                      case 0x2:
                                         local_1b0 = 0x106;
                                         break;
-                                      case (DArrayTy *)0x3:
+                                      case 0x3:
                                         local_1b0 = 0x107;
                                         break;
                                       default:
@@ -5261,7 +5266,7 @@ LAB_00653bb7:
                             }
                             goto cf_common_join_00659A73;
                           }
-                          switch(local_EAX_488) {
+                          switch(static_cast<uint32_t>(STRawWord(local_EAX_488))) {
                           case 0x54e:
                             iVar37 = st::fn_00401AC8((int)&local_16c);
                             if (iVar37 != 0) {
@@ -5345,7 +5350,7 @@ LAB_00653bb7:
                                                   ((byte *)&CHAR_00h_0080ef1e,nullptr,local_384,
                                                    nullptr,nullptr);
                                         st::fn_0072F110
-                                                  (st::pointer_boundary_cast<char *>(&DAT_0080c632),nullptr,(char *)local_384,
+                                                  ((char *)&DAT_0080c632,nullptr,(char *)local_384,
                                                    (char *)local_15c,nullptr);
                                       }
                                       break;
@@ -5880,66 +5885,58 @@ LAB_00654386:
                                           /* ST_CALLSITE[0065520D]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0xc
-                                                        ,(short *)local_158,(short *)local_154,
-                                                        (short *)local_150,0xfffe,0xffffffff,
-                                                        nullptr,100,1,0,0);
+                                                        ,(int)local_158,(int)local_154,
+                                                        (int)local_150,0xfffe,0xffffffff,nullptr
+                                                        ,100,1,0,0);
                                           /* ST_CALLSITE[00655242]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12)),1,
-                                                        (short *)local_158,(short *)local_154,
-                                                        (short *)local_150,0xfffe,0xffffffff,
-                                                        nullptr,100,1,0,0);
+                                                        (int)local_158,(int)local_154,(int)local_150
+                                                        ,0xfffe,0xffffffff,nullptr,100,1,0,0);
                                           /* ST_CALLSITE[00655277]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12)),1,
-                                                        (short *)local_158,(short *)local_154,
-                                                        (short *)local_150,0xfffe,0xffffffff,
-                                                        nullptr,100,1,0,0);
+                                                        (int)local_158,(int)local_154,(int)local_150
+                                                        ,0xfffe,0xffffffff,nullptr,100,1,0,0);
                                           /* ST_CALLSITE[006552AC]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12)),2,
-                                                        (short *)local_158,(short *)local_154,
-                                                        (short *)local_150,0xfffe,0xffffffff,
-                                                        nullptr,100,1,0,0);
+                                                        (int)local_158,(int)local_154,(int)local_150
+                                                        ,0xfffe,0xffffffff,nullptr,100,1,0,0);
                                           /* ST_CALLSITE[006552E1]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12)),3,
-                                                        (short *)local_158,(short *)local_154,
-                                                        (short *)local_150,0xfffe,0xffffffff,
-                                                        nullptr,100,1,0,0);
+                                                        (int)local_158,(int)local_154,(int)local_150
+                                                        ,0xfffe,0xffffffff,nullptr,100,1,0,0);
                                           /* ST_CALLSITE[00655316]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12)),6,
-                                                        (short *)local_158,(short *)local_154,
-                                                        (short *)local_150,0xfffe,0xffffffff,
-                                                        nullptr,100,1,0,0);
+                                                        (int)local_158,(int)local_154,(int)local_150
+                                                        ,0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         }
                                         else if (local_8 == nullptr) {
                                           /* ST_CALLSITE[006551D3]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0xc
-                                                        ,(short *)local_158,(short *)local_154,
-                                                        (short *)local_150,0xfffe,0xffffffff,
-                                                        nullptr,100,1,0,0);
+                                                        ,(int)local_158,(int)local_154,
+                                                        (int)local_150,0xfffe,0xffffffff,nullptr
+                                                        ,100,1,0,0);
                                         }
                                         else {
                                           if (local_8 != (DArrayTy *)0x1) goto LAB_00655324;
                                           /* ST_CALLSITE[006550FA]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0xc
-                                                        ,(short *)local_158,(short *)local_154,
-                                                        (short *)local_150,0xfffe,0xffffffff,
-                                                        nullptr,100,1,0,0);
+                                                        ,(int)local_158,(int)local_154,
+                                                        (int)local_150,0xfffe,0xffffffff,nullptr
+                                                        ,100,1,0,0);
                                           /* ST_CALLSITE[0065512F]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12)),1,
-                                                        (short *)local_158,(short *)local_154,
-                                                        (short *)local_150,0xfffe,0xffffffff,
-                                                        nullptr,100,1,0,0);
+                                                        (int)local_158,(int)local_154,(int)local_150
+                                                        ,0xfffe,0xffffffff,nullptr,100,1,0,0);
                                           /* ST_CALLSITE[00655164]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12)),1,
-                                                        (short *)local_158,(short *)local_154,
-                                                        (short *)local_150,0xfffe,0xffffffff,
-                                                        nullptr,100,1,0,0);
+                                                        (int)local_158,(int)local_154,(int)local_150
+                                                        ,0xfffe,0xffffffff,nullptr,100,1,0,0);
                                           /* ST_CALLSITE[00655199]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12)),2,
-                                                        (short *)local_158,(short *)local_154,
-                                                        (short *)local_150,0xfffe,0xffffffff,
-                                                        nullptr,100,1,0,0);
+                                                        (int)local_158,(int)local_154,(int)local_150
+                                                        ,0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         }
                                       }
                                       else {
@@ -5959,66 +5956,63 @@ LAB_00655324:
                                         /* ST_CALLSITE[00654F85]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x18,
-                                                      (short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      (int)local_158,(int)local_154,(int)local_150,
+                                                      0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         /* ST_CALLSITE[00654FBA]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0xd,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0xd,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654FEF]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0xd,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0xd,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00655024]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0xe,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0xe,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00655059]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0xf,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0xf,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[0065508E]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x12,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x12,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                       }
                                       else if (local_8 == nullptr) {
                                         /* ST_CALLSITE[00654F4B]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x18,
-                                                      (short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      (int)local_158,(int)local_154,(int)local_150,
+                                                      0xfffe,0xffffffff,nullptr,100,1,0,0);
                                       }
                                       else {
                                         if (local_8 != (DArrayTy *)0x1) goto LAB_00655324;
                                         /* ST_CALLSITE[00654E72]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x18,
-                                                      (short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      (int)local_158,(int)local_154,(int)local_150,
+                                                      0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         /* ST_CALLSITE[00654EA7]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0xd,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0xd,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654EDC]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0xd,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0xd,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654F11]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0xe,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0xe,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                       }
                                     }
                                     else if (bVar1 == 3) {
@@ -6027,96 +6021,93 @@ LAB_00655324:
                                         /* ST_CALLSITE[00654CA3]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x19,
-                                                      (short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      (int)local_158,(int)local_154,(int)local_150,
+                                                      0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         /* ST_CALLSITE[00654CD8]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x19,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x19,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654D0D]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x19,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x19,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654D42]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x1e,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x1e,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654D77]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x1e,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x1e,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654DAC]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x1e,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x1e,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654DE1]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x20,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x20,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654E16]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x22,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x22,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                       }
                                       else if (local_8 == nullptr) {
                                         /* ST_CALLSITE[00654BFF]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x19,
-                                                      (short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      (int)local_158,(int)local_154,(int)local_150,
+                                                      0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         /* ST_CALLSITE[00654C34]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x19,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x19,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654C69]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x19,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x19,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                       }
                                       else {
                                         if (local_8 != (DArrayTy *)0x1) goto LAB_00655324;
                                         /* ST_CALLSITE[00654ABC]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x19,
-                                                      (short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      (int)local_158,(int)local_154,(int)local_150,
+                                                      0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         /* ST_CALLSITE[00654AF1]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x19,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x19,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654B26]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x19,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x19,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654B5B]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x1e,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x1e,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654B90]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x1e,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x1e,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                         /* ST_CALLSITE[00654BC5]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_150), (uint16_t)((short)*puVar12))
-                                                      ,0x1e,(short *)local_158,(short *)local_154,
-                                                      (short *)local_150,0xfffe,0xffffffff,
-                                                      nullptr,100,1,0,0);
+                                                      ,0x1e,(int)local_158,(int)local_154,
+                                                      (int)local_150,0xfffe,0xffffffff,nullptr,
+                                                      100,1,0,0);
                                       }
                                     }
                                     puVar12 = puVar12 + 1;
@@ -6148,7 +6139,7 @@ LAB_00655324:
                                   uVar26 = extraout_EDX;
                                   do {
                                     switch(local_15c) {
-                                    case (DArrayTy *)0xdc:
+                                    case 0xdc:
                                       if (local_158 == nullptr) {
                                         st::fn_00403625((char)*puVar12,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
@@ -6159,7 +6150,7 @@ LAB_00655324:
                                         st::fn_00404336((char)*puVar12,(int)local_154);
                                       }
                                       break;
-                                    case (DArrayTy *)0xdd:
+                                    case 0xdd:
                                       if (local_158 == nullptr) {
                                         st::fn_004018E8((char)*puVar12,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
@@ -6170,7 +6161,7 @@ LAB_00655324:
                                         st::fn_00404412((char)*puVar12,(int)local_154);
                                       }
                                       break;
-                                    case (DArrayTy *)0xde:
+                                    case 0xde:
                                       if (local_158 == nullptr) {
                                         st::fn_00402685((char)*puVar12,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
@@ -6181,7 +6172,7 @@ LAB_00655324:
                                         st::fn_004055E7((char)*puVar12,(int)local_154);
                                       }
                                       break;
-                                    case (DArrayTy *)0xdf:
+                                    case 0xdf:
                                       if (local_158 == nullptr) {
                                         st::fn_00401EDD(STReplaceLowByte((uint32_t)(uVar26), (uint8_t)((char)*puVar12)),(int)local_154);
                                       }
@@ -6192,7 +6183,7 @@ LAB_00655324:
                                         st::fn_00404106(STReplaceLowByte((uint32_t)(uVar7), (uint8_t)((char)*puVar12)),(int)local_154);
                                       }
                                       break;
-                                    case (DArrayTy *)0xe2:
+                                    case 0xe2:
                                       if (local_158 == nullptr) {
                                         st::fn_004030E9(*puVar12,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
@@ -6203,7 +6194,7 @@ LAB_00655324:
                                         st::fn_00405E6B(*puVar12,(int)local_154);
                                       }
                                       break;
-                                    case (DArrayTy *)0xe3:
+                                    case 0xe3:
                                       if (local_158 == nullptr) {
                                         st::fn_00405024(*puVar12,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
@@ -6333,11 +6324,10 @@ LAB_00655972:
                                       /* ST_CALLSITE[006559C7]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                       local_EAX_12727 =
                                            st::fn_00403C15(this_00,STReplaceLowWord((uint32_t)(local_158), (uint16_t)(*(undefined2 *) &local_10->vtable)),
-                                                         (short)local_15c,(short *)local_158,
-                                                         (short *)local_154,(short *)local_150,
-                                                         (uint)local_c,(uint)local_14c,local_148,
-                                                         local_140,local_13c,(int)local_138,
-                                                         local_134);
+                                                         (short)local_15c,(int)local_158,
+                                                         (int)local_154,(int)local_150,(uint)local_c
+                                                         ,(uint)local_14c,local_148,local_140,
+                                                         local_13c,(int)local_138,local_134);
                                       if (local_EAX_12727 != 0) {
 LAB_006559d0:
                                         pAVar38 = local_10->vtable;
@@ -6409,7 +6399,7 @@ LAB_006559e3:
                                       if (0 < (int)dVar15) {
                                         do {
                                           if (uVar33 < dVar15) {
-                                            pDVar27 = st::pointer_boundary_cast<DArrayTy *>(pDVar17->data);
+                                            pDVar27 = static_cast<DArrayTy *>(pDVar17->data);
                                             pdVar16 = (dword *)((int)&pDVar27->flags +
                                                                pDVar17->elementSize * uVar33);
                                           }

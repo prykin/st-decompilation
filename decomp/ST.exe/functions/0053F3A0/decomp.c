@@ -41,8 +41,7 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
       return;
     }
     /* ST_CALLSITE[0053F448]: CALL dword ptr [EDX + 0x18] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (*(code *)local_8->field_0000->field_0018)(0);
+    (*STField<code *>(local_8->field_0000,0x0018))(0);
   }
   else {
     if (PVar1 == CASE_2) {

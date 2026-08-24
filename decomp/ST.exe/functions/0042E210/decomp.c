@@ -24,7 +24,7 @@ STAllPlayersC::RegisterObject
   int iVar8;
   int local_EAX_1462;
   int local_EAX_2281;
-  undefined4 uVar9;
+  uint uVar9;
   int iVar6;
   int iVar10;
   ushort uVar11;

@@ -12,7 +12,7 @@ int __thiscall AiPlrClassTy::CloseAllTact(AiPlrClassTy *this)
   DArrayTy *pDVar1;
   AiPlrClassTy *pAVar3;
   int iVar4;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar5;
   int iVar6;
   AiTactClassTy *this_00;

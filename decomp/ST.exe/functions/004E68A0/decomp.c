@@ -15,7 +15,7 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
   undefined *puVar2;
   byte bVar3;
   bool bVar4;
-  undefined1 uVar5;
+  byte uVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   int iVar6;
@@ -23,7 +23,7 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
   int iVar8;
-  undefined1 *puVar9;
+  byte *puVar9;
   int *piVar10;
 
   memset(param_4, 0, 0x1e); /* compiler bulk-zero initialization */

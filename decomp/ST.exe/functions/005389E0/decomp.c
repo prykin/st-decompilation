@@ -13,7 +13,7 @@ PanelTy::PaintBut(PanelTy *this,AnonShape_005389E0_C98BD548 *param_1,byte param_
   AnonNested_005389E0_0018_A8EBF066 *pAVar1;
   PanelTy *pPVar3;
   int *errorCode;
-  undefined4 uVar4;
+  uint uVar4;
   LPSTR text;
   int iVar5;
   InternalExceptionFrame local_58;

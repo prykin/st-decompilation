@@ -11,7 +11,7 @@ undefined4 __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
 {
   STGroupBoatC *this_00;
   int iVar1;
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;

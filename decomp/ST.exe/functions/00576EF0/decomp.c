@@ -13,9 +13,9 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
   int iVar4;
   AnonShape_006DBCA0_EF06575F *pAVar5;
   ST3DSMAPContext *pSVar6;
-  undefined4 *puVar7;
+  uint *puVar7;
   int iVar8;
-  undefined4 uVar9;
+  uint uVar9;
   InternalExceptionFrame local_90;
   InternalExceptionFrame local_4c;
   GameSystemC *local_8;

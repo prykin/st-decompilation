@@ -34,23 +34,23 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
 
 {
   int iVar2;
+  char *resourceString;
   uint *puVar2;
-  undefined4 *puVar3;
   int iVar4;
-  int iVar5;
-  ccFntTy_CreateTypeSSpr_param_4Enum cVar6;
+  int iVar3;
+  ccFntTy_CreateTypeSSpr_param_4Enum cVar4;
+  uint uVar5;
+  uint uVar6;
   uint uVar7;
-  undefined4 uVar8;
-  undefined4 uVar9;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
   iVar2 = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
-    puVar3 = (undefined4 *)&param_1->field_0x21;
-    memset(puVar3, 0, 0x27); /* compiler bulk-zero initialization */
-    puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
+    puVar2 = (undefined4 *)&param_1->field_0x21;
+    memset(puVar2, 0, 0x27); /* compiler bulk-zero initialization */
+    puVar2 = (undefined4 *)((byte *)puVar2 + 0x24);
     *(undefined4 *)&param_1->field_0x8 = param_9;
     *(undefined4 *)param_1 = param_7;
     *(undefined4 *)&param_1->field_0x4 = param_8;
@@ -96,17 +96,18 @@ st::fn_005B5240(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *te
     param_1->field_00F5 = param_3 + param_5;
     param_1->field_00F9 = param_4 + param_6;
     if ((param_18 != 0) && (param_19 != nullptr)) {
-      uVar9 = 0xffffffff;
-      uVar8 = 7;
-      iVar5 = *(int *)&param_1->field_0xd9;
       uVar7 = 0xffffffff;
-      cVar6 = CASE_FFFFFFFE;
-      puVar2 = (uint *)st::fn_006B0140(param_18,g_hINSTANCE_00807618);
-      puVar3 = st::fn_00713480
-                         (param_19,puVar2,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
+      uVar6 = 7;
+      iVar3 = *(int *)&param_1->field_0xd9;
+      uVar5 = 0xffffffff;
+      cVar4 = CASE_FFFFFFFE;
+      resourceString = st::fn_006B0140(param_18,g_hINSTANCE_00807618);
+      puVar2 = st::fn_00713480
+                         (param_19,resourceString,param_20,param_21,cVar4,uVar5,param_22,param_23,
+                          param_24);
       /* ST_CALLSITE[005B5412]: CALL dword ptr [EBX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(iVar5 + 8))(puVar3,uVar8,uVar9);
+      (**(code **)(iVar3 + 8))(puVar2,uVar6,uVar7);
     }
     param_1->field_00E1 = 0;
     g_currentExceptionFrame = local_48.previous;
@@ -136,7 +137,7 @@ st::fn_005B5510
 {
   int iVar2;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_1cc [4];
   undefined4 local_1bc;
   undefined4 local_1b8;
@@ -199,7 +200,7 @@ void __thiscall
 st::fn_005B5690(MMObjTy *this,int param_1,uint param_2,int param_3,int param_4,int param_5)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   MMObjTy *pMVar3;
   int iVar4;
   int iVar6;
@@ -320,7 +321,11 @@ switchD_005b56d4_default:
 #line 4 "decomp/ST.exe/functions/005B5A30/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
-   MMObjTy::PaintButDib */
+   MMObjTy::PaintButDib
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=16, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 st::fn_005B5A30(MMObjTy *this,int param_1,int *param_2,int param_3,byte param_4,uint param_5)
@@ -616,7 +621,7 @@ st::fn_005B67A0
           int param_6,int param_7,undefined4 *param_8)
 
 {
-  undefined4 *puVar2;
+  uint *puVar2;
   int errorCode;
   int iVar3;
   InternalExceptionFrame local_4c;
@@ -717,7 +722,11 @@ st::fn_005B68B0
 
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 005AD050 -> 005B69F0 @ 005AD199 | 005C4E20 -> 005B69F0 @ 005C4F76 | 005E79B0 ->
-   005B69F0 @ 005E7AEA */
+   005B69F0 @ 005E7AEA
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 st::fn_005B69F0
@@ -725,7 +734,7 @@ st::fn_005B69F0
           undefined4 param_3,int param_4,int param_5,int param_6,int param_7,undefined4 *param_8)
 
 {
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   int iVar4;
   InternalExceptionFrame local_4c;

@@ -13,7 +13,7 @@ undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,uint pa
 {
   STT3DSprC *pSVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   uint uVar4;
   ushort *puVar5;
   code *pcVar6;

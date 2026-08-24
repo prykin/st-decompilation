@@ -6,7 +6,7 @@ undefined4 __cdecl FUN_0069fd70(AnonShape_0069FD70_008BB09C *param_1)
 {
   int *piVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   char local_cc [200];
 
   uVar3 = 0;

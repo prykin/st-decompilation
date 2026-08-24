@@ -33,7 +33,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   int local_1c;
   STGameObjC *local_18;
   undefined1 local_14 [4];
-  undefined4 local_10;
+  uint local_10;
   short local_a;
   short local_8;
   short local_6;

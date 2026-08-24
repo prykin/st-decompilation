@@ -22,7 +22,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
   DWORD DVar5_mg1;
   char *pcVar4;
   int iVar5;
-  undefined4 uVar5;
+  uint uVar5;
   uint uVar6;
   int iVar7;
   DWORD *pDVar8;

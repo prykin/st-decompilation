@@ -1,11 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* [STPrototypeApplier] Propagated parameter 6.
-   Evidence: 006D0820 -> 006B0460 @ 006D089A */
+/* [STPrototypeRepairApplier] Propagated parameter 6.
+   Evidence: incoming stack slot is read as a uint before its address is passed as a distinct output
+   lifetime */
 
 void FUN_006d0820(int param_1,int param_2,int param_3,int param_4,
-                 AnonShape_006D0820_E08F8169 *param_5,int param_6,int *param_7,int param_8,
+                 AnonShape_006D0820_E08F8169 *param_5,int param_6,uint param_7,int param_8,
                  int param_9,int param_10,int param_11,HPALETTE param_12)
 
 {
@@ -20,7 +21,7 @@ void FUN_006d0820(int param_1,int param_2,int param_3,int param_4,
   undefined4 local_20;
   int local_1c;
   int local_18;
-  int *local_14;
+  uint local_14;
   int local_10;
   int local_c;
   int local_8;
@@ -46,16 +47,15 @@ void FUN_006d0820(int param_1,int param_2,int param_3,int param_4,
   local_8 = param_10;
   iVar3 = FUN_006b0460((int *)&local_14,(int *)&local_14,&local_24);
   if (iVar3 != 0) {
-    pcVar8 = (char *)((int)local_14 +
-                     param_3 + param_1 + (((local_10 - param_8) + param_4) * param_2 - (int)param_7)
-                     );
+    pcVar8 = (char *)((((local_10 - param_8) + param_4) * param_2 - param_7) + local_14 + param_1 +
+                     param_3);
     if ((int)uVar6 < 0) {
       iVar3 = -(((local_18 - local_10) + -1) * uVar6);
     }
     else {
       iVar3 = local_10 * uVar6;
     }
-    puVar7 = (ushort *)(iVar3 + param_6 + (int)local_14 * 2);
+    puVar7 = (ushort *)(iVar3 + param_6 + local_14 * 2);
     param_6 = local_c;
     if ((param_5->field_0010 == 3) && (param_5->field_0028 == 0xf800)) {
       if (0 < local_8) {

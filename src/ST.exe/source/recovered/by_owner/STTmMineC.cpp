@@ -3,6 +3,10 @@
 
 // 0063DDB0 STTmMineC::FUN_0063ddb0
 #line 4 "decomp/ST.exe/functions/0063DDB0/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __thiscall st::fn_0063DDB0(STTmMineC *this,int param_1)
 
 {

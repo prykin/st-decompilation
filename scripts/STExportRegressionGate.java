@@ -142,7 +142,8 @@ public class STExportRegressionGate extends GhidraScript {
                 "CASE_*|CASE_* compositions must be repaired before export");
         for (String kind : List.of("degraded_exact_indirect_call",
                 "excessive_pointer_depth", "nullptr_deduced_local",
-                "nullptr_switch_case", "roundtrip_call_presentation_failure")) {
+                "nullptr_switch_case", "roundtrip_call_presentation_failure",
+                "output_call_scalar_alias")) {
             long occurrences = now.quality.getOrDefault(kind, 0L);
             add(occurrences == 0 ? "info" : "error", kind, 0, occurrences,
                 occurrences == 0 ? "ok" : "readability_regression",

@@ -11,7 +11,7 @@ undefined4 * __cdecl LoadBossEdit(int param_1,char *param_2)
 {
   int errorCode;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   InternalExceptionFrame local_50;
   AllocationRecord_00648530 *local_c;
   AllocationRecord_00648530 *local_8;

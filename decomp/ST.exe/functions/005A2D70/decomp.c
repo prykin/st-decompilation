@@ -15,13 +15,13 @@
 void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
 
 {
-  undefined1 *puVar1;
+  byte *puVar1;
   int iVar2;
   int iVar4;
   CursorClassTy *this_00;
   FSGSTy *this_01;
   int iVar3;
-  undefined4 uVar6;
+  uint uVar6;
   int iVar5;
   InternalExceptionFrame local_7c;
   undefined1 local_38 [45];

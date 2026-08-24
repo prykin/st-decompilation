@@ -24,7 +24,7 @@ st::fn_0065DA50
   int iVar5;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  undefined4 uVar6;
+  uint uVar6;
   char cVar7;
   uint local_8;
 

@@ -7,7 +7,7 @@ int FUN_00673210(int param_1)
 
 {
   uint uVar1;
-  undefined1 uVar2;
+  byte uVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   int iVar3;
@@ -53,8 +53,7 @@ int FUN_00673210(int param_1)
         }
         if ((code *)PTR_0081194c->field_0014 != nullptr) {
           /* ST_CALLSITE[006732A9]: CALL EAX */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (*(code *)PTR_0081194c->field_0014)(PTR_0085753c,0);
+          (*STField<code *>(PTR_0081194c,0x14))(PTR_0085753c,0);
         }
         thunk_FUN_00672f00();
         DAT_007d2d18 = 0x84e;

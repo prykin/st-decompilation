@@ -109,7 +109,7 @@ int __thiscall st::fn_0062E740(STRubbishC *this,STMessage *message)
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  pAVar12 = st::pointer_boundary_cast<AnonShape_0062FA80_0B91B2B9 *>((message->arg0).ptr);
+  pAVar12 = static_cast<AnonShape_0062FA80_0B91B2B9 *>((message->arg0).ptr);
   local_8 = (AnonShape_0062E740_213F21A8 *)pAVar12;
   if (*(int *)&pAVar12->field_0xc == 2) {
     st::fn_004032AB(this_00,pAVar12);
@@ -193,7 +193,7 @@ int __thiscall st::fn_0062ED90(STRubbishC *this)
 {
   int iVar2;
   int *piVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   STT3DSprC *pSVar4;
   int iVar7;
   int iVar5;
@@ -217,13 +217,13 @@ int __thiscall st::fn_0062ED90(STRubbishC *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  piVar2 = st::pointer_boundary_cast<int *>(&local_c->field_01E5);
+  piVar2 = reinterpret_cast<int *>(&local_c->field_01E5);
   iVar6 = 0;
   iVar5 = local_8;
   do {
     if (*piVar2 == 0) {
       local_8 = iVar5;
-      puVar3 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70(0x3e));
+      puVar3 = static_cast<uint *>(st::fn_006AAC70(0x3e));
       (&local_c->field_01E5)[iVar6] = puVar3;
       if (puVar3 != nullptr) {
         for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -276,7 +276,7 @@ st::fn_0062F3B0
   int iVar2;
   int iVar4;
   int iVar3;
-  undefined4 uVar5;
+  uint uVar5;
   InternalExceptionFrame local_5c;
   undefined4 local_18;
   STT3DSprC *local_14;
@@ -316,7 +316,7 @@ LAB_0062f450:
     local_10 = *(int *)(&DAT_007d1580 + *param_2 * 8);
     local_c = *(int *)(&DAT_007d1584 + *param_2 * 8);
   }
-  local_14 = st::pointer_boundary_cast<STT3DSprC *>(param_1);
+  local_14 = static_cast<STT3DSprC *>(param_1);
   if (param_1 == nullptr) {
     return 0xffffffff;
   }

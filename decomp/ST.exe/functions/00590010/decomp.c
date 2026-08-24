@@ -12,7 +12,7 @@ STSharkC::CreateShark
 
 {
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   undefined4 local_38 [5];
   int local_24;
   int local_20;

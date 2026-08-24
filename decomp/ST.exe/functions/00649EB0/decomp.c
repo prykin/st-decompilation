@@ -11,7 +11,7 @@ undefined4 * CreateDefaultBossData(void)
 {
   int errorCode;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   InternalExceptionFrame local_5c;
   uint local_18;
   uint local_14;

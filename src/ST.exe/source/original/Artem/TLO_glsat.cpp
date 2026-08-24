@@ -115,8 +115,7 @@ undefined4 __fastcall st::fn_004D95A0(int param_1)
 
 {
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   uVar3 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x4d0)) {
@@ -146,8 +145,7 @@ undefined4 __fastcall st::fn_004D9620(int param_1)
 
 {
   int iVar2;
-  undefined4 uVar3;
-
+  uint uVar3;
   uVar3 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x4d0)) {

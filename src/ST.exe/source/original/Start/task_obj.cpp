@@ -197,7 +197,7 @@ void __thiscall st::fn_005DFA30(MTaskTy *this,char param_1,undefined1 param_2)
   byte *pbVar12;
   char *pcVar13;
   byte *pbVar14;
-  undefined4 *puVar15;
+  uint *puVar15;
   uint *puVar16;
   byte bVar17;
   undefined4 local_5a8 [256];
@@ -654,7 +654,7 @@ LAB_005e072b:
     st::fn_006AE110(this_00->field_064F);
     this_00->field_064F = nullptr;
   }
-  slotStorage = st::pointer_boundary_cast<int *>(&this_00->field_0653);
+  slotStorage = reinterpret_cast<int *>(&this_00->field_0653);
   iVar7 = 0xb;
   do {
     if (*slotStorage != 0) {
@@ -757,7 +757,7 @@ void __thiscall st::fn_005E0AC0(MTaskTy *this)
 {
   int iVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   MTaskTy *this_00;
   int iVar4;
   tagBITMAPINFO *ptVar5;
@@ -1062,7 +1062,7 @@ st::fn_005E11D0(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char param_2,
 
 {
   int errorCode;
-  undefined4 *puVar2;
+  uint *puVar2;
   int iVar3;
   uint uVar4;
   uint uVar5;
@@ -1161,7 +1161,7 @@ void __thiscall st::fn_005E1330(MTaskTy *this)
   AnonShape_005E1330_47BFB53C *pAVar15;
   MTaskTy_field_0074Element *element_0074;
   byte *puVar16;
-  undefined1 *puVar17;
+  byte *puVar17;
   int iVar18;
   SpriteClassTy *pSVar19;
   byte *pbVar20;
@@ -1236,7 +1236,7 @@ void __thiscall st::fn_005E1330(MTaskTy *this)
   int local_128;
   int local_124;
   int local_120;
-  undefined1 *local_110;
+  byte *local_110;
   undefined1 local_10c;
   cTypingTy *local_10b;
   char local_107;
@@ -1324,7 +1324,7 @@ void __thiscall st::fn_005E1330(MTaskTy *this)
       local_14 = pAVar15;
       if (((uint)(this_01->field_0069 - this_01->field_0061) <
            *(uint *)((int)&pAVar15->field_0x0 + 1)) && (this_01->field_006D != CASE_5)) break;
-      switch((char)*(int *)&pAVar15->field_0x0) {
+      switch(static_cast<uint32_t>(STRawWord((char)*(int *)&pAVar15->field_0x0))) {
       case '\x01':
         if ((this_01->field_006E != '\x01') ||
            ((pAVar15->field_0xd != '\0' && (pAVar15->field_0xd != '\x01')))) {
@@ -1363,7 +1363,7 @@ void __thiscall st::fn_005E1330(MTaskTy *this)
             }
             iVar18 = 1;
             puVar28 = this_01->field_005D + 0x14;
-            local_EAX_2647 = st::fn_006B4FE0((int)this_01->field_005D);
+            local_EAX_2647 = st::fn_006B4FE0(this_01->field_005D);
             local_EAX_2671 =
                  st::fn_006B50C0((int)local_18,local_84,(uint)this_01->field_005D[7],local_EAX_2647,
                               (undefined4 *)puVar28,iVar18);
@@ -1475,15 +1475,15 @@ LAB_005e200a:
                     local_1c = 0x1f47;
                     *piVar24 = (int)((int)&local_c->vtable + 1);
                     break;
-                  case (SpriteClassTy *)0x1:
+                  case 0x1:
                     local_1c = 0x1f48;
                     *piVar24 = (int)((int)&local_c->vtable + 1);
                     break;
-                  case (SpriteClassTy *)0x2:
+                  case 0x2:
                     local_1c = 0x1f49;
                     *piVar24 = (int)((int)&local_c->vtable + 1);
                     break;
-                  case (SpriteClassTy *)0x3:
+                  case 0x3:
                   default:
                     local_1c = 0x1f52;
                     *piVar24 = (int)((int)&local_c->vtable + 1);
@@ -1501,7 +1501,7 @@ LAB_005e200a:
                 piVar24[6] = 0x14;
                 local_e8 = piVar24[5];
                 puVar28 = puVar4 + 0x14;
-                local_EAX_3423 = st::fn_006B4FE0((int)puVar4);
+                local_EAX_3423 = st::fn_006B4FE0(puVar4);
                 local_EAX_3448 =
                      st::fn_006B50C0(local_e8,0x14,(uint)this_01->field_005D[7],local_EAX_3423,
                                   (undefined4 *)puVar28,iVar18);
@@ -1644,7 +1644,7 @@ LAB_005e24c5:
               uVar26 = pAVar15->field_001A;
               iVar18 = 1;
               puVar28 = this_01->field_005D + 0x14;
-              uVar20 = st::fn_006B4FE0((int)this_01->field_005D);
+              uVar20 = st::fn_006B4FE0(this_01->field_005D);
               pAVar10 = (AnonPointee_MTaskTy_06BF *)
                         st::fn_006B50C0(local_f0,uVar26,(uint)this_01->field_005D[7],uVar20,
                                      (undefined4 *)puVar28,iVar18);
@@ -1833,7 +1833,7 @@ LAB_005e24c5:
                   iVar18 = *(undefined4 *)((int)&pAVar15[1].field_0005 + 3);
                   iVar29 = 1;
                   puVar28 = this_01->field_005D + 0x14;
-                  uVar30 = st::fn_006B4FE0((int)this_01->field_005D);
+                  uVar30 = st::fn_006B4FE0(this_01->field_005D);
                   piVar24 = (int *)st::fn_006B50C0(local_fc,iVar18,(uint)this_01->field_005D[7],uVar30,
                                                 (undefined4 *)puVar28,iVar29);
                   local_18 = local_138 + (local_7c & 0xff);
@@ -1906,7 +1906,7 @@ LAB_005e24c5:
                 iVar18 = *(undefined4 *)((int)&pAVar15[1].field_0005 + 3);
                 puVar28 = this_01->field_005D + 0x14;
                 local_f4 = (-(uint)(pAVar15->field_0x9 != '\x01') & 0xfffffffe) + 2;
-                local_EAX_6030 = st::fn_006B4FE0((int)this_01->field_005D);
+                local_EAX_6030 = st::fn_006B4FE0(this_01->field_005D);
                 local_138[0] = (int *)st::fn_006B50C0(local_f8,iVar18,(uint)this_01->field_005D[7],
                                                    local_EAX_6030,(undefined4 *)puVar28,iVar29);
                 local_18 = (int **)local_138[0][5];
@@ -2011,10 +2011,10 @@ LAB_005e24c5:
       case '\x06':
         if (this_01->field_006D != CASE_5) {
           puVar8 = (uint *)st::fn_00719D00
-                                     (this_01->field_0070,st::pointer_boundary_cast<char *>(&pAVar15->field_0xd),0,nullptr);
+                                     (this_01->field_0070,(char *)&pAVar15->field_0xd,0,nullptr);
           if ((puVar8 != nullptr) ||
              (puVar8 = (uint *)st::fn_00719D00
-                                         (g_cMf32_00806798,st::pointer_boundary_cast<char *>(&pAVar15->field_0xd),0,nullptr),
+                                         (g_cMf32_00806798,(char *)&pAVar15->field_0xd,0,nullptr),
              puVar8 != nullptr)) {
             st::fn_00402FD1(&g_sound,0,'\x03',-1,puVar8);
           }
@@ -2921,11 +2921,11 @@ LAB_005e195d:
         st::fn_0040329C(&g_sound,0);
         if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
           puVar8 = (uint *)st::fn_00719D00
-                                     (this_01->field_0070,st::pointer_boundary_cast<char *>(&element_0074[1].field_000F),0,nullptr);
+                                     (this_01->field_0070,(char *)&element_0074[1].field_000F,0,nullptr);
           this_01->field_0085 = st::machine_word_boundary_cast<undefined4>(puVar8);
           if (puVar8 == nullptr) {
             puVar8 = (uint *)st::fn_00719D00
-                                       (g_cMf32_00806798,st::pointer_boundary_cast<char *>(&element_0074[1].field_000F),0,nullptr);
+                                       (g_cMf32_00806798,(char *)&element_0074[1].field_000F,0,nullptr);
             this_01->field_0085 = st::machine_word_boundary_cast<undefined4>(puVar8);
             if (puVar8 == nullptr) {
               st::fn_00402FD1(&g_sound,0x14,'\x02',0,nullptr);
@@ -2988,7 +2988,7 @@ st::fn_005E3E80
   int iVar3;
   int iVar4;
   AnonShape_006B4B20_3D4F4412 *pAVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   InternalExceptionFrame local_5c;
   int local_18;
   int local_14;
@@ -3036,7 +3036,7 @@ st::fn_005E3E80
       local_c = 0;
     }
     uVar3 = local_c;
-    local_8 = st::pointer_boundary_cast<AnonShape_005E3E80_D5AAB6C7 *>(st::fn_006AAC10(0x3d));
+    local_8 = static_cast<AnonShape_005E3E80_D5AAB6C7 *>(st::fn_006AAC10(0x3d));
     local_8->field_0023 = 3;
     local_8->field_0029 = (undefined2)local_18;
     local_8->field_002B = (short)iVar2;
@@ -3082,9 +3082,9 @@ st::fn_005E4180(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined4 p
 {
   int iVar4;
   int iVar3;
-  undefined4 uVar2;
+  uint uVar2;
   int iVar5;
-  undefined4 *puVar6;
+  uint *puVar6;
   undefined4 local_1cc [4];
   undefined4 local_1bc;
   undefined4 local_1b8;
@@ -3155,9 +3155,9 @@ st::fn_005E4300(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_4,
 
   int *piVar1;
   MTaskTy *pMVar3;
-  undefined4 *puVar4;
+  uint *puVar4;
   int iVar5;
-  undefined4 *puVar5;
+  uint *puVar5;
   char *resourceString;
   int iVar9;
   char cVar6;
@@ -3273,10 +3273,10 @@ int __thiscall st::fn_005E4570(MTaskTy *this,STMessage *message)
   DWORD DVar8;
   int local_EAX_49;
   DArrayTy *pDVar9;
-  undefined4 *puVar10;
+  uint *puVar10;
   BITMAPINFO *pBVar11;
   char *pcVar12;
-  undefined4 *puVar12;
+  uint *puVar12;
   int iVar9;
   int iVar22;
   uint uVar13;
@@ -3599,14 +3599,14 @@ LAB_005e496b:
         }
         break;
       case MESS_SHARED_6200|MESS_SHARED_0005:
-        pcVar18 = st::pointer_boundary_cast<char *>((message->arg0).ptr);
+        pcVar18 = static_cast<char *>((message->arg0).ptr);
         st::fn_00404BF1(local_18,4,'\x01',-1);
         DAT_00807340 = *pcVar18 + -1;
         DAT_00807341 = DAT_00807340 == '\x03';
         break;
       case MESS_MTASKTY_6212:
         /* ST_CALLSITE[005E4B34]: CALL 0x00401a5a; direct=00401A5A MTaskTy::PaintBut */
-        st::fn_00401A5A(local_18,st::pointer_boundary_cast<int *>(&local_18->field_0653),0x26ac,4,1,(message->arg0).words.low);
+        st::fn_00401A5A(local_18,reinterpret_cast<int *>(&local_18->field_0653),0x26ac,4,1,(message->arg0).words.low);
         st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_02A5[0]);
       }
     }
@@ -3621,7 +3621,7 @@ LAB_005e496b:
     }
     else if (SVar2 < 0x6218) {
       if (SVar2 == MESS_MTASKTY_6217) {
-        local_c = st::pointer_boundary_cast<int *>((message->arg0).ptr);
+        local_c = static_cast<int *>((message->arg0).ptr);
         local_24 = (undefined4 *)0x1f52;
         local_1c = (AnonShape_005E4570_1DAE8C90 *)(&local_18->field_0x683 + *local_c * 0xc);
         pRVar3 = *(RecoveredSourceFamily_dibcopy **)local_1c;
@@ -3702,7 +3702,7 @@ LAB_005e496b:
     }
     else if (SVar2 == MESS_SHARED_6332) {
       if (((-1 < (int)local_18->field_0484) && (message != nullptr)) &&
-         (local_8 = st::pointer_boundary_cast<AnonShape_005E4570_F1672769 *>((message->arg2).ptr), local_8 != nullptr)) {
+         (local_8 = static_cast<AnonShape_005E4570_F1672769 *>((message->arg2).ptr), local_8 != nullptr)) {
         pcVar4 = local_18->field_008D;
         if (pcVar4->field_00A0 != 0) {
           st::fn_00710790((AnonShape_00710790_4CBB90D4 *)pcVar4);
@@ -3774,7 +3774,7 @@ LAB_005e496b:
     goto LAB_005e5255;
   case MESS_SHARED_6334|MESS_ID_CREATE:
     if (((-1 < (int)local_18->field_0484) && (message != nullptr)) &&
-       ((local_8 = st::pointer_boundary_cast<AnonShape_005E4570_F1672769 *>((message->arg2).ptr), local_8 != nullptr &&
+       ((local_8 = static_cast<AnonShape_005E4570_F1672769 *>((message->arg2).ptr), local_8 != nullptr &&
         (pRVar3 = (RecoveredSourceFamily_dibcopy *)local_18->field_06CB,
         pRVar3 != nullptr)))) {
       local_24 = (undefined4 *)pRVar3->field_0004;

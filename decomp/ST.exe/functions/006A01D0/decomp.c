@@ -17,7 +17,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   int local_EAX_314;
   int iVar6;
   int iVar3;
-  undefined4 uVar7;
+  uint uVar7;
   uint uVar8;
   char *pcVar10;
   char *pcVar11;

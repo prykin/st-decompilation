@@ -1056,7 +1056,7 @@ undefined4 __thiscall st::fn_004ABCE0(void *this,byte param_1,int param_2,int pa
 {
   ushort *puVar1;
   byte *pbVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int *piVar4;
   int iVar5;
   int iVar6;
@@ -1079,7 +1079,7 @@ undefined4 __thiscall st::fn_004ABCE0(void *this,byte param_1,int param_2,int pa
             *pbVar2 = *pbVar2 | 2;
           }
           /* ST_CALLSITE[004ABD62]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
-          st::fn_00404264(st::pointer_boundary_cast<STT3DSprC *>(this),param_1);
+          st::fn_00404264(static_cast<STT3DSprC *>(this),param_1);
           iVar6 = iVar7 + STField<int>(this,0x20);
           if ((*(byte *)(iVar7 + 0xe + STField<int>(this,0x20)) & 2) == 0) {
             *(int *)(iVar6 + 0x10) = param_2;
@@ -1337,12 +1337,12 @@ undefined4 __thiscall st::fn_004AC9E0(void *this,int param_1)
   uint local_28;
   uint local_20;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
   puStack_c = (undefined *)&DAT_00790798;
-  puStack_10 = (undefined1 *)&st_image_0072D964;
+  puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_8 = 0;
   if (STField<int>(this,0x18) == -1) {
@@ -1394,7 +1394,7 @@ cf_continue_loop_004ACA23:
         if (*(int *)(iVar4 + 0x18) == *(int *)(iVar4 + 0x14)) {
           if (((char *)iVar4)[0xd] == '\x02') {
             /* ST_CALLSITE[004ACB1D]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
-            st::fn_00404264(st::pointer_boundary_cast<STT3DSprC *>(this),(byte)local_28);
+            st::fn_00404264(static_cast<STT3DSprC *>(this),(byte)local_28);
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
             goto cf_continue_loop_004ACA23;
@@ -1522,6 +1522,10 @@ int __thiscall st::fn_004ACEB0(void *this,char param_1)
 
 // 004AD0E0 FUN_004ad0e0
 #line 4 "decomp/ST.exe/functions/004AD0E0/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=10, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __thiscall st::fn_004AD0E0(void *this,byte param_1)
 
 {
@@ -1573,6 +1577,10 @@ void __thiscall st::fn_004AD1A0(void *this,char param_1)
 
 // 004AD310 FUN_004ad310
 #line 4 "decomp/ST.exe/functions/004AD310/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=36, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __fastcall st::fn_004AD310(STT3DSprC *param_1)
 
 {
@@ -1728,7 +1736,11 @@ void __fastcall st::fn_004AD550(uint param_1)
 // 004AD5E0 FUN_004ad5e0
 #line 4 "decomp/ST.exe/functions/004AD5E0/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 004C6210 -> 004AD5E0 @ 004C62EC; /TLOBldMark+0x2c */
+   Evidence: 004C6210 -> 004AD5E0 @ 004C62EC; /TLOBldMark+0x2c
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=50, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __fastcall st::fn_004AD5E0(STT3DSprC *param_1)
 
@@ -2334,7 +2346,7 @@ st::fn_004AF080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,
     local_28 = 2;
     local_2c = 2;
   }
-  psVar8 = st::pointer_boundary_cast<short *>(st::fn_006AAC70(g_worldGrid.planeStride * 5));
+  psVar8 = static_cast<short *>(st::fn_006AAC70(g_worldGrid.planeStride * 5));
   local_14 = 0;
   do {
     iVar10 = g_worldGrid.planeStride * local_14;
@@ -2761,7 +2773,7 @@ st::fn_004AFFA0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *
   int iVar1;
   int local_EAX_441;
   int iVar3;
-  undefined4 uVar4;
+  uint uVar4;
   undefined4 local_18;
   int local_14;
   STFishC *local_10;

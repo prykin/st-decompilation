@@ -22,7 +22,7 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
   char *pcVar5;
   code *pcVar6;
   int iVar7;
-  undefined4 uVar8;
+  uint uVar8;
   InternalExceptionFrame local_60;
   uint local_1c [4];
   undefined2 local_c;

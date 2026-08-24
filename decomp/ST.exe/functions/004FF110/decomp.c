@@ -15,7 +15,7 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   char cVar1;
   CPanelTy *this_00;
   uint uVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   byte bVar5;
   int iVar6;
   char *pcVar7;
@@ -23,14 +23,13 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   uint uVar9;
   uint uVar10;
   int iVar11;
-  undefined4 *puVar12;
+  uint *puVar12;
   InternalExceptionFrame local_58;
   byte local_14;
   undefined3 uStack_13;
   CPanelTy *local_10;
   uint local_c;
-  undefined1 *local_8;
-
+  byte *local_8;
   if (param_1 == 0) {
     local_8 = &this->field_0C51;
   }

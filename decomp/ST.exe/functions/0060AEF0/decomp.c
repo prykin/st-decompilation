@@ -7,8 +7,8 @@
 int __fastcall FUN_0060aef0(void *param_1)
 
 {
-  undefined4 *puVar1;
-  undefined4 *puVar2;
+  uint *puVar1;
+  uint *puVar2;
   byte bVar3;
   byte bVar4;
   byte bVar5;
@@ -18,16 +18,16 @@ int __fastcall FUN_0060aef0(void *param_1)
   icall_0041C2C0_FUN_0041c2c0_for_STFishC *piVar9;
   int *piVar10;
   code *pcVar11;
-  undefined4 uVar12;
+  uint uVar12;
   void *this;
   VisibleClassTy *pVVar13;
-  undefined1 *puVar14;
-  undefined1 *puVar15;
+  byte *puVar14;
+  byte *puVar15;
   short sVar16;
   int iVar17;
   int iVar18;
   dword dVar19;
-  undefined4 uVar20;
+  uint uVar20;
   int local_EAX_1165;
   int iVar12;
   int uVar15;
@@ -39,9 +39,9 @@ int __fastcall FUN_0060aef0(void *param_1)
   short sVar23;
   int iVar24;
   int iVar25;
-  undefined1 *puVar26;
-  undefined1 *puVar27;
-  undefined1 *puVar28;
+  byte *puVar26;
+  byte *puVar27;
+  byte *puVar28;
   STFishC *pSVar29;
   bool bVar30;
   int local_d8;
@@ -54,8 +54,8 @@ int __fastcall FUN_0060aef0(void *param_1)
   undefined3 uStack_b7;
   byte local_b4;
   undefined3 uStack_b3;
-  undefined1 *local_ac;
-  undefined1 *local_a8;
+  byte *local_ac;
+  byte *local_a8;
   int local_a4;
   short local_a0 [2];
   short local_9c [2];
@@ -67,7 +67,7 @@ int __fastcall FUN_0060aef0(void *param_1)
   int local_80;
   int local_7c;
   int local_78;
-  undefined1 *local_74;
+  byte *local_74;
   short local_70 [2];
   int local_6c;
   int local_68;
@@ -82,9 +82,9 @@ int __fastcall FUN_0060aef0(void *param_1)
   short local_28 [2];
   int local_24;
   short local_20 [2];
-  undefined1 *local_1c;
+  byte *local_1c;
   void *local_14;
-  undefined1 *puStack_10;
+  byte *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
 
@@ -511,13 +511,13 @@ cf_continue_loop_0060B649:
               *(short **)(puVar28 + -8) = local_94;
               *(short **)(puVar28 + -0xc) = local_50;
               *(undefined4 *)(puVar28 + -0x10) = 0x60b816;
-              thunk_FUN_00416270(pSVar29,*(uint **)(puVar28 + -0xc),*(int **)(puVar28 + -8),
+              thunk_FUN_00416270(pSVar29,*(uint **)(puVar28 + -0xc),*(short **)(puVar28 + -8),
                                  *(short **)(puVar28 + -4));
               *(short **)(puVar28 + -4) = local_28;
               *(short **)(puVar28 + -8) = local_9c;
               *(short **)(puVar28 + -0xc) = local_60;
               *(undefined4 *)(puVar28 + -0x10) = 0x60b82c;
-              thunk_FUN_00416270(this,*(uint **)(puVar28 + -0xc),*(int **)(puVar28 + -8),
+              thunk_FUN_00416270(this,*(uint **)(puVar28 + -0xc),*(short **)(puVar28 + -8),
                                  *(short **)(puVar28 + -4));
               *(int *)(puVar28 + -4) = (int)local_28[0];
               *(int *)(puVar28 + -8) = (int)local_9c[0];
