@@ -92,7 +92,7 @@ public class STDecompExport extends GhidraScript {
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
     private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "2";
-    private static final int FUNCTION_ANALYSIS_SCHEMA = 44;
+    private static final int FUNCTION_ANALYSIS_SCHEMA = 45;
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
@@ -118,6 +118,15 @@ public class STDecompExport extends GhidraScript {
     private static final Pattern EXPLICIT_THIS_VIRTUAL_CALL = Pattern.compile(
         "\\(\\*([A-Za-z_][A-Za-z0-9_]*)->vtable->" +
         "([A-Za-z_][A-Za-z0-9_]*)\\)\\s*\\(");
+    private static final Pattern EXACT_RAW_DISPATCH_MARKER = Pattern.compile(
+        "(?s)/\\*\\s*ST_CALLSITE\\[(?<address>[0-9A-Fa-f]+)\\]:" +
+        "(?:(?!\\*/).)*\\[STIndirectCallsiteApplier\\]\\s+exact slot " +
+        "(?<slot>0x[0-9A-Fa-f]+);\\s*mode=dispatch;\\s*signature=" +
+        "__thiscall;[^;]*;pointer:(?<owner>/[^\\s*]+)(?:(?!\\*/).)*\\*/");
+    private static final Pattern RAW_EXACT_VTABLE_CALL = Pattern.compile(
+        "\\(\\*\\*\\(code \\*\\*\\)\\(\\*(?<receiver>" +
+        "[A-Za-z_$][A-Za-z0-9_$]*)\\s*\\+\\s*(?<slot>0x[0-9A-Fa-f]+)" +
+        "\\)\\)\\s*\\(");
     private static final Pattern BULK_ZERO_SIMPLE = Pattern.compile(
         "(?m)^(?<indent>[ \\t]*)(?<pointer>[A-Za-z_][A-Za-z0-9_]*)[ \\t]*=[ \\t]*" +
         "(?<target>[^;\\r\\n]+);[ \\t]*\\R" +
@@ -1317,8 +1326,12 @@ public class STDecompExport extends GhidraScript {
         NormalizedCode darrayAliases = normalizeDArrayElementAliases(stackObjects.code);
         NormalizedCode darrayAddresses =
             normalizeDArrayElementAddresses(darrayAliases.code);
+        NormalizedCode exactRawVirtualCalls =
+            normalizeExactRawVirtualCalls(function, darrayAddresses.code);
+        NormalizedCode exactReceiverMembers =
+            normalizeExactReceiverMemberViews(function, exactRawVirtualCalls.code);
         NormalizedCode virtualCalls =
-            normalizeExplicitThisVirtualCalls(darrayAddresses.code);
+            normalizeExplicitThisVirtualCalls(exactReceiverMembers.code);
         NormalizedCode affineCancellation =
             normalizeAffineSelfCancellation(virtualCalls.code);
         NormalizedCode gridIndexing =
@@ -1345,8 +1358,10 @@ public class STDecompExport extends GhidraScript {
             normalizeScalarAddressFields(function, narrowIntegerPromotions.code);
         NormalizedCode byteOffsets =
             normalizeSimpleByteOffsetDereferences(scalarAddressFields.code);
+        NormalizedCode fixedBitsets =
+            normalizeFixedWordBitTests(byteOffsets.code);
         NormalizedCode packedBits =
-            normalizePackedBitOperations(byteOffsets.code);
+            normalizePackedBitOperations(fixedBitsets.code);
         NormalizedCode signedQuartering =
             normalizeSignedQuartering(packedBits.code);
         NormalizedCode fixedRounding =
@@ -1359,6 +1374,8 @@ public class STDecompExport extends GhidraScript {
             bulkZero.replacements + bulkCopy.replacements +
             stackObjects.replacements +
             darrayAliases.replacements + darrayAddresses.replacements +
+            exactRawVirtualCalls.replacements +
+            exactReceiverMembers.replacements +
             virtualCalls.replacements + affineCancellation.replacements +
             gridIndexing.replacements + objectByteOffsets.replacements +
             recordAddresses.replacements +
@@ -1368,7 +1385,8 @@ public class STDecompExport extends GhidraScript {
             lowScalarViews.replacements +
             narrowIntegerPromotions.replacements +
             scalarAddressFields.replacements +
-            byteOffsets.replacements + packedBits.replacements + signedQuartering.replacements +
+            byteOffsets.replacements + fixedBitsets.replacements +
+            packedBits.replacements + signedQuartering.replacements +
             fixedRounding.replacements;
         for (int index = 0; index < lines.length; index++) {
             Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
@@ -5680,6 +5698,88 @@ public class STDecompExport extends GhidraScript {
     }
 
     /**
+     * The recovered 128-bit registries are four uint words. Ghidra renders an
+     * exact membership test as
+     *
+     *   bits[index >> 5] & 1 << ((byte)index & 0x1f)
+     *
+     * after the aggregate itself has been recovered. Fold only generated
+     * {@code g_bitset_ADDRESS} arrays and only when the word index and bit index
+     * are the same complete expression after removing the narrowing byte view.
+     * The runtime helper derives its addressing unit from the array element
+     * type, so this remains distinct from the byte-addressed packed-bit case.
+     */
+    private NormalizedCode normalizeFixedWordBitTests(String code) {
+        if (code == null || !code.contains("g_bitset_"))
+            return new NormalizedCode(code, 0);
+        Pattern basePattern = Pattern.compile("\\bg_bitset_[0-9A-Fa-f]+\\s*\\[");
+        Matcher baseMatcher = basePattern.matcher(code);
+        StringBuilder output = new StringBuilder(code.length());
+        int cursor = 0, search = 0, replacements = 0;
+        while (baseMatcher.find(search)) {
+            int openBracket = code.indexOf('[', baseMatcher.start());
+            int closeBracket = matchingBracket(code, openBracket);
+            if (closeBracket < 0) break;
+            String wordAddress = code.substring(openBracket + 1, closeBracket).trim();
+            Matcher word = Pattern.compile("(?s)^(?<index>.+?)\\s*>>\\s*5$")
+                .matcher(wordAddress);
+            if (!word.matches()) {
+                search = closeBracket + 1;
+                continue;
+            }
+            int at = skipHorizontalWhitespace(code, closeBracket + 1);
+            if (at >= code.length() || code.charAt(at) != '&') {
+                search = closeBracket + 1;
+                continue;
+            }
+            at = skipHorizontalWhitespace(code, at + 1);
+            if (at >= code.length() || code.charAt(at) != '1') {
+                search = closeBracket + 1;
+                continue;
+            }
+            at = skipHorizontalWhitespace(code, at + 1);
+            if (at + 1 >= code.length() || code.charAt(at) != '<' ||
+                    code.charAt(at + 1) != '<') {
+                search = closeBracket + 1;
+                continue;
+            }
+            at = skipHorizontalWhitespace(code, at + 2);
+            if (at >= code.length() || code.charAt(at) != '(') {
+                search = closeBracket + 1;
+                continue;
+            }
+            int closeBit = matchingParenthesis(code, at);
+            if (closeBit < 0) break;
+            String bitExpression = code.substring(at + 1, closeBit).trim();
+            Matcher bit = Pattern.compile("(?s)^(?<index>.+?)\\s*&\\s*0x1[fF]$")
+                .matcher(stripOuterParentheses(bitExpression));
+            if (!bit.matches() || !canonicalBitIndex(word.group("index")).equals(
+                    canonicalBitIndex(bit.group("index")))) {
+                search = closeBit + 1;
+                continue;
+            }
+            output.append(code, cursor, baseMatcher.start());
+            output.append("STBitTest(")
+                .append(code, baseMatcher.start(), openBracket).append(", ")
+                .append(stripOuterParentheses(word.group("index")).trim()).append(')');
+            cursor = closeBit + 1;
+            search = closeBit + 1;
+            replacements++;
+            baseMatcher.region(search, code.length());
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        output.append(code, cursor, code.length());
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    private String canonicalBitIndex(String expression) {
+        String result = stripOuterParentheses(expression).replaceAll("\\s+", "");
+        while (result.startsWith("(byte)"))
+            result = stripOuterParentheses(result.substring(6)).replaceAll("\\s+", "");
+        return result;
+    }
+
+    /**
      * MSVC implements signed division by four with truncation toward zero as
      * (value + ((value >> 31) & 3)) >> 2.  Fold only an exactly repeated simple
      * operand; the helper first narrows to the original 32-bit machine word.
@@ -6504,6 +6604,199 @@ public class STDecompExport extends GhidraScript {
             catch (NumberFormatException ignored) { }
         }
         return false;
+    }
+
+    /**
+     * A use-site override can prove an exact receiver-aware physical slot while
+     * the transported Listing parameter intentionally remains `int *` or
+     * `void *`.  Ghidra then prints the correct ABI as a raw code-pointer call.
+     * Present that one address-stable proof as member syntax without weakening
+     * the containing parameter or inventing inheritance.  Adjusted receivers,
+     * stale markers, unknown slots, and argument-count disagreements stay raw.
+     */
+    private NormalizedCode normalizeExactRawVirtualCalls(Function function, String code) {
+        if (function == null || code == null || !code.contains(
+                "[STIndirectCallsiteApplier] exact slot"))
+            return new NormalizedCode(code, 0);
+        Matcher marker = EXACT_RAW_DISPATCH_MARKER.matcher(code);
+        StringBuilder output = new StringBuilder(code.length());
+        int cursor = 0, replacements = 0;
+        while (marker.find()) {
+            if (marker.start() < cursor) continue;
+            Address call;
+            try {
+                call = currentProgram.getAddressFactory().getAddress(marker.group("address"));
+            }
+            catch (Exception ignored) { call = null; }
+            int slot;
+            try { slot = Integer.decode(marker.group("slot")); }
+            catch (Exception ignored) { slot = -1; }
+            Instruction instruction = call == null ? null : listing.getInstructionAt(call);
+            String databaseMarker = instruction == null ? null :
+                listing.getComment(CommentType.EOL, call);
+            RawDispatchSlot physical = exactRawDispatchSlot(marker.group("owner"), slot);
+            if (instruction == null || !function.getBody().contains(call) ||
+                    !"CALL".equalsIgnoreCase(instruction.getMnemonicString()) ||
+                    databaseMarker == null || !databaseMarker.contains(
+                        "[STIndirectCallsiteApplier] exact slot 0x" +
+                        Integer.toHexString(slot).toUpperCase(Locale.ROOT) +
+                        "; mode=dispatch") || physical == null) continue;
+
+            Matcher raw = RAW_EXACT_VTABLE_CALL.matcher(code);
+            raw.region(marker.end(), code.length());
+            if (!raw.find()) continue;
+            int nextMarker = code.indexOf("/* ST_CALLSITE[", marker.end());
+            if (nextMarker >= 0 && raw.start() >= nextMarker) continue;
+            int rawSlot;
+            try { rawSlot = Integer.decode(raw.group("slot")); }
+            catch (Exception ignored) { rawSlot = -1; }
+            if (rawSlot != slot) continue;
+            int open = raw.end() - 1;
+            int close = matchingParenthesis(code, open);
+            if (close < 0) continue;
+            String argumentText = code.substring(open + 1, close).trim();
+            List<String> arguments = argumentText.isEmpty() ? new ArrayList<>() :
+                new ArrayList<>(splitTopLevelArguments(argumentText));
+            int physicalCount = physical.definition.getArguments().length;
+            String receiver = raw.group("receiver");
+            if (arguments.size() == physicalCount && !arguments.isEmpty() &&
+                    exactReceiverCast(arguments.get(0), physical.ownerDisplay, receiver))
+                arguments.remove(0);
+            else if (arguments.size() != physicalCount - 1) continue;
+            if (arguments.size() != physicalCount - 1) continue;
+
+            output.append(code, cursor, raw.start());
+            output.append("((").append(physical.ownerDisplay).append(" *)")
+                .append(receiver).append(")->").append(physical.member)
+                .append("(").append(String.join(", ", arguments)).append(")");
+            cursor = close + 1;
+            replacements++;
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        output.append(code, cursor, code.length());
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    private RawDispatchSlot exactRawDispatchSlot(String ownerPath, int slot) {
+        if (ownerPath == null || slot < 0) return null;
+        DataType value = currentProgram.getDataTypeManager().getDataType(ownerPath);
+        value = unwrapTypeDef(value);
+        if (!(value instanceof Structure owner)) return null;
+        DataTypeComponent vptr = owner.getComponentAt(0);
+        if (vptr == null || vptr.getOffset() != 0) return null;
+        DataType tableType = unwrapTypeDef(vptr.getDataType());
+        if (tableType instanceof Pointer pointer)
+            tableType = unwrapTypeDef(pointer.getDataType());
+        if (!(tableType instanceof Structure table)) return null;
+        DataTypeComponent component = table.getComponentAt(slot);
+        if (component == null || component.getOffset() != slot ||
+                component.getFieldName() == null) return null;
+        ghidra.program.model.data.FunctionDefinition definition =
+            callableDefinition(component.getDataType());
+        if (definition == null || !"__thiscall".equals(
+                definition.getCallingConventionName()) || definition.hasVarArgs() ||
+                definition.getArguments().length < 1) return null;
+        DataType receiver = unwrapTypeDef(
+            definition.getArguments()[0].getDataType());
+        if (!(receiver instanceof Pointer pointer) || pointer.getDataType() == null ||
+                !unwrapTypeDef(pointer.getDataType()).getPathName()
+                    .equals(owner.getPathName())) return null;
+        return new RawDispatchSlot(owner.getName(), component.getFieldName(), definition);
+    }
+
+    private boolean exactReceiverCast(String expression, String type, String receiver) {
+        return Pattern.compile("^\\(\\s*" + Pattern.quote(type) +
+            "\\s*\\*\\s*\\)\\s*" + Pattern.quote(receiver) + "$")
+            .matcher(expression.trim()).matches();
+    }
+
+    /**
+     * Keep a polymorphic Listing parameter neutral when Ghidra has no proven
+     * inheritance, but reuse the exact physical-base view already established
+     * at several virtual calls to render fixed-width member reads.  This avoids
+     * {@code intPointer[index]} without changing the function ABI.  A candidate
+     * must be one unchanged parameter, have at least three exact receiver views
+     * to one owner, and land on one exact same-width named component.
+     */
+    private NormalizedCode normalizeExactReceiverMemberViews(Function function,
+            String code) {
+        if (function == null || code == null || !code.contains(
+                "[STIndirectCallsiteApplier] exact slot"))
+            return new NormalizedCode(code, 0);
+        Pattern view = Pattern.compile(
+            "\\(\\((?<owner>[A-Za-z_$][A-Za-z0-9_$]*(?:::[A-Za-z_$][A-Za-z0-9_$]*)*)" +
+            "\\s*\\*\\)\\s*(?<receiver>[A-Za-z_$][A-Za-z0-9_$]*)\\)\\s*->");
+        Matcher views = view.matcher(code);
+        Map<String, String> owners = new LinkedHashMap<>();
+        Map<String, Integer> counts = new LinkedHashMap<>();
+        Set<String> ambiguous = new HashSet<>();
+        while (views.find()) {
+            String receiver = views.group("receiver");
+            String owner = views.group("owner");
+            String old = owners.putIfAbsent(receiver, owner);
+            if (old != null && !old.equals(owner)) ambiguous.add(receiver);
+            counts.merge(receiver, 1, Integer::sum);
+        }
+        if (owners.isEmpty()) return new NormalizedCode(code, 0);
+
+        Map<String, Parameter> parameters = new LinkedHashMap<>();
+        for (Parameter parameter : function.getParameters())
+            parameters.put(parameter.getName(), parameter);
+        String normalized = code;
+        int replacements = 0;
+        for (Map.Entry<String, String> item : owners.entrySet()) {
+            String receiver = item.getKey();
+            if (ambiguous.contains(receiver) || counts.getOrDefault(receiver, 0) < 3 ||
+                    Pattern.compile("(?m)^\\s*" + Pattern.quote(receiver) +
+                        "\\s*=").matcher(code).find()) continue;
+            Parameter parameter = parameters.get(receiver);
+            DataType parameterType = parameter == null ? null :
+                unwrapTypeDef(parameter.getDataType());
+            if (!(parameterType instanceof Pointer pointer)) continue;
+            DataType element = unwrapTypeDef(pointer.getDataType());
+            int width = element == null ? -1 : element.getLength();
+            if (width <= 0) continue;
+            DataType ownerType = currentProgram.getDataTypeManager().getDataType(
+                "/" + item.getValue().replace("::", "/"));
+            ownerType = unwrapTypeDef(ownerType);
+            if (!(ownerType instanceof Structure owner)) continue;
+
+            Pattern indexed = Pattern.compile("\\b" + Pattern.quote(receiver) +
+                "\\s*\\[\\s*(?<index>0x[0-9A-Fa-f]+|[0-9]+)\\s*\\]");
+            Matcher matcher = indexed.matcher(normalized);
+            StringBuffer output = new StringBuffer();
+            int local = 0;
+            while (matcher.find()) {
+                long index;
+                try { index = Long.decode(matcher.group("index")); }
+                catch (Exception ignored) {
+                    matcher.appendReplacement(output, Matcher.quoteReplacement(matcher.group()));
+                    continue;
+                }
+                long byteOffset = index * (long)width;
+                if (byteOffset < 0 || byteOffset > Integer.MAX_VALUE) {
+                    matcher.appendReplacement(output, Matcher.quoteReplacement(matcher.group()));
+                    continue;
+                }
+                DataTypeComponent component = owner.getComponentAt((int)byteOffset);
+                if (component == null || component.getOffset() != byteOffset ||
+                        component.getLength() != width || component.getFieldName() == null ||
+                        component.getFieldName().isBlank()) {
+                    matcher.appendReplacement(output, Matcher.quoteReplacement(matcher.group()));
+                    continue;
+                }
+                String replacement = "((" + owner.getName() + " *)" + receiver +
+                    ")->" + component.getFieldName();
+                matcher.appendReplacement(output, Matcher.quoteReplacement(replacement));
+                local++;
+            }
+            if (local != 0) {
+                matcher.appendTail(output);
+                normalized = output.toString();
+                replacements += local;
+            }
+        }
+        return new NormalizedCode(normalized, replacements);
     }
 
     /**
@@ -9278,18 +9571,35 @@ public class STDecompExport extends GhidraScript {
             "}\n" +
             "template <typename Bits, typename Index>\n" +
             "static inline bool STBitTest(Bits bits, Index index) {\n" +
+            "    using Element = std::remove_cv_t<std::remove_reference_t<decltype(bits[0])>>;\n" +
+            "    using Unsigned = std::make_unsigned_t<Element>;\n" +
+            "    constexpr unsigned width = sizeof(Element) * 8;\n" +
+            "    static_assert(width == 8 || width == 16 || width == 32 || width == 64);\n" +
+            "    constexpr unsigned shift = width == 8 ? 3 : width == 16 ? 4 : width == 32 ? 5 : 6;\n" +
             "    int32_t bit = static_cast<int32_t>(STRawWord(index));\n" +
-            "    return ((static_cast<uint8_t>(bits[bit >> 3]) >> (bit & 7)) & 1u) != 0;\n" +
+            "    return ((static_cast<Unsigned>(bits[bit >> shift]) >> (bit & (width - 1))) & 1u) != 0;\n" +
             "}\n" +
             "template <typename Bits, typename Index>\n" +
             "static inline void STBitSet(Bits bits, Index index) {\n" +
+            "    using Element = std::remove_cv_t<std::remove_reference_t<decltype(bits[0])>>;\n" +
+            "    using Unsigned = std::make_unsigned_t<Element>;\n" +
+            "    constexpr unsigned width = sizeof(Element) * 8;\n" +
+            "    static_assert(width == 8 || width == 16 || width == 32 || width == 64);\n" +
+            "    constexpr unsigned shift = width == 8 ? 3 : width == 16 ? 4 : width == 32 ? 5 : 6;\n" +
             "    int32_t bit = static_cast<int32_t>(STRawWord(index));\n" +
-            "    bits[bit >> 3] |= static_cast<uint8_t>(1u << (bit & 7));\n" +
+            "    bits[bit >> shift] = static_cast<Element>(static_cast<Unsigned>(bits[bit >> shift]) |\n" +
+            "        (Unsigned{1} << (bit & (width - 1))));\n" +
             "}\n" +
             "template <typename Bits, typename Index>\n" +
             "static inline void STBitClear(Bits bits, Index index) {\n" +
+            "    using Element = std::remove_cv_t<std::remove_reference_t<decltype(bits[0])>>;\n" +
+            "    using Unsigned = std::make_unsigned_t<Element>;\n" +
+            "    constexpr unsigned width = sizeof(Element) * 8;\n" +
+            "    static_assert(width == 8 || width == 16 || width == 32 || width == 64);\n" +
+            "    constexpr unsigned shift = width == 8 ? 3 : width == 16 ? 4 : width == 32 ? 5 : 6;\n" +
             "    int32_t bit = static_cast<int32_t>(STRawWord(index));\n" +
-            "    bits[bit >> 3] &= static_cast<uint8_t>(~(1u << (bit & 7)));\n" +
+            "    bits[bit >> shift] = static_cast<Element>(static_cast<Unsigned>(bits[bit >> shift]) &\n" +
+            "        ~(Unsigned{1} << (bit & (width - 1))));\n" +
             "}\n" +
             "template <typename Value>\n" +
             "static inline long double fsin(Value value) {\n" +
@@ -11534,6 +11844,8 @@ public class STDecompExport extends GhidraScript {
         Map<String, Integer> qualityOccurrences) { }
     private record RenderedCallableDependency(String ownerPath, int offset, int length,
         String fieldName, DataType type, String comment) { }
+    private record RawDispatchSlot(String ownerDisplay, String member,
+        ghidra.program.model.data.FunctionDefinition definition) { }
     private record GridCoordinates(String x, String y, String z) { }
     private record X87Memory(String base, long offset) { }
     private record X87SavedValue(int savedOffset, int destinationOffset) { }

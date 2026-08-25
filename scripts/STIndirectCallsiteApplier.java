@@ -107,12 +107,25 @@ public class STIndirectCallsiteApplier extends GhidraScript {
             }
             FunctionDefinition existing = existingOverride(function, call);
             String current = existing == null ? "none" : fingerprint(existing);
+            boolean marker = hasMarker(call);
+            FunctionDefinitionDataType desired = "apply".equals(action) ?
+                desired(row) : null;
+            String wanted = desired == null ? "" : fingerprint(desired);
             if (!current.equals(row.get("expected_override"))) {
+                // A fixed-point pass may legitimately reuse the proposal which
+                // installed this exact script-owned override earlier in the same
+                // run.  Treat that settled state as unchanged; a non-equivalent
+                // or foreign override remains protected by the stale-baseline
+                // check below.
+                if (marker && desired != null && wanted.equals(current)) {
+                    report.add(new Report(target, "apply", "unchanged",
+                        "exact script-owned call-site ABI already present"));
+                    return;
+                }
                 preserve(target, row, "stale call override: expected " +
                     row.get("expected_override") + ", found " + current);
                 return;
             }
-            boolean marker = hasMarker(call);
             if ("cleanup".equals(action)) {
                 if (!marker) {
                     preserve(target, row, "cleanup refused for a foreign override");
@@ -128,8 +141,6 @@ public class STIndirectCallsiteApplier extends GhidraScript {
                 conflict(target, row, "unknown action " + action);
                 return;
             }
-            FunctionDefinitionDataType desired = desired(row);
-            String wanted = fingerprint(desired);
             if (existing != null && wanted.equals(current)) {
                 report.add(new Report(target, "apply", "unchanged",
                     "exact call-site ABI already present"));

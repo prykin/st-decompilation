@@ -132,18 +132,35 @@ static inline int32_t STRoundFixed16(Value value) {
 }
 template <typename Bits, typename Index>
 static inline bool STBitTest(Bits bits, Index index) {
+    using Element = std::remove_cv_t<std::remove_reference_t<decltype(bits[0])>>;
+    using Unsigned = std::make_unsigned_t<Element>;
+    constexpr unsigned width = sizeof(Element) * 8;
+    static_assert(width == 8 || width == 16 || width == 32 || width == 64);
+    constexpr unsigned shift = width == 8 ? 3 : width == 16 ? 4 : width == 32 ? 5 : 6;
     int32_t bit = static_cast<int32_t>(STRawWord(index));
-    return ((static_cast<uint8_t>(bits[bit >> 3]) >> (bit & 7)) & 1u) != 0;
+    return ((static_cast<Unsigned>(bits[bit >> shift]) >> (bit & (width - 1))) & 1u) != 0;
 }
 template <typename Bits, typename Index>
 static inline void STBitSet(Bits bits, Index index) {
+    using Element = std::remove_cv_t<std::remove_reference_t<decltype(bits[0])>>;
+    using Unsigned = std::make_unsigned_t<Element>;
+    constexpr unsigned width = sizeof(Element) * 8;
+    static_assert(width == 8 || width == 16 || width == 32 || width == 64);
+    constexpr unsigned shift = width == 8 ? 3 : width == 16 ? 4 : width == 32 ? 5 : 6;
     int32_t bit = static_cast<int32_t>(STRawWord(index));
-    bits[bit >> 3] |= static_cast<uint8_t>(1u << (bit & 7));
+    bits[bit >> shift] = static_cast<Element>(static_cast<Unsigned>(bits[bit >> shift]) |
+        (Unsigned{1} << (bit & (width - 1))));
 }
 template <typename Bits, typename Index>
 static inline void STBitClear(Bits bits, Index index) {
+    using Element = std::remove_cv_t<std::remove_reference_t<decltype(bits[0])>>;
+    using Unsigned = std::make_unsigned_t<Element>;
+    constexpr unsigned width = sizeof(Element) * 8;
+    static_assert(width == 8 || width == 16 || width == 32 || width == 64);
+    constexpr unsigned shift = width == 8 ? 3 : width == 16 ? 4 : width == 32 ? 5 : 6;
     int32_t bit = static_cast<int32_t>(STRawWord(index));
-    bits[bit >> 3] &= static_cast<uint8_t>(~(1u << (bit & 7)));
+    bits[bit >> shift] = static_cast<Element>(static_cast<Unsigned>(bits[bit >> shift]) &
+        ~(Unsigned{1} << (bit & (width - 1))));
 }
 template <typename Value>
 static inline long double fsin(Value value) {

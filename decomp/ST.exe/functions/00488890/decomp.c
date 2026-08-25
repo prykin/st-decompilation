@@ -34,12 +34,12 @@ void __thiscall FUN_00488890(void *this,int param_1)
   undefined2 local_3e;
   undefined2 local_3c;
   uint local_3a [7];
-  undefined4 *local_1c;
+  uint *local_1c;
   int local_18;
   void *local_14;
   int local_10;
   int local_c;
-  undefined4 *local_8;
+  uint *local_8;
 
   local_18 = 0;
   local_14 = this;
@@ -49,26 +49,26 @@ void __thiscall FUN_00488890(void *this,int param_1)
     /* ST_CALLSITE[004888B6]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     local_EAX_38 = LookupRecordByte(STField<char>(this,0x24));
     local_EAX_38 = (int)(byte)local_EAX_38;
-    local_1c = &DAT_00800fa0 + local_EAX_38 * 4;
+    local_1c = g_bitset_00800FA0 + local_EAX_38 * 4;
     switch(iVar9) {
     case 0:
-      local_8 = (undefined4 *)&DAT_008014a0;
+      local_8 = g_bitset_008014A0;
       break;
     case 1:
-      local_8 = (undefined4 *)&DAT_00800f90;
+      local_8 = g_bitset_00800F90;
       break;
     case 2:
-      local_8 = (undefined4 *)&DAT_00800f80;
+      local_8 = g_bitset_00800F80;
       break;
     case 3:
-      local_8 = (undefined4 *)&DAT_00801360;
+      local_8 = g_bitset_00801360;
       break;
     case 4:
       local_1c = nullptr;
       /* ST_CALLSITE[00488909]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       uVar4 = LookupRecordByte(STField<char>(this,0x24));
       uVar4 = (int)(byte)uVar4;
-      local_8 = &DAT_00801370 + uVar4 * 4;
+      local_8 = g_bitset_00801370 + uVar4 * 4;
     }
     if (*(int *)(param_1 + iVar9 * 4) == 0) {
       pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x30,5);
@@ -78,8 +78,8 @@ void __thiscall FUN_00488890(void *this,int param_1)
     local_c = 0x32;
     do {
       iVar8 = local_c;
-      if (((((local_1c == nullptr) || (iVar6 = FUN_006b0fd0((int)local_1c), iVar6 != 0))
-           && (iVar6 = FUN_006b0fd0((int)local_8), iVar6 != 0)) &&
+      if (((((local_1c == nullptr) || (iVar6 = FUN_006b0fd0((int)local_1c), iVar6 != 0)) &&
+           (iVar6 = FUN_006b0fd0((int)local_8), iVar6 != 0)) &&
           (iVar6 = thunk_FUN_004e6010(STField<int>(this,0x24),iVar8 + -0x32), iVar6 != 0)) &&
          ((iVar8 < 0x54 || (0x5a < iVar8)))) {
         piVar10 = local_4c;
@@ -133,7 +133,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
       local_10 = local_10 + 3;
     } while (iVar8 + -0x31 < 0x42);
     pDVar5 = *(DArrayTy **)(param_1 + iVar9 * 4);
-    puVar1 = (undefined4 *)pDVar5->count;
+    puVar1 = (uint *)pDVar5->count;
     puVar2 = puVar1;
     while (puVar2 != nullptr) {
       local_1c = nullptr;
@@ -158,12 +158,12 @@ LAB_00488b5f:
             goto LAB_00488bce;
           }
           FUN_006b0cd0(*(AnonShape_00413AF0_B6B4EE9A **)(param_1 + iVar9 * 4),index_00,index);
-          local_1c = (undefined4 *)0x1;
+          local_1c = (uint *)0x1;
         }
         else if (local_44 == local_74) goto LAB_00488b5f;
 LAB_00488bce:
         pDVar5 = *(DArrayTy **)(param_1 + iVar9 * 4);
-        puVar1 = (undefined4 *)pDVar5->count;
+        puVar1 = (uint *)pDVar5->count;
         index_00 = index;
         this = local_14;
         puVar2 = local_1c;

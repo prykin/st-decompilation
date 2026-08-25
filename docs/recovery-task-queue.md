@@ -854,7 +854,24 @@ Completion criteria:
 
 ### Q-058 Recover callable ownership and indirect-call families
 
-Status: planned; follows Q-057.
+Status: in progress. The first CFG-aware polymorphic-receiver layer is accepted
+locally: reaching-definition analysis now follows convergent predecessors and
+callee-saved receiver transport instead of stopping at conditional branches.
+It recovered 54 exact slot-`0x2c` dispatches in the paired object registration
+functions without changing their neutral Listing parameter ABI. Export renders
+those address-stable callsite proofs as `STGameObjC::vfunc_2C` member calls and
+uses the same unanimous physical-base view for exact same-width fixed members.
+
+The same pass recovered the sentinel-varargs 128-bit set builder from its
+machine loop and 42 four-word global registries through closed copy/bitwise
+dataflow. All 42 are `uint[4]` aggregates, including formerly undefined-memory
+symbols, and exact word membership tests render through an element-width-aware
+`STBitTest`. No image address, game type, or semantic-name allow-list is used.
+The accepted corpus moved raw indirect calls from 1,509 to 1,455 and generic
+data symbols from 14,452 to 14,210; the ABI and export gates pass. The next
+Q-058 slice should partition the remaining 1,455 sites by physical slot,
+stored callback, callback parameter, function table, COM/external interface,
+and unresolved receiver provenance, then attack the largest closed family.
 
 Partition the remaining raw indirect calls into physical vtables, stored
 callbacks, callback parameters, ordinary function tables, external/COM-style

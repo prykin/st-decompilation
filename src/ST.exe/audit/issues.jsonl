@@ -3053,11 +3053,6 @@
 {"address": "004CF4E0", "detail": "assignment pAVar2: void storage pointer -> AnonPointee_TLOBaseTy_0607 *", "kind": "exact_pointer_boundary_cast"}
 {"address": "004CF4E0", "detail": "assignment this->field_03D4: TLOBaseTy * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "004CF4E0", "detail": "call 0072DA70 argument 3: TLOBaseTy * -> uint", "kind": "exact_pointer_boundary_cast"}
-{"address": "004CF640", "detail": "assignment local_10: exact storage address address inside unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
-{"address": "004CF640", "detail": "assignment local_10: exact storage address address inside unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
-{"address": "004CF640", "detail": "assignment local_c: exact storage address address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
-{"address": "004CF640", "detail": "assignment local_c: exact storage address address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
-{"address": "004CF640", "detail": "assignment local_c: exact storage address address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "004D01F0", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "004D0310", "detail": "call 00404183 argument 4: exact storage address address inside unresolved image datum -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "004D0310", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -3303,7 +3298,6 @@
 {"address": "004E7EB0", "detail": "assignment uVar1: STPlaySystemC * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "004E7FC0", "detail": "assignment piVar5: equal-width integer storage undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
 {"address": "004E7FC0", "detail": "assignment piVar6: equal-width integer storage undefined4 * -> int *", "kind": "exact_pointer_boundary_cast"}
-{"address": "004E8030", "detail": "assignment puVar3: exact storage address address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "004E8D40", "detail": "assignment param_1->field_061B: AnonShape_004E8D40_DAF7916C * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "004E9050", "detail": "assignment TVar1: TLOBaseTy * -> TLOBaseTy_field_04D0State", "kind": "exact_pointer_boundary_cast"}
 {"address": "004E99E0", "detail": "call 00401BC2 argument 4: int * -> undefined4", "kind": "exact_pointer_boundary_cast"}
@@ -10569,7 +10563,7 @@
 {"address": "006B03D0", "detail": "assignment puStack_c: exact storage address address of unresolved image datum -> undefined *", "kind": "exact_pointer_boundary_cast"}
 {"address": "006B0460", "detail": "assignment iVar1: int * -> int", "kind": "exact_pointer_boundary_cast"}
 {"address": "006B04D0", "detail": "return: equal-width integer storage int * -> undefined4 *", "kind": "exact_pointer_boundary_cast"}
-{"address": "006B0D60", "detail": "assignment param_1[(int)(iVar1 + (iVar1 >> 0x1f & 0x1fU)) >> 5]: undefined4 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
+{"address": "006B0D60", "detail": "assignment bits[(int)(iVar1 + (iVar1 >> 0x1f & 0x1fU)) >> 5]: uint * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "006B0DC0", "detail": "assignment param_1[(int)(param_2 + (param_2 >> 0x1f & 0x1fU)) >> 5]: undefined4 * -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "006B1090", "detail": "assignment local_14[(int)(iVar1 + (iVar1 >> 0x1f & 0x1fU)) >> 5]: uint * -> uint", "kind": "exact_pointer_boundary_cast"}
 {"address": "006B1110", "detail": "assignment local_14[(int)(param_2 + (param_2 >> 0x1f & 0x1fU)) >> 5]: uint * -> uint", "kind": "exact_pointer_boundary_cast"}
@@ -12014,30 +12008,6 @@
 {"detail": "DAT_007f0d48: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "DAT_007f2bb0: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "DAT_007f2bbc: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00800f10: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00800f80: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00800f90: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00800fb0: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00800fb4: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00800fb8: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00800fbc: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00800fc0: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00800fd0: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00801330: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00801360: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00801380: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00801390: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_008013a0: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_008013b0: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_008013c0: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_008013d0: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_008013f0: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00801400: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00801410: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00801450: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00801460: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_00801480: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "DAT_008014a0: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "DAT_00802a5c: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "DAT_00802a90: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "DAT_00802a99: no globals.jsonl data record", "kind": "global_type_fallback"}
@@ -12363,46 +12333,6 @@
 {"detail": "_DAT_007d5f70: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "_DAT_007f4d70: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "_DAT_007fb224: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f10: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f14: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f18: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f1c: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f80: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f84: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f88: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f8c: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f90: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f94: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f98: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00800f9c: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801330: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801334: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801338: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_0080133c: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801340: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801344: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801348: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_0080134c: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801350: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801354: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801358: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_0080135c: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801360: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801364: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801368: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_0080136c: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801450: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801454: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801458: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_0080145c: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801480: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801484: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_00801488: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_0080148c: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_008014a0: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_008014a4: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_008014a8: no globals.jsonl data record", "kind": "global_type_fallback"}
-{"detail": "_DAT_008014ac: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "_DAT_00802a90: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "_DAT_00802acc: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "_DAT_00803318: no globals.jsonl data record", "kind": "global_type_fallback"}

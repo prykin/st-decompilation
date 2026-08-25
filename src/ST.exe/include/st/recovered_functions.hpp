@@ -17082,8 +17082,8 @@ undefined4 fn_006B0BE0(int param_1,tagPALETTEENTRY *param_2,UINT iStart,UINT cEn
 int fn_006B0C70(DArrayTy *array,uint index);
 // 006B0CD0 FUN_006b0cd0
 undefined4 fn_006B0CD0(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2,uint param_3);
-// 006B0D60 FUN_006b0d60
-void __cdecl fn_006B0D60(undefined4 *param_1);
+// 006B0D60 BuildBitSet128
+void __cdecl fn_006B0D60(uint *bits,...);
 // 006B0DC0 FUN_006b0dc0
 void __cdecl fn_006B0DC0(undefined4 *param_1,int param_2,int param_3);
 // 006B0E20 FUN_006b0e20

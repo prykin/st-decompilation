@@ -2394,10 +2394,10 @@ undefined4 st::fn_004E51B0(int *param_1,uint *param_2,uint *param_3)
   int iVar8;
   uint *puVar9;
   int iVar10;
-  uint *puVar12;
+  byte *puVar12;
   int *piVar13;
   byte *puVar14;
-  uint *puVar15;
+  byte *puVar15;
   uint local_30;
   uint local_2c;
   uint local_28;
@@ -2434,17 +2434,13 @@ undefined4 st::fn_004E51B0(int *param_1,uint *param_2,uint *param_3)
   *(undefined4 *)&g_packedRecords_A62x8[(int)param_1].field_0x30f = 0;
   memset(&g_packedRecords_A62x8[(int)param_1].field410_0x327, 0, 0x26c); /* compiler bulk-zero initialization */
   iVar7 = 0;
-  puVar12 = &DAT_00798fd8;
-  puVar15 = (undefined4 *)&g_packedRecords_A62x8[(int)param_1].field1445_0x73b;
-  memmove(puVar15, puVar12, 0x9a); /* compiler REP MOVS byte copy */
-  puVar15 = puVar15 + 0x26;
-  puVar12 = puVar12 + 0x26;
-  iVar7 = local_c * 0x10;
-  STField<undefined1>(puVar15,2) = STField<undefined1>(puVar12,2);
-  local_30 = (&DAT_00800f30)[local_c * 4] | *(uint *)(&DAT_00800fb0 + iVar7);
-  local_2c = (&DAT_00800f34)[local_c * 4] | *(uint *)(&DAT_00800fb4 + iVar7);
-  local_28 = (&DAT_00800f38)[local_c * 4] | *(uint *)(&DAT_00800fb8 + iVar7);
-  local_24 = (&DAT_00800f3c)[local_c * 4] | *(uint *)(&DAT_00800fbc + iVar7);
+  puVar12 = (byte *)(&DAT_00798fd8);
+  puVar15 = (byte *)&g_packedRecords_A62x8[(int)param_1].field1445_0x73b;
+  memmove(puVar15, puVar12, 0x9b); /* compiler REP MOVS byte copy */
+  local_30 = g_bitset_00800F30[local_c * 4] | g_bitset_00800FB0[local_c * 4];
+  local_2c = g_bitset_00800F30[local_c * 4 + 1] | g_bitset_00800FB0[local_c * 4 + 1];
+  local_28 = g_bitset_00800F30[local_c * 4 + 2] | g_bitset_00800FB0[local_c * 4 + 2];
+  local_24 = g_bitset_00800F30[local_c * 4 + 3] | g_bitset_00800FB0[local_c * 4 + 3];
   local_8 = 1;
   local_1c = (undefined **)&PTR_DAT_007bfc04 + local_c;
   do {
@@ -3195,52 +3191,50 @@ void st::fn_004E6680(int param_1)
   int iVar5;
   int iVar6;
   byte *pbVar7;
-  int iVar8;
   int local_8;
 
   /* ST_CALLSITE[004E6696]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar2 = st::fn_004049B7((char)param_1);
   local_8 = 0x42;
+  iVar3 = bVar2 - 1;
   pbVar7 = &DAT_007c0dd4;
-  iVar6 = (bVar2 - 1) * 0x10;
   do {
-    iVar3 = st::fn_006B0FD0((int)(&DAT_008013f0 + iVar6));
-    if (((iVar3 != 0) || (iVar3 = st::fn_006B0FD0((int)(&DAT_008013b0 + iVar6)), iVar3 != 0)) &&
-       (iVar3 = 1, pbVar7[1] != 0)) {
+    iVar4 = st::fn_006B0FD0((int)(g_bitset_008013F0 + iVar3 * 4));
+    if (((iVar4 != 0) || (iVar4 = st::fn_006B0FD0((int)(g_bitset_008013B0 + iVar3 * 4)), iVar4 != 0))
+       && (iVar4 = 1, pbVar7[1] != 0)) {
       do {
-        if (2 < iVar3) break;
-        iVar4 = st::fn_0040186B(param_1,(uint)pbVar7[iVar3]);
-        if (iVar4 == 0) goto LAB_004e6740;
-        iVar4 = iVar3 + 1;
-        iVar3 = iVar3 + 1;
-      } while (pbVar7[iVar4] != 0);
+        if (2 < iVar4) break;
+        iVar5 = st::fn_0040186B(param_1,(uint)pbVar7[iVar4]);
+        if (iVar5 == 0) goto LAB_004e6740;
+        iVar5 = iVar4 + 1;
+        iVar4 = iVar4 + 1;
+      } while (pbVar7[iVar5] != 0);
       if (pbVar7[1] != 0) {
         *(undefined4 *)(STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x593) + (uint)*pbVar7 * 4) = 1;
       }
     }
 LAB_004e6740:
     pbVar7 = pbVar7 + 3;
-    iVar3 = local_8 + -0x40;
+    iVar4 = local_8 + -0x40;
     local_8 = local_8 + 1;
-  } while (iVar3 < 0x29);
+  } while (iVar4 < 0x29);
   local_8 = 0x32;
   do {
-    iVar3 = st::fn_006B0FD0((int)(&DAT_00801380 + iVar6));
-    if (iVar3 != 0) {
-      iVar8 = (bVar2 - 1) * 0x42;
-      iVar4 = 1;
-      iVar3 = iVar8 + -0x32 + local_8;
-      if ((&DAT_007c0e4d)[iVar3 * 3] != '\0') {
+    iVar4 = st::fn_006B0FD0((int)(g_bitset_00801380 + iVar3 * 4));
+    if (iVar4 != 0) {
+      iVar5 = 1;
+      iVar4 = iVar3 * 0x42 + -0x32 + local_8;
+      if ((&DAT_007c0e4d)[iVar4 * 3] != '\0') {
         do {
-          if (2 < iVar4) break;
-          iVar1 = (iVar8 + -0x32 + local_8) * 3;
-          iVar5 = st::fn_0040186B(param_1,(uint)(byte)(&DAT_007c0e4c)[iVar4 + iVar1]);
-          if (iVar5 == 0) goto LAB_004e680d;
-          iVar1 = iVar4 + iVar1;
-          iVar4 = iVar4 + 1;
+          if (2 < iVar5) break;
+          iVar1 = (iVar3 * 0x42 + -0x32 + local_8) * 3;
+          iVar6 = st::fn_0040186B(param_1,(uint)(byte)(&DAT_007c0e4c)[iVar5 + iVar1]);
+          if (iVar6 == 0) goto LAB_004e680d;
+          iVar1 = iVar5 + iVar1;
+          iVar5 = iVar5 + 1;
         } while ((&DAT_007c0e4d)[iVar1] != '\0');
-        if ((&DAT_007c0e4d)[iVar3 * 3] != '\0') {
-          *(undefined4 *)(STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x593) + (uint)(byte)(&DAT_007c0e4c)[iVar3 * 3] * 4) =
+        if ((&DAT_007c0e4d)[iVar4 * 3] != '\0') {
+          *(undefined4 *)(STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x593) + (uint)(byte)(&DAT_007c0e4c)[iVar4 * 3] * 4) =
                1;
         }
       }
@@ -4317,45 +4311,45 @@ int st::fn_004E7FC0(int param_1)
 }
 
 // 004E8030 FUN_004e8030
-#line 4 "decomp/ST.exe/functions/004E8030/decomp.c"
+#line 1 "decomp/ST.exe/functions/004E8030/decomp.c"
+
 int st::fn_004E8030(int param_1)
 
 {
   int iVar1;
   uint *puVar2;
-  undefined *puVar3;
-  int iVar4;
+  int iVar3;
 
   if ((param_1 < 1) || (0x28 < param_1)) {
     if ((param_1 < 0x32) || (0x73 < param_1)) {
       return 0;
     }
-    iVar4 = 0;
-    puVar3 = (undefined *)&DAT_00800fb0;
+    iVar3 = 0;
+    puVar2 = g_bitset_00800FB0;
     while( true ) {
-      iVar1 = st::fn_006B0FD0((int)puVar3);
+      iVar1 = st::fn_006B0FD0((int)puVar2);
       if (iVar1 != 0) break;
-      puVar3 = puVar3 + 0x10;
-      iVar4 = iVar4 + 1;
-      if (0x800fdf < (int)puVar3) {
+      puVar2 = puVar2 + 4;
+      iVar3 = iVar3 + 1;
+      if (0x800fdf < (int)puVar2) {
         return 0;
       }
     }
   }
   else {
-    iVar4 = 0;
-    puVar2 = &DAT_00800f30;
+    iVar3 = 0;
+    puVar2 = g_bitset_00800F30;
     while( true ) {
       iVar1 = st::fn_006B0FD0((int)puVar2);
       if (iVar1 != 0) break;
       puVar2 = puVar2 + 4;
-      iVar4 = iVar4 + 1;
+      iVar3 = iVar3 + 1;
       if (0x800f5f < (int)puVar2) {
         return 0;
       }
     }
   }
-  return iVar4 + 1;
+  return iVar3 + 1;
 }
 
 // 004E80F0 FUN_004e80f0
@@ -4425,84 +4419,92 @@ undefined4 __cdecl st::fn_004E8230(int param_1,int param_2,int param_3)
 }
 
 // 004E82B0 FUN_004e82b0
-#line 4 "decomp/ST.exe/functions/004E82B0/decomp.c"
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+#line 1 "decomp/ST.exe/functions/004E82B0/decomp.c"
 
 void st::fn_004E82B0(void)
 
 {
-  st::fn_006B0D60(&DAT_00800f30);
-  st::fn_006B0D60(&DAT_00800f40);
-  st::fn_006B0D60(&DAT_00800f50);
-  _DAT_0080133c = DAT_00800f3c & 0xffffff7f;
-  _DAT_00801330 = DAT_00800f30;
-  _DAT_00801334 = DAT_00800f34;
-  _DAT_0080134c = DAT_00800f4c & 0xfffffeff;
-  _DAT_00801338 = DAT_00800f38;
-  _DAT_00801340 = DAT_00800f40;
-  _DAT_00801344 = DAT_00800f44;
-  _DAT_00801348 = DAT_00800f48;
-  _DAT_0080135c = DAT_00800f5c & 0xfffffdff;
-  _DAT_00801350 = DAT_00800f50;
-  _DAT_00801354 = DAT_00800f54;
-  _DAT_00801358 = DAT_00800f58;
-  st::fn_006B0D60((undefined4 *)&DAT_008013f0);
-  st::fn_006B0D60((undefined4 *)&DAT_00801400);
-  st::fn_006B0D60((undefined4 *)&DAT_00801410);
-  st::fn_006B0D60((undefined4 *)&DAT_008013b0);
-  st::fn_006B0D60((undefined4 *)&DAT_008013c0);
-  st::fn_006B0D60((undefined4 *)&DAT_008013d0);
-  st::fn_006B0D60((undefined4 *)&DAT_00800fb0);
-  st::fn_006B0D60((undefined4 *)&DAT_00800fc0);
-  st::fn_006B0D60((undefined4 *)&DAT_00800fd0);
-  st::fn_006B0D60((undefined4 *)&DAT_00801380);
-  st::fn_006B0D60((undefined4 *)&DAT_00801390);
-  st::fn_006B0D60((undefined4 *)&DAT_008013a0);
-  st::fn_006B0D60(&DAT_00801420);
-  st::fn_006B0D60(&DAT_008013e0);
-  st::fn_006B0D60(&DAT_00800ee0);
-  st::fn_006B0D60(&DAT_00801490);
-  st::fn_006B0D60(&DAT_00800f20);
-  st::fn_006B0D60(&DAT_00800ef0);
-  st::fn_006B0D60(&DAT_00801430);
-  st::fn_006B0D60(&DAT_00801440);
-  st::fn_006B0D60(&DAT_00800f60);
-  st::fn_006B0D60(&DAT_00801000);
-  st::fn_006B0D60(&DAT_00801010);
-  st::fn_006B0D60(&DAT_00800f00);
-  st::fn_006B0D60(&DAT_00801370);
-  st::fn_006B0D60(&DAT_00800fa0);
-  st::fn_006B0D60(&DAT_00800ff0);
-  st::fn_006B0D60((undefined4 *)&DAT_00801460);
-  st::fn_006B0D60(&DAT_00800fe0);
-  _DAT_00801450 = DAT_00801010 | DAT_00801000 | DAT_00800fa0;
-  _DAT_00801458 = DAT_00800fa8 | DAT_00801018 | DAT_00801008;
-  _DAT_00801454 = DAT_00800fa4 | DAT_00801014 | DAT_00801004;
-  _DAT_0080145c = DAT_00800fac | DAT_0080101c | DAT_0080100c;
-  _DAT_00800f10 = DAT_00800ff0 | DAT_00801370 | DAT_00800fe0;
-  _DAT_00800f18 = DAT_00800fe8 | DAT_00800ff8 | DAT_00801378;
-  _DAT_00801480 = DAT_00800f00;
-  _DAT_00800f1c = DAT_00800fec | DAT_00800ffc | DAT_0080137c;
-  _DAT_00801484 = DAT_00800f04;
-  _DAT_0080148c = DAT_00800f0c;
-  _DAT_00800f14 = DAT_00800fe4 | DAT_00800ff4 | DAT_00801374;
-  _DAT_00801488 = DAT_00800f08;
-  _DAT_008014a0 = DAT_00800f20 | DAT_00801490 | DAT_00800f60;
-  _DAT_008014a8 = DAT_00800f68 | DAT_00800f28 | DAT_00801498;
-  _DAT_008014a4 = DAT_00800f64 | DAT_00800f24 | DAT_00801494;
-  _DAT_008014ac = DAT_00800f6c | DAT_00800f2c | DAT_0080149c;
-  _DAT_00800f80 = DAT_00801430 | DAT_00800ef0;
-  _DAT_00800f84 = DAT_00801434 | DAT_00800ef4;
-  _DAT_00800f88 = DAT_00801438 | DAT_00800ef8;
-  _DAT_00800f8c = DAT_0080143c | DAT_00800efc;
-  _DAT_00800f90 = DAT_008013e0 | DAT_00801420;
-  _DAT_00800f94 = DAT_008013e4 | DAT_00801424;
-  _DAT_00800f98 = DAT_008013e8 | DAT_00801428;
-  _DAT_00800f9c = DAT_008013ec | DAT_0080142c;
-  _DAT_0080136c = DAT_0080144c | DAT_00800eec;
-  _DAT_00801360 = DAT_00801440 | DAT_00800ee0;
-  _DAT_00801364 = DAT_00801444 | DAT_00800ee4;
-  _DAT_00801368 = DAT_00801448 | DAT_00800ee8;
+  st::fn_006B0D60(g_bitset_00800F30,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x49,0x4a,0x4b,0x4c,0x4d,0x67,
+                 0xffffffff);
+  st::fn_006B0D60(g_bitset_00800F40,0x4e,0x4f,0x50,0x51,0x52,0x53,0x54,0x55,0x56,0x57,0x58,0x59,0x66,
+                 0x68,0xffffffff);
+  st::fn_006B0D60(g_bitset_00800F50,0x5a,0x5b,0x5c,0x5d,0x5e,0x5f,0x60,0x61,0x62,99,100,0x65,0x69,
+                 0xffffffff);
+  g_bitset_00801330[3] = g_bitset_00800F30[3] & 0xffffff7f;
+  g_bitset_00801330[0] = g_bitset_00800F30[0];
+  g_bitset_00801330[1] = g_bitset_00800F30[1];
+  g_bitset_00801340[3] = g_bitset_00800F40[3] & 0xfffffeff;
+  g_bitset_00801330[2] = g_bitset_00800F30[2];
+  g_bitset_00801340[0] = g_bitset_00800F40[0];
+  g_bitset_00801340[1] = g_bitset_00800F40[1];
+  g_bitset_00801340[2] = g_bitset_00800F40[2];
+  g_bitset_00801350[3] = g_bitset_00800F50[3] & 0xfffffdff;
+  g_bitset_00801350[0] = g_bitset_00800F50[0];
+  g_bitset_00801350[1] = g_bitset_00800F50[1];
+  g_bitset_00801350[2] = g_bitset_00800F50[2];
+  st::fn_006B0D60(g_bitset_008013F0,0x4e,0x4f,0x50,0x51,0x52,0x57,0x58,0x66,0xffffffff);
+  st::fn_006B0D60(g_bitset_00801400,0x42,0x43,0x44,0x45,0x46,0x4b,0x4c,0xffffffff);
+  st::fn_006B0D60(g_bitset_00801410,0xffffffff);
+  st::fn_006B0D60(g_bitset_008013B0,0x56,0xffffffff);
+  st::fn_006B0D60(g_bitset_008013C0,0x4a,0xffffffff);
+  st::fn_006B0D60(g_bitset_008013D0,0xffffffff);
+  st::fn_006B0D60(g_bitset_00800FB0,0,1,2,3,4,5,7,8,9,10,0xb,0x1d,0x1e,0x20,0xc,0xd,0xe,0xf,0x10,0x11
+                 ,0x12,0x13,0x1f,0x3d,0xffffffff);
+  st::fn_006B0D60(g_bitset_00800FC0,0,1,2,3,4,5,7,8,9,10,0xb,0x1d,0x1e,0x20,0x14,0x15,0x16,0x17,0x18,
+                 0x19,0x1a,0x1b,0x1c,0xffffffff);
+  st::fn_006B0D60(g_bitset_00800FD0,0x21,0x22,0x23,0x24,0x25,0x26,0x27,0x28,0x29,0x2a,0x2b,0x2c,0x2d,
+                 0x2e,0x2f,0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x3a,0x3b,0x3c,0x3e,
+                 0x3f,0x40,0x41,0xffffffff);
+  st::fn_006B0D60(g_bitset_00801380,0x14,0x15,0x16,0x17,0x18,0x19,0x1a,0x1b,0x1c,0xffffffff);
+  st::fn_006B0D60(g_bitset_00801390,0xc,0xd,0xe,0xf,0x10,0x11,0x12,0x13,0x1f,0xffffffff);
+  st::fn_006B0D60(g_bitset_008013A0,0xffffffff);
+  st::fn_006B0D60(g_bitset_00801420,0x14,0xc,0x18,0xd,0x39,0x34,0xffffffff);
+  st::fn_006B0D60(g_bitset_008013E0,0x10,0x19,0x1f,0x15,0x33,0x35,0x37,0x38,0x3f,0x36,0xffffffff);
+  st::fn_006B0D60(g_bitset_00800EE0,0x1a,0xb,0x1b,0xf,0x3d,0x3b,0xffffffff);
+  st::fn_006B0D60(g_bitset_00801490,0,3,0xe,0x17,0x21,0x22,0x23,0x24,0x25,0x26,0x27,0x28,0x2a,
+                 0xffffffff);
+  st::fn_006B0D60(g_bitset_00800F20,2,0x16,1,0x29,0x30,0xffffffff);
+  st::fn_006B0D60(g_bitset_00800EF0,0x20,0x31,0x2d,0xffffffff);
+  st::fn_006B0D60(g_bitset_00801430,7,0x1d,0x1e,8,9,0x2c,0x2e,0x2f,0x32,0xffffffff);
+  st::fn_006B0D60(g_bitset_00801440,5,0x11,0x12,0x13,0x1c,0x3e,0x40,0x3a,0x41,0x3c,0xffffffff);
+  st::fn_006B0D60(g_bitset_00800F60,10,4,0x2b,0xffffffff);
+  st::fn_006B0D60(g_bitset_00801000,0x49,0x55,0x5b,0xffffffff);
+  st::fn_006B0D60(g_bitset_00801010,0x4d,0x59,0x5a,0xffffffff);
+  st::fn_006B0D60(g_bitset_00800F00,0x4b,0x51,0x4e,0x42,0x4f,0x43,0x44,0x50,0x5f,0x60,0x61,0xffffffff
+                );
+  st::fn_006B0D60(g_bitset_00801370,0x45,0x47,0x53,0x52,0x46,0x62,99,0x65,0xffffffff);
+  st::fn_006B0D60(g_bitset_00800FA0,0x48,0x54,0x5c,0x5e,0xffffffff);
+  st::fn_006B0D60(g_bitset_00800FF0,0x58,0x57,0x66,0x4c,0x5d,100,0xffffffff);
+  st::fn_006B0D60(g_bitset_00801460,0x4a,0x56,0xffffffff);
+  st::fn_006B0D60(g_bitset_00800FE0,0x67,0x68,0x69,0xffffffff);
+  g_bitset_00801450[0] = g_bitset_00801010[0] | g_bitset_00801000[0] | g_bitset_00800FA0[0];
+  g_bitset_00801450[2] = g_bitset_00800FA0[2] | g_bitset_00801010[2] | g_bitset_00801000[2];
+  g_bitset_00801450[1] = g_bitset_00800FA0[1] | g_bitset_00801010[1] | g_bitset_00801000[1];
+  g_bitset_00801450[3] = g_bitset_00800FA0[3] | g_bitset_00801010[3] | g_bitset_00801000[3];
+  g_bitset_00800F10[0] = g_bitset_00800FF0[0] | g_bitset_00801370[0] | g_bitset_00800FE0[0];
+  g_bitset_00800F10[2] = g_bitset_00800FE0[2] | g_bitset_00800FF0[2] | g_bitset_00801370[2];
+  g_bitset_00801480[0] = g_bitset_00800F00[0];
+  g_bitset_00800F10[3] = g_bitset_00800FE0[3] | g_bitset_00800FF0[3] | g_bitset_00801370[3];
+  g_bitset_00801480[1] = g_bitset_00800F00[1];
+  g_bitset_00801480[3] = g_bitset_00800F00[3];
+  g_bitset_00800F10[1] = g_bitset_00800FE0[1] | g_bitset_00800FF0[1] | g_bitset_00801370[1];
+  g_bitset_00801480[2] = g_bitset_00800F00[2];
+  g_bitset_008014A0[0] = g_bitset_00800F20[0] | g_bitset_00801490[0] | g_bitset_00800F60[0];
+  g_bitset_008014A0[2] = g_bitset_00800F60[2] | g_bitset_00800F20[2] | g_bitset_00801490[2];
+  g_bitset_008014A0[1] = g_bitset_00800F60[1] | g_bitset_00800F20[1] | g_bitset_00801490[1];
+  g_bitset_008014A0[3] = g_bitset_00800F60[3] | g_bitset_00800F20[3] | g_bitset_00801490[3];
+  g_bitset_00800F80[0] = g_bitset_00801430[0] | g_bitset_00800EF0[0];
+  g_bitset_00800F80[1] = g_bitset_00801430[1] | g_bitset_00800EF0[1];
+  g_bitset_00800F80[2] = g_bitset_00801430[2] | g_bitset_00800EF0[2];
+  g_bitset_00800F80[3] = g_bitset_00801430[3] | g_bitset_00800EF0[3];
+  g_bitset_00800F90[0] = g_bitset_008013E0[0] | g_bitset_00801420[0];
+  g_bitset_00800F90[1] = g_bitset_008013E0[1] | g_bitset_00801420[1];
+  g_bitset_00800F90[2] = g_bitset_008013E0[2] | g_bitset_00801420[2];
+  g_bitset_00800F90[3] = g_bitset_008013E0[3] | g_bitset_00801420[3];
+  g_bitset_00801360[3] = g_bitset_00801440[3] | g_bitset_00800EE0[3];
+  g_bitset_00801360[0] = g_bitset_00801440[0] | g_bitset_00800EE0[0];
+  g_bitset_00801360[1] = g_bitset_00801440[1] | g_bitset_00800EE0[1];
+  g_bitset_00801360[2] = g_bitset_00801440[2] | g_bitset_00800EE0[2];
   return;
 }
 

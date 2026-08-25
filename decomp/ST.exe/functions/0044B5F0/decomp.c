@@ -104,11 +104,10 @@ STAllPlayersC::SelectObjects
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            /* ST_CALLSITE[0044B79D]: CALL dword ptr [EDX + 0x2c] */
            (((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
-             (*(uint *)(&DAT_00800f10 + (iVar4 + 0x41U >> 5) * 4) &
-             1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 ||
+             (STBitTest(g_bitset_00800F10, iVar4 + 0x41U)) != 0 ||
              /* ST_CALLSITE[0044B7C9]: CALL dword ptr [EAX + 0x2c] */
              (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
-             ((&DAT_00800f00)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0)) &&
+             (STBitTest(g_bitset_00800F00, iVar4 + 0x41U)) != 0)) &&
             /* ST_CALLSITE[0044B7F5]: CALL dword ptr [EAX + 0xf8] */
             ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
              /* ST_CALLSITE[0044B804]: CALL dword ptr [EDX + 0xec] */
@@ -130,7 +129,7 @@ STAllPlayersC::SelectObjects
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            /* ST_CALLSITE[0044B876]: CALL dword ptr [EDX + 0x2c] */
            ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
-            ((&DAT_00801000)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
+            (STBitTest(g_bitset_00801000, iVar4 + 0x41U)) != 0 &&
             /* ST_CALLSITE[0044B8A2]: CALL dword ptr [EAX + 0xf8] */
             ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
              /* ST_CALLSITE[0044B8B1]: CALL dword ptr [EDX + 0xec] */
@@ -152,7 +151,7 @@ STAllPlayersC::SelectObjects
         if ((((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
             /* ST_CALLSITE[0044B91F]: CALL dword ptr [EDX + 0x2c] */
             (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
-            ((&DAT_00800fa0)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0)) &&
+            (STBitTest(g_bitset_00800FA0, iVar4 + 0x41U)) != 0)) &&
            /* ST_CALLSITE[0044B94B]: CALL dword ptr [EAX + 0xf8] */
            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
             /* ST_CALLSITE[0044B95A]: CALL dword ptr [EDX + 0xec] */
@@ -174,7 +173,7 @@ STAllPlayersC::SelectObjects
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            /* ST_CALLSITE[0044B9C8]: CALL dword ptr [EDX + 0x2c] */
            ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
-            ((&DAT_00801010)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
+            (STBitTest(g_bitset_00801010, iVar4 + 0x41U)) != 0 &&
             /* ST_CALLSITE[0044B9F4]: CALL dword ptr [EAX + 0xf8] */
             ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
              /* ST_CALLSITE[0044BA03]: CALL dword ptr [EDX + 0xec] */

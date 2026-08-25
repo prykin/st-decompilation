@@ -16,10 +16,10 @@ undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
   int iVar8;
   uint *puVar9;
   int iVar10;
-  uint *puVar12;
+  byte *puVar12;
   int *piVar13;
   byte *puVar14;
-  uint *puVar15;
+  byte *puVar15;
   uint local_30;
   uint local_2c;
   uint local_28;
@@ -56,17 +56,13 @@ undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
   *(undefined4 *)&g_packedRecords_A62x8[(int)param_1].field_0x30f = 0;
   memset(&g_packedRecords_A62x8[(int)param_1].field410_0x327, 0, 0x26c); /* compiler bulk-zero initialization */
   iVar7 = 0;
-  puVar12 = &DAT_00798fd8;
-  puVar15 = (undefined4 *)&g_packedRecords_A62x8[(int)param_1].field1445_0x73b;
-  memmove(puVar15, puVar12, 0x9a); /* compiler REP MOVS byte copy */
-  puVar15 = puVar15 + 0x26;
-  puVar12 = puVar12 + 0x26;
-  iVar7 = local_c * 0x10;
-  STField<undefined1>(puVar15,2) = STField<undefined1>(puVar12,2);
-  local_30 = (&DAT_00800f30)[local_c * 4] | *(uint *)(&DAT_00800fb0 + iVar7);
-  local_2c = (&DAT_00800f34)[local_c * 4] | *(uint *)(&DAT_00800fb4 + iVar7);
-  local_28 = (&DAT_00800f38)[local_c * 4] | *(uint *)(&DAT_00800fb8 + iVar7);
-  local_24 = (&DAT_00800f3c)[local_c * 4] | *(uint *)(&DAT_00800fbc + iVar7);
+  puVar12 = (byte *)(&DAT_00798fd8);
+  puVar15 = (byte *)&g_packedRecords_A62x8[(int)param_1].field1445_0x73b;
+  memmove(puVar15, puVar12, 0x9b); /* compiler REP MOVS byte copy */
+  local_30 = g_bitset_00800F30[local_c * 4] | g_bitset_00800FB0[local_c * 4];
+  local_2c = g_bitset_00800F30[local_c * 4 + 1] | g_bitset_00800FB0[local_c * 4 + 1];
+  local_28 = g_bitset_00800F30[local_c * 4 + 2] | g_bitset_00800FB0[local_c * 4 + 2];
+  local_24 = g_bitset_00800F30[local_c * 4 + 3] | g_bitset_00800FB0[local_c * 4 + 3];
   local_8 = 1;
   local_1c = &PTR_DAT_007bfc04 + local_c;
   do {

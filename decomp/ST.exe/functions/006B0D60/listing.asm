@@ -1,4 +1,4 @@
-FUN_006b0d60:
+BuildBitSet128:
 006B0D60  55                        PUSH EBP
 006B0D61  8B EC                     MOV EBP,ESP
 006B0D63  53                        PUSH EBX

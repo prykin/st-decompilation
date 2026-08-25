@@ -77,6 +77,8 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
         rows.addAll(resourceStringBuffers());
         rows.addAll(runtimeRecordPointers());
         Set<Address> claimedRecordFields = new HashSet<>();
+        Set<Address> fixedBitsets = fixedBitsets128();
+        rows.addAll(fixedBitsetRows(fixedBitsets, claimedRecordFields));
         rows.addAll(bulkInitializedRecordArrays(claimedRecordFields));
         rows.addAll(squareByteMatrices(claimedRecordFields));
         rows.addAll(constantRecordTables(claimedRecordFields));
@@ -115,7 +117,209 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
         println("Global-aggregate analysis complete: " + directory.toAbsolutePath().normalize());
         println("Indexed candidates=" + indexed.size() + ", proposals=" + rows.size() +
             ", runtime pointer bases=" + runtimeRecords.size() +
+            ", fixed bitsets=" + fixedBitsets.size() +
             ", apply=" + rows.stream().filter(row -> row.apply).count());
+    }
+
+    /**
+     * Recover the complete family produced by the machine-proven variadic
+     * 128-bit set builder.  Direct builder outputs seed the family.  A second
+     * closed pass admits derived sets only when all four destination dwords are
+     * copied or bitwise-composed from already proven set words in the same
+     * initializer.  Linker alignment alone is never evidence.
+     */
+    private Set<Address> fixedBitsets128() throws Exception {
+        Function builder = uniqueTaggedFunction(
+            "RECOVERED_UTILITY_SENTINEL_BITSET128_BUILDER");
+        if (builder == null || !builder.hasVarArgs() ||
+                explicitParameterCount(builder) != 1) return Set.of();
+        Map<Address, Set<Address>> initializers = new TreeMap<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            InstructionIterator instructions = currentProgram.getListing()
+                .getInstructions(function.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                if (!"CALL".equalsIgnoreCase(instruction.getMnemonicString()) ||
+                        !builder.equals(resolveThunk(directCalledFunction(instruction))))
+                    continue;
+                Instruction push = currentProgram.getListing()
+                    .getInstructionBefore(instruction.getAddress());
+                Address root = push != null && function.getBody().contains(push.getAddress()) &&
+                    "PUSH".equalsIgnoreCase(push.getMnemonicString()) ?
+                    exactMemoryAddress(push, 0) : null;
+                if (root != null && validBitsetRange(root))
+                    initializers.computeIfAbsent(function.getEntryPoint(),
+                        ignored -> new TreeSet<>()).add(root);
+            }
+        }
+        Set<Address> result = new TreeSet<>();
+        for (Set<Address> roots : initializers.values()) result.addAll(roots);
+        if (result.size() < 8) return Set.of();
+        boolean changed;
+        do {
+            changed = false;
+            for (Address entry : initializers.keySet()) {
+                Function initializer = currentProgram.getFunctionManager()
+                    .getFunctionAt(entry);
+                if (initializer == null) continue;
+                for (Address candidate : derivedBitsets(initializer, result))
+                    if (result.add(candidate)) changed = true;
+            }
+        } while (changed);
+        return result;
+    }
+
+    private List<Row> fixedBitsetRows(Set<Address> bitsets, Set<Address> claimed) {
+        List<Row> result = new ArrayList<>();
+        for (Address base : bitsets) {
+            Data data = currentProgram.getListing().getDefinedDataAt(base);
+            Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(base);
+            if (symbol == null) continue;
+            Data baseline = data == null ?
+                currentProgram.getListing().getDefinedDataContaining(base) : data;
+            boolean eligible = synthetic(symbol.getName()) || owned(base);
+            String proposedName = owned(base) &&
+                symbol.getName().startsWith("g_bitset_") ? symbol.getName() :
+                "g_bitset_" + addr(base);
+            result.add(new Row(eligible, addr(base), symbol.getName(),
+                symbol.getSource().toString(), baseline == null ? "" :
+                    baseline.getDataType().getPathName(),
+                baseline == null ? 0 : baseline.getLength(), proposedName,
+                "array:4:/uint", 16,
+                "fixed_bitset_128", eligible ? "high" : "review",
+                "four exact dword words; seeded by the sentinel-varargs bitset " +
+                    "builder or closed four-word copy/bitwise composition"));
+            claimed.add(base);
+        }
+        return result;
+    }
+
+    private Set<Address> derivedBitsets(Function function, Set<Address> known) {
+        Map<String, Boolean> registers = new HashMap<>();
+        Map<Address, Set<Integer>> writes = new TreeMap<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitInstructionOperands(instruction.toString());
+            if ("CALL".equals(mnemonic)) {
+                registers.remove("EAX"); registers.remove("ECX"); registers.remove("EDX");
+                continue;
+            }
+            if (operands.length >= 2 && "MOV".equals(mnemonic)) {
+                String destination = plainRegister(operands[0]);
+                if (!destination.isBlank()) {
+                    Address sourceAddress = exactMemoryAddress(instruction, 1);
+                    String sourceRegister = plainRegister(operands[1]);
+                    boolean bitsetWord = sourceAddress != null &&
+                        isBitsetWord(sourceAddress, known) ||
+                        !sourceRegister.isBlank() &&
+                            registers.getOrDefault(sourceRegister, false);
+                    if (bitsetWord) registers.put(destination, true);
+                    else registers.remove(destination);
+                    continue;
+                }
+                Address destinationAddress = exactMemoryAddress(instruction, 0);
+                String sourceRegister = plainRegister(operands[1]);
+                if (destinationAddress != null && !sourceRegister.isBlank() &&
+                        registers.getOrDefault(sourceRegister, false)) {
+                    long aligned = destinationAddress.getOffset() & ~0xfL;
+                    Address base = destinationAddress.getAddressSpace().getAddress(aligned);
+                    int offset = (int)(destinationAddress.getOffset() - aligned);
+                    if (Set.of(0, 4, 8, 12).contains(offset) && validBitsetRange(base))
+                        writes.computeIfAbsent(base, ignored -> new TreeSet<>()).add(offset);
+                }
+                continue;
+            }
+            String destination = operands.length == 0 ? "" : plainRegister(operands[0]);
+            if ("OR".equals(mnemonic) && operands.length >= 2 &&
+                    !destination.isBlank()) {
+                String source = plainRegister(operands[1]);
+                if (source.isBlank() || !registers.getOrDefault(destination, false) ||
+                        !registers.getOrDefault(source, false)) registers.remove(destination);
+                continue;
+            }
+            if (!destination.isBlank() && !Set.of("CMP", "TEST", "PUSH")
+                    .contains(mnemonic)) registers.remove(destination);
+        }
+        Set<Address> result = new TreeSet<>();
+        for (Map.Entry<Address, Set<Integer>> entry : writes.entrySet())
+            if (entry.getValue().equals(Set.of(0, 4, 8, 12)))
+                result.add(entry.getKey());
+        return result;
+    }
+
+    private boolean isBitsetWord(Address address, Set<Address> roots) {
+        for (Address root : roots) {
+            if (!root.getAddressSpace().equals(address.getAddressSpace())) continue;
+            long delta = address.subtract(root);
+            if (delta >= 0 && delta < 16 && (delta & 3) == 0) return true;
+        }
+        return false;
+    }
+
+    private boolean validBitsetRange(Address base) {
+        try {
+            return currentProgram.getMemory().contains(base) &&
+                currentProgram.getMemory().contains(base.add(15)) &&
+                currentProgram.getListing().getInstructionContaining(base) == null;
+        }
+        catch (Exception ignored) { return false; }
+    }
+
+    private Address exactMemoryAddress(Instruction instruction, int operand) {
+        Address reference = exactGlobalReference(instruction, operand);
+        if (reference != null) return reference;
+        if (operand < 0 || operand >= instruction.getNumOperands()) return null;
+        var scalar = instruction.getScalar(operand);
+        if (scalar == null) return null;
+        Address candidate = currentProgram.getAddressFactory().getDefaultAddressSpace()
+            .getAddress(scalar.getUnsignedValue());
+        return currentProgram.getMemory().contains(candidate) ? candidate : null;
+    }
+
+    private Function uniqueTaggedFunction(String tagName) {
+        Function found = null;
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            boolean tagged = function.getTags().stream()
+                .anyMatch(tag -> tagName.equals(tag.getName()));
+            if (!tagged) continue;
+            if (found != null) return null;
+            found = function;
+        }
+        return found;
+    }
+
+    private int explicitParameterCount(Function function) {
+        int result = 0;
+        for (var parameter : function.getParameters())
+            if (!parameter.isAutoParameter()) result++;
+        return result;
+    }
+
+    private Function directCalledFunction(Instruction instruction) {
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(flow);
+            if (function != null) return function;
+        }
+        return null;
+    }
+
+    private Function resolveThunk(Function function) {
+        Set<Address> seen = new HashSet<>();
+        while (function != null && function.isThunk() &&
+                seen.add(function.getEntryPoint())) {
+            Function next = function.getThunkedFunction(false);
+            if (next == null || next.equals(function)) break;
+            function = next;
+        }
+        return function;
     }
 
     /**

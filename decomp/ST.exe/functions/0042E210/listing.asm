@@ -80,7 +80,8 @@ LAB_0042e2f1:
 0042E30D  39 71 20                  CMP dword ptr [ECX + 0x20],ESI
 0042E310  0F 85 D5 00 00 00         JNZ 0x0042e3eb
 0042E316  8B 11                     MOV EDX,dword ptr [ECX]
-0042E318  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e318_d4e0dbd9:
+0042E318  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E31B  83 C0 41                  ADD EAX,0x41
 0042E31E  8B C8                     MOV ECX,EAX
 0042E320  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -160,7 +161,8 @@ LAB_0042e3eb:
 0042E3EE  81 79 20 E8 03 00 00      CMP dword ptr [ECX + 0x20],0x3e8
 0042E3F5  0F 85 02 01 00 00         JNZ 0x0042e4fd
 0042E3FB  8B 11                     MOV EDX,dword ptr [ECX]
-0042E3FD  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e3fd_d4e0dbd9:
+0042E3FD  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E400  83 E8 32                  SUB EAX,0x32
 0042E403  8B C8                     MOV ECX,EAX
 0042E405  81 E1 1F 00 00 80         AND ECX,0x8000001f

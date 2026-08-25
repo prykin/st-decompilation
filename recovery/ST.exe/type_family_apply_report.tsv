@@ -1,2 +1,3 @@
 function_address	target	status	detail
 0042E210	parameter:Stack[0x10]:4	disabled	apply=0
+0042F2B0	parameter:Stack[0x10]:4	disabled	apply=0

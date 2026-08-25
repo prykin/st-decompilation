@@ -8319,7 +8319,7 @@
   {"from":"004E80F0 FUN_004e80f0","to":"0040186B thunk_FUN_004e60d0"},
   {"from":"004E81B0 FUN_004e81b0","to":"0040186B thunk_FUN_004e60d0"},
   {"from":"004E8230 FUN_004e8230","to":"0040186B thunk_FUN_004e60d0"},
-  {"from":"004E82B0 FUN_004e82b0","to":"006B0D60 FUN_006b0d60"},
+  {"from":"004E82B0 FUN_004e82b0","to":"006B0D60 BuildBitSet128"},
   {"from":"004E8B10 FUN_004e8b10","to":"0040186B thunk_FUN_004e60d0"},
   {"from":"004E8B10 FUN_004e8b10","to":"00404160 thunk_FUN_004e9930"},
   {"from":"004E8CC0 FUN_004e8cc0","to":"0040107D thunk_FUN_004e8dc0"},

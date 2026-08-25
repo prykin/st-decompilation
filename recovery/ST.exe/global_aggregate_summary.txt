@@ -1,8 +1,8 @@
 ST global aggregate recovery
 
 Indexed candidate bases: 615
-Proposals: 76
-Automatic: 12
+Proposals: 102
+Automatic: 54
 
 00792CA0 indexed_global_candidate review apply=0 - SIB scales={3=15, 4=8, 24=9, 8=8, 12=7}; sites=004BE6C0@004BE788 MOV AX,word ptr [EDX*0x8 + 0x792ca0] | 004BE6C0@004BE7A9 MOV EAX,dword ptr [EAX*0x8 + 0x792ca0] | 004C21A0@004C25B7 MOV EAX,dword ptr [ECX*0x8 + 0x792ca0] | 004C3020@004C3079 CMP dword ptr [EAX*0x8 + 0x792ca0],0x9a | 004C3020@004C3098 CMP dword ptr [EDX*0x8 + 0x792ca0],0xb0 | 004C3020@004C30B9 MOV EDX,dword ptr [ECX*0x8 + 0x792ca0] | 004C3570@004C396B MOV EDX,dword ptr [ECX*0x4 + 0x792ca0] | 004C3570@004C3A3B MOV EDX,dword ptr [EDX*0x8 + 0x792ca0] | 004C3C00@004C3F5C CMP dword ptr [EDX*0x4 + 0x792ca0],0xb0 | 004C3C00@004C3FF0 MOV EAX,dword ptr [EDX*0x4 + 0x792ca0] | 004C4550@004C4596 MOV EAX,dword ptr [ECX*0x4 + 0x792ca0] | 004C4550@004C4822 MOV EAX,dword ptr [EAX*0x4 + 0x792ca0]
 0079A3FC indexed_global_candidate review apply=0 - SIB scales={4=4, 60=4, 15=4}; sites=004BEA70@004C03D6 CMP dword ptr [EDX*0x4 + 0x79a3fc],EDI | 004BEA70@004C03ED LEA ECX,[EAX*0x4 + 0x79a3fc] | 004E3200@004E327D CMP dword ptr [EDX*0x4 + 0x79a3fc],EBX | 004E3200@004E3294 LEA EBX,[EAX*0x4 + 0x79a3fc]
@@ -23,22 +23,48 @@ Automatic: 12
 007F4D74 runtime_record_pointer high apply=1 - runtime pointer indexed with unique affine stride=0x10; fields=4; functions=2; sites=44; reads=33; writes=11
 007FB24C indexed_global_candidate review apply=0 - SIB scales={4=12}; sites=00496B30@00496C03 MOV ECX,dword ptr [EDI*0x4 + 0x7fb24c] | 00496B30@00496C27 MOV EDX,dword ptr [EDI*0x4 + 0x7fb24c] | 00496CC0@00496D89 MOV EAX,dword ptr [EBX*0x4 + 0x7fb24c] | 00496CC0@00496DC2 MOV dword ptr [EBX*0x4 + 0x7fb24c],EDI | 00496E40@00496EAD LEA ECX,[ESI*0x4 + 0x7fb24c] | 005825C0@005828D1 MOV EDI,dword ptr [EDI*0x4 + 0x7fb24c] | 00586AF0@00588465 MOV EDX,dword ptr [EBX*0x4 + 0x7fb24c] | 00601500@006016ED MOV ECX,dword ptr [ESI*0x4 + 0x7fb24c] | 00619C70@00619E05 MOV EDI,dword ptr [EBX*0x4 + 0x7fb24c] | 00619C70@0061A362 MOV EDX,dword ptr [EDX*0x4 + 0x7fb24c] | 006406D0@00640F76 MOV EAX,dword ptr [EAX*0x4 + 0x7fb24c] | 006406D0@00641359 MOV EAX,dword ptr [EAX*0x4 + 0x7fb24c]
 00800BD0 indexed_global_candidate review apply=0 - SIB scales={4=3, 5=3}; sites=004E7390@004E749A LEA EAX,[ESI + ESI*0x4 + 0x800bd0] | 004E76E0@004E7840 LEA ECX,[ECX + ECX*0x4 + 0x800bd0] | 004E7980@004E7B41 LEA EDX,[EAX + EAX*0x4 + 0x800bd0]
-00800EE0 indexed_global_candidate review apply=0 - SIB scales={4=3}; sites=0042E210@0042E8F8 TEST dword ptr [EAX*0x4 + 0x800ee0],EDX | 0042F2B0@0042FB56 TEST dword ptr [EAX*0x4 + 0x800ee0],EDX | 00674FB0@0067503C TEST dword ptr [ECX*0x4 + 0x800ee0],EAX
-00800EF0 indexed_global_candidate review apply=0 - SIB scales={4=3}; sites=0042E210@0042E9DF TEST dword ptr [EAX*0x4 + 0x800ef0],EDX | 0042F2B0@0042FCDC TEST dword ptr [EAX*0x4 + 0x800ef0],EDX | 00674FB0@006750BD TEST dword ptr [ECX*0x4 + 0x800ef0],EAX
-00800F00 indexed_global_candidate review apply=0 - SIB scales={4=4}; sites=0042E210@0042E612 TEST dword ptr [EAX*0x4 + 0x800f00],EDX | 0042F2B0@0042F6C6 TEST dword ptr [EAX*0x4 + 0x800f00],EDX | 0044B5F0@0044B7E8 TEST dword ptr [EAX*0x4 + 0x800f00],EDX | 00674FB0@006751D9 TEST dword ptr [ECX*0x4 + 0x800f00],EAX
-00800F20 indexed_global_candidate review apply=0 - SIB scales={4=3}; sites=0042E210@0042E992 TEST dword ptr [EAX*0x4 + 0x800f20],EDX | 0042F2B0@0042FC5A TEST dword ptr [EAX*0x4 + 0x800f20],EDX | 00674FB0@00675092 TEST dword ptr [ECX*0x4 + 0x800f20],EAX
-00800F60 indexed_global_candidate review apply=0 - SIB scales={4=3}; sites=0042E210@0042EABF TEST dword ptr [EAX*0x4 + 0x800f60],EDX | 0042F2B0@0042FE62 TEST dword ptr [EAX*0x4 + 0x800f60],EDX | 00674FB0@0067513C AND EAX,dword ptr [EDX*0x4 + 0x800f60]
-00800FA0 indexed_global_candidate review apply=0 - SIB scales={16=1, 4=4}; sites=0042E210@0042E6AC TEST dword ptr [EAX*0x4 + 0x800fa0],EDX | 0042F2B0@0042F7CA TEST dword ptr [EAX*0x4 + 0x800fa0],EDX | 0044B5F0@0044B93E TEST dword ptr [EAX*0x4 + 0x800fa0],EDX | 00488890@004888C6 LEA ECX,[EAX + 0x800fa0] | 00674FB0@0067522F TEST dword ptr [ECX*0x4 + 0x800fa0],EAX
-00800FE0 indexed_global_candidate review apply=0 - SIB scales={4=3}; sites=0042E210@0042E78C TEST dword ptr [EAX*0x4 + 0x800fe0],EDX | 0042F2B0@0042F950 TEST dword ptr [EAX*0x4 + 0x800fe0],EDX | 00674FB0@006752AE AND EAX,dword ptr [EDX*0x4 + 0x800fe0]
-00800FF0 indexed_global_candidate review apply=0 - SIB scales={4=3}; sites=0042E210@0042E6F9 TEST dword ptr [EAX*0x4 + 0x800ff0],EDX | 0042F2B0@0042F84C TEST dword ptr [EAX*0x4 + 0x800ff0],EDX | 00674FB0@0067525A TEST dword ptr [ECX*0x4 + 0x800ff0],EAX
-00801000 indexed_global_candidate review apply=0 - SIB scales={4=4}; sites=0042E210@0042E578 TEST dword ptr [EAX*0x4 + 0x801000],EDX | 0042F2B0@0042F5C2 TEST dword ptr [EAX*0x4 + 0x801000],EDX | 0044B5F0@0044B895 TEST dword ptr [EAX*0x4 + 0x801000],EDX | 00674FB0@00675183 TEST dword ptr [ECX*0x4 + 0x801000],EAX
-00801010 indexed_global_candidate review apply=0 - SIB scales={4=4}; sites=0042E210@0042E5C5 TEST dword ptr [EAX*0x4 + 0x801010],EDX | 0042F2B0@0042F644 TEST dword ptr [EAX*0x4 + 0x801010],EDX | 0044B5F0@0044B9E7 TEST dword ptr [EAX*0x4 + 0x801010],EDX | 00674FB0@006751AE TEST dword ptr [ECX*0x4 + 0x801010],EAX
-00801370 indexed_global_candidate review apply=0 - SIB scales={16=1, 4=3}; sites=0042E210@0042E65F TEST dword ptr [EAX*0x4 + 0x801370],EDX | 0042F2B0@0042F748 TEST dword ptr [EAX*0x4 + 0x801370],EDX | 00488890@00488916 LEA EAX,[EAX + 0x801370] | 00674FB0@00675204 TEST dword ptr [ECX*0x4 + 0x801370],EAX
-008013E0 indexed_global_candidate review apply=0 - SIB scales={4=3}; sites=0042E210@0042E8AB TEST dword ptr [EAX*0x4 + 0x8013e0],EDX | 0042F2B0@0042FAD4 TEST dword ptr [EAX*0x4 + 0x8013e0],EDX | 00674FB0@00675011 TEST dword ptr [ECX*0x4 + 0x8013e0],EAX
-00801420 indexed_global_candidate review apply=0 - SIB scales={4=3}; sites=0042E210@0042E85E TEST dword ptr [EAX*0x4 + 0x801420],EDX | 0042F2B0@0042FA52 TEST dword ptr [EAX*0x4 + 0x801420],EDX | 00674FB0@00674FE6 TEST dword ptr [ECX*0x4 + 0x801420],EAX
-00801430 indexed_global_candidate review apply=0 - SIB scales={4=3}; sites=0042E210@0042EA2C TEST dword ptr [EAX*0x4 + 0x801430],EDX | 0042F2B0@0042FD5E TEST dword ptr [EAX*0x4 + 0x801430],EDX | 00674FB0@006750E8 TEST dword ptr [ECX*0x4 + 0x801430],EAX
-00801440 indexed_global_candidate review apply=0 - SIB scales={4=3}; sites=0042E210@0042EA79 TEST dword ptr [EAX*0x4 + 0x801440],EDX | 0042F2B0@0042FDE0 TEST dword ptr [EAX*0x4 + 0x801440],EDX | 00674FB0@00675113 TEST dword ptr [ECX*0x4 + 0x801440],EAX
-00801490 indexed_global_candidate review apply=0 - SIB scales={4=3}; sites=0042E210@0042E945 TEST dword ptr [EAX*0x4 + 0x801490],EDX | 0042F2B0@0042FBD8 TEST dword ptr [EAX*0x4 + 0x801490],EDX | 00674FB0@00675067 TEST dword ptr [ECX*0x4 + 0x801490],EAX
+00800EE0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800EF0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800F00 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800F10 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800F20 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800F30 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800F40 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800F50 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800F60 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800F80 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800F90 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800FA0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800FB0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800FC0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800FD0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800FE0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00800FF0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801000 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801010 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801330 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801340 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801350 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801360 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801370 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801380 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801390 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+008013A0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+008013B0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+008013C0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+008013D0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+008013E0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+008013F0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801400 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801410 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801420 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801430 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801440 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801450 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801460 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801480 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+00801490 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
+008014A0 fixed_bitset_128 high apply=1 - four exact dword words; seeded by the sentinel-varargs bitset builder or closed four-word copy/bitwise composition
 008032F4 runtime_record_pointer high apply=1 - runtime pointer indexed with unique affine stride=0x14; fields=3; functions=2; sites=12; reads=10; writes=2
 008032F8 runtime_record_pointer high apply=1 - runtime pointer indexed with unique affine stride=0x14; fields=3; functions=2; sites=14; reads=10; writes=4
 00803300 runtime_record_pointer high apply=1 - runtime pointer indexed with unique affine stride=0x14; fields=4; functions=5; sites=23; reads=21; writes=2

@@ -7,23 +7,23 @@
     },
     {
       "path": "README.generated.md",
-      "sha256": "12044fbcb5687ed20673778ae3b5f4c24eef0f577d31b24f1343914d1fc9da3c",
+      "sha256": "f73bb4ef7e52ad9df77f7af3ad19603d0c8dc3d2a801e8f0ab62aa2e66497742",
       "size": 1425
     },
     {
       "path": "audit/issues.jsonl",
-      "sha256": "ee6be2d25948b7797bea6d7c8b1591cd60c48be0134e211c393d4aa2257afa1a",
-      "size": 1653070
+      "sha256": "994076d009caa2306fa3b89bfd75e7690529c280ed8de77c5b23341e2707334a",
+      "size": 1646308
     },
     {
       "path": "audit/readability.json",
-      "sha256": "b00fd5dbf7d2136cbf14606cc13d894a7f044f01053c7213373877580e967312",
-      "size": 128883
+      "sha256": "ad1b96dfef1b5ad8dafeec60c2b2f8efa0aecafc50f924f19a638eee5d2a3795",
+      "size": 128745
     },
     {
       "path": "audit/summary.json",
-      "sha256": "e7f4d82c8b479af1700b09d47afa7e5ef8eca8794d6450f3f8787e986fb6e063",
-      "size": 4893
+      "sha256": "fa15b2ece03cedaa973f8ea8ce12b666211bb561b054c6cebf480c4695af08a2",
+      "size": 4891
     },
     {
       "path": "include/st/generated.hpp",
@@ -32,18 +32,18 @@
     },
     {
       "path": "include/st/pseudocode_runtime.hpp",
-      "sha256": "5f9ea67996414f75fa6a1e313eb9701b6ae850640962e0e313d963ce184708a2",
-      "size": 12725
+      "sha256": "483d0740a1b332108dd6f52935a8cbf55c9c0e7c07424470a7dc93993a3840e4",
+      "size": 13937
     },
     {
       "path": "include/st/recovered_functions.hpp",
-      "sha256": "9b1e46ae5d90632fc841433134c7e8d1b28c7424fd86594273f33523d51cb474",
-      "size": 1343110
+      "sha256": "4f983df68bdcc98065b99990719c27b7c09b48585b099ebed906185672c15f5f",
+      "size": 1343107
     },
     {
       "path": "include/st/recovered_globals.hpp",
-      "sha256": "9ff691a5f7d734b0f6321bc940beeea3843c2fba9022e071b0510cefed41ba2f",
-      "size": 120751
+      "sha256": "37c24c054f580f988027c33fa5c52af97b87a3b6b1e25bfec87645631a3486f5",
+      "size": 117659
     },
     {
       "path": "include/st/recovered_imports.hpp",
@@ -792,8 +792,8 @@
     },
     {
       "path": "source/original/wlad/to_allpl.cpp",
-      "sha256": "8543cc2ebc3aed9d998ad10d2b2ef1b0354106d7c6db84b1de6015bbd3f954fa",
-      "size": 791428
+      "sha256": "c04e92ca930e63907bb7bfdc1ab4341575d5d7b88c184ab754a166329ce11525",
+      "size": 784975
     },
     {
       "path": "source/original/wlad/to_grpb.cpp",
@@ -842,8 +842,8 @@
     },
     {
       "path": "source/recovered/by_address/0048.cpp",
-      "sha256": "62b14e45566313a8042f55f3227c31c87cd20265ff6da2035eb96c9e3ce0f317",
-      "size": 168463
+      "sha256": "8125c7302f09a8ff8a8b7261e421ea3c62e25471916fbbbc79379e46062922d0",
+      "size": 168401
     },
     {
       "path": "source/recovered/by_address/0049.cpp",
@@ -872,8 +872,8 @@
     },
     {
       "path": "source/recovered/by_address/004E.cpp",
-      "sha256": "4c36b410d6a78e1d8cf156ecee957e664bdb1e9c3b12843d506a889886f909ea",
-      "size": 237980
+      "sha256": "7166609695aac1bfeb8db03c6d2ebfe1b25a5985e0768a281926af7a03122af4",
+      "size": 240262
     },
     {
       "path": "source/recovered/by_address/004F.cpp",
@@ -997,8 +997,8 @@
     },
     {
       "path": "source/recovered/by_address/0067.cpp",
-      "sha256": "7f8d54aea59dd85bd14761e6d9036af999022552ca7ab750f9777455302d02c5",
-      "size": 170241
+      "sha256": "78b689f52281511eceae657109cfd072154e5b2899299c7aa03231181bd914f8",
+      "size": 170268
     },
     {
       "path": "source/recovered/by_address/0068.cpp",
@@ -1017,8 +1017,8 @@
     },
     {
       "path": "source/recovered/by_address/006B.cpp",
-      "sha256": "ff459ab98e047d0d1020653cf43d34038af310e55de93fc16357ebd27d206a73",
-      "size": 250530
+      "sha256": "58e2932015976e2a52a4d0e0ce94e5250f6a439bbd10ca891421e1b9d9f14fe6",
+      "size": 250819
     },
     {
       "path": "source/recovered/by_address/006C.cpp",
@@ -1652,8 +1652,8 @@
     },
     {
       "path": "source/recovered/by_owner/TLOBaseTy.cpp",
-      "sha256": "876fab1d55b8c7cb2ca390858208ac4704f652469c6beb13a533de379744b96f",
-      "size": 240224
+      "sha256": "bb827069009432d7d4f063fb8e80624da5143dd9c8c610222fe77ea1dda7c3d9",
+      "size": 240194
     },
     {
       "path": "source/recovered/by_owner/TLOBldMark.cpp",
@@ -1704,17 +1704,17 @@
   "function_identity": "entry_address",
   "generator_sha256": "5a6a0d10064a2772869246a9ce22a4716ec09e0787d480be5b792cc51bc8a628",
   "input_files": {
-    "call_relations.jsonl": "1929921864d6c0de3ae14a1d009409e34b21cd1f4848f2405969a0d85b8c9211",
-    "functions.json": "12830824ca6c223d71f422a93d2dd7525c64724e5fac19993bb3d587996af518",
-    "globals.jsonl": "32a862eddf1c307c25776daef1d25eacd01b5146b0ffd2423575d2ddc455e8bc",
+    "call_relations.jsonl": "bb59fdd56e7803d2e3ca3926fe8bc58f990bcf1dbfd2284f3f2474400a0d7c6e",
+    "functions.json": "c7947887b680845e39a6a2d8bdd5d1ffb6aac66df39919461c04649f887eacc6",
+    "globals.jsonl": "4acbe06a54a27770686a93307e828a597e184a92d8693e4fbecb146d512679a3",
     "imports.json": "1292ae0f2b3d533808f0452471962f3c57fcf6e7d36043f54df1ab6db32f9092",
-    "manifest.json": "9d8a8bb70901f11b94b8ddadf0e79e8b3720d5e05dcc36aaa906a5ea3efa6d5f",
-    "pseudocode_runtime.h": "5f9ea67996414f75fa6a1e313eb9701b6ae850640962e0e313d963ce184708a2",
+    "manifest.json": "a5e5ca04d8645af37131107065f51ec0a00d01a3ee43317b61eb2b2640831a5e",
+    "pseudocode_runtime.h": "483d0740a1b332108dd6f52935a8cbf55c9c0e7c07424470a7dc93993a3840e4",
     "strings.jsonl": "af7f49fc202ec99f463ea140b4981d3178ae744881683ed3db9fb55e6c903525",
     "types.jsonl": "17b58f1b4b52fff7c803b8821df973104c1f447e0d99372cbb6984764a409c24"
   },
-  "input_manifest_sha256": "9d8a8bb70901f11b94b8ddadf0e79e8b3720d5e05dcc36aaa906a5ea3efa6d5f",
-  "program_semantic_sha256": "06d56dd39cad7eb362a3510e21bac9818506075be013bfe9462a6258bb018710",
+  "input_manifest_sha256": "a5e5ca04d8645af37131107065f51ec0a00d01a3ee43317b61eb2b2640831a5e",
+  "program_semantic_sha256": "9c3445c47a8b6a3cf5a218508fd9fba37d7dedb7776deb47910d21d2c749cdf2",
   "schema": "st-source-tree",
   "schema_version": 1
 }

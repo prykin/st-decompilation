@@ -55,8 +55,9 @@ public class STUtilityFunctionApplier extends GhidraScript {
         Tsv input = readTsv(file.toPath());
         require(input, "apply", "function_address", "semantic_id", "expected_qualified_name",
             "expected_name", "expected_name_source", "expected_signature", "expected_convention",
-            "expected_parameters", "expected_call_fixup", "proposed_name", "proposed_convention",
-            "proposed_return_type", "proposed_parameter_types", "proposed_parameter_names",
+            "expected_varargs", "expected_parameters", "expected_call_fixup", "proposed_name",
+            "proposed_convention", "proposed_varargs", "proposed_return_type",
+            "proposed_parameter_types", "proposed_parameter_names",
             "proposed_call_fixup", "consumer_call_views", "semantics", "evidence");
         dataTypes = currentProgram.getDataTypeManager();
         int transaction = currentProgram.startTransaction("Apply utility-function semantics");
@@ -95,10 +96,12 @@ public class STUtilityFunctionApplier extends GhidraScript {
                 function.getSymbol().getSource().toString().equals(row.get("expected_name_source")) &&
                 function.getPrototypeString(true, true).equals(unt(row.get("expected_signature"))) &&
                 function.getCallingConventionName().equals(row.get("expected_convention")) &&
+                function.hasVarArgs() == enabled(row.get("expected_varargs")) &&
                 parameterBaseline(function).equals(unt(row.get("expected_parameters"))) &&
                 callFixup(function).equals(unt(row.get("expected_call_fixup")));
             boolean already = function.getName().equals(row.get("proposed_name")) &&
                 function.getCallingConventionName().equals(row.get("proposed_convention")) &&
+                function.hasVarArgs() == enabled(row.get("proposed_varargs")) &&
                 typeSpec(function.getReturnType()).equals(row.get("proposed_return_type")) &&
                 proposedParametersPresent(function, row) &&
                 desiredCallFixupPresent(function, row);
@@ -152,6 +155,7 @@ public class STUtilityFunctionApplier extends GhidraScript {
             }
             if (!function.getName().equals(row.get("proposed_name")))
                 function.getSymbol().setName(row.get("proposed_name"), SourceType.ANALYSIS);
+            function.setVarArgs(enabled(row.get("proposed_varargs")));
             String proposedCallFixup = unt(row.get("proposed_call_fixup"));
             if (!proposedCallFixup.isBlank()) function.setCallFixup(proposedCallFixup);
             refreshSemanticTags(function, row);
@@ -289,6 +293,7 @@ public class STUtilityFunctionApplier extends GhidraScript {
             "payload_view_" + call, dataTypes);
         desired.setCallingConvention(row.get("proposed_convention"));
         desired.setReturnType(returned);
+        desired.setVarArgs(enabled(row.get("proposed_varargs")));
         String[] types = split(row.get("proposed_parameter_types"));
         String[] names = split(row.get("proposed_parameter_names"));
         ParameterDefinition[] arguments = new ParameterDefinition[types.length];

@@ -785,13 +785,18 @@ undefined4 st::fn_006B0CD0(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2,uin
   return 0xfffffffc;
 }
 
-// 006B0D60 FUN_006b0d60
+// 006B0D60 BuildBitSet128
 #line 4 "decomp/ST.exe/functions/006B0D60/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=29, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
 
-void __cdecl st::fn_006B0D60(undefined4 *param_1)
+   [STUtilityFunctionApplier] sentinel_bitset128_builder: clears one 128-bit output set, then
+   consumes a sentinel-terminated variadic list of bit indexes and sets each corresponding bit; the
+   128-entry loop cap is a corruption guard rather than a fixed source argument count
+   Evidence: body pattern verified */
+
+void __cdecl st::fn_006B0D60(uint *bits,...)
 
 {
   alignas(4) byte st_stack_frame[20];
@@ -802,10 +807,10 @@ void __cdecl st::fn_006B0D60(undefined4 *param_1)
 
   iVar3 = 0;
   piVar2 = (int *)(st_stack_frame + 16);
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  param_1[3] = 0;
+  *bits = 0;
+  bits[1] = 0;
+  bits[2] = 0;
+  bits[3] = 0;
   do {
     iVar1 = *piVar2;
     if (iVar1 < 0) {
@@ -813,8 +818,8 @@ void __cdecl st::fn_006B0D60(undefined4 *param_1)
     }
     piVar2 = piVar2 + 1;
     iVar3 = iVar3 + 1;
-    param_1[(int)(iVar1 + (iVar1 >> 0x1f & 0x1fU)) >> 5] =st::machine_word_boundary_cast<undefined4>(
-         param_1[(int)(iVar1 + (iVar1 >> 0x1f & 0x1fU)) >> 5] | 1 << ((byte)iVar1 & 0x1f));
+    bits[(int)(iVar1 + (iVar1 >> 0x1f & 0x1fU)) >> 5] =st::machine_word_boundary_cast<uint>(
+         bits[(int)(iVar1 + (iVar1 >> 0x1f & 0x1fU)) >> 5] | 1 << ((byte)iVar1 & 0x1f));
   } while (iVar3 < 0x80);
   return;
 }

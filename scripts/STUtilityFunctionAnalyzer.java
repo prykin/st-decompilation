@@ -40,6 +40,7 @@ import ghidra.program.model.pcode.HighFunction;
 import ghidra.program.model.pcode.HighFunctionDBUtil;
 import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.Reference;
+import ghidra.program.model.symbol.ReferenceIterator;
 import ghidra.program.model.symbol.Symbol;
 
 public class STUtilityFunctionAnalyzer extends GhidraScript {
@@ -76,7 +77,7 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                 rows.add(new Row(verified, addr(function.getEntryPoint()),
                     function.getName(true), function.getName(), function.getSymbol().getSource().toString(),
                     function.getPrototypeString(true, true), function.getCallingConventionName(),
-                    parameterBaseline(function), callFixup(function), rule,
+                    function.hasVarArgs(), parameterBaseline(function), callFixup(function), rule,
                     verified ? "body pattern verified" :
                     "missing body tokens: " + String.join(",", missing)));
             }
@@ -149,6 +150,17 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
             new String[] { "/WinDef.h/UINT", "/WinDef.h/HINSTANCE" },
             new String[] { "resourceId", "module" },
             "loads a Win32 string resource into the process ring buffer and returns its address");
+        Function bitsetBuilder = discoverSentinelBitset128Builder();
+        if (bitsetBuilder != null && occupied.add(
+                bitsetBuilder.getEntryPoint().getOffset()))
+            result.add(new Rule(bitsetBuilder.getEntryPoint().getOffset(),
+                "sentinel_bitset128_builder", "BuildBitSet128", "__cdecl", "/void",
+                new String[] { "pointer:/uint" }, new String[] { "bits" },
+                new String[0],
+                "clears one 128-bit output set, then consumes a sentinel-terminated " +
+                    "variadic list of bit indexes and sets each corresponding bit; " +
+                    "the 128-entry loop cap is a corruption guard rather than a fixed " +
+                    "source argument count", "", true));
         Function indexedRecordByte = discoverIndexedRecordByteLookup();
         addDiscovered(result, occupied, indexedRecordByte,
             "indexed_record_byte_lookup", "LookupRecordByte", "__stdcall",
@@ -407,6 +419,74 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                 matches.add(function);
         }
         return unique(matches);
+    }
+
+    /**
+     * Recognize a sentinel-varargs 128-bit set initializer from its complete
+     * machine contract.  No address or current symbol participates in the
+     * proof: one fixed pointer comes from EBP+8, four dwords are cleared, the
+     * list walker starts at EBP+0xC, a negative value terminates it, and the
+     * exact word/bit split is guarded by a 128-item bound.
+     */
+    private Function discoverSentinelBitset128Builder() {
+        List<Function> matches = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (!smallInternal(function, 128) || callInstructionCount(function) != 0 ||
+                    explicitParameters(function).size() != 1 ||
+                    !"__cdecl".equals(function.getCallingConventionName()) ||
+                    directCallSiteCount(function) < 8) continue;
+            String body = machineText(function).toUpperCase(Locale.ROOT);
+            Matcher output = Pattern.compile(
+                "(?m)^MOV (EAX|EBX|ECX|EDX|ESI|EDI),DWORD PTR \\[EBP \\+ 0X8\\]$")
+                .matcher(body);
+            Matcher walker = Pattern.compile(
+                "(?m)^LEA (EAX|EBX|ECX|EDX|ESI|EDI),\\[EBP \\+ 0XC\\]$")
+                .matcher(body);
+            if (!output.find() || !walker.find()) continue;
+            String base = output.group(1), cursor = walker.group(1);
+            Matcher zero = Pattern.compile(
+                "(?m)^XOR (EAX|EBX|ECX|EDX|ESI|EDI),\\1$").matcher(body);
+            boolean cleared = false;
+            while (zero.find() && !cleared) {
+                String value = zero.group(1);
+                cleared = body.matches("(?s).*MOV DWORD PTR \\[" + base + "\\]," +
+                        value + ".*") &&
+                    body.matches("(?s).*MOV DWORD PTR \\[" + base +
+                        " \\+ 0X4\\]," + value + ".*") &&
+                    body.matches("(?s).*MOV DWORD PTR \\[" + base +
+                        " \\+ 0X8\\]," + value + ".*") &&
+                    body.matches("(?s).*MOV DWORD PTR \\[" + base +
+                        " \\+ 0XC\\]," + value + ".*");
+            }
+            if (!cleared || !body.matches("(?s).*MOV [A-Z]+,DWORD PTR \\[" +
+                    cursor + "\\].*") ||
+                    !body.contains("ADD " + cursor + ",0X4") ||
+                    !Pattern.compile("(?m)^SAR [A-Z]+,0X5$").matcher(body).find() ||
+                    !Pattern.compile("(?m)^SHL [A-Z]+,CL$").matcher(body).find() ||
+                    !Pattern.compile("(?m)^OR [A-Z]+,[A-Z]+$").matcher(body).find() ||
+                    !Pattern.compile("(?m)^CMP [A-Z]+,0X80$").matcher(body).find() ||
+                    !Pattern.compile("(?m)^(?:TEST|CMP) [A-Z]+,[A-Z]+$\nJL ")
+                        .matcher(body).find() || !hasBareReturn(function)) continue;
+            matches.add(function);
+        }
+        return unique(matches);
+    }
+
+    private int directCallSiteCount(Function target) {
+        int result = 0;
+        ReferenceIterator references = currentProgram.getReferenceManager()
+            .getReferencesTo(target.getEntryPoint());
+        while (references.hasNext()) {
+            Reference reference = references.next();
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(reference.getFromAddress());
+            if (instruction == null || !instruction.getFlowType().isCall()) continue;
+            for (Address flow : instruction.getFlows())
+                if (flow.equals(target.getEntryPoint())) { result++; break; }
+        }
+        return result;
     }
 
     private boolean smallInternal(Function function, long maximumBytes) {
@@ -1008,15 +1088,15 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\tfunction_address\tsemantic_id\texpected_qualified_name\t" +
                 "expected_name\texpected_name_source\texpected_signature\texpected_convention\t" +
-                "expected_parameters\texpected_call_fixup\tproposed_name\tproposed_convention\tproposed_return_type\t" +
+                "expected_varargs\texpected_parameters\texpected_call_fixup\tproposed_name\tproposed_convention\tproposed_varargs\tproposed_return_type\t" +
                 "proposed_parameter_types\tproposed_parameter_names\tproposed_call_fixup\t" +
                 "consumer_call_views\tconfidence\tsemantics\tevidence\n");
             for (Row row : rows) out.write((row.apply ? "1" : "0") + "\t" + row.address +
                 "\t" + tsv(row.rule.id) + "\t" + tsv(row.qualifiedName) + "\t" +
                 tsv(row.name) + "\t" + row.nameSource + "\t" + tsv(row.signature) + "\t" +
-                row.convention + "\t" + tsv(row.parameters) + "\t" +
+                row.convention + "\t" + row.varargs + "\t" + tsv(row.parameters) + "\t" +
                 tsv(row.callFixup) + "\t" + row.rule.name + "\t" +
-                row.rule.convention + "\t" + row.rule.returnType + "\t" +
+                row.rule.convention + "\t" + row.rule.varargs + "\t" + row.rule.returnType + "\t" +
                 tsv(String.join(";", row.rule.parameterTypes)) + "\t" +
                 tsv(String.join(";", row.rule.parameterNames)) + "\t" +
                 tsv(row.rule.callFixup) + "\t" +
@@ -1055,12 +1135,18 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
 
     private record Rule(long address, String id, String name, String convention,
             String returnType, String[] parameterTypes, String[] parameterNames,
-            String[] tokens, String semantics, String callFixup) {
+            String[] tokens, String semantics, String callFixup, boolean varargs) {
         Rule(long address, String id, String name, String convention,
                 String returnType, String[] parameterTypes, String[] parameterNames,
                 String[] tokens, String semantics) {
             this(address, id, name, convention, returnType, parameterTypes,
-                parameterNames, tokens, semantics, "");
+                parameterNames, tokens, semantics, "", false);
+        }
+        Rule(long address, String id, String name, String convention,
+                String returnType, String[] parameterTypes, String[] parameterNames,
+                String[] tokens, String semantics, String callFixup) {
+            this(address, id, name, convention, returnType, parameterTypes,
+                parameterNames, tokens, semantics, callFixup, false);
         }
     }
     private record PayloadLoaderCandidate(Function function, Set<String> views,
@@ -1070,10 +1156,11 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
     private record ConsumerCallView(Address caller, Address call,
         String returnType, String expectedOverride) {}
     private record Row(boolean apply, String address, String qualifiedName, String name,
-            String nameSource, String signature, String convention, String parameters,
+            String nameSource, String signature, String convention, boolean varargs,
+            String parameters,
             String callFixup, Rule rule, String evidence) {
         static Row missing(Rule rule, String address) {
-            return new Row(false, address, "", "", "", "", "", "", "", rule,
+            return new Row(false, address, "", "", "", "", "", false, "", "", rule,
                 "function missing");
         }
     }

@@ -87,22 +87,17 @@ STAllPlayersC::RegisterObject
   local_20 = uVar13;
   Library::DKW::TBL::DArrayPut(pDVar4,uVar13,&param_4);
   thunk_FUN_00419c50(param_4,(ushort)uVar13);
-  if (param_4[8] == 0x14) {
-    /* ST_CALLSITE[0042E318]: CALL dword ptr [EDX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar10 = (**(code **)(*param_4 + 0x2c))();
-    if ((*(uint *)(&DAT_00801480 + (iVar10 + 0x41U >> 5) * 4) & 1 << ((byte)(iVar10 + 0x41U) & 0x1f)
-        ) == 0) {
+  if (((STGameObjC *)param_4)->field_0020 == 0x14) {
+    /* ST_CALLSITE[0042E318]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+    iVar10 = ((STGameObjC *)param_4)->vfunc_2C();
+    if ((STBitTest(g_bitset_00801480, iVar10 + 0x41U)) == 0) {
       /* ST_CALLSITE[0042E362]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar10 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-      if ((*(uint *)(&DAT_00800f10 + (iVar10 + 0x41U >> 5) * 4) &
-          1 << ((byte)(iVar10 + 0x41U) & 0x1f)) == 0) {
+      iVar10 = ((STGameObjC *)param_4)->vfunc_2C();
+      if ((STBitTest(g_bitset_00800F10, iVar10 + 0x41U)) == 0) {
         /* ST_CALLSITE[0042E3A9]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar10 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-        if ((*(uint *)(&DAT_00801450 + (iVar10 + 0x41U >> 5) * 4) &
-            1 << ((byte)(iVar10 + 0x41U) & 0x1f)) == 0) goto LAB_0042e3eb;
+        iVar10 = ((STGameObjC *)param_4)->vfunc_2C();
+        if ((STBitTest(g_bitset_00801450, iVar10 + 0x41U)) == 0)
+        goto LAB_0042e3eb;
         piVar5 = &g_packedRecords_A62x8[param_1].field20_0x33;
       }
       else {
@@ -115,27 +110,20 @@ STAllPlayersC::RegisterObject
     *piVar5 = *piVar5 + 1;
   }
 LAB_0042e3eb:
-  if (param_4[8] == 1000) {
-    /* ST_CALLSITE[0042E3FD]: CALL dword ptr [EDX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar10 = (**(code **)(*param_4 + 0x2c))();
-    if ((*(uint *)(&DAT_00800f90 + (iVar10 - 0x32U >> 5) * 4) & 1 << ((byte)(iVar10 - 0x32U) & 0x1f)
-        ) == 0) {
+  if (((STGameObjC *)param_4)->field_0020 == 1000) {
+    /* ST_CALLSITE[0042E3FD]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+    iVar10 = ((STGameObjC *)param_4)->vfunc_2C();
+    if ((STBitTest(g_bitset_00800F90, iVar10 - 0x32U)) == 0) {
       /* ST_CALLSITE[0042E447]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar10 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-      if ((*(uint *)(&DAT_00801360 + (iVar10 - 0x32U >> 5) * 4) &
-          1 << ((byte)(iVar10 - 0x32U) & 0x1f)) == 0) {
+      iVar10 = ((STGameObjC *)param_4)->vfunc_2C();
+      if ((STBitTest(g_bitset_00801360, iVar10 - 0x32U)) == 0) {
         /* ST_CALLSITE[0042E48E]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar10 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-        if (((*(uint *)(&DAT_008014a0 + (iVar10 - 0x32U >> 5) * 4) &
-             1 << ((byte)(iVar10 - 0x32U) & 0x1f)) == 0) &&
+        iVar10 = ((STGameObjC *)param_4)->vfunc_2C();
+        if (((STBitTest(g_bitset_008014A0, iVar10 - 0x32U)) == 0)
            /* ST_CALLSITE[0042E4BB]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-           (iVar10 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4),
-           (*(uint *)(&DAT_00800f80 + (iVar10 - 0x32U >> 5) * 4) &
-           1 << ((byte)(iVar10 - 0x32U) & 0x1f)) == 0)) goto LAB_0042e4fd;
+           && (iVar10 = ((STGameObjC *)param_4)->vfunc_2C(),
+              (STBitTest(g_bitset_00800F80, iVar10 - 0x32U)) == 0))
+        goto LAB_0042e4fd;
         piVar5 = &g_packedRecords_A62x8[param_1].field24_0x43;
       }
       else {
@@ -150,7 +138,7 @@ LAB_0042e3eb:
 LAB_0042e4fd:
   iVar10 = param_5;
   pMVar3 = g_money_008016D4;
-  if (param_4[8] == 0x14) {
+  if (((STGameObjC *)param_4)->field_0020 == 0x14) {
     iVar7 = (int)param_1;
     g_packedRecords_A62x8[iVar7].field4_0xd = g_packedRecords_A62x8[iVar7].field4_0xd + 1;
     if (pMVar3 != nullptr) {
@@ -158,45 +146,37 @@ LAB_0042e4fd:
       MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar7].field4_0xd);
     }
     /* ST_CALLSITE[0042E548]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
+    iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
     if (iVar8 != 0x19) {
       /* ST_CALLSITE[0042E559]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-      if (((&DAT_00801000)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f)) == 0) {
+      iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+      if ((STBitTest(g_bitset_00801000, iVar8 + 0x41U)) == 0) {
         /* ST_CALLSITE[0042E5A6]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-        if (((&DAT_00801010)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f)) == 0) {
+        iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+        if ((STBitTest(g_bitset_00801010, iVar8 + 0x41U)) == 0) {
           /* ST_CALLSITE[0042E5F3]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-          if (((&DAT_00800f00)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f)) == 0) {
+          iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+          if ((STBitTest(g_bitset_00800F00, iVar8 + 0x41U)) == 0) {
             /* ST_CALLSITE[0042E640]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-            if (((&DAT_00801370)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f)) == 0) {
+            iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+            if ((STBitTest(g_bitset_00801370, iVar8 + 0x41U)) == 0)
+            {
               /* ST_CALLSITE[0042E68D]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-              if (((&DAT_00800fa0)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f)) == 0)
-              {
+              iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+              if ((STBitTest(g_bitset_00800FA0, iVar8 + 0x41U)) == 0
+                 ) {
                 /* ST_CALLSITE[0042E6DA]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-                if (((&DAT_00800ff0)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f)) == 0
-                   ) {
+                iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+                if ((STBitTest(g_bitset_00800FF0, iVar8 + 0x41U)) ==
+                    0) {
                   /* ST_CALLSITE[0042E727]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-                  if ((*(uint *)(&DAT_00801460 + (iVar8 + 0x41U >> 5) * 4) &
-                      1 << ((byte)(iVar8 + 0x41U) & 0x1f)) == 0) {
+                  iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+                  if ((STBitTest(g_bitset_00801460, iVar8 + 0x41U))
+                      == 0) {
                     /* ST_CALLSITE[0042E76D]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                    iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-                    if (((&DAT_00800fe0)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f))
-                        == 0) {
+                    iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+                    if ((STBitTest(g_bitset_00800FE0, iVar8 + 0x41U)
+                        ) == 0) {
                       local_EAX_1462 =
                            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x613,0,0,
                                               "%s",
@@ -276,7 +256,7 @@ LAB_0042e4fd:
     }
   }
   pMVar3 = g_money_008016D4;
-  if (param_4[8] == 1000) {
+  if (((STGameObjC *)param_4)->field_0020 == 1000) {
     iVar7 = (int)param_1;
     g_packedRecords_A62x8[iVar7].field4_0xd = g_packedRecords_A62x8[iVar7].field4_0xd + 1;
     if (pMVar3 != nullptr) {
@@ -284,8 +264,7 @@ LAB_0042e4fd:
       MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar7].field4_0xd);
     }
     /* ST_CALLSITE[0042E81F]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
+    iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
     if (iVar8 == 0x33) {
       g_packedRecords_A62x8[iVar7].field94_0x15b = g_packedRecords_A62x8[iVar7].field94_0x15b + 1;
     }
@@ -293,45 +272,37 @@ LAB_0042e4fd:
       g_packedRecords_A62x8[iVar7].field95_0x15f = g_packedRecords_A62x8[iVar7].field95_0x15f + 1;
     }
     /* ST_CALLSITE[0042E83F]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-    if (((&DAT_00801420)[iVar8 - 0x32U >> 5] & 1 << ((byte)(iVar8 - 0x32U) & 0x1f)) == 0) {
+    iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+    if ((STBitTest(g_bitset_00801420, iVar8 - 0x32U)) == 0) {
       /* ST_CALLSITE[0042E88C]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-      if (((&DAT_008013e0)[iVar8 - 0x32U >> 5] & 1 << ((byte)(iVar8 - 0x32U) & 0x1f)) == 0) {
+      iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+      if ((STBitTest(g_bitset_008013E0, iVar8 - 0x32U)) == 0) {
         /* ST_CALLSITE[0042E8D9]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-        if (((&DAT_00800ee0)[iVar8 - 0x32U >> 5] & 1 << ((byte)(iVar8 - 0x32U) & 0x1f)) == 0) {
+        iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+        if ((STBitTest(g_bitset_00800EE0, iVar8 - 0x32U)) == 0) {
           /* ST_CALLSITE[0042E926]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-          if (((&DAT_00801490)[iVar8 - 0x32U >> 5] & 1 << ((byte)(iVar8 - 0x32U) & 0x1f)) == 0) {
+          iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+          if ((STBitTest(g_bitset_00801490, iVar8 - 0x32U)) == 0) {
             /* ST_CALLSITE[0042E973]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-            if (((&DAT_00800f20)[iVar8 - 0x32U >> 5] & 1 << ((byte)(iVar8 - 0x32U) & 0x1f)) == 0) {
+            iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+            if ((STBitTest(g_bitset_00800F20, iVar8 - 0x32U)) == 0)
+            {
               /* ST_CALLSITE[0042E9C0]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-              if (((&DAT_00800ef0)[iVar8 - 0x32U >> 5] & 1 << ((byte)(iVar8 - 0x32U) & 0x1f)) == 0)
-              {
+              iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+              if ((STBitTest(g_bitset_00800EF0, iVar8 - 0x32U)) == 0
+                 ) {
                 /* ST_CALLSITE[0042EA0D]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-                if (((&DAT_00801430)[iVar8 - 0x32U >> 5] & 1 << ((byte)(iVar8 - 0x32U) & 0x1f)) == 0
-                   ) {
+                iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+                if ((STBitTest(g_bitset_00801430, iVar8 - 0x32U)) ==
+                    0) {
                   /* ST_CALLSITE[0042EA5A]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-                  if (((&DAT_00801440)[iVar8 - 0x32U >> 5] & 1 << ((byte)(iVar8 - 0x32U) & 0x1f)) ==
-                      0) {
+                  iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+                  if ((STBitTest(g_bitset_00801440, iVar8 - 0x32U))
+                      == 0) {
                     /* ST_CALLSITE[0042EAA0]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                    iVar8 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
-                    if (((&DAT_00800f60)[iVar8 - 0x32U >> 5] & 1 << ((byte)(iVar8 - 0x32U) & 0x1f))
-                        == 0) {
+                    iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+                    if ((STBitTest(g_bitset_00800F60, iVar8 - 0x32U)
+                        ) == 0) {
                       local_EAX_2281 =
                            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x653,0,0,
                                               "%s",
@@ -471,8 +442,7 @@ LAB_0042ebf6:
     STGroupC::AddObj((STGroupC *)local_c,local_20,(uint)(uVar11 != 0xfffe));
   }
   /* ST_CALLSITE[0042EC32]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar10 = (**(code **)(*param_4 + 0x2c))((STGameObjC *)param_4);
+  iVar10 = ((STGameObjC *)param_4)->vfunc_2C();
   if (iVar10 == 0x1d) {
     if (local_24 == nullptr) {
       local_24 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);

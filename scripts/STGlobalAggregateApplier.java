@@ -99,13 +99,16 @@ public class STGlobalAggregateApplier extends GhidraScript {
                 current.getLength() == integer(row.get("expected_length"));
             if (!baseline && current == null) {
                 Data containing = listing.getDefinedDataContaining(address);
-                baseline = containing != null &&
-                    ((primary == null && row.get("expected_name").isBlank()) ||
-                     (primary != null && primary.getName().equals(row.get("expected_name")) &&
-                      primary.getSource().toString().equals(
-                        row.get("expected_name_source")))) &&
+                boolean symbolBaseline =
+                    (primary == null && row.get("expected_name").isBlank()) ||
+                    (primary != null && primary.getName().equals(row.get("expected_name")) &&
+                     primary.getSource().toString().equals(
+                        row.get("expected_name_source")));
+                baseline = symbolBaseline && (containing != null &&
                     containing.getDataType().getPathName().equals(row.get("expected_type")) &&
-                    containing.getLength() == integer(row.get("expected_length"));
+                    containing.getLength() == integer(row.get("expected_length")) ||
+                    containing == null && row.get("expected_type").isBlank() &&
+                    integer(row.get("expected_length")) == 0);
                 Symbol containingSymbol = containing == null ? null :
                     symbols.getPrimarySymbol(containing.getMinAddress());
                 if (containingSymbol != null &&

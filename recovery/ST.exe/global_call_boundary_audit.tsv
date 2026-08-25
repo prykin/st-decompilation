@@ -149,6 +149,25 @@ address	name	current_type	call_boundary_types	trusted_pointer_return_store_types
 007FB2A0	g_opticClass_007FB2A0	pointer:/OpticClassC	{}	{pointer:/OpticClassC=1}	{pointer:/OpticClassC=2}	0		0		004A88F0 stores named pointer from OpticClassC::OpticClassC return @ 004A8902
 007FB2AC	g_tLOBldMark_007FB2AC	pointer:/TLOBldMark	{}	{pointer:/TLOBldMark=2}	{}	0		0		004C60E0 exact CFG this store @ 004C6111 | 004C60E0 stores named pointer from TLOBldMark::Create this @ 004C6111
 00800BCC	g_tLOFake_00800BCC	pointer:/TLOFakeTy	{}	{pointer:/TLOFakeTy=1}	{}	0		0		004D0B90 exact CFG this store @ 004D0CD6
+00800EE0	g_bitset_00800EE0	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E858F (address-of global)	-
+00800EF0	g_bitset_00800EF0	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E85E0 (address-of global)	-
+00800F00	g_bitset_00800F00	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E867C (address-of global)	-
+00800F20	g_bitset_00800F20	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E85CE (address-of global)	-
+00800F30	g_bitset_00800F30	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E82D3 (address-of global)	-
+00800F40	g_bitset_00800F40	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E82FB (address-of global)	-
+00800F50	g_bitset_00800F50	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E8324 (address-of global)	-
+00800F60	g_bitset_00800F60	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E8633 (address-of global)	-
+00800FA0	g_bitset_00800FA0	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E86AF (address-of global)	-
+00800FE0	g_bitset_00800FE0	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E86EC (address-of global)	-
+00800FF0	g_bitset_00800FF0	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E86CA (address-of global)	-
+00801000	g_bitset_00801000	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E8648 (address-of global)	-
+00801010	g_bitset_00801010	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E865A (address-of global)	-
+00801370	g_bitset_00801370	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E869B (address-of global)	-
+008013E0	g_bitset_008013E0	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E8574 (address-of global)	-
+00801420	g_bitset_00801420	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E8554 (address-of global)	-
+00801430	g_bitset_00801430	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E85FE (address-of global)	-
+00801440	g_bitset_00801440	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E8621 (address-of global)	-
+00801490	g_bitset_00801490	/uint[4]	{/uint=1}	{}	{}	1	/uint	0	004E82B0 -> 006B0D60 parameter 0 as /uint @ 004E85B5 (address-of global)	-
 00801678	g_behPanel_00801678	pointer:/BehPanelTy	{}	{pointer:/BehPanelTy=2}	{}	0		0		004ED630 exact CFG this store @ 004ED6AA | 004ED630 stores named pointer from BehPanelTy::InitBehPanel this @ 004ED6AA
 0080167C	g_bldBoatPanel_0080167C	pointer:/ProdPanelTy	{}	{pointer:/BldBoatPanelTy=2}	{}	0	pointer:/BldBoatPanelTy	0		004EEA40 exact CFG this store @ 004EEAA2 | 004EEA40 stores named pointer from BldBoatPanelTy::InitBldBoatPanel this @ 004EEAA2
 00801680	g_bldLabPanel_00801680	pointer:/ProdPanelTy	{}	{pointer:/BldLabPanelTy=2}	{}	0	pointer:/BldLabPanelTy	0		004EFB60 exact CFG this store @ 004EFB9D | 004EFB60 stores named pointer from BldLabPanelTy::InitBldLabPanel this @ 004EFB9D

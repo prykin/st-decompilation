@@ -63,6 +63,8 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
     private Map<String, Integer> receiverOwnerCounts;
     private final List<PolymorphicReceiverCallsite> polymorphicReceiverCallsites =
         new ArrayList<>();
+    private final Map<Address, Map<Address, List<Address>>> predecessorCache =
+        new HashMap<>();
 
     @Override
     protected void run() throws Exception {
@@ -1255,43 +1257,110 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
     private Origin receiverOrigin(Function function, Address call, String receiverRegister) {
         String wanted = canonicalRegister(receiverRegister);
         if (wanted.isBlank()) return null;
-        Instruction instruction = currentProgram.getListing().getInstructionBefore(call);
-        for (int count = 0; instruction != null && count < 96; count++) {
-            if (!function.getBody().contains(instruction.getAddress())) return null;
-            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
-            String[] operands = splitInstructionOperands(instruction.toString());
-            if (instruction.getFlowType().isJump() || instruction.getFlowType().isTerminal())
-                return null;
-            if ("CALL".equals(mnemonic)) {
-                if ("EAX".equals(wanted)) {
-                    Function producer = directCalledFunction(instruction);
-                    return producer == null ? null : new Origin(null, producer);
-                }
-                if (Set.of("EAX", "ECX", "EDX").contains(wanted)) return null;
-                instruction = currentProgram.getListing().getInstructionBefore(
-                    instruction.getAddress());
+        Map<Address, List<Address>> predecessors = predecessors(function);
+        List<Address> initial = predecessors.getOrDefault(call, List.of());
+        if (initial.isEmpty()) return null;
+
+        List<RegisterTrace> work = new ArrayList<>();
+        for (Address address : initial) work.add(new RegisterTrace(address, wanted));
+        Set<RegisterTrace> visited = new HashSet<>();
+        Set<Origin> origins = new HashSet<>();
+        boolean invalid = false;
+        for (int cursor = 0; cursor < work.size() && work.size() <= 8192; cursor++) {
+            RegisterTrace state = work.get(cursor);
+            if (!visited.add(state)) continue;
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (instruction == null || !function.getBody().contains(state.address)) {
+                invalid = true;
                 continue;
             }
-            if (operands.length > 0 && definesStandaloneRegister(instruction, wanted)) {
-                if (!"MOV".equals(mnemonic) || operands.length < 2) return null;
-                String source = canonicalRegister(operands[1]);
-                if (!source.isBlank()) wanted = source;
-                else {
-                    Long stack = stackParameterOffset(instruction, operands[1]);
-                    Parameter parameter = stack == null ? null : parameterAt(function, stack);
-                    return parameter == null ? null : new Origin(parameter, null);
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitInstructionOperands(instruction.toString());
+            if ("CALL".equals(mnemonic)) {
+                if ("EAX".equals(state.register)) {
+                    Function producer = directCalledFunction(instruction);
+                    if (producer == null) invalid = true;
+                    else origins.add(new Origin(null, producer));
+                    continue;
+                }
+                if (Set.of("EAX", "ECX", "EDX").contains(state.register)) {
+                    invalid = true;
+                    continue;
                 }
             }
-            instruction = currentProgram.getListing().getInstructionBefore(
-                instruction.getAddress());
+            else if (operands.length > 0 && "MOV".equals(mnemonic) &&
+                    state.register.equals(canonicalRegister(operands[0]))) {
+                if (operands.length < 2) {
+                    invalid = true;
+                    continue;
+                }
+                String source = canonicalRegister(operands[1]);
+                if (!source.isBlank()) {
+                    enqueuePredecessors(predecessors, state.address, source, work);
+                    continue;
+                }
+                Long stack = stackParameterOffset(instruction, operands[1]);
+                Parameter parameter = stack == null ? null : parameterAt(function, stack);
+                if (parameter == null) invalid = true;
+                else origins.add(new Origin(parameter, null));
+                continue;
+            }
+            else if (definesRegister(instruction, state.register)) {
+                invalid = true;
+                continue;
+            }
+
+            List<Address> before = predecessors.getOrDefault(state.address, List.of());
+            if (before.isEmpty()) invalid = true;
+            else for (Address address : before)
+                work.add(new RegisterTrace(address, state.register));
         }
-        return null;
+        if (work.size() > 8192 || invalid || origins.size() != 1) return null;
+        return origins.iterator().next();
     }
 
-    private boolean definesStandaloneRegister(Instruction instruction, String register) {
-        if (instruction.getNumOperands() < 1 ||
-                !register.equals(canonicalRegister(
-                    instruction.getDefaultOperandRepresentation(0)))) return false;
+    /**
+     * Build an instruction-level CFG once per function.  Receiver provenance is
+     * a reaching-definition question: stopping at the first conditional jump
+     * loses the very common VC6 shape `MOV ECX,obj; CMP ...; Jcc; CALL [vptr]`.
+     * Every predecessor must converge on the same stack parameter or trusted
+     * producer; loops without a competing definition are harmless.
+     */
+    private Map<Address, List<Address>> predecessors(Function function) {
+        return predecessorCache.computeIfAbsent(function.getEntryPoint(), ignored -> {
+            Map<Address, List<Address>> result = new HashMap<>();
+            InstructionIterator instructions = currentProgram.getListing()
+                .getInstructions(function.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                Address source = instruction.getAddress();
+                Address fallthrough = instruction.getFallThrough();
+                if (fallthrough != null && function.getBody().contains(fallthrough) &&
+                        currentProgram.getListing().getInstructionAt(fallthrough) != null)
+                    result.computeIfAbsent(fallthrough, key -> new ArrayList<>())
+                        .add(source);
+                if (instruction.getFlowType().isJump())
+                    for (Address flow : instruction.getFlows())
+                        if (function.getBody().contains(flow) &&
+                                currentProgram.getListing().getInstructionAt(flow) != null)
+                            result.computeIfAbsent(flow, key -> new ArrayList<>()).add(source);
+            }
+            for (List<Address> values : result.values())
+                values.sort(Address::compareTo);
+            return result;
+        });
+    }
+
+    private void enqueuePredecessors(Map<Address, List<Address>> predecessors,
+            Address address, String register, List<RegisterTrace> work) {
+        List<Address> before = predecessors.getOrDefault(address, List.of());
+        if (before.isEmpty()) return;
+        for (Address predecessor : before)
+            work.add(new RegisterTrace(predecessor, register));
+    }
+
+    private boolean definesRegister(Instruction instruction, String register) {
         for (Object output : instruction.getResultObjects())
             if (output instanceof Register value && register.equals(canonicalRegister(
                     value.getName()))) return true;
@@ -1687,6 +1756,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         String parameterStorage, String parameterType, String parameterSource,
         String ownerType, String physicalVtable) {}
     private record Origin(Parameter parameter, Function producer) {}
+    private record RegisterTrace(Address address, String register) {}
     private record Row(boolean apply, String functionAddress, String function, String targetKind,
         int ordinal, String name, String storage, String expectedType, String source,
         String proposedType, boolean allowManualOverride, String family, String confidence,

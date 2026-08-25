@@ -52,27 +52,29 @@ have been checked.
 ## Current authoritative state
 
 The current accepted headless export is run
-`70c27b37bda740675f0df8c0fc1395c4cf73fc26e9c24ea409e8738301b972ac`.
+`89c48d5b05be9274a13a86546a5d4fbb19d9deb98c7b1d9d03baba4fa13fdfa9`.
 Its receipt is `passed` with Program semantic hash
-`08bae36b54cb8ddf14a1e734c23d387a8e2344e30be19e58fbadfa617bee1eeb`
+`9c3445c47a8b6a3cf5a218508fd9fba37d7dedb7776deb47910d21d2c749cdf2`
 and corpus manifest hash
-`c50b13669e0f1fac02131a52c9263b43b256c1d8e1dd9d8d4d8cbe973f88bea8`.
+`a5e5ca04d8645af37131107065f51ec0a00d01a3ee43317b61eb2b2640831a5e`.
 The manifest binds portable `program.json` metadata as
 `3bb8a76833b385eab3616325d3bd622ddaea5741bd8c60a99eb35c483ad7d761`.
 The manifest binds `pseudocode_runtime.h` as
-`5f9ea67996414f75fa6a1e313eb9701b6ae850640962e0e313d963ce184708a2`.
+`483d0740a1b332108dd6f52935a8cbf55c9c0e7c07424470a7dc93993a3840e4`.
 Obtain the current repository revision and worktree status from Git; do not
 embed a soon-stale commit identifier in this handoff.
 
 The accepted corpus contains 10,407 function records, 5,555 bodies, zero failed
 bodies, and 3,192 typed physical-vtable slots. The export and ABI gates both
-pass with zero errors and zero warnings. The latest full pipeline took
-`00:44:35`; this is an elapsed diagnostic, not a wall-clock timestamp. A focused
-read-only indirect-callsite audit retained the same 288 automatic proposals.
+pass with zero errors; the export has two non-blocking stage-transition
+warnings for fewer generic data names and more exposed generated field names.
+The accepted export took `00:22:03`; this is an elapsed diagnostic, not a
+wall-clock timestamp. The current indirect-callsite pass retains 463 automatic
+proposals and reports all 463 unchanged on confirmation.
 
 The canonical Git/LFS Program checkpoint is the deterministic normalized
-`ghidra/ST.exe.gzf`: 28,298,639 bytes with packed SHA-256
-`26255dabc7bd5da006ff1f439e7a383d3b7e51d6b313748f783dd6f1a79e1b9a`.
+`ghidra/ST.exe.gzf`: 28,417,522 bytes with packed SHA-256
+`4de0aad8d6e613049a065dbe5de960cb0b955202e57db86b9c7c6211354b5c14`.
 Its normalization is
 `zip-dos-time-1980-01-01+private-metadata-v5`: ZIP time, database revision
 times, database owners, and absolute workstation paths are removed before the
@@ -89,29 +91,29 @@ paths, database owner identities, database revision times, and wall-clock data
 in log-like artifacts are forbidden. Commit author dates remain intentional
 Git metadata and committer identity/date must exactly match the author.
 
-The current quality inventory contains 3,663 anonymous-shape occurrences,
-17,797 undefined types, 3,794 casts over generic fields, 1,986 raw pointer
-offsets, 1,614 raw indirect calls, 1,434 canonical casted call results, 291
-return-width artifacts, 476 residual stack-slot-reuse occurrences, and 407
+The current quality inventory contains 3,635 anonymous-shape occurrences,
+15,703 undefined types, 3,257 casts over generic fields, 1,771 raw pointer
+offsets, 1,455 raw indirect calls, 1,383 canonical casted call results, 291
+return-width artifacts, 459 residual stack-slot-reuse occurrences, and 407
 unresolved register inputs. The counts overlap and are occurrences across all
 exported `functions/**/decomp.c`, not independent recovery facts. In total,
-4,943 of 5,555 bodies have at least one quality row.
+4,924 of 5,555 bodies have at least one quality row.
 
-`tools/st_source_tree.py` emits all 5,555 bodies as 322 C++17 translation units,
+`tools/st_source_tree.py` emits all 5,555 bodies as 329 C++17 translation units,
 with 1,044 bodies under proven original paths and address-stable
 `st::fn_ADDRESS` implementations. It generates 1,146 physical-vtable member
-wrappers, 1,314 uniquely owned non-virtual source methods, 37 exact indirect
-member wrappers, and 2,284 exact unnamed field views. The deterministic source
-audit contains 13,128 rows. The strict generated-source readability profile
-contains 6,964 generic undefined declarations, 2,469 pointer-boundary casts,
-1,614 raw code calls, 571 `unaff`/`extraout` occurrences, 38 undefined static
+wrappers, 1,320 uniquely owned non-virtual source methods, 38 exact indirect
+member wrappers, and 2,295 exact unnamed field views. The deterministic source
+audit contains 12,989 rows. The strict generated-source readability profile
+contains 4,815 generic undefined declarations, 868 pointer-boundary casts,
+1,455 raw code calls, 571 `unaff`/`extraout` occurrences, 38 undefined static
 casts, and three residual duplicated-vtable calls.
 
 The current fixed Docker Clang audit uses C++17, MS extensions, an ILP32 target,
-and a limit of 64 errors per translation unit. It passes 258 of 322 units and
-retains 329 errors, all mapped to stable function addresses; no translation
+and a limit of 64 errors per translation unit. It passes 275 of 329 units and
+retains 193 errors, all mapped to stable function addresses; no translation
 unit reaches the cap. The tracked deterministic source manifest is
-`374b34119f6743afee551b66365df444ee0f876d0f131380f41ff9a31f9fe0b2`.
+`b25555e94907596aaeebd0476cbc03dd4700766f2d0661aaac6dc13b2c9c7e9f`.
 `config/source-compile-regression-baseline.json` binds this accepted compiler
 state and has SHA-256
 `b9f8e86f012dd4278f826d2eb491d56cd312881c9635b0e81f6d87b417dcb3ca`.
@@ -129,8 +131,9 @@ recovery, not to the removed wrapper-family defect.
 
 ## Ordered next work
 
-The accepted ordered queue currently ends at completed `Q-056`. Continue with
-the three items below; their full definitions and completion criteria are in
+The current work is inside `Q-058`; `Q-057` has materially reduced compiler
+debt but its strict zero-family completion criteria are not yet met. Continue
+with the items below; their full definitions and completion criteria are in
 `docs/recovery-task-queue.md`.
 
 1. `Q-057` — separate pointer, scalar, floating, DArray, stack-output, and

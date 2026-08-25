@@ -41,8 +41,8 @@ void __thiscall TLOBaseTy::sub_004CF640(TLOBaseTy *this,int *param_1)
   int local_1c;
   uint local_18;
   int *local_14;
-  undefined *local_10;
-  undefined *local_c;
+  uint *local_10;
+  uint *local_c;
   int local_8;
   int *piVar4;
 
@@ -66,7 +66,7 @@ void __thiscall TLOBaseTy::sub_004CF640(TLOBaseTy *this,int *param_1)
     /* ST_CALLSITE[004CF6A7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     uVar3 = LookupRecordByte(*(char *)&this->field_0024);
     uVar3 = (int)(byte)uVar3;
-    local_10 = (undefined *)(uVar3 + -1);
+    local_10 = (uint *)(uVar3 + -1);
     memset(local_fc, 0, 0xa0); /* compiler bulk-zero initialization */
     if (((this->field_05AC == CASE_5C) &&
         (pDVar3 = g_packedRecords_A62x8[(int)this->field_0024].field1970_0x9de,
@@ -90,20 +90,20 @@ void __thiscall TLOBaseTy::sub_004CF640(TLOBaseTy *this,int *param_1)
     local_2c = (int)local_10 << 4;
     local_8 = 0;
     do {
-      local_10 = &DAT_00801330 + local_2c;
+      local_10 = (uint *)((int)g_bitset_00801330 + local_2c);
       local_c = nullptr;
       switch(local_8) {
       case 0:
-        local_c = &DAT_00801450;
+        local_c = g_bitset_00801450;
         break;
       case 1:
-        local_c = &DAT_00801480;
+        local_c = g_bitset_00801480;
         break;
       case 2:
-        local_c = &DAT_00800f10;
+        local_c = g_bitset_00800F10;
         break;
       case 3:
-        local_10 = &DAT_008013f0 + local_2c;
+        local_10 = (uint *)((int)g_bitset_008013F0 + local_2c);
         local_c = local_10;
       }
       local_14 = local_fc;

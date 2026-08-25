@@ -225,12 +225,10 @@
       "generic_undefined_declaration": 1
     },
     "0042E210": {
-      "generic_undefined_declaration": 6,
-      "raw_code_indirect_call": 27
+      "generic_undefined_declaration": 6
     },
     "0042F2B0": {
-      "generic_undefined_declaration": 2,
-      "raw_code_indirect_call": 27
+      "generic_undefined_declaration": 2
     },
     "00430470": {
       "generic_undefined_declaration": 1,
@@ -600,7 +598,7 @@
       "raw_code_indirect_call": 1
     },
     "00488890": {
-      "generic_undefined_declaration": 6
+      "generic_undefined_declaration": 4
     },
     "004899A0": {
       "generic_undefined_declaration": 12,
@@ -1012,7 +1010,7 @@
       "generic_undefined_declaration": 1
     },
     "004CF640": {
-      "generic_undefined_declaration": 6
+      "generic_undefined_declaration": 4
     },
     "004D0B90": {
       "pointer_boundary_cast": 2
@@ -1181,9 +1179,6 @@
     },
     "004E7980": {
       "generic_undefined_declaration": 2
-    },
-    "004E8030": {
-      "generic_undefined_declaration": 1
     },
     "004E8B10": {
       "raw_code_indirect_call": 2
@@ -5814,9 +5809,9 @@
   "schema": "st-source-readability",
   "schema_version": 1,
   "totals": {
-    "generic_undefined_declaration": 4820,
+    "generic_undefined_declaration": 4815,
     "pointer_boundary_cast": 868,
-    "raw_code_indirect_call": 1509,
+    "raw_code_indirect_call": 1455,
     "raw_duplicated_vtable_call": 3,
     "unaff_or_extraout": 571,
     "undefined_static_cast": 38

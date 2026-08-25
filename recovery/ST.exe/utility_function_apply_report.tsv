@@ -8,6 +8,7 @@ function_address	semantic_id	status	detail
 006AE1C0	darray_append	unchanged	desired name and prototype already present; consumer_call_views=0
 006ACC70	darray_get_element	unchanged	desired name and prototype already present; consumer_call_views=0
 006B0140	load_resource_string	unchanged	desired name and prototype already present; consumer_call_views=0
+006B0D60	sentinel_bitset128_builder	applied	BuildBitSet128 __cdecl; consumer_call_views=0
 004406C0	indexed_record_byte_lookup	unchanged	desired name and prototype already present; consumer_call_views=0
 006B0C70	darray_remove_at	unchanged	desired name and prototype already present; consumer_call_views=0
 006B1190	darray_get_next	unchanged	desired name and prototype already present; consumer_call_views=0

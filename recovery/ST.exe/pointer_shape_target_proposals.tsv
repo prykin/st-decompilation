@@ -11077,7 +11077,7 @@ apply	function_address	function_name	target_kind	target_name	target_locator	expe
 0	006B0CD0	FUN_006b0cd0	parameter	param_1	Stack[0x4]:4	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00413AF0_B6B4EE9A	DEFAULT	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B0CD0_C8D121FA	0	3	review	{}	interprocedural named receiver flow /SubmarineTitans/Recovered/DArrayTy from [004B33D0|local_a4, 00676C40|param_1, 00676CE0|param_1] | existing generated baseline /SubmarineTitans/Recovered/PointerShapes/AnonShape_00413AF0_B6B4EE9A	legacy geometry-only anonymous family split back to the target's own observed access profile; insufficient independent field evidence
 0	006B0CD0	FUN_006b0cd0	parameter	param_2	Stack[0x8]:4	/uint	DEFAULT		0	0	review	{}		conflicting or invalid access widths
 0	006B0CD0	FUN_006b0cd0	parameter	param_3	Stack[0xc]:4	/uint	DEFAULT		0	0	review	{}		conflicting or invalid access widths
-0	006B0D60	FUN_006b0d60	parameter	param_1	Stack[0x4]:4	pointer:/undefined4	DEFAULT		0	0	review	{}		conflicting or invalid access widths
+0	006B0D60	BuildBitSet128	parameter	bits	Stack[0x4]:4	pointer:/uint	ANALYSIS		0	0	review	{}		conflicting or invalid access widths
 0	006B0DC0	FUN_006b0dc0	parameter	param_1	Stack[0x4]:4	pointer:/undefined4	DEFAULT		0	0	review	{}		conflicting or invalid access widths
 0	006B0DC0	FUN_006b0dc0	parameter	param_2	Stack[0x8]:4	/int	DEFAULT		0	0	review	{}		conflicting or invalid access widths
 0	006B0DC0	FUN_006b0dc0	parameter	param_3	Stack[0xc]:4	/int	DEFAULT		0	0	review	{}		conflicting or invalid access widths
