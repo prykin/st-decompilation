@@ -65,9 +65,9 @@ FUN_005fb1f0(void *this,short param_1,short param_2,short param_3,short param_4,
       lVar12 = Library::MSVCRT::__ftol();
       STPiece<0,1>(param_2) = (undefined1)iVar7;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      return ((uint)(0 < (int)(((int)(short)lVar10 - (int)sVar1) * local_10 +
-                               ((int)(short)lVar11 - (int)sVar2) * iVar7 +
-                              ((int)(short)lVar12 - (int)STField<short>(this,0x41)) * _param_4))
+      return ((uint)(0 < (int)(((short)lVar10 - (int)sVar1) * local_10 +
+                               ((short)lVar11 - (int)sVar2) * iVar7 +
+                              ((short)lVar12 - (int)STField<short>(this,0x41)) * _param_4))
               << 8 | local_10 & 0xff) << 0x10 | (uint)CONCAT11((undefined1)param_2,(char)_param_4);
     }
     return 0xffffffff;

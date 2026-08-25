@@ -91,9 +91,9 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   if ((((-1 < sVar6) && (sVar7 = this->field_0049, -1 < sVar7)) &&
       (sVar8 = this->field_004B, -1 < sVar8)) &&
      (((sVar6 < g_worldGrid.sizeX && (sVar7 < g_worldGrid.sizeY)) && (sVar8 < 5)))) {
-    this->field_003A = *(short *)&this->field_0282;
-    this->field_003C = *(short *)&this->field_0286;
-    this->field_003E = *(short *)&this->field_028A;
+    this->field_003A = (short)this->field_0282;
+    this->field_003C = (short)this->field_0286;
+    this->field_003E = (short)this->field_028A;
     if (this->field_0313 != '\0') {
       if (((-1 < sVar6) && (sVar6 < g_worldGrid.sizeX)) &&
          (((-1 < sVar7 &&

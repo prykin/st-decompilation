@@ -511,7 +511,8 @@ LAB_005bccb9:
 005BCCBE  50                        PUSH EAX
 005BCCBF  8B CE                     MOV ECX,ESI
 005BCCC1  C7 46 4D 51 69 00 00      MOV dword ptr [ESI + 0x4d],0x6951
-005BCCC8  FF 12                     CALL dword ptr [EDX]
+PrividerTy::GetMessage::override::prt_5bccc8_2f91b8dc:
+005BCCC8  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/PrividerTy;pointer:/SubmarineTitans/Recovered/STMessage
 005BCCCA  E9 B0 02 00 00            JMP 0x005bcf7f
 LAB_005bcccf:
 005BCCCF  8B 8E 61 1A 00 00         MOV ECX,dword ptr [ESI + 0x1a61]

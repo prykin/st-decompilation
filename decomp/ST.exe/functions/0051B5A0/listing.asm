@@ -67,7 +67,8 @@ LAB_0051b655:
 0051B6A4  8B 11                     MOV EDX,dword ptr [ECX]
 0051B6A6  8D 43 18                  LEA EAX,[EBX + 0x18]
 0051B6A9  50                        PUSH EAX
-0051B6AA  FF 12                     CALL dword ptr [EDX]
+HelpPanelTy::ArmProc::override::prt_51b6aa_74f246b9:
+0051B6AA  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0051b6ac:
 0051B6AC  56                        PUSH ESI
 0051B6AD  E8 E2 8D EE FF            CALL 0x00404494

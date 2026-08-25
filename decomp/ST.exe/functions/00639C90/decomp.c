@@ -228,7 +228,7 @@ LAB_00639dab:
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
                     &local_18,&local_1c), -1 < (int)local_c)) &&
        (((((int)local_c < 5 && (-1 < local_18)) &&
-         ((local_18 < (int)pVVar12->field_0030 &&
+         ((local_18 < pVVar12->field_0030 &&
           ((local_1c = local_1c + g_centeredOffsets5[local_c], -1 < local_1c &&
            (local_1c < pVVar12->field_0034)))))) && (pVVar12->field_004C != nullptr)))) {
       bVar2 = pVVar12->field_004C[local_18 + local_1c * pVVar12->field_0030];
@@ -262,7 +262,7 @@ joined_r0x0063a754:
                       (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      iVar10 = (int)(short)((sVar3 / 0xc9 + (sVar3 >> 0xf)) -
+      iVar10 = (short)((sVar3 / 0xc9 + (sVar3 >> 0xf)) -
                            (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
     }
     STField<int>(this,0x28a) = iVar10;
@@ -311,7 +311,7 @@ LAB_0063a27d:
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
                        &local_1c,&local_18), (int)local_c < 0)) ||
           (((4 < (int)local_c || (local_1c < 0)) ||
-           (((int)pVVar12->field_0030 <= local_1c ||
+           ((pVVar12->field_0030 <= local_1c ||
             ((local_18 = local_18 + g_centeredOffsets5[local_c], local_18 < 0 ||
              (pVVar12->field_0034 <= local_18)))))))) ||
          ((pVVar12->field_004C == nullptr ||
@@ -478,7 +478,7 @@ LAB_0063a728:
         iVar10 = STField<int>(this,0x26e);
         sVar3 = (short)(iVar10 >> 0x1f);
         if (iVar10 < 0) {
-          local_c = (int)(short)(((short)(iVar10 / 200) + sVar3) -
+          local_c = (short)(((short)(iVar10 / 200) + sVar3) -
                                 (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) - 1;
         }
         else {
@@ -494,11 +494,11 @@ LAB_0063a728:
             ((VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
                          &local_1c,&local_18), (int)local_c < 0 ||
-             (((4 < (int)local_c || (local_1c < 0)) || ((int)pVVar12->field_0030 <= local_1c))))))
-           || (((local_18 = g_centeredOffsets5[local_c] + local_18, local_18 < 0 ||
-                (pVVar12->field_0034 <= local_18)) ||
-               ((pVVar12->field_004C == nullptr ||
-                (pVVar12->field_004C[local_18 * pVVar12->field_0030 + local_1c] != 0)))))) {
+             (((4 < (int)local_c || (local_1c < 0)) || (pVVar12->field_0030 <= local_1c)))))) ||
+           (((local_18 = g_centeredOffsets5[local_c] + local_18, local_18 < 0 ||
+             (pVVar12->field_0034 <= local_18)) ||
+            ((pVVar12->field_004C == nullptr ||
+             (pVVar12->field_004C[local_18 * pVVar12->field_0030 + local_1c] != 0)))))) {
           if (STField<char>(this,0x29f) == '\0') {
             thunk_FUN_004ad460((void *)((int)this + 0x1d5),0);
             STField<undefined1>(this,0x29f) = 1;
@@ -801,7 +801,7 @@ LAB_0063a728:
         iVar10 = STField<int>(this,0x37f);
         if (iVar10 != 0) {
           if ((g_playSystem_00802A38->field_00E4 & 1) == 0) {
-            ((char *)iVar10)[0x15] = ((char *)iVar10)[0x15] + -1;
+            ((char *)iVar10)[0x15] = STField<char>(iVar10,0x15) + -1;
             uVar11 = *STField<uint *>(this,0x37f);
             if (-1 < (int)uVar11) {
               Library::Ourlib::ST3DSMAP::FUN_006e9720
@@ -877,7 +877,7 @@ LAB_0063a728:
     iVar10 = STField<int>(this,0x37f);
     if (iVar10 != 0) {
       if ((g_playSystem_00802A38->field_00E4 & 1) == 0) {
-        ((char *)iVar10)[0x15] = ((char *)iVar10)[0x15] + -1;
+        ((char *)iVar10)[0x15] = STField<char>(iVar10,0x15) + -1;
         uVar11 = *STField<uint *>(this,0x37f);
         if (-1 < (int)uVar11) {
           Library::Ourlib::ST3DSMAP::FUN_006e9720

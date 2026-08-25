@@ -51,9 +51,9 @@ FUN_005fac40(void *this,short param_1,int param_2,int param_3,short param_4,shor
         *(int *)(STField<int>(this,0x2e6) + 0x3c) = param_3;
       }
       iVar1 = STField<int>(this,0x2e6);
-      iVar3 = *(int *)(iVar1 + 0x1c) - param_3;
+      iVar3 = STField<int>(iVar1,0x1C) - param_3;
       if (iVar3 != 0) {
-        *(int *)(iVar1 + 0x50) = (*(int *)(iVar1 + 100) * 100) / iVar3 + 1;
+        STField<int>(iVar1,0x50) = (STField<int>(iVar1,0x64) * 100) / iVar3 + 1;
         *(undefined4 *)(STField<int>(this,0x2e6) + 0x54) =
              *(undefined4 *)(STField<int>(this,0x2e6) + 0x50);
       }

@@ -54,7 +54,7 @@ undefined4 __fastcall FUN_0061e110(STLightC *param_1)
                       &local_8,&local_1c), pVVar3 = g_visibleClass_00802A88, -1 < local_10 &&
           (local_10 < 5)) &&
          ((-1 < local_8 &&
-          ((local_8 < (int)pVVar2->field_0030 &&
+          ((local_8 < pVVar2->field_0030 &&
            (iVar5 = g_centeredOffsets5[local_10] + local_1c, -1 < iVar5)))))))) &&
        (iVar5 < pVVar2->field_0034)))) &&
      (((((((pVVar2->field_004C != nullptr &&
@@ -64,7 +64,7 @@ undefined4 __fastcall FUN_0061e110(STLightC *param_1)
              (VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_14,iVar7,
                          &local_1c,&local_14), -1 < local_18)))) &&
-        ((local_18 < 5 && ((-1 < local_1c && (local_1c < (int)pVVar3->field_0030)))))) &&
+        ((local_18 < 5 && ((-1 < local_1c && (local_1c < pVVar3->field_0030)))))) &&
        (local_14 = g_centeredOffsets5[local_18] + local_14, -1 < local_14)) &&
       (((local_14 < pVVar3->field_0034 && (pVVar3->field_004C != nullptr)) &&
        (pVVar3->field_004C[local_1c + local_14 * pVVar3->field_0030] == 0)))))) {

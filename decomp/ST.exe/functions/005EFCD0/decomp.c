@@ -40,8 +40,8 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
       param_1->field_02AB = 0;
       param_1->field_024F = 0;
     }
-    iVar5 = (int)(short)(sVar1 * 0xc9 + 100);
-    if ((param_1->field_02BE == iVar5) && (param_1->field_02C2 == (int)(short)(sVar2 * 0xc9 + 100)))
+    iVar5 = (short)(sVar1 * 0xc9 + 100);
+    if ((param_1->field_02BE == iVar5) && (param_1->field_02C2 == (short)(sVar2 * 0xc9 + 100)))
     {
       uVar4 = g_playSystem_00802A38->field_00E4;
       param_1->field_023A = 0;
@@ -49,7 +49,7 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
       return;
     }
     param_1->field_028F = g_playSystem_00802A38->field_00E4 + 10;
-    thunk_FUN_005ecd70(param_1,iVar5,(int)(short)(sVar2 * 0xc9 + 100),param_1->field_02C6,
+    thunk_FUN_005ecd70(param_1,iVar5,(short)(sVar2 * 0xc9 + 100),param_1->field_02C6,
                        param_1->field_02BA,'\x01',0x1e);
     param_1->field_023A = 2;
   }

@@ -92,11 +92,11 @@ undefined4 __thiscall STGroupBoatC::Capture(STGroupBoatC *this,int param_1)
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xbb4);
           }
           /* ST_CALLSITE[0049F22D]: CALL dword ptr [EAX + 0x2c] */
-          dVar4 = pSVar3->slot_2C();
+          dVar4 = pSVar3->sub_0045EEE0();
           /* ST_CALLSITE[0049F239]: CALL dword ptr [EDX + 0x2c] */
-          if (((dVar4 == 6) || (dVar4 = pSVar3->slot_2C(), dVar4 == 0x12)) ||
+          if (((dVar4 == 6) || (dVar4 = pSVar3->sub_0045EEE0(), dVar4 == 0x12)) ||
              /* ST_CALLSITE[0049F245]: CALL dword ptr [EAX + 0x2c] */
-             (dVar4 = pSVar3->slot_2C(), dVar4 == 0x22)) {
+             (dVar4 = pSVar3->sub_0045EEE0(), dVar4 == 0x22)) {
             if (array_00 == nullptr) {
               array_00 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               local_20 = array_00;

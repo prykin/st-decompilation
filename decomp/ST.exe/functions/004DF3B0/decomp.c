@@ -61,7 +61,7 @@ undefined4 __fastcall FUN_004df3b0(TLOBaseTy *param_1)
     if (iVar3 == 0) {
       iVar5 = 0x3c;
     }
-    if (param_1->field_04DC + iVar5 <= g_playSystem_00802A38->field_00E4) {
+    if ((uint)(param_1->field_04DC + iVar5) <= g_playSystem_00802A38->field_00E4) {
       iVar3 = param_1->field_04D8 + 100;
       param_1->field_04D8 = iVar3;
       if (9999 < iVar3) {

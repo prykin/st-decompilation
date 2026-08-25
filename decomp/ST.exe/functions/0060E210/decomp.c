@@ -41,7 +41,7 @@ int FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4,int pa
     fVar7 = (float10)_DAT_0079cd88 / (float10)(param_5 + -1);
     iVar3 = 0;
     pdVar5 = pdVar2;
-    auto param_3_after_write = iVar6; /* compiler stack-slot lifetime split */
+    int param_3_after_write = iVar6; /* compiler stack-slot lifetime split */
     if (-1 < iVar4) {
       do {
         iVar3 = iVar3 + 1;

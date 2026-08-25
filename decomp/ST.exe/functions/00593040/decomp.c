@@ -203,16 +203,16 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     case 2:
     case 3:
       iVar9 = (int)this_00->field_0066 + iVar17 * 0x1fb + -0x66;
-      iVar8 = *(int *)(iVar9 + 0xef) + -1;
+      iVar8 = STField<int>(iVar9,0xEF) + -1;
       break;
     case 1:
       iVar9 = (int)this_00->field_0066 + iVar17 * 0x1fb + -0x66;
-      iVar8 = *(int *)(iVar9 + 0xef) + -2;
+      iVar8 = STField<int>(iVar9,0xEF) + -2;
       break;
     default:
       goto switchD_005931dd_default;
     }
-    *(int *)(iVar9 + 0xeb) = iVar8;
+    STField<int>(iVar9,0xEB) = iVar8;
 switchD_005931dd_default:
     uVar11 = this_00->field_00BB[iVar17].field_0028.field_0004;
     local_c = piVar3;

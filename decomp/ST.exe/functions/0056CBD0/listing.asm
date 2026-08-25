@@ -242,7 +242,8 @@ LAB_0056ce96:
 0056CEB7  8B 01                     MOV EAX,dword ptr [ECX]
 0056CEB9  8D 95 38 FF FF FF         LEA EDX,[EBP + 0xffffff38]
 0056CEBF  52                        PUSH EDX
-0056CEC0  FF 10                     CALL dword ptr [EAX]
+STAppC::MainWindowProc::override::prt_56cec0_74f246b9:
+0056CEC0  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 0056CEC2  8B 45 B8                  MOV EAX,dword ptr [EBP + -0x48]
 0056CEC5  A3 F8 8D 85 00            MOV [0x00858df8],EAX
 0056CECA  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]

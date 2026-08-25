@@ -64,29 +64,28 @@ int st::fn_00411CF0(char *param_1,int param_2)
     pcVar4 = param_1 + (int)pcVar1 * 4;
     scalar_pcVar7 = (int)pcVar1 * 2; /* split integer lifetime from pointer-typed SSA storage */
     pcVar8_mg1 = param_1;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = pcVar1;
+    auto param_1_after_write = pcVar1; /* compiler stack-slot lifetime split */
     do {
       *pcVar4 = pcVar8_mg1[1];
       pcVar4[1] = -*pcVar8_mg1;
       pcVar4 = pcVar4 + 4;
-      param_1 = param_1 + -1;
+      param_1_after_write = param_1_after_write + -1;
       pcVar8_mg1 = pcVar8_mg1 + 4;
-    } while (param_1 != nullptr);
+    } while (param_1_after_write != nullptr);
   }
   if (0 < (int)pcVar1) {
     iVar5 = scalar_pcVar7 * 4;
     pcVar7 = pcVar7 + (int)pcVar1;
     pcVar4 = pcVar6 + iVar5;
     pcVar8 = pcVar6;
-    param_1 = pcVar1;
+    auto param_1_after_write_2 = pcVar1; /* compiler stack-slot lifetime split */
     do {
       *pcVar4 = -*pcVar8;
       pcVar4[1] = -pcVar8[1];
       pcVar8 = pcVar8 + 4;
-      param_1 = param_1 + -1;
+      param_1_after_write_2 = param_1_after_write_2 + -1;
       pcVar4 = pcVar4 + 4;
-    } while (param_1 != nullptr);
+    } while (param_1_after_write_2 != nullptr);
     if (0 < (int)pcVar1) {
       iVar5 = (int)pcVar7 * 4;
       pcVar7 = pcVar7 + (int)pcVar1;
@@ -663,9 +662,8 @@ void st::fn_00413AF0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int
         g_runtimeRecords_007F4D3C = pRVar7;
         g_bitset_007F4CFC = pbVar6;
         iVar14 = STField<int>(param_1,0x29);
-        if (local_28 < *(uint *)(iVar14 + 0xc)) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          psVar10 = (short *)(*(int *)(iVar14 + 8) * local_28 + *(int *)(iVar14 + 0x1c));
+        if (local_28 < STField<uint>(iVar14,0xC)) {
+          psVar10 = (short *)(STField<int>(iVar14,0x8) * local_28 + STField<int>(iVar14,0x1C));
         }
         else {
           psVar10 = nullptr;
@@ -1399,11 +1397,11 @@ st::fn_00415B30(void *this,short param_1,short param_2,short param_3,short param
   STField<short>(this,0x49) = param_2 / 0xc9;
   iVar5 = (int)param_3;
   STField<short>(this,0x4b) = param_3 / 200;
-  iVar3 = (int)(short)((param_1 / 0xc9) * 0xc9 + 100);
+  iVar3 = (short)((param_1 / 0xc9) * 0xc9 + 100);
   if ((((iVar3 + -0x1e < iVar8) && (iVar8 < iVar3 + 0x1e)) &&
-      (iVar3 = (int)(short)((param_2 / 0xc9) * 0xc9 + 100), iVar3 + -0x1e < iVar4)) &&
+      (iVar3 = (short)((param_2 / 0xc9) * 0xc9 + 100), iVar3 + -0x1e < iVar4)) &&
      (((iVar4 < iVar3 + 0x1e &&
-       (iVar3 = (int)(short)((param_3 / 200) * 200 + 100), iVar3 + -0x1d < iVar5)) &&
+       (iVar3 = (short)((param_3 / 200) * 200 + 100), iVar3 + -0x1d < iVar5)) &&
       (iVar5 < iVar3 + 0x1d)))) {
     STField<undefined1>(this,0x4d) = 0;
   }
@@ -1428,11 +1426,11 @@ st::fn_00415B30(void *this,short param_1,short param_2,short param_3,short param
   STField<short>(this,0x54) = sVar7 / 0xc9;
   STField<short>(this,0x56) = sVar1 / 0xc9;
   STField<short>(this,0x58) = sVar6 / 200;
-  iVar3 = (int)(short)((sVar7 / 0xc9) * 0xc9 + 100);
+  iVar3 = (short)((sVar7 / 0xc9) * 0xc9 + 100);
   if (((iVar3 + -0x1e < (int)sVar7) && ((int)sVar7 < iVar3 + 0x1e)) &&
-     ((iVar3 = (int)(short)((sVar1 / 0xc9) * 0xc9 + 100), iVar3 + -0x1e < (int)sVar1 &&
+     ((iVar3 = (short)((sVar1 / 0xc9) * 0xc9 + 100), iVar3 + -0x1e < (int)sVar1 &&
       ((((int)sVar1 < iVar3 + 0x1e &&
-        (iVar3 = (int)(short)((sVar6 / 200) * 200 + 100), iVar3 + -0x1d < (int)sVar6)) &&
+        (iVar3 = (short)((sVar6 / 200) * 200 + 100), iVar3 + -0x1d < (int)sVar6)) &&
        ((int)sVar6 < iVar3 + 0x1d)))))) {
     STField<undefined1>(this,0x5a) = 0;
   }
@@ -1591,7 +1589,7 @@ undefined4 __fastcall st::fn_00416390(AnonShape_00416390_86C8F938 *param_1)
 int __fastcall st::fn_00416400(STJellyGunC *param_1)
 
 {
-  short *psVar1;
+  ushort *puVar1;
   byte bVar2;
   bool bVar3;
   int iVar4;
@@ -1643,17 +1641,17 @@ int __fastcall st::fn_00416400(STJellyGunC *param_1)
     local_6 = 0;
     param_1->field_00D3 = iVar4;
     local_5 = false;
-    psVar1 = (short *)(param_1->field_0097 + iVar4 * 8);
-    sVar6 = *psVar1 * 0xc9 + 100;
-    sVar8 = psVar1[1] * 0xc9 + 100;
+    puVar1 = param_1->field_0097 + iVar4 * 4;
+    sVar6 = *puVar1 * 0xc9 + 100;
+    sVar8 = puVar1[1] * 0xc9 + 100;
     uVar5 = (int)sVar6 - (int)local_24[0];
-    local_c = STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(*(short *)(param_1->field_0097 + 4 + iVar4 * 8) * 200)) + 100;
+    local_c = STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(param_1->field_0097[iVar4 * 4 + 2] * 200)) + 100;
     uVar7 = (int)uVar5 >> 0x1f;
     local_14 = (uVar5 ^ uVar7) - uVar7;
     uVar5 = (int)sVar8 - (int)local_20[0];
     uVar7 = (int)uVar5 >> 0x1f;
     iVar4 = (uVar5 ^ uVar7) - uVar7;
-    uVar5 = (int)(short)local_c - (int)local_1c[0];
+    uVar5 = (short)local_c - (int)local_1c[0];
     uVar7 = (int)uVar5 >> 0x1f;
     local_18 = (uVar5 ^ uVar7) - uVar7;
     if (local_18 == 0) {
@@ -2150,8 +2148,8 @@ undefined4 __thiscall st::fn_00417740(void *this,short param_1,short param_2)
 
   uVar1 = STField<ushort>(this,0x86);
   iVar5 = (int)param_1;
-  if (((int)(param_1 / (short)uVar1) * (int)(short)uVar1 - iVar5 != 0) ||
-     (iVar4 = (int)param_2, (int)(param_2 / (short)uVar1) * (int)(short)uVar1 - iVar4 != 0)) {
+  if (((int)(param_1 / (short)uVar1) * (short)uVar1 - iVar5 != 0) ||
+     (iVar4 = (int)param_2, (int)(param_2 / (short)uVar1) * (short)uVar1 - iVar4 != 0)) {
     return 0xffffffff;
   }
   STField<short>(this,0x82) = param_1;
@@ -3367,7 +3365,7 @@ undefined4 __fastcall st::fn_0041C710(AnonShape_0041C710_C4D46939 *param_1)
     if (local_8 < 0) {
       return 1;
     }
-    if ((int)pVVar2->field_0030 <= local_8) {
+    if (pVVar2->field_0030 <= local_8) {
       return 1;
     }
     local_c = g_centeredOffsets5[iVar4] + local_c;
@@ -3393,7 +3391,7 @@ undefined4 __fastcall st::fn_0041C710(AnonShape_0041C710_C4D46939 *param_1)
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                       (int)param_1->field_005B,(int)param_1->field_005D,&local_c,&local_8),
           pVVar3 = g_visibleClass_00802A88, iVar4 < 0)) || ((4 < iVar4 || (local_c < 0)))) ||
-        ((int)pVVar2->field_0030 <= local_c)) ||
+        (pVVar2->field_0030 <= local_c)) ||
        (((iVar4 = g_centeredOffsets5[iVar4] + local_8, iVar4 < 0 || (pVVar2->field_0034 <= iVar4))
         || ((pVVar2->field_004C == nullptr ||
             (pVVar2->field_004C[local_c + iVar4 * pVVar2->field_0030] != 0)))))) {
@@ -3407,7 +3405,7 @@ undefined4 __fastcall st::fn_0041C710(AnonShape_0041C710_C4D46939 *param_1)
                     st::machine_word_boundary_cast<int>(param_1->field_005B + 1),(int)param_1->field_005D,&local_c,&local_8),
         pVVar2 = g_visibleClass_00802A88, iVar4 < 0)) ||
        (((4 < iVar4 || (local_c < 0)) ||
-        (((((int)pVVar3->field_0030 <= local_c ||
+        ((((pVVar3->field_0030 <= local_c ||
            ((iVar4 = g_centeredOffsets5[iVar4] + local_8, iVar4 < 0 || (pVVar3->field_0034 <= iVar4)
             ))) || (pVVar3->field_004C == nullptr)) ||
          (pVVar3->field_004C[local_c + iVar4 * pVVar3->field_0030] != 0)))))) {
@@ -3421,7 +3419,7 @@ undefined4 __fastcall st::fn_0041C710(AnonShape_0041C710_C4D46939 *param_1)
                      (int)param_1->field_005B,st::machine_word_boundary_cast<int>(param_1->field_005D + 1),&local_c,&local_8),
          pVVar3 = g_visibleClass_00802A88, iVar4 < 0)) ||
         (((4 < iVar4 || (local_c < 0)) ||
-         (((int)pVVar2->field_0030 <= local_c ||
+         ((pVVar2->field_0030 <= local_c ||
           ((iVar4 = g_centeredOffsets5[iVar4] + local_8, iVar4 < 0 || (pVVar2->field_0034 <= iVar4))
           )))))) ||
        ((pVVar2->field_004C == nullptr ||
@@ -3448,7 +3446,7 @@ undefined4 __fastcall st::fn_0041C710(AnonShape_0041C710_C4D46939 *param_1)
     if (local_c < 0) {
       return 1;
     }
-    if ((int)pVVar3->field_0030 <= local_c) {
+    if (pVVar3->field_0030 <= local_c) {
       return 1;
     }
     local_8 = g_centeredOffsets5[iVar4] + local_8;
@@ -4011,7 +4009,7 @@ undefined4 __fastcall st::fn_0041DA10(int param_1)
 #line 4 "decomp/ST.exe/functions/0041DA30/decomp.c"
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __fastcall st::fn_0041DA30(AnonShape_0041DA30_EF7DF530 *param_1)
+void __fastcall st::fn_0041DA30(RecoveredRecord_STTorpC_0041DA30 *param_1)
 
 {
   float fVar1;
@@ -4310,11 +4308,13 @@ uint __fastcall st::fn_0041F310(int param_1)
 
 // 0041F330 FUN_0041f330
 #line 4 "decomp/ST.exe/functions/0041F330/decomp.c"
-uint __fastcall st::fn_0041F330(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004BE1D0 -> 0041F330 @ 004BE1D3; TLOBaseTy::sub_004BE1D0 this */
+
+uint __fastcall st::fn_0041F330(TLOBaseTy *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return ~*(uint *)(param_1 + 0x1d1) >> 4 & 1;
+  return ~param_1->field_01D1 >> 4 & 1;
 }
 
 // 0041F350 FUN_0041f350
@@ -4391,13 +4391,13 @@ void __fastcall st::fn_0041F3B0(STSprGameObjC *param_1)
       /* ST_CALLSITE[0041F468]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       st::fn_004030BC((STT3DSprC *)puVar1,'\x01');
     }
-    iVar2 = param_1->field_0020;
-    if ((((iVar2 == 0x14) || (iVar2 == 1000)) || (iVar2 == 0x172)) || (iVar2 == 0x1a4)) {
+    uVar3 = param_1->field_0020;
+    if ((((uVar3 == 0x14) || (uVar3 == 1000)) || (uVar3 == 0x172)) || (uVar3 == 0x1a4)) {
       /* ST_CALLSITE[0041F4A1]: CALL dword ptr [EDX + 0x2c] */
       SVar5 = param_1->slot_2C();
     }
     else {
-      if (iVar2 != 0x3e9) goto LAB_0041f51a;
+      if (uVar3 != 0x3e9) goto LAB_0041f51a;
       SVar5 = param_1->field_0259;
     }
     /* ST_CALLSITE[0041F4AD]: CALL dword ptr [EAX + 0xc] */
@@ -4431,13 +4431,13 @@ LAB_0041f51a:
   st::fn_00401064((STT3DSprC *)puVar1,'\x01',0);
   /* ST_CALLSITE[0041F543]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
   st::fn_004030BC((STT3DSprC *)puVar1,'\x01');
-  iVar2 = param_1->field_0020;
-  if (((iVar2 == 0x14) || (iVar2 == 1000)) || ((iVar2 == 0x172 || (iVar2 == 0x1a4)))) {
+  uVar3 = param_1->field_0020;
+  if (((uVar3 == 0x14) || (uVar3 == 1000)) || ((uVar3 == 0x172 || (uVar3 == 0x1a4)))) {
     /* ST_CALLSITE[0041F578]: CALL dword ptr [EDX + 0x2c] */
     SVar5 = param_1->slot_2C();
   }
   else {
-    if (iVar2 != 0x3e9) goto LAB_0041f5a0;
+    if (uVar3 != 0x3e9) goto LAB_0041f5a0;
     SVar5 = param_1->field_0259;
   }
   /* ST_CALLSITE[0041F584]: CALL dword ptr [EAX + 0xc] */

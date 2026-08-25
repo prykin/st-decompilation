@@ -268,7 +268,7 @@ st::fn_006A0EF0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
       iVar1 = st::fn_004019B0(param_1,iVar3,iVar4,param_4,param_5);
       if (iVar1 != 0) {
         iVar3 = st::fn_0040414C(param_1,iVar3,iVar4,param_4,(int)&local_1c);
-        iVar3 = st::fn_00404D5E(param_6,param_4,&local_1c,(int)(short)iVar3,param_5);
+        iVar3 = st::fn_00404D5E(param_6,param_4,&local_1c,(short)iVar3,param_5);
         if (iVar3 != 0) {
           if (param_5 == 0xff) {
             uVar2 = (uint)uStack_18;
@@ -393,7 +393,7 @@ st::fn_006A1100(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar1 = CONCAT12(bStack_a,(ushort)local_c[0]);
       }
-      if ((int)(short)uVar3 != (uVar1 & 0xf)) {
+      if ((short)uVar3 != (uVar1 & 0xf)) {
         return false;
       }
     }
@@ -501,7 +501,7 @@ st::fn_006A1410(int *param_1,int param_2,int param_3,int param_4,int param_5,und
   }
   iVar3 = st::fn_0040414C(param_1,param_2,param_3,param_4,(int)&local_14);
   if (param_5 == 0xff) {
-    iVar4 = (int)(short)iVar3;
+    iVar4 = (short)iVar3;
     iVar3 = iVar4;
     if ((int)(iVar4 - (local_10 >> 8 & 0xf)) < iVar4) {
       do {
@@ -659,7 +659,7 @@ st::fn_006A17B0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
             ((iVar1 < 6 &&
              (iVar4 = st::fn_004019B0(param_1,iVar2,iVar7,iVar1,param_5), iVar4 != 0)))))) {
           iVar3 = st::fn_0040414C(param_1,iVar2,iVar7,iVar1,(int)&local_14);
-          local_EAX_219 = st::fn_00404D5E(&local_14,iVar1,param_6,(int)(short)iVar3,param_5);
+          local_EAX_219 = st::fn_00404D5E(&local_14,iVar1,param_6,(short)iVar3,param_5);
           if (local_EAX_219 != 0) {
             if (param_5 == 0xff) {
               uVar6 = (uint)(byte)param_6[2];
@@ -824,7 +824,7 @@ st::fn_006A1C80(int *param_1,uint param_2,int param_3,int param_4,int param_5,un
      ((param_4 < 6 &&
       (iVar4 = st::fn_004019B0(param_1,param_2,param_3,param_4,param_5), iVar4 != 0)))) {
     iVar3 = st::fn_0040414C(param_1,param_2,param_3,param_4,(int)&local_c);
-    iVar4 = (int)(short)iVar3;
+    iVar4 = (short)iVar3;
     if ((((local_8 & 0x2000) != 0) || ((uStack_a & 0x1000) != 0)) ||
        (bVar1 = true, (local_c & 0x1000) != 0)) {
       bVar1 = false;
@@ -898,7 +898,7 @@ st::fn_006A1EB0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
       if ((short)local_EAX_102 != 0) {
         iVar1 = 0xff;
       }
-      st::fn_00403729(param_1,param_2,param_3,(int)(short)local_EAX_102,iVar1,param_7,param_8);
+      st::fn_00403729(param_1,param_2,param_3,(short)local_EAX_102,iVar1,param_7,param_8);
     }
     local_10 = reinterpret_cast<int *>(&DAT_007df82c);
     do {
@@ -910,7 +910,7 @@ st::fn_006A1EB0(int *param_1,int param_2,int param_3,int param_4,int param_5,ush
           if (((-1 < (int)uVar6) && ((int)uVar6 < *param_1)) &&
              ((-1 < iVar1 && (((iVar1 < param_1[1] && (-1 < local_8)) && (local_8 < 6)))))) {
             iVar2 = st::fn_0040414C(param_1,uVar6,iVar1,local_8,(int)local_18);
-            local_c = (int)(short)iVar2;
+            local_c = (short)iVar2;
             iVar5 = param_5;
             if (local_c != 0) {
               iVar5 = 0xff;
@@ -1378,7 +1378,7 @@ void __cdecl st::fn_006A2D80(ushort param_1,int *param_2)
           else {
             local_c[1] = param_1;
           }
-          st::fn_00404CF5(param_2,iVar2,iVar3,(int)(short)iVar1,0xff,local_c,nullptr,0);
+          st::fn_00404CF5(param_2,iVar2,iVar3,(short)iVar1,0xff,local_c,nullptr,0);
           iVar3 = iVar3 + 1;
         } while (iVar3 < param_2[1]);
       }
@@ -1516,13 +1516,13 @@ st::fn_006A34E0(int *param_1,uint param_2,int param_3,uint param_4,int param_5,i
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     st::fn_00404480(param_7,(ushort *)CONCAT31(extraout_var,uVar1));
     iVar2 = st::fn_0040414C(param_1,param_4,param_5,param_6,(int)local_c);
-    iVar2 = st::fn_00404D5E(local_c,(int)(short)iVar2,param_7,param_6,0xff);
+    iVar2 = st::fn_00404D5E(local_c,(short)iVar2,param_7,param_6,0xff);
     if (iVar2 == 0) {
       st::fn_0040420A(param_1,param_4,param_5,param_6,0xff,param_8,param_9);
     }
     st::fn_00404CF5(param_1,param_4,param_5,param_6,0xff,param_7,param_8,param_9);
     iVar2 = st::fn_0040414C(param_1,param_2,param_3,param_6,(int)local_c);
-    iVar2 = st::fn_00404D5E(local_c,(int)(short)iVar2,param_7,param_6,0xff);
+    iVar2 = st::fn_00404D5E(local_c,(short)iVar2,param_7,param_6,0xff);
     if (iVar2 == 0) {
       st::fn_0040420A(param_1,param_2,param_3,param_6,0xff,param_8,param_9);
     }
@@ -1593,7 +1593,7 @@ st::fn_006A3840(int *param_1,int param_2,int param_3,int param_4,ushort *param_5
         ((param_4 < 6 && (iVar2 = st::fn_004019B0(param_1,iVar3,iVar4,param_4,0xff), iVar2 != 0))
         )))) {
       iVar1 = st::fn_0040414C(param_1,iVar3,iVar4,param_4,(int)local_10);
-      local_EAX_119 = st::fn_00404D5E(local_10,(int)(short)iVar1,param_5,param_4,0xff);
+      local_EAX_119 = st::fn_00404D5E(local_10,(short)iVar1,param_5,param_4,0xff);
       if (local_EAX_119 != 0) {
         st::fn_00405308(param_1,iVar3,iVar4,param_4,param_5,param_6,param_7);
       }
@@ -1623,7 +1623,7 @@ st::fn_006A3930(int *param_1,int param_2,int param_3,int param_4,ushort *param_5
   uVar1 = st::fn_00405E70(param_1,param_2,param_3,param_4,param_5);
   puVar2 = (ushort *)st::fn_00401B54(uVar1);
   iVar3 = st::fn_0040414C(param_1,param_2,param_3,param_4,(int)local_c);
-  iVar3 = st::fn_00404D5E(local_c,(int)(short)iVar3,param_5,param_4,0xff);
+  iVar3 = st::fn_00404D5E(local_c,(short)iVar3,param_5,param_4,0xff);
   if ((iVar3 == 0) || (puVar2 != (ushort *)(local_8 & 0xf))) {
     st::fn_00404480(param_5,puVar2);
     st::fn_00404CF5(param_1,param_2,param_3,param_4,0xff,param_5,param_6,param_7);
@@ -1652,7 +1652,7 @@ uint __cdecl st::fn_006A3A00(int *param_1,int param_2,int param_3,int param_4,us
     if ((((-1 < iVar2) && (iVar2 < *param_1)) && (-1 < iVar3)) &&
        (((iVar3 < param_1[1] && (-1 < param_4)) && (param_4 < 6)))) {
       iVar2 = st::fn_0040414C(param_1,iVar2,iVar3,param_4,(int)local_10);
-      iVar2 = st::fn_00404D5E(local_10,(int)(short)iVar2,param_5,param_4,0xff);
+      iVar2 = st::fn_00404D5E(local_10,(short)iVar2,param_5,param_4,0xff);
       if (iVar2 != 0) {
         bVar1 = (byte)iVar4 & 0x1f;
         local_8 = local_8 | ((&DAT_007dfaf0)[local_c & 0xf] << 0x10 |
@@ -2579,7 +2579,7 @@ st::fn_006A5F20(int param_1,int param_2,int param_3,int param_4,int param_5,int 
     local_14 = uVar7;
     bVar2 = bVar1;
   }
-  auto param_6_after_write = iVar4; /* compiler stack-slot lifetime split */
+  int param_6_after_write = iVar4; /* compiler stack-slot lifetime split */
   uVar7 = uVar6;
   bVar11 = bVar10;
   bVar3 = !bVar1;
@@ -2826,7 +2826,7 @@ switchD_006a63e5_caseD_1:
       else {
         iVar3 = iVar3 - param_3;
       }
-      uVar2 = (int)(short)uVar1 & 0xffff9fff;
+      uVar2 = (short)uVar1 & 0xffff9fff;
       if (0xb4 < (int)uVar2) break;
       if (uVar2 == 0xb4) {
         param_1 = param_1 - param_3;
@@ -2994,9 +2994,9 @@ LAB_006a6ed7:
         uVar10 = local_c & 1;
         pbVar19 = pbVar18;
         if ((uVar10 == 0) &&
-           ((*(short *)(local_10 + 2) == 0 || (iVar22 + 3 < (int)*(short *)(local_10 + 2))))) {
+           ((STField<short>(local_10,0x2) == 0 || (iVar22 + 3 < (int)STField<short>(local_10,0x2))))) {
           pbVar19 = pbVar18 + 4;
-          *(short *)(local_10 + 2) = sVar21 + 3;
+          STField<short>(local_10,0x2) = sVar21 + 3;
           pbVar18[1] = bVar1;
           *pbVar18 = bVar2 + 1;
           pbVar18[2] = bVar3;
@@ -3068,9 +3068,9 @@ LAB_006a6ed7:
           }
           pbVar19 = pbVar18;
           if ((uVar10 == 0) &&
-             ((*(short *)(local_8 + 2) == 0 || (iVar22 + 4 < (int)*(short *)(local_8 + 2))))) {
+             ((STField<short>(local_8,0x2) == 0 || (iVar22 + 4 < (int)STField<short>(local_8,0x2))))) {
             pbVar19 = pbVar18 + 4;
-            *(short *)(local_8 + 2) = sVar21 + 4;
+            STField<short>(local_8,0x2) = sVar21 + 4;
             *pbVar18 = bVar2 + 1;
             pbVar18[1] = bVar1;
             pbVar18[2] = bVar3 + 1;
@@ -3115,9 +3115,9 @@ LAB_006a6ed7:
           }
           pbVar19 = pbVar18;
           if ((uVar10 == 0) &&
-             ((*(short *)(local_8 + 2) == 0 || (iVar22 + 4 < (int)*(short *)(local_8 + 2))))) {
+             ((STField<short>(local_8,0x2) == 0 || (iVar22 + 4 < (int)STField<short>(local_8,0x2))))) {
             pbVar19 = pbVar18 + 4;
-            *(short *)(local_8 + 2) = sVar21 + 4;
+            STField<short>(local_8,0x2) = sVar21 + 4;
             *pbVar18 = bVar2 + 1;
             pbVar18[1] = bVar1;
             pbVar18[2] = bVar3 - 1;
@@ -3166,10 +3166,10 @@ LAB_006a6ed7:
         pbVar19 = pbVar18;
         if (uVar10 == 0) {
           iVar17 = local_10 + param_2 * -2;
-          sVar4 = *(short *)(iVar17 + 2);
+          sVar4 = STField<short>(iVar17,0x2);
           if ((sVar4 == 0) || (iVar22 + 4 < (int)sVar4)) {
             pbVar19 = pbVar18 + 4;
-            *(short *)(iVar17 + 2) = sVar21 + 4;
+            STField<short>(iVar17,0x2) = sVar21 + 4;
             *pbVar18 = bVar2 + 1;
             pbVar18[2] = bVar3;
             pbVar18[1] = bVar1 - 1;
@@ -3220,9 +3220,9 @@ LAB_006a6ed7:
           pbVar20 = pbVar18;
           if (uVar10 == 0) {
             iVar17 = local_8 + param_2 * -2;
-            sVar4 = *(short *)(iVar17 + 2);
+            sVar4 = STField<short>(iVar17,0x2);
             if ((sVar4 == 0) || (iVar22 < sVar4)) {
-              *(short *)(iVar17 + 2) = sVar21;
+              STField<short>(iVar17,0x2) = sVar21;
               pbVar20 = pbVar18 + 4;
               *pbVar18 = bVar2 + 1;
               pbVar18[1] = bVar1 - 1;
@@ -3268,9 +3268,9 @@ LAB_006a6ed7:
           pbVar20 = pbVar18;
           if (uVar10 == 0) {
             iVar17 = local_8 + param_2 * -2;
-            sVar4 = *(short *)(iVar17 + 2);
+            sVar4 = STField<short>(iVar17,0x2);
             if ((sVar4 == 0) || (iVar22 < sVar4)) {
-              *(short *)(iVar17 + 2) = sVar21;
+              STField<short>(iVar17,0x2) = sVar21;
               pbVar20 = pbVar18 + 4;
               *pbVar18 = bVar2 + 1;
               pbVar18[1] = bVar1 - 1;
@@ -3436,8 +3436,8 @@ LAB_006a76ae:
           param_5_after_write = param_5_after_write + 1;
         }
         uVar9 = param_6_after_write & 1;
-        if ((uVar9 == 0) && (*(short *)(iVar7 + 2) < 0)) {
-          *(undefined2 *)(iVar7 + 2) = 0;
+        if ((uVar9 == 0) && (STField<short>(iVar7,0x2) < 0)) {
+          STField<undefined2>(iVar7,0x2) = 0;
           pbVar16[1] = bVar2;
           *pbVar16 = bVar3 + 1;
           pbVar16[2] = bVar1;
@@ -3488,8 +3488,8 @@ LAB_006a76ae:
           param_5_after_write = param_5_after_write + 1;
         }
         uVar13 = param_6_after_write & 0x21;
-        if ((uVar13 == 0) && (iVar17 = iVar7 + param_2 * -2, *(short *)(iVar17 + 2) < 0)) {
-          *(undefined2 *)(iVar17 + 2) = 0;
+        if ((uVar13 == 0) && (iVar17 = iVar7 + param_2 * -2, STField<short>(iVar17,0x2) < 0)) {
+          STField<undefined2>(iVar17,0x2) = 0;
           pbVar16[2] = bVar1;
           *pbVar16 = bVar3 + 1;
           pbVar16[1] = bVar2 - 1;
@@ -3524,8 +3524,8 @@ LAB_006a76ae:
             pbVar16 = pbVar16 + 4;
             param_5_after_write = param_5_after_write + 1;
           }
-          if ((uVar9 == 0) && (*(short *)(iVar17 + 2) < 0)) {
-            *(undefined2 *)(iVar17 + 2) = 0;
+          if ((uVar9 == 0) && (STField<short>(iVar17,0x2) < 0)) {
+            STField<undefined2>(iVar17,0x2) = 0;
             pbVar16[1] = bVar2;
             *pbVar16 = bVar3 + 1;
             pbVar16[2] = bVar1 + 1;
@@ -3559,8 +3559,8 @@ LAB_006a76ae:
             pbVar16 = pbVar16 + 4;
             param_5_after_write = param_5_after_write + 1;
           }
-          if ((uVar9 == 0) && (*(short *)(iVar17 + 2) < 0)) {
-            *(undefined2 *)(iVar17 + 2) = 0;
+          if ((uVar9 == 0) && (STField<short>(iVar17,0x2) < 0)) {
+            STField<undefined2>(iVar17,0x2) = 0;
             pbVar16[1] = bVar2;
             *pbVar16 = bVar3 + 1;
             pbVar16[2] = bVar1 - 1;
@@ -3594,8 +3594,8 @@ LAB_006a76ae:
             pbVar16 = pbVar16 + 4;
             param_5_after_write = param_5_after_write + 1;
           }
-          if ((uVar13 == 0) && (iVar19 = iVar17 + param_2 * -2, *(short *)(iVar19 + 2) < 0)) {
-            *(undefined2 *)(iVar19 + 2) = 0;
+          if ((uVar13 == 0) && (iVar19 = iVar17 + param_2 * -2, STField<short>(iVar19,0x2) < 0)) {
+            STField<undefined2>(iVar19,0x2) = 0;
             *pbVar16 = bVar3 + 1;
             pbVar16[1] = bVar2 - 1;
             pbVar16[2] = bVar1 + 1;
@@ -3629,8 +3629,8 @@ LAB_006a76ae:
             pbVar16 = pbVar16 + 4;
             param_5_after_write = param_5_after_write + 1;
           }
-          if ((uVar13 == 0) && (iVar17 = iVar7 + param_2 * -2, *(short *)(iVar17 + 2) < 0)) {
-            *(undefined2 *)(iVar17 + 2) = 0;
+          if ((uVar13 == 0) && (iVar17 = iVar7 + param_2 * -2, STField<short>(iVar17,0x2) < 0)) {
+            STField<undefined2>(iVar17,0x2) = 0;
             *pbVar16 = bVar3 + 1;
             pbVar16[1] = bVar2 - 1;
             pbVar16[2] = bVar1 - 1;
@@ -4014,10 +4014,10 @@ LAB_006a8234:
     local_1c = (ushort *)&SHORT_007ed576;
     local_3c = reinterpret_cast<int *>(&DAT_007ed640);
     do {
-      iVar8 = (int)(short)local_1c[-3];
+      iVar8 = (short)local_1c[-3];
       local_20 = local_30 + iVar8;
       if ((-1 < local_20) && (local_20 < param_2)) {
-        iVar10 = (int)(short)local_1c[-2];
+        iVar10 = (short)local_1c[-2];
         local_38 = iVar10 + local_c;
         if ((-1 < local_38) && (local_38 < param_3)) {
           local_48 = local_10 + (short)local_1c[-1];
@@ -4040,7 +4040,7 @@ LAB_006a80b6:
                   local_4c = local_4c + *local_3c;
                   if (((int)local_4c < (int)param_13_after_write) ||
                      ((local_4c == param_13_after_write &&
-                      (((int)(short)uVar3 == local_14 || ((int)(short)uVar3 == local_34)))))) {
+                      (((short)uVar3 == local_14 || ((short)uVar3 == local_34)))))) {
                     local_2c = local_24;
                     param_13_after_write = local_4c;
                     local_44 = local_38;
@@ -4466,7 +4466,7 @@ LAB_006acc40:
         }
         local_30 = local_14;
         if ((local_14 & 0x33) == 0) {
-          if ((local_28[-1] == 0) || (iVar27 + 3 < (int)(short)local_28[-1])) {
+          if ((local_28[-1] == 0) || (iVar27 + 3 < (short)local_28[-1])) {
             local_28[-1] = sVar5 + 3;
             *pbVar23 = bVar1 - 1;
             pbVar23[1] = bVar2;
@@ -4474,7 +4474,7 @@ LAB_006acc40:
             pbVar23 = pbVar23 + 4;
             param_5_after_write = param_5_after_write + 1;
           }
-          if ((local_28[1] == 0) || (iVar27 + 3 < (int)(short)local_28[1])) {
+          if ((local_28[1] == 0) || (iVar27 + 3 < (short)local_28[1])) {
             local_28[1] = (ushort)(iVar27 + 3);
             pbVar23[1] = bVar2;
             *pbVar23 = bVar1 + 1;
@@ -4483,7 +4483,7 @@ LAB_006acc40:
             param_5_after_write = param_5_after_write + 1;
           }
           local_18 = local_28 + -param_2;
-          if ((*local_18 == 0) || (pbVar24 = pbVar23, iVar27 + 3 < (int)(short)*local_18)) {
+          if ((*local_18 == 0) || (pbVar24 = pbVar23, iVar27 + 3 < (short)*local_18)) {
             pbVar24 = pbVar23 + 4;
             *local_18 = sVar5 + 3;
             pbVar23[1] = bVar2 - 1;
@@ -4492,7 +4492,7 @@ LAB_006acc40:
             param_5_after_write = param_5_after_write + 1;
           }
           if ((local_28[param_2] == 0) ||
-             (pbVar23 = pbVar24, iVar27 + 3 < (int)(short)local_28[param_2])) {
+             (pbVar23 = pbVar24, iVar27 + 3 < (short)local_28[param_2])) {
             pbVar23 = pbVar24 + 4;
             local_28[param_2] = sVar5 + 3;
             pbVar24[1] = bVar2 + 1;
@@ -4504,7 +4504,7 @@ LAB_006acc40:
           pbVar24 = pbVar23;
           if (uVar13 == 0) {
             local_8 = local_28 + -local_c;
-            if ((*local_8 == 0) || (iVar27 + 3 < (int)(short)*local_8)) {
+            if ((*local_8 == 0) || (iVar27 + 3 < (short)*local_8)) {
               pbVar24 = pbVar23 + 4;
               *local_8 = sVar5 + 3;
               pbVar23[1] = bVar2;
@@ -4516,7 +4516,7 @@ LAB_006acc40:
           uVar14 = local_14 & 4;
           pbVar23 = pbVar24;
           if ((uVar14 == 0) &&
-             ((local_28[local_c] == 0 || (iVar27 + 3 < (int)(short)local_28[local_c])))) {
+             ((local_28[local_c] == 0 || (iVar27 + 3 < (short)local_28[local_c])))) {
             pbVar23 = pbVar24 + 4;
             local_28[local_c] = sVar5 + 3;
             pbVar24[1] = bVar2;
@@ -4526,7 +4526,7 @@ LAB_006acc40:
           }
           if ((uVar14 == 0) && (local_8 = local_28 + local_c, -1 < (short)local_28[local_c])) {
             pbVar24 = pbVar23;
-            if (((local_8[-1] == 0) || (iVar27 + 4 < (int)(short)local_8[-1])) &&
+            if (((local_8[-1] == 0) || (iVar27 + 4 < (short)local_8[-1])) &&
                ((local_28[-1] & 0xc000) != 0xc000)) {
               pbVar24 = pbVar23 + 4;
               local_8[-1] = sVar5 + 4;
@@ -4536,7 +4536,7 @@ LAB_006acc40:
               param_5_after_write = param_5_after_write + 1;
             }
             pbVar23 = pbVar24;
-            if (((local_8[1] == 0) || (iVar27 + 4 < (int)(short)local_8[1])) &&
+            if (((local_8[1] == 0) || (iVar27 + 4 < (short)local_8[1])) &&
                ((local_28[1] & 0xc000) != 0xc000)) {
               pbVar23 = pbVar24 + 4;
               local_8[1] = sVar5 + 4;
@@ -4546,7 +4546,7 @@ LAB_006acc40:
               param_5_after_write = param_5_after_write + 1;
             }
             pbVar24 = pbVar23;
-            if (((local_8[param_2] == 0) || (iVar27 + 4 < (int)(short)local_8[param_2])) &&
+            if (((local_8[param_2] == 0) || (iVar27 + 4 < (short)local_8[param_2])) &&
                ((local_28[param_2] & 0xc000) != 0xc000)) {
               pbVar24 = pbVar23 + 4;
               local_8[param_2] = sVar5 + 4;
@@ -4557,7 +4557,7 @@ LAB_006acc40:
             }
             local_1c = local_8 + -param_2;
             pbVar23 = pbVar24;
-            if (((*local_1c == 0) || (iVar27 + 4 < (int)(short)*local_1c)) &&
+            if (((*local_1c == 0) || (iVar27 + 4 < (short)*local_1c)) &&
                ((*local_18 & 0xc000) != 0xc000)) {
               pbVar23 = pbVar24 + 4;
               *local_1c = sVar5 + 4;
@@ -4569,7 +4569,7 @@ LAB_006acc40:
           }
           if ((uVar13 == 0) && (local_8 = local_28 + -local_c, -1 < (short)*local_8)) {
             pbVar24 = pbVar23;
-            if (((local_8[-1] == 0) || (iVar27 + 4 < (int)(short)local_8[-1])) &&
+            if (((local_8[-1] == 0) || (iVar27 + 4 < (short)local_8[-1])) &&
                ((local_28[-1] & 0xc000) != 0xc000)) {
               pbVar24 = pbVar23 + 4;
               local_8[-1] = sVar5 + 4;
@@ -4579,7 +4579,7 @@ LAB_006acc40:
               param_5_after_write = param_5_after_write + 1;
             }
             pbVar23 = pbVar24;
-            if (((local_8[1] == 0) || (iVar27 + 4 < (int)(short)local_8[1])) &&
+            if (((local_8[1] == 0) || (iVar27 + 4 < (short)local_8[1])) &&
                ((local_28[1] & 0xc000) != 0xc000)) {
               pbVar23 = pbVar24 + 4;
               local_8[1] = sVar5 + 4;
@@ -4590,7 +4590,7 @@ LAB_006acc40:
             }
             local_1c = local_8 + -param_2;
             pbVar24 = pbVar23;
-            if (((*local_1c == 0) || (iVar27 + 4 < (int)(short)*local_1c)) &&
+            if (((*local_1c == 0) || (iVar27 + 4 < (short)*local_1c)) &&
                ((*local_18 & 0xc000) != 0xc000)) {
               pbVar24 = pbVar23 + 4;
               *local_1c = sVar5 + 4;
@@ -4600,7 +4600,7 @@ LAB_006acc40:
               param_5_after_write = param_5_after_write + 1;
             }
             pbVar23 = pbVar24;
-            if (((local_8[param_2] == 0) || (iVar27 + 4 < (int)(short)local_8[param_2])) &&
+            if (((local_8[param_2] == 0) || (iVar27 + 4 < (short)local_8[param_2])) &&
                ((local_28[param_2] & 0xc000) != 0xc000)) {
               pbVar23 = pbVar24 + 4;
               local_8[param_2] = sVar5 + 4;
@@ -4612,7 +4612,7 @@ LAB_006acc40:
           }
           puVar15 = (ushort *)((int)local_28 - (param_2 * 2 + 2));
           pbVar24 = pbVar23;
-          if ((((*puVar15 == 0) || (iVar27 + 4 < (int)(short)*puVar15)) &&
+          if ((((*puVar15 == 0) || (iVar27 + 4 < (short)*puVar15)) &&
               ((*local_18 & 0xc000) != 0xc000)) && ((local_28[-1] & 0xc000) != 0xc000)) {
             pbVar24 = pbVar23 + 4;
             *puVar15 = sVar5 + 4;
@@ -4622,7 +4622,7 @@ LAB_006acc40:
             param_5_after_write = param_5_after_write + 1;
           }
           pbVar23 = pbVar24;
-          if (((local_18[1] == 0) || (iVar27 + 4 < (int)(short)local_18[1])) &&
+          if (((local_18[1] == 0) || (iVar27 + 4 < (short)local_18[1])) &&
              (((*local_18 & 0xc000) != 0xc000 && ((local_28[1] & 0xc000) != 0xc000)))) {
             pbVar23 = pbVar24 + 4;
             local_18[1] = sVar5 + 4;
@@ -4632,7 +4632,7 @@ LAB_006acc40:
             param_5_after_write = param_5_after_write + 1;
           }
           pbVar24 = pbVar23;
-          if (((local_28[param_2 + -1] == 0) || (iVar27 + 4 < (int)(short)local_28[param_2 + -1]))
+          if (((local_28[param_2 + -1] == 0) || (iVar27 + 4 < (short)local_28[param_2 + -1]))
              && (((local_28[param_2] & 0xc000) != 0xc000 && ((local_28[-1] & 0xc000) != 0xc000)))) {
             pbVar24 = pbVar23 + 4;
             local_28[param_2 + -1] = sVar5 + 4;
@@ -4643,7 +4643,7 @@ LAB_006acc40:
           }
           local_14 = param_2 * 2 + 2;
           pbVar23 = pbVar24;
-          if ((((local_28[param_2 + 1] == 0) || (iVar27 + 4 < (int)(short)local_28[param_2 + 1])) &&
+          if ((((local_28[param_2 + 1] == 0) || (iVar27 + 4 < (short)local_28[param_2 + 1])) &&
               ((local_28[param_2] & 0xc000) != 0xc000)) && ((local_28[1] & 0xc000) != 0xc000)) {
             pbVar23 = pbVar24 + 4;
             local_28[param_2 + 1] = sVar5 + 4;
@@ -4771,7 +4771,7 @@ LAB_006acb91:
         }
         else {
           local_10 = local_14 & 0x10;
-          if ((local_10 == 0) && ((local_28[-1] == 0 || (iVar27 + 3 < (int)(short)local_28[-1])))) {
+          if ((local_10 == 0) && ((local_28[-1] == 0 || (iVar27 + 3 < (short)local_28[-1])))) {
             local_28[-1] = sVar5 + 3;
             pbVar23[1] = bVar2;
             *pbVar23 = bVar1 - 1;
@@ -4780,7 +4780,7 @@ LAB_006acb91:
             param_5_after_write = param_5_after_write + 1;
           }
           uVar13 = local_14 & 1;
-          if ((uVar13 == 0) && ((local_28[1] == 0 || (iVar27 + 3 < (int)(short)local_28[1])))) {
+          if ((uVar13 == 0) && ((local_28[1] == 0 || (iVar27 + 3 < (short)local_28[1])))) {
             local_28[1] = sVar5 + 3;
             pbVar23[1] = bVar2;
             *pbVar23 = bVar1 + 1;
@@ -4792,7 +4792,7 @@ LAB_006acb91:
           pbVar24 = pbVar23;
           if (uVar14 == 0) {
             uVar26 = local_28[-param_2];
-            if ((uVar26 == 0) || (iVar27 + 3 < (int)(short)uVar26)) {
+            if ((uVar26 == 0) || (iVar27 + 3 < (short)uVar26)) {
               pbVar24 = pbVar23 + 4;
               local_28[-param_2] = sVar5 + 3;
               pbVar23[1] = bVar2 - 1;
@@ -4804,7 +4804,7 @@ LAB_006acb91:
           uVar17 = local_14 & 2;
           pbVar23 = pbVar24;
           if ((uVar17 == 0) &&
-             ((local_28[param_2] == 0 || (iVar27 + 3 < (int)(short)local_28[param_2])))) {
+             ((local_28[param_2] == 0 || (iVar27 + 3 < (short)local_28[param_2])))) {
             pbVar23 = pbVar24 + 4;
             local_28[param_2] = sVar5 + 3;
             pbVar24[1] = bVar2 + 1;
@@ -4816,7 +4816,7 @@ LAB_006acb91:
           pbVar24 = pbVar23;
           if (uVar18 == 0) {
             local_8 = local_28 + -local_c;
-            if ((*local_8 == 0) || (iVar27 + 3 < (int)(short)*local_8)) {
+            if ((*local_8 == 0) || (iVar27 + 3 < (short)*local_8)) {
               pbVar24 = pbVar23 + 4;
               *local_8 = sVar5 + 3;
               pbVar23[1] = bVar2;
@@ -4828,7 +4828,7 @@ LAB_006acb91:
           uVar19 = local_14 & 4;
           pbVar23 = pbVar24;
           if ((uVar19 == 0) &&
-             ((local_28[local_c] == 0 || (iVar27 + 3 < (int)(short)local_28[local_c])))) {
+             ((local_28[local_c] == 0 || (iVar27 + 3 < (short)local_28[local_c])))) {
             pbVar23 = pbVar24 + 4;
             local_28[local_c] = sVar5 + 3;
             pbVar24[1] = bVar2;
@@ -4839,7 +4839,7 @@ LAB_006acb91:
           if ((uVar19 == 0) && (local_8 = local_28 + local_c, -1 < (short)local_28[local_c])) {
             pbVar24 = pbVar23;
             if ((local_10 == 0) &&
-               (((local_8[-1] == 0 || (iVar27 + 4 < (int)(short)local_8[-1])) &&
+               (((local_8[-1] == 0 || (iVar27 + 4 < (short)local_8[-1])) &&
                 ((local_28[-1] & 0xc000) != 0xc000)))) {
               pbVar24 = pbVar23 + 4;
               local_8[-1] = sVar5 + 4;
@@ -4849,7 +4849,7 @@ LAB_006acb91:
               param_5_after_write = param_5_after_write + 1;
             }
             pbVar23 = pbVar24;
-            if (((uVar13 == 0) && ((local_8[1] == 0 || (iVar27 + 4 < (int)(short)local_8[1])))) &&
+            if (((uVar13 == 0) && ((local_8[1] == 0 || (iVar27 + 4 < (short)local_8[1])))) &&
                ((local_28[1] & 0xc000) != 0xc000)) {
               pbVar23 = pbVar24 + 4;
               local_8[1] = sVar5 + 4;
@@ -4860,7 +4860,7 @@ LAB_006acb91:
             }
             pbVar24 = pbVar23;
             if (((uVar17 == 0) &&
-                ((local_8[param_2] == 0 || (iVar27 + 4 < (int)(short)local_8[param_2])))) &&
+                ((local_8[param_2] == 0 || (iVar27 + 4 < (short)local_8[param_2])))) &&
                ((local_28[param_2] & 0xc000) != 0xc000)) {
               pbVar24 = pbVar23 + 4;
               local_8[param_2] = sVar5 + 4;
@@ -4872,7 +4872,7 @@ LAB_006acb91:
             pbVar23 = pbVar24;
             if (uVar14 == 0) {
               local_1c = local_8 + -param_2;
-              if (((*local_1c == 0) || (iVar27 + 4 < (int)(short)*local_1c)) &&
+              if (((*local_1c == 0) || (iVar27 + 4 < (short)*local_1c)) &&
                  ((local_28[-param_2] & 0xc000) != 0xc000)) {
                 pbVar23 = pbVar24 + 4;
                 *local_1c = sVar5 + 4;
@@ -4885,7 +4885,7 @@ LAB_006acb91:
           }
           if ((uVar18 == 0) && (local_8 = local_28 + -local_c, -1 < (short)*local_8)) {
             pbVar24 = pbVar23;
-            if (((local_10 == 0) && ((local_8[-1] == 0 || (iVar27 + 4 < (int)(short)local_8[-1]))))
+            if (((local_10 == 0) && ((local_8[-1] == 0 || (iVar27 + 4 < (short)local_8[-1]))))
                && ((local_28[-1] & 0xc000) != 0xc000)) {
               pbVar24 = pbVar23 + 4;
               local_8[-1] = sVar5 + 4;
@@ -4896,7 +4896,7 @@ LAB_006acb91:
             }
             pbVar23 = pbVar24;
             if ((uVar13 == 0) &&
-               (((local_8[1] == 0 || (iVar27 + 4 < (int)(short)local_8[1])) &&
+               (((local_8[1] == 0 || (iVar27 + 4 < (short)local_8[1])) &&
                 ((local_28[1] & 0xc000) != 0xc000)))) {
               pbVar23 = pbVar24 + 4;
               local_8[1] = sVar5 + 4;
@@ -4908,7 +4908,7 @@ LAB_006acb91:
             pbVar24 = pbVar23;
             if (uVar14 == 0) {
               local_1c = local_8 + -param_2;
-              if (((*local_1c == 0) || (iVar27 + 4 < (int)(short)*local_1c)) &&
+              if (((*local_1c == 0) || (iVar27 + 4 < (short)*local_1c)) &&
                  ((local_28[-param_2] & 0xc000) != 0xc000)) {
                 pbVar24 = pbVar23 + 4;
                 *local_1c = sVar5 + 4;
@@ -4920,7 +4920,7 @@ LAB_006acb91:
             }
             pbVar23 = pbVar24;
             if (((uVar17 == 0) &&
-                ((local_8[param_2] == 0 || (iVar27 + 4 < (int)(short)local_8[param_2])))) &&
+                ((local_8[param_2] == 0 || (iVar27 + 4 < (short)local_8[param_2])))) &&
                ((local_28[param_2] & 0xc000) != 0xc000)) {
               pbVar23 = pbVar24 + 4;
               local_8[param_2] = sVar5 + 4;
@@ -4949,7 +4949,7 @@ LAB_006acb91:
           pbVar23 = pbVar24;
           if (uVar14 == 0) {
             puVar15 = local_28 + -param_2;
-            if (((puVar15[1] == 0) || (iVar27 + 4 < (int)(short)puVar15[1])) &&
+            if (((puVar15[1] == 0) || (iVar27 + 4 < (short)puVar15[1])) &&
                (((*puVar15 & 0xc000) != 0xc000 && ((local_28[1] & 0xc000) != 0xc000)))) {
               pbVar23 = pbVar24 + 4;
               puVar15[1] = sVar5 + 4;
@@ -4962,7 +4962,7 @@ LAB_006acb91:
           puVar15 = (ushort *)(local_14 & 0x12);
           pbVar24 = pbVar23;
           if (((puVar15 == nullptr) &&
-              ((local_28[param_2 + -1] == 0 || (iVar27 + 4 < (int)(short)local_28[param_2 + -1]))))
+              ((local_28[param_2 + -1] == 0 || (iVar27 + 4 < (short)local_28[param_2 + -1]))))
              && (((local_28[param_2] & 0xc000) != 0xc000 && ((local_28[-1] & 0xc000) != 0xc000)))) {
             pbVar24 = pbVar23 + 4;
             local_28[param_2 + -1] = sVar5 + 4;
@@ -4974,7 +4974,7 @@ LAB_006acb91:
           local_18 = (ushort *)(local_14 & 3);
           pbVar23 = pbVar24;
           if (((local_18 == nullptr) &&
-              (((local_28[param_2 + 1] == 0 || (iVar27 + 4 < (int)(short)local_28[param_2 + 1])) &&
+              (((local_28[param_2 + 1] == 0 || (iVar27 + 4 < (short)local_28[param_2 + 1])) &&
                ((local_28[param_2] & 0xc000) != 0xc000)))) && ((local_28[1] & 0xc000) != 0xc000)) {
             pbVar23 = pbVar24 + 4;
             local_28[param_2 + 1] = sVar5 + 4;
@@ -6589,10 +6589,10 @@ int st::fn_006AE3B0(int param_1,int param_2,int param_3,int param_4,int param_5,
       local_18 = (ushort *)&SHORT_007ed576;
       local_14 = reinterpret_cast<int *>(&DAT_007ed640);
       do {
-        iVar11 = (int)(short)local_18[-3];
+        iVar11 = (short)local_18[-3];
         uVar6 = local_30 + iVar11;
         if ((-1 < (int)uVar6) && ((int)uVar6 < param_2)) {
-          iVar9 = (int)(short)local_18[-2];
+          iVar9 = (short)local_18[-2];
           iVar7 = param_9 + iVar9;
           if ((-1 < iVar7) && (iVar7 < param_3)) {
             iVar8 = param_10 + (short)local_18[-1];
@@ -6613,7 +6613,7 @@ LAB_006ae68b:
                     iVar11 = iVar11 + *local_14;
                     if ((iVar11 < local_38) ||
                        ((iVar11 == local_38 &&
-                        (((int)(short)uVar2 == local_3c || ((int)(short)uVar2 == uVar5)))))) {
+                        (((short)uVar2 == local_3c || ((short)uVar2 == uVar5)))))) {
                       local_28 = param_8_after_write;
                       local_38 = iVar11;
                       local_24 = iVar8;

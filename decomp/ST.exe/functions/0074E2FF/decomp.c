@@ -13,7 +13,7 @@ int __fastcall FUN_0074e2ff(AnonShape_0074E2FF_47CF731F *param_1)
   uint uVar2;
   iVar1 = param_1->field_0008;
   if (iVar1 != 0) {
-    uVar2 = *(undefined4 *)(iVar1 + 4);
+    uVar2 = STField<undefined4>(iVar1,0x4);
     param_1->field_0004 = param_1->field_0004 + -1;
     param_1->field_0008 = uVar2;
   }

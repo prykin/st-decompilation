@@ -43,7 +43,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   /* ST_CALLSITE[006D5930]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(local_8);
   pAVar2 = local_c;
-  if (((*(int *)(iVar1 + 0x90) == 0) || (*(int *)(iVar1 + 0x94) == 0)) ||
+  if (((STField<int>(iVar1,0x90) == 0) || (STField<int>(iVar1,0x94) == 0)) ||
      (*(int *)(STField<int>(this,0xe0) + 0x30c) == 0)) {
     /* ST_CALLSITE[006D5CAF]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(local_8);
@@ -75,20 +75,20 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   iVar4 = 0;
   DAT_00856900 = 0;
   DAT_00856904 = 0;
-  _DAT_00856908 = *(undefined4 *)(iVar1 + 0x90);
-  _DAT_0085690c = *(undefined4 *)(iVar1 + 0x94);
+  _DAT_00856908 = STField<undefined4>(iVar1,0x90);
+  _DAT_0085690c = STField<undefined4>(iVar1,0x94);
   _DAT_00856910 = 0;
   _DAT_00856914 = 0;
-  _DAT_00856918 = *(undefined4 *)(iVar1 + 0x90);
-  _DAT_0085691c = *(undefined4 *)(iVar1 + 0x94);
+  _DAT_00856918 = STField<undefined4>(iVar1,0x90);
+  _DAT_0085691c = STField<undefined4>(iVar1,0x94);
   _DAT_00856930 = 0x28;
-  _DAT_00856934 = *(int *)(iVar1 + 0x90);
-  _DAT_00856938 = -*(int *)(iVar1 + 0x94);
+  _DAT_00856934 = STField<int>(iVar1,0x90);
+  _DAT_00856938 = -STField<int>(iVar1,0x94);
   _DAT_0085693c = 1;
   DAT_0085693e = *(short *)&local_c->field_0x20;
   _DAT_00856940 = 0;
   _DAT_00856950 = 0;
-  if (((byte)*(undefined4 *)(iVar1 + 4) & 0xf) == 2) {
+  if (((byte)STField<undefined4>(iVar1,0x4) & 0xf) == 2) {
     iVar3 = FUN_006bb8b0(local_c);
     if (iVar3 == 0) {
       _DAT_00856934 = *(int *)(pAVar2 + 1) / *(int *)&pAVar2->field_0x28;

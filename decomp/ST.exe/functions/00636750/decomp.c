@@ -16,11 +16,11 @@ void __fastcall FUN_00636750(AnonShape_00636750_9523C2A1 *param_1)
     if (0 < iVar1) {
       do {
         iVar3 = param_1->field_002C;
-        if (((uVar4 < *(uint *)(iVar3 + 0xc)) &&
-            (iVar3 = *(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c), iVar3 != 0)) &&
-           (*(int *)(iVar3 + 4) < 0)) {
+        if (((uVar4 < STField<uint>(iVar3,0xC)) &&
+            (iVar3 = STField<int>(iVar3,0x8) * uVar4 + STField<int>(iVar3,0x1C), iVar3 != 0)) &&
+           (STField<int>(iVar3,0x4) < 0)) {
           uVar2 = thunk_FUN_006364b0(param_1->field_0004);
-          *(uint *)(iVar3 + 4) = uVar2;
+          STField<uint>(iVar3,0x4) = uVar2;
         }
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < iVar1);

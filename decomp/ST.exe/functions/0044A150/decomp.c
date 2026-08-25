@@ -36,7 +36,7 @@ STAllPlayersC::UnRegisterMine(STAllPlayersC *this,uint param_1,uint param_2,STMi
                  0x2f1d);
     }
     /* ST_CALLSITE[0044A1D4]: CALL 0x004021a3; direct=004021A3 STAllPlayersC::DelObjFromTmps */
-    DelObjFromTmps(this_00,DAT_0080874d,param_3->field_0020,*(char *)&param_3->field_0024,param_2);
+    DelObjFromTmps(this_00,DAT_0080874d,param_3->field_0020,(char)param_3->field_0024,param_2);
     /* ST_CALLSITE[0044A1E4]: CALL 0x00403643; direct=00403643 STAllPlayersC::DelObjFromSaveTmps */
     DelObjFromSaveTmps(this_00,param_3->field_0020,(char)param_1,(ushort)param_2);
     Library::DKW::TBL::DArrayPut(g_array_007FA158,param_2 & 0xffff,&local_8);

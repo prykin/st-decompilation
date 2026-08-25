@@ -14,7 +14,7 @@ void __cdecl FUN_00725e30(int *param_1)
   iVar1 = *param_1;
   if (iVar1 != 0) {
     iVar2 = 0;
-    if (0 < *(short *)(iVar1 + 0x23)) {
+    if (0 < STField<short>(iVar1,0x23)) {
       do {
         if (*(cMf32 **)(iVar1 + 0x25) == nullptr) {
           FreeAndNull((void *)(iVar1 + 0x2d + iVar2 * 4));
@@ -24,7 +24,7 @@ void __cdecl FUN_00725e30(int *param_1)
         }
         iVar1 = *param_1;
         iVar2 = iVar2 + 1;
-      } while (iVar2 < *(short *)(iVar1 + 0x23));
+      } while (iVar2 < STField<short>(iVar1,0x23));
     }
     FreeAndNull(param_1);
   }

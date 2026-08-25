@@ -83,7 +83,8 @@ TLOBaseTy::FUN_004e2c30:
 004E2D40  8D 55 A4                  LEA EDX,[EBP + -0x5c]
 004E2D43  8B 01                     MOV EAX,dword ptr [ECX]
 004E2D45  52                        PUSH EDX
-004E2D46  FF 10                     CALL dword ptr [EAX]
+TLOBaseTy::FUN_004e2c30::override::prt_4e2d46_89729ca9:
+004E2D46  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 004E2D48  B9 08 00 00 00            MOV ECX,0x8
 004E2D4D  33 C0                     XOR EAX,EAX
 004E2D4F  8D 7D A4                  LEA EDI,[EBP + -0x5c]
@@ -171,7 +172,8 @@ LAB_004e2d6e:
 004E2E47  8D 55 A4                  LEA EDX,[EBP + -0x5c]
 004E2E4A  8B 01                     MOV EAX,dword ptr [ECX]
 004E2E4C  52                        PUSH EDX
-004E2E4D  FF 10                     CALL dword ptr [EAX]
+TLOBaseTy::FUN_004e2c30::override::prt_4e2e4d_89729ca9:
+004E2E4D  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_004e2e4f:
 004E2E4F  47                        INC EDI
 004E2E50  81 FF 9B 00 00 00         CMP EDI,0x9b

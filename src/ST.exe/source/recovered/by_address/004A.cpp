@@ -1082,11 +1082,11 @@ undefined4 __thiscall st::fn_004ABCE0(void *this,byte param_1,int param_2,int pa
           st::fn_00404264(static_cast<STT3DSprC *>(this),param_1);
           iVar6 = iVar7 + STField<int>(this,0x20);
           if ((*(byte *)(iVar7 + 0xe + STField<int>(this,0x20)) & 2) == 0) {
-            *(int *)(iVar6 + 0x10) = param_2;
+            STField<int>(iVar6,0x10) = param_2;
             *(int *)(iVar7 + 0x14 + STField<int>(this,0x20)) = param_3;
           }
           else {
-            *(int *)(iVar6 + 0x10) = param_3;
+            STField<int>(iVar6,0x10) = param_3;
             *(int *)(iVar7 + 0x14 + STField<int>(this,0x20)) = param_2;
           }
           puVar3 = (undefined4 *)(iVar7 + STField<int>(this,0x20));
@@ -1095,7 +1095,7 @@ undefined4 __thiscall st::fn_004ABCE0(void *this,byte param_1,int param_2,int pa
             *(undefined4 *)(puVar3[1] + iVar6 * 4) = *(undefined4 *)((int)piVar4 + iVar6 * 4 + 0x31);
           }
           iVar6 = STField<int>(this,0x20) + iVar7;
-          *(undefined4 *)(iVar6 + 0x18) = *(undefined4 *)(iVar6 + 0x10);
+          STField<undefined4>(iVar6,0x18) = STField<undefined4>(iVar6,0x10);
           if (param_1 == STField<byte>(this,0x13)) {
             STField<undefined4>(this,0x30) =
                  *(undefined4 *)(iVar7 + 0x18 + STField<int>(this,0x20));
@@ -1292,7 +1292,7 @@ int __thiscall st::fn_004AC950(void *this,int param_1)
   iVar3 = *(int *)(iVar2 + 0x10 + param_1 * 0x24);
   iVar4 = *(int *)(iVar2 + 0x14 + param_1 * 0x24);
   iVar1 = iVar2 + param_1 * 0x24;
-  iVar5 = *(int *)(iVar1 + 0x18);
+  iVar5 = STField<int>(iVar1,0x18);
   iVar2 = **(int **)(iVar2 + param_1 * 0x24);
   if (iVar3 != iVar4) {
     if (iVar5 == iVar4) {
@@ -1361,18 +1361,18 @@ cf_continue_loop_004ACA23:
       iVar6 = local_28 * 0x24;
       iVar4 = STField<int>(this,0x20) + iVar6;
       if ((((byte *)iVar4)[0xe] & 1) == 0) {
-        uVar7 = param_1 - *(int *)(iVar4 + 0x1c);
-        *(int *)(iVar4 + 0x1c) = param_1;
+        uVar7 = param_1 - STField<int>(iVar4,0x1C);
+        STField<int>(iVar4,0x1C) = param_1;
         bVar2 = false;
         iVar4 = STField<int>(this,0x20) + iVar6;
-        piVar5 = (int *)(*(int *)(iVar4 + 4) + *(int *)(iVar4 + 0x18) * 4);
+        piVar5 = (int *)(STField<int>(iVar4,0x4) + STField<int>(iVar4,0x18) * 4);
         iVar8 = *piVar5;
-        iVar1 = *(int *)(iVar4 + 0x20);
+        iVar1 = STField<int>(iVar4,0x20);
         if (uVar7 < (uint)(iVar8 + iVar1)) {
           if (iVar8 < (int)uVar7) {
-            *(uint *)(iVar4 + 0x20) = (iVar1 - uVar7) + iVar8;
+            STField<uint>(iVar4,0x20) = (iVar1 - uVar7) + iVar8;
             iVar6 = iVar6 + STField<int>(this,0x20);
-            *(undefined4 *)(*(int *)(iVar6 + 4) + *(int *)(iVar6 + 0x18) * 4) = 0;
+            *(undefined4 *)(STField<int>(iVar6,0x4) + STField<int>(iVar6,0x18) * 4) = 0;
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
           }
@@ -1384,14 +1384,14 @@ cf_continue_loop_004ACA23:
           goto cf_continue_loop_004ACA23;
         }
         if (iVar1 != 0) {
-          *(undefined4 *)(iVar4 + 0x20) = 0;
+          STField<undefined4>(iVar4,0x20) = 0;
           st::fn_006E9CB0
                     (STField<ST3DSMAPContext *>(this,0x3c),STField<uint *>(this,0x18),local_28);
         }
         piVar5 = (int *)(STField<int>(this,0x20) + iVar6);
         *(undefined4 *)(piVar5[1] + piVar5[6] * 4) = *(undefined4 *)(piVar5[6] * 4 + 0x31 + *piVar5);
         iVar4 = STField<int>(this,0x20) + iVar6;
-        if (*(int *)(iVar4 + 0x18) == *(int *)(iVar4 + 0x14)) {
+        if (STField<int>(iVar4,0x18) == STField<int>(iVar4,0x14)) {
           if (((char *)iVar4)[0xd] == '\x02') {
             /* ST_CALLSITE[004ACB1D]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
             st::fn_00404264(static_cast<STT3DSprC *>(this),(byte)local_28);
@@ -1424,7 +1424,7 @@ cf_continue_loop_004ACA23:
 LAB_004acb87:
           if (!bVar2) {
             iVar4 = STField<int>(this,0x20) + iVar6;
-            *(int *)(*(int *)(iVar4 + 4) + *(int *)(iVar4 + 0x18) * 4) = -iVar8;
+            *(int *)(STField<int>(iVar4,0x4) + STField<int>(iVar4,0x18) * 4) = -iVar8;
           }
         }
         st::fn_006EA270
@@ -1717,7 +1717,7 @@ void __fastcall st::fn_004AD550(uint param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((((char *)param_1)[0x10] == '\0') &&
       (iVar1 = *(int *)(*(int *)(param_1 + 0x20) + ((char *)param_1)[0x13] * 0x24), iVar1 != 0))
-     && (*(int *)(iVar1 + 0x29) != 0)) {
+     && (STField<int>(iVar1,0x29) != 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006E9520
               (*(void **)(param_1 + 0x3c),*(uint *)(param_1 + 0x18),*(uint *)(param_1 + 0x34),
@@ -2091,8 +2091,7 @@ LAB_004ae41c:
     }
     else if (param_4 == 0x4d) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1971_0x9e2;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_10 = (int *)&g_packedRecords_A62x8[param_5].field1971_0x9e2;
+      auto param_10_after_write = (int *)&g_packedRecords_A62x8[param_5].field1971_0x9e2; /* compiler stack-slot lifetime split */
       if (pDVar12 != nullptr) {
         iVar11 = DAT_00795118 / 0xc9;
         uVar19 = 0;
@@ -2108,14 +2107,14 @@ LAB_004ae41c:
                 (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
             goto cf_break_loop_004AEC96;
             uVar19 = uVar19 + 1;
-            pDVar12 = (DArrayTy *)*param_10;
+            pDVar12 = (DArrayTy *)*param_10_after_write;
           } while ((int)uVar19 < (int)pDVar12->count);
         }
       }
     }
     else if (param_4 == 0x43) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1974_0x9ee;
-      param_10 = (int *)&g_packedRecords_A62x8[param_5].field1974_0x9ee;
+      auto param_10_after_write_2 = (int *)&g_packedRecords_A62x8[param_5].field1974_0x9ee; /* compiler stack-slot lifetime split */
       if (pDVar12 != nullptr) {
         iVar11 = DAT_007950f0 / 0xc9;
         uVar19 = 0;
@@ -2131,14 +2130,14 @@ LAB_004ae41c:
                 (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
             goto cf_break_loop_004AEC96;
             uVar19 = uVar19 + 1;
-            pDVar12 = (DArrayTy *)*param_10;
+            pDVar12 = (DArrayTy *)*param_10_after_write_2;
           } while ((int)uVar19 < (int)pDVar12->count);
         }
       }
     }
     else if (param_4 == 0x73) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1975_0x9f2;
-      param_10 = (int *)&g_packedRecords_A62x8[param_5].field1975_0x9f2;
+      auto param_10_after_write_3 = (int *)&g_packedRecords_A62x8[param_5].field1975_0x9f2; /* compiler stack-slot lifetime split */
       if (pDVar12 != nullptr) {
         iVar11 = DAT_007951b0 / 0xc9;
         uVar19 = 0;
@@ -2154,13 +2153,14 @@ LAB_004ae41c:
                 (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
             goto cf_break_loop_004AEC96;
             uVar19 = uVar19 + 1;
-            pDVar12 = (DArrayTy *)*param_10;
+            pDVar12 = (DArrayTy *)*param_10_after_write_3;
           } while ((int)uVar19 < (int)pDVar12->count);
         }
       }
     }
     else if (param_4 == 0x65) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1972_0x9e6;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_10 = (int *)&g_packedRecords_A62x8[param_5].field1972_0x9e6;
       if (pDVar12 != nullptr) {
         iVar11 = DAT_00795178 / 0xc9;
@@ -2382,7 +2382,7 @@ LAB_004af1d5:
               if (((uint)local_10->field_0024 < 8) &&
                  ((g_playSystem_00802A38 == nullptr ||
                   (g_bulkInitializedRecords_008087C7[local_10->field_0024].field_0022 < 8)))) {
-                bVar2 = *(byte *)&local_10->field_0024;
+                bVar2 = (byte)local_10->field_0024;
                 if (g_app_00806728->field_146F == '\0') {
                   if (bVar2 == (byte)param_1) {
 LAB_004af2f0:

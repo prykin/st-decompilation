@@ -1,3 +1,2 @@
 function_address	target	status	detail
-004028BA	return:EAX:4	disabled	apply=0
-0042B620	return:EAX:4	disabled	apply=0
+0042E210	parameter:Stack[0x10]:4	disabled	apply=0

@@ -37,8 +37,8 @@ CGenerate::sub_00698CA0
         uVar3 = uVar3 - 1;
         *param_6 = 1;
       }
-      *param_5 = (int)(short)iVar1;
-      iVar2 = (int)(short)iVar1 - uVar3;
+      *param_5 = (short)iVar1;
+      iVar2 = (short)iVar1 - uVar3;
       *param_4 = iVar2;
       if (param_3 == *param_5) {
         return 4;

@@ -10,9 +10,11 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
@@ -33,6 +35,7 @@ import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.Listing;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.lang.Register;
 import ghidra.program.model.mem.Memory;
 import ghidra.program.model.mem.MemoryAccessException;
 import ghidra.program.model.mem.MemoryBlock;
@@ -715,9 +718,11 @@ public class STVTableAnalyzer extends GhidraScript {
 
     /**
      * A recovered object factory can install the primary table through a callee-saved
-     * allocation-result register rather than ECX.  Accept the store only when the same
-     * base register is copied intact into EAX and reaches a straight-line RET.  Calls,
-     * branches, or a clobber of either register reject the anchor.
+     * allocation-result register rather than ECX.  Follow every CFG path after the store:
+     * calls may clobber volatile registers but preserve EBX/ESI/EDI, and every reachable
+     * return must receive the still-unadjusted object in EAX.  This closes the common MSVC
+     * factory shape which initializes an object through several calls before returning it,
+     * without accepting a name, allocation address, or one lucky straight-line path as proof.
      */
     private Long factoryReturnedStoreOffset(Function function, Instruction target) {
         // The exact registry/allocator analysis tags factories before their concrete return
@@ -731,34 +736,72 @@ public class STVTableAnalyzer extends GhidraScript {
             memoryOperand(targetOperands[0]);
         if (destination == null) return null;
         String objectRegister = destination.register;
-        boolean copiedToAccumulator = "EAX".equals(objectRegister);
-        boolean afterTarget = false;
-        ghidra.program.model.listing.InstructionIterator iterator =
-            listing.getInstructions(function.getBody(), true);
-        while (iterator.hasNext()) {
-            Instruction instruction = iterator.next();
-            if (!afterTarget) {
-                afterTarget = instruction.getAddress().equals(target.getAddress());
-                continue;
-            }
+        if (!Set.of("EBX", "ESI", "EDI").contains(objectRegister)) return null;
+        Address start = target.getFallThrough();
+        if (start == null || !function.getBody().contains(start)) return null;
+
+        ArrayDeque<FactoryState> pending = new ArrayDeque<>();
+        Set<FactoryState> visited = new HashSet<>();
+        pending.add(new FactoryState(start, true, false));
+        int returns = 0;
+        while (!pending.isEmpty()) {
+            FactoryState state = pending.removeFirst();
+            if (visited.size() > 65536) return null;
+            if (!visited.add(state)) continue;
+            Instruction instruction = listing.getInstructionAt(state.address);
+            if (instruction == null || !function.getBody().contains(state.address)) return null;
             String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
             String[] operands = splitOperands(instruction.toString());
-            if (instruction.getFlowType().isJump() || "CALL".equals(mnemonic)) return null;
-            if ("RET".equals(mnemonic))
-                return copiedToAccumulator ? destination.displacement : null;
-            if (operands.length == 0) continue;
-            String written = fullRegister(operands[0]);
-            if ("MOV".equals(mnemonic) && operands.length >= 2 &&
-                    "EAX".equals(written) &&
-                    objectRegister.equals(fullRegister(operands[1]))) {
-                copiedToAccumulator = true;
+            boolean objectLive = state.objectLive;
+            boolean eaxObject = state.eaxObject;
+
+            if (mnemonic.startsWith("RET")) {
+                if (!eaxObject) return null;
+                returns++;
                 continue;
             }
-            if (!copiedToAccumulator && objectRegister.equals(written) ||
-                    copiedToAccumulator && "EAX".equals(written))
+            if (instruction.getFlowType().isTerminal() && !instruction.getFlowType().isCall())
                 return null;
+
+            String written = operands.length == 0 ? null : fullRegister(operands[0]);
+            boolean copied = objectLive && "MOV".equals(mnemonic) &&
+                operands.length >= 2 && "EAX".equals(written) &&
+                objectRegister.equals(fullRegister(operands[1]));
+            if (copied) eaxObject = true;
+            else {
+                if (writesFullRegister(instruction, objectRegister)) objectLive = false;
+                if (writesAccumulator(instruction)) eaxObject = false;
+            }
+            if (instruction.getFlowType().isCall()) eaxObject = false;
+
+            List<Address> successors = new ArrayList<>();
+            Address fallThrough = instruction.getFallThrough();
+            if (fallThrough != null && function.getBody().contains(fallThrough))
+                successors.add(fallThrough);
+            if (instruction.getFlowType().isJump()) {
+                for (Address flow : instruction.getFlows())
+                    if (function.getBody().contains(flow) && !successors.contains(flow))
+                        successors.add(flow);
+            }
+            if (successors.isEmpty()) return null;
+            for (Address successor : successors)
+                pending.addLast(new FactoryState(successor, objectLive, eaxObject));
         }
-        return null;
+        return returns == 0 ? null : destination.displacement;
+    }
+
+    private boolean writesFullRegister(Instruction instruction, String name) {
+        for (Object value : instruction.getResultObjects())
+            if (value instanceof Register register && register.getMinimumByteSize() >= 4 &&
+                    name.equals(register.getName().toUpperCase(Locale.ROOT))) return true;
+        return false;
+    }
+
+    private boolean writesAccumulator(Instruction instruction) {
+        for (Object value : instruction.getResultObjects())
+            if (value instanceof Register register && Set.of("EAX", "AX", "AL", "AH")
+                    .contains(register.getName().toUpperCase(Locale.ROOT))) return true;
+        return false;
     }
 
     private void updateThisAliases(String mnemonic, String[] operands,
@@ -1059,6 +1102,9 @@ public class STVTableAnalyzer extends GhidraScript {
                 .collect(java.util.stream.Collectors.joining(" | "));
         }
     }
+
+    private record FactoryState(Address address, boolean objectLive,
+        boolean eaxObject) { }
     private static class CodeReference {
         final Address address;
         final Function function;

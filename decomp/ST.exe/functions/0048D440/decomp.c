@@ -34,14 +34,14 @@ int __fastcall FUN_0048d440(STBoatC *param_1)
   int iVar1;
   int iVar2;
 
-  this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_0030);
+  this = thunk_FUN_0042b760((char)param_1->field_0024,param_1->field_0030);
   if (param_1->field_04A1 == -1) {
-    if (param_1->field_04AB != -1) {
+    if (param_1->field_04AB != (HoloTy *)0xffffffff) {
       return (param_1->field_07DA + param_1->field_07D6 + param_1->field_07D2 < 1) - 1 & 7;
     }
     return 0;
   }
-  if (param_1->field_04AB == -1) {
+  if (param_1->field_04AB == (HoloTy *)0xffffffff) {
     return (uint)(param_1->field_07DA + param_1->field_07D6 + param_1->field_07D2 < 0x28);
   }
   iVar1 = thunk_FUN_0040bc90(this,(uint)(ushort)param_1->field_0032,

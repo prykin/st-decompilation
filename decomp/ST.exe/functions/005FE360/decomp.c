@@ -22,9 +22,9 @@ FUN_005fe360(short *param_1,int param_2,int param_3,short param_4,int param_5,sh
   param_1[8] = param_7;
   *param_1 = (short)param_2;
   param_1[1] = (short)param_3;
-  *(int *)(param_1 + 0xc) = (int)(short)param_5 - (int)(short)param_2;
+  *(int *)(param_1 + 0xc) = (short)param_5 - (short)param_2;
   param_1[6] = (short)param_5;
-  *(int *)(param_1 + 0xe) = (int)param_6 - (int)(short)param_3;
+  *(int *)(param_1 + 0xe) = (int)param_6 - (short)param_3;
   iVar2 = FUN_006aced8(param_2,param_3,param_5,_param_6);
   *(int *)(param_1 + 0x10) = iVar2;
   param_1[0x12] = 0x11;

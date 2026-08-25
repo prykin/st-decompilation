@@ -49,7 +49,7 @@ st::fn_005BD4B0
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar3 = st::fn_006B4FE0(*(ushort **)(local_c + 0x5d));
       local_8 = (RecoveredRecord_MReportTy_005BD4B0 *)
-                st::fn_006B50C0(param_6,param_7,(uint)*(ushort *)(*(int *)(iVar3 + 0x5d) + 0xe),uVar3,
+                st::fn_006B50C0(param_6,param_7,(uint)*(ushort *)(STField<int>(iVar3,0x5D) + 0xe),uVar3,
                              (undefined4 *)puVar9,iVar10);
       uVar8 = local_8->field_0014;
       if (uVar8 == 0) {
@@ -2457,9 +2457,8 @@ switchD_005c1b14_caseD_5:
             local_10->field_0031 = 0;
             local_10->field_0033 = 3;
             local_10->field_0035 = st::machine_word_boundary_cast<undefined4>(piVar19);
-            /* ST_CALLSITE[005C1C06]: CALL dword ptr [EAX] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x1d);
+            /* ST_CALLSITE[005C1C06]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+            g_cursorClass_00802A30->GetMessage((STMessage *)&local_10->field_0x1d);
           }
           this_00->field_044F = st::machine_word_boundary_cast<undefined4>(piVar21);
           if (piVar21 != nullptr) {
@@ -2467,9 +2466,8 @@ switchD_005c1b14_caseD_5:
             this_00->field_0031 = 0;
             this_00->field_0033 = 3;
             this_00->field_0035 = st::machine_word_boundary_cast<undefined4>(piVar21);
-            /* ST_CALLSITE[005C1C36]: CALL dword ptr [EAX] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x1d);
+            /* ST_CALLSITE[005C1C36]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+            g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x1d);
           }
         }
       }

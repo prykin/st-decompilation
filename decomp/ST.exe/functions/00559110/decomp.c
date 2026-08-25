@@ -79,11 +79,10 @@ VisibleClassTy::sub_00559110
           auto param_2_after_write = pbVar7; /* compiler stack-slot lifetime split */
           if (0 < iVar9) {
             do {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_7 = 0;
+              auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
               do {
-                if (param_2_after_write[param_7] != '\0') {
-                  iVar10 = param_7 + param_4_after_write;
+                if (param_2_after_write[param_7_after_write] != '\0') {
+                  iVar10 = param_7_after_write + param_4_after_write;
                   iVar11 = param_5_after_write + param_6_after_write;
                   if (((-1 < iVar10) && (uVar5 = this->field_0030, iVar10 < (int)uVar5)) &&
                      ((-1 < iVar11 &&
@@ -99,8 +98,8 @@ VisibleClassTy::sub_00559110
                     }
                   }
                 }
-                param_7 = param_7 + 1;
-              } while ((int)param_7 < iVar9);
+                param_7_after_write = param_7_after_write + 1;
+              } while ((int)param_7_after_write < iVar9);
               param_5_after_write = param_5_after_write + 1;
               param_2_after_write = param_2_after_write + iVar9;
             } while (param_5_after_write < iVar9);
@@ -111,9 +110,9 @@ VisibleClassTy::sub_00559110
               param_5_after_write = 0;
               if (0 < iVar8) {
                 do {
-                  param_7 = 0;
+                  auto param_7_after_write_2 = 0; /* compiler stack-slot lifetime split */
                   do {
-                    iVar9 = param_7 + param_4_after_write;
+                    iVar9 = param_7_after_write_2 + param_4_after_write;
                     iVar10 = param_5_after_write + param_6_after_write;
                     if ((((-1 < iVar9) && (uVar5 = this->field_0030, iVar9 < (int)uVar5)) &&
                         (-1 < iVar10)) &&
@@ -122,8 +121,8 @@ VisibleClassTy::sub_00559110
                         (this->field_0050[iVar11] != 0)))) {
                       thunk_FUN_00553990(iVar9,iVar10,this->field_004C,uVar5,this->field_0034);
                     }
-                    param_7 = param_7 + 1;
-                  } while ((int)param_7 < iVar8);
+                    param_7_after_write_2 = param_7_after_write_2 + 1;
+                  } while ((int)param_7_after_write_2 < iVar8);
                   param_5_after_write = param_5_after_write + 1;
                 } while (param_5_after_write < iVar8);
               }

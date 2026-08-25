@@ -35,7 +35,8 @@ LAB_005ec703:
 005EC709  8D 55 DC                  LEA EDX,[EBP + -0x24]
 005EC70C  52                        PUSH EDX
 005EC70D  8B 01                     MOV EAX,dword ptr [ECX]
-005EC70F  FF 10                     CALL dword ptr [EAX]
+FUN_005ec6a0::override::prt_5ec70f_89729ca9:
+005EC70F  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_005ec711:
 005EC711  8B E5                     MOV ESP,EBP
 005EC713  5D                        POP EBP

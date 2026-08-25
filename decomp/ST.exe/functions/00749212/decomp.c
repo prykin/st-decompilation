@@ -31,7 +31,7 @@ LAB_0074924d:
       *(int *)(param_1 + 0x28) = *(int *)(param_1 + 0x28) + 1;
     }
     else {
-      uVar2 = *(undefined4 *)(iVar1 + 0x1c);
+      uVar2 = STField<undefined4>(iVar1,0x1C);
       *(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + -1;
       *(undefined4 *)(param_1 + 0x1c) = uVar2;
       if (iVar1 == 0) goto LAB_0074924d;
@@ -39,7 +39,7 @@ LAB_0074924d:
     /* ST_CALLSITE[00749251]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(lpCriticalSection);
     if (iVar1 != 0) {
-      *(undefined4 *)(iVar1 + 0x44) = 1;
+      STField<undefined4>(iVar1,0x44) = 1;
       *param_2 = iVar1;
       return 0;
     }

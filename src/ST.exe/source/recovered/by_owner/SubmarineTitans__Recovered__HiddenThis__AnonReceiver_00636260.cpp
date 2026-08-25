@@ -77,8 +77,8 @@ LAB_006362c5:
           uVar5 = param_1_after_write;
           do {
             iVar2 = *(int *)&this->field_0x2c;
-            if (uVar5 < *(uint *)(iVar2 + 0xc)) {
-              piVar3 = (int *)(*(int *)(iVar2 + 8) * uVar5 + *(int *)(iVar2 + 0x1c));
+            if (uVar5 < STField<uint>(iVar2,0xC)) {
+              piVar3 = (int *)(STField<int>(iVar2,0x8) * uVar5 + STField<int>(iVar2,0x1C));
             }
             else {
               piVar3 = nullptr;
@@ -175,7 +175,7 @@ st::fn_00636FC0
     if (local_10 < 0) {
       return local_8;
     }
-    if ((int)pVVar3->field_0030 <= local_10) {
+    if (pVVar3->field_0030 <= local_10) {
       return local_8;
     }
     local_14 = g_centeredOffsets5[local_c] + local_14;

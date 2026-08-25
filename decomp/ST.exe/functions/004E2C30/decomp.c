@@ -73,7 +73,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
     local_60.arg1.words.low = (word)param_1;
     uVar6 = thunk_FUN_004e60d0((int)pbVar1,param_1);
     local_60.arg1.words.high = (word)uVar6;
-    /* ST_CALLSITE[004E2D46]: CALL dword ptr [EAX] */
+    /* ST_CALLSITE[004E2D46]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_60);
     pSVar11 = &local_60;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -101,7 +101,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
           local_60.arg1.words.low = (word)uVar2;
           uVar6 = thunk_FUN_004e60d0((int)this->field_0024,uVar2);
           local_60.arg1.words.high = (short)uVar6 + 1;
-          /* ST_CALLSITE[004E2E4D]: CALL dword ptr [EAX] */
+          /* ST_CALLSITE[004E2E4D]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
           g_aiBossClass_008117BC->GetMessage(&local_60);
         }
       }
@@ -183,7 +183,7 @@ LAB_004e2f8d:
     }
   }
   /* ST_CALLSITE[004E2FA4]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-  local_EAX_884 = LookupRecordByte(*(char *)&this->field_023D);
+  local_EAX_884 = LookupRecordByte((char)this->field_023D);
   local_EAX_884 = (int)(byte)local_EAX_884;
   if (local_EAX_884 == 1) {
     pTVar7 = this->vtable;

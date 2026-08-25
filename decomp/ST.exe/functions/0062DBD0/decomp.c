@@ -18,14 +18,14 @@ uint __thiscall FUN_0062dbd0(void *this,int param_1,int param_2)
   if (iVar3 == 0) {
     return 0xffffffff;
   }
-  iVar3 = *(int *)(iVar3 + 0xc);
+  iVar3 = STField<int>(iVar3,0xC);
   uVar4 = 0;
   if (0 < iVar3) {
     do {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar1 = *(int *)((int)this + param_1 * 4 + 0x50);
-      if (((uVar4 < *(uint *)(iVar1 + 0xc)) &&
-          (piVar2 = (int *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c)),
+      if (((uVar4 < STField<uint>(iVar1,0xC)) &&
+          (piVar2 = (int *)(STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C)),
           piVar2 != nullptr)) && (*piVar2 == param_2)) {
         piVar2 = piVar2 + 4;
         local_c = 3;
@@ -46,18 +46,18 @@ uint __thiscall FUN_0062dbd0(void *this,int param_1,int param_2)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((-1 < (int)local_8) && (iVar3 = *(int *)((int)this + param_1 * 4 + 0x70), iVar3 != 0)) {
       uVar4 = 0;
-      if (0 < *(int *)(iVar3 + 0xc)) {
-        bVar5 = *(int *)(iVar3 + 0xc) != 0;
+      if (0 < STField<int>(iVar3,0xC)) {
+        bVar5 = STField<int>(iVar3,0xC) != 0;
         do {
-          if (((bVar5) && (iVar3 = *(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c), iVar3 != 0)
-              ) && ((int)local_8 < *(int *)(iVar3 + 4))) {
-            *(int *)(iVar3 + 4) = *(int *)(iVar3 + 4) + -1;
+          if (((bVar5) && (iVar3 = STField<int>(iVar3,0x8) * uVar4 + STField<int>(iVar3,0x1C), iVar3 != 0)
+              ) && ((int)local_8 < STField<int>(iVar3,0x4))) {
+            STField<int>(iVar3,0x4) = STField<int>(iVar3,0x4) + -1;
           }
           uVar4 = uVar4 + 1;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar3 = *(int *)((int)this + param_1 * 4 + 0x70);
-          bVar5 = uVar4 < *(uint *)(iVar3 + 0xc);
-        } while ((int)uVar4 < (int)*(uint *)(iVar3 + 0xc));
+          bVar5 = uVar4 < STField<uint>(iVar3,0xC);
+        } while ((int)uVar4 < (int)STField<uint>(iVar3,0xC));
       }
     }
   }

@@ -125,9 +125,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   int *piVar24;
   int iVar25;
   uint uVar26;
-  uint *puVar27;
-  short *psVar28;
-  uint uVar29;
+  short *psVar27;
+  uint uVar28;
   InternalExceptionFrame local_78;
   int local_34;
   int local_30;
@@ -715,13 +714,13 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     this_00->field_02ED = 1;
     this_00->field_02F2 = this_00->field_0038;
     local_8 = (int *)&this_00->field_0xc87;
-    puVar6 = &this_00->field_0D53;
+    piVar24 = &this_00->field_0D53;
     puVar15 = &this_00->field_0D47;
     local_10 = (AnonShape_00710790_4CBB90D4 *)0x2;
     do {
       local_14 = 6;
       do {
-        puVar27 = nullptr;
+        puVar6 = nullptr;
         iVar23 = 0;
         iVar4 = 1;
         bVar2 = 0;
@@ -729,14 +728,14 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
         pcVar12 = (char *)thunk_FUN_004f1d20((undefined1 *)local_8);
         local_EAX_4218 =
              Library::Ourlib::MFRLOAD::mfRLoad
-                       (PTR_00806794,CASE_1F,pcVar12,uVar14,bVar2,iVar4,iVar23,puVar27);
-        puVar6[-0x12] = local_EAX_4218;
+                       (PTR_00806794,CASE_1F,pcVar12,uVar14,bVar2,iVar4,iVar23,puVar6);
+        piVar24[-0x12] = (int)local_EAX_4218;
         puVar15[-0xc] = 0;
         *puVar15 = 1;
         local_8 = (int *)((int)local_8 + 0xb);
-        *puVar6 = this_00->field_0038;
-        puVar6[0xc] = 0;
-        puVar6 = puVar6 + 1;
+        *piVar24 = this_00->field_0038;
+        piVar24[0xc] = 0;
+        piVar24 = piVar24 + 1;
         puVar15 = puVar15 + 1;
         local_14 = local_14 + -1;
       } while (local_14 != 0);
@@ -868,13 +867,13 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
               ((int *)g_ddxContext_008075A8,*puVar6,0xffffffff,this_00->field_010C,
                this_00->field_0110);
     FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar6);
-    psVar28 = (short *)0x1;
+    psVar27 = (short *)0x1;
     bVar22 = 0;
     bVar2 = 6;
     local_EAX_5284 = thunk_FUN_00526100(nullptr,0);
-    psVar28 = Library::Ourlib::MFIMG::mfQmtLoad
-                        (g_cMf32_00806790,local_EAX_5284,bVar2,bVar22,psVar28);
-    this_00->field_025B = psVar28;
+    psVar27 = Library::Ourlib::MFIMG::mfQmtLoad
+                        (g_cMf32_00806790,local_EAX_5284,bVar2,bVar22,psVar27);
+    this_00->field_025B = psVar27;
     this_00->field_025F = 0;
     this_00->field_0260 = 2;
     this_00->field_0261 = this_00->field_0038;
@@ -901,7 +900,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     }
     /* ST_CALLSITE[004F6BC6]: CALL 0x0040135c; direct=0040135C CPanelTy::sub_00501A10 */
     sub_00501A10(this_00);
-    uVar29 = 0;
+    uVar28 = 0;
     uVar26 = 0;
     *(uint *)&this_00->field_0x2c = (uint)(DAT_00807327 & 2 | 1);
     iVar23 = 0;
@@ -918,9 +917,9 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     /* ST_CALLSITE[004F6C51]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
     uVar14 = CreateBut(this_00,4,3,*(int *)&this_00->field_0x2c,local_34 - this_00->field_004C,
                        local_30 - this_00->field_00A4,6,pCVar8,uVar18,uVar19,sVar20,uVar21,iVar4,
-                       pcVar12,iVar23,uVar26,uVar29);
+                       pcVar12,iVar23,uVar26,uVar28);
     this_00->field_09A4[0] = uVar14;
-    uVar29 = 0;
+    uVar28 = 0;
     uVar26 = 0;
     *(uint *)&this_00->field_0x2c = (uint)(byte)((DAT_00807327 & 4 | 2) >> 1);
     iVar23 = 0;
@@ -935,8 +934,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     /* ST_CALLSITE[004F6CD2]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
     uVar14 = CreateBut(this_00,4,3,*(int *)&this_00->field_0x2c,local_34 - this_00->field_004C,
                        local_30 - this_00->field_00A4,6,pCVar8,uVar18,uVar19,sVar20,uVar21,iVar4,
-                       pcVar12,iVar23,uVar26,uVar29);
-    uVar29 = 0;
+                       pcVar12,iVar23,uVar26,uVar28);
+    uVar28 = 0;
     uVar26 = 0;
     iVar23 = 0;
     pcVar12 = "BUT_MMAPZIN";
@@ -949,8 +948,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     pCVar8 = thunk_FUN_00571240("BUT_MAPZIN",0);
     /* ST_CALLSITE[004F6D27]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
     uVar14 = CreateBut(this_00,4,1,1,(DAT_0080874e == '\x03') + 0x58,0x6d,6,pCVar8,uVar18,uVar19,
-                       sVar20,uVar21,iVar4,pcVar12,iVar23,uVar26,uVar29);
-    uVar29 = 0;
+                       sVar20,uVar21,iVar4,pcVar12,iVar23,uVar26,uVar28);
+    uVar28 = 0;
     uVar26 = 0;
     iVar23 = 0;
     pcVar12 = "BUT_MMAPZOUT";
@@ -963,8 +962,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     pCVar8 = thunk_FUN_00571240("BUT_MAPZOUT",0);
     /* ST_CALLSITE[004F6D81]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
     uVar14 = CreateBut(this_00,4,1,1,(DAT_0080874e == '\x03') + 0x5d,0x84,6,pCVar8,uVar18,uVar19,
-                       sVar20,uVar21,iVar4,pcVar12,iVar23,uVar26,uVar29);
-    uVar29 = 0;
+                       sVar20,uVar21,iVar4,pcVar12,iVar23,uVar26,uVar28);
+    uVar28 = 0;
     uVar26 = 0;
     iVar23 = 0;
     pcVar12 = "BUT_MMAPTLFT";
@@ -977,8 +976,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     pCVar8 = thunk_FUN_00571240("BUT_MAPTLFT",0);
     /* ST_CALLSITE[004F6DDB]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
     uVar14 = CreateBut(this_00,4,1,1,(DAT_0080874e == '\x03') + 0xd,0x84,6,pCVar8,uVar18,uVar19,
-                       sVar20,uVar21,iVar4,pcVar12,iVar23,uVar26,uVar29);
-    uVar29 = 0;
+                       sVar20,uVar21,iVar4,pcVar12,iVar23,uVar26,uVar28);
+    uVar28 = 0;
     uVar26 = 0;
     iVar23 = 0;
     pcVar12 = "BUT_MMAPTRT";
@@ -991,8 +990,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     pCVar8 = thunk_FUN_00571240("BUT_MAPTRT",0);
     /* ST_CALLSITE[004F6E32]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
     uVar14 = CreateBut(this_00,4,1,1,(DAT_0080874e == '\x03') + 0x1c,0x6d,6,pCVar8,uVar18,uVar19,
-                       sVar20,uVar21,iVar4,pcVar12,iVar23,uVar26,uVar29);
-    uVar29 = 0;
+                       sVar20,uVar21,iVar4,pcVar12,iVar23,uVar26,uVar28);
+    uVar28 = 0;
     uVar26 = 0;
     iVar23 = 0;
     pcVar12 = "BUT_MMAPDIR";
@@ -1005,11 +1004,11 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     pCVar8 = thunk_FUN_00571240("BUT_MAPDIR",0);
     /* ST_CALLSITE[004F6E87]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
     uVar14 = CreateBut(this_00,4,3,(DAT_00807327 & 8 | 4) >> 2,6,0x20,6,pCVar8,uVar18,uVar19,sVar20,
-                       uVar21,iVar4,pcVar12,iVar23,uVar26,uVar29);
+                       uVar21,iVar4,pcVar12,iVar23,uVar26,uVar28);
     this_00->field_09A4[6] = uVar14;
     *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_0BAE;
     local_34 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffd) + 4 + this_00->field_004C;
-    uVar29 = 0;
+    uVar28 = 0;
     uVar26 = 0;
     iVar23 = 0;
     pcVar12 = nullptr;
@@ -1024,9 +1023,9 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     /* ST_CALLSITE[004F6F25]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
     uVar14 = CreateBut(this_00,4,3,(uint)(byte)this_00->field_0BAE,local_34 - this_00->field_004C,
                        local_30 - this_00->field_00A4,1,pCVar8,uVar18,uVar19,sVar20,uVar21,iVar4,
-                       pcVar12,iVar23,uVar26,uVar29);
+                       pcVar12,iVar23,uVar26,uVar28);
     this_00->field_09C0[0] = uVar14;
-    uVar29 = 0;
+    uVar28 = 0;
     *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_0C0A;
     uVar26 = 0;
     iVar23 = 0;
@@ -1043,7 +1042,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     /* ST_CALLSITE[004F6FC6]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
     uVar14 = CreateBut(this_00,4,3,(uint)(byte)this_00->field_0C0A,local_34 - this_00->field_004C,
                        local_30 - this_00->field_00A4,1,pCVar8,uVar18,uVar19,sVar20,uVar21,iVar4,
-                       pcVar12,iVar23,uVar26,uVar29);
+                       pcVar12,iVar23,uVar26,uVar28);
     this_00->field_09C0[1] = uVar14;
     if (DAT_0080874e == '\x03') {
       /* ST_CALLSITE[004F6FDE]: CALL 0x00403602; direct=00403602 CPanelTy::SetControlObjSI */
@@ -1077,7 +1076,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       this_00->field_0028 = 0x5dc6;
       *(undefined **)&this_00->field_0x2c = &DAT_0080c4d7;
       if (g_aiBossClass_008117BC != nullptr) {
-        /* ST_CALLSITE[004F70EB]: CALL dword ptr [EAX] */
+        /* ST_CALLSITE[004F70EB]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
         g_aiBossClass_008117BC->GetMessage((STMessage *)puVar15);
       }
       DAT_0080c4f9 = '\0';

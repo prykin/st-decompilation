@@ -39,7 +39,8 @@ TLOBaseTy::sub_004E3120:
 004E31A5  8D 45 E0                  LEA EAX,[EBP + -0x20]
 004E31A8  8B 11                     MOV EDX,dword ptr [ECX]
 004E31AA  50                        PUSH EAX
-004E31AB  FF 12                     CALL dword ptr [EDX]
+TLOBaseTy::sub_004E3120::override::prt_4e31ab_89729ca9:
+004E31AB  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 004E31AD  5F                        POP EDI
 LAB_004e31ae:
 004E31AE  6A 01                     PUSH 0x1

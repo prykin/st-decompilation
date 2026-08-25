@@ -33,7 +33,7 @@ uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ushort
   if (0 < (int)uVar4) {
     uVar4 = Library::DKW::FMM::FUN_006d4c50
                       ((AnonNested_00757670_0008_104EC36D *)param_1->field_0008,uVar4,
-                       (int)(short)param_1->field_0008->field_0016);
+                       (short)param_1->field_0008->field_0016);
     if (uVar4 == 0) {
       pAVar2 = param_1->field_0008;
       iVar3 = param_1->field_000C->field_0024;

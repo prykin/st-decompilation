@@ -235,9 +235,9 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
       if (((this->field_005B != local_6) || (this->field_005D != local_8)) ||
          (this->field_005F != STPiece<2,2>(param_1))) {
         if (iVar11 == -1) {
-          iVar5 = (int)(short)local_10;
-          iVar11 = (int)(short)local_14;
-          iVar22 = (int)(short)local_18;
+          iVar5 = (short)local_10;
+          iVar11 = (short)local_14;
+          iVar22 = (short)local_18;
         }
         else {
           iVar5 = (int)STPiece<2,2>(param_1);
@@ -316,9 +316,9 @@ cf_common_exit_004743A5:
          (this->field_005F != STPiece<2,2>(param_1))) {
         this->field_0596 = CASE_0;
         if (iVar11 == -1) {
-          iVar5 = (int)(short)local_10;
-          iVar11 = (int)(short)local_14;
-          iVar22 = (int)(short)local_18;
+          iVar5 = (short)local_10;
+          iVar11 = (short)local_14;
+          iVar22 = (short)local_18;
         }
         else {
           iVar5 = (int)STPiece<2,2>(param_1);
@@ -493,7 +493,7 @@ cf_common_exit_0047405D:
             this->field_001C = local_30;
             sVar16 = 0;
             lVar15 = Library::MSVCRT::__ftol();
-            iVar11 = (int)(short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+            iVar11 = (short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                      (int)local_34;
             iVar5 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
             uVar8 = local_30;
@@ -521,7 +521,7 @@ cf_common_exit_0047405D:
           /* ST_CALLSITE[00473DD5]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
           TraksClassTy::TraksCreate
                     (g_traksClass_00802A7C,1,2,7,
-                     (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_38,
+                     (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 + (short)local_38,
                      iVar5 + -3,iVar11,sVar16,sVar17,sVar18,sVar19,sVar20,sVar21,iVar22,sVar23,
                      bVar24);
           uVar8 = (uint)(byte)this->field_02BF;
@@ -656,7 +656,7 @@ switchD_004734db_caseD_2:
             sVar16 = 0;
             this->field_001C = local_30;
             lVar15 = Library::MSVCRT::__ftol();
-            iVar11 = (int)(short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+            iVar11 = (short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                      (int)local_34;
             iVar5 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_38);
             uVar8 = local_30;
@@ -684,7 +684,7 @@ switchD_004734db_caseD_2:
           /* ST_CALLSITE[004742B6]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
           TraksClassTy::TraksCreate
                     (g_traksClass_00802A7C,1,2,7,
-                     (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_38,
+                     (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 + (short)local_38,
                      iVar5 + -3,iVar11,sVar16,sVar17,sVar18,sVar19,sVar20,sVar21,iVar22,sVar23,
                      bVar24);
           local_1c = local_1c + 1;

@@ -206,7 +206,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     if (DAT_008067a0 != '\0') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar9 = *(int *)(this_02->array_00BC[0xc].field_01DB + 0x686);
-      if (*(int *)(iVar9 + 8) < 1) {
+      if (STField<int>(iVar9,0x8) < 1) {
         pcVar12 = nullptr;
       }
       else {
@@ -217,7 +217,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       if (CONCAT31(extraout_var,bVar6) != 0) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar9 = *(int *)(this_02->array_00BC[0xc].field_01DB + 0x686);
-        if (*(int *)(iVar9 + 8) < 1) {
+        if (STField<int>(iVar9,0x8) < 1) {
           /* ST_CALLSITE[005EAA5F]: CALL dword ptr [0x0085c064] */
           CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,nullptr);
         }
@@ -288,10 +288,10 @@ LAB_005eab28:
             (*(DArrayTy **)(this_02->array_00BC[0xc].field_01DB + 0x686),0,&CHAR_00h_008016a0);
   iVar9 = this_02->array_00BC[0xc].field_01DB;
   this_02->field_002D = 0x33;
-  uVar4 = *(undefined4 *)(iVar9 + 0x686);
+  uVar4 = STField<undefined4>(iVar9,0x686);
   this_02->field_0031 = (short)uVar4;
   this_02->field_0033 = (short)((uint)uVar4 >> 0x10);
-  FUN_006e6080(this_02,2,*(undefined4 *)(iVar9 + 0x54c),(undefined4 *)&this_02->field_0x1d);
+  FUN_006e6080(this_02,2,STField<undefined4>(iVar9,0x54C),(undefined4 *)&this_02->field_0x1d);
 cf_common_exit_005EAB6A:
   g_currentExceptionFrame = local_50.previous;
   /* ST_CALLSITE[005EAB76]: CALL 0x00401280; direct=00401280 MMObjTy::GetMessage */

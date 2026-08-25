@@ -1479,7 +1479,21 @@ trace to the function's exact auto-`this` value through only same-size neutral
 `COPY`, `CAST`, `INDIRECT`, or unanimous `MULTIEQUAL` p-code. At least one
 downstream access must then require an exact named member present in the method
 owner layout but absent from the local's shorter base-class view. The applier
-re-proves both origin and machine anchor after a fresh decompile. Pointer
+re-proves both origin and machine anchor after a fresh decompile. When Ghidra
+does not attach that SSA copy consistently, the exact entry-block
+`MOV [stack-local], ECX` before any call, branch, or ECX definition is an
+equivalent address-independent receiver-spill proof. The proposal is anchored
+to that machine instruction, not to a later call which merely consumes another
+register lifetime.
+
+The applier also migrates output produced by the retired symbol-less receiver
+anchor. A non-stack full-EAX local carrying the receiver type is repaired only
+when the old marker names the exact direct call address, an earlier marker at
+that same address agrees with the trusted callee/thunk return ABI, and the
+durable Listing local still has the exact register storage and script-owned
+baseline. This restores the call-result type and removes only the erroneous
+receiver marker; it is not an allow-list for a function, class, address, or
+local name. Pointer
 adjustments, synthetic SSA-only aliases, ambiguous origins, and unstable local
 attachments remain review-only. This is intentionally separate from method
 owner voting: it changes the view of a proven receiver value, not the owner of
@@ -2009,7 +2023,7 @@ a new conflict is what requires another iteration.
 | `STStackObjectAnalyzer/Applier` | Recover exact fixed EBP-relative zero-initialized local-storage extents and audit dynamic `alloca_probe` sites. Install only non-overlapping fixed byte arrays; retain intersecting lexical lifetimes for export-time byte-storage presentation instead of deleting an existing Listing local. |
 | `STStackOutputArrayAnalyzer/Applier` | Recover a fixed scalar stack array from repeated exact calls which pass the same EBP-relative root to the callee's final scalar-pointer parameter and from repeated count-tested, width-stepped consumer loops. Capacity comes from contiguous generic Listing storage up to the next distinct local. The applier replaces all baseline-matched overlaps atomically, preserves manual/imported locals, and never infers a semantic element name from geometry. |
 | `STDArrayElementAnalyzer/Applier` | Recover one packed element record and one ABI-compatible descriptor specialization per generated class `DArrayTy` field from exact factory element sizes, runtime-stride aliases, exact inline-record snapshots, typed consumer parameters, and conservative state/index/handle/coordinate roles; decompile candidates in parallel with a short normal budget and retry only timed-out large bodies with the longer budget; retain the monotonic union of fields independently proven on earlier passes so applied member rendering cannot erase its own raw-access evidence. |
-| `STLocalLifetimeAnalyzer/Applier` | Split compiler-reused decompiler locals at distinct merge groups, type single-group raw-undefined locals from exact call/copy evidence, propagate hash-intact recursive-node fields and persistent parameter/global types through exact same-size cast anchors, recover exact unadjusted `__thiscall` receiver spills whose downstream member access requires the owner layout, and recover scalar roles only from role-bearing p-code. Decompiler-only nominal locals cannot bootstrap ordinary `typed_copy` evidence; generated split names are deterministic and collision-free. Verify the exact machine anchor after a fresh decompile and converge only changed functions before the final broad confirmation. |
+| `STLocalLifetimeAnalyzer/Applier` | Split compiler-reused decompiler locals at distinct merge groups, type single-group raw-undefined locals from exact call/copy evidence, propagate hash-intact recursive-node fields and persistent parameter/global types through exact same-size cast anchors, recover exact unadjusted `__thiscall` receiver spills from current SSA or an entry `MOV [stack-local], ECX`, migrate retired symbol-less receiver markers only when a full-EAX local and trusted exact call return agree, and recover scalar roles only from role-bearing p-code. Decompiler-only nominal locals cannot bootstrap ordinary `typed_copy` evidence; generated split names are deterministic and collision-free. Verify the exact machine anchor after a fresh decompile and converge only changed functions before the final broad confirmation. |
 | `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods, use typed global-singleton values passed in ECX as owner evidence, and repair weak script-owned assignments to high-fanout shared helpers; it participates in the deep fixed point after global typing. |
 | `STHiddenThisAnalyzer/Applier` | Recover anonymous `__thiscall` receivers from ECX/RET/call-site evidence with neutral structural owners required by Ghidra. |
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |

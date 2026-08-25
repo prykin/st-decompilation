@@ -590,7 +590,8 @@ LAB_0052c547:
 0052C56E  8D 45 8C                  LEA EAX,[EBP + -0x74]
 0052C571  50                        PUSH EAX
 0052C572  8B 11                     MOV EDX,dword ptr [ECX]
-0052C574  FF 12                     CALL dword ptr [EDX]
+MoneyTy::GetMessage::override::prt_52c574_74f246b9:
+0052C574  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0052c576:
 0052C576  84 DB                     TEST BL,BL
 0052C578  88 5E 68                  MOV byte ptr [ESI + 0x68],BL
@@ -604,7 +605,8 @@ LAB_0052c576:
 0052C599  8D 45 8C                  LEA EAX,[EBP + -0x74]
 0052C59C  50                        PUSH EAX
 0052C59D  8B 11                     MOV EDX,dword ptr [ECX]
-0052C59F  FF 12                     CALL dword ptr [EDX]
+MoneyTy::GetMessage::override::prt_52c59f_74f246b9:
+0052C59F  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 0052C5A1  E9 7C 03 00 00            JMP 0x0052c922
 switchD_0052bf5c::caseD_5:
 0052C5A6  8B CE                     MOV ECX,ESI

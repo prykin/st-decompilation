@@ -29,13 +29,11 @@ FUN_00696eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,int pa
     iVar2 = thunk_FUN_006a1370(param_1,param_2,param_3,param_6,(int)&local_14);
     iVar3 = thunk_FUN_006a1370(param_1,param_4,param_5,param_6,(int)&local_1c);
     if (uStack_12 != 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      pbVar3 = (byte *)(*(int *)(local_8 + 0x5833) * param_3 + *(int *)(local_8 + 0x584b) + param_2);
+      pbVar3 = (byte *)(STField<int>(local_8,0x5833) * param_3 + STField<int>(local_8,0x584B) + param_2);
       *pbVar3 = *pbVar3 | '\x01' << ((byte)param_6 & 0x1f);
     }
     if (uStack_1a != 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      pbVar3 = (byte *)(*(int *)(local_8 + 0x5833) * param_5 + *(int *)(local_8 + 0x584b) + param_4);
+      pbVar3 = (byte *)(STField<int>(local_8,0x5833) * param_5 + STField<int>(local_8,0x584B) + param_4);
       *pbVar3 = *pbVar3 | '\x01' << ((byte)param_6 & 0x1f);
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

@@ -37,13 +37,13 @@ int __cdecl FUN_0058d480(int param_1,int param_2,int param_3,int param_4,int par
         return local_8;
       }
       iVar1 = (&PTR_0081171c->field_0000)[iVar2];
-    } while (((((int)*(short *)(iVar1 + 0x41) < iVar4 * 0xc9) ||
-              (iVar5 * 0xc9 < (int)*(short *)(iVar1 + 0x41))) ||
-             ((int)*(short *)(iVar1 + 0x43) < iVar6 * 0xc9)) ||
-            (iVar3 * 0xc9 < (int)*(short *)(iVar1 + 0x43)));
+    } while (((((int)STField<short>(iVar1,0x41) < iVar4 * 0xc9) ||
+              (iVar5 * 0xc9 < (int)STField<short>(iVar1,0x41))) ||
+             ((int)STField<short>(iVar1,0x43) < iVar6 * 0xc9)) ||
+            (iVar3 * 0xc9 < (int)STField<short>(iVar1,0x43)));
     if (param_5 == 1) break;
     if (param_5 != 0) goto LAB_0058d54d;
-    if ((*(int *)(iVar1 + 0x20) == 0x32) || (*(int *)(iVar1 + 0x20) == 0x8c)) {
+    if ((STField<int>(iVar1,0x20) == 0x32) || (STField<int>(iVar1,0x20) == 0x8c)) {
       /* ST_CALLSITE[0058D583]: CALL dword ptr [EAX + 0x18] */
       (*g_playSystem_00802A38->vtable->SendMessage)
                 ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,param_4);
@@ -51,7 +51,7 @@ LAB_0058d559:
       local_8 = local_8 + 1;
     }
   }
-  if ((*(int *)(iVar1 + 0x20) == 0x10e) || (*(int *)(iVar1 + 0x20) == 0x118)) {
+  if ((STField<int>(iVar1,0x20) == 0x10e) || (STField<int>(iVar1,0x20) == 0x118)) {
     /* ST_CALLSITE[0058D547]: CALL dword ptr [EDX + 0x18] */
     (*g_playSystem_00802A38->vtable->SendMessage)
               ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,param_4);

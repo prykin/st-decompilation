@@ -13,14 +13,14 @@ void FUN_006b13e0(int *param_1)
   int *piVar3;
 
   if ((param_1 != nullptr) && (iVar1 = *param_1, iVar1 != 0)) {
-    if ((*(uint *)(iVar1 + 8) & 0x4000000) != 0) {
+    if ((STField<uint>(iVar1,0x8) & 0x4000000) != 0) {
       /* ST_CALLSITE[006B1400]: CALL dword ptr [0x0085bb8c] */
       EnterCriticalSection((LPCRITICAL_SECTION)(iVar1 + 0x4f0));
     }
     iVar1 = *param_1;
-    if (*(int *)(iVar1 + 0x4b0) != 0) {
-      uVar2 = *(undefined4 *)(iVar1 + 0x40);
-      *(undefined4 *)(iVar1 + 0x40) = *(undefined4 *)(iVar1 + 0x44);
+    if (STField<int>(iVar1,0x4B0) != 0) {
+      uVar2 = STField<undefined4>(iVar1,0x40);
+      STField<undefined4>(iVar1,0x40) = STField<undefined4>(iVar1,0x44);
       *(undefined4 *)(*param_1 + 0x44) = uVar2;
       *(undefined4 *)(*param_1 + 0x4b0) = 0;
     }

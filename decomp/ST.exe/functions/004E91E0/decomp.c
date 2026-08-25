@@ -29,8 +29,8 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
   if (STField<int>(this,0x5ac) == 0x6c) {
     iVar4 = thunk_FUN_004e9930((int)this);
     if ((((iVar4 == 0) || (iVar13 = STField<int>(this,0x61b), iVar13 == 0)) ||
-        (*(int *)(iVar13 + 0x20) != 1000)) ||
-       ((*(int *)(iVar13 + 0x4d8) != 0xffff || (g_worldGrid.sizeZ + -1 <= *(int *)(iVar13 + 0x5b8)))
+        (STField<int>(iVar13,0x20) != 1000)) ||
+       ((STField<int>(iVar13,0x4D8) != 0xffff || (g_worldGrid.sizeZ + -1 <= STField<int>(iVar13,0x5B8)))
        )) {
       bVar2 = false;
     }
@@ -40,27 +40,28 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
   }
   else {
     /* ST_CALLSITE[004E924C]: CALL dword ptr [EDX + 0x2c] */
-    dVar9 = param_1->slot_2C();
+    dVar9 = param_1->sub_0045EEE0();
     /* ST_CALLSITE[004E9258]: CALL dword ptr [EAX + 0x2c] */
-    if (((int)dVar9 < 1) || (dVar9 = param_1->slot_2C(), 0x28 < (int)dVar9)) {
+    if (((int)dVar9 < 1) || (dVar9 = param_1->sub_0045EEE0(), 0x28 < (int)dVar9))
+    {
       /* ST_CALLSITE[004E9274]: CALL dword ptr [EAX + 0x2c] */
-      dVar9 = param_1->slot_2C();
-      /* ST_CALLSITE[004E9280]: CALL dword ptr [EDX + 0x2c] */
-      if (((int)dVar9 < 0x32) || (dVar9 = param_1->slot_2C(), 0x73 < (int)dVar9))
-      {
+      dVar9 = param_1->sub_0045EEE0();
+      if (((int)dVar9 < 0x32) ||
+         /* ST_CALLSITE[004E9280]: CALL dword ptr [EDX + 0x2c] */
+         (dVar9 = param_1->sub_0045EEE0(), 0x73 < (int)dVar9)) {
         iVar13 = 100;
       }
       else {
         /* ST_CALLSITE[004E9292]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-        uVar6 = LookupRecordByte(*(char *)&param_1->field_0024);
+        uVar6 = LookupRecordByte((char)param_1->field_0024);
         /* ST_CALLSITE[004E92A3]: CALL dword ptr [EDX + 0x2c] */
-        dVar9 = param_1->slot_2C();
+        dVar9 = param_1->sub_0045EEE0();
         iVar13 = *(int *)(&DAT_007e37b0 + ((uint)(byte)uVar6 + dVar9 * 3) * 4);
       }
     }
     else {
       /* ST_CALLSITE[004E9264]: CALL dword ptr [EDX + 0x2c] */
-      dVar9 = param_1->slot_2C();
+      dVar9 = param_1->sub_0045EEE0();
       iVar13 = *(int *)(&DAT_007e0d9c + dVar9 * 4);
     }
     if (((STField<int>(this,0x4d0) * 100) / 100 < iVar13) || (STField<int>(this,0x42c) == 0))
@@ -77,13 +78,13 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
       STField<undefined4>(this,0x4e4) = 0xffffffff;
       STField<undefined4>(this,0x4e8) = 0xffffffff;
       STField<undefined4>(this,0x4ec) = 0xffffffff;
-      iVar11 = *(int *)(iVar14 + 0x5b4);
+      iVar11 = STField<int>(iVar14,0x5B4);
       iVar13 = iVar11 + 1;
       if (iVar11 <= iVar13) {
-        iVar1 = *(int *)(iVar14 + 0x5b0);
+        iVar1 = STField<int>(iVar14,0x5B0);
         do {
           if (iVar1 <= iVar1 + 1) {
-            sVar12 = *(short *)(iVar14 + 0x5b8) + 1;
+            sVar12 = STField<short>(iVar14,0x5B8) + 1;
             iVar5 = iVar1;
             do {
               sVar3 = (short)iVar5;
@@ -95,7 +96,7 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
                    nullptr)))) {
                 STField<int>(this,0x4e4) = iVar5;
                 STField<int>(this,0x4e8) = iVar11;
-                STField<int>(this,0x4ec) = *(int *)(iVar14 + 0x5b8) + 1;
+                STField<int>(this,0x4ec) = STField<int>(iVar14,0x5B8) + 1;
                 goto LAB_004e946f;
               }
               iVar5 = iVar5 + 1;
@@ -117,7 +118,7 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
       iVar14 = STField<int>(this,0x434);
       iVar11 = STField<int>(this,0x430);
       /* ST_CALLSITE[004E945C]: CALL dword ptr [EAX + 0x2c] */
-      SVar8 = param_1->slot_2C();
+      SVar8 = param_1->sub_0045EEE0();
       thunk_FUN_004b2520(STField<uint>(this,0x24),SVar8,iVar11,iVar14,iVar13,puVar15,puVar16,
                          puVar17,uVar7,piVar18);
     }
@@ -126,7 +127,7 @@ LAB_004e946f:
        (-1 < STField<int>(this,0x4ec))) {
       STField<int>(this,0x4d8) = param_1->field_0018;
       /* ST_CALLSITE[004E949A]: CALL dword ptr [EAX + 0x2c] */
-      dVar9 = param_1->slot_2C();
+      dVar9 = param_1->sub_0045EEE0();
       STField<dword>(this,0x4dc) = dVar9;
       if (g_tLOFake_00800BCC == nullptr) {
         thunk_FUN_004d0f00();

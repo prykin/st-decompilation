@@ -165,14 +165,14 @@ LAB_00618ce0:
     }
   }
   else if (SVar1 == MESS_STOCTOPUSC_0112) {
-    if ((-1 < (int)local_8->field_0097) && (local_8->field_0093 != CASE_5)) {
+    if ((-1 < local_8->field_0097) && (local_8->field_0093 != CASE_5)) {
       st::fn_006E9520
                 (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0,(uint)local_8);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
   }
-  else if (((SVar1 == MESS_STSPRGAMEOBJC_0113) && (-1 < (int)local_8->field_0097)) &&
+  else if (((SVar1 == MESS_STSPRGAMEOBJC_0113) && (-1 < local_8->field_0097)) &&
           (local_8->field_0093 != CASE_5)) {
     st::fn_006E9520
               (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0x401109,(uint)&local_8->field_0x4d);
@@ -198,7 +198,7 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
   ushort *puVar3;
   int iVar3;
   uint uVar4;
-  uint *puVar5;
+  int *piVar5;
   STJumpMineC *pSVar6;
   InternalExceptionFrame local_4c;
   STJumpMineC *local_8;
@@ -214,63 +214,63 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
                          (PTR_00806774,CASE_1D,st::mutable_c_string("jmpmine"),0xffffffff,0,1,0,nullptr
                          );
       pSVar6 = local_8;
-      puVar5 = &local_8->field_0097;
+      piVar5 = &local_8->field_0097;
       st::fn_006E8660
-                (g_sT3DSMAPContext_00807598,(int *)puVar5,1,0,STField<uint>(puVar3,9),
+                (g_sT3DSMAPContext_00807598,piVar5,1,0,STField<uint>(puVar3,9),
                  STField<uint>(puVar3,0xd),0x5a,0x45,0);
       st::fn_006E98E0
-                (g_sT3DSMAPContext_00807598,*puVar5,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
-      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar5,0,pSVar6->field_00AB);
+                (g_sT3DSMAPContext_00807598,*piVar5,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar5,0,pSVar6->field_00AB);
       iVar1 = *(int *)puVar3;
       pSVar6->field_009B = puVar3;
       pSVar6->field_00AF = iVar1;
       if (DAT_00807326 != '\0') {
         st::fn_006E9520
-                  (g_sT3DSMAPContext_00807598,*puVar5,0,0x401109,(uint)&pSVar6->field_0x4d);
+                  (g_sT3DSMAPContext_00807598,*piVar5,0,0x401109,(uint)&pSVar6->field_0x4d);
       }
     }
     else {
-      puVar5 = &local_8->field_0097;
-      if (-1 < (int)local_8->field_0097) {
+      piVar5 = &local_8->field_0097;
+      if (-1 < local_8->field_0097) {
         st::fn_006E9520
                   (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0,(uint)local_8);
-        st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*puVar5);
+        st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*piVar5);
       }
       puVar3 = st::fn_00709AF0
                          (PTR_00806774,CASE_1D,st::mutable_c_string("exptme"),0xffffffff,0,1,0,nullptr);
       st::fn_006E8660
-                (g_sT3DSMAPContext_00807598,(int *)puVar5,3,0,STField<uint>(puVar3,9),
+                (g_sT3DSMAPContext_00807598,piVar5,3,0,STField<uint>(puVar3,9),
                  STField<uint>(puVar3,0xd),0x5a,0x45,0);
       st::fn_006E98E0
-                (g_sT3DSMAPContext_00807598,*puVar5,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
-      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar5,0,pSVar6->field_00AB);
+                (g_sT3DSMAPContext_00807598,*piVar5,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar5,0,pSVar6->field_00AB);
       pSVar6->field_00AF = *(int *)puVar3;
       puVar3 = st::fn_00709AF0
                          (PTR_00806774,CASE_1D,st::mutable_c_string("expmask2"),0xffffffff,0,1,0,
                           nullptr);
       st::fn_006E98E0
-                (g_sT3DSMAPContext_00807598,*puVar5,1,*(int *)puVar3,STField<int>(puVar3,0x21),1);
-      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar5,1,pSVar6->field_00BC);
-      st::fn_006EA800(g_sT3DSMAPContext_00807598,*puVar5,1,1);
+                (g_sT3DSMAPContext_00807598,*piVar5,1,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar5,1,pSVar6->field_00BC);
+      st::fn_006EA800(g_sT3DSMAPContext_00807598,*piVar5,1,1);
       st::fn_006EA790
-                (g_sT3DSMAPContext_00807598,*puVar5,PTR_008032b8,0x10);
+                (g_sT3DSMAPContext_00807598,*piVar5,PTR_008032b8,0x10);
       pSVar6->field_00C0 = *(undefined4 *)puVar3;
       pSVar6->field_00BB = 1;
       puVar3 = st::fn_00709AF0
                          (PTR_00806764,CASE_1D,st::mutable_c_string("bulb_n4"),0xffffffff,0,1,0,nullptr
                          );
       st::fn_006E98E0
-                (g_sT3DSMAPContext_00807598,*puVar5,2,*(int *)puVar3,STField<int>(puVar3,0x21),1);
-      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar5,2,pSVar6->field_00B7);
-      st::fn_006E9D40(g_sT3DSMAPContext_00807598,(uint *)*puVar5,2);
+                (g_sT3DSMAPContext_00807598,*piVar5,2,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar5,2,pSVar6->field_00B7);
+      st::fn_006E9D40(g_sT3DSMAPContext_00807598,(uint *)*piVar5,2);
       pSVar6->field_00B3 = *(int *)puVar3;
     }
     st::fn_006EA960
-              (g_sT3DSMAPContext_00807598,*puVar5,
+              (g_sT3DSMAPContext_00807598,*piVar5,
                (float)pSVar6->field_009F * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar6->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar6->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    st::fn_006EAAA0(g_sT3DSMAPContext_00807598,*puVar5,0);
+    st::fn_006EAAA0(g_sT3DSMAPContext_00807598,*piVar5,0);
     pSVar6->field_00C4 = 1;
     g_currentExceptionFrame = local_4c.previous;
     return 1;

@@ -85,7 +85,7 @@ int __thiscall st::fn_00497E00(STGroupBoatC *this,STMessage *message)
   int iVar10;
   InternalExceptionFrame local_84;
   undefined4 local_40 [2];
-  undefined4 local_38;
+  int local_38;
   undefined4 local_34;
   undefined4 local_30;
   undefined4 local_2c;
@@ -1306,13 +1306,13 @@ undefined4 __thiscall st::fn_00499750(STGroupBoatC *this,DArrayTy *param_1)
             (puVar4 + iVar3 * 4)[0] = 0;
             (puVar4 + iVar3 * 4)[1] = 0;
             puVar4 = pSVar2->field_021E;
-            pSVar2->field_0216 = *(undefined4 *)(puVar4 + iVar3 * 4 + 2);
+            pSVar2->field_0216 = *(int *)(puVar4 + iVar3 * 4 + 2);
             iVar7 = 0;
           }
           else {
-            *(undefined4 *)(puVar4 + iVar3 * 4) = pSVar2->field_0216;
+            *(int *)(puVar4 + iVar3 * 4) = pSVar2->field_0216;
             puVar4 = pSVar2->field_021E;
-            pSVar2->field_0216 = st::machine_word_boundary_cast<undefined4>(pSVar2->field_0216 + *(int *)(puVar4 + iVar3 * 4 + 2));
+            pSVar2->field_0216 = st::machine_word_boundary_cast<int>(pSVar2->field_0216 + *(int *)(puVar4 + iVar3 * 4 + 2));
           }
         }
         iVar3 = iVar3 + 1;
@@ -1478,15 +1478,15 @@ undefined4 __thiscall st::fn_00499B80(STGroupBoatC *this)
           (puVar4 + uVar9 * 4)[0] = 0xffff;
           (puVar4 + uVar9 * 4)[1] = 0xffff;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
-            *(undefined4 *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
+            *(int *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
           }
         }
         else {
           iVar8 = pSVar5->field_0219 + pSVar5->field_0215;
-          pSVar3->field_0216 = st::machine_word_boundary_cast<undefined4>(pSVar3->field_0216 + iVar8);
+          pSVar3->field_0216 = st::machine_word_boundary_cast<int>(pSVar3->field_0216 + iVar8);
           *(int *)(pSVar3->field_021E + uVar9 * 4 + 2) = iVar8;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
-            *(undefined4 *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
+            *(int *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
           }
         }
         uVar9 = uVar9 + 1;
@@ -1618,7 +1618,7 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
                      ,0x564);
         }
         /* ST_CALLSITE[00499ECC]: CALL dword ptr [EDX + 0x2c] */
-        dVar4 = pSVar3->slot_2C();
+        dVar4 = pSVar3->sub_0045EEE0();
         switch(dVar4) {
         case 7:
         case 8:
@@ -1640,7 +1640,7 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
         default:
           if ((this_00->field_020A == 1) &&
              /* ST_CALLSITE[00499F14]: CALL dword ptr [EDX + 0x2c] */
-             (dVar4 = pSVar3->slot_2C(), dVar4 != 0x17)) {
+             (dVar4 = pSVar3->sub_0045EEE0(), dVar4 != 0x17)) {
             st::fn_006B0C70(local_10,uVar11);
             uVar11 = uVar11 - 1;
             local_14 = local_14 - 1;
@@ -1688,7 +1688,7 @@ undefined4 __thiscall st::fn_00499DE0(STGroupBoatC *this,uint *param_1)
                    st::fn_004028BA
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
           /* ST_CALLSITE[0049A010]: CALL dword ptr [EDX + 0x2c] */
-          dVar4 = pSVar3->slot_2C();
+          dVar4 = pSVar3->sub_0045EEE0();
           if (dVar4 == 9) {
             /* ST_CALLSITE[0049A032]: CALL 0x004019ba; direct=004019BA STGroupBoatC::GetDepotForAttack */
             st::fn_004019BA(this_00,local_c,&local_5,&local_16,&local_2a,&local_28,&local_26);
@@ -2324,16 +2324,16 @@ LAB_0049aec9:
                     }
                   }
                   local_10 = local_10 + 1;
-                  iVar11 = (int)(short)local_10;
+                  iVar11 = (short)local_10;
                   pSVar13 = local_8;
                 } while (iVar11 < (int)local_8->field_00F7 + (int)local_8->field_00FD);
               }
               local_14 = local_14 + 1;
-              iVar11 = (int)(short)local_14;
+              iVar11 = (short)local_14;
             } while (iVar11 < (int)pSVar13->field_00FB + (int)pSVar13->field_00F5);
           }
           local_c = local_c + 1;
-          iVar11 = (int)(short)local_c;
+          iVar11 = (short)local_c;
         } while (iVar11 < (int)pSVar13->field_00F3 + (int)pSVar13->field_00F9);
       }
       if (local_18 == 0) {
@@ -2658,7 +2658,7 @@ uint __thiscall st::fn_0049B7D0(STGroupBoatC *this,int param_1)
         if ((int)local_24 < iVar10) {
           local_24 = (short *)iVar10;
         }
-        iVar10 = (int)(short)local_10;
+        iVar10 = (short)local_10;
         if (iVar10 < local_8) {
           local_8 = iVar10;
         }
@@ -2694,8 +2694,8 @@ uint __thiscall st::fn_0049B7D0(STGroupBoatC *this,int param_1)
   do {
     local_10 = 0;
     psVar6 = g_pathingGrid.cells +
-             iVar17 * local_8 + local_c + (int)g_pathingGrid.planeStride * (int)(short)local_14;
-    local_24 = g_pathingScratchGrid.cells + (int)(short)local_14 * scalar_local_34;
+             iVar17 * local_8 + local_c + (int)g_pathingGrid.planeStride * (short)local_14;
+    local_24 = g_pathingScratchGrid.cells + (short)local_14 * scalar_local_34;
     if (0 < (int)local_20) {
       do {
         psVar14 = psVar6;
@@ -2714,7 +2714,7 @@ uint __thiscall st::fn_0049B7D0(STGroupBoatC *this,int param_1)
         iVar17 = (int)g_pathingGrid.sizeX;
         local_24 = local_24 + local_2c;
         psVar6 = psVar6 + iVar17;
-      } while ((int)(short)local_10 < (int)local_20);
+      } while ((short)local_10 < (int)local_20);
     }
     local_14 = local_14 + 1;
   } while ((short)local_14 < 5);
@@ -2770,7 +2770,7 @@ uint __thiscall st::fn_0049B7D0(STGroupBoatC *this,int param_1)
         GVar15 = local_20;
         if (g_pathingScratchGrid.cells
             [(((short)local_10 - local_8) * (int)g_pathingGrid.sizeX +
-              (int)g_pathingGrid.planeStride * (int)(short)local_14 + (int)STPiece<2,2>(param_1)) - iVar10]
+              (int)g_pathingGrid.planeStride * (short)local_14 + (int)STPiece<2,2>(param_1)) - iVar10]
             == 0) goto joined_r0x0049bc58;
       }
       local_20 = GVar15 + 1;
@@ -2814,8 +2814,8 @@ joined_r0x0049bc58:
                       ((STFishC *)pSVar7,(short *)((int)&param_1 + 2),(short *)&local_10,
                        (short *)&local_14);
             if (g_pathingScratchGrid.cells
-                [(int)g_pathingGrid.planeStride * (int)(short)local_14 +
-                 (int)g_pathingGrid.sizeX * (int)(short)local_10 + (int)STPiece<2,2>(param_1)] == 0) {
+                [(int)g_pathingGrid.planeStride * (short)local_14 +
+                 (int)g_pathingGrid.sizeX * (short)local_10 + (int)STPiece<2,2>(param_1)] == 0) {
               st::fn_006B0C70(this->field_0103,local_28);
               break;
             }
@@ -3395,11 +3395,11 @@ undefined4 __thiscall st::fn_0049CD30(STGroupBoatC *this,int param_1)
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x90f);
           }
           /* ST_CALLSITE[0049CE8B]: CALL dword ptr [EDX + 0x2c] */
-          dVar7 = pSVar6->slot_2C();
+          dVar7 = pSVar6->sub_0045EEE0();
           /* ST_CALLSITE[0049CE97]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar7 == 0xc) || (dVar7 = pSVar6->slot_2C(), dVar7 == 0x18)) ||
+          if (((dVar7 == 0xc) || (dVar7 = pSVar6->sub_0045EEE0(), dVar7 == 0x18))
              /* ST_CALLSITE[0049CEA3]: CALL dword ptr [EDX + 0x2c] */
-             (dVar7 = pSVar6->slot_2C(), dVar7 == 0x19)) {
+             || (dVar7 = pSVar6->sub_0045EEE0(), dVar7 == 0x19)) {
             if (array_00 == nullptr) {
               array_00 = st::fn_006AE290(nullptr,1,2,1);
               local_1c = array_00;
@@ -3474,11 +3474,11 @@ LAB_0049cf10:
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x938);
           }
           /* ST_CALLSITE[0049D05E]: CALL dword ptr [EAX + 0x2c] */
-          dVar7 = pSVar6->slot_2C();
+          dVar7 = pSVar6->sub_0045EEE0();
           /* ST_CALLSITE[0049D06A]: CALL dword ptr [EDX + 0x2c] */
-          if (((((dVar7 == 0xc) || (dVar7 = pSVar6->slot_2C(), dVar7 == 0x18)) ||
+          if (((((dVar7 == 0xc) || (dVar7 = pSVar6->sub_0045EEE0(), dVar7 == 0x18))
                /* ST_CALLSITE[0049D076]: CALL dword ptr [EAX + 0x2c] */
-               (dVar7 = pSVar6->slot_2C(), dVar7 == 0x19)) &&
+               || (dVar7 = pSVar6->sub_0045EEE0(), dVar7 == 0x19)) &&
               (iVar10 = st::fn_00402EDC((STGameObjC *)pSVar6), iVar10 == 0x11)) ||
              /* ST_CALLSITE[0049D08E]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
              (uVar12 = st::fn_00404DF9(pSVar6,CASE_11), uVar12 == 1)) {
@@ -3589,11 +3589,11 @@ undefined4 __thiscall st::fn_0049D230(STGroupBoatC *this,int param_1)
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x960);
           }
           /* ST_CALLSITE[0049D345]: CALL dword ptr [EDX + 0x2c] */
-          dVar7 = this_00->slot_2C();
+          dVar7 = this_00->sub_0045EEE0();
           /* ST_CALLSITE[0049D351]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar7 == 8) || (dVar7 = this_00->slot_2C(), dVar7 == 0x14)) ||
+          if (((dVar7 == 8) || (dVar7 = this_00->sub_0045EEE0(), dVar7 == 0x14))
              /* ST_CALLSITE[0049D35D]: CALL dword ptr [EDX + 0x2c] */
-             (dVar7 = this_00->slot_2C(), dVar7 == 0x1a)) {
+             || (dVar7 = this_00->sub_0045EEE0(), dVar7 == 0x1a)) {
             if (array_00 == nullptr) {
               array_00 = st::fn_006AE290(nullptr,1,2,1);
               local_14 = array_00;
@@ -4118,12 +4118,12 @@ undefined4 __thiscall st::fn_0049DFA0(STGroupBoatC *this,int param_1)
                      ,0xa5b);
         }
         /* ST_CALLSITE[0049E0E5]: CALL dword ptr [EDX + 0xf8] */
-        iVar8 = local_8->vfunc_F8();
+        iVar8 = local_8->sub_004838B0();
         if (iVar8 != 0) {
           iVar8 = st::fn_00404E58((STGameObjC *)local_8);
           if (iVar8 == 0) {
             /* ST_CALLSITE[0049E108]: CALL dword ptr [EAX + 0x2c] */
-            dVar3 = local_8->slot_2C();
+            dVar3 = local_8->sub_0045EEE0();
             if ((((dVar3 != 7) && (dVar3 != 0x13)) && (dVar3 != 0x1b)) ||
                (iVar8 = st::fn_00402608((STGameObjC *)local_8), iVar8 != 0)) {
               /* ST_CALLSITE[0049E184]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -4220,10 +4220,10 @@ LAB_0049e26d:
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xa8e);
           }
           /* ST_CALLSITE[0049E2ED]: CALL dword ptr [EDX + 0xf8] */
-          iVar8 = local_8->vfunc_F8();
+          iVar8 = local_8->sub_004838B0();
           if ((iVar8 != 0) &&
              /* ST_CALLSITE[0049E2FC]: CALL dword ptr [EAX + 0x2c] */
-             (((dVar3 = local_8->slot_2C(), dVar3 == 7 || (dVar3 == 0x13)) ||
+             (((dVar3 = local_8->sub_0045EEE0(), dVar3 == 7 || (dVar3 == 0x13)) ||
               (dVar3 == 0x1b)))) {
             local_28 = 1;
             iVar8 = st::fn_00402608((STGameObjC *)local_8);
@@ -4336,10 +4336,10 @@ uint * __thiscall st::fn_0049E510(STGroupBoatC *this,int param_1)
                      ,0xabe);
         }
         /* ST_CALLSITE[0049E62C]: CALL dword ptr [EAX + 0xf8] */
-        iVar9 = pSVar3->vfunc_F8();
+        iVar9 = pSVar3->sub_004838B0();
         if (iVar9 != 0) {
           /* ST_CALLSITE[0049E63E]: CALL dword ptr [EDX + 0x2c] */
-          dVar4 = pSVar3->slot_2C();
+          dVar4 = pSVar3->sub_0045EEE0();
           if ((((dVar4 == 7) || (dVar4 == 0x13)) || (dVar4 == 0x1b)) &&
              (iVar9 = st::fn_00402608((STGameObjC *)pSVar3), iVar9 != 0)) {
             /* ST_CALLSITE[0049E663]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -4440,10 +4440,10 @@ LAB_0049e7c1:
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xaf1);
           }
           /* ST_CALLSITE[0049E836]: CALL dword ptr [EDX + 0xf8] */
-          iVar9 = pSVar3->vfunc_F8();
+          iVar9 = pSVar3->sub_004838B0();
           if ((iVar9 != 0) &&
              /* ST_CALLSITE[0049E844]: CALL dword ptr [EAX + 0x2c] */
-             ((((dVar4 = pSVar3->slot_2C(), dVar4 == 7 || (dVar4 == 0x13)) ||
+             ((((dVar4 = pSVar3->sub_0045EEE0(), dVar4 == 7 || (dVar4 == 0x13)) ||
                (dVar4 == 0x1b)) &&
               ((iVar9 = st::fn_00402EDC((STGameObjC *)pSVar3), iVar9 == 0x10 ||
                /* ST_CALLSITE[0049E866]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
@@ -4855,11 +4855,11 @@ undefined4 __thiscall st::fn_0049F100(STGroupBoatC *this,int param_1)
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xbb4);
           }
           /* ST_CALLSITE[0049F22D]: CALL dword ptr [EAX + 0x2c] */
-          dVar4 = pSVar3->slot_2C();
+          dVar4 = pSVar3->sub_0045EEE0();
           /* ST_CALLSITE[0049F239]: CALL dword ptr [EDX + 0x2c] */
-          if (((dVar4 == 6) || (dVar4 = pSVar3->slot_2C(), dVar4 == 0x12)) ||
+          if (((dVar4 == 6) || (dVar4 = pSVar3->sub_0045EEE0(), dVar4 == 0x12)) ||
              /* ST_CALLSITE[0049F245]: CALL dword ptr [EAX + 0x2c] */
-             (dVar4 = pSVar3->slot_2C(), dVar4 == 0x22)) {
+             (dVar4 = pSVar3->sub_0045EEE0(), dVar4 == 0x22)) {
             if (array_00 == nullptr) {
               array_00 = st::fn_006AE290(nullptr,1,2,1);
               local_20 = array_00;
@@ -5312,11 +5312,11 @@ uint * __thiscall st::fn_0049FBF0(STGroupBoatC *this,int param_1)
                      ,0xc79);
         }
         /* ST_CALLSITE[0049FD09]: CALL dword ptr [EDX + 0x2c] */
-        dVar5 = pSVar4->slot_2C();
+        dVar5 = pSVar4->sub_0045EEE0();
         /* ST_CALLSITE[0049FD15]: CALL dword ptr [EAX + 0x2c] */
-        if (((dVar5 == 7) || (dVar5 = pSVar4->slot_2C(), dVar5 == 0x13)) ||
+        if (((dVar5 == 7) || (dVar5 = pSVar4->sub_0045EEE0(), dVar5 == 0x13)) ||
            /* ST_CALLSITE[0049FD21]: CALL dword ptr [EDX + 0x2c] */
-           (dVar5 = pSVar4->slot_2C(), dVar5 == 0x1b)) {
+           (dVar5 = pSVar4->sub_0045EEE0(), dVar5 == 0x1b)) {
           /* ST_CALLSITE[0049FD6B]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
           st::fn_00402126(pSVar4,CASE_17,&local_2c);
           pDVar6 = local_14;
@@ -5543,11 +5543,11 @@ undefined4 __thiscall st::fn_004A0040(STGroupBoatC *this,int param_1)
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xcd4);
           }
           /* ST_CALLSITE[004A0251]: CALL dword ptr [EDX + 0x2c] */
-          dVar8 = pSVar7->slot_2C();
+          dVar8 = pSVar7->sub_0045EEE0();
           /* ST_CALLSITE[004A025D]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar8 == 0xc) || (dVar8 = pSVar7->slot_2C(), dVar8 == 0x18)) ||
+          if (((dVar8 == 0xc) || (dVar8 = pSVar7->sub_0045EEE0(), dVar8 == 0x18))
              /* ST_CALLSITE[004A0269]: CALL dword ptr [EDX + 0x2c] */
-             (dVar8 = pSVar7->slot_2C(), dVar8 == 0x1d)) {
+             || (dVar8 = pSVar7->sub_0045EEE0(), dVar8 == 0x1d)) {
             if (array_00 == nullptr) {
               array_00 = st::fn_006AE290(nullptr,1,2,1);
               local_14 = array_00;
@@ -5607,11 +5607,11 @@ LAB_004a02d6:
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xcf6);
           }
           /* ST_CALLSITE[004A039D]: CALL dword ptr [EAX + 0x2c] */
-          dVar8 = pSVar7->slot_2C();
+          dVar8 = pSVar7->sub_0045EEE0();
           /* ST_CALLSITE[004A03A9]: CALL dword ptr [EDX + 0x2c] */
-          if (((((dVar8 == 0xc) || (dVar8 = pSVar7->slot_2C(), dVar8 == 0x18)) ||
+          if (((((dVar8 == 0xc) || (dVar8 = pSVar7->sub_0045EEE0(), dVar8 == 0x18))
                /* ST_CALLSITE[004A03B5]: CALL dword ptr [EAX + 0x2c] */
-               (dVar8 = pSVar7->slot_2C(), dVar8 == 0x1d)) &&
+               || (dVar8 = pSVar7->sub_0045EEE0(), dVar8 == 0x1d)) &&
               (iVar11 = st::fn_00402EDC((STGameObjC *)pSVar7), iVar11 == 0x12)) ||
              /* ST_CALLSITE[004A03CD]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
              (uVar13 = st::fn_00404DF9(pSVar7,CASE_12), uVar13 == 1)) {
@@ -5888,12 +5888,12 @@ undefined4 __thiscall st::fn_004A0990(STGroupBoatC *this,int param_1)
                      ,0xd64);
         }
         /* ST_CALLSITE[004A0AD5]: CALL dword ptr [EDX + 0xf8] */
-        iVar8 = local_8->vfunc_F8();
+        iVar8 = local_8->sub_004838B0();
         if (iVar8 != 0) {
           iVar8 = st::fn_00404E58((STGameObjC *)local_8);
           if (iVar8 == 0) {
             /* ST_CALLSITE[004A0AF8]: CALL dword ptr [EAX + 0x2c] */
-            dVar3 = local_8->slot_2C();
+            dVar3 = local_8->sub_0045EEE0();
             if ((dVar3 == 7) || (dVar3 == 0x13)) {
               iVar8 = st::fn_00402608((STGameObjC *)local_8);
               if (iVar8 == 0) {
@@ -5995,10 +5995,10 @@ LAB_004a0c5b:
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xd97);
           }
           /* ST_CALLSITE[004A0CD8]: CALL dword ptr [EDX + 0xf8] */
-          iVar8 = local_8->vfunc_F8();
+          iVar8 = local_8->sub_004838B0();
           if ((iVar8 != 0) &&
              /* ST_CALLSITE[004A0CE7]: CALL dword ptr [EAX + 0x2c] */
-             (((dVar3 = local_8->slot_2C(), dVar3 == 7 || (dVar3 == 0x13)) ||
+             (((dVar3 = local_8->sub_0045EEE0(), dVar3 == 7 || (dVar3 == 0x13)) ||
               (dVar3 == 0x1b)))) {
             local_28 = 1;
             iVar8 = st::fn_00402EDC((STGameObjC *)local_8);
@@ -6460,11 +6460,11 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xe9a);
           }
           /* ST_CALLSITE[004A157C]: CALL dword ptr [EDX + 0x2c] */
-          dVar6 = pSVar5->slot_2C();
+          dVar6 = pSVar5->sub_0045EEE0();
           /* ST_CALLSITE[004A1588]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar6 != 8) && (dVar6 = pSVar5->slot_2C(), dVar6 != 0x14)) &&
+          if (((dVar6 != 8) && (dVar6 = pSVar5->sub_0045EEE0(), dVar6 != 0x14)) &&
              /* ST_CALLSITE[004A1594]: CALL dword ptr [EDX + 0x2c] */
-             (dVar6 = pSVar5->slot_2C(), dVar6 != 0x1a)) {
+             (dVar6 = pSVar5->sub_0045EEE0(), dVar6 != 0x1a)) {
             iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
             if (iVar7 == 0) {
               /* ST_CALLSITE[004A15AF]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -6562,11 +6562,11 @@ void __thiscall st::fn_004A0FA0(STGroupBoatC *this)
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xecf);
           }
           /* ST_CALLSITE[004A1813]: CALL dword ptr [EDX + 0x2c] */
-          dVar6 = pSVar5->slot_2C();
+          dVar6 = pSVar5->sub_0045EEE0();
           /* ST_CALLSITE[004A181F]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar6 == 0xc) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x18)) ||
+          if (((dVar6 == 0xc) || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x18))
              /* ST_CALLSITE[004A182B]: CALL dword ptr [EDX + 0x2c] */
-             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x19)) {
+             || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x19)) {
             puVar14 = &local_154;
             SVar13 = CASE_11;
           }
@@ -6662,11 +6662,11 @@ LAB_004a1878:
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xf02);
           }
           /* ST_CALLSITE[004A1A12]: CALL dword ptr [EAX + 0x2c] */
-          dVar6 = pSVar5->slot_2C();
+          dVar6 = pSVar5->sub_0045EEE0();
           /* ST_CALLSITE[004A1A1E]: CALL dword ptr [EDX + 0x2c] */
-          if (((dVar6 == 8) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x14)) ||
+          if (((dVar6 == 8) || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x14)) ||
              /* ST_CALLSITE[004A1A2A]: CALL dword ptr [EAX + 0x2c] */
-             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x1a)) {
+             (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x1a)) {
             puVar14 = &local_64;
             SVar13 = CASE_D;
           }
@@ -6861,14 +6861,14 @@ LAB_004a1a74:
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xf5d);
           }
           /* ST_CALLSITE[004A1DD5]: CALL dword ptr [EDX + 0xf8] */
-          iVar7 = pSVar5->vfunc_F8();
+          iVar7 = pSVar5->sub_004838B0();
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           SVar10 = extraout_ECX_23;
           if (iVar7 != 0) {
             iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
             if (iVar7 == 0) {
               /* ST_CALLSITE[004A1DF6]: CALL dword ptr [EAX + 0x2c] */
-              dVar6 = pSVar5->slot_2C();
+              dVar6 = pSVar5->sub_0045EEE0();
               if ((((dVar6 != 7) && (dVar6 != 0x13)) && (dVar6 != 0x1b)) ||
                  (iVar7 = st::fn_00402608((STGameObjC *)pSVar5), iVar7 != 0)) {
                 /* ST_CALLSITE[004A1E7E]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -6963,10 +6963,10 @@ LAB_004a1ede:
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0xf8e);
           }
           /* ST_CALLSITE[004A1FCC]: CALL dword ptr [EAX + 0xf8] */
-          iVar7 = pSVar5->vfunc_F8();
+          iVar7 = pSVar5->sub_004838B0();
           if (iVar7 != 0) {
             /* ST_CALLSITE[004A1FDE]: CALL dword ptr [EDX + 0x2c] */
-            dVar6 = pSVar5->slot_2C();
+            dVar6 = pSVar5->sub_0045EEE0();
             if ((((dVar6 == 7) || (dVar6 == 0x13)) || (dVar6 == 0x1b)) &&
                (iVar7 = st::fn_00402608((STGameObjC *)pSVar5), iVar7 != 0)) {
               /* ST_CALLSITE[004A2006]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -7245,11 +7245,11 @@ LAB_004a221d:
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1042);
           }
           /* ST_CALLSITE[004A2638]: CALL dword ptr [EDX + 0x2c] */
-          dVar6 = pSVar5->slot_2C();
+          dVar6 = pSVar5->sub_0045EEE0();
           /* ST_CALLSITE[004A2644]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar6 == 7) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x13)) ||
+          if (((dVar6 == 7) || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x13)) ||
              /* ST_CALLSITE[004A2650]: CALL dword ptr [EDX + 0x2c] */
-             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x1b)) {
+             (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x1b)) {
             /* ST_CALLSITE[004A2696]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
             st::fn_00402126(pSVar5,CASE_17,&local_70);
             pDVar8 = local_10;
@@ -7340,11 +7340,11 @@ LAB_004a26f5:
                        st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp"),0x1071);
           }
           /* ST_CALLSITE[004A2812]: CALL dword ptr [EDX + 0x2c] */
-          dVar6 = pSVar5->slot_2C();
+          dVar6 = pSVar5->sub_0045EEE0();
           /* ST_CALLSITE[004A281E]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar6 == 0xc) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x18)) ||
+          if (((dVar6 == 0xc) || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x18))
              /* ST_CALLSITE[004A282A]: CALL dword ptr [EDX + 0x2c] */
-             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x1d)) {
+             || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x1d)) {
             if (local_10 == nullptr) {
               local_10 = st::fn_006AE290(nullptr,1,2,1);
             }
@@ -7460,12 +7460,12 @@ LAB_004a2897:
                      ,0x10b0);
         }
         /* ST_CALLSITE[004A2B04]: CALL dword ptr [EDX + 0xf8] */
-        iVar7 = pSVar5->vfunc_F8();
+        iVar7 = pSVar5->sub_004838B0();
         if (iVar7 != 0) {
           iVar7 = st::fn_00404E58((STGameObjC *)pSVar5);
           if (iVar7 == 0) {
             /* ST_CALLSITE[004A2B25]: CALL dword ptr [EAX + 0x2c] */
-            dVar6 = pSVar5->slot_2C();
+            dVar6 = pSVar5->sub_0045EEE0();
             if ((dVar6 == 7) || (dVar6 == 0x13)) {
               iVar7 = st::fn_00402608((STGameObjC *)pSVar5);
               if (iVar7 == 0) {
@@ -7665,13 +7665,13 @@ st::fn_004A3430
                      ,0x10fd);
         }
         /* ST_CALLSITE[004A3540]: CALL dword ptr [EDX + 0x2c] */
-        dVar4 = pSVar3->slot_2C();
+        dVar4 = pSVar3->sub_0045EEE0();
         pDVar8 = local_1c;
         if (((dVar4 != 8) &&
             /* ST_CALLSITE[004A354C]: CALL dword ptr [EAX + 0x2c] */
-            (dVar4 = pSVar3->slot_2C(), pDVar8 = local_1c, dVar4 != 0x14)) &&
+            (dVar4 = pSVar3->sub_0045EEE0(), pDVar8 = local_1c, dVar4 != 0x14)) &&
            /* ST_CALLSITE[004A3558]: CALL dword ptr [EDX + 0x2c] */
-           (dVar4 = pSVar3->slot_2C(), pDVar8 = local_1c, dVar4 != 0x1a)) {
+           (dVar4 = pSVar3->sub_0045EEE0(), pDVar8 = local_1c, dVar4 != 0x1a)) {
           iVar6 = st::fn_00404E58((STGameObjC *)pSVar3);
           if (iVar6 == 0) {
             local_18 = g_playSystem_00802A38->field_00E4;
@@ -8845,7 +8845,7 @@ undefined4 * __thiscall st::fn_004A4F10(STGroupBoatC *this,int *param_1)
   memmove(puVar12, puVar7, 0x28); /* compiler REP MOVS byte copy */
   iVar5 = 0;
   STField<undefined4>(puVar6,0x205) = local_14->field_0212;
-  STField<undefined4>(puVar6,0x209) = local_14->field_0216;
+  STField<int>(puVar6,0x209) = local_14->field_0216;
   STField<int>(puVar6,0x20d) = local_14->field_021A;
   STField<undefined4>(puVar6,0x219) = *(undefined4 *)&local_14->field_0x222;
   STField<int>(puVar6,0x235) = local_14->field_0232;
@@ -9601,7 +9601,7 @@ void __thiscall st::fn_004A67A0(STGroupBoatC *this,undefined4 *param_1)
     puVar4 = (byte *)(puVar4 + 1);
   }
   local_8->field_0212 = STField<undefined4>(local_c,0x205);
-  local_8->field_0216 = STField<undefined4>(local_c,0x209);
+  local_8->field_0216 = STField<int>(local_c,0x209);
   local_8->field_021A = STField<int>(local_c,0x20d);
   *(undefined4 *)&local_8->field_0x222 = STField<undefined4>(local_c,0x219);
   local_8->field_0232 = STField<int>(local_c,0x235);

@@ -72,7 +72,7 @@ FUN_00624140(void *this,int param_1,int param_2,Global_sub_0061BDB0_param_1Enum 
                 (STField<ST3DSMAPContext *>(this,0x211),(iVar5 * param_4) / 0xc9,
                  (int *)((iVar5 * param_5) / 0xc9),(int)pGVar3,(int *)&param_3);
       lVar7 = Library::MSVCRT::__ftol();
-      iVar5 = (int)(short)lVar7;
+      iVar5 = (short)lVar7;
       pGVar1 = (Global_sub_0061BDB0_param_1Enum *)((int)pGVar3 + 1);
       pGVar2 = param_3;
       if ((int)param_3 <= (int)pGVar1) {

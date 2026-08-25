@@ -1,4 +1,4 @@
-FUN_00643e20:
+STTorpC::sub_00643E20:
 00643E20  55                        PUSH EBP
 00643E21  8B EC                     MOV EBP,ESP
 00643E23  83 EC 20                  SUB ESP,0x20
@@ -445,7 +445,7 @@ LAB_00644286:
 00644286  6A 01                     PUSH 0x1
 00644288  8B CF                     MOV ECX,EDI
 0064428A  E8 D5 FF DB FF            CALL 0x00404264
-FUN_00643e20::cf_common_exit_0064428F:
+STTorpC::sub_00643E20::cf_common_exit_0064428F:
 0064428F  8B CE                     MOV ECX,ESI
 00644291  E8 A7 0D DC FF            CALL 0x0040503d
 00644296  5F                        POP EDI

@@ -9,7 +9,7 @@ void __fastcall FUN_0074a88b(AnonShape_0074A88B_B70E22D8 *param_1)
 
   /* ST_CALLSITE[0074A897]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection((LPCRITICAL_SECTION)&param_1->field_0x94);
-  if ((((param_1->field_0060 == 0) && (iVar1 = param_1->field_0078, *(int *)(iVar1 + 0x18) != 0)) &&
+  if ((((param_1->field_0060 == 0) && (iVar1 = param_1->field_0078, STField<int>(iVar1,0x18) != 0)) &&
       (((char *)iVar1)[0xa1] == '\0')) &&
      ((param_1->field_0070 == 0 && (param_1->field_00B0 == 1)))) {
     if (iVar1 == 0) {

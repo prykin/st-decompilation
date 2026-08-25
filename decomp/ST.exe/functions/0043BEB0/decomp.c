@@ -1007,7 +1007,7 @@ cf_common_exit_0043CA35:
           DArrayGetElement(pDVar1,uVar17,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             /* ST_CALLSITE[0043CFDE]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-            pSVar11 = GetObjPtr(local_10,((char *)local_28)[4],STPiece<0,2>(local_c),CASE_1);
+            pSVar11 = GetObjPtr(local_10,STField<char>(local_28,0x4),STPiece<0,2>(local_c),CASE_1);
             /* ST_CALLSITE[0043CFEB]: CALL dword ptr [EDX + 0x48] */
             (*pSVar11->vtable->vfunc_48)((short)param_2);
             return;
@@ -1331,7 +1331,7 @@ LAB_0043d5c4:
         if ((ushort)g_packedRecords_A62x8[uVar17].field103_0x171 < 2) {
           return;
         }
-        *(int *)&param_2[0xf].field_0xc = 0xffffffff;
+        *(undefined4 *)&param_2[0xf].field_0xc = 0xffffffff;
         param_2[0x11].field_0004 = 0xff;
         param_2[0x11].field_0005 = 0xff;
         param_2[0x11].field_0006 = 0xff;

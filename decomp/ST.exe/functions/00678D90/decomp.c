@@ -12,12 +12,12 @@ undefined4 __thiscall FUN_00678d90(void *this,int param_1)
 
   iVar1 = STField<int>(this,0x695);
   uVar4 = 0;
-  uVar2 = *(uint *)(iVar1 + 0xc);
+  uVar2 = STField<uint>(iVar1,0xC);
   if (0 < (int)uVar2) {
     bVar5 = uVar2 != 0;
     do {
       if (bVar5) {
-        puVar3 = (undefined4 *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c));
+        puVar3 = (undefined4 *)(STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C));
       }
       else {
         puVar3 = nullptr;

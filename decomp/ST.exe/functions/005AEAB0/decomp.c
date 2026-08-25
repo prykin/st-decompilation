@@ -325,7 +325,7 @@ LAB_005aef44:
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
   }
   iVar2 = this_01->array_00BC[0xc].field_01DB;
-  if (*(int *)(iVar2 + 0x2e6) != 0) {
+  if (STField<int>(iVar2,0x2E6) != 0) {
     memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
     local_1c = 1;
     local_1e = 1;

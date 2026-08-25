@@ -208,9 +208,9 @@ LAB_0046e7ea:
                         STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0],
              pSVar16 == nullptr || (pSVar16->field_0024 != this->field_0024)) ||
             /* ST_CALLSITE[0046D932]: CALL dword ptr [EDX + 0x2c] */
-            ((dVar7 = pSVar16->slot_2C(), dVar7 != 0x3b &&
+            ((dVar7 = pSVar16->sub_0045EEE0(), dVar7 != 0x3b &&
              /* ST_CALLSITE[0046D93E]: CALL dword ptr [EAX + 0x2c] */
-             (dVar7 = pSVar16->slot_2C(), dVar7 != 0x60)))))) {
+             (dVar7 = pSVar16->sub_0045EEE0(), dVar7 != 0x60)))))) {
           /* ST_CALLSITE[0046D9B5]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
           sub_004602B0(this);
           /* ST_CALLSITE[0046D9BE]: CALL dword ptr [EAX + 0xd8] */
@@ -292,9 +292,9 @@ cf_common_exit_0046E811:
                         STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0],
              pSVar16 != nullptr && (pSVar16->field_0024 == this->field_0024)))))) &&
           /* ST_CALLSITE[0046DABF]: CALL dword ptr [EDX + 0x2c] */
-          ((dVar7 = pSVar16->slot_2C(), dVar7 == 0x3b ||
+          ((dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x3b ||
            /* ST_CALLSITE[0046DACB]: CALL dword ptr [EAX + 0x2c] */
-           (dVar7 = pSVar16->slot_2C(), dVar7 == 0x60)))))) {
+           (dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x60)))))) {
         iVar13 = thunk_FUN_004e1490(pSVar16);
         if (iVar13 != 1) {
           return 2;
@@ -363,7 +363,7 @@ cf_common_exit_0046E811:
         if (this->field_0550 == CASE_3) {
           /* ST_CALLSITE[0046DF4D]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
           local_c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,&local_10);
-          param_1 = 0;
+          auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
           if (this->field_02BF != '\0') {
             local_8 = (undefined4 *)&this->field_0x2b3;
             do {
@@ -388,7 +388,7 @@ cf_common_exit_0046E811:
                 sVar19 = 0;
                 this->field_001C = local_18;
                 lVar17 = Library::MSVCRT::__ftol();
-                iVar13 = (int)(short)lVar17 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                iVar13 = (short)lVar17 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                          (int)local_1c;
                 iVar8 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_20);
                 uVar9 = local_18;
@@ -416,12 +416,12 @@ cf_common_exit_0046E811:
               /* ST_CALLSITE[0046E0F2]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
-                         (uVar9 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_20,
+                         (uVar9 >> 0x10) % 7 + (int)this->field_0041 + -3 + (short)local_20,
                          iVar8 + -3,iVar13,sVar19,sVar18,sVar22,sVar21,sVar23,sVar24,iVar25,sVar26,
                          bVar27);
-              param_1 = param_1 + 1;
+              param_1_after_write = param_1_after_write + 1;
               local_8 = (undefined4 *)((int)local_8 + 6);
-            } while (param_1 < (int)(uint)(byte)this->field_02BF);
+            } while (param_1_after_write < (int)(uint)(byte)this->field_02BF);
           }
           if (local_c == -1) {
             local_EAX_3355 =
@@ -491,7 +491,7 @@ cf_common_exit_0046E811:
               if (this->field_0550 == CASE_3) {
                 /* ST_CALLSITE[0046E517]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
                 local_c = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_10,&local_14);
-                param_1 = 0;
+                auto param_1_after_write_2 = 0; /* compiler stack-slot lifetime split */
                 if (this->field_02BF != '\0') {
                   local_8 = (undefined4 *)&this->field_0x2b3;
                   do {
@@ -516,7 +516,7 @@ cf_common_exit_0046E811:
                       sVar19 = 0;
                       this->field_001C = local_18;
                       lVar17 = Library::MSVCRT::__ftol();
-                      iVar13 = (int)(short)lVar17 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3
+                      iVar13 = (short)lVar17 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3
                                + (int)local_1c;
                       iVar8 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_20);
                       uVar9 = local_18;
@@ -545,11 +545,11 @@ cf_common_exit_0046E811:
                     TraksClassTy::TraksCreate
                               (g_traksClass_00802A7C,1,2,7,
                                (uVar9 >> 0x10) % 7 + (int)this->field_0041 + -3 +
-                               (int)(short)local_20,iVar8 + -3,iVar13,sVar19,sVar18,sVar22,sVar21,
+                               (short)local_20,iVar8 + -3,iVar13,sVar19,sVar18,sVar22,sVar21,
                                sVar23,sVar24,iVar25,sVar26,bVar27);
-                    param_1 = param_1 + 1;
+                    param_1_after_write_2 = param_1_after_write_2 + 1;
                     local_8 = (undefined4 *)((int)local_8 + 6);
-                  } while (param_1 < (int)(uint)(byte)this->field_02BF);
+                  } while (param_1_after_write_2 < (int)(uint)(byte)this->field_02BF);
                 }
                 if (local_c == -1) {
                   local_EAX_4888 =
@@ -787,9 +787,9 @@ switchD_0046d492_caseD_0:
     if (pSVar16 != nullptr) {
       if (((pSVar16->field_0024 == this->field_0024) &&
           /* ST_CALLSITE[0046D57C]: CALL dword ptr [EAX + 0x2c] */
-          ((dVar7 = pSVar16->slot_2C(), dVar7 == 0x3b ||
+          ((dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x3b ||
            /* ST_CALLSITE[0046D588]: CALL dword ptr [EDX + 0x2c] */
-           (dVar7 = pSVar16->slot_2C(), dVar7 == 0x60)))) &&
+           (dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x60)))) &&
          (iVar13 = thunk_FUN_004e1490(pSVar16), iVar13 != 1)) {
         /* ST_CALLSITE[0046D5DE]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -811,9 +811,9 @@ switchD_0046d492_caseD_0:
 LAB_0046d60c:
     if (((pSVar16 != nullptr) && (pSVar16->field_0024 == this->field_0024)) &&
        /* ST_CALLSITE[0046D61E]: CALL dword ptr [EDX + 0x2c] */
-       ((dVar7 = pSVar16->slot_2C(), dVar7 == 0x3b ||
+       ((dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x3b ||
         /* ST_CALLSITE[0046D62A]: CALL dword ptr [EAX + 0x2c] */
-        (dVar7 = pSVar16->slot_2C(), dVar7 == 0x60)))) {
+        (dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x60)))) {
       this->field_054C = CASE_2;
 LAB_0046d818:
       /* ST_CALLSITE[0046D81C]: CALL 0x00403a2b; direct=00403A2B STBoatC::Defence */

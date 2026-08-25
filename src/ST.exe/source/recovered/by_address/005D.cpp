@@ -675,12 +675,12 @@ undefined4 st::fn_005DA7A0(void)
           iVar4 = *puVar1;
           st::fn_0072DA70
                     ((undefined4 *)(iVar4 + 0x1c),(AnonPointee_TLOBaseTy_0607 *)(iVar4 + 8),
-                     *(int *)(iVar4 + 4) * 0x14);
+                     STField<int>(iVar4,0x4) * 0x14);
           iVar4 = *puVar1;
-          *(undefined4 *)(iVar4 + 0xc) = DAT_007cd700;
-          *(undefined4 *)(iVar4 + 0x10) = DAT_007cd704;
-          *(undefined4 *)(iVar4 + 0x14) = DAT_007cd708;
-          *(undefined4 *)(iVar4 + 0x18) = DAT_007cd70c;
+          STField<undefined4>(iVar4,0xC) = DAT_007cd700;
+          STField<undefined4>(iVar4,0x10) = DAT_007cd704;
+          STField<undefined4>(iVar4,0x14) = DAT_007cd708;
+          STField<undefined4>(iVar4,0x18) = DAT_007cd70c;
           *(char **)(*puVar1 + 8) = pcVar6;
           *(int *)(*puVar1 + 4) = *(int *)(*puVar1 + 4) + 1;
         }
@@ -696,8 +696,7 @@ undefined4 st::fn_005DA7A0(void)
 }
 
 // 005DA980 FUN_005da980
-#line 1 "decomp/ST.exe/functions/005DA980/decomp.c"
-
+#line 4 "decomp/ST.exe/functions/005DA980/decomp.c"
 /* [STReturnSemanticsApplier] machine_scalar_return.
    Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
    returns establish signed int while zero is a signedness-neutral member of that same domain;
@@ -716,9 +715,8 @@ int st::fn_005DA980(int param_1)
   if (iVar1 == 0) {
     st::fn_004034F4();
     st::fn_006B6150((uint)DAT_00807362);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_006B6350
-              ((int *)&g_int_00811764,(char *)(*(int *)(local_8 + 0x68a) + 0xc + param_1 * 0x14),
+              ((int *)&g_int_00811764,(char *)(STField<int>(local_8,0x68A) + 0xc + param_1 * 0x14),
                (int *)&DAT_007cd6f0);
     st::fn_006B6500(g_int_00811764,DAT_0080733c);
     g_currentExceptionFrame = local_4c.previous;

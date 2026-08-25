@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_0069b910(int param_1,int param_2,int *param_3,int param_4,int param_5,int param_6)
 
@@ -36,8 +38,8 @@ int FUN_0069b910(int param_1,int param_2,int *param_3,int param_4,int param_5,in
         iVar1 = *(int *)(iVar10 + 0x30 + param_1);
         iVar2 = *(int *)(iVar10 + 0x38 + param_1);
         iVar10 = iVar10 + param_1;
-        iVar3 = *(int *)(iVar10 + 0x3c);
-        iVar9 = *(int *)(iVar10 + 0x34);
+        iVar3 = STField<int>(iVar10,0x3C);
+        iVar9 = STField<int>(iVar10,0x34);
         if ((local_8 != 0) && (local_14 = 0, 0 < local_8)) {
           local_1c = param_3;
           do {
@@ -47,10 +49,10 @@ int FUN_0069b910(int param_1,int param_2,int *param_3,int param_4,int param_5,in
             }
             iVar8 = *local_1c * 0x40 + param_1;
             iVar6 = FUN_006acf90((iVar2 - iVar1) / 2 + iVar1,(iVar3 - iVar9) / 2 + iVar9,
-                                 (*(int *)(iVar8 + 0x38) - *(int *)(iVar8 + 0x30)) / 2 +
-                                 *(int *)(iVar8 + 0x30),
-                                 (*(int *)(iVar8 + 0x3c) - *(int *)(iVar8 + 0x34)) / 2 +
-                                 *(int *)(iVar8 + 0x34));
+                                 (STField<int>(iVar8,0x38) - STField<int>(iVar8,0x30)) / 2 +
+                                 STField<int>(iVar8,0x30),
+                                 (STField<int>(iVar8,0x3C) - STField<int>(iVar8,0x34)) / 2 +
+                                 STField<int>(iVar8,0x34));
             if (iVar6 < param_5) {
               bVar4 = false;
               break;
@@ -70,12 +72,12 @@ int FUN_0069b910(int param_1,int param_2,int *param_3,int param_4,int param_5,in
           }
           do {
             local_20 = local_20 + 1;
-            if (param_6 <= *(int *)(iVar10 + 0x2c)) {
-              iVar11 = *(int *)(iVar10 + 0x38);
-              iVar1 = *(int *)(iVar10 + 0x30);
+            if (param_6 <= STField<int>(iVar10,0x2C)) {
+              iVar11 = STField<int>(iVar10,0x38);
+              iVar1 = STField<int>(iVar10,0x30);
               bVar4 = true;
-              iVar2 = *(int *)(iVar10 + 0x3c);
-              iVar3 = *(int *)(iVar10 + 0x34);
+              iVar2 = STField<int>(iVar10,0x3C);
+              iVar3 = STField<int>(iVar10,0x34);
               local_14 = 0;
               if (local_8 < 1) {
 LAB_0069bb27:
@@ -86,8 +88,8 @@ LAB_0069bb27:
               while (*local_1c != local_18) {
                 iVar9 = param_1 + *local_1c * 0x40;
                 iVar7 = FUN_006acf90(iVar11 / 2 + iVar1,iVar2 / 2 + iVar3,
-                                     *(int *)(iVar9 + 0x38) / 2 + *(int *)(iVar9 + 0x30),
-                                     *(int *)(iVar9 + 0x3c) / 2 + *(int *)(iVar9 + 0x34));
+                                     STField<int>(iVar9,0x38) / 2 + STField<int>(iVar9,0x30),
+                                     STField<int>(iVar9,0x3C) / 2 + STField<int>(iVar9,0x34));
                 if (iVar7 < param_5) break;
                 local_14 = local_14 + 1;
                 local_1c = local_1c + 1;

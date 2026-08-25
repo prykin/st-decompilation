@@ -1,4 +1,4 @@
-FUN_004d6890:
+TLOEmbryoTy::sub_004D6890:
 004D6890  55                        PUSH EBP
 004D6891  8B EC                     MOV EBP,ESP
 004D6893  53                        PUSH EBX

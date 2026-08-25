@@ -44,7 +44,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
       auto param_1_after_write = (AnonShape_00575460_06C413C6 *)&param_1->field_0x459; /* compiler stack-slot lifetime split */
       do {
         iVar6 = *(int *)param_1_after_write;
-        if ((iVar6 != 0) && (element_00 = (int *)(iVar6 + 0xc), *(int *)(iVar6 + 0xc) != 0)) {
+        if ((iVar6 != 0) && (element_00 = (int *)(iVar6 + 0xc), STField<int>(iVar6,0xC) != 0)) {
           array->iteratorIndex = 0;
           do {
             uVar2 = array->iteratorIndex;

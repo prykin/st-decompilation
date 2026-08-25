@@ -624,10 +624,6 @@ int __cdecl st::fn_006839D0(int param_1,int *param_2,ushort param_3,int param_4)
 // 00683C70 FUN_00683c70
 #line 4 "decomp/ST.exe/functions/00683C70/decomp.c"
 /* WARNING: Unable to use type for symbol pcVar7 */
-/* WARNING: Unable to use type for symbol temp_3fb77f837b */
-/* WARNING: Unable to use type for symbol temp_3f53535d7a */
-/* WARNING: Unable to use type for symbol temp_3f861e3394 */
-/* WARNING: Unable to use type for symbol temp_3f4976a46d */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 1082 | 1127 | 1128 | 1129 | 1130 | 1131 | 1132 | 1133 | 1137 | 1138 |
@@ -1220,13 +1216,11 @@ LAB_006842d6:
                       local_EAX_3521 =
                            st::fn_0072E340
                                      (&CHAR_00h_00811aa4 + iVar8 * 0x2b14,temp_3f53535d7a,0x3f);
-                      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                      local_bc = STReplaceLowWord((uint32_t)(local_EAX_3521), (uint16_t)(*(undefined2 *)(local_EAX_3364 + 0x472)));
+                      local_bc = STReplaceLowWord((uint32_t)(local_EAX_3521), (uint16_t)(STField<undefined2>(local_EAX_3364,0x472)));
                       local_d0 = st::machine_word_boundary_cast<int>(PTR_008489cc->field_000F->count + 1);
-                      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                       local_EAX_3581 =
                            st::fn_00403EE5((int *)(local_EAX_3364 + 0x46e),'\x02',
-                                              (byte *)&local_d0,*(int *)(local_EAX_3364 + 0x456));
+                                              (byte *)&local_d0,STField<int>(local_EAX_3364,0x456));
                       local_4c = 0xb;
                       local_4b = 0x19;
                       local_49 = 1;
@@ -1255,13 +1249,11 @@ LAB_006842d6:
                                       (-0x8f,g_overwriteContext_007ED77C,
                                        st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x60d);
                           }
-                          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                          local_c8 = *(undefined4 *)(local_EAX_2872 + 0x472);
+                          local_c8 = STField<undefined4>(local_EAX_2872,0x472);
                           pAVar1 = (AnonShape_00683780_11EA4E23 *)(local_EAX_2872 + 0x46e);
-                          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                           st::fn_00403EE5((int *)pAVar1,'\x02',
                                              (byte *)(&DAT_00814594 + DAT_008488b0 * 0xac5),
-                                             *(int *)(local_EAX_2872 + 0x456));
+                                             STField<int>(local_EAX_2872,0x456));
                           local_5c = 0xb;
                           local_5b = 0x21;
                           local_59 = 1;
@@ -1290,8 +1282,7 @@ LAB_006842d6:
                                         (-0x8f,g_overwriteContext_007ED77C,
                                          st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5fd);
                             }
-                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                            local_c0 = *(undefined4 *)(local_EAX_2631 + 0x472);
+                            local_c0 = STField<undefined4>(local_EAX_2631,0x472);
                             local_6c = 0xb;
                             local_6b = 0x323;
                             local_69 = 0;
@@ -1323,8 +1314,7 @@ LAB_00684777:
                                         (-0x8f,g_overwriteContext_007ED77C,
                                          st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5ed);
                             }
-                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                            local_b8 = *(undefined4 *)(local_EAX_2430 + 0x472);
+                            local_b8 = STField<undefined4>(local_EAX_2430,0x472);
                             local_7c = 0xb;
                             local_7b = 0x322;
                             local_79 = 0;
@@ -1357,8 +1347,7 @@ LAB_00684777:
                                       (-0x8e,g_overwriteContext_007ED77C,
                                        st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x5dd);
                           }
-                          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                          local_b4 = *(undefined4 *)(local_EAX_3220 + 0x472);
+                          local_b4 = STField<undefined4>(local_EAX_3220,0x472);
                           local_44 = 0xb;
                           local_43 = 0x514;
                           local_41 = 0;
@@ -1658,9 +1647,9 @@ switchD_00684bb9_caseD_3f2:
           pcVar21 = &CHAR_00h_00811aa4 + iVar12;
           memmove(pcVar21, pcVar4, uVar6); /* compiler REP MOVS byte copy */
           uVar7 = 0;
-          (&DAT_00811a9c)[iVar9 * 0xac5] = *(undefined4 *)(iVar12 + 0x80ef88);
+          (&DAT_00811a9c)[iVar9 * 0xac5] = STField<undefined4>(iVar12,0x80EF88);
           iVar8 = DAT_007d2d18;
-          (&DAT_00811aa0)[iVar9 * 0xac5] = *(undefined4 *)(iVar12 + 0x80ef8c);
+          (&DAT_00811aa0)[iVar9 * 0xac5] = STField<undefined4>(iVar12,0x80EF8C);
           (&DAT_00811ae4)[iVar9 * 0xac5] = iVar8;
         }
         goto switchD_006841b6_default;
@@ -1732,10 +1721,10 @@ switchD_00684bb9_caseD_3f2:
               uVar13 = extraout_var;
             }
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_b0 = CONCAT22(uVar13,*(undefined2 *)(iVar10 + 0x472));
+            local_b0 = CONCAT22(uVar13,STField<undefined2>(iVar10,0x472));
             piVar22 = (int *)(iVar10 + 0x46e);
             st::fn_00403EE5(piVar22,'\x02',(byte *)(&DAT_00811aa0 + DAT_008488b0 * 0xac5),
-                               *(int *)(iVar10 + 0x456));
+                               STField<int>(iVar10,0x456));
             local_EAX_25691 = st::fn_00403779(g_anonShape_00683780_11EA4E23_00848A14,0);
             if ((g_anonShape_00683780_11EA4E23_00848A14->field_0004 == 1) &&
                (cVar2 = *local_EAX_25691, cVar2 != '\a')) {
@@ -1743,11 +1732,11 @@ switchD_00684bb9_caseD_3f2:
                 st::fn_00405411(-0x74,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
               }
               st::fn_00403EE5(piVar22,'\x02',(byte *)(local_EAX_25691 + 1),
-                                 *(int *)(iVar10 + 0x456));
+                                 STField<int>(iVar10,0x456));
             }
             else {
               st::fn_004033AF(piVar22,g_anonShape_00683780_11EA4E23_00848A14,
-                                 *(int *)(iVar10 + 0x456));
+                                 STField<int>(iVar10,0x456));
             }
             local_1c = 0;
             switch((&DAT_00811a9c)[DAT_008488b0 * 0xac5]) {
@@ -1763,7 +1752,7 @@ switchD_00684bb9_caseD_3f2:
             case 8:
               local_1c = 3;
             }
-            st::fn_00403EE5(piVar22,'\x02',(byte *)&local_1c,*(int *)(iVar10 + 0x456));
+            st::fn_00403EE5(piVar22,'\x02',(byte *)&local_1c,STField<int>(iVar10,0x456));
             local_84 = 0xb;
             local_81 = 3;
             local_83 = *(undefined2 *)(&DAT_00811ae4 + DAT_008488b0 * 0xac5);
@@ -1935,11 +1924,10 @@ cf_error_exit_0068A22B:
               uVar13 = extraout_var_04;
             }
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_d4 = CONCAT22(uVar13,*(undefined2 *)(local_EAX_24967 + 0x472));
+            local_d4 = CONCAT22(uVar13,STField<undefined2>(local_EAX_24967,0x472));
             piVar22 = (int *)(local_EAX_24967 + 0x46e);
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             st::fn_00403EE5(piVar22,'\x02',(byte *)(&DAT_00811aa0 + DAT_008488b0 * 0xac5),
-                               *(int *)(local_EAX_24967 + 0x456));
+                               STField<int>(local_EAX_24967,0x456));
             local_EAX_25115 = st::fn_00403779(g_anonShape_00683780_11EA4E23_00848A14,0);
             if ((g_anonShape_00683780_11EA4E23_00848A14->field_0004 == 1) &&
                (local_5 = *local_EAX_25115, local_5 != '\a')) {
@@ -1949,24 +1937,21 @@ cf_error_exit_0068A22B:
                   if ((local_5 != '\x04') && (local_5 != '\x01')) {
                     st::fn_00405411(-0x74,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
                   }
-                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   st::fn_00403EE5(piVar22,'\x02',(byte *)(local_EAX_25115 + 1),
-                                     *(int *)(local_EAX_24967 + 0x456));
+                                     STField<int>(local_EAX_24967,0x456));
                 }
                 else if (iVar8 == 8) {
                   if ((local_5 != '\x06') && (local_5 != '\x03')) {
                     st::fn_00405411(-0x74,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
                   }
-                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   st::fn_00403EE5(piVar22,'\x01',*(byte **)(local_EAX_25115 + 1),
-                                     *(int *)(local_EAX_24967 + 0x456));
+                                     STField<int>(local_EAX_24967,0x456));
                 }
               }
             }
             else {
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               st::fn_004033AF(piVar22,g_anonShape_00683780_11EA4E23_00848A14,
-                                 *(int *)(local_EAX_24967 + 0x456));
+                                 STField<int>(local_EAX_24967,0x456));
             }
             local_14 = 0;
             switch((&DAT_00811a9c)[DAT_008488b0 * 0xac5]) {
@@ -1982,8 +1967,7 @@ cf_error_exit_0068A22B:
             case 8:
               local_14 = 3;
             }
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            st::fn_00403EE5(piVar22,'\x02',(byte *)&local_14,*(int *)(local_EAX_24967 + 0x456));
+            st::fn_00403EE5(piVar22,'\x02',(byte *)&local_14,STField<int>(local_EAX_24967,0x456));
             local_74 = 0xb;
             local_71 = 3;
             local_73 = *(undefined2 *)(&DAT_00811ae4 + DAT_008488b0 * 0xac5);
@@ -2820,8 +2804,7 @@ cf_common_join_006895D5:
       if (iVar8 == 0) {
         st::fn_00405411(-0x7d,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar8 = *(int *)(local_EAX_14857 + 0x456);
+      iVar8 = STField<int>(local_EAX_14857,0x456);
       uVar24 = (ushort)(&DAT_00811a94)[DAT_008488b0 * 0xac5];
       goto LAB_006896f6;
     }
@@ -2950,10 +2933,9 @@ cf_common_join_006895D5:
               uVar13 = extraout_var_01;
             }
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_c4 = CONCAT22(uVar13,*(undefined2 *)(local_EAX_5150 + 0x472));
+            local_c4 = CONCAT22(uVar13,STField<undefined2>(local_EAX_5150,0x472));
             piVar22 = (int *)(local_EAX_5150 + 0x46e);
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            iVar8 = *(int *)(local_EAX_5150 + 0x456);
+            iVar8 = STField<int>(local_EAX_5150,0x456);
             if ((&DAT_00813bc8)[DAT_008488b0 * 0x2b14] == '\x02') {
               st::fn_00403EE5(piVar22,'\x02',(byte *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),iVar8
                                 );
@@ -2963,10 +2945,9 @@ cf_common_join_006895D5:
               st::fn_004033AF(piVar22,local_EAX_5366,iVar8);
             }
             local_cc = st::machine_word_boundary_cast<int>(PTR_008489cc->field_000F->count + 1);
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_EAX_5419 =
                  st::fn_00403EE5(piVar22,'\x02',(byte *)&local_cc,
-                                    *(int *)(local_EAX_5150 + 0x456));
+                                    STField<int>(local_EAX_5150,0x456));
             iVar8 = DAT_008488b0;
             local_54 = 0xb;
             local_51 = 2;
@@ -3680,15 +3661,13 @@ cf_common_join_006895D5:
         PTR_008489cc->field_0001 = (&DAT_00811c84)[DAT_008488b0 * 0xac5];
         PTR_008489cc->field_0005 = (&DAT_00811a94)[DAT_008488b0 * 0xac5];
         if ((&DAT_00813bc8)[DAT_008488b0 * 0x2b14] == '\x02') {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_EAX_8927 =
                st::fn_00403EE5(piVar22,'\x02',(byte *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),
-                                  *(int *)(local_EAX_8657 + 0x456));
+                                  STField<int>(local_EAX_8657,0x456));
           STPiece<0,2>(local_EAX_8927) = (undefined2)local_EAX_8927;
         }
         else {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar8 = *(int *)(local_EAX_8657 + 0x456);
+          iVar8 = STField<int>(local_EAX_8657,0x456);
           pAVar4 = st::fn_00404273((&DAT_00811c80)[DAT_008488b0 * 0xac5]);
           local_EAX_8961 = st::fn_004033AF(piVar22,pAVar4,iVar8);
           STPiece<0,2>(local_EAX_8961) = (undefined2)local_EAX_8961;
@@ -4786,8 +4765,7 @@ joined_r0x00689693:
     if (iVar8 == 0) {
       st::fn_00405411(-0x7d,&CHAR_00h_00811aa4 + DAT_008488b0 * 0x2b14);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar8 = *(int *)(local_EAX_14857 + 0x456);
+    iVar8 = STField<int>(local_EAX_14857,0x456);
     uVar24 = (ushort)(&DAT_00811a94)[DAT_008488b0 * 0xac5];
 LAB_006896f6:
     st::fn_004035DA((int)PTR_008489cc,(int *)(local_EAX_14857 + 0x46e),uVar24,iVar8);

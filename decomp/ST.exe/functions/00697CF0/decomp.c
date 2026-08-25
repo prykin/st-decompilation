@@ -107,10 +107,9 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
         puVar17 = local_1c;
         if (param_1 < 1) break;
         iVar11 = STField<int>(this,0x5853);
-        if (local_88 < *(uint *)(iVar11 + 0xc)) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        if (local_88 < STField<uint>(iVar11,0xC)) {
           pAVar18 = (AnonShape_00697CF0_36737CA3 *)
-                    (*(int *)(iVar11 + 8) * local_88 + *(int *)(iVar11 + 0x1c));
+                    (STField<int>(iVar11,0x8) * local_88 + STField<int>(iVar11,0x1C));
         }
         else {
           pAVar18 = nullptr;
@@ -125,12 +124,11 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
             local_90 = 0;
             local_94 = 0;
             iVar11 = pAVar18->field_0015;
-            uVar9 = *(uint *)(iVar11 + 0xc);
+            uVar9 = STField<uint>(iVar11,0xC);
             if (0 < (int)uVar9) {
               do {
                 if (local_94 < uVar9) {
-                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                  pbVar14 = (byte *)(*(int *)(iVar11 + 8) * local_94 + *(int *)(iVar11 + 0x1c));
+                  pbVar14 = (byte *)(STField<int>(iVar11,0x8) * local_94 + STField<int>(iVar11,0x1C));
                 }
                 else {
                   pbVar14 = nullptr;
@@ -176,7 +174,7 @@ LAB_00697e8c:
                 }
                 local_94 = local_94 + 1;
                 iVar11 = local_a4->field_0015;
-                uVar9 = *(uint *)(iVar11 + 0xc);
+                uVar9 = STField<uint>(iVar11,0xC);
                 iVar13 = local_6c;
               } while ((int)local_94 < (int)uVar9);
             }
@@ -237,9 +235,9 @@ LAB_00697e8c:
         if (-1 < local_80) {
           psVar5 = (short *)(local_28 + local_80 * 0x10);
           iVar13 = STField<int>(this,0x5853);
-          if ((uint)(int)*psVar5 < *(uint *)(iVar13 + 0xc)) {
+          if ((uint)(int)*psVar5 < STField<uint>(iVar13,0xC)) {
             local_a4 = (AnonShape_00697CF0_36737CA3 *)
-                       (*(int *)(iVar13 + 8) * (int)*psVar5 + *(int *)(iVar13 + 0x1c));
+                       (STField<int>(iVar13,0x8) * (int)*psVar5 + STField<int>(iVar13,0x1C));
           }
           else {
             local_a4 = nullptr;
@@ -257,12 +255,11 @@ LAB_00697e8c:
           }
           local_94 = 0;
           iVar13 = local_a4->field_0015;
-          if (0 < *(int *)(iVar13 + 0xc)) {
-            bVar21 = *(int *)(iVar13 + 0xc) != 0;
+          if (0 < STField<int>(iVar13,0xC)) {
+            bVar21 = STField<int>(iVar13,0xC) != 0;
             do {
               if (bVar21) {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                pbVar14 = (byte *)(*(int *)(iVar13 + 8) * local_94 + *(int *)(iVar13 + 0x1c));
+                pbVar14 = (byte *)(STField<int>(iVar13,0x8) * local_94 + STField<int>(iVar13,0x1C));
               }
               else {
                 pbVar14 = nullptr;
@@ -278,8 +275,8 @@ LAB_00697e8c:
               }
               local_94 = local_94 + 1;
               iVar13 = local_a4->field_0015;
-              bVar21 = local_94 < *(uint *)(iVar13 + 0xc);
-            } while ((int)local_94 < (int)*(uint *)(iVar13 + 0xc));
+              bVar21 = local_94 < STField<uint>(iVar13,0xC);
+            } while ((int)local_94 < (int)STField<uint>(iVar13,0xC));
           }
           *(undefined4 *)((int)auStack_10c + iVar11 + iVar7 + iVar8 + 0x1c) = 0x6980f4;
           local_EAX_1023 = Library::MSVCRT::FUN_0072e6c0();
@@ -298,19 +295,19 @@ LAB_00697e8c:
           }
           do {
             iVar13 = local_a4->field_0015;
-            uVar9 = *(uint *)(iVar13 + 0xc);
+            uVar9 = STField<uint>(iVar13,0xC);
             *(undefined4 *)((int)auStack_10c + iVar11 + iVar7 + iVar8 + 0x1c) = 0x698143;
             local_EAX_1102 = Library::MSVCRT::FUN_0072e6c0();
             uVar12 = (int)local_EAX_1102 % (int)uVar9;
             puVar1 = (&PTR_DAT_007d7f70)[local_9c];
             if (uVar12 < uVar9) {
-              iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c);
+              iVar13 = STField<int>(iVar13,0x8) * uVar12 + STField<int>(iVar13,0x1C);
             }
             else {
               iVar13 = 0;
             }
-            local_84 = *(int *)(iVar13 + 2) / STField<int>(this,0x5833);
-            local_78 = *(int *)(iVar13 + 2) % STField<int>(this,0x5833);
+            local_84 = STField<int>(iVar13,0x2) / STField<int>(this,0x5833);
+            local_78 = STField<int>(iVar13,0x2) % STField<int>(this,0x5833);
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             iVar13 = (int)*(short *)(local_28 + local_80 * 0x10 + 0xc);
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -409,12 +406,10 @@ LAB_00697e8c:
       *(undefined4 *)(puVar17 + -4) = 0x6983d9;
       uVar4 = Library::MSVCRT::FUN_0072e6c0();
       iVar7 = STField<int>(this,0x5853);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((uint)(int)*(short *)(local_28 + ((int)uVar4 % iVar13) * 0x10) < *(uint *)(iVar7 + 0xc)) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      if ((uint)(int)*(short *)(local_28 + ((int)uVar4 % iVar13) * 0x10) < STField<uint>(iVar7,0xC)) {
         local_a4 = (AnonShape_00697CF0_36737CA3 *)
-                   (*(int *)(iVar7 + 8) * (int)*(short *)(local_28 + ((int)uVar4 % iVar13) * 0x10) +
-                   *(int *)(iVar7 + 0x1c));
+                   (STField<int>(iVar7,0x8) * (int)*(short *)(local_28 + ((int)uVar4 % iVar13) * 0x10) +
+                   STField<int>(iVar7,0x1C));
       }
       else {
         local_a4 = nullptr;
@@ -423,7 +418,7 @@ LAB_00697e8c:
          (local_a4->field_0015 != 0)) {
         local_50 = local_a4->field_0011 / 10 + 1;
         iVar13 = local_a4->field_0015;
-        uVar9 = *(uint *)(iVar13 + 0xc);
+        uVar9 = STField<uint>(iVar13,0xC);
         *(undefined4 *)(puVar17 + -4) = 0x698455;
         uVar8 = Library::MSVCRT::FUN_0072e6c0();
         local_2c = (int)uVar8 % (int)uVar9;
@@ -435,14 +430,14 @@ LAB_00697e8c:
               uVar12 = uVar12 - uVar9;
             }
             if (uVar12 < uVar9) {
-              iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c);
+              iVar13 = STField<int>(iVar13,0x8) * uVar12 + STField<int>(iVar13,0x1C);
             }
             else {
               iVar13 = 0;
             }
             if (iVar13 != 0) {
-              iVar7 = *(int *)(iVar13 + 2) / STField<int>(this,0x5833);
-              iVar13 = *(int *)(iVar13 + 2) % STField<int>(this,0x5833);
+              iVar7 = STField<int>(iVar13,0x2) / STField<int>(this,0x5833);
+              iVar13 = STField<int>(iVar13,0x2) % STField<int>(this,0x5833);
               *(undefined4 *)(puVar17 + -4) = 0x6984b9;
               local_EAX_1988 = Library::MSVCRT::FUN_0072e6c0();
               uVar9 = local_EAX_1988 & 0x80000003;
@@ -531,7 +526,7 @@ LAB_00697e8c:
             }
             local_94 = local_94 + 1;
             iVar13 = local_a4->field_0015;
-            uVar9 = *(uint *)(iVar13 + 0xc);
+            uVar9 = STField<uint>(iVar13,0xC);
           } while ((int)local_94 < (int)uVar9);
         }
       }

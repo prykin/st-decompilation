@@ -79,10 +79,10 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
       else if (iVar4 == 1) {
         param_1->field_0400 = 1;
         thunk_FUN_00416270(param_1,(uint *)local_10,local_14,local_18);
-        sVar2 = *(short *)&param_1->field_05B0 * 0xc9 + 100;
+        sVar2 = (short)param_1->field_05B0 * 0xc9 + 100;
         if (((local_10[0] == sVar2) &&
-            (local_14[0] == (short)(*(short *)&param_1->field_05B4 * 0xc9 + 100))) &&
-           (local_18[0] == (short)(*(short *)&param_1->field_05B8 * 200 + 100))) {
+            (local_14[0] == (short)((short)param_1->field_05B4 * 0xc9 + 100))) &&
+           (local_18[0] == (short)((short)param_1->field_05B8 * 200 + 100))) {
           param_1->field_03DC = 0;
           /* ST_CALLSITE[004C6DA6]: CALL 0x00405952; direct=00405952 sub_004167A0 */
           sub_004167A0(param_1);
@@ -90,8 +90,8 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
         else {
           /* ST_CALLSITE[004C6DD7]: CALL 0x00402455; direct=00402455 sub_00415B30 */
           sub_00415B30(param_1,local_10[0],local_14[0],local_18[0],sVar2,
-                       *(short *)&param_1->field_05B4 * 0xc9 + 100,
-                       *(short *)&param_1->field_05B8 * 200 + 100,param_1->field_0062);
+                       (short)param_1->field_05B4 * 0xc9 + 100,
+                       (short)param_1->field_05B8 * 200 + 100,param_1->field_0062);
         }
       }
     }

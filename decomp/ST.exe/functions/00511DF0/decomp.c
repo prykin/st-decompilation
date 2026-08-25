@@ -54,9 +54,8 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
       local_8->field_0030 = (undefined2)iVar2;
       local_8->field_0032 = STPiece<2,2>(iVar2);
       if (g_cursorClass_00802A30 != nullptr) {
-        /* ST_CALLSITE[00511EC2]: CALL dword ptr [EAX] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)g_cursorClass_00802A30->field_0000)(&local_8->field_0x18);
+        /* ST_CALLSITE[00511EC2]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+        g_cursorClass_00802A30->GetMessage((STMessage *)&local_8->field_0x18);
       }
     }
     /* ST_CALLSITE[00511EC8]: CALL 0x00404fd9; direct=00404FD9 HelpPanelTy::ShiftControls */

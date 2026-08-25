@@ -84,7 +84,7 @@ LAB_0065fec9:
       local_38[1] = array;
       local_1c = local_c;
       if (((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) &&
-         (this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D),
+         (this = thunk_FUN_0042b760((char)param_1->field_0024,param_1->field_007D),
          this != nullptr)) {
         /* ST_CALLSITE[0065FF66]: CALL dword ptr [EDX + 0x8] */
         this->sub_00498D20(8,(short)local_38);

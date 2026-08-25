@@ -29,7 +29,7 @@ void __thiscall HelpPanelTy::sub_00515180(HelpPanelTy *this,char param_1)
       return;
     case '\x05':
       /* ST_CALLSITE[005151D0]: CALL 0x00402833; direct=00402833 HelpPanelTy::TechProc */
-      TechProc(this,(uint)this->field_01A3,*(byte *)&this->field_01A7,'\x01');
+      TechProc(this,(uint)this->field_01A3,(byte)this->field_01A7,'\x01');
       return;
     case '\x06':
       /* ST_CALLSITE[005151B7]: CALL 0x00405e61; direct=00405E61 HelpPanelTy::TTreeProc */

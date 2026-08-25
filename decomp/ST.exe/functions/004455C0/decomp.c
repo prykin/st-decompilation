@@ -106,10 +106,8 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
     iVar5 = extraout_EAX;
   }
   /* ST_CALLSITE[004457C2]: CALL 0x0040340e; direct=0040340E STGroupC::AddObj */
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar4 = STGroupC::AddObj(local_8,STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(*(undefined2 *)(local_c + 0x32))),0);
+  uVar4 = STGroupC::AddObj(local_8,STReplaceLowWord((uint32_t)(iVar5), (uint16_t)(STField<undefined2>(local_c,0x32))),0);
   g_currentExceptionFrame = local_58.previous;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return STReplaceLowWord((uint32_t)(uVar4), (uint16_t)(*(undefined2 *)(local_c + 0x32)));
+  return STReplaceLowWord((uint32_t)(uVar4), (uint16_t)(STField<undefined2>(local_c,0x32)));
 }
 

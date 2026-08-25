@@ -41,8 +41,8 @@ uint * FUN_0069c8b0(int param_1,int param_2,int param_3)
     local_34 = iVar3;
     do {
       if (0 < param_2) {
-        auto param_1_after_write = local_18; /* compiler stack-slot lifetime split */
-        auto param_3_after_write = local_1c; /* compiler stack-slot lifetime split */
+        int param_1_after_write = local_18; /* compiler stack-slot lifetime split */
+        int param_3_after_write = local_1c; /* compiler stack-slot lifetime split */
         local_14 = local_20;
         local_28 = param_2;
         do {

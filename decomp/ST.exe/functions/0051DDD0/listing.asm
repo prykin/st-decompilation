@@ -364,7 +364,8 @@ switchD_0051dfcc::caseD_7:
 0051E1EE  8B 01                     MOV EAX,dword ptr [ECX]
 0051E1F0  8D 53 18                  LEA EDX,[EBX + 0x18]
 0051E1F3  52                        PUSH EDX
-0051E1F4  FF 10                     CALL dword ptr [EAX]
+HelpPanelTy::GetMessage::override::prt_51e1f4_74f246b9:
+0051E1F4  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0051e1f6:
 0051E1F6  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
 0051E1F9  3B C6                     CMP EAX,ESI
@@ -378,7 +379,8 @@ LAB_0051e1f6:
 0051E221  83 C3 18                  ADD EBX,0x18
 0051E224  53                        PUSH EBX
 0051E225  8B 01                     MOV EAX,dword ptr [ECX]
-0051E227  FF 10                     CALL dword ptr [EAX]
+HelpPanelTy::GetMessage::override::prt_51e227_74f246b9:
+0051E227  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 0051E229  8B 55 80                  MOV EDX,dword ptr [EBP + -0x80]
 0051E22C  33 C0                     XOR EAX,EAX
 0051E22E  89 15 F8 8D 85 00         MOV dword ptr [0x00858df8],EDX

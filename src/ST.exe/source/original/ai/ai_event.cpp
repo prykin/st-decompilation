@@ -278,9 +278,9 @@ st::fn_0064D270
       local_38->field_0088 = st::machine_word_boundary_cast<uint>(local_38->field_0088 * 0x41c64e6d + 0x3039);
       local_18 = st::machine_word_boundary_cast<uint>(local_38->field_0088 * 0x41c64e6d + 0x3039);
       local_38->field_0088 = local_18;
-      iVar5 = st::fn_00401D9D((local_18 >> 0x10) % (uint)(int)local_28[0] + (int)(short)local_20,
+      iVar5 = st::fn_00401D9D((local_18 >> 0x10) % (uint)(int)local_28[0] + (short)local_20,
                                  (local_38->field_0088 >> 0x10) % (uint)(int)local_1c[0] +
-                                 (int)(short)local_30,1,(short *)&param_3,(short *)&param_4,
+                                 (short)local_30,1,(short *)&param_3,(short *)&param_4,
                                  (short *)&param_5,(int)param_2);
     }
     else {
@@ -359,9 +359,9 @@ st::fn_0064D270
     bVar2 = true;
   }
   if ((bVar2) && (g_allPlayers_007FA174 != nullptr)) {
-    local_8 = (int)(short)param_3;
-    local_c = (int)(short)param_4;
-    local_10 = (int)(short)param_5;
+    local_8 = (short)param_3;
+    local_c = (short)param_4;
+    local_10 = (short)param_5;
     if (param_11 == 0) {
       iVar6 = 1;
       GVar10 = (Global_sub_004B1120_param_2Enum)param_2;
@@ -472,8 +472,8 @@ st::fn_0064D890
         if (param_7 == nullptr) {
           param_7 = &CHAR_00h_008016a0;
         }
-        st::fn_00405740((uint)param_1,local_24,(int)param_2,param_6,(int)(short)local_c,
-                           (int)(short)local_8,(int)(short)local_10,param_7,0xffffffff,
+        st::fn_00405740((uint)param_1,local_24,(int)param_2,param_6,(short)local_c,
+                           (short)local_8,(short)local_10,param_7,0xffffffff,
                            (ushort)param_8);
         g_currentExceptionFrame = local_6c.previous;
         return 0;
@@ -556,8 +556,8 @@ st::fn_0064DB00
         if (param_6 == nullptr) {
           param_6 = &CHAR_00h_008016a0;
         }
-        st::fn_00402059((int)param_1,(int)param_2,(int)(short)local_c,(int)(short)local_8,
-                           (int)(short)local_10,param_6,param_7,0xffffffff,param_8);
+        st::fn_00402059((int)param_1,(int)param_2,(short)local_c,(short)local_8,
+                           (short)local_10,param_6,param_7,0xffffffff,param_8);
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
@@ -693,8 +693,8 @@ st::fn_0064DFA0
           if (param_7 == nullptr) {
             param_7 = &CHAR_00h_008016a0;
           }
-          st::fn_0040105A((int)param_2,(uint)param_1,0,0,(int)(short)local_c,(int)(short)local_8,
-                             (int)(short)local_10,local_24,param_7,param_9);
+          st::fn_0040105A((int)param_2,(uint)param_1,0,0,(short)local_c,(short)local_8,
+                             (short)local_10,local_24,param_7,param_9);
           g_currentExceptionFrame = local_6c.previous;
           return 0;
         }
@@ -3384,8 +3384,7 @@ LAB_0065937a:
                                                 bVar1 = pAVar22->field_0081;
                                                 pcVar21 = (char *)(uint)bVar1;
                                                 if (((char)bVar1 < '\0') || ('\a' < (char)bVar1)) {
-                                                  pcVar21 = (char *)(uint)*(byte *)&pAVar22->
-                                                  field_0024;
+                                                  pcVar21 = (char *)(uint)(byte)pAVar22->field_0024;
                                                 }
                                               }
                                               local_1f0 = SUB41(pcVar21,0);
@@ -6350,8 +6349,8 @@ LAB_006559d6:
                                           else {
                                             bVar36 = true;
                                           }
-                                          if (((!bVar36) || (*(short *)(iVar37 + 0x7b) == 1)) &&
-                                             (*(short *)(iVar37 + 0x7b) != -0x8000))
+                                          if (((!bVar36) || (STField<short>(iVar37,0x7B) == 1)) &&
+                                             (STField<short>(iVar37,0x7B) != -0x8000))
                                           goto LAB_00655972;
                                           goto LAB_006559d0;
                                         }

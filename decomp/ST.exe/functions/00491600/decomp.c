@@ -34,7 +34,7 @@ void __fastcall FUN_00491600(AnonShape_00491600_23458133 *param_1)
     pAVar1 = param_1->field_05A6;
     local_24.arg1.words.low = pAVar1->field_0024;
     local_24.arg1.words.high = pAVar1->field_0032;
-    /* ST_CALLSITE[004916CB]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[004916CB]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;

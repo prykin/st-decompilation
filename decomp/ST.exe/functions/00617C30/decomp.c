@@ -12,19 +12,18 @@ undefined4 __thiscall FUN_00617c30(void *this,int param_1,int param_2)
 
   iVar1 = STField<int>(this,0x5e);
   if (iVar1 != 0) {
-    uVar2 = *(uint *)(iVar1 + 0xc);
+    uVar2 = STField<uint>(iVar1,0xC);
     uVar4 = 0;
     if (0 < (int)uVar2) {
       bVar5 = uVar2 != 0;
       do {
         if (bVar5) {
-          iVar3 = *(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c);
+          iVar3 = STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C);
         }
         else {
           iVar3 = 0;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if ((*(short *)(iVar3 + 10) == param_1) && (*(short *)(iVar3 + 0xc) == param_2)) {
+        if ((STField<short>(iVar3,0xA) == param_1) && (STField<short>(iVar3,0xC) == param_2)) {
           return 1;
         }
         uVar4 = uVar4 + 1;

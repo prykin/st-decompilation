@@ -21,12 +21,12 @@ short FUN_0043e640(char param_1,Global_sub_0043E640_param_2Enum param_2,int para
   iVar7 = 0;
   sVar4 = 0;
   iVar1 = g_packedRecords_A62x8[param_1].field3_0x9;
-  local_8 = *(int *)(iVar1 + 0xc);
+  local_8 = STField<int>(iVar1,0xC);
   sVar3 = 0;
   if (0 < local_8) {
     do {
       sVar4 = sVar3;
-      piVar2 = *(int **)(*(int *)(iVar1 + 0x1c) + iVar7 * 4);
+      piVar2 = *(int **)(STField<int>(iVar1,0x1C) + iVar7 * 4);
       /* ST_CALLSITE[0043E685]: CALL dword ptr [EAX + 0x2c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((piVar2 != nullptr) && (GVar5 = (**(code **)(*piVar2 + 0x2c))(), GVar5 == param_2)) &&
@@ -37,7 +37,7 @@ short FUN_0043e640(char param_1,Global_sub_0043E640_param_2Enum param_2,int para
 LAB_0043e6d3:
           if ((param_4 == -1) ||
              /* ST_CALLSITE[0043E6E1]: CALL dword ptr [EAX + 0x6c] */
-             (iVar6 = (**(code **)(**(int **)(*(int *)(iVar1 + 0x1c) + iVar7 * 4) + 0x6c))(),
+             (iVar6 = (**(code **)(**(int **)(STField<int>(iVar1,0x1C) + iVar7 * 4) + 0x6c))(),
              iVar6 == param_4)) {
             sVar4 = sVar4 + 1;
           }

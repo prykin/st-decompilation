@@ -282,12 +282,12 @@ st::fn_004EF320(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
   }
   uVar4 = this->field_0199 + -0xc0af + param_1->field_0010;
   iVar1 = (&this->field_027A)[(byte)this->field_0278];
-  if ((iVar1 == 0) || (*(uint *)(iVar1 + 0xc) <= uVar4)) {
+  if ((iVar1 == 0) || (STField<uint>(iVar1,0xC) <= uVar4)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_00526BA0_param_1Enum *)
-              (*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c));
+              (STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C));
   }
   local_18 = this;
   if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {
@@ -442,11 +442,11 @@ int __thiscall st::fn_004EF6D0(BldBoatPanelTy *this,STMessage *message)
     case MESS_SHARED_C0A3:
       iVar7 = (&this_00->field_027A)[(byte)this_00->field_0278];
       if ((iVar7 == 0) ||
-         (iVar5 = SVar1 + this_00->field_0199, *(uint *)(iVar7 + 0xc) <= iVar5 - 0xc09fU)) {
+         (iVar5 = SVar1 + this_00->field_0199, STField<uint>(iVar7,0xC) <= iVar5 - 0xc09fU)) {
         puVar6 = nullptr;
       }
       else {
-        puVar6 = (undefined4 *)((iVar5 + -0xc09f) * *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0x1c));
+        puVar6 = (undefined4 *)((iVar5 + -0xc09f) * STField<int>(iVar7,0x8) + STField<int>(iVar7,0x1C));
       }
       if ((puVar6 != nullptr) && (((char *)puVar6)[2] != '\0')) {
         sStack_f = 0;

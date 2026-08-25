@@ -74,7 +74,7 @@ int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
                            (*(int *)(pcVar9 + 2) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9,
                            (*(int *)(pcVar9 + 6) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9);
                 lVar10 = Library::MSVCRT::__ftol();
-                if (*(int *)(pcVar9 + 10) < (int)(short)lVar10) {
+                if (*(int *)(pcVar9 + 10) < (short)lVar10) {
                   *pcVar9 = '\x02';
                   if (-1 < (int)*(uint *)(pcVar9 + 0x1f)) {
                     Library::Ourlib::ST3DSMAP::SprClose

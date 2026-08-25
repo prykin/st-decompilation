@@ -37,7 +37,7 @@ undefined4 __thiscall FUN_005fff60(void *this,int param_1,int param_2)
                                &local_14,&local_12,local_10);
     if (((iVar4 != 0) &&
         (iVar4 = thunk_FUN_005fe360((short *)(STField<int>(this,0x233) + param_1 * 0x52),
-                                    (int)(short)local_1c,(int)STPiece<2,2>(local_1c),sStack_18,(int)local_14
+                                    (short)local_1c,(int)STPiece<2,2>(local_1c),sStack_18,(int)local_14
                                     ,local_12,local_10[0]), -1 < iVar4)) &&
        (iVar3 = thunk_FUN_005fe5d0(this,param_1,(undefined2 *)&local_1c,(int)&local_14), iVar3 != 0)
        ) break;

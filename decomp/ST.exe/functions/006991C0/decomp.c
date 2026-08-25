@@ -905,8 +905,8 @@ LAB_00699f26:
                 local_134 = *puVar4;
                 local_130 = (uint)(ushort)puVar4[1];
                 this->field_584B
-                [(int)(short)STField<ushort>(puVar4,2) * this->field_5833 +
-                 (int)(short)(ushort)*puVar4] = 0;
+                [(short)STField<ushort>(puVar4,2) * this->field_5833 +
+                 (short)(ushort)*puVar4] = 0;
                 uStack_12a = 0xdd;
                 local_128 = 0;
                 local_126 = 1;
@@ -943,8 +943,8 @@ LAB_00699f26:
                   local_134 = (uint)(ushort)*puVar4;
                   local_134 = *puVar4;
                   this->field_584B
-                  [(int)(short)STField<ushort>(puVar4,2) * this->field_5833 +
-                   (int)(short)(ushort)*puVar4] = 0;
+                  [(short)STField<ushort>(puVar4,2) * this->field_5833 +
+                   (short)(ushort)*puVar4] = 0;
                   local_130 = (uint)(ushort)puVar4[1];
                   uStack_12a = 0xde;
                   local_128 = 0;

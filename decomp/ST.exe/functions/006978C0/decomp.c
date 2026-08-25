@@ -45,13 +45,13 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
           iVar3 = element_5853_2->field_0015;
           iVar11 = 0;
           if (iVar3 != 0) {
-            uVar6 = *(uint *)(iVar3 + 0xc);
+            uVar6 = STField<uint>(iVar3,0xC);
             uVar10 = 0;
             if (0 < (int)uVar6) {
               bVar12 = uVar6 != 0;
               do {
                 if (bVar12) {
-                  pbVar5 = (byte *)(*(int *)(iVar3 + 8) * uVar10 + *(int *)(iVar3 + 0x1c));
+                  pbVar5 = (byte *)(STField<int>(iVar3,0x8) * uVar10 + STField<int>(iVar3,0x1C));
                 }
                 else {
                   pbVar5 = nullptr;

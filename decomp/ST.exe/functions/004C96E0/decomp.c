@@ -18,7 +18,7 @@ void __thiscall TLOBaseTy::sub_004C96E0(TLOBaseTy *this)
   int iVar3;
 
   /* ST_CALLSITE[004C96F0]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-  bVar2 = LookupRecordByte(*(char *)&this->field_023D);
+  bVar2 = LookupRecordByte((char)this->field_023D);
   TVar1 = this->field_0245;
   iVar3 = ((bVar2 - 1) + this->field_0235 * 3) * 0xc;
   this->field_05EF = *(char **)((&PTR_PTR_007bb198)[TVar1] + iVar3);

@@ -69,7 +69,8 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   int iVar18;
   Global_sub_005259B0_param_1Enum GVar19;
   uint uVar20;
-  InternalExceptionFrame local_a4;
+  InternalExceptionFrame *element;
+  int local_a0 [16];
   undefined4 local_60;
   uint local_5c;
   LONG local_58;
@@ -81,7 +82,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   int local_40;
   int local_3c;
   BITMAPINFO *local_38;
-  undefined4 local_34;
+  InternalExceptionFrame *local_34;
   uint local_30;
   LONG local_2c;
   LONG local_28;
@@ -98,9 +99,9 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   local_44 = this;
   local_38 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0248,4);
   if (g_allPlayers_007FA174 != nullptr) {
-    local_a4.previous = g_currentExceptionFrame;
-    g_currentExceptionFrame = &local_a4;
-    local_EAX_88 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
+    element = g_currentExceptionFrame;
+    g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff5c;
+    local_EAX_88 = Library::MSVCRT::__setjmp3(local_a0,0);
     this_00 = local_44;
     if (local_EAX_88 == 0) {
       if (param_3 == '\0') {
@@ -127,9 +128,8 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           local_44->field_0030 = (undefined2)iVar14;
           local_44->field_0032 = STPiece<2,2>(iVar14);
           if (g_cursorClass_00802A30 != nullptr) {
-            /* ST_CALLSITE[0051B6AA]: CALL dword ptr [EDX] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)g_cursorClass_00802A30->field_0000)(&local_44->field_0x18);
+            /* ST_CALLSITE[0051B6AA]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+            g_cursorClass_00802A30->GetMessage((STMessage *)&local_44->field_0x18);
           }
         }
       }
@@ -253,7 +253,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                        (DAT_0080874e != '\x03') - 1 & 4);
         pBVar5_mg2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0238,0);
         FUN_006b5440((ushort *)this_00->field_0218,0,0xb4,local_8,pBVar5_mg2,0,0x3a);
-        local_34 = 0xb4;
+        local_34 = (InternalExceptionFrame *)0xb4;
         local_2c = (pBVar5_mg2->bmiHeader).biWidth;
         local_30 = local_8;
         local_28 = (pBVar5_mg2->bmiHeader).biHeight;
@@ -385,7 +385,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         /* ST_CALLSITE[0051BF53]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
                (byte *)local_38);
-        local_34 = 0x94;
+        local_34 = (InternalExceptionFrame *)0x94;
         local_2c = (pBVar4->bmiHeader).biWidth;
         local_30 = local_8 - 2;
         local_28 = (pBVar4->bmiHeader).biHeight;
@@ -444,14 +444,15 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           /* ST_CALLSITE[0051C11B]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
                  (byte *)local_38);
-          local_34 = 0x94;
+          local_34 = (InternalExceptionFrame *)0x94;
           local_2c = (pBVar4->bmiHeader).biWidth;
           local_30 = local_8 - 2;
           local_28 = (pBVar4->bmiHeader).biHeight;
+          element = (InternalExceptionFrame *)&local_34;
           local_24 = 3;
           local_23 = GVar9;
           local_1f = param_2;
-          Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,element);
           local_8 = local_8 + (pBVar4->bmiHeader).biHeight;
           local_d = '\x01';
         }
@@ -500,14 +501,15 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           /* ST_CALLSITE[0051C2BB]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
                  (byte *)local_38);
-          local_34 = 0x94;
+          local_34 = (InternalExceptionFrame *)0x94;
           local_2c = (pBVar4->bmiHeader).biWidth;
           local_30 = local_8 - 2;
           local_28 = (pBVar4->bmiHeader).biHeight;
+          element = (InternalExceptionFrame *)&local_34;
           local_24 = 3;
           local_23 = GVar9;
           local_1f = param_2;
-          Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,element);
           local_8 = local_8 + (pBVar4->bmiHeader).biHeight;
           local_d = '\x01';
         }
@@ -559,14 +561,15 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                 /* ST_CALLSITE[0051C45F]: CALL 0x00403229; direct=00403229 DibPut */
                 DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x94,local_8 - 2,'\x06',
                        (byte *)local_38);
-                local_34 = 0x94;
+                local_34 = (InternalExceptionFrame *)0x94;
                 local_2c = (pBVar4->bmiHeader).biWidth;
                 local_30 = local_8 - 2;
                 local_28 = (pBVar4->bmiHeader).biHeight;
+                element = (InternalExceptionFrame *)&local_34;
                 local_24 = 2;
                 local_23 = GVar9;
                 local_1f = param_2;
-                Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
+                Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,element);
                 local_8 = local_8 + (pBVar4->bmiHeader).biHeight;
                 local_d = '\x01';
                 GVar9 = local_c;
@@ -586,14 +589,14 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
               DrawDescription(this_00,(int *)&local_8,UVar5);
               /* ST_CALLSITE[0051C508]: CALL 0x0040506f; direct=0040506F HelpPanelTy::AddLinks */
               AddLinks(this_00,(int *)&local_8,'\x04',param_1,param_2);
-              g_currentExceptionFrame = local_a4.previous;
+              g_currentExceptionFrame = element;
               return;
             }
           } while( true );
         }
       } while( true );
     }
-    g_currentExceptionFrame = local_a4.previous;
+    g_currentExceptionFrame = element;
     iVar17 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x8c4,0,local_EAX_88,
                                 "%s","HelpPanelTy::ArmProc");
     if (iVar17 != 0) {

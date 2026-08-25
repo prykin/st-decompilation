@@ -48,7 +48,7 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
               }
               else {
                 lVar6 = Library::MSVCRT::__ftol();
-                iVar4 = (int)(short)lVar6;
+                iVar4 = (short)lVar6;
               }
               if ((float)element_00a3->field_0008 < _DAT_0079034c) {
                 lVar6 = Library::MSVCRT::__ftol();
@@ -56,7 +56,7 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
               }
               else {
                 lVar6 = Library::MSVCRT::__ftol();
-                local_8 = (int)(short)lVar6;
+                local_8 = (short)lVar6;
               }
               if ((float)element_00a3->field_0004 < _DAT_0079034c) {
                 lVar6 = Library::MSVCRT::__ftol();
@@ -64,14 +64,14 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
               }
               else {
                 lVar6 = Library::MSVCRT::__ftol();
-                iVar3 = (int)(short)lVar6;
+                iVar3 = (short)lVar6;
               }
               if ((((((DAT_0080874d == -1) || (this_00->field_00F8 == 0)) ||
                     /* ST_CALLSITE[0061F401]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                     (VisibleClassTy::sub_00558C00
                                (this_00,this_00->field_010C,iVar3,local_8,&local_18,&local_1c),
                     iVar4 < 0)) || ((4 < iVar4 || (local_18 < 0)))) ||
-                  (((int)this_00->field_0030 <= local_18 ||
+                  ((this_00->field_0030 <= local_18 ||
                    ((iVar4 = g_centeredOffsets5[iVar4] + local_1c, iVar4 < 0 ||
                     (this_00->field_0034 <= iVar4)))))) ||
                  ((this_00->field_004C == nullptr ||

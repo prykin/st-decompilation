@@ -21,8 +21,8 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
   }
   iVar1 = STField<int>(this,0x66);
   if (iVar1 != 0) {
-    if (*(int *)(iVar1 + 0xc) != 0) {
-      *(undefined4 *)(iVar1 + 0xc) = 0;
+    if (STField<int>(iVar1,0xC) != 0) {
+      STField<undefined4>(iVar1,0xC) = 0;
     }
     if (0 < param_1) {
       do {

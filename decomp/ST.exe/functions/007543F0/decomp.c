@@ -32,7 +32,7 @@ int FUN_007543f0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefi
                          (int)param_1->field_000C->field_001C * 8));
     iVar2 = *(int *)(&param_1->field_000C[2].field_0x4 + (int)param_1->field_000C->field_001C * 8);
     if (iVar2 == -1) {
-      iVar2 = *(int *)(iVar3_mg1 + 4);
+      iVar2 = STField<int>(iVar3_mg1,0x4);
     }
     else {
       iVar2 = *(int *)(iVar2 + 0x10 + iVar3_mg1);
@@ -41,7 +41,7 @@ int FUN_007543f0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefi
       param_1->field_000C->field_001C = (uint *)((int)param_1->field_000C->field_001C + 1);
       iVar3_mg1 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,iVar2,
                                (int)param_1->field_000C->field_001C);
-      iVar4 = FUN_00753c80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar3_mg1 + 8));
+      iVar4 = FUN_00753c80((AnonShape_00753C80_4C8E695D *)param_1,(int)STField<short>(iVar3_mg1,0x8));
       iVar2 = *(int *)(iVar4 + 0x10 + iVar3_mg1);
     }
     pAVar3 = param_1->field_000C;
@@ -67,7 +67,7 @@ int FUN_007543f0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefi
           /* ST_CALLSITE[007544C7]: CALL ECX */
           (iVar5 = (*STField<code *>(pAVar3,0xC))(iVar2 + 8,*(undefined4 *)&pAVar3->field_0x10),
           iVar5 != 0));
-  *param_3 = *(undefined4 *)(iVar2 + 4);
+  *param_3 = STField<undefined4>(iVar2,0x4);
   if (param_2 != nullptr) {
     sVar1 = *(short *)&param_1->field_000C[1].field_0x14;
     if (sVar1 == 0) {

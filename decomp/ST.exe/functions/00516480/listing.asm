@@ -57,7 +57,8 @@ LAB_005164fc:
 00516544  8B 11                     MOV EDX,dword ptr [ECX]
 00516546  8D 46 18                  LEA EAX,[ESI + 0x18]
 00516549  50                        PUSH EAX
-0051654A  FF 12                     CALL dword ptr [EDX]
+HelpPanelTy::TTreeProc::override::prt_51654a_74f246b9:
+0051654A  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0051654c:
 0051654C  8B 86 9C 01 00 00         MOV EAX,dword ptr [ESI + 0x19c]
 00516552  3B C7                     CMP EAX,EDI

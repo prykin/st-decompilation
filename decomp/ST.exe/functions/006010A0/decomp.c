@@ -50,18 +50,18 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
       iVar2 = *(int *)(local_c + 0x39 + STField<int>(this,0x233));
       iVar7 = local_c + STField<int>(this,0x233);
       if ((iVar2 == 3) || (iVar2 == 4)) {
-        *(undefined4 *)(iVar7 + 0x4e) = 0;
+        STField<undefined4>(iVar7,0x4E) = 0;
         *(undefined4 *)(local_c + 0x46 + STField<int>(this,0x233)) = 0;
         *(undefined4 *)(local_c + 0x39 + STField<int>(this,0x233)) = 5;
         *(undefined4 *)(local_c + 0x42 + STField<int>(this,0x233)) = 0;
       }
       else {
-        iVar7 = *(int *)(iVar7 + 0x46);
+        iVar7 = STField<int>(iVar7,0x46);
         if (iVar7 != 0) {
           pvVar3 = Library::DKW::LIB::MemAlloc(iVar7 * 6);
           *(void **)(local_c + 0x4e + STField<int>(this,0x233)) = pvVar3;
           iVar7 = STField<int>(this,0x233) + local_c;
-          uVar8 = *(int *)(iVar7 + 0x46) * 6;
+          uVar8 = STField<int>(iVar7,0x46) * 6;
           puVar10 = (byte *)((int)puVar10 + 0x52);
           puVar4 = (byte *)(*(undefined4 **)(iVar7 + 0x4e));
           memmove(puVar4, puVar10, uVar8); /* compiler REP MOVS byte copy */

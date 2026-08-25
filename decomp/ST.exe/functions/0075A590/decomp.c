@@ -28,12 +28,12 @@ void FUN_0075a590(AnonShape_0075A180_7E367FD8 *param_1)
         uVar7 = uVar5;
       }
       if (local_8 == 0) {
-        *(int *)(iVar2 + 0x48) = (int)(uVar7 - 1) / iVar3 + 1;
+        STField<int>(iVar2,0x48) = (int)(uVar7 - 1) / iVar3 + 1;
       }
       iVar3 = iVar3 * 2;
       if (0 < iVar3) {
         puVar1 = (undefined4 *)
-                 (*(int *)(*(int *)(iVar2 + 0x38 + *(int *)(iVar2 + 0x40) * 4) + local_8 * 4) +
+                 (*(int *)(*(int *)(iVar2 + 0x38 + STField<int>(iVar2,0x40) * 4) + local_8 * 4) +
                  uVar7 * 4);
         puVar4 = puVar1;
         do {

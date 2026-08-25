@@ -57,8 +57,8 @@ int __thiscall FUN_006139a0(void *this,int *param_1,int *param_2,int *param_3)
   STField<int>(this,0x28c) = iVar9;
   iVar8 = iVar9 - STField<int>(this,0x290);
   iVar7 = STField<int>(this,0x2dd) + STField<int>(this,0x2d9) * 0x1c;
-  if (*(int *)(iVar7 + 8) < iVar8) {
-    iVar8 = iVar8 - *(int *)(iVar7 + 8);
+  if (STField<int>(iVar7,0x8) < iVar8) {
+    iVar8 = iVar8 - STField<int>(iVar7,0x8);
     local_c = (undefined4 *)(STField<int>(this,0x2d9) + 1);
     STField<int>(this,0x290) = iVar9 - iVar8;
     STField<undefined4 *>(this,0x2d9) = local_c;
@@ -115,26 +115,26 @@ LAB_00613c8b:
     iVar7 = STField<int>(this,0x2dd) + iVar9 * 0x1c;
     if (*(int *)(STField<int>(this,0x2dd) + 0x18 + iVar9 * 0x1c) != 8) {
       STField<int>(this,0x27c) =
-           ((&SHORT_007ed570)[*(short *)(iVar7 + 6) * 4] * 10000000) /
-           *(int *)(&DAT_007cfe74 + *(short *)(iVar7 + 6) * 4);
+           ((&SHORT_007ed570)[STField<short>(iVar7,0x6) * 4] * 10000000) /
+           *(int *)(&DAT_007cfe74 + STField<short>(iVar7,0x6) * 4);
       STField<int>(this,0x280) =
-           ((&SHORT_007ed572)[*(short *)(iVar7 + 6) * 4] * 10000000) /
-           *(int *)(&DAT_007cfe74 + *(short *)(iVar7 + 6) * 4);
+           ((&SHORT_007ed572)[STField<short>(iVar7,0x6) * 4] * 10000000) /
+           *(int *)(&DAT_007cfe74 + STField<short>(iVar7,0x6) * 4);
       STField<int>(this,0x284) =
-           ((&SHORT_007ed574)[*(short *)(iVar7 + 6) * 4] * 10000000) /
-           *(int *)(&DAT_007cfe74 + *(short *)(iVar7 + 6) * 4);
+           ((&SHORT_007ed574)[STField<short>(iVar7,0x6) * 4] * 10000000) /
+           *(int *)(&DAT_007cfe74 + STField<short>(iVar7,0x6) * 4);
     }
   }
-  GVar3 = *(Global_sub_006141B0_param_2Enum *)(iVar7 + 0x18);
+  GVar3 = STField<Global_sub_006141B0_param_2Enum>(iVar7,0x18);
   if (GVar3 == 0) {
-    local_14 = (iVar8 * 51000) / (*(int *)(&DAT_007cfe74 + *(short *)(iVar7 + 6) * 4) * 0xc9);
+    local_14 = (iVar8 * 51000) / (*(int *)(&DAT_007cfe74 + STField<short>(iVar7,0x6) * 4) * 0xc9);
   }
   else {
     if (GVar3 == CASE_8) {
-      local_14 = (STField<int>(this,0x2e1) * iVar8) / *(int *)(iVar7 + 8);
+      local_14 = (STField<int>(this,0x2e1) * iVar8) / STField<int>(iVar7,0x8);
     }
     else {
-      local_14 = (iVar8 * 51000) / (*(int *)(&DAT_007cfe74 + *(short *)(iVar7 + 6) * 4) * 0xc9);
+      local_14 = (iVar8 * 51000) / (*(int *)(&DAT_007cfe74 + STField<short>(iVar7,0x6) * 4) * 0xc9);
     }
     local_18 = thunk_FUN_006141b0(this,local_14,GVar3,&local_28,&local_10);
   }

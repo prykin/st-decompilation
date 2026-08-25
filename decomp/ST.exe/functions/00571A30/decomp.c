@@ -29,7 +29,7 @@ FUN_00571a30(AnonShape_00571A30_8BA8841B *param_1,AnonShape_00571A30_67EE4B56 *p
     puVar3 = (byte *)&param_1->field_0x11aa;
     memmove(puVar3, puVar2, 0x20); /* compiler REP MOVS byte copy */
     *(undefined4 *)param_1 = *(undefined4 *)param_2;
-    *(undefined4 *)((int)&param_1->field_0003 + 1) = *(undefined4 *)((int)&param_2->field_0003 + 1);
+    STField<undefined4>(param_1,0x4) = STField<undefined4>(param_2,0x4);
     *(undefined4 *)&param_1->field_0x8 = *(undefined4 *)&param_2->field_0x8;
     *(undefined2 *)&param_1->field_0xc = *(undefined2 *)&param_2->field_0xc;
     param_1->field_000E = param_2->field_000E;
@@ -64,7 +64,7 @@ FUN_00571a30(AnonShape_00571A30_8BA8841B *param_1,AnonShape_00571A30_67EE4B56 *p
   puVar3 = (byte *)&param_2[1].field_0x8;
   memmove(puVar3, puVar2, 0x20); /* compiler REP MOVS byte copy */
   *(undefined4 *)param_2 = *(undefined4 *)param_1;
-  *(undefined4 *)((int)&param_2->field_0003 + 1) = *(undefined4 *)((int)&param_1->field_0003 + 1);
+  STField<undefined4>(param_2,0x4) = STField<undefined4>(param_1,0x4);
   *(undefined4 *)&param_2->field_0x8 = *(undefined4 *)&param_1->field_0x8;
   *(undefined2 *)&param_2->field_0xc = *(undefined2 *)&param_1->field_0xc;
   param_2->field_000E = param_1->field_000E;

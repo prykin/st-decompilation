@@ -12,20 +12,18 @@
 int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
 
 {
-  DArrayTy **ppDVar1;
-  uint *puVar2;
-  uint *puVar3;
-  dword dVar4;
-  AnonPointee_STGameObjC_0195 *pAVar5;
-  AnonPointee_STGameObjC_01AD *pAVar6;
-  ushort *puVar7;
-  ushort *puVar8;
-  dword *pdVar9;
-  AnonPointee_STGameObjC_01B5 *pAVar10;
-  AnonPointee_STGameObjC_01B9 *pAVar11;
+  uint *puVar1;
+  dword dVar2;
+  AnonPointee_STGameObjC_0195 *pAVar3;
+  AnonPointee_STGameObjC_01AD *pAVar4;
+  ushort *puVar5;
+  ushort *puVar6;
+  dword *pdVar7;
+  AnonPointee_STGameObjC_01B5 *pAVar8;
+  AnonPointee_STGameObjC_01B9 *pAVar9;
   STGameObjC *this_00;
   int local_EAX_35;
-  uint uVar13;
+  uint uVar11;
   int local_EAX_334;
   int local_EAX_500;
   int local_EAX_593;
@@ -51,29 +49,29 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
   int local_EAX_3715;
   int local_EAX_3807;
   int iVar14;
-  int iVar15;
-  byte *pbVar16;
-  char *pcVar17;
-  AnonPointee_STGameObjC_01B1 *pAVar18;
-  int *piVar19;
-  ushort *puVar20;
-  byte *pbVar21;
-  DArrayTy *pDVar22;
-  int *piVar23;
-  AnonPointee_STGameObjC_01B9 *pAVar24;
-  byte *pbVar25;
-  char *pcVar26;
-  AnonPointee_STGameObjC_0195 *pAVar27;
-  AnonPointee_STGameObjC_01AD *pAVar28;
-  ushort *puVar29;
-  dword *pdVar30;
-  int *piVar31;
-  AnonPointee_STGameObjC_01B5 *pAVar32;
-  bool bVar33;
-  bool bVar34;
-  Global_sub_0043FC50_param_1Enum GVar35;
+  int iVar12;
+  byte *pbVar13;
+  char *pcVar14;
+  AnonPointee_STGameObjC_01B1 *pAVar15;
+  int *piVar16;
+  ushort *puVar17;
+  byte *pbVar18;
+  DArrayTy *pDVar19;
+  DArrayTy **ppDVar20;
+  AnonPointee_STGameObjC_01B9 *pAVar21;
+  byte *pbVar22;
+  char *pcVar23;
+  AnonPointee_STGameObjC_0195 *pAVar24;
+  AnonPointee_STGameObjC_01AD *pAVar25;
+  ushort *puVar26;
+  dword *pdVar27;
+  int *piVar28;
+  AnonPointee_STGameObjC_01B5 *pAVar29;
+  bool bVar30;
+  bool bVar31;
+  Global_sub_0043FC50_param_1Enum GVar32;
   InternalExceptionFrame local_58;
-  int *local_14;
+  DArrayTy **local_14;
   STGameObjC *local_10;
   DArrayTy *local_c;
   AnonShape_0041AF40_EF4C5356 *local_8;
@@ -99,20 +97,20 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    puVar3 = (message->arg0).ptr;
-    if (puVar3 == nullptr) {
+    puVar1 = (message->arg0).ptr;
+    if (puVar1 == nullptr) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",0x678);
     }
-    this_00->field_0020 = *puVar3;
-    this_00->field_0024 = puVar3[1];
-    this_00->field_002C = puVar3[4];
-    this_00->field_0028 = puVar3[2];
-    iVar15 = this_00->field_0018 * DAT_00808754;
-    this_00->field_001C = iVar15;
-    uVar13 = iVar15 * 0x41c64e6d + 0x3039;
-    this_00->field_001C = uVar13;
-    this_00->field_00F8 = (short)((ulonglong)(uVar13 >> 0x10) % 0x1f) + 0x1e;
+    this_00->field_0020 = *puVar1;
+    this_00->field_0024 = puVar1[1];
+    this_00->field_002C = puVar1[4];
+    this_00->field_0028 = puVar1[2];
+    iVar12 = this_00->field_0018 * DAT_00808754;
+    this_00->field_001C = iVar12;
+    uVar11 = iVar12 * 0x41c64e6d + 0x3039;
+    this_00->field_001C = uVar11;
+    this_00->field_00F8 = (short)((ulonglong)(uVar11 >> 0x10) % 0x1f) + 0x1e;
     /* ST_CALLSITE[0041B004]: CALL dword ptr [EDX + 0xcc] */
     this_00->vfunc_CC();
     g_currentExceptionFrame = local_58.previous;
@@ -127,9 +125,9 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  uVar13 = this_00->field_0020;
-  if (uVar13 < 0x1af) {
-    if (uVar13 == 0x1ae) {
+  uVar11 = this_00->field_0020;
+  if (uVar11 < 0x1af) {
+    if (uVar11 == 0x1ae) {
       if (g_cPanel_00801688 == nullptr) {
         g_currentExceptionFrame = local_58.previous;
         return 0;
@@ -139,21 +137,21 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       if (local_EAX_1523 != 0) {
         /* ST_CALLSITE[0041B547]: CALL dword ptr [EAX + 0x30] */
         (*this_00->vtable->vfunc_30)((short)this_00->field_0121);
-        iVar15 = 0x1b;
-        bVar34 = true;
-        pbVar21 = this_00->field_0121;
-        pbVar16 = this_00->field_011D;
+        iVar12 = 0x1b;
+        bVar31 = true;
+        pbVar18 = this_00->field_0121;
+        pbVar13 = this_00->field_011D;
         do {
-          if (iVar15 == 0) break;
-          iVar15 = iVar15 + -1;
-          bVar34 = *(short *)pbVar21 == *(short *)pbVar16;
-          pbVar21 = pbVar21 + 2;
-          pbVar16 = pbVar16 + 2;
-        } while (bVar34);
-        if (!bVar34) {
-          pbVar21 = this_00->field_0121;
-          pbVar16 = this_00->field_011D;
-          memmove(pbVar16, pbVar21, 0x36); /* compiler REP MOVS byte copy */
+          if (iVar12 == 0) break;
+          iVar12 = iVar12 + -1;
+          bVar31 = *(short *)pbVar18 == *(short *)pbVar13;
+          pbVar18 = pbVar18 + 2;
+          pbVar13 = pbVar13 + 2;
+        } while (bVar31);
+        if (!bVar31) {
+          pbVar18 = this_00->field_0121;
+          pbVar13 = this_00->field_011D;
+          memmove(pbVar13, pbVar18, 0x36); /* compiler REP MOVS byte copy */
           thunk_FUN_0043fc50(CASE_1,0);
         }
       }
@@ -166,21 +164,21 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       if (local_EAX_1619 != 0) {
         /* ST_CALLSITE[0041B5A7]: CALL dword ptr [EAX + 0x34] */
         (*this_00->vtable->vfunc_34)((short)this_00->field_0129);
-        iVar15 = 0x17;
-        bVar34 = true;
-        piVar19 = this_00->field_0129;
-        piVar23 = this_00->field_0125;
+        iVar12 = 0x17;
+        bVar31 = true;
+        piVar16 = this_00->field_0129;
+        piVar28 = this_00->field_0125;
         do {
-          if (iVar15 == 0) break;
-          iVar15 = iVar15 + -1;
-          bVar34 = *piVar19 == *piVar23;
-          piVar19 = piVar19 + 1;
-          piVar23 = piVar23 + 1;
-        } while (bVar34);
-        if (!bVar34) {
-          piVar19 = this_00->field_0129;
-          piVar23 = this_00->field_0125;
-          memmove(piVar23, piVar19, 0x5c); /* compiler REP MOVS byte copy */
+          if (iVar12 == 0) break;
+          iVar12 = iVar12 + -1;
+          bVar31 = *piVar16 == *piVar28;
+          piVar16 = piVar16 + 1;
+          piVar28 = piVar28 + 1;
+        } while (bVar31);
+        if (!bVar31) {
+          piVar16 = this_00->field_0129;
+          piVar28 = this_00->field_0125;
+          memmove(piVar28, piVar16, 0x5c); /* compiler REP MOVS byte copy */
           thunk_FUN_0043fc50(CASE_2,0);
         }
       }
@@ -193,24 +191,24 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       if (local_EAX_1712 != 0) {
         /* ST_CALLSITE[0041B604]: CALL dword ptr [EAX + 0x58] */
         (*this_00->vtable->vfunc_58)((short)this_00->field_01B1);
-        pAVar6 = this_00->field_01AD;
+        pAVar4 = this_00->field_01AD;
         local_8 = (AnonShape_0041AF40_EF4C5356 *)this_00->field_01B1;
-        iVar15 = 0xb;
-        bVar34 = true;
-        pAVar18 = (AnonPointee_STGameObjC_01B1 *)local_8;
-        pAVar28 = pAVar6;
+        iVar12 = 0xb;
+        bVar31 = true;
+        pAVar15 = (AnonPointee_STGameObjC_01B1 *)local_8;
+        pAVar25 = pAVar4;
         do {
-          if (iVar15 == 0) break;
-          iVar15 = iVar15 + -1;
-          bVar34 = *(char *)&pAVar18->field_0000 == *(char *)&pAVar28->field_0000;
-          pAVar18 = (AnonPointee_STGameObjC_01B1 *)((int)&pAVar18->field_0000 + 1);
-          pAVar28 = (AnonPointee_STGameObjC_01AD *)((int)&pAVar28->field_0000 + 1);
-        } while (bVar34);
-        if (!bVar34) {
-          pAVar6->field_0000 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0000;
-          pAVar6->field_0004 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0004;
-          pAVar6->field_0008 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0008;
-          pAVar6->field_000A = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_000A;
+          if (iVar12 == 0) break;
+          iVar12 = iVar12 + -1;
+          bVar31 = (char)pAVar15->field_0000 == (char)pAVar25->field_0000;
+          pAVar15 = (AnonPointee_STGameObjC_01B1 *)((int)&pAVar15->field_0000 + 1);
+          pAVar25 = (AnonPointee_STGameObjC_01AD *)((int)&pAVar25->field_0000 + 1);
+        } while (bVar31);
+        if (!bVar31) {
+          pAVar4->field_0000 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0000;
+          pAVar4->field_0004 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0004;
+          pAVar4->field_0008 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0008;
+          pAVar4->field_000A = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_000A;
           thunk_FUN_0043fc50(CASE_E,0);
         }
       }
@@ -226,73 +224,73 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       }
       /* ST_CALLSITE[0041B675]: CALL dword ptr [EAX + 0x64] */
       (*this_00->vtable->vfunc_64)((short)this_00->field_01C9);
-      puVar7 = this_00->field_01C5;
-      puVar8 = this_00->field_01C9;
-      iVar15 = 3;
-      bVar34 = true;
-      puVar20 = puVar8;
-      puVar29 = puVar7;
+      puVar5 = this_00->field_01C5;
+      puVar6 = this_00->field_01C9;
+      iVar12 = 3;
+      bVar31 = true;
+      puVar17 = puVar6;
+      puVar26 = puVar5;
       do {
-        if (iVar15 == 0) break;
-        iVar15 = iVar15 + -1;
-        bVar34 = *puVar20 == *puVar29;
-        puVar20 = puVar20 + 1;
-        puVar29 = puVar29 + 1;
-      } while (bVar34);
-      if (bVar34) {
+        if (iVar12 == 0) break;
+        iVar12 = iVar12 + -1;
+        bVar31 = *puVar17 == *puVar26;
+        puVar17 = puVar17 + 1;
+        puVar26 = puVar26 + 1;
+      } while (bVar31);
+      if (bVar31) {
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
-      *(undefined4 *)puVar7 = *(undefined4 *)puVar8;
-      puVar7[2] = puVar8[2];
-      GVar35 = CASE_12;
+      *(undefined4 *)puVar5 = *(undefined4 *)puVar6;
+      puVar5[2] = puVar6[2];
+      GVar32 = CASE_12;
       goto cf_common_exit_0041BE5F;
     }
-    if (uVar13 < 0x173) {
-      if (uVar13 != 0x172) {
-        if (uVar13 == 0x14) {
+    if (uVar11 < 0x173) {
+      if (uVar11 != 0x172) {
+        if (uVar11 == 0x14) {
           if ((g_cPanel_00801688 != nullptr) &&
              /* ST_CALLSITE[0041B08E]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
              (local_EAX_334 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_1), local_EAX_334 != 0))
           {
             /* ST_CALLSITE[0041B0A6]: CALL dword ptr [EDX + 0x30] */
             (*this_00->vtable->vfunc_30)((short)this_00->field_0121);
-            iVar15 = 0x1b;
-            bVar34 = true;
-            pbVar21 = this_00->field_0121;
-            pbVar16 = this_00->field_011D;
+            iVar12 = 0x1b;
+            bVar31 = true;
+            pbVar18 = this_00->field_0121;
+            pbVar13 = this_00->field_011D;
             do {
-              if (iVar15 == 0) break;
-              iVar15 = iVar15 + -1;
-              bVar34 = *(short *)pbVar21 == *(short *)pbVar16;
-              pbVar21 = pbVar21 + 2;
-              pbVar16 = pbVar16 + 2;
-            } while (bVar34);
-            if (!bVar34) {
+              if (iVar12 == 0) break;
+              iVar12 = iVar12 + -1;
+              bVar31 = *(short *)pbVar18 == *(short *)pbVar13;
+              pbVar18 = pbVar18 + 2;
+              pbVar13 = pbVar13 + 2;
+            } while (bVar31);
+            if (!bVar31) {
               /* ST_CALLSITE[0041B0C9]: CALL 0x00402b7b; direct=00402B7B STAllPlayersC::GetNInTmp */
-              uVar13 = STAllPlayersC::GetNInTmp(0,0);
-              if ((short)uVar13 == 1) {
-                pbVar21 = this_00->field_0121;
+              uVar11 = STAllPlayersC::GetNInTmp(0,0);
+              if ((short)uVar11 == 1) {
+                pbVar18 = this_00->field_0121;
               }
               else {
-                pbVar21 = this_00->field_0121;
-                if (pbVar21[0x1b] == this_00->field_011D[0x1b]) {
-                  iVar15 = 5;
-                  bVar34 = true;
-                  pbVar16 = pbVar21 + 0x2a;
-                  pbVar25 = this_00->field_011D + 0x2a;
+                pbVar18 = this_00->field_0121;
+                if (pbVar18[0x1b] == this_00->field_011D[0x1b]) {
+                  iVar12 = 5;
+                  bVar31 = true;
+                  pbVar13 = pbVar18 + 0x2a;
+                  pbVar22 = this_00->field_011D + 0x2a;
                   do {
-                    if (iVar15 == 0) break;
-                    iVar15 = iVar15 + -1;
-                    bVar34 = *pbVar16 == *pbVar25;
-                    pbVar16 = pbVar16 + 1;
-                    pbVar25 = pbVar25 + 1;
-                  } while (bVar34);
-                  if (bVar34) goto LAB_0041b128;
+                    if (iVar12 == 0) break;
+                    iVar12 = iVar12 + -1;
+                    bVar31 = *pbVar13 == *pbVar22;
+                    pbVar13 = pbVar13 + 1;
+                    pbVar22 = pbVar22 + 1;
+                  } while (bVar31);
+                  if (bVar31) goto LAB_0041b128;
                 }
               }
-              pbVar16 = this_00->field_011D;
-              memmove(pbVar16, pbVar21, 0x36); /* compiler REP MOVS byte copy */
+              pbVar13 = this_00->field_011D;
+              memmove(pbVar13, pbVar18, 0x36); /* compiler REP MOVS byte copy */
               thunk_FUN_0043fc50(CASE_1,0);
             }
           }
@@ -303,21 +301,21 @@ LAB_0041b128:
           {
             /* ST_CALLSITE[0041B148]: CALL dword ptr [EAX + 0x34] */
             (*this_00->vtable->vfunc_34)((short)this_00->field_0129);
-            iVar15 = 0x17;
-            bVar34 = true;
-            piVar19 = this_00->field_0129;
-            piVar23 = this_00->field_0125;
+            iVar12 = 0x17;
+            bVar31 = true;
+            piVar16 = this_00->field_0129;
+            piVar28 = this_00->field_0125;
             do {
-              if (iVar15 == 0) break;
-              iVar15 = iVar15 + -1;
-              bVar34 = *piVar19 == *piVar23;
-              piVar19 = piVar19 + 1;
-              piVar23 = piVar23 + 1;
-            } while (bVar34);
-            if (!bVar34) {
-              piVar19 = this_00->field_0129;
-              piVar23 = this_00->field_0125;
-              memmove(piVar23, piVar19, 0x5c); /* compiler REP MOVS byte copy */
+              if (iVar12 == 0) break;
+              iVar12 = iVar12 + -1;
+              bVar31 = *piVar16 == *piVar28;
+              piVar16 = piVar16 + 1;
+              piVar28 = piVar28 + 1;
+            } while (bVar31);
+            if (!bVar31) {
+              piVar16 = this_00->field_0129;
+              piVar28 = this_00->field_0125;
+              memmove(piVar28, piVar16, 0x5c); /* compiler REP MOVS byte copy */
               thunk_FUN_0043fc50(CASE_2,0);
             }
           }
@@ -325,7 +323,7 @@ LAB_0041b128:
              /* ST_CALLSITE[0041B191]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
              (local_EAX_593 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_8), local_EAX_593 != 0))
           {
-            ppDVar1 = &this_00->field_0171;
+            ppDVar20 = &this_00->field_0171;
             if (this_00->field_0171 != nullptr) {
               DArrayDestroy(this_00->field_0171);
             }
@@ -341,117 +339,117 @@ LAB_0041b128:
             if (this_00->field_0181 != nullptr) {
               DArrayDestroy(this_00->field_0181);
             }
-            *ppDVar1 = nullptr;
+            *ppDVar20 = nullptr;
             this_00->field_0175 = nullptr;
             this_00->field_0179 = nullptr;
             this_00->field_017D = nullptr;
             this_00->field_0181 = nullptr;
             /* ST_CALLSITE[0041B20B]: CALL dword ptr [EDX + 0x40] */
-            (*this_00->vtable->vfunc_40)((short)ppDVar1);
+            (*this_00->vtable->vfunc_40)((short)ppDVar20);
             local_c = this_00->field_015D;
-            bVar34 = false;
-            dVar4 = (*ppDVar1)->count;
-            if (dVar4 == local_c->count) {
-              iVar15 = dVar4 * 0x30;
-              bVar33 = true;
-              pcVar17 = (*ppDVar1)->data;
-              pcVar26 = local_c->data;
+            bVar31 = false;
+            dVar2 = (*ppDVar20)->count;
+            if (dVar2 == local_c->count) {
+              iVar12 = dVar2 * 0x30;
+              bVar30 = true;
+              pcVar14 = (*ppDVar20)->data;
+              pcVar23 = local_c->data;
               do {
-                if (iVar15 == 0) break;
-                iVar15 = iVar15 + -1;
-                bVar33 = *pcVar17 == *pcVar26;
-                pcVar17 = pcVar17 + 1;
-                pcVar26 = pcVar26 + 1;
-              } while (bVar33);
-              if (!bVar33) goto LAB_0041b237;
+                if (iVar12 == 0) break;
+                iVar12 = iVar12 + -1;
+                bVar30 = *pcVar14 == *pcVar23;
+                pcVar14 = pcVar14 + 1;
+                pcVar23 = pcVar23 + 1;
+              } while (bVar30);
+              if (!bVar30) goto LAB_0041b237;
             }
             else {
 LAB_0041b237:
-              bVar34 = true;
+              bVar31 = true;
             }
-            if (!bVar34) {
-              dVar4 = this_00->field_0175->count;
-              if (dVar4 == this_00->field_0161->count) {
-                iVar15 = dVar4 * 0x30;
-                bVar33 = true;
-                pcVar17 = this_00->field_0175->data;
-                pcVar26 = this_00->field_0161->data;
+            if (!bVar31) {
+              dVar2 = this_00->field_0175->count;
+              if (dVar2 == this_00->field_0161->count) {
+                iVar12 = dVar2 * 0x30;
+                bVar30 = true;
+                pcVar14 = this_00->field_0175->data;
+                pcVar23 = this_00->field_0161->data;
                 do {
-                  if (iVar15 == 0) break;
-                  iVar15 = iVar15 + -1;
-                  bVar33 = *pcVar17 == *pcVar26;
-                  pcVar17 = pcVar17 + 1;
-                  pcVar26 = pcVar26 + 1;
-                } while (bVar33);
-                if (!bVar33) goto LAB_0041b26c;
+                  if (iVar12 == 0) break;
+                  iVar12 = iVar12 + -1;
+                  bVar30 = *pcVar14 == *pcVar23;
+                  pcVar14 = pcVar14 + 1;
+                  pcVar23 = pcVar23 + 1;
+                } while (bVar30);
+                if (!bVar30) goto LAB_0041b26c;
               }
               else {
 LAB_0041b26c:
-                bVar34 = true;
+                bVar31 = true;
               }
-              if (!bVar34) {
-                dVar4 = this_00->field_0179->count;
-                if (dVar4 == this_00->field_0165->count) {
-                  iVar15 = dVar4 * 0x30;
-                  bVar33 = true;
-                  pcVar17 = this_00->field_0179->data;
-                  pcVar26 = this_00->field_0165->data;
+              if (!bVar31) {
+                dVar2 = this_00->field_0179->count;
+                if (dVar2 == this_00->field_0165->count) {
+                  iVar12 = dVar2 * 0x30;
+                  bVar30 = true;
+                  pcVar14 = this_00->field_0179->data;
+                  pcVar23 = this_00->field_0165->data;
                   do {
-                    if (iVar15 == 0) break;
-                    iVar15 = iVar15 + -1;
-                    bVar33 = *pcVar17 == *pcVar26;
-                    pcVar17 = pcVar17 + 1;
-                    pcVar26 = pcVar26 + 1;
-                  } while (bVar33);
-                  if (!bVar33) goto LAB_0041b2a1;
+                    if (iVar12 == 0) break;
+                    iVar12 = iVar12 + -1;
+                    bVar30 = *pcVar14 == *pcVar23;
+                    pcVar14 = pcVar14 + 1;
+                    pcVar23 = pcVar23 + 1;
+                  } while (bVar30);
+                  if (!bVar30) goto LAB_0041b2a1;
                 }
                 else {
 LAB_0041b2a1:
-                  bVar34 = true;
+                  bVar31 = true;
                 }
-                if (!bVar34) {
-                  dVar4 = this_00->field_017D->count;
-                  if (dVar4 == this_00->field_0169->count) {
-                    iVar15 = dVar4 * 0x30;
-                    bVar33 = true;
-                    pcVar17 = this_00->field_017D->data;
-                    pcVar26 = this_00->field_0169->data;
+                if (!bVar31) {
+                  dVar2 = this_00->field_017D->count;
+                  if (dVar2 == this_00->field_0169->count) {
+                    iVar12 = dVar2 * 0x30;
+                    bVar30 = true;
+                    pcVar14 = this_00->field_017D->data;
+                    pcVar23 = this_00->field_0169->data;
                     do {
-                      if (iVar15 == 0) break;
-                      iVar15 = iVar15 + -1;
-                      bVar33 = *pcVar17 == *pcVar26;
-                      pcVar17 = pcVar17 + 1;
-                      pcVar26 = pcVar26 + 1;
-                    } while (bVar33);
-                    if (!bVar33) goto LAB_0041b2d2;
+                      if (iVar12 == 0) break;
+                      iVar12 = iVar12 + -1;
+                      bVar30 = *pcVar14 == *pcVar23;
+                      pcVar14 = pcVar14 + 1;
+                      pcVar23 = pcVar23 + 1;
+                    } while (bVar30);
+                    if (!bVar30) goto LAB_0041b2d2;
                   }
                   else {
 LAB_0041b2d2:
-                    bVar34 = true;
+                    bVar31 = true;
                   }
-                  if (!bVar34) {
-                    dVar4 = this_00->field_0181->count;
-                    if (dVar4 == this_00->field_016D->count) {
-                      iVar15 = dVar4 * 0x30;
-                      bVar33 = true;
-                      pcVar17 = this_00->field_0181->data;
-                      pcVar26 = this_00->field_016D->data;
+                  if (!bVar31) {
+                    dVar2 = this_00->field_0181->count;
+                    if (dVar2 == this_00->field_016D->count) {
+                      iVar12 = dVar2 * 0x30;
+                      bVar30 = true;
+                      pcVar14 = this_00->field_0181->data;
+                      pcVar23 = this_00->field_016D->data;
                       do {
-                        if (iVar15 == 0) break;
-                        iVar15 = iVar15 + -1;
-                        bVar33 = *pcVar17 == *pcVar26;
-                        pcVar17 = pcVar17 + 1;
-                        pcVar26 = pcVar26 + 1;
-                      } while (bVar33);
-                      if (bVar33) goto LAB_0041b308;
+                        if (iVar12 == 0) break;
+                        iVar12 = iVar12 + -1;
+                        bVar30 = *pcVar14 == *pcVar23;
+                        pcVar14 = pcVar14 + 1;
+                        pcVar23 = pcVar23 + 1;
+                      } while (bVar30);
+                      if (bVar30) goto LAB_0041b308;
                     }
-                    bVar34 = true;
+                    bVar31 = true;
                   }
                 }
               }
             }
 LAB_0041b308:
-            if (bVar34) {
+            if (bVar31) {
               if (local_c != nullptr) {
                 DArrayDestroy(local_c);
               }
@@ -491,26 +489,26 @@ LAB_0041b308:
              )) {
             /* ST_CALLSITE[0041B3F8]: CALL dword ptr [EAX + 0x4c] */
             (*this_00->vtable->vfunc_4C)((short)this_00->field_0199);
-            pAVar5 = this_00->field_0195;
+            pAVar3 = this_00->field_0195;
             local_c = (DArrayTy *)this_00->field_0199;
-            iVar15 = 0x13;
-            bVar34 = true;
-            pDVar22 = local_c;
-            pAVar27 = pAVar5;
+            iVar12 = 0x13;
+            bVar31 = true;
+            pDVar19 = local_c;
+            pAVar24 = pAVar3;
             do {
-              if (iVar15 == 0) break;
-              iVar15 = iVar15 + -1;
-              bVar34 = (char)pDVar22->flags == *(char *)&pAVar27->field_0000;
-              pDVar22 = (DArrayTy *)((int)&pDVar22->flags + 1);
-              pAVar27 = (AnonPointee_STGameObjC_0195 *)((int)&pAVar27->field_0000 + 1);
-            } while (bVar34);
-            if (!bVar34) {
-              pAVar5->field_0000 = local_c->flags;
-              pAVar5->field_0004 = local_c->iteratorIndex;
-              pAVar5->field_0008 = local_c->elementSize;
-              pAVar5->field_000C = local_c->count;
-              pAVar5->field_0010 = (short)local_c->capacity;
-              pAVar5->field_0012 = *(undefined1 *)((int)&local_c->capacity + 2);
+              if (iVar12 == 0) break;
+              iVar12 = iVar12 + -1;
+              bVar31 = (char)pDVar19->flags == (char)pAVar24->field_0000;
+              pDVar19 = (DArrayTy *)((int)&pDVar19->flags + 1);
+              pAVar24 = (AnonPointee_STGameObjC_0195 *)((int)&pAVar24->field_0000 + 1);
+            } while (bVar31);
+            if (!bVar31) {
+              pAVar3->field_0000 = local_c->flags;
+              pAVar3->field_0004 = local_c->iteratorIndex;
+              pAVar3->field_0008 = local_c->elementSize;
+              pAVar3->field_000C = local_c->count;
+              pAVar3->field_0010 = (short)local_c->capacity;
+              pAVar3->field_0012 = *(undefined1 *)((int)&local_c->capacity + 2);
               thunk_FUN_0043fc50(CASE_B,0);
             }
           }
@@ -520,24 +518,24 @@ LAB_0041b308:
              )) {
             /* ST_CALLSITE[0041B46D]: CALL dword ptr [EAX + 0x58] */
             (*this_00->vtable->vfunc_58)((short)this_00->field_01B1);
-            pAVar6 = this_00->field_01AD;
+            pAVar4 = this_00->field_01AD;
             local_8 = (AnonShape_0041AF40_EF4C5356 *)this_00->field_01B1;
-            iVar15 = 0xb;
-            bVar34 = true;
-            pAVar18 = (AnonPointee_STGameObjC_01B1 *)local_8;
-            pAVar28 = pAVar6;
+            iVar12 = 0xb;
+            bVar31 = true;
+            pAVar15 = (AnonPointee_STGameObjC_01B1 *)local_8;
+            pAVar25 = pAVar4;
             do {
-              if (iVar15 == 0) break;
-              iVar15 = iVar15 + -1;
-              bVar34 = *(char *)&pAVar18->field_0000 == *(char *)&pAVar28->field_0000;
-              pAVar18 = (AnonPointee_STGameObjC_01B1 *)((int)&pAVar18->field_0000 + 1);
-              pAVar28 = (AnonPointee_STGameObjC_01AD *)((int)&pAVar28->field_0000 + 1);
-            } while (bVar34);
-            if (!bVar34) {
-              pAVar6->field_0000 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0000;
-              pAVar6->field_0004 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0004;
-              pAVar6->field_0008 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0008;
-              pAVar6->field_000A = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_000A;
+              if (iVar12 == 0) break;
+              iVar12 = iVar12 + -1;
+              bVar31 = (char)pAVar15->field_0000 == (char)pAVar25->field_0000;
+              pAVar15 = (AnonPointee_STGameObjC_01B1 *)((int)&pAVar15->field_0000 + 1);
+              pAVar25 = (AnonPointee_STGameObjC_01AD *)((int)&pAVar25->field_0000 + 1);
+            } while (bVar31);
+            if (!bVar31) {
+              pAVar4->field_0000 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0000;
+              pAVar4->field_0004 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0004;
+              pAVar4->field_0008 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0008;
+              pAVar4->field_000A = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_000A;
               thunk_FUN_0043fc50(CASE_E,0);
             }
           }
@@ -553,31 +551,31 @@ LAB_0041b308:
           }
           /* ST_CALLSITE[0041B4DE]: CALL dword ptr [EAX + 0x60] */
           (*this_00->vtable->vfunc_60)((short)this_00->field_01C1);
-          iVar15 = 0x90;
-          bVar34 = true;
-          piVar19 = this_00->field_01C1;
-          piVar23 = this_00->field_01BD;
+          iVar12 = 0x90;
+          bVar31 = true;
+          piVar16 = this_00->field_01C1;
+          piVar28 = this_00->field_01BD;
           do {
-            if (iVar15 == 0) break;
-            iVar15 = iVar15 + -1;
-            bVar34 = *piVar19 == *piVar23;
-            piVar19 = piVar19 + 1;
-            piVar23 = piVar23 + 1;
-          } while (bVar34);
-          if (bVar34) {
+            if (iVar12 == 0) break;
+            iVar12 = iVar12 + -1;
+            bVar31 = *piVar16 == *piVar28;
+            piVar16 = piVar16 + 1;
+            piVar28 = piVar28 + 1;
+          } while (bVar31);
+          if (bVar31) {
             g_currentExceptionFrame = local_58.previous;
             return 0;
           }
-          piVar19 = this_00->field_01C1;
-          piVar23 = this_00->field_01BD;
-          memmove(piVar23, piVar19, 0x240); /* compiler REP MOVS byte copy */
-          GVar35 = CASE_10;
+          piVar16 = this_00->field_01C1;
+          piVar28 = this_00->field_01BD;
+          memmove(piVar28, piVar16, 0x240); /* compiler REP MOVS byte copy */
+          GVar32 = CASE_10;
           goto cf_common_exit_0041BE5F;
         }
-        if (uVar13 != 0x5a) goto cf_common_exit_0041B6C6;
+        if (uVar11 != 0x5a) goto cf_common_exit_0041B6C6;
       }
     }
-    else if (uVar13 != 0x1a4) {
+    else if (uVar11 != 0x1a4) {
 cf_common_exit_0041B6C6:
       local_EAX_1950 =
            ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0x7e4,0,0,"%s",
@@ -598,21 +596,21 @@ LAB_0041bdb3:
     if (local_EAX_3715 != 0) {
       /* ST_CALLSITE[0041BDD7]: CALL dword ptr [EAX + 0x30] */
       (*this_00->vtable->vfunc_30)((short)this_00->field_0121);
-      iVar15 = 0x1b;
-      bVar34 = true;
-      pbVar21 = this_00->field_0121;
-      pbVar16 = this_00->field_011D;
+      iVar12 = 0x1b;
+      bVar31 = true;
+      pbVar18 = this_00->field_0121;
+      pbVar13 = this_00->field_011D;
       do {
-        if (iVar15 == 0) break;
-        iVar15 = iVar15 + -1;
-        bVar34 = *(short *)pbVar21 == *(short *)pbVar16;
-        pbVar21 = pbVar21 + 2;
-        pbVar16 = pbVar16 + 2;
-      } while (bVar34);
-      if (!bVar34) {
-        pbVar21 = this_00->field_0121;
-        pbVar16 = this_00->field_011D;
-        memmove(pbVar16, pbVar21, 0x36); /* compiler REP MOVS byte copy */
+        if (iVar12 == 0) break;
+        iVar12 = iVar12 + -1;
+        bVar31 = *(short *)pbVar18 == *(short *)pbVar13;
+        pbVar18 = pbVar18 + 2;
+        pbVar13 = pbVar13 + 2;
+      } while (bVar31);
+      if (!bVar31) {
+        pbVar18 = this_00->field_0121;
+        pbVar13 = this_00->field_011D;
+        memmove(pbVar13, pbVar18, 0x36); /* compiler REP MOVS byte copy */
         thunk_FUN_0043fc50(CASE_5,0);
       }
     }
@@ -628,30 +626,30 @@ LAB_0041bdb3:
     }
     /* ST_CALLSITE[0041BE33]: CALL dword ptr [EAX + 0x34] */
     (*this_00->vtable->vfunc_34)((short)this_00->field_0129);
-    iVar15 = 0x17;
-    bVar34 = true;
-    piVar19 = this_00->field_0129;
-    piVar23 = this_00->field_0125;
+    iVar12 = 0x17;
+    bVar31 = true;
+    piVar16 = this_00->field_0129;
+    piVar28 = this_00->field_0125;
     do {
-      if (iVar15 == 0) break;
-      iVar15 = iVar15 + -1;
-      bVar34 = *piVar19 == *piVar23;
-      piVar19 = piVar19 + 1;
-      piVar23 = piVar23 + 1;
-    } while (bVar34);
-    if (bVar34) {
+      if (iVar12 == 0) break;
+      iVar12 = iVar12 + -1;
+      bVar31 = *piVar16 == *piVar28;
+      piVar16 = piVar16 + 1;
+      piVar28 = piVar28 + 1;
+    } while (bVar31);
+    if (bVar31) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    piVar19 = this_00->field_0129;
-    piVar23 = this_00->field_0125;
-    memmove(piVar23, piVar19, 0x5c); /* compiler REP MOVS byte copy */
-    GVar35 = CASE_4;
+    piVar16 = this_00->field_0129;
+    piVar28 = this_00->field_0125;
+    memmove(piVar28, piVar16, 0x5c); /* compiler REP MOVS byte copy */
+    GVar32 = CASE_4;
     goto cf_common_exit_0041BE5F;
   }
-  if (uVar13 == 0x1b8) goto LAB_0041bdb3;
-  if (uVar13 != 1000) {
-    if (uVar13 != 0x3e9) goto cf_common_exit_0041B6C6;
+  if (uVar11 == 0x1b8) goto LAB_0041bdb3;
+  if (uVar11 != 1000) {
+    if (uVar11 != 0x3e9) goto cf_common_exit_0041B6C6;
     if (g_cPanel_00801688 == nullptr) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -661,21 +659,21 @@ LAB_0041bdb3:
     if (iVar13 != 0) {
       /* ST_CALLSITE[0041B726]: CALL dword ptr [EAX + 0x34] */
       (*this_00->vtable->vfunc_34)((short)this_00->field_0129);
-      iVar15 = 0x17;
-      bVar34 = true;
-      piVar19 = this_00->field_0129;
-      piVar23 = this_00->field_0125;
+      iVar12 = 0x17;
+      bVar31 = true;
+      piVar16 = this_00->field_0129;
+      piVar28 = this_00->field_0125;
       do {
-        if (iVar15 == 0) break;
-        iVar15 = iVar15 + -1;
-        bVar34 = *piVar19 == *piVar23;
-        piVar19 = piVar19 + 1;
-        piVar23 = piVar23 + 1;
-      } while (bVar34);
-      if (!bVar34) {
-        piVar19 = this_00->field_0129;
-        piVar23 = this_00->field_0125;
-        memmove(piVar23, piVar19, 0x5c); /* compiler REP MOVS byte copy */
+        if (iVar12 == 0) break;
+        iVar12 = iVar12 + -1;
+        bVar31 = *piVar16 == *piVar28;
+        piVar16 = piVar16 + 1;
+        piVar28 = piVar28 + 1;
+      } while (bVar31);
+      if (!bVar31) {
+        piVar16 = this_00->field_0129;
+        piVar28 = this_00->field_0125;
+        memmove(piVar28, piVar16, 0x5c); /* compiler REP MOVS byte copy */
         thunk_FUN_0043fc50(CASE_4,0);
       }
     }
@@ -691,25 +689,25 @@ LAB_0041bdb3:
     }
     /* ST_CALLSITE[0041B787]: CALL dword ptr [EAX + 0x30] */
     (*this_00->vtable->vfunc_30)((short)this_00->field_0121);
-    iVar15 = 0x1b;
-    bVar34 = true;
-    pbVar21 = this_00->field_0121;
-    pbVar16 = this_00->field_011D;
+    iVar12 = 0x1b;
+    bVar31 = true;
+    pbVar18 = this_00->field_0121;
+    pbVar13 = this_00->field_011D;
     do {
-      if (iVar15 == 0) break;
-      iVar15 = iVar15 + -1;
-      bVar34 = *(short *)pbVar21 == *(short *)pbVar16;
-      pbVar21 = pbVar21 + 2;
-      pbVar16 = pbVar16 + 2;
-    } while (bVar34);
-    if (bVar34) {
+      if (iVar12 == 0) break;
+      iVar12 = iVar12 + -1;
+      bVar31 = *(short *)pbVar18 == *(short *)pbVar13;
+      pbVar18 = pbVar18 + 2;
+      pbVar13 = pbVar13 + 2;
+    } while (bVar31);
+    if (bVar31) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    pbVar21 = this_00->field_0121;
-    pbVar16 = this_00->field_011D;
-    memmove(pbVar16, pbVar21, 0x36); /* compiler REP MOVS byte copy */
-    GVar35 = CASE_5;
+    pbVar18 = this_00->field_0121;
+    pbVar13 = this_00->field_011D;
+    memmove(pbVar13, pbVar18, 0x36); /* compiler REP MOVS byte copy */
+    GVar32 = CASE_5;
     goto cf_common_exit_0041BE5F;
   }
   if (g_cPanel_00801688 == nullptr) {
@@ -721,21 +719,21 @@ LAB_0041bdb3:
   if (local_EAX_2191 != 0) {
     /* ST_CALLSITE[0041B7E3]: CALL dword ptr [EAX + 0x34] */
     (*this_00->vtable->vfunc_34)((short)this_00->field_0129);
-    iVar15 = 0x17;
-    bVar34 = true;
-    piVar19 = this_00->field_0129;
-    piVar23 = this_00->field_0125;
+    iVar12 = 0x17;
+    bVar31 = true;
+    piVar16 = this_00->field_0129;
+    piVar28 = this_00->field_0125;
     do {
-      if (iVar15 == 0) break;
-      iVar15 = iVar15 + -1;
-      bVar34 = *piVar19 == *piVar23;
-      piVar19 = piVar19 + 1;
-      piVar23 = piVar23 + 1;
-    } while (bVar34);
-    if (!bVar34) {
-      piVar19 = this_00->field_0129;
-      piVar23 = this_00->field_0125;
-      memmove(piVar23, piVar19, 0x5c); /* compiler REP MOVS byte copy */
+      if (iVar12 == 0) break;
+      iVar12 = iVar12 + -1;
+      bVar31 = *piVar16 == *piVar28;
+      piVar16 = piVar16 + 1;
+      piVar28 = piVar28 + 1;
+    } while (bVar31);
+    if (!bVar31) {
+      piVar16 = this_00->field_0129;
+      piVar28 = this_00->field_0125;
+      memmove(piVar28, piVar16, 0x5c); /* compiler REP MOVS byte copy */
       thunk_FUN_0043fc50(CASE_4,0);
     }
   }
@@ -748,21 +746,21 @@ LAB_0041bdb3:
   if (local_EAX_2284 != 0) {
     /* ST_CALLSITE[0041B840]: CALL dword ptr [EAX + 0x30] */
     (*this_00->vtable->vfunc_30)((short)this_00->field_0121);
-    iVar15 = 0x1b;
-    bVar34 = true;
-    pbVar21 = this_00->field_0121;
-    pbVar16 = this_00->field_011D;
+    iVar12 = 0x1b;
+    bVar31 = true;
+    pbVar18 = this_00->field_0121;
+    pbVar13 = this_00->field_011D;
     do {
-      if (iVar15 == 0) break;
-      iVar15 = iVar15 + -1;
-      bVar34 = *(short *)pbVar21 == *(short *)pbVar16;
-      pbVar21 = pbVar21 + 2;
-      pbVar16 = pbVar16 + 2;
-    } while (bVar34);
-    if (!bVar34) {
-      pbVar21 = this_00->field_0121;
-      pbVar16 = this_00->field_011D;
-      memmove(pbVar16, pbVar21, 0x36); /* compiler REP MOVS byte copy */
+      if (iVar12 == 0) break;
+      iVar12 = iVar12 + -1;
+      bVar31 = *(short *)pbVar18 == *(short *)pbVar13;
+      pbVar18 = pbVar18 + 2;
+      pbVar13 = pbVar13 + 2;
+    } while (bVar31);
+    if (!bVar31) {
+      pbVar18 = this_00->field_0121;
+      pbVar13 = this_00->field_011D;
+      memmove(pbVar13, pbVar18, 0x36); /* compiler REP MOVS byte copy */
       thunk_FUN_0043fc50(CASE_5,0);
     }
   }
@@ -773,74 +771,68 @@ LAB_0041bdb3:
   /* ST_CALLSITE[0041B88C]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_2380 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_6);
   if (local_EAX_2380 != 0) {
-    puVar2 = &this_00->field_0135;
-    if ((DArrayTy *)this_00->field_0135 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0135);
+    ppDVar20 = &this_00->field_0135;
+    if (this_00->field_0135 != nullptr) {
+      DArrayDestroy(this_00->field_0135);
     }
-    if ((DArrayTy *)this_00->field_0139 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0139);
+    if (this_00->field_0139 != nullptr) {
+      DArrayDestroy(this_00->field_0139);
     }
-    *puVar2 = 0;
-    this_00->field_0139 = 0;
+    *ppDVar20 = nullptr;
+    this_00->field_0139 = nullptr;
     /* ST_CALLSITE[0041B8CD]: CALL dword ptr [EDX + 0x38] */
-    (*this_00->vtable->vfunc_38)((short)puVar2);
-    bVar34 = false;
-    iVar15 = *(int *)(*puVar2 + 0xc);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (iVar15 == *(int *)(this_00->field_012D + 0xc)) {
-      iVar15 = iVar15 * 0x30;
-      bVar33 = true;
-      pcVar17 = *(char **)(*puVar2 + 0x1c);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      pcVar26 = *(char **)(this_00->field_012D + 0x1c);
+    (*this_00->vtable->vfunc_38)((short)ppDVar20);
+    bVar31 = false;
+    dVar2 = (*ppDVar20)->count;
+    if (dVar2 == this_00->field_012D->count) {
+      iVar12 = dVar2 * 0x30;
+      bVar30 = true;
+      pcVar14 = (*ppDVar20)->data;
+      pcVar23 = this_00->field_012D->data;
       do {
-        if (iVar15 == 0) break;
-        iVar15 = iVar15 + -1;
-        bVar33 = *pcVar17 == *pcVar26;
-        pcVar17 = pcVar17 + 1;
-        pcVar26 = pcVar26 + 1;
-      } while (bVar33);
-      if (!bVar33) goto LAB_0041b8f6;
+        if (iVar12 == 0) break;
+        iVar12 = iVar12 + -1;
+        bVar30 = *pcVar14 == *pcVar23;
+        pcVar14 = pcVar14 + 1;
+        pcVar23 = pcVar23 + 1;
+      } while (bVar30);
+      if (!bVar30) goto LAB_0041b8f6;
     }
     else {
 LAB_0041b8f6:
-      bVar34 = true;
+      bVar31 = true;
     }
-    if (!bVar34) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar15 = *(int *)(this_00->field_0139 + 0xc);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (iVar15 == *(int *)(this_00->field_0131 + 0xc)) {
-        iVar15 = iVar15 * 0x30;
-        bVar33 = true;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        pcVar17 = *(char **)(this_00->field_0139 + 0x1c);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        pcVar26 = *(char **)(this_00->field_0131 + 0x1c);
+    if (!bVar31) {
+      dVar2 = this_00->field_0139->count;
+      if (dVar2 == this_00->field_0131->count) {
+        iVar12 = dVar2 * 0x30;
+        bVar30 = true;
+        pcVar14 = this_00->field_0139->data;
+        pcVar23 = this_00->field_0131->data;
         do {
-          if (iVar15 == 0) break;
-          iVar15 = iVar15 + -1;
-          bVar33 = *pcVar17 == *pcVar26;
-          pcVar17 = pcVar17 + 1;
-          pcVar26 = pcVar26 + 1;
-        } while (bVar33);
-        if (bVar33) goto LAB_0041b92c;
+          if (iVar12 == 0) break;
+          iVar12 = iVar12 + -1;
+          bVar30 = *pcVar14 == *pcVar23;
+          pcVar14 = pcVar14 + 1;
+          pcVar23 = pcVar23 + 1;
+        } while (bVar30);
+        if (bVar30) goto LAB_0041b92c;
       }
-      bVar34 = true;
+      bVar31 = true;
     }
 LAB_0041b92c:
-    if (bVar34) {
-      if ((DArrayTy *)this_00->field_012D != nullptr) {
-        DArrayDestroy((DArrayTy *)this_00->field_012D);
+    if (bVar31) {
+      if (this_00->field_012D != nullptr) {
+        DArrayDestroy(this_00->field_012D);
       }
-      if ((DArrayTy *)this_00->field_0131 != nullptr) {
-        DArrayDestroy((DArrayTy *)this_00->field_0131);
+      if (this_00->field_0131 != nullptr) {
+        DArrayDestroy(this_00->field_0131);
       }
-      this_00->field_012D = 0;
-      this_00->field_0131 = 0;
-      Library::DKW::TBL::FUN_006afe40(&this_00->field_012D,(uint *)this_00->field_0135);
-      Library::DKW::TBL::FUN_006afe40(&this_00->field_0131,(uint *)this_00->field_0139);
-      GVar35 = CASE_6;
+      this_00->field_012D = nullptr;
+      this_00->field_0131 = nullptr;
+      Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_012D,&this_00->field_0135->flags);
+      Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_0131,&this_00->field_0139->flags);
+      GVar32 = CASE_6;
       goto cf_common_exit_0041BE5F;
     }
   }
@@ -851,141 +843,129 @@ LAB_0041b92c:
   /* ST_CALLSITE[0041B997]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_2647 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_7);
   if (local_EAX_2647 != 0) {
-    puVar2 = &this_00->field_014D;
-    if ((DArrayTy *)this_00->field_014D != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_014D);
+    ppDVar20 = &this_00->field_014D;
+    if (this_00->field_014D != nullptr) {
+      DArrayDestroy(this_00->field_014D);
     }
-    if ((DArrayTy *)this_00->field_0151 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0151);
+    if (this_00->field_0151 != nullptr) {
+      DArrayDestroy(this_00->field_0151);
     }
-    if ((DArrayTy *)this_00->field_0155 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0155);
+    if (this_00->field_0155 != nullptr) {
+      DArrayDestroy(this_00->field_0155);
     }
-    if ((DArrayTy *)this_00->field_0159 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0159);
+    if (this_00->field_0159 != nullptr) {
+      DArrayDestroy(this_00->field_0159);
     }
-    *puVar2 = 0;
-    this_00->field_0151 = 0;
-    this_00->field_0155 = 0;
-    this_00->field_0159 = 0;
+    *ppDVar20 = nullptr;
+    this_00->field_0151 = nullptr;
+    this_00->field_0155 = nullptr;
+    this_00->field_0159 = nullptr;
     /* ST_CALLSITE[0041B9FE]: CALL dword ptr [EAX + 0x3c] */
-    (*this_00->vtable->vfunc_3C)((short)puVar2);
-    local_c = (DArrayTy *)this_00->field_013D;
-    bVar34 = false;
-    dVar4 = *(dword *)(*puVar2 + 0xc);
-    if (dVar4 == local_c->count) {
-      iVar15 = dVar4 * 0x30;
-      bVar33 = true;
-      pcVar17 = *(char **)(*puVar2 + 0x1c);
-      pcVar26 = local_c->data;
+    (*this_00->vtable->vfunc_3C)((short)ppDVar20);
+    local_c = this_00->field_013D;
+    bVar31 = false;
+    dVar2 = (*ppDVar20)->count;
+    if (dVar2 == local_c->count) {
+      iVar12 = dVar2 * 0x30;
+      bVar30 = true;
+      pcVar14 = (*ppDVar20)->data;
+      pcVar23 = local_c->data;
       do {
-        if (iVar15 == 0) break;
-        iVar15 = iVar15 + -1;
-        bVar33 = *pcVar17 == *pcVar26;
-        pcVar17 = pcVar17 + 1;
-        pcVar26 = pcVar26 + 1;
-      } while (bVar33);
-      if (!bVar33) goto LAB_0041ba2a;
+        if (iVar12 == 0) break;
+        iVar12 = iVar12 + -1;
+        bVar30 = *pcVar14 == *pcVar23;
+        pcVar14 = pcVar14 + 1;
+        pcVar23 = pcVar23 + 1;
+      } while (bVar30);
+      if (!bVar30) goto LAB_0041ba2a;
     }
     else {
 LAB_0041ba2a:
-      bVar34 = true;
+      bVar31 = true;
     }
-    if (!bVar34) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar15 = *(int *)(this_00->field_0151 + 0xc);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (iVar15 == *(int *)(this_00->field_0141 + 0xc)) {
-        iVar15 = iVar15 * 0x30;
-        bVar33 = true;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        pcVar17 = *(char **)(this_00->field_0151 + 0x1c);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        pcVar26 = *(char **)(this_00->field_0141 + 0x1c);
+    if (!bVar31) {
+      dVar2 = this_00->field_0151->count;
+      if (dVar2 == this_00->field_0141->count) {
+        iVar12 = dVar2 * 0x30;
+        bVar30 = true;
+        pcVar14 = this_00->field_0151->data;
+        pcVar23 = this_00->field_0141->data;
         do {
-          if (iVar15 == 0) break;
-          iVar15 = iVar15 + -1;
-          bVar33 = *pcVar17 == *pcVar26;
-          pcVar17 = pcVar17 + 1;
-          pcVar26 = pcVar26 + 1;
-        } while (bVar33);
-        if (!bVar33) goto LAB_0041ba5f;
+          if (iVar12 == 0) break;
+          iVar12 = iVar12 + -1;
+          bVar30 = *pcVar14 == *pcVar23;
+          pcVar14 = pcVar14 + 1;
+          pcVar23 = pcVar23 + 1;
+        } while (bVar30);
+        if (!bVar30) goto LAB_0041ba5f;
       }
       else {
 LAB_0041ba5f:
-        bVar34 = true;
+        bVar31 = true;
       }
-      if (!bVar34) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar15 = *(int *)(this_00->field_0155 + 0xc);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (iVar15 == *(int *)(this_00->field_0145 + 0xc)) {
-          iVar15 = iVar15 * 0x30;
-          bVar33 = true;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          pcVar17 = *(char **)(this_00->field_0155 + 0x1c);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          pcVar26 = *(char **)(this_00->field_0145 + 0x1c);
+      if (!bVar31) {
+        dVar2 = this_00->field_0155->count;
+        if (dVar2 == this_00->field_0145->count) {
+          iVar12 = dVar2 * 0x30;
+          bVar30 = true;
+          pcVar14 = this_00->field_0155->data;
+          pcVar23 = this_00->field_0145->data;
           do {
-            if (iVar15 == 0) break;
-            iVar15 = iVar15 + -1;
-            bVar33 = *pcVar17 == *pcVar26;
-            pcVar17 = pcVar17 + 1;
-            pcVar26 = pcVar26 + 1;
-          } while (bVar33);
-          if (!bVar33) goto LAB_0041ba90;
+            if (iVar12 == 0) break;
+            iVar12 = iVar12 + -1;
+            bVar30 = *pcVar14 == *pcVar23;
+            pcVar14 = pcVar14 + 1;
+            pcVar23 = pcVar23 + 1;
+          } while (bVar30);
+          if (!bVar30) goto LAB_0041ba90;
         }
         else {
 LAB_0041ba90:
-          bVar34 = true;
+          bVar31 = true;
         }
-        if (!bVar34) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar15 = *(int *)(this_00->field_0159 + 0xc);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (iVar15 == *(int *)(this_00->field_0149 + 0xc)) {
-            iVar15 = iVar15 * 0x30;
-            bVar33 = true;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            pcVar17 = *(char **)(this_00->field_0159 + 0x1c);
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            pcVar26 = *(char **)(this_00->field_0149 + 0x1c);
+        if (!bVar31) {
+          dVar2 = this_00->field_0159->count;
+          if (dVar2 == this_00->field_0149->count) {
+            iVar12 = dVar2 * 0x30;
+            bVar30 = true;
+            pcVar14 = this_00->field_0159->data;
+            pcVar23 = this_00->field_0149->data;
             do {
-              if (iVar15 == 0) break;
-              iVar15 = iVar15 + -1;
-              bVar33 = *pcVar17 == *pcVar26;
-              pcVar17 = pcVar17 + 1;
-              pcVar26 = pcVar26 + 1;
-            } while (bVar33);
-            if (bVar33) goto LAB_0041bac6;
+              if (iVar12 == 0) break;
+              iVar12 = iVar12 + -1;
+              bVar30 = *pcVar14 == *pcVar23;
+              pcVar14 = pcVar14 + 1;
+              pcVar23 = pcVar23 + 1;
+            } while (bVar30);
+            if (bVar30) goto LAB_0041bac6;
           }
-          bVar34 = true;
+          bVar31 = true;
         }
       }
     }
 LAB_0041bac6:
-    if (bVar34) {
+    if (bVar31) {
       if (local_c != nullptr) {
         DArrayDestroy(local_c);
       }
-      if ((DArrayTy *)this_00->field_0141 != nullptr) {
-        DArrayDestroy((DArrayTy *)this_00->field_0141);
+      if (this_00->field_0141 != nullptr) {
+        DArrayDestroy(this_00->field_0141);
       }
-      if ((DArrayTy *)this_00->field_0145 != nullptr) {
-        DArrayDestroy((DArrayTy *)this_00->field_0145);
+      if (this_00->field_0145 != nullptr) {
+        DArrayDestroy(this_00->field_0145);
       }
-      if ((DArrayTy *)this_00->field_0149 != nullptr) {
-        DArrayDestroy((DArrayTy *)this_00->field_0149);
+      if (this_00->field_0149 != nullptr) {
+        DArrayDestroy(this_00->field_0149);
       }
-      this_00->field_013D = 0;
-      this_00->field_0141 = 0;
-      this_00->field_0145 = 0;
-      this_00->field_0149 = 0;
-      Library::DKW::TBL::FUN_006afe40(&this_00->field_013D,(uint *)this_00->field_014D);
-      Library::DKW::TBL::FUN_006afe40(&this_00->field_0141,(uint *)this_00->field_0151);
-      Library::DKW::TBL::FUN_006afe40(&this_00->field_0145,(uint *)this_00->field_0155);
-      Library::DKW::TBL::FUN_006afe40(&this_00->field_0149,(uint *)this_00->field_0159);
-      GVar35 = CASE_7;
+      this_00->field_013D = nullptr;
+      this_00->field_0141 = nullptr;
+      this_00->field_0145 = nullptr;
+      this_00->field_0149 = nullptr;
+      Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_013D,&this_00->field_014D->flags);
+      Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_0141,&this_00->field_0151->flags);
+      Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_0145,&this_00->field_0155->flags);
+      Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_0149,&this_00->field_0159->flags);
+      GVar32 = CASE_7;
       goto cf_common_exit_0041BE5F;
     }
   }
@@ -998,21 +978,21 @@ LAB_0041bac6:
   if (local_EAX_3132 != 0) {
     /* ST_CALLSITE[0041BB90]: CALL dword ptr [EDX + 0x44] */
     (*this_00->vtable->vfunc_44)((short)this_00->field_0189);
-    iVar15 = 0x129;
-    bVar34 = true;
-    pcVar17 = this_00->field_0189;
-    pcVar26 = this_00->field_0185;
+    iVar12 = 0x129;
+    bVar31 = true;
+    pcVar14 = this_00->field_0189;
+    pcVar23 = this_00->field_0185;
     do {
-      if (iVar15 == 0) break;
-      iVar15 = iVar15 + -1;
-      bVar34 = *pcVar17 == *pcVar26;
-      pcVar17 = pcVar17 + 1;
-      pcVar26 = pcVar26 + 1;
-    } while (bVar34);
-    if (!bVar34) {
-      pcVar17 = this_00->field_0189;
-      pcVar26 = this_00->field_0185;
-      memmove(pcVar26, pcVar17, 0x129); /* compiler REP MOVS byte copy */
+      if (iVar12 == 0) break;
+      iVar12 = iVar12 + -1;
+      bVar31 = *pcVar14 == *pcVar23;
+      pcVar14 = pcVar14 + 1;
+      pcVar23 = pcVar23 + 1;
+    } while (bVar31);
+    if (!bVar31) {
+      pcVar14 = this_00->field_0189;
+      pcVar23 = this_00->field_0185;
+      memmove(pcVar23, pcVar14, 0x129); /* compiler REP MOVS byte copy */
       thunk_FUN_0043fc50(CASE_9,0);
     }
   }
@@ -1025,24 +1005,24 @@ LAB_0041bac6:
   if (local_EAX_3226 != 0) {
     /* ST_CALLSITE[0041BBEE]: CALL dword ptr [EAX + 0x48] */
     (*this_00->vtable->vfunc_48)((short)this_00->field_0191);
-    pdVar9 = this_00->field_018D;
+    pdVar7 = this_00->field_018D;
     local_c = this_00->field_0191;
-    iVar15 = 4;
-    bVar34 = true;
-    pDVar22 = local_c;
-    pdVar30 = pdVar9;
+    iVar12 = 4;
+    bVar31 = true;
+    pDVar19 = local_c;
+    pdVar27 = pdVar7;
     do {
-      if (iVar15 == 0) break;
-      iVar15 = iVar15 + -1;
-      bVar34 = pDVar22->flags == *pdVar30;
-      pDVar22 = (DArrayTy *)&pDVar22->iteratorIndex;
-      pdVar30 = pdVar30 + 1;
-    } while (bVar34);
-    if (!bVar34) {
-      *pdVar9 = local_c->flags;
-      pdVar9[1] = local_c->iteratorIndex;
-      pdVar9[2] = local_c->elementSize;
-      pdVar9[3] = local_c->count;
+      if (iVar12 == 0) break;
+      iVar12 = iVar12 + -1;
+      bVar31 = pDVar19->flags == *pdVar27;
+      pDVar19 = (DArrayTy *)&pDVar19->iteratorIndex;
+      pdVar27 = pdVar27 + 1;
+    } while (bVar31);
+    if (!bVar31) {
+      *pdVar7 = local_c->flags;
+      pdVar7[1] = local_c->iteratorIndex;
+      pdVar7[2] = local_c->elementSize;
+      pdVar7[3] = local_c->count;
       thunk_FUN_0043fc50(CASE_A,0);
     }
   }
@@ -1053,43 +1033,43 @@ LAB_0041bac6:
   /* ST_CALLSITE[0041BC45]: CALL 0x00403c51; direct=00403C51 CPanelTy::sub_004FAB10 */
   local_EAX_3333 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_C);
   if (local_EAX_3333 != 0) {
-    puVar2 = &this_00->field_01A1;
-    local_14 = puVar2;
-    if ((DArrayTy *)this_00->field_01A1 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_01A1);
-      *puVar2 = 0;
+    ppDVar20 = &this_00->field_01A1;
+    local_14 = ppDVar20;
+    if (this_00->field_01A1 != nullptr) {
+      DArrayDestroy(this_00->field_01A1);
+      *ppDVar20 = nullptr;
     }
     /* ST_CALLSITE[0041BC76]: CALL dword ptr [EDX + 0x50] */
-    (*this_00->vtable->vfunc_50)((short)puVar2);
-    pDVar22 = (DArrayTy *)this_00->field_019D;
+    (*this_00->vtable->vfunc_50)((short)ppDVar20);
+    pDVar19 = this_00->field_019D;
     local_c = (DArrayTy *)&this_00->field_019D;
     local_8 = nullptr;
-    dVar4 = *(dword *)(*puVar2 + 0xc);
-    if (dVar4 == pDVar22->count) {
-      iVar15 = dVar4 * 0x30;
-      bVar34 = true;
-      pcVar17 = *(char **)(*puVar2 + 0x1c);
-      pcVar26 = pDVar22->data;
+    dVar2 = (*ppDVar20)->count;
+    if (dVar2 == pDVar19->count) {
+      iVar12 = dVar2 * 0x30;
+      bVar31 = true;
+      pcVar14 = (*ppDVar20)->data;
+      pcVar23 = pDVar19->data;
       do {
-        if (iVar15 == 0) break;
-        iVar15 = iVar15 + -1;
-        bVar34 = *pcVar17 == *pcVar26;
-        pcVar17 = pcVar17 + 1;
-        pcVar26 = pcVar26 + 1;
-      } while (bVar34);
-      if (!bVar34) goto LAB_0041bcad;
+        if (iVar12 == 0) break;
+        iVar12 = iVar12 + -1;
+        bVar31 = *pcVar14 == *pcVar23;
+        pcVar14 = pcVar14 + 1;
+        pcVar23 = pcVar23 + 1;
+      } while (bVar31);
+      if (!bVar31) goto LAB_0041bcad;
     }
     else {
 LAB_0041bcad:
       local_8 = (AnonShape_0041AF40_EF4C5356 *)0x1;
     }
     if (local_8 == (AnonShape_0041AF40_EF4C5356 *)0x1) {
-      if (pDVar22 != nullptr) {
-        DArrayDestroy(pDVar22);
+      if (pDVar19 != nullptr) {
+        DArrayDestroy(pDVar19);
         local_c->flags = 0;
       }
-      Library::DKW::TBL::FUN_006afe40((int *)local_c,(uint *)*local_14);
-      GVar35 = CASE_C;
+      Library::DKW::TBL::FUN_006afe40((int *)local_c,&(*local_14)->flags);
+      GVar32 = CASE_C;
       goto cf_common_exit_0041BE5F;
     }
   }
@@ -1102,23 +1082,23 @@ LAB_0041bcad:
   if (local_EAX_3507 != 0) {
     /* ST_CALLSITE[0041BD07]: CALL dword ptr [EAX + 0x54] */
     (*this_00->vtable->vfunc_54)((short)this_00->field_01A9);
-    piVar19 = this_00->field_01A5;
+    piVar16 = this_00->field_01A5;
     local_14 = this_00->field_01A9;
-    iVar15 = 3;
-    bVar34 = true;
-    piVar23 = local_14;
-    piVar31 = piVar19;
+    iVar12 = 3;
+    bVar31 = true;
+    ppDVar20 = local_14;
+    piVar28 = piVar16;
     do {
-      if (iVar15 == 0) break;
-      iVar15 = iVar15 + -1;
-      bVar34 = *piVar23 == *piVar31;
-      piVar23 = piVar23 + 1;
-      piVar31 = piVar31 + 1;
-    } while (bVar34);
-    if (!bVar34) {
-      *piVar19 = *local_14;
-      piVar19[1] = local_14[1];
-      piVar19[2] = local_14[2];
+      if (iVar12 == 0) break;
+      iVar12 = iVar12 + -1;
+      bVar31 = *ppDVar20 == (DArrayTy *)*piVar28;
+      ppDVar20 = ppDVar20 + 1;
+      piVar28 = piVar28 + 1;
+    } while (bVar31);
+    if (!bVar31) {
+      *piVar16 = (int)*local_14;
+      piVar16[1] = (int)local_14[1];
+      piVar16[2] = (int)local_14[2];
       thunk_FUN_0043fc50(CASE_D,0);
     }
   }
@@ -1134,30 +1114,30 @@ LAB_0041bcad:
   }
   /* ST_CALLSITE[0041BD70]: CALL dword ptr [EDX + 0x5c] */
   (*this_00->vtable->vfunc_5C)((short)this_00->field_01B9);
-  pAVar10 = this_00->field_01B5;
-  pAVar11 = this_00->field_01B9;
-  iVar15 = 0xb;
-  bVar34 = true;
-  pAVar24 = pAVar11;
-  pAVar32 = pAVar10;
+  pAVar8 = this_00->field_01B5;
+  pAVar9 = this_00->field_01B9;
+  iVar12 = 0xb;
+  bVar31 = true;
+  pAVar21 = pAVar9;
+  pAVar29 = pAVar8;
   do {
-    if (iVar15 == 0) break;
-    iVar15 = iVar15 + -1;
-    bVar34 = *(char *)&pAVar24->field_0000 == *(char *)&pAVar32->field_0000;
-    pAVar24 = (AnonPointee_STGameObjC_01B9 *)((int)&pAVar24->field_0000 + 1);
-    pAVar32 = (AnonPointee_STGameObjC_01B5 *)((int)&pAVar32->field_0000 + 1);
-  } while (bVar34);
-  if (bVar34) {
+    if (iVar12 == 0) break;
+    iVar12 = iVar12 + -1;
+    bVar31 = (char)pAVar21->field_0000 == (char)pAVar29->field_0000;
+    pAVar21 = (AnonPointee_STGameObjC_01B9 *)((int)&pAVar21->field_0000 + 1);
+    pAVar29 = (AnonPointee_STGameObjC_01B5 *)((int)&pAVar29->field_0000 + 1);
+  } while (bVar31);
+  if (bVar31) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  pAVar10->field_0000 = pAVar11->field_0000;
-  pAVar10->field_0004 = pAVar11->field_0004;
-  pAVar10->field_0008 = pAVar11->field_0008;
-  pAVar10->field_000A = pAVar11->field_000A;
-  GVar35 = CASE_F;
+  pAVar8->field_0000 = pAVar9->field_0000;
+  pAVar8->field_0004 = pAVar9->field_0004;
+  pAVar8->field_0008 = pAVar9->field_0008;
+  pAVar8->field_000A = pAVar9->field_000A;
+  GVar32 = CASE_F;
 cf_common_exit_0041BE5F:
-  thunk_FUN_0043fc50(GVar35,0);
+  thunk_FUN_0043fc50(GVar32,0);
   g_currentExceptionFrame = local_58.previous;
   return 0;
 }

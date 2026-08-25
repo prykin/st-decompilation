@@ -269,7 +269,7 @@ LAB_005bb532:
       g_currentExceptionFrame = local_a0.previous;
       return;
     }
-    /* ST_CALLSITE[005BB64A]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[005BB64A]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/PrividerTy;pointer:/SubmarineTitans/Recovered/STMessage */
     this_01->GetMessage(&local_5c);
     break;
   case CASE_3:

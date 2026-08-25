@@ -89,9 +89,9 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_40 = param_6;
   local_44 = param_5;
   local_3c = param_7;
-  local_38 = (int)(short)(sVar7 * 0xc9 + 100);
-  local_34 = (int)(short)(sVar6 * 0xc9 + 100);
-  local_30 = (int)(short)((short)local_c * 200 + 100);
+  local_38 = (short)(sVar7 * 0xc9 + 100);
+  local_34 = (short)(sVar6 * 0xc9 + 100);
+  local_30 = (short)((short)local_c * 200 + 100);
   /* ST_CALLSITE[006279E0]: CALL dword ptr [EDX + 0x8] */
   g_playSystem_00802A38->vfunc_08(0x158,0,0,(short)&local_5c,0);
   return;

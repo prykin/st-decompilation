@@ -25,7 +25,7 @@ undefined4 * __cdecl FUN_00690e90(char *source,undefined2 param_2,undefined2 par
     local_8 = Library::DKW::LIB::MemAllocClear(0x10c);
     *(undefined4 *)local_8 = 0x38e;
     *(undefined4 *)&local_8->field_0x14 = 0x10c;
-    *(undefined1 *)((int)&local_8->field_0017 + 1) = 2;
+    STField<undefined1>(local_8,0x18) = 2;
     Library::MSVCRT::_strncpy(&local_8->field_0x1b,source,0x3f);
     local_8->field_0019 = param_2;
     *(undefined2 *)&local_8->field_0x5c = param_3;

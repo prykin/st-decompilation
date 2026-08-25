@@ -60,7 +60,7 @@ undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
   thunk_FUN_00416270(param_1,(uint *)&local_8,&local_6,(short *)&local_c);
   param_1->field_02C5 = (int)local_6;
   param_1->field_02C1 = (int)local_8;
-  param_1->field_02C9 = (int)(short)local_c;
+  param_1->field_02C9 = (short)local_c;
   *(int *)(param_1->field_02E6 + 0x34) = (int)local_8;
   *(int *)(param_1->field_02E6 + 0x38) = (int)local_6;
   *(undefined4 *)(param_1->field_02E6 + 0x40) = *(undefined4 *)(param_1->field_02E6 + 0x14);
@@ -122,10 +122,10 @@ undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
   if (iVar7 == 0) {
     iVar7 = param_1->field_02E6;
     local_18 = 4;
-    local_64 = *(undefined4 *)(iVar7 + 0x1c);
-    local_60 = *(int *)(iVar7 + 0x1c) + 0x32;
+    local_64 = STField<undefined4>(iVar7,0x1C);
+    local_60 = STField<int>(iVar7,0x1C) + 0x32;
     local_3c = 0xaa;
-    local_58 = (int)(short)local_c;
+    local_58 = (short)local_c;
     local_38 = 0;
     local_5c = local_58 + -0x32;
   }
@@ -135,47 +135,47 @@ undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
     if (iVar7 == 1) {
       iVar7 = param_1->field_02E6;
       local_18 = 5;
-      local_64 = *(undefined4 *)(iVar7 + 0x1c);
-      local_60 = *(int *)(iVar7 + 0x1c) + 0x32;
-      local_54 = (int)(short)local_c;
+      local_64 = STField<undefined4>(iVar7,0x1C);
+      local_60 = STField<int>(iVar7,0x1C) + 0x32;
+      local_54 = (short)local_c;
       if ((short)local_c < 0) {
         iVar9 = (short)(((short)local_c / 200 + sVar5) -
                        (short)((longlong)local_54 * 0x51eb851f >> 0x3f)) + -1;
       }
       else {
-        iVar9 = (int)(short)(((short)local_c / 200 + sVar5) -
+        iVar9 = (short)(((short)local_c / 200 + sVar5) -
                             (short)((longlong)local_54 * 0x51eb851f >> 0x3f));
       }
       local_3c = 0x10e;
       local_38 = 0xaa;
-      local_5c = *(int *)(iVar7 + 0x1c) + (iVar9 - local_20) * 200;
+      local_5c = STField<int>(iVar7,0x1C) + (iVar9 - local_20) * 200;
       local_58 = local_54 + -0x32;
       local_34 = 0;
     }
     else {
       iVar7 = param_1->field_02E6;
       local_18 = 6;
-      local_64 = *(undefined4 *)(iVar7 + 0x1c);
-      local_60 = *(int *)(iVar7 + 0x1c) + 0x32;
-      local_50 = (int)(short)local_c;
+      local_64 = STField<undefined4>(iVar7,0x1C);
+      local_60 = STField<int>(iVar7,0x1C) + 0x32;
+      local_50 = (short)local_c;
       if ((short)local_c < 0) {
-        iVar8 = (int)(short)(((short)local_c / 200 + sVar5) -
+        iVar8 = (short)(((short)local_c / 200 + sVar5) -
                             (short)((longlong)local_50 * 0x51eb851f >> 0x3f));
         iVar9 = iVar8 + -1;
       }
       else {
-        iVar9 = (int)(short)(((short)local_c / 200 + sVar5) -
+        iVar9 = (short)(((short)local_c / 200 + sVar5) -
                             (short)((longlong)local_50 * 0x51eb851f >> 0x3f));
         iVar8 = iVar9;
       }
       local_3c = 0xb4;
-      local_5c = *(int *)(iVar7 + 0x1c) + (iVar9 - local_24) * 200;
+      local_5c = STField<int>(iVar7,0x1C) + (iVar9 - local_24) * 200;
       if ((short)local_c < 0) {
         iVar8 = iVar8 + -1;
       }
       local_38 = 0xb4;
       local_34 = 0xaa;
-      local_58 = *(int *)(iVar7 + 0x1c) + (iVar8 - local_20) * 200;
+      local_58 = STField<int>(iVar7,0x1C) + (iVar8 - local_20) * 200;
       local_54 = local_50 + -0x32;
       if (local_50 + 1 == local_20) {
         local_38 = 0x10e;

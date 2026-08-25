@@ -42,11 +42,10 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
     cVar3 = (char)*(undefined4 *)(param_1 + 0x24);
   }
   if ((param_6 != '\b') && ((param_6 < '\0' || (cVar3 = param_6, '\b' < param_6)))) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_6 = -1;
-    cVar3 = param_6;
+    auto param_6_after_write = -1; /* compiler stack-slot lifetime split */
+    cVar3 = param_6_after_write;
   }
-  param_6 = cVar3;
+  char param_6_after_write_2 = cVar3; /* compiler stack-slot lifetime split */
   local_10 = local_4c;
   local_c = 0;
   do {
@@ -122,9 +121,9 @@ LAB_0065e25c:
 LAB_0065e261:
               if (iVar9 != 0) goto cf_continue_loop_0065E27E;
             }
-            cVar3 = param_6;
+            cVar3 = param_6_after_write_2;
             /* ST_CALLSITE[0065E271]: CALL dword ptr [EAX + 0x6c] */
-            if ((param_6 == -1) || (iVar9 = this->vfunc_6C(), cVar3 == iVar9)) {
+            if ((param_6_after_write_2 == -1) || (iVar9 = this->vfunc_6C(), cVar3 == iVar9)) {
               local_14 = local_14 + 1;
             }
           }

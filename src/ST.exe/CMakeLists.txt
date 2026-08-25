@@ -287,6 +287,7 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/STSprGameObjC.cpp
     source/recovered/by_owner/STT3DSprC.cpp
     source/recovered/by_owner/STTmMineC.cpp
+    source/recovered/by_owner/STTorpC.cpp
     source/recovered/by_owner/STVolcanoC.cpp
     source/recovered/by_owner/SettMapMTy.cpp
     source/recovered/by_owner/SliderClassTy.cpp

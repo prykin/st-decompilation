@@ -122,13 +122,13 @@ STGroupBoatC::DistributeMD
                      ,0x10fd);
         }
         /* ST_CALLSITE[004A3540]: CALL dword ptr [EDX + 0x2c] */
-        dVar4 = pSVar3->slot_2C();
+        dVar4 = pSVar3->sub_0045EEE0();
         pDVar8 = local_1c;
         if (((dVar4 != 8) &&
             /* ST_CALLSITE[004A354C]: CALL dword ptr [EAX + 0x2c] */
-            (dVar4 = pSVar3->slot_2C(), pDVar8 = local_1c, dVar4 != 0x14)) &&
+            (dVar4 = pSVar3->sub_0045EEE0(), pDVar8 = local_1c, dVar4 != 0x14)) &&
            /* ST_CALLSITE[004A3558]: CALL dword ptr [EDX + 0x2c] */
-           (dVar4 = pSVar3->slot_2C(), pDVar8 = local_1c, dVar4 != 0x1a)) {
+           (dVar4 = pSVar3->sub_0045EEE0(), pDVar8 = local_1c, dVar4 != 0x1a)) {
           iVar6 = thunk_FUN_00490d90((STGameObjC *)pSVar3);
           if (iVar6 == 0) {
             local_18 = g_playSystem_00802A38->field_00E4;

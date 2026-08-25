@@ -9,7 +9,7 @@
    Evidence: slot_family_has_no_named_method; unique_owner_for_target;
    receiver_only_leaf_virtual_signature */
 
-dword __thiscall STMineSetC::FUN_00626ea0(STMineSetC *this)
+dword __thiscall STMineSetC::sub_00626EA0(STMineSetC *this)
 
 {
   return this->field_0262;

@@ -19,15 +19,14 @@ void __fastcall FUN_00750287(AnonShape_00750287_BC8A1854 *param_1)
     local_8 = 0;
     if (0 < param_1->field_0028) {
       iVar1 = FUN_0074ded7(param_1->field_0020);
-      local_8 = *(int *)(iVar1 + 0x1c);
-      uVar3 = *(uint *)(iVar1 + 0x18);
+      local_8 = STField<int>(iVar1,0x1C);
+      uVar3 = STField<uint>(iVar1,0x18);
     }
     if ((param_1->field_0064 != 0) && (0 < param_1->field_0040)) {
       iVar1 = FUN_0074ded7(param_1->field_0038);
-      uVar2 = *(uint *)(iVar1 + 0x18) + param_1->field_0068;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar1 = *(int *)(iVar1 + 0x1c) + param_1->field_006C +
-              (uint)CARRY4(*(uint *)(iVar1 + 0x18),param_1->field_0068);
+      uVar2 = STField<uint>(iVar1,0x18) + param_1->field_0068;
+      iVar1 = STField<int>(iVar1,0x1C) + param_1->field_006C +
+              (uint)CARRY4(STField<uint>(iVar1,0x18),param_1->field_0068);
       if ((uVar3 == 0 && local_8 == 0) ||
          ((iVar1 <= local_8 && ((iVar1 < local_8 || (uVar2 < uVar3)))))) {
         local_8 = iVar1;

@@ -92,7 +92,7 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
       CursorClassTy::sub_0054B630
                 (g_cursorClass_00802A30,(uint)(byte)(&this_00->field_01AF)[(message->arg0).u32],0);
       this_00->field_0028 = 0xbfff;
-      /* ST_CALLSITE[004EE5B8]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[004EE5B8]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/BehPanelTy;pointer:/SubmarineTitans/Recovered/STMessage */
       this_00->GetMessage((STMessage *)&this_00->field_0x18);
       g_currentExceptionFrame = local_70.previous;
       return 0;

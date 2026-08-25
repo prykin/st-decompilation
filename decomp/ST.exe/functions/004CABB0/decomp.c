@@ -129,7 +129,7 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
       local_c = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x0e');
       /* ST_CALLSITE[004CAD80]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-      if ((iVar6 < (local_c - iVar7) + -1) || ((this_00->field_01F1 & 0x2000) != 0))
+      if ((iVar6 < (local_c - iVar7) + -1) || ((this_00->field_01F1 & 0x2000U) != 0))
       goto LAB_004cadb1;
     }
     /* ST_CALLSITE[004CADA2]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */

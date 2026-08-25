@@ -88,7 +88,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
       }
       else {
         puVar10 = (undefined4 *)
-                  (int)(short)(((short)((int)local_18 / 200) + sVar3) -
+                  (short)(((short)((int)local_18 / 200) + sVar3) -
                               (short)((longlong)(int)local_18 * 0x51eb851f >> 0x3f));
       }
       local_34 = (int)puVar10 + -1;
@@ -168,7 +168,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                                    -1;
                         }
                         else {
-                          iVar14 = (int)(short)(((short)((int)local_18 / 200) + sVar3) -
+                          iVar14 = (short)(((short)((int)local_18 / 200) + sVar3) -
                                                (short)((longlong)(int)local_18 * 0x51eb851f >> 0x3f)
                                                );
                         }
@@ -182,7 +182,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                           ;
                         }
                         else {
-                          iVar8 = (int)(short)((sVar3 / 200 + (sVar3 >> 0xf)) -
+                          iVar8 = (short)((sVar3 / 200 + (sVar3 >> 0xf)) -
                                               (short)((longlong)(int)local_30 * 0x51eb851f >> 0x3f));
                         }
                         sVar3 = local_10->field_026A;
@@ -192,7 +192,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                                           (short)((longlong)local_34 * 0x28c1979 >> 0x3f)) + -1;
                         }
                         else {
-                          iVar12 = (int)(short)((sVar3 / 0xc9 + (sVar3 >> 0xf)) -
+                          iVar12 = (short)((sVar3 / 0xc9 + (sVar3 >> 0xf)) -
                                                (short)((longlong)local_34 * 0x28c1979 >> 0x3f));
                         }
                         sVar3 = local_10->field_0268;
@@ -202,7 +202,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                                          (short)((longlong)local_38 * 0x28c1979 >> 0x3f)) + -1;
                         }
                         else {
-                          iVar5 = (int)(short)((sVar3 / 0xc9 + (sVar3 >> 0xf)) -
+                          iVar5 = (short)((sVar3 / 0xc9 + (sVar3 >> 0xf)) -
                                               (short)((longlong)local_38 * 0x28c1979 >> 0x3f));
                         }
                         if (-1 < STGridAt3D(g_pathingGrid, iVar5, iVar12, iVar8)) {
@@ -228,7 +228,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                                                        )) + -1;
                             }
                             else {
-                              local_2c = (int)(short)(((short)((int)local_18 / 200) + sVar3) -
+                              local_2c = (short)(((short)((int)local_18 / 200) + sVar3) -
                                                      (short)((longlong)(int)local_18 * 0x51eb851f >>
                                                             0x3f));
                             }
@@ -262,7 +262,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                           }
                           else {
                             param_1 = (undefined4 *)
-                                      (int)(short)(((short)((int)local_18 / 200) + sVar3) -
+                                      (short)(((short)((int)local_18 / 200) + sVar3) -
                                                   (short)((longlong)(int)local_18 * 0x51eb851f >>
                                                          0x3f));
                           }

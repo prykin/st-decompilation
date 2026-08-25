@@ -35,7 +35,8 @@ LAB_005f0d59:
 005F0D63  8B 06                     MOV EAX,dword ptr [ESI]
 005F0D65  51                        PUSH ECX
 005F0D66  8B CE                     MOV ECX,ESI
-005F0D68  FF 10                     CALL dword ptr [EAX]
+STArtiafactC::sub_005F0D00::override::prt_5f0d68_89729ca9:
+005F0D68  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_005f0d6a:
 005F0D6A  5E                        POP ESI
 005F0D6B  8B E5                     MOV ESP,EBP

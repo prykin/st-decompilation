@@ -6,7 +6,6 @@
 /* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* WARNING: Unable to track spacebase fully for stack */
 /* WARNING: Unable to use type for symbol temp_3fb0403402 */
-/* WARNING: Unable to use type for symbol temp_203fd2ac8a80 */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\scoreai.cpp
@@ -991,15 +990,15 @@ LAB_0056016e:
             iVar13 = local_40[iVar18];
             if (-1 < iVar13) {
               iVar19 = local_80[iVar18];
-              *(int *)(iVar19 + 4) = st::machine_word_boundary_cast<int>(g_runtimeRecords_00803300[iVar13].field_0000 + DAT_008033bc);
-              *(int *)(iVar19 + 8) = st::machine_word_boundary_cast<int>(g_runtimeRecords_00803300[iVar13].field_0004 + DAT_008033c0);
-              *(undefined4 *)(iVar19 + 0xc) = 0xfffffff6;
+              STField<int>(iVar19,0x4) = g_runtimeRecords_00803300[iVar13].field_0000 + DAT_008033bc;
+              STField<int>(iVar19,0x8) = g_runtimeRecords_00803300[iVar13].field_0004 + DAT_008033c0;
+              STField<undefined4>(iVar19,0xC) = 0xfffffff6;
               iVar21 = local_c4;
               if (local_98 < iVar18) {
                 iVar21 = local_3c;
               }
-              *(int *)(iVar19 + 0x10) = iVar21;
-              *(int *)(iVar19 + 0x14) = g_runtimeRecords_00803300[iVar13].field_0008;
+              STField<int>(iVar19,0x10) = iVar21;
+              STField<int>(iVar19,0x14) = g_runtimeRecords_00803300[iVar13].field_0008;
             }
             iVar18 = iVar18 + 1;
           } while (iVar18 < (int)uVar23);
@@ -1179,11 +1178,11 @@ LAB_00561bff:
         piVar10 = piVar11;
         if ((local_8 < param_2 + -1) &&
            ((local_c[1] == 0 ||
-            (*(short *)(iVar13 + 2) + DAT_00803320 + iVar8 < (int)(short)local_c[1])))) {
+            (STField<short>(iVar13,0x2) + DAT_00803320 + iVar8 < (short)local_c[1])))) {
           piVar10 = piVar11 + 2;
-          local_c[1] = *(short *)(iVar13 + 2) + (short)DAT_00803320 + sVar2;
-          piVar11[1] = (int)(short)local_10;
-          *piVar11 = (int)(short)(sVar3 + 1);
+          local_c[1] = STField<short>(iVar13,0x2) + (short)DAT_00803320 + sVar2;
+          piVar11[1] = (short)local_10;
+          *piVar11 = (short)(sVar3 + 1);
           param_5 = param_5 + 1;
           param_4 = (int *)((int)param_4 + 1);
         }
@@ -1194,30 +1193,30 @@ LAB_00561bff:
           piVar11 = piVar10 + 2;
           *psVar9 = *(short *)(iVar13 + param_2 * -2) + (short)DAT_00803320 + sVar2;
           *piVar10 = (int)sVar3;
-          piVar10[1] = (int)(short)((short)local_10 + -1);
+          piVar10[1] = (short)((short)local_10 + -1);
           param_5 = param_5 + 1;
           param_4 = (int *)((int)param_4 + 1);
         }
         piVar10 = piVar11;
         if ((0 < local_8) &&
            ((local_c[-1] == 0 ||
-            (*(short *)(iVar13 + -2) + DAT_00803320 + iVar8 < (int)(short)local_c[-1])))) {
+            (*(short *)(iVar13 + -2) + DAT_00803320 + iVar8 < (short)local_c[-1])))) {
           piVar10 = piVar11 + 2;
           local_c[-1] = *(short *)(iVar13 + -2) + (short)DAT_00803320 + sVar2;
-          piVar11[1] = (int)(short)local_10;
-          *piVar11 = (int)(short)(sVar3 + -1);
+          piVar11[1] = (short)local_10;
+          *piVar11 = (short)(sVar3 + -1);
           param_5 = param_5 + 1;
           param_4 = (int *)((int)param_4 + 1);
         }
         piVar11 = piVar10;
         if ((local_10 < param_3 + -1) &&
            ((local_c[param_2] == 0 ||
-            (*(short *)(iVar13 + param_2 * 2) + DAT_00803320 + iVar8 < (int)(short)local_c[param_2])
+            (*(short *)(iVar13 + param_2 * 2) + DAT_00803320 + iVar8 < (short)local_c[param_2])
             ))) {
           piVar11 = piVar10 + 2;
           local_c[param_2] = *(short *)(iVar13 + param_2 * 2) + (short)DAT_00803320 + sVar2;
           *piVar10 = (int)sVar3;
-          piVar10[1] = (int)(short)((short)local_10 + 1);
+          piVar10[1] = (short)((short)local_10 + 1);
           param_5 = param_5 + 1;
           param_4 = (int *)((int)param_4 + 1);
         }
@@ -1228,8 +1227,8 @@ LAB_00561bff:
               (*(short *)(iVar13 + param_2 * -2 + 2) + DAT_00803324 + iVar8 < (int)*psVar9)))) {
             piVar10 = piVar11 + 2;
             *psVar9 = *(short *)(iVar13 + param_2 * -2 + 2) + (short)DAT_00803324 + sVar2;
-            *piVar11 = (int)(short)(sVar3 + 1);
-            piVar11[1] = (int)(short)((short)local_10 + -1);
+            *piVar11 = (short)(sVar3 + 1);
+            piVar11[1] = (short)((short)local_10 + -1);
             param_5 = param_5 + 1;
             param_4 = (int *)((int)param_4 + 1);
           }
@@ -1241,8 +1240,8 @@ LAB_00561bff:
                ) {
               piVar11 = piVar10 + 2;
               *psVar9 = *(short *)(iVar13 - (param_2 * 2 + 2)) + (short)DAT_00803324 + sVar2;
-              *piVar10 = (int)(short)(sVar3 + -1);
-              piVar10[1] = (int)(short)((short)local_10 + -1);
+              *piVar10 = (short)(sVar3 + -1);
+              piVar10[1] = (short)((short)local_10 + -1);
               param_5 = param_5 + 1;
               param_4 = (int *)((int)param_4 + 1);
             }
@@ -1253,12 +1252,12 @@ LAB_00561bff:
           if ((0 < local_8) &&
              ((local_c[param_2 + -1] == 0 ||
               (*(short *)(iVar13 + -2 + param_2 * 2) + DAT_00803324 + iVar8 <
-               (int)(short)local_c[param_2 + -1])))) {
+               (short)local_c[param_2 + -1])))) {
             piVar10 = piVar11 + 2;
             local_c[param_2 + -1] =
                  *(short *)(iVar13 + -2 + param_2 * 2) + (short)DAT_00803324 + sVar2;
-            *piVar11 = (int)(short)(sVar3 + -1);
-            piVar11[1] = (int)(short)((short)local_10 + 1);
+            *piVar11 = (short)(sVar3 + -1);
+            piVar11[1] = (short)((short)local_10 + 1);
             param_5 = param_5 + 1;
             param_4 = (int *)((int)param_4 + 1);
           }
@@ -1266,12 +1265,12 @@ LAB_00561bff:
           if ((local_8 < param_2 + -1) &&
              ((local_c[param_2 + 1] == 0 ||
               (*(short *)(iVar13 + 2 + param_2 * 2) + DAT_00803324 + iVar8 <
-               (int)(short)local_c[param_2 + 1])))) {
+               (short)local_c[param_2 + 1])))) {
             piVar11 = piVar10 + 2;
             local_c[param_2 + 1] =
                  *(short *)(iVar13 + 2 + param_2 * 2) + (short)DAT_00803324 + sVar2;
-            *piVar10 = (int)(short)(sVar3 + 1);
-            piVar10[1] = (int)(short)((short)local_10 + 1);
+            *piVar10 = (short)(sVar3 + 1);
+            piVar10[1] = (short)((short)local_10 + 1);
             param_5 = param_5 + 1;
             param_4 = (int *)((int)param_4 + 1);
           }
@@ -1299,7 +1298,6 @@ LAB_00561bff:
 /* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* WARNING: Unable to track spacebase fully for stack */
-/* WARNING: Unable to use type for symbol temp_203f9621b1d8 */
 /* WARNING: Unable to use type for symbol temp_3f50488dac */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -2275,18 +2273,18 @@ LAB_005637bc:
             iVar13 = local_40[iVar18];
             if (-1 < iVar13) {
               iVar20 = local_174[iVar18];
-              *(int *)(iVar20 + 4) = st::machine_word_boundary_cast<int>(g_runtimeRecords_00803300[iVar13].field_0000 + DAT_008033bc);
-              *(int *)(iVar20 + 8) = st::machine_word_boundary_cast<int>(g_runtimeRecords_00803300[iVar13].field_0004 + DAT_008033c0);
+              STField<int>(iVar20,0x4) = g_runtimeRecords_00803300[iVar13].field_0000 + DAT_008033bc;
+              STField<int>(iVar20,0x8) = g_runtimeRecords_00803300[iVar13].field_0004 + DAT_008033c0;
               if (local_8c < iVar18) {
-                *(int *)(iVar20 + 0xc) = DAT_008032f0;
+                STField<int>(iVar20,0xC) = DAT_008032f0;
                 iVar16 = DAT_008032ec;
               }
               else {
-                *(int *)(iVar20 + 0xc) = DAT_00803374;
+                STField<int>(iVar20,0xC) = DAT_00803374;
                 iVar16 = DAT_00803378;
               }
-              *(int *)(iVar20 + 0x10) = iVar16;
-              *(int *)(iVar20 + 0x14) = g_runtimeRecords_00803300[iVar13].field_0008;
+              STField<int>(iVar20,0x10) = iVar16;
+              STField<int>(iVar20,0x14) = g_runtimeRecords_00803300[iVar13].field_0008;
             }
             iVar18 = iVar18 + 1;
           } while (iVar18 < (int)uVar23);

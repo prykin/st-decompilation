@@ -22,9 +22,9 @@ undefined4 __thiscall STColl3C::sub_005FA8B0(STColl3C *this,int *param_1,int *pa
   short local_8;
   short local_6;
 
-  sVar1 = *(short *)&this->field_025D;
-  sVar2 = *(short *)&this->field_0265;
-  sVar3 = *(short *)&this->field_0261;
+  sVar1 = (short)this->field_025D;
+  sVar2 = (short)this->field_0265;
+  sVar3 = (short)this->field_0261;
   local_10 = 0;
   if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
       ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) ||

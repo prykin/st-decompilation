@@ -43,7 +43,8 @@ LAB_0049178c:
 004917A4  8B 11                     MOV EDX,dword ptr [ECX]
 004917A6  8D 45 D8                  LEA EAX,[EBP + -0x28]
 004917A9  50                        PUSH EAX
-004917AA  FF 12                     CALL dword ptr [EDX]
+FUN_00491720::override::prt_4917aa_89729ca9:
+004917AA  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 004917AC  33 C0                     XOR EAX,EAX
 LAB_004917ae:
 004917AE  8B 4E 18                  MOV ECX,dword ptr [ESI + 0x18]

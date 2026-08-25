@@ -31,20 +31,27 @@ import ghidra.program.model.data.Array;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.Enum;
+import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
+import ghidra.program.model.listing.VariableStorage;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
+import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.StackReference;
+import ghidra.program.model.pcode.DataTypeSymbol;
+import ghidra.program.model.pcode.HighFunction;
+import ghidra.program.model.pcode.HighFunctionDBUtil;
 import ghidra.util.task.TaskMonitor;
 
 public class STLocalLifetimeAnalyzer extends GhidraScript {
@@ -107,6 +114,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             }
         }
         analyzeParallel(candidates);
+        collectPersistentReceiverCallReturnRepairs(candidates);
 
         rows.sort(Comparator.comparing((Row row) -> row.functionAddress)
             .thenComparing(row -> row.originalName)
@@ -218,13 +226,33 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         DataType currentType = (DataType)highSymbol.getClass()
             .getMethod("getDataType").invoke(highSymbol);
         String currentSpecification = typeSpecification(currentType);
+        DataType databaseType = persistentDatabaseType(highSymbol);
+        boolean databaseTypeMismatch = databaseType != null &&
+            !equivalentLifetimeType(databaseType, currentType) &&
+            scriptOwnedPersistentLocal(highSymbol);
         SourceType symbolSource = symbolSource(highSymbol);
         boolean merged = groups.size() > 1;
         boolean receiverAliasCandidate =
             receiverAliasCandidate(function, highSymbol, currentType);
+        boolean receiverHistoryCandidate =
+            receiverHistoryCandidate(function, highSymbol, currentType);
+        boolean priorScriptRepairCandidate =
+            priorScriptRepairCandidate(highSymbol, currentType);
+        boolean misattachedReceiverHistoryCandidate =
+            misattachedReceiverHistoryCandidate(function, highSymbol,
+                currentType);
+        boolean exactCallViewCandidate =
+            scriptOwnedGenericStoragePointer(highSymbol, currentType);
+        boolean scalarTransportPointerCandidate =
+            groups.size() == 1 && scalarTransportPointerCandidate(
+                function, groups.values().iterator().next(), currentType);
         if (!merged && !genericUnknown(currentType) &&
                 !scriptOwnedScalarLocal(highSymbol, currentType) &&
-                !receiverAliasCandidate)
+                !receiverAliasCandidate && !receiverHistoryCandidate &&
+                !priorScriptRepairCandidate &&
+                !misattachedReceiverHistoryCandidate &&
+                !exactCallViewCandidate && !databaseTypeMismatch &&
+                !scalarTransportPointerCandidate)
             return;
         if (merged) {
             mergedLocals++;
@@ -233,12 +261,19 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         else singleGroupUnknowns++;
 
         Map<Short, Decision> decisions = new TreeMap<>();
+        Set<Short> scalarTransportGroups = new HashSet<>();
         for (Map.Entry<Short, List<Object>> entry : groups.entrySet()) {
             Map<String, TypeEvidence> evidence = new TreeMap<>();
-            boolean mixedDomainEligible = merged || genericUnknown(currentType);
+            boolean groupScalarTransport = scalarTransportPointerCandidate(
+                function, entry.getValue(), currentType);
+            if (groupScalarTransport)
+                scalarTransportGroups.add(entry.getKey());
+            boolean mixedDomainEligible = merged || genericUnknown(currentType) ||
+                groupScalarTransport;
             for (Object varnode : entry.getValue())
                 collectEvidence(varnode, evidence,
                     scalarRoleEligible(currentType) ||
+                        groupScalarTransport ||
                         mixedDomainEligible && !semanticPointer(currentType),
                     mixedDomainEligible);
             if (!merged && genericUnknown(currentType))
@@ -246,6 +281,14 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             if (receiverAliasCandidate)
                 collectReceiverAliasEvidence(function, entry.getValue(),
                     currentType, evidence);
+            if (receiverHistoryCandidate)
+                collectReceiverHistoryEvidence(function, highSymbol,
+                    entry.getValue(), currentType, evidence);
+            if (priorScriptRepairCandidate)
+                collectPriorScriptRepairEvidence(highSymbol,
+                    entry.getValue(), evidence);
+            preferPriorReceiverView(currentType, evidence);
+            preferTrustedCurrentCallView(currentType, evidence);
             if (!evidence.isEmpty()) groupsWithEvidence++;
             Decision decision = decide(evidence);
             decisions.put(entry.getKey(), decision);
@@ -271,27 +314,53 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             if (anchor == null) continue;
             boolean different = !equivalentLifetimeSpecifications(
                 selected.specification, currentSpecification);
+            boolean sameType = equivalentLifetimeSpecifications(
+                selected.specification, currentSpecification);
             boolean isolate = merged && isolationEligible(selected) &&
                 requiresIsolation(entry.getKey(), selected.specification,
-                    decisions);
+                    decisions) &&
+                // Retyping a split to the type already carried by the parent
+                // HighVariable gives Ghidra no durable distinction to retain.
+                // It is useful only for the special recursive-node case, where
+                // the generated self-link identity is itself the persistent
+                // boundary.  Ordinary same-type splits otherwise remerge on
+                // the next decompile and used to recur forever as conflicts.
+                (!sameType || recursivePointerIdentity(
+                    resolveTypeSpecification(selected.specification)) != null);
+            boolean persistenceRepair = databaseTypeMismatch && sameType;
             // Proposal TSVs are an apply/review queue, not an inventory of every
             // already-correct HighVariable. A same-typed group is retained only when
             // heterogeneous sibling lifetimes make isolation itself meaningful.
-            if (!different && !isolate) continue;
+            if (!different && !isolate && !persistenceRepair) continue;
             boolean manual = symbolSource == SourceType.USER_DEFINED ||
                 symbolSource == SourceType.IMPORTED;
             boolean neutralPointerRefinement = neutralVoidPointer(currentType);
             boolean closedNeutralPointerUse = !neutralPointerRefinement ||
                 completeNeutralPointerConsumerEvidence(
                     groups.get(entry.getKey()), selected);
-            boolean apply = (different || isolate) && !manual &&
+            boolean representableIsolation = !isolate ||
+                persistentSplitRepresentable(function, highSymbol, groups,
+                    entry.getKey());
+            boolean semanticDowngrade = weakerThanCurrentType(currentType,
+                selected.specification) &&
+                !selected.sources.contains("prior_script_provenance");
+            boolean downstreamPointeeGuess =
+                downstreamOnlyIntegerPointeeRefinement(currentType, selected);
+            boolean apply = (different || isolate || persistenceRepair) && !manual &&
                 selected.score >= automaticThreshold(selected) &&
-                closedNeutralPointerUse;
+                closedNeutralPointerUse && representableIsolation &&
+                !semanticDowngrade && !downstreamPointeeGuess;
             if (!merged) singleGroupProposals++;
             String confidence = apply ? "high" :
                 manual ? "manual" : different ? "review" : "existing";
             String reason = (merged ? "separate decompiler merge group" :
                 receiverAliasCandidate ? "single receiver-alias lifetime" :
+                receiverHistoryCandidate ?
+                    "automation-owned receiver history revalidated" :
+                misattachedReceiverHistoryCandidate ?
+                    "misattached receiver history revalidated from exact current lifetime" :
+                scalarTransportGroups.contains(entry.getKey()) ?
+                    "pointer-shaped local has only scalar consumers" :
                 "single undefined local lifetime") + "; exact_type_votes=" +
                 selected.anchors.size() + "; score=" + selected.score +
                 "; sources=" + selected.sources +
@@ -303,12 +372,189 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 (!closedNeutralPointerUse ?
                     "; neutral void pointer has an unclassified consumer" : "") +
                 (neutralPointerRefinement && closedNeutralPointerUse ?
-                    "; complete neutral-pointer consumer set agrees" : "");
+                    "; complete neutral-pointer consumer set agrees" : "") +
+                (!representableIsolation ?
+                    "; Listing stack lifetime has nonzero first-use and cannot be split persistently" :
+                    "") +
+                (semanticDowngrade ?
+                    "; weaker generic evidence cannot replace the current nominal type" : "") +
+                (downstreamPointeeGuess ?
+                    "; downstream call consumers do not prove signedness or semantics of an already width-known pointee" :
+                    "") +
+                (persistenceRepair ?
+                    "; database local type differs from the exact current High lifetime" :
+                    "");
             rows.add(new Row(apply, function, originalName, entry.getKey(),
                 groups.size(), currentSpecification, symbolSource.toString(),
                 selected.specification, anchor, selected.anchors.size(),
                 confidence, reason));
         }
+    }
+
+    /**
+     * Passing an existing undefinedN pointer to char/int APIs proves a compatible
+     * machine-width view, not the stored pointee's signedness or source-level
+     * semantic type.  Require producer-side evidence before changing that
+     * width-known pointer.  This is intentionally evidence classification, not
+     * a function/address exclusion.
+     */
+    private boolean downstreamOnlyIntegerPointeeRefinement(DataType current,
+            TypeEvidence selected) {
+        DataType base = untypedef(current);
+        if (!(base instanceof Pointer currentPointer)) return false;
+        DataType currentPointed = untypedef(currentPointer.getDataType());
+        if (currentPointed == null || !Undefined.isUndefined(currentPointed))
+            return false;
+        DataType proposed = resolveTypeSpecification(selected.specification);
+        DataType proposedBase = untypedef(proposed);
+        if (!(proposedBase instanceof Pointer proposedPointer)) return false;
+        DataType proposedPointed = untypedef(proposedPointer.getDataType());
+        if (!(proposedPointed instanceof AbstractIntegerDataType) ||
+                proposedPointed.getLength() != currentPointed.getLength())
+            return false;
+        return selected.sources.stream().allMatch(source ->
+            source.equals("call_argument") ||
+            source.equals("peer_pointer_comparison"));
+    }
+
+    private boolean persistentSplitRepresentable(Function function, Object highSymbol,
+            Map<Short, List<Object>> groups, short targetGroup) {
+        try {
+            Symbol symbol = (Symbol)highSymbol.getClass()
+                .getMethod("getSymbol").invoke(highSymbol);
+            Object object = symbol == null ? null : symbol.getObject();
+            if (object instanceof Variable variable && variable.isStackVariable() &&
+                    variable.getFirstUseOffset() != 0) return false;
+            Set<String> target = persistentDynamicIdentities(function,
+                groups.getOrDefault(targetGroup, List.of()));
+            if (target.isEmpty()) return false;
+            Set<String> siblings = new HashSet<>();
+            for (Map.Entry<Short, List<Object>> entry : groups.entrySet())
+                if (entry.getKey() != targetGroup)
+                    siblings.addAll(persistentDynamicIdentities(function,
+                        entry.getValue()));
+            return target.stream().anyMatch(identity -> !siblings.contains(identity));
+        }
+        catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    private Set<String> persistentDynamicIdentities(Function function,
+            List<Object> varnodes) throws Exception {
+        Set<String> result = new HashSet<>();
+        for (Object varnode : varnodes) {
+            Object entry = buildDynamicEntry(varnode);
+            VariableStorage storage = (VariableStorage)entry.getClass()
+                .getMethod("getStorage").invoke(entry);
+            Address pc = (Address)entry.getClass().getMethod("getPCAdress").invoke(entry);
+            if (storage == null || storage.isBadStorage() || storage.isUnassignedStorage() ||
+                    storage.isStackStorage()) continue;
+            int firstUse = 0;
+            if (pc != null) {
+                try { firstUse = (int)pc.subtract(function.getEntryPoint()); }
+                catch (Exception ignored) { continue; }
+            }
+            result.add(storage + "@" + firstUse);
+        }
+        return result;
+    }
+
+    private Object buildDynamicEntry(Object varnode) throws Exception {
+        ClassLoader loader = varnode.getClass().getClassLoader();
+        Class<?> entryClass = Class.forName(
+            "ghidra.program.model.pcode.DynamicEntry", true, loader);
+        for (java.lang.reflect.Method method : entryClass.getMethods())
+            if (method.getName().equals("build") && method.getParameterCount() == 1)
+                return method.invoke(null, varnode);
+        throw new IllegalStateException("DynamicEntry.build API is unavailable");
+    }
+
+    private boolean weakerThanCurrentType(DataType current, String selectedSpecification) {
+        if (typeSpecification(current).equals(selectedSpecification)) return false;
+        DataType selected = resolveType(selectedSpecification);
+        DataType currentBase = untypedef(current);
+        DataType selectedBase = untypedef(selected);
+        if ((current instanceof TypeDef || currentBase instanceof Enum) &&
+                selectedBase instanceof AbstractIntegerDataType) return true;
+        if (!(currentBase instanceof Pointer currentPointer) ||
+                !(selectedBase instanceof Pointer selectedPointer)) return false;
+        DataType currentPointee = untypedef(currentPointer.getDataType());
+        DataType selectedPointee = untypedef(selectedPointer.getDataType());
+        return currentPointee instanceof Structure && genericStoragePointee(selectedPointee);
+    }
+
+    private boolean genericStoragePointee(DataType type) {
+        if (type == null || Undefined.isUndefined(type) ||
+                type.getPathName().equals("/void")) return true;
+        return Set.of("/byte", "/char", "/uchar", "/short", "/ushort",
+            "/int", "/uint").contains(type.getPathName());
+    }
+
+    private DataType resolveType(String specification) {
+        if (specification == null || specification.isBlank()) return null;
+        if (specification.startsWith("pointer:")) {
+            DataType pointed = resolveType(specification.substring("pointer:".length()));
+            return pointed == null ? null : new PointerDataType(pointed,
+                currentProgram.getDefaultPointerSize(),
+                currentProgram.getDataTypeManager());
+        }
+        return currentProgram.getDataTypeManager().getDataType(specification);
+    }
+
+    /**
+     * Ghidra can type a complete four-byte local as T* after one load from a
+     * pointer-typed field even when every subsequent machine boundary treats
+     * that word as an integer handle/result.  Revisit that local only when its
+     * complete SSA lifetime has no pointer consumer.  The ordinary evidence
+     * scorer must still find independent exact scalar call/operation anchors;
+     * this predicate merely makes the otherwise nominal local eligible.
+     */
+    private boolean scalarTransportPointerCandidate(Function function,
+            List<Object> group, DataType currentType) {
+        DataType base = untypedef(currentType);
+        if (!(base instanceof Pointer) || currentType.getLength() !=
+                currentProgram.getDefaultPointerSize()) return false;
+        try {
+            for (Object varnode : group)
+                if (hasIndependentPointerConsumer(function, varnode)) return false;
+            return true;
+        }
+        catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    private boolean hasIndependentPointerConsumer(Function function,
+            Object varnode) throws Exception {
+        Object definition = varnode.getClass().getMethod("getDef").invoke(varnode);
+        if (definition != null && Set.of("PTRADD", "PTRSUB")
+                .contains(mnemonic(definition))) return true;
+        @SuppressWarnings("unchecked")
+        Iterator<Object> descendants = (Iterator<Object>)varnode.getClass()
+            .getMethod("getDescendants").invoke(varnode);
+        while (descendants.hasNext()) {
+            Object op = descendants.next();
+            String operation = mnemonic(op);
+            int operand = operandOf(op, varnode);
+            if (operand < 0) continue;
+            if ((operation.equals("LOAD") || operation.equals("STORE")) &&
+                    operand == 1) return true;
+            if (operation.equals("PTRADD") || operation.equals("PTRSUB")) return true;
+            if (operation.equals("RETURN") && semanticPointer(function.getReturnType()))
+                return true;
+            if (!operation.equals("CALL") && !operation.equals("CALLIND")) continue;
+            CallTarget target = callTarget(op);
+            if (target == null) return true;
+            int inputs = ((Number)op.getClass().getMethod("getNumInputs")
+                .invoke(op)).intValue();
+            SignatureParameters signature = signatureParameters(target, inputs - 1);
+            int argument = operand - 1;
+            if (argument < 0 || signature == null ||
+                    argument >= signature.parameters.length) return true;
+            if (semanticPointer(signature.parameters[argument].getDataType())) return true;
+        }
+        return false;
     }
 
     private void reinforceMachineControlIndex(Function function, Object highSymbol,
@@ -445,6 +691,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             evidence.sources.contains("byte_pointer_index") ||
             evidence.sources.contains("peer_pointer_comparison") ||
             evidence.sources.contains("receiver_alias") ||
+            evidence.sources.contains("receiver_history") ||
             evidence.sources.contains("typed_recursive_field");
     }
 
@@ -461,7 +708,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     }
 
     private int automaticThreshold(TypeEvidence evidence) {
-        if (evidence.sources.contains("receiver_alias"))
+        if (evidence.sources.contains("receiver_alias") ||
+                evidence.sources.contains("receiver_history"))
             return TYPED_FIELD_WEIGHT;
         if (evidence.sources.contains("call_return")) return RETURN_WEIGHT;
         if (evidence.sources.contains("typed_copy")) return COPY_WEIGHT;
@@ -484,7 +732,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         if (evidence.isEmpty()) return new Decision(null, false, evidence);
         if (evidence.size() != 1) {
             List<TypeEvidence> receiverAliases = evidence.values().stream()
-                .filter(value -> value.sources.contains("receiver_alias"))
+                .filter(value -> value.sources.contains("receiver_alias") ||
+                    value.sources.contains("receiver_history"))
                 .toList();
             // The exact unadjusted machine provenance of a local is stronger
             // than a downstream call accepting a base or neutral pointer.  A
@@ -523,7 +772,9 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         Structure receiver = pointedStructure(receiverType);
         Structure current = pointedStructure(currentType);
         if (receiver == null || current == null ||
-                equivalentLifetimeType(receiverType, currentType)) return;
+                equivalentLifetimeType(receiverType, currentType) ||
+                receiver.getNumDefinedComponents() <=
+                    current.getNumDefinedComponents()) return;
         try {
             for (Object varnode : varnodes) {
                 Object definition = varnode.getClass().getMethod("getDef")
@@ -557,6 +808,407 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         return receiver != null && current != null &&
             !equivalentLifetimeType(receiverType, currentType) &&
             persistentLocal(highSymbol);
+    }
+
+    /**
+     * Revalidate an earlier automation-owned receiver view after a later pass
+     * shortened the same persistent local to a base structure.  The comment is
+     * not evidence by itself: the live High value must still originate at the
+     * exact unadjusted auto-this parameter.  The receiver identity itself is
+     * stronger than relative layout density: generated whole-object views for
+     * derived classes can legitimately contain fewer named components than a
+     * broadly observed base view.  This is address/name independent and cannot
+     * resurrect a foreign or adjusted view.
+     */
+    private boolean receiverHistoryCandidate(Function function, Object highSymbol,
+            DataType currentType) {
+        DataType receiverType = receiverType(function);
+        Structure receiver = pointedStructure(receiverType);
+        Structure current = pointedStructure(currentType);
+        String specification = receiverType == null ? "" :
+            typeSpecification(receiverType);
+        return receiver != null && current != null &&
+            !equivalentLifetimeType(receiverType, currentType) &&
+            priorLocalLifetimeSpecifications(highSymbol).contains(specification) &&
+            exactEntryReceiverStackSpill(function, highSymbol) != null;
+    }
+
+    private void collectReceiverHistoryEvidence(Function function,
+            Object highSymbol, List<Object> varnodes, DataType currentType,
+            Map<String, TypeEvidence> evidence) {
+        DataType receiverType = receiverType(function);
+        if (receiverType == null || !priorLocalLifetimeSpecifications(highSymbol)
+                .contains(typeSpecification(receiverType))) return;
+        Instruction spill = exactEntryReceiverStackSpill(function, highSymbol);
+        if (spill == null) return;
+        try {
+            for (Object varnode : varnodes) {
+                Object definition = varnode.getClass().getMethod("getDef")
+                    .invoke(varnode);
+                if (definition == null || !receiverAliasOrigin(varnode,
+                        receiverType, java.util.Collections.newSetFromMap(
+                            new java.util.IdentityHashMap<>()), 0)) continue;
+                Evidence anchor = new Evidence(addr(spill.getAddress()), 0,
+                    "receiver_history_stack_spill", -1, "", "",
+                    typeSpecification(receiverType));
+                addEvidence(evidence, receiverType, TYPED_FIELD_WEIGHT,
+                    "receiver_history", anchor);
+                return;
+            }
+        }
+        catch (Exception ignored) {
+            // History is admitted only when the current SSA origin is complete.
+        }
+    }
+
+    private Set<String> priorLocalLifetimeSpecifications(Object highSymbol) {
+        Set<String> result = new HashSet<>();
+        try {
+            Variable variable = persistentVariable(highSymbol);
+            if (variable == null) return result;
+            java.util.regex.Matcher matcher = Pattern.compile(
+                "\\[STLocalLifetimeApplier\\][^\\r\\n;]*;\\s*type=([^;\\s]+)")
+                .matcher(text(variable.getComment()));
+            while (matcher.find()) result.add(matcher.group(1));
+        }
+        catch (Exception ignored) {
+            // No persistent automation history means no repair candidate.
+        }
+        return result;
+    }
+
+    /** Exact entry-block storage proof for an unadjusted x86 this receiver. */
+    private Instruction exactEntryReceiverStackSpill(Function function,
+            Object highSymbol) {
+        try {
+            Variable variable = persistentVariable(highSymbol);
+            if (function == null || variable == null ||
+                    !variable.isStackVariable() || variable.getLength() != 4)
+                return null;
+            int stackOffset = variable.getStackOffset();
+            InstructionIterator iterator = currentProgram.getListing()
+                .getInstructions(function.getBody(), true);
+            while (iterator.hasNext()) {
+                Instruction instruction = iterator.next();
+                String mnemonic = instruction.getMnemonicString()
+                    .toUpperCase(Locale.ROOT);
+                if (mnemonic.equals("CALL") ||
+                        instruction.getFlowType().isJump() ||
+                        instruction.getFlowType().isTerminal()) return null;
+                String destination = instruction.getNumOperands() > 0 ?
+                    instruction.getDefaultOperandRepresentation(0) : "";
+                String source = instruction.getNumOperands() > 1 ?
+                    instruction.getDefaultOperandRepresentation(1) : "";
+                if (mnemonic.equals("MOV") &&
+                        stackOperand(instruction, 0, stackOffset) &&
+                        "ECX".equals(fullRegister(source))) return instruction;
+                if ("ECX".equals(fullRegister(destination)) &&
+                        writesFirstOperand(mnemonic)) return null;
+            }
+        }
+        catch (Exception ignored) {
+            // Machine proof is optional; an incomplete mapping is no proof.
+        }
+        return null;
+    }
+
+    /**
+     * Reconsider an automation-owned local when an older exact pointer-shape
+     * provenance was overwritten by this applier.  This is a migration path,
+     * not a preference for old output: the older type is reinforced only when
+     * the current decompile independently passes that same exact type to a
+     * trusted call boundary.  It repairs bad receiver promotions without an
+     * address, class, or method allow-list.
+     */
+    private boolean priorScriptRepairCandidate(Object highSymbol,
+            DataType currentType) {
+        String prior = priorPointerShapeSpecification(highSymbol);
+        DataType priorType = prior == null ? null :
+            resolveTypeSpecification(prior);
+        DataType receiver = receiverType(functionOf(highSymbol));
+        return priorType != null && receiver != null &&
+            equivalentLifetimeType(currentType, receiver) &&
+            !equivalentLifetimeType(priorType, currentType);
+    }
+
+    /**
+     * Migrate output from the old symbol-less receiver COPY anchor.  It could
+     * stamp the method receiver type onto a transient register lifetime (most
+     * often a call return) while the intended stack spill remained unchanged.
+     * Reconsider only an automation-owned non-stack local which currently has
+     * the exact receiver type and also retains an earlier, different local-
+     * lifetime marker.  The marker merely admits re-analysis; an independently
+     * typed current call/copy boundary must still win the normal evidence vote.
+     */
+    private boolean misattachedReceiverHistoryCandidate(Function function,
+            Object highSymbol, DataType currentType) {
+        DataType receiver = receiverType(function);
+        if (receiver == null ||
+                !equivalentLifetimeType(receiver, currentType)) return false;
+        try {
+            Variable variable = persistentVariable(highSymbol);
+            if (variable == null || variable.isStackVariable() ||
+                    !text(variable.getComment()).contains(APPLIER_MARKER))
+                return false;
+            String current = typeSpecification(currentType);
+            return priorLocalLifetimeSpecifications(highSymbol).stream()
+                .anyMatch(specification ->
+                    !equivalentLifetimeSpecifications(specification, current));
+        }
+        catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    /**
+     * Migrate database output produced by the retired symbol-less receiver
+     * anchor.  That implementation could attach a receiver type to the EAX
+     * lifetime of the call at the same address.  This scan deliberately uses
+     * durable Listing locals rather than another decompiler symbol mapping:
+     * the bad mapping is exactly what is under review.
+     *
+     * The old marker is only admission evidence.  Automatic repair still
+     * requires a full EAX local, an exact direct CALL at the recorded address,
+     * and a trusted callee/thunk return ABI which agrees with an older
+     * same-address local-lifetime marker.  No function, class, local name, or
+     * address is special-cased.
+     */
+    private void collectPersistentReceiverCallReturnRepairs(
+            List<Function> functions) {
+        Pattern marker = Pattern.compile(
+            "\\[STLocalLifetimeApplier\\][^\\r\\n;]*?\\bat\\s+" +
+            "([0-9A-Fa-f]{8});\\s*type=([^;\\s]+)");
+        for (Function function : functions) {
+            DataType receiver = receiverType(function);
+            if (receiver == null) continue;
+            String receiverSpecification = typeSpecification(receiver);
+            for (Variable variable : function.getLocalVariables()) {
+                if (!variable.isRegisterVariable() ||
+                        variable.getRegister() == null ||
+                        !"EAX".equals(fullRegister(
+                            variable.getRegister().getName())) ||
+                        variable.getLength() != 4 ||
+                        variable.getSource() == SourceType.USER_DEFINED ||
+                        variable.getSource() == SourceType.IMPORTED ||
+                        !equivalentLifetimeType(variable.getDataType(), receiver))
+                    continue;
+                String comment = text(variable.getComment());
+                if (!comment.contains(APPLIER_MARKER)) continue;
+                Map<String, Set<String>> specificationsByAddress =
+                    new TreeMap<>();
+                java.util.regex.Matcher markers = marker.matcher(comment);
+                while (markers.find())
+                    specificationsByAddress.computeIfAbsent(
+                        markers.group(1).toUpperCase(Locale.ROOT),
+                        ignored -> new HashSet<>()).add(markers.group(2));
+                for (Map.Entry<String, Set<String>> entry :
+                        specificationsByAddress.entrySet()) {
+                    if (!entry.getValue().contains(receiverSpecification))
+                        continue;
+                    Address address = currentProgram.getAddressFactory()
+                        .getAddress(entry.getKey());
+                    Instruction call = address == null ? null :
+                        currentProgram.getListing().getInstructionAt(address);
+                    if (call == null || !"CALL".equalsIgnoreCase(
+                            call.getMnemonicString())) continue;
+                    Function direct = directCalledFunction(call);
+                    Function resolved = resolveThunk(direct);
+                    if (resolved == null) resolved = direct;
+                    Function signature = direct != null && trustedReturn(direct) ?
+                        direct : resolved != null && trustedReturn(resolved) ?
+                            resolved : null;
+                    DataType returned = signature == null ? null :
+                        signature.getReturnType();
+                    if (returned == null || returned.getLength() != 4 ||
+                            !semanticType(returned) ||
+                            equivalentLifetimeType(returned, receiver)) continue;
+                    String proposed = typeSpecification(returned);
+                    if (!entry.getValue().stream().anyMatch(prior ->
+                            equivalentLifetimeSpecifications(prior, proposed)))
+                        continue;
+                    boolean duplicate = rows.stream().anyMatch(row ->
+                        row.functionAddress.equals(addr(function.getEntryPoint())) &&
+                        row.originalName.equals(variable.getName()) &&
+                        row.anchor.address.equals(entry.getKey()));
+                    if (duplicate) continue;
+                    Evidence anchor = new Evidence(entry.getKey(), 0,
+                        "misattached_receiver_call_return", -1,
+                        direct == null ? "" : addr(direct.getEntryPoint()),
+                        resolved == null ? "" : addr(resolved.getEntryPoint()),
+                        proposed);
+                    rows.add(new Row(true, function, variable.getName(), 0, 1,
+                        typeSpecification(variable.getDataType()),
+                        variable.getSource().toString(), proposed, anchor, 1,
+                        "high", "retired receiver anchor was attached to a full-EAX " +
+                            "call-result lifetime; exact trusted callee return ABI and " +
+                            "same-address prior marker agree"));
+                    singleGroupProposals++;
+                }
+            }
+        }
+    }
+
+    private Function directCalledFunction(Instruction instruction) {
+        if (instruction == null) return null;
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager()
+                .getFunctionAt(flow);
+            if (function != null) return function;
+        }
+        return null;
+    }
+
+    private Function functionOf(Object highSymbol) {
+        try {
+            Object highFunction = highSymbol.getClass()
+                .getMethod("getHighFunction").invoke(highSymbol);
+            return (Function)highFunction.getClass().getMethod("getFunction")
+                .invoke(highFunction);
+        }
+        catch (Exception ignored) {
+            return null;
+        }
+    }
+
+    private void preferPriorReceiverView(DataType currentType,
+            Map<String, TypeEvidence> evidence) {
+        TypeEvidence prior = evidence.values().stream()
+            .filter(value -> value.sources.contains("prior_script_provenance"))
+            .findFirst().orElse(null);
+        if (prior == null) return;
+        evidence.entrySet().removeIf(entry ->
+            !entry.getKey().equals(prior.specification) &&
+            equivalentLifetimeSpecifications(entry.getKey(),
+                typeSpecification(currentType)) &&
+            entry.getValue().sources.stream().allMatch(source ->
+                source.equals("typed_copy") || source.equals("receiver_alias")));
+    }
+
+    private void preferTrustedCurrentCallView(DataType currentType,
+            Map<String, TypeEvidence> evidence) {
+        TypeEvidence current = evidence.values().stream()
+            .filter(value -> equivalentLifetimeSpecifications(
+                value.specification, typeSpecification(currentType)) &&
+                value.sources.contains("call_argument"))
+            .findFirst().orElse(null);
+        if (current == null) return;
+        evidence.entrySet().removeIf(entry ->
+            !entry.getKey().equals(current.specification) &&
+            entry.getValue().sources.stream().allMatch(source ->
+                source.equals("typed_copy") || source.equals("receiver_alias")));
+    }
+
+    private void collectPriorScriptRepairEvidence(Object highSymbol,
+            List<Object> varnodes, Map<String, TypeEvidence> evidence) {
+        String prior = priorPointerShapeSpecification(highSymbol);
+        if (prior == null) return;
+        DataType type = resolveTypeSpecification(prior);
+        if (type == null) return;
+        TypeEvidence independent = evidence.get(prior);
+        if (independent == null ||
+                !independent.sources.contains("call_argument")) return;
+        try {
+            for (Object varnode : varnodes) {
+                Object definition = varnode.getClass().getMethod("getDef")
+                    .invoke(varnode);
+                if (definition == null) continue;
+                String operation = mnemonic(definition);
+                if (!Set.of("COPY", "CAST", "MULTIEQUAL", "INDIRECT")
+                        .contains(operation)) continue;
+                Evidence anchor = anchor(definition,
+                    "prior_script_repair_" +
+                        operation.toLowerCase(Locale.ROOT), -1, null, prior);
+                addEvidence(evidence, type, TYPED_FIELD_WEIGHT,
+                    "prior_script_provenance", anchor);
+                return;
+            }
+        }
+        catch (Exception ignored) {
+            // A missing exact lifetime boundary cannot restore old provenance.
+        }
+    }
+
+    private String priorPointerShapeSpecification(Object highSymbol) {
+        try {
+            Variable variable = persistentVariable(highSymbol);
+            if (variable == null) return null;
+            String comment = text(variable.getComment());
+            if (!comment.contains(APPLIER_MARKER)) return null;
+            java.util.regex.Matcher matcher = Pattern.compile(
+                "\\[STPointerShapeApplier\\]\\s+(pointer:[^;\\s]+)")
+                .matcher(comment);
+            return matcher.find() ? matcher.group(1) : null;
+        }
+        catch (Exception ignored) {
+            return null;
+        }
+    }
+
+    private DataType persistentDatabaseType(Object highSymbol) {
+        try {
+            Variable variable = persistentVariable(highSymbol);
+            return variable == null ? null : variable.getDataType();
+        }
+        catch (Exception ignored) {
+            return null;
+        }
+    }
+
+    private boolean scriptOwnedPersistentLocal(Object highSymbol) {
+        try {
+            Variable variable = persistentVariable(highSymbol);
+            return variable != null &&
+                text(variable.getComment()).contains(APPLIER_MARKER);
+        }
+        catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    private Variable persistentVariable(Object highSymbol) throws Exception {
+        Object highFunction = highSymbol.getClass()
+            .getMethod("getHighFunction").invoke(highSymbol);
+        Function function = (Function)highFunction.getClass()
+            .getMethod("getFunction").invoke(highFunction);
+        VariableStorage storage = (VariableStorage)highSymbol.getClass()
+            .getMethod("getStorage").invoke(highSymbol);
+        Address pcAddress = (Address)highSymbol.getClass()
+            .getMethod("getPCAddress").invoke(highSymbol);
+        Object high = highSymbol.getClass()
+            .getMethod("getHighVariable").invoke(highSymbol);
+        if (high != null && !storage.isHashStorage() &&
+                (boolean)high.getClass().getMethod("requiresDynamicStorage")
+                    .invoke(high)) {
+            Object representative = high.getClass()
+                .getMethod("getRepresentative").invoke(high);
+            Object entry = buildDynamicEntry(representative);
+            storage = (VariableStorage)entry.getClass()
+                .getMethod("getStorage").invoke(entry);
+            pcAddress = (Address)entry.getClass()
+                .getMethod("getPCAdress").invoke(entry);
+        }
+        if (storage.isHashStorage()) {
+            long hash = storage.getFirstVarnode().getOffset();
+            for (Variable variable : function.getLocalVariables())
+                if (variable.isUniqueVariable() &&
+                        variable.getFirstStorageVarnode().getOffset() == hash)
+                    return variable;
+            return null;
+        }
+        int firstUse = 0;
+        if (pcAddress != null) {
+            try {
+                firstUse = (int)pcAddress.subtract(function.getEntryPoint());
+            }
+            catch (Exception ignored) {
+                firstUse = 0;
+            }
+        }
+        for (Variable variable : function.getLocalVariables())
+            if (variable.getFirstUseOffset() == firstUse &&
+                    variable.getVariableStorage().equals(storage))
+                return variable;
+        return null;
     }
 
     private boolean persistentLocal(Object highSymbol) {
@@ -1073,6 +1725,22 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             Map<String, TypeEvidence> evidence) throws Exception {
         CallTarget target = callTarget(op);
         if (target == null) return;
+        Function caller = currentProgram.getFunctionManager()
+            .getFunctionContaining(sequenceAddress(op));
+        DataType override = exactScriptCallReturnType(caller,
+            sequenceAddress(op));
+        if (override != null) {
+            DataType type = override;
+            int size = ((Number)output.getClass().getMethod("getSize")
+                .invoke(output)).intValue();
+            if (usableType(type, size)) {
+                Evidence anchor = anchor(op, "call_return", -1, target,
+                    "USE_SITE_OVERRIDE");
+                addEvidence(evidence, type, RETURN_WEIGHT,
+                    "use_site_call_return", anchor);
+                return;
+            }
+        }
         Function signature = signatureFunctionForReturn(target);
         if (signature == null) return;
         DataType type = signature.getReturnType();
@@ -1082,6 +1750,39 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         Evidence anchor = anchor(op, "call_return", -1, target,
             signature.getSignatureSource().toString());
         addEvidence(evidence, type, RETURN_WEIGHT, "call_return", anchor);
+    }
+
+    private Address sequenceAddress(Object op) throws Exception {
+        Object sequence = op.getClass().getMethod("getSeqnum").invoke(op);
+        return (Address)sequence.getClass().getMethod("getTarget")
+            .invoke(sequence);
+    }
+
+    private DataType exactScriptCallReturnType(Function caller,
+            Address call) {
+        if (caller == null || call == null) return null;
+        String comment = text(currentProgram.getListing()
+            .getComment(CommentType.EOL, call));
+        if (!comment.contains(
+                "[STUtilityFunctionApplier] heterogeneous_payload_consumer_view"))
+            return null;
+        Namespace root = HighFunction.findOverrideSpace(caller);
+        if (root != null) {
+            FunctionDefinition agreed = null;
+            for (Symbol symbol : currentProgram.getSymbolTable().getSymbols(call)) {
+                if (!root.equals(symbol.getParentNamespace())) continue;
+                DataTypeSymbol value = HighFunctionDBUtil.readOverride(symbol);
+                if (value == null || !(value.getDataType() instanceof
+                        FunctionDefinition definition)) continue;
+                if (agreed != null && !agreed.isEquivalent(definition)) return null;
+                agreed = definition;
+            }
+            if (agreed != null) return agreed.getReturnType();
+        }
+        java.util.regex.Matcher marker = Pattern.compile(
+            "signature=[^;\\r\\n]*;(pointer:[^;\\s]+|/[^;\\s]+)")
+            .matcher(comment);
+        return marker.find() ? resolveTypeSpecification(marker.group(1)) : null;
     }
 
     private void collectCallArgument(Object op, Object varnode,
@@ -1592,10 +2293,24 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     private boolean scriptOwnedScalarLocal(Object highSymbol, DataType type) {
         if (!scalarRoleEligible(type)) return false;
         try {
-            Symbol symbol = (Symbol)highSymbol.getClass()
-                .getMethod("getSymbol").invoke(highSymbol);
-            Object object = symbol == null ? null : symbol.getObject();
-            return object instanceof Variable variable &&
+            Variable variable = persistentVariable(highSymbol);
+            return variable != null &&
+                text(variable.getComment()).contains(APPLIER_MARKER);
+        }
+        catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    private boolean scriptOwnedGenericStoragePointer(Object highSymbol,
+            DataType type) {
+        DataType base = untypedef(type);
+        if (!(base instanceof Pointer pointer)) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        if (!genericStoragePointee(pointed)) return false;
+        try {
+            Variable variable = persistentVariable(highSymbol);
+            return variable != null &&
                 text(variable.getComment()).contains(APPLIER_MARKER);
         }
         catch (Exception ignored) {

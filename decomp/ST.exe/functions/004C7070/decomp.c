@@ -24,7 +24,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C7070(TLOBaseTy *this,int param_1)
     }
     iVar5 = this->field_05B8 + -1;
     if (-1 < iVar5) {
-      sVar1 = *(short *)&this->field_05B4;
+      sVar1 = (short)this->field_05B4;
       sVar2 = (short)this->field_05B0;
       do {
         if (sVar2 < 0) {

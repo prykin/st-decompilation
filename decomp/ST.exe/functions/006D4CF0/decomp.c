@@ -55,7 +55,7 @@ undefined4 __cdecl FUN_006d4cf0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_
                    piVar8[0x11] == iVar5)))) {
         uVar3 = STField<ushort>(piVar8,0x3e);
         iVar6 = param_1->field_0028;
-        if ((int)(uint)uVar3 <= *(int *)(iVar6 + 0x20)) {
+        if ((int)(uint)uVar3 <= STField<int>(iVar6,0x20)) {
           param_1->field_0090 = piVar8[2] - *piVar8;
           iVar1 = piVar8[3];
           iVar2 = piVar8[1];
@@ -89,21 +89,21 @@ undefined4 __cdecl FUN_006d4cf0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_
             return 0;
           }
         }
-        if (*(uint *)(iVar6 + 0x20) == (uint)uVar3) {
+        if (STField<uint>(iVar6,0x20) == (uint)uVar3) {
           if (uVar3 != 0x10) {
             return 0;
           }
           if (piVar8[0x10] == 3) {
-            if ((piVar8[0x16] == *(int *)(iVar6 + 0x4c4)) &&
-               (piVar8[0x17] == *(int *)(iVar6 + 0x4c8))) {
-              if (piVar8[0x18] == *(int *)(iVar6 + 0x4cc)) {
+            if ((piVar8[0x16] == STField<int>(iVar6,0x4C4)) &&
+               (piVar8[0x17] == STField<int>(iVar6,0x4C8))) {
+              if (piVar8[0x18] == STField<int>(iVar6,0x4CC)) {
                 return 0;
               }
               return 0x80070057;
             }
           }
-          else if (((*(int *)(iVar6 + 0x4c4) == 0x7c00) && (*(int *)(iVar6 + 0x4c8) == 0x3e0)) &&
-                  (*(int *)(iVar6 + 0x4cc) == 0x1f)) {
+          else if (((STField<int>(iVar6,0x4C4) == 0x7c00) && (STField<int>(iVar6,0x4C8) == 0x3e0)) &&
+                  (STField<int>(iVar6,0x4CC) == 0x1f)) {
             return 0;
           }
         }

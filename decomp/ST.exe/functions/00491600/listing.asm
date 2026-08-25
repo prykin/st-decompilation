@@ -60,7 +60,8 @@ LAB_004916ad:
 004916C5  8B 11                     MOV EDX,dword ptr [ECX]
 004916C7  8D 45 E0                  LEA EAX,[EBP + -0x20]
 004916CA  50                        PUSH EAX
-004916CB  FF 12                     CALL dword ptr [EDX]
+FUN_00491600::override::prt_4916cb_89729ca9:
+004916CB  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 004916CD  5F                        POP EDI
 LAB_004916ce:
 004916CE  5E                        POP ESI

@@ -55,7 +55,7 @@ TLOBldMark::sub_004C6440
     }
     else {
       lVar11 = Library::MSVCRT::__ftol();
-      iVar9 = (int)(short)lVar11;
+      iVar9 = (short)lVar11;
     }
     local_10 = iVar9;
     if (local_18 < _DAT_0079034c) {
@@ -64,7 +64,7 @@ TLOBldMark::sub_004C6440
     }
     else {
       lVar11 = Library::MSVCRT::__ftol();
-      local_8 = (int)(short)lVar11;
+      local_8 = (short)lVar11;
     }
     pVVar4 = g_visibleClass_00802A88;
     if (((((-1 < iVar9) && (iVar9 < g_worldGrid.sizeX)) && (-1 < local_8)) &&
@@ -77,7 +77,7 @@ TLOBldMark::sub_004C6440
                          local_8,&local_30,&local_34), (int)piVar8 < 0x79aed0 ||
              (0x79aee3 < (int)piVar8)))))) ||
           ((local_30 < 0 ||
-           ((((int)pVVar4->field_0030 <= local_30 ||
+           (((pVVar4->field_0030 <= local_30 ||
              (iVar9 = *piVar8 + local_34, piVar8 = local_20, iVar9 < 0)) ||
             (pVVar4->field_0034 <= iVar9)))))) ||
          ((pVVar4->field_004C == nullptr ||

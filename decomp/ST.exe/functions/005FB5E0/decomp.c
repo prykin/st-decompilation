@@ -12,6 +12,6 @@
 dword __thiscall STColl3C::FUN_005fb5e0(STColl3C *this)
 
 {
-  return (uint)(0 < (int)this->field_0269);
+  return (uint)(0 < this->field_0269);
 }
 

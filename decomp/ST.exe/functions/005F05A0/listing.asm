@@ -24,7 +24,8 @@ FUN_005f05a0:
 005F05E9  8B 01                     MOV EAX,dword ptr [ECX]
 005F05EB  8D 55 E0                  LEA EDX,[EBP + -0x20]
 005F05EE  52                        PUSH EDX
-005F05EF  FF 10                     CALL dword ptr [EAX]
+FUN_005f05a0::override::prt_5f05ef_89729ca9:
+005F05EF  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 005F05F1  5F                        POP EDI
 LAB_005f05f2:
 005F05F2  8B E5                     MOV ESP,EBP

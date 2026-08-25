@@ -95,7 +95,7 @@ LAB_004af1d5:
               if (((uint)local_10->field_0024 < 8) &&
                  ((g_playSystem_00802A38 == nullptr ||
                   (g_bulkInitializedRecords_008087C7[local_10->field_0024].field_0022 < 8)))) {
-                bVar2 = *(byte *)&local_10->field_0024;
+                bVar2 = (byte)local_10->field_0024;
                 if (g_app_00806728->field_146F == '\0') {
                   if (bVar2 == (byte)param_1) {
 LAB_004af2f0:

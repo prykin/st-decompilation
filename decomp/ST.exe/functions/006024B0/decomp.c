@@ -12,11 +12,11 @@ void __thiscall STDestC::sub_006024B0(STDestC *this)
   int iVar1;
   int iVar2;
 
-  iVar2 = (int)(short)(this->field_0255 * 0xc9 + 100);
+  iVar2 = (short)(this->field_0255 * 0xc9 + 100);
   this->field_037B = iVar2;
-  iVar1 = (int)(short)(this->field_0257 * 0xc9 + 100);
+  iVar1 = (short)(this->field_0257 * 0xc9 + 100);
   this->field_037F = iVar1;
-  this->field_0383 = (int)(short)(this->field_0259 * 200 + 100);
+  this->field_0383 = (short)(this->field_0259 * 200 + 100);
   if (this->field_0241 == 1) {
     this->field_037B = iVar2 + 100;
     this->field_037F = iVar1 + 100;

@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_004ddb30(void *this,int param_1)
   iVar4 = 0;
   if (-1 < iVar2) {
     while (iVar2 != param_1) {
-      iVar2 = *(int *)(iVar3 + 0x14);
+      iVar2 = STField<int>(iVar3,0x14);
       iVar3 = iVar3 + 0x14;
       iVar4 = iVar4 + 1;
       if (iVar2 < 0) {

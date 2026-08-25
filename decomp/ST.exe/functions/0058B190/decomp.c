@@ -235,7 +235,7 @@ LAB_0058b5ac:
                ((g_worldGrid.sizeZ <= sVar2 ||
                 (STGridAt3D(g_worldGrid, sVar8, sVar9, sVar2).objects[0] == nullptr)))))))) {
             if (iVar3 != local_8) {
-              local_c = (int)(short)((short)iVar3 * 200 + 100);
+              local_c = (short)((short)iVar3 * 200 + 100);
             }
             bVar1 = true;
             goto LAB_0058b6f6;

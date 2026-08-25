@@ -1640,7 +1640,7 @@ void __thiscall st::fn_00500BD0(CPanelTy *this)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((*(char *)((int)pCVar4->field_0308 + (uVar6 - 0x60)) != -1) &&
        (199 < (uint)(pCVar4->field_0038 - *(int *)((int)pCVar4->field_0308 + uVar6 * 4 + -0x5e)))) {
-      *(undefined4 *)((int)pCVar4->field_0308 + uVar6 * 4 + -0x5e) = pCVar4->field_0038;
+      *(int *)((int)pCVar4->field_0308 + uVar6 * 4 + -0x5e) = pCVar4->field_0038;
       local_1c = (byte *)((int)pCVar4->field_0308 + (uVar6 - 0x62));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       bVar8 = *(char *)((int)pCVar4->field_0308 + (uVar6 - 0x62)) + 1;

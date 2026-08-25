@@ -682,7 +682,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         }
         local_48.id = MESS_AIBOSSCLASSTY_5DC5;
         local_48.arg0 = *(STMessageArg *)(piVar13 + 1);
-        /* ST_CALLSITE[00577EF8]: CALL dword ptr [EAX] */
+        /* ST_CALLSITE[00577EF8]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
         g_aiBossClass_008117BC->GetMessage(&local_48);
       }
     }

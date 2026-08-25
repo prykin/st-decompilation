@@ -37,7 +37,7 @@ MMsgTy * __cdecl CreateMMsg(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
-    this->vtable = (MMsgTyVTable *)&MMObjTyVTable;
+    this->vtable = (MMsgTyVTable *)&VTable_0079C008;
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
@@ -51,7 +51,7 @@ MMsgTy * __cdecl CreateMMsg(void)
       }
       *(undefined2 *)&pMVar5->field_0000 = 0;
       iVar1 = iVar1 + -1;
-      *(undefined1 *)((int)&pMVar5->field_0000 + 2) = 0;
+      STField<undefined1>(pMVar5,0x2) = 0;
       pMVar3 = pMVar3 + 1;
     } while (iVar1 != 0);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1cf7);

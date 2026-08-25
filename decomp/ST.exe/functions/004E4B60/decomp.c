@@ -20,7 +20,7 @@ undefined4 __fastcall FUN_004e4b60(STMineSetC *param_1)
         bVar1 = LookupRecordByte((char)param_1->field_023D);
         iVar3 = param_1->field_0235;
         /* ST_CALLSITE[004E4BC7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-        bVar2 = LookupRecordByte(*(char *)&param_1->field_0024);
+        bVar2 = LookupRecordByte((char)param_1->field_0024);
         if ((&DAT_007e1984)[(uint)bVar2 + (iVar3 * 3 + (uint)bVar1) * 3] == '\0') {
           return 0;
         }

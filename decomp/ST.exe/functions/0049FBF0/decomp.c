@@ -83,11 +83,11 @@ uint * __thiscall STGroupBoatC::Bring(STGroupBoatC *this,int param_1)
                      ,0xc79);
         }
         /* ST_CALLSITE[0049FD09]: CALL dword ptr [EDX + 0x2c] */
-        dVar5 = pSVar4->slot_2C();
+        dVar5 = pSVar4->sub_0045EEE0();
         /* ST_CALLSITE[0049FD15]: CALL dword ptr [EAX + 0x2c] */
-        if (((dVar5 == 7) || (dVar5 = pSVar4->slot_2C(), dVar5 == 0x13)) ||
+        if (((dVar5 == 7) || (dVar5 = pSVar4->sub_0045EEE0(), dVar5 == 0x13)) ||
            /* ST_CALLSITE[0049FD21]: CALL dword ptr [EDX + 0x2c] */
-           (dVar5 = pSVar4->slot_2C(), dVar5 == 0x1b)) {
+           (dVar5 = pSVar4->sub_0045EEE0(), dVar5 == 0x1b)) {
           /* ST_CALLSITE[0049FD6B]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
           STBoatC::CmdToObj(pSVar4,CASE_17,&local_2c);
           pDVar6 = local_14;

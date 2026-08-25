@@ -39,9 +39,9 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   DVar6 = timeGetTime();
   *(int *)(STField<int>(this,0x288) + 0xe8) = *(int *)(STField<int>(this,0x288) + 0xe8) + 1;
   iVar3 = STField<int>(this,0x288);
-  if (3 < *(uint *)(iVar3 + 0xe8)) {
-    uVar8 = DVar6 - *(int *)(iVar3 + 0xec);
-    *(int *)(iVar3 + 0xf0) = *(int *)(iVar3 + 0xf0) + uVar8;
+  if (3 < STField<uint>(iVar3,0xE8)) {
+    uVar8 = DVar6 - STField<int>(iVar3,0xEC);
+    STField<int>(iVar3,0xF0) = STField<int>(iVar3,0xF0) + uVar8;
     if (uVar8 < *(uint *)(STField<int>(this,0x288) + 0xf4)) {
       *(uint *)(STField<int>(this,0x288) + 0xf4) = uVar8;
     }
@@ -81,23 +81,23 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
           STField<undefined4>(this,0x2fc) = 0;
         }
         iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
-        if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
+        if ((STField<uint>(iVar3,0x8) & 0x4000000) != 0) {
           /* ST_CALLSITE[006D6E16]: CALL dword ptr [0x0085bb8c] */
           EnterCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
         }
         iVar3 = STField<int>(this,0x288);
-        local_30 = *(undefined4 *)(iVar3 + 8);
-        local_2c = *(undefined4 *)(iVar3 + 0xc);
-        local_28 = *(int *)(iVar3 + 0x10) + *(int *)(iVar3 + 8);
-        local_24 = *(int *)(iVar3 + 0x14) + *(int *)(iVar3 + 0xc);
+        local_30 = STField<undefined4>(iVar3,0x8);
+        local_2c = STField<undefined4>(iVar3,0xC);
+        local_28 = STField<int>(iVar3,0x10) + STField<int>(iVar3,0x8);
+        local_24 = STField<int>(iVar3,0x14) + STField<int>(iVar3,0xC);
         local_40.left = 0;
         local_40.top = 0;
-        local_40.right = *(LONG *)(*(int *)(iVar3 + 0x28) + 0x18);
-        local_40.bottom = *(LONG *)(*(int *)(iVar3 + 0x28) + 0x1c);
-        local_20.left = *(int *)(*(int *)(iVar3 + 0x28) + 0x10) + *(int *)(iVar3 + 0x18);
-        local_20.top = *(int *)(*(int *)(iVar3 + 0x28) + 0x14) + *(int *)(iVar3 + 0x1c);
-        local_20.right = *(int *)(iVar3 + 0x20) + local_20.left;
-        local_20.bottom = *(int *)(iVar3 + 0x24) + local_20.top;
+        local_40.right = *(LONG *)(STField<int>(iVar3,0x28) + 0x18);
+        local_40.bottom = *(LONG *)(STField<int>(iVar3,0x28) + 0x1c);
+        local_20.left = *(int *)(STField<int>(iVar3,0x28) + 0x10) + STField<int>(iVar3,0x18);
+        local_20.top = *(int *)(STField<int>(iVar3,0x28) + 0x14) + STField<int>(iVar3,0x1C);
+        local_20.right = STField<int>(iVar3,0x20) + local_20.left;
+        local_20.bottom = STField<int>(iVar3,0x24) + local_20.top;
         /* ST_CALLSITE[006D6E92]: CALL dword ptr [0x0085be50] */
         BVar7 = IntersectRect(&local_54,&local_20,&local_40);
         if (BVar7 != 0) {
@@ -105,7 +105,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
           pcVar5 = *(code **)(iVar3 + 0x4e4);
           if (pcVar5 != nullptr) {
             /* ST_CALLSITE[006D6ECE]: CALL ECX */
-            (*pcVar5)(*(undefined4 *)(iVar3 + 0x4ec),local_54.left,local_54.top,
+            (*pcVar5)(STField<undefined4>(iVar3,0x4EC),local_54.left,local_54.top,
                       local_54.right - local_54.left,local_54.bottom - local_54.top);
           }
           piVar2 = local_44;
@@ -137,7 +137,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
           }
         }
         iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
-        if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
+        if ((STField<uint>(iVar3,0x8) & 0x4000000) != 0) {
           /* ST_CALLSITE[006D6F7C]: CALL dword ptr [0x0085bb90] */
           LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
         }
@@ -149,7 +149,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*piVar2 + 0x80))(piVar2,0);
           iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
-          if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
+          if ((STField<uint>(iVar3,0x8) & 0x4000000) != 0) {
             /* ST_CALLSITE[006D6D60]: CALL dword ptr [0x0085bb90] */
             LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
           }
@@ -182,23 +182,23 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         STField<undefined4>(this,0x2fc) = 0;
       }
       iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
-      if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
+      if ((STField<uint>(iVar3,0x8) & 0x4000000) != 0) {
         /* ST_CALLSITE[006D6B9A]: CALL dword ptr [0x0085bb8c] */
         EnterCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
       }
       iVar3 = STField<int>(this,0x288);
-      local_30 = *(undefined4 *)(iVar3 + 8);
-      local_2c = *(undefined4 *)(iVar3 + 0xc);
-      local_28 = *(int *)(iVar3 + 0x10) + *(int *)(iVar3 + 8);
-      local_24 = *(int *)(iVar3 + 0x14) + *(int *)(iVar3 + 0xc);
+      local_30 = STField<undefined4>(iVar3,0x8);
+      local_2c = STField<undefined4>(iVar3,0xC);
+      local_28 = STField<int>(iVar3,0x10) + STField<int>(iVar3,0x8);
+      local_24 = STField<int>(iVar3,0x14) + STField<int>(iVar3,0xC);
       local_40.left = 0;
       local_40.top = 0;
-      local_40.right = *(LONG *)(*(int *)(iVar3 + 0x28) + 0x18);
-      local_40.bottom = *(LONG *)(*(int *)(iVar3 + 0x28) + 0x1c);
-      local_20.left = *(int *)(*(int *)(iVar3 + 0x28) + 0x10) + *(int *)(iVar3 + 0x18);
-      local_20.top = *(int *)(*(int *)(iVar3 + 0x28) + 0x14) + *(int *)(iVar3 + 0x1c);
+      local_40.right = *(LONG *)(STField<int>(iVar3,0x28) + 0x18);
+      local_40.bottom = *(LONG *)(STField<int>(iVar3,0x28) + 0x1c);
+      local_20.left = *(int *)(STField<int>(iVar3,0x28) + 0x10) + STField<int>(iVar3,0x18);
+      local_20.top = *(int *)(STField<int>(iVar3,0x28) + 0x14) + STField<int>(iVar3,0x1C);
       /* ST_CALLSITE[006D6C05]: CALL dword ptr [0x0085be54] */
-      ClientToScreen(*(HWND *)(*(int *)(iVar3 + 0x28) + 4),(LPPOINT)&local_20);
+      ClientToScreen(*(HWND *)(STField<int>(iVar3,0x28) + 4),(LPPOINT)&local_20);
       local_c = 0;
       local_20.right = *(int *)(STField<int>(this,0x288) + 0x20) + local_20.left;
       local_20.bottom = *(int *)(STField<int>(this,0x288) + 0x24) + local_20.top;
@@ -241,7 +241,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         *puVar1 = *puVar1 & 0xfdffffff;
       }
       iVar3 = *(int *)(STField<int>(this,0x288) + 0x28);
-      if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
+      if ((STField<uint>(iVar3,0x8) & 0x4000000) != 0) {
         /* ST_CALLSITE[006D6D1A]: CALL dword ptr [0x0085bb90] */
         LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
       }
@@ -250,9 +250,9 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   /* ST_CALLSITE[006D6F95]: CALL dword ptr [0x0085bedc] */
   DVar6 = timeGetTime();
   iVar3 = *(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288;
-  if (3 < *(uint *)(iVar3 + 0xe8)) {
-    uVar8 = DVar6 - *(int *)(iVar3 + 0xec);
-    *(uint *)(iVar3 + 0xfc) = *(int *)(iVar3 + 0xfc) + uVar8;
+  if (3 < STField<uint>(iVar3,0xE8)) {
+    uVar8 = DVar6 - STField<int>(iVar3,0xEC);
+    STField<uint>(iVar3,0xFC) = STField<int>(iVar3,0xFC) + uVar8;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (uVar8 < *(uint *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x100)) {
       *(uint *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x100) = uVar8;

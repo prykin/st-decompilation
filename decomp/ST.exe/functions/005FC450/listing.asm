@@ -1,4 +1,4 @@
-FUN_005fc450:
+STContainerC::sub_005FC450:
 005FC450  55                        PUSH EBP
 005FC451  8B EC                     MOV EBP,ESP
 005FC453  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

@@ -449,7 +449,7 @@ void __thiscall st::fn_005E6770(WaitTy *this,undefined4 param_1,undefined4 param
     local_190 = 0x6943;
     local_17e = 0x24bc;
     local_171 = local_198;
-    if (*(int *)(iVar14 + 0x2e6) != 0) {
+    if (STField<int>(iVar14,0x2E6) != 0) {
       puVar5 = local_6c;
       for (iVar11 = 6; iVar11 != 0; iVar11 = iVar11 + -1) {
         *puVar5 = 0xffffffff;
@@ -568,7 +568,7 @@ void __thiscall st::fn_005E7570(WaitTy *this)
       if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
         st::fn_006B3AF0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
       }
-      if (-1 < (int)g_startSystem_0081176C->field_0540) {
+      if (-1 < g_startSystem_0081176C->field_0540) {
         st::fn_006B3AF0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }
@@ -997,7 +997,7 @@ LAB_005e829d:
   if (-1 < (int)g_startSystem_0081176C->field_02EC) {
     st::fn_006B35D0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
   }
-  if (-1 < (int)g_startSystem_0081176C->field_0540) {
+  if (-1 < g_startSystem_0081176C->field_0540) {
     st::fn_006B35D0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
   }
   g_currentExceptionFrame = local_60.previous;
@@ -1147,8 +1147,8 @@ LAB_005e9233:
             this_01->array_00BC[0xc].field_01F5 = 1;
             iVar10 = this_01->array_00BC[0xc].field_01DB;
             local_4c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
-            if (*(int *)(iVar10 + 0x2e6) == 0) {
-              /* ST_CALLSITE[005E9293]: CALL dword ptr [EAX] */
+            if (STField<int>(iVar10,0x2E6) == 0) {
+              /* ST_CALLSITE[005E9293]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/WaitTy;pointer:/SubmarineTitans/Recovered/STMessage */
               this_01->GetMessage(&local_4c);
             }
             else {
@@ -1169,7 +1169,7 @@ LAB_005e9233:
               if (this_01->field_0065 == '\x01') {
                 iVar10 = this_01->array_00BC[0xc].field_01DB;
                 local_4c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
-                if (*(int *)(iVar10 + 0x2e6) == 0) goto LAB_005e91f7;
+                if (STField<int>(iVar10,0x2E6) == 0) goto LAB_005e91f7;
                 local_4c.unknown_08 = this_01->field_0008;
                 local_4c.unknown_0c = 2;
                 /* ST_CALLSITE[005E9192]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
@@ -1356,7 +1356,7 @@ LAB_005e8ee0:
                   /* ST_CALLSITE[005E900F]: CALL 0x0040245a; direct=0040245A WaitTy::AddStr */
                   st::fn_0040245A(this_01,&DAT_0080f33a,0);
                 }
-                iVar10 = *(int *)((int)&pAVar6->field_0003 + 1);
+                iVar10 = STField<int>(pAVar6,0x4);
                 if ((uint)(iVar10 * *(int *)local_10) < *(uint *)(pAVar6 + 1) ||
                     iVar10 * *(int *)local_10 - *(uint *)(pAVar6 + 1) == 0) {
                   local_10 = (AnonShape_005E84D0_1273B60D *)(this_01->field_1A83 + iVar10);
@@ -1364,7 +1364,7 @@ LAB_005e8ee0:
                     iVar15 = this_01->array_00BC[0xc].field_01DB;
                     puVar20 = (undefined4 *)((int)&pAVar6[2].field_0003 + 1);
                     puVar23 = (undefined4 *)
-                              (*(int *)(iVar15 + 0x6a2) * iVar10 + *(int *)(iVar15 + 0x69a));
+                              (STField<int>(iVar15,0x6A2) * iVar10 + STField<int>(iVar15,0x69A));
                     for (uVar16 = local_28 - 0x1c >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
                       *puVar23 = *puVar20;
                       puVar20 = puVar20 + 1;
@@ -1379,7 +1379,7 @@ LAB_005e8ee0:
                     iVar10 = this_01->array_00BC[0xc].field_01DB;
                     this_01->field_1A7B = this_01->field_0061;
                     this_01->field_1A7F = st::machine_word_boundary_cast<uint>(this_01->field_1A7F - 1);
-                    uVar16 = *(uint *)(iVar10 + 0x6a6);
+                    uVar16 = STField<uint>(iVar10,0x6A6);
                     uVar16 = (uVar16 * 100 + this_01->field_1A7F * -100) / uVar16;
                     pcVar14_mg2 = st::fn_006B0140(0x252f,g_hINSTANCE_00807618);
                     /* ST_CALLSITE[005E90C7]: CALL dword ptr [0x0085bde8] */
@@ -1410,9 +1410,9 @@ LAB_005e8ee0:
               this_01->array_00BC[0xc].field_01F5 = 1;
               local_4c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
               iVar10 = this_01->array_00BC[0xc].field_01DB;
-              if (*(int *)(iVar10 + 0x2e6) == 0) {
+              if (STField<int>(iVar10,0x2E6) == 0) {
 LAB_005e91f7:
-                /* ST_CALLSITE[005E91FF]: CALL dword ptr [EAX] */
+                /* ST_CALLSITE[005E91FF]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/WaitTy;pointer:/SubmarineTitans/Recovered/STMessage */
                 this_01->GetMessage(&local_4c);
               }
               else {
@@ -1526,7 +1526,7 @@ LAB_005e91f7:
       /* ST_CALLSITE[005E8897]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
       st::fn_00402DBF(1,this_01->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
       iVar10 = this_01->array_00BC[0xc].field_01DB;
-      if (*(int *)(iVar10 + 0x2e6) != 0) {
+      if (STField<int>(iVar10,0x2E6) != 0) {
         memset(local_a8, 0, 0x1a); /* compiler bulk-zero initialization */
         local_9c = 1;
         local_9e = 1;
@@ -2290,7 +2290,7 @@ int __thiscall st::fn_005EA680(WaitTy *this,STMessage *message)
     if (DAT_008067a0 != '\0') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar9 = *(int *)(this_02->array_00BC[0xc].field_01DB + 0x686);
-      if (*(int *)(iVar9 + 8) < 1) {
+      if (STField<int>(iVar9,0x8) < 1) {
         pcVar12 = nullptr;
       }
       else {
@@ -2301,7 +2301,7 @@ int __thiscall st::fn_005EA680(WaitTy *this,STMessage *message)
       if (CONCAT31(extraout_var,bVar6) != 0) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar9 = *(int *)(this_02->array_00BC[0xc].field_01DB + 0x686);
-        if (*(int *)(iVar9 + 8) < 1) {
+        if (STField<int>(iVar9,0x8) < 1) {
           /* ST_CALLSITE[005EAA5F]: CALL dword ptr [0x0085c064] */
           st::external_00000107((CFsgsConnection *)&DAT_00802a90,nullptr);
         }
@@ -2372,10 +2372,10 @@ LAB_005eab28:
             (*(DArrayTy **)(this_02->array_00BC[0xc].field_01DB + 0x686),0,&CHAR_00h_008016a0);
   iVar9 = this_02->array_00BC[0xc].field_01DB;
   this_02->field_002D = 0x33;
-  uVar4 = *(undefined4 *)(iVar9 + 0x686);
+  uVar4 = STField<undefined4>(iVar9,0x686);
   this_02->field_0031 = (short)uVar4;
   this_02->field_0033 = (short)((uint)uVar4 >> 0x10);
-  st::fn_006E6080(this_02,2,*(undefined4 *)(iVar9 + 0x54c),(undefined4 *)&this_02->field_0x1d);
+  st::fn_006E6080(this_02,2,STField<undefined4>(iVar9,0x54C),(undefined4 *)&this_02->field_0x1d);
 cf_common_exit_005EAB6A:
   g_currentExceptionFrame = local_50.previous;
   /* ST_CALLSITE[005EAB76]: CALL 0x00401280; direct=00401280 MMObjTy::GetMessage */

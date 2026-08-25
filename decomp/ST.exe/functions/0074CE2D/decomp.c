@@ -18,7 +18,7 @@ int FUN_0074ce2d(int param_1,undefined4 *param_2)
     EnterCriticalSection(lpCriticalSection);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar2 = *(int *)(*(int *)(param_1 + 0x48) + 0x90);
-    if (*(int *)(iVar2 + 0x18) == 0) {
+    if (STField<int>(iVar2,0x18) == 0) {
       /* ST_CALLSITE[0074CEA0]: CALL dword ptr [0x0085bb90] */
       LeaveCriticalSection(lpCriticalSection);
       iVar2 = -0x7ffbfdf6;

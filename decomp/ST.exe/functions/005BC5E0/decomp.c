@@ -151,7 +151,7 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
         }
 LAB_005bccb9:
         this_00->field_004D = 0x6951;
-        /* ST_CALLSITE[005BCCC8]: CALL dword ptr [EDX] */
+        /* ST_CALLSITE[005BCCC8]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/PrividerTy;pointer:/SubmarineTitans/Recovered/STMessage */
         this_00->GetMessage((STMessage *)&this_00->field_0x3d);
         goto cf_common_exit_005BCF7F;
       }

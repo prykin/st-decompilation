@@ -107,7 +107,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
               pMVar11 = (MMsgTy_Record_00BC_01FB *)&pMVar11->field_0x4;
             }
             *(undefined2 *)&pMVar11->field_0000 = 0;
-            *(undefined1 *)((int)&pMVar11->field_0000 + 2) = 0;
+            STField<undefined1>(pMVar11,0x2) = 0;
           }
           else {
             uVar23 = 0xffffffff;
@@ -138,7 +138,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
                 pMVar11 = (MMsgTy_Record_00BC_01FB *)&pMVar11->field_0x4;
               }
               *(short *)&pMVar11->field_0000 = (short)*pUVar10;
-              *(undefined1 *)((int)&pMVar11->field_0000 + 2) = STField<undefined1>(pUVar10,2);
+              STField<undefined1>(pMVar11,0x2) = STField<undefined1>(pUVar10,2);
             }
             else {
               this_00->array_00BC[uVar9].field_00B8.field_0008 = 0;
@@ -150,7 +150,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
                 pMVar11 = (MMsgTy_Record_00BC_01FB *)&pMVar11->field_0x4;
               }
               *(short *)&pMVar11->field_0000 = (short)*pUVar10;
-              *(undefined1 *)((int)&pMVar11->field_0000 + 2) = STField<undefined1>(pUVar10,2);
+              STField<undefined1>(pMVar11,0x2) = STField<undefined1>(pUVar10,2);
             }
           }
           bVar4 = (char)local_8 + 1;

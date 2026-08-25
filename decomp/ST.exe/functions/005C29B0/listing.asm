@@ -1962,7 +1962,8 @@ LAB_005c42b6:
 005C42B8  89 41 2D                  MOV dword ptr [ECX + 0x2d],EAX
 005C42BB  8D 41 1D                  LEA EAX,[ECX + 0x1d]
 005C42BE  50                        PUSH EAX
-005C42BF  FF 12                     CALL dword ptr [EDX]
+SettMapMTy::sub_005C29B0::override::prt_5c42bf_b7a5ad12:
+005C42BF  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/SettMapMTy;pointer:/SubmarineTitans/Recovered/STMessage
 005C42C1  5F                        POP EDI
 005C42C2  5E                        POP ESI
 005C42C3  5B                        POP EBX

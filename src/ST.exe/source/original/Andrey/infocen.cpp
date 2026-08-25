@@ -911,9 +911,8 @@ int __thiscall st::fn_00521490(InfocPanelTy *this,STMessage *message)
           this_00->field_002E = 2;
           this_00->field_0030 = iVar2;
           if (g_cursorClass_00802A30 != nullptr) {
-            /* ST_CALLSITE[005215EA]: CALL dword ptr [EDX] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
+            /* ST_CALLSITE[005215EA]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+            g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x18);
           }
         }
         this_00->field_0178 = iVar12;
@@ -922,9 +921,8 @@ int __thiscall st::fn_00521490(InfocPanelTy *this,STMessage *message)
           this_00->field_002C = 0;
           this_00->field_002E = 2;
           this_00->field_0030 = iVar12;
-          /* ST_CALLSITE[0052161A]: CALL dword ptr [EDX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
+          /* ST_CALLSITE[0052161A]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+          g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x18);
           g_currentExceptionFrame = local_58.previous;
           return 0;
         }

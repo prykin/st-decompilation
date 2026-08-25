@@ -283,16 +283,16 @@ LAB_0049aec9:
                     }
                   }
                   local_10 = local_10 + 1;
-                  iVar11 = (int)(short)local_10;
+                  iVar11 = (short)local_10;
                   pSVar13 = local_8;
                 } while (iVar11 < (int)local_8->field_00F7 + (int)local_8->field_00FD);
               }
               local_14 = local_14 + 1;
-              iVar11 = (int)(short)local_14;
+              iVar11 = (short)local_14;
             } while (iVar11 < (int)pSVar13->field_00FB + (int)pSVar13->field_00F5);
           }
           local_c = local_c + 1;
-          iVar11 = (int)(short)local_c;
+          iVar11 = (short)local_c;
         } while (iVar11 < (int)pSVar13->field_00F3 + (int)pSVar13->field_00F9);
       }
       if (local_18 == 0) {

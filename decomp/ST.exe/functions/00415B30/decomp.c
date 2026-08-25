@@ -39,11 +39,11 @@ sub_00415B30(void *this,short param_1,short param_2,short param_3,short param_4,
   STField<short>(this,0x49) = param_2 / 0xc9;
   iVar5 = (int)param_3;
   STField<short>(this,0x4b) = param_3 / 200;
-  iVar3 = (int)(short)((param_1 / 0xc9) * 0xc9 + 100);
+  iVar3 = (short)((param_1 / 0xc9) * 0xc9 + 100);
   if ((((iVar3 + -0x1e < iVar8) && (iVar8 < iVar3 + 0x1e)) &&
-      (iVar3 = (int)(short)((param_2 / 0xc9) * 0xc9 + 100), iVar3 + -0x1e < iVar4)) &&
+      (iVar3 = (short)((param_2 / 0xc9) * 0xc9 + 100), iVar3 + -0x1e < iVar4)) &&
      (((iVar4 < iVar3 + 0x1e &&
-       (iVar3 = (int)(short)((param_3 / 200) * 200 + 100), iVar3 + -0x1d < iVar5)) &&
+       (iVar3 = (short)((param_3 / 200) * 200 + 100), iVar3 + -0x1d < iVar5)) &&
       (iVar5 < iVar3 + 0x1d)))) {
     STField<undefined1>(this,0x4d) = 0;
   }
@@ -68,11 +68,11 @@ sub_00415B30(void *this,short param_1,short param_2,short param_3,short param_4,
   STField<short>(this,0x54) = sVar7 / 0xc9;
   STField<short>(this,0x56) = sVar1 / 0xc9;
   STField<short>(this,0x58) = sVar6 / 200;
-  iVar3 = (int)(short)((sVar7 / 0xc9) * 0xc9 + 100);
+  iVar3 = (short)((sVar7 / 0xc9) * 0xc9 + 100);
   if (((iVar3 + -0x1e < (int)sVar7) && ((int)sVar7 < iVar3 + 0x1e)) &&
-     ((iVar3 = (int)(short)((sVar1 / 0xc9) * 0xc9 + 100), iVar3 + -0x1e < (int)sVar1 &&
+     ((iVar3 = (short)((sVar1 / 0xc9) * 0xc9 + 100), iVar3 + -0x1e < (int)sVar1 &&
       ((((int)sVar1 < iVar3 + 0x1e &&
-        (iVar3 = (int)(short)((sVar6 / 200) * 200 + 100), iVar3 + -0x1d < (int)sVar6)) &&
+        (iVar3 = (short)((sVar6 / 200) * 200 + 100), iVar3 + -0x1d < (int)sVar6)) &&
        ((int)sVar6 < iVar3 + 0x1d)))))) {
     STField<undefined1>(this,0x5a) = 0;
   }

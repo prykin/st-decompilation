@@ -79,7 +79,7 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
       if ((DAT_0080731a != 0) &&
          (0x41 < (uint)(this_00->field_0038 -
                        *(int *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a)))) {
-        *(undefined4 *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a) = this_00->field_0038;
+        *(int *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a) = this_00->field_0038;
         pbVar13 = (byte *)((int)this_00->field_0308 + (uVar12 - 0x1e));
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         bVar9 = *(char *)((int)this_00->field_0308 + (uVar12 - 0x1e)) + 1;
@@ -108,7 +108,7 @@ joined_r0x004f81d1:
       if (0x31 < (uint)(this_00->field_0038 -
                        *(int *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a))) {
         pcVar7 = (char *)((int)this_00->field_0308 + (uVar12 - 0x1e));
-        *(undefined4 *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a) = this_00->field_0038;
+        *(int *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a) = this_00->field_0038;
         if (*pcVar7 == '\0') {
           puVar6 = &this_00->field_0B63;
           if (bVar9 != 0) {
@@ -164,7 +164,7 @@ joined_r0x004f81d1:
       if (0x31 < (uint)(this_00->field_0038 -
                        *(int *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a))) {
         pbVar13 = (byte *)((int)this_00->field_0308 + (uVar12 - 0x1e));
-        *(undefined4 *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a) = this_00->field_0038;
+        *(int *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a) = this_00->field_0038;
         bVar9 = *pbVar13;
         *pbVar13 = bVar9 + 1;
         if ((byte)(bVar9 + 1) == 5) {
@@ -203,7 +203,7 @@ joined_r0x004f81d1:
       if (0x41 < (uint)(this_00->field_0038 -
                        *(int *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a))) {
         pbVar13 = (byte *)((int)this_00->field_0308 + (uVar12 - 0x1e));
-        *(undefined4 *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a) = this_00->field_0038;
+        *(int *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a) = this_00->field_0038;
         bVar9 = *pbVar13;
         *pbVar13 = bVar9 + 1;
         local_18 = (byte *)((int)this_00->field_0308 + uVar12 * 4 + -0x26);

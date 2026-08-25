@@ -178,7 +178,7 @@ LAB_0047f4cd:
     this->field_06C3 = CASE_0;
     this->field_00B7 = 3;
     /* ST_CALLSITE[0047F4F1]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
-    sub_00481520(this,(int)(short)iVar9,(int)sVar6,(short)local_c + 1);
+    sub_00481520(this,(short)iVar9,(int)sVar6,(short)local_c + 1);
     /* ST_CALLSITE[0047F4FA]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
     sub_00460260(this,0);
     return 2;
@@ -400,9 +400,9 @@ LAB_0047f1f7:
               /* ST_CALLSITE[0047E970]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
-                         (local_1c >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_24,
+                         (local_1c >> 0x10) % 7 + (int)this->field_0041 + -3 + (short)local_24,
                          (((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24)) + -3
-                         ,(int)(short)lVar17 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                         ,(short)lVar17 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                           (int)local_20,sVar6,sVar16,sVar14,sVar8,sVar18,sVar19,iVar9,sVar21,bVar22);
             }
             else {
@@ -415,7 +415,7 @@ LAB_0047f1f7:
               STPiece<2,2>(local_24) = (short)((uint)uVar2 >> 0x10);
               iVar9 = (int)STPiece<2,2>(local_24);
               STPiece<0,2>(local_24) = (short)uVar2;
-              iVar10 = (int)(short)local_24;
+              iVar10 = (short)local_24;
               /* ST_CALLSITE[0047EA20]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
@@ -539,7 +539,7 @@ LAB_0047edd5:
                     this->field_001C = local_1c;
                     sVar6 = 0;
                     lVar17 = Library::MSVCRT::__ftol();
-                    iVar9 = (int)(short)lVar17 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                    iVar9 = (short)lVar17 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                             (int)local_20;
                     iVar10 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24);
                     uVar11 = local_1c;
@@ -568,7 +568,7 @@ LAB_0047edd5:
                   TraksClassTy::TraksCreate
                             (g_traksClass_00802A7C,1,2,7,
                              (uVar11 >> 0x10) % 7 + (int)this->field_0041 + -3 +
-                             (int)(short)local_24,iVar10 + -3,iVar9,sVar6,sVar16,sVar14,sVar8,sVar18
+                             (short)local_24,iVar10 + -3,iVar9,sVar6,sVar16,sVar14,sVar8,sVar18
                              ,sVar19,iVar20,sVar21,bVar22);
                   local_8 = local_8 + 1;
                   local_c = (undefined4 *)((int)local_c + 6);

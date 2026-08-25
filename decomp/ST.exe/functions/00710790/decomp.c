@@ -21,7 +21,7 @@ void __cdecl FUN_00710790(AnonShape_00710790_4CBB90D4 *param_1)
   if (((param_1 != nullptr) && (*(int *)(param_1 + 1) != 0)) &&
      (iVar3 = *(int *)&param_1[1].field_0x8, iVar3 != 0)) {
     iVar6 = 0;
-    param_1->field_009A = *(undefined4 *)(iVar3 + 0x9a);
+    param_1->field_009A = STField<undefined4>(iVar3,0x9A);
     if (0 < **(short **)(iVar3 + 0x9a)) {
       iVar5 = 4;
       do {
@@ -58,7 +58,7 @@ void __cdecl FUN_00710790(AnonShape_00710790_4CBB90D4 *param_1)
     }
     iVar3 = *(int *)&param_1[1].field_0x8;
     param_1->field_008E = pAVar2->field_008E;
-    *(undefined4 *)&param_1[1].field_0xc = *(undefined4 *)(iVar3 + 0xac);
+    *(undefined4 *)&param_1[1].field_0xc = STField<undefined4>(iVar3,0xAC);
   }
   return;
 }

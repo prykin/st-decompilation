@@ -52,7 +52,7 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1)
   case CASE_7:
     /* ST_CALLSITE[0046C9E9]: CALL 0x00403df0; direct=00403DF0 STBoatC::sub_00460360 */
     local_EAX_105 = sub_00460360(this);
-    return (int)(short)local_EAX_105;
+    return (short)local_EAX_105;
   case CASE_2:
   case CASE_3:
   case CASE_4:

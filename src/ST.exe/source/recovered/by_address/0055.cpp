@@ -365,7 +365,7 @@ void __fastcall st::fn_00550BB0(int param_1)
       local_5 = '\0';
       iVar1 = st::fn_00715360(g_int_00811764,1,'B',&local_5,1,0,0xffffffff);
       if (iVar1 == 0) {
-        *(undefined4 *)(local_c + 0x59) = 1;
+        STField<undefined4>(local_c,0x59) = 1;
       }
       st::fn_006B6500(g_int_00811764,DAT_0080733c);
       g_currentExceptionFrame = local_50.previous;
@@ -1063,7 +1063,7 @@ st::fn_00553B00(int param_1,int param_2,byte *param_3,uint param_4,int param_5,u
     if (0 < iVar2) {
       auto param_1_after_write = (int)(param_3 + iVar4 * param_4 + iVar5); /* compiler stack-slot lifetime split */
       iVar6 = 0;
-      auto param_2_after_write = iVar2; /* compiler stack-slot lifetime split */
+      int param_2_after_write = iVar2; /* compiler stack-slot lifetime split */
       param_6 = pbVar3;
       while( true ) {
         do {
@@ -1111,7 +1111,7 @@ st::fn_00553C20(int param_1,int param_2,byte *param_3,uint param_4,int param_5,u
     if (0 < iVar2) {
       auto param_1_after_write = (int)(param_3 + iVar4 * param_4 + iVar5); /* compiler stack-slot lifetime split */
       iVar6 = 0;
-      auto param_2_after_write = iVar2; /* compiler stack-slot lifetime split */
+      int param_2_after_write = iVar2; /* compiler stack-slot lifetime split */
       param_6 = pbVar3;
       while( true ) {
         do {
@@ -1349,8 +1349,8 @@ int * __fastcall st::fn_005545C0(int *param_1)
   param_1[9] = 0;
   param_1[0xb] = 1;
   param_1[10] = 1;
-  *(undefined4 *)(iVar2 + 0x58) = 1;
-  *(undefined4 *)(iVar2 + 0x5c) = 1;
+  STField<undefined4>(iVar2,0x58) = 1;
+  STField<undefined4>(iVar2,0x5C) = 1;
   resourceString = st::fn_006B0140(0x267a,g_hINSTANCE_00807618);
   iVar1 = st::fn_007111C0((void *)param_1[2],resourceString);
   param_1[0xe] = 0;
@@ -1746,12 +1746,12 @@ uint __thiscall st::fn_0055B9F0(void *this,RecoveredRecord_VisibleClassTy_0055B9
 
   iVar1 = STField<int>(this,0x110);
   uVar4 = 0;
-  uVar2 = *(uint *)(iVar1 + 0xc);
+  uVar2 = STField<uint>(iVar1,0xC);
   if (0 < (int)uVar2) {
     bVar5 = uVar2 != 0;
     do {
       if (bVar5) {
-        pbVar3 = (byte *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c));
+        pbVar3 = (byte *)(STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C));
       }
       else {
         pbVar3 = nullptr;
@@ -1783,12 +1783,12 @@ char * __thiscall st::fn_0055BA90(void *this,char param_1,int param_2)
 
   iVar1 = STField<int>(this,0x110);
   uVar4 = 0;
-  uVar2 = *(uint *)(iVar1 + 0xc);
+  uVar2 = STField<uint>(iVar1,0xC);
   if (0 < (int)uVar2) {
     bVar5 = uVar2 != 0;
     do {
       if (bVar5) {
-        pcVar3 = (char *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c));
+        pcVar3 = (char *)(STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C));
       }
       else {
         pcVar3 = nullptr;
@@ -1940,7 +1940,7 @@ void __thiscall st::fn_0055BEB0(void *this,DWORD lastError)
      (g_fSGS_0081174C != nullptr)) {
     STField<undefined4>(this,0x1b) = 0x614f;
     STField<DWORD>(this,0x1f) = lastError;
-    /* ST_CALLSITE[0055BEED]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[0055BEED]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
   }
   return;
@@ -2309,7 +2309,7 @@ void __thiscall st::fn_0055C500(void *this,int param_1)
   {
     STField<undefined4>(this,0x1b) = 0x6150;
     STField<int>(this,0x1f) = param_1;
-    /* ST_CALLSITE[0055C537]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[0055C537]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
   }
   return;
@@ -2322,7 +2322,7 @@ void __fastcall st::fn_0055C550(int param_1)
 {
   if ((((char *)param_1)[9] == '\0') && (g_fSGS_0081174C != nullptr)) {
     *(undefined4 *)(param_1 + 0x1b) = 0x6151;
-    /* ST_CALLSITE[0055C576]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[0055C576]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_fSGS_0081174C->GetMessage((STMessage *)(param_1 + 0xb));
   }
   return;
@@ -2397,7 +2397,7 @@ void __thiscall st::fn_0055C6C0(void *this,int param_1)
      (g_fSGS_0081174C != nullptr)) {
     STField<undefined4>(this,0x1b) = 0x6152;
     STField<int>(this,0x1f) = param_1;
-    /* ST_CALLSITE[0055C711]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[0055C711]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
   }
   return;
@@ -2411,7 +2411,7 @@ void __thiscall st::fn_0055C740(void *this,int param_1)
   if ((((STField<char>(this,8) != '\0') && (STField<char>(this,9) == '\0')) && (param_1 == 0))
      && (g_fSGS_0081174C != nullptr)) {
     STField<undefined4>(this,0x1b) = 0x6153;
-    /* ST_CALLSITE[0055C777]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[0055C777]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
   }
   return;
@@ -2426,7 +2426,7 @@ void __thiscall st::fn_0055C790(void *this,undefined4 param_1)
      (g_fSGS_0081174C != nullptr)) {
     STField<undefined4>(this,0x1b) = 0x6154;
     STField<undefined4>(this,0x1f) = param_1;
-    /* ST_CALLSITE[0055C7C6]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[0055C7C6]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
   }
   return;
@@ -2441,7 +2441,7 @@ void __thiscall st::fn_0055C7E0(void *this,undefined4 param_1)
      (g_fSGS_0081174C != nullptr)) {
     STField<undefined4>(this,0x1b) = 0x6155;
     STField<undefined4>(this,0x1f) = param_1;
-    /* ST_CALLSITE[0055C816]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[0055C816]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
   }
   return;
@@ -2709,7 +2709,7 @@ LAB_0055c9c5:
       if (g_fSGS_0081174C != nullptr) {
         STField<undefined4>(this,0x1b) = 0x6156;
         STField<Global_sub_0055C830_param_1Enum>(this,0x1f) = param_1;
-        /* ST_CALLSITE[0055CFF8]: CALL dword ptr [EDX] */
+        /* ST_CALLSITE[0055CFF8]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
         g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
       }
       break;
@@ -3255,7 +3255,7 @@ LAB_0055e048:
           if ((((-1 < (int)local_10) && ((int)local_10 < DAT_008033a4)) &&
               (pbVar14 = param_1 + *local_28, -1 < (int)pbVar14)) &&
              (((int)pbVar14 < DAT_008033a8 &&
-              (local_20 = (int)(short)PTR_008033b4
+              (local_20 = (short)PTR_008033b4
                                       [(int)(DAT_008033a4 * (int)pbVar14 + (int)local_10)],
               0 < local_20)))) {
             if (local_20 <= iVar9) break;
@@ -3291,7 +3291,7 @@ LAB_0055e048:
             if ((((-1 < (int)local_10) && ((int)local_10 < DAT_008033a4)) &&
                 (pbVar14 = param_1 + *local_28, -1 < (int)pbVar14)) &&
                (((int)pbVar14 < DAT_008033a8 &&
-                (local_20 = (int)(short)PTR_008033b4
+                (local_20 = (short)PTR_008033b4
                                         [(int)(DAT_008033a4 * (int)pbVar14 + (int)local_10)],
                 0 < local_20)))) {
               if (local_20 <= iVar9) break;

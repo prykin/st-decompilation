@@ -70,7 +70,7 @@ void __thiscall CPanelTy::Update4PanelSI(CPanelTy *this)
   ushort local_51;
   ushort local_4d;
   byte local_49 [5];
-  byte local_44;
+  CPanelTy_field_0C29State local_44;
   byte local_43;
   short local_3e;
   char local_3c;
@@ -412,7 +412,7 @@ cf_common_exit_0050E007:
                   ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,0x5c,0x50,
                    (byte *)this_00->field_09D9[2],0,0x5c,10,0x32,0x19);
         /* ST_CALLSITE[0050CD70]: CALL 0x00404f1b; direct=00404F1B CPanelTy::PaintDamageXY */
-        PaintDamageXY(this_00,this_00->field_0194,0x5c,0x50,*(byte *)&this_00->field_0C3D,0x2714);
+        PaintDamageXY(this_00,this_00->field_0194,0x5c,0x50,(byte)this_00->field_0C3D,0x2714);
         uVar6 = (uint)(this_00->field_0C3D * 0x21) / 100;
         local_8 = 0;
         if (uVar6 != 0) {

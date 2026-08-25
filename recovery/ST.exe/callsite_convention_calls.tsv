@@ -336,7 +336,7 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 0042B620	STAllPlayersC::GetObjPtr	004028BA	STAllPlayersC::GetObjPtr	1	00640BE2	006406D0	STTorpC::GetMessage	CALL 0x004028ba	pointer_setup	00640BD8: MOV ECX,dword ptr [0x007fa174]	3	0	0	control_flow_boundary
 0042B620	STAllPlayersC::GetObjPtr	004028BA	STAllPlayersC::GetObjPtr	1	0064158E	006406D0	STTorpC::GetMessage	CALL 0x004028ba	pointer_setup	00641585: MOV ECX,dword ptr [0x007fa174]	3	0	0	control_flow_boundary
 0042B620	STAllPlayersC::GetObjPtr	004028BA	STAllPlayersC::GetObjPtr	1	006419BA	006406D0	STTorpC::GetMessage	CALL 0x004028ba	pointer_setup	006419B3: MOV ECX,dword ptr [0x007fa174]	3	0	0	control_flow_boundary
-0042B620	STAllPlayersC::GetObjPtr	004028BA	STAllPlayersC::GetObjPtr	1	00643FA4	00643E20	FUN_00643e20	CALL 0x004028ba	pointer_setup	00643F9A: MOV ECX,dword ptr [0x007fa174]	3	0	0	control_flow_boundary
+0042B620	STAllPlayersC::GetObjPtr	004028BA	STAllPlayersC::GetObjPtr	1	00643FA4	00643E20	STTorpC::sub_00643E20	CALL 0x004028ba	pointer_setup	00643F9A: MOV ECX,dword ptr [0x007fa174]	3	0	0	control_flow_boundary
 0042B620	STAllPlayersC::GetObjPtr	004028BA	STAllPlayersC::GetObjPtr	1	0065BFAD	0065BD70	AiEventClassTy::sub_0065BD70	CALL 0x004028ba	pointer_setup	0065BFA7: MOV ECX,dword ptr [0x007fa174]	3	0	0	control_flow_boundary
 0042B620	STAllPlayersC::GetObjPtr	004028BA	STAllPlayersC::GetObjPtr	1	0065C0A5	0065BD70	AiEventClassTy::sub_0065BD70	CALL 0x004028ba	pointer_setup	0065C09A: MOV ECX,dword ptr [0x007fa174]	3	0	0	control_flow_boundary
 0042B620	STAllPlayersC::GetObjPtr	004028BA	STAllPlayersC::GetObjPtr	1	0065C1C8	0065BD70	AiEventClassTy::sub_0065BD70	CALL 0x004028ba	pointer_setup	0065C1BD: MOV ECX,dword ptr [0x007fa174]	3	0	0	control_flow_boundary

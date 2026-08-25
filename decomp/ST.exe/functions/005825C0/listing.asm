@@ -583,7 +583,8 @@ switchD_00582651::caseD_2:
 00582D90  8B 02                     MOV EAX,dword ptr [EDX]
 00582D92  51                        PUSH ECX
 00582D93  8B CA                     MOV ECX,EDX
-00582D95  FF 10                     CALL dword ptr [EAX]
+STJellyGunC::LifeGun::override::prt_582d95_a62677c1:
+00582D95  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AF40_F59F8577
 00582D97  8B 7D E8                  MOV EDI,dword ptr [EBP + -0x18]
 LAB_00582d9a:
 00582D9A  8A 86 4F 02 00 00         MOV AL,byte ptr [ESI + 0x24f]

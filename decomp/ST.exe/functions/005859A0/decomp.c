@@ -81,10 +81,10 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
         local_c->field_003A = this_00->field_023D;
         *(undefined4 *)&local_c->field_0x3e = this_00->field_0249;
         *(undefined4 *)&local_c->field_0x42 = this_00->field_024D;
-        *(undefined4 *)&local_c->field_0x4e = this_00->field_0251;
-        *(undefined2 *)&local_c->field_0x52 = this_00->field_0041;
-        *(undefined2 *)&local_c->field_0x54 = this_00->field_0043;
-        *(undefined2 *)&local_c->field_0x56 = this_00->field_0045;
+        *(int *)&local_c->field_0x4e = this_00->field_0251;
+        *(short *)&local_c->field_0x52 = this_00->field_0041;
+        *(short *)&local_c->field_0x54 = this_00->field_0043;
+        *(short *)&local_c->field_0x56 = this_00->field_0045;
         local_c->field_0046 = this_00->field_0241;
         *(undefined4 *)&local_c->field_0x4a = this_00->field_0245;
         *(undefined4 *)&local_c->field_0x58 = 0;
@@ -120,7 +120,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
       if (SVar1 == MESS_ID_CREATE) {
         dVar2 = (message->arg0).u32;
         this_00->field_0231 = 4;
-        uVar5 = *(uint *)(dVar2 + 0xc);
+        uVar5 = STField<uint>(dVar2,0xC);
         if (uVar5 < 2) {
           this_00->field_0241 = 0;
           this_00->field_023D = g_playSystem_00802A38->field_00E4;
@@ -142,7 +142,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           STT3DSprC::StartShow
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
           /* ST_CALLSITE[00585C58]: CALL 0x00403107; direct=00403107 sub_00416240 */
-          sub_00416240(this_00,(ushort)this_00->field_026C,*(short *)&this_00->field_0270,
+          sub_00416240(this_00,(ushort)this_00->field_026C,(short)this_00->field_0270,
                        this_00->field_0274);
           this_00->field_0245 = (int)PTR_00806724->field_002C;
           this_00->field_0231 = 0;
@@ -170,7 +170,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           this_00->field_0256 = local_20->field_005D;
           this_00->field_0257 = local_20->field_005E;
           this_00->field_0041 = local_20->field_0052;
-          this_00->field_0043 = *(undefined2 *)&local_20->field_0x54;
+          this_00->field_0043 = *(short *)&local_20->field_0x54;
           this_00->field_0045 = local_20->field_0056;
           local_3c = Library::DKW::LIB::MemAlloc(0x44);
           if (local_3c != nullptr) {

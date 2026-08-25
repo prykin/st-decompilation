@@ -4,7 +4,6 @@
 /* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* WARNING: Unable to track spacebase fully for stack */
 /* WARNING: Unable to use type for symbol temp_3fb0403402 */
-/* WARNING: Unable to use type for symbol temp_203fd2ac8a80 */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\scoreai.cpp
@@ -987,15 +986,15 @@ LAB_0056016e:
             iVar13 = local_40[iVar18];
             if (-1 < iVar13) {
               iVar19 = local_80[iVar18];
-              *(int *)(iVar19 + 4) = g_runtimeRecords_00803300[iVar13].field_0000 + DAT_008033bc;
-              *(int *)(iVar19 + 8) = g_runtimeRecords_00803300[iVar13].field_0004 + DAT_008033c0;
-              *(undefined4 *)(iVar19 + 0xc) = 0xfffffff6;
+              STField<int>(iVar19,0x4) = g_runtimeRecords_00803300[iVar13].field_0000 + DAT_008033bc;
+              STField<int>(iVar19,0x8) = g_runtimeRecords_00803300[iVar13].field_0004 + DAT_008033c0;
+              STField<undefined4>(iVar19,0xC) = 0xfffffff6;
               iVar21 = local_c4;
               if (local_98 < iVar18) {
                 iVar21 = local_3c;
               }
-              *(int *)(iVar19 + 0x10) = iVar21;
-              *(int *)(iVar19 + 0x14) = g_runtimeRecords_00803300[iVar13].field_0008;
+              STField<int>(iVar19,0x10) = iVar21;
+              STField<int>(iVar19,0x14) = g_runtimeRecords_00803300[iVar13].field_0008;
             }
             iVar18 = iVar18 + 1;
           } while (iVar18 < (int)uVar23);

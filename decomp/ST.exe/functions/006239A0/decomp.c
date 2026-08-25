@@ -55,7 +55,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
     }
     return local_8;
   case CASE_2:
-    if (g_playSystem_00802A38->field_00E4 < this->field_030F) {
+    if (g_playSystem_00802A38->field_00E4 < (uint)this->field_030F) {
       return 0;
     }
     if (this->field_0353 == '\0') {
@@ -85,7 +85,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
     this->field_030F = g_playSystem_00802A38->field_00E4 + 7;
     return local_8;
   case CASE_3:
-    if (g_playSystem_00802A38->field_00E4 < this->field_030F) goto switchD_006239c1_caseD_4;
+    if (g_playSystem_00802A38->field_00E4 < (uint)this->field_030F) goto switchD_006239c1_caseD_4;
     /* ST_CALLSITE[00623B3B]: CALL 0x00405c5e; direct=00405C5E STMineSetC::sub_00625730 */
     sub_00625730(this);
     thunk_FUN_00627790(this);
@@ -190,10 +190,9 @@ LAB_00623d08:
       lVar6 = Library::MSVCRT::__ftol();
       /* ST_CALLSITE[00623E05]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
       VisibleClassTy::sub_00558C00(this_00,this_00->field_010C,(int)lVar6,iVar5,piVar7,piVar8);
-      if ((((-1 < iVar3) &&
-           (((iVar3 < 5 && (-1 < local_18)) && (local_18 < (int)this_00->field_0030)))) &&
-          (((local_1c = g_centeredOffsets5[iVar3] + local_1c, -1 < local_1c &&
-            (local_1c < this_00->field_0034)) && (this_00->field_004C != nullptr)))) &&
+      if ((((-1 < iVar3) && (((iVar3 < 5 && (-1 < local_18)) && (local_18 < this_00->field_0030))))
+          && (((local_1c = g_centeredOffsets5[iVar3] + local_1c, -1 < local_1c &&
+               (local_1c < this_00->field_0034)) && (this_00->field_004C != nullptr)))) &&
          (this_00->field_004C[local_18 + local_1c * this_00->field_0030] == 0)) {
         if (this->field_02E9 == '\0') {
           return local_8;

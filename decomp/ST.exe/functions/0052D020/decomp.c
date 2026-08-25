@@ -18,7 +18,7 @@ PopUpTy * __cdecl CreatePopUp(void)
   this = (PopUpTy *)FUN_006b04d0(0xa1);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    this->field_0000 = &VTable_0079ACE8;
+    this->vtable = &PopUpTyVTable;
     this->field_0090 = nullptr;
     this->field_0094 = nullptr;
     this->field_0098 = nullptr;

@@ -1,4 +1,4 @@
-FUN_004cc9c0:
+TLOBaseTy::sub_004CC9C0:
 004CC9C0  55                        PUSH EBP
 004CC9C1  8B EC                     MOV EBP,ESP
 004CC9C3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

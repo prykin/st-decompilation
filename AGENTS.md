@@ -109,6 +109,10 @@ Original binaries are local under ignored `bin/` and must not be committed.
   view is a narrower scalar at the same low offset. A low-word consumer proves
   a cast/view, not a short field; only an independently complete equal-width
   partition may replace the transport scalar.
+- Export may spell an exact little-endian low-byte/low-word read of such a
+  proven wider scalar as a value cast, but never rewrite the corresponding
+  lvalue store into an assignment to a cast. The outer integer promotion may
+  be omitted only when ordinary C++ promotion is exactly equivalent.
 - A compiler-reused incoming stack slot may change value domain after an exact
   out-parameter call. Keep the original ABI parameter at entry, but kill its
   prior value after a full-pointee write proven on every callee return path and
@@ -122,6 +126,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   identity. Text may introduce `auto param_N_after_write` only at the first
   exact assignment when it dominates every later use in one lexical block, no
   label can cross it, and the old spelling is unused outside that block.
+- When that post-write lifetime is independently scalar but Ghidra retains
+  arithmetic scaled by the dead entry pointee, export may collapse only a
+  complete `&alias[index].field_OFFSET +/- constant` expression using the exact
+  installed pointee extent. Partial address expressions and mixed pointer/scalar
+  lifetimes remain explicit.
 - A generated scalar class field may become an anonymous state enum from exact
   immediate writes plus comparisons. Comparison evidence includes only direct
   `CMP field,imm`, a bounded load/compare def-use, or a contiguous
@@ -196,6 +205,13 @@ Original binaries are local under ignored `bin/` and must not be committed.
   ambiguous origins, and aliases which do not reattach after a fresh decompile
   remain conflicts. This repairs compiler SEH/setjmp receiver spills; it is not
   evidence for promoting a neutral shared helper to a class.
+- When that receiver SSA attachment is unstable, an entry-block
+  `MOV [stack-local], ECX` before any call, branch, or ECX definition is an exact
+  alternative spill anchor. Never anchor receiver history to a later unrelated
+  call result. Output from the retired symbol-less anchor may be migrated only
+  for a non-stack full-EAX local when the exact call's trusted return ABI agrees
+  with an earlier same-address script marker; remove only the erroneous receiver
+  marker and require fresh-decompile reattachment.
 - A decompiler-only nominal type is not an independent `typed_copy` lifetime
   anchor. For ordinary types the copied value must originate at an exact typed
   parameter, global, return, or call boundary; a local-to-local or symbol-less
@@ -217,6 +233,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   an explicit read; an unresolved path is `unknown`, not ignored. A bare caller
   `RET` proves forwarding only when that caller already has a protected non-void
   return ABI—generic return types must not recursively validate each other.
+- A non-negative count return may be recovered with one closed caller-use gate
+  when the callee CFG is independently complete: every reachable RET follows an
+  exact full-EAX zero definition, the only later accumulator definitions are
+  `INC EAX`, and at least one reachable return path includes an increment. This
+  proves a `uint` count ABI, not the semantic type of the output buffer.
 - A generic wrapper may recover a pointer return across a void-looking helper
   only from a closed machine chain: a trusted pointer producer defines full EAX,
   the exact live EAX is pushed into one pointer parameter, the helper returns
@@ -343,6 +364,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   exact `STObjectAtByteOffset(base, byteOffset).member` view only when the cast
   width matches that named component. Do not invent `base[index]` until every
   definition proves that the offset is an exact multiple of the record size.
+- Exporter `STField<T>(word, offset)` projection requires a declared local
+  machine-word scalar. Parameters and unresolved `unaff_*`/`in_*`/`extraout_*`
+  ABI registers remain raw. Do not partially convert the left side of a
+  compound assignment when another independent raw address domain is present;
+  migrate bodies cached by the older broader rule back through the same guard.
 - An exact machine-word field copy may transfer an independently observed
   contained subfield width to the corresponding byte offset at the other end.
   Stage transfers from one snapshot and carry geometry only—never signedness or

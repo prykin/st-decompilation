@@ -52,12 +52,12 @@ st::fn_00727DA0
   DAT_008570ac = puVar8[1];
   DAT_008570b0 = puVar8[2];
   _DAT_008570b4 = puVar8[3];
-  puVar8 = (undefined4 *)((uint)((byte *)iVar5)[2] * 0x10 + param_3);
+  puVar8 = (undefined4 *)((uint)STField<byte>(iVar5,0x2) * 0x10 + param_3);
   DAT_008570b8 = *puVar8;
   DAT_008570bc = puVar8[1];
   DAT_008570c0 = puVar8[2];
   _DAT_008570c4 = puVar8[3];
-  puVar8 = (undefined4 *)((uint)((byte *)iVar5)[3] * 0x10 + param_3);
+  puVar8 = (undefined4 *)((uint)STField<byte>(iVar5,0x3) * 0x10 + param_3);
   DAT_008570c8 = *puVar8;
   DAT_008570cc = puVar8[1];
   DAT_008570d0 = puVar8[2];
@@ -83,7 +83,7 @@ st::fn_00727DA0
   pAVar11 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
   auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
   pAVar9 = (AnonShape_00727DA0_C4265AA0 *)0x7fff0000;
-  auto param_1_after_write = (AnonShape_00727DA0_C4265AA0 *)0x80000000; /* compiler stack-slot lifetime split */
+  AnonShape_00727DA0_C4265AA0 * param_1_after_write = (AnonShape_00727DA0_C4265AA0 *)0x80000000; /* compiler stack-slot lifetime split */
   piVar14 = reinterpret_cast<int *>(&DAT_008570ac);
   do {
     pAVar1 = (AnonShape_00727DA0_C4265AA0 *)*piVar14;

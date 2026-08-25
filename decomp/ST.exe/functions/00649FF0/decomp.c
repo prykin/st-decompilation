@@ -138,8 +138,8 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
       if (uVar6 != 0) {
         uVar8 = 0xffffffff;
         uVar7 = 0;
-        auto param_1_after_write = (uint *)0xffffffff; /* compiler stack-slot lifetime split */
-        auto param_4_after_write = (int *)0xffffffff; /* compiler stack-slot lifetime split */
+        uint param_1_after_write = 0xffffffff; /* compiler stack-slot lifetime split */
+        uint param_4_after_write = 0xffffffff; /* compiler stack-slot lifetime split */
         if (0 < (int)uVar6) {
           bVar13 = uVar6 != 0;
           do {
@@ -191,8 +191,8 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
         }
         uVar8 = 0xffffffff;
         uVar7 = 0;
-        param_1_after_write = (uint *)0xffffffff;
-        param_4_after_write = (int *)0xffffffff;
+        param_1_after_write = 0xffffffff;
+        param_4_after_write = 0xffffffff;
         if (0 < (int)uVar6) {
           bVar13 = uVar6 != 0;
           do {

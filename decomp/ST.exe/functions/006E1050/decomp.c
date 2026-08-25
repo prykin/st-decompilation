@@ -85,20 +85,20 @@ void __fastcall ST3DSMAPContext::sub_006E1050(ST3DSMAPContext *param_1)
     lVar7 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar7;
     if (((param_1->field_0374 == iVar5) && (param_1->field_0378 == iVar6)) &&
-       (*(int *)(iVar3 + 0x134) == 0)) {
+       (STField<int>(iVar3,0x134) == 0)) {
       param_1->field_0140 = nullptr;
       param_1->field_013C = 0;
       return;
     }
     param_1->field_0374 = iVar5;
     param_1->field_0378 = iVar6;
-    *(int *)(iVar3 + 0x374) = iVar5;
+    STField<int>(iVar3,0x374) = iVar5;
     *(int *)(param_1->field_0358 + 0x378) = iVar6;
     this = (ST3DSMAPContext *)param_1->field_0358;
     sub_006DD610(this,4,param_1->field_0368 * _DAT_0079b168 +
                         ((double)param_1->field_0374 * param_1->field_0368 - this->field_0060),
                  ((double)param_1->field_0378 + _DAT_0079b168) * param_1->field_0368 +
-                 this->field_0078);
+                 *(double *)&this->field_0x78);
     sub_006DDBE0((ST3DSMAPContext *)param_1->field_0358);
     sub_006DE9C0((ST3DSMAPContext *)param_1->field_0358);
     *(undefined4 *)(param_1->field_0358 + 0x134) = 0;

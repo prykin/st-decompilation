@@ -3,9 +3,6 @@
 
 /* WARNING: Unable to use type for symbol temp_3ff146b557 */
 /* WARNING: Unable to use type for symbol puVar18 */
-/* WARNING: Unable to use type for symbol temp_3f248b4d74 */
-/* WARNING: Unable to use type for symbol temp_3f135a84f2 */
-/* WARNING: Unable to use type for symbol temp_3f38b4ca47 */
 /* WARNING: Unable to use type for symbol temp_3fa16318a4 */
 /* WARNING: Unable to use type for symbol pAVar16 */
 /* WARNING: Unable to use type for symbol pAVar20_mg0 */
@@ -153,9 +150,8 @@ LAB_006d8b50:
             do {
               bVar18 = *(byte *)param_10;
               param_10 = param_10 + 1;
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_5 = (uint)bVar18;
-              if (((int)param_5 < (int)param_9) || (iVar8 <= (int)param_5)) {
+              auto param_5_after_write = (uint)bVar18; /* compiler stack-slot lifetime split */
+              if (((int)param_5_after_write < (int)param_9) || (iVar8 <= (int)param_5_after_write)) {
                 *param_1 = bVar18;
               }
               param_1 = (byte *)((int)param_1 + 1);
@@ -180,6 +176,7 @@ LAB_006d8b50:
         do {
           bVar18 = *(byte *)param_10;
           param_10 = param_10 + 1;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_5 = (uint)bVar18;
           if (((int)param_5 < (int)param_9) || (iVar8 <= (int)param_5)) {
             *param_1 = bVar18;

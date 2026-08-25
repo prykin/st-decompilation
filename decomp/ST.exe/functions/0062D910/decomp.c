@@ -75,8 +75,8 @@ STManRub3C::AddNewDock
     if (0 < local_c) {
       do {
         uVar1 = local_8->field_0030[param_1 + 8];
-        if (uVar8 < *(uint *)(uVar1 + 0xc)) {
-          piVar5 = (int *)(*(int *)(uVar1 + 8) * uVar8 + *(int *)(uVar1 + 0x1c));
+        if (uVar8 < STField<uint>(uVar1,0xC)) {
+          piVar5 = (int *)(STField<int>(uVar1,0x8) * uVar8 + STField<int>(uVar1,0x1C));
         }
         else {
           piVar5 = nullptr;

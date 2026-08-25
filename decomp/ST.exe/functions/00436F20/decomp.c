@@ -286,9 +286,9 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
       local_34 = (DArrayTy *)(uint)uVar2;
       uVar3 = local_68[4];
       local_2c = (DArrayTy *)(uint)uVar3;
-      local_6c = (DArrayTy *)(int)(short)uVar23;
-      local_30_mg0 = (DArrayTy *)(int)(short)uVar3;
-      iVar24 = (int)(short)uVar2;
+      local_6c = (DArrayTy *)(short)uVar23;
+      local_30_mg0 = (DArrayTy *)(short)uVar3;
+      iVar24 = (short)uVar2;
       if ((STGridAt3D(g_pathingGrid, iVar24, local_6c, local_30_mg0) != 0) &&
          ((((((((short)uVar2 < 0 || (g_worldGrid.sizeX <= (short)uVar2)) || ((short)uVar23 < 0)) ||
              ((g_worldGrid.sizeY <= (short)uVar23 || ((short)uVar3 < 0)))) ||
@@ -311,7 +311,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,void *command)
       }
 cf_common_exit_00437191:
       local_8c.field_0014 = command;
-      /* ST_CALLSITE[0043719D]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[0043719D]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AF40_F59F8577 */
       local_8->GetMessage(&local_8c);
       return;
     case 0x29:
@@ -967,9 +967,9 @@ cf_common_exit_0043824D:
     if ((int)dVar20 < 1) {
 cf_common_exit_00437E03:
       iVar24 = STField<int>(command,0x17);
-      uStack_c0 = *(undefined2 *)(iVar24 + 1);
-      uStack_be = *(undefined2 *)(iVar24 + 3);
-      uStack_bc = *(undefined2 *)(iVar24 + 5);
+      uStack_c0 = STField<undefined2>(iVar24,0x1);
+      uStack_be = STField<undefined2>(iVar24,0x3);
+      uStack_bc = STField<undefined2>(iVar24,0x5);
       /* ST_CALLSITE[00437E37]: CALL dword ptr [EDX + 0x8] */
       pSVar16->sub_00498D20(10,(short)&uStack_c0);
       pDVar26 = local_30_mg0;
@@ -1063,9 +1063,9 @@ LAB_00437cb5:
       local_10a = 0xffff;
       local_10c = 0xffff;
       local_fc = 0;
-      sVar13 = *(short *)(iVar24 + 5);
-      sVar4 = *(short *)(iVar24 + 3);
-      sVar5 = *(short *)(iVar24 + 1);
+      sVar13 = STField<short>(iVar24,0x5);
+      sVar4 = STField<short>(iVar24,0x3);
+      sVar5 = STField<short>(iVar24,0x1);
       if (((((sVar5 < 0) || (g_worldGrid.sizeX <= sVar5)) || (sVar4 < 0)) ||
           ((g_worldGrid.sizeY <= sVar4 || (sVar13 < 0)))) || (g_worldGrid.sizeZ <= sVar13)) {
         pSVar19 = nullptr;

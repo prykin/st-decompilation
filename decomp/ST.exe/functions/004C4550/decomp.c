@@ -97,7 +97,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         local_9c = (short)local_c;
         local_96 = *(undefined2 *)(&this->field_0x2a5 + iVar9);
         local_9a = (short)local_8;
-        local_94 = *(undefined2 *)(&this->field_02A9 + (int)param_1 * 0x20);
+        local_94 = (undefined2)(&this->field_02A9)[(int)param_1 * 0x20];
         local_98 = (undefined2)local_10;
         local_92 = *(undefined2 *)(&this->field_0x2ad + iVar9);
         /* ST_CALLSITE[004C4C9F]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
@@ -136,7 +136,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       }
       local_64 = *(short *)(&this->field_0x2a5 + iVar9);
       local_58 = 0;
-      local_62 = *(short *)(&this->field_02A9 + (int)param_1 * 0x20);
+      local_62 = (short)(&this->field_02A9)[(int)param_1 * 0x20];
       local_60 = *(short *)(&this->field_0x2ad + iVar9);
       local_5e = (undefined2)this->field_0259;
       local_57 = this->field_0018;
@@ -172,7 +172,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
               local_2c = (short)*puVar3;
               sStack_2a = (short)((uint)*puVar3 >> 0x10);
               local_64 = local_2c + *(short *)(&this->field_0x2a5 + iVar9);
-              local_62 = *(short *)(&this->field_02A9 + (int)piVar2 * 0x20) + sStack_2a;
+              local_62 = (short)(&this->field_02A9)[(int)piVar2 * 0x20] + sStack_2a;
               local_60 = *(short *)(&this->field_0x2ad + iVar9) + *(short *)(puVar3 + 1);
             }
             iVar1 = (int)param_1 + this->field_0235 * 2;
@@ -303,7 +303,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                                              this->field_0032);
         this->field_04E0[4] = STField<uint>(this_00,0x18);
         if ((-1 < *(int *)(&this->field_0x2a5 + (int)piVar2 * 0x80)) &&
-           (-1 < (int)(&this->field_02A9)[(int)piVar2 * 0x20])) {
+           (-1 < (&this->field_02A9)[(int)piVar2 * 0x20])) {
           thunk_FUN_0058c560(this_00,*(int *)(&this->field_0x2a5 + (int)piVar2 * 0x80),
                              (&this->field_02A9)[(int)piVar2 * 0x20]);
           return 0;
@@ -367,7 +367,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         iVar4 = ((int)piVar2 + this->field_0235 * 2) * 0x16;
         local_10 = (int)*(short *)(&DAT_007932d8 + iVar4) + (int)sVar5;
         local_14 = STBiasedDiv16(local_10, 200); /* exact signed 16-bit grid-index division */
-        param_1 = (int *)((int)(short)local_8 + (int)*(short *)(&DAT_007932d6 + iVar4));
+        param_1 = (int *)((short)local_8 + (int)*(short *)(&DAT_007932d6 + iVar4));
         sVar5 = (short)((int)param_1 >> 0x1f);
         if ((int)param_1 < 0) {
           sVar5 = (((short)((int)param_1 / 0xc9) + sVar5) -
@@ -377,7 +377,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
           sVar5 = ((short)((int)param_1 / 0xc9) + sVar5) -
                   (short)((longlong)(int)param_1 * 0x28c1979 >> 0x3f);
         }
-        local_18 = (int)*(short *)(&DAT_007932d4 + iVar4) + (int)(short)local_c;
+        local_18 = (int)*(short *)(&DAT_007932d4 + iVar4) + (short)local_c;
         sVar6 = STBiasedDiv16(local_18, 0xc9); /* exact signed 16-bit grid-index division */
         if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar5 < 0)) ||
            (((g_worldGrid.sizeY <= sVar5 || (sVar7 = (short)local_14, sVar7 < 0)) ||

@@ -30,9 +30,9 @@ STManRuinC::sub_00630BB0
   this->field_0040 = param_4;
   this->field_0060 = 0;
   this->field_0061 = 0xffffffff;
-  this->field_0054 = (int)(short)(param_1 * 0xc9 + 100);
-  this->field_0058 = (int)(short)(param_2 * 0xc9 + 100);
-  this->field_005C = (int)(short)(param_3 * 200 + 100);
+  this->field_0054 = (short)(param_1 * 0xc9 + 100);
+  this->field_0058 = (short)(param_2 * 0xc9 + 100);
+  this->field_005C = (short)(param_3 * 200 + 100);
   this->field_004C = param_5;
   this->field_0050 = param_6;
   return;

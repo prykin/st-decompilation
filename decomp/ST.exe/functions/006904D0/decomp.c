@@ -10,20 +10,20 @@ int __thiscall FUN_006904d0(void *this,undefined *param_1,undefined4 param_2)
 
   uVar2 = 0;
   iVar1 = STField<int>(this,0xa5);
-  if (0 < *(int *)(iVar1 + 0xc)) {
-    bVar3 = *(int *)(iVar1 + 0xc) != 0;
+  if (0 < STField<int>(iVar1,0xC)) {
+    bVar3 = STField<int>(iVar1,0xC) != 0;
     do {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      if ((((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0))
-          && (iVar1 = *(int *)(iVar1 + 4), iVar1 != 0)) &&
+      if ((((bVar3) && (iVar1 = STField<int>(iVar1,0x8) * uVar2 + STField<int>(iVar1,0x1C), iVar1 != 0))
+          && (iVar1 = STField<int>(iVar1,0x4), iVar1 != 0)) &&
          /* ST_CALLSITE[00690506]: CALL dword ptr [EBP + 0x8] */
          (iVar1 = (*(code *)param_1)(iVar1,param_2), iVar1 != 0)) {
         return iVar1;
       }
       iVar1 = STField<int>(this,0xa5);
       uVar2 = uVar2 + 1;
-      bVar3 = uVar2 < *(uint *)(iVar1 + 0xc);
-    } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));
+      bVar3 = uVar2 < STField<uint>(iVar1,0xC);
+    } while ((int)uVar2 < (int)STField<uint>(iVar1,0xC));
   }
   return 0;
 }

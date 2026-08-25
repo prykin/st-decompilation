@@ -13,18 +13,18 @@ int __thiscall FUN_0067b2e0(void *this,int param_1,int param_2)
 
   iVar1 = STField<int>(this,0x6a1);
   iVar3 = 0;
-  uVar2 = *(uint *)(iVar1 + 0xc);
+  uVar2 = STField<uint>(iVar1,0xC);
   uVar5 = 0;
   if (0 < (int)uVar2) {
     bVar6 = uVar2 != 0;
     do {
       if (bVar6) {
-        iVar4 = *(int *)(iVar1 + 8) * uVar5 + *(int *)(iVar1 + 0x1c);
+        iVar4 = STField<int>(iVar1,0x8) * uVar5 + STField<int>(iVar1,0x1C);
       }
       else {
         iVar4 = 0;
       }
-      if ((*(short *)(iVar4 + 1) == param_1) && (*(short *)(iVar4 + 3) == param_2)) {
+      if ((STField<short>(iVar4,0x1) == param_1) && (STField<short>(iVar4,0x3) == param_2)) {
         iVar3 = iVar3 + 1;
       }
       uVar5 = uVar5 + 1;

@@ -14,20 +14,20 @@ uint __thiscall FUN_0068e300(void *this,byte *param_1)
   bool bVar8;
 
   iVar2 = STField<int>(this,0xa5);
-  uVar3 = *(uint *)(iVar2 + 0xc);
+  uVar3 = STField<uint>(iVar2,0xC);
   do {
     do {
       uVar3 = uVar3 - 1;
       if ((int)uVar3 < 0) {
         return 0xffffffff;
       }
-      if (uVar3 < *(uint *)(iVar2 + 0xc)) {
-        iVar4 = *(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c);
+      if (uVar3 < STField<uint>(iVar2,0xC)) {
+        iVar4 = STField<int>(iVar2,0x8) * uVar3 + STField<int>(iVar2,0x1C);
       }
       else {
         iVar4 = 0;
       }
-      iVar4 = *(int *)(iVar4 + 4);
+      iVar4 = STField<int>(iVar4,0x4);
     } while (iVar4 == 0);
     pbVar5 = (byte *)(iVar4 + 0x3b);
     pbVar7 = param_1;
@@ -49,7 +49,7 @@ LAB_0068e363:
     iVar6 = 0;
 LAB_0068e368:
     if (iVar6 == 0) {
-      return (uint)*(ushort *)(iVar4 + 0x7d);
+      return (uint)STField<ushort>(iVar4,0x7D);
     }
   } while( true );
 }

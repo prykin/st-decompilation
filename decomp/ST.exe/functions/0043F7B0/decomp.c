@@ -39,7 +39,7 @@ uint * FUN_0043f7b0(byte param_1,int *param_2,uint *param_3,int param_4,int para
   if (param_4_after_write < 0) {
     param_4_after_write = 0;
   }
-  auto param_7_after_write = iVar6; /* compiler stack-slot lifetime split */
+  int param_7_after_write = iVar6; /* compiler stack-slot lifetime split */
   if (g_worldGrid.sizeY + -1 < iVar6) {
     param_7_after_write = g_worldGrid.sizeY + -1;
   }

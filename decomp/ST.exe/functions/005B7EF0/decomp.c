@@ -82,7 +82,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
             puVar6 = (byte *)(puVar6 + 1);
           }
           *(undefined2 *)puVar6 = *(undefined2 *)&pMVar11->field_0000;
-          STField<undefined1>(puVar6,2) = *(undefined1 *)((int)&pMVar11->field_0000 + 2);
+          STField<undefined1>(puVar6,2) = STField<undefined1>(pMVar11,0x2);
           bVar3 = (char)local_8 + 1;
           local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
         } while (bVar3 < this_00->field_009A);

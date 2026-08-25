@@ -117,7 +117,7 @@ LAB_004c5502:
     return local_c;
   }
 LAB_004c5515:
-  iVar4 = FUN_006acf90((int)(short)local_18,(int)(short)local_14,STField<int>(this,0x5b0),
+  iVar4 = FUN_006acf90((short)local_18,(short)local_14,STField<int>(this,0x5b0),
                        STField<int>(this,0x5b4));
   iVar5 = thunk_FUN_004e81b0(STField<int>(this,0x24),STField<int>(this,0x235),param_1);
   if ((((iVar4 <= iVar5) || (uVar6 = local_c, param_6 == 0)) &&

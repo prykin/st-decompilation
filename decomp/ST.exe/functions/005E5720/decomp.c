@@ -19,7 +19,7 @@ MTaskTy * __cdecl CreateMTask(void)
   this = (MTaskTy *)FUN_006b04d0(0x6d7);
   if (this != nullptr) {
     sub_006E5FB0(this);
-    this->field_0000 = &VTable_0079C018;
+    this->vtable = (MTaskTyVTable *)&VTable_0079C018;
     this->field_0018 = 0;
     this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -32,7 +32,7 @@ MTaskTy * __cdecl CreateMTask(void)
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_048C);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_051D);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_05AE);
-    this->field_0000 = &VTable_0079C238;
+    this->vtable = &MTaskTyVTable;
     this->field_006D = 2;
     this->field_0069 = 0;
     this->field_006E = 0;

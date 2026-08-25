@@ -62,7 +62,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,int param_1)
   uint local_8;
 
   local_10 = 0;
-  if (g_playSystem_00802A38->field_00E4 < this->field_03CC + this->field_03D0) {
+  if (g_playSystem_00802A38->field_00E4 < (uint)(this->field_03CC + this->field_03D0)) {
     return 0;
   }
   this->field_03CC = g_playSystem_00802A38->field_00E4;
@@ -139,7 +139,7 @@ switchD_004ceb68_caseD_32:
             }
             if (TVar2 == CASE_32) {
               /* ST_CALLSITE[004CED3C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-              bVar3 = LookupRecordByte(*(char *)&this->field_023D);
+              bVar3 = LookupRecordByte((char)this->field_023D);
               if (bVar3 != 2) {
                 /* ST_CALLSITE[004CED6D]: CALL dword ptr [EAX + 0x90] */
                 this->vfunc_90(3,0x1f9);
@@ -243,8 +243,7 @@ switchD_004ceb68_caseD_32:
     local_2b = this->field_0375;
     /* ST_CALLSITE[004CEFA3]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
     STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x14,0,&local_24,local_6c,0);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    this->field_04D4 = *(int *)(local_24 + 0x18);
+    this->field_04D4 = STField<int>(local_24,0x18);
     this->field_04D8 = 0;
     if (this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D)
     goto cf_common_exit_004CF029;
@@ -291,7 +290,7 @@ cf_common_exit_004CF029:
       }
       else if (TVar2 == CASE_32) {
         /* ST_CALLSITE[004CF0C7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-        bVar3 = LookupRecordByte(*(char *)&this->field_023D);
+        bVar3 = LookupRecordByte((char)this->field_023D);
         if (bVar3 == 2) {
           /* ST_CALLSITE[004CF0DB]: CALL dword ptr [EDX + 0x90] */
           this->vfunc_90(3,0x2c2);

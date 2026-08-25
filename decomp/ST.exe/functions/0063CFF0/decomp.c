@@ -15,7 +15,7 @@ undefined4 * __thiscall FUN_0063cff0(void *this,int *param_1)
   iVar2 = STField<int>(this,0x336);
   local_8 = 0x152;
   if (iVar2 != 0) {
-    local_8 = *(int *)(iVar2 + 0xc) * *(int *)(iVar2 + 8) + 0x172;
+    local_8 = STField<int>(iVar2,0xC) * STField<int>(iVar2,0x8) + 0x172;
   }
   puVar1 = Library::DKW::LIB::MemAlloc(local_8);
   STField<undefined4>(this,0x249) = 1;

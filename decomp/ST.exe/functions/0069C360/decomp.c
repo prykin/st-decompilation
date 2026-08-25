@@ -38,8 +38,7 @@ undefined4 __thiscall FUN_0069c360(void *this,int param_1,int *param_2,int param
       do {
         if (0 < (int)piVar2) {
           local_14 = 0;
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_2 = local_c;
+          auto param_2_after_write = local_c; /* compiler stack-slot lifetime split */
           local_10 = piVar2;
           do {
             local_18 = nullptr;
@@ -51,8 +50,8 @@ undefined4 __thiscall FUN_0069c360(void *this,int param_1,int *param_2,int param
               pbVar8 = pbVar4;
               do {
                 if (bVar1 != *pbVar8) {
-                  param_2[-1] = 0xff;
-                  *(undefined1 *)((int)param_2 + -6) = 1;
+                  param_2_after_write[-1] = 0xff;
+                  *(undefined1 *)((int)param_2_after_write + -6) = 1;
                   goto LAB_0069c428;
                 }
                 iVar6 = iVar6 + 1;
@@ -61,12 +60,12 @@ undefined4 __thiscall FUN_0069c360(void *this,int param_1,int *param_2,int param
               pbVar4 = pbVar4 + (int)piVar2 * 0x14;
               local_18 = (int *)((int)local_18 + 1);
             } while ((int)local_18 < 0x14);
-            param_2[-1] = local_2c;
-            *(undefined1 *)((int)param_2 + -6) = 0;
+            param_2_after_write[-1] = local_2c;
+            *(undefined1 *)((int)param_2_after_write + -6) = 0;
 LAB_0069c428:
-            *param_2 = -1;
-            param_2[1] = -1;
-            param_2 = (int *)((int)param_2 + 0xe);
+            *param_2_after_write = -1;
+            param_2_after_write[1] = -1;
+            param_2_after_write = (int *)((int)param_2_after_write + 0xe);
             local_14 = local_14 + 0x14;
             local_10 = (int *)((int)local_10 + -1);
           } while (local_10 != nullptr);
@@ -86,14 +85,14 @@ LAB_0069c428:
       local_34 = iVar5;
       local_20 = this;
       do {
-        param_2 = nullptr;
+        int * param_2_after_write_2 = nullptr; /* compiler stack-slot lifetime split */
         if (0 < (int)piVar2) {
           local_8 = local_18;
           uVar7 = local_2c;
           do {
             local_30 = *local_8;
             local_28 = uVar7;
-            iVar5 = thunk_FUN_00696310(local_20,local_14 + (int)param_2,(int)piVar2,local_58,
+            iVar5 = thunk_FUN_00696310(local_20,local_14 + (int)param_2_after_write_2,(int)piVar2,local_58,
                                        nullptr);
             iVar6 = 0;
             local_24 = 0;
@@ -103,7 +102,7 @@ LAB_0069c428:
               do {
                 iVar5 = *local_c;
                 if (((*(int *)(param_1 + 2 + iVar5 * 0xe) == local_30) &&
-                    (iVar6 = iVar6 + 1, -1 < iVar5 % (int)piVar2 - (int)param_2)) &&
+                    (iVar6 = iVar6 + 1, -1 < iVar5 % (int)piVar2 - (int)param_2_after_write_2)) &&
                    (-1 < iVar5 / (int)piVar2 - (int)local_10)) {
                   local_24 = 1;
                 }
@@ -120,11 +119,11 @@ LAB_0069c428:
             else if (local_24 != 0) {
               *(undefined1 *)(uVar7 + 1 + param_1) = 8;
             }
-            param_2 = (int *)((int)param_2 + 1);
+            param_2_after_write_2 = (int *)((int)param_2_after_write_2 + 1);
             uVar7 = uVar7 + 0xe;
             local_8 = (int *)((int)local_8 + 0xe);
             iVar5 = local_34;
-          } while ((int)param_2 < (int)piVar2);
+          } while ((int)param_2_after_write_2 < (int)piVar2);
         }
         local_14 = local_14 + (int)piVar2;
         local_10 = (int *)((int)local_10 + 1);

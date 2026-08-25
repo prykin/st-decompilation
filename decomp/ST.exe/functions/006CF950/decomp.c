@@ -48,28 +48,28 @@ void FUN_006cf950(uint *param_1)
             do {
               if ((-1 < psVar7[2]) && (iVar2 = *(int *)(psVar7 + 3), iVar2 != 0)) {
                 iVar3 = (int)*psVar7;
-                uVar4 = *(int *)(iVar2 + 4) + iVar3;
+                uVar4 = STField<int>(iVar2,0x4) + iVar3;
                 if ((int)local_c < (int)uVar4) {
                   local_c = uVar4;
                 }
                 iVar6 = (int)psVar7[1];
-                uVar4 = *(int *)(iVar2 + 8) + iVar6;
+                uVar4 = STField<int>(iVar2,0x8) + iVar6;
                 if ((int)local_14 < (int)uVar4) {
                   local_14 = uVar4;
                 }
-                iVar5 = *(short *)(iVar2 + 0xe) + iVar3;
+                iVar5 = STField<short>(iVar2,0xE) + iVar3;
                 if (iVar5 < local_10) {
                   local_10 = iVar5;
                 }
-                iVar5 = *(short *)(iVar2 + 0x10) + iVar6;
+                iVar5 = STField<short>(iVar2,0x10) + iVar6;
                 if (iVar5 < local_8) {
                   local_8 = iVar5;
                 }
-                iVar3 = (int)*(short *)(iVar2 + 0x12) + (int)*(short *)(iVar2 + 0xe) + iVar3;
+                iVar3 = (int)STField<short>(iVar2,0x12) + (int)STField<short>(iVar2,0xE) + iVar3;
                 if (local_18 < iVar3) {
                   local_18 = iVar3;
                 }
-                iVar2 = *(short *)(iVar2 + 0x14) + iVar6 + (int)*(short *)(iVar2 + 0x10);
+                iVar2 = STField<short>(iVar2,0x14) + iVar6 + (int)STField<short>(iVar2,0x10);
                 iVar3 = local_20;
                 iVar6 = local_18;
                 if (local_20 < iVar2) {
@@ -92,7 +92,7 @@ void FUN_006cf950(uint *param_1)
         if ((uVar4 & 0xc0000000) != 0) {
           iVar3 = *(int *)(param_1[0x33] + param_1[0x31] * 8);
           if (iVar3 != 0) {
-            uVar4 = *(uint *)(iVar3 + 4);
+            uVar4 = STField<uint>(iVar3,0x4);
             param_1[8] = uVar4;
             param_1[0xc] = uVar4;
             uVar4 = *(uint *)(*(int *)(param_1[0x33] + param_1[0x31] * 8) + 8);
@@ -133,12 +133,12 @@ void FUN_006cf950(uint *param_1)
       else {
         iVar3 = *(int *)(param_1[0x33] + param_1[0x31] * 4);
         if (iVar3 != 0) {
-          param_1[8] = *(uint *)(iVar3 + 4);
-          param_1[9] = *(uint *)(iVar3 + 8);
-          param_1[10] = (int)*(short *)(iVar3 + 0xe) + param_1[6];
-          param_1[0xb] = (int)*(short *)(iVar3 + 0x10) + param_1[7];
-          param_1[0xc] = (int)*(short *)(iVar3 + 0x12);
-          param_1[0xd] = (int)*(short *)(iVar3 + 0x14);
+          param_1[8] = STField<uint>(iVar3,0x4);
+          param_1[9] = STField<uint>(iVar3,0x8);
+          param_1[10] = (int)STField<short>(iVar3,0xE) + param_1[6];
+          param_1[0xb] = (int)STField<short>(iVar3,0x10) + param_1[7];
+          param_1[0xc] = (int)STField<short>(iVar3,0x12);
+          param_1[0xd] = (int)STField<short>(iVar3,0x14);
           return;
         }
       }

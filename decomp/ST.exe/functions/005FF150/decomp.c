@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_005ff150(int param_1,int *param_2,int param_3)
 
@@ -25,7 +27,7 @@ void FUN_005ff150(int param_1,int *param_2,int param_3)
         do {
           iVar4 = *piVar5;
           iVar1 = param_1 + iVar4 * 0x18;
-          if (*(int *)(iVar1 + 0x10) + *(int *)(iVar1 + 0xc) <= iVar2 + iVar3) {
+          if (STField<int>(iVar1,0x10) + STField<int>(iVar1,0xC) <= iVar2 + iVar3) {
             *piVar5 = *piVar6;
             *piVar6 = iVar4;
           }

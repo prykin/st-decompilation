@@ -1,8 +1,6 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Unable to use type for symbol pbVar16_mg0 */
-/* WARNING: Unable to use type for symbol pbVar17_mg2 */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int FUN_00673d20(void)

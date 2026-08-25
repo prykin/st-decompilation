@@ -20,7 +20,7 @@ void __fastcall FUN_00490f60(STBoatC *param_1)
         Library::DKW::TBL::DArrayAppend(array,&param_1->field_0032);
         /* ST_CALLSITE[00491001]: CALL 0x0040178f; direct=0040178F STAllPlayersC::AddObjsToGroup */
         STAllPlayersC::AddObjsToGroup
-                  (g_allPlayers_007FA174,*(char *)&param_1->field_0024,0xfffe,array,
+                  (g_allPlayers_007FA174,(char)param_1->field_0024,0xfffe,array,
                    nullptr);
         DArrayDestroy(array);
         /* ST_CALLSITE[00491014]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */

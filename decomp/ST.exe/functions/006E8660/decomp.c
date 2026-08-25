@@ -31,7 +31,7 @@ ST3DSMAPContext::sub_006E8660
     local_8 = this->field_0314;
   }
   else {
-    this->field_02E8 = *(undefined4 *)&pAVar5->field_0x8;
+    this->field_02E8 = *(int *)&pAVar5->field_0x8;
     if (pAVar5 == (AnonShape_006E8840_CF3FA5BA *)this->field_02EC) {
       this->field_02EC = 0;
       this->field_02E8 = 0;

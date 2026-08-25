@@ -15,9 +15,9 @@ VisibleClassTy::sub_005F1D80(VisibleClassTy *this,int param_1,int param_2,int pa
   if ((DAT_0080874d != -1) && (this->field_00F8 != 0)) {
     /* ST_CALLSITE[005F1DB3]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     sub_00558C00(this,this->field_010C,param_1,param_2,&param_2,&param_1);
-    if ((((-1 < param_3) && (((param_3 < 5 && (-1 < param_2)) && (param_2 < (int)this->field_0030)))
-         ) && (((iVar1 = g_centeredOffsets5[param_3] + param_1, -1 < iVar1 &&
-                (iVar1 < this->field_0034)) && (this->field_004C != nullptr)))) &&
+    if ((((-1 < param_3) && (((param_3 < 5 && (-1 < param_2)) && (param_2 < this->field_0030)))) &&
+        (((iVar1 = g_centeredOffsets5[param_3] + param_1, -1 < iVar1 && (iVar1 < this->field_0034))
+         && (this->field_004C != nullptr)))) &&
        (this->field_004C[param_2 + iVar1 * this->field_0030] == 0)) {
       return 0;
     }

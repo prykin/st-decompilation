@@ -228,9 +228,9 @@ void __thiscall st::fn_00618AD0(JumpManagC *this)
         if (((bVar5) &&
             (pvVar2 = DArrayAt<void>(pDVar3, uVar4),
             pvVar2 != nullptr)) && (iVar1 = STField<int>(pvVar2,0x18), iVar1 != 0)) {
-          *(undefined4 *)(iVar1 + 0x7d) = 0;
-          *(undefined4 *)(iVar1 + 0x8b) = 0;
-          *(undefined4 *)(iVar1 + 0x79) = 0;
+          STField<undefined4>(iVar1,0x7D) = 0;
+          STField<undefined4>(iVar1,0x8B) = 0;
+          STField<undefined4>(iVar1,0x79) = 0;
         }
         pDVar3 = this->field_005E;
         uVar4 = uVar4 + 1;

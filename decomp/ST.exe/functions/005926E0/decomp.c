@@ -327,7 +327,7 @@ LAB_00592b82:
         uVar10 = piVar9[3];
       }
       if (uVar10 <= local_8->field_0061 - piVar9[4]) {
-        pBVar3 = FUN_0070b3a0(pAVar1,(int)(short)pAVar1->field_0029);
+        pBVar3 = FUN_0070b3a0(pAVar1,(short)pAVar1->field_0029);
         FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar9,piVar9[1],(int)*(short *)(pAVar1 + 1),
                      (int)*(short *)&pAVar1[1].field_0x2);
         /* ST_CALLSITE[00592C0A]: CALL 0x00403738; direct=00403738 PutDDX */

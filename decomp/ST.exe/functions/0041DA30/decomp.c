@@ -3,7 +3,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __fastcall FUN_0041da30(AnonShape_0041DA30_EF7DF530 *param_1)
+void __fastcall FUN_0041da30(RecoveredRecord_STTorpC_0041DA30 *param_1)
 
 {
   float fVar1;

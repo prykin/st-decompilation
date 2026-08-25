@@ -39,7 +39,7 @@ StartSystemTy * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,AppC
   this->field_02EC = 0xffffffff;
   this->field_02F0 = nullptr;
   this->field_0389 = 0;
-  this->field_0540 = 0xffffffff;
+  this->field_0540 = -1;
   this->field_0544 = nullptr;
   this->field_0548 = nullptr;
   this->field_0550 = 0;

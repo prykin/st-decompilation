@@ -298,9 +298,8 @@ switchD_005c1b14_caseD_5:
             local_10->field_0031 = 0;
             local_10->field_0033 = 3;
             local_10->field_0035 = piVar19;
-            /* ST_CALLSITE[005C1C06]: CALL dword ptr [EAX] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x1d);
+            /* ST_CALLSITE[005C1C06]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+            g_cursorClass_00802A30->GetMessage((STMessage *)&local_10->field_0x1d);
           }
           this_00->field_044F = piVar21;
           if (piVar21 != nullptr) {
@@ -308,9 +307,8 @@ switchD_005c1b14_caseD_5:
             this_00->field_0031 = 0;
             this_00->field_0033 = 3;
             this_00->field_0035 = piVar21;
-            /* ST_CALLSITE[005C1C36]: CALL dword ptr [EAX] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x1d);
+            /* ST_CALLSITE[005C1C36]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+            g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x1d);
           }
         }
       }

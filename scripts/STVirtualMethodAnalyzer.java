@@ -23,12 +23,18 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionTag;
@@ -42,6 +48,9 @@ import ghidra.program.model.symbol.Symbol;
 public class STVirtualMethodAnalyzer extends GhidraScript {
     private static final String TABLE_MARKER = "[STVTableApplier]";
     private static final String[] LIBRARY_TAG_PREFIXES = { "LIBRARY", "LIBRARY_" };
+    private static final String VTABLE_ROOT = "/SubmarineTitans/Recovered/VTables/";
+    private static final Pattern MEMORY_OPERAND = Pattern.compile(
+        "^\\[([A-Z][A-Z0-9]{1,3})(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
 
     private Listing listing;
     private DataTypeManager dataTypes;
@@ -50,6 +59,7 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
     private final Map<String, Family> families = new TreeMap<>();
     private final Map<Address, TargetCandidate> candidates = new TreeMap<>();
     private final UnionFind components = new UnionFind();
+    private final Map<String, CallFamilyEvidence> callFamilies = new TreeMap<>();
 
     @Override
     protected void run() throws Exception {
@@ -89,6 +99,7 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         loadRelations(relations.rows);
         loadSlots(slots.rows);
         finalizeFamilies();
+        loadCallFamilies(new File(directory, "callable_family_audit.tsv"));
 
         List<Proposal> methodProposals = buildMethodProposals();
         List<HierarchyProposal> hierarchy = buildHierarchyProposals(relations.rows);
@@ -208,6 +219,52 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         }
     }
 
+    private void loadCallFamilies(File file) throws Exception {
+        if (!file.isFile()) return;
+        Tsv audit = readTsv(file.toPath());
+        requireColumns(audit, "function_address", "call_address", "slot_offset",
+            "stack_parameter_count", "exact_unadjusted_receiver",
+            "physical_vtable_paths", "receiver_paths", "caller_owner",
+            "machine_return", "classification");
+        for (Map<String, String> row : audit.rows) {
+            if (!"1".equals(row.get("exact_unadjusted_receiver")) ||
+                    !"physical_vtable".equals(row.get("classification"))) continue;
+            String callerOwner = unt(row.get("caller_owner"));
+            if (callerOwner.isBlank()) continue;
+            Set<String> paths = tokens(row.get("physical_vtable_paths"));
+            if (paths.size() != 1) continue;
+            TableInfo table = tableForPath(paths.iterator().next());
+            if (table == null || !table.active) continue;
+            int slot = integer(row.get("slot_offset"));
+            int arity = integer(row.get("stack_parameter_count"));
+            if (slot < 0 || arity < 0 || slot % currentProgram.getDefaultPointerSize() != 0)
+                continue;
+            String key = components.find(table.address) + ":" +
+                (slot / currentProgram.getDefaultPointerSize());
+            CallFamilyEvidence evidence = callFamilies.computeIfAbsent(key,
+                ignored -> new CallFamilyEvidence(key));
+            evidence.calls.add(unt(row.get("call_address")));
+            evidence.callers.add(unt(row.get("function_address")));
+            evidence.callerOwners.add(callerOwner);
+            evidence.tables.add(table.address);
+            evidence.arities.add(arity);
+            evidence.returns.add(unt(row.get("machine_return")));
+        }
+    }
+
+    private TableInfo tableForPath(String path) {
+        for (TableInfo table : activeTables.values())
+            if ((VTABLE_ROOT + table.proposedName).equals(path)) return table;
+        return null;
+    }
+
+    private Set<String> tokens(String value) {
+        Set<String> result = new TreeSet<>();
+        for (String token : unt(value).split("\\s*\\|\\s*"))
+            if (!token.isBlank()) result.add(token);
+        return result;
+    }
+
     private List<Proposal> buildMethodProposals() throws Exception {
         List<Proposal> result = new ArrayList<>();
         for (TargetCandidate candidate : candidates.values()) {
@@ -252,9 +309,27 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         }
         else reasons.add("slot_family_has_no_named_method");
 
+        if (currentMethod == null && tableOwners.size() == 1)
+            owner = tableOwners.iterator().next();
+        String ownerTypePath = owner.isBlank() ? "" : findOwnerTypePath(owner, candidate.contexts);
+        if (!owner.isBlank() && ownerTypePath.isBlank()) reasons.add("owner_data_type_not_found");
+        CallFamilyEvidence callEvidence = family == null ? null : callFamilies.get(family.key);
+        ReceiverExtent receiverExtent = incomingReceiverExtent(function);
+        Structure ownerStructure = structure(ownerTypePath);
+        boolean callableOwnership = currentMethod == null && familyKeys.size() == 1 &&
+            tableOwners.size() == 1 && callEvidence != null &&
+            callEvidence.calls.size() >= 3 && callEvidence.callerOwners.size() >= 2 &&
+            callEvidence.arities.size() == 1 && receiverExtent.accesses > 0 &&
+            ownerStructure != null && receiverExtent.extent <= ownerStructure.getLength();
+        if (callableOwnership)
+            reasons.add("physical_slot_call_family=" + family.key +
+                " calls=" + callEvidence.calls.size() +
+                " caller_families=" + callEvidence.callerOwners.size() +
+                " receiver_extent=" + receiverExtent.extent + "/" +
+                ownerStructure.getLength());
+
         if (currentMethod == null) {
             if (tableOwners.size() == 1) {
-                owner = tableOwners.iterator().next();
                 reasons.add("unique_owner_for_target");
             }
             else reasons.add("target_shared_by_multiple_owners");
@@ -263,8 +338,9 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
                     "~" + leafOwner(owner) : familyMethod;
             }
             else if (!owner.isBlank() && slotOffsets.size() == 1) {
-                method = "vfunc_" + slotOffsets.iterator().next().replace("0x", "")
-                    .replace("0X", "");
+                method = callableOwnership ? "sub_" + addr(function.getEntryPoint()) :
+                    "vfunc_" + slotOffsets.iterator().next().replace("0x", "")
+                        .replace("0X", "");
             }
         }
         else reasons.add("target_already_has_meaningful_name");
@@ -272,24 +348,25 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         boolean placeholder = method.startsWith("vfunc_") || method.isBlank() || owner.isBlank();
         String proposedName = owner.isBlank() || method.isBlank() ? "" : owner + "::" + method;
         boolean nameApply = currentMethod == null && !placeholder && family != null &&
-            family.namedMethods.size() == 1 && tableOwners.size() == 1 &&
-            safeAutomaticName(function);
+            tableOwners.size() == 1 && safeAutomaticName(function) &&
+            (family.namedMethods.size() == 1 || callableOwnership);
 
         AnchorChoice anchorChoice = chooseAnchor(family, familyMethod, function);
         if (anchorChoice.anchor != null)
             reasons.add("signature_anchor=" + anchorChoice.anchor.function.getName(true));
         else if (!anchorChoice.conflict.isBlank()) reasons.add(anchorChoice.conflict);
-        String ownerTypePath = owner.isBlank() ? "" : findOwnerTypePath(owner, candidate.contexts);
-        if (!owner.isBlank() && ownerTypePath.isBlank()) reasons.add("owner_data_type_not_found");
-
         SourceType signatureSource = function.getSignatureSource();
         boolean signatureManual = signatureSource == SourceType.USER_DEFINED;
         // A structural fallback is deliberately weaker than a family anchor.
         // Do not use it to bypass evidence that the same slot family has
         // competing, incompatible prototypes.
         StructuralSignature structural = anchorChoice.anchor == null &&
-            !anchorChoice.conflict.startsWith("competing_") ?
-                receiverOnlyLeafSignature(function) : null;
+            !anchorChoice.conflict.startsWith("competing_") && callableOwnership ?
+                physicalSlotSignature(candidate, function, ownerTypePath,
+                    callEvidence) : null;
+        if (structural == null && anchorChoice.anchor == null &&
+                !anchorChoice.conflict.startsWith("competing_"))
+            structural = receiverOnlyLeafSignature(function);
         if (structural == null && anchorChoice.anchor == null &&
                 !anchorChoice.conflict.startsWith("competing_"))
             structural = stackCleanupLeafSignature(function, family);
@@ -364,8 +441,221 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         }
         if (last == null || !"RET".equalsIgnoreCase(last.getMnemonicString()) ||
                 last.getNumOperands() != 0 || !readsEcx || !writesEax) return null;
-        return new StructuralSignature("/dword", "", false, false,
-            "receiver_only_leaf_virtual_signature", "dword");
+        DataType returned = function.getReturnType();
+        return new StructuralSignature(returned.getPathName(), "", false, false,
+            "receiver_only_leaf_virtual_signature; current target return retained because " +
+                "the receiver-only machine shape does not prove a source return",
+            returned.getDisplayName());
+    }
+
+    private StructuralSignature physicalSlotSignature(TargetCandidate candidate,
+            Function target, String ownerTypePath, CallFamilyEvidence callEvidence) {
+        if (candidate == null || callEvidence == null || ownerTypePath.isBlank() ||
+                callEvidence.arities.size() != 1) return null;
+        int arity = callEvidence.arities.iterator().next();
+        if (!returnPops(target).equals(Set.of(
+                arity * currentProgram.getDefaultPointerSize()))) return null;
+        FunctionDefinition agreed = null;
+        String agreedShape = "";
+        for (Context context : candidate.contexts) {
+            DataType tableType = dataTypes.getDataType(VTABLE_ROOT +
+                context.table.proposedName);
+            if (!(tableType instanceof Structure table)) return null;
+            int offset = context.slotIndex * currentProgram.getDefaultPointerSize();
+            DataTypeComponent component = table.getComponentAt(offset);
+            DataType value = component == null ? null : baseType(component.getDataType());
+            if (component == null || component.getOffset() != offset ||
+                    !(value instanceof FunctionDefinition definition) ||
+                    !"__thiscall".equals(definition.getCallingConventionName()) ||
+                    definition.hasVarArgs() || definition.getArguments().length != arity + 1 ||
+                    !(definition.getArguments()[0].getDataType() instanceof Pointer)) return null;
+            String shape = physicalSignatureShape(definition);
+            if (agreed != null && !agreedShape.equals(shape)) return null;
+            if (agreed == null) {
+                agreed = definition;
+                agreedShape = shape;
+            }
+        }
+        if (agreed == null) return null;
+        List<Parameter> current = explicitParameters(target);
+        List<Parameter> currentStack = null;
+        if ("__thiscall".equals(target.getCallingConventionName())) {
+            if (current.size() != arity) return null;
+            currentStack = current;
+        }
+        else if ("__fastcall".equals(target.getCallingConventionName())) {
+            // A weak fastcall model commonly exposes incoming ECX as parameter zero.
+            // Reinterpret exactly that one value as this, but never silently discard a
+            // second EDX parameter: it may be a real custom register argument.
+            if (current.size() != arity + 1) return null;
+            currentStack = current.subList(1, current.size());
+        }
+        else if (!current.isEmpty()) {
+            // Physical slot evidence proves the receiver and stack byte count, but cannot
+            // decide which ordinary cdecl/stdcall parameter was actually carried in ECX.
+            return null;
+        }
+        List<String> parameters = new ArrayList<>();
+        ghidra.program.model.data.ParameterDefinition[] definitions = agreed.getArguments();
+        for (int index = 1; index < definitions.length; index++) {
+            Parameter existing = currentStack == null ? null : currentStack.get(index - 1);
+            DataType physical = definitions[index].getDataType();
+            // Stack cleanup proves only how many machine words the caller supplied.  The
+            // callee's existing body-derived parameter view (including undefined1/2/4 and
+            // pointer role) is strictly stronger for source width than a generated physical
+            // slot declaration, so retain it whenever the arity already agrees.
+            DataType selected = existing == null ? physical : existing.getFormalDataType();
+            String name = existing == null || existing.getName() == null ||
+                existing.getName().isBlank() ? "param_" + index : existing.getName();
+            parameters.add(name + "=" + selected.getPathName());
+        }
+        DataType currentReturn = target.getReturnType();
+        // A physical slot family proves the receiver and stack ABI, but not a
+        // source-level return.  In optimized x86 a void function often leaves a
+        // callee result or an input pointer in EAX.  Retain an existing void (or
+        // other semantic return) instead of turning that incidental value into
+        // a new ABI contract.
+        DataType returned = currentReturn;
+        return new StructuralSignature(returned.getPathName(),
+            String.join(";", parameters), false, false,
+            "receiver_aware_physical_slot_signature; exact_call_family_sites=" +
+                callEvidence.calls.size() + "; caller_families=" +
+                callEvidence.callerOwners.size() + "; owner_type=" + ownerTypePath +
+                "; current target parameter and return types retained when arity agrees; " +
+                    "physical-slot geometry proves receiver/stack ABI only",
+            returned.getDisplayName());
+    }
+
+    private String physicalSignatureShape(FunctionDefinition definition) {
+        StringBuilder result = new StringBuilder(definition.getReturnType().getPathName())
+            .append("(");
+        ghidra.program.model.data.ParameterDefinition[] parameters =
+            definition.getArguments();
+        for (int index = 1; index < parameters.length; index++) {
+            if (index > 1) result.append(',');
+            result.append(parameters[index].getDataType().getPathName());
+        }
+        return result.append(")").toString();
+    }
+
+    private DataType baseType(DataType type) {
+        Set<DataType> seen = new HashSet<>();
+        while (type != null && seen.add(type)) {
+            if (type instanceof Pointer pointer) type = pointer.getDataType();
+            else if (type instanceof TypeDef alias) type = alias.getBaseDataType();
+            else break;
+        }
+        return type;
+    }
+
+    private Set<Integer> returnPops(Function function) {
+        Set<Integer> result = new TreeSet<>();
+        InstructionIterator iterator = listing.getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (!mnemonic.startsWith("RET")) continue;
+            if (instruction.getNumOperands() == 0) result.add(0);
+            else {
+                Integer value = unsignedInteger(
+                    instruction.getDefaultOperandRepresentation(0));
+                if (value == null) return Set.of();
+                result.add(value);
+            }
+        }
+        return result;
+    }
+
+    private ReceiverExtent incomingReceiverExtent(Function function) {
+        Map<String, Long> aliases = new HashMap<>();
+        aliases.put("ECX", 0L);
+        int accesses = 0;
+        long extent = currentProgram.getDefaultPointerSize();
+        InstructionIterator iterator = listing.getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString());
+            for (String operand : operands) {
+                MemoryExpr memory = memoryExpr(operand);
+                Long base = memory == null ? null : aliases.get(memory.register);
+                if (base == null || base + memory.displacement < 0) continue;
+                accesses++;
+                extent = Math.max(extent, base + memory.displacement + operandWidth(operand));
+            }
+            if (instruction.getFlowType().isCall()) {
+                aliases.remove("EAX");
+                aliases.remove("ECX");
+                aliases.remove("EDX");
+                continue;
+            }
+            if (operands.length == 0) continue;
+            String destination = fullRegister(operands[0]);
+            if (destination == null) continue;
+            if ("MOV".equals(mnemonic) && operands.length >= 2) {
+                String source = fullRegister(operands[1]);
+                Long value = source == null ? null : aliases.get(source);
+                if (value == null) aliases.remove(destination);
+                else aliases.put(destination, value);
+            }
+            else if ("LEA".equals(mnemonic) && operands.length >= 2) {
+                MemoryExpr source = memoryExpr(operands[1]);
+                Long value = source == null ? null : aliases.get(source.register);
+                if (value == null) aliases.remove(destination);
+                else aliases.put(destination, value + source.displacement);
+            }
+            else if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) &&
+                    operands.length >= 2 && aliases.containsKey(destination)) {
+                Integer amount = unsignedInteger(operands[1]);
+                if (amount == null) aliases.remove(destination);
+                else aliases.put(destination, aliases.get(destination) +
+                    ("SUB".equals(mnemonic) ? -amount : amount));
+            }
+            else if (!Set.of("CMP", "TEST", "PUSH", "JMP", "RET")
+                    .contains(mnemonic)) aliases.remove(destination);
+        }
+        return new ReceiverExtent(accesses, extent);
+    }
+
+    private String[] splitOperands(String instruction) {
+        int space = instruction.indexOf(' ');
+        return space < 0 || space == instruction.length() - 1 ? new String[0] :
+            instruction.substring(space + 1).split("\\s*,\\s*");
+    }
+
+    private String fullRegister(String operand) {
+        String value = unt(operand).trim().toUpperCase(Locale.ROOT);
+        return value.matches("(?:EAX|EBX|ECX|EDX|ESI|EDI|EBP|ESP)") ? value : null;
+    }
+
+    private MemoryExpr memoryExpr(String operand) {
+        String value = unt(operand).toUpperCase(Locale.ROOT)
+            .replace("QWORD PTR", "").replace("DWORD PTR", "")
+            .replace("WORD PTR", "").replace("BYTE PTR", "")
+            .replace(" ", "").replace("+-", "-");
+        Matcher matcher = MEMORY_OPERAND.matcher(value);
+        if (!matcher.matches()) return null;
+        long displacement = 0;
+        if (matcher.group(3) != null) {
+            Integer parsed = unsignedInteger(matcher.group(3));
+            if (parsed == null) return null;
+            displacement = "-".equals(matcher.group(2)) ? -parsed : parsed;
+        }
+        return new MemoryExpr(matcher.group(1), displacement);
+    }
+
+    private int operandWidth(String operand) {
+        String value = unt(operand).toUpperCase(Locale.ROOT);
+        if (value.contains("BYTE PTR")) return 1;
+        if (value.contains("WORD PTR") && !value.contains("DWORD PTR") &&
+                !value.contains("QWORD PTR")) return 2;
+        if (value.contains("QWORD PTR")) return 8;
+        return currentProgram.getDefaultPointerSize();
+    }
+
+    private Structure structure(String path) {
+        DataType type = dataTypes.getDataType(path);
+        return type instanceof Structure structure ? structure : null;
     }
 
     /**
@@ -420,9 +710,12 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         List<String> parameters = new ArrayList<>();
         for (int index = 1; index <= count; index++)
             parameters.add("param_" + index + "=/undefined4");
-        return new StructuralSignature("/void", String.join(";", parameters), false, false,
+        DataType currentReturn = function.getReturnType();
+        return new StructuralSignature(currentReturn.getPathName(),
+            String.join(";", parameters), false, false,
             "ret_stack_cleanup_argument_count cleanup=" + cleanup +
-                " (types remain provisional)", "void");
+                " (parameter types remain provisional; current target return retained)",
+            currentReturn.getDisplayName());
     }
 
     private boolean trustedSignature(Function function) {
@@ -654,9 +947,14 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
     }
 
     private boolean synthetic(String name) {
-        return name == null || name.isBlank() || name.startsWith("FUN_") ||
-            name.startsWith("LAB_") || name.startsWith("SUB_") ||
-            name.startsWith("thunk_FUN_") || name.matches("vfunc_[0-9A-Fa-f]+.*");
+        if (name == null || name.isBlank()) return true;
+        String upper = name.toUpperCase(Locale.ROOT);
+        // Owner::sub_ADDRESS is an automation-owned structural placeholder, not
+        // a recovered source name.  In particular it must never become the name
+        // or prototype anchor for every implementation in a physical slot family.
+        return upper.startsWith("FUN_") || upper.startsWith("LAB_") ||
+            upper.matches("SUB_[0-9A-F]+") || upper.startsWith("THUNK_FUN_") ||
+            upper.matches("VFUNC_[0-9A-F]+.*");
     }
 
     private static String normalizedMethod(String method) {
@@ -803,6 +1101,8 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         long conventions = proposals.stream().filter(p -> p.conventionApply).count();
         long signatures = proposals.stream().filter(p -> p.signatureApply).count();
         long placeholders = proposals.stream().filter(p -> p.proposedName.contains("::vfunc_")).count();
+        long callableOwned = proposals.stream().filter(p -> p.reason.contains(
+            "physical_slot_call_family=")).count();
         long multiOwner = proposals.stream().filter(p -> p.reason.contains(
             "target_shared_by_multiple_owners")).count();
         long missingEntries = activeTables.values().stream()
@@ -816,12 +1116,14 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
             "convention_auto_apply=" + conventions,
             "signature_auto_apply=" + signatures,
             "placeholder_names_for_review=" + placeholders,
+            "callable_family_owned_targets=" + callableOwned,
             "multi_owner_targets_left_unresolved=" + multiOwner,
             "missing_slot_function_entries=" + missingEntries,
             "class_hierarchy_proposals=" + hierarchy.size(),
             "note=Analyzer is read-only. Apply flags are independent.",
             "note_names=Only synthetic ANALYSIS/DEFAULT targets with one owner and one anchored " +
-                "slot-family method are auto-named.",
+                "slot-family method, or one independently observed physical call family, are " +
+                "auto-named. Structural names use Owner::sub_ADDRESS.",
             "note_signatures=Signatures come only from one agreed, meaningful USER_DEFINED anchor " +
                 "shape, a branch-free receiver-only leaf getter, or a one-instruction RET n " +
                 "virtual no-op whose cleanup proves the explicit argument count; the applier " +
@@ -1052,6 +1354,20 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
             this.returnDisplayName = returnDisplayName;
         }
     }
+
+    private static class CallFamilyEvidence {
+        final String family;
+        final Set<String> calls = new TreeSet<>();
+        final Set<String> callers = new TreeSet<>();
+        final Set<String> callerOwners = new TreeSet<>();
+        final Set<String> tables = new TreeSet<>();
+        final Set<Integer> arities = new TreeSet<>();
+        final Set<String> returns = new TreeSet<>();
+        CallFamilyEvidence(String family) { this.family = family; }
+    }
+
+    private record ReceiverExtent(int accesses, long extent) { }
+    private record MemoryExpr(String register, long displacement) { }
 
     private static class Proposal {
         final Address targetAddress;

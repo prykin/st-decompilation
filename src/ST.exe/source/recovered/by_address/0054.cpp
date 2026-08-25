@@ -1211,7 +1211,7 @@ void st::fn_00543410(undefined4 param_1,undefined4 param_2,int param_3,undefined
    Evidence: registry[11] at 007CA778 stores type 0x0101 and executable pointer 00405353; allocation
    size 1275 has no unique current class-layout match */
 
-void * __cdecl st::fn_00543450(void)
+CursorClassTy * __cdecl st::fn_00543450(void)
 
 {
   CursorClassTy *this;
@@ -1225,7 +1225,7 @@ void * __cdecl st::fn_00543450(void)
   if (this != nullptr) {
     st::fn_006E5FB0(this);
     st::fn_00715820((SpriteClassTy *)&this->field_0018);
-    this->field_0000 = st::machine_word_boundary_cast<undefined4>(&st_global_0079AE04);
+    this->vtable = &st_global_0079AE04;
     this->field_0018 = st::machine_word_boundary_cast<undefined4>(&st_global_0079ADF4);
     this->field_00AD = 0;
     this->field_00CD = CASE_0;

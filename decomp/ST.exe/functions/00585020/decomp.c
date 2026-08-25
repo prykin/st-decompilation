@@ -85,7 +85,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
            (pSVar2 = STGridAt3D(g_worldGrid, local_10, local_8, sVar7).objects[0],
            pSVar2 != nullptr)))) && (pSVar2->value_20 != 0xaa)) {
         thunk_FUN_00584c50(param_1,&pSVar2->vtable);
-        thunk_FUN_005860d0(param_1,(int)(short)param_1->field_0041,(int)(short)param_1->field_0043,
+        thunk_FUN_005860d0(param_1,(short)param_1->field_0041,(short)param_1->field_0043,
                            0x464);
       }
       param_1->field_0231 = 2;

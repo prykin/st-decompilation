@@ -341,7 +341,7 @@ LAB_005ae53a:
   pCVar18->field_0033 = (short)((uint)(iVar15 != 0) >> 0x10);
   FUN_006e6080(pCVar18,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar11);
   iVar5 = pCVar18->array_00BC[0xc].field_01DB;
-  if (*(int *)(iVar5 + 0x2e6) != 0) {
+  if (STField<int>(iVar5,0x2E6) != 0) {
     psVar22 = local_34;
     for (iVar17 = 6; iVar17 != 0; iVar17 = iVar17 + -1) {
       psVar22[0] = 0;
@@ -359,7 +359,7 @@ LAB_005ae602:
      (-1 < (int)g_startSystem_0081176C->field_02EC)) {
     FUN_006b35d0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
   }
-  if (-1 < (int)g_startSystem_0081176C->field_0540) {
+  if (-1 < g_startSystem_0081176C->field_0540) {
     FUN_006b35d0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
   }
   g_currentExceptionFrame = local_78.previous;

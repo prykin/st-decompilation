@@ -60,7 +60,7 @@ LAB_00676053:
                 /* ST_CALLSITE[0067607E]: CALL dword ptr [EDX + 0x2c] */
                 iVar4 = this->vfunc_2C();
                 if (iVar4 == 0x78) {
-                  this->field_0269 = 0xffffffff;
+                  this->field_0269 = -1;
                 }
               }
             }

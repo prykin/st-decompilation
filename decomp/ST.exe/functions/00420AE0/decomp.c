@@ -107,13 +107,13 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
   }
   bVar3 = thunk_FUN_004ab030();
   Library::MSVCRT::__itoa((uint)bVar3,pcVar10,_Radix);
-  iVar7 = this->field_0020;
-  if ((((iVar7 == 0x14) || (iVar7 == 1000)) || (iVar7 == 0x172)) || (iVar7 == 0x1a4)) {
+  uVar5 = this->field_0020;
+  if ((((uVar5 == 0x14) || (uVar5 == 1000)) || (uVar5 == 0x172)) || (uVar5 == 0x1a4)) {
     /* ST_CALLSITE[00420B9E]: CALL dword ptr [EDX + 0x2c] */
     SVar4 = this->slot_2C();
   }
   else {
-    if (iVar7 != 0x3e9) {
+    if (uVar5 != 0x3e9) {
       return;
     }
     SVar4 = this->field_0259;

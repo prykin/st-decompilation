@@ -104,15 +104,15 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this)
   }
   bVar3 = thunk_FUN_004ab030();
   Library::MSVCRT::__itoa((uint)bVar3,pcVar12,iVar8);
-  iVar8 = this->field_0020;
-  if ((((iVar8 != 0x1ae) && (iVar8 != 0x172)) && (iVar8 != 0x5a)) &&
-     ((iVar8 != 0x1a4 && (iVar8 != 0x1b8)))) {
-    if ((iVar8 == 0x14) || (iVar8 == 1000)) {
+  uVar6 = this->field_0020;
+  if ((((uVar6 != 0x1ae) && (uVar6 != 0x172)) && (uVar6 != 0x5a)) &&
+     ((uVar6 != 0x1a4 && (uVar6 != 0x1b8)))) {
+    if ((uVar6 == 0x14) || (uVar6 == 1000)) {
       /* ST_CALLSITE[00420421]: CALL dword ptr [EDX + 0x2c] */
       SVar4 = this->slot_2C();
     }
     else {
-      if (iVar8 != 0x3e9) {
+      if (uVar6 != 0x3e9) {
         return;
       }
       SVar4 = this->field_0259;

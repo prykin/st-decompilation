@@ -256,9 +256,9 @@ int __thiscall st::fn_0057BF60(STFishC *this,STMessage *message)
   iVar6 = 0;
   st::fn_004034B8((AnonShape_0057CB30_71092CE7 *)this_00);
   st::fn_00402B5D(this_00,1);
-  this_00->field_005F = 0xffff;
-  this_00->field_005D = 0xffff;
-  this_00->field_005B = 0xffff;
+  this_00->field_005F = -1;
+  this_00->field_005D = -1;
+  this_00->field_005B = -1;
   if ((((((*(int *)&this_00->field_0x257 < 0) ||
          ((int)g_worldGrid.sizeX <= *(int *)&this_00->field_0x257)) || (this_00->field_025B < 0)) ||
        (((int)g_worldGrid.sizeY <= this_00->field_025B || (iVar6 = this_00->field_025F, iVar6 < 0)))
@@ -353,11 +353,11 @@ cf_common_exit_0057C3E4:
   return 0;
 switchD_0057c669_caseD_127:
   psVar1 = &this_00->field_0235;
-  scalar_local_20 = (int)(short)((message->arg1).words.low * 0xc9 + 100); /* split integer lifetime from pointer-typed SSA storage */
+  scalar_local_20 = (short)((message->arg1).words.low * 0xc9 + 100); /* split integer lifetime from pointer-typed SSA storage */
   iVar6 = st::fn_004019E7(0,0,g_worldGrid.sizeX + -1,g_worldGrid.sizeY + -1,(int)this_00,
-                             (int)(short)((message->arg0).words.low * 0xc9 + 100),scalar_local_20,
-                             (int)(short)((message->arg0).words.high * 0xc9 + 100),
-                             (int)(short)((message->arg1).words.high * 0xc9 + 100),st::pointer_boundary_cast<undefined2 *>(psVar1),st::pointer_boundary_cast<undefined2 *>(psVar1),
+                             (short)((message->arg0).words.low * 0xc9 + 100),scalar_local_20,
+                             (short)((message->arg0).words.high * 0xc9 + 100),
+                             (short)((message->arg1).words.high * 0xc9 + 100),st::pointer_boundary_cast<undefined2 *>(psVar1),st::pointer_boundary_cast<undefined2 *>(psVar1),
                              &this_00->field_0239);
   if (iVar6 == 0) {
     g_currentExceptionFrame = local_80.previous;

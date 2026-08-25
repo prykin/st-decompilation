@@ -1,11 +1,29 @@
 apply	base_owner	derived_owner	base_table	derived_table	evidence_functions	confidence	reason
-1	MMObjTy	CampaignTy	0079C008	0079BFF8	00593860	high	same_object_vptr_store_order
-1	MMObjTy	ChooseMapTy	0079C008	0079C088	005B2790	high	same_object_vptr_store_order
-1	MMObjTy	FSGSTy	0079C008	0079C02C	005AA2C0	high	same_object_vptr_store_order
-1	MMObjTy	MMsgTy	0079C008	0079C0A8	005B95B0	high	same_object_vptr_store_order
-1	MMObjTy	MainMenuTy	0079C008	0079C098	005B50E0	high	same_object_vptr_store_order
-1	MMObjTy	PrividerTy	0079C008	0079C0C4	005BD2E0	high	same_object_vptr_store_order
-1	MMObjTy	SIDTy	0079C008	0079C1AC	005D9F80	high	same_object_vptr_store_order
-1	MMObjTy	SettMapMTy	0079C008	0079C124	005D4B40	high	same_object_vptr_store_order
-1	MMObjTy	SettMapTy	0079C008	0079C160	005D77A0	high	same_object_vptr_store_order
-1	MMObjTy	WaitTy	0079C008	0079C24C	005EAD30	high	same_object_vptr_store_order
+1	AppClassTy	STAppC		0079B0A8	0056A5F0	high	exact_unadjusted_base_constructor_call@0056A5FF->006E34C0
+1	STGameObjC	STBoatC		007905A0	0044E690	high	exact_unadjusted_base_constructor_call@0044E694->004158E0
+1	STGameObjC	STColl3C		0079C5AC	005F6600	high	exact_unadjusted_base_constructor_call@005F6604->004158E0
+1	STGameObjC	STCrabC		0079B238	005785E0	high	exact_unadjusted_base_constructor_call@005785E4->004158E0
+1	STGameObjC	STDcResourcC		0079B528	0057F1D0	high	exact_unadjusted_base_constructor_call@0057F1D4->004158E0
+1	STGameObjC	STDestC		0079C9B0	006023F0	high	exact_unadjusted_base_constructor_call@006023F4->004158E0
+1	STGameObjC	STExplosion		0079CB14	00604080	high	exact_unadjusted_base_constructor_call@00604084->004158E0
+1	STGameObjC	STFishC		0079B3C4	0057BD20	high	exact_unadjusted_base_constructor_call@0057BD24->004158E0
+1	STGameObjC	STJellyGunC		0079B78C	005823D0	high	exact_unadjusted_base_constructor_call@005823D4->004158E0
+1	STGameObjC	STJellyManC		0079B68C	005810D0	high	exact_unadjusted_base_constructor_call@005810D4->004158E0
+1	STGameObjC	STLBombC		0079B8F0	00584970	high	exact_unadjusted_base_constructor_call@00584974->004158E0
+1	STGameObjC	STMBombC		0079BA54	005861F0	high	exact_unadjusted_base_constructor_call@005861F4->004158E0
+1	STGameObjC	STMineSetC		0079CEFC	00622600	high	exact_unadjusted_base_constructor_call@00622604->004158E0
+1	STGameObjC	STOctopusC		0079BBB8	00589990	high	exact_unadjusted_base_constructor_call@00589994->004158E0
+1	STGameObjC	STRubbishC		0079D098	0062ED10	high	exact_unadjusted_base_constructor_call@0062ED13->004158E0
+1	STGameObjC	STSatC		0079BD1C	0058BA30	high	exact_unadjusted_base_constructor_call@0058BA34->004158E0
+1	STGameObjC	STSharkC		0079BE80	0058D750	high	exact_unadjusted_base_constructor_call@0058D754->004158E0
+1	STGameObjC	STSprGameObjC		0079C3EC	005EC7E0	high	exact_unadjusted_base_constructor_call@005EC7E4->004158E0
+1	STGameObjC	TLOBaseTy		00790AA0	004B7EF0	high	exact_unadjusted_base_constructor_call@004B7EF4->004158E0
+1	STGameObjC	TLOEmbryoTy		00798C70	004D0FC0	high	exact_unadjusted_base_constructor_call@004D0FC4->004158E0
+1	STGameObjC	TLOFakeTy		00797560	004D0920	high	exact_unadjusted_base_constructor_call@004D0924->004158E0
+1	SystemClassTy	BaseSystemC		0079B1B4	00576AA0	high	exact_unadjusted_base_constructor_call@00576AAC->006E51C0
+1	SystemClassTy	DebugSystemC		0079B20C	005781C0	high	exact_unadjusted_base_constructor_call@005781CF->006E51C0
+1	SystemClassTy	GameSystemC		0079B1E0	00576DD0	high	exact_unadjusted_base_constructor_call@00576DDC->006E51C0
+1	SystemClassTy	InterSystemC		0079ADB8	00542440	high	exact_unadjusted_base_constructor_call@0054244C->006E51C0
+1	SystemClassTy	StartSystemTy		0079C1E8	005DA610	high	exact_unadjusted_base_constructor_call@005DA621->006E51C0
+1	SystemClassTy	SystemWithNamedObjClassTy		0079E1B4	006E6100	high	exact_unadjusted_base_constructor_call@006E6110->006E51C0
+1	SystemWithNamedObjClassTy	STPlaySystemC		0079AE38	0054CB40	high	exact_unadjusted_base_constructor_call@0054CB4C->006E6100

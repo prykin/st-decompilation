@@ -210,11 +210,10 @@ void __fastcall st::fn_005718D0(int param_1)
       iVar2 = local_c;
       if (local_8 != (LPBITMAPINFO)0x0) {
         /* ST_CALLSITE[00571992]: CALL dword ptr [0x0085bde8] */
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         st::external_00000080(local_164,st::mutable_c_string("%sscr%03d.bmp"),local_c + 0x60,
-                  (uint)*(ushort *)(local_c + 0x1138));
+                  (uint)STField<ushort>(local_c,0x1138));
         st::fn_006C4230(local_164,local_8,(LPCVOID)0x0);
-        *(short *)(iVar2 + 0x1138) = *(short *)(iVar2 + 0x1138) + 1;
+        STField<short>(iVar2,0x1138) = STField<short>(iVar2,0x1138) + 1;
         st::fn_006AB060(&local_8);
       }
       g_currentExceptionFrame = local_60.previous;
@@ -255,7 +254,7 @@ st::fn_00571A30(AnonShape_00571A30_8BA8841B *param_1,AnonShape_00571A30_67EE4B56
     puVar3 = (byte *)&param_1->field_0x11aa;
     memmove(puVar3, puVar2, 0x20); /* compiler REP MOVS byte copy */
     *(undefined4 *)param_1 = *(undefined4 *)param_2;
-    *(undefined4 *)((int)&param_1->field_0003 + 1) = *(undefined4 *)((int)&param_2->field_0003 + 1);
+    STField<undefined4>(param_1,0x4) = STField<undefined4>(param_2,0x4);
     *(undefined4 *)&param_1->field_0x8 = *(undefined4 *)&param_2->field_0x8;
     *(undefined2 *)&param_1->field_0xc = *(undefined2 *)&param_2->field_0xc;
     param_1->field_000E = param_2->field_000E;
@@ -290,7 +289,7 @@ st::fn_00571A30(AnonShape_00571A30_8BA8841B *param_1,AnonShape_00571A30_67EE4B56
   puVar3 = (byte *)&param_2[1].field_0x8;
   memmove(puVar3, puVar2, 0x20); /* compiler REP MOVS byte copy */
   *(undefined4 *)param_2 = *(undefined4 *)param_1;
-  *(undefined4 *)((int)&param_2->field_0003 + 1) = *(undefined4 *)((int)&param_1->field_0003 + 1);
+  STField<undefined4>(param_2,0x4) = STField<undefined4>(param_1,0x4);
   *(undefined4 *)&param_2->field_0x8 = *(undefined4 *)&param_1->field_0x8;
   *(undefined2 *)&param_2->field_0xc = *(undefined2 *)&param_1->field_0xc;
   param_2->field_000E = param_1->field_000E;
@@ -1851,7 +1850,7 @@ cf_break_loop_00574651:
                       if ((int)uVar9 < 0) {
                         uVar9 = (uVar9 - 1 | 0xfffffffc) + 1;
                       }
-                      bVar5 = ((byte *)uVar9)[0x7ca6a8];
+                      bVar5 = STField<byte>(uVar9,0x7CA6A8);
                     }
                     pbVar12 = (byte *)((int)local_24 +
                                       (STSignedDiv4(uVar10)) +
@@ -1955,7 +1954,7 @@ st::fn_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,und
       local_3c = 0;
       local_28 = 0;
       local_58 = iVar3;
-      if ((*(int *)(iVar3 + 0x10) != 0) && (*(int *)(iVar3 + 0x14) != 0)) {
+      if ((STField<int>(iVar3,0x10) != 0) && (STField<int>(iVar3,0x14) != 0)) {
         param_1->field_0451->iteratorIndex = 0;
         do {
           pDVar2 = param_1->field_0451;
@@ -1968,7 +1967,7 @@ st::fn_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,und
             piVar12 = nullptr;
           }
         } while ((piVar12 != nullptr) &&
-                ((*(int *)(iVar3 + 0x10) != *piVar12 || (*(int *)(iVar3 + 0x14) != piVar12[1]))));
+                ((STField<int>(iVar3,0x10) != *piVar12 || (STField<int>(iVar3,0x14) != piVar12[1]))));
         local_3c = 1;
         if (piVar12 == nullptr) {
           st::fn_006A5E90(*(short **)(iVar3 + 0xc));
@@ -2011,13 +2010,13 @@ st::fn_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,und
                 piVar12 = nullptr;
               }
               if (piVar12 == nullptr) goto LAB_00574b14;
-            } while (*(int *)(iVar3 + 0xc) != piVar12[2]);
+            } while (STField<int>(iVar3,0xC) != piVar12[2]);
             if (piVar12 == nullptr) {
 LAB_00574b14:
               st::fn_006A5E90(*(short **)(iVar3 + 0xc));
             }
           }
-          *(int *)(iVar3 + 0xc) = piVar12[2];
+          STField<int>(iVar3,0xC) = piVar12[2];
         }
       }
       if ((local_34 == 0) || ((((byte *)iVar3)[0x4f] & 0x10) != 0)) {
@@ -2029,7 +2028,7 @@ LAB_00574b14:
 LAB_00574b4a:
           if (local_40 == 0) {
             if (local_3c == 0) {
-              if (*(int *)(iVar3 + 0xc) != 0) {
+              if (STField<int>(iVar3,0xC) != 0) {
                 param_1->field_0451->iteratorIndex = 0;
                 do {
                   pDVar2 = param_1->field_0451;
@@ -2042,7 +2041,7 @@ LAB_00574b4a:
                     pvVar5 = nullptr;
                   }
                   if (pvVar5 == nullptr) goto LAB_00574bcc;
-                } while (*(int *)(iVar3 + 0xc) != STField<int>(pvVar5,8));
+                } while (STField<int>(iVar3,0xC) != STField<int>(pvVar5,8));
                 if (pvVar5 == nullptr) {
 LAB_00574bcc:
                   st::fn_006A5E90(*(short **)(iVar3 + 0xc));
@@ -2093,7 +2092,7 @@ LAB_00574bcc:
                   local_50 = local_50 + 1) {
                 iVar8 = (uint)(byte)param_1->field_0x4 * local_50;
                 local_48 = iVar8 / 2 + (int)param_4;
-                local_60 = (byte *)(*(int *)(iVar3 + 0xc) + iVar8 * 2);
+                local_60 = (byte *)(STField<int>(iVar3,0xC) + iVar8 * 2);
                 local_30 = 0;
                 while ((int)local_30 < (int)((uint)(byte)param_1->field_0x4 * 2)) {
                   uVar10 = local_30 & 0x80000003;
@@ -2126,7 +2125,7 @@ LAB_00574e10:
                 iVar8 = iVar11 / 2;
                 local_48 = iVar8 + (int)param_4;
                 local_44 = (undefined1 *)(iVar8 + (int)local_4c);
-                local_60 = (byte *)(*(int *)(iVar3 + 0xc) + iVar11 * 2);
+                local_60 = (byte *)(STField<int>(iVar3,0xC) + iVar11 * 2);
                 for (local_30 = 0; (int)local_30 < (int)((uint)(byte)param_1->field_0x4 * 2);
                     local_30 = local_30 + 1) {
                   iVar3 = STSignedDiv4(local_30);
@@ -2165,9 +2164,9 @@ LAB_00574e10:
         }
       }
       if (local_28 != 0) {
-        local_6c = *(undefined4 *)(iVar3 + 0x10);
-        local_68 = *(undefined4 *)(iVar3 + 0x14);
-        local_64 = *(undefined4 *)(iVar3 + 0xc);
+        local_6c = STField<undefined4>(iVar3,0x10);
+        local_68 = STField<undefined4>(iVar3,0x14);
+        local_64 = STField<undefined4>(iVar3,0xC);
         st::fn_006AE1C0(param_1->field_0451,&local_6c);
       }
     }
@@ -2189,23 +2188,23 @@ void __cdecl st::fn_00575030(int *param_1,int param_2,int param_3)
   int iVar6;
 
   piVar3 = param_1;
-  iVar4 = (int)STField<short>(param_1,2) * (int)(short)*param_1;
+  iVar4 = (int)STField<short>(param_1,2) * (short)*param_1;
   iVar5 = (short)*param_1 * param_3;
   iVar4 = STSignedDiv4(iVar4);
   auto param_3_after_write = 6; /* compiler stack-slot lifetime split */
   param_1 = (int *)((int)param_1 + (iVar4 * 5 + param_2 + iVar5 / 2) * 4 + 0x459);
   do {
     iVar5 = *param_1;
-    if ((iVar5 != 0) && (*(int *)(iVar5 + 0xc) != 0)) {
+    if ((iVar5 != 0) && (STField<int>(iVar5,0xC) != 0)) {
       *(undefined4 *)(STField<int>(piVar3,0x451) + 4) = 0;
       do {
         iVar1 = STField<int>(piVar3,0x451);
-        uVar2 = *(uint *)(iVar1 + 4);
-        if (*(uint *)(iVar1 + 0xc) <= uVar2) goto LAB_005750c2;
-        iVar6 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
-        *(uint *)(iVar1 + 4) = uVar2 + 1;
+        uVar2 = STField<uint>(iVar1,0x4);
+        if (STField<uint>(iVar1,0xC) <= uVar2) goto LAB_005750c2;
+        iVar6 = STField<int>(iVar1,0x8) * uVar2 + STField<int>(iVar1,0x1C);
+        STField<uint>(iVar1,0x4) = uVar2 + 1;
         if (iVar6 == 0) goto LAB_005750c2;
-      } while (*(int *)(iVar5 + 0xc) != *(int *)(iVar6 + 8));
+      } while (STField<int>(iVar5,0xC) != STField<int>(iVar6,0x8));
       if (iVar6 == 0) {
 LAB_005750c2:
         st::fn_006AB060((int *)(iVar5 + 0xc));
@@ -2297,7 +2296,7 @@ void __cdecl st::fn_00575460(AnonShape_00575460_06C413C6 *param_1)
       auto param_1_after_write = (AnonShape_00575460_06C413C6 *)&param_1->field_0x459; /* compiler stack-slot lifetime split */
       do {
         iVar6 = *(int *)param_1_after_write;
-        if ((iVar6 != 0) && (element_00 = (int *)(iVar6 + 0xc), *(int *)(iVar6 + 0xc) != 0)) {
+        if ((iVar6 != 0) && (element_00 = (int *)(iVar6 + 0xc), STField<int>(iVar6,0xC) != 0)) {
           array->iteratorIndex = 0;
           do {
             uVar2 = array->iteratorIndex;
@@ -2369,22 +2368,21 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
     local_18 = (int *)((int)param_1 + 0x459);
     do {
       iVar14 = *local_18;
-      if (((iVar14 != 0) && (*(short *)(iVar14 + 8) != 0)) &&
+      if (((iVar14 != 0) && (STField<short>(iVar14,0x8) != 0)) &&
          ((((byte *)iVar14)[0x4f] & 0x40) == 0)) {
         uVar8 = 0x8000;
         local_8 = 8;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (short *)0x80;
+        uint param_1_after_write = 0x80; /* compiler stack-slot lifetime split */
         local_14 = 0;
         psVar10 = (short *)((int)param_2 +
-                           ((int)*(short *)(iVar14 + 6) * (int)*psVar2 +
-                            (*(short *)(iVar14 + 8) + -1) * iVar4 + (int)*(short *)(iVar14 + 4)) * 2
+                           ((int)STField<short>(iVar14,0x6) * (int)*psVar2 +
+                            (STField<short>(iVar14,0x8) + -1) * iVar4 + (int)STField<short>(iVar14,0x4)) * 2
                            );
         if (((char *)iVar14)[0x48] != '\0') {
           do {
-            uVar1 = *(uint *)(iVar14 + 0x2c);
+            uVar1 = STField<uint>(iVar14,0x2C);
             if ((local_8 & uVar1) != 0) {
-              if (((uint)param_1 & uVar1) == 0) {
+              if (((uint)param_1_after_write & uVar1) == 0) {
                 sVar3 = (-(ushort)((uVar1 & uVar8) != 0) & 0x3fff) + 0xbfff;
               }
               else {
@@ -2392,9 +2390,9 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
               }
               *psVar10 = sVar3;
             }
-            uVar1 = *(uint *)(iVar14 + 0x30);
+            uVar1 = STField<uint>(iVar14,0x30);
             if ((local_8 & uVar1) != 0) {
-              if (((uint)param_1 & uVar1) == 0) {
+              if (((uint)param_1_after_write & uVar1) == 0) {
                 sVar3 = (-(ushort)((uVar1 & uVar8) != 0) & 0x3fff) + 0xbfff;
               }
               else {
@@ -2402,9 +2400,9 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
               }
               psVar10[1] = sVar3;
             }
-            uVar1 = *(uint *)(iVar14 + 0x34);
+            uVar1 = STField<uint>(iVar14,0x34);
             if ((local_8 & uVar1) != 0) {
-              if (((uint)param_1 & uVar1) == 0) {
+              if (((uint)param_1_after_write & uVar1) == 0) {
                 sVar3 = (-(ushort)((uVar1 & uVar8) != 0) & 0x3fff) + 0xbfff;
               }
               else {
@@ -2412,9 +2410,9 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
               }
               psVar10[*psVar2] = sVar3;
             }
-            uVar1 = *(uint *)(iVar14 + 0x38);
+            uVar1 = STField<uint>(iVar14,0x38);
             if ((local_8 & uVar1) != 0) {
-              if (((uint)param_1 & uVar1) == 0) {
+              if (((uint)param_1_after_write & uVar1) == 0) {
                 sVar3 = (-(ushort)((uVar1 & uVar8) != 0) & 0x3fff) + 0xbfff;
               }
               else {
@@ -2424,7 +2422,7 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
             }
             local_14 = local_14 + 1;
             psVar10 = psVar10 + -iVar4;
-            param_1 = (short *)((int)param_1 >> 1);
+            param_1_after_write = ((int)param_1_after_write >> 1);
             local_8 = (int)local_8 >> 1;
             uVar8 = (int)uVar8 >> 1;
           } while (local_14 < (int)(uint)((byte *)iVar14)[0x48]);
@@ -2435,9 +2433,9 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
     } while (local_1c < STField<int>(psVar2,0x455));
   }
   if (param_3 != nullptr) {
-    param_1 = static_cast<short *>(st::fn_006AAC70(uVar11));
+    short * param_1_after_write_2 = static_cast<short *>(st::fn_006AAC70(uVar11)); /* compiler stack-slot lifetime split */
     puVar12 = (byte *)(param_2);
-    psVar9 = param_1;
+    psVar9 = param_1_after_write_2;
     for (uVar8 = uVar11 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
       *(undefined4 *)psVar9 = *puVar12;
       puVar12 = (byte *)(puVar12 + 1);
@@ -2453,29 +2451,28 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
       do {
         iVar5 = (int)*psVar2;
         iVar13 = 0;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_3 = param_1 + iVar5 * iVar14 + iVar4 * 4;
+        auto param_3_after_write = param_1_after_write_2 + iVar5 * iVar14 + iVar4 * 4; /* compiler stack-slot lifetime split */
         if (0 < iVar5) {
           do {
-            if (*param_3 == 0) {
-              st::fn_006AB090((int)param_1,iVar5,(int)psVar2[1],5,iVar13,iVar14,4,-1,-1,-1);
+            if (*param_3_after_write == 0) {
+              st::fn_006AB090((int)param_1_after_write_2,iVar5,(int)psVar2[1],5,iVar13,iVar14,4,-1,-1,-1);
             }
             iVar5 = (int)*psVar2;
             iVar13 = iVar13 + 1;
-            param_3 = param_3 + 1;
+            param_3_after_write = param_3_after_write + 1;
           } while (iVar13 < iVar5);
         }
         iVar14 = iVar14 + 1;
       } while (iVar14 < psVar2[1]);
     }
-    param_3 = nullptr;
+    short * param_3_after_write_2 = nullptr; /* compiler stack-slot lifetime split */
     local_1c = 5;
     do {
       iVar14 = 0;
       if (0 < psVar2[1]) {
         do {
-          scalar_psVar6 = *psVar2 * iVar14 + (int)param_3; /* split integer lifetime from pointer-typed SSA storage */
-          psVar10 = param_1 + scalar_psVar6;
+          scalar_psVar6 = *psVar2 * iVar14 + (int)param_3_after_write_2; /* split integer lifetime from pointer-typed SSA storage */
+          psVar10 = param_1_after_write_2 + scalar_psVar6;
           puVar7 = (undefined2 *)(scalar_psVar6 * 2 + (int)param_2);
           iVar5 = 0;
           if (0 < *psVar2) {
@@ -2491,10 +2488,10 @@ void __cdecl st::fn_00575640(short *param_1,undefined4 *param_2,short *param_3)
           iVar14 = iVar14 + 1;
         } while (iVar14 < psVar2[1]);
       }
-      param_3 = (short *)((int)param_3 + iVar4);
+      param_3_after_write_2 = (short *)((int)param_3_after_write_2 + iVar4);
       local_1c = local_1c + -1;
     } while (local_1c != 0);
-    st::fn_006AB060(&param_1);
+    st::fn_006AB060(&param_1_after_write_2);
   }
   return;
 }
@@ -3240,8 +3237,8 @@ switchD_0057988b_default:
   }
   sVar4 = STField<short>(this,0x45);
   local_10 = STBiasedDiv16(sVar4, 200); /* exact signed 16-bit grid-index division */
-  local_14 = (int)(short)((short)iVar2 * 0xc9 + 100);
-  local_18 = (int)(short)((short)iVar9 * 0xc9 + 100);
+  local_14 = (short)((short)iVar2 * 0xc9 + 100);
+  local_18 = (short)((short)iVar9 * 0xc9 + 100);
   local_8 = iVar9;
   do {
     while( true ) {
@@ -3250,7 +3247,7 @@ switchD_0057988b_default:
           uVar1 = st::fn_00404A3E(local_14,local_18,(int)STField<short>(this,0x45));
           sVar4 = (short)iVar2;
           if ((int)uVar1 < 0) {
-            puVar1 = st::fn_00405E48((int)sVar4,(int)(short)local_8,(int)local_10);
+            puVar1 = st::fn_00405E48((int)sVar4,(short)local_8,(int)local_10);
             if ((puVar1 == nullptr) &&
                (((((sVar4 < 0 || (g_worldGrid.sizeX <= sVar4)) || ((short)local_8 < 0)) ||
                  ((g_worldGrid.sizeY <= (short)local_8 || (local_10 < 0)))) ||
@@ -3282,7 +3279,7 @@ switchD_0057988b_default:
                 sVar4 = (**(code **)(*(int *)this + 0x10))
                                   (STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(sVar4)),
                                    CONCAT22(sVar4 >> 0xf,sVar5),uVar7,local_14,local_18,uVar7);
-                uVar3 = (int)(short)((sVar4 / 0x2d + 3) - (short)((int)sVar4 / -0x4c000000)) &
+                uVar3 = (short)((sVar4 / 0x2d + 3) - (short)((int)sVar4 / -0x4c000000)) &
                         0x80000007;
                 if ((int)uVar3 < 0) {
                   uVar3 = (uVar3 - 1 | 0xfffffff8) + 1;
@@ -3296,21 +3293,21 @@ switchD_0057988b_default:
           bVar10 = iVar2 - STField<short>(this,0x47) < 0;
           if (iVar2 == STField<short>(this,0x47) || bVar10) break;
           iVar2 = iVar2 + -1;
-          local_14 = (int)(short)(sVar4 + 99 + (short)iVar2 * 200);
+          local_14 = (short)(sVar4 + 99 + (short)iVar2 * 200);
           if (iVar2 < 0) goto cf_common_exit_00579E8F;
         }
         if (!bVar10) break;
         iVar2 = iVar2 + 1;
-        local_14 = (int)(short)(sVar4 + 0x65 + (short)iVar2 * 200);
+        local_14 = (short)(sVar4 + 0x65 + (short)iVar2 * 200);
       }
       bVar10 = -1 < local_8 - STField<short>(this,0x49);
       if (local_8 != STField<short>(this,0x49) && bVar10) break;
       if (bVar10) goto cf_common_exit_00579E8F;
-      local_18 = (int)(short)((short)local_8 + 0x65 + (short)(local_8 + 1) * 200);
+      local_18 = (short)((short)local_8 + 0x65 + (short)(local_8 + 1) * 200);
       local_8 = local_8 + 1;
     }
     iVar9 = local_8 + -1;
-    local_18 = (int)(short)((short)local_8 + 99 + (short)iVar9 * 200);
+    local_18 = (short)((short)local_8 + 99 + (short)iVar9 * 200);
     local_8 = iVar9;
   } while (-1 < iVar9);
 cf_common_exit_00579E8F:
@@ -3531,20 +3528,20 @@ LAB_0057b6ff:
         local_42 = STPiece<0,2>(param_4);
         local_4a = uVar1;
         if (uVar5 == param_3) {
-          iVar3 = st::fn_006ACF0D((int)STField<short>(this,0x3a),(int)(short)this[0xf],
-                               (int)STField<short>(this,0x3e),(int)(short)this[0xd],
-                               (int)STField<short>(this,0x36),(int)(short)this[0xe]);
+          iVar3 = st::fn_006ACF0D((int)STField<short>(this,0x3a),(short)this[0xf],
+                               (int)STField<short>(this,0x3e),(short)this[0xd],
+                               (int)STField<short>(this,0x36),(short)this[0xe]);
           if (iVar3 == 0) {
             local_40 = *(short *)(local_8 + -8 + uVar5 * 8);
             local_3e = *(short *)(local_8 + -6 + uVar5 * 8);
             local_3c = *(short *)(local_8 + -4 + uVar5 * 8);
           }
           else {
-            local_40 = (short)((((int)STField<short>(this,0x3a) - (int)(short)this[0xd]) * 100) /
+            local_40 = (short)((((int)STField<short>(this,0x3a) - (short)this[0xd]) * 100) /
                               iVar3) + (short)param_2;
-            local_3e = (short)((((int)(short)this[0xf] - (int)STField<short>(this,0x36)) * 100) /
+            local_3e = (short)((((short)this[0xf] - (int)STField<short>(this,0x36)) * 100) /
                               iVar3) + (short)param_5;
-            local_3c = (short)((((int)STField<short>(this,0x3e) - (int)(short)this[0xe]) * 100) /
+            local_3c = (short)((((int)STField<short>(this,0x3e) - (short)this[0xe]) * 100) /
                               iVar3) + (short)param_4;
           }
         }

@@ -13,7 +13,7 @@ void __cdecl FUN_0067d160(int *param_1)
       thunk_FUN_0067d0a0(pAVar1);
     }
     iVar2 = *param_1;
-    if ((((char *)iVar2)[0x18] == '\x02') && (*(int *)(iVar2 + 0x106) != 0)) {
+    if ((((char *)iVar2)[0x18] == '\x02') && (STField<int>(iVar2,0x106) != 0)) {
       thunk_FUN_0065d0f0((int *)(iVar2 + 0x106));
     }
     FreeAndNull(param_1);

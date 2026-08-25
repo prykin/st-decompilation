@@ -95,7 +95,6 @@ FUN_005fd1b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   if (local_8 == 0) {
     return 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(undefined4 *)(local_8 + 0x18);
+  return STField<undefined4>(local_8,0x18);
 }
 

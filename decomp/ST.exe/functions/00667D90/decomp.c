@@ -91,7 +91,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
           this_00->field_001C = this_00->field_0086;
         }
         if (puVar2[3] == 0) {
-          uVar4 = thunk_FUN_00435850(*(char *)&this_00->field_0024,1,nullptr);
+          uVar4 = thunk_FUN_00435850((char)this_00->field_0024,1,nullptr);
           this_00->field_007D = uVar4;
           /* ST_CALLSITE[00667E76]: CALL 0x00404b3d; direct=00404B3D AiFltClassTy::sub_0065D6A0 */
           sub_0065D6A0(this_00);
@@ -112,7 +112,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
           this_01 = nullptr;
         }
         else {
-          this_01 = thunk_FUN_0042b760(*(char *)&this_00->field_0024,this_00->field_007D);
+          this_01 = thunk_FUN_0042b760((char)this_00->field_0024,this_00->field_007D);
         }
         if (this_01 != nullptr) {
           /* ST_CALLSITE[00667F48]: CALL 0x00404340; direct=00404340 STGroupC::SetAVPar */

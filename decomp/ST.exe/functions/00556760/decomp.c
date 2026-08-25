@@ -80,8 +80,8 @@ TraksClassTy::TraksCreate
   if ((param_15 & 2) != 0) goto LAB_0055693a;
   sVar6 = (short)local_18;
   if (g_sT3DSMAPContext_00807598 != nullptr) {
-    if (((((int)(short)local_10 < g_sT3DSMAPContext_00807598->field_0048) ||
-         (g_sT3DSMAPContext_00807598->field_0058 < (int)(short)local_10)) ||
+    if (((((short)local_10 < g_sT3DSMAPContext_00807598->field_0048) ||
+         (g_sT3DSMAPContext_00807598->field_0058 < (short)local_10)) ||
         ((int)sVar6 < g_sT3DSMAPContext_00807598->field_0044)) ||
        (g_sT3DSMAPContext_00807598->field_0054 < (int)sVar6)) {
       iVar4 = 0;
@@ -95,7 +95,7 @@ TraksClassTy::TraksCreate
   }
   pVVar2 = g_visibleClass_00802A88;
   if (g_visibleClass_00802A88 == nullptr) goto LAB_0055693a;
-  iVar8 = (int)(short)iVar8;
+  iVar8 = (short)iVar8;
   if ((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) {
 LAB_00556926:
     bVar10 = true;
@@ -103,10 +103,10 @@ LAB_00556926:
   else {
     /* ST_CALLSITE[005568B6]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     VisibleClassTy::sub_00558C00
-              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,(int)(short)local_10,
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,(short)local_10,
                (int)sVar6,&local_5c,&local_8);
     if ((iVar8 < 0) || (4 < iVar8)) goto LAB_00556926;
-    if (((local_5c < 0) || ((int)pVVar2->field_0030 <= local_5c)) ||
+    if (((local_5c < 0) || (pVVar2->field_0030 <= local_5c)) ||
        ((g_centeredOffsets5[iVar8] + local_8 < 0 ||
         (pVVar2->field_0034 <= g_centeredOffsets5[iVar8] + local_8)))) {
       bVar10 = false;
@@ -190,7 +190,7 @@ LAB_0055693a:
              *(uint *)(&DAT_007c8ffc + iVar4),0);
   local_26 = local_c;
   ST3DSMAPContext::sub_006E98E0
-            (g_sT3DSMAPContext_00807598,local_c,0,(int)(short)local_22,STField<int>(puVar5,0x21),
+            (g_sT3DSMAPContext_00807598,local_c,0,(short)local_22,STField<int>(puVar5,0x21),
              1);
   if (iVar8 == 0) {
     Library::Ourlib::ST3DSMAP::SprSetSeqAnim

@@ -18,7 +18,7 @@ int __thiscall FUN_0074dee5(void *this,int param_1)
       iVar1 = *(int *)this;
     }
     else {
-      iVar1 = *(int *)(iVar1 + 4);
+      iVar1 = STField<int>(iVar1,0x4);
     }
   }
   return iVar1;

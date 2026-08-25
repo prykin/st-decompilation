@@ -5,7 +5,7 @@
    E:\__titans\Andrey\cpanel.cpp
    CPanelTy::OutText */
 
-void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2)
+void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,int param_2)
 
 {
   ushort *puVar1;

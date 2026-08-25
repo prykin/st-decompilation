@@ -62,11 +62,13 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
     private int conflicts, failures;
     private final List<String> decompileFailureFunctions = new ArrayList<>();
     private Map<String, Set<String>> ownersByVtable;
+    private Map<String, PolymorphicReceiverCallsite> polymorphicReceiverCallsites = Map.of();
     private final Set<String> suppressedMachineFunctions = new TreeSet<>();
     private final Map<String, Integer> exactMachineReceiverSites = new TreeMap<>();
     private final Map<String, DenseSlotEvidence> denseSlotEvidence = new TreeMap<>();
     private final Set<String> stagedSingleArgumentSites = new TreeSet<>();
     private final Map<String, Integer> machineSitePushCounts = new HashMap<>();
+    private final Map<String, CallableFamilyAudit> callableFamilyAudits = new TreeMap<>();
 
     @Override
     protected void run() throws Exception {
@@ -90,6 +92,10 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         Map<Integer, List<DispatchAbi>> bySlot = new TreeMap<>();
         for (DispatchAbi abi : abis)
             bySlot.computeIfAbsent(abi.slot, ignored -> new ArrayList<>()).add(abi);
+        Path polymorphicPath = directory.resolve("polymorphic_receiver_callsites.tsv");
+        if (Files.isRegularFile(polymorphicPath))
+            polymorphicReceiverCallsites = polymorphicReceiverCallsites(
+                readTsv(polymorphicPath));
 
         Map<String, Site> sites = new TreeMap<>();
         Map<String, List<Site>> byFunction = new TreeMap<>();
@@ -145,6 +151,7 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         ordered.sort(Comparator.comparing((Row row) -> row.functionAddress)
             .thenComparing(row -> row.callAddress));
         writeRows(directory.resolve("indirect_callsite_proposals.tsv"), ordered);
+        writeCallableFamilyAudit(directory.resolve("callable_family_audit.tsv"));
         writeSummary(directory.resolve("indirect_callsite_summary.txt"), ordered, abis.size());
         println("Indirect-callsite analysis complete: " + directory.toAbsolutePath());
         println("Machine candidates=" + machineCandidates + ", proposals=" +
@@ -314,9 +321,11 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
                 if (site == null || inputCount(operation) < 1) continue;
                 Set<String> vtables = vtablePaths(input(operation, 0), 0, new HashSet<>());
                 Set<String> receivers = receiverPaths(operation);
+                recordCallableFamilyAudit(function, site, vtables, receivers);
                 observeDensePhysicalSlot(operation, site, vtables);
                 DispatchAbi wideUseSite = machineWideUseSite(site, vtables);
                 DispatchAbi stagedUseSite = machineStagedUseSite(site, vtables);
+                DispatchAbi physicalUseSite = physicalUseSite(site, vtables, receivers);
                 List<DispatchAbi> matches = new ArrayList<>();
                 for (DispatchAbi abi : bySlot.getOrDefault(site.slot, List.of())) {
                     if (abi.stackParameters != site.pushes) continue;
@@ -329,8 +338,9 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
                 }
                 DispatchAbi agreed = wideUseSite != null ? wideUseSite :
                     stagedUseSite != null ? stagedUseSite :
-                    matches.isEmpty() ? machineCallable(operation, site, vtables, rows) :
-                    matches.get(0);
+                    !matches.isEmpty() ? matches.get(0) :
+                    physicalUseSite != null ? physicalUseSite :
+                    machineCallable(operation, site, vtables, rows);
                 if (agreed == null) continue;
                 if (!matches.isEmpty() && matches.stream().anyMatch(value ->
                         !value.signatureKey().equals(agreed.signatureKey()))) {
@@ -420,6 +430,100 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
                     "; ghost p-code arguments rejected by " + zeroArgumentSiblings +
                     " exact zero-push sibling calls" : "") +
                 "; conservative machine-word stack parameters");
+    }
+
+    /**
+     * Keep a proven common-base view local to one raw CALLIND.  Retyping the
+     * containing function parameter makes Ghidra propagate the base pointer
+     * backwards into callers and erase derived-class layouts when inheritance
+     * is not modelled.  An exact physical slot already supplies the complete
+     * receiver-aware ABI, so an address-local override is both stronger and
+     * less invasive than changing the transported parameter.
+     */
+    private DispatchAbi physicalUseSite(Site site, Set<String> vtables,
+            Set<String> receivers) {
+        if (site.receiverRegister.isBlank()) return null;
+        String receiver = register(site.receiverRegister);
+        boolean exactReceiver = register(site.ecx).equals(receiver) ||
+            "ECX".equals(receiver) && isDirectLoadedValue(site.ecx);
+        if (!exactReceiver) return null;
+        PolymorphicReceiverCallsite family = polymorphicReceiverCallsites.get(
+            site.callAddress);
+        if (family != null && !currentPolymorphicReceiver(site, family)) return null;
+        if (vtables.size() > 1) return null;
+        String vtable = family != null ? family.physicalVtable :
+            vtables.isEmpty() ? "" : vtables.iterator().next();
+        if (vtable.isBlank() || !vtables.isEmpty() && !vtables.contains(vtable)) return null;
+        Set<String> owners = ownersByVtable.getOrDefault(vtable, Set.of());
+        if (owners.size() != 1) return null;
+        String owner = owners.iterator().next();
+        if (family != null && (!owner.equals(family.ownerType) ||
+                !vtable.equals(family.physicalVtable))) return null;
+        if (family == null && receivers.equals(Set.of(owner))) return null;
+        FunctionDefinition physical = callableDefinition(vtable, site.slot);
+        int stackParameters = effectiveStackParameters(site);
+        if (physical == null || physical.hasVarArgs() ||
+                !"__thiscall".equals(physical.getCallingConventionName()) ||
+                physical.getArguments().length != stackParameters + 1 ||
+                !owner.equals(structurePath(
+                    physical.getArguments()[0].getDataType()))) return null;
+        List<String> parameters = new ArrayList<>();
+        for (int index = 1; index < physical.getArguments().length; index++)
+            parameters.add(typeSpec(physical.getArguments()[index].getDataType()));
+        return new DispatchAbi(owner, vtable, site.slot, "__thiscall",
+            "pointer:" + owner, stackParameters, String.join(";", parameters),
+            typeSpec(physical.getReturnType()), "", "",
+            "exact physical-slot use-site view" +
+                (family == null ? "" : "; common receiver family is independently " +
+                    "proven at this exact call address") +
+                "; raw receiver transport remains " +
+                "neutral in the containing function to avoid derived-layout " +
+                "back-propagation without recovered inheritance");
+    }
+
+    private Map<String, PolymorphicReceiverCallsite> polymorphicReceiverCallsites(
+            List<Map<String, String>> rows) {
+        Map<String, PolymorphicReceiverCallsite> result = new TreeMap<>();
+        for (Map<String, String> row : rows) {
+            String call = text(row.get("call_address")).toUpperCase(Locale.ROOT);
+            int slot = integer(row.get("slot_offset"), -1);
+            int ordinal = integer(row.get("parameter_ordinal"), -1);
+            if (call.isBlank() || slot < 0 || ordinal < 0) continue;
+            PolymorphicReceiverCallsite candidate = new PolymorphicReceiverCallsite(
+                text(row.get("function_address")).toUpperCase(Locale.ROOT),
+                text(row.get("expected_function")), call, slot, ordinal,
+                text(row.get("expected_parameter_name")),
+                text(row.get("expected_parameter_storage")),
+                text(row.get("expected_parameter_type")),
+                text(row.get("expected_parameter_source")),
+                text(row.get("owner_type")), text(row.get("physical_vtable")));
+            if (!candidate.ownerType.startsWith("/") ||
+                    !candidate.physicalVtable.startsWith(VTABLE_ROOT)) continue;
+            result.put(call, candidate);
+        }
+        return result;
+    }
+
+    private boolean currentPolymorphicReceiver(Site site,
+            PolymorphicReceiverCallsite candidate) {
+        if (!site.functionAddress.equals(candidate.functionAddress) ||
+                !site.function.equals(candidate.function) ||
+                !site.callAddress.equals(candidate.callAddress) ||
+                site.slot != candidate.slot) return false;
+        Address functionAddress = address(candidate.functionAddress);
+        Function function = functionAddress == null ? null :
+            currentProgram.getFunctionManager().getFunctionAt(functionAddress);
+        if (function == null || !function.getName(true).equals(candidate.function)) return false;
+        Parameter parameter = null;
+        for (Parameter value : function.getParameters())
+            if (!value.isAutoParameter() && value.getOrdinal() == candidate.parameterOrdinal) {
+                parameter = value;
+                break;
+            }
+        return parameter != null && parameter.getName().equals(candidate.parameterName) &&
+            parameter.getVariableStorage().toString().equals(candidate.parameterStorage) &&
+            typeSpec(parameter.getDataType()).equals(candidate.parameterType) &&
+            parameter.getSource().toString().equals(candidate.parameterSource);
     }
 
     /**
@@ -1007,6 +1111,73 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         return result;
     }
 
+    /**
+     * Preserve address-stable ownership evidence even when no call override is safe.  The
+     * virtual-method pass consumes only exact unadjusted receiver rows, and still has to match
+     * them to one physical table relation component.  This audit is intentionally broader than
+     * the proposal TSV: it partitions unresolved object dispatch without mutating a local,
+     * class vptr, or synthetic dispatch interface.
+     */
+    private void recordCallableFamilyAudit(Function function, Site site,
+            Set<String> vtables, Set<String> receivers) {
+        String receiver = register(site.receiverRegister);
+        boolean exactMachineReceiver = !receiver.isBlank() &&
+            (register(site.ecx).equals(receiver) ||
+                // The table load was traced from ECX itself.  A direct MOV of a stack,
+                // field, or global pointer into ECX changes the pointer's storage origin,
+                // not the receiver address; no base adjustment occurred.
+                "ECX".equals(receiver) && isDirectLoadedValue(site.ecx));
+        Set<String> resolvedVtables = new TreeSet<>(vtables);
+        if (resolvedVtables.isEmpty() && receivers.size() == 1) {
+            String fromReceiver = receiverVtablePath(receivers.iterator().next());
+            if (!fromReceiver.isBlank()) resolvedVtables.add(fromReceiver);
+        }
+        Set<String> owners = new TreeSet<>();
+        for (String vtable : resolvedVtables)
+            owners.addAll(ownersByVtable.getOrDefault(vtable, Set.of()));
+        String classification;
+        if (!exactMachineReceiver) classification = "ambiguous_receiver_transport";
+        else if (resolvedVtables.size() == 1 && owners.size() == 1)
+            classification = "physical_vtable";
+        else if (!receivers.isEmpty()) classification = "typed_external_or_secondary_interface";
+        else classification = "unresolved_object_dispatch";
+        String qualified = function.getName(true);
+        if (qualified.startsWith("Library::") || qualified.toUpperCase(Locale.ROOT)
+                .contains(".DLL::")) classification = "linked_library_runtime";
+        callableFamilyAudits.put(site.callAddress, new CallableFamilyAudit(
+            site.functionAddress, site.function, site.callAddress, site.slot,
+            effectiveStackParameters(site), site.ecx, site.receiverRegister,
+            exactMachineReceiver, String.join(" | ", resolvedVtables),
+            String.join(" | ", receivers), String.join(" | ", owners),
+            callerOwner(function), machineCallReturn(site), classification));
+    }
+
+    private boolean isDirectLoadedValue(String value) {
+        String text = text(value).trim().toUpperCase(Locale.ROOT);
+        return text.matches("(?:BYTE|WORD|DWORD|QWORD) PTR \\[.+\\]");
+    }
+
+    private String receiverVtablePath(String receiverPath) {
+        DataType value = currentProgram.getDataTypeManager().getDataType(receiverPath);
+        value = base(value);
+        if (!(value instanceof Structure structure) || structure.getLength() <
+                currentProgram.getDefaultPointerSize()) return "";
+        DataTypeComponent component = structure.getComponentAt(0);
+        if (component == null || component.getOffset() != 0) return "";
+        String path = structurePath(component.getDataType());
+        return vtablePath(path) ? path : "";
+    }
+
+    private String callerOwner(Function function) {
+        String qualified = function == null ? "" : function.getName(true);
+        int separator = qualified.lastIndexOf("::");
+        if (separator <= 0 || qualified.startsWith("Library::") ||
+                qualified.contains("SubmarineTitans::Recovered::HiddenThis::")) return "";
+        String owner = qualified.substring(0, separator);
+        int nested = owner.lastIndexOf("::");
+        return nested < 0 ? owner : owner.substring(nested + 2);
+    }
+
     private String structurePath(DataType type) {
         Set<DataType> seen = new HashSet<>();
         while (type != null && seen.add(type)) {
@@ -1222,6 +1393,23 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         }
     }
 
+    private void writeCallableFamilyAudit(Path path) throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("function_address\tfunction_name\tcall_address\tslot_offset\t" +
+                "stack_parameter_count\tlast_ecx_assignment\treceiver_register\t" +
+                "exact_unadjusted_receiver\tphysical_vtable_paths\treceiver_paths\t" +
+                "physical_owners\tcaller_owner\tmachine_return\tclassification\n");
+            for (CallableFamilyAudit row : callableFamilyAudits.values())
+                out.write(row.functionAddress + "\t" + clean(row.function) + "\t" +
+                    row.callAddress + "\t" + row.slot + "\t" + row.stackParameters + "\t" +
+                    clean(row.ecx) + "\t" + row.receiverRegister + "\t" +
+                    bit(row.exactUnadjustedReceiver) + "\t" +
+                    clean(row.physicalVtables) + "\t" + clean(row.receiverPaths) + "\t" +
+                    clean(row.physicalOwners) + "\t" + clean(row.callerOwner) + "\t" +
+                    row.machineReturn + "\t" + row.classification + "\n");
+        }
+    }
+
     private void writeSummary(Path path, List<Row> rows, int abiCount) throws Exception {
         Files.write(path, List.of(
             "program=" + currentProgram.getName(),
@@ -1240,6 +1428,9 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
             "suppressed_dense_machine_overrides=" + suppressedMachineOverrides,
             "exact_machine_receiver_sites=" + exactMachineReceiverSites.values().stream()
                 .mapToInt(Integer::intValue).sum(),
+            "callable_family_audit_sites=" + callableFamilyAudits.size(),
+            "callable_family_physical_sites=" + callableFamilyAudits.values().stream()
+                .filter(row -> row.classification.equals("physical_vtable")).count(),
             "staged_single_argument_sites=" + stagedSingleArgumentSites.size(),
             "proposals=" + rows.size(),
             "auto_apply=" + rows.stream().filter(row -> row.apply).count(),
@@ -1324,10 +1515,19 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
     }
     private record Site(String functionAddress, String function, String callAddress,
         int slot, int pushes, String ecx, String receiverRegister) { }
+    private record PolymorphicReceiverCallsite(String functionAddress, String function,
+        String callAddress, int slot, int parameterOrdinal, String parameterName,
+        String parameterStorage, String parameterType, String parameterSource,
+        String ownerType, String physicalVtable) { }
     private record Row(boolean apply, String action, String functionAddress, String function,
         String callAddress, int slot, String expectedOverride, String convention,
         String receiverType, int stackParameters, String parameterTypes, String returnType,
         String signatureAddress, String signatureFunction, String confidence, String evidence) { }
+    private record CallableFamilyAudit(String functionAddress, String function,
+        String callAddress, int slot, int stackParameters, String ecx,
+        String receiverRegister, boolean exactUnadjustedReceiver, String physicalVtables,
+        String receiverPaths, String physicalOwners, String callerOwner,
+        String machineReturn, String classification) { }
 
     private static final class DenseSlotEvidence {
         final String vtable;

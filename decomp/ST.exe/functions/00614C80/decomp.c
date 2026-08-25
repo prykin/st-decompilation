@@ -60,7 +60,7 @@ FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int para
     local_8 = 0;
     local_1c = (int)(param_8 * 0x46) / 100;
     local_18 = param_8;
-    auto param_9_after_write = uVar4; /* compiler stack-slot lifetime split */
+    uint param_9_after_write = uVar4; /* compiler stack-slot lifetime split */
     local_10 = local_20;
     param_1 = (int)Library::DKW::LIB::MemAlloc(uVar4 * 4);
     iVar5_mg2 = thunk_FUN_0060e210(&local_24,&local_14,4,param_1,uVar4);

@@ -14,9 +14,10 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
 
 {
   uint uVar1;
-  STMessageId SVar2;
-  AnonShape_00604A90_035626E6 *pAVar3;
-  short sVar5;
+  int *piVar2;
+  STMessageId SVar3;
+  AnonShape_00604A90_035626E6 *pAVar4;
+  short sVar6;
   STExplosion *this_00;
   STExplosion *this_01;
   int local_EAX_36;
@@ -30,9 +31,9 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
   AnonReceiver_00636260 *this_02;
   int local_EAX_1496;
   int iVar8;
-  int iVar6;
-  AnonShape_00604A90_035626E6 *pAVar7;
-  byte *puVar8;
+  int iVar9;
+  AnonShape_00604A90_035626E6 *pAVar10;
+  byte *puVar11;
   void **slotStorage;
   InternalExceptionFrame local_54;
   STExplosion *local_10;
@@ -60,13 +61,13 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
   if (iVar7 == 0xffff) {
     return 0xffff;
   }
-  SVar2 = message->id;
-  if (SVar2 < MESS_TORPHIT) {
-    if (SVar2 != MESS_SHARED_010F) {
-      if (SVar2 == MESS_ID_NONE) {
+  SVar3 = message->id;
+  if (SVar3 < MESS_TORPHIT) {
+    if (SVar3 != MESS_SHARED_010F) {
+      if (SVar3 == MESS_ID_NONE) {
         if (0 < this_00->field_02B7) {
-          iVar6 = (g_playSystem_00802A38->field_00E4 - this_00->field_026E) + this_00->field_02B7;
-          if ((iVar6 == 0xf) && (this_00->field_026D != '\0')) {
+          iVar9 = (g_playSystem_00802A38->field_00E4 - this_00->field_026E) + this_00->field_02B7;
+          if ((iVar9 == 0xf) && (this_00->field_026D != '\0')) {
             if (this_00->field_02BB == nullptr) {
               this_02 = (AnonReceiver_00636260 *)thunk_FUN_00636200();
               this_00->field_02BB = (HoloTy *)this_02;
@@ -77,9 +78,9 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
               }
             }
           }
-          else if ((0xf < iVar6) &&
+          else if ((0xf < iVar9) &&
                   ((this_00->field_02BB != nullptr &&
-                   (iVar6 = thunk_FUN_006372e0((int *)this_00->field_02BB), iVar6 != 0)))) {
+                   (iVar9 = thunk_FUN_006372e0((int *)this_00->field_02BB), iVar9 != 0)))) {
             thunk_FUN_006366d0((AnonShape_006366D0_80B1100F *)this_00->field_02BB);
             Library::MSVCRT::FUN_0072e2b0(this_00->field_02BB);
             this_00->field_02B7 = -1;
@@ -98,8 +99,8 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
           thunk_FUN_006057c0((STExplosionC *)this_00);
         }
         thunk_FUN_006048e0((AnonShape_006048E0_C1705B76 *)this_00);
-        iVar6 = thunk_FUN_006042d0(this_00,0);
-        if (iVar6 != 0) {
+        iVar9 = thunk_FUN_006042d0(this_00,0);
+        if (iVar9 != 0) {
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
@@ -107,93 +108,93 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      if (SVar2 == MESS_ID_CREATE) {
+      if (SVar3 == MESS_ID_CREATE) {
         uVar1 = this_00->field_001C * 0x41c64e6d + 0x3039;
         this_00->field_001C = uVar1;
         _DAT_00811790 = (uVar1 >> 0x10) % 0x33;
-        pAVar3 = (AnonShape_00604A90_035626E6 *)(message->arg0).u32;
-        if (*(int *)&pAVar3->field_0xc == 0) {
-          pAVar7 = pAVar3;
-          puVar8 = (byte *)&this_00->field_0x1d5;
-          memmove(puVar8, pAVar7, 0x40); /* compiler REP MOVS byte copy */
+        pAVar4 = (AnonShape_00604A90_035626E6 *)(message->arg0).u32;
+        if (*(int *)&pAVar4->field_0xc == 0) {
+          pAVar10 = pAVar4;
+          puVar11 = (byte *)&this_00->field_0x1d5;
+          memmove(puVar11, pAVar10, 0x40); /* compiler REP MOVS byte copy */
           /* ST_CALLSITE[00603852]: CALL 0x004047a0; direct=004047A0 STExplosion::sub_00605130 */
           sub_00605130(local_10);
-          puVar8 = (byte *)(&this_01->field_0272);
+          piVar2 = &this_01->field_0272;
           /* ST_CALLSITE[00603860]: CALL 0x00401e9c; direct=00401E9C STExplosion::sub_00604350 */
           local_EAX_288 = sub_00604350(this_01);
           if (local_EAX_288 != 0) {
             this_01->field_026D = 1;
           }
-          switch(*(undefined4 *)&pAVar3->field_0x18) {
+          switch(*(undefined4 *)&pAVar4->field_0x18) {
           case 0:
-            iVar6 = *(int *)&pAVar3->field_0x1c;
-            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-            *puVar8 = iVar6 + -2;
+            iVar9 = *(int *)&pAVar4->field_0x1c;
+            iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
+            *piVar2 = iVar9 + -2;
             this_01->field_027A = 5;
-            iVar6 = *(int *)&pAVar3->field_0x20;
-            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-            this_01->field_0276 = iVar6 + -2;
+            iVar9 = *(int *)&pAVar4->field_0x20;
+            iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
+            this_01->field_0276 = iVar9 + -2;
             this_01->field_027E = 5;
             /* ST_CALLSITE[00603921]: CALL 0x00404ca0; direct=00404CA0 STExplosion::sub_00606050 */
             local_EAX_481 =
-                 sub_00606050(this_01,*(int *)&pAVar3->field_0x1c,*(int *)&pAVar3->field_0x20,
-                              *(int *)&pAVar3->field_0x24,*(int *)&pAVar3->field_0x28,
-                              *(uint **)&pAVar3->field_0x34,*(undefined4 *)&pAVar3->field_0x38,
-                              *(int *)&pAVar3->field_0x3c,*(undefined4 *)&pAVar3->field_0x30,
+                 sub_00606050(this_01,*(int *)&pAVar4->field_0x1c,*(int *)&pAVar4->field_0x20,
+                              *(int *)&pAVar4->field_0x24,*(int *)&pAVar4->field_0x28,
+                              *(uint **)&pAVar4->field_0x34,*(undefined4 *)&pAVar4->field_0x38,
+                              *(int *)&pAVar4->field_0x3c,*(undefined4 *)&pAVar4->field_0x30,
                               this_01->field_026D);
             this_01->field_0269 = local_EAX_481;
             g_currentExceptionFrame = local_54.previous;
             return 0;
           case 1:
-            iVar6 = *(int *)&pAVar3->field_0x1c;
-            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
+            iVar9 = *(int *)&pAVar4->field_0x1c;
+            iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
             break;
           case 2:
-            iVar6 = *(int *)&pAVar3->field_0x1c;
-            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-            *puVar8 = iVar6 + -2;
+            iVar9 = *(int *)&pAVar4->field_0x1c;
+            iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
+            *piVar2 = iVar9 + -2;
             this_01->field_027A = 5;
-            iVar6 = *(int *)&pAVar3->field_0x20;
-            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-            this_01->field_0276 = iVar6 + -2;
+            iVar9 = *(int *)&pAVar4->field_0x20;
+            iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
+            this_01->field_0276 = iVar9 + -2;
             this_01->field_027E = 5;
             local_EAX_859 =
-                 thunk_FUN_00607a60(this_01,*(int *)&pAVar3->field_0x1c,*(int *)&pAVar3->field_0x20,
-                                    *(int *)&pAVar3->field_0x24);
+                 thunk_FUN_00607a60(this_01,*(int *)&pAVar4->field_0x1c,*(int *)&pAVar4->field_0x20,
+                                    *(int *)&pAVar4->field_0x24);
             this_01->field_0269 = local_EAX_859;
             g_currentExceptionFrame = local_54.previous;
             return 0;
           case 3:
-            iVar6 = *(int *)&pAVar3->field_0x1c;
-            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-            *puVar8 = iVar6 + -2;
+            iVar9 = *(int *)&pAVar4->field_0x1c;
+            iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
+            *piVar2 = iVar9 + -2;
             this_01->field_027A = 5;
-            iVar6 = *(int *)&pAVar3->field_0x20;
-            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-            this_01->field_0276 = iVar6 + -2;
+            iVar9 = *(int *)&pAVar4->field_0x20;
+            iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
+            this_01->field_0276 = iVar9 + -2;
             this_01->field_027E = 5;
             local_EAX_1048 =
-                 thunk_FUN_00605b60(this_01,*(uint *)&pAVar3->field_0x1c,
-                                    *(uint *)&pAVar3->field_0x20,*(int **)&pAVar3->field_0x24,
-                                    *(int *)&pAVar3->field_0x28);
+                 thunk_FUN_00605b60(this_01,*(uint *)&pAVar4->field_0x1c,
+                                    *(uint *)&pAVar4->field_0x20,*(int **)&pAVar4->field_0x24,
+                                    *(int *)&pAVar4->field_0x28);
             this_01->field_0269 = local_EAX_1048;
             g_currentExceptionFrame = local_54.previous;
             return 0;
           case 4:
-            iVar6 = *(int *)&pAVar3->field_0x1c;
-            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-            *puVar8 = iVar6 + -2;
+            iVar9 = *(int *)&pAVar4->field_0x1c;
+            iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
+            *piVar2 = iVar9 + -2;
             this_01->field_027A = 5;
-            iVar6 = *(int *)&pAVar3->field_0x20;
-            iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-            this_01->field_0276 = iVar6 + -2;
+            iVar9 = *(int *)&pAVar4->field_0x20;
+            iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
+            this_01->field_0276 = iVar9 + -2;
             this_01->field_027E = 5;
             local_EAX_1235 =
-                 thunk_FUN_00608b50(this_01,*(uint *)&pAVar3->field_0x1c,
-                                    *(uint **)&pAVar3->field_0x20,*(uint *)&pAVar3->field_0x24,
-                                    *(undefined4 *)&pAVar3->field_0x28,
-                                    *(undefined4 *)&pAVar3->field_0x34,*(int *)&pAVar3->field_0x38,
-                                    *(undefined4 *)&pAVar3->field_0x3c,0,this_01->field_026D);
+                 thunk_FUN_00608b50(this_01,*(uint *)&pAVar4->field_0x1c,
+                                    *(uint **)&pAVar4->field_0x20,*(uint *)&pAVar4->field_0x24,
+                                    *(undefined4 *)&pAVar4->field_0x28,
+                                    *(undefined4 *)&pAVar4->field_0x34,*(int *)&pAVar4->field_0x38,
+                                    *(undefined4 *)&pAVar4->field_0x3c,0,this_01->field_026D);
             this_01->field_0269 = local_EAX_1235;
             g_currentExceptionFrame = local_54.previous;
             return 0;
@@ -201,24 +202,24 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
             g_currentExceptionFrame = local_54.previous;
             return 0;
           }
-          *puVar8 = iVar6 + -2;
+          *piVar2 = iVar9 + -2;
           this_01->field_027A = 5;
-          iVar6 = *(int *)&pAVar3->field_0x20;
-          iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-          this_01->field_0276 = iVar6 + -2;
+          iVar9 = *(int *)&pAVar4->field_0x20;
+          iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
+          this_01->field_0276 = iVar9 + -2;
           this_01->field_027E = 5;
           local_EAX_670 =
-               thunk_FUN_00607200(this_01,*(int *)&pAVar3->field_0x1c,*(int *)&pAVar3->field_0x20,
-                                  *(int *)&pAVar3->field_0x24,*(undefined4 *)&pAVar3->field_0x28);
+               thunk_FUN_00607200(this_01,*(int *)&pAVar4->field_0x1c,*(int *)&pAVar4->field_0x20,
+                                  *(int *)&pAVar4->field_0x24,*(undefined4 *)&pAVar4->field_0x28);
           this_01->field_0269 = local_EAX_670;
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        thunk_FUN_00604fc0(this_00,pAVar3);
+        thunk_FUN_00604fc0(this_00,pAVar4);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      if (SVar2 != MESS_SHARED_0003) {
+      if (SVar3 != MESS_SHARED_0003) {
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -249,13 +250,13 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
     slotStorage = &local_c;
   }
   else {
-    if (SVar2 != MESS_ID_ALLCREATE) {
-      if (SVar2 == MESS_STOCTOPUSC_0112) {
+    if (SVar3 != MESS_ID_ALLCREATE) {
+      if (SVar3 == MESS_STOCTOPUSC_0112) {
         thunk_FUN_006042d0(this_00,0x112);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      if (SVar2 != MESS_STSPRGAMEOBJC_0113) {
+      if (SVar3 != MESS_STSPRGAMEOBJC_0113) {
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }

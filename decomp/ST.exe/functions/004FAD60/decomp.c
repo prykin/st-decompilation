@@ -8,7 +8,11 @@
 
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004FAD60 -> 004AB530 @ 004FAE21 | 004FAD60 -> 006E68C0 @ 004FADF7 | 005449B0 ->
-   004FAD60 @ 00547B96; unproven partial register write at 00547B8D */
+   004FAD60 @ 00547B96; unproven partial register write at 00547B8D
+
+   [STSwitchEnumApplier] Switch target field_023F uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_023FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 void __thiscall CPanelTy::sub_004FAD60(CPanelTy *this,uint *param_1,uint param_2)
 

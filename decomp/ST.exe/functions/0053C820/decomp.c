@@ -35,12 +35,12 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
   }
   uVar1 = this->field_0199 + -0xc0af + param_1->field_0010;
   iVar3 = (&this->field_027A)[(byte)this->field_0278];
-  if ((iVar3 == 0) || (*(uint *)(iVar3 + 0xc) <= uVar1)) {
+  if ((iVar3 == 0) || (STField<uint>(iVar3,0xC) <= uVar1)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_005276E0_param_1Enum *)
-              (*(int *)(iVar3 + 8) * uVar1 + *(int *)(iVar3 + 0x1c));
+              (STField<int>(iVar3,0x8) * uVar1 + STField<int>(iVar3,0x1C));
   }
   local_10 = this;
   if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {

@@ -1546,7 +1546,7 @@ undefined4 __thiscall st::fn_005CE0E0(SettMapMTy *this)
       pSVar11 = this_00->array_00BC[0xc].field_01DB;
       local_dc.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
       if (pSVar11->field_02E6 == nullptr) {
-        /* ST_CALLSITE[005CE379]: CALL dword ptr [EDX] */
+        /* ST_CALLSITE[005CE379]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/SettMapMTy;pointer:/SubmarineTitans/Recovered/STMessage */
         this_00->GetMessage(&local_dc);
       }
       else {
@@ -1618,7 +1618,7 @@ LAB_005ce9b2:
             if (this_00->field_0065 == '\x01') {
               local_58.id = 0x694f;
 LAB_005cee1a:
-              /* ST_CALLSITE[005CEE22]: CALL dword ptr [EAX] */
+              /* ST_CALLSITE[005CEE22]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/SettMapMTy;pointer:/SubmarineTitans/Recovered/STMessage */
               this_00->GetMessage(&local_58);
             }
             break;
@@ -1627,7 +1627,7 @@ LAB_005cee1a:
             pcVar8 = &local_c->field_0002;
             if ((local_c->field_0002 == '\x03') && (this_00->field_0065 == '\x01')) {
               local_58.id = 0x694f;
-              /* ST_CALLSITE[005CEA4B]: CALL dword ptr [EDX] */
+              /* ST_CALLSITE[005CEA4B]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/SettMapMTy;pointer:/SubmarineTitans/Recovered/STMessage */
               this_00->GetMessage(&local_58);
             }
             else {
@@ -1729,13 +1729,13 @@ LAB_005cee1a:
                 }
                 if (local_5 == '\0') {
                   this_00->field_002D = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
-                  /* ST_CALLSITE[005CEE09]: CALL dword ptr [EDX] */
+                  /* ST_CALLSITE[005CEE09]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/SettMapMTy;pointer:/SubmarineTitans/Recovered/STMessage */
                   this_00->GetMessage((STMessage *)&this_00->field_0x1d);
                 }
                 else {
                   this_00->field_002D = 0x694a;
                   this_00->field_0031 = 1;
-                  /* ST_CALLSITE[005CEDE7]: CALL dword ptr [EDX] */
+                  /* ST_CALLSITE[005CEDE7]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/SettMapMTy;pointer:/SubmarineTitans/Recovered/STMessage */
                   this_00->GetMessage((STMessage *)&this_00->field_0x1d);
                 }
               }
@@ -1858,7 +1858,7 @@ LAB_005cef5d:
             if (!bVar28) {
               iVar7 = 6;
               this_00->field_1F53 = *(undefined4 *)local_c;
-              *(undefined4 *)&this_00->field_0x1f57 = *(undefined4 *)((int)&local_c->field_0003 + 1);
+              *(undefined4 *)&this_00->field_0x1f57 = STField<undefined4>(local_c,0x4);
               bVar1 = local_c->field_000B;
               *(undefined3 *)&this_00->field_0x1f5b = *(undefined3 *)&local_c->field_0x8;
               this_00->field_0x1f5e = bVar1;
@@ -1878,7 +1878,7 @@ LAB_005cef5d:
           case 0x22:
             if (((this_00->field_1F84 != nullptr) &&
                 (this_00->field_2121 != *(int *)local_c)) &&
-               (DAT_00808aab == *(uint *)((int)&local_c->field_0003 + 1))) {
+               (DAT_00808aab == STField<uint>(local_c,0x4))) {
               local_10 = (int *)(local_2c - 9);
               if (-1 < (int)local_10) {
                 this_00->field_002D = 0x10003;
@@ -2023,7 +2023,7 @@ LAB_005cef5d:
         local_bc.id = MESS_MAINMENUTY_6944|MESS_SHARED_0003;
         pSVar19 = &local_bc;
 LAB_005cf387:
-        /* ST_CALLSITE[005CF38A]: CALL dword ptr [EAX] */
+        /* ST_CALLSITE[005CF38A]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/SettMapMTy;pointer:/SubmarineTitans/Recovered/STMessage */
         (*pSVar15->GetMessage)(this_00,pSVar19);
         goto cf_continue_loop_005CF38C;
       }
@@ -2226,7 +2226,7 @@ LAB_005ce8fe:
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pcVar8 = &pSVar13->data->field_0000 + pSVar13->elementSize * *(uint *)local_c;
           }
-          if ((pcVar8 != nullptr) && (*(int *)((int)&local_c->field_0003 + 1) == 3)) {
+          if ((pcVar8 != nullptr) && (STField<int>(local_c,0x4) == 3)) {
             local_24 = 0;
             this_00->field_002D = 0x10003;
             st::fn_006E6080(this_00,3,0x100ef,(undefined4 *)&this_00->field_0x1d);
@@ -3555,11 +3555,11 @@ int __thiscall st::fn_005D1400(SettMapMTy *this,STMessage *message)
   char local_22c [64];
   int local_1ec;
   undefined4 local_1e8;
-  undefined4 local_1e4;
+  int local_1e4;
   char local_190 [64];
   undefined4 local_150;
   undefined4 local_14c;
-  undefined4 local_148;
+  int local_148;
   InternalExceptionFrame local_f4;
   undefined4 local_b0 [8];
   undefined4 local_90 [4];
@@ -4267,10 +4267,9 @@ LAB_005d24b8:
                         uVar32 = 0;
                         if (cVar2 == '\x04') {
                           iVar24 = local_c->field_0050;
-                          if ((uint)(byte)local_c->field_0x5 < *(uint *)(iVar24 + 0xc)) {
-                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                            pcVar29 = (char *)(*(int *)(iVar24 + 8) * (uint)(byte)local_c->field_0x5
-                                              + *(int *)(iVar24 + 0x1c));
+                          if ((uint)(byte)local_c->field_0x5 < STField<uint>(iVar24,0xC)) {
+                            pcVar29 = (char *)(STField<int>(iVar24,0x8) * (uint)(byte)local_c->field_0x5
+                                              + STField<int>(iVar24,0x1C));
                           }
                           else {
                             pcVar29 = nullptr;

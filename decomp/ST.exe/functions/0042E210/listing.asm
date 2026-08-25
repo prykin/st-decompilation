@@ -105,7 +105,8 @@ LAB_0042e32d:
 LAB_0042e35d:
 0042E35D  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E360  8B 11                     MOV EDX,dword ptr [ECX]
-0042E362  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e362_d4e0dbd9:
+0042E362  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E365  83 C0 41                  ADD EAX,0x41
 0042E368  8B C8                     MOV ECX,EAX
 0042E36A  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -130,7 +131,8 @@ LAB_0042e377:
 LAB_0042e3a4:
 0042E3A4  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E3A7  8B 11                     MOV EDX,dword ptr [ECX]
-0042E3A9  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e3a9_d4e0dbd9:
+0042E3A9  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E3AC  83 C0 41                  ADD EAX,0x41
 0042E3AF  8B C8                     MOV ECX,EAX
 0042E3B1  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -183,7 +185,8 @@ LAB_0042e412:
 LAB_0042e442:
 0042E442  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E445  8B 11                     MOV EDX,dword ptr [ECX]
-0042E447  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e447_d4e0dbd9:
+0042E447  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E44A  83 E8 32                  SUB EAX,0x32
 0042E44D  8B C8                     MOV ECX,EAX
 0042E44F  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -208,7 +211,8 @@ LAB_0042e45c:
 LAB_0042e489:
 0042E489  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E48C  8B 11                     MOV EDX,dword ptr [ECX]
-0042E48E  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e48e_d4e0dbd9:
+0042E48E  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E491  83 E8 32                  SUB EAX,0x32
 0042E494  8B C8                     MOV ECX,EAX
 0042E496  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -224,7 +228,8 @@ LAB_0042e4a3:
 0042E4B4  75 2D                     JNZ 0x0042e4e3
 0042E4B6  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E4B9  8B 01                     MOV EAX,dword ptr [ECX]
-0042E4BB  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e4bb_d4e0dbd9:
+0042E4BB  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E4BE  83 E8 32                  SUB EAX,0x32
 0042E4C1  8B C8                     MOV ECX,EAX
 0042E4C3  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -272,12 +277,14 @@ LAB_0042e4fd:
 LAB_0042e543:
 0042E543  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E546  8B 01                     MOV EAX,dword ptr [ECX]
-0042E548  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e548_d4e0dbd9:
+0042E548  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E54B  83 F8 19                  CMP EAX,0x19
 0042E54E  0F 84 7F 02 00 00         JZ 0x0042e7d3
 0042E554  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E557  8B 11                     MOV EDX,dword ptr [ECX]
-0042E559  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e559_d4e0dbd9:
+0042E559  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E55C  83 C0 41                  ADD EAX,0x41
 0042E55F  8B C8                     MOV ECX,EAX
 0042E561  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -301,7 +308,8 @@ LAB_0042e56e:
 LAB_0042e5a1:
 0042E5A1  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E5A4  8B 01                     MOV EAX,dword ptr [ECX]
-0042E5A6  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e5a6_d4e0dbd9:
+0042E5A6  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E5A9  83 C0 41                  ADD EAX,0x41
 0042E5AC  8B C8                     MOV ECX,EAX
 0042E5AE  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -325,7 +333,8 @@ LAB_0042e5bb:
 LAB_0042e5ee:
 0042E5EE  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E5F1  8B 01                     MOV EAX,dword ptr [ECX]
-0042E5F3  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e5f3_d4e0dbd9:
+0042E5F3  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E5F6  83 C0 41                  ADD EAX,0x41
 0042E5F9  8B C8                     MOV ECX,EAX
 0042E5FB  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -349,7 +358,8 @@ LAB_0042e608:
 LAB_0042e63b:
 0042E63B  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E63E  8B 01                     MOV EAX,dword ptr [ECX]
-0042E640  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e640_d4e0dbd9:
+0042E640  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E643  83 C0 41                  ADD EAX,0x41
 0042E646  8B C8                     MOV ECX,EAX
 0042E648  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -373,7 +383,8 @@ LAB_0042e655:
 LAB_0042e688:
 0042E688  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E68B  8B 01                     MOV EAX,dword ptr [ECX]
-0042E68D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e68d_d4e0dbd9:
+0042E68D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E690  83 C0 41                  ADD EAX,0x41
 0042E693  8B C8                     MOV ECX,EAX
 0042E695  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -397,7 +408,8 @@ LAB_0042e6a2:
 LAB_0042e6d5:
 0042E6D5  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E6D8  8B 01                     MOV EAX,dword ptr [ECX]
-0042E6DA  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e6da_d4e0dbd9:
+0042E6DA  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E6DD  83 C0 41                  ADD EAX,0x41
 0042E6E0  8B C8                     MOV ECX,EAX
 0042E6E2  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -421,7 +433,8 @@ LAB_0042e6ef:
 LAB_0042e722:
 0042E722  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E725  8B 01                     MOV EAX,dword ptr [ECX]
-0042E727  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e727_d4e0dbd9:
+0042E727  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E72A  83 C0 41                  ADD EAX,0x41
 0042E72D  8B C8                     MOV ECX,EAX
 0042E72F  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -445,7 +458,8 @@ LAB_0042e73c:
 LAB_0042e768:
 0042E768  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E76B  8B 01                     MOV EAX,dword ptr [ECX]
-0042E76D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e76d_d4e0dbd9:
+0042E76D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E770  83 C0 41                  ADD EAX,0x41
 0042E773  8B C8                     MOV ECX,EAX
 0042E775  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -501,7 +515,8 @@ LAB_0042e7d3:
 LAB_0042e81a:
 0042E81A  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E81D  8B 01                     MOV EAX,dword ptr [ECX]
-0042E81F  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e81f_d4e0dbd9:
+0042E81F  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E822  83 F8 33                  CMP EAX,0x33
 0042E825  74 0D                     JZ 0x0042e834
 0042E827  83 F8 62                  CMP EAX,0x62
@@ -513,7 +528,8 @@ LAB_0042e834:
 LAB_0042e83a:
 0042E83A  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E83D  8B 11                     MOV EDX,dword ptr [ECX]
-0042E83F  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e83f_d4e0dbd9:
+0042E83F  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E842  83 E8 32                  SUB EAX,0x32
 0042E845  8B C8                     MOV ECX,EAX
 0042E847  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -537,7 +553,8 @@ LAB_0042e854:
 LAB_0042e887:
 0042E887  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E88A  8B 01                     MOV EAX,dword ptr [ECX]
-0042E88C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e88c_d4e0dbd9:
+0042E88C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E88F  83 E8 32                  SUB EAX,0x32
 0042E892  8B C8                     MOV ECX,EAX
 0042E894  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -561,7 +578,8 @@ LAB_0042e8a1:
 LAB_0042e8d4:
 0042E8D4  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E8D7  8B 01                     MOV EAX,dword ptr [ECX]
-0042E8D9  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e8d9_d4e0dbd9:
+0042E8D9  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E8DC  83 E8 32                  SUB EAX,0x32
 0042E8DF  8B C8                     MOV ECX,EAX
 0042E8E1  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -585,7 +603,8 @@ LAB_0042e8ee:
 LAB_0042e921:
 0042E921  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E924  8B 01                     MOV EAX,dword ptr [ECX]
-0042E926  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e926_d4e0dbd9:
+0042E926  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E929  83 E8 32                  SUB EAX,0x32
 0042E92C  8B C8                     MOV ECX,EAX
 0042E92E  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -609,7 +628,8 @@ LAB_0042e93b:
 LAB_0042e96e:
 0042E96E  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E971  8B 01                     MOV EAX,dword ptr [ECX]
-0042E973  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e973_d4e0dbd9:
+0042E973  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E976  83 E8 32                  SUB EAX,0x32
 0042E979  8B C8                     MOV ECX,EAX
 0042E97B  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -633,7 +653,8 @@ LAB_0042e988:
 LAB_0042e9bb:
 0042E9BB  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042E9BE  8B 01                     MOV EAX,dword ptr [ECX]
-0042E9C0  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42e9c0_d4e0dbd9:
+0042E9C0  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042E9C3  83 E8 32                  SUB EAX,0x32
 0042E9C6  8B C8                     MOV ECX,EAX
 0042E9C8  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -657,7 +678,8 @@ LAB_0042e9d5:
 LAB_0042ea08:
 0042EA08  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042EA0B  8B 01                     MOV EAX,dword ptr [ECX]
-0042EA0D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42ea0d_d4e0dbd9:
+0042EA0D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042EA10  83 E8 32                  SUB EAX,0x32
 0042EA13  8B C8                     MOV ECX,EAX
 0042EA15  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -681,7 +703,8 @@ LAB_0042ea22:
 LAB_0042ea55:
 0042EA55  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042EA58  8B 01                     MOV EAX,dword ptr [ECX]
-0042EA5A  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42ea5a_d4e0dbd9:
+0042EA5A  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042EA5D  83 E8 32                  SUB EAX,0x32
 0042EA60  8B C8                     MOV ECX,EAX
 0042EA62  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -705,7 +728,8 @@ LAB_0042ea6f:
 LAB_0042ea9b:
 0042EA9B  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042EA9E  8B 01                     MOV EAX,dword ptr [ECX]
-0042EAA0  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42eaa0_d4e0dbd9:
+0042EAA0  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042EAA3  83 E8 32                  SUB EAX,0x32
 0042EAA6  8B C8                     MOV ECX,EAX
 0042EAA8  81 E1 1F 00 00 80         AND ECX,0x8000001f
@@ -859,7 +883,8 @@ LAB_0042ec25:
 LAB_0042ec2d:
 0042EC2D  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 0042EC30  8B 01                     MOV EAX,dword ptr [ECX]
-0042EC32  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+STAllPlayersC::RegisterObject::override::prt_42ec32_d4e0dbd9:
+0042EC32  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0042EC35  83 F8 1D                  CMP EAX,0x1d
 0042EC38  75 67                     JNZ 0x0042eca1
 0042EC3A  8B 5D E0                  MOV EBX,dword ptr [EBP + -0x20]

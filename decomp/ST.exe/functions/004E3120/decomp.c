@@ -35,7 +35,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E3120(TLOBaseTy *this)
       local_24.arg0.words.low = wVar1;
       uVar2 = thunk_FUN_004e60d0((int)this->field_0024,*(int *)&this->field_0x369);
       local_24.arg1.words.high = (short)uVar2 + 1;
-      /* ST_CALLSITE[004E31AB]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[004E31AB]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
       g_aiBossClass_008117BC->GetMessage(&local_24);
     }
     this->field_04D0 = CASE_0;

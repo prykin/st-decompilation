@@ -334,9 +334,8 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
   }
   else if (SVar1 == MESS_SHARED_BFFF) {
     this_00->field_0028 = 0xa100;
-    /* ST_CALLSITE[005399A0]: CALL dword ptr [EAX] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
+    /* ST_CALLSITE[005399A0]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+    g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x18);
   }
   else if (SVar1 == MESS_SHARED_C000) {
     pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);

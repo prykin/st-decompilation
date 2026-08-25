@@ -121,9 +121,9 @@ undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
       param_1->field_02E9 = 1;
     }
     else if (bVar5) {
-      iVar6 = thunk_FUN_005ecd70(param_1,(int)(short)(param_1->field_0242 * 0xc9 + 100),
-                                 (int)(short)(param_1->field_0244 * 0xc9 + 100),
-                                 (int)(short)(param_1->field_0246 * 200 + 100),param_1->field_0354,
+      iVar6 = thunk_FUN_005ecd70(param_1,(short)(param_1->field_0242 * 0xc9 + 100),
+                                 (short)(param_1->field_0244 * 0xc9 + 100),
+                                 (short)(param_1->field_0246 * 200 + 100),param_1->field_0354,
                                  '\x01',0x1e);
       if (iVar6 != 0) {
         param_1->field_023A = 2;

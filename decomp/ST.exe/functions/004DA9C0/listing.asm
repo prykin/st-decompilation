@@ -403,7 +403,8 @@ LAB_004dae33:
 004DAE72  8D 45 B4                  LEA EAX,[EBP + -0x4c]
 004DAE75  8B 11                     MOV EDX,dword ptr [ECX]
 004DAE77  50                        PUSH EAX
-004DAE78  FF 12                     CALL dword ptr [EDX]
+FUN_004da9c0::override::prt_4dae78_89729ca9:
+004DAE78  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_004dae7a:
 004DAE7A  46                        INC ESI
 004DAE7B  83 C7 04                  ADD EDI,0x4

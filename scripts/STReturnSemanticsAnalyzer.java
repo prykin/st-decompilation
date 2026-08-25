@@ -213,6 +213,25 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 "signedness-neutral member of that same domain" +
                 observedEvidence(observed));
 
+        /*
+         * An output-builder count has a stronger callee-local proof than an
+         * otherwise anonymous machine-word return: every exit is reached after
+         * an exact full-EAX zero definition and the only later accumulator
+         * definitions are INC EAX. One exact caller consumption is sufficient
+         * because the complete callee CFG proves width and non-negative domain;
+         * caller behavior is only a use gate.
+         */
+        boolean countedOutputReturn = mutable &&
+            (genericUnknown(currentType) || currentType.equals("/void")) &&
+            observed != null && observed.used >= 1 && observed.unknown == 0 &&
+            allReturnsCarryExactCount(function);
+        if (countedOutputReturn)
+            return row(function, currentType, "/uint", function.hasNoReturn(), false,
+                true, "machine_count_return", "high",
+                "every reachable RET carries EAX from an exact zero initializer; " +
+                "the only subsequent accumulator definitions are INC EAX and at least " +
+                "one reachable path increments the count" + observedEvidence(observed));
+
         int observedCallers = observed == null ? 0 :
             observed.used + observed.ignored + observed.unknown;
         boolean forwardedCallerGate = observed != null && observed.used > 0 &&
@@ -1135,6 +1154,7 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
              comment.contains("[STReturnSemanticsApplier] typed_pointer_return") ||
              comment.contains("[STReturnSemanticsApplier] typed_machine_return") ||
              comment.contains("[STReturnSemanticsApplier] forwarded_call_return") ||
+             comment.contains("[STReturnSemanticsApplier] machine_count_return") ||
              comment.contains("[STReturnSemanticsApplier] machine_eax_return") ||
              comment.contains("[STReturnSemanticsApplier] shared_tail_return")) ?
                 called : null;
@@ -1196,6 +1216,77 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 pending.addLast(new MachineReturnState(successor, defined));
         }
         return reachedReturns.size() == totalReturns;
+    }
+
+    /**
+     * Prove the common optimized shape used by routines which append selected
+     * records to a caller-provided output buffer and return the number written.
+     * Exact EAX evolution on the complete CFG establishes a uint count ABI;
+     * no semantic type is inferred for the output storage.
+     */
+    private boolean allReturnsCarryExactCount(Function function) {
+        Instruction entry = currentProgram.getListing()
+            .getInstructionAt(function.getEntryPoint());
+        if (entry == null || function.getBody().getNumAddresses() > 0x4000)
+            return false;
+        Deque<CountReturnState> pending = new ArrayDeque<>();
+        pending.add(new CountReturnState(entry.getAddress(), false, false));
+        Set<CountReturnState> visited = new HashSet<>();
+        Set<Address> reachedReturns = new HashSet<>();
+        boolean sawIncrementedReturn = false;
+        int totalReturns = 0;
+        InstructionIterator count = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (count.hasNext())
+            if (count.next().getMnemonicString().toUpperCase(Locale.ROOT)
+                    .startsWith("RET")) totalReturns++;
+        if (totalReturns == 0) return false;
+
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            CountReturnState state = pending.removeFirst();
+            if (!visited.add(state)) continue;
+            if (++nodes > 65536) return false;
+            Instruction instruction = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (instruction == null ||
+                    !function.getBody().contains(instruction.getAddress())) return false;
+            String mnemonic = instruction.getMnemonicString()
+                .toUpperCase(Locale.ROOT);
+            boolean live = state.countLive;
+            boolean incremented = state.incremented;
+            if (clearsAccumulatorWithoutReading(instruction)) {
+                live = true;
+                incremented = false;
+            }
+            else if ("CALL".equals(mnemonic)) {
+                live = false;
+                incremented = false;
+            }
+            else if (accumulatorWidth(instruction.getResultObjects()) > 0) {
+                Register destination = standaloneRegisterOperand(instruction, 0);
+                if (live && "INC".equals(mnemonic) && destination != null &&
+                        "EAX".equals(destination.getName().toUpperCase(Locale.ROOT)) &&
+                        destination.getBitLength() == 32) {
+                    incremented = true;
+                }
+                else {
+                    live = false;
+                    incremented = false;
+                }
+            }
+            if (mnemonic.startsWith("RET")) {
+                if (!live) return false;
+                reachedReturns.add(instruction.getAddress());
+                sawIncrementedReturn |= incremented;
+                continue;
+            }
+            List<Address> successors = instructionSuccessors(function, instruction);
+            if (successors.isEmpty()) return false;
+            for (Address successor : successors)
+                pending.addLast(new CountReturnState(successor, live, incremented));
+        }
+        return reachedReturns.size() == totalReturns && sawIncrementedReturn;
     }
 
     /**
@@ -1637,6 +1728,7 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                     "diagnostic_residue_void", "void_eax_read_review",
                     "typed_pointer_return", "forwarded_call_return",
                     "typed_machine_return", "machine_scalar_return",
+                    "machine_count_return",
                     "returned_pointer_parameter", "pointer_producer_argument_roundtrip",
                     "machine_eax_return", "shared_tail_return",
                     "boolean_return_domain", "noreturn_terminal_call"))
@@ -1675,6 +1767,8 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
     private record TypedReturnState(Address address, MachineType type) {}
     private record ScalarReturnState(Address address, String eax, String ecx) {}
     private record MachineReturnState(Address address, boolean fullAccumulator) {}
+    private record CountReturnState(Address address, boolean countLive,
+        boolean incremented) {}
     private record ParameterReturnState(Address address, int ordinal) {}
     private record ParameterReturn(int ordinal, String name, String type) {}
     private record RoundTripState(Address address, String type, int roundTripCalls) {}

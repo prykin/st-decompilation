@@ -651,7 +651,8 @@ LAB_005bb642:
 005BB644  8D 45 A8                  LEA EAX,[EBP + -0x58]
 005BB647  50                        PUSH EAX
 005BB648  8B CE                     MOV ECX,ESI
-005BB64A  FF 12                     CALL dword ptr [EDX]
+PrividerTy::NonePrivider::override::prt_5bb64a_2f91b8dc:
+005BB64A  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/PrividerTy;pointer:/SubmarineTitans/Recovered/STMessage
 switchD_005bae66::caseD_2:
 005BB64C  8B 8D 64 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff64]
 005BB652  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX

@@ -44,7 +44,7 @@ void __thiscall TLOEmbryoTy::sub_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
       break;
     case 0xb:
     case 0x23:
-      this->field_010D = this->field_0101;
+      this->field_010D = (int)this->field_0101;
       /* ST_CALLSITE[0041C4ED]: CALL 0x0040141f; direct=0040141F VisibleClassTy::SetZoneAst */
       VisibleClassTy::SetZoneAst
                 (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,

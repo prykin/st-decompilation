@@ -156,7 +156,7 @@ switchD_005afd30_caseD_c:
   this_00->field_0033 = 0;
   FUN_006e6080(this_00,2,uVar27,(undefined4 *)&this_00->field_0x1d);
   iVar15 = this_00->array_00BC[0xc].field_01DB;
-  if (*(int *)(iVar15 + 0x2e6) != 0) {
+  if (STField<int>(iVar15,0x2E6) != 0) {
     memset(&local_60, 0, 0x1a); /* compiler bulk-zero initialization */
     STPiece<2,2>(local_60) = 0xffff;
     STPiece<0,2>(local_60) = 0xffff;

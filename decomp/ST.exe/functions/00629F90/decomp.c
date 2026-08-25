@@ -10,8 +10,7 @@
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00627EB0 -> 00629F90 @ 00627F75 */
 
-undefined4 __thiscall
-STParticleC::sub_00629F90(STParticleC *this,STParticleC *param_1,undefined4 param_2)
+undefined4 __thiscall STParticleC::sub_00629F90(STParticleC *this,STParticleC *param_1,int param_2)
 
 {
   char cVar1;

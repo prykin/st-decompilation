@@ -83,8 +83,8 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   thunk_FUN_00416270(param_1,&local_28,(short *)&local_24,(short *)&local_38);
   iVar4 = (int)sVar11;
   iVar14 = (int)sVar12;
-  iVar5 = FUN_006acf0d((int)sVar8,iVar14,iVar4,(int)(short)local_28,(int)(short)local_24,
-                       (int)(short)local_38);
+  iVar5 = FUN_006acf0d((int)sVar8,iVar14,iVar4,(short)local_28,(short)local_24,
+                       (short)local_38);
   bVar3 = thunk_FUN_00430750(CASE_9B);
   local_10 = iVar5 / (int)(uint)bVar3;
   if (local_10 < 1) {
@@ -92,17 +92,17 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   }
   auto param_2_after_write = 1; /* compiler stack-slot lifetime split */
   piVar9 = local_18;
-  local_1c = (int)(short)local_20;
+  local_1c = (short)local_20;
   local_14 = iVar14;
   local_8 = iVar4;
   if (0 < local_10) {
     do {
-      iVar4 = (((int)(short)local_28 - (int)(short)local_20) * param_2_after_write) / local_10 +
-              (int)(short)local_20;
-      local_34 = (((int)(short)local_24 - (int)(short)local_54) * param_2_after_write) / local_10 +
-                 (int)(short)local_54;
-      local_4c = (((int)(short)local_38 - (int)(short)local_40) * param_2_after_write) / local_10 +
-                 (int)(short)local_40;
+      iVar4 = (((short)local_28 - (short)local_20) * param_2_after_write) / local_10 +
+              (short)local_20;
+      local_34 = (((short)local_24 - (short)local_54) * param_2_after_write) / local_10 +
+                 (short)local_54;
+      local_4c = (((short)local_38 - (short)local_40) * param_2_after_write) / local_10 +
+                 (short)local_40;
       local_60 = iVar4;
       local_c = FUN_006acf0d(local_1c,local_14,local_8,iVar4,local_34,local_4c);
       local_c = local_c / 0x32;

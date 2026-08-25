@@ -146,16 +146,16 @@ LAB_0047ddc3:
             sVar21 = 0;
             bVar22 = 0;
             lVar13 = Library::MSVCRT::__ftol();
-            iVar9 = (int)local_20 + this->field_0045 + local_c + (int)(short)lVar13;
+            iVar9 = (int)local_20 + this->field_0045 + local_c + (short)lVar13;
             iVar11 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
-            iVar12 = (int)(short)local_24 + iVar10 + this->field_0041;
+            iVar12 = (short)local_24 + iVar10 + this->field_0041;
           }
           else {
             iVar9 = (int)local_20 + local_c + this->field_0045;
             STPiece<2,2>(local_24) = (short)((uint)uVar3 >> 0x10);
             iVar11 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
             STPiece<0,2>(local_24) = (short)uVar3;
-            iVar12 = (int)(short)local_24 + iVar10 + this->field_0041;
+            iVar12 = (short)local_24 + iVar10 + this->field_0041;
           }
           /* ST_CALLSITE[0047DD4D]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
           TraksClassTy::TraksCreate

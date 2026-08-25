@@ -38,7 +38,7 @@ SettMapMTy * __cdecl CreateSettMapM(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->vtable = (SettMapMTyVTable *)&MMObjTyVTable;
+    this->vtable = (SettMapMTyVTable *)&VTable_0079C008;
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */

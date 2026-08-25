@@ -119,9 +119,9 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       local_c->field_0034 = this_00->field_0231;
       local_c->field_0036 = this_00->field_0233;
       *(short *)&local_c->field_0x38 = this_00->field_0235;
-      *(undefined2 *)&local_c->field_0x3a = this_00->field_0237;
+      *(short *)&local_c->field_0x3a = this_00->field_0237;
       *(undefined4 *)&local_c->field_0x3c = this_00->field_0249;
-      *(undefined2 *)&local_c->field_0x40 = this_00->field_024D;
+      *(short *)&local_c->field_0x40 = this_00->field_024D;
       local_c->field_0042 = this_00->field_023D;
       *(uint *)&local_c->field_0x46 = this_00->field_024F;
       *(int *)&local_c->field_0x4a = this_00->field_0253;
@@ -183,9 +183,9 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       puVar9 = (byte *)&this_00->field_0x25b;
       memmove(puVar9, puVar7, 0x34); /* compiler REP MOVS byte copy */
       thunk_FUN_0058eeb0((AnonShape_0058EEB0_904026FD *)this_00);
-      this_00->field_005B = 0xffff;
-      this_00->field_005D = 0xffff;
-      this_00->field_005F = 0xffff;
+      this_00->field_005B = -1;
+      this_00->field_005D = -1;
+      this_00->field_005F = -1;
       thunk_FUN_00417a00(this_00,1);
       iVar4 = thunk_FUN_00417a20(this_00,(short)this_00->field_026F,(short)this_00->field_0273,
                                  (short)this_00->field_0277,1);
@@ -210,7 +210,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
                        (float)this_00->field_026F * _DAT_007904f8 + _DAT_007904f4,
                        (float)this_00->field_0273 * _DAT_007904f8 + _DAT_007904f4,
                        (float)this_00->field_0277 * _DAT_00790504 + _DAT_00790500);
-            iVar4 = thunk_FUN_00417ee0(this_00,*(short *)&this_00->field_027B);
+            iVar4 = thunk_FUN_00417ee0(this_00,(short)this_00->field_027B);
             if (iVar4 == 0) {
 LAB_0058dc72:
               this_00->field_0245 = (int)PTR_00806724->field_002C;
@@ -250,7 +250,7 @@ LAB_0058dc72:
                       ((STT3DSprC *)puVar7,(float)(int)local_1c * _DAT_007904f8 + _DAT_007904f4,
                        (float)this_00->field_0273 * _DAT_007904f8 + _DAT_007904f4,
                        (float)this_00->field_0277 * _DAT_00790504 + _DAT_00790500);
-            iVar4 = thunk_FUN_00417ee0(this_00,*(short *)&this_00->field_027B);
+            iVar4 = thunk_FUN_00417ee0(this_00,(short)this_00->field_027B);
             if (iVar4 == 0) goto LAB_0058dc72;
             local_EAX_1180 =
                  ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",200,0,0,"%s",
@@ -292,11 +292,11 @@ LAB_0058dc72:
       this_00->field_0233 = STField<short>(local_1c,0x36);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       this_00->field_0235 = *(short *)(local_1c + 0xe);
-      this_00->field_0237 = STField<undefined2>(local_1c,0x3a);
+      this_00->field_0237 = STField<short>(local_1c,0x3a);
       this_00->field_0249 = local_1c[0xf];
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      this_00->field_024D = *(undefined2 *)(local_1c + 0x10);
-      this_00->field_023D = STField<undefined4>(local_1c,0x42);
+      this_00->field_024D = *(short *)(local_1c + 0x10);
+      this_00->field_023D = STField<uint>(local_1c,0x42);
       this_00->field_024F = STField<uint>(local_1c,0x46);
       this_00->field_0253 = STField<int>(local_1c,0x4a);
       this_00->field_0257 = STField<STSharkC_field_0257State>(local_1c,0x4e);
@@ -360,12 +360,12 @@ LAB_0058e0f9:
       return 0;
     case MESS_STOCTOPUSC_0127:
       psVar1 = &this_00->field_0231;
-      int scalar_local_1c = (int)(short)((message->arg1).words.low * 0xc9 + 100); /* split integer lifetime from pointer-typed SSA storage */
+      int scalar_local_1c = (short)((message->arg1).words.low * 0xc9 + 100); /* split integer lifetime from pointer-typed SSA storage */
       iVar4 = thunk_FUN_0058d160((short)this_00->field_027F,(short)this_00->field_0283,
                                  (short)this_00->field_0287,(short)this_00->field_028B,(int)this_00,
-                                 (int)(short)((message->arg0).words.low * 0xc9 + 100),scalar_local_1c,
-                                 (int)(short)((message->arg0).words.high * 0xc9 + 100),
-                                 (int)(short)((message->arg1).words.high * 0xc9 + 100),psVar1,
+                                 (short)((message->arg0).words.low * 0xc9 + 100),scalar_local_1c,
+                                 (short)((message->arg0).words.high * 0xc9 + 100),
+                                 (short)((message->arg1).words.high * 0xc9 + 100),psVar1,
                                  &this_00->field_0233,&this_00->field_0235);
       if (iVar4 != 0) {
         sVar6 = *psVar1;

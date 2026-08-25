@@ -14,10 +14,9 @@ undefined4 __thiscall FUN_00631b60(void *this,uint param_1,int param_2)
   uVar2 = 0;
   iVar3 = STField<int>(this,0x6d);
   if (iVar3 != 0) {
-    uVar1 = *(uint *)(iVar3 + 0xc);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    uVar1 = STField<uint>(iVar3,0xC);
     if (((param_1 < uVar1) &&
-        (puVar5 = (undefined4 *)(*(int *)(iVar3 + 8) * param_1 + *(int *)(iVar3 + 0x1c)),
+        (puVar5 = (undefined4 *)(STField<int>(iVar3,0x8) * param_1 + STField<int>(iVar3,0x1C)),
         puVar5 != nullptr)) && (puVar5[1] == param_2)) {
       for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar5 = 0;
@@ -31,7 +30,7 @@ undefined4 __thiscall FUN_00631b60(void *this,uint param_1,int param_2)
       bVar6 = uVar1 != 0;
       do {
         if (((bVar6) &&
-            (puVar5 = (undefined4 *)(*(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c)),
+            (puVar5 = (undefined4 *)(STField<int>(iVar3,0x8) * uVar4 + STField<int>(iVar3,0x1C)),
             puVar5 != nullptr)) && (puVar5[1] == param_2)) {
           for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
             *puVar5 = 0;
@@ -42,8 +41,8 @@ undefined4 __thiscall FUN_00631b60(void *this,uint param_1,int param_2)
         }
         iVar3 = STField<int>(this,0x6d);
         uVar4 = uVar4 + 1;
-        bVar6 = uVar4 < *(uint *)(iVar3 + 0xc);
-      } while ((int)uVar4 < (int)*(uint *)(iVar3 + 0xc));
+        bVar6 = uVar4 < STField<uint>(iVar3,0xC);
+      } while ((int)uVar4 < (int)STField<uint>(iVar3,0xC));
     }
   }
   return uVar2;

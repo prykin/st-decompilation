@@ -36,9 +36,8 @@ st::fn_00679120
     local_20 = st::fn_00402464(local_14,param_1);
     if (-1 < (int)local_20) {
       iVar1 = pAVar2->field_0695;
-      if (local_20 < *(uint *)(iVar1 + 0xc)) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        slotStorage = (int *)(*(int *)(iVar1 + 8) * local_20 + *(int *)(iVar1 + 0x1c));
+      if (local_20 < STField<uint>(iVar1,0xC)) {
+        slotStorage = (int *)(STField<int>(iVar1,0x8) * local_20 + STField<int>(iVar1,0x1C));
       }
       else {
         slotStorage = nullptr;
@@ -68,8 +67,7 @@ st::fn_00679120
                   (g_playSystem_00802A38,0x38e,st::machine_word_boundary_cast<undefined4>(local_24),st::machine_word_boundary_cast<undefined4>(&local_10),*slotStorage,0);
         st::fn_006AB060(slotStorage);
         *slotStorage = local_10;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        slotStorage[1] = *(int *)(local_10 + 0x18);
+        slotStorage[1] = STField<int>(local_10,0x18);
       }
     }
     g_currentExceptionFrame = local_68.previous;

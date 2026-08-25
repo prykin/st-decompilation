@@ -79,10 +79,10 @@ STBoatC::GetCellForLoading
   iVar11 = g_pathingGrid.sizeX * iVar11;
   iVar9 = 0;
   if (g_pathingScratchGrid.cells
-      [(int)(short)param_6 * (int)g_pathingGrid.planeStride + iVar11 + (int)param_4] < 1) {
+      [(short)param_6 * (int)g_pathingGrid.planeStride + iVar11 + (int)param_4] < 1) {
     return 0xfffffffe;
   }
-  switch((int)(short)param_6) {
+  switch((short)param_6) {
   case 0:
     local_20[0] = 0;
     local_20[1] = 1;

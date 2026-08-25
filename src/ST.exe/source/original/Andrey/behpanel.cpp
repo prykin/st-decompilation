@@ -194,23 +194,23 @@ switchD_004ed72f_default:
     local_994[uVar9 * 0x5f + 4] = *(int *)(puVar4 + 2);
     local_994[uVar9 * 0x5f + 5] = iVar8;
     local_14 = (int)&this_00->vtable + uVar9 * 0x27;
-    ((undefined1 *)local_14)[0x1ce] = 1;
+    STField<undefined1>(local_14,0x1CE) = 1;
     local_EAX_721 = st::fn_00401A78((&this_00->field_01AF)[uVar9],0);
-    *(int *)(local_14 + 0x1cf) = local_EAX_721;
+    STField<int>(local_14,0x1CF) = local_EAX_721;
     uVar12 = st::fn_0040371F((&this_00->field_01AF)[uVar9]);
     iVar14 = local_14;
     auStack_914[uVar9 * 0x5f] = 0x101;
     auStack_914[uVar9 * 0x5f + 1] = 3;
     auStack_914[uVar9 * 0x5f + 2] = 0x4201;
-    *(undefined4 *)(iVar14 + 0x1d7) = uVar12;
+    STField<undefined4>(iVar14,0x1D7) = uVar12;
     *(undefined2 *)(aiStack_908 + uVar9 * 0x5f) = 0;
     *(undefined2 *)((int)aiStack_908 + (uVar9 * 0xbe + 1) * 2) = 1;
     aiStack_908[uVar9 * 0x5f + 1] = iVar14 + 0x1ce;
     aiStack_908[uVar9 * 0x5f + 3] = 0;
     aiStack_8e4[uVar9 * 0x5f + 3] = 1;
     aiStack_908[uVar9 * 0x5f + 6] = 0x101;
-    ((undefined1 *)iVar14)[0x1db] = 3;
-    iVar8 = *(int *)(iVar14 + 0x1d7);
+    STField<undefined1>(iVar14,0x1DB) = 3;
+    iVar8 = STField<int>(iVar14,0x1D7);
     aiStack_908[uVar9 * 0x5f + 7] = 3;
     aiStack_908[uVar9 * 0x5f + 8] = 0x4202;
     *(undefined2 *)(aiStack_8e4 + uVar9 * 0x5f) = 0;
@@ -688,7 +688,7 @@ int __thiscall st::fn_004EE4D0(BehPanelTy *this,STMessage *message)
       st::fn_004035AD
                 (g_cursorClass_00802A30,(uint)(byte)(&this_00->field_01AF)[(message->arg0).u32],0);
       this_00->field_0028 = 0xbfff;
-      /* ST_CALLSITE[004EE5B8]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[004EE5B8]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/BehPanelTy;pointer:/SubmarineTitans/Recovered/STMessage */
       this_00->GetMessage((STMessage *)&this_00->field_0x18);
       g_currentExceptionFrame = local_70.previous;
       return 0;

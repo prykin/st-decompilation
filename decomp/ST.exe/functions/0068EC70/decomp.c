@@ -43,7 +43,8 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
   uint local_c;
   uint local_8;
 
-  if ((this->field_0091 == 0) || (this->field_0095 + this->field_0091 <= this->field_012C)) {
+  if ((this->field_0091 == 0) || ((uint)(this->field_0095 + this->field_0091) <= this->field_012C))
+  {
     this->field_0095 = this->field_012C;
     local_88.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_88;

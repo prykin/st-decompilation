@@ -79,7 +79,7 @@ target_address	status	proposed_name	detail
 0044EDC0	disabled	STBoatC::vfunc_C4	all apply flags are 0
 0044EDE0	disabled	STBoatC::vfunc_C8	all apply flags are 0
 0044EE30	disabled	STBoatC::GetMessage	all apply flags are 0
-0045EEE0	disabled	STBoatC::vfunc_2C	all apply flags are 0
+0045EEE0	unchanged	STBoatC::sub_0045EEE0	name=unchanged
 0045F980	disabled	STBoatC::vfunc_1C	all apply flags are 0
 0045FD30	disabled	STBoatC::StopMove	all apply flags are 0
 00480600	disabled	STBoatC::vfunc_D8	all apply flags are 0
@@ -88,7 +88,7 @@ target_address	status	proposed_name	detail
 004827F0	disabled	STBoatC::ExpIsOver	all apply flags are 0
 00482A00	disabled	STBoatC::ChangeActivity	all apply flags are 0
 00483880	disabled	STBoatC::vfunc_EC	all apply flags are 0
-004838B0	disabled	STBoatC::vfunc_F8	all apply flags are 0
+004838B0	unchanged	STBoatC::sub_004838B0	name=unchanged; signature=unchanged
 004845E0	disabled	STBoatC::vfunc_28	all apply flags are 0
 00486A40	disabled	STBoatC::vfunc_78	all apply flags are 0
 00486A60	disabled	STBoatC::vfunc_7C	all apply flags are 0
@@ -126,7 +126,7 @@ target_address	status	proposed_name	detail
 004952C0	disabled	STBoatC::vfunc_120	all apply flags are 0
 00495980	disabled	DumpClassC::GetMessage	all apply flags are 0
 00497E00	disabled	STGroupBoatC::GetMessage	all apply flags are 0
-00498D20	disabled	STGroupBoatC::sub_00498D20	all apply flags are 0
+00498D20	unchanged	STGroupBoatC::sub_00498D20	name=unchanged
 004996F0	disabled	STGroupBoatC::vfunc_1C	all apply flags are 0
 00499710	disabled	STGroupBoatC::vfunc_20	all apply flags are 0
 00499730	disabled	STGroupBoatC::vfunc_24	all apply flags are 0
@@ -138,36 +138,36 @@ target_address	status	proposed_name	detail
 004AD550	disabled	STT3DSprC::vfunc_0	all apply flags are 0
 004B9FA0	disabled	TLOBaseTy::GetMessage	all apply flags are 0
 004BE0F0	disabled	TLOBaseTy::vfunc_2C	all apply flags are 0
-004BE110	disabled	TLOBaseTy::vfunc_C	all apply flags are 0
+004BE110	unchanged	TLOBaseTy::sub_004BE110	name=unchanged; signature=unchanged
 004BE140	disabled	TLOBaseTy::vfunc_F8	all apply flags are 0
-004BE160	disabled	TLOBaseTy::vfunc_C4	all apply flags are 0
+004BE160	unchanged	TLOBaseTy::sub_004BE160	name=unchanged
 004BE180	disabled	TLOBaseTy::vfunc_C8	all apply flags are 0
 004BE1A0	disabled	TLOBaseTy::vfunc_EC	all apply flags are 0
-004BE1D0	disabled	TLOBaseTy::vfunc_F0	all apply flags are 0
+004BE1D0	unchanged	TLOBaseTy::sub_004BE1D0	name=unchanged
 004BE200	disabled	TLOBaseTy::vfunc_F4	all apply flags are 0
-004BE220	disabled	TLOBaseTy::vfunc_6C	all apply flags are 0
+004BE220	unchanged	TLOBaseTy::sub_004BE220	name=unchanged
 004BE240	disabled	TLOBaseTy::vfunc_74	all apply flags are 0
 004BE290	disabled	TLOBaseTy::vfunc_70	all apply flags are 0
-004BE320	disabled	TLOBaseTy::vfunc_88	all apply flags are 0
-004BE380	disabled	TLOBaseTy::vfunc_7C	all apply flags are 0
+004BE320	unchanged	TLOBaseTy::sub_004BE320	name=unchanged
+004BE380	unchanged	TLOBaseTy::sub_004BE380	name=unchanged
 004BE3D0	disabled	TLOBaseTy::vfunc_84	all apply flags are 0
-004BE450	disabled	TLOBaseTy::vfunc_78	all apply flags are 0
+004BE450	unchanged	TLOBaseTy::sub_004BE450	name=unchanged
 004BE470	disabled	TLOBaseTy::vfunc_80	all apply flags are 0
 004BE500	disabled	TLOBaseTy::SetActivity	all apply flags are 0
-004BE6C0	disabled	TLOBaseTy::vfunc_30	all apply flags are 0
-004BEA70	disabled	TLOBaseTy::vfunc_34	all apply flags are 0
+004BE6C0	unchanged	TLOBaseTy::sub_004BE6C0	name=unchanged; signature=unchanged
+004BEA70	unchanged	TLOBaseTy::sub_004BEA70	name=unchanged
 004C21A0	disabled	TLOBaseTy::vfunc_28	all apply flags are 0
 004C2810	disabled	TLOBaseTy::vfunc_FC	all apply flags are 0
 004C2840	disabled	TLOBaseTy::vfunc_68	all apply flags are 0
-004C28B0	disabled	TLOBaseTy::vfunc_5C	all apply flags are 0
+004C28B0	unchanged	TLOBaseTy::sub_004C28B0	name=unchanged; signature=unchanged
 004C5980	disabled	TLOBaseTy::vfunc_DC	all apply flags are 0
 004C5BD0	disabled	TLOBaseTy::vfunc_E0	all apply flags are 0
 004C6A00	disabled	TLOBldMark::GetMessage	all apply flags are 0
-004CC9C0	disabled	TLOBaseTy::vfunc_108	all apply flags are 0
+004CC9C0	unchanged	TLOBaseTy::sub_004CC9C0	name=unchanged
 004CCAD0	disabled	TLOBaseTy::vfunc_10C	all apply flags are 0
 004CCC10	disabled	TLOBaseTy::vfunc_110	all apply flags are 0
-004CE0F0	disabled	TLOBaseTy::vfunc_50	all apply flags are 0
-004CF640	disabled	TLOBaseTy::vfunc_3C	all apply flags are 0
+004CE0F0	unchanged	TLOBaseTy::sub_004CE0F0	name=unchanged; signature=unchanged
+004CF640	unchanged	TLOBaseTy::sub_004CF640	name=unchanged; signature=unchanged
 004D0B90	disabled	TLOFakeTy::GetMessage	all apply flags are 0
 004D0F80	disabled	TLOFakeTy::vfunc_F8	all apply flags are 0
 004D0FA0	disabled	TLOFakeTy::vfunc_EC	all apply flags are 0
@@ -175,12 +175,12 @@ target_address	status	proposed_name	detail
 004D6360	disabled	TLOEmbryoTy::vfunc_DC	all apply flags are 0
 004D6590	disabled	TLOEmbryoTy::vfunc_E0	all apply flags are 0
 004D67B0	disabled	TLOBaseTy::SetActivity	all apply flags are 0
-004D6890	disabled	TLOEmbryoTy::vfunc_30	all apply flags are 0
-004D6930	disabled	TLOEmbryoTy::vfunc_34	all apply flags are 0
+004D6890	unchanged	TLOEmbryoTy::sub_004D6890	name=unchanged; signature=unchanged
+004D6930	unchanged	TLOEmbryoTy::sub_004D6930	name=unchanged; signature=unchanged
 004D6BE0	disabled	TLOEmbryoTy::vfunc_2C	all apply flags are 0
-004D6C00	disabled	TLOEmbryoTy::vfunc_C	all apply flags are 0
+004D6C00	unchanged	TLOEmbryoTy::sub_004D6C00	name=unchanged
 004D6C20	disabled	TLOEmbryoTy::vfunc_F8	all apply flags are 0
-004D6C50	disabled	TLOEmbryoTy::vfunc_7C	all apply flags are 0
+004D6C50	unchanged	TLOEmbryoTy::sub_004D6C50	name=unchanged
 004D6C70	disabled	TLOEmbryoTy::vfunc_C4	all apply flags are 0
 004D6C90	disabled	TLOEmbryoTy::vfunc_28	all apply flags are 0
 004D6D30	disabled	TLOEmbryoTy::vfunc_EC	all apply flags are 0
@@ -188,9 +188,9 @@ target_address	status	proposed_name	detail
 004D7010	disabled		all apply flags are 0
 004D7040	disabled		all apply flags are 0
 004D7390	disabled	TLOBaseTy::vfunc_D0	all apply flags are 0
-004DA340	disabled	TLOBaseTy::vfunc_44	all apply flags are 0
-004E3200	disabled	TLOBaseTy::vfunc_38	all apply flags are 0
-004EB600	disabled	TLOBaseTy::vfunc_48	all apply flags are 0
+004DA340	unchanged	TLOBaseTy::sub_004DA340	name=unchanged; signature=unchanged
+004E3200	unchanged	TLOBaseTy::sub_004E3200	name=unchanged; signature=unchanged
+004EB600	unchanged	TLOBaseTy::sub_004EB600	name=unchanged; signature=unchanged
 004EDF30	disabled	BehPanelTy::ShiftControls	all apply flags are 0
 004EE0A0	disabled	BehPanelTy::Update	all apply flags are 0
 004EE4D0	disabled	BehPanelTy::GetMessage	all apply flags are 0
@@ -213,6 +213,7 @@ target_address	status	proposed_name	detail
 00521490	disabled	InfocPanelTy::GetMessage	all apply flags are 0
 00522E80	disabled	IntercomPanelTy::GetMessage	all apply flags are 0
 0052BF00	disabled	MoneyTy::GetMessage	all apply flags are 0
+0052DD20	disabled	PopUpTy::GetMessage	all apply flags are 0
 00533D10	disabled	OptPanelTy::GetMessage	all apply flags are 0
 00538690	disabled	PanelTy::CreateBut	all apply flags are 0
 005389E0	disabled	PanelTy::PaintBut	all apply flags are 0
@@ -232,6 +233,7 @@ target_address	status	proposed_name	detail
 00542480	disabled	InterSystemC::CreateSystemObjects	all apply flags are 0
 00542EC0	disabled	InterSystemC::DoneSystem	all apply flags are 0
 00542F40	disabled	InterSystemC::GetMessage	all apply flags are 0
+005449B0	disabled	CursorClassTy::GetMessage	all apply flags are 0
 0054CF00	disabled	STPlaySystemC::vfunc_8	all apply flags are 0
 0054CFA0	disabled	STPlaySystemC::vfunc_14	all apply flags are 0
 0054CFC0	disabled	STPlaySystemC::InitSystem	all apply flags are 0
@@ -287,10 +289,10 @@ target_address	status	proposed_name	detail
 0057BF60	disabled	STFishC::GetMessage	all apply flags are 0
 0057DFB0	disabled	STFishC::vfunc_2C	all apply flags are 0
 0057E0A0	disabled	STDcResourcC::GetMessage	all apply flags are 0
-00580700	disabled	STDcResourcC::vfunc_30	all apply flags are 0
-00580780	disabled	STDcResourcC::vfunc_34	all apply flags are 0
-00580860	disabled	STDcResourcC::vfunc_5C	all apply flags are 0
-005808A0	disabled	STDcResourcC::vfunc_58	all apply flags are 0
+00580700	unchanged	STDcResourcC::sub_00580700	name=unchanged; signature=unchanged
+00580780	unchanged	STDcResourcC::sub_00580780	name=unchanged; signature=unchanged
+00580860	unchanged	STDcResourcC::sub_00580860	name=unchanged; signature=unchanged
+005808A0	unchanged	STDcResourcC::sub_005808A0	name=unchanged; signature=unchanged
 005808E0	disabled	STDcResourcC::vfunc_EC	all apply flags are 0
 00580F20	disabled	STDcResourcC::vfunc_11C	all apply flags are 0
 005810B0	disabled	STDcResourcC::vfunc_2C	all apply flags are 0
@@ -323,13 +325,12 @@ target_address	status	proposed_name	detail
 005B3C30	disabled	MainMenuTy::CloseButtons	all apply flags are 0
 005B4BB0	disabled	MainMenuTy::GetMessage	all apply flags are 0
 005B6220	disabled	MMObjTy::DoneMMObj	all apply flags are 0
-005B6430	disabled	MMObjTy::GetMessage	all apply flags are 0
 005B6480	disabled	MMObjTy::CloseButtons	all apply flags are 0
 005B9170	disabled	MMsgTy::CloseSprBut	all apply flags are 0
 005B9330	disabled	MMsgTy::GetMessage	all apply flags are 0
 005BC5E0	disabled	PrividerTy::GetMessage	all apply flags are 0
 005C1A90	disabled	MReportTy::GetMessage	all apply flags are 0
-005C29B0	disabled	SettMapMTy::sub_005C29B0	all apply flags are 0
+005C29B0	disabled	SettMapTy::vfunc_10	all apply flags are 0
 005C4930	disabled	SettMapTy::DoneSettMap	all apply flags are 0
 005C5130	disabled	SettMapTy::NoneSettMap	all apply flags are 0
 005C5B60	disabled	SettMapTy::CloseButtons	all apply flags are 0
@@ -355,11 +356,12 @@ target_address	status	proposed_name	detail
 005DCD90	disabled	StartSystemTy::CreateSystemObjects	all apply flags are 0
 005DCDB0	disabled	StartSystemTy::DoneSystem	all apply flags are 0
 005DCE90	disabled	StartSystemTy::GetMessage	all apply flags are 0
+005E4570	disabled	MTaskTy::GetMessage	all apply flags are 0
 005E5FB0	disabled	MTestTy::GetMessage	all apply flags are 0
 005E9830	disabled	WaitTy::CloseButtons	all apply flags are 0
 005EA680	disabled	WaitTy::GetMessage	all apply flags are 0
 005EAF10	disabled	STArtiafactC::GetMessage	all apply flags are 0
-005EBD00	disabled	STArtiafactC::vfunc_124	all apply flags are 0
+005EBD00	unchanged	STArtiafactC::sub_005EBD00	name=unchanged
 005EC510	disabled	STArtiafactC::vfunc_74	all apply flags are 0
 005EC550	disabled	STArtiafactC::vfunc_70	all apply flags are 0
 005EC620	disabled	STArtiafactC::vfunc_13C	all apply flags are 0
@@ -404,14 +406,14 @@ target_address	status	proposed_name	detail
 005F10D0	disabled	STManBasisC::GetMessage	all apply flags are 0
 005F27C0	disabled	STBHEShellC::GetMessage	all apply flags are 0
 005F5F20	disabled	STColl3C::GetMessage	all apply flags are 0
-005F6EC0	disabled	STColl3C::vfunc_78	all apply flags are 0
-005F6EE0	disabled	STColl3C::vfunc_7C	all apply flags are 0
+005F6EC0	unchanged	STColl3C::sub_005F6EC0	name=unchanged
+005F6EE0	unchanged	STColl3C::sub_005F6EE0	name=unchanged; signature=unchanged
 005FB1F0	disabled	STColl3C::vfunc_DC	all apply flags are 0
 005FB540	disabled	STColl3C::vfunc_E0	all apply flags are 0
 005FB5C0	disabled	STColl3C::vfunc_EC	all apply flags are 0
 005FB5E0	disabled	STColl3C::vfunc_F8	all apply flags are 0
 005FB640	disabled	STContainerC::GetMessage	all apply flags are 0
-005FC450	disabled	STContainerC::vfunc_124	all apply flags are 0
+005FC450	unchanged	STContainerC::sub_005FC450	name=unchanged
 005FCC70	disabled	STContainerC::vfunc_74	all apply flags are 0
 005FCCB0	disabled	STContainerC::vfunc_70	all apply flags are 0
 005FCD80	disabled	STContainerC::vfunc_12C	all apply flags are 0
@@ -426,8 +428,8 @@ target_address	status	proposed_name	detail
 00602700	disabled	STDestC::vfunc_74	all apply flags are 0
 00602740	disabled	STDestC::vfunc_70	all apply flags are 0
 00602880	disabled	STDestC::vfunc_2C	all apply flags are 0
-006033D0	disabled	STDestC::vfunc_30	all apply flags are 0
-00603470	disabled	STDestC::vfunc_34	all apply flags are 0
+006033D0	unchanged	STDestC::sub_006033D0	name=unchanged; signature=unchanged
+00603470	unchanged	STDestC::sub_00603470	name=unchanged; signature=unchanged
 00603740	disabled	STExplosion::GetMessage	all apply flags are 0
 00617640	disabled	JumpManagC::GetMessage	all apply flags are 0
 00618C00	disabled	STJumpMineC::GetMessage	all apply flags are 0
@@ -435,25 +437,25 @@ target_address	status	proposed_name	detail
 00621B50	disabled	STMineSetC::GetMessage	all apply flags are 0
 00626BC0	disabled	STMineSetC::vfunc_74	all apply flags are 0
 00626C00	disabled	STMineSetC::vfunc_70	all apply flags are 0
-00626C90	disabled	STMineSetC::vfunc_30	all apply flags are 0
-00626D70	disabled	STMineSetC::vfunc_34	all apply flags are 0
-00626E60	disabled	STMineSetC::vfunc_64	all apply flags are 0
-00626EA0	disabled	STMineSetC::vfunc_6C	all apply flags are 0
+00626C90	unchanged	STMineSetC::sub_00626C90	name=unchanged; signature=unchanged
+00626D70	unchanged	STMineSetC::sub_00626D70	name=unchanged; signature=unchanged
+00626E60	unchanged	STMineSetC::sub_00626E60	name=unchanged; signature=unchanged
+00626EA0	unchanged	STMineSetC::sub_00626EA0	name=unchanged
 00626EC0	disabled	STMineSetC::vfunc_2C	all apply flags are 0
 00626FA0	disabled	STMineSetC::vfunc_EC	all apply flags are 0
-00626FC0	disabled	STMineSetC::vfunc_5C	all apply flags are 0
-00627050	disabled	STMineSetC::vfunc_58	all apply flags are 0
+00626FC0	unchanged	STMineSetC::sub_00626FC0	name=unchanged; signature=unchanged
+00627050	unchanged	STMineSetC::sub_00627050	name=unchanged; signature=unchanged
 00627200	disabled	STMineSetC::vfunc_E0	all apply flags are 0
 00627250	disabled	STMineSetC::vfunc_F8	all apply flags are 0
 00627280	disabled	STMineSetC::vfunc_DC	all apply flags are 0
-00627A60	disabled	STMineSetC::vfunc_F0	all apply flags are 0
-00627AA0	disabled	STMineSetC::vfunc_F4	all apply flags are 0
-00627E80	disabled	STMineSetC::vfunc_7C	all apply flags are 0
+00627A60	unchanged	STMineSetC::sub_00627A60	name=unchanged; signature=unchanged
+00627AA0	unchanged	STMineSetC::sub_00627AA0	name=unchanged
+00627E80	unchanged	STMineSetC::sub_00627E80	name=unchanged; signature=unchanged
 0062CCA0	disabled	STManRub3C::GetMessage	all apply flags are 0
 0062E740	disabled	STRubbishC::GetMessage	all apply flags are 0
 00630430	disabled	STManRuinC::GetMessage	all apply flags are 0
 006406D0	disabled	STTorpC::GetMessage	all apply flags are 0
-00643E20	disabled	STTorpC::vfunc_D8	all apply flags are 0
+00643E20	unchanged	STTorpC::sub_00643E20	name=unchanged
 006461E0	disabled	STVolcanoC::GetMessage	all apply flags are 0
 00647B40	disabled		all apply flags are 0
 00647B60	disabled		all apply flags are 0
@@ -476,7 +478,7 @@ target_address	status	proposed_name	detail
 0067C7E0	disabled	AiPlrClassTy::GetMessage	all apply flags are 0
 00690B90	disabled	AiTactClassTy::GetMessage	all apply flags are 0
 006E4FA0	disabled		all apply flags are 0
-006E5150	disabled	STAppC::sub_006E5150	all apply flags are 0
+006E5150	unchanged	AppClassTy::sub_006E5150	name=unchanged
 006E52D0	disabled		all apply flags are 0
 006E5670	disabled		all apply flags are 0
 006E5690	disabled		all apply flags are 0

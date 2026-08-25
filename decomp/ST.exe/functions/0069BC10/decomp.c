@@ -27,9 +27,9 @@ FUN_0069bc10(void *this,int param_1,int *param_2,int param_3,int param_4,int *pa
     local_1c = 1;
     do {
       iVar5 = param_1 + *param_2 * 0x40;
-      iVar2 = iVar2 + *(int *)(iVar5 + 0x2c);
-      iVar7 = (*(int *)(iVar5 + 0x38) - *(int *)(iVar5 + 0x30)) / 2 + *(int *)(iVar5 + 0x30);
-      iVar5 = (*(int *)(iVar5 + 0x3c) - *(int *)(iVar5 + 0x34)) / 2 + *(int *)(iVar5 + 0x34);
+      iVar2 = iVar2 + STField<int>(iVar5,0x2C);
+      iVar7 = (STField<int>(iVar5,0x38) - STField<int>(iVar5,0x30)) / 2 + STField<int>(iVar5,0x30);
+      iVar5 = (STField<int>(iVar5,0x3C) - STField<int>(iVar5,0x34)) / 2 + STField<int>(iVar5,0x34);
       if (local_1c < param_3) {
         local_14 = param_3 - local_1c;
         local_8 = param_2;
@@ -37,10 +37,10 @@ FUN_0069bc10(void *this,int param_1,int *param_2,int param_3,int param_4,int *pa
           local_8 = local_8 + 1;
           iVar6 = *local_8 * 0x40 + param_1;
           iVar4 = FUN_006acf90(iVar7,iVar5,
-                               (*(int *)(iVar6 + 0x38) - *(int *)(iVar6 + 0x30)) / 2 +
-                               *(int *)(iVar6 + 0x30),
-                               (*(int *)(iVar6 + 0x3c) - *(int *)(iVar6 + 0x34)) / 2 +
-                               *(int *)(iVar6 + 0x34));
+                               (STField<int>(iVar6,0x38) - STField<int>(iVar6,0x30)) / 2 +
+                               STField<int>(iVar6,0x30),
+                               (STField<int>(iVar6,0x3C) - STField<int>(iVar6,0x34)) / 2 +
+                               STField<int>(iVar6,0x34));
           if (iVar4 < local_c) {
             local_c = iVar4;
           }

@@ -31,7 +31,7 @@ CGenerate::sub_0069B400(CGenerate *this,int param_1,int param_2,int param_3,int 
       auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
       if (0 < iVar6) {
         iVar4 = (this->field_5833 * param_2 + this->field_582F * local_c + param_1) * 2;
-        auto param_5_after_write = iVar6; /* compiler stack-slot lifetime split */
+        int param_5_after_write = iVar6; /* compiler stack-slot lifetime split */
         do {
           if (0 < iVar3) {
             psVar7 = (short *)((int)this->field_584F + iVar4);

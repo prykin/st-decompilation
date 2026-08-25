@@ -28,6 +28,29 @@ void __thiscall st::fn_005EBCB0(STArtiafactC *this)
   return;
 }
 
+// 005EBD00 STArtiafactC::sub_005EBD00
+#line 4 "decomp/ST.exe/functions/005EBD00/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079C260
+   Entries: 0040306C
+   Slots: 0x124
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:73 calls=4
+   caller_families=2 receiver_extent=578/1143; unique_owner_for_target */
+
+bool __thiscall st::fn_005EBD00(STArtiafactC *this,int param_1)
+
+{
+  int iVar1;
+
+  iVar1 = st::machine_word_boundary_cast<int>(this->field_023E - param_1);
+  this->field_023E = iVar1;
+  if (iVar1 < 1) {
+    this->field_023E = 0;
+  }
+  return this->field_023E == 0;
+}
+
 // 005EC620 STArtiafactC::FUN_005ec620
 #line 4 "decomp/ST.exe/functions/005EC620/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
@@ -115,7 +138,7 @@ void __thiscall st::fn_005F0D00(STArtiafactC *this)
       local_24.arg1.words.low = (word)(byte)this->field_030E;
     }
     local_24.id = 0x5ddc;
-    /* ST_CALLSITE[005F0D68]: CALL dword ptr [EAX] */
+    /* ST_CALLSITE[005F0D68]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;

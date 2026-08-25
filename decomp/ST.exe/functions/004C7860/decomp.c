@@ -130,7 +130,7 @@ LAB_004c796d:
     break;
   case 4:
     /* ST_CALLSITE[004C7A7A]: CALL dword ptr [EDX + 0x7c] */
-    iVar4 = this->vfunc_7C();
+    iVar4 = this->sub_004BE380();
     if (iVar4 == 100) {
       return 0;
     }

@@ -39,11 +39,11 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar8 = *(int *)(pbVar5 + local_18 * 4 + 0x459);
       if (iVar8 != 0) {
-        iVar4 = (int)*(short *)(iVar8 + 8);
+        iVar4 = (int)STField<short>(iVar8,0x8);
         psVar6 = (short *)(param_1 +
-                          ((int)*(short *)(iVar8 + 6) * (int)*(short *)pbVar5 + iVar4 * iVar3 +
-                          (int)*(short *)(iVar8 + 4)) * 2);
-        if (*(short *)(iVar8 + 8) == 0) {
+                          ((int)STField<short>(iVar8,0x6) * (int)*(short *)pbVar5 + iVar4 * iVar3 +
+                          (int)STField<short>(iVar8,0x4)) * 2);
+        if (STField<short>(iVar8,0x8) == 0) {
           *psVar6 = -1;
           psVar6[1] = -1;
           psVar6[*STField<short *>(this,0xC)] = -1;
@@ -65,7 +65,7 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
           if (local_14 < (int)(uint)((byte *)iVar8)[0x48]) {
             local_14 = (uint)((byte *)iVar8)[0x48] - local_14;
             do {
-              uVar13 = *(uint *)(iVar8 + 0x2c);
+              uVar13 = STField<uint>(iVar8,0x2C);
               if ((uVar11 & uVar13) != 0) {
                 if ((uVar12 & uVar13) == 0) {
                   sVar2 = (-(ushort)((uVar13 & uVar10) != 0) & 0x3fff) + 0xbfff;
@@ -75,7 +75,7 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
                 }
                 *psVar6 = sVar2;
               }
-              uVar13 = *(uint *)(iVar8 + 0x30);
+              uVar13 = STField<uint>(iVar8,0x30);
               if ((uVar11 & uVar13) != 0) {
                 if ((uVar12 & uVar13) == 0) {
                   sVar2 = (-(ushort)((uVar13 & uVar10) != 0) & 0x3fff) + 0xbfff;
@@ -85,7 +85,7 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
                 }
                 psVar6[1] = sVar2;
               }
-              uVar13 = *(uint *)(iVar8 + 0x34);
+              uVar13 = STField<uint>(iVar8,0x34);
               if ((uVar11 & uVar13) != 0) {
                 if ((uVar12 & uVar13) == 0) {
                   sVar2 = (-(ushort)((uVar13 & uVar10) != 0) & 0x3fff) + 0xbfff;
@@ -95,7 +95,7 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
                 }
                 psVar6[*STField<short *>(this,0xC)] = sVar2;
               }
-              uVar13 = *(uint *)(iVar8 + 0x38);
+              uVar13 = STField<uint>(iVar8,0x38);
               if ((uVar11 & uVar13) != 0) {
                 if ((uVar12 & uVar13) == 0) {
                   sVar2 = (-(ushort)((uVar13 & uVar10) != 0) & 0x3fff) + 0xbfff;
@@ -119,30 +119,30 @@ void __thiscall CGenerate::sub_0069ADA0(CGenerate *this,int param_1,int param_2)
             else {
               uVar13 = uVar12 << 1;
             }
-            if ((uVar13 & *(uint *)(iVar8 + 0x2c)) == 0) {
-              sVar2 = (-(ushort)((*(uint *)(iVar8 + 0x2c) & 1) != 0) & 0x3fff) + 0xbfff;
+            if ((uVar13 & STField<uint>(iVar8,0x2C)) == 0) {
+              sVar2 = (-(ushort)((STField<uint>(iVar8,0x2C) & 1) != 0) & 0x3fff) + 0xbfff;
             }
             else {
               sVar2 = -1;
             }
             *psVar6 = sVar2;
-            if ((uVar13 & *(uint *)(iVar8 + 0x30)) == 0) {
-              sVar2 = (-(ushort)((*(uint *)(iVar8 + 0x30) & 1) != 0) & 0x3fff) + 0xbfff;
+            if ((uVar13 & STField<uint>(iVar8,0x30)) == 0) {
+              sVar2 = (-(ushort)((STField<uint>(iVar8,0x30) & 1) != 0) & 0x3fff) + 0xbfff;
             }
             else {
               sVar2 = -1;
             }
             psVar6[1] = sVar2;
-            if ((uVar13 & *(uint *)(iVar8 + 0x34)) == 0) {
-              sVar2 = (-(ushort)((*(uint *)(iVar8 + 0x34) & 1) != 0) & 0x3fff) + 0xbfff;
+            if ((uVar13 & STField<uint>(iVar8,0x34)) == 0) {
+              sVar2 = (-(ushort)((STField<uint>(iVar8,0x34) & 1) != 0) & 0x3fff) + 0xbfff;
             }
             else {
               sVar2 = -1;
             }
             psVar6[*STField<short *>(this,0xC)] = sVar2;
-            if ((uVar13 & *(uint *)(iVar8 + 0x38)) == 0) {
+            if ((uVar13 & STField<uint>(iVar8,0x38)) == 0) {
               psVar6[*STField<short *>(this,0xC) + 1] =
-                   (-(ushort)((*(uint *)(iVar8 + 0x38) & 1) != 0) & 0x3fff) + 0xbfff;
+                   (-(ushort)((STField<uint>(iVar8,0x38) & 1) != 0) & 0x3fff) + 0xbfff;
             }
             else {
               psVar6[*STField<short *>(this,0xC) + 1] = -1;

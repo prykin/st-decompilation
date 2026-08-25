@@ -296,8 +296,8 @@ LAB_0060f230:
         *(undefined4 *)((int)aiStackY_108 + iVar11 + 0x14) = 0;
         *(undefined4 *)((int)aiStackY_108 + iVar11 + 0x10) = 1;
         *(int *)((int)aiStackY_108 + iVar11 + 0xc) = iVar3;
-        *(int *)((int)aiStackY_108 + iVar11 + 8) = (int)*(short *)(iVar3 + 0x22);
-        *(int *)((int)aiStackY_108 + iVar11 + 4) = (int)*(short *)(iVar3 + 6);
+        *(int *)((int)aiStackY_108 + iVar11 + 8) = (int)STField<short>(iVar3,0x22);
+        *(int *)((int)aiStackY_108 + iVar11 + 4) = (int)STField<short>(iVar3,0x6);
         *(undefined4 *)((int)aiStackY_108 + iVar11) = 0x60f549;
         uVar5 = thunk_FUN_0060f940(*(int *)((int)aiStackY_108 + iVar11 + 4),
                                    *(int *)((int)aiStackY_108 + iVar11 + 8),
@@ -347,8 +347,8 @@ LAB_0060f230:
       *(undefined4 *)((int)aiStackY_108 + iVar11 + 0x14) = 0;
       *(undefined4 *)((int)aiStackY_108 + iVar11 + 0x10) = 1;
       *(int *)((int)aiStackY_108 + iVar11 + 0xc) = iVar3;
-      *(int *)((int)aiStackY_108 + iVar11 + 8) = (int)*(short *)(iVar3 + 0x22);
-      *(int *)((int)aiStackY_108 + iVar11 + 4) = (int)*(short *)(iVar3 + 6);
+      *(int *)((int)aiStackY_108 + iVar11 + 8) = (int)STField<short>(iVar3,0x22);
+      *(int *)((int)aiStackY_108 + iVar11 + 4) = (int)STField<short>(iVar3,0x6);
       *(undefined4 *)((int)aiStackY_108 + iVar11) = 0x60f609;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar5 = thunk_FUN_0060f940(*(int *)((int)aiStackY_108 + iVar11 + 4),
@@ -381,11 +381,11 @@ LAB_0060f230:
                          *(int **)(&stack0xffffff30 + iVar11),*(int **)(&stack0xffffff34 + iVar11));
       iVar3 = *(int *)puVar1;
       *(int *)(&stack0xffffff34 + iVar11) =
-           (int)*(short *)&this->field_0x1f3 % 200 + *(short *)(iVar3 + 0x20) * 200;
+           (int)*(short *)&this->field_0x1f3 % 200 + STField<short>(iVar3,0x20) * 200;
       *(int *)(&stack0xffffff30 + iVar11) =
-           *(short *)(iVar3 + 0x1e) * 0xc9 + (int)*(short *)&this->field_0x1f1 % 0xc9;
+           STField<short>(iVar3,0x1E) * 0xc9 + (int)*(short *)&this->field_0x1f1 % 0xc9;
       *(int *)((int)local_b8 + iVar11 + -0x1c) =
-           *(short *)(iVar3 + 0x1c) * 0xc9 + (int)*(short *)&this->field_0x1ef % 0xc9;
+           STField<short>(iVar3,0x1C) * 0xc9 + (int)*(short *)&this->field_0x1ef % 0xc9;
       *(undefined4 *)((int)local_b8 + iVar11 + -0x20) = local_70;
       *(undefined4 *)(&stack0xffffff24 + iVar11) = local_44;
       *(undefined4 *)((int)aiStackY_108 + iVar11 + 0x28) = local_30;

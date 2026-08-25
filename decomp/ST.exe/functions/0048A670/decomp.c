@@ -27,7 +27,7 @@ void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this)
   switch(this->field_06F7) {
   case CASE_1:
   case CASE_20:
-    this->field_0219 = 0x5a;
+    this->field_0219 = (STParticleC *)0x5a;
     break;
   case CASE_2:
   case CASE_5:
@@ -44,13 +44,13 @@ void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this)
   case CASE_26:
   case CASE_27:
   case CASE_28:
-    this->field_0219 = 0x8c;
+    this->field_0219 = (STParticleC *)0x8c;
     break;
   case CASE_3:
   case CASE_4:
   case CASE_B:
   case CASE_F:
-    this->field_0219 = 0xbe;
+    this->field_0219 = (STParticleC *)0xbe;
     break;
   case CASE_7:
   case CASE_8:
@@ -70,13 +70,13 @@ void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this)
   case CASE_A:
   case CASE_17:
   case CASE_22:
-    this->field_0219 = 0xfa;
+    this->field_0219 = (STParticleC *)0xfa;
     break;
   case CASE_16:
-    this->field_0219 = 0xe6;
+    this->field_0219 = (STParticleC *)0xe6;
     break;
   case CASE_23:
-    this->field_0219 = 0xaa;
+    this->field_0219 = (STParticleC *)0xaa;
     break;
   default:
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x46b8,0,0,"%s",

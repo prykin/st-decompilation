@@ -75,16 +75,16 @@ STAllPlayersC::GetCamPoint
               /* ST_CALLSITE[0043AC52]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
               STFishC::sub_004162B0
                         ((STFishC *)pSVar5,&param_1,(short *)&local_8,(short *)((int)&param_4 + 2));
-              iVar3 = FUN_006acf90((int)param_1,(int)(short)local_8,
-                                   (int)(short)((int)(short)iVar8 / (int)(uint)uVar6),
-                                   (int)(short)((int)(short)iVar9 / (int)(uint)uVar6));
+              iVar3 = FUN_006acf90((int)param_1,(short)local_8,
+                                   (short)((short)iVar8 / (int)(uint)uVar6),
+                                   (short)((short)iVar9 / (int)(uint)uVar6));
               bVar10 = (ushort)iVar3 < (ushort)local_14;
               if (bVar10) {
                 if (param_5 != nullptr) {
                   *param_5 = (int)param_1;
                 }
                 if (param_6 != nullptr) {
-                  *param_6 = (int)(short)local_8;
+                  *param_6 = (short)local_8;
                 }
                 if (param_7 != nullptr) {
                   *param_7 = (int)STPiece<2,2>(param_4);
@@ -136,7 +136,7 @@ LAB_0043acdb:
     *param_5 = (int)param_1;
   }
   if (param_6 != nullptr) {
-    *param_6 = (int)(short)local_8;
+    *param_6 = (short)local_8;
   }
   if (param_7 != nullptr) {
     *param_7 = (int)STPiece<2,2>(param_4);

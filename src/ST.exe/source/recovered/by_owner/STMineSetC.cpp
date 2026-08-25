@@ -220,9 +220,9 @@ byte __thiscall st::fn_006226C0(STMineSetC *this,uint param_1,int param_2)
             (st::fn_00403F53
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                         (int)this->field_0047,(int)this->field_0049,&param_2,(int *)&local_8),
-            -1 < iVar4)) && (iVar4 < 5)) && ((-1 < param_2 && (param_2 < (int)pVVar2->field_0030))))
-         && ((iVar4 = (int)&local_8->vtable + g_centeredOffsets5[iVar4], -1 < iVar4 &&
-             ((iVar4 < pVVar2->field_0034 && (pVVar2->field_004C != nullptr)))))) &&
+            -1 < iVar4)) && (iVar4 < 5)) && ((-1 < param_2 && (param_2 < pVVar2->field_0030)))) &&
+         ((iVar4 = (int)&local_8->vtable + g_centeredOffsets5[iVar4], -1 < iVar4 &&
+          ((iVar4 < pVVar2->field_0034 && (pVVar2->field_004C != nullptr)))))) &&
         (pVVar2->field_004C[param_2 + iVar4 * pVVar2->field_0030] == 0)))))))) {
     param_1 = 0;
   }
@@ -361,9 +361,9 @@ undefined4 __thiscall st::fn_00622BA0(STMineSetC *this)
   if ((((-1 < sVar6) && (sVar7 = this->field_0049, -1 < sVar7)) &&
       (sVar8 = this->field_004B, -1 < sVar8)) &&
      (((sVar6 < g_worldGrid.sizeX && (sVar7 < g_worldGrid.sizeY)) && (sVar8 < 5)))) {
-    this->field_003A = *(short *)&this->field_0282;
-    this->field_003C = *(short *)&this->field_0286;
-    this->field_003E = *(short *)&this->field_028A;
+    this->field_003A = (short)this->field_0282;
+    this->field_003C = (short)this->field_0286;
+    this->field_003E = (short)this->field_028A;
     if (this->field_0313 != '\0') {
       if (((-1 < sVar6) && (sVar6 < g_worldGrid.sizeX)) &&
          (((-1 < sVar7 &&
@@ -441,7 +441,7 @@ undefined4 __thiscall st::fn_006239A0(STMineSetC *this)
     }
     return local_8;
   case CASE_2:
-    if (g_playSystem_00802A38->field_00E4 < this->field_030F) {
+    if (g_playSystem_00802A38->field_00E4 < (uint)this->field_030F) {
       return 0;
     }
     if (this->field_0353 == '\0') {
@@ -468,10 +468,10 @@ undefined4 __thiscall st::fn_006239A0(STMineSetC *this)
       }
     }
     this->field_02AE = CASE_3;
-    this->field_030F = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 + 7);
+    this->field_030F = st::machine_word_boundary_cast<undefined4>(g_playSystem_00802A38->field_00E4 + 7);
     return local_8;
   case CASE_3:
-    if (g_playSystem_00802A38->field_00E4 < this->field_030F) goto switchD_006239c1_caseD_4;
+    if (g_playSystem_00802A38->field_00E4 < (uint)this->field_030F) goto switchD_006239c1_caseD_4;
     /* ST_CALLSITE[00623B3B]: CALL 0x00405c5e; direct=00405C5E STMineSetC::sub_00625730 */
     st::fn_00405C5E(this);
     st::fn_004050F1(this);
@@ -535,7 +535,7 @@ switchD_006239c1_caseD_4:
       st::fn_00401064((STT3DSprC *)&this->field_01D5,'\n',this->field_02E1);
       /* ST_CALLSITE[00623CB9]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       st::fn_004030BC((STT3DSprC *)&this->field_01D5,'\n');
-      this->field_02E1 = st::machine_word_boundary_cast<undefined4>(this->field_02E1 + 1);
+      this->field_02E1 = st::machine_word_boundary_cast<uint>(this->field_02E1 + 1);
     }
   }
   uVar1 = this->field_02CE;
@@ -576,10 +576,9 @@ LAB_00623d08:
       lVar6 = st::fn_0072E288();
       /* ST_CALLSITE[00623E05]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
       st::fn_00403F53(this_00,this_00->field_010C,(int)lVar6,iVar5,piVar7,piVar8);
-      if ((((-1 < iVar3) &&
-           (((iVar3 < 5 && (-1 < local_18)) && (local_18 < (int)this_00->field_0030)))) &&
-          (((local_1c = g_centeredOffsets5[iVar3] + local_1c, -1 < local_1c &&
-            (local_1c < this_00->field_0034)) && (this_00->field_004C != nullptr)))) &&
+      if ((((-1 < iVar3) && (((iVar3 < 5 && (-1 < local_18)) && (local_18 < this_00->field_0030))))
+          && (((local_1c = g_centeredOffsets5[iVar3] + local_1c, -1 < local_1c &&
+               (local_1c < this_00->field_0034)) && (this_00->field_004C != nullptr)))) &&
          (this_00->field_004C[local_18 + local_1c * this_00->field_0030] == 0)) {
         if (this->field_02E9 == '\0') {
           return local_8;
@@ -646,7 +645,7 @@ st::fn_00624920
     *param_2 = this->field_02C2;
     *param_3 = this->field_02C6;
     *param_4 = this->field_02CA;
-    if (g_playSystem_00802A38->field_00E4 < this->field_030F) {
+    if (g_playSystem_00802A38->field_00E4 < (uint)this->field_030F) {
       return 1;
     }
     SVar2 = this->field_02AD;
@@ -758,7 +757,7 @@ st::fn_00624920
     }
     else {
       puVar13 = (undefined *)
-                (int)(short)(((short)(iVar11 / 200) + sVar14) -
+                (short)(((short)(iVar11 / 200) + sVar14) -
                             (short)((longlong)iVar11 * 0x51eb851f >> 0x3f));
     }
     if (puVar13 != (undefined *)(int)this->field_004B) {
@@ -1027,7 +1026,7 @@ LAB_006259bf:
                                    0xffff,*(int *)(&DAT_007d04d0 + (uint)this->field_02AD * 4),0x110
                                   );
                 if ((this_00->value_20 == 1000) || (this_00->value_20 == 0x14)) {
-                  this->field_0241 = *(undefined4 *)&this_00->field_0x18;
+                  this->field_0241 = *(int *)&this_00->field_0x18;
                 }
                 if (g_sndUnderAttMeneg_00811798 != nullptr) {
                   /* ST_CALLSITE[00625AB5]: CALL dword ptr [EDX + 0x2c] */
@@ -1138,7 +1137,7 @@ LAB_00625d60:
                     STGridAt3D(g_worldGrid, sVar12, sVar20, sVar19).objects[0];
           if (pSVar16 == nullptr) goto LAB_00625d60;
           /* ST_CALLSITE[00625CE3]: CALL dword ptr [EAX + 0xf0] */
-          iVar6 = pSVar16->vfunc_F0();
+          iVar6 = pSVar16->sub_00627A60();
           if (iVar6 != 0) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             if (in_stack_00000010 != 0) {
@@ -1177,7 +1176,7 @@ LAB_00625d60:
             if (((uint)pSVar16->field_0024 < 8) &&
                ((g_playSystem_00802A38 == nullptr ||
                 (g_bulkInitializedRecords_008087C7[pSVar16->field_0024].field_0022 < 8)))) {
-              bVar1 = *(byte *)&pSVar16->field_0024;
+              bVar1 = (byte)pSVar16->field_0024;
               bVar2 = (byte)this->field_0262;
               if (DAT_00808a8f == '\0') {
                 if (bVar1 == bVar2) {
@@ -1278,7 +1277,149 @@ st::fn_00626B50(STMineSetC *this,STMineSetC_sub_00626B50_param_1Enum param_1)
   return;
 }
 
-// 00626EA0 STMineSetC::FUN_00626ea0
+// 00626C90 STMineSetC::sub_00626C90
+#line 4 "decomp/ST.exe/functions/00626C90/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079CEFC
+   Entries: 004038B4
+   Slots: 0x30
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:12 calls=8
+   caller_families=2 receiver_extent=690/1456; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=8; caller_families=2;
+   owner_type=/STMineSetC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only
+
+   [STSwitchEnumApplier] Switch target field_02AE uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+
+void __thiscall st::fn_00626C90(STMineSetC *this,char *param_1)
+
+{
+  char cVar1;
+  byte bVar2;
+  uint uVar3;
+  if (this->field_02AD == CASE_2) {
+    *param_1 = ((this->field_0262 != (uint)DAT_0080874d) - 1U & 0xfe) + 3;
+  }
+  else {
+    *param_1 = '\x04';
+  }
+  cVar1 = (char)this->field_021D;
+  param_1[2] = '\x01';
+  param_1[1] = cVar1;
+  /* ST_CALLSITE[00626CD7]: CALL dword ptr [EAX + 0x2c] */
+  uVar3 = this->vfunc_2C();
+  *(undefined4 *)(param_1 + 3) = uVar3;
+  /* ST_CALLSITE[00626CE7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
+  bVar2 = st::fn_004049B7((char)this->field_0024);
+  param_1[7] = bVar2;
+  *(uint *)(param_1 + 8) = this->field_0018;
+  st::fn_0072E340(param_1 + 0xc,&this->field_028E,0xe);
+  param_1[0x1b] = 'd';
+  param_1[0x2a] = '\0';
+  param_1[0x2b] = '\0';
+  param_1[0x2c] = '\0';
+  param_1[0x2d] = '\0';
+  param_1[0x2e] = '\0';
+  param_1[0x2e - this->field_004B] = '\x01';
+  if (this->field_02AE != CASE_4) {
+    param_1[0x1d] = '\x01';
+  }
+  return;
+}
+
+// 00626D70 STMineSetC::sub_00626D70
+#line 4 "decomp/ST.exe/functions/00626D70/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079CEFC
+   Entries: 00403DFA
+   Slots: 0x34
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:13 calls=7
+   caller_families=2 receiver_extent=867/1456; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=7; caller_families=2;
+   owner_type=/STMineSetC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only
+
+   [STSwitchEnumApplier] Switch target field_02AE uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+
+void __thiscall
+st::fn_00626D70(STMineSetC *this,RecoveredRecord_STMineSetC_00626D70 *param_1)
+
+{
+  byte uVar1;
+  byte bVar2;
+  uint uVar3;
+  int iVar4;
+
+  /* ST_CALLSITE[00626D79]: CALL dword ptr [EAX + 0x2c] */
+  uVar3 = this->vfunc_2C();
+  *(undefined4 *)param_1 = uVar3;
+  /* ST_CALLSITE[00626D8B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
+  bVar2 = st::fn_004049B7((char)this->field_0024);
+  param_1->field_0x4 = bVar2;
+  if (this->field_02AD == CASE_2) {
+    if (this->field_0262 == (uint)DAT_0080874d) {
+      param_1->field_0005 = 1;
+    }
+    else {
+      param_1->field_0005 = 3;
+    }
+    param_1->field_0009 = 0x4c;
+    param_1->field_000F = this->field_02AE != CASE_4;
+  }
+  else {
+    param_1->field_0005 = 4;
+  }
+  if (this->field_02AD == CASE_3) {
+    iVar4 = ((this->field_035F - g_playSystem_00802A38->field_00E4) + 0x1194) * 0x28;
+    param_1[3].field_0x4 =
+         ((char)(iVar4 / 0x1194) + (char)(iVar4 >> 0x1f)) -
+         (char)((longlong)iVar4 * 0x7482296b >> 0x3f);
+  }
+  uVar1 = *(undefined1 *)&this->field_021D;
+  param_1->field_0006 = 1;
+  param_1->field_0x8 = uVar1;
+  if (this->field_02AE != CASE_4) {
+    param_1->field_0007 = 1;
+  }
+  return;
+}
+
+// 00626E60 STMineSetC::sub_00626E60
+#line 4 "decomp/ST.exe/functions/00626E60/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079CEFC
+   Entries: 00403CC9
+   Slots: 0x64
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:25 calls=3
+   caller_families=2 receiver_extent=838/1456; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=3; caller_families=2;
+   owner_type=/STMineSetC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only */
+
+void __thiscall st::fn_00626E60(STMineSetC *this,int param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+
+  uVar2 = 1;
+  iVar1 = 0;
+  do {
+    *(bool *)(iVar1 + param_1) = (this->field_0342 & uVar2) != 0;
+    uVar2 = uVar2 << 1;
+    iVar1 = iVar1 + 1;
+  } while (iVar1 < 6);
+  return;
+}
+
+// 00626EA0 STMineSetC::sub_00626EA0
 #line 4 "decomp/ST.exe/functions/00626EA0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079CEFC
@@ -1308,6 +1449,84 @@ dword __thiscall st::fn_00626FA0(STMineSetC *this)
 
 {
   return (uint)(this->field_021D == 0);
+}
+
+// 00626FC0 STMineSetC::sub_00626FC0
+#line 4 "decomp/ST.exe/functions/00626FC0/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079CEFC
+   Entries: 0040358F
+   Slots: 0x5C
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:23 calls=3
+   caller_families=2 receiver_extent=690/1456; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=3; caller_families=2;
+   owner_type=/STMineSetC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only
+
+   [STSwitchEnumApplier] Switch target field_02AE uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+
+void __thiscall st::fn_00626FC0(STMineSetC *this,char *param_1)
+
+{
+  byte bVar1;
+  uint uVar2;
+  if (this->field_02AE == CASE_4) {
+    *param_1 = '\x04';
+  }
+  else {
+    *param_1 = ((this->field_0262 != (uint)DAT_0080874d) - 1U & 0xfe) + 3;
+  }
+  param_1[1] = '\x01';
+  /* ST_CALLSITE[00626FFE]: CALL dword ptr [EDX + 0x2c] */
+  uVar2 = this->vfunc_2C();
+  *(undefined4 *)(param_1 + 2) = uVar2;
+  /* ST_CALLSITE[0062700E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
+  bVar1 = st::fn_004049B7((char)this->field_0024);
+  param_1[6] = bVar1;
+  *(uint *)(param_1 + 7) = this->field_0018;
+  return;
+}
+
+// 00627050 STMineSetC::sub_00627050
+#line 4 "decomp/ST.exe/functions/00627050/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079CEFC
+   Entries: 0040529A
+   Slots: 0x58
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:22 calls=5
+   caller_families=2 receiver_extent=690/1456; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=5; caller_families=2;
+   owner_type=/STMineSetC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only
+
+   [STSwitchEnumApplier] Switch target field_02AE uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+
+void __thiscall st::fn_00627050(STMineSetC *this,char *param_1)
+
+{
+  byte bVar1;
+  uint uVar2;
+  if (this->field_02AE == CASE_4) {
+    *param_1 = '\x04';
+  }
+  else {
+    *param_1 = ((this->field_0262 != (uint)DAT_0080874d) - 1U & 0xfe) + 3;
+  }
+  param_1[1] = '\x01';
+  /* ST_CALLSITE[0062708E]: CALL dword ptr [EDX + 0x2c] */
+  uVar2 = this->vfunc_2C();
+  *(undefined4 *)(param_1 + 2) = uVar2;
+  /* ST_CALLSITE[0062709E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
+  bVar1 = st::fn_004049B7((char)this->field_0024);
+  param_1[6] = bVar1;
+  *(uint *)(param_1 + 7) = this->field_0018;
+  return;
 }
 
 // 00627400 STMineSetC::sub_00627400
@@ -1348,7 +1567,7 @@ undefined4 __thiscall st::fn_00627400(STMineSetC *this,undefined4 param_1)
     }
   }
   else {
-    if (this->field_0315 < g_playSystem_00802A38->field_00E4) {
+    if ((uint)this->field_0315 < g_playSystem_00802A38->field_00E4) {
       st::fn_0040525E(this);
       return this->field_02AE;
     }
@@ -1366,5 +1585,182 @@ undefined4 __thiscall st::fn_00627400(STMineSetC *this,undefined4 param_1)
     }
   }
   return param_1;
+}
+
+// 00627A60 STMineSetC::sub_00627A60
+#line 4 "decomp/ST.exe/functions/00627A60/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079CEFC
+   Entries: 00404B88
+   Slots: 0xF0
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:60 calls=7
+   caller_families=4 receiver_extent=690/1456; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=7; caller_families=4;
+   owner_type=/STMineSetC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only */
+
+undefined4 __thiscall st::fn_00627A60(STMineSetC *this)
+
+{
+  STMineSetC_field_02AEState SVar1;
+
+  SVar1 = this->field_02AE;
+  if ((((SVar1 != CASE_2) && (SVar1 != CASE_3)) && (SVar1 != CASE_4)) && (SVar1 != CASE_5)) {
+    return 1;
+  }
+  return 0;
+}
+
+// 00627AA0 STMineSetC::sub_00627AA0
+#line 4 "decomp/ST.exe/functions/00627AA0/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079CEFC
+   Entries: 00405A83
+   Slots: 0xF4
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:61 calls=7
+   caller_families=4 receiver_extent=690/1456; unique_owner_for_target
+
+   [STSwitchEnumApplier] Switch target field_02AD uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02ADState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
+
+   [STSwitchEnumApplier] Switch target field_02AE uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+
+bool __thiscall st::fn_00627AA0(STMineSetC *this,uint param_1)
+
+{
+  byte bVar1;
+  byte bVar2;
+  STMineSetC_field_02AEState SVar3;
+  int local_EAX_513;
+  int iVar3;
+  int iVar4;
+  uint uVar5;
+  bool bVar6;
+
+  SVar3 = this->field_02AE;
+  if (SVar3 == CASE_2) {
+    return false;
+  }
+  if (SVar3 == CASE_3) {
+    return false;
+  }
+  if (SVar3 == CASE_4) {
+    return false;
+  }
+  if (SVar3 == CASE_5) {
+    return false;
+  }
+  if (7 < param_1) {
+    return false;
+  }
+  if ((g_playSystem_00802A38 != nullptr) &&
+     (7 < g_bulkInitializedRecords_008087C7[param_1].field_0022)) {
+    return false;
+  }
+  bVar1 = (byte)this->field_0024;
+  if (DAT_00808a8f == '\0') {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    if ((byte)param_1 == bVar1) {
+LAB_00627bb8:
+      iVar4 = 0;
+    }
+    else {
+      uVar5 = param_1 & 0xff;
+      bVar2 = g_playerRelationMatrix[uVar5][bVar1];
+      if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][uVar5] == 0)) {
+        iVar4 = -2;
+      }
+      else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][uVar5] == 0)) {
+        iVar4 = -1;
+      }
+      else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][uVar5] == 1)) {
+        iVar4 = 1;
+      }
+      else {
+        if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][uVar5] != 1)) goto LAB_00627bb8;
+        iVar4 = 2;
+      }
+    }
+    bVar6 = iVar4 < 0;
+  }
+  else {
+    bVar6 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
+            g_bulkInitializedRecords_008087C7[param_1 & 0xff].field_0023;
+  }
+  if (bVar6) goto LAB_00627c8a;
+  if (DAT_00808a8f == '\0') {
+    if (bVar1 == (byte)param_1) {
+LAB_00627c7a:
+      iVar4 = 0;
+    }
+    else {
+      uVar5 = param_1 & 0xff;
+      bVar2 = g_playerRelationMatrix[bVar1][uVar5];
+      if ((bVar2 == 0) && (g_playerRelationMatrix[uVar5][bVar1] == 0)) {
+        iVar4 = -2;
+      }
+      else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar5][bVar1] == 0)) {
+        iVar4 = -1;
+      }
+      else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar5][bVar1] == 1)) {
+        iVar4 = 1;
+      }
+      else {
+        if ((bVar2 != 1) || (g_playerRelationMatrix[uVar5][bVar1] != 1)) goto LAB_00627c7a;
+        iVar4 = 2;
+      }
+    }
+    bVar6 = iVar4 < 0;
+  }
+  else {
+    bVar6 = g_bulkInitializedRecords_008087C7[param_1 & 0xff].field_0023 !=
+            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
+  }
+  if (!bVar6) {
+switchD_00627c97_default:
+    return false;
+  }
+LAB_00627c8a:
+  switch(this->field_02AD) {
+  case CASE_0:
+  case CASE_2:
+    /* ST_CALLSITE[00627CA1]: CALL 0x00402865; direct=00402865 STMineSetC::sub_0041D6C0 */
+    local_EAX_513 = st::fn_00402865(this,param_1);
+    return SUB41(local_EAX_513,0);
+  case CASE_1:
+    iVar3 = st::fn_00401811(this,param_1);
+    return SUB41(iVar3,0);
+  case CASE_3:
+    goto switchD_00627c97_default;
+  default:
+    return true;
+  }
+}
+
+// 00627E80 STMineSetC::sub_00627E80
+#line 4 "decomp/ST.exe/functions/00627E80/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079CEFC
+   Entries: 004042E1
+   Slots: 0x7C
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:31 calls=7
+   caller_families=3 receiver_extent=690/1456; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=7; caller_families=3;
+   owner_type=/STMineSetC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only */
+
+undefined4 __thiscall st::fn_00627E80(STMineSetC *this)
+
+{
+  if ((this->field_02AE != CASE_0) && (this->field_02AE != CASE_1)) {
+    return 0;
+  }
+  return 100;
 }
 

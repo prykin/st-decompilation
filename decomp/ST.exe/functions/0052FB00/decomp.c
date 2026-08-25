@@ -1635,10 +1635,9 @@ switchD_005311ec_caseD_3:
         uVar31 = 0;
         do {
           iVar10 = DAT_0080877a + uVar31 * 0xc;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (((*(int *)(iVar10 + 8) == local_44) &&
+          if (((STField<int>(iVar10,0x8) == local_44) &&
               (*(int *)(DAT_0080877a + (uVar31 * 3 + 3) * 4) == local_40)) &&
-             (*(int *)(iVar10 + 0x10) == 8)) {
+             (STField<int>(iVar10,0x10) == 8)) {
             *puVar11 = (uint)(DAT_00807348 == local_d);
             break;
           }

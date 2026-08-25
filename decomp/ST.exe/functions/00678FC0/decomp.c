@@ -79,7 +79,7 @@ LAB_00679087:
               iVar4 = iVar4 + 0x20;
             }
           }
-          if (*(short *)(iVar4 + 0x5c) < *(short *)(iVar6 + 0x5c)) {
+          if (STField<short>(iVar4,0x5C) < STField<short>(iVar6,0x5C)) {
             FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)pDVar7,uVar9,uVar1);
             bVar2 = true;
           }

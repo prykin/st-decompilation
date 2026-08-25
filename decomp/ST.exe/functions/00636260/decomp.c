@@ -75,8 +75,8 @@ LAB_006362c5:
           uVar5 = param_1_after_write;
           do {
             iVar2 = *(int *)&this->field_0x2c;
-            if (uVar5 < *(uint *)(iVar2 + 0xc)) {
-              piVar3 = (int *)(*(int *)(iVar2 + 8) * uVar5 + *(int *)(iVar2 + 0x1c));
+            if (uVar5 < STField<uint>(iVar2,0xC)) {
+              piVar3 = (int *)(STField<int>(iVar2,0x8) * uVar5 + STField<int>(iVar2,0x1C));
             }
             else {
               piVar3 = nullptr;

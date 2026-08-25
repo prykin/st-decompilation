@@ -418,15 +418,15 @@ LAB_0054506b:
             this_00->field_00FB = 1;
           }
           lVar29 = Library::MSVCRT::__ftol();
-          iVar13 = (int)(short)lVar29;
+          iVar13 = (short)lVar29;
           lVar29 = Library::MSVCRT::__ftol();
-          iVar18 = (int)(short)lVar29;
+          iVar18 = (short)lVar29;
           lVar29 = Library::MSVCRT::__ftol();
           sVar8 = (short)lVar29;
           sVar33 = sVar8 >> 0xf;
           lVar29 = Library::MSVCRT::__ftol();
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_EAX_2209 = FUN_006db910((int)(short)lVar29,CONCAT22(sVar33,sVar8),iVar18,iVar13);
+          local_EAX_2209 = FUN_006db910((short)lVar29,CONCAT22(sVar33,sVar8),iVar18,iVar13);
           this_00->field_00F7 = local_EAX_2209;
           Library::Ourlib::ST3DSMAP::SprWireObjMove
                     (g_sT3DSMAPContext_00807598,this_00->field_010B,this_00->field_00FF,
@@ -707,7 +707,7 @@ switchD_0054679d_default:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        /* ST_CALLSITE[005464BF]: CALL dword ptr [EAX] */
+        /* ST_CALLSITE[005464BF]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/OptPanelTy;pointer:/SubmarineTitans/Recovered/STMessage */
         g_optPanel_008016DC->GetMessage(message);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
@@ -1250,7 +1250,7 @@ LAB_005458df:
           /* ST_CALLSITE[00545A08]: CALL EDI */
           (*pcVar26)((short)local_524,"%s &%d%d",local_524,2,sVar8);
         }
-        sVar8 = *(short *)((int)&pAVar5->field_0009 + 2);
+        sVar8 = STField<short>(pAVar5,0xB);
         if (sVar8 != 0) {
           /* ST_CALLSITE[00545A40]: CALL EDI */
           (*pcVar26)((short)local_524,"%s &%d%d",local_524,

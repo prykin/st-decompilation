@@ -38,7 +38,7 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
         iVar7 = param_1->field_025D;
         if (iVar7 < (int)&local_8->vtable + iVar7) {
           do {
-            thunk_FUN_00496140((short)iVar7,(short)iVar4,*(short *)&param_1->field_0265);
+            thunk_FUN_00496140((short)iVar7,(short)iVar4,(short)param_1->field_0265);
             iVar7 = iVar7 + 1;
           } while (iVar7 < (int)&local_8->vtable + param_1->field_025D);
         }

@@ -64,7 +64,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
   byte *local_c;
   uint local_8;
 
-  if (((*(byte *)&this->field_0261 & 4) != 0) && (message->id != MESS_SHARED_0003)) {
+  if (((this->field_0261 & 4) != 0) && (message->id != MESS_SHARED_0003)) {
     return 0;
   }
   local_68.previous = g_currentExceptionFrame;
@@ -379,20 +379,20 @@ LAB_0057e60c:
     }
     this_00->field_0261 = this_00->field_0261 & 0xfffffffb;
 cf_common_exit_0057E624:
-    if ((*(byte *)&this_00->field_0261 & 4) != 0) {
+    if ((this_00->field_0261 & 4) != 0) {
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
     thunk_FUN_004d84e0((int)this_00);
-    uVar15 = (undefined2)this_00->field_0245;
-    this_00->field_0047 = uVar15;
-    this_00->field_005B = uVar15;
-    uVar15 = (undefined2)this_00->field_0249;
-    this_00->field_0049 = uVar15;
-    this_00->field_005D = uVar15;
-    uVar15 = (undefined2)this_00->field_024D;
-    this_00->field_004B = uVar15;
-    this_00->field_005F = uVar15;
+    sVar9 = (short)this_00->field_0245;
+    this_00->field_0047 = sVar9;
+    this_00->field_005B = sVar9;
+    sVar9 = (short)this_00->field_0249;
+    this_00->field_0049 = sVar9;
+    this_00->field_005D = sVar9;
+    sVar9 = (short)this_00->field_024D;
+    this_00->field_004B = sVar9;
+    this_00->field_005F = sVar9;
     this_00->field_0045 = (short)this_00->field_024D * 200 + 100;
     this_00->field_0041 = (short)this_00->field_0245 * 0xc9 + 100;
     this_00->field_0043 = (short)this_00->field_0249 * 0xc9 + 100;
@@ -401,14 +401,14 @@ cf_common_exit_0057E624:
   }
   iVar11 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)this_00);
   if (iVar11 == 0) {
-    if ((*(byte *)&this_00->field_0261 & 1) == 0) {
+    if ((this_00->field_0261 & 1) == 0) {
       thunk_FUN_005803e0((int)this_00);
       uVar12 = this_00->field_0261 | 2;
 LAB_0057e6f0:
       this_00->field_0261 = uVar12;
     }
   }
-  else if ((*(byte *)&this_00->field_0261 & 2) != 0) {
+  else if ((this_00->field_0261 & 2) != 0) {
     thunk_FUN_005803c0();
     uVar12 = this_00->field_0261 & 0xfffffffd;
     goto LAB_0057e6f0;
@@ -449,7 +449,7 @@ LAB_0057e6f0:
         }
         if (-1 < (int)uVar12) {
           if (uVar12 == 0xf) {
-            if ((((int)local_18 < 0) || ((int)pVVar7->field_0030 <= (int)local_18)) ||
+            if ((((int)local_18 < 0) || (pVVar7->field_0030 <= (int)local_18)) ||
                ((g_centeredOffsets5[iVar11] + local_14 < 0 ||
                 (pVVar7->field_0034 <= g_centeredOffsets5[iVar11] + local_14)))) {
               bVar6 = false;
@@ -518,7 +518,7 @@ LAB_0057e6f0:
         }
         if (-1 < (int)uVar12) {
           if (uVar12 == 0xf) {
-            if (((local_1c < 0) || ((int)pVVar7->field_0030 <= local_1c)) ||
+            if (((local_1c < 0) || (pVVar7->field_0030 <= local_1c)) ||
                ((g_centeredOffsets5[iVar11] + local_20 < 0 ||
                 (pVVar7->field_0034 <= g_centeredOffsets5[iVar11] + local_20)))) {
               bVar6 = false;

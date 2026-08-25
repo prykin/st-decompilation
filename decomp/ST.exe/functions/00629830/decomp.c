@@ -17,7 +17,7 @@ void __thiscall STParticleC::sub_00629830(STParticleC *this)
   else {
     this->field_00BA = 0x23;
   }
-  if (-1 < (int)this->field_00C6) {
+  if (-1 < this->field_00C6) {
     Library::Ourlib::ST3DSMAP::SprSetShadow(g_sT3DSMAPContext_00807598,this->field_00C6,0,0,0);
   }
   return;

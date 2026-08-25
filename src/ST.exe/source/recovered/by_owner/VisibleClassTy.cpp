@@ -476,11 +476,10 @@ st::fn_00559110
           auto param_2_after_write = pbVar7; /* compiler stack-slot lifetime split */
           if (0 < iVar9) {
             do {
-              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-              param_7 = 0;
+              auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
               do {
-                if (param_2_after_write[param_7] != '\0') {
-                  iVar10 = param_7 + param_4_after_write;
+                if (param_2_after_write[param_7_after_write] != '\0') {
+                  iVar10 = param_7_after_write + param_4_after_write;
                   iVar11 = param_5_after_write + param_6_after_write;
                   if (((-1 < iVar10) && (uVar5 = this->field_0030, iVar10 < (int)uVar5)) &&
                      ((-1 < iVar11 &&
@@ -496,8 +495,8 @@ st::fn_00559110
                     }
                   }
                 }
-                param_7 = param_7 + 1;
-              } while ((int)param_7 < iVar9);
+                param_7_after_write = param_7_after_write + 1;
+              } while ((int)param_7_after_write < iVar9);
               param_5_after_write = param_5_after_write + 1;
               param_2_after_write = param_2_after_write + iVar9;
             } while (param_5_after_write < iVar9);
@@ -508,9 +507,9 @@ st::fn_00559110
               param_5_after_write = 0;
               if (0 < iVar8) {
                 do {
-                  param_7 = 0;
+                  auto param_7_after_write_2 = 0; /* compiler stack-slot lifetime split */
                   do {
-                    iVar9 = param_7 + param_4_after_write;
+                    iVar9 = param_7_after_write_2 + param_4_after_write;
                     iVar10 = param_5_after_write + param_6_after_write;
                     if ((((-1 < iVar9) && (uVar5 = this->field_0030, iVar9 < (int)uVar5)) &&
                         (-1 < iVar10)) &&
@@ -519,8 +518,8 @@ st::fn_00559110
                         (this->field_0050[iVar11] != 0)))) {
                       st::fn_00402B76(iVar9,iVar10,this->field_004C,uVar5,this->field_0034);
                     }
-                    param_7 = param_7 + 1;
-                  } while ((int)param_7 < iVar8);
+                    param_7_after_write_2 = param_7_after_write_2 + 1;
+                  } while ((int)param_7_after_write_2 < iVar8);
                   param_5_after_write = param_5_after_write + 1;
                 } while (param_5_after_write < iVar8);
               }
@@ -588,7 +587,7 @@ st::fn_005594A0
       iVar8 = param_2 - param_5;
       pbVar3 = st::fn_004028BF(param_5);
       param_4 = pbVar3;
-      auto param_5_after_write = iVar1; /* compiler stack-slot lifetime split */
+      int param_5_after_write = iVar1; /* compiler stack-slot lifetime split */
       if (0 < iVar1) {
         do {
           iVar4 = 0;
@@ -668,7 +667,7 @@ st::fn_00559620
       iVar8 = param_2 - param_5;
       pbVar3 = st::fn_004028BF(param_5);
       param_4 = pbVar3;
-      auto param_5_after_write = iVar1; /* compiler stack-slot lifetime split */
+      int param_5_after_write = iVar1; /* compiler stack-slot lifetime split */
       if (0 < iVar1) {
         do {
           iVar4 = 0;
@@ -1527,9 +1526,9 @@ st::fn_005F1D80(VisibleClassTy *this,int param_1,int param_2,int param_3)
   if ((DAT_0080874d != -1) && (this->field_00F8 != 0)) {
     /* ST_CALLSITE[005F1DB3]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     st::fn_00403F53(this,this->field_010C,param_1,param_2,&param_2,&param_1);
-    if ((((-1 < param_3) && (((param_3 < 5 && (-1 < param_2)) && (param_2 < (int)this->field_0030)))
-         ) && (((iVar1 = g_centeredOffsets5[param_3] + param_1, -1 < iVar1 &&
-                (iVar1 < this->field_0034)) && (this->field_004C != nullptr)))) &&
+    if ((((-1 < param_3) && (((param_3 < 5 && (-1 < param_2)) && (param_2 < this->field_0030)))) &&
+        (((iVar1 = g_centeredOffsets5[param_3] + param_1, -1 < iVar1 && (iVar1 < this->field_0034))
+         && (this->field_004C != nullptr)))) &&
        (this->field_004C[param_2 + iVar1 * this->field_0030] == 0)) {
       return 0;
     }

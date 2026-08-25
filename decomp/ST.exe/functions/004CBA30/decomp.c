@@ -12,7 +12,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CBA30(TLOBaseTy *this)
   byte bVar1;
 
   /* ST_CALLSITE[004CBA40]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-  bVar1 = LookupRecordByte(*(char *)&this->field_023D);
+  bVar1 = LookupRecordByte((char)this->field_023D);
   if (*(int *)(&DAT_00790d30 + ((uint)bVar1 + this->field_0235 * 3) * 4) != 0) {
     if (DAT_0080732c != 0) {
       thunk_FUN_004ad0e0(&this->field_01D5,0xc);

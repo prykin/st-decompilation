@@ -25,7 +25,7 @@ void __fastcall FUN_006dcd60(int param_1)
     iVar7 = (int)lVar10;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     dVar4 = (double)iVar7 * *(double *)(param_1 + 0x368);
-    if (*(int *)(iVar3 + 0x28) < iVar7) {
+    if (STField<int>(iVar3,0x28) < iVar7) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pvVar8 = Library::DKW::LIB::MemRealloc
                          (*(void **)(*(int *)(param_1 + 0x358) + 8),iVar7 * iVar7 + 0x18);
@@ -39,9 +39,9 @@ void __fastcall FUN_006dcd60(int param_1)
       *(int *)(*(int *)(param_1 + 0x358) + 0x14) = *(int *)(*(int *)(param_1 + 0x358) + 0x10) + 8;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar3 = *(int *)(param_1 + 0x358);
-      *(undefined4 *)(param_1 + 0x38c) = *(undefined4 *)(iVar3 + 0xc);
-      *(undefined4 *)(param_1 + 0x390) = *(undefined4 *)(iVar3 + 0x14);
-      *(int *)(iVar3 + 0x28) = iVar7;
+      *(undefined4 *)(param_1 + 0x38c) = STField<undefined4>(iVar3,0xC);
+      *(undefined4 *)(param_1 + 0x390) = STField<undefined4>(iVar3,0x14);
+      STField<int>(iVar3,0x28) = iVar7;
       *(int *)(*(int *)(param_1 + 0x358) + 0x2c) = iVar7;
       *(int *)(param_1 + 0x37c) = iVar7;
     }

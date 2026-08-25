@@ -29,7 +29,7 @@ void FUN_006d0020(HDC hdc,undefined4 param_2,undefined4 param_3,LPRECT lprc,int 
     /* ST_CALLSITE[006D0049]: CALL dword ptr [0x0085bab8] */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     SetTextColor(hdc,*(COLORREF *)(param_8 + 0xc));
-    color = *(COLORREF *)(iVar3 + 0x10);
+    color = STField<COLORREF>(iVar3,0x10);
     if (color == 0xffffffff) {
       /* ST_CALLSITE[006D005D]: CALL dword ptr [0x0085ba68] */
       SetBkMode(hdc,1);

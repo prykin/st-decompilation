@@ -12,8 +12,8 @@ undefined4 __thiscall FUN_00417740(void *this,short param_1,short param_2)
 
   uVar1 = STField<ushort>(this,0x86);
   iVar5 = (int)param_1;
-  if (((int)(param_1 / (short)uVar1) * (int)(short)uVar1 - iVar5 != 0) ||
-     (iVar4 = (int)param_2, (int)(param_2 / (short)uVar1) * (int)(short)uVar1 - iVar4 != 0)) {
+  if (((int)(param_1 / (short)uVar1) * (short)uVar1 - iVar5 != 0) ||
+     (iVar4 = (int)param_2, (int)(param_2 / (short)uVar1) * (short)uVar1 - iVar4 != 0)) {
     return 0xffffffff;
   }
   STField<short>(this,0x82) = param_1;

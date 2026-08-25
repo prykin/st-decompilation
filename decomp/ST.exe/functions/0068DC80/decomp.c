@@ -81,21 +81,21 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
       iVar10 = STField<int>(param_1,0x107) + 0x10b + (int)param_1;
       if (0 < pAVar2->field_0125) {
         do {
-          *(undefined4 *)(iVar10 + 4) = pAVar2->field_0024;
-          *(undefined4 *)(iVar10 + 0x77) = pAVar2->field_009D;
-          ((undefined1 *)iVar10)[0x6a] = pAVar2->field_0088;
+          STField<undefined4>(iVar10,0x4) = pAVar2->field_0024;
+          STField<undefined4>(iVar10,0x77) = pAVar2->field_009D;
+          STField<undefined1>(iVar10,0x6A) = pAVar2->field_0088;
           /* ST_CALLSITE[0068DDDE]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
           STPlaySystemC::CreateGameObject(g_playSystem_00802A38,900,&local_14,&local_c,iVar10,0);
           local_1c = local_c;
           local_20 = local_c->field_0018;
           Library::DKW::TBL::DArrayAppend((DArrayTy *)pAVar2->field_00A5,&local_20);
           local_c->field_0284 = pAVar2;
-          iVar10 = iVar10 + *(int *)(iVar10 + 0x14);
+          iVar10 = iVar10 + STField<int>(iVar10,0x14);
           iVar6 = iVar6 + 1;
         } while (iVar6 < pAVar2->field_0125);
       }
       local_10 = thunk_FUN_00668180("__REPAIR_FLEET__",pAVar2->field_0039,0x8000,0,
-                                    *(byte *)&pAVar2->field_0024);
+                                    (byte)pAVar2->field_0024);
       /* ST_CALLSITE[0068DE43]: CALL 0x004014c4; direct=004014C4 FltDataPack */
       local_8 = FltDataPack(local_10,&local_14);
       thunk_FUN_006686c0((int *)&local_10);

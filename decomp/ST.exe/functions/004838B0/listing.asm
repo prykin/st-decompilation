@@ -1,4 +1,4 @@
-FUN_004838b0:
+STBoatC::sub_004838B0:
 004838B0  8B 91 55 04 00 00         MOV EDX,dword ptr [ECX + 0x455]
 004838B6  B8 01 00 00 00            MOV EAX,0x1
 004838BB  3B D0                     CMP EDX,EAX

@@ -107,7 +107,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                      ,0x564);
         }
         /* ST_CALLSITE[00499ECC]: CALL dword ptr [EDX + 0x2c] */
-        dVar4 = pSVar3->slot_2C();
+        dVar4 = pSVar3->sub_0045EEE0();
         switch(dVar4) {
         case 7:
         case 8:
@@ -129,7 +129,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         default:
           if ((this_00->field_020A == 1) &&
              /* ST_CALLSITE[00499F14]: CALL dword ptr [EDX + 0x2c] */
-             (dVar4 = pSVar3->slot_2C(), dVar4 != 0x17)) {
+             (dVar4 = pSVar3->sub_0045EEE0(), dVar4 != 0x17)) {
             DArrayRemoveAt(local_10,uVar11);
             uVar11 = uVar11 - 1;
             local_14 = local_14 - 1;
@@ -177,7 +177,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
           /* ST_CALLSITE[0049A010]: CALL dword ptr [EDX + 0x2c] */
-          dVar4 = pSVar3->slot_2C();
+          dVar4 = pSVar3->sub_0045EEE0();
           if (dVar4 == 9) {
             /* ST_CALLSITE[0049A032]: CALL 0x004019ba; direct=004019BA STGroupBoatC::GetDepotForAttack */
             GetDepotForAttack(this_00,local_c,&local_5,&local_16,&local_2a,&local_28,&local_26);

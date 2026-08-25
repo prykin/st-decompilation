@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_006b2020(AnonShape_006B2020_F949DD3E *param_1,uint param_2,uint param_3)
 
@@ -46,12 +48,12 @@ void FUN_006b2020(AnonShape_006B2020_F949DD3E *param_1,uint param_2,uint param_3
             piVar8 = (int *)(iVar2 + iVar9 * 4);
             do {
               iVar5 = *piVar8;
-              if (*(int *)(iVar5 + 0x44) <= (int)param_3) break;
+              if (STField<int>(iVar5,0x44) <= (int)param_3) break;
               iVar1 = iVar9 + 1;
               piVar8[1] = iVar5;
               iVar9 = iVar9 + -1;
               piVar8 = piVar8 + -1;
-              *(int *)(iVar5 + 0x48) = iVar1;
+              STField<int>(iVar5,0x48) = iVar1;
             } while (-1 < iVar9);
           }
         }
@@ -88,9 +90,9 @@ void FUN_006b2020(AnonShape_006B2020_F949DD3E *param_1,uint param_2,uint param_3
           piVar8 = (int *)(iVar2 + iVar9 * 4);
           do {
             iVar5 = *piVar8;
-            if ((int)param_3 <= *(int *)(iVar5 + 0x44)) break;
+            if ((int)param_3 <= STField<int>(iVar5,0x44)) break;
             piVar8[-1] = iVar5;
-            *(int *)(iVar5 + 0x48) = iVar9 + -1;
+            STField<int>(iVar5,0x48) = iVar9 + -1;
             iVar9 = iVar9 + 1;
             piVar8 = piVar8 + 1;
           } while (iVar9 < (int)param_1->field_01A0);

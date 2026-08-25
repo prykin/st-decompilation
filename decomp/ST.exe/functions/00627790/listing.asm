@@ -43,7 +43,8 @@ LAB_00627803:
 00627810  8D 55 DC                  LEA EDX,[EBP + -0x24]
 00627813  8B 01                     MOV EAX,dword ptr [ECX]
 00627815  52                        PUSH EDX
-00627816  FF 10                     CALL dword ptr [EAX]
+FUN_00627790::override::prt_627816_89729ca9:
+00627816  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_00627818:
 00627818  8B E5                     MOV ESP,EBP
 0062781A  5D                        POP EBP

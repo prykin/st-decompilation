@@ -1075,7 +1075,8 @@ LAB_0046bd3b:
 0046BEBE  89 7D B4                  MOV dword ptr [EBP + -0x4c],EDI
 0046BEC1  C7 45 D0 28 01 00 00      MOV dword ptr [EBP + -0x30],0x128
 0046BEC8  89 55 D4                  MOV dword ptr [EBP + -0x2c],EDX
-0046BECB  FF 10                     CALL dword ptr [EAX]
+STBoatC::Build::override::prt_46becb_7e63b4fe:
+0046BECB  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/STBoatC;pointer:/SubmarineTitans/Recovered/STMessage
 0046BECD  E9 F3 04 00 00            JMP 0x0046c3c5
 LAB_0046bed2:
 0046BED2  8B 46 24                  MOV EAX,dword ptr [ESI + 0x24]
@@ -1114,7 +1115,8 @@ LAB_0046bed2:
 0046BF40  89 7D B0                  MOV dword ptr [EBP + -0x50],EDI
 0046BF43  89 7D B4                  MOV dword ptr [EBP + -0x4c],EDI
 0046BF46  C7 45 D0 28 01 00 00      MOV dword ptr [EBP + -0x30],0x128
-0046BF4D  FF 12                     CALL dword ptr [EDX]
+STBoatC::Build::override::prt_46bf4d_7e63b4fe:
+0046BF4D  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/STBoatC;pointer:/SubmarineTitans/Recovered/STMessage
 0046BF4F  E9 71 04 00 00            JMP 0x0046c3c5
 LAB_0046bf54:
 0046BF54  39 BE 02 05 00 00         CMP dword ptr [ESI + 0x502],EDI

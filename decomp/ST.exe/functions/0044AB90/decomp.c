@@ -74,7 +74,7 @@ LAB_0044ac57:
     if (dVar6 == 0) {
       return -1;
     }
-    auto tempGroup_after_write = dVar6; /* compiler stack-slot lifetime split */
+    dword tempGroup_after_write = dVar6; /* compiler stack-slot lifetime split */
     Library::DKW::TBL::FUN_006afe40((int *)&local_c,&objectIds->flags);
     if (0 < (int)dVar6) {
       do {

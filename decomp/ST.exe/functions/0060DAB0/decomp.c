@@ -52,36 +52,36 @@ undefined4 __fastcall FUN_0060dab0(AnonShape_0060DAB0_7A3B9916 *param_1)
           do {
             iVar11 = param_1->field_0234;
             uVar10 = local_c + iVar9 * local_18;
-            if ((uVar10 < *(uint *)(iVar11 + 0xc)) &&
-               (iVar11 = *(int *)(iVar11 + 8) * uVar10 + *(int *)(iVar11 + 0x1c), iVar11 != 0)) {
+            if ((uVar10 < STField<uint>(iVar11,0xC)) &&
+               (iVar11 = STField<int>(iVar11,0x8) * uVar10 + STField<int>(iVar11,0x1C), iVar11 != 0)) {
               pAVar8 = param_1->field_0244;
               iVar4 = pAVar8->field_0014;
               psVar1 = (short *)(pAVar8->field_0008 + (local_10 / (int)pAVar8->field_0010) * 4);
               iVar5 = pAVar8->field_001C;
               sVar2 = *psVar1;
-              fcos((float10)*(float *)(iVar11 + 0x2c));
+              fcos((float10)STField<float>(iVar11,0x2C));
               sVar3 = psVar1[1];
               lVar12 = Library::MSVCRT::__ftol();
-              fsin((float10)*(float *)(iVar11 + 0x2c));
-              *(int *)(iVar11 + 0xc) = (int)lVar12 + *(int *)(iVar11 + 0x18);
+              fsin((float10)STField<float>(iVar11,0x2C));
+              STField<int>(iVar11,0xC) = (int)lVar12 + STField<int>(iVar11,0x18);
               lVar12 = Library::MSVCRT::__ftol();
-              *(int *)(iVar11 + 0x10) = (int)lVar12 + *(int *)(iVar11 + 0x1c);
-              *(int *)(iVar11 + 0x14) = *(int *)(iVar11 + 0x20) + (int)sVar3 / (iVar7 * 0x50 + 200);
+              STField<int>(iVar11,0x10) = (int)lVar12 + STField<int>(iVar11,0x1C);
+              STField<int>(iVar11,0x14) = STField<int>(iVar11,0x20) + (int)sVar3 / (iVar7 * 0x50 + 200);
               if (iVar4 - (iVar5 * sVar2) / 10000 < param_1->field_01F9) {
-                if ((*(int *)(iVar11 + 4) == 0) && (-1 < (int)*(uint *)(iVar11 + 0x3c))) {
-                  *(int *)(iVar11 + 0x24) = param_1->field_0244->field_0020 + local_c;
+                if ((STField<int>(iVar11,0x4) == 0) && (-1 < (int)STField<uint>(iVar11,0x3C))) {
+                  STField<int>(iVar11,0x24) = param_1->field_0244->field_0020 + local_c;
                   Library::Ourlib::ST3DSMAP::SprShow
-                            (g_sT3DSMAPContext_00807598,*(uint *)(iVar11 + 0x3c),0);
-                  *(undefined4 *)(iVar11 + 4) = 1;
+                            (g_sT3DSMAPContext_00807598,STField<uint>(iVar11,0x3C),0);
+                  STField<undefined4>(iVar11,0x4) = 1;
                 }
-                if (*(int *)(iVar11 + 0x28) < *(int *)(iVar11 + 0x24)) {
-                  *(int *)(iVar11 + 0x24) = *(int *)(iVar11 + 0x24) % *(int *)(iVar11 + 0x28);
+                if (STField<int>(iVar11,0x28) < STField<int>(iVar11,0x24)) {
+                  STField<int>(iVar11,0x24) = STField<int>(iVar11,0x24) % STField<int>(iVar11,0x28);
                 }
               }
-              else if ((*(int *)(iVar11 + 4) != 0) && (-1 < (int)*(uint *)(iVar11 + 0x3c))) {
+              else if ((STField<int>(iVar11,0x4) != 0) && (-1 < (int)STField<uint>(iVar11,0x3C))) {
                 Library::Ourlib::ST3DSMAP::SprHide
-                          (g_sT3DSMAPContext_00807598,*(uint *)(iVar11 + 0x3c));
-                *(undefined4 *)(iVar11 + 4) = 0xffffffff;
+                          (g_sT3DSMAPContext_00807598,STField<uint>(iVar11,0x3C));
+                STField<undefined4>(iVar11,0x4) = 0xffffffff;
               }
             }
             local_c = local_c + 1;

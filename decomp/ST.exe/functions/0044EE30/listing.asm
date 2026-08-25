@@ -710,7 +710,8 @@ LAB_0044f749:
 0044F7DC  8B 01                     MOV EAX,dword ptr [ECX]
 0044F7DE  8D 95 68 FF FF FF         LEA EDX,[EBP + 0xffffff68]
 0044F7E4  52                        PUSH EDX
-0044F7E5  FF 10                     CALL dword ptr [EAX]
+STBoatC::GetMessage::override::prt_44f7e5_89729ca9:
+0044F7E5  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0044f7e7:
 0044F7E7  8B 83 F7 06 00 00         MOV EAX,dword ptr [EBX + 0x6f7]
 0044F7ED  48                        DEC EAX
@@ -2252,7 +2253,8 @@ LAB_00450ab7:
 00450B33  8B 03                     MOV EAX,dword ptr [EBX]
 00450B35  51                        PUSH ECX
 00450B36  8B CB                     MOV ECX,EBX
-00450B38  FF 10                     CALL dword ptr [EAX]
+STBoatC::GetMessage::override::prt_450b38_7e63b4fe:
+00450B38  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/STBoatC;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_00450b3a:
 00450B3A  FF 83 6E 07 00 00         INC dword ptr [EBX + 0x76e]
 LAB_00450b40:
@@ -11525,7 +11527,8 @@ LAB_00459666:
 004596A9  8D 8D 68 FF FF FF         LEA ECX,[EBP + 0xffffff68]
 004596AF  51                        PUSH ECX
 004596B0  8B C8                     MOV ECX,EAX
-004596B2  FF 12                     CALL dword ptr [EDX]
+STBoatC::GetMessage::override::prt_4596b2_932048ab:
+004596B2  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiPlrClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_004596b4:
 004596B4  56                        PUSH ESI
 004596B5  8B CB                     MOV ECX,EBX
@@ -11767,7 +11770,8 @@ LAB_004599d3:
 00459A16  8D 8D 68 FF FF FF         LEA ECX,[EBP + 0xffffff68]
 00459A1C  51                        PUSH ECX
 00459A1D  8B C8                     MOV ECX,EAX
-00459A1F  FF 12                     CALL dword ptr [EDX]
+STBoatC::GetMessage::override::prt_459a1f_932048ab:
+00459A1F  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiPlrClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_00459a21:
 00459A21  56                        PUSH ESI
 00459A22  8B CB                     MOV ECX,EBX
@@ -12251,7 +12255,8 @@ LAB_00459fc9:
 0045A007  8B 11                     MOV EDX,dword ptr [ECX]
 0045A009  8D 85 68 FF FF FF         LEA EAX,[EBP + 0xffffff68]
 0045A00F  50                        PUSH EAX
-0045A010  FF 12                     CALL dword ptr [EDX]
+STBoatC::GetMessage::override::prt_45a010_89729ca9:
+0045A010  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 0045A012  8B 0D BC 17 81 00         MOV ECX,dword ptr [0x008117bc]
 LAB_0045a018:
 0045A018  39 B3 16 07 00 00         CMP dword ptr [EBX + 0x716],ESI
@@ -12274,7 +12279,8 @@ LAB_0045a018:
 0045A064  8B 11                     MOV EDX,dword ptr [ECX]
 0045A066  8D 85 68 FF FF FF         LEA EAX,[EBP + 0xffffff68]
 0045A06C  50                        PUSH EAX
-0045A06D  FF 12                     CALL dword ptr [EDX]
+STBoatC::GetMessage::override::prt_45a06d_89729ca9:
+0045A06D  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0045a06f:
 0045A06F  C7 83 C0 02 00 00 01 00 00 00  MOV dword ptr [EBX + 0x2c0],0x1
 0045A079  8B 83 F7 06 00 00         MOV EAX,dword ptr [EBX + 0x6f7]
@@ -12944,7 +12950,8 @@ LAB_0045a881:
 0045A8C9  8B 11                     MOV EDX,dword ptr [ECX]
 0045A8CB  8D 85 68 FF FF FF         LEA EAX,[EBP + 0xffffff68]
 0045A8D1  50                        PUSH EAX
-0045A8D2  FF 12                     CALL dword ptr [EDX]
+STBoatC::GetMessage::override::prt_45a8d2_89729ca9:
+0045A8D2  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 0045A8D4  8B 0D BC 17 81 00         MOV ECX,dword ptr [0x008117bc]
 LAB_0045a8da:
 0045A8DA  3B CE                     CMP ECX,ESI
@@ -12965,7 +12972,8 @@ LAB_0045a8da:
 0045A91A  8B 11                     MOV EDX,dword ptr [ECX]
 0045A91C  8D 85 68 FF FF FF         LEA EAX,[EBP + 0xffffff68]
 0045A922  50                        PUSH EAX
-0045A923  FF 12                     CALL dword ptr [EDX]
+STBoatC::GetMessage::override::prt_45a923_89729ca9:
+0045A923  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0045a925:
 0045A925  8B 83 CA 07 00 00         MOV EAX,dword ptr [EBX + 0x7ca]
 0045A92B  3B C6                     CMP EAX,ESI

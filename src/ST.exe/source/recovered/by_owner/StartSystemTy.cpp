@@ -41,7 +41,7 @@ StartSystemTy * __thiscall st::fn_005DA610(StartSystemTy *this,AppClassTy *param
   this->field_02EC = 0xffffffff;
   this->field_02F0 = nullptr;
   this->field_0389 = 0;
-  this->field_0540 = 0xffffffff;
+  this->field_0540 = -1;
   this->field_0544 = nullptr;
   this->field_0548 = nullptr;
   this->field_0550 = 0;
@@ -235,9 +235,9 @@ void __thiscall st::fn_005DB2A0(StartSystemTy *this)
     st::fn_006B5570((DArrayTy *)this->field_0548);
   }
   this->field_0548 = nullptr;
-  if (-1 < (int)this->field_0540) {
+  if (-1 < this->field_0540) {
     st::fn_006B3BB0((int *)g_ddxContext_008075A8,this->field_0540);
-    this->field_0540 = 0xffffffff;
+    this->field_0540 = -1;
   }
   if (this->field_0544 != nullptr) {
     st::fn_006AB060(&this->field_0544);

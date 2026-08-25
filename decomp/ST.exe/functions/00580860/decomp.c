@@ -1,18 +1,29 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_00580860(void *this,undefined1 *param_1)
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079B528
+   Entries: 00401FB4
+   Slots: 0x5C
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:23 calls=3
+   caller_families=2 receiver_extent=28/631; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=3; caller_families=2;
+   owner_type=/STDcResourcC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only */
+
+void __thiscall STDcResourcC::sub_00580860(STDcResourcC *this,undefined1 *param_1)
 
 {
-  uint uVar1;
+  dword dVar1;
+
   *param_1 = 4;
   param_1[1] = 0;
   /* ST_CALLSITE[00580873]: CALL dword ptr [EAX + 0x2c] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar1 = (**(code **)(*(int *)this + 0x2c))();
-  *(undefined4 *)(param_1 + 2) = uVar1;
+  dVar1 = this->slot_2C();
+  *(dword *)(param_1 + 2) = dVar1;
   param_1[6] = 0;
-  *(undefined4 *)(param_1 + 7) = STField<undefined4>(this,0x18);
+  *(undefined4 *)(param_1 + 7) = this->field_0018;
   return;
 }
 

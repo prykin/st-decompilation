@@ -26,7 +26,7 @@ void __thiscall FUN_0063c030(void *this,undefined4 param_1)
             + -1;
   }
   else {
-    iVar3 = (int)(short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
+    iVar3 = (short)((sVar1 / 0xc9 + (sVar1 >> 0xf)) -
                         (short)((longlong)iVar3 * 0x28c1979 >> 0x3f));
   }
   STField<int>(this,0x286) = iVar3;
@@ -35,7 +35,7 @@ void __thiscall FUN_0063c030(void *this,undefined4 param_1)
             + -1;
   }
   else {
-    iVar3 = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
+    iVar3 = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                         (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
   }
   STField<int>(this,0x28a) = iVar3;

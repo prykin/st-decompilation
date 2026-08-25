@@ -76,9 +76,8 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
     local_10->field_0030 = (undefined2)iVar6;
     local_10->field_0032 = STPiece<2,2>(iVar6);
     if (g_cursorClass_00802A30 != nullptr) {
-      /* ST_CALLSITE[0051D632]: CALL dword ptr [EAX] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x18);
+      /* ST_CALLSITE[0051D632]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+      g_cursorClass_00802A30->GetMessage((STMessage *)&local_10->field_0x18);
     }
   }
   bVar5 = (byte)param_1;

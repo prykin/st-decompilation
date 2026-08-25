@@ -91,9 +91,9 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       thunk_FUN_00416270(this_00,(uint *)local_14,local_10,local_c);
       /* ST_CALLSITE[004E9E61]: CALL 0x00402455; direct=00402455 sub_00415B30 */
       sub_00415B30(this_00,local_14[0],local_10[0],local_c[0],
-                   *(short *)&this_00->field_0474 * 0xc9 + 200,
-                   *(short *)&this_00->field_0478 * 0xc9 + 200,
-                   (*(short *)&this_00->field_047C + 1) * 200,this_00->field_0062);
+                   (short)this_00->field_0474 * 0xc9 + 200,
+                   (short)this_00->field_0478 * 0xc9 + 200,
+                   ((short)this_00->field_047C + 1) * 200,this_00->field_0062);
       thunk_FUN_004e9650(local_8,&this_00->field_0480,&this_00->field_0484,&this_00->field_0488);
       thunk_FUN_004e96c0(local_8,this_00->field_0018);
       if (g_tLOFake_00800BCC == nullptr) {
@@ -161,9 +161,9 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     }
     if ((uVar3 + 100 <= uVar10) && (local_20->field_0498 == 0)) {
       uVar3 = 0;
-      iVar6 = (int)(short)(*(short *)&local_20->field_0488 * 200 + 100);
-      iVar5 = (int)(short)(*(short *)&local_20->field_0484 * 0xc9 + 100);
-      iVar8 = (int)(short)(*(short *)&local_20->field_0480 * 0xc9 + 100);
+      iVar6 = (short)((short)local_20->field_0488 * 200 + 100);
+      iVar5 = (short)((short)local_20->field_0484 * 0xc9 + 100);
+      iVar8 = (short)((short)local_20->field_0480 * 0xc9 + 100);
       iVar9 = 0;
       uVar4 = thunk_FUN_004ad650((STT3DSprC *)&local_20->field_01D5);
       thunk_FUN_006377b0(uVar4,iVar9,iVar8,iVar5,iVar6,uVar3);
@@ -190,7 +190,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
         RaiseInternalException
                   (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tele.cpp",0x1b3);
       }
-      thunk_FUN_0041d900(this_00,(short)this_00->field_05B0,*(short *)&this_00->field_05B4,
+      thunk_FUN_0041d900(this_00,(short)this_00->field_05B0,(short)this_00->field_05B4,
                          (short)this_00->field_05B8);
       iVar5 = 1;
       uVar3 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);

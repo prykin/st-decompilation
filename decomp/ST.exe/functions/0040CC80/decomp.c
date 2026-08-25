@@ -40,7 +40,7 @@ LAB_0040cd0a:
   iVar5 = 0;
   iVar3 = param_1 + 1 + pSVar1->field_00A7;
   psVar4 = pSVar1->field_009F + iVar3 * 0x24;
-  if (iVar3 < (int)pSVar1->field_00A3) {
+  if (iVar3 < pSVar1->field_00A3) {
     iVar3 = pSVar1->field_00A3 - iVar3;
     do {
       if (((*psVar4 != psVar4[-0x24]) || (psVar4[1] != psVar4[-0x23])) ||

@@ -32,7 +32,7 @@ void __thiscall STContainerC::sub_005F0D90(STContainerC *this)
       local_24.arg1.words.low = (word)(byte)this->field_030E;
     }
     local_24.id = 0x5dd7;
-    /* ST_CALLSITE[005F0DF8]: CALL dword ptr [EAX] */
+    /* ST_CALLSITE[005F0DF8]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;

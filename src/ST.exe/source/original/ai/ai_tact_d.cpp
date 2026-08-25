@@ -27,7 +27,7 @@ undefined4 * __cdecl st::fn_00690E90(char *source,undefined2 param_2,undefined2 
     local_8 = static_cast<AnonShape_00690E90_9F986EB9 *>(st::fn_006AAC10(0x10c));
     *(undefined4 *)local_8 = 0x38e;
     *(undefined4 *)&local_8->field_0x14 = 0x10c;
-    *(undefined1 *)((int)&local_8->field_0017 + 1) = 2;
+    STField<undefined1>(local_8,0x18) = 2;
     st::fn_0072E340((char *)&local_8->field_0x1b,source,0x3f);
     local_8->field_0019 = param_2;
     *(undefined2 *)&local_8->field_0x5c = param_3;
@@ -180,7 +180,7 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
     do {
       iVar10 = *piVar5;
       if (iVar10 != 0) {
-        iVar10 = *(int *)(iVar10 + 0xc) * *(int *)(iVar10 + 8) + 0x1c;
+        iVar10 = STField<int>(iVar10,0xC) * STField<int>(iVar10,0x8) + 0x1c;
         local_c = local_c + iVar10;
         piVar5[2] = iVar10;
       }
@@ -219,21 +219,20 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
       local_8->field_0105 = 0;
       iVar10 = *local_24;
       pAVar2 = local_8;
-      if (0 < *(int *)(iVar10 + 0xc)) {
-        bVar13 = *(int *)(iVar10 + 0xc) != 0;
+      if (0 < STField<int>(iVar10,0xC)) {
+        bVar13 = STField<int>(iVar10,0xC) != 0;
         do {
           if (bVar13) {
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            iVar10 = *(int *)(iVar10 + 8) * local_20 + *(int *)(iVar10 + 0x1c);
+            iVar10 = STField<int>(iVar10,0x8) * local_20 + STField<int>(iVar10,0x1C);
           }
           else {
             iVar10 = 0;
           }
-          if (*(int *)(iVar10 + 4) == 0) {
+          if (STField<int>(iVar10,0x4) == 0) {
             pAVar3 = nullptr;
           }
           else {
-            pAVar3 = (AllocationRecord_006684E0 *)(*(int *)(iVar10 + 4) + 0x20);
+            pAVar3 = (AllocationRecord_006684E0 *)(STField<int>(iVar10,0x4) + 0x20);
           }
           if (pAVar3 != nullptr) {
             /* ST_CALLSITE[006912DC]: CALL 0x004014c4; direct=004014C4 FltDataPack */
@@ -252,9 +251,9 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
           }
           local_20 = local_20 + 1;
           iVar10 = *local_24;
-          bVar13 = local_20 < *(uint *)(iVar10 + 0xc);
+          bVar13 = local_20 < STField<uint>(iVar10,0xC);
           pAVar2 = local_8;
-        } while ((int)local_20 < (int)*(uint *)(iVar10 + 0xc));
+        } while ((int)local_20 < (int)STField<uint>(iVar10,0xC));
       }
     }
     g_currentExceptionFrame = local_68.previous;

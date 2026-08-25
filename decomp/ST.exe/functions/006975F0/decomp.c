@@ -76,12 +76,11 @@ void __thiscall CGenerate::sub_006975F0(CGenerate *this)
                 (int)uVar6 % (int)(((iVar8 < 4) - 1 & 3) + 2) != 0)) &&
                (iVar7 = element_5853_2->field_0015, iVar7 != 0)))))) {
             local_18 = 0;
-            if (0 < *(int *)(iVar7 + 0xc)) {
-              bVar10 = *(int *)(iVar7 + 0xc) != 0;
+            if (0 < STField<int>(iVar7,0xC)) {
+              bVar10 = STField<int>(iVar7,0xC) != 0;
               do {
                 if (bVar10) {
-                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                  iVar7 = *(int *)(iVar7 + 8) * local_18 + *(int *)(iVar7 + 0x1c);
+                  iVar7 = STField<int>(iVar7,0x8) * local_18 + STField<int>(iVar7,0x1C);
                 }
                 else {
                   iVar7 = 0;
@@ -90,14 +89,14 @@ void __thiscall CGenerate::sub_006975F0(CGenerate *this)
                   iVar3 = this->field_5833;
                   ((undefined1 *)iVar7)[1] = 1;
                   /* ST_CALLSITE[006977D5]: CALL 0x00405731; direct=00405731 CGenerate::sub_006A0E30 */
-                  sub_006A0E30(this,*(int *)(iVar7 + 2) % iVar3,*(int *)(iVar7 + 2) / iVar3,
+                  sub_006A0E30(this,STField<int>(iVar7,0x2) % iVar3,STField<int>(iVar7,0x2) / iVar3,
                                (uint)(element_5853_2->field_000D != 1),-1);
                   local_8 = local_8 + -1;
                 }
                 iVar7 = element_5853_2->field_0015;
                 local_18 = local_18 + 1;
-                bVar10 = local_18 < *(uint *)(iVar7 + 0xc);
-              } while ((int)local_18 < (int)*(uint *)(iVar7 + 0xc));
+                bVar10 = local_18 < STField<uint>(iVar7,0xC);
+              } while ((int)local_18 < (int)STField<uint>(iVar7,0xC));
             }
           }
         }

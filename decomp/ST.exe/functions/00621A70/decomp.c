@@ -16,8 +16,8 @@ void __fastcall FUN_00621a70(AnonShape_00621A70_2531BB4B *param_1)
   if ((param_1->field_010A != 0) && (local_c = *(int *)(param_1->field_010A + 0xc), 0 < local_c)) {
     do {
       iVar1 = param_1->field_010A;
-      if ((index < *(uint *)(iVar1 + 0xc)) &&
-         (pcVar2 = (char *)(*(int *)(iVar1 + 8) * index + *(int *)(iVar1 + 0x1c)),
+      if ((index < STField<uint>(iVar1,0xC)) &&
+         (pcVar2 = (char *)(STField<int>(iVar1,0x8) * index + STField<int>(iVar1,0x1C)),
          pcVar2 != nullptr)) {
         if (((param_1->field_0105 != '\0') && (*pcVar2 == '\0')) &&
            (9 < g_playSystem_00802A38->field_00E4 - param_1->field_0106)) {

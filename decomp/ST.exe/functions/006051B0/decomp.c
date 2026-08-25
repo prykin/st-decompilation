@@ -135,7 +135,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
         bVar11 = true;
       }
       else {
-        if (((local_1c < 0) || ((int)pVVar3->field_0030 <= local_1c)) ||
+        if (((local_1c < 0) || (pVVar3->field_0030 <= local_1c)) ||
            ((g_centeredOffsets5[local_14] + local_20 < 0 ||
             (pVVar3->field_0034 <= g_centeredOffsets5[local_14] + local_20)))) {
           bVar11 = false;

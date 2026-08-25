@@ -68,7 +68,8 @@ LAB_0051ca1c:
 0051CA71  8B 11                     MOV EDX,dword ptr [ECX]
 0051CA73  8D 43 18                  LEA EAX,[EBX + 0x18]
 0051CA76  50                        PUSH EAX
-0051CA77  FF 12                     CALL dword ptr [EDX]
+HelpPanelTy::SpecProc::override::prt_51ca77_74f246b9:
+0051CA77  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 0051CA79  EB 06                     JMP 0x0051ca81
 LAB_0051ca7b:
 0051CA7B  8B 7D 08                  MOV EDI,dword ptr [EBP + 0x8]

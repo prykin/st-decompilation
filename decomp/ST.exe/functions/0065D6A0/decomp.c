@@ -16,7 +16,7 @@ void __thiscall AiFltClassTy::sub_0065D6A0(AiFltClassTy *this)
   STGroupBoatC *this_00;
 
   if ((this->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
-    this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_007D);
+    this_00 = thunk_FUN_0042b760((char)this->field_0024,this->field_007D);
     if (this_00 != nullptr) {
       thunk_FUN_004232e0(this_00,this);
     }

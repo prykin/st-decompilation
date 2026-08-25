@@ -40,12 +40,12 @@ undefined4 FUN_005da7a0(void)
           iVar4 = *puVar1;
           Library::MSVCRT::FUN_0072da70
                     ((undefined4 *)(iVar4 + 0x1c),(AnonPointee_TLOBaseTy_0607 *)(iVar4 + 8),
-                     *(int *)(iVar4 + 4) * 0x14);
+                     STField<int>(iVar4,0x4) * 0x14);
           iVar4 = *puVar1;
-          *(undefined4 *)(iVar4 + 0xc) = DAT_007cd700;
-          *(undefined4 *)(iVar4 + 0x10) = DAT_007cd704;
-          *(undefined4 *)(iVar4 + 0x14) = DAT_007cd708;
-          *(undefined4 *)(iVar4 + 0x18) = DAT_007cd70c;
+          STField<undefined4>(iVar4,0xC) = DAT_007cd700;
+          STField<undefined4>(iVar4,0x10) = DAT_007cd704;
+          STField<undefined4>(iVar4,0x14) = DAT_007cd708;
+          STField<undefined4>(iVar4,0x18) = DAT_007cd70c;
           *(char **)(*puVar1 + 8) = pcVar6;
           *(int *)(*puVar1 + 4) = *(int *)(*puVar1 + 4) + 1;
         }

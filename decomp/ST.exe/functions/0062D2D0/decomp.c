@@ -37,7 +37,7 @@ FUN_0062d2d0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,i
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((this != (void *)0xffffffd0) && (iVar2 = *(int *)((int)this + param_1 * 4 + 0x30), iVar2 != 0)
      ) {
-    iVar2 = *(int *)(iVar2 + 0xc);
+    iVar2 = STField<int>(iVar2,0xC);
     uStack_5c = 0x62d333;
     local_1c = &stack0xffffffa8 + iVar2 * -0x28;
     local_8 = 0xffffffff;
@@ -58,8 +58,8 @@ FUN_0062d2d0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,i
       do {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar4 = *(int *)((int)this + param_1 * 4 + 0x30);
-        if (uVar5 < *(uint *)(iVar4 + 0xc)) {
-          piVar6 = (int *)(*(int *)(iVar4 + 8) * uVar5 + *(int *)(iVar4 + 0x1c));
+        if (uVar5 < STField<uint>(iVar4,0xC)) {
+          piVar6 = (int *)(STField<int>(iVar4,0x8) * uVar5 + STField<int>(iVar4,0x1C));
         }
         else {
           piVar6 = nullptr;

@@ -292,9 +292,9 @@ cf_common_exit_00476DBA:
             /* ST_CALLSITE[00477303]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
-                       (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_1c,
+                       (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (short)local_1c,
                        (((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_1c)) + -3,
-                       (int)(short)lVar18 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                       (short)lVar18 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                        (int)local_18,sVar17,sVar19,sVar20,sVar5,sVar21,sVar22,iVar7,sVar23,bVar24);
           }
           else {
@@ -307,7 +307,7 @@ cf_common_exit_00476DBA:
             STPiece<2,2>(local_1c) = (short)((uint)uVar15 >> 0x10);
             iVar7 = (int)STPiece<2,2>(local_1c);
             STPiece<0,2>(local_1c) = (short)uVar15;
-            iVar16 = (int)(short)local_1c;
+            iVar16 = (short)local_1c;
             /* ST_CALLSITE[004773B3]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
@@ -474,9 +474,9 @@ cf_common_exit_00477B2E:
               /* ST_CALLSITE[00477971]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
-                         (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_1c,
+                         (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (short)local_1c,
                          (((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_1c)) + -3
-                         ,(int)(short)lVar18 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                         ,(short)lVar18 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                           (int)local_18,sVar17,sVar19,sVar20,sVar5,sVar21,sVar22,iVar7,sVar23,bVar24
                         );
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -492,7 +492,7 @@ cf_common_exit_00477B2E:
               STPiece<2,2>(local_1c) = (short)((uint)uVar15 >> 0x10);
               iVar7 = (int)STPiece<2,2>(local_1c);
               STPiece<0,2>(local_1c) = (short)uVar15;
-              iVar16 = (int)(short)local_1c;
+              iVar16 = (short)local_1c;
               /* ST_CALLSITE[00477A21]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
@@ -557,7 +557,7 @@ cf_common_exit_00477B2E:
         local_44.id = 0x5dd4;
         local_44.arg1.words.high = this->field_0032;
         local_44.arg1.words.low = *(undefined2 *)&this->field_0024;
-        /* ST_CALLSITE[0047758C]: CALL dword ptr [EDX] */
+        /* ST_CALLSITE[0047758C]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
         g_aiBossClass_008117BC->GetMessage(&local_44);
       }
       /* ST_CALLSITE[00477592]: CALL dword ptr [EDX + 0x10c]; [STIndirectCallsiteApplier] exact slot 0x10C; signature=__thiscall;/void;pointer:/STGameObjC */
@@ -567,7 +567,7 @@ cf_common_exit_00477B2E:
     }
     else if (iVar7 != 2) goto cf_common_exit_0047746B;
     /* ST_CALLSITE[004775B7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-    uVar8 = LookupRecordByte(*(char *)&pSVar8->field_0024);
+    uVar8 = LookupRecordByte((char)pSVar8->field_0024);
     /* ST_CALLSITE[004775CB]: CALL dword ptr [EAX + 0x2c] */
     iVar7 = pSVar8->vfunc_2C();
     local_64.arg0.ptr = &local_44.unknown_04;
@@ -576,7 +576,7 @@ cf_common_exit_00477B2E:
     local_44.unknown_08 = 0;
     local_44.arg1.u32 = 1;
     local_64.id = MESS_TORPHIT;
-    /* ST_CALLSITE[00477604]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[00477604]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/STBoatC;pointer:/SubmarineTitans/Recovered/STMessage */
     this->GetMessage(&local_64);
     iVar7 = (this->field_0609 + 1) * 0xc9;
     if ((this->field_0041 == iVar7) &&

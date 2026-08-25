@@ -37,7 +37,7 @@ undefined4 __thiscall STMineSetC::sub_00627400(STMineSetC *this,undefined4 param
     }
   }
   else {
-    if (this->field_0315 < g_playSystem_00802A38->field_00E4) {
+    if ((uint)this->field_0315 < g_playSystem_00802A38->field_00E4) {
       thunk_FUN_00627390(this);
       return this->field_02AE;
     }

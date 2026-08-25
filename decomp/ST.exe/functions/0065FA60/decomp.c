@@ -49,14 +49,14 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
         local_10 = (DArrayTy *)
                    /* ST_CALLSITE[0065FB1A]: CALL 0x00401415; direct=00401415 STAllPlayersC::GetTOBJList */
                    STAllPlayersC::GetTOBJList
-                             (g_allPlayers_007FA174,*(char *)&pAVar1->field_0024,param_1,0,-1);
+                             (g_allPlayers_007FA174,(char)pAVar1->field_0024,param_1,0,-1);
       }
     }
     else if ((param_2 == 2) && (g_allPlayers_007FA174 != nullptr)) {
       local_10 = (DArrayTy *)
                  /* ST_CALLSITE[0065FACD]: CALL 0x00401415; direct=00401415 STAllPlayersC::GetTOBJList */
                  STAllPlayersC::GetTOBJList
-                           (g_allPlayers_007FA174,*(char *)&local_14->field_0024,param_1,0,-1);
+                           (g_allPlayers_007FA174,(char)local_14->field_0024,param_1,0,-1);
     }
   }
   array = local_10;

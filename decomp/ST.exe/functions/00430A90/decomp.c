@@ -73,7 +73,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
           do {
             DArrayGetElement(array,uVar9,&local_18);
             if (local_18 != 0) {
-              thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_18 + 8));
+              thunk_FUN_0054cf70(g_playSystem_00802A38,STField<uint>(local_18,0x8));
               local_18 = 0;
               Library::DKW::TBL::DArrayPut(array,uVar9,&local_18);
             }
@@ -86,7 +86,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
           do {
             DArrayGetElement(array_00,uVar9,&local_8);
             if (local_8 != 0) {
-              thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
+              thunk_FUN_0054cf70(g_playSystem_00802A38,STField<uint>(local_8,0x8));
               local_8 = 0;
               Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
             }
@@ -107,7 +107,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         do {
           DArrayGetElement(g_array_007FA154,uVar9,&local_8);
           if (local_8 != 0) {
-            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
+            thunk_FUN_0054cf70(g_playSystem_00802A38,STField<uint>(local_8,0x8));
             local_8 = 0;
             Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
           }
@@ -120,7 +120,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         do {
           DArrayGetElement(g_array_007FA158,uVar9,&local_8);
           if (local_8 != 0) {
-            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
+            thunk_FUN_0054cf70(g_playSystem_00802A38,STField<uint>(local_8,0x8));
             local_8 = 0;
             Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
           }
@@ -133,7 +133,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         do {
           DArrayGetElement(g_array_007FA15C,uVar9,&local_8);
           if (local_8 != 0) {
-            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
+            thunk_FUN_0054cf70(g_playSystem_00802A38,STField<uint>(local_8,0x8));
             local_8 = 0;
             Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
           }
@@ -146,7 +146,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         do {
           DArrayGetElement(g_array_007FA160,uVar9,&local_8);
           if (local_8 != 0) {
-            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
+            thunk_FUN_0054cf70(g_playSystem_00802A38,STField<uint>(local_8,0x8));
             local_8 = 0;
             Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
           }
@@ -159,7 +159,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         do {
           DArrayGetElement(g_array_007FA164,uVar9,&local_8);
           if (local_8 != 0) {
-            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
+            thunk_FUN_0054cf70(g_playSystem_00802A38,STField<uint>(local_8,0x8));
             local_8 = 0;
             Library::DKW::TBL::DArrayPut(array_00,uVar9,&local_8);
           }

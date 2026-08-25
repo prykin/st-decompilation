@@ -41,7 +41,7 @@ void __thiscall FUN_006404b0(void *this,int param_1,int param_2,uint param_3)
                           (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      local_10.x = (int)(short)(((short)(param_1 / 0xc9) + sVar1) -
+      local_10.x = (short)(((short)(param_1 / 0xc9) + sVar1) -
                                (short)((longlong)param_1 * 0x28c1979 >> 0x3f));
     }
     sVar1 = (short)(param_2 >> 0x1f);
@@ -50,7 +50,7 @@ void __thiscall FUN_006404b0(void *this,int param_1,int param_2,uint param_3)
                           (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      local_10.y = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
+      local_10.y = (short)(((short)(param_2 / 0xc9) + sVar1) -
                                (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
     }
     local_10.unknown = STField<int>(this,0x18);

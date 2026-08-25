@@ -66,11 +66,11 @@ AllocationRecord_0067D1D0 * __cdecl FUN_0067d1d0(AllocationRecord_0067D1D0 *para
     }
     iVar5 = pAVar4->field_00C2;
     uVar8 = 0;
-    if (0 < *(int *)(iVar5 + 0xc)) {
-      bVar9 = *(int *)(iVar5 + 0xc) != 0;
+    if (0 < STField<int>(iVar5,0xC)) {
+      bVar9 = STField<int>(iVar5,0xC) != 0;
       do {
         if (bVar9) {
-          puVar6 = (undefined4 *)(*(int *)(iVar5 + 8) * uVar8 + *(int *)(iVar5 + 0x1c));
+          puVar6 = (undefined4 *)(STField<int>(iVar5,0x8) * uVar8 + STField<int>(iVar5,0x1C));
         }
         else {
           puVar6 = nullptr;
@@ -83,8 +83,8 @@ AllocationRecord_0067D1D0 * __cdecl FUN_0067d1d0(AllocationRecord_0067D1D0 *para
         }
         iVar5 = pAVar4->field_00C2;
         uVar8 = uVar8 + 1;
-        bVar9 = uVar8 < *(uint *)(iVar5 + 0xc);
-      } while ((int)uVar8 < (int)*(uint *)(iVar5 + 0xc));
+        bVar9 = uVar8 < STField<uint>(iVar5,0xC);
+      } while ((int)uVar8 < (int)STField<uint>(iVar5,0xC));
     }
     g_currentExceptionFrame = local_4c.previous;
     return pAVar4;

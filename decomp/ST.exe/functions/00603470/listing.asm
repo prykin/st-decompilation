@@ -1,4 +1,4 @@
-FUN_00603470:
+STDestC::sub_00603470:
 00603470  55                        PUSH EBP
 00603471  8B EC                     MOV EBP,ESP
 00603473  56                        PUSH ESI

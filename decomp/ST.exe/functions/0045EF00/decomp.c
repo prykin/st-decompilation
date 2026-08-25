@@ -31,7 +31,7 @@ void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum par
   if ((param_1 != CASE_21) && (param_1 != CASE_5)) {
     /* ST_CALLSITE[0045EF2A]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat */
     STAllPlayersC::DeleteGuardBoat
-              (g_allPlayers_007FA174,*(char *)&this->field_0024,this->field_0032,1);
+              (g_allPlayers_007FA174,(char)this->field_0024,this->field_0032,1);
   }
   this->field_02C4 = 1;
   switch(param_1) {

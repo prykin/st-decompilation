@@ -73,8 +73,8 @@ AiEventClassTy::_CreateRCCont
         if (param_7 == nullptr) {
           param_7 = &CHAR_00h_008016a0;
         }
-        thunk_FUN_005fcff0((uint)param_1,local_24,(int)param_2,param_6,(int)(short)local_c,
-                           (int)(short)local_8,(int)(short)local_10,param_7,0xffffffff,
+        thunk_FUN_005fcff0((uint)param_1,local_24,(int)param_2,param_6,(short)local_c,
+                           (short)local_8,(short)local_10,param_7,0xffffffff,
                            (ushort)param_8);
         g_currentExceptionFrame = local_6c.previous;
         return 0;

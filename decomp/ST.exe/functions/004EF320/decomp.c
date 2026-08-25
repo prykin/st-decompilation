@@ -35,12 +35,12 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   }
   uVar4 = this->field_0199 + -0xc0af + param_1->field_0010;
   iVar1 = (&this->field_027A)[(byte)this->field_0278];
-  if ((iVar1 == 0) || (*(uint *)(iVar1 + 0xc) <= uVar4)) {
+  if ((iVar1 == 0) || (STField<uint>(iVar1,0xC) <= uVar4)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_00526BA0_param_1Enum *)
-              (*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c));
+              (STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C));
   }
   local_18 = this;
   if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {

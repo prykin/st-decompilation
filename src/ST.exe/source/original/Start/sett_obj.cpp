@@ -166,7 +166,7 @@ void __thiscall st::fn_005C29B0(SettMapMTy *this,char param_1)
       uVar17 = 0x694d;
     }
     local_18->field_002D = uVar17;
-    /* ST_CALLSITE[005C42BF]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[005C42BF]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/SettMapMTy;pointer:/SubmarineTitans/Recovered/STMessage */
     local_18->GetMessage((STMessage *)&local_18->field_0x1d);
     return;
   }
@@ -1117,7 +1117,7 @@ void __thiscall st::fn_005C4930(SettMapTy *this)
       if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
         st::fn_006B3AF0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
       }
-      if (-1 < (int)g_startSystem_0081176C->field_0540) {
+      if (-1 < g_startSystem_0081176C->field_0540) {
         st::fn_006B3AF0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }

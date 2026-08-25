@@ -518,16 +518,16 @@ LAB_00480f12:
         sVar20 = 0;
         bVar21 = 0;
         lVar12 = st::fn_0072E288();
-        iVar6 = (int)local_14 + STField<short>(param_1,0x45) + local_10 + (int)(short)lVar12;
+        iVar6 = (int)local_14 + STField<short>(param_1,0x45) + local_10 + (short)lVar12;
         iVar8 = (int)STField<short>(param_1,0x43) - (int)STPiece<2,2>(local_18);
-        iVar9 = (int)(short)local_18 + iVar3 + STField<short>(param_1,0x41);
+        iVar9 = (short)local_18 + iVar3 + STField<short>(param_1,0x41);
       }
       else {
         iVar6 = (int)local_14 + local_10 + STField<short>(param_1,0x45);
         STPiece<2,2>(local_18) = (short)((uint)uVar7 >> 0x10);
         iVar8 = (int)STField<short>(param_1,0x43) - (int)STPiece<2,2>(local_18);
         STPiece<0,2>(local_18) = (short)uVar7;
-        iVar9 = (int)(short)local_18 + iVar3 + STField<short>(param_1,0x41);
+        iVar9 = (short)local_18 + iVar3 + STField<short>(param_1,0x41);
       }
       /* ST_CALLSITE[0048119D]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       st::fn_00401433
@@ -538,7 +538,7 @@ LAB_00480f12:
     } while ((int)local_8 < (int)(uint)STField<byte>(param_1,0x2bf));
   }
 cf_common_exit_004811C2:
-  uVar7 = st::fn_0040503D(static_cast<AnonShape_0041DA30_EF7DF530 *>(param_1));
+  uVar7 = st::fn_0040503D(static_cast<RecoveredRecord_STTorpC_0041DA30 *>(param_1));
   return uVar7;
 }
 
@@ -1182,8 +1182,8 @@ LAB_00482fa9:
   }
   st::fn_004031E3(this,&local_18,(short *)&local_1c,local_c);
   iVar12 = st::fn_006ACF0D((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
-                        (int)STField<short>(param_1,0x45),(int)(short)local_18,
-                        (int)(short)local_1c,(int)local_c[0]);
+                        (int)STField<short>(param_1,0x45),(short)local_18,
+                        (short)local_1c,(int)local_c[0]);
   if ((short)param_1[0x205] < iVar12) {
     return 5;
   }
@@ -1290,8 +1290,8 @@ LAB_00483342:
                       STField<STAllPlayersC_GetObjPtr_param_3Enum>(param_1,0x483));
     st::fn_004031E3(this,&local_10,(short *)&local_14,(short *)&local_8);
     iVar2 = st::fn_006ACF0D((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
-                         (int)STField<short>(param_1,0x45),(int)(short)local_10,
-                         (int)(short)local_14,(int)(short)local_8);
+                         (int)STField<short>(param_1,0x45),(short)local_10,
+                         (short)local_14,(short)local_8);
     if ((short)param_1[0x205] < iVar2) {
       return (-(uint)(STField<int>(param_1,0x7e6) != 0) & 4) + 5;
     }
@@ -1304,7 +1304,7 @@ LAB_00483342:
       return 3;
     }
     sVar1 = STField<short>(param_1,0x45);
-    uVar4 = (int)(short)local_8 - (int)sVar1;
+    uVar4 = (short)local_8 - (int)sVar1;
     uVar6 = (int)uVar4 >> 0x1f;
     if (3 < (int)(((uVar4 ^ uVar6) - uVar6) * 10) / iVar2) {
       return ((short)local_8 <= sVar1) + 6;
@@ -1442,20 +1442,6 @@ undefined4 __fastcall st::fn_00483880(int param_1)
     return 0;
   }
   uVar1 = st::fn_004059F7();
-  return uVar1;
-}
-
-// 004838B0 FUN_004838b0
-#line 4 "decomp/ST.exe/functions/004838B0/decomp.c"
-undefined4 __fastcall st::fn_004838B0(int param_1)
-
-{
-  uint uVar1;
-  uVar1 = 1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(int *)(param_1 + 0x455) == 1) || (*(int *)(param_1 + 0x2c0) == 1)) {
-    uVar1 = 0;
-  }
   return uVar1;
 }
 
@@ -1643,11 +1629,11 @@ st::fn_00484020(void *this,short param_1,short *param_2,short *param_3,short *pa
                 iVar11 = CONCAT22(sVar4 >> 0xf,sVar2) * 200 + 100;
                 local_40 = iVar9;
                 local_3c = iVar11;
-                iVar5 = st::fn_006ACF0D((int)(short)iVar9,(int)(short)local_c,(int)(short)iVar11,
-                                     (int)(short)local_14,(int)(short)local_18,(int)param_1);
+                iVar5 = st::fn_006ACF0D((short)iVar9,(short)local_c,(short)iVar11,
+                                     (short)local_14,(short)local_18,(int)param_1);
                 if ((iVar5 <= STField<short>(this,0x814)) &&
                    ((iVar5 < 1 ||
-                    (uVar6 = (int)param_1 - (int)(short)iVar11, uVar10 = (int)uVar6 >> 0x1f,
+                    (uVar6 = (int)param_1 - (short)iVar11, uVar10 = (int)uVar6 >> 0x1f,
                     (int)(((uVar6 ^ uVar10) - uVar10) * 10) / iVar5 < 4)))) {
                   /* ST_CALLSITE[00484336]: CALL dword ptr [EAX + 0x10] */
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -1660,7 +1646,7 @@ st::fn_00484020(void *this,short param_1,short *param_2,short *param_3,short *pa
                   iVar11 = (int)this + 0x2a8;
                   do {
                     piVar7 = reinterpret_cast<int *>(st::fn_0040342C(local_48,(short)*(undefined4 *)(iVar11 + -2),
-                                                *(ushort *)(iVar11 + 2),(short)local_20));
+                                                STField<ushort>(iVar11,0x2),(short)local_20));
                     sStack_56 = (short)((uint)*piVar7 >> 0x10);
                     local_28 = *piVar7 + iVar9;
                     sVar3 = (short)local_c - sStack_56;
@@ -4292,14 +4278,14 @@ int __fastcall st::fn_0048D440(STBoatC *param_1)
   int iVar1;
   int iVar2;
 
-  this = st::fn_00405CF9(*(char *)&param_1->field_0024,param_1->field_0030);
+  this = st::fn_00405CF9((char)param_1->field_0024,param_1->field_0030);
   if (param_1->field_04A1 == -1) {
-    if (param_1->field_04AB != -1) {
+    if (param_1->field_04AB != (HoloTy *)0xffffffff) {
       return (param_1->field_07DA + param_1->field_07D6 + param_1->field_07D2 < 1) - 1 & 7;
     }
     return 0;
   }
-  if (param_1->field_04AB == -1) {
+  if (param_1->field_04AB == (HoloTy *)0xffffffff) {
     return (uint)(param_1->field_07DA + param_1->field_07D6 + param_1->field_07D2 < 0x28);
   }
   iVar1 = st::fn_0040407A(this,(uint)(ushort)param_1->field_0032,

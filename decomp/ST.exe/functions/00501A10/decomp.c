@@ -18,15 +18,15 @@
 void __thiscall CPanelTy::sub_00501A10(CPanelTy *this)
 
 {
-  uint *puVar1;
+  int *piVar1;
   BITMAPINFO *pBVar2;
 
-  puVar1 = &this->field_0434;
-  memset(puVar1, 0, 0x118); /* compiler bulk-zero initialization */
+  piVar1 = &this->field_0434;
+  memset(piVar1, 0, 0x118); /* compiler bulk-zero initialization */
   if (this->field_0B9E == CASE_1) {
     if (DAT_0080874e == '\x03') {
       if (this->field_0B99 == CASE_1A) {
-        *puVar1 = this->field_0048 + 0x3c;
+        *piVar1 = this->field_0048 + 0x3c;
         this->field_0438 = this->field_00A0 + 0x84;
         this->field_043C = 0x55;
         this->field_0440 = 0xe;
@@ -60,7 +60,7 @@ void __thiscall CPanelTy::sub_00501A10(CPanelTy *this)
       this->field_043C = (pBVar2->bmiHeader).biWidth;
       pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
       this->field_0440 = (pBVar2->bmiHeader).biHeight;
-      *puVar1 = (this->field_018C->field_0004 - this->field_043C) / 2 + this->field_0048;
+      *piVar1 = (this->field_018C->field_0004 - this->field_043C) / 2 + this->field_0048;
       this->field_0438 = this->field_00A0 + 0x50;
     }
     switch(this->field_0B99) {

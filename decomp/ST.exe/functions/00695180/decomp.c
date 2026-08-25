@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=006952B0 @ 006956B8
@@ -17,8 +19,7 @@ int FUN_00695180(AnonShape_0052EFB0_8161B92D *param_1,RecoveredRecord_CGenerate_
   int iVar8;
   uint local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar1 = *(int *)(param_3 + 0x10);
+  iVar1 = STField<int>(param_3,0x10);
   uVar5 = 0;
   iVar6 = 0;
   iVar8 = 0;
@@ -33,20 +34,20 @@ int FUN_00695180(AnonShape_0052EFB0_8161B92D *param_1,RecoveredRecord_CGenerate_
     iVar2 = param_1->field_0018;
     iVar3 = param_2->field_0018;
     do {
-      if (uVar5 < *(uint *)(iVar2 + 0xc)) {
-        iVar7 = *(int *)(iVar2 + 8) * uVar5 + *(int *)(iVar2 + 0x1c);
+      if (uVar5 < STField<uint>(iVar2,0xC)) {
+        iVar7 = STField<int>(iVar2,0x8) * uVar5 + STField<int>(iVar2,0x1C);
       }
       else {
         iVar7 = 0;
       }
-      if (uVar5 < *(uint *)(iVar3 + 0xc)) {
-        iVar4 = *(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c);
+      if (uVar5 < STField<uint>(iVar3,0xC)) {
+        iVar4 = STField<int>(iVar3,0x8) * uVar5 + STField<int>(iVar3,0x1C);
       }
       else {
         iVar4 = 0;
       }
-      iVar8 = iVar8 + *(int *)(iVar7 + 0x2c);
-      iVar6 = iVar6 + *(int *)(iVar4 + 0x2c);
+      iVar8 = iVar8 + STField<int>(iVar7,0x2C);
+      iVar6 = iVar6 + STField<int>(iVar4,0x2C);
       uVar5 = uVar5 + 1;
     } while ((int)uVar5 < iVar1);
   }

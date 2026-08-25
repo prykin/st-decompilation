@@ -16,13 +16,13 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
   STGameObjC *pSVar6;
   byte *puVar7;
   byte *puVar9;
-  uint *local_10;
+  uint local_10; /* split scalar lifetime from pointer-shaped SSA storage */
   int local_c;
   DArrayTy *local_8;
 
   puVar3 = param_2;
   local_c = 0xffff;
-  local_10 = (uint *)0xffff;
+  local_10 = 0xffff;
   local_8 = nullptr;
   if (param_1 != nullptr) {
     *param_1 = 0;
@@ -34,7 +34,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
   if (g_packedRecords_A62x8[uVar5].field200_0x203 == 0) {
     if (*(uint *)&g_packedRecords_A62x8[uVar5].field97_0x167 == uVar5) {
       if (g_packedRecords_A62x8[uVar5].field96_0x163 == 0x3c) {
-        local_10 = (uint *)thunk_FUN_0042d770(DAT_0080874d,(int *)&local_8);
+        local_10 = thunk_FUN_0042d770(DAT_0080874d,(int *)&local_8);
         local_c = 0;
         if ((short)local_10 == 0x7fff) {
           uVar5 = local_8->count * local_8->elementSize;
@@ -53,7 +53,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
       }
       else if (g_packedRecords_A62x8[uVar5].field96_0x163 == 0x1ae) {
         local_c = 2;
-        local_10 = (uint *)(uint)(ushort)g_packedRecords_A62x8[uVar5].field101_0x16b;
+        local_10 = (uint)(ushort)g_packedRecords_A62x8[uVar5].field101_0x16b;
       }
     }
   }
@@ -69,9 +69,9 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
           if (((ushort)param_2 != 0xffff) &&
              /* ST_CALLSITE[0042E0C6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
              (pSVar6 = GetObjPtr(this,DAT_0080874d,(ushort)param_2,CASE_1),
-             (*(byte *)&pSVar6->field_01D1 & 4) == 0)) {
+             (pSVar6->field_01D1 & 4) == 0)) {
             local_c = 1;
-            local_10 = param_2;
+            local_10 = static_cast<uint>(STRawWord(param_2));
             break;
           }
           uVar5 = uVar5 + 1;
@@ -86,6 +86,6 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  return local_c << 0x10 | (uint)local_10 & 0xffff;
+  return local_c << 0x10 | local_10 & 0xffff;
 }
 

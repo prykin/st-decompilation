@@ -39,7 +39,7 @@ int FUN_0074706a(int param_1)
       } while (param_1_after_write < iVar3);
     }
   }
-  *(undefined4 *)(iVar2 + 8) = 0;
+  STField<undefined4>(iVar2,0x8) = 0;
   /* ST_CALLSITE[007470D6]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(lpCriticalSection);
   return local_8;

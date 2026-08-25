@@ -75,7 +75,7 @@ undefined4 __fastcall st::fn_0045F980(STBoatC *param_1)
     if (local_EAX_34 == 0) {
       /* ST_CALLSITE[0045FB4D]: CALL 0x00405952; direct=00405952 sub_004167A0 */
       st::fn_00405952(param_1);
-      this = st::fn_00405CF9(*(char *)&param_1->field_0024,param_1->field_0030);
+      this = st::fn_00405CF9((char)param_1->field_0024,param_1->field_0030);
       if (this != nullptr) {
         iVar2 = st::fn_0040230B((AnonShape_0040D540_1BB7A4CF *)this,
                                    (uint)(ushort)param_1->field_0032);

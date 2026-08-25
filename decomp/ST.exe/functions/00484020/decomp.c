@@ -107,11 +107,11 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
                 iVar11 = CONCAT22(sVar4 >> 0xf,sVar2) * 200 + 100;
                 local_40 = iVar9;
                 local_3c = iVar11;
-                iVar5 = FUN_006acf0d((int)(short)iVar9,(int)(short)local_c,(int)(short)iVar11,
-                                     (int)(short)local_14,(int)(short)local_18,(int)param_1);
+                iVar5 = FUN_006acf0d((short)iVar9,(short)local_c,(short)iVar11,
+                                     (short)local_14,(short)local_18,(int)param_1);
                 if ((iVar5 <= STField<short>(this,0x814)) &&
                    ((iVar5 < 1 ||
-                    (uVar6 = (int)param_1 - (int)(short)iVar11, uVar10 = (int)uVar6 >> 0x1f,
+                    (uVar6 = (int)param_1 - (short)iVar11, uVar10 = (int)uVar6 >> 0x1f,
                     (int)(((uVar6 ^ uVar10) - uVar10) * 10) / iVar5 < 4)))) {
                   /* ST_CALLSITE[00484336]: CALL dword ptr [EAX + 0x10] */
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -124,7 +124,7 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
                   iVar11 = (int)this + 0x2a8;
                   do {
                     piVar7 = thunk_FUN_0041dc40(local_48,(short)*(undefined4 *)(iVar11 + -2),
-                                                *(ushort *)(iVar11 + 2),(short)local_20);
+                                                STField<ushort>(iVar11,0x2),(short)local_20);
                     sStack_56 = (short)((uint)*piVar7 >> 0x10);
                     local_28 = *piVar7 + iVar9;
                     sVar3 = (short)local_c - sStack_56;

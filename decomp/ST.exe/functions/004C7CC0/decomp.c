@@ -176,9 +176,10 @@ LAB_004c7d8c:
           if (param_8 != nullptr) {
             Library::MSVCRT::_strncpy((char *)&this->field_037D,param_8,0xf);
           }
-          thunk_FUN_004c7260(this,*(Global_sub_004C7260_param_1Enum *)&this->field_0x361,
-                             *(int *)&this->field_0x369,&this->field_0398,&this->field_039C,
-                             &this->field_03A0,&this->field_03A4);
+          /* ST_CALLSITE[004C7FBE]: CALL 0x004035df; direct=004035DF TLOBaseTy::sub_004C7260 */
+          sub_004C7260(this,*(TLOBaseTy_sub_004C7260_param_1Enum *)&this->field_0x361,
+                       *(int *)&this->field_0x369,&this->field_0398,&this->field_039C,
+                       &this->field_03A0,&this->field_03A4);
           this->field_03A8 = 0;
           this->field_03AC = 0;
           this->field_03B0 = 0;
@@ -223,11 +224,11 @@ LAB_004c7d8c:
           /* ST_CALLSITE[004C8081]: CALL 0x004028f1; direct=004028F1 TLOBaseTy::sub_004CC880 */
           sub_004CC880(this,3);
           /* ST_CALLSITE[004C8093]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-          uVar9 = LookupRecordByte(*(char *)&this->field_023D);
+          uVar9 = LookupRecordByte((char)this->field_023D);
           if (*(int *)(&DAT_00796230 + ((uint)(byte)uVar9 + this->field_0235 * 3) * 4) != 0) {
             pTVar3 = this->vtable;
             /* ST_CALLSITE[004C80C7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-            local_EAX_1031 = LookupRecordByte(*(char *)&this->field_023D);
+            local_EAX_1031 = LookupRecordByte((char)this->field_023D);
             /* ST_CALLSITE[004C80EB]: CALL dword ptr [ESI + 0x90] */
             (*pTVar3->vfunc_90)(this,3,(short)*(undefined4 *)
                                                (&DAT_00796230 +

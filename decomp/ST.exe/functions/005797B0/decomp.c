@@ -221,8 +221,8 @@ switchD_0057988b_default:
   }
   sVar4 = STField<short>(this,0x45);
   local_10 = STBiasedDiv16(sVar4, 200); /* exact signed 16-bit grid-index division */
-  local_14 = (int)(short)((short)iVar2 * 0xc9 + 100);
-  local_18 = (int)(short)((short)iVar9 * 0xc9 + 100);
+  local_14 = (short)((short)iVar2 * 0xc9 + 100);
+  local_18 = (short)((short)iVar9 * 0xc9 + 100);
   local_8 = iVar9;
   do {
     while( true ) {
@@ -231,7 +231,7 @@ switchD_0057988b_default:
           uVar1 = thunk_FUN_00496250(local_14,local_18,(int)STField<short>(this,0x45));
           sVar4 = (short)iVar2;
           if ((int)uVar1 < 0) {
-            puVar1 = thunk_FUN_004d85e0((int)sVar4,(int)(short)local_8,(int)local_10);
+            puVar1 = thunk_FUN_004d85e0((int)sVar4,(short)local_8,(int)local_10);
             if ((puVar1 == nullptr) &&
                (((((sVar4 < 0 || (g_worldGrid.sizeX <= sVar4)) || ((short)local_8 < 0)) ||
                  ((g_worldGrid.sizeY <= (short)local_8 || (local_10 < 0)))) ||
@@ -263,7 +263,7 @@ switchD_0057988b_default:
                 sVar4 = (**(code **)(*(int *)this + 0x10))
                                   (STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(sVar4)),
                                    CONCAT22(sVar4 >> 0xf,sVar5),uVar7,local_14,local_18,uVar7);
-                uVar3 = (int)(short)((sVar4 / 0x2d + 3) - (short)((int)sVar4 / -0x4c000000)) &
+                uVar3 = (short)((sVar4 / 0x2d + 3) - (short)((int)sVar4 / -0x4c000000)) &
                         0x80000007;
                 if ((int)uVar3 < 0) {
                   uVar3 = (uVar3 - 1 | 0xfffffff8) + 1;
@@ -277,21 +277,21 @@ switchD_0057988b_default:
           bVar10 = iVar2 - STField<short>(this,0x47) < 0;
           if (iVar2 == STField<short>(this,0x47) || bVar10) break;
           iVar2 = iVar2 + -1;
-          local_14 = (int)(short)(sVar4 + 99 + (short)iVar2 * 200);
+          local_14 = (short)(sVar4 + 99 + (short)iVar2 * 200);
           if (iVar2 < 0) goto cf_common_exit_00579E8F;
         }
         if (!bVar10) break;
         iVar2 = iVar2 + 1;
-        local_14 = (int)(short)(sVar4 + 0x65 + (short)iVar2 * 200);
+        local_14 = (short)(sVar4 + 0x65 + (short)iVar2 * 200);
       }
       bVar10 = -1 < local_8 - STField<short>(this,0x49);
       if (local_8 != STField<short>(this,0x49) && bVar10) break;
       if (bVar10) goto cf_common_exit_00579E8F;
-      local_18 = (int)(short)((short)local_8 + 0x65 + (short)(local_8 + 1) * 200);
+      local_18 = (short)((short)local_8 + 0x65 + (short)(local_8 + 1) * 200);
       local_8 = local_8 + 1;
     }
     iVar9 = local_8 + -1;
-    local_18 = (int)(short)((short)local_8 + 99 + (short)iVar9 * 200);
+    local_18 = (short)((short)local_8 + 99 + (short)iVar9 * 200);
     local_8 = iVar9;
   } while (-1 < iVar9);
 cf_common_exit_00579E8F:

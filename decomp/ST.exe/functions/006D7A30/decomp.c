@@ -52,8 +52,8 @@ void FUN_006d7a30(int param_1,int param_2,uint param_3,uint param_4,int param_5,
   iVar4 = iVar6 * 2 * param_5;
   local_14 = param_5;
   local_c = 0;
-  auto param_4_after_write = uVar3; /* compiler stack-slot lifetime split */
-  auto param_5_after_write = iVar1; /* compiler stack-slot lifetime split */
+  uint param_4_after_write = uVar3; /* compiler stack-slot lifetime split */
+  int param_5_after_write = iVar1; /* compiler stack-slot lifetime split */
   local_10 = iVar4;
   if (0 < iVar4) {
     do {

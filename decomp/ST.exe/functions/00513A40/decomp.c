@@ -49,9 +49,8 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
       this_00->field_0030 = (undefined2)iVar2;
       this_00->field_0032 = STPiece<2,2>(iVar2);
       if (g_cursorClass_00802A30 != nullptr) {
-        /* ST_CALLSITE[00513B09]: CALL dword ptr [EAX] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
+        /* ST_CALLSITE[00513B09]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+        g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x18);
       }
     }
     /* ST_CALLSITE[00513B0D]: CALL 0x00401acd; direct=00401ACD HelpPanelTy::CreateList */

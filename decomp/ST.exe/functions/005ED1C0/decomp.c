@@ -127,7 +127,7 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
     STField<undefined4>(this,0x283) = 0;
     return 1;
   }
-  iVar8 = (int)(short)(sVar1 * 200 + 100);
+  iVar8 = (short)(sVar1 * 200 + 100);
   if (1 < STField<byte>(this,0x252)) {
     *param_1 = STField<int>(this,0x277);
     *param_2 = STField<int>(this,0x27b);

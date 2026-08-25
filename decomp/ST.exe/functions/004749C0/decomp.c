@@ -120,19 +120,18 @@ LAB_00475068:
           }
           local_8 = (undefined4 *)((*(int *)(&DAT_0085442c + iVar12 * 4) * iVar9) / iVar22);
           iVar22 = (*(int *)(&DAT_007e07a0 + iVar12 * 4) * iVar9) / iVar22;
-          thunk_FUN_004d7480(*(char *)&this->field_0024,4,this->field_0018,(int)local_8,0,iVar22,0);
-          iVar12 = thunk_FUN_004d7b10(*(char *)&this->field_0024,4);
+          thunk_FUN_004d7480((char)this->field_0024,4,this->field_0018,(int)local_8,0,iVar22,0);
+          iVar12 = thunk_FUN_004d7b10((char)this->field_0024,4);
           if (((int)local_8 <= iVar12) &&
-             (iVar12 = thunk_FUN_004d7b90(*(char *)&this->field_0024,4), iVar22 <= iVar12)) {
-            thunk_FUN_004d7c10(*(char *)&this->field_0024,4,this->field_0018,(int)local_8);
-            thunk_FUN_004d7e50(*(char *)&this->field_0024,4,this->field_0018,iVar22);
+             (iVar12 = thunk_FUN_004d7b90((char)this->field_0024,4), iVar22 <= iVar12)) {
+            thunk_FUN_004d7c10((char)this->field_0024,4,this->field_0018,(int)local_8);
+            thunk_FUN_004d7e50((char)this->field_0024,4,this->field_0018,iVar22);
             this->field_0716 = this->field_0716 + iVar9;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if (this->field_0024 == (uint)*(byte *)(this->field_0010 + 0x112d)) {
+            if (this->field_0024 == (uint)(byte)this->field_0010->field_112D) {
               thunk_FUN_004d8b70((char)this->field_0024);
             }
           }
-          thunk_FUN_004d7570(*(char *)&this->field_0024,4,(int *)this->field_0018);
+          thunk_FUN_004d7570((char)this->field_0024,4,(int *)this->field_0018);
         }
       }
       local_44 = this->field_0008;
@@ -153,7 +152,7 @@ switchD_00474a47_caseD_2:
         iVar12 = this->field_05BC;
         this->field_05BC = iVar12 + 1;
         if ((&this->field_05B4)[iVar12] != -1) {
-          param_1 = (STBoatC *)thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
+          param_1 = (STBoatC *)thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
           /* ST_CALLSITE[00474B42]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
           sub_00481520(this,(int)this->field_005B,(int)this->field_005D,
                        (int)(&this->field_05B2)[this->field_05BC]);
@@ -281,16 +280,16 @@ switchD_00474a47_caseD_2:
             sVar23 = 0;
             bVar24 = 0;
             lVar15 = Library::MSVCRT::__ftol();
-            iVar14 = (int)local_20 + this->field_0045 + local_c + (int)(short)lVar15;
+            iVar14 = (int)local_20 + this->field_0045 + local_c + (short)lVar15;
             iVar9 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
-            iVar11 = (int)(short)local_24 + iVar12 + this->field_0041;
+            iVar11 = (short)local_24 + iVar12 + this->field_0041;
           }
           else {
             iVar14 = (int)local_20 + local_c + this->field_0045;
             STPiece<2,2>(local_24) = (short)((uint)uVar3 >> 0x10);
             iVar9 = (int)this->field_0043 - (int)STPiece<2,2>(local_24);
             STPiece<0,2>(local_24) = (short)uVar3;
-            iVar11 = (int)(short)local_24 + iVar12 + this->field_0041;
+            iVar11 = (short)local_24 + iVar12 + this->field_0041;
           }
           /* ST_CALLSITE[00474EAE]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
           TraksClassTy::TraksCreate

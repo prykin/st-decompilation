@@ -50,12 +50,11 @@ LAB_0053c75b:
         uVar1 = *puVar6;
       }
       FUN_006e6080(this,2,uVar1,(undefined4 *)&this->field_0x18);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((((*(int *)&this->field_0x2c != 0) &&
            (iVar4 = (&this->field_027A)[(byte)this->field_0278], iVar4 != 0)) &&
-          (uVar3 = this->field_0199 + local_c, uVar3 < *(uint *)(iVar4 + 0xc))) &&
+          (uVar3 = this->field_0199 + local_c, uVar3 < STField<uint>(iVar4,0xC))) &&
          (pGVar5 = (Global_sub_00528060_param_1Enum *)
-                   (*(int *)(iVar4 + 8) * uVar3 + *(int *)(iVar4 + 0x1c)),
+                   (STField<int>(iVar4,0x8) * uVar3 + STField<int>(iVar4,0x1C)),
          pGVar5 != nullptr)) {
         *(char *)((int)local_8 + -1) = (pGVar5[8] == CASE_0) + '\x03';
         uVar1 = thunk_FUN_005293c0(*pGVar5);

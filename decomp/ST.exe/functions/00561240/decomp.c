@@ -87,7 +87,7 @@ int * FUN_00561240(int param_1,int param_2,int param_3)
   local_1c = STRoundFixed16(local_40[local_c * 2 + 1]);
   param_1_after_write = local_c;
   iVar4 = local_1c;
-  auto param_3_after_write = local_20; /* compiler stack-slot lifetime split */
+  int param_3_after_write = local_20; /* compiler stack-slot lifetime split */
   do {
     param_1_after_write = param_1_after_write + 1;
     if (3 < param_1_after_write) {

@@ -239,9 +239,9 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
     return 0;
   }
   dVar6 = (message->arg0).u32;
-  local_8->field_0219 = 0x23a;
-  local_8->field_0215 = 0x32;
-  if (*(int *)(dVar6 + 0xc) == 2) {
+  local_8->field_0219 = (STParticleC *)0x23a;
+  local_8->field_0215 = (DArrayTy *)0x32;
+  if (STField<int>(dVar6,0xC) == 2) {
     st::fn_00401A91((STAllPlayersC *)local_8,st::pointer_boundary_cast<undefined4 *>((message->arg0).ptr));
     if (this_00->field_0313 != '\0') {
       sVar2 = this_00->field_0047;
@@ -293,10 +293,10 @@ int __thiscall st::fn_00621B50(STMineSetC *this,STMessage *message)
   puVar14 = (byte *)((message->arg0).ptr);
   puVar16 = (byte *)&local_8->field_0x25e;
   memmove(puVar16, puVar14, 0x4f); /* compiler REP MOVS byte copy */
-  if (*(int *)(dVar6 + 0xc) == 0) {
-    local_8->field_0276 = (int)(short)(*(short *)&local_8->field_0276 * 0xc9 + 100);
-    local_8->field_027A = (int)(short)(*(short *)&local_8->field_027A * 0xc9 + 100);
-    local_8->field_027E = (int)(short)(*(short *)&local_8->field_027E * 200 + 100);
+  if (STField<int>(dVar6,0xC) == 0) {
+    local_8->field_0276 = (short)((short)local_8->field_0276 * 0xc9 + 100);
+    local_8->field_027A = (short)((short)local_8->field_027A * 0xc9 + 100);
+    local_8->field_027E = (short)((short)local_8->field_027E * 200 + 100);
     local_8->field_0282 = local_8->field_0276;
     local_8->field_0286 = local_8->field_027A;
     local_8->field_028A = local_8->field_027E;

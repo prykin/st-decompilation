@@ -23,8 +23,8 @@ void FUN_0069c670(DArrayTy *param_1,int param_2,uint param_3)
       if (0 < iVar2) {
         do {
           iVar3 = STField<int>(pvVar6,0xc);
-          if (uVar5 < *(uint *)(iVar3 + 0xc)) {
-            piVar4 = (int *)(*(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c));
+          if (uVar5 < STField<uint>(iVar3,0xC)) {
+            piVar4 = (int *)(STField<int>(iVar3,0x8) * uVar5 + STField<int>(iVar3,0x1C));
           }
           else {
             piVar4 = nullptr;

@@ -217,7 +217,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
       }
       local_14 = pAVar15;
       if (((uint)(this_01->field_0069 - this_01->field_0061) <
-           *(uint *)((int)&pAVar15->field_0x0 + 1)) && (this_01->field_006D != CASE_5)) break;
+           STField<uint>(pAVar15,0x1)) && (this_01->field_006D != CASE_5)) break;
       switch(static_cast<uint32_t>(STRawWord((char)*(int *)&pAVar15->field_0x0))) {
       case '\x01':
         if ((this_01->field_006E != '\x01') ||
@@ -244,11 +244,11 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
             StartSystemTy::sub_006E56B0(this_01->field_000C,this_01->field_0291[uVar26]);
             this_01->field_0291[uVar26] = 0;
           }
-          local_8 = (AnonShape_005E1330_1AE0EB1C *)(&this_01->field_0000 + uVar26 * 3);
+          local_8 = (AnonShape_005E1330_1AE0EB1C *)(&this_01->vtable + uVar26 * 3);
           FreeAndNull(&local_8->field_0653);
           if (pAVar15->field_0xe == '\x01') {
             local_18 = *(int ***)&pAVar15->field_0x17;
-            local_84 = *(uint *)((int)&pAVar15->field_001A + 1);
+            local_84 = STField<uint>(pAVar15,0x1B);
             if ((int)local_18 < 0x91) {
               local_18 = (int **)0x91;
             }
@@ -266,15 +266,14 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
                  &this_01->field_0x91 + (uint)(pAVar15->field_000A == '\x01') * 0x100;
             local_8->field_065B = *(undefined4 *)&pAVar15->field_0x9;
             /* ST_CALLSITE[005E1DF9]: CALL 0x00405d1c; direct=00405D1C MTaskTy::CreateBut */
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             uVar14 = CreateBut(this_01,1,1,*(uint *)&pAVar15->field_0xf,
-                               *(undefined4 *)((int)&pAVar15->field_0012 + 1),local_18,local_84,
+                               STField<undefined4>(pAVar15,0x13),local_18,local_84,
                                uVar26 + 0x6200,uVar26 + 0x6212);
             this_01->field_0291[uVar26] = uVar14;
             puVar8 = this_01->field_02A5 + uVar26;
             Library::DKW::DDX::FUN_006b3640
                       ((int *)g_ddxContext_008075A8,this_01->field_02A5[uVar26],0xffffffff,
-                       *(uint *)&pAVar15->field_0xf,*(uint *)((int)&pAVar15->field_0012 + 1));
+                       *(uint *)&pAVar15->field_0xf,STField<uint>(pAVar15,0x13));
             FUN_006b2800(g_ddxContext_008075A8,*puVar8,(uint)local_18,local_84);
             FUN_006b3020((int)g_ddxContext_008075A8,*puVar8,pAVar15->field_0005);
             Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar8);
@@ -550,8 +549,7 @@ LAB_005e24c5:
               local_b34[1] = 2;
               local_b14 = *(int *)&pAVar15->field_0xe + 0xf;
               local_b34[2] = 1;
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_b10 = *(int *)((int)&pAVar15->field_0xf + 3) + 0xf;
+              local_b10 = STField<int>(pAVar15,0x12) + 0xf;
               pcVar7 = this_01->field_008D;
               local_b34[3] = g_startSystem_0081176C->field_0548[2];
               local_b24 = (*(int *)&pAVar15->field_0x16 - *(int *)&this_01->field_0x2f5) + -0x2d;
@@ -706,10 +704,10 @@ LAB_005e24c5:
         }
         if (pAVar15->field_0xd == '\x01') {
           if (((pAVar11 == nullptr) || ((int)*(uint *)pAVar11 < 0)) ||
-             (*(int *)&pAVar11->field_0x20 != *(int *)((int)&pAVar15->field_0012 + 2))) {
+             (*(int *)&pAVar11->field_0x20 != STField<int>(pAVar15,0x14))) {
             /* ST_CALLSITE[005E2A34]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
             TTaskItemClose(this_01,pAVar11);
-            iVar18 = *(int *)((int)&pAVar15->field_0012 + 2);
+            iVar18 = STField<int>(pAVar15,0x14);
             if (iVar18 < (int)g_dArray_0080C4C7->elementSize) {
               local_8 = *(AnonShape_005E1330_1AE0EB1C **)
                          (g_dArray_0080C4C7->growCapacity + iVar18 * 4);
@@ -1020,13 +1018,13 @@ LAB_005e3030:
               local_1dc.field_0044 = this_01->field_0069;
               local_14b = ((char)pAVar15[2].field_0012 != '\0') + '\x01';
               local_1dc.field_0008 = *(int *)&pAVar15[2].field_0xe;
-              local_1dc.field_0040 = *(undefined4 *)&pAVar15[2].field_000A;
+              local_1dc.field_0040 = *(int *)&pAVar15[2].field_000A;
             }
             else if (cVar2 == '\x02') {
               local_1dc.field_0044 = this_01->field_0069;
               local_14b = ((char)pAVar15[2].field_0012 != '\0') + '\x03';
               local_1dc.field_0008 = *(int *)&pAVar15[2].field_0xe;
-              local_1dc.field_0040 = *(undefined4 *)&pAVar15[2].field_000A;
+              local_1dc.field_0040 = *(int *)&pAVar15[2].field_000A;
               local_14a = 0;
               local_146 = *(int *)((int)&pAVar15[2].field_0005 + 1);
               local_142 = FUN_006c81c0(*(int *)((int)&pAVar15[1].field_0012 + 2),
@@ -1149,7 +1147,7 @@ LAB_005e3030:
             local_6d = 1;
             local_6c = 1;
             local_6f = 1;
-            STPiece<1,4>(local_78) = *(undefined4 *)((int)&pAVar15->field_0x0 + 1);
+            STPiece<1,4>(local_78) = STField<undefined4>(pAVar15,0x1);
             local_73 = 0x7ffffff0;
             local_78[0] = 7;
             local_6b = 1;

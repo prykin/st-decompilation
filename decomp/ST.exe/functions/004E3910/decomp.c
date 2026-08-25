@@ -79,14 +79,14 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                             ((sVar13 < 0 || (g_worldGrid.sizeZ <= sVar13)))) ||
                            (g_worldGrid.cells
                             [(int)sVar1 * (int)sVar2 + (int)sVar13 * (int)g_worldGrid.planeStride +
-                             (int)(short)(sVar2 + -1)].objects[0] == nullptr)) &&
+                             (short)(sVar2 + -1)].objects[0] == nullptr)) &&
                           (((((short)(sVar2 + -1) < 0 || (sVar2 <= (short)(sVar2 + -1))) ||
                             ((sVar1 < 0 ||
                              (((g_worldGrid.sizeY <= sVar1 || (sVar13 < 0)) ||
                               (g_worldGrid.sizeZ <= sVar13)))))) ||
                            (g_worldGrid.cells
                             [(int)sVar1 * (int)sVar2 + (int)sVar13 * (int)g_worldGrid.planeStride +
-                             (int)(short)(sVar2 + -1)].objects[1] == nullptr)))))) {
+                             (short)(sVar2 + -1)].objects[1] == nullptr)))))) {
                         local_20 = (STSharkC *)(sVar2 + -1);
                         local_1c = iVar10;
                         local_18 = iVar4;
@@ -160,7 +160,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                   } while (iVar10 < g_worldGrid.sizeZ);
                 }
                 pSVar11 = (STSharkC *)((int)&pSVar11->vtable + 1);
-              } while ((int)pSVar11 < (int)(short)uVar9);
+              } while ((int)pSVar11 < (short)uVar9);
             }
             if (local_8->count != 0) {
               uVar6 = param_1[7] * 0x41c64e6d + 0x3039;
@@ -187,7 +187,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                                  (local_20,(int)local_20,local_1c,local_18,iVar10,iVar5,iVar4,iVar7,
                                   0,param_1[9]);
               this = (STT3DSprC *)((int)param_1 + 0x1d5);
-              param_1[local_c + 0x134] = *(int *)(iVar10 + 0x18);
+              param_1[local_c + 0x134] = STField<int>(iVar10,0x18);
               cVar12 = '\0';
               /* ST_CALLSITE[004E3E67]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
               iVar10 = STT3DSprC::sub_004ACD30(this,'\v');

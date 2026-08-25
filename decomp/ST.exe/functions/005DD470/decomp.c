@@ -75,7 +75,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
       uVar12 = (uint)(param_1->arg0).words.high;
       pDVar13 = g_dArray_0080C4FA;
       uVar14 = uVar12;
-      if ((int)uVar12 < (int)(uVar12 + *(int *)(dVar4 + 0x1e0))) {
+      if ((int)uVar12 < (int)(uVar12 + STField<int>(dVar4,0x1E0))) {
         do {
           if ((int)uVar14 < (int)pDVar13->elementSize) {
             resourceString = *(char **)(pDVar13->growCapacity + uVar14 * 4);
@@ -91,8 +91,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
           }
           uVar14 = uVar14 + 1;
           uVar12 = (uint)(param_1->arg0).words.high;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        } while ((int)uVar14 < (int)(uVar12 + *(int *)(local_10 + 0x1e0)));
+        } while ((int)uVar14 < (int)(uVar12 + STField<int>(local_10,0x1E0)));
       }
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_0558);
     }

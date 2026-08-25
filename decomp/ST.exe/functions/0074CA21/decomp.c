@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_0074ca21(void *this,int param_1)
   }
   if (param_1 == 1) {
     iVar2 = STField<int>(this,0x8c);
-    if (*(int *)(iVar2 + 0x18) != 0) {
+    if (STField<int>(iVar2,0x18) != 0) {
       if (iVar2 == 0) {
         iVar2 = 0;
       }

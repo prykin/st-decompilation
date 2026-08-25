@@ -1,4 +1,4 @@
-FUN_004c7260:
+TLOBaseTy::sub_004C7260:
 004C7260  55                        PUSH EBP
 004C7261  8B EC                     MOV EBP,ESP
 004C7263  53                        PUSH EBX

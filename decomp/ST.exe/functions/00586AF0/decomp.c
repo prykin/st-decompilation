@@ -254,7 +254,7 @@ LAB_00587dde:
             bVar2 = ((byte *)param_1)[9];
             local_4c = STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(bVar1));
             local_48 = STReplaceLowByte((uint32_t)(local_48), (uint8_t)(bVar2));
-            if (((char *)iVar8)[0x146f] == '\0') {
+            if (STField<char>(iVar8,0x146F) == '\0') {
               if (bVar1 == bVar2) {
 LAB_00587f89:
                 iVar8 = 0;
@@ -366,7 +366,7 @@ LAB_005882af:
           bVar2 = ((byte *)param_1)[9];
           local_4c = STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(bVar1));
           local_48 = STReplaceLowByte((uint32_t)(local_48), (uint8_t)(bVar2));
-          if (((char *)iVar8)[0x146f] == '\0') {
+          if (STField<char>(iVar8,0x146F) == '\0') {
             if (bVar1 == bVar2) {
 LAB_005882a0:
               iVar8 = 0;
@@ -499,7 +499,7 @@ LAB_005882a0:
                      (short)((longlong)iVar11 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      iVar8 = (int)(short)((sVar14 / 0xc9 + (sVar14 >> 0xf)) -
+      iVar8 = (short)((sVar14 / 0xc9 + (sVar14 >> 0xf)) -
                           (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
     }
     iVar11 = param_1[0xa4];
@@ -510,7 +510,7 @@ LAB_005882a0:
                        (short)((longlong)(int)local_44 * 0x28c1979 >> 0x3f)) + -1;
       }
       else {
-        iVar8 = (int)(short)((sVar15 / 0xc9 + (sVar15 >> 0xf)) -
+        iVar8 = (short)((sVar15 / 0xc9 + (sVar15 >> 0xf)) -
                             (short)((longlong)(int)local_44 * 0x28c1979 >> 0x3f));
       }
       iVar11 = param_1[0xa5];
@@ -521,7 +521,7 @@ LAB_005882a0:
                        (short)((longlong)local_48 * 0x51eb851f >> 0x3f)) + -1;
       }
       else {
-        iVar8 = (int)(short)((sVar16 / 200 + (sVar16 >> 0xf)) -
+        iVar8 = (short)((sVar16 / 200 + (sVar16 >> 0xf)) -
                             (short)((longlong)local_48 * 0x51eb851f >> 0x3f));
       }
       iVar11 = param_1[0xa6];
@@ -561,7 +561,7 @@ LAB_00587323:
         bVar2 = ((byte *)param_1)[9];
         local_4c = STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(bVar1));
         local_48 = STReplaceLowByte((uint32_t)(local_48), (uint8_t)(bVar2));
-        if (((char *)iVar8)[0x146f] == '\0') {
+        if (STField<char>(iVar8,0x146F) == '\0') {
           if (bVar1 == bVar2) {
             iVar8 = 0;
           }
@@ -670,7 +670,7 @@ LAB_00587648:
         bVar2 = ((byte *)param_1)[9];
         local_4c = STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(bVar1));
         local_48 = STReplaceLowByte((uint32_t)(local_48), (uint8_t)(bVar2));
-        if (((char *)iVar11)[0x146f] == '\0') {
+        if (STField<char>(iVar11,0x146F) == '\0') {
           if (bVar1 == bVar2) {
             iVar11 = 0;
           }
@@ -762,7 +762,7 @@ LAB_00587761:
         STPiece<12,4>(local_6c) = 2;
         local_6c.field_0010 = 0x110;
         local_6c.field_0014 = &DAT_008116f0;
-        /* ST_CALLSITE[00586CE8]: CALL dword ptr [EAX] */
+        /* ST_CALLSITE[00586CE8]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AF40_F59F8577 */
         this_00->GetMessage(&local_6c);
         pSVar10 = local_44;
       }

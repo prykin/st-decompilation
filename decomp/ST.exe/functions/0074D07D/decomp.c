@@ -17,8 +17,8 @@ int __thiscall FUN_0074d07d(void *this,int *param_1,int *param_2)
   *param_2 = 0;
   iVar4 = 0;
   iVar3 = *(int *)(STField<int>(this,0xa8) + 0x8c);
-  if ((iVar3 != 0) && (*(int *)(iVar3 + 0xe4) == 0)) {
-    *param_2 = *(int *)(iVar3 + 0x9c);
+  if ((iVar3 != 0) && (STField<int>(iVar3,0xE4) == 0)) {
+    *param_2 = STField<int>(iVar3,0x9C);
   }
   piVar1 = (int *)*param_2;
   if (piVar1 == nullptr) {

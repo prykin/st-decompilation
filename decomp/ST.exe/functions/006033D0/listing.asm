@@ -1,4 +1,4 @@
-FUN_006033d0:
+STDestC::sub_006033D0:
 006033D0  55                        PUSH EBP
 006033D1  8B EC                     MOV EBP,ESP
 006033D3  56                        PUSH ESI

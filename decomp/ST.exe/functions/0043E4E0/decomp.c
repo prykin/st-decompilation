@@ -25,8 +25,7 @@ uint * STAllPlayersC::GetObjsList(char param_1)
   int local_8;
 
   local_14 = g_packedRecords_A62x8[param_1].field3_0x9;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_10 = *(int *)(local_14 + 0xc);
+  local_10 = STField<int>(local_14,0xC);
   uVar6 = thunk_FUN_0043e460(param_1);
   local_c = (uint)uVar6;
   local_58.previous = g_currentExceptionFrame;
@@ -39,7 +38,7 @@ uint * STAllPlayersC::GetObjsList(char param_1)
     iVar3 = local_14;
     if ((uVar5 != 0) && (local_8 = 0, 0 < local_10)) {
       do {
-        piVar1 = *(int **)(*(int *)(iVar3 + 0x1c) + local_8 * 4);
+        piVar1 = *(int **)(STField<int>(iVar3,0x1C) + local_8 * 4);
         /* ST_CALLSITE[0043E570]: CALL dword ptr [EDX + 0xf8] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((piVar1 != nullptr) && (iVar8 = (**(code **)(*piVar1 + 0xf8))(), iVar8 == 1)) {

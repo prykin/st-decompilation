@@ -27,7 +27,7 @@ FUN_006a1eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
       if ((short)local_EAX_102 != 0) {
         iVar1 = 0xff;
       }
-      thunk_FUN_006a1410(param_1,param_2,param_3,(int)(short)local_EAX_102,iVar1,param_7,param_8);
+      thunk_FUN_006a1410(param_1,param_2,param_3,(short)local_EAX_102,iVar1,param_7,param_8);
     }
     local_10 = &DAT_007df82c;
     do {
@@ -39,7 +39,7 @@ FUN_006a1eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
           if (((-1 < (int)uVar6) && ((int)uVar6 < *param_1)) &&
              ((-1 < iVar1 && (((iVar1 < param_1[1] && (-1 < local_8)) && (local_8 < 6)))))) {
             iVar2 = thunk_FUN_006a1370(param_1,uVar6,iVar1,local_8,(int)local_18);
-            local_c = (int)(short)iVar2;
+            local_c = (short)iVar2;
             iVar5 = param_5;
             if (local_c != 0) {
               iVar5 = 0xff;

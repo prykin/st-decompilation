@@ -82,12 +82,12 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
         g_currentExceptionFrame = local_7c.previous;
         return 0;
       }
-      if ((int)local_10->field_00C6 < 0) {
+      if (local_10->field_00C6 < 0) {
         g_currentExceptionFrame = local_7c.previous;
         return 0;
       }
       st::fn_006E8BA0(g_sT3DSMAPContext_00807598,local_10->field_00C6);
-      this_00->field_00C6 = 0xffffffff;
+      this_00->field_00C6 = -1;
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -102,7 +102,7 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
       if (this_00->field_003C != 0) {
         this_00->field_00C2 = CASE_1;
         this_00->field_0104 = this_00->field_003C;
-        if ((int)this_00->field_00C6 < 0) {
+        if (this_00->field_00C6 < 0) {
           g_currentExceptionFrame = local_7c.previous;
           return 0;
         }
@@ -111,7 +111,7 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
         return 0;
       }
       this_00->field_00C2 = CASE_2;
-      if ((int)this_00->field_00C6 < 0) {
+      if (this_00->field_00C6 < 0) {
         g_currentExceptionFrame = local_7c.previous;
         return 0;
       }
@@ -161,14 +161,14 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
       return 0;
     }
     this_00->field_00C2 = CASE_2;
-    if (this_00->field_00B6 <= (int)this_00->field_00B2) {
+    if (this_00->field_00B6 <= this_00->field_00B2) {
       this_00->field_00B2 = 0;
     }
     if (this_00->field_00D6 == '\0') {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    if ((int)this_00->field_00C6 < 0) {
+    if (this_00->field_00C6 < 0) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -196,7 +196,7 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
                                (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      local_c = (float)(int)(short)(((short)(iVar10 / 200) + sVar4) -
+      local_c = (float)(short)(((short)(iVar10 / 200) + sVar4) -
                                    (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
     }
     iVar10 = this_00->field_004A;
@@ -210,7 +210,7 @@ int __thiscall st::fn_00627EB0(STParticleC *this,STMessage *message)
                     &local_1c,&local_20), (int)local_c < 0 ||
         (local_24 = local_1c, local_28 = local_20, 4 < (int)local_c)))) goto LAB_006282e0;
 LAB_00628286:
-    if (((local_24 < 0) || ((int)pVVar13->field_0030 <= local_24)) ||
+    if (((local_24 < 0) || (pVVar13->field_0030 <= local_24)) ||
        ((g_centeredOffsets5[(int)local_c] + local_28 < 0 ||
         (pVVar13->field_0034 <= g_centeredOffsets5[(int)local_c] + local_28)))) {
       bVar15 = false;
@@ -239,9 +239,9 @@ LAB_00628286:
       if (bVar6 == 0) {
         /* ST_CALLSITE[00628574]: CALL 0x00405d53; direct=00405D53 STParticleC::InitVisibelDeton */
         st::fn_00405D53(this_00,0);
-        if (-1 < (int)this_00->field_00C6) {
+        if (-1 < this_00->field_00C6) {
           st::fn_006E8BA0(g_sT3DSMAPContext_00807598,this_00->field_00C6);
-          this_00->field_00C6 = 0xffffffff;
+          this_00->field_00C6 = -1;
         }
       }
       else {
@@ -274,13 +274,13 @@ LAB_00628286:
 LAB_0062838a:
     if (uVar14 < 0x19) {
 LAB_006283bd:
-      this_00->field_00B2 = st::machine_word_boundary_cast<undefined4>(this_00->field_00B2 + 1);
+      this_00->field_00B2 = st::machine_word_boundary_cast<int>(this_00->field_00B2 + 1);
     }
     else if (uVar14 < 0x2d) {
       if ((g_playSystem_00802A38->field_00E4 & 1) == 0) goto LAB_006283bd;
     }
     else if (g_playSystem_00802A38->field_00E4 % 3 == 0) goto LAB_006283bd;
-    if (this_00->field_00B6 <= (int)this_00->field_00B2) {
+    if (this_00->field_00B6 <= this_00->field_00B2) {
       this_00->field_00B2 = 0;
     }
     if (this_00->field_00D6 == '\0') {
@@ -309,7 +309,7 @@ LAB_006283bd:
                                (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      local_c = (float)(int)(short)(((short)(iVar10 / 200) + sVar4) -
+      local_c = (float)(short)(((short)(iVar10 / 200) + sVar4) -
                                    (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
     }
     iVar10 = this_00->field_004A;
@@ -329,11 +329,11 @@ LAB_006282e0:
     iVar10 = st::machine_word_boundary_cast<int>(this_00->field_00B2 + 1);
     this_00->field_00B2 = iVar10;
     if ((((this_00->field_00BF != '\0') && (iVar10 == 0xf)) && (this_00->field_00D6 != '\0')) &&
-       (-1 < (int)this_00->field_00C6)) {
+       (-1 < this_00->field_00C6)) {
       st::fn_006E9CB0(g_sT3DSMAPContext_00807598,(uint *)this_00->field_00C6,1);
     }
     if (((this_00->field_00B2 == this_00->field_00B6) && (this_00->field_00D6 != '\0')) &&
-       (-1 < (int)this_00->field_00C6)) {
+       (-1 < this_00->field_00C6)) {
       st::fn_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this_00->field_00C6,0);
     }
     if (((this_00->field_00B2 == 5) && (iVar10 = st::fn_00404AAC((int)this_00), iVar10 != 0)) &&
@@ -372,7 +372,7 @@ LAB_006282e0:
                                    (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) + -1);
         }
         else {
-          local_c = (float)(int)(short)(((short)(iVar10 / 200) + sVar4) -
+          local_c = (float)(short)(((short)(iVar10 / 200) + sVar4) -
                                        (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
         }
         iVar10 = this_00->field_004A;
@@ -387,7 +387,7 @@ LAB_006282e0:
           bVar15 = true;
         }
         else {
-          if (((local_2c < 0) || ((int)pVVar13->field_0030 <= local_2c)) ||
+          if (((local_2c < 0) || (pVVar13->field_0030 <= local_2c)) ||
              ((g_centeredOffsets5[(int)local_c] + local_30 < 0 ||
               (pVVar13->field_0034 <= g_centeredOffsets5[(int)local_c] + local_30)))) {
             bVar15 = false;
@@ -461,7 +461,7 @@ LAB_006282e0:
                                (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      local_c = (float)(int)(short)(((short)(iVar10 / 200) + sVar4) -
+      local_c = (float)(short)(((short)(iVar10 / 200) + sVar4) -
                                    (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
     }
     iVar10 = this_00->field_004A;
@@ -476,7 +476,7 @@ LAB_006282e0:
       bVar15 = true;
     }
     else {
-      if (((local_34 < 0) || ((int)pVVar13->field_0030 <= local_34)) ||
+      if (((local_34 < 0) || (pVVar13->field_0030 <= local_34)) ||
          ((g_centeredOffsets5[(int)local_c] + local_38 < 0 ||
           (pVVar13->field_0034 <= g_centeredOffsets5[(int)local_c] + local_38)))) {
         bVar15 = false;
@@ -538,7 +538,7 @@ switchD_006288e6_caseD_0:
 undefined4 __thiscall st::fn_00629070(STParticleC *this,int param_1)
 
 {
-  uint *puVar1;
+  int *piVar1;
   int iVar2;
   uint uVar3;
   short sVar5;
@@ -683,18 +683,18 @@ LAB_00629242:
     return 0;
   }
   local_1c->field_00CA = puVar9;
-  puVar1 = &local_1c->field_00C6;
+  piVar1 = &local_1c->field_00C6;
   st::fn_006E8660
-            (g_sT3DSMAPContext_00807598,reinterpret_cast<int *>(puVar1),2,0,STField<uint>(puVar9,9),
+            (g_sT3DSMAPContext_00807598,piVar1,2,0,STField<uint>(puVar9,9),
              STField<uint>(puVar9,0xd),local_10,local_c,0);
   if (DAT_00807326 != '\0') {
     st::fn_006E9520
-              (g_sT3DSMAPContext_00807598,*puVar1,0,0x4049f8,(uint)pSVar8);
+              (g_sT3DSMAPContext_00807598,*piVar1,0,0x4049f8,(uint)pSVar8);
   }
   st::fn_006E98E0
-            (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar9,STField<int>(puVar9,0x21),1);
-  st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,0);
-  uVar3 = *puVar1;
+            (g_sT3DSMAPContext_00807598,*piVar1,0,*(int *)puVar9,STField<int>(puVar9,0x21),1);
+  st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar1,0,0);
+  uVar3 = *piVar1;
   local_20 = (float)pSVar8->field_0046 * _DAT_007904f8 * _DAT_007904f0;
   pSVar8->field_006A = local_20;
   local_14 = (float)pSVar8->field_004A * _DAT_007904f8 * _DAT_007904f0;
@@ -703,14 +703,14 @@ LAB_00629242:
   pSVar8->field_0072 = fVar6;
   st::fn_006EA960
             (g_sT3DSMAPContext_00807598,uVar3,local_20,local_14,fVar6 + _DAT_007904fc);
-  st::fn_006EAAA0(g_sT3DSMAPContext_00807598,*puVar1,0);
+  st::fn_006EAAA0(g_sT3DSMAPContext_00807598,*piVar1,0);
   pSVar8->field_00C1 = 1;
   if (local_24 == 4) {
     st::fn_006EA4E0
-              (g_sT3DSMAPContext_00807598,*puVar1,1,0xffffffff,0xffffffff);
+              (g_sT3DSMAPContext_00807598,*piVar1,1,0xffffffff,0xffffffff);
     if (pSVar8->field_0018 != 0) {
       st::fn_006EA460
-                (g_sT3DSMAPContext_00807598,*puVar1,pSVar8->field_0018);
+                (g_sT3DSMAPContext_00807598,*piVar1,pSVar8->field_0018);
     }
   }
   pVVar7 = g_visibleClass_00802A88;
@@ -722,7 +722,7 @@ LAB_00629242:
                                 (short)((longlong)iVar12 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      local_14 = (float)(int)(short)(((short)(iVar12 / 200) + sVar5) -
+      local_14 = (float)(short)(((short)(iVar12 / 200) + sVar5) -
                                     (short)((longlong)iVar12 * 0x51eb851f >> 0x3f));
     }
     iVar12 = pSVar8->field_004A;
@@ -737,7 +737,7 @@ LAB_00629242:
       bVar14 = true;
     }
     else {
-      if (((local_28 < 0) || ((int)pVVar7->field_0030 <= local_28)) ||
+      if (((local_28 < 0) || (pVVar7->field_0030 <= local_28)) ||
          ((g_centeredOffsets5[(int)local_14] + local_2c < 0 ||
           (pVVar7->field_0034 <= g_centeredOffsets5[(int)local_14] + local_2c)))) {
         bVar14 = false;
@@ -781,7 +781,7 @@ LAB_00629242:
 undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
 
 {
-  uint *puVar1;
+  int *piVar1;
   AnonPointee_STParticleC_00EB *pAVar2;
   short sVar4;
   float fVar5;
@@ -828,21 +828,21 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
                      (PTR_00806764,CASE_1D,text,0xffffffff,0,1,0,nullptr);
   pSVar7->field_00B6 = *(int *)puVar8;
   if (param_1 != 0) {
-    puVar1 = &pSVar7->field_00C6;
-    if ((int)pSVar7->field_00C6 < 0) {
+    piVar1 = &pSVar7->field_00C6;
+    if (pSVar7->field_00C6 < 0) {
       st::fn_006E8660
-                (g_sT3DSMAPContext_00807598,reinterpret_cast<int *>(puVar1),2,0,STField<uint>(puVar8,9),
+                (g_sT3DSMAPContext_00807598,piVar1,2,0,STField<uint>(puVar8,9),
                  STField<uint>(puVar8,0xd),0x5a,0x45,0);
     }
     else {
       st::fn_006E9520(g_sT3DSMAPContext_00807598,pSVar7->field_00C6,0,0,0);
       st::fn_006E9AF0
-                (g_sT3DSMAPContext_00807598,*puVar1,2,0,STField<uint>(puVar8,9),
+                (g_sT3DSMAPContext_00807598,*piVar1,2,0,STField<uint>(puVar8,9),
                  STField<uint>(puVar8,0xd),0x5a,0x45,1);
     }
     st::fn_006E98E0
-              (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar8,STField<int>(puVar8,0x21),1);
-    st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,pSVar7->field_00B2);
+              (g_sT3DSMAPContext_00807598,*piVar1,0,*(int *)puVar8,STField<int>(puVar8,0x21),1);
+    st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar1,0,pSVar7->field_00B2);
     local_1c = (float)pSVar7->field_0046 * _DAT_007904f8 * _DAT_007904f0;
     pSVar7->field_006A = local_1c;
     local_c = (float)pSVar7->field_004A * _DAT_007904f8 * _DAT_007904f0;
@@ -850,8 +850,8 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
     fVar5 = (float)pSVar7->field_004E * _DAT_007904f8 * _DAT_007904f0;
     pSVar7->field_0072 = fVar5;
     st::fn_006EA960
-              (g_sT3DSMAPContext_00807598,*puVar1,local_1c,local_c,fVar5 + _DAT_007904fc);
-    st::fn_006EAAA0(g_sT3DSMAPContext_00807598,*puVar1,0);
+              (g_sT3DSMAPContext_00807598,*piVar1,local_1c,local_c,fVar5 + _DAT_007904fc);
+    st::fn_006EAAA0(g_sT3DSMAPContext_00807598,*piVar1,0);
     pSVar7->field_00C1 = 1;
     pVVar6 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != nullptr) {
@@ -862,7 +862,7 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
                                  (short)((longlong)iVar11 * 0x51eb851f >> 0x3f)) + -1);
       }
       else {
-        local_c = (float)(int)(short)(((short)(iVar11 / 200) + sVar4) -
+        local_c = (float)(short)(((short)(iVar11 / 200) + sVar4) -
                                      (short)((longlong)iVar11 * 0x51eb851f >> 0x3f));
       }
       iVar11 = pSVar7->field_004A;
@@ -877,7 +877,7 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
         bVar12 = true;
       }
       else {
-        if (((local_14 < 0) || ((int)pVVar6->field_0030 <= local_14)) ||
+        if (((local_14 < 0) || (pVVar6->field_0030 <= local_14)) ||
            ((local_10 + g_centeredOffsets5[(int)local_c] < 0 ||
             (pVVar6->field_0034 <= local_10 + g_centeredOffsets5[(int)local_c])))) {
           bVar12 = false;
@@ -896,12 +896,12 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
       }
       if (bVar12) {
         if (pSVar7->field_00C1 == '\0') {
-          st::fn_006EAAA0(g_sT3DSMAPContext_00807598,*puVar1,0);
+          st::fn_006EAAA0(g_sT3DSMAPContext_00807598,*piVar1,0);
           pSVar7->field_00C1 = 1;
         }
       }
       else if (pSVar7->field_00C1 == '\x01') {
-        st::fn_006EAB60(g_sT3DSMAPContext_00807598,*puVar1);
+        st::fn_006EAB60(g_sT3DSMAPContext_00807598,*piVar1);
         pSVar7->field_00C1 = 0;
       }
     }
@@ -909,39 +909,39 @@ undefined4 __thiscall st::fn_006298A0(STParticleC *this,int param_1)
       puVar8 = st::fn_00709AF0
                          (PTR_00806764,CASE_1D,st::mutable_c_string("expl_s1"),0xffffffff,0,1,0,nullptr
                          );
-      if (0xe < (int)pSVar7->field_00B2) {
+      if (0xe < pSVar7->field_00B2) {
         local_8 = st::machine_word_boundary_cast<uint>(pSVar7->field_00B2 + 3);
       }
       st::fn_006E98E0
-                (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar8,STField<int>(puVar8,0x21),1);
-      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,1,local_8);
-      puVar13 = (uint *)*puVar1;
+                (g_sT3DSMAPContext_00807598,*piVar1,1,*(int *)puVar8,STField<int>(puVar8,0x21),1);
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar1,1,local_8);
+      puVar13 = (uint *)*piVar1;
     }
     else {
       puVar8 = st::fn_00709AF0
                          (PTR_00806764,CASE_1D,st::mutable_c_string("expl_s0"),0xffffffff,0,1,0,nullptr
                          );
-      if (0xe < (int)pSVar7->field_00B2) {
+      if (0xe < pSVar7->field_00B2) {
         local_8 = st::machine_word_boundary_cast<uint>(pSVar7->field_00B2 - 0xf);
       }
       st::fn_006E98E0
-                (g_sT3DSMAPContext_00807598,*puVar1,1,*(int *)puVar8,STField<int>(puVar8,0x21),1);
-      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,1,local_8);
-      puVar13 = (uint *)*puVar1;
+                (g_sT3DSMAPContext_00807598,*piVar1,1,*(int *)puVar8,STField<int>(puVar8,0x21),1);
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar1,1,local_8);
+      puVar13 = (uint *)*piVar1;
     }
     st::fn_006E9D40(g_sT3DSMAPContext_00807598,puVar13,1);
     pAVar2 = pSVar7->field_00EB;
     if (pAVar2 != nullptr) {
       if (pSVar7->field_00F3 == 0) {
         st::fn_006EA460
-                  (g_sT3DSMAPContext_00807598,*puVar1,pAVar2->field_01ED);
+                  (g_sT3DSMAPContext_00807598,*piVar1,pAVar2->field_01ED);
       }
       else {
         st::fn_006EA3E0
-                  (g_sT3DSMAPContext_00807598,*puVar1,pAVar2->field_01ED);
+                  (g_sT3DSMAPContext_00807598,*piVar1,pAVar2->field_01ED);
       }
     }
-    st::fn_006EA4E0(g_sT3DSMAPContext_00807598,*puVar1,1,0x5a,0x53);
+    st::fn_006EA4E0(g_sT3DSMAPContext_00807598,*piVar1,1,0x5a,0x53);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }

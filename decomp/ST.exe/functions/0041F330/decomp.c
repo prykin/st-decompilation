@@ -1,10 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-uint __fastcall FUN_0041f330(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004BE1D0 -> 0041F330 @ 004BE1D3; TLOBaseTy::sub_004BE1D0 this */
+
+uint __fastcall FUN_0041f330(TLOBaseTy *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return ~*(uint *)(param_1 + 0x1d1) >> 4 & 1;
+  return ~param_1->field_01D1 >> 4 & 1;
 }
 

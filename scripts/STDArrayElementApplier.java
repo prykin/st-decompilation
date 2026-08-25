@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
@@ -1242,20 +1244,58 @@ public class STDArrayElementApplier extends GhidraScript {
             DataTypeComponent component = structure.getComponentAt(offset);
             String expectedName = unt(row.get("proposed_name"));
             String expectedType = unt(row.get("proposed_type"));
+            String actualName = component == null ? "" :
+                text(component.getFieldName());
+            String actualType = component == null ? "" :
+                typeSpecification(component.getDataType());
+            boolean compatibleName = expectedName.equals(actualName) ||
+                strongerRetainedFieldName(expectedName, actualName);
+            boolean compatibleType = expectedType.equals(actualType) ||
+                strongerRetainedFieldType(expectedType,
+                    component == null ? null : component.getDataType(), size);
             if (component == null || component.getOffset() != offset ||
                     component.getLength() != size ||
-                    !expectedName.equals(text(component.getFieldName())) ||
-                    !expectedType.equals(typeSpecification(component.getDataType())))
+                    !compatibleName ||
+                    !compatibleType)
                 throw new IllegalStateException("installed element verification failed " +
                     path + "+" + String.format("0x%X", offset) + ": expected " +
                     expectedName + " " + expectedType + ", found " +
                     (component == null ? "<missing>" :
                         text(component.getFieldName()) + " " +
-                            typeSpecification(component.getDataType())));
-            members.add(String.format("0x%X=%s", offset, expectedName));
+                            actualType));
+            members.add(String.format("0x%X=%s", offset, actualName));
             verified++;
         }
         return verified + " fields [" + String.join(", ", members) + "]";
+    }
+
+    private boolean strongerRetainedFieldName(String proposed, String installed) {
+        if (installed == null || installed.isBlank() ||
+                proposed == null || proposed.isBlank()) return false;
+        if (!semanticFieldName(installed) && semanticFieldName(proposed)) return false;
+        if (proposed.matches("(?:field|value)_(?:0[xX])?[0-9A-Fa-f]+"))
+            return semanticFieldName(installed);
+        // Analyzer passes may first discover a role-qualified offset name and
+        // later retain the stronger stable role already installed by this script.
+        int suffix = proposed.lastIndexOf('_');
+        return suffix > 0 && proposed.substring(suffix + 1)
+            .matches("(?:0[xX])?[0-9A-Fa-f]+") &&
+            installed.equals(proposed.substring(0, suffix));
+    }
+
+    /**
+     * retainProvenGeneratedFields() deliberately keeps a stronger exact-width
+     * component discovered by an earlier analyzer pass. Verification must
+     * honor that contract: a later generic undefinedN observation confirms the
+     * storage span and cannot demand erasure of the retained concrete view.
+     */
+    private boolean strongerRetainedFieldType(String proposed, DataType installed,
+            int width) {
+        if (installed == null || installed.getLength() != width) return false;
+        Matcher generic = Pattern.compile("/undefined(?<width>[1248])")
+            .matcher(proposed == null ? "" : proposed);
+        return generic.matches() && Integer.parseInt(generic.group("width")) == width &&
+            !(untypedef(installed) instanceof Undefined);
     }
 
     private boolean darrayCompatible(DataType type) {

@@ -41,9 +41,9 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
       if (this->field_00FA <= this->field_00F8) {
         return 0;
       }
-      this->field_00D7 = (int)(short)local_10;
-      this->field_00DB = (int)(short)local_c;
-      this->field_00DF = (int)(short)local_8;
+      this->field_00D7 = (short)local_10;
+      this->field_00DB = (short)local_c;
+      this->field_00DF = (short)local_8;
       this->field_00FA = 0;
       /* ST_CALLSITE[00418B00]: CALL 0x00405952; direct=00405952 sub_004167A0 */
       sub_004167A0(this);
@@ -78,7 +78,7 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
         local_c = STReplaceLowWord((uint32_t)(puVar3), (uint16_t)(puVar1[-3]));
         local_8 = STReplaceLowWord((uint32_t)(puVar1), (uint16_t)(puVar1[-2]));
         this->field_00E4 = 0;
-        this->field_00E3 = 0;
+        this->field_00E3 = '\0';
         /* ST_CALLSITE[00418BBC]: CALL 0x00405952; direct=00405952 sub_004167A0 */
         sub_004167A0(this);
         iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030

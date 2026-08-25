@@ -29,7 +29,7 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
     puVar6 = (byte *)&local_8->field_0x14;
     puVar7 = (byte *)&local_c->field_0245;
     memmove(puVar7, puVar6, 0x44); /* compiler REP MOVS byte copy */
-    uVar2 = *(undefined2 *)((int)&local_8->field_0058 + 2);
+    uVar2 = STField<undefined2>(local_8,0x5A);
     local_c->field_0231 = *(undefined2 *)&local_8->field_0058;
     local_c->field_0233 = uVar2;
     *(undefined4 *)&local_c->field_0x235 = local_8->field_005C;

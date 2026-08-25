@@ -59,10 +59,10 @@ int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int
       local_18 = (ushort *)&SHORT_007ed576;
       local_14 = &DAT_007ed640;
       do {
-        iVar11 = (int)(short)local_18[-3];
+        iVar11 = (short)local_18[-3];
         uVar6 = local_30 + iVar11;
         if ((-1 < (int)uVar6) && ((int)uVar6 < param_2)) {
-          iVar9 = (int)(short)local_18[-2];
+          iVar9 = (short)local_18[-2];
           iVar7 = param_9 + iVar9;
           if ((-1 < iVar7) && (iVar7 < param_3)) {
             iVar8 = param_10 + (short)local_18[-1];
@@ -83,7 +83,7 @@ LAB_006ae68b:
                     iVar11 = iVar11 + *local_14;
                     if ((iVar11 < local_38) ||
                        ((iVar11 == local_38 &&
-                        (((int)(short)uVar2 == local_3c || ((int)(short)uVar2 == uVar5)))))) {
+                        (((short)uVar2 == local_3c || ((short)uVar2 == uVar5)))))) {
                       local_28 = param_8_after_write;
                       local_38 = iVar11;
                       local_24 = iVar8;

@@ -25,21 +25,21 @@ st::fn_00664540
   iVar1 = *(int *)&this->field_0x217;
   index = 0;
   uVar5 = 0;
-  uVar2 = *(uint *)(iVar1 + 0xc);
+  uVar2 = STField<uint>(iVar1,0xC);
   if (uVar2 != 0) {
     uVar4 = 0;
     if (0 < (int)uVar2) {
       bVar6 = uVar2 != 0;
       do {
         if (bVar6) {
-          iVar3 = *(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c);
+          iVar3 = STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C);
         }
         else {
           iVar3 = 0;
         }
-        if (uVar5 < *(uint *)(iVar3 + 4)) {
+        if (uVar5 < STField<uint>(iVar3,0x4)) {
           index = uVar4;
-          uVar5 = *(uint *)(iVar3 + 4);
+          uVar5 = STField<uint>(iVar3,0x4);
         }
         uVar4 = uVar4 + 1;
         bVar6 = uVar4 < uVar2;

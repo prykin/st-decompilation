@@ -114,8 +114,8 @@ LAB_00482fa9:
   }
   thunk_FUN_00416270(this,&local_18,(short *)&local_1c,local_c);
   iVar12 = FUN_006acf0d((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
-                        (int)STField<short>(param_1,0x45),(int)(short)local_18,
-                        (int)(short)local_1c,(int)local_c[0]);
+                        (int)STField<short>(param_1,0x45),(short)local_18,
+                        (short)local_1c,(int)local_c[0]);
   if ((short)param_1[0x205] < iVar12) {
     return 5;
   }

@@ -5657,7 +5657,7 @@ PopUpTy * __cdecl st::fn_0052D020(void)
   this = (PopUpTy *)st::fn_006B04D0(0xa1);
   if (this != nullptr) {
     st::fn_006E5FB0(this);
-    this->field_0000 = st::machine_word_boundary_cast<undefined4>(&st_global_0079ACE8);
+    this->vtable = &st_global_0079ACE8;
     this->field_0090 = nullptr;
     this->field_0094 = nullptr;
     this->field_0098 = nullptr;

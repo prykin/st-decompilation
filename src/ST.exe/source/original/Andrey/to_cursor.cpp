@@ -201,7 +201,7 @@ void __thiscall st::fn_00543990(CursorClassTy *this,int param_1)
 
 void __thiscall
 st::fn_00543AD0
-          (CursorClassTy *this,undefined4 param_1,char *text,undefined4 param_3,BITMAPINFO *param_4,
+          (CursorClassTy *this,undefined4 param_1,char *text,int param_3,BITMAPINFO *param_4,
           uint param_5,int param_6,int param_7)
 
 {
@@ -242,13 +242,13 @@ st::fn_00543AD0
                pCVar2->field_0038);
   }
   if (param_6 < 0) {
-    pCVar2->field_00B1 = st::machine_word_boundary_cast<undefined4>(pCVar2->field_003C - (int)param_4);
+    pCVar2->field_00B1 = st::machine_word_boundary_cast<int>(pCVar2->field_003C - (int)param_4);
   }
   else {
     pCVar2->field_00B1 = param_6 - (int)param_4;
   }
   if (param_7 < 0) {
-    pCVar2->field_00B5 = st::machine_word_boundary_cast<undefined4>(pCVar2->field_0040 - param_5);
+    pCVar2->field_00B5 = st::machine_word_boundary_cast<int>(pCVar2->field_0040 - param_5);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -1132,15 +1132,15 @@ LAB_0054506b:
             this_00->field_00FB = 1;
           }
           lVar29 = st::fn_0072E288();
-          iVar13 = (int)(short)lVar29;
+          iVar13 = (short)lVar29;
           lVar29 = st::fn_0072E288();
-          iVar18 = (int)(short)lVar29;
+          iVar18 = (short)lVar29;
           lVar29 = st::fn_0072E288();
           sVar8 = (short)lVar29;
           sVar33 = sVar8 >> 0xf;
           lVar29 = st::fn_0072E288();
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_EAX_2209 = st::fn_006DB910((int)(short)lVar29,CONCAT22(sVar33,sVar8),iVar18,iVar13);
+          local_EAX_2209 = st::fn_006DB910((short)lVar29,CONCAT22(sVar33,sVar8),iVar18,iVar13);
           this_00->field_00F7 = local_EAX_2209;
           st::fn_006E8DF0
                     (g_sT3DSMAPContext_00807598,this_00->field_010B,this_00->field_00FF,
@@ -1421,7 +1421,7 @@ switchD_0054679d_default:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        /* ST_CALLSITE[005464BF]: CALL dword ptr [EAX] */
+        /* ST_CALLSITE[005464BF]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/OptPanelTy;pointer:/SubmarineTitans/Recovered/STMessage */
         g_optPanel_008016DC->GetMessage(message);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
@@ -1964,7 +1964,7 @@ LAB_005458df:
           /* ST_CALLSITE[00545A08]: CALL EDI */
           (*pcVar26)((short)local_524,"%s &%d%d",local_524,2,sVar8);
         }
-        sVar8 = *(short *)((int)&pAVar5->field_0009 + 2);
+        sVar8 = STField<short>(pAVar5,0xB);
         if (sVar8 != 0) {
           /* ST_CALLSITE[00545A40]: CALL EDI */
           (*pcVar26)((short)local_524,"%s &%d%d",local_524,
@@ -3604,7 +3604,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
       }
       break;
     case CASE_4E:
-      local_f4 = (uint)*(byte *)&this_00->field_04AA;
+      local_f4 = (uint)(byte)this_00->field_04AA;
       local_f0 = 0;
       local_ec = 0;
       local_e8 = 0;
@@ -4012,7 +4012,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
     puVar14 = (byte *)0x17;
     goto cf_common_join_0054A19A;
   case 0x1c:
-    local_108 = (uint)*(byte *)&this_00->field_04AA;
+    local_108 = (uint)(byte)this_00->field_04AA;
     local_104 = 0;
     local_100 = 0;
     local_fc = 0;
@@ -4282,7 +4282,7 @@ LAB_0054b366:
       local_c = 4;
     }
     /* ST_CALLSITE[0054B0F4]: CALL 0x00403175; direct=00403175 CursorClassTy::sub_0054B700 */
-    st::fn_00403175(this_00,(int)(short)local_c);
+    st::fn_00403175(this_00,(short)local_c);
     pSVar7 = this_00->field_049A;
     if (pSVar7 == nullptr) {
       if ((this_00->field_049E != 0) &&

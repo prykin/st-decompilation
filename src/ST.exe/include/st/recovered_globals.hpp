@@ -145,6 +145,7 @@ extern char CHAR_w_007a9e50;
 extern char CHAR_z_007cae44;
 extern CampaignTyVTable st_global_0079BFF8; // image symbol: CampaignTyVTable
 extern ChooseMapTyVTable st_global_0079C088; // image symbol: ChooseMapTyVTable
+extern CursorClassTyVTable st_global_0079AE04; // image symbol: CursorClassTyVTable
 extern undefined4 DAT_0000000b;
 extern undefined4 DAT_0000000c;
 extern undefined4 DAT_00000065;
@@ -1694,9 +1695,9 @@ extern IntercomPanelTyVTable st_global_0079AC9C; // image symbol: IntercomPanelT
 extern JumpManagCVTable st_global_0079CEBC; // image symbol: JumpManagCVTable
 extern ListClassTyVTable st_global_0079E2A4; // image symbol: ListClassTyVTable
 extern MAdvTyVTable st_global_0079BFE4; // image symbol: MAdvTyVTable
-extern MMObjTyVTable st_global_0079C008; // image symbol: MMObjTyVTable
 extern MMsgTyVTable st_global_0079C0A8; // image symbol: MMsgTyVTable
 extern MReportTyVTable st_global_0079C0E4; // image symbol: MReportTyVTable
+extern MTaskTyVTable st_global_0079C238; // image symbol: MTaskTyVTable
 extern MTestTyVTable st_global_0079C23C; // image symbol: MTestTyVTable
 extern MainMenuTyVTable st_global_0079C098; // image symbol: MainMenuTyVTable
 extern MoneyTyVTable st_global_0079ACE4; // image symbol: MoneyTyVTable
@@ -1992,6 +1993,7 @@ extern undefined *PTR_thunk_FUN_00680270_007d3fa8;
 extern undefined *PTR_wsprintfA_0085bde8;
 extern PausePanelTyVTable st_global_0079AD2C; // image symbol: PausePanelTyVTable
 extern PlayPanelTyVTable st_global_0079AD48; // image symbol: PlayPanelTyVTable
+extern PopUpTyVTable st_global_0079ACE8; // image symbol: PopUpTyVTable
 extern PrividerTyVTable st_global_0079C0C4; // image symbol: PrividerTyVTable
 extern RadioClassTyVTable st_global_0079E294; // image symbol: RadioClassTyVTable
 extern ResearchPanelTyVTable st_global_0079AD64; // image symbol: ResearchPanelTyVTable
@@ -2061,9 +2063,7 @@ extern VTable_00790708 st_global_00790708; // image symbol: VTable_00790708
 extern VTable_00790C00 st_global_00790C00; // image symbol: VTable_00790C00
 extern VTable_007976C0 st_global_007976C0; // image symbol: VTable_007976C0
 extern VTable_0079AC18 st_global_0079AC18; // image symbol: VTable_0079AC18
-extern VTable_0079ACE8 st_global_0079ACE8; // image symbol: VTable_0079ACE8
 extern VTable_0079ADF4 st_global_0079ADF4; // image symbol: VTable_0079ADF4
-extern VTable_0079AE04 st_global_0079AE04; // image symbol: VTable_0079AE04
 extern VTable_0079AE64 st_global_0079AE64; // image symbol: VTable_0079AE64
 extern VTable_0079B398 st_global_0079B398; // image symbol: VTable_0079B398
 extern VTable_0079B524 st_global_0079B524; // image symbol: VTable_0079B524
@@ -2074,8 +2074,8 @@ extern VTable_0079BBB4 st_global_0079BBB4; // image symbol: VTable_0079BBB4
 extern VTable_0079BD18 st_global_0079BD18; // image symbol: VTable_0079BD18
 extern VTable_0079BE7C st_global_0079BE7C; // image symbol: VTable_0079BE7C
 extern VTable_0079BFE0 st_global_0079BFE0; // image symbol: VTable_0079BFE0
+extern MMObjTyVTable st_global_0079C008; // image symbol: VTable_0079C008
 extern VTable_0079C018 st_global_0079C018; // image symbol: VTable_0079C018
-extern VTable_0079C238 st_global_0079C238; // image symbol: VTable_0079C238
 extern VTable_0079C578 st_global_0079C578; // image symbol: VTable_0079C578
 extern VTable_0079C8A0 st_global_0079C8A0; // image symbol: VTable_0079C8A0
 extern VTable_0079CB10 st_global_0079CB10; // image symbol: VTable_0079CB10
@@ -2692,7 +2692,7 @@ extern HelpStringTyVTable st_global_0079AC6C; // image symbol: HelpStringTyVTabl
 extern InfocPanelTyVTable st_global_0079AC70; // image symbol: InfocPanelTyVTable
 extern IntercomPanelTyVTable st_global_0079AC9C; // image symbol: IntercomPanelTyVTable
 extern MoneyTyVTable st_global_0079ACE4; // image symbol: MoneyTyVTable
-extern VTable_0079ACE8 st_global_0079ACE8; // image symbol: VTable_0079ACE8
+extern PopUpTyVTable st_global_0079ACE8; // image symbol: PopUpTyVTable
 extern char *st_global_0079ACEC; // image symbol: PTR_s_SAVEGAME\_0079acec
 extern char *st_global_0079ACF0; // image symbol: PTR_s_SYSTEM\_0079acf0
 extern undefined *st_global_0079ACF4; // image symbol: PTR_CHAR_._0079acf4
@@ -2705,7 +2705,7 @@ extern SAMPanelTyVTable st_global_0079AD8C; // image symbol: SAMPanelTyVTable
 extern InterSystemCVTable st_global_0079ADB8; // image symbol: InterSystemCVTable
 extern char *st_global_0079ADE4; // image symbol: PTR_s_SAVEGAME\_0079ade4
 extern VTable_0079ADF4 st_global_0079ADF4; // image symbol: VTable_0079ADF4
-extern VTable_0079AE04 st_global_0079AE04; // image symbol: VTable_0079AE04
+extern CursorClassTyVTable st_global_0079AE04; // image symbol: CursorClassTyVTable
 extern STPlaySystemCVTable st_global_0079AE38; // image symbol: STPlaySystemCVTable
 extern VTable_0079AE64 st_global_0079AE64; // image symbol: VTable_0079AE64
 extern UpgPanelTyVTable st_global_0079AE90; // image symbol: UpgPanelTyVTable
@@ -2753,7 +2753,7 @@ extern VTable_0079BFE0 st_global_0079BFE0; // image symbol: VTable_0079BFE0
 extern MAdvTyVTable st_global_0079BFE4; // image symbol: MAdvTyVTable
 extern char *st_global_0079BFE8; // image symbol: PTR_s_MISSIONS\_0079bfe8
 extern CampaignTyVTable st_global_0079BFF8; // image symbol: CampaignTyVTable
-extern MMObjTyVTable st_global_0079C008; // image symbol: MMObjTyVTable
+extern MMObjTyVTable st_global_0079C008; // image symbol: VTable_0079C008
 extern VTable_0079C018 st_global_0079C018; // image symbol: VTable_0079C018
 extern VisibleVTable st_global_0079C01C; // image symbol: VisibleVTable
 extern char *st_global_0079C020; // image symbol: PTR_s_UPDATES\_0079c020
@@ -2783,7 +2783,7 @@ extern char *st_global_0079C1BC; // image symbol: PTR_s_CUSTOM\_0079c1bc
 extern undefined *st_global_0079C1C0; // image symbol: PTR_CHAR_._0079c1c0
 extern undefined *st_global_0079C1C4; // image symbol: PTR_CHAR_._0079c1c4
 extern StartSystemTyVTable st_global_0079C1E8; // image symbol: StartSystemTyVTable
-extern VTable_0079C238 st_global_0079C238; // image symbol: VTable_0079C238
+extern MTaskTyVTable st_global_0079C238; // image symbol: MTaskTyVTable
 extern MTestTyVTable st_global_0079C23C; // image symbol: MTestTyVTable
 extern char *st_global_0079C240; // image symbol: PTR_s_SAVEGAME\_0079c240
 extern char *st_global_0079C244; // image symbol: PTR_s_CUSTOM\_0079c244

@@ -303,8 +303,8 @@ int __thiscall st::fn_006406D0(STTorpC *this,STMessage *message)
       return 0;
     }
     iVar14 = (message->arg0).i32;
-    if (*(int *)(iVar14 + 0xc) != 1) {
-      if (*(int *)(iVar14 + 0xc) != 2) {
+    if (STField<int>(iVar14,0xC) != 1) {
+      if (STField<int>(iVar14,0xC) != 2) {
         g_currentExceptionFrame = local_28c.previous;
         return 0;
       }
@@ -324,11 +324,11 @@ int __thiscall st::fn_006406D0(STTorpC *this,STMessage *message)
       /* ST_CALLSITE[006407D5]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
       st::fn_00404CA5
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_158,
-                 (AnonShape_004AD790_77673787 *)(*(int *)(iVar14 + 0x70) + iVar14));
+                 (AnonShape_004AD790_77673787 *)(STField<int>(iVar14,0x70) + iVar14));
       st::fn_006AB060(&local_158);
       /* ST_CALLSITE[006407EE]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
       st::fn_0040551F
-                ((STAllPlayersC *)this_00,(undefined4 *)(*(int *)(iVar14 + 0x78) + iVar14));
+                ((STAllPlayersC *)this_00,(undefined4 *)(STField<int>(iVar14,0x78) + iVar14));
       /* ST_CALLSITE[006407F6]: CALL 0x004015f0; direct=004015F0 STTorpC::RestoreTorpData */
       st::fn_004015F0(this_00,iVar14);
       /* ST_CALLSITE[0064080A]: CALL 0x00402991; direct=00402991 STAllPlayersC::RegisterTorpedo */
@@ -386,7 +386,7 @@ LAB_00642c6e:
       }
       st::fn_00405C90(this_00,bVar8);
       /* ST_CALLSITE[00640990]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-      uVar16 = st::fn_004049B7(*(char *)&this_00->field_0024);
+      uVar16 = st::fn_004049B7((char)this_00->field_0024);
       uVar16 = (int)(byte)uVar16;
       if (uVar16 == 1) {
         iVar14 = st::fn_0040186B(this_00->field_0024,0x99);
@@ -507,7 +507,7 @@ switchD_00640ad9_caseD_a2:
     if (this_00->field_0259 == CASE_97) {
       /* ST_CALLSITE[00640BE2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       local_4c = st::fn_004028BA
-                           (g_allPlayers_007FA174,*(char *)&this_00->field_0024,this_00->field_0262,
+                           (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0262,
                             CASE_1);
       if ((local_4c != nullptr) &&
          /* ST_CALLSITE[00640BF2]: CALL dword ptr [EDX + 0x2c] */
@@ -1021,7 +1021,7 @@ switchD_00640c2d_caseD_a2:
   if (this_00->field_027D < 9) {
     /* ST_CALLSITE[0064158E]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     local_4c = st::fn_004028BA
-                         (g_allPlayers_007FA174,*(char *)&this_00->field_0024,this_00->field_0262,
+                         (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0262,
                           CASE_1);
     if ((local_4c == nullptr) || (this_00->field_027D == 8)) {
       this_00->field_0264 = 0;
@@ -1126,7 +1126,7 @@ LAB_0064190c:
   if (local_18 != 1) {
 cf_common_exit_00642C8B:
     /* ST_CALLSITE[00642C8F]: CALL dword ptr [EAX + 0xd8] */
-    iVar14 = this_00->vfunc_D8();
+    iVar14 = this_00->sub_00643E20();
     if (iVar14 == 0) {
       g_currentExceptionFrame = local_28c.previous;
       return 0;
@@ -1143,7 +1143,7 @@ cf_common_exit_00642C8B:
   if (this_00->field_0259 == CASE_99) {
     /* ST_CALLSITE[006419BA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_01 = st::fn_004028BA
-                        (g_allPlayers_007FA174,*(char *)&this_00->field_0024,this_00->field_0262,
+                        (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0262,
                          CASE_1);
     if (this_01 == nullptr) {
       iVar14 = this_00->field_001C;
@@ -2746,7 +2746,7 @@ LAB_00642561:
             (this_00->field_0211,uVar19,CONCAT22(uVar9,CONCAT11(uVar29,uVar30)),
              CONCAT22(uVar21,CONCAT11(uVar32,uVar31)),uVar18);
   /* ST_CALLSITE[006426FA]: CALL dword ptr [EDX + 0xd8] */
-  iVar14 = this_00->vfunc_D8();
+  iVar14 = this_00->sub_00643E20();
   if (iVar14 != 0) {
     st::fn_006A5E40
               (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\nick\\to_torp.cpp"),0x27d);
@@ -3144,7 +3144,7 @@ void __thiscall st::fn_006456C0(STTorpC *this,int param_1)
     puVar6 = (byte *)&local_8->field_0x14;
     puVar7 = (byte *)&local_c->field_0245;
     memmove(puVar7, puVar6, 0x44); /* compiler REP MOVS byte copy */
-    uVar2 = *(undefined2 *)((int)&local_8->field_0058 + 2);
+    uVar2 = STField<undefined2>(local_8,0x5A);
     local_c->field_0231 = *(undefined2 *)&local_8->field_0058;
     local_c->field_0233 = uVar2;
     *(undefined4 *)&local_c->field_0x235 = local_8->field_005C;

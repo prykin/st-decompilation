@@ -16,7 +16,7 @@ void __thiscall FUN_0055beb0(void *this,DWORD lastError)
      (g_fSGS_0081174C != nullptr)) {
     STField<undefined4>(this,0x1b) = 0x614f;
     STField<DWORD>(this,0x1f) = lastError;
-    /* ST_CALLSITE[0055BEED]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[0055BEED]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_fSGS_0081174C->GetMessage((STMessage *)((int)this + 0xb));
   }
   return;

@@ -179,9 +179,9 @@ LAB_0044c94c:
       if (0 < local_8) {
         do {
           iVar3 = *(int *)(iVar13 + 4 + (int)local_c);
-          uVar9 = *(uint *)(iVar3 + 0x20);
+          uVar9 = STField<uint>(iVar3,0x20);
           if (((uVar9 == 0x14) || ((999 < uVar9 && (uVar9 < 0x3ea)))) &&
-             (*(uint *)(iVar3 + 0x24) == (uint)DAT_0080874d)) {
+             (STField<uint>(iVar3,0x24) == (uint)DAT_0080874d)) {
             Library::DKW::TBL::DArrayAppend(pDVar7,(void *)(iVar3 + 0x32));
             bVar6 = true;
           }

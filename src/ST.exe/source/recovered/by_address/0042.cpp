@@ -1232,7 +1232,7 @@ void __cdecl st::fn_0042A780(int *param_1)
   array = st::fn_006AE290(nullptr,100,4,100);
   iVar4 = 0;
   iVar2 = *param_1;
-  if (0 < *(int *)(iVar2 + 0x455)) {
+  if (0 < STField<int>(iVar2,0x455)) {
     do {
       iVar2 = *(int *)(iVar2 + 0x459 + iVar4 * 4);
       if (iVar2 != 0) {
@@ -1244,7 +1244,7 @@ void __cdecl st::fn_0042A780(int *param_1)
           piVar3 = DArrayAt<int>(array, uVar1);
           array->iteratorIndex = uVar1 + 1;
           if (piVar3 == nullptr) goto LAB_0042a7e7;
-        } while (*(int *)(iVar2 + 0x40) != *piVar3);
+        } while (STField<int>(iVar2,0x40) != *piVar3);
         if (piVar3 == nullptr) {
 LAB_0042a7e7:
           st::fn_006AE1C0(array,(void *)(iVar2 + 0x40));
@@ -1253,7 +1253,7 @@ LAB_0042a7e7:
       }
       iVar4 = iVar4 + 1;
       iVar2 = *param_1;
-    } while (iVar4 < *(int *)(iVar2 + 0x455));
+    } while (iVar4 < STField<int>(iVar2,0x455));
   }
   st::fn_006AE110(array);
   st::fn_0040402F((AnonShape_00575460_06C413C6 *)*param_1);

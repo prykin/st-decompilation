@@ -36,7 +36,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
     if (local_8 < 0) {
       return 1;
     }
-    if ((int)pVVar2->field_0030 <= local_8) {
+    if (pVVar2->field_0030 <= local_8) {
       return 1;
     }
     local_c = g_centeredOffsets5[iVar4] + local_c;
@@ -62,7 +62,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                       (int)param_1->field_005B,(int)param_1->field_005D,&local_c,&local_8),
           pVVar3 = g_visibleClass_00802A88, iVar4 < 0)) || ((4 < iVar4 || (local_c < 0)))) ||
-        ((int)pVVar2->field_0030 <= local_c)) ||
+        (pVVar2->field_0030 <= local_c)) ||
        (((iVar4 = g_centeredOffsets5[iVar4] + local_8, iVar4 < 0 || (pVVar2->field_0034 <= iVar4))
         || ((pVVar2->field_004C == nullptr ||
             (pVVar2->field_004C[local_c + iVar4 * pVVar2->field_0030] != 0)))))) {
@@ -76,7 +76,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
                     param_1->field_005B + 1,(int)param_1->field_005D,&local_c,&local_8),
         pVVar2 = g_visibleClass_00802A88, iVar4 < 0)) ||
        (((4 < iVar4 || (local_c < 0)) ||
-        (((((int)pVVar3->field_0030 <= local_c ||
+        ((((pVVar3->field_0030 <= local_c ||
            ((iVar4 = g_centeredOffsets5[iVar4] + local_8, iVar4 < 0 || (pVVar3->field_0034 <= iVar4)
             ))) || (pVVar3->field_004C == nullptr)) ||
          (pVVar3->field_004C[local_c + iVar4 * pVVar3->field_0030] != 0)))))) {
@@ -90,7 +90,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
                      (int)param_1->field_005B,param_1->field_005D + 1,&local_c,&local_8),
          pVVar3 = g_visibleClass_00802A88, iVar4 < 0)) ||
         (((4 < iVar4 || (local_c < 0)) ||
-         (((int)pVVar2->field_0030 <= local_c ||
+         ((pVVar2->field_0030 <= local_c ||
           ((iVar4 = g_centeredOffsets5[iVar4] + local_8, iVar4 < 0 || (pVVar2->field_0034 <= iVar4))
           )))))) ||
        ((pVVar2->field_004C == nullptr ||
@@ -117,7 +117,7 @@ undefined4 __fastcall FUN_0041c710(AnonShape_0041C710_C4D46939 *param_1)
     if (local_c < 0) {
       return 1;
     }
-    if ((int)pVVar3->field_0030 <= local_c) {
+    if (pVVar3->field_0030 <= local_c) {
       return 1;
     }
     local_8 = g_centeredOffsets5[iVar4] + local_8;

@@ -24,8 +24,7 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   int local_8;
 
   local_10 = g_packedRecords_A62x8[param_1].field3_0x9;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_8 = *(int *)(local_10 + 0xc);
+  local_8 = STField<int>(local_10,0xC);
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
@@ -43,8 +42,7 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   iVar4 = 0;
   if (0 < local_8) {
     do {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      piVar2 = *(int **)(*(int *)(local_10 + 0x1c) + iVar4 * 4);
+      piVar2 = *(int **)(STField<int>(local_10,0x1C) + iVar4 * 4);
       if (piVar2 != nullptr) {
         /* ST_CALLSITE[0043F280]: CALL dword ptr [EDX + 0x74] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

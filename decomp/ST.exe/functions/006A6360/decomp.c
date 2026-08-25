@@ -27,7 +27,7 @@ switchD_006a63e5_caseD_1:
       else {
         iVar3 = iVar3 - param_3;
       }
-      uVar2 = (int)(short)uVar1 & 0xffff9fff;
+      uVar2 = (short)uVar1 & 0xffff9fff;
       if (0xb4 < (int)uVar2) break;
       if (uVar2 == 0xb4) {
         param_1 = param_1 - param_3;

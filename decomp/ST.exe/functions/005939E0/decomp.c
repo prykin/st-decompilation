@@ -30,13 +30,13 @@ ComboTy::OutBmpProc(ComboTy *this,DDXContext *param_1,undefined4 param_2,undefin
       if (local_8->field_0060 != 0) {
         iVar3 = local_8->field_0078;
         Library::DKW::DDX::FUN_006c5000
-                  (param_1,param_4,param_5 + 3,iVar3,0,0,0,*(uint *)(iVar3 + 4),*(int *)(iVar3 + 8),
+                  (param_1,param_4,param_5 + 3,iVar3,0,0,0,STField<uint>(iVar3,0x4),STField<int>(iVar3,0x8),
                    local_8->field_0060,(byte)local_8->field_0058);
       }
       if (*(int *)&pAVar2->field_0x5c != 0) {
         iVar3 = *(int *)&pAVar2->field_0x74;
         Library::DKW::DDX::FUN_006c5000
-                  (param_1,param_4,param_5,iVar3,0,0,0,*(uint *)(iVar3 + 4),*(int *)(iVar3 + 8),
+                  (param_1,param_4,param_5,iVar3,0,0,0,STField<uint>(iVar3,0x4),STField<int>(iVar3,0x8),
                    *(int *)&pAVar2->field_0x5c,(byte)*(undefined4 *)&pAVar2->field_0x50);
         g_currentExceptionFrame = local_4c.previous;
         return;

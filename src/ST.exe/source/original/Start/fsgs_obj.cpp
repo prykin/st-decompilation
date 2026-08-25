@@ -6011,7 +6011,7 @@ void __thiscall st::fn_005A1160(FSGSTy *this)
     g_currentExceptionFrame = local_90.previous;
     return;
   }
-  /* ST_CALLSITE[005A131F]: CALL dword ptr [EAX] */
+  /* ST_CALLSITE[005A131F]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
   this_01->GetMessage(&local_2c);
   g_currentExceptionFrame = local_90.previous;
   return;
@@ -6184,7 +6184,7 @@ void __thiscall st::fn_005A1630(FSGSTy *this,int param_1)
         g_currentExceptionFrame = local_6c.previous;
         return;
       }
-      /* ST_CALLSITE[005A181B]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[005A181B]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
       this_02->GetMessage(&local_28);
       g_currentExceptionFrame = local_6c.previous;
       return;
@@ -8110,15 +8110,14 @@ int __thiscall st::fn_005A4350(FSGSTy *this,STMessage *message)
     if (SVar5 < MESS_SHARED_6980) {
       if (SVar5 == MESS_SHARED_697F) {
         dVar12 = (message->arg2).u32;
-        local_60 = *(int *)(dVar12 + 0x24) + -0xb4;
-        local_58 = *(int *)(dVar12 + 0x2c);
-        local_54 = *(int *)(dVar12 + 0x30);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        uVar36 = *(int *)(dVar12 + 0x28) -
+        local_60 = STField<int>(dVar12,0x24) + -0xb4;
+        local_58 = STField<int>(dVar12,0x2C);
+        local_54 = STField<int>(dVar12,0x30);
+        uVar36 = STField<int>(dVar12,0x28) -
                  ((-(uint)(this_00->field_1ABB != '\0') & 0xffffffb4) + 0xaa);
         local_5c = uVar36;
         st::fn_006B4170((RecoveredSourceFamily_dibcopy *)this_00->field_1AC0,0,
-                     *(int *)(dVar12 + 0x24) + -0xb5,uVar36,local_58 + 2,local_54,0xff);
+                     STField<int>(dVar12,0x24) + -0xb5,uVar36,local_58 + 2,local_54,0xff);
         st::fn_00710A90(this_00->array_00BC[0xc].field_01F3,(int)this_00->field_1AC0,0,local_60,
                          uVar36,local_58,local_54);
         if ((message->arg0).ptr != nullptr) {
@@ -9324,14 +9323,13 @@ LAB_005a8c85:
       }
       dVar12 = (message->arg2).u32;
       iVar21 = *(int *)&pcVar13->field_0x8a;
-      local_50 = *(int *)(dVar12 + 0x24) + -0xb4;
-      local_48 = *(int *)(dVar12 + 0x2c);
-      local_44 = *(int *)(dVar12 + 0x30);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_4c = *(int *)(dVar12 + 0x28) -
+      local_50 = STField<int>(dVar12,0x24) + -0xb4;
+      local_48 = STField<int>(dVar12,0x2C);
+      local_44 = STField<int>(dVar12,0x30);
+      local_4c = STField<int>(dVar12,0x28) -
                  ((-(uint)(this_00->field_1ABB != '\0') & 0xffffffb4) + 0xaa);
       st::fn_006B4170((RecoveredSourceFamily_dibcopy *)this_00->field_1AC0,0,
-                   *(int *)(dVar12 + 0x24) + -0xb5,local_4c,local_48 + 2,local_44,0xff);
+                   STField<int>(dVar12,0x24) + -0xb5,local_4c,local_48 + 2,local_44,0xff);
       pvVar30 = (message->arg0).ptr;
       if (pvVar30 != nullptr) {
         local_8 = nullptr;
@@ -9413,13 +9411,13 @@ LAB_005a8c85:
     case MESS_MAINMENUTY_6983:
       if ((this_00->field_1E8E != 0) && (this_00->field_1E92 != nullptr)) {
         dVar12 = (message->arg2).u32;
-        st::fn_006B5F80((int *)g_ddxContext_008075A8,*(int *)(dVar12 + 0x24),*(int *)(dVar12 + 0x28),
-                     *(int *)(dVar12 + 0x2c),*(int *)(dVar12 + 0x30));
+        st::fn_006B5F80((int *)g_ddxContext_008075A8,STField<int>(dVar12,0x24),STField<int>(dVar12,0x28),
+                     STField<int>(dVar12,0x2C),STField<int>(dVar12,0x30));
         /* ST_CALLSITE[005A73B0]: CALL 0x00402298; direct=00402298 PutDDXClip */
-        st::fn_00402298(*(int *)(dVar12 + 0x24),*(int *)(dVar12 + 0x28),6,0x15f,*(uint *)(dVar12 + 0x2c),
+        st::fn_00402298(STField<int>(dVar12,0x24),STField<int>(dVar12,0x28),6,0x15f,STField<uint>(dVar12,0x2C),
                    *(byte **)(dVar12 + 0x30),'\x01',this_00->field_1E92);
         st::fn_006B4170((RecoveredSourceFamily_dibcopy *)this_00->field_1E8E,0,0,0,
-                     *(int *)(dVar12 + 0x2c),*(int *)(dVar12 + 0x30),0xff);
+                     STField<int>(dVar12,0x2C),STField<int>(dVar12,0x30),0xff);
         if ((message->arg0).u32 != 0) {
           st::fn_00710A90(this_00->array_00BC[0xc].field_01F7,this_00->field_1E8E,0,0,0,
                            *(int *)(this_00->field_1E8E + 4),0x14);
@@ -9430,11 +9428,10 @@ LAB_005a8c85:
           st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1E8E,0,(uint)uVar3,2,
                        (uint)uVar3,0x11,9,0xd);
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         st::fn_006B4680
-                  ((int *)g_dDXContext_0080759C,*(int *)(dVar12 + 0x24),*(int *)(dVar12 + 0x28),
-                   (BITMAPINFO *)this_00->field_1E8E,nullptr,0,0,*(DWORD *)(dVar12 + 0x2c),
-                   *(DWORD *)(dVar12 + 0x30),0x10000ff);
+                  ((int *)g_dDXContext_0080759C,STField<int>(dVar12,0x24),STField<int>(dVar12,0x28),
+                   (BITMAPINFO *)this_00->field_1E8E,nullptr,0,0,STField<DWORD>(dVar12,0x2C),
+                   STField<DWORD>(dVar12,0x30),0x10000ff);
       }
       break;
     case 0x6984:
@@ -9660,14 +9657,14 @@ LAB_005a89f6:
     case 0x6987:
       if ((this_00->field_1E8E != 0) && (this_00->field_1E9A != nullptr)) {
         dVar12 = (message->arg2).u32;
-        st::fn_006B5F80((int *)g_ddxContext_008075A8,*(int *)(dVar12 + 0x24),*(int *)(dVar12 + 0x28),
-                     *(int *)(dVar12 + 0x2c),*(int *)(dVar12 + 0x30));
+        st::fn_006B5F80((int *)g_ddxContext_008075A8,STField<int>(dVar12,0x24),STField<int>(dVar12,0x28),
+                     STField<int>(dVar12,0x2C),STField<int>(dVar12,0x30));
         /* ST_CALLSITE[005A7928]: CALL 0x00402298; direct=00402298 PutDDXClip */
-        st::fn_00402298(*(int *)(dVar12 + 0x24),*(int *)(dVar12 + 0x28),*(int *)(dVar12 + 0x24) + -0x1e9,
-                   *(int *)(dVar12 + 0x28) + -0x5e,*(uint *)(dVar12 + 0x2c),
+        st::fn_00402298(STField<int>(dVar12,0x24),STField<int>(dVar12,0x28),STField<int>(dVar12,0x24) + -0x1e9,
+                   STField<int>(dVar12,0x28) + -0x5e,STField<uint>(dVar12,0x2C),
                    *(byte **)(dVar12 + 0x30),'\x01',this_00->field_1E9A);
         st::fn_006B4170((RecoveredSourceFamily_dibcopy *)this_00->field_1E8E,0,0,0,
-                     *(int *)(dVar12 + 0x2c),*(int *)(dVar12 + 0x30),0xff);
+                     STField<int>(dVar12,0x2C),STField<int>(dVar12,0x30),0xff);
         if ((message->arg0).u32 != 0) {
           st::fn_00710A90(this_00->array_00BC[0xc].field_01F3,this_00->field_1E8E,0,0,0,
                            *(int *)(this_00->field_1E8E + 4),0x19);
@@ -9679,27 +9676,25 @@ LAB_005a89f6:
           st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1E8E,0,iVar47,4,iVar47,0x11,9,
                        0xd);
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         st::fn_006B4680
-                  ((int *)g_dDXContext_0080759C,*(int *)(dVar12 + 0x24),*(int *)(dVar12 + 0x28),
-                   (BITMAPINFO *)this_00->field_1E8E,nullptr,0,0,*(DWORD *)(dVar12 + 0x2c),
-                   *(DWORD *)(dVar12 + 0x30),0x10000ff);
+                  ((int *)g_dDXContext_0080759C,STField<int>(dVar12,0x24),STField<int>(dVar12,0x28),
+                   (BITMAPINFO *)this_00->field_1E8E,nullptr,0,0,STField<DWORD>(dVar12,0x2C),
+                   STField<DWORD>(dVar12,0x30),0x10000ff);
       }
       break;
     case MESS_SHARED_6980|MESS_SHARED_0008:
       if ((this_00->field_1E8E != 0) && (this_00->field_1E92 != nullptr)) {
         dVar12 = (message->arg2).u32;
-        st::fn_006B5F80((int *)g_ddxContext_008075A8,*(int *)(dVar12 + 0x24),*(int *)(dVar12 + 0x28),
-                     *(int *)(dVar12 + 0x2c),*(int *)(dVar12 + 0x30));
+        st::fn_006B5F80((int *)g_ddxContext_008075A8,STField<int>(dVar12,0x24),STField<int>(dVar12,0x28),
+                     STField<int>(dVar12,0x2C),STField<int>(dVar12,0x30));
         /* ST_CALLSITE[005A7A5D]: CALL 0x00402298; direct=00402298 PutDDXClip */
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        st::fn_00402298(*(int *)(dVar12 + 0x24),*(int *)(dVar12 + 0x28),
-                   *(int *)(dVar12 + 0x24) -
+        st::fn_00402298(STField<int>(dVar12,0x24),STField<int>(dVar12,0x28),
+                   STField<int>(dVar12,0x24) -
                    ((-(uint)(this_00->array_00BC[0xc].field_01DF != '\t') & 0x177) + 0x22),
-                   *(int *)(dVar12 + 0x28) + -0x5e,*(uint *)(dVar12 + 0x2c),
+                   STField<int>(dVar12,0x28) + -0x5e,STField<uint>(dVar12,0x2C),
                    *(byte **)(dVar12 + 0x30),'\x01',this_00->field_1E92);
         st::fn_006B4170((RecoveredSourceFamily_dibcopy *)this_00->field_1E8E,0,0,0,
-                     *(int *)(dVar12 + 0x2c),*(int *)(dVar12 + 0x30),0xff);
+                     STField<int>(dVar12,0x2C),STField<int>(dVar12,0x30),0xff);
         if ((message->arg0).u32 != 0) {
           st::fn_00710A90(this_00->array_00BC[0xc].field_01F3,this_00->field_1E8E,0,0,0,
                            *(int *)(this_00->field_1E8E + 4),0x19);
@@ -9711,11 +9706,10 @@ LAB_005a89f6:
           st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1E8E,0,iVar47,3,iVar47,0x11,9,
                        0xd);
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         st::fn_006B4680
-                  ((int *)g_dDXContext_0080759C,*(int *)(dVar12 + 0x24),*(int *)(dVar12 + 0x28),
-                   (BITMAPINFO *)this_00->field_1E8E,nullptr,0,0,*(DWORD *)(dVar12 + 0x2c),
-                   *(DWORD *)(dVar12 + 0x30),0x10000ff);
+                  ((int *)g_dDXContext_0080759C,STField<int>(dVar12,0x24),STField<int>(dVar12,0x28),
+                   (BITMAPINFO *)this_00->field_1E8E,nullptr,0,0,STField<DWORD>(dVar12,0x2C),
+                   STField<DWORD>(dVar12,0x30),0x10000ff);
       }
       break;
     case 0x698b:
@@ -9908,7 +9902,7 @@ cf_common_exit_005A7F3B:
                 st::fn_006E6080(this_00,2,this_00->field_1B10,(undefined4 *)puVar1);
                 iVar47 = *(int *)&this_00->field_0x31;
                 if (iVar47 != 0) {
-                  if (*(int *)(iVar47 + 8) < 1) {
+                  if (STField<int>(iVar47,0x8) < 1) {
                     uVar23 = 0;
                   }
                   else {
@@ -10845,7 +10839,7 @@ LAB_005a50be:
           local_19c.id = MESS_FSGSTY_6941;
           pMVar33 = pSVar8->field_02E6;
           if (pMVar33 == nullptr) {
-            /* ST_CALLSITE[005A4570]: CALL dword ptr [EAX] */
+            /* ST_CALLSITE[005A4570]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
             this_00->GetMessage(&local_19c);
           }
           else {
@@ -10894,7 +10888,7 @@ LAB_005a50be:
             if ((UVar21 == 0) ||
                (pMVar33 = (this_00->array_00BC[0xc].field_01DB)->field_02E6,
                pMVar33 == nullptr)) {
-              /* ST_CALLSITE[005A469A]: CALL dword ptr [EAX] */
+              /* ST_CALLSITE[005A469A]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
               this_00->GetMessage(&local_160);
             }
             else if (UVar21 == 0x2584) {
@@ -11091,7 +11085,7 @@ LAB_005a50be:
       uVar36 = (message->arg0).u32;
       if (uVar36 == 0) {
         this_00->field_002D = 0x6952;
-        /* ST_CALLSITE[005A4B62]: CALL dword ptr [EAX] */
+        /* ST_CALLSITE[005A4B62]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
         this_00->GetMessage((STMessage *)&this_00->field_0x1d);
       }
       else if ((uVar36 != 0) && (uVar36 < 3)) {

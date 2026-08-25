@@ -71,11 +71,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
           }
           thunk_FUN_004ad380(this_00,0x5a,0x45);
           iVar5 = iVar8 + *(int *)&this->field_0x233;
-          local_18 = (int)*(short *)(iVar5 + 6);
+          local_18 = (int)STField<short>(iVar5,0x6);
           /* ST_CALLSITE[005FDF59]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
           STT3DSprC::sub_004AD3C0
                     (this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
-                     (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                     (float)(int)STField<short>(iVar5,0x8) * _DAT_007904f8 * _DAT_007904f0,
                      (float)(int)*(short *)(iVar8 + 10 + *(int *)&this->field_0x233) * _DAT_007904f8
                      * _DAT_007904f0 + _DAT_007904fc);
           /* ST_CALLSITE[005FDF6E]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
@@ -86,9 +86,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
             iVar5 = iVar8 + *(int *)&this->field_0x233;
             sVar2 = *(short *)(iVar8 + 10 + *(int *)&this->field_0x233);
             iVar7 = STBiasedDiv16(sVar2, 200); /* exact signed 16-bit grid-index division */
-            sVar2 = *(short *)(iVar5 + 8);
+            sVar2 = STField<short>(iVar5,0x8);
             iVar6 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
-            sVar2 = *(short *)(iVar5 + 6);
+            sVar2 = STField<short>(iVar5,0x6);
             iVar5 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
             iVar8 = local_8;
             this = local_c;
@@ -97,7 +97,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
                 ((VisibleClassTy::sub_00558C00
                             (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6
                              ,&local_24,&local_28), iVar8 = local_8, this = local_c, -1 < iVar7 &&
-                 ((((iVar7 < 5 && (-1 < local_24)) && (local_24 < (int)pVVar3->field_0030)) &&
+                 ((((iVar7 < 5 && (-1 < local_24)) && (local_24 < pVVar3->field_0030)) &&
                   ((iVar5 = g_centeredOffsets5[iVar7] + local_28, -1 < iVar5 &&
                    (iVar5 < pVVar3->field_0034)))))))) && (pVVar3->field_004C != nullptr)) {
               bVar1 = pVVar3->field_004C[local_24 + iVar5 * pVVar3->field_0030];
@@ -154,11 +154,11 @@ joined_r0x005fe09b:
             /* ST_CALLSITE[005FDCDB]: CALL 0x00403233; direct=00403233 STT3DSprC::sub_004ACFE0 */
             STT3DSprC::sub_004ACFE0(this_00,'\x0e');
             iVar5 = iVar8 + *(int *)&this->field_0x233;
-            local_18 = (int)*(short *)(iVar5 + 6);
+            local_18 = (int)STField<short>(iVar5,0x6);
             /* ST_CALLSITE[005FDD40]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
             STT3DSprC::sub_004AD3C0
                       (this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
-                       (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                       (float)(int)STField<short>(iVar5,0x8) * _DAT_007904f8 * _DAT_007904f0,
                        (float)(int)*(short *)(iVar8 + 10 + *(int *)&this->field_0x233) *
                        _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
             *(undefined1 *)(iVar8 + 0x41 + *(int *)&this->field_0x233) = 1;
@@ -167,9 +167,9 @@ joined_r0x005fe09b:
               sVar2 = *(short *)(iVar8 + 10 + *(int *)&this->field_0x233);
               iVar8 = iVar8 + *(int *)&this->field_0x233;
               iVar5 = STBiasedDiv16(sVar2, 200); /* exact signed 16-bit grid-index division */
-              sVar2 = *(short *)(iVar8 + 8);
+              sVar2 = STField<short>(iVar8,0x8);
               iVar7 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
-              sVar2 = *(short *)(iVar8 + 6);
+              sVar2 = STField<short>(iVar8,0x6);
               iVar6 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
               iVar8 = local_8;
               this = local_c;
@@ -179,7 +179,7 @@ joined_r0x005fe09b:
                               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,
                                iVar7,&local_1c,&local_20), iVar8 = local_8, this = local_c,
                    -1 < iVar5 &&
-                   (((iVar5 < 5 && (-1 < local_1c)) && (local_1c < (int)pVVar3->field_0030)))))) &&
+                   (((iVar5 < 5 && (-1 < local_1c)) && (local_1c < pVVar3->field_0030)))))) &&
                  (((iVar5 = g_centeredOffsets5[iVar5] + local_20, -1 < iVar5 &&
                    (iVar5 < pVVar3->field_0034)) && (pVVar3->field_004C != nullptr)))) {
                 bVar1 = pVVar3->field_004C[local_1c + iVar5 * pVVar3->field_0030];

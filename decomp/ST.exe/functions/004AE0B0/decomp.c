@@ -214,8 +214,7 @@ LAB_004ae41c:
     }
     else if (param_4 == 0x4d) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1971_0x9e2;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_10 = (int *)&g_packedRecords_A62x8[param_5].field1971_0x9e2;
+      auto param_10_after_write = (int *)&g_packedRecords_A62x8[param_5].field1971_0x9e2; /* compiler stack-slot lifetime split */
       if (pDVar12 != nullptr) {
         iVar11 = DAT_00795118 / 0xc9;
         uVar19 = 0;
@@ -231,14 +230,14 @@ LAB_004ae41c:
                 (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
             goto cf_break_loop_004AEC96;
             uVar19 = uVar19 + 1;
-            pDVar12 = (DArrayTy *)*param_10;
+            pDVar12 = (DArrayTy *)*param_10_after_write;
           } while ((int)uVar19 < (int)pDVar12->count);
         }
       }
     }
     else if (param_4 == 0x43) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1974_0x9ee;
-      param_10 = (int *)&g_packedRecords_A62x8[param_5].field1974_0x9ee;
+      auto param_10_after_write_2 = (int *)&g_packedRecords_A62x8[param_5].field1974_0x9ee; /* compiler stack-slot lifetime split */
       if (pDVar12 != nullptr) {
         iVar11 = DAT_007950f0 / 0xc9;
         uVar19 = 0;
@@ -254,14 +253,14 @@ LAB_004ae41c:
                 (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
             goto cf_break_loop_004AEC96;
             uVar19 = uVar19 + 1;
-            pDVar12 = (DArrayTy *)*param_10;
+            pDVar12 = (DArrayTy *)*param_10_after_write_2;
           } while ((int)uVar19 < (int)pDVar12->count);
         }
       }
     }
     else if (param_4 == 0x73) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1975_0x9f2;
-      param_10 = (int *)&g_packedRecords_A62x8[param_5].field1975_0x9f2;
+      auto param_10_after_write_3 = (int *)&g_packedRecords_A62x8[param_5].field1975_0x9f2; /* compiler stack-slot lifetime split */
       if (pDVar12 != nullptr) {
         iVar11 = DAT_007951b0 / 0xc9;
         uVar19 = 0;
@@ -277,13 +276,14 @@ LAB_004ae41c:
                 (int)((local_6 - param_2 ^ uVar10) - uVar10) <= iVar11))))
             goto cf_break_loop_004AEC96;
             uVar19 = uVar19 + 1;
-            pDVar12 = (DArrayTy *)*param_10;
+            pDVar12 = (DArrayTy *)*param_10_after_write_3;
           } while ((int)uVar19 < (int)pDVar12->count);
         }
       }
     }
     else if (param_4 == 0x65) {
       pDVar12 = g_packedRecords_A62x8[param_5].field1972_0x9e6;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_10 = (int *)&g_packedRecords_A62x8[param_5].field1972_0x9e6;
       if (pDVar12 != nullptr) {
         iVar11 = DAT_00795178 / 0xc9;

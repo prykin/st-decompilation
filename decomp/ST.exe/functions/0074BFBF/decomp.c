@@ -25,7 +25,7 @@ int __thiscall FUN_0074bfbf(void *this,int *param_1,undefined4 *param_2)
 
   iVar5 = STField<int>(this,0x8c);
   bVar6 = STField<int>(this,0x54) != 0;
-  uVar3 = *(uint *)(iVar5 + 0xb0);
+  uVar3 = STField<uint>(iVar5,0xB0);
   if ((uVar3 & 1) == 0) {
     bVar6 = bVar6 | 2;
   }
@@ -73,12 +73,12 @@ int __thiscall FUN_0074bfbf(void *this,int *param_1,undefined4 *param_2)
       /* ST_CALLSITE[0074C051]: CALL dword ptr [ECX + 0x4c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*local_c + 0x4c))(local_c,0x10,&local_50);
-      local_4c = *(undefined4 *)(iVar5 + 0xac);
-      local_48 = (local_48 ^ *(uint *)(iVar5 + 0xb0)) & 8 ^ *(uint *)(iVar5 + 0xb0);
+      local_4c = STField<undefined4>(iVar5,0xAC);
+      local_48 = (local_48 ^ STField<uint>(iVar5,0xB0)) & 8 ^ STField<uint>(iVar5,0xB0);
       local_40 = *puVar2;
-      local_3c = *(undefined4 *)(iVar5 + 0xbc);
+      local_3c = STField<undefined4>(iVar5,0xBC);
       local_38 = *puVar1;
-      local_34 = *(undefined4 *)(iVar5 + 0xc4);
+      local_34 = STField<undefined4>(iVar5,0xC4);
       local_50 = 0x20;
       /* ST_CALLSITE[0074C091]: CALL dword ptr [EDX + 0x50] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

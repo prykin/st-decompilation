@@ -16,7 +16,7 @@ void FUN_006189c0(int param_1,int *param_2,int param_3)
     do {
       iVar1 = *(int *)(iVar3 + 0x1e + *piVar5 * 0x2c);
       piVar4 = param_2;
-      auto param_1_after_write = local_8; /* compiler stack-slot lifetime split */
+      int param_1_after_write = local_8; /* compiler stack-slot lifetime split */
       if (0 < local_8) {
         do {
           iVar2 = *piVar4;

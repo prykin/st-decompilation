@@ -32,62 +32,62 @@ undefined4 __fastcall FUN_0060a4b0(AnonShape_0060A4B0_7BF9A20C *param_1)
         pAVar2 = param_1->field_0234;
         if ((((local_14 < (uint)pAVar2->field_000C) &&
              (iVar7 = pAVar2->field_0008 * local_14 + pAVar2->field_001C, iVar7 != 0)) &&
-            (-1 < *(int *)(iVar7 + 0x3c))) && (*(int *)(iVar7 + 4) != -1)) {
+            (-1 < STField<int>(iVar7,0x3C))) && (STField<int>(iVar7,0x4) != -1)) {
           local_c = 1;
           if (g_visibleClass_00802A88 != nullptr) {
-            iVar6 = *(int *)(iVar7 + 0x14);
+            iVar6 = STField<int>(iVar7,0x14);
             local_8 = STBiasedDiv16(iVar6, 200); /* exact signed 16-bit grid-index division */
-            iVar6 = *(int *)(iVar7 + 0x10);
+            iVar6 = STField<int>(iVar7,0x10);
             iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-            iVar5 = *(int *)(iVar7 + 0xc);
+            iVar5 = STField<int>(iVar7,0xC);
             iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
             if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
                 /* ST_CALLSITE[0060A5DB]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                 ((VisibleClassTy::sub_00558C00
                             (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6
                              ,&local_1c,&local_20), local_8 < 0 || ((4 < local_8 || (local_1c < 0)))
-                 ))) || (((int)pVVar4->field_0030 <= local_1c ||
+                 ))) || ((pVVar4->field_0030 <= local_1c ||
                          ((((iVar6 = g_centeredOffsets5[local_8] + local_20, iVar6 < 0 ||
                             (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == nullptr))
                           || (pVVar4->field_004C[local_1c + iVar6 * pVVar4->field_0030] != 0)))))) {
-              if (*(int *)(iVar7 + 4) == 0) {
+              if (STField<int>(iVar7,0x4) == 0) {
                 Library::Ourlib::ST3DSMAP::SprShow
-                          (g_sT3DSMAPContext_00807598,*(uint *)(iVar7 + 0x3c),0);
-                *(undefined4 *)(iVar7 + 4) = 1;
+                          (g_sT3DSMAPContext_00807598,STField<uint>(iVar7,0x3C),0);
+                STField<undefined4>(iVar7,0x4) = 1;
               }
             }
-            else if (*(int *)(iVar7 + 4) == 1) {
-              Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,*(uint *)(iVar7 + 0x3c));
-              *(undefined4 *)(iVar7 + 4) = 0;
+            else if (STField<int>(iVar7,0x4) == 1) {
+              Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,STField<uint>(iVar7,0x3C));
+              STField<undefined4>(iVar7,0x4) = 0;
               local_c = 0;
             }
           }
           param_1 = local_10;
-          if (*(int *)(iVar7 + 0x28) != 0) {
-            if (*(int *)(iVar7 + 0x24) < *(int *)(iVar7 + 0x28)) {
-              *(int *)(iVar7 + 0x24) = *(int *)(iVar7 + 0x24) + 1;
+          if (STField<int>(iVar7,0x28) != 0) {
+            if (STField<int>(iVar7,0x24) < STField<int>(iVar7,0x28)) {
+              STField<int>(iVar7,0x24) = STField<int>(iVar7,0x24) + 1;
             }
             else {
-              *(undefined4 *)(iVar7 + 0x24) = 0;
+              STField<undefined4>(iVar7,0x24) = 0;
             }
           }
           if (local_c != 0) {
             if (*(int *)&local_10[1].field_0x10 == 1) {
-              if (*(int *)(iVar7 + 4) != 0) {
+              if (STField<int>(iVar7,0x4) != 0) {
                 Library::Ourlib::ST3DSMAP::SprHide
-                          (g_sT3DSMAPContext_00807598,*(uint *)(iVar7 + 0x3c));
-                *(undefined4 *)(iVar7 + 4) = 0;
+                          (g_sT3DSMAPContext_00807598,STField<uint>(iVar7,0x3C));
+                STField<undefined4>(iVar7,0x4) = 0;
               }
             }
             else {
               ST3DSMAPContext::sub_006EA270
-                        (g_sT3DSMAPContext_00807598,*(uint *)(iVar7 + 0x3c),0,
-                         *(uint *)(iVar7 + 0x24));
+                        (g_sT3DSMAPContext_00807598,STField<uint>(iVar7,0x3C),0,
+                         STField<uint>(iVar7,0x24));
               Library::Ourlib::ST3DSMAP::SprMove
-                        (g_sT3DSMAPContext_00807598,*(uint *)(iVar7 + 0x3c),
-                         (float)*(int *)(iVar7 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
-                         (float)*(int *)(iVar7 + 0x10) * _DAT_007904f8 * _DAT_007904f0,
-                         (float)*(int *)(iVar7 + 0x14) * _DAT_007904f8 * _DAT_007904f0 +
+                        (g_sT3DSMAPContext_00807598,STField<uint>(iVar7,0x3C),
+                         (float)STField<int>(iVar7,0xC) * _DAT_007904f8 * _DAT_007904f0,
+                         (float)STField<int>(iVar7,0x10) * _DAT_007904f8 * _DAT_007904f0,
+                         (float)STField<int>(iVar7,0x14) * _DAT_007904f8 * _DAT_007904f0 +
                          _DAT_007904fc);
               local_18 = 1;
             }

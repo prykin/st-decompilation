@@ -84,7 +84,7 @@ int __thiscall st::fn_0068E290(AiTactClassTy *this,short param_1)
         element_00a5 = nullptr;
       }
       iVar3 = element_00a5->field_0004;
-      if ((iVar3 != 0) && (*(short *)(iVar3 + 0x7d) == param_1)) {
+      if ((iVar3 != 0) && (STField<short>(iVar3,0x7D) == param_1)) {
         return iVar3;
       }
       uVar5 = uVar5 + 1;
@@ -126,8 +126,7 @@ uint __thiscall st::fn_0068E480(AiTactClassTy *this,short param_1)
         element_00a5 = nullptr;
       }
       iVar3 = element_00a5->field_0004;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (((iVar3 != 0) && (*(short *)(iVar3 + 0x7b) == param_1)) && (-1 < *(short *)(iVar3 + 0x7f))
+      if (((iVar3 != 0) && (STField<short>(iVar3,0x7B) == param_1)) && (-1 < STField<short>(iVar3,0x7F))
          ) {
         uVar4 = uVar6;
       }
@@ -329,7 +328,8 @@ void __thiscall st::fn_00690AB0(AiTactClassTy *this)
 {
   int iVar1;
 
-  if ((this->field_0089 == 0) || (this->field_008D + this->field_0089 <= this->field_012C)) {
+  if ((this->field_0089 == 0) || ((uint)(this->field_008D + this->field_0089) <= this->field_012C))
+  {
     this->field_008D = this->field_012C;
     iVar1 = st::fn_00403440(CASE_DE,0,0,0,-1,-1);
     this->field_0134 = iVar1;

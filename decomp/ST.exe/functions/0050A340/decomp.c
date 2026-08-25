@@ -367,7 +367,7 @@ LAB_0050af64:
       pcVar7_mg14 = LoadResourceString(0x36bd,g_hINSTANCE_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,pcVar7_mg14,iVar12,iVar18,uVar10,iVar19,iVar20);
       /* ST_CALLSITE[0050AAA8]: CALL 0x00404f1b; direct=00404F1B CPanelTy::PaintDamageXY */
-      PaintDamageXY(this_00,this_00->field_0194,0x5c,0x50,*(byte *)&this_00->field_0C3D,0x2714);
+      PaintDamageXY(this_00,this_00->field_0194,0x5c,0x50,(byte)this_00->field_0C3D,0x2714);
       pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
       /* ST_CALLSITE[0050AAC9]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x33,0x7b,'\x01',(byte *)pBVar6);

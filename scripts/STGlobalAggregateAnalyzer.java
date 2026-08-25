@@ -982,6 +982,14 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
             if (counts.getOrDefault(candidate.dimension, 0L) > 1)
                 name += "_" + ordinals.merge(
                     candidate.dimension, 1, Integer::sum);
+            // Aggregate geometry can recover storage, but it is weaker than an
+            // existing non-default symbol identity.  In particular, a later
+            // generic matrix pass must not replace an earlier semantic name
+            // merely because both describe the same exact byte matrix.
+            if (candidate.symbol.getSource() !=
+                    ghidra.program.model.symbol.SourceType.DEFAULT &&
+                    !rawGlobalName(candidate.symbol.getName()))
+                name = candidate.symbol.getName();
             result.add(new Row(true, addr(candidate.base), candidate.symbol.getName(),
                 candidate.symbol.getSource().toString(),
                 candidate.data.getDataType().getPathName(), candidate.data.getLength(),
@@ -997,6 +1005,11 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
             claimed.add(candidate.base);
         }
         return result;
+    }
+
+    private boolean rawGlobalName(String name) {
+        return name == null || name.isBlank() || name.matches(
+            "(?i)_?(?:DAT|UNK|LAB|PTR)_[0-9a-f]+(?:_[0-9a-f]+)?");
     }
 
     private int transposedFunctions(Evidence evidence) {

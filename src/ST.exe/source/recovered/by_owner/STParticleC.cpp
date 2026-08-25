@@ -19,7 +19,7 @@ void __thiscall st::fn_00629830(STParticleC *this)
   else {
     this->field_00BA = 0x23;
   }
-  if (-1 < (int)this->field_00C6) {
+  if (-1 < this->field_00C6) {
     st::fn_006E9520(g_sT3DSMAPContext_00807598,this->field_00C6,0,0,0);
   }
   return;
@@ -117,8 +117,7 @@ void __thiscall st::fn_00629F20(STParticleC *this)
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00627EB0 -> 00629F90 @ 00627F75 */
 
-undefined4 __thiscall
-st::fn_00629F90(STParticleC *this,STParticleC *param_1,undefined4 param_2)
+undefined4 __thiscall st::fn_00629F90(STParticleC *this,STParticleC *param_1,int param_2)
 
 {
   char cVar1;
@@ -405,7 +404,7 @@ void __thiscall st::fn_0062AEF0(STParticleC *this,undefined4 *param_1)
   pSVar3->field_0x2 = STField<undefined1>(param_1,2);
   this->field_00CE = uVar1;
   this->field_00CA = nullptr;
-  this->field_00C6 = 0xffffffff;
+  this->field_00C6 = -1;
   return;
 }
 
@@ -439,24 +438,24 @@ byte __thiscall st::fn_0062B4A0(STParticleC *this)
   local_14 = this->field_0046;
   sVar3 = (short)(local_14 >> 0x1f);
   if (local_14 < 0) {
-    iVar5 = (int)(short)(((short)(local_14 / 0xc9) + sVar3) -
+    iVar5 = (short)(((short)(local_14 / 0xc9) + sVar3) -
                         (short)((longlong)local_14 * 0x28c1979 >> 0x3f));
     local_c = iVar5 + -1;
   }
   else {
-    iVar5 = (int)(short)(((short)(local_14 / 0xc9) + sVar3) -
+    iVar5 = (short)(((short)(local_14 / 0xc9) + sVar3) -
                         (short)((longlong)local_14 * 0x28c1979 >> 0x3f));
     local_c = iVar5;
   }
   iVar1 = this->field_004A;
   sVar3 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
-    iVar6 = (int)(short)(((short)(iVar1 / 0xc9) + sVar3) -
+    iVar6 = (short)(((short)(iVar1 / 0xc9) + sVar3) -
                         (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
     local_8 = iVar6 + -1;
   }
   else {
-    iVar6 = (int)(short)(((short)(iVar1 / 0xc9) + sVar3) -
+    iVar6 = (short)(((short)(iVar1 / 0xc9) + sVar3) -
                         (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
     local_8 = iVar6;
   }
@@ -483,7 +482,7 @@ byte __thiscall st::fn_0062B4A0(STParticleC *this)
                ,&local_c);
     if (((local_10 < 0) || (4 < local_10)) ||
        ((local_14 < 0 ||
-        (((((int)pVVar4->field_0030 <= local_14 ||
+        ((((pVVar4->field_0030 <= local_14 ||
            (local_c = g_centeredOffsets5[local_10] + local_c, local_c < 0)) ||
           (pVVar4->field_0034 <= local_c)) ||
          ((pVVar4->field_004C == nullptr ||

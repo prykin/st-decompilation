@@ -88,13 +88,13 @@ ST3DSMAPContext::sub_006E1460(ST3DSMAPContext *this,double param_2,double param_
     local_78 = this->field_0038 - local_54;
     local_cc = this->field_003C - local_64;
     local_c8 = *(undefined4 *)&this->field_0060;
-    local_c4 = *(undefined4 *)((int)&this->field_0060 + 4);
+    local_c4 = STField<undefined4>(this,0x64);
     local_2c = *(undefined4 *)&this->field_0068;
-    local_28 = *(undefined4 *)((int)&this->field_0068 + 4);
+    local_28 = STField<undefined4>(this,0x6C);
     local_8c = *(undefined4 *)&this->field_0070;
-    local_88 = *(undefined4 *)((int)&this->field_0070 + 4);
-    local_a4 = *(undefined4 *)&this->field_0078;
-    local_a0 = *(undefined4 *)((int)&this->field_0078 + 4);
+    local_88 = STField<undefined4>(this,0x74);
+    local_a4 = *(undefined4 *)&this->field_0x78;
+    local_a0 = *(undefined4 *)&this->field_0x7c;
     iVar6 = (local_d0 ^ (int)local_d0 >> 0x1f) - ((int)local_d0 >> 0x1f);
     uVar5 = (int)local_dc >> 0x1f;
     if (((local_78 / 2 < iVar6) || (local_cc / 2 < (int)((local_dc ^ uVar5) - uVar5))) &&
@@ -108,10 +108,11 @@ ST3DSMAPContext::sub_006E1460(ST3DSMAPContext *this,double param_2,double param_
       local_24 = this->field_0060;
       local_3c = this->field_0068;
       local_74 = this->field_0070;
-      local_84 = this->field_0078;
+      local_84 = *(double *)&this->field_0x78;
       dVar1 = ((this->field_0068 - this->field_0060) * (double)iVar6) / (double)local_78;
       local_d4 = (local_dc ^ uVar5) - uVar5;
-      local_b0 = ((this->field_0078 - this->field_0070) * (double)local_d4) / (double)local_cc;
+      local_b0 = ((*(double *)&this->field_0x78 - this->field_0070) * (double)local_d4) /
+                 (double)local_cc;
       iVar2 = this->field_0034;
       local_bc = local_78 - iVar6;
       local_d4 = local_cc - local_d4;
@@ -178,7 +179,7 @@ ST3DSMAPContext::sub_006E1460(ST3DSMAPContext *this,double param_2,double param_
       else {
         local_b8 = iVar2 + local_dc;
         local_b4 = this->field_0034;
-        local_74 = this->field_0078 - local_b0;
+        local_74 = *(double *)&this->field_0x78 - local_b0;
         local_d8 = iVar2;
         if (puVar4 != nullptr) {
           iVar2 = this->field_02CC;
@@ -230,13 +231,13 @@ ST3DSMAPContext::sub_006E1460(ST3DSMAPContext *this,double param_2,double param_
         ;
         this->field_003C = local_cc;
         *(undefined4 *)&this->field_0060 = (undefined4)local_24;
-        *(undefined4 *)((int)&this->field_0060 + 4) = STPiece<4,4>(local_24);
+        STField<undefined4>(this,0x64) = STPiece<4,4>(local_24);
         *(undefined4 *)&this->field_0068 = (undefined4)local_3c;
-        *(undefined4 *)((int)&this->field_0068 + 4) = STPiece<4,4>(local_3c);
+        STField<undefined4>(this,0x6C) = STPiece<4,4>(local_3c);
         *(undefined4 *)&this->field_0070 = local_8c;
-        *(undefined4 *)((int)&this->field_0070 + 4) = local_88;
-        *(undefined4 *)&this->field_0078 = local_a4;
-        *(undefined4 *)((int)&this->field_0078 + 4) = local_a0;
+        STField<undefined4>(this,0x74) = local_88;
+        *(undefined4 *)&this->field_0x78 = local_a4;
+        *(undefined4 *)&this->field_0x7c = local_a0;
         if (0 < (int)uVar5) {
           if ((int)local_7c < (int)local_94) {
             puVar4 = this->field_02B0 + (this->field_02B8 - uVar5);
@@ -277,13 +278,13 @@ ST3DSMAPContext::sub_006E1460(ST3DSMAPContext *this,double param_2,double param_
         this->field_003C = ((local_dc ^ (int)local_dc >> 0x1f) - ((int)local_dc >> 0x1f)) + local_b4
         ;
         *(undefined4 *)&this->field_0060 = local_c8;
-        *(undefined4 *)((int)&this->field_0060 + 4) = local_c4;
+        STField<undefined4>(this,0x64) = local_c4;
         *(undefined4 *)&this->field_0068 = local_2c;
-        *(undefined4 *)((int)&this->field_0068 + 4) = local_28;
+        STField<undefined4>(this,0x6C) = local_28;
         *(undefined4 *)&this->field_0070 = (undefined4)local_74;
-        *(undefined4 *)((int)&this->field_0070 + 4) = STPiece<4,4>(local_74);
-        *(undefined4 *)&this->field_0078 = (undefined4)local_84;
-        *(undefined4 *)((int)&this->field_0078 + 4) = STPiece<4,4>(local_84);
+        STField<undefined4>(this,0x74) = STPiece<4,4>(local_74);
+        *(undefined4 *)&this->field_0x78 = (undefined4)local_84;
+        *(undefined4 *)&this->field_0x7c = STPiece<4,4>(local_84);
         if (0 < iVar6) {
           if (local_90 < local_68) {
             puVar4 = this->field_02B0 + (this->field_02BC - iVar6) * this->field_02B8;
@@ -312,17 +313,17 @@ ST3DSMAPContext::sub_006E1460(ST3DSMAPContext *this,double param_2,double param_
       this->field_0038 = local_78 + local_54;
       this->field_003C = local_cc + local_64;
       *(undefined4 *)&this->field_0060 = local_c8;
-      *(undefined4 *)((int)&this->field_0060 + 4) = local_c4;
+      STField<undefined4>(this,0x64) = local_c4;
       *(undefined4 *)&this->field_0068 = local_2c;
-      *(undefined4 *)((int)&this->field_0068 + 4) = local_28;
+      STField<undefined4>(this,0x6C) = local_28;
       *(undefined4 *)&this->field_0070 = local_8c;
-      *(undefined4 *)((int)&this->field_0070 + 4) = local_88;
-      *(undefined4 *)&this->field_0078 = local_a4;
-      *(undefined4 *)((int)&this->field_0078 + 4) = local_a0;
+      STField<undefined4>(this,0x74) = local_88;
+      *(undefined4 *)&this->field_0x78 = local_a4;
+      *(undefined4 *)&this->field_0x7c = local_a0;
       if ((ST3DSMAPContext *)this->field_0358 != nullptr) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         sub_006E1460((ST3DSMAPContext *)this->field_0358,this->field_0098,
-                     (double)CONCAT26((short)((uint)*(undefined4 *)((int)&this->field_00A0 + 4) >>
+                     (double)CONCAT26((short)((uint)STField<undefined4>(this,0xA4) >>
                                              0x10),*(undefined6 *)&this->field_00A0));
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         this->field_0374 = *(int *)(this->field_0358 + 0x374);

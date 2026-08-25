@@ -23,7 +23,7 @@ FUN_00553b00(int param_1,int param_2,byte *param_3,uint param_4,int param_5,unde
     if (0 < iVar2) {
       auto param_1_after_write = (int)(param_3 + iVar4 * param_4 + iVar5); /* compiler stack-slot lifetime split */
       iVar6 = 0;
-      auto param_2_after_write = iVar2; /* compiler stack-slot lifetime split */
+      int param_2_after_write = iVar2; /* compiler stack-slot lifetime split */
       param_6 = pbVar3;
       while( true ) {
         do {

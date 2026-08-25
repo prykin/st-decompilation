@@ -96,7 +96,7 @@ int __thiscall STAppC::GetMessage(STAppC *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  sub_006E5150(local_18,message);
+  AppClassTy::sub_006E5150((AppClassTy *)local_18,message);
   pCVar10 = g_cursorClass_00802A30;
   SVar5 = message->id;
   if (SVar5 < MESS_SHARED_6120) {

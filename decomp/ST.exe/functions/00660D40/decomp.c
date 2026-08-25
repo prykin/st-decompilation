@@ -24,12 +24,11 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
     local_10 = thunk_FUN_004357f0(param_1->field_0024);
     iVar7 = param_1->field_020B;
     local_c = 0;
-    if (0 < *(int *)(iVar7 + 0xc)) {
-      bVar9 = *(int *)(iVar7 + 0xc) != 0;
+    if (0 < STField<int>(iVar7,0xC)) {
+      bVar9 = STField<int>(iVar7,0xC) != 0;
       do {
         if (bVar9) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar7 = *(int *)(iVar7 + 8) * local_c + *(int *)(iVar7 + 0x1c);
+          iVar7 = STField<int>(iVar7,0x8) * local_c + STField<int>(iVar7,0x1C);
         }
         else {
           iVar7 = 0;
@@ -40,7 +39,7 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
         if ((-(uint)(sVar3 != 1) & 2) != 0xffffffff) {
           do {
             uVar1 = *(uint *)(iVar7 + iVar6 * 4);
-            if ((((uVar1 != 0) && (*(int *)(iVar7 + 0x28) == 0)) && (*(int *)(iVar7 + 0x24) == 0))
+            if ((((uVar1 != 0) && (STField<int>(iVar7,0x28) == 0)) && (STField<int>(iVar7,0x24) == 0))
                && (((uVar1 != 0 && (uVar1 < 0x29)) || (sVar3 == 1)))) {
               pAVar8 = &local_5c;
               for (iVar4 = 0x12; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -52,7 +51,7 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
               STPiece<0,4>(local_5c) = *(undefined4 *)(iVar7 + iVar6 * 4);
               STPiece<8,4>(local_5c) = 0;
               if (iVar6 == 0) {
-                local_5c.field_0006 = *(short *)(iVar7 + 0xc);
+                local_5c.field_0006 = STField<short>(iVar7,0xC);
               }
               else {
                 local_5c.field_0006 = 0;
@@ -63,9 +62,9 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
                 local_10->field_065C = STPiece<8,4>(local_5c) + 1;
               }
               STPiece<12,2>(local_5c) = local_8->field_007D;
-              STPiece<22,2>(local_5c) = *(undefined2 *)(iVar7 + 0xe);
-              STPiece<24,2>(local_5c) = *(undefined2 *)(iVar7 + 0x10);
-              STPiece<26,2>(local_5c) = *(undefined2 *)(iVar7 + 0x12);
+              STPiece<22,2>(local_5c) = STField<undefined2>(iVar7,0xE);
+              STPiece<24,2>(local_5c) = STField<undefined2>(iVar7,0x10);
+              STPiece<26,2>(local_5c) = STField<undefined2>(iVar7,0x12);
               STPiece<28,1>(local_5c) = ((char *)iVar7)[0x14];
               if ((((char)STPiece<28,1>(local_5c) < '\0') || ('\a' < (char)STPiece<28,1>(local_5c))) &&
                  ((STPiece<28,1>(local_5c) = local_8->field_0081, (char)STPiece<28,1>(local_5c) < '\0' ||
@@ -90,8 +89,8 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
         }
         iVar7 = param_1->field_020B;
         local_c = uVar5 + 1;
-        bVar9 = local_c < *(uint *)(iVar7 + 0xc);
-      } while ((int)local_c < (int)*(uint *)(iVar7 + 0xc));
+        bVar9 = local_c < STField<uint>(iVar7,0xC);
+      } while ((int)local_c < (int)STField<uint>(iVar7,0xC));
     }
   }
   return;

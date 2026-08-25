@@ -82,7 +82,7 @@ joined_r0x0068f3e2:
         else {
           /* ST_CALLSITE[0068F415]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = STAllPlayersC::GetObjPtr
-                              (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar6,CASE_1);
+                              (g_allPlayers_007FA174,(char)pAVar5->field_0024,*puVar6,CASE_1);
         }
         pAVar5 = local_8;
       } while (this_00 == nullptr);

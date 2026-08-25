@@ -207,7 +207,7 @@ LAB_004f9a8a:
             this_00->field_0028 = 0x5dc6;
             *(undefined **)&this_00->field_0x2c = &DAT_0080c4d7;
             if (g_aiBossClass_008117BC != nullptr) {
-              /* ST_CALLSITE[004F9AEE]: CALL dword ptr [EDX] */
+              /* ST_CALLSITE[004F9AEE]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
               g_aiBossClass_008117BC->GetMessage((STMessage *)&this_00->field_0x18);
             }
             this_00->field_0260 = CASE_4;

@@ -72,7 +72,7 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
 switchD_004e08b2_caseD_39:
             pTVar10 = param_1->vtable;
             /* ST_CALLSITE[004E0957]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-            bVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
+            bVar5 = LookupRecordByte((char)param_1->field_023D);
             /* ST_CALLSITE[004E096E]: CALL dword ptr [EDI + 0x90] */
             (*pTVar10->vfunc_90)(param_1,3,(-(ushort)(bVar5 != 2) & 0xff3a) + 0x2e9);
             break;
@@ -80,7 +80,7 @@ switchD_004e08b2_caseD_39:
 switchD_004e08b2_caseD_3b:
             pTVar10 = param_1->vtable;
             /* ST_CALLSITE[004E09C8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-            bVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
+            bVar5 = LookupRecordByte((char)param_1->field_023D);
             /* ST_CALLSITE[004E09DF]: CALL dword ptr [EDI + 0x90] */
             (*pTVar10->vfunc_90)(param_1,3,(-(ushort)(bVar5 != 2) & 0xff3a) + 0x2f6);
             break;
@@ -88,7 +88,7 @@ switchD_004e08b2_caseD_3b:
 switchD_004e08b2_caseD_4f:
             pTVar10 = param_1->vtable;
             /* ST_CALLSITE[004E0988]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-            bVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
+            bVar5 = LookupRecordByte((char)param_1->field_023D);
             /* ST_CALLSITE[004E099F]: CALL dword ptr [EDI + 0x90] */
             (*pTVar10->vfunc_90)(param_1,3,(-(ushort)(bVar5 != 2) & 0xff32) + 0x34f);
             break;
@@ -122,7 +122,7 @@ LAB_004e0a1f:
           case CASE_52:
             pTVar10 = param_1->vtable;
             /* ST_CALLSITE[004E09F6]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-            bVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
+            bVar5 = LookupRecordByte((char)param_1->field_023D);
             /* ST_CALLSITE[004E0A0D]: CALL dword ptr [EDI + 0x90] */
             (*pTVar10->vfunc_90)(param_1,3,(-(ushort)(bVar5 != 2) & 0xff3b) + 0x35c);
             break;
@@ -206,7 +206,7 @@ LAB_004e0a4f:
               if (param_1->field_05AC == CASE_52) {
                 pTVar10 = param_1->vtable;
                 /* ST_CALLSITE[004E0C30]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-                bVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
+                bVar5 = LookupRecordByte((char)param_1->field_023D);
                 /* ST_CALLSITE[004E0C47]: CALL dword ptr [EDI + 0x90] */
                 (*pTVar10->vfunc_90)(param_1,3,(-(ushort)(bVar5 != 2) & 0xff3b) + 0x35e);
                 goto switchD_004e0aad_default;
@@ -300,7 +300,7 @@ LAB_004e0f14:
       }
       break;
     }
-    cVar23 = *(char *)&param_1->field_023D;
+    cVar23 = (char)param_1->field_023D;
     pTVar10 = param_1->vtable;
     goto LAB_004e0e15;
   case CASE_5:
@@ -323,7 +323,7 @@ LAB_004e0f14:
     TLOBaseTy::RotateSpr(param_1,0);
     TVar1 = param_1->field_05AC;
     if (TVar1 != CASE_52) goto joined_r0x004e0f0b;
-    cVar23 = *(char *)&param_1->field_023D;
+    cVar23 = (char)param_1->field_023D;
     pTVar10 = param_1->vtable;
 LAB_004e0e15:
     /* ST_CALLSITE[004E0E1B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */

@@ -1,4 +1,4 @@
-FUN_00627e80:
+STMineSetC::sub_00627E80:
 00627E80  8B 81 AE 02 00 00         MOV EAX,dword ptr [ECX + 0x2ae]
 00627E86  85 C0                     TEST EAX,EAX
 00627E88  74 08                     JZ 0x00627e92

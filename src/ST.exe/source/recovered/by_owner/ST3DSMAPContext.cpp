@@ -136,7 +136,7 @@ void __thiscall st::fn_006DBCF0(ST3DSMAPContext *this)
 
 void __thiscall
 st::fn_006DBD20
-          (ST3DSMAPContext *param_1,DDXContext *param_2,uint param_3,undefined4 param_4,int param_5,
+          (ST3DSMAPContext *param_1,DDXContext *param_2,uint param_3,int param_4,int param_5,
           int param_6,double param_7,double param_8,double param_9,double param_10)
 
 {
@@ -219,12 +219,12 @@ st::fn_006DBD20
                  (double)(fVar3 * (float10)_DAT_0079df58),(double)(fVar3 * (float10)_DAT_007901c0),
                  (double)(fVar3 * (float10)_DAT_0079df58),(double)(fVar3 * (float10)_DAT_007901c0));
     iVar2 = param_1->field_0358;
-    param_1->field_038C = *(undefined4 *)(iVar2 + 0xc);
-    param_1->field_0390 = *(undefined4 *)(iVar2 + 0x14);
-    param_1->field_037C = *(undefined4 *)(iVar2 + 0x28);
+    param_1->field_038C = STField<undefined4>(iVar2,0xC);
+    param_1->field_0390 = STField<undefined4>(iVar2,0x14);
+    param_1->field_037C = STField<undefined4>(iVar2,0x28);
     param_1->field_0374 = -30000;
     param_1->field_0378 = -30000;
-    *(undefined4 *)(iVar2 + 0x370) = param_1->field_0370;
+    STField<undefined4>(iVar2,0x370) = param_1->field_0370;
     *(undefined4 *)(param_1->field_0358 + 0x134) = 1;
   }
   return;
@@ -1129,20 +1129,20 @@ void __fastcall st::fn_006E1050(ST3DSMAPContext *param_1)
     lVar7 = st::fn_0072E288();
     iVar6 = (int)lVar7;
     if (((param_1->field_0374 == iVar5) && (param_1->field_0378 == iVar6)) &&
-       (*(int *)(iVar3 + 0x134) == 0)) {
+       (STField<int>(iVar3,0x134) == 0)) {
       param_1->field_0140 = nullptr;
       param_1->field_013C = 0;
       return;
     }
     param_1->field_0374 = iVar5;
     param_1->field_0378 = iVar6;
-    *(int *)(iVar3 + 0x374) = iVar5;
+    STField<int>(iVar3,0x374) = iVar5;
     *(int *)(param_1->field_0358 + 0x378) = iVar6;
     this = (ST3DSMAPContext *)param_1->field_0358;
     st::fn_006DD610(this,4,param_1->field_0368 * _DAT_0079b168 +
                         ((double)param_1->field_0374 * param_1->field_0368 - this->field_0060),
                  ((double)param_1->field_0378 + _DAT_0079b168) * param_1->field_0368 +
-                 this->field_0078);
+                 *(double *)&this->field_0x78);
     st::fn_006DDBE0((ST3DSMAPContext *)param_1->field_0358);
     st::fn_006DE9C0((ST3DSMAPContext *)param_1->field_0358);
     *(undefined4 *)(param_1->field_0358 + 0x134) = 0;
@@ -1246,13 +1246,13 @@ st::fn_006E1460(ST3DSMAPContext *this,double param_2,double param_3)
     local_78 = st::machine_word_boundary_cast<int>(this->field_0038 - local_54);
     local_cc = st::machine_word_boundary_cast<int>(this->field_003C - local_64);
     local_c8 = *(undefined4 *)&this->field_0060;
-    local_c4 = *(undefined4 *)((int)&this->field_0060 + 4);
+    local_c4 = STField<undefined4>(this,0x64);
     local_2c = *(undefined4 *)&this->field_0068;
-    local_28 = *(undefined4 *)((int)&this->field_0068 + 4);
+    local_28 = STField<undefined4>(this,0x6C);
     local_8c = *(undefined4 *)&this->field_0070;
-    local_88 = *(undefined4 *)((int)&this->field_0070 + 4);
-    local_a4 = *(undefined4 *)&this->field_0078;
-    local_a0 = *(undefined4 *)((int)&this->field_0078 + 4);
+    local_88 = STField<undefined4>(this,0x74);
+    local_a4 = *(undefined4 *)&this->field_0x78;
+    local_a0 = *(undefined4 *)&this->field_0x7c;
     iVar6 = (local_d0 ^ (int)local_d0 >> 0x1f) - ((int)local_d0 >> 0x1f);
     uVar5 = (int)local_dc >> 0x1f;
     if (((local_78 / 2 < iVar6) || (local_cc / 2 < (int)((local_dc ^ uVar5) - uVar5))) &&
@@ -1266,10 +1266,11 @@ st::fn_006E1460(ST3DSMAPContext *this,double param_2,double param_3)
       local_24 = this->field_0060;
       local_3c = this->field_0068;
       local_74 = this->field_0070;
-      local_84 = this->field_0078;
+      local_84 = *(double *)&this->field_0x78;
       dVar1 = ((this->field_0068 - this->field_0060) * (double)iVar6) / (double)local_78;
       local_d4 = (local_dc ^ uVar5) - uVar5;
-      local_b0 = ((this->field_0078 - this->field_0070) * (double)local_d4) / (double)local_cc;
+      local_b0 = ((*(double *)&this->field_0x78 - this->field_0070) * (double)local_d4) /
+                 (double)local_cc;
       iVar2 = this->field_0034;
       local_bc = local_78 - iVar6;
       local_d4 = local_cc - local_d4;
@@ -1336,7 +1337,7 @@ st::fn_006E1460(ST3DSMAPContext *this,double param_2,double param_3)
       else {
         local_b8 = iVar2 + local_dc;
         local_b4 = this->field_0034;
-        local_74 = this->field_0078 - local_b0;
+        local_74 = *(double *)&this->field_0x78 - local_b0;
         local_d8 = iVar2;
         if (puVar4 != nullptr) {
           iVar2 = this->field_02CC;
@@ -1388,13 +1389,13 @@ st::fn_006E1460(ST3DSMAPContext *this,double param_2,double param_3)
         ;
         this->field_003C = local_cc;
         *(undefined4 *)&this->field_0060 = (undefined4)local_24;
-        *(undefined4 *)((int)&this->field_0060 + 4) = STPiece<4,4>(local_24);
+        STField<undefined4>(this,0x64) = STPiece<4,4>(local_24);
         *(undefined4 *)&this->field_0068 = (undefined4)local_3c;
-        *(undefined4 *)((int)&this->field_0068 + 4) = STPiece<4,4>(local_3c);
+        STField<undefined4>(this,0x6C) = STPiece<4,4>(local_3c);
         *(undefined4 *)&this->field_0070 = local_8c;
-        *(undefined4 *)((int)&this->field_0070 + 4) = local_88;
-        *(undefined4 *)&this->field_0078 = local_a4;
-        *(undefined4 *)((int)&this->field_0078 + 4) = local_a0;
+        STField<undefined4>(this,0x74) = local_88;
+        *(undefined4 *)&this->field_0x78 = local_a4;
+        *(undefined4 *)&this->field_0x7c = local_a0;
         if (0 < (int)uVar5) {
           if ((int)local_7c < (int)local_94) {
             puVar4 = this->field_02B0 + (this->field_02B8 - uVar5);
@@ -1435,13 +1436,13 @@ st::fn_006E1460(ST3DSMAPContext *this,double param_2,double param_3)
         this->field_003C = ((local_dc ^ (int)local_dc >> 0x1f) - ((int)local_dc >> 0x1f)) + local_b4
         ;
         *(undefined4 *)&this->field_0060 = local_c8;
-        *(undefined4 *)((int)&this->field_0060 + 4) = local_c4;
+        STField<undefined4>(this,0x64) = local_c4;
         *(undefined4 *)&this->field_0068 = local_2c;
-        *(undefined4 *)((int)&this->field_0068 + 4) = local_28;
+        STField<undefined4>(this,0x6C) = local_28;
         *(undefined4 *)&this->field_0070 = (undefined4)local_74;
-        *(undefined4 *)((int)&this->field_0070 + 4) = STPiece<4,4>(local_74);
-        *(undefined4 *)&this->field_0078 = (undefined4)local_84;
-        *(undefined4 *)((int)&this->field_0078 + 4) = STPiece<4,4>(local_84);
+        STField<undefined4>(this,0x74) = STPiece<4,4>(local_74);
+        *(undefined4 *)&this->field_0x78 = (undefined4)local_84;
+        *(undefined4 *)&this->field_0x7c = STPiece<4,4>(local_84);
         if (0 < iVar6) {
           if (local_90 < local_68) {
             puVar4 = st::pointer_boundary_cast<ushort *>(this->field_02B0 + (this->field_02BC - iVar6) * this->field_02B8);
@@ -1470,17 +1471,17 @@ st::fn_006E1460(ST3DSMAPContext *this,double param_2,double param_3)
       this->field_0038 = local_78 + local_54;
       this->field_003C = local_cc + local_64;
       *(undefined4 *)&this->field_0060 = local_c8;
-      *(undefined4 *)((int)&this->field_0060 + 4) = local_c4;
+      STField<undefined4>(this,0x64) = local_c4;
       *(undefined4 *)&this->field_0068 = local_2c;
-      *(undefined4 *)((int)&this->field_0068 + 4) = local_28;
+      STField<undefined4>(this,0x6C) = local_28;
       *(undefined4 *)&this->field_0070 = local_8c;
-      *(undefined4 *)((int)&this->field_0070 + 4) = local_88;
-      *(undefined4 *)&this->field_0078 = local_a4;
-      *(undefined4 *)((int)&this->field_0078 + 4) = local_a0;
+      STField<undefined4>(this,0x74) = local_88;
+      *(undefined4 *)&this->field_0x78 = local_a4;
+      *(undefined4 *)&this->field_0x7c = local_a0;
       if ((ST3DSMAPContext *)this->field_0358 != 0) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         st::fn_006E1460((ST3DSMAPContext *)this->field_0358,this->field_0098,
-                     (double)CONCAT26((short)((uint)*(undefined4 *)((int)&this->field_00A0 + 4) >>
+                     (double)CONCAT26((short)((uint)STField<undefined4>(this,0xA4) >>
                                              0x10),*(undefined6 *)&this->field_00A0));
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         this->field_0374 = *(int *)(this->field_0358 + 0x374);
@@ -2822,7 +2823,7 @@ st::fn_006E8660
     local_8 = this->field_0314;
   }
   else {
-    this->field_02E8 = *(undefined4 *)&pAVar5->field_0x8;
+    this->field_02E8 = *(int *)&pAVar5->field_0x8;
     if (pAVar5 == (AnonShape_006E8840_CF3FA5BA *)this->field_02EC) {
       this->field_02EC = 0;
       this->field_02E8 = 0;
@@ -3596,8 +3597,8 @@ st::fn_00709470
     if (0 < param_2) {
       do {
         iVar3 = *piVar8;
-        if (((iVar3 != 0) && (iVar10 = *(int *)(iVar3 + 4), 0 < iVar10)) &&
-           (iVar3 = *(int *)(iVar3 + 8), 0 < iVar3)) {
+        if (((iVar3 != 0) && (iVar10 = STField<int>(iVar3,0x4), 0 < iVar10)) &&
+           (iVar3 = STField<int>(iVar3,0x8), 0 < iVar3)) {
           if (iVar7 < iVar10) {
             iVar7 = iVar10;
           }
@@ -3621,19 +3622,19 @@ st::fn_00709470
       piVar8 = param_1;
       do {
         iVar3 = *piVar8;
-        if ((iVar3 != 0) && (0 < *(short *)(iVar3 + 0x12))) {
-          sVar2 = *(short *)(iVar3 + 0x14);
+        if ((iVar3 != 0) && (0 < STField<short>(iVar3,0x12))) {
+          sVar2 = STField<short>(iVar3,0x14);
           local_10 = STReplaceLowWord((uint32_t)(piVar8), (uint16_t)(sVar2));
           if (0 < sVar2) {
-            iVar10 = (int)*(short *)(iVar3 + 0xe);
+            iVar10 = (int)STField<short>(iVar3,0xE);
             if (iVar10 < iVar13) {
               iVar13 = iVar10;
             }
-            iVar10 = iVar10 + *(short *)(iVar3 + 0x12);
+            iVar10 = iVar10 + STField<short>(iVar3,0x12);
             if (iVar7 < iVar10) {
               iVar7 = iVar10;
             }
-            iVar3 = (int)*(short *)(iVar3 + 0x10);
+            iVar3 = (int)STField<short>(iVar3,0x10);
             if (iVar3 < param_3) {
               param_3 = iVar3;
             }

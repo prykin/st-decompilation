@@ -57,7 +57,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
           uVar4 = piVar1[3];
         }
         if (uVar4 <= pMVar6->field_0061 - piVar1[4]) {
-          pBVar5 = FUN_0070b3a0(pAVar2,(int)(short)pAVar2->field_0029);
+          pBVar5 = FUN_0070b3a0(pAVar2,(short)pAVar2->field_0029);
           FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar1,piVar1[1],(int)*(short *)(pAVar2 + 1),
                        (int)*(short *)&pAVar2[1].field_0x2);
           /* ST_CALLSITE[005B49F2]: CALL 0x00403738; direct=00403738 PutDDX */

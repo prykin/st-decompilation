@@ -174,14 +174,14 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
       if (0 < (int)uVar5) {
         do {
           iVar3 = *(int *)this;
-          if (uVar4 < *(uint *)(iVar3 + 0xc)) {
-            iVar3 = *(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c);
+          if (uVar4 < STField<uint>(iVar3,0xC)) {
+            iVar3 = STField<int>(iVar3,0x8) * uVar4 + STField<int>(iVar3,0x1C);
           }
           else {
             iVar3 = 0;
           }
           uVar4 = uVar4 + 1;
-          *(undefined4 *)(iVar3 + 4) = 0xffffffff;
+          STField<undefined4>(iVar3,0x4) = 0xffffffff;
         } while ((int)uVar4 < (int)uVar5);
       }
       return 1;

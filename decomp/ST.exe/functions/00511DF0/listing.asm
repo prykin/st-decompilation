@@ -69,7 +69,8 @@ LAB_00511e90:
 00511EBC  8B 01                     MOV EAX,dword ptr [ECX]
 00511EBE  8D 56 18                  LEA EDX,[ESI + 0x18]
 00511EC1  52                        PUSH EDX
-00511EC2  FF 10                     CALL dword ptr [EAX]
+HelpPanelTy::SwitchOptPanel::override::prt_511ec2_74f246b9:
+00511EC2  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_00511ec4:
 00511EC4  6A 00                     PUSH 0x0
 00511EC6  8B CE                     MOV ECX,ESI

@@ -34,7 +34,7 @@ void __thiscall st::fn_005F0D90(STContainerC *this)
       local_24.arg1.words.low = (word)(byte)this->field_030E;
     }
     local_24.id = 0x5dd7;
-    /* ST_CALLSITE[005F0DF8]: CALL dword ptr [EAX] */
+    /* ST_CALLSITE[005F0DF8]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;
@@ -65,6 +65,29 @@ int __thiscall st::fn_005FC3E0(STContainerC *this)
   iVar1 = st::fn_006E60A0(this,local_24);
   this->field_023A = 6;
   return iVar1;
+}
+
+// 005FC450 STContainerC::sub_005FC450
+#line 4 "decomp/ST.exe/functions/005FC450/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079C714
+   Entries: 00405AF6
+   Slots: 0x124
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:73 calls=4
+   caller_families=2 receiver_extent=578/1147; unique_owner_for_target */
+
+bool __thiscall st::fn_005FC450(STContainerC *this,int param_1)
+
+{
+  int iVar1;
+
+  iVar1 = st::machine_word_boundary_cast<int>(this->field_023E - param_1);
+  this->field_023E = iVar1;
+  if (iVar1 < 1) {
+    this->field_023E = 0;
+  }
+  return this->field_023E == 0;
 }
 
 // 005FCD80 STContainerC::FUN_005fcd80

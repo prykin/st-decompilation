@@ -170,7 +170,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
         }
         break;
       case CASE_3:
-        if (((*(byte *)&local_8->field_0058 & 1) != 0) &&
+        if ((((byte)local_8->field_0058 & 1) != 0) &&
            (g_playSystem_00802A38->field_00E4 % 3 == 0)) {
           iVar7 = local_8->field_0071 + 1;
           local_8->field_0071 = iVar7;

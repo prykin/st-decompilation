@@ -720,7 +720,7 @@ void __thiscall st::fn_005B3C30(MainMenuTy *this)
     iVar2 = 0;
     if (this_00->field_009A != 0) {
       iVar5 = 0x96;
-      piVar4 = reinterpret_cast<int *>(&this_00->field_00BB[0].field_0028.field_0040);
+      piVar4 = &this_00->field_00BB[0].field_0028.field_0040;
       do {
         /* ST_CALLSITE[005B3C82]: CALL dword ptr [0x0085bedc] */
         DVar3 = st::external_000000DA();
@@ -1194,7 +1194,7 @@ void __thiscall st::fn_005B48E0(MainMenuTy *this)
           uVar4 = piVar1[3];
         }
         if (uVar4 <= pMVar6->field_0061 - piVar1[4]) {
-          pBVar5 = st::fn_0070B3A0(pAVar2,(int)(short)pAVar2->field_0029);
+          pBVar5 = st::fn_0070B3A0(pAVar2,(short)pAVar2->field_0029);
           st::fn_006B5F80((int *)g_ddxContext_008075A8,*piVar1,piVar1[1],(int)*(short *)(pAVar2 + 1),
                        (int)*(short *)&pAVar2[1].field_0x2);
           /* ST_CALLSITE[005B49F2]: CALL 0x00403738; direct=00403738 PutDDX */

@@ -20,7 +20,7 @@ void __thiscall STParticleC::sub_0062AEF0(STParticleC *this,undefined4 *param_1)
   pSVar3->field_0x2 = STField<undefined1>(param_1,2);
   this->field_00CE = uVar1;
   this->field_00CA = nullptr;
-  this->field_00C6 = 0xffffffff;
+  this->field_00C6 = -1;
   return;
 }
 

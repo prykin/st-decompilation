@@ -33,7 +33,8 @@ LAB_005fcf0f:
 005FCF15  8D 45 DC                  LEA EAX,[EBP + -0x24]
 005FCF18  50                        PUSH EAX
 005FCF19  8B 11                     MOV EDX,dword ptr [ECX]
-005FCF1B  FF 12                     CALL dword ptr [EDX]
+FUN_005fceb0::override::prt_5fcf1b_89729ca9:
+005FCF1B  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_005fcf1d:
 005FCF1D  8B E5                     MOV ESP,EBP
 005FCF1F  5D                        POP EBP

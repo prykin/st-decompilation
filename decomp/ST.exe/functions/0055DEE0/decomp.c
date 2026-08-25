@@ -87,7 +87,7 @@ LAB_0055e048:
           if ((((-1 < (int)local_10) && ((int)local_10 < DAT_008033a4)) &&
               (pbVar14 = param_1 + *local_28, -1 < (int)pbVar14)) &&
              (((int)pbVar14 < DAT_008033a8 &&
-              (local_20 = (int)(short)PTR_008033b4
+              (local_20 = (short)PTR_008033b4
                                       [(int)(DAT_008033a4 * (int)pbVar14 + (int)local_10)],
               0 < local_20)))) {
             if (local_20 <= iVar9) break;
@@ -123,7 +123,7 @@ LAB_0055e048:
             if ((((-1 < (int)local_10) && ((int)local_10 < DAT_008033a4)) &&
                 (pbVar14 = param_1 + *local_28, -1 < (int)pbVar14)) &&
                (((int)pbVar14 < DAT_008033a8 &&
-                (local_20 = (int)(short)PTR_008033b4
+                (local_20 = (short)PTR_008033b4
                                         [(int)(DAT_008033a4 * (int)pbVar14 + (int)local_10)],
                 0 < local_20)))) {
               if (local_20 <= iVar9) break;

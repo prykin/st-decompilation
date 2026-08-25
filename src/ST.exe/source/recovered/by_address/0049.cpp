@@ -296,7 +296,7 @@ void __fastcall st::fn_00490F60(STBoatC *param_1)
         st::fn_006AE1C0(array,&param_1->field_0032);
         /* ST_CALLSITE[00491001]: CALL 0x0040178f; direct=0040178F STAllPlayersC::AddObjsToGroup */
         st::fn_0040178F
-                  (g_allPlayers_007FA174,*(char *)&param_1->field_0024,0xfffe,array,
+                  (g_allPlayers_007FA174,(char)param_1->field_0024,0xfffe,array,
                    nullptr);
         st::fn_006AE110(array);
         /* ST_CALLSITE[00491014]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -398,7 +398,7 @@ undefined4 __fastcall st::fn_00491980(void *param_1)
    Evidence: 0049DFA0 -> 00492370 @ 0049E11D | 0049DFA0 -> 00492370 @ 0049E318 | 004A0990 ->
    00492370 @ 004A0B1B */
 
-undefined4 __fastcall st::fn_00492370(STGameObjC *objPtr)
+AnonShape_005EFAE0_B406B78B * __fastcall st::fn_00492370(STGameObjC *objPtr)
 
 {
   return objPtr->field_07CA;
@@ -898,7 +898,7 @@ void __fastcall st::fn_00493BC0(STBoatC *param_1)
        ((-1 < sVar2 && (sVar2 < g_worldGrid.sizeZ)))) {
       this = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
       if ((this != nullptr) && (*(int *)&this->field_0x18 == param_1->field_063F)) {
-        /* ST_CALLSITE[00493C59]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+        /* ST_CALLSITE[00493C59]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
         iVar4 = this->vfunc_F8();
         if (iVar4 != 0) {
           st::fn_00404971(this,param_1);
@@ -937,8 +937,8 @@ void st::fn_00493CA0(void)
 undefined4 __fastcall st::fn_00493CD0(STGameObjC *objPtr)
 
 {
-  if (((((*(byte *)&objPtr->field_01D1 & 4) == 0) && (objPtr->field_0736 == 0)) &&
-      (objPtr->field_073A == 0)) && (objPtr->field_05C0 != 3)) {
+  if (((((objPtr->field_01D1 & 4) == 0) && (objPtr->field_0736 == 0)) && (objPtr->field_073A == 0))
+     && (objPtr->field_05C0 != 3)) {
     return 0;
   }
   return 1;
@@ -2114,7 +2114,7 @@ switchD_0049655f_caseD_0:
   }
   sVar1 = (short)(param_1 >> 0x1f);
   if (param_1 < 0) {
-    uVar13 = (int)(short)(((short)(param_1 / 0xc9) + sVar1) -
+    uVar13 = (short)(((short)(param_1 / 0xc9) + sVar1) -
                          (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) - 1;
   }
   else {
@@ -2123,7 +2123,7 @@ switchD_0049655f_caseD_0:
   }
   sVar1 = (short)(param_2 >> 0x1f);
   if (param_2 < 0) {
-    uVar10 = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
+    uVar10 = (short)(((short)(param_2 / 0xc9) + sVar1) -
                          (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) - 1;
   }
   else {
@@ -2154,13 +2154,13 @@ switchD_0049655f_caseD_0:
             return 0xffffffff;
           }
         }
-        sVar1 = *(short *)(iVar3 + 8);
+        sVar1 = STField<short>(iVar3,0x8);
         iVar11 = (int)sVar1;
-        iVar8 = iVar11 - (uint)((byte *)iVar3)[0x48];
+        iVar8 = iVar11 - (uint)STField<byte>(iVar3,0x48);
         if (iVar12 < iVar8) {
           return 0xffffffff;
         }
-        uVar2 = *(ushort *)(iVar3 + 0x4e);
+        uVar2 = STField<ushort>(iVar3,0x4E);
         if ((uVar2 & 0x4000) != 0) {
           return 0x7f;
         }
@@ -2171,7 +2171,7 @@ switchD_0049655f_caseD_0:
         else {
           iVar8 = st::machine_word_boundary_cast<int>(g_sT3DSMAPContext_00807598->field_0384 * iVar8);
         }
-        if ((int)(*(byte *)(*(int *)(iVar3 + 0x40) +
+        if ((int)(*(byte *)(STField<int>(iVar3,0x40) +
                             iVar4 * (((iVar4 * param_2) / 0xc9) % (iVar4 * 2)) * 2 +
                            ((iVar4 * param_1) / 0xc9) % (iVar4 * 2)) + 4 + iVar8) <
             ((param_3 + 400) * 0x100) / 0x640) {
@@ -3033,7 +3033,7 @@ void st::fn_004977C0(int param_1,int *param_2,int param_3)
     do {
       iVar1 = *(int *)(iVar3 + 0x10 + *piVar5 * 0x18);
       piVar4 = param_2;
-      auto param_1_after_write = local_8; /* compiler stack-slot lifetime split */
+      int param_1_after_write = local_8; /* compiler stack-slot lifetime split */
       if (0 < local_8) {
         do {
           iVar2 = *piVar4;
@@ -3069,8 +3069,8 @@ st::fn_00497850(int param_1,int param_2,int param_3,int param_4,int param_5,int 
        pvVar3 != nullptr)) {
       iVar1 = STField<int>(pvVar3,0x14);
       uVar2 = st::fn_00404C0A(param_1,param_2,param_3,param_4,param_5,param_6,
-                                 *(int *)(iVar1 + 0x1e9) + 100,*(int *)(iVar1 + 0x1ed) + 100,
-                                 *(undefined4 *)(iVar1 + 0x1f1),param_8,param_9,param_10);
+                                 STField<int>(iVar1,0x1E9) + 100,STField<int>(iVar1,0x1ED) + 100,
+                                 STField<undefined4>(iVar1,0x1F1),param_8,param_9,param_10);
       return uVar2;
     }
   }
@@ -3237,8 +3237,8 @@ int st::fn_00497920(RecoveredRecord_STBoatC_0040AE40 *param_1,int param_2,int pa
     }
     iVar1 = iVar2 + *(int *)&this[5].field_0x1f * 8;
     if (((*(short *)(iVar2 + *(int *)&this[5].field_0x1f * 8) == param_1->field_0047) &&
-        (*(short *)(iVar1 + 2) == param_1->field_0049)) &&
-       (*(short *)(iVar1 + 4) == param_1->field_004B)) {
+        (STField<short>(iVar1,0x2) == param_1->field_0049)) &&
+       (STField<short>(iVar1,0x4) == param_1->field_004B)) {
       return 0;
     }
   }

@@ -50,7 +50,7 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
     case 5:
       local_8 = 1;
       /* ST_CALLSITE[004C9570]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-      uVar2 = LookupRecordByte(*(char *)&local_c->field_023D);
+      uVar2 = LookupRecordByte((char)local_c->field_023D);
       this_00->field_0241 =
            *(int *)(&DAT_007e4178 + ((uint)(byte)uVar2 + this_00->field_0235 * 3) * 4);
       /* ST_CALLSITE[004C9597]: CALL 0x00405768; direct=00405768 TLOBaseTy::sub_004CC900 */

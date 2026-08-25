@@ -33,7 +33,7 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
           iVar3 = STField<int>(local_8,0xe07);
           uVar1 = param_1->field_0000;
           if (iVar3 < 0) {
-            if ((*(uint *)(*(int *)(uVar1 + 4) + 8) & 0x100000) == 0) {
+            if ((*(uint *)(STField<int>(uVar1,0x4) + 8) & 0x100000) == 0) {
               iVar3 = FUN_006c1390(puVar4,0,0x48,DAT_0080730a,0,0,1);
               STField<int>(pvVar2,0xe07) = iVar3;
             }
@@ -42,7 +42,7 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
               STField<int>(pvVar2,0xe07) = iVar3;
             }
           }
-          else if ((*(uint *)(*(int *)(uVar1 + 4) + 8) & 0x100000) == 0) {
+          else if ((*(uint *)(STField<int>(uVar1,0x4) + 8) & 0x100000) == 0) {
             FUN_006c1390(puVar4,0,0x48,DAT_0080730a,0,iVar3,iVar3);
           }
           else {

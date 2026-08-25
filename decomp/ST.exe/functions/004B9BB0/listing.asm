@@ -57,7 +57,8 @@ LAB_004b9c39:
 004B9C7F  8B 01                     MOV EAX,dword ptr [ECX]
 004B9C81  8D 55 E0                  LEA EDX,[EBP + -0x20]
 004B9C84  52                        PUSH EDX
-004B9C85  FF 10                     CALL dword ptr [EAX]
+FUN_004b9bb0::override::prt_4b9c85_89729ca9:
+004B9C85  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 004B9C87  5F                        POP EDI
 004B9C88  33 C0                     XOR EAX,EAX
 004B9C8A  5E                        POP ESI

@@ -73,7 +73,7 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this)
           pcVar11 = pcVar11 + 4;
         }
         for (uVar8 = local_8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *pcVar11 = *(char *)&pAVar9->field_0000;
+          *pcVar11 = (char)pAVar9->field_0000;
           pAVar9 = (AnonPointee_PlaySystemTy_0039 *)((int)&pAVar9->field_0000 + 1);
           pcVar11 = pcVar11 + 1;
         }

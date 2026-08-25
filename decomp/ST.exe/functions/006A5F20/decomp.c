@@ -66,7 +66,7 @@ FUN_006a5f20(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     local_14 = uVar7;
     bVar2 = bVar1;
   }
-  auto param_6_after_write = iVar4; /* compiler stack-slot lifetime split */
+  int param_6_after_write = iVar4; /* compiler stack-slot lifetime split */
   uVar7 = uVar6;
   bVar11 = bVar10;
   bVar3 = !bVar1;

@@ -1314,8 +1314,7 @@ st::fn_0056CBD0
   uint uVar3;
   HCURSOR pHVar4;
   int iVar2;
-  undefined1 local_cc [16];
-  undefined4 local_bc;
+  STMessage local_cc;
   tagPAINTSTRUCT local_ac;
   undefined4 local_6c [4];
   undefined4 local_5c;
@@ -1440,10 +1439,9 @@ st::fn_0056CBD0
           g_currentExceptionFrame = local_4c.previous;
           return local_8;
         }
-        local_bc = 0xa100;
-        /* ST_CALLSITE[0056CEC0]: CALL dword ptr [EAX] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)g_cursorClass_00802A30->field_0000)(local_cc);
+        local_cc.id = MESS_CURSORCLASSTY_A100;
+        /* ST_CALLSITE[0056CEC0]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+        g_cursorClass_00802A30->GetMessage(&local_cc);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
@@ -2317,7 +2315,7 @@ int __thiscall st::fn_0056FA60(STAppC *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006E5150(local_18,message);
+  st::fn_006E5150((AppClassTy *)local_18,message);
   pCVar10 = g_cursorClass_00802A30;
   SVar5 = message->id;
   if (SVar5 < MESS_SHARED_6120) {

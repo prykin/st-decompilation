@@ -42,7 +42,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
   }
   local_c = -1;
   local_8 = (ushort *)0xffffffff;
-  auto param_7_after_write = (uint *)0xffffffff; /* compiler stack-slot lifetime split */
+  uint param_7_after_write = 0xffffffff; /* compiler stack-slot lifetime split */
   if (local_20 == 0xf800) {
     local_c = 0;
   }
@@ -56,7 +56,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
     local_8 = (ushort *)0x6;
   }
   if (local_14 == 0x1f) {
-    param_7_after_write = (uint *)&DAT_0000000b;
+    param_7_after_write = 0x0b;
   }
   if (local_c == -1) {
     local_c = 0;
@@ -71,10 +71,10 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
     }
   }
   puVar12 = local_8;
-  if (param_7_after_write == (uint *)0xffffffff) {
-    param_7_after_write = nullptr;
+  if (param_7_after_write == 0xffffffff) {
+    param_7_after_write = 0;
     for (uVar7 = local_14; (uVar7 & 0x8000) == 0; uVar7 = uVar7 << 1) {
-      param_7_after_write = (uint *)((int)param_7_after_write + 1);
+      param_7_after_write = ((int)param_7_after_write + 1);
     }
   }
   bVar9 = (byte)param_7_after_write;

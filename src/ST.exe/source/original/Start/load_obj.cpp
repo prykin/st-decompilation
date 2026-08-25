@@ -950,7 +950,7 @@ switchD_005ab66b_caseD_6:
       }
       iVar23 = this_01->array_00BC[0xc].field_01DB;
       local_115 = local_13c;
-      if (*(int *)(iVar23 + 0x2e6) != 0) {
+      if (STField<int>(iVar23,0x2E6) != 0) {
         puVar8 = local_26c;
         for (iVar19 = 6; iVar19 != 0; iVar19 = iVar19 + -1) {
           *puVar8 = 0xffffffff;
@@ -1072,7 +1072,7 @@ void __thiscall st::fn_005ACB30(ChooseMapTy *this)
       if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
         st::fn_006B3AF0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
       }
-      if (-1 < (int)g_startSystem_0081176C->field_0540) {
+      if (-1 < g_startSystem_0081176C->field_0540) {
         st::fn_006B3AF0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }
@@ -1374,8 +1374,8 @@ void __thiscall st::fn_005AD390(ChooseMapTy *this)
               }
               local_6c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
               iVar6 = this_00->array_00BC[0xc].field_01DB;
-              if (*(int *)(iVar6 + 0x2e6) == 0) {
-                /* ST_CALLSITE[005ADBE3]: CALL dword ptr [EAX] */
+              if (STField<int>(iVar6,0x2E6) == 0) {
+                /* ST_CALLSITE[005ADBE3]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage */
                 this_00->GetMessage(&local_6c);
               }
               else {
@@ -2028,7 +2028,7 @@ LAB_005ae53a:
   pCVar18->field_0033 = (short)((uint)(iVar15 != 0) >> 0x10);
   st::fn_006E6080(pCVar18,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar11);
   iVar5 = pCVar18->array_00BC[0xc].field_01DB;
-  if (*(int *)(iVar5 + 0x2e6) != 0) {
+  if (STField<int>(iVar5,0x2E6) != 0) {
     psVar22 = local_34;
     for (iVar17 = 6; iVar17 != 0; iVar17 = iVar17 + -1) {
       psVar22[0] = 0;
@@ -2046,7 +2046,7 @@ LAB_005ae602:
      (-1 < (int)g_startSystem_0081176C->field_02EC)) {
     st::fn_006B35D0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
   }
-  if (-1 < (int)g_startSystem_0081176C->field_0540) {
+  if (-1 < g_startSystem_0081176C->field_0540) {
     st::fn_006B35D0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
   }
   g_currentExceptionFrame = local_78.previous;
@@ -2379,7 +2379,7 @@ LAB_005aef44:
     st::fn_006B3430((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
   }
   iVar2 = this_01->array_00BC[0xc].field_01DB;
-  if (*(int *)(iVar2 + 0x2e6) != 0) {
+  if (STField<int>(iVar2,0x2E6) != 0) {
     memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
     local_1c = 1;
     local_1e = 1;
@@ -2868,7 +2868,7 @@ switchD_005afd30_caseD_c:
   this_00->field_0033 = 0;
   st::fn_006E6080(this_00,2,uVar27,(undefined4 *)&this_00->field_0x1d);
   iVar15 = this_00->array_00BC[0xc].field_01DB;
-  if (*(int *)(iVar15 + 0x2e6) != 0) {
+  if (STField<int>(iVar15,0x2E6) != 0) {
     memset(&local_60, 0, 0x1a); /* compiler bulk-zero initialization */
     STPiece<2,2>(local_60) = 0xffff;
     STPiece<0,2>(local_60) = 0xffff;
@@ -3859,7 +3859,7 @@ LAB_005b1da4:
         if ((message->arg0).u32 < uVar27) {
           if (this_01->array_00BC[0xc].field_01DF == '\x03') {
             this_01->field_002D = 0x6956;
-            /* ST_CALLSITE[005B1C4E]: CALL dword ptr [EAX] */
+            /* ST_CALLSITE[005B1C4E]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
           }
           else {
@@ -3953,7 +3953,7 @@ LAB_005b1b6c:
           case 1:
           case 2:
             this_01->field_002D = 0x694a;
-            /* ST_CALLSITE[005B1C9B]: CALL dword ptr [EDX] */
+            /* ST_CALLSITE[005B1C9B]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
             break;
           case 4:
@@ -3961,14 +3961,14 @@ LAB_005b1b6c:
           case 0xc:
           case 0x13:
             this_01->field_002D = 0x694e;
-            /* ST_CALLSITE[005B1CB1]: CALL dword ptr [EDX] */
+            /* ST_CALLSITE[005B1CB1]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
             break;
           case 9:
           case 10:
           case 0xb:
             this_01->field_002D = 0x6949;
-            /* ST_CALLSITE[005B1C85]: CALL dword ptr [EAX] */
+            /* ST_CALLSITE[005B1C85]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
           }
         }
@@ -4008,7 +4008,7 @@ LAB_005b1b6c:
       if (DAT_008067a0 != '\0') {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar24 = *(int *)(this_01->array_00BC[0xc].field_01DB + 0x686);
-        if (*(int *)(iVar24 + 8) < 1) {
+        if (STField<int>(iVar24,0x8) < 1) {
           pcVar15 = nullptr;
         }
         else {
@@ -4019,7 +4019,7 @@ LAB_005b1b6c:
         if (CONCAT31(extraout_var,bVar11) != 0) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar24 = *(int *)(this_01->array_00BC[0xc].field_01DB + 0x686);
-          if (*(int *)(iVar24 + 8) < 1) {
+          if (STField<int>(iVar24,0x8) < 1) {
             /* ST_CALLSITE[005B1F59]: CALL dword ptr [0x0085c064] */
             st::external_00000107((CFsgsConnection *)&DAT_00802a90,nullptr);
           }
@@ -4089,10 +4089,10 @@ LAB_005b2011:
               (*(DArrayTy **)(this_01->array_00BC[0xc].field_01DB + 0x686),0,&CHAR_00h_008016a0);
     iVar24 = this_01->array_00BC[0xc].field_01DB;
     this_01->field_002D = 0x33;
-    uVar14 = *(undefined4 *)(iVar24 + 0x686);
+    uVar14 = STField<undefined4>(iVar24,0x686);
     this_01->field_0031 = (short)uVar14;
     this_01->field_0033 = (short)((uint)uVar14 >> 0x10);
-    st::fn_006E6080(this_01,2,*(undefined4 *)(iVar24 + 0x54c),(undefined4 *)&this_01->field_0x1d);
+    st::fn_006E6080(this_01,2,STField<undefined4>(iVar24,0x54C),(undefined4 *)&this_01->field_0x1d);
     goto cf_common_exit_005B2053;
   }
   if (SVar3 == MESS_CHOOSEMAPTY_6956) {
@@ -4542,7 +4542,7 @@ LAB_005b1644:
           /* ST_CALLSITE[005B17C4]: CALL dword ptr [EDX + 0x8] */
           this_01->CloseButtons();
           iVar24 = this_01->array_00BC[0xc].field_01DB;
-          if (*(int *)(iVar24 + 0x2e6) != 0) {
+          if (STField<int>(iVar24,0x2E6) != 0) {
             local_38 = 0;
             local_3c = 0x10001;
             local_34 = 0;
@@ -4576,7 +4576,7 @@ LAB_005b1644:
     /* ST_CALLSITE[005B1864]: CALL dword ptr [EDX + 0x8] */
     this_01->CloseButtons();
     iVar24 = this_01->array_00BC[0xc].field_01DB;
-    if (*(int *)(iVar24 + 0x2e6) != 0) {
+    if (STField<int>(iVar24,0x2E6) != 0) {
       local_18 = 0;
       local_14 = 0;
       local_1c = 0x10101;
@@ -4737,7 +4737,7 @@ switchD_005b1362_caseD_6:
     /* ST_CALLSITE[005B13B2]: CALL dword ptr [EAX + 0x8] */
     this_01->CloseButtons();
     iVar24 = this_01->array_00BC[0xc].field_01DB;
-    if (*(int *)(iVar24 + 0x2e6) != 0) {
+    if (STField<int>(iVar24,0x2E6) != 0) {
       local_28 = 0;
       local_24 = 0;
       local_2c = 0x10101;

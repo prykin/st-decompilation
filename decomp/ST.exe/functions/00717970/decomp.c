@@ -149,7 +149,7 @@ LAB_00717b22:
     do {
       local_14 = param_1->field_0476 + param_1->field_048E;
       local_20 = param_1->field_047E;
-      if (local_20 < (int)param_1->field_0486) {
+      if (local_20 < param_1->field_0486) {
         pcVar11 = (char *)(local_20 + (int)pvVar12);
         do {
           pbVar1 = (byte *)(pcVar11 + (iVar6 - (int)pvVar12));
@@ -191,7 +191,7 @@ LAB_00717b22:
           local_14 = local_14 + param_1->field_04E2;
           local_20 = local_20 + 1;
           pcVar11 = pcVar11 + 1;
-        } while (local_20 < (int)param_1->field_0486);
+        } while (local_20 < param_1->field_0486);
       }
       iVar3 = param_1->field_04B2;
       iVar5 = iVar5 + param_1->field_04BE;

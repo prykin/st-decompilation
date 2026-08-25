@@ -11,7 +11,8 @@ void __thiscall AiTactClassTy::sub_00690AB0(AiTactClassTy *this)
 {
   int iVar1;
 
-  if ((this->field_0089 == 0) || (this->field_008D + this->field_0089 <= this->field_012C)) {
+  if ((this->field_0089 == 0) || ((uint)(this->field_008D + this->field_0089) <= this->field_012C))
+  {
     this->field_008D = this->field_012C;
     iVar1 = thunk_FUN_006777d0(CASE_DE,0,0,0,-1,-1);
     this->field_0134 = iVar1;

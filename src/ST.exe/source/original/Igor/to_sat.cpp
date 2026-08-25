@@ -152,18 +152,18 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
         *(undefined4 *)&local_c->field_0x3a = this_00->field_0245;
         *(undefined4 *)&local_c->field_0x3e = this_00->field_0249;
         *(undefined4 *)&local_c->field_0x42 = this_00->field_024D;
-        *(undefined4 *)&local_c->field_0x46 = this_00->field_0251;
+        *(int *)&local_c->field_0x46 = this_00->field_0251;
         *(undefined4 *)&local_c->field_0x4a = this_00->field_0255;
         local_c->field_004E = this_00->field_0259;
-        *(undefined4 *)&local_c->field_0x52 = this_00->field_025D;
-        *(undefined4 *)&local_c->field_0x56 = this_00->field_0261;
-        *(undefined4 *)&local_c->field_0x5a = this_00->field_0265;
-        *(undefined4 *)&local_c->field_0x5e = this_00->field_0269;
+        *(int *)&local_c->field_0x52 = this_00->field_025D;
+        *(int *)&local_c->field_0x56 = this_00->field_0261;
+        *(int *)&local_c->field_0x5a = this_00->field_0265;
+        *(int *)&local_c->field_0x5e = this_00->field_0269;
         *(undefined4 *)&local_c->field_0x62 = this_00->field_026D;
-        *(undefined4 *)&local_c->field_0x66 = this_00->field_0271;
-        *(undefined2 *)&local_c->field_0x6a = this_00->field_0041;
-        *(undefined2 *)&local_c->field_0x6c = this_00->field_0043;
-        *(undefined2 *)&local_c->field_0x6e = this_00->field_0045;
+        *(int *)&local_c->field_0x66 = this_00->field_0271;
+        *(short *)&local_c->field_0x6a = this_00->field_0041;
+        *(short *)&local_c->field_0x6c = this_00->field_0043;
+        *(short *)&local_c->field_0x6e = this_00->field_0045;
         *(undefined4 *)&local_c->field_0x70 = 0;
         local_c->field_0074 = local_8;
         pbVar12 = local_18;
@@ -208,7 +208,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
       if (SVar1 == MESS_ID_CREATE) {
         dVar2 = (message->arg0).u32;
         this_00->field_0231 = 7;
-        uVar8 = *(uint *)(dVar2 + 0xc);
+        uVar8 = STField<uint>(dVar2,0xC);
         if (uVar8 < 2) {
           this_00->field_0239 = 0;
           puVar11 = (byte *)((message->arg0).ptr);
@@ -226,7 +226,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
           /* ST_CALLSITE[0058CA08]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
           st::fn_00405240((STT3DSprC *)puVar11,0xe,g_playSystem_00802A38->field_00E4);
           /* ST_CALLSITE[0058CA27]: CALL 0x00403107; direct=00403107 sub_00416240 */
-          st::fn_00403107(this_00,(ushort)this_00->field_0289,*(short *)&this_00->field_028D,
+          st::fn_00403107(this_00,(ushort)this_00->field_0289,(short)this_00->field_028D,
                        this_00->field_0291);
           sVar9 = this_00->field_0041;
           this_00->field_0245 = (int)PTR_00806724->field_002C;
@@ -267,7 +267,7 @@ int __thiscall st::fn_0058C760(STSatC *this,STMessage *message)
           this_00->field_026D = local_20->field_0062;
           this_00->field_0271 = local_20->field_0066;
           this_00->field_0041 = local_20->field_006A;
-          this_00->field_0043 = *(undefined2 *)&local_20->field_0x6c;
+          this_00->field_0043 = *(short *)&local_20->field_0x6c;
           this_00->field_0045 = local_20->field_006E;
           local_3c = st::fn_006AAC70(0x44);
           if (local_3c != nullptr) {

@@ -119,7 +119,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
       if (iVar2 == 0x3c) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (((param_3 == 1) &&
-            (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),*(undefined2 *)(iVar6 + 8)),
+            (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),STField<undefined2>(iVar6,0x8)),
             /* ST_CALLSITE[0043B82D]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
             iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)(((undefined1 *)iVar6)[4])),
                                 *(DArrayTy **)(iVar6 + 10),uVar9,&local_10,&local_c,&local_8,
@@ -154,7 +154,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
       }
       if (param_3 == 1) {
         /* ST_CALLSITE[0043B70C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-        pSVar7 = GetObjPtr(this,((char *)iVar6)[4],*(ushort *)(iVar6 + 8),CASE_3);
+        pSVar7 = GetObjPtr(this,((char *)iVar6)[4],STField<ushort>(iVar6,0x8),CASE_3);
         /* ST_CALLSITE[0043B721]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0
                   ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);

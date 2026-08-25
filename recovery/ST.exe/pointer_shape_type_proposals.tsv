@@ -7,7 +7,6 @@ apply	shape_id	type_path	length	target_count	field_count	confidence	reason
 1	RecoveredClass_0074CFC0	/SubmarineTitans/Recovered/Classes/RecoveredClass_0074CFC0	176	1	4	layout	exact unadjusted ECX receiver stores a known physical vtable at offset zero and one direct allocator chain proves the complete constructor extent=176
 0	AnonNested_004C5980_05FB_38F047AC	/SubmarineTitans/Recovered/PointerShapes/AnonNested_004C5980_05FB_38F047AC	24	1	6	review	fixed-offset accesses through pointer field +0x5FB
 0	AnonNested_004C9430_0607_7C13AC95	/SubmarineTitans/Recovered/PointerShapes/AnonNested_004C9430_0607_7C13AC95	20	1	2	review	fixed-offset accesses through pointer field +0x607
-0	AnonNested_004D6360_0360_98F97B35	/SubmarineTitans/Recovered/PointerShapes/AnonNested_004D6360_0360_98F97B35	24	1	6	review	fixed-offset accesses through pointer field +0x360
 0	AnonNested_004E9960_061B_217F6F13	/SubmarineTitans/Recovered/PointerShapes/AnonNested_004E9960_061B_217F6F13	1468	1	3	review	fixed-offset accesses through pointer field +0x61B
 0	AnonNested_0054EAB0_0065_6333AF5F	/SubmarineTitans/Recovered/PointerShapes/AnonNested_0054EAB0_0065_6333AF5F	12	1	3	review	fixed-offset accesses through pointer field +0x65
 0	AnonNested_0054EB20_0065_4A00EB9C	/SubmarineTitans/Recovered/PointerShapes/AnonNested_0054EB20_0065_4A00EB9C	8	1	2	review	fixed-offset accesses through pointer field +0x65
@@ -55,7 +54,6 @@ apply	shape_id	type_path	length	target_count	field_count	confidence	reason
 0	AnonShape_0041AE10_45781711	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AE10_45781711	6	1	1	review	single/weak fixed-offset profile retained for review; newly corrected element-scaled pointer geometry is review-only
 0	AnonShape_0041AE40_65BC768C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AE40_65BC768C	9	1	1	review	single/weak fixed-offset profile retained for review; newly corrected element-scaled pointer geometry is review-only
 0	AnonShape_0041DC40_6A7D968A	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041DC40_6A7D968A	6	1	1	review	single/weak fixed-offset profile retained for review; newly corrected element-scaled pointer geometry is review-only
-0	AnonShape_0041F330_8812DC99	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041F330_8812DC99	469	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_0041F390_BF8EDA78	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041F390_BF8EDA78	549	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_00423120_79B5B62D	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00423120_79B5B62D	469	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_00423300_67884733	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00423300_67884733	32	1	1	review	single/weak fixed-offset profile retained for review
@@ -111,7 +109,6 @@ apply	shape_id	type_path	length	target_count	field_count	confidence	reason
 0	AnonShape_004B0D10_23CAA7D2	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004B0D10_23CAA7D2	28	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004B31C0_F3AB8C37	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004B31C0_F3AB8C37	869	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004B9FA0_720E2108	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004B9FA0_720E2108	52	1	1	review	single/weak fixed-offset profile retained for review
-0	AnonShape_004BE1D0_AF7E63F0	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004BE1D0_AF7E63F0	1456	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004BE6C0_9ED8AEDF	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004BE6C0_9ED8AEDF	42	1	13	review	multiple consistent fixed offsets in one persistent target; newly corrected element-scaled pointer geometry is review-only
 0	AnonShape_004C2840_1C2F2EEB	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004C2840_1C2F2EEB	9	1	1	review	single/weak fixed-offset profile retained for review; newly corrected element-scaled pointer geometry is review-only
 0	AnonShape_004C2C10_99EB57EC	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004C2C10_99EB57EC	28	1	1	review	single/weak fixed-offset profile retained for review
@@ -132,8 +129,6 @@ apply	shape_id	type_path	length	target_count	field_count	confidence	reason
 0	AnonShape_004D01F0_A7BA5910	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004D01F0_A7BA5910	1539	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004D3290_0F1DF113	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004D3290_0F1DF113	40	1	2	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004D32C0_D3D0A0C9	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004D32C0_D3D0A0C9	52	1	1	review	single/weak fixed-offset profile retained for review
-0	AnonShape_004D6360_6131855A	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004D6360_6131855A	868	1	2	review	multiple consistent fixed offsets in one persistent target
-0	AnonShape_004D6930_F065C28A	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004D6930_F065C28A	20	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004D6D50_B2D14E52	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004D6D50_B2D14E52	9	1	1	review	single/weak fixed-offset profile retained for review; newly corrected element-scaled pointer geometry is review-only
 0	AnonShape_004D7040_D83D570C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004D7040_D83D570C	285	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004D8D40_E38296AE	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004D8D40_E38296AE	1268	1	1	review	single/weak fixed-offset profile retained for review
@@ -180,6 +175,7 @@ apply	shape_id	type_path	length	target_count	field_count	confidence	reason
 0	AnonShape_004EAF60_69129DB1	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004EAF60_69129DB1	1236	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004EB6D0_73BE0EF9	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004EB6D0_73BE0EF9	20	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004EBAB0_68F8AF0E	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004EBAB0_68F8AF0E	20	1	1	review	single/weak fixed-offset profile retained for review
+0	AnonShape_004EBDA0_1A067C30	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004EBDA0_1A067C30	505	1	2	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004EC050_2F5ECB40	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004EC050_2F5ECB40	1539	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004ECAC0_58E78526	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004ECAC0_58E78526	40	1	1	review	single/weak fixed-offset profile retained for review
 0	AnonShape_004ECCF0_985987C1	/SubmarineTitans/Recovered/PointerShapes/AnonShape_004ECCF0_985987C1	1456	1	3	review	legacy geometry-only anonymous family split back to the target's own observed access profile; insufficient independent field evidence

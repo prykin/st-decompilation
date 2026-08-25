@@ -237,7 +237,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   memmove(puVar12, puVar7, 0x28); /* compiler REP MOVS byte copy */
   iVar5 = 0;
   STField<undefined4>(puVar6,0x205) = local_14->field_0212;
-  STField<undefined4>(puVar6,0x209) = local_14->field_0216;
+  STField<int>(puVar6,0x209) = local_14->field_0216;
   STField<int>(puVar6,0x20d) = local_14->field_021A;
   STField<undefined4>(puVar6,0x219) = *(undefined4 *)&local_14->field_0x222;
   STField<int>(puVar6,0x235) = local_14->field_0232;

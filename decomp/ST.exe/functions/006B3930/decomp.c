@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 bool FUN_006b3930(int param_1,uint param_2,int *param_3)
 
@@ -40,9 +42,9 @@ bool FUN_006b3930(int param_1,uint param_2,int *param_3)
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_24 = *(int *)(iVar2 * 0x10 + 0x14 + param_1) - *(int *)(param_1 + 0x11c + iVar2 * 8);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_20 = *(int *)(iVar3 + 0x18) - *(int *)(param_1 + 0x120 + iVar2 * 8);
+      local_20 = STField<int>(iVar3,0x18) - *(int *)(param_1 + 0x120 + iVar2 * 8);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_1c = *(int *)(iVar3 + 0x1c) - *(int *)(param_1 + 0x11c + iVar2 * 8);
+      local_1c = STField<int>(iVar3,0x1C) - *(int *)(param_1 + 0x11c + iVar2 * 8);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_18 = *(int *)((iVar2 + 2) * 0x10 + param_1) - *(int *)(param_1 + 0x120 + iVar2 * 8);
       if ((int)local_c < 0) {

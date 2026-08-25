@@ -94,9 +94,9 @@ int FUN_0040d540(AnonShape_0040D540_1BB7A4CF *param_1,uint param_2)
     do {
       if (*puVar15 == 0xffff) break;
       local_10 = FUN_006a5eb0((int)pSVar7->field_0047,(int)pSVar7->field_0049,
-                              (int)pSVar7->field_004B,(int)(short)*puVar15,(int)(short)puVar15[1],
-                              (int)(short)puVar15[2]);
-      if ((local_10 != 0xffe) && (local_8 = (int)(short)puVar15[3], local_8 < local_38)) {
+                              (int)pSVar7->field_004B,(short)*puVar15,(short)puVar15[1],
+                              (short)puVar15[2]);
+      if ((local_10 != 0xffe) && (local_8 = (short)puVar15[3], local_8 < local_38)) {
         local_44 = local_10 & 0x6000;
         if (local_44 == 0) {
           if ((local_10 & 1) == 0) {
@@ -118,11 +118,11 @@ LAB_0040d750:
         if ((local_8 <= local_14) &&
            (((local_8 != local_14 || ((local_10 == pSVar7->field_00AF && (local_1c < 2)))) &&
             (local_EAX_594 =
-                  thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,(int)(short)*puVar15
-                                     ,(int)(short)puVar15[1],(int)(short)puVar15[2]),
+                  thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,(short)*puVar15
+                                     ,(short)puVar15[1],(short)puVar15[2]),
             local_EAX_594 != 0)))) {
-          iVar16 = (int)(short)*puVar15 - (int)pSVar7->field_0047;
-          local_18 = (int)(short)puVar15[1] - (int)pSVar7->field_0049;
+          iVar16 = (short)*puVar15 - (int)pSVar7->field_0047;
+          local_18 = (short)puVar15[1] - (int)pSVar7->field_0049;
           if (local_34 == 0) {
             if ((local_44 == 0) || ((local_10 & 0xffff9fff) == 0xffe)) {
 LAB_0040dc04:
@@ -146,8 +146,8 @@ LAB_0040dc04:
                          (puVar13[6] == puVar15[2])) ||
                         ((((local_48 = FUN_006a5eb0((int)pSVar14->field_0047,
                                                     (int)pSVar14->field_0049,
-                                                    (int)pSVar14->field_004B,(int)(short)*puVar15,
-                                                    (int)(short)puVar15[1],(int)(short)puVar15[2]),
+                                                    (int)pSVar14->field_004B,(short)*puVar15,
+                                                    (short)puVar15[1],(short)puVar15[2]),
                            local_48 != 0xffe &&
                            ((local_48 != pSVar14->field_00AF ||
                             (pSVar14->field_009F
@@ -163,9 +163,9 @@ LAB_0040dc04:
                   } while ((int)local_34 < (int)local_44);
                 }
               }
-              local_28 = (int)(short)*puVar15;
-              local_2c = (int)(short)puVar15[1];
-              local_30 = (int)(short)puVar15[2];
+              local_28 = (short)*puVar15;
+              local_2c = (short)puVar15[1];
+              local_30 = (short)puVar15[2];
               local_3c = local_1c;
               local_20 = local_10;
               local_14 = local_8;
@@ -173,15 +173,15 @@ LAB_0040dc04:
               if ((local_24 == nullptr) && (pSVar7->field_00AB == nullptr))
               goto LAB_0040dde1;
             }
-            else if (((psVar6[iVar11 + ((int)(short)puVar15[2] - (int)pSVar7->field_004B) * local_c]
+            else if (((psVar6[iVar11 + ((short)puVar15[2] - (int)pSVar7->field_004B) * local_c]
                       & 0xc000U) != 0xc000) &&
                     (iVar10 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                                  (int)pSVar7->field_0047,(int)pSVar7->field_0049,
-                                                 (int)(short)puVar15[2]), iVar10 != 0)) {
+                                                 (short)puVar15[2]), iVar10 != 0)) {
               if (puVar15[1] == pSVar7->field_0049) {
                 if ((psVar6[iVar11 + iVar16] & 0xc000U) != 0xc000) {
                   iVar9 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                             (int)(short)*puVar15,(int)pSVar7->field_0049,
+                                             (short)*puVar15,(int)pSVar7->field_0049,
                                              (int)pSVar7->field_004B);
 joined_r0x0040dbb9:
                   if (iVar9 != 0) goto LAB_0040dc04;
@@ -189,7 +189,7 @@ joined_r0x0040dbb9:
               }
               else if ((psVar6[iVar11 + g_pathingGrid.sizeX * local_18] & 0xc000U) != 0xc000) {
                 iVar9 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                           (int)pSVar7->field_0047,(int)(short)puVar15[1],
+                                           (int)pSVar7->field_0047,(short)puVar15[1],
                                            (int)pSVar7->field_004B);
                 goto joined_r0x0040dbb9;
               }
@@ -199,11 +199,11 @@ joined_r0x0040dbb9:
                     ((psVar6[iVar11 + g_pathingGrid.sizeX * local_18] & 0xc000U) != 0xc000)) &&
                    (local_EAX_716 =
                          thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                            (int)pSVar7->field_0047,(int)(short)puVar15[1],
+                                            (int)pSVar7->field_0047,(short)puVar15[1],
                                             (int)pSVar7->field_004B), local_EAX_716 != 0)) &&
                   (local_EAX_747 =
                         thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                           (int)(short)*puVar15,(int)pSVar7->field_0049,
+                                           (short)*puVar15,(int)pSVar7->field_0049,
                                            (int)pSVar7->field_004B), local_EAX_747 != 0)) {
             if ((local_10 & 0x4000) == 0) {
               if ((local_10 & 0x2000) == 0) goto LAB_0040dc04;
@@ -220,19 +220,19 @@ joined_r0x0040dbb9:
                                               pSVar7->field_004B + 1), local_EAX_1324 != 0 &&
                      (local_EAX_1356 =
                            thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                              (int)(short)*puVar15,(int)pSVar7->field_0049,
+                                              (short)*puVar15,(int)pSVar7->field_0049,
                                               pSVar7->field_004B + 1), local_EAX_1356 != 0)) &&
                     (local_EAX_1389 =
                           thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                             (int)pSVar7->field_0047,(int)(short)puVar15[1],
+                                             (int)pSVar7->field_0047,(short)puVar15[1],
                                              pSVar7->field_004B + 1), local_EAX_1389 != 0)) &&
                    ((local_EAX_1420 =
                           thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                             (int)(short)*puVar15,(int)(short)puVar15[1],
+                                             (short)*puVar15,(short)puVar15[1],
                                              (int)pSVar7->field_004B), local_EAX_1420 != 0 &&
                     (local_EAX_1452 =
                           thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                             (int)pSVar7->field_0047,(int)(short)puVar15[1],
+                                             (int)pSVar7->field_0047,(short)puVar15[1],
                                              (int)pSVar7->field_004B), local_EAX_1452 != 0)))))))) {
                 sVar1 = pSVar7->field_004B;
                 sVar2 = pSVar7->field_0049;
@@ -253,26 +253,26 @@ joined_r0x0040dbb9:
                                                pSVar7->field_004B + -1), local_EAX_967 != 0 &&
                       (local_EAX_999 =
                             thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                               (int)(short)*puVar15,(int)pSVar7->field_0049,
+                                               (short)*puVar15,(int)pSVar7->field_0049,
                                                pSVar7->field_004B + -1), local_EAX_999 != 0)))) &&
                     ((local_EAX_1032 =
                            thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                              (int)pSVar7->field_0047,(int)(short)puVar15[1],
+                                              (int)pSVar7->field_0047,(short)puVar15[1],
                                               pSVar7->field_004B + -1), local_EAX_1032 != 0 &&
                      ((local_EAX_1063 =
                             thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                               (int)(short)*puVar15,(int)(short)puVar15[1],
+                                               (short)*puVar15,(short)puVar15[1],
                                                (int)pSVar7->field_004B), local_EAX_1063 != 0 &&
                       (local_EAX_1095 =
                             thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                               (int)pSVar7->field_0047,(int)(short)puVar15[1],
+                                               (int)pSVar7->field_0047,(short)puVar15[1],
                                                (int)pSVar7->field_004B), local_EAX_1095 != 0)))))) {
               sVar1 = pSVar7->field_004B;
               sVar2 = pSVar7->field_0049;
               uVar3 = *puVar15;
 LAB_0040db07:
               iVar9 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
-                                         (int)(short)uVar3,(int)sVar2,(int)sVar1);
+                                         (short)uVar3,(int)sVar2,(int)sVar1);
               goto joined_r0x0040dbb9;
             }
           }
@@ -310,7 +310,7 @@ LAB_0040dde1:
     pSVar7->field_0097[5] = (ushort)local_2c;
     pSVar7->field_0097[6] = (ushort)local_30;
     pSVar7->field_0097[7] = (ushort)local_20;
-    pSVar7->field_00AF = (int)(short)(ushort)local_20;
+    pSVar7->field_00AF = (short)(ushort)local_20;
     return 1;
   }
   return -2;

@@ -16,8 +16,8 @@ FUN_00497850(int param_1,int param_2,int param_3,int param_4,int param_5,int par
        pvVar3 != nullptr)) {
       iVar1 = STField<int>(pvVar3,0x14);
       uVar2 = thunk_FUN_0060e470(param_1,param_2,param_3,param_4,param_5,param_6,
-                                 *(int *)(iVar1 + 0x1e9) + 100,*(int *)(iVar1 + 0x1ed) + 100,
-                                 *(undefined4 *)(iVar1 + 0x1f1),param_8,param_9,param_10);
+                                 STField<int>(iVar1,0x1E9) + 100,STField<int>(iVar1,0x1ED) + 100,
+                                 STField<undefined4>(iVar1,0x1F1),param_8,param_9,param_10);
       return uVar2;
     }
   }

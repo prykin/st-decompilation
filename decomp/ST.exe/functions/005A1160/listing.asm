@@ -141,7 +141,8 @@ LAB_005a1317:
 005A1319  8D 4D D8                  LEA ECX,[EBP + -0x28]
 005A131C  51                        PUSH ECX
 005A131D  8B CE                     MOV ECX,ESI
-005A131F  FF 10                     CALL dword ptr [EAX]
+FSGSTy::CheckUpdate::override::prt_5a131f_e3dcabdd:
+005A131F  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage
 005A1321  8B 95 74 FF FF FF         MOV EDX,dword ptr [EBP + 0xffffff74]
 005A1327  89 15 F8 8D 85 00         MOV dword ptr [0x00858df8],EDX
 005A132D  5F                        POP EDI

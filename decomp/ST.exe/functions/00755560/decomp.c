@@ -85,13 +85,12 @@ uint FUN_00755560(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,int param
                            iVar17);
       }
       else {
-        iVar7 = (int)(short)pAVar3->field_0034;
+        iVar7 = (short)pAVar3->field_0034;
       }
       piVar10 = (int *)(&pAVar6->field_000C[1].field_0xe + (int)pAVar6->field_000C->field_001C * 8);
       *piVar10 = *piVar10 + iVar7 + 8;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((int)(&param_1->field_0x0 + *(short *)(iVar17 + 8)) <=
+    if ((int)(&param_1->field_0x0 + STField<short>(iVar17,0x8)) <=
         *(short *)&pAVar6->field_0008->field_0x16 + -0x10) {
       uVar12 = FUN_00755830(pAVar6,(uint *)pAVar6[1].field_0008,(int)pAVar6->field_000C->field_001C);
       if (uVar12 != 0) {
@@ -102,7 +101,7 @@ uint FUN_00755560(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,int param
     }
     bVar5 = true;
     iVar7 = *(int *)(&pAVar6->field_000C[1].field_0xe + (int)pAVar6->field_000C->field_001C * 8);
-    iVar8 = FUN_00753c80(pAVar6,(*(short *)(iVar17 + 8) >> 1) + 4);
+    iVar8 = FUN_00753c80(pAVar6,(STField<short>(iVar17,0x8) >> 1) + 4);
     if (iVar7 == iVar8) {
       param_1 = (AnonShape_00753C80_4C8E695D *)
                 FUN_00757530((AnonShape_00757530_EEED7D69 *)pAVar6,0,
@@ -121,8 +120,8 @@ uint FUN_00755560(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,int param
       Library::MSVCRT::FUN_0072da70
                 ((undefined4 *)(iVar8 + 0x10 + iVar17),
                  (AnonPointee_TLOBaseTy_0607 *)((int)&param_1->field_0010 + iVar17 + iVar8),
-                 ((int)*(short *)(iVar17 + 8) - (int)param_1) - iVar8);
-      *(short *)(iVar17 + 8) = *(short *)(iVar17 + 8) - (short)param_1;
+                 ((int)STField<short>(iVar17,0x8) - (int)param_1) - iVar8);
+      STField<short>(iVar17,0x8) = STField<short>(iVar17,0x8) - (short)param_1;
     }
     uVar11 = FUN_00753b40(pAVar6);
     if (uVar11 < 0) {
@@ -139,11 +138,11 @@ uint FUN_00755560(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,int param
     piVar10 = (int *)(iVar17 + uVar11);
     Library::MSVCRT::FUN_0072da70
               (piVar10 + 4,(AnonPointee_TLOBaseTy_0607 *)(iVar8 + 0x10 + iVar18),
-               *(short *)(iVar18 + 8) - iVar8);
+               STField<short>(iVar18,0x8) - iVar8);
     *piVar10 = uVar11;
-    *(short *)(piVar10 + 2) = *(short *)(iVar18 + 8) - (short)iVar8;
+    *(short *)(piVar10 + 2) = STField<short>(iVar18,0x8) - (short)iVar8;
     piVar10[1] = **(int **)&pAVar6[1].field_0x4;
-    *(short *)(iVar18 + 8) = (short)iVar8;
+    STField<short>(iVar18,0x8) = (short)iVar8;
     **(int **)&pAVar6[1].field_0x4 = *piVar10;
     if (iVar7 < iVar8) {
       FUN_007574c0(pAVar6,iVar18,(uint *)pAVar6[1].field_0008,iVar7);

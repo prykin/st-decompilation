@@ -8,7 +8,7 @@
    Evidence: registry[11] at 007CA778 stores type 0x0101 and executable pointer 00405353; allocation
    size 1275 has no unique current class-layout match */
 
-void * __cdecl CreateCursor(void)
+CursorClassTy * __cdecl CreateCursor(void)
 
 {
   CursorClassTy *this;
@@ -22,7 +22,7 @@ void * __cdecl CreateCursor(void)
   if (this != nullptr) {
     sub_006E5FB0(this);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0018);
-    this->field_0000 = &VTable_0079AE04;
+    this->vtable = &CursorClassTyVTable;
     this->field_0018 = &VTable_0079ADF4;
     this->field_00AD = 0;
     this->field_00CD = CASE_0;

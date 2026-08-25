@@ -110,12 +110,12 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
               else {
                 iVar11 = 0;
               }
-              if ((*(int *)(iVar11 + 0x28) == 0) &&
-                 (*(int *)(iVar11 + 0x24) == local_10->field_081E)) {
+              if ((STField<int>(iVar11,0x28) == 0) &&
+                 (STField<int>(iVar11,0x24) == local_10->field_081E)) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 uVar2 = *(undefined4 *)(param_3 + 0x18);
-                *(undefined4 *)(iVar11 + 0x24) = 0;
-                *(undefined4 *)(iVar11 + 0x28) = uVar2;
+                STField<undefined4>(iVar11,0x24) = 0;
+                STField<undefined4>(iVar11,0x28) = uVar2;
                 goto LAB_00661e5f;
               }
               uVar12 = uVar12 + 1;
@@ -217,8 +217,8 @@ LAB_00661e5f:
             iVar11 = 0;
           }
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (*(int *)(iVar11 + 0x28) == *(int *)(param_3 + 0x18)) {
-            *(undefined4 *)(iVar11 + 0x28) = 0;
+          if (STField<int>(iVar11,0x28) == *(int *)(param_3 + 0x18)) {
+            STField<undefined4>(iVar11,0x28) = 0;
             break;
           }
           uVar13 = uVar13 + 1;

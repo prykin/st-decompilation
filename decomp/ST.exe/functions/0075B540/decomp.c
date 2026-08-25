@@ -36,7 +36,7 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
   }
   iVar4 = *param_3;
   piVar7 = nullptr;
-  *(int *)(iVar4 + 0xd0) = param_2;
+  STField<int>(iVar4,0xD0) = param_2;
   int * param_3_after_write = nullptr; /* compiler stack-slot lifetime split */
   local_8 = 1;
   do {
@@ -98,7 +98,7 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
   } while (iVar9 < 0x11);
   piVar7 = nullptr;
   iVar5 = 1;
-  *(undefined4 *)(iVar4 + 0x88) = 0xfffff;
+  STField<undefined4>(iVar4,0x88) = 0xfffff;
   memset((void *)(iVar4 + 0xd4), 0, 0x400); /* compiler bulk-zero initialization */
   param_3_after_write = nullptr;
   local_8 = 7;

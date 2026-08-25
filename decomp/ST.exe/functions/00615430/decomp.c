@@ -44,7 +44,7 @@ FUN_00615430(void *this,int param_1,int param_2,int param_3,int param_4,int para
   *(int *)(STField<int>(this,0x2dd) + 0x10 + iVar6) = ((param_9 - param_3) * iVar3) / local_28;
   *(int *)(STField<int>(this,0x2dd) + 0x14 + iVar6) = (local_10 * iVar3) / local_28;
   iVar5 = STField<int>(this,0x2dd) + iVar6;
-  iVar4 = FUN_006acf0d(*(int *)(iVar5 + 0xc),*(int *)(iVar5 + 0x10),*(int *)(iVar5 + 0x14),param_5,
+  iVar4 = FUN_006acf0d(STField<int>(iVar5,0xC),STField<int>(iVar5,0x10),STField<int>(iVar5,0x14),param_5,
                        param_6,param_7);
   piVar1 = (int *)(STField<int>(this,0x2dd) + 0xc + iVar6);
   *piVar1 = ((param_5 - *piVar1) * 10000) / iVar4;

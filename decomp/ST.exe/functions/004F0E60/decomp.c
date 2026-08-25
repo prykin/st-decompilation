@@ -34,12 +34,12 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
   }
   uVar6 = this->field_0199 + -0xc0af + param_1->field_0010;
   iVar2 = (&this->field_027E)[(byte)this->field_0278];
-  if ((iVar2 == 0) || (*(uint *)(iVar2 + 0xc) <= uVar6)) {
+  if ((iVar2 == 0) || (STField<uint>(iVar2,0xC) <= uVar6)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_00526BA0_param_1Enum *)
-              (*(int *)(iVar2 + 8) * uVar6 + *(int *)(iVar2 + 0x1c));
+              (STField<int>(iVar2,0x8) * uVar6 + STField<int>(iVar2,0x1C));
   }
   local_14 = this;
   if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {

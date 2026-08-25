@@ -20,7 +20,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this)
   uint uVar6;
   STBoatC *pSVar7;
 
-  this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
+  this_00 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
   if (this_00 == nullptr) {
     return 0xffffffff;
   }

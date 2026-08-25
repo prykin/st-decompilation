@@ -29,7 +29,7 @@ int __thiscall AiTactClassTy::sub_0068E290(AiTactClassTy *this,short param_1)
         element_00a5 = nullptr;
       }
       iVar3 = element_00a5->field_0004;
-      if ((iVar3 != 0) && (*(short *)(iVar3 + 0x7d) == param_1)) {
+      if ((iVar3 != 0) && (STField<short>(iVar3,0x7D) == param_1)) {
         return iVar3;
       }
       uVar5 = uVar5 + 1;

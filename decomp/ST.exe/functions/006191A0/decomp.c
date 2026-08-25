@@ -23,10 +23,9 @@ byte __thiscall STJumpMineC::sub_006191A0(STJumpMineC *this,uint param_1,int par
       (g_sT3DSMAPContext_00807598->field_0044 <= param_2)) &&
      (param_2 <= g_sT3DSMAPContext_00807598->field_0054)) {
     local_8 = this;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = FUN_006ddbd0();
+    auto param_1_after_write = FUN_006ddbd0(); /* compiler stack-slot lifetime split */
     pVVar1 = g_visibleClass_00802A88;
-    if (((param_1 == 0) || (g_visibleClass_00802A88 == nullptr)) ||
+    if (((param_1_after_write == 0) || (g_visibleClass_00802A88 == nullptr)) ||
        ((iVar2 = (int)this->field_00CD, DAT_0080874d == -1 ||
         (g_visibleClass_00802A88->field_00F8 == 0)))) goto cf_common_exit_00619287;
     /* ST_CALLSITE[00619238]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
@@ -35,13 +34,14 @@ byte __thiscall STJumpMineC::sub_006191A0(STJumpMineC *this,uint param_1,int par
                (int)this->field_00CB,&param_2,(int *)&local_8);
     if (((iVar2 < 0) || (4 < iVar2)) ||
        ((param_2 < 0 ||
-        (((((int)pVVar1->field_0030 <= param_2 ||
+        ((((pVVar1->field_0030 <= param_2 ||
            (iVar2 = (int)&local_8->vtable + g_centeredOffsets5[iVar2], iVar2 < 0)) ||
           (pVVar1->field_0034 <= iVar2)) ||
          ((pVVar1->field_004C == nullptr ||
           (pVVar1->field_004C[param_2 + iVar2 * pVVar1->field_0030] != 0))))))))
     goto cf_common_exit_00619287;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = 0;
 cf_common_exit_00619287:
   return (byte)param_1;

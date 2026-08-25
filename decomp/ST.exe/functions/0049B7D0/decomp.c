@@ -144,7 +144,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
         if ((int)local_24 < iVar10) {
           local_24 = (short *)iVar10;
         }
-        iVar10 = (int)(short)local_10;
+        iVar10 = (short)local_10;
         if (iVar10 < local_8) {
           local_8 = iVar10;
         }
@@ -180,8 +180,8 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   do {
     local_10 = 0;
     psVar6 = g_pathingGrid.cells +
-             iVar17 * local_8 + local_c + (int)g_pathingGrid.planeStride * (int)(short)local_14;
-    local_24 = g_pathingScratchGrid.cells + (int)(short)local_14 * scalar_local_34;
+             iVar17 * local_8 + local_c + (int)g_pathingGrid.planeStride * (short)local_14;
+    local_24 = g_pathingScratchGrid.cells + (short)local_14 * scalar_local_34;
     if (0 < (int)local_20) {
       do {
         psVar14 = psVar6;
@@ -200,7 +200,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
         iVar17 = (int)g_pathingGrid.sizeX;
         local_24 = local_24 + local_2c;
         psVar6 = psVar6 + iVar17;
-      } while ((int)(short)local_10 < (int)local_20);
+      } while ((short)local_10 < (int)local_20);
     }
     local_14 = local_14 + 1;
   } while ((short)local_14 < 5);
@@ -256,7 +256,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
         GVar15 = local_20;
         if (g_pathingScratchGrid.cells
             [(((short)local_10 - local_8) * (int)g_pathingGrid.sizeX +
-              (int)g_pathingGrid.planeStride * (int)(short)local_14 + (int)STPiece<2,2>(param_1)) - iVar10]
+              (int)g_pathingGrid.planeStride * (short)local_14 + (int)STPiece<2,2>(param_1)) - iVar10]
             == 0) goto joined_r0x0049bc58;
       }
       local_20 = GVar15 + 1;
@@ -300,8 +300,8 @@ joined_r0x0049bc58:
                       ((STFishC *)pSVar7,(short *)((int)&param_1 + 2),(short *)&local_10,
                        (short *)&local_14);
             if (g_pathingScratchGrid.cells
-                [(int)g_pathingGrid.planeStride * (int)(short)local_14 +
-                 (int)g_pathingGrid.sizeX * (int)(short)local_10 + (int)STPiece<2,2>(param_1)] == 0) {
+                [(int)g_pathingGrid.planeStride * (short)local_14 +
+                 (int)g_pathingGrid.sizeX * (short)local_10 + (int)STPiece<2,2>(param_1)] == 0) {
               DArrayRemoveAt(this->field_0103,local_28);
               break;
             }

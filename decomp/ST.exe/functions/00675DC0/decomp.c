@@ -36,7 +36,7 @@ LAB_00675dfe:
         if (((this != nullptr) && (iVar3 = this->vfunc_2C(), iVar3 == 0x78)
             /* ST_CALLSITE[00675E29]: CALL dword ptr [EAX + 0x2c] */
             ) && (iVar3 = this->vfunc_2C(), iVar3 == 0x78)) {
-          this->field_0269 = 0xffffffff;
+          this->field_0269 = -1;
         }
         uVar5 = uVar5 + 1;
         uVar4 = uVar5 & 0xffff;

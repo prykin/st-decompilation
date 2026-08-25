@@ -379,9 +379,9 @@ LAB_005d5ff8:
              ((pcVar16[4] != '\0' && ((pcVar16[4] != '\x01' || (this_00->field_1E26 == CASE_2))))))
           {
             iVar24 = *(int *)(pcVar16 + 0x50);
-            if ((uint)(byte)pcVar16[5] < *(uint *)(iVar24 + 0xc)) {
-              local_8 = (char *)(*(int *)(iVar24 + 8) * (uint)(byte)pcVar16[5] +
-                                *(int *)(iVar24 + 0x1c));
+            if ((uint)(byte)pcVar16[5] < STField<uint>(iVar24,0xC)) {
+              local_8 = (char *)(STField<int>(iVar24,0x8) * (uint)(byte)pcVar16[5] +
+                                STField<int>(iVar24,0x1C));
             }
             else {
               local_8 = nullptr;
@@ -503,9 +503,9 @@ LAB_005d5ff8:
             if ((local_d != 1) && (local_d != 0)) {
               if (local_d == 4) {
                 iVar24 = STField<int>(pvVar14,0x50);
-                if ((uint)STField<byte>(pvVar14,5) < *(uint *)(iVar24 + 0xc)) {
-                  pcVar16 = (char *)(*(int *)(iVar24 + 8) * (uint)STField<byte>(pvVar14,5) +
-                                    *(int *)(iVar24 + 0x1c));
+                if ((uint)STField<byte>(pvVar14,5) < STField<uint>(iVar24,0xC)) {
+                  pcVar16 = (char *)(STField<int>(iVar24,0x8) * (uint)STField<byte>(pvVar14,5) +
+                                    STField<int>(iVar24,0x1C));
                 }
                 else {
                   pcVar16 = nullptr;

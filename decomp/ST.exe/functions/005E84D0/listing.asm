@@ -998,7 +998,8 @@ LAB_005e91f7:
 005E91F9  8D 4D B8                  LEA ECX,[EBP + -0x48]
 005E91FC  51                        PUSH ECX
 005E91FD  8B CB                     MOV ECX,EBX
-005E91FF  FF 10                     CALL dword ptr [EAX]
+WaitTy::NoneWait::override::prt_5e91ff_11d27f81:
+005E91FF  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/WaitTy;pointer:/SubmarineTitans/Recovered/STMessage
 switchD_005e8b5c::caseD_11:
 005E9201  8B 45 F0                  MOV EAX,dword ptr [EBP + -0x10]
 005E9204  8B 53 61                  MOV EDX,dword ptr [EBX + 0x61]
@@ -1047,7 +1048,8 @@ LAB_005e928b:
 005E928D  8D 4D B8                  LEA ECX,[EBP + -0x48]
 005E9290  51                        PUSH ECX
 005E9291  8B CB                     MOV ECX,EBX
-005E9293  FF 10                     CALL dword ptr [EAX]
+WaitTy::NoneWait::override::prt_5e9293_11d27f81:
+005E9293  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/WaitTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_005e9295:
 005E9295  8B 45 E8                  MOV EAX,dword ptr [EBP + -0x18]
 005E9298  8B 4D E0                  MOV ECX,dword ptr [EBP + -0x20]

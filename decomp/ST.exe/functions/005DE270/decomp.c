@@ -27,7 +27,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   undefined4 local_8a8;
   undefined4 local_8a4;
   undefined4 local_8a0;
-  undefined4 local_88c;
+  int local_88c;
   undefined4 local_888;
   undefined4 local_884;
   undefined4 local_814;
@@ -36,7 +36,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   undefined4 local_808 [4];
   undefined4 local_7f8;
   undefined4 local_7f4;
-  undefined4 local_7a8;
+  int local_7a8;
   undefined4 local_7a4;
   undefined4 local_7a0;
   undefined4 local_6f8;

@@ -16,7 +16,7 @@ void __cdecl FUN_0070a300(int *param_1)
   if (*param_1 != 0) {
     iVar2 = *(int *)(*param_1 + 4);
     if (iVar2 != 0) {
-      *(undefined4 *)(iVar2 + 4) = 0;
+      STField<undefined4>(iVar2,0x4) = 0;
       iVar1 = DArrayGetNext(*(DArrayTy **)(*param_1 + 4),(byte *)local_34);
       while (-1 < iVar1) {
         if (local_b != 0) {

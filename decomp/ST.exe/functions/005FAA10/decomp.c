@@ -61,9 +61,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
     iVar1 = pAVar2->field_02E6;
     Library::Ourlib::ST3DSMAP::SprMove
               (pAVar2->field_0211,local_8,
-               (float)*(int *)(iVar1 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
-               (float)*(int *)(iVar1 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
-               (float)*(int *)(iVar1 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+               (float)STField<int>(iVar1,0x14) * _DAT_007904f8 * _DAT_007904f0,
+               (float)STField<int>(iVar1,0x18) * _DAT_007904f8 * _DAT_007904f0,
+               (float)STField<int>(iVar1,0x1C) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     ST3DSMAPContext::sub_006E9EF0(pAVar2->field_0211,local_8,0,1,0,0,30000);
     Library::Ourlib::ST3DSMAP::SprShow(pAVar2->field_0211,local_8,0);
     *(uint *)(pAVar2->field_02E6 + 4) = local_8;

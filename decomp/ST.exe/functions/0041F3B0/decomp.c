@@ -45,13 +45,13 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
       /* ST_CALLSITE[0041F468]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x01');
     }
-    iVar2 = param_1->field_0020;
-    if ((((iVar2 == 0x14) || (iVar2 == 1000)) || (iVar2 == 0x172)) || (iVar2 == 0x1a4)) {
+    uVar3 = param_1->field_0020;
+    if ((((uVar3 == 0x14) || (uVar3 == 1000)) || (uVar3 == 0x172)) || (uVar3 == 0x1a4)) {
       /* ST_CALLSITE[0041F4A1]: CALL dword ptr [EDX + 0x2c] */
       SVar5 = param_1->slot_2C();
     }
     else {
-      if (iVar2 != 0x3e9) goto LAB_0041f51a;
+      if (uVar3 != 0x3e9) goto LAB_0041f51a;
       SVar5 = param_1->field_0259;
     }
     /* ST_CALLSITE[0041F4AD]: CALL dword ptr [EAX + 0xc] */
@@ -85,13 +85,13 @@ LAB_0041f51a:
   STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x01',0);
   /* ST_CALLSITE[0041F543]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
   STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x01');
-  iVar2 = param_1->field_0020;
-  if (((iVar2 == 0x14) || (iVar2 == 1000)) || ((iVar2 == 0x172 || (iVar2 == 0x1a4)))) {
+  uVar3 = param_1->field_0020;
+  if (((uVar3 == 0x14) || (uVar3 == 1000)) || ((uVar3 == 0x172 || (uVar3 == 0x1a4)))) {
     /* ST_CALLSITE[0041F578]: CALL dword ptr [EDX + 0x2c] */
     SVar5 = param_1->slot_2C();
   }
   else {
-    if (iVar2 != 0x3e9) goto LAB_0041f5a0;
+    if (uVar3 != 0x3e9) goto LAB_0041f5a0;
     SVar5 = param_1->field_0259;
   }
   /* ST_CALLSITE[0041F584]: CALL dword ptr [EAX + 0xc] */

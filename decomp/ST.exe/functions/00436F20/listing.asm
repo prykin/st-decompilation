@@ -201,7 +201,8 @@ STAllPlayersC::CmdToPlsObj::cf_common_exit_00437191:
 00437194  8B 11                     MOV EDX,dword ptr [ECX]
 00437196  8D 85 78 FF FF FF         LEA EAX,[EBP + 0xffffff78]
 0043719C  50                        PUSH EAX
-0043719D  FF 12                     CALL dword ptr [EDX]
+STAllPlayersC::CmdToPlsObj::override::prt_43719d_a62677c1:
+0043719D  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AF40_F59F8577
 0043719F  5F                        POP EDI
 004371A0  5E                        POP ESI
 004371A1  5B                        POP EBX

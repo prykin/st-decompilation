@@ -32,11 +32,11 @@ undefined4 __thiscall FUN_004abce0(void *this,byte param_1,int param_2,int param
           STT3DSprC::StopShow(this,param_1);
           iVar6 = iVar7 + STField<int>(this,0x20);
           if ((*(byte *)(iVar7 + 0xe + STField<int>(this,0x20)) & 2) == 0) {
-            *(int *)(iVar6 + 0x10) = param_2;
+            STField<int>(iVar6,0x10) = param_2;
             *(int *)(iVar7 + 0x14 + STField<int>(this,0x20)) = param_3;
           }
           else {
-            *(int *)(iVar6 + 0x10) = param_3;
+            STField<int>(iVar6,0x10) = param_3;
             *(int *)(iVar7 + 0x14 + STField<int>(this,0x20)) = param_2;
           }
           puVar3 = (undefined4 *)(iVar7 + STField<int>(this,0x20));
@@ -45,7 +45,7 @@ undefined4 __thiscall FUN_004abce0(void *this,byte param_1,int param_2,int param
             *(undefined4 *)(puVar3[1] + iVar6 * 4) = *(undefined4 *)((int)piVar4 + iVar6 * 4 + 0x31);
           }
           iVar6 = STField<int>(this,0x20) + iVar7;
-          *(undefined4 *)(iVar6 + 0x18) = *(undefined4 *)(iVar6 + 0x10);
+          STField<undefined4>(iVar6,0x18) = STField<undefined4>(iVar6,0x10);
           if (param_1 == STField<byte>(this,0x13)) {
             STField<undefined4>(this,0x30) =
                  *(undefined4 *)(iVar7 + 0x18 + STField<int>(this,0x20));

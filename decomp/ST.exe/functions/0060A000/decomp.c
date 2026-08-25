@@ -64,8 +64,8 @@ undefined4 __fastcall FUN_0060a000(AnonShape_0060A000_715F6478 *param_1)
             do {
               uVar3 = iVar4 * local_8 + local_c;
               iVar1 = param_1->field_0234;
-              if ((uVar3 < *(uint *)(iVar1 + 0xc)) &&
-                 (puVar5 = (undefined4 *)(*(int *)(iVar1 + 8) * uVar3 + *(int *)(iVar1 + 0x1c)),
+              if ((uVar3 < STField<uint>(iVar1,0xC)) &&
+                 (puVar5 = (undefined4 *)(STField<int>(iVar1,0x8) * uVar3 + STField<int>(iVar1,0x1C)),
                  puVar5 != nullptr)) {
                 puVar5[0xb] = (float)((float10)(int)local_c * fVar6);
                 fcos((float10)(int)local_c * fVar6);
@@ -113,9 +113,8 @@ undefined4 __fastcall FUN_0060a000(AnonShape_0060A000_715F6478 *param_1)
         }
         else {
           iVar4 = param_1->field_0234;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((local_c < *(uint *)(iVar4 + 0xc)) &&
-             (puVar5 = (undefined4 *)(*(int *)(iVar4 + 8) * local_c + *(int *)(iVar4 + 0x1c)),
+          if ((local_c < STField<uint>(iVar4,0xC)) &&
+             (puVar5 = (undefined4 *)(STField<int>(iVar4,0x8) * local_c + STField<int>(iVar4,0x1C)),
              puVar5 != nullptr)) {
             puVar5[0xb] = (float)((float10)(int)local_c * fVar6);
             fcos((float10)(int)local_c * fVar6);

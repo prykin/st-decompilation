@@ -118,8 +118,8 @@ LAB_006a76ae:
           param_5_after_write = param_5_after_write + 1;
         }
         uVar9 = param_6_after_write & 1;
-        if ((uVar9 == 0) && (*(short *)(iVar7 + 2) < 0)) {
-          *(undefined2 *)(iVar7 + 2) = 0;
+        if ((uVar9 == 0) && (STField<short>(iVar7,0x2) < 0)) {
+          STField<undefined2>(iVar7,0x2) = 0;
           pbVar16[1] = bVar2;
           *pbVar16 = bVar3 + 1;
           pbVar16[2] = bVar1;
@@ -170,8 +170,8 @@ LAB_006a76ae:
           param_5_after_write = param_5_after_write + 1;
         }
         uVar13 = param_6_after_write & 0x21;
-        if ((uVar13 == 0) && (iVar17 = iVar7 + param_2 * -2, *(short *)(iVar17 + 2) < 0)) {
-          *(undefined2 *)(iVar17 + 2) = 0;
+        if ((uVar13 == 0) && (iVar17 = iVar7 + param_2 * -2, STField<short>(iVar17,0x2) < 0)) {
+          STField<undefined2>(iVar17,0x2) = 0;
           pbVar16[2] = bVar1;
           *pbVar16 = bVar3 + 1;
           pbVar16[1] = bVar2 - 1;
@@ -206,8 +206,8 @@ LAB_006a76ae:
             pbVar16 = pbVar16 + 4;
             param_5_after_write = param_5_after_write + 1;
           }
-          if ((uVar9 == 0) && (*(short *)(iVar17 + 2) < 0)) {
-            *(undefined2 *)(iVar17 + 2) = 0;
+          if ((uVar9 == 0) && (STField<short>(iVar17,0x2) < 0)) {
+            STField<undefined2>(iVar17,0x2) = 0;
             pbVar16[1] = bVar2;
             *pbVar16 = bVar3 + 1;
             pbVar16[2] = bVar1 + 1;
@@ -241,8 +241,8 @@ LAB_006a76ae:
             pbVar16 = pbVar16 + 4;
             param_5_after_write = param_5_after_write + 1;
           }
-          if ((uVar9 == 0) && (*(short *)(iVar17 + 2) < 0)) {
-            *(undefined2 *)(iVar17 + 2) = 0;
+          if ((uVar9 == 0) && (STField<short>(iVar17,0x2) < 0)) {
+            STField<undefined2>(iVar17,0x2) = 0;
             pbVar16[1] = bVar2;
             *pbVar16 = bVar3 + 1;
             pbVar16[2] = bVar1 - 1;
@@ -276,8 +276,8 @@ LAB_006a76ae:
             pbVar16 = pbVar16 + 4;
             param_5_after_write = param_5_after_write + 1;
           }
-          if ((uVar13 == 0) && (iVar19 = iVar17 + param_2 * -2, *(short *)(iVar19 + 2) < 0)) {
-            *(undefined2 *)(iVar19 + 2) = 0;
+          if ((uVar13 == 0) && (iVar19 = iVar17 + param_2 * -2, STField<short>(iVar19,0x2) < 0)) {
+            STField<undefined2>(iVar19,0x2) = 0;
             *pbVar16 = bVar3 + 1;
             pbVar16[1] = bVar2 - 1;
             pbVar16[2] = bVar1 + 1;
@@ -311,8 +311,8 @@ LAB_006a76ae:
             pbVar16 = pbVar16 + 4;
             param_5_after_write = param_5_after_write + 1;
           }
-          if ((uVar13 == 0) && (iVar17 = iVar7 + param_2 * -2, *(short *)(iVar17 + 2) < 0)) {
-            *(undefined2 *)(iVar17 + 2) = 0;
+          if ((uVar13 == 0) && (iVar17 = iVar7 + param_2 * -2, STField<short>(iVar17,0x2) < 0)) {
+            STField<undefined2>(iVar17,0x2) = 0;
             *pbVar16 = bVar3 + 1;
             pbVar16[1] = bVar2 - 1;
             pbVar16[2] = bVar1 - 1;

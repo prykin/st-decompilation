@@ -74,7 +74,7 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
   param_10_after_write = (uint)*(byte *)(param_8 + 6 + uVar2 * 4) * iVar6;
   if (0 < local_8) {
     auto param_3_after_write = &DAT_007f0150; /* compiler stack-slot lifetime split */
-    auto param_8_after_write = local_8; /* compiler stack-slot lifetime split */
+    int param_8_after_write = local_8; /* compiler stack-slot lifetime split */
     puVar7 = local_54 + 1;
     do {
       iVar8 = *param_3_after_write;

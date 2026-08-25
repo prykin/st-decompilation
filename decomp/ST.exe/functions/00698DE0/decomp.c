@@ -34,7 +34,7 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
       uVar4 = param_2;
     } while ((int)uVar5 < (int)param_2);
   }
-  auto param_2_after_write = uVar4; /* compiler stack-slot lifetime split */
+  uint param_2_after_write = uVar4; /* compiler stack-slot lifetime split */
   if (0 < param_3) {
     auto param_7_after_write = param_3; /* compiler stack-slot lifetime split */
     psVar6 = (short *)(param_6 + 4);
@@ -53,7 +53,7 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
           puVar7 = (uint *)(puVar3 + 6);
           do {
             iVar5 = FUN_006acf90((int)*psVar1,(int)psVar1[1],(int)*(short *)((int)puVar7 + -6),
-                                 (int)(short)puVar7[-1]);
+                                 (short)puVar7[-1]);
             if (iVar5 < 7) {
               if (iVar5 < 3) {
                 *puVar7 = 0;

@@ -110,7 +110,7 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
   piVar5 = &g_packedRecords_A62x8[0].field3_0x9;
   do {
     iVar3 = *piVar5;
-    if (((iVar3 != 0) && (iVar8 = *(int *)(iVar3 + 0xc), iVar8 != 0)) &&
+    if (((iVar3 != 0) && (iVar8 = STField<int>(iVar3,0xC), iVar8 != 0)) &&
        (piVar7 = *(int **)(iVar3 + 0x1c), 0 < iVar8)) {
       do {
         if ((int *)*piVar7 != nullptr) {

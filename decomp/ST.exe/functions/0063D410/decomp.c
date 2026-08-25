@@ -17,7 +17,7 @@ void __fastcall FUN_0063d410(AnonShape_0063D410_5C8A60D7 *param_1)
         pAVar2 = param_1->field_0336;
         if ((uVar4 < (uint)pAVar2->field_000C) &&
            (iVar3 = pAVar2->field_0008 * uVar4 + pAVar2->field_001C, iVar3 != 0)) {
-          *(undefined4 *)(iVar3 + 0x38) = 0xffffffff;
+          STField<undefined4>(iVar3,0x38) = 0xffffffff;
         }
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < iVar1);

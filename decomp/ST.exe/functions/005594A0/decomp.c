@@ -54,7 +54,7 @@ VisibleClassTy::sub_005594A0
       iVar8 = param_2 - param_5;
       pbVar3 = thunk_FUN_005532f0(param_5);
       param_4 = pbVar3;
-      auto param_5_after_write = iVar1; /* compiler stack-slot lifetime split */
+      int param_5_after_write = iVar1; /* compiler stack-slot lifetime split */
       if (0 < iVar1) {
         do {
           iVar4 = 0;

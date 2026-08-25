@@ -39,7 +39,7 @@ void __thiscall CPanelTy::sub_0052AFE0(CPanelTy *this,byte param_1,float param_2
   }
   else {
     lVar9 = Library::MSVCRT::__ftol();
-    iVar5 = (int)(short)lVar9;
+    iVar5 = (short)lVar9;
   }
   bVar1 = param_3 < _DAT_0079034c;
   this->field_0237 = iVar5;
@@ -49,7 +49,7 @@ void __thiscall CPanelTy::sub_0052AFE0(CPanelTy *this,byte param_1,float param_2
   }
   else {
     lVar9 = Library::MSVCRT::__ftol();
-    iVar5 = (int)(short)lVar9;
+    iVar5 = (short)lVar9;
   }
   this->field_023B = iVar5;
   if (this->field_0DB3 == nullptr) {

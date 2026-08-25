@@ -15,23 +15,23 @@ void __cdecl FUN_0065d030(AnonShape_0065D030_CB0F82F0 *param_1)
   if (param_1->field_0005 != '\0') {
     iVar1 = param_1->field_0462;
     uVar2 = 0;
-    if (0 < *(int *)(iVar1 + 0xc)) {
-      bVar3 = *(int *)(iVar1 + 0xc) != 0;
+    if (0 < STField<int>(iVar1,0xC)) {
+      bVar3 = STField<int>(iVar1,0xC) != 0;
       do {
         if (bVar3) {
-          iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
+          iVar1 = STField<int>(iVar1,0x8) * uVar2 + STField<int>(iVar1,0x1C);
         }
         else {
           iVar1 = 0;
         }
         if (*(DArrayTy **)(iVar1 + 0xf) != nullptr) {
           DArrayDestroy(*(DArrayTy **)(iVar1 + 0xf));
-          *(undefined4 *)(iVar1 + 0xf) = 0;
+          STField<undefined4>(iVar1,0xF) = 0;
         }
         iVar1 = param_1->field_0462;
         uVar2 = uVar2 + 1;
-        bVar3 = uVar2 < *(uint *)(iVar1 + 0xc);
-      } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));
+        bVar3 = uVar2 < STField<uint>(iVar1,0xC);
+      } while ((int)uVar2 < (int)STField<uint>(iVar1,0xC));
     }
     DArrayDestroy((DArrayTy *)param_1->field_0462);
     param_1->field_0462 = 0;

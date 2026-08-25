@@ -207,7 +207,7 @@ void __thiscall st::fn_0056EBE0(STAppC *this)
     memset(&this->field_0x2340, 0, 0x20); /* compiler bulk-zero initialization */
   }
   else {
-    this->field_233C = *(uint *)(uVar8 + 0x90);
+    this->field_233C = STField<uint>(uVar8,0x90);
     uVar5 = 0xffffffff;
     pcVar9 = (char *)(uVar8 + 0x4c);
     do {
@@ -473,38 +473,6 @@ void __thiscall st::fn_0056F040(STAppC *this)
     } while (local_c != 0);
   }
   return;
-}
-
-// 006E5150 STAppC::sub_006E5150
-#line 4 "decomp/ST.exe/functions/006E5150/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 0056FA60 -> 006E5150 @ 0056FAAB
-
-   [STMethodOwnerApplier] Structural method owner recovered as STAppC.
-   Evidence: this_call_owners=[STAppC]; agreed_this_calls=1; incoming_this_accesses=2;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=1;
-   incoming_ecx_receiver_callers=1; attributed_named_callers=1; owner_evidence_coverage=adequate
-
-   [STDiscriminatedPayloadApplier] Case-local payload view: param_1->id == 4 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/STAppC_sub_006E5150_006E5150_MessagePayload_Case_4.
-   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
-
-undefined4 __thiscall st::fn_006E5150(STAppC *this,STMessage *param_1)
-
-{
-  if (param_1->id == 4) {
-    DAT_00856d74 = (param_1->arg0).u32;
-    if ((DAT_00856d74 != 0) && (this->field_0024 != 0)) {
-      st::fn_006E4290(0xf,5,0xf,0);
-      return 0;
-    }
-    st::fn_006E4340(this,(int *)0xf,5,0xf,0);
-  }
-  else if (param_1->id == 0xf) {
-    this->field_001C = 1;
-    return 0;
-  }
-  return 0;
 }
 
 // 006E51B0 STAppC::sub_006E51B0

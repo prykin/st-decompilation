@@ -32,7 +32,7 @@ void __fastcall FUN_005f06e0(AnonShape_005F0620_60AA17CE *param_1)
     }
     local_24.arg1.words.high = param_1->field_02AB;
     local_24.arg1.words.low = param_1->field_02A3;
-    /* ST_CALLSITE[005F0750]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[005F0750]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
 switchD_005f070c_default:

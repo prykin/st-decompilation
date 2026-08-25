@@ -1,4 +1,4 @@
-FUN_004c28b0:
+TLOBaseTy::sub_004C28B0:
 004C28B0  55                        PUSH EBP
 004C28B1  8B EC                     MOV EBP,ESP
 004C28B3  56                        PUSH ESI

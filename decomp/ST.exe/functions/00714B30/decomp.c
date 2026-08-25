@@ -40,9 +40,9 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
   }
   iVar3 = local_c;
   if (&stack0x00000000 != &DAT_0000000c) {
-    iVar3 = *(int *)(iVar1 + 0x76);
+    iVar3 = STField<int>(iVar1,0x76);
   }
-  if (*(int *)(iVar1 + 0x7a) == 0) {
+  if (STField<int>(iVar1,0x7A) == 0) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
     if (0 < iVar2) {

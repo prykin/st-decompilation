@@ -27,8 +27,8 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
   if (this->field_023D != 0) {
     /* ST_CALLSITE[0058408C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_00 = STAllPlayersC::GetObjPtr
-                        (g_allPlayers_007FA174,*(char *)&this->field_0241,
-                         *(ushort *)&this->field_0x245,CASE_1);
+                        (g_allPlayers_007FA174,(char)this->field_0241,*(ushort *)&this->field_0x245,
+                         CASE_1);
     if ((this_00 != nullptr) &&
        /* ST_CALLSITE[0058409B]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
        (iVar1 = (*this_00->vtable[1].vfunc_24)(this_00), iVar1 != 0)) {
@@ -45,7 +45,7 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
   STFishC::sub_004162B0((STFishC *)this,&local_10,&local_e,&local_c);
   iVar1 = this->field_001C * 0x41c64e6d + 0x3039;
   this->field_001C = iVar1;
-  local_14 = (int)(short)(((ushort)((uint)iVar1 >> 0x10) & 1) + 1);
+  local_14 = (short)(((ushort)((uint)iVar1 >> 0x10) & 1) + 1);
   uVar2 = this->field_001C * 0x41c64e6d + 0x3039;
   this->field_001C = uVar2;
   if ((uVar2 >> 0x10) % 3 == 0) {

@@ -16,7 +16,7 @@ uint * __fastcall AiFltClassTy::sub_0065DA10(AiFltClassTy *param_1,undefined4 pa
   uint *puVar1;
 
   if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
-    this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D);
+    this = thunk_FUN_0042b760((char)param_1->field_0024,param_1->field_007D);
     if (this != nullptr) {
       puVar1 = STGroupC::GetGroupContent((STGroupC *)this);
       return puVar1;

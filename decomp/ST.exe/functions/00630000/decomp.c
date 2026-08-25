@@ -27,9 +27,9 @@ void __thiscall FUN_00630000(void *this,int param_1)
         iVar2 = *piVar3;
         /* ST_CALLSITE[00630092]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
         STT3DSprC::sub_004AD3C0
-                  (this_00,(float)*(int *)(iVar2 + 0x20) * _DAT_007904f8 * _DAT_007904f0,
-                   (float)*(int *)(iVar2 + 0x24) * _DAT_007904f8 * _DAT_007904f0,
-                   (float)*(int *)(iVar2 + 0x28) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+                  (this_00,(float)STField<int>(iVar2,0x20) * _DAT_007904f8 * _DAT_007904f0,
+                   (float)STField<int>(iVar2,0x24) * _DAT_007904f8 * _DAT_007904f0,
+                   (float)STField<int>(iVar2,0x28) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       }
     }
     piVar3 = piVar3 + 1;

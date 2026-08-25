@@ -145,7 +145,7 @@ LAB_0069e69c:
             ((((int)local_14 < param_4 && (-1 < iVar7)) && (iVar7 < param_5)))))) {
           int scalar_local_14 = iVar7 * param_4 + (int)local_14; /* split integer lifetime from pointer-typed SSA storage */
           iVar7 = param_1 + scalar_local_14 * 0xe;
-          if ((*(int *)(iVar7 + 6) < 0) && (*(int *)(iVar7 + 2) == 0)) {
+          if ((STField<int>(iVar7,0x6) < 0) && (STField<int>(iVar7,0x2) == 0)) {
             local_1c = thunk_FUN_00696310(local_18,scalar_local_14,param_4,local_a0,nullptr);
             iVar7 = local_c;
             int scalar_piVar11 = scalar_local_14;
@@ -165,8 +165,8 @@ LAB_0069e887:
               break;
             }
             piVar9 = local_a0;
-            while ((iVar1 = param_1 + *piVar9 * 0xe, *(int *)(iVar1 + 2) == 0 ||
-                   (*(int *)(iVar1 + 6) < 1))) {
+            while ((iVar1 = param_1 + *piVar9 * 0xe, STField<int>(iVar1,0x2) == 0 ||
+                   (STField<int>(iVar1,0x6) < 1))) {
               iVar8 = iVar8 + 1;
               piVar9 = piVar9 + 1;
               if (local_1c <= iVar8) goto LAB_0069e887;
@@ -215,7 +215,7 @@ LAB_0069e887:
         if ((((0 < iVar7) && (iVar7 < param_4 + -1)) && (0 < iVar6)) && (iVar6 < param_5 + -1)) {
           local_14 = (int *)(iVar6 * param_4 + iVar7);
           iVar7 = param_1 + (int)local_14 * 0xe;
-          if ((*(int *)(iVar7 + 6) < 0) && (*(int *)(iVar7 + 2) == 0)) {
+          if ((STField<int>(iVar7,0x6) < 0) && (STField<int>(iVar7,0x2) == 0)) {
             local_1c = thunk_FUN_00696310(local_18,(int)local_14,param_4,local_a0,nullptr);
             iVar7 = local_c;
             piVar11 = local_14;
@@ -233,8 +233,8 @@ LAB_0069eab9:
               break;
             }
             piVar9 = local_a0;
-            while ((iVar1 = param_1 + *piVar9 * 0xe, *(int *)(iVar1 + 2) == 0 ||
-                   (*(int *)(iVar1 + 6) < 1))) {
+            while ((iVar1 = param_1 + *piVar9 * 0xe, STField<int>(iVar1,0x2) == 0 ||
+                   (STField<int>(iVar1,0x6) < 1))) {
               iVar6 = iVar6 + 1;
               piVar9 = piVar9 + 1;
               if (local_1c <= iVar6) goto LAB_0069eab9;

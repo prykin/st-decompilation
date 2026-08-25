@@ -5,6 +5,6 @@ Proposals: 2867
 Automatic: 2773
 Dispatch interface audits: 1
 Dispatch tail ABI prototypes: 19
-Synthetic ABI prototypes: 2742
+Synthetic ABI prototypes: 2707
 Resolved-target ABI families: 806
 Family-propagated slots: 0

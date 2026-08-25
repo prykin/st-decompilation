@@ -653,7 +653,8 @@ switchD_00535190::caseD_3:
 0053447B  8B CB                     MOV ECX,EBX
 0053447D  C7 43 28 A1 C0 00 00      MOV dword ptr [EBX + 0x28],0xc0a1
 00534484  89 73 34                  MOV dword ptr [EBX + 0x34],ESI
-00534487  FF 10                     CALL dword ptr [EAX]
+OptPanelTy::GetMessage::override::prt_534487_709f2bd6:
+00534487  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/OptPanelTy;pointer:/SubmarineTitans/Recovered/STMessage
 00534489  8B 8D 78 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff78]
 0053448F  33 C0                     XOR EAX,EAX
 00534491  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX
@@ -845,7 +846,8 @@ LAB_00534673:
 00534696  8B 13                     MOV EDX,dword ptr [EBX]
 00534698  57                        PUSH EDI
 00534699  8B CB                     MOV ECX,EBX
-0053469B  FF 12                     CALL dword ptr [EDX]
+OptPanelTy::GetMessage::override::prt_53469b_709f2bd6:
+0053469B  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/OptPanelTy;pointer:/SubmarineTitans/Recovered/STMessage
 0053469D  8B 8D 78 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff78]
 005346A3  33 C0                     XOR EAX,EAX
 005346A5  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX
@@ -869,7 +871,8 @@ LAB_005346d7:
 005346E8  8B 0D 30 2A 80 00         MOV ECX,dword ptr [0x00802a30]
 005346EE  57                        PUSH EDI
 005346EF  8B 01                     MOV EAX,dword ptr [ECX]
-005346F1  FF 10                     CALL dword ptr [EAX]
+OptPanelTy::GetMessage::override::prt_5346f1_74f246b9:
+005346F1  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 005346F3  8B 8D 78 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff78]
 005346F9  33 C0                     XOR EAX,EAX
 005346FB  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX
@@ -1427,7 +1430,8 @@ switchD_00534835::caseD_7:
 00534D49  8B CB                     MOV ECX,EBX
 00534D4B  C7 43 28 01 C0 00 00      MOV dword ptr [EBX + 0x28],0xc001
 00534D52  89 73 34                  MOV dword ptr [EBX + 0x34],ESI
-00534D55  FF 12                     CALL dword ptr [EDX]
+OptPanelTy::GetMessage::override::prt_534d55_709f2bd6:
+00534D55  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/OptPanelTy;pointer:/SubmarineTitans/Recovered/STMessage
 00534D57  8B 8D 78 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff78]
 00534D5D  33 C0                     XOR EAX,EAX
 00534D5F  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX
@@ -2416,7 +2420,8 @@ LAB_00535904:
 00535913  8B CB                     MOV ECX,EBX
 00535915  C7 43 28 01 C0 00 00      MOV dword ptr [EBX + 0x28],0xc001
 0053591C  89 73 34                  MOV dword ptr [EBX + 0x34],ESI
-0053591F  FF 10                     CALL dword ptr [EAX]
+OptPanelTy::GetMessage::override::prt_53591f_709f2bd6:
+0053591F  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/OptPanelTy;pointer:/SubmarineTitans/Recovered/STMessage
 00535921  8B 8D 78 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff78]
 00535927  33 C0                     XOR EAX,EAX
 00535929  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX

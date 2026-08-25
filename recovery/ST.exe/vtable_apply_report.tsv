@@ -49,7 +49,8 @@ owner_vptr	IntercomPanelTy+0x0	already_present	IntercomPanelTy	owner already poi
 table	0079AC9C	already_present	IntercomPanelTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/IntercomPanelTyVTable; 6 slots; vptr references materialized=0
 owner_vptr	MoneyTy+0x0	already_present	MoneyTy	owner already points to /SubmarineTitans/Recovered/VTables/MoneyTyVTable
 table	0079ACE4	already_present	MoneyTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/MoneyTyVTable; 1 slots; vptr references materialized=0
-table	0079ACE8	already_present	VTable_0079ACE8	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079ACE8; 1 slots; vptr references materialized=0
+owner_vptr	PopUpTy+0x0	already_present	PopUpTy	owner already points to /SubmarineTitans/Recovered/VTables/PopUpTyVTable
+table	0079ACE8	already_present	PopUpTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/PopUpTyVTable; 1 slots; vptr references materialized=0
 owner_vptr	OptPanelTy+0x0	already_present	OptPanelTy	owner already points to /SubmarineTitans/Recovered/VTables/OptPanelTyVTable
 table	0079AD10	already_present	OptPanelTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/OptPanelTyVTable; 6 slots; vptr references materialized=0
 owner_vptr	PausePanelTy+0x0	already_present	PausePanelTy	owner already points to /SubmarineTitans/Recovered/VTables/PausePanelTyVTable
@@ -63,7 +64,8 @@ table	0079AD8C	already_present	SAMPanelTyVTable	used unchanged generated type /S
 owner_vptr	InterSystemC+0x0	already_present	InterSystemC	owner already points to /SubmarineTitans/Recovered/VTables/InterSystemCVTable
 table	0079ADB8	already_present	InterSystemCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/InterSystemCVTable; 9 slots; vptr references materialized=0
 table	0079ADF4	already_present	VTable_0079ADF4	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079ADF4; 3 slots; vptr references materialized=0
-table	0079AE04	already_present	VTable_0079AE04	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079AE04; 1 slots; vptr references materialized=0
+owner_vptr	CursorClassTy+0x0	already_present	CursorClassTy	owner already points to /SubmarineTitans/Recovered/VTables/CursorClassTyVTable
+table	0079AE04	already_present	CursorClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/CursorClassTyVTable; 1 slots; vptr references materialized=0
 owner_vptr	STPlaySystemC+0x0	already_present	STPlaySystemC	owner already points to /SubmarineTitans/Recovered/VTables/STPlaySystemCVTable
 table	0079AE38	already_present	STPlaySystemCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STPlaySystemCVTable; 9 slots; vptr references materialized=0
 table	0079AE64	already_present	VTable_0079AE64	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079AE64; 9 slots; vptr references materialized=0
@@ -120,8 +122,7 @@ owner_vptr	MAdvTy+0x0	already_present	MAdvTy	owner already points to /SubmarineT
 table	0079BFE4	already_present	MAdvTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/MAdvTyVTable; 1 slots; vptr references materialized=0
 owner_vptr	CampaignTy+0x0	already_present	CampaignTy	owner already points to /SubmarineTitans/Recovered/VTables/CampaignTyVTable
 table	0079BFF8	already_present	CampaignTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/CampaignTyVTable; 3 slots; vptr references materialized=0
-owner_vptr	MMObjTy	skipped	MMObjTy	no exact this-relative vptr store offset
-table	0079C008	already_present	MMObjTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/MMObjTyVTable; 3 slots; vptr references materialized=0
+table	0079C008	applied	VTable_0079C008	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079C008; 3 slots; vptr references materialized=0; retained prior type because it is referenced, modified, or lacks a baseline
 table	0079C018	already_present	VTable_0079C018	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079C018; 1 slots; vptr references materialized=0
 owner_vptr	Visible+0x0	already_present	Visible	owner already points to /SubmarineTitans/Recovered/VTables/VisibleVTable
 table	0079C01C	already_present	VisibleVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/VisibleVTable; 1 slots; vptr references materialized=0
@@ -145,7 +146,8 @@ owner_vptr	SIDTy+0x0	already_present	SIDTy	owner already points to /SubmarineTit
 table	0079C1AC	already_present	SIDTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/SIDTyVTable; 3 slots; vptr references materialized=0
 owner_vptr	StartSystemTy+0x0	already_present	StartSystemTy	owner already points to /SubmarineTitans/Recovered/VTables/StartSystemTyVTable
 table	0079C1E8	already_present	StartSystemTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/StartSystemTyVTable; 9 slots; vptr references materialized=0
-table	0079C238	already_present	VTable_0079C238	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079C238; 1 slots; vptr references materialized=0
+owner_vptr	MTaskTy+0x0	already_present	MTaskTy	owner already points to /SubmarineTitans/Recovered/VTables/MTaskTyVTable
+table	0079C238	already_present	MTaskTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/MTaskTyVTable; 1 slots; vptr references materialized=0
 owner_vptr	MTestTy+0x0	already_present	MTestTy	owner already points to /SubmarineTitans/Recovered/VTables/MTestTyVTable
 table	0079C23C	already_present	MTestTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/MTestTyVTable; 1 slots; vptr references materialized=0
 owner_vptr	WaitTy+0x0	already_present	WaitTy	owner already points to /SubmarineTitans/Recovered/VTables/WaitTyVTable

@@ -269,7 +269,7 @@ dword __thiscall st::fn_0044EDC0(STBoatC *this)
   return this->field_071A;
 }
 
-// 0045EEE0 STBoatC::FUN_0045eee0
+// 0045EEE0 STBoatC::sub_0045EEE0
 #line 4 "decomp/ST.exe/functions/0045EEE0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 007905A0
@@ -315,7 +315,7 @@ undefined4 __thiscall st::fn_0045F6C0(STBoatC *this)
 
   iVar12 = 0;
   /* ST_CALLSITE[0045F6D7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-  uVar6 = st::fn_004049B7(*(char *)&this->field_0024);
+  uVar6 = st::fn_004049B7((char)this->field_0024);
   uVar6 = (int)(byte)uVar6;
   if (uVar6 == 1) {
     iVar12 = this->field_0024;
@@ -343,7 +343,7 @@ LAB_0045f710:
     bVar4 = bVar4 + 8;
   }
   this->field_0061 = bVar4;
-  this->field_00E3 = 1;
+  this->field_00E3 = '\x01';
   this->field_0062 = bVar4 >> 1;
   puVar1 = this->field_0097;
   this->field_00D3 = 1;
@@ -414,7 +414,7 @@ undefined4 __thiscall st::fn_0045FF50(STBoatC *this,int param_1)
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
-    this_00 = st::fn_00405CF9(*(char *)&this->field_0024,this->field_0030);
+    this_00 = st::fn_00405CF9((char)this->field_0024,this->field_0030);
     if (this_00 != nullptr) {
       st::fn_00402B26(this_00,(uint)(ushort)this->field_0032,'\0');
       iVar1 = st::fn_0040230B((AnonShape_0040D540_1BB7A4CF *)this_00,
@@ -899,6 +899,30 @@ void __thiscall st::fn_00481520(STBoatC *this,int param_1,int param_2,int param_
   return;
 }
 
+// 004838B0 STBoatC::sub_004838B0
+#line 4 "decomp/ST.exe/functions/004838B0/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 007905A0
+   Entries: 0040289C
+   Slots: 0xF8
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007905A0:62 calls=16
+   caller_families=2 receiver_extent=1113/2106; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=16; caller_families=2;
+   owner_type=/STBoatC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only */
+
+undefined4 __thiscall st::fn_004838B0(STBoatC *this)
+
+{
+  uint uVar1;
+  uVar1 = 1;
+  if ((this->field_0455 == 1) || (this->field_02C0 == 1)) {
+    uVar1 = 0;
+  }
+  return uVar1;
+}
+
 // 00486A40 STBoatC::FUN_00486a40
 #line 4 "decomp/ST.exe/functions/00486A40/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
@@ -973,7 +997,7 @@ void __thiscall st::fn_0048D930(STBoatC *this)
        ((-1 < sVar3 &&
         ((((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeZ)) &&
          ((pSVar4 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], pSVar4 != nullptr &&
-          (*(int *)&pSVar4->field_0x18 == this->field_04AB)))))))) {
+          (*(HoloTy **)&pSVar4->field_0x18 == this->field_04AB)))))))) {
       st::fn_00405691(pSVar4,this->field_0018);
       st::fn_00402CCA(pSVar4,this->field_0018);
     }

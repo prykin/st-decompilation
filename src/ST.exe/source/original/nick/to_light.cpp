@@ -65,7 +65,7 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
                               (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          local_1c.x = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
+          local_1c.x = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
         }
         sVar2 = this_00->field_0032;
@@ -74,7 +74,7 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
                               (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          local_1c.y = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
+          local_1c.y = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
         }
         local_1c.unknown = (int)this_00->field_0018;
@@ -87,7 +87,7 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
                               (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          local_1c.x = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
+          local_1c.x = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
         }
         sVar2 = this_00->field_0032;
@@ -96,7 +96,7 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
                               (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          local_1c.y = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
+          local_1c.y = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
         }
         local_1c.unknown = (int)this_00->field_0018;

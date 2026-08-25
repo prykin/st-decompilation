@@ -322,8 +322,8 @@ st::fn_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
   if (this->field_023D != 0) {
     /* ST_CALLSITE[0058408C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_00 = st::fn_004028BA
-                        (g_allPlayers_007FA174,*(char *)&this->field_0241,
-                         *(ushort *)&this->field_0x245,CASE_1);
+                        (g_allPlayers_007FA174,(char)this->field_0241,*(ushort *)&this->field_0x245,
+                         CASE_1);
     if ((this_00 != nullptr) &&
        /* ST_CALLSITE[0058409B]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
        (iVar1 = this_00->vfunc_F8(), iVar1 != 0)) {
@@ -340,7 +340,7 @@ st::fn_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
   st::fn_004018C5((STFishC *)this,&local_10,&local_e,&local_c);
   iVar1 = st::machine_word_boundary_cast<int>(this->field_001C * 0x41c64e6d + 0x3039);
   this->field_001C = iVar1;
-  local_14 = (int)(short)(((ushort)((uint)iVar1 >> 0x10) & 1) + 1);
+  local_14 = (short)(((ushort)((uint)iVar1 >> 0x10) & 1) + 1);
   uVar2 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
   this->field_001C = uVar2;
   if ((uVar2 >> 0x10) % 3 == 0) {
@@ -498,7 +498,7 @@ void __thiscall st::fn_005844E0(STJellyGunC *this,int param_1,int param_2,int so
                         (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    local_10.x = (int)(short)(((short)(param_1 / 0xc9) + sVar1) -
+    local_10.x = (short)(((short)(param_1 / 0xc9) + sVar1) -
                              (short)((longlong)param_1 * 0x28c1979 >> 0x3f));
   }
   sVar1 = (short)(param_2 >> 0x1f);
@@ -507,7 +507,7 @@ void __thiscall st::fn_005844E0(STJellyGunC *this,int param_1,int param_2,int so
                         (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    local_10.y = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
+    local_10.y = (short)(((short)(param_2 / 0xc9) + sVar1) -
                              (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
   }
   local_10.unknown = this->field_0018;

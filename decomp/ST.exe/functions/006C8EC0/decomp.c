@@ -188,7 +188,7 @@ cf_continue_loop_006C9187:
     if ((short)piVar22[3] <= *psVar2) {
       sVar7 = STField<short>(piVar22,10);
       GVar33 = (Global_sub_006C8EC0_param_3Enum)sVar7;
-      iVar24 = (int)(short)piVar22[3] + GVar33;
+      iVar24 = (short)piVar22[3] + GVar33;
       if (iVar24 < local_48) {
         local_48 = iVar24;
       }
@@ -637,7 +637,7 @@ cf_continue_loop_006C9187:
         piVar38 = piVar37;
         if (uVar28 == 0) {
           puVar34 = (ushort *)(psVar2 + -param_2);
-          if (((puVar34[1] == 0) || (iVar24 + 4 < (int)(short)puVar34[1])) &&
+          if (((puVar34[1] == 0) || (iVar24 + 4 < (short)puVar34[1])) &&
              (((*puVar34 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
             puVar34[1] = sVar8 + 4;
             piVar38 = (int *)*piVar37;
@@ -1290,7 +1290,7 @@ LAB_006ce57c:
         piVar38 = piVar37;
         if (uVar28 == 0) {
           puVar34 = (ushort *)(psVar2 + -param_2);
-          if (((puVar34[1] == 0) || (iVar24 + 4 < (int)(short)puVar34[1])) &&
+          if (((puVar34[1] == 0) || (iVar24 + 4 < (short)puVar34[1])) &&
              (((*puVar34 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
             puVar34[1] = sVar8 + 4;
             if (iVar36 < iVar21 + -1) {
@@ -1960,7 +1960,7 @@ LAB_006ce57c:
         piVar38 = piVar37;
         if (uVar28 == 0) {
           puVar34 = (ushort *)(psVar2 + -param_2);
-          if (((puVar34[1] == 0) || (iVar24 + 4 < (int)(short)puVar34[1])) &&
+          if (((puVar34[1] == 0) || (iVar24 + 4 < (short)puVar34[1])) &&
              (((*puVar34 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
             puVar34[1] = sVar8 + 4;
             if (iVar21 == 0) {
@@ -2655,7 +2655,7 @@ LAB_006ce57c:
         piVar38 = piVar37;
         if (uVar28 == 0) {
           puVar34 = (ushort *)(psVar2 + -param_2);
-          if (((puVar34[1] == 0) || (iVar24 + 4 < (int)(short)puVar34[1])) &&
+          if (((puVar34[1] == 0) || (iVar24 + 4 < (short)puVar34[1])) &&
              (((*puVar34 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
             puVar34[1] = sVar8 + 4;
             if (iVar21 == 0) {

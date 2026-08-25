@@ -34,43 +34,42 @@ void __fastcall FUN_0063e410(AnonShape_0063E410_6FBC68F2 *param_1)
     if (0 < iVar1) {
       do {
         iVar5 = param_1->field_0336;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (((local_8 < *(uint *)(iVar5 + 0xc)) &&
-            (iVar5 = *(int *)(iVar5 + 8) * local_8 + *(int *)(iVar5 + 0x1c), iVar5 != 0)) &&
-           (uVar2 = *(uint *)(iVar5 + 0x38), -1 < (int)uVar2)) {
-          if (*(int *)(iVar5 + 4) == 1) {
+        if (((local_8 < STField<uint>(iVar5,0xC)) &&
+            (iVar5 = STField<int>(iVar5,0x8) * local_8 + STField<int>(iVar5,0x1C), iVar5 != 0)) &&
+           (uVar2 = STField<uint>(iVar5,0x38), -1 < (int)uVar2)) {
+          if (STField<int>(iVar5,0x4) == 1) {
             if ((local_c <= (int)local_8) && ((int)local_8 < local_10)) {
-              *(undefined4 *)(iVar5 + 4) = 0;
+              STField<undefined4>(iVar5,0x4) = 0;
               ST3DSMAPContext::sub_006EA270
                         (param_1->field_0211,uVar2,0,
-                         *(uint *)(&DAT_007d1f98 + *(int *)(iVar5 + 0x20) * 4));
+                         *(uint *)(&DAT_007d1f98 + STField<int>(iVar5,0x20) * 4));
               Library::Ourlib::ST3DSMAP::SprMove
-                        (param_1->field_0211,*(uint *)(iVar5 + 0x38),
-                         (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                         (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
-                         *(float *)(iVar5 + 0x10) + _DAT_007904fc);
-              Library::Ourlib::ST3DSMAP::SprShow(param_1->field_0211,*(uint *)(iVar5 + 0x38),0);
+                        (param_1->field_0211,STField<uint>(iVar5,0x38),
+                         (float)STField<int>(iVar5,0x8) * _DAT_007904f8 * _DAT_007904f0,
+                         (float)STField<int>(iVar5,0xC) * _DAT_007904f8 * _DAT_007904f0,
+                         STField<float>(iVar5,0x10) + _DAT_007904fc);
+              Library::Ourlib::ST3DSMAP::SprShow(param_1->field_0211,STField<uint>(iVar5,0x38),0);
             }
           }
           else {
             uVar3 = g_playSystem_00802A38->field_00E4;
-            if ((1 < uVar3 - *(uint *)(iVar5 + 0x30)) || (uVar3 == *(uint *)(iVar5 + 0x30))) {
-              *(uint *)(iVar5 + 0x30) = uVar3;
-              iVar4 = *(int *)(iVar5 + 0x24) + -1;
-              if (*(int *)(iVar5 + 0x20) < iVar4) {
-                *(int *)(iVar5 + 0x20) = *(int *)(iVar5 + 0x20) + 1;
+            if ((1 < uVar3 - STField<uint>(iVar5,0x30)) || (uVar3 == STField<uint>(iVar5,0x30))) {
+              STField<uint>(iVar5,0x30) = uVar3;
+              iVar4 = STField<int>(iVar5,0x24) + -1;
+              if (STField<int>(iVar5,0x20) < iVar4) {
+                STField<int>(iVar5,0x20) = STField<int>(iVar5,0x20) + 1;
               }
               else {
-                *(int *)(iVar5 + 0x20) = iVar4;
+                STField<int>(iVar5,0x20) = iVar4;
               }
               ST3DSMAPContext::sub_006EA270
                         (param_1->field_0211,uVar2,0,
-                         *(uint *)(&DAT_007d1f98 + *(int *)(iVar5 + 0x20) * 4));
+                         *(uint *)(&DAT_007d1f98 + STField<int>(iVar5,0x20) * 4));
               Library::Ourlib::ST3DSMAP::SprMove
-                        (param_1->field_0211,*(uint *)(iVar5 + 0x38),
-                         (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                         (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
-                         *(float *)(iVar5 + 0x10) + _DAT_007904fc);
+                        (param_1->field_0211,STField<uint>(iVar5,0x38),
+                         (float)STField<int>(iVar5,0x8) * _DAT_007904f8 * _DAT_007904f0,
+                         (float)STField<int>(iVar5,0xC) * _DAT_007904f8 * _DAT_007904f0,
+                         STField<float>(iVar5,0x10) + _DAT_007904fc);
             }
           }
         }

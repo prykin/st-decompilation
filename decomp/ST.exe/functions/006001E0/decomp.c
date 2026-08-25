@@ -26,11 +26,11 @@ uint __thiscall FUN_006001e0(void *this,int param_1)
        *(undefined2 *)(iVar5 + 10 + STField<int>(this,0x233));
   if (((g_playSystem_00802A38->field_00E4 & 1) == 0) &&
      (iVar3 = STField<int>(this,0x233) + iVar5,
-     0x31 < (int)*(short *)(iVar3 + 4) - (int)*(short *)(iVar3 + 10))) {
+     0x31 < (int)STField<short>(iVar3,0x4) - (int)STField<short>(iVar3,0xA))) {
     /* ST_CALLSITE[00600278]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
     TraksClassTy::TraksCreate
-              (g_traksClass_00802A7C,1,1,0,(int)*(short *)(iVar3 + 0x12),
-               (int)*(short *)(iVar3 + 0x14),(int)*(short *)(iVar3 + 0x16),0,0,0,0,0,0,-1,0,0);
+              (g_traksClass_00802A7C,1,1,0,(int)STField<short>(iVar3,0x12),
+               (int)STField<short>(iVar3,0x14),(int)STField<short>(iVar3,0x16),0,0,0,0,0,0,-1,0,0);
   }
   iVar3 = STField<int>(this,0x233);
   psVar1 = (short *)(iVar5 + iVar3);
@@ -38,8 +38,8 @@ uint __thiscall FUN_006001e0(void *this,int param_1)
   if (iVar2 < *(int *)(iVar5 + 0x46 + iVar3)) {
     psVar1[3] = *(short *)(*(int *)(psVar1 + 0x27) + iVar2 * 6);
     iVar3 = STField<int>(this,0x233) + iVar5;
-    *(undefined2 *)(iVar3 + 8) =
-         *(undefined2 *)(*(int *)(iVar3 + 0x4e) + 2 + *(int *)(iVar3 + 0x4a) * 6);
+    STField<undefined2>(iVar3,0x8) =
+         *(undefined2 *)(STField<int>(iVar3,0x4E) + 2 + STField<int>(iVar3,0x4A) * 6);
     iVar3 = STField<int>(this,0x233);
     *(undefined2 *)(iVar5 + iVar3 + 10) =
          *(undefined2 *)(*(int *)(iVar5 + 0x4e + iVar3) + 4 + *(int *)(iVar5 + 0x4a + iVar3) * 6);
@@ -56,12 +56,12 @@ uint __thiscall FUN_006001e0(void *this,int param_1)
        *(int *)(iVar5 + 0x4a + STField<int>(this,0x233)) + 1;
 LAB_0060033c:
   iVar3 = STField<int>(this,0x233) + iVar5;
-  if ((99 < (int)*(short *)(iVar3 + 4) - (int)*(short *)(iVar3 + 10)) &&
+  if ((99 < (int)STField<short>(iVar3,0x4) - (int)STField<short>(iVar3,0xA)) &&
      (uVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
-                        ((AnonReceiver_00601500 *)((int)this + 0x1d5),(int)*(short *)(iVar3 + 6),
-                         (int)*(short *)(iVar3 + 8),(int)*(short *)(iVar3 + 10),
-                         (int)*(short *)(iVar3 + 0x12),(int)*(short *)(iVar3 + 0x14),
-                         (int)*(short *)(iVar3 + 0x16),STField<int>(this,0x20a),
+                        ((AnonReceiver_00601500 *)((int)this + 0x1d5),(int)STField<short>(iVar3,0x6),
+                         (int)STField<short>(iVar3,0x8),(int)STField<short>(iVar3,0xA),
+                         (int)STField<short>(iVar3,0x12),(int)STField<short>(iVar3,0x14),
+                         (int)STField<short>(iVar3,0x16),STField<int>(this,0x20a),
                          STField<int>(this,0x22a),STField<int>(this,0x220),
                          STField<ushort>(this,0x224),0xa9,0,0), uVar4 != 0)) {
     if (uVar4 == 1) {

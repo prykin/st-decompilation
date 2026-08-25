@@ -97,7 +97,7 @@ LAB_004b266b:
               }
               else {
                 this = g_worldGrid.cells
-                       [(int)sVar5 * (int)(short)uVar11 + (int)sVar12 * (int)g_worldGrid.planeStride
+                       [(int)sVar5 * (short)uVar11 + (int)sVar12 * (int)g_worldGrid.planeStride
                         + (int)sVar4].objects[0];
               }
               if (((this != nullptr) && (this[1].vtable < (STWorldObjectVTable *)0x8))

@@ -160,15 +160,15 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
       if (0 < iVar12) {
         do {
           iVar16 = *(int *)this;
-          if ((uVar11 < *(uint *)(iVar16 + 0xc)) &&
-             (iVar16 = *(int *)(iVar16 + 8) * uVar11 + *(int *)(iVar16 + 0x1c), iVar16 != 0)) {
+          if ((uVar11 < STField<uint>(iVar16,0xC)) &&
+             (iVar16 = STField<int>(iVar16,0x8) * uVar11 + STField<int>(iVar16,0x1C), iVar16 != 0)) {
             fVar17_mg1 = (float10)fcos((float10)STField<float>(this,0x7d) +
-                                       (float10)*(float *)(iVar16 + 0x21) +
+                                       (float10)STField<float>(iVar16,0x21) +
                                        (float10)(float)(((float10)fVar6 - (float10)fVar1) *
                                                         (fVar19_mg1 + fVar24_mgF) * fVar21_mg1 +
                                                        (float10)fVar2));
             fVar17_mg2 = (float10)fcos((float10)STField<float>(this,0x81) +
-                                       (float10)*(float *)(iVar16 + 0x21) +
+                                       (float10)STField<float>(iVar16,0x21) +
                                        (float10)(float)(((float10)fVar3 - (float10)fVar4) *
                                                         (fVar18_mg1 + fVar22_mg9) * fVar20_mg1 +
                                                        (float10)fVar5));
@@ -178,12 +178,12 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             lVar19 = Library::MSVCRT::__ftol();
             /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             fsin(extraout_ST1);
-            *(int *)(iVar16 + 0xd) = (int)lVar19 + STField<int>(this,0x95);
+            STField<int>(iVar16,0xD) = (int)lVar19 + STField<int>(this,0x95);
             lVar19 = Library::MSVCRT::__ftol();
             fcos((float10)(float)fVar17_mg1_2);
-            *(int *)(iVar16 + 0x11) = (int)lVar19 + STField<int>(this,0x99);
+            STField<int>(iVar16,0x11) = (int)lVar19 + STField<int>(this,0x99);
             lVar19 = Library::MSVCRT::__ftol();
-            *(int *)(iVar16 + 0x15) = (int)lVar19 + STField<int>(this,0x9d);
+            STField<int>(iVar16,0x15) = (int)lVar19 + STField<int>(this,0x9d);
           }
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < iVar12);
@@ -211,8 +211,8 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         uVar8 = uVar11;
         do {
           iVar16 = *(int *)this;
-          if ((uVar8 < *(uint *)(iVar16 + 0xc)) &&
-             (iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c), iVar16 != 0)) {
+          if ((uVar8 < STField<uint>(iVar16,0xC)) &&
+             (iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C), iVar16 != 0)) {
             fVar24_mgD = ((float10)local_18 * (float10)_DAT_0079d1a4) / (float10)param_1 +
                          (float10)STField<float>(this,0x8d) +
                          (float10)(fVar1_mg12 / (float)iVar12);
@@ -223,12 +223,12 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             fcos(fVar24_mgD);
             fsin(fVar24_mgD);
             lVar19 = Library::MSVCRT::__ftol();
-            *(int *)(iVar16 + 0xd) = (int)lVar19 + STField<int>(this,0x95);
+            STField<int>(iVar16,0xD) = (int)lVar19 + STField<int>(this,0x95);
             lVar19 = Library::MSVCRT::__ftol();
             fcos((float10)(float)fVar22_mg6);
-            *(int *)(iVar16 + 0x11) = (int)lVar19 + STField<int>(this,0x99);
+            STField<int>(iVar16,0x11) = (int)lVar19 + STField<int>(this,0x99);
             lVar19 = Library::MSVCRT::__ftol();
-            *(int *)(iVar16 + 0x15) = (int)lVar19 + STField<int>(this,0x9d);
+            STField<int>(iVar16,0x15) = (int)lVar19 + STField<int>(this,0x9d);
           }
           local_18 = local_18 + 2;
           local_14 = local_14 + 1;
@@ -240,10 +240,9 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
       if (0 < (int)uVar11) {
         do {
           iVar12 = *(int *)this;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((local_14 < *(uint *)(iVar12 + 0xc)) &&
-             (iVar12 = *(int *)(iVar12 + 8) * local_14 + *(int *)(iVar12 + 0x1c), iVar12 != 0)) {
-            fVar24_mgE = (float10)*(float *)(iVar12 + 0x21) + (float10)STField<float>(this,0x8d);
+          if ((local_14 < STField<uint>(iVar12,0xC)) &&
+             (iVar12 = STField<int>(iVar12,0x8) * local_14 + STField<int>(iVar12,0x1C), iVar12 != 0)) {
+            fVar24_mgE = (float10)STField<float>(iVar12,0x21) + (float10)STField<float>(this,0x8d);
             fVar22_mg7 = (float10)fsin(((float10)STField<int>(this,0x1d) * (float10)(int)local_14
                                        * (float10)_DAT_0079c5a4) /
                                        (float10)STField<int>(this,0x19) +
@@ -256,12 +255,12 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             fcos(fVar24_mgE);
             fsin(fVar24_mgE);
             lVar19 = Library::MSVCRT::__ftol();
-            *(int *)(iVar12 + 0xd) = (int)lVar19 + STField<int>(this,0x95);
+            STField<int>(iVar12,0xD) = (int)lVar19 + STField<int>(this,0x95);
             lVar19 = Library::MSVCRT::__ftol();
             fcos((float10)(float)fVar22_mg8);
-            *(int *)(iVar12 + 0x11) = (int)lVar19 + STField<int>(this,0x99);
+            STField<int>(iVar12,0x11) = (int)lVar19 + STField<int>(this,0x99);
             lVar19 = Library::MSVCRT::__ftol();
-            *(int *)(iVar12 + 0x15) = (int)lVar19 + STField<int>(this,0x9d);
+            STField<int>(iVar12,0x15) = (int)lVar19 + STField<int>(this,0x9d);
           }
           local_14 = local_14 + 1;
         } while ((int)local_14 < (int)uVar11);
@@ -316,10 +315,10 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
               if (*(int *)this != 0) {
                 for (; (int)uVar11 < iVar12; uVar11 = uVar11 + 1) {
                   iVar16 = *(int *)this;
-                  if ((uVar11 < *(uint *)(iVar16 + 0xc)) &&
-                     (iVar16 = *(int *)(iVar16 + 8) * uVar11 + *(int *)(iVar16 + 0x1c), iVar16 != 0)
+                  if ((uVar11 < STField<uint>(iVar16,0xC)) &&
+                     (iVar16 = STField<int>(iVar16,0x8) * uVar11 + STField<int>(iVar16,0x1C), iVar16 != 0)
                      ) {
-                    *(undefined4 *)(iVar16 + 8) = 0;
+                    STField<undefined4>(iVar16,0x8) = 0;
                   }
                 }
               }
@@ -332,9 +331,9 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           if (*(int *)this != 0) {
             for (; (int)uVar11 < iVar12; uVar11 = uVar11 + 1) {
               iVar16 = *(int *)this;
-              if ((uVar11 < *(uint *)(iVar16 + 0xc)) &&
-                 (iVar16 = *(int *)(iVar16 + 8) * uVar11 + *(int *)(iVar16 + 0x1c), iVar16 != 0)) {
-                *(undefined4 *)(iVar16 + 8) = 1;
+              if ((uVar11 < STField<uint>(iVar16,0xC)) &&
+                 (iVar16 = STField<int>(iVar16,0x8) * uVar11 + STField<int>(iVar16,0x1C), iVar16 != 0)) {
+                STField<undefined4>(iVar16,0x8) = 1;
               }
             }
           }
@@ -354,20 +353,20 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
                                         ((int)uVar11 / STField<int>(this,0x19)) * 4 + 0x21);
           }
           iVar16 = *(int *)this;
-          if ((uVar11 < *(uint *)(iVar16 + 0xc)) &&
-             (iVar16 = *(int *)(iVar16 + 8) * uVar11 + *(int *)(iVar16 + 0x1c), iVar16 != 0)) {
-            fVar18 = (float10)*(float *)(iVar16 + 0x21) + (float10)STField<float>(this,0x8d);
+          if ((uVar11 < STField<uint>(iVar16,0xC)) &&
+             (iVar16 = STField<int>(iVar16,0x8) * uVar11 + STField<int>(iVar16,0x1C), iVar16 != 0)) {
+            fVar18 = (float10)STField<float>(iVar16,0x21) + (float10)STField<float>(this,0x8d);
             fsin(fVar17);
             fcos(fVar18);
             fsin(fVar18);
             lVar19 = Library::MSVCRT::__ftol();
-            *(int *)(iVar16 + 0xd) = (int)lVar19 + STField<int>(this,0x95);
+            STField<int>(iVar16,0xD) = (int)lVar19 + STField<int>(this,0x95);
             lVar19 = Library::MSVCRT::__ftol();
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             fcos(extraout_ST0);
-            *(int *)(iVar16 + 0x11) = (int)lVar19 + STField<int>(this,0x99);
+            STField<int>(iVar16,0x11) = (int)lVar19 + STField<int>(this,0x99);
             lVar19 = Library::MSVCRT::__ftol();
-            *(int *)(iVar16 + 0x15) = (int)lVar19 + STField<int>(this,0x9d);
+            STField<int>(iVar16,0x15) = (int)lVar19 + STField<int>(this,0x9d);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             fVar17 = extraout_ST0_00;
           }
@@ -389,29 +388,29 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 0:
       iVar12 = *(int *)this;
       if (iVar12 != 0) {
-        uVar11 = *(uint *)(iVar12 + 0xc);
+        uVar11 = STField<uint>(iVar12,0xC);
         fVar1_mgB = (float)(g_playSystem_00802A38->field_00E4 - STField<int>(this,5)) *
                     STField<float>(this,0x81);
         if (fVar1_mgB < STField<float>(this,0x71)) {
           if (_DAT_0079034c < fVar1_mgB) {
             uVar8 = STField<int>(this,0x1d) * 2 - 1;
             if (uVar8 < uVar11) {
-              iVar12 = *(int *)(iVar12 + 8) * uVar8 + *(int *)(iVar12 + 0x1c);
+              iVar12 = STField<int>(iVar12,0x8) * uVar8 + STField<int>(iVar12,0x1C);
             }
             else {
               iVar12 = 0;
             }
-            *(undefined4 *)(iVar12 + 8) = 1;
-            *(float *)(iVar12 + 0x21) = fVar1_mgB + STField<float>(this,0x41);
+            STField<undefined4>(iVar12,0x8) = 1;
+            STField<float>(iVar12,0x21) = fVar1_mgB + STField<float>(this,0x41);
             iVar12 = *(int *)this;
-            if (uVar11 - 1 < *(uint *)(iVar12 + 0xc)) {
-              iVar12 = *(int *)(iVar12 + 8) * (uVar11 - 1) + *(int *)(iVar12 + 0x1c);
+            if (uVar11 - 1 < STField<uint>(iVar12,0xC)) {
+              iVar12 = STField<int>(iVar12,0x8) * (uVar11 - 1) + STField<int>(iVar12,0x1C);
             }
             else {
               iVar12 = 0;
             }
-            *(undefined4 *)(iVar12 + 8) = 1;
-            *(float *)(iVar12 + 0x21) = STField<float>(this,0x41) - fVar1_mgB;
+            STField<undefined4>(iVar12,0x8) = 1;
+            STField<float>(iVar12,0x21) = STField<float>(this,0x41) - fVar1_mgB;
           }
           lVar19 = Library::MSVCRT::__ftol();
           iVar12 = (int)lVar19;
@@ -425,39 +424,39 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             else {
               iVar12 = *(int *)(*(int *)this + 0x1c);
             }
-            *(undefined4 *)(iVar12 + 8) = 1;
-            *(undefined4 *)(iVar12 + 0x21) = STField<undefined4>(this,0x41);
+            STField<undefined4>(iVar12,0x8) = 1;
+            STField<undefined4>(iVar12,0x21) = STField<undefined4>(this,0x41);
           }
           else {
             iVar16 = 1;
-            auto param_2_after_write = iVar12; /* compiler stack-slot lifetime split */
+            int param_2_after_write = iVar12; /* compiler stack-slot lifetime split */
             if (0 < iVar12) {
               do {
                 param_2_after_write = param_2_after_write + -1;
                 if (iVar16 % 3 == 0) {
                   uVar8 = iVar16 / 3;
                   iVar15 = *(int *)this;
-                  if (uVar8 < *(uint *)(iVar15 + 0xc)) {
-                    iVar15 = *(int *)(iVar15 + 8) * uVar8 + *(int *)(iVar15 + 0x1c);
+                  if (uVar8 < STField<uint>(iVar15,0xC)) {
+                    iVar15 = STField<int>(iVar15,0x8) * uVar8 + STField<int>(iVar15,0x1C);
                   }
                   else {
                     iVar15 = 0;
                   }
-                  *(undefined4 *)(iVar15 + 8) = 1;
-                  *(float *)(iVar15 + 0x21) =
+                  STField<undefined4>(iVar15,0x8) = 1;
+                  STField<float>(iVar15,0x21) =
                        (float)param_2_after_write * STField<float>(this,0x75) + STField<float>(this,0x41)
                        + fVar1_mgC;
                   if (iVar12 != STField<int>(this,0x1d)) {
                     iVar15 = *(int *)this;
                     uVar8 = STField<int>(this,0x1d) / 2 + uVar8;
-                    if (uVar8 < *(uint *)(iVar15 + 0xc)) {
-                      iVar15 = *(int *)(iVar15 + 8) * uVar8 + *(int *)(iVar15 + 0x1c);
+                    if (uVar8 < STField<uint>(iVar15,0xC)) {
+                      iVar15 = STField<int>(iVar15,0x8) * uVar8 + STField<int>(iVar15,0x1C);
                     }
                     else {
                       iVar15 = 0;
                     }
-                    *(undefined4 *)(iVar15 + 8) = 1;
-                    *(float *)(iVar15 + 0x21) =
+                    STField<undefined4>(iVar15,0x8) = 1;
+                    STField<float>(iVar15,0x21) =
                          STField<float>(this,0x41) -
                          ((float)param_2_after_write * STField<float>(this,0x75) + fVar1_mgC);
                   }
@@ -466,22 +465,22 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
                   iVar15 = iVar16 % 3 + (iVar16 / 3) * 2;
                   uVar8 = iVar15 + STField<int>(this,0x1d) * 2;
                   iVar14 = *(int *)this;
-                  if (uVar8 < *(uint *)(iVar14 + 0xc)) {
-                    iVar14 = *(int *)(iVar14 + 8) * uVar8 + *(int *)(iVar14 + 0x1c);
+                  if (uVar8 < STField<uint>(iVar14,0xC)) {
+                    iVar14 = STField<int>(iVar14,0x8) * uVar8 + STField<int>(iVar14,0x1C);
                   }
                   else {
                     iVar14 = 0;
                   }
                   fVar6_mgF = (float)param_2_after_write;
-                  *(undefined4 *)(iVar14 + 8) = 1;
-                  *(float *)(iVar14 + 0x21) =
+                  STField<undefined4>(iVar14,0x8) = 1;
+                  STField<float>(iVar14,0x21) =
                        fVar6_mgF * STField<float>(this,0x75) + STField<float>(this,0x41) +
                        fVar1_mgC;
                   uVar8 = STField<int>(this,0x99) + iVar15;
                   iVar15 = *(int *)this;
-                  if (uVar8 < *(uint *)(iVar15 + 0xc)) {
-                    iVar14 = *(int *)(iVar15 + 8) * uVar8;
-                    iVar15 = *(int *)(iVar15 + 0x1c);
+                  if (uVar8 < STField<uint>(iVar15,0xC)) {
+                    iVar14 = STField<int>(iVar15,0x8) * uVar8;
+                    iVar15 = STField<int>(iVar15,0x1C);
                     *(undefined4 *)(iVar14 + 8 + iVar15) = 1;
                     *(float *)(iVar14 + iVar15 + 0x21) =
                          STField<float>(this,0x41) -
@@ -504,14 +503,14 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           if (0 < (int)uVar11) {
             do {
               iVar12 = *(int *)this;
-              if (uVar8 < *(uint *)(iVar12 + 0xc)) {
-                iVar12 = *(int *)(iVar12 + 8) * uVar8 + *(int *)(iVar12 + 0x1c);
+              if (uVar8 < STField<uint>(iVar12,0xC)) {
+                iVar12 = STField<int>(iVar12,0x8) * uVar8 + STField<int>(iVar12,0x1C);
               }
               else {
                 iVar12 = 0;
               }
               uVar8 = uVar8 + 1;
-              *(undefined4 *)(iVar12 + 8) = 0;
+              STField<undefined4>(iVar12,0x8) = 0;
             } while ((int)uVar8 < (int)uVar11);
           }
           local_14 = 0;
@@ -519,31 +518,30 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             param_1 = 2;
             do {
               iVar12 = *(int *)this;
-              if (local_14 < *(uint *)(iVar12 + 0xc)) {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                iVar12 = *(int *)(iVar12 + 8) * local_14 + *(int *)(iVar12 + 0x1c);
+              if (local_14 < STField<uint>(iVar12,0xC)) {
+                iVar12 = STField<int>(iVar12,0x8) * local_14 + STField<int>(iVar12,0x1C);
               }
               else {
                 iVar12 = 0;
               }
               fVar1_mgD = STField<float>(this,0x75);
-              *(undefined4 *)(iVar12 + 8) = 1;
-              *(float *)(iVar12 + 0x21) = (float)(int)local_14 * fVar1_mgD * _DAT_007904fc;
+              STField<undefined4>(iVar12,0x8) = 1;
+              STField<float>(iVar12,0x21) = (float)(int)local_14 * fVar1_mgD * _DAT_007904fc;
               iVar12 = *(int *)this;
               uVar8 = (STField<int>(this,0x1d) + local_14) * 2;
-              if (uVar8 < *(uint *)(iVar12 + 0xc)) {
-                iVar12 = *(int *)(iVar12 + 8) * uVar8 + *(int *)(iVar12 + 0x1c);
+              if (uVar8 < STField<uint>(iVar12,0xC)) {
+                iVar12 = STField<int>(iVar12,0x8) * uVar8 + STField<int>(iVar12,0x1C);
               }
               else {
                 iVar12 = 0;
               }
               fVar1_mgE = STField<float>(this,0x75);
-              *(undefined4 *)(iVar12 + 8) = 1;
-              *(float *)(iVar12 + 0x21) = (float)(param_1 + -1) * fVar1_mgE;
+              STField<undefined4>(iVar12,0x8) = 1;
+              STField<float>(iVar12,0x21) = (float)(param_1 + -1) * fVar1_mgE;
               uVar8 = (STField<int>(this,0x1d) + local_14) * 2 + 1;
               iVar12 = *(int *)this;
-              if (uVar8 < *(uint *)(iVar12 + 0xc)) {
-                iVar12 = *(int *)(iVar12 + 8) * uVar8 + *(int *)(iVar12 + 0x1c);
+              if (uVar8 < STField<uint>(iVar12,0xC)) {
+                iVar12 = STField<int>(iVar12,0x8) * uVar8 + STField<int>(iVar12,0x1C);
               }
               else {
                 iVar12 = 0;
@@ -552,8 +550,8 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
               local_14 = local_14 + 1;
               param_1 = param_1 + 3;
               fVar1_mgF = STField<float>(this,0x75);
-              *(undefined4 *)(iVar12 + 8) = 1;
-              *(float *)(iVar12 + 0x21) = fVar6_mg10 * fVar1_mgF;
+              STField<undefined4>(iVar12,0x8) = 1;
+              STField<float>(iVar12,0x21) = fVar6_mg10 * fVar1_mgF;
             } while ((int)local_14 < STField<int>(this,0x1d));
           }
         }
@@ -561,22 +559,22 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         if (0 < (int)uVar11) {
           do {
             iVar12 = *(int *)this;
-            if (((uVar8 < *(uint *)(iVar12 + 0xc)) &&
-                (iVar12 = *(int *)(iVar12 + 8) * uVar8 + *(int *)(iVar12 + 0x1c), iVar12 != 0)) &&
-               (*(int *)(iVar12 + 8) == 1)) {
+            if (((uVar8 < STField<uint>(iVar12,0xC)) &&
+                (iVar12 = STField<int>(iVar12,0x8) * uVar8 + STField<int>(iVar12,0x1C), iVar12 != 0)) &&
+               (STField<int>(iVar12,0x8) == 1)) {
               fVar6 = STField<float>(this,0x45);
-              fVar24_mgB = (float10)*(float *)(iVar12 + 0x21) +
+              fVar24_mgB = (float10)STField<float>(iVar12,0x21) +
                            (float10)STField<float>(this,0x41);
               fsin((float10)fVar6);
               fcos(fVar24_mgB);
               fsin(fVar24_mgB);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar12 + 0xd) = (int)lVar19 + STField<int>(this,0x8d);
+              STField<int>(iVar12,0xD) = (int)lVar19 + STField<int>(this,0x8d);
               lVar19 = Library::MSVCRT::__ftol();
               fcos((float10)fVar6);
-              *(int *)(iVar12 + 0x11) = (int)lVar19 + STField<int>(this,0x91);
+              STField<int>(iVar12,0x11) = (int)lVar19 + STField<int>(this,0x91);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar12 + 0x15) = (int)lVar19 + STField<int>(this,0x95);
+              STField<int>(iVar12,0x15) = (int)lVar19 + STField<int>(this,0x95);
             }
             uVar8 = uVar8 + 1;
           } while ((int)uVar8 < (int)uVar11);
@@ -601,54 +599,54 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           if (0 < iVar16) {
             do {
               iVar15 = *(int *)this;
-              if (uVar11 < *(uint *)(iVar15 + 0xc)) {
-                iVar14 = *(int *)(iVar15 + 8) * uVar11 + *(int *)(iVar15 + 0x1c);
+              if (uVar11 < STField<uint>(iVar15,0xC)) {
+                iVar14 = STField<int>(iVar15,0x8) * uVar11 + STField<int>(iVar15,0x1C);
               }
               else {
                 iVar14 = 0;
               }
-              if (iVar16 + uVar11 < *(uint *)(iVar15 + 0xc)) {
-                iVar16 = *(int *)(iVar15 + 8) * (iVar16 + uVar11) + *(int *)(iVar15 + 0x1c);
+              if (iVar16 + uVar11 < STField<uint>(iVar15,0xC)) {
+                iVar16 = STField<int>(iVar15,0x8) * (iVar16 + uVar11) + STField<int>(iVar15,0x1C);
               }
               else {
                 iVar16 = 0;
               }
-              *(undefined4 *)(iVar16 + 0x21) = *(undefined4 *)(iVar14 + 0x21);
-              *(undefined4 *)(iVar16 + 8) = 1;
+              STField<undefined4>(iVar16,0x21) = STField<undefined4>(iVar14,0x21);
+              STField<undefined4>(iVar16,0x8) = 1;
               iVar16 = *(int *)this;
               uVar8 = (STField<int>(this,0x1d) + uVar11) * 2;
-              if (uVar8 < *(uint *)(iVar16 + 0xc)) {
-                iVar15 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c);
+              if (uVar8 < STField<uint>(iVar16,0xC)) {
+                iVar15 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C);
               }
               else {
                 iVar15 = 0;
               }
               uVar8 = (uVar11 + STField<int>(this,0x1d) * 2) * 2;
-              if (uVar8 < *(uint *)(iVar16 + 0xc)) {
-                iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c);
+              if (uVar8 < STField<uint>(iVar16,0xC)) {
+                iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C);
               }
               else {
                 iVar16 = 0;
               }
-              *(undefined4 *)(iVar16 + 0x21) = *(undefined4 *)(iVar15 + 0x21);
-              *(undefined4 *)(iVar16 + 8) = 1;
+              STField<undefined4>(iVar16,0x21) = STField<undefined4>(iVar15,0x21);
+              STField<undefined4>(iVar16,0x8) = 1;
               uVar8 = (STField<int>(this,0x1d) + uVar11) * 2 + 1;
               iVar16 = *(int *)this;
-              if (uVar8 < *(uint *)(iVar16 + 0xc)) {
-                iVar15 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c);
+              if (uVar8 < STField<uint>(iVar16,0xC)) {
+                iVar15 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C);
               }
               else {
                 iVar15 = 0;
               }
               uVar8 = (uVar11 + STField<int>(this,0x1d) * 2) * 2 + 1;
-              if (uVar8 < *(uint *)(iVar16 + 0xc)) {
-                iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c);
+              if (uVar8 < STField<uint>(iVar16,0xC)) {
+                iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C);
               }
               else {
                 iVar16 = 0;
               }
-              *(undefined4 *)(iVar16 + 0x21) = *(undefined4 *)(iVar15 + 0x21);
-              *(undefined4 *)(iVar16 + 8) = 1;
+              STField<undefined4>(iVar16,0x21) = STField<undefined4>(iVar15,0x21);
+              STField<undefined4>(iVar16,0x8) = 1;
               iVar16 = STField<int>(this,0x1d);
               uVar11 = uVar11 + 1;
             } while ((int)uVar11 < iVar16);
@@ -673,21 +671,21 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         if (0 < iVar12) {
           do {
             iVar16 = *(int *)this;
-            if (((uVar11 < *(uint *)(iVar16 + 0xc)) &&
-                (iVar16 = *(int *)(iVar16 + 8) * uVar11 + *(int *)(iVar16 + 0x1c), iVar16 != 0)) &&
-               (*(int *)(iVar16 + 8) == 1)) {
+            if (((uVar11 < STField<uint>(iVar16,0xC)) &&
+                (iVar16 = STField<int>(iVar16,0x8) * uVar11 + STField<int>(iVar16,0x1C), iVar16 != 0)) &&
+               (STField<int>(iVar16,0x8) == 1)) {
               fVar6 = STField<float>(this,0x45);
-              fVar24_mgA = (float10)fVar1_mgA + (float10)*(float *)(iVar16 + 0x21);
+              fVar24_mgA = (float10)fVar1_mgA + (float10)STField<float>(iVar16,0x21);
               fsin((float10)fVar6);
               fcos(fVar24_mgA);
               fsin(fVar24_mgA);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0xd) = (int)lVar19 + STField<int>(this,0x8d);
+              STField<int>(iVar16,0xD) = (int)lVar19 + STField<int>(this,0x8d);
               lVar19 = Library::MSVCRT::__ftol();
               fcos((float10)fVar6);
-              *(int *)(iVar16 + 0x11) = (int)lVar19 + STField<int>(this,0x91);
+              STField<int>(iVar16,0x11) = (int)lVar19 + STField<int>(this,0x91);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0x15) = (int)lVar19 + STField<int>(this,0x95);
+              STField<int>(iVar16,0x15) = (int)lVar19 + STField<int>(this,0x95);
             }
             uVar11 = uVar11 + 1;
           } while ((int)uVar11 < iVar12);
@@ -709,38 +707,38 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         if (0 < iVar16) {
           do {
             iVar15 = *(int *)this;
-            if (iVar16 + uVar11 < *(uint *)(iVar15 + 0xc)) {
-              iVar16 = *(int *)(iVar15 + 8) * (iVar16 + uVar11) + *(int *)(iVar15 + 0x1c);
+            if (iVar16 + uVar11 < STField<uint>(iVar15,0xC)) {
+              iVar16 = STField<int>(iVar15,0x8) * (iVar16 + uVar11) + STField<int>(iVar15,0x1C);
             }
             else {
               iVar16 = 0;
             }
             fVar6_mg8 = STField<float>(this,0x81);
-            *(undefined4 *)(iVar16 + 8) = 1;
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + fVar6_mg8;
+            STField<undefined4>(iVar16,0x8) = 1;
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + fVar6_mg8;
             iVar16 = *(int *)this;
             uVar8 = (uVar11 + STField<int>(this,0x1d) * 2) * 2;
-            if (uVar8 < *(uint *)(iVar16 + 0xc)) {
-              iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c);
+            if (uVar8 < STField<uint>(iVar16,0xC)) {
+              iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C);
             }
             else {
               iVar16 = 0;
             }
             fVar6_mg9 = STField<float>(this,0x81);
-            *(undefined4 *)(iVar16 + 8) = 1;
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + fVar6_mg9;
+            STField<undefined4>(iVar16,0x8) = 1;
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + fVar6_mg9;
             iVar16 = *(int *)this;
             uVar8 = (uVar11 + STField<int>(this,0x1d) * 2) * 2 + 1;
-            if (uVar8 < *(uint *)(iVar16 + 0xc)) {
-              iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c);
+            if (uVar8 < STField<uint>(iVar16,0xC)) {
+              iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C);
             }
             else {
               iVar16 = 0;
             }
             fVar6_mgA = STField<float>(this,0x81);
-            *(undefined4 *)(iVar16 + 8) = 1;
+            STField<undefined4>(iVar16,0x8) = 1;
             uVar11 = uVar11 + 1;
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + fVar6_mgA;
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + fVar6_mgA;
             iVar16 = STField<int>(this,0x1d);
           } while ((int)uVar11 < iVar16);
         }
@@ -748,21 +746,21 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         if (0 < iVar12) {
           do {
             iVar16 = *(int *)this;
-            if (((uVar11 < *(uint *)(iVar16 + 0xc)) &&
-                (iVar16 = *(int *)(iVar16 + 8) * uVar11 + *(int *)(iVar16 + 0x1c), iVar16 != 0)) &&
-               (*(int *)(iVar16 + 8) == 1)) {
+            if (((uVar11 < STField<uint>(iVar16,0xC)) &&
+                (iVar16 = STField<int>(iVar16,0x8) * uVar11 + STField<int>(iVar16,0x1C), iVar16 != 0)) &&
+               (STField<int>(iVar16,0x8) == 1)) {
               fVar6 = STField<float>(this,0x45);
-              fVar24_mg8 = (float10)fVar1_mg7 + (float10)*(float *)(iVar16 + 0x21);
+              fVar24_mg8 = (float10)fVar1_mg7 + (float10)STField<float>(iVar16,0x21);
               fsin((float10)fVar6);
               fcos(fVar24_mg8);
               fsin(fVar24_mg8);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0xd) = (int)lVar19 + STField<int>(this,0x8d);
+              STField<int>(iVar16,0xD) = (int)lVar19 + STField<int>(this,0x8d);
               lVar19 = Library::MSVCRT::__ftol();
               fcos((float10)fVar6);
-              *(int *)(iVar16 + 0x11) = (int)lVar19 + STField<int>(this,0x91);
+              STField<int>(iVar16,0x11) = (int)lVar19 + STField<int>(this,0x91);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0x15) = (int)lVar19 + STField<int>(this,0x95);
+              STField<int>(iVar16,0x15) = (int)lVar19 + STField<int>(this,0x95);
             }
             uVar11 = uVar11 + 1;
           } while ((int)uVar11 < iVar12);
@@ -792,15 +790,15 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             STField<float>(this,0x55) =
                  (float)(((float10)STField<float>(this,0x6d) -
                          (float10)STField<float>(this,0x45)) / fVar24_mg9);
-            if (*(int *)(iVar12 + 0xc) == 0) {
+            if (STField<int>(iVar12,0xC) == 0) {
               iVar16 = 0;
             }
             else {
-              iVar16 = *(int *)(iVar12 + 0x1c);
+              iVar16 = STField<int>(iVar12,0x1C);
             }
             iVar15 = STField<int>(this,0x19);
             fVar1_mg8 = ABS(*(float *)(STField<int>(this,0x39) + iVar15 * 4) -
-                            *(float *)(iVar16 + 0x21));
+                            STField<float>(iVar16,0x21));
             STField<float>(this,0x49) = fVar1_mg8;
             if (STField<float>(this,0x89) < fVar1_mg8) {
               Library::MSVCRT::__ftol();
@@ -818,14 +816,14 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
               STField<float>(this,0x49) =
                    STField<float>(this,0x49) - STField<float>(this,0x89);
             }
-            if (STField<uint>(this,0x1d) < *(uint *)(iVar12 + 0xc)) {
-              iVar12 = *(int *)(iVar12 + 8) * STField<uint>(this,0x1d) + *(int *)(iVar12 + 0x1c);
+            if (STField<uint>(this,0x1d) < STField<uint>(iVar12,0xC)) {
+              iVar12 = STField<int>(iVar12,0x8) * STField<uint>(this,0x1d) + STField<int>(iVar12,0x1C);
             }
             else {
               iVar12 = 0;
             }
             fVar1_mg9 = ABS(*(float *)(STField<int>(this,0x39) + -4 + iVar15 * 8) -
-                            *(float *)(iVar12 + 0x21));
+                            STField<float>(iVar12,0x21));
             STField<float>(this,0x4d) = fVar1_mg9;
             if (STField<float>(this,0x89) < fVar1_mg9) {
               Library::MSVCRT::__ftol();
@@ -864,77 +862,77 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         if (0 < STField<int>(this,0x1d)) {
           do {
             iVar16 = *(int *)this;
-            if (uVar11 < *(uint *)(iVar16 + 0xc)) {
-              iVar16 = *(int *)(iVar16 + 8) * uVar11 + *(int *)(iVar16 + 0x1c);
+            if (uVar11 < STField<uint>(iVar16,0xC)) {
+              iVar16 = STField<int>(iVar16,0x8) * uVar11 + STField<int>(iVar16,0x1C);
             }
             else {
               iVar16 = 0;
             }
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + STField<float>(this,0x59);
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + STField<float>(this,0x59);
             fVar4_mg0 = STField<float>(this,0x51);
-            *(undefined4 *)(iVar16 + 8) = 1;
-            *(float *)(iVar16 + 0x25) = *(float *)(iVar16 + 0x25) + fVar4_mg0;
+            STField<undefined4>(iVar16,0x8) = 1;
+            STField<float>(iVar16,0x25) = STField<float>(iVar16,0x25) + fVar4_mg0;
             iVar16 = *(int *)this;
             uVar8 = (STField<int>(this,0x1d) + uVar11) * 2;
-            if (uVar8 < *(uint *)(iVar16 + 0xc)) {
-              iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c);
+            if (uVar8 < STField<uint>(iVar16,0xC)) {
+              iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C);
             }
             else {
               iVar16 = 0;
             }
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + STField<float>(this,0x59);
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + STField<float>(this,0x59);
             fVar4_mg1 = STField<float>(this,0x51);
-            *(undefined4 *)(iVar16 + 8) = 1;
-            *(float *)(iVar16 + 0x25) = *(float *)(iVar16 + 0x25) + fVar4_mg1;
+            STField<undefined4>(iVar16,0x8) = 1;
+            STField<float>(iVar16,0x25) = STField<float>(iVar16,0x25) + fVar4_mg1;
             iVar16 = *(int *)this;
             uVar8 = (STField<int>(this,0x1d) + uVar11) * 2 + 1;
-            if (uVar8 < *(uint *)(iVar16 + 0xc)) {
-              iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c);
+            if (uVar8 < STField<uint>(iVar16,0xC)) {
+              iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C);
             }
             else {
               iVar16 = 0;
             }
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + STField<float>(this,0x59);
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + STField<float>(this,0x59);
             fVar4_mg2 = STField<float>(this,0x51);
-            *(undefined4 *)(iVar16 + 8) = 1;
-            *(float *)(iVar16 + 0x25) = *(float *)(iVar16 + 0x25) + fVar4_mg2;
+            STField<undefined4>(iVar16,0x8) = 1;
+            STField<float>(iVar16,0x25) = STField<float>(iVar16,0x25) + fVar4_mg2;
             iVar16 = *(int *)this;
             uVar8 = STField<int>(this,0x1d) + uVar11;
-            if (uVar8 < *(uint *)(iVar16 + 0xc)) {
-              iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c);
+            if (uVar8 < STField<uint>(iVar16,0xC)) {
+              iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C);
             }
             else {
               iVar16 = 0;
             }
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + STField<float>(this,0x5d);
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + STField<float>(this,0x5d);
             fVar4_mg3 = STField<float>(this,0x55);
-            *(undefined4 *)(iVar16 + 8) = 1;
-            *(float *)(iVar16 + 0x25) = fVar4_mg3 + *(float *)(iVar16 + 0x25);
+            STField<undefined4>(iVar16,0x8) = 1;
+            STField<float>(iVar16,0x25) = fVar4_mg3 + STField<float>(iVar16,0x25);
             iVar16 = *(int *)this;
             uVar8 = (uVar11 + STField<int>(this,0x1d) * 2) * 2;
-            if (uVar8 < *(uint *)(iVar16 + 0xc)) {
-              iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c);
+            if (uVar8 < STField<uint>(iVar16,0xC)) {
+              iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C);
             }
             else {
               iVar16 = 0;
             }
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + STField<float>(this,0x5d);
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + STField<float>(this,0x5d);
             fVar4_mg4 = STField<float>(this,0x55);
-            *(undefined4 *)(iVar16 + 8) = 1;
-            *(float *)(iVar16 + 0x25) = fVar4_mg4 + *(float *)(iVar16 + 0x25);
+            STField<undefined4>(iVar16,0x8) = 1;
+            STField<float>(iVar16,0x25) = fVar4_mg4 + STField<float>(iVar16,0x25);
             uVar8 = (uVar11 + STField<int>(this,0x1d) * 2) * 2 + 1;
             iVar16 = *(int *)this;
-            if (uVar8 < *(uint *)(iVar16 + 0xc)) {
-              iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c);
+            if (uVar8 < STField<uint>(iVar16,0xC)) {
+              iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C);
             }
             else {
               iVar16 = 0;
             }
             uVar11 = uVar11 + 1;
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + STField<float>(this,0x5d);
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + STField<float>(this,0x5d);
             fVar4_mg5 = STField<float>(this,0x55);
-            *(undefined4 *)(iVar16 + 8) = 1;
-            *(float *)(iVar16 + 0x25) = fVar4_mg5 + *(float *)(iVar16 + 0x25);
+            STField<undefined4>(iVar16,0x8) = 1;
+            STField<float>(iVar16,0x25) = fVar4_mg5 + STField<float>(iVar16,0x25);
           } while ((int)uVar11 < STField<int>(this,0x1d));
         }
         iVar16 = STField<int>(this,0x35);
@@ -952,13 +950,13 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
               do {
                 iVar16 = *(int *)this;
                 uVar11 = (iVar15 + 5) * iVar14 + iVar13;
-                if ((uVar11 < *(uint *)(iVar16 + 0xc)) &&
-                   (iVar16 = *(int *)(iVar16 + 8) * uVar11 + *(int *)(iVar16 + 0x1c), iVar16 != 0))
+                if ((uVar11 < STField<uint>(iVar16,0xC)) &&
+                   (iVar16 = STField<int>(iVar16,0x8) * uVar11 + STField<int>(iVar16,0x1C), iVar16 != 0))
                 {
-                  *(float *)(iVar16 + 0x25) = fVar4_mg6 - fVar1_mg5;
+                  STField<float>(iVar16,0x25) = fVar4_mg6 - fVar1_mg5;
                   fVar5_mg0 = STField<float>(this,0x75);
-                  *(undefined4 *)(iVar16 + 8) = 1;
-                  *(float *)(iVar16 + 0x21) = (float)param_1 * fVar5_mg0 + fVar2_mg1;
+                  STField<undefined4>(iVar16,0x8) = 1;
+                  STField<float>(iVar16,0x21) = (float)param_1 * fVar5_mg0 + fVar2_mg1;
                 }
                 iVar13 = iVar13 + 1;
                 param_1 = param_1 + 3;
@@ -982,13 +980,13 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
               do {
                 iVar13 = *(int *)this;
                 uVar11 = (iVar16 + 4) * iVar15 + iVar14;
-                if ((uVar11 < *(uint *)(iVar13 + 0xc)) &&
-                   (iVar15 = *(int *)(iVar13 + 8) * uVar11 + *(int *)(iVar13 + 0x1c), iVar15 != 0))
+                if ((uVar11 < STField<uint>(iVar13,0xC)) &&
+                   (iVar15 = STField<int>(iVar13,0x8) * uVar11 + STField<int>(iVar13,0x1C), iVar15 != 0))
                 {
-                  *(float *)(iVar15 + 0x25) = fVar1_mg6 - fVar2_mg2;
+                  STField<float>(iVar15,0x25) = fVar1_mg6 - fVar2_mg2;
                   fVar4_mg7 = STField<float>(this,0x75);
-                  *(undefined4 *)(iVar15 + 8) = 1;
-                  *(float *)(iVar15 + 0x21) = (float)param_1 * fVar4_mg7 + fVar3_mg1;
+                  STField<undefined4>(iVar15,0x8) = 1;
+                  STField<float>(iVar15,0x21) = (float)param_1 * fVar4_mg7 + fVar3_mg1;
                 }
                 iVar14 = iVar14 + 1;
                 param_1 = param_1 + 3;
@@ -1002,22 +1000,22 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         if (0 < iVar12) {
           do {
             iVar16 = *(int *)this;
-            if (((uVar11 < *(uint *)(iVar16 + 0xc)) &&
-                (iVar16 = *(int *)(iVar16 + 8) * uVar11 + *(int *)(iVar16 + 0x1c), iVar16 != 0)) &&
-               (*(int *)(iVar16 + 8) == 1)) {
-              fVar24_mg7 = (float10)fVar6_mg5 + (float10)*(float *)(iVar16 + 0x21);
-              fVar22_mg4 = (float10)*(float *)(iVar16 + 0x25) +
+            if (((uVar11 < STField<uint>(iVar16,0xC)) &&
+                (iVar16 = STField<int>(iVar16,0x8) * uVar11 + STField<int>(iVar16,0x1C), iVar16 != 0)) &&
+               (STField<int>(iVar16,0x8) == 1)) {
+              fVar24_mg7 = (float10)fVar6_mg5 + (float10)STField<float>(iVar16,0x21);
+              fVar22_mg4 = (float10)STField<float>(iVar16,0x25) +
                            (float10)STField<float>(this,0x45);
               fsin(fVar22_mg4);
               fcos(fVar24_mg7);
               fsin(fVar24_mg7);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0xd) = (int)lVar19 + STField<int>(this,0x8d);
+              STField<int>(iVar16,0xD) = (int)lVar19 + STField<int>(this,0x8d);
               lVar19 = Library::MSVCRT::__ftol();
               fcos((float10)(float)fVar22_mg4);
-              *(int *)(iVar16 + 0x11) = (int)lVar19 + STField<int>(this,0x91);
+              STField<int>(iVar16,0x11) = (int)lVar19 + STField<int>(this,0x91);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0x15) = (int)lVar19 + STField<int>(this,0x95);
+              STField<int>(iVar16,0x15) = (int)lVar19 + STField<int>(this,0x95);
             }
             uVar11 = uVar11 + 1;
           } while ((int)uVar11 < iVar12);
@@ -1048,22 +1046,22 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         if (0 < iVar12) {
           do {
             iVar16 = *(int *)this;
-            if (((uVar8 < *(uint *)(iVar16 + 0xc)) &&
-                (iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c), iVar16 != 0)) &&
-               (*(int *)(iVar16 + 8) == 1)) {
-              fVar24_mg4 = fVar24_mg5 + (float10)*(float *)(iVar16 + 0x21);
-              fVar22_mg3 = (float10)*(float *)(iVar16 + 0x25) +
+            if (((uVar8 < STField<uint>(iVar16,0xC)) &&
+                (iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C), iVar16 != 0)) &&
+               (STField<int>(iVar16,0x8) == 1)) {
+              fVar24_mg4 = fVar24_mg5 + (float10)STField<float>(iVar16,0x21);
+              fVar22_mg3 = (float10)STField<float>(iVar16,0x25) +
                            (float10)STField<float>(this,0x45);
               fsin(fVar22_mg3);
               fcos(fVar24_mg4);
               fsin(fVar24_mg4);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0xd) = (int)lVar19 + STField<int>(this,0x8d);
+              STField<int>(iVar16,0xD) = (int)lVar19 + STField<int>(this,0x8d);
               lVar19 = Library::MSVCRT::__ftol();
               fcos((float10)(float)fVar22_mg3);
-              *(int *)(iVar16 + 0x11) = (int)lVar19 + STField<int>(this,0x91);
+              STField<int>(iVar16,0x11) = (int)lVar19 + STField<int>(this,0x91);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0x15) = (int)lVar19 + STField<int>(this,0x95);
+              STField<int>(iVar16,0x15) = (int)lVar19 + STField<int>(this,0x95);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               fVar24_mg5 = extraout_ST0_05;
             }
@@ -1107,41 +1105,41 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         if (0 < iVar16) {
           do {
             iVar15 = *(int *)this;
-            if (iVar16 + uVar11 < *(uint *)(iVar15 + 0xc)) {
-              iVar16 = *(int *)(iVar15 + 8) * (iVar16 + uVar11) + *(int *)(iVar15 + 0x1c);
+            if (iVar16 + uVar11 < STField<uint>(iVar15,0xC)) {
+              iVar16 = STField<int>(iVar15,0x8) * (iVar16 + uVar11) + STField<int>(iVar15,0x1C);
             }
             else {
               iVar16 = 0;
             }
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + STField<float>(this,0x5d);
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + STField<float>(this,0x5d);
             fVar6_mg2 = STField<float>(this,0x55);
-            *(undefined4 *)(iVar16 + 8) = 1;
-            *(float *)(iVar16 + 0x25) = fVar6_mg2 + *(float *)(iVar16 + 0x25);
+            STField<undefined4>(iVar16,0x8) = 1;
+            STField<float>(iVar16,0x25) = fVar6_mg2 + STField<float>(iVar16,0x25);
             iVar16 = *(int *)this;
             uVar10 = (uVar11 + STField<int>(this,0x1d) * 2) * 2;
-            if (uVar10 < *(uint *)(iVar16 + 0xc)) {
-              iVar16 = *(int *)(iVar16 + 8) * uVar10 + *(int *)(iVar16 + 0x1c);
+            if (uVar10 < STField<uint>(iVar16,0xC)) {
+              iVar16 = STField<int>(iVar16,0x8) * uVar10 + STField<int>(iVar16,0x1C);
             }
             else {
               iVar16 = 0;
             }
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + STField<float>(this,0x5d);
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + STField<float>(this,0x5d);
             fVar6_mg3 = STField<float>(this,0x55);
-            *(undefined4 *)(iVar16 + 8) = 1;
-            *(float *)(iVar16 + 0x25) = fVar6_mg3 + *(float *)(iVar16 + 0x25);
+            STField<undefined4>(iVar16,0x8) = 1;
+            STField<float>(iVar16,0x25) = fVar6_mg3 + STField<float>(iVar16,0x25);
             iVar16 = *(int *)this;
             uVar10 = (uVar11 + STField<int>(this,0x1d) * 2) * 2 + 1;
-            if (uVar10 < *(uint *)(iVar16 + 0xc)) {
-              iVar16 = *(int *)(iVar16 + 8) * uVar10 + *(int *)(iVar16 + 0x1c);
+            if (uVar10 < STField<uint>(iVar16,0xC)) {
+              iVar16 = STField<int>(iVar16,0x8) * uVar10 + STField<int>(iVar16,0x1C);
             }
             else {
               iVar16 = 0;
             }
             uVar11 = uVar11 + 1;
-            *(float *)(iVar16 + 0x21) = *(float *)(iVar16 + 0x21) + STField<float>(this,0x5d);
+            STField<float>(iVar16,0x21) = STField<float>(iVar16,0x21) + STField<float>(this,0x5d);
             fVar6_mg4 = STField<float>(this,0x55);
-            *(undefined4 *)(iVar16 + 8) = 1;
-            *(float *)(iVar16 + 0x25) = fVar6_mg4 + *(float *)(iVar16 + 0x25);
+            STField<undefined4>(iVar16,0x8) = 1;
+            STField<float>(iVar16,0x25) = fVar6_mg4 + STField<float>(iVar16,0x25);
             iVar16 = STField<int>(this,0x1d);
           } while ((int)uVar11 < iVar16);
         }
@@ -1155,13 +1153,13 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             do {
               iVar13 = *(int *)this;
               uVar11 = (iVar16 + 3) * iVar15 + iVar14;
-              if (uVar11 < *(uint *)(iVar13 + 0xc)) {
-                iVar15 = *(int *)(iVar13 + 8) * uVar11 + *(int *)(iVar13 + 0x1c);
+              if (uVar11 < STField<uint>(iVar13,0xC)) {
+                iVar15 = STField<int>(iVar13,0x8) * uVar11 + STField<int>(iVar13,0x1C);
               }
               else {
                 iVar15 = 0;
               }
-              *(undefined4 *)(iVar15 + 8) = 0;
+              STField<undefined4>(iVar15,0x8) = 0;
               iVar15 = STField<int>(this,0x1d);
               iVar14 = iVar14 + 1;
             } while (iVar14 < iVar15);
@@ -1172,22 +1170,22 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         if (0 < iVar12) {
           do {
             iVar16 = *(int *)this;
-            if (((uVar11 < *(uint *)(iVar16 + 0xc)) &&
-                (iVar16 = *(int *)(iVar16 + 8) * uVar11 + *(int *)(iVar16 + 0x1c), iVar16 != 0)) &&
-               (*(int *)(iVar16 + 8) == 1)) {
-              fVar24_mg2 = fVar24_mg3 + (float10)*(float *)(iVar16 + 0x21);
-              fVar22_mg2 = (float10)*(float *)(iVar16 + 0x25) +
+            if (((uVar11 < STField<uint>(iVar16,0xC)) &&
+                (iVar16 = STField<int>(iVar16,0x8) * uVar11 + STField<int>(iVar16,0x1C), iVar16 != 0)) &&
+               (STField<int>(iVar16,0x8) == 1)) {
+              fVar24_mg2 = fVar24_mg3 + (float10)STField<float>(iVar16,0x21);
+              fVar22_mg2 = (float10)STField<float>(iVar16,0x25) +
                            (float10)STField<float>(this,0x45);
               fsin(fVar22_mg2);
               fcos(fVar24_mg2);
               fsin(fVar24_mg2);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0xd) = (int)lVar19 + STField<int>(this,0x8d);
+              STField<int>(iVar16,0xD) = (int)lVar19 + STField<int>(this,0x8d);
               lVar19 = Library::MSVCRT::__ftol();
               fcos((float10)(float)fVar22_mg2);
-              *(int *)(iVar16 + 0x11) = (int)lVar19 + STField<int>(this,0x91);
+              STField<int>(iVar16,0x11) = (int)lVar19 + STField<int>(this,0x91);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0x15) = (int)lVar19 + STField<int>(this,0x95);
+              STField<int>(iVar16,0x15) = (int)lVar19 + STField<int>(this,0x95);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               fVar24_mg3 = extraout_ST0_08;
             }
@@ -1222,23 +1220,23 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         if (0 < iVar12) {
           do {
             iVar16 = *(int *)this;
-            if (((uVar8 < *(uint *)(iVar16 + 0xc)) &&
-                (iVar16 = *(int *)(iVar16 + 8) * uVar8 + *(int *)(iVar16 + 0x1c), iVar16 != 0)) &&
-               (*(int *)(iVar16 + 8) == 1)) {
+            if (((uVar8 < STField<uint>(iVar16,0xC)) &&
+                (iVar16 = STField<int>(iVar16,0x8) * uVar8 + STField<int>(iVar16,0x1C), iVar16 != 0)) &&
+               (STField<int>(iVar16,0x8) == 1)) {
               fVar24_mg1 = (float10)((float)uVar11 * fVar1_mg2 + fVar6_mg1) +
-                           (float10)*(float *)(iVar16 + 0x21);
-              fVar22_mg0 = (float10)*(float *)(iVar16 + 0x25) +
+                           (float10)STField<float>(iVar16,0x21);
+              fVar22_mg0 = (float10)STField<float>(iVar16,0x25) +
                            (float10)STField<float>(this,0x45);
               fsin(fVar22_mg0);
               fcos(fVar24_mg1);
               fsin(fVar24_mg1);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0xd) = (int)lVar19 + STField<int>(this,0x8d);
+              STField<int>(iVar16,0xD) = (int)lVar19 + STField<int>(this,0x8d);
               lVar19 = Library::MSVCRT::__ftol();
               fcos((float10)(float)fVar22_mg0);
-              *(int *)(iVar16 + 0x11) = (int)lVar19 + STField<int>(this,0x91);
+              STField<int>(iVar16,0x11) = (int)lVar19 + STField<int>(this,0x91);
               lVar19 = Library::MSVCRT::__ftol();
-              *(int *)(iVar16 + 0x15) = (int)lVar19 + STField<int>(this,0x95);
+              STField<int>(iVar16,0x15) = (int)lVar19 + STField<int>(this,0x95);
             }
             uVar8 = uVar8 + 1;
           } while ((int)uVar8 < iVar12);
@@ -1260,11 +1258,11 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
       if (0 < iVar16 * 2) {
         do {
           iVar15 = *(int *)this;
-          if ((uVar11 < *(uint *)(iVar15 + 0xc)) &&
-             (iVar15 = *(int *)(iVar15 + 8) * uVar11 + *(int *)(iVar15 + 0x1c), iVar15 != 0)) {
-            fVar1_mg0 = *(float *)(iVar15 + 0x21) + STField<float>(this,0x8d);
+          if ((uVar11 < STField<uint>(iVar15,0xC)) &&
+             (iVar15 = STField<int>(iVar15,0x8) * uVar11 + STField<int>(iVar15,0x1C), iVar15 != 0)) {
+            fVar1_mg0 = STField<float>(iVar15,0x21) + STField<float>(this,0x8d);
             if ((int)uVar11 < iVar16) {
-              fVar6 = *(float *)(iVar15 + 0x25);
+              fVar6 = STField<float>(iVar15,0x25);
             }
             else {
               fVar6 = STField<float>(this,0x71);
@@ -1273,13 +1271,13 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             fcos((float10)fVar1_mg0);
             fsin((float10)fVar1_mg0);
             lVar19 = Library::MSVCRT::__ftol();
-            *(int *)(iVar15 + 0xd) = (int)lVar19 + STField<int>(this,0x95);
+            STField<int>(iVar15,0xD) = (int)lVar19 + STField<int>(this,0x95);
             lVar19 = Library::MSVCRT::__ftol();
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             fcos(extraout_ST0_10);
-            *(int *)(iVar15 + 0x11) = (int)lVar19 + STField<int>(this,0x99);
+            STField<int>(iVar15,0x11) = (int)lVar19 + STField<int>(this,0x99);
             lVar19 = Library::MSVCRT::__ftol();
-            *(int *)(iVar15 + 0x15) = (int)lVar19 + STField<int>(this,0x9d);
+            STField<int>(iVar15,0x15) = (int)lVar19 + STField<int>(this,0x9d);
           }
           iVar16 = STField<int>(this,0x1d);
           uVar11 = uVar11 + 1;
@@ -1287,33 +1285,33 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
       }
       for (uVar11 = STField<int>(this,0x1d) * 2; (int)uVar11 < iVar12; uVar11 = uVar11 + 1) {
         iVar16 = *(int *)this;
-        if ((uVar11 < *(uint *)(iVar16 + 0xc)) &&
-           (iVar16 = *(int *)(iVar16 + 8) * uVar11 + *(int *)(iVar16 + 0x1c), iVar16 != 0)) {
-          uVar8 = g_playSystem_00802A38->field_00E4 - *(int *)(iVar16 + 0x35);
-          fVar24_mg0 = (float10)*(float *)(iVar16 + 0x21) + (float10)STField<float>(this,0x8d);
+        if ((uVar11 < STField<uint>(iVar16,0xC)) &&
+           (iVar16 = STField<int>(iVar16,0x8) * uVar11 + STField<int>(iVar16,0x1C), iVar16 != 0)) {
+          uVar8 = g_playSystem_00802A38->field_00E4 - STField<int>(iVar16,0x35);
+          fVar24_mg0 = (float10)STField<float>(iVar16,0x21) + (float10)STField<float>(this,0x8d);
           fVar1_mg1 = (float)uVar8 * STField<float>(this,0x85) +
                       (float)(uVar8 * uVar8) * STField<float>(this,0x89) * _DAT_0079d1ac +
-                      *(float *)(iVar16 + 0x25);
+                      STField<float>(iVar16,0x25);
           if (fVar1_mg1 <= STField<float>(this,0x71)) {
-            *(undefined4 *)(iVar16 + 8) = 1;
+            STField<undefined4>(iVar16,0x8) = 1;
           }
           else {
-            *(undefined4 *)(iVar16 + 8) = 0;
+            STField<undefined4>(iVar16,0x8) = 0;
           }
           if (STField<float>(this,0x79) < fVar1_mg1) {
-            *(undefined4 *)(iVar16 + 0x25) = STField<undefined4>(this,0x65);
-            *(uint *)(iVar16 + 0x35) = g_playSystem_00802A38->field_00E4;
+            STField<undefined4>(iVar16,0x25) = STField<undefined4>(this,0x65);
+            STField<uint>(iVar16,0x35) = g_playSystem_00802A38->field_00E4;
           }
           fsin((float10)fVar1_mg1);
           fcos(fVar24_mg0);
           fsin(fVar24_mg0);
           lVar19 = Library::MSVCRT::__ftol();
-          *(int *)(iVar16 + 0xd) = (int)lVar19 + STField<int>(this,0x95);
+          STField<int>(iVar16,0xD) = (int)lVar19 + STField<int>(this,0x95);
           lVar19 = Library::MSVCRT::__ftol();
           fcos((float10)fVar1_mg1);
-          *(int *)(iVar16 + 0x11) = (int)lVar19 + STField<int>(this,0x99);
+          STField<int>(iVar16,0x11) = (int)lVar19 + STField<int>(this,0x99);
           lVar19 = Library::MSVCRT::__ftol();
-          *(int *)(iVar16 + 0x15) = (int)lVar19 + STField<int>(this,0x9d);
+          STField<int>(iVar16,0x15) = (int)lVar19 + STField<int>(this,0x9d);
         }
       }
       if (STField<float>(this,0x71) < STField<float>(this,0x79)) {

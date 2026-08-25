@@ -90,11 +90,11 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
     case MESS_SHARED_C0A3:
       iVar7 = (&this_00->field_027A)[(byte)this_00->field_0278];
       if ((iVar7 == 0) ||
-         (iVar5 = SVar1 + this_00->field_0199, *(uint *)(iVar7 + 0xc) <= iVar5 - 0xc09fU)) {
+         (iVar5 = SVar1 + this_00->field_0199, STField<uint>(iVar7,0xC) <= iVar5 - 0xc09fU)) {
         puVar6 = nullptr;
       }
       else {
-        puVar6 = (undefined4 *)((iVar5 + -0xc09f) * *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0x1c));
+        puVar6 = (undefined4 *)((iVar5 + -0xc09f) * STField<int>(iVar7,0x8) + STField<int>(iVar7,0x1C));
       }
       if ((puVar6 != nullptr) && (((char *)puVar6)[2] != '\0')) {
         sStack_f = 0;

@@ -100,7 +100,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
         g_currentExceptionFrame = local_6c.previous;
         return;
       }
-      /* ST_CALLSITE[005A181B]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[005A181B]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage */
       this_02->GetMessage(&local_28);
       g_currentExceptionFrame = local_6c.previous;
       return;

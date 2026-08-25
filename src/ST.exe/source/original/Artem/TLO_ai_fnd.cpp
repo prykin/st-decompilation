@@ -616,8 +616,8 @@ cf_break_loop_004B60CD:
       } while ((int)uVar24 < (int)g_array_007FA16C->count);
     }
     iVar28 = param_2[5];
-    if ((iVar28 != 0) && (*(int *)(iVar28 + 0xc) != 0)) {
-      *(undefined4 *)(iVar28 + 4) = 0;
+    if ((iVar28 != 0) && (STField<int>(iVar28,0xC) != 0)) {
+      STField<undefined4>(iVar28,0x4) = 0;
       pDVar11 = (DArrayTy *)param_2[5];
       *(undefined4 *)((st_stack_frame + 16) + iVar20) = 0x4b3f01;
       local_EAX_2860 = st::fn_006B1190(pDVar11,(byte *)&local_a0);
@@ -677,8 +677,8 @@ cf_break_loop_004B60CD:
       } while ((int)uVar24 < (int)pDVar11->count);
     }
     iVar28 = param_2[5];
-    if ((iVar28 != 0) && (*(int *)(iVar28 + 0xc) != 0)) {
-      *(undefined4 *)(iVar28 + 4) = 0;
+    if ((iVar28 != 0) && (STField<int>(iVar28,0xC) != 0)) {
+      STField<undefined4>(iVar28,0x4) = 0;
       pDVar11 = (DArrayTy *)param_2[5];
       *(undefined4 *)((st_stack_frame + 16) + iVar20) = 0x4b4055;
       iVar13 = st::fn_006B1190(pDVar11,(byte *)&local_a0);
@@ -1117,7 +1117,7 @@ LAB_004b4f35:
                                       (*(DArrayTy **)((st_stack_frame + 12) + iVar20),
                                        *(void **)((st_stack_frame + 16) + iVar20));
                             iVar28 = param_2[3];
-                            *(int *)((st_stack_frame + 16) + iVar20) = *(int *)(iVar28 + 4) + -1;
+                            *(int *)((st_stack_frame + 16) + iVar20) = STField<int>(iVar28,0x4) + -1;
                             *(int *)((st_stack_frame + 12) + iVar20) = iVar28;
                             *(undefined4 *)((st_stack_frame + 8) + iVar20) = 0x4b56dd;
                             st::fn_006B0C70(*(DArrayTy **)((st_stack_frame + 12) + iVar20),
@@ -1164,7 +1164,7 @@ LAB_004b5635:
                                       (*(DArrayTy **)((st_stack_frame + 12) + iVar20),
                                        *(void **)((st_stack_frame + 16) + iVar20));
                             iVar28 = param_2[3];
-                            *(int *)((st_stack_frame + 16) + iVar20) = *(int *)(iVar28 + 4) + -1;
+                            *(int *)((st_stack_frame + 16) + iVar20) = STField<int>(iVar28,0x4) + -1;
                             *(int *)((st_stack_frame + 12) + iVar20) = iVar28;
                             *(undefined4 *)((st_stack_frame + 8) + iVar20) = 0x4b5e2e;
                             st::fn_006B0C70(*(DArrayTy **)((st_stack_frame + 12) + iVar20),
@@ -1289,7 +1289,7 @@ LAB_004b50f4:
                                         (*(DArrayTy **)((st_stack_frame + 12) + iVar20),
                                          *(void **)((st_stack_frame + 16) + iVar20));
                               iVar28 = param_2[3];
-                              *(int *)((st_stack_frame + 16) + iVar20) = *(int *)(iVar28 + 4) + -1;
+                              *(int *)((st_stack_frame + 16) + iVar20) = STField<int>(iVar28,0x4) + -1;
                               *(int *)((st_stack_frame + 12) + iVar20) = iVar28;
                               *(undefined4 *)((st_stack_frame + 8) + iVar20) = 0x4b5844;
                               st::fn_006B0C70(*(DArrayTy **)((st_stack_frame + 12) + iVar20),
@@ -1400,7 +1400,7 @@ LAB_004b51da:
                                         (*(DArrayTy **)((st_stack_frame + 12) + iVar20),
                                          *(void **)((st_stack_frame + 16) + iVar20));
                               iVar28 = param_2[3];
-                              *(int *)((st_stack_frame + 16) + iVar20) = *(int *)(iVar28 + 4) + -1;
+                              *(int *)((st_stack_frame + 16) + iVar20) = STField<int>(iVar28,0x4) + -1;
                               *(int *)((st_stack_frame + 12) + iVar20) = iVar28;
                               *(undefined4 *)((st_stack_frame + 8) + iVar20) = 0x4b59b1;
                               st::fn_006B0C70(*(DArrayTy **)((st_stack_frame + 12) + iVar20),
@@ -1516,7 +1516,7 @@ LAB_004b52b6:
                                         (*(DArrayTy **)((st_stack_frame + 12) + iVar20),
                                          *(void **)((st_stack_frame + 16) + iVar20));
                               iVar28 = param_2[3];
-                              *(int *)((st_stack_frame + 16) + iVar20) = *(int *)(iVar28 + 4) + -1;
+                              *(int *)((st_stack_frame + 16) + iVar20) = STField<int>(iVar28,0x4) + -1;
                               *(int *)((st_stack_frame + 12) + iVar20) = iVar28;
                               *(undefined4 *)((st_stack_frame + 8) + iVar20) = 0x4b5b1e;
                               st::fn_006B0C70(*(DArrayTy **)((st_stack_frame + 12) + iVar20),
@@ -1700,7 +1700,7 @@ LAB_004b52b6:
                                         (*(DArrayTy **)((st_stack_frame + 12) + iVar20),
                                          *(void **)((st_stack_frame + 16) + iVar20));
                               iVar28 = param_2[3];
-                              *(int *)((st_stack_frame + 16) + iVar20) = *(int *)(iVar28 + 4) + -1;
+                              *(int *)((st_stack_frame + 16) + iVar20) = STField<int>(iVar28,0x4) + -1;
                               *(int *)((st_stack_frame + 12) + iVar20) = iVar28;
                               *(undefined4 *)((st_stack_frame + 8) + iVar20) = 0x4b5c85;
                               st::fn_006B0C70(*(DArrayTy **)((st_stack_frame + 12) + iVar20),
@@ -1955,7 +1955,7 @@ LAB_004b432d:
                 if ((uVar24 < 8) &&
                    ((g_playSystem_00802A38 == nullptr ||
                     (g_bulkInitializedRecords_008087C7[uVar24].field_0022 < 8)))) {
-                  bVar3 = *(byte *)&local_58->field_0024;
+                  bVar3 = (byte)local_58->field_0024;
                   if (g_app_00806728->field_146F == '\0') {
                     if (bVar3 == (byte)param_1) {
                       iVar15 = 0;

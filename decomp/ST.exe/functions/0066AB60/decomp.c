@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0066AB60 -> 004357F0 @ 0066AB8E */
@@ -26,10 +28,10 @@ int FUN_0066ab60(char playerId,byte *param_2,byte *param_3)
     }
     if ((g_allPlayers_007FA174 != nullptr) &&
        (iVar4 = thunk_FUN_0042a9c0(playerId), iVar4 != 0)) {
-      uVar2 = *(uint *)(iVar4 + 0xc);
+      uVar2 = STField<uint>(iVar4,0xC);
       while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
-        if (uVar2 < *(uint *)(iVar4 + 0xc)) {
-          piVar5 = (int *)(*(int *)(iVar4 + 8) * uVar2 + *(int *)(iVar4 + 0x1c));
+        if (uVar2 < STField<uint>(iVar4,0xC)) {
+          piVar5 = (int *)(STField<int>(iVar4,0x8) * uVar2 + STField<int>(iVar4,0x1C));
         }
         else {
           piVar5 = nullptr;

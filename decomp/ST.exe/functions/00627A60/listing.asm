@@ -1,4 +1,4 @@
-FUN_00627a60:
+STMineSetC::sub_00627A60:
 00627A60  8B 81 AE 02 00 00         MOV EAX,dword ptr [ECX + 0x2ae]
 00627A66  83 F8 02                  CMP EAX,0x2
 00627A69  74 15                     JZ 0x00627a80

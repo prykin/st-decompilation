@@ -45,7 +45,7 @@ void __cdecl StartStrateg(AnonShape_00648C10_30A1BBFD *strategData,uint param_2)
       thunk_FUN_00648dd0(param_2);
     }
     local_8 = strategData;
-    *(uint *)((int)&strategData->field_0002 + 2) = param_2;
+    STField<uint>(strategData,0x4) = param_2;
     strategData->field_0067 = (short)g_bulkInitializedRecords_008087C7[param_2].field_0024;
     strategData->field_0069 = (short)g_bulkInitializedRecords_008087C7[param_2].field_0028;
     strategData->field_006B = (short)g_bulkInitializedRecords_008087C7[param_2].field_002C;

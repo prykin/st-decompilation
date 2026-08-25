@@ -1,7 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefined4 param_2)
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079D4AC
+   Entries: 00402644
+   Slots: 0xD8
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:54 calls=12
+   caller_families=9 receiver_extent=638/649; unique_owner_for_target */
+
+undefined4 __fastcall STTorpC::sub_00643E20(AnonShape_00643E20_B7FEAA75 *param_1,undefined4 param_2)
 
 {
   byte *puVar1;
@@ -43,7 +51,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar8,
                       &local_1c,&local_20), iVar9 < 0)) ||
          (((4 < iVar9 || (local_1c < 0)) ||
-          (((int)pVVar3->field_0030 <= local_1c ||
+          ((pVVar3->field_0030 <= local_1c ||
            ((local_20 = g_centeredOffsets5[iVar9] + local_20, local_20 < 0 ||
             (pVVar3->field_0034 <= local_20)))))))) || (pVVar3->field_004C == nullptr)) ||
        (pVVar3->field_004C[local_1c + local_20 * pVVar3->field_0030] != 0)) {
@@ -77,7 +85,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
     }
     if (bVar7 == 8) {
       Library::Ourlib::ST3DSMAP::SprRstLev(param_1->field_0211,param_1->field_01ED);
-      uVar6 = thunk_FUN_0041da30((AnonShape_0041DA30_EF7DF530 *)param_1);
+      uVar6 = thunk_FUN_0041da30((RecoveredRecord_STTorpC_0041DA30 *)param_1);
       return uVar6;
     }
   }
@@ -189,7 +197,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
     STT3DSprC::StopShow((STT3DSprC *)&param_1->field_0x1d5,1);
   }
 cf_common_exit_0064428F:
-  uVar6 = thunk_FUN_0041da30((AnonShape_0041DA30_EF7DF530 *)param_1);
+  uVar6 = thunk_FUN_0041da30((RecoveredRecord_STTorpC_0041DA30 *)param_1);
   return uVar6;
 }
 

@@ -385,7 +385,7 @@ LAB_005b1da4:
         if ((message->arg0).u32 < uVar27) {
           if (this_01->array_00BC[0xc].field_01DF == '\x03') {
             this_01->field_002D = 0x6956;
-            /* ST_CALLSITE[005B1C4E]: CALL dword ptr [EAX] */
+            /* ST_CALLSITE[005B1C4E]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
           }
           else {
@@ -479,7 +479,7 @@ LAB_005b1b6c:
           case 1:
           case 2:
             this_01->field_002D = 0x694a;
-            /* ST_CALLSITE[005B1C9B]: CALL dword ptr [EDX] */
+            /* ST_CALLSITE[005B1C9B]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
             break;
           case 4:
@@ -487,14 +487,14 @@ LAB_005b1b6c:
           case 0xc:
           case 0x13:
             this_01->field_002D = 0x694e;
-            /* ST_CALLSITE[005B1CB1]: CALL dword ptr [EDX] */
+            /* ST_CALLSITE[005B1CB1]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
             break;
           case 9:
           case 10:
           case 0xb:
             this_01->field_002D = 0x6949;
-            /* ST_CALLSITE[005B1C85]: CALL dword ptr [EAX] */
+            /* ST_CALLSITE[005B1C85]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage */
             this_01->GetMessage((STMessage *)&this_01->field_0x1d);
           }
         }
@@ -534,7 +534,7 @@ LAB_005b1b6c:
       if (DAT_008067a0 != '\0') {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar24 = *(int *)(this_01->array_00BC[0xc].field_01DB + 0x686);
-        if (*(int *)(iVar24 + 8) < 1) {
+        if (STField<int>(iVar24,0x8) < 1) {
           pcVar15 = nullptr;
         }
         else {
@@ -545,7 +545,7 @@ LAB_005b1b6c:
         if (CONCAT31(extraout_var,bVar11) != 0) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar24 = *(int *)(this_01->array_00BC[0xc].field_01DB + 0x686);
-          if (*(int *)(iVar24 + 8) < 1) {
+          if (STField<int>(iVar24,0x8) < 1) {
             /* ST_CALLSITE[005B1F59]: CALL dword ptr [0x0085c064] */
             CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,nullptr);
           }
@@ -615,10 +615,10 @@ LAB_005b2011:
               (*(DArrayTy **)(this_01->array_00BC[0xc].field_01DB + 0x686),0,&CHAR_00h_008016a0);
     iVar24 = this_01->array_00BC[0xc].field_01DB;
     this_01->field_002D = 0x33;
-    uVar14 = *(undefined4 *)(iVar24 + 0x686);
+    uVar14 = STField<undefined4>(iVar24,0x686);
     this_01->field_0031 = (short)uVar14;
     this_01->field_0033 = (short)((uint)uVar14 >> 0x10);
-    FUN_006e6080(this_01,2,*(undefined4 *)(iVar24 + 0x54c),(undefined4 *)&this_01->field_0x1d);
+    FUN_006e6080(this_01,2,STField<undefined4>(iVar24,0x54C),(undefined4 *)&this_01->field_0x1d);
     goto cf_common_exit_005B2053;
   }
   if (SVar3 == MESS_CHOOSEMAPTY_6956) {
@@ -1068,7 +1068,7 @@ LAB_005b1644:
           /* ST_CALLSITE[005B17C4]: CALL dword ptr [EDX + 0x8] */
           this_01->CloseButtons();
           iVar24 = this_01->array_00BC[0xc].field_01DB;
-          if (*(int *)(iVar24 + 0x2e6) != 0) {
+          if (STField<int>(iVar24,0x2E6) != 0) {
             local_38 = 0;
             local_3c = 0x10001;
             local_34 = 0;
@@ -1102,7 +1102,7 @@ LAB_005b1644:
     /* ST_CALLSITE[005B1864]: CALL dword ptr [EDX + 0x8] */
     this_01->CloseButtons();
     iVar24 = this_01->array_00BC[0xc].field_01DB;
-    if (*(int *)(iVar24 + 0x2e6) != 0) {
+    if (STField<int>(iVar24,0x2E6) != 0) {
       local_18 = 0;
       local_14 = 0;
       local_1c = 0x10101;
@@ -1263,7 +1263,7 @@ switchD_005b1362_caseD_6:
     /* ST_CALLSITE[005B13B2]: CALL dword ptr [EAX + 0x8] */
     this_01->CloseButtons();
     iVar24 = this_01->array_00BC[0xc].field_01DB;
-    if (*(int *)(iVar24 + 0x2e6) != 0) {
+    if (STField<int>(iVar24,0x2E6) != 0) {
       local_28 = 0;
       local_24 = 0;
       local_2c = 0x10101;

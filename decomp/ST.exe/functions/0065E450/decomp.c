@@ -83,7 +83,7 @@ LAB_0065e58d:
           uVar6 = LookupRecordByte((char)this->field_023D);
           iVar3 = this->field_0235;
           /* ST_CALLSITE[0065E575]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-          uVar7 = LookupRecordByte(*(char *)&this->field_0024);
+          uVar7 = LookupRecordByte((char)this->field_0024);
           uVar7 = (int)(byte)uVar7;
           if ((&DAT_007e1984)[uVar7 + ((uint)(byte)uVar6 + iVar3 * 3) * 3] != '\0')
           goto LAB_0065e58d;

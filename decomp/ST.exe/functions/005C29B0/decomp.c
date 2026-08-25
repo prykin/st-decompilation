@@ -123,7 +123,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       uVar17 = 0x694d;
     }
     local_18->field_002D = uVar17;
-    /* ST_CALLSITE[005C42BF]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[005C42BF]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/SettMapMTy;pointer:/SubmarineTitans/Recovered/STMessage */
     local_18->GetMessage((STMessage *)&local_18->field_0x1d);
     return;
   }

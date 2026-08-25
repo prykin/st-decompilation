@@ -156,7 +156,8 @@ LAB_0053998d:
 0053999A  83 C6 18                  ADD ESI,0x18
 0053999D  8B 01                     MOV EAX,dword ptr [ECX]
 0053999F  56                        PUSH ESI
-005399A0  FF 10                     CALL dword ptr [EAX]
+PausePanelTy::GetMessage::override::prt_5399a0_74f246b9:
+005399A0  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_005399a2:
 005399A2  8B 4D B8                  MOV ECX,dword ptr [EBP + -0x48]
 005399A5  33 C0                     XOR EAX,EAX

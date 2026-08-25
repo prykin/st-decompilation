@@ -18,11 +18,11 @@ void __thiscall FUN_0068fa00(void *this,uint *param_1)
 
   uVar2 = 0;
   iVar1 = STField<int>(this,0xa5);
-  if (0 < *(int *)(iVar1 + 0xc)) {
-    bVar4 = *(int *)(iVar1 + 0xc) != 0;
+  if (0 < STField<int>(iVar1,0xC)) {
+    bVar4 = STField<int>(iVar1,0xC) != 0;
     do {
       if (bVar4) {
-        iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
+        iVar1 = STField<int>(iVar1,0x8) * uVar2 + STField<int>(iVar1,0x1C);
       }
       else {
         iVar1 = 0;
@@ -42,8 +42,8 @@ void __thiscall FUN_0068fa00(void *this,uint *param_1)
       }
       iVar1 = STField<int>(this,0xa5);
       uVar2 = uVar2 + 1;
-      bVar4 = uVar2 < *(uint *)(iVar1 + 0xc);
-    } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));
+      bVar4 = uVar2 < STField<uint>(iVar1,0xC);
+    } while ((int)uVar2 < (int)STField<uint>(iVar1,0xC));
   }
   return;
 }

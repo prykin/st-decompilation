@@ -141,10 +141,10 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
         return 0;
       }
       iVar5 = st::fn_004019E7(0,0,g_worldGrid.sizeX + -1,g_worldGrid.sizeY + -1,(int)this_00,
-                                 (int)(short)((message->arg0).words.low * 0xc9 + 100),
-                                 (int)(short)((message->arg1).words.low * 0xc9 + 100),
-                                 (int)(short)((message->arg0).words.high * 0xc9 + 100),
-                                 (int)(short)((message->arg1).words.high * 0xc9 + 100),
+                                 (short)((message->arg0).words.low * 0xc9 + 100),
+                                 (short)((message->arg1).words.low * 0xc9 + 100),
+                                 (short)((message->arg0).words.high * 0xc9 + 100),
+                                 (short)((message->arg1).words.high * 0xc9 + 100),
                                  (undefined2 *)&local_1c,st::pointer_boundary_cast<undefined2 *>(local_24),(short *)&local_20);
       if (iVar5 == 0) {
         g_currentExceptionFrame = local_88.previous;
@@ -203,7 +203,7 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
     pAVar10 = local_c;
     memmove(pAVar10, puVar7, 0x28); /* compiler REP MOVS byte copy */
     *(undefined4 *)&local_c->field_0xc = 2;
-    *(uint *)&local_c->field_0x28 = this_00->field_0245;
+    *(undefined4 *)&local_c->field_0x28 = this_00->field_0245;
     *(STOctopusC_field_0249State *)&local_c->field_0x2c = this_00->field_0249;
     *(short *)&local_c->field_0x78 = this_00->field_0041;
     *(short *)&local_c->field_0x7a = this_00->field_0043;
@@ -213,15 +213,15 @@ int __thiscall st::fn_00589C10(STOctopusC *this,STMessage *message)
     *(int *)&local_c->field_0x48 = this_00->field_0251;
     *(int *)&local_c->field_0x4c = this_00->field_0255;
     local_c->field_0050 = this_00->field_0259;
-    *(undefined4 *)&local_c->field_0x54 = this_00->field_025D;
-    *(undefined4 *)&local_c->field_0x58 = this_00->field_0261;
-    *(undefined4 *)&local_c->field_0x5c = this_00->field_0265;
+    *(int *)&local_c->field_0x54 = this_00->field_025D;
+    *(int *)&local_c->field_0x58 = this_00->field_0261;
+    *(int *)&local_c->field_0x5c = this_00->field_0265;
     *(int *)&local_c->field_0x60 = this_00->field_0269;
     *(int *)&local_c->field_0x64 = this_00->field_026D;
-    *(undefined4 *)&local_c->field_0x68 = this_00->field_0271;
-    *(undefined4 *)&local_c->field_0x6c = this_00->field_0275;
+    *(int *)&local_c->field_0x68 = this_00->field_0271;
+    *(int *)&local_c->field_0x6c = this_00->field_0275;
     *(undefined4 *)&local_c->field_0x70 = this_00->field_0279;
-    *(undefined4 *)&local_c->field_0x74 = this_00->field_027D;
+    *(int *)&local_c->field_0x74 = this_00->field_027D;
     *(int *)&local_c->field_0x38 = this_00->field_0239;
     local_c->field_003C = this_00->field_023D;
     *(undefined4 *)&local_c->field_0x34 = this_00->field_0235;

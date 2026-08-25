@@ -22,7 +22,7 @@ undefined4 __thiscall FUN_005fd3a0(void *this,int param_1)
   if (iVar2 == 0xffff) {
     return 0xffff;
   }
-  uVar1 = *(uint *)(iVar4 + 0x10);
+  uVar1 = STField<uint>(iVar4,0x10);
   if (uVar1 < 4) {
     if (uVar1 == 3) {
       thunk_FUN_005fda60(this);

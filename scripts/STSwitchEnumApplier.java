@@ -38,6 +38,7 @@ public class STSwitchEnumApplier extends GhidraScript {
     private static final String ENUM_HASH_MARKER = "; generated_values_sha256=";
     private static final String CLASS_MARKER = "[STClassLayoutApplier]";
     private static final String CLASS_HASH_MARKER = "; generated_layout_sha256=";
+    private static final String OVERLAY_HASH_MARKER = "; generated_overlay_sha256=";
     private static final String TAG = "RECOVERED_SWITCH_ENUM";
     private final List<ReportRow> report = new ArrayList<>();
     private DataTypeManager dataTypes;
@@ -207,32 +208,36 @@ public class STSwitchEnumApplier extends GhidraScript {
         DataType dataType = dataTypes.getDataType(path);
         if (!(dataType instanceof Structure structure))
             return ApplyResult.conflict("missing class structure " + path);
-        String description = structure.getDescription();
-        if (description == null || !description.contains(CLASS_MARKER))
-            return ApplyResult.preserved("class structure is not owned by layout applier");
-        String stored = storedHash(description, CLASS_HASH_MARKER);
-        String current = layoutHash(structure);
-        if (stored == null || !stored.equals(current))
-            return ApplyResult.preserved("class layout has manual/stale changes");
         int offset = Integer.parseInt(row.get("field_offset"));
         DataTypeComponent component = structure.getComponentAt(offset);
         if (component == null || component.getOffset() != offset)
             return ApplyResult.conflict("no field starts at offset " + offset);
         if (component.getDataType().getPathName().equals(enumType.getPathName()))
             return ApplyResult.unchanged("field already uses enum");
+        String description = structure.getDescription();
+        if (description == null || !description.contains(CLASS_MARKER))
+            return ApplyResult.preserved("class structure is not owned by layout applier");
         String expectedType = unt(row.get("expected_target_type"));
         if (!component.getDataType().getPathName().equals(expectedType))
             return ApplyResult.preserved("field type changed since analysis: " +
                 component.getDataType().getPathName());
+        String stored = storedHash(description, CLASS_HASH_MARKER);
+        String current = layoutHash(structure);
+        boolean wholeLayoutOwned = stored != null && stored.equals(current);
+        String componentComment = text(component.getComment());
+        if (!wholeLayoutOwned && !componentComment.contains(CLASS_MARKER))
+            return ApplyResult.preserved(
+                "stale class layout and target field is not script-owned");
         String fieldName = component.getFieldName();
         if (fieldName == null || fieldName.isBlank()) fieldName = unt(row.get("target_name"));
-        String comment = component.getComment();
-        if (comment == null) comment = "";
+        String comment = componentComment;
         if (!comment.contains(MARKER)) comment = comment + (comment.isBlank() ? "" : " ") +
             MARKER + " enum recovered from switch cases";
         structure.replaceAtOffset(offset, enumType, enumType.getLength(), fieldName, comment);
-        refreshClassHash(structure);
-        return ApplyResult.applied("field " + fieldName + " -> " + enumType.getPathName());
+        if (wholeLayoutOwned) refreshClassHash(structure);
+        else refreshOverlayHash(structure);
+        return ApplyResult.applied("field " + fieldName + " -> " + enumType.getPathName() +
+            (wholeLayoutOwned ? "" : "; exact script-owned field overlay"));
     }
 
     private void addFunctionComment(Function function, Map<String, String> row, Enum type) {
@@ -294,13 +299,28 @@ public class STSwitchEnumApplier extends GhidraScript {
     }
 
     private void refreshClassHash(Structure structure) {
-        String description = structure.getDescription();
-        int index = description.indexOf(CLASS_HASH_MARKER);
-        if (index < 0) return;
-        int valueStart = index + CLASS_HASH_MARKER.length();
-        int valueEnd = Math.min(description.length(), valueStart + 64);
-        String updated = description.substring(0, valueStart) + layoutHash(structure) +
-            description.substring(valueEnd);
+        refreshHash(structure, CLASS_HASH_MARKER, false);
+    }
+
+    private void refreshOverlayHash(Structure structure) {
+        refreshHash(structure, OVERLAY_HASH_MARKER, true);
+    }
+
+    private void refreshHash(Structure structure, String marker, boolean append) {
+        String description = text(structure.getDescription());
+        String hash = layoutHash(structure);
+        int index = description.indexOf(marker);
+        String updated;
+        if (index < 0) {
+            if (!append) return;
+            updated = description + marker + hash;
+        }
+        else {
+            int valueStart = index + marker.length();
+            int valueEnd = Math.min(description.length(), valueStart + 64);
+            updated = description.substring(0, valueStart) + hash +
+                description.substring(valueEnd);
+        }
         if (!updated.equals(description)) structure.setDescription(updated);
     }
 

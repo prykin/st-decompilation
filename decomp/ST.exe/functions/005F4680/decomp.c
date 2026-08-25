@@ -36,7 +36,7 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,iVar5,
                       &local_c,&local_10), -1 < local_8)) && ((local_8 < 5 && (-1 < local_c)))) &&
-        ((local_c < (int)pVVar2->field_0030 &&
+        ((local_c < pVVar2->field_0030 &&
          ((local_10 = g_centeredOffsets5[local_8] + local_10, -1 < local_10 &&
           (local_10 < pVVar2->field_0034)))))) &&
        ((pVVar2->field_004C != nullptr &&

@@ -62,7 +62,7 @@ STJumpMineC::sub_0061B340
                      (int *)((g_sT3DSMAPContext_00807598->field_0380 * param_5) / 0xc9),param_3,
                      &local_14);
           lVar11 = Library::MSVCRT::__ftol();
-          iVar9 = (int)(short)lVar11;
+          iVar9 = (short)lVar11;
           iVar7 = param_3 + 1;
           iVar5 = local_14;
           if (local_14 <= iVar7) {
@@ -119,12 +119,12 @@ STJumpMineC::sub_0061B340
              ((g_playSystem_00802A38 == nullptr ||
               (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)))) &&
             (pSVar4->value_20 == 1000)) &&
-           /* ST_CALLSITE[0061B555]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+           /* ST_CALLSITE[0061B555]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
            ((iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(pSVar4), iVar7 != 0 &&
-            /* ST_CALLSITE[0061B567]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+            /* ST_CALLSITE[0061B567]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
             (iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(pSVar4), iVar7 != 0)))) {
           bVar1 = *(byte *)&pSVar4[1].vtable;
-          bVar2 = *(byte *)&this->field_0051;
+          bVar2 = (byte)this->field_0051;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_c = CONCAT31(uStack_b,bVar1);
           local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar2));
@@ -204,7 +204,7 @@ LAB_0061b627:
         return local_8;
       }
       bVar1 = *(byte *)&pSVar4[1].vtable;
-      bVar2 = *(byte *)&this->field_0051;
+      bVar2 = (byte)this->field_0051;
       local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar1));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_c = CONCAT31(uStack_b,bVar2);
@@ -236,12 +236,12 @@ LAB_0061b993:
                  g_bulkInitializedRecords_008087C7[bVar1].field_0023;
       }
       if (bVar10) {
-        /* ST_CALLSITE[0061BAC0]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+        /* ST_CALLSITE[0061BAC0]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
         iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(pSVar4);
         if (iVar7 == 0) {
           return local_8;
         }
-        /* ST_CALLSITE[0061BAD2]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+        /* ST_CALLSITE[0061BAD2]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
         iVar7 = (*pSVar4->vtable[5].slots_00_28[2])(pSVar4);
         if (iVar7 == 0) {
           return local_8;

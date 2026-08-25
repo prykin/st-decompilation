@@ -110,8 +110,7 @@ LAB_0061478b:
     STField<undefined4>(this,0x2d1) = 0;
   }
   else {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    STField<undefined4>(this,0x2d1) = *(undefined4 *)(local_10 + 0x18);
+    STField<undefined4>(this,0x2d1) = STField<undefined4>(local_10,0x18);
   }
 LAB_006147e6:
   STField<undefined4>(this,0x1f7) = param_1->field_0028;

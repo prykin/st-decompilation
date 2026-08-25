@@ -62,17 +62,16 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
         }
         if (*(int *)(local_c + 1) == 0) {
           uVar4 = (int)local_14->field_0008 >> 0x1f;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           Library::DKW::DDX::FUN_006c4350
-                    (*(int *)(local_10 + 0x28),&local_c->field_0064,local_14->field_0004,
-                     (local_14->field_0008 ^ uVar4) - uVar4,0,*(uint *)(local_10 + 4) & 0xc);
+                    (STField<int>(local_10,0x28),&local_c->field_0064,local_14->field_0004,
+                     (local_14->field_0008 ^ uVar4) - uVar4,0,STField<uint>(local_10,0x4) & 0xc);
         }
         g_currentExceptionFrame = local_5c.previous;
       }
       else {
-        param_1->field_0064 = *(undefined4 *)(*(int *)(iVar6 + 0x28) + 0x40);
+        param_1->field_0064 = *(undefined4 *)(STField<int>(iVar6,0x28) + 0x40);
       }
-      *(uint *)(iVar6 + 4) = *(uint *)(iVar6 + 4) | 0x2000000;
+      STField<uint>(iVar6,0x4) = STField<uint>(iVar6,0x4) | 0x2000000;
       this = (void *)Library::MSVCRT::FUN_0072e530(0x48);
       if (this == nullptr) {
         puVar2 = nullptr;

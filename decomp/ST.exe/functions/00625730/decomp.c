@@ -166,7 +166,7 @@ LAB_006259bf:
                                    0xffff,*(int *)(&DAT_007d04d0 + (uint)this->field_02AD * 4),0x110
                                   );
                 if ((this_00->value_20 == 1000) || (this_00->value_20 == 0x14)) {
-                  this->field_0241 = *(undefined4 *)&this_00->field_0x18;
+                  this->field_0241 = *(int *)&this_00->field_0x18;
                 }
                 if (g_sndUnderAttMeneg_00811798 != nullptr) {
                   /* ST_CALLSITE[00625AB5]: CALL dword ptr [EDX + 0x2c] */
@@ -277,7 +277,7 @@ LAB_00625d60:
                     STGridAt3D(g_worldGrid, sVar12, sVar20, sVar19).objects[0];
           if (pSVar16 == nullptr) goto LAB_00625d60;
           /* ST_CALLSITE[00625CE3]: CALL dword ptr [EAX + 0xf0] */
-          iVar6 = pSVar16->vfunc_F0();
+          iVar6 = pSVar16->sub_00627A60();
           if (iVar6 != 0) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             if (in_stack_00000010 != 0) {
@@ -316,7 +316,7 @@ LAB_00625d60:
             if (((uint)pSVar16->field_0024 < 8) &&
                ((g_playSystem_00802A38 == nullptr ||
                 (g_bulkInitializedRecords_008087C7[pSVar16->field_0024].field_0022 < 8)))) {
-              bVar1 = *(byte *)&pSVar16->field_0024;
+              bVar1 = (byte)pSVar16->field_0024;
               bVar2 = (byte)this->field_0262;
               if (DAT_00808a8f == '\0') {
                 if (bVar1 == bVar2) {

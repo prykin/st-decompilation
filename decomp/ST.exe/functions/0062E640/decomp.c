@@ -15,8 +15,8 @@ undefined4 __thiscall FUN_0062e640(void *this,int param_1,int param_2)
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)((int)this + param_1 * 4 + 0x50);
-  if (uVar2 < *(uint *)(iVar1 + 0xc)) {
-    return *(undefined4 *)(*(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c) + 0xc);
+  if (uVar2 < STField<uint>(iVar1,0xC)) {
+    return *(undefined4 *)(STField<int>(iVar1,0x8) * uVar2 + STField<int>(iVar1,0x1C) + 0xc);
   }
   return _DAT_0000000c;
 }

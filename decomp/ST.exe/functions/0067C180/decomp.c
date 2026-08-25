@@ -61,7 +61,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
     if (local_EAX_93 == 0) {
       iVar13 = local_20->field_0681;
       if (local_20->field_0689 == 0) {
-        if ((iVar13 == 0) || (iVar13 * 3 + local_20->field_0685 <= local_20->field_06FE)) {
+        if ((iVar13 == 0) || ((uint)(iVar13 * 3 + local_20->field_0685) <= local_20->field_06FE)) {
           local_20->field_0685 = local_20->field_06FE;
           array = Library::DKW::TBL::DArrayCreate(nullptr,5,0x10,5);
           local_c = array;
@@ -93,16 +93,15 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
           }
           if ((((this_00->field_0677 <= local_1c) && (0 < (int)uVar14)) && (0 < local_1c)) &&
              ((0 < local_10 &&
-              (iVar13 = thunk_FUN_0042a990(*(char *)&this_00->field_0640), local_18 = iVar13,
+              (iVar13 = thunk_FUN_0042a990((char)this_00->field_0640), local_18 = iVar13,
               iVar13 != 0)))) {
-            bVar15 = *(int *)(iVar13 + 0xc) != 0;
+            bVar15 = STField<int>(iVar13,0xC) != 0;
             local_14 = 0;
             local_8 = 0;
-            if (0 < *(int *)(iVar13 + 0xc)) {
+            if (0 < STField<int>(iVar13,0xC)) {
               do {
                 if (bVar15) {
-                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                  piVar5 = (int *)(*(int *)(iVar13 + 8) * local_8 + *(int *)(iVar13 + 0x1c));
+                  piVar5 = (int *)(STField<int>(iVar13,0x8) * local_8 + STField<int>(iVar13,0x1C));
                 }
                 else {
                   piVar5 = nullptr;
@@ -124,21 +123,20 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
                   }
                 }
                 local_8 = local_8 + 1;
-                bVar15 = local_8 < *(uint *)(iVar13 + 0xc);
+                bVar15 = local_8 < STField<uint>(iVar13,0xC);
                 array = local_c;
-              } while ((int)local_8 < (int)*(uint *)(iVar13 + 0xc));
+              } while ((int)local_8 < (int)STField<uint>(iVar13,0xC));
             }
             if (((this_00->field_0679 <= local_1c) || (local_14 < 1)) ||
                ((int)this_00->field_067B < (local_10 * 100) / local_14)) {
               local_8 = 0;
               this_00->field_06AD->count = 0;
-              bVar15 = *(int *)(iVar13 + 0xc) != 0;
-              if (0 < *(int *)(iVar13 + 0xc)) {
+              bVar15 = STField<int>(iVar13,0xC) != 0;
+              if (0 < STField<int>(iVar13,0xC)) {
                 do {
                   if (bVar15) {
-                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     puVar8 = (undefined4 *)
-                             (*(int *)(iVar13 + 8) * local_8 + *(int *)(iVar13 + 0x1c));
+                             (STField<int>(iVar13,0x8) * local_8 + STField<int>(iVar13,0x1C));
                   }
                   else {
                     puVar8 = nullptr;
@@ -161,9 +159,9 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
                     iVar13 = local_18;
                   }
                   local_8 = local_8 + 1;
-                  bVar15 = local_8 < *(uint *)(iVar13 + 0xc);
+                  bVar15 = local_8 < STField<uint>(iVar13,0xC);
                   array = local_c;
-                } while ((int)local_8 < (int)*(uint *)(iVar13 + 0xc));
+                } while ((int)local_8 < (int)STField<uint>(iVar13,0xC));
               }
               thunk_FUN_00676c40(this_00->field_06AD,thunk_FUN_0067baf0);
               thunk_FUN_00676c40(array,thunk_FUN_0067bb20);
@@ -202,18 +200,17 @@ LAB_0067c61b:
             array = local_c;
             if (0 < (int)pDVar10->count) {
               if ((int)this_00->field_06AD->count < iVar13) {
-                iVar13 = thunk_FUN_0042a990(*(char *)&this_00->field_0640);
+                iVar13 = thunk_FUN_0042a990((char)this_00->field_0640);
                 local_18 = iVar13;
                 if (iVar13 != 0) {
                   local_8 = 0;
-                  if (0 < *(int *)(iVar13 + 0xc)) {
-                    bVar15 = *(int *)(iVar13 + 0xc) != 0;
+                  if (0 < STField<int>(iVar13,0xC)) {
+                    bVar15 = STField<int>(iVar13,0xC) != 0;
                     do {
                       uVar14 = local_8;
                       if (bVar15) {
-                        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         puVar8 = (undefined4 *)
-                                 (*(int *)(iVar13 + 8) * local_8 + *(int *)(iVar13 + 0x1c));
+                                 (STField<int>(iVar13,0x8) * local_8 + STField<int>(iVar13,0x1C));
                       }
                       else {
                         puVar8 = nullptr;
@@ -241,8 +238,8 @@ LAB_0067c61b:
                         uVar14 = local_8;
                       }
                       local_8 = uVar14 + 1;
-                      bVar15 = local_8 < *(uint *)(iVar13 + 0xc);
-                    } while ((int)local_8 < (int)*(uint *)(iVar13 + 0xc));
+                      bVar15 = local_8 < STField<uint>(iVar13,0xC);
+                    } while ((int)local_8 < (int)STField<uint>(iVar13,0xC));
                   }
                 }
                 thunk_FUN_00676c40(this_00->field_06AD,thunk_FUN_0067baf0);

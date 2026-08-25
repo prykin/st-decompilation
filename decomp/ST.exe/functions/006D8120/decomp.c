@@ -20,17 +20,17 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
   uint extraout_ECX_00;
   int iVar11;
   uint uVar12;
-  byte *pbVar13;
+  byte *pbVar13; /* recovered closed pointer-only SSA lifetime */
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   byte *extraout_EDX;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   byte *extraout_EDX_00;
+  uint uVar13;
   uint uVar14;
-  uint uVar15;
+  byte *pbVar15;
   byte *pbVar16;
   byte *pbVar17;
-  byte *pbVar18;
-  bool bVar19;
+  bool bVar18;
   uint local_30;
   int local_20;
   int local_1c;
@@ -51,46 +51,46 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
       pbVar13 = nullptr;
       local_1c = 0;
       pbVar10 = pbVar9;
-      pbVar16 = pbVar8;
-      pbVar18 = pbVar9;
+      pbVar15 = pbVar8;
+      pbVar17 = pbVar9;
       local_30 = uVar5;
       do {
         do {
-          uVar14 = -uVar7;
+          uVar13 = -uVar7;
           uVar7 = uVar4;
           while (0 < (int)uVar7) {
-            pbVar17 = pbVar16;
-            if (uVar14 == 0) {
-              bVar19 = pbVar16 < pbVar13;
+            pbVar16 = pbVar15;
+            if (uVar13 == 0) {
+              bVar18 = pbVar15 < pbVar13;
               iVar11 = 0;
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-              if ((!bVar19) &&
-                 (uVar6 = FUN_006d822b(), iVar11 = extraout_ECX, pbVar13 = extraout_EDX, bVar19))
-              goto cf_common_exit_006D8217;
-              uVar14 = iVar11 + 1;
-              pbVar1 = pbVar16 + 1;
-              bVar2 = *pbVar16;
+              if ((!bVar18) &&
+                 (uVar6 = FUN_006d822b(), iVar11 = extraout_ECX, pbVar13 = extraout_EDX,
+                 bVar18)) goto cf_common_exit_006D8217;
+              uVar13 = iVar11 + 1;
+              pbVar1 = pbVar15 + 1;
+              bVar2 = *pbVar15;
               pbVar10 = (byte *)(uint)bVar2;
-              pbVar17 = pbVar1;
+              pbVar16 = pbVar1;
               if (0xbf < bVar2) {
-                uVar14 = STReplaceLowByte((uint32_t)(uVar14), (uint8_t)(bVar2)) & 0xffffff3f;
-                bVar19 = pbVar1 < pbVar13;
+                uVar13 = STReplaceLowByte((uint32_t)(uVar13), (uint8_t)(bVar2)) & 0xffffff3f;
+                bVar18 = pbVar1 < pbVar13;
                 /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-                if ((!bVar19) &&
-                   (uVar6 = FUN_006d822b(), uVar14 = extraout_ECX_00, pbVar13 = extraout_EDX_00,
-                   bVar19)) goto cf_common_exit_006D8217;
-                pbVar17 = pbVar16 + 2;
+                if ((!bVar18) &&
+                   (uVar6 = FUN_006d822b(), uVar13 = extraout_ECX_00,
+                   pbVar13 = extraout_EDX_00, bVar18)) goto cf_common_exit_006D8217;
+                pbVar16 = pbVar15 + 2;
                 pbVar10 = (byte *)(uint)*pbVar1;
               }
             }
-            uVar15 = uVar7 - uVar14;
-            pbVar16 = pbVar17;
-            if ((((int)uVar14 <= (int)uVar7) && (uVar12 <= uVar15)) ||
-               (iVar11 = uVar14 + uVar15, uVar14 = iVar11 - uVar12, uVar7 = uVar15,
-               uVar14 != 0 && (int)uVar12 <= iVar11)) {
-              for (; uVar7 = uVar15, uVar14 != 0; uVar14 = uVar14 - 1) {
-                *pbVar18 = (byte)pbVar10;
-                pbVar18 = pbVar18 + 1;
+            uVar14 = uVar7 - uVar13;
+            pbVar15 = pbVar16;
+            if ((((int)uVar13 <= (int)uVar7) && (uVar12 <= uVar14)) ||
+               (iVar11 = uVar13 + uVar14, uVar13 = iVar11 - uVar12, uVar7 = uVar14,
+               uVar13 != 0 && (int)uVar12 <= iVar11)) {
+              for (; uVar7 = uVar14, uVar13 != 0; uVar13 = uVar13 - 1) {
+                *pbVar17 = (byte)pbVar10;
+                pbVar17 = pbVar17 + 1;
               }
             }
           }
@@ -104,7 +104,7 @@ uint __cdecl FUN_006d8120(AnonShape_006D8120_534053F7 *param_1)
         }
         local_1c = local_1c + 1;
         local_20 = local_20 + -1;
-        pbVar18 = pbVar9;
+        pbVar17 = pbVar9;
         local_30 = uVar5;
       } while (local_20 != 0);
       uVar6 = 0;

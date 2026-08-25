@@ -63,8 +63,8 @@ FUN_0061bdb0(void *this,Global_sub_0061BDB0_param_1Enum param_1,int param_2,int 
                (int *)((STField<int>(this,0xa3) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9)
                ,iVar7,(int *)&param_1);
     lVar8 = Library::MSVCRT::__ftol();
-    if (STField<int>(this,0xd7) < (int)(short)lVar8) {
-      STField<int>(this,0xd7) = (int)(short)lVar8;
+    if (STField<int>(this,0xd7) < (short)lVar8) {
+      STField<int>(this,0xd7) = (short)lVar8;
     }
     if ((((-1 < STField<int>(this,0x9f)) && (-1 < STField<int>(this,0xa3))) &&
         (STField<int>(this,0x9f) < g_worldGrid.sizeX * 0xc9)) &&

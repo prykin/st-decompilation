@@ -107,9 +107,9 @@ public class STIndirectCallApplier extends GhidraScript {
             DataType desired;
             if ("target".equals(mode)) {
                 if (component != null && strongerThanTarget(component, signature)) {
-                    preserve(target, row,
-                        "refusing to replace a stronger receiver-aware function-pointer " +
-                            "ABI with the weaker target Listing signature");
+                    report.add(new Report(target, row.get("target_kind"), "unchanged",
+                        "stronger receiver-aware function-pointer ABI already present; " +
+                            "weaker target Listing signature ignored"));
                     return;
                 }
                 desired = functionPointer(signature);

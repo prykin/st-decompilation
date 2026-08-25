@@ -173,7 +173,7 @@ LAB_0061364b:
     bVar10 = true;
   }
   else {
-    if (((local_14 < 0) || ((int)pVVar3->field_0030 <= local_14)) ||
+    if (((local_14 < 0) || (pVVar3->field_0030 <= local_14)) ||
        ((g_centeredOffsets5[local_c] + local_18 < 0 ||
         (pVVar3->field_0034 <= g_centeredOffsets5[local_c] + local_18)))) {
       bVar10 = false;

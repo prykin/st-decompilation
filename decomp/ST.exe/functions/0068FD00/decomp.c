@@ -72,8 +72,8 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
       g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x6f:
-      iVar4 = thunk_FUN_0068e850(local_8,*(int *)((int)&param_1->field_000A + 2));
-      iVar8 = *(int *)((int)&param_1->field_000A + 2);
+      iVar4 = thunk_FUN_0068e850(local_8,STField<int>(param_1,0xC));
+      iVar8 = STField<int>(param_1,0xC);
       *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar4;
       /* ST_CALLSITE[0068FE0C]: CALL 0x00401d0c; direct=00401D0C AiTactClassTy::sub_0068E610 */
       iVar3 = sub_0068E610(this_00,iVar8);
@@ -96,7 +96,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
             memset(local_3c, 0, 0x34); /* compiler bulk-zero initialization */
             local_3c[1] = this_00->field_012C;
             local_3c[0] = 0x70;
-            uVar1 = *(undefined4 *)((int)&param_1->field_000A + 2);
+            uVar1 = STField<undefined4>(param_1,0xC);
             local_30 = (undefined1)uVar1;
             uStack_2f = (undefined1)((uint)uVar1 >> 8);
             uStack_2e = (undefined2)((uint)uVar1 >> 0x10);

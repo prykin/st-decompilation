@@ -198,7 +198,7 @@ int __fastcall FUN_0060aef0(void *param_1)
                   if ((uVar21 < 8) &&
                      ((g_playSystem_00802A38 == nullptr ||
                       (g_bulkInitializedRecords_008087C7[uVar21].field_0022 < 8)))) {
-                    bVar3 = *(byte *)&pSVar29->field_0024;
+                    bVar3 = (byte)pSVar29->field_0024;
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     _local_b8 = CONCAT31(uStack_b7,bVar3);
                     bVar4 = STField<byte>(param_1,0x1d9);
@@ -274,7 +274,7 @@ LAB_0060b2ce:
                   if ((uVar21 < 8) &&
                      ((g_playSystem_00802A38 == nullptr ||
                       (g_bulkInitializedRecords_008087C7[uVar21].field_0022 < 8)))) {
-                    bVar3 = *(byte *)&pSVar29->field_0024;
+                    bVar3 = (byte)pSVar29->field_0024;
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     _local_c8 = CONCAT31(uStack_c7,bVar3);
                     bVar4 = STField<byte>(param_1,0x1d9);
@@ -366,7 +366,7 @@ LAB_0060b60e:
                                    *(int *)(puVar26 + -0x10),*(int *)(puVar26 + -0xc),
                                    *(int **)(puVar26 + -8),*(int **)(puVar26 + -4));
                         if ((iVar24 < 0) || (4 < iVar24)) goto LAB_0060b60e;
-                        if ((((local_d4[0] < 0) || ((int)pVVar13->field_0030 <= local_d4[0])) ||
+                        if ((((local_d4[0] < 0) || (pVVar13->field_0030 <= local_d4[0])) ||
                             (local_d8 + g_centeredOffsets5[iVar24] < 0)) ||
                            (pVVar13->field_0034 <= local_d8 + g_centeredOffsets5[iVar24])) {
                           bVar30 = false;

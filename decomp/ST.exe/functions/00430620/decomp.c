@@ -38,8 +38,7 @@ undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x806);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)(local_8 + 0x18) == param_2) {
+    if (STField<int>(local_8,0x18) == param_2) {
       g_currentExceptionFrame = local_50.previous;
       return 1;
     }

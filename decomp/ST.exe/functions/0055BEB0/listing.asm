@@ -20,7 +20,8 @@ FUN_0055beb0:
 0055BEE7  83 C6 0B                  ADD ESI,0xb
 0055BEEA  8B 11                     MOV EDX,dword ptr [ECX]
 0055BEEC  56                        PUSH ESI
-0055BEED  FF 12                     CALL dword ptr [EDX]
+FUN_0055beb0::override::prt_55beed_e3dcabdd:
+0055BEED  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0055beef:
 0055BEEF  5E                        POP ESI
 0055BEF0  5D                        POP EBP

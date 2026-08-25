@@ -24,7 +24,7 @@ void __fastcall FUN_00627700(AnonShape_00627700_6F319351 *param_1)
       local_24.arg1.words.high = param_1->field_02A5;
     }
     local_24.id = 0x5de3;
-    /* ST_CALLSITE[00627768]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[00627768]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;

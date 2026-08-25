@@ -180,7 +180,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
     puVar4 = (byte *)(puVar4 + 1);
   }
   local_8->field_0212 = STField<undefined4>(local_c,0x205);
-  local_8->field_0216 = STField<undefined4>(local_c,0x209);
+  local_8->field_0216 = STField<int>(local_c,0x209);
   local_8->field_021A = STField<int>(local_c,0x20d);
   *(undefined4 *)&local_8->field_0x222 = STField<undefined4>(local_c,0x219);
   local_8->field_0232 = STField<int>(local_c,0x235);

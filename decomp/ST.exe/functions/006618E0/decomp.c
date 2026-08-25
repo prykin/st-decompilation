@@ -42,7 +42,8 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
   int local_c;
   DArrayTy *local_8;
 
-  if ((this->field_0203 == 0) || (this->field_0207 + this->field_0203 <= this->field_0280)) {
+  if ((this->field_0203 == 0) || ((uint)(this->field_0207 + this->field_0203) <= this->field_0280))
+  {
     this->field_0207 = this->field_0280;
     local_1c = this;
     /* ST_CALLSITE[0066191E]: CALL 0x0040343b; direct=0040343B AiFltClassTy::sub_0065D9C0 */
@@ -79,7 +80,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
               local_24 = STReplaceLowWord((uint32_t)(puVar5), (uint16_t)(*puVar5));
               /* ST_CALLSITE[006619E0]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               this_00 = STAllPlayersC::GetObjPtr
-                                  (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,*puVar5,CASE_1
+                                  (g_allPlayers_007FA174,(char)pAVar3->field_0024,*puVar5,CASE_1
                                   );
               if ((this_00 != nullptr) && ((int)pAVar3->field_0179 < local_20 - local_c))
               {

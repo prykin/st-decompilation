@@ -29,10 +29,10 @@ undefined4 __thiscall st::fn_005424A0(InterSystemC *this)
   uint local_184 [4];
   undefined4 local_174;
   undefined4 local_170;
-  undefined4 local_164;
+  int local_164;
   undefined4 local_160;
   undefined4 local_15c;
-  undefined4 local_124;
+  int local_124;
   undefined4 local_120;
   undefined4 local_11c;
   undefined4 local_104;

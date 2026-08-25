@@ -18,8 +18,8 @@ int * __fastcall FUN_005545c0(int *param_1)
   param_1[9] = 0;
   param_1[0xb] = 1;
   param_1[10] = 1;
-  *(undefined4 *)(iVar2 + 0x58) = 1;
-  *(undefined4 *)(iVar2 + 0x5c) = 1;
+  STField<undefined4>(iVar2,0x58) = 1;
+  STField<undefined4>(iVar2,0x5C) = 1;
   resourceString = LoadResourceString(0x267a,g_hINSTANCE_00807618);
   iVar1 = FUN_007111c0((void *)param_1[2],resourceString);
   param_1[0xe] = 0;

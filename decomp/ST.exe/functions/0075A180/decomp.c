@@ -29,8 +29,8 @@ void FUN_0075a180(AnonShape_0075A180_7E367FD8 *param_1)
     do {
       iVar6 = (piVar9[6] * *piVar9) / param_1->field_012A;
       iVar12 = *local_10;
-      puVar3 = *(undefined4 **)(*(int *)(iVar2 + 0x38) + local_c * 4);
-      puVar4 = *(undefined4 **)(*(int *)(iVar2 + 0x3c) + local_c * 4);
+      puVar3 = *(undefined4 **)(STField<int>(iVar2,0x38) + local_c * 4);
+      puVar4 = *(undefined4 **)(STField<int>(iVar2,0x3C) + local_c * 4);
       local_18 = (iVar1 + 2) * iVar6;
       if (0 < local_18) {
         puVar10 = puVar4;

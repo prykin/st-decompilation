@@ -96,7 +96,8 @@ LAB_00517b36:
 00517B8B  8B 11                     MOV EDX,dword ptr [ECX]
 00517B8D  8D 43 18                  LEA EAX,[EBX + 0x18]
 00517B90  50                        PUSH EAX
-00517B91  FF 12                     CALL dword ptr [EDX]
+HelpPanelTy::RCProc::override::prt_517b91_74f246b9:
+00517B91  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 00517B93  EB 06                     JMP 0x00517b9b
 LAB_00517b95:
 00517B95  8B 7D 08                  MOV EDI,dword ptr [EBP + 0x8]

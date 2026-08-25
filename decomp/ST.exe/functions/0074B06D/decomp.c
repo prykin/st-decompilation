@@ -9,10 +9,10 @@ uint * __thiscall FUN_0074b06d(void *this,int *param_1,uint *param_2,uint *param
   uint uVar3;
   int iVar4;
   int iVar5;
-  int *piVar6;
-  uint uVar7;
-  uint *puVar8;
-  bool bVar9;
+  uint piVar6;
+  uint uVar6;
+  uint puVar8;
+  bool bVar7;
   int *local_20;
   uint local_18;
   uint local_14;
@@ -35,19 +35,19 @@ uint * __thiscall FUN_0074b06d(void *this,int *param_1,uint *param_2,uint *param
   /* ST_CALLSITE[0074B0C1]: CALL dword ptr [ECX + 0xc] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(*STField<int *>(this,0x18) + 0xc))(STField<int *>(this,0x18),&local_18);
-  bVar9 = local_18 < STField<uint>(this,0x20);
+  bVar7 = local_18 < STField<uint>(this,0x20);
   local_18 = local_18 - STField<uint>(this,0x20);
-  local_14 = (local_14 - STField<int>(this,0x24)) - (uint)bVar9;
-  puVar8 = (uint *)(local_18 - *param_2);
+  local_14 = (local_14 - STField<int>(this,0x24)) - (uint)bVar7;
+  puVar8 = local_18 - *param_2;
   uVar3 = (local_14 - param_2[1]) - (uint)(local_18 < *param_2);
-  if ((uVar3 < 0x80000000) || ((-2 < (int)uVar3 && ((uint *)0xe2329aff < puVar8)))) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_2 = puVar8;
-    if ((-1 < (int)uVar3) && ((0 < (int)uVar3 || ((uint *)0x1dcd6500 < puVar8)))) {
-      param_2 = (uint *)0x1dcd6500;
+  if ((uVar3 < 0x80000000) || ((-2 < (int)uVar3 && (0xe2329aff < puVar8)))) {
+    auto param_2_after_write = (uint *)puVar8; /* compiler stack-slot lifetime split */
+    if ((-1 < (int)uVar3) && ((0 < (int)uVar3 || (500000000 < puVar8)))) {
+      param_2_after_write = (uint *)0x1dcd6500;
     }
   }
   else {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (uint *)0xe2329b00;
   }
   /* ST_CALLSITE[0074B120]: CALL dword ptr [EAX + 0xc0] */
@@ -87,40 +87,40 @@ uint * __thiscall FUN_0074b06d(void *this,int *param_1,uint *param_2,uint *param
   }
   local_10 = STField<int>(this,0xf0) * 3;
   local_c = (local_10 + iVar5) / 4;
-  piVar6 = (int *)(local_18 - STField<uint>(this,0x120));
+  piVar6 = local_18 - STField<uint>(this,0x120);
   iVar5 = (local_14 - STField<int>(this,0x124)) - (uint)(local_18 < STField<uint>(this,0x120));
-  local_20 = piVar6;
-  if ((-1 < iVar5) && ((0 < iVar5 || ((int *)0x989680 < piVar6)))) {
+  local_20 = (int *)piVar6;
+  if ((-1 < iVar5) && ((0 < iVar5 || (10000000 < piVar6)))) {
     local_20 = (int *)0x989680;
   }
   auto param_1_after_write = local_20; /* compiler stack-slot lifetime split */
   if (STField<int>(this,0xf4) < STField<int>(this,0xdc) * 3) {
     if (STField<int>(this,0xd4) == 0) {
-      bVar9 = (int)param_2 * 2 < iVar4;
+      bVar7 = (int)param_2 * 2 < iVar4;
     }
     else {
-      bVar9 = (int)param_2 <= iVar4 * 4;
+      bVar7 = (int)param_2 <= iVar4 * 4;
     }
-    if ((((!bVar9) && (STField<int>(this,0xf0) < 0x13881)) && (iVar5 < 1)) &&
-       ((iVar5 < 0 || (piVar6 < (int *)0x989681)))) {
+    if ((((!bVar7) && (STField<int>(this,0xf0) < 0x13881)) && (iVar5 < 1)) &&
+       ((iVar5 < 0 || (piVar6 < 0x989681)))) {
       STField<undefined4>(this,0xd0) = 0xffffffff;
       STField<int>(this,0xf0) = local_c;
       return (uint *)0x80004005;
     }
   }
-  bVar9 = false;
+  bVar7 = false;
   if (local_8 == 0) {
     if ((iVar4 / 0x10 + iVar4 < STField<int>(this,0xf4)) && (iVar4 * -10 < (int)param_2)) {
-      bVar9 = true;
+      bVar7 = true;
     }
   }
   else {
-    bVar9 = true;
+    bVar7 = true;
   }
   if ((int)param_2 < -9000000) {
-    bVar9 = false;
+    bVar7 = false;
   }
-  if (bVar9) {
+  if (bVar7) {
     STField<undefined4>(this,0xd0) = 0;
     STField<int>(this,0xf0) = local_10 / 4;
     STField<int>(this,0xf4) = ((int)local_20 + STField<int>(this,0xf4) * 3) / 4;
@@ -149,9 +149,9 @@ uint * __thiscall FUN_0074b06d(void *this,int *param_1,uint *param_2,uint *param
       uVar1 = *puVar2;
       uVar3 = puVar2[1];
       param_1_after_write = (int *)(uVar1 - STField<uint>(this,0x120));
-      uVar7 = (uVar3 - STField<int>(this,0x124)) - (uint)(uVar1 < STField<uint>(this,0x120));
-      if ((uVar7 < 0x80000000) || ((-2 < (int)uVar7 && ((int *)0xe2329aff < param_1_after_write)))) {
-        if ((-1 < (int)uVar7) && ((0 < (int)uVar7 || ((int *)0x1dcd6500 < param_1_after_write)))) {
+      uVar6 = (uVar3 - STField<int>(this,0x124)) - (uint)(uVar1 < STField<uint>(this,0x120));
+      if ((uVar6 < 0x80000000) || ((-2 < (int)uVar6 && ((int *)0xe2329aff < param_1_after_write)))) {
+        if ((-1 < (int)uVar6) && ((0 < (int)uVar6 || ((int *)0x1dcd6500 < param_1_after_write)))) {
           param_1_after_write = (int *)0x1dcd6500;
         }
       }

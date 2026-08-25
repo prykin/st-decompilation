@@ -21,7 +21,7 @@ FUN_006a1c80(int *param_1,uint param_2,int param_3,int param_4,int param_5,undef
      ((param_4 < 6 &&
       (iVar4 = thunk_FUN_006a20e0(param_1,param_2,param_3,param_4,param_5), iVar4 != 0)))) {
     iVar3 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(int)&local_c);
-    iVar4 = (int)(short)iVar3;
+    iVar4 = (short)iVar3;
     if ((((local_8 & 0x2000) != 0) || ((uStack_a & 0x1000) != 0)) ||
        (bVar1 = true, (local_c & 0x1000) != 0)) {
       bVar1 = false;

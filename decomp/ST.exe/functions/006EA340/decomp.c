@@ -23,9 +23,9 @@ void __thiscall FUN_006ea340(void *this,uint param_1,int param_2,uint param_3)
           FUN_006e91a0("SprSetLevPlane");
           return;
         }
-        *(int *)(iVar1 + 0x1c) = param_2;
-        *(uint *)(iVar1 + 0x20) = param_3;
-        *(uint *)(iVar1 + 4) = *(uint *)(iVar1 + 4) & 0xffffffcf | 0x40;
+        STField<int>(iVar1,0x1C) = param_2;
+        STField<uint>(iVar1,0x20) = param_3;
+        STField<uint>(iVar1,0x4) = STField<uint>(iVar1,0x4) & 0xffffffcf | 0x40;
         return;
       }
       goto LAB_006ea3ca;

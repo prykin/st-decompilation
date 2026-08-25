@@ -82,8 +82,8 @@ LAB_00632f7e:
       if (0 < iVar7) {
         do {
           iVar13 = param_1->field_0000;
-          if (uVar12 < *(uint *)(iVar13 + 0xc)) {
-            iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c);
+          if (uVar12 < STField<uint>(iVar13,0xC)) {
+            iVar13 = STField<int>(iVar13,0x8) * uVar12 + STField<int>(iVar13,0x1C);
           }
           else {
             iVar13 = 0;
@@ -92,7 +92,7 @@ LAB_00632f7e:
             fVar1 = _DAT_0079034c;
           }
           if (iVar13 != 0) {
-            *(float *)(iVar13 + 0x21) = fVar1;
+            STField<float>(iVar13,0x21) = fVar1;
             fVar1 = fVar1 + local_8;
           }
           uVar12 = uVar12 + 1;
@@ -111,10 +111,10 @@ LAB_00632f7e:
             if (param_1->field_0000 != 0) {
               for (; (int)uVar12 < iVar7; uVar12 = uVar12 + 1) {
                 iVar13 = param_1->field_0000;
-                if ((uVar12 < *(uint *)(iVar13 + 0xc)) &&
-                   (iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c), iVar13 != 0))
+                if ((uVar12 < STField<uint>(iVar13,0xC)) &&
+                   (iVar13 = STField<int>(iVar13,0x8) * uVar12 + STField<int>(iVar13,0x1C), iVar13 != 0))
                 {
-                  *(undefined4 *)(iVar13 + 8) = 0;
+                  STField<undefined4>(iVar13,0x8) = 0;
                 }
               }
             }
@@ -126,9 +126,9 @@ LAB_00632f7e:
           if (param_1->field_0000 != 0) {
             for (; (int)uVar12 < iVar7; uVar12 = uVar12 + 1) {
               iVar13 = param_1->field_0000;
-              if ((uVar12 < *(uint *)(iVar13 + 0xc)) &&
-                 (iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c), iVar13 != 0)) {
-                *(undefined4 *)(iVar13 + 8) = 1;
+              if ((uVar12 < STField<uint>(iVar13,0xC)) &&
+                 (iVar13 = STField<int>(iVar13,0x8) * uVar12 + STField<int>(iVar13,0x1C), iVar13 != 0)) {
+                STField<undefined4>(iVar13,0x8) = 1;
               }
             }
           }
@@ -190,8 +190,8 @@ LAB_00632f7e:
       if (0 < iVar7) {
         do {
           iVar13 = param_1->field_0000;
-          if (uVar12 < *(uint *)(iVar13 + 0xc)) {
-            puVar6 = (undefined4 *)(*(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c));
+          if (uVar12 < STField<uint>(iVar13,0xC)) {
+            puVar6 = (undefined4 *)(STField<int>(iVar13,0x8) * uVar12 + STField<int>(iVar13,0x1C));
           }
           else {
             puVar6 = nullptr;
@@ -236,23 +236,23 @@ LAB_00632f7e:
       if (0 < param_1->field_001D) {
         do {
           iVar13 = param_1->field_0000;
-          if ((uVar12 < *(uint *)(iVar13 + 0xc)) &&
-             (iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c), iVar13 != 0)) {
-            *(float *)(iVar13 + 0x21) = local_10;
-            *(undefined4 *)(iVar13 + 0x25) = param_1->field_006D;
-            *(undefined4 *)(iVar13 + 8) = 1;
+          if ((uVar12 < STField<uint>(iVar13,0xC)) &&
+             (iVar13 = STField<int>(iVar13,0x8) * uVar12 + STField<int>(iVar13,0x1C), iVar13 != 0)) {
+            STField<float>(iVar13,0x21) = local_10;
+            STField<undefined4>(iVar13,0x25) = param_1->field_006D;
+            STField<undefined4>(iVar13,0x8) = 1;
           }
           uVar11 = param_1->field_001D + uVar12;
           iVar13 = param_1->field_0000;
-          if ((uVar11 < *(uint *)(iVar13 + 0xc)) &&
-             (iVar13 = *(int *)(iVar13 + 8) * uVar11 + *(int *)(iVar13 + 0x1c), iVar13 != 0)) {
-            *(float *)(iVar13 + 0x21) = local_10;
-            *(undefined4 *)(iVar13 + 0x25) = param_1->field_006D;
+          if ((uVar11 < STField<uint>(iVar13,0xC)) &&
+             (iVar13 = STField<int>(iVar13,0x8) * uVar11 + STField<int>(iVar13,0x1C), iVar13 != 0)) {
+            STField<float>(iVar13,0x21) = local_10;
+            STField<undefined4>(iVar13,0x25) = param_1->field_006D;
             param_1->field_0071 = param_1->field_006D;
             uVar10 = Library::MSVCRT::FUN_0072e6c0();
-            *(undefined4 *)(iVar13 + 8) = 1;
-            *(undefined4 *)(iVar13 + 0x1d) = 7;
-            *(int *)(iVar13 + 0x19) = (int)uVar10 % 7;
+            STField<undefined4>(iVar13,0x8) = 1;
+            STField<undefined4>(iVar13,0x1D) = 7;
+            STField<int>(iVar13,0x19) = (int)uVar10 % 7;
           }
           local_10 = local_10 + local_8;
           uVar12 = uVar12 + 1;
@@ -260,8 +260,8 @@ LAB_00632f7e:
       }
       for (uVar12 = param_1->field_001D * 2; (int)uVar12 < iVar7; uVar12 = uVar12 + 1) {
         iVar13 = param_1->field_0000;
-        if (uVar12 < *(uint *)(iVar13 + 0xc)) {
-          iVar13 = *(int *)(iVar13 + 8) * uVar12 + *(int *)(iVar13 + 0x1c);
+        if (uVar12 < STField<uint>(iVar13,0xC)) {
+          iVar13 = STField<int>(iVar13,0x8) * uVar12 + STField<int>(iVar13,0x1C);
         }
         else {
           iVar13 = 0;
@@ -269,18 +269,18 @@ LAB_00632f7e:
         local_EAX_1564 = Library::MSVCRT::FUN_0072e6c0();
         local_8 = (float)((int)local_EAX_1564 % 0x168) * _DAT_0079d1a8;
         if (iVar13 != 0) {
-          *(float *)(iVar13 + 0x21) = local_8;
+          STField<float>(iVar13,0x21) = local_8;
           local_EAX_1602 = Library::MSVCRT::FUN_0072e6c0();
           fVar1 = (float)param_1->field_0079;
           fVar2 = (float)param_1->field_006D;
           fVar3 = (float)param_1->field_006D;
-          *(undefined4 *)(iVar13 + 0x19) = 0;
-          *(float *)(iVar13 + 0x25) =
+          STField<undefined4>(iVar13,0x19) = 0;
+          STField<float>(iVar13,0x25) =
                ((fVar1 - fVar2) * (float)((int)local_EAX_1602 % (iVar7 + 1))) / (float)iVar7 + fVar3
           ;
           uVar11 = g_playSystem_00802A38->field_00E4;
-          *(undefined4 *)(iVar13 + 8) = 1;
-          *(uint *)(iVar13 + 0x35) = uVar11;
+          STField<undefined4>(iVar13,0x8) = 1;
+          STField<uint>(iVar13,0x35) = uVar11;
         }
       }
     }
@@ -299,12 +299,12 @@ LAB_00632f7e:
       if (0 < iVar7) {
         do {
           iVar7 = param_1->field_0000;
-          if ((uVar11 < *(uint *)(iVar7 + 0xc)) &&
-             (iVar7 = *(int *)(iVar7 + 8) * uVar11 + *(int *)(iVar7 + 0x1c), iVar7 != 0)) {
-            *(float *)(iVar7 + 0x21) = fVar2;
+          if ((uVar11 < STField<uint>(iVar7,0xC)) &&
+             (iVar7 = STField<int>(iVar7,0x8) * uVar11 + STField<int>(iVar7,0x1C), iVar7 != 0)) {
+            STField<float>(iVar7,0x21) = fVar2;
             fVar2 = fVar2 + fVar1;
-            *(undefined4 *)(iVar7 + 8) = 1;
-            *(undefined4 *)(iVar7 + 0x19) = 3;
+            STField<undefined4>(iVar7,0x8) = 1;
+            STField<undefined4>(iVar7,0x19) = 3;
           }
           iVar13 = iVar13 + 1;
           uVar11 = uVar11 + 1;
@@ -316,11 +316,11 @@ LAB_00632f7e:
     if (0 < (int)uVar12) {
       do {
         iVar7 = param_1->field_0000;
-        if ((uVar11 < *(uint *)(iVar7 + 0xc)) &&
-           (iVar7 = *(int *)(iVar7 + 8) * uVar11 + *(int *)(iVar7 + 0x1c), iVar7 != 0)) {
-          *(float *)(iVar7 + 0x21) = fVar1;
+        if ((uVar11 < STField<uint>(iVar7,0xC)) &&
+           (iVar7 = STField<int>(iVar7,0x8) * uVar11 + STField<int>(iVar7,0x1C), iVar7 != 0)) {
+          STField<float>(iVar7,0x21) = fVar1;
           fVar1 = fVar1 + local_8;
-          *(undefined4 *)(iVar7 + 8) = 1;
+          STField<undefined4>(iVar7,0x8) = 1;
         }
         uVar11 = uVar11 + 1;
       } while ((int)uVar11 < (int)uVar12);

@@ -17,12 +17,12 @@ int __thiscall FUN_00678ef0(void *this,byte *param_1)
 
   iVar2 = STField<int>(this,0x695);
   uVar8 = 0;
-  uVar3 = *(uint *)(iVar2 + 0xc);
+  uVar3 = STField<uint>(iVar2,0xC);
   if (0 < (int)uVar3) {
     do {
       if (((iVar2 != 0) && (-1 < (int)uVar8)) && ((int)uVar8 < (int)uVar3)) {
         if (uVar8 < uVar3) {
-          piVar5 = (int *)(*(int *)(iVar2 + 8) * uVar8 + *(int *)(iVar2 + 0x1c));
+          piVar5 = (int *)(STField<int>(iVar2,0x8) * uVar8 + STField<int>(iVar2,0x1C));
         }
         else {
           piVar5 = nullptr;

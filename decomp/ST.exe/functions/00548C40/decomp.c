@@ -365,7 +365,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       }
       break;
     case CASE_4E:
-      local_f4 = (uint)*(byte *)&this_00->field_04AA;
+      local_f4 = (uint)(byte)this_00->field_04AA;
       local_f0 = 0;
       local_ec = 0;
       local_e8 = 0;
@@ -773,7 +773,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     puVar14 = (byte *)0x17;
     goto cf_common_join_0054A19A;
   case 0x1c:
-    local_108 = (uint)*(byte *)&this_00->field_04AA;
+    local_108 = (uint)(byte)this_00->field_04AA;
     local_104 = 0;
     local_100 = 0;
     local_fc = 0;

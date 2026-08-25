@@ -80,8 +80,7 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
       do {
         uVar5 = (uint)*pbVar3;
         pbVar3 = pbVar3 + 1;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_3 = (byte *)param_6;
+        auto param_3_after_write = (byte *)param_6; /* compiler stack-slot lifetime split */
         uVar8 = 0x80 >> (bVar1 & 7);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_7 = param_9;
@@ -91,7 +90,7 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
         else {
           while( true ) {
             uVar4 = uVar5 & 0x7f;
-            param_3 = param_3 + -uVar4;
+            param_3_after_write = param_3_after_write + -uVar4;
             if ((uVar5 & 0x80) == 0) {
               uVar8 = ((uVar8 & 0xff) << 8) >> ((byte)uVar4 & 7);
               param_1 = (uint *)((int)param_1 + uVar4 * 2);
@@ -119,7 +118,7 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
                 }
               }
             }
-            if ((int)param_3 < 1) break;
+            if ((int)param_3_after_write < 1) break;
             uVar5 = (uint)*pbVar3;
             pbVar3 = pbVar3 + 1;
           }
@@ -159,12 +158,12 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
         if ((uVar8 & 0x80) != 0) {
           pbVar3 = pbVar3 + iVar9;
         }
-        param_3 = (byte *)param_6;
+        auto param_3_after_write_2 = (byte *)param_6; /* compiler stack-slot lifetime split */
         if (param_9 == nullptr) {
           puVar10 = param_1;
           if ((int)puVar7 <= param_6) {
             do {
-              param_3 = (byte *)((int)param_3 - (int)puVar7);
+              param_3_after_write_2 = (byte *)((int)param_3_after_write_2 - (int)puVar7);
               if ((uVar8 & 0x80) == 0) {
                 puVar10 = (uint *)((int)param_1 + (int)puVar7 * 2);
               }
@@ -181,7 +180,7 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
                   } while (puVar7 != nullptr);
                 }
               }
-              if ((int)param_3 < 1) {
+              if ((int)param_3_after_write_2 < 1) {
                 puVar7 = nullptr;
                 break;
               }
@@ -189,18 +188,18 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
               puVar7 = (uint *)(uVar8 & 0x7f);
               pbVar3 = pbVar3 + 1;
               param_1 = puVar10;
-            } while ((int)puVar7 <= (int)param_3);
+            } while ((int)puVar7 <= (int)param_3_after_write_2);
           }
-          uVar4 = (int)puVar7 - (int)param_3;
+          uVar4 = (int)puVar7 - (int)param_3_after_write_2;
           param_1 = puVar10;
           if ((uVar8 & 0x80) == 0) {
 LAB_006d36c3:
-            puVar7_mg1 = (uint *)((int)param_1 + (int)param_3 * 2);
+            puVar7_mg1 = (uint *)((int)param_1 + (int)param_3_after_write_2 * 2);
           }
           else {
             puVar7_mg1 = puVar10;
-            param_1 = (uint *)param_3;
-            if (0 < (int)param_3) {
+            param_1 = (uint *)param_3_after_write_2;
+            if (0 < (int)param_3_after_write_2) {
               do {
                 puVar7_mg1 = (uint *)((int)puVar10 + 2);
                 bVar6 = *pbVar3;
@@ -216,7 +215,7 @@ LAB_006d36c3:
           puVar10 = param_1;
           if ((int)puVar7 <= param_6) {
             do {
-              param_3 = (byte *)((int)param_3 - (int)puVar7);
+              param_3_after_write_2 = (byte *)((int)param_3_after_write_2 - (int)puVar7);
               if ((uVar8 & 0x80) == 0) {
                 puVar10 = (uint *)((int)puVar10 + (int)puVar7 * 2);
                 uVar5 = ((uVar5 & 0xff) << 8) >> ((byte)puVar7 & 7);
@@ -249,19 +248,19 @@ LAB_006d36c3:
                 }
               }
               param_1 = puVar10;
-              if ((int)param_3 < 1) {
+              if ((int)param_3_after_write_2 < 1) {
                 puVar7 = nullptr;
                 break;
               }
               uVar8 = (uint)*pbVar3;
               puVar7 = (uint *)(uVar8 & 0x7f);
               pbVar3 = pbVar3 + 1;
-            } while ((int)puVar7 <= (int)param_3);
+            } while ((int)puVar7 <= (int)param_3_after_write_2);
           }
-          uVar4 = (int)puVar7 - (int)param_3;
+          uVar4 = (int)puVar7 - (int)param_3_after_write_2;
           if ((uVar8 & 0x80) == 0) goto LAB_006d36c3;
           puVar7_mg1 = param_1;
-          if (0 < (int)param_3) {
+          if (0 < (int)param_3_after_write_2) {
             do {
               if ((*param_7 & (byte)uVar5) != 0) {
                 *(undefined2 *)param_1 = *(undefined2 *)(param_8 + (uint)*pbVar3 * 2);
@@ -274,9 +273,9 @@ LAB_006d36c3:
                 uVar5 = 0x80;
                 param_7 = param_7 + 1;
               }
-              param_3 = param_3 + -1;
+              param_3_after_write_2 = param_3_after_write_2 + -1;
               param_1 = puVar7_mg1;
-            } while (param_3 != nullptr);
+            } while (param_3_after_write_2 != nullptr);
           }
         }
         iVar9 = (sVar2 - param_4) - param_6;

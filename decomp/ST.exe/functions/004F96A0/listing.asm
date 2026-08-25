@@ -382,7 +382,8 @@ switchD_004f9749::caseD_4:
 004F9AE8  8B 11                     MOV EDX,dword ptr [ECX]
 004F9AEA  8D 46 18                  LEA EAX,[ESI + 0x18]
 004F9AED  50                        PUSH EAX
-004F9AEE  FF 12                     CALL dword ptr [EDX]
+CPanelTy::PlayBrief::override::prt_4f9aee_89729ca9:
+004F9AEE  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_004f9af0:
 004F9AF0  C6 86 60 02 00 00 04      MOV byte ptr [ESI + 0x260],0x4
 004F9AF7  66 C7 05 F7 C4 80 00 04 00  MOV word ptr [0x0080c4f7],0x4

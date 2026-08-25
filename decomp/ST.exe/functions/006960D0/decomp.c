@@ -15,14 +15,13 @@ uint __thiscall FUN_006960d0(void *this,uint param_1,int param_2)
 
   iVar6 = STField<int>(this,0x5853);
   if (iVar6 != 0) {
-    if (param_1 < *(uint *)(iVar6 + 0xc)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar6 = *(int *)(iVar6 + 8) * param_1 + *(int *)(iVar6 + 0x1c);
+    if (param_1 < STField<uint>(iVar6,0xC)) {
+      iVar6 = STField<int>(iVar6,0x8) * param_1 + STField<int>(iVar6,0x1C);
     }
     else {
       iVar6 = 0;
     }
-    if (*(int *)(iVar6 + 0x19) == 0) {
+    if (STField<int>(iVar6,0x19) == 0) {
       pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
       *(DArrayTy **)(iVar6 + 0x19) = pDVar2;
     }

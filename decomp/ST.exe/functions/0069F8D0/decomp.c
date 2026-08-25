@@ -140,9 +140,9 @@ LAB_0069fc43:
           }
           psVar4 = local_10;
           psVar9 = psVar6;
-          if ((iVar8 < param_2 + -1) && (*(short *)(iVar3 + 2) == 0)) {
+          if ((iVar8 < param_2 + -1) && (STField<short>(iVar3,0x2) == 0)) {
             psVar9 = psVar6 + 2;
-            *(short *)(iVar3 + 2) = (short)local_14;
+            STField<short>(iVar3,0x2) = (short)local_14;
             *psVar6 = sVar1 + 1;
             psVar6[1] = sVar11;
             local_8 = local_8 + 1;

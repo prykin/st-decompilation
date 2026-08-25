@@ -33,7 +33,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   if (this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D)
   goto cf_common_exit_004E2B69;
   /* ST_CALLSITE[004E2B29]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-  uVar2 = LookupRecordByte(*(char *)&this->field_023D);
+  uVar2 = LookupRecordByte((char)this->field_023D);
   uVar2 = (int)(byte)uVar2;
   if (uVar2 == 1) {
     pTVar5 = this->vtable;
@@ -67,7 +67,7 @@ cf_common_exit_004E2B69:
   local_24.arg1.words.low = (word)param_2;
   uVar3 = thunk_FUN_004e60d0((int)pbVar1,param_2);
   local_24.arg1.words.high = (short)uVar3 + 1;
-  /* ST_CALLSITE[004E2BBB]: CALL dword ptr [EAX] */
+  /* ST_CALLSITE[004E2BBB]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
   g_aiBossClass_008117BC->GetMessage(&local_24);
   return 0;
 }

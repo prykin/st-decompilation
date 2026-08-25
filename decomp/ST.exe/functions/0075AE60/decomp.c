@@ -21,13 +21,13 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
   if ((param_1[0x35] == 0) || (param_1[0x26] == 0)) {
     return 0;
   }
-  if (*(int *)(iVar7 + 0x70) == 0) {
+  if (STField<int>(iVar7,0x70) == 0) {
     /* ST_CALLSITE[0075AEA5]: CALL dword ptr [ECX] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     uVar3 = (**(code **)*param_1)(param_1,1,param_1[7] * 0x18);
-    *(undefined4 *)(iVar7 + 0x70) = uVar3;
+    STField<undefined4>(iVar7,0x70) = uVar3;
   }
-  iVar7 = *(int *)(iVar7 + 0x70);
+  iVar7 = STField<int>(iVar7,0x70);
   local_c = 0;
   if (0 < (int)param_1[7]) {
     local_8 = (undefined4 *)(param_1[0x34] + 0x4c);

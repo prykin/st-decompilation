@@ -28,8 +28,8 @@ void FUN_0075a490(AnonShape_0075A180_7E367FD8 *param_1)
     piVar9 = (int *)(param_1->field_00D0 + 0xc);
     do {
       iVar6 = (piVar9[6] * *piVar9) / param_1->field_012A;
-      iVar3 = *(int *)(*(int *)(iVar2 + 0x38) + local_18 * 4);
-      iVar4 = *(int *)(*(int *)(iVar2 + 0x3c) + local_18 * 4);
+      iVar3 = *(int *)(STField<int>(iVar2,0x38) + local_18 * 4);
+      iVar4 = *(int *)(STField<int>(iVar2,0x3C) + local_18 * 4);
       if (0 < iVar6) {
         local_10 = (undefined4 *)(iVar4 + (iVar1 + 2) * iVar6 * 4);
         iVar8 = iVar3 - iVar4;

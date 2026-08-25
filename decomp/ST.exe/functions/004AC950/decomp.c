@@ -14,7 +14,7 @@ int __thiscall FUN_004ac950(void *this,int param_1)
   iVar3 = *(int *)(iVar2 + 0x10 + param_1 * 0x24);
   iVar4 = *(int *)(iVar2 + 0x14 + param_1 * 0x24);
   iVar1 = iVar2 + param_1 * 0x24;
-  iVar5 = *(int *)(iVar1 + 0x18);
+  iVar5 = STField<int>(iVar1,0x18);
   iVar2 = **(int **)(iVar2 + param_1 * 0x24);
   if (iVar3 != iVar4) {
     if (iVar5 == iVar4) {

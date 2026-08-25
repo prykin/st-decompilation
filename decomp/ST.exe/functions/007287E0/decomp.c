@@ -26,9 +26,9 @@ undefined4 FUN_007287e0(int *param_1,int param_2)
         param_1[3] = (int)g_runtimeRecords_00857110[param_2].field_0000 << 0x10;
         param_1[4] = (((int)g_runtimeRecords_00857110[iVar2].field_0000 -
                       (int)g_runtimeRecords_00857110[param_2].field_0000) * 0x10000) / param_1[1];
-        param_1[5] = (int)(short)g_runtimeRecords_00857110[param_2].field_0004 << 0x10;
-        param_1[6] = (((int)(short)g_runtimeRecords_00857110[iVar2].field_0004 -
-                      (int)(short)g_runtimeRecords_00857110[param_2].field_0004) * 0x10000) /
+        param_1[5] = (short)g_runtimeRecords_00857110[param_2].field_0004 << 0x10;
+        param_1[6] = (((short)g_runtimeRecords_00857110[iVar2].field_0004 -
+                      (short)g_runtimeRecords_00857110[param_2].field_0004) * 0x10000) /
                      param_1[1];
         return 1;
       }

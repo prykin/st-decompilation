@@ -46,8 +46,8 @@ ST3DSMAPContext::sub_00709470
     if (0 < param_2) {
       do {
         iVar3 = *piVar8;
-        if (((iVar3 != 0) && (iVar10 = *(int *)(iVar3 + 4), 0 < iVar10)) &&
-           (iVar3 = *(int *)(iVar3 + 8), 0 < iVar3)) {
+        if (((iVar3 != 0) && (iVar10 = STField<int>(iVar3,0x4), 0 < iVar10)) &&
+           (iVar3 = STField<int>(iVar3,0x8), 0 < iVar3)) {
           if (iVar7 < iVar10) {
             iVar7 = iVar10;
           }
@@ -71,19 +71,19 @@ ST3DSMAPContext::sub_00709470
       piVar8 = param_1;
       do {
         iVar3 = *piVar8;
-        if ((iVar3 != 0) && (0 < *(short *)(iVar3 + 0x12))) {
-          sVar2 = *(short *)(iVar3 + 0x14);
+        if ((iVar3 != 0) && (0 < STField<short>(iVar3,0x12))) {
+          sVar2 = STField<short>(iVar3,0x14);
           local_10 = STReplaceLowWord((uint32_t)(piVar8), (uint16_t)(sVar2));
           if (0 < sVar2) {
-            iVar10 = (int)*(short *)(iVar3 + 0xe);
+            iVar10 = (int)STField<short>(iVar3,0xE);
             if (iVar10 < iVar13) {
               iVar13 = iVar10;
             }
-            iVar10 = iVar10 + *(short *)(iVar3 + 0x12);
+            iVar10 = iVar10 + STField<short>(iVar3,0x12);
             if (iVar7 < iVar10) {
               iVar7 = iVar10;
             }
-            iVar3 = (int)*(short *)(iVar3 + 0x10);
+            iVar3 = (int)STField<short>(iVar3,0x10);
             if (iVar3 < param_3) {
               param_3 = iVar3;
             }

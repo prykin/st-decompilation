@@ -24,7 +24,7 @@ void __thiscall AiFltClassTy::sub_00661580(AiFltClassTy *this)
   if (this->field_020B == nullptr) {
     return;
   }
-  if ((this->field_01FB != 0) && (this->field_0280 < this->field_01FF + this->field_01FB)) {
+  if ((this->field_01FB != 0) && (this->field_0280 < (uint)(this->field_01FF + this->field_01FB))) {
     return;
   }
   this->field_01FF = this->field_0280;

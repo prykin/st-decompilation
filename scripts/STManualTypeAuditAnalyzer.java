@@ -17,6 +17,8 @@ import java.util.Locale;
 import java.util.Map;
 
 import ghidra.app.script.GhidraScript;
+import ghidra.program.model.address.Address;
+import ghidra.program.model.listing.Function;
 
 public class STManualTypeAuditAnalyzer extends GhidraScript {
     private final List<AuditRow> rows = new ArrayList<>();
@@ -33,6 +35,7 @@ public class STManualTypeAuditAnalyzer extends GhidraScript {
         auditClassFields(directory.resolve("class_field_proposals.tsv"));
         auditPointerShapes(directory.resolve("pointer_shape_target_proposals.tsv"));
         auditTypeFamilies(directory.resolve("type_family_proposals.tsv"));
+        auditUtilityFunctions(directory.resolve("utility_function_proposals.tsv"));
         rows.sort(Comparator.comparing((AuditRow row) -> row.domain)
             .thenComparing(row -> row.locator).thenComparing(row -> row.currentType));
         writeTsv(directory.resolve("manual_type_conflicts.tsv"));
@@ -135,6 +138,28 @@ public class STManualTypeAuditAnalyzer extends GhidraScript {
         }
     }
 
+    private void auditUtilityFunctions(Path path) throws Exception {
+        for (Map<String, String> row : readTsv(path)) {
+            String source = value(row, "expected_name_source");
+            if (!protectedSource(source)) continue;
+            String candidate = value(row, "proposed_return_type");
+            if (candidate.isBlank()) continue;
+            Address address = currentProgram.getAddressFactory().getAddress(
+                value(row, "function_address"));
+            Function function = address == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(address);
+            if (function == null) continue;
+            String current = function.getReturnType().getPathName();
+            if (sameType(current, candidate)) continue;
+            rows.add(new AuditRow("utility_return",
+                value(row, "function_address") + ":return",
+                function.getName(true), current, candidate, source, "review",
+                value(row, "confidence"), value(row, "evidence"),
+                "protected function identity conflicts with recovered utility return ABI; " +
+                    value(row, "reason"), path.getFileName().toString()));
+        }
+    }
+
     private List<Map<String, String>> readTsv(Path path) throws Exception {
         List<Map<String, String>> result = new ArrayList<>();
         if (!Files.isRegularFile(path)) return result;
@@ -173,7 +198,7 @@ public class STManualTypeAuditAnalyzer extends GhidraScript {
             "approved_overrides=" + rows.stream().filter(row -> row.status.equals("approved_override")).count(),
             "review=" + rows.stream().filter(row -> row.status.equals("review")).count(),
             "note=This report is deliberately read-only. USER_DEFINED/IMPORTED types are never silently replaced.",
-            "note_order=Run it after the prototype, pointer-shape, class-layout, and type-family analyzers."),
+            "note_order=Run it after the prototype, pointer-shape, class-layout, type-family, and utility-function analyzers."),
             StandardCharsets.UTF_8);
     }
 

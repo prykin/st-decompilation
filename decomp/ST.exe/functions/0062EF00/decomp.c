@@ -21,7 +21,7 @@ STRubbishC::sub_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE3
 
   uVar2 = 0;
   if ((&this->field_01E5)[param_1] != 0) {
-    *(uint *)((&this->field_01E5)[param_1] + 0x14) = (uint)*(ushort *)&param_2->field_0028;
+    *(uint *)((&this->field_01E5)[param_1] + 0x14) = (uint)(ushort)param_2->field_0028;
     *(undefined4 *)((&this->field_01E5)[param_1] + 0x20) = *(undefined4 *)&param_2->field_0x14;
     *(undefined4 *)((&this->field_01E5)[param_1] + 0x24) = *(undefined4 *)&param_2->field_0x18;
     *(undefined4 *)((&this->field_01E5)[param_1] + 0x28) = *(undefined4 *)&param_2->field_0x1c;

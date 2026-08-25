@@ -25,7 +25,7 @@ switchD_0049655f_caseD_0:
   }
   sVar1 = (short)(param_1 >> 0x1f);
   if (param_1 < 0) {
-    uVar13 = (int)(short)(((short)(param_1 / 0xc9) + sVar1) -
+    uVar13 = (short)(((short)(param_1 / 0xc9) + sVar1) -
                          (short)((longlong)param_1 * 0x28c1979 >> 0x3f)) - 1;
   }
   else {
@@ -34,7 +34,7 @@ switchD_0049655f_caseD_0:
   }
   sVar1 = (short)(param_2 >> 0x1f);
   if (param_2 < 0) {
-    uVar10 = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
+    uVar10 = (short)(((short)(param_2 / 0xc9) + sVar1) -
                          (short)((longlong)param_2 * 0x28c1979 >> 0x3f)) - 1;
   }
   else {
@@ -65,13 +65,13 @@ switchD_0049655f_caseD_0:
             return 0xffffffff;
           }
         }
-        sVar1 = *(short *)(iVar3 + 8);
+        sVar1 = STField<short>(iVar3,0x8);
         iVar11 = (int)sVar1;
-        iVar8 = iVar11 - (uint)((byte *)iVar3)[0x48];
+        iVar8 = iVar11 - (uint)STField<byte>(iVar3,0x48);
         if (iVar12 < iVar8) {
           return 0xffffffff;
         }
-        uVar2 = *(ushort *)(iVar3 + 0x4e);
+        uVar2 = STField<ushort>(iVar3,0x4E);
         if ((uVar2 & 0x4000) != 0) {
           return 0x7f;
         }
@@ -82,7 +82,7 @@ switchD_0049655f_caseD_0:
         else {
           iVar8 = g_sT3DSMAPContext_00807598->field_0384 * iVar8;
         }
-        if ((int)(*(byte *)(*(int *)(iVar3 + 0x40) +
+        if ((int)(*(byte *)(STField<int>(iVar3,0x40) +
                             iVar4 * (((iVar4 * param_2) / 0xc9) % (iVar4 * 2)) * 2 +
                            ((iVar4 * param_1) / 0xc9) % (iVar4 * 2)) + 4 + iVar8) <
             ((param_3 + 400) * 0x100) / 0x640) {

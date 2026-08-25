@@ -47,7 +47,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
   }
   if (param_1 < _DAT_0079034c) {
     lVar9 = Library::MSVCRT::__ftol();
-    local_8 = (int)(short)lVar9 - 1;
+    local_8 = (short)lVar9 - 1;
   }
   else {
     lVar9 = Library::MSVCRT::__ftol();
@@ -59,7 +59,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
   }
   else {
     lVar9 = Library::MSVCRT::__ftol();
-    iVar7 = (int)(short)lVar9;
+    iVar7 = (short)lVar9;
   }
   if (param_3 < _DAT_0079034c) {
     lVar9 = Library::MSVCRT::__ftol();
@@ -67,7 +67,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
   }
   else {
     lVar9 = Library::MSVCRT::__ftol();
-    iVar8 = (int)(short)lVar9;
+    iVar8 = (short)lVar9;
   }
   pVVar3 = g_visibleClass_00802A88;
   if ((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) {
@@ -101,7 +101,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
       }
       if ((int)uVar5 < 0) goto cf_common_exit_0054ACFD;
       if (uVar5 == 0xf) {
-        if (((local_10 < 0) || ((int)pVVar3->field_0030 <= local_10)) ||
+        if (((local_10 < 0) || (pVVar3->field_0030 <= local_10)) ||
            ((g_centeredOffsets5[iVar8] + local_14 < 0 ||
             (pVVar3->field_0034 <= g_centeredOffsets5[iVar8] + local_14)))) {
           bVar2 = false;
@@ -161,13 +161,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
     *(int *)(pAVar4->field_04EB + 0x20) =
          *(int *)(pAVar4->field_04EB + 0x20) - *(int *)(pAVar4->field_04E7 + 0xd) / 2;
     iVar7 = pAVar4->field_04EB;
-    if (*(uint *)(iVar7 + 4) == 0xffffffff) {
+    if (STField<uint>(iVar7,0x4) == 0xffffffff) {
       g_currentExceptionFrame = local_58.previous;
       return;
     }
     Library::DKW::DDX::FUN_006b34d0
-              (*(uint **)(iVar7 + 0x48),*(uint *)(iVar7 + 4),0xfffffffe,*(uint *)(iVar7 + 0x1c),
-               *(uint *)(iVar7 + 0x20));
+              (*(uint **)(iVar7 + 0x48),STField<uint>(iVar7,0x4),0xfffffffe,STField<uint>(iVar7,0x1C),
+               STField<uint>(iVar7,0x20));
     g_currentExceptionFrame = local_58.previous;
     return;
   }

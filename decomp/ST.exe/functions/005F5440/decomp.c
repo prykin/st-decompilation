@@ -46,7 +46,7 @@ void __fastcall FUN_005f5440(AnonShape_005F5440_D27C3BDE *param_1)
                 ((VisibleClassTy::sub_00558C00
                             (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6
                              ,&local_10,&local_14), local_8 < 0 || ((4 < local_8 || (local_10 < 0)))
-                 ))) || (((int)pVVar4->field_0030 <= local_10 ||
+                 ))) || ((pVVar4->field_0030 <= local_10 ||
                          ((((iVar6 = g_centeredOffsets5[local_8] + local_14, iVar6 < 0 ||
                             (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == nullptr))
                           || (pVVar4->field_004C[local_10 + iVar6 * pVVar4->field_0030] != 0)))))) {

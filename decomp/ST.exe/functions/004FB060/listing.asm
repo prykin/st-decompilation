@@ -891,7 +891,8 @@ LAB_004fbb49:
 004FBB7C  8D 56 18                  LEA EDX,[ESI + 0x18]
 004FBB7F  8B 01                     MOV EAX,dword ptr [ECX]
 004FBB81  52                        PUSH EDX
-004FBB82  FF 10                     CALL dword ptr [EAX]
+CPanelTy::GetMessage::override::prt_4fbb82_74f246b9:
+004FBB82  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_004fbb84:
 004FBB84  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 004FBB87  3B C3                     CMP EAX,EBX
@@ -906,7 +907,8 @@ LAB_004fbb84:
 004FBBB1  8D 46 18                  LEA EAX,[ESI + 0x18]
 004FBBB4  8B 11                     MOV EDX,dword ptr [ECX]
 004FBBB6  50                        PUSH EAX
-004FBBB7  FF 12                     CALL dword ptr [EDX]
+CPanelTy::GetMessage::override::prt_4fbbb7_74f246b9:
+004FBBB7  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 004FBBB9  EB 02                     JMP 0x004fbbbd
 LAB_004fbbbb:
 004FBBBB  33 DB                     XOR EBX,EBX

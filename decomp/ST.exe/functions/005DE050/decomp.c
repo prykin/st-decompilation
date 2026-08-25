@@ -27,7 +27,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
   int local_8;
 
   if ((((this->field_0544 != nullptr) &&
-       (this->field_0548 != nullptr)) && (-1 < (int)this->field_0540)) &&
+       (this->field_0548 != nullptr)) && (-1 < this->field_0540)) &&
      ((param_1 != nullptr &&
       (local_c = param_1->field_001C, local_c != 0)))) {
     pcVar1 = this->field_0034;
@@ -45,8 +45,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
       FUN_006b4170(pRVar2,0,0,0,pRVar2->field_0004,pRVar2->field_0008,0xff);
       uVar5 = (uint)param_1->field_0016;
       uVar7 = uVar5;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((int)uVar5 < (int)(*(int *)(local_c + 0x1e0) + uVar5)) {
+      if ((int)uVar5 < (int)(STField<int>(local_c,0x1E0) + uVar5)) {
         do {
           if ((int)uVar7 < (int)pSVar4->field_0548[2]) {
             resourceString = *(char **)(pSVar4->field_0548[5] + uVar7 * 4);
@@ -61,8 +60,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
           }
           uVar7 = uVar7 + 1;
           uVar5 = (uint)param_1->field_0016;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        } while ((int)uVar7 < (int)(*(int *)(local_c + 0x1e0) + uVar5));
+        } while ((int)uVar7 < (int)(STField<int>(local_c,0x1E0) + uVar5));
       }
       FUN_006b35d0((int *)g_ddxContext_008075A8,pSVar4->field_0540);
       g_currentExceptionFrame = local_54.previous;

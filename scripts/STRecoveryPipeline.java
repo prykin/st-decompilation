@@ -92,6 +92,11 @@ public class STRecoveryPipeline extends GhidraScript {
             "recursive_pointee_audit.tsv",
             "recursive_pointee_failures.tsv",
             "recursive_pointee_summary.txt")),
+        Map.entry("STTypeFamilyAnalyzer.java", List.of(
+            "type_family_groups.tsv", "anon_named_type_matches.tsv",
+            "anonymous_type_audit.tsv", "contextual_record_promotions.tsv",
+            "type_family_proposals.tsv", "polymorphic_receiver_callsites.tsv",
+            "type_family_summary.txt")),
         Map.entry("STClassLayoutAnalyzer.java", List.of(
             "class_layout_proposals.tsv", "class_field_proposals.tsv",
             "class_nested_type_proposals.tsv", "class_nested_field_proposals.tsv",
@@ -131,6 +136,7 @@ public class STRecoveryPipeline extends GhidraScript {
             "indirect_call_summary.txt")),
         Map.entry("STIndirectCallsiteAnalyzer.java", List.of(
             "indirect_callsite_proposals.tsv",
+            "callable_family_audit.tsv",
             "indirect_callsite_summary.txt")));
     private static final Map<String, List<String>> CACHEABLE_ANALYZER_INPUTS = Map.ofEntries(
         Map.entry("STDArrayElementAnalyzer.java", List.of()),
@@ -146,8 +152,12 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STFunctionPointerFieldAnalyzer.java", List.of()),
         Map.entry("STAllocationRecordAnalyzer.java", List.of()),
         Map.entry("STRecursivePointeeAnalyzer.java", List.of()),
+        Map.entry("STTypeFamilyAnalyzer.java", List.of(
+            "vtable_proposals.tsv", "callable_family_audit.tsv",
+            "prototype_callsite_audit.tsv")),
         Map.entry("STClassLayoutAnalyzer.java", List.of(
-            "constructor_class_sizes.tsv", "vtable_proposals.tsv",
+            "constructor_class_sizes.tsv", "constructor_hierarchy.tsv",
+            "vtable_proposals.tsv",
             "class_array_proposals.tsv", "class_record_array_type_proposals.tsv",
             "class_record_array_field_proposals.tsv",
             "inline_aggregate_proposals.tsv")),
@@ -164,7 +174,8 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STGlobalDataAnalyzer.java", List.of()),
         Map.entry("STIndirectCallAnalyzer.java", List.of("vtable_proposals.tsv")),
         Map.entry("STIndirectCallsiteAnalyzer.java", List.of(
-            "indirect_call_proposals.tsv", "indirect_call_sites.tsv")));
+            "indirect_call_proposals.tsv", "indirect_call_sites.tsv",
+            "polymorphic_receiver_callsites.tsv")));
     private static final Set<String> MUTATING_STATUSES = Set.of(
         "applied", "created", "converted", "updated", "partial", "renamed", "repaired",
         "removed");
@@ -395,6 +406,13 @@ public class STRecoveryPipeline extends GhidraScript {
                 "recursive_pointee_apply_report.tsv");
             changed += pair("STTypeFamilyAnalyzer.java", "STTypeFamilyApplier.java",
                 "type_family_proposals.tsv", "type_family_apply_report.tsv");
+            // Keep a proven common base local to each exact CALLIND.  Persistently typing the
+            // transported parameter makes Ghidra erase derived layouts until inheritance is
+            // recovered; the address-stable call-site view carries the physical ABI safely.
+            changed += runIndirectCallTyping();
+            changed += pair("STVirtualMethodAnalyzer.java", "STVirtualMethodApplier.java",
+                "virtual_method_proposals.tsv", "virtual_method_apply_report.tsv",
+                MUTATING_STATUSES, recoveryProgram.resolve("vtable_proposals.tsv"));
             changed += runClassLayoutFixpoint();
             changed += runDArrayTypes();
             changed += pair("STSwitchEnumAnalyzer.java", "STSwitchEnumApplier.java",
@@ -704,6 +722,10 @@ public class STRecoveryPipeline extends GhidraScript {
                 "object_factory_proposals.tsv", "object_factory_apply_report.tsv");
             changed += pair("STVTableAnalyzer.java", "STVTableApplier.java",
                 "vtable_proposals.tsv", "vtable_apply_report.tsv");
+            // Keep the callable-family evidence in the same Program epoch as the physical
+            // tables consumed below.  The analyzer cache makes confirming structural passes
+            // cheap when neither the table nor an ABI boundary changed.
+            changed += runIndirectCallTyping();
             changed += pair("STVirtualMethodAnalyzer.java", "STVirtualMethodApplier.java",
                 "virtual_method_proposals.tsv", "virtual_method_apply_report.tsv",
                 MUTATING_STATUSES, recoveryProgram.resolve("vtable_proposals.tsv"));

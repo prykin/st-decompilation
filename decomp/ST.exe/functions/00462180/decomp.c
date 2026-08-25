@@ -155,7 +155,7 @@ LAB_00462320:
                local_14 != nullptr && ((uint)local_14->field_0024 < 8)) &&
               ((g_playSystem_00802A38 == nullptr ||
                (g_bulkInitializedRecords_008087C7[local_14->field_0024].field_0022 < 8)))))) {
-            bVar3 = *(byte *)&local_14->field_0024;
+            bVar3 = (byte)local_14->field_0024;
             bVar4 = STField<byte>(this,0x24);
             STPiece<1,3>(local_10) = (undefined3)(local_10 >> 8);
             local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar3));
@@ -228,7 +228,7 @@ LAB_00462c49:
 cf_common_exit_00462E32:
             /* ST_CALLSITE[00462E35]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
             STBoatC::sub_00481520
-                      (this,(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
+                      (this,(short)local_24,(short)local_1c,(short)local_20);
             /* ST_CALLSITE[00462E3E]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
             STBoatC::sub_00460260(this,0);
             return 2;
@@ -371,25 +371,25 @@ LAB_00462a36:
                                 STField<undefined2>(this,0x34),STField<undefined2>(this,0x36),
                                 STField<undefined2>(this,0x38));
             if (-1 < iVar16) {
-              iVar16 = thunk_FUN_004d8870(*(char *)&pSVar15->field_0024);
+              iVar16 = thunk_FUN_004d8870((char)pSVar15->field_0024);
               if (200 < iVar16) {
                 iVar16 = 200;
               }
-              thunk_FUN_004d8800(*(char *)&pSVar15->field_0024,iVar16);
+              thunk_FUN_004d8800((char)pSVar15->field_0024,iVar16);
               thunk_FUN_004d87b0(STField<char>(this,0x24),iVar16);
-              iVar16 = thunk_FUN_004d89b0(*(char *)&pSVar15->field_0024);
+              iVar16 = thunk_FUN_004d89b0((char)pSVar15->field_0024);
               if (100 < iVar16) {
                 iVar16 = 100;
               }
-              thunk_FUN_004d8940(*(char *)&pSVar15->field_0024,iVar16);
+              thunk_FUN_004d8940((char)pSVar15->field_0024,iVar16);
               thunk_FUN_004d88f0(STField<char>(this,0x24),iVar16);
-              iVar16 = thunk_FUN_004d8af0(*(char *)&pSVar15->field_0024);
+              iVar16 = thunk_FUN_004d8af0((char)pSVar15->field_0024);
               if (0x5dc < iVar16) {
                 iVar16 = 0x5dc;
               }
-              thunk_FUN_004d8a80(*(char *)&pSVar15->field_0024,iVar16);
+              thunk_FUN_004d8a80((char)pSVar15->field_0024,iVar16);
               thunk_FUN_004d8a30(STField<char>(this,0x24),iVar16);
-              thunk_FUN_004d78e0(*(char *)&pSVar15->field_0024);
+              thunk_FUN_004d78e0((char)pSVar15->field_0024);
               thunk_FUN_004d78e0(STField<char>(this,0x24));
               if (((uint)DAT_0080874d == pSVar15->field_0024) ||
                  ((uint)DAT_0080874d == STField<uint>(this,0x24))) {
@@ -517,7 +517,7 @@ LAB_00463442:
             STField<short>(this,0x800) = (short)local_24;
             /* ST_CALLSITE[004634F4]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
             STBoatC::sub_00481520
-                      (this,(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
+                      (this,(short)local_24,(short)local_1c,(short)local_20);
             /* ST_CALLSITE[004634FD]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
             STBoatC::sub_00460260(this,0);
             return 2;
@@ -538,7 +538,7 @@ LAB_00463442:
                  local_14 = pSVar15, pSVar15 != nullptr && ((uint)pSVar15->field_0024 < 8))))
                )))) && ((g_playSystem_00802A38 == nullptr ||
                         (g_bulkInitializedRecords_008087C7[pSVar15->field_0024].field_0022 < 8)))) {
-            bVar3 = *(byte *)&pSVar15->field_0024;
+            bVar3 = (byte)pSVar15->field_0024;
             bVar4 = STField<byte>(this,0x24);
             local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar3));
             local_c = (STFishC *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar4));
@@ -642,7 +642,7 @@ LAB_00462fde:
             STField<short>(this,0x800) = (short)local_24;
             /* ST_CALLSITE[004632B9]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
             STBoatC::sub_00481520
-                      (this,(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
+                      (this,(short)local_24,(short)local_1c,(short)local_20);
             /* ST_CALLSITE[004632C2]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
             STBoatC::sub_00460260(this,0);
             STField<undefined2>(this,0xf8) = 0;
@@ -779,7 +779,7 @@ LAB_004624c3:
                 STField<undefined4>(this,0x82e) = 3;
                 /* ST_CALLSITE[0046241D]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
                 STBoatC::sub_00481520
-                          (this,(int)(short)local_24,(int)(short)local_1c,(int)(short)local_20);
+                          (this,(short)local_24,(short)local_1c,(short)local_20);
                 goto LAB_004624c3;
               }
               STField<short>(this,0x814) = STField<short>(this,0x814) + -0xc9;
@@ -1041,12 +1041,12 @@ LAB_0046461c:
           else {
             /* ST_CALLSITE[00464697]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0(local_c,(short *)&local_10,(short *)&local_28,(short *)&local_14);
-            uVar11 = (int)STField<short>(this,0x800) - (int)(short)local_10;
+            uVar11 = (int)STField<short>(this,0x800) - (short)local_10;
             uVar19 = (int)uVar11 >> 0x1f;
             if ((((int)((uVar11 ^ uVar19) - uVar19) < 2) &&
-                (uVar11 = (int)STField<short>(this,0x802) - (int)(short)local_28,
+                (uVar11 = (int)STField<short>(this,0x802) - (short)local_28,
                 uVar19 = (int)uVar11 >> 0x1f, (int)((uVar11 ^ uVar19) - uVar19) < 2)) &&
-               (uVar11 = (int)STField<short>(this,0x804) - (int)(short)local_14,
+               (uVar11 = (int)STField<short>(this,0x804) - (short)local_14,
                uVar19 = (int)uVar11 >> 0x1f, (int)((uVar11 ^ uVar19) - uVar19) < 2)) {
               STField<short>(this,0x804) = (short)local_14;
               STField<short>(this,0x800) = (short)local_10;

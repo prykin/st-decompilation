@@ -84,10 +84,10 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
                      ,0xabe);
         }
         /* ST_CALLSITE[0049E62C]: CALL dword ptr [EAX + 0xf8] */
-        iVar9 = pSVar3->vfunc_F8();
+        iVar9 = pSVar3->sub_004838B0();
         if (iVar9 != 0) {
           /* ST_CALLSITE[0049E63E]: CALL dword ptr [EDX + 0x2c] */
-          dVar4 = pSVar3->slot_2C();
+          dVar4 = pSVar3->sub_0045EEE0();
           if ((((dVar4 == 7) || (dVar4 == 0x13)) || (dVar4 == 0x1b)) &&
              (iVar9 = thunk_FUN_00492370((STGameObjC *)pSVar3), iVar9 != 0)) {
             /* ST_CALLSITE[0049E663]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -188,10 +188,10 @@ LAB_0049e7c1:
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xaf1);
           }
           /* ST_CALLSITE[0049E836]: CALL dword ptr [EDX + 0xf8] */
-          iVar9 = pSVar3->vfunc_F8();
+          iVar9 = pSVar3->sub_004838B0();
           if ((iVar9 != 0) &&
              /* ST_CALLSITE[0049E844]: CALL dword ptr [EAX + 0x2c] */
-             ((((dVar4 = pSVar3->slot_2C(), dVar4 == 7 || (dVar4 == 0x13)) ||
+             ((((dVar4 = pSVar3->sub_0045EEE0(), dVar4 == 7 || (dVar4 == 0x13)) ||
                (dVar4 == 0x1b)) &&
               ((iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar3), iVar9 == 0x10 ||
                /* ST_CALLSITE[0049E866]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */

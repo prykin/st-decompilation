@@ -12,14 +12,14 @@ void __fastcall FUN_006e52d0(AnonShape_006E52D0_AF06BCD2 *param_1)
 
   iVar3 = param_1->field_0010;
   if (iVar3 != 0) {
-    iVar1 = *(int *)(iVar3 + 0xc);
+    iVar1 = STField<int>(iVar3,0xC);
     while (iVar1 != 0) {
       local_14 = 3;
-      if (*(int *)(iVar3 + 0xc) == 0) {
+      if (STField<int>(iVar3,0xC) == 0) {
         iVar3 = 0;
       }
       else {
-        iVar3 = *(int *)(iVar3 + 0x1c);
+        iVar3 = STField<int>(iVar3,0x1C);
       }
       puVar2 = *(undefined4 **)(iVar3 + 4);
       /* ST_CALLSITE[006E5309]: CALL dword ptr [EAX] */
@@ -28,7 +28,7 @@ void __fastcall FUN_006e52d0(AnonShape_006E52D0_AF06BCD2 *param_1)
       DArrayRemoveAt((DArrayTy *)param_1->field_0010,0);
       AppClassTy::DeleteObject(param_1->field_0018,puVar2[2]);
       iVar3 = param_1->field_0010;
-      iVar1 = *(int *)(iVar3 + 0xc);
+      iVar1 = STField<int>(iVar3,0xC);
     }
     param_1->field_000C = 0;
     DArrayDestroy((DArrayTy *)param_1->field_0010);

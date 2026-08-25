@@ -129,7 +129,7 @@ LAB_0054b366:
       local_c = 4;
     }
     /* ST_CALLSITE[0054B0F4]: CALL 0x00403175; direct=00403175 CursorClassTy::sub_0054B700 */
-    sub_0054B700(this_00,(int)(short)local_c);
+    sub_0054B700(this_00,(short)local_c);
     pSVar7 = this_00->field_049A;
     if (pSVar7 == nullptr) {
       if ((this_00->field_049E != 0) &&

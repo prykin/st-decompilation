@@ -12,7 +12,7 @@ void __cdecl FUN_0071a4b0(int *param_1)
   if (*param_1 != 0) {
     iVar2 = *(int *)(*param_1 + 5);
     if (iVar2 != 0) {
-      *(undefined4 *)(iVar2 + 4) = 0;
+      STField<undefined4>(iVar2,0x4) = 0;
       iVar1 = DArrayGetNext(*(DArrayTy **)(*param_1 + 5),local_208);
       while (-1 < iVar1) {
         cMf32::RecMemFree(*(cMf32 **)(*param_1 + 1),&local_8);

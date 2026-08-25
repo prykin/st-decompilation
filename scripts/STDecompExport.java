@@ -92,7 +92,7 @@ public class STDecompExport extends GhidraScript {
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
     private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "2";
-    private static final int FUNCTION_ANALYSIS_SCHEMA = 43;
+    private static final int FUNCTION_ANALYSIS_SCHEMA = 44;
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
@@ -278,6 +278,11 @@ public class STDecompExport extends GhidraScript {
         "\\*\\s*\\(\\s*(?<cast>[A-Za-z_$][A-Za-z0-9_$:<> ]*(?:\\s*\\*\\s*)+)\\)" +
         "\\s*\\(\\s*\\(int\\)\\s*(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*" +
         "\\+\\s*(?<offset>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
+    private static final Pattern EXPLICIT_NAMED_FIELD_BYTE_OFFSET = Pattern.compile(
+        "\\*\\s*\\(\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:<> ]*)\\s*\\*\\s*\\)" +
+        "\\s*\\(\\s*\\(int\\)\\s*&\\s*(?<base>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "\\s*->\\s*field_(?:0[xX])?(?<field>[0-9A-Fa-f]++)" +
+        "\\s*(?<operator>[+-])\\s*(?<delta>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
     private static final Pattern CASTED_GENERIC_FIELD_VALUE = Pattern.compile(
         "\\*\\s*\\(\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:<> ]*)\\s*\\*\\s*\\)\\s*" +
         "(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*->\\s*field_(?:0[xX])?" +
@@ -321,6 +326,20 @@ public class STDecompExport extends GhidraScript {
         "\\*\\s*\\(\\s*(?<type>byte|char|undefined1)\\s*\\*\\s*\\)\\s*" +
         "\\(\\s*(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*" +
         "(?<operator>[+-])\\s*(?<offset>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
+    private static final Pattern SCALAR_BASE_OFFSET_DEREFERENCE = Pattern.compile(
+        "\\*\\s*\\(\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:<> ]*)\\s*\\*\\s*\\)\\s*" +
+        "\\(\\s*(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*" +
+        "(?<operator>[+-])\\s*(?<offset>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
+    private static final Pattern SCALAR_BASE_OFFSET_DEREFERENCE_REVERSE = Pattern.compile(
+        "\\*\\s*\\(\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:<> ]*)\\s*\\*\\s*\\)\\s*" +
+        "\\(\\s*(?<offset>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\+\\s*" +
+        "(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*\\)");
+    private static final Pattern SCALAR_STFIELD = Pattern.compile(
+        "STField<(?<type>[A-Za-z_$][A-Za-z0-9_$:<> *]*?)>\\(\\s*" +
+        "(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*,\\s*" +
+        "(?<offset>-?(?:0[xX][0-9A-Fa-f]+|[0-9]+))\\s*\\)");
+    private static final Pattern RAW_DEREFERENCE_START = Pattern.compile(
+        "\\*\\s*\\(");
     private static final Pattern PACKED_PIECE = Pattern.compile(
         "(?:\\._[0-9]+_[0-9]+_|\\.\\*[0-9]+_[0-9]+\\*|" +
         "(?:->|\\.)packed\\b)");
@@ -984,7 +1003,7 @@ public class STDecompExport extends GhidraScript {
                     status = result == null ? "no_result" : nullToEmpty(result.getErrorMessage());
                 }
                 cCode = literalizeReferencedStrings(function, cCode);
-                NormalizedCode normalized = normalizePseudocode(cCode);
+                NormalizedCode normalized = normalizePseudocode(function, cCode);
                 NormalizedCode machineNormalized =
                     normalizeMachinePseudocode(function, normalized.code);
                 NormalizedCode enumNormalized =
@@ -1102,7 +1121,7 @@ public class STDecompExport extends GhidraScript {
     private String normalizedFunctionText(Function function, String original) {
         String literalized = literalizeReferencedStrings(function,
             stripExporterPseudocodeComments(original));
-        NormalizedCode normalized = normalizePseudocode(literalized);
+        NormalizedCode normalized = normalizePseudocode(function, literalized);
         NormalizedCode machineNormalized =
             normalizeMachinePseudocode(function, normalized.code);
         NormalizedCode enumNormalized =
@@ -1286,7 +1305,7 @@ public class STDecompExport extends GhidraScript {
      * attached debugger and continuation is deliberately unsupported, so expose
      * the intended standalone behavior as a noreturn helper.
      */
-    private NormalizedCode normalizePseudocode(String code) {
+    private NormalizedCode normalizePseudocode(Function function, String code) {
         if (code == null || code.isEmpty()) return new NormalizedCode("", 0);
         NormalizedCode legacyScalarLifetimes =
             normalizeLegacyMalformedScalarLifetimes(code);
@@ -1318,8 +1337,14 @@ public class STDecompExport extends GhidraScript {
             normalizeExplicitByteOffsetFields(partialPieces.code);
         NormalizedCode castedFields =
             normalizeCastedGenericFieldValues(typedFields.code);
+        NormalizedCode lowScalarViews =
+            normalizeScalarLowSubpieceViews(castedFields.code);
+        NormalizedCode narrowIntegerPromotions =
+            normalizeRedundantSignedNarrowPromotions(lowScalarViews.code);
+        NormalizedCode scalarAddressFields =
+            normalizeScalarAddressFields(function, narrowIntegerPromotions.code);
         NormalizedCode byteOffsets =
-            normalizeSimpleByteOffsetDereferences(castedFields.code);
+            normalizeSimpleByteOffsetDereferences(scalarAddressFields.code);
         NormalizedCode packedBits =
             normalizePackedBitOperations(byteOffsets.code);
         NormalizedCode signedQuartering =
@@ -1340,6 +1365,9 @@ public class STDecompExport extends GhidraScript {
             narrowReturns.replacements + lowPieces.replacements +
             partialPieces.replacements + typedFields.replacements +
             castedFields.replacements +
+            lowScalarViews.replacements +
+            narrowIntegerPromotions.replacements +
+            scalarAddressFields.replacements +
             byteOffsets.replacements + packedBits.replacements + signedQuartering.replacements +
             fixedRounding.replacements;
         for (int index = 0; index < lines.length; index++) {
@@ -1381,8 +1409,12 @@ public class STDecompExport extends GhidraScript {
             normalizeDetachedSemicolons(scalarSwitches.code);
         NormalizedCode scalarLifetimes =
             normalizeIntegerStoredInPointerLifetimes(semicolons.code);
+        NormalizedCode scalarOnlyPointers =
+            normalizeScalarOnlyPointerLifetimes(scalarLifetimes.code);
+        NormalizedCode pointerOnlyScalars =
+            normalizePointerOnlyScalarLifetimes(scalarOnlyPointers.code);
         NormalizedCode narrowPromotions =
-            normalizeRedundantNarrowToDoublePromotions(scalarLifetimes.code);
+            normalizeRedundantNarrowToDoublePromotions(pointerOnlyScalars.code);
         NormalizedCode biasedDivisions =
             normalizeBiasedNarrowDivisions(narrowPromotions.code);
         NormalizedCode deadCodePointers =
@@ -1392,7 +1424,9 @@ public class STDecompExport extends GhidraScript {
         return new NormalizedCode(deadSynthetics.code,
             replacements + nullPointers.replacements + nullCases.replacements +
                 scalarSwitches.replacements + semicolons.replacements +
-                scalarLifetimes.replacements + deadCodePointers.replacements +
+                scalarLifetimes.replacements + scalarOnlyPointers.replacements +
+                pointerOnlyScalars.replacements +
+                deadCodePointers.replacements +
                 narrowPromotions.replacements + biasedDivisions.replacements +
                 deadSynthetics.replacements);
     }
@@ -1796,6 +1830,68 @@ public class STDecompExport extends GhidraScript {
                 Pattern.quote(name) + "\\s*(?:=|;)");
             if (!declaration.matcher(code).find()) return true;
         }
+        Pattern legacyPointerSentinel = Pattern.compile(
+            "(?m)^\\s*(?:uint|int|dword|DWORD)\\s+" +
+            "(?<local>(?<parameter>param_[0-9]+)_after_write(?:_[0-9]+)?)" +
+            "\\s*=\\s*(?<value>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*;\\s*" +
+            Pattern.quote(STACK_SLOT_SPLIT_MARKER) + "\\s*$");
+        Matcher legacySentinel = legacyPointerSentinel.matcher(code);
+        while (legacySentinel.find()) {
+            String parameter = legacySentinel.group("parameter");
+            String display = "";
+            for (Parameter candidate : function.getParameters()) {
+                if (!candidate.isAutoParameter() &&
+                        parameter.equals(candidate.getName()) &&
+                        unwrapTypeDef(candidate.getDataType()) instanceof Pointer) {
+                    display = candidate.getDataType().getDisplayName();
+                    break;
+                }
+            }
+            if (display.isBlank()) continue;
+            String interval = replaceIdentifier(code.substring(legacySentinel.end()),
+                legacySentinel.group("local"), parameter);
+            if (reusedSentinelPointerType(function, parameter,
+                    "(" + display + ")" + legacySentinel.group("value"),
+                    interval, code) != null) return true;
+        }
+        Matcher legacyScalarAlias = Pattern.compile(
+            "(?m)^\\s*(?:uint|int|dword|DWORD)\\s+" +
+            "(?<local>param_[0-9]+_after_write(?:_[0-9]+)?)\\s*=" +
+            "[^;]+;\\s*" + Pattern.quote(STACK_SLOT_SPLIT_MARKER) + "\\s*$")
+            .matcher(code);
+        while (legacyScalarAlias.find()) {
+            String local = Pattern.quote(legacyScalarAlias.group("local"));
+            String suffix = code.substring(legacyScalarAlias.end());
+            if (Pattern.compile("&\\s*" + local + "(?:\\[|->)|\\b" + local +
+                    "\\s*(?:==|!=)\\s*\\([^)]*\\*+\\)").matcher(suffix).find())
+                return true;
+        }
+        // The first low-subpiece presentation pass also touched lvalues.  A C
+        // cast is not assignable, so reacquire the exact Ghidra `*(T *)&field`
+        // spelling and let the current rvalue-only rule leave the write alone.
+        if (Pattern.compile(
+                "(?m)^\\s*\\((?:char|byte|short|ushort|word|WORD)\\)" +
+                "\\s*[A-Za-z_$][A-Za-z0-9_$]*(?:->|\\.)" +
+                "[A-Za-z_$][A-Za-z0-9_$]*\\s*=(?!=)").matcher(code).find())
+            return true;
+        // One older anonymous-scalar pass could turn a real pointer cursor into
+        // uint even though the normalized body still used that word as the base
+        // of STObjectAtByteOffset and stored it through a concrete T ** slot.
+        // Text cannot reconstruct the discarded pointee declaration safely;
+        // re-decompile only this closed contamination signature once, after
+        // which normalizeAnonymousPointerScalarViews preserves both roles.
+        Matcher scalarCursor = Pattern.compile(
+            "(?m)^\\s*(?:int|uint|long|ulong|dword|DWORD)\\s+" +
+            "(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;").matcher(code);
+        while (scalarCursor.find()) {
+            String name = Pattern.quote(scalarCursor.group("name"));
+            if (!Pattern.compile("\\bSTObjectAtByteOffset\\s*\\(\\s*" + name + "\\b")
+                    .matcher(code).find()) continue;
+            if (Pattern.compile(
+                    "\\*\\s*\\(\\s*[A-Za-z_$][A-Za-z0-9_$:<> ]*\\s*\\*{2,}" +
+                    "\\s*\\)[^;=]*=\\s*" + name + "\\s*;")
+                    .matcher(code).find()) return true;
+        }
         int stackDeclaration = code.indexOf("byte stack_bytes_neg_");
         if (stackDeclaration >= 0) {
             Matcher bodyBrace = Pattern.compile("(?m)^\\{[ \\t]*$").matcher(code);
@@ -2039,9 +2135,33 @@ public class STDecompExport extends GhidraScript {
     private NormalizedCode normalizeExplicitByteOffsetFields(String code) {
         if (code == null || code.isEmpty() || !code.contains("(int)"))
             return new NormalizedCode(code, 0);
-        Matcher matcher = EXPLICIT_BYTE_OFFSET_FIELD.matcher(code);
-        StringBuffer output = new StringBuffer();
+        Matcher named = EXPLICIT_NAMED_FIELD_BYTE_OFFSET.matcher(code);
+        StringBuffer namedOutput = new StringBuffer();
         int replacements = 0;
+        while (named.find()) {
+            long field;
+            long delta;
+            try {
+                field = Long.parseUnsignedLong(named.group("field"), 16);
+                String token = named.group("delta");
+                delta = token.startsWith("0x") || token.startsWith("0X") ?
+                    Long.parseUnsignedLong(token.substring(2), 16) :
+                    Long.parseLong(token);
+                if (named.group("operator").equals("-")) delta = -delta;
+                field = Math.addExact(field, delta);
+                if (field < 0) continue;
+            }
+            catch (Exception ignored) { continue; }
+            String replacement = "STField<" + named.group("type").trim() + ">(" +
+                named.group("base") + ",0x" +
+                Long.toHexString(field).toUpperCase(Locale.ROOT) + ")";
+            named.appendReplacement(namedOutput,
+                Matcher.quoteReplacement(replacement));
+            replacements++;
+        }
+        named.appendTail(namedOutput);
+        Matcher matcher = EXPLICIT_BYTE_OFFSET_FIELD.matcher(namedOutput.toString());
+        StringBuffer output = new StringBuffer();
         while (matcher.find()) {
             String cast = matcher.group("cast").trim();
             int star = cast.lastIndexOf('*');
@@ -2055,6 +2175,143 @@ public class STDecompExport extends GhidraScript {
         }
         matcher.appendTail(output);
         return new NormalizedCode(replacements == 0 ? code : output.toString(), replacements);
+    }
+
+    /**
+     * A machine-word local may temporarily carry an address even while Ghidra
+     * keeps its Listing type as int/uint.  In that case `base + constant` is
+     * byte addressing, not scaled C pointer arithmetic.  Preserve the exact
+     * load/store as STField only for a locally declared machine-word scalar;
+     * genuine T* arithmetic is deliberately excluded.
+     */
+    private NormalizedCode normalizeScalarAddressFields(Function function, String code) {
+        if (code == null || code.isEmpty()) return new NormalizedCode(code, 0);
+        int replacements = 0;
+
+        // Cache migration for the old scalar-address rule.  It was allowed to
+        // render unresolved incoming registers as STField owners.  No object
+        // type was proved by that spelling, so restore the exact raw byte
+        // dereference before applying the current guarded rule.
+        Matcher legacyRegisters = SCALAR_STFIELD.matcher(code);
+        StringBuffer restoredRegisters = new StringBuffer();
+        while (legacyRegisters.find()) {
+            String base = legacyRegisters.group("base");
+            if (!base.startsWith("unaff_") && !base.startsWith("in_") &&
+                    !base.startsWith("extraout_")) continue;
+            legacyRegisters.appendReplacement(restoredRegisters,
+                Matcher.quoteReplacement(rawScalarDereference(
+                    legacyRegisters.group("type"), base,
+                    legacyRegisters.group("offset"))));
+            replacements++;
+        }
+        legacyRegisters.appendTail(restoredRegisters);
+        code = restoredRegisters.toString();
+
+        Set<String> scalarWords = new HashSet<>();
+        Matcher declarations = Pattern.compile(
+            "(?m)^\\s*(?:int|uint|undefined4|dword|DWORD|ulong)\\s+" +
+            "(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*(?:[;=,])")
+            .matcher(code);
+        while (declarations.find()) scalarWords.add(declarations.group("name"));
+        // Incoming ABI values are not local scalar lifetimes. In particular,
+        // unaff_/in_ register inputs must remain visibly unresolved until the
+        // function boundary or calling convention is repaired. Rewriting each
+        // of their accesses would multiply one boundary defect into many
+        // apparent defects without recovering any type information.
+        scalarWords.removeIf(name -> name.startsWith("unaff_") ||
+            name.startsWith("in_") || name.startsWith("extraout_"));
+        if (scalarWords.isEmpty())
+            return new NormalizedCode(code, replacements);
+
+        // Cache migration for a second old failure mode: on an assignment
+        // containing two independent raw address domains it converted just
+        // one side.  Restore the scalar side on that logical line.  The normal
+        // rule below will then see both raw domains and deliberately preserve
+        // the whole expression instead of exposing artificial new debt.
+        Matcher legacyCompound = SCALAR_STFIELD.matcher(code);
+        StringBuffer restoredCompound = new StringBuffer();
+        while (legacyCompound.find()) {
+            String base = legacyCompound.group("base");
+            if (!scalarWords.contains(base)) continue;
+            int lineStart = code.lastIndexOf('\n', legacyCompound.start()) + 1;
+            int lineEnd = code.indexOf('\n', legacyCompound.end());
+            if (lineEnd < 0) lineEnd = code.length();
+            String line = code.substring(lineStart, lineEnd);
+            int relativeStart = legacyCompound.start() - lineStart;
+            int relativeEnd = legacyCompound.end() - lineStart;
+            if (!line.substring(0, relativeStart).trim().isEmpty() ||
+                    !line.substring(relativeEnd).matches("^\\s*=.*"))
+                continue;
+            if (!RAW_DEREFERENCE_START.matcher(line).find()) continue;
+            legacyCompound.appendReplacement(restoredCompound,
+                Matcher.quoteReplacement(rawScalarDereference(
+                    legacyCompound.group("type"), base,
+                    legacyCompound.group("offset"))));
+            replacements++;
+        }
+        legacyCompound.appendTail(restoredCompound);
+        code = restoredCompound.toString();
+
+        String rewriteInput = code;
+        RewriteAccumulator rewrite = new RewriteAccumulator(rewriteInput);
+        ReplacementFunction replacement = matcher -> {
+            String base = matcher.group("base");
+            if (!scalarWords.contains(base)) return null;
+            // Do not partially rewrite a compound statement containing two
+            // independent raw address domains. The untouched form preserves
+            // their relationship for the layout analyzers and prevents one
+            // converted side from making the other side look like newly
+            // exposed pointer debt in the address-stable regression gate.
+            int lineStart = rewriteInput.lastIndexOf('\n', matcher.start()) + 1;
+            int lineEnd = rewriteInput.indexOf('\n', matcher.end());
+            if (lineEnd < 0) lineEnd = rewriteInput.length();
+            String line = rewriteInput.substring(lineStart, lineEnd);
+            int relativeStart = matcher.start() - lineStart;
+            int relativeEnd = matcher.end() - lineStart;
+            boolean assignmentTarget =
+                line.substring(0, relativeStart).trim().isEmpty() &&
+                line.substring(relativeEnd).matches("^\\s*=.*");
+            Matcher sameLine = RAW_DEREFERENCE_START.matcher(line);
+            int rawDomains = 0;
+            while (sameLine.find() && rawDomains < 2) rawDomains++;
+            if (assignmentTarget && rawDomains > 1) return null;
+            long offset;
+            try {
+                offset = parseIntegerLiteral(matcher.group("offset"));
+                String operator;
+                try { operator = matcher.group("operator"); }
+                catch (IllegalArgumentException ignored) { operator = "+"; }
+                if ("-".equals(operator)) offset = -offset;
+            }
+            catch (Exception ignored) { return null; }
+            String rendered = offset < 0 ? "-0x" +
+                Long.toHexString(-offset).toUpperCase(Locale.ROOT) : "0x" +
+                Long.toHexString(offset).toUpperCase(Locale.ROOT);
+            return "STField<" + matcher.group("type").trim() + ">(" +
+                base + "," + rendered + ")";
+        };
+        rewrite.replace(SCALAR_BASE_OFFSET_DEREFERENCE, replacement);
+        rewrite.replace(SCALAR_BASE_OFFSET_DEREFERENCE_REVERSE, replacement);
+        return new NormalizedCode(rewrite.code,
+            replacements + rewrite.replacements);
+    }
+
+    private String rawScalarDereference(String type, String base,
+            String offsetLiteral) {
+        String literal = offsetLiteral.trim();
+        boolean negative = literal.startsWith("-");
+        if (negative) literal = literal.substring(1);
+        long offset = parseIntegerLiteral(literal);
+        if (negative) offset = -offset;
+        String operator = offset < 0 ? " - " : " + ";
+        long absolute = Math.abs(offset);
+        // Match Ghidra's ordinary small-displacement spelling.  Apart from
+        // preserving stable readable text, this keeps cache migration from
+        // turning an inner `+ 4` index load into a newly hex-looking outer raw
+        // offset expression even though no address semantics changed.
+        String magnitude = absolute < 10 ? Long.toString(absolute) :
+            "0x" + Long.toHexString(absolute).toUpperCase(Locale.ROOT);
+        return "*(" + type.trim() + " *)(" + base + operator + magnitude + ")";
     }
 
     /**
@@ -2142,6 +2399,72 @@ public class STDecompExport extends GhidraScript {
         matcher.appendTail(output);
         return replacements == 0 ? new NormalizedCode(code, 0) :
             new NormalizedCode(output.toString(), replacements);
+    }
+
+    /**
+     * Ghidra renders a low-word view of an unresolved machine-word field as
+     * {@code *(short *)&object->field}.  For a real scalar member on little-endian
+     * x86 that is the same low-bit truncation as {@code (short)object->field}; the
+     * address-taking spelling falsely makes an ordinary value conversion look like
+     * pointer traffic.  Fold only an exact named component whose installed storage
+     * is an integer, enum, or generic undefined scalar wider than the requested view.
+     * Pointer, aggregate, union-like postfix, and same-width views remain explicit.
+     */
+    private NormalizedCode normalizeScalarLowSubpieceViews(String code) {
+        if (code == null || code.isEmpty() || !code.contains("*)&") ||
+                !code.contains("->")) return new NormalizedCode(code, 0);
+        Map<String, PointerDeclaration> declarations = pointerDeclarations(code);
+        if (declarations.isEmpty()) return new NormalizedCode(code, 0);
+        Pattern pattern = Pattern.compile(
+            "\\*\\s*\\(\\s*(?<view>char|byte|short|ushort|word|WORD)\\s*\\*\\s*\\)" +
+            "\\s*&\\s*(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*->\\s*" +
+            "(?<field>[A-Za-z_$][A-Za-z0-9_$]*)" +
+            "(?!(?:\\s*)(?:->|\\.|\\[|=(?!=)))");
+        Matcher matcher = pattern.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            PointerDeclaration declaration = declarations.get(matcher.group("base"));
+            Structure owner = declaration == null || declaration.stars != 1 ? null :
+                uniqueStructure(declaration.type);
+            DataTypeComponent component = owner == null ? null :
+                componentByName(owner, matcher.group("field"));
+            int viewWidth = renderedTypeWidth(matcher.group("view"));
+            DataType storage = component == null ? null :
+                unwrapTypeDef(component.getDataType());
+            String storageName = storage == null ? "" : storage.getName();
+            boolean scalar = storage instanceof AbstractIntegerDataType ||
+                storage instanceof Enum || storageName.matches("undefined(?:[1248])?");
+            if (!scalar || viewWidth < 1 || component.getLength() <= viewWidth) {
+                matcher.appendReplacement(output,
+                    Matcher.quoteReplacement(matcher.group()));
+                continue;
+            }
+            matcher.appendReplacement(output, Matcher.quoteReplacement(
+                "(" + matcher.group("view") + ")" + matcher.group("base") +
+                "->" + matcher.group("field")));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    /** A signed short is promoted to int by every ordinary C++ expression and
+     * by an int parameter boundary.  Ghidra's nested {@code (int)(short)} keeps
+     * a machine-width detail visible twice without changing the value. */
+    private NormalizedCode normalizeRedundantSignedNarrowPromotions(String code) {
+        if (code == null || code.isEmpty() || !code.contains("(int)"))
+            return new NormalizedCode(code, 0);
+        Matcher matcher = Pattern.compile("\\(int\\)\\s*(?=\\(short\\))")
+            .matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            matcher.appendReplacement(output, "");
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
     }
 
     /**
@@ -2471,6 +2794,299 @@ public class STDecompExport extends GhidraScript {
         for (String name : pointers.keySet())
             normalized = removeUnusedPointerDeclaration(normalized, name);
         return new NormalizedCode(normalized, replacements);
+    }
+
+    /**
+     * Split a complete machine-word scalar lifetime which Ghidra rendered as an
+     * integer pointer solely because optimized x86 reused one High variable.
+     * This is intentionally stricter than ordinary cast cleanup: the candidate
+     * must have repeated numeric consumers and pointer-cast assignments, and it
+     * is rejected on any dereference, member, subscript, address-of, nullptr, or
+     * byte-offset use.  The spelling changes to uint while real pointer-valued
+     * inputs cross through STRawWord at the exact assignment boundary.
+     */
+    private NormalizedCode normalizeScalarOnlyPointerLifetimes(String code) {
+        if (code == null || code.isEmpty()) return new NormalizedCode(code, 0);
+        Map<String, PointerDeclaration> pointers = pointerDeclarations(code);
+        if (pointers.isEmpty()) return new NormalizedCode(code, 0);
+        String normalized = code;
+        int replacements = 0;
+        for (Map.Entry<String, PointerDeclaration> entry : pointers.entrySet()) {
+            String name = entry.getKey();
+            PointerDeclaration declaration = entry.getValue();
+            if (declaration.stars != 1 ||
+                    !scalarTransportPointee(declaration.type)) continue;
+            Pattern declarationPattern = Pattern.compile(
+                "(?m)^(?<indent>[ \\t]*)" +
+                Pattern.quote(declaration.type) + "\\s*\\*\\s*" +
+                Pattern.quote(name) + "\\s*;$");
+            Matcher declared = declarationPattern.matcher(normalized);
+            if (!declared.find()) continue; // Parameters remain ABI boundaries.
+            String uses = declarationPattern.matcher(normalized).replaceFirst("");
+            String token = Pattern.quote(name);
+            if (Pattern.compile("\\b" + token +
+                    "\\s*(?:->|\\[|\\+\\+|--|\\+=|-=)|" +
+                    "\\*\\s*\\(?\\s*" + token + "\\b|" +
+                    "&\\s*" + token + "\\b|" +
+                    "\\b" + token + "\\s*(?:==|!=)\\s*nullptr|" +
+                    "nullptr\\s*(?:==|!=)\\s*\\b" + token + "\\b|" +
+                    "STField<[^>]+>\\(\\s*" + token + "\\s*,")
+                    .matcher(uses).find()) continue;
+
+            int numericCasts = countMatches(Pattern.compile(
+                "\\((?:u?int|u?short|byte|char|long|ulong|dword|DWORD)\\)\\s*" +
+                token + "\\b"), uses);
+            int pointerAssignments = countMatches(Pattern.compile(
+                "(?m)^\\s*" + token + "\\s*=\\s*\\(" +
+                "(?:u?int|u?short|byte|char|undefined[1248]?|dword|DWORD)" +
+                "\\s*\\*\\)"), uses);
+            boolean returnedAsWord = Pattern.compile(
+                "\\breturn\\s+[^;]*\\((?:u?int|u?short|dword|DWORD)\\)\\s*" +
+                token + "\\b").matcher(uses).find();
+            if (pointerAssignments < 1 || numericCasts < 2 ||
+                    !returnedAsWord) continue;
+
+            declared.reset();
+            StringBuffer declarationOutput = new StringBuffer();
+            if (declared.find()) {
+                declared.appendReplacement(declarationOutput,
+                    Matcher.quoteReplacement(declared.group("indent") +
+                        "uint " + name +
+                        "; /* split scalar lifetime from pointer-shaped SSA storage */"));
+                declared.appendTail(declarationOutput);
+                normalized = declarationOutput.toString();
+            }
+
+            Pattern assignmentCast = Pattern.compile(
+                "(?m)^(?<prefix>[ \\t]*" + token + "\\s*=\\s*)\\(" +
+                "(?:u?int|u?short|byte|char|undefined[1248]?|dword|DWORD)" +
+                "\\s*\\*\\)\\s*");
+            normalized = assignmentCast.matcher(normalized)
+                .replaceAll("${prefix}");
+            normalized = Pattern.compile(
+                "\\((?:uint|dword|DWORD)\\)\\s*" + token + "\\b")
+                .matcher(normalized).replaceAll(name);
+
+            // A direct pointer identifier or member view assigned into the now
+            // scalar word needs one explicit, width-preserving boundary.
+            Pattern assignments = Pattern.compile(
+                "(?m)^(?<prefix>[ \\t]*" + token + "\\s*=\\s*)" +
+                "(?<rhs>[^;\\r\\n]+)(?<suffix>;[ \\t]*)$");
+            Matcher assignment = assignments.matcher(normalized);
+            StringBuffer assignmentOutput = new StringBuffer();
+            while (assignment.find()) {
+                String rhs = assignment.group("rhs").trim();
+                boolean pointerBoundary = pointers.containsKey(rhs) ||
+                    rhs.matches("[A-Za-z_$][A-Za-z0-9_$]*(?:->|\\.)" +
+                        "[A-Za-z_$][A-Za-z0-9_$]*(?:\\[[^]]+\\])?");
+                String replacement = assignment.group();
+                if (pointerBoundary)
+                    replacement = assignment.group("prefix") +
+                        "static_cast<uint>(STRawWord(" + rhs + "))" +
+                        assignment.group("suffix");
+                assignment.appendReplacement(assignmentOutput,
+                    Matcher.quoteReplacement(replacement));
+            }
+            assignment.appendTail(assignmentOutput);
+            normalized = assignmentOutput.toString();
+            replacements++;
+        }
+        NormalizedCode aliases = normalizeScalarAliasPointerLocals(normalized);
+        return new NormalizedCode(aliases.code,
+            replacements + aliases.replacements);
+    }
+
+    /**
+     * Carry a proven scalar-only lifetime through one decompiler pointer alias.
+     *
+     * The primary scalar-lifetime pass above can prove that an SSA value named
+     * like {@code piVarN} is really a machine word.  Ghidra may still have
+     * copied that word into one pointer-shaped Listing local before the scalar
+     * proof became visible.  Retain no pointer fiction when the alias has one
+     * exact assignment from an already declared scalar and every other use is
+     * an explicit integer cast or {@code STRawWord(alias)}.  Dereferences,
+     * member/index/address uses, null comparisons, pointer arithmetic and call
+     * transport all fall outside this deliberately closed grammar.
+     */
+    private NormalizedCode normalizeScalarAliasPointerLocals(String code) {
+        if (code == null || code.isEmpty()) return new NormalizedCode(code, 0);
+        String normalized = code;
+        int replacements = 0;
+        for (int pass = 0; pass < 4; pass++) {
+            Map<String, PointerDeclaration> pointers = pointerDeclarations(normalized);
+            if (pointers.isEmpty()) break;
+            Map<String, String> scalars = scalarDeclarations(normalized);
+            boolean changed = false;
+            for (Map.Entry<String, PointerDeclaration> entry : pointers.entrySet()) {
+                String name = entry.getKey();
+                PointerDeclaration pointer = entry.getValue();
+                if (pointer.stars != 1 ||
+                        !scalarTransportPointee(pointer.type)) continue;
+                Pattern declaration = Pattern.compile(
+                    "(?m)^(?<indent>[ \\t]*)" + Pattern.quote(pointer.type) +
+                    "\\s*\\*\\s*" + Pattern.quote(name) + "\\s*;$");
+                Matcher declared = declaration.matcher(normalized);
+                if (!declared.find()) continue; // Never rewrite an ABI parameter.
+
+                Pattern assignment = Pattern.compile(
+                    "(?m)^[ \\t]*" + Pattern.quote(name) +
+                    "[ \\t]*=[ \\t]*(?<source>[A-Za-z_$][A-Za-z0-9_$]*)" +
+                    "[ \\t]*;[ \\t]*$");
+                Matcher assigned = assignment.matcher(normalized);
+                if (!assigned.find() || assigned.find()) continue;
+                assigned.reset();
+                assigned.find();
+                String source = assigned.group("source");
+                String scalarType = scalars.get(source);
+                if (scalarType == null) continue;
+
+                int numericCasts = countMatches(Pattern.compile(
+                    "\\((?:u?int|u?short|byte|char|long|ulong|dword|DWORD)\\)" +
+                    "\\s*" + Pattern.quote(name) + "\\b"), normalized);
+                int rawWords = countMatches(Pattern.compile(
+                    "(?:static_cast<\\s*uint\\s*>\\(\\s*)?STRawWord\\(\\s*" +
+                    Pattern.quote(name) + "\\s*\\)\\s*\\)?"), normalized);
+                int total = identifierOccurrences(normalized, name);
+                if (total != 2 + numericCasts + rawWords ||
+                        numericCasts + rawWords == 0) continue;
+
+                declared.reset();
+                StringBuffer declarationOutput = new StringBuffer();
+                if (!declared.find()) continue;
+                declared.appendReplacement(declarationOutput,
+                    Matcher.quoteReplacement(declared.group("indent") + scalarType +
+                        " " + name +
+                        "; /* propagated scalar-only SSA alias */"));
+                declared.appendTail(declarationOutput);
+                normalized = declarationOutput.toString();
+                normalized = Pattern.compile(
+                    "static_cast<\\s*uint\\s*>\\(\\s*STRawWord\\(\\s*" +
+                    Pattern.quote(name) + "\\s*\\)\\s*\\)")
+                    .matcher(normalized).replaceAll(name);
+                normalized = Pattern.compile("STRawWord\\(\\s*" +
+                    Pattern.quote(name) + "\\s*\\)")
+                    .matcher(normalized).replaceAll(name);
+                replacements++;
+                changed = true;
+                break; // Rebuild declarations before following another alias.
+            }
+            if (!changed) break;
+        }
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    private Map<String, String> scalarDeclarations(String code) {
+        Map<String, String> result = new LinkedHashMap<>();
+        Matcher matcher = Pattern.compile(
+            "(?m)^[ \\t]*(?<type>u?int|u?short|byte|char|long|ulong|" +
+            "dword|DWORD|word|WORD|size_t)[ \\t]+" +
+            "(?<name>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*(?:;|=)")
+            .matcher(code);
+        while (matcher.find())
+            result.putIfAbsent(matcher.group("name"), matcher.group("type"));
+        return result;
+    }
+
+    /**
+     * Undo the inverse SSA merge: a Listing machine word may be rendered as an
+     * integer even though its complete lifetime is one pointer boundary.  This
+     * happens most often for a call-clobbered register which carries an end
+     * pointer.  Recover the pointer spelling only when the closed occurrence
+     * grammar consists of zero initialization, casts from one unanimous pointer
+     * type, and comparisons with that same pointer type.  Arithmetic, calls,
+     * dereferences, stores, returns, and mixed pointees reject the candidate.
+     */
+    private NormalizedCode normalizePointerOnlyScalarLifetimes(String code) {
+        if (code == null || code.isEmpty()) return new NormalizedCode(code, 0);
+        Map<String, PointerDeclaration> pointers = pointerDeclarations(code);
+        if (pointers.isEmpty()) return new NormalizedCode(code, 0);
+        String normalized = code;
+        int replacements = 0;
+        for (int pass = 0; pass < 4; pass++) {
+            Map<String, String> scalars = scalarDeclarations(normalized);
+            pointers = pointerDeclarations(normalized);
+            boolean changed = false;
+            for (Map.Entry<String, String> scalar : scalars.entrySet()) {
+                String name = scalar.getKey();
+                String scalarType = scalar.getValue();
+                if (!Set.of("int", "uint", "long", "ulong", "dword", "DWORD")
+                        .contains(scalarType)) continue;
+                Pattern declaration = Pattern.compile(
+                    "(?m)^(?<indent>[ \\t]*)" + Pattern.quote(scalarType) +
+                    "[ \\t]+" + Pattern.quote(name) + "[ \\t]*;[ \\t]*$");
+                Matcher declared = declaration.matcher(normalized);
+                if (!declared.find()) continue; // Never rewrite ABI parameters.
+
+                Pattern pointerAssignment = Pattern.compile(
+                    "(?<![A-Za-z0-9_$])" + Pattern.quote(name) +
+                    "[ \\t]*=[ \\t]*\\((?:u?int|u?long|undefined4|dword|DWORD)\\)" +
+                    "[ \\t]*(?<source>[A-Za-z_$][A-Za-z0-9_$]*)");
+                Matcher assignments = pointerAssignment.matcher(normalized);
+                PointerDeclaration inferred = null;
+                int pointerAssignments = 0;
+                boolean mixed = false;
+                while (assignments.find()) {
+                    PointerDeclaration source = pointers.get(assignments.group("source"));
+                    if (source == null || source.stars != 1) { mixed = true; break; }
+                    if (inferred == null) inferred = source;
+                    else if (!inferred.type.equals(source.type) ||
+                            inferred.stars != source.stars) { mixed = true; break; }
+                    pointerAssignments++;
+                }
+                if (mixed || inferred == null || pointerAssignments == 0) continue;
+
+                List<String> peers = new ArrayList<>();
+                for (Map.Entry<String, PointerDeclaration> pointer : pointers.entrySet())
+                    if (pointer.getValue().stars == inferred.stars &&
+                            pointer.getValue().type.equals(inferred.type))
+                        peers.add(Pattern.quote(pointer.getKey()));
+                if (peers.isEmpty()) continue;
+                String peer = "(?:" + String.join("|", peers) + ")";
+                Pattern comparison = Pattern.compile(
+                    "(?:\\b" + peer + "\\b[ \\t]*(?:==|!=|<=|>=|<|>)[ \\t]*\\b" +
+                    Pattern.quote(name) + "\\b|\\b" + Pattern.quote(name) +
+                    "\\b[ \\t]*(?:==|!=|<=|>=|<|>)[ \\t]*\\b" + peer + "\\b)");
+                int comparisons = countMatches(comparison, normalized);
+                if (comparisons == 0) continue;
+                Pattern zeroAssignment = Pattern.compile(
+                    "(?<![A-Za-z0-9_$])" + Pattern.quote(name) +
+                    "[ \\t]*=[ \\t]*(?:0|0x0|nullptr)(?![A-Za-z0-9_$])");
+                int zeros = countMatches(zeroAssignment, normalized);
+                int total = identifierOccurrences(normalized, name);
+                if (total != 1 + pointerAssignments + comparisons + zeros) continue;
+
+                declared.reset();
+                if (!declared.find()) continue;
+                normalized = declared.replaceFirst(Matcher.quoteReplacement(
+                    declared.group("indent") + inferred.type + " *" + name +
+                    "; /* recovered closed pointer-only SSA lifetime */"));
+                Matcher casted = pointerAssignment.matcher(normalized);
+                StringBuffer castOutput = new StringBuffer();
+                while (casted.find()) casted.appendReplacement(castOutput,
+                    Matcher.quoteReplacement(name + " = " + casted.group("source")));
+                casted.appendTail(castOutput);
+                normalized = zeroAssignment.matcher(castOutput.toString()).replaceAll(
+                    Matcher.quoteReplacement(name + " = nullptr"));
+                replacements++;
+                changed = true;
+                break;
+            }
+            if (!changed) break;
+        }
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    private boolean scalarTransportPointee(String type) {
+        String value = type == null ? "" : type.trim();
+        return value.matches("(?:u?int|u?short|byte|char|undefined[1248]?|" +
+            "dword|DWORD|word|WORD|long|ulong)");
+    }
+
+    private int countMatches(Pattern pattern, String text) {
+        int count = 0;
+        Matcher matcher = pattern.matcher(text);
+        while (matcher.find()) count++;
+        return count;
     }
 
     private boolean integerProductExpression(String expression) {
@@ -3135,7 +3751,21 @@ public class STDecompExport extends GhidraScript {
             boolean structuralUse = Pattern.compile("\\b" + token +
                 "\\s*->|\\b" + token + "\\s*\\[|\\*\\s*\\(?\\s*" +
                 token + "\\b").matcher(withoutZeroMemberAddress).find();
-            if (structuralUse) pointerRole.add(name);
+            // Exporter-owned exact byte-offset views are pointer dereferences
+            // even though the candidate no longer appears before an ordinary
+            // `->`.  Likewise, storing the complete value through T ** is an
+            // independent pointer boundary.  Missing these two roles used to
+            // turn closed pointer cursors into uint merely because the loop
+            // also compared their addresses.
+            boolean exactObjectView = Pattern.compile(
+                "\\bSTObjectAtByteOffset\\s*\\(\\s*" + token + "\\b")
+                .matcher(usesOnly).find();
+            boolean typedPointerStore = Pattern.compile(
+                "\\*\\s*\\(\\s*[A-Za-z_$][A-Za-z0-9_$:<> ]*\\s*\\*{2,}" +
+                "\\s*\\)[^;=]*=\\s*" + token + "\\s*;")
+                .matcher(usesOnly).find();
+            if (structuralUse || exactObjectView || typedPointerStore)
+                pointerRole.add(name);
         }
         /*
          * Do not poison a complete comparison/assignment family merely because one peer has
@@ -4277,8 +4907,11 @@ public class STDecompExport extends GhidraScript {
             candidates, migrated.code);
         List<String> lines = new ArrayList<>(Arrays.asList(
             outputCalls.code.split("\\R", -1)));
+        Map<String, Integer> scalarAliases = new LinkedHashMap<>();
         int replacements = migrated.replacements + outputCalls.replacements +
             repairExistingReusedLifetimeDeclarations(
+            function, candidates, lines);
+        replacements += repairExistingReusedPointerCallCasts(
             function, candidates, lines);
         for (String name : candidates) {
             Pattern assignment = Pattern.compile("^(?<indent>[ \\t]*)" +
@@ -4317,7 +4950,8 @@ public class STDecompExport extends GhidraScript {
             if (labelled) continue;
             String afterBlock = String.join(System.lineSeparator(),
                 lines.subList(end, lines.size()));
-            if (identifierOccurrences(afterBlock, name) != 0) continue;
+            if (identifierOccurrences(afterBlock, name) != 0 &&
+                    !nextPostBlockUseResetsParameter(lines, name, end)) continue;
             String interval = String.join(System.lineSeparator(),
                 lines.subList(assignmentLine + 1, end));
             if (identifierOccurrences(interval, name) == 0) continue;
@@ -4329,14 +4963,303 @@ public class STDecompExport extends GhidraScript {
                 local = name + "_after_write_" + suffix++;
             String rhs = selected.group("rhs").trim();
             String declarationType = reusedLifetimeDeclarationType(function, name, rhs);
+            String pointerSentinelType = reusedSentinelPointerType(function, name,
+                rhs, interval, currentProjection);
+            String scalarSource = null;
+            if (pointerSentinelType != null) {
+                declarationType = pointerSentinelType;
+            }
+            else {
+                scalarSource = SIMPLE_IDENTIFIER.matcher(rhs).matches() ?
+                    scalarDeclarations(currentProjection).get(rhs) : null;
+                if (scalarSource != null) declarationType = scalarSource;
+                String scalarLiteral = pointerCastScalarExpression(rhs);
+                if (scalarSource == null && scalarLiteral != null) {
+                    declarationType = "uint";
+                    rhs = scalarLiteral;
+                    scalarSource = declarationType;
+                }
+                else rhs = castReusedPointerCall(function, rhs, declarationType);
+            }
             lines.set(assignmentLine, selected.group("indent") + declarationType + " " + local +
                 " = " + rhs + "; " +
                 STACK_SLOT_SPLIT_MARKER);
-            for (int index = assignmentLine + 1; index < end; index++)
-                lines.set(index, replaceIdentifier(lines.get(index), name, local));
+            for (int index = assignmentLine + 1; index < end; index++) {
+                String rewritten = replaceIdentifier(lines.get(index), name, local);
+                if (scalarSource != null)
+                    rewritten = normalizeReusedScalarAliasLine(rewritten, local,
+                        reusedParameterPointeeWidth(function, name));
+                lines.set(index, rewritten);
+            }
+            if (scalarSource != null)
+                scalarAliases.put(local, reusedParameterPointeeWidth(function, name));
             replacements++;
         }
-        return new NormalizedCode(String.join(System.lineSeparator(), lines), replacements);
+        String normalized = String.join(System.lineSeparator(), lines);
+        for (Map.Entry<String, Integer> alias : scalarAliases.entrySet())
+            normalized = normalizeReusedScalarAliasText(normalized,
+                alias.getKey(), alias.getValue());
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    /**
+     * A non-null all-bits-set literal is often a pointer sentinel, not an integer
+     * lifetime.  Preserve the incoming pointer type only when the post-write block
+     * proves both directions of the exact transport: one same-typed pointer consumes
+     * the recycled slot and one same-typed pointer later defines it.  The literal's
+     * explicit cast must name that same pointer type.  This avoids turning ordinary
+     * scalar sentinels into pointers from spelling alone.
+     */
+    private String reusedSentinelPointerType(Function function, String parameterName,
+            String rhs, String interval, String projection) {
+        DataType parameterType = null;
+        for (Parameter parameter : function.getParameters()) {
+            if (!parameter.isAutoParameter() &&
+                    parameterName.equals(parameter.getName())) {
+                parameterType = parameter.getDataType();
+                break;
+            }
+        }
+        DataType base = parameterType == null ? null : unwrapTypeDef(parameterType);
+        if (!(base instanceof Pointer)) return null;
+        String display = parameterType.getDisplayName();
+        Matcher sentinel = Pattern.compile(
+            "^\\(\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:<> ]*\\s*\\*+)\\s*\\)" +
+            "\\s*(?<value>0[xX][0-9A-Fa-f]+|[0-9]+)$")
+            .matcher(stripBalancedOuterParentheses(rhs.trim()));
+        if (!sentinel.matches() || !sentinel.group("type").replaceAll("\\s+", "")
+                .equals(display.replaceAll("\\s+", ""))) return null;
+        long literal;
+        try { literal = parseIntegerLiteral(sentinel.group("value")); }
+        catch (RuntimeException exception) { return null; }
+        if (literal == 0) return null; // ordinary null already follows the normal path
+
+        Map<String, PointerDeclaration> pointers = pointerDeclarations(projection);
+        Pointer expected = (Pointer)base;
+        String expectedType = expected.getDataType() == null ? "" :
+            expected.getDataType().getDisplayName();
+        boolean consumedByPointer = false;
+        boolean definedByPointer = false;
+        Pattern consume = Pattern.compile("(?m)^\\s*(?<peer>[A-Za-z_$][A-Za-z0-9_$]*)" +
+            "\\s*=\\s*" + Pattern.quote(parameterName) + "\\s*;\\s*$");
+        Matcher consumed = consume.matcher(interval);
+        while (consumed.find()) {
+            PointerDeclaration peer = pointers.get(consumed.group("peer"));
+            if (peer != null && peer.stars == 1 &&
+                    peer.type.replaceAll("\\s+", "").equals(
+                        expectedType.replaceAll("\\s+", ""))) {
+                consumedByPointer = true;
+                break;
+            }
+        }
+        Pattern define = Pattern.compile("(?m)^\\s*" + Pattern.quote(parameterName) +
+            "\\s*=\\s*(?<peer>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;\\s*$");
+        Matcher defined = define.matcher(interval);
+        while (defined.find()) {
+            PointerDeclaration peer = pointers.get(defined.group("peer"));
+            if (peer != null && peer.stars == 1 &&
+                    peer.type.replaceAll("\\s+", "").equals(
+                        expectedType.replaceAll("\\s+", ""))) {
+                definedByPointer = true;
+                break;
+            }
+        }
+        return consumedByPointer && definedByPointer ? display : null;
+    }
+
+    /**
+     * Migrate the short-lived exporter spelling which wrapped a neutral
+     * pointer-returning call in a C cast while introducing a stack-slot local.
+     * The exact generated marker and parameter-derived local name make this a
+     * closed cache migration; ordinary user/decompiler casts are untouched.
+     */
+    private int repairExistingReusedPointerCallCasts(Function function,
+            Set<String> candidates, List<String> lines) {
+        Pattern declaration = Pattern.compile(
+            "^(?<indent>[ \\t]*)(?<type>[A-Za-z_$][A-Za-z0-9_$:<> ]*\\s*\\*+)" +
+            "[ \\t]+(?<local>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*=[ \\t]*" +
+            "\\((?<cast>[A-Za-z_$][A-Za-z0-9_$:<> ]*\\s*\\*+)\\)[ \\t]*" +
+            "(?<call>[A-Za-z_$][A-Za-z0-9_$]*(?:::[A-Za-z_$][A-Za-z0-9_$]*)*" +
+            "\\s*\\([^;\\r\\n]*\\))[ \\t]*;[ \\t]*" +
+            Pattern.quote(STACK_SLOT_SPLIT_MARKER) + "[ \\t]*$");
+        int replacements = 0;
+        for (int index = 0; index < lines.size(); index++) {
+            Matcher matcher = declaration.matcher(lines.get(index));
+            if (!matcher.matches()) continue;
+            boolean derived = candidates.stream().anyMatch(candidate ->
+                matcher.group("local").matches(Pattern.quote(candidate) +
+                    "_after_write(?:_[0-9]+)?"));
+            if (!derived || !matcher.group("type").replaceAll("\\s+", "")
+                    .equals(matcher.group("cast").replaceAll("\\s+", "")) ||
+                    !renderedCallReturnsPointer(matcher.group("call"))) continue;
+            lines.set(index, matcher.group("indent") + matcher.group("type").trim() +
+                " " + matcher.group("local") + " = " + matcher.group("call") + "; " +
+                STACK_SLOT_SPLIT_MARKER);
+            replacements++;
+        }
+        return replacements;
+    }
+
+    private int reusedParameterPointeeWidth(Function function, String name) {
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter() || !name.equals(parameter.getName())) continue;
+            DataType type = unwrapTypeDef(parameter.getDataType());
+            if (!(type instanceof Pointer pointer) || pointer.getDataType() == null)
+                return 0;
+            int length = pointer.getDataType().getLength();
+            return length > 0 ? length : 0;
+        }
+        return 0;
+    }
+
+    private String normalizeReusedScalarAliasLine(String line, String alias,
+            int pointeeWidth) {
+        Pattern pointerAssignment = Pattern.compile(
+            "^(?<prefix>[ \\t]*" + Pattern.quote(alias) +
+            "[ \\t]*=[ \\t]*)\\([A-Za-z_$][A-Za-z0-9_$: ]*\\s*\\*+\\)" +
+            "[ \\t]*(?<rhs>.+);[ \\t]*$");
+        Matcher assignment = pointerAssignment.matcher(line);
+        String normalized = assignment.matches() ?
+            assignment.group("prefix") + assignment.group("rhs").trim() + ";" : line;
+        // The decompiler keeps using the entry parameter's pointer scale after
+        // the stack slot has become a scalar loop counter/fixed-point value.
+        // Algebraically collapse the complete `&word[index].field_OFFSET`
+        // expression with the exact installed pointee extent.  This recovers
+        // INC/DEC and large immediate ADDs without inventing a pointer lifetime.
+        if (pointeeWidth > 0) {
+            Pattern scaled = Pattern.compile(
+                "^(?<prefix>[ \\t]*" + Pattern.quote(alias) +
+                "[ \\t]*=[ \\t]*)(?:\\([ \\t]*\\(int\\)[ \\t]*)?&[ \\t]*" +
+                Pattern.quote(alias) + "\\[(?<index>-?(?:0[xX][0-9A-Fa-f]+|[0-9]+))\\]" +
+                "\\.field_(?:0[xX])?(?<field>[0-9A-Fa-f]+)" +
+                "(?<tail>[ \\t]*[+-][ \\t]*(?:0[xX][0-9A-Fa-f]+|[0-9]+))?" +
+                "[ \\t]*\\)?[ \\t]*;[ \\t]*$");
+            Matcher scaledMatch = scaled.matcher(normalized);
+            if (scaledMatch.matches()) {
+                try {
+                    long index = parseSignedIntegerLiteral(scaledMatch.group("index"));
+                    long field = Long.parseUnsignedLong(scaledMatch.group("field"), 16);
+                    long tail = signedTail(scaledMatch.group("tail"));
+                    long delta = Math.addExact(Math.multiplyExact(index,
+                        (long)pointeeWidth), Math.addExact(field, tail));
+                    String operation = delta < 0 ? " - " + scalarMagnitude(-delta) :
+                        " + " + scalarMagnitude(delta);
+                    if (delta == 0) operation = "";
+                    normalized = scaledMatch.group("prefix") + alias + operation + ";";
+                }
+                catch (RuntimeException ignored) {
+                    // Preserve the original spelling when the byte expression
+                    // cannot be represented exactly in one machine word.
+                }
+            }
+        }
+        normalized = Pattern.compile("^(?<prefix>[ \\t]*" + Pattern.quote(alias) +
+            "[ \\t]*=[ \\t]*)&DAT_000000(?<value>[0-9A-Fa-f]{2})[ \\t]*;[ \\t]*$")
+            .matcher(normalized).replaceAll("${prefix}0x${value};");
+        normalized = Pattern.compile("^(?<prefix>[ \\t]*" + Pattern.quote(alias) +
+            "[ \\t]*=[ \\t]*)nullptr[ \\t]*;[ \\t]*$")
+            .matcher(normalized).replaceAll("${prefix}0;");
+        normalized = Pattern.compile("(?<![A-Za-z0-9_$])" + Pattern.quote(alias) +
+            "(?![A-Za-z0-9_$])([ \\t]*(?:==|!=)[ \\t]*)" +
+            "(?:\\([^)]*\\*+\\)[ \\t]*)?(?<value>0[xX][0-9A-Fa-f]+|[0-9]+|nullptr)\\b")
+            .matcher(normalized).replaceAll(match -> Matcher.quoteReplacement(alias) +
+                match.group(1) + ("nullptr".equals(match.group("value")) ? "0" :
+                    match.group("value")));
+        normalized = Pattern.compile("\\bnullptr([ \\t]*(?:==|!=)[ \\t]*)(?<![A-Za-z0-9_$])" +
+            Pattern.quote(alias) + "(?![A-Za-z0-9_$])")
+            .matcher(normalized).replaceAll("0$1" + Matcher.quoteReplacement(alias));
+        // A scalar address word may still feed one explicit byte-pointer
+        // consumer.  Keep the boundary local instead of giving the entire
+        // counter lifetime a pointer type.
+        Pattern byteAddress = Pattern.compile(
+            "^(?<prefix>[ \\t]*[A-Za-z_$][A-Za-z0-9_$]*[ \\t]*=[ \\t]*)" +
+            "&[ \\t]*" + Pattern.quote(alias) + "->field_(?:0[xX])?0+" +
+            "(?<tail>[ \\t]*[+-][ \\t]*[^;]+)?;[ \\t]*$");
+        Matcher byteAddressMatch = byteAddress.matcher(normalized);
+        if (byteAddressMatch.matches()) {
+            String tail = byteAddressMatch.group("tail");
+            normalized = byteAddressMatch.group("prefix") + "(byte *)((int)" +
+                alias + (tail == null ? "" : tail) + ");";
+        }
+        return normalized;
+    }
+
+    private long parseSignedIntegerLiteral(String value) {
+        String text = value.trim();
+        boolean negative = text.startsWith("-");
+        if (negative) text = text.substring(1);
+        long parsed = parseIntegerLiteral(text);
+        return negative ? -parsed : parsed;
+    }
+
+    private long signedTail(String tail) {
+        if (tail == null || tail.isBlank()) return 0;
+        String compact = tail.replaceAll("\\s+", "");
+        char sign = compact.charAt(0);
+        long value = parseIntegerLiteral(compact.substring(1));
+        return sign == '-' ? -value : value;
+    }
+
+    private String scalarMagnitude(long value) {
+        return value < 10 ? Long.toString(value) :
+            "0x" + Long.toHexString(value).toUpperCase(Locale.ROOT);
+    }
+
+    private String normalizeReusedScalarAliasText(String code, String alias,
+            int pointeeWidth) {
+        String token = Pattern.quote(alias);
+        Pattern selfAddress = Pattern.compile(
+            "(?m)^(?<prefix>[ \\t]*" + token + "[ \\t]*=[ \\t]*)" +
+            "(?:\\([A-Za-z_$][A-Za-z0-9_$:<> ]*\\s*\\*+\\)[ \\t]*)?" +
+            "\\(?[ \\t\\r\\n]*&[ \\t]*" + token +
+            "->field_(?:0[xX])?0+" +
+            "(?<tail>[ \\t]*[+-][^;]+)?[ \\t\\r\\n]*\\)?[ \\t]*;");
+        Matcher self = selfAddress.matcher(code);
+        StringBuffer selfOutput = new StringBuffer();
+        while (self.find()) {
+            String tail = self.group("tail");
+            self.appendReplacement(selfOutput, Matcher.quoteReplacement(
+                self.group("prefix") + alias + (tail == null ? "" : tail.trim()) + ";"));
+        }
+        self.appendTail(selfOutput);
+
+        Pattern pointerConsumer = Pattern.compile(
+            "(?m)^(?<prefix>[ \\t]*[A-Za-z_$][A-Za-z0-9_$]*[ \\t]*=[ \\t]*)" +
+            "&[ \\t]*" + token + "->field_(?:0[xX])?0+" +
+            "(?<tail>[ \\t]*[+-][^;]+)?[ \\t]*;");
+        Matcher consumer = pointerConsumer.matcher(selfOutput.toString());
+        StringBuffer output = new StringBuffer();
+        while (consumer.find()) {
+            String tail = consumer.group("tail");
+            consumer.appendReplacement(output, Matcher.quoteReplacement(
+                consumer.group("prefix") + "(byte *)((int)" + alias +
+                (tail == null ? "" : tail) + ");"));
+        }
+        consumer.appendTail(output);
+        return output.toString();
+    }
+
+    /**
+     * A recycled parameter may return to its entry pointer domain after one
+     * closed scalar block.  Permit the scalar alias when the first later use is
+     * another exact full assignment, with no label able to enter between the
+     * block exit and that reset.  The reset and all following uses keep the ABI
+     * parameter spelling; only the dead intermediate lifetime is split.
+     */
+    private boolean nextPostBlockUseResetsParameter(List<String> lines,
+            String name, int start) {
+        Pattern reset = Pattern.compile("^[ \\t]*" + Pattern.quote(name) +
+            "[ \\t]*=[ \\t]*(?<rhs>[^;\\r\\n]+);[ \\t]*$");
+        for (int index = Math.max(0, start); index < lines.size(); index++) {
+            String stripped = lines.get(index).stripLeading();
+            if (stripped.matches("(?:LAB_|cf_)[A-Za-z0-9_$]+:.*") ||
+                    stripped.matches("(?:case\\b.*|default\\s*:.*)")) return false;
+            if (identifierOccurrences(lines.get(index), name) == 0) continue;
+            Matcher matcher = reset.matcher(lines.get(index));
+            return matcher.matches() &&
+                identifierOccurrences(matcher.group("rhs"), name) == 0;
+        }
+        return false;
     }
 
     /**
@@ -4510,6 +5433,21 @@ public class STDecompExport extends GhidraScript {
 
     private String normalizeFixedPointerParameterFields(String code, String parameter,
             String local) {
+        String pointerBase = parameter.equals(local) ? Pattern.quote(parameter) :
+            "(?:" + Pattern.quote(parameter) + "|" + Pattern.quote(local) + ")";
+        Pattern namedMember = Pattern.compile(
+            "\\*\\s*\\(\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:<> ]*(?:\\s*\\*+)?)" +
+            "\\s*\\*\\s*\\)\\s*&\\s*" + pointerBase +
+            "\\s*->\\s*field_(?:0[xX])?(?<offset>[0-9A-Fa-f]+)");
+        Matcher namedMatcher = namedMember.matcher(code);
+        StringBuffer namedOutput = new StringBuffer();
+        while (namedMatcher.find()) namedMatcher.appendReplacement(namedOutput,
+            Matcher.quoteReplacement("STField<" + namedMatcher.group("type").trim() +
+                ">(" + local + ",0x" +
+                namedMatcher.group("offset").toUpperCase(Locale.ROOT) + ")"));
+        namedMatcher.appendTail(namedOutput);
+        code = namedOutput.toString();
+
         Pattern access = Pattern.compile(
             "\\*\\s*\\(\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:]*(?:\\s*\\*+)?)" +
             "\\s*\\*\\s*\\)\\s*\\(\\s*(?:\\(\\s*(?:int|uint|undefined4)\\s*\\)\\s*)?" +
@@ -4566,10 +5504,36 @@ public class STDecompExport extends GhidraScript {
             if (parameterName == null) continue;
             String rhs = matcher.group("rhs").trim();
             String type = reusedLifetimeDeclarationType(function, parameterName, rhs);
+            String projection = String.join(System.lineSeparator(), lines);
+            String scalarSource = SIMPLE_IDENTIFIER.matcher(rhs).matches() ?
+                scalarDeclarations(projection).get(rhs) : null;
+            if (scalarSource != null) type = scalarSource;
+            String scalarLiteral = pointerCastScalarExpression(rhs);
+            if (scalarSource == null && scalarLiteral != null) {
+                type = "uint";
+                rhs = scalarLiteral;
+                scalarSource = type;
+            }
+            else rhs = castReusedPointerCall(function, rhs, type);
             if ("auto".equals(type)) continue;
             lines.set(index, matcher.group("indent") + type + " " +
                 matcher.group("local") + " = " + rhs + "; " +
                 STACK_SLOT_SPLIT_MARKER);
+            if (scalarSource != null) {
+                int depth = 0;
+                for (int before = 0; before < index; before++)
+                    depth += braceDelta(lines.get(before));
+                int declarationDepth = depth;
+                int running = declarationDepth;
+                for (int use = index + 1; use < lines.size(); use++) {
+                    int next = running + braceDelta(lines.get(use));
+                    if (next < declarationDepth) break;
+                    lines.set(use, normalizeReusedScalarAliasLine(
+                        lines.get(use), matcher.group("local"),
+                        reusedParameterPointeeWidth(function, parameterName)));
+                    running = next;
+                }
+            }
             replacements++;
         }
         return replacements;
@@ -4587,19 +5551,58 @@ public class STDecompExport extends GhidraScript {
             String rhs) {
         // This pass runs before normalizeTypedNullPointers(), so the raw
         // decompiler spelling is normally `(T *)0x0`, not `nullptr` yet.
-        if (!nullPointerExpression(rhs)) return "auto";
         for (Parameter parameter : function.getParameters()) {
             if (parameter.isAutoParameter() || !name.equals(parameter.getName())) continue;
             // getFormalDataType() may retain the pre-recovery transport word;
             // the Listing/decompiler contract is the currently applied type.
             DataType type = parameter.getDataType();
             DataType base = unwrapTypeDef(type);
-            if (base instanceof Pointer) return type.getDisplayName();
+            if (base instanceof Pointer && (nullPointerExpression(rhs) ||
+                    renderedCallReturnsPointer(rhs))) return type.getDisplayName();
             break;
         }
         // The proof must never turn an untyped null initializer into an
         // invented machine word merely to satisfy the host compiler.
         return "auto";
+    }
+
+    private String pointerCastScalarExpression(String expression) {
+        Matcher matcher = Pattern.compile(
+            "^\\(\\s*[A-Za-z_$][A-Za-z0-9_$:<> ]*\\s*\\*+\\s*\\)\\s*" +
+            "(?<value>(?:0[xX][0-9A-Fa-f]+|[0-9]+))$")
+            .matcher(stripBalancedOuterParentheses(expression.trim()));
+        return matcher.matches() ? matcher.group("value") : null;
+    }
+
+    private boolean renderedCallReturnsPointer(String expression) {
+        Function called = renderedDirectCall(expression);
+        return called != null && unwrapTypeDef(called.getReturnType()) instanceof Pointer;
+    }
+
+    private String castReusedPointerCall(Function function, String expression,
+            String declarationType) {
+        // Keep the neutral producer ABI visible. The generated source tree
+        // owns the exact 32-bit pointer-boundary adaptation at this consumer;
+        // inserting a cast around an otherwise readable call here is a corpus
+        // readability regression.
+        return expression;
+    }
+
+    private Function renderedDirectCall(String expression) {
+        Matcher matcher = Pattern.compile(
+            "^(?<name>[A-Za-z_$][A-Za-z0-9_$]*(?:::[A-Za-z_$][A-Za-z0-9_$]*)*)" +
+            "\\s*\\(").matcher(expression.trim());
+        if (!matcher.find()) return null;
+        String wanted = matcher.group("name");
+        Function found = null;
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function candidate = functions.next();
+            if (!candidate.getName(true).equals(wanted)) continue;
+            if (found != null) return null;
+            found = candidate;
+        }
+        return found;
     }
 
     private int braceDelta(String line) {

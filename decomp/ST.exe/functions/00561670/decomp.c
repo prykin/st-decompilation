@@ -138,11 +138,11 @@ LAB_00561bff:
         piVar10 = piVar11;
         if ((local_8 < param_2 + -1) &&
            ((local_c[1] == 0 ||
-            (*(short *)(iVar13 + 2) + DAT_00803320 + iVar8 < (int)(short)local_c[1])))) {
+            (STField<short>(iVar13,0x2) + DAT_00803320 + iVar8 < (short)local_c[1])))) {
           piVar10 = piVar11 + 2;
-          local_c[1] = *(short *)(iVar13 + 2) + (short)DAT_00803320 + sVar2;
-          piVar11[1] = (int)(short)local_10;
-          *piVar11 = (int)(short)(sVar3 + 1);
+          local_c[1] = STField<short>(iVar13,0x2) + (short)DAT_00803320 + sVar2;
+          piVar11[1] = (short)local_10;
+          *piVar11 = (short)(sVar3 + 1);
           param_5 = param_5 + 1;
           param_4 = (int *)((int)param_4 + 1);
         }
@@ -153,30 +153,30 @@ LAB_00561bff:
           piVar11 = piVar10 + 2;
           *psVar9 = *(short *)(iVar13 + param_2 * -2) + (short)DAT_00803320 + sVar2;
           *piVar10 = (int)sVar3;
-          piVar10[1] = (int)(short)((short)local_10 + -1);
+          piVar10[1] = (short)((short)local_10 + -1);
           param_5 = param_5 + 1;
           param_4 = (int *)((int)param_4 + 1);
         }
         piVar10 = piVar11;
         if ((0 < local_8) &&
            ((local_c[-1] == 0 ||
-            (*(short *)(iVar13 + -2) + DAT_00803320 + iVar8 < (int)(short)local_c[-1])))) {
+            (*(short *)(iVar13 + -2) + DAT_00803320 + iVar8 < (short)local_c[-1])))) {
           piVar10 = piVar11 + 2;
           local_c[-1] = *(short *)(iVar13 + -2) + (short)DAT_00803320 + sVar2;
-          piVar11[1] = (int)(short)local_10;
-          *piVar11 = (int)(short)(sVar3 + -1);
+          piVar11[1] = (short)local_10;
+          *piVar11 = (short)(sVar3 + -1);
           param_5 = param_5 + 1;
           param_4 = (int *)((int)param_4 + 1);
         }
         piVar11 = piVar10;
         if ((local_10 < param_3 + -1) &&
            ((local_c[param_2] == 0 ||
-            (*(short *)(iVar13 + param_2 * 2) + DAT_00803320 + iVar8 < (int)(short)local_c[param_2])
+            (*(short *)(iVar13 + param_2 * 2) + DAT_00803320 + iVar8 < (short)local_c[param_2])
             ))) {
           piVar11 = piVar10 + 2;
           local_c[param_2] = *(short *)(iVar13 + param_2 * 2) + (short)DAT_00803320 + sVar2;
           *piVar10 = (int)sVar3;
-          piVar10[1] = (int)(short)((short)local_10 + 1);
+          piVar10[1] = (short)((short)local_10 + 1);
           param_5 = param_5 + 1;
           param_4 = (int *)((int)param_4 + 1);
         }
@@ -187,8 +187,8 @@ LAB_00561bff:
               (*(short *)(iVar13 + param_2 * -2 + 2) + DAT_00803324 + iVar8 < (int)*psVar9)))) {
             piVar10 = piVar11 + 2;
             *psVar9 = *(short *)(iVar13 + param_2 * -2 + 2) + (short)DAT_00803324 + sVar2;
-            *piVar11 = (int)(short)(sVar3 + 1);
-            piVar11[1] = (int)(short)((short)local_10 + -1);
+            *piVar11 = (short)(sVar3 + 1);
+            piVar11[1] = (short)((short)local_10 + -1);
             param_5 = param_5 + 1;
             param_4 = (int *)((int)param_4 + 1);
           }
@@ -200,8 +200,8 @@ LAB_00561bff:
                ) {
               piVar11 = piVar10 + 2;
               *psVar9 = *(short *)(iVar13 - (param_2 * 2 + 2)) + (short)DAT_00803324 + sVar2;
-              *piVar10 = (int)(short)(sVar3 + -1);
-              piVar10[1] = (int)(short)((short)local_10 + -1);
+              *piVar10 = (short)(sVar3 + -1);
+              piVar10[1] = (short)((short)local_10 + -1);
               param_5 = param_5 + 1;
               param_4 = (int *)((int)param_4 + 1);
             }
@@ -212,12 +212,12 @@ LAB_00561bff:
           if ((0 < local_8) &&
              ((local_c[param_2 + -1] == 0 ||
               (*(short *)(iVar13 + -2 + param_2 * 2) + DAT_00803324 + iVar8 <
-               (int)(short)local_c[param_2 + -1])))) {
+               (short)local_c[param_2 + -1])))) {
             piVar10 = piVar11 + 2;
             local_c[param_2 + -1] =
                  *(short *)(iVar13 + -2 + param_2 * 2) + (short)DAT_00803324 + sVar2;
-            *piVar11 = (int)(short)(sVar3 + -1);
-            piVar11[1] = (int)(short)((short)local_10 + 1);
+            *piVar11 = (short)(sVar3 + -1);
+            piVar11[1] = (short)((short)local_10 + 1);
             param_5 = param_5 + 1;
             param_4 = (int *)((int)param_4 + 1);
           }
@@ -225,12 +225,12 @@ LAB_00561bff:
           if ((local_8 < param_2 + -1) &&
              ((local_c[param_2 + 1] == 0 ||
               (*(short *)(iVar13 + 2 + param_2 * 2) + DAT_00803324 + iVar8 <
-               (int)(short)local_c[param_2 + 1])))) {
+               (short)local_c[param_2 + 1])))) {
             piVar11 = piVar10 + 2;
             local_c[param_2 + 1] =
                  *(short *)(iVar13 + 2 + param_2 * 2) + (short)DAT_00803324 + sVar2;
-            *piVar10 = (int)(short)(sVar3 + 1);
-            piVar10[1] = (int)(short)((short)local_10 + 1);
+            *piVar10 = (short)(sVar3 + 1);
+            piVar10[1] = (short)((short)local_10 + 1);
             param_5 = param_5 + 1;
             param_4 = (int *)((int)param_4 + 1);
           }

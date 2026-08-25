@@ -163,9 +163,9 @@ void __thiscall st::fn_0052E5E0(OptPanelTy *this)
     /* ST_CALLSITE[0052E7F1]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
     uVar10 = st::fn_0040398B((UPanelTy *)this_00,0,0,0x93,0x9f,1,pCVar3,uVar6,uVar7,sVar8,uVar9,
                                  uVar12,pcVar13,uVar16,uVar20);
-    uVar6 = this_00->field_0038;
+    iVar18 = this_00->field_0038;
     this_00->field_01AD[1] = uVar10;
-    this_00->field_0301 = uVar6;
+    this_00->field_0301 = iVar18;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -2625,10 +2625,9 @@ switchD_005311ec_caseD_3:
         uVar31 = 0;
         do {
           iVar10 = DAT_0080877a + uVar31 * 0xc;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (((*(int *)(iVar10 + 8) == local_44) &&
+          if (((STField<int>(iVar10,0x8) == local_44) &&
               (*(int *)(DAT_0080877a + (uVar31 * 3 + 3) * 4) == local_40)) &&
-             (*(int *)(iVar10 + 0x10) == 8)) {
+             (STField<int>(iVar10,0x10) == 8)) {
             *puVar11 = (uint)(DAT_00807348 == local_d);
             break;
           }
@@ -4022,8 +4021,7 @@ int __thiscall st::fn_00533D10(OptPanelTy *this,STMessage *message)
                          (DAT_0080874e != '\x03') - 1U & 0x73);
             uVar17 = (uint)(message->arg0).words.high;
             uVar19 = uVar17;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if ((int)uVar17 < (int)(*(int *)(local_18 + 0x1e0) + uVar17)) {
+            if ((int)uVar17 < (int)(STField<int>(local_18,0x1E0) + uVar17)) {
               do {
                 if ((int)uVar19 < (int)this_00->field_02F9[2]) {
                   local_1c = *(char **)(this_00->field_02F9[5] + uVar19 * 4);
@@ -4038,8 +4036,7 @@ int __thiscall st::fn_00533D10(OptPanelTy *this,STMessage *message)
                 }
                 uVar17 = (uint)(message->arg0).words.high;
                 uVar19 = uVar19 + 1;
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              } while ((int)uVar19 < (int)(*(int *)(local_18 + 0x1e0) + uVar17));
+              } while ((int)uVar19 < (int)(STField<int>(local_18,0x1E0) + uVar17));
             }
             st::fn_006B3640
                       ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,
@@ -4214,9 +4211,8 @@ LAB_00534016:
           }
           this_00->field_01A0 = 1;
           message->id = MESS_CURSORCLASSTY_A101;
-          /* ST_CALLSITE[005346F1]: CALL dword ptr [EAX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (**(code **)g_cursorClass_00802A30->field_0000)(message);
+          /* ST_CALLSITE[005346F1]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+          g_cursorClass_00802A30->GetMessage(message);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -4227,7 +4223,7 @@ LAB_00534016:
           }
           (message->arg2).u32 = 0;
           message->id = (SVar6 != MESS_OPTPANELTY_A105) + MESS_SHARED_C09F;
-          /* ST_CALLSITE[0053469B]: CALL dword ptr [EDX] */
+          /* ST_CALLSITE[0053469B]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/OptPanelTy;pointer:/SubmarineTitans/Recovered/STMessage */
           this_00->GetMessage(message);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -4761,7 +4757,7 @@ LAB_00534654:
         g_playSystem_00802A38->GetMessage((int)&this_00->field_0x18);
         this_00->field_0028 = 0xc001;
         this_00->field_0034 = 0;
-        /* ST_CALLSITE[00534D55]: CALL dword ptr [EDX] */
+        /* ST_CALLSITE[00534D55]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/OptPanelTy;pointer:/SubmarineTitans/Recovered/STMessage */
         this_00->GetMessage((STMessage *)&this_00->field_0x18);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -4938,7 +4934,7 @@ LAB_005350bc:
 switchD_00535190_caseD_3:
       this_00->field_0028 = 0xc0a1;
       this_00->field_0034 = 0;
-      /* ST_CALLSITE[00534487]: CALL dword ptr [EAX] */
+      /* ST_CALLSITE[00534487]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/OptPanelTy;pointer:/SubmarineTitans/Recovered/STMessage */
       this_00->GetMessage((STMessage *)&this_00->field_0x18);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -5261,7 +5257,7 @@ switchD_00534835_caseD_1:
       if (local_1c != nullptr) {
         this_00->field_0028 = 0xc001;
         this_00->field_0034 = 0;
-        /* ST_CALLSITE[0053591F]: CALL dword ptr [EAX] */
+        /* ST_CALLSITE[0053591F]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/OptPanelTy;pointer:/SubmarineTitans/Recovered/STMessage */
         this_00->GetMessage((STMessage *)&this_00->field_0x18);
         g_currentExceptionFrame = local_8c.previous;
         return 0;

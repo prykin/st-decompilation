@@ -439,11 +439,11 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this)
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xe9a);
           }
           /* ST_CALLSITE[004A157C]: CALL dword ptr [EDX + 0x2c] */
-          dVar6 = pSVar5->slot_2C();
+          dVar6 = pSVar5->sub_0045EEE0();
           /* ST_CALLSITE[004A1588]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar6 != 8) && (dVar6 = pSVar5->slot_2C(), dVar6 != 0x14)) &&
+          if (((dVar6 != 8) && (dVar6 = pSVar5->sub_0045EEE0(), dVar6 != 0x14)) &&
              /* ST_CALLSITE[004A1594]: CALL dword ptr [EDX + 0x2c] */
-             (dVar6 = pSVar5->slot_2C(), dVar6 != 0x1a)) {
+             (dVar6 = pSVar5->sub_0045EEE0(), dVar6 != 0x1a)) {
             iVar7 = thunk_FUN_00490d90((STGameObjC *)pSVar5);
             if (iVar7 == 0) {
               /* ST_CALLSITE[004A15AF]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -541,11 +541,11 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this)
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xecf);
           }
           /* ST_CALLSITE[004A1813]: CALL dword ptr [EDX + 0x2c] */
-          dVar6 = pSVar5->slot_2C();
+          dVar6 = pSVar5->sub_0045EEE0();
           /* ST_CALLSITE[004A181F]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar6 == 0xc) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x18)) ||
+          if (((dVar6 == 0xc) || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x18))
              /* ST_CALLSITE[004A182B]: CALL dword ptr [EDX + 0x2c] */
-             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x19)) {
+             || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x19)) {
             puVar14 = &local_154;
             SVar13 = CASE_11;
           }
@@ -641,11 +641,11 @@ LAB_004a1878:
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xf02);
           }
           /* ST_CALLSITE[004A1A12]: CALL dword ptr [EAX + 0x2c] */
-          dVar6 = pSVar5->slot_2C();
+          dVar6 = pSVar5->sub_0045EEE0();
           /* ST_CALLSITE[004A1A1E]: CALL dword ptr [EDX + 0x2c] */
-          if (((dVar6 == 8) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x14)) ||
+          if (((dVar6 == 8) || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x14)) ||
              /* ST_CALLSITE[004A1A2A]: CALL dword ptr [EAX + 0x2c] */
-             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x1a)) {
+             (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x1a)) {
             puVar14 = &local_64;
             SVar13 = CASE_D;
           }
@@ -840,14 +840,14 @@ LAB_004a1a74:
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xf5d);
           }
           /* ST_CALLSITE[004A1DD5]: CALL dword ptr [EDX + 0xf8] */
-          iVar7 = pSVar5->vfunc_F8();
+          iVar7 = pSVar5->sub_004838B0();
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           SVar10 = extraout_ECX_23;
           if (iVar7 != 0) {
             iVar7 = thunk_FUN_00490d90((STGameObjC *)pSVar5);
             if (iVar7 == 0) {
               /* ST_CALLSITE[004A1DF6]: CALL dword ptr [EAX + 0x2c] */
-              dVar6 = pSVar5->slot_2C();
+              dVar6 = pSVar5->sub_0045EEE0();
               if ((((dVar6 != 7) && (dVar6 != 0x13)) && (dVar6 != 0x1b)) ||
                  (iVar7 = thunk_FUN_00492370((STGameObjC *)pSVar5), iVar7 != 0)) {
                 /* ST_CALLSITE[004A1E7E]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -942,10 +942,10 @@ LAB_004a1ede:
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xf8e);
           }
           /* ST_CALLSITE[004A1FCC]: CALL dword ptr [EAX + 0xf8] */
-          iVar7 = pSVar5->vfunc_F8();
+          iVar7 = pSVar5->sub_004838B0();
           if (iVar7 != 0) {
             /* ST_CALLSITE[004A1FDE]: CALL dword ptr [EDX + 0x2c] */
-            dVar6 = pSVar5->slot_2C();
+            dVar6 = pSVar5->sub_0045EEE0();
             if ((((dVar6 == 7) || (dVar6 == 0x13)) || (dVar6 == 0x1b)) &&
                (iVar7 = thunk_FUN_00492370((STGameObjC *)pSVar5), iVar7 != 0)) {
               /* ST_CALLSITE[004A2006]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -1224,11 +1224,11 @@ LAB_004a221d:
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x1042);
           }
           /* ST_CALLSITE[004A2638]: CALL dword ptr [EDX + 0x2c] */
-          dVar6 = pSVar5->slot_2C();
+          dVar6 = pSVar5->sub_0045EEE0();
           /* ST_CALLSITE[004A2644]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar6 == 7) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x13)) ||
+          if (((dVar6 == 7) || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x13)) ||
              /* ST_CALLSITE[004A2650]: CALL dword ptr [EDX + 0x2c] */
-             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x1b)) {
+             (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x1b)) {
             /* ST_CALLSITE[004A2696]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
             STBoatC::CmdToObj(pSVar5,CASE_17,&local_70);
             pDVar8 = local_10;
@@ -1319,11 +1319,11 @@ LAB_004a26f5:
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x1071);
           }
           /* ST_CALLSITE[004A2812]: CALL dword ptr [EDX + 0x2c] */
-          dVar6 = pSVar5->slot_2C();
+          dVar6 = pSVar5->sub_0045EEE0();
           /* ST_CALLSITE[004A281E]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar6 == 0xc) || (dVar6 = pSVar5->slot_2C(), dVar6 == 0x18)) ||
+          if (((dVar6 == 0xc) || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x18))
              /* ST_CALLSITE[004A282A]: CALL dword ptr [EDX + 0x2c] */
-             (dVar6 = pSVar5->slot_2C(), dVar6 == 0x1d)) {
+             || (dVar6 = pSVar5->sub_0045EEE0(), dVar6 == 0x1d)) {
             if (local_10 == nullptr) {
               local_10 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
             }
@@ -1439,12 +1439,12 @@ LAB_004a2897:
                      ,0x10b0);
         }
         /* ST_CALLSITE[004A2B04]: CALL dword ptr [EDX + 0xf8] */
-        iVar7 = pSVar5->vfunc_F8();
+        iVar7 = pSVar5->sub_004838B0();
         if (iVar7 != 0) {
           iVar7 = thunk_FUN_00490d90((STGameObjC *)pSVar5);
           if (iVar7 == 0) {
             /* ST_CALLSITE[004A2B25]: CALL dword ptr [EAX + 0x2c] */
-            dVar6 = pSVar5->slot_2C();
+            dVar6 = pSVar5->sub_0045EEE0();
             if ((dVar6 == 7) || (dVar6 == 0x13)) {
               iVar7 = thunk_FUN_00492370((STGameObjC *)pSVar5);
               if (iVar7 == 0) {

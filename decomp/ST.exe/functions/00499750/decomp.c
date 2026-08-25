@@ -72,11 +72,11 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,DArr
             (puVar4 + iVar3 * 4)[0] = 0;
             (puVar4 + iVar3 * 4)[1] = 0;
             puVar4 = pSVar2->field_021E;
-            pSVar2->field_0216 = *(undefined4 *)(puVar4 + iVar3 * 4 + 2);
+            pSVar2->field_0216 = *(int *)(puVar4 + iVar3 * 4 + 2);
             iVar7 = 0;
           }
           else {
-            *(undefined4 *)(puVar4 + iVar3 * 4) = pSVar2->field_0216;
+            *(int *)(puVar4 + iVar3 * 4) = pSVar2->field_0216;
             puVar4 = pSVar2->field_021E;
             pSVar2->field_0216 = pSVar2->field_0216 + *(int *)(puVar4 + iVar3 * 4 + 2);
           }

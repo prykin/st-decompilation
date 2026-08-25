@@ -94,7 +94,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
                   uVar11 = local_18;
                   do {
                     uVar11 = uVar11 + DAT_00857108 * 8;
-                    if (*(uint *)(iVar6 + 0xe) < uVar11) goto LAB_00728cb0;
+                    if (STField<uint>(iVar6,0xE) < uVar11) goto LAB_00728cb0;
                     iVar9 = iVar10 + -8;
                     bVar5 = 7 < iVar10;
                     iVar10 = iVar9;
@@ -158,7 +158,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
                   uVar11 = local_18;
                   do {
                     uVar11 = uVar11 + DAT_00857108 * 8;
-                    if (uVar11 <= *(uint *)(iVar6 + 0xe)) goto LAB_00728cb0;
+                    if (uVar11 <= STField<uint>(iVar6,0xE)) goto LAB_00728cb0;
                     iVar9 = iVar10 + -8;
                     bVar5 = 7 < iVar10;
                     iVar10 = iVar9;

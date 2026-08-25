@@ -372,7 +372,7 @@ int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
                         /* ST_CALLSITE[004C3E39]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                         st::fn_004018C5(local_8,&local_12,&local_14,&local_a);
                         st::fn_004031E3(local_8,(uint *)local_40,local_38,local_1c);
-                        iVar15 = (int)(short)local_30;
+                        iVar15 = (short)local_30;
                         iVar8 = st::fn_006ACF0D((int)local_40[0],(int)local_38[0],(int)local_1c[0],
                                              (int)local_2c,(int)local_34,iVar15);
                         uVar10 = st::machine_word_boundary_cast<uint>(local_1c[0] - iVar15);
@@ -402,7 +402,7 @@ int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
                             if ((&DAT_00792ca0)[iVar11 * 3] == 0xb0) {
                               if (iVar9 % 3 == 0) {
 LAB_004c4080:
-                                if (((STField<uint>(local_10,0x265) & 2) != 0) &&
+                                if (((STField<int>(local_10,0x265) & 2U) != 0) &&
                                    (local_8->field_0018 == STField<int>(local_10,0x26d))) {
                                   STField<int>(local_10,0x2d5) = (int)local_12;
                                   STField<int>(local_10,0x2d9) = (int)local_14;
@@ -413,13 +413,13 @@ LAB_004c4080:
                                 }
                                 iVar15 = local_18;
                                 iVar17 = local_28;
-                                if ((STField<uint>(local_10,0x265) & 1) != 0) {
+                                if ((STField<int>(local_10,0x265) & 1U) != 0) {
                                   if (this_00->field_0420 == 0) {
                                     if (((uint)local_8->field_0024 < 8) &&
                                        ((g_playSystem_00802A38 == nullptr ||
                                         (g_bulkInitializedRecords_008087C7[local_8->field_0024].
                                          field_0022 < 8)))) {
-                                      bVar1 = *(byte *)&local_8->field_0024;
+                                      bVar1 = (byte)local_8->field_0024;
                                       bVar2 = *(byte *)&this_00->field_0024;
                                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       _local_50 = CONCAT31(uStack_4f,bVar1);
@@ -524,11 +524,10 @@ LAB_004c41a5:
                                                       (&DAT_00792ca0)
                                                       [(param_1 + this_00->field_0235 * 2) * 3],
                                                       &local_44,this_00->field_0420);
-                                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                   if ((iVar17 != 0) ||
                                      ((((STField<byte>(local_10,0x265) & 2) != 0 &&
                                        (local_44 != 0)) &&
-                                      (*(int *)(local_44 + 0x18) == STField<int>(local_10,0x26d))
+                                      (STField<int>(local_44,0x18) == STField<int>(local_10,0x26d))
                                       ))) {
                                     local_48 = 1;
                                   }
@@ -573,7 +572,7 @@ LAB_004c42b5:
                                (g_playSystem_00802A38,
                                 STField<AnonShape_005EFAE0_B406B78B *>(ppTVar16,0x26d),
                                 (int *)&local_8), iVar15_mg5 != 0)) {
-      STField<uint>(ppTVar16,0x265) = STField<uint>(ppTVar16,0x265) & 0xfffffffd;
+      STField<uint>(ppTVar16,0x265) = STField<int>(ppTVar16,0x265) & 0xfffffffd;
       STField<undefined4>(ppTVar16,0x26d) = 0;
     }
   }

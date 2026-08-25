@@ -56,7 +56,7 @@ st::fn_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE35 *param_
 
   uVar2 = 0;
   if ((&this->field_01E5)[param_1] != 0) {
-    *(uint *)((&this->field_01E5)[param_1] + 0x14) = (uint)*(ushort *)&param_2->field_0028;
+    *(uint *)((&this->field_01E5)[param_1] + 0x14) = (uint)(ushort)param_2->field_0028;
     *(undefined4 *)((&this->field_01E5)[param_1] + 0x20) = *(undefined4 *)&param_2->field_0x14;
     *(undefined4 *)((&this->field_01E5)[param_1] + 0x24) = *(undefined4 *)&param_2->field_0x18;
     *(undefined4 *)((&this->field_01E5)[param_1] + 0x28) = *(undefined4 *)&param_2->field_0x1c;
@@ -226,7 +226,7 @@ int __thiscall st::fn_0062FEA0(STRubbishC *this,int param_1,int param_2)
     if (param_2 < 0) {
       return iVar2;
     }
-    if ((int)pVVar1->field_0030 <= param_2) {
+    if (pVVar1->field_0030 <= param_2) {
       return iVar2;
     }
     iVar3 = (int)&local_8->vtable + g_centeredOffsets5[iVar3];

@@ -28,7 +28,7 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
   }
   iVar3 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(int)&local_14);
   if (param_5 == 0xff) {
-    iVar4 = (int)(short)iVar3;
+    iVar4 = (short)iVar3;
     iVar3 = iVar4;
     if ((int)(iVar4 - (local_10 >> 8 & 0xf)) < iVar4) {
       do {

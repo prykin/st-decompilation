@@ -36,7 +36,7 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
     }
     local_2c.arg1.words.low = (*ppuVar1)[0x12];
     local_2c.arg1.words.high = (*ppuVar1)[0x19];
-    /* ST_CALLSITE[004917AA]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[004917AA]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_2c);
   }
   param_1->field_05C0 = 0;
@@ -46,7 +46,7 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
   DumpClassC::WritePtr
             (param_1->field_005B,param_1->field_005D,param_1->field_005F,param_1->field_008E,
              (RecoveredRecord_DumpClassC_00495EC0 *)param_1);
-  pSVar4 = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_0030);
+  pSVar4 = thunk_FUN_0042b760((char)param_1->field_0024,param_1->field_0030);
   uVar5 = thunk_FUN_00424790(pSVar4);
   uVar2 = param_1->field_01D1;
   uVar6 = local_8;

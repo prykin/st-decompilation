@@ -29,24 +29,24 @@ byte __thiscall STParticleC::sub_0062B4A0(STParticleC *this)
   local_14 = this->field_0046;
   sVar3 = (short)(local_14 >> 0x1f);
   if (local_14 < 0) {
-    iVar5 = (int)(short)(((short)(local_14 / 0xc9) + sVar3) -
+    iVar5 = (short)(((short)(local_14 / 0xc9) + sVar3) -
                         (short)((longlong)local_14 * 0x28c1979 >> 0x3f));
     local_c = iVar5 + -1;
   }
   else {
-    iVar5 = (int)(short)(((short)(local_14 / 0xc9) + sVar3) -
+    iVar5 = (short)(((short)(local_14 / 0xc9) + sVar3) -
                         (short)((longlong)local_14 * 0x28c1979 >> 0x3f));
     local_c = iVar5;
   }
   iVar1 = this->field_004A;
   sVar3 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
-    iVar6 = (int)(short)(((short)(iVar1 / 0xc9) + sVar3) -
+    iVar6 = (short)(((short)(iVar1 / 0xc9) + sVar3) -
                         (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
     local_8 = iVar6 + -1;
   }
   else {
-    iVar6 = (int)(short)(((short)(iVar1 / 0xc9) + sVar3) -
+    iVar6 = (short)(((short)(iVar1 / 0xc9) + sVar3) -
                         (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
     local_8 = iVar6;
   }
@@ -73,7 +73,7 @@ byte __thiscall STParticleC::sub_0062B4A0(STParticleC *this)
                ,&local_c);
     if (((local_10 < 0) || (4 < local_10)) ||
        ((local_14 < 0 ||
-        (((((int)pVVar4->field_0030 <= local_14 ||
+        ((((pVVar4->field_0030 <= local_14 ||
            (local_c = g_centeredOffsets5[local_10] + local_c, local_c < 0)) ||
           (pVVar4->field_0034 <= local_c)) ||
          ((pVVar4->field_004C == nullptr ||

@@ -30,7 +30,7 @@ undefined4 __fastcall FUN_004ed210(TLOBaseTy *param_1)
     if (DAT_0079aab8 <= param_1->field_04D4) {
       return 0;
     }
-    if (g_playSystem_00802A38->field_00E4 < param_1->field_04DC + param_1->field_04D8) {
+    if (g_playSystem_00802A38->field_00E4 < (uint)(param_1->field_04DC + param_1->field_04D8)) {
       return 0;
     }
     iVar6 = param_1->field_04D4 + 1;

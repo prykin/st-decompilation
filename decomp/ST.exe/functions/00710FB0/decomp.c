@@ -28,7 +28,7 @@ void __thiscall FUN_00710fb0(void *this,byte *param_1)
   if (*(short *)(iVar1 + (uVar4 + 0xb) * 10) != (short)local_8) {
     while( true ) {
       uVar4 = uVar4 + 1;
-      if (*(ushort *)(iVar1 + 100) <= (ushort)uVar4) {
+      if (STField<ushort>(iVar1,0x64) <= (ushort)uVar4) {
         uVar4 = 0;
       }
       if ((short)uVar4 == STField<short>(this,0x70)) break;

@@ -11,9 +11,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
@@ -26,10 +32,19 @@ import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.FunctionDefinition;
+import ghidra.program.model.pcode.DataTypeSymbol;
+import ghidra.program.model.pcode.HighFunction;
+import ghidra.program.model.pcode.HighFunctionDBUtil;
+import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.Reference;
+import ghidra.program.model.symbol.Symbol;
 
 public class STUtilityFunctionAnalyzer extends GhidraScript {
     private static final int TIMEOUT = 600;
+    private final Map<Long, String> consumerCallViews = new LinkedHashMap<>();
 
     @Override
     protected void run() throws Exception {
@@ -39,7 +54,7 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
         File selected = outputDirectory(); if (selected == null) return;
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         DecompInterface decompiler = new DecompInterface();
-        decompiler.toggleCCode(true); decompiler.toggleSyntaxTree(false);
+        decompiler.toggleCCode(true); decompiler.toggleSyntaxTree(true);
         if (!decompiler.openProgram(currentProgram))
             throw new IllegalStateException("Decompiler could not open the current program");
         List<Row> rows = new ArrayList<>();
@@ -179,16 +194,19 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                 "copies rowCount rows of rowBytes bytes between independently " +
                     "pitched byte buffers"));
 
-        Function payloadLoader = discoverMfAObjLoad();
-        if (payloadLoader != null &&
-                occupied.add(payloadLoader.getEntryPoint().getOffset()))
-            result.add(new Rule(payloadLoader.getEntryPoint().getOffset(),
-                "mfaobj_load_payload", "mfAObjLoad", "__cdecl", "pointer:/byte",
-                new String[] { "pointer:/cMf32", "pointer:/char", "/byte", "/int" },
-                new String[] { "archive", "objectName", "param_3", "param_4" },
+        PayloadLoaderCandidate payloadLoader =
+            discoverHeterogeneousPayloadLoader(decompiler);
+        if (payloadLoader != null && occupied.add(
+                payloadLoader.function.getEntryPoint().getOffset()))
+            result.add(new Rule(payloadLoader.function.getEntryPoint().getOffset(),
+                "heterogeneous_payload_loader", payloadLoader.function.getName(),
+                payloadLoader.function.getCallingConventionName(), "pointer:/byte",
+                parameterTypes(payloadLoader.function),
+                parameterNames(payloadLoader.function),
                 new String[0],
-                "loads a heterogeneous binary object payload; byte pointer is " +
-                    "the neutral ABI type and each consumer owns its payload layout"));
+                "loads a heterogeneous binary payload; byte pointer is the neutral ABI " +
+                    "type and each consumer owns its payload layout; independently " +
+                    "rendered consumer views=" + String.join("|", payloadLoader.views)));
 
         for (Rule allocator : discoverMemoryAllocators()) {
             if (occupied.add(allocator.address)) result.add(allocator);
@@ -753,23 +771,192 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
         return false;
     }
 
-    private Function discoverMfAObjLoad() {
-        List<Function> matches = new ArrayList<>();
+    private PayloadLoaderCandidate discoverHeterogeneousPayloadLoader(
+            DecompInterface decompiler) throws Exception {
+        List<PayloadLoaderCandidate> matches = new ArrayList<>();
         FunctionIterator iterator =
             currentProgram.getFunctionManager().getFunctions(true);
         while (iterator.hasNext()) {
             Function function = iterator.next();
-            if (!function.getName(true).endsWith("::MFAOBJ::mfAObjLoad") ||
-                    !tagged(function, "LIBRARY") ||
+            if (!tagged(function, "LIBRARY") ||
+                    !tagged(function, "RECOVERED_SOURCE_NAME") ||
+                    !"__cdecl".equals(function.getCallingConventionName()) ||
                     explicitParameters(function).size() != 4 ||
+                    !(function.getReturnType() instanceof Pointer) ||
                     function.getCallingFunctions(monitor).size() < 8)
                 continue;
-            String comment = function.getComment();
-            if (comment != null &&
-                    comment.toLowerCase(Locale.ROOT).contains("mfaobj.cpp"))
-                matches.add(function);
+            ConsumerViews views = exactConsumerPointerViews(function, decompiler);
+            if (views.types.size() >= 2 && !views.calls.isEmpty())
+                matches.add(new PayloadLoaderCandidate(function, views.types,
+                    views.calls));
         }
-        return matches.size() == 1 ? matches.get(0) : null;
+        if (matches.size() != 1) return null;
+        PayloadLoaderCandidate match = matches.get(0);
+        consumerCallViews.put(match.function.getEntryPoint().getOffset(),
+            encodeConsumerCallViews(match.calls));
+        return match;
+    }
+
+    private ConsumerViews exactConsumerPointerViews(Function function,
+            DecompInterface decompiler) throws Exception {
+        Set<String> types = new TreeSet<>();
+        List<ConsumerCallView> calls = new ArrayList<>();
+        for (Function caller : function.getCallingFunctions(monitor)) {
+            monitor.checkCancelled();
+            DecompileResults decompiled =
+                decompiler.decompileFunction(caller, TIMEOUT, monitor);
+            if (!decompiled.decompileCompleted()) continue;
+            Object highFunction = decompiled.getClass()
+                .getMethod("getHighFunction").invoke(decompiled);
+            if (highFunction == null) continue;
+            InstructionIterator instructions = currentProgram.getListing()
+                .getInstructions(caller.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                if (!"CALL".equalsIgnoreCase(instruction.getMnemonicString()) ||
+                        !callsTarget(instruction, function)) continue;
+                String view = exactCallConsumerPointerView(highFunction,
+                    instruction.getAddress());
+                if (view.isBlank()) continue;
+                types.add(view);
+                calls.add(new ConsumerCallView(caller.getEntryPoint(),
+                    instruction.getAddress(), view,
+                    existingOverrideFingerprint(caller,
+                        instruction.getAddress())));
+            }
+        }
+        calls.sort(java.util.Comparator
+            .comparing((ConsumerCallView value) -> value.caller)
+            .thenComparing(value -> value.call));
+        return new ConsumerViews(types, calls);
+    }
+
+    private boolean callsTarget(Instruction instruction, Function expected) {
+        for (Address flow : instruction.getFlows()) {
+            Function direct = currentProgram.getFunctionManager().getFunctionAt(flow);
+            if (direct != null && resolveThunk(direct).equals(expected)) return true;
+        }
+        return false;
+    }
+
+    private String exactCallConsumerPointerView(Object highFunction,
+            Address call) throws Exception {
+        @SuppressWarnings("unchecked")
+        Iterator<Object> operations = (Iterator<Object>)highFunction.getClass()
+            .getMethod("getPcodeOps", Address.class).invoke(highFunction, call);
+        Set<String> views = new TreeSet<>();
+        while (operations.hasNext()) {
+            Object operation = operations.next();
+            if (!"CALL".equals(operation.getClass()
+                    .getMethod("getMnemonic").invoke(operation))) continue;
+            Object output = operation.getClass().getMethod("getOutput")
+                .invoke(operation);
+            collectConsumerPointerViews(output, views,
+                java.util.Collections.newSetFromMap(
+                    new java.util.IdentityHashMap<>()), 0);
+        }
+        Set<String> concrete = new TreeSet<>();
+        boolean neutral = false;
+        for (String view : views) {
+            if (neutralConsumerPointerSpecification(view)) neutral = true;
+            else concrete.add(view);
+        }
+        // An immediate neutral ownership/cleanup lifetime followed by a typed
+        // payload view is intentionally heterogeneous inside the caller.  A
+        // use-site return override would force the typed view backwards into
+        // the ownership local and manufacture a cast around the loader call.
+        return !neutral && concrete.size() == 1 ?
+            concrete.iterator().next() : "";
+    }
+
+    private void collectConsumerPointerViews(Object varnode, Set<String> views,
+            Set<Object> visited, int depth) throws Exception {
+        if (varnode == null || depth > 5 || !visited.add(varnode)) return;
+        Object high = varnode.getClass().getMethod("getHigh").invoke(varnode);
+        DataType type = high == null ? null : (DataType)high.getClass()
+            .getMethod("getDataType").invoke(high);
+        if (type instanceof Pointer) views.add(typeSpec(type));
+        @SuppressWarnings("unchecked")
+        Iterator<Object> descendants = (Iterator<Object>)varnode.getClass()
+            .getMethod("getDescendants").invoke(varnode);
+        while (descendants.hasNext()) {
+            Object operation = descendants.next();
+            String mnemonic = (String)operation.getClass()
+                .getMethod("getMnemonic").invoke(operation);
+            if (!Set.of("COPY", "CAST", "INDIRECT", "MULTIEQUAL")
+                    .contains(mnemonic)) continue;
+            Object output = operation.getClass().getMethod("getOutput")
+                .invoke(operation);
+            collectConsumerPointerViews(output, views, visited, depth + 1);
+        }
+    }
+
+    private boolean concreteConsumerPointer(DataType type) {
+        if (!(type instanceof Pointer pointer) || pointer.getDataType() == null)
+            return false;
+        DataType pointed = pointer.getDataType();
+        String path = pointed.getPathName();
+        return !path.equals("/void") && !path.equals("/byte") &&
+            !path.equals("/char") && !path.matches("/undefined[0-9]*");
+    }
+
+    private boolean neutralConsumerPointerSpecification(String specification) {
+        return specification.equals("pointer:/void") ||
+            specification.equals("pointer:/byte") ||
+            specification.equals("pointer:/char") ||
+            specification.matches("pointer:/undefined[0-9]*");
+    }
+
+    private String existingOverrideFingerprint(Function caller, Address call) {
+        Namespace root = HighFunction.findOverrideSpace(caller);
+        if (root == null) return "none";
+        String agreed = "";
+        for (Symbol symbol : currentProgram.getSymbolTable().getSymbols(call)) {
+            if (!root.equals(symbol.getParentNamespace())) continue;
+            DataTypeSymbol value = HighFunctionDBUtil.readOverride(symbol);
+            if (value == null ||
+                    !(value.getDataType() instanceof FunctionDefinition definition))
+                continue;
+            String fingerprint = overrideFingerprint(definition);
+            if (!agreed.isBlank() && !agreed.equals(fingerprint))
+                return "ambiguous";
+            agreed = fingerprint;
+        }
+        return agreed.isBlank() ? "none" : agreed;
+    }
+
+    private String overrideFingerprint(FunctionDefinition definition) {
+        List<String> values = new ArrayList<>();
+        values.add(definition.getCallingConventionName());
+        values.add(typeSpec(definition.getReturnType()));
+        for (var argument : definition.getArguments())
+            values.add(typeSpec(argument.getDataType()));
+        return String.join(";", values);
+    }
+
+    private String encodeConsumerCallViews(List<ConsumerCallView> calls) {
+        List<String> result = new ArrayList<>();
+        for (ConsumerCallView call : calls)
+            result.add(addr(call.caller) + "," + addr(call.call) + "," +
+                call.returnType + "," + call.expectedOverride);
+        return String.join("|", result);
+    }
+
+    private String[] parameterTypes(Function function) {
+        return explicitParameters(function).stream()
+            .map(parameter -> typeSpec(parameter.getFormalDataType()))
+            .toArray(String[]::new);
+    }
+
+    private String[] parameterNames(Function function) {
+        List<Parameter> parameters = explicitParameters(function);
+        String[] result = new String[parameters.size()];
+        for (int index = 0; index < parameters.size(); index++) {
+            String name = parameters.get(index).getName();
+            result[index] = name == null || name.isBlank() ?
+                "param_" + (index + 1) : name;
+        }
+        return result;
     }
 
     private boolean tagged(Function function, String name) {
@@ -823,7 +1010,7 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                 "expected_name\texpected_name_source\texpected_signature\texpected_convention\t" +
                 "expected_parameters\texpected_call_fixup\tproposed_name\tproposed_convention\tproposed_return_type\t" +
                 "proposed_parameter_types\tproposed_parameter_names\tproposed_call_fixup\t" +
-                "confidence\tsemantics\tevidence\n");
+                "consumer_call_views\tconfidence\tsemantics\tevidence\n");
             for (Row row : rows) out.write((row.apply ? "1" : "0") + "\t" + row.address +
                 "\t" + tsv(row.rule.id) + "\t" + tsv(row.qualifiedName) + "\t" +
                 tsv(row.name) + "\t" + row.nameSource + "\t" + tsv(row.signature) + "\t" +
@@ -832,7 +1019,9 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                 row.rule.convention + "\t" + row.rule.returnType + "\t" +
                 tsv(String.join(";", row.rule.parameterTypes)) + "\t" +
                 tsv(String.join(";", row.rule.parameterNames)) + "\t" +
-                tsv(row.rule.callFixup) + "\thigh\t" +
+                tsv(row.rule.callFixup) + "\t" +
+                tsv(consumerCallViews.getOrDefault(row.rule.address, "")) +
+                "\thigh\t" +
                 tsv(row.rule.semantics) + "\t" + tsv(row.evidence) + "\n");
         }
     }
@@ -874,6 +1063,12 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                 parameterNames, tokens, semantics, "");
         }
     }
+    private record PayloadLoaderCandidate(Function function, Set<String> views,
+        List<ConsumerCallView> calls) {}
+    private record ConsumerViews(Set<String> types,
+        List<ConsumerCallView> calls) {}
+    private record ConsumerCallView(Address caller, Address call,
+        String returnType, String expectedOverride) {}
     private record Row(boolean apply, String address, String qualifiedName, String name,
             String nameSource, String signature, String convention, String parameters,
             String callFixup, Rule rule, String evidence) {

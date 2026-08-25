@@ -102,12 +102,12 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       TVar3 = this_01->field_0245;
       if (TVar3 == CASE_1) {
         /* ST_CALLSITE[004B82C1]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-        local_EAX_497 = LookupRecordByte(*(char *)&this_01->field_023D);
+        local_EAX_497 = LookupRecordByte((char)this_01->field_023D);
         if (*(int *)(&DAT_007955d0 + ((uint)(byte)local_EAX_497 + this_01->field_0235 * 3) * 4) != 0
            ) {
           pTVar4 = this_01->vtable;
           /* ST_CALLSITE[004B82F3]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-          uVar10 = LookupRecordByte(*(char *)&this_01->field_023D);
+          uVar10 = LookupRecordByte((char)this_01->field_023D);
           /* ST_CALLSITE[004B8317]: CALL dword ptr [EDI + 0x90] */
           (*pTVar4->vfunc_90)(this_01,3,
                               (short)*(undefined4 *)
@@ -135,7 +135,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       }
       sVar8 = (short)this_01->field_05B0;
       sVar1 = (short)this_01->field_05B8;
-      sVar13 = *(short *)&this_01->field_05B4;
+      sVar13 = (short)this_01->field_05B4;
       if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar13 < 0)) ||
           ((g_worldGrid.sizeY <= sVar13 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
         sVar8 = -1;
@@ -175,7 +175,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       }
       sVar8 = (short)this_01->field_05B0;
       sVar1 = (short)this_01->field_05B8;
-      sVar13 = *(short *)&this_01->field_05B4;
+      sVar13 = (short)this_01->field_05B4;
       if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
          (((sVar13 < 0 || ((g_worldGrid.sizeY <= sVar13 || (sVar1 < 0)))) ||
           (g_worldGrid.sizeZ <= sVar1)))) {
@@ -312,7 +312,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     case CASE_4:
       sVar8 = (short)this_01->field_05B0;
       sVar1 = (short)this_01->field_05B8;
-      sVar13 = *(short *)&this_01->field_05B4;
+      sVar13 = (short)this_01->field_05B4;
       if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
          ((sVar13 < 0 ||
           (((g_worldGrid.sizeY <= sVar13 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) {
@@ -322,7 +322,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         sVar13 = STGridAt3D(g_pathingGrid, sVar8, sVar13, sVar1);
       }
       if (sVar13 != 0) {
-        iVar11 = thunk_FUN_00496140(sVar8,*(short *)&this_01->field_05B4,sVar1);
+        iVar11 = thunk_FUN_00496140(sVar8,(short)this_01->field_05B4,sVar1);
         if (iVar11 != 0) {
           RaiseInternalException
                     (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_base.cpp",0x73);

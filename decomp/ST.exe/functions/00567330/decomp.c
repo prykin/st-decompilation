@@ -76,7 +76,7 @@ void __fastcall FUN_00567330(int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    *(undefined4 *)(local_8 + 0xf8b) = 0;
+    STField<undefined4>(local_8,0xF8B) = 0;
   }
   return;
 }

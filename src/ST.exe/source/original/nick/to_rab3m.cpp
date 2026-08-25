@@ -231,8 +231,8 @@ st::fn_0062D910
     if (0 < local_c) {
       do {
         uVar1 = local_8->field_0030[param_1 + 8];
-        if (uVar8 < *(uint *)(uVar1 + 0xc)) {
-          piVar5 = (int *)(*(int *)(uVar1 + 8) * uVar8 + *(int *)(uVar1 + 0x1c));
+        if (uVar8 < STField<uint>(uVar1,0xC)) {
+          piVar5 = (int *)(STField<int>(uVar1,0x8) * uVar8 + STField<int>(uVar1,0x1C));
         }
         else {
           piVar5 = nullptr;
@@ -322,8 +322,8 @@ st::fn_0062DD80(STManRub3C *this,int param_1,int param_2,int param_3,int param_4
     if (0 < iVar4) {
       do {
         uVar1 = local_c->field_0030[param_1 + 0x10];
-        if (uVar8 < *(uint *)(uVar1 + 0xc)) {
-          piVar6 = (int *)(*(int *)(uVar1 + 8) * uVar8 + *(int *)(uVar1 + 0x1c));
+        if (uVar8 < STField<uint>(uVar1,0xC)) {
+          piVar6 = (int *)(STField<int>(uVar1,0x8) * uVar8 + STField<int>(uVar1,0x1C));
         }
         else {
           piVar6 = nullptr;

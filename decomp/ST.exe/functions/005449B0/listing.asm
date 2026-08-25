@@ -2169,7 +2169,8 @@ switchD_00546229::caseD_a105:
 005464B6  0F 84 7E 17 00 00         JZ 0x00547c3a
 005464BC  8B 01                     MOV EAX,dword ptr [ECX]
 005464BE  57                        PUSH EDI
-005464BF  FF 10                     CALL dword ptr [EAX]
+CursorClassTy::GetMessage::override::prt_5464bf_709f2bd6:
+005464BF  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/OptPanelTy;pointer:/SubmarineTitans/Recovered/STMessage
 005464C1  8B 85 24 FF FF FF         MOV EAX,dword ptr [EBP + 0xffffff24]
 005464C7  A3 F8 8D 85 00            MOV [0x00858df8],EAX
 005464CC  33 C0                     XOR EAX,EAX

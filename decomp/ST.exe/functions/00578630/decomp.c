@@ -357,10 +357,10 @@ cf_error_exit_00578B5D:
     this_00->field_0239 = local_20[0xb];
     this_00->field_0235 = local_20[10];
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    this_00->field_0041 = *(undefined2 *)(local_20 + 0x14);
-    this_00->field_0043 = STField<undefined2>(local_20,0x52);
+    this_00->field_0041 = *(short *)(local_20 + 0x14);
+    this_00->field_0043 = STField<short>(local_20,0x52);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    this_00->field_0045 = *(undefined2 *)(local_20 + 0x15);
+    this_00->field_0045 = *(short *)(local_20 + 0x15);
     this_00->field_0231 = local_20[0xd];
     this_00->field_0245 = local_20[0x12];
     this_00->field_024D = local_20[0x13];
@@ -371,7 +371,7 @@ cf_error_exit_00578B5D:
     this_00->field_004E = STField<undefined2>(local_20,0x56);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_0050 = *(undefined2 *)(local_20 + 0x16);
-    this_00->field_006C = STField<undefined2>(local_20,0x5a);
+    this_00->field_006C = STField<short>(local_20,0x5a);
     this_00->field_023D = local_20[0xc];
     local_3c = Library::DKW::LIB::MemAlloc(0x44);
     if (local_3c != nullptr) {

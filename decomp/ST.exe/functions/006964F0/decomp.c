@@ -48,12 +48,11 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
       sub_006948E0(this,this->field_5833);
       iVar2 = STField<int>(piVar5,0x15);
       local_18 = 0;
-      uVar3 = *(uint *)(iVar2 + 0xc);
+      uVar3 = STField<uint>(iVar2,0xC);
       if (0 < (int)uVar3) {
         do {
           if (local_18 < uVar3) {
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            puVar4 = (undefined1 *)(*(int *)(iVar2 + 8) * local_18 + *(int *)(iVar2 + 0x1c));
+            puVar4 = (undefined1 *)(STField<int>(iVar2,0x8) * local_18 + STField<int>(iVar2,0x1C));
           }
           else {
             puVar4 = nullptr;
@@ -67,7 +66,7 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
             local_20 = local_28;
             do {
               iVar2 = *local_c;
-              if ((int)(short)local_24[iVar2] == param_1) {
+              if ((short)local_24[iVar2] == param_1) {
                 local_14 = local_14 + 1;
                 if (param_2 != 0) {
                   thunk_FUN_006a1370(this->field_0008,iVar2 % this->field_5833,
@@ -81,7 +80,7 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
                 }
               }
               else {
-                thunk_FUN_006960d0(this,param_1,(int)(short)local_24[iVar2]);
+                thunk_FUN_006960d0(this,param_1,(short)local_24[iVar2]);
               }
               local_c = local_c + 1;
               local_20 = local_20 + -1;
@@ -95,7 +94,7 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
           }
           iVar2 = STField<int>(piVar5,0x15);
           local_18 = local_18 + 1;
-          uVar3 = *(uint *)(iVar2 + 0xc);
+          uVar3 = STField<uint>(iVar2,0xC);
         } while ((int)local_18 < (int)uVar3);
         return;
       }

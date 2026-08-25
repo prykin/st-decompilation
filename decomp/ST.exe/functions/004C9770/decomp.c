@@ -40,7 +40,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
 
   local_10 = this;
   /* ST_CALLSITE[004C978C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-  local_EAX_28 = LookupRecordByte(*(char *)&this->field_023D);
+  local_EAX_28 = LookupRecordByte((char)this->field_023D);
   local_EAX_28 = (int)(byte)local_EAX_28;
   local_8 = local_EAX_28 + -1;
   local_54.previous = g_currentExceptionFrame;
@@ -335,7 +335,7 @@ LAB_004c9eda:
   }
   else {
     /* ST_CALLSITE[004C9F44]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-    bVar2 = LookupRecordByte(*(char *)&this_00->field_023D);
+    bVar2 = LookupRecordByte((char)this_00->field_023D);
     iVar5 = this_00->field_002C;
     if (bVar2 == 3) {
       if (iVar5 == 0) {
@@ -409,7 +409,7 @@ LAB_004ca02a:
 LAB_004ca0a2:
   /* ST_CALLSITE[004CA0DC]: CALL 0x00402455; direct=00402455 sub_00415B30 */
   sub_00415B30(this_00,(short)this_00->field_05B0 * 0xc9 + 100,
-               *(short *)&this_00->field_05B4 * 0xc9 + 100,(short)this_00->field_05B8 * 200 + 100,0,
+               (short)this_00->field_05B4 * 0xc9 + 100,(short)this_00->field_05B8 * 200 + 100,0,
                0,0,1);
   g_currentExceptionFrame = local_54.previous;
   return 0;

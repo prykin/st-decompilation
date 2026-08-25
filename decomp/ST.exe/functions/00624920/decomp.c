@@ -46,7 +46,7 @@ STMineSetC::sub_00624920
     *param_2 = this->field_02C2;
     *param_3 = this->field_02C6;
     *param_4 = this->field_02CA;
-    if (g_playSystem_00802A38->field_00E4 < this->field_030F) {
+    if (g_playSystem_00802A38->field_00E4 < (uint)this->field_030F) {
       return 1;
     }
     SVar2 = this->field_02AD;
@@ -158,7 +158,7 @@ STMineSetC::sub_00624920
     }
     else {
       puVar13 = (undefined *)
-                (int)(short)(((short)(iVar11 / 200) + sVar14) -
+                (short)(((short)(iVar11 / 200) + sVar14) -
                             (short)((longlong)iVar11 * 0x51eb851f >> 0x3f));
     }
     if (puVar13 != (undefined *)(int)this->field_004B) {

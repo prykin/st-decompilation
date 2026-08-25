@@ -2585,8 +2585,7 @@ LAB_0065937a:
                                                 bVar1 = pAVar22->field_0081;
                                                 pcVar21 = (char *)(uint)bVar1;
                                                 if (((char)bVar1 < '\0') || ('\a' < (char)bVar1)) {
-                                                  pcVar21 = (char *)(uint)*(byte *)&pAVar22->
-                                                  field_0024;
+                                                  pcVar21 = (char *)(uint)(byte)pAVar22->field_0024;
                                                 }
                                               }
                                               local_1f0 = SUB41(pcVar21,0);
@@ -5588,8 +5587,8 @@ LAB_006559d6:
                                           else {
                                             bVar36 = true;
                                           }
-                                          if (((!bVar36) || (*(short *)(iVar37 + 0x7b) == 1)) &&
-                                             (*(short *)(iVar37 + 0x7b) != -0x8000))
+                                          if (((!bVar36) || (STField<short>(iVar37,0x7B) == 1)) &&
+                                             (STField<short>(iVar37,0x7B) != -0x8000))
                                           goto LAB_00655972;
                                           goto LAB_006559d0;
                                         }

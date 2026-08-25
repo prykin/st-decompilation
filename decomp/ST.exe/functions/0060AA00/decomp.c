@@ -56,20 +56,20 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
           do {
             iVar6 = param_1->field_0234;
             uVar3 = local_18 * local_10 + local_1c;
-            if ((uVar3 < *(uint *)(iVar6 + 0xc)) &&
-               (iVar6 = *(int *)(iVar6 + 8) * uVar3 + *(int *)(iVar6 + 0x1c), iVar6 != 0)) {
-              fVar7 = (float10)*(float *)(iVar6 + 0x2c) - (float10)local_8;
-              *(float *)(iVar6 + 0x2c) = (float)fVar7;
+            if ((uVar3 < STField<uint>(iVar6,0xC)) &&
+               (iVar6 = STField<int>(iVar6,0x8) * uVar3 + STField<int>(iVar6,0x1C), iVar6 != 0)) {
+              fVar7 = (float10)STField<float>(iVar6,0x2C) - (float10)local_8;
+              STField<float>(iVar6,0x2C) = (float)fVar7;
               if (local_18 != 0) {
-                uVar3 = *(int *)(iVar6 + 0x34) + 1;
-                *(uint *)(iVar6 + 0x34) = uVar3;
-                *(float *)(iVar6 + 0x30) = (float)((uVar3 >> 1) + 10) + *(float *)(iVar6 + 0x30);
+                uVar3 = STField<int>(iVar6,0x34) + 1;
+                STField<uint>(iVar6,0x34) = uVar3;
+                STField<float>(iVar6,0x30) = (float)((uVar3 >> 1) + 10) + STField<float>(iVar6,0x30);
                 lVar8 = Library::MSVCRT::__ftol();
-                *(int *)(iVar6 + 0x24) = (int)lVar8;
+                STField<int>(iVar6,0x24) = (int)lVar8;
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if ((float10)(param_1->field_01FD + 100) <= extraout_ST0) {
-                  *(undefined4 *)(iVar6 + 0x30) = 0x43480000;
-                  *(undefined4 *)(iVar6 + 0x34) = 0;
+                  STField<undefined4>(iVar6,0x30) = 0x43480000;
+                  STField<undefined4>(iVar6,0x34) = 0;
                 }
                 Library::MSVCRT::__ftol();
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -79,17 +79,17 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
               lVar8 = Library::MSVCRT::__ftol();
               /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
               fsin(extraout_ST1);
-              iVar1 = (int)lVar8 + *(int *)(iVar6 + 0x18);
-              *(int *)(iVar6 + 0xc) = iVar1;
+              iVar1 = (int)lVar8 + STField<int>(iVar6,0x18);
+              STField<int>(iVar6,0xC) = iVar1;
               lVar8 = Library::MSVCRT::__ftol();
-              iVar4 = (int)lVar8 + *(int *)(iVar6 + 0x1c);
-              *(int *)(iVar6 + 0x10) = iVar4;
+              iVar4 = (int)lVar8 + STField<int>(iVar6,0x1C);
+              STField<int>(iVar6,0x10) = iVar4;
               ST3DSMAPContext::sub_006E3210
                         (g_sT3DSMAPContext_00807598,
                          (iVar1 * g_sT3DSMAPContext_00807598->field_0380) / 0xc9,
                          (iVar4 * g_sT3DSMAPContext_00807598->field_0380) / 0xc9);
               lVar8 = Library::MSVCRT::__ftol();
-              *(int *)(iVar6 + 0x14) = (short)lVar8 + 0x2d;
+              STField<int>(iVar6,0x14) = (short)lVar8 + 0x2d;
             }
             local_18 = local_18 + 1;
           } while (local_18 < param_1->field_021D);
@@ -97,30 +97,29 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
       }
       else {
         iVar6 = param_1->field_0234;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if ((local_1c < *(uint *)(iVar6 + 0xc)) &&
-           (iVar6 = *(int *)(iVar6 + 8) * local_1c + *(int *)(iVar6 + 0x1c), iVar6 != 0)) {
+        if ((local_1c < STField<uint>(iVar6,0xC)) &&
+           (iVar6 = STField<int>(iVar6,0x8) * local_1c + STField<int>(iVar6,0x1C), iVar6 != 0)) {
           if (param_1->field_020D == 3) {
-            *(float *)(iVar6 + 0x2c) = *(float *)(iVar6 + 0x2c) - local_8;
+            STField<float>(iVar6,0x2C) = STField<float>(iVar6,0x2C) - local_8;
           }
           else if ((param_1->field_020D == 4) && ((int)local_1c <= local_14)) {
-            *(float *)(iVar6 + 0x2c) = *(float *)(iVar6 + 0x2c) - local_8;
+            STField<float>(iVar6,0x2C) = STField<float>(iVar6,0x2C) - local_8;
             Library::MSVCRT::__ftol();
-            fVar2 = param_1->field_022A + *(float *)(iVar6 + 0x30);
-            *(float *)(iVar6 + 0x30) = fVar2;
+            fVar2 = param_1->field_022A + STField<float>(iVar6,0x30);
+            STField<float>(iVar6,0x30) = fVar2;
             if ((float)param_1->field_01F9 <= fVar2) {
-              *(float *)(iVar6 + 0x30) = (float)(int)param_1->field_01FD;
+              STField<float>(iVar6,0x30) = (float)(int)param_1->field_01FD;
             }
           }
           else {
-            *(float *)(iVar6 + 0x2c) = local_8 + *(float *)(iVar6 + 0x2c);
+            STField<float>(iVar6,0x2C) = local_8 + STField<float>(iVar6,0x2C);
           }
-          fcos((float10)*(float *)(iVar6 + 0x2c));
+          fcos((float10)STField<float>(iVar6,0x2C));
           lVar8 = Library::MSVCRT::__ftol();
-          fsin((float10)*(float *)(iVar6 + 0x2c));
-          *(int *)(iVar6 + 0xc) = (int)lVar8 + *(int *)(iVar6 + 0x18);
+          fsin((float10)STField<float>(iVar6,0x2C));
+          STField<int>(iVar6,0xC) = (int)lVar8 + STField<int>(iVar6,0x18);
           lVar8 = Library::MSVCRT::__ftol();
-          *(int *)(iVar6 + 0x10) = (int)lVar8 + *(int *)(iVar6 + 0x1c);
+          STField<int>(iVar6,0x10) = (int)lVar8 + STField<int>(iVar6,0x1C);
         }
       }
       local_1c = local_1c + 1;

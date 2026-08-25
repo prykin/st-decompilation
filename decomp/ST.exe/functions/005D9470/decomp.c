@@ -93,7 +93,7 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
         pSVar6 = this_00->vtable;
         this_00->array_00BC[0xc].field_01DF = 0;
         this_00->field_002D = message->id + 1;
-        /* ST_CALLSITE[005D9847]: CALL dword ptr [EDX] */
+        /* ST_CALLSITE[005D9847]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/SIDTy;pointer:/SubmarineTitans/Recovered/STMessage */
         (*pSVar6->GetMessage)(this_00,(STMessage *)&this_00->field_0x1d);
       }
       else if (SVar5 == MESS_SHARED_6900) {

@@ -164,7 +164,7 @@ LAB_00698a36:
                       iVar2 = thunk_FUN_006a1370(this->field_0008,local_20,local_24,local_28,
                                                  (int)local_3c);
                       pAVar9 = pAStack_8;
-                      if ((int)((int)(short)iVar2 + uVar4 + 1) < this->field_5847) {
+                      if ((int)((short)iVar2 + uVar4 + 1) < this->field_5847) {
                         thunk_FUN_006a0c90(local_20,local_24,*(int *)&pAStack_8->field_0x0 + 1,
                                            uVar4 + 1,0xff,0,(int)uVar7 % 6 + 1);
                         pAVar9 = pAStack_8;

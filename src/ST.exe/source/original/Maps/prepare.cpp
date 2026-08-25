@@ -83,8 +83,8 @@ LAB_006a2f2f:
   iVar6 = 0;
   do {
     puVar5 = (byte *)
-             (*(int *)((int)&local_14->field_0027 + 1) * iVar11 +
-             *(int *)((int)&local_14->field_000B + 1));
+             (STField<int>(local_14,0x28) * iVar11 +
+             STField<int>(local_14,0xC));
     puVar14 = (undefined4 *)((int)local_8 + iVar6);
     for (iVar8 = 0x22; iVar8 != 0; iVar8 = iVar8 + -1) {
       *puVar14 = *puVar5;

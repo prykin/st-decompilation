@@ -80,12 +80,12 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
         g_currentExceptionFrame = local_7c.previous;
         return 0;
       }
-      if ((int)local_10->field_00C6 < 0) {
+      if (local_10->field_00C6 < 0) {
         g_currentExceptionFrame = local_7c.previous;
         return 0;
       }
       Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,local_10->field_00C6);
-      this_00->field_00C6 = 0xffffffff;
+      this_00->field_00C6 = -1;
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -100,7 +100,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
       if (this_00->field_003C != 0) {
         this_00->field_00C2 = CASE_1;
         this_00->field_0104 = this_00->field_003C;
-        if ((int)this_00->field_00C6 < 0) {
+        if (this_00->field_00C6 < 0) {
           g_currentExceptionFrame = local_7c.previous;
           return 0;
         }
@@ -109,7 +109,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
         return 0;
       }
       this_00->field_00C2 = CASE_2;
-      if ((int)this_00->field_00C6 < 0) {
+      if (this_00->field_00C6 < 0) {
         g_currentExceptionFrame = local_7c.previous;
         return 0;
       }
@@ -159,14 +159,14 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
       return 0;
     }
     this_00->field_00C2 = CASE_2;
-    if (this_00->field_00B6 <= (int)this_00->field_00B2) {
+    if (this_00->field_00B6 <= this_00->field_00B2) {
       this_00->field_00B2 = 0;
     }
     if (this_00->field_00D6 == '\0') {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    if ((int)this_00->field_00C6 < 0) {
+    if (this_00->field_00C6 < 0) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
@@ -194,7 +194,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
                                (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      local_c = (float)(int)(short)(((short)(iVar10 / 200) + sVar4) -
+      local_c = (float)(short)(((short)(iVar10 / 200) + sVar4) -
                                    (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
     }
     iVar10 = this_00->field_004A;
@@ -208,7 +208,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
                     &local_1c,&local_20), (int)local_c < 0 ||
         (local_24 = local_1c, local_28 = local_20, 4 < (int)local_c)))) goto LAB_006282e0;
 LAB_00628286:
-    if (((local_24 < 0) || ((int)pVVar13->field_0030 <= local_24)) ||
+    if (((local_24 < 0) || (pVVar13->field_0030 <= local_24)) ||
        ((g_centeredOffsets5[(int)local_c] + local_28 < 0 ||
         (pVVar13->field_0034 <= g_centeredOffsets5[(int)local_c] + local_28)))) {
       bVar15 = false;
@@ -237,9 +237,9 @@ LAB_00628286:
       if (bVar6 == 0) {
         /* ST_CALLSITE[00628574]: CALL 0x00405d53; direct=00405D53 STParticleC::InitVisibelDeton */
         InitVisibelDeton(this_00,0);
-        if (-1 < (int)this_00->field_00C6) {
+        if (-1 < this_00->field_00C6) {
           Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this_00->field_00C6);
-          this_00->field_00C6 = 0xffffffff;
+          this_00->field_00C6 = -1;
         }
       }
       else {
@@ -278,7 +278,7 @@ LAB_006283bd:
       if ((g_playSystem_00802A38->field_00E4 & 1) == 0) goto LAB_006283bd;
     }
     else if (g_playSystem_00802A38->field_00E4 % 3 == 0) goto LAB_006283bd;
-    if (this_00->field_00B6 <= (int)this_00->field_00B2) {
+    if (this_00->field_00B6 <= this_00->field_00B2) {
       this_00->field_00B2 = 0;
     }
     if (this_00->field_00D6 == '\0') {
@@ -307,7 +307,7 @@ LAB_006283bd:
                                (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      local_c = (float)(int)(short)(((short)(iVar10 / 200) + sVar4) -
+      local_c = (float)(short)(((short)(iVar10 / 200) + sVar4) -
                                    (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
     }
     iVar10 = this_00->field_004A;
@@ -327,11 +327,11 @@ LAB_006282e0:
     iVar10 = this_00->field_00B2 + 1;
     this_00->field_00B2 = iVar10;
     if ((((this_00->field_00BF != '\0') && (iVar10 == 0xf)) && (this_00->field_00D6 != '\0')) &&
-       (-1 < (int)this_00->field_00C6)) {
+       (-1 < this_00->field_00C6)) {
       ST3DSMAPContext::sub_006E9CB0(g_sT3DSMAPContext_00807598,(uint *)this_00->field_00C6,1);
     }
     if (((this_00->field_00B2 == this_00->field_00B6) && (this_00->field_00D6 != '\0')) &&
-       (-1 < (int)this_00->field_00C6)) {
+       (-1 < this_00->field_00C6)) {
       ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this_00->field_00C6,0);
     }
     if (((this_00->field_00B2 == 5) && (iVar10 = thunk_FUN_0062b300((int)this_00), iVar10 != 0)) &&
@@ -370,7 +370,7 @@ LAB_006282e0:
                                    (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) + -1);
         }
         else {
-          local_c = (float)(int)(short)(((short)(iVar10 / 200) + sVar4) -
+          local_c = (float)(short)(((short)(iVar10 / 200) + sVar4) -
                                        (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
         }
         iVar10 = this_00->field_004A;
@@ -385,7 +385,7 @@ LAB_006282e0:
           bVar15 = true;
         }
         else {
-          if (((local_2c < 0) || ((int)pVVar13->field_0030 <= local_2c)) ||
+          if (((local_2c < 0) || (pVVar13->field_0030 <= local_2c)) ||
              ((g_centeredOffsets5[(int)local_c] + local_30 < 0 ||
               (pVVar13->field_0034 <= g_centeredOffsets5[(int)local_c] + local_30)))) {
             bVar15 = false;
@@ -459,7 +459,7 @@ LAB_006282e0:
                                (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      local_c = (float)(int)(short)(((short)(iVar10 / 200) + sVar4) -
+      local_c = (float)(short)(((short)(iVar10 / 200) + sVar4) -
                                    (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
     }
     iVar10 = this_00->field_004A;
@@ -474,7 +474,7 @@ LAB_006282e0:
       bVar15 = true;
     }
     else {
-      if (((local_34 < 0) || ((int)pVVar13->field_0030 <= local_34)) ||
+      if (((local_34 < 0) || (pVVar13->field_0030 <= local_34)) ||
          ((g_centeredOffsets5[(int)local_c] + local_38 < 0 ||
           (pVVar13->field_0034 <= g_centeredOffsets5[(int)local_c] + local_38)))) {
         bVar15 = false;

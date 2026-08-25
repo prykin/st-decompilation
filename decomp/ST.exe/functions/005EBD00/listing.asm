@@ -1,4 +1,4 @@
-FUN_005ebd00:
+STArtiafactC::sub_005EBD00:
 005EBD00  55                        PUSH EBP
 005EBD01  8B EC                     MOV EBP,ESP
 005EBD03  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

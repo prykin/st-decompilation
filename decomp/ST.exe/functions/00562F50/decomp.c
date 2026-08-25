@@ -4,7 +4,6 @@
 /* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* WARNING: Unable to track spacebase fully for stack */
-/* WARNING: Unable to use type for symbol temp_203f9621b1d8 */
 /* WARNING: Unable to use type for symbol temp_3f50488dac */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -978,18 +977,18 @@ LAB_005637bc:
             iVar13 = local_40[iVar18];
             if (-1 < iVar13) {
               iVar20 = local_174[iVar18];
-              *(int *)(iVar20 + 4) = g_runtimeRecords_00803300[iVar13].field_0000 + DAT_008033bc;
-              *(int *)(iVar20 + 8) = g_runtimeRecords_00803300[iVar13].field_0004 + DAT_008033c0;
+              STField<int>(iVar20,0x4) = g_runtimeRecords_00803300[iVar13].field_0000 + DAT_008033bc;
+              STField<int>(iVar20,0x8) = g_runtimeRecords_00803300[iVar13].field_0004 + DAT_008033c0;
               if (local_8c < iVar18) {
-                *(int *)(iVar20 + 0xc) = DAT_008032f0;
+                STField<int>(iVar20,0xC) = DAT_008032f0;
                 iVar16 = DAT_008032ec;
               }
               else {
-                *(int *)(iVar20 + 0xc) = DAT_00803374;
+                STField<int>(iVar20,0xC) = DAT_00803374;
                 iVar16 = DAT_00803378;
               }
-              *(int *)(iVar20 + 0x10) = iVar16;
-              *(int *)(iVar20 + 0x14) = g_runtimeRecords_00803300[iVar13].field_0008;
+              STField<int>(iVar20,0x10) = iVar16;
+              STField<int>(iVar20,0x14) = g_runtimeRecords_00803300[iVar13].field_0008;
             }
             iVar18 = iVar18 + 1;
           } while (iVar18 < (int)uVar23);

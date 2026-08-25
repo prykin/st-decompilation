@@ -1,4 +1,4 @@
-FUN_004be6c0:
+TLOBaseTy::sub_004BE6C0:
 004BE6C0  55                        PUSH EBP
 004BE6C1  8B EC                     MOV EBP,ESP
 004BE6C3  53                        PUSH EBX

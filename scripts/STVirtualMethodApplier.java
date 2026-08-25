@@ -22,7 +22,9 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.DefaultDataType;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.listing.AutoParameterType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Function.FunctionUpdateType;
@@ -247,12 +249,15 @@ public class STVirtualMethodApplier extends GhidraScript {
 
     private void applySignature(Function function, Map<String, String> row,
             String convention, String owner, String ownerTypePath) throws Exception {
+        // Resolve the complete desired signature before changing namespace or
+        // calling convention.  A malformed proposal must be an atomic no-op.
+        DataType returnType = requireType(unt(row.get("return_type_path")));
+        List<Variable> parameters = parseParameters(unt(row.get("parameters")));
+        if (!ownerTypePath.isBlank()) requireType(ownerTypePath);
         // Ghidra owns the synthetic this parameter and rejects setDataType() on it.
         // Give the method its proven class namespace first; __thiscall can then
         // synthesize this from the class/type relationship itself.
         ensureOwnerNamespace(function, owner);
-        DataType returnType = requireType(unt(row.get("return_type_path")));
-        List<Variable> parameters = parseParameters(unt(row.get("parameters")));
         function.updateFunction(convention, new ReturnParameterImpl(returnType, currentProgram),
             parameters, FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true,
             SourceType.ANALYSIS);
@@ -317,6 +322,14 @@ public class STVirtualMethodApplier extends GhidraScript {
     private DataType requireType(String path) {
         if (path == null || path.isBlank())
             throw new IllegalArgumentException("Missing required data type path");
+        if (path.startsWith("pointer:")) {
+            DataType pointed = requireType(path.substring("pointer:".length()));
+            return new PointerDataType(pointed,
+                currentProgram.getDefaultPointerSize(), dataTypes);
+        }
+        // /undefined is Ghidra's unsized unknown ABI value.  It intentionally
+        // is not present as a named DataTypeManager entry.
+        if ("/undefined".equals(path)) return DefaultDataType.dataType;
         DataType type = dataTypes.getDataType(path);
         if (type == null) throw new IllegalArgumentException("Missing data type: " + path);
         return type;

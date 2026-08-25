@@ -44,16 +44,16 @@ MMObjTy::PaintSprBut(MMObjTy *this,int param_1,uint param_2,int param_3,int para
   case 1:
   case 3:
     iVar6 = (param_2 & 0xff) * 0x1fb + (int)local_8;
-    iVar7 = *(int *)(iVar6 + 0xef);
+    iVar7 = STField<int>(iVar6,0xEF);
     break;
   case 2:
     iVar6 = (param_2 & 0xff) * 0x1fb + (int)local_8;
-    iVar7 = *(int *)(iVar6 + 0xef) - param_3;
+    iVar7 = STField<int>(iVar6,0xEF) - param_3;
     break;
   default:
     goto switchD_005b56d4_default;
   }
-  *(int *)(iVar6 + 0xeb) = iVar7 + -1;
+  STField<int>(iVar6,0xEB) = iVar7 + -1;
 switchD_005b56d4_default:
   iVar7 = (param_2 & 0xff) * 0x1fb;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

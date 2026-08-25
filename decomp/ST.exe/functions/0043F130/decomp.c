@@ -20,12 +20,12 @@ short FUN_0043f130(char param_1,byte *param_2)
   iVar9 = 0;
   sVar5 = 0;
   iVar2 = g_packedRecords_A62x8[param_1].field3_0x9;
-  local_8 = *(int *)(iVar2 + 0xc);
+  local_8 = STField<int>(iVar2,0xC);
   sVar4 = 0;
   if (0 < local_8) {
     do {
       sVar5 = sVar4;
-      piVar3 = *(int **)(*(int *)(iVar2 + 0x1c) + iVar9 * 4);
+      piVar3 = *(int **)(STField<int>(iVar2,0x1C) + iVar9 * 4);
       if (piVar3 != nullptr) {
         /* ST_CALLSITE[0043F173]: CALL dword ptr [EAX + 0x74] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

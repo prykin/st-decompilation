@@ -56,8 +56,8 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
   undefined2 extraout_var_00;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
-  undefined4 **ppuVar12;
-  undefined4 *local_30 [8];
+  AnonShape_0041AF40_F59F8577 *pAVar12;
+  AnonShape_0041AF40_F59F8577 local_30;
   uint local_10;
   undefined4 local_c;
   STGameObjC *local_8;
@@ -154,7 +154,7 @@ LAB_0058ea68:
             ((this->field_004B == this->field_0235 &&
              /* ST_CALLSITE[0058EB66]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
              (pSVar9 = STAllPlayersC::GetObjPtr
-                                 (g_allPlayers_007FA174,*(char *)&this->field_0249,this->field_024D,
+                                 (g_allPlayers_007FA174,(char)this->field_0249,this->field_024D,
                                   CASE_1), this_01 == pSVar9)))))) goto LAB_0058e87e;
       }
     }
@@ -202,7 +202,7 @@ LAB_0058ea68:
          ((this->field_004B != sVar1 ||
           /* ST_CALLSITE[0058E862]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           (pSVar8 = STAllPlayersC::GetObjPtr
-                              (g_allPlayers_007FA174,*(char *)&this->field_0249,this->field_024D,
+                              (g_allPlayers_007FA174,(char)this->field_0249,this->field_024D,
                                CASE_1), local_8 != pSVar8)))) {
         iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
                           ((AnonReceiver_004167A0 *)this,this->field_0231,this->field_0233,
@@ -221,19 +221,19 @@ LAB_0058ea68:
       iVar6 = 0;
 LAB_0058e87e:
       DAT_00811728 = 1000;
-      ppuVar12 = local_30;
+      pAVar12 = &local_30;
       for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *ppuVar12 = nullptr;
-        ppuVar12 = ppuVar12 + 1;
+        *(undefined4 *)pAVar12 = 0;
+        pAVar12 = (AnonShape_0041AF40_F59F8577 *)&pAVar12->field_0x4;
       }
       _DAT_00811730 = 0xff;
       _DAT_00811734 = 0xffff;
-      local_30[2] = (undefined4 *)local_8->field_0008;
-      local_30[3] = (undefined4 *)0x2;
-      local_30[4] = (undefined4 *)0x110;
-      local_30[5] = &DAT_00811728;
-      /* ST_CALLSITE[0058E8CB]: CALL dword ptr [EAX] */
-      (*local_8->vtable->GetMessage)((STFishC *)local_8,(int)local_30);
+      STPiece<8,4>(local_30) = local_8->field_0008;
+      STPiece<12,4>(local_30) = 2;
+      local_30.field_0010 = 0x110;
+      local_30.field_0014 = &DAT_00811728;
+      /* ST_CALLSITE[0058E8CB]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AF40_F59F8577 */
+      local_8->GetMessage(&local_30);
       this->field_023D = 0;
       /* ST_CALLSITE[0058E8E8]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar6 = STT3DSprC::LoadSequence

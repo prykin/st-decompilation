@@ -27,9 +27,9 @@ int __thiscall STManBasisC::sub_005F21D0(STManBasisC *this)
            (psVar5 = (short *)((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar6),
            psVar5 != nullptr)) {
           puVar4 = thunk_FUN_005f1e40((uint)((byte *)psVar5)[3],(int)STField<short>(psVar5,7),
-                                      (int)(short)(*psVar5 * 0xc9 + 100),
-                                      (int)(short)(psVar5[1] * 0xc9 + 100),
-                                      (int)(short)(psVar5[2] * 200 + 100));
+                                      (short)(*psVar5 * 0xc9 + 100),
+                                      (short)(psVar5[1] * 0xc9 + 100),
+                                      (short)(psVar5[2] * 200 + 100));
           STField<undefined4 *>(psVar5,0xd) = puVar4;
         }
         uVar6 = uVar6 + 1;
@@ -46,8 +46,8 @@ int __thiscall STManBasisC::sub_005F21D0(STManBasisC *this)
             (psVar5 = DArrayAt<short>(pDVar3, uVar6),
             psVar5 != nullptr)) && (*(int *)(psVar5 + 0xc) != -1)) {
           thunk_FUN_005f1700((uint)((byte *)psVar5)[3],(int)STField<short>(psVar5,7),0,
-                             (int)(short)(*psVar5 * 0xc9 + 100),(int)(short)(psVar5[1] * 0xc9 + 100)
-                             ,(int)(short)(psVar5[2] * 200 + 100),uVar6);
+                             (short)(*psVar5 * 0xc9 + 100),(short)(psVar5[1] * 0xc9 + 100)
+                             ,(short)(psVar5[2] * 200 + 100),uVar6);
         }
         uVar6 = uVar6 + 1;
       } while ((int)uVar6 < (int)dVar1);

@@ -71,8 +71,8 @@ AiEventClassTy::_CreateArt
         if (param_6 == nullptr) {
           param_6 = &CHAR_00h_008016a0;
         }
-        thunk_FUN_005f0ec0((int)param_1,(int)param_2,(int)(short)local_c,(int)(short)local_8,
-                           (int)(short)local_10,param_6,param_7,0xffffffff,param_8);
+        thunk_FUN_005f0ec0((int)param_1,(int)param_2,(short)local_c,(short)local_8,
+                           (short)local_10,param_6,param_7,0xffffffff,param_8);
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }

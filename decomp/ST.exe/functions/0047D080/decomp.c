@@ -142,10 +142,10 @@ LAB_0047d831:
         local_8 = (uVar1 >> 0x10) % 7 - 3;
         if ((this->field_074A <= (int)PTR_00806724->entryCount / 2) &&
            (local_c = 0, this->field_02BF != '\0')) {
-          param_1 = (uint)&this->field_0x2b3;
+          auto param_1_after_write = (uint)&this->field_0x2b3; /* compiler stack-slot lifetime split */
           do {
-            puVar8 = thunk_FUN_0041dc40(local_28,(short)*(undefined4 *)param_1,
-                                        *(ushort *)(param_1 + 4),this->field_006C);
+            puVar8 = thunk_FUN_0041dc40(local_28,(short)*(undefined4 *)param_1_after_write,
+                                        *(ushort *)(param_1_after_write + 4),this->field_006C);
             uVar3 = *puVar8;
             bVar22 = 0;
             sVar21 = 0;
@@ -168,22 +168,22 @@ LAB_0047d831:
               sVar21 = 0;
               bVar22 = 0;
               lVar14 = Library::MSVCRT::__ftol();
-              iVar11 = (int)local_1c + this->field_0045 + local_8 + (int)(short)lVar14;
+              iVar11 = (int)local_1c + this->field_0045 + local_8 + (short)lVar14;
               iVar12 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
-              iVar13 = (int)(short)local_20 + iVar10 + this->field_0041;
+              iVar13 = (short)local_20 + iVar10 + this->field_0041;
             }
             else {
               iVar11 = (int)local_1c + local_8 + this->field_0045;
               STPiece<2,2>(local_20) = (short)((uint)uVar3 >> 0x10);
               iVar12 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
               STPiece<0,2>(local_20) = (short)uVar3;
-              iVar13 = (int)(short)local_20 + iVar10 + this->field_0041;
+              iVar13 = (short)local_20 + iVar10 + this->field_0041;
             }
             /* ST_CALLSITE[0047D46E]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,iVar13,iVar12 + ((uVar7 >> 0x10) % 7 - 3),iVar11,
                        sVar15,sVar16,sVar17,sVar18,sVar19,sVar20,iVar6,sVar21,bVar22);
-            param_1 = param_1 + 6;
+            param_1_after_write = param_1_after_write + 6;
             local_c = local_c + 1;
           } while (local_c < (int)(uint)(byte)this->field_02BF);
         }
@@ -291,7 +291,7 @@ LAB_0047d241:
       local_40 = 0;
       local_3c = 0xfe;
       local_64.id = MESS_HITKILL;
-      /* ST_CALLSITE[0047D7E4]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[0047D7E4]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/STBoatC;pointer:/SubmarineTitans/Recovered/STMessage */
       this->GetMessage(&local_64);
     }
   }

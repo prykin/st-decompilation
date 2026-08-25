@@ -767,16 +767,16 @@ LAB_0047acdc:
                   sVar23 = 0;
                   bVar24 = 0;
                   lVar18 = Library::MSVCRT::__ftol();
-                  iVar17 = (int)local_24 + this->field_0045 + local_20 + (int)(short)lVar18;
+                  iVar17 = (int)local_24 + this->field_0045 + local_20 + (short)lVar18;
                   iVar14 = (int)this->field_0043 - (int)STPiece<2,2>(local_28);
-                  iVar15 = (int)(short)local_28 + iVar11 + this->field_0041;
+                  iVar15 = (short)local_28 + iVar11 + this->field_0041;
                 }
                 else {
                   iVar17 = (int)local_24 + local_20 + this->field_0045;
                   STPiece<2,2>(local_28) = (short)((uint)uVar4 >> 0x10);
                   iVar14 = (int)this->field_0043 - (int)STPiece<2,2>(local_28);
                   STPiece<0,2>(local_28) = (short)uVar4;
-                  iVar15 = (int)(short)local_28 + iVar11 + this->field_0041;
+                  iVar15 = (short)local_28 + iVar11 + this->field_0041;
                 }
                 /* ST_CALLSITE[0047AFD9]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
                 TraksClassTy::TraksCreate
@@ -965,16 +965,16 @@ joined_r0x0047ada9:
                 sVar23 = 0;
                 bVar24 = 0;
                 lVar18 = Library::MSVCRT::__ftol();
-                iVar17 = (int)local_24 + this->field_0045 + local_18 + (int)(short)lVar18;
+                iVar17 = (int)local_24 + this->field_0045 + local_18 + (short)lVar18;
                 iVar14 = (int)this->field_0043 - (int)STPiece<2,2>(local_28);
-                iVar15 = (int)(short)local_28 + iVar11 + this->field_0041;
+                iVar15 = (short)local_28 + iVar11 + this->field_0041;
               }
               else {
                 iVar17 = (int)local_24 + local_18 + this->field_0045;
                 STPiece<2,2>(local_28) = (short)((uint)uVar4 >> 0x10);
                 iVar14 = (int)this->field_0043 - (int)STPiece<2,2>(local_28);
                 STPiece<0,2>(local_28) = (short)uVar4;
-                iVar15 = (int)(short)local_28 + iVar11 + this->field_0041;
+                iVar15 = (short)local_28 + iVar11 + this->field_0041;
               }
               /* ST_CALLSITE[0047A266]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
               TraksClassTy::TraksCreate

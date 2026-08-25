@@ -414,7 +414,7 @@ switchD_00590d73_default:
           local_230 = 0x694a;
           local_19c = local_238;
           local_175 = local_238;
-          if (*(int *)(iVar9 + 0x2e6) != 0) {
+          if (STField<int>(iVar9,0x2E6) != 0) {
             puVar5 = local_70;
             for (iVar19 = 6; iVar19 != 0; iVar19 = iVar19 + -1) {
               *puVar5 = 0xffffffff;

@@ -56,13 +56,13 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
                   (iVar2 = local_8, iVar4 = local_18,
                   g_worldGrid.cells
                   [(int)sVar1 * (int)sVar3 + (int)sVar5 * (int)g_worldGrid.planeStride +
-                   (int)(short)local_18].objects[1] != nullptr)))) {
+                   (short)local_18].objects[1] != nullptr)))) {
                 local_c = local_c + 1;
                 thunk_FUN_00601d10(STField<int>(this,0x259),0,
                                    (int)g_worldGrid.cells
                                         [(int)sVar1 * (int)sVar3 +
                                          (int)sVar5 * (int)g_worldGrid.planeStride +
-                                         (int)(short)local_18].objects[1],
+                                         (short)local_18].objects[1],
                                    (short)STField<undefined4>(this,0x25d),
                                    STField<ushort>(this,0x261),0xa8,0x128);
                 iVar2 = local_8;
@@ -74,13 +74,13 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
                   && (iVar2 = local_8, iVar4 = local_18,
                      g_worldGrid.cells
                      [(int)sVar1 * (int)sVar3 + (int)sVar5 * (int)g_worldGrid.planeStride +
-                      (int)(short)local_18].objects[0] != nullptr)))) {
+                      (short)local_18].objects[0] != nullptr)))) {
                 local_c = local_c + 1;
                 thunk_FUN_00601d10(STField<int>(this,0x259),0,
                                    (int)g_worldGrid.cells
                                         [(int)sVar1 * (int)sVar3 +
                                          (int)sVar5 * (int)g_worldGrid.planeStride +
-                                         (int)(short)local_18].objects[0],
+                                         (short)local_18].objects[0],
                                    (short)STField<undefined4>(this,0x25d),
                                    STField<ushort>(this,0x261),0xa8,0x128);
                 iVar2 = local_8;

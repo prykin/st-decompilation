@@ -45,12 +45,11 @@ int __thiscall FUN_004de4f0(void *this,int param_1)
       do {
         DArrayGetElement(pDVar4,uVar5,&local_8);
         if (local_8 != nullptr) {
-          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_1 = 0;
+          auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
           if (local_8[8] == 0x14) {
             puVar8 = &local_24;
             piVar6 = &local_c;
-            piVar7 = &param_1;
+            piVar7 = &param_1_after_write;
             /* ST_CALLSITE[004DE57B]: CALL dword ptr [EAX + 0x2c] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             SVar1 = (**(code **)(*local_8 + 0x2c))();
@@ -59,13 +58,13 @@ int __thiscall FUN_004de4f0(void *this,int param_1)
             iVar2 = STAllPlayersC::GetBoatWeaponInfo(SVar1,piVar7,piVar6,puVar8);
             if (iVar2 == 1) {
 LAB_004de602:
-              if (param_1 != 0) {
+              if (param_1_after_write != 0) {
                 local_18 = 1;
-                aiStackY_3e4[param_1] = aiStackY_3e4[param_1] + (int)(0x5dc / (longlong)local_c);
+                aiStackY_3e4[param_1_after_write] = aiStackY_3e4[param_1_after_write] + (int)(0x5dc / (longlong)local_c);
               }
             }
             else {
-              param_1 = 0;
+              param_1_after_write = 0;
             }
           }
           else if (local_8[8] == 1000) {
@@ -81,7 +80,7 @@ LAB_004de602:
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar2 = (**(code **)(*local_8 + 0x2c))();
                 iVar9 = 0;
-                param_1 = (&DAT_00792ca0)[(iVar2 + -0x32) * 6];
+                param_1_after_write = (&DAT_00792ca0)[(iVar2 + -0x32) * 6];
                 /* ST_CALLSITE[004DE5DD]: CALL dword ptr [EDX + 0x2c] */
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 iVar2 = (**(code **)(*local_8 + 0x2c))();
@@ -107,14 +106,14 @@ LAB_004de602:
       if (pDVar4->count != 0) {
         do {
           DArrayGetElement(pDVar4,uVar5,&local_1c);
-          param_1 = 0x96;
+          auto param_1_after_write_2 = 0x96; /* compiler stack-slot lifetime split */
           do {
-            local_c = thunk_FUN_004ddba0(local_1c,param_1);
+            local_c = thunk_FUN_004ddba0(local_1c,param_1_after_write_2);
             if (local_c != 0) {
-              aiStackY_330[param_1] = aiStackY_330[param_1] + (int)(0x5dc / (longlong)local_c);
+              aiStackY_330[param_1_after_write_2] = aiStackY_330[param_1_after_write_2] + (int)(0x5dc / (longlong)local_c);
             }
-            param_1 = param_1 + 1;
-          } while (param_1 < 0xc3);
+            param_1_after_write_2 = param_1_after_write_2 + 1;
+          } while (param_1_after_write_2 < 0xc3);
           uVar5 = uVar5 + 1;
           pDVar4 = *(DArrayTy **)((int)&g_packedRecords_A62x8[0].field1966_0x9ce + local_14);
         } while (uVar5 < pDVar4->count);

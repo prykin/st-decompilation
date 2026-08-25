@@ -58,7 +58,8 @@ LAB_0067c8ac:
 0067C8AE  8D 4D CC                  LEA ECX,[EBP + -0x34]
 0067C8B1  51                        PUSH ECX
 0067C8B2  8B CA                     MOV ECX,EDX
-0067C8B4  FF 10                     CALL dword ptr [EAX]
+AiPlrClassTy::GetMessage::override::prt_67c8b4_89729ca9:
+0067C8B4  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 0067C8B6  8B 7D 08                  MOV EDI,dword ptr [EBP + 0x8]
 LAB_0067c8b9:
 0067C8B9  E8 61 5F D8 FF            CALL 0x0040281f
@@ -162,7 +163,8 @@ LAB_0067c9d5:
 0067C9D7  8D 4D CC                  LEA ECX,[EBP + -0x34]
 0067C9DA  51                        PUSH ECX
 0067C9DB  8B CA                     MOV ECX,EDX
-0067C9DD  FF 10                     CALL dword ptr [EAX]
+AiPlrClassTy::GetMessage::override::prt_67c9dd_89729ca9:
+0067C9DD  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 0067C9DF  8B 7D 08                  MOV EDI,dword ptr [EBP + 0x8]
 LAB_0067c9e2:
 0067C9E2  57                        PUSH EDI

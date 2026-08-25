@@ -66,46 +66,44 @@ st::fn_006D63E0
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = *(int *)(*(int *)&this->field_0x288 + 0x28);
-    if ((*(uint *)(iVar4 + 8) & 0x4000000) != 0) {
+    if ((STField<uint>(iVar4,0x8) & 0x4000000) != 0) {
       /* ST_CALLSITE[006D6467]: CALL dword ptr [0x0085bb8c] */
       st::external_00000018((LPCRITICAL_SECTION)(iVar4 + 0x4f0));
     }
     iVar4 = *(int *)&this->field_0x288;
-    if (((*(uint *)(iVar4 + 4) & 8) == 0) &&
-       (((*(uint *)(iVar4 + 4) & 4) == 0 ||
-        ((*(int *)(iVar4 + 0x20) == *(int *)(iVar4 + 0x10) &&
-         (*(int *)(iVar4 + 0x24) == *(int *)(iVar4 + 0x14))))))) {
-      iVar7 = *(int *)(iVar4 + 0x18);
-      iVar1 = *(int *)(iVar4 + 0x1c);
-      local_a0 = *(int *)(iVar4 + 0x20);
-      pcVar2 = *(code **)(*(int *)(iVar4 + 0x28) + 0x4e4);
+    if (((STField<uint>(iVar4,0x4) & 8) == 0) &&
+       (((STField<uint>(iVar4,0x4) & 4) == 0 ||
+        ((STField<int>(iVar4,0x20) == STField<int>(iVar4,0x10) &&
+         (STField<int>(iVar4,0x24) == STField<int>(iVar4,0x14))))))) {
+      iVar7 = STField<int>(iVar4,0x18);
+      iVar1 = STField<int>(iVar4,0x1C);
+      local_a0 = STField<int>(iVar4,0x20);
+      pcVar2 = *(code **)(STField<int>(iVar4,0x28) + 0x4e4);
       if (pcVar2 != nullptr) {
         /* ST_CALLSITE[006D64C2]: CALL ECX */
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        (*pcVar2)(*(undefined4 *)(*(int *)(iVar4 + 0x28) + 0x4ec),iVar7,iVar1,local_a0,
-                  *(undefined4 *)(iVar4 + 0x24));
+        (*pcVar2)(*(undefined4 *)(STField<int>(iVar4,0x28) + 0x4ec),iVar7,iVar1,local_a0,
+                  STField<undefined4>(iVar4,0x24));
       }
       iVar4 = *(int *)&this->field_0x288;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       st::fn_006B42D0
                 (*(DDXContext **)(iVar4 + 0x28),iVar7,iVar1,(BITMAPINFO *)(iVar8 + 0x30),local_bc,
-                 *(int *)(iVar4 + 8),*(int *)(iVar4 + 0xc),*(DWORD *)(iVar4 + 0x10),
-                 *(DWORD *)(iVar4 + 0x14));
+                 STField<int>(iVar4,0x8),STField<int>(iVar4,0xC),STField<DWORD>(iVar4,0x10),
+                 STField<DWORD>(iVar4,0x14));
     }
     else {
       if (((((byte *)iVar4)[4] & 8) == 0) &&
-         ((*(int *)(iVar4 + 0x20) != *(int *)(iVar4 + 0x10) * 2 ||
-          (*(int *)(iVar4 + 0x24) != *(int *)(iVar4 + 0x14) * 2)))) {
+         ((STField<int>(iVar4,0x20) != STField<int>(iVar4,0x10) * 2 ||
+          (STField<int>(iVar4,0x24) != STField<int>(iVar4,0x14) * 2)))) {
         local_c0 = 0;
       }
       else {
         local_c0 = 1;
       }
-      iVar7 = *(int *)(iVar4 + 0x18);
-      local_a4 = *(int *)(iVar4 + 0x1c);
-      local_a0 = *(int *)(iVar4 + 0x20);
-      local_9c = *(int *)(iVar4 + 0x24);
-      iVar4 = *(int *)(iVar4 + 0x28);
+      iVar7 = STField<int>(iVar4,0x18);
+      local_a4 = STField<int>(iVar4,0x1C);
+      local_a0 = STField<int>(iVar4,0x20);
+      local_9c = STField<int>(iVar4,0x24);
+      iVar4 = STField<int>(iVar4,0x28);
       piVar3 = *(int **)(iVar4 + 0x40);
       local_a8 = iVar7;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -113,16 +111,15 @@ st::fn_006D63E0
         /* ST_CALLSITE[006D6571]: CALL ECX */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar4 + 0x4e4))
-                  (*(undefined4 *)(iVar4 + 0x4ec),iVar7,local_a4,local_a0,local_9c);
+                  (STField<undefined4>(iVar4,0x4EC),iVar7,local_a4,local_a0,local_9c);
       }
       iVar4 = *(int *)&this->field_0x288;
-      if ((*(int *)(*(int *)(iVar4 + 0x28) + 0x20) < 0x11) && (*(ushort *)(iVar8 + 0x3e) < 0x11)) {
-        uVar5 = (uint)*(ushort *)(iVar8 + 0x3e) * *(int *)(iVar8 + 0x34) + 0x1f >> 3 & 0x1ffffffc;
+      if ((*(int *)(STField<int>(iVar4,0x28) + 0x20) < 0x11) && (STField<ushort>(iVar8,0x3E) < 0x11)) {
+        uVar5 = (uint)STField<ushort>(iVar8,0x3E) * STField<int>(iVar8,0x34) + 0x1f >> 3 & 0x1ffffffc;
         /* ST_CALLSITE[006D65C9]: CALL dword ptr [0x0085bbb8] */
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        BVar6 = st::external_00000023((uint *)(((*(int *)(iVar8 + 0x38) - *(int *)(iVar4 + 0xc)) -
-                                      *(int *)(iVar4 + 0x14)) * uVar5 + (int)local_bc),
-                             uVar5 * *(int *)(iVar4 + 0x14));
+        BVar6 = st::external_00000023((uint *)(((STField<int>(iVar8,0x38) - STField<int>(iVar4,0xC)) -
+                                      STField<int>(iVar4,0x14)) * uVar5 + (int)local_bc),
+                             uVar5 * STField<int>(iVar4,0x14));
         if (BVar6 == 0) {
           local_cc = local_a4;
           local_c8 = iVar7 + local_a0;
@@ -145,46 +142,46 @@ st::fn_006D63E0
 LAB_006d666f:
             local_8 = 0;
             iVar4 = *(int *)&this->field_0x288;
-            if (*(int *)(*(int *)(iVar4 + 0x28) + 0x20) == 8) {
-              uVar5 = (uint)*(ushort *)(iVar8 + 0x3e) * *(int *)(iVar8 + 0x34) + 0x1f >> 3 &
+            if (*(int *)(STField<int>(iVar4,0x28) + 0x20) == 8) {
+              uVar5 = (uint)STField<ushort>(iVar8,0x3E) * STField<int>(iVar8,0x34) + 0x1f >> 3 &
                       0x1ffffffc;
-              iVar8 = ((*(int *)(iVar8 + 0x38) - *(int *)(iVar4 + 0xc)) + -1) * uVar5 +
-                      *(int *)(iVar4 + 8);
+              iVar8 = ((STField<int>(iVar8,0x38) - STField<int>(iVar4,0xC)) + -1) * uVar5 +
+                      STField<int>(iVar4,0x8);
               if (local_c0 == 0) {
                 st::fn_006DB310((undefined4 *)local_74,local_88,local_a0,local_9c,iVar8 + (int)local_bc
-                             ,-uVar5,*(int *)(iVar4 + 0x10),*(uint *)(iVar4 + 0x14));
+                             ,-uVar5,STField<int>(iVar4,0x10),STField<uint>(iVar4,0x14));
               }
               else {
                 st::fn_006DB450((undefined4 *)local_74,local_88,(undefined2 *)(iVar8 + (int)local_bc),
-                             -uVar5,*(int *)(iVar4 + 0x10),*(uint *)(iVar4 + 0x14));
+                             -uVar5,STField<int>(iVar4,0x10),STField<uint>(iVar4,0x14));
               }
             }
-            else if (*(ushort *)(iVar8 + 0x3e) == 8) {
-              uVar5 = *(int *)(iVar8 + 0x34) * 8 + 0x1fU >> 3 & 0x1ffffffc;
-              iVar7 = ((*(int *)(iVar8 + 0x38) - *(int *)(iVar4 + 0xc)) + -1) * uVar5 +
-                      *(int *)(iVar4 + 8);
-              iVar8 = *(int *)(*(int *)(iVar4 + 0x28) + 0x4c0);
+            else if (STField<ushort>(iVar8,0x3E) == 8) {
+              uVar5 = STField<int>(iVar8,0x34) * 8 + 0x1fU >> 3 & 0x1ffffffc;
+              iVar7 = ((STField<int>(iVar8,0x38) - STField<int>(iVar4,0xC)) + -1) * uVar5 +
+                      STField<int>(iVar4,0x8);
+              iVar8 = *(int *)(STField<int>(iVar4,0x28) + 0x4c0);
               if (local_c0 == 0) {
                 st::fn_006DB0D0((undefined4 *)local_74,local_88,local_a0,local_9c,iVar7 + (int)local_bc
-                             ,-uVar5,*(int *)(iVar4 + 0x10),*(uint *)(iVar4 + 0x14),iVar8);
+                             ,-uVar5,STField<int>(iVar4,0x10),STField<uint>(iVar4,0x14),iVar8);
               }
               else {
                 st::fn_006DB1F0(local_74,local_88,(byte *)(iVar7 + (int)local_bc),-uVar5,
-                             *(int *)(iVar4 + 0x10),*(uint *)(iVar4 + 0x14),iVar8);
+                             STField<int>(iVar4,0x10),STField<uint>(iVar4,0x14),iVar8);
               }
             }
             else {
-              uVar5 = (uint)*(ushort *)(iVar8 + 0x3e) * *(int *)(iVar8 + 0x34) + 0x1f >> 3 &
+              uVar5 = (uint)STField<ushort>(iVar8,0x3E) * STField<int>(iVar8,0x34) + 0x1f >> 3 &
                       0x1ffffffc;
-              iVar8 = ((*(int *)(iVar8 + 0x38) - *(int *)(iVar4 + 0xc)) + -1) * uVar5 +
-                      *(int *)(iVar4 + 8) * 2;
+              iVar8 = ((STField<int>(iVar8,0x38) - STField<int>(iVar4,0xC)) + -1) * uVar5 +
+                      STField<int>(iVar4,0x8) * 2;
               if (local_c0 == 0) {
                 st::fn_006DAED0((undefined4 *)local_74,local_88,local_a0,local_9c,iVar8 + (int)local_bc
-                             ,-uVar5,*(int *)(iVar4 + 0x10),*(uint *)(iVar4 + 0x14));
+                             ,-uVar5,STField<int>(iVar4,0x10),STField<uint>(iVar4,0x14));
               }
               else {
                 st::fn_006DAFD0(local_74,local_88,(ushort *)(iVar8 + (int)local_bc),-uVar5,
-                             *(int *)(iVar4 + 0x10),*(uint *)(iVar4 + 0x14));
+                             STField<int>(iVar4,0x10),STField<uint>(iVar4,0x14));
               }
             }
             local_8 = 0xffffffff;
@@ -195,7 +192,7 @@ LAB_006d666f:
         (**(code **)(*piVar3 + 0x80))(piVar3,0);
       }
       else {
-        piVar3 = *(int **)(*(int *)(iVar4 + 0x28) + 0x40);
+        piVar3 = *(int **)(STField<int>(iVar4,0x28) + 0x40);
         local_b8 = 0;
         do {
           /* ST_CALLSITE[006D687C]: CALL dword ptr [EDX + 0x44] */
@@ -214,7 +211,7 @@ LAB_006d666f:
 LAB_006d68c8:
           iVar4 = *(int *)(*(int *)&this->field_0x288 + 0x28);
           /* ST_CALLSITE[006D68E8]: CALL dword ptr [0x0085bab0] */
-          st::external_000000B4(local_b4[0],*(int *)(iVar4 + 0x10),*(int *)(iVar4 + 0x14),(LPPOINT)0x0);
+          st::external_000000B4(local_b4[0],STField<int>(iVar4,0x10),STField<int>(iVar4,0x14),(LPPOINT)0x0);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           hrgn = *(HRGN *)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0x494);
           if (hrgn != (HRGN)0x0) {
@@ -225,9 +222,8 @@ LAB_006d68c8:
           *(int **)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0x480) = piVar3;
           iVar4 = *(int *)&this->field_0x288;
           /* ST_CALLSITE[006D697B]: CALL dword ptr [0x0085baa4] */
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          st::external_000000B1(local_b4[0],local_a8,local_a4,local_a0,local_9c,*(int *)(iVar4 + 8),
-                        *(int *)(iVar4 + 0xc),*(int *)(iVar4 + 0x10),*(int *)(iVar4 + 0x14),local_bc
+          st::external_000000B1(local_b4[0],local_a8,local_a4,local_a0,local_9c,STField<int>(iVar4,0x8),
+                        STField<int>(iVar4,0xC),STField<int>(iVar4,0x10),STField<int>(iVar4,0x14),local_bc
                         ,(BITMAPINFO *)(iVar8 + 0x30),0,0xcc0020);
           iVar8 = 0;
           do {
@@ -248,7 +244,7 @@ LAB_006d68c8:
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar8 = *(int *)(*(int *)&this->field_0x288 + 0x28);
-    if ((*(uint *)(iVar8 + 8) & 0x4000000) != 0) {
+    if ((STField<uint>(iVar8,0x8) & 0x4000000) != 0) {
       /* ST_CALLSITE[006D69F5]: CALL dword ptr [0x0085bb90] */
       st::external_00000019((LPCRITICAL_SECTION)(iVar8 + 0x4f0));
     }

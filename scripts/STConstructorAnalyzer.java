@@ -90,9 +90,12 @@ public class STConstructorAnalyzer extends GhidraScript {
             Function function = currentProgram.getFunctionManager().getFunctionAt(entry.getKey());
             if (function == null) continue;
             FlowResult flow = analyzeFlow(function, entry.getValue());
-            constructors.addAll(constructorProposals(function, flow,
-                factoryConstructors.get(function.getEntryPoint())));
+            List<ConstructorProposal> functionConstructors = constructorProposals(function, flow,
+                factoryConstructors.get(function.getEntryPoint()));
+            constructors.addAll(functionConstructors);
             hierarchy.addAll(hierarchyProposals(function, flow));
+            for (ConstructorProposal constructor : functionConstructors)
+                hierarchy.addAll(baseCallHierarchyProposals(function, flow, constructor));
             allocations.addAll(allocationEvidence(function, flow));
         }
 
@@ -321,6 +324,14 @@ public class STConstructorAnalyzer extends GhidraScript {
             }
 
             if ("CALL".equals(mnemonic)) {
+                Origin receiver = aliases.get("ECX");
+                Function direct = directCalledFunction(instruction);
+                Function called = resolveThunk(direct);
+                String baseOwner = recoveredConstructorOwner(called);
+                if (receiver != null && receiver.kind == OriginKind.THIS &&
+                        receiver.offset == 0 && !baseOwner.isBlank())
+                    result.baseCalls.add(new BaseCall(instruction.getAddress(), baseOwner,
+                        called.getEntryPoint()));
                 callsSeen++;
                 long allocationSize = pushedImmediates.size() == 1 ? pushedImmediates.get(0) : -1;
                 if (allocationSize < 4 || allocationSize > 0x1000000L) allocationSize = -1;
@@ -353,6 +364,41 @@ public class STConstructorAnalyzer extends GhidraScript {
             }
         }
         return result;
+    }
+
+    /**
+     * A direct constructor call with the exact unadjusted incoming receiver is stronger
+     * primary-base evidence than coincidental vtable slot overlap.  Calls on LEA-adjusted
+     * receivers are secondary subobjects and deliberately stay outside this relation.
+     */
+    private List<HierarchyProposal> baseCallHierarchyProposals(Function function,
+            FlowResult flow, ConstructorProposal constructor) {
+        List<HierarchyProposal> result = new ArrayList<>();
+        if (!"high".equals(constructor.confidence)) return result;
+        for (BaseCall call : flow.baseCalls) {
+            if (call.owner.equals(constructor.owner)) continue;
+            result.add(new HierarchyProposal(call.owner, constructor.owner, null,
+                constructor.tableAddress, function.getEntryPoint(), true,
+                "exact_unadjusted_base_constructor_call@" + addr(call.callAddress) +
+                "->" + addr(call.targetAddress)));
+        }
+        return result;
+    }
+
+    private Function directCalledFunction(Instruction instruction) {
+        Address target = directFlow(instruction);
+        return target == null ? null :
+            currentProgram.getFunctionManager().getFunctionAt(target);
+    }
+
+    private String recoveredConstructorOwner(Function function) {
+        if (function == null || function.isExternal() || !hasTag(function, TAG)) return "";
+        String qualified = function.getName(true);
+        int separator = qualified.lastIndexOf("::");
+        if (separator <= 0) return "";
+        String owner = qualified.substring(0, separator);
+        String leaf = qualified.substring(separator + 2);
+        return leaf.equals(leafOwner(owner)) ? owner : "";
     }
 
     private void updateAliases(String mnemonic, String[] operands, Map<String, Origin> aliases) {
@@ -990,8 +1036,10 @@ public class STConstructorAnalyzer extends GhidraScript {
     private static class FlowResult {
         final List<StoreEvidence> stores = new ArrayList<>();
         final List<ObjectWrite> writes = new ArrayList<>();
+        final List<BaseCall> baseCalls = new ArrayList<>();
         final Set<Integer> returnedOrigins = new TreeSet<>();
     }
+    private record BaseCall(Address callAddress, String owner, Address targetAddress) { }
     private static class ConstructorProposal {
         final Address address, tableAddress, storeAddress;
         final String expectedName, expectedNameSource, expectedSignature,

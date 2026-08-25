@@ -47,7 +47,7 @@ int __thiscall STRubbishC::sub_0062FEA0(STRubbishC *this,int param_1,int param_2
     if (param_2 < 0) {
       return iVar2;
     }
-    if ((int)pVVar1->field_0030 <= param_2) {
+    if (pVVar1->field_0030 <= param_2) {
       return iVar2;
     }
     iVar3 = (int)&local_8->vtable + g_centeredOffsets5[iVar3];

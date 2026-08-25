@@ -45,14 +45,15 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   uint uVar9;
   RecoveredRecord_TLOEmbryoTy_004D11D0 *pRVar10;
   int iVar11;
-  byte *puVar12;
-  byte *puVar13;
-  STT3DSprC **ppSVar14;
-  short sVar15;
+  int *piVar12;
+  uint *puVar13;
+  int *piVar14;
+  STT3DSprC **ppSVar15;
   short sVar16;
+  short sVar17;
   TLOEmbryoTy **element;
-  uint uVar17;
-  TLOEmbryoTy *pTVar18;
+  uint uVar18;
+  TLOEmbryoTy *pTVar19;
   InternalExceptionFrame local_cc;
   CHAR local_88 [64];
   TLOEmbryoTy *local_48;
@@ -88,20 +89,20 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_3c != nullptr) {
-    puVar13 = (byte *)&local_3c->field_0x231;
+    puVar13 = (undefined4 *)&local_3c->field_0x231;
   }
   pRVar10 = param_1;
   memmove(puVar13, pRVar10, 0x6e); /* compiler REP MOVS byte copy */
-  puVar13 = (byte *)(puVar13 + 0x1b);
+  puVar13 = puVar13 + 0x1b;
   pRVar10 = (RecoveredRecord_TLOEmbryoTy_004D11D0 *)((byte *)pRVar10 + 0x6c);
   STField<undefined1>(puVar13,2) = pRVar10->field_0x2;
   local_3c->field_0368 = local_3c->field_0259 + -0x32;
   /* ST_CALLSITE[004D1248]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-  local_EAX_120 = LookupRecordByte(*(char *)&local_3c->field_0024);
+  local_EAX_120 = LookupRecordByte((char)local_3c->field_0024);
   local_EAX_120 = (int)(byte)local_EAX_120;
-  this_01->field_036C = local_EAX_120 + -1;
+  this_01->field_036C = (ushort *)(local_EAX_120 + -1);
   /* ST_CALLSITE[004D1263]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-  bVar3 = LookupRecordByte(*(char *)&this_01->field_0024);
+  bVar3 = LookupRecordByte((char)this_01->field_0024);
   this_01->field_0370 = (uint)(bVar3 == 3);
   if ((bVar3 == 3) == 0) {
     this_01->field_0364 = &DAT_007976c8;
@@ -120,13 +121,13 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   }
   thunk_FUN_00417a00(this_01,0);
   iVar8 = thunk_FUN_00417a20(this_01,(short)this_01->field_025D,(short)this_01->field_0261,
-                             this_01->field_0265,1);
+                             (short)this_01->field_0265,1);
   if (iVar8 != 0) {
     RaiseInternalException
               (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",0x66);
   }
   thunk_FUN_0041d900(this_01,(short)this_01->field_025D,(short)this_01->field_0261,
-                     this_01->field_0265);
+                     (short)this_01->field_0265);
   if (this_01->field_002C == 0) {
     local_c = 1;
   }
@@ -139,16 +140,16 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
       iVar11 = this_01->field_025D;
       if (iVar11 < iVar11 + local_c) {
         do {
-          sVar15 = (short)iVar11;
-          sVar16 = (short)iVar8;
-          thunk_FUN_004960d0(sVar15,sVar16,this_01->field_0265);
-          sVar1 = this_01->field_0265;
-          if (((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) || (sVar16 < 0)) ||
-              ((g_worldGrid.sizeY <= sVar16 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
+          sVar16 = (short)iVar11;
+          sVar17 = (short)iVar8;
+          thunk_FUN_004960d0(sVar16,sVar17,(short)this_01->field_0265);
+          sVar1 = (short)this_01->field_0265;
+          if (((((sVar16 < 0) || (g_worldGrid.sizeX <= sVar16)) || (sVar17 < 0)) ||
+              ((g_worldGrid.sizeY <= sVar17 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
             this_02 = nullptr;
           }
           else {
-            this_02 = STGridAt3D(g_worldGrid, sVar15, sVar16, sVar1).objects[1];
+            this_02 = STGridAt3D(g_worldGrid, sVar16, sVar17, sVar1).objects[1];
           }
           if ((this_02 != nullptr) && (this_02->value_20 == 0xbe)) {
             thunk_FUN_00630110(this_02,(char)this_01->field_0024);
@@ -159,7 +160,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
       iVar8 = iVar8 + 1;
     } while (iVar8 < this_01->field_0261 + local_c);
   }
-  puVar13 = nullptr;
+  piVar14 = nullptr;
   if (this_01->field_002C == 0) {
     this_01->field_02F8 = 0xb4;
     this_01->field_02FC = 0x8c;
@@ -256,10 +257,10 @@ cf_common_join_004D1763:
   if (this_01->field_023D != 1) {
     if (this_01->field_023D == 2) {
       if (this_01 != nullptr) {
-        puVar13 = (byte *)(&this_01->field_02A0);
+        piVar14 = &this_01->field_02A0;
       }
-      puVar12 = (byte *)&param_1->field_0x6f;
-      memmove(puVar13, puVar12, 0xb0); /* compiler REP MOVS byte copy */
+      piVar12 = (int *)&param_1->field_0x6f;
+      memmove(piVar14, piVar12, 0xb0); /* compiler REP MOVS byte copy */
       local_28 = Library::DKW::LIB::MemAlloc(0x44);
       local_28[1] = PTR_00806774;
       local_28[2] = PTR_00806774;
@@ -329,7 +330,7 @@ cf_common_join_004D1763:
       if (this_01->field_0370 == 0) {
         uVar6 = 0xb;
         local_8 = (TLOEmbryoTy *)&param_1[1].field_0xb;
-        ppSVar14 = &this_01->field_0350;
+        ppSVar15 = &this_01->field_0350;
         do {
           pSVar5 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
           if (pSVar5 == nullptr) {
@@ -339,7 +340,7 @@ cf_common_join_004D1763:
             /* ST_CALLSITE[004D19FD]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
             pSVar5 = STT3DSprC::STT3DSprC(pSVar5);
           }
-          *ppSVar14 = pSVar5;
+          *ppSVar15 = pSVar5;
           /* ST_CALLSITE[004D1A31]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
           iVar8 = STT3DSprC::Init(pSVar5,PTR_008073cc,this_01->field_0300,this_01->field_0304,
                                   nullptr,this_01->field_02F8,this_01->field_02FC,0x11);
@@ -348,17 +349,17 @@ cf_common_join_004D1763:
                       (iVar8,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp"
                        ,0x152);
           }
-          uVar17 = uVar6;
+          uVar18 = uVar6;
           local_EAX_2184 = thunk_FUN_004ad650((STT3DSprC *)&this_01->vtable_at_1d5);
-          uVar7 = thunk_FUN_004ad650(*ppSVar14);
-          FUN_006ea340((void *)this_01->field_0211,uVar7,local_EAX_2184,uVar17);
+          uVar7 = thunk_FUN_004ad650(*ppSVar15);
+          FUN_006ea340((void *)this_01->field_0211,uVar7,local_EAX_2184,uVar18);
           /* ST_CALLSITE[004D1A82]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
           STT3DSprC::RestoreSpr
-                    (*ppSVar14,(int *)&local_28,
+                    (*ppSVar15,(int *)&local_28,
                      (AnonShape_004AD790_77673787 *)(&param_1->field_0x0 + (int)local_8->vtable));
           uVar6 = uVar6 - 1;
           local_8 = (TLOEmbryoTy *)&local_8->field_0x4;
-          ppSVar14 = ppSVar14 + 1;
+          ppSVar15 = ppSVar15 + 1;
         } while (8 < (int)uVar6);
       }
       FreeAndNull(&local_28);
@@ -439,7 +440,7 @@ LAB_004d1bda:
     uVar6 = (uVar6 - 1 | 0xfffffffe) + 1;
   }
   /* ST_CALLSITE[004D1C80]: CALL EDI */
-  wsprintfA(local_88,"%s%1i",(&PTR_s_tlo_embws1_007bf3e8)[this_01->field_036C],uVar6);
+  wsprintfA(local_88,"%s%1i",(&PTR_s_tlo_embws1_007bf3e8)[(int)this_01->field_036C],uVar6);
   /* ST_CALLSITE[004D1C98]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar8 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xe,PTR_0080678c,local_88,CASE_1D);
   if (iVar8 != 0) {
@@ -475,18 +476,18 @@ LAB_004d204d:
     this_01->vfunc_90(3,0x360);
     this_01->field_02F0 = (-(uint)(this_01->field_0370 != 0) & 3) + 6;
     iVar8 = this_01->field_02EC + this_01->field_0241 * 4;
-    thunk_FUN_004abce0(this_00,*(byte *)&this_01->field_02F0,
+    thunk_FUN_004abce0(this_00,(byte)this_01->field_02F0,
                        *(int *)(this_01->field_0364 + iVar8 * 8),
                        *(int *)(this_01->field_0364 + 4 + iVar8 * 8),'\0');
     /* ST_CALLSITE[004D20E2]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase
-              ((STT3DSprC *)this_00,*(char *)&this_01->field_02F0,
+              ((STT3DSprC *)this_00,(char)this_01->field_02F0,
                *(uint *)(this_01->field_0364 + (this_01->field_02EC + this_01->field_0241 * 4) * 8));
     /* ST_CALLSITE[004D20FD]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow
-              ((STT3DSprC *)this_00,*(byte *)&this_01->field_02F0,g_playSystem_00802A38->field_00E4);
+              ((STT3DSprC *)this_00,(byte)this_01->field_02F0,g_playSystem_00802A38->field_00E4);
     local_8 = (TLOEmbryoTy *)&DAT_0000000b;
-    ppSVar14 = &this_01->field_0350;
+    ppSVar15 = &this_01->field_0350;
     do {
       pSVar5 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
       if (pSVar5 == nullptr) {
@@ -496,7 +497,7 @@ LAB_004d204d:
         /* ST_CALLSITE[004D211F]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
         pSVar5 = STT3DSprC::STT3DSprC(pSVar5);
       }
-      *ppSVar14 = pSVar5;
+      *ppSVar15 = pSVar5;
       /* ST_CALLSITE[004D2153]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
       iVar8 = STT3DSprC::Init(pSVar5,PTR_008073cc,this_01->field_0300,this_01->field_0304,
                               nullptr,this_01->field_02F8,this_01->field_02FC,0x11);
@@ -506,21 +507,21 @@ LAB_004d204d:
                    0x10d);
       }
       /* ST_CALLSITE[004D2186]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-      iVar8 = STT3DSprC::LoadSequence(*ppSVar14,0xe,PTR_0080678c,PTR_s_tlo_emb6_00790c20,CASE_1D);
+      iVar8 = STT3DSprC::LoadSequence(*ppSVar15,0xe,PTR_0080678c,PTR_s_tlo_emb6_00790c20,CASE_1D);
       if (iVar8 != 0) {
         RaiseInternalException
                   (iVar8,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_embryo.cpp",
                    0x10e);
       }
-      pTVar18 = local_8;
+      pTVar19 = local_8;
       local_EAX_4060 = thunk_FUN_004ad650((STT3DSprC *)this_00);
-      local_EAX_4068 = thunk_FUN_004ad650(*ppSVar14);
-      FUN_006ea340((void *)this_01->field_0211,local_EAX_4068,local_EAX_4060,(uint)pTVar18);
+      local_EAX_4068 = thunk_FUN_004ad650(*ppSVar15);
+      FUN_006ea340((void *)this_01->field_0211,local_EAX_4068,local_EAX_4060,(uint)pTVar19);
       /* ST_CALLSITE[004D21DC]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       STT3DSprC::sub_004AD3C0
-                (*ppSVar14,(float)this_01->field_01F9,(float)this_01->field_01FD,
+                (*ppSVar15,(float)this_01->field_01F9,(float)this_01->field_01FD,
                  (float)this_01->field_0201);
-      ppSVar14 = ppSVar14 + 1;
+      ppSVar15 = ppSVar15 + 1;
       local_8 = (TLOEmbryoTy *)((int)&local_8[-1].field_0370 + 3);
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar9 = extraout_EDX_02;
@@ -537,7 +538,7 @@ LAB_004d204d:
       if (this_01->field_0241 == 1) {
         /* ST_CALLSITE[004D1ED8]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar8 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)this_00,*(byte *)&this_01->field_02F0,PTR_0080678c,
+                          ((STT3DSprC *)this_00,(byte)this_01->field_02F0,PTR_0080678c,
                            "si_emb6",CASE_1D);
         if (iVar8 != 0) {
           iVar11 = 0xef;
@@ -550,7 +551,7 @@ LAB_004d1f0b:
       else {
         /* ST_CALLSITE[004D1EFD]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
         iVar8 = STT3DSprC::LoadSequence
-                          ((STT3DSprC *)this_00,*(byte *)&this_01->field_02F0,PTR_0080678c,
+                          ((STT3DSprC *)this_00,(byte)this_01->field_02F0,PTR_0080678c,
                            "si_emb5",CASE_1D);
         if (iVar8 != 0) {
           iVar11 = 0xf0;
@@ -567,7 +568,7 @@ LAB_004d1f0b:
       FUN_006ea340((void *)this_01->field_0211,local_EAX_3458,local_EAX_3446,uVar6);
       /* ST_CALLSITE[004D1F79]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow
-                ((STT3DSprC *)this_00,*(byte *)&this_01->field_02F0,
+                ((STT3DSprC *)this_00,(byte)this_01->field_02F0,
                  g_playSystem_00802A38->field_00E4);
       /* ST_CALLSITE[004D1F89]: CALL dword ptr [EDX + 0x90] */
       this_01->vfunc_90(3,0x362);
@@ -632,11 +633,11 @@ LAB_004d1df8:
       sub_004D10A0(this_01,0);
       /* ST_CALLSITE[004D1E48]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow
-                ((STT3DSprC *)this_00,*(byte *)&this_01->field_02F0,
+                ((STT3DSprC *)this_00,(byte)this_01->field_02F0,
                  g_playSystem_00802A38->field_00E4);
       /* ST_CALLSITE[004D1E64]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow
-                ((STT3DSprC *)this_00,*(char *)&this_01->field_02F0 - 1,
+                ((STT3DSprC *)this_00,(char)this_01->field_02F0 - 1,
                  g_playSystem_00802A38->field_00E4);
       /* ST_CALLSITE[004D1E6D]: CALL dword ptr [EAX] */
       (*(*this_00)->vfunc_00)((TLOEmbryoTy *)this_00);
@@ -650,8 +651,8 @@ LAB_004d1df8:
   this_01->field_02D4 = 0;
   this_01->field_02D0 = 0;
   this_01->field_02CC = 0;
-  iVar8 = (this_01->field_0368 * 3 + this_01->field_036C) * 4;
-  thunk_FUN_004d76e0(*(char *)&this_01->field_0024,0,(int *)this_01->field_0018,
+  iVar8 = (this_01->field_0368 * 3 + (int)this_01->field_036C) * 4;
+  thunk_FUN_004d76e0((char)this_01->field_0024,0,(int *)this_01->field_0018,
                      *(int *)(&DAT_008545ac + iVar8),*(int *)(&DAT_007e1c50 + iVar8),
                      *(int *)(&DAT_007e24fc + iVar8),*(int *)(&DAT_007e3160 + iVar8));
   iVar8 = thunk_FUN_004b7520(STReplaceLowByte((uint32_t)(this_01->field_0259), (uint8_t)(*(undefined1 *)&this_01->field_0024)),this_01->field_0259);

@@ -392,7 +392,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     local_190 = 0x6943;
     local_17e = 0x24bc;
     local_171 = local_198;
-    if (*(int *)(iVar14 + 0x2e6) != 0) {
+    if (STField<int>(iVar14,0x2E6) != 0) {
       puVar5 = local_6c;
       for (iVar11 = 6; iVar11 != 0; iVar11 = iVar11 + -1) {
         *puVar5 = 0xffffffff;

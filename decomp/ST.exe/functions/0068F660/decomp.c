@@ -37,7 +37,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
         else {
           /* ST_CALLSITE[0068F6E1]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = STAllPlayersC::GetObjPtr
-                              (g_allPlayers_007FA174,*(char *)&local_8->field_0024,*puVar4,CASE_1);
+                              (g_allPlayers_007FA174,(char)local_8->field_0024,*puVar4,CASE_1);
         }
         if (this_00 != nullptr) {
           /* ST_CALLSITE[0068F6F4]: CALL dword ptr [EAX + 0x2c] */

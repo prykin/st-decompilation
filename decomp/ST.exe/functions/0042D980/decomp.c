@@ -78,15 +78,15 @@ STAllPlayersC::GetActiveCenter
         } while ((int)local_18 < (int)dVar2);
         if (0 < local_1c) {
           if (param_1 != nullptr) {
-            *param_1 = (short)((int)(short)iVar8 / local_1c);
+            *param_1 = (short)((short)iVar8 / local_1c);
           }
           if (param_2 != nullptr) {
-            *param_2 = (short)((int)(short)iVar9 / local_1c);
+            *param_2 = (short)((short)iVar9 / local_1c);
           }
           if (param_3 == nullptr) {
             return 0;
           }
-          *param_3 = (short)((int)(short)iVar7 / local_1c);
+          *param_3 = (short)((short)iVar7 / local_1c);
           return 0;
         }
       }
@@ -203,15 +203,15 @@ joined_r0x0042dc56:
         } while ((int)local_18 < (int)dVar2);
         if (0 < local_1c) {
           if (param_1 != nullptr) {
-            *param_1 = (short)((int)(short)iVar8 / local_1c);
+            *param_1 = (short)((short)iVar8 / local_1c);
           }
           if (param_2 != nullptr) {
-            *param_2 = (short)((int)(short)iVar9 / local_1c);
+            *param_2 = (short)((short)iVar9 / local_1c);
           }
           if (param_3 == nullptr) {
             return 0;
           }
-          *param_3 = (short)((int)(short)iVar7 / local_1c);
+          *param_3 = (short)((short)iVar7 / local_1c);
           return 0;
         }
       }

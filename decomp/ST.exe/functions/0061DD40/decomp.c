@@ -39,7 +39,7 @@ undefined4 __fastcall FUN_0061dd40(RecoveredRecord_STLightC_0061DD40 *param_1)
           do {
             iVar2 = *(int *)(param_1->field_009F + local_c * 4);
             lVar7 = Library::MSVCRT::__ftol();
-            *(int *)(iVar2 + 0xc + local_8) = (int)(short)lVar7;
+            *(int *)(iVar2 + 0xc + local_8) = (short)lVar7;
             iVar6 = iVar6 + 1;
             local_8 = local_8 + 0x14;
           } while (iVar6 < *(int *)(param_1->field_009B + iVar6 * 4));

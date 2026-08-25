@@ -41,7 +41,7 @@ int __thiscall FUN_005ff1f0(void *this,undefined4 param_1,int param_2,int param_
       iVar7 = *piVar5;
       piVar5 = piVar5 + 1;
       iVar7 = STField<int>(this,0x23b) + iVar7 * 0x18;
-      uVar6 = uVar6 + *(int *)(iVar7 + 0x10) + *(int *)(iVar7 + 0xc);
+      uVar6 = uVar6 + STField<int>(iVar7,0x10) + STField<int>(iVar7,0xC);
       iVar2 = iVar2 + -1;
       local_8 = uVar6;
     } while (iVar2 != 0);
@@ -58,7 +58,7 @@ int __thiscall FUN_005ff1f0(void *this,undefined4 param_1,int param_2,int param_
       piVar5 = STField<int *>(this,0x23f);
       do {
         iVar4 = STField<int>(this,0x23b) + *piVar5 * 0x18;
-        iVar4 = *(int *)(iVar4 + 0x10) + *(int *)(iVar4 + 0xc);
+        iVar4 = STField<int>(iVar4,0x10) + STField<int>(iVar4,0xC);
         iVar7 = iVar7 + iVar4;
         if ((int)((uVar6 >> 0x10) % local_8) <= iVar7) goto LAB_005ff2fa;
         iVar2 = iVar2 + 1;

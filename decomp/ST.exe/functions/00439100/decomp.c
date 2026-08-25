@@ -350,7 +350,7 @@ LAB_00439b10:
 LAB_0043986a:
             /* ST_CALLSITE[00439881]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
             local_EAX_1921 =
-                 CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+                 CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                            pSVar6->field_0032);
             if (0 < local_EAX_1921) {
               /* ST_CALLSITE[00439890]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
@@ -383,7 +383,7 @@ LAB_00439956:
           cVar12 = (char)local_8;
           /* ST_CALLSITE[0043996D]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_2157 =
-               CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+               CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                          pSVar6->field_0032);
           if (-1 < local_EAX_2157) {
             /* ST_CALLSITE[0043997C]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
@@ -592,7 +592,7 @@ LAB_004397fb:
           cVar12 = (char)local_8;
           /* ST_CALLSITE[00439812]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_1810 =
-               CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+               CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                          pSVar6->field_0032);
           if (0 < local_EAX_1810) {
             /* ST_CALLSITE[00439825]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
@@ -617,7 +617,7 @@ LAB_00439672:
 LAB_0043963c:
         /* ST_CALLSITE[00439653]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_1363 =
-             CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+             CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                        pSVar6->field_0032);
         if (0 < local_EAX_1363) {
           /* ST_CALLSITE[00439662]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
@@ -647,7 +647,7 @@ LAB_004396d1:
         cVar12 = (char)local_8;
         /* ST_CALLSITE[004396E8]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_1512 =
-             CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+             CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                        pSVar6->field_0032);
         if (0 < local_EAX_1512) {
           /* ST_CALLSITE[004396FB]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
@@ -665,7 +665,7 @@ LAB_004398e7:
       cVar12 = (char)local_8;
       /* ST_CALLSITE[004398FE]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
       local_EAX_2046 =
-           CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+           CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                      pSVar6->field_0032);
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       uVar10 = extraout_ECX;
@@ -690,7 +690,7 @@ LAB_00439740:
       cVar12 = (char)local_8;
       /* ST_CALLSITE[00439757]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
       local_EAX_1623 =
-           CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+           CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                      pSVar6->field_0032);
       if (-1 < local_EAX_1623) {
         /* ST_CALLSITE[0043976A]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
@@ -735,7 +735,7 @@ LAB_0043a27b:
             cVar12 = (char)local_8;
             /* ST_CALLSITE[0043A292]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
             local_EAX_4498 =
-                 CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+                 CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                            pSVar6->field_0032);
             if (0 < local_EAX_4498) {
               /* ST_CALLSITE[0043A2A5]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
@@ -753,7 +753,7 @@ LAB_0043a247:
           cVar12 = (char)local_8;
           /* ST_CALLSITE[0043A25E]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_4446 =
-               CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+               CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                          pSVar6->field_0032);
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar10 = extraout_EDX_00;
@@ -779,7 +779,7 @@ LAB_0043a2bc:
 LAB_0043a2ea:
           /* ST_CALLSITE[0043A301]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_3346 =
-               CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+               CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                          pSVar6->field_0032);
           if (0 < local_EAX_3346) {
             /* ST_CALLSITE[0043A310]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
@@ -816,7 +816,7 @@ LAB_0043a3c8:
           cVar12 = (char)local_8;
           /* ST_CALLSITE[0043A3DF]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_4831 =
-               CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+               CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                          pSVar6->field_0032);
           if (0 < local_EAX_4831) {
             /* ST_CALLSITE[0043A3EE]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
@@ -834,7 +834,7 @@ LAB_0043a394:
         cVar12 = (char)local_8;
         /* ST_CALLSITE[0043A3AB]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_4779 =
-             CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+             CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                        pSVar6->field_0032);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar11 = extraout_var_13;
@@ -859,7 +859,7 @@ LAB_0043a42c:
         cVar12 = (char)local_8;
         /* ST_CALLSITE[0043A443]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_4931 =
-             CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+             CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                        pSVar6->field_0032);
         if (-1 < local_EAX_4931) {
           /* ST_CALLSITE[0043A452]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
@@ -903,7 +903,7 @@ LAB_00439eb7:
           cVar12 = (char)local_8;
           /* ST_CALLSITE[00439ECE]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
           local_EAX_3534 =
-               CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+               CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                          pSVar6->field_0032);
           if (-1 < local_EAX_3534) {
             /* ST_CALLSITE[00439EE1]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */
@@ -939,7 +939,7 @@ LAB_00439eb7:
 LAB_00439dfb:
         /* ST_CALLSITE[00439E12]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_3346 =
-             CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,nullptr,
+             CheckTmps(cVar12,1,pSVar6->field_0020,(char)pSVar6->field_0024,nullptr,
                        pSVar6->field_0032);
         if (0 < local_EAX_3346) {
           /* ST_CALLSITE[00439E21]: CALL 0x0040317f; direct=0040317F STAllPlayersC::ActivateTV */

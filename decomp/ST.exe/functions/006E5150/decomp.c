@@ -11,9 +11,21 @@
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1->id == 4 uses
    /SubmarineTitans/Recovered/DiscriminatedPayloads/STAppC_sub_006E5150_006E5150_MessagePayload_Case_4.
+   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage.
+
+   [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079E16C
+   Entries: 006E5150
+   Slots: 0x18
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=0079E16C:6 calls=3
+   caller_families=2 receiver_extent=40/20222; unique_owner_for_target
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: param_1->id == 4 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/AppClassTy_sub_006E5150_006E5150_MessagePayload_Case_4.
    The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
 
-undefined4 __thiscall STAppC::sub_006E5150(STAppC *this,STMessage *param_1)
+undefined4 __thiscall AppClassTy::sub_006E5150(AppClassTy *this,STMessage *param_1)
 
 {
   if (param_1->id == 4) {

@@ -16,7 +16,7 @@ STJumpMineC * __thiscall st::fn_00619170(STJumpMineC *this)
 {
   st::fn_006E60E0(this);
   this->vtable = &st_global_0079CED0;
-  this->field_0097 = 0xffffffff;
+  this->field_0097 = -1;
   return this;
 }
 
@@ -44,10 +44,9 @@ byte __thiscall st::fn_006191A0(STJumpMineC *this,uint param_1,int param_2)
       (g_sT3DSMAPContext_00807598->field_0044 <= param_2)) &&
      (param_2 <= g_sT3DSMAPContext_00807598->field_0054)) {
     local_8 = this;
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = st::fn_006DDBD0();
+    auto param_1_after_write = st::fn_006DDBD0(); /* compiler stack-slot lifetime split */
     pVVar1 = g_visibleClass_00802A88;
-    if (((param_1 == 0) || (g_visibleClass_00802A88 == nullptr)) ||
+    if (((param_1_after_write == 0) || (g_visibleClass_00802A88 == nullptr)) ||
        ((iVar2 = (int)this->field_00CD, DAT_0080874d == -1 ||
         (g_visibleClass_00802A88->field_00F8 == 0)))) goto cf_common_exit_00619287;
     /* ST_CALLSITE[00619238]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
@@ -56,13 +55,14 @@ byte __thiscall st::fn_006191A0(STJumpMineC *this,uint param_1,int param_2)
                (int)this->field_00CB,&param_2,(int *)&local_8);
     if (((iVar2 < 0) || (4 < iVar2)) ||
        ((param_2 < 0 ||
-        (((((int)pVVar1->field_0030 <= param_2 ||
+        ((((pVVar1->field_0030 <= param_2 ||
            (iVar2 = (int)&local_8->vtable + g_centeredOffsets5[iVar2], iVar2 < 0)) ||
           (pVVar1->field_0034 <= iVar2)) ||
          ((pVVar1->field_004C == nullptr ||
           (pVVar1->field_004C[param_2 + iVar2 * pVVar1->field_0030] != 0))))))))
     goto cf_common_exit_00619287;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = 0;
 cf_common_exit_00619287:
   return (byte)param_1;
@@ -183,7 +183,7 @@ void __thiscall st::fn_00619A20(STJumpMineC *this)
   int local_c;
   int local_8;
 
-  if ((int)this->field_0097 < 0) {
+  if (this->field_0097 < 0) {
     /* ST_CALLSITE[00619A3C]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
     st::fn_004056EB(this,this->field_008F);
   }
@@ -202,7 +202,7 @@ void __thiscall st::fn_00619A20(STJumpMineC *this)
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                       (int)this->field_00C9,(int)this->field_00CB,&local_8,&local_c), iVar2 < 0)) ||
          ((4 < iVar2 || (local_8 < 0)))) ||
-        (((int)pVVar1->field_0030 <= local_8 ||
+        ((pVVar1->field_0030 <= local_8 ||
          ((local_c = g_centeredOffsets5[iVar2] + local_c, local_c < 0 ||
           (pVVar1->field_0034 <= local_c)))))) ||
        ((pVVar1->field_004C == nullptr ||
@@ -491,7 +491,7 @@ LAB_0061a4fd:
     case 4:
       goto cf_common_exit_0061AB3A;
     }
-    if ((int)this->field_00F3 < this->field_00F7) {
+    if (this->field_00F3 < this->field_00F7) {
       return 1;
     }
     uVar12 = this->field_00A7;
@@ -504,12 +504,12 @@ LAB_0061a4fd:
              (this->field_0117 * local_30 * local_30) / 10000 + this->field_00D7;
     sVar8 = (short)((int)uVar12 >> 0x1f);
     if ((int)uVar12 < 0) {
-      local_14 = (int)(short)(((short)((int)uVar12 / 200) + sVar8) -
+      local_14 = (short)(((short)((int)uVar12 / 200) + sVar8) -
                              (short)((longlong)(int)uVar12 * 0x51eb851f >> 0x3f));
       local_20 = local_14 + -1;
     }
     else {
-      local_20 = (int)(short)(((short)((int)uVar12 / 200) + sVar8) -
+      local_20 = (short)(((short)((int)uVar12 / 200) + sVar8) -
                              (short)((longlong)(int)uVar12 * 0x51eb851f >> 0x3f));
       local_14 = local_20;
     }
@@ -519,23 +519,23 @@ LAB_0061a4fd:
     local_8 = (this->field_0107 * iVar13) / 10000 + this->field_00D3;
     sVar8 = (short)(iVar14 >> 0x1f);
     if (iVar14 < 0) {
-      local_10 = (int)(short)(((short)(iVar14 / 0xc9) + sVar8) -
+      local_10 = (short)(((short)(iVar14 / 0xc9) + sVar8) -
                              (short)((longlong)iVar14 * 0x28c1979 >> 0x3f));
       local_28 = local_10 + -1;
     }
     else {
-      local_28 = (int)(short)(((short)(iVar14 / 0xc9) + sVar8) -
+      local_28 = (short)(((short)(iVar14 / 0xc9) + sVar8) -
                              (short)((longlong)iVar14 * 0x28c1979 >> 0x3f));
       local_10 = local_28;
     }
     sVar8 = (short)(local_8 >> 0x1f);
     if (local_8 < 0) {
-      local_18 = (int)(short)(((short)(local_8 / 0xc9) + sVar8) -
+      local_18 = (short)(((short)(local_8 / 0xc9) + sVar8) -
                              (short)((longlong)local_8 * 0x28c1979 >> 0x3f));
       local_24 = local_18 + -1;
     }
     else {
-      local_18 = (int)(short)(((short)(local_8 / 0xc9) + sVar8) -
+      local_18 = (short)(((short)(local_8 / 0xc9) + sVar8) -
                              (short)((longlong)local_8 * 0x28c1979 >> 0x3f));
       local_24 = local_18;
     }
@@ -623,12 +623,12 @@ LAB_0061a4fd:
     local_1c = (this->field_010B * iVar14) / 10000 + this->field_00D7;
     sVar8 = (short)(local_1c >> 0x1f);
     if (local_1c < 0) {
-      local_14 = (int)(short)(((short)(local_1c / 200) + sVar8) -
+      local_14 = (short)(((short)(local_1c / 200) + sVar8) -
                              (short)((longlong)local_1c * 0x51eb851f >> 0x3f));
       local_30 = local_14 + -1;
     }
     else {
-      local_30 = (int)(short)(((short)(local_1c / 200) + sVar8) -
+      local_30 = (short)(((short)(local_1c / 200) + sVar8) -
                              (short)((longlong)local_1c * 0x51eb851f >> 0x3f));
       local_14 = local_30;
     }
@@ -717,7 +717,7 @@ cf_common_exit_0061A55D:
       st::fn_00405C59((void *)this->field_007D,this->field_0145,0);
       this->field_014B = 0;
     }
-    if ((int)this->field_0097 < 0) {
+    if (this->field_0097 < 0) {
       this->field_0093 = CASE_6;
       return local_2c;
     }
@@ -748,7 +748,7 @@ LAB_0061acc2:
       this->field_00AB = st::machine_word_boundary_cast<undefined4>(this->field_00AB + 1);
     }
     else if (uVar12 == this->field_00AF) {
-      if (-1 < (int)this->field_0097) {
+      if (-1 < this->field_0097) {
         st::fn_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this->field_0097,0);
       }
       goto LAB_0061acc2;
@@ -759,7 +759,7 @@ LAB_0061acc2:
                (float)this->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
                (float)this->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if (this->field_00B7 == this->field_00B3) {
-      if (-1 < (int)this->field_0097) {
+      if (-1 < this->field_0097) {
         st::fn_006EAB60(g_sT3DSMAPContext_00807598,this->field_0097);
       }
       this->field_0093 = CASE_6;
@@ -772,7 +772,7 @@ LAB_0061acc2:
             (st::fn_00403F53
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                         (int)this->field_00C9,(int)this->field_00CB,&local_28,&local_24), iVar13 < 0
-            )) || ((4 < iVar13 || (local_28 < 0)))) || ((int)pVVar1->field_0030 <= local_28)) ||
+            )) || ((4 < iVar13 || (local_28 < 0)))) || (pVVar1->field_0030 <= local_28)) ||
          (((local_24 = g_centeredOffsets5[iVar13] + local_24, local_24 < 0 ||
            (pVVar1->field_0034 <= local_24)) ||
           ((pVVar1->field_004C == nullptr ||
@@ -800,7 +800,7 @@ LAB_0061acc2:
 switchD_00619c92_default:
   return local_2c;
 cf_common_exit_0061AB3A:
-  if (-1 < (int)this->field_0097) {
+  if (-1 < this->field_0097) {
     st::fn_006EAB60(g_sT3DSMAPContext_00807598,this->field_0097);
     this->field_00C4 = 0;
   }
@@ -876,7 +876,7 @@ st::fn_0061B340
                      (int *)((g_sT3DSMAPContext_00807598->field_0380 * param_5) / 0xc9),param_3,
                      &local_14);
           lVar11 = st::fn_0072E288();
-          iVar9 = (int)(short)lVar11;
+          iVar9 = (short)lVar11;
           iVar7 = param_3 + 1;
           iVar5 = local_14;
           if (local_14 <= iVar7) {
@@ -933,12 +933,12 @@ st::fn_0061B340
              ((g_playSystem_00802A38 == nullptr ||
               (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)))) &&
             (pSVar4->value_20 == 1000)) &&
-           /* ST_CALLSITE[0061B555]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+           /* ST_CALLSITE[0061B555]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
            ((iVar7 = pSVar4->vfunc_F0(), iVar7 != 0 &&
-            /* ST_CALLSITE[0061B567]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+            /* ST_CALLSITE[0061B567]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
             (iVar7 = pSVar4->vfunc_F8(), iVar7 != 0)))) {
           bVar1 = *(byte *)&pSVar4[1].vtable;
-          bVar2 = *(byte *)&this->field_0051;
+          bVar2 = (byte)this->field_0051;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_c = CONCAT31(uStack_b,bVar1);
           local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar2));
@@ -1017,7 +1017,7 @@ LAB_0061b627:
         return local_8;
       }
       bVar1 = *(byte *)&pSVar4[1].vtable;
-      bVar2 = *(byte *)&this->field_0051;
+      bVar2 = (byte)this->field_0051;
       local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar1));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_c = CONCAT31(uStack_b,bVar2);
@@ -1049,12 +1049,12 @@ LAB_0061b993:
                  g_bulkInitializedRecords_008087C7[bVar1].field_0023;
       }
       if (bVar10) {
-        /* ST_CALLSITE[0061BAC0]: [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+        /* ST_CALLSITE[0061BAC0]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
         iVar7 = pSVar4->vfunc_F0();
         if (iVar7 == 0) {
           return local_8;
         }
-        /* ST_CALLSITE[0061BAD2]: [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
+        /* ST_CALLSITE[0061BAD2]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
         iVar7 = pSVar4->vfunc_F8();
         if (iVar7 == 0) {
           return local_8;

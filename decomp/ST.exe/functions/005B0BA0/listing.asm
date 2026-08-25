@@ -1348,7 +1348,8 @@ LAB_005b1c3f:
 005B1C44  51                        PUSH ECX
 005B1C45  8B CB                     MOV ECX,EBX
 005B1C47  C7 43 2D 56 69 00 00      MOV dword ptr [EBX + 0x2d],0x6956
-005B1C4E  FF 10                     CALL dword ptr [EAX]
+ChooseMapTy::GetMessage::override::prt_5b1c4e_186129d5:
+005B1C4E  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage
 005B1C50  E9 FE 03 00 00            JMP 0x005b2053
 LAB_005b1c55:
 005B1C55  33 C0                     XOR EAX,EAX
@@ -1366,7 +1367,8 @@ switchD_005b1c6f::caseD_9:
 005B1C7B  51                        PUSH ECX
 005B1C7C  8B CB                     MOV ECX,EBX
 005B1C7E  C7 43 2D 49 69 00 00      MOV dword ptr [EBX + 0x2d],0x6949
-005B1C85  FF 10                     CALL dword ptr [EAX]
+ChooseMapTy::GetMessage::override::prt_5b1c85_186129d5:
+005B1C85  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage
 005B1C87  E9 C7 03 00 00            JMP 0x005b2053
 switchD_005b1c6f::caseD_1:
 005B1C8C  8B 13                     MOV EDX,dword ptr [EBX]
@@ -1374,7 +1376,8 @@ switchD_005b1c6f::caseD_1:
 005B1C91  50                        PUSH EAX
 005B1C92  8B CB                     MOV ECX,EBX
 005B1C94  C7 43 2D 4A 69 00 00      MOV dword ptr [EBX + 0x2d],0x694a
-005B1C9B  FF 12                     CALL dword ptr [EDX]
+ChooseMapTy::GetMessage::override::prt_5b1c9b_186129d5:
+005B1C9B  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage
 005B1C9D  E9 B1 03 00 00            JMP 0x005b2053
 switchD_005b1c6f::caseD_4:
 005B1CA2  8B 13                     MOV EDX,dword ptr [EBX]
@@ -1382,7 +1385,8 @@ switchD_005b1c6f::caseD_4:
 005B1CA7  50                        PUSH EAX
 005B1CA8  8B CB                     MOV ECX,EBX
 005B1CAA  C7 43 2D 4E 69 00 00      MOV dword ptr [EBX + 0x2d],0x694e
-005B1CB1  FF 12                     CALL dword ptr [EDX]
+ChooseMapTy::GetMessage::override::prt_5b1cb1_186129d5:
+005B1CB1  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage
 005B1CB3  E9 9B 03 00 00            JMP 0x005b2053
 switchD_005b1b00::caseD_8163:
 005B1CB8  8B 4E 14                  MOV ECX,dword ptr [ESI + 0x14]

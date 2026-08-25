@@ -45,9 +45,9 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
      ((short)STPiece<0,4>(local_18) == STField<short>(this,0x2cf))) {
     return 0;
   }
-  iVar5 = (int)(short)STPiece<0,4>(local_18) - (int)STField<short>(this,499);
-  iVar6 = (int)(short)STPiece<4,4>(local_18) - (int)STField<short>(this,0x1f1);
-  iVar4 = (int)(short)local_10 - (int)STField<short>(this,0x1ef);
+  iVar5 = (short)STPiece<0,4>(local_18) - (int)STField<short>(this,499);
+  iVar6 = (short)STPiece<4,4>(local_18) - (int)STField<short>(this,0x1f1);
+  iVar4 = (short)local_10 - (int)STField<short>(this,0x1ef);
   if (iVar4 * iVar4 + iVar6 * iVar6 + iVar5 * iVar5 < 0x191) {
     iVar4 = 0;
   }

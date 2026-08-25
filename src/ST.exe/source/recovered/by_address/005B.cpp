@@ -313,7 +313,7 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
       }
       *(undefined2 *)&pMVar5->field_0000 = 0;
       iVar1 = iVar1 + -1;
-      *(undefined1 *)((int)&pMVar5->field_0000 + 2) = 0;
+      STField<undefined1>(pMVar5,0x2) = 0;
       pMVar3 = pMVar3 + 1;
     } while (iVar1 != 0);
     st::fn_00715820((SpriteClassTy *)&this->field_0x1cf7);

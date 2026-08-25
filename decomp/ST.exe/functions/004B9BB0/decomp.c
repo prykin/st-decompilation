@@ -32,7 +32,7 @@ undefined4 __thiscall FUN_004b9bb0(void *this,int param_1,ushort param_2,word pa
         local_24.arg1.words.high = param_3;
         local_24.id = 0x5dd1;
         local_24.arg1.words.low = param_2;
-        /* ST_CALLSITE[004B9C85]: CALL dword ptr [EAX] */
+        /* ST_CALLSITE[004B9C85]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
         g_aiBossClass_008117BC->GetMessage(&local_24);
         return 0;
       }

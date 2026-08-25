@@ -56,9 +56,10 @@ undefined4 __thiscall TLOBaseTy::sub_004C7460(TLOBaseTy *this)
       pAVar2 = this->field_0607;
       iVar4 = 0;
       do {
-        thunk_FUN_004c7260(this,STObjectAtByteOffset(pAVar2, iVar4).field_0000,
-                           STObjectAtByteOffset(pAVar2, iVar4).field_0004,&local_1c,&local_20,&local_24,
-                           &local_28);
+        /* ST_CALLSITE[004C75D4]: CALL 0x004035df; direct=004035DF TLOBaseTy::sub_004C7260 */
+        sub_004C7260(this,STObjectAtByteOffset(pAVar2, iVar4).field_0000,
+                     STObjectAtByteOffset(pAVar2, iVar4).field_0004,&local_1c,&local_20,&local_24,
+                     &local_28);
         pAVar2 = this->field_0607;
         iVar3 = STObjectAtByteOffset(pAVar2, iVar4).field_0008;
         iVar4 = iVar4 + 0x27;

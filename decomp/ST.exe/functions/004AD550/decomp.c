@@ -10,7 +10,7 @@ void __fastcall FUN_004ad550(uint param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((((char *)param_1)[0x10] == '\0') &&
       (iVar1 = *(int *)(*(int *)(param_1 + 0x20) + ((char *)param_1)[0x13] * 0x24), iVar1 != 0))
-     && (*(int *)(iVar1 + 0x29) != 0)) {
+     && (STField<int>(iVar1,0x29) != 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     Library::Ourlib::ST3DSMAP::SprSetShadow
               (*(void **)(param_1 + 0x3c),*(uint *)(param_1 + 0x18),*(uint *)(param_1 + 0x34),

@@ -60,7 +60,7 @@ FUN_006a1100(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar1 = CONCAT12(bStack_a,(ushort)local_c[0]);
       }
-      if ((int)(short)uVar3 != (uVar1 & 0xf)) {
+      if ((short)uVar3 != (uVar1 & 0xf)) {
         return false;
       }
     }

@@ -141,7 +141,7 @@ LAB_00428e95:
     do {
       iVar9 = *local_40;
       if (iVar9 != 0) {
-        pvVar8 = st::fn_006AAC10(*(uint *)(iVar9 + 0x24));
+        pvVar8 = st::fn_006AAC10(STField<uint>(iVar9,0x24));
         *(void **)(iVar9 + 0x3c) = pvVar8;
       }
       iVar14 = iVar14 + 1;
@@ -350,11 +350,11 @@ LAB_00429475:
 LAB_0042958f:
             iVar14 = *local_8;
             if ((iVar14 == 0) ||
-               (iVar18 = (int)*(short *)(iVar14 + 8) - (uint)((byte *)iVar14)[0x48],
+               (iVar18 = (int)STField<short>(iVar14,0x8) - (uint)STField<byte>(iVar14,0x48),
                iVar9 + 3 < iVar18)) goto cf_continue_loop_004296CF;
-            if (*(uint *)(iVar14 + 0x18) < local_44->count) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-              pvVar16 = (void *)(local_44->elementSize * *(uint *)(iVar14 + 0x18) +
+            if (STField<uint>(iVar14,0x18) < local_44->count) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_44, STField<uint>(iVar14,0x18)) (runtime stride) */
+              pvVar16 = (void *)(local_44->elementSize * STField<uint>(iVar14,0x18) +
                                 (int)local_44->data);
             }
             else {
@@ -403,7 +403,7 @@ LAB_0042958f:
             *STField<byte *>(local_10,0x3C) = *STField<byte *>(local_10,0x3C) | local_50;
             iVar14 = local_10->field_003C;
 LAB_00429d7a:
-            ((byte *)iVar14)[1] = ((byte *)iVar14)[1] | local_50;
+            ((byte *)iVar14)[1] = STField<byte>(iVar14,0x1) | local_50;
             iVar9 = local_64;
             goto LAB_00429d7d;
           }
@@ -430,10 +430,10 @@ LAB_00429715:
                 iVar14 = *local_8;
                 if ((iVar14 != 0) &&
                    ((int)(((int)local_10->field_0008 - local_ac) + *local_88) <
-                    (int)*(short *)(iVar14 + 8))) {
-                  if (*(uint *)(iVar14 + 0x18) < local_44->count) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-                    pvVar16 = (void *)(local_44->elementSize * *(uint *)(iVar14 + 0x18) +
+                    (int)STField<short>(iVar14,0x8))) {
+                  if (STField<uint>(iVar14,0x18) < local_44->count) {
+                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_44, STField<uint>(iVar14,0x18)) (runtime stride) */
+                    pvVar16 = (void *)(local_44->elementSize * STField<uint>(iVar14,0x18) +
                                       (int)local_44->data);
                   }
                   else {
@@ -442,7 +442,7 @@ LAB_00429715:
                   local_60 = STField<int>(pvVar16,0xc) - local_c8;
                   local_5c = STField<int>(pvVar16,0x10) +
                              *(int *)(PTR_DAT_007a5250 +
-                                     (((int)*(short *)(iVar14 + 8) - (uint)((byte *)iVar14)[0x48])
+                                     (((int)STField<short>(iVar14,0x8) - (uint)STField<byte>(iVar14,0x48))
                                      - local_24) * 4) + local_70[-1];
                   local_58 = STField<int>(pvVar16,0x14);
                   local_54 = STField<undefined4>(pvVar16,0x18);
@@ -502,10 +502,10 @@ LAB_00429715:
                   iVar14 = *local_8;
                   if ((iVar14 != 0) &&
                      ((int)(((int)local_10->field_0008 - local_ac) + *local_88) <
-                      (int)*(short *)(iVar14 + 8))) {
-                    if (*(uint *)(iVar14 + 0x18) < local_44->count) {
-                      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-                      pvVar16 = (void *)(local_44->elementSize * *(uint *)(iVar14 + 0x18) +
+                      (int)STField<short>(iVar14,0x8))) {
+                    if (STField<uint>(iVar14,0x18) < local_44->count) {
+                      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_44, STField<uint>(iVar14,0x18)) (runtime stride) */
+                      pvVar16 = (void *)(local_44->elementSize * STField<uint>(iVar14,0x18) +
                                         (int)local_44->data);
                     }
                     else {
@@ -514,8 +514,8 @@ LAB_00429715:
                     local_60 = STField<int>(pvVar16,0xc);
                     local_5c = STField<int>(pvVar16,0x10) +
                                *(int *)(PTR_DAT_007a5250 +
-                                       (((int)*(short *)(iVar14 + 8) -
-                                        (uint)((byte *)iVar14)[0x48]) - local_24) * 4) + *local_70
+                                       (((int)STField<short>(iVar14,0x8) -
+                                        (uint)STField<byte>(iVar14,0x48)) - local_24) * 4) + *local_70
                     ;
                     local_58 = STField<int>(pvVar16,0x14);
                     local_54 = STField<undefined4>(pvVar16,0x18);
@@ -579,10 +579,10 @@ LAB_00429715:
                   iVar14 = *local_8;
                   if ((iVar14 != 0) &&
                      ((int)(((int)local_10->field_0008 - local_ac) + *local_88) <
-                      (int)*(short *)(iVar14 + 8))) {
-                    if (*(uint *)(iVar14 + 0x18) < local_44->count) {
-                      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-                      pvVar16 = (void *)(local_44->elementSize * *(uint *)(iVar14 + 0x18) +
+                      (int)STField<short>(iVar14,0x8))) {
+                    if (STField<uint>(iVar14,0x18) < local_44->count) {
+                      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_44, STField<uint>(iVar14,0x18)) (runtime stride) */
+                      pvVar16 = (void *)(local_44->elementSize * STField<uint>(iVar14,0x18) +
                                         (int)local_44->data);
                     }
                     else {
@@ -591,8 +591,8 @@ LAB_00429715:
                     local_60 = STField<int>(pvVar16,0xc) + local_c8;
                     local_5c = STField<int>(pvVar16,0x10) +
                                *(int *)(PTR_DAT_007a5250 +
-                                       (((int)*(short *)(iVar14 + 8) -
-                                        (uint)((byte *)iVar14)[0x48]) - local_24) * 4) +
+                                       (((int)STField<short>(iVar14,0x8) -
+                                        (uint)STField<byte>(iVar14,0x48)) - local_24) * 4) +
                                local_70[1];
                     local_58 = STField<int>(pvVar16,0x14);
                     local_54 = STField<undefined4>(pvVar16,0x18);

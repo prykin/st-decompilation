@@ -13,7 +13,7 @@ uint FUN_007575b0(AnonShape_007575B0_A94973CA *param_1,ushort *param_2,ushort *p
   case 2:
     return (uint)(byte)*param_2 - (uint)(byte)*param_3;
   case 3:
-    return (int)(short)*param_2 - (int)(short)*param_3;
+    return (short)*param_2 - (short)*param_3;
   case 4:
     return (uint)*param_2 - (uint)*param_3;
   case 5:

@@ -88,8 +88,7 @@ STExplosion::sub_00606050
   memset(local_90, 0, 0x18); /* compiler bulk-zero initialization */
   auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < local_28) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_5 = local_100;
+    auto param_5_after_write = local_100; /* compiler stack-slot lifetime split */
     local_20 = local_28;
     do {
       bVar1 = *local_10;
@@ -115,21 +114,21 @@ LAB_00606189:
             iVar7 = iVar7 + 1;
           } while (local_90[uVar3 & 0x7f] != 0);
         }
-        *param_5 = uVar3;
+        *param_5_after_write = uVar3;
         local_90[uVar3 & 0x7f] = local_90[uVar3 & 0x7f] + 1;
         if ((local_18 != 3) &&
            (uVar4 = this->field_001C * 0x41c64e6d + 0x3039, this->field_001C = uVar4,
            (uVar4 & 0x10000) != 0)) {
-          *param_5 = uVar3 | 0x100;
+          *param_5_after_write = uVar3 | 0x100;
         }
         iVar5 = param_7_after_write + 1;
-        param_5 = param_5 + 1;
+        param_5_after_write = param_5_after_write + 1;
         param_7_after_write = iVar5;
       }
       local_20 = local_20 + -1;
     } while (local_20 != 0);
   }
-  param_5 = nullptr;
+  uint * param_5_after_write_2 = nullptr; /* compiler stack-slot lifetime split */
   if (0 < local_1c) {
     puVar9 = local_100 + iVar5;
     do {
@@ -155,10 +154,10 @@ LAB_00606282:
         puVar9 = puVar9 + 1;
         param_7_after_write = iVar5;
       }
-      param_5 = (uint *)((int)param_5 + 1);
-    } while ((int)param_5 < local_1c);
+      param_5_after_write_2 = (uint *)((int)param_5_after_write_2 + 1);
+    } while ((int)param_5_after_write_2 < local_1c);
   }
-  param_5 = nullptr;
+  param_5_after_write_2 = nullptr;
   puVar9 = local_100 + iVar5;
   do {
     if (iVar5 == local_c) break;
@@ -178,8 +177,8 @@ LAB_00606321:
       puVar9 = puVar9 + 1;
       param_7_after_write = iVar5;
     }
-    param_5 = (uint *)((int)param_5 + 1);
-  } while ((int)param_5 < 0x14);
+    param_5_after_write_2 = (uint *)((int)param_5_after_write_2 + 1);
+  } while ((int)param_5_after_write_2 < 0x14);
   pSVar10 = &local_b0;
   for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
     pSVar10->unknown_00 = 0;
@@ -189,7 +188,7 @@ LAB_00606321:
   if (iVar5 < local_c) {
     local_c = iVar5;
   }
-  param_5 = nullptr;
+  param_5_after_write_2 = nullptr;
   if (0 < local_c) {
     do {
       memset(local_70, 0, 0x46); /* compiler bulk-zero initialization */
@@ -199,15 +198,15 @@ LAB_00606321:
       local_70[0] = 100;
       local_70[2] = 0;
       local_70[3] = 0;
-      local_2e = param_5;
+      local_2e = param_5_after_write_2;
       local_58 = param_4;
       if (local_18 == 3) {
-        if (((param_5 == nullptr) && (param_4 != 0x2b)) &&
+        if (((param_5_after_write_2 == nullptr) && (param_4 != 0x2b)) &&
            ((param_4 != 0xfd && (param_4 != 0xfe)))) {
           local_100[0] = 0x8000;
         }
         else {
-          uVar3 = local_100[(int)param_5];
+          uVar3 = local_100[(int)param_5_after_write_2];
           if ((uVar3 & 0x80) == 0) {
             uVar3 = uVar3 & 0xffffff7f | 0x1000;
           }
@@ -215,14 +214,14 @@ LAB_00606321:
             uVar3 = uVar3 & 0xffffff7f | 0x2000;
           }
 LAB_006063f9:
-          local_100[(int)param_5] = uVar3;
+          local_100[(int)param_5_after_write_2] = uVar3;
         }
       }
-      else if ((local_100[(int)param_5] & 0x80) != 0) {
-        uVar3 = local_100[(int)param_5] & 0xffffff7f | 0x100;
+      else if ((local_100[(int)param_5_after_write_2] & 0x80) != 0) {
+        uVar3 = local_100[(int)param_5_after_write_2] & 0xffffff7f | 0x100;
         goto LAB_006063f9;
       }
-      local_5c = local_100[(int)param_5];
+      local_5c = local_100[(int)param_5_after_write_2];
       if ((byte)local_5c < 0xb) {
         if ((byte)local_5c < 5) {
           local_2f = 1;
@@ -369,9 +368,9 @@ switchD_00606490_default:
       }
       local_b0.arg0.ptr = local_70;
       /* ST_CALLSITE[006067E6]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
-      STParticleC::GetMessage((&this->field_0219)[(int)param_5],&local_b0);
-      param_5 = (uint *)((int)param_5 + 1);
-    } while ((int)param_5 < local_c);
+      STParticleC::GetMessage((&this->field_0219)[(int)param_5_after_write_2],&local_b0);
+      param_5_after_write_2 = (uint *)((int)param_5_after_write_2 + 1);
+    } while ((int)param_5_after_write_2 < local_c);
   }
   return local_c;
 }

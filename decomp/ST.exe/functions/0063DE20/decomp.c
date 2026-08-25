@@ -22,7 +22,7 @@ void __thiscall FUN_0063de20(void *this,int soundId)
                         (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    local_10.x = (int)(short)(((short)(iVar1 / 0xc9) + sVar2) -
+    local_10.x = (short)(((short)(iVar1 / 0xc9) + sVar2) -
                              (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
   }
   iVar1 = STField<int>(this,0x26a);
@@ -32,7 +32,7 @@ void __thiscall FUN_0063de20(void *this,int soundId)
                         (short)((longlong)iVar1 * 0x28c1979 >> 0x3f)) + -1;
   }
   else {
-    local_10.y = (int)(short)(((short)(iVar1 / 0xc9) + sVar2) -
+    local_10.y = (short)(((short)(iVar1 / 0xc9) + sVar2) -
                              (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
   }
   local_10.unknown = STField<int>(this,0x18);

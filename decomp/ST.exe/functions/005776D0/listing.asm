@@ -661,7 +661,8 @@ switchD_00577a01::caseD_9:
 00577EF3  8B 02                     MOV EAX,dword ptr [EDX]
 00577EF5  51                        PUSH ECX
 00577EF6  8B CA                     MOV ECX,EDX
-00577EF8  FF 10                     CALL dword ptr [EAX]
+GameSystemC::GetMessage::override::prt_577ef8_89729ca9:
+00577EF8  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 switchD_00577a01::caseD_2:
 00577EFA  8B 95 78 FF FF FF         MOV EDX,dword ptr [EBP + 0xffffff78]
 00577F00  33 C0                     XOR EAX,EAX

@@ -553,7 +553,8 @@ LAB_0047d7b3:
 0047D7D3  89 5D C4                  MOV dword ptr [EBP + -0x3c],EBX
 0047D7D6  C7 45 C8 FE 00 00 00      MOV dword ptr [EBP + -0x38],0xfe
 0047D7DD  C7 45 B0 28 01 00 00      MOV dword ptr [EBP + -0x50],0x128
-0047D7E4  FF 12                     CALL dword ptr [EDX]
+STBoatC::Annih::override::prt_47d7e4_7e63b4fe:
+0047D7E4  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/STBoatC;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0047d7e6:
 0047D7E6  8B 16                     MOV EDX,dword ptr [ESI]
 0047D7E8  8B CE                     MOV ECX,ESI

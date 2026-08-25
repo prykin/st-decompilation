@@ -120,11 +120,11 @@ LAB_0061033a:
              (((int)*(short *)&param_1->field_0x272 - (int)*psVar1) * 10000) / *(int *)(psVar1 + 4);
         iVar15 = *(int *)&param_1->field_0x2dd + *(int *)&param_1->field_0x2d9 * 0x1c;
         *(int *)&param_1->field_0x280 =
-             (((int)*(short *)&param_1->field_0x274 - (int)*(short *)(iVar15 + 2)) * 10000) /
-             *(int *)(iVar15 + 8);
+             (((int)*(short *)&param_1->field_0x274 - (int)STField<short>(iVar15,0x2)) * 10000) /
+             STField<int>(iVar15,0x8);
         iVar15 = *(int *)&param_1->field_0x2dd + *(int *)&param_1->field_0x2d9 * 0x1c;
-        iVar15 = (((int)*(short *)&param_1->field_0x276 - (int)*(short *)(iVar15 + 4)) * 10000) /
-                 *(int *)(iVar15 + 8);
+        iVar15 = (((int)*(short *)&param_1->field_0x276 - (int)STField<short>(iVar15,0x4)) * 10000) /
+                 STField<int>(iVar15,0x8);
       }
       *(int *)&param_1->field_0x284 = iVar15;
       *(undefined4 *)&param_1->field_0x20c = 2;
@@ -195,7 +195,7 @@ LAB_0061033a:
                       (short)((longlong)local_20 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      iVar15 = (int)(short)((sVar8 / 0xc9 + (sVar8 >> 0xf)) -
+      iVar15 = (short)((sVar8 / 0xc9 + (sVar8 >> 0xf)) -
                            (short)((longlong)local_20 * 0x28c1979 >> 0x3f));
     }
     local_24 = (uint)sVar12;
@@ -204,7 +204,7 @@ LAB_0061033a:
                      (short)((longlong)(int)local_24 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      iVar9 = (int)(short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
+      iVar9 = (short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
                           (short)((longlong)(int)local_24 * 0x28c1979 >> 0x3f));
     }
     iVar10 = (int)sVar11;
@@ -213,7 +213,7 @@ LAB_0061033a:
                      (short)((longlong)iVar10 * 0x51eb851f >> 0x3f)) + -1;
     }
     else {
-      iVar4 = (int)(short)((sVar11 / 200 + (sVar11 >> 0xf)) -
+      iVar4 = (short)((sVar11 / 200 + (sVar11 >> 0xf)) -
                           (short)((longlong)iVar10 * 0x51eb851f >> 0x3f));
     }
     if (((*(short *)&param_1->field_0x215 == iVar15) && (*(short *)&param_1->field_0x217 == iVar9))
@@ -225,7 +225,7 @@ LAB_00610886:
       bVar16 = *(int *)&param_1->field_0x1f7 == 2;
       local_8 = (uint)bVar16;
       iVar15 = local_20 - (short)((short)iVar15 * 0xc9 + 100);
-      iVar9 = local_24 - (int)(short)((short)iVar9 * 0xc9 + 100);
+      iVar9 = local_24 - (short)((short)iVar9 * 0xc9 + 100);
       iVar10 = iVar10 + iVar4 * -0xc9;
       iVar10 = iVar10 * iVar10;
       if (0x2773 < (STSignedDiv4(iVar10)) + iVar9 * iVar9 + iVar15 * iVar15)
@@ -322,7 +322,7 @@ LAB_00610969:
       iVar15 = *(int *)&param_1->field_0x233;
       sVar8 = (short)(iVar15 >> 0x1f);
       if (iVar15 < 0) {
-        local_c = (int)(short)(((short)(iVar15 / 200) + sVar8) -
+        local_c = (short)(((short)(iVar15 / 200) + sVar8) -
                               (short)((longlong)iVar15 * 0x51eb851f >> 0x3f)) - 1;
       }
       else {
@@ -450,7 +450,7 @@ LAB_00610d9f:
       iVar15 = *(int *)&param_1->field_0x233;
       sVar8 = (short)(iVar15 >> 0x1f);
       if (iVar15 < 0) {
-        local_c = (int)(short)(((short)(iVar15 / 200) + sVar8) -
+        local_c = (short)(((short)(iVar15 / 200) + sVar8) -
                               (short)((longlong)iVar15 * 0x51eb851f >> 0x3f)) - 1;
       }
       else {
@@ -607,7 +607,7 @@ LAB_00611304:
       iVar15 = *(int *)&param_1->field_0x233;
       sVar8 = (short)(iVar15 >> 0x1f);
       if (iVar15 < 0) {
-        local_c = (int)(short)(((short)(iVar15 / 200) + sVar8) -
+        local_c = (short)(((short)(iVar15 / 200) + sVar8) -
                               (short)((longlong)iVar15 * 0x51eb851f >> 0x3f)) - 1;
       }
       else {
@@ -624,7 +624,7 @@ LAB_00611304:
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar15,
                        (int *)&local_24,&local_20), (int)local_c < 0)) ||
           (((4 < (int)local_c || ((int)local_24 < 0)) ||
-           (((int)pVVar13->field_0030 <= (int)local_24 ||
+           ((pVVar13->field_0030 <= (int)local_24 ||
             ((iVar15 = g_centeredOffsets5[local_c] + local_20, iVar15 < 0 ||
              (pVVar13->field_0034 <= iVar15)))))))) ||
          ((pVVar13->field_004C == nullptr ||
@@ -754,7 +754,7 @@ LAB_0061196b:
     iVar15 = *(int *)&param_1->field_0x233;
     sVar8 = (short)(iVar15 >> 0x1f);
     if (iVar15 < 0) {
-      local_c = (int)(short)(((short)(iVar15 / 200) + sVar8) -
+      local_c = (short)(((short)(iVar15 / 200) + sVar8) -
                             (short)((longlong)iVar15 * 0x51eb851f >> 0x3f)) - 1;
     }
     else {
@@ -770,8 +770,7 @@ LAB_0061196b:
          ((VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar15,
                       (int *)&local_24,&local_20), (int)local_c < 0 ||
-          ((((4 < (int)local_c || ((int)local_24 < 0)) ||
-            ((int)pVVar13->field_0030 <= (int)local_24)) ||
+          ((((4 < (int)local_c || ((int)local_24 < 0)) || (pVVar13->field_0030 <= (int)local_24)) ||
            ((iVar15 = g_centeredOffsets5[local_c] + local_20, iVar15 < 0 ||
             (pVVar13->field_0034 <= iVar15)))))))) || (pVVar13->field_004C == nullptr)) ||
        (pVVar13->field_004C[local_24 + iVar15 * pVVar13->field_0030] != 0))
@@ -886,7 +885,7 @@ LAB_006115da:
       iVar15 = *(int *)&param_1->field_0x233;
       sVar8 = (short)(iVar15 >> 0x1f);
       if (iVar15 < 0) {
-        local_24 = (int)(short)(((short)(iVar15 / 200) + sVar8) -
+        local_24 = (short)(((short)(iVar15 / 200) + sVar8) -
                                (short)((longlong)iVar15 * 0x51eb851f >> 0x3f)) - 1;
       }
       else {
@@ -903,7 +902,7 @@ LAB_006115da:
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar15,
                         &local_20,(int *)&local_c), -1 < (int)local_24)) &&
            (((int)local_24 < 5 && (-1 < local_20)))) &&
-          (((local_20 < (int)pVVar13->field_0030 &&
+          (((local_20 < pVVar13->field_0030 &&
             ((iVar15 = g_centeredOffsets5[local_24] + local_c, -1 < iVar15 &&
              (iVar15 < pVVar13->field_0034)))) && (pVVar13->field_004C != nullptr)))) &&
          (pVVar13->field_004C[local_20 + iVar15 * pVVar13->field_0030] == 0)) {
@@ -972,7 +971,7 @@ LAB_006115da:
                      (short)((longlong)iVar15 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      iVar9 = (int)(short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
+      iVar9 = (short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
                           (short)((longlong)iVar15 * 0x28c1979 >> 0x3f));
     }
     if (*(short *)&param_1->field_0x215 == iVar9) {
@@ -1074,7 +1073,7 @@ LAB_00612459:
     iVar15 = *(int *)&param_1->field_0x233;
     sVar8 = (short)(iVar15 >> 0x1f);
     if (iVar15 < 0) {
-      local_24 = (int)(short)(((short)(iVar15 / 200) + sVar8) -
+      local_24 = (short)(((short)(iVar15 / 200) + sVar8) -
                              (short)((longlong)iVar15 * 0x51eb851f >> 0x3f)) - 1;
     }
     else {
@@ -1090,7 +1089,7 @@ LAB_00612459:
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar15,
                       &local_20,(int *)&local_c), (int)local_24 < 0)) ||
-         ((4 < (int)local_24 || (local_20 < 0)))) || ((int)pVVar13->field_0030 <= local_20)) ||
+         ((4 < (int)local_24 || (local_20 < 0)))) || (pVVar13->field_0030 <= local_20)) ||
        (((iVar15 = g_centeredOffsets5[local_24] + local_c, iVar15 < 0 ||
          (pVVar13->field_0034 <= iVar15)) || (pVVar13->field_004C == nullptr))))
     goto cf_common_exit_00611C0F;

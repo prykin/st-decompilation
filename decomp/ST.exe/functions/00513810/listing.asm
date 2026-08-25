@@ -36,7 +36,8 @@ HelpPanelTy::BackBut:
 00513887  8B 11                     MOV EDX,dword ptr [ECX]
 00513889  8D 46 18                  LEA EAX,[ESI + 0x18]
 0051388C  50                        PUSH EAX
-0051388D  FF 12                     CALL dword ptr [EDX]
+HelpPanelTy::BackBut::override::prt_51388d_74f246b9:
+0051388D  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0051388f:
 0051388F  8A 86 A2 01 00 00         MOV AL,byte ptr [ESI + 0x1a2]
 00513895  84 C0                     TEST AL,AL

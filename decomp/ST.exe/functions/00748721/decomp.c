@@ -46,7 +46,7 @@ int FUN_00748721(AnonShape_00748721_F11EED2A *param_1,int *param_2)
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar2 = (**(code **)(*piVar1 + 0x14))(piVar1,&param_1->field_0x20,&param_1->field_0x28);
         if (-1 < iVar2) {
-          *(ushort *)&param_1->field_0018 = *(ushort *)&param_1->field_0018 | 0x110;
+          *(ushort *)&param_1->field_0018 = (ushort)param_1->field_0018 | 0x110;
         }
         /* ST_CALLSITE[007487EA]: CALL dword ptr [EAX + 0x34] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -78,7 +78,7 @@ int FUN_00748721(AnonShape_00748721_F11EED2A *param_1,int *param_2)
         }
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      if (((*(byte *)&param_1->field_0018 & 8) == 0) ||
+      if ((((byte)param_1->field_0018 & 8) == 0) ||
          /* ST_CALLSITE[0074881E]: CALL dword ptr [EAX + 0x20] */
          (iVar2 = (**(code **)(*(int *)&param_1[-3].field_0x28 + 0x20))(param_1->field_0034),
          iVar2 == 0)) {

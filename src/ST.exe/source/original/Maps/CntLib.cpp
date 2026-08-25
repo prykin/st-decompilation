@@ -184,7 +184,7 @@ LAB_00691a65:
                   }
                   local_8c.field_001C = (uint)(short)*puVar9_mg3;
                   local_8c.field_0020 = (int)(puVar9_mg3 + 10);
-                  local_8c.field_0024 = (int)(short)puVar9_mg3[1];
+                  local_8c.field_0024 = (short)puVar9_mg3[1];
                   local_8c.field_0028 = (int)(puVar9_mg3 + (short)*puVar9_mg3 * 6 + 10);
                   local_8c.field_0048 = (byte)local_8;
                   if (local_c == 0) {
@@ -278,7 +278,7 @@ LAB_00691a65:
               else {
                 local_8c.field_001C = (uint)(short)*puVar9_mg5;
                 local_8c.field_0020 = (int)(puVar9_mg5 + 10);
-                local_8c.field_0024 = (int)(short)puVar9_mg5[1];
+                local_8c.field_0024 = (short)puVar9_mg5[1];
                 local_8c.field_0028 = (int)(puVar9_mg5 + (short)*puVar9_mg5 * 6 + 10);
                 local_8c.field_0048 = (byte)local_8;
                 if (local_c == 0) {
@@ -367,7 +367,7 @@ LAB_00691a65:
               else {
                 local_8c.field_001C = (uint)(short)*puVar9_mg7;
                 local_8c.field_0020 = (int)(puVar9_mg7 + 10);
-                local_8c.field_0024 = (int)(short)puVar9_mg7[1];
+                local_8c.field_0024 = (short)puVar9_mg7[1];
                 local_8c.field_0048 = (byte)local_8;
                 local_8c.field_0028 = (int)(puVar9_mg7 + (short)*puVar9_mg7 * 6 + 10);
                 if (local_c == 0) {

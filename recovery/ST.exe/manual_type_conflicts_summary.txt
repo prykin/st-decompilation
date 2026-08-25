@@ -4,4 +4,4 @@ likely_stale=1
 approved_overrides=0
 review=0
 note=This report is deliberately read-only. USER_DEFINED/IMPORTED types are never silently replaced.
-note_order=Run it after the prototype, pointer-shape, class-layout, and type-family analyzers.
+note_order=Run it after the prototype, pointer-shape, class-layout, type-family, and utility-function analyzers.

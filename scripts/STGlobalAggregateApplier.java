@@ -18,6 +18,7 @@ import java.util.Map;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.ArrayDataType;
+import ghidra.program.model.data.Array;
 import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
@@ -84,10 +85,10 @@ public class STGlobalAggregateApplier extends GhidraScript {
             if (proposed == null || proposed.getLength() != integer(row.get("proposed_length"))) {
                 conflict(row, "proposed type missing or length mismatch"); return;
             }
-            Data current = listing.getDefinedDataAt(address);
+            Data current = dataAtBase(address);
             Symbol primary = symbols.getPrimarySymbol(address);
             if (current != null && primary != null && primary.getName().equals(row.get("proposed_name")) &&
-                    current.getDataType().isEquivalent(proposed)) {
+                    equivalentAggregateType(current.getDataType(), proposed)) {
                 report.add(new Report(row.get("address"), row.get("aggregate_id"), "unchanged",
                     "desired aggregate already present")); return;
             }
@@ -132,6 +133,25 @@ public class STGlobalAggregateApplier extends GhidraScript {
                 row.get("proposed_name") + " " + row.get("proposed_type")));
         }
         catch (Exception exception) { conflict(row, message(exception)); }
+    }
+
+    private Data dataAtBase(Address address) {
+        Data exact = listing.getDefinedDataAt(address);
+        if (exact != null) return exact;
+        Data containing = listing.getDefinedDataContaining(address);
+        return containing != null && containing.getMinAddress().equals(address) ?
+            containing : null;
+    }
+
+    private boolean equivalentAggregateType(DataType left, DataType right) {
+        if (left == null || right == null) return left == right;
+        if (left.isEquivalent(right)) return true;
+        if (left instanceof Array leftArray && right instanceof Array rightArray)
+            return leftArray.getNumElements() == rightArray.getNumElements() &&
+                leftArray.getElementLength() == rightArray.getElementLength() &&
+                equivalentAggregateType(leftArray.getDataType(), rightArray.getDataType());
+        return left.getLength() == right.getLength() &&
+            left.getPathName().equals(right.getPathName());
     }
 
     private boolean safeRange(Address base, int length) {

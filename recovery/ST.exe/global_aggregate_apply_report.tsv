@@ -40,7 +40,7 @@ address	aggregate_id	status	detail
 00803310	runtime_record_pointer	unchanged	desired aggregate already present
 00807570	indexed_global_candidate	disabled	apply=0
 008087C7	bulk_initialized_record_array	unchanged	desired aggregate already present
-00808A4F	binary_relation_matrix	conflict	Could not create Data at address 00808a4f
+00808A4F	binary_relation_matrix	unchanged	desired aggregate already present
 00808AF0	indexed_global_candidate	disabled	apply=0
 00808AF4	indexed_global_candidate	disabled	apply=0
 0080C943	indexed_global_candidate	disabled	apply=0

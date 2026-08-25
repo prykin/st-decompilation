@@ -197,7 +197,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint *param_1)
          ((g_playSystem_00802A38 == nullptr ||
           (g_bulkInitializedRecords_008087C7[(int)pSVar5[1].vtable].field_0022 < 8)))) {
         bVar27 = *(byte *)&pSVar5[1].vtable;
-        bVar1 = *(byte *)&this->field_0024;
+        bVar1 = (byte)this->field_0024;
         local_10 = (undefined4 *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar27));
         local_1c = STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar1));
         if (DAT_00808a8f == '\0') {
@@ -344,7 +344,7 @@ LAB_0046b5ac:
               sVar19 = 0;
               this->field_001C = local_24;
               lVar18 = Library::MSVCRT::__ftol();
-              iVar14 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+              iVar14 = (short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                        (int)local_8;
               iVar9 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_c);
               uVar10 = local_24;
@@ -372,7 +372,7 @@ LAB_0046b5ac:
             /* ST_CALLSITE[0046B93E]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
-                       (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
+                       (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (short)local_c,
                        iVar9 + -3,iVar14,sVar19,sVar20,sVar21,sVar22,sVar23,sVar24,iVar25,sVar26,
                        bVar27);
             local_20 = local_20 + 1;
@@ -459,7 +459,7 @@ LAB_0046b5ac:
               sVar19 = 0;
               this->field_001C = local_24;
               lVar18 = Library::MSVCRT::__ftol();
-              iVar14 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+              iVar14 = (short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                        (int)local_8;
               iVar9 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_c);
               uVar10 = local_24;
@@ -487,7 +487,7 @@ LAB_0046b5ac:
             /* ST_CALLSITE[0046BCA3]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
-                       (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
+                       (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (short)local_c,
                        iVar9 + -3,iVar14,sVar19,sVar20,sVar21,sVar22,sVar23,sVar24,iVar25,sVar26,
                        bVar27);
             local_20 = local_20 + 1;
@@ -562,7 +562,7 @@ LAB_0046b6e2:
           local_54 = 1;
           local_50 = 1;
           local_44.id = MESS_HITKILL;
-          /* ST_CALLSITE[0046BECB]: CALL dword ptr [EAX] */
+          /* ST_CALLSITE[0046BECB]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/STBoatC;pointer:/SubmarineTitans/Recovered/STMessage */
           this->GetMessage(&local_44);
           goto cf_common_exit_0046C3C5;
         }
@@ -585,7 +585,7 @@ LAB_0046b6e2:
           local_54 = 1;
           local_50 = 1;
           local_44.id = MESS_HITKILL;
-          /* ST_CALLSITE[0046BF4D]: CALL dword ptr [EDX] */
+          /* ST_CALLSITE[0046BF4D]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/STBoatC;pointer:/SubmarineTitans/Recovered/STMessage */
           this->GetMessage(&local_44);
           goto cf_common_exit_0046C3C5;
         }
@@ -678,7 +678,7 @@ cf_common_exit_0046C04E:
               sVar19 = 0;
               this->field_001C = local_24;
               lVar18 = Library::MSVCRT::__ftol();
-              iVar14 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+              iVar14 = (short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                        (int)local_8;
               iVar9 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_c);
               uVar10 = local_24;
@@ -706,7 +706,7 @@ cf_common_exit_0046C04E:
             /* ST_CALLSITE[0046C2A7]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
             TraksClassTy::TraksCreate
                       (g_traksClass_00802A7C,1,2,7,
-                       (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
+                       (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (short)local_c,
                        iVar9 + -3,iVar14,sVar19,sVar20,sVar21,sVar22,sVar23,sVar24,iVar25,sVar26,
                        bVar27);
             local_20 = local_20 + 1;

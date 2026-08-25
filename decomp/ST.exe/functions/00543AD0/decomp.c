@@ -15,7 +15,7 @@
 
 void __thiscall
 CursorClassTy::SetImages
-          (CursorClassTy *this,undefined4 param_1,char *text,undefined4 param_3,BITMAPINFO *param_4,
+          (CursorClassTy *this,undefined4 param_1,char *text,int param_3,BITMAPINFO *param_4,
           uint param_5,int param_6,int param_7)
 
 {

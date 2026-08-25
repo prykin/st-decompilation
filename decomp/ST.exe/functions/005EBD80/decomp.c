@@ -115,9 +115,9 @@ undefined4 __fastcall FUN_005ebd80(AnonShape_005EBD80_1A4ED01F *param_1)
   param_1->field_023E = 2000;
   if (bVar3) {
     if (bVar4) {
-      iVar5 = thunk_FUN_005ecd70(param_1,(int)(short)(param_1->field_0242 * 0xc9 + 100),
-                                 (int)(short)(param_1->field_0244 * 0xc9 + 100),
-                                 (int)(short)(param_1->field_0246 * 200 + 100),param_1->field_0350,
+      iVar5 = thunk_FUN_005ecd70(param_1,(short)(param_1->field_0242 * 0xc9 + 100),
+                                 (short)(param_1->field_0244 * 0xc9 + 100),
+                                 (short)(param_1->field_0246 * 200 + 100),param_1->field_0350,
                                  '\x01',0x1e);
       if (iVar5 != 0) {
         param_1->field_023A = 2;

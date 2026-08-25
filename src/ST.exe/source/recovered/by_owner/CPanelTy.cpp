@@ -516,7 +516,11 @@ void __thiscall st::fn_004FAD20(CPanelTy *this)
 
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004FAD60 -> 004AB530 @ 004FAE21 | 004FAD60 -> 006E68C0 @ 004FADF7 | 005449B0 ->
-   004FAD60 @ 00547B96; unproven partial register write at 00547B8D */
+   004FAD60 @ 00547B96; unproven partial register write at 00547B8D
+
+   [STSwitchEnumApplier] Switch target field_023F uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_023FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 void __thiscall st::fn_004FAD60(CPanelTy *this,uint *param_1,uint param_2)
 
@@ -643,21 +647,21 @@ void __thiscall st::fn_004FAFF0(CPanelTy *this)
 void __thiscall st::fn_00501A10(CPanelTy *this)
 
 {
-  uint *puVar1;
+  int *piVar1;
   BITMAPINFO *pBVar2;
 
-  puVar1 = &this->field_0434;
-  memset(puVar1, 0, 0x118); /* compiler bulk-zero initialization */
+  piVar1 = &this->field_0434;
+  memset(piVar1, 0, 0x118); /* compiler bulk-zero initialization */
   if (this->field_0B9E == CASE_1) {
     if (DAT_0080874e == '\x03') {
       if (this->field_0B99 == CASE_1A) {
-        *puVar1 = st::machine_word_boundary_cast<uint>(this->field_0048 + 0x3c);
+        *piVar1 = st::machine_word_boundary_cast<int>(this->field_0048 + 0x3c);
         this->field_0438 = st::machine_word_boundary_cast<int>(this->field_00A0 + 0x84);
         this->field_043C = 0x55;
         this->field_0440 = 0xe;
         this->field_044C = 0x2ef3;
       }
-      this->field_0450 = st::machine_word_boundary_cast<undefined4>(this->field_0048 + 4);
+      this->field_0450 = st::machine_word_boundary_cast<int>(this->field_0048 + 4);
       this->field_0454 = st::machine_word_boundary_cast<int>(this->field_00A0 + 8);
       this->field_0458 = 100;
       this->field_045C = 0x3c;
@@ -665,7 +669,7 @@ void __thiscall st::fn_00501A10(CPanelTy *this)
       this->field_0460 = pBVar2;
       this->field_0464 = this->field_0458;
       this->field_0468 = 0x4e87;
-      this->field_046C = st::machine_word_boundary_cast<undefined4>(this->field_0048 + 2);
+      this->field_046C = st::machine_word_boundary_cast<int>(this->field_0048 + 2);
       this->field_0470 = st::machine_word_boundary_cast<int>(this->field_00A0 + 6);
       this->field_0474 = 0x20;
       this->field_0478 = 0x35;
@@ -685,7 +689,7 @@ void __thiscall st::fn_00501A10(CPanelTy *this)
       this->field_043C = (pBVar2->bmiHeader).biWidth;
       pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
       this->field_0440 = (pBVar2->bmiHeader).biHeight;
-      *puVar1 = (this->field_018C->field_0004 - this->field_043C) / 2 + this->field_0048;
+      *piVar1 = (this->field_018C->field_0004 - this->field_043C) / 2 + this->field_0048;
       this->field_0438 = st::machine_word_boundary_cast<int>(this->field_00A0 + 0x50);
     }
     switch(this->field_0B99) {
@@ -858,7 +862,7 @@ void __thiscall st::fn_0052AFE0(CPanelTy *this,byte param_1,float param_2,float 
   }
   else {
     lVar9 = st::fn_0072E288();
-    iVar5 = (int)(short)lVar9;
+    iVar5 = (short)lVar9;
   }
   bVar1 = param_3 < _DAT_0079034c;
   this->field_0237 = iVar5;
@@ -868,7 +872,7 @@ void __thiscall st::fn_0052AFE0(CPanelTy *this,byte param_1,float param_2,float 
   }
   else {
     lVar9 = st::fn_0072E288();
-    iVar5 = (int)(short)lVar9;
+    iVar5 = (short)lVar9;
   }
   this->field_023B = iVar5;
   if (this->field_0DB3 == nullptr) {

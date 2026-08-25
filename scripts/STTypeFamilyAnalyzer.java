@@ -30,14 +30,17 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
+import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.Instruction;
+import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.Reference;
@@ -58,6 +61,8 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
     private static final Pattern SOURCE_BASENAME = Pattern.compile(
         "(?i)([A-Za-z0-9_$.-]+)\\.(?:c|cc|cpp|cxx)\\b");
     private Map<String, Integer> receiverOwnerCounts;
+    private final List<PolymorphicReceiverCallsite> polymorphicReceiverCallsites =
+        new ArrayList<>();
 
     @Override
     protected void run() throws Exception {
@@ -155,7 +160,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         for (ContextualPromotion promotion : contextualPromotions)
             redirects.putIfAbsent(promotion.sourceType, promotion.targetType);
         List<Row> rows = variableRows(redirects);
-        addGetObjPtrFamily(rows);
+        addPolymorphicCallFamilies(rows, directory);
         addReturnedPointerConsumers(rows);
         rows.sort(Comparator.comparing((Row r) -> r.functionAddress)
             .thenComparing(r -> r.targetKind).thenComparingInt(r -> r.ordinal));
@@ -165,6 +170,8 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         writeContextualPromotions(directory.resolve(
             "contextual_record_promotions.tsv"), contextualPromotions);
         writeRows(directory.resolve("type_family_proposals.tsv"), rows);
+        writePolymorphicReceiverCallsites(directory.resolve(
+            "polymorphic_receiver_callsites.tsv"));
         writeSummary(directory.resolve("type_family_summary.txt"), groupRows, namedMatches,
             anonymousAudit, contextualPromotions, rows);
         println("Type-family analysis complete: " + directory.toAbsolutePath().normalize());
@@ -1011,56 +1018,390 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         return result.isBlank() ? "UnknownOwner" : result;
     }
 
-    private void addGetObjPtrFamily(List<Row> rows) {
-        DataType base = currentProgram.getDataTypeManager().getDataType("/STGameObjC");
-        if (!(base instanceof Structure structure) || !semanticAnchor(structure)) return;
-        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
-        while (functions.hasNext()) {
-            Function function = functions.next();
-            if (!"GetObjPtr".equals(function.getName()) ||
-                    !function.getName(true).startsWith("STAllPlayersC::")) continue;
-            int calls = familyCallers(function);
-            if (calls < 16) continue;
+    /**
+     * Recover a common polymorphic receiver without naming a game class in the heuristic.
+     * One generic parameter must feed several exact machine CALLIND receiver chains.  A base
+     * is selected only when every independently named caller class has a physical primary
+     * vtable whose slot-owner evidence contains that same base, and the observed slot ABIs
+     * agree with its accepted physical table.  This turns heterogeneous object containers
+     * into their already recovered common interface while leaving geometry-only relatives
+     * and one-caller guesses untouched.
+     *
+     * The same audit recovers a generic producer return when its exact EAX result is repeatedly
+     * used as one already typed physical receiver.  This replaces the former method-name/type
+     * special case with an address-independent machine chain.
+     */
+    private void addPolymorphicCallFamilies(List<Row> rows, Path directory) throws Exception {
+        Path vtablePath = directory.resolve("vtable_proposals.tsv");
+        Path callPath = directory.resolve("callable_family_audit.tsv");
+        Path prototypePath = directory.resolve("prototype_callsite_audit.tsv");
+        if (!Files.isRegularFile(vtablePath) || !Files.isRegularFile(callPath)) return;
+        List<Map<String, String>> vtables = readTsv(vtablePath);
+        List<Map<String, String>> calls = readTsv(callPath);
+        Map<String, Set<String>> directCallerOwners = Files.isRegularFile(prototypePath) ?
+            directCallerOwners(readTsv(prototypePath)) : Map.of();
+        List<PolymorphicBase> bases = polymorphicBases(vtables);
+        if (bases.isEmpty()) return;
+
+        Map<String, List<ReceiverSite>> parameters = new TreeMap<>();
+        Map<String, List<ReceiverSite>> producers = new TreeMap<>();
+        for (Map<String, String> row : calls) {
+            if (!"1".equals(row.get("exact_unadjusted_receiver"))) continue;
+            Address functionAddress = currentProgram.getAddressFactory().getAddress(
+                safeText(row.get("function_address")));
+            Address callAddress = currentProgram.getAddressFactory().getAddress(
+                safeText(row.get("call_address")));
+            Function function = functionAddress == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(functionAddress);
+            if (function == null || callAddress == null) continue;
+            int slot = integerValue(row.get("slot_offset"), -1);
+            int arity = integerValue(row.get("stack_parameter_count"), -1);
+            String receiver = safeText(row.get("receiver_register"));
+            if (slot < 0 || arity < 0 || receiver.isBlank()) continue;
+            ReceiverSite site = new ReceiverSite(function, callAddress, slot, arity,
+                safeText(row.get("machine_return")),
+                tokens(row.get("physical_vtable_paths")),
+                safeText(row.get("caller_owner")));
+            Parameter parameter = receiverParameterOrigin(function, callAddress, receiver);
+            if (parameter != null)
+                parameters.computeIfAbsent(addr(function.getEntryPoint()) + ":" +
+                    parameter.getOrdinal(), ignored -> new ArrayList<>()).add(site);
+            Function producer = receiverProducerOrigin(function, callAddress, receiver);
+            if (producer != null)
+                producers.computeIfAbsent(addr(producer.getEntryPoint()),
+                    ignored -> new ArrayList<>()).add(site);
+        }
+
+        for (Map.Entry<String, List<ReceiverSite>> entry : parameters.entrySet()) {
+            List<ReceiverSite> sites = entry.getValue();
+            Function function = sites.get(0).function;
+            int ordinal = Integer.parseInt(entry.getKey().substring(
+                entry.getKey().lastIndexOf(':') + 1));
+            Parameter parameter = explicitParameter(function, ordinal);
+            if (parameter == null || !genericPointer(parameter.getDataType()) ||
+                    protectedSource(parameter.getSource())) continue;
+            Set<Integer> slots = new TreeSet<>();
+            for (ReceiverSite site : sites) slots.add(site.slot);
+            if (sites.size() < 3 || slots.size() < 2 && sites.size() < 8) continue;
+            Set<String> callerOwners = directCallerOwners.getOrDefault(
+                addr(function.getEntryPoint()), Set.of());
+            if (callerOwners.size() < 2) continue;
+            List<PolymorphicBase> matches = bases.stream().filter(base ->
+                sites.stream().allMatch(site -> compatible(base, site)) &&
+                callerOwners.stream().allMatch(owner ->
+                    ownerCarriesBase(vtables, owner, base.owner))).toList();
+            if (matches.size() != 1) continue;
+            PolymorphicBase base = matches.get(0);
+            for (ReceiverSite site : sites)
+                polymorphicReceiverCallsites.add(new PolymorphicReceiverCallsite(
+                    addr(function.getEntryPoint()), function.getName(true),
+                    addr(site.call), site.slot, parameter.getOrdinal(), parameter.getName(),
+                    parameter.getVariableStorage().toString(),
+                    typeSpec(parameter.getDataType()), parameter.getSource().toString(),
+                    base.ownerPath, base.vtablePath));
+            rows.add(new Row(false, addr(function.getEntryPoint()), function.getName(true),
+                "parameter", parameter.getOrdinal(), parameter.getName(),
+                parameter.getVariableStorage().toString(), typeSpec(parameter.getDataType()),
+                parameter.getSource().toString(), "pointer:" + base.ownerPath, false,
+                "POLYMORPHIC_RECEIVER_FAMILY", "review",
+                sites.size() + " exact unadjusted CALLIND receiver sites across slots " +
+                    slots + "; independently named caller families=" + callerOwners +
+                    "; every caller primary vtable carries base owner " + base.owner +
+                    "; accepted physical base=" + base.vtablePath +
+                    "; audit-only parameter family: Ghidra has no recovered inheritance " +
+                    "and persistent base-parameter typing can erase derived caller layouts; " +
+                    "use exact physical call-site overrides instead"));
+        }
+
+        for (Map.Entry<String, List<ReceiverSite>> entry : producers.entrySet()) {
+            Address address = currentProgram.getAddressFactory().getAddress(entry.getKey());
+            Function function = address == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(address);
+            if (function == null || protectedSource(function.getSignatureSource())) continue;
             Parameter returned = function.getReturn();
-            String current = typeSpec(returned.getDataType());
-            boolean generic = current.equals("/uint") || current.equals("/int") ||
-                current.equals("/undefined4") || current.equals("/undefined");
-            boolean apply = generic;
-            rows.add(new Row(apply, addr(function.getEntryPoint()), function.getName(true),
-                "return", -1,
-                returned.getName(), returned.getVariableStorage().toString(), current,
-                returned.getSource().toString(), "pointer:/STGameObjC", true,
-                "STGAMEOBJ_BASE_FAMILY",
-                "high", "high-fanout STAllPlayersC::GetObjPtr family has " +
-                    calls + " direct/thunk-mediated callers and returns the " +
-                    "semantic STGameObjC polymorphic base"));
+            if (!genericWordOrPointer(returned.getDataType())) continue;
+            List<ReceiverSite> sites = entry.getValue();
+            Set<String> callers = new TreeSet<>();
+            Set<String> physicalOwners = new TreeSet<>();
+            for (ReceiverSite site : sites) {
+                callers.add(addr(site.function.getEntryPoint()));
+                for (String path : site.vtablePaths) {
+                    PolymorphicBase base = bases.stream()
+                        .filter(value -> value.vtablePath.equals(path)).findFirst().orElse(null);
+                    if (base != null) physicalOwners.add(base.ownerPath);
+                }
+            }
+            if (sites.size() < 16 || callers.size() < 2 || physicalOwners.size() != 1)
+                continue;
+            String ownerPath = physicalOwners.iterator().next();
+            if (!sites.stream().allMatch(site -> sitesPhysicalOwner(site, ownerPath, bases)))
+                continue;
+            rows.add(new Row(true, addr(function.getEntryPoint()), function.getName(true),
+                "return", -1, returned.getName(), returned.getVariableStorage().toString(),
+                typeSpec(returned.getDataType()), returned.getSource().toString(),
+                "pointer:" + ownerPath, false, "POLYMORPHIC_RETURN_FAMILY", "high",
+                sites.size() + " exact direct-return-to-physical-receiver chains across " +
+                    callers.size() + " caller functions; unanimous physical owner=" + ownerPath));
         }
     }
 
-    private int familyCallers(Function function) {
-        Function target = function;
-        for (int depth = 0; depth < 32 && target.isThunk(); depth++) {
-            Function next = target.getThunkedFunction(false);
-            if (next == null || next.equals(target)) break;
-            target = next;
-        }
-        int result = 0;
-        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
-        while (functions.hasNext()) {
-            Function entry = functions.next();
-            Function resolved = entry;
-            for (int depth = 0; depth < 32 && resolved.isThunk(); depth++) {
-                Function next = resolved.getThunkedFunction(false);
-                if (next == null || next.equals(resolved)) break;
-                resolved = next;
-            }
-            if (!resolved.equals(target)) continue;
-            ghidra.program.model.symbol.ReferenceIterator references =
-                currentProgram.getReferenceManager().getReferencesTo(entry.getEntryPoint());
-            while (references.hasNext())
-                if (references.next().getReferenceType().isCall()) result++;
+    private List<PolymorphicBase> polymorphicBases(List<Map<String, String>> rows) {
+        List<PolymorphicBase> result = new ArrayList<>();
+        for (Map<String, String> row : rows) {
+            if (!"1".equals(row.get("apply")) ||
+                    !"1".equals(row.get("primary_vptr_store"))) continue;
+            String owner = safeText(row.get("owner"));
+            String name = safeText(row.get("proposed_name"));
+            int slots = integerValue(row.get("slot_count"), -1);
+            DataType ownerType = findNamedType(owner);
+            DataType tableType = currentProgram.getDataTypeManager().getDataType(
+                "/SubmarineTitans/Recovered/VTables/" + name);
+            if (!(ownerType instanceof Structure ownerStructure) ||
+                    !(tableType instanceof Structure table) || slots < 1) continue;
+            DataTypeComponent vptr = ownerStructure.getComponentAt(0);
+            if (vptr == null || vptr.getOffset() != 0 ||
+                    !structurePath(vptr.getDataType()).equals(table.getPathName())) continue;
+            int related = 0;
+            for (Map<String, String> candidate : rows)
+                if (integerValue(candidate.get("slot_count"), -1) >= slots &&
+                        ownerToken(candidate.get("slot_owners"), owner) &&
+                        !safeText(candidate.get("table_address")).equals(
+                            safeText(row.get("table_address")))) related++;
+            if (related < 2) continue;
+            result.add(new PolymorphicBase(owner, ownerStructure.getPathName(),
+                table.getPathName(), table, slots, related));
         }
         return result;
+    }
+
+    private boolean compatible(PolymorphicBase base, ReceiverSite site) {
+        if (site.slot < 0 || site.slot >= base.slots * currentProgram.getDefaultPointerSize())
+            return false;
+        DataTypeComponent component = base.table.getComponentAt(site.slot);
+        DataType value = component == null ? null : unwrapAll(component.getDataType());
+        if (component == null || component.getOffset() != site.slot ||
+                !(value instanceof FunctionDefinition definition) ||
+                !"__thiscall".equals(definition.getCallingConventionName()) ||
+                definition.hasVarArgs() || definition.getArguments().length != site.arity + 1)
+            return false;
+        DataType returned = definition.getReturnType();
+        if ("/void".equals(site.machineReturn)) return true;
+        if ("/undefined4".equals(site.machineReturn))
+            return returned != null && returned.getLength() == currentProgram.getDefaultPointerSize();
+        return returned != null && returned.getPathName().equals(site.machineReturn);
+    }
+
+    private boolean ownerCarriesBase(List<Map<String, String>> rows, String owner,
+            String base) {
+        for (Map<String, String> row : rows)
+            if (owner.equals(safeText(row.get("owner"))) &&
+                    "1".equals(row.get("primary_vptr_store")) &&
+                    ownerToken(row.get("slot_owners"), base)) return true;
+        return false;
+    }
+
+    private boolean ownerToken(String value, String owner) {
+        return tokens(value).contains(owner);
+    }
+
+    private Set<String> tokens(String value) {
+        Set<String> result = new TreeSet<>();
+        for (String token : safeText(value).split("\\s*\\|\\s*"))
+            if (!token.isBlank()) result.add(token);
+        return result;
+    }
+
+    private boolean sitesPhysicalOwner(ReceiverSite site, String ownerPath,
+            List<PolymorphicBase> bases) {
+        if (site.vtablePaths.size() != 1) return false;
+        String path = site.vtablePaths.iterator().next();
+        return bases.stream().anyMatch(base -> base.ownerPath.equals(ownerPath) &&
+            base.vtablePath.equals(path));
+    }
+
+    private Map<String, Set<String>> directCallerOwners(List<Map<String, String>> rows) {
+        Map<String, Set<String>> result = new TreeMap<>();
+        for (Map<String, String> row : rows) {
+            String target = safeText(row.get("resolved_address"));
+            String owner = qualifiedOwner(row.get("caller"));
+            if (!target.isBlank() && !owner.isBlank())
+                result.computeIfAbsent(target, ignored -> new TreeSet<>()).add(owner);
+        }
+        return result;
+    }
+
+    private String qualifiedOwner(String qualified) {
+        String value = safeText(qualified);
+        int split = value.lastIndexOf("::");
+        if (split <= 0 || value.startsWith("Library::") ||
+                value.contains("SubmarineTitans::Recovered::HiddenThis::")) return "";
+        String owner = value.substring(0, split);
+        int nested = owner.lastIndexOf("::");
+        return nested < 0 ? owner : owner.substring(nested + 2);
+    }
+
+    private Parameter receiverParameterOrigin(Function function, Address call,
+            String receiverRegister) {
+        Origin origin = receiverOrigin(function, call, receiverRegister);
+        return origin == null ? null : origin.parameter;
+    }
+
+    private Function receiverProducerOrigin(Function function, Address call,
+            String receiverRegister) {
+        Origin origin = receiverOrigin(function, call, receiverRegister);
+        return origin == null ? null : origin.producer;
+    }
+
+    private Origin receiverOrigin(Function function, Address call, String receiverRegister) {
+        String wanted = canonicalRegister(receiverRegister);
+        if (wanted.isBlank()) return null;
+        Instruction instruction = currentProgram.getListing().getInstructionBefore(call);
+        for (int count = 0; instruction != null && count < 96; count++) {
+            if (!function.getBody().contains(instruction.getAddress())) return null;
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitInstructionOperands(instruction.toString());
+            if (instruction.getFlowType().isJump() || instruction.getFlowType().isTerminal())
+                return null;
+            if ("CALL".equals(mnemonic)) {
+                if ("EAX".equals(wanted)) {
+                    Function producer = directCalledFunction(instruction);
+                    return producer == null ? null : new Origin(null, producer);
+                }
+                if (Set.of("EAX", "ECX", "EDX").contains(wanted)) return null;
+                instruction = currentProgram.getListing().getInstructionBefore(
+                    instruction.getAddress());
+                continue;
+            }
+            if (operands.length > 0 && definesStandaloneRegister(instruction, wanted)) {
+                if (!"MOV".equals(mnemonic) || operands.length < 2) return null;
+                String source = canonicalRegister(operands[1]);
+                if (!source.isBlank()) wanted = source;
+                else {
+                    Long stack = stackParameterOffset(instruction, operands[1]);
+                    Parameter parameter = stack == null ? null : parameterAt(function, stack);
+                    return parameter == null ? null : new Origin(parameter, null);
+                }
+            }
+            instruction = currentProgram.getListing().getInstructionBefore(
+                instruction.getAddress());
+        }
+        return null;
+    }
+
+    private boolean definesStandaloneRegister(Instruction instruction, String register) {
+        if (instruction.getNumOperands() < 1 ||
+                !register.equals(canonicalRegister(
+                    instruction.getDefaultOperandRepresentation(0)))) return false;
+        for (Object output : instruction.getResultObjects())
+            if (output instanceof Register value && register.equals(canonicalRegister(
+                    value.getName()))) return true;
+        return false;
+    }
+
+    private Long stackParameterOffset(Instruction instruction, String operand) {
+        for (Reference reference : instruction.getReferencesFrom())
+            if (reference instanceof StackReference stack &&
+                    stack.getStackOffset() >= 0) return (long)stack.getStackOffset();
+        Matcher matcher = Pattern.compile(".*\\[EBP\\+(0X[0-9A-F]+|[0-9]+)\\].*")
+            .matcher(operand.toUpperCase(Locale.ROOT).replace(" ", ""));
+        if (!matcher.matches()) return null;
+        return (long)integerValue(matcher.group(1), -1) -
+            currentProgram.getDefaultPointerSize();
+    }
+
+    private Parameter parameterAt(Function function, long stackOffset) {
+        for (Parameter parameter : function.getParameters())
+            if (!parameter.isAutoParameter() && parameter.isStackVariable() &&
+                    parameter.getStackOffset() == stackOffset) return parameter;
+        return null;
+    }
+
+    private Parameter explicitParameter(Function function, int ordinal) {
+        for (Parameter parameter : function.getParameters())
+            if (!parameter.isAutoParameter() && parameter.getOrdinal() == ordinal)
+                return parameter;
+        return null;
+    }
+
+    private Function directCalledFunction(Instruction instruction) {
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(flow);
+            if (function != null) return resolveThunk(function);
+        }
+        return null;
+    }
+
+    private String canonicalRegister(String value) {
+        String register = safeText(value).trim().toUpperCase(Locale.ROOT);
+        return switch (register) {
+            case "AL", "AH", "AX", "EAX" -> "EAX";
+            case "BL", "BH", "BX", "EBX" -> "EBX";
+            case "CL", "CH", "CX", "ECX" -> "ECX";
+            case "DL", "DH", "DX", "EDX" -> "EDX";
+            case "SI", "ESI" -> "ESI";
+            case "DI", "EDI" -> "EDI";
+            case "BP", "EBP" -> "EBP";
+            case "SP", "ESP" -> "ESP";
+            default -> register.matches("E[A-Z]{2}") ? register : "";
+        };
+    }
+
+    private String[] splitInstructionOperands(String instruction) {
+        int space = instruction.indexOf(' ');
+        return space < 0 || space == instruction.length() - 1 ? new String[0] :
+            instruction.substring(space + 1).split("\\s*,\\s*");
+    }
+
+    private int integerValue(String value, int fallback) {
+        String text = safeText(value).trim().toUpperCase(Locale.ROOT);
+        try {
+            return text.startsWith("0X") ? Integer.parseUnsignedInt(text.substring(2), 16) :
+                Integer.parseInt(text);
+        }
+        catch (NumberFormatException ignored) { return fallback; }
+    }
+
+    private DataType unwrapAll(DataType type) {
+        Set<DataType> seen = new HashSet<>();
+        while (type != null && seen.add(type)) {
+            if (type instanceof Pointer pointer) type = pointer.getDataType();
+            else if (type instanceof TypeDef alias) type = alias.getBaseDataType();
+            else break;
+        }
+        return type;
+    }
+
+    private String structurePath(DataType type) {
+        DataType value = unwrapAll(type);
+        return value instanceof Structure structure ? structure.getPathName() : "";
+    }
+
+    private DataType findNamedType(String name) {
+        List<DataType> matches = new ArrayList<>();
+        currentProgram.getDataTypeManager().findDataTypes(name, matches);
+        matches.sort(Comparator.comparing(DataType::getPathName));
+        for (DataType match : matches)
+            if (match.getPathName().equals("/" + name)) return match;
+        return matches.stream().filter(value -> value instanceof Structure &&
+            !value.getPathName().contains("/VTables/")).findFirst().orElse(null);
+    }
+
+    private boolean genericPointer(DataType type) {
+        if (!(type instanceof Pointer pointer)) return false;
+        DataType pointee = unwrapAll(pointer.getDataType());
+        if (pointee == null || Undefined.isUndefined(pointee)) return true;
+        String name = pointee.getName().toLowerCase(Locale.ROOT);
+        return name.equals("void") || name.matches("u?int(?:1|2|4|8)?|dword|word|byte|char|short|long");
+    }
+
+    private boolean genericWordOrPointer(DataType type) {
+        if (genericPointer(type) || Undefined.isUndefined(unwrapAll(type))) return true;
+        String name = type == null ? "" : type.getName().toLowerCase(Locale.ROOT);
+        return name.matches("u?int(?:4)?|dword|long");
+    }
+
+    private boolean protectedSource(SourceType source) {
+        return source == SourceType.USER_DEFINED || source == SourceType.IMPORTED;
     }
 
     /**
@@ -1257,6 +1598,24 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         }
     }
 
+    private void writePolymorphicReceiverCallsites(Path path) throws Exception {
+        polymorphicReceiverCallsites.sort(Comparator
+            .comparing((PolymorphicReceiverCallsite row) -> row.functionAddress)
+            .thenComparing(row -> row.callAddress));
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("function_address\texpected_function\tcall_address\tslot_offset\t" +
+                "parameter_ordinal\texpected_parameter_name\texpected_parameter_storage\t" +
+                "expected_parameter_type\texpected_parameter_source\towner_type\t" +
+                "physical_vtable\n");
+            for (PolymorphicReceiverCallsite row : polymorphicReceiverCallsites)
+                out.write(row.functionAddress + "\t" + clean(row.function) + "\t" +
+                    row.callAddress + "\t" + row.slot + "\t" + row.parameterOrdinal +
+                    "\t" + clean(row.parameterName) + "\t" + clean(row.parameterStorage) +
+                    "\t" + row.parameterType + "\t" + row.parameterSource + "\t" +
+                    row.ownerType + "\t" + row.physicalVtable + "\n");
+        }
+    }
+
     private void writeSummary(Path path, List<GroupRow> groups,
             List<NamedMatchRow> namedMatches, List<AnonAuditRow> anonymousAudit,
             List<ContextualPromotion> contextualPromotions, List<Row> rows)
@@ -1319,6 +1678,15 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
     private record ContextualPromotion(String sourceType, String targetType,
         String owner, String anchorFunction, int length, int concreteFields,
         int functionTargets, String evidence) {}
+    private record PolymorphicBase(String owner, String ownerPath, String vtablePath,
+        Structure table, int slots, int relatedTables) {}
+    private record ReceiverSite(Function function, Address call, int slot, int arity,
+        String machineReturn, Set<String> vtablePaths, String callerOwner) {}
+    private record PolymorphicReceiverCallsite(String functionAddress, String function,
+        String callAddress, int slot, int parameterOrdinal, String parameterName,
+        String parameterStorage, String parameterType, String parameterSource,
+        String ownerType, String physicalVtable) {}
+    private record Origin(Parameter parameter, Function producer) {}
     private record Row(boolean apply, String functionAddress, String function, String targetKind,
         int ordinal, String name, String storage, String expectedType, String source,
         String proposedType, boolean allowManualOverride, String family, String confidence,

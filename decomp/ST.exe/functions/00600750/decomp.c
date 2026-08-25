@@ -46,29 +46,28 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
             local_c = *(STT3DSprC **)(iVar8 + 0x42 + param_1->field_0233);
             iVar5 = iVar8 + param_1->field_0233;
             if (g_visibleClass_00802A88 != nullptr) {
-              sVar1 = *(short *)(iVar5 + 10);
+              sVar1 = STField<short>(iVar5,0xA);
               if (sVar1 < 0) {
-                local_10 = (int)(short)((sVar1 / 200 + (sVar1 >> 0xf)) -
+                local_10 = (short)((sVar1 / 200 + (sVar1 >> 0xf)) -
                                        (short)((longlong)(int)sVar1 * 0x51eb851f >> 0x3f)) - 1;
               }
               else {
                 local_10 = (uint)(short)((sVar1 / 200 + (sVar1 >> 0xf)) -
                                         (short)((longlong)(int)sVar1 * 0x51eb851f >> 0x3f));
               }
-              sVar1 = *(short *)(iVar5 + 8);
+              sVar1 = STField<short>(iVar5,0x8);
               iVar6 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
-              sVar1 = *(short *)(iVar5 + 6);
+              sVar1 = STField<short>(iVar5,0x6);
               iVar5 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
               if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
                   /* ST_CALLSITE[00600A26]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                   (((VisibleClassTy::sub_00558C00
                                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,
                                 iVar6,&local_1c,&local_24), (int)local_10 < 0 ||
-                    ((4 < (int)local_10 || (local_1c < 0)))) ||
-                   ((int)pVVar3->field_0030 <= local_1c)))) ||
-                 ((((iVar5 = local_24 + g_centeredOffsets5[local_10], iVar5 < 0 ||
-                    (pVVar3->field_0034 <= iVar5)) || (pVVar3->field_004C == nullptr)) ||
-                  (pVVar3->field_004C[iVar5 * pVVar3->field_0030 + local_1c] != 0)))) {
+                    ((4 < (int)local_10 || (local_1c < 0)))) || (pVVar3->field_0030 <= local_1c))))
+                 || ((((iVar5 = local_24 + g_centeredOffsets5[local_10], iVar5 < 0 ||
+                       (pVVar3->field_0034 <= iVar5)) || (pVVar3->field_004C == nullptr)) ||
+                     (pVVar3->field_004C[iVar5 * pVVar3->field_0030 + local_1c] != 0)))) {
                 if (*(char *)(iVar8 + 0x41 + param_1->field_0233) == '\0') {
                   thunk_FUN_004ad460(local_c,0);
                   *(undefined1 *)(iVar8 + 0x41 + param_1->field_0233) = 1;
@@ -80,12 +79,12 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
               }
             }
             iVar8 = param_1->field_0233 + iVar8;
-            local_14 = (uint)*(short *)(iVar8 + 6);
+            local_14 = (uint)STField<short>(iVar8,0x6);
             /* ST_CALLSITE[00600B1B]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
             STT3DSprC::sub_004AD3C0
                       (local_c,(float)(int)local_14 * _DAT_007904f8 * _DAT_007904f0,
-                       (float)(int)*(short *)(iVar8 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                       (float)(int)*(short *)(iVar8 + 10) * _DAT_007904f8 * _DAT_007904f0 +
+                       (float)(int)STField<short>(iVar8,0x8) * _DAT_007904f8 * _DAT_007904f0,
+                       (float)(int)STField<short>(iVar8,0xA) * _DAT_007904f8 * _DAT_007904f0 +
                        _DAT_007904fc);
           }
         }
@@ -102,18 +101,18 @@ LAB_00600928:
             iVar8 = iVar8 + param_1->field_0233;
             pSVar2 = *(STT3DSprC **)(iVar8 + 0x42);
             iVar5 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
-            sVar1 = *(short *)(iVar8 + 6);
+            sVar1 = STField<short>(iVar8,0x6);
             iVar8 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
             thunk_FUN_00600110(param_1,iVar8,iVar5,0x460);
             iVar5 = param_1->field_01E9;
             if (iVar5 != 0) {
               if (param_1->field_01F1 == 0) {
                 Library::Ourlib::ST3DSMAP::SprSetLevBefore
-                          (g_sT3DSMAPContext_00807598,pSVar2->field_0018,*(int *)(iVar5 + 0x1ed));
+                          (g_sT3DSMAPContext_00807598,pSVar2->field_0018,STField<int>(iVar5,0x1ED));
               }
               else {
                 Library::Ourlib::ST3DSMAP::SprSetLevAfter
-                          (g_sT3DSMAPContext_00807598,pSVar2->field_0018,*(int *)(iVar5 + 0x1ed));
+                          (g_sT3DSMAPContext_00807598,pSVar2->field_0018,STField<int>(iVar5,0x1ED));
               }
             }
             uVar11 = 0x53;
@@ -126,7 +125,7 @@ LAB_00600928:
         }
         break;
       case 2:
-        if (((*(uint *)(iVar5 + 0x3d) <= g_playSystem_00802A38->field_00E4) &&
+        if (((STField<uint>(iVar5,0x3D) <= g_playSystem_00802A38->field_00E4) &&
             (iVar4 = thunk_FUN_005ff1f0(param_1,local_8,3,param_1->field_022E), -1 < iVar4)) &&
            (iVar5 = thunk_FUN_005fff60(param_1,local_8,iVar4), iVar6 = local_8, iVar5 != 0)) {
           iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::thunk_FUN_005fdb50
@@ -202,11 +201,11 @@ LAB_00600928:
           /* ST_CALLSITE[00600C68]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
           STT3DSprC::ShowCurFase(pSVar2,'\r');
           iVar5 = (int)local_c + param_1->field_0233;
-          local_28 = (uint)*(short *)(iVar5 + 6);
+          local_28 = (uint)STField<short>(iVar5,0x6);
           /* ST_CALLSITE[00600CD0]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
           STT3DSprC::sub_004AD3C0
                     (pSVar2,(float)(int)local_28 * _DAT_007904f8 * _DAT_007904f0,
-                     (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                     (float)(int)STField<short>(iVar5,0x8) * _DAT_007904f8 * _DAT_007904f0,
                      (float)(int)*(short *)((int)local_c + 10 + param_1->field_0233) * _DAT_007904f8
                      * _DAT_007904f0 + _DAT_007904fc);
           pVVar3 = g_visibleClass_00802A88;
@@ -214,16 +213,16 @@ LAB_00600928:
             sVar1 = *(short *)((int)local_c + 10 + param_1->field_0233);
             iVar5 = (int)local_c + param_1->field_0233;
             if (sVar1 < 0) {
-              local_10 = (int)(short)((sVar1 / 200 + (sVar1 >> 0xf)) -
+              local_10 = (short)((sVar1 / 200 + (sVar1 >> 0xf)) -
                                      (short)((longlong)(int)sVar1 * 0x51eb851f >> 0x3f)) - 1;
             }
             else {
               local_10 = (uint)(short)((sVar1 / 200 + (sVar1 >> 0xf)) -
                                       (short)((longlong)(int)sVar1 * 0x51eb851f >> 0x3f));
             }
-            sVar1 = *(short *)(iVar5 + 8);
+            sVar1 = STField<short>(iVar5,0x8);
             iVar8 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
-            sVar1 = *(short *)(iVar5 + 6);
+            sVar1 = STField<short>(iVar5,0x6);
             iVar5 = STBiasedDiv16(sVar1, 0xc9); /* exact signed 16-bit grid-index division */
             if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
                  /* ST_CALLSITE[00600DB5]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
@@ -231,7 +230,7 @@ LAB_00600928:
                             (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar8
                              ,&local_20,&local_2c), (int)local_10 < 0)) ||
                 (((4 < (int)local_10 || (local_20 < 0)) ||
-                 (((int)pVVar3->field_0030 <= local_20 ||
+                 ((pVVar3->field_0030 <= local_20 ||
                   ((iVar5 = g_centeredOffsets5[local_10] + local_2c, iVar5 < 0 ||
                    (pVVar3->field_0034 <= iVar5)))))))) ||
                ((pVVar3->field_004C == nullptr ||

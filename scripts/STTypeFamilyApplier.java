@@ -86,6 +86,14 @@ public class STTypeFamilyApplier extends GhidraScript {
             }
             Variable variable = findTarget(function, row);
             if (variable == null) { conflict(row, target, "target missing"); return; }
+            // An earlier pass in the same fixpoint may already have installed
+            // the requested generated family.  That is success even when the
+            // proposal's anonymous-type baseline is consequently stale.
+            if (typeSpec(variable.getDataType()).equals(row.get("proposed_type"))) {
+                report.add(new Report(row.get("function_address"), target,
+                    "unchanged", "desired type already present"));
+                return;
+            }
             boolean baseline = variable.getName().equals(row.get("expected_name")) &&
                 variable.getVariableStorage().toString().equals(row.get("expected_storage")) &&
                 typeSpec(variable.getDataType()).equals(row.get("expected_type")) &&

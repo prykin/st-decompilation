@@ -87,7 +87,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
     if (iVar5 != 3) {
       return 2;
     }
-    pSVar6 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
+    pSVar6 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
     if (pSVar6 == nullptr) {
       local_EAX_632 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3b9b,0,0,"%s",
@@ -159,7 +159,7 @@ LAB_0047ff46:
   if (iVar5 != 3) {
     return 2;
   }
-  pSVar6 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
+  pSVar6 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
   if (pSVar6 == nullptr) {
     local_EAX_123 =
          ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3b57,0,0,"%s",

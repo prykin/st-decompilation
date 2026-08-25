@@ -211,7 +211,7 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
         do {
           if ((*pbVar8 != 0xff) &&
              (this_01 = st::fn_00401DC5(cVar11), this_01 != nullptr)) {
-            /* ST_CALLSITE[006481BC]: CALL dword ptr [EDX] */
+            /* ST_CALLSITE[006481BC]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiPlrClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
             this_01->GetMessage(message);
           }
           pbVar8 = pbVar8 + 0x51;

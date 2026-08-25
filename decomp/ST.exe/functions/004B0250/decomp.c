@@ -97,7 +97,7 @@ LAB_004b03a2:
               if (((uint)local_c->field_0024 < 8) &&
                  ((g_playSystem_00802A38 == nullptr ||
                   (g_bulkInitializedRecords_008087C7[local_c->field_0024].field_0022 < 8)))) {
-                bVar1 = *(byte *)&local_c->field_0024;
+                bVar1 = (byte)local_c->field_0024;
                 local_28 = (char *)STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar1));
                 if (g_app_00806728->field_146F == '\0') {
                   if (bVar1 == (byte)param_1) {
@@ -200,7 +200,7 @@ LAB_004b057d:
     local_14 = 0;
     if (0 < sVar15) {
       do {
-        local_8 = (short *)(int)(short)uVar10;
+        local_8 = (short *)(short)uVar10;
         iVar16 = 0;
         if (0 < (int)local_8) {
           do {

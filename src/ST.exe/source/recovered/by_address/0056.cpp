@@ -89,7 +89,7 @@ int * st::fn_00561240(int param_1,int param_2,int param_3)
   local_1c = STRoundFixed16(local_40[local_c * 2 + 1]);
   param_1_after_write = local_c;
   iVar4 = local_1c;
-  auto param_3_after_write = local_20; /* compiler stack-slot lifetime split */
+  int param_3_after_write = local_20; /* compiler stack-slot lifetime split */
   do {
     param_1_after_write = param_1_after_write + 1;
     if (3 < param_1_after_write) {
@@ -384,8 +384,7 @@ int st::fn_00562170(int *param_1,int param_2)
 }
 
 // 005623C0 FUN_005623c0
-#line 1 "decomp/ST.exe/functions/005623C0/decomp.c"
-
+#line 4 "decomp/ST.exe/functions/005623C0/decomp.c"
 int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5)
 
 {
@@ -441,14 +440,14 @@ int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5
   if (8 < local_38) {
     local_38 = 0x10 - local_38;
   }
-  local_20 = *(int *)(iVar11 + 0xc) + param_2;
+  local_20 = STField<int>(iVar11,0xC) + param_2;
   iVar19 = 0;
   uVar12 = 0;
   local_8 = 0;
   scalar_param_4 = st::machine_word_boundary_cast<int>(PTR_00803380 + local_20 * DAT_008033a4 * 2); /* split integer lifetime from pointer-typed SSA storage */
   local_18 = 0;
   local_14 = 0;
-  if (0 < *(int *)(iVar11 + 0x10)) {
+  if (0 < STField<int>(iVar11,0x10)) {
     local_10 = (int *)(iVar11 + 0x14);
     do {
       if ((-1 < local_20) && (local_20 < DAT_008033a8)) {
@@ -481,7 +480,7 @@ int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5
       local_20 = local_20 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = (int *)((int)param_4 + DAT_008033a4 * 2);
-    } while (iVar19 < *(int *)(iVar11 + 0x10));
+    } while (iVar19 < STField<int>(iVar11,0x10));
   }
   local_EAX_437 = st::fn_004043A9(DAT_00803304,DAT_00803308,local_18,local_14);
   iVar11 = (DAT_00803384 + 2) * DAT_00803320;
@@ -616,7 +615,7 @@ int st::fn_005623C0(int param_1,int param_2,int param_3,int *param_4,int param_5
         iVar10 = iVar10 + 1;
         if (iVar10 < DAT_00803398) {
           piVar18 = (int *)&local_24_mg1[iVar10].field_0x8;
-          auto param_3_after_write = iVar10; /* compiler stack-slot lifetime split */
+          int param_3_after_write = iVar10; /* compiler stack-slot lifetime split */
           param_4 = piVar18;
           do {
             uVar12 = st::machine_word_boundary_cast<uint>(piVar18[-2] - param_1);
@@ -854,8 +853,7 @@ void st::fn_00564DD0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,u
 }
 
 // 00564F30 FUN_00564f30
-#line 1 "decomp/ST.exe/functions/00564F30/decomp.c"
-
+#line 4 "decomp/ST.exe/functions/00564F30/decomp.c"
 int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5,int param_6)
 
 {
@@ -908,14 +906,14 @@ int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5
   if (8 < local_38) {
     local_38 = 0x10 - local_38;
   }
-  local_8 = *(int *)(iVar9 + 0xc) + param_2;
+  local_8 = STField<int>(iVar9,0xC) + param_2;
   uVar11 = 0;
   local_2c = 0;
   local_18 = 0;
   scalar_param_4 = st::machine_word_boundary_cast<int>(PTR_00803380 + local_8 * DAT_008033a4 * 2); /* split integer lifetime from pointer-typed SSA storage */
   iVar16 = 0;
   local_14 = 0;
-  if (0 < *(int *)(iVar9 + 0x10)) {
+  if (0 < STField<int>(iVar9,0x10)) {
     local_20 = (int *)(iVar9 + 0x14);
     do {
       if ((-1 < local_8) && (local_8 < DAT_008033a8)) {
@@ -941,7 +939,7 @@ int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5
       local_8 = local_8 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = (int *)((int)param_4 + DAT_008033a4 * 2);
-    } while (iVar16 < *(int *)(iVar9 + 0x10));
+    } while (iVar16 < STField<int>(iVar9,0x10));
   }
   local_EAX_378 = st::fn_004043A9(DAT_00803304,DAT_00803308,param_1,param_2);
   iVar9 = (DAT_00803384 + 2) * DAT_00803320;
@@ -1084,7 +1082,7 @@ int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5
         iVar8 = iVar8 + 1;
         if (iVar8 < DAT_00803398) {
           piVar15 = (int *)&local_1c_mg1[iVar8].field_0x8;
-          auto param_3_after_write = iVar8; /* compiler stack-slot lifetime split */
+          int param_3_after_write = iVar8; /* compiler stack-slot lifetime split */
           param_4 = piVar15;
           do {
             uVar11 = st::machine_word_boundary_cast<uint>(piVar15[-2] - param_1);
@@ -1507,7 +1505,7 @@ void __fastcall st::fn_00567330(int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    *(undefined4 *)(local_8 + 0xf8b) = 0;
+    STField<undefined4>(local_8,0xF8B) = 0;
   }
   return;
 }
@@ -2540,7 +2538,7 @@ st::fn_0056A2A0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *
           iVar3 = STField<int>(local_8,0xe07);
           uVar1 = param_1->field_0000;
           if (iVar3 < 0) {
-            if ((*(uint *)(*(int *)(uVar1 + 4) + 8) & 0x100000) == 0) {
+            if ((*(uint *)(STField<int>(uVar1,0x4) + 8) & 0x100000) == 0) {
               iVar3 = st::fn_006C1390(puVar4,0,0x48,DAT_0080730a,0,0,1);
               STField<int>(pvVar2,0xe07) = iVar3;
             }
@@ -2549,7 +2547,7 @@ st::fn_0056A2A0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *
               STField<int>(pvVar2,0xe07) = iVar3;
             }
           }
-          else if ((*(uint *)(*(int *)(uVar1 + 4) + 8) & 0x100000) == 0) {
+          else if ((*(uint *)(STField<int>(uVar1,0x4) + 8) & 0x100000) == 0) {
             st::fn_006C1390(puVar4,0,0x48,DAT_0080730a,0,iVar3,iVar3);
           }
           else {

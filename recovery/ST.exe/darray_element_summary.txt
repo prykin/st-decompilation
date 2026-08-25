@@ -1,5 +1,5 @@
 program=ST.exe
-functions_seen=633
+functions_seen=638
 creation_sites=73
 containers=60
 apply=32

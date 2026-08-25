@@ -90,11 +90,11 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
   char local_22c [64];
   int local_1ec;
   undefined4 local_1e8;
-  undefined4 local_1e4;
+  int local_1e4;
   char local_190 [64];
   undefined4 local_150;
   undefined4 local_14c;
-  undefined4 local_148;
+  int local_148;
   InternalExceptionFrame local_f4;
   undefined4 local_b0 [8];
   undefined4 local_90 [4];
@@ -802,10 +802,9 @@ LAB_005d24b8:
                         uVar32 = 0;
                         if (cVar2 == '\x04') {
                           iVar24 = local_c->field_0050;
-                          if ((uint)(byte)local_c->field_0x5 < *(uint *)(iVar24 + 0xc)) {
-                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                            pcVar29 = (char *)(*(int *)(iVar24 + 8) * (uint)(byte)local_c->field_0x5
-                                              + *(int *)(iVar24 + 0x1c));
+                          if ((uint)(byte)local_c->field_0x5 < STField<uint>(iVar24,0xC)) {
+                            pcVar29 = (char *)(STField<int>(iVar24,0x8) * (uint)(byte)local_c->field_0x5
+                                              + STField<int>(iVar24,0x1C));
                           }
                           else {
                             pcVar29 = nullptr;

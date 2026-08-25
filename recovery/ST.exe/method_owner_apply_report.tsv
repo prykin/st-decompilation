@@ -34,6 +34,7 @@ address	status	proposed_name	detail
 0041D900	disabled	TLOEmbryoTy::sub_0041D900	all apply flags are 0
 0041DC40	disabled		all apply flags are 0
 0041DD00	disabled		all apply flags are 0
+0041F330	disabled	TLOBaseTy::sub_0041F330	all apply flags are 0
 0041F630	disabled	TLOEmbryoTy::sub_0041F630	all apply flags are 0
 0041F970	disabled	STSprGameObjC::sub_0041F970	all apply flags are 0
 004232A0	disabled	STGroupBoatC::sub_004232A0	all apply flags are 0
@@ -854,10 +855,10 @@ address	status	proposed_name	detail
 006E3210	disabled	ST3DSMAPContext::sub_006E3210	all apply flags are 0
 006E3310	disabled	ST3DSMAPContext::sub_006E3310	all apply flags are 0
 006E3DB0	disabled		all apply flags are 0
-006E4290	disabled	STAppC::sub_006E4290	all apply flags are 0
+006E4290	disabled	AppClassTy::sub_006E4290	all apply flags are 0
 006E4B80	disabled		all apply flags are 0
 006E4D20	disabled	AppClassTy::sub_006E4D20	all apply flags are 0
-006E5150	disabled	STAppC::sub_006E5150	all apply flags are 0
+006E5150	disabled		all apply flags are 0
 006E51B0	disabled	STAppC::sub_006E51B0	all apply flags are 0
 006E52D0	disabled		all apply flags are 0
 006E5360	disabled	StartSystemTy::sub_006E5360	all apply flags are 0
@@ -915,5 +916,5 @@ address	status	proposed_name	detail
 0072B700	disabled		all apply flags are 0
 0074857E	disabled		all apply flags are 0
 00749D5F	disabled	CBaseRenderer::sub_00749D5F	all apply flags are 0
-0074C38F	unchanged	RecoveredClass_0074CDC5::sub_0074C38F	owner=unchanged; this_type=unchanged
-0074C658	unchanged	RecoveredClass_0074CFC0::sub_0074C658	owner=unchanged; this_type=unchanged
+0074C38F	disabled	RecoveredClass_0074CDC5::sub_0074C38F	all apply flags are 0
+0074C658	disabled	RecoveredClass_0074CFC0::sub_0074C658	all apply flags are 0

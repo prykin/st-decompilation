@@ -48,15 +48,15 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
       piVar9 = (int *)&param_1->field_0x24;
       STField<undefined4>(this,0x1e1) = param_1->field_0020;
       STField<undefined1>(this,0x1f9) = param_1->field_0038;
-      auto param_1_after_write = (AnonShape_0062FA80_0B91B2B9 *)0x5; /* compiler stack-slot lifetime split */
+      uint param_1_after_write = 0x5; /* compiler stack-slot lifetime split */
       do {
         /* ST_CALLSITE[0062FB9D]: CALL 0x004017f3; direct=004017F3 STRubbishC::RubbishCreatePart */
         if ((*piVar9 != 0) && (iVar7 = STRubbishC::RubbishCreatePart(this), -1 < iVar7)) {
           local_c = local_c + 1;
         }
         piVar9 = piVar9 + 1;
-        param_1_after_write = (AnonShape_0062FA80_0B91B2B9 *)&param_1_after_write[-1].field_0x3b;
-      } while (param_1_after_write != nullptr);
+        param_1_after_write = param_1_after_write - 1;
+      } while (param_1_after_write != 0);
       STField<undefined4>(this,0x1fa) = *(undefined4 *)&pAVar6->field_0x39;
       if (local_c == 0) {
         return 0;
@@ -64,7 +64,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
       local_8 = 0x3d;
       puVar10 = (undefined4 *)&pAVar6[1].field_0x1;
       piVar9 = (int *)((int)this + 0x1e5);
-      param_1_after_write = (AnonShape_0062FA80_0B91B2B9 *)0x5;
+      param_1_after_write = 0x5;
       do {
         puVar12 = (byte *)*piVar9;
         if (puVar12 != nullptr) {
@@ -76,8 +76,8 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
           *(undefined4 *)(*piVar9 + 0x10) = uVar4;
         }
         piVar9 = piVar9 + 1;
-        param_1_after_write = (AnonShape_0062FA80_0B91B2B9 *)&param_1_after_write[-1].field_0x3b;
-      } while (param_1_after_write != nullptr);
+        param_1_after_write = param_1_after_write - 1;
+      } while (param_1_after_write != 0);
       return local_8;
     }
   }

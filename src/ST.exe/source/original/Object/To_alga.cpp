@@ -281,13 +281,13 @@ LAB_00576308:
             st::fn_006E98E0
                       (g_sT3DSMAPContext_00807598,local_c,0,piVar22[1],piVar22[2],1);
             st::fn_006E9EF0
-                      (g_sT3DSMAPContext_00807598,local_c,0,1,(int)(short)puVar12[9],0,30000);
+                      (g_sT3DSMAPContext_00807598,local_c,0,1,(short)puVar12[9],0,30000);
             st::fn_006EA270(g_sT3DSMAPContext_00807598,local_c,0,local_34);
             if (piVar22[4] != 0) {
               st::fn_006E98E0
                         (g_sT3DSMAPContext_00807598,local_c,1,piVar22[3],piVar22[4],1);
               st::fn_006E9EF0
-                        (g_sT3DSMAPContext_00807598,local_c,1,1,(int)(short)puVar12[9],0,30000);
+                        (g_sT3DSMAPContext_00807598,local_c,1,1,(short)puVar12[9],0,30000);
               st::fn_006EA270
                         (g_sT3DSMAPContext_00807598,local_c,1,(int)local_34 % piVar22[3]);
               st::fn_006EA680
@@ -484,9 +484,9 @@ LAB_00576308:
         pAVar5->field_0002 = (short)lVar30;
         lVar30 = st::fn_0072E288();
         pAVar5->field_0004 = (short)lVar30;
-        pAVar5->field_008A = *(undefined4 *)(iVar14 + 0x14);
+        pAVar5->field_008A = STField<undefined4>(iVar14,0x14);
         uVar15 = 0xffffffff;
-        pcVar21 = *(char **)((int)pSVar18->field_0038 + *(int *)(iVar14 + 4) * 8);
+        pcVar21 = *(char **)((int)pSVar18->field_0038 + STField<int>(iVar14,0x4) * 8);
         do {
           pcVar23 = pcVar21;
           if (uVar15 == 0) break;
@@ -503,7 +503,7 @@ LAB_00576308:
         local_8 = (AnonShape_00575CB0_0408A0C4 *)&local_10->field_0x46;
         pAVar5 = local_10 + 1;
         uVar15 = 0xffffffff;
-        pcVar21 = *(char **)((int)pSVar18->field_0038 + *(int *)(local_38 + 4) * 8 + 4);
+        pcVar21 = *(char **)((int)pSVar18->field_0038 + STField<int>(local_38,0x4) * 8 + 4);
         do {
           pcVar23 = pcVar21;
           if (uVar15 == 0) break;
@@ -517,8 +517,7 @@ LAB_00576308:
         pcVar23 = (char *)local_8;
         memmove(pcVar23, pcVar21, uVar15); /* compiler REP MOVS byte copy */
         local_14 = (DArrayTy *)&local_14[1].count;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        local_10->field_0086 = *(undefined4 *)(local_38 + 0x28);
+        local_10->field_0086 = STField<undefined4>(local_38,0x28);
         *(undefined4 *)&local_10->field_0x8e = 0;
         local_18 = local_18 + 1;
         local_10 = (AnonShape_00575CB0_065D0A66 *)&pAVar5->field_0002;

@@ -1,10 +1,6 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Unable to use type for symbol pbVar9 */
-/* WARNING: Unable to use type for symbol temp_3fbe8e62c1 */
-/* WARNING: Unable to use type for symbol pbVar4 */
-
 int FUN_006736f0(void)
 
 {

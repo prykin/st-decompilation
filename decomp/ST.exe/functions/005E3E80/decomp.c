@@ -70,7 +70,7 @@ MTaskTy::CreateTextSSpr
     local_8->field_0029 = (undefined2)local_18;
     local_8->field_002B = (short)iVar2;
     pAVar5 = (AnonShape_006B4B20_3D4F4412 *)
-             ccFntTy::CreateSurf(param_6,0,0,0,0,(int)(short)local_8->field_0029,
+             ccFntTy::CreateSurf(param_6,0,0,0,0,(short)local_8->field_0029,
                                  (int)local_8->field_002B,1);
     ccFntTy::SetSurf(param_6,(int)pAVar5,0,0,0,0,0);
     ccFntTy::WrTxt(param_6,(char *)param_1,local_10,uVar3,param_7,-1,-1);

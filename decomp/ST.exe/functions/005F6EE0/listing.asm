@@ -1,4 +1,4 @@
-FUN_005f6ee0:
+STColl3C::sub_005F6EE0:
 005F6EE0  8B 81 69 02 00 00         MOV EAX,dword ptr [ECX + 0x269]
 005F6EE6  8D 04 80                  LEA EAX,[EAX + EAX*0x4]
 005F6EE9  8D 0C 80                  LEA ECX,[EAX + EAX*0x4]

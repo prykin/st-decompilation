@@ -188,7 +188,7 @@ cf_common_join_004DB690:
     }
   }
 LAB_004db257:
-  auto param_5_after_write = (int *)0x1; /* compiler stack-slot lifetime split */
+  uint param_5_after_write = 0x1; /* compiler stack-slot lifetime split */
   sVar2 = g_worldGrid.sizeZ;
   do {
     local_8 = 0;
@@ -355,7 +355,7 @@ LAB_004db638:
         sVar2 = g_worldGrid.sizeZ;
       } while (local_8 < g_worldGrid.sizeZ + -1);
     }
-    param_5_after_write = (int *)((int)param_5_after_write + 1);
+    param_5_after_write = ((int)param_5_after_write + 1);
     if (7 < (int)param_5_after_write) {
       return;
     }

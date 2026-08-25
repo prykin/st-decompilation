@@ -60,13 +60,13 @@ undefined4 __fastcall FUN_004b9d90(AnonShape_004B9D90_4F3151F9 *param_1)
       if (iVar1 == 0) {
         return 0;
       }
-      if (*(int *)(iVar1 + 0x20) != 1000) {
+      if (STField<int>(iVar1,0x20) != 1000) {
         return 0;
       }
-      if (*(int *)(iVar1 + 0x4d8) != 0xffff) {
+      if (STField<int>(iVar1,0x4D8) != 0xffff) {
         return 0;
       }
-      if (g_worldGrid.sizeZ + -1 <= *(int *)(iVar1 + 0x5b8)) {
+      if (g_worldGrid.sizeZ + -1 <= STField<int>(iVar1,0x5B8)) {
         return 0;
       }
     }

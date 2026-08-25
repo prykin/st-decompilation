@@ -41,7 +41,8 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
   int iVar13;
   uint uVar16;
   HINSTANCE pHVar17;
-  InternalExceptionFrame local_74;
+  InternalExceptionFrame *pIVar18;
+  int local_70 [16];
   undefined4 local_30;
   int local_2c;
   LONG local_28;
@@ -58,9 +59,9 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
   local_14 = this;
   local_10 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0248,4);
   if (g_allPlayers_007FA174 != nullptr) {
-    local_74.previous = g_currentExceptionFrame;
-    g_currentExceptionFrame = &local_74;
-    iVar6_mg0 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
+    pIVar18 = g_currentExceptionFrame;
+    g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff8c;
+    iVar6_mg0 = Library::MSVCRT::__setjmp3(local_70,0);
     this_00 = local_14;
     if (iVar6_mg0 == 0) {
       if (param_3 == '\0') {
@@ -87,9 +88,8 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
           local_14->field_0030 = (undefined2)iVar11;
           local_14->field_0032 = STPiece<2,2>(iVar11);
           if (g_cursorClass_00802A30 != nullptr) {
-            /* ST_CALLSITE[0051CA77]: CALL dword ptr [EDX] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)g_cursorClass_00802A30->field_0000)(&local_14->field_0x18);
+            /* ST_CALLSITE[0051CA77]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+            g_cursorClass_00802A30->GetMessage((STMessage *)&local_14->field_0x18);
           }
         }
       }
@@ -255,41 +255,41 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
       Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_30);
       local_8 = local_8 + (pBVar4->bmiHeader).biHeight;
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-      uVar16 = 3;
+      pIVar18 = (InternalExceptionFrame *)0x3;
       iVar13 = -1;
       iVar11 = -3;
       pcVar7_mgA = LoadResourceString(0x5662,g_hINSTANCE_00807618);
-      ccFntTy::WrStr(this_00->field_01E0,pcVar7_mgA,iVar11,iVar13,uVar16);
+      ccFntTy::WrStr(this_00->field_01E0,pcVar7_mgA,iVar11,iVar13,(uint)pIVar18);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-      uVar16 = (DAT_0080874e != '\x03') - 1 & 5;
+      pIVar18 = (InternalExceptionFrame *)((DAT_0080874e != '\x03') - 1 & 5);
       iVar13 = -1;
       iVar11 = 1;
       pcVar7_mgB = LoadResourceString((-(uint)(param_1 != 0xfd) & 0xffffffcd) + 0x5663,
                                       g_hINSTANCE_00807618);
-      ccFntTy::WrStr(this_00->field_01E0,pcVar7_mgB,iVar11,iVar13,uVar16);
+      ccFntTy::WrStr(this_00->field_01E0,pcVar7_mgB,iVar11,iVar13,(uint)pIVar18);
       local_8 = local_8 + 0xf;
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-      uVar16 = 3;
+      pIVar18 = (InternalExceptionFrame *)0x3;
       iVar13 = -1;
       iVar11 = -3;
       pcVar7_mgC = LoadResourceString(0x5625,g_hINSTANCE_00807618);
-      ccFntTy::WrStr(this_00->field_01E0,pcVar7_mgC,iVar11,iVar13,uVar16);
+      ccFntTy::WrStr(this_00->field_01E0,pcVar7_mgC,iVar11,iVar13,(uint)pIVar18);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-      uVar16 = (DAT_0080874e != '\x03') - 1 & 5;
+      pIVar18 = (InternalExceptionFrame *)((DAT_0080874e != '\x03') - 1 & 5);
       iVar13 = -1;
       iVar11 = 1;
       pcVar7_mgD = LoadResourceString(0x5d5a,g_hINSTANCE_00807618);
-      ccFntTy::WrStr(this_00->field_01E0,pcVar7_mgD,iVar11,iVar13,uVar16);
+      ccFntTy::WrStr(this_00->field_01E0,pcVar7_mgD,iVar11,iVar13,(uint)pIVar18);
       local_8 = local_8 + 0xf;
       UVar6 = thunk_FUN_00523410(param_1,bVar12,2);
       /* ST_CALLSITE[0051D0E7]: CALL 0x00402dab; direct=00402DAB HelpPanelTy::DrawDescription */
       DrawDescription(this_00,(int *)&local_8,UVar6);
       /* ST_CALLSITE[0051D0F6]: CALL 0x0040506f; direct=0040506F HelpPanelTy::AddLinks */
       AddLinks(this_00,(int *)&local_8,'\v',param_1,param_2);
-      g_currentExceptionFrame = local_74.previous;
+      g_currentExceptionFrame = (InternalExceptionFrame *)param_2;
       return;
     }
-    g_currentExceptionFrame = local_74.previous;
+    g_currentExceptionFrame = pIVar18;
     iVar11_mg9 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x929,0,iVar6_mg0,
                                     "%s","HelpPanelTy::SpecProc");
     if (iVar11_mg9 != 0) {

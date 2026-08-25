@@ -85,12 +85,12 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
         if (STField<int>(this,0x2c7) == 0) {
           Library::Ourlib::ST3DSMAP::SprSetLevBefore
                     (STField<void *>(this,0x211),STField<uint>(this,0x1ed),
-                     *(int *)(iVar8 + 0x1ed));
+                     STField<int>(iVar8,0x1ED));
         }
         else {
           Library::Ourlib::ST3DSMAP::SprSetLevAfter
                     (STField<void *>(this,0x211),STField<uint>(this,0x1ed),
-                     *(int *)(iVar8 + 0x1ed));
+                     STField<int>(iVar8,0x1ED));
         }
       }
       uVar12 = 0x53;
@@ -125,7 +125,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     }
     else {
       param_1 = (STMessage *)
-                (int)(short)(((short)(iVar8 / 200) + sVar3) -
+                (short)(((short)(iVar8 / 200) + sVar3) -
                             (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
     }
     iVar8 = STField<int>(this,0x27e);
@@ -138,7 +138,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar8,
                      &local_c,&local_10), -1 < (int)param_1)) &&
         ((((int)param_1 < 5 && (-1 < local_c)) &&
-         ((local_c < (int)pVVar4->field_0030 &&
+         ((local_c < pVVar4->field_0030 &&
           ((local_10 = local_10 + g_centeredOffsets5[(int)param_1], -1 < local_10 &&
            (local_10 < pVVar4->field_0034)))))))) && (pVVar4->field_004C != nullptr)) {
       bVar1 = pVVar4->field_004C[local_c + local_10 * pVVar4->field_0030];
@@ -216,7 +216,7 @@ joined_r0x00639236:
     }
     else {
       param_1 = (STMessage *)
-                (int)(short)(((short)(iVar8 / 200) + sVar3) -
+                (short)(((short)(iVar8 / 200) + sVar3) -
                             (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
     }
     iVar8 = STField<int>(this,0x27e);
@@ -229,7 +229,7 @@ joined_r0x00639236:
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar8,
                       &local_10,&local_c), -1 < (int)param_1)) &&
          (((int)param_1 < 5 && (-1 < local_10)))) &&
-        ((local_10 < (int)pVVar4->field_0030 &&
+        ((local_10 < pVVar4->field_0030 &&
          ((local_c = local_c + g_centeredOffsets5[(int)param_1], -1 < local_c &&
           (local_c < pVVar4->field_0034)))))) && (pVVar4->field_004C != nullptr)) {
       bVar1 = pVVar4->field_004C[local_10 + local_c * pVVar4->field_0030];

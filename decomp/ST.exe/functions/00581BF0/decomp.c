@@ -63,7 +63,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
         return 0;
       }
       while ((iVar7 = *(int *)((int)pSVar4->field_0207 + iVar9 * 4), iVar7 == 0 ||
-             (*(dword *)(iVar7 + 8) != (message->arg0).u32))) {
+             (STField<dword>(iVar7,0x8) != (message->arg0).u32))) {
         if ((iVar9 < 0) &&
            (local_EAX_1154 =
                  ReportDebugMessage("E:\\__titans\\Igor\\to_jell_m.cpp",0x128,0,0,
@@ -80,7 +80,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
       *(undefined4 *)((int)pSVar4->field_0207 + iVar9 * 4) = 0;
       iVar9 = pSVar4->field_020F + -1;
       pSVar4->field_020F = iVar9;
-      if ((*(byte *)&pSVar4->field_01D5 & 1) == 0) {
+      if (((byte)pSVar4->field_01D5 & 1) == 0) {
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -190,7 +190,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
   dVar2 = (message->arg0).u32;
   pSVar4->field_0207 = nullptr;
   pSVar4->field_020B = nullptr;
-  uVar10 = *(uint *)(dVar2 + 0xc);
+  uVar10 = STField<uint>(dVar2,0xC);
   if (uVar10 < 2) {
     pSVar4->field_01D5 = 0;
     pSVar4->field_020F = 0;

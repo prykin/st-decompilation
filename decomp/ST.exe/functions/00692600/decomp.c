@@ -28,9 +28,9 @@ void __fastcall FUN_00692600(int *param_1)
         do {
           iVar4 = *piVar2;
           if (iVar4 != 0) {
-            if (*(int *)(iVar4 + 0x25) == 0) {
+            if (STField<int>(iVar4,0x25) == 0) {
               iVar3 = 0;
-              if (0 < *(short *)(iVar4 + 0x23)) {
+              if (0 < STField<short>(iVar4,0x23)) {
                 do {
                   if (*(int *)(*piVar2 + 0x2d + iVar3 * 4) != 0) {
                     FreeAndNull((void *)(*piVar2 + iVar3 * 4 + 0x2d));
@@ -58,9 +58,9 @@ void __fastcall FUN_00692600(int *param_1)
       do {
         iVar4 = *piVar2;
         if (iVar4 != 0) {
-          if (*(int *)(iVar4 + 0x25) == 0) {
+          if (STField<int>(iVar4,0x25) == 0) {
             iVar3 = 0;
-            if (0 < *(short *)(iVar4 + 0x23)) {
+            if (0 < STField<short>(iVar4,0x23)) {
               do {
                 if (*(int *)(*piVar2 + 0x2d + iVar3 * 4) != 0) {
                   FreeAndNull((void *)(*piVar2 + iVar3 * 4 + 0x2d));

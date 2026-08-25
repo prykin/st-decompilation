@@ -42,7 +42,7 @@ void __thiscall AiFltClassTy::sub_00660F70(AiFltClassTy *this,uint *param_1,unde
 
   if (((this->field_0284 != nullptr) && (this->field_020B != nullptr)) &&
      (g_allPlayers_007FA174 != nullptr)) {
-    local_20 = thunk_FUN_004357f0(*(char *)&this->field_0024);
+    local_20 = thunk_FUN_004357f0((char)this->field_0024);
     sVar11 = this->field_007B;
     local_c = 0;
     if ((-(uint)(sVar11 != 1) & 2) != 0xffffffff) {
@@ -120,7 +120,7 @@ switchD_0066104e_caseD_9:
             /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
             if ((sVar11 < 0) ||
                ((((short)param_1[4] < 0 || (STField<short>(param_1,0x12) < 0)) ||
-                (iVar9 = thunk_FUN_004ae0b0(sVar11,(int)(short)param_1[4],
+                (iVar9 = thunk_FUN_004ae0b0(sVar11,(short)param_1[4],
                                             (int)STField<short>(param_1,0x12),*local_8,
                                             this->field_0024,nullptr,nullptr,nullptr
                                             ,0,nullptr), uVar12 = extraout_EDX, iVar9 == 0)))) {
@@ -131,7 +131,7 @@ switchD_0066104e_caseD_9:
                 if (((array->count != 0) && (g_allPlayers_007FA174 != nullptr)) &&
                    /* ST_CALLSITE[00661208]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                    (pSVar10 = STAllPlayersC::GetObjPtr
-                                        (g_allPlayers_007FA174,*(char *)&this->field_0024,
+                                        (g_allPlayers_007FA174,(char)this->field_0024,
                                          *(ushort *)array->data,CASE_1),
                    pSVar10 != nullptr)) {
                   local_10 = pSVar10;
@@ -140,11 +140,11 @@ switchD_0066104e_caseD_9:
               }
               local_14 = (int)STField<short>(param_1,0xe);
               puVar2 = this->field_0284;
-              local_18 = (int)(short)param_1[4];
+              local_18 = (short)param_1[4];
               local_1c = (int)STField<short>(param_1,0x12);
               iVar9 = thunk_FUN_004b0d10(this->field_0024,*local_8,&local_14,&local_18,&local_1c,
-                                         (int)(short)puVar2[0x41],(int)(short)puVar2[0x42],
-                                         (int)(short)puVar2[0x43],(int)local_10);
+                                         (short)puVar2[0x41],(short)puVar2[0x42],
+                                         (short)puVar2[0x43],(int)local_10);
               if (iVar9 == 0) {
                 return;
               }

@@ -24,24 +24,23 @@ undefined4 __fastcall FUN_0060d070(AnonShape_0060D070_1487100A *param_1)
                 *(int *)(iVar5 + 0x38 + iVar1);
         if (iVar6 < *(int *)(iVar5 + 4 + iVar1)) {
           if (((param_1->field_022F == '\0') && (local_8 == 0)) &&
-             (uVar3 = iVar6 - *(int *)(iVar1 + 4) / 2, uVar4 = (int)uVar3 >> 0x1f,
-             (int)((uVar3 ^ uVar4) - uVar4) < *(int *)(iVar1 + 0x38))) {
+             (uVar3 = iVar6 - STField<int>(iVar1,0x4) / 2, uVar4 = (int)uVar3 >> 0x1f,
+             (int)((uVar3 ^ uVar4) - uVar4) < STField<int>(iVar1,0x38))) {
             thunk_FUN_0060aef0(param_1);
             param_1->field_022F = 1;
           }
           local_c = local_c + 1;
           iVar1 = iVar5 + param_1->field_0244;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar5 = *(int *)(iVar5 + 0x34 + param_1->field_0244) + *(int *)(iVar1 + 0x30);
+          iVar5 = *(int *)(iVar5 + 0x34 + param_1->field_0244) + STField<int>(iVar1,0x30);
           if (0x168 < iVar5) {
             iVar5 = iVar5 + -0x168;
           }
-          iVar2 = *(int *)(iVar1 + 4);
+          iVar2 = STField<int>(iVar1,0x4);
           thunk_FUN_0062cac0(*(AnonShape_0062CAC0_4BF74422 **)(iVar1 + 0x40),
-                             (*(int *)(iVar1 + 0x24) * iVar6) / iVar2 + *(int *)(iVar1 + 0x18),
-                             (*(int *)(iVar1 + 0x28) * iVar6) / iVar2 + *(int *)(iVar1 + 0x1c),
-                             (*(int *)(iVar1 + 0x2c) * iVar6) / iVar2 + *(int *)(iVar1 + 0x20),iVar5
-                             ,*(int *)(iVar1 + 8),iVar6,local_24);
+                             (STField<int>(iVar1,0x24) * iVar6) / iVar2 + STField<int>(iVar1,0x18),
+                             (STField<int>(iVar1,0x28) * iVar6) / iVar2 + STField<int>(iVar1,0x1C),
+                             (STField<int>(iVar1,0x2C) * iVar6) / iVar2 + STField<int>(iVar1,0x20),iVar5
+                             ,STField<int>(iVar1,0x8),iVar6,local_24);
         }
         else {
           thunk_FUN_0060d220((int)param_1);

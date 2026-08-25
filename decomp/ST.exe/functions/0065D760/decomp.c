@@ -89,7 +89,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
     }
     /* ST_CALLSITE[0065D868]: CALL 0x0040178f; direct=0040178F STAllPlayersC::AddObjsToGroup */
     STAllPlayersC::AddObjsToGroup
-              (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,pAVar3->field_007D,array,
+              (g_allPlayers_007FA174,(char)pAVar3->field_0024,pAVar3->field_007D,array,
                nullptr);
     DArrayDestroy(array);
     g_currentExceptionFrame = local_4c.previous;

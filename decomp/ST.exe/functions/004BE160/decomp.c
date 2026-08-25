@@ -9,7 +9,7 @@
    Evidence: slot_family_has_no_named_method; unique_owner_for_target;
    receiver_only_leaf_virtual_signature */
 
-dword __thiscall TLOBaseTy::FUN_004be160(TLOBaseTy *this)
+dword __thiscall TLOBaseTy::sub_004BE160(TLOBaseTy *this)
 
 {
   return this->field_05DB;

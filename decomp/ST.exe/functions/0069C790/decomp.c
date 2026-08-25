@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0069C8B0 -> 0069C790 @ 0069C9FA */
@@ -28,13 +30,13 @@ int FUN_0069c790(uint *param_1,int param_2,uint param_3,uint param_4)
   }
   iVar3 = 0;
   if ((local_8 != 0) && (iVar5 != 0)) {
-    iVar3 = *(int *)(iVar5 + 0xc);
+    iVar3 = STField<int>(iVar5,0xC);
     uVar4 = 0;
-    uVar2 = *(uint *)(iVar3 + 0xc);
+    uVar2 = STField<uint>(iVar3,0xC);
     if (0 < (int)uVar2) {
       do {
         if (uVar4 < uVar2) {
-          piVar1 = (int *)(*(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c));
+          piVar1 = (int *)(STField<int>(iVar3,0x8) * uVar4 + STField<int>(iVar3,0x1C));
         }
         else {
           piVar1 = nullptr;
@@ -45,9 +47,9 @@ int FUN_0069c790(uint *param_1,int param_2,uint param_3,uint param_4)
           *(uint *)(param_2 + 10 + iVar3 * 0xe) = param_3;
           local_c = local_c + 1;
         }
-        iVar3 = *(int *)(iVar5 + 0xc);
+        iVar3 = STField<int>(iVar5,0xC);
         uVar4 = uVar4 + 1;
-        uVar2 = *(uint *)(iVar3 + 0xc);
+        uVar2 = STField<uint>(iVar3,0xC);
       } while ((int)uVar4 < (int)uVar2);
     }
     DArrayDestroy(*(DArrayTy **)(iVar5 + 0xc));

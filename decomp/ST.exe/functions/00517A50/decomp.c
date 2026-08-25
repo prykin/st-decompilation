@@ -122,9 +122,8 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
           local_20->field_0030 = (undefined2)iVar15;
           local_20->field_0032 = STPiece<2,2>(iVar15);
           if (g_cursorClass_00802A30 != nullptr) {
-            /* ST_CALLSITE[00517B91]: CALL dword ptr [EDX] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            (**(code **)g_cursorClass_00802A30->field_0000)(&local_20->field_0x18);
+            /* ST_CALLSITE[00517B91]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+            g_cursorClass_00802A30->GetMessage((STMessage *)&local_20->field_0x18);
           }
         }
       }

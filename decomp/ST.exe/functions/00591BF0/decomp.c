@@ -216,7 +216,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*STField<int *>(this_00,0xC) + 8))(5,this_00->field_0066,0,local_80,0);
       iVar14 = this_00->field_00BB[0xc].field_01DC;
-      if (*(int *)(iVar14 + 0x2e6) != 0) {
+      if (STField<int>(iVar14,0x2E6) != 0) {
         memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
         local_1c = 1;
         local_1e = 1;

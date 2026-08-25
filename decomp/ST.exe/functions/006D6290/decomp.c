@@ -20,20 +20,20 @@ int FUN_006d6290(AnonShape_006D6290_6C97E0B2 *param_1,int *param_2)
     return 0;
   }
   if (local_c->field_0310 != 0) {
-    if ((*(uint *)(*(int *)(iVar2 + 0x28) + 8) & 0x4000000) != 0) {
-      EnterCriticalSection((LPCRITICAL_SECTION)(*(int *)(iVar2 + 0x28) + 0x4f0));
+    if ((*(uint *)(STField<int>(iVar2,0x28) + 8) & 0x4000000) != 0) {
+      EnterCriticalSection((LPCRITICAL_SECTION)(STField<int>(iVar2,0x28) + 0x4f0));
     }
-    iVar3 = *(int *)(iVar2 + 0x28);
+    iVar3 = STField<int>(iVar2,0x28);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (*(code **)(iVar3 + 0x4e4) != nullptr) {
       /* ST_CALLSITE[006D6318]: CALL ECX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(iVar3 + 0x4e4))
                 /* ST_CALLSITE[006D6318]: CALL ECX */
-                (*(undefined4 *)(iVar3 + 0x4ec),*(int *)(iVar3 + 0x10) + *(int *)(iVar2 + 0x18),
+                (STField<undefined4>(iVar3,0x4EC),STField<int>(iVar3,0x10) + STField<int>(iVar2,0x18),
                  /* ST_CALLSITE[006D6318]: CALL ECX */
-                 *(int *)(iVar3 + 0x14) + *(int *)(iVar2 + 0x1c),*(undefined4 *)(iVar2 + 0x20),
-                 *(undefined4 *)(iVar2 + 0x24));
+                 STField<int>(iVar3,0x14) + STField<int>(iVar2,0x1C),STField<undefined4>(iVar2,0x20),
+                 STField<undefined4>(iVar2,0x24));
     }
   }
   local_8 = &param_1->field_000C;
@@ -45,8 +45,8 @@ LAB_006d6394:
       iVar3 = *local_8;
       *param_2 = iVar3;
       if (local_c->field_0310 != 0) {
-        *param_2 = *(int *)(iVar2 + 0x1c) * local_10 +
-                   iVar3 + *(int *)(*(int *)(iVar2 + 0x28) + 0x28) * *(int *)(iVar2 + 0x18);
+        *param_2 = STField<int>(iVar2,0x1C) * local_10 +
+                   iVar3 + *(int *)(STField<int>(iVar2,0x28) + 0x28) * STField<int>(iVar2,0x18);
       }
       pAVar1->field_006C = 1;
       pAVar1->field_0068 = 0;
@@ -62,9 +62,9 @@ LAB_006d6394:
     param_1_after_write = (AnonShape_006D6290_6C97E0B2 *)&param_1_after_write->field_0x1;
     if (1 < (int)param_1_after_write) {
 LAB_006d6363:
-      if ((local_c->field_0310 != 0) && ((*(uint *)(*(int *)(iVar2 + 0x28) + 8) & 0x4000000) != 0))
+      if ((local_c->field_0310 != 0) && ((*(uint *)(STField<int>(iVar2,0x28) + 8) & 0x4000000) != 0))
       {
-        LeaveCriticalSection((LPCRITICAL_SECTION)(*(int *)(iVar2 + 0x28) + 0x4f0));
+        LeaveCriticalSection((LPCRITICAL_SECTION)(STField<int>(iVar2,0x28) + 0x4f0));
       }
       return iVar3;
     }

@@ -31,8 +31,7 @@ uint __thiscall AiTactClassTy::sub_0068E480(AiTactClassTy *this,short param_1)
         element_00a5 = nullptr;
       }
       iVar3 = element_00a5->field_0004;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (((iVar3 != 0) && (*(short *)(iVar3 + 0x7b) == param_1)) && (-1 < *(short *)(iVar3 + 0x7f))
+      if (((iVar3 != 0) && (STField<short>(iVar3,0x7B) == param_1)) && (-1 < STField<short>(iVar3,0x7F))
          ) {
         uVar4 = uVar6;
       }

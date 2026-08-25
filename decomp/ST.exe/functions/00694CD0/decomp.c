@@ -27,9 +27,8 @@ void __thiscall CGenerate::sub_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50F
   if (0 < iVar2) {
     do {
       iVar3 = param_1->field_0018;
-      if (local_8 < *(uint *)(iVar3 + 0xc)) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        puVar7 = (uint *)(*(int *)(iVar3 + 8) * local_8 + *(int *)(iVar3 + 0x1c));
+      if (local_8 < STField<uint>(iVar3,0xC)) {
+        puVar7 = (uint *)(STField<int>(iVar3,0x8) * local_8 + STField<int>(iVar3,0x1C));
       }
       else {
         puVar7 = nullptr;
@@ -48,9 +47,8 @@ void __thiscall CGenerate::sub_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50F
   if (0 < iVar2) {
     do {
       iVar5 = param_1->field_001C;
-      if (local_8 < *(uint *)(iVar5 + 0xc)) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        psVar8 = (short *)(*(int *)(iVar5 + 8) * local_8 + *(int *)(iVar5 + 0x1c));
+      if (local_8 < STField<uint>(iVar5,0xC)) {
+        psVar8 = (short *)(STField<int>(iVar5,0x8) * local_8 + STField<int>(iVar5,0x1C));
       }
       else {
         psVar8 = nullptr;

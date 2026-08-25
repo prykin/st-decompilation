@@ -7,7 +7,11 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
+
+   [STSwitchEnumApplier] Switch target field_0C29 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0C29State. Cases:
+   CASE_0=0;CASE_21=33;CASE_28=40;CASE_FF=255 */
 
 void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
 
@@ -17,7 +21,7 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
   BITMAPINFO *pBVar3;
   char *pcVar4;
   int iVar7;
-  byte bVar5;
+  CPanelTy_field_0C29State CVar5;
   int iVar6;
   int iVar8;
   InternalExceptionFrame local_50;
@@ -40,23 +44,23 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
       wsprintfA((LPSTR)&DAT_0080f33a,"%d\n%s",(uint)(ushort)pCVar2->field_0C2F,pcVar4);
       ccFntTy::WrTxt(pCVar2->field_01B8,(char *)&DAT_0080f33a,-2,-1,5,-1,-1);
     }
-    if (pCVar2->field_0C29 != 0xff) {
-      if (0x21 < pCVar2->field_0C29) {
-        pCVar2->field_0C29 = 0x21;
+    if (pCVar2->field_0C29 != CASE_FF) {
+      if (CASE_21 < pCVar2->field_0C29) {
+        pCVar2->field_0C29 = CASE_21;
       }
-      bVar5 = 0;
+      CVar5 = CASE_0;
       local_8 = local_8 & 0xffffff00;
-      if (pCVar2->field_0C29 != 0) {
+      if (pCVar2->field_0C29 != CASE_0) {
         do {
           pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
           /* ST_CALLSITE[00505F0F]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,(local_8 & 0xff) * 4 + 0x35,
                  0x7d,'\x01',(byte *)pBVar3);
-          bVar5 = bVar5 + 1;
-          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
-        } while (bVar5 < pCVar2->field_0C29);
+          CVar5 = CVar5 + 1;
+          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(CVar5));
+        } while (CVar5 < pCVar2->field_0C29);
       }
-      if (bVar5 < 0x21) {
+      if (CVar5 < CASE_21) {
         iVar6 = 0x21 - (local_8 & 0xff);
         iVar8 = (local_8 & 0xff) * 4 + 0x35;
         do {

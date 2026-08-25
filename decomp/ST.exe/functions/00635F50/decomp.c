@@ -15,10 +15,10 @@ void __fastcall FUN_00635f50(int *param_1)
     if (0 < iVar1) {
       do {
         iVar2 = *param_1;
-        if (((uVar3 < *(uint *)(iVar2 + 0xc)) &&
-            (iVar2 = *(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c), iVar2 != 0)) &&
+        if (((uVar3 < STField<uint>(iVar2,0xC)) &&
+            (iVar2 = STField<int>(iVar2,0x8) * uVar3 + STField<int>(iVar2,0x1C), iVar2 != 0)) &&
            (((char *)iVar2)[0xc] != '\0')) {
-          Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,*(uint *)(iVar2 + 4));
+          Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,STField<uint>(iVar2,0x4));
           ((undefined1 *)iVar2)[0xc] = 0;
         }
         uVar3 = uVar3 + 1;

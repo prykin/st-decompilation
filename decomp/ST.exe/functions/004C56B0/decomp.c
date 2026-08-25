@@ -67,7 +67,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
       sVar7 = STBiasedDiv16(iVar4, 200); /* exact signed 16-bit grid-index division */
       iVar4 = (int)*(short *)(&DAT_007932d6 + iVar6) + (int)sVar8;
       sVar8 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
-      iVar6 = (int)*(short *)(&DAT_007932d4 + iVar6) + (int)(short)local_8;
+      iVar6 = (int)*(short *)(&DAT_007932d4 + iVar6) + (short)local_8;
       sVar9 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
       if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar8 < 0)) ||
           ((g_worldGrid.sizeY <= sVar8 || (sVar7 < 0)))) ||

@@ -386,7 +386,7 @@ switchD_0057d76c_default:
     }
     uVar2 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
     this->field_001C = uVar2;
-    local_18 = (int)this->field_004B - (int)(short)((ulonglong)(uVar2 >> 0x10) % 5);
+    local_18 = (int)this->field_004B - (short)((ulonglong)(uVar2 >> 0x10) % 5);
     if (local_18 < 0) {
       local_18 = -local_18;
     }

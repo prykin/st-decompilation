@@ -281,7 +281,7 @@ LAB_0040b481:
     pSVar5->field_009F[1] = pSVar5->field_0049;
     pSVar5->field_009F[2] = pSVar5->field_004B;
     pSVar5->field_009F[3] = (short)local_3c;
-    pSVar5->field_009F[0x24] = *(short *)&pSVar5->field_00BB;
+    pSVar5->field_009F[0x24] = (short)pSVar5->field_00BB;
     pSVar5->field_009F[0x25] = (short)pSVar5->field_00BF;
     pSVar5->field_009F[0x26] = (short)pSVar5->field_00C3;
     pSVar5->field_009F[0x27] = 0;

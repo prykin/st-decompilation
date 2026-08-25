@@ -41,8 +41,8 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
               if (0 < iVar12) {
                 do {
                   iVar12 = param_1[0xb];
-                  if ((uVar9 < *(uint *)(iVar12 + 0xc)) &&
-                     (iVar12 = *(int *)(iVar12 + 8) * uVar9 + *(int *)(iVar12 + 0x1c), iVar12 != 0))
+                  if ((uVar9 < STField<uint>(iVar12,0xC)) &&
+                     (iVar12 = STField<int>(iVar12,0x8) * uVar9 + STField<int>(iVar12,0x1C), iVar12 != 0))
                   {
                     if (iVar2 < 300) {
                       uVar3 = Library::MSVCRT::FUN_0072e6c0();
@@ -53,41 +53,39 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                         uVar5 = (uVar5 - 1 | 0xfffffffe) + 1;
                       }
                       iVar6 = (-(uint)(uVar5 != 0) & 2) - 1;
-                      *(int *)(iVar12 + 0xe) =
-                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                           (*(int *)(iVar12 + 0x26) * param_1[7]) / 10000 +
-                           (int)(*(int *)(iVar12 + 0x2a) * iVar6 * uVar3) / 10000 + param_1[3];
-                      *(int *)(iVar12 + 0x12) =
-                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                           ((*(int *)(iVar12 + 0x2a) * param_1[7]) / 10000 -
-                           (int)(*(int *)(iVar12 + 0x26) * iVar6 * uVar3) / 10000) + param_1[4];
+                      STField<int>(iVar12,0xE) =
+                           (STField<int>(iVar12,0x26) * param_1[7]) / 10000 +
+                           (int)(STField<int>(iVar12,0x2A) * iVar6 * uVar3) / 10000 + param_1[3];
+                      STField<int>(iVar12,0x12) =
+                           ((STField<int>(iVar12,0x2A) * param_1[7]) / 10000 -
+                           (int)(STField<int>(iVar12,0x26) * iVar6 * uVar3) / 10000) + param_1[4];
                       iVar6 = param_1[5];
-                      *(undefined4 *)(iVar12 + 0x1a) = 4;
-                      *(int *)(iVar12 + 0x16) = iVar6;
+                      STField<undefined4>(iVar12,0x1A) = 4;
+                      STField<int>(iVar12,0x16) = iVar6;
                       uVar3 = uVar11 / 6 + 4;
-                      *(uint *)(iVar12 + 0x1e) = uVar3;
+                      STField<uint>(iVar12,0x1E) = uVar3;
                       if (10 < uVar3) {
-                        *(undefined4 *)(iVar12 + 0x1e) = 10;
+                        STField<undefined4>(iVar12,0x1E) = 10;
                       }
-                      iVar6 = *(int *)(iVar12 + 0xe);
-                      *(int *)(iVar12 + 0x22) = param_1[2] + 4;
+                      iVar6 = STField<int>(iVar12,0xE);
+                      STField<int>(iVar12,0x22) = param_1[2] + 4;
                       local_10 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-                      iVar6 = *(int *)(iVar12 + 0x12);
+                      iVar6 = STField<int>(iVar12,0x12);
                       sVar7 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-                      iVar6 = *(int *)(iVar12 + 0x16);
+                      iVar6 = STField<int>(iVar12,0x16);
                       sVar8 = STBiasedDiv16(iVar6, 200); /* exact signed 16-bit grid-index division */
                       iVar5 = thunk_FUN_004961b0(local_10,sVar7,sVar8);
                       if (iVar5 == 0) {
-                        *(undefined4 *)(iVar12 + 8) = 0;
+                        STField<undefined4>(iVar12,0x8) = 0;
                       }
                       else {
-                        *(undefined4 *)(iVar12 + 8) = 1;
+                        STField<undefined4>(iVar12,0x8) = 1;
                       }
-                      ((undefined1 *)iVar12)[0xc] = 1;
+                      STField<undefined1>(iVar12,0xC) = 1;
                       bVar1 = true;
                     }
                     else {
-                      *(undefined4 *)(iVar12 + 8) = 0;
+                      STField<undefined4>(iVar12,0x8) = 0;
                     }
                   }
                   local_8 = local_8 + 1;
@@ -98,18 +96,18 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
             else if (0 < iVar12) {
               do {
                 iVar12 = param_1[0xb];
-                if (((uVar9 < *(uint *)(iVar12 + 0xc)) &&
-                    (iVar12 = *(int *)(iVar12 + 8) * uVar9 + *(int *)(iVar12 + 0x1c), iVar12 != 0))
-                   && (*(int *)(iVar12 + 8) == 1)) {
-                  ((undefined1 *)iVar12)[0xc] = 0;
-                  iVar6 = *(int *)(iVar12 + 0x1e) + 1;
-                  *(int *)(iVar12 + 0x1e) = iVar6;
-                  if (iVar6 < *(int *)(iVar12 + 0x22)) {
-                    *(undefined4 *)(iVar12 + 8) = 1;
+                if (((uVar9 < STField<uint>(iVar12,0xC)) &&
+                    (iVar12 = STField<int>(iVar12,0x8) * uVar9 + STField<int>(iVar12,0x1C), iVar12 != 0))
+                   && (STField<int>(iVar12,0x8) == 1)) {
+                  STField<undefined1>(iVar12,0xC) = 0;
+                  iVar6 = STField<int>(iVar12,0x1E) + 1;
+                  STField<int>(iVar12,0x1E) = iVar6;
+                  if (iVar6 < STField<int>(iVar12,0x22)) {
+                    STField<undefined4>(iVar12,0x8) = 1;
                     bVar1 = true;
                   }
                   else {
-                    *(undefined4 *)(iVar12 + 8) = 0;
+                    STField<undefined4>(iVar12,0x8) = 0;
                   }
                 }
                 local_8 = local_8 + 1;
@@ -145,8 +143,8 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
           if (0 < iVar12) {
             do {
               iVar12 = param_1[0xb];
-              if ((uVar9 < *(uint *)(iVar12 + 0xc)) &&
-                 (iVar12 = *(int *)(iVar12 + 8) * uVar9 + *(int *)(iVar12 + 0x1c), iVar12 != 0)) {
+              if ((uVar9 < STField<uint>(iVar12,0xC)) &&
+                 (iVar12 = STField<int>(iVar12,0x8) * uVar9 + STField<int>(iVar12,0x1C), iVar12 != 0)) {
                 if (iVar2 < 500) {
                   uVar3 = Library::MSVCRT::FUN_0072e6c0();
                   uVar3 = uVar3 % ((uVar11 * 3 >> 1) + 0x1f);
@@ -156,48 +154,46 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                     uVar5 = (uVar5 - 1 | 0xfffffffe) + 1;
                   }
                   iVar6 = (-(uint)(uVar5 != 0) & 2) - 1;
-                  *(int *)(iVar12 + 0xe) =
-                       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                       (*(int *)(iVar12 + 0x26) * param_1[7]) / 10000 +
-                       (int)(*(int *)(iVar12 + 0x2a) * iVar6 * uVar3) / 10000 + param_1[3];
-                  *(int *)(iVar12 + 0x12) =
-                       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                       ((*(int *)(iVar12 + 0x2a) * param_1[7]) / 10000 -
-                       (int)(*(int *)(iVar12 + 0x26) * iVar6 * uVar3) / 10000) + param_1[4];
-                  *(int *)(iVar12 + 0x16) = param_1[5];
-                  *(undefined4 *)(iVar12 + 0x1a) = 4;
+                  STField<int>(iVar12,0xE) =
+                       (STField<int>(iVar12,0x26) * param_1[7]) / 10000 +
+                       (int)(STField<int>(iVar12,0x2A) * iVar6 * uVar3) / 10000 + param_1[3];
+                  STField<int>(iVar12,0x12) =
+                       ((STField<int>(iVar12,0x2A) * param_1[7]) / 10000 -
+                       (int)(STField<int>(iVar12,0x26) * iVar6 * uVar3) / 10000) + param_1[4];
+                  STField<int>(iVar12,0x16) = param_1[5];
+                  STField<undefined4>(iVar12,0x1A) = 4;
                   if (param_1[1] == 0) {
                     uVar3 = uVar11 / 6 + 4;
-                    *(uint *)(iVar12 + 0x1e) = uVar3;
+                    STField<uint>(iVar12,0x1E) = uVar3;
                     if (10 < uVar3) {
-                      *(undefined4 *)(iVar12 + 0x1e) = 10;
+                      STField<undefined4>(iVar12,0x1E) = 10;
                     }
-                    *(int *)(iVar12 + 0x22) = param_1[2] + *(int *)(iVar12 + 0x1e);
+                    STField<int>(iVar12,0x22) = param_1[2] + STField<int>(iVar12,0x1E);
                   }
                   else {
                     iVar6 = uVar11 / 3 + 4;
-                    *(int *)(iVar12 + 0x1e) = iVar6;
-                    *(int *)(iVar12 + 0x22) = iVar6 + param_1[2];
+                    STField<int>(iVar12,0x1E) = iVar6;
+                    STField<int>(iVar12,0x22) = iVar6 + param_1[2];
                   }
-                  iVar6 = *(int *)(iVar12 + 0xe);
-                  *(int *)(iVar12 + 0x22) = param_1[2] + 4;
+                  iVar6 = STField<int>(iVar12,0xE);
+                  STField<int>(iVar12,0x22) = param_1[2] + 4;
                   local_10 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-                  iVar6 = *(int *)(iVar12 + 0x12);
+                  iVar6 = STField<int>(iVar12,0x12);
                   sVar7 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
-                  iVar6 = *(int *)(iVar12 + 0x16);
+                  iVar6 = STField<int>(iVar12,0x16);
                   sVar8 = STBiasedDiv16(iVar6, 200); /* exact signed 16-bit grid-index division */
                   local_EAX_1400 = thunk_FUN_004961b0(local_10,sVar7,sVar8);
                   if (local_EAX_1400 == 0) {
-                    *(undefined4 *)(iVar12 + 8) = 0;
+                    STField<undefined4>(iVar12,0x8) = 0;
                   }
                   else {
-                    *(undefined4 *)(iVar12 + 8) = 1;
+                    STField<undefined4>(iVar12,0x8) = 1;
                   }
-                  ((undefined1 *)iVar12)[0xc] = 1;
+                  STField<undefined1>(iVar12,0xC) = 1;
                   bVar1 = true;
                 }
                 else {
-                  *(undefined4 *)(iVar12 + 8) = 0;
+                  STField<undefined4>(iVar12,0x8) = 0;
                 }
               }
               local_8 = local_8 + 1;
@@ -210,18 +206,18 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
           if (0 < iVar12) {
             do {
               iVar12 = param_1[0xb];
-              if (((uVar9 < *(uint *)(iVar12 + 0xc)) &&
-                  (iVar12 = *(int *)(iVar12 + 8) * uVar9 + *(int *)(iVar12 + 0x1c), iVar12 != 0)) &&
-                 (*(int *)(iVar12 + 8) == 1)) {
-                ((undefined1 *)iVar12)[0xc] = 0;
-                iVar10 = *(int *)(iVar12 + 0x1e) + 1;
-                *(int *)(iVar12 + 0x1e) = iVar10;
-                if (iVar10 < *(int *)(iVar12 + 0x22)) {
-                  *(undefined4 *)(iVar12 + 8) = 1;
+              if (((uVar9 < STField<uint>(iVar12,0xC)) &&
+                  (iVar12 = STField<int>(iVar12,0x8) * uVar9 + STField<int>(iVar12,0x1C), iVar12 != 0)) &&
+                 (STField<int>(iVar12,0x8) == 1)) {
+                STField<undefined1>(iVar12,0xC) = 0;
+                iVar10 = STField<int>(iVar12,0x1E) + 1;
+                STField<int>(iVar12,0x1E) = iVar10;
+                if (iVar10 < STField<int>(iVar12,0x22)) {
+                  STField<undefined4>(iVar12,0x8) = 1;
                   bVar1 = true;
                 }
                 else {
-                  *(undefined4 *)(iVar12 + 8) = 0;
+                  STField<undefined4>(iVar12,0x8) = 0;
                 }
               }
               iVar6 = iVar6 + 1;

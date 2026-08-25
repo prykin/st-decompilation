@@ -131,9 +131,9 @@ LAB_006a6ed7:
         uVar10 = local_c & 1;
         pbVar19 = pbVar18;
         if ((uVar10 == 0) &&
-           ((*(short *)(local_10 + 2) == 0 || (iVar22 + 3 < (int)*(short *)(local_10 + 2))))) {
+           ((STField<short>(local_10,0x2) == 0 || (iVar22 + 3 < (int)STField<short>(local_10,0x2))))) {
           pbVar19 = pbVar18 + 4;
-          *(short *)(local_10 + 2) = sVar21 + 3;
+          STField<short>(local_10,0x2) = sVar21 + 3;
           pbVar18[1] = bVar1;
           *pbVar18 = bVar2 + 1;
           pbVar18[2] = bVar3;
@@ -205,9 +205,9 @@ LAB_006a6ed7:
           }
           pbVar19 = pbVar18;
           if ((uVar10 == 0) &&
-             ((*(short *)(local_8 + 2) == 0 || (iVar22 + 4 < (int)*(short *)(local_8 + 2))))) {
+             ((STField<short>(local_8,0x2) == 0 || (iVar22 + 4 < (int)STField<short>(local_8,0x2))))) {
             pbVar19 = pbVar18 + 4;
-            *(short *)(local_8 + 2) = sVar21 + 4;
+            STField<short>(local_8,0x2) = sVar21 + 4;
             *pbVar18 = bVar2 + 1;
             pbVar18[1] = bVar1;
             pbVar18[2] = bVar3 + 1;
@@ -252,9 +252,9 @@ LAB_006a6ed7:
           }
           pbVar19 = pbVar18;
           if ((uVar10 == 0) &&
-             ((*(short *)(local_8 + 2) == 0 || (iVar22 + 4 < (int)*(short *)(local_8 + 2))))) {
+             ((STField<short>(local_8,0x2) == 0 || (iVar22 + 4 < (int)STField<short>(local_8,0x2))))) {
             pbVar19 = pbVar18 + 4;
-            *(short *)(local_8 + 2) = sVar21 + 4;
+            STField<short>(local_8,0x2) = sVar21 + 4;
             *pbVar18 = bVar2 + 1;
             pbVar18[1] = bVar1;
             pbVar18[2] = bVar3 - 1;
@@ -303,10 +303,10 @@ LAB_006a6ed7:
         pbVar19 = pbVar18;
         if (uVar10 == 0) {
           iVar17 = local_10 + param_2 * -2;
-          sVar4 = *(short *)(iVar17 + 2);
+          sVar4 = STField<short>(iVar17,0x2);
           if ((sVar4 == 0) || (iVar22 + 4 < (int)sVar4)) {
             pbVar19 = pbVar18 + 4;
-            *(short *)(iVar17 + 2) = sVar21 + 4;
+            STField<short>(iVar17,0x2) = sVar21 + 4;
             *pbVar18 = bVar2 + 1;
             pbVar18[2] = bVar3;
             pbVar18[1] = bVar1 - 1;
@@ -357,9 +357,9 @@ LAB_006a6ed7:
           pbVar20 = pbVar18;
           if (uVar10 == 0) {
             iVar17 = local_8 + param_2 * -2;
-            sVar4 = *(short *)(iVar17 + 2);
+            sVar4 = STField<short>(iVar17,0x2);
             if ((sVar4 == 0) || (iVar22 < sVar4)) {
-              *(short *)(iVar17 + 2) = sVar21;
+              STField<short>(iVar17,0x2) = sVar21;
               pbVar20 = pbVar18 + 4;
               *pbVar18 = bVar2 + 1;
               pbVar18[1] = bVar1 - 1;
@@ -405,9 +405,9 @@ LAB_006a6ed7:
           pbVar20 = pbVar18;
           if (uVar10 == 0) {
             iVar17 = local_8 + param_2 * -2;
-            sVar4 = *(short *)(iVar17 + 2);
+            sVar4 = STField<short>(iVar17,0x2);
             if ((sVar4 == 0) || (iVar22 < sVar4)) {
-              *(short *)(iVar17 + 2) = sVar21;
+              STField<short>(iVar17,0x2) = sVar21;
               pbVar20 = pbVar18 + 4;
               *pbVar18 = bVar2 + 1;
               pbVar18[1] = bVar1 - 1;

@@ -42,7 +42,7 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
 
   local_10 = this;
   /* ST_CALLSITE[004C978C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-  local_EAX_28 = st::fn_004049B7(*(char *)&this->field_023D);
+  local_EAX_28 = st::fn_004049B7((char)this->field_023D);
   local_EAX_28 = (int)(byte)local_EAX_28;
   local_8 = local_EAX_28 + -1;
   local_54.previous = g_currentExceptionFrame;
@@ -337,7 +337,7 @@ LAB_004c9eda:
   }
   else {
     /* ST_CALLSITE[004C9F44]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-    bVar2 = st::fn_004049B7(*(char *)&this_00->field_023D);
+    bVar2 = st::fn_004049B7((char)this_00->field_023D);
     iVar5 = this_00->field_002C;
     if (bVar2 == 3) {
       if (iVar5 == 0) {
@@ -411,7 +411,7 @@ LAB_004ca02a:
 LAB_004ca0a2:
   /* ST_CALLSITE[004CA0DC]: CALL 0x00402455; direct=00402455 sub_00415B30 */
   st::fn_00402455(this_00,(short)this_00->field_05B0 * 0xc9 + 100,
-               *(short *)&this_00->field_05B4 * 0xc9 + 100,(short)this_00->field_05B8 * 200 + 100,0,
+               (short)this_00->field_05B4 * 0xc9 + 100,(short)this_00->field_05B8 * 200 + 100,0,
                0,0,1);
   g_currentExceptionFrame = local_54.previous;
   return 0;
@@ -690,7 +690,7 @@ int __thiscall st::fn_004CABB0(TLOBaseTy *this,int param_1)
       local_c = st::fn_004022AC((STT3DSprC *)puVar1,'\x0e');
       /* ST_CALLSITE[004CAD80]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar7 = st::fn_004022AC((STT3DSprC *)puVar1,'\r');
-      if ((iVar6 < (local_c - iVar7) + -1) || ((this_00->field_01F1 & 0x2000) != 0))
+      if ((iVar6 < (local_c - iVar7) + -1) || ((this_00->field_01F1 & 0x2000U) != 0))
       goto LAB_004cadb1;
     }
     /* ST_CALLSITE[004CADA2]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */

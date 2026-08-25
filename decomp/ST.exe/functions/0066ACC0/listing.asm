@@ -5352,7 +5352,8 @@ LAB_0066e42a:
 0066E457  50                        PUSH EAX
 0066E458  51                        PUSH ECX
 0066E459  8B CB                     MOV ECX,EBX
-0066E45B  FF 52 20                  CALL dword ptr [EDX + 0x20]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::override::prt_66e45b_eefce329:
+0066E45B  FF 52 20                  CALL dword ptr [EDX + 0x20]  ; [STIndirectCallsiteApplier] exact slot 0x20; mode=dispatch; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4;/undefined4
 0066E45E  0F BF 45 AC               MOVSX EAX,word ptr [EBP + -0x54]
 0066E462  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 0066E465  8B 13                     MOV EDX,dword ptr [EBX]
@@ -5619,7 +5620,8 @@ LAB_0066e6fc:
 0066E729  50                        PUSH EAX
 0066E72A  51                        PUSH ECX
 0066E72B  8B CB                     MOV ECX,EBX
-0066E72D  FF 52 20                  CALL dword ptr [EDX + 0x20]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::override::prt_66e72d_eefce329:
+0066E72D  FF 52 20                  CALL dword ptr [EDX + 0x20]  ; [STIndirectCallsiteApplier] exact slot 0x20; mode=dispatch; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4;/undefined4
 0066E730  0F BF 45 B0               MOVSX EAX,word ptr [EBP + -0x50]
 0066E734  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 0066E737  8B 13                     MOV EDX,dword ptr [EBX]
@@ -5815,7 +5817,8 @@ LAB_0066e908:
 0066E935  50                        PUSH EAX
 0066E936  51                        PUSH ECX
 0066E937  8B CB                     MOV ECX,EBX
-0066E939  FF 52 20                  CALL dword ptr [EDX + 0x20]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::override::prt_66e939_eefce329:
+0066E939  FF 52 20                  CALL dword ptr [EDX + 0x20]  ; [STIndirectCallsiteApplier] exact slot 0x20; mode=dispatch; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4;/undefined4
 0066E93C  0F BF 45 DE               MOVSX EAX,word ptr [EBP + -0x22]
 0066E940  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 0066E943  8B 13                     MOV EDX,dword ptr [EBX]
@@ -5984,7 +5987,8 @@ LAB_0066eac1:
 0066EAEE  50                        PUSH EAX
 0066EAEF  51                        PUSH ECX
 0066EAF0  8B CB                     MOV ECX,EBX
-0066EAF2  FF 52 20                  CALL dword ptr [EDX + 0x20]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::override::prt_66eaf2_eefce329:
+0066EAF2  FF 52 20                  CALL dword ptr [EDX + 0x20]  ; [STIndirectCallsiteApplier] exact slot 0x20; mode=dispatch; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4;/undefined4
 0066EAF5  0F BF 45 EA               MOVSX EAX,word ptr [EBP + -0x16]
 0066EAF9  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 0066EAFC  8B 13                     MOV EDX,dword ptr [EBX]
@@ -6225,7 +6229,8 @@ LAB_0066ed42:
 0066ED6F  50                        PUSH EAX
 0066ED70  51                        PUSH ECX
 0066ED71  8B CB                     MOV ECX,EBX
-0066ED73  FF 52 20                  CALL dword ptr [EDX + 0x20]
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0::override::prt_66ed73_eefce329:
+0066ED73  FF 52 20                  CALL dword ptr [EDX + 0x20]  ; [STIndirectCallsiteApplier] exact slot 0x20; mode=dispatch; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4;/undefined4
 0066ED76  0F BF 45 F6               MOVSX EAX,word ptr [EBP + -0xa]
 0066ED7A  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 0066ED7D  8B 13                     MOV EDX,dword ptr [EBX]

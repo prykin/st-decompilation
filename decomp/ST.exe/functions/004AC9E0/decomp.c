@@ -40,18 +40,18 @@ cf_continue_loop_004ACA23:
       iVar6 = local_28 * 0x24;
       iVar4 = STField<int>(this,0x20) + iVar6;
       if ((((byte *)iVar4)[0xe] & 1) == 0) {
-        uVar7 = param_1 - *(int *)(iVar4 + 0x1c);
-        *(int *)(iVar4 + 0x1c) = param_1;
+        uVar7 = param_1 - STField<int>(iVar4,0x1C);
+        STField<int>(iVar4,0x1C) = param_1;
         bVar2 = false;
         iVar4 = STField<int>(this,0x20) + iVar6;
-        piVar5 = (int *)(*(int *)(iVar4 + 4) + *(int *)(iVar4 + 0x18) * 4);
+        piVar5 = (int *)(STField<int>(iVar4,0x4) + STField<int>(iVar4,0x18) * 4);
         iVar8 = *piVar5;
-        iVar1 = *(int *)(iVar4 + 0x20);
+        iVar1 = STField<int>(iVar4,0x20);
         if (uVar7 < (uint)(iVar8 + iVar1)) {
           if (iVar8 < (int)uVar7) {
-            *(uint *)(iVar4 + 0x20) = (iVar1 - uVar7) + iVar8;
+            STField<uint>(iVar4,0x20) = (iVar1 - uVar7) + iVar8;
             iVar6 = iVar6 + STField<int>(this,0x20);
-            *(undefined4 *)(*(int *)(iVar6 + 4) + *(int *)(iVar6 + 0x18) * 4) = 0;
+            *(undefined4 *)(STField<int>(iVar6,0x4) + STField<int>(iVar6,0x18) * 4) = 0;
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
           }
@@ -63,14 +63,14 @@ cf_continue_loop_004ACA23:
           goto cf_continue_loop_004ACA23;
         }
         if (iVar1 != 0) {
-          *(undefined4 *)(iVar4 + 0x20) = 0;
+          STField<undefined4>(iVar4,0x20) = 0;
           ST3DSMAPContext::sub_006E9CB0
                     (STField<ST3DSMAPContext *>(this,0x3c),STField<uint *>(this,0x18),local_28);
         }
         piVar5 = (int *)(STField<int>(this,0x20) + iVar6);
         *(undefined4 *)(piVar5[1] + piVar5[6] * 4) = *(undefined4 *)(piVar5[6] * 4 + 0x31 + *piVar5);
         iVar4 = STField<int>(this,0x20) + iVar6;
-        if (*(int *)(iVar4 + 0x18) == *(int *)(iVar4 + 0x14)) {
+        if (STField<int>(iVar4,0x18) == STField<int>(iVar4,0x14)) {
           if (((char *)iVar4)[0xd] == '\x02') {
             /* ST_CALLSITE[004ACB1D]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
             STT3DSprC::StopShow(this,(byte)local_28);
@@ -103,7 +103,7 @@ cf_continue_loop_004ACA23:
 LAB_004acb87:
           if (!bVar2) {
             iVar4 = STField<int>(this,0x20) + iVar6;
-            *(int *)(*(int *)(iVar4 + 4) + *(int *)(iVar4 + 0x18) * 4) = -iVar8;
+            *(int *)(STField<int>(iVar4,0x4) + STField<int>(iVar4,0x18) * 4) = -iVar8;
           }
         }
         ST3DSMAPContext::sub_006EA270

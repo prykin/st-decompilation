@@ -131,12 +131,12 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
     puVar5 = (undefined4 *)((byte *)puVar5 + 0x38);
     uVar6 = param_1->field_001C;
     local_98[1] = param_1->field_0000;
-    local_7c = (int)(short)param_1->field_0012;
-    local_80 = (int)(short)param_1->field_0010;
-    local_84 = (int)(short)param_1->field_000E;
+    local_7c = (short)param_1->field_0012;
+    local_80 = (short)param_1->field_0010;
+    local_84 = (short)param_1->field_000E;
     local_70 = (int)param_1->field_0018;
     local_74 = (int)param_1->field_0016;
-    local_78 = (int)(short)param_1->field_0014;
+    local_78 = (short)param_1->field_0014;
     local_98[0] = 0x17c;
     local_98[2] = 1;
     local_98[3] = 1;

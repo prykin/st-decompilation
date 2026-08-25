@@ -20,7 +20,7 @@
 
 void __thiscall
 ST3DSMAPContext::sub_006DBD20
-          (ST3DSMAPContext *param_1,DDXContext *param_2,uint param_3,undefined4 param_4,int param_5,
+          (ST3DSMAPContext *param_1,DDXContext *param_2,uint param_3,int param_4,int param_5,
           int param_6,double param_7,double param_8,double param_9,double param_10)
 
 {
@@ -103,12 +103,12 @@ ST3DSMAPContext::sub_006DBD20
                  (double)(fVar3 * (float10)_DAT_0079df58),(double)(fVar3 * (float10)_DAT_007901c0),
                  (double)(fVar3 * (float10)_DAT_0079df58),(double)(fVar3 * (float10)_DAT_007901c0));
     iVar2 = param_1->field_0358;
-    param_1->field_038C = *(undefined4 *)(iVar2 + 0xc);
-    param_1->field_0390 = *(undefined4 *)(iVar2 + 0x14);
-    param_1->field_037C = *(undefined4 *)(iVar2 + 0x28);
+    param_1->field_038C = STField<undefined4>(iVar2,0xC);
+    param_1->field_0390 = STField<undefined4>(iVar2,0x14);
+    param_1->field_037C = STField<undefined4>(iVar2,0x28);
     param_1->field_0374 = -30000;
     param_1->field_0378 = -30000;
-    *(undefined4 *)(iVar2 + 0x370) = param_1->field_0370;
+    STField<undefined4>(iVar2,0x370) = param_1->field_0370;
     *(undefined4 *)(param_1->field_0358 + 0x134) = 1;
   }
   return;

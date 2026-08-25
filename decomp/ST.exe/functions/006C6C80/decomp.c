@@ -69,15 +69,15 @@ uint FUN_006c6c80(int param_1)
     uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_108,local_8 & 0xff);
     if (uVar3 != (local_8 & 0xff)) break;
     if (((bVar1) && ((local_108 & 7) == 1)) && (2 < (byte)local_8)) {
-      *(uint *)(iVar2 + 0x56) = *(uint *)(iVar2 + 0x56) | 2;
-      *(uint *)(iVar2 + 0x5a) = local_107 & 0xffff;
+      STField<uint>(iVar2,0x56) = STField<uint>(iVar2,0x56) | 2;
+      STField<uint>(iVar2,0x5A) = local_107 & 0xffff;
     }
     if ((STPiece<3,1>(param_1) == -7) && (3 < (byte)local_8)) {
       ((byte *)iVar2)[0x5e] = local_108;
-      *(short *)(iVar2 + 0x5f) = (short)local_107;
+      STField<short>(iVar2,0x5F) = (short)local_107;
       ((undefined1 *)iVar2)[0x61] = STPiece<2,1>(local_107);
       if ((short)local_107 != 0) {
-        *(uint *)(iVar2 + 0x56) = *(uint *)(iVar2 + 0x56) | 2;
+        STField<uint>(iVar2,0x56) = STField<uint>(iVar2,0x56) | 2;
       }
     }
     /* ST_CALLSITE[006C6DEC]: CALL dword ptr [ESI + 0x42] */

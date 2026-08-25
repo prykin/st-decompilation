@@ -488,16 +488,16 @@ LAB_004707ad:
               sVar25 = 0;
               bVar26 = 0;
               lVar18 = Library::MSVCRT::__ftol();
-              iVar15 = (int)local_1c + this->field_0045 + local_10 + (int)(short)lVar18;
+              iVar15 = (int)local_1c + this->field_0045 + local_10 + (short)lVar18;
               iVar10 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
-              iVar11 = (int)(short)local_20 + iVar12 + this->field_0041;
+              iVar11 = (short)local_20 + iVar12 + this->field_0041;
             }
             else {
               iVar15 = (int)local_1c + local_10 + this->field_0045;
               STPiece<2,2>(local_20) = (short)((uint)uVar3 >> 0x10);
               iVar10 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
               STPiece<0,2>(local_20) = (short)uVar3;
-              iVar11 = (int)(short)local_20 + iVar12 + this->field_0041;
+              iVar11 = (short)local_20 + iVar12 + this->field_0041;
             }
             /* ST_CALLSITE[00470392]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
             TraksClassTy::TraksCreate
@@ -562,7 +562,7 @@ LAB_004707ad:
           STPiece<2,2>(local_20) = (short)((uint)uVar3 >> 0x10);
           iVar7 = (int)STPiece<2,2>(local_20);
           STPiece<0,2>(local_20) = (short)uVar3;
-          iVar12 = (int)(short)local_20;
+          iVar12 = (short)local_20;
           local_20 = uVar3;
           thunk_FUN_00637930(this->field_01ED,0,this->field_0041 + iVar12,this->field_0043 + iVar7,
                              this->field_0045 + -0x28,0,0);
@@ -731,16 +731,16 @@ LAB_004707ad:
           sVar25 = 0;
           bVar26 = 0;
           lVar18 = Library::MSVCRT::__ftol();
-          iVar15 = (int)local_1c + this->field_0045 + local_18 + (int)(short)lVar18;
+          iVar15 = (int)local_1c + this->field_0045 + local_18 + (short)lVar18;
           iVar10 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
-          iVar11 = (int)(short)local_20 + iVar12 + this->field_0041;
+          iVar11 = (short)local_20 + iVar12 + this->field_0041;
         }
         else {
           iVar15 = (int)local_1c + local_18 + this->field_0045;
           STPiece<2,2>(local_20) = (short)((uint)uVar3 >> 0x10);
           iVar10 = (int)this->field_0043 - (int)STPiece<2,2>(local_20);
           STPiece<0,2>(local_20) = (short)uVar3;
-          iVar11 = (int)(short)local_20 + iVar12 + this->field_0041;
+          iVar11 = (short)local_20 + iVar12 + this->field_0041;
         }
         /* ST_CALLSITE[004709F5]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
         TraksClassTy::TraksCreate

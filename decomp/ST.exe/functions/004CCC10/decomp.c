@@ -115,7 +115,7 @@ LAB_004ccd43:
             local_28.arg1.words.low = (word)iVar4;
             uVar8 = thunk_FUN_004e60d0((int)piVar1,iVar4);
             local_28.arg1.words.high = (short)uVar8 + 1;
-            /* ST_CALLSITE[004CCDE7]: CALL dword ptr [EDX] */
+            /* ST_CALLSITE[004CCDE7]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
             g_aiBossClass_008117BC->GetMessage(&local_28);
           }
         }

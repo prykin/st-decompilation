@@ -220,8 +220,8 @@ int __thiscall st::fn_005F68B0(STColl3C *this,undefined4 *param_1)
             ((STT3DSprC *)&this->vtable_at_1d5,(int *)&local_28,
              (AnonShape_004AD790_77673787 *)((int)param_1 + 0xc6));
   /* ST_CALLSITE[005F694E]: CALL 0x00403107; direct=00403107 sub_00416240 */
-  st::fn_00403107(this,*(ushort *)&this->field_02C1,*(short *)&this->field_02C5,
-               *(ushort *)&this->field_02C9);
+  st::fn_00403107(this,(ushort)this->field_02C1,(short)this->field_02C5,
+               (ushort)this->field_02C9);
   st::fn_006AB060(&local_28);
   iVar3 = STField<int>(param_1,0xc2);
   piVar7 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0xc6))->field_0x0 + iVar3);
@@ -272,7 +272,7 @@ int __thiscall st::fn_005F68B0(STColl3C *this,undefined4 *param_1)
   return iVar3;
 }
 
-// 005F6EC0 STColl3C::FUN_005f6ec0
+// 005F6EC0 STColl3C::sub_005F6EC0
 #line 4 "decomp/ST.exe/functions/005F6EC0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C5AC
@@ -286,6 +286,25 @@ dword __thiscall st::fn_005F6EC0(STColl3C *this)
 
 {
   return this->field_0269;
+}
+
+// 005F6EE0 STColl3C::sub_005F6EE0
+#line 4 "decomp/ST.exe/functions/005F6EE0/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079C5AC
+   Entries: 0040511E
+   Slots: 0x7C
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:31 calls=7
+   caller_families=3 receiver_extent=621/755; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=7; caller_families=3;
+   owner_type=/STColl3C; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only */
+
+int __thiscall st::fn_005F6EE0(STColl3C *this)
+
+{
+  return (this->field_0269 * 100) / 600;
 }
 
 // 005F6F20 STColl3C::sub_005F6F20
@@ -388,10 +407,10 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
       }
       else {
         /* ST_CALLSITE[005F7049]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
-        iVar7 = st::fn_0040163B(this,reinterpret_cast<int *>(&this->field_027D),reinterpret_cast<int *>(&this->field_0281),reinterpret_cast<int *>(&this->field_0285));
+        iVar7 = st::fn_0040163B(this,&this->field_027D,reinterpret_cast<int *>(&this->field_0281),(int *)&this->field_0285);
         if (((iVar7 != 0) && (iVar7 = st::fn_004013C0(this,2), iVar7 != 0)) &&
-           (iVar7 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
-                                       *(short *)&this->field_0299,1), iVar7 == 0)) {
+           (iVar7 = st::fn_0040295F(this,(short)this->field_0291,(short)this->field_0295,
+                                       (short)this->field_0299,1), iVar7 == 0)) {
           this->field_02DD = CASE_3;
           st::fn_00402A90((STT3DSprC *)&this->vtable_at_1d5);
           this->field_02BB = 2;
@@ -446,8 +465,8 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
         if (iVar7 == 0) {
           return;
         }
-        iVar7 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
-                                   *(short *)&this->field_0299,1);
+        iVar7 = st::fn_0040295F(this,(short)this->field_0291,(short)this->field_0295,
+                                   (short)this->field_0299,1);
         if (iVar7 != 0) {
           return;
         }
@@ -468,8 +487,8 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
       if (iVar7 == 0) {
         return;
       }
-      iVar7 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
-                                 *(short *)&this->field_0299,1);
+      iVar7 = st::fn_0040295F(this,(short)this->field_0291,(short)this->field_0295,
+                                 (short)this->field_0299,1);
       if (iVar7 != 0) {
         return;
       }
@@ -488,7 +507,7 @@ void __thiscall st::fn_005F6F60(STColl3C *this)
     }
     else {
       /* ST_CALLSITE[005F716F]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
-      iVar7 = st::fn_0040163B(this,reinterpret_cast<int *>(&this->field_027D),reinterpret_cast<int *>(&this->field_0281),reinterpret_cast<int *>(&this->field_0285));
+      iVar7 = st::fn_0040163B(this,&this->field_027D,reinterpret_cast<int *>(&this->field_0281),(int *)&this->field_0285);
       if (iVar7 == 0) {
 LAB_005f744e:
         st::fn_00404133(this,200);
@@ -498,8 +517,8 @@ LAB_005f744e:
       if (iVar7 == 0) {
         return;
       }
-      iVar7 = st::fn_0040295F(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
-                                 *(short *)&this->field_0299,1);
+      iVar7 = st::fn_0040295F(this,(short)this->field_0291,(short)this->field_0295,
+                                 (short)this->field_0299,1);
       if (iVar7 != 0) {
         return;
       }
@@ -519,9 +538,9 @@ LAB_005f7400:
       }
     }
     /* ST_CALLSITE[005F72E5]: CALL 0x00402a81; direct=00402A81 STColl3C::sub_005F8650 */
-    iVar7 = st::fn_00402A81(this,(int)(short)(*(short *)&this->field_0291 * 0xc9 + 100),
-                         (int)(short)(*(short *)&this->field_0295 * 0xc9 + 100),
-                         (int)(short)(*(short *)&this->field_0299 * 200 + 100));
+    iVar7 = st::fn_00402A81(this,(short)((short)this->field_0291 * 0xc9 + 100),
+                         (short)((short)this->field_0295 * 0xc9 + 100),
+                         (short)((short)this->field_0299 * 200 + 100));
     if (iVar7 != 0) {
       st::fn_00402B12((STAllPlayersC *)this);
       st::fn_00402982(&this->vtable_at_1d5,0);
@@ -714,7 +733,7 @@ LAB_005f7efc:
     if (iVar7 == 3) {
       st::fn_00403517(this);
       /* ST_CALLSITE[005F7E26]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
-      iVar7 = st::fn_0040163B(this,reinterpret_cast<int *>(&this->field_027D),reinterpret_cast<int *>(&this->field_0281),reinterpret_cast<int *>(&this->field_0285));
+      iVar7 = st::fn_0040163B(this,&this->field_027D,reinterpret_cast<int *>(&this->field_0281),(int *)&this->field_0285);
       if (iVar7 == 0) {
         this->field_0281 = this->field_0261;
         this->field_027D = this->field_025D;
@@ -855,7 +874,7 @@ LAB_005f7efc:
           iVar7 = this->field_02EF;
           if (iVar7 != 0) goto LAB_005f7927;
           /* ST_CALLSITE[005F7893]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
-          iVar7 = st::fn_0040163B(this,reinterpret_cast<int *>(&this->field_027D),reinterpret_cast<int *>(&this->field_0281),reinterpret_cast<int *>(&this->field_0285));
+          iVar7 = st::fn_0040163B(this,&this->field_027D,reinterpret_cast<int *>(&this->field_0281),(int *)&this->field_0285);
           if (iVar7 == 0) goto cf_common_exit_005F76D2;
           /* ST_CALLSITE[005F78AE]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           st::fn_004018C5((STFishC *)this,&local_8,&local_6,&local_a);
@@ -904,7 +923,7 @@ LAB_005f7927:
                         (int)this->field_005D);
       if (local_EAX_1734 < 4) {
         /* ST_CALLSITE[005F76FA]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
-        iVar7 = st::fn_0040163B(this,reinterpret_cast<int *>(&this->field_027D),reinterpret_cast<int *>(&this->field_0281),reinterpret_cast<int *>(&this->field_0285));
+        iVar7 = st::fn_0040163B(this,&this->field_027D,reinterpret_cast<int *>(&this->field_0281),(int *)&this->field_0285);
         if (iVar7 == 0) goto cf_common_exit_005F76D2;
         iVar7 = st::fn_00402FAE(this);
         if (-1 < iVar7) {
@@ -922,7 +941,7 @@ LAB_005f7927:
       }
       else {
         /* ST_CALLSITE[005F764B]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
-        iVar7 = st::fn_0040163B(this,reinterpret_cast<int *>(&this->field_027D),reinterpret_cast<int *>(&this->field_0281),reinterpret_cast<int *>(&this->field_0285));
+        iVar7 = st::fn_0040163B(this,&this->field_027D,reinterpret_cast<int *>(&this->field_0281),(int *)&this->field_0285);
         if (iVar7 != 0) {
           /* ST_CALLSITE[005F7667]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           st::fn_004018C5((STFishC *)this,&local_8,&local_6,&local_a);
@@ -1014,9 +1033,9 @@ undefined4 __thiscall st::fn_005F8650(STColl3C *this,int param_1,int param_2,int
   this->field_0049 = sVar4;
   sVar5 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   this->field_004B = sVar5;
-  this->field_0041 = *(short *)&this->field_02C1;
-  this->field_0043 = *(short *)&this->field_02C5;
-  this->field_0045 = *(short *)&this->field_02C9;
+  this->field_0041 = (short)this->field_02C1;
+  this->field_0043 = (short)this->field_02C5;
+  this->field_0045 = (short)this->field_02C9;
   this->field_005B = sVar3;
   this->field_005D = sVar4;
   this->field_005F = sVar5;
@@ -1024,9 +1043,9 @@ undefined4 __thiscall st::fn_005F8650(STColl3C *this,int param_1,int param_2,int
   this->field_02D9 = 0;
   this->field_02D5 = uVar1;
   iVar2 = st::fn_004037DD(this,param_1,param_2,param_3,
-                             (int)(short)(*(short *)&this->field_027D * 0xc9 + 100),
-                             (int)(short)(*(short *)&this->field_0281 * 0xc9 + 100),
-                             (int)(short)(*(short *)&this->field_0285 * 200 + 100));
+                             (short)((short)this->field_027D * 0xc9 + 100),
+                             (short)((short)this->field_0281 * 0xc9 + 100),
+                             (short)((short)this->field_0285 * 200 + 100));
   this->field_02BD = iVar2;
   this->field_006C = (short)iVar2;
   return 1;
@@ -1093,9 +1112,9 @@ undefined4 __thiscall st::fn_005FA8B0(STColl3C *this,int *param_1,int *param_2,i
   short local_8;
   short local_6;
 
-  sVar1 = *(short *)&this->field_025D;
-  sVar2 = *(short *)&this->field_0265;
-  sVar3 = *(short *)&this->field_0261;
+  sVar1 = (short)this->field_025D;
+  sVar2 = (short)this->field_0265;
+  sVar3 = (short)this->field_0261;
   local_10 = 0;
   if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
       ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) ||
@@ -1142,6 +1161,6 @@ undefined4 __thiscall st::fn_005FA8B0(STColl3C *this,int *param_1,int *param_2,i
 dword __thiscall st::fn_005FB5E0(STColl3C *this)
 
 {
-  return (uint)(0 < (int)this->field_0269);
+  return (uint)(0 < this->field_0269);
 }
 

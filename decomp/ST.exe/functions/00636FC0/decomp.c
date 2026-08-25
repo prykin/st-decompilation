@@ -60,7 +60,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
     if (local_10 < 0) {
       return local_8;
     }
-    if ((int)pVVar3->field_0030 <= local_10) {
+    if (pVVar3->field_0030 <= local_10) {
       return local_8;
     }
     local_14 = g_centeredOffsets5[local_c] + local_14;

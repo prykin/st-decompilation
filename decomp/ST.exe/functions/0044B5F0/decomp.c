@@ -53,10 +53,10 @@ STAllPlayersC::SelectObjects
   case CASE_0:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
-    iVar1 = *(int *)(iVar9 + 0xc);
+    iVar1 = STField<int>(iVar9,0xC);
     if (0 < iVar1) {
       do {
-        piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
+        piVar5 = *(int **)(STField<int>(iVar9,0x1C) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            /* ST_CALLSITE[0044B673]: CALL dword ptr [EDX + 0xf8] */
@@ -96,10 +96,10 @@ STAllPlayersC::SelectObjects
   case CASE_2:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
-    iVar1 = *(int *)(iVar9 + 0xc);
+    iVar1 = STField<int>(iVar9,0xC);
     if (0 < iVar1) {
       do {
-        piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
+        piVar5 = *(int **)(STField<int>(iVar9,0x1C) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            /* ST_CALLSITE[0044B79D]: CALL dword ptr [EDX + 0x2c] */
@@ -122,10 +122,10 @@ STAllPlayersC::SelectObjects
   case CASE_3:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
-    iVar1 = *(int *)(iVar9 + 0xc);
+    iVar1 = STField<int>(iVar9,0xC);
     if (0 < iVar1) {
       do {
-        piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
+        piVar5 = *(int **)(STField<int>(iVar9,0x1C) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            /* ST_CALLSITE[0044B876]: CALL dword ptr [EDX + 0x2c] */
@@ -144,10 +144,10 @@ STAllPlayersC::SelectObjects
   case CASE_4:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
-    iVar1 = *(int *)(iVar9 + 0xc);
+    iVar1 = STField<int>(iVar9,0xC);
     if (0 < iVar1) {
       do {
-        piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
+        piVar5 = *(int **)(STField<int>(iVar9,0x1C) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if ((((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
             /* ST_CALLSITE[0044B91F]: CALL dword ptr [EDX + 0x2c] */
@@ -166,10 +166,10 @@ STAllPlayersC::SelectObjects
   case CASE_5:
     param_3 = 0;
     iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
-    iVar1 = *(int *)(iVar9 + 0xc);
+    iVar1 = STField<int>(iVar9,0xC);
     if (0 < iVar1) {
       do {
-        piVar5 = *(int **)(*(int *)(iVar9 + 0x1c) + param_3 * 4);
+        piVar5 = *(int **)(STField<int>(iVar9,0x1C) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
            /* ST_CALLSITE[0044B9C8]: CALL dword ptr [EDX + 0x2c] */
@@ -224,9 +224,9 @@ STAllPlayersC::SelectObjects
     break;
   case CASE_7:
     iVar8 = ST3DSMAPContext::sub_006EB350(g_sT3DSMAPContext_00807598,param_2,param_3,0xe,1);
-    if ((((iVar8 != 0) && (*(uint *)(iVar8 + 0x24) == uVar3)) && (*(int *)(iVar8 + 0x20) == 0x14))
-       && ((*(ushort *)(iVar8 + 0x30) != 0xffff &&
-           (this_00 = thunk_FUN_0042b760(objPtr,*(ushort *)(iVar8 + 0x30)),
+    if ((((iVar8 != 0) && (STField<uint>(iVar8,0x24) == uVar3)) && (STField<int>(iVar8,0x20) == 0x14))
+       && ((STField<ushort>(iVar8,0x30) != 0xffff &&
+           (this_00 = thunk_FUN_0042b760(objPtr,STField<ushort>(iVar8,0x30)),
            this_00 != nullptr)))) {
       DArrayDestroy(local_8);
       /* ST_CALLSITE[0044BB98]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */

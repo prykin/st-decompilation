@@ -142,8 +142,8 @@ LAB_005e9233:
             this_01->array_00BC[0xc].field_01F5 = 1;
             iVar10 = this_01->array_00BC[0xc].field_01DB;
             local_4c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
-            if (*(int *)(iVar10 + 0x2e6) == 0) {
-              /* ST_CALLSITE[005E9293]: CALL dword ptr [EAX] */
+            if (STField<int>(iVar10,0x2E6) == 0) {
+              /* ST_CALLSITE[005E9293]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/WaitTy;pointer:/SubmarineTitans/Recovered/STMessage */
               this_01->GetMessage(&local_4c);
             }
             else {
@@ -164,7 +164,7 @@ LAB_005e9233:
               if (this_01->field_0065 == '\x01') {
                 iVar10 = this_01->array_00BC[0xc].field_01DB;
                 local_4c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
-                if (*(int *)(iVar10 + 0x2e6) == 0) goto LAB_005e91f7;
+                if (STField<int>(iVar10,0x2E6) == 0) goto LAB_005e91f7;
                 local_4c.unknown_08 = this_01->field_0008;
                 local_4c.unknown_0c = 2;
                 /* ST_CALLSITE[005E9192]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
@@ -351,7 +351,7 @@ LAB_005e8ee0:
                   /* ST_CALLSITE[005E900F]: CALL 0x0040245a; direct=0040245A WaitTy::AddStr */
                   AddStr(this_01,&DAT_0080f33a,0);
                 }
-                iVar10 = *(int *)((int)&pAVar6->field_0003 + 1);
+                iVar10 = STField<int>(pAVar6,0x4);
                 if ((uint)(iVar10 * *(int *)local_10) < *(uint *)(pAVar6 + 1) ||
                     iVar10 * *(int *)local_10 - *(uint *)(pAVar6 + 1) == 0) {
                   local_10 = (AnonShape_005E84D0_1273B60D *)(this_01->field_1A83 + iVar10);
@@ -359,7 +359,7 @@ LAB_005e8ee0:
                     iVar15 = this_01->array_00BC[0xc].field_01DB;
                     puVar20 = (undefined4 *)((int)&pAVar6[2].field_0003 + 1);
                     puVar23 = (undefined4 *)
-                              (*(int *)(iVar15 + 0x6a2) * iVar10 + *(int *)(iVar15 + 0x69a));
+                              (STField<int>(iVar15,0x6A2) * iVar10 + STField<int>(iVar15,0x69A));
                     for (uVar16 = local_28 - 0x1c >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
                       *puVar23 = *puVar20;
                       puVar20 = puVar20 + 1;
@@ -374,7 +374,7 @@ LAB_005e8ee0:
                     iVar10 = this_01->array_00BC[0xc].field_01DB;
                     this_01->field_1A7B = this_01->field_0061;
                     this_01->field_1A7F = this_01->field_1A7F - 1;
-                    uVar16 = *(uint *)(iVar10 + 0x6a6);
+                    uVar16 = STField<uint>(iVar10,0x6A6);
                     uVar16 = (uVar16 * 100 + this_01->field_1A7F * -100) / uVar16;
                     pcVar14_mg2 = LoadResourceString(0x252f,g_hINSTANCE_00807618);
                     /* ST_CALLSITE[005E90C7]: CALL dword ptr [0x0085bde8] */
@@ -405,9 +405,9 @@ LAB_005e8ee0:
               this_01->array_00BC[0xc].field_01F5 = 1;
               local_4c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
               iVar10 = this_01->array_00BC[0xc].field_01DB;
-              if (*(int *)(iVar10 + 0x2e6) == 0) {
+              if (STField<int>(iVar10,0x2E6) == 0) {
 LAB_005e91f7:
-                /* ST_CALLSITE[005E91FF]: CALL dword ptr [EAX] */
+                /* ST_CALLSITE[005E91FF]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/WaitTy;pointer:/SubmarineTitans/Recovered/STMessage */
                 this_01->GetMessage(&local_4c);
               }
               else {
@@ -521,7 +521,7 @@ LAB_005e91f7:
       /* ST_CALLSITE[005E8897]: CALL 0x00402dbf; direct=00402DBF SetAccelerator */
       SetAccelerator(1,this_01->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
       iVar10 = this_01->array_00BC[0xc].field_01DB;
-      if (*(int *)(iVar10 + 0x2e6) != 0) {
+      if (STField<int>(iVar10,0x2E6) != 0) {
         memset(local_a8, 0, 0x1a); /* compiler bulk-zero initialization */
         local_9c = 1;
         local_9e = 1;

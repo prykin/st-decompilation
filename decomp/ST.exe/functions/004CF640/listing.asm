@@ -1,4 +1,4 @@
-FUN_004cf640:
+TLOBaseTy::sub_004CF640:
 004CF640  55                        PUSH EBP
 004CF641  8B EC                     MOV EBP,ESP
 004CF643  81 EC F8 00 00 00         SUB ESP,0xf8

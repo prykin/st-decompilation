@@ -159,13 +159,13 @@ LAB_006cf209:
     for (pAVar6 = param_5; (local_a0 < param_10 && (iVar5 = *(int *)&pAVar6->field_0x6, iVar5 != 0))
         ; pAVar6 = (AnonShape_006D86E0_768BB816 *)&pAVar6->field_0xa) {
       if (-1 < *(short *)&pAVar6->field_0x4) {
-        iVar7 = ((int)*(short *)pAVar6 - *(int *)(iVar11 + 0x28)) + *(int *)(iVar11 + 0x18);
-        iVar12 = ((int)*(short *)&pAVar6->field_0002 - *(int *)(iVar11 + 0x2c)) +
-                 *(int *)(iVar11 + 0x1c);
-        iVar4 = ((int)*(short *)(iVar5 + 0xe) - *param_9) + iVar7 + param_7;
-        iVar9 = ((int)*(short *)(iVar5 + 0x10) - param_9[1]) + iVar12 + param_8;
-        local_58 = (uint)*(short *)(iVar5 + 0x12);
-        local_54 = (byte *)(int)*(short *)(iVar5 + 0x14);
+        iVar7 = ((int)*(short *)pAVar6 - STField<int>(iVar11,0x28)) + STField<int>(iVar11,0x18);
+        iVar12 = ((int)*(short *)&pAVar6->field_0002 - STField<int>(iVar11,0x2C)) +
+                 STField<int>(iVar11,0x1C);
+        iVar4 = ((int)STField<short>(iVar5,0xE) - *param_9) + iVar7 + param_7;
+        iVar9 = ((int)STField<short>(iVar5,0x10) - param_9[1]) + iVar12 + param_8;
+        local_58 = (uint)STField<short>(iVar5,0x12);
+        local_54 = (byte *)(int)STField<short>(iVar5,0x14);
         local_60 = iVar4;
         local_5c = iVar9;
         iVar5 = FUN_006cfeb0(&local_60,&local_60,&local_38);
@@ -186,26 +186,24 @@ LAB_006cf209:
             local_8 = 1;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (*(int *)(*param_1 + 0x20) == 0x10) {
-              iVar5 = *(int *)(iVar11 + 0xbc) + 7;
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              iVar5 = STField<int>(iVar11,0xBC) + 7;
               FUN_006d3300((uint *)pAVar13,(int)param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,
                            local_58,local_54,local_24,*(byte **)(iVar11 + 0xb8),
                            (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
-                           ((*param_9 - *(int *)(iVar11 + 0x18)) - param_7) +
-                           *(int *)(iVar11 + 0x28) + local_60,
-                           ((param_9[1] - param_8) - *(int *)(iVar11 + 0x1c)) + local_5c +
-                           *(int *)(iVar11 + 0x2c));
+                           ((*param_9 - STField<int>(iVar11,0x18)) - param_7) +
+                           STField<int>(iVar11,0x28) + local_60,
+                           ((param_9[1] - param_8) - STField<int>(iVar11,0x1C)) + local_5c +
+                           STField<int>(iVar11,0x2C));
             }
             else {
-              iVar5 = *(int *)(iVar11 + 0xbc) + 7;
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              iVar5 = STField<int>(iVar11,0xBC) + 7;
               FUN_006d2820((byte *)pAVar13,param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,local_58
-                           ,(uint)local_54,*(int *)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
+                           ,(uint)local_54,STField<int>(iVar11,0xB0),*(byte **)(iVar11 + 0xb8),
                            (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
-                           ((*param_9 - *(int *)(iVar11 + 0x18)) - param_7) +
-                           *(int *)(iVar11 + 0x28) + local_60,
-                           (byte *)(((param_9[1] - param_8) - *(int *)(iVar11 + 0x1c)) + local_5c +
-                                   *(int *)(iVar11 + 0x2c)));
+                           ((*param_9 - STField<int>(iVar11,0x18)) - param_7) +
+                           STField<int>(iVar11,0x28) + local_60,
+                           (byte *)(((param_9[1] - param_8) - STField<int>(iVar11,0x1C)) + local_5c +
+                                   STField<int>(iVar11,0x2C)));
             }
 LAB_006cf37b:
             local_8 = 0xffffffff;
@@ -228,29 +226,28 @@ LAB_006cf37b:
           else if (uVar10 == 1) {
             if ((param_1[0x74] == 0) ||
                (((*(AnonShape_006D86E0_768BB816 **)&pAVar6->field_0x6)->field_000D & 3) != 1)) {
-              local_20 = *(uint *)(iVar11 + 0x5c);
-              if ((*(int *)(iVar11 + 100) == 1) && (local_20 == 0)) {
+              local_20 = STField<uint>(iVar11,0x5C);
+              if ((STField<int>(iVar11,0x64) == 1) && (local_20 == 0)) {
                 local_20 = param_1[0x75];
               }
               local_8 = 2;
-              iVar5 = *(int *)(iVar11 + 0xbc) + 7;
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              iVar5 = STField<int>(iVar11,0xBC) + 7;
               FUN_006d8a60((AnonShape_006D8A60_D503343B *)pAVar13,(int)param_3,
                            *(byte **)&pAVar6->field_0x6,iVar4,uVar8,local_58,(int)local_54,
                            (undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
-                           *(uint *)(iVar11 + 0x60),*(int *)(iVar11 + 100),
+                           STField<uint>(iVar11,0x60),STField<int>(iVar11,0x64),
                            *(undefined **)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
                            (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
-                           ((*param_9 - *(int *)(iVar11 + 0x18)) - param_7) +
-                           *(int *)(iVar11 + 0x28) + local_60,
-                           ((param_9[1] - param_8) - *(int *)(iVar11 + 0x1c)) + local_5c +
-                           *(int *)(iVar11 + 0x2c));
+                           ((*param_9 - STField<int>(iVar11,0x18)) - param_7) +
+                           STField<int>(iVar11,0x28) + local_60,
+                           ((param_9[1] - param_8) - STField<int>(iVar11,0x1C)) + local_5c +
+                           STField<int>(iVar11,0x2C));
             }
             else {
               local_8 = 3;
               FUN_006d86e0(pAVar13,(int)param_3,*(AnonShape_006D86E0_768BB816 **)&pAVar6->field_0x6,
-                           iVar4,uVar8,local_58,(uint)local_54,(byte)*(undefined4 *)(iVar11 + 0x60),
-                           (char)*(undefined4 *)(iVar11 + 100));
+                           iVar4,uVar8,local_58,(uint)local_54,(byte)STField<undefined4>(iVar11,0x60),
+                           (char)STField<undefined4>(iVar11,0x64));
             }
             goto LAB_006cf37b;
           }
@@ -301,19 +298,19 @@ LAB_006cf695:
     local_8 = 4;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(*param_1 + 0x20) == 0x10) {
-      iVar7 = *(int *)(iVar11 + 0xbc) + 7;
+      iVar7 = STField<int>(iVar11,0xBC) + 7;
       FUN_006d3300((uint *)param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,uVar8,pbVar2,local_24,
                    *(byte **)(iVar11 + 0xb8),(int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
-                   (*(int *)(iVar11 + 0x28) - *(int *)(iVar11 + 0x18)) + iVar5,
-                   (*(int *)(iVar11 + 0x2c) - *(int *)(iVar11 + 0x1c)) + uVar14);
+                   (STField<int>(iVar11,0x28) - STField<int>(iVar11,0x18)) + iVar5,
+                   (STField<int>(iVar11,0x2C) - STField<int>(iVar11,0x1C)) + uVar14);
     }
     else {
-      iVar7 = *(int *)(iVar11 + 0xbc) + 7;
+      iVar7 = STField<int>(iVar11,0xBC) + 7;
       FUN_006d2820((byte *)param_2,param_3,(byte *)param_5,iVar5,uVar14,uVar8,(uint)pbVar2,
-                   *(int *)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
+                   STField<int>(iVar11,0xB0),*(byte **)(iVar11 + 0xb8),
                    (int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
-                   (*(int *)(iVar11 + 0x28) - *(int *)(iVar11 + 0x18)) + iVar5,
-                   (byte *)((*(int *)(iVar11 + 0x2c) - *(int *)(iVar11 + 0x1c)) + uVar14));
+                   (STField<int>(iVar11,0x28) - STField<int>(iVar11,0x18)) + iVar5,
+                   (byte *)((STField<int>(iVar11,0x2C) - STField<int>(iVar11,0x1C)) + uVar14));
     }
 LAB_006cf8ee:
     local_8 = 0xffffffff;
@@ -324,23 +321,23 @@ LAB_006cf8ee:
   }
   else if (uVar10 == 1) {
     if ((param_1[0x74] == 0) || ((param_5->field_000D & 3) != 1)) {
-      local_20 = *(uint *)(iVar11 + 0x5c);
-      if ((*(int *)(iVar11 + 100) == 1) && (local_20 == 0)) {
+      local_20 = STField<uint>(iVar11,0x5C);
+      if ((STField<int>(iVar11,0x64) == 1) && (local_20 == 0)) {
         local_20 = param_1[0x75];
       }
       local_8 = 5;
-      iVar7 = *(int *)(iVar11 + 0xbc) + 7;
+      iVar7 = STField<int>(iVar11,0xBC) + 7;
       FUN_006d8a60((AnonShape_006D8A60_D503343B *)param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,
                    uVar8,(int)pbVar2,(undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
-                   *(uint *)(iVar11 + 0x60),*(int *)(iVar11 + 100),*(undefined **)(iVar11 + 0xb0),
+                   STField<uint>(iVar11,0x60),STField<int>(iVar11,0x64),*(undefined **)(iVar11 + 0xb0),
                    *(byte **)(iVar11 + 0xb8),(int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
-                   (*(int *)(iVar11 + 0x28) - *(int *)(iVar11 + 0x18)) + iVar5,
-                   (*(int *)(iVar11 + 0x2c) - *(int *)(iVar11 + 0x1c)) + uVar14);
+                   (STField<int>(iVar11,0x28) - STField<int>(iVar11,0x18)) + iVar5,
+                   (STField<int>(iVar11,0x2C) - STField<int>(iVar11,0x1C)) + uVar14);
     }
     else {
       local_8 = 6;
       FUN_006d86e0(param_2,(int)param_3,param_5,iVar5,uVar14,uVar8,(uint)pbVar2,
-                   (byte)*(undefined4 *)(iVar11 + 0x60),(char)*(undefined4 *)(iVar11 + 100));
+                   (byte)STField<undefined4>(iVar11,0x60),(char)STField<undefined4>(iVar11,0x64));
     }
     goto LAB_006cf8ee;
   }

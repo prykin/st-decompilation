@@ -9,20 +9,35 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.FunctionDefinition;
+import ghidra.program.model.data.FunctionDefinitionDataType;
+import ghidra.program.model.data.ParameterDefinition;
+import ghidra.program.model.data.ParameterDefinitionImpl;
 import ghidra.program.model.data.PointerDataType;
+import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.FunctionIterator;
+import ghidra.program.model.listing.Instruction;
+import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.pcode.DataTypeSymbol;
+import ghidra.program.model.pcode.HighFunction;
+import ghidra.program.model.pcode.HighFunctionDBUtil;
+import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.SourceType;
+import ghidra.program.model.symbol.Symbol;
 
 public class STUtilityFunctionApplier extends GhidraScript {
     private static final String MARKER = "[STUtilityFunctionApplier]";
@@ -42,7 +57,7 @@ public class STUtilityFunctionApplier extends GhidraScript {
             "expected_name", "expected_name_source", "expected_signature", "expected_convention",
             "expected_parameters", "expected_call_fixup", "proposed_name", "proposed_convention",
             "proposed_return_type", "proposed_parameter_types", "proposed_parameter_names",
-            "proposed_call_fixup", "semantics", "evidence");
+            "proposed_call_fixup", "consumer_call_views", "semantics", "evidence");
         dataTypes = currentProgram.getDataTypeManager();
         int transaction = currentProgram.startTransaction("Apply utility-function semantics");
         boolean commit = false;
@@ -73,6 +88,8 @@ public class STUtilityFunctionApplier extends GhidraScript {
             Function function = address == null ? null :
                 currentProgram.getFunctionManager().getFunctionAt(address);
             if (function == null) { conflict(addressText, row, "function missing"); return; }
+            List<ConsumerViewPlan> consumerViews =
+                planConsumerViews(function, row);
             boolean exact = function.getName(true).equals(unt(row.get("expected_qualified_name"))) &&
                 function.getName().equals(unt(row.get("expected_name"))) &&
                 function.getSymbol().getSource().toString().equals(row.get("expected_name_source")) &&
@@ -91,10 +108,19 @@ public class STUtilityFunctionApplier extends GhidraScript {
                 // mutation is necessary so stale claims do not survive forever.
                 replaceComment(function, row);
                 refreshSemanticTags(function, row);
-                report.add(new Report(addressText, row.get("semantic_id"), "unchanged",
-                    "desired name and prototype already present")); return;
+                int viewChanges = applyConsumerViews(function, consumerViews);
+                viewChanges += cleanupStaleConsumerViews(function, consumerViews);
+                report.add(new Report(addressText, row.get("semantic_id"),
+                    viewChanges == 0 ? "unchanged" : "applied",
+                    "desired name and prototype already present; consumer_call_views=" +
+                        viewChanges));
+                return;
             }
-            if (!exact || function.getSymbol().getSource() == SourceType.USER_DEFINED ||
+            boolean recoveredSourceIdentity =
+                hasTag(function, "RECOVERED_SOURCE_NAME");
+            if (!exact ||
+                    function.getSymbol().getSource() == SourceType.USER_DEFINED &&
+                        !recoveredSourceIdentity ||
                     function.getSymbol().getSource() == SourceType.IMPORTED) {
                 report.add(new Report(addressText, row.get("semantic_id"), "preserved",
                     "stale baseline or manual function identity")); return;
@@ -124,13 +150,21 @@ public class STUtilityFunctionApplier extends GhidraScript {
                 parameter.setDataType(resolved.get(index), SourceType.ANALYSIS);
                 parameter.setName(names[index], SourceType.ANALYSIS);
             }
-            function.getSymbol().setName(row.get("proposed_name"), SourceType.ANALYSIS);
+            if (!function.getName().equals(row.get("proposed_name")))
+                function.getSymbol().setName(row.get("proposed_name"), SourceType.ANALYSIS);
             String proposedCallFixup = unt(row.get("proposed_call_fixup"));
             if (!proposedCallFixup.isBlank()) function.setCallFixup(proposedCallFixup);
             refreshSemanticTags(function, row);
             replaceComment(function, row);
+            int viewChanges = applyConsumerViews(function, consumerViews);
+            viewChanges += cleanupStaleConsumerViews(function, consumerViews);
             report.add(new Report(addressText, row.get("semantic_id"), "applied",
-                row.get("proposed_name") + " " + row.get("proposed_convention")));
+                row.get("proposed_name") + " " + row.get("proposed_convention") +
+                    "; consumer_call_views=" + viewChanges));
+        }
+        catch (PreserveException exception) {
+            report.add(new Report(addressText, row.get("semantic_id"),
+                "preserved", exception.getMessage()));
         }
         catch (Exception exception) { conflict(addressText, row, message(exception)); }
     }
@@ -149,6 +183,231 @@ public class STUtilityFunctionApplier extends GhidraScript {
     private boolean desiredCallFixupPresent(Function function, Map<String, String> row) {
         String proposed = unt(row.get("proposed_call_fixup"));
         return proposed.isBlank() || callFixup(function).equals(proposed);
+    }
+
+    private List<ConsumerViewPlan> planConsumerViews(Function target,
+            Map<String, String> row) throws Exception {
+        String encoded = unt(row.get("consumer_call_views"));
+        if (encoded.isBlank()) return List.of();
+        if (!"heterogeneous_payload_loader".equals(row.get("semantic_id")))
+            throw new PreserveException(
+                "consumer call views attached to unrelated utility semantic");
+        List<ConsumerViewPlan> result = new ArrayList<>();
+        for (String item : encoded.split("\\|", -1)) {
+            String[] parts = item.split(",", 4);
+            if (parts.length != 4)
+                throw new PreserveException("invalid consumer call-view row");
+            Function caller = function(parts[0]);
+            Address callAddress = currentProgram.getAddressFactory()
+                .getAddress(parts[1]);
+            Instruction call = callAddress == null ? null :
+                currentProgram.getListing().getInstructionAt(callAddress);
+            Function resolved = call == null ? null :
+                resolveThunk(directCalledFunction(call));
+            if (caller == null || call == null ||
+                    !caller.getBody().contains(callAddress) ||
+                    !"CALL".equalsIgnoreCase(call.getMnemonicString()) ||
+                    resolved == null || !resolved.equals(target))
+                throw new PreserveException(
+                    "stale heterogeneous consumer call at " + parts[1]);
+            DataType returned = resolve(parts[2]);
+            if (returned == null ||
+                    !(returned instanceof ghidra.program.model.data.Pointer))
+                throw new PreserveException(
+                    "consumer return view is missing: " + parts[2]);
+            FunctionDefinition existing = existingOverride(caller, callAddress);
+            String current = existing == null ? "none" : fingerprint(existing);
+            if (!current.equals(parts[3]))
+                throw new PreserveException(
+                    "stale consumer override at " + parts[1] +
+                        ": expected " + parts[3] + ", found " + current);
+            FunctionDefinitionDataType desired = directCallOverride(target,
+                callAddress, returned, row);
+            if (existing != null &&
+                    !fingerprint(desired).equals(current) &&
+                    !hasConsumerViewMarker(callAddress))
+                throw new PreserveException(
+                    "foreign consumer override preserved at " + parts[1]);
+            result.add(new ConsumerViewPlan(caller, callAddress, desired,
+                existing));
+        }
+        return result;
+    }
+
+    private int applyConsumerViews(Function target,
+            List<ConsumerViewPlan> plans) throws Exception {
+        int changed = 0;
+        for (ConsumerViewPlan plan : plans) {
+            String desired = fingerprint(plan.desired);
+            boolean overrideChange = plan.existing == null ||
+                !desired.equals(fingerprint(plan.existing));
+            if (overrideChange) {
+                if (hasConsumerViewMarker(plan.address))
+                    deleteOverrides(plan.caller, plan.address);
+                HighFunctionDBUtil.writeOverride(plan.caller, plan.address,
+                    plan.desired);
+            }
+            boolean markerChange = setConsumerViewMarker(plan.address,
+                target, desired);
+            if (overrideChange || markerChange) changed++;
+        }
+        return changed;
+    }
+
+    private int cleanupStaleConsumerViews(Function target,
+            List<ConsumerViewPlan> plans) {
+        Set<Address> retained = new HashSet<>();
+        for (ConsumerViewPlan plan : plans) retained.add(plan.address);
+        String targetToken = "target=" + addr(target.getEntryPoint());
+        int changed = 0;
+        FunctionIterator functions =
+            currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function caller = functions.next();
+            InstructionIterator instructions = currentProgram.getListing()
+                .getInstructions(caller.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                Address address = instruction.getAddress();
+                String comment = text(currentProgram.getListing()
+                    .getComment(CommentType.EOL, address));
+                if (!comment.contains(consumerViewPrefix()) ||
+                        !comment.contains(targetToken) || retained.contains(address))
+                    continue;
+                deleteOverrides(caller, address);
+                removeConsumerViewMarker(address);
+                changed++;
+            }
+        }
+        return changed;
+    }
+
+    private FunctionDefinitionDataType directCallOverride(Function target,
+            Address call, DataType returned, Map<String, String> row)
+            throws Exception {
+        FunctionDefinitionDataType desired = new FunctionDefinitionDataType(
+            "payload_view_" + call, dataTypes);
+        desired.setCallingConvention(row.get("proposed_convention"));
+        desired.setReturnType(returned);
+        String[] types = split(row.get("proposed_parameter_types"));
+        String[] names = split(row.get("proposed_parameter_names"));
+        ParameterDefinition[] arguments = new ParameterDefinition[types.length];
+        for (int index = 0; index < types.length; index++) {
+            DataType type = resolve(types[index]);
+            if (type == null)
+                throw new IllegalArgumentException(
+                    "consumer-call parameter type is missing: " + types[index]);
+            arguments[index] = new ParameterDefinitionImpl(names[index], type,
+                "consumer-local payload view; shared loader ABI remains byte *");
+        }
+        desired.setArguments(arguments);
+        return desired;
+    }
+
+    private FunctionDefinition existingOverride(Function caller, Address call) {
+        Namespace root = HighFunction.findOverrideSpace(caller);
+        if (root == null) return null;
+        FunctionDefinition agreed = null;
+        for (Symbol symbol : currentProgram.getSymbolTable().getSymbols(call)) {
+            if (!root.equals(symbol.getParentNamespace())) continue;
+            DataTypeSymbol value = HighFunctionDBUtil.readOverride(symbol);
+            if (value == null ||
+                    !(value.getDataType() instanceof FunctionDefinition definition))
+                continue;
+            if (agreed != null &&
+                    !fingerprint(agreed).equals(fingerprint(definition)))
+                return null;
+            agreed = definition;
+        }
+        return agreed;
+    }
+
+    private String fingerprint(FunctionDefinition definition) {
+        List<String> result = new ArrayList<>();
+        result.add(definition.getCallingConventionName());
+        result.add(typeSpec(definition.getReturnType()));
+        for (ParameterDefinition argument : definition.getArguments())
+            result.add(typeSpec(argument.getDataType()));
+        return String.join(";", result);
+    }
+
+    private Function directCalledFunction(Instruction instruction) {
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager()
+                .getFunctionAt(flow);
+            if (function != null) return function;
+        }
+        return null;
+    }
+
+    private Function resolveThunk(Function function) {
+        Set<Address> seen = new HashSet<>();
+        while (function != null && function.isThunk() &&
+                seen.add(function.getEntryPoint())) {
+            Function next = function.getThunkedFunction(false);
+            if (next == null || next.equals(function)) break;
+            function = next;
+        }
+        return function;
+    }
+
+    private boolean hasConsumerViewMarker(Address address) {
+        return text(currentProgram.getListing()
+            .getComment(CommentType.EOL, address)).contains(consumerViewPrefix());
+    }
+
+    private String consumerViewPrefix() {
+        return MARKER + " heterogeneous_payload_consumer_view";
+    }
+
+    private boolean setConsumerViewMarker(Address address, Function target,
+            String signature) {
+        String marker = consumerViewPrefix() + "; target=" +
+            addr(target.getEntryPoint()) + "; signature=" + signature;
+        String old = text(currentProgram.getListing()
+            .getComment(CommentType.EOL, address));
+        if (old.contains(marker)) return false;
+        removeConsumerViewMarker(address);
+        old = text(currentProgram.getListing()
+            .getComment(CommentType.EOL, address));
+        currentProgram.getListing().setComment(address, CommentType.EOL,
+            old.isBlank() ? marker : old + " " + marker);
+        return true;
+    }
+
+    private void removeConsumerViewMarker(Address address) {
+        String old = text(currentProgram.getListing()
+            .getComment(CommentType.EOL, address));
+        if (!old.contains(consumerViewPrefix())) return;
+        String cleaned = old.replaceAll("(?:\\s*)\\Q" + consumerViewPrefix() +
+            "\\E; target=[0-9A-Fa-f]+; signature=[^\\r\\n]*", "").trim();
+        currentProgram.getListing().setComment(address, CommentType.EOL,
+            cleaned.isBlank() ? null : cleaned);
+    }
+
+    private void deleteOverrides(Function caller, Address call) {
+        Namespace root = HighFunction.findOverrideSpace(caller);
+        if (root == null) return;
+        List<Symbol> remove = new ArrayList<>();
+        for (Symbol symbol : currentProgram.getSymbolTable().getSymbols(call))
+            if (root.equals(symbol.getParentNamespace()) &&
+                    HighFunctionDBUtil.readOverride(symbol) != null)
+                remove.add(symbol);
+        for (Symbol symbol : remove) symbol.delete();
+    }
+
+    private Function function(String address) {
+        Address value = currentProgram.getAddressFactory().getAddress(address);
+        return value == null ? null :
+            currentProgram.getFunctionManager().getFunctionAt(value);
+    }
+
+    private String addr(Address address) {
+        return address.toString().toUpperCase(Locale.ROOT);
+    }
+
+    private static String text(Object value) {
+        return value == null ? "" : value.toString();
     }
 
     private String callFixup(Function function) {
@@ -240,6 +499,12 @@ public class STUtilityFunctionApplier extends GhidraScript {
                 row.status + "\t" + clean(row.detail) + "\n");
         }
     }
+
+    private static final class PreserveException extends Exception {
+        PreserveException(String message) { super(message); }
+    }
+    private record ConsumerViewPlan(Function caller, Address address,
+        FunctionDefinitionDataType desired, FunctionDefinition existing) {}
     private File inputFile() throws Exception {
         String[] args = getScriptArgs();
         if (args.length > 0 && !args[0].isBlank()) return new File(args[0]);

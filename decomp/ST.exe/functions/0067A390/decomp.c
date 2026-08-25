@@ -93,13 +93,13 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
         local_34 = 0x31;
         local_2c = 0xff;
         local_74 = (AnonShape_0068FD00_A5257008 *)0x70;
-        uVar11 = *(uint *)(iVar4 + 0xc);
+        uVar11 = STField<uint>(iVar4,0xC);
         uVar9 = 0;
         if (0 < (int)uVar11) {
           do {
             if (((iVar4 != 0) && (-1 < (int)uVar9)) && ((int)uVar9 < (int)uVar11)) {
               if (uVar9 < uVar11) {
-                puVar8 = (undefined4 *)(*(int *)(iVar4 + 8) * uVar9 + *(int *)(iVar4 + 0x1c));
+                puVar8 = (undefined4 *)(STField<int>(iVar4,0x8) * uVar9 + STField<int>(iVar4,0x1C));
               }
               else {
                 puVar8 = nullptr;
@@ -114,7 +114,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
             if (0 < local_6c) break;
             iVar4 = param_1->field_0695;
             uVar9 = uVar9 + 1;
-            uVar11 = *(uint *)(iVar4 + 0xc);
+            uVar11 = STField<uint>(iVar4,0xC);
           } while ((int)uVar9 < (int)uVar11);
         }
       }
@@ -157,13 +157,13 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
         local_34 = 0x19;
         local_2c = 0xff;
         local_74 = (AnonShape_0068FD00_A5257008 *)0x70;
-        uVar11 = *(uint *)(iVar4 + 0xc);
+        uVar11 = STField<uint>(iVar4,0xC);
         uVar9 = 0;
         if (0 < (int)uVar11) {
           do {
             if (((iVar4 != 0) && (-1 < (int)uVar9)) && ((int)uVar9 < (int)uVar11)) {
               if (uVar9 < uVar11) {
-                puVar8 = (undefined4 *)(*(int *)(iVar4 + 8) * uVar9 + *(int *)(iVar4 + 0x1c));
+                puVar8 = (undefined4 *)(STField<int>(iVar4,0x8) * uVar9 + STField<int>(iVar4,0x1C));
               }
               else {
                 puVar8 = nullptr;
@@ -178,7 +178,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
             if (0 < local_6c) break;
             iVar4 = param_1->field_0695;
             uVar9 = uVar9 + 1;
-            uVar11 = *(uint *)(iVar4 + 0xc);
+            uVar11 = STField<uint>(iVar4,0xC);
           } while ((int)uVar9 < (int)uVar11);
         }
       }
@@ -221,13 +221,13 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
         local_34 = 0x19;
         local_2c = 0xff;
         local_74 = (AnonShape_0068FD00_A5257008 *)0x70;
-        uVar11 = *(uint *)(iVar4 + 0xc);
+        uVar11 = STField<uint>(iVar4,0xC);
         uVar9 = 0;
         if (0 < (int)uVar11) {
           do {
             if (((iVar4 != 0) && (-1 < (int)uVar9)) && ((int)uVar9 < (int)uVar11)) {
               if (uVar9 < uVar11) {
-                puVar8 = (undefined4 *)(*(int *)(iVar4 + 8) * uVar9 + *(int *)(iVar4 + 0x1c));
+                puVar8 = (undefined4 *)(STField<int>(iVar4,0x8) * uVar9 + STField<int>(iVar4,0x1C));
               }
               else {
                 puVar8 = nullptr;
@@ -242,7 +242,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
             if (0 < local_6c) break;
             iVar4 = param_1->field_0695;
             uVar9 = uVar9 + 1;
-            uVar11 = *(uint *)(iVar4 + 0xc);
+            uVar11 = STField<uint>(iVar4,0xC);
           } while ((int)uVar9 < (int)uVar11);
         }
       }

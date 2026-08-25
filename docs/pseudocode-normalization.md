@@ -55,6 +55,19 @@ The entry parameter and ABI signature remain unchanged. Unsafe cases retain an
 `ST_PSEUDO[stack_slot_reuse]` review comment. The same sites are catalogued in
 `pseudocode_idioms.jsonl` and `decomp_quality_issues.jsonl`.
 
+If the replacement lifetime is independently scalar, Ghidra may still render
+an update with the dead entry parameter's pointee scale. The exporter collapses
+only the complete affine form when the installed pointee extent makes the byte
+delta exact:
+
+```c
+counter = &counter[-1].field_003B; // old pointee length 0x3c
+counter = counter - 1;
+```
+
+This is machine arithmetic recovery, not a pointer cast. Mixed-use intervals
+and incomplete address expressions remain visible.
+
 ### Dynamic stack buffers
 
 The verified MSVC `__alloca_probe` call-fixup preserves runtime-sized stack
@@ -88,6 +101,14 @@ reduces Ghidra's redundant `(double)(int)object->member` to
 floating conversion. The fold requires one unambiguous structure declaration
 and an exact concrete narrow-integer member; complex expressions, enums,
 unions, and generic fields are untouched.
+
+A wider scalar can also have an exact low-word consumer. On little-endian x86,
+the rvalue `*(short *)&object->field` is rendered as `(short)object->field`
+when the installed member is a wider scalar. The same rewrite is forbidden on
+the left side of an assignment: a C++ cast is not an lvalue. Redundant outer
+`(int)` promotion is removed, while a second `(short)` around an arithmetic
+expression remains when the machine code performs a real 16-bit wrap before
+`MOVSX`.
 
 ### Biased narrow grid division
 
@@ -570,6 +591,18 @@ is read-only and reconstructs the same little-endian value from literal
 storage. `STField` preserves the exact access width and byte offset while
 removing the host-invalid 32-bit pointer-to-`int` spelling. These helpers do not
 assert a containing class, alignment, or original field name.
+
+The scalar-address projection is deliberately narrower than the syntax above.
+Its base must be a declared local machine-word scalar. Parameters and unresolved
+ABI registers (`unaff_*`, `in_*`, `extraout_*`) remain raw because an `STField`
+spelling would hide the missing function boundary without proving an object.
+On a compound assignment whose left side and right side are independent raw
+address domains, the exporter keeps both sides raw instead of converting only
+the left side. A nested scalar load inside a larger address expression may
+still become `STField` because it is one exact byte-offset lifetime, not a
+second assignment target. Cache migration reverses output made by the older
+broader rule before applying these checks, so adding the guard does not leave
+old per-function bodies in a different dialect.
 
 `STObjectAtByteOffset` has a narrower precondition than `STField`: `records`
 must already be a one-star pointer to one unambiguous concrete structure, the

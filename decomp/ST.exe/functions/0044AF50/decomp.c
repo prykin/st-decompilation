@@ -43,8 +43,8 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
   pAVar3[2].field_0010 = 0;
   Library::MSVCRT::FUN_0072da70(&pAVar3->field_0010,pAVar3,0x40);
   pAVar3->field_0000 = 0;
-  *(undefined4 *)((int)&pAVar3->field_0008 + 2) = 0;
-  *(undefined2 *)((int)&pAVar3->field_000C + 2) = 0;
+  STField<undefined4>(pAVar3,0xA) = 0;
+  STField<undefined2>(pAVar3,0xE) = 0;
   return;
 }
 

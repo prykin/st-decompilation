@@ -74,8 +74,8 @@ st::fn_005F14B0
   local_1a = param_4;
   local_f = DAT_00811788;
   local_17 = g_playSystem_00802A38->field_00E4;
-  local_13 = st::fn_0040335F((uint)param_4,(int)param_5,(int)(short)(param_1 * 0xc9 + 100),
-                                (int)(short)(param_2 * 0xc9 + 100),(int)(short)(param_3 * 200 + 100)
+  local_13 = st::fn_0040335F((uint)param_4,(int)param_5,(short)(param_1 * 0xc9 + 100),
+                                (short)(param_2 * 0xc9 + 100),(short)(param_3 * 200 + 100)
                                );
   if (local_13 == nullptr) {
     iVar3 = -1;
@@ -159,7 +159,7 @@ joined_r0x005f19be:
                   (pVVar2,pVVar2->field_010C,local_1c,local_18,&local_20,&local_24),
        pVVar4 = g_visibleClass_00802A88, -1 < iVar8)) &&
       (((iVar8 < 5 && (-1 < local_20)) &&
-       ((local_20 < (int)pVVar2->field_0030 &&
+       ((local_20 < pVVar2->field_0030 &&
         ((iVar8 = g_centeredOffsets5[iVar8] + local_24, -1 < iVar8 && (iVar8 < pVVar2->field_0034)))
         ))))) &&
      ((pVVar2->field_004C != nullptr &&
@@ -171,7 +171,7 @@ joined_r0x005f19be:
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,local_18,
                &local_28,&local_2c);
     pVVar2 = g_visibleClass_00802A88;
-    if ((((-1 < local_28) && (local_28 < (int)pVVar4->field_0030)) &&
+    if ((((-1 < local_28) && (local_28 < pVVar4->field_0030)) &&
         (((iVar8 = g_centeredOffsets5[local_10] + local_2c, -1 < iVar8 &&
           ((iVar8 < pVVar4->field_0034 && (pVVar4->field_004C != nullptr)))) &&
          (pVVar4->field_004C[local_28 + iVar8 * pVVar4->field_0030] == 0)))) &&
@@ -183,7 +183,7 @@ joined_r0x005f19be:
                  &local_30,&local_34);
       pVVar3 = g_visibleClass_00802A88;
       if (((local_30 < 0) ||
-          (((((int)pVVar2->field_0030 <= local_30 ||
+          ((((pVVar2->field_0030 <= local_30 ||
              (iVar5 = g_centeredOffsets5[local_10] + local_34, psVar6 = local_8, iVar5 < 0)) ||
             (pVVar2->field_0034 <= iVar5)) ||
            ((pVVar2->field_004C == nullptr ||
@@ -194,7 +194,7 @@ joined_r0x005f19be:
              (st::fn_00403F53
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_38,iVar8,
                          &local_3c,&local_40), psVar6 = local_8, local_3c < 0)) ||
-            (((int)pVVar3->field_0030 <= local_3c ||
+            ((pVVar3->field_0030 <= local_3c ||
              (((iVar8 = g_centeredOffsets5[local_10] + local_40, iVar8 < 0 ||
                (pVVar3->field_0034 <= iVar8)) || (pVVar3->field_004C == nullptr)))))) ||
            (pVVar4 = g_visibleClass_00802A88,
@@ -384,9 +384,9 @@ int __thiscall st::fn_005F21D0(STManBasisC *this)
            (psVar5 = (short *)((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar6),
            psVar5 != nullptr)) {
           puVar4 = st::fn_0040335F((uint)((byte *)psVar5)[3],(int)STField<short>(psVar5,7),
-                                      (int)(short)(*psVar5 * 0xc9 + 100),
-                                      (int)(short)(psVar5[1] * 0xc9 + 100),
-                                      (int)(short)(psVar5[2] * 200 + 100));
+                                      (short)(*psVar5 * 0xc9 + 100),
+                                      (short)(psVar5[1] * 0xc9 + 100),
+                                      (short)(psVar5[2] * 200 + 100));
           STField<undefined4 *>(psVar5,0xd) = puVar4;
         }
         uVar6 = uVar6 + 1;
@@ -403,8 +403,8 @@ int __thiscall st::fn_005F21D0(STManBasisC *this)
             (psVar5 = DArrayAt<short>(pDVar3, uVar6),
             psVar5 != nullptr)) && (*(int *)(psVar5 + 0xc) != -1)) {
           st::fn_0040169F((uint)((byte *)psVar5)[3],(int)STField<short>(psVar5,7),0,
-                             (int)(short)(*psVar5 * 0xc9 + 100),(int)(short)(psVar5[1] * 0xc9 + 100)
-                             ,(int)(short)(psVar5[2] * 200 + 100),uVar6);
+                             (short)(*psVar5 * 0xc9 + 100),(short)(psVar5[1] * 0xc9 + 100)
+                             ,(short)(psVar5[2] * 200 + 100),uVar6);
         }
         uVar6 = uVar6 + 1;
       } while ((int)uVar6 < (int)dVar1);

@@ -15,13 +15,13 @@ uint __thiscall FUN_0062df30(void *this,int param_1,int param_2)
   if (iVar1 == 0) {
     return 0xffffffff;
   }
-  uVar2 = *(uint *)(iVar1 + 0xc);
+  uVar2 = STField<uint>(iVar1,0xC);
   uVar4 = 0xffffffff;
   if (0 < (int)uVar2) {
     bVar5 = uVar2 != 0;
     uVar4 = 0;
     while (((!bVar5 ||
-            (piVar3 = (int *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c)),
+            (piVar3 = (int *)(STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C)),
             piVar3 == nullptr)) || (*piVar3 != param_2))) {
       uVar4 = uVar4 + 1;
       bVar5 = uVar4 < uVar2;

@@ -67,7 +67,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
           (puVar4 + uVar9 * 4)[0] = 0xffff;
           (puVar4 + uVar9 * 4)[1] = 0xffff;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
-            *(undefined4 *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
+            *(int *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
           }
         }
         else {
@@ -75,7 +75,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
           pSVar3->field_0216 = pSVar3->field_0216 + iVar8;
           *(int *)(pSVar3->field_021E + uVar9 * 4 + 2) = iVar8;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
-            *(undefined4 *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
+            *(int *)(pSVar3->field_021E + uVar9 * 4 + 4) = pSVar3->field_0216;
           }
         }
         uVar9 = uVar9 + 1;

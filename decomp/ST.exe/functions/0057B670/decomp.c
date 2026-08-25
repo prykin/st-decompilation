@@ -97,20 +97,20 @@ LAB_0057b6ff:
         local_42 = STPiece<0,2>(param_4);
         local_4a = uVar1;
         if (uVar5 == param_3) {
-          iVar3 = FUN_006acf0d((int)STField<short>(this,0x3a),(int)(short)this[0xf],
-                               (int)STField<short>(this,0x3e),(int)(short)this[0xd],
-                               (int)STField<short>(this,0x36),(int)(short)this[0xe]);
+          iVar3 = FUN_006acf0d((int)STField<short>(this,0x3a),(short)this[0xf],
+                               (int)STField<short>(this,0x3e),(short)this[0xd],
+                               (int)STField<short>(this,0x36),(short)this[0xe]);
           if (iVar3 == 0) {
             local_40 = *(short *)(local_8 + -8 + uVar5 * 8);
             local_3e = *(short *)(local_8 + -6 + uVar5 * 8);
             local_3c = *(short *)(local_8 + -4 + uVar5 * 8);
           }
           else {
-            local_40 = (short)((((int)STField<short>(this,0x3a) - (int)(short)this[0xd]) * 100) /
+            local_40 = (short)((((int)STField<short>(this,0x3a) - (short)this[0xd]) * 100) /
                               iVar3) + (short)param_2;
-            local_3e = (short)((((int)(short)this[0xf] - (int)STField<short>(this,0x36)) * 100) /
+            local_3e = (short)((((short)this[0xf] - (int)STField<short>(this,0x36)) * 100) /
                               iVar3) + (short)param_5;
-            local_3c = (short)((((int)STField<short>(this,0x3e) - (int)(short)this[0xe]) * 100) /
+            local_3c = (short)((((int)STField<short>(this,0x3e) - (short)this[0xe]) * 100) /
                               iVar3) + (short)param_4;
           }
         }

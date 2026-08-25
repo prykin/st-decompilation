@@ -73,7 +73,7 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
       }
     }
   }
-  else if (this->field_04AB != param_5) {
+  else if (this->field_04AB != (HoloTy *)param_5) {
     sVar1 = this->field_04A5;
     uVar6 = (undefined1)sVar1;
     sVar2 = this->field_04A9;
@@ -88,7 +88,7 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
       }
       uVar6 = (undefined1)iVar7;
     }
-    this->field_04AB = param_5;
+    this->field_04AB = (HoloTy *)param_5;
     this->field_04C1 = 1;
     if (param_5 != -1) {
       this->field_04A5 = param_2;

@@ -87,9 +87,8 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
         g_runtimeRecords_007F4D3C = pRVar7;
         g_bitset_007F4CFC = pbVar6;
         iVar14 = STField<int>(param_1,0x29);
-        if (local_28 < *(uint *)(iVar14 + 0xc)) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          psVar10 = (short *)(*(int *)(iVar14 + 8) * local_28 + *(int *)(iVar14 + 0x1c));
+        if (local_28 < STField<uint>(iVar14,0xC)) {
+          psVar10 = (short *)(STField<int>(iVar14,0x8) * local_28 + STField<int>(iVar14,0x1C));
         }
         else {
           psVar10 = nullptr;

@@ -43,38 +43,38 @@ FUN_0058d160(short param_1,short param_2,short param_3,short param_4,int param_5
     if (iVar9 < iVar7) {
       while( true ) {
         while (-1 < iVar8) {
-          iVar7 = *(short *)(iVar4 + 0x41) + 0xc9;
+          iVar7 = STField<short>(iVar4,0x41) + 0xc9;
           if (iVar7 <= (short)(param_3 * 0xc9 + 100)) goto LAB_0058d1fe;
           iVar8 = -1;
         }
-        iVar7 = *(short *)(iVar4 + 0x41) + -0xc9;
+        iVar7 = STField<short>(iVar4,0x41) + -0xc9;
         if ((short)(param_1 * 0xc9 + 100) <= iVar7) break;
         iVar8 = 1;
       }
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0058d1fe:
       param_6 = 0;
-      iVar9 = (int)*(short *)(iVar4 + 0x43);
+      iVar9 = (int)STField<short>(iVar4,0x43);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_7 = iVar10;
     }
     else {
       while( true ) {
         while (-1 < iVar10) {
-          iVar9 = *(short *)(iVar4 + 0x43) + 0xc9;
+          iVar9 = STField<short>(iVar4,0x43) + 0xc9;
           if (iVar9 <= (short)(param_4 * 0xc9 + 100)) goto LAB_0058d252;
           iVar10 = -1;
         }
-        iVar9 = *(short *)(iVar4 + 0x43) + -0xc9;
+        iVar9 = STField<short>(iVar4,0x43) + -0xc9;
         if ((short)(param_2 * 0xc9 + 100) <= iVar9) break;
         iVar10 = 1;
       }
 LAB_0058d252:
       param_7 = 0;
-      iVar7 = (int)*(short *)(iVar4 + 0x41);
+      iVar7 = (int)STField<short>(iVar4,0x41);
       param_6 = iVar8;
     }
-    sVar1 = *(short *)(iVar4 + 0x45);
+    sVar1 = STField<short>(iVar4,0x45);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = STBiasedDiv16(sVar1, 200); /* exact signed 16-bit grid-index division */
     sVar5 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */

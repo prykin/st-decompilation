@@ -62,7 +62,7 @@ int __thiscall STSharkC::sub_0058F430(STSharkC *this)
                 }
                 iVar2 = iVar4 + iVar3 + iVar2;
                 if (iVar2 < local_14) {
-                  this->field_024D = *(undefined2 *)&this_00[1].field_0xe;
+                  this->field_024D = *(short *)&this_00[1].field_0xe;
                   this->field_0249 = this_00[1].vtable;
                   this->field_0231 = sVar5;
                   this->field_0233 = sVar8;

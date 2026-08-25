@@ -10,9 +10,9 @@ void __thiscall FUN_007109f0(void *this,AnonShape_007109F0_BD33A2FF *param_1)
 {
   if (param_1 != nullptr) {
     STField<undefined4>(this,0x44) = *(undefined4 *)param_1;
-    STField<undefined4>(this,0x48) = *(undefined4 *)((int)&param_1->field_0001 + 3);
+    STField<undefined4>(this,0x48) = STField<undefined4>(param_1,0x4);
     STField<undefined4>(this,0x4c) = *(undefined4 *)&param_1->field_0x8;
-    STField<undefined4>(this,0x50) = *(undefined4 *)((int)&param_1->field_000B + 1);
+    STField<undefined4>(this,0x50) = STField<undefined4>(param_1,0xC);
     STField<undefined4>(this,0x54) = *(undefined4 *)&param_1->field_0x10;
     STField<undefined4>(this,0x58) = *(undefined4 *)&param_1->field_0x14;
     STField<undefined4>(this,0x5c) = *(undefined4 *)&param_1->field_0x18;

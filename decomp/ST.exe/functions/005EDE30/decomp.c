@@ -17,7 +17,7 @@ undefined4 __thiscall FUN_005ede30(void *this,undefined4 *param_1,undefined4 *pa
   else {
     iVar5 = 1;
   }
-  iVar4 = (int)(short)(STField<short>(this,0x246) * 200 + 100);
+  iVar4 = (short)(STField<short>(this,0x246) * 200 + 100);
   iVar1 = (g_playSystem_00802A38->field_00E4 - STField<int>(this,0x28f)) *
           STField<int>(this,0x287) * iVar5;
   iVar2 = ((int)(iVar1 + (iVar1 >> 0x1f & 0xfU)) >> 4) + iVar2;

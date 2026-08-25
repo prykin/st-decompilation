@@ -60,10 +60,10 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
       ST3DSMAPContext::sub_006E8660
                 (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,STField<uint>(puVar2,9),
                  STField<uint>(puVar2,0xd),uVar4,uVar5,0);
-      *(uint *)(iVar3 + 0x18) = local_8;
+      STField<uint>(iVar3,0x18) = local_8;
       ST3DSMAPContext::sub_006E98E0
                 (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar2,STField<int>(puVar2,0x21),1);
-      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_8,0,*(uint *)(iVar3 + 0xe));
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_8,0,STField<uint>(iVar3,0xE));
       Library::Ourlib::ST3DSMAP::SprSetLevAfter(g_sT3DSMAPContext_00807598,local_8,-1);
       Library::Ourlib::ST3DSMAP::SprSetSplit(g_sT3DSMAPContext_00807598,local_8);
       if (param_1 != 0) {
@@ -76,7 +76,7 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
                  (float)param_5 * _DAT_007904f8 * _DAT_007904f0,
                  (float)param_6 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_8,0);
-      ((undefined1 *)iVar3)[6] = 1;
+      STField<undefined1>(iVar3,0x6) = 1;
       g_currentExceptionFrame = local_5c.previous;
       return puVar2;
     }

@@ -2544,23 +2544,23 @@ void __cdecl st::fn_0065D030(AnonShape_0065D030_CB0F82F0 *param_1)
   if (param_1->field_0005 != '\0') {
     iVar1 = param_1->field_0462;
     uVar2 = 0;
-    if (0 < *(int *)(iVar1 + 0xc)) {
-      bVar3 = *(int *)(iVar1 + 0xc) != 0;
+    if (0 < STField<int>(iVar1,0xC)) {
+      bVar3 = STField<int>(iVar1,0xC) != 0;
       do {
         if (bVar3) {
-          iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
+          iVar1 = STField<int>(iVar1,0x8) * uVar2 + STField<int>(iVar1,0x1C);
         }
         else {
           iVar1 = 0;
         }
         if (*(DArrayTy **)(iVar1 + 0xf) != nullptr) {
           st::fn_006AE110(*(DArrayTy **)(iVar1 + 0xf));
-          *(undefined4 *)(iVar1 + 0xf) = 0;
+          STField<undefined4>(iVar1,0xF) = 0;
         }
         iVar1 = param_1->field_0462;
         uVar2 = uVar2 + 1;
-        bVar3 = uVar2 < *(uint *)(iVar1 + 0xc);
-      } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));
+        bVar3 = uVar2 < STField<uint>(iVar1,0xC);
+      } while ((int)uVar2 < (int)STField<uint>(iVar1,0xC));
     }
     st::fn_006AE110((DArrayTy *)param_1->field_0462);
     param_1->field_0462 = 0;
@@ -2638,21 +2638,21 @@ void __fastcall st::fn_0065D590(int param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x20b);
   uVar2 = 0;
-  if (0 < *(int *)(iVar1 + 0xc)) {
-    bVar3 = *(int *)(iVar1 + 0xc) != 0;
+  if (0 < STField<int>(iVar1,0xC)) {
+    bVar3 = STField<int>(iVar1,0xC) != 0;
     do {
       if (bVar3) {
-        iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c);
+        iVar1 = STField<int>(iVar1,0x8) * uVar2 + STField<int>(iVar1,0x1C);
       }
       else {
         iVar1 = 0;
       }
-      *(undefined4 *)(iVar1 + 0x24) = 0;
+      STField<undefined4>(iVar1,0x24) = 0;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar1 = *(int *)(param_1 + 0x20b);
       uVar2 = uVar2 + 1;
-      bVar3 = uVar2 < *(uint *)(iVar1 + 0xc);
-    } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));
+      bVar3 = uVar2 < STField<uint>(iVar1,0xC);
+    } while ((int)uVar2 < (int)STField<uint>(iVar1,0xC));
     *(undefined4 *)(param_1 + 0x284) = 0;
     return;
   }
@@ -2765,11 +2765,10 @@ int __fastcall st::fn_0065DC00(AiFltClassTy *param_1,undefined4 param_2,uint par
       cVar1 = (char)param_1->field_0024;
     }
     if ((param_4 != '\b') && ((param_4 < '\0' || (cVar1 = param_4, '\b' < param_4)))) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_4 = -1;
-      cVar1 = param_4;
+      auto param_4_after_write = -1; /* compiler stack-slot lifetime split */
+      cVar1 = param_4_after_write;
     }
-    param_4 = cVar1;
+    char param_4_after_write_2 = cVar1; /* compiler stack-slot lifetime split */
     dVar2 = array->count;
     uVar6 = 0;
     if (0 < (int)dVar2) {
@@ -2782,11 +2781,11 @@ int __fastcall st::fn_0065DC00(AiFltClassTy *param_1,undefined4 param_2,uint par
         }
         /* ST_CALLSITE[0065DC81]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this = st::fn_004028BA
-                         (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
+                         (g_allPlayers_007FA174,(char)param_1->field_0024,*puVar3,CASE_1);
         /* ST_CALLSITE[0065DC90]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
         if (((this != nullptr) && (iVar4 = this->vfunc_F8(), iVar4 != 0))
            /* ST_CALLSITE[0065DCA5]: CALL dword ptr [EAX + 0x6c] */
-           && ((param_4 < '\0' || (iVar4 = this->vfunc_6C(), param_4 == iVar4)))) {
+           && ((param_4_after_write_2 < '\0' || (iVar4 = this->vfunc_6C(), param_4_after_write_2 == iVar4)))) {
           /* ST_CALLSITE[0065DCB4]: CALL dword ptr [EDX + 0x2c] */
           iVar4 = this->vfunc_2C();
           pIVar5 = st::fn_0040410B(iVar4);
@@ -2843,11 +2842,10 @@ st::fn_0065DD30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param
       cVar2 = (char)param_1->field_0024;
     }
     if ((param_5 != '\b') && ((param_5 < '\0' || (cVar2 = param_5, '\b' < param_5)))) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_5 = -1;
-      cVar2 = param_5;
+      auto param_5_after_write = -1; /* compiler stack-slot lifetime split */
+      cVar2 = param_5_after_write;
     }
-    param_5 = cVar2;
+    char param_5_after_write_2 = cVar2; /* compiler stack-slot lifetime split */
     uVar4 = local_1c->count;
     local_14 = 0;
     if (0 < (int)uVar4) {
@@ -2860,7 +2858,7 @@ st::fn_0065DD30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param
         }
         /* ST_CALLSITE[0065DDB9]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this = st::fn_004028BA
-                         (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
+                         (g_allPlayers_007FA174,(char)param_1->field_0024,*puVar3,CASE_1);
         /* ST_CALLSITE[0065DDCC]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
         if ((this == nullptr) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
         goto cf_common_join_0065DF91;
@@ -2916,7 +2914,7 @@ LAB_0065deef:
             if (iVar9 != 0) goto cf_common_join_0065DF91;
           }
           /* ST_CALLSITE[0065DF03]: CALL dword ptr [EAX + 0x6c] */
-          if (((param_5 == -1) || (iVar9 = this->vfunc_6C(), param_5 == iVar9)) &&
+          if (((param_5_after_write_2 == -1) || (iVar9 = this->vfunc_6C(), param_5_after_write_2 == iVar9)) &&
              (((param_10 < 1 || ((param_11 < 1 || (param_12 < 1)))) ||
               /* ST_CALLSITE[0065DF34]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
               ((st::fn_004018C5((STFishC *)this,&local_6,&local_8,&local_a),
@@ -3002,11 +3000,10 @@ st::fn_0065E070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint pa
     cVar3 = (char)*(undefined4 *)(param_1 + 0x24);
   }
   if ((param_6 != '\b') && ((param_6 < '\0' || (cVar3 = param_6, '\b' < param_6)))) {
-    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_6 = -1;
-    cVar3 = param_6;
+    auto param_6_after_write = -1; /* compiler stack-slot lifetime split */
+    cVar3 = param_6_after_write;
   }
-  param_6 = cVar3;
+  char param_6_after_write_2 = cVar3; /* compiler stack-slot lifetime split */
   local_10 = local_4c;
   local_c = 0;
   do {
@@ -3082,9 +3079,9 @@ LAB_0065e25c:
 LAB_0065e261:
               if (iVar9 != 0) goto cf_continue_loop_0065E27E;
             }
-            cVar3 = param_6;
+            cVar3 = param_6_after_write_2;
             /* ST_CALLSITE[0065E271]: CALL dword ptr [EAX + 0x6c] */
-            if ((param_6 == -1) || (iVar9 = this->vfunc_6C(), cVar3 == iVar9)) {
+            if ((param_6_after_write_2 == -1) || (iVar9 = this->vfunc_6C(), cVar3 == iVar9)) {
               local_14 = local_14 + 1;
             }
           }
@@ -3250,7 +3247,7 @@ LAB_0065e58d:
           uVar6 = st::fn_004049B7((char)this->field_023D);
           iVar3 = this->field_0235;
           /* ST_CALLSITE[0065E575]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-          uVar7 = st::fn_004049B7(*(char *)&this->field_0024);
+          uVar7 = st::fn_004049B7((char)this->field_0024);
           uVar7 = (int)(byte)uVar7;
           if ((&DAT_007e1984)[uVar7 + ((uint)(byte)uVar6 + iVar3 * 3) * 3] != '\0')
           goto LAB_0065e58d;
@@ -3915,7 +3912,7 @@ LAB_0065fec9:
       local_38[1] = array;
       local_1c = local_c;
       if (((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) &&
-         (this = st::fn_00405CF9(*(char *)&param_1->field_0024,param_1->field_007D),
+         (this = st::fn_00405CF9((char)param_1->field_0024,param_1->field_007D),
          this != nullptr)) {
         /* ST_CALLSITE[0065FF66]: CALL dword ptr [EDX + 0x8] */
         this->sub_00498D20(8,(short)local_38);

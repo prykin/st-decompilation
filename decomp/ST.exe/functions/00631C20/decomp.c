@@ -22,8 +22,8 @@ FUN_00631c20(void *this,int param_1,int param_2,byte param_3,undefined4 param_4,
     if (0 < iVar3) {
       do {
         iVar6 = STField<int>(this,0x6d);
-        if (((((uVar8 < *(uint *)(iVar6 + 0xc)) &&
-              (puVar7 = (uint *)(*(int *)(iVar6 + 8) * uVar8 + *(int *)(iVar6 + 0x1c)),
+        if (((((uVar8 < STField<uint>(iVar6,0xC)) &&
+              (puVar7 = (uint *)(STField<int>(iVar6,0x8) * uVar8 + STField<int>(iVar6,0x1C)),
               puVar7 != nullptr)) &&
              (iVar5 = FUN_006aced8(param_1,param_2,puVar7[3],puVar7[4]), iVar5 < (int)puVar7[6])) &&
             (*puVar7 < 8)) &&

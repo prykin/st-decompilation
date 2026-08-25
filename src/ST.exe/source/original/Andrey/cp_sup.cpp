@@ -873,6 +873,7 @@ st::fn_004F3130(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,int p
     local_18c[1] = param_2;
     local_18c[0] = param_3;
     if (text != nullptr) {
+      /* ST_CALLSITE[004F31B3]: CALL dword ptr [0x0085bde8] */
       st::external_00000080(st::pointer_boundary_cast<LPSTR>(&pCVar3->field_01E1),st::mutable_c_string("%s0"),text);
       local_8 = st::fn_006F1CE0(g_cMf32_00806790,param_6,&pCVar3->field_01E1,nullptr,1);
     }
@@ -960,7 +961,6 @@ st::fn_004F3130(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,int p
     }
     /* ST_CALLSITE[004F33EE]: CALL dword ptr [EDX + 0x8] */
     (*pCVar3->field_000C->vtable->CreateObject)
-              /* ST_CALLSITE[004F33EE]: CALL dword ptr [EDX + 0x8] */
               ((SystemClassTy *)pCVar3->field_000C,2,&local_c,nullptr,st::machine_word_boundary_cast<undefined4>(local_18c),0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_c;

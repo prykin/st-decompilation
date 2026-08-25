@@ -382,7 +382,7 @@ switchD_00590d73_default:
           iVar9 = 0;
           if (this_02->field_009A != '\0') {
             local_c = 0;
-            piVar10 = reinterpret_cast<int *>(&this_02->field_00BB[0].field_0028.field_0040);
+            piVar10 = &this_02->field_00BB[0].field_0028.field_0040;
             do {
               /* ST_CALLSITE[005911E4]: CALL dword ptr [0x0085bedc] */
               DVar8 = st::external_000000DA();
@@ -416,7 +416,7 @@ switchD_00590d73_default:
           local_230 = 0x694a;
           local_19c = local_238;
           local_175 = local_238;
-          if (*(int *)(iVar9 + 0x2e6) != 0) {
+          if (STField<int>(iVar9,0x2E6) != 0) {
             puVar5 = local_70;
             for (iVar19 = 6; iVar19 != 0; iVar19 = iVar19 + -1) {
               *puVar5 = 0xffffffff;
@@ -889,7 +889,7 @@ void __thiscall st::fn_00591BF0(CampaignTy *this)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*STField<int *>(this_00,0xC) + 8))(5,this_00->field_0066,0,local_80,0);
       iVar14 = this_00->field_00BB[0xc].field_01DC;
-      if (*(int *)(iVar14 + 0x2e6) != 0) {
+      if (STField<int>(iVar14,0x2E6) != 0) {
         memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
         local_1c = 1;
         local_1e = 1;
@@ -1043,7 +1043,7 @@ void __thiscall st::fn_00592470(CampaignTy *this)
     iVar2 = 0;
     if (this_00->field_009A != '\0') {
       iVar5 = 0x96;
-      piVar4 = reinterpret_cast<int *>(&this_00->field_00BB[0].field_0028.field_0040);
+      piVar4 = &this_00->field_00BB[0].field_0028.field_0040;
       do {
         /* ST_CALLSITE[005924C2]: CALL dword ptr [0x0085bedc] */
         DVar3 = st::external_000000DA();
@@ -1399,7 +1399,7 @@ LAB_00592b82:
         uVar10 = piVar9[3];
       }
       if (uVar10 <= local_8->field_0061 - piVar9[4]) {
-        pBVar3 = st::fn_0070B3A0(pAVar1,(int)(short)pAVar1->field_0029);
+        pBVar3 = st::fn_0070B3A0(pAVar1,(short)pAVar1->field_0029);
         st::fn_006B5F80((int *)g_ddxContext_008075A8,*piVar9,piVar9[1],(int)*(short *)(pAVar1 + 1),
                      (int)*(short *)&pAVar1[1].field_0x2);
         /* ST_CALLSITE[00592C0A]: CALL 0x00403738; direct=00403738 PutDDX */
@@ -1652,16 +1652,16 @@ int __thiscall st::fn_00593040(CampaignTy *this,STMessage *message)
     case 2:
     case 3:
       iVar9 = (int)this_00->field_0066 + iVar17 * 0x1fb + -0x66;
-      iVar8 = *(int *)(iVar9 + 0xef) + -1;
+      iVar8 = STField<int>(iVar9,0xEF) + -1;
       break;
     case 1:
       iVar9 = (int)this_00->field_0066 + iVar17 * 0x1fb + -0x66;
-      iVar8 = *(int *)(iVar9 + 0xef) + -2;
+      iVar8 = STField<int>(iVar9,0xEF) + -2;
       break;
     default:
       goto switchD_005931dd_default;
     }
-    *(int *)(iVar9 + 0xeb) = iVar8;
+    STField<int>(iVar9,0xEB) = iVar8;
 switchD_005931dd_default:
     uVar11 = this_00->field_00BB[iVar17].field_0028.field_0004;
     local_c = piVar3;

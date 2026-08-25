@@ -27,7 +27,7 @@ undefined4 __fastcall FUN_004e4f30(STMineSetC *param_1)
     local_EAX_85 = LookupRecordByte((char)param_1->field_023D);
     iVar3 = param_1->field_0235;
     /* ST_CALLSITE[004E4FAC]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-    local_EAX_124 = LookupRecordByte(*(char *)&param_1->field_0024);
+    local_EAX_124 = LookupRecordByte((char)param_1->field_0024);
     local_EAX_124 = (int)(byte)local_EAX_124;
     if ((&DAT_007e1984)[local_EAX_124 + ((uint)(byte)local_EAX_85 + iVar3 * 3) * 3] == '\0')
     goto LAB_004e4ffe;
@@ -43,7 +43,7 @@ LAB_004e4ffe:
   }
   else if ((param_1->field_05AC == 0x3d) &&
           /* ST_CALLSITE[004E501F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-          (bVar2 = LookupRecordByte(*(char *)&param_1->field_0024), bVar2 == 1)) {
+          (bVar2 = LookupRecordByte((char)param_1->field_0024), bVar2 == 1)) {
     iVar3 = 0x12;
   }
   else {
@@ -59,7 +59,7 @@ LAB_004e4ffe:
     uVar2 = LookupRecordByte((char)param_1->field_023D);
     iVar1 = param_1->field_0235;
     /* ST_CALLSITE[004E508A]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-    uVar3 = LookupRecordByte(*(char *)&param_1->field_0024);
+    uVar3 = LookupRecordByte((char)param_1->field_0024);
     uVar3 = (int)(byte)uVar3;
     if ((&DAT_007e1984)[uVar3 + ((uint)(byte)uVar2 + iVar1 * 3) * 3] == '\0') {
       return 0;

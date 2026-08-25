@@ -36,8 +36,7 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_5 == 0) {
       if (0 < param_4) {
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_3 = (undefined4 *)param_4;
+        auto param_3_after_write = (undefined4 *)param_4; /* compiler stack-slot lifetime split */
         puVar8 = param_2;
         do {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -56,14 +55,14 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
             puVar6 = (undefined4 *)((int)puVar6 + 1);
             puVar7 = (undefined4 *)((int)puVar7 + 1);
           }
-          param_3 = (undefined4 *)((int)param_3 + -1);
+          param_3_after_write = (undefined4 *)((int)param_3_after_write + -1);
           puVar8 = (undefined4 *)((int)puVar8 + (int)puVar1);
           param_4 = (int)param_2;
-        } while (param_3 != nullptr);
+        } while (param_3_after_write != nullptr);
       }
     }
     else if (0 < param_4) {
-      param_3 = param_2;
+      auto param_3_after_write_2 = param_2; /* compiler stack-slot lifetime split */
       auto param_5_after_write = param_4; /* compiler stack-slot lifetime split */
       do {
         param_2 = (undefined4 *)(param_4 + -1);
@@ -77,11 +76,11 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
             puVar8 = (undefined4 *)((int)puVar8 + -1);
             *puVar5 = *(undefined1 *)
                        (local_c + 0x37ac +
-                       ((int)((uint)(byte)puVar5[(int)param_3 - (int)puVar3] * 0xf) >> 8) * 4);
+                       ((int)((uint)(byte)puVar5[(int)param_3_after_write_2 - (int)puVar3] * 0xf) >> 8) * 4);
             puVar5 = puVar5 + 1;
           } while (puVar8 != nullptr);
         }
-        param_3 = (undefined4 *)((int)param_3 + (int)puVar1);
+        param_3_after_write_2 = (undefined4 *)((int)param_3_after_write_2 + (int)puVar1);
         param_5_after_write = param_5_after_write + -1;
         param_4 = (int)param_2;
       } while (param_5_after_write != 0);

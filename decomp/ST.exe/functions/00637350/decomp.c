@@ -81,7 +81,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort
     do {
       iVar8 = iVar4;
       iVar15 = local_1c;
-      auto param_9_after_write = uVar7; /* compiler stack-slot lifetime split */
+      uint param_9_after_write = uVar7; /* compiler stack-slot lifetime split */
       if (local_1c < local_14) {
         do {
           iVar4 = iVar8;

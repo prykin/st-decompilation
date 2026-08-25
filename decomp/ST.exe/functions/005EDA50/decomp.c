@@ -35,7 +35,7 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
         return 0;
       }
       /* ST_CALLSITE[005EDB11]: CALL dword ptr [EAX + 0x2c] */
-      dVar5 = this->slot_2C();
+      dVar5 = this->sub_0045EEE0();
       if ((((dVar5 == 0x52) || (dVar5 == 0x5f)) && (iVar4 = thunk_FUN_004e1490(this), iVar4 != 0))
          && (this->field_0508 == CASE_0)) {
         /* ST_CALLSITE[005EDB3B]: CALL dword ptr [EDX + 0xc] */

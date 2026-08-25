@@ -35,7 +35,7 @@ undefined4 STAllPlayersC::PushTV(char param_1,int param_2,int param_3,char param
     iVar4 = STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1B3);
   }
   iVar4 = iVar4 + param_3 * 0x10;
-  if (*(int *)(iVar4 + 4) == (int)param_4) {
+  if (STField<int>(iVar4,0x4) == (int)param_4) {
     array = *(DArrayTy **)(iVar4 + 10);
     index = 0;
     dVar1 = array->count;

@@ -77,7 +77,8 @@ TLOBaseTy::sub_004E2AD0::cf_common_exit_004E2B69:
 004E2BB5  8D 55 E0                  LEA EDX,[EBP + -0x20]
 004E2BB8  8B 01                     MOV EAX,dword ptr [ECX]
 004E2BBA  52                        PUSH EDX
-004E2BBB  FF 10                     CALL dword ptr [EAX]
+TLOBaseTy::sub_004E2AD0::override::prt_4e2bbb_89729ca9:
+004E2BBB  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 004E2BBD  5F                        POP EDI
 004E2BBE  5E                        POP ESI
 004E2BBF  33 C0                     XOR EAX,EAX

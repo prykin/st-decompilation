@@ -4239,7 +4239,7 @@ source_target	destination_target	site
 004B9FA0|local|EAX:4	0062B830|parameter|Stack[0x20]:4	004B9FA0 C call -> FUN_0062b830
 004B9FA0|local|Stack[-0x18]:4	004DBB10|parameter|Stack[0x4]:4	004B9FA0 C call -> FUN_004dbb10
 004B9FA0|local|Stack[-0x18]:4	004DBB60|parameter|Stack[0x4]:4	004B9FA0 C call -> FUN_004dbb60
-004BE1D0|parameter|ECX:4	0041F330|parameter|ECX:4	004BE1D0 C call -> FUN_0041f330
+004BE1D0|parameter|ECX:4 (auto)	0041F330|parameter|ECX:4	004BE1D0 C call -> FUN_0041f330
 004BE290|parameter|Stack[0x4]:4	0072E340|parameter|Stack[0x8]:4	004BE290 C call -> Library::MSVCRT::_strncpy
 004BE500|local|Stack[-0x8]:4	0041DD00|parameter|ECX:4 (auto)	004BE500 C call -> FUN_0041dd00
 004BE500|parameter|Stack[0x4]:4	0041DD00|parameter|Stack[0x4]:4	004BE500 C call -> FUN_0041dd00
@@ -4372,7 +4372,7 @@ source_target	destination_target	site
 004C6D00|parameter|ECX:4	004162F0|parameter|ECX:4 (auto)	004C6D00 C call -> STFishC::sub_004162F0
 004C6D00|parameter|ECX:4	004C6BB0|parameter|ECX:4 (auto)	004C6D00 C call -> FUN_004c6bb0
 004C7260|parameter|Stack[0x8]:4	004E60D0|parameter|Stack[0x8]:4	004C7260 C call -> FUN_004e60d0
-004C7460|parameter|ECX:4 (auto)	004C7260|parameter|ECX:4 (auto)	004C7460 C call -> FUN_004c7260
+004C7460|parameter|ECX:4 (auto)	004C7260|parameter|ECX:4 (auto)	004C7460 C call -> TLOBaseTy::sub_004C7260
 004C7460|local|Stack[-0x14]:4	004D76E0|parameter|Stack[0x14]:4	004C7460 C call -> FUN_004d76e0
 004C7460|local|Stack[-0x10]:4	004D76E0|parameter|Stack[0x18]:4	004C7460 C call -> FUN_004d76e0
 004C7460|local|Stack[-0xc]:4	004D76E0|parameter|Stack[0x1c]:4	004C7460 C call -> FUN_004d76e0
@@ -4412,7 +4412,7 @@ source_target	destination_target	site
 004C7CC0|parameter|Stack[0x4]:4	004C7730|parameter|Stack[0x4]:4	004C7CC0 C call -> FUN_004c7730
 004C7CC0|parameter|Stack[0x8]:4	004C7730|parameter|Stack[0x8]:4	004C7CC0 C call -> FUN_004c7730
 004C7CC0|parameter|Stack[0x20]:4	0072E340|parameter|Stack[0x8]:4	004C7CC0 C call -> Library::MSVCRT::_strncpy
-004C7CC0|parameter|ECX:4 (auto)	004C7260|parameter|ECX:4 (auto)	004C7CC0 C call -> FUN_004c7260
+004C7CC0|parameter|ECX:4 (auto)	004C7260|parameter|ECX:4 (auto)	004C7CC0 C call -> TLOBaseTy::sub_004C7260
 004C7CC0|parameter|ECX:4 (auto)	004CE860|parameter|ECX:4 (auto)	004C7CC0 C call -> TLOBaseTy::sub_004CE860
 004C7CC0|parameter|ECX:4 (auto)	004CE770|parameter|ECX:4 (auto)	004C7CC0 C call -> FUN_004ce770
 004C7CC0|parameter|Stack[0x4]:4	004CE770|parameter|Stack[0x4]:4	004C7CC0 C call -> FUN_004ce770
@@ -4428,11 +4428,11 @@ source_target	destination_target	site
 004C84C0|parameter|ECX:4	004C94B0|parameter|ECX:4 (auto)	004C84C0 C call -> TLOBaseTy::procResult
 004C84C0|parameter|ECX:4	004C90C0|parameter|ECX:4 (auto)	004C84C0 C call -> TLOBaseTy::sub_004C90C0
 004C84C0|parameter|ECX:4	004C7460|parameter|ECX:4 (auto)	004C84C0 C call -> TLOBaseTy::sub_004C7460
-004C84C0|parameter|ECX:4	004C7260|parameter|ECX:4 (auto)	004C84C0 C call -> FUN_004c7260
+004C84C0|parameter|ECX:4	004C7260|parameter|ECX:4 (auto)	004C84C0 C call -> TLOBaseTy::sub_004C7260
 004C84C0|parameter|ECX:4	004CE7A0|parameter|ECX:4	004C84C0 C call -> FUN_004ce7a0
 004C84C0|parameter|ECX:4	004CE860|parameter|ECX:4 (auto)	004C84C0 C call -> TLOBaseTy::sub_004CE860
 004C84C0|parameter|ECX:4	004C7460|parameter|ECX:4 (auto)	004C84C0 C call -> TLOBaseTy::sub_004C7460
-004C84C0|parameter|ECX:4	004C7260|parameter|ECX:4 (auto)	004C84C0 C call -> FUN_004c7260
+004C84C0|parameter|ECX:4	004C7260|parameter|ECX:4 (auto)	004C84C0 C call -> TLOBaseTy::sub_004C7260
 004C84C0|parameter|ECX:4	004C7460|parameter|ECX:4 (auto)	004C84C0 C call -> TLOBaseTy::sub_004C7460
 004C84C0|local|Stack[-0x10]:4	004D7D30|parameter|Stack[0x10]:4	004C84C0 C call -> FUN_004d7d30
 004C84C0|local|Stack[-0x8]:4	004D7E50|parameter|Stack[0x10]:4	004C84C0 C call -> FUN_004d7e50
@@ -4646,7 +4646,7 @@ source_target	destination_target	site
 004CF640|local|Stack[-0x10]:4	006B0FD0|parameter|Stack[0x4]:4	004CF640 C call -> FUN_006b0fd0
 004CF640|local|Stack[-0xc]:4	006B0FD0|parameter|Stack[0x4]:4	004CF640 C call -> FUN_006b0fd0
 004CF640|parameter|ECX:4 (auto)	004C9370|parameter|ECX:4 (auto)	004CF640 C call -> TLOBaseTy::sub_004C9370
-004CF640|parameter|ECX:4 (auto)	004C7260|parameter|ECX:4 (auto)	004CF640 C call -> FUN_004c7260
+004CF640|parameter|ECX:4 (auto)	004C7260|parameter|ECX:4 (auto)	004CF640 C call -> TLOBaseTy::sub_004C7260
 004CF640|local|Stack[-0x4a]:1	004E6B40|parameter|Stack[0xc]:4	004CF640 C call -> FUN_004e6b40
 004CF640|local|Stack[-0x5c]:4	006AE1C0|parameter|Stack[0x8]:4	004CF640 C call -> Library::DKW::TBL::DArrayAppend
 004D01F0|parameter|ECX:4	004CE9E0|parameter|ECX:4 (auto)	004D01F0 C call -> FUN_004ce9e0
@@ -4915,9 +4915,9 @@ source_target	destination_target	site
 004E2C30|parameter|Stack[0x4]:4	004E6E10|parameter|Stack[0x8]:4	004E2C30 C call -> FUN_004e6e10
 004E2C30|parameter|ECX:4 (auto)	004CABB0|parameter|ECX:4 (auto)	004E2C30 C call -> TLOBaseTy::RotateSpr
 004E3120|parameter|ECX:4 (auto)	004CABB0|parameter|ECX:4 (auto)	004E3120 C call -> TLOBaseTy::RotateSpr
-004E3200|parameter|ECX:4 (auto)	004C7260|parameter|ECX:4 (auto)	004E3200 C call -> FUN_004c7260
+004E3200|parameter|ECX:4 (auto)	004C7260|parameter|ECX:4 (auto)	004E3200 C call -> TLOBaseTy::sub_004C7260
 004E3200|local|Stack[-0x48]:4	006AE1C0|parameter|Stack[0x8]:4	004E3200 C call -> Library::DKW::TBL::DArrayAppend
-004E3200|parameter|ECX:4 (auto)	004C7260|parameter|ECX:4 (auto)	004E3200 C call -> FUN_004c7260
+004E3200|parameter|ECX:4 (auto)	004C7260|parameter|ECX:4 (auto)	004E3200 C call -> TLOBaseTy::sub_004C7260
 004E3200|local|Stack[-0x48]:4	006AE1C0|parameter|Stack[0x8]:4	004E3200 C call -> Library::DKW::TBL::DArrayAppend
 004E3200|local|Stack[-0x48]:4	006ACC70|parameter|Stack[0x4]:4	004E3200 C call -> DArrayGetElement
 004E3200|local|Stack[-0x78]:1	006ACC70|parameter|Stack[0x4]:4	004E3200 C call -> DArrayGetElement
@@ -5960,6 +5960,7 @@ source_target	destination_target	site
 0051A100|parameter|Stack[0x4]:4	00515E30|parameter|Stack[0xc]:4	0051A100 C call -> HelpPanelTy::AddLinks
 0051A100|parameter|Stack[0x8]:4	00515E30|parameter|Stack[0x10]:4	0051A100 C call -> HelpPanelTy::AddLinks
 0051A100|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	0051A100 C call -> RaiseInternalException
+0051B5A0|local|Stack[-0xa0]:1	0072D7F0|parameter|Stack[0x4]:4	0051B5A0 C call -> Library::MSVCRT::__setjmp3
 0051B5A0|parameter|Stack[0x8]:4	00515310|parameter|Stack[0x8]:4	0051B5A0 C call -> HelpPanelTy::DrawTitle
 0051B5A0|local|EAX:4	0070B3A0|parameter|Stack[0x8]:4	0051B5A0 C call -> FUN_0070b3a0
 0051B5A0|local|EAX:4	00540760|parameter|Stack[0x14]:4	0051B5A0 C call -> DibPut
@@ -6024,6 +6025,7 @@ source_target	destination_target	site
 0051B5A0|parameter|Stack[0x4]:4	00515E30|parameter|Stack[0xc]:4	0051B5A0 C call -> HelpPanelTy::AddLinks
 0051B5A0|parameter|Stack[0x8]:4	00515E30|parameter|Stack[0x10]:4	0051B5A0 C call -> HelpPanelTy::AddLinks
 0051B5A0|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	0051B5A0 C call -> RaiseInternalException
+0051C980|local|Stack[-0x70]:1	0072D7F0|parameter|Stack[0x4]:4	0051C980 C call -> Library::MSVCRT::__setjmp3
 0051C980|parameter|Stack[0x4]:4	00523410|parameter|Stack[0x4]:4	0051C980 C call -> FUN_00523410
 0051C980|parameter|Stack[0x8]:4	00515310|parameter|Stack[0x8]:4	0051C980 C call -> HelpPanelTy::DrawTitle
 0051C980|parameter|Stack[0x4]:4	00515650|parameter|Stack[0x8]:4	0051C980 C call -> HelpPanelTy::DrawObj
@@ -7601,8 +7603,8 @@ source_target	destination_target	site
 0056F250|local|Stack[-0xc]:4	006B5050|parameter|Stack[0x4]:4	0056F250 C call -> FUN_006b5050
 0056F250|local|Stack[-0xc]:4	006F13F0|parameter|Stack[0xc]:4	0056F250 C call -> cMf32::RecPut
 0056FA60|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	0056FA60 C call -> RaiseInternalException
-0056FA60|local|Stack[-0x18]:4	006E5150|parameter|ECX:4 (auto)	0056FA60 C call -> STAppC::sub_006E5150
-0056FA60|parameter|Stack[0x4]:4	006E5150|parameter|Stack[0x4]:4	0056FA60 C call -> STAppC::sub_006E5150
+0056FA60|local|Stack[-0x18]:4	006E5150|parameter|ECX:4 (auto)	0056FA60 C call -> AppClassTy::sub_006E5150
+0056FA60|parameter|Stack[0x4]:4	006E5150|parameter|Stack[0x4]:4	0056FA60 C call -> AppClassTy::sub_006E5150
 0056FA60|local|Stack[-0x44]:1	006E3DB0|parameter|Stack[0x4]:4	0056FA60 C call -> FUN_006e3db0
 0056FA60|local|Stack[-0x44]:1	006E3DB0|parameter|Stack[0x4]:4	0056FA60 C call -> FUN_006e3db0
 0056FA60|local|Stack[-0x44]:1	006E3DB0|parameter|Stack[0x4]:4	0056FA60 C call -> FUN_006e3db0

@@ -101,65 +101,65 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this)
       return;
     }
     if (uVar1 == 1000) {
-      if ((DArrayTy *)this->field_0135 != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_0135);
+      if (this->field_0135 != nullptr) {
+        DArrayDestroy(this->field_0135);
       }
-      if ((DArrayTy *)this->field_0139 != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_0139);
+      if (this->field_0139 != nullptr) {
+        DArrayDestroy(this->field_0139);
       }
-      this->field_0135 = 0;
-      this->field_0139 = 0;
-      if ((DArrayTy *)this->field_012D != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_012D);
+      this->field_0135 = nullptr;
+      this->field_0139 = nullptr;
+      if (this->field_012D != nullptr) {
+        DArrayDestroy(this->field_012D);
       }
-      if ((DArrayTy *)this->field_0131 != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_0131);
+      if (this->field_0131 != nullptr) {
+        DArrayDestroy(this->field_0131);
       }
-      this->field_012D = 0;
-      this->field_0131 = 0;
-      if ((DArrayTy *)this->field_014D != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_014D);
+      this->field_012D = nullptr;
+      this->field_0131 = nullptr;
+      if (this->field_014D != nullptr) {
+        DArrayDestroy(this->field_014D);
       }
-      if ((DArrayTy *)this->field_0151 != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_0151);
+      if (this->field_0151 != nullptr) {
+        DArrayDestroy(this->field_0151);
       }
-      if ((DArrayTy *)this->field_0155 != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_0155);
+      if (this->field_0155 != nullptr) {
+        DArrayDestroy(this->field_0155);
       }
-      if ((DArrayTy *)this->field_0159 != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_0159);
+      if (this->field_0159 != nullptr) {
+        DArrayDestroy(this->field_0159);
       }
-      this->field_014D = 0;
-      this->field_0151 = 0;
-      this->field_0155 = 0;
-      this->field_0159 = 0;
-      if ((DArrayTy *)this->field_013D != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_013D);
+      this->field_014D = nullptr;
+      this->field_0151 = nullptr;
+      this->field_0155 = nullptr;
+      this->field_0159 = nullptr;
+      if (this->field_013D != nullptr) {
+        DArrayDestroy(this->field_013D);
       }
-      if ((DArrayTy *)this->field_0141 != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_0141);
+      if (this->field_0141 != nullptr) {
+        DArrayDestroy(this->field_0141);
       }
-      if ((DArrayTy *)this->field_0145 != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_0145);
+      if (this->field_0145 != nullptr) {
+        DArrayDestroy(this->field_0145);
       }
-      if ((DArrayTy *)this->field_0149 != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_0149);
+      if (this->field_0149 != nullptr) {
+        DArrayDestroy(this->field_0149);
       }
-      this->field_013D = 0;
-      this->field_0141 = 0;
-      this->field_0145 = 0;
-      this->field_0149 = 0;
+      this->field_013D = nullptr;
+      this->field_0141 = nullptr;
+      this->field_0145 = nullptr;
+      this->field_0149 = nullptr;
       FreeAndNull(&this->field_0185);
       FreeAndNull(&this->field_0189);
       FreeAndNull(&this->field_018D);
       FreeAndNull(&this->field_0191);
-      if ((DArrayTy *)this->field_01A1 != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_01A1);
-        this->field_01A1 = 0;
+      if (this->field_01A1 != nullptr) {
+        DArrayDestroy(this->field_01A1);
+        this->field_01A1 = nullptr;
       }
-      if ((DArrayTy *)this->field_019D != nullptr) {
-        DArrayDestroy((DArrayTy *)this->field_019D);
-        this->field_019D = 0;
+      if (this->field_019D != nullptr) {
+        DArrayDestroy(this->field_019D);
+        this->field_019D = nullptr;
       }
       FreeAndNull(&this->field_01A5);
       FreeAndNull(&this->field_01A9);

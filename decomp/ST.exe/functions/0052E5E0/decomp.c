@@ -124,9 +124,9 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     /* ST_CALLSITE[0052E7F1]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
     uVar10 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,pCVar3,uVar6,uVar7,sVar8,uVar9,
                                  uVar12,pcVar13,uVar16,uVar20);
-    uVar6 = this_00->field_0038;
+    iVar18 = this_00->field_0038;
     this_00->field_01AD[1] = uVar10;
-    this_00->field_0301 = uVar6;
+    this_00->field_0301 = iVar18;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

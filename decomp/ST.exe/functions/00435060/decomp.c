@@ -27,8 +27,8 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
       iVar1 = local_8 * 0x10 + iVar2;
       if (iVar3 != 0) {
         if (iVar3 == 0x3c) {
-          if (*(int *)(iVar1 + 10) != 0) {
-            iVar3 = *(int *)(*(int *)(iVar1 + 10) + 0xc);
+          if (STField<int>(iVar1,0xA) != 0) {
+            iVar3 = *(int *)(STField<int>(iVar1,0xA) + 0xc);
             uVar6 = 0;
             if (0 < iVar3) {
               do {
@@ -52,7 +52,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
         }
         else if (iVar3 == 0x1ae) {
           /* ST_CALLSITE[004350F4]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-          pSVar5 = GetObjPtr(this,-1,*(ushort *)(iVar1 + 8),CASE_3);
+          pSVar5 = GetObjPtr(this,-1,STField<ushort>(iVar1,0x8),CASE_3);
           if (pSVar5 != nullptr) {
             if (local_8 == 0) {
               /* ST_CALLSITE[00435106]: CALL 0x004042c8; direct=004042C8 STGameObjC::SetSelfCheckFlag */
@@ -83,8 +83,8 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
       iVar3 = *(int *)(local_8 * 0x10 + iVar2);
       if (iVar3 < 0x19b) {
         if (iVar3 == 0x19a) {
-          if (*(int *)(iVar1 + 10) != 0) {
-            iVar3 = *(int *)(*(int *)(iVar1 + 10) + 0xc);
+          if (STField<int>(iVar1,0xA) != 0) {
+            iVar3 = *(int *)(STField<int>(iVar1,0xA) + 0xc);
             uVar6 = 0;
             if (0 < iVar3) {
               do {
@@ -110,7 +110,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
         else if (iVar3 != 0) {
           if (iVar3 == 0x5a) {
             /* ST_CALLSITE[004351FF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-            pSVar5 = GetObjPtr(this,-1,*(ushort *)(iVar1 + 8),CASE_4);
+            pSVar5 = GetObjPtr(this,-1,STField<ushort>(iVar1,0x8),CASE_4);
             if (pSVar5 != nullptr) {
               if (iVar7 != 0) goto LAB_004352f5;
               /* ST_CALLSITE[00435212]: CALL 0x004042c8; direct=004042C8 STGameObjC::SetSelfCheckFlag */
@@ -120,7 +120,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
           else {
             if (iVar3 != 0x172) goto LAB_00435287;
             /* ST_CALLSITE[004351D5]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-            pSVar5 = GetObjPtr(this,-1,*(ushort *)(iVar1 + 8),CASE_2);
+            pSVar5 = GetObjPtr(this,-1,STField<ushort>(iVar1,0x8),CASE_2);
             if (pSVar5 != nullptr) {
               if (iVar7 != 0) goto LAB_004352f5;
               /* ST_CALLSITE[004351EC]: CALL 0x004042c8; direct=004042C8 STGameObjC::SetSelfCheckFlag */
@@ -131,7 +131,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
       }
       else if (iVar3 == 0x1a4) {
         /* ST_CALLSITE[004352DC]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-        pSVar5 = GetObjPtr(this,-1,*(ushort *)(iVar1 + 8),CASE_5);
+        pSVar5 = GetObjPtr(this,-1,STField<ushort>(iVar1,0x8),CASE_5);
         if (pSVar5 != nullptr) {
           if (iVar7 == 0) {
             /* ST_CALLSITE[004352EB]: CALL 0x004042c8; direct=004042C8 STGameObjC::SetSelfCheckFlag */
@@ -146,7 +146,7 @@ LAB_004352f5:
       }
       else if (iVar3 == 0x1b8) {
         /* ST_CALLSITE[004352BA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-        pSVar5 = GetObjPtr(this,-1,*(ushort *)(iVar1 + 8),CASE_6);
+        pSVar5 = GetObjPtr(this,-1,STField<ushort>(iVar1,0x8),CASE_6);
         if (pSVar5 != nullptr) {
           if (iVar7 != 0) goto LAB_004352f5;
           /* ST_CALLSITE[004352C9]: CALL 0x004042c8; direct=004042C8 STGameObjC::SetSelfCheckFlag */

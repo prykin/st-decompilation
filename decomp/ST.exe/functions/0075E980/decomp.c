@@ -1,15 +1,20 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0075E890 -> 0075E980 @ 0075E8E3; FUN_0075e890 parameter param_1 */
+   Evidence: 0075E890 -> 0075E980 @ 0075E8E3; FUN_0075e890 parameter param_1
 
-void FUN_0075e980(AnonShape_0075E890_C23EB446 *param_1,int param_2,int *param_3,int param_4,
+   [STReturnSemanticsApplier] machine_count_return.
+   Evidence: every reachable RET carries EAX from an exact zero initializer; the only subsequent
+   accumulator definitions are INC EAX and at least one reachable path increments the count; machine
+   CFG audit: used=1, ignored=0, unknown=0 */
+
+uint FUN_0075e980(AnonShape_0075E890_C23EB446 *param_1,int param_2,int *param_3,int param_4,
                  int param_5)
 
 {
   AnonNested_0075EB40_0080_454B432A *pAVar1;
   AnonShape_0075E890_C23EB446 *pAVar2;
-  uint uVar3;
-  int iVar4;
+  int iVar3;
+  uint uVar4;
   uint uVar5;
   int iVar6;
   int iVar7;
@@ -42,22 +47,22 @@ void FUN_0075e980(AnonShape_0075E890_C23EB446 *param_1,int param_2,int *param_3,
     local_10 = pAVar1->field_0004;
     local_14 = pAVar1->field_0008;
     do {
-      uVar3 = (uint)(byte)(&param_1_after_write->field_0x0)[local_18];
-      if ((int)uVar3 < param_2) {
-        iVar7 = (uVar3 - param_2) * (uVar3 - param_2);
+      uVar4 = (uint)(byte)(&param_1_after_write->field_0x0)[local_18];
+      if ((int)uVar4 < param_2) {
+        iVar7 = (uVar4 - param_2) * (uVar4 - param_2);
         iVar6 = param_2 + 0x18;
 LAB_0075ea13:
-        iVar4 = iVar6;
+        iVar3 = iVar6;
       }
       else {
-        iVar4 = param_2 + 0x18;
+        iVar3 = param_2 + 0x18;
         iVar6 = param_2;
-        if (iVar4 < (int)uVar3) {
-          iVar7 = (uVar3 - iVar4) * (uVar3 - iVar4);
+        if (iVar3 < (int)uVar4) {
+          iVar7 = (uVar4 - iVar3) * (uVar4 - iVar3);
           goto LAB_0075ea13;
         }
         iVar7 = 0;
-        if (local_28 < (int)uVar3) goto LAB_0075ea13;
+        if (local_28 < (int)uVar4) goto LAB_0075ea13;
       }
       uVar5 = (uint)(byte)(&param_1_after_write->field_0x0)[local_10];
       if ((int)uVar5 < (int)piVar7) {
@@ -97,29 +102,29 @@ LAB_0075ea6d:
         local_1c = uVar5 - param_4;
       }
 LAB_0075eac8:
-      iVar4 = (uVar3 - iVar4) * (uVar3 - iVar4) + iVar6 * 3 * iVar6 * 3 +
+      iVar3 = (uVar4 - iVar3) * (uVar4 - iVar3) + iVar6 * 3 * iVar6 * 3 +
               local_1c * 2 * local_1c * 2;
       *param_3_after_write = iVar7;
-      if (iVar4 < local_8) {
-        local_8 = iVar4;
+      if (iVar3 < local_8) {
+        local_8 = iVar3;
       }
       param_1_after_write = (AnonShape_0075E890_C23EB446 *)&param_1_after_write->field_0x1;
       param_3_after_write = param_3_after_write + 1;
     } while ((int)param_1_after_write < local_c);
   }
-  iVar4 = 0;
-  iVar6 = 0;
+  uVar4 = 0;
+  iVar3 = 0;
   if (0 < local_c) {
     piVar8 = local_428;
     do {
       if (*piVar8 <= local_8) {
-        *(char *)(iVar4 + param_5) = (char)iVar6;
-        iVar4 = iVar4 + 1;
+        *(char *)(uVar4 + param_5) = (char)iVar3;
+        uVar4 = uVar4 + 1;
       }
-      iVar6 = iVar6 + 1;
+      iVar3 = iVar3 + 1;
       piVar8 = piVar8 + 1;
-    } while (iVar6 < local_c);
+    } while (iVar3 < local_c);
   }
-  return;
+  return uVar4;
 }
 

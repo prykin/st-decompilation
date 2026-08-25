@@ -47,8 +47,8 @@ LAB_00483342:
                       STField<STAllPlayersC_GetObjPtr_param_3Enum>(param_1,0x483));
     thunk_FUN_00416270(this,&local_10,(short *)&local_14,(short *)&local_8);
     iVar2 = FUN_006acf0d((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
-                         (int)STField<short>(param_1,0x45),(int)(short)local_10,
-                         (int)(short)local_14,(int)(short)local_8);
+                         (int)STField<short>(param_1,0x45),(short)local_10,
+                         (short)local_14,(short)local_8);
     if ((short)param_1[0x205] < iVar2) {
       return (-(uint)(STField<int>(param_1,0x7e6) != 0) & 4) + 5;
     }
@@ -61,7 +61,7 @@ LAB_00483342:
       return 3;
     }
     sVar1 = STField<short>(param_1,0x45);
-    uVar4 = (int)(short)local_8 - (int)sVar1;
+    uVar4 = (short)local_8 - (int)sVar1;
     uVar6 = (int)uVar4 >> 0x1f;
     if (3 < (int)(((uVar4 ^ uVar6) - uVar6) * 10) / iVar2) {
       return ((short)local_8 <= sVar1) + 6;

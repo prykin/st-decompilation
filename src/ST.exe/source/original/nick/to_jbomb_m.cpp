@@ -132,8 +132,7 @@ void __thiscall st::fn_006178C0(JumpManagC *this)
               iVar5 = -3;
             }
             else if (STField<int>(pvVar6,0x18) == local_8) {
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              if (*(int *)(local_8 + 0x8b) != STField<int>(pvVar6,0x20)) {
+              if (STField<int>(local_8,0x8B) != STField<int>(pvVar6,0x20)) {
                 iVar5 = -5;
               }
             }

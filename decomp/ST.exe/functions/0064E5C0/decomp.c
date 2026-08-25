@@ -35,7 +35,7 @@ FUN_0064e5c0(undefined1 param_1,short param_2,short param_3,undefined4 param_4,i
     _param_2 = CONCAT22(in_stack_0000000a,g_worldGrid.sizeY);
   }
   thunk_FUN_006756d0((short *)&local_c,(short *)&local_8,&param_3,&param_2);
-  thunk_FUN_004d83d0(param_1,(int)(short)local_c,(int)(short)local_8,(int)param_3,(int)param_2);
+  thunk_FUN_004d83d0(param_1,(short)local_c,(short)local_8,(int)param_3,(int)param_2);
   return;
 }
 

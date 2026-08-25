@@ -111,29 +111,29 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
     *(undefined4 *)&local_14->field_0x2a = this_00->field_0231;
     *(undefined4 *)&local_14->field_0x2e = this_00->field_0235;
     *(undefined4 *)&local_14->field_0x32 = this_00->field_0239;
-    *(undefined4 *)&local_14->field_0x36 = this_00->field_023D;
+    *(uint *)&local_14->field_0x36 = this_00->field_023D;
     *(undefined2 *)&local_14->field_0x3a = this_00->field_0241;
     *(undefined2 *)&local_14->field_0x3c = this_00->field_0243;
-    *(undefined2 *)&local_14->field_0x3e = this_00->field_0245;
+    *(short *)&local_14->field_0x3e = this_00->field_0245;
     *(undefined4 *)&local_14->field_0x62 = this_00->field_0263;
     *(undefined4 *)&local_14->field_0x66 = this_00->field_0267;
     *(undefined4 *)&local_14->field_0x6a = this_00->field_026B;
     *(undefined2 *)&local_14->field_0x40 = this_00->field_0247;
-    *(undefined2 *)&local_14->field_0x42 = this_00->field_0249;
+    *(short *)&local_14->field_0x42 = this_00->field_0249;
     *(undefined2 *)&local_14->field_0x44 = this_00->field_024B;
-    *(undefined2 *)&local_14->field_0x46 = this_00->field_024D;
+    *(short *)&local_14->field_0x46 = this_00->field_024D;
     *(undefined2 *)&local_14->field_0x48 = this_00->field_024F;
     *(undefined2 *)&local_14->field_0x4a = this_00->field_0251;
-    *(uint *)&local_14->field_0x4c = this_00->field_0253;
+    *(int *)&local_14->field_0x4c = this_00->field_0253;
     local_14->field_0050 = this_00->field_0257;
     local_14->field_0054 = this_00->field_025B;
-    *(undefined4 *)&local_14->field_0x58 = this_00->field_025F;
-    *(undefined4 *)&local_14->field_0x5c = this_00->field_026F;
+    *(int *)&local_14->field_0x58 = this_00->field_025F;
+    *(int *)&local_14->field_0x5c = this_00->field_026F;
     *(undefined2 *)&local_14->field_0x60 = this_00->field_0273;
     *(undefined4 *)&local_14->field_0x74 = 0;
-    *(undefined2 *)&local_14->field_0x6e = this_00->field_0041;
-    *(undefined2 *)&local_14->field_0x70 = this_00->field_0043;
-    *(undefined2 *)&local_14->field_0x72 = this_00->field_0045;
+    *(short *)&local_14->field_0x6e = this_00->field_0041;
+    *(short *)&local_14->field_0x70 = this_00->field_0043;
+    *(short *)&local_14->field_0x72 = this_00->field_0045;
     local_14->field_0x78 = this_00->field_0275;
     local_14->field_0x79 = this_00->field_0276;
     local_14->field_0x7a = this_00->field_0277;
@@ -166,7 +166,7 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
     DAT_0081170c = st::fn_006ACF0D(0,0,0,0x3ed,0x3ed,1000);
     dVar2 = (message->arg0).u32;
     this_00->field_0231 = 3;
-    uVar5 = *(uint *)(dVar2 + 0xc);
+    uVar5 = STField<uint>(dVar2,0xC);
     if (uVar5 < 2) {
       this_00->field_0257 = 0;
       this_00->field_0253 = g_playSystem_00802A38->field_00E4;
@@ -182,9 +182,9 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
       this_00->field_026B = 0;
       this_00->field_0267 = 0;
       this_00->field_0263 = 0;
-      if ((this_00->field_0290 < (int)(short)(g_worldGrid.sizeX * 0xc9 + 100)) &&
+      if ((this_00->field_0290 < (short)(g_worldGrid.sizeX * 0xc9 + 100)) &&
          (-1 < this_00->field_0290)) {
-        if ((this_00->field_0294 < (int)(short)(g_worldGrid.sizeY * 0xc9 + 100)) &&
+        if ((this_00->field_0294 < (short)(g_worldGrid.sizeY * 0xc9 + 100)) &&
            (((-1 < this_00->field_0294 &&
              (iVar4 = this_00->field_0298, iVar4 < (short)(STPiece<4,4>(g_worldGrid) * 200 + 100))) &&
             (-1 < iVar4)))) {
@@ -225,7 +225,7 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
           else {
             this_00->field_0231 = 0;
             this_00->field_0273 = STField<undefined2>(local_24,0x32);
-            this_00->field_026F = STField<undefined4>(local_24,0x24);
+            this_00->field_026F = STField<int>(local_24,0x24);
             st::fn_004031E3(local_24,(uint *)&local_6,&local_8,&local_a);
             local_a = local_a - this_00->field_0045;
             local_8 = local_8 - this_00->field_0043;
@@ -273,20 +273,20 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
     this_00->field_0231 = STField<undefined4>(local_48,0x2a);
     this_00->field_0235 = STField<undefined4>(local_48,0x2e);
     this_00->field_0239 = STField<undefined4>(local_48,0x32);
-    this_00->field_023D = STField<undefined4>(local_48,0x36);
+    this_00->field_023D = STField<uint>(local_48,0x36);
     this_00->field_0241 = STField<undefined2>(local_48,0x3a);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_0243 = *(undefined2 *)(local_48 + 0xf);
-    this_00->field_0245 = STField<undefined2>(local_48,0x3e);
+    this_00->field_0245 = STField<short>(local_48,0x3e);
     this_00->field_0263 = STField<undefined4>(local_48,0x62);
     this_00->field_0267 = STField<undefined4>(local_48,0x66);
     this_00->field_026B = STField<undefined4>(local_48,0x6a);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_0247 = *(undefined2 *)(local_48 + 0x10);
-    this_00->field_0249 = STField<undefined2>(local_48,0x42);
+    this_00->field_0249 = STField<short>(local_48,0x42);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_024B = *(undefined2 *)(local_48 + 0x11);
-    this_00->field_024D = STField<undefined2>(local_48,0x46);
+    this_00->field_024D = STField<short>(local_48,0x46);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_024F = *(undefined2 *)(local_48 + 0x12);
     this_00->field_0251 = STField<undefined2>(local_48,0x4a);
@@ -297,10 +297,10 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
     this_00->field_026F = local_48[0x17];
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_0273 = *(undefined2 *)(local_48 + 0x18);
-    this_00->field_0041 = STField<undefined2>(local_48,0x6e);
+    this_00->field_0041 = STField<short>(local_48,0x6e);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    this_00->field_0043 = *(undefined2 *)(local_48 + 0x1c);
-    this_00->field_0045 = STField<undefined2>(local_48,0x72);
+    this_00->field_0043 = *(short *)(local_48 + 0x1c);
+    this_00->field_0045 = STField<short>(local_48,0x72);
     this_00->field_0275 = ((undefined1 *)local_48)[0x1e];
     this_00->field_0276 = STField<undefined1>(local_48,0x79);
     this_00->field_0277 = STField<undefined1>(local_48,0x7a);

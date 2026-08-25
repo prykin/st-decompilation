@@ -38,8 +38,8 @@ AllocationRecord_0065CB00 * __cdecl FUN_0065cb00(AllocationRecord_0065CB00 *para
     memmove(pAVar8, pAVar4_mg0, 0x49e); /* compiler REP MOVS byte copy */
     pAVar8 = (AnonShape_0065CB00_C527AFF0 *)((byte *)pAVar8 + 0x49c);
     pAVar4_mg0 = (AllocationRecord_0065CB00 *)((byte *)pAVar4_mg0 + 0x49c);
-    *(undefined1 *)((int)&pAVar8->field_0001 + 1) =
-         *(undefined1 *)((int)&pAVar4_mg0->field_0001 + 1);
+    STField<undefined1>(pAVar8,0x2) =
+         STField<undefined1>(pAVar4_mg0,0x2);
     local_8->field_0001 = 0x49f;
     local_8->field_0005 = 2;
     iVar5 = local_8->field_047A;
@@ -68,25 +68,25 @@ AllocationRecord_0065CB00 * __cdecl FUN_0065cb00(AllocationRecord_0065CB00 *para
     local_8->field_0456 = puVar3;
     iVar5 = local_8->field_0462;
     pAVar4 = (AllocationRecord_0065CB00 *)local_8;
-    if (0 < *(int *)(iVar5 + 0xc)) {
-      bVar10 = *(int *)(iVar5 + 0xc) != 0;
+    if (0 < STField<int>(iVar5,0xC)) {
+      bVar10 = STField<int>(iVar5,0xC) != 0;
       do {
         if (bVar10) {
-          iVar5 = *(int *)(iVar5 + 8) * uVar7 + *(int *)(iVar5 + 0x1c);
+          iVar5 = STField<int>(iVar5,0x8) * uVar7 + STField<int>(iVar5,0x1C);
         }
         else {
           iVar5 = 0;
         }
-        if (*(int *)(iVar5 + 0xf) != 0) {
-          pDVar2 = FUN_006b0060(nullptr,(uint *)(&param_1->field_0x49e + *(int *)(iVar5 + 0x13))
+        if (STField<int>(iVar5,0xF) != 0) {
+          pDVar2 = FUN_006b0060(nullptr,(uint *)(&param_1->field_0x49e + STField<int>(iVar5,0x13))
                                );
           *(DArrayTy **)(iVar5 + 0xf) = pDVar2;
           pAVar4 = (AllocationRecord_0065CB00 *)local_8;
         }
         iVar5 = pAVar4->field_0462;
         uVar7 = uVar7 + 1;
-        bVar10 = uVar7 < *(uint *)(iVar5 + 0xc);
-      } while ((int)uVar7 < (int)*(uint *)(iVar5 + 0xc));
+        bVar10 = uVar7 < STField<uint>(iVar5,0xC);
+      } while ((int)uVar7 < (int)STField<uint>(iVar5,0xC));
     }
     g_currentExceptionFrame = local_4c.previous;
     return pAVar4;

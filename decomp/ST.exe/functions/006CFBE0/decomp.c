@@ -37,11 +37,11 @@ void FUN_006cfbe0(uint *param_1)
                   do {
                     if ((-1 < (short)piVar2[1]) && (iVar5 = STField<int>(piVar2,6), iVar5 != 0))
                     {
-                      uVar3 = (int)(short)*piVar2 + *(int *)(iVar5 + 4);
+                      uVar3 = (short)*piVar2 + STField<int>(iVar5,0x4);
                       if ((int)local_c < (int)uVar3) {
                         local_c = uVar3;
                       }
-                      uVar3 = *(int *)(iVar5 + 8) + (int)STField<short>(piVar2,2);
+                      uVar3 = STField<int>(iVar5,0x8) + (int)STField<short>(piVar2,2);
                       if ((int)local_8 < (int)uVar3) {
                         local_8 = uVar3;
                       }
@@ -89,11 +89,11 @@ void FUN_006cfbe0(uint *param_1)
           do {
             iVar5 = *piVar2;
             if (iVar5 != 0) {
-              if ((int)local_c < (int)*(uint *)(iVar5 + 4)) {
-                local_c = *(uint *)(iVar5 + 4);
+              if ((int)local_c < (int)STField<uint>(iVar5,0x4)) {
+                local_c = STField<uint>(iVar5,0x4);
               }
-              if ((int)local_8 < (int)*(uint *)(iVar5 + 8)) {
-                local_8 = *(uint *)(iVar5 + 8);
+              if ((int)local_8 < (int)STField<uint>(iVar5,0x8)) {
+                local_8 = STField<uint>(iVar5,0x8);
               }
             }
             piVar2 = piVar2 + 1;
@@ -108,11 +108,11 @@ void FUN_006cfbe0(uint *param_1)
         do {
           iVar5 = *piVar2;
           if (iVar5 != 0) {
-            if ((int)local_c < (int)*(uint *)(iVar5 + 4)) {
-              local_c = *(uint *)(iVar5 + 4);
+            if ((int)local_c < (int)STField<uint>(iVar5,0x4)) {
+              local_c = STField<uint>(iVar5,0x4);
             }
-            if ((int)local_8 < (int)*(uint *)(iVar5 + 8)) {
-              local_8 = *(uint *)(iVar5 + 8);
+            if ((int)local_8 < (int)STField<uint>(iVar5,0x8)) {
+              local_8 = STField<uint>(iVar5,0x8);
             }
           }
           piVar2 = piVar2 + 2;

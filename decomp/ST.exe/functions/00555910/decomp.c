@@ -41,12 +41,12 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,RecoveredRecord_TraksClassTy_005
       }
       param_1->field_0024 = local_8->field_0020;
     }
-    local_c = (int)(short)param_1->field_0002;
-    local_10 = (int)(short)param_1->field_0004;
-    local_18 = (int)(short)param_1->field_001E;
+    local_c = (short)param_1->field_0002;
+    local_10 = (short)param_1->field_0004;
+    local_18 = (short)param_1->field_001E;
     uVar1 = param_1->field_001C;
-    local_14 = (int)(short)param_1->field_0006;
-    local_1c = (int)(short)param_1->field_0020;
+    local_14 = (short)param_1->field_0006;
+    local_1c = (short)param_1->field_0020;
     if (param_1->field_003A == 0) {
       iVar6 = local_8->field_0020 - param_1->field_0028;
       if (iVar6 == 0) {
@@ -110,12 +110,12 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,RecoveredRecord_TraksClassTy_005
        (param_1->field_0038 == 0)) {
       ST3DSMAPContext::sub_006EA270
                 (g_sT3DSMAPContext_00807598,param_1->field_0032,0,(int)param_1->field_0022);
-      local_20 = (int)(short)param_1->field_0002;
+      local_20 = (short)param_1->field_0002;
       Library::Ourlib::ST3DSMAP::SprMove
                 (g_sT3DSMAPContext_00807598,param_1->field_0032,
                  (float)local_20 * _DAT_007904f8 * _DAT_007904f0,
-                 (float)(int)(short)param_1->field_0004 * _DAT_007904f8 * _DAT_007904f0,
-                 (float)(int)(short)param_1->field_0006 * _DAT_007904f8 * _DAT_007904f0 +
+                 (float)(short)param_1->field_0004 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)(short)param_1->field_0006 * _DAT_007904f8 * _DAT_007904f0 +
                  _DAT_007904fc);
     }
     g_currentExceptionFrame = local_64.previous;

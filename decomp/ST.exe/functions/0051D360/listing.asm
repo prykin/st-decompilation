@@ -58,7 +58,8 @@ LAB_0051d3dc:
 0051D429  8B 11                     MOV EDX,dword ptr [ECX]
 0051D42B  8D 46 18                  LEA EAX,[ESI + 0x18]
 0051D42E  50                        PUSH EAX
-0051D42F  FF 12                     CALL dword ptr [EDX]
+HelpPanelTy::NatProc::override::prt_51d42f_74f246b9:
+0051D42F  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0051d431:
 0051D431  53                        PUSH EBX
 0051D432  53                        PUSH EBX

@@ -31,7 +31,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
   int iVar10;
   InternalExceptionFrame local_84;
   undefined4 local_40 [2];
-  undefined4 local_38;
+  int local_38;
   undefined4 local_34;
   undefined4 local_30;
   undefined4 local_2c;

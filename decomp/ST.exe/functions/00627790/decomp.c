@@ -30,13 +30,11 @@ void __fastcall FUN_00627790(STMineSetC *param_1)
       local_28.arg1.words.high = 0xffff;
     }
     else {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_28.arg1.words.low = *(word *)(local_8 + 0x24);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_28.arg1.words.high = *(word *)(local_8 + 0x32);
+      local_28.arg1.words.low = STField<word>(local_8,0x24);
+      local_28.arg1.words.high = STField<word>(local_8,0x32);
     }
     local_28.id = 0x5de4;
-    /* ST_CALLSITE[00627816]: CALL dword ptr [EAX] */
+    /* ST_CALLSITE[00627816]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_28);
     return;
   }

@@ -38,7 +38,7 @@ FUN_006a17b0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
             ((iVar1 < 6 &&
              (iVar4 = thunk_FUN_006a20e0(param_1,iVar2,iVar7,iVar1,param_5), iVar4 != 0)))))) {
           iVar3 = thunk_FUN_006a1370(param_1,iVar2,iVar7,iVar1,(int)&local_14);
-          local_EAX_219 = thunk_FUN_006a24e0(&local_14,iVar1,param_6,(int)(short)iVar3,param_5);
+          local_EAX_219 = thunk_FUN_006a24e0(&local_14,iVar1,param_6,(short)iVar3,param_5);
           if (local_EAX_219 != 0) {
             if (param_5 == 0xff) {
               uVar6 = (uint)(byte)param_6[2];

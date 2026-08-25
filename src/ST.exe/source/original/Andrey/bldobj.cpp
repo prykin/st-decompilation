@@ -268,12 +268,12 @@ void __thiscall st::fn_004F0E60(BldObjPanelTy *this,AnonShape_004EF320_444F9AB1 
   }
   uVar6 = this->field_0199 + -0xc0af + param_1->field_0010;
   iVar2 = (&this->field_027E)[(byte)this->field_0278];
-  if ((iVar2 == 0) || (*(uint *)(iVar2 + 0xc) <= uVar6)) {
+  if ((iVar2 == 0) || (STField<uint>(iVar2,0xC) <= uVar6)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_00526BA0_param_1Enum *)
-              (*(int *)(iVar2 + 8) * uVar6 + *(int *)(iVar2 + 0x1c));
+              (STField<int>(iVar2,0x8) * uVar6 + STField<int>(iVar2,0x1C));
   }
   local_14 = this;
   if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {
@@ -403,11 +403,11 @@ int __thiscall st::fn_004F1080(BldObjPanelTy *this,STMessage *message)
     case MESS_SHARED_C0A3:
       iVar6 = (&this_00->field_027E)[(byte)this_00->field_0278];
       if ((iVar6 == 0) ||
-         (iVar4 = SVar1 + this_00->field_0199, *(uint *)(iVar6 + 0xc) <= iVar4 - 0xc09fU)) {
+         (iVar4 = SVar1 + this_00->field_0199, STField<uint>(iVar6,0xC) <= iVar4 - 0xc09fU)) {
         puVar5 = nullptr;
       }
       else {
-        puVar5 = (undefined4 *)((iVar4 + -0xc09f) * *(int *)(iVar6 + 8) + *(int *)(iVar6 + 0x1c));
+        puVar5 = (undefined4 *)((iVar4 + -0xc09f) * STField<int>(iVar6,0x8) + STField<int>(iVar6,0x1C));
       }
       if ((puVar5 != nullptr) && (((char *)puVar5)[2] != '\0')) {
         /* ST_CALLSITE[004F11FA]: CALL 0x004035ad; direct=004035AD CursorClassTy::sub_0054B630 */

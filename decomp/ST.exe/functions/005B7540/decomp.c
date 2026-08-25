@@ -269,7 +269,7 @@ LAB_005b7655:
                 pMVar15 = (MMsgTy_Record_00BC_01FB *)&pMVar15->field_0x4;
               }
               *(short *)&pMVar15->field_0000 = *psVar7;
-              *(undefined1 *)((int)&pMVar15->field_0000 + 2) = STField<undefined1>(psVar7,2);
+              STField<undefined1>(pMVar15,0x2) = STField<undefined1>(psVar7,2);
               if (local_8->field_0000 != 0) {
                 uVar22 = 0xffffffff;
                 uVar21 = 7;

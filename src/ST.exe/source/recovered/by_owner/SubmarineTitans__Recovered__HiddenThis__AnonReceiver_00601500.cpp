@@ -192,7 +192,7 @@ LAB_006018c7:
   }
   else {
     lVar12 = st::fn_0072E288();
-    iVar4 = (int)(short)lVar12;
+    iVar4 = (short)lVar12;
   }
   if (iVar4 < 0x65) {
     local_18 = iVar7 + -1;

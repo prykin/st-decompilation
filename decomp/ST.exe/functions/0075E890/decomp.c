@@ -8,7 +8,7 @@
 void FUN_0075e890(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,int param_4)
 
 {
-  int iVar1;
+  uint uVar1;
   short *psVar2;
   byte *pbVar3;
   int iVar4;
@@ -23,29 +23,29 @@ void FUN_0075e890(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,i
   iVar4 = (param_4 >> 2) * 0x20 + 4;
   piVar6 = (int *)((param_3 >> 3) * 0x20 + 2);
   iVar5 = (param_2 >> 2) * 0x20 + 4;
-  iVar1 = FUN_0075e980(param_1,iVar5,piVar6,iVar4,(int)local_188);
-  FUN_0075eb40(param_1,iVar5,(int)piVar6,iVar4,iVar1,(int)local_188,local_88);
-  auto param_1_after_write = (AnonShape_0075E890_C23EB446 *)0x4; /* compiler stack-slot lifetime split */
+  uVar1 = FUN_0075e980(param_1,iVar5,piVar6,iVar4,(int)local_188);
+  FUN_0075eb40(param_1,iVar5,(int)piVar6,iVar4,uVar1,(int)local_188,local_88);
+  uint param_1_after_write = 0x4; /* compiler stack-slot lifetime split */
   pbVar3 = local_88;
   piVar6 = (int *)(local_8 + (param_2 >> 2) * 0x10);
   do {
     auto param_2_after_write = 8; /* compiler stack-slot lifetime split */
-    iVar1 = ((param_3 >> 3) * 0x100 + (param_4 >> 2) * 4) * 2;
+    iVar4 = ((param_3 >> 3) * 0x100 + (param_4 >> 2) * 4) * 2;
     do {
-      iVar4 = 4;
-      psVar2 = (short *)(*piVar6 + iVar1);
+      iVar5 = 4;
+      psVar2 = (short *)(*piVar6 + iVar4);
       do {
         *psVar2 = *pbVar3 + 1;
         psVar2 = psVar2 + 1;
         pbVar3 = pbVar3 + 1;
-        iVar4 = iVar4 + -1;
-      } while (iVar4 != 0);
-      iVar1 = iVar1 + 0x40;
+        iVar5 = iVar5 + -1;
+      } while (iVar5 != 0);
+      iVar4 = iVar4 + 0x40;
       param_2_after_write = param_2_after_write + -1;
     } while (param_2_after_write != 0);
     piVar6 = piVar6 + 1;
-    param_1_after_write = (AnonShape_0075E890_C23EB446 *)((int)&param_1_after_write[-1].field_01BA + 3);
-  } while (param_1_after_write != nullptr);
+    param_1_after_write = param_1_after_write - 1;
+  } while (param_1_after_write != 0);
   return;
 }
 

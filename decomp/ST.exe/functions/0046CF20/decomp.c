@@ -130,12 +130,12 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
             ((uVar10 = this->field_00C3 - (int)this->field_005F, uVar9 = (int)uVar10 >> 0x1f,
              (int)((uVar10 ^ uVar9) - uVar9) < 2 &&
              /* ST_CALLSITE[0046D296]: CALL dword ptr [EDX + 0x18] */
-             (iVar7 = this->vfunc_18(*(short *)&this->field_00BB,*(short *)&this->field_00BF,
-                                 *(short *)&this->field_00C3), iVar7 == 0)))))) {
+             (iVar7 = this->vfunc_18((short)this->field_00BB,(short)this->field_00BF,
+                                 (short)this->field_00C3), iVar7 == 0)))))) {
           uVar10 = 0;
         }
         else {
-          this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
+          this_00 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
           local_EAX_928 = thunk_FUN_0040ae40(this_00,(uint)(ushort)this->field_0032,'\0');
           uVar10 = -(uint)(local_EAX_928 != -4) & 2;
         }

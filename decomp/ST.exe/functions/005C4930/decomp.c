@@ -66,7 +66,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
         FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
       }
-      if (-1 < (int)g_startSystem_0081176C->field_0540) {
+      if (-1 < g_startSystem_0081176C->field_0540) {
         FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }

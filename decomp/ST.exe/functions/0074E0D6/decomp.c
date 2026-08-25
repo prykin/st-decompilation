@@ -19,7 +19,7 @@ undefined4 __thiscall FUN_0074e0d6(void *this,int param_1,int *param_2)
       iVar1 = *param_2;
     }
     else {
-      iVar1 = *(int *)(iVar1 + 4);
+      iVar1 = STField<int>(iVar1,0x4);
     }
   }
   return 0;

@@ -15,10 +15,9 @@ FUN_00679f00(void *this,uint param_1,AnonShape_0068FD00_A5257008 *param_2,int pa
   int iVar2;
 
   iVar1 = STField<int>(this,0x695);
-  if (((iVar1 != 0) && (-1 < (int)param_1)) && ((int)param_1 < (int)*(uint *)(iVar1 + 0xc))) {
-    if (param_1 < *(uint *)(iVar1 + 0xc)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      puVar2 = (undefined4 *)(*(int *)(iVar1 + 8) * param_1 + *(int *)(iVar1 + 0x1c));
+  if (((iVar1 != 0) && (-1 < (int)param_1)) && ((int)param_1 < (int)STField<uint>(iVar1,0xC))) {
+    if (param_1 < STField<uint>(iVar1,0xC)) {
+      puVar2 = (undefined4 *)(STField<int>(iVar1,0x8) * param_1 + STField<int>(iVar1,0x1C));
     }
     else {
       puVar2 = nullptr;

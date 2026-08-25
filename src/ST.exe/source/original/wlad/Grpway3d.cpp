@@ -285,7 +285,7 @@ LAB_0040b481:
     pSVar5->field_009F[1] = pSVar5->field_0049;
     pSVar5->field_009F[2] = pSVar5->field_004B;
     pSVar5->field_009F[3] = (short)local_3c;
-    pSVar5->field_009F[0x24] = *(short *)&pSVar5->field_00BB;
+    pSVar5->field_009F[0x24] = (short)pSVar5->field_00BB;
     pSVar5->field_009F[0x25] = (short)pSVar5->field_00BF;
     pSVar5->field_009F[0x26] = (short)pSVar5->field_00C3;
     pSVar5->field_009F[0x27] = 0;
@@ -388,7 +388,7 @@ LAB_0040b56a:
                         (int)g_pathingGrid.sizeZ,(short *)(int)pSVar5->field_0047,
                         (short *)(int)pSVar5->field_0049,(short *)(int)pSVar5->field_004B,
                         (short *)pSVar5->field_00BB,(short *)pSVar5->field_00BF,
-                        (short *)pSVar5->field_00C3,pSVar5->field_00B7,reinterpret_cast<int *>(&pSVar5->field_00A3),local_28,
+                        (short *)pSVar5->field_00C3,pSVar5->field_00B7,&pSVar5->field_00A3,local_28,
                         psVar6,local_24);
     pSVar5->field_009F = psVar7;
     if (psVar7 == nullptr) {
@@ -445,7 +445,7 @@ LAB_0040b56a:
                       (undefined4 *)(int)g_pathingGrid.sizeZ,(short *)(int)pSVar5->field_0047,
                       (short *)(int)pSVar5->field_0049,(short *)(int)pSVar5->field_004B,
                       (short *)pSVar5->field_00BB,(short *)pSVar5->field_00BF,
-                      (short *)pSVar5->field_00C3,pSVar5->field_00B7,reinterpret_cast<int *>(&pSVar5->field_00A3),local_24);
+                      (short *)pSVar5->field_00C3,pSVar5->field_00B7,&pSVar5->field_00A3,local_24);
       pSVar5->field_009F = local_EAX_2797;
     }
     st::fn_006AB060(&local_28);

@@ -24,9 +24,9 @@ undefined4 __thiscall STColl3C::sub_005F8650(STColl3C *this,int param_1,int para
   this->field_0049 = sVar4;
   sVar5 = STBiasedDiv16(param_3, 200); /* exact signed 16-bit grid-index division */
   this->field_004B = sVar5;
-  this->field_0041 = *(short *)&this->field_02C1;
-  this->field_0043 = *(short *)&this->field_02C5;
-  this->field_0045 = *(short *)&this->field_02C9;
+  this->field_0041 = (short)this->field_02C1;
+  this->field_0043 = (short)this->field_02C5;
+  this->field_0045 = (short)this->field_02C9;
   this->field_005B = sVar3;
   this->field_005D = sVar4;
   this->field_005F = sVar5;
@@ -34,9 +34,9 @@ undefined4 __thiscall STColl3C::sub_005F8650(STColl3C *this,int param_1,int para
   this->field_02D9 = 0;
   this->field_02D5 = uVar1;
   iVar2 = thunk_FUN_005faf70(this,param_1,param_2,param_3,
-                             (int)(short)(*(short *)&this->field_027D * 0xc9 + 100),
-                             (int)(short)(*(short *)&this->field_0281 * 0xc9 + 100),
-                             (int)(short)(*(short *)&this->field_0285 * 200 + 100));
+                             (short)((short)this->field_027D * 0xc9 + 100),
+                             (short)((short)this->field_0281 * 0xc9 + 100),
+                             (short)((short)this->field_0285 * 200 + 100));
   this->field_02BD = iVar2;
   this->field_006C = (short)iVar2;
   return 1;

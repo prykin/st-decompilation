@@ -45,7 +45,7 @@ LAB_00660050:
     return 0xffffffff;
   }
   if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
-    this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D);
+    this = thunk_FUN_0042b760((char)param_1->field_0024,param_1->field_007D);
     if (this != nullptr) {
       if (param_1->field_0039 == 3) {
         local_14 = 1;

@@ -612,8 +612,8 @@ cf_break_loop_004B60CD:
       } while ((int)uVar24 < (int)g_array_007FA16C->count);
     }
     iVar28 = param_2[5];
-    if ((iVar28 != 0) && (*(int *)(iVar28 + 0xc) != 0)) {
-      *(undefined4 *)(iVar28 + 4) = 0;
+    if ((iVar28 != 0) && (STField<int>(iVar28,0xC) != 0)) {
+      STField<undefined4>(iVar28,0x4) = 0;
       pDVar11 = (DArrayTy *)param_2[5];
       *(undefined4 *)(&stack0xfffffc90 + iVar20) = 0x4b3f01;
       local_EAX_2860 = DArrayGetNext(pDVar11,(byte *)&local_a0);
@@ -673,8 +673,8 @@ cf_break_loop_004B60CD:
       } while ((int)uVar24 < (int)pDVar11->count);
     }
     iVar28 = param_2[5];
-    if ((iVar28 != 0) && (*(int *)(iVar28 + 0xc) != 0)) {
-      *(undefined4 *)(iVar28 + 4) = 0;
+    if ((iVar28 != 0) && (STField<int>(iVar28,0xC) != 0)) {
+      STField<undefined4>(iVar28,0x4) = 0;
       pDVar11 = (DArrayTy *)param_2[5];
       *(undefined4 *)(&stack0xfffffc90 + iVar20) = 0x4b4055;
       iVar13 = DArrayGetNext(pDVar11,(byte *)&local_a0);
@@ -1113,7 +1113,7 @@ LAB_004b4f35:
                                       (*(DArrayTy **)(&stack0xfffffc8c + iVar20),
                                        *(void **)(&stack0xfffffc90 + iVar20));
                             iVar28 = param_2[3];
-                            *(int *)(&stack0xfffffc90 + iVar20) = *(int *)(iVar28 + 4) + -1;
+                            *(int *)(&stack0xfffffc90 + iVar20) = STField<int>(iVar28,0x4) + -1;
                             *(int *)(&stack0xfffffc8c + iVar20) = iVar28;
                             *(undefined4 *)(&stack0xfffffc88 + iVar20) = 0x4b56dd;
                             DArrayRemoveAt(*(DArrayTy **)(&stack0xfffffc8c + iVar20),
@@ -1160,7 +1160,7 @@ LAB_004b5635:
                                       (*(DArrayTy **)(&stack0xfffffc8c + iVar20),
                                        *(void **)(&stack0xfffffc90 + iVar20));
                             iVar28 = param_2[3];
-                            *(int *)(&stack0xfffffc90 + iVar20) = *(int *)(iVar28 + 4) + -1;
+                            *(int *)(&stack0xfffffc90 + iVar20) = STField<int>(iVar28,0x4) + -1;
                             *(int *)(&stack0xfffffc8c + iVar20) = iVar28;
                             *(undefined4 *)(&stack0xfffffc88 + iVar20) = 0x4b5e2e;
                             DArrayRemoveAt(*(DArrayTy **)(&stack0xfffffc8c + iVar20),
@@ -1285,7 +1285,7 @@ LAB_004b50f4:
                                         (*(DArrayTy **)(&stack0xfffffc8c + iVar20),
                                          *(void **)(&stack0xfffffc90 + iVar20));
                               iVar28 = param_2[3];
-                              *(int *)(&stack0xfffffc90 + iVar20) = *(int *)(iVar28 + 4) + -1;
+                              *(int *)(&stack0xfffffc90 + iVar20) = STField<int>(iVar28,0x4) + -1;
                               *(int *)(&stack0xfffffc8c + iVar20) = iVar28;
                               *(undefined4 *)(&stack0xfffffc88 + iVar20) = 0x4b5844;
                               DArrayRemoveAt(*(DArrayTy **)(&stack0xfffffc8c + iVar20),
@@ -1396,7 +1396,7 @@ LAB_004b51da:
                                         (*(DArrayTy **)(&stack0xfffffc8c + iVar20),
                                          *(void **)(&stack0xfffffc90 + iVar20));
                               iVar28 = param_2[3];
-                              *(int *)(&stack0xfffffc90 + iVar20) = *(int *)(iVar28 + 4) + -1;
+                              *(int *)(&stack0xfffffc90 + iVar20) = STField<int>(iVar28,0x4) + -1;
                               *(int *)(&stack0xfffffc8c + iVar20) = iVar28;
                               *(undefined4 *)(&stack0xfffffc88 + iVar20) = 0x4b59b1;
                               DArrayRemoveAt(*(DArrayTy **)(&stack0xfffffc8c + iVar20),
@@ -1512,7 +1512,7 @@ LAB_004b52b6:
                                         (*(DArrayTy **)(&stack0xfffffc8c + iVar20),
                                          *(void **)(&stack0xfffffc90 + iVar20));
                               iVar28 = param_2[3];
-                              *(int *)(&stack0xfffffc90 + iVar20) = *(int *)(iVar28 + 4) + -1;
+                              *(int *)(&stack0xfffffc90 + iVar20) = STField<int>(iVar28,0x4) + -1;
                               *(int *)(&stack0xfffffc8c + iVar20) = iVar28;
                               *(undefined4 *)(&stack0xfffffc88 + iVar20) = 0x4b5b1e;
                               DArrayRemoveAt(*(DArrayTy **)(&stack0xfffffc8c + iVar20),
@@ -1696,7 +1696,7 @@ LAB_004b52b6:
                                         (*(DArrayTy **)(&stack0xfffffc8c + iVar20),
                                          *(void **)(&stack0xfffffc90 + iVar20));
                               iVar28 = param_2[3];
-                              *(int *)(&stack0xfffffc90 + iVar20) = *(int *)(iVar28 + 4) + -1;
+                              *(int *)(&stack0xfffffc90 + iVar20) = STField<int>(iVar28,0x4) + -1;
                               *(int *)(&stack0xfffffc8c + iVar20) = iVar28;
                               *(undefined4 *)(&stack0xfffffc88 + iVar20) = 0x4b5c85;
                               DArrayRemoveAt(*(DArrayTy **)(&stack0xfffffc8c + iVar20),
@@ -1951,7 +1951,7 @@ LAB_004b432d:
                 if ((uVar24 < 8) &&
                    ((g_playSystem_00802A38 == nullptr ||
                     (g_bulkInitializedRecords_008087C7[uVar24].field_0022 < 8)))) {
-                  bVar3 = *(byte *)&local_58->field_0024;
+                  bVar3 = (byte)local_58->field_0024;
                   if (g_app_00806728->field_146F == '\0') {
                     if (bVar3 == (byte)param_1) {
                       iVar15 = 0;

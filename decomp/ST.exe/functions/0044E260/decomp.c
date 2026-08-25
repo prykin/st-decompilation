@@ -132,8 +132,8 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
                     auto param_4_after_write = (int *)local_14; /* compiler stack-slot lifetime split */
                     do {
                       iVar9 = *param_4_after_write;
-                      iVar10 = (int)STField<short>(piVar2,0x5b) - (int)*(short *)(iVar9 + 0x5b);
-                      iVar3 = *(int *)(iVar9 + 0x101);
+                      iVar10 = (int)STField<short>(piVar2,0x5b) - (int)STField<short>(iVar9,0x5B);
+                      iVar3 = STField<int>(iVar9,0x101);
                       if (iVar10 < 1) {
                         if (iVar10 < -iVar3) goto LAB_0044e4d5;
 LAB_0044e508:
@@ -149,7 +149,7 @@ joined_r0x0044e51a:
                       }
                       if (iVar10 <= iVar3) goto LAB_0044e508;
 LAB_0044e4d5:
-                      iVar9 = (int)STField<short>(piVar2,0x5d) - (int)*(short *)(iVar9 + 0x5d);
+                      iVar9 = (int)STField<short>(piVar2,0x5d) - (int)STField<short>(iVar9,0x5D);
                       if (iVar9 < 1) {
                         if (iVar9 < -iVar3) goto LAB_0044e4ef;
                         iVar9 = piVar4[piVar2[9]];

@@ -47,7 +47,7 @@ MReportTy::OutTGlProc
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar3 = FUN_006b4fe0(*(ushort **)(local_c + 0x5d));
       local_8 = (RecoveredRecord_MReportTy_005BD4B0 *)
-                FUN_006b50c0(param_6,param_7,(uint)*(ushort *)(*(int *)(iVar3 + 0x5d) + 0xe),uVar3,
+                FUN_006b50c0(param_6,param_7,(uint)*(ushort *)(STField<int>(iVar3,0x5D) + 0xe),uVar3,
                              (undefined4 *)puVar9,iVar10);
       uVar8 = local_8->field_0014;
       if (uVar8 == 0) {

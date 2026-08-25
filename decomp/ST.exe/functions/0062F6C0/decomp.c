@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_0062f6c0(void *this,int param_1)
     iVar1 = *(int *)((int)this + param_1 * 4 + 0x1e5);
     slotStorage = (int *)((int)this + param_1 * 4 + 0x1e5);
     if (iVar1 != 0) {
-      iVar1 = *(int *)(iVar1 + 4);
+      iVar1 = STField<int>(iVar1,0x4);
       if ((iVar1 == 3) || (iVar1 == 6)) {
         /* ST_CALLSITE[0062F702]: CALL 0x004050c9; direct=004050C9 STRubbishC::sub_00630260 */
         STRubbishC::sub_00630260(this,param_1,0);

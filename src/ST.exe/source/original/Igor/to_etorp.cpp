@@ -155,15 +155,15 @@ LAB_0057ac02:
                        ((uVar15 >> 0x10) % (((int)((local_78 >> 0x1f & 7U) + local_78) >> 3) + 1U) -
                        ((int)(local_78 + (local_78 >> 0x1f & 0xfU)) >> 4));
             if (param_2 == 7) {
-              iVar21 = *(int *)(iVar16 + 0x7cae80);
+              iVar21 = STField<int>(iVar16,0x7CAE80);
               iVar17 = (int)((ulonglong)
-                             ((longlong)(local_78 * *(int *)(iVar16 + 0x7cae7c)) * 0x68db8bad) >>
+                             ((longlong)(local_78 * STField<int>(iVar16,0x7CAE7C)) * 0x68db8bad) >>
                             0x20);
             }
             else {
-              iVar21 = *(int *)(iVar16 + 0x7caed4);
+              iVar21 = STField<int>(iVar16,0x7CAED4);
               iVar17 = (int)((ulonglong)
-                             ((longlong)(*(int *)(iVar16 + 0x7caed0) * local_78) * 0x68db8bad) >>
+                             ((longlong)(STField<int>(iVar16,0x7CAED0) * local_78) * 0x68db8bad) >>
                             0x20);
             }
             local_d4 = (iVar21 * local_78) / 10000;
@@ -173,7 +173,7 @@ LAB_0057ac02:
             iVar23 = iVar17 * local_a0;
             sVar14 = param_1->field_0043;
             local_4c = ((iVar24 * param_5) / 10000 - (local_50 * local_d4) / 10000) +
-                       (int)(short)param_1->field_0045;
+                       (short)param_1->field_0045;
             iVar17 = iVar17 * iVar20;
             iVar21 = local_6c * local_a0;
             *(short *)(*param_3 + iVar12 * 8) =
@@ -222,7 +222,7 @@ LAB_0057ac02:
       iVar24 = (int)sVar14;
       sVar8 = param_1->field_0043;
       iVar20 = (int)sVar8;
-      local_40 = (int)(short)param_1->field_0045;
+      local_40 = (short)param_1->field_0045;
       local_68 = (local_8c * 0x324) / 10000 + iVar24;
       local_64 = (local_98 * 0x324) / 10000 + iVar20;
       iVar11_mg1 = st::fn_006ACED8(iVar24,iVar20,local_68,local_64);
@@ -537,18 +537,17 @@ undefined4 __cdecl st::fn_0057B350(int *param_1,int param_2,int *param_3)
       local_18 = 3;
       do {
         local_14 = 3;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (int *)0xffffff37;
+        uint param_1_after_write = 0xffffff37; /* compiler stack-slot lifetime split */
         do {
           iVar10 = -200;
           local_10 = 3;
           piVar11 = param_3 + local_8;
           do {
-            if ((int)param_1 + iVar10 + local_c != 0) {
+            if ((int)param_1_after_write + iVar10 + local_c != 0) {
               psVar1 = (short *)*piVar11;
               *psVar1 = STField<short>(piVar5,0x41) + (short)local_c;
               uVar9 = (undefined2)((uint)psVar1 >> 0x10);
-              *(short *)(*piVar11 + 2) = STField<short>(piVar5,0x43) + (short)param_1;
+              *(short *)(*piVar11 + 2) = STField<short>(piVar5,0x43) + (short)param_1_after_write;
               *(short *)(*piVar11 + 4) = (short)iVar10 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
@@ -563,12 +562,12 @@ undefined4 __cdecl st::fn_0057B350(int *param_1,int param_2,int *param_3)
               iVar3 = *piVar11;
               local_8 = local_8 + 1;
               piVar11 = piVar11 + 1;
-              *(undefined2 *)(iVar3 + 6) = uVar6;
+              STField<undefined2>(iVar3,0x6) = uVar6;
             }
             iVar10 = iVar10 + 200;
             local_10 = local_10 + -1;
           } while (local_10 != 0);
-          param_1 = (int *)((int)param_1 + 0xc9);
+          param_1_after_write = ((int)param_1_after_write + 0xc9);
           local_14 = local_14 + -1;
         } while (local_14 != 0);
         local_c = local_c + 0xc9;
@@ -581,18 +580,18 @@ undefined4 __cdecl st::fn_0057B350(int *param_1,int param_2,int *param_3)
       local_10 = 2;
       do {
         local_14 = 2;
-        param_1 = (int *)0xffffff9c;
+        uint param_1_after_write_2 = 0xffffff9c; /* compiler stack-slot lifetime split */
         do {
           iVar10 = -100;
           local_18 = 1;
           piVar11 = param_3 + local_8;
           do {
             if (param_2 <= local_8) break;
-            if ((int)param_1 + local_c + iVar10 != 0) {
+            if ((int)param_1_after_write_2 + local_c + iVar10 != 0) {
               psVar1 = (short *)*piVar11;
               *psVar1 = STField<short>(piVar5,0x41) + (short)local_c;
               uVar9 = (undefined2)((uint)psVar1 >> 0x10);
-              *(short *)(*piVar11 + 2) = STField<short>(piVar5,0x43) + (short)param_1;
+              *(short *)(*piVar11 + 2) = STField<short>(piVar5,0x43) + (short)param_1_after_write_2;
               *(short *)(*piVar11 + 4) = (short)iVar10 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
@@ -607,12 +606,12 @@ undefined4 __cdecl st::fn_0057B350(int *param_1,int param_2,int *param_3)
               iVar3 = *piVar11;
               local_8 = local_8 + 1;
               piVar11 = piVar11 + 1;
-              *(undefined2 *)(iVar3 + 6) = uVar6;
+              STField<undefined2>(iVar3,0x6) = uVar6;
             }
             iVar10 = iVar10 + 200;
             local_18 = local_18 + -1;
           } while (-1 < local_18);
-          param_1 = (int *)((int)param_1 + 0xc9);
+          param_1_after_write_2 = ((int)param_1_after_write_2 + 0xc9);
           local_14 = local_14 + -1;
         } while (local_14 != 0);
         local_c = local_c + 0xc9;

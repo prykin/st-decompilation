@@ -27,10 +27,10 @@ int FUN_00755970(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,int param_
   do {
     pAVar2->field_000C->field_001C = local_8;
     iVar7_mg1 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)pAVar2,iVar6,(int)local_8);
-    auto param_1_after_write = (AnonShape_00753C80_4C8E695D *)0xffffffff; /* compiler stack-slot lifetime split */
+    AnonShape_00753C80_4C8E695D * param_1_after_write = (AnonShape_00753C80_4C8E695D *)0xffffffff; /* compiler stack-slot lifetime split */
     pAVar5 = (AnonShape_00753C80_4C8E695D *)0xffffffff;
     pAVar3 = nullptr;
-    if (0 < *(short *)(iVar7_mg1 + 8)) {
+    if (0 < STField<short>(iVar7_mg1,0x8)) {
       do {
         pAVar7 = pAVar3;
         if (*(int *)&pAVar2->field_000C->field_0x30 == 0xff) {
@@ -62,7 +62,7 @@ int FUN_00755970(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,int param_
         *(AnonShape_00753C80_4C8E695D **)
          (&pAVar2->field_000C[1].field_0xe + (int)pAVar2->field_000C->field_001C * 8) = pAVar3;
         param_1_after_write = pAVar7;
-      } while ((int)pAVar3 < (int)*(short *)(iVar7_mg1 + 8));
+      } while ((int)pAVar3 < (int)STField<short>(iVar7_mg1,0x8));
     }
     *(AnonShape_00753C80_4C8E695D **)
      (&pAVar2->field_000C[1].field_0xe + (int)pAVar2->field_000C->field_001C * 8) = pAVar5;
@@ -70,7 +70,7 @@ int FUN_00755970(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,int param_
       return local_c;
     }
     if (pAVar5 == (AnonShape_00753C80_4C8E695D *)0xffffffff) {
-      iVar6 = *(int *)(iVar7_mg1 + 4);
+      iVar6 = STField<int>(iVar7_mg1,0x4);
     }
     else {
       iVar6 = STObjectAtByteOffset(pAVar5, iVar7_mg1).field_0010;

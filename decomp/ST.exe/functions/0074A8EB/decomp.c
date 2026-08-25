@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_0074a8eb(int *param_1)
   /* ST_CALLSITE[0074A8F6]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(lpCriticalSection);
   iVar1 = param_1[0x1e];
-  if (*(int *)(iVar1 + 0x18) == 0) {
+  if (STField<int>(iVar1,0x18) == 0) {
     /* ST_CALLSITE[0074A906]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(lpCriticalSection);
     uVar2 = 0;
@@ -27,7 +27,7 @@ undefined4 __fastcall FUN_0074a8eb(int *param_1)
     }
     /* ST_CALLSITE[0074A923]: CALL dword ptr [ECX + 0x4] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)(iVar1 + 0xc) + 4))(iVar1 + 0xc);
+    (**(code **)(STField<int>(iVar1,0xC) + 4))(iVar1 + 0xc);
     FUN_00747406(param_1,0x16,piVar3,0);
     uVar2 = 1;
     param_1[0x18] = 1;

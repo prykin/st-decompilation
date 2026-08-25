@@ -42,25 +42,25 @@ AllocationRecord_0065CD10 * __cdecl EventDataPack(AllocationRecord_0065CD10 *par
   if (local_EAX_39 == 0) {
     uVar7 = 0;
     iVar3 = param_1->field_0462;
-    if (0 < *(int *)(iVar3 + 0xc)) {
-      bVar14 = *(int *)(iVar3 + 0xc) != 0;
+    if (0 < STField<int>(iVar3,0xC)) {
+      bVar14 = STField<int>(iVar3,0xC) != 0;
       do {
         if (bVar14) {
-          iVar3 = *(int *)(iVar3 + 8) * uVar7 + *(int *)(iVar3 + 0x1c);
+          iVar3 = STField<int>(iVar3,0x8) * uVar7 + STField<int>(iVar3,0x1C);
         }
         else {
           iVar3 = 0;
         }
-        iVar8 = *(int *)(iVar3 + 0xf);
+        iVar8 = STField<int>(iVar3,0xF);
         if (iVar8 != 0) {
-          iVar8 = *(int *)(iVar8 + 0xc) * *(int *)(iVar8 + 8) + 0x1c;
-          *(int *)(iVar3 + 0x17) = iVar8;
+          iVar8 = STField<int>(iVar8,0xC) * STField<int>(iVar8,0x8) + 0x1c;
+          STField<int>(iVar3,0x17) = iVar8;
           local_c = local_c + iVar8;
         }
         iVar3 = param_1->field_0462;
         uVar7 = uVar7 + 1;
-        bVar14 = uVar7 < *(uint *)(iVar3 + 0xc);
-      } while ((int)uVar7 < (int)*(uint *)(iVar3 + 0xc));
+        bVar14 = uVar7 < STField<uint>(iVar3,0xC);
+      } while ((int)uVar7 < (int)STField<uint>(iVar3,0xC));
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar3 = *(int *)(param_1->field_0462 + 0xc) * *(int *)(param_1->field_0462 + 8) + 0x1c;
@@ -82,18 +82,18 @@ AllocationRecord_0065CD10 * __cdecl EventDataPack(AllocationRecord_0065CD10 *par
     memmove(pAVar12, pAVar5, 0x49e); /* compiler REP MOVS byte copy */
     pAVar12 = (AnonShape_0065CD10_CB9334E9 *)((byte *)pAVar12 + 0x49c);
     pAVar5 = (AllocationRecord_0065CD10 *)((byte *)pAVar5 + 0x49c);
-    pAVar12->field_0x2 = *(undefined1 *)((int)&pAVar5->field_0001 + 1);
+    pAVar12->field_0x2 = STField<undefined1>(pAVar5,0x2);
     uVar7 = 0;
     *(uint *)&pAVar4->field_0x1 = *param_2;
     pAVar4->field_0x5 = 0;
     iVar3 = *(int *)&pAVar4->field_0x462;
     puVar9 = (uint *)&pAVar4[1].field_0x1e;
     local_8 = pAVar4;
-    if (0 < *(int *)(iVar3 + 0xc)) {
-      bVar14 = *(int *)(iVar3 + 0xc) != 0;
+    if (0 < STField<int>(iVar3,0xC)) {
+      bVar14 = STField<int>(iVar3,0xC) != 0;
       do {
         if (bVar14) {
-          iVar3 = *(int *)(iVar3 + 8) * uVar7 + *(int *)(iVar3 + 0x1c);
+          iVar3 = STField<int>(iVar3,0x8) * uVar7 + STField<int>(iVar3,0x1C);
         }
         else {
           iVar3 = 0;
@@ -101,14 +101,14 @@ AllocationRecord_0065CD10 * __cdecl EventDataPack(AllocationRecord_0065CD10 *par
         if (*(uint **)(iVar3 + 0xf) != nullptr) {
           FUN_006affc0(*(uint **)(iVar3 + 0xf),puVar9,&local_c);
           iVar8 = (int)puVar9 + (-0x49e - (int)local_8);
-          puVar9 = (uint *)((int)puVar9 + *(int *)(iVar3 + 0x17));
-          *(int *)(iVar3 + 0x13) = iVar8;
+          puVar9 = (uint *)((int)puVar9 + STField<int>(iVar3,0x17));
+          STField<int>(iVar3,0x13) = iVar8;
           pAVar4 = local_8;
         }
         iVar3 = *(int *)&pAVar4->field_0x462;
         uVar7 = uVar7 + 1;
-        bVar14 = uVar7 < *(uint *)(iVar3 + 0xc);
-      } while ((int)uVar7 < (int)*(uint *)(iVar3 + 0xc));
+        bVar14 = uVar7 < STField<uint>(iVar3,0xC);
+      } while ((int)uVar7 < (int)STField<uint>(iVar3,0xC));
     }
     FUN_006affc0(*(uint **)&pAVar4->field_0x462,puVar9,&local_c);
     local_8->field_0466 = (int)puVar9 + (-0x49e - (int)local_8);

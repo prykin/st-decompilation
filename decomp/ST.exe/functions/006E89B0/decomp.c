@@ -19,16 +19,16 @@ FUN_006e89b0(void *this,int *param_1,undefined4 param_2,int param_3,undefined4 p
       return -2;
     }
     *puVar2 = param_2;
-    *(int *)(*(int *)(iVar1 + 0xa0) + 4) = param_3;
-    *(undefined4 *)(*(int *)(iVar1 + 0xa0) + 8) = param_6;
-    *(undefined4 *)(*(int *)(iVar1 + 0xa0) + 0xc) = param_7;
-    *(undefined4 *)(*(int *)(iVar1 + 0xa0) + 0x10) = param_8;
-    *(undefined4 *)(*(int *)(iVar1 + 0xa0) + 0x14) = param_4;
-    *(undefined1 *)(*(int *)(iVar1 + 0xa0) + 0x18) = param_5;
-    *(int *)(*(int *)(iVar1 + 0xa0) + 0x19) = 0x168 - param_9;
-    *(undefined4 *)(*(int *)(iVar1 + 0xa0) + 0x1d) = param_10;
-    *(undefined4 *)(*(int *)(iVar1 + 0xa0) + 0x21) = param_11;
-    *(uint *)(iVar1 + 4) = *(uint *)(iVar1 + 4) | 0x2005;
+    *(int *)(STField<int>(iVar1,0xA0) + 4) = param_3;
+    *(undefined4 *)(STField<int>(iVar1,0xA0) + 8) = param_6;
+    *(undefined4 *)(STField<int>(iVar1,0xA0) + 0xc) = param_7;
+    *(undefined4 *)(STField<int>(iVar1,0xA0) + 0x10) = param_8;
+    *(undefined4 *)(STField<int>(iVar1,0xA0) + 0x14) = param_4;
+    *(undefined1 *)(STField<int>(iVar1,0xA0) + 0x18) = param_5;
+    *(int *)(STField<int>(iVar1,0xA0) + 0x19) = 0x168 - param_9;
+    *(undefined4 *)(STField<int>(iVar1,0xA0) + 0x1d) = param_10;
+    *(undefined4 *)(STField<int>(iVar1,0xA0) + 0x21) = param_11;
+    STField<uint>(iVar1,0x4) = STField<uint>(iVar1,0x4) | 0x2005;
     iVar1_mg0 = 0;
   }
   return iVar1_mg0;

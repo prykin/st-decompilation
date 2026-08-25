@@ -13,7 +13,7 @@ undefined4 FUN_0074cf93(int param_1,undefined4 param_2)
   uint uVar3;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(*(int *)(param_1 + 0x48) + 0x90);
-  if (*(int *)(iVar1 + 0x18) == 0) {
+  if (STField<int>(iVar1,0x18) == 0) {
     uVar3 = 0x80004001;
   }
   else {

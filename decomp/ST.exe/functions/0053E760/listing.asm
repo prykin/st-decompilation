@@ -71,7 +71,8 @@ LAB_0053e807:
 0053E833  8B 11                     MOV EDX,dword ptr [ECX]
 0053E835  8D 46 18                  LEA EAX,[ESI + 0x18]
 0053E838  50                        PUSH EAX
-0053E839  FF 12                     CALL dword ptr [EDX]
+SpecPanelTy::SwitchPanel::override::prt_53e839_74f246b9:
+0053E839  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0053e83b:
 0053E83B  8B 16                     MOV EDX,dword ptr [ESI]
 0053E83D  6A 00                     PUSH 0x0

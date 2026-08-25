@@ -55,10 +55,10 @@ FUN_0061c910(void *this,int param_1,STJumpMineC_field_0093State param_2,undefine
       if (iVar2 == 0) {
         STField<int>(this,0x44) = (int)STPiece<2,2>(param_1);
         STField<int>(this,0xa3) = (int)STPiece<2,2>(param_1);
-        STField<int>(this,0x40) = (int)(short)STPiece<2,2>(param_2);
+        STField<int>(this,0x40) = (short)STPiece<2,2>(param_2);
         STField<int>(this,0x48) = STPiece<2,2>(param_8) + 0x28;
         STField<undefined4>(this,0x3c) = local_8;
-        STField<int>(this,0x9f) = (int)(short)STPiece<2,2>(param_2);
+        STField<int>(this,0x9f) = (short)STPiece<2,2>(param_2);
         STField<int>(this,0xa7) = STPiece<2,2>(param_8) + 0x28;
         /* ST_CALLSITE[0061C999]: CALL 0x004056eb; direct=004056EB STJumpMineC::LoadImagJMine */
         iVar2 = STJumpMineC::LoadImagJMine(this,2);

@@ -79,7 +79,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
         else {
           /* ST_CALLSITE[0068F101]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_01 = STAllPlayersC::GetObjPtr
-                              (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar5,CASE_1);
+                              (g_allPlayers_007FA174,(char)this_00->field_0024,*puVar5,CASE_1);
         }
         if (this_01 != nullptr) {
           /* ST_CALLSITE[0068F118]: CALL dword ptr [EAX + 0x2c] */

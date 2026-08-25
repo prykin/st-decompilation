@@ -77,17 +77,16 @@ LAB_006d5620:
     (**(code **)(*local_8 + 8))(local_8);
     local_8 = nullptr;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((((local_10 != 0) || (pAVar2 = param_1->field_0288, pAVar2->field_0090 != iVar4)) ||
         (pAVar2->field_0094 != iVar6)) ||
        ((uVar5 = (uint)*(ushort *)((int)&pAVar1[3].field_000C + 2),
         (pAVar1[3].field_0004 * uVar5 + 0x1f >> 3 & 0x1ffffffc) != local_14 ||
         (-1 < (int)pAVar1[3].field_0008)))) ||
-      (iVar3 = pAVar2->field_0028, uVar5 != *(uint *)(iVar3 + 0x20))) ||
+      (iVar3 = pAVar2->field_0028, uVar5 != STField<uint>(iVar3,0x20))) ||
      ((pAVar1[4].field_0000 == 3 &&
-      (((pAVar1[5].field_0008 != *(int *)(iVar3 + 0x4c4) ||
-        (pAVar1[5].field_000C != *(int *)(iVar3 + 0x4c8))) ||
-       (pAVar1[6].field_0000 != *(int *)(iVar3 + 0x4cc))))))) {
+      (((pAVar1[5].field_0008 != STField<int>(iVar3,0x4C4) ||
+        (pAVar1[5].field_000C != STField<int>(iVar3,0x4C8))) ||
+       (pAVar1[6].field_0000 != STField<int>(iVar3,0x4CC))))))) {
     FUN_006c3500((AnonShape_006C3500_19C01617 *)param_1->field_0288);
     param_1->field_030C = 0;
     param_1->field_0288->field_0090 = iVar4;

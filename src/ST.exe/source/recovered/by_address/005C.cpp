@@ -207,7 +207,7 @@ void st::fn_005C2760(void)
   DVar1 = DAT_00811754;
   if ((PTR_0081175c != nullptr) && (99 < DVar2 - DAT_00811754)) {
     st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
-    pBVar3 = st::fn_0070B3A0(PTR_0081175c,(int)(short)PTR_0081175c->field_0029);
+    pBVar3 = st::fn_0070B3A0(PTR_0081175c,(short)PTR_0081175c->field_0029);
     /* ST_CALLSITE[005C27C3]: CALL 0x00403738; direct=00403738 PutDDX */
     st::fn_00403738(0x15,0x14,'\x06',pBVar3);
     st::fn_006BB370(g_dDXContext_0080759C,0,0);

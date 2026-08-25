@@ -81,7 +81,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           return 0;
         case MESS_HITKILL:
           dVar5 = (message->arg0).u32;
-          local_8->field_0315 = ((undefined1 *)dVar5)[0x18];
+          local_8->field_0315 = STField<undefined1>(dVar5,0x18);
           if (((local_8->field_024E != '\0') && (local_8->field_02AB != 0xffff)) &&
              ((pSVar10 = (STGameObjC *)local_8->field_02AD, pSVar10 != nullptr ||
               /* ST_CALLSITE[005EB5F4]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -92,14 +92,14 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
             /* ST_CALLSITE[005EB612]: CALL dword ptr [EAX + 0xac] */
             this_00->vfunc_AC((short)pSVar10->field_0018);
           }
-          switch(*(undefined4 *)(dVar5 + 0x18)) {
+          switch(STField<undefined4>(dVar5,0x18)) {
           case 2:
           case 4:
             goto switchD_005eb627_caseD_2;
           case 3:
             uVar21 = 0;
-            this_00->field_030E = ((undefined1 *)dVar5)[8];
-            this_00->field_030F = *(undefined2 *)(dVar5 + 0xc);
+            this_00->field_030E = STField<undefined1>(dVar5,0x8);
+            this_00->field_030F = STField<undefined2>(dVar5,0xC);
             iVar13 = this_00->field_02C6;
             this_00->field_030D = 1;
             this_00->field_023A = 5;
@@ -118,8 +118,8 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
             g_currentExceptionFrame = local_60.previous;
             return 0;
           default:
-            this_00->field_030E = ((undefined1 *)dVar5)[8];
-            this_00->field_030F = *(undefined2 *)(dVar5 + 0xc);
+            this_00->field_030E = STField<undefined1>(dVar5,0x8);
+            this_00->field_030F = STField<undefined2>(dVar5,0xC);
             this_00->field_030D = 1;
             if (-1 < this_00->field_02D6) {
               thunk_FUN_004ad430((STT3DSprC *)&this_00->vtable_at_1d5);
@@ -144,7 +144,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           return 0;
         }
         /* ST_CALLSITE[005EB546]: CALL dword ptr [EDX + 0x124] */
-        iVar13 = local_8->vfunc_124((short)*puVar15);
+        iVar13 = local_8->sub_005EBD00((short)*puVar15);
         if (iVar13 == 0) {
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -390,17 +390,17 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
   return 0xffff;
 switchD_005eb627_caseD_2:
   /* ST_CALLSITE[005EB637]: CALL dword ptr [EDX + 0x124] */
-  iVar13 = this_00->vfunc_124(20000);
+  iVar13 = this_00->sub_005EBD00(20000);
   if (iVar13 == 0) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   thunk_FUN_005ec9f0(1);
-  if (*(int *)(dVar5 + 0x18) == 4) {
+  if (STField<int>(dVar5,0x18) == 4) {
     ST3DSMAPContext::sub_006E9D40(this_00->field_0211,(uint *)this_00->field_01ED,8);
   }
-  this_00->field_030E = ((undefined1 *)dVar5)[8];
-  this_00->field_030F = *(undefined2 *)(dVar5 + 0xc);
+  this_00->field_030E = STField<undefined1>(dVar5,0x8);
+  this_00->field_030F = STField<undefined2>(dVar5,0xC);
   this_00->field_023A = 5;
   this_00->field_030D = 1;
   g_currentExceptionFrame = local_60.previous;
@@ -421,8 +421,7 @@ switchD_005eb5ad_caseD_129:
   if ((local_8->field_02AB == -1) &&
      (iVar13_mg9 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_8->field_02A7,&local_14),
      iVar13_mg9 != -4)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    this_00->field_02AB = *(undefined2 *)(local_14 + 0x32);
+    this_00->field_02AB = STField<undefined2>(local_14,0x32);
   }
   if (this_00->field_02AB == 0xffff) {
     g_currentExceptionFrame = local_60.previous;
@@ -437,7 +436,7 @@ switchD_005eb5ad_caseD_129:
     this_00->field_0277 = (int)*(short *)&pSVar10->field_0x41;
     this_00->field_027B = (int)*(short *)&pSVar10->field_0x43;
     this_00->field_027F = (int)*(short *)&pSVar10->field_0x45;
-    this_00->field_02BA = (int)(short)pSVar10->field_006C / 0xf;
+    this_00->field_02BA = (int)pSVar10->field_006C / 0xf;
     puVar15 = (byte *)&pSVar10->field_0x34;
     puVar14 = (byte *)&this_00->field_0x34;
     memmove(puVar14, puVar15, 0x5f); /* compiler REP MOVS byte copy */

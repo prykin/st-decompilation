@@ -41,13 +41,13 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/AppClassTyVTable+8	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/AppClassTyVTable+16	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/AppClassTyVTable+20	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/AppClassTyVTable+24	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/AppClassTyVTable+24	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/BaseSystemCVTable+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/BaseSystemCVTable+12	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/BaseSystemCVTable+16	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/BaseSystemCVTable+24	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/BldBoatPanelTyVTable+24	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
-/SubmarineTitans/Recovered/VTables/BldObjPanelTyVTable+24	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/BldBoatPanelTyVTable+24	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/BldObjPanelTyVTable+24	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/ButtonClassTyVTable+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/ButtonClassTyVTable+8	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+0	vtable_slot	unchanged	desired function pointer already present
@@ -166,7 +166,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STArtiafactCVTable+280	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STArtiafactCVTable+284	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STArtiafactCVTable+288	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STArtiafactCVTable+292	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STArtiafactCVTable+292	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STArtiafactCVTable+300	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STArtiafactCVTable+304	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STArtiafactCVTable+312	vtable_slot	unchanged	desired function pointer already present
@@ -222,7 +222,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STBoatCVTable+236	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STBoatCVTable+240	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STBoatCVTable+244	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STBoatCVTable+248	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STBoatCVTable+248	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STBoatCVTable+256	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STBoatCVTable+260	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STBoatCVTable+264	vtable_slot	unchanged	desired function pointer already present
@@ -259,7 +259,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+108	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+112	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+116	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STColl3CVTable+124	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STColl3CVTable+124	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+128	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+132	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+136	vtable_slot	unchanged	desired function pointer already present
@@ -283,7 +283,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+208	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+212	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+216	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STColl3CVTable+220	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/STColl3CVTable+220	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+224	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+228	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+232	vtable_slot	unchanged	desired function pointer already present
@@ -367,7 +367,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STContainerCVTable+280	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STContainerCVTable+284	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STContainerCVTable+288	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STContainerCVTable+292	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STContainerCVTable+292	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STContainerCVTable+308	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STContainerCVTable+320	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STContainerCVTable+324	vtable_slot	unchanged	desired function pointer already present
@@ -451,8 +451,8 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+32	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+36	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+40	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STDcResourcCVTable+48	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STDcResourcCVTable+52	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STDcResourcCVTable+48	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/STDcResourcCVTable+52	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+64	vtable_slot	unchanged	desired function pointer already present
@@ -461,8 +461,8 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+76	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+80	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+84	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STDcResourcCVTable+88	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STDcResourcCVTable+92	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STDcResourcCVTable+88	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/STDcResourcCVTable+92	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+96	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+100	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDcResourcCVTable+104	vtable_slot	unchanged	desired function pointer already present
@@ -521,8 +521,8 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STDestCVTable+36	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDestCVTable+40	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDestCVTable+44	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STDestCVTable+48	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STDestCVTable+52	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STDestCVTable+48	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/STDestCVTable+52	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STDestCVTable+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDestCVTable+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STDestCVTable+64	vtable_slot	unchanged	desired function pointer already present
@@ -1050,8 +1050,8 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+36	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+40	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+44	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STMineSetCVTable+48	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STMineSetCVTable+52	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STMineSetCVTable+48	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/STMineSetCVTable+52	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+64	vtable_slot	unchanged	desired function pointer already present
@@ -1060,15 +1060,15 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+76	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+80	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+84	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STMineSetCVTable+88	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STMineSetCVTable+92	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STMineSetCVTable+88	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/STMineSetCVTable+92	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+96	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STMineSetCVTable+100	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STMineSetCVTable+100	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+104	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+112	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+116	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+120	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STMineSetCVTable+124	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STMineSetCVTable+124	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+128	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+132	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+136	vtable_slot	unchanged	desired function pointer already present
@@ -1096,8 +1096,8 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+224	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+228	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+232	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STMineSetCVTable+240	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/STMineSetCVTable+244	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/STMineSetCVTable+240	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/STMineSetCVTable+244	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+248	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+252	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/STMineSetCVTable+256	vtable_slot	unchanged	desired function pointer already present
@@ -1537,34 +1537,34 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/SystemWithNamedObjClassTyVTable+20	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+8	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+12	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+12	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+16	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+20	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+24	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+32	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+36	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+40	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+48	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+52	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+56	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+60	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+48	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+52	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+56	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+60	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+64	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+68	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+72	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+68	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+72	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+76	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+80	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+80	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+84	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+88	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+92	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+92	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+96	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+100	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+104	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+112	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+116	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+124	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+124	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+128	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+132	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+136	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+136	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+140	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+144	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+148	vtable_slot	unchanged	desired function pointer already present
@@ -1588,12 +1588,12 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+224	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+228	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+236	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+240	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+240	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+244	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+252	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+256	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+260	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+264	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+264	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+268	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+272	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable+276	vtable_slot	unchanged	desired function pointer already present
@@ -1609,8 +1609,8 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+36	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+40	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+44	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+48	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+52	vtable_slot	unchanged	desired function pointer already present
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+48	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+52	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/TLOEmbryoTyVTable+64	vtable_slot	unchanged	desired function pointer already present
@@ -2185,7 +2185,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_0079DC74+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DC74+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DC74+64	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_0079DC74+68	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_0079DC74+68	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_0079DCBC+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DCBC+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DCBC+8	vtable_slot	unchanged	desired function pointer already present
@@ -2283,7 +2283,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_0079DDEC+88	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DDEC+92	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DDEC+96	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_0079DDEC+100	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_0079DDEC+100	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_0079DDEC+104	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DE58+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DE58+4	vtable_slot	disabled	apply=0
@@ -2316,7 +2316,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_0079DE90+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DE90+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DE90+64	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_0079DE90+68	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_0079DE90+68	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_0079DED8+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DED8+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079DED8+8	vtable_slot	unchanged	desired function pointer already present
@@ -2335,7 +2335,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_0079E2C0+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_0079E360+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1108+0	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1108+4	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1108+4	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1108+8	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1108+12	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1108+16	vtable_slot	unchanged	desired function pointer already present
@@ -2343,7 +2343,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1108+24	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1108+28	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1128+0	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1128+4	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1128+4	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1128+8	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1128+12	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1128+16	vtable_slot	unchanged	desired function pointer already present
@@ -2428,7 +2428,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+72	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+76	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+80	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A13D0+84	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A13D0+84	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+88	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+92	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+96	vtable_slot	unchanged	desired function pointer already present
@@ -2483,7 +2483,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A14C8+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A14C8+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A14C8+64	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A14C8+68	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A14C8+68	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1510+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1510+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1510+8	vtable_slot	unchanged	desired function pointer already present
@@ -2613,7 +2613,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1780+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1780+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1780+64	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1780+68	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1780+68	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A17C8+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A17C8+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A17C8+8	vtable_slot	unchanged	desired function pointer already present
@@ -2651,7 +2651,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1820+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1820+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1820+64	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1820+68	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1820+68	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1868+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1868+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1868+8	vtable_slot	unchanged	desired function pointer already present
@@ -2674,7 +2674,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1868+76	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1868+80	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1868+84	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1868+88	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1868+88	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A18C8+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A18C8+4	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A18C8+8	vtable_slot	disabled	apply=0
@@ -2706,7 +2706,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1908+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1908+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1908+64	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1908+68	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1908+68	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1950+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1950+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1950+8	vtable_slot	unchanged	desired function pointer already present
@@ -2744,7 +2744,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A19A8+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A19A8+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A19A8+64	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A19A8+68	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A19A8+68	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A19F0+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A19F0+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A19F0+8	vtable_slot	unchanged	desired function pointer already present
@@ -2767,7 +2767,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A19F0+76	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A19F0+80	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A19F0+84	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A19F0+88	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A19F0+88	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1C08+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C08+4	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C08+8	vtable_slot	unchanged	desired function pointer already present
@@ -2776,16 +2776,16 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+4	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+8	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+12	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1C18+16	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1C18+16	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+20	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+24	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+28	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1C18+32	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1C18+32	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+36	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+40	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1C18+44	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1C18+44	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+48	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1C18+52	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1C18+52	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C18+64	vtable_slot	unchanged	desired function pointer already present
@@ -2800,8 +2800,8 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1C60+28	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C60+32	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C60+36	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1C60+40	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
-/SubmarineTitans/Recovered/VTables/VTable_007A1C60+44	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1C60+40	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/VTable_007A1C60+44	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1C60+48	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C60+52	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C60+56	vtable_slot	unchanged	desired function pointer already present
@@ -2809,7 +2809,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1C60+64	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C60+68	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1C60+72	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1C60+76	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1C60+76	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1C60+80	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1CB8+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1CB8+4	vtable_slot	unchanged	desired function pointer already present
@@ -2819,16 +2819,16 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+4	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+8	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+12	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1CC8+16	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1CC8+16	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+20	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+24	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+28	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1CC8+32	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1CC8+32	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+36	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+40	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1CC8+44	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1CC8+44	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+48	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1CC8+52	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1CC8+52	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+56	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+60	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1CC8+64	vtable_slot	unchanged	desired function pointer already present
@@ -2843,8 +2843,8 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1D10+28	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1D10+32	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1D10+36	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1D10+40	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
-/SubmarineTitans/Recovered/VTables/VTable_007A1D10+44	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1D10+40	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
+/SubmarineTitans/Recovered/VTables/VTable_007A1D10+44	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1D10+48	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1D10+52	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1D10+56	vtable_slot	unchanged	desired function pointer already present
@@ -2852,7 +2852,7 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A1D10+64	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1D10+68	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1D10+72	vtable_slot	unchanged	desired function pointer already present
-/SubmarineTitans/Recovered/VTables/VTable_007A1D10+76	vtable_slot	preserved	refusing to replace a stronger receiver-aware function-pointer ABI with the weaker target Listing signature
+/SubmarineTitans/Recovered/VTables/VTable_007A1D10+76	vtable_slot	unchanged	stronger receiver-aware function-pointer ABI already present; weaker target Listing signature ignored
 /SubmarineTitans/Recovered/VTables/VTable_007A1D10+80	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1D68+0	vtable_slot	unchanged	desired function pointer already present
 /SubmarineTitans/Recovered/VTables/VTable_007A1D68+4	vtable_slot	unchanged	desired function pointer already present

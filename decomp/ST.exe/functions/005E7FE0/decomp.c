@@ -133,7 +133,7 @@ LAB_005e829d:
   if (-1 < (int)g_startSystem_0081176C->field_02EC) {
     FUN_006b35d0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
   }
-  if (-1 < (int)g_startSystem_0081176C->field_0540) {
+  if (-1 < g_startSystem_0081176C->field_0540) {
     FUN_006b35d0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
   }
   g_currentExceptionFrame = local_60.previous;

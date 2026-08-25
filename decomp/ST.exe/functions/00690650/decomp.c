@@ -62,7 +62,7 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   if ((int)(char)bVar1 == this->field_0024) {
     return;
   }
-  bVar2 = *(byte *)&this->field_0024;
+  bVar2 = (byte)this->field_0024;
   local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
   if (DAT_00808a8f != '\0') {
     bVar14 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
@@ -104,19 +104,19 @@ LAB_00690763:
       else {
         /* ST_CALLSITE[006907BF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar7 = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,*(char *)&local_c->field_0024,(ushort)local_10,
+                           (g_allPlayers_007FA174,(char)local_c->field_0024,(ushort)local_10,
                             CASE_1);
       }
       if ((pSVar7 != nullptr) &&
          /* ST_CALLSITE[006907DA]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
          (iVar6 = sub_0068E290(this_01,pSVar7->field_0030), iVar6 != 0)) {
-        if (*(short *)(iVar6 + 0x7b) == 1) {
+        if (STField<short>(iVar6,0x7B) == 1) {
           sVar5 = (short)local_10;
         }
         else {
           sVar5 = -1;
         }
-        uVar8 = thunk_FUN_00690550(this_01,*(short *)(iVar6 + 0x7d),sVar5);
+        uVar8 = thunk_FUN_00690550(this_01,STField<short>(iVar6,0x7D),sVar5);
         if ((int)uVar8 < 0) {
           pAVar9 = this_01->field_00A5;
           local_8 = 0;
@@ -135,19 +135,19 @@ LAB_00690763:
                 local_54[0] = 100;
                 local_4b = 1;
                 local_54[1] = local_c->field_012C;
-                local_48 = *(undefined2 *)(iVar6 + 0x7d);
+                local_48 = STField<undefined2>(iVar6,0x7D);
                 local_4a = (undefined2)local_10;
-                local_46 = *(undefined2 *)(iVar6 + 0x7b);
+                local_46 = STField<undefined2>(iVar6,0x7B);
                 local_44 = (undefined2)local_20;
                 local_42 = local_14;
                 /* ST_CALLSITE[00690897]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
                 AiFltClassTy::GetAiMess(this_00,local_54);
                 if ('\0' < local_4c) {
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  _local_1c = CONCAT22(*(undefined2 *)(iVar6 + 0x7d),
+                  _local_1c = CONCAT22(STField<undefined2>(iVar6,0x7D),
                                        *(undefined2 *)(element_00a5->field_0004 + 0x7d));
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_18 = CONCAT22(*(undefined2 *)(iVar6 + 0x7b),(short)local_10);
+                  local_18 = CONCAT22(STField<undefined2>(iVar6,0x7B),(short)local_10);
                   Library::DKW::TBL::DArrayAppend(local_c->field_00C9,&local_1c);
                   g_currentExceptionFrame = local_98.previous;
                   return;

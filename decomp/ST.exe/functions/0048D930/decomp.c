@@ -41,7 +41,7 @@ void __thiscall STBoatC::sub_0048D930(STBoatC *this)
        ((-1 < sVar3 &&
         ((((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)) && (sVar2 < g_worldGrid.sizeZ)) &&
          ((pSVar4 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], pSVar4 != nullptr &&
-          (*(int *)&pSVar4->field_0x18 == this->field_04AB)))))))) {
+          (*(HoloTy **)&pSVar4->field_0x18 == this->field_04AB)))))))) {
       thunk_FUN_004e18e0(pSVar4,this->field_0018);
       thunk_FUN_004e1690(pSVar4,this->field_0018);
     }

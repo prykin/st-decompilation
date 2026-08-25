@@ -27,15 +27,15 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
   array = Library::DKW::TBL::DArrayCreate(nullptr,0x14,2,0x14);
   iVar2 = STField<int>(this,0xa5);
   local_8 = 0;
-  if (0 < *(int *)(iVar2 + 0xc)) {
-    bVar7 = *(int *)(iVar2 + 0xc) != 0;
+  if (0 < STField<int>(iVar2,0xC)) {
+    bVar7 = STField<int>(iVar2,0xC) != 0;
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     iVar4 = extraout_EDX;
     do {
       uVar6 = local_8;
       if (bVar7) {
-        iVar4 = *(int *)(iVar2 + 0x1c);
-        iVar2 = *(int *)(iVar2 + 8) * local_8 + iVar4;
+        iVar4 = STField<int>(iVar2,0x1C);
+        iVar2 = STField<int>(iVar2,0x8) * local_8 + iVar4;
       }
       else {
         iVar2 = 0;
@@ -73,8 +73,8 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
       }
       local_8 = uVar6 + 1;
       iVar2 = STField<int>(this,0xa5);
-      bVar7 = local_8 < *(uint *)(iVar2 + 0xc);
-    } while ((int)local_8 < (int)*(uint *)(iVar2 + 0xc));
+      bVar7 = local_8 < STField<uint>(iVar2,0xC);
+    } while ((int)local_8 < (int)STField<uint>(iVar2,0xC));
   }
   if (array->count != 0) {
     return &array->flags;

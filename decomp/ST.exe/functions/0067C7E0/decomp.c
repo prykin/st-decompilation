@@ -115,7 +115,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
             else {
               local_38.arg1.ptr = &this_00->vtable_at_1c;
             }
-            /* ST_CALLSITE[0067C9DD]: CALL dword ptr [EAX] */
+            /* ST_CALLSITE[0067C9DD]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
             g_aiBossClass_008117BC->GetMessage(&local_38);
           }
           /* ST_CALLSITE[0067C9E6]: CALL 0x00401be0; direct=00401BE0 AiEventClassTy::GetMessage */
@@ -156,7 +156,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         /* ST_CALLSITE[0067C903]: CALL 0x004033ff; direct=004033FF AiPlrClassTy::InitData */
         InitData(this_00,puVar3);
         if (g_allPlayers_007FA174 != nullptr) {
-          thunk_FUN_004357b0(*(char *)&this_00->field_05D7,this_00);
+          thunk_FUN_004357b0((char)this_00->field_05D7,this_00);
         }
         if (puVar3[3] == 0) {
           /* ST_CALLSITE[0067C928]: CALL 0x004044bc; direct=004044BC AiPlrClassTy::sub_00678FC0 */
@@ -179,12 +179,12 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           else {
             local_38.arg1.ptr = &this_00->vtable_at_1c;
           }
-          /* ST_CALLSITE[0067C8B4]: CALL dword ptr [EAX] */
+          /* ST_CALLSITE[0067C8B4]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
           g_aiBossClass_008117BC->GetMessage(&local_38);
         }
         thunk_FUN_0064a580();
         if (g_allPlayers_007FA174 != nullptr) {
-          thunk_FUN_004357b0(*(char *)&this_00->field_05D7,nullptr);
+          thunk_FUN_004357b0((char)this_00->field_05D7,nullptr);
         }
         thunk_FUN_00678ba0(this_00);
       }
@@ -227,7 +227,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
       else {
         /* ST_CALLSITE[0067CAEE]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_01 = STAllPlayersC::GetObjPtr
-                            (g_allPlayers_007FA174,*(char *)&local_10->field_05D7,
+                            (g_allPlayers_007FA174,(char)local_10->field_05D7,
                              (message->arg0).words.high,CASE_1);
       }
       if (this_01 != nullptr) {

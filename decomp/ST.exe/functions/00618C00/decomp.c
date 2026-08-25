@@ -163,14 +163,14 @@ LAB_00618ce0:
     }
   }
   else if (SVar1 == MESS_STOCTOPUSC_0112) {
-    if ((-1 < (int)local_8->field_0097) && (local_8->field_0093 != CASE_5)) {
+    if ((-1 < local_8->field_0097) && (local_8->field_0093 != CASE_5)) {
       Library::Ourlib::ST3DSMAP::SprSetShadow
                 (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0,(uint)local_8);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
   }
-  else if (((SVar1 == MESS_STSPRGAMEOBJC_0113) && (-1 < (int)local_8->field_0097)) &&
+  else if (((SVar1 == MESS_STSPRGAMEOBJC_0113) && (-1 < local_8->field_0097)) &&
           (local_8->field_0093 != CASE_5)) {
     Library::Ourlib::ST3DSMAP::SprSetShadow
               (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0x401109,(uint)&local_8->field_0x4d);

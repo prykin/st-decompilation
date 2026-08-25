@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,int param_6)
 
@@ -49,14 +51,14 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
   if (8 < local_38) {
     local_38 = 0x10 - local_38;
   }
-  local_8 = *(int *)(iVar9 + 0xc) + param_2;
+  local_8 = STField<int>(iVar9,0xC) + param_2;
   uVar11 = 0;
   local_2c = 0;
   local_18 = 0;
   int scalar_param_4 = PTR_00803380 + local_8 * DAT_008033a4 * 2; /* split integer lifetime from pointer-typed SSA storage */
   iVar16 = 0;
   local_14 = 0;
-  if (0 < *(int *)(iVar9 + 0x10)) {
+  if (0 < STField<int>(iVar9,0x10)) {
     local_20 = (int *)(iVar9 + 0x14);
     do {
       if ((-1 < local_8) && (local_8 < DAT_008033a8)) {
@@ -82,7 +84,7 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
       local_8 = local_8 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = (int *)((int)param_4 + DAT_008033a4 * 2);
-    } while (iVar16 < *(int *)(iVar9 + 0x10));
+    } while (iVar16 < STField<int>(iVar9,0x10));
   }
   local_EAX_378 = thunk_FUN_0055de60(DAT_00803304,DAT_00803308,param_1,param_2);
   iVar9 = (DAT_00803384 + 2) * DAT_00803320;
@@ -225,7 +227,7 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
         iVar8 = iVar8 + 1;
         if (iVar8 < DAT_00803398) {
           piVar15 = (int *)&local_1c_mg1[iVar8].field_0x8;
-          auto param_3_after_write = iVar8; /* compiler stack-slot lifetime split */
+          int param_3_after_write = iVar8; /* compiler stack-slot lifetime split */
           param_4 = piVar15;
           do {
             uVar11 = piVar15[-2] - param_1;

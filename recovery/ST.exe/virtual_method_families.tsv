@@ -158,7 +158,7 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 00790710:0	00790710	0	0x0	00790710	DumpClassC	1	GetMessage	DumpClassC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 00790728:0	00790728	0	0x0	00790728	STGroupBoatC	1	GetMessage	STGroupBoatC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 00790728:1	00790728	1	0x4	00790728	STGroupBoatC	1			-
-00790728:2	00790728	2	0x8	00790728	STGroupBoatC	1	sub_00498D20	STGroupBoatC	/void(/SubmarineTitans/Recovered/Enums/STGroupBoatC_sub_00498D20_orderTypeEnum,/SubmarineTitans/Recovered/DArrayTy *32) varargs=false noreturn=false
+00790728:2	00790728	2	0x8	00790728	STGroupBoatC	1			-
 00790728:3	00790728	3	0xC	00790728	STGroupBoatC	1			-
 00790728:4	00790728	4	0x10	00790728	STGroupBoatC	1	ChangeMDNotify	STGroupBoatC	/undefined(/int,/uint) varargs=false noreturn=false
 00790728:5	00790728	5	0x14	00790728	STGroupBoatC	1	ChangeMDNotify	STGroupBoatC	/undefined(/int,/short) varargs=false noreturn=false
@@ -181,12 +181,14 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079AB74:8	0079AB74	8	0x20	0079AB74 | 0079AC1C | 0079AC70 | 0079AD8C | 0079AE90	BehPanelTy | FrmPanelTy | InfocPanelTy | SAMPanelTy | UpgPanelTy	5	Update	BehPanelTy | FrmPanelTy | InfocPanelTy | SAMPanelTy | UpgPanelTy	-
 0079AC6C:0	0079AC6C	0	0x0	0079AC6C	HelpStringTy	1	GetMessage	HelpStringTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079ACE4:0	0079ACE4	0	0x0	0079ACE4	MoneyTy	1	GetMessage	MoneyTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
+0079ACE8:0	0079ACE8	0	0x0	0079ACE8	PopUpTy	1	GetMessage	PopUpTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079ADB8:0	0079ADB8	0	0x0	0079C1E8	StartSystemTy	1	InitSystem	StartSystemTy	-
 0079ADB8:1	0079ADB8	1	0x4	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	3	DoneSystem	InterSystemC | StartSystemTy	-
 0079ADB8:3	0079ADB8	3	0xC	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	2			-
 0079ADB8:4	0079ADB8	4	0x10	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8 | 0079E188 | 0079E1B4	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy | SystemClassTy | SystemWithNamedObjClassTy	2			-
 0079ADB8:5	0079ADB8	5	0x14	0079ADB8 | 0079B1B4 | 0079B20C | 0079C1E8	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy	4	CreateSystemObjects	BaseSystemC | DebugSystemC | InterSystemC | StartSystemTy	-
 0079ADB8:8	0079ADB8	8	0x20	0079ADB8 | 0079C1E8	InterSystemC | StartSystemTy	2	GetMessage	InterSystemC | StartSystemTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
+0079AE04:0	0079AE04	0	0x0	0079AE04	CursorClassTy	1	GetMessage	CursorClassTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079AE38:0	0079AE38	0	0x0	0079AE38	STPlaySystemC	1	InitSystem	STPlaySystemC	-
 0079AE38:1	0079AE38	1	0x4	0079AE38	STPlaySystemC	1	DoneSystem	STPlaySystemC	-
 0079AE38:2	0079AE38	2	0x8	0079AE38	STPlaySystemC	1			-
@@ -237,9 +239,9 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079BFF8:0	0079BFF8	0	0x0	0079BFF8	CampaignTy	1	GetMessage	CampaignTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079BFF8:1	0079BFF8	1	0x4	0079BFF8	CampaignTy	1	DoneMMObj	MMObjTy	-
 0079BFF8:2	0079BFF8	2	0x8	0079BFF8	CampaignTy	1	CloseButtons	CampaignTy	-
-0079C008:0	0079C008	0	0x0	0079C008 | 0079C0C4 | 0079C1AC	MMObjTy | PrividerTy | SIDTy	3	GetMessage	MMObjTy | PrividerTy | SIDTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
-0079C008:1	0079C008	1	0x4	0079C008 | 0079C0C4 | 0079C1AC	MMObjTy | PrividerTy | SIDTy	1	DoneMMObj	MMObjTy	-
-0079C008:2	0079C008	2	0x8	0079C008 | 0079C0C4 | 0079C1AC	MMObjTy | PrividerTy | SIDTy	1	CloseButtons	MMObjTy	-
+0079C008:0	0079C008	0	0x0	0079C0C4 | 0079C1AC	PrividerTy | SIDTy	2	GetMessage	PrividerTy | SIDTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
+0079C008:1	0079C008	1	0x4	0079C0C4 | 0079C1AC	PrividerTy | SIDTy	1	DoneMMObj	MMObjTy	-
+0079C008:2	0079C008	2	0x8	0079C0C4 | 0079C1AC	PrividerTy | SIDTy	1	CloseButtons	MMObjTy	-
 0079C01C:0	0079C01C	0	0x0	0079C01C	Visible	1	GetMessage	ComboTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079C02C:0	0079C02C	0	0x0	0079C02C	FSGSTy	1	GetMessage	FSGSTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079C02C:1	0079C02C	1	0x4	0079C02C	FSGSTy	1	DoneMMObj	MMObjTy	-
@@ -272,12 +274,13 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079C160:11	0079C160	11	0x2C	0079C160	SettMapTy	1	SetListCtrls	SettMapSTy	-
 0079C160:2	0079C160	2	0x8	0079C160	SettMapTy	1	CloseButtons	SettMapTy	-
 0079C160:3	0079C160	3	0xC	0079C160	SettMapTy	1	NoneSettMap	SettMapTy	/int() varargs=false noreturn=false
-0079C160:4	0079C160	4	0x10	0079C160	SettMapTy	1	sub_005C29B0	SettMapMTy	/undefined(/char) varargs=false noreturn=false
+0079C160:4	0079C160	4	0x10	0079C160	SettMapTy	1			-
 0079C160:5	0079C160	5	0x14	0079C160	SettMapTy	1	DoneSettMap	SettMapTy	-
 0079C160:6	0079C160	6	0x18	0079C160	SettMapTy	1	CreateCtrls	SettMapTy	/undefined(/char) varargs=false noreturn=false
 0079C160:7	0079C160	7	0x1C	0079C160	SettMapTy	1	DeleteCtrls	SettMapTy	-
 0079C160:8	0079C160	8	0x20	0079C160	SettMapTy	1			-
 0079C160:9	0079C160	9	0x24	0079C160	SettMapTy	1			-
+0079C238:0	0079C238	0	0x0	0079C238	MTaskTy	1	GetMessage	MTaskTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079C23C:0	0079C23C	0	0x0	0079C23C	MTestTy	1	GetMessage	MTestTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079C24C:0	0079C24C	0	0x0	0079C24C	WaitTy	1	GetMessage	WaitTy	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 0079C24C:1	0079C24C	1	0x4	0079C24C	WaitTy	1	DoneMMObj	MMObjTy	-
@@ -312,7 +315,7 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 0079D76C:0	0079D76C	0	0x0	0079D76C	AiTactClassTy	1	GetMessage	AiTactClassTy	/int(/SubmarineTitans/Recovered/STMessage *) varargs=false noreturn=false
 0079E16C:2	0079E16C	2	0x8	0079E16C	AppClassTy	1			-
 0079E16C:4	0079E16C	4	0x10	0079E16C	AppClassTy	1			-
-0079E16C:6	0079E16C	6	0x18	0079E16C	AppClassTy	1	sub_006E5150	STAppC	/undefined4(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
+0079E16C:6	0079E16C	6	0x18	0079E16C	AppClassTy	1			-
 0079E288:1	0079E288	1	0x4	0079E288	ButtonClassTy	1			-
 0079E288:2	0079E288	2	0x8	0079E288	ButtonClassTy	1			-
 0079E298:2	0079E298	2	0x8	0079E298	ViewerClassTy	1			-

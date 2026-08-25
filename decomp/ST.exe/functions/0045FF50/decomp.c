@@ -18,7 +18,7 @@ undefined4 __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
-    this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
+    this_00 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
     if (this_00 != nullptr) {
       thunk_FUN_0040ae40(this_00,(uint)(ushort)this->field_0032,'\0');
       iVar1 = thunk_FUN_0040d540((AnonShape_0040D540_1BB7A4CF *)this_00,

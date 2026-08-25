@@ -69,7 +69,7 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
       local_3c = 0;
       local_28 = 0;
       local_58 = iVar3;
-      if ((*(int *)(iVar3 + 0x10) != 0) && (*(int *)(iVar3 + 0x14) != 0)) {
+      if ((STField<int>(iVar3,0x10) != 0) && (STField<int>(iVar3,0x14) != 0)) {
         param_1->field_0451->iteratorIndex = 0;
         do {
           pDVar2 = param_1->field_0451;
@@ -82,7 +82,7 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
             piVar12 = nullptr;
           }
         } while ((piVar12 != nullptr) &&
-                ((*(int *)(iVar3 + 0x10) != *piVar12 || (*(int *)(iVar3 + 0x14) != piVar12[1]))));
+                ((STField<int>(iVar3,0x10) != *piVar12 || (STField<int>(iVar3,0x14) != piVar12[1]))));
         local_3c = 1;
         if (piVar12 == nullptr) {
           FUN_006a5e90(*(short **)(iVar3 + 0xc));
@@ -125,13 +125,13 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
                 piVar12 = nullptr;
               }
               if (piVar12 == nullptr) goto LAB_00574b14;
-            } while (*(int *)(iVar3 + 0xc) != piVar12[2]);
+            } while (STField<int>(iVar3,0xC) != piVar12[2]);
             if (piVar12 == nullptr) {
 LAB_00574b14:
               FUN_006a5e90(*(short **)(iVar3 + 0xc));
             }
           }
-          *(int *)(iVar3 + 0xc) = piVar12[2];
+          STField<int>(iVar3,0xC) = piVar12[2];
         }
       }
       if ((local_34 == 0) || ((((byte *)iVar3)[0x4f] & 0x10) != 0)) {
@@ -143,7 +143,7 @@ LAB_00574b14:
 LAB_00574b4a:
           if (local_40 == 0) {
             if (local_3c == 0) {
-              if (*(int *)(iVar3 + 0xc) != 0) {
+              if (STField<int>(iVar3,0xC) != 0) {
                 param_1->field_0451->iteratorIndex = 0;
                 do {
                   pDVar2 = param_1->field_0451;
@@ -156,7 +156,7 @@ LAB_00574b4a:
                     pvVar5 = nullptr;
                   }
                   if (pvVar5 == nullptr) goto LAB_00574bcc;
-                } while (*(int *)(iVar3 + 0xc) != STField<int>(pvVar5,8));
+                } while (STField<int>(iVar3,0xC) != STField<int>(pvVar5,8));
                 if (pvVar5 == nullptr) {
 LAB_00574bcc:
                   FUN_006a5e90(*(short **)(iVar3 + 0xc));
@@ -207,7 +207,7 @@ LAB_00574bcc:
                   local_50 = local_50 + 1) {
                 iVar8 = (uint)(byte)param_1->field_0x4 * local_50;
                 local_48 = iVar8 / 2 + (int)param_4;
-                local_60 = (byte *)(*(int *)(iVar3 + 0xc) + iVar8 * 2);
+                local_60 = (byte *)(STField<int>(iVar3,0xC) + iVar8 * 2);
                 local_30 = 0;
                 while ((int)local_30 < (int)((uint)(byte)param_1->field_0x4 * 2)) {
                   uVar10 = local_30 & 0x80000003;
@@ -240,7 +240,7 @@ LAB_00574e10:
                 iVar8 = iVar11 / 2;
                 local_48 = iVar8 + (int)param_4;
                 local_44 = (undefined1 *)(iVar8 + (int)local_4c);
-                local_60 = (byte *)(*(int *)(iVar3 + 0xc) + iVar11 * 2);
+                local_60 = (byte *)(STField<int>(iVar3,0xC) + iVar11 * 2);
                 for (local_30 = 0; (int)local_30 < (int)((uint)(byte)param_1->field_0x4 * 2);
                     local_30 = local_30 + 1) {
                   iVar3 = STSignedDiv4(local_30);
@@ -279,9 +279,9 @@ LAB_00574e10:
         }
       }
       if (local_28 != 0) {
-        local_6c = *(undefined4 *)(iVar3 + 0x10);
-        local_68 = *(undefined4 *)(iVar3 + 0x14);
-        local_64 = *(undefined4 *)(iVar3 + 0xc);
+        local_6c = STField<undefined4>(iVar3,0x10);
+        local_68 = STField<undefined4>(iVar3,0x14);
+        local_64 = STField<undefined4>(iVar3,0xC);
         Library::DKW::TBL::DArrayAppend(param_1->field_0451,&local_6c);
       }
     }

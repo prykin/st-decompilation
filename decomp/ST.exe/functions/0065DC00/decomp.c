@@ -23,11 +23,10 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
       cVar1 = (char)param_1->field_0024;
     }
     if ((param_4 != '\b') && ((param_4 < '\0' || (cVar1 = param_4, '\b' < param_4)))) {
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_4 = -1;
-      cVar1 = param_4;
+      auto param_4_after_write = -1; /* compiler stack-slot lifetime split */
+      cVar1 = param_4_after_write;
     }
-    param_4 = cVar1;
+    char param_4_after_write_2 = cVar1; /* compiler stack-slot lifetime split */
     dVar2 = array->count;
     uVar6 = 0;
     if (0 < (int)dVar2) {
@@ -40,11 +39,11 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
         }
         /* ST_CALLSITE[0065DC81]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this = STAllPlayersC::GetObjPtr
-                         (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
+                         (g_allPlayers_007FA174,(char)param_1->field_0024,*puVar3,CASE_1);
         /* ST_CALLSITE[0065DC90]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
         if (((this != nullptr) && (iVar4 = (*this->vtable[1].vfunc_24)(this), iVar4 != 0))
            /* ST_CALLSITE[0065DCA5]: CALL dword ptr [EAX + 0x6c] */
-           && ((param_4 < '\0' || (iVar4 = this->vfunc_6C(), param_4 == iVar4)))) {
+           && ((param_4_after_write_2 < '\0' || (iVar4 = this->vfunc_6C(), param_4_after_write_2 == iVar4)))) {
           /* ST_CALLSITE[0065DCB4]: CALL dword ptr [EDX + 0x2c] */
           iVar4 = this->vfunc_2C();
           pIVar5 = thunk_FUN_00674fb0(iVar4);

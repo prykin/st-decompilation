@@ -1175,7 +1175,7 @@ switchD_0044d78f_caseD_28:
               local_8 = 1;
               if ((pbVar3[6] == 0) &&
                  ((local_EAX_1904 = st::fn_004043E0(this), 0 < local_EAX_1904 &&
-                  ((short)g_packedRecords_A62x8[*(char *)&this->field_0024].field94_0x15b != 0)))) {
+                  ((short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b != 0)))) {
                 pbVar3[6] = 1;
                 pbVar3[7] = 4;
               }
@@ -1193,7 +1193,7 @@ switchD_0044d78f_caseD_28:
                 local_8 = 1;
                 if (((pbVar3[6] == 0) &&
                     (local_EAX_1434 = st::fn_004043E0(this), 0 < local_EAX_1434)) &&
-                   ((short)g_packedRecords_A62x8[*(char *)&this->field_0024].field94_0x15b != 0)) {
+                   ((short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b != 0)) {
                   pbVar3[6] = 1;
                   pbVar3[7] = 4;
                 }
@@ -1212,7 +1212,7 @@ switchD_0044d78f_caseD_28:
                   local_8 = 1;
                   local_EAX_1172 = st::fn_004043E0(this);
                   if (0 < local_EAX_1172) {
-                    sVar1 = (short)g_packedRecords_A62x8[*(char *)&this->field_0024].field94_0x15b;
+                    sVar1 = (short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b;
 joined_r0x0044d9f5:
                     if (sVar1 != 0) {
                       pbVar3[6] = 1;
@@ -1231,7 +1231,7 @@ joined_r0x0044d9f5:
                   local_8 = 1;
                   if (((pbVar3[6] == 0) &&
                       (local_EAX_1269 = st::fn_004043E0(this), 0 < local_EAX_1269)) &&
-                     ((short)g_packedRecords_A62x8[*(char *)&this->field_0024].field94_0x15b != 0))
+                     ((short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b != 0))
                   {
                     pbVar3[6] = 1;
                     pbVar3[7] = 4;
@@ -1250,7 +1250,7 @@ LAB_0044dc25:
                   local_8 = 1;
                   local_EAX_1351 = st::fn_004043E0(this);
                   if (0 < local_EAX_1351) {
-                    sVar1 = (short)g_packedRecords_A62x8[*(char *)&this->field_0024].field94_0x15b;
+                    sVar1 = (short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b;
                     goto joined_r0x0044d9f5;
                   }
                 }
@@ -1268,7 +1268,7 @@ LAB_0044dc25:
                 local_8 = 1;
                 local_EAX_1608 = st::fn_004043E0(this);
                 if (0 < local_EAX_1608) {
-                  sVar1 = (short)g_packedRecords_A62x8[*(char *)&this->field_0024].field94_0x15b;
+                  sVar1 = (short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b;
                   goto joined_r0x0044d9f5;
                 }
               }
@@ -1291,7 +1291,7 @@ LAB_0044dc25:
               local_8 = 1;
               if ((pbVar3[6] == 0) &&
                  ((local_EAX_1797 = st::fn_004043E0(this), 0 < local_EAX_1797 &&
-                  ((short)g_packedRecords_A62x8[*(char *)&this->field_0024].field94_0x15b != 0)))) {
+                  ((short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b != 0)))) {
                 pbVar3[6] = 1;
                 pbVar3[7] = 4;
               }
@@ -1309,7 +1309,7 @@ LAB_0044d9c4:
             local_8 = 1;
             local_EAX_1709 = st::fn_004043E0(this);
             if (0 < local_EAX_1709) {
-              sVar1 = (short)g_packedRecords_A62x8[*(char *)&this->field_0024].field94_0x15b;
+              sVar1 = (short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b;
               goto joined_r0x0044d9f5;
             }
           }
@@ -1324,7 +1324,7 @@ LAB_0044d9c4:
               local_EAX_2097 = st::fn_00403594((TLOBaseTy *)this);
               if (((0 < local_EAX_2097) &&
                   (uVar6 = st::fn_004036A7((uint)DAT_0080874d), 0 < (int)uVar6)) &&
-                 ((short)g_packedRecords_A62x8[*(char *)&this->field_0024].field95_0x15f != 0)) {
+                 ((short)g_packedRecords_A62x8[(char)this->field_0024].field95_0x15f != 0)) {
                 pbVar3[6] = 1;
                 pbVar3[7] = 0x48;
               }
@@ -1363,7 +1363,7 @@ switchD_0044dcfe_caseD_19:
               local_EAX_2562 = st::fn_00403594((TLOBaseTy *)this);
               if (((0 < local_EAX_2562) &&
                   (uVar6 = st::fn_004036A7((uint)DAT_0080874d), 0 < (int)uVar6)) &&
-                 ((short)g_packedRecords_A62x8[*(char *)&this->field_0024].field95_0x15f != 0)) {
+                 ((short)g_packedRecords_A62x8[(char)this->field_0024].field95_0x15f != 0)) {
                 pbVar3[6] = 1;
                 pbVar3[7] = 0x48;
                 return pbVar3;
@@ -1382,7 +1382,7 @@ switchD_0044dcfe_caseD_19:
               local_EAX_2370 = st::fn_00403594((TLOBaseTy *)this);
               if (((0 < local_EAX_2370) &&
                   (uVar6 = st::fn_004036A7((uint)DAT_0080874d), 0 < (int)uVar6)) &&
-                 ((short)g_packedRecords_A62x8[*(char *)&this->field_0024].field95_0x15f != 0)) {
+                 ((short)g_packedRecords_A62x8[(char)this->field_0024].field95_0x15f != 0)) {
                 pbVar3[6] = 1;
                 pbVar3[7] = 0x48;
               }
@@ -1402,7 +1402,7 @@ switchD_0044dcfe_caseD_19:
             local_EAX_2244 = st::fn_00403594((TLOBaseTy *)this);
             if ((0 < local_EAX_2244) &&
                ((uVar6 = st::fn_004036A7((uint)DAT_0080874d), 0 < (int)uVar6 &&
-                ((short)g_packedRecords_A62x8[*(char *)&this->field_0024].field95_0x15f != 0)))) {
+                ((short)g_packedRecords_A62x8[(char)this->field_0024].field95_0x15f != 0)))) {
               pbVar3[6] = 1;
               pbVar3[7] = 0x48;
             }
@@ -1417,7 +1417,7 @@ switchD_0044dcfe_caseD_19:
             /* ST_CALLSITE[0044DD80]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
             iVar4 = st::fn_00403594((TLOBaseTy *)this);
             if (((0 < iVar4) && (uVar6 = st::fn_004036A7((uint)DAT_0080874d), 0 < (int)uVar6)) &&
-               ((short)g_packedRecords_A62x8[*(char *)&this->field_0024].field95_0x15f != 0)) {
+               ((short)g_packedRecords_A62x8[(char)this->field_0024].field95_0x15f != 0)) {
               pbVar3[6] = 1;
               pbVar3[7] = 0x48;
             }
@@ -1625,8 +1625,8 @@ void st::fn_0044E260(uint param_1,uint param_2,uint param_3,int *param_4)
                     auto param_4_after_write = (int *)local_14; /* compiler stack-slot lifetime split */
                     do {
                       iVar9 = *param_4_after_write;
-                      iVar10 = (int)STField<short>(piVar2,0x5b) - (int)*(short *)(iVar9 + 0x5b);
-                      iVar3 = *(int *)(iVar9 + 0x101);
+                      iVar10 = (int)STField<short>(piVar2,0x5b) - (int)STField<short>(iVar9,0x5B);
+                      iVar3 = STField<int>(iVar9,0x101);
                       if (iVar10 < 1) {
                         if (iVar10 < -iVar3) goto LAB_0044e4d5;
 LAB_0044e508:
@@ -1642,7 +1642,7 @@ joined_r0x0044e51a:
                       }
                       if (iVar10 <= iVar3) goto LAB_0044e508;
 LAB_0044e4d5:
-                      iVar9 = (int)STField<short>(piVar2,0x5d) - (int)*(short *)(iVar9 + 0x5d);
+                      iVar9 = (int)STField<short>(piVar2,0x5d) - (int)STField<short>(iVar9,0x5D);
                       if (iVar9 < 1) {
                         if (iVar9 < -iVar3) goto LAB_0044e4ef;
                         iVar9 = piVar4[piVar2[9]];

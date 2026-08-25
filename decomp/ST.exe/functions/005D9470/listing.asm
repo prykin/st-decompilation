@@ -338,7 +338,8 @@ LAB_005d9831:
 005D9841  50                        PUSH EAX
 005D9842  89 4B 2D                  MOV dword ptr [EBX + 0x2d],ECX
 005D9845  8B CB                     MOV ECX,EBX
-005D9847  FF 12                     CALL dword ptr [EDX]
+SIDTy::GetMessage::override::prt_5d9847_6fd2abe8:
+005D9847  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/SIDTy;pointer:/SubmarineTitans/Recovered/STMessage
 005D9849  E9 7D 04 00 00            JMP 0x005d9ccb
 LAB_005d984e:
 005D984E  8B 83 C8 1C 00 00         MOV EAX,dword ptr [EBX + 0x1cc8]

@@ -103,10 +103,10 @@ LAB_006a8234:
     local_1c = (ushort *)&SHORT_007ed576;
     local_3c = &DAT_007ed640;
     do {
-      iVar8 = (int)(short)local_1c[-3];
+      iVar8 = (short)local_1c[-3];
       local_20 = local_30 + iVar8;
       if ((-1 < local_20) && (local_20 < param_2)) {
-        iVar10 = (int)(short)local_1c[-2];
+        iVar10 = (short)local_1c[-2];
         local_38 = iVar10 + local_c;
         if ((-1 < local_38) && (local_38 < param_3)) {
           local_48 = local_10 + (short)local_1c[-1];
@@ -129,7 +129,7 @@ LAB_006a80b6:
                   local_4c = local_4c + *local_3c;
                   if (((int)local_4c < (int)param_13_after_write) ||
                      ((local_4c == param_13_after_write &&
-                      (((int)(short)uVar3 == local_14 || ((int)(short)uVar3 == local_34)))))) {
+                      (((short)uVar3 == local_14 || ((short)uVar3 == local_34)))))) {
                     local_2c = local_24;
                     param_13_after_write = local_4c;
                     local_44 = local_38;

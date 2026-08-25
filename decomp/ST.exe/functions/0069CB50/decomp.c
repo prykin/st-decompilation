@@ -1057,9 +1057,9 @@ LAB_0069dcbc:
         else {
           iVar17 = 0;
         }
-        if ((iVar17 != 0) && (*(int *)(iVar17 + 0xc) != 0)) {
+        if ((iVar17 != 0) && (STField<int>(iVar17,0xC) != 0)) {
           *(int *)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) =
-               *(int *)(iVar17 + 0xc);
+               STField<int>(iVar17,0xC);
           aiStackY_1b0[iVar19 * -0xc + 4] = 0x69df26;
           DArrayDestroy(*(DArrayTy **)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
         }

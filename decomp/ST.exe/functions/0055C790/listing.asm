@@ -18,7 +18,8 @@ FUN_0055c790:
 0055C7C0  83 C0 0B                  ADD EAX,0xb
 0055C7C3  8B 11                     MOV EDX,dword ptr [ECX]
 0055C7C5  50                        PUSH EAX
-0055C7C6  FF 12                     CALL dword ptr [EDX]
+FUN_0055c790::override::prt_55c7c6_e3dcabdd:
+0055C7C6  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0055c7c8:
 0055C7C8  5D                        POP EBP
 0055C7C9  C2 04 00                  RET 0x4

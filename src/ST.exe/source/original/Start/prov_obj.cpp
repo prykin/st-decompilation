@@ -1102,7 +1102,7 @@ LAB_005bb532:
       g_currentExceptionFrame = local_a0.previous;
       return;
     }
-    /* ST_CALLSITE[005BB64A]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[005BB64A]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/PrividerTy;pointer:/SubmarineTitans/Recovered/STMessage */
     this_01->GetMessage(&local_5c);
     break;
   case CASE_3:
@@ -1890,7 +1890,7 @@ int __thiscall st::fn_005BC5E0(PrividerTy *this,STMessage *message)
         }
 LAB_005bccb9:
         this_00->field_004D = 0x6951;
-        /* ST_CALLSITE[005BCCC8]: CALL dword ptr [EDX] */
+        /* ST_CALLSITE[005BCCC8]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/PrividerTy;pointer:/SubmarineTitans/Recovered/STMessage */
         this_00->GetMessage((STMessage *)&this_00->field_0x3d);
         goto cf_common_exit_005BCF7F;
       }

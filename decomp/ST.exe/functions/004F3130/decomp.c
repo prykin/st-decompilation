@@ -92,6 +92,7 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     local_18c[1] = param_2;
     local_18c[0] = param_3;
     if (text != nullptr) {
+      /* ST_CALLSITE[004F31B3]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&pCVar3->field_01E1,"%s0",text);
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_6,&pCVar3->field_01E1,nullptr,1);
     }
@@ -179,7 +180,6 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     }
     /* ST_CALLSITE[004F33EE]: CALL dword ptr [EDX + 0x8] */
     (*pCVar3->field_000C->vtable->CreateObject)
-              /* ST_CALLSITE[004F33EE]: CALL dword ptr [EDX + 0x8] */
               ((SystemClassTy *)pCVar3->field_000C,2,&local_c,nullptr,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_c;

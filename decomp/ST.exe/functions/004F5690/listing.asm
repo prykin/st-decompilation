@@ -2087,7 +2087,8 @@ LAB_004f70a3:
 004F70E6  74 05                     JZ 0x004f70ed
 004F70E8  8B 01                     MOV EAX,dword ptr [ECX]
 004F70EA  53                        PUSH EBX
-004F70EB  FF 10                     CALL dword ptr [EAX]
+CPanelTy::InitCPanel::override::prt_4f70eb_89729ca9:
+004F70EB  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_004f70ed:
 004F70ED  C6 05 F9 C4 80 00 00      MOV byte ptr [0x0080c4f9],0x0
 LAB_004f70f4:

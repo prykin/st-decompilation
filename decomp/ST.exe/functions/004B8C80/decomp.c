@@ -123,10 +123,10 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
   else if (TVar2 == CASE_6) {
     if (param_1->field_04BC != 4) {
       /* ST_CALLSITE[004B8FBE]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-      bVar4 = LookupRecordByte(*(char *)&param_1->field_023D);
+      bVar4 = LookupRecordByte((char)param_1->field_023D);
       if (bVar4 == 3) {
         /* ST_CALLSITE[004B8FD4]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-        local_EAX_852 = LookupRecordByte(*(char *)&param_1->field_023D);
+        local_EAX_852 = LookupRecordByte((char)param_1->field_023D);
         if (g_playSystem_00802A38->field_00E4 <
             *(int *)(&DAT_007e3dc0 + ((uint)(byte)local_EAX_852 + param_1->field_0235 * 3) * 4) / 3
             + param_1->field_04B8) goto cf_common_exit_004B9130;
@@ -145,7 +145,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
         }
         if (iVar5 == 2) {
           /* ST_CALLSITE[004B9084]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-          local_EAX_1028 = LookupRecordByte(*(char *)&param_1->field_023D);
+          local_EAX_1028 = LookupRecordByte((char)param_1->field_023D);
           if (*(int *)(&DAT_007e3dc0 + ((uint)(byte)local_EAX_1028 + param_1->field_0235 * 3) * 4) /
               3 + param_1->field_04B8 <= g_playSystem_00802A38->field_00E4) {
             /* ST_CALLSITE[004B90D2]: CALL dword ptr [EDX + 0x90] */
@@ -345,7 +345,7 @@ cf_common_join_004B92EE:
     local_c = (AnonShape_0060D340_D77FEBE7 *)STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x0e');
     /* ST_CALLSITE[004B9362]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar6 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-    if (((int)local_c + (-1 - iVar6) <= iVar5) && ((param_1->field_01F1 & 0x2000) == 0)) {
+    if (((int)local_c + (-1 - iVar6) <= iVar5) && ((param_1->field_01F1 & 0x2000U) == 0)) {
       /* ST_CALLSITE[004B9382]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
       TLOBaseTy::sub_004CA7B0(param_1,0xd,0);
     }

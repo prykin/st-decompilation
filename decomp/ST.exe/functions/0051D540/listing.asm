@@ -70,7 +70,8 @@ LAB_0051d5d7:
 0051D62C  8B 01                     MOV EAX,dword ptr [ECX]
 0051D62E  8D 53 18                  LEA EDX,[EBX + 0x18]
 0051D631  52                        PUSH EDX
-0051D632  FF 10                     CALL dword ptr [EAX]
+HelpPanelTy::TipProc::override::prt_51d632_74f246b9:
+0051D632  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_0051d634:
 0051D634  8B C6                     MOV EAX,ESI
 0051D636  48                        DEC EAX

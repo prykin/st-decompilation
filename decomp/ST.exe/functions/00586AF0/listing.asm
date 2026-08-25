@@ -162,7 +162,8 @@ LAB_00586bfc:
 00586CE3  8B 02                     MOV EAX,dword ptr [EDX]
 00586CE5  51                        PUSH ECX
 00586CE6  8B CA                     MOV ECX,EDX
-00586CE8  FF 10                     CALL dword ptr [EAX]
+FUN_00586af0::override::prt_586ce8_a62677c1:
+00586CE8  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AF40_F59F8577
 00586CEA  8B 7D C0                  MOV EDI,dword ptr [EBP + -0x40]
 LAB_00586ced:
 00586CED  8A 86 75 02 00 00         MOV AL,byte ptr [ESI + 0x275]

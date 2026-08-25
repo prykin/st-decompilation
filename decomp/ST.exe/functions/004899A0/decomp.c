@@ -79,7 +79,7 @@ LAB_0048a37f:
     else {
       /* ST_CALLSITE[00489A00]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       local_8 = STAllPlayersC::GetObjPtr
-                          (g_allPlayers_007FA174,*(char *)&this->field_0487,(ushort)this->field_048B
+                          (g_allPlayers_007FA174,(char)this->field_0487,(ushort)this->field_048B
                            ,this->field_0483);
       if ((((local_8 != nullptr) &&
            /* ST_CALLSITE[00489A10]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
@@ -102,11 +102,11 @@ LAB_0048a37f:
       /* ST_CALLSITE[00489ABA]: CALL 0x00402635; direct=00402635 STBoatC::_CheckDefenceShots */
       _CheckDefenceShots(this,0);
       pDVar4 = (DArrayTy *)
-               thunk_FUN_0043f7b0(*(byte *)&this->field_0024,(int *)this,
+               thunk_FUN_0043f7b0((byte)this->field_0024,(int *)this,
                                   (uint *)(int)this->field_0475,(int)this->field_0477,2,(int *)0x6,6
                                   ,2,(uint)(this->field_0736 != 0));
       if (pDVar4 != nullptr) {
-        this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
+        this_00 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
         local_20 = thunk_FUN_0040c080(this_00,(uint)(ushort)this->field_0032,pDVar4);
         local_18 = 0;
         if (0 < (int)pDVar4->count) {
@@ -144,10 +144,10 @@ LAB_0048a37f:
                 iVar12 = local_38;
                 thunk_FUN_00416270(local_8,&local_14,(short *)&local_10,(short *)&local_c);
                 iVar7 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,
-                                     (int)this->field_0045,(int)(short)local_14,(int)(short)local_10
-                                     ,(int)(short)local_c);
+                                     (int)this->field_0045,(short)local_14,(short)local_10
+                                     ,(short)local_c);
                 if ((iVar7 == 0) ||
-                   (uVar5 = (int)(short)local_c - (int)this->field_0045, uVar13 = (int)uVar5 >> 0x1f
+                   (uVar5 = (short)local_c - (int)this->field_0045, uVar13 = (int)uVar5 >> 0x1f
                    , (int)(((uVar5 ^ uVar13) - uVar13) * 10) / iVar7 < 4)) {
                   /* ST_CALLSITE[00489CBA]: CALL dword ptr [EAX + 0x10] */
                   uVar3 = (*this->vtable->vfunc_10)
@@ -250,13 +250,13 @@ LAB_00489eb0:
       _CheckDefenceShots(this,0);
       if (this->field_0736 == 0) {
         pDVar4 = (DArrayTy *)
-                 thunk_FUN_0043f7b0(*(byte *)&this->field_0024,(int *)this,
+                 thunk_FUN_0043f7b0((byte)this->field_0024,(int *)this,
                                     (uint *)(int)this->field_0475,(int)this->field_0477,2,(int *)0x6
                                     ,6,2,0);
       }
       else {
         pDVar4 = (DArrayTy *)
-                 thunk_FUN_0043f7b0(*(byte *)&this->field_0024,(int *)this,
+                 thunk_FUN_0043f7b0((byte)this->field_0024,(int *)this,
                                     (uint *)(int)this->field_0475,(int)this->field_0477,2,(int *)0x6
                                     ,6,2,1);
       }
@@ -274,10 +274,10 @@ LAB_00489eb0:
               thunk_FUN_00416270(local_8,&local_14,(short *)&local_10,(short *)&local_c);
               local_EAX_1627 =
                    FUN_006acf0d((int)this->field_0041,(int)this->field_0043,(int)this->field_0045,
-                                (int)(short)local_14,(int)(short)local_10,(int)(short)local_c);
+                                (short)local_14,(short)local_10,(short)local_c);
               local_38 = local_EAX_1627;
               if ((local_EAX_1627 == 0) ||
-                 (uVar5 = (int)(short)local_c - (int)this->field_0045, uVar13 = (int)uVar5 >> 0x1f,
+                 (uVar5 = (short)local_c - (int)this->field_0045, uVar13 = (int)uVar5 >> 0x1f,
                  (int)(((uVar5 ^ uVar13) - uVar13) * 10) / local_EAX_1627 < 4)) {
                 /* ST_CALLSITE[0048A04A]: CALL dword ptr [EAX + 0x10] */
                 uVar3 = (*this->vtable->vfunc_10)

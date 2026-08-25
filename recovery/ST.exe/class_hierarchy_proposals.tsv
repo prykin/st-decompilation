@@ -1,3 +1,1 @@
 apply	base_owner	derived_owner	base_table	derived_table	confidence	reason
-0	MMObjTy	PrividerTy	0079C008	0079C0C4	medium	derived table reuses 2 named MMObjTy methods; shared_ratio=0.667
-0	MMObjTy	SIDTy	0079C008	0079C1AC	medium	derived table reuses 2 named MMObjTy methods; shared_ratio=0.667

@@ -1,4 +1,4 @@
-FUN_00626e60:
+STMineSetC::sub_00626E60:
 00626E60  55                        PUSH EBP
 00626E61  8B EC                     MOV EBP,ESP
 00626E63  56                        PUSH ESI

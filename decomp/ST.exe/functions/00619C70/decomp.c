@@ -254,7 +254,7 @@ LAB_0061a4fd:
     case 4:
       goto cf_common_exit_0061AB3A;
     }
-    if ((int)this->field_00F3 < this->field_00F7) {
+    if (this->field_00F3 < this->field_00F7) {
       return 1;
     }
     uVar12 = this->field_00A7;
@@ -267,12 +267,12 @@ LAB_0061a4fd:
              (this->field_0117 * local_30 * local_30) / 10000 + this->field_00D7;
     sVar8 = (short)((int)uVar12 >> 0x1f);
     if ((int)uVar12 < 0) {
-      local_14 = (int)(short)(((short)((int)uVar12 / 200) + sVar8) -
+      local_14 = (short)(((short)((int)uVar12 / 200) + sVar8) -
                              (short)((longlong)(int)uVar12 * 0x51eb851f >> 0x3f));
       local_20 = local_14 + -1;
     }
     else {
-      local_20 = (int)(short)(((short)((int)uVar12 / 200) + sVar8) -
+      local_20 = (short)(((short)((int)uVar12 / 200) + sVar8) -
                              (short)((longlong)(int)uVar12 * 0x51eb851f >> 0x3f));
       local_14 = local_20;
     }
@@ -282,23 +282,23 @@ LAB_0061a4fd:
     local_8 = (this->field_0107 * iVar13) / 10000 + this->field_00D3;
     sVar8 = (short)(iVar14 >> 0x1f);
     if (iVar14 < 0) {
-      local_10 = (int)(short)(((short)(iVar14 / 0xc9) + sVar8) -
+      local_10 = (short)(((short)(iVar14 / 0xc9) + sVar8) -
                              (short)((longlong)iVar14 * 0x28c1979 >> 0x3f));
       local_28 = local_10 + -1;
     }
     else {
-      local_28 = (int)(short)(((short)(iVar14 / 0xc9) + sVar8) -
+      local_28 = (short)(((short)(iVar14 / 0xc9) + sVar8) -
                              (short)((longlong)iVar14 * 0x28c1979 >> 0x3f));
       local_10 = local_28;
     }
     sVar8 = (short)(local_8 >> 0x1f);
     if (local_8 < 0) {
-      local_18 = (int)(short)(((short)(local_8 / 0xc9) + sVar8) -
+      local_18 = (short)(((short)(local_8 / 0xc9) + sVar8) -
                              (short)((longlong)local_8 * 0x28c1979 >> 0x3f));
       local_24 = local_18 + -1;
     }
     else {
-      local_18 = (int)(short)(((short)(local_8 / 0xc9) + sVar8) -
+      local_18 = (short)(((short)(local_8 / 0xc9) + sVar8) -
                              (short)((longlong)local_8 * 0x28c1979 >> 0x3f));
       local_24 = local_18;
     }
@@ -386,12 +386,12 @@ LAB_0061a4fd:
     local_1c = (this->field_010B * iVar14) / 10000 + this->field_00D7;
     sVar8 = (short)(local_1c >> 0x1f);
     if (local_1c < 0) {
-      local_14 = (int)(short)(((short)(local_1c / 200) + sVar8) -
+      local_14 = (short)(((short)(local_1c / 200) + sVar8) -
                              (short)((longlong)local_1c * 0x51eb851f >> 0x3f));
       local_30 = local_14 + -1;
     }
     else {
-      local_30 = (int)(short)(((short)(local_1c / 200) + sVar8) -
+      local_30 = (short)(((short)(local_1c / 200) + sVar8) -
                              (short)((longlong)local_1c * 0x51eb851f >> 0x3f));
       local_14 = local_30;
     }
@@ -480,7 +480,7 @@ cf_common_exit_0061A55D:
       thunk_FUN_00618900((void *)this->field_007D,this->field_0145,0);
       this->field_014B = 0;
     }
-    if ((int)this->field_0097 < 0) {
+    if (this->field_0097 < 0) {
       this->field_0093 = CASE_6;
       return local_2c;
     }
@@ -511,7 +511,7 @@ LAB_0061acc2:
       this->field_00AB = this->field_00AB + 1;
     }
     else if (uVar12 == this->field_00AF) {
-      if (-1 < (int)this->field_0097) {
+      if (-1 < this->field_0097) {
         ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this->field_0097,0);
       }
       goto LAB_0061acc2;
@@ -522,7 +522,7 @@ LAB_0061acc2:
                (float)this->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
                (float)this->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if (this->field_00B7 == this->field_00B3) {
-      if (-1 < (int)this->field_0097) {
+      if (-1 < this->field_0097) {
         Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this->field_0097);
       }
       this->field_0093 = CASE_6;
@@ -535,7 +535,7 @@ LAB_0061acc2:
             (VisibleClassTy::sub_00558C00
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                         (int)this->field_00C9,(int)this->field_00CB,&local_28,&local_24), iVar13 < 0
-            )) || ((4 < iVar13 || (local_28 < 0)))) || ((int)pVVar1->field_0030 <= local_28)) ||
+            )) || ((4 < iVar13 || (local_28 < 0)))) || (pVVar1->field_0030 <= local_28)) ||
          (((local_24 = g_centeredOffsets5[iVar13] + local_24, local_24 < 0 ||
            (pVVar1->field_0034 <= local_24)) ||
           ((pVVar1->field_004C == nullptr ||
@@ -563,7 +563,7 @@ LAB_0061acc2:
 switchD_00619c92_default:
   return local_2c;
 cf_common_exit_0061AB3A:
-  if (-1 < (int)this->field_0097) {
+  if (-1 < this->field_0097) {
     Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this->field_0097);
     this->field_00C4 = 0;
   }

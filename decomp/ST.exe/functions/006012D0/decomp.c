@@ -71,7 +71,7 @@ undefined4 * __thiscall FUN_006012d0(void *this,int *param_1)
         iVar2 = STField<int>(this,0x233) + iVar3;
         puVar9 = (byte *)(*(undefined4 **)(iVar2 + 0x4e));
         if (puVar9 != nullptr) {
-          uVar5 = *(int *)(iVar2 + 0x46) * 6;
+          uVar5 = STField<int>(iVar2,0x46) * 6;
           puVar7 = (byte *)((int)puVar7 + 0x52);
           memmove(puVar7, puVar9, uVar5); /* compiler REP MOVS byte copy */
         }

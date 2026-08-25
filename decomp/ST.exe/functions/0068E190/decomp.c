@@ -12,12 +12,12 @@ undefined4 __thiscall FUN_0068e190(void *this,int param_1)
 
   iVar1 = STField<int>(this,0xa5);
   uVar4 = 0;
-  uVar2 = *(uint *)(iVar1 + 0xc);
+  uVar2 = STField<uint>(iVar1,0xC);
   if (0 < (int)uVar2) {
     bVar5 = uVar2 != 0;
     do {
       if (bVar5) {
-        piVar3 = (int *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c));
+        piVar3 = (int *)(STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C));
       }
       else {
         piVar3 = nullptr;
@@ -35,7 +35,7 @@ undefined4 __thiscall FUN_0068e190(void *this,int param_1)
         if (uVar2 <= uVar4) {
           return uRam00000004;
         }
-        return *(undefined4 *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c) + 4);
+        return *(undefined4 *)(STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C) + 4);
       }
       uVar4 = uVar4 + 1;
       bVar5 = uVar4 < uVar2;

@@ -9203,9 +9203,8 @@ int __fastcall st::fn_00708650(undefined4 *param_1)
             local_48 = st::machine_word_boundary_cast<int>(local_28[2] + *local_28);
             local_44 = st::machine_word_boundary_cast<int>(local_28[3] + local_28[1]);
             uVar5 = puVar3[0x28];
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             st::fn_0072AC20(param_1,st::pointer_boundary_cast<byte *>(DAT_00857004),st::pointer_boundary_cast<byte *>(DAT_00857028),(uint *)(uVar5 + 0x25),
-                         *(int *)(uVar5 + 4),(int *)&local_50,*(int *)(uVar5 + 0x14),
+                         STField<int>(uVar5,0x4),(int *)&local_50,STField<int>(uVar5,0x14),
                          ((byte *)uVar5)[0x18],0,0,0xffffffff);
             iVar7 = param_1[0xcc];
             if (*(int *)(iVar7 + 0x18 + iVar4) <= local_7c + 1) break;
@@ -9236,9 +9235,9 @@ int __fastcall st::fn_00708650(undefined4 *param_1)
           local_44 = st::machine_word_boundary_cast<int>(local_28[3] + local_28[1]);
           uVar5 = puVar3[0x28];
           st::fn_007297E0(param_1,st::pointer_boundary_cast<byte *>(DAT_00857004),st::pointer_boundary_cast<byte *>(DAT_00857028),(uint *)(uVar5 + 0x29),
-                       (uint *)(uVar5 + 0x39),(int *)&local_50,*(int *)(uVar5 + 0x18),
-                       ((byte *)uVar5)[0x1c],*(int *)(uVar5 + 0x1d),*(int *)(uVar5 + 0x21),
-                       *(uint *)(uVar5 + 0x25));
+                       (uint *)(uVar5 + 0x39),(int *)&local_50,STField<int>(uVar5,0x18),
+                       ((byte *)uVar5)[0x1c],STField<int>(uVar5,0x1D),STField<int>(uVar5,0x21),
+                       STField<uint>(uVar5,0x25));
           iVar7 = param_1[0xcc];
           if (*(int *)(iVar7 + 0x18 + iVar4) <= local_7c + 1) break;
           local_28 = (uint *)((local_7c + 3) * 0x10 + iVar7 + iVar4);
@@ -9461,7 +9460,7 @@ void __cdecl st::fn_0070A300(int *param_1)
   if (*param_1 != 0) {
     iVar2 = *(int *)(*param_1 + 4);
     if (iVar2 != 0) {
-      *(undefined4 *)(iVar2 + 4) = 0;
+      STField<undefined4>(iVar2,0x4) = 0;
       iVar1 = st::fn_006B1190(*(DArrayTy **)(*param_1 + 4),(byte *)local_34);
       while (-1 < iVar1) {
         if (local_b != 0) {
@@ -9616,14 +9615,14 @@ void __cdecl st::fn_0070B1D0(int *param_1)
   iVar1 = *param_1;
   if (iVar1 != 0) {
     iVar2 = 0;
-    if (0 < *(short *)(iVar1 + 0x23)) {
+    if (0 < STField<short>(iVar1,0x23)) {
       iVar3 = 0x30;
       do {
         st::fn_006F20E0(*(cMf32 **)(iVar1 + 0x25),(uint *)(iVar3 + iVar1));
         iVar1 = *param_1;
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 4;
-      } while (iVar2 < *(short *)(iVar1 + 0x23));
+      } while (iVar2 < STField<short>(iVar1,0x23));
     }
     st::fn_006AB060(param_1);
   }
@@ -10113,7 +10112,7 @@ st::fn_0070CB20(uint param_1,int param_2,int *param_3,int param_4,int param_5,by
   param_10_after_write = (uint)*(byte *)(param_8 + 6 + uVar2 * 4) * iVar6;
   if (0 < local_8) {
     auto param_3_after_write = &DAT_007f0150; /* compiler stack-slot lifetime split */
-    auto param_8_after_write = local_8; /* compiler stack-slot lifetime split */
+    int param_8_after_write = local_8; /* compiler stack-slot lifetime split */
     puVar7 = local_54 + 1;
     do {
       iVar8 = *param_3_after_write;

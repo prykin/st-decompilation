@@ -212,7 +212,7 @@ LAB_00465cda:
       }
       if (this->field_04C1 == 1) {
         this->field_04C1 = 0;
-        if (this->field_04AB != -1) {
+        if (this->field_04AB != (HoloTy *)0xffffffff) {
           sVar12 = this->field_04A5;
           sVar18 = this->field_04A9;
           sVar19 = this->field_04A7;
@@ -225,8 +225,8 @@ LAB_00465cda:
           else {
             pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
           }
-          if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-            this->field_04AB = 0xffffffff;
+          if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+            this->field_04AB = (HoloTy *)0xffffffff;
           }
         }
       }
@@ -321,7 +321,7 @@ cf_common_exit_00465E7B:
           }
           if (this->field_04C1 == 1) {
             this->field_04C1 = 0;
-            if (this->field_04AB != -1) {
+            if (this->field_04AB != (HoloTy *)0xffffffff) {
               sVar12 = this->field_04A5;
               sVar18 = this->field_04A9;
               sVar19 = this->field_04A7;
@@ -333,8 +333,8 @@ cf_common_exit_00465E7B:
               else {
                 pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
               }
-              if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-                this->field_04AB = 0xffffffff;
+              if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+                this->field_04AB = (HoloTy *)0xffffffff;
               }
             }
           }
@@ -432,7 +432,7 @@ LAB_00465f11:
       }
       if (this->field_04C1 == 1) {
         this->field_04C1 = 0;
-        if (this->field_04AB != -1) {
+        if (this->field_04AB != (HoloTy *)0xffffffff) {
           sVar12 = this->field_04A5;
           sVar18 = this->field_04A9;
           sVar19 = this->field_04A7;
@@ -445,8 +445,8 @@ LAB_00465f11:
           else {
             pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
           }
-          if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-            this->field_04AB = 0xffffffff;
+          if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+            this->field_04AB = (HoloTy *)0xffffffff;
           }
         }
       }
@@ -559,7 +559,7 @@ LAB_00468322:
         }
         if (this->field_04C1 == 1) {
           this->field_04C1 = 0;
-          if (this->field_04AB != -1) {
+          if (this->field_04AB != (HoloTy *)0xffffffff) {
             sVar12 = this->field_04A5;
             sVar18 = this->field_04A9;
             sVar19 = this->field_04A7;
@@ -571,8 +571,8 @@ LAB_00468322:
             else {
               pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
             }
-            if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-              this->field_04AB = 0xffffffff;
+            if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+              this->field_04AB = (HoloTy *)0xffffffff;
             }
           }
         }
@@ -644,7 +644,7 @@ LAB_00466087:
             }
             if (this->field_04C1 == 1) {
               this->field_04C1 = 0;
-              if (this->field_04AB != -1) {
+              if (this->field_04AB != (HoloTy *)0xffffffff) {
                 sVar12 = this->field_04A5;
                 sVar18 = this->field_04A9;
                 sVar19 = this->field_04A7;
@@ -657,8 +657,8 @@ LAB_00466087:
                 else {
                   pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
                 }
-                if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-                  this->field_04AB = 0xffffffff;
+                if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+                  this->field_04AB = (HoloTy *)0xffffffff;
                 }
               }
             }
@@ -762,7 +762,7 @@ LAB_00466bff:
         }
         if (this->field_04C1 == 1) {
           this->field_04C1 = 0;
-          if (this->field_04AB != -1) {
+          if (this->field_04AB != (HoloTy *)0xffffffff) {
             sVar12 = this->field_04A5;
             sVar18 = this->field_04A9;
             sVar19 = this->field_04A7;
@@ -774,8 +774,8 @@ LAB_00466bff:
             else {
               pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
             }
-            if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-              this->field_04AB = 0xffffffff;
+            if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+              this->field_04AB = (HoloTy *)0xffffffff;
             }
           }
         }
@@ -820,7 +820,7 @@ LAB_00466bff:
           }
           if (this->field_04C1 == 1) {
             this->field_04C1 = 0;
-            if (this->field_04AB != -1) {
+            if (this->field_04AB != (HoloTy *)0xffffffff) {
               sVar12 = this->field_04A5;
               sVar18 = this->field_04A9;
               sVar19 = this->field_04A7;
@@ -833,8 +833,8 @@ LAB_00466bff:
               else {
                 pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
               }
-              if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-                this->field_04AB = 0xffffffff;
+              if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+                this->field_04AB = (HoloTy *)0xffffffff;
               }
             }
           }
@@ -1029,7 +1029,7 @@ cf_common_exit_00468C50:
                 }
                 if (this->field_04C1 == 1) {
                   this->field_04C1 = 0;
-                  if (this->field_04AB != -1) {
+                  if (this->field_04AB != (HoloTy *)0xffffffff) {
                     sVar12 = this->field_04A5;
                     sVar18 = this->field_04A9;
                     sVar19 = this->field_04A7;
@@ -1041,8 +1041,8 @@ cf_common_exit_00468C50:
                     else {
                       pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
                     }
-                    if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-                      this->field_04AB = 0xffffffff;
+                    if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+                      this->field_04AB = (HoloTy *)0xffffffff;
                     }
                   }
                 }
@@ -1074,10 +1074,10 @@ cf_common_exit_00468C50:
                    (g_worldGrid.sizeZ <= sVar18)) ||
                   ((pSVar1 = (STBoatC *)
                              STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0],
-                   pSVar1 == nullptr || (pSVar1->field_0018 != this->field_04AB)))) ||
-                 ((iVar8 = thunk_FUN_004e1490(pSVar1), iVar8 != 1 ||
-                  (local_EAX_9412 = thunk_FUN_0048d650(this,(STFishC *)pSVar1), local_EAX_9412 != 1)
-                  ))) goto cf_common_exit_004699E9;
+                   pSVar1 == nullptr || ((HoloTy *)pSVar1->field_0018 != this->field_04AB))))
+                 || ((iVar8 = thunk_FUN_004e1490(pSVar1), iVar8 != 1 ||
+                     (local_EAX_9412 = thunk_FUN_0048d650(this,(STFishC *)pSVar1),
+                     local_EAX_9412 != 1)))) goto cf_common_exit_004699E9;
               /* ST_CALLSITE[00468134]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
               sub_004602B0(this);
               thunk_FUN_004e15f0(pSVar1,this->field_0018);
@@ -1155,7 +1155,7 @@ cf_error_exit_004660E9:
               if (pSVar1 == nullptr) {
                 return 2;
               }
-              if (pSVar1->field_0018 != this->field_04AB) {
+              if ((HoloTy *)pSVar1->field_0018 != this->field_04AB) {
                 return 2;
               }
               iVar8 = thunk_FUN_004e1490(pSVar1);
@@ -1197,7 +1197,7 @@ cf_error_exit_004660E9:
             }
             if (this->field_04C1 == 1) {
               this->field_04C1 = 0;
-              if (this->field_04AB != -1) {
+              if (this->field_04AB != (HoloTy *)0xffffffff) {
                 sVar12 = this->field_04A5;
                 sVar18 = this->field_04A9;
                 sVar19 = this->field_04A7;
@@ -1210,12 +1210,12 @@ cf_error_exit_004660E9:
                 else {
                   pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
                 }
-                if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-                  this->field_04AB = 0xffffffff;
+                if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+                  this->field_04AB = (HoloTy *)0xffffffff;
                 }
               }
               bVar4 = true;
-              if (this->field_04AB == -1) goto LAB_00468493;
+              if (this->field_04AB == (HoloTy *)0xffffffff) goto LAB_00468493;
             }
             else {
 LAB_00468493:
@@ -1224,13 +1224,13 @@ LAB_00468493:
             local_EAX_10296 = thunk_FUN_0048d440(this);
             if (local_EAX_10296 != 0) {
               if (local_EAX_10296 == 7) {
-                if (this->field_04AB == -1) {
+                if (this->field_04AB == (HoloTy *)0xffffffff) {
                   return 2;
                 }
                 if (!bVar4) {
                   return 2;
                 }
-                if (this->field_04AB == -1) {
+                if (this->field_04AB == (HoloTy *)0xffffffff) {
                   return 2;
                 }
                 if (!bVar4) {
@@ -1300,7 +1300,7 @@ LAB_00468493:
               if (this->field_04D9 == CASE_3) {
                 /* ST_CALLSITE[00468DDB]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
                 local_10 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
-                param_1 = nullptr;
+                int * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
                 if (this->field_02BF != '\0') {
                   local_c = (undefined4 *)&this->field_0x2b3;
                   do {
@@ -1325,7 +1325,7 @@ LAB_00468493:
                       sVar12 = 0;
                       this->field_001C = local_1c;
                       lVar17 = Library::MSVCRT::__ftol();
-                      iVar8 = (int)(short)lVar17 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3
+                      iVar8 = (short)lVar17 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3
                               + (int)local_20;
                       iVar16 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)STPiece<2,2>(local_24);
                       uVar9 = local_1c;
@@ -1354,11 +1354,11 @@ LAB_00468493:
                     TraksClassTy::TraksCreate
                               (g_traksClass_00802A7C,1,2,7,
                                (uVar9 >> 0x10) % 7 + (int)this->field_0041 + -3 +
-                               (int)(short)local_24,iVar16 + -3,iVar8,sVar12,sVar18,sVar19,sVar20,
+                               (short)local_24,iVar16 + -3,iVar8,sVar12,sVar18,sVar19,sVar20,
                                sVar21,sVar22,iVar23,sVar24,bVar25);
-                    param_1 = (int *)((int)param_1 + 1);
+                    param_1_after_write = (int *)((int)param_1_after_write + 1);
                     local_c = (undefined4 *)((int)local_c + 6);
-                  } while ((int)param_1 < (int)(uint)(byte)this->field_02BF);
+                  } while ((int)param_1_after_write < (int)(uint)(byte)this->field_02BF);
                 }
                 if (local_10 == -1) {
                   local_EAX_13191 =
@@ -1429,7 +1429,7 @@ LAB_00468493:
                   if (this->field_04D9 == CASE_3) {
                     /* ST_CALLSITE[00469539]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
                     local_10 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,&local_18);
-                    param_1 = nullptr;
+                    int * param_1_after_write_2 = nullptr; /* compiler stack-slot lifetime split */
                     if (this->field_02BF != '\0') {
                       local_c = (undefined4 *)&this->field_0x2b3;
                       do {
@@ -1454,7 +1454,7 @@ LAB_00468493:
                           this->field_001C = local_1c;
                           sVar12 = 0;
                           lVar17 = Library::MSVCRT::__ftol();
-                          iVar8 = (int)(short)lVar17 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 +
+                          iVar8 = (short)lVar17 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 +
                                   -3 + (int)local_20;
                           iVar16 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) -
                                    (int)STPiece<2,2>(local_24);
@@ -1485,11 +1485,11 @@ LAB_00468493:
                         TraksClassTy::TraksCreate
                                   (g_traksClass_00802A7C,1,2,7,
                                    (uVar9 >> 0x10) % 7 + (int)this->field_0041 + -3 +
-                                   (int)(short)local_24,iVar16 + -3,iVar8,sVar12,sVar18,sVar19,
+                                   (short)local_24,iVar16 + -3,iVar8,sVar12,sVar18,sVar19,
                                    sVar20,sVar21,sVar22,iVar23,sVar24,bVar25);
-                        param_1 = (int *)((int)param_1 + 1);
+                        param_1_after_write_2 = (int *)((int)param_1_after_write_2 + 1);
                         local_c = (undefined4 *)((int)local_c + 6);
-                      } while ((int)param_1 < (int)(uint)(byte)this->field_02BF);
+                      } while ((int)param_1_after_write_2 < (int)(uint)(byte)this->field_02BF);
                     }
                     if (local_10 == -1) {
                       local_EAX_15213 =
@@ -1601,7 +1601,7 @@ LAB_00468493:
               }
               if (this->field_04C1 == 1) {
                 this->field_04C1 = 0;
-                if (this->field_04AB != -1) {
+                if (this->field_04AB != (HoloTy *)0xffffffff) {
                   sVar12 = this->field_04A5;
                   sVar18 = this->field_04A9;
                   sVar19 = this->field_04A7;
@@ -1614,18 +1614,19 @@ LAB_00468493:
                   else {
                     pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
                   }
-                  if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-                    this->field_04AB = 0xffffffff;
+                  if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+                    this->field_04AB = (HoloTy *)0xffffffff;
                   }
                 }
-                if (this->field_04AB != -1) {
+                if (this->field_04AB != (HoloTy *)0xffffffff) {
                   local_c = (undefined4 *)0x1;
                   goto LAB_00469198;
                 }
               }
               else {
 LAB_00469198:
-                if ((this->field_04AB != -1) && (local_c == nullptr)) goto LAB_004691ae;
+                if ((this->field_04AB != (HoloTy *)0xffffffff) && (local_c == nullptr))
+                goto LAB_004691ae;
               }
               *(undefined4 *)&this->field_0x4cd = 0;
               *(undefined4 *)&this->field_0x4d5 = 0xd;
@@ -1645,7 +1646,7 @@ LAB_004691ae:
                    (((sVar19 < g_worldGrid.sizeY && (-1 < sVar18)) && (sVar18 < g_worldGrid.sizeZ)))
                    ))) && ((pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0]
                            , pSVar6 != nullptr &&
-                           (*(int *)&pSVar6->field_0x18 == this->field_04AB)))) &&
+                           (*(HoloTy **)&pSVar6->field_0x18 == this->field_04AB)))) &&
                 (*(int *)&pSVar6[0x21].field_0x10 == 0)) && (*(int *)&pSVar6[0x10].field_0x5 != 6))
             {
               if (iVar8 % 0x78 == 1) {
@@ -1730,7 +1731,7 @@ LAB_004692be:
                    (((sVar19 < g_worldGrid.sizeY && (-1 < sVar18)) && (sVar18 < g_worldGrid.sizeZ)))
                    ))) && ((pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0]
                            , pSVar6 != nullptr &&
-                           (*(int *)&pSVar6->field_0x18 == this->field_04AB)))) {
+                           (*(HoloTy **)&pSVar6->field_0x18 == this->field_04AB)))) {
                 thunk_FUN_004e1690(pSVar6,this->field_0018);
               }
               return 0;
@@ -1813,7 +1814,7 @@ LAB_004685d3:
           }
           if (this->field_04C1 == 1) {
             this->field_04C1 = 0;
-            if (this->field_04AB != -1) {
+            if (this->field_04AB != (HoloTy *)0xffffffff) {
               sVar12 = this->field_04A5;
               sVar18 = this->field_04A9;
               sVar19 = this->field_04A7;
@@ -1825,8 +1826,8 @@ LAB_004685d3:
               else {
                 pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
               }
-              if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-                this->field_04AB = 0xffffffff;
+              if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+                this->field_04AB = (HoloTy *)0xffffffff;
               }
             }
           }
@@ -1838,7 +1839,7 @@ LAB_004685d3:
             goto cf_common_exit_00469979;
           }
           if (local_EAX_10926 == 7) {
-            if (this->field_04AB == -1) {
+            if (this->field_04AB == (HoloTy *)0xffffffff) {
               return 2;
             }
             goto cf_common_exit_00468742;
@@ -1861,8 +1862,8 @@ LAB_004685d3:
                   ((sVar18 < g_worldGrid.sizeZ &&
                    ((pSVar1 = (STBoatC *)
                               STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0],
-                    pSVar1 != nullptr && (pSVar1->field_0018 == this->field_04AB)))))) &&
-                 (iVar8 = thunk_FUN_004e1490(pSVar1), iVar8 != 1)) {
+                    pSVar1 != nullptr && ((HoloTy *)pSVar1->field_0018 == this->field_04AB)))
+                   ))) && (iVar8 = thunk_FUN_004e1490(pSVar1), iVar8 != 1)) {
                 /* ST_CALLSITE[00467A68]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,
@@ -1903,7 +1904,7 @@ LAB_004685d3:
             }
             if (this->field_04C1 == 1) {
               this->field_04C1 = 0;
-              if (this->field_04AB != -1) {
+              if (this->field_04AB != (HoloTy *)0xffffffff) {
                 sVar12 = this->field_04A5;
                 sVar18 = this->field_04A9;
                 sVar19 = this->field_04A7;
@@ -1915,22 +1916,22 @@ LAB_004685d3:
                 else {
                   pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
                 }
-                if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-                  this->field_04AB = 0xffffffff;
+                if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+                  this->field_04AB = (HoloTy *)0xffffffff;
                 }
               }
-              if (this->field_04AB != -1) {
+              if (this->field_04AB != (HoloTy *)0xffffffff) {
                 local_c = (undefined4 *)0x1;
               }
             }
             local_EAX_8163 = thunk_FUN_0048d440(this);
             if (local_EAX_8163 == 0) goto cf_common_exit_00467FE4;
             if (local_EAX_8163 == 7) {
-              if ((this->field_04AB != -1) && (local_c == nullptr))
+              if ((this->field_04AB != (HoloTy *)0xffffffff) && (local_c == nullptr))
               goto cf_common_exit_00468C50;
               /* ST_CALLSITE[00467C6B]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
               sub_004602B0(this);
-              if (this->field_04AB == -1) {
+              if (this->field_04AB == (HoloTy *)0xffffffff) {
                 *(int *)&this->field_0x4cd = *(int *)&this->field_0x4cd + 1;
                 /* ST_CALLSITE[00467C8A]: CALL dword ptr [EAX + 0xd8] */
                 iVar8 = this->vfunc_D8();
@@ -2011,7 +2012,7 @@ LAB_0046779f:
         }
         if (this->field_04C1 == 1) {
           this->field_04C1 = 0;
-          if (this->field_04AB != -1) {
+          if (this->field_04AB != (HoloTy *)0xffffffff) {
             sVar12 = this->field_04A5;
             sVar18 = this->field_04A9;
             sVar19 = this->field_04A7;
@@ -2024,8 +2025,8 @@ LAB_0046779f:
             else {
               pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
             }
-            if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-              this->field_04AB = 0xffffffff;
+            if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+              this->field_04AB = (HoloTy *)0xffffffff;
             }
           }
         }
@@ -2041,7 +2042,7 @@ LAB_0046779f:
           *(undefined4 *)&this->field_0x4d5 = 1;
           goto cf_common_exit_00465E5A;
         }
-        if (this->field_04AB == -1) {
+        if (this->field_04AB == (HoloTy *)0xffffffff) {
           return 2;
         }
         *(undefined4 *)&this->field_0x4cd = 0;
@@ -2134,7 +2135,7 @@ LAB_00467da5:
         }
         if (this->field_04C1 == 1) {
           this->field_04C1 = 0;
-          if (this->field_04AB != -1) {
+          if (this->field_04AB != (HoloTy *)0xffffffff) {
             sVar12 = this->field_04A5;
             sVar18 = this->field_04A9;
             sVar19 = this->field_04A7;
@@ -2146,8 +2147,8 @@ LAB_00467da5:
             else {
               pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
             }
-            if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-              this->field_04AB = 0xffffffff;
+            if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+              this->field_04AB = (HoloTy *)0xffffffff;
             }
           }
         }
@@ -2266,7 +2267,7 @@ switchD_0046878c_caseD_1:
     }
     if (this->field_04C1 == 1) {
       this->field_04C1 = 0;
-      if (this->field_04AB != -1) {
+      if (this->field_04AB != (HoloTy *)0xffffffff) {
         sVar12 = this->field_04A5;
         sVar18 = this->field_04A9;
         sVar19 = this->field_04A7;
@@ -2278,11 +2279,11 @@ switchD_0046878c_caseD_1:
         else {
           pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0];
         }
-        if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
-          this->field_04AB = 0xffffffff;
+        if (*(HoloTy **)&pSVar6->field_0x18 != this->field_04AB) {
+          this->field_04AB = (HoloTy *)0xffffffff;
         }
       }
-      if (this->field_04AB != -1) {
+      if (this->field_04AB != (HoloTy *)0xffffffff) {
         local_c = (undefined4 *)0x1;
       }
     }
@@ -2304,10 +2305,11 @@ switchD_0046878c_caseD_1:
       *(undefined4 *)&this->field_0x4d5 = 1;
       goto LAB_00468c40;
     }
-    if ((this->field_04AB != -1) && (local_c == nullptr)) goto cf_common_exit_00468C50;
+    if ((this->field_04AB != (HoloTy *)0xffffffff) && (local_c == nullptr))
+    goto cf_common_exit_00468C50;
     /* ST_CALLSITE[00468AE7]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
     sub_004602B0(this);
-    if (this->field_04AB == -1) {
+    if (this->field_04AB == (HoloTy *)0xffffffff) {
       *(int *)&this->field_0x4cd = *(int *)&this->field_0x4cd + 1;
       /* ST_CALLSITE[00468B06]: CALL dword ptr [EAX + 0xd8] */
       iVar8 = this->vfunc_D8();

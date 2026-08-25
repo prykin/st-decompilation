@@ -44,18 +44,17 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
       local_18 = 3;
       do {
         local_14 = 3;
-        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (int *)0xffffff37;
+        uint param_1_after_write = 0xffffff37; /* compiler stack-slot lifetime split */
         do {
           iVar10 = -200;
           local_10 = 3;
           piVar11 = param_3 + local_8;
           do {
-            if ((int)param_1 + iVar10 + local_c != 0) {
+            if ((int)param_1_after_write + iVar10 + local_c != 0) {
               psVar1 = (short *)*piVar11;
               *psVar1 = STField<short>(piVar5,0x41) + (short)local_c;
               uVar9 = (undefined2)((uint)psVar1 >> 0x10);
-              *(short *)(*piVar11 + 2) = STField<short>(piVar5,0x43) + (short)param_1;
+              *(short *)(*piVar11 + 2) = STField<short>(piVar5,0x43) + (short)param_1_after_write;
               *(short *)(*piVar11 + 4) = (short)iVar10 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
@@ -70,12 +69,12 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
               iVar3 = *piVar11;
               local_8 = local_8 + 1;
               piVar11 = piVar11 + 1;
-              *(undefined2 *)(iVar3 + 6) = uVar6;
+              STField<undefined2>(iVar3,0x6) = uVar6;
             }
             iVar10 = iVar10 + 200;
             local_10 = local_10 + -1;
           } while (local_10 != 0);
-          param_1 = (int *)((int)param_1 + 0xc9);
+          param_1_after_write = ((int)param_1_after_write + 0xc9);
           local_14 = local_14 + -1;
         } while (local_14 != 0);
         local_c = local_c + 0xc9;
@@ -88,18 +87,18 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
       local_10 = 2;
       do {
         local_14 = 2;
-        param_1 = (int *)0xffffff9c;
+        uint param_1_after_write_2 = 0xffffff9c; /* compiler stack-slot lifetime split */
         do {
           iVar10 = -100;
           local_18 = 1;
           piVar11 = param_3 + local_8;
           do {
             if (param_2 <= local_8) break;
-            if ((int)param_1 + local_c + iVar10 != 0) {
+            if ((int)param_1_after_write_2 + local_c + iVar10 != 0) {
               psVar1 = (short *)*piVar11;
               *psVar1 = STField<short>(piVar5,0x41) + (short)local_c;
               uVar9 = (undefined2)((uint)psVar1 >> 0x10);
-              *(short *)(*piVar11 + 2) = STField<short>(piVar5,0x43) + (short)param_1;
+              *(short *)(*piVar11 + 2) = STField<short>(piVar5,0x43) + (short)param_1_after_write_2;
               *(short *)(*piVar11 + 4) = (short)iVar10 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
@@ -114,12 +113,12 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
               iVar3 = *piVar11;
               local_8 = local_8 + 1;
               piVar11 = piVar11 + 1;
-              *(undefined2 *)(iVar3 + 6) = uVar6;
+              STField<undefined2>(iVar3,0x6) = uVar6;
             }
             iVar10 = iVar10 + 200;
             local_18 = local_18 + -1;
           } while (-1 < local_18);
-          param_1 = (int *)((int)param_1 + 0xc9);
+          param_1_after_write_2 = ((int)param_1_after_write_2 + 0xc9);
           local_14 = local_14 + -1;
         } while (local_14 != 0);
         local_c = local_c + 0xc9;

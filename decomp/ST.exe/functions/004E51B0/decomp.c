@@ -229,7 +229,7 @@ LAB_004e5655:
       if (0x73 < (int)param_3) {
         iVar10 = *(int *)((int)&g_packedRecords_A62x8[0].field1966_0x9ce + local_10);
         if (iVar10 != 0) {
-          *(undefined4 *)(iVar10 + 4) = 0;
+          STField<undefined4>(iVar10,0x4) = 0;
           iVar9 = DArrayGetNext(*(DArrayTy **)
                                  ((int)&g_packedRecords_A62x8[0].field1966_0x9ce + local_10),
                                 (byte *)&param_1);
@@ -242,7 +242,7 @@ LAB_004e5655:
         }
         iVar10 = *(int *)((int)&g_packedRecords_A62x8[0].field3_0x9 + iVar7);
         if (iVar10 != 0) {
-          *(undefined4 *)(iVar10 + 4) = 0;
+          STField<undefined4>(iVar10,0x4) = 0;
           local_EAX_1316 =
                DArrayGetNext(*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field3_0x9 + iVar7),
                              (byte *)&param_1);

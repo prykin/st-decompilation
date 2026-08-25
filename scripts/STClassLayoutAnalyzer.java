@@ -76,6 +76,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     private int crossTypeLinks;
     private int crossCopyViews;
     private int partitionedMachineWordFields;
+    private int basePrefixTypeLinks;
 
     @Override
     protected void run() throws Exception {
@@ -95,6 +96,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             directory.resolve("constructor_class_sizes.tsv"));
         Map<String, String> vtableTypes = readVtableTypes(
             directory.resolve("vtable_proposals.tsv"));
+        List<BaseRelation> baseRelations = readBaseRelations(
+            directory.resolve("constructor_hierarchy.tsv"));
         Map<String, List<MemberArrayProposal>> memberArrays = readMemberArrays(
             directory.resolve("class_array_proposals.tsv"));
         mergeMemberArrays(memberArrays, readInlineAggregates(
@@ -116,6 +119,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             analyzeFunction(function, classEvidence);
         }
         recoverTypedClassFieldSemantics(classes);
+        propagateExactBasePrefixTypes(classes, baseRelations);
         recordNested = enrichRecordNestedFields(recordNested, classes, memberArrays);
 
         List<ClassProposal> classRows = new ArrayList<>();
@@ -232,6 +236,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             ", cross_typed_accesses: " + crossTypedFieldAccesses +
             ", cross_type_links: " + crossTypeLinks +
             ", cross_copy_views: " + crossCopyViews +
+            ", base_prefix_type_links: " + basePrefixTypeLinks +
             ", partitioned_machine_word_fields: " + partitionedMachineWordFields +
             ", nested_pointees: " + nestedTypes.size() +
             ", nested_apply: " + nestedTypes.stream().filter(row -> row.apply).count() +
@@ -485,6 +490,77 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         crossTypeLinks = links.size();
     }
 
+    /**
+     * An exact unadjusted base-constructor call proves that the primary-base prefix is the
+     * same storage in every connected derived object.  Use that relation only to carry one
+     * unanimous, width-matching semantic type onto an already observed field.  We deliberately
+     * do not materialize every base field in every child, copy names, or declare C++ inheritance.
+     */
+    private void propagateExactBasePrefixTypes(Map<String, ClassEvidence> classes,
+            List<BaseRelation> relations) {
+        if (relations.isEmpty()) return;
+        for (ClassEvidence targetOwner : classes.values()) {
+            for (FieldEvidence target : targetOwner.fields.values()) {
+                if (target.offset == 0) continue; // every physical primary vtable is distinct
+                int width = target.layoutSize();
+                if (width < 1 || width > 8) continue;
+                Set<String> connected = connectedPrefixOwners(targetOwner.owner,
+                    target.offset, width, relations);
+                if (connected.size() < 2) continue;
+                Set<String> candidates = new TreeSet<>();
+                Set<String> sources = new TreeSet<>();
+                for (String owner : connected) {
+                    ClassEvidence evidence = classes.get(owner);
+                    FieldEvidence field = evidence == null ? null :
+                        evidence.fields.get(target.offset);
+                    if (field != null) {
+                        for (String type : field.inferredTypes.keySet()) {
+                            if (typeLength(type) != width) continue;
+                            candidates.add(type);
+                            sources.add(owner);
+                        }
+                    }
+                    DataType ownerType = findOwnerType(owner);
+                    if (!(ownerType instanceof Structure structure)) continue;
+                    DataTypeComponent component = structure.getComponentAt((int)target.offset);
+                    if (component == null || component.getOffset() != target.offset ||
+                            component.getLength() != width ||
+                            isUndefined(component.getDataType())) continue;
+                    candidates.add(typeSpecification(component.getDataType()));
+                    sources.add(owner);
+                }
+                if (candidates.size() != 1) continue;
+                String type = candidates.iterator().next();
+                int before = target.inferredTypes.getOrDefault(type, Set.of()).size();
+                target.addType(type, "exact primary-base prefix; related_owners=" +
+                    String.join("|", connected) + "; typed_sources=" +
+                    String.join("|", sources));
+                if (target.inferredTypes.getOrDefault(type, Set.of()).size() > before) {
+                    target.crossRecovered++;
+                    basePrefixTypeLinks++;
+                }
+            }
+        }
+    }
+
+    private Set<String> connectedPrefixOwners(String start, long offset, int width,
+            List<BaseRelation> relations) {
+        Set<String> result = new TreeSet<>();
+        List<String> pending = new ArrayList<>();
+        result.add(start);
+        pending.add(start);
+        for (int index = 0; index < pending.size(); index++) {
+            String owner = pending.get(index);
+            for (BaseRelation relation : relations) {
+                if (offset < 0 || offset + width > relation.baseLength) continue;
+                String next = relation.baseOwner.equals(owner) ? relation.derivedOwner :
+                    relation.derivedOwner.equals(owner) ? relation.baseOwner : "";
+                if (!next.isBlank() && result.add(next)) pending.add(next);
+            }
+        }
+        return result;
+    }
+
     private void recoverTypedClassFields(Function function, Map<String, CrossOwner> owners,
             Set<FieldLink> links) throws Exception {
         List<CfgBlock> blocks = cfgBlocks(function);
@@ -649,6 +725,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                     addr(instruction.getAddress()) + " CMP/" + jump +
                     " through typed class pointer in " + function.getName(true), owners);
         }
+        inferCrossArithmeticTypes(function, instruction, mnemonic, operands,
+            state, owners);
         if ("DIV".equals(mnemonic) || "IDIV".equals(mnemonic)) {
             boolean signed = "IDIV".equals(mnemonic);
             String type = signed ? signedIntegerType(size) : unsignedIntegerType(size);
@@ -713,6 +791,46 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                         called.getName(true), owners);
             }
         }
+    }
+
+    /**
+     * Two complete class-field values combined by ADD/SUB are scalar storage,
+     * even when a stale generated layout currently makes one or both loads look
+     * like pointers.  C/C++ cannot add two pointers.  Carry a scalar-result tag
+     * through the next arithmetic instruction so an accumulator field is
+     * recovered as well.  Pointer-plus-immediate and pointer-plus-unproven
+     * register arithmetic deliberately remain untouched.
+     */
+    private void inferCrossArithmeticTypes(Function function, Instruction instruction,
+            String mnemonic, String[] operands, CrossState state,
+            Map<String, CrossOwner> owners) {
+        if (!("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) ||
+                operands.length < 2 || immediate(operands[1]) != null) return;
+        String destination = cleanRegister(operands[0]);
+        if (destination == null || !isFullRegister(operands[0])) return;
+        CrossValue left = state.registers.get(destination);
+        CrossValue right = crossOperandValue(operands[1], state);
+        CrossValue leftField = arithmeticOriginField(left);
+        CrossValue rightField = arithmeticOriginField(right);
+        String evidence = addr(instruction.getAddress()) + " " + mnemonic +
+            " combines complete machine-word class-field values in " +
+            function.getName(true);
+        if (leftField != null && (rightField != null ||
+                right != null && right.kind == CrossKind.SCALAR_RESULT))
+            addCrossType(leftField, "/int", evidence, owners);
+        if (rightField != null && (leftField != null ||
+                left != null && left.kind == CrossKind.SCALAR_RESULT))
+            addCrossType(rightField, "/int", evidence, owners);
+    }
+
+    private CrossValue arithmeticOriginField(CrossValue value) {
+        if (value == null) return null;
+        if (value.kind == CrossKind.FIELD)
+            return CrossValue.field(value.ownerPath, value.offset);
+        if (value.kind == CrossKind.POINTER_FIELD)
+            return CrossValue.field(value.ownerPath, value.offset);
+        return value.originOwnerPath.isBlank() ? null :
+            CrossValue.field(value.originOwnerPath, value.originOffset);
     }
 
     private void transferCrossInstruction(Function function, Instruction instruction, String mnemonic,
@@ -792,13 +910,24 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             if (base == null || base.kind != CrossKind.ADDRESS)
                 state.registers.remove(destination);
             else state.registers.put(destination,
-                CrossValue.address(base.ownerPath, base.offset + memory.displacement));
+                base.shiftedAddress(memory.displacement));
             return;
         }
         if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) && operands.length >= 2) {
             CrossValue old = state.registers.get(destination);
             Long value = immediate(operands[1]);
             CrossValue source = crossOperandValue(operands[1], state);
+            CrossValue oldField = arithmeticOriginField(old);
+            CrossValue sourceField = arithmeticOriginField(source);
+            if (value == null &&
+                    (oldField != null && sourceField != null ||
+                     oldField != null && source != null &&
+                        source.kind == CrossKind.SCALAR_RESULT ||
+                     sourceField != null && old != null &&
+                        old.kind == CrossKind.SCALAR_RESULT)) {
+                state.registers.put(destination, CrossValue.scalarResult());
+                return;
+            }
             if (value == null && "ADD".equals(mnemonic) && source != null &&
                     (source.kind == CrossKind.FIELD ||
                      source.kind == CrossKind.POINTER_FIELD))
@@ -810,8 +939,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                     CrossValue.pointerField(old.ownerPath, old.offset));
             else if (value == null) state.registers.remove(destination);
             else if (old != null && old.kind == CrossKind.ADDRESS)
-                state.registers.put(destination, CrossValue.address(old.ownerPath,
-                    old.offset + ("SUB".equals(mnemonic) ? -value : value)));
+                state.registers.put(destination, old.shiftedAddress(
+                    "SUB".equals(mnemonic) ? -value : value));
             // Preserve scalar-field provenance through simple arithmetic so a
             // following signed/unsigned comparison still describes its domain.
             return;
@@ -917,7 +1046,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         CrossValue pointer = crossPointer(component.getDataType(), owners);
         if (pointer == null) return field;
         return pointer.kind == CrossKind.GENERIC_POINTER ?
-            CrossValue.pointerField(field.ownerPath, field.offset) : pointer;
+            CrossValue.pointerField(field.ownerPath, field.offset) :
+            pointer.withOrigin(field.ownerPath, field.offset);
     }
 
     private CrossValue referencedCrossPointer(Instruction instruction, int operandIndex,
@@ -1927,6 +2057,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             boolean narrowCharQuorum = !ownerVtable && field.hasNarrowCharQuorum();
             boolean fullWidthScalarDominates = !ownerVtable &&
                 field.fullWidthScalarDominatesContainedViews();
+            boolean dominantSameWidthScalar = !ownerVtable &&
+                field.hasDominantSameWidthScalarType();
             boolean typeApply = !inferredType.isBlank() && typeLength(inferredType) == size;
             String suggestedName = field.uniqueName();
             if (suggestedName.isBlank() && !inferredType.isBlank() &&
@@ -1943,6 +2075,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             boolean generatedTypeRevision = false;
             boolean generatedSwitchEnumPreserved = false;
             boolean generatedRecursivePointeePreserved = false;
+            boolean generatedScalarConflictPreserved = false;
             String recursivePointeeConflict = "";
             String retiredDeprecatedInference = "";
             if (ownerVtable && existing != null && existing.getOffset() == field.offset &&
@@ -2002,6 +2135,16 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                     inferredType = type;
                     typeApply = false;
                 }
+                else if (sameWidthScalarConflict(field, type, size)) {
+                    // Signed and unsigned views of one already concrete scalar
+                    // are review evidence, not permission to erase the storage
+                    // type. A later pass must not turn a stable uint field into
+                    // undefined4 merely because ADD/SUB adds a weaker signed
+                    // interpretation.
+                    inferredType = type;
+                    typeApply = false;
+                    generatedScalarConflictPreserved = true;
+                }
                 else if (isOwnedUnchangedCandidate(structure) && !inferredType.isBlank() &&
                         !inferredType.equals(type)) {
                     // Competing same-width signedness on an already concrete
@@ -2046,6 +2189,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 reason += "; exact_subword_partition=" + naturalSize + "->" + size;
             if (generatedRecursivePointeePreserved)
                 reason += "; hash_owned_recursive_pointee_preserved_over_generic_pointer";
+            else if (generatedScalarConflictPreserved)
+                reason += "; same_width_scalar_conflict_preserved=" + type;
             else if (!recursivePointeeConflict.isBlank())
                 reason += "; hash_owned_recursive_pointee_conflict_preserved=" + type +
                     "; rejected_inference=" + recursivePointeeConflict;
@@ -2060,6 +2205,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 reason += "; dominant_char_pointer_role_over_neutral_byte_consumers";
             else if (fullWidthScalarDominates)
                 reason += "; full_width_scalar_dominates_contained_low_view";
+            else if (dominantSameWidthScalar)
+                reason += "; dominant_same_width_scalar_evidence=" + inferredType;
             else if (field.inferredTypes.size() > 1)
                 reason += "; inferred_type_conflict=" + String.join("|", field.inferredTypes.keySet());
             else if (existingConcreteType && !inferredType.isBlank() &&
@@ -2080,7 +2227,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                     !recursivePointeeConflict.isBlank() ? "conflict" :
                     typeApply ? "high" :
                     field.inferredTypes.size() > 1 && !narrowCharQuorum &&
-                        !fullWidthScalarDominates ? "conflict" :
+                        !fullWidthScalarDominates && !dominantSameWidthScalar &&
+                        !generatedScalarConflictPreserved ? "conflict" :
                     existingConcreteType ? "existing" : "none", nameConfidence,
                 field.reads, field.writes, field.functions, apply,
                 apply ? "high" : "conflict", reason));
@@ -2279,6 +2427,28 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         for (Map<String, String> row : tsv.rows) {
             if (!enabled(row.get("apply"))) continue;
             result.put(unt(row.get("owner")), Long.parseLong(row.get("size")));
+        }
+        return result;
+    }
+
+    private List<BaseRelation> readBaseRelations(Path path) throws Exception {
+        List<BaseRelation> result = new ArrayList<>();
+        if (!Files.isRegularFile(path)) return result;
+        Tsv tsv = readTsv(path);
+        if (!tsv.header.contains("apply") || !tsv.header.contains("base_owner") ||
+                !tsv.header.contains("derived_owner") ||
+                !tsv.header.contains("reason")) return result;
+        for (Map<String, String> row : tsv.rows) {
+            if (!enabled(row.get("apply")) ||
+                    !unt(row.get("reason")).startsWith(
+                        "exact_unadjusted_base_constructor_call")) continue;
+            String base = unt(row.get("base_owner"));
+            String derived = unt(row.get("derived_owner"));
+            DataType baseType = findOwnerType(base);
+            if (base.isBlank() || derived.isBlank() || base.equals(derived) ||
+                    !(baseType instanceof Structure structure) ||
+                    structure.getLength() < 1) continue;
+            result.add(new BaseRelation(base, derived, structure.getLength()));
         }
         return result;
     }
@@ -2734,6 +2904,14 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             "/longlong", "/ulonglong").contains(type));
     }
 
+    private boolean sameWidthScalarConflict(FieldEvidence field,
+            String existingType, int width) {
+        if (!scalarTypeConflict(field) || field.scalarWidth(existingType) != width)
+            return false;
+        return field.inferredTypes.keySet().stream()
+            .allMatch(type -> field.scalarWidth(type) == width);
+    }
+
     private void updateRegisters(ClassEvidence owner, Function function, String mnemonic,
             String[] operands, Map<String, RegisterValue> registers,
             Map<Long, RegisterValue> stackValues, Set<Long> stableThisSlots) {
@@ -3186,15 +3364,25 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             this.write = write;
         }
     }
-    private enum CrossKind { ADDRESS, FIELD, POINTER_FIELD, GENERIC_POINTER }
+    private enum CrossKind {
+        ADDRESS, FIELD, POINTER_FIELD, GENERIC_POINTER, SCALAR_RESULT
+    }
     private static class CrossValue {
         final CrossKind kind;
         final String ownerPath;
         final long offset;
         final int fragmentWidth;
+        final String originOwnerPath;
+        final long originOffset;
         CrossValue(CrossKind kind, String ownerPath, long offset, int fragmentWidth) {
+            this(kind, ownerPath, offset, fragmentWidth, "", 0);
+        }
+        CrossValue(CrossKind kind, String ownerPath, long offset, int fragmentWidth,
+                String originOwnerPath, long originOffset) {
             this.kind = kind; this.ownerPath = ownerPath; this.offset = offset;
             this.fragmentWidth = fragmentWidth;
+            this.originOwnerPath = originOwnerPath == null ? "" : originOwnerPath;
+            this.originOffset = originOffset;
         }
         static CrossValue address(String ownerPath, long offset) {
             return new CrossValue(CrossKind.ADDRESS, ownerPath, offset, 0);
@@ -3211,16 +3399,31 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         static CrossValue genericPointer(String pointedPath) {
             return new CrossValue(CrossKind.GENERIC_POINTER, pointedPath, 0, 0);
         }
+        static CrossValue scalarResult() {
+            return new CrossValue(CrossKind.SCALAR_RESULT, "", 0, 0);
+        }
+        CrossValue withOrigin(String sourceOwnerPath, long sourceOffset) {
+            return new CrossValue(kind, ownerPath, offset, fragmentWidth,
+                sourceOwnerPath, sourceOffset);
+        }
+        CrossValue shiftedAddress(long displacement) {
+            return new CrossValue(kind, ownerPath, offset + displacement,
+                fragmentWidth, originOwnerPath, originOffset);
+        }
         @Override public boolean equals(Object other) {
             if (!(other instanceof CrossValue value)) return false;
             return kind == value.kind && offset == value.offset &&
                 fragmentWidth == value.fragmentWidth &&
-                ownerPath.equals(value.ownerPath);
+                ownerPath.equals(value.ownerPath) &&
+                originOffset == value.originOffset &&
+                originOwnerPath.equals(value.originOwnerPath);
         }
         @Override public int hashCode() {
             int result = 31 * (31 * kind.hashCode() + ownerPath.hashCode()) +
                 Long.hashCode(offset);
-            return 31 * result + fragmentWidth;
+            result = 31 * result + fragmentWidth;
+            result = 31 * result + originOwnerPath.hashCode();
+            return 31 * result + Long.hashCode(originOffset);
         }
     }
     private static class CrossState {
@@ -3240,6 +3443,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
     }
     private record CrossOwner(Structure structure, ClassEvidence evidence) { }
+    private record BaseRelation(String baseOwner, String derivedOwner, long baseLength) { }
     private record FieldLink(String leftOwner, long leftOffset, String rightOwner,
         long rightOffset, int size, String function, String site) { }
     private record CopyViewAddition(String owner, long offset, int size,
@@ -3270,6 +3474,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             if (hasNarrowCharQuorum()) return "/char";
             String fullWidthScalar = fullWidthScalarType();
             if (!fullWidthScalar.isBlank()) return fullWidthScalar;
+            String dominantScalar = dominantSameWidthScalarType();
+            if (!dominantScalar.isBlank()) return dominantScalar;
             List<String> namedPointers = inferredTypes.keySet().stream()
                 .filter(type -> type.startsWith("pointer:") &&
                     !type.contains("/Recovered/ClassPointees/") &&
@@ -3280,6 +3486,36 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 type.startsWith("pointer:"));
             return pointerAlternativesOnly && namedPointers.size() == 1 ?
                 namedPointers.get(0) : "";
+        }
+        boolean hasDominantSameWidthScalarType() {
+            return !dominantSameWidthScalarType().isBlank();
+        }
+        /**
+         * When storage is still generic, a very large exact machine-use quorum
+         * may resolve signedness without relying on a prior generated layout.
+         * All alternatives must be scalar views of the same width, and the
+         * winner must have at least eight independent sites and four times the
+         * support of the runner-up. A closer vote remains review-only.
+         */
+        private String dominantSameWidthScalarType() {
+            if (inferredTypes.size() < 2) return "";
+            int width = -1;
+            for (String type : inferredTypes.keySet()) {
+                int candidate = scalarWidth(type);
+                if (candidate < 1) return "";
+                if (width < 0) width = candidate;
+                else if (width != candidate) return "";
+            }
+            List<Map.Entry<String, Set<String>>> ranked =
+                new ArrayList<>(inferredTypes.entrySet());
+            ranked.sort(Comparator
+                .<Map.Entry<String, Set<String>>>comparingInt(entry ->
+                    entry.getValue().size()).reversed()
+                .thenComparing(Map.Entry::getKey));
+            int first = ranked.get(0).getValue().size();
+            int second = ranked.get(1).getValue().size();
+            return first >= 8 && first >= second * 4 ?
+                ranked.get(0).getKey() : "";
         }
         String uniqueReceiverType(DataTypeManager dataTypes) {
             List<String> receivers = inferredTypes.entrySet().stream()

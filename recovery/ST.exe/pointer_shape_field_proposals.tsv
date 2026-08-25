@@ -42,12 +42,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonNested_004C5980_05FB_38F047AC	20	4	field_0014	/int	1	dereference through parent pointer field; observed_types={/int=2}; exact_widths={}; semantic_roles={}
 1	AnonNested_004C9430_0607_7C13AC95	0	4	field_0000	/int	1	dereference through parent pointer field; observed_types={/int=2}; exact_widths={}; semantic_roles={}
 1	AnonNested_004C9430_0607_7C13AC95	16	4	field_0010	/int	1	dereference through parent pointer field; observed_types={/int=1}; exact_widths={}; semantic_roles={}
-1	AnonNested_004D6360_0360_98F97B35	0	4	field_0000	/int	1	dereference through parent pointer field; observed_types={/int=2}; exact_widths={}; semantic_roles={}
-1	AnonNested_004D6360_0360_98F97B35	4	4	field_0004	/int	1	dereference through parent pointer field; observed_types={/int=1}; exact_widths={}; semantic_roles={}
-1	AnonNested_004D6360_0360_98F97B35	8	4	field_0008	/int	1	dereference through parent pointer field; observed_types={/int=1}; exact_widths={}; semantic_roles={}
-1	AnonNested_004D6360_0360_98F97B35	12	4	field_000C	/int	1	dereference through parent pointer field; observed_types={/int=1}; exact_widths={}; semantic_roles={}
-1	AnonNested_004D6360_0360_98F97B35	16	4	field_0010	/int	1	dereference through parent pointer field; observed_types={/int=2}; exact_widths={}; semantic_roles={}
-1	AnonNested_004D6360_0360_98F97B35	20	4	field_0014	/int	1	dereference through parent pointer field; observed_types={/int=2}; exact_widths={}; semantic_roles={}
 1	AnonNested_004E9960_061B_217F6F13	1456	4	field_05B0	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
 1	AnonNested_004E9960_061B_217F6F13	1460	4	field_05B4	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
 1	AnonNested_004E9960_061B_217F6F13	1464	4	field_05B8	/undefined4	1	dereference through parent pointer field; observed_types={/undefined4=1}; exact_widths={}; semantic_roles={}
@@ -236,7 +230,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0041AE10_45781711	4	2	field_0004	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0041AE40_65BC768C	8	1	field_0008	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0041DC40_6A7D968A	4	2	field_0004	/ushort	1	fixed-offset dereference; observed_types={/ushort=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_0041F330_8812DC99	465	4	field_01D1	/uint	1	fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0041F390_BF8EDA78	545	4	field_0221	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00423120_79B5B62D	465	4	field_01D1	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00423300_67884733	28	4	field_001C	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -353,7 +346,7 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_004A67A0_A306B52D	414	2	field_019E	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004A67A0_A306B52D	420	1	field_01A4	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004A67A0_A306B52D	517	4	field_0205	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_004A67A0_A306B52D	521	4	field_0209	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_004A67A0_A306B52D	521	4	field_0209	/int	1	fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004A67A0_A306B52D	525	4	field_020D	/int	1	fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004A67A0_A306B52D	537	4	field_0219	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004A67A0_A306B52D	565	4	field_0235	/int	1	fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -416,13 +409,12 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_004B0D10_23CAA7D2	24	4	field_0018	/int	1	fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004B31C0_F3AB8C37	865	4	field_0361	/int	1	fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004B9FA0_720E2108	50	2	field_0032	/word	1	fixed-offset dereference; observed_types={/word=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_004BE1D0_AF7E63F0	1452	4	field_05AC	/int	1	fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004BE6C0_9ED8AEDF	1	1	field_0001	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004BE6C0_9ED8AEDF	2	1	field_0002	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_004BE6C0_9ED8AEDF	3	4	field_0003	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_004BE6C0_9ED8AEDF	3	4	field_0003	/SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState	1	fixed-offset dereference; observed_types={/SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004BE6C0_9ED8AEDF	7	1	field_0007	/byte	1	fixed-offset dereference; observed_types={/byte=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_004BE6C0_9ED8AEDF	27	1	field_001B	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_004BE6C0_9ED8AEDF	28	1	field_001C	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_004BE6C0_9ED8AEDF	27	1	field_001B	/char	1	fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_004BE6C0_9ED8AEDF	28	1	field_001C	/char	1	fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004BE6C0_9ED8AEDF	29	1	field_001D	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004BE6C0_9ED8AEDF	30	2	field_001E	/short	1	fixed-offset dereference; observed_types={/short=4, /undefined2=5}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004BE6C0_9ED8AEDF	32	2	field_0020	/short	1	fixed-offset dereference; observed_types={/short=1, /undefined2=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -452,9 +444,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_004D3290_0F1DF113	24	4	field_0018	/int	1	fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004D3290_0F1DF113	36	4	field_0024	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004D32C0_D3D0A0C9	50	2	field_0032	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_004D6360_6131855A	613	4	field_0265	/undefined4	2	fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_004D6360_6131855A	864	4	field_0360	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_004D6360_0360_98F97B35	7	fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_004D6930_F065C28A	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004D6D50_B2D14E52	8	1	field_0008	/byte	1	fixed-offset dereference; observed_types={/byte=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004D7040_D83D570C	281	4	field_0119	/undefined4	1	fixed-offset dereference; observed_types={/int=1, /uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004D8D40_E38296AE	1264	4	field_04F0	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_005EFAE0_B406B78B	1	fixed-offset dereference; observed_types={/undefined4=1, pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_005EFAE0_B406B78B=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -526,6 +515,8 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_004EAF60_69129DB1	1232	4	field_04D0	/int	1	fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004EB6D0_73BE0EF9	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004EBAB0_68F8AF0E	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_004EBDA0_1A067C30	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_004EBDA0_1A067C30	501	4	field_01F5	/undefined4	1	fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004EC050_2F5ECB40	1535	4	field_05FF	pointer:/STT3DSprC	1	fixed-offset dereference; observed_types={/int=1, pointer:/STT3DSprC=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004ECAC0_58E78526	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=3}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_004ECCF0_985987C1	1232	4	field_04D0	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -680,12 +671,12 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00575CB0_50A3FA3A	40	4	field_0028	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00575CB0_EC13795E	20	4	field_0014	/int	1	fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_005783F0_545AD987	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00578630_D61E8E33	80	2	field_0050	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00578630_D61E8E33	82	2	field_0052	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00578630_D61E8E33	84	2	field_0054	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00578630_D61E8E33	80	2	field_0050	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00578630_D61E8E33	82	2	field_0052	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00578630_D61E8E33	84	2	field_0054	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00578630_D61E8E33	86	2	field_0056	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00578630_D61E8E33	88	2	field_0058	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00578630_D61E8E33	90	2	field_005A	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00578630_D61E8E33	90	2	field_005A	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0057B670_1C4E1DA6	601	4	field_0259	/int	1	fixed-offset dereference; observed_types={/int=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0057B990_72164111	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0057BF60_049EA94A	32	4	field_0020	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -694,11 +685,11 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0057BF60_C1EE03E1	52	2	field_0034	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0057BF60_C1EE03E1	54	4	field_0036	/uint	1	fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0057BF60_C1EE03E1	62	4	field_003E	/uint	1	fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00580700_AE7D638A	3	4	field_0003	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00580700_AE7D638A	3	4	field_0003	/dword	1	fixed-offset dereference; observed_types={/dword=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00580700_AE7D638A	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00580860_5AE9515A	2	4	field_0002	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00580860_5AE9515A	2	4	field_0002	/dword	1	fixed-offset dereference; observed_types={/dword=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00580860_5AE9515A	7	4	field_0007	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_005808A0_34963C85	2	4	field_0002	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_005808A0_34963C85	2	4	field_0002	/dword	1	fixed-offset dereference; observed_types={/dword=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_005808A0_34963C85	7	4	field_0007	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_005811C0_696D31CF	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00581B80_E3538055	469	4	field_01D5	/uint	1	fixed-offset dereference; observed_types={/uint=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -710,29 +701,29 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00588BC0_56702429	42	4	field_002A	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	46	4	field_002E	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	50	4	field_0032	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00588BC0_56702429	54	4	field_0036	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00588BC0_56702429	54	4	field_0036	/uint	1	fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	58	2	field_003A	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	60	2	field_003C	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00588BC0_56702429	62	2	field_003E	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00588BC0_56702429	62	2	field_003E	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	64	2	field_0040	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00588BC0_56702429	66	2	field_0042	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00588BC0_56702429	66	2	field_0042	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	68	2	field_0044	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00588BC0_56702429	70	2	field_0046	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00588BC0_56702429	70	2	field_0046	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	72	2	field_0048	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	74	2	field_004A	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	96	2	field_0060	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	98	4	field_0062	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	102	4	field_0066	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	106	4	field_006A	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00588BC0_56702429	110	2	field_006E	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00588BC0_56702429	112	2	field_0070	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00588BC0_56702429	114	2	field_0072	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00588BC0_56702429	110	2	field_006E	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00588BC0_56702429	112	2	field_0070	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00588BC0_56702429	114	2	field_0072	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	120	1	field_0078	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	121	1	field_0079	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	122	1	field_007A	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	123	4	field_007B	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_56702429	127	4	field_007F	/uint	1	fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00588BC0_6599B253	36	4	field_0024	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00588BC0_6599B253	36	4	field_0024	/int	1	fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00588BC0_6599B253	50	2	field_0032	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_005899E0_1FE8750F	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00589C10_8A768F08	120	2	field_0078	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -750,9 +741,9 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_0058D7C0_F6D5CE70	52	2	field_0034	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0058D7C0_F6D5CE70	54	2	field_0036	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0058D7C0_F6D5CE70	56	2	field_0038	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_0058D7C0_F6D5CE70	58	2	field_003A	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_0058D7C0_F6D5CE70	64	2	field_0040	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_0058D7C0_F6D5CE70	66	4	field_0042	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_0058D7C0_F6D5CE70	58	2	field_003A	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_0058D7C0_F6D5CE70	64	2	field_0040	/short	1	fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_0058D7C0_F6D5CE70	66	4	field_0042	/uint	1	fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0058D7C0_F6D5CE70	70	4	field_0046	/uint	1	fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0058D7C0_F6D5CE70	74	4	field_004A	/int	1	fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_0058D7C0_F6D5CE70	78	4	field_004E	/SubmarineTitans/Recovered/Enums/STSharkC_field_0257State	1	fixed-offset dereference; observed_types={/SubmarineTitans/Recovered/Enums/STSharkC_field_0257State=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -834,7 +825,7 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00601D10_11B39116	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_006028A0_DD3959A4	529	4	field_0211	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006028A0_0211_79D9690B	5	fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_006033D0_8A1D4BAE	3	4	field_0003	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_006033D0_8A1D4BAE	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_006033D0_8A1D4BAE	8	4	field_0008	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00604160_F1552931	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00604820_51E8C765	617	4	field_0269	/int	1	fixed-offset dereference; observed_types={/int=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00604FC0_D9906037	38	1	field_0026	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
@@ -899,11 +890,11 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_00622AB0_C45DC960	36	4	field_0024	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_006255B0_DBDA84F8	581	4	field_0245	/undefined4	1	fixed-offset dereference; observed_types={}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00626C90_FE2D19C3	3	4	field_0003	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00626C90_FE2D19C3	8	4	field_0008	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00626C90_FE2D19C3	8	4	field_0008	/uint	1	fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00626FC0_FA8FB6E1	2	4	field_0002	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00626FC0_FA8FB6E1	7	4	field_0007	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00626FC0_FA8FB6E1	7	4	field_0007	/uint	1	fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00627050_FBBC2658	2	4	field_0002	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
-1	AnonShape_00627050_FBBC2658	7	4	field_0007	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
+1	AnonShape_00627050_FBBC2658	7	4	field_0007	/uint	1	fixed-offset dereference; observed_types={/uint=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_006270E0_AA70B55C	23	4	field_0017	pointer:/byte	2	fixed-offset dereference; observed_types={pointer:/byte=2}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00627790_2AB9AF3A	36	2	field_0024	/word	1	fixed-offset dereference; observed_types={/word=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 1	AnonShape_00627790_2AB9AF3A	50	2	field_0032	/word	1	fixed-offset dereference; observed_types={/word=1}; exact_widths={}; indexed_strides={}; semantic_roles={}

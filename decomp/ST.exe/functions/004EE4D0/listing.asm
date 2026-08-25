@@ -75,7 +75,8 @@ LAB_004ee574:
 004EE5AE  50                        PUSH EAX
 004EE5AF  8B CE                     MOV ECX,ESI
 004EE5B1  C7 46 28 FF BF 00 00      MOV dword ptr [ESI + 0x28],0xbfff
-004EE5B8  FF 12                     CALL dword ptr [EDX]
+BehPanelTy::GetMessage::override::prt_4ee5b8_3de9fba:
+004EE5B8  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/BehPanelTy;pointer:/SubmarineTitans/Recovered/STMessage
 004EE5BA  8B 45 94                  MOV EAX,dword ptr [EBP + -0x6c]
 004EE5BD  A3 F8 8D 85 00            MOV [0x00858df8],EAX
 004EE5C2  33 C0                     XOR EAX,EAX

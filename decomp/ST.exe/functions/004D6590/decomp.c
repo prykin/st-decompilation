@@ -33,14 +33,14 @@ FUN_004d6590(void *this,float param_1,short *param_2,short *param_3,short *param
   ST3DSMAPContext::sub_006DD530
             (STField<ST3DSMAPContext *>(this,0x211),&param_1,(float *)&param_3,(float *)&param_4);
   lVar9 = Library::MSVCRT::__ftol();
-  param_1 = (float)(int)(short)lVar9;
+  param_1 = (float)(short)lVar9;
   lVar9 = Library::MSVCRT::__ftol();
-  param_1 = (float)(int)(short)lVar9;
+  param_1 = (float)(short)lVar9;
   lVar9 = Library::MSVCRT::__ftol();
   fVar4 = (float)(int)STField<short>(this,0x43) - param_1;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   fVar1 = (float)((float10)(int)STField<short>(this,0x41) - extraout_ST0);
-  fVar5 = (float)(int)*psVar7 - (float)(int)(short)lVar9;
+  fVar5 = (float)(int)*psVar7 - (float)(short)lVar9;
   fVar5 = fVar5 * fVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (((float10)(int)*param_2 - extraout_ST0) * ((float10)(int)*param_2 - extraout_ST0) +

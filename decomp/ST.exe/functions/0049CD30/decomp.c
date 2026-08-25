@@ -104,11 +104,11 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x90f);
           }
           /* ST_CALLSITE[0049CE8B]: CALL dword ptr [EDX + 0x2c] */
-          dVar7 = pSVar6->slot_2C();
+          dVar7 = pSVar6->sub_0045EEE0();
           /* ST_CALLSITE[0049CE97]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar7 == 0xc) || (dVar7 = pSVar6->slot_2C(), dVar7 == 0x18)) ||
+          if (((dVar7 == 0xc) || (dVar7 = pSVar6->sub_0045EEE0(), dVar7 == 0x18))
              /* ST_CALLSITE[0049CEA3]: CALL dword ptr [EDX + 0x2c] */
-             (dVar7 = pSVar6->slot_2C(), dVar7 == 0x19)) {
+             || (dVar7 = pSVar6->sub_0045EEE0(), dVar7 == 0x19)) {
             if (array_00 == nullptr) {
               array_00 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               local_1c = array_00;
@@ -183,11 +183,11 @@ LAB_0049cf10:
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x938);
           }
           /* ST_CALLSITE[0049D05E]: CALL dword ptr [EAX + 0x2c] */
-          dVar7 = pSVar6->slot_2C();
+          dVar7 = pSVar6->sub_0045EEE0();
           /* ST_CALLSITE[0049D06A]: CALL dword ptr [EDX + 0x2c] */
-          if (((((dVar7 == 0xc) || (dVar7 = pSVar6->slot_2C(), dVar7 == 0x18)) ||
+          if (((((dVar7 == 0xc) || (dVar7 = pSVar6->sub_0045EEE0(), dVar7 == 0x18))
                /* ST_CALLSITE[0049D076]: CALL dword ptr [EAX + 0x2c] */
-               (dVar7 = pSVar6->slot_2C(), dVar7 == 0x19)) &&
+               || (dVar7 = pSVar6->sub_0045EEE0(), dVar7 == 0x19)) &&
               (iVar10 = thunk_FUN_0045ff10((STGameObjC *)pSVar6), iVar10 == 0x11)) ||
              /* ST_CALLSITE[0049D08E]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
              (uVar12 = STBoatC::CheckPBoxCmd(pSVar6,CASE_11), uVar12 == 1)) {

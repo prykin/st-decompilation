@@ -23,10 +23,9 @@ void __fastcall FUN_005fceb0(AnonShape_005FCEB0_FA1F7938 *param_1)
                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_0358,
                            &local_8);
     if (iVar1_mg1 != -4) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_28.arg1.words.high = *(word *)(local_8 + 0x32);
+      local_28.arg1.words.high = STField<word>(local_8,0x32);
     }
-    /* ST_CALLSITE[005FCF1B]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[005FCF1B]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_28);
   }
   return;

@@ -11,9 +11,8 @@ int __thiscall FUN_006028a0(void *this,int param_1,int param_2,int param_3)
 
   iVar3 = param_2;
   iVar2 = STField<int>(this,0x211);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((((*(int *)(iVar2 + 0x48) <= param_1) && (param_1 <= *(int *)(iVar2 + 0x58))) &&
-      (*(int *)(iVar2 + 0x44) <= param_2)) && (param_2 <= *(int *)(iVar2 + 0x54))) {
+  if ((((STField<int>(iVar2,0x48) <= param_1) && (param_1 <= STField<int>(iVar2,0x58))) &&
+      (STField<int>(iVar2,0x44) <= param_2)) && (param_2 <= STField<int>(iVar2,0x54))) {
     local_8 = this;
     iVar2 = FUN_006ddbd0();
     pVVar1 = g_visibleClass_00802A88;
@@ -42,7 +41,7 @@ int __thiscall FUN_006028a0(void *this,int param_1,int param_2,int param_3)
     if (param_2 < 0) {
       return iVar2;
     }
-    if ((int)pVVar1->field_0030 <= param_2) {
+    if (pVVar1->field_0030 <= param_2) {
       return iVar2;
     }
     iVar3 = g_centeredOffsets5[param_3] + (int)local_8;

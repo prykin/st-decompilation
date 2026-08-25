@@ -9,7 +9,7 @@ int FUN_0062d7d0(int *param_1,int *param_2)
 
   piVar4 = param_2;
   iVar3 = 0;
-  auto param_2_after_write = (int *)0x8; /* compiler stack-slot lifetime split */
+  uint param_2_after_write = 0x8; /* compiler stack-slot lifetime split */
   do {
     if (*param_1 != 0) {
       pDVar2 = FUN_006b0060(nullptr,(uint *)(piVar4 + 1));
@@ -20,8 +20,8 @@ int FUN_0062d7d0(int *param_1,int *param_2)
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + 1;
-    param_2_after_write = (int *)((int)param_2_after_write + -1);
-  } while (param_2_after_write != nullptr);
+    param_2_after_write = ((int)param_2_after_write + -1);
+  } while (param_2_after_write != 0);
   return iVar3;
 }
 

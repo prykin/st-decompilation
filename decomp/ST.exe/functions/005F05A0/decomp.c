@@ -24,7 +24,7 @@ void __thiscall FUN_005f05a0(void *this,ushort param_1,word param_2)
     local_24.arg1.words.low = param_1;
     local_24.arg1.words.high = param_2;
     local_24.id = MESS_AIBOSSCLASSTY_5DD0|MESS_SYSTEMCLASSTY_000A;
-    /* ST_CALLSITE[005F05EF]: CALL dword ptr [EAX] */
+    /* ST_CALLSITE[005F05EF]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_24);
   }
   return;

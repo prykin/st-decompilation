@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_006d7380(void *this,int param_1)
   }
   if (param_1 == 1) {
     iVar3 = STField<int>(this,0x8c);
-    if (*(int *)(iVar3 + 0x18) != 0) {
+    if (STField<int>(iVar3,0x18) != 0) {
       if (iVar3 != 0) {
         /* ST_CALLSITE[006D73B9]: CALL dword ptr [EDX + 0x20] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

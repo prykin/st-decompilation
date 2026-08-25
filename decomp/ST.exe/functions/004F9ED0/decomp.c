@@ -23,7 +23,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
   ushort *puVar5;
   int iVar6;
   byte *puVar7;
-  uint *puVar8;
+  int *piVar8;
   uint uVar9;
   byte bVar10;
   uint *puVar11;
@@ -103,7 +103,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
           ShiftControls(this_00,0);
           if (DAT_0080731a != 0) {
             puVar7 = &this_00->field_02EC;
-            puVar8 = &this_00->field_02EE;
+            piVar8 = &this_00->field_02EE;
             local_8 = 2;
             do {
               puVar11 = nullptr;
@@ -114,15 +114,15 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
               pcVar4 = thunk_FUN_00526100(nullptr,0);
               puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                                  (PTR_00806794,CASE_1F,pcVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
-              puVar8[-3] = puVar5;
+              piVar8[-3] = (int)puVar5;
               puVar7[-2] = 0;
               *puVar7 = 4;
-              *puVar8 = this_00->field_0038;
+              *piVar8 = this_00->field_0038;
               puVar7 = puVar7 + 1;
-              puVar8 = puVar8 + 1;
+              piVar8 = piVar8 + 1;
               local_8 = local_8 + -1;
             } while (local_8 != 0);
-            puVar8 = &this_00->field_0D53;
+            piVar8 = &this_00->field_0D53;
             puVar7 = &this_00->field_0D47;
             local_c = 2;
             do {
@@ -136,11 +136,11 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
                 pcVar4 = thunk_FUN_00526100(nullptr,0);
                 puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                                    (PTR_00806794,CASE_1F,pcVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
-                puVar8[-0x12] = puVar5;
+                piVar8[-0x12] = (int)puVar5;
                 puVar7[-0xc] = 0;
                 *puVar7 = 4;
-                *puVar8 = this_00->field_0038;
-                puVar8 = puVar8 + 1;
+                *piVar8 = this_00->field_0038;
+                piVar8 = piVar8 + 1;
                 puVar7 = puVar7 + 1;
                 local_8 = local_8 + -1;
               } while (local_8 != 0);

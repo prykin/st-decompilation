@@ -35,12 +35,12 @@ void __thiscall st::fn_004BE500(TLOBaseTy *this,int param_1)
     st::fn_00404E8A(local_8,param_1);
     if ((((this_00->field_021D != 0) && (iVar1 == 0)) &&
         /* ST_CALLSITE[004BE57B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-        (local_EAX_123 = st::fn_004049B7(*(char *)&this_00->field_023D),
+        (local_EAX_123 = st::fn_004049B7((char)this_00->field_023D),
         *(int *)(&DAT_00795c00 + ((uint)(byte)local_EAX_123 + this_00->field_0235 * 3) * 4) != 0))
        && (this_00->field_0024 == (byte *)(uint)(byte)this_00->field_0010->field_112D)) {
       pTVar2 = this_00->vtable;
       /* ST_CALLSITE[004BE5BF]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-      uVar5 = st::fn_004049B7(*(char *)&this_00->field_023D);
+      uVar5 = st::fn_004049B7((char)this_00->field_023D);
       /* ST_CALLSITE[004BE5E3]: CALL dword ptr [EDI + 0x90] */
       (*pTVar2->vfunc_90)(this_00,4,
                           (short)*(undefined4 *)

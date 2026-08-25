@@ -210,11 +210,11 @@ LAB_0061eefe:
               }
               else {
                 lVar19 = Library::MSVCRT::__ftol();
-                local_20 = (int *)(int)(short)lVar19;
+                local_20 = (int *)(short)lVar19;
               }
               if (local_78 < _DAT_0079034c) {
                 lVar19 = Library::MSVCRT::__ftol();
-                local_34 = (int)(short)lVar19 - 1;
+                local_34 = (short)lVar19 - 1;
               }
               else {
                 lVar19 = Library::MSVCRT::__ftol();
@@ -226,16 +226,16 @@ LAB_0061eefe:
               }
               else {
                 lVar19 = Library::MSVCRT::__ftol();
-                iVar15 = (int)(short)lVar19;
+                iVar15 = (short)lVar19;
               }
               if (((((DAT_0080874d != -1) && (this->field_00F8 != 0)) &&
                    /* ST_CALLSITE[0061EEA3]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
                    ((VisibleClassTy::sub_00558C00
                                (this,this->field_010C,iVar15,local_34,&local_38,&local_48),
                     -1 < (int)local_20 &&
-                    (((((int)local_20 < 5 && (-1 < local_38)) && (local_38 < (int)this->field_0030))
-                     && ((iVar15 = local_48 + g_centeredOffsets5[(int)local_20], -1 < iVar15 &&
-                         (iVar15 < this->field_0034)))))))) && (this->field_004C != nullptr)) &&
+                    (((((int)local_20 < 5 && (-1 < local_38)) && (local_38 < this->field_0030)) &&
+                     ((iVar15 = local_48 + g_centeredOffsets5[(int)local_20], -1 < iVar15 &&
+                      (iVar15 < this->field_0034)))))))) && (this->field_004C != nullptr)) &&
                  (this->field_004C[local_38 + iVar15 * this->field_0030] == 0)) goto LAB_0061eefe;
             }
           }

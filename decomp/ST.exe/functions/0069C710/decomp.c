@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint FUN_0069c710(int param_1,int param_2,int param_3)
 
@@ -17,13 +19,13 @@ uint FUN_0069c710(int param_1,int param_2,int param_3)
       bVar2 = *pbVar1;
       if ((bVar2 & 4) == 0) {
         if ((bVar2 & 8) != 0) {
-          *(int *)(iVar3 + 8) = *(int *)(iVar3 + 8) + 1;
+          STField<int>(iVar3,0x8) = STField<int>(iVar3,0x8) + 1;
         }
       }
       else {
-        *(int *)(iVar3 + 4) = *(int *)(iVar3 + 4) + 1;
+        STField<int>(iVar3,0x4) = STField<int>(iVar3,0x4) + 1;
         if ((*pbVar1 & 8) != 0) {
-          *(int *)(iVar3 + 8) = *(int *)(iVar3 + 8) + 1;
+          STField<int>(iVar3,0x8) = STField<int>(iVar3,0x8) + 1;
           return uVar4;
         }
       }

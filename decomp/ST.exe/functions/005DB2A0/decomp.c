@@ -52,9 +52,9 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     FUN_006b5570((DArrayTy *)this->field_0548);
   }
   this->field_0548 = nullptr;
-  if (-1 < (int)this->field_0540) {
+  if (-1 < this->field_0540) {
     FUN_006b3bb0((int *)g_ddxContext_008075A8,this->field_0540);
-    this->field_0540 = 0xffffffff;
+    this->field_0540 = -1;
   }
   if (this->field_0544 != nullptr) {
     FreeAndNull(&this->field_0544);

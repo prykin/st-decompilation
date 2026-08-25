@@ -255,7 +255,7 @@ LAB_004dad15:
               local_50.arg1.words.low = (word)iVar3;
               uVar5 = thunk_FUN_004e60d0(uVar7,iVar3);
               local_50.arg1.words.high = (short)uVar5 + 1;
-              /* ST_CALLSITE[004DAE78]: CALL dword ptr [EDX] */
+              /* ST_CALLSITE[004DAE78]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
               g_aiBossClass_008117BC->GetMessage(&local_50);
             }
             iVar3 = iVar3 + 1;

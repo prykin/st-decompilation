@@ -679,7 +679,8 @@ LAB_005adbdb:
 005ADBDD  8D 4D 98                  LEA ECX,[EBP + -0x68]
 005ADBE0  51                        PUSH ECX
 005ADBE1  8B CE                     MOV ECX,ESI
-005ADBE3  FF 10                     CALL dword ptr [EAX]
+ChooseMapTy::NoneChooseMap::override::prt_5adbe3_186129d5:
+005ADBE3  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_005adbe5:
 005ADBE5  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
 005ADBE8  8B 4D F0                  MOV ECX,dword ptr [EBP + -0x10]

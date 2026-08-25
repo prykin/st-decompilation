@@ -46,14 +46,14 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
   FUN_006e5fd0(local_8,message);
   if (message->id == MESS_ID_CREATE) {
     iVar4 = (message->arg0).i32;
-    if (*(uint *)(iVar4 + 0xc) < 2) {
-      this_00->field_0020 = *(undefined4 *)(iVar4 + 0x20);
+    if (STField<uint>(iVar4,0xC) < 2) {
+      this_00->field_0020 = STField<undefined4>(iVar4,0x20);
       this_00->field_0024 = ((char *)iVar4)[4];
-      this_00->field_0025 = *(undefined2 *)(iVar4 + 0x14);
-      this_00->field_0027 = *(undefined2 *)(iVar4 + 0x18);
+      this_00->field_0025 = STField<undefined2>(iVar4,0x14);
+      this_00->field_0027 = STField<undefined2>(iVar4,0x18);
       puVar2 = Library::DKW::TBL::FUN_006ae310(nullptr,5,2,5,0x4045c5);
       this_00->field_0029 = puVar2;
-      local_c = *(int *)(iVar4 + 0x1c);
+      local_c = STField<int>(iVar4,0x1C);
       if (0 < local_c) {
         element = (void *)(iVar4 + 0x24);
         do {
@@ -67,7 +67,7 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
                 (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
       this_00->field_0031 = this_00->field_0018 * DAT_00808754;
     }
-    else if (*(uint *)(iVar4 + 0xc) == 2) {
+    else if (STField<uint>(iVar4,0xC) == 2) {
       /* ST_CALLSITE[00423F7A]: CALL 0x00404f48; direct=00404F48 STGroupC::RestoreGrpData */
       RestoreGrpData(this_00,iVar4);
       /* ST_CALLSITE[00423F8F]: CALL 0x004059d9; direct=004059D9 STAllPlayersC::RegisterGroup */

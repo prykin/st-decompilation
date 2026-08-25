@@ -908,12 +908,12 @@ short st::fn_0043E460(char param_1)
   iVar7 = 0;
   sVar5 = 0;
   iVar1 = g_packedRecords_A62x8[param_1].field3_0x9;
-  iVar2 = *(int *)(iVar1 + 0xc);
+  iVar2 = STField<int>(iVar1,0xC);
   sVar4 = 0;
   if (0 < iVar2) {
     do {
       sVar5 = sVar4;
-      piVar3 = *(int **)(*(int *)(iVar1 + 0x1c) + iVar7 * 4);
+      piVar3 = *(int **)(STField<int>(iVar1,0x1C) + iVar7 * 4);
       /* ST_CALLSITE[0043E499]: CALL dword ptr [EAX + 0xf8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if ((piVar3 != nullptr) && (iVar6 = (**(code **)(*piVar3 + 0xf8))(), iVar6 == 1)) {
@@ -948,12 +948,12 @@ short st::fn_0043E640(char param_1,Global_sub_0043E640_param_2Enum param_2,int p
   iVar7 = 0;
   sVar4 = 0;
   iVar1 = g_packedRecords_A62x8[param_1].field3_0x9;
-  local_8 = *(int *)(iVar1 + 0xc);
+  local_8 = STField<int>(iVar1,0xC);
   sVar3 = 0;
   if (0 < local_8) {
     do {
       sVar4 = sVar3;
-      piVar2 = *(int **)(*(int *)(iVar1 + 0x1c) + iVar7 * 4);
+      piVar2 = *(int **)(STField<int>(iVar1,0x1C) + iVar7 * 4);
       /* ST_CALLSITE[0043E685]: CALL dword ptr [EAX + 0x2c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((piVar2 != nullptr) && (GVar5 = (**(code **)(*piVar2 + 0x2c))(), GVar5 == param_2)) &&
@@ -964,7 +964,7 @@ short st::fn_0043E640(char param_1,Global_sub_0043E640_param_2Enum param_2,int p
 LAB_0043e6d3:
           if ((param_4 == -1) ||
              /* ST_CALLSITE[0043E6E1]: CALL dword ptr [EAX + 0x6c] */
-             (iVar6 = (**(code **)(**(int **)(*(int *)(iVar1 + 0x1c) + iVar7 * 4) + 0x6c))(),
+             (iVar6 = (**(code **)(**(int **)(STField<int>(iVar1,0x1C) + iVar7 * 4) + 0x6c))(),
              iVar6 == param_4)) {
             sVar4 = sVar4 + 1;
           }
@@ -1247,12 +1247,12 @@ short st::fn_0043F130(char param_1,byte *param_2)
   iVar9 = 0;
   sVar5 = 0;
   iVar2 = g_packedRecords_A62x8[param_1].field3_0x9;
-  local_8 = *(int *)(iVar2 + 0xc);
+  local_8 = STField<int>(iVar2,0xC);
   sVar4 = 0;
   if (0 < local_8) {
     do {
       sVar5 = sVar4;
-      piVar3 = *(int **)(*(int *)(iVar2 + 0x1c) + iVar9 * 4);
+      piVar3 = *(int **)(STField<int>(iVar2,0x1C) + iVar9 * 4);
       if (piVar3 != nullptr) {
         /* ST_CALLSITE[0043F173]: CALL dword ptr [EAX + 0x74] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -1557,7 +1557,7 @@ uint * st::fn_0043F7B0(byte param_1,int *param_2,uint *param_3,int param_4,int p
   if (param_4_after_write < 0) {
     param_4_after_write = 0;
   }
-  auto param_7_after_write = iVar6; /* compiler stack-slot lifetime split */
+  int param_7_after_write = iVar6; /* compiler stack-slot lifetime split */
   if (g_worldGrid.sizeY + -1 < iVar6) {
     param_7_after_write = g_worldGrid.sizeY + -1;
   }

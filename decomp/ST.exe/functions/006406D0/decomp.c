@@ -301,8 +301,8 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
       return 0;
     }
     iVar14 = (message->arg0).i32;
-    if (*(int *)(iVar14 + 0xc) != 1) {
-      if (*(int *)(iVar14 + 0xc) != 2) {
+    if (STField<int>(iVar14,0xC) != 1) {
+      if (STField<int>(iVar14,0xC) != 2) {
         g_currentExceptionFrame = local_28c.previous;
         return 0;
       }
@@ -322,11 +322,11 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
       /* ST_CALLSITE[006407D5]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_158,
-                 (AnonShape_004AD790_77673787 *)(*(int *)(iVar14 + 0x70) + iVar14));
+                 (AnonShape_004AD790_77673787 *)(STField<int>(iVar14,0x70) + iVar14));
       FreeAndNull(&local_158);
       /* ST_CALLSITE[006407EE]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
       STAllPlayersC::RestoreGObjData
-                ((STAllPlayersC *)this_00,(undefined4 *)(*(int *)(iVar14 + 0x78) + iVar14));
+                ((STAllPlayersC *)this_00,(undefined4 *)(STField<int>(iVar14,0x78) + iVar14));
       /* ST_CALLSITE[006407F6]: CALL 0x004015f0; direct=004015F0 STTorpC::RestoreTorpData */
       RestoreTorpData(this_00,iVar14);
       /* ST_CALLSITE[0064080A]: CALL 0x00402991; direct=00402991 STAllPlayersC::RegisterTorpedo */
@@ -384,7 +384,7 @@ LAB_00642c6e:
       }
       thunk_FUN_00417ff0(this_00,bVar8);
       /* ST_CALLSITE[00640990]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-      uVar16 = LookupRecordByte(*(char *)&this_00->field_0024);
+      uVar16 = LookupRecordByte((char)this_00->field_0024);
       uVar16 = (int)(byte)uVar16;
       if (uVar16 == 1) {
         iVar14 = thunk_FUN_004e60d0(this_00->field_0024,0x99);
@@ -505,7 +505,7 @@ switchD_00640ad9_caseD_a2:
     if (this_00->field_0259 == CASE_97) {
       /* ST_CALLSITE[00640BE2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       local_4c = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,*(char *)&this_00->field_0024,this_00->field_0262,
+                           (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0262,
                             CASE_1);
       if ((local_4c != nullptr) &&
          /* ST_CALLSITE[00640BF2]: CALL dword ptr [EDX + 0x2c] */
@@ -1019,7 +1019,7 @@ switchD_00640c2d_caseD_a2:
   if (this_00->field_027D < 9) {
     /* ST_CALLSITE[0064158E]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     local_4c = STAllPlayersC::GetObjPtr
-                         (g_allPlayers_007FA174,*(char *)&this_00->field_0024,this_00->field_0262,
+                         (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0262,
                           CASE_1);
     if ((local_4c == nullptr) || (this_00->field_027D == 8)) {
       this_00->field_0264 = 0;
@@ -1124,7 +1124,7 @@ LAB_0064190c:
   if (local_18 != 1) {
 cf_common_exit_00642C8B:
     /* ST_CALLSITE[00642C8F]: CALL dword ptr [EAX + 0xd8] */
-    iVar14 = this_00->vfunc_D8();
+    iVar14 = this_00->sub_00643E20();
     if (iVar14 == 0) {
       g_currentExceptionFrame = local_28c.previous;
       return 0;
@@ -1141,7 +1141,7 @@ cf_common_exit_00642C8B:
   if (this_00->field_0259 == CASE_99) {
     /* ST_CALLSITE[006419BA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_01 = STAllPlayersC::GetObjPtr
-                        (g_allPlayers_007FA174,*(char *)&this_00->field_0024,this_00->field_0262,
+                        (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0262,
                          CASE_1);
     if (this_01 == nullptr) {
       iVar14 = this_00->field_001C;
@@ -2744,7 +2744,7 @@ LAB_00642561:
             (this_00->field_0211,uVar19,CONCAT22(uVar9,CONCAT11(uVar29,uVar30)),
              CONCAT22(uVar21,CONCAT11(uVar32,uVar31)),uVar18);
   /* ST_CALLSITE[006426FA]: CALL dword ptr [EDX + 0xd8] */
-  iVar14 = this_00->vfunc_D8();
+  iVar14 = this_00->sub_00643E20();
   if (iVar14 != 0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x27d);

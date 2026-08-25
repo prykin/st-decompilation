@@ -82,11 +82,11 @@ int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
     case MESS_SHARED_C0A3:
       iVar6 = (&this_00->field_027E)[(byte)this_00->field_0278];
       if ((iVar6 == 0) ||
-         (iVar4 = SVar1 + this_00->field_0199, *(uint *)(iVar6 + 0xc) <= iVar4 - 0xc09fU)) {
+         (iVar4 = SVar1 + this_00->field_0199, STField<uint>(iVar6,0xC) <= iVar4 - 0xc09fU)) {
         puVar5 = nullptr;
       }
       else {
-        puVar5 = (undefined4 *)((iVar4 + -0xc09f) * *(int *)(iVar6 + 8) + *(int *)(iVar6 + 0x1c));
+        puVar5 = (undefined4 *)((iVar4 + -0xc09f) * STField<int>(iVar6,0x8) + STField<int>(iVar6,0x1C));
       }
       if ((puVar5 != nullptr) && (((char *)puVar5)[2] != '\0')) {
         /* ST_CALLSITE[004F11FA]: CALL 0x004035ad; direct=004035AD CursorClassTy::sub_0054B630 */

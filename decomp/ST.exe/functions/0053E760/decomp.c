@@ -46,9 +46,8 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
       local_8->field_002E = 2;
       local_8->field_0030 = local_8->field_0178;
       if (g_cursorClass_00802A30 != nullptr) {
-        /* ST_CALLSITE[0053E839]: CALL dword ptr [EDX] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)g_cursorClass_00802A30->field_0000)(&local_8->field_0x18);
+        /* ST_CALLSITE[0053E839]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+        g_cursorClass_00802A30->GetMessage((STMessage *)&local_8->field_0x18);
       }
     }
     /* ST_CALLSITE[0053E841]: CALL dword ptr [EDX + 0x18] */

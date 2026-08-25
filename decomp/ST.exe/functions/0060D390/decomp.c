@@ -58,8 +58,8 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
           local_30 = uVar8;
         }
         iVar2 = STField<int>(this,0x244) + iVar7;
-        if (*(int *)(iVar2 + 8) != 0) {
-          *puVar3 = *puVar3 + *(int *)(iVar2 + 4) * 4;
+        if (STField<int>(iVar2,0x8) != 0) {
+          *puVar3 = *puVar3 + STField<int>(iVar2,0x4) * 4;
           uVar8 = uVar8 + *(int *)(iVar7 + 4 + STField<int>(this,0x244)) * 4;
           local_30 = uVar8;
         }
@@ -111,7 +111,7 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
                 piVar5 = local_38;
                 if (puVar11 != nullptr) {
                   puVar13 = (undefined4 *)((int)(piVar6 + 1) + uVar1);
-                  for (uVar8 = *(uint *)(iVar4 + 4) & 0x3fffffff; uVar8 != 0; uVar8 = uVar8 - 1) {
+                  for (uVar8 = STField<uint>(iVar4,0x4) & 0x3fffffff; uVar8 != 0; uVar8 = uVar8 - 1) {
                     *puVar13 = *puVar11;
                     puVar11 = puVar11 + 1;
                     puVar13 = puVar13 + 1;

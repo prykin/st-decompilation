@@ -893,7 +893,7 @@ switchD_005ab66b_caseD_6:
       }
       iVar23 = this_01->array_00BC[0xc].field_01DB;
       local_115 = local_13c;
-      if (*(int *)(iVar23 + 0x2e6) != 0) {
+      if (STField<int>(iVar23,0x2E6) != 0) {
         puVar8 = local_26c;
         for (iVar19 = 6; iVar19 != 0; iVar19 = iVar19 + -1) {
           *puVar8 = 0xffffffff;

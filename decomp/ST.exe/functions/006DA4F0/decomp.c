@@ -27,14 +27,14 @@ void FUN_006da4f0(ushort *param_1,int param_2,byte *param_3,int param_4,int para
     uVar1 = param_7[2];
   }
   iVar3 = -1;
-  auto param_7_after_write = (uint *)0xffffffff; /* compiler stack-slot lifetime split */
+  uint param_7_after_write = 0xffffffff; /* compiler stack-slot lifetime split */
   local_8 = -1;
   bVar2 = 0xff;
   if (local_10 == 0xf800) {
-    param_7_after_write = nullptr;
+    param_7_after_write = 0;
   }
   else if (local_10 == 0x7c00) {
-    param_7_after_write = (uint *)0x1;
+    param_7_after_write = 0x1;
   }
   if (local_14 == 0x7e0) {
     local_8 = 5;
@@ -46,7 +46,7 @@ void FUN_006da4f0(ushort *param_1,int param_2,byte *param_3,int param_4,int para
     iVar3 = 0xb;
     bVar2 = 0xb;
   }
-  if (param_7_after_write == (uint *)0xffffffff) {
+  if (param_7_after_write == 0xffffffff) {
     STPiece<0,1>(param_7_after_write) = 0;
     for (uVar4 = local_10; (uVar4 & 0x8000) == 0; uVar4 = uVar4 << 1) {
       STPiece<0,1>(param_7_after_write) = (byte)param_7_after_write + 1;

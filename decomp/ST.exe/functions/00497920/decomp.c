@@ -156,8 +156,8 @@ int FUN_00497920(RecoveredRecord_STBoatC_0040AE40 *param_1,int param_2,int param
     }
     iVar1 = iVar2 + *(int *)&this[5].field_0x1f * 8;
     if (((*(short *)(iVar2 + *(int *)&this[5].field_0x1f * 8) == param_1->field_0047) &&
-        (*(short *)(iVar1 + 2) == param_1->field_0049)) &&
-       (*(short *)(iVar1 + 4) == param_1->field_004B)) {
+        (STField<short>(iVar1,0x2) == param_1->field_0049)) &&
+       (STField<short>(iVar1,0x4) == param_1->field_004B)) {
       return 0;
     }
   }

@@ -124,7 +124,8 @@ LAB_005215af:
 005215E4  8B 11                     MOV EDX,dword ptr [ECX]
 005215E6  8D 46 18                  LEA EAX,[ESI + 0x18]
 005215E9  50                        PUSH EAX
-005215EA  FF 12                     CALL dword ptr [EDX]
+InfocPanelTy::GetMessage::override::prt_5215ea_74f246b9:
+005215EA  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_005215ec:
 005215EC  85 DB                     TEST EBX,EBX
 005215EE  89 9E 78 01 00 00         MOV dword ptr [ESI + 0x178],EBX
@@ -137,7 +138,8 @@ LAB_005215ec:
 00521614  83 C6 18                  ADD ESI,0x18
 00521617  56                        PUSH ESI
 00521618  8B 11                     MOV EDX,dword ptr [ECX]
-0052161A  FF 12                     CALL dword ptr [EDX]
+InfocPanelTy::GetMessage::override::prt_52161a_74f246b9:
+0052161A  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 0052161C  8B 55 AC                  MOV EDX,dword ptr [EBP + -0x54]
 0052161F  33 C0                     XOR EAX,EAX
 00521621  89 15 F8 8D 85 00         MOV dword ptr [0x00858df8],EDX

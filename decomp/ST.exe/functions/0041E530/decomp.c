@@ -177,15 +177,15 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
   }
   if (SVar2 != MESS_ID_NONE) {
     if (SVar2 == MESS_ID_CREATE) {
-      this_00->field_0219 = 10;
-      this_00->field_0215 = 10;
+      this_00->field_0219 = (STParticleC *)0xa;
+      this_00->field_0215 = (DArrayTy *)0xa;
       this_00->field_021D = 0;
       this_00->field_0221 = 0xffffffff;
       this_00->field_0225 = 0;
       this_00->field_0229 = 0;
       this_00->field_0101 = 0xffffffff;
-      this_00->field_0105 = 0xffffffff;
-      this_00->field_0109 = 0xffffffff;
+      this_00->field_0105 = -1;
+      this_00->field_0109 = -1;
       this_00->field_022D = 0;
       if (this_00->field_002C != 0) {
         if (this_00->field_002C == 1) {
@@ -227,9 +227,9 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
     FreeAndNull(&this_00->field_0x121);
     FreeAndNull(&this_00->field_0x125);
     FreeAndNull(&this_00->field_0x129);
-    iVar6 = this_00->field_0020;
-    if (iVar6 != 0x14) {
-      if (iVar6 == 0x1ae) {
+    uVar7 = this_00->field_0020;
+    if (uVar7 != 0x14) {
+      if (uVar7 == 0x1ae) {
         FreeAndNull(&this_00->field_0x1ad);
         FreeAndNull(&this_00->field_0x1b1);
         FreeAndNull(&this_00->field_0x1c5);
@@ -237,7 +237,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      if (iVar6 != 1000) {
+      if (uVar7 != 1000) {
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -308,46 +308,46 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    if ((DArrayTy *)this_00->field_0171 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0171);
+    if (this_00->field_0171 != nullptr) {
+      DArrayDestroy(this_00->field_0171);
     }
-    if ((DArrayTy *)this_00->field_0175 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0175);
+    if (this_00->field_0175 != nullptr) {
+      DArrayDestroy(this_00->field_0175);
     }
-    if ((DArrayTy *)this_00->field_0179 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0179);
+    if (this_00->field_0179 != nullptr) {
+      DArrayDestroy(this_00->field_0179);
     }
-    if ((DArrayTy *)this_00->field_017D != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_017D);
+    if (this_00->field_017D != nullptr) {
+      DArrayDestroy(this_00->field_017D);
     }
-    if ((DArrayTy *)this_00->field_0181 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0181);
+    if (this_00->field_0181 != nullptr) {
+      DArrayDestroy(this_00->field_0181);
     }
-    this_00->field_0171 = 0;
-    this_00->field_0175 = 0;
-    this_00->field_0179 = 0;
-    this_00->field_017D = 0;
-    this_00->field_0181 = 0;
-    if ((DArrayTy *)this_00->field_015D != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_015D);
+    this_00->field_0171 = nullptr;
+    this_00->field_0175 = nullptr;
+    this_00->field_0179 = nullptr;
+    this_00->field_017D = nullptr;
+    this_00->field_0181 = nullptr;
+    if (this_00->field_015D != nullptr) {
+      DArrayDestroy(this_00->field_015D);
     }
-    if ((DArrayTy *)this_00->field_0161 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0161);
+    if (this_00->field_0161 != nullptr) {
+      DArrayDestroy(this_00->field_0161);
     }
-    if ((DArrayTy *)this_00->field_0165 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0165);
+    if (this_00->field_0165 != nullptr) {
+      DArrayDestroy(this_00->field_0165);
     }
-    if ((DArrayTy *)this_00->field_0169 != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_0169);
+    if (this_00->field_0169 != nullptr) {
+      DArrayDestroy(this_00->field_0169);
     }
-    if ((DArrayTy *)this_00->field_016D != nullptr) {
-      DArrayDestroy((DArrayTy *)this_00->field_016D);
+    if (this_00->field_016D != nullptr) {
+      DArrayDestroy(this_00->field_016D);
     }
-    this_00->field_015D = 0;
-    this_00->field_0161 = 0;
-    this_00->field_0165 = 0;
-    this_00->field_0169 = 0;
-    this_00->field_016D = 0;
+    this_00->field_015D = nullptr;
+    this_00->field_0161 = nullptr;
+    this_00->field_0165 = nullptr;
+    this_00->field_0169 = nullptr;
+    this_00->field_016D = nullptr;
     FreeAndNull(&this_00->field_0x195);
     FreeAndNull(&this_00->field_0x199);
     FreeAndNull(&this_00->field_0x1ad);
@@ -357,9 +357,9 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
-  iVar6 = this_00->field_0020;
-  if ((((iVar6 == 0x14) || (iVar6 == 1000)) || (iVar6 == 0x3e9)) ||
-     ((iVar6 == 0x172 || (iVar6 == 0x1a4)))) {
+  uVar7 = this_00->field_0020;
+  if ((((uVar7 == 0x14) || (uVar7 == 1000)) || (uVar7 == 0x3e9)) ||
+     ((uVar7 == 0x172 || (uVar7 == 0x1a4)))) {
     if (this_00->field_021D == 1) {
       this_00->field_0221 = 2;
     }

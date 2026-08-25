@@ -27,9 +27,9 @@ joined_r0x00679c7c:
           uVar2 = uVar2 - 1;
           if ((int)uVar2 < 0) goto LAB_00679d08;
           iVar5 = STField<int>(this,0x695);
-        } while (((iVar5 == 0) || ((int)uVar2 < 0)) || ((int)*(uint *)(iVar5 + 0xc) <= (int)uVar2));
-        if (uVar2 < *(uint *)(iVar5 + 0xc)) {
-          puVar3 = (undefined4 *)(*(int *)(iVar5 + 8) * uVar2 + *(int *)(iVar5 + 0x1c));
+        } while (((iVar5 == 0) || ((int)uVar2 < 0)) || ((int)STField<uint>(iVar5,0xC) <= (int)uVar2));
+        if (uVar2 < STField<uint>(iVar5,0xC)) {
+          puVar3 = (undefined4 *)(STField<int>(iVar5,0x8) * uVar2 + STField<int>(iVar5,0x1C));
         }
         else {
           puVar3 = nullptr;

@@ -12,12 +12,12 @@ uint __thiscall FUN_0055b9f0(void *this,RecoveredRecord_VisibleClassTy_0055B9F0 
 
   iVar1 = STField<int>(this,0x110);
   uVar4 = 0;
-  uVar2 = *(uint *)(iVar1 + 0xc);
+  uVar2 = STField<uint>(iVar1,0xC);
   if (0 < (int)uVar2) {
     bVar5 = uVar2 != 0;
     do {
       if (bVar5) {
-        pbVar3 = (byte *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c));
+        pbVar3 = (byte *)(STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C));
       }
       else {
         pbVar3 = nullptr;

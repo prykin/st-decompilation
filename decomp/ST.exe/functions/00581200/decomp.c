@@ -235,13 +235,12 @@ cf_break_loop_00581775:
       iVar15 = local_c->field_01FD;
       while (iVar15 = iVar15 + -1, -1 < iVar15) {
         iVar10 = *(int *)(local_c->field_0207 + iVar15 * 4);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (((iVar10 != 0) && (*(int *)(iVar10 + 0x23d) != 0)) &&
-           (((int)*(short *)(iVar10 + 0x47) < (int)local_40 ||
-            (((iVar11 < *(short *)(iVar10 + 0x47) || (*(short *)(iVar10 + 0x49) < local_20)) ||
-             (local_24 < *(short *)(iVar10 + 0x49))))))) {
-          *(undefined4 *)(iVar10 + 0x241) = 0xff;
-          *(undefined4 *)(iVar10 + 0x23d) = 0;
+        if (((iVar10 != 0) && (STField<int>(iVar10,0x23D) != 0)) &&
+           (((int)STField<short>(iVar10,0x47) < (int)local_40 ||
+            (((iVar11 < STField<short>(iVar10,0x47) || (STField<short>(iVar10,0x49) < local_20)) ||
+             (local_24 < STField<short>(iVar10,0x49))))))) {
+          STField<undefined4>(iVar10,0x241) = 0xff;
+          STField<undefined4>(iVar10,0x23D) = 0;
         }
       }
       local_24 = 0;
@@ -257,18 +256,18 @@ cf_break_loop_00581775:
             local_40 = (int *)(local_c->field_0207 + iVar10 * 4);
             do {
               iVar11 = *local_40;
-              if ((iVar11 != 0) && (*(int *)(iVar11 + 0x23d) == 0)) {
-                sVar13 = *(short *)(iVar11 + 0x41) - (short)local_28;
+              if ((iVar11 != 0) && (STField<int>(iVar11,0x23D) == 0)) {
+                sVar13 = STField<short>(iVar11,0x41) - (short)local_28;
                 iVar12 = (int)sVar13;
                 if (sVar13 < 0) {
                   iVar12 = -iVar12;
                 }
-                sVar13 = *(short *)(iVar11 + 0x43) - (short)local_2c;
+                sVar13 = STField<short>(iVar11,0x43) - (short)local_2c;
                 iVar14 = (int)sVar13;
                 if (sVar13 < 0) {
                   iVar14 = -iVar14;
                 }
-                sVar13 = *(short *)(iVar11 + 0x45) - local_8;
+                sVar13 = STField<short>(iVar11,0x45) - local_8;
                 iVar11 = (int)sVar13;
                 if (sVar13 < 0) {
                   iVar11 = -iVar11;
@@ -286,12 +285,12 @@ cf_break_loop_00581775:
             if (local_54 != -1) {
               iVar15 = *(int *)(local_c->field_0207 + local_54 * 4);
               iVar10 = *(int *)(local_c->field_020B + local_24 * 4);
-              if (*(int *)(iVar15 + 0x235) != 2) {
-                uVar5 = *(undefined4 *)(iVar10 + 0x24);
-                *(undefined2 *)(iVar15 + 0x245) = *(undefined2 *)(iVar10 + 0x32);
-                *(undefined4 *)(iVar15 + 0x241) = uVar5;
-                *(undefined4 *)(iVar15 + 0x23d) = 1;
-                *(undefined4 *)(iVar15 + 0x252) = 0;
+              if (STField<int>(iVar15,0x235) != 2) {
+                uVar5 = STField<undefined4>(iVar10,0x24);
+                STField<undefined2>(iVar15,0x245) = STField<undefined2>(iVar10,0x32);
+                STField<undefined4>(iVar15,0x241) = uVar5;
+                STField<undefined4>(iVar15,0x23D) = 1;
+                STField<undefined4>(iVar15,0x252) = 0;
               }
             }
           }

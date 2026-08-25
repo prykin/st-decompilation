@@ -49,7 +49,7 @@ cf_common_exit_005F26AF:
             ((VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar4,
                          &param_6,&param_3), pVVar2 = g_visibleClass_00802A88, -1 < param_6 &&
-             (((param_6 < (int)pVVar1->field_0030 &&
+             (((param_6 < pVVar1->field_0030 &&
                (iVar4 = param_3 + g_centeredOffsets5[0], -1 < iVar4)) &&
               (iVar4 < pVVar1->field_0034)))))) &&
            ((pVVar1->field_004C != nullptr &&
@@ -60,7 +60,7 @@ cf_common_exit_005F26AF:
             (VisibleClassTy::sub_00558C00
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6 + 1,
                         param_2,&param_5,&local_10), pVVar1 = g_visibleClass_00802A88, -1 < param_5)
-            ) && ((param_5 < (int)pVVar2->field_0030 &&
+            ) && ((param_5 < pVVar2->field_0030 &&
                   (((local_10 = local_10 + g_centeredOffsets5[0], -1 < local_10 &&
                     (local_10 < pVVar2->field_0034)) && (pVVar2->field_004C != nullptr)))))) &&
           (((pVVar2->field_004C[param_5 + local_10 * pVVar2->field_0030] == 0 &&
@@ -72,7 +72,7 @@ cf_common_exit_005F26AF:
                    ,&local_18);
         iVar3 = param_1;
         pVVar2 = g_visibleClass_00802A88;
-        if (((((-1 < local_14) && (local_14 < (int)pVVar1->field_0030)) &&
+        if (((((-1 < local_14) && (local_14 < pVVar1->field_0030)) &&
              ((local_18 = local_18 + g_centeredOffsets5[0], iVar6 = iVar3, -1 < local_18 &&
               ((((local_18 < pVVar1->field_0034 && (pVVar1->field_004C != nullptr)) &&
                 (pVVar1->field_004C[local_14 + local_18 * pVVar1->field_0030] == 0)) &&
@@ -81,7 +81,7 @@ cf_common_exit_005F26AF:
             ((VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_1 + 1,
                          iVar4,&param_1,&local_1c), -1 < param_1 &&
-             ((param_1 < (int)pVVar2->field_0030 &&
+             ((param_1 < pVVar2->field_0030 &&
               (local_1c = g_centeredOffsets5[0] + local_1c, -1 < local_1c)))))) &&
            ((local_1c < pVVar2->field_0034 &&
             ((pVVar2->field_004C != nullptr &&

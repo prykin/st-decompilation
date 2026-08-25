@@ -1,4 +1,4 @@
-FUN_004be380:
+TLOBaseTy::sub_004BE380:
 004BE380  56                        PUSH ESI
 004BE381  8B F1                     MOV ESI,ECX
 004BE383  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]

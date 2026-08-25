@@ -42,18 +42,17 @@ void __thiscall CGenerate::sub_00696940(CGenerate *this,int param_1)
           }
           iVar3 = STField<int>(piVar7,0x15);
           local_8 = 0;
-          uVar5 = *(uint *)(iVar3 + 0xc);
+          uVar5 = STField<uint>(iVar3,0xC);
           if (0 < (int)uVar5) {
             do {
               if (local_8 < uVar5) {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                iVar3 = *(int *)(iVar3 + 8) * local_8 + *(int *)(iVar3 + 0x1c);
+                iVar3 = STField<int>(iVar3,0x8) * local_8 + STField<int>(iVar3,0x1C);
               }
               else {
                 iVar3 = 0;
               }
-              iVar4 = *(int *)(iVar3 + 2) / this->field_5833;
-              uVar6 = *(int *)(iVar3 + 2) % this->field_5833;
+              iVar4 = STField<int>(iVar3,0x2) / this->field_5833;
+              uVar6 = STField<int>(iVar3,0x2) % this->field_5833;
               uVar3 = Library::MSVCRT::FUN_0072e6c0();
               uVar5 = uVar3 & 0x80000003;
               if ((int)uVar5 < 0) {
@@ -65,7 +64,7 @@ void __thiscall CGenerate::sub_00696940(CGenerate *this,int param_1)
               }
               local_8 = local_8 + 1;
               iVar3 = STField<int>(piVar7,0x15);
-              uVar5 = *(uint *)(iVar3 + 0xc);
+              uVar5 = STField<uint>(iVar3,0xC);
             } while ((int)local_8 < (int)uVar5);
           }
         }
@@ -81,18 +80,17 @@ void __thiscall CGenerate::sub_00696940(CGenerate *this,int param_1)
              (piVar7 = (int *)((int)&pCVar2->data->field_0000 + pCVar2->elementSize * local_c),
              piVar7 != nullptr)) && (*piVar7 == param_1)) &&
            (iVar3 = STField<int>(piVar7,0x15), iVar3 != 0)) {
-          uVar5 = *(uint *)(iVar3 + 0xc);
+          uVar5 = STField<uint>(iVar3,0xC);
           local_8 = 0;
           if (0 < (int)uVar5) {
             do {
               if (local_8 < uVar5) {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                iVar3 = *(int *)(iVar3 + 8) * local_8 + *(int *)(iVar3 + 0x1c);
+                iVar3 = STField<int>(iVar3,0x8) * local_8 + STField<int>(iVar3,0x1C);
               }
               else {
                 iVar3 = 0;
               }
-              iVar3 = *(int *)(iVar3 + 2);
+              iVar3 = STField<int>(iVar3,0x2);
               iVar4 = this->field_5833;
               local_14 = 0;
               if ((((int)STField<uint>(piVar7,5) < 1) || (2 < (int)STField<uint>(piVar7,5)))
@@ -119,7 +117,7 @@ LAB_00696b1f:
               thunk_FUN_006a0c90(iVar3 % iVar4 + 1,iVar3 / iVar4 + 1,local_14,uVar6,iVar8,1,uVar5);
               iVar3 = STField<int>(piVar7,0x15);
               local_8 = local_8 + 1;
-              uVar5 = *(uint *)(iVar3 + 0xc);
+              uVar5 = STField<uint>(iVar3,0xC);
             } while ((int)local_8 < (int)uVar5);
           }
         }

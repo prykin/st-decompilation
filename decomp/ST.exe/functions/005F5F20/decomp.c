@@ -140,7 +140,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     iVar8 = STBiasedDiv16(iVar2, 200); /* exact signed 16-bit grid-index division */
     local_8->field_0265 = iVar8;
     /* ST_CALLSITE[005F6073]: CALL 0x0040163b; direct=0040163B STColl3C::sub_005FA8B0 */
-    sub_005FA8B0(local_8,&local_8->field_027D,&local_8->field_0281,&local_8->field_0285);
+    sub_005FA8B0(local_8,&local_8->field_027D,&local_8->field_0281,(int *)&local_8->field_0285);
     this_00->field_0269 = 600;
     this_00->field_02DD = CASE_1;
     this_00->field_02E1 = g_playSystem_00802A38->field_00E4 + this_00->field_0259;
@@ -193,7 +193,7 @@ LAB_005f61e2:
 switchD_005f6301_caseD_110:
   piVar3 = (message->arg0).ptr;
   /* ST_CALLSITE[005F6312]: CALL dword ptr [EAX + 0x78] */
-  dVar6 = local_8->slot_78();
+  dVar6 = local_8->sub_005F6EC0();
   if ((int)dVar6 < 1) {
     g_currentExceptionFrame = local_60.previous;
     return 0;

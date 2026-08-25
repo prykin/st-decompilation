@@ -52,13 +52,13 @@ void FUN_006829b0(void)
       thunk_FUN_006802a0(-0x73,PTR_00857528);
     }
     iVar4 = 0;
-    if (0 < *(int *)(iVar1 + 4)) {
+    if (0 < STField<int>(iVar1,0x4)) {
       iVar3 = 0;
       do {
-        thunk_FUN_00682370((undefined4 *)(*(int *)(iVar1 + 8) + iVar3));
+        thunk_FUN_00682370((undefined4 *)(STField<int>(iVar1,0x8) + iVar3));
         iVar4 = iVar4 + 1;
         iVar3 = iVar3 + 5;
-      } while (iVar4 < *(int *)(iVar1 + 4));
+      } while (iVar4 < STField<int>(iVar1,0x4));
       thunk_FUN_006827a0();
       return;
     }

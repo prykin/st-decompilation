@@ -240,7 +240,8 @@ LAB_0058e87e:
 0058E8C5  8B 01                     MOV EAX,dword ptr [ECX]
 0058E8C7  8D 55 D4                  LEA EDX,[EBP + -0x2c]
 0058E8CA  52                        PUSH EDX
-0058E8CB  FF 10                     CALL dword ptr [EAX]
+STSharkC::LifeShark::override::prt_58e8cb_a62677c1:
+0058E8CB  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AF40_F59F8577
 0058E8CD  C7 86 3D 02 00 00 00 00 00 00  MOV dword ptr [ESI + 0x23d],0x0
 0058E8D7  A1 64 67 80 00            MOV EAX,[0x00806764]
 0058E8DC  6A 1D                     PUSH 0x1d

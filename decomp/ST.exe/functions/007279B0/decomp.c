@@ -43,32 +43,32 @@ void __thiscall FUN_007279b0(void *this,int param_1,int param_2,int param_3)
   DAT_008570cc = piVar3[1];
   DAT_008570d0 = piVar3[2];
   _DAT_008570d4 = piVar3[3];
-  iVar4 = *(int *)(iVar2 + 4);
+  iVar4 = STField<int>(iVar2,0x4);
   if (0xfff5 < iVar4) {
     iVar4 = 0xfff6;
   }
   DAT_00857040 = iVar4 * DAT_0085709c;
-  iVar4 = *(int *)(iVar2 + 8);
+  iVar4 = STField<int>(iVar2,0x8);
   if (0xfff5 < iVar4) {
     iVar4 = 0xfff6;
   }
   DAT_00857044 = iVar4 * DAT_0085709c;
-  iVar4 = *(int *)(iVar2 + 0xc);
+  iVar4 = STField<int>(iVar2,0xC);
   if (0xfff5 < iVar4) {
     iVar4 = 0xfff6;
   }
   DAT_00857048 = iVar4 * DAT_0085709c;
-  iVar4 = *(int *)(iVar2 + 0x10);
+  iVar4 = STField<int>(iVar2,0x10);
   if (0xfff5 < iVar4) {
     iVar4 = 0xfff6;
   }
   DAT_0085704c = iVar4 * DAT_0085709c;
-  iVar4 = *(int *)(iVar2 + 0x14);
+  iVar4 = STField<int>(iVar2,0x14);
   if (0xfff5 < iVar4) {
     iVar4 = 0xfff6;
   }
   DAT_00857050 = iVar4 * DAT_0085709c;
-  iVar2 = *(int *)(iVar2 + 0x18);
+  iVar2 = STField<int>(iVar2,0x18);
   if (0xfff5 < iVar2) {
     iVar2 = 0xfff6;
   }

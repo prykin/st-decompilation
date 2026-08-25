@@ -32,7 +32,7 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
   }
   else {
     lVar6 = Library::MSVCRT::__ftol();
-    iVar5 = (int)(short)lVar6;
+    iVar5 = (short)lVar6;
   }
   if (local_c < _DAT_0079034c) {
     lVar6 = Library::MSVCRT::__ftol();
@@ -40,7 +40,7 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
   }
   else {
     lVar6 = Library::MSVCRT::__ftol();
-    param_4 = (int)(short)lVar6;
+    param_4 = (short)lVar6;
   }
   pAVar1 = local_8;
   if ((STField<byte>(this,0x1d1) & 4) != 0) {

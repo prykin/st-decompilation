@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
-   CPanelTy::PaintSMap */
+   CPanelTy::PaintSMap
+
+   [STSwitchEnumApplier] Switch target field_023F uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_023FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
 
@@ -12,7 +16,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   CPanelTy *pCVar3;
   int errorCode;
   uint uVar4;
-  ushort *puVar5;
+  uint puVar5; /* split scalar lifetime from pointer-shaped SSA storage */
   int iVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_EAX;
@@ -65,10 +69,10 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   ST3DSMAPContext::sub_006E6FB0
             (g_sT3DSMAPContext_00807598,(RecoveredSourceFamily_dibcopy *)pCVar3->field_0190,5,7,
              (uint)(pCVar3->field_023F != CASE_2));
-  puVar5 = (ushort *)(g_playSystem_00802A38->field_00E4 * 0x51eb851f);
+  puVar5 = (g_playSystem_00802A38->field_00E4 * 0x51eb851f);
   uVar4 = g_playSystem_00802A38->field_00E4 / 0x19;
   if (300 < uVar4 - DAT_0080c4cf) {
-    puVar5 = (ushort *)thunk_FUN_0056f930((AnonShape_0056F930_C6277D80 *)&DAT_00807620);
+    puVar5 = thunk_FUN_0056f930((AnonShape_0056F930_C6277D80 *)&DAT_00807620);
     DAT_00808794 = puVar5;
     DAT_0080c4cf = uVar4;
   }
@@ -97,8 +101,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       uVar1 = (ulonglong)uVar7 % 0xe10;
       /* ST_CALLSITE[004F8F74]: CALL dword ptr [0x0085bde8] */
       wsprintfA(pcVar10,"%s%02d:%02d",pcVar10,(int)(uVar1 / 0x3c),(int)(uVar1 % 0x3c));
-      puVar5 = (ushort *)
-               ccFntTy::WrTxt(pCVar3->field_01BC,pcVar10,0,0,(uint)(DAT_0080874e == '\x03'),-1,-1);
+      puVar5 = ccFntTy::WrTxt(pCVar3->field_01BC,pcVar10,0,0,(uint)(DAT_0080874e == '\x03'),-1,-1);
     }
     else {
       uVar7 = pCVar3->field_09A0 - *(int *)&g_bulkInitializedRecords_008087C7[uVar4].field_0x35;
@@ -139,25 +142,22 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
         pcVar11 = &pCVar3->field_01E1;
         memmove(pcVar11, pcVar10, uVar4); /* compiler REP MOVS byte copy */
       }
-      puVar5 = (ushort *)
-               ccFntTy::WrTxt(pCVar3->field_01BC,&pCVar3->field_01E1,0,0,
+      puVar5 = ccFntTy::WrTxt(pCVar3->field_01BC,&pCVar3->field_01E1,0,0,
                               (DAT_0080874e == '\x03') + 2,-1,-1);
       if (DAT_0080c4d3 != 2) {
         ccFntTy::WrTxt(pCVar3->field_01CC,&pCVar3->field_01E1,0xd,10,0,-1,-1);
-        puVar5 = (ushort *)
-                 Library::DKW::DDX::FUN_006b3640
+        puVar5 = Library::DKW::DDX::FUN_006b3640
                            ((int *)g_ddxContext_008075A8,pCVar3->field_0174,0xffffffff,
                             pCVar3->field_00EC,pCVar3->field_00F0);
       }
     }
   }
   if ((pCVar3->field_023F != CASE_2) && (puVar5 = pCVar3->field_0148[4], -1 < (int)puVar5)) {
-    puVar5 = (ushort *)
-             Library::DKW::DDX::FUN_006b3640
-                       ((int *)g_ddxContext_008075A8,(uint)puVar5,0xffffffff,pCVar3->field_004C,
+    puVar5 = Library::DKW::DDX::FUN_006b3640
+                       ((int *)g_ddxContext_008075A8,puVar5,0xffffffff,pCVar3->field_004C,
                         pCVar3->field_00A4);
   }
   g_currentExceptionFrame = local_50.previous;
-  return (uint)puVar5;
+  return puVar5;
 }
 

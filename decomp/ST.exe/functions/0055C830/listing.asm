@@ -726,7 +726,8 @@ switchD_0055c862::caseD_d:
 0055CFF2  83 C3 0B                  ADD EBX,0xb
 0055CFF5  53                        PUSH EBX
 0055CFF6  8B 11                     MOV EDX,dword ptr [ECX]
-0055CFF8  FF 12                     CALL dword ptr [EDX]
+FUN_0055c830::override::prt_55cff8_e3dcabdd:
+0055CFF8  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage
 switchD_0055c862::caseD_8:
 0055CFFA  5F                        POP EDI
 0055CFFB  5E                        POP ESI

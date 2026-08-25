@@ -36,7 +36,7 @@ CampaignTy * __cdecl CreateCampaign(void)
       this_00 = (SpriteClassTy *)&this_00[3].field_0048;
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
-    this->vtable = (CampaignTyVTable *)&MMObjTyVTable;
+    this->vtable = (CampaignTyVTable *)&VTable_0079C008;
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */

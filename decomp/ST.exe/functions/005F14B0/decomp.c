@@ -46,8 +46,8 @@ STManBasisC::sub_005F14B0
   local_1a = param_4;
   local_f = DAT_00811788;
   local_17 = g_playSystem_00802A38->field_00E4;
-  local_13 = thunk_FUN_005f1e40((uint)param_4,(int)param_5,(int)(short)(param_1 * 0xc9 + 100),
-                                (int)(short)(param_2 * 0xc9 + 100),(int)(short)(param_3 * 200 + 100)
+  local_13 = thunk_FUN_005f1e40((uint)param_4,(int)param_5,(short)(param_1 * 0xc9 + 100),
+                                (short)(param_2 * 0xc9 + 100),(short)(param_3 * 200 + 100)
                                );
   if (local_13 == nullptr) {
     iVar3 = -1;

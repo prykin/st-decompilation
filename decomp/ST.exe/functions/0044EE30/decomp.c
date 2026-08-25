@@ -228,7 +228,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   int *piVar37;
   AnonShape_0044EE30_F343D8F0 *pAVar38;
   byte *pbVar39;
-  ushort *puVar40;
+  short *psVar40;
   STBoatC_field_06F7State SVar41;
   short sVar42;
   CHAR local_284;
@@ -368,7 +368,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
           local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
           local_9c.arg1.words.high = *(undefined2 *)&pSVar31->field_0xc;
           local_9c.arg1.words.low = *(undefined2 *)&pSVar31->field_0008;
-          /* ST_CALLSITE[0045A8D2]: CALL dword ptr [EDX] */
+          /* ST_CALLSITE[0045A8D2]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
           g_aiBossClass_008117BC->GetMessage(&local_9c);
         }
         if (((g_aiBossClass_008117BC != nullptr) && (pSVar31 != nullptr))
@@ -378,7 +378,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
           local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
           local_9c.arg1.words.high = *(undefined2 *)&pSVar31->field_0xc;
           local_9c.arg1.words.low = *(undefined2 *)&pSVar31->field_0008;
-          /* ST_CALLSITE[0045A923]: CALL dword ptr [EDX] */
+          /* ST_CALLSITE[0045A923]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
           g_aiBossClass_008117BC->GetMessage(&local_9c);
         }
       }
@@ -441,10 +441,10 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       sub_004952E0(this_00);
       /* ST_CALLSITE[0045AAC8]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat */
       STAllPlayersC::DeleteGuardBoat
-                (g_allPlayers_007FA174,*(char *)&this_00->field_0024,this_00->field_0032,1);
+                (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0032,1);
       /* ST_CALLSITE[0045AADD]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat */
       STAllPlayersC::DeleteGuardBoat
-                (g_allPlayers_007FA174,*(char *)&this_00->field_0024,this_00->field_0032,0);
+                (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0032,0);
       /* ST_CALLSITE[0045AAE4]: CALL 0x004027ca; direct=004027CA STBoatC::sub_00492420 */
       sub_00492420(this_00);
       thunk_FUN_004924a0(this_00);
@@ -490,11 +490,10 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
                           (short)this_00->field_0018));
       this_00->field_0826 = pSVar31->field_0008;
       /* ST_CALLSITE[0045AC36]: CALL dword ptr [EAX + 0x2c] */
-      dVar15 = this_00->slot_2C();
+      dVar15 = this_00->sub_0045EEE0();
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(extraout_ECX_00), (uint8_t)(*(undefined1 *)&this_00->field_0024)),dVar15);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (this_00->field_0024 == (uint)*(byte *)(this_00->field_0010 + 0x112d)) {
+      if (this_00->field_0024 == (uint)(byte)this_00->field_0010->field_112D) {
         thunk_FUN_004d8b70((char)this_00->field_0024);
       }
       if (pSVar31->field_0018 != 2) {
@@ -515,7 +514,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
         STT3DSprC::StopShow((STT3DSprC *)puVar21,8);
         /* ST_CALLSITE[0045ACB5]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)puVar21,0xb);
-        this_01 = thunk_FUN_0042b760(*(char *)&this_00->field_0024,this_00->field_0030);
+        this_01 = thunk_FUN_0042b760((char)this_00->field_0024,this_00->field_0030);
         pSVar31 = local_1c;
         if (this_01 != nullptr) {
           /* ST_CALLSITE[0045ACDC]: CALL dword ptr [EDX + 0x8] */
@@ -580,14 +579,14 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
     uVar2 = this_00->field_0061;
     uVar3 = this_00->field_0062;
     puVar33 = this_00->field_05A6 + 0x1a;
-    puVar40 = &this_00->field_0034;
+    psVar40 = &this_00->field_0034;
     for (iVar30 = 0x17; iVar30 != 0; iVar30 = iVar30 + -1) {
-      *(undefined4 *)puVar40 = *(undefined4 *)puVar33;
+      *(undefined4 *)psVar40 = *(undefined4 *)puVar33;
       puVar33 = puVar33 + 2;
-      puVar40 = puVar40 + 2;
+      psVar40 = psVar40 + 2;
     }
-    *puVar40 = *puVar33;
-    ((char *)puVar40)[1] = (char)puVar33[1];
+    *psVar40 = *puVar33;
+    ((char *)psVar40)[1] = (char)puVar33[1];
     this_00->field_0076 = 0;
     this_00->field_006E = 0x2f;
     this_00->field_0061 = uVar2;
@@ -714,7 +713,7 @@ LAB_00459e30:
         *(int *)pSVar31 = *(int *)pSVar31 - iVar30;
       }
       /* ST_CALLSITE[00459E45]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-      uVar15 = LookupRecordByte(*(char *)&this_00->field_0024);
+      uVar15 = LookupRecordByte((char)this_00->field_0024);
       uVar15 = (int)(byte)uVar15;
       if (uVar15 == 1) {
         iVar30 = this_00->field_0024;
@@ -792,7 +791,7 @@ LAB_00459eaa:
       return 0;
     }
     /* ST_CALLSITE[00459D62]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-    local_EAX_44850 = LookupRecordByte(*(char *)&this_00->field_0024);
+    local_EAX_44850 = LookupRecordByte((char)this_00->field_0024);
     local_EAX_44850 = (int)(byte)local_EAX_44850;
     if (local_EAX_44850 == 1) {
       iVar30 = this_00->field_0024;
@@ -845,7 +844,7 @@ LAB_00459f59:
       local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
       local_9c.arg1.words.high = (short)STField<int>(pSVar31,0xc);
       local_9c.arg1.words.low = (short)STField<int>(pSVar31,8);
-      /* ST_CALLSITE[0045A010]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[0045A010]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
       iVar30 = g_aiBossClass_008117BC->GetMessage(&local_9c);
       uVar25 = (undefined2)((uint)iVar30 >> 0x10);
     }
@@ -857,7 +856,7 @@ LAB_00459f59:
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
         local_9c.arg1.words.high = (short)STField<int>(pSVar31,0xc);
         local_9c.arg1.words.low = (short)STField<int>(pSVar31,8);
-        /* ST_CALLSITE[0045A06D]: CALL dword ptr [EDX] */
+        /* ST_CALLSITE[0045A06D]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
         g_aiBossClass_008117BC->GetMessage(&local_9c);
       }
       this_00->field_02C0 = 1;
@@ -1012,10 +1011,10 @@ LAB_00459f59:
       sub_004952E0(this_00);
       /* ST_CALLSITE[0045A2BF]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat */
       STAllPlayersC::DeleteGuardBoat
-                (g_allPlayers_007FA174,*(char *)&this_00->field_0024,this_00->field_0032,1);
+                (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0032,1);
       /* ST_CALLSITE[0045A2D4]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat */
       STAllPlayersC::DeleteGuardBoat
-                (g_allPlayers_007FA174,*(char *)&this_00->field_0024,this_00->field_0032,0);
+                (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0032,0);
       /* ST_CALLSITE[0045A2DB]: CALL 0x004027ca; direct=004027CA STBoatC::sub_00492420 */
       sub_00492420(this_00);
       if (this_00->field_07CA != nullptr) {
@@ -1164,7 +1163,7 @@ LAB_00459f59:
     TLOBaseTy::sub_0041D590((TLOBaseTy *)this_00);
     /* ST_CALLSITE[004503B2]: CALL 0x00405952; direct=00405952 sub_004167A0 */
     sub_004167A0(this_00);
-    pSVar21_mg4 = thunk_FUN_0042b760(*(char *)&this_00->field_0024,this_00->field_0030);
+    pSVar21_mg4 = thunk_FUN_0042b760((char)this_00->field_0024,this_00->field_0030);
     if (pSVar21_mg4 != nullptr) {
       thunk_FUN_0040cdb0(pSVar21_mg4,(uint)(ushort)this_00->field_0032);
     }
@@ -1174,7 +1173,7 @@ LAB_00459f59:
     /* ST_CALLSITE[0045042A]: CALL 0x004020ae; direct=004020AE STAllPlayersC::UnRegisterObject */
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::UnRegisterObject
-              (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
+              (g_allPlayers_007FA174,(char)this_00->field_0024,
                STReplaceLowWord((uint32_t)(uVar18), (uint16_t)(this_00->field_0030)),
                CONCAT22(extraout_var_06,this_00->field_0032),(int *)this_00,this_00->field_0826);
     thunk_FUN_00489950((int)this_00);
@@ -1217,14 +1216,14 @@ LAB_0045048a:
         if (((this_00->field_045D != CASE_16) &&
             /* ST_CALLSITE[0045061A]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
             (local_EAX_6122 = CheckPBoxCmd(this_00,CASE_16), local_EAX_6122 == 0)) &&
-           ((short)g_packedRecords_A62x8[*(char *)&this_00->field_0024].field95_0x15f != 0)) {
+           ((short)g_packedRecords_A62x8[(char)this_00->field_0024].field95_0x15f != 0)) {
           pDVar20 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
           Library::DKW::TBL::DArrayAppend(pDVar20,&this_00->field_0032);
           /* ST_CALLSITE[00450662]: CALL 0x0040178f; direct=0040178F STAllPlayersC::AddObjsToGroup */
           STAllPlayersC::AddObjsToGroup
-                    (g_allPlayers_007FA174,*(char *)&this_00->field_0024,0xfffe,pDVar20,local_60);
+                    (g_allPlayers_007FA174,(char)this_00->field_0024,0xfffe,pDVar20,local_60);
           DArrayDestroy(pDVar20);
-          pSVar21_mg5 = thunk_FUN_0042b760(*(char *)&this_00->field_0024,local_60[0]);
+          pSVar21_mg5 = thunk_FUN_0042b760((char)this_00->field_0024,local_60[0]);
           uVar25 = SUB42(local_b4,0);
           local_b4[0] = 1;
           pSVar26 = pSVar21_mg5->vtable;
@@ -1235,14 +1234,14 @@ LAB_0045048a:
       else if (((this_00->field_045D != CASE_4) &&
                /* ST_CALLSITE[0045057F]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
                (local_EAX_5967 = CheckPBoxCmd(this_00,CASE_4), local_EAX_5967 == 0)) &&
-              ((short)g_packedRecords_A62x8[*(char *)&this_00->field_0024].field94_0x15b != 0)) {
+              ((short)g_packedRecords_A62x8[(char)this_00->field_0024].field94_0x15b != 0)) {
         pDVar20 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
         Library::DKW::TBL::DArrayAppend(pDVar20,&this_00->field_0032);
         /* ST_CALLSITE[004505CF]: CALL 0x0040178f; direct=0040178F STAllPlayersC::AddObjsToGroup */
         STAllPlayersC::AddObjsToGroup
-                  (g_allPlayers_007FA174,*(char *)&this_00->field_0024,0xfffe,pDVar20,local_50);
+                  (g_allPlayers_007FA174,(char)this_00->field_0024,0xfffe,pDVar20,local_50);
         DArrayDestroy(pDVar20);
-        pSVar21_mg5 = thunk_FUN_0042b760(*(char *)&this_00->field_0024,local_50[0]);
+        pSVar21_mg5 = thunk_FUN_0042b760((char)this_00->field_0024,local_50[0]);
         uVar25 = SUB42(&local_a8,0);
         local_a8 = 1;
         local_a4 = 0;
@@ -1253,7 +1252,7 @@ LAB_00450695:
         (*pSVar26->sub_00498D20)(pSVar21_mg5,uVar28,uVar25);
       }
     }
-    local_1c = thunk_FUN_0042b760(*(char *)&this_00->field_0024,this_00->field_0030);
+    local_1c = thunk_FUN_0042b760((char)this_00->field_0024,this_00->field_0030);
     uVar17 = this_00->field_07AA + 1;
     this_00->field_07AA = uVar17;
     switch(this_00->field_06F7) {
@@ -1412,7 +1411,7 @@ joined_r0x00450a10:
         local_100 = this_00->field_0772;
         local_f4 = 1;
         local_9c.id = MESS_TORPHIT;
-        /* ST_CALLSITE[00450B38]: CALL dword ptr [EAX] */
+        /* ST_CALLSITE[00450B38]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/STBoatC;pointer:/SubmarineTitans/Recovered/STMessage */
         this_00->GetMessage(&local_9c);
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         uVar17 = extraout_EDX_05;
@@ -1543,10 +1542,9 @@ LAB_00450e28:
       STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,8,g_playSystem_00802A38->field_00E4);
       this_00->field_0455 = 1;
       /* ST_CALLSITE[00450E56]: CALL dword ptr [EDX + 0x2c] */
-      dVar15 = this_00->slot_2C();
+      dVar15 = this_00->sub_0045EEE0();
       thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(dVar15), (uint8_t)(*(undefined1 *)&this_00->field_0024)),dVar15);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar17 = (uint)*(byte *)(this_00->field_0010 + 0x112d);
+      uVar17 = (uint)(byte)this_00->field_0010->field_112D;
       if (this_00->field_0024 == uVar17) {
         thunk_FUN_004d8b70((char)this_00->field_0024);
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -6924,9 +6922,8 @@ LAB_0045910d:
            ((uVar17 = this_00->field_00C3 - (int)this_00->field_005F, uVar27 = (int)uVar17 >> 0x1f,
             (int)((uVar17 ^ uVar27) - uVar27) < 2 &&
             /* ST_CALLSITE[004591FD]: CALL dword ptr [EDX + 0x18] */
-            (iVar30 = this_00->vfunc_18(*(short *)&this_00->field_00BB,
-                                 *(short *)&this_00->field_00BF,*(short *)&this_00->field_00C3),
-            iVar30 == 0)))) {
+            (iVar30 = this_00->vfunc_18((short)this_00->field_00BB,(short)this_00->field_00BF,
+                                 (short)this_00->field_00C3), iVar30 == 0)))) {
           this_00->field_045D = CASE_3;
           /* ST_CALLSITE[0045920D]: CALL 0x00403a2b; direct=00403A2B STBoatC::Defence */
           local_EAX_41949 = Defence(this_00,0);
@@ -7035,13 +7032,13 @@ LAB_0045910d:
         g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      pAVar22 = thunk_FUN_004357f0(*(char *)&this_00->field_0024);
+      pAVar22 = thunk_FUN_004357f0((char)this_00->field_0024);
       if (pAVar22 != nullptr) {
         local_9c.id = MESS_AIPLRCLASSTY_5D94;
         local_9c.arg0.words.high = this_00->field_0032;
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
         local_9c.arg1 = (STMessageArg)this_00->field_0018;
-        /* ST_CALLSITE[004596B2]: CALL dword ptr [EDX] */
+        /* ST_CALLSITE[004596B2]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiPlrClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
         pAVar22->GetMessage(&local_9c);
       }
       this_00->field_045D = CASE_3;
@@ -7456,13 +7453,13 @@ LAB_0045910d:
         g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      pAVar22 = thunk_FUN_004357f0(*(char *)&this_00->field_0024);
+      pAVar22 = thunk_FUN_004357f0((char)this_00->field_0024);
       if (pAVar22 != nullptr) {
         local_9c.id = MESS_AIPLRCLASSTY_5D94;
         local_9c.arg0.words.high = this_00->field_0032;
         local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
         local_9c.arg1 = (STMessageArg)this_00->field_0018;
-        /* ST_CALLSITE[00459A1F]: CALL dword ptr [EDX] */
+        /* ST_CALLSITE[00459A1F]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiPlrClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
         pAVar22->GetMessage(&local_9c);
       }
       this_00->field_045D = CASE_3;
@@ -7517,9 +7514,9 @@ cf_error_exit_0045AEE3:
   thunk_FUN_00417a00(this_00,0);
   if (*(int *)&local_1c->field_0xc == 0) {
     dVar15 = (message->arg0).u32;
-    this_00->field_06F3 = *(STBoatC_field_06F3State *)(dVar15 + 0x14);
-    this_00->field_06F7 = *(STBoatC_field_06F7State *)(dVar15 + 0x18);
-    iVar14 = *(int *)(dVar15 + 0x2a);
+    this_00->field_06F3 = STField<STBoatC_field_06F3State>(dVar15,0x14);
+    this_00->field_06F7 = STField<STBoatC_field_06F7State>(dVar15,0x18);
+    iVar14 = STField<int>(dVar15,0x2A);
     if (iVar14 < 0) {
       this_00->field_07D6 = 0;
     }
@@ -7529,7 +7526,7 @@ cf_error_exit_0045AEE3:
     else {
       this_00->field_07D6 = 0x28;
     }
-    iVar14 = *(int *)(dVar15 + 0x2e);
+    iVar14 = STField<int>(dVar15,0x2E);
     if (iVar14 < 0) {
       this_00->field_07DA = 0;
     }
@@ -7561,11 +7558,11 @@ cf_error_exit_0045AEE3:
     case CASE_23:
       this_00->field_0722 = 0x14;
     }
-    sVar42 = *(short *)(dVar15 + 0x1c);
+    sVar42 = STField<short>(dVar15,0x1C);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c = CONCAT22((short)(this_00->field_06F7 - CASE_16 >> 0x10),sVar42);
-    sVar4 = *(short *)(dVar15 + 0x20);
-    sVar5 = *(short *)(dVar15 + 0x1e);
+    sVar4 = STField<short>(dVar15,0x20);
+    sVar5 = STField<short>(dVar15,0x1E);
     if (((sVar42 < 0) || (g_worldGrid.sizeX <= sVar42)) ||
        ((sVar5 < 0 ||
         (((g_worldGrid.sizeY <= sVar5 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)))))) {
@@ -7597,12 +7594,12 @@ cf_error_exit_0045AEE3:
                   (this_00->field_0211,this_00->field_01ED,*(int *)&local_10->field_0x1ed);
       }
     }
-    this_00->field_06FB = *(undefined4 *)(dVar15 + 0x36);
-    this_00->field_06FF = *(undefined4 *)(dVar15 + 0x3a);
-    this_00->field_0703 = *(undefined4 *)(dVar15 + 0x3e);
-    this_00->field_0707 = *(undefined2 *)(dVar15 + 0x42);
-    this_00->field_0709 = ((undefined1 *)dVar15)[0x44];
-    this_00->field_073E = *(undefined4 *)(dVar15 + 0x32);
+    this_00->field_06FB = STField<undefined4>(dVar15,0x36);
+    this_00->field_06FF = STField<undefined4>(dVar15,0x3A);
+    this_00->field_0703 = STField<undefined4>(dVar15,0x3E);
+    this_00->field_0707 = STField<undefined2>(dVar15,0x42);
+    this_00->field_0709 = STField<undefined1>(dVar15,0x44);
+    this_00->field_073E = STField<undefined4>(dVar15,0x32);
     if (local_10 == nullptr) {
       this_00->field_0076 = 1;
       uVar17 = this_00->field_001C * 0x41c64e6d + 0x3039;
@@ -7620,10 +7617,10 @@ cf_error_exit_0045AEE3:
       }
     }
     thunk_FUN_00416390((AnonShape_00416390_86C8F938 *)this_00);
-    this_00->field_00E3 = 0;
+    this_00->field_00E3 = '\0';
     /* ST_CALLSITE[0044F191]: CALL 0x00404796; direct=00404796 STBoatC::_SetSpeedFireLife */
     _SetSpeedFireLife(this_00);
-    iVar14 = *(int *)(dVar15 + 0x26);
+    iVar14 = STField<int>(dVar15,0x26);
     if (iVar14 < 0) {
       this_00->field_0716 = 1;
     }
@@ -7640,12 +7637,12 @@ cf_error_exit_0045AEE3:
     thunk_FUN_0048a840((AnonShape_0048A840_34A87A21 *)this_00);
     if ((((local_10 == nullptr) || (SVar41 = this_00->field_06F7, SVar41 == CASE_7)) ||
         (SVar41 == CASE_13)) || (SVar41 == CASE_1B)) {
-      thunk_FUN_00417a20(this_00,*(short *)(dVar15 + 0x1c),*(short *)(dVar15 + 0x1e),
-                         *(short *)(dVar15 + 0x20),1);
+      thunk_FUN_00417a20(this_00,STField<short>(dVar15,0x1C),STField<short>(dVar15,0x1E),
+                         STField<short>(dVar15,0x20),1);
     }
     else {
-      thunk_FUN_00417a20(this_00,*(short *)(dVar15 + 0x1c),*(short *)(dVar15 + 0x1e),
-                         *(short *)(dVar15 + 0x20),0);
+      thunk_FUN_00417a20(this_00,STField<short>(dVar15,0x1C),STField<short>(dVar15,0x1E),
+                         STField<short>(dVar15,0x20),0);
       this_00->field_0041 = *(short *)&local_10->field_0x41;
       this_00->field_0043 = *(short *)&local_10->field_0x43;
       this_00->field_0045 = *(short *)&local_10->field_0x45;
@@ -7677,10 +7674,10 @@ cf_error_exit_0045AEE3:
     /* ST_CALLSITE[0044F2C8]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject */
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterObject
-              (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
-               CONCAT22(uVar28,*(undefined2 *)(dVar15 + 0x24)),
-               CONCAT22(uVar25,*(undefined2 *)(dVar15 + 0x22)),(int *)this_00,1,
-               *(int *)(dVar15 + 0x49));
+              (g_allPlayers_007FA174,(char)this_00->field_0024,
+               CONCAT22(uVar28,STField<undefined2>(dVar15,0x24)),
+               CONCAT22(uVar25,STField<undefined2>(dVar15,0x22)),(int *)this_00,1,
+               STField<int>(dVar15,0x49));
     this_00->field_0487 = 0xffffffff;
     this_00->field_048B = 0xffff;
     this_00->field_0814 = this_00->field_0816 * 0xc9;
@@ -7707,10 +7704,9 @@ cf_error_exit_0045AEE3:
     this_00->field_001C = uVar17;
     local_d4 = (uVar17 >> 0x10) % 0x13;
     /* ST_CALLSITE[0044F3C7]: CALL dword ptr [EDX + 0x2c] */
-    dVar15 = this_00->slot_2C();
+    dVar15 = this_00->sub_0045EEE0();
     thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(dVar15), (uint8_t)(*(undefined1 *)&this_00->field_0024)),dVar15);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (this_00->field_0024 == (uint)*(byte *)(this_00->field_0010 + 0x112d)) {
+    if (this_00->field_0024 == (uint)(byte)this_00->field_0010->field_112D) {
       thunk_FUN_004d8b70((char)this_00->field_0024);
     }
     switch(this_00->field_06F7) {
@@ -7738,14 +7734,14 @@ cf_error_exit_0045AEE3:
   }
   if (*(int *)&local_1c->field_0xc == 1) {
     dVar15 = (message->arg0).u32;
-    this_00->field_06F3 = *(STBoatC_field_06F3State *)(dVar15 + 0x14);
-    this_00->field_06F7 = *(STBoatC_field_06F7State *)(dVar15 + 0x18);
-    this_00->field_06FB = *(undefined4 *)(dVar15 + 0x32);
-    this_00->field_06FF = *(undefined4 *)(dVar15 + 0x36);
-    this_00->field_0703 = *(undefined4 *)(dVar15 + 0x3a);
-    this_00->field_0707 = *(undefined2 *)(dVar15 + 0x3e);
-    this_00->field_0709 = ((undefined1 *)dVar15)[0x40];
-    this_00->field_081E = *(undefined4 *)(dVar15 + 0x41);
+    this_00->field_06F3 = STField<STBoatC_field_06F3State>(dVar15,0x14);
+    this_00->field_06F7 = STField<STBoatC_field_06F7State>(dVar15,0x18);
+    this_00->field_06FB = STField<undefined4>(dVar15,0x32);
+    this_00->field_06FF = STField<undefined4>(dVar15,0x36);
+    this_00->field_0703 = STField<undefined4>(dVar15,0x3A);
+    this_00->field_0707 = STField<undefined2>(dVar15,0x3E);
+    this_00->field_0709 = STField<undefined1>(dVar15,0x40);
+    this_00->field_081E = STField<undefined4>(dVar15,0x41);
     switch(this_00->field_06F7) {
     case CASE_16:
     case CASE_25:
@@ -7765,19 +7761,19 @@ cf_error_exit_0045AEE3:
     this_00->field_0076 = 1;
     this_00->field_006E = 0;
     thunk_FUN_00416390((AnonShape_00416390_86C8F938 *)this_00);
-    this_00->field_00E3 = 0;
+    this_00->field_00E3 = '\0';
     /* ST_CALLSITE[0044F545]: CALL 0x00404796; direct=00404796 STBoatC::_SetSpeedFireLife */
     _SetSpeedFireLife(this_00);
     thunk_FUN_0048a910((AnonShape_0048A910_6D6DD7B1 *)this_00);
     thunk_FUN_0048a840((AnonShape_0048A840_34A87A21 *)this_00);
-    thunk_FUN_00495ff0(*(short *)(dVar15 + 0x1c),*(short *)(dVar15 + 0x1e),*(short *)(dVar15 + 0x20)
+    thunk_FUN_00495ff0(STField<short>(dVar15,0x1C),STField<short>(dVar15,0x1E),STField<short>(dVar15,0x20)
                        ,this_00->field_008E,(AnonShape_00495FF0_59081BDD *)this_00);
-    this_00->field_0047 = *(short *)(dVar15 + 0x1c);
-    this_00->field_0041 = *(short *)(dVar15 + 0x22);
-    this_00->field_0049 = *(short *)(dVar15 + 0x1e);
-    this_00->field_0043 = *(short *)(dVar15 + 0x24);
-    this_00->field_004B = *(short *)(dVar15 + 0x20);
-    this_00->field_0045 = *(short *)(dVar15 + 0x26);
+    this_00->field_0047 = STField<short>(dVar15,0x1C);
+    this_00->field_0041 = STField<short>(dVar15,0x22);
+    this_00->field_0049 = STField<short>(dVar15,0x1E);
+    this_00->field_0043 = STField<short>(dVar15,0x24);
+    this_00->field_004B = STField<short>(dVar15,0x20);
+    this_00->field_0045 = STField<short>(dVar15,0x26);
     /* ST_CALLSITE[0044F5CF]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
     DumpClassC::WritePtr
               (this_00->field_0047,this_00->field_0049,this_00->field_004B,this_00->field_008E,
@@ -7792,24 +7788,24 @@ cf_error_exit_0045AEE3:
     uVar18 = thunk_FUN_00417ee0(this_00,0x5a);
     /* ST_CALLSITE[0044F611]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject */
     STAllPlayersC::RegisterObject
-              (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
-               STReplaceLowWord((uint32_t)(uVar18), (uint16_t)(*(undefined2 *)(dVar15 + 0x2a))),0xffff,
+              (g_allPlayers_007FA174,(char)this_00->field_0024,
+               STReplaceLowWord((uint32_t)(uVar18), (uint16_t)(STField<undefined2>(dVar15,0x2A))),0xffff,
                (int *)this_00,0,0);
     this_00->field_045D = CASE_13;
-    this_00->field_0510 = *(undefined2 *)(dVar15 + 0x1c);
-    this_00->field_0512 = *(undefined2 *)(dVar15 + 0x1e);
-    this_00->field_0514 = *(undefined2 *)(dVar15 + 0x20);
-    this_00->field_0516 = *(undefined2 *)(dVar15 + 0x22);
-    this_00->field_0518 = *(undefined2 *)(dVar15 + 0x24);
-    this_00->field_051A = *(undefined2 *)(dVar15 + 0x26);
-    this_00->field_051C = *(short *)(dVar15 + 0x2c);
-    this_00->field_051E = *(short *)(dVar15 + 0x2e);
-    this_00->field_0520 = *(short *)(dVar15 + 0x30);
+    this_00->field_0510 = STField<undefined2>(dVar15,0x1C);
+    this_00->field_0512 = STField<undefined2>(dVar15,0x1E);
+    this_00->field_0514 = STField<undefined2>(dVar15,0x20);
+    this_00->field_0516 = STField<undefined2>(dVar15,0x22);
+    this_00->field_0518 = STField<undefined2>(dVar15,0x24);
+    this_00->field_051A = STField<undefined2>(dVar15,0x26);
+    this_00->field_051C = STField<short>(dVar15,0x2C);
+    this_00->field_051E = STField<short>(dVar15,0x2E);
+    this_00->field_0520 = STField<short>(dVar15,0x30);
     local_10 = (STFishC *)
                /* ST_CALLSITE[0044F694]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                STAllPlayersC::GetObjPtr
-                         (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
-                          *(ushort *)(dVar15 + 0x28),CASE_1);
+                         (g_allPlayers_007FA174,(char)this_00->field_0024,
+                          STField<ushort>(dVar15,0x28),CASE_1);
     if ((STGameObjC *)local_10 == nullptr) {
       this_00->field_0524 = 0;
     }
@@ -7821,12 +7817,11 @@ cf_error_exit_0045AEE3:
               (this_00->field_0211,this_00->field_01ED,((STGameObjC *)local_10)->field_01ED);
     local_d4 = DAT_008073fc * 5;
     /* ST_CALLSITE[0044F6E5]: CALL dword ptr [EAX + 0x2c] */
-    dVar19 = this_00->slot_2C();
+    dVar19 = this_00->sub_0045EEE0();
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&this_00->field_0024))
                        ,dVar19);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (this_00->field_0024 == (uint)*(byte *)(this_00->field_0010 + 0x112d)) {
+    if (this_00->field_0024 == (uint)(byte)this_00->field_0010->field_112D) {
       thunk_FUN_004d8b70((char)this_00->field_0024);
     }
     switch(this_00->field_06F7) {
@@ -7855,9 +7850,9 @@ cf_error_exit_0045AEE3:
       local_9c.id = MESS_AIBOSSCLASSTY_5DD0;
       local_9c.arg0.words.high = this_00->field_0032;
       local_9c.arg0.words.low = *(undefined2 *)&this_00->field_0024;
-      local_9c.arg1.words.high = *(undefined2 *)(dVar15 + 0x28);
+      local_9c.arg1.words.high = STField<undefined2>(dVar15,0x28);
       local_9c.arg1.words.low = *(undefined2 *)&this_00->field_0024;
-      /* ST_CALLSITE[0044F7E5]: CALL dword ptr [EAX] */
+      /* ST_CALLSITE[0044F7E5]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
       g_aiBossClass_008117BC->GetMessage(&local_9c);
     }
     switch(this_00->field_06F7) {
@@ -8011,18 +8006,18 @@ cf_error_exit_0045AEE3:
     /* ST_CALLSITE[0044FA53]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
     STT3DSprC::RestoreSpr
               ((STT3DSprC *)&this_00->field_01D5,(int *)&local_d0,
-               (AnonShape_004AD790_77673787 *)(*(int *)(iVar14 + 0x5f6) + iVar14));
+               (AnonShape_004AD790_77673787 *)(STField<int>(iVar14,0x5F6) + iVar14));
     FreeAndNull(&local_d0);
     /* ST_CALLSITE[0044FA6F]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
     STAllPlayersC::RestoreGObjData
-              ((STAllPlayersC *)this_00,(undefined4 *)(*(int *)(iVar14 + 0x5fe) + iVar14));
+              ((STAllPlayersC *)this_00,(undefined4 *)(STField<int>(iVar14,0x5FE) + iVar14));
     /* ST_CALLSITE[0044FA77]: CALL 0x0040333c; direct=0040333C STBoatC::RestoreBoatData */
     RestoreBoatData(this_00,iVar14);
     this_00->field_05A6 = nullptr;
     /* ST_CALLSITE[0044FA9A]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject */
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::RegisterObject
-              (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
+              (g_allPlayers_007FA174,(char)this_00->field_0024,
                CONCAT22(extraout_var_03,this_00->field_0030),
                CONCAT22(extraout_var,this_00->field_0032),(int *)this_00,1,0);
     if ((this_00->field_045D != CASE_14) || (this_00->field_05C0 != 3)) {
@@ -8469,8 +8464,7 @@ LAB_00450050:
   }
   if (*(int *)&local_1c->field_0xc == 0) {
     local_78 = (message->arg0).u32;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)(local_78 + 0x45) == 1) {
+    if (STField<int>(local_78,0x45) == 1) {
       /* ST_CALLSITE[004501D7]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar30 = STT3DSprC::LoadSequence
                          ((STT3DSprC *)puVar21,0xb,PTR_00806774,"forcef0",CASE_1D);
@@ -8484,8 +8478,7 @@ LAB_00450050:
       /* ST_CALLSITE[00450226]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)puVar21,0xb,g_playSystem_00802A38->field_00E4);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)(local_78 + 0x45) == 3) {
+    if (STField<int>(local_78,0x45) == 3) {
       thunk_FUN_006377b0(this_00->field_01ED,1,-1,-1,-1,0x12);
     }
   }
@@ -8506,9 +8499,8 @@ LAB_00450268:
       RaiseInternalException
                 (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x336);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     Library::Ourlib::ST3DSMAP::SprSetLevAfter
-              (this_00->field_0211,this_00->field_01ED,*(int *)(local_30 + 0x1ed));
+              (this_00->field_0211,this_00->field_01ED,STField<int>(local_30,0x1ED));
   }
   if ((this_00->field_045D == CASE_F) && (this_00->field_0596 == CASE_3)) {
     iVar30_mg4C = STPlaySystemC::sub_006E62D0
@@ -8524,9 +8516,8 @@ LAB_00450268:
       RaiseInternalException
                 (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x33d);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     Library::Ourlib::ST3DSMAP::SprSetLevAfter
-              (this_00->field_0211,this_00->field_01ED,*(int *)(local_30 + 0x1ed));
+              (this_00->field_0211,this_00->field_01ED,STField<int>(local_30,0x1ED));
     g_currentExceptionFrame = local_184.previous;
     return 0;
   }

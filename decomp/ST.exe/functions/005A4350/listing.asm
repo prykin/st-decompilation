@@ -150,7 +150,8 @@ LAB_005a4565:
 005A4567  8D 8D 68 FE FF FF         LEA ECX,[EBP + 0xfffffe68]
 005A456D  51                        PUSH ECX
 005A456E  8B CB                     MOV ECX,EBX
-005A4570  FF 10                     CALL dword ptr [EAX]
+FSGSTy::GetMessage::override::prt_5a4570_e3dcabdd:
+005A4570  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage
 005A4572  E9 30 47 00 00            JMP 0x005a8ca7
 switchD_005a4472::caseD_6150:
 005A4577  80 BB 5F 1A 00 00 01      CMP byte ptr [EBX + 0x1a5f],0x1
@@ -239,7 +240,8 @@ LAB_005a468f:
 005A4691  8D 8D A4 FE FF FF         LEA ECX,[EBP + 0xfffffea4]
 005A4697  51                        PUSH ECX
 005A4698  8B CB                     MOV ECX,EBX
-005A469A  FF 10                     CALL dword ptr [EAX]
+FSGSTy::GetMessage::override::prt_5a469a_e3dcabdd:
+005A469A  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage
 005A469C  E9 06 46 00 00            JMP 0x005a8ca7
 LAB_005a46a1:
 005A46A1  80 BB 5F 1A 00 00 01      CMP byte ptr [EBX + 0x1a5f],0x1
@@ -558,7 +560,8 @@ LAB_005a4b53:
 005A4B5D  8B 03                     MOV EAX,dword ptr [EBX]
 005A4B5F  51                        PUSH ECX
 005A4B60  8B CB                     MOV ECX,EBX
-005A4B62  FF 10                     CALL dword ptr [EAX]
+FSGSTy::GetMessage::override::prt_5a4b62_e3dcabdd:
+005A4B62  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/FSGSTy;pointer:/SubmarineTitans/Recovered/STMessage
 005A4B64  E9 3E 41 00 00            JMP 0x005a8ca7
 switchD_005a47af::caseD_6155:
 005A4B69  80 BB 5F 1A 00 00 04      CMP byte ptr [EBX + 0x1a5f],0x4

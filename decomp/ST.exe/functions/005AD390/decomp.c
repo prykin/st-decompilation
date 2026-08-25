@@ -120,8 +120,8 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
               }
               local_6c.id = (-(uint)(DAT_008067a0 != '\0') & 4) + MESS_WAITTY_694D;
               iVar6 = this_00->array_00BC[0xc].field_01DB;
-              if (*(int *)(iVar6 + 0x2e6) == 0) {
-                /* ST_CALLSITE[005ADBE3]: CALL dword ptr [EAX] */
+              if (STField<int>(iVar6,0x2E6) == 0) {
+                /* ST_CALLSITE[005ADBE3]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/ChooseMapTy;pointer:/SubmarineTitans/Recovered/STMessage */
                 this_00->GetMessage(&local_6c);
               }
               else {

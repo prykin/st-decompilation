@@ -121,7 +121,7 @@ STGameObjC::FUN_004845e0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum pa
     if (((iVar5 == 0x16) || (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x25)) &&
        (STField<int>(this_00,0x732) == 1)) {
       bVar8 = ((byte *)this_00)[9];
-      bVar1 = *(byte *)&this->field_0024;
+      bVar1 = (byte)this->field_0024;
       /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT13(bVar1,STPiece<0,3>(param_2));
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
@@ -217,7 +217,7 @@ LAB_0048589a:
           return 0x13;
         }
         bVar8 = ((byte *)this_00)[9];
-        bVar1 = *(byte *)&this->field_0024;
+        bVar1 = (byte)this->field_0024;
         param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
         param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f != '\0') {
@@ -280,16 +280,13 @@ LAB_00485f6a:
     }
     else {
       if (((iVar5 == 7) || (iVar5 == 0x13)) || (iVar5 == 0x1b)) {
-        if (this->field_07CA != 0) {
+        if (this->field_07CA != nullptr) {
           /* ST_CALLSITE[00485E18]: CALL dword ptr [EDX + 0x2c] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar5 = (**(code **)(*this_00 + 0x2c))();
           if ((iVar5 == 0x52) || (iVar5 == 0x5f)) {
-            STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_07CA,
-                       &local_c);
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if ((local_c != 0) && (*(int *)(local_c + 0x20) == 0x1a4)) {
+            STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,&local_c);
+            if ((local_c != 0) && (STField<int>(local_c,0x20) == 0x1a4)) {
               return 0x1e;
             }
           }
@@ -297,7 +294,7 @@ LAB_00485f6a:
             return 0x1e;
           }
           bVar8 = ((byte *)this_00)[9];
-          bVar1 = *(byte *)&this->field_0024;
+          bVar1 = (byte)this->field_0024;
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
@@ -341,7 +338,7 @@ LAB_00485f1f:
           goto LAB_00485f6a;
         }
         bVar8 = ((byte *)this_00)[9];
-        bVar1 = *(byte *)&this->field_0024;
+        bVar1 = (byte)this->field_0024;
         param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
         param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f == '\0') {
@@ -405,7 +402,7 @@ LAB_00485caa:
       else {
         if (((iVar5 == 0xc) || (iVar5 == 0x18)) || (iVar5 == 0x19)) {
           bVar8 = ((byte *)this_00)[9];
-          bVar1 = *(byte *)&this->field_0024;
+          bVar1 = (byte)this->field_0024;
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
@@ -434,7 +431,7 @@ LAB_00486163:
         }
         if (iVar5 == 9) {
           bVar8 = ((byte *)this_00)[9];
-          bVar1 = *(byte *)&this->field_0024;
+          bVar1 = (byte)this->field_0024;
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f != '\0') {
@@ -495,7 +492,7 @@ LAB_004859d8:
         if (iVar5 != 0x1d) {
           if ((iVar5 != 0x24) && (iVar5 != 0x25)) {
             bVar8 = ((byte *)this_00)[9];
-            bVar1 = *(byte *)&this->field_0024;
+            bVar1 = (byte)this->field_0024;
             param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
             param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
             if (DAT_00808a8f == '\0') {
@@ -543,7 +540,7 @@ LAB_00485c58:
             goto LAB_00485caa;
           }
           bVar8 = ((byte *)this_00)[9];
-          bVar1 = *(byte *)&this->field_0024;
+          bVar1 = (byte)this->field_0024;
           param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
           param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
           if (DAT_00808a8f == '\0') {
@@ -564,7 +561,7 @@ LAB_00485c58:
           goto LAB_00486163;
         }
         bVar8 = ((byte *)this_00)[9];
-        bVar1 = *(byte *)&this->field_0024;
+        bVar1 = (byte)this->field_0024;
         param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
         param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
         if (DAT_00808a8f == '\0') {
@@ -677,13 +674,13 @@ LAB_00485b29:
       if (((iVar5 != 0x16) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x25)) ||
          (STField<int>(this_00,0x732) != 1)) {
         param_2 = (int *)(uint)((byte *)this_00)[9];
-        param_1 = (STGameObjC_sub_004845E0_param_1Enum)*(byte *)&this->field_0024;
+        param_1 = (STGameObjC_sub_004845E0_param_1Enum)(byte)this->field_0024;
         if (DAT_00808a8f != '\0') {
           bVar9 = g_bulkInitializedRecords_008087C7[param_1].field_0023 !=
                   g_bulkInitializedRecords_008087C7[(int)param_2].field_0023;
           return (((ushort)bVar9 - (ushort)bVar9) - (ushort)bVar9 & 5) + 2;
         }
-        if (((byte *)this_00)[9] != *(byte *)&this->field_0024) {
+        if (((byte *)this_00)[9] != (byte)this->field_0024) {
           bVar8 = g_playerRelationMatrix[(int)param_2][param_1];
           if ((bVar8 == 0) &&
              (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
@@ -712,7 +709,7 @@ cf_common_exit_00484B10:
         return (((ushort)bVar9 - (ushort)bVar9) - (ushort)bVar9 & 5) + 2;
       }
       bVar8 = ((byte *)this_00)[9];
-      bVar1 = *(byte *)&this->field_0024;
+      bVar1 = (byte)this->field_0024;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT13(bVar1,STPiece<0,3>(param_2));
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
@@ -781,7 +778,7 @@ LAB_00484a28:
       return (-(ushort)(local_EAX_1102 != 1) & 0xfffa) + 7;
     }
     bVar8 = ((byte *)this_00)[9];
-    bVar1 = *(byte *)&this->field_0024;
+    bVar1 = (byte)this->field_0024;
     param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
     param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
     if (DAT_00808a8f != '\0') {
@@ -957,7 +954,7 @@ LAB_004847df:
       return 0xc;
     }
     bVar8 = ((byte *)this_00)[9];
-    bVar1 = *(byte *)&this->field_0024;
+    bVar1 = (byte)this->field_0024;
     param_1 = (STGameObjC_sub_004845E0_param_1Enum)bVar8;
     local_8 = (uint)bVar1;
     if (DAT_00808a8f != '\0') {
@@ -1014,7 +1011,7 @@ LAB_004853d2:
     if (iVar5 != 0) {
       return 0;
     }
-    if (this->field_07CA != 0) {
+    if (this->field_07CA != nullptr) {
       return 0;
     }
     if (this_00 == nullptr) {
@@ -1033,7 +1030,7 @@ LAB_004853d2:
       return 1;
     }
     bVar8 = ((byte *)this_00)[9];
-    bVar1 = *(byte *)&this->field_0024;
+    bVar1 = (byte)this->field_0024;
     param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
     param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
     if (DAT_00808a8f != '\0') {
@@ -1176,7 +1173,7 @@ LAB_00485002:
     if (iVar5 != 0) {
       return 0;
     }
-    if (this->field_07CA != 0) {
+    if (this->field_07CA != nullptr) {
       return 0;
     }
     if (this_00 == nullptr) {
@@ -1187,7 +1184,7 @@ LAB_00485002:
     }
     if (this_00[8] == 0x14) {
       bVar8 = ((byte *)this_00)[9];
-      bVar1 = *(byte *)&this->field_0024;
+      bVar1 = (byte)this->field_0024;
       param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
       param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
       if (DAT_00808a8f == '\0') {

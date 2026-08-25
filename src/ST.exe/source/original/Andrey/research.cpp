@@ -242,12 +242,12 @@ st::fn_0053C820(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
   }
   uVar1 = this->field_0199 + -0xc0af + param_1->field_0010;
   iVar3 = (&this->field_027A)[(byte)this->field_0278];
-  if ((iVar3 == 0) || (*(uint *)(iVar3 + 0xc) <= uVar1)) {
+  if ((iVar3 == 0) || (STField<uint>(iVar3,0xC) <= uVar1)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (Global_sub_005276E0_param_1Enum *)
-              (*(int *)(iVar3 + 8) * uVar1 + *(int *)(iVar3 + 0x1c));
+              (STField<int>(iVar3,0x8) * uVar1 + STField<int>(iVar3,0x1C));
   }
   local_10 = this;
   if ((param_1->field_0014 == 0) || (local_8 == nullptr)) {
@@ -387,11 +387,11 @@ int __thiscall st::fn_0053CA80(ResearchPanelTy *this,STMessage *message)
     else {
       iVar7 = (&this_00->field_027A)[(byte)this_00->field_0278];
       if ((iVar7 == 0) ||
-         (iVar5 = SVar1 + this_00->field_0199, *(uint *)(iVar7 + 0xc) <= iVar5 - 0xc09fU)) {
+         (iVar5 = SVar1 + this_00->field_0199, STField<uint>(iVar7,0xC) <= iVar5 - 0xc09fU)) {
         puVar6 = nullptr;
       }
       else {
-        puVar6 = (undefined1 *)((iVar5 + -0xc09f) * *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0x1c));
+        puVar6 = (undefined1 *)((iVar5 + -0xc09f) * STField<int>(iVar7,0x8) + STField<int>(iVar7,0x1C));
       }
       if ((puVar6 != nullptr) && (puVar6[8] != '\0')) {
         uStack_d = 0;

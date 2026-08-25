@@ -1,4 +1,4 @@
-FUN_00580780:
+STDcResourcC::sub_00580780:
 00580780  55                        PUSH EBP
 00580781  8B EC                     MOV EBP,ESP
 00580783  56                        PUSH ESI

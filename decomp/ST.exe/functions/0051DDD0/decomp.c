@@ -645,7 +645,7 @@ joined_r0x0051eec7:
             else {
               iVar9 = 0;
             }
-            if ((iVar9 == 0) || (bVar22 = ((byte *)iVar9)[0x11], bVar22 == 0)) goto LAB_0051ef61;
+            if ((iVar9 == 0) || (bVar22 = STField<byte>(iVar9,0x11), bVar22 == 0)) goto LAB_0051ef61;
             uVar18 = local_c;
             if (bVar22 < STField<byte>(local_8_mg0,0x11)) {
               do {
@@ -658,9 +658,9 @@ joined_r0x0051eec7:
                 else {
                   iVar9 = 0;
                 }
-                if ((iVar9 == 0) || (((byte *)iVar9)[0x11] == 0)) goto joined_r0x0051eec7;
-              } while (((byte *)iVar9)[0x11] != bVar22);
-              if (((char *)iVar9)[0x13] == '\0') {
+                if ((iVar9 == 0) || (STField<byte>(iVar9,0x11) == 0)) goto joined_r0x0051eec7;
+              } while (STField<byte>(iVar9,0x11) != bVar22);
+              if (STField<char>(iVar9,0x13) == '\0') {
                 local_14 = local_14 | 1 << (bVar22 & 0x1f);
               }
             }
@@ -953,9 +953,8 @@ switchD_0051dfcc_caseD_7:
     this_00->field_0030 = (undefined2)UVar27;
     this_00->field_0032 = STPiece<2,2>(UVar27);
     if (g_cursorClass_00802A30 != nullptr) {
-      /* ST_CALLSITE[0051E1F4]: CALL dword ptr [EAX] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
+      /* ST_CALLSITE[0051E1F4]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+      g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x18);
     }
   }
   *(undefined4 **)&this_00->field_0178 = local_10;
@@ -967,9 +966,8 @@ switchD_0051dfcc_caseD_7:
   *(undefined2 *)&this_00->field_0x2c = 0;
   *(undefined2 *)&this_00->field_0x2e = 2;
   *(undefined4 **)&this_00->field_0030 = local_10;
-  /* ST_CALLSITE[0051E227]: CALL dword ptr [EAX] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
+  /* ST_CALLSITE[0051E227]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+  g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x18);
   g_currentExceptionFrame = local_84.previous;
   return 0;
 }

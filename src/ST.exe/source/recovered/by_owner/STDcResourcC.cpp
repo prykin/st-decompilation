@@ -250,6 +250,150 @@ undefined4 __thiscall st::fn_005805C0(STDcResourcC *this)
   return 0xffffffff;
 }
 
+// 00580700 STDcResourcC::sub_00580700
+#line 4 "decomp/ST.exe/functions/00580700/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079B528
+   Entries: 0040437C
+   Slots: 0x30
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:12 calls=8
+   caller_families=2 receiver_extent=593/631; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=8; caller_families=2;
+   owner_type=/STDcResourcC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only */
+
+void __thiscall st::fn_00580700(STDcResourcC *this,undefined1 *param_1)
+
+{
+  byte uVar1;
+  byte bVar2;
+  dword dVar3;
+
+  *param_1 = 4;
+  uVar1 = this->field_021D;
+  param_1[2] = 0;
+  param_1[1] = uVar1;
+  /* ST_CALLSITE[0058071C]: CALL dword ptr [EDX + 0x2c] */
+  dVar3 = this->slot_2C();
+  *(dword *)(param_1 + 3) = dVar3;
+  /* ST_CALLSITE[0058072C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
+  bVar2 = st::fn_004049B7(this->field_0024);
+  param_1[7] = bVar2;
+  *(undefined4 *)(param_1 + 8) = this->field_0018;
+  param_1[0x2e - this->field_024D] = 1;
+  param_1[0x1b] = 100;
+  param_1[0x1d] = 1;
+  return;
+}
+
+// 00580780 STDcResourcC::sub_00580780
+#line 4 "decomp/ST.exe/functions/00580780/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079B528
+   Entries: 00403021
+   Slots: 0x34
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:13 calls=7
+   caller_families=2 receiver_extent=605/631; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=7; caller_families=2;
+   owner_type=/STDcResourcC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only */
+
+void __thiscall st::fn_00580780(STDcResourcC *this,AnonShape_00580780_266862D6 *param_1)
+
+{
+  byte bVar1;
+  dword dVar2;
+
+  /* ST_CALLSITE[00580789]: CALL dword ptr [EAX + 0x2c] */
+  dVar2 = this->slot_2C();
+  *(dword *)param_1 = dVar2;
+  /* ST_CALLSITE[0058079B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
+  bVar1 = st::fn_004049B7(this->field_0024);
+  param_1->field_0x4 = bVar1;
+  param_1->field_0005 = 4;
+  param_1->field_0006 = 0;
+  param_1->field_0007 = 1;
+  param_1->field_0x8 = this->field_021D;
+  /* ST_CALLSITE[005807BC]: CALL dword ptr [EAX + 0x2c] */
+  dVar2 = this->slot_2C();
+  switch(dVar2) {
+  case 0xdc:
+    param_1->field_0x1c = 2;
+    param_1->field_001D = this->field_0259;
+    return;
+  case 0xdd:
+    param_1->field_0x1c = 0;
+    param_1->field_001D = this->field_0259;
+    return;
+  case 0xde:
+    param_1->field_0x1c = 1;
+    param_1->field_001D = this->field_0259;
+    return;
+  case 0xe0:
+    param_1->field_0x1c = 4;
+  }
+  param_1->field_001D = this->field_0259;
+  return;
+}
+
+// 00580860 STDcResourcC::sub_00580860
+#line 4 "decomp/ST.exe/functions/00580860/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079B528
+   Entries: 00401FB4
+   Slots: 0x5C
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:23 calls=3
+   caller_families=2 receiver_extent=28/631; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=3; caller_families=2;
+   owner_type=/STDcResourcC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only */
+
+void __thiscall st::fn_00580860(STDcResourcC *this,undefined1 *param_1)
+
+{
+  dword dVar1;
+
+  *param_1 = 4;
+  param_1[1] = 0;
+  /* ST_CALLSITE[00580873]: CALL dword ptr [EAX + 0x2c] */
+  dVar1 = this->slot_2C();
+  *(dword *)(param_1 + 2) = dVar1;
+  param_1[6] = 0;
+  *(undefined4 *)(param_1 + 7) = this->field_0018;
+  return;
+}
+
+// 005808A0 STDcResourcC::sub_005808A0
+#line 4 "decomp/ST.exe/functions/005808A0/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079B528
+   Entries: 00404D81
+   Slots: 0x58
+   Anchor:
+   Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:22 calls=5
+   caller_families=2 receiver_extent=28/631; unique_owner_for_target;
+   receiver_aware_physical_slot_signature; exact_call_family_sites=5; caller_families=2;
+   owner_type=/STDcResourcC; current target parameter and return types retained when arity agrees;
+   physical-slot geometry proves receiver/stack ABI only */
+
+void __thiscall st::fn_005808A0(STDcResourcC *this,undefined1 *param_1)
+
+{
+  dword dVar1;
+
+  *param_1 = 4;
+  param_1[1] = 0;
+  /* ST_CALLSITE[005808B3]: CALL dword ptr [EAX + 0x2c] */
+  dVar1 = this->slot_2C();
+  *(dword *)(param_1 + 2) = dVar1;
+  param_1[6] = 0;
+  *(undefined4 *)(param_1 + 7) = this->field_0018;
+  return;
+}
+
 // 00580F20 STDcResourcC::FUN_00580f20
 #line 4 "decomp/ST.exe/functions/00580F20/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.

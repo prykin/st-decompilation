@@ -39,7 +39,7 @@ int __thiscall TLOBaseTy::sub_004D6DF0(TLOBaseTy *this)
     return 0;
   }
   /* ST_CALLSITE[004D6E4D]: CALL dword ptr [EAX + 0xc4] */
-  dVar1 = this->slot_C4();
+  dVar1 = this->sub_004BE160();
   return (int)((100 - dVar1) * iVar2) / 100;
 }
 

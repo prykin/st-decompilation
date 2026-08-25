@@ -4,7 +4,7 @@
 int __fastcall FUN_00416400(STJellyGunC *param_1)
 
 {
-  short *psVar1;
+  ushort *puVar1;
   byte bVar2;
   bool bVar3;
   int iVar4;
@@ -56,17 +56,17 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
     local_6 = 0;
     param_1->field_00D3 = iVar4;
     local_5 = false;
-    psVar1 = (short *)(param_1->field_0097 + iVar4 * 8);
-    sVar6 = *psVar1 * 0xc9 + 100;
-    sVar8 = psVar1[1] * 0xc9 + 100;
+    puVar1 = param_1->field_0097 + iVar4 * 4;
+    sVar6 = *puVar1 * 0xc9 + 100;
+    sVar8 = puVar1[1] * 0xc9 + 100;
     uVar5 = (int)sVar6 - (int)local_24[0];
-    local_c = STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(*(short *)(param_1->field_0097 + 4 + iVar4 * 8) * 200)) + 100;
+    local_c = STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(param_1->field_0097[iVar4 * 4 + 2] * 200)) + 100;
     uVar7 = (int)uVar5 >> 0x1f;
     local_14 = (uVar5 ^ uVar7) - uVar7;
     uVar5 = (int)sVar8 - (int)local_20[0];
     uVar7 = (int)uVar5 >> 0x1f;
     iVar4 = (uVar5 ^ uVar7) - uVar7;
-    uVar5 = (int)(short)local_c - (int)local_1c[0];
+    uVar5 = (short)local_c - (int)local_1c[0];
     uVar7 = (int)uVar5 >> 0x1f;
     local_18 = (uVar5 ^ uVar7) - uVar7;
     if (local_18 == 0) {

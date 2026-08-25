@@ -95,12 +95,12 @@ undefined4 __thiscall STGroupBoatC::GrpRepSub(STGroupBoatC *this,int param_1)
                      ,0xd64);
         }
         /* ST_CALLSITE[004A0AD5]: CALL dword ptr [EDX + 0xf8] */
-        iVar8 = local_8->vfunc_F8();
+        iVar8 = local_8->sub_004838B0();
         if (iVar8 != 0) {
           iVar8 = thunk_FUN_00490d90((STGameObjC *)local_8);
           if (iVar8 == 0) {
             /* ST_CALLSITE[004A0AF8]: CALL dword ptr [EAX + 0x2c] */
-            dVar3 = local_8->slot_2C();
+            dVar3 = local_8->sub_0045EEE0();
             if ((dVar3 == 7) || (dVar3 == 0x13)) {
               iVar8 = thunk_FUN_00492370((STGameObjC *)local_8);
               if (iVar8 == 0) {
@@ -202,10 +202,10 @@ LAB_004a0c5b:
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xd97);
           }
           /* ST_CALLSITE[004A0CD8]: CALL dword ptr [EDX + 0xf8] */
-          iVar8 = local_8->vfunc_F8();
+          iVar8 = local_8->sub_004838B0();
           if ((iVar8 != 0) &&
              /* ST_CALLSITE[004A0CE7]: CALL dword ptr [EAX + 0x2c] */
-             (((dVar3 = local_8->slot_2C(), dVar3 == 7 || (dVar3 == 0x13)) ||
+             (((dVar3 = local_8->sub_0045EEE0(), dVar3 == 7 || (dVar3 == 0x13)) ||
               (dVar3 == 0x1b)))) {
             local_28 = 1;
             iVar8 = thunk_FUN_0045ff10((STGameObjC *)local_8);

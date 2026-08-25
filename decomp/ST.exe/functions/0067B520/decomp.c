@@ -51,7 +51,8 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this)
   STGameObjC *local_8;
 
   if (((this->field_0695 != nullptr) && (g_allPlayers_007FA174 != nullptr)) &&
-     ((this->field_066E == 0 || (this->field_0672 + this->field_066E <= this->field_06FE)))) {
+     ((this->field_066E == 0 || ((uint)(this->field_0672 + this->field_066E) <= this->field_06FE))))
+  {
     this->field_0672 = this->field_06FE;
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
@@ -165,7 +166,7 @@ LAB_0067b724:
             else {
               /* ST_CALLSITE[0067B7B1]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               local_8 = STAllPlayersC::GetObjPtr
-                                  (g_allPlayers_007FA174,*(char *)&this_00->field_05D7,
+                                  (g_allPlayers_007FA174,(char)this_00->field_05D7,
                                    STField<ushort>(pvVar8,8),CASE_1);
             }
             if (local_8 == nullptr) {

@@ -198,9 +198,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
     }
     else {
       sVar4 = (short)param_6;
-      iVar5 = FUN_006acf0d((int)(short)(sVar3 * 0xc9 + 100),(int)(short)(sVar2 * 0xc9 + 100),0,
-                           (int)(short)((short)param_5 * 0xc9 + 100),
-                           (int)(short)(sVar4 * 0xc9 + 100),0);
+      iVar5 = FUN_006acf0d((short)(sVar3 * 0xc9 + 100),(short)(sVar2 * 0xc9 + 100),0,
+                           (short)((short)param_5 * 0xc9 + 100),
+                           (short)(sVar4 * 0xc9 + 100),0);
       iVar6 = ((short)((sVar4 - sVar2) * 0xc9 + 100) * 1000) / iVar5;
       if (iVar6 < -0x39c) {
         iVar6 = 0x5a;

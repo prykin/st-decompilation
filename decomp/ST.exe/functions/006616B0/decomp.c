@@ -15,12 +15,11 @@ void __thiscall FUN_006616b0(void *this,uint param_1,uint param_2)
 
   iVar1 = STField<int>(this,0x20b);
   local_10 = 0;
-  uVar2 = *(uint *)(iVar1 + 0xc);
+  uVar2 = STField<uint>(iVar1,0xC);
   if (0 < (int)uVar2) {
     do {
       if (local_10 < uVar2) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        puVar5 = (uint *)(*(int *)(iVar1 + 8) * local_10 + *(int *)(iVar1 + 0x1c));
+        puVar5 = (uint *)(STField<int>(iVar1,0x8) * local_10 + STField<int>(iVar1,0x1C));
       }
       else {
         puVar5 = nullptr;

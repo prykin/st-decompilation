@@ -16,9 +16,8 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
   bool bVar9;
 
   iVar8 = STField<int>(this,0x5853);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((iVar8 != 0) && (param_1 < *(uint *)(iVar8 + 0xc))) &&
-     (piVar7 = (int *)(*(int *)(iVar8 + 8) * param_1 + *(int *)(iVar8 + 0x1c)), piVar7 != nullptr
+  if (((iVar8 != 0) && (param_1 < STField<uint>(iVar8,0xC))) &&
+     (piVar7 = (int *)(STField<int>(iVar8,0x8) * param_1 + STField<int>(iVar8,0x1C)), piVar7 != nullptr
      )) {
     if (STField<DArrayTy *>(piVar7,0x15) != nullptr) {
       DArrayDestroy(STField<DArrayTy *>(piVar7,0x15));
@@ -38,35 +37,35 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
     DArrayRemoveAt(STField<DArrayTy *>(this,0x5853),param_1);
     iVar8 = STField<int>(this,0x5853);
     uVar6 = 0;
-    if (0 < *(int *)(iVar8 + 0xc)) {
-      bVar9 = *(int *)(iVar8 + 0xc) != 0;
+    if (0 < STField<int>(iVar8,0xC)) {
+      bVar9 = STField<int>(iVar8,0xC) != 0;
       do {
         if (bVar9) {
-          iVar8 = *(int *)(iVar8 + 8) * uVar6 + *(int *)(iVar8 + 0x1c);
+          iVar8 = STField<int>(iVar8,0x8) * uVar6 + STField<int>(iVar8,0x1C);
         }
         else {
           iVar8 = 0;
         }
-        if (((int)param_1 <= (int)uVar6) && (iVar3 = *(int *)(iVar8 + 0x15), iVar3 != 0)) {
+        if (((int)param_1 <= (int)uVar6) && (iVar3 = STField<int>(iVar8,0x15), iVar3 != 0)) {
           uVar5 = 0;
-          if (0 < *(int *)(iVar3 + 0xc)) {
-            bVar9 = *(int *)(iVar3 + 0xc) != 0;
+          if (0 < STField<int>(iVar3,0xC)) {
+            bVar9 = STField<int>(iVar3,0xC) != 0;
             do {
               if (bVar9) {
-                iVar3 = *(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c);
+                iVar3 = STField<int>(iVar3,0x8) * uVar5 + STField<int>(iVar3,0x1C);
               }
               else {
                 iVar3 = 0;
               }
               psVar1 = (short *)(STField<int>(this,0x584f) +
-                                (STField<int>(this,0x582f) * param_2 + *(int *)(iVar3 + 2)) * 2);
+                                (STField<int>(this,0x582f) * param_2 + STField<int>(iVar3,0x2)) * 2);
               if ((int)*psVar1 != uVar6) {
                 *psVar1 = (short)uVar6;
               }
-              iVar3 = *(int *)(iVar8 + 0x15);
+              iVar3 = STField<int>(iVar8,0x15);
               uVar5 = uVar5 + 1;
-              bVar9 = uVar5 < *(uint *)(iVar3 + 0xc);
-            } while ((int)uVar5 < (int)*(uint *)(iVar3 + 0xc));
+              bVar9 = uVar5 < STField<uint>(iVar3,0xC);
+            } while ((int)uVar5 < (int)STField<uint>(iVar3,0xC));
           }
         }
         array = *(DArrayTy **)(iVar8 + 0x19);
@@ -101,8 +100,8 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
         }
         uVar6 = uVar6 + 1;
         iVar8 = STField<int>(this,0x5853);
-        bVar9 = uVar6 < *(uint *)(iVar8 + 0xc);
-      } while ((int)uVar6 < (int)*(uint *)(iVar8 + 0xc));
+        bVar9 = uVar6 < STField<uint>(iVar8,0xC);
+      } while ((int)uVar6 < (int)STField<uint>(iVar8,0xC));
     }
   }
   return;

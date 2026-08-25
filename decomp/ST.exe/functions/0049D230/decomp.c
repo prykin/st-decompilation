@@ -91,11 +91,11 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x960);
           }
           /* ST_CALLSITE[0049D345]: CALL dword ptr [EDX + 0x2c] */
-          dVar7 = this_00->slot_2C();
+          dVar7 = this_00->sub_0045EEE0();
           /* ST_CALLSITE[0049D351]: CALL dword ptr [EAX + 0x2c] */
-          if (((dVar7 == 8) || (dVar7 = this_00->slot_2C(), dVar7 == 0x14)) ||
+          if (((dVar7 == 8) || (dVar7 = this_00->sub_0045EEE0(), dVar7 == 0x14))
              /* ST_CALLSITE[0049D35D]: CALL dword ptr [EDX + 0x2c] */
-             (dVar7 = this_00->slot_2C(), dVar7 == 0x1a)) {
+             || (dVar7 = this_00->sub_0045EEE0(), dVar7 == 0x1a)) {
             if (array_00 == nullptr) {
               array_00 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               local_14 = array_00;

@@ -120,7 +120,8 @@ LAB_0064819f:
 006481B7  8B 10                     MOV EDX,dword ptr [EAX]
 006481B9  51                        PUSH ECX
 006481BA  8B C8                     MOV ECX,EAX
-006481BC  FF 12                     CALL dword ptr [EDX]
+AiBossClassTy::GetMessage::override::prt_6481bc_932048ab:
+006481BC  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiPlrClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_006481be:
 006481BE  83 C6 51                  ADD ESI,0x51
 006481C1  47                        INC EDI

@@ -12,13 +12,13 @@ undefined4 __thiscall FUN_005f13c0(void *this,int param_1,int param_2,int param_
 
   iVar1 = STField<int>(this,0x38);
   if (iVar1 != 0) {
-    uVar2 = *(uint *)(iVar1 + 0xc);
+    uVar2 = STField<uint>(iVar1,0xC);
     uVar4 = 0;
     if (0 < (int)uVar2) {
       bVar5 = uVar2 != 0;
       do {
         if ((((bVar5) &&
-             (psVar3 = (short *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c)),
+             (psVar3 = (short *)(STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C)),
              psVar3 != nullptr)) && ((char)psVar3[3] == param_4)) &&
            (((*psVar3 == param_1 && (psVar3[1] == param_2)) && (psVar3[2] == param_3)))) {
           return 0;
@@ -30,13 +30,13 @@ undefined4 __thiscall FUN_005f13c0(void *this,int param_1,int param_2,int param_
   }
   iVar1 = STField<int>(this,0x3c);
   if (iVar1 != 0) {
-    uVar2 = *(uint *)(iVar1 + 0xc);
+    uVar2 = STField<uint>(iVar1,0xC);
     uVar4 = 0;
     if (0 < (int)uVar2) {
       bVar5 = uVar2 != 0;
       do {
         if (((bVar5) &&
-            (psVar3 = (short *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c)),
+            (psVar3 = (short *)(STField<int>(iVar1,0x8) * uVar4 + STField<int>(iVar1,0x1C)),
             psVar3 != nullptr)) &&
            (((char)psVar3[3] == param_4 &&
             (((*psVar3 == param_1 && (psVar3[1] == param_2)) && (psVar3[2] == param_3)))))) {

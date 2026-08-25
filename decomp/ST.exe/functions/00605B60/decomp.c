@@ -13,7 +13,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   uint uVar5;
   int iVar6;
   int iVar7;
-  int *piVar8;
+  uint piVar8; /* split scalar lifetime from pointer-shaped SSA storage */
   STMessage *pSVar9;
   uint *puVar10;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -22,7 +22,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   STMessage local_9c;
   undefined4 local_7c;
   undefined4 local_78 [5];
-  byte *local_64;
+  uint local_64;
   int local_5c;
   uint local_58;
   uint local_54;
@@ -35,7 +35,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   int local_36;
   int local_30;
   int local_2c;
-  int *local_28;
+  uint local_28; /* propagated scalar-only SSA alias */
   int local_24;
   uint local_20;
   undefined4 local_1c;
@@ -62,7 +62,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   }
   uVar4 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
   STField<uint>(this,0x1c) = uVar4;
-  piVar8 = (int *)((uVar4 >> 0x10) % (local_30 - 1U) + 2);
+  piVar8 = ((uVar4 >> 0x10) % (local_30 - 1U) + 2);
   local_28 = piVar8;
   /* ST_CALLSITE[00605C27]: CALL 0x00403d8c; direct=00403D8C STExplosionC::CreateGroupPart */
   piVar2 = (int *)STExplosionC::CreateGroupPart(this,(int)piVar8);
@@ -70,15 +70,14 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   if (piVar2 == piVar8) {
     if (0 < (int)piVar8) {
       piVar2 = local_ec;
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_3 = piVar8;
+      uint param_3_after_write = piVar8; /* compiler stack-slot lifetime split */
       do {
         uVar4 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
         STField<uint>(this,0x1c) = uVar4;
-        param_3 = (int *)((int)param_3 + -1);
+        param_3_after_write = ((int)param_3_after_write + -1);
         *piVar2 = (uVar4 >> 0x10) % 6 + 10;
         piVar2 = piVar2 + 1;
-      } while (param_3 != nullptr);
+      } while (param_3_after_write != 0);
     }
     pSVar9 = &local_9c;
     for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -88,14 +87,14 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
     local_9c.id = MESS_ID_CREATE;
     local_8 = 0;
     if (0 < (int)piVar8) {
-      param_3 = local_ec;
+      auto param_3_after_write_2 = local_ec; /* compiler stack-slot lifetime split */
       local_10 = (undefined4 *)((int)this + 0x219);
       do {
         iVar6 = local_8;
         memset(local_78, 0, 0x46); /* compiler bulk-zero initialization */
         iVar7 = local_2c;
         local_78[0] = 100;
-        local_64 = (undefined1 *)*param_3;
+        local_64 = *param_3_after_write_2;
         local_78[2] = 0;
         local_78[3] = 0;
         if (local_64 < &DAT_0000000b) {
@@ -125,7 +124,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
         }
         local_36 = iVar6;
         if (local_2c != 0) {
-          local_4c = FUN_006c82a3(local_64,(int)((uVar5 - local_c) * 10000) / local_2c);
+          local_4c = FUN_006c82a3((void *)local_64,(int)((uVar5 - local_c) * 10000) / local_2c);
           uVar4 = FUN_006aff5b(local_4c);
           this_00 = (void *)((int)(uVar4 * iVar7) / 10000);
           if (this_00 == nullptr) {
@@ -143,33 +142,33 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
         STField<uint>(this,0x1c) = uVar4;
         local_48 = local_48 + (0x14 - (uVar4 >> 0x10) % 0x29);
         local_58 = local_20;
-        switch(static_cast<uint32_t>(STRawWord(local_64))) {
+        switch(local_64) {
         case 0:
-        case 0x1:
-        case 0x2:
+        case 1:
+        case 2:
           local_40 = 1000;
           uVar4 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
           STField<uint>(this,0x1c) = uVar4;
           local_44 = (uVar4 >> 0x10) % 3 + 6;
           break;
-        case 0x3:
-        case 0x4:
-        case 0x5:
+        case 3:
+        case 4:
+        case 5:
           local_40 = 0xfa;
           uVar4 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
           STField<uint>(this,0x1c) = uVar4;
           local_44 = (uVar4 >> 0x10 & 3) + 6;
           break;
-        case 0x6:
-        case 0x7:
-        case 0x8:
-        case 0x9:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
           uVar4 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
           STField<uint>(this,0x1c) = uVar4;
           local_40 = 0x15e;
           local_44 = (uVar4 >> 0x10) % 5 + 6;
           break;
-        case 0xa:
+        case 10:
         case 0xb:
         case 0xc:
         case 0xd:
@@ -185,7 +184,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
         local_50 = uVar5;
         /* ST_CALLSITE[00605EF3]: CALL 0x00405c9a; direct=00405C9A STParticleC::GetMessage */
         STParticleC::GetMessage((STParticleC *)*local_10,&local_9c);
-        param_3 = param_3 + 1;
+        param_3_after_write_2 = param_3_after_write_2 + 1;
         local_8 = local_8 + 1;
         local_10 = puVar10 + 1;
         piVar8 = local_28;

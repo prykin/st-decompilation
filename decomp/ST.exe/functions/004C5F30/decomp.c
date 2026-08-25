@@ -32,7 +32,7 @@ undefined4 __fastcall FUN_004c5f30(AnonShape_004C5F30_84FC19DC *param_1)
     }
     iVar1 = thunk_FUN_00581120(local_8,iVar1,iVar2,iVar3,5,param_1->field_0024,param_1->field_0018,
                                param_1->field_0032);
-    param_1->field_04D0 = *(undefined4 *)(iVar1 + 0x18);
+    param_1->field_04D0 = STField<undefined4>(iVar1,0x18);
     param_1->field_02D1 = 5;
     return 0;
   }

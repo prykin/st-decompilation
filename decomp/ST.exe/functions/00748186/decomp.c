@@ -22,7 +22,7 @@ undefined4 FUN_00748186(AnonShape_00748186_DDF6596C *param_1,int *param_2)
     if (iVar2 != 0) {
       /* ST_CALLSITE[007481B9]: CALL dword ptr [ECX + 0x4] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)(iVar2 + 0xc) + 4))(iVar2 + 0xc);
+      (**(code **)(STField<int>(iVar2,0xC) + 4))(iVar2 + 0xc);
     }
     if (param_1->field_0008 == nullptr) {
       *(undefined2 *)(param_2 + 2) = 0;

@@ -473,16 +473,16 @@ LAB_00480f12:
         sVar20 = 0;
         bVar21 = 0;
         lVar12 = Library::MSVCRT::__ftol();
-        iVar6 = (int)local_14 + STField<short>(param_1,0x45) + local_10 + (int)(short)lVar12;
+        iVar6 = (int)local_14 + STField<short>(param_1,0x45) + local_10 + (short)lVar12;
         iVar8 = (int)STField<short>(param_1,0x43) - (int)STPiece<2,2>(local_18);
-        iVar9 = (int)(short)local_18 + iVar3 + STField<short>(param_1,0x41);
+        iVar9 = (short)local_18 + iVar3 + STField<short>(param_1,0x41);
       }
       else {
         iVar6 = (int)local_14 + local_10 + STField<short>(param_1,0x45);
         STPiece<2,2>(local_18) = (short)((uint)uVar7 >> 0x10);
         iVar8 = (int)STField<short>(param_1,0x43) - (int)STPiece<2,2>(local_18);
         STPiece<0,2>(local_18) = (short)uVar7;
-        iVar9 = (int)(short)local_18 + iVar3 + STField<short>(param_1,0x41);
+        iVar9 = (short)local_18 + iVar3 + STField<short>(param_1,0x41);
       }
       /* ST_CALLSITE[0048119D]: CALL 0x00401433; direct=00401433 TraksClassTy::TraksCreate */
       TraksClassTy::TraksCreate

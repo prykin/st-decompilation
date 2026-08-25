@@ -29,7 +29,7 @@ undefined4 __thiscall STBoatC::sub_0045F6C0(STBoatC *this)
 
   iVar12 = 0;
   /* ST_CALLSITE[0045F6D7]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-  uVar6 = LookupRecordByte(*(char *)&this->field_0024);
+  uVar6 = LookupRecordByte((char)this->field_0024);
   uVar6 = (int)(byte)uVar6;
   if (uVar6 == 1) {
     iVar12 = this->field_0024;
@@ -57,7 +57,7 @@ LAB_0045f710:
     bVar4 = bVar4 + 8;
   }
   this->field_0061 = bVar4;
-  this->field_00E3 = 1;
+  this->field_00E3 = '\x01';
   this->field_0062 = bVar4 >> 1;
   puVar1 = this->field_0097;
   this->field_00D3 = 1;

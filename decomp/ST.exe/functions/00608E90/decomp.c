@@ -190,7 +190,7 @@ LAB_00609164:
       thunk_FUN_006099a0(this);
     }
     else {
-      iVar6 = (int)(short)iVar6;
+      iVar6 = (short)iVar6;
       if (STField<int>(this,0x1f9) < 0) {
         iVar6 = iVar6 + -1;
       }

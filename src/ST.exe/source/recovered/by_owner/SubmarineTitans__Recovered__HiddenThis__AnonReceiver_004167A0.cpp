@@ -286,7 +286,7 @@ LAB_0041862b:
   if (puVar6 == nullptr) {
     return 2;
   }
-  this_00->field_00E3 = 1;
+  this_00->field_00E3 = '\x01';
   this_00->field_00D3 = 1;
   sVar3 = puVar6[4] * 0xc9 + 100;
   uVar4 = (int)sVar3 - (int)this_00->field_0041;
@@ -299,7 +299,7 @@ LAB_0041862b:
   local_5 = false;
   uVar11 = (int)uVar4 >> 0x1f;
   local_4c = (short *)((uVar4 ^ uVar11) - uVar11);
-  uVar4 = (int)(short)local_c - (int)this_00->field_0045;
+  uVar4 = (short)local_c - (int)this_00->field_0045;
   uVar11 = (int)uVar4 >> 0x1f;
   local_10 = (short *)((uVar4 ^ uVar11) - uVar11);
   if (local_10 == nullptr) {

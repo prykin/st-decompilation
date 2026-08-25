@@ -107,9 +107,9 @@ AiEventClassTy::__CreateObjPl
       local_38->field_0088 = local_38->field_0088 * 0x41c64e6d + 0x3039;
       local_18 = local_38->field_0088 * 0x41c64e6d + 0x3039;
       local_38->field_0088 = local_18;
-      iVar5 = thunk_FUN_00675b10((local_18 >> 0x10) % (uint)(int)local_28[0] + (int)(short)local_20,
+      iVar5 = thunk_FUN_00675b10((local_18 >> 0x10) % (uint)(int)local_28[0] + (short)local_20,
                                  (local_38->field_0088 >> 0x10) % (uint)(int)local_1c[0] +
-                                 (int)(short)local_30,1,(short *)&param_3,(short *)&param_4,
+                                 (short)local_30,1,(short *)&param_3,(short *)&param_4,
                                  (short *)&param_5,(int)param_2);
     }
     else {
@@ -188,9 +188,9 @@ AiEventClassTy::__CreateObjPl
     bVar2 = true;
   }
   if ((bVar2) && (g_allPlayers_007FA174 != nullptr)) {
-    local_8 = (int)(short)param_3;
-    local_c = (int)(short)param_4;
-    local_10 = (int)(short)param_5;
+    local_8 = (short)param_3;
+    local_c = (short)param_4;
+    local_10 = (short)param_5;
     if (param_11 == 0) {
       iVar6 = 1;
       GVar10 = (Global_sub_004B1120_param_2Enum)param_2;
