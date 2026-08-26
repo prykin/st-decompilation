@@ -5,8 +5,6 @@ apply	shape_id	slot_offset	stack_parameter_count	return_type	site_count	call_add
 0	CallableReceiver_0041D4F0_P0	8	0	/undefined4	1	0041D524	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_0041F630_P0	108	0	/undefined4	1	0041F7A5	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_00435930_P2	236	0	/undefined4	2	00435A87 | 00435AB8	unanimous machine stack arity and return-consumption width
-0	CallableReceiver_00435B90_P3	44	0	/undefined4	11	00436581 | 0043658D | 00436599 | 0043676F | 004367D6 | 004367E2 | 00436849 | 00436855 | 00436861 | 0043686D | 00436924	unanimous machine stack arity and return-consumption width
-0	CallableReceiver_00435B90_P3	236	0	/undefined4	3	00436739 | 004368D0 | 00436907	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_00440860_P2	12	0	/undefined4	1	0044091B	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_00440860_P2	16	2	/void	1	00440930	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_00440990_P1	12	0	/undefined4	1	00440A35	unanimous machine stack arity and return-consumption width
@@ -16,10 +14,7 @@ apply	shape_id	slot_offset	stack_parameter_count	return_type	site_count	call_add
 0	CallableReceiver_0047DF00_P1	44	0	/undefined4	1	0047F365	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_00483300_P0	16	6	/undefined4	1	00483447	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_004836C0_P0	16	6	/undefined4	1	004837C8	unanimous machine stack arity and return-consumption width
-0	CallableReceiver_004845E0_P2	44	0	/undefined4	31	0048481E | 0048482E | 00484867 | 00484873 | 00484B7A | 00484B86 | 00484B92 | 00484B9E | 00484C37 | 00484C43 | 00484D19 | 0048511F | 0048519C | 004851A8 | 004852EB | 004852F7 | 00485625 | 00485648 | 0048568D | 00485699 | 004856C9 | 004856D5 | 00485A46 | 00485A52 | 00485E18 | 004860BA | 004860CA | 004860DA | 004860EA | 004860FA | 00486106	unanimous machine stack arity and return-consumption width
-0	CallableReceiver_004845E0_P2	124	0	/undefined4	2	00484F36 | 0048609D	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_004845E0_P2	136	1	/undefined4	2	00484BD2 | 00486221	unanimous machine stack arity and return-consumption width
-0	CallableReceiver_004845E0_P2	188	0	/undefined4	2	00484ED6 | 0048500E	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_004845E0_P2	236	0	/undefined4	11	0048556C | 00485881 | 004859E9 | 00485A14 | 00485B47 | 00485B78 | 00485C92 | 00485D6C | 00485F3D | 00485F6E | 0048606E	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_004845E0_P2	264	1	/undefined4	1	004850A5	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_004845E0_P2	288	0	/undefined4	1	00484EB2	unanimous machine stack arity and return-consumption width
@@ -88,8 +83,6 @@ apply	shape_id	slot_offset	stack_parameter_count	return_type	site_count	call_add
 0	CallableReceiver_00677EF0_P2	312	1	/undefined4	1	00677EF8	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_006D4F50_P0	12	1	/undefined4	1	006D4F5E	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_006D4FD0_P0	12	1	/undefined4	1	006D4FDE	unanimous machine stack arity and return-consumption width
-0	CallableReceiver_006E4650_P1	24	1	/undefined4	2	006E4707 | 006E475C	unanimous machine stack arity and return-consumption width
-0	CallableReceiver_006E47E0_P1	24	1	/undefined4	2	006E4888 | 006E48DD	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_0071F230_P0	8	2	/undefined4	1	0071F268	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_0071F230_P0	12	4	/undefined4	1	0071F283	unanimous machine stack arity and return-consumption width
 0	CallableReceiver_0071F340_P0	8	2	/undefined4	1	0071F36A	unanimous machine stack arity and return-consumption width

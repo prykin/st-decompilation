@@ -885,15 +885,24 @@ slots remain raw until their physical owner is independently known.
 The callback-field machine audit now records 43 exact function-address stores
 and ten generated-field candidates. None currently completes the full stored
 target, trusted ABI, same-member indirect-call chain, so all ten correctly stay
-disabled instead of manufacturing callback types. The accepted corpus now has
-1,332 raw indirect calls, preserves all 3,192 typed physical slots, and passes
-ABI/export gates with zero errors or warnings. The generated source audit
-passes 280 of 334 translation units and retains 192 compiler errors.
+disabled instead of manufacturing callback types.
 
-The next Q-058 slice should distinguish function-tagged linked-library bodies
-from application dispatch, then recover exact typed-producer and container-
-element receiver identities without imposing whole-local types on mixed SSA or
-reused storage.
+The next accepted Q-058 slice fixed two missing evidence bridges. Callable
+partitioning now recognizes `LIBRARY`/`LIBRARY_*` Function tags instead of
+depending on a `Library::` namespace spelling, reclassifying 142 tagged runtime
+sites without mutating their ABI. More importantly, exact parameter flow from a
+hash-intact generated partial structure may now select one unique physical base
+for address-local dispatch when every component is an exact offset/width prefix
+and every slot ABI agrees. This recovered 14 calls in `00435B90` across
+`STSprGameObjC` slots `0x2c` and `0xec` while leaving the reused `int *`
+transport parameter untouched. A confirming pass applied nothing further.
+
+The accepted corpus now has 1,318 raw indirect calls, preserves all 3,192 typed
+physical slots, and passes ABI/export gates with zero errors or warnings. The
+generated source audit passes 280 of 334 translation units and retains 192
+compiler errors. The next Q-058 slice should recover exact typed-producer,
+out-parameter, and container-element receiver identities without imposing
+whole-local types on mixed SSA, reused storage, or neutral `DArrayTy` ABIs.
 
 Partition the remaining raw indirect calls into physical vtables, stored
 callbacks, callback parameters, ordinary function tables, external/COM-style
@@ -910,7 +919,7 @@ removed when the physical slot becomes independently proven.
 
 Completion targets, used as direction rather than permission to weaken proof:
 
-- reduce raw indirect calls from 1,614 to below 500;
+- reduce the current 1,318 raw indirect calls to below 500;
 - reduce ownerless `__thiscall` functions from 950 to below 400;
 - reduce canonical casted call results by at least half;
 - preserve every manual/imported ABI, all 3,192 accepted typed physical slots,

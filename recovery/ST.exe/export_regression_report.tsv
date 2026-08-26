@@ -28,14 +28,14 @@ info	quality:explicit_typed_vtable_dispatch	80	80	0	ok	policy=nonincreasing; blo
 info	quality:flattened_global_record_array	35	35	0	ok	policy=nonincreasing; blocking=false
 info	quality:generic_global_aggregate	107	107	0	ok	policy=nonincreasing; blocking=false
 info	quality:generic_undefined_declaration	7819	7819	0	ok	policy=nonincreasing; blocking=false
-info	quality:raw_indirect_call	1367	1332	-35	improved	policy=nonincreasing; blocking=true
+info	quality:raw_indirect_call	1332	1318	-14	improved	policy=nonincreasing; blocking=true
 info	quality:raw_pointer_offset	1730	1730	0	ok	policy=nonincreasing; blocking=false
 info	quality:return_width_artifact	291	291	0	ok	policy=nonincreasing; blocking=true
 info	quality:stack_slot_reuse	459	459	0	ok	policy=nonincreasing; blocking=false
 info	quality:string_based_aggregate_address	7	7	0	ok	policy=nonincreasing; blocking=false
 info	quality:undefined_type	15696	15696	0	ok	policy=nonincreasing; blocking=false
 info	quality:unresolved_register_input	407	407	0	ok	policy=nonincreasing; blocking=true
-info	readability_by_function:raw_indirect_call	1367	1332	-35	improved	policy=per-address nonincreasing; cross-function compensation forbidden
+info	readability_by_function:raw_indirect_call	1332	1318	-14	improved	policy=per-address nonincreasing; cross-function compensation forbidden
 info	readability_by_function:unresolved_register_input	407	407	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
 info	readability_by_function:return_width_artifact	291	291	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
 info	readability_by_function:raw_pointer_offset	1730	1730	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden

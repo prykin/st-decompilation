@@ -315,6 +315,13 @@ Original binaries are local under ignored `bin/` and must not be committed.
   call-boundary propagation across at least two independently named caller
   families plus unique physical-vtable slot-family agreement and sufficient
   object extent. Geometry or one caller family is review-only.
+- An explicit generic pointer parameter may receive an address-local common-base
+  dispatch view from one exact call edge when the incoming value is a hash-intact
+  script-owned partial structure with at least two concrete fields, its complete
+  offset/width layout is a compatible prefix of exactly one accepted physical
+  base, and every observed indirect slot has that base's receiver-aware ABI.
+  Keep the transported parameter neutral; this proof licenses only the exact
+  callsite overrides and never a datatype merge or persistent base retype.
 - An incoming EBP context is a custom x86 ABI parameter only when EBP is
   dereferenced before definition, every current explicit ECX/EDX parameter is a
   generic word, and neither register has semantic incoming use. A non-void

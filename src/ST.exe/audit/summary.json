@@ -2,15 +2,15 @@
   "generator_sha256": "5a6a0d10064a2772869246a9ce22a4716ec09e0787d480be5b792cc51bc8a628",
   "input_files": {
     "call_relations.jsonl": "f990a34a146b34c2feb72f447cbf2181672ee73d08e6450a2e25d52fd5de4c24",
-    "functions.json": "477c23a29300e4d12bd256d19d93c416cda45f7358e3b778ed0bf46c38987427",
+    "functions.json": "0f1ea11089d968de49ea229aae4358bfc69dccd6300a90a78e7562a74c90e0fa",
     "globals.jsonl": "ecf3efdc113e3f196ab939cd91b7e41c1041b6a765578e065c2cfbea24f7e147",
     "imports.json": "1292ae0f2b3d533808f0452471962f3c57fcf6e7d36043f54df1ab6db32f9092",
-    "manifest.json": "3e0aa9feaf5d5cfcd8f22df38364da608f7a60045a8e1eddc4cda3e60ccee012",
+    "manifest.json": "c148e7d458af2ef833e92d8f163c49c4d37e8cbc94c54c58d26e07a371913dc0",
     "pseudocode_runtime.h": "483d0740a1b332108dd6f52935a8cbf55c9c0e7c07424470a7dc93993a3840e4",
     "strings.jsonl": "a2098fb3063fd5354c3d80bbffb95b4593fe52e05edf8069eef45579cb4dac9c",
-    "types.jsonl": "2271c0a0e791a03c7a381c3337df42ea0f891dcfb80be13fe74d5afb3569b42a"
+    "types.jsonl": "a467e663602dee5a3c4b89d10d731512969f3b706542aeb6274198656f9f7e3f"
   },
-  "input_manifest_sha256": "3e0aa9feaf5d5cfcd8f22df38364da608f7a60045a8e1eddc4cda3e60ccee012",
+  "input_manifest_sha256": "c148e7d458af2ef833e92d8f163c49c4d37e8cbc94c54c58d26e07a371913dc0",
   "issue_counts": {
     "address_stable_callable_symbol": 5,
     "ambiguous_direct_call": 1,
@@ -45,7 +45,7 @@
     "tagged_lifetime_scope_unresolved": 30,
     "type_name_collision": 2
   },
-  "program_semantic_sha256": "9e5f380abc86cee09621b99a2238258ceba01d6e96ee7c6c5757b01f568fe2d4",
+  "program_semantic_sha256": "fc00e8aed308228e25421162c642838447438f5c77fbbd1de3d9bbf05135ffe2",
   "schema": "st-source-generation-summary",
   "schema_version": 1,
   "statistics": {
@@ -70,7 +70,7 @@
     "exact_output_lifetime_materializations": 2,
     "exact_pointer_boundary_casts": 11217,
     "exported_function_records": 10407,
-    "exported_type_records": 9265,
+    "exported_type_records": 9266,
     "external_call_identities": 264,
     "external_label_address_rewrites": 68,
     "fallback_global_declarations": 961,

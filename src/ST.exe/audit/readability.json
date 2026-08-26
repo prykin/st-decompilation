@@ -264,9 +264,6 @@
       "raw_code_indirect_call": 2,
       "unaff_or_extraout": 1
     },
-    "00435B90": {
-      "raw_code_indirect_call": 14
-    },
     "00436F20": {
       "generic_undefined_declaration": 79,
       "pointer_boundary_cast": 2,
@@ -5806,7 +5803,7 @@
   "totals": {
     "generic_undefined_declaration": 4815,
     "pointer_boundary_cast": 868,
-    "raw_code_indirect_call": 1332,
+    "raw_code_indirect_call": 1318,
     "unaff_or_extraout": 571,
     "undefined_static_cast": 38
   }

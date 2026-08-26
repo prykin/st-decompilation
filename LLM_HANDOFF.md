@@ -52,11 +52,11 @@ have been checked.
 ## Current authoritative state
 
 The current accepted headless export is run
-`3988fcb577656e819c24bd1856cef528d16ee7c9f011f326f556f68fcdf2a0c1`.
+`70014c5e33f73c16c65fe8bfa8feb5141ce2ae1b31b7b912641767f7fd872afb`.
 Its receipt is `passed` with Program semantic hash
-`9e5f380abc86cee09621b99a2238258ceba01d6e96ee7c6c5757b01f568fe2d4`
+`fc00e8aed308228e25421162c642838447438f5c77fbbd1de3d9bbf05135ffe2`
 and corpus manifest hash
-`3e0aa9feaf5d5cfcd8f22df38364da608f7a60045a8e1eddc4cda3e60ccee012`.
+`c148e7d458af2ef833e92d8f163c49c4d37e8cbc94c54c58d26e07a371913dc0`.
 The manifest binds portable `program.json` metadata as
 `3bb8a76833b385eab3616325d3bd622ddaea5741bd8c60a99eb35c483ad7d761`.
 The manifest binds `pseudocode_runtime.h` as
@@ -66,14 +66,14 @@ embed a soon-stale commit identifier in this handoff.
 
 The accepted corpus contains 10,407 function records, 5,555 bodies, zero failed
 bodies, and 3,192 typed physical-vtable slots. The export and ABI gates both
-pass with zero errors and zero warnings. The accepted export took `00:09:05`;
+pass with zero errors and zero warnings. The accepted export took `00:08:15`;
 this is an elapsed diagnostic, not a wall-clock timestamp. The current
-indirect-callsite pass retains 513 automatic proposals; 35 were newly applied
-and all 513 were unchanged on confirmation.
+indirect-callsite pass retains 527 automatic proposals; 14 were newly applied
+in this slice and all 527 were unchanged on confirmation.
 
 The canonical Git/LFS Program checkpoint is the deterministic normalized
-`ghidra/ST.exe.gzf`: 28,430,059 bytes with packed SHA-256
-`84c9982b477530b7624146b9cc4b7ee2652c2d1c7e1ef38ca2214d5c893129c5`.
+`ghidra/ST.exe.gzf`: 28,434,049 bytes with packed SHA-256
+`0f129690d57d7b69b019769bd66751e0c28deabeaefb5a890a3576ef47faf725`.
 Its normalization is
 `zip-dos-time-1980-01-01+private-metadata-v5`: ZIP time, database revision
 times, database owners, and absolute workstation paths are removed before the
@@ -92,7 +92,7 @@ Git metadata and committer identity/date must exactly match the author.
 
 The current quality inventory contains 3,733 anonymous-shape occurrences,
 15,696 undefined types, 3,285 casts over generic fields, 1,730 raw pointer
-offsets, 1,332 raw indirect calls, 1,383 canonical casted call results, 291
+offsets, 1,318 raw indirect calls, 1,383 canonical casted call results, 291
 return-width artifacts, 459 residual stack-slot-reuse occurrences, and 407
 unresolved register inputs. The counts overlap and are occurrences across all
 exported `functions/**/decomp.c`, not independent recovery facts. In total,
@@ -105,14 +105,14 @@ wrappers, 1,326 uniquely owned non-virtual source methods, 38 exact indirect
 member wrappers, and 2,316 exact unnamed field views. The deterministic source
 audit contains 13,053 rows. The strict generated-source readability profile
 contains 4,815 generic undefined declarations, 868 pointer-boundary casts,
-1,332 raw code calls, 571 `unaff`/`extraout` occurrences, 38 undefined static
+1,318 raw code calls, 571 `unaff`/`extraout` occurrences, 38 undefined static
 casts, and zero residual duplicated-vtable calls.
 
 The current fixed Docker Clang audit uses C++17, MS extensions, an ILP32 target,
 and a limit of 64 errors per translation unit. It passes 280 of 334 units and
 retains 192 errors, all mapped to stable function addresses; no translation
 unit reaches the cap. The tracked deterministic source manifest is
-`76c3ae933bdfd32a0ba6127c7e213e77bcc377f66b2d4d97ad490707e8e4dde4`.
+`f4a43bbd4dfed5aae8ae27f6ecb80d6ec33f170b0b2e2cb9b55ade659b9364a3`.
 `config/source-compile-regression-baseline.json` binds this accepted compiler
 state and has SHA-256
 `b9f8e86f012dd4278f826d2eb491d56cd312881c9635b0e81f6d87b417dcb3ca`.
@@ -139,6 +139,22 @@ conditions. The callback-field audit now records 43 exact machine stores and
 ten generated-field candidates, but applies none because no candidate yet has
 the complete trusted-target ABI plus same-member indirect-call chain. This is
 an expected evidence boundary, not an empty analyzer result.
+
+The following Q-058 slice is also accepted. Linked-library classification now
+uses Ghidra Function tags as well as namespaces, so 142 tagged runtime callsites
+are no longer mixed into the application-dispatch queue. Exact call-boundary
+parameter flow can additionally give one generic transported pointer an
+address-local physical-base view when a hash-intact generated partial structure
+has at least two concrete fields, its whole layout is an exact prefix of one
+unique base, and every indirect slot ABI agrees. This recovered 14 calls in
+`00435B90` as `STSprGameObjC` slots `0x2c`/`0xec` without persistently retyping
+the reused `int *` parameter. The accepted Program semantic hash is
+`fc00e8aed308228e25421162c642838447438f5c77fbbd1de3d9bbf05135ffe2`;
+the corpus manifest is
+`c148e7d458af2ef833e92d8f163c49c4d37e8cbc94c54c58d26e07a371913dc0`.
+The corpus now contains 1,318 raw indirect calls. Export, ABI, source-readability,
+compiler-regression, and packed-snapshot verification gates all pass; the fixed
+compiler audit remains 280/334 translation units with 192 addressed errors.
 
 ## Ordered next work
 

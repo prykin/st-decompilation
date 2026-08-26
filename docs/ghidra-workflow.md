@@ -1591,6 +1591,16 @@ observed machine slot with strong target-family agreement. One caller family,
 an undersized object, a short candidate vtable, or competing candidates keeps
 the row review-only.
 
+There is one deliberately narrower address-local bridge for an explicit generic
+pointer parameter. If an exact call edge supplies a hash-intact script-owned
+partial structure with at least two concrete fields, the complete partial layout
+must be an offset/width-compatible prefix of exactly one accepted physical base,
+and every observed indirect slot must accept that base's receiver ABI. The type
+family then writes exact rows to `polymorphic_receiver_callsites.tsv`; it does
+not change either parameter datatype or merge the anonymous structure. This is
+how `00435B90` gains `STSprGameObjC` slot views without allowing the reused
+`int *` transport lifetime to flow backwards into its caller.
+
 Physical indirect-call refinement is monotonic with respect to ABI strength.
 If a generated receiver-aware slot definition is stronger than the current
 target Listing signature, the analyzer reuses the deterministic generated

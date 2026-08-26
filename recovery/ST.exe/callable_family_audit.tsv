@@ -193,25 +193,25 @@ function_address	function_name	call_address	slot_offset	stack_parameter_count	la
 00435B90	FUN_00435b90	0043643D	40	4	EAX	EAX	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable		/STGameObjC		/undefined4	physical_vtable
 00435B90	FUN_00435b90	004364B6	40	4	EAX	EAX	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable		/STGameObjC		/undefined4	physical_vtable
 00435B90	FUN_00435b90	00436533	40	4	EAX	EAX	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable		/STGameObjC		/undefined4	physical_vtable
-00435B90	FUN_00435b90	00436581	44	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
-00435B90	FUN_00435b90	0043658D	44	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
-00435B90	FUN_00435b90	00436599	44	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
+00435B90	FUN_00435b90	00436581	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
+00435B90	FUN_00435b90	0043658D	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
+00435B90	FUN_00435b90	00436599	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
 00435B90	FUN_00435b90	004365E1	40	4	EAX	EAX	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable		/STGameObjC		/undefined4	physical_vtable
 00435B90	FUN_00435b90	00436710	40	4	EAX	EAX	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable		/STGameObjC		/undefined4	physical_vtable
-00435B90	FUN_00435b90	00436739	236	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
-00435B90	FUN_00435b90	0043676F	44	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
+00435B90	FUN_00435b90	00436739	236	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
+00435B90	FUN_00435b90	0043676F	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
 00435B90	FUN_00435b90	004367B7	40	4	EAX	EAX	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable		/STGameObjC		/undefined4	physical_vtable
-00435B90	FUN_00435b90	004367D6	44	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
-00435B90	FUN_00435b90	004367E2	44	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
+00435B90	FUN_00435b90	004367D6	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
+00435B90	FUN_00435b90	004367E2	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
 00435B90	FUN_00435b90	0043682A	40	4	EAX	EAX	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable		/STGameObjC		/undefined4	physical_vtable
-00435B90	FUN_00435b90	00436849	44	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
-00435B90	FUN_00435b90	00436855	44	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
-00435B90	FUN_00435b90	00436861	44	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
-00435B90	FUN_00435b90	0043686D	44	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
+00435B90	FUN_00435b90	00436849	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
+00435B90	FUN_00435b90	00436855	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
+00435B90	FUN_00435b90	00436861	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
+00435B90	FUN_00435b90	0043686D	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
 00435B90	FUN_00435b90	004368B5	40	4	EAX	EAX	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable		/STGameObjC		/undefined4	physical_vtable
-00435B90	FUN_00435b90	004368D0	236	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
-00435B90	FUN_00435b90	00436907	236	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
-00435B90	FUN_00435b90	00436924	44	0	ESI	ESI	1					/undefined4	unresolved_object_dispatch
+00435B90	FUN_00435b90	004368D0	236	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
+00435B90	FUN_00435b90	00436907	236	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
+00435B90	FUN_00435b90	00436924	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	/STSprGameObjC	/STSprGameObjC		/undefined4	physical_vtable
 00435B90	FUN_00435b90	0043696C	40	4	EAX	EAX	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable		/STGameObjC		/undefined4	physical_vtable
 00435B90	FUN_00435b90	004369C9	40	4	EAX	EAX	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable		/STGameObjC		/undefined4	physical_vtable
 00435B90	FUN_00435b90	00436A53	40	4	EAX	EAX	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable		/STGameObjC		/undefined4	physical_vtable
@@ -814,55 +814,55 @@ function_address	function_name	call_address	slot_offset	stack_parameter_count	la
 00483300	FUN_00483300	00483447	16	6	ESI	ESI	1					/undefined4	unresolved_object_dispatch
 004836C0	FUN_004836c0	004837C8	16	6	ECX	ECX	1					/undefined4	unresolved_object_dispatch
 00484020	FUN_00484020	00484336	16	6	ESI	ESI	1					/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	0048481E	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	0048482E	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00484867	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00484873	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00484B7A	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00484B86	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00484B92	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00484B9E	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
+004845E0	STGameObjC::FUN_004845e0	0048481E	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	0048482E	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00484867	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00484873	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00484B7A	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00484B86	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00484B92	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00484B9E	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
 004845E0	STGameObjC::FUN_004845e0	00484BD2	136	1	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00484C37	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00484C43	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00484D19	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
+004845E0	STGameObjC::FUN_004845e0	00484C37	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00484C43	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00484D19	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
 004845E0	STGameObjC::FUN_004845e0	00484EB2	288	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00484ED6	188	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00484F36	124	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	0048500E	188	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
+004845E0	STGameObjC::FUN_004845e0	00484ED6	188	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00484F36	124	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	0048500E	188	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
 004845E0	STGameObjC::FUN_004845e0	004850A5	264	1	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	0048511F	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	0048519C	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	004851A8	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	004852EB	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	004852F7	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
+004845E0	STGameObjC::FUN_004845e0	0048511F	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	0048519C	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	004851A8	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	004852EB	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	004852F7	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
 004845E0	STGameObjC::FUN_004845e0	0048556C	236	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00485625	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00485648	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	0048568D	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00485699	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	004856C9	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	004856D5	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
+004845E0	STGameObjC::FUN_004845e0	00485625	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00485648	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	0048568D	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00485699	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	004856C9	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	004856D5	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
 004845E0	STGameObjC::FUN_004845e0	00485881	236	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
 004845E0	STGameObjC::FUN_004845e0	004859E9	236	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
 004845E0	STGameObjC::FUN_004845e0	00485A14	236	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00485A46	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00485A52	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
+004845E0	STGameObjC::FUN_004845e0	00485A46	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00485A52	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
 004845E0	STGameObjC::FUN_004845e0	00485B47	236	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
 004845E0	STGameObjC::FUN_004845e0	00485B78	236	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
 004845E0	STGameObjC::FUN_004845e0	00485C92	236	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
 004845E0	STGameObjC::FUN_004845e0	00485D6C	236	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00485E18	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
+004845E0	STGameObjC::FUN_004845e0	00485E18	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
 004845E0	STGameObjC::FUN_004845e0	00485F3D	236	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
 004845E0	STGameObjC::FUN_004845e0	00485F6E	236	0	EDI	EDI	1				STGameObjC		unresolved_object_dispatch
 004845E0	STGameObjC::FUN_004845e0	0048606E	236	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	0048609D	124	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	004860BA	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	004860CA	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	004860DA	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	004860EA	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	004860FA	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
-004845E0	STGameObjC::FUN_004845e0	00486106	44	0	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
+004845E0	STGameObjC::FUN_004845e0	0048609D	124	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	004860BA	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	004860CA	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	004860DA	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	004860EA	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	004860FA	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
+004845E0	STGameObjC::FUN_004845e0	00486106	44	0	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/STGameObjCVTable	/STGameObjC	/STGameObjC	STGameObjC	/undefined4	physical_vtable
 004845E0	STGameObjC::FUN_004845e0	00486221	136	1	EDI	EDI	1				STGameObjC	/undefined4	unresolved_object_dispatch
 00486B60	FUN_00486b60	00486BA1	124	0	EDI	EDI	1					/undefined4	unresolved_object_dispatch
 00486B60	FUN_00486b60	00486BAB	196	0	EDI	EDI	1					/undefined4	unresolved_object_dispatch
@@ -3113,161 +3113,161 @@ function_address	function_name	call_address	slot_offset	stack_parameter_count	la
 006D9F30	FUN_006d9f30	006D9F65	8	1	DWORD PTR [EAX]	EAX	0						ambiguous_receiver_transport
 006D9F30	FUN_006d9f30	006DA00B	20	6	DWORD PTR [ECX + 0X44]	EAX	0					/undefined4	ambiguous_receiver_transport
 006DA080	FUN_006da080	006DA0DE	108	1	DWORD PTR [EAX]	EAX	0					/void	ambiguous_receiver_transport
-006E3BF0	AppClassTy::SendMessageToAllSystemsInArr	006E3C80	32	1	EAX	EAX	1				AppClassTy	/undefined4	unresolved_object_dispatch
-006E3DD0	AppClassTy::SendMessage	006E3E7C	0	1	DWORD PTR [EBP + -0XC]	ECX	1				AppClassTy		unresolved_object_dispatch
-006E3DD0	AppClassTy::SendMessage	006E3F4A	0	1	DWORD PTR [ECX + 0X4]	ECX	1				AppClassTy	/undefined4	unresolved_object_dispatch
-006E3DD0	AppClassTy::SendMessage	006E3FE4	24	1	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable	/AppClassTy	/AppClassTy	AppClassTy	/undefined4	physical_vtable
-006E3DD0	AppClassTy::SendMessage	006E4020	32	1	DWORD PTR [EAX + 0X4]	ECX	1				AppClassTy		unresolved_object_dispatch
-006E3DD0	AppClassTy::SendMessage	006E402B	24	1	DWORD PTR [EBP + -0X8]	ECX	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable	/AppClassTy	/AppClassTy	AppClassTy	/undefined4	physical_vtable
-006E4650	AppClassTy::AddSystem	006E4707	24	1	ESI	ESI	1				AppClassTy	/undefined4	unresolved_object_dispatch
-006E4650	AppClassTy::AddSystem	006E475C	24	1	ESI	ESI	1				AppClassTy	/undefined4	unresolved_object_dispatch
-006E47E0	AppClassTy::AddSystem	006E4888	24	1	ESI	ESI	1				AppClassTy	/undefined4	unresolved_object_dispatch
-006E47E0	AppClassTy::AddSystem	006E48DD	24	1	ESI	ESI	1				AppClassTy	/undefined4	unresolved_object_dispatch
-006E4960	AppClassTy::AddChildSystem	006E4A6A	24	1	ESI	ESI	1	/SubmarineTitans/Recovered/SystemClassTyVTable	/SubmarineTitans/Recovered/STMessage | /SystemClassTy	/SystemClassTy	AppClassTy	/undefined4	physical_vtable
-006E4960	AppClassTy::AddChildSystem	006E4AED	24	1	ESI	ESI	1	/SubmarineTitans/Recovered/SystemClassTyVTable	/SubmarineTitans/Recovered/STMessage | /SystemClassTy	/SystemClassTy	AppClassTy	/undefined4	physical_vtable
+006E3BF0	AppClassTy::SendMessageToAllSystemsInArr	006E3C80	32	1	EAX	EAX	1				AppClassTy	/undefined4	linked_library_runtime
+006E3DD0	AppClassTy::SendMessage	006E3E7C	0	1	DWORD PTR [EBP + -0XC]	ECX	1				AppClassTy		linked_library_runtime
+006E3DD0	AppClassTy::SendMessage	006E3F4A	0	1	DWORD PTR [ECX + 0X4]	ECX	1				AppClassTy	/undefined4	linked_library_runtime
+006E3DD0	AppClassTy::SendMessage	006E3FE4	24	1	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable	/AppClassTy	/AppClassTy	AppClassTy	/undefined4	linked_library_runtime
+006E3DD0	AppClassTy::SendMessage	006E4020	32	1	DWORD PTR [EAX + 0X4]	ECX	1				AppClassTy		linked_library_runtime
+006E3DD0	AppClassTy::SendMessage	006E402B	24	1	DWORD PTR [EBP + -0X8]	ECX	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable	/AppClassTy	/AppClassTy	AppClassTy	/undefined4	linked_library_runtime
+006E4650	AppClassTy::AddSystem	006E4707	24	1	ESI	ESI	1				AppClassTy	/undefined4	linked_library_runtime
+006E4650	AppClassTy::AddSystem	006E475C	24	1	ESI	ESI	1				AppClassTy	/undefined4	linked_library_runtime
+006E47E0	AppClassTy::AddSystem	006E4888	24	1	ESI	ESI	1				AppClassTy	/undefined4	linked_library_runtime
+006E47E0	AppClassTy::AddSystem	006E48DD	24	1	ESI	ESI	1				AppClassTy	/undefined4	linked_library_runtime
+006E4960	AppClassTy::AddChildSystem	006E4A6A	24	1	ESI	ESI	1	/SubmarineTitans/Recovered/SystemClassTyVTable	/SubmarineTitans/Recovered/STMessage | /SystemClassTy	/SystemClassTy	AppClassTy	/undefined4	linked_library_runtime
+006E4960	AppClassTy::AddChildSystem	006E4AED	24	1	ESI	ESI	1	/SubmarineTitans/Recovered/SystemClassTyVTable	/SubmarineTitans/Recovered/STMessage | /SystemClassTy	/SystemClassTy	AppClassTy	/undefined4	linked_library_runtime
 006E4BB0	Library::Ourlib::SAPP::FUN_006e4bb0	006E4BDA	32	1	DWORD PTR [ESI + 0X4]	ECX	1					/void	linked_library_runtime
-006E4D70	AppClassTy::LifeToAllSystem	006E4DEB	28	0	EAX	EAX	1				AppClassTy	/undefined4	unresolved_object_dispatch
+006E4D70	AppClassTy::LifeToAllSystem	006E4DEB	28	0	EAX	EAX	1				AppClassTy	/undefined4	linked_library_runtime
 006E4EE0	Library::Ourlib::SAPP::FUN_006e4ee0	006E4F7E	20	0	ESI	ESI	1					/undefined4	linked_library_runtime
-006E4FC0	AppClassTy::RunApp	006E508E	16	1	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable		/AppClassTy	AppClassTy		physical_vtable
-006E4FC0	AppClassTy::RunApp	006E50C5	4	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable	/AppClassTy	/AppClassTy	AppClassTy	/void	physical_vtable
-006E4FC0	AppClassTy::RunApp	006E512D	8	0	DWORD PTR [EBP + -0X8]	ECX	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable	/AppClassTy	/AppClassTy	AppClassTy	/void	physical_vtable
-006E51F0	SystemClassTy::InitSystem	006E5255	20	0	ESI	ESI	1	/SubmarineTitans/Recovered/SystemClassTyVTable	/SystemClassTy	/SystemClassTy	SystemClassTy	/undefined4	physical_vtable
+006E4FC0	AppClassTy::RunApp	006E508E	16	1	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable		/AppClassTy	AppClassTy		linked_library_runtime
+006E4FC0	AppClassTy::RunApp	006E50C5	4	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable	/AppClassTy	/AppClassTy	AppClassTy	/void	linked_library_runtime
+006E4FC0	AppClassTy::RunApp	006E512D	8	0	DWORD PTR [EBP + -0X8]	ECX	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable	/AppClassTy	/AppClassTy	AppClassTy	/void	linked_library_runtime
+006E51F0	SystemClassTy::InitSystem	006E5255	20	0	ESI	ESI	1	/SubmarineTitans/Recovered/SystemClassTyVTable	/SystemClassTy	/SystemClassTy	SystemClassTy	/undefined4	linked_library_runtime
 006E52D0	FUN_006e52d0	006E5309	0	1	EDI	EDI	1					/void	unresolved_object_dispatch
-006E5580	SystemClassTy::CreateObject	006E55EB	0	1	EDX	EDX	1				SystemClassTy	/undefined4	unresolved_object_dispatch
+006E5580	SystemClassTy::CreateObject	006E55EB	0	1	EDX	EDX	1				SystemClassTy	/undefined4	linked_library_runtime
 006E5670	FUN_006e5670	006E5687	8	6	ECX	ECX	1					/undefined4	unresolved_object_dispatch
 006E5690	FUN_006e5690	006E56A3	8	6	ECX	ECX	1					/undefined4	unresolved_object_dispatch
 006E56B0	StartSystemTy::sub_006E56B0	006E56E8	0	1	DWORD PTR [EBP + -0X4]	ECX	1				StartSystemTy	/void	unresolved_object_dispatch
 006E5740	FUN_006e5740	006E5778	0	1	ESI	ESI	1					/void	unresolved_object_dispatch
 006E57B0	STPlaySystemC::sub_006E57B0	006E57EE	0	1	ECX	ECX	1				STPlaySystemC	/void	unresolved_object_dispatch
-006E5970	SystemClassTy::SendMessage	006E59E5	24	1	DWORD PTR [EAX + 0X18]	ECX	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable	/AppClassTy	/AppClassTy	SystemClassTy		physical_vtable
-006E5970	SystemClassTy::SendMessage	006E59F3	32	1	DWORD PTR [EBP + -0X8]	ECX	1	/SubmarineTitans/Recovered/VTables/StartSystemTyVTable	/StartSystemTy	/StartSystemTy	SystemClassTy		physical_vtable
-006E5970	SystemClassTy::SendMessage	006E5A34	0	1	DWORD PTR [EBP + -0XC]	ECX	1				SystemClassTy		unresolved_object_dispatch
-006E5970	SystemClassTy::SendMessage	006E5AF7	0	1	DWORD PTR [ECX + 0X4]	ECX	1				SystemClassTy	/undefined4	unresolved_object_dispatch
-006E5970	SystemClassTy::SendMessage	006E5B95	32	1	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/StartSystemTyVTable	/StartSystemTy	/StartSystemTy	SystemClassTy	/undefined4	physical_vtable
-006E5C70	SystemClassTy::GetToAllObjects	006E5CE0	0	1	EAX	EAX	1				SystemClassTy	/undefined4	unresolved_object_dispatch
-006E5D90	SystemClassTy::Life	006E5DE7	24	1	ESI	ESI	1	/SubmarineTitans/Recovered/SystemClassTyVTable	/SubmarineTitans/Recovered/STMessage | /SystemClassTy	/SystemClassTy	SystemClassTy	/undefined4	physical_vtable
-006E5D90	SystemClassTy::Life	006E5E7C	24	1	ESI	ESI	1	/SubmarineTitans/Recovered/SystemClassTyVTable	/SubmarineTitans/Recovered/STMessage | /SystemClassTy	/SystemClassTy	SystemClassTy	/undefined4	physical_vtable
+006E5970	SystemClassTy::SendMessage	006E59E5	24	1	DWORD PTR [EAX + 0X18]	ECX	1	/SubmarineTitans/Recovered/VTables/AppClassTyVTable	/AppClassTy	/AppClassTy	SystemClassTy		linked_library_runtime
+006E5970	SystemClassTy::SendMessage	006E59F3	32	1	DWORD PTR [EBP + -0X8]	ECX	1	/SubmarineTitans/Recovered/VTables/StartSystemTyVTable	/StartSystemTy	/StartSystemTy	SystemClassTy		linked_library_runtime
+006E5970	SystemClassTy::SendMessage	006E5A34	0	1	DWORD PTR [EBP + -0XC]	ECX	1				SystemClassTy		linked_library_runtime
+006E5970	SystemClassTy::SendMessage	006E5AF7	0	1	DWORD PTR [ECX + 0X4]	ECX	1				SystemClassTy	/undefined4	linked_library_runtime
+006E5970	SystemClassTy::SendMessage	006E5B95	32	1	EDI	EDI	1	/SubmarineTitans/Recovered/VTables/StartSystemTyVTable	/StartSystemTy	/StartSystemTy	SystemClassTy	/undefined4	linked_library_runtime
+006E5C70	SystemClassTy::GetToAllObjects	006E5CE0	0	1	EAX	EAX	1				SystemClassTy	/undefined4	linked_library_runtime
+006E5D90	SystemClassTy::Life	006E5DE7	24	1	ESI	ESI	1	/SubmarineTitans/Recovered/SystemClassTyVTable	/SubmarineTitans/Recovered/STMessage | /SystemClassTy	/SystemClassTy	SystemClassTy	/undefined4	linked_library_runtime
+006E5D90	SystemClassTy::Life	006E5E7C	24	1	ESI	ESI	1	/SubmarineTitans/Recovered/SystemClassTyVTable	/SubmarineTitans/Recovered/STMessage | /SystemClassTy	/SystemClassTy	SystemClassTy	/undefined4	linked_library_runtime
 006E6060	FUN_006e6060	006E6078	24	2	DWORD PTR [ECX + 0XC]	ECX	1					/undefined4	unresolved_object_dispatch
 006E6130	FUN_006e6130	006E6141	12	5	ECX	ECX	1					/undefined4	unresolved_object_dispatch
 006E6150	FUN_006e6150	006E6167	8	6	ECX	ECX	1					/undefined4	unresolved_object_dispatch
-006E6170	SystemWithNamedObjClassTy::CreateObject	006E61C5	0	2	EDX	EDX	1				SystemWithNamedObjClassTy	/undefined4	unresolved_object_dispatch
+006E6170	SystemWithNamedObjClassTy::CreateObject	006E61C5	0	2	EDX	EDX	1				SystemWithNamedObjClassTy	/undefined4	linked_library_runtime
 006E6200	Library::Ourlib::SAPP::FUN_006e6200	006E628C	0	1	DWORD PTR [EBP + 0XC]	ECX	1					/undefined4	linked_library_runtime
-006E6330	SystemWithNamedObjClassTy::SendMessage	006E6382	0	1	DWORD PTR [EBP + -0X4]	ECX	1				SystemWithNamedObjClassTy	/undefined4	unresolved_object_dispatch
+006E6330	SystemWithNamedObjClassTy::SendMessage	006E6382	0	1	DWORD PTR [EBP + -0X4]	ECX	1				SystemWithNamedObjClassTy	/undefined4	linked_library_runtime
 006EB540	FUN_006eb540	006EB552	128	4	DWORD PTR [EAX]	EAX	0					/void	ambiguous_receiver_transport
 006EC010	Library::Ourlib::ST3DSPR::FUN_006ec010	006ECA01	128	2	DWORD PTR [EBX + 0X4]	EAX	0					/void	linked_library_runtime
 006EC010	Library::Ourlib::ST3DSPR::FUN_006ec010	006ECB85	128	2	DWORD PTR [EAX]	EAX	0						linked_library_runtime
 006F2E40	Library::Ourlib::MFAOBJ::mfAObjEnum	006F2F0F	16	5	DWORD PTR [EBP + 0X14]		0		/STPlaySystemC | /cMf32			/undefined4	linked_library_runtime
 00708650	FUN_00708650	00708C7B	128	2	DWORD PTR [EAX]	EAX	0					/void	ambiguous_receiver_transport
-0071B220	InputClassTy::Create	0071B30B	12	4	DWORD PTR [EAX]	EAX	0				InputClassTy	/undefined4	ambiguous_receiver_transport
-0071B220	InputClassTy::Create	0071B334	52	3	DWORD PTR [EAX]	EAX	0		/WinDef.h/HWND__		InputClassTy	/undefined4	ambiguous_receiver_transport
-0071B220	InputClassTy::Create	0071B3D1	12	4	DWORD PTR [EAX]	EAX	0				InputClassTy	/undefined4	ambiguous_receiver_transport
-0071B220	InputClassTy::Create	0071B3F6	44	2	DWORD PTR [EAX]	EAX	0				InputClassTy	/undefined4	ambiguous_receiver_transport
-0071B220	InputClassTy::Create	0071B41F	52	3	DWORD PTR [0X00856D78]	EDI	0		/WinDef.h/HWND__		InputClassTy	/undefined4	ambiguous_receiver_transport
-0071B520	InputClassTy::Done	0071B585	32	1	DWORD PTR [EAX]	EAX	0				InputClassTy	/void	ambiguous_receiver_transport
-0071B520	InputClassTy::Done	0071B5A3	32	1	DWORD PTR [EAX]	EAX	0				InputClassTy	/void	ambiguous_receiver_transport
-0071B520	InputClassTy::Done	0071B5C0	8	1	DWORD PTR [EAX]	EAX	0				InputClassTy	/void	ambiguous_receiver_transport
-0071B9C0	InputClassTy::None	0071BA19	28	1	DWORD PTR [EAX]	EAX	0				InputClassTy	/undefined4	ambiguous_receiver_transport
-0071B9C0	InputClassTy::None	0071BA4B	36	3	DWORD PTR [EAX]	EAX	0		/SubmarineTitans/Recovered/PointerShapes/AnonShape_0071B760_B33E06ED		InputClassTy	/undefined4	ambiguous_receiver_transport
-0071B9C0	InputClassTy::None	0071BD0A	0	1	DWORD PTR [EBP + -0X8]	ECX	1				InputClassTy	/void	unresolved_object_dispatch
-0071B9C0	InputClassTy::None	0071BDEA	0	1	DWORD PTR [EBP + -0X8]	ECX	1				InputClassTy	/void	unresolved_object_dispatch
-0071B9C0	InputClassTy::None	0071BEC6	0	1	DWORD PTR [EBP + -0X8]	ECX	1				InputClassTy	/void	unresolved_object_dispatch
-0071B9C0	InputClassTy::None	0071BF3F	0	1	DWORD PTR [EBP + -0X8]	ECX	1				InputClassTy	/void	unresolved_object_dispatch
-0071B9C0	InputClassTy::None	0071BFC2	0	1	DWORD PTR [EBP + -0X8]	ECX	1				InputClassTy	/void	unresolved_object_dispatch
-0071C1D0	InputClassTy::AddAcc	0071C36C	36	3	DWORD PTR [EAX]	EAX	0		/SubmarineTitans/Recovered/PointerShapes/AnonShape_0071B760_B33E06ED		InputClassTy	/undefined4	ambiguous_receiver_transport
-0071C530	InputClassTy::DelAcc	0071C6D1	36	3	DWORD PTR [EAX]	EAX	0		/SubmarineTitans/Recovered/PointerShapes/AnonShape_0071B760_B33E06ED		InputClassTy	/undefined4	ambiguous_receiver_transport
-0071CA50	InputClassTy::GetMessage	0071CE1E	28	1	DWORD PTR [EAX]	EAX	0				InputClassTy	/undefined4	ambiguous_receiver_transport
-0071CFD0	ButtonClassTy::GetMessage	0071D329	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/void	physical_vtable
-0071CFD0	ButtonClassTy::GetMessage	0071D476	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	physical_vtable
-0071CFD0	ButtonClassTy::GetMessage	0071D600	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	physical_vtable
-0071CFD0	ButtonClassTy::GetMessage	0071D701	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	physical_vtable
-0071CFD0	ButtonClassTy::GetMessage	0071D973	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	physical_vtable
-0071CFD0	ButtonClassTy::GetMessage	0071DAE9	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	physical_vtable
-0071CFD0	ButtonClassTy::GetMessage	0071DD58	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	physical_vtable
-0071CFD0	ButtonClassTy::GetMessage	0071DDAE	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	physical_vtable
-0071E0E0	RadioClassTy::GetMessage	0071E219	8	5	DWORD PTR [EDI + 0XC]	EAX	0				RadioClassTy	/undefined4	ambiguous_receiver_transport
-0071E730	ViewerClassTy::_Draw	0071E784	8	4	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy	/void	physical_vtable
-0071E730	ViewerClassTy::_Draw	0071E7EA	8	4	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy	/void	physical_vtable
-0071E8B0	ViewerClassTy::GetMessage	0071EAA2	8	5	DWORD PTR [EBX + 0XC]	ECX	1				ViewerClassTy	/void	unresolved_object_dispatch
-0071E8B0	ViewerClassTy::GetMessage	0071EB0F	8	5	DWORD PTR [EBX + 0XC]	ECX	1				ViewerClassTy	/void	unresolved_object_dispatch
-0071E8B0	ViewerClassTy::GetMessage	0071ED3B	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy		physical_vtable
-0071E8B0	ViewerClassTy::GetMessage	0071ED9D	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy	/undefined4	physical_vtable
-0071E8B0	ViewerClassTy::GetMessage	0071EEE3	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy		physical_vtable
-0071E8B0	ViewerClassTy::GetMessage	0071EF38	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy		physical_vtable
-0071E8B0	ViewerClassTy::GetMessage	0071EFCF	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy		physical_vtable
+0071B220	InputClassTy::Create	0071B30B	12	4	DWORD PTR [EAX]	EAX	0				InputClassTy	/undefined4	linked_library_runtime
+0071B220	InputClassTy::Create	0071B334	52	3	DWORD PTR [EAX]	EAX	0		/WinDef.h/HWND__		InputClassTy	/undefined4	linked_library_runtime
+0071B220	InputClassTy::Create	0071B3D1	12	4	DWORD PTR [EAX]	EAX	0				InputClassTy	/undefined4	linked_library_runtime
+0071B220	InputClassTy::Create	0071B3F6	44	2	DWORD PTR [EAX]	EAX	0				InputClassTy	/undefined4	linked_library_runtime
+0071B220	InputClassTy::Create	0071B41F	52	3	DWORD PTR [0X00856D78]	EDI	0		/WinDef.h/HWND__		InputClassTy	/undefined4	linked_library_runtime
+0071B520	InputClassTy::Done	0071B585	32	1	DWORD PTR [EAX]	EAX	0				InputClassTy	/void	linked_library_runtime
+0071B520	InputClassTy::Done	0071B5A3	32	1	DWORD PTR [EAX]	EAX	0				InputClassTy	/void	linked_library_runtime
+0071B520	InputClassTy::Done	0071B5C0	8	1	DWORD PTR [EAX]	EAX	0				InputClassTy	/void	linked_library_runtime
+0071B9C0	InputClassTy::None	0071BA19	28	1	DWORD PTR [EAX]	EAX	0				InputClassTy	/undefined4	linked_library_runtime
+0071B9C0	InputClassTy::None	0071BA4B	36	3	DWORD PTR [EAX]	EAX	0		/SubmarineTitans/Recovered/PointerShapes/AnonShape_0071B760_B33E06ED		InputClassTy	/undefined4	linked_library_runtime
+0071B9C0	InputClassTy::None	0071BD0A	0	1	DWORD PTR [EBP + -0X8]	ECX	1				InputClassTy	/void	linked_library_runtime
+0071B9C0	InputClassTy::None	0071BDEA	0	1	DWORD PTR [EBP + -0X8]	ECX	1				InputClassTy	/void	linked_library_runtime
+0071B9C0	InputClassTy::None	0071BEC6	0	1	DWORD PTR [EBP + -0X8]	ECX	1				InputClassTy	/void	linked_library_runtime
+0071B9C0	InputClassTy::None	0071BF3F	0	1	DWORD PTR [EBP + -0X8]	ECX	1				InputClassTy	/void	linked_library_runtime
+0071B9C0	InputClassTy::None	0071BFC2	0	1	DWORD PTR [EBP + -0X8]	ECX	1				InputClassTy	/void	linked_library_runtime
+0071C1D0	InputClassTy::AddAcc	0071C36C	36	3	DWORD PTR [EAX]	EAX	0		/SubmarineTitans/Recovered/PointerShapes/AnonShape_0071B760_B33E06ED		InputClassTy	/undefined4	linked_library_runtime
+0071C530	InputClassTy::DelAcc	0071C6D1	36	3	DWORD PTR [EAX]	EAX	0		/SubmarineTitans/Recovered/PointerShapes/AnonShape_0071B760_B33E06ED		InputClassTy	/undefined4	linked_library_runtime
+0071CA50	InputClassTy::GetMessage	0071CE1E	28	1	DWORD PTR [EAX]	EAX	0				InputClassTy	/undefined4	linked_library_runtime
+0071CFD0	ButtonClassTy::GetMessage	0071D329	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/void	linked_library_runtime
+0071CFD0	ButtonClassTy::GetMessage	0071D476	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	linked_library_runtime
+0071CFD0	ButtonClassTy::GetMessage	0071D600	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	linked_library_runtime
+0071CFD0	ButtonClassTy::GetMessage	0071D701	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	linked_library_runtime
+0071CFD0	ButtonClassTy::GetMessage	0071D973	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	linked_library_runtime
+0071CFD0	ButtonClassTy::GetMessage	0071DAE9	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	linked_library_runtime
+0071CFD0	ButtonClassTy::GetMessage	0071DD58	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	linked_library_runtime
+0071CFD0	ButtonClassTy::GetMessage	0071DDAE	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ButtonClassTyVTable	/ButtonClassTy	/ButtonClassTy	ButtonClassTy	/undefined4	linked_library_runtime
+0071E0E0	RadioClassTy::GetMessage	0071E219	8	5	DWORD PTR [EDI + 0XC]	EAX	0				RadioClassTy	/undefined4	linked_library_runtime
+0071E730	ViewerClassTy::_Draw	0071E784	8	4	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy	/void	linked_library_runtime
+0071E730	ViewerClassTy::_Draw	0071E7EA	8	4	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy	/void	linked_library_runtime
+0071E8B0	ViewerClassTy::GetMessage	0071EAA2	8	5	DWORD PTR [EBX + 0XC]	ECX	1				ViewerClassTy	/void	linked_library_runtime
+0071E8B0	ViewerClassTy::GetMessage	0071EB0F	8	5	DWORD PTR [EBX + 0XC]	ECX	1				ViewerClassTy	/void	linked_library_runtime
+0071E8B0	ViewerClassTy::GetMessage	0071ED3B	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy		linked_library_runtime
+0071E8B0	ViewerClassTy::GetMessage	0071ED9D	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy	/undefined4	linked_library_runtime
+0071E8B0	ViewerClassTy::GetMessage	0071EEE3	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy		linked_library_runtime
+0071E8B0	ViewerClassTy::GetMessage	0071EF38	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy		linked_library_runtime
+0071E8B0	ViewerClassTy::GetMessage	0071EFCF	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ViewerClassTyVTable	/ViewerClassTy	/ViewerClassTy	ViewerClassTy		linked_library_runtime
 0071F230	FUN_0071f230	0071F268	8	2	ESI	ESI	1					/undefined4	unresolved_object_dispatch
 0071F230	FUN_0071f230	0071F283	12	4	ESI	ESI	1					/undefined4	unresolved_object_dispatch
 0071F340	FUN_0071f340	0071F36A	8	2	ESI	ESI	1					/undefined4	unresolved_object_dispatch
-0071F3A0	ListClassTy::GetMessage	0071F573	8	5	DWORD PTR [EBX + 0XC]	ECX	1				ListClassTy	/undefined4	unresolved_object_dispatch
-0071F3A0	ListClassTy::GetMessage	0071F5BD	8	5	DWORD PTR [EBX + 0XC]	ECX	1				ListClassTy	/undefined4	unresolved_object_dispatch
-0071F3A0	ListClassTy::GetMessage	0071F61F	8	5	DWORD PTR [EBX + 0XC]	ECX	1				ListClassTy	/undefined4	unresolved_object_dispatch
-0071F3A0	ListClassTy::GetMessage	0071F655	0	1	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy | /SubmarineTitans/Recovered/STMessage	/ListClassTy	ListClassTy		physical_vtable
-0071F3A0	ListClassTy::GetMessage	0071FA38	0	1	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy | /SubmarineTitans/Recovered/STMessage	/ListClassTy	ListClassTy	/void	physical_vtable
-0071F3A0	ListClassTy::GetMessage	0071FA3E	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy		physical_vtable
-0071F3A0	ListClassTy::GetMessage	0071FACF	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	0071FC1D	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy		physical_vtable
-0071F3A0	ListClassTy::GetMessage	0071FC68	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	0071FD20	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	0071FDB9	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	0071FE82	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	0071FFBB	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	00720201	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	00720244	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	007202C3	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	00720399	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	007204E9	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	00720593	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-0071F3A0	ListClassTy::GetMessage	007206CC	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	physical_vtable
-00720A50	EditorClassTy::_Draw	00720C9D	8	1	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	0072260A	8	5	DWORD PTR [EBX + 0XC]	ECX	1				EditorClassTy	/void	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722671	8	5	DWORD PTR [EBX + 0XC]	ECX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	007227E8	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722800	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	0072287C	4	0	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722A26	4	0	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722AB8	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722BF2	0	1	EBX	EBX	1				EditorClassTy	/void	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722C24	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722C70	0	1	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722C88	4	0	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722D9B	4	0	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722DF9	4	0	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722E35	4	0	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722E6F	4	0	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722EC6	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722F4C	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00722FAB	4	0	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	0072301A	4	0	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00723060	4	0	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	007230BE	4	0	EBX	EBX	1				EditorClassTy	/undefined4	unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00723101	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00723123	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00723146	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00723168	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	00723187	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00722410	EditorClassTy::GetMessage	007231A6	4	0	EBX	EBX	1				EditorClassTy		unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	007235B0	0	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	007235E3	0	1	EBX	EBX	1				TabClassTy	/void	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	007236C5	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	007237E5	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	00723998	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	00723B65	0	1	ESI	ESI	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	00723C72	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	00723CAE	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	00723CEF	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	00723D49	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	00723D82	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	00723EDC	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	00723F50	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	0072404F	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-00723420	TabClassTy::GetMessage	0072408C	4	1	EBX	EBX	1				TabClassTy	/undefined4	unresolved_object_dispatch
-007244B0	SliderClassTy::GetMessage	007245C3	8	5	DWORD PTR [EBX + 0XC]	ECX	1				SliderClassTy	/undefined4	unresolved_object_dispatch
-007244B0	SliderClassTy::GetMessage	00724627	8	5	DWORD PTR [EBX + 0XC]	ECX	1				SliderClassTy	/undefined4	unresolved_object_dispatch
-007244B0	SliderClassTy::GetMessage	00724681	8	5	DWORD PTR [EBX + 0XC]	ECX	1				SliderClassTy	/undefined4	unresolved_object_dispatch
-007244B0	SliderClassTy::GetMessage	007246C9	0	1	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/SliderClassTyVTable	/SliderClassTy | /SubmarineTitans/Recovered/STMessage	/SliderClassTy	SliderClassTy	/void	physical_vtable
-007244B0	SliderClassTy::GetMessage	00724743	0	1	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/SliderClassTyVTable	/SliderClassTy | /SubmarineTitans/Recovered/STMessage	/SliderClassTy	SliderClassTy	/undefined4	physical_vtable
-00725020	TrackbarClassTy::GetMessage	007251D2	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/TrackbarClassTyVTable	/TrackbarClassTy	/TrackbarClassTy	TrackbarClassTy		physical_vtable
-00725020	TrackbarClassTy::GetMessage	00725206	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/TrackbarClassTyVTable	/TrackbarClassTy	/TrackbarClassTy	TrackbarClassTy	/undefined4	physical_vtable
-00725020	TrackbarClassTy::GetMessage	007253A2	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/TrackbarClassTyVTable	/TrackbarClassTy	/TrackbarClassTy	TrackbarClassTy	/undefined4	physical_vtable
+0071F3A0	ListClassTy::GetMessage	0071F573	8	5	DWORD PTR [EBX + 0XC]	ECX	1				ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071F5BD	8	5	DWORD PTR [EBX + 0XC]	ECX	1				ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071F61F	8	5	DWORD PTR [EBX + 0XC]	ECX	1				ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071F655	0	1	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy | /SubmarineTitans/Recovered/STMessage	/ListClassTy	ListClassTy		linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071FA38	0	1	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy | /SubmarineTitans/Recovered/STMessage	/ListClassTy	ListClassTy	/void	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071FA3E	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy		linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071FACF	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071FC1D	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy		linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071FC68	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071FD20	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071FDB9	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071FE82	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	0071FFBB	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	00720201	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	00720244	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	007202C3	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	00720399	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	007204E9	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	00720593	8	2	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+0071F3A0	ListClassTy::GetMessage	007206CC	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/ListClassTyVTable	/ListClassTy	/ListClassTy	ListClassTy	/undefined4	linked_library_runtime
+00720A50	EditorClassTy::_Draw	00720C9D	8	1	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	0072260A	8	5	DWORD PTR [EBX + 0XC]	ECX	1				EditorClassTy	/void	linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722671	8	5	DWORD PTR [EBX + 0XC]	ECX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	007227E8	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722800	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	0072287C	4	0	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722A26	4	0	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722AB8	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722BF2	0	1	EBX	EBX	1				EditorClassTy	/void	linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722C24	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722C70	0	1	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722C88	4	0	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722D9B	4	0	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722DF9	4	0	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722E35	4	0	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722E6F	4	0	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722EC6	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722F4C	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	00722FAB	4	0	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	0072301A	4	0	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	00723060	4	0	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	007230BE	4	0	EBX	EBX	1				EditorClassTy	/undefined4	linked_library_runtime
+00722410	EditorClassTy::GetMessage	00723101	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	00723123	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	00723146	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	00723168	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	00723187	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00722410	EditorClassTy::GetMessage	007231A6	4	0	EBX	EBX	1				EditorClassTy		linked_library_runtime
+00723420	TabClassTy::GetMessage	007235B0	0	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	007235E3	0	1	EBX	EBX	1				TabClassTy	/void	linked_library_runtime
+00723420	TabClassTy::GetMessage	007236C5	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	007237E5	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	00723998	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	00723B65	0	1	ESI	ESI	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	00723C72	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	00723CAE	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	00723CEF	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	00723D49	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	00723D82	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	00723EDC	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	00723F50	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	0072404F	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+00723420	TabClassTy::GetMessage	0072408C	4	1	EBX	EBX	1				TabClassTy	/undefined4	linked_library_runtime
+007244B0	SliderClassTy::GetMessage	007245C3	8	5	DWORD PTR [EBX + 0XC]	ECX	1				SliderClassTy	/undefined4	linked_library_runtime
+007244B0	SliderClassTy::GetMessage	00724627	8	5	DWORD PTR [EBX + 0XC]	ECX	1				SliderClassTy	/undefined4	linked_library_runtime
+007244B0	SliderClassTy::GetMessage	00724681	8	5	DWORD PTR [EBX + 0XC]	ECX	1				SliderClassTy	/undefined4	linked_library_runtime
+007244B0	SliderClassTy::GetMessage	007246C9	0	1	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/SliderClassTyVTable	/SliderClassTy | /SubmarineTitans/Recovered/STMessage	/SliderClassTy	SliderClassTy	/void	linked_library_runtime
+007244B0	SliderClassTy::GetMessage	00724743	0	1	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/SliderClassTyVTable	/SliderClassTy | /SubmarineTitans/Recovered/STMessage	/SliderClassTy	SliderClassTy	/undefined4	linked_library_runtime
+00725020	TrackbarClassTy::GetMessage	007251D2	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/TrackbarClassTyVTable	/TrackbarClassTy	/TrackbarClassTy	TrackbarClassTy		linked_library_runtime
+00725020	TrackbarClassTy::GetMessage	00725206	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/TrackbarClassTyVTable	/TrackbarClassTy	/TrackbarClassTy	TrackbarClassTy	/undefined4	linked_library_runtime
+00725020	TrackbarClassTy::GetMessage	007253A2	4	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/TrackbarClassTyVTable	/TrackbarClassTy	/TrackbarClassTy	TrackbarClassTy	/undefined4	linked_library_runtime
 00725910	FUN_00725910	0072592A	20	8	DWORD PTR [EBP + 0X10]		0					/undefined4	ambiguous_receiver_transport
 00725910	FUN_00725910	00725A48	20	4	EDX		0		/winbase.h/_WIN32_FIND_DATAA			/undefined4	ambiguous_receiver_transport
 00725910	FUN_00725910	00725BFE	20	4	DWORD PTR [EBP + 0X18]		0					/undefined4	ambiguous_receiver_transport
@@ -3279,13 +3279,13 @@ function_address	function_name	call_address	slot_offset	stack_parameter_count	la
 0072B0B0	FUN_0072b0b0	0072B5D6	20	6	DWORD PTR [EAX + 0X34]	ECX	1		/WinDef.h/tagPOINT			/undefined4	typed_external_or_secondary_interface
 0072B0B0	FUN_0072b0b0	0072B68A	128	2	DWORD PTR [EAX]	EAX	0					/void	ambiguous_receiver_transport
 0072B0B0	FUN_0072b0b0	0072B69F	128	2	DWORD PTR [EAX]	EAX	0					/void	ambiguous_receiver_transport
-0072B780	ControlClassTy::GetMessage	0072B815	0	1	ESI	ESI	1				ControlClassTy	/void	unresolved_object_dispatch
-0072B780	ControlClassTy::GetMessage	0072B862	0	1	ESI	ESI	1				ControlClassTy	/undefined4	unresolved_object_dispatch
-0072B780	ControlClassTy::GetMessage	0072B8CA	4	0	ESI	ESI	1				ControlClassTy	/undefined4	unresolved_object_dispatch
-0072B780	ControlClassTy::GetMessage	0072BB16	0	1	ESI	ESI	1				ControlClassTy	/void	unresolved_object_dispatch
-0072B780	ControlClassTy::GetMessage	0072BB53	0	1	ESI	ESI	1				ControlClassTy	/void	unresolved_object_dispatch
-0072B780	ControlClassTy::GetMessage	0072BCC4	4	0	ESI	ESI	1				ControlClassTy	/undefined4	unresolved_object_dispatch
-0072B780	ControlClassTy::GetMessage	0072C134	0	1	ESI	ESI	1				ControlClassTy	/void	unresolved_object_dispatch
+0072B780	ControlClassTy::GetMessage	0072B815	0	1	ESI	ESI	1				ControlClassTy	/void	linked_library_runtime
+0072B780	ControlClassTy::GetMessage	0072B862	0	1	ESI	ESI	1				ControlClassTy	/undefined4	linked_library_runtime
+0072B780	ControlClassTy::GetMessage	0072B8CA	4	0	ESI	ESI	1				ControlClassTy	/undefined4	linked_library_runtime
+0072B780	ControlClassTy::GetMessage	0072BB16	0	1	ESI	ESI	1				ControlClassTy	/void	linked_library_runtime
+0072B780	ControlClassTy::GetMessage	0072BB53	0	1	ESI	ESI	1				ControlClassTy	/void	linked_library_runtime
+0072B780	ControlClassTy::GetMessage	0072BCC4	4	0	ESI	ESI	1				ControlClassTy	/undefined4	linked_library_runtime
+0072B780	ControlClassTy::GetMessage	0072C134	0	1	ESI	ESI	1				ControlClassTy	/void	linked_library_runtime
 0072F5D0	Library::MSVCRT::FUN_0072f5d0	0072F6FB	8327736	0	DWORD PTR [EBP + 0XFFFFFF60]		0					/undefined4	linked_library_runtime
 00730810	Library::MSVCRT::FUN_00730810	0073090D	20	2	DWORD PTR [EBP + 0XFFFFFF70]		0					/undefined4	linked_library_runtime
 00746BAB	FUN_00746bab	00746BE2	0	3	DWORD PTR [EAX]	EAX	0		/unknwn.h/IUnknown			/undefined4	ambiguous_receiver_transport

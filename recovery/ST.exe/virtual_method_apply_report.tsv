@@ -478,7 +478,7 @@ target_address	status	proposed_name	detail
 0067C7E0	disabled	AiPlrClassTy::GetMessage	all apply flags are 0
 00690B90	disabled	AiTactClassTy::GetMessage	all apply flags are 0
 006E4FA0	disabled		all apply flags are 0
-006E5150	unchanged	AppClassTy::sub_006E5150	name=unchanged
+006E5150	disabled	AppClassTy::vfunc_18	all apply flags are 0
 006E52D0	disabled		all apply flags are 0
 006E5670	disabled		all apply flags are 0
 006E5690	disabled		all apply flags are 0

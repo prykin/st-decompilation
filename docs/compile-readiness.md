@@ -36,22 +36,22 @@ sites, not unique source objects.
 
 | Class | Functions | Body share | Occurrences | State | What remains |
 | --- | ---: | ---: | ---: | --- | --- |
-| Translation-unit/declaration assembly | 5,555 | 100.00% | 5,555 | assembled and audited | `tools/st_source_tree.py` emits 329 deterministic TUs; the pinned Docker audit passes 275 and maps all 193 errors to function addresses. No TU reaches the 64-error cap. |
-| Default `FUN_ADDRESS` names | 3,920 | 70.57% | 3,920 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
-| Undefined function signatures | 3,582 | 64.48% | 3,582 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
-| Undefined scalar spelling | 3,431 | 61.76% | 15,733 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
-| Typed byte-offset field view | 1,347 | 24.25% | 12,537 | compatibility implemented | `STField<T>(base, offset)` preserves the exact access until owner/layout proof supplies a named member. |
+| Translation-unit/declaration assembly | 5,555 | 100.00% | 5,555 | assembled and audited | `tools/st_source_tree.py` emits 334 deterministic TUs; the pinned Docker audit passes 280 and maps all 192 errors to function addresses. No TU reaches the 64-error cap. |
+| Default `FUN_ADDRESS` names | 3,919 | 70.55% | 3,919 | valid but semantic debt | Stable fallback names compile; recover original names only from evidence. |
+| Undefined function signatures | 3,581 | 64.46% | 3,581 | runtime-compatible, semantically incomplete | Recover return and parameter meaning at ABI boundaries. |
+| Undefined scalar spelling | 3,426 | 61.67% | 15,696 | compatibility implemented | Width is preserved by aliases, including exact 3/6-byte containers; signedness, enum, pointer, and semantic type remain. |
+| Typed byte-offset field view | 1,340 | 24.12% | 12,485 | compatibility implemented | `STField<T>(base, offset)` preserves the exact access until owner/layout proof supplies a named member. |
 | Typed object byte-offset view | 17 | 0.31% | 113 | compatibility implemented | `STObjectAtByteOffset(base, offset).member` preserves an exact byte induction variable while restoring an already proven member. |
 | Record byte-address view | 39 | 0.70% | 57 | compatibility implemented | `STRecordByteAddress` retains an exact affine record address until index divisibility is proven. |
 | Packed low-piece update | 243 | 4.37% | 726 | compatibility implemented | `STReplaceLowByte*`/`STReplaceLowWord`/`STPackTagged24` preserve the untouched storage bits. |
 | Biased signed grid division | 95 | 1.71% | 375 | compatibility implemented | `STBiasedDiv16` retains the complete VC6 signed quotient idiom, including its negative-source adjustment. |
-| Ownerless `__thiscall` | 950 | 17.10% | 950 | source ABI emitted | `st::fn_ADDRESS` retains the explicit ECX receiver until a class is proven. |
-| Opaque `code *` callback type | 683 | 12.30% | 1,625 | compatibility implemented | Install the exact callback/vtable-slot `FunctionDefinition`. |
-| Raw indirect call | 627 | 11.29% | 1,509 | semantic debt | Recover receiver, calling convention, argument count, and return type. |
+| Ownerless `__thiscall` | 911 | 16.40% | 911 | source ABI emitted | `st::fn_ADDRESS` retains the explicit ECX receiver until a class is proven. |
+| Opaque `code *` callback type | 678 | 12.21% | 1,434 | compatibility implemented | Install the exact callback/vtable-slot `FunctionDefinition`. |
+| Raw indirect call | 622 | 11.20% | 1,318 | semantic debt | Recover receiver, calling convention, argument count, and return type. |
 | Unresolved register/high value | 225 | 4.05% | 1,361 | semantic debt | Repair boundary ABI, return width, x87 result, SEH/setjmp live-in, or SSA lifetime. |
 | Partial lvalue piece helper | 243 | 4.37% | 1,121 | compatibility implemented | Replace `STPiece<O,W>` only when a field/union facet is proven. |
 | `CONCAT*` intrinsic | 228 | 4.10% | 798 | compatibility implemented | Recover a packed value or retain exact byte composition. |
-| Nonstandard integer/x87 width | 243 | 4.37% | 1,382 | compatibility implemented | Includes `int3`/`uint3`, `longlong` aliases, `float10`, and unresolved x87 `unkbyte10`. |
+| Nonstandard integer/x87 width | 243 | 4.37% | 1,368 | compatibility implemented | Includes `int3`/`uint3`, `longlong` aliases, `float10`, and unresolved x87 `unkbyte10`. |
 | `SUB*` intrinsic | 33 | 0.59% | 160 | compatibility implemented | Recover a named subfield or retain exact extraction. |
 | Carry/borrow intrinsic | 26 | 0.47% | 132 | compatibility implemented | Prefer a source comparison only when its arithmetic proof is exact. |
 | x87 math intrinsic | 19 | 0.34% | 125 | compatibility implemented | `fsin`/`fcos`/`fpatan` retain long-double semantics pending complete x87-stack recovery. |
@@ -59,7 +59,7 @@ sites, not unique source objects.
 | Literal-storage piece | 1 | 0.02% | 3 | compatibility implemented | `STLiteralPiece<O,W>` keeps the little-endian bytes; later recover the intended initializer. |
 | Residual Ghidra `._offset_width_` syntax | 0 | 0.00% | 0 | closed | No remaining syntactic occurrence in exported bodies. |
 
-The compatibility surface covers 34,968 occurrences. It does not claim that
+The compatibility surface covers 34,727 occurrences. It does not claim that
 `undefined4`, `code *`, or a byte-offset access is the original source type; it
 only makes the exact recovered operation expressible in C++ while preserving
 the semantic debt for later analyzers.
@@ -68,12 +68,12 @@ the semantic debt for later analyzers.
 
 | Residual class | Functions | Body share | Occurrences | Priority |
 | --- | ---: | ---: | ---: | --- |
-| Generic `field_XXXX` name | 2,426 | 43.67% | 61,880 | naming after layout; high volume but weak evidence by itself |
-| Generic `DAT/PTR/UNK` symbol | 1,465 | 26.37% | 14,452 | classify scalar/string/table/singleton/array first |
-| Anonymous recovered type | 1,131 | 20.36% | 3,635 | merge only by identity/flow, never geometry alone |
-| Raw pointer offset | 848 | 15.27% | 1,825 | recover complete pointer families or retain byte-buffer arithmetic |
-| `goto`/label presentation | 886 | 15.95% | 11,601 | restructure only with CFG/post-dominator proof |
-| Cast over generic field | 635 | 11.43% | 3,257 | receiver/field width or overlapping-union refinement |
+| Generic `field_XXXX` name | 2,433 | 43.80% | 61,956 | naming after layout; high volume but weak evidence by itself |
+| Generic `DAT/PTR/UNK` symbol | 1,460 | 26.28% | 14,211 | classify scalar/string/table/singleton/array first |
+| Anonymous recovered type | 1,151 | 20.72% | 3,733 | merge only by identity/flow, never geometry alone |
+| Raw pointer offset | 845 | 15.21% | 1,730 | recover complete pointer families or retain byte-buffer arithmetic |
+| `goto`/label presentation | 886 | 15.95% | 11,603 | restructure only with CFG/post-dominator proof |
+| Cast over generic field | 640 | 11.52% | 3,285 | receiver/field width or overlapping-union refinement |
 | Stack-slot lifetime reuse | 260 | 4.68% | 459 | split address-stable HighFunction merge groups |
 | Return-width/high-register artifact | 103 | 1.85% | 291 | whole-CFG EAX/x87 and caller-use evidence |
 | Unresolved incoming register | 126 | 2.27% | 407 | boundary, calling convention, SEH, or true live-in |
@@ -145,7 +145,7 @@ physical-vtable disagreement as review-only.
    `functions.json`, imports, and `call_relations.jsonl`.
 2. **Implemented:** emit address-stable `st::fn_ADDRESS` free functions,
    including explicit receiver ABI for ownerless `__thiscall`.
-3. Recover the remaining 1,509 raw indirect calls from stored targets, physical
+3. Recover the remaining 1,318 raw indirect calls from stored targets, physical
    vtable slots, and exact use-site ABI families; unresolved `code *` remains an
    explicit portability boundary.
 4. Split undefined debt by role (signature, field, local, return, pointer target)

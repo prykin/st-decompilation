@@ -160,7 +160,7 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STRecursivePointeeAnalyzer.java", List.of()),
         Map.entry("STTypeFamilyAnalyzer.java", List.of(
             "vtable_proposals.tsv", "callable_family_audit.tsv",
-            "prototype_callsite_audit.tsv")),
+            "prototype_callsite_audit.tsv", "pointer_shape_call_type_edges.tsv")),
         Map.entry("STClassLayoutAnalyzer.java", List.of(
             "constructor_class_sizes.tsv", "constructor_hierarchy.tsv",
             "vtable_proposals.tsv",

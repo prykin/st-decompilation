@@ -1141,7 +1141,7 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         else if (!receivers.isEmpty()) classification = "typed_external_or_secondary_interface";
         else classification = "unresolved_object_dispatch";
         String qualified = function.getName(true);
-        if (qualified.startsWith("Library::") || qualified.toUpperCase(Locale.ROOT)
+        if (libraryFunction(function) || qualified.toUpperCase(Locale.ROOT)
                 .contains(".DLL::")) classification = "linked_library_runtime";
         callableFamilyAudits.put(site.callAddress, new CallableFamilyAudit(
             site.functionAddress, site.function, site.callAddress, site.slot,
@@ -1154,6 +1154,12 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
     private boolean isDirectLoadedValue(String value) {
         String text = text(value).trim().toUpperCase(Locale.ROOT);
         return text.matches("(?:BYTE|WORD|DWORD|QWORD) PTR \\[.+\\]");
+    }
+
+    private boolean libraryFunction(Function function) {
+        if (function == null || function.getName(true).startsWith("Library::")) return true;
+        return function.getTags().stream().anyMatch(tag ->
+            "LIBRARY".equals(tag.getName()) || tag.getName().startsWith("LIBRARY_"));
     }
 
     /**

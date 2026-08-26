@@ -1037,11 +1037,14 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         Path vtablePath = directory.resolve("vtable_proposals.tsv");
         Path callPath = directory.resolve("callable_family_audit.tsv");
         Path prototypePath = directory.resolve("prototype_callsite_audit.tsv");
+        Path flowPath = directory.resolve("pointer_shape_call_type_edges.tsv");
         if (!Files.isRegularFile(vtablePath) || !Files.isRegularFile(callPath)) return;
         List<Map<String, String>> vtables = readTsv(vtablePath);
         List<Map<String, String>> calls = readTsv(callPath);
         Map<String, Set<String>> directCallerOwners = Files.isRegularFile(prototypePath) ?
             directCallerOwners(readTsv(prototypePath)) : Map.of();
+        Map<String, List<IncomingPointerType>> incomingPointerTypes =
+            Files.isRegularFile(flowPath) ? incomingPointerTypes(readTsv(flowPath)) : Map.of();
         List<PolymorphicBase> bases = polymorphicBases(vtables);
         if (bases.isEmpty()) return;
 
@@ -1091,6 +1094,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 sites.stream().allMatch(site -> compatible(base, site)) &&
                 callerOwners.size() >= 2 && callerOwners.stream().allMatch(owner ->
                     ownerCarriesBase(vtables, owner, base.owner))).toList();
+            String proof = "";
             boolean comparedWithThis = false;
             if (matches.isEmpty() && "__thiscall".equals(
                     function.getCallingConventionName())) {
@@ -1104,6 +1108,23 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                         sites.stream().filter(site -> compatible(base, site)).count() >= 8 &&
                         sites.stream().filter(site -> compatible(base, site))
                             .map(site -> site.slot).distinct().count() >= 2).toList();
+                }
+            }
+            List<IncomingPointerType> incoming = incomingPointerTypes.getOrDefault(
+                parameterFlowKey(function, parameter), List.of());
+            if (matches.isEmpty() && !incoming.isEmpty()) {
+                matches = bases.stream().filter(base ->
+                    sites.stream().allMatch(site -> compatible(base, site)) &&
+                    incoming.stream().allMatch(value -> incomingCarriesBase(
+                        value.type, base, vtables))).toList();
+                if (matches.size() == 1) {
+                    PolymorphicBase base = matches.get(0);
+                    proof = "exact interprocedural parameter flow from " +
+                        incoming.stream().map(value -> value.functionAddress + ":" +
+                            value.storage + "=" + structurePath(value.type))
+                            .distinct().sorted().toList() +
+                        "; every hash-intact generated partial source is a compatible " +
+                        "prefix of the unique physical base " + base.owner;
                 }
             }
             if (matches.size() != 1) continue;
@@ -1129,6 +1150,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                     "; receiver parameter is compared directly with the unadjusted auto-this " +
                     "of named method owner " + base.owner +
                     "; extension slots outside the owner's physical primary table remain raw" :
+                    !proof.isBlank() ? "; " + proof :
                     "; independently named caller families=" + callerOwners +
                     "; every caller primary vtable carries base owner " + base.owner) +
                     "; accepted physical base=" + base.vtablePath +
@@ -1226,6 +1248,126 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
 
     private boolean ownerToken(String value, String owner) {
         return tokens(value).contains(owner);
+    }
+
+    /**
+     * Recover the concrete pointer view which reaches one callee parameter without changing
+     * either endpoint's persistent type.  The pointer-shape pass already records exact
+     * address-stable call edges; resolving both Listing variables here avoids trusting the
+     * rendered caller expression or a copied semantic name.
+     */
+    private Map<String, List<IncomingPointerType>> incomingPointerTypes(
+            List<Map<String, String>> rows) {
+        Map<String, Map<String, IncomingPointerType>> grouped = new TreeMap<>();
+        for (Map<String, String> row : rows) {
+            String[] source = safeText(row.get("source_target")).split("\\|", 3);
+            String[] destination = safeText(row.get("destination_target")).split("\\|", 3);
+            if (source.length != 3 || destination.length != 3 ||
+                    !"parameter".equals(source[1]) ||
+                    !"parameter".equals(destination[1])) continue;
+            Function sourceFunction = functionAt(source[0]);
+            Function destinationFunction = functionAt(destination[0]);
+            if (sourceFunction == null || destinationFunction == null) continue;
+            Parameter sourceParameter = parameterByStorage(sourceFunction, source[2]);
+            Parameter destinationParameter = parameterByStorage(destinationFunction,
+                destination[2]);
+            if (sourceParameter == null || destinationParameter == null ||
+                    !(sourceParameter.getDataType() instanceof Pointer)) continue;
+            String sourcePath = structurePath(sourceParameter.getDataType());
+            if (sourcePath.isBlank()) continue;
+            IncomingPointerType value = new IncomingPointerType(
+                addr(sourceFunction.getEntryPoint()), sourceFunction.getName(true),
+                normalizedStorage(sourceParameter.getVariableStorage().toString()),
+                sourceParameter.getDataType());
+            String key = parameterFlowKey(destinationFunction, destinationParameter);
+            String identity = value.functionAddress + "|" + value.storage + "|" +
+                typeSpec(value.type);
+            grouped.computeIfAbsent(key, ignored -> new TreeMap<>())
+                .putIfAbsent(identity, value);
+        }
+        Map<String, List<IncomingPointerType>> result = new TreeMap<>();
+        for (Map.Entry<String, Map<String, IncomingPointerType>> entry : grouped.entrySet())
+            result.put(entry.getKey(), new ArrayList<>(entry.getValue().values()));
+        return result;
+    }
+
+    private Function functionAt(String value) {
+        Address address = currentProgram.getAddressFactory().getAddress(safeText(value));
+        return address == null ? null :
+            currentProgram.getFunctionManager().getFunctionAt(address);
+    }
+
+    private Parameter parameterByStorage(Function function, String storage) {
+        String wanted = normalizedStorage(storage);
+        for (Parameter parameter : function.getParameters())
+            if (normalizedStorage(parameter.getVariableStorage().toString()).equals(wanted))
+                return parameter;
+        return null;
+    }
+
+    private String normalizedStorage(String storage) {
+        return safeText(storage).replace(" (auto)", "").replace(" ", "")
+            .toUpperCase(Locale.ROOT);
+    }
+
+    private String parameterFlowKey(Function function, Parameter parameter) {
+        return addr(function.getEntryPoint()) + "|" +
+            normalizedStorage(parameter.getVariableStorage().toString());
+    }
+
+    /**
+     * An incoming named object carries a base only through an independently recovered
+     * physical primary-vtable relation.  A generated anonymous source is weaker: it may
+     * prove only an address-local view, and only while its stored layout hash is intact,
+     * at least two concrete fields agree by exact offset/width, and one polymorphic base
+     * is the unique compatible prefix.  No datatype is merged or persistently widened.
+     */
+    private boolean incomingCarriesBase(DataType incoming, PolymorphicBase base,
+            List<Map<String, String>> vtables) {
+        DataType value = unwrapAll(incoming);
+        if (!(value instanceof Structure structure)) return false;
+        if (structure.getPathName().equals(base.ownerPath)) return true;
+        if (!anonymousStructure(structure)) {
+            String owner = structure.getName();
+            return ownerCarriesBase(vtables, owner, base.owner);
+        }
+        String description = safeText(structure.getDescription());
+        if (!scriptOwnedPointerShape(structure) ||
+                !storedLayoutHashMatches(structure, description) ||
+                concreteFields(structure) < 2 || structure.getLength() < 8)
+            return false;
+        DataType ownerType = currentProgram.getDataTypeManager()
+            .getDataType(base.ownerPath);
+        return ownerType instanceof Structure owner && compatiblePrefix(structure, owner);
+    }
+
+    private boolean compatiblePrefix(Structure source, Structure target) {
+        if (source.getLength() > target.getLength()) return false;
+        for (DataTypeComponent component : source.getDefinedComponents()) {
+            if (component.getOffset() < 0 ||
+                    component.getOffset() + component.getLength() > target.getLength())
+                return false;
+            DataTypeComponent other = target.getComponentAt(component.getOffset());
+            if (other == null || other.getOffset() != component.getOffset() ||
+                    other.getLength() != component.getLength() ||
+                    !compatibleStorage(component.getDataType(), other.getDataType()))
+                return false;
+        }
+        return true;
+    }
+
+    private boolean compatibleStorage(DataType left, DataType right) {
+        if (left == null || right == null || left.getLength() != right.getLength())
+            return false;
+        if (left.isEquivalent(right)) return true;
+        DataType leftBase = unwrapAll(left);
+        DataType rightBase = unwrapAll(right);
+        if (left instanceof Pointer && right instanceof Pointer)
+            return genericPointer(left) || genericPointer(right) ||
+                structurePath(left).equals(structurePath(right));
+        return !(leftBase instanceof Structure) && !(rightBase instanceof Structure) &&
+            !(leftBase instanceof FunctionDefinition) &&
+            !(rightBase instanceof FunctionDefinition);
     }
 
     private Set<String> tokens(String value) {
@@ -1815,6 +1957,8 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         String parameterStorage, String parameterType, String parameterSource,
         String ownerType, String physicalVtable) {}
     private record Origin(Parameter parameter, Function producer, boolean autoThis) {}
+    private record IncomingPointerType(String functionAddress, String function,
+        String storage, DataType type) {}
     private record RegisterTrace(Address address, String register) {}
     private record Row(boolean apply, String functionAddress, String function, String targetKind,
         int ordinal, String name, String storage, String expectedType, String source,
