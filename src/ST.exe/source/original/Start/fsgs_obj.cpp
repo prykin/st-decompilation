@@ -8313,8 +8313,9 @@ LAB_005a63ec:
               else {
                 pbVar41 = *(byte **)this_00->field_1AF8->growCapacity;
               }
-              st::fn_00402572(&DAT_00802a90,pbVar41,pcVar24,pcVar39,
-                                 (AnonShape_0055C320_953077EC *)this_00->field_1B04);
+              st::fn_00402572
+                        ((AnonReceiver_0055C320 *)&DAT_00802a90,pbVar41,pcVar24,pcVar39,
+                         (AnonShape_0055C320_953077EC *)this_00->field_1B04);
               local_e4 = DAT_008030d4;
               local_110 = "Profile\\Age";
               local_f0 = (char *)&DAT_00802ad4;
@@ -8462,8 +8463,9 @@ LAB_005a6658:
               else {
                 pbVar41 = *(byte **)this_00->field_1AF8->growCapacity;
               }
-              st::fn_00402572(&DAT_00802a90,pbVar41,pcVar24,pcVar39,
-                                 (AnonShape_0055C320_953077EC *)this_00->field_1B04);
+              st::fn_00402572
+                        ((AnonReceiver_0055C320 *)&DAT_00802a90,pbVar41,pcVar24,pcVar39,
+                         (AnonShape_0055C320_953077EC *)this_00->field_1B04);
               /* ST_CALLSITE[005A6763]: CALL dword ptr [0x0085c004] */
               st::external_000000EF
                         ((CFsgsConnection *)&DAT_00802a90,&CHAR_00h_00807e1d,&CHAR_00h_00807e5d);

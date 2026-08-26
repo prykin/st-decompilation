@@ -33,7 +33,9 @@ void FUN_004ab650(void)
   DAT_008073dc = (int)lVar2;
   DAT_0080674c = 2;
   thunk_FUN_004a8f20(0);
-  thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+             DAT_0080743c & 0xff);
   DAT_00807461 = DAT_00807461 + -1;
   if (DAT_00807461 == 0) {
     DAT_008073e0 = 0;

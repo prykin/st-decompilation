@@ -588,7 +588,7 @@
     },
     "004845E0": {
       "generic_undefined_declaration": 2,
-      "raw_code_indirect_call": 52
+      "raw_code_indirect_call": 17
     },
     "00486B60": {
       "raw_code_indirect_call": 8
@@ -602,7 +602,6 @@
     },
     "004899A0": {
       "generic_undefined_declaration": 12,
-      "raw_duplicated_vtable_call": 3,
       "unaff_or_extraout": 2
     },
     "0048CC80": {
@@ -648,9 +647,6 @@
     },
     "00493610": {
       "generic_undefined_declaration": 1
-    },
-    "00493D10": {
-      "raw_code_indirect_call": 41
     },
     "00494160": {
       "raw_code_indirect_call": 4
@@ -3399,8 +3395,7 @@
     },
     "0064A970": {
       "generic_undefined_declaration": 2,
-      "pointer_boundary_cast": 4,
-      "raw_code_indirect_call": 47
+      "pointer_boundary_cast": 4
     },
     "0064D270": {
       "generic_undefined_declaration": 9
@@ -5811,8 +5806,7 @@
   "totals": {
     "generic_undefined_declaration": 4815,
     "pointer_boundary_cast": 868,
-    "raw_code_indirect_call": 1455,
-    "raw_duplicated_vtable_call": 3,
+    "raw_code_indirect_call": 1332,
     "unaff_or_extraout": 571,
     "undefined_static_cast": 38
   }

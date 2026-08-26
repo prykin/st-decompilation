@@ -4052,7 +4052,8 @@ cf_continue_loop_006721A4:
         iVar2 = (int)psVar6[1];
         piVar7 = &local_1c;
         pcVar3 = st::fn_00403779(local_c,iVar5);
-        local_8 = st::fn_00401604(pcVar3,iVar2,piVar7);
+        local_8 = st::fn_00401604
+                            (local_24,pcVar3,iVar2,piVar7);
       }
       else {
         iVar2 = (int)psVar6[1];

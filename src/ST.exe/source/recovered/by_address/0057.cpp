@@ -121,7 +121,7 @@ void __fastcall st::fn_005713B0(int param_1)
 
   uVar1 = DAT_00807300 & 0xff;
   if (uVar1 == 2) {
-    st::fn_00401C94((void *)(param_1 + 0x38));
+    st::fn_00401C94((AnonShape_00566FF0_D4E50B19 *)(param_1 + 0x38));
     return;
   }
   if (((uVar1 == 4) || (uVar1 == 8)) && (g_soundManager_008033F0 != nullptr)) {

@@ -9328,7 +9328,9 @@ cf_common_exit_0043A47C:
                          DAT_0080741c), iVar9 != 1)) {
     st::fn_0040386E(local_18,local_14,local_10);
     st::fn_00405547(1);
-    st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+    st::fn_004036D4
+              ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+               DAT_0080743c & 0xff);
     /* ST_CALLSITE[0043A53B]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
     st::fn_00403058(g_cursorClass_00802A30);
     DAT_0080674c = 2;
@@ -9553,8 +9555,9 @@ st::fn_0043AE40(STAllPlayersC *this,uint param_1,int param_2,int param_3)
             if (iVar8 != 1) {
               st::fn_0040386E(local_10,local_c,local_8);
               st::fn_00405547(1);
-              st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff
-                                );
+              st::fn_004036D4
+                        ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                         DAT_0080743c & 0xff);
               /* ST_CALLSITE[0043BA39]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
               st::fn_00403058(g_cursorClass_00802A30);
               DAT_0080674c = 2;
@@ -9584,7 +9587,9 @@ st::fn_0043AE40(STAllPlayersC *this,uint param_1,int param_2,int param_3)
                              DAT_00807418,DAT_0080741c), iVar6 != 1)) {
         st::fn_0040386E(local_10,local_c,local_8);
         st::fn_00405547(1);
-        st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+        st::fn_004036D4
+                  ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                   DAT_0080743c & 0xff);
         /* ST_CALLSITE[0043BB2D]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         st::fn_00403058(g_cursorClass_00802A30);
         DAT_0080674c = 2;
@@ -9612,7 +9617,7 @@ st::fn_0043AE40(STAllPlayersC *this,uint param_1,int param_2,int param_3)
         if (((param_3 == 1) &&
             (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),STField<undefined2>(iVar6,0x8)),
             /* ST_CALLSITE[0043B82D]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
-            iVar6 = st::fn_004024F0(0x3c,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)(((undefined1 *)iVar6)[4])),
+            iVar6 = st::fn_004024F0(0x3c,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)(STField<undefined1>(iVar6,0x4))),
                                 *(DArrayTy **)(iVar6 + 10),uVar9,&local_10,&local_c,&local_8,
                                 &param_1), iVar6 == 0)) &&
            (iVar6 = st::fn_006EB230
@@ -9620,7 +9625,9 @@ st::fn_0043AE40(STAllPlayersC *this,uint param_1,int param_2,int param_3)
                                DAT_00807418,DAT_0080741c), iVar6 != 1)) {
           st::fn_0040386E(local_10,local_c,local_8);
           st::fn_00405547(1);
-          st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          st::fn_004036D4
+                    ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                     DAT_0080743c & 0xff);
           /* ST_CALLSITE[0043B8BB]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           st::fn_00403058(g_cursorClass_00802A30);
           DAT_0080674c = 2;
@@ -9645,7 +9652,7 @@ st::fn_0043AE40(STAllPlayersC *this,uint param_1,int param_2,int param_3)
       }
       if (param_3 == 1) {
         /* ST_CALLSITE[0043B70C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-        pSVar7 = st::fn_004028BA(this,((char *)iVar6)[4],STField<ushort>(iVar6,0x8),CASE_3);
+        pSVar7 = st::fn_004028BA(this,STField<char>(iVar6,0x4),STField<ushort>(iVar6,0x8),CASE_3);
         /* ST_CALLSITE[0043B721]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         st::fn_004018C5
                   ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
@@ -9655,7 +9662,9 @@ st::fn_0043AE40(STAllPlayersC *this,uint param_1,int param_2,int param_3)
         if (iVar8 != 1) {
           st::fn_0040386E(local_10,local_c,local_8);
           st::fn_00405547(1);
-          st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          st::fn_004036D4
+                    ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                     DAT_0080743c & 0xff);
           /* ST_CALLSITE[0043B7AA]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           st::fn_00403058(g_cursorClass_00802A30);
           DAT_0080674c = 2;
@@ -9712,7 +9721,9 @@ LAB_0043aee4:
                                DAT_00807418,DAT_0080741c), iVar6 != 1)) {
           st::fn_0040386E(local_10,local_c,local_8);
           st::fn_00405547(1);
-          st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          st::fn_004036D4
+                    ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                     DAT_0080743c & 0xff);
           /* ST_CALLSITE[0043B06D]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           st::fn_00403058(g_cursorClass_00802A30);
           DAT_0080674c = 2;
@@ -9740,7 +9751,9 @@ LAB_0043b0f1:
           if (iVar8 != 1) {
             st::fn_0040386E(local_10,local_c,local_8);
             st::fn_00405547(1);
-            st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+            st::fn_004036D4
+                      ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                       DAT_0080743c & 0xff);
             /* ST_CALLSITE[0043B19E]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
             st::fn_00403058(g_cursorClass_00802A30);
             DAT_0080674c = 2;
@@ -9787,7 +9800,9 @@ LAB_0043b0af:
     if (iVar8 != 1) {
       st::fn_0040386E(local_10,local_c,local_8);
       st::fn_00405547(1);
-      st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+      st::fn_004036D4
+                ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                 DAT_0080743c & 0xff);
       /* ST_CALLSITE[0043B27B]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
       st::fn_00403058(g_cursorClass_00802A30);
       DAT_0080674c = 2;
@@ -9814,7 +9829,9 @@ cf_common_exit_0043B294:
                              DAT_00807418,DAT_0080741c), iVar6 != 1)) {
         st::fn_0040386E(local_10,local_c,local_8);
         st::fn_00405547(1);
-        st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+        st::fn_004036D4
+                  ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                   DAT_0080743c & 0xff);
         /* ST_CALLSITE[0043B433]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         st::fn_00403058(g_cursorClass_00802A30);
         DAT_0080674c = 2;
@@ -9848,7 +9865,9 @@ joined_r0x0043b5ec:
           st::fn_0040386E(local_10,local_c,local_8);
           st::fn_00405547(1);
 LAB_0043b630:
-          st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          st::fn_004036D4
+                    ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                     DAT_0080743c & 0xff);
           /* ST_CALLSITE[0043B640]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           st::fn_00403058(g_cursorClass_00802A30);
           DAT_0080674c = 2;

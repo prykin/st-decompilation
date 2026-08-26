@@ -944,7 +944,9 @@ void st::fn_004AB300(int param_1)
   }
   st::fn_00403C47(iVar1);
 switchD_004ab3a0_default:
-  st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+  st::fn_004036D4
+            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+             DAT_0080743c & 0xff);
   return;
 }
 
@@ -965,7 +967,9 @@ void st::fn_004AB470(uint *param_1,int param_2)
   st::fn_00405547(1);
   DAT_0080674c = 2;
   DAT_0080745d = 0;
-  st::fn_004036D4(&g_sound,(int)DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+  st::fn_004036D4
+            ((AnonReceiver_00567510 *)&g_sound,(int)DAT_008073d8,DAT_008073dc,DAT_008073fc,
+             DAT_0080743c & 0xff);
   DAT_008073e0 = 0;
   return;
 }
@@ -1041,7 +1045,9 @@ void st::fn_004AB650(void)
   DAT_008073dc = (int)lVar2;
   DAT_0080674c = 2;
   st::fn_00405547(0);
-  st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+  st::fn_004036D4
+            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+             DAT_0080743c & 0xff);
   DAT_00807461 = DAT_00807461 + -1;
   if (DAT_00807461 == 0) {
     DAT_008073e0 = 0;

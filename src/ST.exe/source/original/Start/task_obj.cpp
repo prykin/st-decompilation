@@ -2014,7 +2014,8 @@ LAB_005e24c5:
              (puVar8 = (uint *)st::fn_00719D00
                                          (g_cMf32_00806798,(char *)&pAVar15->field_0xd,0,nullptr),
              puVar8 != nullptr)) {
-            st::fn_00402FD1(&g_sound,0,'\x03',-1,puVar8);
+            st::fn_00402FD1
+                      ((AnonReceiver_0056A130 *)&g_sound,0,'\x03',-1,puVar8);
           }
         }
         break;
@@ -2926,11 +2927,13 @@ LAB_005e195d:
                                        (g_cMf32_00806798,(char *)&element_0074[1].field_000F,0,nullptr);
             this_01->field_0085 = st::machine_word_boundary_cast<undefined4>(puVar8);
             if (puVar8 == nullptr) {
-              st::fn_00402FD1(&g_sound,0x14,'\x02',0,nullptr);
+              st::fn_00402FD1
+                        ((AnonReceiver_0056A130 *)&g_sound,0x14,'\x02',0,nullptr);
               break;
             }
           }
-          st::fn_00402FD1(&g_sound,0,'\x02',0,puVar8);
+          st::fn_00402FD1
+                    ((AnonReceiver_0056A130 *)&g_sound,0,'\x02',0,puVar8);
         }
       }
       iVar18 = st::machine_word_boundary_cast<int>(this_01->field_007C + 1);

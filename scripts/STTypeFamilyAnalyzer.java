@@ -1087,14 +1087,30 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             if (sites.size() < 3 || slots.size() < 2 && sites.size() < 8) continue;
             Set<String> callerOwners = directCallerOwners.getOrDefault(
                 addr(function.getEntryPoint()), Set.of());
-            if (callerOwners.size() < 2) continue;
             List<PolymorphicBase> matches = bases.stream().filter(base ->
                 sites.stream().allMatch(site -> compatible(base, site)) &&
-                callerOwners.stream().allMatch(owner ->
+                callerOwners.size() >= 2 && callerOwners.stream().allMatch(owner ->
                     ownerCarriesBase(vtables, owner, base.owner))).toList();
+            boolean comparedWithThis = false;
+            if (matches.isEmpty() && "__thiscall".equals(
+                    function.getCallingConventionName())) {
+                String owner = functionOwner(function);
+                comparedWithThis = parameterComparedWithAutoThis(function, parameter);
+                if (comparedWithThis) {
+                    // A derived object may dispatch slots beyond the recovered base table.
+                    // Those extension slots are not contradictory evidence: retain only the
+                    // exact subset covered by the named method owner's primary table.
+                    matches = bases.stream().filter(base -> base.owner.equals(owner) &&
+                        sites.stream().filter(site -> compatible(base, site)).count() >= 8 &&
+                        sites.stream().filter(site -> compatible(base, site))
+                            .map(site -> site.slot).distinct().count() >= 2).toList();
+                }
+            }
             if (matches.size() != 1) continue;
             PolymorphicBase base = matches.get(0);
-            for (ReceiverSite site : sites)
+            List<ReceiverSite> acceptedSites = comparedWithThis ? sites.stream()
+                .filter(site -> compatible(base, site)).toList() : sites;
+            for (ReceiverSite site : acceptedSites)
                 polymorphicReceiverCallsites.add(new PolymorphicReceiverCallsite(
                     addr(function.getEntryPoint()), function.getName(true),
                     addr(site.call), site.slot, parameter.getOrdinal(), parameter.getName(),
@@ -1106,9 +1122,15 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 parameter.getVariableStorage().toString(), typeSpec(parameter.getDataType()),
                 parameter.getSource().toString(), "pointer:" + base.ownerPath, false,
                 "POLYMORPHIC_RECEIVER_FAMILY", "review",
-                sites.size() + " exact unadjusted CALLIND receiver sites across slots " +
-                    slots + "; independently named caller families=" + callerOwners +
-                    "; every caller primary vtable carries base owner " + base.owner +
+                acceptedSites.size() + " exact unadjusted CALLIND receiver sites across slots " +
+                    acceptedSites.stream().map(site -> site.slot).collect(
+                        java.util.stream.Collectors.toCollection(TreeSet::new)) +
+                    (comparedWithThis ?
+                    "; receiver parameter is compared directly with the unadjusted auto-this " +
+                    "of named method owner " + base.owner +
+                    "; extension slots outside the owner's physical primary table remain raw" :
+                    "; independently named caller families=" + callerOwners +
+                    "; every caller primary vtable carries base owner " + base.owner) +
                     "; accepted physical base=" + base.vtablePath +
                     "; audit-only parameter family: Ghidra has no recovered inheritance " +
                     "and persistent base-parameter typing can erase derived caller layouts; " +
@@ -1254,6 +1276,32 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         return origin == null ? null : origin.producer;
     }
 
+    /**
+     * A generic pointer compared directly with the unadjusted incoming receiver in a named
+     * method is an exact common-base relation, not merely matching layout geometry.  This
+     * proof is intentionally address-local: it licenses only physical slots already present
+     * in the method owner's primary vtable and never persistently retypes the parameter.
+     */
+    private boolean parameterComparedWithAutoThis(Function function, Parameter parameter) {
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            if (!"CMP".equalsIgnoreCase(instruction.getMnemonicString())) continue;
+            String[] operands = splitInstructionOperands(instruction.toString());
+            if (operands.length != 2) continue;
+            String leftRegister = standaloneRegister(operands[0]);
+            String rightRegister = standaloneRegister(operands[1]);
+            if (leftRegister.isBlank() || rightRegister.isBlank()) continue;
+            Origin left = receiverOrigin(function, instruction.getAddress(), leftRegister);
+            Origin right = receiverOrigin(function, instruction.getAddress(), rightRegister);
+            if (left == null || right == null) continue;
+            if (left.parameter == parameter && right.autoThis ||
+                    right.parameter == parameter && left.autoThis) return true;
+        }
+        return false;
+    }
+
     private Origin receiverOrigin(Function function, Address call, String receiverRegister) {
         String wanted = canonicalRegister(receiverRegister);
         if (wanted.isBlank()) return null;
@@ -1281,7 +1329,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 if ("EAX".equals(state.register)) {
                     Function producer = directCalledFunction(instruction);
                     if (producer == null) invalid = true;
-                    else origins.add(new Origin(null, producer));
+                    else origins.add(new Origin(null, producer, false));
                     continue;
                 }
                 if (Set.of("EAX", "ECX", "EDX").contains(state.register)) {
@@ -1303,7 +1351,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 Long stack = stackParameterOffset(instruction, operands[1]);
                 Parameter parameter = stack == null ? null : parameterAt(function, stack);
                 if (parameter == null) invalid = true;
-                else origins.add(new Origin(parameter, null));
+                else origins.add(new Origin(parameter, null, false));
                 continue;
             }
             else if (definesRegister(instruction, state.register)) {
@@ -1312,7 +1360,12 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             }
 
             List<Address> before = predecessors.getOrDefault(state.address, List.of());
-            if (before.isEmpty()) invalid = true;
+            if (before.isEmpty()) {
+                if ("ECX".equals(state.register) && "__thiscall".equals(
+                        function.getCallingConventionName()))
+                    origins.add(new Origin(null, null, true));
+                else invalid = true;
+            }
             else for (Address address : before)
                 work.add(new RegisterTrace(address, state.register));
         }
@@ -1413,6 +1466,12 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             case "SP", "ESP" -> "ESP";
             default -> register.matches("E[A-Z]{2}") ? register : "";
         };
+    }
+
+    private String standaloneRegister(String operand) {
+        String value = safeText(operand).trim().toUpperCase(Locale.ROOT);
+        String register = canonicalRegister(value);
+        return register.isBlank() || !value.matches("[A-Z]{2,3}") ? "" : register;
     }
 
     private String[] splitInstructionOperands(String instruction) {
@@ -1755,7 +1814,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         String callAddress, int slot, int parameterOrdinal, String parameterName,
         String parameterStorage, String parameterType, String parameterSource,
         String ownerType, String physicalVtable) {}
-    private record Origin(Parameter parameter, Function producer) {}
+    private record Origin(Parameter parameter, Function producer, boolean autoThis) {}
     private record RegisterTrace(Address address, String register) {}
     private record Row(boolean apply, String functionAddress, String function, String targetKind,
         int ordinal, String name, String storage, String expectedType, String source,

@@ -253,6 +253,11 @@ struct AnonReceiver_004EEFB0VTable;
 struct AnonReceiver_0053F510;
 struct AnonReceiver_0053F510VTable;
 struct AnonReceiver_0054A9B0;
+struct AnonReceiver_0055C320;
+struct AnonReceiver_00567510;
+struct AnonReceiver_00568010;
+struct AnonReceiver_00568940;
+struct AnonReceiver_0056A130;
 struct AnonReceiver_00573260;
 struct AnonReceiver_005FDB50;
 struct AnonReceiver_00601500;
@@ -442,6 +447,7 @@ struct AnonShape_0054A9B0_643B0813;
 struct AnonShape_005557B0_28260162;
 struct AnonShape_005582A0_F54946B9;
 struct AnonShape_0055C320_953077EC;
+struct AnonShape_00566FF0_D4E50B19;
 struct AnonShape_00567220_C9DD1C7D;
 struct AnonShape_005672E0_9A0A2ED1;
 struct AnonShape_0056F930_C6277D80;
@@ -987,6 +993,8 @@ struct BldObjPanelTyVTable;
 struct BulkInitializedRecord_008087C7;
 struct ButtonClassTy;
 struct ButtonClassTyVTable;
+struct CallableReceiver_00493D10_P0;
+struct CallableReceiver_00493D10_P0VTable;
 struct CampaignTy;
 struct CampaignTy_Record_00BB_01FB;
 struct CampaignTyVTable;
@@ -1653,8 +1661,6 @@ using Global_sub_00529590_param_2Enum = uint32_t;
 using Global_sub_00529D80_param_1Enum = uint32_t;
 using Global_sub_005532F0_param_1Enum = uint32_t;
 using Global_sub_0055C830_param_1Enum = uint32_t;
-using Global_sub_00568010_param_1Enum = uint8_t;
-using Global_sub_00568940_param_1Enum = uint8_t;
 using Global_sub_0057A140_param_2Enum = uint32_t;
 using Global_sub_0057CBF0_param_1Enum = uint32_t;
 using Global_sub_0057CC90_param_1Enum = uint32_t;
@@ -1788,6 +1794,8 @@ using STSprGameObjC_field_0231State = uint32_t;
 using STSprGameObjC_field_0259State = uint32_t;
 using STTorpC_field_0259State = uint32_t;
 using STVolcanoC_field_00A9State = uint32_t;
+using SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568010_sub_00568010_param_1Enum = uint8_t;
+using SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568940_sub_00568940_param_1Enum = uint8_t;
 using TLOBaseTy_field_0231State = uint32_t;
 using TLOBaseTy_field_0245State = uint32_t;
 using TLOBaseTy_field_02ECState = uint32_t;
@@ -5045,6 +5053,7 @@ using STFnType_icall_0074FE47_FUN_0074fe47_stdcall_94034252 = undefined4 __stdca
 using STFnType_icall_EXTERNAL_00000103_OnStartGameReply_a9b71abb = void __thiscall(CFsgsConnection *st_this, ulong param_1);
 using STFnType_icall_EXTERNAL_00000104_OnGameUpdateReceived_8db022d1 = void __thiscall(CFsgsConnection *st_this, ulong param_1, char *param_2);
 using STFnType_STObjectFactoryFn_ea7089ae = void * __cdecl(void);
+using STFnType_CallableReceiver_00493D10_P0_vfunc_90_155b7145 = undefined4 __thiscall(CallableReceiver_00493D10_P0 *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_STWorldObject_GetObjectTypeId_1f69d56e = int __thiscall(STWorldObject *st_this);
 using STFnType_SystemClassTy_CreateObject_8440819a = void __thiscall(SystemClassTy *st_this, int objectType, void *outObject, void *outRecord, int objectId);
 using STFnType_SystemClassTy_CreateObjectFull_e9ea87b8 = int __thiscall(SystemClassTy *st_this, int objectType, void *outObject, void *outRecord, int createArgument, int objectId);
@@ -5457,6 +5466,7 @@ using STFnType_dt_b584d80b_309fdce0 = int __thiscall(ListClassTy *st_this, STMes
 using STFnType_dt_b632c3d0_7e8615ac = undefined4 __thiscall(STTorpC *st_this);
 using STFnType_dt_b64de466_d3c0904c = undefined4 __thiscall(GameSystemC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4);
 using STFnType_dt_b6d5e945_e6eb9e82 = undefined4 __thiscall(STSprGameObjC *st_this, undefined4 arg_1);
+using STFnType_dt_b7643195_7d0393cf = void __thiscall(AppClassTy *st_this);
 using STFnType_dt_b7a5ad12_6faa4f4d = int __thiscall(SettMapMTy *st_this, STMessage *arg_1);
 using STFnType_dt_b897021d_21bf7869 = undefined4 __thiscall(STOctopusC *st_this, undefined4 arg_1, undefined4 arg_2, undefined4 arg_3, undefined4 arg_4, undefined4 arg_5, undefined4 arg_6);
 using STFnType_dt_bd219d37_0ef29858 = undefined4 __thiscall(STArtiafactC *st_this);
@@ -5588,6 +5598,7 @@ using STFnType__func_5023_becdb7f1 = ULONG(IUnknown *This);
 using _func_5021 = STFnType__func_5021_b36cfcff;
 using _func_5022 = STFnType__func_5022_4c264009;
 using _func_5023 = STFnType__func_5023_becdb7f1;
+using CallableReceiver_00493D10_P0_vfunc_90 = STFnType_CallableReceiver_00493D10_P0_vfunc_90_155b7145;
 using callback_004F3540_p5 = STFnType_callback_004F3540_p5_e7706eff;
 using callback_004F3CF0_p6 = STFnType_callback_004F3CF0_p6_2274987b;
 using callback_004F42A0_p6 = STFnType_callback_004F42A0_p6_b660cf6b;
@@ -5688,6 +5699,7 @@ using dt_b584d80b = STFnType_dt_b584d80b_309fdce0;
 using dt_b632c3d0 = STFnType_dt_b632c3d0_7e8615ac;
 using dt_b64de466 = STFnType_dt_b64de466_d3c0904c;
 using dt_b6d5e945 = STFnType_dt_b6d5e945_e6eb9e82;
+using dt_b7643195 = STFnType_dt_b7643195_7d0393cf;
 using dt_b7a5ad12 = STFnType_dt_b7a5ad12_6faa4f4d;
 using dt_b897021d = STFnType_dt_b897021d_21bf7869;
 using dt_bd219d37 = STFnType_dt_bd219d37_0ef29858;
@@ -19169,6 +19181,71 @@ struct AnonReceiver_0054A9B0 {
     void FUN_0054a9b0(float param_1, float param_2, float param_3);
 };
 
+struct AnonReceiver_0055C320 {
+    byte _unknown_0000[10];
+    undefined1 field_0xa; // exact unnamed-byte view referenced by exported code
+    byte _unknown_000B[57];
+    undefined1 field_0x44; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0045[511];
+    undefined1 field_0x244; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0245[511];
+    undefined1 field_0x444; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0445[511];
+    undefined1 field_0x644; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0645[3];
+    void FUN_0055c320(byte *param_1, char *param_2, char *param_3, AnonShape_0055C320_953077EC *param_4);
+};
+
+struct AnonReceiver_00567510 {
+    byte _unknown_0000[3619];
+    undefined1 field_0xe23; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0E24[359];
+    undefined1 field_0xf8b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0F8C[333];
+    undefined1 field_0x10d9; // exact unnamed-byte view referenced by exported code
+    byte _unknown_10DA[3];
+    undefined1 field_0x10dd; // exact unnamed-byte view referenced by exported code
+    byte _unknown_10DE[3];
+    undefined1 field_0x10e1; // exact unnamed-byte view referenced by exported code
+    byte _unknown_10E2[3];
+    undefined1 field_0x10e5; // exact unnamed-byte view referenced by exported code
+    byte _unknown_10E6[3];
+    undefined1 field_0x10e9; // exact unnamed-byte view referenced by exported code
+    byte _unknown_10EA[3];
+    undefined1 field_0x10ed; // exact unnamed-byte view referenced by exported code
+    byte _unknown_10EE[3];
+    undefined1 field_0x10f1; // exact unnamed-byte view referenced by exported code
+    byte _unknown_10F2[3];
+    void FUN_00567510(int param_1, int param_2, int param_3, int param_4);
+};
+
+struct AnonReceiver_00568010 {
+    byte _unknown_0000[3979];
+    undefined1 field_0xf8b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0F8C[3];
+    void FUN_00568010(SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568010_sub_00568010_param_1Enum param_1);
+};
+
+struct AnonReceiver_00568940 {
+    byte _unknown_0000[3587];
+    undefined1 field_0xe03; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0E04[3];
+    undefined1 field_0xe07; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0E08[387];
+    undefined1 field_0xf8b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0F8C[3];
+    void FUN_00568940(SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568940_sub_00568940_param_1Enum param_1);
+};
+
+struct AnonReceiver_0056A130 {
+    byte _unknown_0000[3571];
+    undefined1 field_0xdf3; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0DF4[407];
+    undefined1 field_0xf8b; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0F8C[3];
+    void FUN_0056a130(uint param_1, char param_2, int param_3, uint *param_4);
+};
+
 struct AnonReceiver_00573260 {
     byte _unknown_0000[4];
     undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
@@ -19396,6 +19473,7 @@ struct AnonReceiver_0064A970 {
     undefined4 slot_08(Args... st_varargs);
     undefined4 slot_18();
     void slot_20(undefined4 arg_1, undefined4 arg_2);
+    undefined4 vfunc_0(undefined4 arg_1);
     undefined4 vfunc_8(undefined4 arg_1);
     undefined4 vfunc_10(undefined4 arg_1, undefined4 arg_2);
     undefined4 vfunc_28(undefined4 arg_1);
@@ -19404,8 +19482,8 @@ struct AnonReceiver_0064A970 {
     undefined4 vfunc_1C(undefined4 arg_1);
     undefined4 vfunc_14();
     void vfunc_20(undefined4 arg_1, undefined4 arg_2);
-    undefined4 vfunc_0(undefined4 arg_1);
     undefined4 vfunc_C(undefined4 arg_1);
+    float * FUN_0064a970(char *param_1, int param_2, int *param_3);
     uint * FUN_0066acc0(char *param_1, int param_2, int *param_3);
     int FUN_00672440(AnonShape_00683780_11EA4E23 *param_1, int param_2, short *param_3);
     int sub_00668F50(char *param_1, uint param_2, uint *param_3);
@@ -25125,6 +25203,11 @@ struct AnonShape_0055C320_953077EC {
     int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6}
     byte _unknown_000C[8];
     int field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3}
+};
+
+struct AnonShape_00566FF0_D4E50B19 {
+    byte _unknown_0000[3983];
+    int field_0F8F; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
 struct AnonShape_00567220_C9DD1C7D {
@@ -32439,6 +32522,19 @@ struct AnonShape_GLOBAL_00857168_D75747E9 {
     undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=6, pointer:/char=9}
     undefined4 field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=3, pointer:/char=5}
     undefined4 field_000C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/undefined1=2}
+};
+
+struct CallableReceiver_00493D10_P0 {
+    CallableReceiver_00493D10_P0VTable *vtable; // [STCallableReceiverApplier] exact offset-zero indirect-call table load
+    byte _unknown_0004[1779];
+    undefined1 field_0x6f7; // exact unnamed-byte view referenced by exported code
+    byte _unknown_06F8[1];
+    undefined4 vfunc_90(undefined4 arg_1, undefined4 arg_2);
+};
+
+struct CallableReceiver_00493D10_P0VTable {
+    byte _unknown_0000[144];
+    undefined4 __thiscall (*vfunc_90)(CallableReceiver_00493D10_P0 *st_this, undefined4 arg_1, undefined4 arg_2); // [STCallableReceiverApplier] exact dense CALLIND family; sites=00493D31 | 00493D42 | 00493D53 | 00493D64 | 00493D75 | 00493D86 | 00493D97 | 00493DA8 | 00493DB9 | 00493DCA | 00493DDB | 00493DEC | 00493DFD | 00493E0E | 00493E1F | 00493E30 | 00493E41 | 00493E52 | 00493E63 | 00493E74 | 00493E85 | 00493E96 | 00493EA7 | 00493EB8 | 00493EC9 | 00493EDA | 00493EEB | 00493EFC | 00493F0D | 00493F1E | 00493F2F | 00493F40 | 00493F51 | 00493F62 | 00493F73 | 00493F84 | 00493F95 | 00493FA6 | 00493FB7 | 00493FC8 | 00493FD6
 };
 
 struct RecoveredRecord_AiEventClassTy_0064F1B0 {
@@ -43237,6 +43333,10 @@ inline void AnonReceiver_0064A970::slot_20(undefined4 arg_1, undefined4 arg_2) {
     (vtable->slot_20)(this, arg_1, arg_2);
 }
 
+inline undefined4 AnonReceiver_0064A970::vfunc_0(undefined4 arg_1) {
+    return reinterpret_cast<undefined4 (__thiscall *)(AnonReceiver_0064A970 *, undefined4)>(vtable->slot_00)(this, arg_1);
+}
+
 inline undefined4 AnonReceiver_0064A970::vfunc_8(undefined4 arg_1) {
     return reinterpret_cast<undefined4 (__thiscall *)(AnonReceiver_0064A970 *, undefined4)>(vtable->slot_08)(this, arg_1);
 }
@@ -43267,10 +43367,6 @@ inline undefined4 AnonReceiver_0064A970::vfunc_14() {
 
 inline void AnonReceiver_0064A970::vfunc_20(undefined4 arg_1, undefined4 arg_2) {
     reinterpret_cast<void (__thiscall *)(AnonReceiver_0064A970 *, undefined4, undefined4)>(vtable->slot_20)(this, arg_1, arg_2);
-}
-
-inline undefined4 AnonReceiver_0064A970::vfunc_0(undefined4 arg_1) {
-    return reinterpret_cast<undefined4 (__thiscall *)(AnonReceiver_0064A970 *, undefined4)>(vtable->slot_00)(this, arg_1);
 }
 
 inline undefined4 AnonReceiver_0064A970::vfunc_C(undefined4 arg_1) {
@@ -43395,6 +43491,10 @@ inline undefined4 SettMapTy::vfunc_20() {
 
 inline undefined4 SettMapTy::vfunc_24() {
     return (vtable->vfunc_24)(this);
+}
+
+inline undefined4 CallableReceiver_00493D10_P0::vfunc_90(undefined4 arg_1, undefined4 arg_2) {
+    return (vtable->vfunc_90)(this, arg_1, arg_2);
 }
 
 inline int SystemClassTy::InitSystem() {

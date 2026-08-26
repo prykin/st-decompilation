@@ -24142,8 +24142,8 @@ LAB_0048a37f:
            (iVar12 = local_8->vfunc_F8(), iVar12 == 1)) &&
           /* ST_CALLSITE[00489A20]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; signature=__thiscall;/undefined4;pointer:/STGameObjC */
           (iVar12 = local_8->vfunc_F0(), iVar12 == 1)) &&
-         /* ST_CALLSITE[00489A34]: CALL dword ptr [EDX + 0xf4] */
-         ((iVar12 = (*local_8->vtable[1].vfunc_20)(local_8), iVar12 == 1 &&
+         /* ST_CALLSITE[00489A34]: CALL dword ptr [EDX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
+         ((iVar12 = local_8->vfunc_F4(this->field_0024), iVar12 == 1 &&
           (this->field_047F % 0x28 != 0)))) {
         return 0;
       }
@@ -24176,8 +24176,9 @@ LAB_0048a37f:
               if ((iVar12 != 0) &&
                  /* ST_CALLSITE[00489B86]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; signature=__thiscall;/undefined4;pointer:/STGameObjC */
                  ((iVar12 = local_8->vfunc_F0(), iVar12 != 0 &&
-                  /* ST_CALLSITE[00489B9D]: CALL dword ptr [EAX + 0xf4] */
-                  (iVar12 = (*local_8->vtable[1].vfunc_20)(local_8), iVar12 != 0)))) {
+                  /* ST_CALLSITE[00489B9D]: CALL dword ptr [EAX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
+                  (iVar12 = local_8->vfunc_F4(this->field_0024), iVar12 != 0)))
+                 ) {
                 /* ST_CALLSITE[00489BB0]: CALL dword ptr [EAX + 0xfc]; [STIndirectCallsiteApplier] exact slot 0xFC; signature=__thiscall;/undefined4;pointer:/STGameObjC */
                 iVar12 = local_8->vfunc_FC();
                 if (0 < iVar12) {
@@ -24325,8 +24326,9 @@ LAB_00489eb0:
             iVar12 = local_8->vfunc_F8();
             /* ST_CALLSITE[00489FA4]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; signature=__thiscall;/undefined4;pointer:/STGameObjC */
             if (((iVar12 != 0) && (iVar12 = local_8->vfunc_F0(), iVar12 != 0))
-               /* ST_CALLSITE[00489FBB]: CALL dword ptr [EDX + 0xf4] */
-               && (iVar12 = (*local_8->vtable[1].vfunc_20)(local_8), iVar12 != 0)) {
+               /* ST_CALLSITE[00489FBB]: CALL dword ptr [EDX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
+               && (iVar12 = local_8->vfunc_F4(this->field_0024), iVar12 != 0))
+            {
               st::fn_004031E3(local_8,&local_14,(short *)&local_10,(short *)&local_c);
               local_EAX_1627 =
                    st::fn_006ACF0D((int)this->field_0041,(int)this->field_0043,(int)this->field_0045,

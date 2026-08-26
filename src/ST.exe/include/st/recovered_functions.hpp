@@ -559,8 +559,8 @@ byte * __thiscall fn_004015F5(JumpManagC * st_this, int * param_1);
 void __thiscall fn_004015FA(HelpStringTy * st_this);
 // 004015FF thunk_FUN_004ec6c0
 undefined4 __stdcall fn_004015FF(void);
-// 00401604 thunk_FUN_0064a970
-float * __stdcall fn_00401604(char * param_1, int param_2, int * param_3);
+// 00401604 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::thunk_FUN_0064a970
+float * __thiscall fn_00401604(AnonReceiver_0064A970 * st_this, char * param_1, int param_2, int * param_3);
 // 00401609 SoundManagerTy::sub_00566AA0
 undefined __thiscall fn_00401609(SoundManagerTy * st_this);
 // 0040160E InfocPanelTy::Update
@@ -1184,7 +1184,7 @@ undefined __cdecl fn_00401C8A(short * param_1, undefined4 * param_2, short * par
 // 00401C8F thunk_FUN_006141b0
 undefined4 __thiscall fn_00401C8F(void * st_this, int param_1, Global_sub_006141B0_param_2Enum param_2, int * param_3, int * param_4);
 // 00401C94 thunk_FUN_00566ff0
-undefined __fastcall fn_00401C94(void * param_1);
+undefined __fastcall fn_00401C94(AnonShape_00566FF0_D4E50B19 * param_1);
 // 00401C99 thunk_FUN_00550c90
 void * __cdecl fn_00401C99(void);
 // 00401C9E PanelTy::PaintTxtBut
@@ -1209,8 +1209,8 @@ int __thiscall fn_00401CC6(PrividerTy * st_this, STMessage * message);
 int __cdecl fn_00401CCB(short param_1);
 // 00401CD0 thunk_FUN_00683670
 int __stdcall fn_00401CD0(void);
-// 00401CDA thunk_FUN_00568940
-undefined __thiscall fn_00401CDA(void * st_this, Global_sub_00568940_param_1Enum param_1);
+// 00401CDA SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568940::thunk_FUN_00568940
+undefined __thiscall fn_00401CDA(AnonReceiver_00568940 * st_this, SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568940_sub_00568940_param_1Enum param_1);
 // 00401CDF AiFltClassTy::sub_0065D6E0
 undefined __fastcall fn_00401CDF(AnonShape_0065D6E0_0F9074F6 * param_1, undefined4 param_2);
 // 00401CE4 ProdPanelTy::PaintTab
@@ -1550,7 +1550,7 @@ undefined4 __cdecl fn_00402040(short param_1, short param_2, int param_3, int pa
 // 00402045 HelpStringTy::sub_0051FAC0
 void __thiscall fn_00402045(HelpStringTy * st_this, char * param_1, byte param_2, char param_3, undefined4 param_4);
 // 0040204A thunk_FUN_00493d10
-undefined __fastcall fn_0040204A(int * param_1);
+undefined __fastcall fn_0040204A(CallableReceiver_00493D10_P0 * param_1);
 // 0040204F thunk_FUN_006a0c90
 void __stdcall fn_0040204F(uint param_1, int param_2, int param_3, uint param_4, int param_5, int param_6, uint param_7);
 // 00402054 thunk_FUN_00680650
@@ -2043,8 +2043,8 @@ void __thiscall fn_00402563(void * st_this, STMessage * param_1);
 undefined4 __cdecl fn_00402568(int param_1);
 // 0040256D thunk_FUN_00626ec0
 undefined fn_0040256D(void);
-// 00402572 thunk_FUN_0055c320
-void __thiscall fn_00402572(void * st_this, byte * param_1, char * param_2, char * param_3, AnonShape_0055C320_953077EC * param_4);
+// 00402572 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0055C320::thunk_FUN_0055c320
+void __thiscall fn_00402572(AnonReceiver_0055C320 * st_this, byte * param_1, char * param_2, char * param_3, AnonShape_0055C320_953077EC * param_4);
 // 00402577 thunk_FUN_0055c180
 undefined __fastcall fn_00402577(CFsgsConnection * param_1);
 // 0040257C thunk_FUN_00629010
@@ -3035,8 +3035,8 @@ undefined4 __fastcall fn_00402FC2(AnonShape_004DCCF0_FF75E3FE * param_1);
 int __cdecl fn_00402FC7(RecoveredRecord_AiEventClassTy_00652460 * param_1);
 // 00402FCC thunk_FUN_00639450
 void * __cdecl fn_00402FCC(void);
-// 00402FD1 thunk_FUN_0056a130
-undefined __thiscall fn_00402FD1(void * st_this, uint param_1, char param_2, int param_3, uint * param_4);
+// 00402FD1 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::thunk_FUN_0056a130
+undefined __thiscall fn_00402FD1(AnonReceiver_0056A130 * st_this, uint param_1, char param_2, int param_3, uint * param_4);
 // 00402FD6 thunk_FUN_004e9960
 undefined4 __thiscall fn_00402FD6(void * st_this, undefined4 * param_1, undefined4 * param_2, undefined4 * param_3);
 // 00402FDB thunk_FUN_0068e190
@@ -3719,8 +3719,8 @@ undefined4 __thiscall fn_004036C5(STGroupBoatC * st_this, int param_1);
 undefined4 __thiscall fn_004036CA(STRubbishC * st_this, int param_1, AnonShape_0062FCA0_22A9EE35 * param_2);
 // 004036CF ComboTy::InitCombo
 undefined __thiscall fn_004036CF(ComboTy * st_this, undefined4 * param_1);
-// 004036D4 thunk_FUN_00567510
-undefined __thiscall fn_004036D4(void * st_this, int param_1, int param_2, int param_3, int param_4);
+// 004036D4 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+undefined __thiscall fn_004036D4(AnonReceiver_00567510 * st_this, int param_1, int param_2, int param_3, int param_4);
 // 004036DE STGroupBoatC::DCBomb
 undefined4 __thiscall fn_004036DE(STGroupBoatC * st_this, int param_1);
 // 004036E3 thunk_FUN_005fc4a0
@@ -6249,8 +6249,8 @@ undefined __thiscall fn_00405100(HelpPanelTy * st_this);
 void __thiscall fn_00405105(void * st_this, byte param_1);
 // 0040510A thunk_FUN_0064eba0
 undefined4 __cdecl fn_0040510A(int param_1);
-// 0040510F thunk_FUN_00568010
-void __thiscall fn_0040510F(void * st_this, Global_sub_00568010_param_1Enum param_1);
+// 0040510F SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568010::thunk_FUN_00568010
+void __thiscall fn_0040510F(AnonReceiver_00568010 * st_this, SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568010_sub_00568010_param_1Enum param_1);
 // 00405114 thunk_FUN_00640170
 undefined4 __thiscall fn_00405114(void * st_this, int param_1, int param_2, undefined4 param_3);
 // 00405119 JumpManagC::sub_00618170
@@ -8787,7 +8787,7 @@ void fn_00493CA0(void);
 // 00493CD0 FUN_00493cd0
 undefined4 __fastcall fn_00493CD0(STGameObjC *objPtr);
 // 00493D10 FUN_00493d10
-void __fastcall fn_00493D10(int *param_1);
+void __fastcall fn_00493D10(CallableReceiver_00493D10_P0 *param_1);
 // 00494160 FUN_00494160
 void __thiscall fn_00494160(void *st_this,int param_1);
 // 004945C0 FUN_004945c0
@@ -11784,10 +11784,11 @@ void __thiscall fn_0055C260(void *st_this,DWORD param_1);
 void __thiscall fn_0055C290(void *st_this,char *param_1);
 // 0055C2E0 FUN_0055c2e0
 void __thiscall fn_0055C2E0(void *st_this,int param_1,int param_2);
-// 0055C320 FUN_0055c320
+// 0055C320 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0055C320::FUN_0055c320
 void __thiscall
-fn_0055C320(void *st_this,byte *param_1,char *param_2,char *param_3,
-            AnonShape_0055C320_953077EC *param_4);
+fn_0055C320
+          (AnonReceiver_0055C320 *st_this,byte *param_1,char *param_2,char *param_3,
+          AnonShape_0055C320_953077EC *param_4);
 // 0055C500 FUN_0055c500
 void __thiscall fn_0055C500(void *st_this,int param_1);
 // 0055C550 FUN_0055c550
@@ -11902,7 +11903,7 @@ void __thiscall fn_00566E70(void *st_this,DWORD_PTR param_1);
 // 00566F30 FUN_00566f30
 void __thiscall fn_00566F30(void *st_this,HWND param_1);
 // 00566FF0 FUN_00566ff0
-void __fastcall fn_00566FF0(void *param_1);
+void __fastcall fn_00566FF0(AnonShape_00566FF0_D4E50B19 *param_1);
 // 00567060 FUN_00567060
 uint __fastcall fn_00567060(int param_1);
 // 00567180 FUN_00567180
@@ -11917,12 +11918,18 @@ void __fastcall fn_005672E0(AnonShape_005672E0_9A0A2ED1 *param_1);
 void __fastcall fn_00567330(int param_1);
 // 00567490 FUN_00567490
 void __fastcall fn_00567490(int param_1);
-// 00567510 FUN_00567510
-void __thiscall fn_00567510(void *st_this,int param_1,int param_2,int param_3,int param_4);
+// 00567510 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::FUN_00567510
+void __thiscall
+fn_00567510
+          (AnonReceiver_00567510 *st_this,int param_1,int param_2,int param_3,int param_4);
 // 00567C10 FUN_00567c10
 void __thiscall fn_00567C10(void *st_this,int *param_1);
-// 00568010 FUN_00568010
-void __thiscall fn_00568010(void *st_this,Global_sub_00568010_param_1Enum param_1);
+// 00568010 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568010::FUN_00568010
+void __thiscall
+fn_00568010
+          (AnonReceiver_00568010 *st_this,
+          SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568010_sub_00568010_param_1Enum
+          param_1);
 // 005682C0 FUN_005682c0
 void __thiscall fn_005682C0(void *st_this,int param_1);
 // 005686C0 FUN_005686c0
@@ -11931,8 +11938,12 @@ void __thiscall fn_005686C0(void *st_this,undefined4 param_1);
 undefined4 __thiscall fn_00568780(void *st_this,int param_1,int param_2);
 // 00568850 FUN_00568850
 void __thiscall fn_00568850(void *st_this,int param_1);
-// 00568940 FUN_00568940
-void __thiscall fn_00568940(void *st_this,Global_sub_00568940_param_1Enum param_1);
+// 00568940 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568940::FUN_00568940
+void __thiscall
+fn_00568940
+          (AnonReceiver_00568940 *st_this,
+          SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568940_sub_00568940_param_1Enum
+          param_1);
 // 00568BC0 FUN_00568bc0
 void __thiscall fn_00568BC0(void *st_this,int param_1);
 // 00568C50 SoundClassTy::CheckFader
@@ -11942,8 +11953,10 @@ void __thiscall
 fn_00568DD0
           (SoundClassTy *st_this,SoundPlayMode mode,char *soundName,int soundId,SoundPosition *position
           ,int flags);
-// 0056A130 FUN_0056a130
-void __thiscall fn_0056A130(void *st_this,uint param_1,char param_2,int param_3,uint *param_4);
+// 0056A130 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::FUN_0056a130
+void __thiscall
+fn_0056A130
+          (AnonReceiver_0056A130 *st_this,uint param_1,char param_2,int param_3,uint *param_4);
 // 0056A2A0 FUN_0056a2a0
 undefined4 __thiscall
 fn_0056A2A0(void *st_this,cMf32 *param_1,char *param_2,int param_3,undefined4 *param_4);
@@ -15108,8 +15121,10 @@ int __cdecl fn_0064A830(int *param_1,undefined4 *param_2);
 char * __cdecl fn_0064A910(AnonShape_00683780_11EA4E23 *param_1,int param_2);
 // 0064A940 FUN_0064a940
 undefined4 __cdecl fn_0064A940(AnonShape_00683780_11EA4E23 *param_1,int param_2);
-// 0064A970 FUN_0064a970
-float * fn_0064A970(char *param_1,int param_2,int *param_3);
+// 0064A970 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970
+float * __thiscall
+fn_0064A970
+          (AnonReceiver_0064A970 *st_this,char *param_1,int param_2,int *param_3);
 // 0064CC90 AiEventClassTy::AiEventClassTy
 AiEventClassTy * __thiscall fn_0064CC90(AiEventClassTy *st_this);
 // 0064CD10 FUN_0064cd10
@@ -27242,6 +27257,26 @@ inline void AnonReceiver_0054A9B0::FUN_0054a9b0(float param_1, float param_2, fl
     st::fn_0054A9B0(this, param_1, param_2, param_3);
 }
 
+inline void AnonReceiver_0055C320::FUN_0055c320(byte *param_1, char *param_2, char *param_3, AnonShape_0055C320_953077EC *param_4) {
+    st::fn_0055C320(this, param_1, param_2, param_3, param_4);
+}
+
+inline void AnonReceiver_00567510::FUN_00567510(int param_1, int param_2, int param_3, int param_4) {
+    st::fn_00567510(this, param_1, param_2, param_3, param_4);
+}
+
+inline void AnonReceiver_00568010::FUN_00568010(SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568010_sub_00568010_param_1Enum param_1) {
+    st::fn_00568010(this, param_1);
+}
+
+inline void AnonReceiver_00568940::FUN_00568940(SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568940_sub_00568940_param_1Enum param_1) {
+    st::fn_00568940(this, param_1);
+}
+
+inline void AnonReceiver_0056A130::FUN_0056a130(uint param_1, char param_2, int param_3, uint *param_4) {
+    st::fn_0056A130(this, param_1, param_2, param_3, param_4);
+}
+
 inline void AnonReceiver_00573260::FUN_00573260() {
     st::fn_00573260(this);
 }
@@ -27272,6 +27307,10 @@ inline void AnonReceiver_00644410::FUN_00644410(undefined4 *param_1, int *param_
 
 inline void AnonReceiver_00644410::sub_00645F10(void *param_1, ushort param_2, ushort param_3, short param_4) {
     st::fn_00645F10(this, param_1, param_2, param_3, param_4);
+}
+
+inline float * AnonReceiver_0064A970::FUN_0064a970(char *param_1, int param_2, int *param_3) {
+    return st::fn_0064A970(this, param_1, param_2, param_3);
 }
 
 inline uint * AnonReceiver_0064A970::FUN_0066acc0(char *param_1, int param_2, int *param_3) {

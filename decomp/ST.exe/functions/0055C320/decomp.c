@@ -3,11 +3,18 @@
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+
+   [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0055C320.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=5; incoming_edx_uses=0; calls=2;
+   ecx_pointer_setup=2; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[16];
+   expected_stack=16; receiver_family_members=1; adopt_untyped_existing_thiscall */
 
 void __thiscall
-FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
-            AnonShape_0055C320_953077EC *param_4)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0055C320::FUN_0055c320
+          (AnonReceiver_0055C320 *this,byte *param_1,char *param_2,char *param_3,
+          AnonShape_0055C320_953077EC *param_4)
 
 {
   byte bVar1;
@@ -37,7 +44,7 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
   } while (bVar1 != 0);
   uVar3 = ~uVar3;
   pbVar7 = pbVar7_mg0 + -uVar3;
-  pbVar8 = (byte *)((int)this + 0x44);
+  pbVar8 = &this->field_0x44;
   memmove(pbVar8, pbVar7, uVar3); /* compiler REP MOVS byte copy */
   uVar4 = 0;
   uVar3 = 0xffffffff;
@@ -51,7 +58,7 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
   } while (cVar2 != '\0');
   uVar3 = ~uVar3;
   pcVar10 = pcVar9_mg0 + -uVar3;
-  pcVar9 = (char *)((int)this + 0x244);
+  pcVar9 = &this->field_0x244;
   memmove(pcVar9, pcVar10, uVar3); /* compiler REP MOVS byte copy */
   uVar4 = 0;
   uVar3 = 0xffffffff;
@@ -66,7 +73,7 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
   uVar3 = ~uVar3;
   iVar5 = 0;
   pcVar10 = pcVar9_mg2 + -uVar3;
-  pcVar9 = (char *)((int)this + 0x444);
+  pcVar9 = &this->field_0x444;
   for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
     *(undefined4 *)pcVar9 = *(undefined4 *)pcVar10;
     pcVar10 = pcVar10 + 4;
@@ -92,19 +99,19 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
       param_1 = param_1 + ~uVar3;
     } while (iVar5 < param_4->field_0008);
   }
-  if (STField<int>(this,0x644) != 0) {
-    FreeAndNull((undefined4 *)((int)this + 0x644));
+  if (*(int *)&this->field_0x644 != 0) {
+    FreeAndNull(&this->field_0x644);
   }
   param_1 = Library::DKW::LIB::MemAllocClear((uint)(param_1 + param_4->field_0008));
-  STField<undefined4>(this,0x644) = param_1;
+  *(byte **)&this->field_0x644 = param_1;
   if (param_1 == nullptr) {
-    STField<undefined1>(this,10) = 1;
+    this->field_0xa = 1;
     return;
   }
   iVar5 = param_4->field_0008;
   iVar6 = 0;
   if (iVar5 < 1) {
-    STField<undefined1>(this,10) = 1;
+    this->field_0xa = 1;
     return;
   }
   if (iVar5 < 1) {
@@ -135,7 +142,7 @@ LAB_0055c414:
     iVar5 = param_4->field_0008;
     iVar6 = iVar6 + 1;
     if (iVar5 <= iVar6) {
-      STField<undefined1>(this,10) = 1;
+      this->field_0xa = 1;
       return;
     }
   } while( true );

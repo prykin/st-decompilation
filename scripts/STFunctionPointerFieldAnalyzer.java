@@ -35,7 +35,6 @@ import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.data.VoidDataType;
-import ghidra.program.model.lang.OperandType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionTag;
@@ -66,11 +65,14 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
 
     private final Map<FieldKey, Evidence> evidence = new TreeMap<>();
     private final List<Failure> failures = new ArrayList<>();
+    private final List<MachineStore> machineStores = new ArrayList<>();
+    private final Map<String, Function> machineTargetsBySite = new HashMap<>();
     private final Map<Object, FieldRef> fieldCache = new HashMap<>();
     private final Map<Object, Function> functionCache = new HashMap<>();
     private int candidates, machineStoreCandidates, machineCallCandidates;
     private int machineAddressReferenceFunctions, machineIndirectWriteFunctions;
     private int pcodeStoreOperations, exactFieldStores, trustedFieldStores;
+    private int typedFieldStoreAddresses, exactFunctionValueStores;
     private int skippedCallOnlyDecompiles;
 
     @Override
@@ -134,6 +136,7 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
 
         List<Row> rows = proposals();
         writeRows(directory.resolve("function_pointer_field_proposals.tsv"), rows);
+        writeMachineStores(directory.resolve("function_pointer_field_machine_stores.tsv"));
         writeFailures(directory.resolve("function_pointer_field_failures.tsv"));
         writeSummary(directory.resolve("function_pointer_field_summary.txt"), rows);
         println("Function-pointer-field analysis complete: " + directory.toAbsolutePath());
@@ -162,11 +165,29 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
             Function referenced = addressMaterialization ?
                 referencedFunction(instruction) : null;
             if (referenced != null) functionAddressReference = true;
+            // Ghidra's x86 operand type does not reliably set INDIRECT for a
+            // memory destination.  In particular, ordinary MOV [reg+off],reg
+            // stores were reported as ADDRESS|DYNAMIC and the cheap prefilter
+            // consequently skipped every callback initializer before the High
+            // p-code proof got a chance to inspect it.  The rendered brackets
+            // are only an admission filter; collectStore() still requires an
+            // exact STORE into a generated structure component and an exact
+            // function-address value.
+            String destination = instruction.getNumOperands() == 0 ? "" :
+                instruction.getDefaultOperandRepresentation(0);
+            boolean memoryDestination = destination != null &&
+                destination.indexOf('[') >= 0 && destination.indexOf(']') >= 0;
             boolean writesIndirect = "MOV".equals(mnemonic) &&
-                instruction.getNumOperands() >= 2 &&
-                OperandType.isIndirect(instruction.getOperandType(0));
+                instruction.getNumOperands() >= 2 && memoryDestination;
             if (writesIndirect) indirectWrite = true;
-            if (writesIndirect && referenced != null) storedFunction = true;
+            if (writesIndirect && referenced != null) {
+                storedFunction = true;
+                machineStores.add(new MachineStore(addr(function.getEntryPoint()),
+                    function.getName(true), addr(instruction.getAddress()),
+                    text(destination), addr(referenced.getEntryPoint()),
+                    referenced.getName(true)));
+                machineTargetsBySite.put(addr(instruction.getAddress()), referenced);
+            }
         }
         // Also admit the common two-instruction materialization
         // MOV reg,function; MOV [field],reg. High p-code still has to prove that
@@ -209,6 +230,14 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
         if (inputCount(operation) < 3) return;
         FieldRef field = fieldAddress(input(operation, 1), 0, new HashSet<>());
         Function target = functionValue(input(operation, 2), 0, new HashSet<>());
+        // High p-code commonly turns an image function-address immediate into a
+        // plain constant and no longer exposes a memory Address on the stored
+        // varnode.  The exact x86 MOV at this same sequence address retains an
+        // instruction reference to the Function.  Joining by the instruction
+        // address recovers the lost half without relaxing either proof.
+        if (target == null) target = machineTargetsBySite.get(site(operation));
+        if (field != null) typedFieldStoreAddresses++;
+        if (target != null) exactFunctionValueStores++;
         if (field == null || target == null) return;
         Function resolved = resolveThunk(target);
         if (resolved == null) return;
@@ -544,6 +573,18 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
                     clean(failure.error) + "\n");
         }
     }
+    private void writeMachineStores(Path path) throws Exception {
+        machineStores.sort(Comparator.comparing((MachineStore row) -> row.site)
+            .thenComparing(row -> row.targetAddress));
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("function_address\tfunction_name\tstore_site\tdestination\t" +
+                "target_address\ttarget_name\n");
+            for (MachineStore row : machineStores)
+                out.write(row.functionAddress + "\t" + clean(row.functionName) + "\t" +
+                    row.site + "\t" + clean(row.destination) + "\t" +
+                    row.targetAddress + "\t" + clean(row.targetName) + "\n");
+        }
+    }
     private void writeSummary(Path path, List<Row> rows) throws Exception {
         Files.write(path, List.of(
             "program=" + currentProgram.getName(),
@@ -553,8 +594,11 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
             "machine_function_address_reference_functions=" +
                 machineAddressReferenceFunctions,
             "machine_indirect_write_functions=" + machineIndirectWriteFunctions,
+            "exact_machine_function_stores=" + machineStores.size(),
             "skipped_call_only_decompiles=" + skippedCallOnlyDecompiles,
             "pcode_store_operations=" + pcodeStoreOperations,
+            "typed_structure_field_store_addresses=" + typedFieldStoreAddresses,
+            "exact_function_value_stores=" + exactFunctionValueStores,
             "exact_structure_field_stores=" + exactFieldStores,
             "trusted_structure_field_stores=" + trustedFieldStores,
             "field_candidates=" + rows.size(),
@@ -599,6 +643,8 @@ public class STFunctionPointerFieldAnalyzer extends GhidraScript {
     private record FieldRef(Structure structure, int offset) {
         boolean same(FieldRef other) { return other != null && offset == other.offset && structure.getPathName().equals(other.structure.getPathName()); }
     }
+    private record MachineStore(String functionAddress, String functionName, String site,
+            String destination, String targetAddress, String targetName) {}
     private record FieldKey(String structurePath, int offset) implements Comparable<FieldKey> {
         @Override public int compareTo(FieldKey other) {
             int value = structurePath.compareTo(other.structurePath);

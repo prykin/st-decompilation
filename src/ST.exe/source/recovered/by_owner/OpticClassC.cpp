@@ -110,7 +110,9 @@ LAB_004ab0d1:
     goto switchD_004ab11d_default;
   }
   if (iVar2 == 1) {
-    st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+    st::fn_004036D4
+              ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+               DAT_0080743c & 0xff);
     this->field_001C = 0;
     return 0;
   }

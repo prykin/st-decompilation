@@ -48,7 +48,8 @@ STBoatC::GetDefenceTarget::override::prt_489a20_d4e0dbd9:
 00489A2E  8B 46 24                  MOV EAX,dword ptr [ESI + 0x24]
 00489A31  50                        PUSH EAX
 00489A32  8B 11                     MOV EDX,dword ptr [ECX]
-00489A34  FF 92 F4 00 00 00         CALL dword ptr [EDX + 0xf4]
+STBoatC::GetDefenceTarget::override::prt_489a34_66d08e71:
+00489A34  FF 92 F4 00 00 00         CALL dword ptr [EDX + 0xf4]  ; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 00489A3A  83 F8 01                  CMP EAX,0x1
 00489A3D  75 30                     JNZ 0x00489a6f
 00489A3F  8B 86 7F 04 00 00         MOV EAX,dword ptr [ESI + 0x47f]
@@ -172,7 +173,8 @@ STBoatC::GetDefenceTarget::override::prt_489b86_d4e0dbd9:
 00489B97  8B 56 24                  MOV EDX,dword ptr [ESI + 0x24]
 00489B9A  52                        PUSH EDX
 00489B9B  8B 01                     MOV EAX,dword ptr [ECX]
-00489B9D  FF 90 F4 00 00 00         CALL dword ptr [EAX + 0xf4]
+STBoatC::GetDefenceTarget::override::prt_489b9d_66d08e71:
+00489B9D  FF 90 F4 00 00 00         CALL dword ptr [EAX + 0xf4]  ; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 00489BA3  85 C0                     TEST EAX,EAX
 00489BA5  0F 84 05 03 00 00         JZ 0x00489eb0
 00489BAB  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -554,7 +556,8 @@ STBoatC::GetDefenceTarget::override::prt_489fa4_d4e0dbd9:
 00489FB5  8B 46 24                  MOV EAX,dword ptr [ESI + 0x24]
 00489FB8  50                        PUSH EAX
 00489FB9  8B 11                     MOV EDX,dword ptr [ECX]
-00489FBB  FF 92 F4 00 00 00         CALL dword ptr [EDX + 0xf4]
+STBoatC::GetDefenceTarget::override::prt_489fbb_66d08e71:
+00489FBB  FF 92 F4 00 00 00         CALL dword ptr [EDX + 0xf4]  ; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4
 00489FC1  85 C0                     TEST EAX,EAX
 00489FC3  0F 84 14 03 00 00         JZ 0x0048a2dd
 00489FC9  8D 4D F8                  LEA ECX,[EBP + -0x8]

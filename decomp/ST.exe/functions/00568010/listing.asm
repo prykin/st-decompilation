@@ -1,4 +1,4 @@
-FUN_00568010:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568010::FUN_00568010:
 00568010  55                        PUSH EBP
 00568011  8B EC                     MOV EBP,ESP
 00568013  83 EC 4C                  SUB ESP,0x4c

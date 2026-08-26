@@ -1340,6 +1340,7 @@ extern undefined4 DAT_0081458c;
 extern undefined4 DAT_00814590;
 extern undefined4 DAT_00814594;
 extern undefined4 DAT_00818000;
+extern undefined4 DAT_00847820;
 extern undefined4 DAT_00847824;
 extern undefined4 DAT_008478a8;
 extern undefined4 DAT_008478ac;

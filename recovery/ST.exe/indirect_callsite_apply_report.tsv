@@ -141,14 +141,52 @@ target	action	status	detail
 00483300@004833C6	apply	unchanged	exact call-site ABI already present
 00483300@004833D8	apply	unchanged	exact call-site ABI already present
 00483300@004833EE	apply	unchanged	exact call-site ABI already present
+004845E0@0048481E	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@0048482E	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00484867	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00484873	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00484B7A	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00484B86	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00484B92	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00484B9E	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00484C37	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00484C43	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00484D19	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00484ED6	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00484F36	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@0048500E	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@0048511F	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@0048519C	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@004851A8	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@004852EB	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@004852F7	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00485625	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00485648	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@0048568D	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00485699	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@004856C9	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@004856D5	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00485A46	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00485A52	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00485E18	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@0048609D	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@004860BA	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@004860CA	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@004860DA	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@004860EA	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@004860FA	apply	unchanged	exact script-owned call-site ABI already present
+004845E0@00486106	apply	unchanged	exact script-owned call-site ABI already present
 004899A0@00489A10	apply	unchanged	exact call-site ABI already present
 004899A0@00489A20	apply	unchanged	exact call-site ABI already present
+004899A0@00489A34	apply	unchanged	exact call-site ABI already present
 004899A0@00489B73	apply	unchanged	exact call-site ABI already present
 004899A0@00489B86	apply	unchanged	exact call-site ABI already present
+004899A0@00489B9D	apply	unchanged	exact call-site ABI already present
 004899A0@00489BB0	apply	unchanged	exact call-site ABI already present
 004899A0@00489E5B	apply	unchanged	exact call-site ABI already present
 004899A0@00489F91	apply	unchanged	exact call-site ABI already present
 004899A0@00489FA4	apply	unchanged	exact call-site ABI already present
+004899A0@00489FBB	apply	unchanged	exact call-site ABI already present
 004899A0@0048A1A1	apply	unchanged	exact call-site ABI already present
 004899A0@0048A288	apply	unchanged	exact call-site ABI already present
 0048CEA0@0048CF62	apply	unchanged	exact call-site ABI already present
@@ -312,6 +350,17 @@ target	action	status	detail
 00644410@006447C2	apply	unchanged	exact call-site ABI already present
 00644410@00644D35	apply	unchanged	exact call-site ABI already present
 00648030@006481BC	apply	unchanged	exact call-site ABI already present
+0064A970@0064ACD7	apply	unchanged	exact call-site ABI already present
+0064A970@0064ACE0	apply	unchanged	exact call-site ABI already present
+0064A970@0064AE69	apply	unchanged	exact call-site ABI already present
+0064A970@0064AE72	apply	unchanged	exact call-site ABI already present
+0064A970@0064B1C4	apply	unchanged	exact call-site ABI already present
+0064A970@0064B2BE	apply	unchanged	exact call-site ABI already present
+0064A970@0064B2C7	apply	unchanged	exact call-site ABI already present
+0064A970@0064B4B5	apply	unchanged	exact call-site ABI already present
+0064A970@0064B738	apply	unchanged	exact call-site ABI already present
+0064A970@0064B741	apply	unchanged	exact call-site ABI already present
+0064A970@0064BC5A	apply	unchanged	exact call-site ABI already present
 0065BD70@0065C0B8	apply	unchanged	exact call-site ABI already present
 0065BD70@0065C0ED	apply	unchanged	exact call-site ABI already present
 0065BD70@0065C138	apply	unchanged	exact call-site ABI already present
@@ -456,6 +505,7 @@ target	action	status	detail
 0067C7E0@0067C9DD	apply	unchanged	exact call-site ABI already present
 006E4960@006E4A6A	apply	unchanged	exact call-site ABI already present
 006E4960@006E4AED	apply	unchanged	exact call-site ABI already present
+006E4FC0@006E512D	apply	unchanged	exact call-site ABI already present
 006E5D90@006E5DE7	apply	unchanged	exact call-site ABI already present
 006E5D90@006E5E7C	apply	unchanged	exact call-site ABI already present
 0071F3A0@0071F655	apply	unchanged	exact call-site ABI already present

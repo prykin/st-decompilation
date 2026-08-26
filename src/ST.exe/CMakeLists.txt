@@ -302,6 +302,11 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004603B0.cpp
     source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00493610.cpp
     source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0054A9B0.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0055C320.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00567510.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00568010.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00568940.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0056A130.cpp
     source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00573260.cpp
     source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00601500.cpp
     source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40.cpp

@@ -179,7 +179,8 @@ void __cdecl st::fn_006823E0(int param_1,float *param_2)
         iVar4 = st::fn_004038AF((int)*(short *)(pcVar2 + (int)pfVar8 * 5 + 1));
         if ((iVar4 < 0) || (iVar4 = st::fn_004016B3((int)*local_8), iVar4 != 0)) {
           int param_1_after_write = 0; /* compiler stack-slot lifetime split */
-          param_2 = st::fn_00401604(pcVar2,(int)pfVar8,&param_1_after_write);
+          param_2 = st::fn_00401604((AnonReceiver_0064A970 *)&DAT_00847820,pcVar2,(int)pfVar8,
+                                       &param_1_after_write);
           if (param_2 == nullptr) {
             st::fn_00405411(param_1_after_write,(char *)&DAT_00847824);
             return;

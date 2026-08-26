@@ -189,7 +189,8 @@ switchD_005b2a8d_default:
       st::fn_00401F00(this_02,param_1,1);
       st::fn_0040329C(&g_sound,0);
       if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
-        st::fn_00402FD1(&g_sound,0x10,'\x02',0,nullptr);
+        st::fn_00402FD1
+                  ((AnonReceiver_0056A130 *)&g_sound,0x10,'\x02',0,nullptr);
       }
       if (DAT_00808446 == '\0') {
         uVar7 = this_02->field_0008;

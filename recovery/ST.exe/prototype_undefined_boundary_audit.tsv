@@ -426,7 +426,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00401CA8	thunk_FUN_0065bd20	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 00401CA8	thunk_FUN_0065bd20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401CBC	OptPanelTy::sub_00532CE0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00401CDA	thunk_FUN_00568940	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00401CDA	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568940::thunk_FUN_00568940	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401CDF	AiFltClassTy::sub_0065D6E0	parameter	1	param_2	/undefined4	EDX:4	DEFAULT		0	0	no_evidence		-
 00401CDF	AiFltClassTy::sub_0065D6E0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00401CE9	STLightC::sub_0061F290	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -1120,7 +1120,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00402FAE	thunk_FUN_005f8cc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402FBD	thunk_FUN_004cdf80	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402FC2	thunk_FUN_004dccf0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00402FD1	thunk_FUN_0056a130	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00402FD1	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::thunk_FUN_0056a130	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00402FD6	thunk_FUN_004e9960	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402FDB	thunk_FUN_0068e190	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402FE5	thunk_FUN_005fd5c0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -1375,7 +1375,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004036C5	STGroupBoatC::Capture	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004036CA	STRubbishC::sub_0062EF00	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004036CF	ComboTy::InitCombo	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-004036D4	thunk_FUN_00567510	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+004036D4	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 004036DE	STGroupBoatC::DCBomb	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004036E3	thunk_FUN_005fc4a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004036E8	thunk_FUN_00683150	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -4136,17 +4136,17 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005672E0	FUN_005672e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00567330	FUN_00567330	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00567490	FUN_00567490	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00567510	FUN_00567510	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00567510	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::FUN_00567510	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00567C10	FUN_00567c10	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005682C0	FUN_005682c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 005686C0	FUN_005686c0	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 005686C0	FUN_005686c0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00568780	FUN_00568780	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00568850	FUN_00568850	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00568940	FUN_00568940	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00568940	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568940::FUN_00568940	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00568BC0	FUN_00568bc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00568C50	SoundClassTy::CheckFader	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0056A130	FUN_0056a130	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0056A130	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::FUN_0056a130	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0056A2A0	FUN_0056a2a0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0056A500	FUN_0056a500	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0056A5F0	STAppC::STAppC	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-

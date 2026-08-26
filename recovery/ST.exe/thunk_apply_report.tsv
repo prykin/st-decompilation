@@ -277,7 +277,7 @@ thunk_address	status	proposed_qualified_name	details
 004015F5	disabled	JumpManagC::sub_00617FB0	apply=0
 004015FA	disabled	HelpStringTy::OutStr	apply=0
 004015FF	disabled	FUN_004ec6c0	apply=0
-00401604	disabled	FUN_0064a970	apply=0
+00401604	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970	apply=0
 00401609	disabled	SoundManagerTy::sub_00566AA0	apply=0
 0040160E	disabled	InfocPanelTy::Update	apply=0
 00401618	disabled	FUN_00493ca0	apply=0
@@ -602,7 +602,7 @@ thunk_address	status	proposed_qualified_name	details
 00401CC6	disabled	PrividerTy::GetMessage	apply=0
 00401CCB	disabled	FUN_006a10c0	apply=0
 00401CD0	disabled	FUN_00683670	apply=0
-00401CDA	disabled	FUN_00568940	apply=0
+00401CDA	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568940::FUN_00568940	apply=0
 00401CDF	disabled	AiFltClassTy::sub_0065D6E0	apply=0
 00401CE4	disabled	ProdPanelTy::PaintTab	apply=0
 00401CE9	disabled	STLightC::sub_0061F290	apply=0
@@ -1019,7 +1019,7 @@ thunk_address	status	proposed_qualified_name	details
 00402563	disabled	FUN_005b6450	apply=0
 00402568	disabled	FUN_0064eed0	apply=0
 0040256D	disabled	FUN_00626ec0	apply=0
-00402572	disabled	FUN_0055c320	apply=0
+00402572	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0055C320::FUN_0055c320	apply=0
 00402577	disabled	FUN_0055c180	apply=0
 0040257C	disabled	FUN_00629010	apply=0
 00402581	disabled	FUN_004e2190	apply=0
@@ -1514,7 +1514,7 @@ thunk_address	status	proposed_qualified_name	details
 00402FC2	disabled	FUN_004dccf0	apply=0
 00402FC7	disabled	FUN_00652460	apply=0
 00402FCC	disabled	FUN_00639450	apply=0
-00402FD1	disabled	FUN_0056a130	apply=0
+00402FD1	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::FUN_0056a130	apply=0
 00402FD6	disabled	FUN_004e9960	apply=0
 00402FDB	disabled	FUN_0068e190	apply=0
 00402FE0	disabled	FUN_0065d1f0	apply=0
@@ -1856,7 +1856,7 @@ thunk_address	status	proposed_qualified_name	details
 004036C5	disabled	STGroupBoatC::Capture	apply=0
 004036CA	disabled	STRubbishC::sub_0062EF00	apply=0
 004036CF	disabled	ComboTy::InitCombo	apply=0
-004036D4	disabled	FUN_00567510	apply=0
+004036D4	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::FUN_00567510	apply=0
 004036DE	disabled	STGroupBoatC::DCBomb	apply=0
 004036E3	disabled	FUN_005fc4a0	apply=0
 004036E8	disabled	FUN_00683150	apply=0
@@ -3121,7 +3121,7 @@ thunk_address	status	proposed_qualified_name	details
 00405100	disabled	HelpPanelTy::PutToSHlp	apply=0
 00405105	disabled	FUN_00418010	apply=0
 0040510A	disabled	FUN_0064eba0	apply=0
-0040510F	disabled	FUN_00568010	apply=0
+0040510F	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568010::FUN_00568010	apply=0
 00405114	disabled	FUN_00640170	apply=0
 00405119	disabled	JumpManagC::sub_00618170	apply=0
 0040511E	disabled	STColl3C::sub_005F6EE0	apply=0

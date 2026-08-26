@@ -456,8 +456,9 @@ LAB_005a63ec:
               else {
                 pbVar41 = *(byte **)this_00->field_1AF8->growCapacity;
               }
-              thunk_FUN_0055c320(&DAT_00802a90,pbVar41,pcVar24,pcVar39,
-                                 (AnonShape_0055C320_953077EC *)this_00->field_1B04);
+              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0055C320::thunk_FUN_0055c320
+                        ((AnonReceiver_0055C320 *)&DAT_00802a90,pbVar41,pcVar24,pcVar39,
+                         (AnonShape_0055C320_953077EC *)this_00->field_1B04);
               local_e4 = DAT_008030d4;
               local_110 = "Profile\\Age";
               local_f0 = &DAT_00802ad4;
@@ -605,8 +606,9 @@ LAB_005a6658:
               else {
                 pbVar41 = *(byte **)this_00->field_1AF8->growCapacity;
               }
-              thunk_FUN_0055c320(&DAT_00802a90,pbVar41,pcVar24,pcVar39,
-                                 (AnonShape_0055C320_953077EC *)this_00->field_1B04);
+              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0055C320::thunk_FUN_0055c320
+                        ((AnonReceiver_0055C320 *)&DAT_00802a90,pbVar41,pcVar24,pcVar39,
+                         (AnonShape_0055C320_953077EC *)this_00->field_1B04);
               /* ST_CALLSITE[005A6763]: CALL dword ptr [0x0085c004] */
               CFsgsConnection::CreateNewAccount
                         ((CFsgsConnection *)&DAT_00802a90,&CHAR_00h_00807e1d,&CHAR_00h_00807e5d);

@@ -9,23 +9,32 @@
    284 | 294 | 305 | 313 | 323 | 338 | 346 | 356 | 369 | 386 | 399 | 402 | 413 | 416 | 428 | 443 |
    458 | 472 | 486 | 500 | 518 | 536 | 538 | 544 | 576 | 591 (metadata/report site, not the function
    definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
 
-float * FUN_0064a970(char *param_1,int param_2,int *param_3)
+   [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=3; incoming_edx_uses=0; calls=2;
+   ecx_pointer_setup=2; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
+   expected_stack=12; receiver_family_members=4 */
+
+float * __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970
+          (AnonReceiver_0064A970 *this,char *param_1,int param_2,int *param_3)
 
 {
-  float float_local_28_3;
+  float float_local_28_1;
+  float float_local_18_2;
+  float float_local_18_3;
   float float_local_18_4;
-  float float_local_18_5;
-  float float_local_18_6;
+  float float_local_c_5;
+  float float_local_c_6;
   float float_local_c_7;
   float float_local_c_8;
-  float float_local_c_9;
-  float float_local_c_10;
   uint *puVar1;
   byte bVar2;
   char cVar3;
   short sVar4;
+  AnonReceiver_0064A970 *this_00;
   int iVar5;
   int iVar6;
   byte *pbVar7;
@@ -62,8 +71,8 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
   float *pfVar16;
   float *pfVar17;
   bool bVar18;
-  float10 fVar19;
   float10 fVar19_mg9;
+  float10 fVar19;
   longlong lVar20;
   InternalExceptionFrame local_c0;
   undefined4 local_7c;
@@ -83,7 +92,7 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
   int local_44;
   int local_40;
   int local_3c;
-  int *local_38;
+  AnonReceiver_0064A970 *local_38;
   float local_34;
   int local_30;
   int local_2c;
@@ -101,7 +110,9 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
   local_1c = nullptr;
   local_c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c0;
+  local_38 = this;
   iVar5 = Library::MSVCRT::__setjmp3(local_c0.jumpBuffer,0);
+  this_00 = local_38;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_c0.previous;
     if (local_1c != nullptr) {
@@ -118,8 +129,8 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
     }
     return nullptr;
   }
-  Library::MSVCRT::_strncpy((char *)(local_38 + 1),&CHAR_00h_008016a0,0x7f);
-  local_38[0x21] = -1;
+  Library::MSVCRT::_strncpy(&local_38->field_0x4,&CHAR_00h_008016a0,0x7f);
+  *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
   cVar3 = *param_1;
   local_ECX_128 = param_1;
   for (iVar6 = 0; (cVar3 != '\a' && (iVar6 < param_2)); iVar6 = iVar6 + 1) {
@@ -147,11 +158,9 @@ switchD_0064aa67_caseD_1:
       if ((sVar4 == 1) && ((*param_1 == '\x06' || (*param_1 == '\x03')))) {
         if ((param_1[5] == '\x06') || (param_1[5] == '\x03')) {
           /* ST_CALLSITE[0064B09B]: CALL dword ptr [EDX + 0x8] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          pcVar8 = (char *)(**(code **)(*local_38 + 8))(param_1);
+          pcVar8 = (char *)this_00->slot_08();
           /* ST_CALLSITE[0064B0A5]: CALL dword ptr [EAX + 0x8] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
+          pbVar9 = (byte *)this_00->slot_08(param_1 + 5);
           local_18 = pbVar9;
           if ((pcVar8 == nullptr) || (pbVar9 == nullptr)) {
             RaiseInternalException
@@ -236,19 +245,20 @@ cf_common_exit_0064BBB1:
       case '\x04':
         cVar3 = param_1[5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
-          /* ST_CALLSITE[0064B2BE]: CALL dword ptr [EDX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar6 = (**(code **)*local_38)(param_1);
-          /* ST_CALLSITE[0064B2C7]: CALL dword ptr [EAX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar10 = (**(code **)*local_38)(param_1 + 5);
+          /* ST_CALLSITE[0064B2BE]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
+          iVar6 = this_00->slot_00(param_1);
+          /* ST_CALLSITE[0064B2C7]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
+          iVar10 = this_00->slot_00(param_1 + 5);
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           switch(*(undefined2 *)(local_10 + 1)) {
           case 1:
             *local_8 = (float)(iVar10 + iVar6);
             break;
           default:
-            iVar6 = 0xa1;
+            param_1 = (char *)0xa1;
+cf_error_exit_0064B35D:
+            pcVar8 = "E:\\__titans\\ai\\ai_erc.cpp";
+            iVar6 = g_overwriteContext_007ED77C;
             goto cf_error_exit_0064B368;
           case 0x16:
             if (iVar10 == 0) {
@@ -277,25 +287,22 @@ cf_common_exit_0064BBB1:
         if ((cVar3 != '\x05') && (cVar3 != '\x02')) {
           local_EAX_2068 = thunk_FUN_00674af0((int)sVar4);
           if (local_EAX_2068 != nullptr) {
-            Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_2068,0x7f);
-            local_38[0x21] = -1;
+            Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_2068,0x7f);
+            *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
             iVar6 = -0x76;
             goto cf_error_exit_0064C2A4;
           }
           goto cf_error_exit_0064B714;
         }
-        /* ST_CALLSITE[0064B1C4]: CALL dword ptr [EAX] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        local_18 = (byte *)(**(code **)*local_38)(param_1);
-        float_local_c_7 = (float)(int)local_18; /* split floating lifetime from pointer-typed SSA storage */
+        /* ST_CALLSITE[0064B1C4]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
+        local_18 = (byte *)this_00->slot_00(param_1);
+        float_local_c_5 = (float)(int)local_18; /* split floating lifetime from pointer-typed SSA storage */
         /* ST_CALLSITE[0064B1D4]: CALL dword ptr [EDX + 0x4] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
-        local_14 = (float)fVar19;
+        local_14 = this_00->slot_04(param_1 + 5);
         local_8 = Library::DKW::LIB::MemAllocClear(4);
         switch((int)*(short *)(local_10 + 1)) {
         case 1:
-          *local_8 = local_14 + float_local_c_7;
+          *local_8 = local_14 + float_local_c_5;
           break;
         default:
           local_EAX_2282 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
@@ -321,26 +328,22 @@ cf_common_exit_0064BBB1:
           if ((cVar3 != '\x05') && (cVar3 != '\x02')) {
             local_EAX_2633 = thunk_FUN_00674af0((int)sVar4);
             if (local_EAX_2633 != nullptr) {
-              Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_2633,0x7f);
-              local_38[0x21] = -1;
+              Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_2633,0x7f);
+              *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
               iVar6 = -0x76;
               goto cf_error_exit_0064C2A4;
             }
             goto cf_error_exit_0064B714;
           }
           /* ST_CALLSITE[0064B3F9]: CALL dword ptr [EAX + 0x4] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-          float_local_c_8 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
+          float_local_c_6 = this_00->slot_04(param_1); /* split floating lifetime from pointer-typed SSA storage */
           /* ST_CALLSITE[0064B404]: CALL dword ptr [EDX + 0x4] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
-          local_14 = (float)fVar19;
+          local_14 = this_00->slot_04(param_1 + 5);
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           iVar6 = (int)*(short *)(local_10 + 1);
           switch(iVar6) {
           case 1:
-            *local_8 = local_14 + float_local_c_8;
+            *local_8 = local_14 + float_local_c_6;
             break;
           default:
             goto switchD_0064b42d_caseD_2;
@@ -361,27 +364,24 @@ cf_common_exit_0064BBB1:
           break;
         }
         /* ST_CALLSITE[0064B4AA]: CALL dword ptr [EDX + 0x4] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-        float_local_c_9 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
-        /* ST_CALLSITE[0064B4B5]: CALL dword ptr [EAX] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        local_18 = (byte *)(**(code **)*local_38)(param_1 + 5);
+        float_local_c_7 = this_00->slot_04(param_1); /* split floating lifetime from pointer-typed SSA storage */
+        /* ST_CALLSITE[0064B4B5]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
+        local_18 = (byte *)this_00->slot_00(param_1 + 5);
         local_14 = (float)(int)local_18;
         local_8 = Library::DKW::LIB::MemAllocClear(4);
         iVar6 = (int)*(short *)(local_10 + 1);
         switch(iVar6) {
         case 1:
-          *local_8 = local_14 + float_local_c_9;
+          *local_8 = local_14 + float_local_c_7;
           break;
         default:
 switchD_0064b42d_caseD_2:
           local_EAX_2282 = thunk_FUN_00674af0(iVar6);
 joined_r0x0064b49a:
           if (local_EAX_2282 != nullptr) {
-            Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_2282,0x7f);
+            Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_2282,0x7f);
           }
-          local_38[0x21] = -1;
+          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x76,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           break;
         case 0x16:
@@ -401,8 +401,8 @@ joined_r0x0064b49a:
       default:
         local_EAX_3036 = thunk_FUN_00674af0((int)sVar4);
         if (local_EAX_3036 != nullptr) {
-          Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_3036,0x7f);
-          local_38[0x21] = -1;
+          Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_3036,0x7f);
+          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           iVar6 = -0x76;
           goto cf_error_exit_0064C2A4;
         }
@@ -434,12 +434,10 @@ switchD_0064aa67_caseD_3:
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
-          /* ST_CALLSITE[0064B738]: CALL dword ptr [EAX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar6 = (**(code **)*local_38)(param_1);
-          /* ST_CALLSITE[0064B741]: CALL dword ptr [EDX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar10 = (**(code **)*local_38)(param_1 + 5);
+          /* ST_CALLSITE[0064B738]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
+          iVar6 = this_00->slot_00(param_1);
+          /* ST_CALLSITE[0064B741]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
+          iVar10 = this_00->slot_00(param_1 + 5);
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           sVar4 = *(short *)(local_10 + 1);
           if (sVar4 == 3) {
@@ -451,7 +449,7 @@ switchD_0064aa67_caseD_3:
           else {
             if (sVar4 == 0x34) {
               if (iVar6 == 0) {
-joined_r0x0064b781:
+joined_r0x0064b79d:
                 if (iVar10 == 0) goto cf_common_exit_0064B79F;
               }
 LAB_0064b78b:
@@ -459,10 +457,12 @@ LAB_0064b78b:
               goto cf_common_exit_0064B36F;
             }
             if (sVar4 != 0x43) {
-              iVar6 = 0x139;
+              param_1 = (char *)0x139;
+              pcVar8 = "E:\\__titans\\ai\\ai_erc.cpp";
+              iVar6 = g_overwriteContext_007ED77C;
               goto cf_error_exit_0064B368;
             }
-            if (iVar6 == 0) goto joined_r0x0064b781;
+            if (iVar6 == 0) goto joined_r0x0064b79d;
             if (iVar10 == 0) goto LAB_0064b78b;
           }
           goto cf_common_exit_0064B79F;
@@ -470,10 +470,10 @@ LAB_0064b78b:
       }
       local_EAX_3468 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
       if (local_EAX_3468 != nullptr) {
-        Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_3468,0x7f);
+        Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_3468,0x7f);
       }
 cf_error_exit_0064B714:
-      local_38[0x21] = -1;
+      *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       iVar6 = -0x76;
       goto cf_error_exit_0064C2A4;
     case 8:
@@ -487,19 +487,17 @@ cf_error_exit_0064B714:
 LAB_0064ae25:
         local_EAX_1213 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
         if (local_EAX_1213 != nullptr) {
-          Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_1213,0x7f);
+          Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_1213,0x7f);
         }
-        local_38[0x21] = -1;
+        *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
         iVar6 = -0x76;
         goto cf_error_exit_0064C2A4;
       }
       if ((param_1[5] != '\x04') && (param_1[5] != '\x01')) goto LAB_0064ae25;
-      /* ST_CALLSITE[0064AE69]: CALL dword ptr [EAX] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      uVar14 = (**(code **)*local_38)(param_1);
-      /* ST_CALLSITE[0064AE72]: CALL dword ptr [EDX] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      uVar15 = (**(code **)*local_38)(param_1 + 5);
+      /* ST_CALLSITE[0064AE69]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
+      uVar14 = this_00->slot_00(param_1);
+      /* ST_CALLSITE[0064AE72]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
+      uVar15 = this_00->slot_00(param_1 + 5);
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       sVar4 = *(short *)(local_10 + 1);
       if (sVar4 == 8) {
@@ -514,10 +512,11 @@ LAB_0064ae25:
         *local_8 = (float)(uVar15 ^ uVar14);
         goto cf_common_exit_0064B36F;
       }
-      iVar6 = 0x15a;
+      pcVar8 = "E:\\__titans\\ai\\ai_erc.cpp";
+      param_1 = (char *)0x15a;
+      iVar6 = g_overwriteContext_007ED77C;
 cf_error_exit_0064B368:
-      RaiseInternalException
-                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",iVar6);
+      RaiseInternalException(-0x6b,iVar6,pcVar8,(int)param_1);
       goto cf_common_exit_0064B36F;
     case 9:
       if (param_2 != 1) {
@@ -527,10 +526,14 @@ cf_error_exit_0064B368:
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         local_8 = Library::DKW::LIB::MemAllocClear(4);
         /* ST_CALLSITE[0064AEFE]: CALL dword ptr [EDX] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        uVar14 = (**(code **)*local_38)(param_1);
+        uVar14 = this_00->slot_00();
         *local_8 = (float)~uVar14;
         goto cf_common_exit_0064B36F;
+      }
+cf_common_exit_0064B7EA:
+      local_EAX_3714 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
+      if (local_EAX_3714 != nullptr) {
+        Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_3714,0x7f);
       }
       break;
     case 0x13:
@@ -540,31 +543,26 @@ cf_error_exit_0064B368:
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
         /* ST_CALLSITE[0064AF38]: CALL dword ptr [EAX] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar6 = (**(code **)*local_38)(param_1);
+        iVar6 = this_00->slot_00();
         iVar6 = 2 - (uint)(iVar6 != 0);
         pcVar8 = param_1 + iVar6 * 5;
         cVar3 = param_1[iVar6 * 5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_CALLSITE[0064B03C]: CALL dword ptr [EDX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          fVar11 = (float)(**(code **)*local_38)(pcVar8);
+          fVar11 = (float)this_00->slot_00(pcVar8);
           *local_8 = fVar11;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_CALLSITE[0064B020]: CALL dword ptr [EDX + 0x4] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          fVar19 = (float10)(**(code **)(*local_38 + 4))(pcVar8);
-          *local_8 = (float)fVar19;
+          *local_8 = this_00->slot_04(pcVar8);
           goto cf_common_exit_0064B291;
         }
         if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
           /* ST_CALLSITE[0064AFB6]: CALL dword ptr [EDX + 0x8] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          pcVar8 = (char *)(**(code **)(*local_38 + 8))(pcVar8);
+          pcVar8 = (char *)this_00->slot_08(pcVar8);
           if (pcVar8 == nullptr) {
             RaiseInternalException
                       (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x182);
@@ -596,9 +594,9 @@ cf_error_exit_0064B368:
       }
       local_EAX_1546 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
       if (local_EAX_1546 != nullptr) {
-        Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_1546,0x7f);
+        Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_1546,0x7f);
       }
-      local_38[0x21] = -1;
+      *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       iVar6 = -0x76;
       goto cf_error_exit_0064C2A4;
     case 0x1e:
@@ -612,151 +610,145 @@ cf_error_exit_0064B368:
                   (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0xf8);
       }
       cVar3 = *param_1;
-      if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
-        if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
-          /* ST_CALLSITE[0064ACD7]: CALL dword ptr [EDX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar6 = (**(code **)*local_38)(param_1);
-          /* ST_CALLSITE[0064ACE0]: CALL dword ptr [EAX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar10 = (**(code **)*local_38)(param_1 + 5);
-          local_8 = Library::DKW::LIB::MemAllocClear(4);
-          switch(*(undefined2 *)(local_10 + 1)) {
-          case 0x1e:
-            *local_8 = (float)(uint)(iVar6 == iVar10);
-            break;
-          default:
-            iVar6 = 0x104;
-            goto cf_error_exit_0064B368;
-          case 0x27:
-            *local_8 = (float)(uint)(iVar6 < iVar10);
-            break;
-          case 0x28:
-            *local_8 = (float)(uint)(iVar6 <= iVar10);
-            break;
-          case 0x2e:
-            *local_8 = (float)(uint)(iVar10 < iVar6);
-            break;
-          case 0x2f:
-            *local_8 = (float)(uint)(iVar10 <= iVar6);
-            break;
-          case 0x33:
-            *local_8 = (float)(uint)(iVar6 != iVar10);
+      if ((cVar3 != '\x04') && (cVar3 != '\x01')) {
+LAB_0064aaac:
+        if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
+          if ((param_1[5] == '\x05') || (param_1[5] == '\x02')) {
+            /* ST_CALLSITE[0064ABE6]: CALL dword ptr [EDX + 0x4] */
+            local_20 = this_00->slot_04(param_1);
+            /* ST_CALLSITE[0064ABF1]: CALL dword ptr [EAX + 0x4] */
+            local_24 = this_00->slot_04(param_1 + 5);
+            local_8 = Library::DKW::LIB::MemAllocClear(4);
+            switch(*(undefined2 *)(local_10 + 1)) {
+            case 0x1e:
+              if (local_20 == local_24) {
+                *local_8 = 1.4013e-45;
+                goto cf_common_exit_0064B36F;
+              }
+              break;
+            default:
+              param_1 = (char *)0x114;
+              goto cf_error_exit_0064B35D;
+            case 0x27:
+              if (local_20 < local_24) {
+                *local_8 = 1.4013e-45;
+                goto cf_common_exit_0064B36F;
+              }
+              break;
+            case 0x28:
+              if (local_20 <= local_24) {
+                *local_8 = 1.4013e-45;
+                goto cf_common_exit_0064B36F;
+              }
+              break;
+            case 0x2e:
+              if (local_24 < local_20) {
+                *local_8 = 1.4013e-45;
+                goto cf_common_exit_0064B36F;
+              }
+              break;
+            case 0x2f:
+              if (local_24 <= local_20) {
+                *local_8 = 1.4013e-45;
+                goto cf_common_exit_0064B36F;
+              }
+              break;
+            case 0x33:
+              if (local_20 != local_24) {
+                *local_8 = 1.4013e-45;
+                goto cf_common_exit_0064B36F;
+              }
+            }
+            *local_8 = 0.0;
+            goto cf_common_exit_0064B36F;
           }
-          goto cf_common_exit_0064B36F;
         }
-      }
-      if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
-        if ((param_1[5] == '\x05') || (param_1[5] == '\x02')) {
-          /* ST_CALLSITE[0064ABE6]: CALL dword ptr [EDX + 0x4] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-          local_20 = (float)fVar19;
-          /* ST_CALLSITE[0064ABF1]: CALL dword ptr [EAX + 0x4] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1 + 5);
-          local_24 = (float)fVar19;
-          local_8 = Library::DKW::LIB::MemAllocClear(4);
-          switch(*(undefined2 *)(local_10 + 1)) {
-          case 0x1e:
-            if (local_20 == local_24) {
-              *local_8 = 1.4013e-45;
-              goto cf_common_exit_0064B36F;
+        if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
+          pcVar8 = param_1 + 5;
+          if ((param_1[5] == '\x06') || (param_1[5] == '\x03')) {
+            /* ST_CALLSITE[0064AAEF]: CALL dword ptr [EDX + 0x8] */
+            pbVar9 = (byte *)this_00->slot_08();
+            /* ST_CALLSITE[0064AAF9]: CALL dword ptr [EAX + 0x8] */
+            pbVar7 = (byte *)this_00->slot_08();
+            if ((pbVar9 == nullptr) || (pbVar7 == nullptr)) {
+              RaiseInternalException
+                        (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
+                         0x11c);
             }
-            break;
-          default:
-            iVar6 = 0x114;
-            goto cf_error_exit_0064B368;
-          case 0x27:
-            if (local_20 < local_24) {
-              *local_8 = 1.4013e-45;
-              goto cf_common_exit_0064B36F;
-            }
-            break;
-          case 0x28:
-            if (local_20 <= local_24) {
-              *local_8 = 1.4013e-45;
-              goto cf_common_exit_0064B36F;
-            }
-            break;
-          case 0x2e:
-            if (local_24 < local_20) {
-              *local_8 = 1.4013e-45;
-              goto cf_common_exit_0064B36F;
-            }
-            break;
-          case 0x2f:
-            if (local_24 <= local_20) {
-              *local_8 = 1.4013e-45;
-              goto cf_common_exit_0064B36F;
-            }
-            break;
-          case 0x33:
-            if (local_20 != local_24) {
-              *local_8 = 1.4013e-45;
-              goto cf_common_exit_0064B36F;
-            }
-          }
-          *local_8 = 0.0;
-          goto cf_common_exit_0064B36F;
-        }
-      }
-      if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
-        if ((param_1[5] == '\x06') || (param_1[5] == '\x03')) {
-          /* ST_CALLSITE[0064AAEF]: CALL dword ptr [EDX + 0x8] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
-          /* ST_CALLSITE[0064AAF9]: CALL dword ptr [EAX + 0x8] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          pbVar7 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
-          if ((pbVar9 == nullptr) || (pbVar7 == nullptr)) {
-            RaiseInternalException
-                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x11c);
-          }
-          local_8 = Library::DKW::LIB::MemAllocClear(4);
-          do {
-            bVar2 = *pbVar9;
-            bVar18 = bVar2 < *pbVar7;
-            if (bVar2 != *pbVar7) {
+            local_8 = Library::DKW::LIB::MemAllocClear(4);
+            do {
+              bVar2 = *pbVar9;
+              bVar18 = bVar2 < *pbVar7;
+              if (bVar2 != *pbVar7) {
 LAB_0064ab54:
-              iVar6 = (1 - (uint)bVar18) - (uint)(bVar18 != 0);
-              goto LAB_0064ab59;
-            }
-            if (bVar2 == 0) break;
-            bVar2 = pbVar9[1];
-            bVar18 = bVar2 < pbVar7[1];
-            if (bVar2 != pbVar7[1]) goto LAB_0064ab54;
-            pbVar9 = pbVar9 + 2;
-            pbVar7 = pbVar7 + 2;
-          } while (bVar2 != 0);
-          iVar6 = 0;
+                iVar6 = (1 - (uint)bVar18) - (uint)(bVar18 != 0);
+                goto LAB_0064ab59;
+              }
+              if (bVar2 == 0) break;
+              bVar2 = pbVar9[1];
+              bVar18 = bVar2 < pbVar7[1];
+              if (bVar2 != pbVar7[1]) goto LAB_0064ab54;
+              pbVar9 = pbVar9 + 2;
+              pbVar7 = pbVar7 + 2;
+            } while (bVar2 != 0);
+            iVar6 = 0;
 LAB_0064ab59:
-          switch(*(undefined2 *)(local_10 + 1)) {
-          case 0x1e:
-            *local_8 = (float)(uint)(iVar6 == 0);
-            break;
-          default:
-            iVar6 = 0x126;
-            goto cf_error_exit_0064B368;
-          case 0x27:
-            *local_8 = (float)(uint)(iVar6 < 0);
-            break;
-          case 0x28:
-            *local_8 = (float)(uint)(iVar6 < 1);
-            break;
-          case 0x2e:
-            *local_8 = (float)(uint)(0 < iVar6);
-            break;
-          case 0x2f:
-            *local_8 = (float)(uint)(-1 < iVar6);
-            break;
-          case 0x33:
-            *local_8 = (float)(uint)(iVar6 != 0);
+            switch(*(undefined2 *)(local_10 + 1)) {
+            case 0x1e:
+              *local_8 = (float)(uint)(iVar6 == 0);
+              break;
+            default:
+              iVar6 = 0x126;
+              goto cf_error_exit_0064B368;
+            case 0x27:
+              *local_8 = (float)(uint)(iVar6 < 0);
+              break;
+            case 0x28:
+              *local_8 = (float)(uint)(iVar6 < 1);
+              break;
+            case 0x2e:
+              *local_8 = (float)(uint)(0 < iVar6);
+              break;
+            case 0x2f:
+              *local_8 = (float)(uint)(-1 < iVar6);
+              break;
+            case 0x33:
+              *local_8 = (float)(uint)(iVar6 != 0);
+            }
+            goto cf_common_exit_0064B36F;
           }
-          goto cf_common_exit_0064B36F;
         }
+        goto cf_common_exit_0064B7EA;
       }
-      break;
+      if ((param_1[5] != '\x04') && (param_1[5] != '\x01')) goto LAB_0064aaac;
+      /* ST_CALLSITE[0064ACD7]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
+      iVar6 = this_00->slot_00(param_1);
+      /* ST_CALLSITE[0064ACE0]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
+      iVar10 = this_00->slot_00(param_1 + 5);
+      local_8 = Library::DKW::LIB::MemAllocClear(4);
+      switch(*(undefined2 *)(local_10 + 1)) {
+      case 0x1e:
+        *local_8 = (float)(uint)(iVar6 == iVar10);
+        break;
+      default:
+        param_1 = (char *)0x104;
+        goto cf_error_exit_0064B35D;
+      case 0x27:
+        *local_8 = (float)(uint)(iVar6 < iVar10);
+        break;
+      case 0x28:
+        *local_8 = (float)(uint)(iVar6 <= iVar10);
+        break;
+      case 0x2e:
+        *local_8 = (float)(uint)(iVar10 < iVar6);
+        break;
+      case 0x2f:
+        *local_8 = (float)(uint)(iVar10 <= iVar6);
+        break;
+      case 0x33:
+        *local_8 = (float)(uint)(iVar6 != iVar10);
+      }
+      goto cf_common_exit_0064B36F;
     case 0x32:
       if (param_2 != 1) {
         RaiseInternalException
@@ -765,26 +757,20 @@ LAB_0064ab59:
       if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
         pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
         if (pcVar12 != nullptr) {
-          Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar12,0x7f);
+          Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar12,0x7f);
         }
-        local_38[0x21] = -1;
+        *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
         iVar6 = -0x76;
         goto cf_error_exit_0064C2A4;
       }
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       /* ST_CALLSITE[0064ADDF]: CALL dword ptr [EDX] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar6 = (**(code **)*local_38)(param_1);
+      iVar6 = this_00->slot_00();
       *local_8 = (float)(uint)(iVar6 == 0);
       goto cf_common_exit_0064B36F;
     }
-LAB_0064b7ea:
-    local_EAX_3714 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
-    if (local_EAX_3714 != nullptr) {
-      Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_3714,0x7f);
-    }
 LAB_0064b80a:
-    local_38[0x21] = -1;
+    *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
     iVar6 = -0x76;
     goto cf_error_exit_0064C2A4;
   }
@@ -798,8 +784,7 @@ LAB_0064b80a:
           }
           if ((*param_1 == '\x06') || (*param_1 == '\x03')) {
             /* ST_CALLSITE[0064BAF0]: CALL dword ptr [EDX + 0x8] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
+            pbVar9 = (byte *)this_00->slot_08();
             if (pbVar9 == nullptr) {
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
@@ -821,15 +806,14 @@ LAB_0064b80a:
             if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
               local_EAX_4301 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
               if (local_EAX_4301 != nullptr) {
-                Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_4301,0x7f);
+                Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_4301,0x7f);
               }
-              local_38[0x21] = -1;
+              *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
               iVar6 = -0x78;
               goto cf_error_exit_0064C2A4;
             }
             /* ST_CALLSITE[0064BA79]: CALL dword ptr [EDX + 0x8] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            pbVar9 = (byte *)(**(code **)(*local_38 + 8))(param_1);
+            pbVar9 = (byte *)this_00->slot_08();
             if (pbVar9 == nullptr) {
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
@@ -849,11 +833,9 @@ LAB_0064b80a:
           if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
             if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
               /* ST_CALLSITE[0064B9D3]: CALL dword ptr [EDX] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              iVar6 = (**(code **)*local_38)(param_1);
+              iVar6 = this_00->slot_00();
               /* ST_CALLSITE[0064B9DC]: CALL dword ptr [EAX] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              iVar10 = (**(code **)*local_38)(param_1 + 5);
+              iVar10 = this_00->slot_00(param_1 + 5);
               if (iVar10 < 2) {
                 iVar10 = 2;
               }
@@ -868,9 +850,9 @@ LAB_0064b80a:
         }
         local_EAX_4136 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
         if (local_EAX_4136 != nullptr) {
-          Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_4136,0x7f);
+          Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_4136,0x7f);
         }
-        local_38[0x21] = -1;
+        *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
         iVar6 = -0x78;
         goto cf_error_exit_0064C2A4;
       }
@@ -886,17 +868,14 @@ LAB_0064b80a:
             cVar3 = *param_1;
             local_c = nullptr;
             if (cVar3 == '\x04') {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0064b8f1:
               /* ST_CALLSITE[0064B8F6]: CALL dword ptr [EAX] */
-              local_18 = (byte *)(**(code **)*local_38)(param_1);
-              float_local_c_10 = (float)(int)local_18; /* split floating lifetime from pointer-typed SSA storage */
+              local_18 = (byte *)this_00->slot_00();
+              float_local_c_8 = (float)(int)local_18; /* split floating lifetime from pointer-typed SSA storage */
 LAB_0064b901:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
                 /* ST_CALLSITE[0064B910]: CALL dword ptr [EDX + 0x4] */
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-                float_local_c_10 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
+                float_local_c_8 = this_00->slot_04(param_1); /* split floating lifetime from pointer-typed SSA storage */
               }
             }
             else {
@@ -906,19 +885,19 @@ LAB_0064b901:
               }
               local_EAX_3904 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
               if (local_EAX_3904 != nullptr) {
-                Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_3904,0x7f);
+                Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_3904,0x7f);
               }
-              local_38[0x21] = -1;
+              *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
               RaiseInternalException
                         (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
             }
-            float_local_28_3 = (char *)((float)local_c + (float)local_28); /* split floating lifetime from pointer-typed SSA storage */
+            float_local_28_1 = ((float)local_c + (float)local_28); /* split floating lifetime from pointer-typed SSA storage */
             param_1 = param_1 + 5;
             iVar6 = iVar6 + -1;
           } while (iVar6 != 0);
         }
         local_8 = Library::DKW::LIB::MemAllocClear(4);
-        *local_8 = float_local_28_3 / (float)param_2;
+        *local_8 = float_local_28_1 / (float)param_2;
         goto cf_common_exit_0064B291;
       }
       if (iVar6 == 0x41) {
@@ -930,20 +909,18 @@ LAB_0064b901:
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_CALLSITE[0064B855]: CALL dword ptr [EDX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar6 = (**(code **)*local_38)(param_1);
+          iVar6 = this_00->slot_00();
           *local_8 = (float)-iVar6;
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_CALLSITE[0064B837]: CALL dword ptr [EDX + 0x4] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          fVar19_mg9 = (float10)(**(code **)(*local_38 + 4))(param_1);
+          this_00->slot_04(param_1);
           *local_8 = (float)-fVar19_mg9;
           goto cf_common_exit_0064B36F;
         }
-        goto LAB_0064b7ea;
+        goto cf_common_exit_0064B7EA;
       }
       if (iVar6 == 0x43) goto switchD_0064aa67_caseD_3;
       if (iVar6 == 900) {
@@ -958,17 +935,16 @@ LAB_0064b901:
             cVar3 = *param_1;
             local_c = nullptr;
             if (cVar3 == '\x04') {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0064b659:
               /* ST_CALLSITE[0064B65E]: CALL dword ptr [EDX] */
-              local_c = (int *)(**(code **)*local_38)(param_1);
+              local_c = (int *)this_00->slot_00();
 LAB_0064b663:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
                 /* ST_CALLSITE[0064B672]: CALL dword ptr [EAX + 0x4] */
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
+                float x87_result_0064B672 = this_00->slot_04(param_1);
                 Library::MSVCRT::FUN_00730450
-                          (SUB84((double)fVar19,0),(uint)((ulonglong)(double)fVar19 >> 0x20));
+                          (SUB84((double)x87_result_0064B672,0),
+                           (uint)((ulonglong)(double)x87_result_0064B672 >> 0x20));
                 lVar20 = Library::MSVCRT::__ftol();
                 local_c = (int *)lVar20;
               }
@@ -980,9 +956,9 @@ LAB_0064b663:
               }
               local_EAX_3240 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
               if (local_EAX_3240 != nullptr) {
-                Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_3240,0x7f);
+                Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_3240,0x7f);
               }
-              local_38[0x21] = -1;
+              *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
               RaiseInternalException
                         (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
             }
@@ -1001,34 +977,30 @@ LAB_0064b663:
       RaiseInternalException
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1bb);
     }
-    if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
-      if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
-        /* ST_CALLSITE[0064BB6F]: CALL dword ptr [EAX + 0x4] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-        float_local_18_4 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
-        /* ST_CALLSITE[0064BB7A]: CALL dword ptr [EDX] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar6 = (**(code **)*local_38)(param_1 + 5);
-        if (iVar6 < 2) {
-          iVar6 = 2;
-        }
-        if (0x40 < iVar6) {
-          iVar6 = 0x40;
-        }
-        local_8 = Library::DKW::LIB::MemAllocClear(iVar6 + 10);
-        Library::MSVCRT::FUN_007301e0
-                  (SUB84((double)float_local_18_4,0),
-                   (int)((ulonglong)(double)float_local_18_4 >> 0x20),iVar6,(char *)local_8);
-        goto cf_common_exit_0064BBB1;
+    if (((*param_1 == '\x05') || (*param_1 == '\x02')) &&
+       ((param_1[5] == '\x04' || (param_1[5] == '\x01')))) {
+      /* ST_CALLSITE[0064BB6F]: CALL dword ptr [EAX + 0x4] */
+      float_local_18_2 = this_00->slot_04(param_1); /* split floating lifetime from pointer-typed SSA storage */
+      /* ST_CALLSITE[0064BB7A]: CALL dword ptr [EDX] */
+      iVar6 = this_00->slot_00();
+      if (iVar6 < 2) {
+        iVar6 = 2;
       }
+      if (0x40 < iVar6) {
+        iVar6 = 0x40;
+      }
+      local_8 = Library::DKW::LIB::MemAllocClear(iVar6 + 10);
+      Library::MSVCRT::FUN_007301e0
+                (SUB84((double)float_local_18_2,0),(int)((ulonglong)(double)float_local_18_2 >> 0x20),
+                 iVar6,(char *)local_8);
+      goto cf_common_exit_0064BBB1;
     }
 LAB_0064bd33:
     local_EAX_5067 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
     if (local_EAX_5067 != nullptr) {
-      Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_5067,0x7f);
+      Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_5067,0x7f);
     }
-    local_38[0x21] = -1;
+    *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
     iVar6 = -0x78;
     goto cf_error_exit_0064C2A4;
   }
@@ -1039,18 +1011,17 @@ LAB_0064bd33:
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1ca);
     }
     if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
-      /* ST_CALLSITE[0064BC5A]: CALL dword ptr [EDX] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      local_18 = (byte *)(**(code **)*local_38)(param_1);
+      /* ST_CALLSITE[0064BC5A]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
+      local_18 = (byte *)this_00->slot_00(param_1);
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       *local_8 = (float)(int)local_18;
       goto cf_common_exit_0064B291;
     }
     local_EAX_4782 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
     if (local_EAX_4782 != nullptr) {
-      Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_4782,0x7f);
+      Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_4782,0x7f);
     }
-    local_38[0x21] = -1;
+    *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
     iVar6 = -0x78;
     break;
   case 0x38b:
@@ -1060,12 +1031,10 @@ LAB_0064bd33:
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       /* ST_CALLSITE[0064BCDC]: CALL dword ptr [EDX + 0x4] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-      float_local_18_5 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
+      float_local_18_3 = this_00->slot_04(param_1); /* split floating lifetime from pointer-typed SSA storage */
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       Library::MSVCRT::FUN_0072e150
-                (SUB84((double)float_local_18_5,0),(uint)((ulonglong)(double)float_local_18_5 >> 0x20)
+                (SUB84((double)float_local_18_3,0),(uint)((ulonglong)(double)float_local_18_3 >> 0x20)
                 );
       lVar20 = Library::MSVCRT::__ftol();
       *local_8 = (float)lVar20;
@@ -1073,9 +1042,9 @@ LAB_0064bd33:
     }
     local_EAX_4913 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
     if (local_EAX_4913 != nullptr) {
-      Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_4913,0x7f);
+      Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_4913,0x7f);
     }
-    local_38[0x21] = -1;
+    *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
     iVar6 = -0x78;
     break;
   case 0x38c:
@@ -1085,12 +1054,10 @@ LAB_0064bd33:
     }
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       /* ST_CALLSITE[0064BD77]: CALL dword ptr [EAX + 0x4] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      fVar19 = (float10)(**(code **)(*local_38 + 4))(param_1);
-      float_local_18_6 = (float)fVar19; /* split floating lifetime from pointer-typed SSA storage */
+      float_local_18_4 = this_00->slot_04(param_1); /* split floating lifetime from pointer-typed SSA storage */
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       Library::MSVCRT::FUN_00730450
-                (SUB84((double)float_local_18_6,0),(uint)((ulonglong)(double)float_local_18_6 >> 0x20)
+                (SUB84((double)float_local_18_4,0),(uint)((ulonglong)(double)float_local_18_4 >> 0x20)
                 );
       lVar20 = Library::MSVCRT::__ftol();
       *local_8 = (float)lVar20;
@@ -1105,14 +1072,13 @@ LAB_0064bd33:
     if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
       local_EAX_5222 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
       if (local_EAX_5222 != nullptr) {
-        Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_5222,0x7f);
+        Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_5222,0x7f);
       }
-      local_38[0x21] = -1;
+      *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     /* ST_CALLSITE[0064BE12]: CALL dword ptr [EAX + 0x8] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    local_18 = (byte *)(**(code **)(*local_38 + 8))(param_1);
+    local_18 = (byte *)this_00->slot_08();
     if (local_18 == nullptr) {
       RaiseInternalException
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x21a);
@@ -1139,8 +1105,7 @@ LAB_0064bd33:
         cVar3 = (char)*local_c;
         if ((cVar3 == '\x06') || (cVar3 == '\x03')) {
           /* ST_CALLSITE[0064BFBF]: CALL dword ptr [EAX + 0x8] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          pcVar13 = (char *)(**(code **)(*local_38 + 8))(local_c);
+          pcVar13 = (char *)this_00->slot_08();
           local_78 = pcVar13;
           if (pcVar13 == nullptr) {
             RaiseInternalException
@@ -1167,8 +1132,7 @@ LAB_0064bd33:
         }
         else if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           /* ST_CALLSITE[0064BF60]: CALL dword ptr [EAX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          uVar12 = (**(code **)*local_38)(local_c);
+          uVar12 = this_00->slot_00();
           local_7c = uVar12;
           if ((int)pcVar8 <= local_2c) {
             pcVar8 = (char *)((int)pcVar8 + 0x200);
@@ -1184,9 +1148,7 @@ LAB_0064bd33:
         }
         else if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
           /* ST_CALLSITE[0064BF06]: CALL dword ptr [EAX + 0x4] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          fVar19 = (float10)(**(code **)(*local_38 + 4))(local_c);
-          local_34 = (float)fVar19;
+          local_34 = this_00->slot_04(local_c);
           if ((int)pcVar8 <= (int)local_24) {
             pcVar8 = (char *)((int)pcVar8 + 0x200);
             local_28 = pcVar8;
@@ -1201,9 +1163,9 @@ LAB_0064bd33:
         else {
           pcVar13_mg5 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
           if (pcVar13_mg5 != nullptr) {
-            Library::MSVCRT::_strncpy((char *)(local_38 + 1),pcVar13_mg5,0x7f);
+            Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar13_mg5,0x7f);
           }
-          local_38[0x21] = -1;
+          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (int *)((int)local_c + 5);
@@ -1233,16 +1195,15 @@ LAB_0064bd33:
       do {
         if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
           /* ST_CALLSITE[0064C1F4]: CALL dword ptr [EDX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar6 = (**(code **)*local_38)(param_1);
+          iVar6 = this_00->slot_00();
           *local_c = iVar6;
         }
         else {
           local_EAX_6215 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
           if (local_EAX_6215 != nullptr) {
-            Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_6215,0x7f);
+            Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_6215,0x7f);
           }
-          local_38[0x21] = -1;
+          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         param_1 = param_1 + 5;
@@ -1269,16 +1230,15 @@ LAB_0064bd33:
       do {
         if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
           /* ST_CALLSITE[0064C11C]: CALL dword ptr [EDX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar6 = (**(code **)*local_38)(param_1);
+          iVar6 = this_00->slot_00();
           *local_c = iVar6;
         }
         else {
           local_EAX_5998 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
           if (local_EAX_5998 != nullptr) {
-            Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_5998,0x7f);
+            Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_5998,0x7f);
           }
-          local_38[0x21] = -1;
+          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         param_1 = param_1 + 5;
@@ -1306,9 +1266,9 @@ cf_common_exit_0064B36F:
 cf_common_exit_0064C271:
     local_EAX_6402 = thunk_FUN_00674af0(iVar6);
     if (local_EAX_6402 != nullptr) {
-      Library::MSVCRT::_strncpy((char *)(local_38 + 1),local_EAX_6402,0x7f);
+      Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_6402,0x7f);
     }
-    local_38[0x21] = -1;
+    *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
     iVar6 = -0x75;
   }
 cf_error_exit_0064C2A4:

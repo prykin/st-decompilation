@@ -96,7 +96,9 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
     thunk_FUN_004a9c80(1);
     thunk_FUN_004a9c80(1);
   }
-  thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+             DAT_0080743c & 0xff);
   g_currentExceptionFrame = local_5c.previous;
   return;
 }

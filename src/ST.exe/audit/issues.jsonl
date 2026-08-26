@@ -61,6 +61,19 @@
 {"address": "00644410", "detail": "slot 0xE0 argument 3: short * -> undefined4", "kind": "exact_indirect_argument_boundary"}
 {"address": "00644410", "detail": "slot 0xE0 argument 4: short * -> undefined4", "kind": "exact_indirect_argument_boundary"}
 {"address": "00644410", "detail": "slot 0xE0 argument 5: undefined1 * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
+{"address": "0064A970", "detail": "slot 0x0 argument 1: char * -> undefined4", "kind": "exact_indirect_argument_boundary"}
 {"address": "0066ACC0", "detail": "slot 0x20 argument 1: AiFltClassTy * -> undefined4", "kind": "exact_indirect_argument_boundary"}
 {"address": "0066ACC0", "detail": "slot 0x20 argument 1: AiFltClassTy * -> undefined4", "kind": "exact_indirect_argument_boundary"}
 {"address": "0066ACC0", "detail": "slot 0x20 argument 1: AiFltClassTy * -> undefined4", "kind": "exact_indirect_argument_boundary"}
@@ -165,6 +178,9 @@
 {"address": "004899A0", "detail": "slot 0xF0: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
 {"address": "004899A0", "detail": "slot 0xF0: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
 {"address": "004899A0", "detail": "slot 0xF0: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0xF4: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0xF4: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "004899A0", "detail": "slot 0xF4: undefined4 (__thiscall *)(STGameObjC *, undefined4)", "kind": "exact_indirect_member_call"}
 {"address": "004899A0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
 {"address": "004899A0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
 {"address": "004899A0", "detail": "slot 0xF8: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
@@ -238,6 +254,19 @@
 {"address": "00637350", "detail": "slot 0xF8: undefined4 (__thiscall *)(STWorldObject *)", "kind": "exact_indirect_member_call"}
 {"address": "00644410", "detail": "slot 0xDC: undefined4 (__thiscall *)(STWorldObject *, undefined4, undefined4, undefined4, undefined4, undefined4, undefined4)", "kind": "exact_indirect_member_call"}
 {"address": "00644410", "detail": "slot 0xE0: void (__thiscall *)(STWorldObject *, undefined4, undefined4, undefined4, undefined4, undefined4)", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
+{"address": "0064A970", "detail": "slot 0x0: folded duplicated receiver", "kind": "exact_indirect_member_call"}
 {"address": "0065BD70", "detail": "slot 0x12C: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
 {"address": "0065BD70", "detail": "slot 0x130: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
 {"address": "0065BD70", "detail": "slot 0x138: undefined4 (__thiscall *)(STGameObjC *)", "kind": "exact_indirect_member_call"}
@@ -292,9 +321,6 @@
 {"address": "00675B10", "detail": "slot 0x114: undefined4 (__thiscall *)(STWorldObject *, undefined4)", "kind": "exact_indirect_member_call"}
 {"address": "00677BE0", "detail": "slot 0x12C: undefined4 (__thiscall *)(STFishC *)", "kind": "exact_indirect_member_call"}
 {"address": "00677BE0", "detail": "slot 0x130: undefined4 (__thiscall *)(STFishC *)", "kind": "exact_indirect_member_call"}
-{"detail": "STGameObjC::vfunc_F4: conflicting callsite ABI or storage", "kind": "exact_indirect_member_wrapper_conflict"}
-{"detail": "STGameObjC::vfunc_F4: conflicting callsite ABI or storage", "kind": "exact_indirect_member_wrapper_conflict"}
-{"detail": "STGameObjC::vfunc_F4: conflicting callsite ABI or storage", "kind": "exact_indirect_member_wrapper_conflict"}
 {"address": "0042B760", "detail": "call 006ACC70 argument 3: param_1 -> _param_1 as STGroupBoatC *", "kind": "exact_output_lifetime_materialization"}
 {"address": "004407A0", "detail": "call 006ACC70 argument 3: param_1 -> _param_1 as STGroupBoatC *", "kind": "exact_output_lifetime_materialization"}
 {"address": "0040AE40", "detail": "assignment local_10: unresolved field word -> short *", "kind": "exact_pointer_boundary_cast"}
@@ -5582,6 +5608,9 @@
 {"address": "0055C180", "detail": "external external_000000FB argument 4: exact storage address address of unresolved image datum -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055C290", "detail": "external external_000000FC argument 1: void storage pointer -> CFsgsConnection *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055C320", "detail": "assignment param_1: void * -> byte *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055C320", "detail": "assignment pbVar8: exact storage address AnonReceiver_0055C320 * * -> byte *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055C320", "detail": "assignment pcVar9: exact storage address AnonReceiver_0055C320 * * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0055C320", "detail": "assignment pcVar9: exact storage address AnonReceiver_0055C320 * * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055C590", "detail": "external external_00000080 argument 2: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055C590", "detail": "external external_00000080 argument 2: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0055C830", "detail": "assignment param_2: void * -> byte *", "kind": "exact_pointer_boundary_cast"}
@@ -5699,7 +5728,6 @@
 {"address": "00566C20", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00567180", "detail": "call 006C1530 argument 1: HWND -> undefined4", "kind": "exact_pointer_boundary_cast"}
 {"address": "00567330", "detail": "call 0071A5E0 argument 2: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "00568010", "detail": "assignment local_c: void storage pointer -> SoundClassTy *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00568C50", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00568C50", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "00568DD0", "detail": "assignment iVar12: SoundClassTy * -> int", "kind": "exact_pointer_boundary_cast"}
@@ -8879,7 +8907,28 @@
 {"address": "0064A970", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0064A970", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0064A970", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
-{"address": "0064A970", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
+{"address": "0064A970", "detail": "call 0072E340 argument 1: exact storage address undefined * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0064CD80", "detail": "call 006A5E40 argument 3: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0064CD80", "detail": "call 006AD4D0 argument 1: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
 {"address": "0064CD80", "detail": "call 006AD4D0 argument 5: const char * -> char *", "kind": "exact_pointer_boundary_cast"}
@@ -12079,6 +12128,7 @@
 {"detail": "DAT_008143f4: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "DAT_008143f8: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "DAT_00818000: no globals.jsonl data record", "kind": "global_type_fallback"}
+{"detail": "DAT_00847820: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "DAT_00847824: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "DAT_008478a8: no globals.jsonl data record", "kind": "global_type_fallback"}
 {"detail": "DAT_0084850c: no globals.jsonl data record", "kind": "global_type_fallback"}
@@ -12641,6 +12691,20 @@
 {"address": "0068F020", "detail": "pARam00000004 -> st_unresolved_pARam00000004: unresolved AiFltClassTy * storage view", "kind": "opaque_decompiler_storage"}
 {"address": "0068F360", "detail": "pARam00000004 -> st_unresolved_pARam00000004: unresolved AiFltClassTy * storage view", "kind": "opaque_decompiler_storage"}
 {"address": "006AAD10", "detail": "2 CPUID p-code intrinsic call(s) require runtime implementation", "kind": "pcode_intrinsic_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
+{"address": "0064A970", "detail": "AnonReceiver_0064A970::slot_04 argument 1: int * -> undefined4", "kind": "physical_member_argument_boundary"}
 {"address": "00671F10", "detail": "AnonReceiver_0064A970::slot_04 argument 1: byte * -> undefined4", "kind": "physical_member_argument_boundary"}
 {"address": "00672440", "detail": "AnonReceiver_0064A970::slot_04 argument 1: char * -> undefined4", "kind": "physical_member_argument_boundary"}
 {"address": "00418D20", "detail": "_param_4: short[2] -> int x86 stack slot", "kind": "promoted_parameter_slot_materialization"}

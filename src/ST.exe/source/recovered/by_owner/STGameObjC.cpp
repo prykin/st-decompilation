@@ -177,39 +177,35 @@ st::fn_004845E0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum param_1,int
       return 5;
     }
     iVar5 = this->field_06F7;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((((iVar5 != 9) && (iVar5 != 0x15)) &&
         ((this->field_0716 < this->field_0712 &&
          ((local_EAX_4151 = st::fn_00401F5A(iVar5), local_EAX_4151 != 3 &&
-          /* ST_CALLSITE[00485625]: CALL dword ptr [EDX + 0x2c] */
-          (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x33)))))) &&
+          /* ST_CALLSITE[00485625]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+          (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 == 0x33)))))) &&
        (this->field_0024 == this_00[9])) {
       return 0x18;
     }
-    /* ST_CALLSITE[00485648]: CALL dword ptr [EDX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar5 = (**(code **)(*this_00 + 0x2c))();
+    /* ST_CALLSITE[00485648]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+    iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
     if ((((iVar5 == 0x62) && (this->field_0024 == this_00[9])) &&
         /* ST_CALLSITE[0048565C]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
         (local_EAX_4220 = st::fn_00403594((TLOBaseTy *)this), 0 < local_EAX_4220)) &&
        (local_EAX_4242 = st::fn_00401F5A(this->field_06F7), local_EAX_4242 == 3)) {
       return 0x1b;
     }
-    /* ST_CALLSITE[0048568D]: CALL dword ptr [EDX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar5 = (**(code **)(*this_00 + 0x2c))();
-    /* ST_CALLSITE[00485699]: CALL dword ptr [EAX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    if (((iVar5 == 0x37) || (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x6c)) &&
+    /* ST_CALLSITE[0048568D]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+    iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
+    if (((iVar5 == 0x37) ||
+        /* ST_CALLSITE[00485699]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+        (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 == 0x6c)) &&
        (iVar5 = st::fn_00401EAB(this_00,this->field_0024), iVar5 == 1)) {
       return 0x1d;
     }
-    /* ST_CALLSITE[004856C9]: CALL dword ptr [EAX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar5 = (**(code **)(*this_00 + 0x2c))();
-    /* ST_CALLSITE[004856D5]: CALL dword ptr [EDX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    if (((iVar5 == 0x16) || (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x25)) &&
+    /* ST_CALLSITE[004856C9]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+    iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
+    if (((iVar5 == 0x16) ||
+        /* ST_CALLSITE[004856D5]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+        (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 == 0x25)) &&
        (STField<int>(this_00,0x732) == 1)) {
       bVar8 = ((byte *)this_00)[9];
       bVar1 = (byte)this->field_0024;
@@ -287,22 +283,20 @@ LAB_0048589a:
     }
     iVar5 = this->field_06F7;
     if (((iVar5 == 8) || (iVar5 == 0x14)) || (iVar5 == 0x1a)) {
-      /* ST_CALLSITE[004860BA]: CALL dword ptr [EDX + 0x2c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar5 = (**(code **)(*this_00 + 0x2c))();
-      /* ST_CALLSITE[004860CA]: CALL dword ptr [EAX + 0x2c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      if (((iVar5 != 0x38) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x39)) &&
-         /* ST_CALLSITE[004860DA]: CALL dword ptr [EDX + 0x2c] */
-         ((iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x4f &&
-          /* ST_CALLSITE[004860EA]: CALL dword ptr [EAX + 0x2c] */
-          (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x5e)))) {
-        /* ST_CALLSITE[004860FA]: CALL dword ptr [EDX + 0x2c] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
-        /* ST_CALLSITE[00486106]: CALL dword ptr [EAX + 0x2c] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        if (((iVar5 == 0x3b) || (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x60)) &&
+      /* ST_CALLSITE[004860BA]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+      iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
+      if (((iVar5 != 0x38) &&
+          /* ST_CALLSITE[004860CA]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+          (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x39)) &&
+         /* ST_CALLSITE[004860DA]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+         ((iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x4f &&
+          /* ST_CALLSITE[004860EA]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+          (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x5e)))) {
+        /* ST_CALLSITE[004860FA]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
+        if (((iVar5 == 0x3b) ||
+            /* ST_CALLSITE[00486106]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+            (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 == 0x60)) &&
            ((this->field_0024 == this_00[9] &&
             (0 < this->field_07DA + this->field_07D6 + this->field_07D2)))) {
           return 0x13;
@@ -372,9 +366,8 @@ LAB_00485f6a:
     else {
       if (((iVar5 == 7) || (iVar5 == 0x13)) || (iVar5 == 0x1b)) {
         if (this->field_07CA != nullptr) {
-          /* ST_CALLSITE[00485E18]: CALL dword ptr [EDX + 0x2c] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar5 = (**(code **)(*this_00 + 0x2c))();
+          /* ST_CALLSITE[00485E18]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+          iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
           if ((iVar5 == 0x52) || (iVar5 == 0x5f)) {
             st::fn_006E62D0(g_playSystem_00802A38,this->field_07CA,&local_c);
             if ((local_c != 0) && (STField<int>(local_c,0x20) == 0x1a4)) {
@@ -467,9 +460,9 @@ LAB_0048602b:
             /* ST_CALLSITE[0048608A]: CALL dword ptr [EDX + 0xbc] */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             iVar5 = (**(code **)(*this_00 + 0xbc))();
-            /* ST_CALLSITE[0048609D]: CALL dword ptr [EAX + 0x7c] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            if ((iVar5 == 1) && (iVar5 = (**(code **)(*this_00 + 0x7c))(), iVar5 < 100)) {
+            if ((iVar5 == 1) &&
+               /* ST_CALLSITE[0048609D]: CALL dword ptr [EAX + 0x7c]; [STIndirectCallsiteApplier] exact slot 0x7C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+               (iVar5 = ((STGameObjC *)this_00)->vfunc_7C(), iVar5 < 100)) {
               return 0x17;
             }
             goto LAB_00485d68;
@@ -570,12 +563,11 @@ LAB_004859d8:
           if ((this_00[8] != 1000) && (this_00[8] != 0x3e9)) {
             return 0;
           }
-          /* ST_CALLSITE[00485A46]: CALL dword ptr [EAX + 0x2c] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar5 = (**(code **)(*this_00 + 0x2c))();
-          /* ST_CALLSITE[00485A52]: CALL dword ptr [EDX + 0x2c] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          if ((iVar5 != 0x3b) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x60)) {
+          /* ST_CALLSITE[00485A46]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+          iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
+          if ((iVar5 != 0x3b) &&
+             /* ST_CALLSITE[00485A52]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+             (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x60)) {
             return 0;
           }
           return 7;
@@ -757,12 +749,11 @@ LAB_00485b29:
       if ((iVar3 != 0x15) && (this->field_07A2 < 1)) {
         return 1;
       }
-      /* ST_CALLSITE[00484867]: CALL dword ptr [EAX + 0x2c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar5 = (**(code **)(*this_00 + 0x2c))();
-      /* ST_CALLSITE[00484873]: CALL dword ptr [EDX + 0x2c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      if (((iVar5 != 0x16) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x25)) ||
+      /* ST_CALLSITE[00484867]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+      iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
+      if (((iVar5 != 0x16) &&
+          /* ST_CALLSITE[00484873]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+          (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x25)) ||
          (STField<int>(this_00,0x732) != 1)) {
         param_2 = (int *)(uint)((byte *)this_00)[9];
         param_1 = (STGameObjC_sub_004845E0_param_1Enum)(byte)this->field_0024;
@@ -913,12 +904,11 @@ LAB_004847df:
     if (iVar5 != 1000) {
       return 1;
     }
-    /* ST_CALLSITE[0048481E]: CALL dword ptr [EAX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar5 = (**(code **)(*this_00 + 0x2c))();
-    /* ST_CALLSITE[0048482E]: CALL dword ptr [EDX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    if ((iVar5 != 0x3b) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x60)) {
+    /* ST_CALLSITE[0048481E]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+    iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
+    if ((iVar5 != 0x3b) &&
+       /* ST_CALLSITE[0048482E]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+       (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x60)) {
       return 1;
     }
     return 7;
@@ -938,9 +928,8 @@ LAB_004847df:
         if (this->field_0712 <= this->field_0716) {
           return 1;
         }
-        /* ST_CALLSITE[00484D19]: CALL dword ptr [EDX + 0x2c] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
+        /* ST_CALLSITE[00484D19]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
         if (iVar5 != 0x33) {
           return 1;
         }
@@ -1033,12 +1022,11 @@ LAB_004847df:
     if (this->field_072A < 1) {
       return 1;
     }
-    /* ST_CALLSITE[004852EB]: CALL dword ptr [EAX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar5 = (**(code **)(*this_00 + 0x2c))();
-    /* ST_CALLSITE[004852F7]: CALL dword ptr [EDX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    if ((iVar5 != 0x16) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x25)) {
+    /* ST_CALLSITE[004852EB]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+    iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
+    if ((iVar5 != 0x16) &&
+       /* ST_CALLSITE[004852F7]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+       (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x25)) {
       return 0xc;
     }
     if (STField<int>(this_00,0x732) != 1) {
@@ -1114,9 +1102,8 @@ LAB_004853d2:
     if (this_00[8] != 0x14) {
       return 1;
     }
-    /* ST_CALLSITE[00484F36]: CALL dword ptr [EAX + 0x7c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar5 = (**(code **)(*this_00 + 0x7c))();
+    /* ST_CALLSITE[00484F36]: CALL dword ptr [EAX + 0x7c]; [STIndirectCallsiteApplier] exact slot 0x7C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+    iVar5 = ((STGameObjC *)this_00)->vfunc_7C();
     if (99 < iVar5) {
       return 1;
     }
@@ -1154,9 +1141,8 @@ LAB_00485002:
     if (bVar9) {
       return 1;
     }
-    /* ST_CALLSITE[0048500E]: CALL dword ptr [EDX + 0xbc] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar5 = (**(code **)(*this_00 + 0xbc))();
+    /* ST_CALLSITE[0048500E]: CALL dword ptr [EDX + 0xbc]; [STIndirectCallsiteApplier] exact slot 0xBC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+    iVar5 = ((STGameObjC *)this_00)->vfunc_BC();
     if (iVar5 != 1) {
       return 1;
     }
@@ -1208,16 +1194,15 @@ LAB_00485002:
         if (((iVar5 != 8) && (iVar5 != 0x14)) && (iVar5 != 0x1a)) {
           return 1;
         }
-        /* ST_CALLSITE[00484B7A]: CALL dword ptr [EDX + 0x2c] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
-        /* ST_CALLSITE[00484B86]: CALL dword ptr [EAX + 0x2c] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        if ((((iVar5 != 0x38) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x39)) &&
-            /* ST_CALLSITE[00484B92]: CALL dword ptr [EDX + 0x2c] */
-            (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x4f)) &&
-           /* ST_CALLSITE[00484B9E]: CALL dword ptr [EAX + 0x2c] */
-           (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x5e)) {
+        /* ST_CALLSITE[00484B7A]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
+        if ((((iVar5 != 0x38) &&
+             /* ST_CALLSITE[00484B86]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+             (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x39)) &&
+            /* ST_CALLSITE[00484B92]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+            (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x4f)) &&
+           /* ST_CALLSITE[00484B9E]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+           (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x5e)) {
           return 1;
         }
         if (this->field_0024 == this_00[9]) {
@@ -1241,12 +1226,11 @@ LAB_00485002:
         if (((iVar5 != 8) && (iVar5 != 0x14)) && (iVar5 != 0x1a)) {
           return 1;
         }
-        /* ST_CALLSITE[00484C37]: CALL dword ptr [EDX + 0x2c] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
-        /* ST_CALLSITE[00484C43]: CALL dword ptr [EAX + 0x2c] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        if ((iVar5 != 0x3b) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x60)) {
+        /* ST_CALLSITE[00484C37]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
+        if ((iVar5 != 0x3b) &&
+           /* ST_CALLSITE[00484C43]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+           (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x60)) {
           return 1;
         }
         if (this->field_0024 != this_00[9]) {
@@ -1312,10 +1296,9 @@ LAB_00484e9f:
     if ((this_00[8] != 0x172) && (this_00[8] != 0x1a4)) {
       return 1;
     }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_00484ed2:
-    /* ST_CALLSITE[00484ED6]: CALL dword ptr [EDX + 0xbc] */
-    iVar5 = (**(code **)(*this_00 + 0xbc))();
+    /* ST_CALLSITE[00484ED6]: CALL dword ptr [EDX + 0xbc]; [STIndirectCallsiteApplier] exact slot 0xBC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+    iVar5 = ((STGameObjC *)this_00)->vfunc_BC();
     if (iVar5 != 1) {
       return 1;
     }
@@ -1339,9 +1322,8 @@ LAB_00484ed2:
         return 1;
       }
       if ((STGameObjC *)this_00 != this) {
-        /* ST_CALLSITE[0048511F]: CALL dword ptr [EAX + 0x2c] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
+        /* ST_CALLSITE[0048511F]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
         if (iVar5 != 0x62) {
           return 1;
         }
@@ -1368,12 +1350,11 @@ LAB_00484ed2:
         return 1;
       }
       if ((STGameObjC *)this_00 != this) {
-        /* ST_CALLSITE[0048519C]: CALL dword ptr [EAX + 0x2c] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
-        /* ST_CALLSITE[004851A8]: CALL dword ptr [EDX + 0x2c] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        if ((iVar5 != 0x37) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x6c)) {
+        /* ST_CALLSITE[0048519C]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
+        if ((iVar5 != 0x37) &&
+           /* ST_CALLSITE[004851A8]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+           (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x6c)) {
           return 1;
         }
         iVar5 = st::fn_00401EAB(this_00,this->field_0024);

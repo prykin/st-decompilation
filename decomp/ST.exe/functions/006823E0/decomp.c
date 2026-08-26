@@ -44,7 +44,9 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
         iVar4 = thunk_FUN_006686f0((int)*(short *)(pcVar2 + (int)pfVar8 * 5 + 1));
         if ((iVar4 < 0) || (iVar4 = thunk_FUN_00668a70((int)*local_8), iVar4 != 0)) {
           auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
-          param_2 = thunk_FUN_0064a970(pcVar2,(int)pfVar8,&param_1_after_write);
+          param_2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
+                    thunk_FUN_0064a970((AnonReceiver_0064A970 *)&DAT_00847820,pcVar2,(int)pfVar8,
+                                       &param_1_after_write);
           if (param_2 == nullptr) {
             thunk_FUN_006802a0(param_1_after_write,&DAT_00847824);
             return;

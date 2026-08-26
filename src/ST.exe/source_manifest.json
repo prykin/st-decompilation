@@ -2,28 +2,28 @@
   "files": [
     {
       "path": "CMakeLists.txt",
-      "sha256": "f85cff13cbdf32b540b8eab4adcdad63ed51e56228b0bde69e609eff10e94b0e",
-      "size": 15420
+      "sha256": "29a9c90d2d0b4282639c79811342cd3027f4f7ca3e861414b5431dc9bdbccb5c",
+      "size": 15900
     },
     {
       "path": "README.generated.md",
-      "sha256": "f73bb4ef7e52ad9df77f7af3ad19603d0c8dc3d2a801e8f0ab62aa2e66497742",
+      "sha256": "d5574d96c21a2ee247e247c26d7f39e8e99b131e73ef3c1355091784d80574a2",
       "size": 1425
     },
     {
       "path": "audit/issues.jsonl",
-      "sha256": "994076d009caa2306fa3b89bfd75e7690529c280ed8de77c5b23341e2707334a",
-      "size": 1646308
+      "sha256": "c138f8ad10f43755886ea2474ae870db14c2ad84bfcd7107124891e01e5dd155",
+      "size": 1654954
     },
     {
       "path": "audit/readability.json",
-      "sha256": "ad1b96dfef1b5ad8dafeec60c2b2f8efa0aecafc50f924f19a638eee5d2a3795",
-      "size": 128745
+      "sha256": "caf53024cb33d2025d205d6b2a20b49ac0378ef2d7415a957fc18fae508a3985",
+      "size": 128573
     },
     {
       "path": "audit/summary.json",
-      "sha256": "fa15b2ece03cedaa973f8ea8ce12b666211bb561b054c6cebf480c4695af08a2",
-      "size": 4891
+      "sha256": "211737eae1658035302b62ab1c5064484f0068c425d6136c4cf8b8c92f3cf4fe",
+      "size": 4844
     },
     {
       "path": "include/st/generated.hpp",
@@ -37,13 +37,13 @@
     },
     {
       "path": "include/st/recovered_functions.hpp",
-      "sha256": "4f983df68bdcc98065b99990719c27b7c09b48585b099ebed906185672c15f5f",
-      "size": 1343107
+      "sha256": "9bbdbabcb52fce88d81de756e456c1380cb189cb9cc83d97c54db32ef844b6c7",
+      "size": 1345581
     },
     {
       "path": "include/st/recovered_globals.hpp",
-      "sha256": "37c24c054f580f988027c33fa5c52af97b87a3b6b1e25bfec87645631a3486f5",
-      "size": 117659
+      "sha256": "7923de8980d1b3b1687ac206d5c1543013d72d32d72c9c6d8286cc5d39cf93cc",
+      "size": 117691
     },
     {
       "path": "include/st/recovered_imports.hpp",
@@ -52,8 +52,8 @@
     },
     {
       "path": "include/st/recovered_types.hpp",
-      "sha256": "ea5d32eaf13e53fb07d71f38699db03908ae0c09847b46833677edfc8537720c",
-      "size": 4797106
+      "sha256": "5073cca40e73e6d6efdec24689e0ac01179dc95c44c61eb8d889aee4302588f9",
+      "size": 4802431
     },
     {
       "path": "source/original/Andrey/behpanel.cpp",
@@ -147,8 +147,8 @@
     },
     {
       "path": "source/original/Andrey/optpanel.cpp",
-      "sha256": "95732ca98b4fa1274365644ffa9d3c8181f7db9292db18b8bd3c3c9fcaf96e70",
-      "size": 229059
+      "sha256": "ff09640b089d558e26a1d2fdc8d0bffd5daf5222bd140a0316d6cd80553fe53e",
+      "size": 229227
     },
     {
       "path": "source/original/Andrey/panel.cpp",
@@ -407,8 +407,8 @@
     },
     {
       "path": "source/original/Start/camp_obj.cpp",
-      "sha256": "03d9376ce146b9e516e984c42de63470ee35bde9315a2047e8671ac610b5ae5c",
-      "size": 63022
+      "sha256": "8defbb3773d5acce7dd220e93af7013879c30fbd2f5aacec2d07288e96972dda",
+      "size": 63070
     },
     {
       "path": "source/original/Start/combo.cpp",
@@ -417,8 +417,8 @@
     },
     {
       "path": "source/original/Start/fsgs_obj.cpp",
-      "sha256": "60aab6e277329afbc0b0f8b5be503a6359c4dd6eaaaf0a890c3ff43c2ff40806",
-      "size": 440338
+      "sha256": "adccf795fec5289cab8ba610f595a3a2ba38c35fe5734675757e2ed50024b7fd",
+      "size": 440422
     },
     {
       "path": "source/original/Start/hologram.cpp",
@@ -427,13 +427,13 @@
     },
     {
       "path": "source/original/Start/load_obj.cpp",
-      "sha256": "f68908270a61fa8b2829d146d42c5f793c9c74309220203e6b2093210b7168ae",
-      "size": 175580
+      "sha256": "e37a965b5087c537cfe60abe89d236525122417f833caf47bb2f290b733218fb",
+      "size": 175624
     },
     {
       "path": "source/original/Start/main_obj.cpp",
-      "sha256": "b167d8313604a04f1e48102c4f2e1637de21bb24e87bbc5e5189d177b7db48f8",
-      "size": 57850
+      "sha256": "7278450c533fba8ad0aba7903d9d3a32da8a5b0594c6d7aa9b1b5dc109441c94",
+      "size": 57894
     },
     {
       "path": "source/original/Start/mmenuobj.cpp",
@@ -447,13 +447,13 @@
     },
     {
       "path": "source/original/Start/prov_obj.cpp",
-      "sha256": "82136a2680250c4713d21d255980b690bc54cd176b1ce822ad5aef7852eae985",
-      "size": 84062
+      "sha256": "4ca3ca86e362bc4ff73236141180664bb2a965976f63b29314cae3832619624a",
+      "size": 84104
     },
     {
       "path": "source/original/Start/rpt_obj.cpp",
-      "sha256": "caaa2f322e3f6c9eada8ec537368325cb3830c23a4d4015e77878cf0748c3125",
-      "size": 98141
+      "sha256": "c98e8d11c409d2f78a7a21591fa3d27090eb3e4bd76ba19335123dd1579c4808",
+      "size": 98181
     },
     {
       "path": "source/original/Start/sett_obj.cpp",
@@ -482,8 +482,8 @@
     },
     {
       "path": "source/original/Start/task_obj.cpp",
-      "sha256": "f0dc0c1a3a0463800c3466c398d11d8d0adf33c22acbe7ed4bb7a964f3de728e",
-      "size": 154066
+      "sha256": "897abc460d2d4db95015852508d4ff143c37eda79e4c336e0c1787d22c856344",
+      "size": 154210
     },
     {
       "path": "source/original/Start/test_obj.cpp",
@@ -492,8 +492,8 @@
     },
     {
       "path": "source/original/Start/wait_obj.cpp",
-      "sha256": "56715ca7648bca0b474a75fd7beb77fe4a4462b4661f97845a5d862de50ffd37",
-      "size": 100272
+      "sha256": "f92b9815e0c277d598e4f247e3283e11f27bdae8e87d60daf4ee2bed43d20b57",
+      "size": 100314
     },
     {
       "path": "source/original/ai/Ai_lex.cpp",
@@ -517,8 +517,8 @@
     },
     {
       "path": "source/original/ai/ai_erc.cpp",
-      "sha256": "d924d5b6900b4c4c9ef268f88ba6afbec001bec0a570d46bc83909bc8d90a2e7",
-      "size": 57515
+      "sha256": "27d445175d0a92d62d6f09f671cbec3e330c1b26d24a30e208281c24a58d359f",
+      "size": 54692
     },
     {
       "path": "source/original/ai/ai_event.cpp",
@@ -542,8 +542,8 @@
     },
     {
       "path": "source/original/ai/ai_interp.cpp",
-      "sha256": "dcd3e07f4c9e8c79892706910328fd32187b73b9b63a2740eae1c662e588d448",
-      "size": 205834
+      "sha256": "35a4ab63fa616faaa7763505956dfe1cb424d34b09c5384b799e62d308668b30",
+      "size": 205872
     },
     {
       "path": "source/original/ai/ai_mdef.cpp",
@@ -562,8 +562,8 @@
     },
     {
       "path": "source/original/ai/ai_script.cpp",
-      "sha256": "c07af9659fc0104fe20131f3851a06a83daa265f03b9b1caba3c642d8af7c8db",
-      "size": 210173
+      "sha256": "38e96faaad2433ea08023438a9622089c612ad95eff2bf635e8f1222aa3b790a",
+      "size": 210252
     },
     {
       "path": "source/original/ai/ai_tact.cpp",
@@ -767,8 +767,8 @@
     },
     {
       "path": "source/original/wlad/To_boat.cpp",
-      "sha256": "65e1a66a476ed26fc9ec06c7736f7c4dd323d4971cf24c9ba586d9a632d5ac1f",
-      "size": 1091201
+      "sha256": "f3571f0bd7295b7029eaa97136506bb6e4ea33b523758e0efa70b58eac115360",
+      "size": 1091609
     },
     {
       "path": "source/original/wlad/To_dump.cpp",
@@ -777,8 +777,8 @@
     },
     {
       "path": "source/original/wlad/To_optic.cpp",
-      "sha256": "83ea4f76a95124a54f9b7992017b558a767405cfab0481d56754dfa5aba5fef2",
-      "size": 14564
+      "sha256": "4cccd46711c26b367544bfcff9189386dcf3e17c3834aaed4302ed90b1b937f0",
+      "size": 14654
     },
     {
       "path": "source/original/wlad/Tspr3d.cpp",
@@ -792,13 +792,13 @@
     },
     {
       "path": "source/original/wlad/to_allpl.cpp",
-      "sha256": "c04e92ca930e63907bb7bfdc1ab4341575d5d7b88c184ab754a166329ce11525",
-      "size": 784975
+      "sha256": "b891e6469363f53f2b45edaa5d966ce88537adf83726e117f584a2458cd60874",
+      "size": 785618
     },
     {
       "path": "source/original/wlad/to_grpb.cpp",
-      "sha256": "31955ad22be5e8ff40144c93b4f80f776b5db96293b5862d274a088f1eb7ee5b",
-      "size": 408257
+      "sha256": "1ddee29d3a9f7feffb6ec92aea4fc2a17a7530e7d283f494dd8188b9712d9c07",
+      "size": 408282
     },
     {
       "path": "source/recovered/by_address/0040.cpp",
@@ -847,13 +847,13 @@
     },
     {
       "path": "source/recovered/by_address/0049.cpp",
-      "sha256": "b688043759a04ee9b5c20e7c242a669154b861a7472e5f29fa71db98f277256d",
-      "size": 117352
+      "sha256": "62711f893e0bd86808a7fec7cb92fe3bf58c07e35c79c4ae1e9d8721389cef48",
+      "size": 111311
     },
     {
       "path": "source/recovered/by_address/004A.cpp",
-      "sha256": "16ee0db843188c77f968b904eb801252101456a2e02794de51114da825a58e27",
-      "size": 102775
+      "sha256": "5745ca72d3d25076b491e434b6465eade7c3bb481d570ef4f577388484de0b9e",
+      "size": 102931
     },
     {
       "path": "source/recovered/by_address/004B.cpp",
@@ -907,18 +907,18 @@
     },
     {
       "path": "source/recovered/by_address/0055.cpp",
-      "sha256": "055aa4de0bb3d837f9da020bcc83905e9b482af2e3225af6bfa5e6f4cb63077c",
-      "size": 128558
+      "sha256": "f00746fe0fb046bd15da46d1daa5b6b628ecb1ba92cce661610512c2ef0301ab",
+      "size": 124713
     },
     {
       "path": "source/recovered/by_address/0056.cpp",
-      "sha256": "a36a4ffdb21f46776c4f1af1b6fa855f1bb64f7d19572257cdf79cd5ecc71be3",
-      "size": 104279
+      "sha256": "28cd2c7340005ed3af7ad655b1ff95769218eb38e60cbc5fcd6b0917701c8537",
+      "size": 88236
     },
     {
       "path": "source/recovered/by_address/0057.cpp",
-      "sha256": "f710902a9508f261af3a5dc21ad92ed8e5c1dd2d38624aefb04ee5c45f0c8727",
-      "size": 136931
+      "sha256": "965d1210e2df86c5435cdf1b342f4c291e4f99da4f65f5f0718db00a8307327c",
+      "size": 136954
     },
     {
       "path": "source/recovered/by_address/0058.cpp",
@@ -937,8 +937,8 @@
     },
     {
       "path": "source/recovered/by_address/005B.cpp",
-      "sha256": "c81dd94d85c96b1574432efa205657e207c28629887b643b42314da82659b49e",
-      "size": 15193
+      "sha256": "d9a70d4172aa2f5f9c4abea7d4ce936efa1b41d2e03a6b2b4746b9c24c952eb0",
+      "size": 15233
     },
     {
       "path": "source/recovered/by_address/005C.cpp",
@@ -1242,8 +1242,8 @@
     },
     {
       "path": "source/recovered/by_owner/OpticClassC.cpp",
-      "sha256": "3ae5825501a46de797603f69a096febe757dffa972ef7cccc096402bae610d44",
-      "size": 3844
+      "sha256": "b8ec41cde37b4bbf498109a5ed03650155bd222b4ad9fdb07141edf4eff31c84",
+      "size": 3900
     },
     {
       "path": "source/recovered/by_owner/PlayPanelTy.cpp",
@@ -1367,8 +1367,8 @@
     },
     {
       "path": "source/recovered/by_owner/STGameObjC.cpp",
-      "sha256": "412a1c20703ea6c57c5e8442cc2b055db52c2a3ad1ef71948970979a239cf8fb",
-      "size": 51410
+      "sha256": "20883fd7de9a3ef9ea6aa70aa90c6ef3a8e965eb445bff0519eb54b7f627ac5d",
+      "size": 51356
     },
     {
       "path": "source/recovered/by_owner/STGroupBoatC.cpp",
@@ -1512,8 +1512,8 @@
     },
     {
       "path": "source/recovered/by_owner/SoundManagerTy.cpp",
-      "sha256": "8198da23160d32a554c407d871db58148da587560c84509d56c89a011a04b682",
-      "size": 6452
+      "sha256": "b0bc7e7c52fad99a0db96919cce21f652a00c64ac0f23960827a00d6e694d4f9",
+      "size": 6490
     },
     {
       "path": "source/recovered/by_owner/SpriteClassTy.cpp",
@@ -1554,6 +1554,31 @@
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0054A9B0.cpp",
       "sha256": "6f59300b355b61a6d71cf091496960519a14e97b73d3edc8e576ac0038c29958",
       "size": 7209
+    },
+    {
+      "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0055C320.cpp",
+      "sha256": "fcb6127d768a0c8552906a9525f4b475ec8a4441b619bb516adbffcf4c0c6b4c",
+      "size": 4421
+    },
+    {
+      "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00567510.cpp",
+      "sha256": "22f548f53bed7c33a8f7638485895e16d63647fbfe7ee48385abfefd4a4cf3ac",
+      "size": 8839
+    },
+    {
+      "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00568010.cpp",
+      "sha256": "fa8f38744a9def9118db589f75e219083169da6899cb48f2329bf58daaf4e1ee",
+      "size": 4330
+    },
+    {
+      "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00568940.cpp",
+      "sha256": "d9aa3660981ec65c571950d18562a527f16289b75cfe30f3ff70d43b0a94f057",
+      "size": 3897
+    },
+    {
+      "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0056A130.cpp",
+      "sha256": "30b3aadbfe49e8d066ddba60435b1228b0b690b99c3a7bb545bbff61d73379a3",
+      "size": 2408
     },
     {
       "path": "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00573260.cpp",
@@ -1704,17 +1729,17 @@
   "function_identity": "entry_address",
   "generator_sha256": "5a6a0d10064a2772869246a9ce22a4716ec09e0787d480be5b792cc51bc8a628",
   "input_files": {
-    "call_relations.jsonl": "bb59fdd56e7803d2e3ca3926fe8bc58f990bcf1dbfd2284f3f2474400a0d7c6e",
-    "functions.json": "c7947887b680845e39a6a2d8bdd5d1ffb6aac66df39919461c04649f887eacc6",
-    "globals.jsonl": "4acbe06a54a27770686a93307e828a597e184a92d8693e4fbecb146d512679a3",
+    "call_relations.jsonl": "f990a34a146b34c2feb72f447cbf2181672ee73d08e6450a2e25d52fd5de4c24",
+    "functions.json": "477c23a29300e4d12bd256d19d93c416cda45f7358e3b778ed0bf46c38987427",
+    "globals.jsonl": "ecf3efdc113e3f196ab939cd91b7e41c1041b6a765578e065c2cfbea24f7e147",
     "imports.json": "1292ae0f2b3d533808f0452471962f3c57fcf6e7d36043f54df1ab6db32f9092",
-    "manifest.json": "a5e5ca04d8645af37131107065f51ec0a00d01a3ee43317b61eb2b2640831a5e",
+    "manifest.json": "3e0aa9feaf5d5cfcd8f22df38364da608f7a60045a8e1eddc4cda3e60ccee012",
     "pseudocode_runtime.h": "483d0740a1b332108dd6f52935a8cbf55c9c0e7c07424470a7dc93993a3840e4",
-    "strings.jsonl": "af7f49fc202ec99f463ea140b4981d3178ae744881683ed3db9fb55e6c903525",
-    "types.jsonl": "17b58f1b4b52fff7c803b8821df973104c1f447e0d99372cbb6984764a409c24"
+    "strings.jsonl": "a2098fb3063fd5354c3d80bbffb95b4593fe52e05edf8069eef45579cb4dac9c",
+    "types.jsonl": "2271c0a0e791a03c7a381c3337df42ea0f891dcfb80be13fe74d5afb3569b42a"
   },
-  "input_manifest_sha256": "a5e5ca04d8645af37131107065f51ec0a00d01a3ee43317b61eb2b2640831a5e",
-  "program_semantic_sha256": "9c3445c47a8b6a3cf5a218508fd9fba37d7dedb7776deb47910d21d2c749cdf2",
+  "input_manifest_sha256": "3e0aa9feaf5d5cfcd8f22df38364da608f7a60045a8e1eddc4cda3e60ccee012",
+  "program_semantic_sha256": "9e5f380abc86cee09621b99a2238258ceba01d6e96ee7c6c5757b01f568fe2d4",
   "schema": "st-source-tree",
   "schema_version": 1
 }

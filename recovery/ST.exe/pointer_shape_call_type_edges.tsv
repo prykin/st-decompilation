@@ -7466,7 +7466,7 @@ source_target	destination_target	site
 00566C20|parameter|Stack[0x4]:4	006E5FD0|parameter|Stack[0x4]:4	00566C20 C call -> FUN_006e5fd0
 00566E70|parameter|Stack[0x4]:4	007199F0|parameter|Stack[0x4]:4	00566E70 C call -> FUN_007199f0
 00566F30|parameter|Stack[0x4]:4	007199F0|parameter|Stack[0x4]:4	00566F30 C call -> FUN_007199f0
-00566FF0|parameter|ECX:4	00568940|parameter|ECX:4 (auto)	00566FF0 C call -> FUN_00568940
+00566FF0|parameter|ECX:4	00568940|parameter|ECX:4 (auto)	00566FF0 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568940::FUN_00568940
 00567180|parameter|Stack[0x4]:4	006C1530|parameter|Stack[0x4]:4	00567180 C call -> Library::DKW::SND::FUN_006c1530
 005672A0|parameter|ECX:4 (auto)	00567180|parameter|ECX:4 (auto)	005672A0 C call -> FUN_00567180
 005672A0|parameter|Stack[0x4]:4	00567180|parameter|Stack[0x4]:4	005672A0 C call -> FUN_00567180
@@ -8726,9 +8726,9 @@ source_target	destination_target	site
 005B6560|local|EAX:4	006A5E40|parameter|Stack[0x4]:4	005B6560 C call -> RaiseInternalException
 005B6560|local|Stack[-0x8]:4	005B6730|parameter|ECX:4 (auto)	005B6560 C call -> FUN_005b6730
 005B66E0|parameter|ECX:4	006E60A0|parameter|ECX:4 (auto)	005B66E0 C call -> sub_006E60A0
-005B6730|parameter|Stack[0x4]:4	0056A130|parameter|Stack[0x4]:4	005B6730 C call -> FUN_0056a130
-005B6730|parameter|Stack[0x8]:1	0056A130|parameter|Stack[0x8]:1	005B6730 C call -> FUN_0056a130
-005B6730|parameter|Stack[0xc]:4	0056A130|parameter|Stack[0xc]:4	005B6730 C call -> FUN_0056a130
+005B6730|parameter|Stack[0x4]:4	0056A130|parameter|Stack[0x4]:4	005B6730 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::FUN_0056a130
+005B6730|parameter|Stack[0x8]:1	0056A130|parameter|Stack[0x8]:1	005B6730 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::FUN_0056a130
+005B6730|parameter|Stack[0xc]:4	0056A130|parameter|Stack[0xc]:4	005B6730 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::FUN_0056a130
 005B67A0|parameter|Stack[0x4]:4	006C68F0|parameter|Stack[0x4]:4	005B67A0 C call -> Library::DKW::DDX::FUN_006c68f0
 005B67A0|parameter|Stack[0x10]:4	006C68F0|parameter|Stack[0x8]:4	005B67A0 C call -> Library::DKW::DDX::FUN_006c68f0
 005B67A0|parameter|Stack[0x14]:4	006C68F0|parameter|Stack[0xc]:4	005B67A0 C call -> Library::DKW::DDX::FUN_006c68f0
@@ -11505,6 +11505,7 @@ source_target	destination_target	site
 0064A970|local|EAX:4	0072E340|parameter|Stack[0x8]:4	0064A970 C call -> Library::MSVCRT::_strncpy
 0064A970|local|EAX:4	0072E340|parameter|Stack[0x8]:4	0064A970 C call -> Library::MSVCRT::_strncpy
 0064A970|local|EAX:4	0072E340|parameter|Stack[0x8]:4	0064A970 C call -> Library::MSVCRT::_strncpy
+0064A970|parameter|Stack[0x4]:4	006A5E40|parameter|Stack[0x10]:4	0064A970 C call -> RaiseInternalException
 0064A970|local|EAX:4	0072E340|parameter|Stack[0x8]:4	0064A970 C call -> Library::MSVCRT::_strncpy
 0064A970|local|EAX:4	0072E340|parameter|Stack[0x8]:4	0064A970 C call -> Library::MSVCRT::_strncpy
 0064A970|local|EAX:4	0072E340|parameter|Stack[0x8]:4	0064A970 C call -> Library::MSVCRT::_strncpy
@@ -12765,6 +12766,7 @@ source_target	destination_target	site
 0066ACC0|local|EAX:4	0072E340|parameter|Stack[0x8]:4	0066ACC0 C call -> Library::MSVCRT::_strncpy
 00671F10|local|Stack[-0xc]:4	0064A830|parameter|Stack[0x4]:4	00671F10 C call -> FUN_0064a830
 00671F10|local|Stack[-0xc]:4	0064A910|parameter|Stack[0x4]:4	00671F10 C call -> FUN_0064a910
+00671F10|local|Stack[-0x24]:4	0064A970|parameter|ECX:4 (auto)	00671F10 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970
 00671F10|local|Stack[-0xc]:4	0064A910|parameter|Stack[0x4]:4	00671F10 C call -> FUN_0064a910
 00671F10|local|Stack[-0x24]:4	0066ACC0|parameter|ECX:4 (auto)	00671F10 C call -> SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
 00671F10|local|Stack[-0x1c]:4	006A5E40|parameter|Stack[0x4]:4	00671F10 C call -> RaiseInternalException

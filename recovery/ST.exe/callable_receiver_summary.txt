@@ -1,0 +1,14 @@
+program=ST.exe
+audited_call_sites=3763
+exact_parameter_receiver_sites=268
+candidate_groups=95
+auto_apply_groups=1
+auto_apply_sites=41
+auto_apply_slots=1
+origin_conflicts=2723
+abi_conflicts=1
+insufficient_extent=14
+protected_targets=0
+reused_parameter_storage=6
+unresolved_incoming_arguments=3
+policy=A persistent callable-receiver view requires a dense family of exact unadjusted CALLIND sites whose receiver register reaches one explicit function parameter on every instruction-CFG predecessor. Every slot must have unanimous machine stack arity and non-void return width, and the same parameter must have an independently observed non-vptr extent. Its storage must not be overwritten for another compiler lifetime, and applying its slot ABIs must not expose an unresolved incoming callee-saved argument. The result is a function-local structural interface under Recovered/PointerShapes; it does not claim a semantic class, physical vtable address, inheritance, or original method names.

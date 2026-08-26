@@ -62,8 +62,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
             if (iVar8 != 1) {
               thunk_FUN_004a8e00(local_10,local_c,local_8);
               thunk_FUN_004a8f20(1);
-              thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff
-                                );
+              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+                        ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                         DAT_0080743c & 0xff);
               /* ST_CALLSITE[0043BA39]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
               CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
               DAT_0080674c = 2;
@@ -93,7 +94,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
                              DAT_00807418,DAT_0080741c), iVar6 != 1)) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);
-        thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+                  ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                   DAT_0080743c & 0xff);
         /* ST_CALLSITE[0043BB2D]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         DAT_0080674c = 2;
@@ -121,7 +124,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
         if (((param_3 == 1) &&
             (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),STField<undefined2>(iVar6,0x8)),
             /* ST_CALLSITE[0043B82D]: CALL 0x004024f0; direct=004024F0 STAllPlayersC::GetCamPoint */
-            iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)(((undefined1 *)iVar6)[4])),
+            iVar6 = GetCamPoint(0x3c,STReplaceLowByte((uint32_t)(uVar9), (uint8_t)(STField<undefined1>(iVar6,0x4))),
                                 *(DArrayTy **)(iVar6 + 10),uVar9,&local_10,&local_c,&local_8,
                                 &param_1), iVar6 == 0)) &&
            (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
@@ -129,7 +132,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
                                DAT_00807418,DAT_0080741c), iVar6 != 1)) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
-          thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+                    ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                     DAT_0080743c & 0xff);
           /* ST_CALLSITE[0043B8BB]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
           DAT_0080674c = 2;
@@ -154,7 +159,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
       }
       if (param_3 == 1) {
         /* ST_CALLSITE[0043B70C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-        pSVar7 = GetObjPtr(this,((char *)iVar6)[4],STField<ushort>(iVar6,0x8),CASE_3);
+        pSVar7 = GetObjPtr(this,STField<char>(iVar6,0x4),STField<ushort>(iVar6,0x8),CASE_3);
         /* ST_CALLSITE[0043B721]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         STFishC::sub_004162B0
                   ((STFishC *)pSVar7,(short *)&local_10,(short *)&local_c,(short *)&local_8);
@@ -164,7 +169,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
         if (iVar8 != 1) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
-          thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+                    ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                     DAT_0080743c & 0xff);
           /* ST_CALLSITE[0043B7AA]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
           DAT_0080674c = 2;
@@ -221,7 +228,9 @@ LAB_0043aee4:
                                DAT_00807418,DAT_0080741c), iVar6 != 1)) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
-          thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+                    ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                     DAT_0080743c & 0xff);
           /* ST_CALLSITE[0043B06D]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
           DAT_0080674c = 2;
@@ -249,7 +258,9 @@ LAB_0043b0f1:
           if (iVar8 != 1) {
             thunk_FUN_004a8e00(local_10,local_c,local_8);
             thunk_FUN_004a8f20(1);
-            thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+                      ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                       DAT_0080743c & 0xff);
             /* ST_CALLSITE[0043B19E]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
             CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
             DAT_0080674c = 2;
@@ -296,7 +307,9 @@ LAB_0043b0af:
     if (iVar8 != 1) {
       thunk_FUN_004a8e00(local_10,local_c,local_8);
       thunk_FUN_004a8f20(1);
-      thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+                ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                 DAT_0080743c & 0xff);
       /* ST_CALLSITE[0043B27B]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
       CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
       DAT_0080674c = 2;
@@ -323,7 +336,9 @@ cf_common_exit_0043B294:
                              DAT_00807418,DAT_0080741c), iVar6 != 1)) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);
-        thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+                  ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                   DAT_0080743c & 0xff);
         /* ST_CALLSITE[0043B433]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
         CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         DAT_0080674c = 2;
@@ -357,7 +372,9 @@ joined_r0x0043b5ec:
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
 LAB_0043b630:
-          thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+                    ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+                     DAT_0080743c & 0xff);
           /* ST_CALLSITE[0043B640]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
           CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
           DAT_0080674c = 2;

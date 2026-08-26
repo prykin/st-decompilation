@@ -908,7 +908,8 @@ LAB_005e24c5:
              (puVar8 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                          (g_cMf32_00806798,&pAVar15->field_0xd,0,nullptr),
              puVar8 != nullptr)) {
-            thunk_FUN_0056a130(&g_sound,0,'\x03',-1,puVar8);
+            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::thunk_FUN_0056a130
+                      ((AnonReceiver_0056A130 *)&g_sound,0,'\x03',-1,puVar8);
           }
         }
         break;
@@ -1820,11 +1821,13 @@ LAB_005e195d:
                                        (g_cMf32_00806798,&element_0074[1].field_0xf,0,nullptr);
             this_01->field_0085 = puVar8;
             if (puVar8 == nullptr) {
-              thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,nullptr);
+              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::thunk_FUN_0056a130
+                        ((AnonReceiver_0056A130 *)&g_sound,0x14,'\x02',0,nullptr);
               break;
             }
           }
-          thunk_FUN_0056a130(&g_sound,0,'\x02',0,puVar8);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::thunk_FUN_0056a130
+                    ((AnonReceiver_0056A130 *)&g_sound,0,'\x02',0,puVar8);
         }
       }
       iVar18 = this_01->field_007C + 1;

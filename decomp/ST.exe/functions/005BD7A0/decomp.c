@@ -400,7 +400,8 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   }
   thunk_FUN_00568bc0(&g_sound,0);
   if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
-    thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,nullptr);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::thunk_FUN_0056a130
+              ((AnonReceiver_0056A130 *)&g_sound,0x14,'\x02',0,nullptr);
   }
   g_currentExceptionFrame = local_5c.previous;
   return;

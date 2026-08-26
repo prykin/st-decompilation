@@ -1,10 +1,10 @@
 program=ST.exe
 functions_seen=5555
 merged_locals=8922
-merge_groups=42327
-single_group_unknowns=13503
+merge_groups=42315
+single_group_unknowns=13500
 single_group_proposals=111
-groups_with_evidence=20738
+groups_with_evidence=20740
 proposals=534
 auto_apply=105
 review_or_existing=429

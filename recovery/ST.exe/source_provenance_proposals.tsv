@@ -935,7 +935,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 1	0	0064A630	FUN_0064a630	E:\\__titans\\ai\\ai_erc.cpp	23	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	0064A6F0	FUN_0064a6f0	E:\\__titans\\ai\\ai_erc.cpp	37 | 42	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	0064A830	FUN_0064a830	E:\\__titans\\ai\\ai_erc.cpp	86	high	unique_embedded_source_path		none	no_strict_free_function_string	-
-1	0	0064A970	FUN_0064a970	E:\\__titans\\ai\\ai_erc.cpp	129 | 130 | 138 | 142 | 159 | 160 | 161 | 173 | 192 | 205 | 223 | 248 | 284 | 294 | 305 | 313 | 323 | 338 | 346 | 356 | 369 | 386 | 399 | 402 | 413 | 416 | 428 | 443 | 458 | 472 | 486 | 500 | 518 | 536 | 538 | 544 | 576 | 591	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	0064A970	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970	E:\\__titans\\ai\\ai_erc.cpp	129 | 130 | 138 | 142 | 159 | 160 | 161 | 173 | 192 | 205 | 223 | 248 | 284 | 294 | 305 | 313 | 323 | 338 | 346 | 356 | 369 | 386 | 399 | 402 | 413 | 416 | 428 | 443 | 458 | 472 | 486 | 500 | 518 | 536 | 538 | 544 | 576 | 591	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 0	0	0064CD80	AiEventClassTy::InitData	E:\\__titans\\ai\\ai_event.cpp	80 | 81	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	0064D000	AiEventClassTy::PrepareToSave	E:\\__titans\\ai\\ai_event.cpp	102 | 103	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	0064D270	AiEventClassTy::__CreateObjPl	E:\\__titans\\ai\\ai_event.cpp	203 | 204	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-

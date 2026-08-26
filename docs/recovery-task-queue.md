@@ -869,9 +869,31 @@ symbols, and exact word membership tests render through an element-width-aware
 `STBitTest`. No image address, game type, or semantic-name allow-list is used.
 The accepted corpus moved raw indirect calls from 1,509 to 1,455 and generic
 data symbols from 14,452 to 14,210; the ABI and export gates pass. The next
-Q-058 slice should partition the remaining 1,455 sites by physical slot,
-stored callback, callback parameter, function table, COM/external interface,
-and unresolved receiver provenance, then attack the largest closed family.
+Q-058 pass partitioned the remaining callsites by physical slot, stored
+callback, callback parameter, function table, COM/external interface, linked
+library runtime, and unresolved receiver provenance.
+
+The accepted callable-receiver pass audited 95 dense parameter-origin groups
+and installed the sole complete persistent structural family: 41 exact calls
+through one slot in `00493D10`. Six storage-reuse families, three unresolved
+callee-saved argument families, and all incomplete or ABI-conflicting groups
+remain review-only. A separate address-local common-base proof recovered 35
+calls in `STGameObjC::FUN_004845e0` across primary slots `0x2c`, `0x7c`, and
+`0xbc` without persistently changing the neutral parameter. Derived extension
+slots remain raw until their physical owner is independently known.
+
+The callback-field machine audit now records 43 exact function-address stores
+and ten generated-field candidates. None currently completes the full stored
+target, trusted ABI, same-member indirect-call chain, so all ten correctly stay
+disabled instead of manufacturing callback types. The accepted corpus now has
+1,332 raw indirect calls, preserves all 3,192 typed physical slots, and passes
+ABI/export gates with zero errors or warnings. The generated source audit
+passes 280 of 334 translation units and retains 192 compiler errors.
+
+The next Q-058 slice should distinguish function-tagged linked-library bodies
+from application dispatch, then recover exact typed-producer and container-
+element receiver identities without imposing whole-local types on mixed SSA or
+reused storage.
 
 Partition the remaining raw indirect calls into physical vtables, stored
 callbacks, callback parameters, ordinary function tables, external/COM-style

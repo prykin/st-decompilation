@@ -3,11 +3,11 @@ functions_scanned=5555
 cfg_candidates=4109
 functions_with_gotos=853
 decompile_failures=0
-goto_statements=6252
-resolved_targets=3417
+goto_statements=6254
+resolved_targets=3419
 unresolved_targets=3
-auto_apply=426
-auto_apply_gotos_covered=2619
-kinds={branch_target=114, break_loop=56, common_exit=261, common_join=79, continue_loop=52, error_exit=38, join=2816, switch_join=1}
+auto_apply=428
+auto_apply_gotos_covered=2621
+kinds={branch_target=114, break_loop=56, common_exit=262, common_join=79, continue_loop=52, error_exit=39, join=2816, switch_join=1}
 note=Only labels emitted as goto targets by the decompiler are proposed.
 note_apply=Manual labels are preserved; generic low-confidence joins remain apply=0.

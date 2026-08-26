@@ -291,6 +291,18 @@ Original binaries are local under ignored `bin/` and must not be committed.
   containing function. A raw uniquely owned physical slot may use one-function
   fixed-arity consensus only when at least eight exact unadjusted calls agree;
   remove the now-redundant per-call fallbacks for that slot in the same proposal.
+- A generic pointer parameter inside a named `__thiscall` method may receive an
+  address-local primary-owner vtable view only when exact CFG origin reaches the
+  parameter, a standalone-register comparison relates it to the unadjusted
+  receiver, and at least eight compatible calls span two physical owner slots.
+  Only slots present in the owner's proven primary vtable may be rendered this
+  way. Keep the Listing parameter neutral; extension slots and adjusted
+  receivers remain explicit.
+- A persistent generated callable-receiver record requires one dense exact
+  parameter-origin family, unanimous non-void slot ABIs, independent receiver
+  extent, no reuse of the parameter storage, and no unresolved incoming
+  callee-saved argument. It is a structural call view, not evidence for a
+  semantic class, physical vptr, inheritance relation, or globally shared ABI.
 - Generated vtable types which name the same exact physical table address are
   aliases, not independent ABI evidence. A unanimous independently recovered
   slot ABI on one such alias must be retained by every generated alias at that

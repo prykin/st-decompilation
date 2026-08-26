@@ -816,7 +816,8 @@ void __thiscall st::fn_005BAAC0(PrividerTy *this,char param_1,char param_2)
     this_00->field_0065 = CASE_3;
     st::fn_0040329C(&g_sound,0);
     if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
-      st::fn_00402FD1(&g_sound,0x14,'\x02',0,nullptr);
+      st::fn_00402FD1
+                ((AnonReceiver_0056A130 *)&g_sound,0x14,'\x02',0,nullptr);
     }
     st::fn_00404BF1(this_00,0xb,'\0',-1);
     g_currentExceptionFrame = local_4c.previous;

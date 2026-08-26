@@ -21,45 +21,45 @@ address	aggregate_id	status	detail
 00800EE0	fixed_bitset_128	unchanged	desired aggregate already present
 00800EF0	fixed_bitset_128	unchanged	desired aggregate already present
 00800F00	fixed_bitset_128	unchanged	desired aggregate already present
-00800F10	fixed_bitset_128	applied	g_bitset_00800F10 array:4:/uint
+00800F10	fixed_bitset_128	unchanged	desired aggregate already present
 00800F20	fixed_bitset_128	unchanged	desired aggregate already present
 00800F30	fixed_bitset_128	unchanged	desired aggregate already present
 00800F40	fixed_bitset_128	unchanged	desired aggregate already present
 00800F50	fixed_bitset_128	unchanged	desired aggregate already present
 00800F60	fixed_bitset_128	unchanged	desired aggregate already present
-00800F80	fixed_bitset_128	applied	g_bitset_00800F80 array:4:/uint
-00800F90	fixed_bitset_128	applied	g_bitset_00800F90 array:4:/uint
+00800F80	fixed_bitset_128	unchanged	desired aggregate already present
+00800F90	fixed_bitset_128	unchanged	desired aggregate already present
 00800FA0	fixed_bitset_128	unchanged	desired aggregate already present
-00800FB0	fixed_bitset_128	applied	g_bitset_00800FB0 array:4:/uint
-00800FC0	fixed_bitset_128	applied	g_bitset_00800FC0 array:4:/uint
-00800FD0	fixed_bitset_128	applied	g_bitset_00800FD0 array:4:/uint
+00800FB0	fixed_bitset_128	unchanged	desired aggregate already present
+00800FC0	fixed_bitset_128	unchanged	desired aggregate already present
+00800FD0	fixed_bitset_128	unchanged	desired aggregate already present
 00800FE0	fixed_bitset_128	unchanged	desired aggregate already present
 00800FF0	fixed_bitset_128	unchanged	desired aggregate already present
 00801000	fixed_bitset_128	unchanged	desired aggregate already present
 00801010	fixed_bitset_128	unchanged	desired aggregate already present
-00801330	fixed_bitset_128	applied	g_bitset_00801330 array:4:/uint
-00801340	fixed_bitset_128	applied	g_bitset_00801340 array:4:/uint
-00801350	fixed_bitset_128	applied	g_bitset_00801350 array:4:/uint
-00801360	fixed_bitset_128	applied	g_bitset_00801360 array:4:/uint
+00801330	fixed_bitset_128	unchanged	desired aggregate already present
+00801340	fixed_bitset_128	unchanged	desired aggregate already present
+00801350	fixed_bitset_128	unchanged	desired aggregate already present
+00801360	fixed_bitset_128	unchanged	desired aggregate already present
 00801370	fixed_bitset_128	unchanged	desired aggregate already present
-00801380	fixed_bitset_128	applied	g_bitset_00801380 array:4:/uint
-00801390	fixed_bitset_128	applied	g_bitset_00801390 array:4:/uint
-008013A0	fixed_bitset_128	applied	g_bitset_008013A0 array:4:/uint
-008013B0	fixed_bitset_128	applied	g_bitset_008013B0 array:4:/uint
-008013C0	fixed_bitset_128	applied	g_bitset_008013C0 array:4:/uint
-008013D0	fixed_bitset_128	applied	g_bitset_008013D0 array:4:/uint
+00801380	fixed_bitset_128	unchanged	desired aggregate already present
+00801390	fixed_bitset_128	unchanged	desired aggregate already present
+008013A0	fixed_bitset_128	unchanged	desired aggregate already present
+008013B0	fixed_bitset_128	unchanged	desired aggregate already present
+008013C0	fixed_bitset_128	unchanged	desired aggregate already present
+008013D0	fixed_bitset_128	unchanged	desired aggregate already present
 008013E0	fixed_bitset_128	unchanged	desired aggregate already present
-008013F0	fixed_bitset_128	applied	g_bitset_008013F0 array:4:/uint
-00801400	fixed_bitset_128	applied	g_bitset_00801400 array:4:/uint
-00801410	fixed_bitset_128	applied	g_bitset_00801410 array:4:/uint
+008013F0	fixed_bitset_128	unchanged	desired aggregate already present
+00801400	fixed_bitset_128	unchanged	desired aggregate already present
+00801410	fixed_bitset_128	unchanged	desired aggregate already present
 00801420	fixed_bitset_128	unchanged	desired aggregate already present
 00801430	fixed_bitset_128	unchanged	desired aggregate already present
 00801440	fixed_bitset_128	unchanged	desired aggregate already present
-00801450	fixed_bitset_128	applied	g_bitset_00801450 array:4:/uint
-00801460	fixed_bitset_128	applied	g_bitset_00801460 array:4:/uint
-00801480	fixed_bitset_128	applied	g_bitset_00801480 array:4:/uint
+00801450	fixed_bitset_128	unchanged	desired aggregate already present
+00801460	fixed_bitset_128	unchanged	desired aggregate already present
+00801480	fixed_bitset_128	unchanged	desired aggregate already present
 00801490	fixed_bitset_128	unchanged	desired aggregate already present
-008014A0	fixed_bitset_128	applied	g_bitset_008014A0 array:4:/uint
+008014A0	fixed_bitset_128	unchanged	desired aggregate already present
 008032F4	runtime_record_pointer	unchanged	desired aggregate already present
 008032F8	runtime_record_pointer	unchanged	desired aggregate already present
 00803300	runtime_record_pointer	unchanged	desired aggregate already present

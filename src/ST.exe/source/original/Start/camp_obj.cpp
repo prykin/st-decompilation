@@ -432,7 +432,8 @@ switchD_00590d73_default:
           }
           st::fn_0040329C(&g_sound,0);
           if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
-            st::fn_00402FD1(&g_sound,0x12,'\x02',0,nullptr);
+            st::fn_00402FD1
+                      ((AnonReceiver_0056A130 *)&g_sound,0x12,'\x02',0,nullptr);
           }
           st::fn_0040329C(&g_sound,1);
           if (DAT_0080874e == 1) {

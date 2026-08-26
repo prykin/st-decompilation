@@ -7,9 +7,23 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
 
-void __thiscall FUN_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
+   [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00568010.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=10; incoming_edx_uses=0; calls=4;
+   ecx_pointer_setup=4; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
+   expected_stack=4; receiver_family_members=2; adopt_untyped_existing_thiscall
+
+   [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568010_sub_00568010_param_1Enum.
+   Cases: CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8 */
+
+void __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568010::FUN_00568010
+          (AnonReceiver_00568010 *this,
+          SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568010_sub_00568010_param_1Enum
+          param_1)
 
 {
   SoundClassTy *this_00;
@@ -19,10 +33,10 @@ void __thiscall FUN_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
   SoundClassTy *local_c;
   uint local_8;
 
-  if (STField<int>(this,0xf8b) != 0) {
+  if (*(int *)&this->field_0xf8b != 0) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
-    local_c = this;
+    local_c = (SoundClassTy *)this;
     iVar1 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     this_00 = local_c;
     if (iVar1 == 0) {

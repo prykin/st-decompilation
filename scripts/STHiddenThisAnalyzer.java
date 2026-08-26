@@ -343,7 +343,16 @@ public class STHiddenThisAnalyzer extends GhidraScript {
             String[] operands = operands(instruction);
             if (writesFullRegister(mnemonic, operands, "ECX")) {
                 String source = operands.length < 2 ? "" : operands[1];
-                boolean scalar = source.isBlank() || IMMEDIATE.matcher(source).matches() ||
+                // An x86 immediate in ECX is not necessarily a scalar.  MSVC
+                // materializes statically allocated singleton receivers with
+                // MOV ECX,image_address before a direct method call.  Treat an
+                // immediate as pointer setup only when it resolves inside the
+                // Program memory map; small IDs/constants and null remain
+                // scalar.  This is call-boundary evidence, not a semantic type
+                // assertion for the addressed object.
+                boolean immediate = IMMEDIATE.matcher(source).matches();
+                boolean scalar = source.isBlank() ||
+                    immediate && !imagePointerImmediate(source) ||
                     selfZero(mnemonic, operands, "ECX");
                 return new Backward(scalar ? "scalar" : "pointer");
             }
@@ -351,6 +360,17 @@ public class STHiddenThisAnalyzer extends GhidraScript {
             instruction = listing.getInstructionBefore(instruction.getAddress());
         }
         return new Backward("unknown");
+    }
+
+    private boolean imagePointerImmediate(String operand) {
+        Long value = number(operand);
+        if (value == null || value == 0) return false;
+        try {
+            Address address = currentProgram.getAddressFactory()
+                .getDefaultAddressSpace().getAddress(value);
+            return address != null && currentProgram.getMemory().contains(address);
+        }
+        catch (Exception ignored) { return false; }
     }
 
     private long callerCleanup(Function caller, Instruction call) {

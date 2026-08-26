@@ -43,7 +43,7 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x172e);
         }
-        thunk_FUN_00493d10((int *)pSVar3);
+        thunk_FUN_00493d10((CallableReceiver_00493D10_P0 *)pSVar3);
       }
       uVar5 = uVar5 + 1;
       index = uVar5 & 0xffff;

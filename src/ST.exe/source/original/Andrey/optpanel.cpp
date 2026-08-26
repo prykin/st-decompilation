@@ -4765,7 +4765,8 @@ LAB_00534654:
       break;
     case CASE_6:
       STPiece<1,1>(DAT_00807300) = STPiece<1,1>(DAT_00807300) ^ 1;
-      st::fn_0040510F(&g_sound,CASE_1);
+      st::fn_0040510F
+                ((AnonReceiver_00568010 *)&g_sound,CASE_1);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     case CASE_7:
@@ -4982,7 +4983,8 @@ switchD_00535190_caseD_3:
       break;
     case CASE_6:
       STPiece<1,1>(DAT_00807300) = STPiece<1,1>(DAT_00807300) ^ 2;
-      st::fn_0040510F(&g_sound,CASE_2);
+      st::fn_0040510F
+                ((AnonReceiver_00568010 *)&g_sound,CASE_2);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     case CASE_8:
@@ -5137,7 +5139,8 @@ switchD_00534835_caseD_1:
       return 0;
     case CASE_6:
       STPiece<1,1>(DAT_00807300) = STPiece<1,1>(DAT_00807300) ^ 4;
-      st::fn_0040510F(&g_sound,CASE_4);
+      st::fn_0040510F
+                ((AnonReceiver_00568010 *)&g_sound,CASE_4);
       /* ST_CALLSITE[005354D1]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
       st::fn_00404BD8
                 ((SoundClassTy *)&g_sound,SOUND_MODE_1,nullptr,0x4b7,nullptr,0);
@@ -5330,7 +5333,8 @@ switchD_00534835_caseD_1:
       return 0;
     case CASE_6:
       STPiece<1,1>(DAT_00807300) = STPiece<1,1>(DAT_00807300) ^ 8;
-      st::fn_0040510F(&g_sound,CASE_8);
+      st::fn_0040510F
+                ((AnonReceiver_00568010 *)&g_sound,CASE_8);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     case CASE_8:

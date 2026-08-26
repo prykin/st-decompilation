@@ -81,6 +81,7 @@ public class STRecoveryPipeline extends GhidraScript {
             "function_pointer_parameter_summary.txt")),
         Map.entry("STFunctionPointerFieldAnalyzer.java", List.of(
             "function_pointer_field_proposals.tsv",
+            "function_pointer_field_machine_stores.tsv",
             "function_pointer_field_failures.tsv",
             "function_pointer_field_summary.txt")),
         Map.entry("STAllocationRecordAnalyzer.java", List.of(
@@ -137,7 +138,12 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STIndirectCallsiteAnalyzer.java", List.of(
             "indirect_callsite_proposals.tsv",
             "callable_family_audit.tsv",
-            "indirect_callsite_summary.txt")));
+            "indirect_callsite_summary.txt")),
+        Map.entry("STCallableReceiverAnalyzer.java", List.of(
+            "callable_receiver_proposals.tsv",
+            "callable_receiver_type_proposals.tsv",
+            "callable_receiver_slot_proposals.tsv",
+            "callable_receiver_summary.txt")));
     private static final Map<String, List<String>> CACHEABLE_ANALYZER_INPUTS = Map.ofEntries(
         Map.entry("STDArrayElementAnalyzer.java", List.of()),
         Map.entry("STPointerShapeAnalyzer.java", List.of()),
@@ -175,7 +181,9 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STIndirectCallAnalyzer.java", List.of("vtable_proposals.tsv")),
         Map.entry("STIndirectCallsiteAnalyzer.java", List.of(
             "indirect_call_proposals.tsv", "indirect_call_sites.tsv",
-            "polymorphic_receiver_callsites.tsv")));
+            "polymorphic_receiver_callsites.tsv")),
+        Map.entry("STCallableReceiverAnalyzer.java", List.of(
+            "callable_family_audit.tsv")));
     private static final Set<String> MUTATING_STATUSES = Set.of(
         "applied", "created", "converted", "updated", "partial", "renamed", "repaired",
         "removed");
@@ -406,10 +414,10 @@ public class STRecoveryPipeline extends GhidraScript {
                 "recursive_pointee_apply_report.tsv");
             changed += pair("STTypeFamilyAnalyzer.java", "STTypeFamilyApplier.java",
                 "type_family_proposals.tsv", "type_family_apply_report.tsv");
-            // Keep a proven common base local to each exact CALLIND.  Persistently typing the
-            // transported parameter makes Ghidra erase derived layouts until inheritance is
-            // recovered; the address-stable call-site view carries the physical ABI safely.
-            changed += runIndirectCallTyping();
+            // Dense ownerless receiver families receive a function-local structural interface
+            // view.  This types one stable parameter and its observed table slots without
+            // replacing any physical class vptr or claiming semantic class ownership.
+            changed += runCallableReceiverTyping();
             changed += pair("STVirtualMethodAnalyzer.java", "STVirtualMethodApplier.java",
                 "virtual_method_proposals.tsv", "virtual_method_apply_report.tsv",
                 MUTATING_STATUSES, recoveryProgram.resolve("vtable_proposals.tsv"));
@@ -450,7 +458,7 @@ public class STRecoveryPipeline extends GhidraScript {
             "STFunctionPointerFieldApplier.java",
             "function_pointer_field_proposals.tsv",
             "function_pointer_field_apply_report.tsv");
-        runIndirectCallTyping();
+        runCallableReceiverTyping();
         runAbiRegressionGate("post-structural-indirect");
 
         section("deep finalization");
@@ -588,7 +596,7 @@ public class STRecoveryPipeline extends GhidraScript {
                 "STFunctionPointerFieldApplier.java",
                 "function_pointer_field_proposals.tsv",
                 "function_pointer_field_apply_report.tsv");
-            changed += runIndirectCallTyping();
+            changed += runCallableReceiverTyping();
             runAbiRegressionGate("export-indirect-pass-" + pass);
             println("Export indirect ABI stabilization pass " + pass +
                 ": mutating rows=" + changed);
@@ -609,6 +617,22 @@ public class STRecoveryPipeline extends GhidraScript {
             "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
         changed += pair("STIndirectCallsiteAnalyzer.java", "STIndirectCallsiteApplier.java",
             "indirect_callsite_proposals.tsv", "indirect_callsite_apply_report.tsv");
+        return changed;
+    }
+
+    /**
+     * Partition ownerless object dispatch after the ordinary physical-slot pass, install only
+     * dense parameter-rooted structural views, then refresh address-local overrides against
+     * the newly callable fields.  The second indirect pass is required only when the receiver
+     * applier mutates the Program; analyzer caching makes the confirming pass cheap.
+     */
+    private int runCallableReceiverTyping() throws Exception {
+        int changed = runIndirectCallTyping();
+        int receiverChanges = pair("STCallableReceiverAnalyzer.java",
+            "STCallableReceiverApplier.java", "callable_receiver_proposals.tsv",
+            "callable_receiver_apply_report.tsv");
+        changed += receiverChanges;
+        if (receiverChanges != 0) changed += runIndirectCallTyping();
         return changed;
     }
 

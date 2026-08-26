@@ -171,7 +171,8 @@ LAB_004a8c49:
     uVar3 = DAT_0080743c & 0xff;
   }
 LAB_004a8c6a:
-  thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,uVar3);
+  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,uVar3);
 switchD_004a8b81_caseD_108:
   g_currentExceptionFrame = local_6c.previous;
   return 0;

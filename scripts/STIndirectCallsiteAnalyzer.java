@@ -58,7 +58,8 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
     private int machineCandidates, functionsDecompiled, exactVtableMatches;
     private int exactReceiverMatches, machineCallableMatches, machineWordReturnMatches,
         machineFloatReturnMatches, machineWideUseSiteMatches,
-        retainedMachineOverrides, suppressedMachineOverrides, densePhysicalSlots;
+        retainedMachineOverrides, suppressedMachineOverrides, densePhysicalSlots,
+        cfgRecoveredReceiverSites;
     private int conflicts, failures;
     private final List<String> decompileFailureFunctions = new ArrayList<>();
     private Map<String, Set<String>> ownersByVtable;
@@ -69,6 +70,8 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
     private final Set<String> stagedSingleArgumentSites = new TreeSet<>();
     private final Map<String, Integer> machineSitePushCounts = new HashMap<>();
     private final Map<String, CallableFamilyAudit> callableFamilyAudits = new TreeMap<>();
+    private final Map<String, Boolean> exactReceiverCache = new HashMap<>();
+    private final Map<Address, Map<Address, List<Address>>> predecessorCache = new HashMap<>();
 
     @Override
     protected void run() throws Exception {
@@ -325,7 +328,8 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
                 observeDensePhysicalSlot(operation, site, vtables);
                 DispatchAbi wideUseSite = machineWideUseSite(site, vtables);
                 DispatchAbi stagedUseSite = machineStagedUseSite(site, vtables);
-                DispatchAbi physicalUseSite = physicalUseSite(site, vtables, receivers);
+                DispatchAbi physicalUseSite = physicalUseSite(function, site, vtables,
+                    receivers);
                 List<DispatchAbi> matches = new ArrayList<>();
                 for (DispatchAbi abi : bySlot.getOrDefault(site.slot, List.of())) {
                     if (abi.stackParameters != site.pushes) continue;
@@ -340,10 +344,11 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
                     stagedUseSite != null ? stagedUseSite :
                     !matches.isEmpty() ? matches.get(0) :
                     physicalUseSite != null ? physicalUseSite :
-                    machineCallable(operation, site, vtables, rows);
+                    machineCallable(function, operation, site, vtables, rows);
                 if (agreed == null) continue;
+                DispatchAbi selected = agreed;
                 if (!matches.isEmpty() && matches.stream().anyMatch(value ->
-                        !value.signatureKey().equals(agreed.signatureKey()))) {
+                        !value.signatureKey().equals(selected.signatureKey()))) {
                     conflicts++;
                     continue;
                 }
@@ -386,10 +391,10 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         return result;
     }
 
-    private DispatchAbi machineCallable(Object operation, Site site,
+    private DispatchAbi machineCallable(Function function, Object operation, Site site,
             Set<String> vtables, Map<String, Row> rows) throws Exception {
         if (vtables.size() != 1 || site.receiverRegister.isBlank() ||
-                !register(site.ecx).equals(register(site.receiverRegister))) return null;
+                !exactMachineReceiver(function, site)) return null;
         String vtable = vtables.iterator().next();
         // A physical function-pointer component is stronger ABI evidence than a
         // single use.  The fallback exists for genuinely raw void*/missing slots;
@@ -440,13 +445,10 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
      * receiver-aware ABI, so an address-local override is both stronger and
      * less invasive than changing the transported parameter.
      */
-    private DispatchAbi physicalUseSite(Site site, Set<String> vtables,
+    private DispatchAbi physicalUseSite(Function function, Site site, Set<String> vtables,
             Set<String> receivers) {
         if (site.receiverRegister.isBlank()) return null;
-        String receiver = register(site.receiverRegister);
-        boolean exactReceiver = register(site.ecx).equals(receiver) ||
-            "ECX".equals(receiver) && isDirectLoadedValue(site.ecx);
-        if (!exactReceiver) return null;
+        if (!exactMachineReceiver(function, site)) return null;
         PolymorphicReceiverCallsite family = polymorphicReceiverCallsites.get(
             site.callAddress);
         if (family != null && !currentPolymorphicReceiver(site, family)) return null;
@@ -691,8 +693,11 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
     private void observeDensePhysicalSlot(Object operation, Site site,
             Set<String> vtables) {
         try {
+            Address entry = address(site.functionAddress);
+            Function function = entry == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(entry);
             if (vtables.size() != 1 || site.receiverRegister.isBlank() ||
-                    !register(site.ecx).equals(register(site.receiverRegister))) return;
+                    !exactMachineReceiver(function, site)) return;
             String vtable = vtables.iterator().next();
             if (callableVtableSlot(vtable, site.slot)) return;
             Set<String> owners = ownersByVtable.getOrDefault(vtable, Set.of());
@@ -741,7 +746,7 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         String spill = incomingThisSpill(function);
         if (spill.isBlank()) return;
         for (Site site : sites) {
-            if (!register(site.ecx).equals(register(site.receiverRegister)) ||
+            if (!exactMachineReceiver(function, site) ||
                     !machineReceiverIsSavedThis(function, site, spill)) continue;
             // Count the complete machine family before consulting the mutable
             // physical datatype.  Otherwise promoting its busiest slots on pass
@@ -1120,13 +1125,7 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
      */
     private void recordCallableFamilyAudit(Function function, Site site,
             Set<String> vtables, Set<String> receivers) {
-        String receiver = register(site.receiverRegister);
-        boolean exactMachineReceiver = !receiver.isBlank() &&
-            (register(site.ecx).equals(receiver) ||
-                // The table load was traced from ECX itself.  A direct MOV of a stack,
-                // field, or global pointer into ECX changes the pointer's storage origin,
-                // not the receiver address; no base adjustment occurred.
-                "ECX".equals(receiver) && isDirectLoadedValue(site.ecx));
+        boolean exactMachineReceiver = exactMachineReceiver(function, site);
         Set<String> resolvedVtables = new TreeSet<>(vtables);
         if (resolvedVtables.isEmpty() && receivers.size() == 1) {
             String fromReceiver = receiverVtablePath(receivers.iterator().next());
@@ -1155,6 +1154,87 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
     private boolean isDirectLoadedValue(String value) {
         String text = text(value).trim().toUpperCase(Locale.ROOT);
         return text.matches("(?:BYTE|WORD|DWORD|QWORD) PTR \\[.+\\]");
+    }
+
+    /**
+     * Prove the MSVC receiver transport at the actual call instruction.  The old linear
+     * inventory forgot a MOV ECX,receiver as soon as it crossed a conditional branch, even
+     * when every predecessor retained that definition.  Walk the instruction CFG backwards
+     * and accept only paths which all reach the same exact register copy before any CALL,
+     * competing ECX definition, or receiver-register definition.  This is equality of the
+     * machine value at one site; it does not infer a source-level owner.
+     */
+    private boolean exactMachineReceiver(Function function, Site site) {
+        if (function == null || site == null) return false;
+        String receiver = register(site.receiverRegister);
+        if (receiver.isBlank()) return false;
+        if (register(site.ecx).equals(receiver) ||
+                "ECX".equals(receiver) && isDirectLoadedValue(site.ecx)) return true;
+        String key = site.functionAddress + ":" + site.callAddress + ":" + receiver;
+        Boolean cached = exactReceiverCache.get(key);
+        if (cached != null) return cached;
+        boolean recovered = cfgExactReceiver(function, site, receiver);
+        exactReceiverCache.put(key, recovered);
+        if (recovered) cfgRecoveredReceiverSites++;
+        return recovered;
+    }
+
+    private boolean cfgExactReceiver(Function function, Site site, String receiver) {
+        Address call = address(site.callAddress);
+        if (call == null || "ECX".equals(receiver)) return false;
+        Map<Address, List<Address>> predecessors = predecessors(function);
+        List<Address> work = new ArrayList<>(predecessors.getOrDefault(call, List.of()));
+        if (work.isEmpty()) return false;
+        Set<Address> visited = new HashSet<>();
+        int resolvedPaths = 0;
+        for (int cursor = 0; cursor < work.size() && work.size() <= 8192; cursor++) {
+            Address address = work.get(cursor);
+            if (!visited.add(address)) continue;
+            Instruction instruction = currentProgram.getListing().getInstructionAt(address);
+            if (instruction == null || !function.getBody().contains(address)) return false;
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (instruction.getFlowType().isCall()) return false;
+
+            if (definesStandaloneRegister(instruction, "ECX")) {
+                if (!"MOV".equals(mnemonic) || instruction.getNumOperands() < 2 ||
+                        !receiver.equals(register(
+                            instruction.getDefaultOperandRepresentation(1)))) return false;
+                resolvedPaths++;
+                continue;
+            }
+            if (definesStandaloneRegister(instruction, receiver)) return false;
+
+            List<Address> before = predecessors.getOrDefault(address, List.of());
+            if (before.isEmpty()) return false;
+            work.addAll(before);
+        }
+        return work.size() <= 8192 && resolvedPaths > 0;
+    }
+
+    private Map<Address, List<Address>> predecessors(Function function) {
+        return predecessorCache.computeIfAbsent(function.getEntryPoint(), ignored -> {
+            Map<Address, List<Address>> result = new HashMap<>();
+            InstructionIterator iterator = currentProgram.getListing()
+                .getInstructions(function.getBody(), true);
+            while (iterator.hasNext()) {
+                Instruction instruction = iterator.next();
+                Address source = instruction.getAddress();
+                Address fallthrough = instruction.getFallThrough();
+                if (fallthrough != null && function.getBody().contains(fallthrough) &&
+                        currentProgram.getListing().getInstructionAt(fallthrough) != null)
+                    result.computeIfAbsent(fallthrough,
+                        key -> new ArrayList<>()).add(source);
+                if (instruction.getFlowType().isJump())
+                    for (Address flow : instruction.getFlows())
+                        if (function.getBody().contains(flow) &&
+                                currentProgram.getListing().getInstructionAt(flow) != null)
+                            result.computeIfAbsent(flow,
+                                key -> new ArrayList<>()).add(source);
+            }
+            for (List<Address> values : result.values())
+                values.sort(Address::compareTo);
+            return result;
+        });
     }
 
     private String receiverVtablePath(String receiverPath) {
@@ -1217,7 +1297,7 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
         if (suppressedMachineFunctions.contains(addr(function.getEntryPoint()))) return null;
         if (site == null || existing == null || !"__thiscall".equals(
                 existing.getCallingConventionName()) || site.receiverRegister.isBlank() ||
-                !register(site.ecx).equals(register(site.receiverRegister)) ||
+                !exactMachineReceiver(function, site) ||
                 !(hasMarkerMode(call, "machine-void") ||
                   hasMarkerMode(call, "machine-word") ||
                   hasMarkerMode(call, "machine-float"))) return null;
@@ -1419,6 +1499,7 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
             "exact_vtable_matches=" + exactVtableMatches,
             "exact_receiver_matches=" + exactReceiverMatches,
             "machine_callable_matches=" + machineCallableMatches,
+            "cfg_recovered_receiver_sites=" + cfgRecoveredReceiverSites,
             "machine_word_return_matches=" + machineWordReturnMatches,
             "machine_float_return_matches=" + machineFloatReturnMatches,
             "machine_wide_use_site_matches=" + machineWideUseSiteMatches,
@@ -1440,9 +1521,10 @@ public class STIndirectCallsiteAnalyzer extends GhidraScript {
             "decompile_failure_functions=" +
                 String.join(",", decompileFailureFunctions),
             "policy=An override requires either exact physical dispatch consensus or an " +
-                "exact machine MOV tableReg,[receiverReg] plus live ECX=receiverReg chain, " +
-                "one unique offset-zero vtable owner, and matching p-code/machine arity. " +
-                "Without target-family evidence the return is void only when unused, or " +
+                "exact machine MOV tableReg,[receiverReg] plus an all-predecessor live " +
+                "ECX=receiverReg proof, one unique offset-zero vtable owner, and matching " +
+                "p-code/machine arity. Without target-family evidence the return is void " +
+                "only when unused, or " +
                 "neutral undefined4 when the CALLIND owns one complete 32-bit output. " +
                 "An EDX:EAX bridge is address-local when one staged argument word and " +
                 "the following direct __fastcall close the machine chain.",

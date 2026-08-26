@@ -10429,7 +10429,7 @@ void __thiscall st::fn_004A85B0(STGroupBoatC *this)
                     (-0x5001fffc,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_grpb.cpp")
                      ,0x172e);
         }
-        st::fn_0040204A((int *)pSVar3);
+        st::fn_0040204A((CallableReceiver_00493D10_P0 *)pSVar3);
       }
       uVar5 = uVar5 + 1;
       index = uVar5 & 0xffff;

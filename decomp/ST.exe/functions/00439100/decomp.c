@@ -1116,7 +1116,9 @@ cf_common_exit_0043A47C:
                          DAT_0080741c), iVar9 != 1)) {
     thunk_FUN_004a8e00(local_18,local_14,local_10);
     thunk_FUN_004a8f20(1);
-    thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
+              ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+               DAT_0080743c & 0xff);
     /* ST_CALLSITE[0043A53B]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
     CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
     DAT_0080674c = 2;

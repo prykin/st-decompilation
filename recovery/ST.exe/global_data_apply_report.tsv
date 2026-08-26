@@ -30,15 +30,28 @@ address	status	proposed_name	detail
 00800F50	disabled		apply flags are 0
 00800F60	disabled		apply flags are 0
 00800FA0	disabled		apply flags are 0
+00800FB0	disabled		apply flags are 0
+00800FC0	disabled		apply flags are 0
+00800FD0	disabled		apply flags are 0
 00800FE0	disabled		apply flags are 0
 00800FF0	disabled		apply flags are 0
 00801000	disabled		apply flags are 0
 00801010	disabled		apply flags are 0
 00801370	disabled		apply flags are 0
+00801380	disabled		apply flags are 0
+00801390	disabled		apply flags are 0
+008013A0	disabled		apply flags are 0
+008013B0	disabled		apply flags are 0
+008013C0	disabled		apply flags are 0
+008013D0	disabled		apply flags are 0
 008013E0	disabled		apply flags are 0
+008013F0	disabled		apply flags are 0
+00801400	disabled		apply flags are 0
+00801410	disabled		apply flags are 0
 00801420	disabled		apply flags are 0
 00801430	disabled		apply flags are 0
 00801440	disabled		apply flags are 0
+00801460	disabled		apply flags are 0
 00801490	disabled		apply flags are 0
 0080167C	disabled	g_bldBoatPanel_0080167C	apply flags are 0
 00801680	disabled	g_bldLabPanel_00801680	apply flags are 0

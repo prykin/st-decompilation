@@ -15,7 +15,8 @@
 void __thiscall st::fn_00566900(SoundManagerTy *this)
 
 {
-  st::fn_00401CDA(&g_sound,CASE_B);
+  st::fn_00401CDA
+            ((AnonReceiver_00568940 *)&g_sound,CASE_B);
   if (this->field_0018 != nullptr) {
     st::fn_006F1170(this->field_0018);
   }

@@ -13,7 +13,8 @@
 void __thiscall SoundManagerTy::sub_00566900(SoundManagerTy *this)
 
 {
-  thunk_FUN_00568940(&g_sound,CASE_B);
+  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568940::thunk_FUN_00568940
+            ((AnonReceiver_00568940 *)&g_sound,CASE_B);
   if (this->field_0018 != nullptr) {
     cMf32::delete(this->field_0018);
   }

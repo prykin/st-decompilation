@@ -135,7 +135,8 @@ cf_continue_loop_006721A4:
         iVar2 = (int)psVar6[1];
         piVar7 = &local_1c;
         pcVar3 = thunk_FUN_0064a910(local_c,iVar5);
-        local_8 = thunk_FUN_0064a970(pcVar3,iVar2,piVar7);
+        local_8 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::thunk_FUN_0064a970
+                            (local_24,pcVar3,iVar2,piVar7);
       }
       else {
         iVar2 = (int)psVar6[1];

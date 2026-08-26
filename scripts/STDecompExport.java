@@ -4548,7 +4548,8 @@ public class STDecompExport extends GhidraScript {
             "(?:(?!\\*/).)*\\*/\\s*)(?<call>(?<receiver>[A-Za-z_$][A-Za-z0-9_$]*)->" +
             "(?<slot>[A-Za-z_$][A-Za-z0-9_$]*)\\s*\\([^;]*?\\))\\s*;" +
             "\\s*(?:/\\*\\s*ST_PSEUDO\\[.*?\\*/\\s*)?" +
-            "(?<lvalue>[^;=]+?)\\s*=\\s*\\(float\\)\\s*extraout_ST0\\s*;");
+            "(?<lvalue>[^;=]+?)\\s*=\\s*\\(float\\)\\s*" +
+            "(?<extra>extraout_ST0(?:_[0-9]+)?)\\s*;");
         Matcher matcher = pair.matcher(code);
         StringBuffer output = new StringBuffer();
         int replacements = 0;
@@ -4577,15 +4578,94 @@ public class STDecompExport extends GhidraScript {
             matcher.appendReplacement(output, Matcher.quoteReplacement(replacement));
             replacements++;
         }
-        if (replacements == 0) return new NormalizedCode(code, 0);
         matcher.appendTail(output);
-        String rewritten = output.toString();
+        String rewritten = replacements == 0 ? code : output.toString();
+
+        // A returned float may be widened directly into the argument area of a
+        // following double-taking helper (`SUB ESP,8; FSTP double ptr [ESP]`).
+        // Ghidra then leaves the correctly typed member call as a statement and
+        // refers to its x87 result through a suffixed extraout_ST0_N.  Keep the
+        // call single-evaluation by naming that exact typed result locally; do
+        // not duplicate the call expression at each low/high-word use.
+        Pattern forwarded = Pattern.compile(
+            "(?s)(?<prefix>/\\*\\s*ST_CALLSITE\\[(?<address>[0-9A-Fa-f]+)\\]:" +
+            "(?:(?!\\*/).)*\\*/\\s*)(?<call>(?<receiver>[A-Za-z_$][A-Za-z0-9_$]*)->" +
+            "(?<slot>[A-Za-z_$][A-Za-z0-9_$]*)\\s*\\([^;]*?\\))\\s*;" +
+            "(?<gap>\\s*)(?:/\\*\\s*ST_PSEUDO\\[return_width_artifact\\]" +
+            ".*?\\*/\\s*)?(?<statement>(?:(?!;).)*?" +
+            "(?<extra>extraout_ST0(?:_[0-9]+)?)(?:(?!;).)*?;)");
+        Matcher forwardedMatcher = forwarded.matcher(rewritten);
+        StringBuffer forwardedOutput = new StringBuffer();
+        int forwardedReplacements = 0;
+        while (forwardedMatcher.find()) {
+            Address call;
+            try {
+                call = currentProgram.getAddressFactory().getAddress(
+                    forwardedMatcher.group("address"));
+            }
+            catch (Exception ignored) { call = null; }
+            Instruction instruction = call == null ? null : listing.getInstructionAt(call);
+            ghidra.program.model.data.FunctionDefinition definition =
+                vtableSlotDefinition(pointerDeclarations(rewritten),
+                    forwardedMatcher.group("receiver"), forwardedMatcher.group("slot"));
+            String returned = definition == null ? "" :
+                unwrapTypeDef(definition.getReturnType()).getPathName();
+            String stored = call == null ? "" : boundedX87StoredType(call);
+            String extra = forwardedMatcher.group("extra");
+            Matcher extraUses = Pattern.compile(
+                "\\bextraout_ST0(?:_[0-9]+)?\\b")
+                    .matcher(forwardedMatcher.group("statement"));
+            boolean sameExtra = true;
+            int uses = 0;
+            while (extraUses.find()) {
+                uses++;
+                if (!extra.equals(extraUses.group())) sameExtra = false;
+            }
+            if (instruction == null || !function.getBody().contains(call) ||
+                    !"CALL".equalsIgnoreCase(instruction.getMnemonicString()) ||
+                    !Set.of("/float", "/double").contains(stored) ||
+                    !Set.of("/float", "/double").contains(returned) ||
+                    definition == null || Set.of("__cdecl", "__stdcall").contains(
+                        definition.getCallingConventionName()) || !sameExtra || uses == 0)
+                continue;
+            String local = "x87_result_" + addr(call);
+            String statement = replaceIdentifier(
+                forwardedMatcher.group("statement"), extra, local);
+            String replacement = forwardedMatcher.group("prefix") +
+                returned.substring(1) + " " + local + " = " +
+                forwardedMatcher.group("call").trim() + ";" +
+                forwardedMatcher.group("gap") + statement;
+            forwardedMatcher.appendReplacement(forwardedOutput,
+                Matcher.quoteReplacement(replacement));
+            forwardedReplacements++;
+        }
+        if (forwardedReplacements != 0) {
+            forwardedMatcher.appendTail(forwardedOutput);
+            rewritten = forwardedOutput.toString();
+            replacements += forwardedReplacements;
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
         Pattern declaration = Pattern.compile(
-            "(?m)^\\s*float10\\s+extraout_ST0\\s*;\\s*(?:\\R|$)");
-        String withoutDeclaration = declaration.matcher(rewritten).replaceFirst("");
-        if (!Pattern.compile("\\bextraout_ST0\\b").matcher(withoutDeclaration).find())
-            return new NormalizedCode(withoutDeclaration, replacements + 1);
-        return new NormalizedCode(rewritten, replacements);
+            "(?m)^\\s*float10\\s+(?<extra>extraout_ST0(?:_[0-9]+)?)\\s*;\\s*(?:\\R|$)");
+        Matcher declarationMatcher = declaration.matcher(rewritten);
+        StringBuffer cleaned = new StringBuffer();
+        int removed = 0;
+        while (declarationMatcher.find()) {
+            String name = declarationMatcher.group("extra");
+            String outside = rewritten.substring(0, declarationMatcher.start()) +
+                rewritten.substring(declarationMatcher.end());
+            if (Pattern.compile("\\b" + Pattern.quote(name) + "\\b")
+                    .matcher(outside).find()) {
+                declarationMatcher.appendReplacement(cleaned,
+                    Matcher.quoteReplacement(declarationMatcher.group()));
+            }
+            else {
+                declarationMatcher.appendReplacement(cleaned, "");
+                removed++;
+            }
+        }
+        declarationMatcher.appendTail(cleaned);
+        return new NormalizedCode(cleaned.toString(), replacements + removed);
     }
 
     private String boundedX87StoredType(Address call) {

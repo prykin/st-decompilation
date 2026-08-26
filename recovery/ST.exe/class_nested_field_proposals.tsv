@@ -480,7 +480,7 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	34	2	field_0022	/short	2	nested reads=2, writes=0; type_evidence=/short <= 0060F5F8 MOVSX establishes /short
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970_0000	0	4	field_0000	/undefined4	2	nested reads=12, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970_0000	4	4	field_0004	/undefined4	1	nested reads=1, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970_0000	8	4	field_0008	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970_0000	8	4	field_0008	/undefined4	2	nested reads=3, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970_0000	16	4	field_0010	/undefined4	1	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970_0000	24	4	field_0018	/undefined4	2	nested reads=3, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970_0000	28	4	field_001C	/undefined4	1	nested reads=1, writes=0

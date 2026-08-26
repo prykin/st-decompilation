@@ -1,0 +1,122 @@
+apply	shape_id	slot_offset	stack_parameter_count	return_type	site_count	call_addresses	reason
+0	CallableReceiver_00419BF0_P0	32	0	/void	1	00419C09	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0041CF50_P0	8	0	/undefined4	1	0041CF86	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0041D100_P0	8	0	/undefined4	1	0041D134	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0041D4F0_P0	8	0	/undefined4	1	0041D524	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0041F630_P0	108	0	/undefined4	1	0041F7A5	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00435930_P2	236	0	/undefined4	2	00435A87 | 00435AB8	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00435B90_P3	44	0	/undefined4	11	00436581 | 0043658D | 00436599 | 0043676F | 004367D6 | 004367E2 | 00436849 | 00436855 | 00436861 | 0043686D | 00436924	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00435B90_P3	236	0	/undefined4	3	00436739 | 004368D0 | 00436907	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00440860_P2	12	0	/undefined4	1	0044091B	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00440860_P2	16	2	/void	1	00440930	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00440990_P1	12	0	/undefined4	1	00440A35	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00440990_P1	20	2	/void	1	00440A4A	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00449B60_P1	0	1	/void	1	00449C30	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00474810_P1	172	1	/void	1	00474889	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0047DF00_P1	44	0	/undefined4	1	0047F365	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00483300_P0	16	6	/undefined4	1	00483447	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004836C0_P0	16	6	/undefined4	1	004837C8	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004845E0_P2	44	0	/undefined4	31	0048481E | 0048482E | 00484867 | 00484873 | 00484B7A | 00484B86 | 00484B92 | 00484B9E | 00484C37 | 00484C43 | 00484D19 | 0048511F | 0048519C | 004851A8 | 004852EB | 004852F7 | 00485625 | 00485648 | 0048568D | 00485699 | 004856C9 | 004856D5 | 00485A46 | 00485A52 | 00485E18 | 004860BA | 004860CA | 004860DA | 004860EA | 004860FA | 00486106	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004845E0_P2	124	0	/undefined4	2	00484F36 | 0048609D	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004845E0_P2	136	1	/undefined4	2	00484BD2 | 00486221	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004845E0_P2	188	0	/undefined4	2	00484ED6 | 0048500E	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004845E0_P2	236	0	/undefined4	11	0048556C | 00485881 | 004859E9 | 00485A14 | 00485B47 | 00485B78 | 00485C92 | 00485D6C | 00485F3D | 00485F6E | 0048606E	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004845E0_P2	264	1	/undefined4	1	004850A5	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004845E0_P2	288	0	/undefined4	1	00484EB2	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00491600_P0	256	3	/void	1	00491617	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00493110_P1	44	0	/void	1	00493137	unanimous machine stack arity and return-consumption width
+1	CallableReceiver_00493D10_P0	144	2	/undefined4	41	00493D31 | 00493D42 | 00493D53 | 00493D64 | 00493D75 | 00493D86 | 00493D97 | 00493DA8 | 00493DB9 | 00493DCA | 00493DDB | 00493DEC | 00493DFD | 00493E0E | 00493E1F | 00493E30 | 00493E41 | 00493E52 | 00493E63 | 00493E74 | 00493E85 | 00493E96 | 00493EA7 | 00493EB8 | 00493EC9 | 00493EDA | 00493EEB | 00493EFC | 00493F0D | 00493F1E | 00493F2F | 00493F40 | 00493F51 | 00493F62 | 00493F73 | 00493F84 | 00493F95 | 00493FA6 | 00493FB7 | 00493FC8 | 00493FD6	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004B31C0_P0	44	0	/undefined4	4	004B32C7 | 004B32D4 | 004B32E1 | 004B32EE	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004B7D90_P0	144	2	/void	1	004B7DBE	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004B7DE0_P0	144	2	/void	1	004B7E11	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004C21A0_P2	44	0	/undefined4	4	004C245E | 004C246A | 004C253A | 004C2546	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004C21A0_P2	236	0	/undefined4	3	004C2260 | 004C228C | 004C260C	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004C5350_P2	244	1	/undefined4	1	004C5437	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004C6070_P0	144	2	/undefined4	1	004C6082	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004CC370_P0	124	0	/undefined4	1	004CC412	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004CC370_P0	144	2	/void	2	004CC65A | 004CC6CC	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004CD480_P0	144	2	/void	3	004CD593 | 004CD604 | 004CD61E	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D6C90_P2	236	0	/undefined4	2	004D6CC3 | 004D6CE7	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D6F70_P0	196	0	/undefined4	1	004D6FDB	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D7040_P0	44	0	/undefined4	8	004D7069 | 004D7075 | 004D7081 | 004D70AA | 004D70BA | 004D70CA | 004D70DA | 004D70FF	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D7040_P0	120	0	/undefined4	1	004D71CD	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D7040_P0	124	0	/undefined4	1	004D7135	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D7040_P0	128	1	/void	1	004D71D8	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D7040_P0	196	1	/undefined4	1	004D7121	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D7040_P0	200	1	/undefined4	1	004D71E4	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D7270_P0	144	2	/undefined4	1	004D733F	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D7270_P0	196	0	/undefined4	2	004D729D | 004D72B0	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D9000_P0	144	2	/undefined4	1	004D925F	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004D9C80_P0	144	2	/undefined4	1	004D9EE7	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004DBB60_P1	44	0	/undefined4	1	004DBB98	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004DCE00_P0	144	2	/undefined4	1	004DCFCF	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004DDD50_P0	44	0	/undefined4	1	004DDE3B	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004DE820_P0	144	2	/void	1	004DE857	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004DFC70_P1	44	-1	/undefined4	5	004DFCE1 | 004DFCFD | 004DFD10 | 004DFD24 | 004DFD3C	conflicting machine ABI: arities=[0, 1, 3]; returns=[/undefined4]
+0	CallableReceiver_004E46F0_P0	144	2	/undefined4	1	004E4861	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004E51B0_P0	44	0	/undefined4	7	004E56EA | 004E56F7 | 004E5710 | 004E571D | 004E5736 | 004E5743 | 004E5750	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004E96C0_P1	44	0	/undefined4	6	004E9732 | 004E973F | 004E974C | 004E975D | 004E976A | 004E9792	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004EAA20_P0	144	2	/undefined4	2	004EAAFC | 004EACAA	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_004ECEA0_P0	144	2	/undefined4	1	004ED10E	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0055C180_P0	60	4	/undefined4	1	0055C220	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00579350_P0	216	0	/undefined4	1	005796C3	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0057A2C0_P0	16	6	/undefined4	2	0057ABDE | 0057AF75	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0057B350_P0	16	6	/undefined4	2	0057B445 | 0057B539	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00584B10_P0	216	0	/void	1	00584BB8	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00584C50_P1	0	2	/undefined4	1	00584CC9	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00585020_P0	216	0	/undefined4	3	005852CD | 00585699 | 005856CA	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00586AF0_P0	216	0	/undefined4	2	00586E1B | 005884DE	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00589740_P0	216	0	/void	1	005897CB	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0058A9E0_P0	216	0	/undefined4	1	0058AE40	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0058BD90_P0	216	0	/undefined4	1	0058C3A2	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_005C5CA0_P0	44	0	/undefined4	1	005C5E33	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_005EDA50_P0	12	0	/undefined4	1	005EDB3B	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_005EDA50_P0	296	0	/undefined4	1	005EDAF9	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_005EDC20_P0	304	1	/undefined4	1	005EDD6A	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_005EDC20_P0	312	3	/undefined4	1	005EDD5F	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_005F04B0_P1	44	0	/undefined4	1	005F04DB	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_005F0E20_P2	236	0	/undefined4	2	005F0E55 | 005F0E79	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0060BD30_P1	0	3	/undefined4	1	0060BDA7	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0060BDD0_P1	0	1	/void	1	0060BF48	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_006101B0_P0	20	6	/undefined4	5	00610A75 | 00610EAB | 00611410 | 00611A77 | 00612565	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00623600_P0	216	0	/undefined4	2	0062388D | 006238C6	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_006264D0_P1	240	0	/undefined4	1	00626798	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0062B830_P4	44	3	/undefined4	1	0062B88C	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0064DD70_P2	320	2	/undefined4	1	0064DD7C	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0065D760_P1	44	0	/undefined4	3	0065D7C0 | 0065D7E5 | 0065D821	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00675EA0_P1	44	0	/undefined4	1	00675EDC	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00677EF0_P2	312	1	/undefined4	1	00677EF8	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_006D4F50_P0	12	1	/undefined4	1	006D4F5E	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_006D4FD0_P0	12	1	/undefined4	1	006D4FDE	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_006E4650_P1	24	1	/undefined4	2	006E4707 | 006E475C	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_006E47E0_P1	24	1	/undefined4	2	006E4888 | 006E48DD	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0071F230_P0	8	2	/undefined4	1	0071F268	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0071F230_P0	12	4	/undefined4	1	0071F283	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0071F340_P0	8	2	/undefined4	1	0071F36A	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074767F_P0	28	1	/void	1	0074769F	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00747948_P0	28	1	/void	1	00747968	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00748339_P0	56	2	/undefined4	1	00748348	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00749708_P1	20	7	/undefined4	1	007497A9	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00749CA4_P0	36	2	/undefined4	1	00749CE3	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_00749D09_P0	76	0	/void	1	00749D44	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074A177_P0	40	1	/undefined4	1	0074A18C	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074A1AA_P0	112	0	/undefined4	1	0074A1BD	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074A1C9_P0	100	0	/void	1	0074A20D	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074A1C9_P0	112	0	/undefined4	1	0074A214	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074A612_P0	96	0	/void	1	0074A639	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074A77D_P0	64	0	/void	1	0074A7A4	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074A77D_P0	84	1	/undefined4	1	0074A7C7	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074A77D_P0	96	0	/undefined4	1	0074A7B2	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074A7E3_P0	68	0	/void	1	0074A806	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074A8EB_P0	112	1	/void	1	0074A93C	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074B86C_P0	12	1	/undefined4	1	0074B88F	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074CAA4_P1	12	3	/undefined4	1	0074CB06	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074D4D4_P0	0	1	/void	1	0074D504	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074D4D4_P0	4	0	/void	1	0074D4F9	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074D4D4_P0	8	4	/undefined4	1	0074D516	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074EB6B_P0	80	3	/undefined4	1	0074EB7A	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074F3C0_P0	80	0	/undefined4	1	0074F4A7	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074F3C0_P0	84	0	/void	1	0074F49C	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074F612_P0	72	0	/undefined4	1	0074F642	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074F683_P0	76	0	/undefined4	1	0074F6B3	unanimous machine stack arity and return-consumption width
+0	CallableReceiver_0074FC49_P1	8	1	/undefined4	1	0074FD1E	unanimous machine stack arity and return-consumption width

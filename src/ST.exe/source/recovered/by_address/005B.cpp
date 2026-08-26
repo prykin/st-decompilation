@@ -234,7 +234,8 @@ void __thiscall st::fn_005B6730(void *this,uint param_1,char param_2,int param_3
     STField<undefined4>(this,0x18) = 1;
   }
   if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
-    st::fn_00402FD1(&g_sound,param_1,param_2,param_3,nullptr);
+    st::fn_00402FD1
+              ((AnonReceiver_0056A130 *)&g_sound,param_1,param_2,param_3,nullptr);
   }
   return;
 }

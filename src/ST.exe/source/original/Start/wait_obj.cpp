@@ -470,7 +470,8 @@ void __thiscall st::fn_005E6770(WaitTy *this,undefined4 param_1,undefined4 param
     }
     st::fn_0040329C(&g_sound,0);
     if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
-      st::fn_00402FD1(&g_sound,0x14,'\x02',0,nullptr);
+      st::fn_00402FD1
+                ((AnonReceiver_0056A130 *)&g_sound,0x14,'\x02',0,nullptr);
     }
     st::fn_00404BF1(this_01,0xb,'\0',-1);
     g_currentExceptionFrame = local_50.previous;

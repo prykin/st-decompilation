@@ -173,7 +173,8 @@ LAB_004a8c49:
     uVar3 = DAT_0080743c & 0xff;
   }
 LAB_004a8c6a:
-  st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,uVar3);
+  st::fn_004036D4
+            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,uVar3);
 switchD_004a8b81_caseD_108:
   g_currentExceptionFrame = local_6c.previous;
   return 0;
@@ -409,7 +410,9 @@ void __thiscall st::fn_004A9540(OpticClassC *this,int param_1)
     st::fn_00403C47(1);
     st::fn_00403C47(1);
   }
-  st::fn_004036D4(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+  st::fn_004036D4
+            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+             DAT_0080743c & 0xff);
   g_currentExceptionFrame = local_5c.previous;
   return;
 }
